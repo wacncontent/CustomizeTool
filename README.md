@@ -13,8 +13,8 @@
 
 ## Configuration your own 'rules.md' (Important)
 Here is the example of self defined rules:
-```
-  # Line starts with '#' is comment
+```bash
+  # Line starts with '#' is comment and thus will be ignored
   # Rules under [CONST] label will be treated as constant string,
   # until it reaches [REGEX] label which supports regex format
   [CONST]
