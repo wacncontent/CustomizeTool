@@ -37,6 +37,7 @@ Here is the example of self defined rules:
   # [link text](/zh-cn/documentation/articles/xxx-xxx-xxx) → [link text](/documentation/articles/xxx-xxx-xxx)
   (\[.*?\]\()(\/zh-cn)(\/documentation\/articles\/.*?\)) = \1\3
 ```
+#### Attention: Please don't change [CONST] and [REGEX]'s order
 ## Configuration for 'mdFile.md'
 This is very simple, just put file's **absolute path** or **relative path** in mdfile.md
 Here is a example:
