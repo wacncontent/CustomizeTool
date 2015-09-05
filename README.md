@@ -27,7 +27,7 @@ Here is the example of self defined rules:
   # If you want ignore some certain rules, just put '???' at right position
   http://myapps.microsoft.com = ???
   # Chinese
-  SQL Database = 	SQL 数据库
+  SQL Database = SQL 数据库
   
   # Rules under [REGEX] label will be treated as regular expression
   [REGEX]
