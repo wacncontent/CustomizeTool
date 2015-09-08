@@ -5,13 +5,15 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>b0fa177f-4a41-4242-9886-72e1d9074924</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>CustomizeTool.py</StartupFile>
+    <StartupFile>mdReader.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
     <Name>CustomizeTool</Name>
     <RootNamespace>CustomizeTool</RootNamespace>
+    <InterpreterId>{2724bce1-3a78-4e78-988f-ed04b6772e6f}</InterpreterId>
+    <InterpreterVersion>2.7</InterpreterVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -22,7 +24,31 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="CustomizeTool.py" />
+    <Compile Include="core.py" />
+    <Compile Include="mdReader.py" />
+    <Compile Include="ruleReader.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Interpreter Include="env27\">
+      <Id>{2724bce1-3a78-4e78-988f-ed04b6772e6f}</Id>
+      <BaseInterpreter>{2af0f10d-7135-4994-9156-5d01c9c11b7e}</BaseInterpreter>
+      <Version>2.7</Version>
+      <Description>env27 (Python 2.7)</Description>
+      <InterpreterPath>Scripts\python.exe</InterpreterPath>
+      <WindowsInterpreterPath>Scripts\pythonw.exe</WindowsInterpreterPath>
+      <LibraryPath>Lib\</LibraryPath>
+      <PathEnvironmentVariable>PYTHONPATH</PathEnvironmentVariable>
+      <Architecture>X86</Architecture>
+    </Interpreter>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="test\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="test\active-directory-aadconnect-account-summary.md" />
+    <Content Include="test\active-directory-aadconnect-account-summary.md.bak" />
+    <Content Include="test\keyword_test.md" />
+    <Content Include="test\keyword_test.md.bak" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
