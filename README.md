@@ -1,4 +1,4 @@
-**CustomizeTool** is a text process tool (replace , delete) **based on your own rules**.
+﻿**CustomizeTool** is a text process tool (replace , delete) **based on your own rules**.
 
 ## Support for
 + Self defined rules and file list
@@ -8,6 +8,7 @@
 + Ignore rule Support
 
 ## How to use
+** Test with Python 2.7.10 only **
 1. Define your own rules in **rules.md**, prepare your file list in *mdFile.md*
 2. run the script: `python core.py`, and the result file will be named *YOUR_FILE_NAME.bak*
 
