@@ -21,6 +21,7 @@ SQL Database
 Microsoft Azure
 [Azure.select | list]
 [link text](xxx-xxx-xxx.md)
+[link text](../include/xxxx.md)
 [link text](/zh-cn/documentation/articles/xxx-xxx-xxx)
 http://azure.microsoft.com/services/active-directory/
 https://passwordreset.microsoftonline.com

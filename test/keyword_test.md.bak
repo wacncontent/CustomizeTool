@@ -5,7 +5,7 @@ database.chinacloudapi.cn
 manage.windowsazure.cn
 https://manage.windowsazure.cn
 windowsazure.cn
-windowsazure.cn/en-us/
+windowsazure.cn/
 chinacloudsites.cn
 http://msdn.microsoft.com/zh-cn/library/azure/
 http://msdn.microsoft.com/zh-cn/library/azure/
@@ -19,8 +19,9 @@ azure.net
 http://zh.wikipedia.org
 SQL Êý¾Ý¿â
 Windows Azure
-
+[Azure.select | list]
 [link text](/documentation/articles/xxx-xxx-xxx)
+[link text](../include/xxxx.md)
 [link text](/documentation/articles/xxx-xxx-xxx)
 /home/features/identity/
 https://passwordreset.microsoftonline.com

@@ -3,15 +3,16 @@
 # Date  : 2015/09/03
 # Version: 0.1
 import sys
+from collections import OrderedDict
 
 __author__ = 'Steven'
 
 class RuleReader:
     def __init__(self):
         # Initialize empty rule dictionary
-        self.ruleDict = {}
+        self.ruleDict = OrderedDict()
         # ruleDict just for regex substitution
-        self.regexDict = {}
+        self.regexDict = OrderedDict()
         self.lineNum = 0
         # Default area is const string's substitution
         self.isConst = True
