@@ -32,3 +32,9 @@ http://azure.microsoft.com/en-us/downloads/ = 	/downloads/
 
 # [link text](/zh-cn/documentation/articles/xxx-xxx-xxx)	[link text](/documentation/articles/xxx-xxx-xxx)
 (\[.*?\]\()(\/zh-cn)(\/documentation\/articles\/.*?\)) = \1\3
+
+#[link text](xxx-xxx-xxx.md#xxx-xxx) = 	[link text](/documentation/articles/xxx-xxx-xxx#xxx-xxx)
+(\[.*?\]\()(\.\.\/)?([^\/]*?)(\.md)#([^\/]*?)(\)) = \1/documentation/articles/\3#\5\6
+
+#[link text](/documentation/articles/xxx-xxx-xxx.md#xxx-xxx) = 	[link text](/documentation/articles/xxx-xxx-xxx#xxx-xxx)
+(\[.*?\]\()/documentation/articles/([^\/]*?)(\.md)#([^\/]*?)(\)) = \1/documentation/articles/\2#\4\5

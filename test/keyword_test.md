@@ -28,3 +28,5 @@ https://passwordreset.microsoftonline.com
 http://myapps.microsoft.com
 £×est US , etc..
 http://azure.microsoft.com/en-us/downloads/
+[link text](xxx-xxx-xxx.md#xxx-xxx)
+[link text](/documentation/articles/xxx-xxx-xxx.md#xxx-xxx)
