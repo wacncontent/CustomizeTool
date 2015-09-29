@@ -7,6 +7,8 @@ from collections import OrderedDict
 
 __author__ = 'Steven'
 
+ESCAPE_RULES = {"{equal}":"="}
+
 class RuleReader:
     def __init__(self):
         # Initialize empty rule dictionary
@@ -47,8 +49,8 @@ class RuleReader:
                     # Check format OK, let's add it to our rules dictionary
                     ruleList = trimedLine.split("=", 1)
                     # ??? would be skipped too if it is written in rule file by accident
-                    key = ruleList[0].strip()
-                    value = ruleList[1].strip()
+                    key = self.escape(ruleList[0].strip())
+                    value = self.escape(ruleList[1].strip())
                     if value == UNSURE:
                         continue
                     elif self.isConst == True:
@@ -64,6 +66,11 @@ class RuleReader:
             print("\033[1;31m rules.md doesn't exists!\033[0m\n")
             # print(e)
             # sys.exit()
+
+    def escape(self,str):
+        for k, v in ESCAPE_RULES.items():
+            str = str.replace(k,v)
+        return str
 
 # only running when direct run this script
 if '__main__' == __name__:
