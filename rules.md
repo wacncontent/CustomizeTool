@@ -50,6 +50,8 @@ wacn.date{equal}"" = wacn.date{equal}"09/15/2015"
 
 https?://azure.microsoft.com(/zh-cn)?/documentation/articles/ = /documentation/articles/
 
+# ## 1\. = ## 1.
 ([\#]+)([\s]*)([0-9]+)\\\. = \1\2\3.
 
-(\*\*[^\*]*)\\_([^\*]*\*\*) = \1_\2
+# **XXX\_XXX** = **XXX_XXX**
+(\*+[^\*]*)\\_([^\*]*\*+) = \1_\2
