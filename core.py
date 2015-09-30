@@ -44,7 +44,7 @@ class Core:
                 result = self.multiple_replace(pRuleDict, text.read())
                 # print(result)
             # Write result into Archive/mdFile
-            with open(mdFile+'.bak', 'w') as bakFile:
+            with open('output/'+mdFile, 'w') as bakFile:
                 bakFile.write(result)
                 print('\033[1;33m '+ mdFile+'\033[0m \033 customize success, the result file is: \033[1;32m'+ mdFile+'.bak\033[0m\n')
 

@@ -42,9 +42,15 @@
     </Interpreter>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="output\" />
+    <Folder Include="output\include\" />
+    <Folder Include="output\test\" />
     <Folder Include="test\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="mdFile.md" />
+    <Content Include="output\test\active-directory-aadconnect-account-summary.md" />
+    <Content Include="output\test\keyword_test.md" />
     <Content Include="rules.md" />
     <Content Include="test\active-directory-aadconnect-account-summary.md" />
     <Content Include="test\active-directory-aadconnect-account-summary.md.bak" />

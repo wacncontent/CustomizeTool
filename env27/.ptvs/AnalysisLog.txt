@@ -1021,3 +1021,13 @@ C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\IDE\Extensions\Micro
 2015-09-08T14:55:34: Saving group "C:\Users\Administrator\Documents\GitHub\CustomizeTool\env27\Lib\site-packages\_markerlib"
 2015-09-08T14:55:34: End of group "C:\Users\Administrator\Documents\GitHub\CustomizeTool\env27\Lib\site-packages\_markerlib"
 2015-09-08T14:55:34: Deleting 0 files
+
+2015-09-28T14:40:59: Start analysis
+2015-09-28T14:40:59: [WARNING] Library was set explicitly - skipping path detection
+2015-09-28T14:40:59: IncludeModulesFromModulePath = win32com
+2015-09-28T14:40:59: Deleting 0 files
+
+2015-09-29T11:48:32: Start analysis
+2015-09-29T11:48:32: [WARNING] Library was set explicitly - skipping path detection
+2015-09-29T11:48:32: IncludeModulesFromModulePath = win32com
+2015-09-29T11:48:32: Deleting 0 files
