@@ -18,7 +18,6 @@ azure-mobile.net = 	azure-mobile.net
 http://portal.microsoftonline.com = 	https://portal.partner.microsoftonline.cn
 azure.net = 	???
 http://en.wikipedia.org = 	http://zh.wikipedia.org
-SQL Database = 	SQL Êý¾Ý¿â
 Microsoft Azure = 	Windows Azure
 http://azure.microsoft.com/services/active-directory/ = 	/home/features/identity/
 /documentation/services/active-directory = /documentation/services/identity
