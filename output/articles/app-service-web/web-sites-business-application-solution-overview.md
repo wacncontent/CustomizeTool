@@ -97,7 +97,7 @@ In the **Standard** tier, monitor app responsiveness receive email notifications
 [Git]: web-sites-publish-source-control
 
 [HTTPS]: web-sites-configure-ssl-certificate
-[Azure Websites Pricing Details]: /home/features/web-site/#price#ssl-connections
+[Azure Websites Pricing Details]: home/features/web-site/#price#ssl-connections
 [Authenticate users]: web-sites-authentication-authorization
 [Easy Auth]:/blog/2014/11/13/azure-websites-authentication-authorization/
 [Authorize users]: web-sites-authentication-authorization
@@ -110,8 +110,8 @@ In the **Standard** tier, monitor app responsiveness receive email notifications
 
 [scale up and out]: web-sites-scale
 [Azure Management Portal]: http://manage.windowsazure.cn/
-[Service Management API]: http://msdn.microsoft.com/zh-cn/library/windowsazure/ee460799.aspx
-[PowerShell scripting]: http://msdn.microsoft.com/zh-cn/library/windowsazure/jj152841.aspx
+[Service Management API]: http://msdn.microsoft.com/zh-cn/zh-cn/library/azure/ee460799.aspx
+[PowerShell scripting]: http://msdn.microsoft.com/zh-cn/zh-cn/library/azure/jj152841.aspx
 [Troy Hunt]: https://twitter.com/troyhunt
 [10 things I learned about rapidly scaling web apps with Azure]: http://www.troyhunt.com/2014/09/10-things-i-learned-about-rapidly.html
 [Azure Redis Cache]:/blog/2014/06/05/mvc-movie-app-with-azure-redis-cache-in-15-minutes/
@@ -121,6 +121,6 @@ In the **Standard** tier, monitor app responsiveness receive email notifications
 [quick glance]: web-sites-monitor
 [Azure Application Insights]: http://blogs.msdn.com/b/visualstudioalm/archive/2015/01/07/application-insights-and-azure-websites.aspx
 [New Relic]: store-new-relic-cloud-services-dotnet-application-performance-management
-[How to: Receive Alert Notifications and Manage Alert Rules in Azure]: http://msdn.microsoft.com/zh-cn/library/windowsazure/dn306638.aspx
+[How to: Receive Alert Notifications and Manage Alert Rules in Azure]: http://msdn.microsoft.com/zh-cn/zh-cn/library/azure/dn306638.aspx
 
  

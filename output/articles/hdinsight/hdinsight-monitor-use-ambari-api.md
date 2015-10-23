@@ -35,7 +35,7 @@ HDInsight currently supports only the Ambari monitoring feature. Ambari API 1.0 
 
 Before you begin this tutorial, you must have the following:
 
-- **A workstation with Azure PowerShell**. See [Install and use Azure PowerShell](install-configure-powershell).
+- **A workstation with Azure PowerShell**. See [Install and use Azure PowerShell](/documentation/articles/install-configure-powershell).
 
 
 - (Optional) [cURL][curl]. To install it, see [cURL Releases and Downloads][curl-download].

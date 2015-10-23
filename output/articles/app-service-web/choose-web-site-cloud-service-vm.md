@@ -50,7 +50,7 @@ Here are some common application scenarios with recommendations as to which Azur
 
 ### <a id="onprem"></a> I need a web front end with background processing and database backend to run business applications integrated with on premise assets.
 
-Azure Websites is a great solution for complex business applications. It lets you develop apps that scale automatically on a load balanced platform, are secured with Active Directory, and connect to your on-premises resources. It makes managing those apps easy through a world-class management portal and APIs, and allows you to gain insight into how customers are using them with app insight tools. The [Webjobs][] feature lets you run background processes and tasks as part of your web tier, while hybrid connectivity and [VNET features](fundamentals-introduction-to-azure#networking/) make it easy to connect back to on-premises resources. Azure Websites provides three 9's SLA for web apps and enables you to:
+Azure Websites is a great solution for complex business applications. It lets you develop apps that scale automatically on a load balanced platform, are secured with Active Directory, and connect to your on-premises resources. It makes managing those apps easy through a world-class management portal and APIs, and allows you to gain insight into how customers are using them with app insight tools. The [Webjobs][] feature lets you run background processes and tasks as part of your web tier, while hybrid connectivity and [VNET features](fundamentals-introduction-to-azure#networking) make it easy to connect back to on-premises resources. Azure Websites provides three 9's SLA for web apps and enables you to:
 
 * Run your applications reliably on a self-healing, auto-patching cloud platform.
 * Scale automatically across a global network of datacenters.
@@ -161,8 +161,8 @@ Support for SSL|X|X|X|For Azure Websites web apps, SSL for custom domain names i
 Visual Studio integration|X|X|X|
 Remote Debugging|X|X|X|
 Deploy code with TFS|X|X|X|
-Network isolation with [Azure Virtual Network](networking)|X|X|X|See also [Azure Websites Virtual Network Integration](../blog/2014/09/15/azure-websites-virtual-network-integration/)
-Support for [Azure Traffic Manager](traffic-manager)|X|X|X|
+Network isolation with [Azure Virtual Network](/home/features/networking/)|X|X|X|See also [Azure Websites Virtual Network Integration](../blog/2014/09/15/azure-websites-virtual-network-integration/)
+Support for [Azure Traffic Manager](/home/features/traffic-manager/)|X|X|X|
 Integrated Endpoint Monitoring|X|X|X|
 Remote desktop access to servers||X|X|
 Install any custom MSI||X|X|
@@ -192,15 +192,15 @@ To get started with the option(s) you choose for your application, see the follo
   [Cloud Services]: /documentation/services/cloud-services/
   [Virtual Machines]: /documentation/services/virtual-machines/
   [ClearDB]: http://www.cleardb.com/
-  [WebJobs](websites-webjobs-resources)
-  [Configuring an SSL certificate for an Azure Website]: http://azure.microsoft.com/documentation/articles/web-sites-configure-ssl-certificate/
+  [WebJobs]: websites-webjobs-resources
+  [Configuring an SSL certificate for an Azure Website]: /documentation/articles/web-sites-configure-ssl-certificate/
   [azurestore]: http://azure.microsoft.com/gallery/store/
   [scripting]: http://azure.microsoft.com/documentation/scripts/?services=web-sites
-  [dotnet]: http://azure.microsoft.com/develop/net/
-  [nodejs]: http://azure.microsoft.com/develop/nodejs/
-  [PHP]: http://azure.microsoft.com/develop/php/
-  [Python]: http://azure.microsoft.com/develop/python/
-  [servicebus]: http://azure.microsoft.com/documentation/services/service-bus/
-  [sqldatabase]: http://azure.microsoft.com/documentation/services/sql-database/
-  [Storage]: http://azure.microsoft.com/documentation/services/storage/
+  [dotnet]: /develop/net/
+  [nodejs]: /develop/nodejs/
+  [PHP]: /develop/php/
+  [Python]: /develop/python/
+  [servicebus]: /documentation/services/service-bus/
+  [sqldatabase]: /documentation/services/sql-database/
+  [Storage]: /documentation/services/storage/
  

@@ -92,10 +92,10 @@ After creating your web app and ASP it is a good idea to scale it up.  In an ASE
 [5]: ./media/app-service-web-how-to-create-a-web-app-in-an-ase/selectaspinase.png
 
 <!--Links-->
-[WhatisASE](app-service-app-service-environment-intro)
-[Appserviceplans](azure-web-sites-web-hosting-plans-in-depth-overview)
-[HowtoCreateASE](app-service-web-how-to-create-an-app-service-environment)
-[HowtoScale](app-service-web-scale-a-web-app-in-an-app-service-environment)
-[HowtoConfigureASE](app-service-web-configure-an-app-service-environment)
-[ResourceGroups](resource-group-portal)
-[AzurePowershell](powershell-install-configure)
+[WhatisASE]: /documentation/articles/app-service-app-service-environment-intro/
+[Appserviceplans]: /documentation/articles/azure-web-sites-web-hosting-plans-in-depth-overview/
+[HowtoCreateASE]: /documentation/articles/app-service-web-how-to-create-an-app-service-environment/
+[HowtoScale]: /documentation/articles/app-service-web-scale-a-web-app-in-an-app-service-environment
+[HowtoConfigureASE]: /documentation/articles/app-service-web-configure-an-app-service-environment
+[ResourceGroups]: /documentation/articles/resource-group-portal/
+[AzurePowershell]: /documentation/articles/powershell-install-configure/

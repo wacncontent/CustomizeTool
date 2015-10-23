@@ -78,8 +78,8 @@ Details on using user defined routes to grant outbound Internet access to Azure 
 
 <!-- LINKS -->
 [virtualnetwork]: http://azure.microsoft.com/services/networking/
-[controllinginboundtraffic](app-service-app-service-environment-control-inbound-traffic)
-[ExpressRoute](app-service-app-service-environment-network-configuration-expressroute)
+[controllinginboundtraffic]: /documentation/articles/app-service-app-service-environment-control-inbound-traffic/
+[ExpressRoute]: /documentation/articles/app-service-app-service-environment-network-configuration-expressroute/
 
 <!-- IMAGES -->
 [GeneralNetworkFlows]: ./media/app-service-app-service-environment-network-architecture-overview/NetworkOverview-1.png

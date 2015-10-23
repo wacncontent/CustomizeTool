@@ -32,7 +32,7 @@ Learn how to use Azure PowerShell to submit MapReduce and Hive jobs, and how to 
 Before you begin this article, you must have the following:
 
 * **An Azure HDInsight cluster**. For instructions, see [Get started with HDInsight][hdinsight-get-started] or [Create Hadoop clusters in HDInsight][hdinsight-provision].
-- **A workstation with Azure PowerShell**. See [Install and use Azure PowerShell](install-configure-powershell).
+- **A workstation with Azure PowerShell**. See [Install and use Azure PowerShell](/documentation/articles/install-configure-powershell).
 
 
 
@@ -563,7 +563,7 @@ In this article, you have learned several ways to create an HDInsight cluster. T
 * [Use Pig with HDInsight][hdinsight-use-pig]
 
 
-[azure-certificate]: http://msdn.microsoft.com/zh-cn/library/windowsazure/gg551722.aspx
+[azure-certificate]: http://msdn.microsoft.com/zh-cn/zh-cn/library/azure/gg551722.aspx
 [azure-management-portal]: https://manage.windowsazure.cn/
 
 [hdinsight-visual-studio-tools]: hdinsight-hadoop-visual-studio-tools-get-started

@@ -31,7 +31,7 @@ To complete the steps in this article, you will need the following.
 
 - **An Azure subscription**. See [Get Azure trial](/pricing/1rmb-trial/).
 
-- **A workstation with Azure PowerShell**. See [Install and use Azure PowerShell](install-configure-powershell).
+- **A workstation with Azure PowerShell**. See [Install and use Azure PowerShell](/documentation/articles/install-configure-powershell).
 
 
 ##<a id="powershell"></a>Run Pig jobs using PowerShell

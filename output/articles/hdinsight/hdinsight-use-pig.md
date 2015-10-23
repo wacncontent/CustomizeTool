@@ -137,7 +137,7 @@ Now that you have learned how to use Pig with HDInsight, use the following links
 
 [Powershell-install-configure]: install-configure-powershell
 
-[powershell-start]: http://technet.microsoft.com/zh-cn/library/hh847889.aspx
+[powershell-start]: http:/technet.microsoft.com/zh-cn/library/hh847889.aspx
 
 [image-hdi-log4j-sample]: ./media/hdinsight-use-pig/HDI.wholesamplefile.png
 [image-hdi-pig-data-transformation]: ./media/hdinsight-use-pig/HDI.DataTransformation.gif

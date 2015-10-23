@@ -17,7 +17,7 @@ A new insert script is registered that generates an SAS when a new Todo item is 
 
 	The storage account access key is stored encrypted in app settings. You can access this key from any server script at runtime. For more information, see [App settings].
 
-4. In the Configure tab, make sure that [Dynamic schema](http://msdn.microsoft.com/zh-cn/library/windowsazure/b6bb7d2d-35ae-47eb-a03f-6ee393e170f7) is enabled. You need dynamic schema enabled to be able to add new columns to the TodoItem table. Dynamic schema should not be enabled in any production service.
+4. In the Configure tab, make sure that [Dynamic schema](http://msdn.microsoft.com/zh-cn/zh-cn/library/azure/b6bb7d2d-35ae-47eb-a03f-6ee393e170f7) is enabled. You need dynamic schema enabled to be able to add new columns to the TodoItem table. Dynamic schema should not be enabled in any production service.
 
 4. Click the **Data** tab and then click the **TodoItem** table. 
 
@@ -89,4 +89,4 @@ Next, you will update the quickstart app to add image upload functionality by us
 <!-- Images. -->
 
 <!-- URLs. -->
-[App settings]: http://msdn.microsoft.com/zh-cn/library/windowsazure/b6bb7d2d-35ae-47eb-a03f-6ee393e170f7
+[App settings]: http://msdn.microsoft.com/zh-cn/zh-cn/library/azure/b6bb7d2d-35ae-47eb-a03f-6ee393e170f7

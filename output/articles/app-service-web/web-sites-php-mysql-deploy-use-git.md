@@ -299,5 +299,5 @@ For more information, see the [PHP Developer Center](/develop/php/).
 [deployments-list]: ./media/web-sites-php-mysql-deploy-use-git/php-deployments-list.png
 [connection-string-info]: ./media/web-sites-php-mysql-deploy-use-git/connection_string_info.png
 [management-portal]: https://manage.windowsazure.cn
-[sql-database-editions]: http://msdn.microsoft.com/zh-cn/library/windowsazure/ee621788.aspx
+[sql-database-editions]: http://msdn.microsoft.com/zh-cn/zh-cn/library/azure/ee621788.aspx
  

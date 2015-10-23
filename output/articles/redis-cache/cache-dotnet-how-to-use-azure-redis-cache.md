@@ -332,11 +332,11 @@ follow these links to learn how to do more complex caching tasks.
 [Develop in other languages for Azure Redis Cache]: http://msdn.microsoft.com/zh-cn/library/azure/dn690470.aspx
 [How to retrieve an Azure Redis connection string and use it with Redsmin]: https://redsmin.uservoice.com/knowledgebase/articles/485711-how-to-connect-redsmin-to-azure-redis-cache
 [Azure Redis Session State Provider]: http://go.microsoft.com/fwlink/?LinkId=398249
-[How to: Configure a Cache Client Programmatically]: http://msdn.microsoft.com/zh-cn/library/windowsazure/gg618003.aspx
+[How to: Configure a Cache Client Programmatically]: http://msdn.microsoft.com/zh-cn/zh-cn/library/azure/gg618003.aspx
 [Session State Provider for Azure Cache]: http://go.microsoft.com/fwlink/?LinkId=320835
 [Azure AppFabric Cache: Caching Session State]: http://www.microsoft.com/showcase/details.aspx?uuid=87c833e9-97a9-42b2-8bb1-7601f9b5ca20
 [Output Cache Provider for Azure Cache]: http://go.microsoft.com/fwlink/?LinkId=320837
-[Azure Shared Caching]: http://msdn.microsoft.com/zh-cn/library/windowsazure/gg278356.aspx
+[Azure Shared Caching]: http://msdn.microsoft.com/zh-cn/zh-cn/library/azure/gg278356.aspx
 [Team Blog]: http://blogs.msdn.com/b/windowsazure/
 [Azure Caching]: http://www.microsoft.com/showcase/Search.aspx?phrase=azure+caching
 [How to Configure Virtual Machine Sizes]: http://go.microsoft.com/fwlink/?LinkId=164387
@@ -360,7 +360,7 @@ follow these links to learn how to do more complex caching tasks.
 
 [Migrate to Azure Redis Cache]: http://go.microsoft.com/fwlink/?LinkId=317347
 [Azure Redis Cache Samples]: http://go.microsoft.com/fwlink/?LinkId=320840
-[Using Resource groups to manage your Azure resources](resource-group-overview)
+[Using Resource groups to manage your Azure resources]: /documentation/articles/resource-group-overview/
 
 [StackExchange.Redis]: http://github.com/StackExchange/StackExchange.Redis
 [StackExchange.Redis cache client documentation]: http://github.com/StackExchange/StackExchange.Redis#documentation
@@ -371,4 +371,4 @@ follow these links to learn how to do more complex caching tasks.
 
 [How Application Strings and Connection Strings Work]: http://azure.microsoft.com/blog/2013/07/17/windows-azure-web-sites-how-application-strings-and-connection-strings-work/
 
-[Azure Trial]: http://azure.microsoft.com/pricing/1rmb-trial/?WT.mc_id=redis_cache_hero
+[Azure Trial]: /pricing/1rmb-trial/?WT.mc_id=redis_cache_hero

@@ -39,7 +39,7 @@ For Sqoop versions that are supported on HDInsight clusters, see [What's new in 
 
 Before you begin this tutorial, you must have the following:
 
-- **A workstation with Azure PowerShell**. See [Install and use Azure PowerShell](install-configure-powershell).
+- **A workstation with Azure PowerShell**. See [Install and use Azure PowerShell](/documentation/articles/install-configure-powershell).
  To execute Azure PowerShell scripts, you must run Azure PowerShell as an administrator and set the execution policy to *RemoteSigned*. See [Run Windows PowerShell scripts][powershell-script].
 
 - **Azure HDInsight cluster**: For instructions about cluster provision, see [Get started using HDInsight][hdinsight-get-started] or [Provision HDInsight clusters][hdinsight-provision]. You need the following data to go through the tutorial:
@@ -69,7 +69,7 @@ Before you begin this tutorial, you must have the following:
 	
 		> [AZURE.NOTE] HDInsight supports only location-based virtual networks, and it does not currently work with affinity group-based virtual networks.
 	
-		* To create and configure a virtual network, see [Virtual Network Configuration Tasks](virtual-machines).
+		* To create and configure a virtual network, see [Virtual Network Configuration Tasks](/home/features/virtual-machines/).
 	
 			* When you are using SQL Server in your datacenter, you must configure the virtual network as *site-to-site* or *point-to-site*.
 	

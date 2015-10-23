@@ -42,7 +42,7 @@ Mahout is a [machine learning][ml] library for Apache Hadoop. Mahout contains al
 
 * **An Windows-based Hadoop cluster in HDInsight**. For information about creating one, see [Get started using Hadoop in HDInsight][getstarted]
 
-- **A workstation with Azure PowerShell**. See [Install and use Azure PowerShell](install-configure-powershell).
+- **A workstation with Azure PowerShell**. See [Install and use Azure PowerShell](/documentation/articles/install-configure-powershell).
 
 
 ##<a name="recommendations"></a>Generate recommendations by using Windows PowerShell

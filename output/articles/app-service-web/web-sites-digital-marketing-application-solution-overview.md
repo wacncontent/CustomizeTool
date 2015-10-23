@@ -108,7 +108,7 @@ In the **Standard** tier, monitor app responsiveness receive email notifications
 [Git]: web-sites-publish-source-control
 
 [deploying to a staging slot]: web-sites-staged-publishing 
-[continuously publish]: http://rickrainey.com/2014/01/21/continuous-deployment-github-with-azure-web-sites-and-staged-publishing/
+[continuously publish]: http:/rickrainey.com/2014/01/21/continuous-deployment-github-with-azure-web-sites-and-staged-publishing/
 [run A/B tests]: http://blogs.msdn.com/b/tomholl/archive/2014/11/10/a-b-testing-with-azure-websites.aspx
 
 [Create an ASP.NET MVC app with auth and SQL DB and deploy to Azure Websites]: web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database
@@ -124,18 +124,18 @@ In the **Standard** tier, monitor app responsiveness receive email notifications
 
 [scale up and out]:/manage/services/web-sites/how-to-scale-websites/
 [Azure Management Portal]: http://manage.windowsazure.cn/
-[Service Management API]: http://msdn.microsoft.com/zh-cn/library/windowsazure/ee460799.aspx
-[PowerShell scripting]: http://msdn.microsoft.com/zh-cn/library/windowsazure/jj152841.aspx
+[Service Management API]: http://msdn.microsoft.com/zh-cn/zh-cn/library/azure/ee460799.aspx
+[PowerShell scripting]: http://msdn.microsoft.com/zh-cn/zh-cn/library/azure/jj152841.aspx
 [Troy Hunt]: https://twitter.com/troyhunt
 [10 things I learned about rapidly scaling web apps with Azure]: http://www.troyhunt.com/2014/09/10-things-i-learned-about-rapidly.html
 [Azure Redis Cache]:/blog/2014/06/05/mvc-movie-app-with-azure-redis-cache-in-15-minutes/
 [ASP.NET session state]: https://msdn.microsoft.com/zh-cn/library/azure/dn690522.aspx
 [output cache]: https://msdn.microsoft.com/zh-cn/library/azure/dn798898.aspx
 
-[quick glance](web-sites-monitor)
+[quick glance]: web-sites-monitor
 [Azure Application Insights]: http://blogs.msdn.com/b/visualstudioalm/archive/2015/01/07/application-insights-and-azure-websites.aspx
 [New Relic]:/develop/net/how-to-guides/new-relic/
-[How to: Receive Alert Notifications and Manage Alert Rules in Azure]: http://msdn.microsoft.com/zh-cn/library/windowsazure/dn306638.aspx
+[How to: Receive Alert Notifications and Manage Alert Rules in Azure]: http://msdn.microsoft.com/zh-cn/zh-cn/library/azure/dn306638.aspx
 
   
   [gitstaging]: http://www.bradygaster.com/post/multiple-environments-with-windows-azure-web-sites  

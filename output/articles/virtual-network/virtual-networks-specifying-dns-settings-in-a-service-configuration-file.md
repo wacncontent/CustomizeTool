@@ -33,7 +33,7 @@ A service configuration file may contain a DnsServers element with a list of IPv
 
 ## See Also
 
-[Azure Service Configuration Schema (.cscfg)](https://msdn.microsoft.com/zh-cn/library/windowsazure/ee758710)
+[Azure Service Configuration Schema (.cscfg)](https://msdn.microsoft.com/zh-cn/zh-cn/library/azure/ee758710)
 
 [Azure Virtual Network Configuration Schema](https://msdn.microsoft.com/zh-cn/library/azure/jj157100)
 

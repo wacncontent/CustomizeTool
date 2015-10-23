@@ -142,7 +142,7 @@ For more information about the Azure Websites platform, see [Azure Websites][Azu
 [4]: ./media/app-service-web-how-to-create-an-app-service-environment/createaseappserviceplan.png
 
 <!--Links-->
-[WhatisASE](app-service-app-service-environment-intro)
-[ASEConfig](app-service-web-configure-an-app-service-environment)
+[WhatisASE]: /documentation/articles/app-service-app-service-environment-intro/
+[ASEConfig]: /documentation/articles/app-service-web-configure-an-app-service-environment/
 [AppServicePricing]: http://azure.microsoft.com/home/features/web-site/#price 
-[AzureAppService](app-service-value-prop-what-is) 
+[AzureAppService]: /documentation/articles/app-service-value-prop-what-is/ 

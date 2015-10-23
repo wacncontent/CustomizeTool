@@ -49,7 +49,7 @@ The other samples that are available to help you get up to speed in using HDInsi
 
 - **An Azure subscription**. See [Get Azure trial](/pricing/1rmb-trial/).
 - **an HDInsight cluster**. For instructions on the various ways in which such clusters can be created, see [Provision HDInsight Clusters](hdinsight-provision-clusters).
-- **A workstation with Azure PowerShell**. See [Install and use Azure PowerShell](install-configure-powershell).
+- **A workstation with Azure PowerShell**. See [Install and use Azure PowerShell](/documentation/articles/install-configure-powershell).
 
 
 

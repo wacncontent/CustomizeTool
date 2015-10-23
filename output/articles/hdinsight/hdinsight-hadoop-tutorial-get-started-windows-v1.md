@@ -246,7 +246,7 @@ In this Hadoop tutorial, you learned how to provision a Hadoop cluster on Window
 
 [azure-purchase-options]: /pricing/overview/
 [azure-member-offers]: http://azure.microsoft.com/pricing/member-offers/
-[azure-trial]: http://azure.microsoft.com/pricing/1rmb-trial/
+[azure-trial]: /pricing/1rmb-trial/
 [azure-management-portal]: https://manage.windowsazure.cn/
 [azure-create-storageaccount]: storage-create-storage-account
 
@@ -262,7 +262,7 @@ In this Hadoop tutorial, you learned how to provision a Hadoop cluster on Window
 [powershell-open]: install-configure-powershell#Install
 
 
-[img-hdi-dashboard]: ./media/hdinsight-hadoop-tutorial-get-started-windows-v1/HDI.dashboard.png
+[img-hdi-dashboard]: .media/hdinsight-hadoop-tutorial-get-started-windows-v1/HDI.dashboard.png
 [img-hdi-dashboard-query-select]: ./media/hdinsight-hadoop-tutorial-get-started-windows-v1/HDI.dashboard.query.select.png
 [img-hdi-dashboard-query-select-result]: ./media/hdinsight-hadoop-tutorial-get-started-windows-v1/HDI.dashboard.query.select.result.png
 [img-hdi-dashboard-query-select-result-output]: ./media/hdinsight-hadoop-tutorial-get-started-windows-v1/HDI.dashboard.query.select.result.output.png

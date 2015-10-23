@@ -177,7 +177,7 @@ See [Customize HDInsight clusters using Script Action](hdinsight-hadoop-customiz
 
 
 [tools]: https://github.com/Blackmist/hdinsight-tools
-[aps](install-configure-powershell)
+[aps]: /documentation/articles/install-configure-powershell/
 
 [powershell-install]: powershell-install-configure
 [hdinsight-provision]: hdinsight-provision-clusters

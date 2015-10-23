@@ -25,7 +25,7 @@
 
 This tutorial walks you through the steps of implementing a basic Video-on-Demand (VoD) content delivery application using the Azure Management Portal.
 
-> [AZURE.NOTE] To complete this tutorial, you need an Azure account. If you don't have an account, you can create a trial account in just a couple of minutes. For details, see <a href="http://azure.microsoft.com/pricing/1rmb-trial/?WT.mc_id=A8A8397B5" target="_blank">Azure Trial</a>.
+> [AZURE.NOTE] To complete this tutorial, you need an Azure account. If you don't have an account, you can create a trial account in just a couple of minutes. For details, see <a href="/pricing/1rmb-trial/?WT.mc_id=A8A8397B5" target="_blank">Azure Trial</a>.
 
 This tutorial includes the following tasks:
 

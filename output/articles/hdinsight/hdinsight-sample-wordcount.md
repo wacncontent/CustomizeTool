@@ -37,7 +37,7 @@ The program are installed on the clusters. The text file analyzed in this tutori
 **Prerequisites**:
 
 - **An HDInsight cluster**. For instructions about the various ways in which such clusters can be created, see [Get Started with Azure HDInsight][hdinsight-get-started] or [Provision HDInsight Clusters](hdinsight-provision-clusters).
-- **A workstation with Azure PowerShell**. See [Install and use Azure PowerShell](install-configure-powershell).
+- **A workstation with Azure PowerShell**. See [Install and use Azure PowerShell](/documentation/articles/install-configure-powershell).
 
 ## Run the sample by using Azure PowerShell
 

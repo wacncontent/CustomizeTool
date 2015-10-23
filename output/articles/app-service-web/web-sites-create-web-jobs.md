@@ -184,7 +184,7 @@ For more information, see [Azure WebJobs Recommended Resources][WebJobsRecommend
 * For a guide to the change of the Management Portal to the new portal see: [Reference for navigating the preview portal](https://manage.windowsazure.cn/)
 
 [PSonWebJobs]: http://blogs.msdn.com/b/nicktrog/archive/2014/01/22/running-powershell-web-jobs-on-azure-websites.aspx
-[WebJobsRecommendedResources](websites-webjobs-resources)
+[WebJobsRecommendedResources]: websites-webjobs-resources
 
 [OnDemandWebJob]: ./media/web-sites-create-web-jobs/01aOnDemandWebJob.png
 [WebJobsList]: ./media/web-sites-create-web-jobs/02aWebJobsList.png

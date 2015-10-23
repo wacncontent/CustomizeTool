@@ -51,4 +51,4 @@ The network configuration file may contain the following elements. The title of 
 
 [Azure Virtual Network Configuration Schema](https://msdn.microsoft.com/zh-cn/library/azure/jj157100)
 
-[Azure Service Configuration Schema](https://msdn.microsoft.com/zh-cn/library/windowsazure/ee758710)
+[Azure Service Configuration Schema](https://msdn.microsoft.com/zh-cn/zh-cn/library/azure/ee758710)

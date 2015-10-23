@@ -29,7 +29,7 @@
 This articles shows you how to use PowerShell cmdlets to manage Azure Media Services accounts.
 
 >[AZURE.NOTE]
-> To complete this tutorial, you need an Azure account. If you don't have an account, you can create a trial account in just a couple of minutes. For details, see <a href="http://azure.microsoft.com/pricing/1rmb-trial/?WT.mc_id=A8A8397B5" target="_blank">Azure Trial</a>.
+> To complete this tutorial, you need an Azure account. If you don't have an account, you can create a trial account in just a couple of minutes. For details, see <a href="/pricing/1rmb-trial/?WT.mc_id=A8A8397B5" target="_blank">Azure Trial</a>.
 
 ##Install Windows Azure PowerShell Cmdlets
 

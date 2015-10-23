@@ -34,7 +34,7 @@ In this tutorial, you will learn how to use the HDInsight Tools for Visual Studi
 
 * An <a href="/documentation/articles/service-bus-event-hubs-csharp-ephcs-getstarted" target="_blank">Azure Event Hub</a>
 
-* The <a href="http://azure.microsoft.com/downloads/" target="_blank">Azure .NET SDK</a>
+* The <a href="/downloads/" target="_blank">Azure .NET SDK</a>
 
 * The <a href="/documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started" target="_blank">HDInsight Tools for Visual Studio</a> (the 2/17/2015 version or later)
 

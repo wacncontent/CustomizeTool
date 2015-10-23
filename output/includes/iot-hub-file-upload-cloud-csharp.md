@@ -43,7 +43,7 @@ In this section, you'll modify the **SendCloudtoDevice** console app you created
             return blob.Uri + sasBlobToken;
         }
 
-    This method creates a new blob reference and generates a shared access signature URI as described in [Create and Use a SAS with the Blob Service](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-2/). Note that the method above generates a signature URI that is valid for 24 hours. If the target device needs more time to upload the file (e.g. it connects infrequently, it has unreliable connectivity to upload a large file), you might consider longer expiration times for the signatures.
+    This method creates a new blob reference and generates a shared access signature URI as described in [Create and Use a SAS with the Blob Service](/documentation/articles/storage-dotnet-shared-access-signature-part-2/). Note that the method above generates a signature URI that is valid for 24 hours. If the target device needs more time to upload the file (e.g. it connects infrequently, it has unreliable connectivity to upload a large file), you might consider longer expiration times for the signatures.
 
 5. Modify the **SendCloudToDeviceMessageAsync** in the following way:
 
@@ -61,10 +61,10 @@ In this section, you'll modify the **SendCloudtoDevice** console app you created
 
 <!-- Links -->
 
-[About Azure Storage]: https://azure.microsoft.com/documentation/articles/storage-create-storage-account/#create-a-storage-account
+[About Azure Storage]: /documentation/articles/storage-create-storage-account/#create-a-storage-account
 
 [IoT Hub Developer Guide - C2D]: iot-hub-devguide#c2d
-[Azure IoT - Service SDK NuGet package]: https://www.nuget.org/packages/Microsoft.Azure.Devices/
+[Azure IoT - Service SDK NuGet package]: https:/www.nuget.org/packages/Microsoft.Azure.Devices/
 [Transient Fault Handling]: https://msdn.microsoft.com/zh-cn/library/hh680901(v=pandp.50).aspx
 [Get started with IoT Hub]: iot-hub-csharp-csharp-getstarted
 

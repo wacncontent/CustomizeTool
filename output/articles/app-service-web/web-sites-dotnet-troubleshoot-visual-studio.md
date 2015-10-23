@@ -766,7 +766,7 @@ The Microsoft TechNet website includes a [Using Failed Request Tracing](http://w
 
 ### Debugging Cloud Services
 
-If you want to debug an Azure Cloud Service rather than a web app, see [Debugging Cloud Services](http://msdn.microsoft.com/zh-cn/library/windowsazure/ee405479.aspx).
+If you want to debug an Azure Cloud Service rather than a web app, see [Debugging Cloud Services](http://msdn.microsoft.com/zh-cn/zh-cn/library/azure/ee405479.aspx).
 
 ## What's changed
 * For a guide to the change from Websites to Azure Websites see: [Azure Websites and Its Impact on Existing Azure Services](/documentation/services/web-sites/)

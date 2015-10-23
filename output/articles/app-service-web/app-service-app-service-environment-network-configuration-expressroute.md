@@ -112,16 +112,16 @@ For more information about the Azure Websites platform, see [Azure Websites][Azu
 <!-- LINKS -->
 [virtualnetwork]: http://azure.microsoft.com/services/networking/
 [ExpressRoute]: http://azure.microsoft.com/services/expressroute/
-[requiredports](app-service-app-service-environment-control-inbound-traffic)
-[NetworkSecurityGroups](virtual-networks-nsg)
-[UDROverview](virtual-networks-udr-overview)
-[UDRHowTo](virtual-networks-udr-how-to)
-[HowToCreateAnAppServiceEnvironment](app-service-web-how-to-create-an-app-service-environment)
-[AzureDownloads]: http://azure.microsoft.com/en-us/downloads/ 
+[requiredports]: /documentation/articles/app-service-app-service-environment-control-inbound-traffic/
+[NetworkSecurityGroups]: /documentation/articles/virtual-networks-nsg/
+[UDROverview]: /documentation/articles/virtual-networks-udr-overview/
+[UDRHowTo]: /documentation/articles/virtual-networks-udr-how-to/
+[HowToCreateAnAppServiceEnvironment]: /documentation/articles/app-service-web-how-to-create-an-app-service-environment/
+[AzureDownloads]: /downloads/ 
 [DownloadCenterAddressRanges]: http://www.microsoft.com/download/details.aspx?id=41653  
-[NetworkSecurityGroups](virtual-networks-nsg)
-[AzureAppService](app-service-value-prop-what-is)
-[IntroToAppServiceEnvironment](app-service-app-service-environment-intro)
+[NetworkSecurityGroups]: /documentation/articles/virtual-networks-nsg/
+[AzureAppService]: /documentation/articles/app-service-value-prop-what-is/
+[IntroToAppServiceEnvironment]: /documentation/articles/app-service-app-service-environment-intro/
  
 
 <!-- IMAGES -->

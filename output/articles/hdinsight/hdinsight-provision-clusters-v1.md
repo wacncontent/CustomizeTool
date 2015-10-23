@@ -215,7 +215,7 @@ You can install additional components or customize cluster configuration by usin
 
 ### Use Azure virtual networks
 
-[Azure Virtual Network](/documentation/services/virtual-network/) allows you to create a secure, persistent network containing the resources you need for your solution. A virtual network allows you to:
+[Azure Virtual Network](/documentation/services/networking/) allows you to create a secure, persistent network containing the resources you need for your solution. A virtual network allows you to:
 
 * Connect cloud resources together in a private network (cloud-only).
 
@@ -233,7 +233,7 @@ You can install additional components or customize cluster configuration by usin
 
 For more information on Virtual Network features, benefits, and capabilities, see the [Azure Virtual Network overview](virtual-networks-overview).
 
-> [AZURE.NOTE] You must create the Azure virtual network before provisioning an HDInsight cluster. For more information, see [Virtual Network configuration tasks](virtual-machines).
+> [AZURE.NOTE] You must create the Azure virtual network before provisioning an HDInsight cluster. For more information, see [Virtual Network configuration tasks](/home/features/virtual-machines/).
 >
 > Azure HDInsight only supports location-based Virtual Networks, and does not currently work with Affinity Group-based Virtual Networks. Use Azure PowerShell cmdlet Get-AzureVNetConfig to check whether an existing Azure virtual network is location-based. If your virtual network is not location-based, you have the following options:
 >
@@ -307,7 +307,7 @@ You can refer to the [basic configuration options], and the [advanced configurat
 ### Use Azure PowerShell
 Azure PowerShell is a powerful scripting environment that you can use to control and automate the deployment and management of your workloads in Azure. This section provides instructions on how to provision an HDInsight cluster by using Azure PowerShell. For information on configuring a workstation to run HDInsight Windows PowerShell cmdlets, see [Install and configure Azure PowerShell](install-configure-powershell). For more information on using Azure PowerShell with HDInsight, see [Administer HDInsight using PowerShell](hdinsight-administer-use-powershell). For the list of the HDInsight Windows PowerShell cmdlets, see [HDInsight cmdlet reference](https://msdn.microsoft.com/zh-cn/library/azure/dn858087.aspx).
 
-> [AZURE.NOTE] While the scripts in this section can be used to configure an HDInsight cluster on an Azure virtual network, they will not create an Azure virtual network. For information on creating an Azure virtual network, see [Virtual Network configuration tasks](virtual-machines).
+> [AZURE.NOTE] While the scripts in this section can be used to configure an HDInsight cluster on an Azure virtual network, they will not create an Azure virtual network. For information on creating an Azure virtual network, see [Virtual Network configuration tasks](/home/features/virtual-machines/).
 
 The following procedures are needed to provision an HDInsight cluster by using Azure PowerShell:
 
@@ -544,7 +544,7 @@ Azure CLI can be installed via NPM or Windows Installer. Microsoft recommends th
 
 **To install Azure CLI by using Windows Installer**
 
-1.	Browse to **http://azure.microsoft.com/downloads/**.
+1.	Browse to **/downloads/**.
 2.	Scroll down to the **Command line tools** section, and then click **Azure Command-Line Interface** and follow the Web Platform Installer wizard.
 
 **To download and import publish settings**

@@ -62,7 +62,7 @@ The workflow you will implement by following the instructions in this tutorial c
 
 Before you begin this tutorial, you must have the following:
 
-- **A workstation with Azure PowerShell**. See [Install and use Azure PowerShell](install-configure-powershell). To execute Windows PowerShell scripts, you must run as an administrator and set the execution policy to *RemoteSigned*. For more information, see [Run Windows PowerShell scripts][powershell-script].
+- **A workstation with Azure PowerShell**. See [Install and use Azure PowerShell](/documentation/articles/install-configure-powershell). To execute Windows PowerShell scripts, you must run as an administrator and set the execution policy to *RemoteSigned*. For more information, see [Run Windows PowerShell scripts][powershell-script].
 - **An HDInsight cluster**. For information about creating an HDInsight cluster, see [Provision Hadoop clusters in HDInsight by using custom options][hdinsight-provision] or [Get started using Hadoop with Hive in HDInsight to analyze mobile handset use][hdinsight-get-started]. You will need the following data to go through the tutorial:
 
 	<table border = "1">
@@ -611,7 +611,7 @@ In this tutorial, you learned how to define an Oozie workflow and how to run an 
 [apache-oozie-400]: http://oozie.apache.org/docs/4.0.0/
 [apache-oozie-332]: http://oozie.apache.org/docs/3.3.2/
 
-[powershell-download]: http://azure.microsoft.com/downloads/
+[powershell-download]: /downloads/
 [powershell-about-profiles]: https://technet.microsoft.com/zh-cn/library/hh847857.aspx
 [powershell-install-configure]: powershell-install-configure
 [powershell-start]: http://technet.microsoft.com/zh-cn/library/hh847889.aspx

@@ -23,7 +23,7 @@ You can connect a web app in Azure Websites to any on-premises resource that use
 > [AZURE.NOTE] The Web Apps portion of the Hybrid Connections feature is available only in the [Azure Management Portal](https://manage.windowsazure.cn/). To create a connection in BizTalk Services, see [Hybrid Connections](http://go.microsoft.com/fwlink/p/?LinkID=397274).  
 
 ## Prerequisites
-- An Azure subscription. For a free subscription, see [Azure Trial](http://azure.microsoft.com/pricing/1rmb-trial/). 
+- An Azure subscription. For a free subscription, see [Azure Trial](/pricing/1rmb-trial/). 
 
 - To use an on-premises SQL Server or SQL Server Express database with a hybrid connection, TCP/IP needs to be enabled on a static port. Using a default instance on SQL Server is recommended because it uses static port 1433. For information on installing and configuring SQL Server Express for use with hybrid connections, see [Connect to an on-premises SQL Server from an Azure web site using Hybrid Connections](http://go.microsoft.com/fwlink/?LinkID=397979).
 

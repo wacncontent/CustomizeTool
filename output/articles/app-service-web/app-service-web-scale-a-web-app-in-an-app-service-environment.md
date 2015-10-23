@@ -76,12 +76,12 @@ For more information about the Azure Websites platform, see [Azure Websites][Azu
 [3]: ./media/app-service-web-scale-a-web-app-in-an-app-service-environment/scalepool.png
 
 <!--Links-->
-[WhatisASE](app-service-app-service-environment-intro)
-[ScaleWebapp](web-sites-scale)
-[HowtoCreateASE](app-service-web-how-to-create-an-app-service-environment)
-[HowtoConfigureASE](app-service-web-configure-an-app-service-environment)
-[CreateWebappinASE](app-service-web-how-to-create-a-web-app-in-an-ase)
-[Appserviceplans](azure-web-sites-web-hosting-plans-in-depth-overview)
+[WhatisASE]: /documentation/articles/app-service-app-service-environment-intro/
+[ScaleWebapp]: /documentation/articles/web-sites-scale/
+[HowtoCreateASE]: /documentation/articles/app-service-web-how-to-create-an-app-service-environment/
+[HowtoConfigureASE]: /documentation/articles/app-service-web-configure-an-app-service-environment/
+[CreateWebappinASE]: /documentation/articles/app-service-web-how-to-create-a-web-app-in-an-ase/
+[Appserviceplans]: /documentation/articles/azure-web-sites-web-hosting-plans-in-depth-overview/
 [AppServicePricing]: http://azure.microsoft.com/home/features/web-site/#price 
-[AzureAppService](app-service-value-prop-what-is)
+[AzureAppService]: /documentation/articles/app-service-value-prop-what-is/
  

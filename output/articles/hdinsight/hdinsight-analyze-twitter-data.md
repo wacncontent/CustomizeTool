@@ -30,7 +30,7 @@ Social websites are one of the major driving forces for big-data adoption. Publi
 
 Before you begin this tutorial, you must have the following:
 
-- **A workstation** with Azure PowerShell installed and configured. See [Install and use Azure PowerShell](install-configure-powershell). To execute Windows PowerShell scripts, you must run Azure PowerShell as administrator and set the execution policy to *RemoteSigned*. See [Run Windows PowerShell scripts][powershell-script].
+- **A workstation** with Azure PowerShell installed and configured. See [Install and use Azure PowerShell](/documentation/articles/install-configure-powershell). To execute Windows PowerShell scripts, you must run Azure PowerShell as administrator and set the execution policy to *RemoteSigned*. See [Run Windows PowerShell scripts][powershell-script].
 
 	Before running Windows PowerShell scripts, make sure you are connected to your Azure subscription by using the following cmdlet:
 

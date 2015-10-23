@@ -24,7 +24,7 @@ Visit the [Virtual Network Overview](virtual-networks-overview) to see a decisio
 
 ### How do I get started?
 
-Visit [the Virtual Network documentation](/documentation/services/virtual-network/) to get started. This page has links to common configuration steps as well as information that will help you understand the things that you'll need to take into consideration when designing your virtual network.
+Visit [the Virtual Network documentation](/documentation/services/networking/) to get started. This page has links to common configuration steps as well as information that will help you understand the things that you'll need to take into consideration when designing your virtual network.
 
 ### What services can I use with VNets?
 

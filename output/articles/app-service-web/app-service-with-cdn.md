@@ -39,7 +39,7 @@ This tutorial has the following prerequisites:
 -	Visual Studio 2013 with [Azure SDK](https://www.microsoft.com/web/handlers/webpi.ashx/getinstaller/VWDOrVs2013AzurePack.appids)
 
 > [AZURE.NOTE] You need an Azure account to complete this tutorial:
-> + You can [open an Azure account for free](http://azure.microsoft.com/pricing/1rmb-trial/?WT.mc_id=A261C142F) - You get credits you can use to try out paid Azure services, and even after they're used up you can keep the account and use free Azure services, such as Web App.
+> + You can [open an Azure account for free](/pricing/1rmb-trial/?WT.mc_id=A261C142F) - You get credits you can use to try out paid Azure services, and even after they're used up you can keep the account and use free Azure services, such as Web App.
 > + You can [activate MSDN subscriber benefits](http://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F) - Your MSDN subscription gives you credits every month that you can use for paid Azure services.
 
 ## Deploy an Azure web app with an integrated CDN endpoint ##

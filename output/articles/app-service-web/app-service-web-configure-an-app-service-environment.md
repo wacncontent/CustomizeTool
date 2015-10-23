@@ -123,12 +123,12 @@ For more information about the Azure Websites platform, see [Azure Websites](app
 [4]: ./media/app-service-web-configure-an-app-service-environment/configurewebapplist.png
 
 <!--Links-->
-[WhatisASE](app-service-app-service-environment-intro)
-[Appserviceplans](azure-web-sites-web-hosting-plans-in-depth-overview)
-[HowtoCreateASE](app-service-web-how-to-create-an-app-service-environment)
-[HowtoScale](app-service-web-scale-a-web-app-in-an-app-service-environment)
-[ControlInbound](app-service-app-service-environment-control-inbound-traffic)
-[virtualnetwork](virtual-networks-faq)
+[WhatisASE]: /documentation/articles/app-service-app-service-environment-intro/
+[Appserviceplans]: /documentation/articles/azure-web-sites-web-hosting-plans-in-depth-overview/
+[HowtoCreateASE]: /documentation/articles/app-service-web-how-to-create-an-app-service-environment/
+[HowtoScale]: /documentation/articles/app-service-web-scale-a-web-app-in-an-app-service-environment/
+[ControlInbound]: /documentation/articles/app-service-app-service-environment-control-inbound-traffic/
+[virtualnetwork]: /documentation/articles/virtual-networks-faq/
 [AppServicePricing]: http://azure.microsoft.com/home/features/web-site/#price 
-[AzureAppService](app-service-value-prop-what-is)
+[AzureAppService]: /documentation/articles/app-service-value-prop-what-is/
  

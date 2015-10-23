@@ -240,7 +240,7 @@ Azure Blob storage can also be accessed using an Azure SDK from the following pr
 * Python
 * Ruby
 
-For more information on installing the Azure SDKs, see [Azure downloads](http://azure.microsoft.com/downloads/)
+For more information on installing the Azure SDKs, see [Azure downloads](/downloads/)
 
 
 ## Next steps
@@ -255,9 +255,9 @@ Now that you understand how to get data into HDInsight, read the following artic
 
 
 [azure-management-portal]: https://manage.windowsazure.cn
-[azure-powershell]: http://msdn.microsoft.com/zh-cn/library/windowsazure/jj152841.aspx
+[azure-powershell]: http://msdn.microsoft.com/zh-cn/zh-cn/library/azure/jj152841.aspx
 
-[azure-storage-client-library](storage-dotnet-how-to-use-blobs)
+[azure-storage-client-library]: storage-dotnet-how-to-use-blobs
 [azure-create-storage-account]: storage-create-storage-account
 [azure-azcopy-download]: storage-use-azcopy
 [azure-azcopy]: storage-use-azcopy

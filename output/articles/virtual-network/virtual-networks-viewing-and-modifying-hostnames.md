@@ -65,7 +65,7 @@ You can modify the host name for any virtual machine or role instance by uploadi
 
 [Name Resolution (DNS)](virtual-networks-name-resolution-for-vms-and-role-instances)
 
-[Azure Service Configuration Schema (.cscfg)](https://msdn.microsoft.com/zh-cn/library/windowsazure/ee758710.aspx)
+[Azure Service Configuration Schema (.cscfg)](https://msdn.microsoft.com/zh-cn/zh-cn/library/azure/ee758710.aspx)
 
 [Azure Virtual Network Configuration Schema)](https://msdn.microsoft.com/zh-cn/library/azure/jj157100)
 

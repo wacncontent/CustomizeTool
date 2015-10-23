@@ -109,7 +109,7 @@ Make your .COM site attractive with rich media, such as:
 [Git]: web-sites-publish-source-control
 
 [deploying to a staging slot]: web-sites-staged-publishing 
-[continuously publish]: http://rickrainey.com/2014/01/21/continuous-deployment-github-with-azure-web-sites-and-staged-publishing/
+[continuously publish]: http:/rickrainey.com/2014/01/21/continuous-deployment-github-with-azure-web-sites-and-staged-publishing/
 [run A/B tests]: http://blogs.msdn.com/b/tomholl/archive/2014/11/10/a-b-testing-with-azure-websites.aspx
 
 [custom domain]: web-sites-custom-domain-name
@@ -133,7 +133,7 @@ Make your .COM site attractive with rich media, such as:
 [quick glance]: web-sites-monitor
 [Azure Application Insights]: http://blogs.msdn.com/b/visualstudioalm/archive/2015/01/07/application-insights-and-azure-websites.aspx
 [New Relic]: store-new-relic-cloud-services-dotnet-application-performance-management
-[How to: Receive Alert Notifications and Manage Alert Rules in Azure]: http://msdn.microsoft.com/zh-cn/library/windowsazure/dn306638.aspx
+[How to: Receive Alert Notifications and Manage Alert Rules in Azure]: http://msdn.microsoft.com/zh-cn/zh-cn/library/azure/dn306638.aspx
 
 [Azure Media Services]: http://blogs.technet.com/b/cbernier/archive/2013/09/03/windows-azure-media-services-and-web-sites.aspx
 [SendGrid service in Azure Marketplace]: sendgrid-dotnet-how-to-send-email

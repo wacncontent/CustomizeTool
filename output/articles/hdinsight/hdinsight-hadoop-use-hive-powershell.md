@@ -31,7 +31,7 @@ This document provides an example of using Azure PowerShell in the Azure Resourc
 To complete the steps in this article, you will need the following.
 
 - **An Azure HDInsight (Hadoop on HDInsight) cluster (Windows-based or Linux-based)**
-- **A workstation with Azure PowerShell**. See [Install and use Azure PowerShell](install-configure-powershell).
+- **A workstation with Azure PowerShell**. See [Install and use Azure PowerShell](/documentation/articles/install-configure-powershell).
 
 ##Run Hive queries using Azure PowerShell
 

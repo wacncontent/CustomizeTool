@@ -183,29 +183,9 @@ http://aka.ms/runbookgallery = /documentation/articles/automation-runbook-galler
 ://porta.azure.com = ://manage.windowsazure.cn
 ://portal.microsoftonline.com = ://portal.partner.microsoftonline.cn
 ://technet.microsoft.com/library/ = ://technet.microsoft.com/zh-cn/library/
-https://azure.microsoft.com/services/active-directory/ = 	/home/features/identity/
-https://azure.microsoft.com/zh-cn/services/app-service/web/ = /home/features/web-site/
-https://azure.microsoft.com/(en-us/)?downloads/ = 	/downloads/
-https://azure.microsoft.com/documentation/videos/get-azure-free-trial-for-testing-hadoop-in-hdinsight/ = /pricing/1rmb-trial/
-https://azure.microsoft.com/documentation/services/ = /documentation/services/
-https://azure.microsoft.com/develop/java/ = /develop/java/
-https://azure.microsoft.com/documentation/videos/install-and-use-azure-powershell/ = /documentation/articles/install-configure-powershell
-https://azure.microsoft.com/overview/preview-portal/ = https://manage.windowsazure.cn
-http://azure.microsoft.com/services/active-directory/ = 	/home/features/identity/
-http://azure.microsoft.com/zh-cn/services/app-service/web/ = /home/features/web-site/
-http://azure.microsoft.com/(en-us/)?downloads/ = 	/downloads/
-http://azure.microsoft.com/documentation/videos/get-azure-free-trial-for-testing-hadoop-in-hdinsight/ = /pricing/1rmb-trial/
-http://azure.microsoft.com/documentation/services/ = /documentation/services/
-http://azure.microsoft.com/develop/java/ = /develop/java/
-http://azure.microsoft.com/documentation/videos/install-and-use-azure-powershell/ = /documentation/articles/install-configure-powershell
-http://azure.microsoft.com/overview/preview-portal/ = https://manage.windowsazure.cn
 /overview/preview-portal/ = https://manage.windowsazure.cn
 
-https://azure.microsoft.com/documentation/articles/ = /documentation/articles/
-http://azure.microsoft.com/documentation/articles/ = /documentation/articles/
-http://azure.microsoft.com/pricing/1rmb-trial/ = /pricing/1rmb-trial/
-/library/windowsazure/ = /zh-cn/library/azure/
-/zh-cn/library/windowsazure/ = /zh-cn/library/azure/
+
 
 
 
@@ -215,10 +195,6 @@ http://azure.microsoft.com/pricing/1rmb-trial/ = /pricing/1rmb-trial/
 ://www.microsoft.com/visualstudio/eng/2013-downloads = ://www.visualstudio.com/zh-cn/downloads/download-visual-studio-vs
 http://feedback.azure.com/forums/169385-websites = /product-feedback
 http://feedback.windowsazure.com/forums/34192--general-feedback = /product-feedback
-https://azure.microsoft.com/zh-cn/support/faq/ = /support/faq/
-https://azure.microsoft.com/support/faq/ = /support/faq/
-http://azure.microsoft.com/zh-cn/support/faq/ = /support/faq/
-http://azure.microsoft.com/support/faq/ = /support/faq/
 https://zh.wikipedia.org = 	https://en.wikipedia.org
 http://zh.wikipedia.org = 	http://en.wikipedia.org
 https://passwordreset.microsoftonline.com = 	???
@@ -238,8 +214,8 @@ http://myapps.microsoft.com = 	???
 # [1](../HDInsight/hdinsight-hadoop-visual-studio-tools-get-started)
 # [1](../HDInsight/hdinsight-hadoop-visual-studio-tools-get-started#test)
 # [link text](xxx-xxx-xxx.md#xxx-xxx)
-\[([^\[|^\]]*)\]\s*\((\.\./)?(?!includes|media)([\w|\-]+/)?(?!includes|media)([\w|\-]+/)?([\w|\-]+)(\.md)?/?\) = [\1](\5)
-\[([^\[|^\]]*)\]\s*\((\.\./)?(?!includes|media)([\w|\-]+/)?(?!includes|media)([\w|\-]+/)?([\w|\-]+)(\.md)?/?(#[^\(|^\)]*)\) = [\1](\5\7)
+\[([^\[|^\]]*)\]\s*\((\.\./)?(?!includes|media|services)([\w|\-]+/)?(?!includes|media|services)([\w|\-]+/)?([\w|\-]+)(\.md)?/?\) = [\1](\5)
+\[([^\[|^\]]*)\]\s*\((\.\./)?(?!includes|media|services)([\w|\-]+/)?(?!includes|media|services)([\w|\-]+/)?([\w|\-]+)(\.md)?/?(#[^\(|^\)|^/]*)/?\) = [\1](\5\7)
 
 # Reference like [xxxx]: xxxx
 # [link text]: xxx-xxx-xxx.md
@@ -251,24 +227,26 @@ http://myapps.microsoft.com = 	???
 # [1]: ../HDInsight/hdinsight-hadoop-visual-studio-tools-get-started
 # [1]: ../HDInsight/hdinsight-hadoop-visual-studio-tools-get-started#test
 # [link text]: xxx-xxx-xxx.md#xxx-xxx
-\[([^\[|^\]]*)\]:\s*(\.\./)?(?!includes|media)([\w|\-]+/)?(?!includes|media)([\w|\-]+/)?([\w|\-]+)(\.md)?/? = [\1]: \5
-\[([^\[|^\]]*)\]:\s*(\.\./)?(?!includes|media)([\w|\-]+/)?(?!includes|media)([\w|\-]+/)?([\w|\-]+)(\.md)?/?(#.*) = [\1]: \5\7
+\[([^\[|^\]]*)\]:\s*(\.\./)?(?!includes|media|services)([\w|\-]+/)?(?!includes|media|services)([\w|\-]+/)?([\w|\-]+)(\.md)?/? = [\1]: \5
+\[([^\[|^\]]*)\]:\s*(\.\./)?(?!includes|media|services)([\w|\-]+/)?(?!includes|media|services)([\w|\-]+/)?([\w|\-]+)(\.md)?/?(#[^/]*)/? = [\1]: \5\7
 
 # [link text](/documentation/articles/xxx-xxx-xxx.md#xxx-xxx)
 # [link text](/documentation/articles/xxx-xxx-xxx.md)
 \[([^\[|^\]]*)\]\s*\(/documentation/articles/([\w|\-]+)(\.md)?/?\) = [\1](\2)
-\[([^\[|^\]]*)\]\s*\(/documentation/articles/([\w|\-]+)(\.md)?/?(#[^\(|^\)]*)\) = [\1](\2\4)
+\[([^\[|^\]]*)\]\s*\(/documentation/articles/([\w|\-]+)(\.md)?/?(#[^\(|^\)|^/]*)/?\) = [\1](\2\4)
 
 # [link text]: /documentation/articles/xxx-xxx-xxx.md#xxx-xxx
 # [link text]: /documentation/articles/xxx-xxx-xxx.md
-\[([^\[|^\]]*)\]:\s*/documentation/articles/([\w|\-]+)(\.md)?/? = [\1](\2)
-\[([^\[|^\]]*)\]:\s*/documentation/articles/([\w|\-]+)(\.md)?/?(#.*) = [\1](\2\4)
+\[([^\[|^\]]*)\]:\s*/documentation/articles/([\w|\-]+)(\.md)?/? = [\1]: \2
+\[([^\[|^\]]*)\]:\s*/documentation/articles/([\w|\-]+)(\.md)?/?(#[^/]*)/? = [\1]: \2\4
 
 # href="hdinsight-use-mapreduce.md"
 href{equal}"([\w|\-]*)\.md" = href{equal}"/documentation/articles/\1"
 href{equal}"\.\./([\w|\-]*)/" = href{equal}"/documentation/articles/\1"
 
 /documentation/articles/# = #
+# ../services/xxxx = /home/features/xxxx
+\[([^\[|^\]]*)\]\s*\((\.\./)*services/([\w|\-]+)(\.md)?/?\) = [\1](/home/features/\3/)
 
 
 
@@ -356,3 +334,28 @@ dashplayer.chinacloudsites.cn = dashplayer.azurewebsites.net
 contoso.chinacloudsites.cn/archive = contoso.azurewebsites.net/archive
 Windows Azure Storage SDK = Microsoft Azure Storage SDK
 Windows Azure Tools for Microsoft Visual Studio = Microsoft Azure Tools for Microsoft Visual Studio
+https://azure.microsoft.com/zh-cn/support/faq/ = /support/faq/
+https://azure.microsoft.com/support/faq/ = /support/faq/
+http://azure.microsoft.com/zh-cn/support/faq/ = /support/faq/
+http://azure.microsoft.com/support/faq/ = /support/faq/
+https://azure.microsoft.com/services/active-directory/ = 	/home/features/identity/
+https://azure.microsoft.com/zh-cn/services/app-service/web/ = /home/features/web-site/
+https://azure.microsoft.com/(en-us/)?downloads/ = 	/downloads/
+https://azure.microsoft.com/documentation/videos/get-azure-free-trial-for-testing-hadoop-in-hdinsight/ = /pricing/1rmb-trial/
+https://azure.microsoft.com/documentation/services/ = /documentation/services/
+https://azure.microsoft.com/develop/ = /develop/
+https://azure.microsoft.com/documentation/videos/install-and-use-azure-powershell/ = /documentation/articles/install-configure-powershell
+https://azure.microsoft.com/overview/preview-portal/ = https://manage.windowsazure.cn
+http://azure.microsoft.com/services/active-directory/ = 	/home/features/identity/
+http://azure.microsoft.com/zh-cn/services/app-service/web/ = /home/features/web-site/
+http://azure.microsoft.com/(en-us/)?downloads/ = 	/downloads/
+http://azure.microsoft.com/documentation/videos/get-azure-free-trial-for-testing-hadoop-in-hdinsight/ = /pricing/1rmb-trial/
+http://azure.microsoft.com/documentation/services/ = /documentation/services/
+http://azure.microsoft.com/develop/ = /develop/
+http://azure.microsoft.com/documentation/videos/install-and-use-azure-powershell/ = /documentation/articles/install-configure-powershell
+http://azure.microsoft.com/overview/preview-portal/ = https://manage.windowsazure.cn
+https://azure.microsoft.com/documentation/articles/ = /documentation/articles/
+http://azure.microsoft.com/documentation/articles/ = /documentation/articles/
+http://azure.microsoft.com/pricing/1rmb-trial/ = /pricing/1rmb-trial/
+/library/windowsazure/ = /zh-cn/library/azure/
+/zh-cn/library/windowsazure/ = /zh-cn/library/azure/

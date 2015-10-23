@@ -598,7 +598,7 @@ The example defines the UpdatePlayReadyConfigurationXMLFile method that you can 
 	            // Note that the configuration defined in MediaEncryptor_PlayReadyProtection.xml
 	            // is using keySeedValue. It is recommended that you do this only for testing 
 	            // and not in production. For more information, see 
-	            // http://msdn.microsoft.com/zh-cn/library/windowsazure/dn189154.aspx.
+	            // http://msdn.microsoft.com/zh-cn/zh-cn/library/azure/dn189154.aspx.
 	            //
 	            string configPlayReady = File.ReadAllText(Path.Combine(_configurationXMLFiles,
 	                                        @"MediaEncryptor_PlayReadyProtection.xml"));
@@ -1350,7 +1350,7 @@ Make sure to update the following code to point to the folder where your input M
 	            // Note that the configuration defined in MediaEncryptor_PlayReadyProtection.xml
 	            // is using keySeedValue. It is recommended that you do this only for testing 
 	            // and not in production. For more information, see 
-	            // http://msdn.microsoft.com/zh-cn/library/windowsazure/dn189154.aspx.
+	            // http://msdn.microsoft.com/zh-cn/zh-cn/library/azure/dn189154.aspx.
 	            //
 	            string configPlayReady = File.ReadAllText(Path.Combine(_configurationXMLFiles,
 	                                        @"MediaEncryptor_PlayReadyProtection.xml"));

@@ -18,7 +18,7 @@
 
 # Use Active Directory for authentication in Azure Websites #
 
-[Azure Websites](/documentation/services/web-sites/) enables enterprise line-of-business application scenarios by supporting single sign-on (SSO) of users whether they access the application from your on-premises environment or the public internet. It can be integrated with [Azure Active Directory](/home/features/identity/) (AAD) or an on-premises secure token service (STS), such as Active Directory Federation Services (AD FS), to authenticate your internal Active Directory (AD) users and authorize them properly.
+[Azure Websites](/documentation/services/web-sites/) enables enterprise line-of-business application scenarios by supporting single sign-on (SSO) of users whether they access the application from your on-premises environment or the public internet. It can be integrated with [Azure Active Directory](/home/features/active-directory/) (AAD) or an on-premises secure token service (STS), such as Active Directory Federation Services (AD FS), to authenticate your internal Active Directory (AD) users and authorize them properly.
 
 ## Zero-friction authentication and authorization ##
 

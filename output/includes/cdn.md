@@ -35,7 +35,7 @@ To create a storage account, you must be either the service
 administrator or a co-administrator for the associated subscription.
 
 > [AZURE.NOTE] For information about performing this operation by using the
-Azure Service Management API, see the [Create Storage Account](http://msdn.microsoft.com/zh-cn/library/windowsazure/hh264518.aspx) reference topic.
+Azure Service Management API, see the [Create Storage Account](http://msdn.microsoft.com/zh-cn/zh-cn/library/azure/hh264518.aspx) reference topic.
 
 **To create a storage account for an Azure subscription**
 
@@ -116,7 +116,7 @@ Delivery Network (CDN), you can take one of the following steps:
 
 -   For an Azure blob, you can delete the blob from the public
     container.
--   You can make the container private instead of public. See [Restrict Access to Containers and Blobs](storage-manage-access-to-resources#restrict-access-to-containers-and-blobs) for more information.
+-   You can make the container private instead of public. See [Restrict Access to Containers and Blobs](/documentation/articles/storage-manage-access-to-resources/#restrict-access-to-containers-and-blobs) for more information.
 -   You can disable or delete the CDN endpoint using the Management
     Portal.
 -   You can modify your hosted service to no longer respond to requests for the
@@ -137,14 +137,14 @@ The ability to immediately purge content is currently not supported on Azure Man
 -   [About the Service Management API]
 -   [How to Map CDN Content to a Custom Domain]
 
-  [Create Storage Account](storage-create-storage-account)
-  [Azure CDN Node Locations]: http://msdn.microsoft.com/zh-cn/library/windowsazure/gg680302.aspx
+  [Create Storage Account]: /documentation/articles/storage-create-storage-account/
+  [Azure CDN Node Locations]: http://msdn.microsoft.com/zh-cn/zh-cn/library/azure/gg680302.aspx
   [Azure Management Portal]: https://manage.windowsazure.cn/
   [billing plan]: /pricing/calculator/?scenario=full
   [How to Create an Affinity Group in Azure]: http://msdn.microsoft.com/zh-cn/library/azure/ee460798.aspx
-  [Overview of the Azure CDN]: http://msdn.microsoft.com/zh-cn/library/windowsazure/ff919703.aspx
-  [About the Service Management API]: http://msdn.microsoft.com/zh-cn/library/windowsazure/ee460807.aspx
-  [How to Map CDN Content to a Custom Domain]: http://msdn.microsoft.com/zh-cn/library/windowsazure/gg680307.aspx
+  [Overview of the Azure CDN]: http://msdn.microsoft.com/zh-cn/zh-cn/library/azure/ff919703.aspx
+  [About the Service Management API]: http://msdn.microsoft.com/zh-cn/zh-cn/library/azure/ee460807.aspx
+  [How to Map CDN Content to a Custom Domain]: http://msdn.microsoft.com/zh-cn/zh-cn/library/azure/gg680307.aspx
 
 
 [create-new-storage-account]: ./media/cdn/CDN_CreateNewStorageAcct.png

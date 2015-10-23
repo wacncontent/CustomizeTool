@@ -318,7 +318,7 @@ In this tutorial, you will create a container on a separate Storage account for 
 		$containerName_Data = "<ContainerName>"
 		$location = "<MicrosoftDataCenter>"  # For example, "China East"
 
-	The **$subscripionName** variable is associated with your Azure subscription. You must name **$storageAccountName_Data** and **$containerName_Data**. For the naming restrictions, see [Naming and Referencing Containers, Blobs, and Metadata](http://msdn.microsoft.com/zh-cn/library/windowsazure/dd135715.aspx).
+	The **$subscripionName** variable is associated with your Azure subscription. You must name **$storageAccountName_Data** and **$containerName_Data**. For the naming restrictions, see [Naming and Referencing Containers, Blobs, and Metadata](http://msdn.microsoft.com/zh-cn/zh-cn/library/azure/dd135715.aspx).
 
 3. Run the following commands to create a Storage account and a Blob storage container on the account:
 
@@ -584,7 +584,7 @@ In this tutorial, you have learned how to develop a Java MapReduce job, how to t
 
 [azure-purchase-options]: /pricing/overview/
 [azure-member-offers]: http://azure.microsoft.com/pricing/member-offers/
-[azure-trial]: http://azure.microsoft.com/pricing/1rmb-trial/
+[azure-trial]: /pricing/1rmb-trial/
 
 [hdinsight-use-sqoop]: hdinsight-use-sqoop
 [hdinsight-ODBC]: hdinsight-connect-excel-hive-ODBC-driver
@@ -602,7 +602,7 @@ In this tutorial, you have learned how to develop a Java MapReduce job, how to t
 [hdinsight-use-pig]: hdinsight-use-pig
 [hdinsight-power-query]: hdinsight-connect-excel-power-query
 
-[powershell-PSCredential]: http://social.technet.microsoft.com/wiki/contents/articles/4546.working-with-passwords-secure-strings-and-credentials-in-windows-powershell.aspx
+[powershell-PSCredential]: http:/social.technet.microsoft.com/wiki/contents/articles/4546.working-with-passwords-secure-strings-and-credentials-in-windows-powershell.aspx
 [powershell-install-configure]: install-configure-powershell
 
 

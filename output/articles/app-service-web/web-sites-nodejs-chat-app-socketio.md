@@ -23,7 +23,7 @@
 
 Socket.IO provides real-time communication between your node.js server and clients using WebSockets. It also supports fallback to other transports (such as long polling) that work with older browsers. This tutorial will walk you through hosting a Socket.IO based chat application as an Azure web app, and show you how to [scale](#scale-out) the application using [Azure Redis Cache](/documentation/services/cache). For more information on Socket.IO, see [http://socket.io/][socketio].
 
-> [AZURE.NOTE] The procedures in this task apply to [Azure Websites](/documentation/services/web-sites/); for Cloud Services, see <a href="http://azure.microsoft.com/documentation/articles/cloud-services-nodejs-chat-app-socketio/">Build a Node.js Chat Application with Socket.IO on an Azure Cloud Service</a>.
+> [AZURE.NOTE] The procedures in this task apply to [Azure Websites](/documentation/services/web-sites/); for Cloud Services, see <a href="/documentation/articles/cloud-services-nodejs-chat-app-socketio/">Build a Node.js Chat Application with Socket.IO on an Azure Cloud Service</a>.
 
 
 ## Download the chat example
@@ -71,7 +71,7 @@ and add it to the project you previously created.
 
 Follow these steps to create an Azure web app, enable Git publishing, and then enable WebSocket support for the web app.
 
-> [AZURE.NOTE] To complete this tutorial, you need an Azure account. If you don't have an account, you can create a trial account in just a couple of minutes. For details, see <a href="http://azure.microsoft.com/pricing/1rmb-trial/?WT.mc_id=A7171371E" target="_blank">Azure Trial</a>.
+> [AZURE.NOTE] To complete this tutorial, you need an Azure account. If you don't have an account, you can create a trial account in just a couple of minutes. For details, see <a href="/pricing/1rmb-trial/?WT.mc_id=A7171371E" target="_blank">Azure Trial</a>.
 
 1. Install the Azure Command-Line Interface (Azure CLI) and connect to your Azure subscription. See [Install and Configure the Azure CLI](xplat-cli).
 
@@ -283,7 +283,7 @@ For more information, see also the [Node.js Developer Center](/develop/nodejs/).
 [completed-app]: ./media/web-sites-nodejs-chat-app-socketio/websitesocketcomplete.png
 [Socket.IO GitHub repository]: https://github.com/Automattic/socket.io
 [release]: https://github.com/Automattic/socket.io/releases
-[cloudservice](cloud-services-nodejs-chat-app-socketio)
+[cloudservice]: cloud-services-nodejs-chat-app-socketio
 
 [chat-example-view]: ./media/web-sites-nodejs-chat-app-socketio/socketio-2.png
 [npm-output]: ./media/web-sites-nodejs-chat-app-socketio/socketio-7.png

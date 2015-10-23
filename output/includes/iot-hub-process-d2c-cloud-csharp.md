@@ -284,14 +284,14 @@ In this section, you'll write a Windows console app that receives interactive me
 
 [About Azure Storage]: storage-create-storage-account#create-a-storage-account
 
-[Azure IoT - Service SDK NuGet package]: https://www.nuget.org/packages/Microsoft.Azure.Devices/
+[Azure IoT - Service SDK NuGet package]: https:/www.nuget.org/packages/Microsoft.Azure.Devices/
 
 [Get Started with Event Hubs]: event-hubs-csharp-ephcs-getstarted
 [IoT Hub Developer Guide - Identity Registry]: iot-hub-devguide#identityregistry
 
 [Azure Storage scalability Guidelines]: storage-scalability-targets
 
-[Azure Block Blobs]: https://msdn.microsoft.com/zh-cn/library/azure/ee691964.aspx
+[Azure Block Blobs]: https:/msdn.microsoft.com/zh-cn/library/azure/ee691964.aspx
 
 [Service Bus documentation]: service-bus-dotnet-how-to-use-queues
 

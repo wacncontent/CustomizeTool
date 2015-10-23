@@ -222,7 +222,7 @@ You can install additional components or customize cluster configuration by usin
 
 ### Use Azure virtual networks
 
-[Azure Virtual Network](/documentation/services/virtual-network/) allows you to create a secure, persistent network containing the resources you need for your solution. A virtual network allows you to:
+[Azure Virtual Network](/documentation/services/networking/) allows you to create a secure, persistent network containing the resources you need for your solution. A virtual network allows you to:
 
 * Connect cloud resources together in a private network (cloud-only).
 

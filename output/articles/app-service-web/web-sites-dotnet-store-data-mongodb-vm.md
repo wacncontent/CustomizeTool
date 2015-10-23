@@ -470,7 +470,7 @@ For more information on developing C# applications against MongoDB, see [CSharp 
 [MongoConnectionStrings]: http://www.mongodb.org/display/DOCS/Connections
 [MongoDB]: http://www.mongodb.org
 [InstallMongoOnCentOSLinuxVM]: /manage/linux/common-tasks/mongodb-on-a-linux-vm/
-[InstallMongoOnWindowsVM](virtual-machines-install-mongodb-windows-server-2008r2)
+[InstallMongoOnWindowsVM]: virtual-machines-install-mongodb-windows-server-2008r2
 [VSEWeb]: http://www.visualstudio.com/zh-cn/downloads/download-visual-studio-vs#d-2013-express
 [VSUlt]: http://www.visualstudio.com/zh-cn/downloads/download-visual-studio-vs
 

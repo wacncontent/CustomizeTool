@@ -208,6 +208,6 @@ Once you have saved the data as a Hive table, you can use Power BI to connect to
 
 [azure-purchase-options]: /pricing/overview/
 [azure-member-offers]: http://azure.microsoft.com/pricing/member-offers/
-[azure-trial]: http://azure.microsoft.com/pricing/1rmb-trial/
+[azure-trial]: /pricing/1rmb-trial/
 [azure-management-portal]: https://manage.windowsazure.cn/
 [azure-create-storageaccount]: storage-create-storage-account 

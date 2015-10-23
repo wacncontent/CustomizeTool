@@ -51,7 +51,7 @@ You can install additional components or customize cluster configuration by usin
 
 ###Virtual networking
 
-[Azure Virtual Network](/documentation/services/virtual-network/) allows you to create a secure, persistent network containing the resources you need for your solution. A virtual network allows you to:
+[Azure Virtual Network](/documentation/services/networking/) allows you to create a secure, persistent network containing the resources you need for your solution. A virtual network allows you to:
 
 * Connect cloud resources together in a private network (cloud-only).
 
@@ -406,7 +406,7 @@ The HDInsight .NET SDK provides .NET client libraries that make it easier to wor
 
 
 [hdinsight-sdk-documentation]: http://msdn.microsoft.com/zh-cn/library/dn479185.aspx
-[hdinsight-hbase-custom-provision](hdinsight-hbase-get-started)
+[hdinsight-hbase-custom-provision]: /documentation/articles/hdinsight-hbase-get-started/
 
 [hdinsight-customize-cluster]: hdinsight-hadoop-customize-cluster
 [hdinsight-get-started]: hdinsight-get-started
@@ -427,8 +427,8 @@ The HDInsight .NET SDK provides .NET client libraries that make it easier to wor
 [apache-hadoop]: http://go.microsoft.com/fwlink/?LinkId=510084
 [azure-purchase-options]: /pricing/overview/
 [azure-member-offers]: http://azure.microsoft.com/pricing/member-offers/
-[azure-trial]: http://azure.microsoft.com/pricing/1rmb-trial/
-[hdi-remote](hdinsight-administer-use-management-portal-v1)#rdp
+[azure-trial]: /pricing/1rmb-trial/
+[hdi-remote]: /documentation/articles/hdinsight-administer-use-management-portal-v1/#rdp
 
 
 [powershell-install-configure]: install-configure-powershell
@@ -436,4 +436,4 @@ The HDInsight .NET SDK provides .NET client libraries that make it easier to wor
 
 [azure-preview-portal]: https://manage.windowsazure.cn
 
-[89e2276a](hdinsight-use-sqoop) "Use Sqoop with HDInsight"
+[89e2276a]: hdinsight-use-sqoop "Use Sqoop with HDInsight"

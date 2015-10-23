@@ -30,7 +30,7 @@ Azure PowerShell is a powerful scripting environment that you can use to control
 Before you begin this article, you must have the following:
 
 - **An Azure subscription**. See [Get Azure trial](/pricing/1rmb-trial/).
-- **A workstation with Azure PowerShell**. See [Install and use Azure PowerShell](install-configure-powershell).
+- **A workstation with Azure PowerShell**. See [Install and use Azure PowerShell](/documentation/articles/install-configure-powershell).
 
 	> [AZURE.NOTE] The PowerShell scripts provided in this article uses the Azure resource manager mode. To ensure the samples work for you, please download the latest Azure PowerShell using the Microsoft Web Platform Installer.  
 
@@ -322,7 +322,7 @@ See the [Submit MapReduce jobs](#mapreduce) section in this article.
 
 [azure-purchase-options]: /pricing/overview/
 [azure-member-offers]: http://azure.microsoft.com/pricing/member-offers/
-[azure-trial]: http://azure.microsoft.com/pricing/1rmb-trial/
+[azure-trial]: /pricing/1rmb-trial/
 
 [hdinsight-get-started]: hdinsight-get-started
 [hdinsight-provision]: hdinsight-provision-clusters
@@ -337,7 +337,7 @@ See the [Submit MapReduce jobs](#mapreduce) section in this article.
 [hdinsight-upload-data]: hdinsight-upload-data
 [hdinsight-flight]: hdinsight-analyze-flight-delay-data
 
-[hdinsight-powershell-reference]: https://msdn.microsoft.com/zh-cn/library/dn858087.aspx
+[hdinsight-powershell-reference]: https:/msdn.microsoft.com/zh-cn/library/dn858087.aspx
 
 [powershell-install-configure]: install-configure-powershell
 

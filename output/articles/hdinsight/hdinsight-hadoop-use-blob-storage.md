@@ -312,7 +312,7 @@ For more information, see:
 [hdinsight-use-hive]: hdinsight-use-hive
 [hdinsight-use-pig]: hdinsight-use-pig
 
-[blob-storage-restAPI]: http://msdn.microsoft.com/zh-cn/library/windowsazure/dd135733.aspx
+[blob-storage-restAPI]: http://msdn.microsoft.com/zh-cn/zh-cn/library/azure/dd135733.aspx
 [azure-storage-create]: storage-create-storage-account
 
 [img-hdi-powershell-blobcommands]: ./media/hdinsight-hadoop-use-blob-storage/HDI.PowerShell.BlobCommands.png

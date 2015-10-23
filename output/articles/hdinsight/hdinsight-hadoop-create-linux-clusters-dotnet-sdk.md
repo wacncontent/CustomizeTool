@@ -99,7 +99,7 @@ The HDInsight .NET SDK provides .NET client libraries that make it easier to wor
                 //Replace SSHUSER with the user name you want to use with logging in to the cluster through SSH
                 private const string NewClusterSshUserName = "SSHUSER";
                 
-                //Replace SSHPUBLICKEY with the public key certificate to use when authenticating the SSH user. For more information on generating and using SSH keys with HDInsight, see https://azure.microsoft.com/documentation/articles/hdinsight-hadoop-linux-use-ssh-unix/ and https://azure.microsoft.com/documentation/articles/hdinsight-hadoop-linux-use-ssh-windows/
+                //Replace SSHPUBLICKEY with the public key certificate to use when authenticating the SSH user. For more information on generating and using SSH keys with HDInsight, see /documentation/articles/hdinsight-hadoop-linux-use-ssh-unix/ and /documentation/articles/hdinsight-hadoop-linux-use-ssh-windows/
                 private const string NewClusterSshPublicKey = @"SSHPUBLICKEY";
         
                 private static void Main(string[] args)

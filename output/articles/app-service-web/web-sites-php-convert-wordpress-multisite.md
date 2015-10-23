@@ -142,10 +142,10 @@ Azure Web Apps allow you to add an unlimited number of domains to a web app. To 
 
 [ben-lobaugh]: http://ben.lobaugh.net
 [ms-open-tech]: http://msopentech.com
-[website-from-gallery]: https://azure.microsoft.com/develop/php/tutorials/website-from-gallery/
+[website-from-gallery]: /develop/php/tutorials/website-from-gallery/
 [wordpress-codex-create-a-network]: http://codex.wordpress.org/Create_A_Network
-[website-w-mysql-and-ftp-ftp-setup]: https://azure.microsoft.com/documentation/articles/web-sites-php-mysql-deploy-use-ftp/#header-0
-[website-w-mysql-and-git-git-setup]: https://azure.microsoft.com/documentation/articles/web-sites-php-mysql-deploy-use-git/#header-1
+[website-w-mysql-and-ftp-ftp-setup]: /documentation/articles/web-sites-php-mysql-deploy-use-ftp/#header-0
+[website-w-mysql-and-git-git-setup]: /documentation/articles/web-sites-php-mysql-deploy-use-git/#header-1
 [wordpress-network-setup]: ./media/web-sites-php-convert-wordpress-multisite/wordpress-network-setup.png
 [wordpress-codex-types-of-networks]: http://codex.wordpress.org/Before_You_Create_A_Network#Types_of_multisite_network
 [wordpress-plugin-wordpress-mu-domain-mapping]: http://wordpress.org/extend/plugins/wordpress-mu-domain-mapping/

@@ -153,7 +153,7 @@ information about Azure AD Access Control:
 
 -   [Access Control Service 2.0](http://msdn.microsoft.com/zh-cn/library/gg429786.aspx) 
 -   [Scenarios and Solutions Using ACS](http://msdn.microsoft.com/zh-cn/library/gg185920.aspx)
--   [ACS How To's](http://msdn.microsoft.com/zh-cn/library/windowsazure/gg185939.aspx)
+-   [ACS How To's](http://msdn.microsoft.com/zh-cn/zh-cn/library/azure/gg185939.aspx)
 -   [A Guide to Claims-Based Identity and Access Control](http://msdn.microsoft.com/zh-cn/library/ff423674.aspx)
 -   [Identity Developer Training Kit](http://www.microsoft.com/download/details.aspx?id=14347)
 -   [MSDN-hosted Identity Developer Training Course](http://msdn.microsoft.com/IdentityTrainingCourse)
@@ -595,9 +595,9 @@ securely so as to avoid information disclosure.
 Refer to the following resources to solve this scenario:
 
 -   [How to: Configure a Cache Client Programmatically for Azure
-    Caching](http://msdn.microsoft.com/zh-cn/library/windowsazure/gg618003.aspx)
+    Caching](http://msdn.microsoft.com/zh-cn/zh-cn/library/azure/gg618003.aspx)
 -   [How to: Configure a Cache Client using the Application Configuration
-    File for Azure Caching](http://msdn.microsoft.com/zh-cn/library/windowsazure/gg278346.aspx)
+    File for Azure Caching](http://msdn.microsoft.com/zh-cn/zh-cn/library/azure/gg278346.aspx)
 -   [Azure Service Bus and Caching Samples](http://msdn.microsoft.com/zh-cn/library/ee706741.aspx) (Caching Samples
     section)
 
@@ -779,8 +779,8 @@ application is hosted on Azure Virtual Machines.
 -   [Identity Developer Training Kit](http://go.microsoft.com/fwlink/?LinkId=214555)
 -   [MSDN-hosted Identity Developer Training Course](http://go.microsoft.com/fwlink/?LinkId=214561)
 -   [A Guide to Claims-based Identity and Access Control](http://go.microsoft.com/fwlink/?LinkId=214562)
--   [Access Control Service](http://msdn.microsoft.com/zh-cn/library/windowsazure/gg429786.aspx)
--   [ACS How To's](http://msdn.microsoft.com/zh-cn/library/windowsazure/gg185939.aspx)
+-   [Access Control Service](http://msdn.microsoft.com/zh-cn/zh-cn/library/azure/gg429786.aspx)
+-   [ACS How To's](http://msdn.microsoft.com/zh-cn/zh-cn/library/azure/gg185939.aspx)
 -   [Secure Azure Web Role ASP.NET Web Application Using Access Control Service v2.0](http://social.technet.microsoft.com/wiki/contents/articles/2590.aspx)
 -   [Azure AD Access Control Service (ACS) Academy Videos](http://social.technet.microsoft.com/wiki/contents/articles/2777.aspx)
 -   [Microsoft Security Development Lifecycle](http://www.microsoft.com/security/sdl/default.aspx)

@@ -179,7 +179,7 @@ Depending on the web app's mode, the following developer-oriented features are a
 * For a guide to the change of the Management Portal to the new portal see: [Reference for navigating the preview portal](https://manage.windowsazure.cn/)
 
 <!-- LINKS -->
-[vmsizes](virtual-machines-size-specs)
+[vmsizes]: virtual-machines-size-specs
 [SQLaccountsbilling]:/home/features/sql-database/#price
 [azuresubscriptions]: https://manage.windowsazure.cn
 [portal]: https://manage.windowsazure.cn/

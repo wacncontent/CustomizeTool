@@ -274,7 +274,7 @@ For more information, see also the [Java Developer Center](/develop/java/).
 
 [azure-purchase-options]: /pricing/overview/
 [azure-member-offers]: http://azure.microsoft.com/pricing/member-offers/
-[azure-trial]: http://azure.microsoft.com/pricing/1rmb-trial/
+[azure-trial]: /pricing/1rmb-trial/
 
 [hdinsight-use-sqoop]: hdinsight-use-sqoop
 [hdinsight-ODBC]: hdinsight-connect-excel-hive-ODBC-driver
@@ -292,7 +292,7 @@ For more information, see also the [Java Developer Center](/develop/java/).
 [hdinsight-use-pig]: hdinsight-use-pig
 [hdinsight-power-query]: hdinsight-connect-excel-power-query
 
-[powershell-PSCredential]: http://social.technet.microsoft.com/wiki/contents/articles/4546.working-with-passwords-secure-strings-and-credentials-in-windows-powershell.aspx
+[powershell-PSCredential]: http:/social.technet.microsoft.com/wiki/contents/articles/4546.working-with-passwords-secure-strings-and-credentials-in-windows-powershell.aspx
 [powershell-install-configure]: install-configure-powershell
 
 

@@ -100,10 +100,10 @@ Understanding [outbound IP addresses][NetworkArchitecture] and Azure Websites En
 [AZURE.INCLUDE [app-service-web-try-app-service](../includes/app-service-web-try-app-service.md)]
 
 <!-- LINKS -->
-[NetworkSecurityGroups](virtual-networks-nsg)
-[NetworkArchitecture](app-service-app-service-environment-network-architecture-overview)
-[NetworkSecurityGroupsClassic](virtual-networks-create-nsg-classic-ps)
-[InboundTraffic]: https://azure.microsoft.com/documentation/articles/app-service-app-service-environment-control-inbound-traffic/
+[NetworkSecurityGroups]: /documentation/articles/virtual-networks-nsg/
+[NetworkArchitecture]: /documentation/articles/app-service-app-service-environment-network-architecture-overview/
+[NetworkSecurityGroupsClassic]: /documentation/articles/virtual-networks-create-nsg-classic-ps/
+[InboundTraffic]: /documentation/articles/app-service-app-service-environment-control-inbound-traffic/
 
 <!-- IMAGES -->
 [ConceptualArchitecture]: ./media/app-service-app-service-environment-layered-security/ConceptualArchitecture-1.png

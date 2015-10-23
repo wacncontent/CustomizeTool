@@ -273,7 +273,7 @@ If you'd like to learn more about creating or managing an HDInsight cluster, see
 [powershell-install-configure]: install-configure-powershell
 [powershell-open]: install-configure-powershell#Install
 
-[img-hdi-dashboard]: ./media/hdinsight-hadoop-tutorial-get-started-windows/HDI.dashboard.png
+[img-hdi-dashboard]: .media/hdinsight-hadoop-tutorial-get-started-windows/HDI.dashboard.png
 [img-hdi-dashboard-query-select]: ./media/hdinsight-hadoop-tutorial-get-started-windows/HDI.dashboard.query.select.png
 [img-hdi-dashboard-query-select-result]: ./media/hdinsight-hadoop-tutorial-get-started-windows/HDI.dashboard.query.select.result.png
 [img-hdi-dashboard-query-select-result-output]: ./media/hdinsight-hadoop-tutorial-get-started-windows/HDI.dashboard.query.select.result.output.png

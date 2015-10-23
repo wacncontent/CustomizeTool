@@ -177,7 +177,7 @@ Use this to determine the version of HDInsight used for this cluster. For more i
 
 ### Use Azure virtual networks
 
-An [Azure Virtual Network](/documentation/services/virtual-network/) allows you to create a secure, persistent network containing the resources you need for your solution. A virtual network allows you to:
+An [Azure Virtual Network](/documentation/services/networking/) allows you to create a secure, persistent network containing the resources you need for your solution. A virtual network allows you to:
 
 * Connect cloud resources together in a private network (cloud-only).
 
@@ -259,8 +259,8 @@ In this article, you have learned basic information about creating a Linux-based
 
 [azure-purchase-options]: /pricing/overview/
 [azure-member-offers]: http://azure.microsoft.com/pricing/member-offers/
-[azure-trial]: http://azure.microsoft.com/pricing/1rmb-trial/
-[hdi-remote](hdinsight-administer-use-management-portal-v1)#rdp
+[azure-trial]: /pricing/1rmb-trial/
+[hdi-remote]: /documentation/articles/hdinsight-administer-use-management-portal-v1/#rdp
 
 
 [Powershell-install-configure]: install-configure-powershell
@@ -283,4 +283,4 @@ In this article, you have learned basic information about creating a Linux-based
 
 [img-hdi-cluster]: ./media/hdinsight-hadoop-provision-linux-clusters/HDI.Cluster.png
 
-  [89e2276a](hdinsight-use-sqoop) "Use Sqoop with HDInsight"
+  [89e2276a]: hdinsight-use-sqoop "Use Sqoop with HDInsight"

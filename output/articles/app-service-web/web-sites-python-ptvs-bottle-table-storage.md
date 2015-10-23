@@ -198,7 +198,7 @@ Follow these links to learn more about Python Tools for Visual Studio, Bottle an
 
 <!--External Link references-->
 [Azure Management Portal]: https://manage.windowsazure.cn
-[Azure SDK for .NET]: http://azure.microsoft.com/downloads/
+[Azure SDK for .NET]: /downloads/
 [Python Tools for Visual Studio]: http://aka.ms/ptvs
 [Python Tools 2.2 for Visual Studio]: http://go.microsoft.com/fwlink/?LinkId=624025
 [Python Tools 2.2 for Visual Studio Samples VSIX]: http://go.microsoft.com/fwlink/?LinkId=624025

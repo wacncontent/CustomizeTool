@@ -1,6 +1,6 @@
 <properties writer="kathydav" editor="tysonn" manager="timlt" />
 
-1. Sign in to the [Azure Management Portal](http://manage.windowsazure.cn). Check out the [Trial](http://azure.microsoft.com/pricing/1rmb-trial/) offer if you don't have a subscription yet.
+1. Sign in to the [Azure Management Portal](http://manage.windowsazure.cn). Check out the [Trial](/pricing/1rmb-trial/) offer if you don't have a subscription yet.
 
 2. On the command bar at the bottom of the window, click **New**.
 

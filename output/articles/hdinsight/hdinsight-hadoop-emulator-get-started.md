@@ -42,7 +42,7 @@ Before you begin this tutorial, you must have the following:
 	- Windows 8
 	- Windows Server 2012
 
-- **Azure PowerShell**. See [Install and use Azure PowerShell](install-configure-powershell).
+- **Azure PowerShell**. See [Install and use Azure PowerShell](/documentation/articles/install-configure-powershell).
 
 
 ##<a name="install"></a>Install the HDInsight Emulator
@@ -515,7 +515,7 @@ In this MapReduce tutorial, you installed the HDInsight Emulator - a Hadoop sand
 
 
 
-[azure-sdk]: http://azure.microsoft.com/downloads/
+[azure-sdk]: /downloads/
 [azure-create-storage-account]: storage-create-storage-account
 [azure-management-portal]: https://manage.windowsazure.cn/
 [netstat-url]: http://technet.microsoft.com/zh-cn/library/ff961504.aspx

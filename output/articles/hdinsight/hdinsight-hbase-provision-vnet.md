@@ -36,7 +36,7 @@ Before you begin this tutorial, you must have the following:
 
 - **An Azure subscription**. See [Get Azure trial](/pricing/1rmb-trial/).
 
-- **A workstation with Azure PowerShell**. See [Install and use Azure PowerShell](install-configure-powershell). For instructions, see [Install and configure Azure PowerShell](install-configure-powershell). To execute Azure PowerShell scripts, you must run Azure PowerShell as administrator and set the execution policy to *RemoteSigned*. See [Using the Set-ExecutionPolicy cmdlet][2].
+- **A workstation with Azure PowerShell**. See [Install and use Azure PowerShell](/documentation/articles/install-configure-powershell). For instructions, see [Install and configure Azure PowerShell](install-configure-powershell). To execute Azure PowerShell scripts, you must run Azure PowerShell as administrator and set the execution policy to *RemoteSigned*. See [Using the Set-ExecutionPolicy cmdlet][2].
 
 	Before running Azure PowerShell scripts, make sure you are connected to your Azure subscription by using the following cmdlet:
 
@@ -351,12 +351,12 @@ In this tutorial you learned how to provision an HBase cluster. To learn more, s
 [azure-create-storageaccount]: storage-create-storage-account
 [azure-purchase-options]: /pricing/overview/
 [azure-member-offers]: http://azure.microsoft.com/pricing/member-offers/
-[azure-trial]: http://azure.microsoft.com/pricing/1rmb-trial/
+[azure-trial]: /pricing/1rmb-trial/
 
 [hdinsight-admin-powershell]: hdinsight-administer-use-powershell
 [hdinsight-admin-portal]: hdinsight-administer-use-management-portal-v1#rdp
 
-[hdinsight-powershell-reference]: https://msdn.microsoft.com/zh-cn/library/dn858087.aspx
+[hdinsight-powershell-reference]: https:/msdn.microsoft.com/zh-cn/library/dn858087.aspx
 
 
 [twitter-streaming-api]: https://dev.twitter.com/docs/streaming-apis
@@ -377,7 +377,7 @@ In this tutorial you learned how to provision an HBase cluster. To learn more, s
 [hdinsight-hive-odbc]: hdinsight-connect-excel-hive-ODBC-driver
 [hdinsight-hbase-replication-dns]: hdinsight-hbase-geo-replication-configure-DNS
 
-[img-dns-surffix]: ./media/hdinsight-hbase-provision-vnet/DNSSuffix.png
+[img-dns-surffix]: .media/hdinsight-hbase-provision-vnet/DNSSuffix.png
 [img-primary-dns-suffix]: ./media/hdinsight-hbase-provision-vnet/PrimaryDNSSuffix.png
 [img-provision-cluster-page1]: ./media/hdinsight-hbase-provision-vnet/hbasewizard1.png "Provision details for the new HBase cluster"
 [img-provision-cluster-page5]: ./media/hdinsight-hbase-provision-vnet/hbasewizard5.png "Use Script Action to customize an HBase cluster"

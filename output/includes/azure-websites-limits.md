@@ -1,7 +1,7 @@
 Resource|Free|Shared (Preview)|Basic|Standard|Premium (Preview)</th>
 ---|---|---|---|---|---
-[Web, mobile, or API apps](app-service) per [App Service plan](web-sites-web-hosting-plan-overview)<sup>1</sup>|10|100|Unlimited<sup>2</sup>|Unlimited<sup>2</sup>|Unlimited<sup>2</sup>
-[Logic apps](app-service) per [App Service plan](web-sites-web-hosting-plan-overview)</a><sup>1</sup>|10|10|10|20 per core|20 per core 
+[Web, mobile, or API apps](/home/features/app-service/) per [App Service plan](web-sites-web-hosting-plan-overview)<sup>1</sup>|10|100|Unlimited<sup>2</sup>|Unlimited<sup>2</sup>|Unlimited<sup>2</sup>
+[Logic apps](/home/features/app-service/) per [App Service plan](web-sites-web-hosting-plan-overview)</a><sup>1</sup>|10|10|10|20 per core|20 per core 
 [App Service plan](web-sites-web-hosting-plan-overview)|1 per region|10 per resource group|10 per resource group|10 per resource group|10 per resource group
 Compute instance type|Shared|Shared|Dedicated<sup>3</sup>|Dedicated<sup>3</sup>|Dedicated<sup>3</sup></p>
 [Scale-Out](web-sites-scale) (max instances)|1 shared|1 shared|3 dedicated<sup>3</sup>|10 dedicated<sup>3</sup>|50 dedicated<sup>3,4</sup>
@@ -20,7 +20,7 @@ Integrated Load Balancer||X|X|X|X
 [Scheduled Backups](web-sites-backup)||||Once per day|Once every 5 minutes<sup>8</sup>
 [Auto Scale](web-sites-scale)|||X|X|X
 [WebJobs](web-sites-create-web-jobs)<sup>9</sup>|X|X|X|X|X
-[Azure Scheduler](scheduler) support||X|X|X|X
+[Azure Scheduler](/home/features/scheduler/) support||X|X|X|X
 [Endpoint monitoring](web-sites-monitor)|||X|X|X
 [Staging Slots (Preview)](web-sites-staged-publishing)||||5|20
 Custom domains per app</a>||500|500|500|500

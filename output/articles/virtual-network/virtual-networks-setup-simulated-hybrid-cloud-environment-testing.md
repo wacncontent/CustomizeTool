@@ -46,7 +46,7 @@ There are four major phases to setting up this hybrid cloud test environment:
 3.	Create the VNet-to-VNet VPN connection.
 4.	Configure DC2. 
 
-If you don't already have an Azure subscription, you can sign up for a trial at [Try Azure](http://azure.microsoft.com/pricing/1rmb-trial/). If you have an MSDN Subscription, see [Azure benefit for MSDN subscribers](http://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/).
+If you don't already have an Azure subscription, you can sign up for a trial at [Try Azure](/pricing/1rmb-trial/). If you have an MSDN Subscription, see [Azure benefit for MSDN subscribers](http://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/).
 
 >[AZURE.NOTE] Virtual machines and virtual network gateways in Azure incur an ongoing monetary cost when they are running. This cost is billed against your trial, MSDN subscription, or paid subscription. To reduce the costs of running this test environment when you are not using it, see [Minimizing the ongoing costs of this environment](#costs) in this topic for more information.
 

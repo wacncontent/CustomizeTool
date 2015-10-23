@@ -534,7 +534,7 @@ In this tutorial, you have learned how to develop a Hadoop streaming MapReduce j
 
 [azure-purchase-options]: /pricing/overview/
 [azure-member-offers]: http://azure.microsoft.com/pricing/member-offers/
-[azure-trial]: http://azure.microsoft.com/pricing/1rmb-trial/
+[azure-trial]: /pricing/1rmb-trial/
 
 [hdinsight-develop-mapreduce]: hdinsight-develop-deploy-java-mapreduce
 [hdinsight-submit-jobs]: hdinsight-submit-hadoop-jobs-programmatically
@@ -550,7 +550,7 @@ In this tutorial, you have learned how to develop a Hadoop streaming MapReduce j
 [hdinsight-ODBC]: hdinsight-connect-excel-hive-ODBC-driver
 [hdinsight-power-query]: hdinsight-connect-excel-power-query
 
-[powershell-PSCredential]: http://social.technet.microsoft.com/wiki/contents/articles/4546.working-with-passwords-secure-strings-and-credentials-in-windows-powershell.aspx
+[powershell-PSCredential]: http:/social.technet.microsoft.com/wiki/contents/articles/4546.working-with-passwords-secure-strings-and-credentials-in-windows-powershell.aspx
 [powershell-install]: powershell-install-configure
 
 [image-hdi-wordcountdiagram]: ./media/hdinsight-hadoop-develop-deploy-streaming-jobs/HDI.WordCountDiagram.gif "MapReduce wordcount application flow"

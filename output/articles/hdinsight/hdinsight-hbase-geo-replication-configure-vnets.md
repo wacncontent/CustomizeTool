@@ -51,7 +51,7 @@ Before you begin this tutorial, you must have the following:
 
 - **An Azure subscription**. See [Get Azure trial](/pricing/1rmb-trial/).
 
-- **A workstation with Azure PowerShell**. See [Install and use Azure PowerShell](install-configure-powershell).
+- **A workstation with Azure PowerShell**. See [Install and use Azure PowerShell](/documentation/articles/install-configure-powershell).
 
 	Before running PowerShell scripts, make sure you are connected to your Azure subscription using the following cmdlet:
 
@@ -255,7 +255,7 @@ In this tutorial you have learned how to configure a VPN connection between two 
 
 [azure-purchase-options]: /pricing/overview/
 [azure-member-offers]: http://azure.microsoft.com/pricing/member-offers/
-[azure-trial]: http://azure.microsoft.com/pricing/1rmb-trial/
+[azure-trial]: /pricing/1rmb-trial/
 [azure-portal]: https://manage.windowsazure.cn
 
 [powershell-install]: install-configure-powershell

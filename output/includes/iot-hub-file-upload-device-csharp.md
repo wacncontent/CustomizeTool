@@ -70,7 +70,7 @@ In this section, you'll modify the simulated device application you created in [
 
 <!-- Links -->
 [IoT Hub Developer Guide - C2D]: iot-hub-devguide#c2d
-[Azure Storage - How to use blobs]: https://azure.microsoft.com/documentation/articles/storage-dotnet-how-to-use-blobs/#upload-a-blob-into-a-container
+[Azure Storage - How to use blobs]: https:/azure.microsoft.com/documentation/articles/storage-dotnet-how-to-use-blobs/#upload-a-blob-into-a-container
 
 <!-- Images -->
 

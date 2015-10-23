@@ -125,12 +125,12 @@ For more information about the Azure Websites platform, see [Azure Websites][Azu
 [AZURE.INCLUDE [app-service-web-try-app-service](../includes/app-service-web-try-app-service.md)]
 
 <!-- LINKS -->
-[virtualnetwork](virtual-networks-faq)
-[HowToCreateAnAppServiceEnvironment](app-service-web-how-to-create-an-app-service-environment)
-[NetworkSecurityGroups](virtual-networks-nsg)
-[AzureAppService](app-service-value-prop-what-is)
-[IntroToAppServiceEnvironment](app-service-app-service-environment-intro)
-[SecurelyConnecttoBackend](app-service-app-service-environment-securely-connecting-to-backend-resources) 
+[virtualnetwork]: /documentation/articles/virtual-networks-faq/
+[HowToCreateAnAppServiceEnvironment]: /documentation/articles/app-service-web-how-to-create-an-app-service-environment/
+[NetworkSecurityGroups]: /documentation/articles/virtual-networks-nsg/
+[AzureAppService]: /documentation/articles/app-service-value-prop-what-is/
+[IntroToAppServiceEnvironment]: /documentation/articles/app-service-app-service-environment-intro/
+[SecurelyConnecttoBackend]: /documentation/articles/app-service-app-service-environment-securely-connecting-to-backend-resources/ 
 
 <!-- IMAGES -->
  

@@ -99,15 +99,15 @@ For more information about the Azure Websites platform, see [Azure Websites][Azu
  
 
 <!-- LINKS -->
-[virtualnetwork](virtual-networks-faq)
-[ControlInboundTraffic](app-service-app-service-environment-control-inbound-traffic)
-[SiteToSite](vpn-gateway-site-to-site-create)
+[virtualnetwork]: /documentation/articles/virtual-networks-faq/
+[ControlInboundTraffic]: /documentation/articles/app-service-app-service-environment-control-inbound-traffic/
+[SiteToSite]: /documentation/articles/vpn-gateway-site-to-site-create/
 [ExpressRoute]: http://azure.microsoft.com/services/expressroute/
-[NetworkAccessControlLists](virtual-networks-acl)
-[NetworkSecurityGroups](virtual-networks-nsg)
-[IntroToAppServiceEnvironment](app-service-app-service-environment-intro)
-[AzureAppService](app-service-value-prop-what-is) 
-[ControlInboundASE](app-service-app-service-environment-control-inbound-traffic) 
+[NetworkAccessControlLists]: /documentation/articles/virtual-networks-acl/
+[NetworkSecurityGroups]: /documentation/articles/virtual-networks-nsg/
+[IntroToAppServiceEnvironment]: /documentation/articles/app-service-app-service-environment-intro/
+[AzureAppService]: /documentation/articles/app-service-value-prop-what-is/ 
+[ControlInboundASE]: /documentation/articles/app-service-app-service-environment-control-inbound-traffic/ 
 
 <!-- IMAGES -->
 [SqlServerEndpoint]: ./media/app-service-app-service-environment-securely-connecting-to-backend-resources/SqlServerEndpoint01.png

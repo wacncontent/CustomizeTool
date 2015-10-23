@@ -295,7 +295,7 @@ In this article, you have learned how to use Apache Phoenix in HDInsight.  To le
 [hdinsight-hbase-overview]: hdinsight-hbase-overview
 [hbase-twitter-sentiment]: hdinsight-hbase-analyze-twitter-sentiment
 
-[hdinsight-hbase-phoenix-sqlline]: ./media/hdinsight-hbase-phoenix-squirrel/hdinsight-hbase-phoenix-sqlline.png
+[hdinsight-hbase-phoenix-sqlline]: .media/hdinsight-hbase-phoenix-squirrel/hdinsight-hbase-phoenix-sqlline.png
 [img-certificate]: ./media/hdinsight-hbase-phoenix-squirrel/hdinsight-hbase-vpn-certificate.png
 [img-vnet-diagram]: ./media/hdinsight-hbase-phoenix-squirrel/hdinsight-hbase-vnet-point-to-site.png
 [img-squirrel-driver]: ./media/hdinsight-hbase-phoenix-squirrel/hdinsight-hbase-squirrel-driver.png

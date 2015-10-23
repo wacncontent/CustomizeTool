@@ -184,7 +184,7 @@ As part of the Azure cloud ecosystem, Hadoop in HDInsight offers a number of ben
 
 * Efficient and economical data storage with Azure Blob storage, a Hadoop-compatible option. See [Use Azure Blob storage with Hadoop in HDInsight](hdinsight-hadoop-use-blob-storage) for details.
 
-* Integration with other Azure services, including [Web apps](/documentation/services/web-sites/) and [SQL Database](sql-database).
+* Integration with other Azure services, including [Web apps](/documentation/services/web-sites/) and [SQL Database](../documentation/services/sql-database/).
 
 * Low entry cost. Start a [trial](/pricing/1rmb-trial/), or consult [HDInsight pricing details](/home/features/hdinsight/#price).
 
@@ -236,7 +236,7 @@ Build on this introduction to Hadoop on HDInsight and big data analysis with the
 
 ### SQL Database on Azure
 
-* [Azure SQL Database](http://msdn.microsoft.com/zh-cn/library/windowsazure/ee336279.aspx): MSDN documentation for SQL Database.
+* [Azure SQL Database](http://msdn.microsoft.com/zh-cn/zh-cn/library/azure/ee336279.aspx): MSDN documentation for SQL Database.
 
 * [Management Portal for SQL Database](https://msdn.microsoft.com/zh-cn/library/azure/dn771027.aspx): A lightweight and easy-to-use database management tool for managing SQL Database in the cloud.
 
@@ -270,6 +270,6 @@ Use big data analysis on your organization's data to gain insights into your bus
 * [Analyze sensor data in real-time with Storm and HBase in HDInsight (Hadoop)](hdinsight-storm-sensor-data-analysis): Learn how to build a solution that uses a Storm cluster in HDInsight to process sensor data from Azure Event Hubs, and then displays the processed sensor data as near-real-time information on a web-based dashboard.
 
 
-[marketing-page]: hdinsight
+[marketing-page]: /home/features/hdinsight/
 [component-versioning]: hdinsight-component-versioning
 [zookeeper]: http://zookeeper.apache.org/
