@@ -63,7 +63,7 @@ AD FS Service Account page, "Use a domain user account option"|AD user account c
 Scenario  |Permission
 ------------- | ------------- |
 Password Sync| <li>Replicate Directory Changes.</li>  <li>Replicate Directory Changes All.</li>
-Exchange Hybrid Deployment|See [Office 365 Exchange Hybrid AAD Sync write-back attributes and permissions](https://msdn.microsoft.com/library/azure/dn757602.aspx#exchange).
+Exchange Hybrid Deployment|See [Office 365 Exchange Hybrid AAD Sync write-back attributes and permissions](http://msdn.microsoft.com/zh-cn/library/azure/dn757602.aspx#exchange).
 Password Write-back | <li>Change Password</li><li>Reset password</li>
 User, Group, and Device Write-back|Write permissions to the directory objects and attributes that you wish to 'write-back'
 Single Sign-On and AD FS| Domain admin permissions in the domain in which your federated servers are located.
@@ -87,9 +87,9 @@ AD FS:GMSA account (aadcsvc$)|Domain user|FS service logon account
 
 
 
-* [Permissions for password synchronization](https://msdn.microsoft.com/library/azure/dn757602.aspx#psynch)
-* [Permissions for Exchange hybrid](https://msdn.microsoft.com/library/azure/dn757602.aspx#exchange)
-* [Permissions for password writeback](https://msdn.microsoft.com/library/azure/dn757602.aspx#pwriteback)
+* [Permissions for password synchronization](http://msdn.microsoft.com/zh-cn/library/azure/dn757602.aspx#psynch)
+* [Permissions for Exchange hybrid](http://msdn.microsoft.com/zh-cn/library/azure/dn757602.aspx#exchange)
+* [Permissions for password writeback](http://msdn.microsoft.com/zh-cn/library/azure/dn757602.aspx#pwriteback)
 * [Custom installation of Azure AD Connect](/documentation/articles/active-directory-aadconnect-get-started-custom)
 * [Azure AD Connect on MSDN](/documentation/articles/active-directory-aadconnect)
  

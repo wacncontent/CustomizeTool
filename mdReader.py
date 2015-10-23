@@ -10,7 +10,7 @@ class MdReader:
 
     # Function to get markdown file list
     def getMdList(self):
-        MD_FILE = "mdFile.md"
+        MD_FILE = "modified.txt"
 
         try:
             with open(MD_FILE, "r") as fMd:

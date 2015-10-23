@@ -25,6 +25,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="core.py" />
+    <Compile Include="fileListGen.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="mdReader.py" />
     <Compile Include="ruleReader.py" />
   </ItemGroup>
@@ -49,13 +52,16 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="mdFile.md" />
+    <Content Include="modified.txt" />
     <Content Include="output\test\active-directory-aadconnect-account-summary.md" />
     <Content Include="output\test\keyword_test.md" />
     <Content Include="rules.md" />
+    <Content Include="rules.txt" />
     <Content Include="test\active-directory-aadconnect-account-summary.md" />
     <Content Include="test\active-directory-aadconnect-account-summary.md.bak" />
     <Content Include="test\keyword_test.md" />
     <Content Include="test\keyword_test.md.bak" />
+    <Content Include="untracked.txt" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

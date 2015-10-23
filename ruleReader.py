@@ -20,7 +20,7 @@ class RuleReader:
         self.isConst = True
     # Function to get rules from "rules.txt"
     def getRules(self):
-        RULE_FILE = 'rules.md'
+        RULE_FILE = 'rules.txt'
         COMMENT_PREFIX = '#'
         RULE_SEP = '='
         UNSURE = '???'

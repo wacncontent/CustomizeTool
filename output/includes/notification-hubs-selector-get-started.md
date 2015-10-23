@@ -1,0 +1,10 @@
+> [AZURE.SELECTOR]
+- [Windows Runtime 8.1 universal](notification-hubs-windows-store-dotnet-get-started)
+- [Windows Phone Silverlight 8.x](notification-hubs-windows-phone-get-started)
+- [iOS](notification-hubs-ios-get-started)
+- [Android](notification-hubs-android-get-started)
+- [Kindle](notification-hubs-kindle-get-started)
+- [Baidu](notification-hubs-baidu-get-started)
+- [Xamarin.iOS](partner-xamarin-notification-hubs-ios-get-started)
+- [Xamarin.Android](partner-xamarin-notification-hubs-android-get-started)
+- [Chrome](notification-hubs-chrome-get-started)

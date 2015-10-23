@@ -7,6 +7,7 @@ import mdReader
 import re
 import os
 import sys
+from fileListGen import genFileList, global_article_path
 
 __author__ = 'Steven'
 
@@ -39,16 +40,19 @@ class Core:
         # iterate the markdown file list and do the replacing
         for mdFile in pMdList:
             result = ''
+            print(mdFile)
             with open(mdFile, "r") as text:
                 # for content in text.readlines():
                 result = self.multiple_replace(pRuleDict, text.read())
                 # print(result)
             # Write result into Archive/mdFile
+            mdFile = mdFile[len(global_article_path)+1:]
             with open('output/'+mdFile, 'w') as bakFile:
                 bakFile.write(result)
                 print('\033[1;33m '+ mdFile+'\033[0m \033 customize success, the result file is: \033[1;32m'+ mdFile+'.bak\033[0m\n')
 
 if __name__ == "__main__":
+    genFileList("modified.txt")
     core = Core()
     rule = ruleReader.RuleReader()
     md = mdReader.MdReader()
