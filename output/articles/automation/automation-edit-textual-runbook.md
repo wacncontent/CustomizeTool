@@ -6,14 +6,10 @@
 	authors="bwren"
 	manager="stevenka"
 	editor="tysonn" />
-<tags 
+<tags
 	ms.service="automation"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.tgt_pltfrm="na"
-	ms.workload="infrastructure-services"
 	ms.date="09/23/2015"
-	ms.author="bwren" />
+	wacn.date=""/>
 
 # Editing textual runbooks in Azure Automation
 
@@ -25,7 +21,7 @@ Each runbook in Azure Automation has two versions, Draft and Published. You edit
 
 To work with [Graphical Runbooks](automation-runbook-types#graphical-runbooks), see [Graphical authoring in Azure Automation](automation-graphical-authoring-intro).
 
-## To edit a runbook with the Azure preview portal
+## To edit a runbook with the Azure <!-- deleted by customization preview portal --><!-- keep by customization: begin -->Management Portal<!-- keep by customization: end -->
 
 Use the following procedure to open a runbook for editing in the textual editor.
 
@@ -137,7 +133,9 @@ The following sample commands show how to replace the existing contents of a run
 
 - [Creating or importing a runbook in Azure Automation](automation-creatnig-importing-runbook)
 - [Learning PowerShell workflow](automation-powershell-workflow)
+<!-- deleted by customization
 - [Graphical authoring in Azure Automation](automation-graphical-authoring-intro)
+-->
 - [Certificates](automation-certificates)
 - [Connections](automation-connections)
 - [Credentials](automation-credentials)

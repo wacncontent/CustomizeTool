@@ -9,13 +9,9 @@
 	editor="cgronlun"/>
 
 <tags
-   ms.service="hdinsight"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="big-data"
-   ms.date="09/03/2015"
-   ms.author="cgronlun"/>
+	ms.service="hdinsight"
+	ms.date="09/03/2015"
+	wacn.date=""/>
 
 
 # Introduction to Hadoop in HDInsight: Big-data analysis and processing in the cloud
@@ -37,37 +33,40 @@ For big data to provide actionable intelligence or insight, not only must the ri
 
 ## <a name="overview"></a>Overview of the Hadoop ecosystem on HDInsight
 
-HDInsight is a cloud implementation on Windows Azure of the rapidly exanding Apache Hadoop technology stack that is the go-to solution for big data analysis. It includes implementations of Storm, HBase, Pig, Hive, Sqoop, Oozie, Ambari, and so on. HDInsight also integrates with business intelligence (BI) tools such as Excel, SQL Server Analysis Services, and SQL Server Reporting Services.
+HDInsight is a cloud implementation on Windows Azure of the rapidly exanding Apache Hadoop technology stack that is the go-to solution for big data analysis. It includes implementations of Storm, HBase, Pig, Hive, Sqoop, Oozie, <!-- deleted by customization Ambari, -->and so on. HDInsight also integrates with business intelligence (BI) tools such as Excel, SQL Server Analysis Services, and SQL Server Reporting Services.
 
-### Linux and Windows clusters
+###<!-- deleted by customization Linux and --> Windows clusters
 
-Azure HDInsight deploys and provisions Hadoop clusters in the cloud, by using either **Linux** or **Windows** as the underlying OS.
+Azure HDInsight deploys and provisions Hadoop clusters in the cloud, by using<!-- deleted by customization either **Linux** or --> **Windows** as the underlying OS.
+<!-- deleted by customization
 
 * **HDInsight on Linux** - A Hadoop cluster on Ubuntu. Use this if you are familiar with Linux or Unix, are migrating from an existing Linux-based Hadoop solution, or want easy integration with Hadoop ecosystem components built for Linux.
+-->
 
 * **HDInsight on Windows** - A Hadoop cluster on Windows Server. Use this if you are familiar with Windows, are migrating from an existing Windows-based Hadoop solution, or want to use .NET or other Windows-only technologies on the cluster.
 
 The following table compares the two:
 
-Category | Hadoop on Linux | Hadoop on Windows
----------| -------------------| --------------------
-**Cluster OS** | Ubuntu 12.04 Long Term Support (LTS) | Windows Server 2012 R2
-**Cluster Type** | Hadoop, HBase, Storm | Hadoop, HBase, Storm
-**Deployment** | Azure preview portal, Azure CLI, Azure PowerShell | Azure Management Portal, Azure preview portal, Azure CLI, Azure PowerShell, HDInsight .NET SDK
-**Cluster UI** | Ambari | Cluster Dashboard
-**Remote Access** | Secure Shell (SSH), REST API, ODBC, JDBC | Remote Desktop Protocol (RDP), REST API, ODBC, JDBC
+Category |<!-- deleted by customization Hadoop on Linux | --> Hadoop on Windows
+---------|<!-- deleted by customization -------------------| --> --------------------
+**Cluster OS** |<!-- deleted by customization Ubuntu 12.04 Long Term Support (LTS) | --> Windows Server 2012 R2
+**Cluster Type** |<!-- deleted by customization Hadoop, HBase, Storm | --> Hadoop, HBase, Storm
+**Deployment** |<!-- deleted by customization Azure Management Portal, Azure CLI, Azure PowerShell | Azure Management Portal, --> Azure Management Portal, Azure CLI, Azure PowerShell, HDInsight .NET SDK
+**Cluster UI** |<!-- deleted by customization Ambari | --> Cluster Dashboard
+**Remote Access** |<!-- deleted by customization Secure Shell (SSH), REST API, ODBC, JDBC | --> Remote Desktop Protocol (RDP)
 
 
 
-### Hadoop, HBase, Storm, Spark, and customized clusters
+### Hadoop, HBase, Storm,<!-- deleted by customization Spark, --> and customized clusters
 
-HDInsight provides cluster configurations for Hadoop, HBase, or Storm. Or, you can [customize clusters with script actions](hdinsight-hadoop-customize-cluster-linux).
+HDInsight provides cluster configurations for Hadoop, HBase, or Storm. Or, you can [customize clusters with script actions](hdinsight-hadoop-customize-cluster).
 
 * **Hadoop** (the "Query" workload): Provides reliable data storage with [HDFS](#HDFS), and a simple [MapReduce](#mapreduce) programming model to process and analyze data in parallel.
 
 * **<a target="_blank" href="http://hbase.apache.org/">HBase</a>** (the "NoSQL" workload): A NoSQL database built on Hadoop that provides random access and strong consistency for large amounts of unstructured and semi-structured data - potentially billions of rows times millions of columns. See [Overview of HBase on HDInsight](hdinsight-hbase-overview).
 
 * **<a  target="_blank" href="https://storm.incubator.apache.org/">Apache Storm</a>** (the "Stream" workload): A distributed, real-time computation system for processing large streams of data fast. Storm is offered as a managed cluster in HDInsight. See [Analyze real-time sensor data using Storm and Hadoop](hdinsight-storm-sensor-data-analysis).
+<!-- deleted by customization
 
 #### Example customization scripts
 
@@ -88,14 +87,17 @@ The following are example scripts provided by the HDInsight team:
 * [Spark](hdinsight-hadoop-spark-install-linux)
 
 For information on developing your own Script Actions, see [Script Action development with HDInsight](hdinsight-hadoop-script-actions-linux).
+-->
 
 ## What are the Hadoop components?
 
 In addition to the previous overall configurations, the following individual components are also included on HDInsight clusters.
+<!-- deleted by customization
 
 * **[Ambari](#ambari)**: Cluster provisioning, management, and monitoring.
 
 	> [AZURE.NOTE] Only a subset of the Ambari REST API is provided for Windows-based HDInsight clusters.
+-->
 
 * **[Avro](#avro)** (Microsoft .NET Library for Avro): Data serialization for the Microsoft .NET environment.
 
@@ -118,12 +120,14 @@ In addition to the previous overall configurations, the following individual com
 * **[ZooKeeper](#zookeeper)**: Coordination of processes in distributed systems.
 
 > [AZURE.NOTE] For information on the specific components and version information, see [What's new in the Hadoop cluster versions provided by HDInsight?][component-versioning]
+<!-- deleted by customization
 
 ###<a name="ambari"></a>Ambari
 
 Apache Ambari is for provisioning, managing and monitoring Apache Hadoop clusters. It includes an intuitive collection of operator tools and a robust set of APIs that hide the complexity of Hadoop, simplifying the operation of clusters. Linux-based HDInsight clusters provide both the Ambari web UI and the Ambari REST API, while Windows-based clusters provide a subset of the REST API.
 
 See [Manage HDInsight clusters using Ambari](hdinsight-hadoop-manage-ambari) (Linux only), [Monitor Hadoop clusters in HDInsight using the Ambari API](hdinsight-monitor-use-ambari-api), and <a target="_blank" href="https://github.com/apache/ambari/blob/trunk/ambari-server/docs/api/v1/index.md">Apache Ambari API reference</a>.
+-->
 
 ### <a name="avro"></a>Avro (Microsoft .NET Library for Avro)
 
@@ -176,7 +180,7 @@ For more information on MapReduce, see <a target="_blank" href="http://wiki.apac
 
 As part of the Azure cloud ecosystem, Hadoop in HDInsight offers a number of benefits, among them:
 
-* Automatic provisioning of Hadoop clusters. HDInsight clusters are much easier to create than manually configuring Hadoop clusters. For details, see [Provision Hadoop clusters in HDInsight](hdinsight-hadoop-provision-linux-clusters).
+* Automatic provisioning of Hadoop clusters. HDInsight clusters are much easier to create than manually configuring Hadoop clusters. For details, see [Provision Hadoop clusters in HDInsight](hdinsight-provision-clusters).
 
 * State-of-the-art Hadoop components. For details, see [What's new in the Hadoop cluster versions provided by HDInsight?][component-versioning].
 
@@ -184,7 +188,7 @@ As part of the Azure cloud ecosystem, Hadoop in HDInsight offers a number of ben
 
 * Efficient and economical data storage with Azure Blob storage, a Hadoop-compatible option. See [Use Azure Blob storage with Hadoop in HDInsight](hdinsight-hadoop-use-blob-storage) for details.
 
-* Integration with other Azure services, including [Web apps](/documentation/services/web-sites/) and [SQL Database](../documentation/services/sql-database/).
+* Integration with other Azure services, including [Web apps](/documentation/services/web-sites/) and [SQL Database](/documentation/services/sql-database/).
 
 * Low entry cost. Start a [trial](/pricing/1rmb-trial/), or consult [HDInsight pricing details](/home/features/hdinsight/#price).
 
@@ -197,6 +201,7 @@ To read more about the advantages on Hadoop in HDInsight, see the  [Azure featur
 
 Build on this introduction to Hadoop on HDInsight and big data analysis with the resources below.
 
+<!-- deleted by customization
 
 ### HDInsight on Linux
 
@@ -204,13 +209,14 @@ Build on this introduction to Hadoop on HDInsight and big data analysis with the
 
 * [Get started with HDInsight on Linux](hdinsight-hadoop-linux-tutorial-get-started): A quick-start tutorial for provisioning HDInsight Hadoop clusters on Linux and running sample Hive queries.
 
-* [Get started with Linux-based Storm on HDInsight](hdinsight-apache-storm-tutorial-get-started-linux): A quick-start tutorial for provisioning a Storm on HDInsight cluster and running sample Storm topologies.
+* [Get started with Linux-based Storm on HDInsight](hdinsight-apache-storm-tutorial-get-started): A quick-start tutorial for provisioning a Storm on HDInsight cluster and running sample Storm topologies.
 
-* [Provision HDInsight on Linux](hdinsight-hadoop-provision-linux-clusters): Learn how to provision an HDInsight Hadoop cluster on Linux through the Azure Management Portal, Azure CLI, or Azure PowerShell.
+* [Provision HDInsight on Linux](hdinsight-provision-clusters): Learn how to provision an HDInsight Hadoop cluster on Linux through the Azure Management Portal, Azure CLI, or Azure PowerShell.
 
 * [Working with HDInsight on Linux](hdinsight-hadoop-linux-information): Get some quick tips on working with Hadoop Linux clusters provisioned on Azure.
 
 * [Manage HDInsight clusters using Ambari](hdinsight-hadoop-manage-ambari): Learn how to monitor and manage your Linux-based Hadoop on HDInsight cluster by using Ambari Web, or the Ambari REST API.
+-->
 
 
 ### HDInsight on Windows
@@ -236,7 +242,7 @@ Build on this introduction to Hadoop on HDInsight and big data analysis with the
 
 ### SQL Database on Azure
 
-* [Azure SQL Database](http://msdn.microsoft.com/zh-cn/zh-cn/library/azure/ee336279.aspx): MSDN documentation for SQL Database.
+* [Azure SQL Database](http://msdn.microsoft.com/zh-cn/library/azure/ee336279.aspx): MSDN documentation for SQL Database.
 
 * [Management Portal for SQL Database](https://msdn.microsoft.com/zh-cn/library/azure/dn771027.aspx): A lightweight and easy-to-use database management tool for managing SQL Database in the cloud.
 

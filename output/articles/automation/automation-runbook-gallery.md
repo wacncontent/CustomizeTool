@@ -6,14 +6,10 @@
 	authors="bwren"
 	manager="stevenka"
 	editor="tysonn" />
-<tags 
+<tags
 	ms.service="automation"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.tgt_pltfrm="na"
-	ms.workload="infrastructure-services"
 	ms.date="09/23/2015"
-	ms.author="bwren" />
+	wacn.date=""/>
 
 
 # Runbook and module galleries for Azure Automation
@@ -24,9 +20,9 @@ You can get runbooks from the [Runbook Gallery](#runbooks-in-runbook-gallery) an
 
 ## Runbooks in Runbook Gallery
 
-The [Runbook Gallery](http://gallery.technet.microsoft.com/scriptcenter/site/search?f[0].Type=RootCategory&f[0].Value=WindowsAzure&f[1].Type=SubCategory&f[1].Value=WindowsAzure_automation&f[1].Text=Automation) provides a variety of runbooks from Microsoft and the community that you can import into Azure Automation. You can either download a runbook from the gallery which is hosted in the [TechNet Script Center](http://gallery.technet.microsoft.com/), or you can directly import runbooks from the gallery from the Azure Management Portal and Azure preview portal.
+The [Runbook Gallery](http://gallery.technet.microsoft.com/scriptcenter/site/search?f[0].Type=RootCategory&f[0].Value=WindowsAzure&f[1].Type=SubCategory&f[1].Value=WindowsAzure_automation&f[1].Text=Automation) provides a variety of runbooks from Microsoft and the community that you can import into Azure Automation. You can either download a runbook from the gallery which is hosted in the [TechNet Script Center](http://gallery.technet.microsoft.com/), or you can directly import runbooks from the gallery from the Azure Management Portal<!-- deleted by customization and Azure Management Portal -->.
 
-You can only import directly from the Runbook Gallery using the Azure Management Portal or Azure preview portal. You cannot perform this function using Windows PowerShell.
+You can only import directly from the Runbook Gallery using the Azure Management Portal<!-- deleted by customization or Azure Management Portal -->. You cannot perform this function using Windows PowerShell.
 
 >[AZURE.NOTE] You should validate the contents of any runbooks that you get from the Runbook Gallery and use extreme caution in installing and running them in a production environment.|
 
@@ -38,6 +34,7 @@ You can only import directly from the Runbook Gallery using the Azure Management
 3. Review the contents of the runbook and note any requirements in the description. Click the right arrow button when you’re done.
 4. Enter the runbook details and then click the checkmark button. The runbook name will already be filled in.
 5. The runbook will appear on the **Runbooks** tab for the Automation Account.
+<!-- deleted by customization
 
 ### To import a runbook from the Runbook Gallery with the Azure preview portal
 
@@ -52,6 +49,7 @@ You can only import directly from the Runbook Gallery using the Azure Management
 ![Import button](./media/automation-runbook-gallery/gallery-item-detail.png)
 6. Optionally, change the name of the runbook and then click **OK** to import the runbook.
 5. The runbook will appear on the **Runbooks** tab for the Automation Account.
+-->
 
 
 ### Adding a runbook to the runbook gallery
@@ -80,6 +78,7 @@ Microsoft encourages you to add runbooks to the Runbook Gallery that you think w
 
 
 - Automation updates the Gallery once an hour, so you won’t see your contributions immediately.  If you don’t see your runbook in the gallery after an hour, check the requirements in the [Adding a Runbook to the Runbook Gallery](#AddRunbook) section.
+<!-- deleted by customization
 
 ## Modules in PowerShell Gallery
 
@@ -102,6 +101,7 @@ PowerShell modules contain cmdlets that you can use in your runbooks, and existi
 6. You must select **Legal terms** and click **Buy**.  Note that despite the name of this button you are not actually charged for installing a module.
 7. Click **Create** to import the module.  This may take a couple of minutes since each activity needs to be extracted.  
 8. You will receive a notification that the module is being deployed and a notification when it has completed. 
+-->
 
 
 ## Requesting a runbook or module

@@ -271,7 +271,7 @@ The following are errors or problems commonly encountered when using Git to publ
 * For a guide to the change from Websites to Azure Websites see: [Azure Websites and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
 * For a guide to the change of the Management Portal to the new portal see: [Reference for navigating the preview portal](https://manage.windowsazure.cn/)
 
-[Azure Developer Center]: http://azure.microsoft.com/en-us/develop/overview/
+[Azure Developer Center]: /develop/overview/
 [Azure preview portal]: https://manage.windowsazure.cn
 [Git website]: http://git-scm.com
 [Installing Git]: http://git-scm.com/book/en/Getting-Started-Installing-Git

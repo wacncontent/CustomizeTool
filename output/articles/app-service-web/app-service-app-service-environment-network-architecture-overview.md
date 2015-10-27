@@ -7,14 +7,10 @@
 	manager="wpickett" 
 	editor=""/>
 
-<tags 
-	ms.service="app-service" 
-	ms.workload="na" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="10/01/2015" 
-	ms.author="stefsch"/>	
+<tags
+	ms.service="app-service"
+	ms.date="10/01/2015"
+	wacn.date=""/>	
 
 # Network Architecture Overview of Azure Websites Environments
 
@@ -78,8 +74,8 @@ Details on using user defined routes to grant outbound Internet access to Azure 
 
 <!-- LINKS -->
 [virtualnetwork]: http://azure.microsoft.com/services/networking/
-[controllinginboundtraffic]: /documentation/articles/app-service-app-service-environment-control-inbound-traffic/
-[ExpressRoute]: /documentation/articles/app-service-app-service-environment-network-configuration-expressroute/
+[controllinginboundtraffic]:  /documentation/articles/app-service-app-service-environment-control-inbound-traffic/
+[ExpressRoute]:  /documentation/articles/app-service-app-service-environment-network-configuration-expressroute/
 
 <!-- IMAGES -->
 [GeneralNetworkFlows]: ./media/app-service-app-service-environment-network-architecture-overview/NetworkOverview-1.png

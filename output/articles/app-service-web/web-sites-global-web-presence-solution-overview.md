@@ -7,14 +7,10 @@
 	services="app-service\web" 
 	documentationCenter=""/>
 
-<tags 
-	ms.service="app-service-web" 
-	ms.workload="web" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="09/29/2015" 
-	ms.author="cephalin"/>
+<tags
+	ms.service="app-service-web"
+	ms.date="09/29/2015"
+	wacn.date=""/>
 
 
 # Create a global web presence on Azure Websites
@@ -66,7 +62,7 @@ Deliver your static content lightning fast to users globally by [integrating you
 
 Optimize your .COM site by scaling automatically with Autoscale, caching with Azure Redis Cache, running background tasks with WebJobs, and maintaining high availability with Azure Traffic Manager.
 
-The ability of Azure Websites to [scale up and out] meets the need of your .COM site, regardless of the size of your workload. Scale out your website manually through the [Azure preview portal](https://manage.windowsazure.cn/), programmatically through the [Service Management API] or [PowerShell scripting], or automatically through the Autoscale feature. In **Standard** hosting plan, Autoscale enables you to scale out a website automatically based on CPU utilization. For best practices, see [Troy Hunt]'s [10 things I learned about rapidly scaling web apps with Azure].
+The ability of Azure Websites to [scale up and out] meets the need of your .COM site, regardless of the size of your workload. Scale out your website manually through the [Azure <!-- deleted by customization preview portal --><!-- keep by customization: begin -->Management Portal<!-- keep by customization: end -->](https://manage.windowsazure.cn/), programmatically through the [Service Management API] or [PowerShell scripting], or automatically through the Autoscale feature. In **Standard** hosting plan, Autoscale enables you to scale out a website automatically based on CPU utilization. For best practices, see [Troy Hunt]'s [10 things I learned about rapidly scaling web apps with Azure].
 
 Make your website more responsive with the [Azure Redis Cache]. Use it to cache data from backend databases and other things such as the [ASP.NET session state] and [output cache].
 
@@ -76,7 +72,7 @@ Maintain high availability of your website using [Azure Traffic Manager]. Using 
 
 Stay up-to-date on your website's performance with Azure or third-party tools. Receive alerts on critical website events. Gain user insight easily with Application Insight or with web log analytics from HDInsight. 
 
-Get a [quick glance] of the website's current performance metrics and resource quotas in the web app's blade in the [Azure preview portal](https://manage.windowsazure.cn/). For a 360Â° view of your application across availability, performance and usage, use [Azure Application Insights] to give you fast & powerful troubleshooting, diagnostics and usage insights. Or, use a third-party tool like [New Relic] to provide advanced monitoring data for your websites.
+Get a [quick glance] of the website's current performance metrics and resource quotas in the web app's blade in the [Azure <!-- deleted by customization preview portal --><!-- keep by customization: begin -->Management Portal<!-- keep by customization: end -->](https://manage.windowsazure.cn/). For a 360° view of your application across availability, performance and usage, use [Azure Application Insights] to give you fast & powerful troubleshooting, diagnostics and usage insights. Or, use a third-party tool like [New Relic] to provide advanced monitoring data for your websites.
 
 In the **Standard** hosting plan, monitor site responsiveness receive email notifications whenever your site becomes unresponsive. For more information, see [How to: Receive Alert Notifications and Manage Alert Rules in Azure].
 
@@ -107,35 +103,32 @@ Make your .COM site attractive with rich media, such as:
 [Visual Studio]: web-sites-dotnet-get-started
 [Visual Studio Online]: cloud-services-continuous-delivery-use-vso
 [Git]: web-sites-publish-source-control
-
-[deploying to a staging slot]: web-sites-staged-publishing 
-[continuously publish]: http:/rickrainey.com/2014/01/21/continuous-deployment-github-with-azure-web-sites-and-staged-publishing/
-[run A/B tests]: http://blogs.msdn.com/b/tomholl/archive/2014/11/10/a-b-testing-with-azure-websites.aspx
+[deploying to a staging slot]: web-sites-staged-publishing
+[continuously publish]:http://rickrainey.com/2014/01/21/continuous-deployment-github-with-azure-web-sites-and-staged-publishing/
+[run A/B tests]:http://blogs.msdn.com/b/tomholl/archive/2014/11/10/a-b-testing-with-azure-websites.aspx
 
 [custom domain]: web-sites-custom-domain-name
 [HTTPS]: web-sites-configure-ssl-certificate
 [Azure Websites Pricing Details]: /home/features/web-site/#price#ssl-connections
 
-[Azure Traffic Manager]: http://www.hanselman.com/blog/CloudPowerHowToScaleAzureWebsitesGloballyWithTrafficManager.aspx
-[integrating your web app with Azure CDN]: cdn-websites-with-cdn 
-[CDN node]: https://msdn.microsoft.com/zh-cn/library/azure/gg680302.aspx
+[Azure Traffic Manager]:http://www.hanselman.com/blog/CloudPowerHowToScaleAzureWebsitesGloballyWithTrafficManager.aspx
+[integrating your web app with Azure CDN]: cdn-websites-with-cdn
+[CDN node]:https://msdn.microsoft.com/zh-cn/library/azure/gg680302.aspx
 
 [scale up and out]: web-sites-scale
-[Azure Management Portal]: http://manage.windowsazure.cn/
-[Service Management API]: https://msdn.microsoft.com/zh-cn/library/azure/ee460799.aspx
-[PowerShell scripting]: https://msdn.microsoft.com/zh-cn/library/azure/jj152841.aspx
-[Troy Hunt]: https://twitter.com/troyhunt
-[10 things I learned about rapidly scaling web apps with Azure]: http://www.troyhunt.com/2014/09/10-things-i-learned-about-rapidly.html
+[Azure Management Portal]:http://manage.windowsazure.cn/
+[Service Management API]:https://msdn.microsoft.com/zh-cn/library/azure/ee460799.aspx
+[PowerShell scripting]:https://msdn.microsoft.com/zh-cn/library/azure/jj152841.aspx
+[Troy Hunt]:https://twitter.com/troyhunt
+[10 things I learned about rapidly scaling web apps with Azure]:http://www.troyhunt.com/2014/09/10-things-i-learned-about-rapidly.html
 [Azure Redis Cache]:/blog/2014/06/05/mvc-movie-app-with-azure-redis-cache-in-15-minutes/
-[ASP.NET session state]: https://msdn.microsoft.com/zh-cn/library/azure/dn690522.aspx
-[output cache]: https://msdn.microsoft.com/zh-cn/library/azure/dn798898.aspx
+[ASP.NET session state]:https://msdn.microsoft.com/zh-cn/library/azure/dn690522.aspx
+[output cache]:https://msdn.microsoft.com/zh-cn/library/azure/dn798898.aspx
 
 [quick glance]: web-sites-monitor
-[Azure Application Insights]: http://blogs.msdn.com/b/visualstudioalm/archive/2015/01/07/application-insights-and-azure-websites.aspx
+[Azure Application Insights]:http://blogs.msdn.com/b/visualstudioalm/archive/2015/01/07/application-insights-and-azure-websites.aspx
 [New Relic]: store-new-relic-cloud-services-dotnet-application-performance-management
-[How to: Receive Alert Notifications and Manage Alert Rules in Azure]: http://msdn.microsoft.com/zh-cn/zh-cn/library/azure/dn306638.aspx
+[How to: Receive Alert Notifications and Manage Alert Rules in Azure]:http://msdn.microsoft.com/zh-cn/library/azure/dn306638.aspx
 
-[Azure Media Services]: http://blogs.technet.com/b/cbernier/archive/2013/09/03/windows-azure-media-services-and-web-sites.aspx
+[Azure Media Services]:http://blogs.technet.com/b/cbernier/archive/2013/09/03/windows-azure-media-services-and-web-sites.aspx
 [SendGrid service in Azure Marketplace]: sendgrid-dotnet-how-to-send-email
-
- 

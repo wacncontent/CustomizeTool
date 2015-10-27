@@ -10,20 +10,18 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.workload="big-data"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="10/15/2015"
-	ms.author="jgao"/>
+	wacn.date=""/>
 
 #Run word count MapReduce program on Hadoop cluster in HDInsight
 
 Learn how to run a MapReduce program on Hadoop cluster in HDInsight using Azure PowerShell. The program is written in Java, it counts word occurrences in a text file, and then outputs a new text file that contains each word paired with its frequency of occurrence. 
 
 The program are installed on the clusters. The text file analyzed in this tutorial is the Project Gutenberg eBook edition of The Notebooks of Leonardo Da Vinci.
+<!-- deleted by customization
 
 > [AZURE.NOTE] The steps in this document require a Windows client. For steps on using the word count example from a Linux, OS X, or Unix client, with a Linux-based HDInsight cluster, see [Use MapReduce with Hadoop on HDInsight with SSH](hdinsight-hadoop-use-mapreduce-ssh) or [Use MapReduce with Hadoop on HDInsight using Curl](hdinsight-hadoop-use-mapreduce-curl).
+-->
 
 **Other related articles:**
 
@@ -39,6 +37,9 @@ The program are installed on the clusters. The text file analyzed in this tutori
 - **An HDInsight cluster**. For instructions about the various ways in which such clusters can be created, see [Get Started with Azure HDInsight][hdinsight-get-started] or [Provision HDInsight Clusters](hdinsight-provision-clusters).
 - **A workstation with Azure PowerShell**. See [Install and use Azure PowerShell](/documentation/articles/install-configure-powershell).
 
+<!-- keep by customization: begin -->
+<a id="run-sample"></a>
+<!-- keep by customization: end -->
 ## Run the sample by using Azure PowerShell
 
 **To submit the MapReduce job**
@@ -123,6 +124,9 @@ The output from the WordCount script should appear in the command window:
 
 Note that the output files of a MapReduce job are immutable. So if you rerun this sample, you need to change the name of the output file.
 
+<!-- keep by customization: begin -->
+<a id="java-code"></a>
+<!-- keep by customization: end -->
 ##Java source code
 
 	package org.apache.hadoop.examples;
@@ -193,6 +197,9 @@ Note that the output files of a MapReduce job are immutable. So if you rerun thi
   	}
   	}
 
+<!-- keep by customization: begin -->
+<a id="next-steps"></a>
+<!-- keep by customization: end -->
 ## Next steps
 
 * [Get Started with Azure HDInsight][hdinsight-get-started]
@@ -205,13 +212,8 @@ Note that the output files of a MapReduce job are immutable. So if you rerun thi
 [hdinsight-sample-10gb-graysort]: hdinsight-sample-10gb-graysort
 [hdinsight-sample-pi-estimator]: hdinsight-sample-pi-estimator
 [hdinsight-sample-cs-streaming]: hdinsight-sample-csharp-streaming
-
-
 [hdinsight-use-hive]: hdinsight-use-hive
 [hdinsight-use-pig]: hdinsight-use-pig
-
 [hdinsight-get-started]: hdinsight-get-started
-
 [powershell-install-configure]: install-configure-powershell
-
 [image-hdi-sample-wordcount-output]: ./media/hdinsight-sample-wordcount/HDI.Sample.WordCount.Output.png

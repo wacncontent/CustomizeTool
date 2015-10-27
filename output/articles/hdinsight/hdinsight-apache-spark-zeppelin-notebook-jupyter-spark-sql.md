@@ -10,12 +10,8 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.workload="big-data"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="09/30/2015"
-	ms.author="nitinme"/>
+	wacn.date=""/>
 
 
 # Get started: Provision Apache Spark on Azure HDInsight and run interactive queries using Spark SQL
@@ -285,7 +281,6 @@ In this section, you use a Jupyter notebook to run Spark SQL queries against a S
 [hdinsight-versions]: hdinsight-component-versioning
 [hdinsight-upload-data]: hdinsight-upload-data
 [hdinsight-storage]: hdinsight-use-blob-storage
-
 [azure-purchase-options]: /pricing/overview/
 [azure-member-offers]: http://azure.microsoft.com/pricing/member-offers/
 [azure-trial]: /pricing/1rmb-trial/

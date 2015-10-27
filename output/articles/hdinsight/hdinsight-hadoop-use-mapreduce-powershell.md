@@ -9,13 +9,9 @@
 	tags="azure-portal"/>
 
 <tags
-   ms.service="hdinsight"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="big-data"
-   ms.date="09/23/2015"
-   ms.author="larryfr"/>
+	ms.service="hdinsight"
+	ms.date="09/23/2015"
+	wacn.date=""/>
 
 #Run Hive queries with Hadoop on HDInsight using PowerShell
 
@@ -27,7 +23,7 @@ This document provides an example of using Azure PowerShell to run a MapReduce j
 
 To complete the steps in this article, you will need the following:
 
-- **An Azure HDInsight (Hadoop on HDInsight) cluster (Windows-based or Linux-based)**
+- **An Azure HDInsight (Hadoop on HDInsight) cluster (Windows-based<!-- deleted by customization or Linux-based -->)**
 
 - **A workstation with Azure PowerShell**. See [Install and Configure Azure PowerShell](powershell-install-configure)
 

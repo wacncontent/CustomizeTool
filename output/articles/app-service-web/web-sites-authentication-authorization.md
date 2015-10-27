@@ -7,18 +7,14 @@
 	manager="wpickett" 
 	editor="jimbe"/>
 
-<tags 
-	ms.service="app-service" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.tgt_pltfrm="na" 
-	ms.workload="web" 
-	ms.date="09/29/2015" 
-	ms.author="cephalin"/>
+<tags
+	ms.service="app-service"
+	ms.date="09/29/2015"
+	wacn.date=""/>
 
 # Use Active Directory for authentication in Azure Websites #
 
-[Azure Websites](/documentation/services/web-sites/) enables enterprise line-of-business application scenarios by supporting single sign-on (SSO) of users whether they access the application from your on-premises environment or the public internet. It can be integrated with [Azure Active Directory](/home/features/active-directory/) (AAD) or an on-premises secure token service (STS), such as Active Directory Federation Services (AD FS), to authenticate your internal Active Directory (AD) users and authorize them properly.
+[Azure Websites](/documentation/services/web-sites/) enables enterprise line-of-business application scenarios by supporting single sign-on (SSO) of users whether they access the application from your on-premises environment or the public internet. It can be integrated with [Azure Active Directory](/home/features/identity/) (AAD) or an on-premises secure token service (STS), such as Active Directory Federation Services (AD FS), to authenticate your internal Active Directory (AD) users and authorize them properly.
 
 ## Zero-friction authentication and authorization ##
 
@@ -45,10 +41,12 @@ In many scenarios, you want to customize the authentication and authorization be
 	-	Only AD FS administrators can configure [relying party trusts and claim rules](http://technet.microsoft.com/zh-cn/library/dd807108.aspx).
 	-	Can manage [claims](http://technet.microsoft.com/zh-cn/library/ee913571.aspx) on a per-application basis.
 	-	Must have a separate solution for accessing on-premises AD data through the corporate firewall.
+<!-- deleted by customization
 
 >[AZURE.NOTE] If you want to get started with Azure Websites before signing up for an Azure account, go to [Try Azure Websites](http://go.microsoft.com/fwlink/?LinkId=523751), where you can immediately create a short-lived starter web app in Azure Websites. No credit cards required; no commitments.
 
 ## What's changed
 * For a guide to the change from Websites to Azure Websites see: [Azure Websites and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
 * For a guide to the change of the Management Portal to the new portal see: [Reference for navigating the preview portal](https://manage.windowsazure.cn/)
+-->
  

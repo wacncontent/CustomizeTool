@@ -9,13 +9,9 @@
 	editor="cgronlun"/>
 
 <tags
-   ms.service="hdinsight"
-   ms.devlang="java"
-   ms.topic="get-started-article"
-   ms.tgt_pltfrm="na"
-   ms.workload="big-data"
-   ms.date="10/09/2015"
-   ms.author="larryfr"/>
+	ms.service="hdinsight"
+	ms.date="10/09/2015"
+	wacn.date=""/>
 
 
 # Apache Storm tutorial: Get started with the Storm Starter samples for big data analytics on HDInsight
@@ -44,11 +40,11 @@ Storm on HDInsight uses Azure Blob storage for storing log files and topologies 
 
 2. Select **NEW**, select __Data Analytics__, and then select __HDInsight__
 
-	![Creating a new cluster in the Azure Preview Portal](./media/hdinsight-apache-storm-tutorial-get-started-linux/new-cluster.png)
+	![Creating a new cluster in the Azure Preview Portal](./media/hdinsight-apache-storm-tutorial-get-started/new-cluster.png)
 
 3. Enter a __Cluster Name__, then select __Storm__ for the __Cluster Type__. A green check will appear beside the __Cluster Name__ if it is available.
 
-	![Cluster name, cluster type, and OS Type](./media/hdinsight-apache-storm-tutorial-get-started-linux/clustername.png)
+	![Cluster name, cluster type, and OS Type](./media/hdinsight-apache-storm-tutorial-get-started/clustername.png)
 
 	Select __Ubuntu__ to create a Linux-based HDInsight cluster.
 	
@@ -70,7 +66,7 @@ Storm on HDInsight uses Azure Blob storage for storing log files and topologies 
 
 6. For __Data Source__, you can select the entry to choose an existing data source, or create a new one.
 
-	![Data source blade](./media/hdinsight-apache-storm-tutorial-get-started-linux/datasource.png)
+	![Data source blade](./media/hdinsight-apache-storm-tutorial-get-started/datasource.png)
 	
 	Currently you can select an Azure Storage Account as the data source for an HDInsight cluster. Use the following to understand the entries on the __Data Source__ blade.
 	
@@ -88,19 +84,19 @@ Storm on HDInsight uses Azure Blob storage for storing log files and topologies 
 	
 7. Select __Node Pricing Tiers__ to display information about the nodes that will be created for this cluster. By default, the number of worker nodes will be set to __4__. The estimated cost of the cluster will be shown at the bottom of this blade.
 
-	![Node pricing tiers blade](./media/hdinsight-apache-storm-tutorial-get-started-linux/nodepricingtiers.png)
+	![Node pricing tiers blade](./media/hdinsight-apache-storm-tutorial-get-started/nodepricingtiers.png)
 	
 	Use the __Select__ button to save the __Node Pricing Tiers__ information.
 
 8. Select __Optional Configuration__. This blade allows you to select the cluster version, as well as configure other optional settings such as joining a __Virtual Network__ or setting up a __Custom Metastore__ to hold data for Hive and Oozie.
 
-	![Optional configuration blade](./media/hdinsight-apache-storm-tutorial-get-started-linux/optionalconfiguration.png)
+	![Optional configuration blade](./media/hdinsight-apache-storm-tutorial-get-started/optionalconfiguration.png)
 
 9. Ensure that __Pin to Startboard__ is selected, and then select __Create__. This will create the cluster and add a tile for it to the Startboard of your Azure Management Portal. The icon will indicate that the cluster is provisioning, and will change to display the HDInsight icon once provisioning has completed.
 
 	| While provisioning | Provisioning complete |
 	| ------------------ | --------------------- |
-	| ![Provisioning indicator on startboard](./media/hdinsight-apache-storm-tutorial-get-started-linux/provisioning.png) | ![Provisioned cluster tile](./media/hdinsight-apache-storm-tutorial-get-started-linux/provisioned.png) |
+	| ![Provisioning indicator on startboard](./media/hdinsight-apache-storm-tutorial-get-started/provisioning.png) | ![Provisioned cluster tile](./media/hdinsight-apache-storm-tutorial-get-started/provisioned.png) |
 
 	> [AZURE.NOTE] It will take some time for the cluster to be created, usually around 15 minutes. Use the tile on the Startboard, or the __Notifications__ entry on the left of the page to check on the provisioning process.
 
@@ -146,17 +142,17 @@ Use the following steps to view the Storm UI:
 
 2. From the list of services on the left of the page, select __Storm__. Then select __Storm UI__ from __Quick Links__.
 
-    ![Storm UI entry in quick links](./media/hdinsight-apache-storm-tutorial-get-started-linux/ambari-storm.png)
+    ![Storm UI entry in quick links](./media/hdinsight-apache-storm-tutorial-get-started/ambari-storm.png)
 
     This will display the Storm UI:
 
-    ![the storm ui](./media/hdinsight-apache-storm-tutorial-get-started-linux/stormui.png)
+    ![the storm ui](./media/hdinsight-apache-storm-tutorial-get-started/stormui.png)
 	
 	> [AZURE.NOTE] If you receive an error that the server cannot be found, you may not have established an SSH tunnel to the cluster. See [Use SSH Tunneling to access ResourceManager, JobHistory, NameNode, Oozie, and other web UI's](hdinsight-linux-ambari-ssh-tunnel) for more information.
 
 4. Under **Topology summary**, select the **wordcount** entry in the **Name** column. This will display more information about the topology.
 
-	![Storm Dashboard with Storm Starter WordCount topology information.](./media/hdinsight-apache-storm-tutorial-get-started-linux/topology-summary.png)
+	![Storm Dashboard with Storm Starter WordCount topology information.](./media/hdinsight-apache-storm-tutorial-get-started/topology-summary.png)
 
 	This page provides the following information:
 
@@ -182,7 +178,7 @@ Use the following steps to view the Storm UI:
 
 5. From this page, select an entry from the **Spouts** or **Bolts** section. This will display information about the selected component.
 
-	![Storm Dachborad with information about selected components.](./media/hdinsight-apache-storm-tutorial-get-started-linux/component-summary.png)
+	![Storm Dachborad with information about selected components.](./media/hdinsight-apache-storm-tutorial-get-started/component-summary.png)
 
 	This page displays the following information:
 

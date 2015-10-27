@@ -10,6 +10,6 @@ Here is a list of some other tutorials you may want to review for sending notifi
 - PHP: [How to use Notification Hubs from PHP](notification-hubs-php-backend-how-to).
 
 
-In the next section of the tutorial, you will learn how to use the [Notification Hub REST interface](http://msdn.microsoft.com/zh-cn/zh-cn/library/azure/dn223264.aspx) to send the notification message directly in your app. All registered devices receive the notification sent by any device.  
+In the next section of the tutorial, you will learn how to use the [Notification Hub REST interface](http://msdn.microsoft.com/zh-cn/library/azure/dn223264.aspx) to send the notification message directly in your app. All registered devices receive the notification sent by any device.  
 
 

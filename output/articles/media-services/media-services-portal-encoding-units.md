@@ -7,21 +7,17 @@
 	manager="dwrede" 
 	editor=""/>
 
-<tags 
-	ms.service="media-services" 
-	ms.workload="media" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
+<tags
+	ms.service="media-services"
 	ms.date="10/15/2015"
-	ms.author="juliako"/>
+	wacn.date=""/>
 
 
 #How to Scale Encoding using the Azure Management Portal
 
 > [AZURE.SELECTOR]
-- [.NET](media-services-dotnet-encoding-units.md)
-- [Portal](media-services-portal-encoding-units.md)
+- [.NET](media-services-dotnet-encoding-units)
+- [Portal](media-services-portal-encoding-units)
 - [REST](https://msdn.microsoft.com/zh-cn/library/azure/dn859236.aspx)
 - [Java](https://github.com/southworkscom/azure-sdk-for-media-services-java-samples)
 
@@ -55,9 +51,10 @@ To change the reserved unit type and the number of encoding reserved units, do t
 
 ##Quotas and limitations
 
-For information about quotas and limitations and how to open a support ticket, see [Quotas and limitations](media-services-quotas-and-limitations.md).
+For information about quotas and limitations and how to open a support ticket, see [Quotas and limitations](media-services-quotas-and-limitations).
 
 
+<!-- deleted by customization
 
 ##Media Services learning paths
 
@@ -65,6 +62,7 @@ You can view AMS learning paths here:
 
 - [AMS Live Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/)
 - [AMS on Demand Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/)
+-->
 
 
  

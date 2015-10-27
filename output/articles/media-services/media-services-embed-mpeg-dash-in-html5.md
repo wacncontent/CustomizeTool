@@ -7,14 +7,10 @@
 	services="media-services" 
 	documentationCenter=""/>
 
-<tags 
-	ms.service="media-services" 
-	ms.workload="media" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="09/07/2015" 
-	ms.author="juliako"/>
+<tags
+	ms.service="media-services"
+	ms.date="09/07/2015"
+	wacn.date=""/>
 
 
 #Embedding a MPEG-DASH Adaptive Streaming Video in an HTML5 Application with DASH.js
@@ -100,6 +96,7 @@ Finally, set the size of the video element using CSS. In an adaptive streaming e
 
 To play a video, point your browser at the basicPlayback.html file and click play on the video player displayed.
 
+<!-- deleted by customization
 
 ##Media Services learning paths
 
@@ -107,10 +104,11 @@ You can view AMS learning paths here:
 
 - [AMS Live Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/)
 - [AMS on Demand Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/)
+-->
 
 
 ##See Also
 
-[Develop video player applications](media-services-develop-video-players.md)
+[Develop video player applications](media-services-develop-video-players)
 
 [GitHub dash.js repository](https://github.com/Dash-Industry-Forum/dash.js) 

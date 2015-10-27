@@ -7,32 +7,28 @@
 	manager="dwrede" 
 	editor=""/>
 
-<tags 
-	ms.service="media-services" 
-	ms.workload="media" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="ne" 
-	ms.topic="article" 
-	ms.date="10/15/2015"  
-	ms.author="juliako"/>
+<tags
+	ms.service="media-services"
+	ms.date="10/15/2015"
+	wacn.date=""/>
 
 #Use the Elemental Live encoder to send a single bitrate live stream 
 
 > [AZURE.SELECTOR]
-- [Elemental Live](media-services-configure-elemental-live-encoder.md)
-- [Tricaster](media-services-configure-tricaster-live-encoder.md)
-- [Wirecast](media-services-configure-wirecast-live-encoder.md)
-- [FMLE](media-services-configure-fmle-live-encoder.md)
+- [Elemental Live](media-services-configure-elemental-live-encoder)
+- [Tricaster](media-services-configure-tricaster-live-encoder)
+- [Wirecast](media-services-configure-wirecast-live-encoder)
+- [FMLE](media-services-configure-fmle-live-encoder)
   
-This topic shows how to configure the [Elemental Live](http://www.elementaltechnologies.com/products/elemental-live) encoder to send a single bitrate stream to AMS channels that are enabled for live encoding.  For more information, see [Working with Channels that are Enabled to Perform Live Encoding with Azure Media Services](media-services-manage-live-encoder-enabled-channels.md).
+This topic shows how to configure the [Elemental Live](http://www.elementaltechnologies.com/products/elemental-live) encoder to send a single bitrate stream to AMS channels that are enabled for live encoding.  For more information, see [Working with Channels that are Enabled to Perform Live Encoding with Azure Media Services](media-services-manage-live-encoder-enabled-channels).
 
-This tutorial shows how to manage Azure Media Services (AMS) with Azure Media Services Explorer (AMSE) tool. This tool only runs on Windows PC. If you are on Mac or Linux, use the Azure Management Portal to create [channels](media-services-portal-creating-live-encoder-enabled-channel.md#create-a-channel) and [programs](media-services-portal-creating-live-encoder-enabled-channel#create-and-manage-a-program). 
+This tutorial shows how to manage Azure Media Services (AMS) with Azure Media Services Explorer (AMSE) tool. This tool only runs on Windows PC. If you are on Mac or Linux, use the Azure Management Portal to create [channels](media-services-portal-creating-live-encoder-enabled-channel#create-a-channel) and [programs](media-services-portal-creating-live-encoder-enabled-channel#create-and-manage-a-program). 
 
 ##Prerequisites
 
 - Must have a working knowledge of using Elemental Live web interface to create live events.
-- [Create an Azure Media Services account](media-services-create-account.md)
-- Ensure there is a Streaming Endpoint running with at least one streaming unit allocated. For more information, see [Manage Streaming Endpoints in a Media Services Account](media-services-manage-origins.md) 
+- [Create an Azure Media Services account](media-services-create-account)
+- Ensure there is a Streaming Endpoint running with at least one streaming unit allocated. For more information, see [Manage Streaming Endpoints in a Media Services Account](media-services-manage-origins) 
 
 - Install the latest version of the [AMSE](https://github.com/Azure/Azure-Media-Services-Explorer) tool. 
 - Launch the tool and connect to your AMS account.
@@ -45,7 +41,7 @@ This tutorial shows how to manage Azure Media Services (AMS) with Azure Media Se
 
 ## Elemental Live with RTP ingest
 
-This section shows how to configure the Elemental Live encoder that sends a single bitrate live stream over RTP.  For more information, see [MPEG-TS stream over RTP](media-services-manage-live-encoder-enabled-channels.md#channel).
+This section shows how to configure the Elemental Live encoder that sends a single bitrate live stream over RTP.  For more information, see [MPEG-TS stream over RTP](media-services-manage-live-encoder-enabled-channels#channel).
 
 ### Create a channel
 
@@ -63,9 +59,9 @@ This section shows how to configure the Elemental Live encoder that sends a sing
 
 >[AZURE.NOTE] The channel can take as long as 20 minutes to start.  
 
-While the channel is starting you can [configure the encoder](media-services-configure-elemental-live-encoder.md#configure_elemental_rtp).
+While the channel is starting you can [configure the encoder](media-services-configure-elemental-live-encoder#configure_elemental_rtp).
 
->[AZURE.IMPORTANT] Note that billing starts as soon as Channel goes into a ready state. For more information, see [Channel's states](media-services-manage-live-encoder-enabled-channels.md#states).
+>[AZURE.IMPORTANT] Note that billing starts as soon as Channel goes into a ready state. For more information, see [Channel's states](media-services-manage-live-encoder-enabled-channels#states).
 
 ###<a id=configure_elemental_rtp></a>Configure the Elemental Live encoder 
 
@@ -144,7 +140,7 @@ After the stream has been running for 30 seconds, navigate back to the AMSE tool
 
 If the stream appears in the player, then the encoder has been properly configured to connect to AMS. 
 
-If an error is received, the channel will need to be reset and encoder settings adjusted. Please see the [troubleshooting](media-services-troubleshooting-live-streaming.md) topic for guidance.   
+If an error is received, the channel will need to be reset and encoder settings adjusted. Please see the [troubleshooting](media-services-troubleshooting-live-streaming) topic for guidance.   
 
 ###Create a program
 
@@ -165,7 +161,8 @@ The stream is now ready to be embedded in a player, or distributed to an audienc
 
 ## Troubleshooting
 
-Please see the [troubleshooting](media-services-troubleshooting-live-streaming.md) topic for guidance. 
+Please see the [troubleshooting](media-services-troubleshooting-live-streaming) topic for guidance. 
+<!-- deleted by customization
 
 ##Media Services learning paths
 
@@ -173,3 +170,4 @@ You can view AMS learning paths here:
 
 - [AMS Live Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/)
 - [AMS on Demand Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/)
+-->

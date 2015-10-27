@@ -9,13 +9,9 @@
 	tags="azure-portal"/>
 
 <tags
-   ms.service="hdinsight"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="big-data"
-   ms.date="10/09/2015"
-   ms.author="larryfr"/>
+	ms.service="hdinsight"
+	ms.date="10/09/2015"
+	wacn.date=""/>
 
 #Run Hive queries with Hadoop in HDInsight with Curl
 
@@ -24,14 +20,16 @@
 In this document, you will learn how to use Curl to run Hive queries on a Hadoop on Azure HDInsight cluster.
 
 Curl is used to demonstrate how you can interact with HDInsight by using raw HTTP requests to run, monitor, and retrieve the results of Hive queries. This works by using the WebHCat REST API (formerly known as Templeton) provided by your HDInsight cluster.
+<!-- deleted by customization
 
 > [AZURE.NOTE] If you are already familiar with using Linux-based Hadoop servers, but are new to HDInsight, see [What you need to know about Hadoop on Linux-based HDInsight](hdinsight-hadoop-linux-information).
+-->
 
 ##<a id="prereq"></a>Prerequisites
 
 To complete the steps in this article, you will need the following:
 
-* A Hadoop on HDInsight cluster (Linux or Windows-based)
+* A Hadoop on HDInsight cluster (<!-- deleted by customization Linux or -->Windows-based)
 
 * [Curl](http://curl.haxx.se/)
 
@@ -116,7 +114,7 @@ To complete the steps in this article, you will need the following:
 
 4. Once the state of the job has changed to **SUCCEEDED**, you can retrieve the results of the job from Azure Blob storage. The `statusdir` parameter passed with the query contains the location of the output file; in this case, **wasb:///example/curl**. This address stores the output of the job in the **example/curl** directory on the default storage container used by your HDInsight cluster.
 
-    You can list and download these files by using the [Azure CLI for Mac, Linux and Windows](xplat-cli-install). For example, to list files in **example/curl**, use the following command:
+    You can list and download these files by using the [Azure CLI<!-- deleted by customization for Mac, Linux and Windows -->](/documentation/articles/xplat-cli). For example, to list files in **example/curl**, use the following command:
 
 		azure storage blob list <container-name> example/curl
 
@@ -140,7 +138,7 @@ To complete the steps in this article, you will need the following:
     * **INSERT OVERWRITE ... SELECT** - Selects rows from the **log4jLogs** table that contain **[ERROR]**, then inserts the data into the **errorLogs** table.
     * **SELECT** - Selects all rows from the new **errorLogs** table.
 
-7. Use the job ID returned to check the status of the job. Once it has succeeded, use Azure CLI for Mac, Linux and Windows as described previously to download and view the results. The output should contain three lines, all of which contain **[ERROR]**.
+7. Use the job ID returned to check the status of the job. Once it has succeeded, use Azure CLI for<!-- deleted by customization Mac, Linux and --> Windows as described previously to download and view the results. The output should contain three lines, all of which contain **[ERROR]**.
 
 
 ##<a id="summary"></a>Summary
@@ -177,16 +175,11 @@ For information on other ways you can work with Hadoop on HDInsight:
 
 [hdinsight-use-oozie]: hdinsight-use-oozie
 [hdinsight-analyze-flight-data]: hdinsight-analyze-flight-delay-data
-
-
-
 [hdinsight-storage]: hdinsight-use-blob-storage
-
 [hdinsight-provision]: hdinsight-provision-clusters
 [hdinsight-submit-jobs]: hdinsight-submit-hadoop-jobs-programmatically
 [hdinsight-upload-data]: hdinsight-upload-data
 [hdinsight-get-started]: hdinsight-get-started
-
 [Powershell-install-configure]: install-configure-powershell
 [powershell-here-strings]: http://technet.microsoft.com/zh-cn/library/ee692792.aspx
 

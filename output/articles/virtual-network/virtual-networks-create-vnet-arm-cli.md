@@ -9,13 +9,9 @@
    tags="azure-resource-manager"/>
 
 <tags
-   ms.service="virtual-network"
-   ms.devlang="na"
-   ms.topic="hero-article"
-   ms.tgt_pltfrm="na"
-   ms.workload="infrastructure-services"
-   ms.date="08/21/2015"
-   ms.author="telmos"/>
+	ms.service="virtual-network"
+	ms.date="08/21/2015"
+	wacn.date=""/>
 
 # Create a virtual network by using the Azure CLI
 

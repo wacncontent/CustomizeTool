@@ -9,12 +9,8 @@
 
 <tags
 	ms.service="app-service"
-	ms.workload="web"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="07/28/2015"
-	ms.author="zarizvi"/>
+	wacn.date=""/>
 	
 # Supported Move Configurations
 

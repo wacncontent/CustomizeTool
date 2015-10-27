@@ -9,19 +9,15 @@
 
 <tags
 	ms.service="media-services"
-	ms.workload="media"
-	ms.tgt_pltfrm="na"
-	ms.devlang="dotnet"
-	ms.topic="article"
-	ms.date="10/15/2015"   
-	ms.author="juliako"/>
+	ms.date="10/15/2015"
+	wacn.date=""/>
 
 
 # Indexing Media Files with Azure Media Indexer
 
 > [AZURE.SELECTOR]
-- [Portal](media-services-manage-content.md#index)
-- [.NET](media-services-index-content.md)
+- [Portal](media-services-manage-content#index)
+- [.NET](media-services-index-content)
 
 
 Azure Media Indexer enables you to make content of your media files searchable and to generate a full-text transcript for closed captioning and keywords. You can process one media file or multiple media files in a batch.  
@@ -340,6 +336,7 @@ No audio stream in input media.</td></tr>
 
 Currently, the English and Spanish languages are supported. For more information, see [Azure Media Indexer Spanish](http://azure.microsoft.com/blog/2015/04/13/azure-media-indexer-spanish-v1-2/).
 
+<!-- deleted by customization
 
 ##Media Services learning paths
 
@@ -347,6 +344,7 @@ You can view AMS learning paths here:
 
 - [AMS Live Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/)
 - [AMS on Demand Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/)
+-->
 
 
 ##Related links

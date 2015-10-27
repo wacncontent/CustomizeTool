@@ -8,7 +8,7 @@ To run the PHP code sample given in this topic, your client computer must have t
 - [Microsoft Drivers for PHP for Microsoft SQL Server](http://www.microsoft.com/download/details.aspx?id=20098)
  - `SQLSRV32.EXE` contains the latest bits.
 - [Microsoft SQL Server Native Client 11.0](http://www.microsoft.com/download/details.aspx?id=36434)
-- [Microsoft ODBC Driver](https://www.microsoft.com/en-us/download/details.aspx?id=36434)
+- [Microsoft ODBC Driver](https://www.microsoft.com/download/details.aspx?id=36434)
 - IIS Express
 - [PHP 5.6 for IIS Express](http://www.microsoft.com/web/downloads/platform.aspx)
  - Download using the platform installer.

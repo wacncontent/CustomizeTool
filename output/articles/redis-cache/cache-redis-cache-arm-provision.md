@@ -7,14 +7,10 @@
 	manager="wpickett" 
 	editor=""/>
 
-<tags 
-	ms.service="app-service" 
-	ms.workload="web" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="10/02/2015" 
-	ms.author="tomfitz"/>
+<tags
+	ms.service="app-service"
+	ms.date="10/02/2015"
+	wacn.date=""/>
 
 # Create a Redis Cache using a template
 
@@ -35,7 +31,12 @@ In this template, you will deploy an Azure Redis Cache that uses an existing sto
 
 To run the deployment automatically, click the following button:
 
+<!-- deleted by customization
 [![Deploy to Azure](./media/cache-redis-cache-arm-provision/deploybutton.png)](https://manage.windowsazure.cn/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-redis-cache%2Fazuredeploy.json)
+-->
+<!-- keep by customization: begin -->
+![Deploy to Azure](./media/cache-redis-cache-arm-provision/deploybutton.png)
+<!-- keep by customization: end -->
 
 ## Parameters
 

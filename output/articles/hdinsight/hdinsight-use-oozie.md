@@ -10,12 +10,8 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.workload="big-data"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="07/28/2015"
-	ms.author="jgao"/>
+	wacn.date=""/>
 
 
 # Use Oozie with Hadoop to define and run a workflow in HDInsight
@@ -23,7 +19,7 @@
 [AZURE.INCLUDE [oozie-selector](../includes/hdinsight-oozie-selector.md)]
 
 ##Overview
-Learn how to use Apache Oozie to define a workflow and run the workflow on HDInsight. To learn about the Oozie coordinator, see [Use time-based Hadoop Oozie Coordinator with HDInsight][hdinsight-oozie-coordinator-time]. To learn Azure Data Factory, see [Use Pig and Hive with Data Factory][azure-data-factory-pig-hive].
+Learn how to use Apache Oozie to define a workflow and run the workflow on HDInsight. To learn about the Oozie coordinator, see [Use time-based Hadoop Oozie Coordinator with HDInsight][hdinsight-oozie-coordinator-time].<!-- deleted by customization To learn Azure Data Factory, see [Use Pig and Hive with Data Factory][azure-data-factory-pig-hive].-->
 
 ##What is Oozie?
 
@@ -84,7 +80,7 @@ Before you begin this tutorial, you must have the following:
 	<tr><td>SQL database name</td><td>$sqlDatabaseName</td><td></td><td>Azure SQL database to which Sqoop will export data. </td></tr>
 	</table>
 
-	> [AZURE.NOTE] By default, an Azure SQL database allows connections from Azure services, such as Azure HDInsight. If this firewall setting is disabled, you must enabled it from the Azure preview portal. For instructions about creating a  SQL database and configuring firewall rules, see [How to Create and Configure an Azure SQL Database][sqldatabase-create-configue].
+	> [AZURE.NOTE] By default, an Azure SQL database allows connections from Azure services, such as Azure HDInsight. If this firewall setting is disabled, you must enabled it from the Azure <!-- deleted by customization preview portal --><!-- keep by customization: begin -->Management Portal<!-- keep by customization: end -->. For instructions about creating a  SQL database and configuring firewall rules, see [How to Create and Configure an Azure SQL Database][sqldatabase-create-configue].
 
 
 > [AZURE.NOTE] Filling in the values in the tables will be helpful for going through this tutorial.
@@ -522,7 +518,7 @@ Azure PowerShell currently doesn't provide any cmdlets for defining Oozie jobs. 
 **To check the job error log**
 
 To troubleshoot a workflow, the Oozie log file can be found at
-*C:\apps\dist\oozie-3.3.2.1.3.2.0-05\oozie-win-distro\logs\Oozie.log* or *C:\apps\dist\oozie-4.0.0.2.0.7.0-1528\oozie-win-distro\logs\Oozie.log* from the cluster head node. For information about RDP, see [Manage Hadoop clusters in HDInsight using the Azure preview portal][hdinsight-admin-portal].
+*C:\apps\dist\oozie-3.3.2.1.3.2.0-05\oozie-win-distro\logs\Oozie.log* or *C:\apps\dist\oozie-4.0.0.2.0.7.0-1528\oozie-win-distro\logs\Oozie.log* from the cluster head node. For information about RDP, see [Manage Hadoop clusters in HDInsight using the Azure <!-- deleted by customization preview portal --><!-- keep by customization: begin -->Management Portal<!-- keep by customization: end -->][hdinsight-admin-portal].
 
 **To re-run the tutorial**
 
@@ -579,15 +575,15 @@ In this tutorial, you learned how to define an Oozie workflow and how to run an 
 [hdinsight-cmdlets-download]: http://go.microsoft.com/fwlink/?LinkID=325563
 
 
+<!-- deleted by customization
 
 [azure-data-factory-pig-hive]: data-factory-pig-hive-activities
+-->
 [hdinsight-oozie-coordinator-time]: hdinsight-use-oozie-coordinator-time
 [hdinsight-versions]: hdinsight-component-versioning
 [hdinsight-storage]: hdinsight-use-blob-storage
 [hdinsight-get-started]: hdinsight-get-started
 [hdinsight-admin-portal]: hdinsight-administer-use-management-portal-v1
-
-
 [hdinsight-use-sqoop]: hdinsight-use-sqoop
 [hdinsight-provision]: hdinsight-provision-clusters
 [hdinsight-admin-powershell]: hdinsight-administer-use-powershell
@@ -597,16 +593,12 @@ In this tutorial, you learned how to define an Oozie workflow and how to run an 
 [hdinsight-use-pig]: hdinsight-use-pig
 [hdinsight-storage]: hdinsight-use-blob-storage
 [hdinsight-get-started-emulator]: hdinsight-get-started-emulator
-
 [hdinsight-develop-streaming-jobs]: hdinsight-hadoop-develop-deploy-streaming-jobs
 [hdinsight-develop-mapreduce]: hdinsight-develop-deploy-java-mapreduce
-
 [sqldatabase-create-configue]: sql-database-create-configure
 [sqldatabase-get-started]: sql-database-get-started
-
 [azure-management-portal]: https://manage.windowsazure.cn/
 [azure-create-storageaccount]: storage-create-storage-account
-
 [apache-hadoop]: http://hadoop.apache.org/
 [apache-oozie-400]: http://oozie.apache.org/docs/4.0.0/
 [apache-oozie-332]: http://oozie.apache.org/docs/3.3.2/
@@ -615,7 +607,7 @@ In this tutorial, you learned how to define an Oozie workflow and how to run an 
 [powershell-about-profiles]: https://technet.microsoft.com/zh-cn/library/hh847857.aspx
 [powershell-install-configure]: powershell-install-configure
 [powershell-start]: http://technet.microsoft.com/zh-cn/library/hh847889.aspx
-[powershell-script]: https://technet.microsoft.com/en-us/library/ee176961.aspx
+[powershell-script]: https://technet.microsoft.com/library/ee176961.aspx
 
 [cindygross-hive-tables]: http://blogs.msdn.com/b/cindygross/archive/2013/02/06/hdinsight-hive-internal-and-external-tables-intro.aspx
 

@@ -6,14 +6,10 @@
    authors="joaoma"
    manager="jdial"
    editor="tysonn" />
-<tags 
-   ms.service="virtual-network"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="infrastructure-services"
-   ms.date="08/25/2015"
-   ms.author="joaoma" />
+<tags
+	ms.service="virtual-network"
+	ms.date="08/25/2015"
+	wacn.date=""/>
 
 # Specifying DNS settings in a virtual network configuration file
 
@@ -51,4 +47,4 @@ The network configuration file may contain the following elements. The title of 
 
 [Azure Virtual Network Configuration Schema](https://msdn.microsoft.com/zh-cn/library/azure/jj157100)
 
-[Azure Service Configuration Schema](https://msdn.microsoft.com/zh-cn/zh-cn/library/azure/ee758710)
+[Azure Service Configuration Schema](https://msdn.microsoft.com/zh-cn/library/azure/ee758710)

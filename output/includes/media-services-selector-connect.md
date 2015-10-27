@@ -1,3 +1,3 @@
 > [AZURE.SELECTOR]
-- [.NET](../articles/media-services/media-services-dotnet-connect_programmatically.md)
-- [REST API](../articles/media-services/media-services-rest-connect_programmatically.md)
+- [.NET](media-services-dotnet-connect_programmatically)
+- [REST API](media-services-rest-connect_programmatically)

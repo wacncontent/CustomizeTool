@@ -7,14 +7,10 @@
 	manager="wpickett" 
 	editor="jimbe"/>
 
-<tags 
-	ms.service="app-service-web" 
-	ms.workload="web" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="dotnet" 
-	ms.topic="article" 
-	ms.date="09/22/2015" 
-	ms.author="tdykstra"/>
+<tags
+	ms.service="app-service-web"
+	ms.date="09/22/2015"
+	wacn.date=""/>
 
 # How to use Azure queue storage with the WebJobs SDK
 

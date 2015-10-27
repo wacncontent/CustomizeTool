@@ -7,13 +7,9 @@
    manager="carolz"
    editor="tysonn" />
 <tags
-   ms.service="virtual-network"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="infrastructure-services"
-   ms.date="09/14/2015"
-   ms.author="telmos" />
+	ms.service="virtual-network"
+	ms.date="09/14/2015"
+	wacn.date=""/>
 
 # Virtual Network Overview
 

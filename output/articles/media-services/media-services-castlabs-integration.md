@@ -7,21 +7,17 @@
 	manager="dwrede" 
 	editor=""/>
 
-<tags 
-	ms.service="media-services" 
-	ms.workload="media" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="10/08/2015"  
-	ms.author="juliako"/>
+<tags
+	ms.service="media-services"
+	ms.date="10/08/2015"
+	wacn.date=""/>
 
 
 #Using castLabs to deliver Widevine licenses to Azure Media Services
 
 > [AZURE.SELECTOR]
-- [Axinom](media-services-axinom-integration.md)
-- [castLabs](media-services-castlabs-integration.md)
+- [Axinom](media-services-axinom-integration)
+- [castLabs](media-services-castlabs-integration)
 
 ##Overview
 
@@ -112,6 +108,7 @@ To playback a video encrypted with common encryption (PlayReady and/or Widevine)
 	The castLab license server does not need the “Bearer=” prefix in front of the token. So please remove that before submitting the token.
 7.	Update the player.
 8.	The video should be playing.
+<!-- deleted by customization
 
 ##Media Services learning paths
 
@@ -119,4 +116,5 @@ You can view AMS learning paths here:
 
 - [AMS Live Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/)
 - [AMS on Demand Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/)
+-->
 

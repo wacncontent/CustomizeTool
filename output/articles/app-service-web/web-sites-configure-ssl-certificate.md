@@ -7,19 +7,17 @@
 	manager="wpickett" 
 	editor="jimbe"/>
 
-<tags 
-	ms.service="app-service" 
-	ms.workload="na" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="09/16/2015" 
-	ms.author="cephalin"/>
+<tags
+	ms.service="app-service"
+	ms.date="09/16/2015"
+	wacn.date=""/>
 
+<!-- deleted by customization
 
 #Enable HTTPS for an app in Azure Websites
 
 [AZURE.INCLUDE [app-service-web-to-api-and-mobile](../includes/app-service-web-to-api-and-mobile.md)] 
+-->
 
 [AZURE.INCLUDE [configure-ssl-web-site](../includes/configure-ssl-web-site.md)]
  

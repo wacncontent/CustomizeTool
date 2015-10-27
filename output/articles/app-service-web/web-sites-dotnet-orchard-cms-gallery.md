@@ -8,14 +8,10 @@
 	manager="wpickett" 
 	editor=""/>
 
-<tags 
-	ms.service="app-service-web" 
-	ms.workload="web" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="dotnet" 
-	ms.topic="article" 
-	ms.date="08/03/2015" 
-	ms.author="tomfitz"/>
+<tags
+	ms.service="app-service-web"
+	ms.date="08/03/2015"
+	wacn.date=""/>
 
 # Create an Orchard CMS web app from the Azure Marketplace
 

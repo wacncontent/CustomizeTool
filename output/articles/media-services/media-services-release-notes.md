@@ -7,14 +7,10 @@
 	manager="dwrede" 
 	editor=""/>
 
-<tags 
-	ms.service="media-services" 
-	ms.workload="media" 
-	ms.tgt_pltfrm="media" 
-	ms.devlang="dotnet" 
-	ms.topic="article" 
-	ms.date="09/27/2015"   
-	ms.author="juliako"/>
+<tags
+	ms.service="media-services"
+	ms.date="09/27/2015"
+	wacn.date=""/>
 
 
 # Azure Media Services Release Notes
@@ -139,8 +135,8 @@ For more information, see [Using Json Web Keys from OpenID Connect discovery spe
 
 Announcing the following new features:
 
-- [A preview of Live Encoding with Media Services](media-services-manage-live-encoder-enabled-channels.md)
-- [Dynamic manifest](media-services-dynamic-manifest-overview.md)
+- [A preview of Live Encoding with Media Services](media-services-manage-live-encoder-enabled-channels)
+- [Dynamic manifest](media-services-dynamic-manifest-overview)
 - [A preview of Azure Media Hyperlapse media processor](http://azure.microsoft.com/blog/?p=286281&preview=1&_ppp=61e1a0b3db)
 
 ##<a id="april_changes_15"></a>April 2015 Release
@@ -148,7 +144,7 @@ Announcing the following new features:
 ###General Media Services Updates
 
 - [Announcing Azure Media Player](http://azure.microsoft.com/blog/2015/04/15/announcing-azure-media-player/).
-- Starting with Media Services REST 2.10, channels that are configured to ingest an RTMP protocol, are created with primary and secondary ingest URLs. For more information, see [Channel ingest configurations](media-services-manage-channels-overview.md#channel_input)
+- Starting with Media Services REST 2.10, channels that are configured to ingest an RTMP protocol, are created with primary and secondary ingest URLs. For more information, see [Channel ingest configurations](media-services-manage-channels-overview#channel_input)
 - Azure Media Indexer updates
 	- Support for Spanish Language
 	- New configuration xml format
@@ -222,7 +218,7 @@ This release marked the default Microsoft.WindowsAzure.MediaServices.Client.Cont
 - Media Services now enables you to ingest a live Smooth Streaming (FMP4) content over an SSL connection. To ingest over SSL, make sure to update the ingest URL to HTTPS.  For more information about live streaming, see [Working with Azure Media Services Live Streaming].
 - Note that currently, you cannot ingest an RTMP live stream over an SSL connection.
 - You can also stream your content over an SSL connection. To do this, make sure your streaming URLs start with HTTPS.
-- Note that you can only stream over SSL if the streaming endpoint from which you deliver your content was created after September 10th, 2014. If your streaming URLs are based on the streaming endpoints created after September 10th, the URL contains “streaming.mediaservices.chinacloudapi.cn” (the new format). Streaming URLs that contain “origin.mediaservices.chinacloudapi.cn” (the old format) do not support SSL. If your URL is in the old format and you want to be able to stream over SSL, [create a new streaming endpoint](media-services-manage-origins.md). Use URLs created based on the new streaming endpoint to stream your content over SSL.
+- Note that you can only stream over SSL if the streaming endpoint from which you deliver your content was created after September 10th, 2014. If your streaming URLs are based on the streaming endpoints created after September 10th, the URL contains “streaming.mediaservices.chinacloudapi.cn” (the new format). Streaming URLs that contain “origin.mediaservices.chinacloudapi.cn” (the old format) do not support SSL. If your URL is in the old format and you want to be able to stream over SSL, [create a new streaming endpoint](media-services-manage-origins). Use URLs created based on the new streaming endpoint to stream your content over SSL.
    
 ##<a id="october_changes_14"></a>October 2014 Release
 
@@ -556,6 +552,7 @@ The following functionality was new in the November release of the SDK.
 
 	Asynchronous support has been added to all methods.
 
+<!-- deleted by customization
 
 ##Media Services learning paths
 
@@ -563,6 +560,7 @@ You can view AMS learning paths here:
 
 - [AMS Live Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/)
 - [AMS on Demand Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/)
+-->
 
 <!-- Anchors. -->
 
@@ -580,7 +578,9 @@ You can view AMS learning paths here:
 [Working with Azure Media Services Live Streaming]: http://msdn.microsoft.com/zh-cn/library/azure/dn783466.aspx
 [Using AES-128 Dynamic Encryption and Key Delivery Service]: http://msdn.microsoft.com/zh-cn/library/azure/dn783457.aspx
 [Using PlayReady Dynamic Encryption and License Delivery Service]: http://msdn.microsoft.com/zh-cn/library/azure/dn783467.aspx
+<!-- deleted by customization
 [Preview features]: http://azure.microsoft.com/services/preview/
+-->
 [Media Services PlayReady License Template Overview]: http://msdn.microsoft.com/zh-cn/library/azure/dn783459.aspx
 [Streaming Storage Encrypted Content]: http://msdn.microsoft.com/zh-cn/library/azure/dn783451.aspx
 [Azure Management Portal]: https://manage.windowsazure.cn

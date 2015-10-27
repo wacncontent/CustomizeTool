@@ -303,7 +303,6 @@ Once configuration has completed, the custom domain name will be listed in the *
 [trafficmanager]: web-sites-traffic-manager
 [addendpoint]: traffic-manager-endpoints
 [createprofile]: traffic-manager-manage-profiles
-
 <!-- images -->
 
 [setcname1]: ../media/dncmntask-cname-5.png

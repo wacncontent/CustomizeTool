@@ -11,7 +11,7 @@ The rest of this document provides details on enabling HTTPS for custom domains,
 
 ##<a name="bkmk_domainname"></a>Enable SSL for your custom domain
 
-To enable HTTPS for a custom domain, such as **contoso.com**, you must first register a custom domain name with a domain name registrar. For more information on how to configure the domain name of a web app, see [Configuring a custom domain name for an Azure Web Site](/en-us/develop/net/common-tasks/custom-dns-web-site/). Once you have registered a custom domain name and configured your web app to respond to the custom name, you must request an SSL certificate for the domain. 
+To enable HTTPS for a custom domain, such as **contoso.com**, you must first register a custom domain name with a domain name registrar. For more information on how to configure the domain name of a web app, see [Configuring a custom domain name for an Azure Web Site](/develop/net/common-tasks/custom-dns-web-site/). Once you have registered a custom domain name and configured your web app to respond to the custom name, you must request an SSL certificate for the domain. 
 
 > [AZURE.NOTE] In order to enable HTTPS for custom domain names, you must configure your web app for **Standard** mode. This may incur additional costs if you are currently using free or shared mode. For more information on shared and **Standard** pricing, see [Pricing Details][pricing]. 
 
@@ -126,9 +126,13 @@ You can now upload the exported PFX file to your Azure web app.
         Organization Name (eg, company) []: Microsoft
         Organizational Unit Name (eg, section) []: Azure
         Common Name (eg, YOUR name) []: www.microsoft.com
-        Email Address []: Please enter the following 'extra' attributes to be sent with your certificate request
+        Email Address []:
 
-       	A challenge password []: Once this process completes, you should have two files; **myserver.key** and **server.csr**. The **server.csr** contains the Certificate Signing Request.
+		Please enter the following 'extra' attributes to be sent with your certificate request
+
+       	A challenge password []: 
+
+	Once this process completes, you should have two files; **myserver.key** and **server.csr**. The **server.csr** contains the Certificate Signing Request.
 
 3. Submit your CSR to a Certificate Authority to obtain an SSL certificate. For a list of Certificate Authorities, see [Windows and Windows Phone 8 SSL Root Certificate Program (Members CAs)][cas] on the Microsoft TechNet Wiki.
 
@@ -382,6 +386,7 @@ You can create a test certificate from a Windows system that has Visual Studio i
 Enabling HTTPS for a custom domain is only available for the **Standard** mode of web app. Use the following steps to switch to **Standard** mode.
 
 > [AZURE.NOTE] Before switching a web app from the **Free** mode to **Standard** mode, you should remove spending caps in place for your web app subscription, otherwise you risk your site becoming unavailable if you reach your caps before the billing period ends. For more information on shared and **Standard** mode pricing, see [Pricing Details][pricing].
+<!-- deleted by customization
 
 1.	In your browser, open the [Azure Management Portal](https://manage.windowsazure.cn/).
 2.	Click the **Browse** option on the left side of the page.
@@ -393,12 +398,31 @@ Enabling HTTPS for a custom domain is only available for the **Standard** mode o
 7.	In the **Scale** section, set the App Service plan mode by clicking **Select**.
 	![The Pricing tier][sslreserved]
 
+-->
+<!-- keep by customization: begin -->
+1. In your browser, open the [Management Portal][portal].
+
+2. In the **Websites** tab, click the name of your website.
+
+	![selecting a web site][website]
+
+3. Click the **SCALE** tab.
+
+	![The scale tab][scale]
+
+4. In the **general** section, set the web hosting plan mode by clicking **STANDARD**.
+
+	![standard mode selected][standard]
+
+5. Click **Save**. When prompted, click **Yes**.
+<!-- keep by customization: end -->
 	> [AZURE.NOTE] If you receive a "Configuring scale for web app '&lt;app name&gt;' failed" error you can use the details button to get more information. You may receive a "Not enough available standard instance servers to satisfy this request." error. If you receive this error, please contact [Azure support](/support/options/).
 
 
 ##<a name="bkmk_configuressl"></a>Configure SSL
 
 Before performing the steps in this section, you must have associated a custom domain name with your web app. For more information, see [Configuring a custom domain name for a web app][customdomain].
+<!-- deleted by customization
 
 1.	In your browser, open the [Azure Management Portal](https://manage.windowsazure.cn).
 2.	Click the **Browse** option on the left side of the page.
@@ -420,6 +444,32 @@ Before performing the steps in this section, you must have associated a custom d
 
 10. Click **Save** to save the changes and enable SSL.
 
+-->
+<!-- keep by customization: begin -->
+1.	In your browser, open the [Azure Management Portal][portal].
+
+2. In the **Websites** tab, click the name of your site and then select the **CONFIGURE** tab.
+
+	![the configure tab][configure]
+
+3. In the **certificates** section, click **upload a certificate**
+
+	![upload a certificate][uploadcert]
+
+4. Using the **Upload a certificate** dialog, select the .pfx certificate file created earlier using the IIS Manager or OpenSSL. Specify the password, if any, that was used to secure the .pfx file. Finally, click the **check** to upload the certificate.
+
+	![upload certificate dialog][uploadcertdlg]
+
+5. In the **ssl bindings** section of the **CONFIGURE** tab, use the dropdowns to select the domain name to secure with SSL, and the certificate to use. You may also select whether to use [Server Name Indication][sni] (SNI) or IP based SSL.
+
+	![ssl bindings][sslbindings]
+	
+	* IP based SSL associates a certificate with a domain name by mapping the dedicated public IP address of the server to the domain name. This requires each domain name (contoso.com, fabricam.com, etc.) associated with your service to have a dedicated IP address. This is the traditional method of associating SSL certificates with a web server.
+
+	* SNI based SSL is an extension to SSL and [Transport Layer Security][tls] (TLS) that allows multiple domains to share the same IP address, with separate security certificates for each domain. Most modern browsers (including Internet Explorer, Chrome, Firefox and Opera) support SNI, however older browsers may not support SNI. For more information on SNI, see the [Server Name Indication][sni] article on Wikipedia.
+
+6. Click **Save** to save the changes and enable SSL.
+<!-- keep by customization: end -->
 > [AZURE.NOTE] If you selected **IP based SSL** and your custom domain is configured using an A record, you must perform the following additional steps:
 >
 > 1. After you have configured an IP based SSL binding, a dedicated IP address is assigned to your web app. You can find this IP address on the **Dashboard** page of your web app, in the **quick glance** section. It will be listed as **Virtual IP Address**:
@@ -508,12 +558,14 @@ For more information on the IIS URL Rewrite module, see the [URL Rewrite](http:/
 - [Enable diagnostic logging](web-sites-enable-diagnostic-log)
 - [Configuring Web Sites](web-sites-configure)
 - [Azure Management Portal](https://manage.windowsazure.cn)
+<!-- deleted by customization
 
 >[AZURE.NOTE] If you want to get started with Azure Websites before signing up for an Azure account, go to [Try Azure Websites](http://go.microsoft.com/fwlink/?LinkId=523751), where you can immediately create a short-lived starter web app in Azure Websites. No credit cards required; no commitments.
 
 ## What's changed
 * For a guide to the change from Websites to Azure Websites see: [Azure Websites and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
 * For a guide to the change of the Management Portal to the new portal see: [Reference for navigating the preview portal](https://manage.windowsazure.cn/)
+-->
 
 [customdomain]: web-sites-custom-domain-name
 [iiscsr]: http://technet.microsoft.com/zh-cn/library/cc732906(WS.10).aspx

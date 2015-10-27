@@ -7,14 +7,10 @@
 	manager="wpickett" 
 	editor=""/>
 
-<tags 
-	ms.service="app-service-web" 
-	ms.workload="web" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="07/31/2015" 
-	ms.author="erikre"/>
+<tags
+	ms.service="app-service-web"
+	ms.date="07/31/2015"
+	wacn.date=""/>
 
 # Manage a web app in Azure Websites
 
@@ -35,7 +31,7 @@ Azure Websites is offered in five tiers: Free, Shared, Basic, Standard, and Prem
 
 ### Configuration
 
-Use the [Azure preview portal](https://manage.windowsazure.cn/) to set various configuration options. For details, see [Configure web apps in Azure Websites](web-sites-configure). Here is a quick checklist:
+Use the [Azure <!-- deleted by customization preview portal --><!-- keep by customization: begin -->Management Portal<!-- keep by customization: end -->](https://manage.windowsazure.cn/) to set various configuration options. For details, see [Configure web apps in Azure Websites](web-sites-configure). Here is a quick checklist:
 
 - Select **runtime versions** for .NET, PHP, Java, or Python, if needed.
 - Enable **WebSockets** if your web app uses the WebSocket protocol. (This includes apps that use [ASP.NET SignalR](http://www.asp.net/signalr) or [socket.io](web-sites-nodejs-chat-app-socketio).)
@@ -59,7 +55,7 @@ While your web app is running, you want to make sure it is available, and that i
 
 ### Monitoring
 
-- Through the Azure preview portal, you can [add performance metrics](web-sites-monitor) such as CPU usage and number of client requests.
+- Through the Azure <!-- deleted by customization preview portal --><!-- keep by customization: begin -->Management Portal<!-- keep by customization: end -->, you can [add performance metrics](web-sites-monitor) such as CPU usage and number of client requests.
 - For deeper insight, use New Relic to monitor and manage performance. See [.NET web app in Azure Websites with New Relic application performance management](store-new-relic-web-sites-dotnet-application-performance-management).
 - [Scale your web app](web-sites-scale) in response to traffic. Depending on your tier, you can scale the number of VMs and/or the size of the VM instances. In the Standard and Premium tiers, you can also set up autoscaling, so your web app scales automatically, either on a fixed schedule, or in response to load.  
  

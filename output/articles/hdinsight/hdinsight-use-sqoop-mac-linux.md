@@ -10,12 +10,8 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.workload="big-data"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="10/09/2015"
-	ms.author="larryfr"/>
+	wacn.date=""/>
 
 #Use Sqoop with Hadoop in HDInsight (SSH)
 
@@ -253,10 +249,8 @@ Now you have learned how to use Sqoop. To learn more, see:
 [hdinsight-use-oozie]: hdinsight-use-oozie
 [hdinsight-upload-data]: hdinsight-upload-data
 [hdinsight-submit-jobs]: hdinsight-submit-hadoop-jobs-programmatically
-
 [sqldatabase-get-started]: sql-database-get-started
 [sqldatabase-create-configue]: sql-database-create-configure
-
 [powershell-start]: http://technet.microsoft.com/zh-cn/library/hh847889.aspx
 [powershell-install]: install-configure-powershell
 [powershell-script]: http://technet.microsoft.com/zh-cn/library/ee176949.aspx

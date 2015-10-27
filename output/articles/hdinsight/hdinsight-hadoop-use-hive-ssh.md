@@ -9,13 +9,9 @@
 	tags="azure-portal"/>
 
 <tags
-   ms.service="hdinsight"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="big-data"
-   ms.date="10/09/2015"
-   ms.author="larryfr"/>
+	ms.service="hdinsight"
+	ms.date="10/09/2015"
+	wacn.date=""/>
 
 #Use Hive with Hadoop in HDInsight with SSH
 
@@ -130,17 +126,13 @@ For information on other ways you can work with Hadoop on HDInsight:
 
 [hdinsight-use-oozie]: hdinsight-use-oozie
 [hdinsight-analyze-flight-data]: hdinsight-analyze-flight-delay-data
-
 [putty]: http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html
 
 [hdinsight-storage]: hdinsight-use-blob-storage
-
 [hdinsight-provision]: hdinsight-provision-clusters
 [hdinsight-submit-jobs]: hdinsight-submit-hadoop-jobs-programmatically
 [hdinsight-upload-data]: hdinsight-upload-data
 [hdinsight-get-started]: hdinsight-get-started
-
-
 [powershell-here-strings]: http://technet.microsoft.com/zh-cn/library/ee692792.aspx
 
 [image-hdi-hive-powershell]: ./media/hdinsight-use-hive/HDI.HIVE.PowerShell.png

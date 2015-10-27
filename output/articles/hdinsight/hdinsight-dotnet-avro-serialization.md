@@ -10,12 +10,8 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.workload="big-data"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="07/09/2015"
-	ms.author="jgao"/>
+	wacn.date=""/>
 
 
 # Serialize data in Hadoop with the Microsoft Avro Library

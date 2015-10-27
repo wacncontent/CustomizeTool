@@ -6,14 +6,10 @@
    authors="bwren"
    manager="stevenka"
    editor="tysonn" />
-<tags 
-   ms.service="automation"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="infrastructure-services"
-   ms.date="10/01/2015"
-   ms.author="bwren" />
+<tags
+	ms.service="automation"
+	ms.date="10/01/2015"
+	wacn.date=""/>
 
 # Scheduling a runbook in Azure Automation
 

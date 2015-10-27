@@ -7,14 +7,10 @@
 	manager="wpickett" 
 	editor=""/>
 
-<tags 
-	ms.service="app-service" 
-	ms.workload="na" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
+<tags
+	ms.service="app-service"
 	ms.date="10/06/2015"
-	ms.author="stefsch"/>
+	wacn.date=""/>
 
 # Introduction to Azure Websites Environment
 
@@ -89,16 +85,16 @@ For details on using an Azure Websites Environment with ExpressRoute, see the fo
 [MobileApps]: /documentation/articles/app-service-mobile-value-prop-preview/
 [APIApps]: /documentation/articles/app-service-api-apps-why-best-platform/
 [LogicApps]: /documentation/articles/app-service-logic-what-are-logic-apps/
-[AzureConDeepDive]: https://azure.microsoft.com/documentation/videos/azurecon-2015-deploying-highly-scalable-and-secure-web-and-mobile-apps/
-[GeodistributedAppFootprint]: /documentation/articles/app-service-app-service-environment-geo-distributed-scale/
+[AzureConDeepDive]:  https://azure.microsoft.com/documentation/videos/azurecon-2015-deploying-highly-scalable-and-secure-web-and-mobile-apps/
+[GeodistributedAppFootprint]:  /documentation/articles/app-service-app-service-environment-geo-distributed-scale/
 [NetworkSecurityGroups]: /documentation/articles/virtual-networks-nsg/
 [SiteToSite]: /documentation/articles/vpn-gateway-site-to-site-create/
 [ExpressRoute]: http://azure.microsoft.com/services/expressroute/
-[HowToConfigureanAppServiceEnvironment]: /documentation/articles/app-service-web-configure-an-app-service-environment/
-[ControllingInboundTraffic]: /documentation/articles/app-service-app-service-environment-control-inbound-traffic/
-[SecurelyConnectingToBackends]: /documentation/articles/app-service-app-service-environment-securely-connecting-to-backend-resources/
-[NetworkArchitectureOverview]: /documentation/articles/app-service-app-service-environment-network-architecture-overview/
-[NetworkConfigDetailsForExpressRoute]: /documentation/articles/app-service-app-service-environment-network-configuration-expressroute/
+[HowToConfigureanAppServiceEnvironment]:  /documentation/articles/app-service-web-configure-an-app-service-environment/
+[ControllingInboundTraffic]:  /documentation/articles/app-service-app-service-environment-control-inbound-traffic/
+[SecurelyConnectingToBackends]:  /documentation/articles/app-service-app-service-environment-securely-connecting-to-backend-resources/
+[NetworkArchitectureOverview]:  /documentation/articles/app-service-app-service-environment-network-architecture-overview/
+[NetworkConfigDetailsForExpressRoute]:  /documentation/articles/app-service-app-service-environment-network-configuration-expressroute/
 [AppServicePricing]: http://azure.microsoft.com/home/features/web-site/#price 
 
 <!-- IMAGES -->

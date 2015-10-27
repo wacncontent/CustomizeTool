@@ -7,14 +7,10 @@
 	manager="wpickett" 
 	editor=""/>
 
-<tags 
-	ms.service="app-service" 
-	ms.workload="na" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="10/13/2015" 
-	ms.author="stefsch"/>	
+<tags
+	ms.service="app-service"
+	ms.date="10/13/2015"
+	wacn.date=""/>	
 
 # Implementing a Layered Security Architecture with Azure Websites Environments
 
@@ -101,9 +97,9 @@ Understanding [outbound IP addresses][NetworkArchitecture] and Azure Websites En
 
 <!-- LINKS -->
 [NetworkSecurityGroups]: /documentation/articles/virtual-networks-nsg/
-[NetworkArchitecture]: /documentation/articles/app-service-app-service-environment-network-architecture-overview/
-[NetworkSecurityGroupsClassic]: /documentation/articles/virtual-networks-create-nsg-classic-ps/
-[InboundTraffic]: /documentation/articles/app-service-app-service-environment-control-inbound-traffic/
+[NetworkArchitecture]:  /documentation/articles/app-service-app-service-environment-network-architecture-overview/
+[NetworkSecurityGroupsClassic]:  /documentation/articles/virtual-networks-create-nsg-classic-ps/
+[InboundTraffic]:  /documentation/articles/app-service-app-service-environment-control-inbound-traffic/
 
 <!-- IMAGES -->
 [ConceptualArchitecture]: ./media/app-service-app-service-environment-layered-security/ConceptualArchitecture-1.png

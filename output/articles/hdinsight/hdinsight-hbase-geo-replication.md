@@ -8,13 +8,9 @@
    editor="cgronlun"/>
 
 <tags
-   ms.service="hdinsight"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="big-data" 
-   ms.date="07/08/2015"
-   ms.author="jgao"/>
+	ms.service="hdinsight"
+	ms.date="07/08/2015"
+	wacn.date=""/>
 
 # Configure HBase geo-replication in HDInsight
 
@@ -291,13 +287,15 @@ In this tutorial, you have learned how to configure HBase replication across two
 - [Get started with Apache HBase in HDInsight][hdinsight-hbase-get-started]
 - [HDInsight HBase overview][hdinsight-hbase-overview]
 - [Provision HBase clusters on Azure Virtual Network][hdinsight-hbase-provision-vnet]
+<!-- deleted by customization 
 - [Analyze real-time Twitter sentiment with HBase][hdinsight-hbase-twitter-sentiment]
+-->
 - [Analyzing sensor data with Storm and HBase in HDInsight (Hadoop)][hdinsight-sensor-data]
 
 [hdinsight-hbase-geo-replication-vnet]: hdinsight-hbase-geo-replication-configure-VNets
+<!-- deleted by customization 
 [hdinsight-hbase-geo-replication-dns]: hdinsight-hbase-geo-replication-configure-VNet
-
-
+-->
 [img-vnet-diagram]: ./media/hdinsight-hbase-geo-replication/HDInsight.HBase.Replication.Network.diagram.png
 
 [powershell-install]: install-configure-powershell
@@ -306,8 +304,10 @@ In this tutorial, you have learned how to configure HBase replication across two
 [hdinsight-provision]: hdinsight-provision-clusters
 [hdinsight-hbase-replication-vnet]: hdinsight-hbase-geo-replication-configure-VNets
 [hdinsight-hbase-replication-dns]: hdinsight-hbase-geo-replication-configure-DNS
+<!-- deleted by customization
 [hdinsight-hbase-twitter-sentiment]: hdinsight-hbase-analyze-twitter-sentiment
+-->
 [hdinsight-sensor-data]: hdinsight-storm-sensor-data-analysis
 [hdinsight-hbase-overview]: hdinsight-hbase-overview
 [hdinsight-hbase-provision-vnet]: hdinsight-hbase-provision-vnet
-[hdinsight-hbase-get-started]: hdinsight-hbase-get-started 
+[hdinsight-hbase-get-started]: hdinsight-hbase-get-started

@@ -7,14 +7,10 @@
 	manager="dwrede" 
 	editor=""/>
 
-<tags 
-	ms.service="media-services" 
-	ms.workload="media" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="09/18/2015" 
-	ms.author="juliako"/>
+<tags
+	ms.service="media-services"
+	ms.date="09/18/2015"
+	wacn.date=""/>
 
 #Get started with delivering content on demand using REST API
 
@@ -1191,6 +1187,7 @@ To test progressive download, paste a URL into a browser (for example, IE, Chrom
 
 
 ##Next Steps
+<!-- deleted by customization
 
 ###Media Services learning paths
 
@@ -1198,6 +1195,7 @@ You can view AMS learning paths here:
 
 - [AMS Live Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/)
 - [AMS on Demand Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/)
+-->
 
 ### Looking for something else?
 

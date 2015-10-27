@@ -8,13 +8,9 @@
  editor="cgronlun"/>
 
 <tags
-ms.service="hdinsight"
-ms.devlang="java"
-ms.topic="article"
-ms.tgt_pltfrm="na"
-ms.workload="big-data"
-ms.date="09/23/2015"
-ms.author="larryfr"/>
+	ms.service="hdinsight"
+	ms.date="09/23/2015"
+	wacn.date=""/>
 
 #Process vehicle sensor data from Azure Event Hubs using Apache Storm on HDInsight
 

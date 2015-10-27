@@ -7,14 +7,10 @@
 	manager="wpickett" 
 	editor="jimbe"/>
 
-<tags 
-	ms.service="app-service-web" 
-	ms.workload="web" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="dotnet" 
-	ms.topic="article" 
-	ms.date="09/22/2015" 
-	ms.author="tdykstra"/>
+<tags
+	ms.service="app-service-web"
+	ms.date="09/22/2015"
+	wacn.date=""/>
 
 # How to use Azure blob storage with the WebJobs SDK
 
@@ -26,6 +22,21 @@ For code samples that show how to create blobs, see [How to use Azure queue stor
 		
 The guide assumes you know [how to create a WebJob project in Visual Studio with connection strings that point to your storage account](websites-dotnet-webjobs-sdk-get-started).
 
+<!-- keep by customization: begin -->
+## Table of contents
+
+-   [How to trigger a function when a blob is created or updated](#trigger)
+	- Single placeholder for blob name with extension
+	- Separate blob name and extension placeholders
+-   [Types that BlobTrigger works with](#types)
+-   [Getting text blob content by binding to string](#string)
+-   [Getting serialized blob content by using ICloudBlobStreamBinder](#icbsb)
+-   [How to handle poison blobs](#poison)
+-   [Blob polling algorithm](#polling)
+-   [Blob receipts](#receipts)
+-   [Related topics covered by the queues article](#queues)
+-   [Next steps](#nextsteps)
+<!-- keep by customization: end -->
 ## <a id="trigger"></a> How to trigger a function when a blob is created or updated
 
 This section shows how to use the `BlobTrigger` attribute. 

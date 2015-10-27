@@ -7,28 +7,24 @@
 	services="media-services" 
 	documentationCenter=""/>
 
-<tags 
-	ms.service="media-services" 
-	ms.workload="media" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="09/07/2015" 
-	ms.author="juliako"/>
+<tags
+	ms.service="media-services"
+	ms.date="09/07/2015"
+	wacn.date=""/>
 
 
 #How to: Deliver streaming content
  
 > [AZURE.SELECTOR]
-- [REST](media-services-rest-deliver-streaming-content.md)
-- [.NET](media-services-deliver-streaming-content.md)
-- [Portal](media-services-manage-content.md#publish)
+- [REST](media-services-rest-deliver-streaming-content)
+- [.NET](media-services-deliver-streaming-content)
+- [Portal](media-services-manage-content#publish)
 
 ##Overview
 
-You can stream an adaptive bitrate MP4 set by creating an OnDemand streaming locator and building a streaming URL. The [encoding an asset](media-services-encode-asset.md) topic shows how to encode into an adaptive bitrate MP4 set. 
+You can stream an adaptive bitrate MP4 set by creating an OnDemand streaming locator and building a streaming URL. The [encoding an asset](media-services-encode-asset) topic shows how to encode into an adaptive bitrate MP4 set. 
 
->[AZURE.NOTE]If your content is encrypted, configure asset delivery policy (as described in [this](media-services-dotnet-configure-asset-delivery-policy.md) topic) before creating a locator. 
+>[AZURE.NOTE]If your content is encrypted, configure asset delivery policy (as described in [this](media-services-dotnet-configure-asset-delivery-policy) topic) before creating a locator. 
 
 You can also use an OnDemand streaming locator to build URLs that point to MP4 files that can be progressively downloaded.  
 
@@ -157,6 +153,7 @@ The following code calls .NET SDK extensions methods that create a locator and g
 	Console.WriteLine(hlsUri);
 	Console.WriteLine(mpegDashUri);
 
+<!-- deleted by customization
 
 ##Media Services learning paths
 
@@ -164,8 +161,9 @@ You can view AMS learning paths here:
 
 - [AMS Live Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/)
 - [AMS on Demand Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/)
+-->
 
 
 ##See Also
 
-[Download assets](media-services-deliver-asset-download.md)
+[Download assets](media-services-deliver-asset-download)

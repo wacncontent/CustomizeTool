@@ -9,20 +9,20 @@
 
 <tags
 	ms.service="app-service"
-	ms.workload="na"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="09/16/2015"
-	ms.author="mwasson"/>
+	wacn.date=""/>
 
 # Configure a custom domain name in Azure Websites
 
 > [AZURE.SELECTOR]
+<!-- deleted by customization 
 - [Buy Domain for Web Apps](custom-dns-web-site-buydomains-web-app)
+-->
 - [Web Apps with External Domains](web-sites-custom-domain-name)
 - [Web Apps with Traffic Manager](web-sites-traffic-manager-custom-domain-name)
+<!-- deleted by customization 
 - [GoDaddy](web-sites-godaddy-custom-domain-name)
+-->
 
 When you create a web app, Azure assigns it to a subdomain of chinacloudsites.cn. For example, if your web app is named **contoso**, the URL is **contoso.chinacloudsites.cn**. Azure also assigns a virtual IP address.
 
@@ -32,6 +32,16 @@ For a production web app, you probably want users to see a custom domain name. T
 
 [AZURE.INCLUDE [introfooter](../includes/custom-dns-web-site-intro-notes.md)]
 
+<!-- keep by customization: begin -->
+In this article:
+
+-   [Overview]
+-   [DNS record types]
+-   [Find the virtual IP address]
+-   [Create the DNS records]
+-   [Create an 揳wverify?record (A records only)](#awverify)
+-   [Enable the domain name on your website]
+<!-- keep by customization: end -->
 ## Overview
 
 If you have a domain name already, or you want reserve domain from other domain registrars, here are the general steps to bring a custom domain name for web app:
@@ -64,6 +74,7 @@ If the IP address changes, a CNAME entry is still valid, whereas an A record mus
 ## Find the virtual IP address
 
 Skip this step if you are creating a CNAME record. To create an A record, you need the virtual IP address of your web app. To get the IP address:
+<!-- deleted by customization
 
 1.	In your browser, open the [Azure Management Portal](https://manage.windowsazure.cn).
 2.	Click the **Browse** option on the left side of the page.
@@ -73,6 +84,18 @@ Skip this step if you are creating a CNAME record. To create an A record, you ne
 6.	Click **Custom domains and SSL**. 
 7.	In the **Custom domains and SSL** blade, click **Bring External Domains"**. The IP address is located at the bottom of this part.
 
+-->
+<!-- keep by customization: begin -->
+1.	In your browser, open the [Azure Management Portal](https://manage.windowsazure.cn).
+2.	In the **Websites** tab, click the name of your site and select **Dashboard**.
+3.	Select **Manage Domains** from the bottom of the page. (If this option is disabled, make sure you are using Shared, Basic, or Standard mode. For more information, see [How to scale websites](http://www.windowsazure.cn/zh-cn/documentation/articles/web-sites-scale/).) 
+
+	![](./media/web-sites-custom-domain-name/dncmntask-cname-6.png)
+
+4.	The IP address is listed toward the bottom of the dialog.
+
+	![](./media/web-sites-custom-domain-name/ipaddress.png)
+<!-- keep by customization: end -->
 ## Create the DNS records
 
 Log in to your domain registrar and use their tool to add an A record or CNAME record. Every registrar’s web app is slightly different, but here are some general guidelines.
@@ -124,17 +147,21 @@ Visitors to your web app will not see the awverify subdomain; it’s only for Az
 ## Enable the domain name on your web app
 
 [AZURE.INCLUDE [modes](../includes/custom-dns-web-site-enable-on-web-site.md)]
+<!-- deleted by customization
 
 >[AZURE.NOTE] If you want to get started with Azure Websites before signing up for an Azure account, go to [Try Azure Websites](http://go.microsoft.com/fwlink/?LinkId=523751), where you can immediately create a short-lived starter web app in Azure Websites. No credit cards required; no commitments.
+-->
 
 
 ## Next steps
 
 For more information please see: [Get started with Azure DNS](dns-getstarted-create-dnszone) and [Delegate Domain to Azure DNS](dns-domain-delegation) 
+<!-- deleted by customization
 
 ## What's changed
 * For a guide to the change from Websites to Azure Websites see: [Azure Websites and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
 * For a guide to the change of the Management Portal to the new portal see: [Reference for navigating the preview portal](https://manage.windowsazure.cn/)
+-->
 
 <!-- Anchors. -->
 [Overview]: #overview

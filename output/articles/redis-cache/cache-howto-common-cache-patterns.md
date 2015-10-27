@@ -8,13 +8,9 @@
    editor=""/>
 
 <tags
-   ms.service="cache"
-   ms.devlang="all"
-   ms.topic="article"
-   ms.tgt_pltfrm="cache-redis"
-   ms.workload="tbd" 
-   ms.date="08/11/2015"
-   ms.author="riande"/>
+	ms.service="cache"
+	ms.date="08/11/2015"
+	wacn.date=""/>
 
 # Common cache patterns with Azure Redis Cache
 

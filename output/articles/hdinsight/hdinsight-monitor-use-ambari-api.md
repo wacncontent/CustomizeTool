@@ -10,12 +10,8 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.workload="big-data"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="09/25/2015"
-	ms.author="jgao"/>
+	wacn.date=""/>
 
 # Monitor Hadoop clusters in HDInsight using the Ambari API
 
@@ -172,5 +168,4 @@ Now you have learned how to use Ambari monitoring API calls. To learn more, see:
 [hdinsight-documentation]: /documentation/services/hdinsight/
 [hdinsight-get-started]: hdinsight-get-started
 [hdinsight-provision]: hdinsight-provision-clusters
-
 [img-jobtracker-output]: ./media/hdinsight-monitor-use-ambari-api/hdi.ambari.monitor.jobtracker.output.png

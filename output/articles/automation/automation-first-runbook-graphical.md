@@ -9,12 +9,8 @@
 
 <tags
 	ms.service="automation"
-	ms.workload="tbd"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="get-started-article" 
 	ms.date="09/17/2015"
-	ms.author="bwren"/>
+	wacn.date=""/>
 
 
 # My first graphical runbook

@@ -7,14 +7,10 @@
 	services="app-service\web" 
 	documentationCenter=""/>
 
-<tags 
-	ms.service="app-service-web" 
-	ms.workload="web" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="09/29/2015" 
-	ms.author="cephalin"/>
+<tags
+	ms.service="app-service-web"
+	ms.date="09/29/2015"
+	wacn.date=""/>
 
 
 
@@ -72,8 +68,10 @@ Maintain high availability of your web app using [Azure Traffic Manager]. Using 
 ## Monitor and analyze
 
 Stay up-to-date on your web app's performance with Azure or third-party tools. Receive alerts on critical web app events. Gain user insight easily with Application Insight or with web log analytics from HDInsight. 
+<!-- deleted by customization
 
 Get a [quick glance] of the web app's current performance metrics and resource quotas in the web app's blade in the [Azure preview portal](https://manage.windowsazure.cn/). For a 360° view of your application across availability, performance and usage, use [Azure Application Insights] to give you fast & powerful troubleshooting, diagnostics and usage insights. Or, use a third-party tool like [New Relic] to provide advanced monitoring data for your web apps.
+-->
 
 In the **Standard** tier, monitor app responsiveness receive email notifications whenever your app becomes unresponsive. For more information, see [How to: Receive Alert Notifications and Manage Alert Rules in Azure].
 
@@ -95,32 +93,29 @@ In the **Standard** tier, monitor app responsiveness receive email notifications
 [Visual Studio]: web-sites-dotnet-get-started
 [Visual Studio Online]: cloud-services-continuous-delivery-use-vso
 [Git]: web-sites-publish-source-control
-
 [HTTPS]: web-sites-configure-ssl-certificate
-[Azure Websites Pricing Details]: home/features/web-site/#price#ssl-connections
+[Azure Websites Pricing Details]: /home/features/web-site/#price#ssl-connections
 [Authenticate users]: web-sites-authentication-authorization
 [Easy Auth]:/blog/2014/11/13/azure-websites-authentication-authorization/
 [Authorize users]: web-sites-authentication-authorization
-
 [Azure Trust Center]:/support/trust-center/
 [MySQL]: web-sites-php-mysql-deploy-use-git
 [Azure SQL Database]: web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database
 [hybrid connection]: web-sites-hybrid-connection-get-started
 [Azure Virtual Network]: web-sites-integrate-with-vnet
-
 [scale up and out]: web-sites-scale
-[Azure Management Portal]: http://manage.windowsazure.cn/
-[Service Management API]: http://msdn.microsoft.com/zh-cn/zh-cn/library/azure/ee460799.aspx
-[PowerShell scripting]: http://msdn.microsoft.com/zh-cn/zh-cn/library/azure/jj152841.aspx
-[Troy Hunt]: https://twitter.com/troyhunt
-[10 things I learned about rapidly scaling web apps with Azure]: http://www.troyhunt.com/2014/09/10-things-i-learned-about-rapidly.html
+[Azure Management Portal]:http://manage.windowsazure.cn/
+[Service Management API]:http://msdn.microsoft.com/zh-cn/library/azure/ee460799.aspx
+[PowerShell scripting]:http://msdn.microsoft.com/zh-cn/library/azure/jj152841.aspx
+[Troy Hunt]:https://twitter.com/troyhunt
+[10 things I learned about rapidly scaling web apps with Azure]:http://www.troyhunt.com/2014/09/10-things-i-learned-about-rapidly.html
 [Azure Redis Cache]:/blog/2014/06/05/mvc-movie-app-with-azure-redis-cache-in-15-minutes/
-[ASP.NET session state]: https://msdn.microsoft.com/zh-cn/library/azure/dn690522.aspx
-[output cache]: https://msdn.microsoft.com/zh-cn/library/azure/dn798898.aspx
+[ASP.NET session state]:https://msdn.microsoft.com/zh-cn/library/azure/dn690522.aspx
+[output cache]:https://msdn.microsoft.com/zh-cn/library/azure/dn798898.aspx
 
 [quick glance]: web-sites-monitor
-[Azure Application Insights]: http://blogs.msdn.com/b/visualstudioalm/archive/2015/01/07/application-insights-and-azure-websites.aspx
+[Azure Application Insights]:http://blogs.msdn.com/b/visualstudioalm/archive/2015/01/07/application-insights-and-azure-websites.aspx
 [New Relic]: store-new-relic-cloud-services-dotnet-application-performance-management
-[How to: Receive Alert Notifications and Manage Alert Rules in Azure]: http://msdn.microsoft.com/zh-cn/zh-cn/library/azure/dn306638.aspx
+[How to: Receive Alert Notifications and Manage Alert Rules in Azure]:http://msdn.microsoft.com/zh-cn/library/azure/dn306638.aspx
 
  

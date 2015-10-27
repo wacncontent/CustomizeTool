@@ -10,12 +10,8 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.workload="big-data"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="10/15/2015"
-	ms.author="jgao"/>
+	wacn.date=""/>
 
 #Run the Hadoop samples in HDInsight
 
@@ -67,22 +63,16 @@ From this article and the articles in each of the samples, you learned how to ru
 
 
 [hdinsight-errors]: hdinsight-debug-jobs
-
 [hdinsight-sdk-documentation]: https://msdn.microsoft.com/zh-cn/library/azure/dn479185.aspx
 
 [hdinsight-submit-jobs]: hdinsight-submit-hadoop-jobs-programmatically
 [hdinsight-introduction]: hdinsight-hadoop-introduction
-
-
 [powershell-install-configure]: install-configure-powershell
-
 [hdinsight-get-started]: hdinsight-get-started
-
 [hdinsight-samples]: hdinsight-run-samples
 [hdinsight-sample-10gb-graysort]: hdinsight-sample-10gb-graysort
 [hdinsight-sample-csharp-streaming]: hdinsight-sample-csharp-streaming
 [hdinsight-sample-pi-estimator]: hdinsight-sample-pi-estimator
 [hdinsight-sample-wordcount]: hdinsight-sample-wordcount
-
 [hdinsight-use-hive]: hdinsight-use-hive
 [hdinsight-use-pig]: hdinsight-use-pig

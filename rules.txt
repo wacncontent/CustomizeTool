@@ -125,6 +125,8 @@ http://go.microsoft.com/fwlink/?LinkId{equal}234930 = /home/features/sql-databas
 http://go.microsoft.com/fwlink/?LinkID{equal}235288 = https://manage.windowsazure.cn
 http://go.microsoft.com/fwlink/?LinkID{equal}324844 = https://technet.microsoft.com/zh-cn/library/hh847780.aspx
 http://go.microsoft.com/fwlink/p/?LinkId{equal}390561 = https://social.msdn.microsoft.com/Forums/azure/zh-cn/home?forum{equal}azureautomation
+http://go.microsoft.com/fwlink/?linkid{equal}618336&clcid{equal}0x409 = https://msdn.microsoft.com/zh-cn/library/azure/mt269960.aspx
+http://go.microsoft.com/fwlink/p/?LinkId{equal}400772 = https://msdn.microsoft.com/zh-cn/library/azure/hh758257.aspx
 
 # aka.ms
 http://aka.ms/runbookauthor/azure/automationaccounts = /documentation/articles/automation-configuring/
@@ -177,6 +179,7 @@ http://aka.ms/runbookgallery = /documentation/articles/automation-runbook-galler
 /virtual-network/ = /networking/
 ../includes/free-trial-note2.md = ../includes/free-trial-note.md
 ../../includes/ = ../includes/
+../documentation/services/ = /documentation/services/
 
 # global site url
 ://portal.azure.com = ://manage.windowsazure.cn
@@ -200,7 +203,19 @@ http://zh.wikipedia.org = 	http://en.wikipedia.org
 https://passwordreset.microsoftonline.com = 	???
 http://myapps.microsoft.com = 	???
 
+hdinsight-hadoop-provision-linux-clusters = hdinsight-provision-clusters
+hdinsight-use-sqoop-mac-linux = hdinsight-use-sqoop
+hdinsight-using-hive = hdinsight-use-hive
+hdinsight-hive-analyze-web-site-log = hdinsight-hive-analyze-website-log
+free-trial-note2.md = free-trial-note.md
+hdinsight-hadoop-customize-cluster-linux = hdinsight-hadoop-customize-cluster
+hdinsight-apache-storm-tutorial-get-started-linux = hdinsight-apache-storm-tutorial-get-started
+
 [REGEX]
+
+# tag
+\<tags\s*\n(\s*ms\..+\n)*\s*(ms\.service\{equal}\".*\")(\s*ms\..+\n)*\s*(ms\.date\{equal}\".*\")(\s*ms\..+\n)*\s*ms\..+\n?\s*/\> = <tags\n\t\2\n\t\4\n\twacn.date{equal}""/>
+\<tags\s*\n(\s*ms\..+\n)*\s*(ms\.date\{equal}\".*\")(\s*ms\..+\n)*\s*(ms\.service\{equal}\".*\")(\s*ms\..+\n)*\s*ms\..+\n?\s*/\> = <tags\n\t\2\n\t\4\n\twacn.date{equal}""/>
 
 # Document
 
@@ -214,8 +229,11 @@ http://myapps.microsoft.com = 	???
 # [1](../HDInsight/hdinsight-hadoop-visual-studio-tools-get-started)
 # [1](../HDInsight/hdinsight-hadoop-visual-studio-tools-get-started#test)
 # [link text](xxx-xxx-xxx.md#xxx-xxx)
-\[([^\[|^\]]*)\]\s*\((\.\./)?(?!includes|media|services)([\w|\-]+/)?(?!includes|media|services)([\w|\-]+/)?([\w|\-]+)(\.md)?/?\) = [\1](\5)
-\[([^\[|^\]]*)\]\s*\((\.\./)?(?!includes|media|services)([\w|\-]+/)?(?!includes|media|services)([\w|\-]+/)?([\w|\-]+)(\.md)?/?(#[^\(|^\)|^/]*)/?\) = [\1](\5\7)
+# [Axinom](media-services-axinom-integration.md)
+# [Azure Virtual Network](../services/virtual-network/)
+# [Azure Virtual Network](../services/virtual-network/)
+\[([^\[|^\]]*)\]\s*\((\.\./)?(?!includes/|media/|services/)([\w|\-]+/)?(?!includes/|media/|services/)([\w|\-]+/)?([\w|\-]+)(\.md)?/?\) = [\1](\5)
+\[([^\[|^\]]*)\]\s*\((\.\./)?(?!includes/|media/|services/)([\w|\-]+/)?(?!includes/|media/|services/)([\w|\-]+/)?([\w|\-]+)(\.md)?/?(#[^\(|^\)|^/]*)/?\) = [\1](\5\7)
 
 # Reference like [xxxx]: xxxx
 # [link text]: xxx-xxx-xxx.md
@@ -227,8 +245,12 @@ http://myapps.microsoft.com = 	???
 # [1]: ../HDInsight/hdinsight-hadoop-visual-studio-tools-get-started
 # [1]: ../HDInsight/hdinsight-hadoop-visual-studio-tools-get-started#test
 # [link text]: xxx-xxx-xxx.md#xxx-xxx
-\[([^\[|^\]]*)\]:\s*(\.\./)?(?!includes|media|services)([\w|\-]+/)?(?!includes|media|services)([\w|\-]+/)?([\w|\-]+)(\.md)?/? = [\1]: \5
-\[([^\[|^\]]*)\]:\s*(\.\./)?(?!includes|media|services)([\w|\-]+/)?(?!includes|media|services)([\w|\-]+/)?([\w|\-]+)(\.md)?/?(#[^/]*)/? = [\1]: \5\7
+# [hdinsight-hbase-get-started]: ../hdinsight-hbase-get-started.md 
+# [2b8c3488]: ../hdinsight-storm-getting-started.md "Learn how to create a Storm on HDInsight cluster and use the Storm Dashboard to deploy example topologies."
+\[([^\[|^\]]*)\]:\s*(\.\./)?(?!includes/|media/|services/)([\w|\-]+/)?(?!includes/|media/|services/)([\w|\-]+/)?([\w|\-]+)(\.md)?/?\s*(\n|$) = [\1]: \5\7
+\[([^\[|^\]]*)\]:\s*(\.\./)?(?!includes/|media/|services/)([\w|\-]+/)?(?!includes/|media/|services/)([\w|\-]+/)?([\w|\-]+)(\.md)?/?(#[^/]*)/?\s*(\n|$) = [\1]: \5\7\8
+\[([^\[|^\]]*)\]:\s*(\.\./)?(?!includes/|media/|services/)([\w|\-]+/)?(?!includes/|media/|services/)([\w|\-]+/)?([\w|\-]+)(\.md)?/?\s*("[^"]*")\s*(\n|$) = [\1]: \5 \7\8
+\[([^\[|^\]]*)\]:\s*(\.\./)?(?!includes/|media/|services/)([\w|\-]+/)?(?!includes/|media/|services/)([\w|\-]+/)?([\w|\-]+)(\.md)?/?(#[^/]*)/?\s*("[^"]*")\s*(\n|$) = [\1]: \5\7 \8\9
 
 # [link text](/documentation/articles/xxx-xxx-xxx.md#xxx-xxx)
 # [link text](/documentation/articles/xxx-xxx-xxx.md)
@@ -237,12 +259,13 @@ http://myapps.microsoft.com = 	???
 
 # [link text]: /documentation/articles/xxx-xxx-xxx.md#xxx-xxx
 # [link text]: /documentation/articles/xxx-xxx-xxx.md
-\[([^\[|^\]]*)\]:\s*/documentation/articles/([\w|\-]+)(\.md)?/? = [\1]: \2
-\[([^\[|^\]]*)\]:\s*/documentation/articles/([\w|\-]+)(\.md)?/?(#[^/]*)/? = [\1]: \2\4
+\[([^\[|^\]]*)\]:\s*/documentation/articles/([\w|\-]+)(\.md)?/?\s*\n = [\1]: \2\n
+\[([^\[|^\]]*)\]:\s*/documentation/articles/([\w|\-]+)(\.md)?/?(#[^/]*)/\s*\n? = [\1]: \2\4\n
 
 # href="hdinsight-use-mapreduce.md"
+# href="../networking/virtual-networks-overview.md"
 href{equal}"([\w|\-]*)\.md" = href{equal}"/documentation/articles/\1"
-href{equal}"\.\./([\w|\-]*)/" = href{equal}"/documentation/articles/\1"
+href{equal}"\.\./(?!includes/|media/|services/)([\w|\-]+/)?([\w|\-]*)(.md)?/?" = href{equal}"/documentation/articles/\2"
 
 /documentation/articles/# = #
 # ../services/xxxx = /home/features/xxxx
@@ -255,13 +278,13 @@ href{equal}"\.\./([\w|\-]*)/" = href{equal}"/documentation/articles/\1"
 \!\[([^\[|^\]]*)\]\s*\(media/([\w|\-]+)/([^\(|^\)]*)\) = ![\1](./media/\2/\3)
 
 #![image text]: media/xxx-xxx-xxx/xxx-xxx.xxx = ![image text]: ./media/xxx-xxx-xxx/xxx-xxx.xxx
-\!\[([^\[|^\]]*)\]:\s*media/([\w|\-]+)/([^\(|^\)]*) = ![\1]: ./media/\2/\3
+\!\[([^\[|^\]]*)\]:\s*media/([\w|\-]+)/([^\(|^\)]*)\s*\n = ![\1]: ./media/\2/\3\n
 
 # (..\virtual-network\media\virtual-networks-arm-asm-s2s\figure01.png) = (.\media\virtual-networks-arm-asm-s2s\figure01.png)
 \(\.\.[\\|/][\w|\-]+[\\|/]media[\\|/]([\w|\-]+)[\\|/]([^\(|^\)]+\.\w+)\) = (./media/\1/\2)
 
 #![image text]: ..\virtual-network\media\xxx-xxx-xxx\xxx-xxx.xxx = ![image text]: ./media/xxx-xxx-xxx/xxx-xxx.xxx
-\!\[([^\[|^\]]*)\]:\s*\.\.[\\|/][\w|\-]+[\\|/]media[\\|/]([\w|\-]+)[\\|/]([^\s]+\.\w+) = ![\1]: ./media/\2/\3
+\!\[([^\[|^\]]*)\]:\s*\.\.[\\|/][\w|\-]+[\\|/]media[\\|/]([\w|\-]+)[\\|/]([^\s]+\.\w+)\s*\n = ![\1]: ./media/\2/\3\n
 
 
 
@@ -294,7 +317,7 @@ href{equal}"\.\./([\w|\-]*)/" = href{equal}"/documentation/articles/\1"
 \.\./services/([^\/]*)/ = /home/features/\1/
 ("|\()(https?://azure.microsoft.com)?/services/ = \1/home/features/
 (https?://azure.microsoft.com)?/pricing/purchase-options/ = /pricing/overview/
-
+/pricing/overview/([\w|\-]+)/ = /home/features/\1/#price
 /services/app-service/(web/)? = /home/features/web-site/
 /home/features/web-sites/ = /home/features/web-site/
 /home/features/hbase/ = /services/hbase/
@@ -318,6 +341,7 @@ Azure Websites (P|p)lan = App Service \1lan
 https?://msdn.microsoft.com/(zh-cn/)?library/(windows)?azure/dd179354.aspx = /documentation/articles/storage-manage-access-to-resources
 hdinsight-administer-use-management-portal(-v1)?(\.md)? = hdinsight-administer-use-management-portal-v1
 \[WindowsAzure\]: http://azure.microsoft.com = [WindowsAzure]: http://www.windowsazure.cn
+/en\-(us|US)/ = /
 
 # [CORRECTION]
 hdiconfigactions.blob.core.chinacloudapi.cn = hdiconfigactions.blob.core.windows.net
@@ -357,5 +381,5 @@ http://azure.microsoft.com/overview/preview-portal/ = https://manage.windowsazur
 https://azure.microsoft.com/documentation/articles/ = /documentation/articles/
 http://azure.microsoft.com/documentation/articles/ = /documentation/articles/
 http://azure.microsoft.com/pricing/1rmb-trial/ = /pricing/1rmb-trial/
-/library/windowsazure/ = /zh-cn/library/azure/
 /zh-cn/library/windowsazure/ = /zh-cn/library/azure/
+/home/features/active-directory/ = /home/features/identity/

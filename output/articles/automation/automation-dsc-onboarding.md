@@ -8,13 +8,9 @@
    editor="tysonn"/>
 
 <tags
-   ms.service="automation"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="powershell"
-   ms.workload="TBD" 
-   ms.date="10/07/2015"
-   ms.author="coreyp"/>
+	ms.service="automation"
+	ms.date="10/07/2015"
+	wacn.date=""/>
 
 # Onboarding machines for management by Azure Automation DSC
 
@@ -138,7 +134,7 @@ The [Register-AzureAutomationDscNode](https://msdn.microsoft.com/zh-cn/library/m
 
 On-premises Windows machines and Windows machines in non-Azure clouds (such as Amazon Web Services) can also be onboarded to Azure Automation DSC, as long as they have outbound access to the internet, via a few simple steps:
 
-1. Make sure the latest version of [WMF 5](http://www.microsoft.com/en-us/download/details.aspx?id=48729) is installed on the machines you want to onboard to Azure Automation DSC.
+1. Make sure the latest version of [WMF 5](http://www.microsoft.com/download/details.aspx?id=48729) is installed on the machines you want to onboard to Azure Automation DSC.
 
 2. Open the PowerShell console or PowerShell ISE as an administrator in a machine in your local environment. This machine must also have the latest version of WMF 5 installed.
 
@@ -163,7 +159,7 @@ On-premises Windows machines and Windows machines in non-Azure clouds (such as A
 
 On-premises Linux machines and Linux machines in non-Azure clouds can also be onboarded to Azure Automation DSC, as long as they have outbound access to the internet, via a few simple steps:
 
-1. Make sure the latest version of the [DSC Linux agent](http://www.microsoft.com/en-us/download/details.aspx?id=49150) is installed on the machines you want to onboard to Azure Automation DSC.
+1. Make sure the latest version of the [DSC Linux agent](http://www.microsoft.com/download/details.aspx?id=49150) is installed on the machines you want to onboard to Azure Automation DSC.
 
 2. If the [PowerShell DSC Local Configuration Manager defaults](https://technet.microsoft.com/zh-cn/library/dn249922.aspx?f=255&MSPPError=-2147217396) match your use case:
 
@@ -175,7 +171,7 @@ On-premises Linux machines and Linux machines in non-Azure clouds can also be on
 
 	If the PowerShell DSC Local Configuration Manager defaults **do** **not** match your use case, follow steps 3 - 9. Otherwise, proceed directly to step 9.
 
-3.  Open the PowerShell console or PowerShell ISE as an administrator on a Windows machine in your local environment. This machine must have the latest version of [WMF 5](http://www.microsoft.com/en-us/download/details.aspx?id=48729) installed.
+3.  Open the PowerShell console or PowerShell ISE as an administrator on a Windows machine in your local environment. This machine must have the latest version of [WMF 5](http://www.microsoft.com/download/details.aspx?id=48729) installed.
 
 4.  Connect to Azure Resource Manager using the Azure PowerShell module:
 

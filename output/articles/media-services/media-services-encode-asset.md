@@ -7,14 +7,10 @@
 	manager="dwrede" 
 	editor=""/>
 
-<tags 
-	ms.service="media-services" 
-	ms.workload="media" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="10/15/2015"  
-	ms.author="juliako"/>
+<tags
+	ms.service="media-services"
+	ms.date="10/15/2015"
+	wacn.date=""/>
 
 #Overview and Comparison of Azure On Demand Media Encoders
 
@@ -27,20 +23,22 @@ Codecs are the software that implements the compression/decompression algorithms
 
 Media Services provides dynamic packaging which allows you to deliver your adaptive bitrate MP4 or Smooth Streaming encoded content in streaming formats supported by Media Services (MPEG DASH, HLS, Smooth Streaming, HDS) without you having to re-package into these streaming formats. 
 
-To take advantage of [dynamic packaging](media-services-dynamic-packaging-overview.md), you need to do the following:
+To take advantage of [dynamic packaging](media-services-dynamic-packaging-overview), you need to do the following:
 
 - Encode your mezzanine (source) file into a set of adaptive bitrate MP4 files or adaptive bitrate Smooth Streaming files (the encoding steps are demonstrated later in this tutorial).
-- Get at least one On-Demand streaming unit for the streaming endpoint from which you plan to delivery your content. For more information, see [How to Scale On-Demand Streaming Reserved Units](media-services-manage-origins.md#scale_streaming_endpoints/).
+- Get at least one On-Demand streaming unit for the streaming endpoint from which you plan to delivery your content. For more information, see [How to Scale On-Demand Streaming Reserved Units](media-services-manage-origins#scale_streaming_endpoints).
 
 Media Services supports the following on demand encoders that are described in this article:
 
 - **Media Encoder Standard**
 - **Azure Media Encoder** 
+<!-- deleted by customization
 - **Media Encoder Premium Workflow**
+-->
 
 This article gives a brief overview of on demand media encoders and provides links to articles that give more detailed information. The topic also provides comparison of the encoders.
 
-Note that by default each Media Services account can have one active encoding task at a time. You can reserve encoding units that allow you to have multiple encoding tasks running concurrently, one for each encoding reserved unit you purchase. For information, see [Scaling encoding units](media-services-portal-encoding-units.md).
+Note that by default each Media Services account can have one active encoding task at a time. You can reserve encoding units that allow you to have multiple encoding tasks running concurrently, one for each encoding reserved unit you purchase. For information, see [Scaling encoding units](media-services-portal-encoding-units).
 
 ##Media Encoder Standard
 
@@ -57,15 +55,15 @@ When compared to Azure Media Encoder, this encoder supports more input and outpu
 
 ###How to use
 
-[How to encode with Media Encoder Standard](media-services-dotnet-encode-with-media-encoder-standard.md)
+[How to encode with Media Encoder Standard](media-services-dotnet-encode-with-media-encoder-standard)
 
 ###Formats
 
-[Formats and codecs](media-services-media-encoder-standard-formats.md)
+[Formats and codecs](media-services-media-encoder-standard-formats)
 
 ###Presets
 
-Media Encoder Standard is configured using one of the encoder presets described [here](http://go.microsoft.com/fwlink/?linkid=618336&clcid=0x409).
+Media Encoder Standard is configured using one of the encoder presets described [here](https://msdn.microsoft.com/zh-cn/library/azure/mt269960.aspx).
 
 ###Input and output metadata
 
@@ -75,7 +73,7 @@ The encoders output metadata is described [here](http://msdn.microsoft.com/zh-cn
 
 ###Thumbnail
 
-For information on how to generate thumbnails, see [How to generate thumbnails using Media Encoder Standard](media-services-dotnet-generate-thumbnail-with-mes.md).
+For information on how to generate thumbnails, see [How to generate thumbnails using Media Encoder Standard](media-services-dotnet-generate-thumbnail-with-mes).
 
 ###Audio and/or video overlays
 
@@ -89,15 +87,15 @@ Currently, not supported.
 
 ###Overview
 
-Azure Media Encoder is one of the encoders supported by Media Services. Starting with July 2015, it is recommended to use [Media Encoder Standard](media-services-encode-asset.md#media_encoder_standard).
+Azure Media Encoder is one of the encoders supported by Media Services. Starting with July 2015, it is recommended to use [Media Encoder Standard](media-services-encode-asset#media_encoder_standard).
 
 ###How to use
 
-[How to encode with Azure Media Encoder](media-services-dotnet-encode-asset.md)
+[How to encode with Azure Media Encoder](media-services-dotnet-encode-asset)
 
 ###Formats
 
-[Formats and codecs](media-services-azure-media-encoder-formats.md)
+[Formats and codecs](media-services-azure-media-encoder-formats)
 
 ###Presets
 
@@ -115,15 +113,15 @@ The encoders output metadata is described [here](http://msdn.microsoft.com/zh-cn
 
 ###Audio and/or video overlays
 
-[Creating Overlays](media-services-azure-media-customize-ame-presets.md#creating-overlays).
+[Creating Overlays](media-services-azure-media-customize-ame-presets#creating-overlays).
 
 ###Naming convention
 
-[How to modify the output file names](media-services-azure-media-customize-ame-presets.md#controlling-azure-media-encoder-output-file-names)
+[How to modify the output file names](media-services-azure-media-customize-ame-presets#controlling-azure-media-encoder-output-file-names)
 
 ###See also
 
-[Encoding your media with Dolby Digital Plus](media-services-encode-with-dolby-digital-plus.md)
+[Encoding your media with Dolby Digital Plus](media-services-encode-with-dolby-digital-plus)
 
 ##Media Encoder Premium Workflow
 
@@ -133,7 +131,7 @@ The encoders output metadata is described [here](http://msdn.microsoft.com/zh-cn
 
 ###How to use
 
-Media Encoder Premium Workflow is configured using complex workflows. Workflow files could be created and updated using the [Workflow Designer](media-services-workflow-designer.md) tool.
+Media Encoder Premium Workflow is configured using complex workflows. Workflow files could be created and updated using the [Workflow Designer](media-services-workflow-designer) tool.
 
 [How to Use Premium Encoding in Azure Media Services](http://azure.microsoft.com/blog/2015/03/06/how-to-use-premium-encoding-in-azure-media-services)
 
@@ -145,10 +143,12 @@ Media Processor Name|Applicable Pricing|Notes
 ---|---|---
 **Media Encoder Standard** |ENCODER|Encoding Tasks will be charged according to the size of the output Asset, in GBytes, at the rate specified [here][1], under the ENCODER column.
 **Azure Media Encoder** |ENCODER|Encoding Tasks will be charged according to the size of the output Asset, in GBytes, at the rate specified [here][1], under the ENCODER column.
+<!-- deleted by customization
 **Media Encoder Premium Workflow** |PREMIUM ENCODER|Encoding Tasks will be charged according to the size of the output Asset, in GBytes, at the rate specified [here][1], under the PREMIUM ENCODER column.
+-->
 
 
-This section compares the encoding capabilities of **Media Encoder Standard**, **Azure Media Encoder**, and **Media Encoder Premium Workflow**.
+This section compares the encoding capabilities of **Media Encoder Standard**, **Azure Media Encoder**<!-- deleted by customization , and **Media Encoder Premium Workflow** -->.
 
 
 ###Input Container/File Formats
@@ -249,7 +249,7 @@ You can view AMS learning paths here:
 
 ##Related articles
 
-- [Quotas and Limitations](media-services-quotas-and-limitations.md)
+- [Quotas and Limitations](media-services-quotas-and-limitations)
 
  
 <!--Reference links in article-->

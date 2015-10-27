@@ -8,13 +8,9 @@
    editor="cgronlun"/>
 
 <tags
-   ms.service="hdinsight"
-   ms.devlang="java"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="big-data"
-   ms.date="10/04/2015"
-   ms.author="larryfr"/>
+	ms.service="hdinsight"
+	ms.date="10/04/2015"
+	wacn.date=""/>
 
 # Deploy and manage Apache Storm topologies on Linux-based HDInsight
 

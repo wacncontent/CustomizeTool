@@ -8,14 +8,10 @@
 	editor="cgronlun"
 	tags="azure-portal"/>
 
-<tags 
-	ms.service="hdinsight" 
-	ms.workload="big-data" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="09/30/2015" 
-	ms.author="nitinme"/>
+<tags
+	ms.service="hdinsight"
+	ms.date="09/30/2015"
+	wacn.date=""/>
 
 
 # Build Machine Learning applications using Apache Spark on Azure HDInsight
@@ -232,15 +228,10 @@ Apache Spark clusters on HDInsight include Anaconda libraries. This also include
 
 
 [hdinsight-versions]: hdinsight-component-versioning
-
 [hdinsight-upload-data]: hdinsight-upload-data
-
 [hdinsight-storage]: hdinsight-use-blob-storage
-
-
 [hdinsight-weblogs-sample]: hdinsight-hive-analyze-website-log
 [hdinsight-sensor-data-sample]: hdinsight-hive-analyze-sensor-data
-
 [azure-purchase-options]: /pricing/overview/
 [azure-member-offers]: http://azure.microsoft.com/pricing/member-offers/
 [azure-trial]: /pricing/1rmb-trial/

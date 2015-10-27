@@ -6,14 +6,10 @@
    authors="bwren"
    manager="stevenka"
    editor="tysonn" />
-<tags 
-   ms.service="automation"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="infrastructure-services"
-   ms.date="10/08/2015"
-   ms.author="bwren;sngun" />
+<tags
+	ms.service="automation"
+	ms.date="10/08/2015"
+	wacn.date=""/>
 
 # Managing Azure Automation data
 
@@ -70,9 +66,11 @@ The following table shows the available primary and secondary region pairings.
 | ---------------   |----------------
 |China East   |China North
 |China East 2          |China North
+<!-- deleted by customization
 |West Europe        |China North
 |South East Asia    |East Asia
 |Japan East         |Japan West
+-->
 
 In the unlikely event that a primary region data is lost, Microsoft attempts to recover it. If the primary data cannot be recovered, then geo-failover is performed and the affected customers will be notified about this through their subscription.
 

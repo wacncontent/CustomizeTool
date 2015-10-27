@@ -8,14 +8,10 @@
    editor=""
    tags="azure-resource-manager"
 />
-<tags  
-   ms.service="virtual-network"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="infrastructure-services"
-   ms.date="10/08/2015"
-   ms.author="telmos" />
+<tags
+	ms.service="virtual-network"
+	ms.date="10/08/2015"
+	wacn.date=""/>
 
 #Create User Defined Routes (UDR) in PowerShell
 

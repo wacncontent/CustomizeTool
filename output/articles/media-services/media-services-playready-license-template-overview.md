@@ -7,14 +7,10 @@
 	services="media-services" 
 	documentationCenter=""/>
 
-<tags 
-	ms.service="media-services" 
-	ms.workload="media" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
+<tags
+	ms.service="media-services"
 	ms.date="09/07/2015"
-	ms.author="juliako"/>
+	wacn.date=""/>
 
 #Media Services PlayReady License Template Overview
 
@@ -30,7 +26,7 @@ Below are some examples of PlayReady license restrictions that you can specify:
 - The output protection level for the output controls for audio\video content. 
 - For more information, see the Output Controls section (3.5) in the [PlayReady Compliance Rules](https://www.microsoft.com/playready/licensing/compliance/) document.
 
->[AZURE.NOTE]Currently, you can only configure the PlayRight of the PlayReady license (this right is required). The PlayRight gives the client the ability to playback the content. The PlayRight also allows configuring restrictions specific to playback. For more information, see [PlayReadyPlayRight](media-services-playready-license-template-overview.md#PlayReadyPlayRight).
+>[AZURE.NOTE]Currently, you can only configure the PlayRight of the PlayReady license (this right is required). The PlayRight gives the client the ability to playback the content. The PlayRight also allows configuring restrictions specific to playback. For more information, see [PlayReadyPlayRight](media-services-playready-license-template-overview#PlayReadyPlayRight).
 
 To configure PlayReady licenses using Media Services, you must configure the Media Services PlayReady license template. The template is defined in XML.
 
@@ -49,13 +45,13 @@ The following example shows the simplest (and most common) template that configu
 
 The XML conforms to the PlayReady license template XML schema defined in the PlayReady license template XML schema section.
 
-Media Services also defines a set of .NET classes that could be used to serialized and deserialized to and from the XML. For description of main classes, see [Media Services .NET classes](media-services-playready-license-template-overview.md#classes). that are used to configure license templates.
+Media Services also defines a set of .NET classes that could be used to serialized and deserialized to and from the XML. For description of main classes, see [Media Services .NET classes](media-services-playready-license-template-overview#classes). that are used to configure license templates.
 
 For an end-to-end example that uses .NET classes to configure the PlayReady license template, see [Using PlayReady Dynamic Encryption and License Delivery Service](https://msdn.microsoft.com/zh-cn/library/azure/dn783467.aspx).
 
 ##<a id="classes"></a>Media Services .NET classes that are used to configure license templates
 
-The following are the main .NET classes are used to configure Media Services PlayReady license templates. These classes map to the types defined in [PlayReady license template XML schema](media-services-playready-license-template-overview.md#schema).
+The following are the main .NET classes are used to configure Media Services PlayReady license templates. These classes map to the types defined in [PlayReady license template XML schema](media-services-playready-license-template-overview#schema).
 
 The [MediaServicesLicenseTemplateSerializer](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.mediaservices.client.contentkeyauthorization.mediaserviceslicensetemplateserializer.aspx) class is used to serialize and deserialize to and from the Media Services license template XML.
 
@@ -302,6 +298,7 @@ For an example of what protection levels Silverlight supports, see: [Silverlight
 	  <xs:element name="ScmsRestriction" nillable="true" type="tns:ScmsRestriction" />
 	</xs:schema>
 
+<!-- deleted by customization
 
 ##Media Services learning paths
 
@@ -309,3 +306,4 @@ You can view AMS learning paths here:
 
 - [AMS Live Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/)
 - [AMS on Demand Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/)
+-->

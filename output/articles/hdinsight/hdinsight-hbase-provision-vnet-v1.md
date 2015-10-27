@@ -9,13 +9,9 @@
 	editor="cgronlun"/>
 
 <tags
-   ms.service="hdinsight"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="big-data"
-   ms.date="08/07/2015"
-   ms.author="jgao"/>
+	ms.service="hdinsight"
+	ms.date="08/07/2015"
+	wacn.date=""/>
 
 # Provision HBase clusters on Azure Virtual Network
 
@@ -386,7 +382,9 @@ In this tutorial you learned how to provision an HBase cluster. To learn more, s
 - [Configure HBase replication in HDInsight](hdinsight-hbase-geo-replication)
 - [Provision Hadoop clusters in HDInsight](hdinsight-provision-clusters)
 - [Get started using HBase with Hadoop in HDInsight](hdinsight-hbase-get-started)
+<!-- deleted by customization
 - [Analyze Twitter sentiment with HBase in HDInsight](hdinsight-hbase-twitter-sentiment)
+-->
 - [Virtual Network Overview][vnet-overview]
 
 
@@ -395,10 +393,11 @@ In this tutorial you learned how to provision an HBase cluster. To learn more, s
 [3]: http://technet.microsoft.com/zh-cn/library/hh847889.aspx
 
 [hbase-get-started]: hdinsight-hbase-get-started
+<!-- deleted by customization 
 [hbase-twitter-sentiment]: hdinsight-hbase-twitter-sentiment
+-->
 [vnet-overview]: virtual-networks-overview
 [vm-create]: virtual-machines-windows-tutorial
-
 [azure-portal]: https://management.windowsazure.cn
 [azure-create-storageaccount]: storage-create-storage-account
 [azure-purchase-options]: /pricing/overview/
@@ -408,7 +407,7 @@ In this tutorial you learned how to provision an HBase cluster. To learn more, s
 [hdinsight-admin-powershell]: hdinsight-administer-use-powershell
 [hdinsight-admin-portal]: hdinsight-administer-use-management-portal-v1#rdp
 
-[hdinsight-powershell-reference]: https:/msdn.microsoft.com/zh-cn/library/dn858087.aspx
+[hdinsight-powershell-reference]: https://msdn.microsoft.com/zh-cn/library/dn858087.aspx
 
 
 [twitter-streaming-api]: https://dev.twitter.com/docs/streaming-apis
@@ -416,8 +415,6 @@ In this tutorial you learned how to provision an HBase cluster. To learn more, s
 
 
 [powershell-install]: install-configure-powershell
-
-
 [hdinsight-customize-cluster]: hdinsight-hadoop-customize-cluster
 [hdinsight-provision]: hdinsight-provision-clusters
 [hdinsight-get-started]: hdinsight-get-started
@@ -428,8 +425,7 @@ In this tutorial you learned how to provision an HBase cluster. To learn more, s
 [hdinsight-power-query]: hdinsight-connect-excel-power-query
 [hdinsight-hive-odbc]: hdinsight-connect-excel-hive-ODBC-driver
 [hdinsight-hbase-replication-dns]: hdinsight-hbase-geo-replication-configure-DNS
-
-[img-dns-surffix]: .media/hdinsight-hbase-provision-vnet/DNSSuffix.png
+[img-dns-surffix]: ./media/hdinsight-hbase-provision-vnet/DNSSuffix.png
 [img-primary-dns-suffix]: ./media/hdinsight-hbase-provision-vnet/PrimaryDNSSuffix.png
 [img-provision-cluster-page1]: ./media/hdinsight-hbase-provision-vnet/hbasewizard1.png "Provision details for the new HBase cluster"
 [img-provision-cluster-page5]: ./media/hdinsight-hbase-provision-vnet/hbasewizard5.png "Use Script Action to customize an HBase cluster"

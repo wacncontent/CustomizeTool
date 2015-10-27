@@ -7,14 +7,10 @@
 	manager="wpickett" 
 	editor=""/>
 
-<tags 
-	ms.service="app-service-web" 
-	ms.devlang="dotnet" 
-	ms.topic="article" 
-	ms.tgt_pltfrm="na" 
-	ms.workload="web" 
-	ms.date="09/29/2015" 
-	ms.author="cephalin"/>
+<tags
+	ms.service="app-service-web"
+	ms.date="09/29/2015"
+	wacn.date=""/>
 
 # Create a .NET MVC web app in Azure Websites with AD FS authentication
 
@@ -22,6 +18,17 @@ In this article, you will learn how to create an ASP.NET MVC line-of-business ap
 
 >[AZURE.NOTE] For an overview of the different enterprise authentication and authorization options for Azure Websites, see [Use Active Directory for authentication in Azure Websites](web-sites-authentication-authorization).
 
+<!-- keep by customization: begin -->
+- [What you will build](#bkmk_build)
+- [What you will need](#bkmk_need)
+- [Use sample application for LOB template](#bkmk_sample)
+- [Set up the sample application](#bkmk_setup)
+- [Deploy the sample application to Azure Websites](#bkmk_deploy)
+- [Configure relying party trusts in AD FS Management](#bkmk_rptrusts)
+- [Authorize users for specific controllers or actions](#bkmk_authorize)
+- [Connect to on-premises data](#bkmk_data)
+- [Further resources](#bkmk_resources)
+<!-- keep by customization: end -->
 <a name="bkmk_build"></a>
 ## What you will build ##
 

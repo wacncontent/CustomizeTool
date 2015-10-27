@@ -10,12 +10,8 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.workload="big-data"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="10/09/2015"
-	ms.author="larryfr"/>
+	wacn.date=""/>
 
 # Install and use Solr on HDInsight Hadoop clusters
 
@@ -42,7 +38,7 @@ This script makes the following changes to the HDInsight cluster:
 
 A sample script to install Solr on an HDInsight cluster is available from a read-only Azure storage blob at [https://hdiconfigactions.blob.core.windows.net/linuxsolrconfigactionv01/solr-installer-v01.sh](https://hdiconfigactions.blob.core.windows.net/linuxsolrconfigactionv01/solr-installer-v01.sh). This section provides instructions on how to use the sample script while provisioning the cluster by using the Azure Management Portal.
 
-> [AZURE.NOTE] You can also use Azure PowerShell or the HDInsight .NET SDK to create a cluster using this script. For more information on using these methods, see [Customize HDInsight clusters with Script Actions](hdinsight-hadoop-customize-cluster-linux).
+> [AZURE.NOTE] You can also use Azure PowerShell or the HDInsight .NET SDK to create a cluster using this script. For more information on using these methods, see [Customize HDInsight clusters with Script Actions](hdinsight-hadoop-customize-cluster).
 
 1. Start provisioning a cluster by using the steps in [Provision Linux-based HDInsight clusters](hdinsight-provision-linux-clusters#portal), but do not complete provisioning.
 
@@ -292,4 +288,4 @@ For more information on working with Solr backup and restores, see [Making and r
 [hdinsight-provision]: hdinsight-provision-clusters-linux
 [hdinsight-install-r]: hdinsight-hadoop-r-scripts-linux
 [hdinsight-install-spark]: hdinsight-hadoop-spark-install-linux
-[hdinsight-cluster-customize]: hdinsight-hadoop-customize-cluster-linux
+[hdinsight-cluster-customize]: hdinsight-hadoop-customize-cluster

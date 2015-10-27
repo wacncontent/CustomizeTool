@@ -9,13 +9,9 @@
 	tags="azure-portal"/>
 
 <tags
-   	ms.service="hdinsight"
-   	ms.devlang="na"
-   	ms.topic="article"
-   	ms.tgt_pltfrm="na"
-   	ms.workload="big-data"
-   	ms.date="10/14/2015"
-   	ms.author="larryfr"/>
+	ms.service="hdinsight"
+	ms.date="10/14/2015"
+	wacn.date=""/>
 
 #Create Linux-based clusters in HDInsight using the Azure CLI
 

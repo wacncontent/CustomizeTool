@@ -8,6 +8,7 @@ import re
 import os
 import sys
 from fileListGen import genFileList, global_article_path
+from fileCompare import compareWithMooncake
 
 __author__ = 'Steven'
 
@@ -47,6 +48,7 @@ class Core:
                 # print(result)
             # Write result into Archive/mdFile
             mdFile = mdFile[len(global_article_path)+1:]
+            result = compareWithMooncake(mdFile, result)
             with open('output/'+mdFile, 'w') as bakFile:
                 bakFile.write(result)
                 print('\033[1;33m '+ mdFile+'\033[0m \033 customize success, the result file is: \033[1;32m'+ mdFile+'.bak\033[0m\n')

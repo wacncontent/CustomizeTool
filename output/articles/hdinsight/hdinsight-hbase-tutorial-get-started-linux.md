@@ -10,12 +10,8 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.workload="big-data"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="get-started-article"
 	ms.date="08/18/2015"
-	ms.author="jgao"/>
+	wacn.date=""/>
 
 
 
@@ -279,7 +275,8 @@ In this HBase tutorial for HDInsight, you learned how to provision an HBase clus
 
 To learn more, see:
 
-- [HDInsight HBase overview][hdinsight-hbase-overview]: HBase is an Apache, open-source, NoSQL database built on Hadoop that provides random access and strong consistency for large amounts of unstructured and semistructured data.
+- [HDInsight HBase overview][hdinsight-hbase-overview]:
+HBase is an Apache, open-source, NoSQL database built on Hadoop that provides random access and strong consistency for large amounts of unstructured and semistructured data.
 
 
 [hdinsight-manage-portal]: hdinsight-administer-use-management-portal-v1

@@ -8,14 +8,10 @@
 	editor="cgronlun"
 	tags="azure-portal"/>
 
-<tags 
-	ms.service="hdinsight" 
-	ms.workload="big-data" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="09/30/2015" 
-	ms.author="nitinme"/>
+<tags
+	ms.service="hdinsight"
+	ms.date="09/30/2015"
+	wacn.date=""/>
 
 # Overview: Apache Spark on Azure HDInsight 
  

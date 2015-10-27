@@ -8,13 +8,9 @@
    editor="cgronlun"/>
 
 <tags
-   ms.service="hdinsight"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="big-data" 
-   ms.date="09/21/2015"
-   ms.author="jgao"/>
+	ms.service="hdinsight"
+	ms.date="09/21/2015"
+	wacn.date=""/>
 
 #Provision Hadoop clusters in HDInsight
 
@@ -47,9 +43,11 @@ Before you begin the instructions in this article, you must have the following:
  
 - **Operating system**
 
-	You can provision HDInsight clusters on one of the following two operating systems:
+	You can provision HDInsight clusters on one of the following <!-- deleted by customization two operating systems: --><!-- keep by customization: begin --> operating system: <!-- keep by customization: end -->
 	- **HDInsight on Windows (Windows Server 2012 R2 Datacenter)**:
+<!-- deleted by customization 
 	- **HDInsight on Linux (Ubuntu 12.04 LTS for Linux) (Preview)**: HDInsight provides the option of configuring Linux clusters on Azure. Configure a Linux cluster if you are familiar with Linux or Unix, migrating from an existing Linux-based Hadoop solution, or want easy integration with Hadoop ecosystem components built for Linux. For more information, see [Get started with Hadoop on Linux in HDInsight](hdinsight-hadoop-linux-get-started). 
+-->
 
 
 - **HDInsight version**
@@ -63,7 +61,9 @@ Before you begin the instructions in this article, you must have the following:
 	- Hadoop clusters: for query and analysis workloads
 	- HBase clusters:  for NoSQL workloads
 	- Storm clusters: for real time event processing workloads
+<!-- deleted by customization 
 	- Spark clusters (preview): for in-memory processing, interactive queries, stream, and machines learning workloads.
+-->
 
 	![HDInsight clusters](./media/hdinsight-provision-clusters-v1/hdinsight.clusters.png)
  
@@ -92,6 +92,7 @@ Before you begin the instructions in this article, you must have the following:
 	- Supervisor servers (at least 1 node)
 	- Zookeeper nodes (3 nodes)
 	
+<!-- deleted by customization
 
 	![HDInsight Hadoop cluster roles](./media/hdinsight-provision-clusters-v1/HDInsight.Spark.roles.png)
 
@@ -99,6 +100,7 @@ Before you begin the instructions in this article, you must have the following:
 	- Head node (2 nodes)
 	- Worker node (at least 1 node)
 	- Zookeeper nodes (3 nodes) (Free for A1 Zookeepers)
+-->
 
 	Customers are billed for the usage of those nodes for the duration of the cluster’s life. Billing starts once a cluster is created and stops when the cluster is deleted (clusters can’t be de-allocated or put on hold). The cluster size affects the cluster price. For learning purposes, it is recommended to use 1 data node. For more information about HDInsight pricing, see [HDInsight pricing](https://go.microsoft.com/fwLink/?LinkID=282635&clcid=0x409).
 
@@ -126,7 +128,9 @@ Before you begin the instructions in this article, you must have the following:
 
 	- HTTP user. The default user name is admin using the basic configuration on the Azure Management Portal.
 	- RDP user (Windows clusters): It is used to connect to the cluster using RDP. When you create the account, you must set an expiration date that is within 90 days from today. 
+<!-- deleted by customization
 	- SSH User (Linux clusters): Is used to connect to the cluster using SSH. You can create additional SSH user accounts after the cluster is created by following the steps in [Use SSH with Linux-based Hadoop on HDInsight from Linux, Unix, or OS X](hdinsight-hadoop-linux-use-ssh-unix).
+-->
   
  
 
@@ -451,18 +455,21 @@ While provisioning a cluster, you can use the other configuration options such a
 
 > [AZURE.NOTE] As of 8/29/2014, Azure CLI cannot be used to associate a cluster with an Azure virtual network.
 
-Another option for provisioning an HDInsight cluster is the Azure CLI. Azure CLI is implemented in Node.js. It can be used on any platform that supports Node.js, including Windows, Mac and Linux. You can install the CLI from the following locations:
+Another option for provisioning an HDInsight cluster is the Azure CLI. Azure CLI is implemented in Node.js. It can be used on any platform that supports Node.js<!-- deleted by customization , including Windows, Mac and Linux -->. You can install the CLI from the following locations:
 
 - **Node.js SDK** - <a href="https://www.npmjs.com/package/azure-mgmt-hdinsight" target="_blank">https://www.npmjs.com/package/azure-mgmt-hdinsight</a>
 - **Azure CLI** - <a href="https://github.com/azure/azure-xplat-cli/archive/hdinsight-February-18-2015.tar.gz" target="_blank">https://github.com/azure/azure-xplat-cli/archive/hdinsight-February-18-2015.tar.gz</a>  
 
-For a general guide on how to use Azure CLI, see [Azure CLI for Mac, Linux and Windows](xplat-cli-install).
+For a general guide on how to use Azure CLI, see [Azure CLI<!-- deleted by customization for Mac, Linux and Windows -->](/documentation/articles/xplat-cli-install).
 
-Instructions below guide you on how to install Azure CLI on Linux and Windows, and then how to use the command line to provision a cluster.
+Instructions below guide you on how to install Azure CLI on <!-- deleted by customization Linux and -->Windows, and then how to use the command line to provision a cluster.
+<!-- deleted by customization
 
 - [Set up the Azure CLI for Linux](#clilin)
+-->
 - [Set up the Azure CLI for Windows](#cliwin)
 - [Provision HDInsight clusters by using the Azure CLI](#cliprovision)
+<!-- deleted by customization
 
 #### <a id="clilin"></a>Set up Azure CLI for Linux
 
@@ -508,6 +515,7 @@ Before using Azure CLI, you must configure connectivity between your workstation
 5.	From the command prompt window, run the following command to import the publish settings file:
 
 		azure account import <path/to/the/file>
+-->
 
 
 #### <a id="cliwin"></a>Set up Azure CLI for Windows
@@ -583,7 +591,7 @@ HDInsight uses an Azure Blob storage container as the default file system. An Az
 
 		azure storage account create [options] <StorageAccountName>
 
-	When prompted for a location, select a location where an HDInsight cluster can be provisioned. The storage must be in the same location as the HDInsight cluster. Currently, only the **East Asia**, **Southeast Asia**, **China North**, **West Europe**, **China East**, **China North**, **China North**, and **China East** regions can host HDInsight clusters.  
+	When prompted for a location, select a location where an HDInsight cluster can be provisioned. The storage must be in the same location as the HDInsight cluster. Currently, only the <!-- deleted by customization **East Asia**, **Southeast Asia**, **China North**, **West Europe**, **China East**, **West US**, -->**China North**, and **China East** regions can host HDInsight clusters.  
 
 For information on creating an Azure Storage account by using the Azure Management Portal, see [Create, manage, or delete a storage account](storage-create-storage-account).
 

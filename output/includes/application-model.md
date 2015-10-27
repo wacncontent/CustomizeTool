@@ -269,7 +269,7 @@ instance.
 As I mentioned earlier, the service definition (CSDEF) file is an XML
 file that describes the various roles that make up your complete
 application. The complete schema for the XML file can be found here:
-[http://msdn.microsoft.com/zh-cn/zh-cn/library/azure/ee758711.aspx][].
+[http://msdn.microsoft.com/zh-cn/library/azure/ee758711.aspx][].
 The CSDEF file contains a WebRole or WorkerRole element for each role
 that you want in your application. Deploying a role as a web role (using
 the WebRole element) means that the code will run on a role instance
@@ -486,7 +486,7 @@ more useful items available to you:
 The service configuration (CSCFG) file is an XML file that describes
 settings that can be changed without redeploying your application. The
 complete schema for the XML file can be found here:
-[http://msdn.microsoft.com/zh-cn/zh-cn/library/azure/ee758710.aspx][].
+[http://msdn.microsoft.com/zh-cn/library/azure/ee758710.aspx][].
 The CSCFG file contains a Role element for each role in your
 application. Here are some of the items you can specify in the CSCFG
 file:
@@ -585,8 +585,8 @@ article.<a id="Ref" name="Ref"></a>
   [4]: ./media/application-model/application-model-7.jpg
   
   [Azure Pricing]: http://azure.microsoft.com/pricing/calculator/
-  [Managing Certificates in Azure]: http://msdn.microsoft.com/zh-cn/zh-cn/library/azure/gg981929.aspx
-  [http://msdn.microsoft.com/zh-cn/zh-cn/library/azure/ee758710.aspx]: http://msdn.microsoft.com/zh-cn/zh-cn/library/azure/ee758710.aspx
+  [Managing Certificates in Azure]: http://msdn.microsoft.com/zh-cn/library/azure/gg981929.aspx
+  [http://msdn.microsoft.com/zh-cn/library/azure/ee758710.aspx]: http://msdn.microsoft.com/zh-cn/library/azure/ee758710.aspx
   [http://msdn.microsoft.com/zh-cn/library/hh560567.aspx]: http://msdn.microsoft.com/zh-cn/library/hh560567.aspx
   [Managing Upgrades to the Azure Guests OS]: http://msdn.microsoft.com/zh-cn/library/ee924680.aspx
   [Azure Management Portal]: http://manage.windowsazure.cn/
@@ -595,4 +595,4 @@ article.<a id="Ref" name="Ref"></a>
   [Creating a Hosted Service for Azure]: http://msdn.microsoft.com/zh-cn/library/gg432967.aspx
   [Managing Hosted Services in Azure]: http://msdn.microsoft.com/zh-cn/library/gg433038.aspx
   [Migrating Applications to Azure]: http://msdn.microsoft.com/zh-cn/library/gg186051.aspx
-  [Configuring an Azure Application]: http://msdn.microsoft.com/zh-cn/zh-cn/library/azure/ee405486.aspx
+  [Configuring an Azure Application]: http://msdn.microsoft.com/zh-cn/library/azure/ee405486.aspx

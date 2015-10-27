@@ -7,21 +7,17 @@
 	manager="dwrede" 
 	editor=""/>
 
-<tags 
-	ms.service="media-services" 
-	ms.workload="media" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="dotnet" 
-	ms.topic="article" 
-	ms.date="09/07/2015" 
-	ms.author="juliako"/>
+<tags
+	ms.service="media-services"
+	ms.date="09/07/2015"
+	wacn.date=""/>
 
 
 # Connecting to Media Services Account using Media Services SDK for .NET
 
 > [AZURE.SELECTOR]
-- [REST](media-services-rest-connect_programmatically.md)
-- [.NET](media-services-dotnet-connect_programmatically.md)
+- [REST](media-services-rest-connect_programmatically)
+- [.NET](media-services-dotnet-connect_programmatically)
 
 
 This topic describes how to obtain a programmatic connection to Windows Azure Media Services when you are programming with the Media Services SDK for .NET.
@@ -187,6 +183,7 @@ To retrieve connection values from configuration, you can use the **Configuratio
 	private static readonly string _accountKey = ConfigurationManager.AppSettings["MediaServicesAccountKey"];
 
 
+<!-- deleted by customization
 
 ##Media Services learning paths
 
@@ -194,6 +191,7 @@ You can view AMS learning paths here:
 
 - [AMS Live Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/)
 - [AMS on Demand Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/)
+-->
 
 
 

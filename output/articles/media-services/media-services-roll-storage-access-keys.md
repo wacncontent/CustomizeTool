@@ -7,14 +7,10 @@
 	manager="dwrede" 
 	editor=""/>
 
-<tags 
-	ms.service="media-services" 
-	ms.workload="media" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
+<tags
+	ms.service="media-services"
 	ms.date="10/15/2015"
-	ms.author="juliako"/>
+	wacn.date=""/>
 
 #How To: Update Media Services after Rolling Storage Access Keys
 
@@ -134,7 +130,7 @@ Regenerate the primary storage access key. For information on how to roll storag
 
 ##Step 6: Update Media Services to use the new primary storage key
 	
-Use the same procedure as described in [step 2](media-services-roll-storage-access-keys.md#step2) only this time synchronize the new primary storage  access key with the Media Services account.
+Use the same procedure as described in [step 2](media-services-roll-storage-access-keys#step2) only this time synchronize the new primary storage  access key with the Media Services account.
 
 >[AZURE.NOTE]Wait for 30 minutes before performing any operations with Media Services (for example, creating new locators) in order to prevent any impact on pending jobs.
 
@@ -142,8 +138,9 @@ Use the same procedure as described in [step 2](media-services-roll-storage-acce
 
 After 30 minutes you can recreate your OnDemand locators so they take dependency on the new primary storage key and maintain the existing URL.
 
-Use the same procedure as described in [step 3](media-services-roll-storage-access-keys.md#step-3-update-locators).
+Use the same procedure as described in [step 3](media-services-roll-storage-access-keys#step-3-update-locators).
 
+<!-- deleted by customization
  
 ##Media Services learning paths
 
@@ -151,6 +148,7 @@ You can view AMS learning paths here:
 
 - [AMS Live Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/)
 - [AMS on Demand Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/)
+-->
 
 
 ###Acknowledgments 

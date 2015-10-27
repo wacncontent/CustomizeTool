@@ -6,14 +6,10 @@
    authors="GarethBradshawMSFT"
    manager="jdial"
    editor="tysonn" />
-<tags 
-   ms.service="virtual-network"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="infrastructure-services"
-   ms.date="09/02/2015"
-   ms.author="joaoma" />
+<tags
+	ms.service="virtual-network"
+	ms.date="09/02/2015"
+	wacn.date=""/>
 
 # Name Resolution for VMs and Role Instances
 

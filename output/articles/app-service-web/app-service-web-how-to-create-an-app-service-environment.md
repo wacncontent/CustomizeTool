@@ -7,14 +7,10 @@
 	manager="stefsch" 
 	editor=""/>
 
-<tags 
-	ms.service="app-service" 
-	ms.workload="web" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="get-started-article" 
-	ms.date="10/13/2015" 
-	ms.author="ccompy"/>
+<tags
+	ms.service="app-service"
+	ms.date="10/13/2015"
+	wacn.date=""/>
 
 # How to Create an Azure Websites Environment #
 

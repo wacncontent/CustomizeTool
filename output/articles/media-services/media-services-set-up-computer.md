@@ -9,18 +9,14 @@
 
 <tags
 	ms.service="media-services"
-	ms.workload="media"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="get-started-article"
-	ms.date="09/07/2015"  
-	ms.author="juliako"/>
+	ms.date="09/07/2015"
+	wacn.date=""/>
 
 # Set up your environment
 
 > [AZURE.SELECTOR]
-- [Portal](media-services-create-account.md)
-- [PowerShell](media-services-manage-with-powershell.md)
+- [Portal](media-services-create-account)
+- [PowerShell](media-services-manage-with-powershell)
 - [REST](https://msdn.microsoft.com/zh-cn/library/azure/dn167014.aspx)
 <a id="create_account"></a>
 
@@ -44,6 +40,7 @@ Choose .NET or the REST API to programmatically connect to Azure Media Services.
 
 [AZURE.INCLUDE [media-services-selector-connect](../includes/media-services-selector-connect.md)]
 
+<!-- deleted by customization
 
 ##Next steps: AMS learning paths
 
@@ -51,4 +48,5 @@ You can view AMS learning paths here:
 
 - [AMS Live Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/)
 - [AMS on Demand Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/)
+-->
 

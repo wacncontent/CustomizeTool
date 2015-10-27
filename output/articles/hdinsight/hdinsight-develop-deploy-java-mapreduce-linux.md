@@ -10,12 +10,8 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.workload="big-data"
-	ms.tgt_pltfrm="na"
-	ms.devlang="Java"
-	ms.topic="article"
 	ms.date="10/09/2015"
-	ms.author="larryfr"/>
+	wacn.date=""/>
 
 # Develop Java MapReduce programs for Hadoop on HDInsight
 
@@ -279,9 +275,7 @@ For more information, see also the [Java Developer Center](/develop/java/).
 [hdinsight-use-sqoop]: hdinsight-use-sqoop
 [hdinsight-ODBC]: hdinsight-connect-excel-hive-ODBC-driver
 [hdinsight-power-query]: hdinsight-connect-excel-power-query
-
 [hdinsight-develop-streaming]: hdinsight-hadoop-develop-deploy-streaming-jobs
-
 [hdinsight-get-started]: hdinsight-get-started
 [hdinsight-emulator]: hdinsight-get-started-emulator
 [hdinsight-emulator-wasb]: hdinsight-get-started-emulator#blobstorage
@@ -291,11 +285,7 @@ For more information, see also the [Java Developer Center](/develop/java/).
 [hdinsight-use-hive]: hdinsight-use-hive
 [hdinsight-use-pig]: hdinsight-use-pig
 [hdinsight-power-query]: hdinsight-connect-excel-power-query
-
-[powershell-PSCredential]: http:/social.technet.microsoft.com/wiki/contents/articles/4546.working-with-passwords-secure-strings-and-credentials-in-windows-powershell.aspx
+[powershell-PSCredential]: http://social.technet.microsoft.com/wiki/contents/articles/4546.working-with-passwords-secure-strings-and-credentials-in-windows-powershell.aspx
 [powershell-install-configure]: install-configure-powershell
-
-
-
 [image-emulator-wordcount-compile]: ./media/hdinsight-develop-deploy-java-mapreduce/HDI-Emulator-Compile-Java-MapReduce.png
 [image-emulator-wordcount-run]: ./media/hdinsight-develop-deploy-java-mapreduce/HDI-Emulator-Run-Java-MapReduce.png

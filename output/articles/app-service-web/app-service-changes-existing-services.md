@@ -8,14 +8,10 @@
 	services="app-service" 
 	documentationCenter=""/>
 
-<tags 
-	ms.service="app-service" 
-	ms.workload="na" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="09/15/2015" 
-	ms.author="yochayk"/>
+<tags
+	ms.service="app-service"
+	ms.date="09/15/2015"
+	wacn.date=""/>
 
 
 # Azure Websites and existing Azure services

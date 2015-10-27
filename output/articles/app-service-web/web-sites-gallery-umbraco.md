@@ -8,14 +8,10 @@
 	manager="wpickett" 
 	editor="mollybos"/>
 
-<tags 
-	ms.service="app-service-web" 
-	ms.workload="web" 
-	ms.tgt_pltfrm="ibiza" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="08/03/2015" 
-	ms.author="tomfitz"/>
+<tags
+	ms.service="app-service-web"
+	ms.date="08/03/2015"
+	wacn.date=""/>
 
 #Create an Umbraco web app from the Marketplace in Windows Azure#
 

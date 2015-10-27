@@ -7,14 +7,10 @@
 	manager="dwrede" 
 	editor=""/>
 
-<tags 
-	ms.service="media-services" 
-	ms.workload="media" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="09/28/2015"  
-	ms.author="juliako"/>
+<tags
+	ms.service="media-services"
+	ms.date="09/28/2015"
+	wacn.date=""/>
 
 
 #Delivering Live Streaming Events with Azure Media Services
@@ -37,7 +33,7 @@ When working with Live Streaming the following components are commonly involved:
 		
 **Windows Azure Media Services** (AMS) provides the ability to ingest,  encode, preview, store, and deliver your live streaming content.
 
-When delivering your content to customers your goal is to deliver a high quality video to various devices under different network conditions. To take care of quality and network conditions, use live encoders to encode your stream to multi-bitrate (adaptive bitrate) video stream.  To take care of streaming on different devices, use Media Services [dynamic packaging](media-services-dynamic-packaging-overview.md) to dynamically re-package your stream to different protocols. Media Services supports delivery of the following adaptive bitrate streaming technologies: HTTP Live Streaming (HLS), Smooth Streaming, MPEG DASH, and HDS (for Adobe PrimeTime/Access licensees only).
+When delivering your content to customers your goal is to deliver a high quality video to various devices under different network conditions. To take care of quality and network conditions, use live encoders to encode your stream to multi-bitrate (adaptive bitrate) video stream.  To take care of streaming on different devices, use Media Services [dynamic packaging](media-services-dynamic-packaging-overview) to dynamically re-package your stream to different protocols. Media Services supports delivery of the following adaptive bitrate streaming technologies: HTTP Live Streaming (HLS), Smooth Streaming, MPEG DASH, and HDS (for Adobe PrimeTime/Access licensees only).
 
 In Azure Media Services, **Channels**, **Programs**, and **StreamingEndpoints** handle all the live streaming functionalities including ingest, formatting, DVR, security, scalability and redundancy. 
 
@@ -56,7 +52,7 @@ The following diagram shows the major parts of the AMS platform that are involve
 
 ![Live workflow][live-overview1]
 
-For more information, see [Working with Channels that are Enabled to Perform Live Encoding with Azure Media Services](media-services-manage-live-encoder-enabled-channels.md). 
+For more information, see [Working with Channels that are Enabled to Perform Live Encoding with Azure Media Services](media-services-manage-live-encoder-enabled-channels). 
 
 
 ##Working with Channels that receive multi-bitrate live stream from on-premises Encoders
@@ -67,8 +63,9 @@ The following diagram shows the major parts of the AMS platform that are involve
 ![Live workflow][live-overview2]
 
 For more information, see [Working with Channels that Receive Multi-bitrate Live Stream from On-premises Encoders
-](media-services-manage-channels-overview.md). 
+](media-services-manage-channels-overview). 
 
+<!-- deleted by customization
 
 ##Media Services learning paths
 
@@ -76,12 +73,13 @@ You can view AMS learning paths here:
 
 - [AMS Live Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/)
 - [AMS on Demand Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/)
+-->
 
 ##Related topics
 
-[Media Services Concepts](media-services-concepts.md)
+[Media Services Concepts](media-services-concepts)
 
-[Azure Media Services Fragmented MP4 Live Ingest Specification](media-services-fmp4-live-ingest-overview.md)
+[Azure Media Services Fragmented MP4 Live Ingest Specification](media-services-fmp4-live-ingest-overview)
 
 
 

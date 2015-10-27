@@ -8,13 +8,9 @@
    editor="jimbe"/>
 
 <tags
-	ms.service="app-service-web" 
-	ms.workload="web" 
-	ms.tgt_pltfrm="dotnet" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="10/12/2015" 
-	ms.author="erikre"/>
+	ms.service="app-service-web"
+	ms.date="10/12/2015"
+	wacn.date=""/>
 
 # Create an ASP.NET 5 web app in Visual Studio Code
 
@@ -257,8 +253,13 @@ This can be done in two ways:
 * Open a browser and enter the name of your web app as follows.   
 
 		http://SampleWebAppDemo.chinacloudsites.cn
+<!-- deleted by customization
  
 * In the Azure preview portal, locate the web app blade for your web app, and click **Browse** to view your app 
+-->
+<!-- keep by customization: begin -->
+* In the Azure Management Portal, locate the web app blade for your web app, and click **Browse** to view your app 
+<!-- keep by customization: end -->
 * in your default browser.
 
 ![Azure web app](./media/web-sites-create-web-app-using-vscode/21-azurewebapp.png)

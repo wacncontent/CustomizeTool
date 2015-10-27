@@ -9,13 +9,9 @@
 	tags="azure-portal"/>
 
 <tags
-   ms.service="hdinsight"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="big-data"
-   ms.date="10/09/2015"
-   ms.author="larryfr"/>
+	ms.service="hdinsight"
+	ms.date="10/09/2015"
+	wacn.date=""/>
 
 # Use Hive with Hadoop on HDInsight with Remote Desktop
 
@@ -115,7 +111,6 @@ For information about other ways you can work with Hadoop on HDInsight:
 
 
 [1]: hdinsight-hadoop-visual-studio-tools-get-started
-
 [hdinsight-sdk-documentation]: http://msdnstage.redmond.corp.microsoft.com/zh-cn/library/dn479185.aspx
 
 [azure-purchase-options]: /pricing/overview/
@@ -131,16 +126,11 @@ For information about other ways you can work with Hadoop on HDInsight:
 
 [hdinsight-use-oozie]: hdinsight-use-oozie
 [hdinsight-analyze-flight-data]: hdinsight-analyze-flight-delay-data
-
-
-
 [hdinsight-storage]: hdinsight-use-blob-storage
-
 [hdinsight-provision]: hdinsight-provision-clusters
 [hdinsight-submit-jobs]: hdinsight-submit-hadoop-jobs-programmatically
 [hdinsight-upload-data]: hdinsight-upload-data
 [hdinsight-get-started]: hdinsight-get-started
-
 [Powershell-install-configure]: powershell-install-configure
 [powershell-here-strings]: http://technet.microsoft.com/zh-cn/library/ee692792.aspx
 

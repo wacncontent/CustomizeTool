@@ -7,14 +7,10 @@
 	manager="adinah" 
 	editor="tysonn"/>
 
-<tags 
-	ms.service="virtual-network" 
-	ms.workload="infrastructure-services" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="08/17/2015" 
-	ms.author="cherylmc"/>
+<tags
+	ms.service="virtual-network"
+	ms.date="08/17/2015"
+	wacn.date=""/>
 
 
 
@@ -40,7 +36,7 @@ For information about adding a virtual machine and extending your on-premises Ac
 
 -  [Install a Replica Active Directory Domain Controller in Azure Virtual Network](virtual-networks-install-replica-active-directory-domain-controller)
 
-For guidelines about deploying AD DS on Azure Virtual Machines, see [Guidelines for Deploying Windows Server Active Directory on Azure Virtual Machines](http://msdn.microsoft.com/zh-cn/zh-cn/library/azure/jj156090.aspx).
+For guidelines about deploying AD DS on Azure Virtual Machines, see [Guidelines for Deploying Windows Server Active Directory on Azure Virtual Machines](http://msdn.microsoft.com/zh-cn/library/azure/jj156090.aspx).
 
 For additional Virtual Network configuration procedures and settings, see [Azure Virtual Network Configuration Tasks](/documentation/services/networking/).
 
@@ -54,7 +50,7 @@ In this tutorial you will learn:
 
 ##  Prerequisites
 
--  A Microsoft account with at least one valid, active Azure subscription.  If you do not already have an Azure subscription, you can sign up for a trial at [Try Azure](/pricing/1rmb-trial/). If you have an MSDN Subscription, see [Windows Azure Special Pricing: MSDN, MPN, and Bizspark Benefits](http://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/).
+-  A Microsoft account with at least one valid, active Azure subscription.  If you do not already have an Azure subscription, you can sign up for a trial at [Try Azure](/pricing/1rmb-trial/).<!-- deleted by customization If you have an MSDN Subscription, see [Windows Azure Special Pricing: MSDN, MPN, and Bizspark Benefits](http://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/). -->
 
 If you are using this tutorial to configure a working cross-premises virtual network that is customized for your organization, you need the following:
 
@@ -65,7 +61,7 @@ If you are using this tutorial to configure a working cross-premises virtual net
 -  A VPN device with a public IPv4 address. You'll need the IP address in order to complete the wizard. The VPN device cannot be located behind a network address translator (NAT) and must meet the minimum device standards. See [About VPN Devices for Virtual Network](vpn-gateway-configure-vpn-gateway-mp#how-to-view-gateway-traffic) for more information. 
 
 	Note: You can use Routing and Remote Access Service (RRAS) in Windows Server as part of your VPN solution. However, this tutorial doesn't walk you through the RRAS configuration steps. 
-	For RRAS configuration information, see [Routing and Remote Access Service templates](http://msdn.microsoft.com/zh-cn/zh-cn/library/azure/dn133801.aspx). 
+	For RRAS configuration information, see [Routing and Remote Access Service templates](http://msdn.microsoft.com/zh-cn/library/azure/dn133801.aspx). 
 
 -  Experience with configuring a router for an IPsec tunnel mode connection or someone that can help you with this step.
 
@@ -112,7 +108,7 @@ To create an example virtual network that connects to a company network:
 
 	-  **NAME:** For the example in this tutorial, type **YourCorpHQ**.
 
-	-  **VPN DEVICE IP ADDRESS:** For the example in this tutorial, type **3.2.1.1**. Otherwise, enter the public IP address of your VPN device. If you don't have this information, you'll need to obtain it before moving forward with the next steps in the wizard. Note that your VPN device cannot be behind a NAT. For more information about VPN devices, see [About VPN Devices for Virtual Network](http://msdn.microsoft.com/zh-cn/zh-cn/library/azure/jj156075.aspx).
+	-  **VPN DEVICE IP ADDRESS:** For the example in this tutorial, type **3.2.1.1**. Otherwise, enter the public IP address of your VPN device. If you don't have this information, you'll need to obtain it before moving forward with the next steps in the wizard. Note that your VPN device cannot be behind a NAT. For more information about VPN devices, see [About VPN Devices for Virtual Network](http://msdn.microsoft.com/zh-cn/library/azure/jj156075.aspx).
 
 	-  **ADDRESS SPACE:** For the example in this tutorial, type **10.1.0.0/16**.
 	-  **Add address space:** This tutorial does not require additional address space.
@@ -261,7 +257,7 @@ If you want to export your virtual network settings to a network configuration f
 
 -  [Add a Virtual Machine to a Virtual Network](virtual-machines-create-custom)
 
--  [About VPN Devices for Virtual Network](http://msdn.microsoft.com/zh-cn/zh-cn/library/azure/jj156075.aspx)
+-  [About VPN Devices for Virtual Network](http://msdn.microsoft.com/zh-cn/library/azure/jj156075.aspx)
 
 -  [Name Resolution for VMs and Role Instances](virtual-networks-name-resolution-for-vms-and-role-instances)
 -  [Set up a hybrid cloud environment for testing](virtual-networks-setup-hybrid-cloud-environment-testing)

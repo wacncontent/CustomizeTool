@@ -9,13 +9,9 @@
 	tags="azure-portal"/>
 
 <tags
-   	ms.service="hdinsight"
-   	ms.devlang="na"
-   	ms.topic="article"
-   	ms.tgt_pltfrm="na"
-   	ms.workload="big-data"
-   	ms.date="10/14/2015"
-   	ms.author="nitinme"/>
+	ms.service="hdinsight"
+	ms.date="10/14/2015"
+	wacn.date=""/>
 
 
 #Create Linux-based clusters in HDInsight using the Azure preview portal
@@ -102,7 +98,7 @@ The Azure preview portal is a web-based management tool for services and resourc
 
 		>[AZURE.NOTE] The Azure SQL database used for the metastore must allow connectivity to other Azure services, including Azure HDInsight. On the Azure SQL database dashboard, on the right side, click the server name. This is the server on which the SQL database instance is running. Once you are on the server view, click **Configure**, and then for **Azure Services**, click **Yes**, and then click **Save**.
 
-	* **Script Actions** if you want to use a custom script to customize a cluster, as the cluster is being created. For more information about script actions, see [Customize HDInsight clusters using Script Action](hdinsight-hadoop-customize-cluster-linux). On the Script Actions blade provide the details as shown in the screen capture.
+	* **Script Actions** if you want to use a custom script to customize a cluster, as the cluster is being created. For more information about script actions, see [Customize HDInsight clusters using Script Action](hdinsight-hadoop-customize-cluster). On the Script Actions blade provide the details as shown in the screen capture.
 
 		![Script action blade](./media/hdinsight-hadoop-create-linux-cluster-portal/HDI.CreateCluster.8.png "Specify script action")
 

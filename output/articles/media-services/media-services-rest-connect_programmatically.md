@@ -7,21 +7,17 @@
 	manager="dwrede" 
 	editor=""/>
 
-<tags 
-	ms.service="media-services" 
-	ms.workload="media" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="dotnet" 
-	ms.topic="article" 
-	ms.date="09/07/2015" 
-	ms.author="juliako"/>
+<tags
+	ms.service="media-services"
+	ms.date="09/07/2015"
+	wacn.date=""/>
 
 
 # Connecting to Media Services Account using Media Services REST API
 
 > [AZURE.SELECTOR]
-- [.NET](media-services-dotnet-connect_programmatically.md)
-- [REST](media-services-rest-connect_programmatically.md)
+- [.NET](media-services-dotnet-connect_programmatically)
+- [REST](media-services-rest-connect_programmatically)
 
 This topic describes how to obtain a programmatic connection to Windows Azure Media Services when you are programming with the Media Services REST API.
 
@@ -166,6 +162,7 @@ The following example demonstrates HTTP request to the Media Services root URI (
 >[AZURE.NOTE] Once you get the new URI, that is the URI that should be used to communicate with Media Services. 
 
 
+<!-- deleted by customization
 
 ##Media Services learning paths
 
@@ -173,6 +170,7 @@ You can view AMS learning paths here:
 
 - [AMS Live Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/)
 - [AMS on Demand Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/)
+-->
 
 
 <!-- Anchors. -->

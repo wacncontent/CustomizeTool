@@ -7,14 +7,10 @@
 	manager="dwrede" 
 	editor=""/>
 
-<tags 
-	ms.service="media-services" 
-	ms.workload="media" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="ne" 
-	ms.topic="article" 
-	ms.date="10/05/2015" 
-	ms.author="juliako"/>
+<tags
+	ms.service="media-services"
+	ms.date="10/05/2015"
+	wacn.date=""/>
 
 #Copying an Existing Blob into a Media Services Asset
 
@@ -26,7 +22,7 @@ Your blobs could exist in a storage account that is associated with Media Servic
 
 ##Prerequisites
 
-- Two Media Services accounts in a new or existing Azure subscription. See the topic [How to Create a Media Services Account](media-services-create-account.md).
+- Two Media Services accounts in a new or existing Azure subscription. See the topic [How to Create a Media Services Account](media-services-create-account).
 - Operating Systems: Windows 10, Windows 7, Windows 2008 R2, or Windows 8.
 - .NET Framework 4.5.
 - Visual Studio 2010 SP1 (Professional, Premium, Ultimate, or Express) or later.
@@ -302,6 +298,7 @@ The code example below performs the following tasks:
 		    }
 		}
  
+<!-- deleted by customization
 
 ##Media Services learning paths
 
@@ -309,4 +306,5 @@ You can view AMS learning paths here:
 
 - [AMS Live Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/)
 - [AMS on Demand Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/)
+-->
 

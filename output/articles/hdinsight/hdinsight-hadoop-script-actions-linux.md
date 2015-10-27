@@ -8,13 +8,9 @@
     editor="cgronlun"/>
 
 <tags
-    ms.service="hdinsight"
-    ms.workload="big-data"
-    ms.tgt_pltfrm="na"
-    ms.devlang="na"
-    ms.topic="article"
-    ms.date="10/19/2015"
-    ms.author="larryfr"/>
+	ms.service="hdinsight"
+	ms.date="10/19/2015"
+	wacn.date=""/>
 
 # Script Action development with HDInsight
 
@@ -28,7 +24,7 @@ Script actions are Bash scripts that run on the cluster nodes during provisionin
 
 Script Action can be used when provisioning a cluster using the __Azure preview portal__, __Azure PowerShell__, or the __HDInsight .NET SDK__.
 
-For an walkthrough of customizing a cluster using Script Actions, see [Customize HDInsight clusters using script actions](hdinsight-hadoop-customize-cluster-linux).
+For an walkthrough of customizing a cluster using Script Actions, see [Customize HDInsight clusters using script actions](hdinsight-hadoop-customize-cluster).
 
 ## <a name="bestPracticeScripting"></a>Best practices for script development
 
@@ -97,7 +93,7 @@ By default, `echo` will send the string to STDOUT. To direct it to STDERR, add `
 
 This redirects information sent to STDOUT (1, which is default so not listed here,) to STDERR (2). For more information on IO redirection, see [http://www.tldp.org/LDP/abs/html/io-redirection.html](http://www.tldp.org/LDP/abs/html/io-redirection.html).
 
-For more information on viewing information logged by Script Actions, see [Customize HDInsight clusters using Script Action](hdinsight-hadoop-customize-cluster-linux#troubleshooting)
+For more information on viewing information logged by Script Actions, see [Customize HDInsight clusters using Script Action](hdinsight-hadoop-customize-cluster#troubleshooting)
 
 ###<a name="bps8"></a> Save files as ASCII with LF line endings
 
@@ -171,7 +167,7 @@ Here are the steps we took when preparing to deploy these scripts:
 
 ## <a name="runScriptAction"></a>How to run a script action
 
-You can use Script Actions to customize HDInsight clusters by using the Azure Management Portal, Azure PowerShell, or the HDInsight .NET SDK. For instructions, see [How to use Script Action](hdinsight-hadoop-customize-cluster-linux#howto).
+You can use Script Actions to customize HDInsight clusters by using the Azure Management Portal, Azure PowerShell, or the HDInsight .NET SDK. For instructions, see [How to use Script Action](hdinsight-hadoop-customize-cluster#howto).
 
 ## <a name="sampleScripts"></a>Custom script samples
 
@@ -218,4 +214,4 @@ For the above command, replace __INFILE__ with the file containing the BOM. __OU
 
 ## <a name="seeAlso"></a>See also
 
-[Customize HDInsight clusters using Script Action](hdinsight-hadoop-customize-cluster-linux)
+[Customize HDInsight clusters using Script Action](hdinsight-hadoop-customize-cluster)

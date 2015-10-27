@@ -7,14 +7,10 @@
 	authors="mumian" 
 	documentationCenter=""/>
 
-<tags 
-	ms.service="hdinsight" 
-	ms.workload="big-data" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="06/30/2015" 
-	ms.author="jgao"/>
+<tags
+	ms.service="hdinsight"
+	ms.date="06/30/2015"
+	wacn.date=""/>
 
 
 
@@ -280,5 +276,3 @@
 
 
 [hdinsight-hadoop-emulator-get-started]: hdinsight-get-started-emulator
-
- 

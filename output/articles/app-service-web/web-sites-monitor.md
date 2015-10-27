@@ -9,19 +9,26 @@
 
 <tags
 	ms.service="app-service"
-	ms.workload="na"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="10/14/2015"
-	ms.author="byvinyal"/>
+	wacn.date=""/>
 
 #<a name="howtomonitor"></a>Monitor Web Apps in Azure Websites
 
-[Azure Websites](/documentation/services/web-sites/) provide monitoring functionality for Standard and Premium App Service plans via the Monitor management page. The Monitor management page provides performance statistics for a web app as described below.
+[Azure Websites](/documentation/services/web-sites/) provide monitoring functionality for Standard<!-- deleted by customization and Premium --> App Service plans via the Monitor management page. The Monitor management page provides performance statistics for a web app as described below.
+<!-- deleted by customization
 
 [AZURE.INCLUDE [app-service-web-to-api-and-mobile](../includes/app-service-web-to-api-and-mobile.md)]
 
+-->
+<!-- keep by customization: begin -->
+## Table of Contents ##
+- [How to: Add web site metrics](#websitemetrics)
+- [How to: Receive alerts from web site metrics](#howtoreceivealerts)
+- [How to: View usage quotas for a web site](#howtoviewusage)
+- [How to: Avoid exceeding your quotas](#resourceusage)
+- [How to: Configure diagnostics and download logs for a web site](#howtoconfigdiagnostics)
+- [How to: Monitor web endpoint status](#webendpointstatus)
+<!-- keep by customization: end -->
 ##Metrics Retention Policy
 
 >[AZURE.NOTE] The retention policy for app metrics varies by granularity.
@@ -173,7 +180,7 @@ Log files can be downloaded using either FTP, Azure PowerShell, or the Azure CLI
 
 1. From the **Start Screen** or the **Start Menu**, search for **Azure PowerShell**. Right-click the **Azure PowerShell** entry and select **Run as Administrator**.
 
-	> [AZURE.NOTE] If **Azure PowerShell** is not installed, see [Getting Started with Azure PowerShell Cmdlets](http://msdn.microsoft.com/zh-cn/zh-cn/library/azure/jj554332.aspx) for installation and configuration information.
+	> [AZURE.NOTE] If **Azure PowerShell** is not installed, see [Getting Started with Azure PowerShell Cmdlets](http://msdn.microsoft.com/zh-cn/library/azure/jj554332.aspx) for installation and configuration information.
 
 2. From the Azure PowerShell prompt, use the following command to download the log files:
 
@@ -272,6 +279,7 @@ After you configure endpoint monitoring, you can drill down into the individual 
 13.	Select **Send an email to the service administrator and co-administrators**. Click **Complete**.
 
 	Azure will now actively monitor the endpoint and send an email alert when it takes more than 3 seconds to reply.
+<!-- deleted by customization
 
 For more on web app endpoint monitoring, see the following videos:
 
@@ -284,7 +292,8 @@ For more on web app endpoint monitoring, see the following videos:
 ## What's changed
 * For a guide to the change from Websites to Azure Websites see: [Azure Websites and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
 * For a guide to the change of the Azure Management Portal to the Azure preview portal see: [Reference for navigating the preview portal](https://manage.windowsazure.cn/)
+-->
 
-[fzilla]: http://go.microsoft.com/fwlink/?LinkId=247914
-[vmsizes]: http://go.microsoft.com/fwlink/?LinkID=309169
+[fzilla]:http://go.microsoft.com/fwlink/?LinkId=247914
+[vmsizes]:http://go.microsoft.com/fwlink/?LinkID=309169
  

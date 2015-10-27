@@ -7,14 +7,10 @@
 	manager="paulettm" 
 	editor="cgronlun"/>
 
-<tags 
-	ms.service="hdinsight" 
-	ms.workload="big-data" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="08/07/2015" 
-	ms.author="nitinme"/>
+<tags
+	ms.service="hdinsight"
+	ms.date="08/07/2015"
+	wacn.date=""/>
 
 
 # Windows Azure HDInsight PowerShell cmdlet cheat sheet for common Hadoop tasks
@@ -29,7 +25,9 @@ Windows Azure HDInsight provides PowerShell cmdlets to perform Hadoop tasks on a
 
 ![HDInsight PowerShell Cmdlet cheat sheet for performing common Hadoop tasks](./media/hdinsight-hadoop-powershell-cmdlet-cheat-sheet/HDI.PowerShell.Cmdlet.CheatSheet.png)
 
+<!-- deleted by customization
 
 ## See also
 
 * [Learning path for HDInsight](http://azure.microsoft.com/documentation/learning-paths/hdinsight-self-guided-hadoop-training/)
+-->

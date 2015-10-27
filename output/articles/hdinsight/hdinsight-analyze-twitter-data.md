@@ -9,12 +9,8 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.workload="big-data"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="08/04/2015"
-	ms.author="jgao"/>
+	wacn.date=""/>
 
 # Analyze Twitter data using Hive in HDInsight
 

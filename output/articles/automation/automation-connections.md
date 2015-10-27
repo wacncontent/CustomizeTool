@@ -6,14 +6,10 @@
    authors="bwren"
    manager="stevenka"
    editor="tysonn" />
-<tags 
-   ms.service="automation"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="infrastructure-services"
-   ms.date="08/18/2015"
-   ms.author="bwren" />
+<tags
+	ms.service="automation"
+	ms.date="08/18/2015"
+	wacn.date=""/>
 
 # Connection assets in Azure Automation
 
@@ -54,6 +50,7 @@ The activities in the following table are used to access connections in a runboo
 2. In the **Connection Type** dropdown, select the type of connection you want to create.  The wizard will present the properties for that particular type.
 1. Complete the wizard and click the checkbox to save the new connection.
 
+<!-- deleted by customization
 
 ### To create a new connection with the Azure preview portal
 
@@ -62,12 +59,13 @@ The activities in the following table are used to access connections in a runboo
 1. Click **Add a connection** at the top of the blade.
 2. In the **Type** dropdown, select the type of connection you want to create.  The form will present the properties for that particular type.
 1. Complete the form and click **Create** to save the new connection.
+-->
 
 
 
 ### To create a new connection with Windows PowerShell
 
-Create a new connection with Windows PowerShell using the [New-AzureAutomationConnection](http://msdn.microsoft.com/zh-cn/library/dn921825.aspx) cmdlet. This cmdlet has a parameter named **ConnectionFieldValues** that expects a [hash table](http://technet.microsoft.com/en-us/library/hh847780.aspx) defining values for each of the properties defined by the connection type.
+Create a new connection with Windows PowerShell using the [New-AzureAutomationConnection](http://msdn.microsoft.com/zh-cn/library/dn921825.aspx) cmdlet. This cmdlet has a parameter named **ConnectionFieldValues** that expects a [hash table](http://technet.microsoft.com/library/hh847780.aspx) defining values for each of the properties defined by the connection type.
 
 
 The following sample commands create a new connection for [Twilio](http://www.twilio.com) which is a telephony service that allows you to send and receive text messages.  A sample integration module that includes a Twilio connection type is available in [Script Center](http://gallery.technet.microsoft.com/scriptcenter/Twilio-PowerShell-Module-8a8bfef8).  This connection type defines properties for Account SID and Authorization Token, which are required to validate your account when connecting to Twilio.  You must [download this module](http://gallery.technet.microsoft.com/scriptcenter/Twilio-PowerShell-Module-8a8bfef8) and install it in your automation account for this sample code to work.
@@ -114,8 +112,10 @@ The image below shows the same example as above but uses the **SpecifyConnection
 ![](./media/automation-connections/get-connection-properties.png)
 
 
+<!-- deleted by customization
 
 ## Related articles
 
 - [Links in graphical authoring](automation-graphical-authoring-intro#links-and-workflow)
+-->
  

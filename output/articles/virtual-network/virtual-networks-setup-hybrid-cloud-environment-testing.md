@@ -8,14 +8,10 @@
 	editor=""
 	tags="azure-service-management"/>
 
-<tags 
-	ms.service="virtual-network" 
-	ms.workload="infrastructure-services" 
-	ms.tgt_pltfrm="Windows" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="09/10/2015" 
-	ms.author="josephd"/>
+<tags
+	ms.service="virtual-network"
+	ms.date="09/10/2015"
+	wacn.date=""/>
 
 # Set up a hybrid cloud environment for testing
 

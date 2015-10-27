@@ -11,12 +11,8 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.devlang="na"
-	ms.topic="get-started-article"
-	ms.tgt_pltfrm="na"
-	ms.workload="big-data"
 	ms.date="09/21/2015"
-	ms.author="jgao"/>
+	wacn.date=""/>
 
 # Get started using Visual Studio Hadoop tools for HDInsight to run a Hive query
 
@@ -26,9 +22,11 @@ Learn how to use HDInsight Tools for Visual Studio to connect to HDInsight clust
 
 To complete this tutorial and use the Hadoop tools in Visual Studio, you'll need the following:
 
-- An Azure HDInsight cluster: Either a Linux-based or Windows-based cluster will work with the steps in this document. See one of the following for information on creating a cluster:
+- An Azure HDInsight cluster:<!-- deleted by customization Either a Linux-based or --> Windows-based cluster will work with the steps in this document. See one of the following for information on creating a cluster:
+<!-- deleted by customization 
 
 	- [Get started using Linux-based HDInsight](hdinsight-hadoop-linux-tutorial-get-started)
+-->
 	- [Get started using Windows-based HDInsight](hdinsight-hadoop-tutorial-get-started-windows)
 
 - A workstation with the following software:
@@ -68,7 +66,7 @@ The HDInsight Tools for Visual Studio allows you to connect to your HDInsight cl
 
 	>[AZURE.NOTE]Notice the **HDInsight Task List** window should be open. If you don't see it, click **Other Windows** from the **View** menu, and then click **HDInsight Task List Window**.  
 4.	Enter your Azure subscription credentials, and then click **Sign In**. This is only required if you have never connected to the Azure subscription from Visual Studio on this workstation.
-5.	In Server Explorer, you'll see a list of existing HDInsight clusters. If you don't have any clusters, you can provision one by using the Azure preview portal, Azure PowerShell, or the HDInsight SDK. For more information, see [Provision HDInsight clusters][hdinsight-provision].
+5.	In Server Explorer, you'll see a list of existing HDInsight clusters. If you don't have any clusters, you can provision one by using the Azure <!-- deleted by customization preview portal --><!-- keep by customization: begin -->Management Portal<!-- keep by customization: end -->, Azure PowerShell, or the HDInsight SDK. For more information, see [Provision HDInsight clusters][hdinsight-provision].
 
 	![Hadoop tools: HDInsight Tools for Visual Studio Server Explorer cluster list][5]
 6.	Expand an HDInsight cluster. You'll see **Hive Databases**, a default storage account, linked storage accounts, and **Hadoop Service log**. You can further expand the entities.
@@ -184,7 +182,7 @@ The most recent release of the tool allows you to see what’s inside your Hive 
 
 The HDInsight Visual Studio Tools support showing performance graphs for the Hive jobs ran by the Tez execution engine. For information on enabling Tez, see [use Hive in HDInsight][hdinsight.hive]. After you submit a Hive job in Visual Studio, Visual Studio shows you the graph when the job is completed.  You might need to click the **Refresh** button to get the latest job status.
 
-> [AZURE.NOTE] This feature is only available for HDInsight cluster version above 3.2.4.593, and can only work for completed jobs. This works for both Windows and Linux based clusters.
+> [AZURE.NOTE] This feature is only available for HDInsight cluster version above 3.2.4.593, and can only work for completed jobs. This works for both Windows<!-- deleted by customization and Linux based --> clusters.
 
 ![hadoop hive tez performance graph](./media/hdinsight-hadoop-visual-studio-tools-get-started/hdinsight.hive.tez.performance.graph.png)
 
@@ -200,7 +198,7 @@ In this article, you learned how to connect to HDInsight clusters from Visual St
 - [Use Hadoop Hive in HDInsight][hdinsight.hive]
 - [Get started using Hadoop in HDInsight][hdinsight.get.started]
 - [Submit Hadoop jobs in HDInsight][hdinsight.submit.jobs]
-- [Analyze Twitter data with Hadoop in HDInsight][hdinsight.analyze.twitter.data]
+<!-- deleted by customization - [Analyze Twitter data with Hadoop in HDInsight][hdinsight.analyze.twitter.data]-->
 
 
 <!--Anchors-->
@@ -226,13 +224,17 @@ In this article, you learned how to connect to HDInsight clusters from Visual St
 
 
 <!--Link references-->
+<!-- keep by customization: begin -->
+[hdinsight.submit.jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically/
+<!-- keep by customization: end -->
 [hdinsight-provision]: hdinsight-provision-clusters
 [hdinsight.introduction]: hdinsight-introduction
 [hdinsight.get.started]: hdinsight-get-started
 [hdinsight.hive]: hdinsight-use-hive
 [hdinsight.submit.jobs]: hdinsight-submit-hadoop-jobs-programmatically
+<!-- deleted by customization 
 [hdinsight.analyze.twitter.data]: hdinsight-analyze-twitter-data
+-->
 [hdinsight.storm.visual.studio.tools]: hdinsight-storm-develop-csharp-visual-studio-topology
 [hdinsight.access.application.logs]: hdinsight-hadoop-access-yarn-app-logs
-
 [apache.hive]: http://hive.apache.org

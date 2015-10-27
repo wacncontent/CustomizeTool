@@ -8,13 +8,9 @@
    editor="cgronlun"/>
 
 <tags
-   ms.service="hdinsight"
-   ms.devlang="dotnet"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="big-data"
-   ms.date="09/23/2015"
-   ms.author="larryfr"/>
+	ms.service="hdinsight"
+	ms.date="09/23/2015"
+	wacn.date=""/>
 
 #Run Pig jobs using the .NET SDK for Hadoop in HDInsight
 
@@ -32,7 +28,7 @@ The HDInsight .NET SDK provides .NET client libraries that makes it easier to wo
 
 To complete the steps in this article, you will need the following.
 
-* An Azure HDInsight (Hadoop on HDInsight) cluster (either Windows or Linux-based)
+* An Azure HDInsight (Hadoop on HDInsight) cluster (either Windows<!-- deleted by customization or Linux-based -->)
 
 * Visual Studio 2012 or 2013
 

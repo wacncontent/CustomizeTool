@@ -7,22 +7,18 @@
 	manager="dwrede" 
 	editor=""/>
 
-<tags 
-	ms.service="media-services" 
-	ms.workload="media" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
+<tags
+	ms.service="media-services"
 	ms.date="10/15/2015"
-	ms.author="juliako"/>
+	wacn.date=""/>
 
 
 #How to Scale Encoding with .NET SDK
 
 
 > [AZURE.SELECTOR]
-- [Portal](media-services-portal-encoding-units.md)
-- [.NET](media-services-dotnet-encoding-units.md)
+- [Portal](media-services-portal-encoding-units)
+- [.NET](media-services-dotnet-encoding-units)
 - [REST](https://msdn.microsoft.com/zh-cn/library/azure/dn859236.aspx)
 
 ##Overview

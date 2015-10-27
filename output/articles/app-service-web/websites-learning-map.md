@@ -7,14 +7,10 @@
 	manager="wpickett" 
 	editor=""/>
 
-<tags 
-	ms.service="app-service-web" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.tgt_pltfrm="na" 
-	ms.workload="web" 
-	ms.date="07/07/2015" 
-	ms.author="cephalin"/>
+<tags
+	ms.service="app-service-web"
+	ms.date="07/07/2015"
+	wacn.date=""/>
 
 
 # Learning Map for Azure Websites

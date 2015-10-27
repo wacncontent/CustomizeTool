@@ -7,14 +7,10 @@
 	manager="paulettm"
 	editor="cgronlun"/>
 
-<tags 
-	ms.service="hdinsight" 
-	ms.workload="big-data" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="10/15/2015" 
-	ms.author="nitinme"/>
+<tags
+	ms.service="hdinsight"
+	ms.date="10/15/2015"
+	wacn.date=""/>
 
 # Install and use Hue on HDInsight Hadoop clusters
 
@@ -36,9 +32,9 @@ Hue is a set of Web applications used to interact with a Hadoop cluster. You can
 
 The [https://hdiconfigactions.blob.core.windows.net/linuxhueconfigactionv01/install-hue-uber-v01.sh](https://hdiconfigactions.blob.core.windows.net/linuxhueconfigactionv01/install-hue-uber-v01.sh) script action is used to install Hue on an HDInsight cluster. This section provides instructions about how to use the script when provisioning the cluster using the Azure Management Portal.
 
-> [AZURE.NOTE] You can also use Azure PowerShell or the HDInsight .NET SDK to create a cluster using this script. For more information on using these methods, see [Customize HDInsight clusters with Script Actions](hdinsight-hadoop-customize-cluster-linux).
+> [AZURE.NOTE] You can also use Azure PowerShell or the HDInsight .NET SDK to create a cluster using this script. For more information on using these methods, see [Customize HDInsight clusters with Script Actions](hdinsight-hadoop-customize-cluster).
 
-1. Start provisioning a cluster by using the steps in [Provision HDInsight clusters on Linux](hdinsight-hadoop-provision-linux-clusters#portal), but do not complete provisioning.
+1. Start provisioning a cluster by using the steps in [Provision HDInsight clusters on Linux](hdinsight-provision-clusters#portal), but do not complete provisioning.
 
 	> [AZURE.NOTE] To install Hue on HDInsight clusters, the recommended headnode size is at least A4 (8 cores, 14 GB memory).
 
@@ -55,7 +51,7 @@ The [https://hdiconfigactions.blob.core.windows.net/linuxhueconfigactionv01/inst
 
 3. At the bottom of the **Script Actions**, use the **Select** button to save the configuration. Finally, use the **Select** button at the bottom of the **Optional Configuration** blade to save the optional configuration information.
 
-4. Continue provisioning the cluster as described in [Provision HDInsight clusters on Linux](hdinsight-hadoop-provision-linux-clusters#portal).
+4. Continue provisioning the cluster as described in [Provision HDInsight clusters on Linux](hdinsight-provision-clusters#portal).
 
 ## Use Hue with HDInsight clusters
 
@@ -124,5 +120,5 @@ SSH Tunneling is the only way to access Hue on the cluster once it is running. T
 
 [powershell-install-configure]: install-configure-powershell-linux
 [hdinsight-provision]: hdinsight-provision-clusters-linux
-[hdinsight-cluster-customize]: hdinsight-hadoop-customize-cluster-linux
+[hdinsight-cluster-customize]: hdinsight-hadoop-customize-cluster
 [hdinsight-install-spark]: hdinsight-hadoop-spark-install-linux

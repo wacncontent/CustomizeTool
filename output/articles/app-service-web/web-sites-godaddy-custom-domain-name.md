@@ -9,12 +9,8 @@
 
 <tags
 	ms.service="app-service"
-	ms.workload="na"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="09/16/2015"
-	ms.author="erikre"/>
+	wacn.date=""/>
 
 # Configure a custom domain name in Azure Websites (Purchased directly from GoDaddy)
 

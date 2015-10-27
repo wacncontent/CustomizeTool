@@ -7,37 +7,42 @@
 	manager="wpickett" 
 	editor="jimbe"/>
 
-<tags 
-	ms.service="media-services" 
-	ms.workload="media" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="09/16/2015" 
-	ms.author="robmcm"/>
+<tags
+	ms.service="media-services"
+	ms.date="09/16/2015"
+	wacn.date=""/>
 
 #How to use Media Services with Java
 
 [AZURE.INCLUDE [media-services-selector-get-started](../includes/media-services-selector-get-started.md)]
 
+<!-- keep by customization: begin -->
+<a id="setup-account"></a>
+<!-- keep by customization: end -->
 ##Setting Up an Azure Account for Media Services
 
-To set up your Media Services account, use the Azure Management Portal. See the topic [How to Create a Media Services Account](media-services-create-account.md). After creating your account in the Management Portal, you are ready to set up your computer for Media Services development. 
+To set up your Media Services account, use the Azure Management Portal. See the topic [How to Create a Media Services Account](media-services-create-account). After creating your account in the Management Portal, you are ready to set up your computer for Media Services development. 
 
+<!-- keep by customization: begin -->
+<a id="setup-dev"></a>
+<!-- keep by customization: end -->
 ##Setting up for Media Services development
 
 This section contains general prerequisites for Media Services development using the Media Services SDK for Java.
 
 ###Prerequisites
 
--   A Media Services account in a new or existing Azure subscription. See the topic [How to Create a Media Services Account](media-services-create-account.md).
+-   A Media Services account in a new or existing Azure subscription. See the topic [How to Create a Media Services Account](media-services-create-account).
 -   The Azure Libraries for Java, which you can install from the [Azure Java Developer Center][].
 
+<!-- keep by customization: begin -->
+<a if="connect"></a>
+<!-- keep by customization: end -->
 ##How to: Use Media Services with Java
 
 The following code shows how to create an asset, upload a media file to the asset, run a job with a task to transform the asset, and create a locator in order to stream your video.  
 
-You'll need to set up a media services account before using this code. For information about setting up an account, see [How to Create a Media Services Account](media-services-create-account.md).
+You'll need to set up a media services account before using this code. For information about setting up an account, see [How to Create a Media Services Account](media-services-create-account).
 
 Substitute your values for the `clientId` and `clientSecret` variables. The code also relies on a locally stored file. You'll need to provide your own file to use.
 	
@@ -250,6 +255,7 @@ Substitute your values for the `clientId` and `clientSecret` variables. The code
 	
 	}
 
+<!-- deleted by customization
 
 ##Media Services learning paths
 
@@ -257,6 +263,7 @@ You can view AMS learning paths here:
 
 - [AMS Live Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/)
 - [AMS on Demand Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/)
+-->
 
 
 
@@ -268,6 +275,6 @@ For Media Services Javadoc documentation, see [Azure Libraries for Java document
 
   [Azure Java Developer Center]: /develop/java/
   [Azure Libraries for Java documentation]: http://dl.windowsazure.cn/javadoc/
-  [Media Services Client Development]: http://msdn.microsoft.com/zh-cn/zh-cn/library/azure/dn223283.aspx
+  [Media Services Client Development]: http://msdn.microsoft.com/zh-cn/library/azure/dn223283.aspx
 
  

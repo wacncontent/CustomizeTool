@@ -8,20 +8,18 @@
 	manager="wpickett" 
 	editor=""/>
 
-<tags 
-	ms.service="app-service" 
-	ms.workload="na" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="09/16/2015" 
-	ms.author="cephalin"/>
+<tags
+	ms.service="app-service"
+	ms.date="09/16/2015"
+	wacn.date=""/>
 
 # Migrate an enterprise web app to Azure Websites
 
 You can easily migrate your existing websites that run on Internet Information Service (IIS) 6 or later to [Azure Websites](/documentation/services/web-sites/). 
 
 >[AZURE.IMPORTANT] Windows Server 2003 will reach end of support on July 14th 2015. If you are currently hosting your websites on an IIS server that is Windows Server 2003, Web Apps is a low-risk, low-cost, and low-friction way to keep your websites online, and Web Apps Migration Assistant can help automate the migration process for you. 
+<!-- deleted by customization
+-->
 
 [Web Apps Migration Assistant](https://www.movemetothecloud.net/) can analyze your IIS server installation, identify which sites can be migrated to Azure Websites, highlight any elements that cannot be migrated or are unsupported on the platform, and then migrate your websites and associated databases to Azure.
 
@@ -127,6 +125,8 @@ This section steps through an example to to migrate a few websites that use a SQ
 
 22. In the Azure Management Portal, open the Web Apps blade to see your migrated websites (shown as web apps), then click on any one of them to start managing the web app, such as configuring continuous publishing, creating backups, autoscaling, and monitoring usage or performance.
 
+<!-- deleted by customization
+-->
 	![](./media/web-sites-migration-from-iis-server/TimeTrackerMigrated.png)
 
 >[AZURE.NOTE] If you want to get started with Azure Websites before signing up for an Azure account, go to [Try Azure Websites](http://go.microsoft.com/fwlink/?LinkId=523751), where you can immediately create a short-lived starter web app in Azure Websites. No credit cards required; no commitments.

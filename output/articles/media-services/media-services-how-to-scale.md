@@ -7,14 +7,10 @@
 	manager="dwrede" 
 	editor=""/>
 
-<tags 
-	ms.service="media-services" 
-	ms.workload="media" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="09/07/2015"   
-	ms.author="juliako"/>
+<tags
+	ms.service="media-services"
+	ms.date="09/07/2015"
+	wacn.date=""/>
 
 
 #How to Scale a Media Service  
@@ -29,7 +25,7 @@ This topic links to relevant topics.
 
 ##<a id="streaming_endpoins"></a>Streaming Reserved Units
 
-For more information, see [Scaling streaming units](media-services-manage-origins.md#scale_streaming_endpoints).
+For more information, see [Scaling streaming units](media-services-manage-origins#scale_streaming_endpoints).
 
 ##<a id="encoding_reserved_units"></a>Encoding Reserved Units
 
@@ -45,6 +41,7 @@ For more information, see [Managing Media Services Assets across Multiple Storag
 
 
 
+<!-- deleted by customization
  
 ##Media Services learning paths
 
@@ -52,4 +49,5 @@ You can view AMS learning paths here:
 
 - [AMS Live Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/)
 - [AMS on Demand Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/)
+-->
 

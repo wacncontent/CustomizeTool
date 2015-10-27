@@ -7,14 +7,10 @@
    manager="adinah"
    editor="joaoma" />
 
-<tags 
-   ms.service="traffic-manager"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="infrastructure-services"
-   ms.date="08/19/2015"
-   ms.author="joaoma" />
+<tags
+	ms.service="traffic-manager"
+	ms.date="08/19/2015"
+	wacn.date=""/>
 
 # Troubleshooting degraded status on Azure Traffic Manager
 This page will describe how to troubleshoot Azure Traffic Manager profile which is showing a degraded status, and provide some key points to understand about traffic manager probes.

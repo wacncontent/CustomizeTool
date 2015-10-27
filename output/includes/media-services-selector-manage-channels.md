@@ -1,4 +1,4 @@
 > [AZURE.SELECTOR]
-- [Portal](../articles/media-services/media-services-portal-get-started-with-live.md)
-- [.NET](../articles/media-services/media-services-dotnet-live-encode-with-onpremises-encoders.md)
+- [Portal](media-services-portal-get-started-with-live)
+- [.NET](media-services-dotnet-live-encode-with-onpremises-encoders)
 - [REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn783458.aspx) 

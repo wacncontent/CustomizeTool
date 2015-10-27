@@ -1,8 +1,8 @@
-import glob
+﻿import glob
 
 global_article_path = "C:/Users/Administrator/Documents/GitHub/azure-content-pr"
 
-service_folders = ["app-service-web","automation","hdinsight","media-services","redis-cache","traffic-manager","virtual-network"]
+service_folders = []
 
 def genFileList(fileName):
     output = open(fileName, 'w')

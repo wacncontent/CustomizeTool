@@ -9,12 +9,8 @@
 
 <tags
 	ms.service="app-service-web"
-	ms.devlang="php"
-	ms.topic="article"
-	ms.tgt_pltfrm="na"
-	ms.workload="web"
 	ms.date="08/03/2015"
-	ms.author="tomfitz"/>
+	wacn.date=""/>
 
 #Enterprise-class WordPress on Azure Websites
 
@@ -134,7 +130,7 @@ Use one of the following sections to migrate your site.
 
 6. Click **Submit**. You will be prompted that the import was successful.
 
-8. Once you have completed all these steps, restart your site from its web app blade in the [Azure preview portal][mgmtportal].
+8. Once you have completed all these steps, restart your site from its web app blade in the [Azure <!-- deleted by customization preview portal --><!-- keep by customization: begin -->Management Portal<!-- keep by customization: end -->][mgmtportal].
 
 After importing the site, you may need to perform the following steps to enable settings not contained in the import file.
 
@@ -161,7 +157,7 @@ If you were using this... | Do this...
 
 4. Create a new web app in the Azure Management Portal and publish the WordPress backup.
 
-	1. Create a new web app in the [Azure preview portal][mgmtportal] with a database using **New** -> **Web + Mobile** -> **Azure Marketplace** -> **Web Apps** -> **Web app + SQL** (or **Web app + MySQL**) -> **Create**. Configure all the required settings to create an empty web app.
+	1. Create a new web app in the [Azure <!-- deleted by customization preview portal --><!-- keep by customization: begin -->Management Portal<!-- keep by customization: end -->][mgmtportal] with a database using **New** -> **Web + Mobile** -> **Azure Marketplace** -> **Web Apps** -> **Web app + SQL** (or **Web app + MySQL**) -> **Create**. Configure all the required settings to create an empty web app.
 
 	2. In your WordPress backup, locate the **wp-config.php** file and open it in an editor. Replace the following entries with the information for your new MySQL database.
 
@@ -231,12 +227,14 @@ To do this... | Use this...
 * [Propping up WordPress on Azure](http://www.johnpapa.net/wordpress-on-azure/)
 
 * [Tips for WordPress on Azure](http://www.johnpapa.net/azurecleardbmysql/)
+<!-- deleted by customization
 
 >[AZURE.NOTE] If you want to get started with Azure Websites before signing up for an Azure account, go to [Try Azure Websites](http://go.microsoft.com/fwlink/?LinkId=523751), where you can immediately create a short-lived starter web app in Azure Websites. No credit cards required; no commitments.
 
 ## What's changed
 * For a guide to the change from Websites to Azure Websites see: [Azure Websites and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
 * For a guide to the change of the portal to the preview portal see: [Reference for navigating the preview portal](https://manage.windowsazure.cn/)
+-->
 
 [performance-diagram]: ./media/web-sites-php-enterprise-wordpress/performance-diagram.png
 [basic-diagram]: ./media/web-sites-php-enterprise-wordpress/basic-diagram.png
@@ -281,4 +279,3 @@ To do this... | Use this...
 [Azure CLI]: xplat-cli-install
 [storesendgrid]: /gallery/store/sendgrid/sendgrid-azure/
 [cdn]: cdn-how-to-use
- 

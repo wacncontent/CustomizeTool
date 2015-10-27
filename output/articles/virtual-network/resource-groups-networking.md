@@ -6,14 +6,10 @@
    authors="telmosampaio"
    manager="adinah"
    editor="tysonn" />
-<tags 
-   ms.service="virtual-network"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="infrastructure-services"
-   ms.date="10/07/2015"
-   ms.author="telmos" />
+<tags
+	ms.service="virtual-network"
+	ms.date="10/07/2015"
+	wacn.date=""/>
 
 # Network Resource Provider
 An underpinning need in today’s business success, is the ability to build and manage large scale network aware applications in an agile, flexible, secure and repeatable way. Azure Resource Manager (ARM) enables you to create such applications, as a single collection of resources in resource groups. Such resources are managed through various resource providers under ARM. 
@@ -34,7 +30,9 @@ Azure Resource Manager relies on different resource providers to provide access 
 	- Node.JS SDK
 	- Java SDK
 	- Azure CLI
+<!-- deleted by customization
 	- Preview Portal
+-->
 	- ARM template language
 
 ## Network resources 
@@ -120,7 +118,7 @@ The template is primarily a JSON description of the resources and the instance v
 	    "parameters" : {
 	      "location": {
 	        "type": "String",
-	        "allowedValues": ["China East", "China North", "West Europe", "East Asia", "South East Asia"],
+	        "allowedValues": ["China East", "China North"<!-- deleted by customization , "West Europe", "East Asia", "South East Asia" -->],
 	        "metadata" : {
 	          "Description" : "Deployment location"
 	        }

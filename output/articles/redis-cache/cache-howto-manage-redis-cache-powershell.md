@@ -8,13 +8,9 @@
    editor="v-lincan"/>
 
 <tags
-   ms.service="cache"
-   ms.devlang="all"
-   ms.topic="article"
-   ms.tgt_pltfrm="cache-redis"
-   ms.workload="multiple"
-   ms.date="08/26/2015"
-   ms.author="riande"/>
+	ms.service="cache"
+	ms.date="08/26/2015"
+	wacn.date=""/>
 
 # Manage Azure Redis Cache with Azure PowerShell
 

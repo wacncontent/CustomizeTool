@@ -7,14 +7,10 @@
 	manager="dwrede" 
 	editor=""/>
 
-<tags 
-	ms.service="cache" 
-	ms.workload="tbd" 
-	ms.tgt_pltfrm="cache-redis" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="09/30/2015" 
-	ms.author="sdanie"/>
+<tags
+	ms.service="cache"
+	ms.date="09/30/2015"
+	wacn.date=""/>
 
 # How to Scale Azure Redis Cache
 

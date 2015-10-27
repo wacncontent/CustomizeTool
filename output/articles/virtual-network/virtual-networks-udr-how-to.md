@@ -6,14 +6,10 @@
    authors="telmosampaio"
    manager="carolz"
    editor="tysonn" />
-<tags 
-   ms.service="virtual-network"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="infrastructure-services"
-   ms.date="08/10/2015"
-   ms.author="telmos" />
+<tags
+	ms.service="virtual-network"
+	ms.date="08/10/2015"
+	wacn.date=""/>
 
 # How to create routes and enable IP Forwarding in Azure
 You can use virtual appliances in Azure to handle traffic in your Azure virtual network. However, you need to create routes that will allow VMs and cloud services in your virtual network to send packets to your virtual appliance, instead of the desired destination for the packet. You also need to enable IP forwarding on the virtual appliance VM so it can receive and forward packets that are not addressed to the actual virtual appliance VM. 

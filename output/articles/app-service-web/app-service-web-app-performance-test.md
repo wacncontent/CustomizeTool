@@ -8,13 +8,9 @@
    editor="jimbe"/>
 
 <tags
-   ms.service="app-service-web"
-   ms.workload="web"
-   ms.tgt_pltfrm="na"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.date="09/11/2015"
-   ms.author="estfan; manasma"/>
+	ms.service="app-service-web"
+	ms.date="09/11/2015"
+	wacn.date=""/>
 
 # Performance test your Azure web app under load
 

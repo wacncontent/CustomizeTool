@@ -7,14 +7,10 @@
 	manager="dwrede" 
 	editor=""/>
 
-<tags 
-	ms.service="media-services" 
-	ms.workload="media" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="ne" 
-	ms.topic="article" 
-	ms.date="10/15/2015"  
-	ms.author="juliako"/>
+<tags
+	ms.service="media-services"
+	ms.date="10/15/2015"
+	wacn.date=""/>
 
 #How to perform live encoding with on-premises encoders
 
@@ -23,14 +19,14 @@
 The following are required to complete the tutorial:
 
 - An Azure account.
-- A Media Services account.	To create a Media Services account, see [How to Create a Media Services Account](media-services-create-account.md).
-- Set up your dev environment. For more information, see [Set up your environment](media-services-set-up-computer.md).
+- A Media Services account.	To create a Media Services account, see [How to Create a Media Services Account](media-services-create-account).
+- Set up your dev environment. For more information, see [Set up your environment](media-services-set-up-computer).
 - A webcam. For example, [Telestream Wirecast encoder](http://www.telestream.net/wirecast/overview.htm). 
 
 Recommended to review the following articles: 
 
 - [Azure Media Services RTMP Support and Live Encoders](http://azure.microsoft.com/blog/2014/09/18/azure-media-services-rtmp-support-and-live-encoders/)
-- [Working with Channels that Receive Multi-bitrate Live Stream from On-premises Encoders](media-services-manage-channels-overview.md)
+- [Working with Channels that Receive Multi-bitrate Live Stream from On-premises Encoders](media-services-manage-channels-overview)
  
 
 ##Example
@@ -375,6 +371,7 @@ For information on how to configure a live encoder, see [Azure Media Services RT
 		    }
 		}
 
+<!-- deleted by customization
 
 ##Media Services learning paths
 
@@ -382,3 +379,4 @@ You can view AMS learning paths here:
 
 - [AMS Live Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/)
 - [AMS on Demand Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/)
+-->

@@ -7,14 +7,10 @@
 	manager="wpickett" 
 	editor=""/>
 
-<tags 
-	ms.service="app-service-web" 
-	ms.workload="web" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="dotnet" 
-	ms.topic="article" 
-	ms.date="07/30/2015" 
-	ms.author="stepsic"/>
+<tags
+	ms.service="app-service-web"
+	ms.date="07/30/2015"
+	wacn.date=""/>
 
 
 
@@ -181,7 +177,6 @@ browsers to load your webpages, where they come from, and what browsers they use
 
 
 [vswebsite]: web-sites-dotnet-get-started
-
 [wmnugetbutton]: ./media/store-new-relic-web-sites-dotnet-application-performce-management/nrwmnugetbutton.png
 [wmnugetgallery]: ./media/store-new-relic-web-sites-dotnet-application-performce-management/nrwmnugetgallery.png
 

@@ -7,14 +7,10 @@
 	services="media-services" 
 	documentationCenter=""/>
 
-<tags 
-	ms.service="media-services" 
-	ms.workload="media" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="09/07/2015" 
-	ms.author="juliako"/>
+<tags
+	ms.service="media-services"
+	ms.date="09/07/2015"
+	wacn.date=""/>
 
 
 #Develop video player applications
@@ -44,7 +40,7 @@ For more information:
 You can also use any of the following SDKs:
 
 - [Smooth Streaming Client SDK](http://www.iis.net/downloads/microsoft/smooth-streaming) 
-- [Smooth Streaming Windows Store App](media-services-build-smooth-streaming-apps.md)
+- [Smooth Streaming Windows Store App](media-services-build-smooth-streaming-apps)
 - [Microsoft Media Platform: Player Framework](http://playerframework.codeplex.com/) 
 - [HTML5 Player Framework Documentation](http://playerframework.codeplex.com/wikipage?title=HTML5%20Player&referringTitle=Documentation) 
 - [Microsoft Smooth Streaming Plugin for OSMF](https://www.microsoft.com/download/details.aspx?id=36057) 
@@ -66,6 +62,7 @@ Ads can be placed at any point in the main video’s time line. You must tell th
 
 For information about closed captioning and ads support in Live streaming videos, see [Supported Closed Captioning and Ad Insertion Standards](https://msdn.microsoft.com/zh-cn/library/c49e0b4d-357e-4cca-95e5-2288924d1ff3#caption_ad).
 
+<!-- deleted by customization
 
 ##Media Services learning paths
 
@@ -73,11 +70,12 @@ You can view AMS learning paths here:
 
 - [AMS Live Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/)
 - [AMS on Demand Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/)
+-->
 
 
 ##See Also
 
-[Embedding a MPEG-DASH Adaptive Streaming Video in an HTML5 Application with DASH.js](media-services-embed-mpeg-dash-in-html5.md)
+[Embedding a MPEG-DASH Adaptive Streaming Video in an HTML5 Application with DASH.js](media-services-embed-mpeg-dash-in-html5)
 
 [GitHub dash.js repository](https://github.com/Dash-Industry-Forum/dash.js)
  

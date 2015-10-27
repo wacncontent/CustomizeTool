@@ -6,14 +6,10 @@
    authors="telmosampaio"
    manager="adinah"
    editor="tysonn" />
-<tags 
-   ms.service="virtual-network"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="infrastructure-services"
-   ms.date="08/17/2015"
-   ms.author="telmos" />
+<tags
+	ms.service="virtual-network"
+	ms.date="08/17/2015"
+	wacn.date=""/>
 
 # How to Set a Static Internal Private IP
 In most cases, you won’t need to specify a static internal IP address for your virtual machine. VMs in a virtual network will automatically receive an internal IP address from a range that you specify. But in certain cases, specifying a static IP address for a particular VM makes sense. For example, if your VM is going to run DNS or will be a domain controller. 

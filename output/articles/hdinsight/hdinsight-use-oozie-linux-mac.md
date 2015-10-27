@@ -10,12 +10,8 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.workload="big-data"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="10/09/2015"
-	ms.author="larryfr"/>
+	wacn.date=""/>
 
 
 # Use Oozie with Hadoop to define and run a workflow on Linux-based HDInsight (Preview)
@@ -684,9 +680,7 @@ In this tutorial, you learned how to define an Oozie workflow and how to run an 
 [hdinsight-versions]: hdinsight-component-versioning
 [hdinsight-storage]: hdinsight-use-blob-storage
 [hdinsight-get-started]: hdinsight-get-started
-
-
-[hdinsight-use-sqoop]: hdinsight-use-sqoop-mac-linux
+[hdinsight-use-sqoop]: hdinsight-use-sqoop
 [hdinsight-provision]: hdinsight-provision-clusters
 [hdinsight-upload-data]: hdinsight-upload-data
 [hdinsight-use-mapreduce]: hdinsight-use-mapreduce
@@ -694,15 +688,11 @@ In this tutorial, you learned how to define an Oozie workflow and how to run an 
 [hdinsight-use-pig]: hdinsight-use-pig
 [hdinsight-storage]: hdinsight-use-blob-storage
 [hdinsight-get-started-emulator]: hdinsight-get-started-emulator
-
 [hdinsight-develop-streaming-jobs]: hdinsight-hadoop-develop-deploy-streaming-jobs
 [hdinsight-develop-mapreduce]: hdinsight-develop-deploy-java-mapreduce
-
 [sqldatabase-create-configue]: sql-database-create-configure
 [sqldatabase-get-started]: sql-database-get-started
-
 [azure-create-storageaccount]: storage-create-storage-account
-
 [apache-hadoop]: http://hadoop.apache.org/
 [apache-oozie-400]: http://oozie.apache.org/docs/4.0.0/
 [apache-oozie-332]: http://oozie.apache.org/docs/3.3.2/
@@ -711,7 +701,7 @@ In this tutorial, you learned how to define an Oozie workflow and how to run an 
 [powershell-about-profiles]: https://technet.microsoft.com/zh-cn/library/hh847857.aspx
 [powershell-install-configure]: powershell-install-configure
 [powershell-start]: http://technet.microsoft.com/zh-cn/library/hh847889.aspx
-[powershell-script]: https://technet.microsoft.com/en-us/library/ee176961.aspx
+[powershell-script]: https://technet.microsoft.com/library/ee176961.aspx
 
 [cindygross-hive-tables]: http://blogs.msdn.com/b/cindygross/archive/2013/02/06/hdinsight-hive-internal-and-external-tables-intro.aspx
 

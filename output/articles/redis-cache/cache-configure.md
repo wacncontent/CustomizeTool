@@ -6,14 +6,10 @@
    authors="steved0x"
    manager="dwrede"
    editor="tysonn" />
-<tags 
-   ms.service="cache"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="cache-redis"
-   ms.workload="tbd"
-   ms.date="10/09/2015"
-   ms.author="sdanie" />
+<tags
+	ms.service="cache"
+	ms.date="10/09/2015"
+	wacn.date=""/>
 
 # How to configure Azure Redis Cache
 

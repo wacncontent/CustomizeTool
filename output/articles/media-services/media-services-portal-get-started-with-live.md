@@ -7,14 +7,10 @@
 	manager="dwrede" 
 	editor=""/>
 
-<tags 
-	ms.service="media-services" 
-	ms.workload="media" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="ne" 
-	ms.topic="article" 
-	ms.date="10/15/2015"  
-	ms.author="juliako"/>
+<tags
+	ms.service="media-services"
+	ms.date="10/15/2015"
+	wacn.date=""/>
 
 
 # Use the Azure Management Portal to create channels that receive multi-bitrate live streams from on-premises encoders
@@ -22,7 +18,7 @@
 [AZURE.INCLUDE [media-services-selector-manage-channels](../includes/media-services-selector-manage-channels.md)]
 
 
-This tutorial walks you through the steps of implementing a basic Media Services live streaming application where a channel receives a multi-bitrate live stream from an on-premises live encoder. For a more detailed overview of working with channels and related components, see [Working with channels that receive multi-bitrate live stream from on-premises encoders](media-services-manage-channels-overview.md).
+This tutorial walks you through the steps of implementing a basic Media Services live streaming application where a channel receives a multi-bitrate live stream from an on-premises live encoder. For a more detailed overview of working with channels and related components, see [Working with channels that receive multi-bitrate live stream from on-premises encoders](media-services-manage-channels-overview).
 
 In this tutorial, the Azure Management Portal is used to accomplish the following tasks:
 
@@ -39,7 +35,7 @@ The following are required to complete the tutorial.
 
 - To complete this tutorial, you need an Azure account. If you don't have an account, you can create a trial account in just a couple of minutes.
 For details, see [Azure Trial](/pricing/1rmb-trial/).
-- A Media Services account. To create a Media Services account, see [Create Account](media-services-create-account.md).
+- A Media Services account. To create a Media Services account, see [Create Account](media-services-create-account).
 - A webcam and an encoder that can send a multi-bitrate live stream.
 
 
@@ -89,7 +85,7 @@ Once the channel is created, you can get ingest URLs that you will provide to th
 
 ![ingesturls](./media/media-services-portal-get-started-with-live/media-services-ingest-urls.png)
 
-For more information about Ingest URLs, see [Using on-premises encoders to send multi-bitrate live stream to a channel](../media-services-channels-overview.md).
+For more information about Ingest URLs, see [Using on-premises encoders to send multi-bitrate live stream to a channel](media-services-channels-overview).
 
 ## Configure a live encoder and ingest live stream
 
@@ -178,7 +174,7 @@ To build an  MPEG DASH streaming URL, append (format=mpd-time-csf) to the URL.
 
 	{streaming endpoint name-media services account name}.streaming.mediaservices.chinacloudapi.cn/{locator ID}/{filename}.ism/Manifest(format=mpd-time-csf)
 
-For more information about delivering your content, see [Delivering content](media-services-deliver-content-overview.md).
+For more information about delivering your content, see [Delivering content](media-services-deliver-content-overview).
 
 You can playback Smooth Stream using [AMS Player](http://amsplayer.azurewebsites.net/azuremediaplayer.html) or use iOS and Android devices to play HLS version 3.
 
@@ -192,6 +188,7 @@ If you are done streaming events and want to clean up the resources provisioned 
 
 
 ##Next Steps
+<!-- deleted by customization
 
 ###Media Services learning paths
 
@@ -199,6 +196,7 @@ You can view AMS learning paths here:
 
 - [AMS Live Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/)
 - [AMS on Demand Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/)
+-->
 
 ### Looking for something else?
 

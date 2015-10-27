@@ -9,12 +9,8 @@
 
 <tags
 	ms.service="app-service"
-	ms.workload="na"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="09/15/2015"
-	ms.author="jaime-espinosa"/>
+	wacn.date=""/>
 
 # Reference for navigating the Azure Management Portal
 

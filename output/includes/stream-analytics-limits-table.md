@@ -6,14 +6,10 @@
    authors="jeffstokes72"
    manager="paulettm"
    editor="cgronlun" />
-<tags 
-   ms.service="stream-analytics"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="big-data"
-   ms.date="07/13/2015"
-   ms.author="jeffstok" />
+<tags
+	ms.service="stream-analytics"
+	ms.date="07/13/2015"
+	wacn.date=""/>
 
 | Limit identifier | Limit       | Comments |
 |----------------- | ------------|--------- |

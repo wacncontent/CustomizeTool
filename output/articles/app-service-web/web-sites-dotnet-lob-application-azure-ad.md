@@ -7,23 +7,28 @@
 	manager="wpickett" 
 	editor=""/>
 
-<tags 
-	ms.service="app-service-web" 
-	ms.devlang="dotnet" 
-	ms.topic="article" 
-	ms.tgt_pltfrm="na" 
-	ms.workload="web" 
-	ms.date="10/14/2015" 
-	ms.author="cephalin"/>
+<tags
+	ms.service="app-service-web"
+	ms.date="10/14/2015"
+	wacn.date=""/>
 
 # Create a .NET MVC web app in Azure Websites with Azure Active Directory authentication #
 
-In this article, you will learn how to create an ASP.NET MVC line-of-business application in [Azure Websites](/documentation/services/web-sites/) using [Azure Active Directory](/home/features/active-directory/) as the identity provider. You will also learn how to use the [Azure Active Directory Graph Client Library](http://blogs.msdn.com/b/aadgraphteam/archive/2014/06/02/azure-active-directory-graph-client-library-1-0-publish.aspx) to query directory data in the application.
+In this article, you will learn how to create an ASP.NET MVC line-of-business application in [Azure Websites](/documentation/services/web-sites/) using [Azure Active Directory](/home/features/identity/) as the identity provider. You will also learn how to use the [Azure Active Directory Graph Client Library](http://blogs.msdn.com/b/aadgraphteam/archive/2014/06/02/azure-active-directory-graph-client-library-1-0-publish.aspx) to query directory data in the application.
 
 The Azure Active Directory tenant that you use can be an Azure-only directory, or it can be directory-synced with your on-premise Active Directory (AD) to create a single sign-on experience for workers that are on-premise or remote.
 
 >[AZURE.NOTE] For Azure Websites you can configure authentication against an Azure Active Directory tenant with a few clicks of a button. For more information, see [Use Active Directory for authentication in Azure Websites](web-sites-authentication-authorization).
 
+<!-- keep by customization: begin -->
+- [What you will build](#bkmk_build)
+- [What you will need](#bkmk_need)
+- [Use sample application for LOB template](#bkmk_sample)
+- [Run the sample application](#bkmk_run)
+- [Deploy the sample application to Azure Websites](#bkmk_deploy)
+- [Add LOB functionality to the sample application](#bkmk_crud)
+- [Further resources](#bkmk_resources)
+<!-- keep by customization: end -->
 <a name="bkmk_build"></a>
 ## What you will build ##
 
@@ -68,7 +73,7 @@ Be sure to follow all the instructions to convert the application from multi-ten
 
 3.	In the [Azure Management Portal](https://manage.windowsazure.cn) view for your Azure Active Directory application you just created, click the **USERS** tab. Then, assign the desired users to the desired roles.
 
-	>[AZURE.NOTE] If you want to assign roles to groups in addition to users, you must upgrade your Azure Active Directory tenant to [Azure Active Directory Premium](/home/features/active-directory/#price). In your application's portal UI, if you see the **USERS** tab instead of the **USERS AND GROUPS tab, you can try Azure Active Directory Premium by going to your Azure Active Directory tenant's **LICENCES** tab. 
+	>[AZURE.NOTE] If you want to assign roles to groups in addition to users, you must upgrade your Azure Active Directory tenant to [Azure Active Directory Premium](/home/features/identity/#price). In your application's portal UI, if you see the **USERS** tab instead of the **USERS AND GROUPS tab, you can try Azure Active Directory Premium by going to your Azure Active Directory tenant's **LICENCES** tab. 
 
 3.	Once you're finished configuring the application, type `F5` in Visual Studio to run the ASP.NET application.
 
@@ -376,8 +381,10 @@ Now that you have configured the authorizations and line-of-business functionali
 - [Similarities between Active Directory and Azure Active Directory](http://technet.microsoft.com/zh-cn/library/dn518177.aspx)
 - [Directory Sync with Single Sign-On Scenario](http://technet.microsoft.com/zh-cn/library/dn441213.aspx)
 - [Azure Active Directory Supported Token and Claim Types](http://msdn.microsoft.com/zh-cn/library/azure/dn195587.aspx)
+<!-- deleted by customization
 
 [AZURE.INCLUDE [app-service-web-whats-changed](../includes/app-service-web-whats-changed.md)]
 
 [AZURE.INCLUDE [app-service-web-try-app-service](../includes/app-service-web-try-app-service.md)]
+-->
  

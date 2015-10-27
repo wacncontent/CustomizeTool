@@ -9,12 +9,8 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.workload="big-data"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="10/09/2015"
-	ms.author="larryfr"/>
+	wacn.date=""/>
 
 # Install and use R on HDInsight Hadoop clusters
 
@@ -60,7 +56,7 @@ Additionally, the following R packages are installed:
 
 The [https://hdiconfigactions.blob.core.windows.net/linuxrconfigactionv01/r-installer-v01.sh](https://hdiconfigactions.blob.core.windows.net/linuxrconfigactionv01/r-installer-v01.sh) script action is used to install R on an HDInsight cluster. This section provides instructions about how to use the script when provisioning the cluster using the Azure Management Portal.
 
-> [AZURE.NOTE] You can also use Azure PowerShell or the HDInsight .NET SDK to create a cluster using this script. For more information on using these methods, see [Customize HDInsight clusters with Script Actions](hdinsight-hadoop-customize-cluster-linux).
+> [AZURE.NOTE] You can also use Azure PowerShell or the HDInsight .NET SDK to create a cluster using this script. For more information on using these methods, see [Customize HDInsight clusters with Script Actions](hdinsight-hadoop-customize-cluster).
 
 1. Start provisioning a cluster by using the steps in [Provision Linux-based HDInsight clusters](hdinsight-provision-linux-clusters#portal), but do not complete provisioning.
 
@@ -145,5 +141,5 @@ After the cluster has finished provisioning, use the following steps to use R to
 
 [powershell-install-configure]: install-configure-powershell-linux
 [hdinsight-provision]: hdinsight-provision-clusters-linux
-[hdinsight-cluster-customize]: hdinsight-hadoop-customize-cluster-linux
+[hdinsight-cluster-customize]: hdinsight-hadoop-customize-cluster
 [hdinsight-install-spark]: hdinsight-hadoop-spark-install-linux

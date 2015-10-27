@@ -7,14 +7,10 @@
 	manager="nirma" 
 	editor=""/>
 
-<tags 
-	ms.service="app-service" 
-	ms.workload="na" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="09/11/2015" 
-	ms.author="stefsch"/>	
+<tags
+	ms.service="app-service"
+	ms.date="09/11/2015"
+	wacn.date=""/>	
 
 # Network Configuration Details for Azure Websites Environments with ExpressRoute 
 
@@ -121,7 +117,7 @@ For more information about the Azure Websites platform, see [Azure Websites][Azu
 [DownloadCenterAddressRanges]: http://www.microsoft.com/download/details.aspx?id=41653  
 [NetworkSecurityGroups]: /documentation/articles/virtual-networks-nsg/
 [AzureAppService]: /documentation/articles/app-service-value-prop-what-is/
-[IntroToAppServiceEnvironment]: /documentation/articles/app-service-app-service-environment-intro/
+[IntroToAppServiceEnvironment]:  /documentation/articles/app-service-app-service-environment-intro/
  
 
 <!-- IMAGES -->

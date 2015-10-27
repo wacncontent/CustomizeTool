@@ -7,14 +7,10 @@
 	manager="dwrede" 
 	editor=""/>
 
-<tags 
-	ms.service="media-services" 
-	ms.workload="media" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="09/28/2015" 
-	ms.author="juliako"/>
+<tags
+	ms.service="media-services"
+	ms.date="09/28/2015"
+	wacn.date=""/>
 
 #Azure Media Services Concepts 
 
@@ -99,7 +95,7 @@ Codecs have two components: one to compress digital media files for transmission
 
 ###Media Services Encoders
 
-For information about supported encoders, see [Encoders](media-services-encode-asset.md).
+For information about supported encoders, see [Encoders](media-services-encode-asset).
 
 
 ##Live Streaming
@@ -116,7 +112,7 @@ You can get the ingest URL and the preview URL when you create the channel. To g
 
 Each Media Services account can contain multiple Channels, multiple Programs, and multiple StreamingEndpoints. Depending on the bandwidth and security needs, StreamingEndpoint services can be dedicated to one or more channels. Any StreamingEndpoint can pull from any Channel.
 
-By default you can add 5 channels to your Media Services account. To request a higher limit, see [Quotas and limitations](media-services-quotas-and-limitations.md).  
+By default you can add 5 channels to your Media Services account. To request a higher limit, see [Quotas and limitations](media-services-quotas-and-limitations).  
 
 You are only billed when your channel is in running state.
 
@@ -167,16 +163,16 @@ When configuring the token restricted policy, you must specify the primary verif
 
 ###<a id="dynamic_packaging"></a>Dynamic packaging
 
-When working with Media Services it is recommended to encode your mezzanine files into an adaptive bitrate MP4 set and then convert the set to the desired format using the [Dynamic Packaging](media-services-dynamic-packaging-overview.md). 
+When working with Media Services it is recommended to encode your mezzanine files into an adaptive bitrate MP4 set and then convert the set to the desired format using the [Dynamic Packaging](media-services-dynamic-packaging-overview). 
 
 
 ###Streaming endpoint
 
 A StreamingEndpoint represents a streaming service that can deliver content directly to a client player application, or to a Content Delivery Network (CDN) for further distribution (Azure Media Services now provides the Azure CDN integration.) The outbound stream from a StreamingEndpoint service can be a live stream, or a video on demand Asset in your Media Services account. In addition, you can control the capacity of the StreamingEndpoint service to handle growing bandwidth needs by adjusting scale units (also known as streaming units). It is recommended to allocate one or more scale units for applications in production environment. Scale units provide you with both dedicated egress capacity that can be purchased in increments of 200 Mbps and additional functionality which currently includes use dynamic packaging. 
 
-It is recommended to use dynamic packaging and\or dynamic encryption. To use these features, you must have at least one streaming unit for the endpoint from which you plan to stream. For more information, see  [Scaling streaming units](media-services-manage-origins.md#scale_streaming_endpoints).
+It is recommended to use dynamic packaging and\or dynamic encryption. To use these features, you must have at least one streaming unit for the endpoint from which you plan to stream. For more information, see  [Scaling streaming units](media-services-manage-origins#scale_streaming_endpoints).
 
-By default you can have up to 2 streaming endpoints in your Media Services account. To request a higher limit, see [Quotas and limitations](media-services-quotas-and-limitations.md). 
+By default you can have up to 2 streaming endpoints in your Media Services account. To request a higher limit, see [Quotas and limitations](media-services-quotas-and-limitations). 
 
 You are only billed when your StreamingEndpoint is in running state.
 
@@ -241,6 +237,7 @@ The following list describes different streaming formats and gives examples:
 
 		http://testendpoint-testaccount.streaming.mediaservices.chinacloudapi.cn/fecebb23-46f6-490d-8b70-203e86b0df58/BigBuckBunny.ism/Manifest(format=f4m-f4f) 
 
+<!-- deleted by customization
  
 ##Media Services learning paths
 
@@ -248,4 +245,5 @@ You can view AMS learning paths here:
 
 - [AMS Live Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/)
 - [AMS on Demand Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/)
+-->
 

@@ -7,14 +7,10 @@
 	services="app-service\web" 
 	documentationCenter=""/>
 
-<tags 
-	ms.service="app-service-web" 
-	ms.workload="web" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="multiple" 
-	ms.topic="article" 
-	ms.date="08/10/2015" 
-	ms.author="byvinyal"/>
+<tags
+	ms.service="app-service-web"
+	ms.date="08/10/2015"
+	wacn.date=""/>
 
 #Streaming Logs and the Console
 

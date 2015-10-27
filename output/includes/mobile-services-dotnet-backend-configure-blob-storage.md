@@ -131,4 +131,4 @@ Next, you will update the quickstart app to add image upload functionality by us
 
 <!-- URLs. -->
 [How To Create a Storage Account]: storage-create-storage-account
-[App settings]: http://msdn.microsoft.com/zh-cn/zh-cn/library/azure/b6bb7d2d-35ae-47eb-a03f-6ee393e170f7
+[App settings]: http://msdn.microsoft.com/zh-cn/library/azure/b6bb7d2d-35ae-47eb-a03f-6ee393e170f7

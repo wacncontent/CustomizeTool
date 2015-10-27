@@ -7,14 +7,10 @@
 	manager="wpickett" 
 	editor=""/>
 
-<tags 
-	ms.service="app-service" 
-	ms.workload="na" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="10/08/2015" 
-	ms.author="stefsch"/>	
+<tags
+	ms.service="app-service"
+	ms.date="10/08/2015"
+	wacn.date=""/>	
 
 # Geo Distributed Scale with Azure Websites Environments
 
@@ -114,9 +110,9 @@ Documentation on the preview Powershell [Azure Resource Manager (ARM) Traffic Ma
 [AZURE.INCLUDE [app-service-web-try-app-service](../includes/app-service-web-try-app-service.md)]
 
 <!-- LINKS -->
-[AzureTrafficManagerProfile]: /documentation/articles/traffic-manager-manage-profiles/
-[ARMTrafficManager]: /documentation/articles/traffic-manager-powershell-arm/
-[RegisterCustomDomain]: /documentation/articles/web-sites-custom-domain-name/
+[AzureTrafficManagerProfile]:  /documentation/articles/traffic-manager-manage-profiles/
+[ARMTrafficManager]:  /documentation/articles/traffic-manager-powershell-arm/
+[RegisterCustomDomain]:  /documentation/articles/web-sites-custom-domain-name/
 
 
 <!-- IMAGES -->

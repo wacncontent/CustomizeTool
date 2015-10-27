@@ -7,14 +7,10 @@
 	manager="dwrede" 
 	editor=""/>
 
-<tags 
-	ms.service="media-services" 
-	ms.workload="media" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
+<tags
+	ms.service="media-services"
 	ms.date="09/07/2015"
-	ms.author="juliako"/>
+	wacn.date=""/>
 
 
 # Manage Content with Azure Media Services using Azure Management Portal
@@ -60,10 +56,10 @@ If the file size value does not get updated after the uploading process stops, p
 ##<a id="index"></a>How to: Index content
 
 > [AZURE.SELECTOR]
-- [.NET](media-services-index-content.md)
-- [Portal](media-services-manage-content.md#index)
+- [.NET](media-services-index-content)
+- [Portal](media-services-manage-content#index)
 
-Azure Media Indexer enables you to make content of your media files searchable and to generate a full-text transcript for closed captioning and keywords. You can index your content using the Management Portal following the steps demonstrated below. However, if you would like more control over what files and how the indexing job is done, you can use the Media Services SDK for .NET or REST APIs. For more information, see [Indexing Media Files with Azure Media Indexer](media-services-index-content.md).
+Azure Media Indexer enables you to make content of your media files searchable and to generate a full-text transcript for closed captioning and keywords. You can index your content using the Management Portal following the steps demonstrated below. However, if you would like more control over what files and how the indexing job is done, you can use the Media Services SDK for .NET or REST APIs. For more information, see [Indexing Media Files with Azure Media Indexer](media-services-index-content).
 
 To following steps demonstrate how to use the Management Portal to index your content.
 
@@ -78,9 +74,9 @@ To following steps demonstrate how to use the Management Portal to index your co
 ##<a id="encode"></a>How to: Encode content
 
 > [AZURE.SELECTOR]
-- [.NET](media-services-dotnet-encode-asset.md)
-- [REST](media-services-rest-encode-asset.md)
-- [Portal](media-services-manage-content.md#encode)
+- [.NET](media-services-dotnet-encode-asset)
+- [REST](media-services-rest-encode-asset)
+- [Portal](media-services-manage-content#encode)
 
 In order to deliver digital video over the internet you must compress the media. Media Services provides a media encoder that allows you to specify how you want for your content to be encoded (for example, the codecs to use, file format, resolution, and bitrate.) 
 
@@ -91,7 +87,7 @@ Media Services provides dynamic packaging which allows you to deliver your adapt
 To take advantage of dynamic packaging, you need to do the following:
 
 - Encode your mezzanine (source) file into a set of adaptive bitrate MP4 files or adaptive bitrate Smooth Streaming files (the encoding steps are demonstrated later in this tutorial).
-- Get at least one On-Demand streaming unit for the streaming endpoint from which you plan to delivery your content. For more information, see [How to Scale On-Demand Streaming Reserved Units](media-services-manage-origins.md#scale_streaming_endpoints/).
+- Get at least one On-Demand streaming unit for the streaming endpoint from which you plan to delivery your content. For more information, see [How to Scale On-Demand Streaming Reserved Units](media-services-manage-origins#scale_streaming_endpoints).
 
 With dynamic packaging you only need to store and pay for the files in single storage format and Media Services will build and serve the appropriate response based on requests from a client. 
 
@@ -135,8 +131,8 @@ This section describes the steps you can take to encode your content with Azure 
 If you want for Media Services to dynamically encrypt your asset with an AES key or PlayReady DRM make sure to do the following:
 
 - Encode your mezzanine (source) file into a set of adaptive bitrate MP4 files or adaptive bitrate Smooth Streaming files (the encoding steps are demonstrated in the [Encode](#encode) section).
-- Get at least one On-Demand streaming unit for the streaming endpoint from which you plan to delivery your content. For more information, see [How to Scale On-Demand Streaming Reserved Units](media-services-manage-origins.md#scale_streaming_endpoints/).
-- Configure "default aes clear key service policy" or "default playready license service policy". For more information, see [Configure Content Key Authorization Policy](media-services-portal-configure-content-key-auth-policy.md).  
+- Get at least one On-Demand streaming unit for the streaming endpoint from which you plan to delivery your content. For more information, see [How to Scale On-Demand Streaming Reserved Units](media-services-manage-origins#scale_streaming_endpoints).
+- Configure "default aes clear key service policy" or "default playready license service policy". For more information, see [Configure Content Key Authorization Policy](media-services-portal-configure-content-key-auth-policy).  
 
 
 	When you are ready to enable encryption, press the **ENCRYPTION** button on the bottom of the **CONTENT** page.
@@ -147,15 +143,15 @@ If you want for Media Services to dynamically encrypt your asset with an AES key
 
 Also, see:
 
-- [Protect with PlayReady DRM](media-services-rest-deliver-streaming-content.md)
-- [Protect with AES-128 key](media-services-protect-with-aes128.md)
+- [Protect with PlayReady DRM](media-services-rest-deliver-streaming-content)
+- [Protect with AES-128 key](media-services-protect-with-aes128)
 
 ##<a id="publish"></a>How to: Publish content
 
 > [AZURE.SELECTOR]
-- [.NET](media-services-deliver-streaming-content.md)
-- [REST](media-services-rest-deliver-streaming-content.md)
-- [Portal](media-services-manage-content.md#publish)
+- [.NET](media-services-deliver-streaming-content)
+- [REST](media-services-rest-deliver-streaming-content)
+- [Portal](media-services-manage-content#publish)
 
 ###Overview
 
@@ -207,6 +203,7 @@ Some considerations apply:
 - Make sure the video has been published.
 - The **MEDIA SERVICES CONTENT PLAYER** plays from the default streaming endpoint. If you want to play from a non-default streaming endpoint, use another player. For example, [Azure Media Services Player](http://amsplayer.azurewebsites.net/azuremediaplayer.html).
  
+<!-- deleted by customization
 
 ##Media Services learning paths
 
@@ -214,6 +211,7 @@ You can view AMS learning paths here:
 
 - [AMS Live Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/)
 - [AMS on Demand Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/)
+-->
 
 
 ![AMSPlayer][AMSPlayer]

@@ -9,12 +9,8 @@
 
 <tags
 	ms.service="media-services"
-	ms.workload="media"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="09/07/2015"
-	ms.author="juliako"/>
+	wacn.date=""/>
 
 
 #Dynamic Packaging
@@ -34,7 +30,7 @@ The following diagram shows the dynamic packaging workflow.
 ![Dynamic Encoding](./media/media-services-dynamic-packaging-overview/media-services-dynamic-packaging.png)
 
 
->[AZURE.NOTE]To take advantage of dynamic packaging, you must first get at least one On-demand streaming unit for the streaming endpoint from which you plan to delivery your content. For more information, see [How to Scale Media Services](media-services-manage-origins.md#scale_streaming_endpoints).
+>[AZURE.NOTE]To take advantage of dynamic packaging, you must first get at least one On-demand streaming unit for the streaming endpoint from which you plan to delivery your content. For more information, see [How to Scale Media Services](media-services-manage-origins#scale_streaming_endpoints).
 
 ##Common scenario
 
@@ -46,7 +42,7 @@ The following diagram shows the dynamic packaging workflow.
 
 1. Build the streaming URLs to access and stream your content.
 
->[AZURE.NOTE]Not all MP4 file formats are supported by dynamic packaging, for more information, see [Unsupported formats for dynamic packaging](media-services-dynamic-packaging-overview.md#unsupported_formats).
+>[AZURE.NOTE]Not all MP4 file formats are supported by dynamic packaging, for more information, see [Unsupported formats for dynamic packaging](media-services-dynamic-packaging-overview#unsupported_formats).
 
 ##Preparing assets for dynamic streaming
 
@@ -79,7 +75,7 @@ Once you have the adaptive bitrate sets, you can publish your asset by creating 
 
 For information on how to create locators and use dynamic packaging to stream your content, see the following topics:
 
-[Delivering Content to Customers Overview](media-services-deliver-content-overview.md).
+[Delivering Content to Customers Overview](media-services-deliver-content-overview).
 
 Configure asset delivery policy using **.NET** or **REST API**.
 
@@ -97,6 +93,7 @@ The following source file formats are not supported by dynamic packaging.
 - Dolby digital plus mp4 files.
 - Dolby digital plus smooth files.
 
+<!-- deleted by customization
 
 ##Media Services learning paths
 
@@ -104,3 +101,4 @@ You can view AMS learning paths here:
 
 - [AMS Live Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/)
 - [AMS on Demand Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/)
+-->

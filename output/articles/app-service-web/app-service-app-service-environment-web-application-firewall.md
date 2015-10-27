@@ -7,14 +7,10 @@
 	manager="wpickett" 
 	editor="jimbe"/>
 
-<tags 
-	ms.service="app-service" 
-	ms.workload="web" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="09/15/2015" 
-	ms.author="naziml"/>	
+<tags
+	ms.service="app-service"
+	ms.date="09/15/2015"
+	wacn.date=""/>	
 
 # Configuring a Web Application Firewall (WAF) for Azure Websites Environment
 

@@ -10,12 +10,8 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.workload="big-data"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="07/28/2015"
-	ms.author="jgao"/>
+	wacn.date=""/>
 
 # Manage Hadoop clusters in HDInsight by using Azure PowerShell
 
@@ -67,7 +63,7 @@ HDInsight clusters require a Azure Resource group and a Blob container on an Azu
 	For a full list of the storage account types, see [https://msdn.microsoft.com/zh-cn/library/azure/hh264518.aspx](https://msdn.microsoft.com/zh-cn/library/azure/hh264518.aspx).
 
 
-For information on creating an Azure Storage account by using the Azure preview portal, see [Create, manage, or delete a storage account](storage-create-storage-account).
+For information on creating an Azure Storage account by using the Azure <!-- deleted by customization preview portal --><!-- keep by customization: begin -->Management Portal<!-- keep by customization: end -->, see [Create, manage, or delete a storage account](storage-create-storage-account).
 
 If you have already had a Storage account but do not know the account name and account key, you can use the following commands to retrieve the information:
 
@@ -76,7 +72,7 @@ If you have already had a Storage account but do not know the account name and a
 	# List the keys for a Storage account
 	Get-AzureStorageAccountKey -ResourceGroupName <AzureResourceGroupName> -name $storageAccountName <AzureStorageAccountName>
 
-For details on getting the information by using the preview portal, see the "View, copy, and regenerate storage access keys" section of [Create, manage, or delete a storage account](storage-create-storage-account).
+For details on getting the information by using the <!-- deleted by customization preview portal --><!-- keep by customization: begin -->Management Portal<!-- keep by customization: end -->, see the "View, copy, and regenerate storage access keys" section of [Create, manage, or delete a storage account](storage-create-storage-account).
 
 **To create an Azure storage container**
 
@@ -153,7 +149,7 @@ In the sample, <i>hdiv2</i> is an HDInsight cluster name.
 
 >[AZURE.NOTE] By granting/revoking the access, you will reset the cluster user name and password.
 
-This can also be done via the preview portal. See [Administer HDInsight by using the Azure preview portal][hdinsight-admin-portal].
+This can also be done via the <!-- deleted by customization preview portal --><!-- keep by customization: begin -->Management Portal<!-- keep by customization: end -->. See [Administer HDInsight by using the Azure <!-- deleted by customization preview portal --><!-- keep by customization: begin -->Management Portal<!-- keep by customization: end -->][hdinsight-admin-portal].
 
 ##Scale clusters
 The cluster scaling feature allows you to change the number of worker nodes used by a cluster that is running in Azure HDInsight without having to re-create the cluster.
@@ -312,7 +308,12 @@ See the [Submit MapReduce jobs](#mapreduce) section in this article.
 
 ## See Also
 * [HDInsight cmdlet reference documentation][hdinsight-powershell-reference]
+<!-- deleted by customization
 * [Administer HDInsight by using the Azure preview portal][hdinsight-admin-portal]
+-->
+<!-- keep by customization: begin -->
+* [Administer HDInsight by using the Azure Management Portal][hdinsight-admin-portal]
+<!-- keep by customization: end -->
 * [Administer HDInsight using a command-line interface][hdinsight-admin-cli]
 * [Provision HDInsight clusters][hdinsight-provision]
 * [Upload data to HDInsight][hdinsight-upload-data]
@@ -320,6 +321,10 @@ See the [Submit MapReduce jobs](#mapreduce) section in this article.
 * [Get started with Azure HDInsight][hdinsight-get-started]
 
 
+<!-- keep by customization: begin -->
+[hdinsight-hive]: /documentation/articles/hdinsight-use-hive/
+[hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data/
+<!-- keep by customization: end -->
 [azure-purchase-options]: /pricing/overview/
 [azure-member-offers]: http://azure.microsoft.com/pricing/member-offers/
 [azure-trial]: /pricing/1rmb-trial/
@@ -328,7 +333,6 @@ See the [Submit MapReduce jobs](#mapreduce) section in this article.
 [hdinsight-provision]: hdinsight-provision-clusters
 [hdinsight-provision-custom-options]: hdinsight-provision-clusters#configuration
 [hdinsight-submit-jobs]: hdinsight-submit-hadoop-jobs-programmatically
-
 [hdinsight-admin-cli]: hdinsight-administer-use-command-line
 [hdinsight-admin-portal]: hdinsight-administer-use-management-portal-v1
 [hdinsight-storage]: hdinsight-use-blob-storage
@@ -336,9 +340,7 @@ See the [Submit MapReduce jobs](#mapreduce) section in this article.
 [hdinsight-use-mapreduce]: hdinsight-use-mapreduce
 [hdinsight-upload-data]: hdinsight-upload-data
 [hdinsight-flight]: hdinsight-analyze-flight-delay-data
-
-[hdinsight-powershell-reference]: https:/msdn.microsoft.com/zh-cn/library/dn858087.aspx
+[hdinsight-powershell-reference]: https://msdn.microsoft.com/zh-cn/library/dn858087.aspx
 
 [powershell-install-configure]: install-configure-powershell
-
 [image-hdi-ps-provision]: ./media/hdinsight-administer-use-powershell/HDI.PS.Provision.png

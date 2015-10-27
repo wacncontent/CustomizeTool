@@ -9,13 +9,9 @@
    tags="azure-portal"/>
 
 <tags
-    ms.service="hdinsight"
-    ms.devlang="na"
-    ms.topic="article"
-    ms.tgt_pltfrm="na"
-    ms.workload="big-data"
-    ms.date="09/22/2015"
-    ms.author="nitinme"/>
+	ms.service="hdinsight"
+	ms.date="09/22/2015"
+	wacn.date=""/>
 
 # Provision Apache Spark clusters in HDInsight using custom options
 
@@ -410,20 +406,16 @@ The HDInsight .NET SDK provides .NET client libraries that make it easier to wor
 
 [hdinsight-customize-cluster]: hdinsight-hadoop-customize-cluster
 [hdinsight-get-started]: hdinsight-get-started
-
 [hdinsight-admin-powershell]: hdinsight-administer-use-powershell
 [hdinsight-admin-portal]: hdinsight-administer-use-management-portal-v1
 [hadoop-hdinsight-intro]: hdinsight-hadoop-introduction
 [hdinsight-submit-jobs]: hdinsight-submit-hadoop-jobs-programmatically
 [hdinsight-powershell-reference]: https://msdn.microsoft.com/zh-cn/library/dn858087.aspx
 [hdinsight-storm-get-started]: hdinsight-storm-getting-started
-
 [azure-management-portal]: https://manage.windowsazure.cn/
 
 [azure-command-line-tools]: xplat-cli
-
 [azure-create-storageaccount]: storage-create-storage-account
-
 [apache-hadoop]: http://go.microsoft.com/fwlink/?LinkId=510084
 [azure-purchase-options]: /pricing/overview/
 [azure-member-offers]: http://azure.microsoft.com/pricing/member-offers/
@@ -432,8 +424,6 @@ The HDInsight .NET SDK provides .NET client libraries that make it easier to wor
 
 
 [powershell-install-configure]: install-configure-powershell
-
-
 [azure-preview-portal]: https://manage.windowsazure.cn
 
-[89e2276a]: hdinsight-use-sqoop "Use Sqoop with HDInsight"
+[89e2276a]: /documentation/articles/hdinsight-use-sqoop/ "Use Sqoop with HDInsight"

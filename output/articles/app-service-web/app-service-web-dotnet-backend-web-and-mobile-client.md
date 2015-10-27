@@ -9,12 +9,8 @@
 
 <tags
 	ms.service="app-service"
-	ms.workload="na"
-	ms.tgt_pltfrm="NA"
-	ms.devlang="dotnet"
-	ms.topic="get-started-article"
 	ms.date="09/15/2015"
-	ms.author="donnam"/>
+	wacn.date=""/>
 
 # Create an app with a mobile and web client in Azure Websites
 

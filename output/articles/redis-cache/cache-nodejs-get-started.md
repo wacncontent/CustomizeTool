@@ -9,12 +9,8 @@
 
 <tags
 	ms.service="cache"
-	ms.devlang="nodejs"
-	ms.topic="hero-article"
-	ms.tgt_pltfrm="cache-redis"
-	ms.workload="tbd"
 	ms.date="10/05/2015"
-	ms.author="sdanie"/>
+	wacn.date=""/>
 
 # How to use Azure Redis Cache with Node.js
 

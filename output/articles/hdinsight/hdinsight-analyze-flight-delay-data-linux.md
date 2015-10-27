@@ -8,14 +8,10 @@
 	editor="cgronlun"
 	tags="azure-portal"/>
 
-<tags 
-	ms.service="hdinsight" 
-	ms.workload="big-data" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="10/09/2015" 
-	ms.author="larryfr"/>
+<tags
+	ms.service="hdinsight"
+	ms.date="10/09/2015"
+	wacn.date=""/>
 
 #Analyze flight delay data by using Hive in HDInsight
 
@@ -290,18 +286,16 @@ Now you understand how to upload a file to Azure Blob storage, how to populate a
 [rita-website]: http://www.transtats.bts.gov/DL_SelectFields.asp?Table_ID=236&DB_Short_Name=On-Time
 [cindygross-hive-tables]: http://blogs.msdn.com/b/cindygross/archive/2013/02/06/hdinsight-hive-internal-and-external-tables-intro.aspx
 [powershell-install-configure]: install-configure-powershell
-
 [hdinsight-use-oozie]: hdinsight-use-oozie-linux-mac
 [hdinsight-use-hive]: hdinsight-use-hive
 [hdinsight-provision]: hdinsight-provision-clusters
 [hdinsight-storage]: hdinsight-hadoop-use-blob-storage
 [hdinsight-upload-data]: hdinsight-upload-data
 [hdinsight-get-started]: hdinsight-hadoop-linux-tutorial-get-started
-[hdinsight-use-sqoop]: hdinsight-use-sqoop-mac-linux
+[hdinsight-use-sqoop]: hdinsight-use-sqoop
 [hdinsight-use-pig]: hdinsight-use-pig
 [hdinsight-develop-streaming]: hdinsight-hadoop-streaming-python
 [hdinsight-develop-mapreduce]: hdinsight-develop-deploy-java-mapreduce-linux
-
 [hadoop-hiveql]: https://cwiki.apache.org/confluence/display/Hive/LanguageManual+DDL
 
 [technetwiki-hive-error]: http://social.technet.microsoft.com/wiki/contents/articles/23047.hdinsight-hive-error-unable-to-rename.aspx

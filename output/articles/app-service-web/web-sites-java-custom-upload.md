@@ -7,20 +7,16 @@
 	manager="wpickett" 
 	editor="jimbe"/>
 
-<tags 
-	ms.service="app-service-web" 
-	ms.workload="web" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="Java" 
-	ms.topic="article" 
-	ms.date="08/31/2015" 
-	ms.author="robmcm"/>
+<tags
+	ms.service="app-service-web"
+	ms.date="08/31/2015"
+	wacn.date=""/>
 
 # Upload a custom Java web app to Azure
 
 This topic explains how to upload a custom Java web app to [Azure Websites] Web Apps. Included is information that applies to any Java website or web app, and also some examples for specific applications.
 
-Note that Azure provides a means for creating Java web apps using the Azure preview portal's configuration UI, and the Azure Marketplace, as documented at [Create a Java web app in Azure Websites](web-sites-java-get-started). This tutorial is for scenarios in which you do not want to use the portal configuration UI or the Azure Marketplace.  
+Note that Azure provides a means for creating Java web apps using the Azure <!-- deleted by customization preview portal's --><!-- keep by customization: begin -->Management Portal's<!-- keep by customization: end --> configuration UI, <!-- deleted by customization and the Azure Marketplace, -->as documented at [Create a Java web app in Azure Websites](web-sites-java-get-started). This tutorial is for scenarios in which you do not want to use the portal configuration UI <!-- deleted by customization or the Azure Marketplace-->.  
 
 ## Configuration guidelines
 
@@ -249,10 +245,12 @@ Once you make these changes, restart your web app running Liferay, Then, open ht
 For more information about Liferay, see [http://www.liferay.com](http://www.liferay.com).
 
 For more information about Java, see the [Java Developer Center](/develop/java/).
+<!-- deleted by customization
 
 [AZURE.INCLUDE [app-service-web-whats-changed](../includes/app-service-web-whats-changed.md)]
 
 [AZURE.INCLUDE [app-service-web-try-app-service](../includes/app-service-web-try-app-service.md)]
+-->
  
  
 <!-- External Links -->

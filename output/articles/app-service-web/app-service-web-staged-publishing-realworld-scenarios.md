@@ -8,13 +8,9 @@
    editor=""/>
 
 <tags
-   ms.service="app-service"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="web"
-   ms.date="09/24/2015"
-   ms.author="sumuth"/>
+	ms.service="app-service"
+	ms.date="09/24/2015"
+	wacn.date=""/>
 
 # Use DevOps environments effectively for your web apps
 

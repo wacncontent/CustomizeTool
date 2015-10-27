@@ -8,14 +8,10 @@
 	manager="wpickett" 
 	editor="mollybos"/>
 
-<tags 
-	ms.service="app-service-web" 
-	ms.workload="web" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="09/29/2015" 
-	ms.author="cephalin"/>
+<tags
+	ms.service="app-service-web"
+	ms.date="09/29/2015"
+	wacn.date=""/>
 
 # Controlling Azure web app traffic with Azure Traffic Manager
 

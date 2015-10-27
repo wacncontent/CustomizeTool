@@ -9,12 +9,8 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.workload="big-data"
-	ms.tgt_pltfrm="na"
-	ms.devlang="Java"
-	ms.topic="article"
 	ms.date="07/11/2015"
-	ms.author="nitinme"/>
+	wacn.date=""/>
 
 # Develop Java MapReduce programs for Hadoop in HDInsight
 
@@ -318,7 +314,7 @@ In this tutorial, you will create a container on a separate Storage account for 
 		$containerName_Data = "<ContainerName>"
 		$location = "<MicrosoftDataCenter>"  # For example, "China East"
 
-	The **$subscripionName** variable is associated with your Azure subscription. You must name **$storageAccountName_Data** and **$containerName_Data**. For the naming restrictions, see [Naming and Referencing Containers, Blobs, and Metadata](http://msdn.microsoft.com/zh-cn/zh-cn/library/azure/dd135715.aspx).
+	The **$subscripionName** variable is associated with your Azure subscription. You must name **$storageAccountName_Data** and **$containerName_Data**. For the naming restrictions, see [Naming and Referencing Containers, Blobs, and Metadata](http://msdn.microsoft.com/zh-cn/library/azure/dd135715.aspx).
 
 3. Run the following commands to create a Storage account and a Blob storage container on the account:
 
@@ -583,15 +579,13 @@ In this tutorial, you have learned how to develop a Java MapReduce job, how to t
 - [Connect Excel to HDInsight with the Microsoft Hive ODBC Driver][hdinsight-ODBC]
 
 [azure-purchase-options]: /pricing/overview/
-[azure-member-offers]: http://azure.microsoft.com/pricing/member-offers/
+<!-- deleted by customization [azure-member-offers]: http://azure.microsoft.com/pricing/member-offers/ -->
 [azure-trial]: /pricing/1rmb-trial/
 
 [hdinsight-use-sqoop]: hdinsight-use-sqoop
 [hdinsight-ODBC]: hdinsight-connect-excel-hive-ODBC-driver
 [hdinsight-power-query]: hdinsight-connect-excel-power-query
-
 [hdinsight-develop-streaming]: hdinsight-hadoop-develop-deploy-streaming-jobs
-
 [hdinsight-get-started]: hdinsight-get-started
 [hdinsight-emulator]: hdinsight-get-started-emulator
 [hdinsight-emulator-wasb]: hdinsight-get-started-emulator#blobstorage
@@ -601,11 +595,7 @@ In this tutorial, you have learned how to develop a Java MapReduce job, how to t
 [hdinsight-use-hive]: hdinsight-use-hive
 [hdinsight-use-pig]: hdinsight-use-pig
 [hdinsight-power-query]: hdinsight-connect-excel-power-query
-
-[powershell-PSCredential]: http:/social.technet.microsoft.com/wiki/contents/articles/4546.working-with-passwords-secure-strings-and-credentials-in-windows-powershell.aspx
+[powershell-PSCredential]: http://social.technet.microsoft.com/wiki/contents/articles/4546.working-with-passwords-secure-strings-and-credentials-in-windows-powershell.aspx
 [powershell-install-configure]: install-configure-powershell
-
-
-
 [image-emulator-wordcount-compile]: ./media/hdinsight-develop-deploy-java-mapreduce/HDI-Emulator-Compile-Java-MapReduce.png
 [image-emulator-wordcount-run]: ./media/hdinsight-develop-deploy-java-mapreduce/HDI-Emulator-Run-Java-MapReduce.png

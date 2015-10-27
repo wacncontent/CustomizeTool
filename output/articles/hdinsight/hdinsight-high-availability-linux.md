@@ -10,12 +10,8 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.workload="big-data"
-	ms.tgt_pltfrm="na"
-	ms.devlang="multiple"
-	ms.topic="article"
 	ms.date="10/19/2015"
-	ms.author="larryfr"/>
+	wacn.date=""/>
 
 #Availability and reliability of Hadoop clusters in HDInsight
 
@@ -160,7 +156,7 @@ In this document you have learned how Azure HDInsight provides high availability
 
 - [Manage HDInsight using Ambari](hdinsight-hadoop-manage-ambari)
 
-- [Provision Linux-based HDInsight clusters](hdinsight-hadoop-provision-linux-clusters)
+- [Provision Linux-based HDInsight clusters](hdinsight-provision-clusters)
 
 [preview-portal]: https://manage.windowsazure.cn/
 [azure-powershell]: powershell-install-configure

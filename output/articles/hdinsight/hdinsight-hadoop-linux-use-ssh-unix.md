@@ -9,13 +9,9 @@
 	tags="azure-portal"/>
 
 <tags
-   ms.service="hdinsight"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="big-data"
-   ms.date="09/15/2015"
-   ms.author="larryfr"/>
+	ms.service="hdinsight"
+	ms.date="09/15/2015"
+	wacn.date=""/>
 
 #Use SSH with Linux-based Hadoop on HDInsight from Linux, Unix, or OS X
 
@@ -93,7 +89,7 @@ When creating a Linux-based HDInsight cluster, you must provide the public key c
 
 * **Azure CLI for Mac, Linux and Windows** - Uses command-line commands to create the cluster.
 
-Each of these methods will require either a password or a public key. For complete information on creating a Linux-based HDInsight cluster, see [Provision Linux-based HDInsight clusters](hdinsight-hadoop-provision-linux-clusters).
+Each of these methods will require either a password or a public key. For complete information on creating a Linux-based HDInsight cluster, see [Provision Linux-based HDInsight clusters](hdinsight-provision-clusters).
 
 ###Azure preview portal
 
@@ -114,7 +110,7 @@ This creates a login for the specified user, by using the password or public key
 
 You can use the [Azure CLI for Mac, Linux and Windows](xplat) to create a new cluster by using the `azure hdinsight cluster create` command.
 
-For more information on using this command, see [Provision Hadoop Linux clusters in HDInsight using custom options](hdinsight-hadoop-provision-linux-clusters).
+For more information on using this command, see [Provision Hadoop Linux clusters in HDInsight using custom options](hdinsight-provision-clusters).
 
 ##Connect to a Linux-based HDInsight cluster
 

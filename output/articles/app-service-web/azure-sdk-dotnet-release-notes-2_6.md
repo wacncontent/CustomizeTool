@@ -8,13 +8,9 @@
    editor=""/>
 
 <tags
-   ms.service="app-service"
-   ms.devlang="multiple"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="integration" 
-   ms.date="08/08/2015"
-   ms.author="juliako"/>
+	ms.service="app-service"
+	ms.date="08/08/2015"
+	wacn.date=""/>
 
 
 # Azure SDK for .NET 2.6 Release Notes

@@ -7,21 +7,17 @@
 	manager="dwrede" 
 	editor=""/>
 
-<tags 
-	ms.service="media-services" 
-	ms.workload="media" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="09/07/2015" 
-	ms.author="juliako"/>
+<tags
+	ms.service="media-services"
+	ms.date="09/07/2015"
+	wacn.date=""/>
 
 #How to: Check Job Progress
 
 > [AZURE.SELECTOR]
-- [Portal](media-services-portal-check-job-progress.md)
-- [.NET](media-services-check-job-progress.md)
-- [REST](media-services-rest-check-job-progress.md)
+- [Portal](media-services-portal-check-job-progress)
+- [.NET](media-services-check-job-progress)
+- [REST](media-services-rest-check-job-progress)
 
 ##Use Portal to check the job status
 
@@ -43,7 +39,7 @@ You can view AMS learning paths here:
 
 ##Next Step
 
-Publish your content. For more information, see [How to: Encode an Asset](../media-services-manage-content#publish). 
+Publish your content. For more information, see [How to: Encode an Asset](media-services-manage-content#publish). 
 
 
 [checkstatus]: ./media/media-services-portal-check-job-progress/media-services-monitor-job-progress.png

@@ -7,13 +7,9 @@
    manager="stevenka"
    editor="tysonn" />
 <tags
-   ms.service="automation"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="infrastructure-services"
-   ms.date="09/17/2015"
-   ms.author="bwren" />
+	ms.service="automation"
+	ms.date="09/17/2015"
+	wacn.date=""/>
 
 # Azure Automation Hybrid Runbook Workers
 

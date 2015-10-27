@@ -7,17 +7,23 @@
 	manager="wpickett" 
 	editor="jimbe"/>
 
-<tags 
-	ms.service="app-service-web" 
-	ms.workload="web" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="09/22/2015" 
-	ms.author="tdykstra"/>
+<tags
+	ms.service="app-service-web"
+	ms.date="09/22/2015"
+	wacn.date=""/>
 
 # What is the Azure WebJobs SDK
 
+<!-- keep by customization: begin -->
+## Table of Contents
+
+- [Overview](#overview)
+- [Scenarios](#scenarios)
+- [Code samples](#code)
+- [Using the WebJobs SDK outside of WebJobs](#workerrole)
+- [Using the WebJobs SDK to invoke any function](#nostorage)
+- [Next steps](#nextsteps)
+<!-- keep by customization: end -->
 ## <a id="overview"></a>Overview
 
 This article explains what the WebJobs SDK is, reviews some common scenarios it is useful for, and gives an overview of how you use it in your code.

@@ -9,12 +9,8 @@
 
 <tags
 	ms.service="app-service-web"
-	ms.workload="na"
-	ms.tgt_pltfrm="na"
-	ms.devlang="PHP"
-	ms.topic="hero-article"
 	ms.date="10/13/2015"
-	ms.author="tomfitz"/>
+	wacn.date=""/>
 
 # Create a WordPress web app in Azure Websites
 
@@ -22,6 +18,8 @@ This tutorial shows how to find an application in the Azure Marketplace and inst
 
 When you're done with the tutorial you'll have your own WordPress blog site up and running in the cloud.
 
+<!-- deleted by customization
+-->
 ![WordPress site](./media/web-sites-php-web-site-gallery/wpdashboard.png)
 
 You'll learn:
@@ -33,7 +31,7 @@ You'll learn:
 The Azure Marketplace makes available a wide range of popular web apps developed by Microsoft, third party companies, and open source software initiatives. The web apps are built on a wide range of popular frameworks, such as [PHP](/develop/nodejs/) in this WordPress example, [.NET](/develop/net/), [Node.js](/develop/nodejs/), [Java](/develop/java/), and [Python](/develop/python/), to name a few. To create a web app from the Azure Marketplace the only software you need is the browser that you use for the [Azure preview portal](https://manage.windowsazure.cn/). 
 
 > [AZURE.NOTE]
-> To complete this tutorial, you need a Windows Azure account. If you don't have an account, you can [activate your MSDN subscriber benefits](/en-us/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F) or [sign up for a trial](/pricing/1rmb-trial/?WT.mc_id=A261C142F).
+> To complete this tutorial, you need a Windows Azure account. If you don't have an account, you can [activate your MSDN subscriber benefits](/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F) or [sign up for a trial](/pricing/1rmb-trial/?WT.mc_id=A261C142F).
 >
 > If you want to get started with Azure Websites before you sign up for an Azure account, go to [Try Azure Websites](http://go.microsoft.com/fwlink/?LinkId=523751). There, you can immediately create a short-lived starter web app in Azure Websites—no credit card required, and no commitments.
 

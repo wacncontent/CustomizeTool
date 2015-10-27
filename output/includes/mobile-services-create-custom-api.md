@@ -26,11 +26,11 @@
 		};
 
 
-> [AZURE.NOTE] The [request](http://msdn.microsoft.com/zh-cn/zh-cn/library/azure/jj554218.aspx) and [response](http://msdn.microsoft.com/zh-cn/zh-cn/library/azure/dn303373.aspx) object supplied to custom API functions are implemented by the [Express.js library](http://go.microsoft.com/fwlink/p/?LinkId=309046). 
+> [AZURE.NOTE] The [request](http://msdn.microsoft.com/zh-cn/library/azure/jj554218.aspx) and [response](http://msdn.microsoft.com/zh-cn/library/azure/dn303373.aspx) object supplied to custom API functions are implemented by the [Express.js library](http://go.microsoft.com/fwlink/p/?LinkId=309046). 
 
 <!-- Anchors. -->
 
 <!-- Images. -->
 
 <!-- URLs. -->
-[mssql object]: http://msdn.microsoft.com/zh-cn/zh-cn/library/azure/jj554212.aspx
+[mssql object]: http://msdn.microsoft.com/zh-cn/library/azure/jj554212.aspx

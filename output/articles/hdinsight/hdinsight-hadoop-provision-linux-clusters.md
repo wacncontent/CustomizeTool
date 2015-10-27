@@ -9,13 +9,9 @@
 	tags="azure-portal"/>
 
 <tags
-   	ms.service="hdinsight"
-   	ms.devlang="na"
-   	ms.topic="article"
-   	ms.tgt_pltfrm="na"
-   	ms.workload="big-data"
-   	ms.date="10/14/2015"
-   	ms.author="nitinme"/>
+	ms.service="hdinsight"
+	ms.date="10/14/2015"
+	wacn.date=""/>
 
 
 #Create Linux-based clusters in HDInsight
@@ -165,7 +161,7 @@ You can select the size of compute resources used by the cluster. For example, i
 
 When using the Azure preview portal to configure the cluster, the Node size is exposed through the __Node Pricing Tier__ blade, and will also display the cost associated with the different node sizes. 
 
-> [AZURE.IMPORTANT] Billing starts once a cluster is created, and only stops when the cluster is deleted. For more information on pricing, see [HDInsight pricing details](https://azure.microsoft.com/en-us/home/features/hdinsight/#price).
+> [AZURE.IMPORTANT] Billing starts once a cluster is created, and only stops when the cluster is deleted. For more information on pricing, see [HDInsight pricing details](https://azure.microsoft.com/home/features/hdinsight/#price).
 
 ##<a id="optionalconfiguration"></a>Optional configuration
 
@@ -181,13 +177,13 @@ An [Azure Virtual Network](/documentation/services/networking/) allows you to cr
 
 * Connect cloud resources together in a private network (cloud-only).
 
-	![diagram of cloud-only configuration](./media/hdinsight-hadoop-provision-linux-clusters/hdinsight-vnet-cloud-only.png)
+	![diagram of cloud-only configuration](./media/hdinsight-provision-clusters/hdinsight-vnet-cloud-only.png)
 
 * Connect your cloud resources to your local data-center network (site-to-site or point-to-site) by using a virtual private network (VPN).
 
     | Site-to-site configuration | Point-to-site configuration |
     | -------------------------- | --------------------------- |
-    | Site-to-site configuration allows you to connect multiple resources from your data center to the Azure virtual network by using a hardware VPN or the Routing and Remote Access Service.<br />![diagram of site-to-site configuration](./media/hdinsight-hadoop-provision-linux-clusters/hdinsight-vnet-site-to-site.png) | Point-to-site configuration allows you to connect a specific resource to the Azure virtual network by using a software VPN.<br />![diagram of point-to-site configuration](./media/hdinsight-hadoop-provision-linux-clusters/hdinsight-vnet-point-to-site.png) |
+    | Site-to-site configuration allows you to connect multiple resources from your data center to the Azure virtual network by using a hardware VPN or the Routing and Remote Access Service.<br />![diagram of site-to-site configuration](./media/hdinsight-provision-clusters/hdinsight-vnet-site-to-site.png) | Point-to-site configuration allows you to connect a specific resource to the Azure virtual network by using a software VPN.<br />![diagram of point-to-site configuration](./media/hdinsight-provision-clusters/hdinsight-vnet-point-to-site.png) |
 
 For more information on Virtual Network features, benefits, and capabilities, see the [Azure Virtual Network overview](http://msdn.microsoft.com/zh-cn/library/azure/jj156007.aspx).
 
@@ -214,7 +210,7 @@ Using the Metastore configuration option allows you to specify an external metas
 
 ###<a id="scriptaction"></a>Script action
 
-You can install additional components or customize cluster configuration by using scripts during cluster provisioning. Such scripts are invoked via **Script Action**. For more information, see [Customize HDInsight cluster using Script Action](hdinsight-hadoop-customize-cluster-linux).
+You can install additional components or customize cluster configuration by using scripts during cluster provisioning. Such scripts are invoked via **Script Action**. For more information, see [Customize HDInsight cluster using Script Action](hdinsight-hadoop-customize-cluster).
 
 > [AZURE.IMPORTANT] Adding additional components after a cluster has been created is not supported, as these components will not be available after a cluster node is reimaged. Components installed through script actions are reinstalled as part of the reimaging process.
 
@@ -248,7 +244,6 @@ In this article, you have learned basic information about creating a Linux-based
 [hdinsight-customize-cluster]: hdinsight-hadoop-customize-cluster
 [hdinsight-get-started]: hdinsight-get-started
 [hdinsight-admin-powershell]: hdinsight-administer-use-powershell
-
 [hdinsight-submit-jobs]: hdinsight-submit-hadoop-jobs-programmatically
 [hdinsight-powershell-reference]: https://msdn.microsoft.com/zh-cn/library/dn858087.aspx
 
@@ -256,7 +251,6 @@ In this article, you have learned basic information about creating a Linux-based
 
 [azure-command-line-tools]: xplat-cli
 [azure-create-storageaccount]: storage-create-storage-account
-
 [azure-purchase-options]: /pricing/overview/
 [azure-member-offers]: http://azure.microsoft.com/pricing/member-offers/
 [azure-trial]: /pricing/1rmb-trial/
@@ -264,7 +258,6 @@ In this article, you have learned basic information about creating a Linux-based
 
 
 [Powershell-install-configure]: install-configure-powershell
-
 [image-hdi-customcreatecluster]: ./media/hdinsight-get-started/HDI.CustomCreateCluster.png
 [image-hdi-customcreatecluster-clusteruser]: ./media/hdinsight-get-started/HDI.CustomCreateCluster.ClusterUser.png
 [image-hdi-customcreatecluster-storageaccount]: ./media/hdinsight-get-started/HDI.CustomCreateCluster.StorageAccount.png
@@ -273,14 +266,14 @@ In this article, you have learned basic information about creating a Linux-based
 [azure-preview-portal]: https://manage.windowsazure.cn
 
 
-[image-cli-account-download-import]: ./media/hdinsight-hadoop-provision-linux-clusters/HDI.CLIAccountDownloadImport.png
-[image-cli-clustercreation]: ./media/hdinsight-hadoop-provision-linux-clusters/HDI.CLIClusterCreation.png
-[image-cli-clustercreation-config]: ./media/hdinsight-hadoop-provision-linux-clusters/HDI.CLIClusterCreationConfig.png
-[image-cli-clusterlisting]: ./media/hdinsight-hadoop-provision-linux-clusters/HDI.CLIListClusters.png "List and show clusters"
+[image-cli-account-download-import]: ./media/hdinsight-provision-clusters/HDI.CLIAccountDownloadImport.png
+[image-cli-clustercreation]: ./media/hdinsight-provision-clusters/HDI.CLIClusterCreation.png
+[image-cli-clustercreation-config]: ./media/hdinsight-provision-clusters/HDI.CLIClusterCreationConfig.png
+[image-cli-clusterlisting]: ./media/hdinsight-provision-clusters/HDI.CLIListClusters.png "List and show clusters"
 
-[image-hdi-ps-provision]: ./media/hdinsight-hadoop-provision-linux-clusters/HDI.ps.provision.png
-[image-hdi-ps-config-provision]: ./media/hdinsight-hadoop-provision-linux-clusters/HDI.ps.config.provision.png
+[image-hdi-ps-provision]: ./media/hdinsight-provision-clusters/HDI.ps.provision.png
+[image-hdi-ps-config-provision]: ./media/hdinsight-provision-clusters/HDI.ps.config.provision.png
 
-[img-hdi-cluster]: ./media/hdinsight-hadoop-provision-linux-clusters/HDI.Cluster.png
+[img-hdi-cluster]: ./media/hdinsight-provision-clusters/HDI.Cluster.png
 
-  [89e2276a]: hdinsight-use-sqoop "Use Sqoop with HDInsight"
+  [89e2276a]: /documentation/articles/hdinsight-use-sqoop/ "Use Sqoop with HDInsight"

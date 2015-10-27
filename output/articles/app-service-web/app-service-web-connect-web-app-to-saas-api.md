@@ -9,12 +9,8 @@
 
 <tags
 	ms.service="app-service-web"
-	ms.devlang="dotnet"
-	ms.topic="article"
-	ms.tgt_pltfrm="na"
-	ms.workload="na" 
 	ms.date="09/15/2015"
-	ms.author="cfowler"/>
+	wacn.date=""/>
 
 # Connect a web app to an API app in Azure Websites
 

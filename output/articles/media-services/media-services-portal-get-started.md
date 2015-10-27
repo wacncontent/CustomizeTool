@@ -9,12 +9,8 @@
 
 <tags
 	ms.service="media-services"
-	ms.workload="media"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="get-started-article"
 	ms.date="10/05/2015"
-	ms.author="juliako"/>
+	wacn.date=""/>
 
 
 # Get started with delivering content on demand using the Azure Management Portal
@@ -129,7 +125,7 @@ Media Services provides dynamic packaging which allows you to deliver your adapt
 To take advantage of dynamic packaging, you need to do the following:
 
 - Encode your mezzanine (source) file into a set of adaptive bitrate MP4 files or adaptive bitrate Smooth Streaming files (the encoding steps are demonstrated later in this tutorial).
-- Get at least one On-Demand streaming unit for the streaming endpoint from which you plan to delivery your content. For more information, see [How to scale On-Demand Streaming reserved units](media-services-manage-origins.md#scale_streaming_endpoints/).
+- Get at least one On-Demand streaming unit for the streaming endpoint from which you plan to delivery your content. For more information, see [How to scale On-Demand Streaming reserved units](media-services-manage-origins#scale_streaming_endpoints).
 
 With dynamic packaging you only need to store and pay for the files in single storage format and Media Services will build and serve the appropriate response based on requests from a client.
 
@@ -223,6 +219,7 @@ Some considerations apply:
 ![AMSPlayer][AMSPlayer]
 
 
+<!-- deleted by customization
 
 ##Next Steps
 
@@ -240,6 +237,7 @@ If this topic didn't contain what you were expecting, is missing something, or i
 ### Additional resources
 - <a href="http://channel9.msdn.com/Shows/Azure-Friday/Azure-Media-Services-101-Get-your-video-online-now-">Azure Media Services 101 - Get your video online now!</a>
 - <a href="http://channel9.msdn.com/Shows/Azure-Friday/Azure-Media-Services-102-Dynamic-Packaging-and-Mobile-Devices">Azure Media Services 102 - Dynamic Packaging and Mobile Devices</a>
+-->
 
 
 <!-- Anchors. -->

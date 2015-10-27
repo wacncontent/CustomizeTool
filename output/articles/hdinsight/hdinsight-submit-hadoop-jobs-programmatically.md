@@ -10,22 +10,20 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.workload="big-data"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="10/02/2015"
-	ms.author="jgao"/>
+	wacn.date=""/>
 
 # Submit Hadoop jobs in HDInsight
 
 Learn how to use Azure PowerShell to submit MapReduce and Hive jobs, and how to use the HDInsight .NET SDK to submit MapReduce, Hadoop streaming, and Hive jobs.
+<!-- deleted by customization
 
 > [AZURE.NOTE] The steps in this article must be performed from a Windows client. For information on using a Linux, OS X, or Unix client to work with MapReduce, Hive, or Pig on HDInsight, see the following articles and select either the **SSH** or **Curl** links within each:
 >
 > - [Use Hive with HDInsight](hdinsight-use-hive)
 > - [Use Pig with HDInsight](hdinsight-use-pig)
 > - [Use MapReduce with HDInsight](hdinsight-use-mapreduce)
+-->
 
 ##Prerequisites
 
@@ -377,8 +375,10 @@ HDInsight clusters come with a word-counting Hadoop stream program, which is dev
 For the details about creating a .NET application for submitting MapReduce jobs, see [Submit MapReduce jobs using HDInsight .NET SDK](#mapreduce-sdk).
 
 For more information about developing and deploying Hadoop streaming jobs, see [Develop C# Hadoop streaming programs for HDInsight][hdinsight-develop-streaming-jobs].
+<!-- deleted by customization
 
 The following procedure only works on HDInsight clusters on Windows. C# streaming is not supported on Linux clusters yet. However you can use .NET program to submit stream job written in other programming languages that are supported by Linux clusters. For example Python.  For an Python streaming example, see [Develop Python streaming programs for HDInsight](hdinsight-hadoop-streaming-python).
+-->
 
 **To Submit the wordcount MapReduce job**
 
@@ -563,7 +563,7 @@ In this article, you have learned several ways to create an HDInsight cluster. T
 * [Use Pig with HDInsight][hdinsight-use-pig]
 
 
-[azure-certificate]: http://msdn.microsoft.com/zh-cn/zh-cn/library/azure/gg551722.aspx
+[azure-certificate]: http://msdn.microsoft.com/zh-cn/library/azure/gg551722.aspx
 [azure-management-portal]: https://manage.windowsazure.cn/
 
 [hdinsight-visual-studio-tools]: hdinsight-hadoop-visual-studio-tools-get-started
@@ -576,11 +576,9 @@ In this article, you have learned several ways to create an HDInsight cluster. T
 [hdinsight-storage]: hdinsight-use-blob-storage
 [hdinsight-admin-powershell]: hdinsight-administer-use-powershell
 [hdinsight-develop-streaming-jobs]: hdinsight-hadoop-develop-deploy-streaming-jobs
-
 [hdinsight-powershell-reference]: https://msdn.microsoft.com/zh-cn/library/dn858087.aspx
 
 [powershell-install-configure]: install-configure-powershell
-
 [image-hdi-gettingstarted-runmrjob]: ./media/hdinsight-submit-hadoop-jobs-programmatically/HDI.GettingStarted.RunMRJob.png
 [image-hdi-gettingstarted-mrjoboutput]: ./media/hdinsight-submit-hadoop-jobs-programmatically/HDI.GettingStarted.MRJobOutput.png
 

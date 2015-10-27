@@ -9,12 +9,8 @@
 
 <tags
 	ms.service="app-service"
-	ms.workload="na"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="08/14/2015"
-	ms.author="tdykstra"/>
+	wacn.date=""/>
 
 #Deploy a web app in Azure Websites
 
@@ -80,6 +76,7 @@ For information about how to deploy using Mercurial, see the following resources
 
 * [Publishing from Source Control to Web Apps with Git](web-sites-publish-source-control). Although this tutorial shows how to publish a Git repository, the process for Mercurial repositories hosted in CodePlex or BitBucket is similar.
 * [Azure Forum for Git, Mercurial, and Dropbox](http://social.msdn.microsoft.com/Forums/zh-cn/home?forum=windowsazurezhchshome?forum=azuregit).
+<!-- deleted by customization
 
 ##<a name="dropbox"></a>Dropbox
 
@@ -88,6 +85,7 @@ For information about how to deploy using Mercurial, see the following resources
 * [Deploy To Web Apps from Dropbox](http://blogs.msdn.com/b/windowsazure/archive/2013/03/19/new-deploy-to-windows-azure-web-sites-from-dropbox.aspx). How to use the [Azure Management Portal](https://manage.windowsazure.cn/) to set up Dropbox deployment.
 * [Dropbox Deployment to Web Apps](http://channel9.msdn.com/Series/Windows-Azure-Web-Sites-Tutorials/Dropbox-Deployment-to-Windows-Azure-Web-Sites). This video walks through the process of connecting a Dropbox folder to a web app and shows how quickly you can get a web app up and running or maintain it using simple drag-and-drop deployment.
 * [Azure Forum for Git, Mercurial, and Dropbox](http://social.msdn.microsoft.com/Forums/zh-cn/home?forum=windowsazurezhchshome?forum=azuregit).
+-->
 
 ##<a name="vs"></a>Visual Studio
 
@@ -155,10 +153,12 @@ For more information, see the following resource:
 You can perform MSBuild or FTP deployment functions from [Windows PowerShell](http://msdn.microsoft.com/zh-cn/library/dd835506.aspx). If you do that, you can also use a collection of Windows PowerShell cmdlets that make the Azure REST management API easy to call.
 
 For more information, see the following resources:
+<!-- deleted by customization
 
 * [Deploy a web app linked to a GitHub repository](app-service-web-arm-from-github-provision)
 * [Provision a web app with a SQL Database](app-service-web-arm-with-sql-database-provision)
 * [Provision and deploy microservices predictably in Azure](app-service-deploy-complex-application-predictably)
+-->
 * [Building Real-World Cloud Apps with Azure - Automate Everything](http://asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/automate-everything). E-book chapter that explains how the sample application shown in the e-book uses Windows PowerShell scripts to create an Azure test environment and deploy to it. See the [Resources](http://asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/automate-everything#resources) section for links to additional Azure PowerShell documentation.
 * [Using Windows PowerShell Scripts to Publish to Dev and Test Environments](http://msdn.microsoft.com/zh-cn/library/dn642480.aspx). How to use Windows PowerShell deployment scripts that Visual Studio generates.
 
@@ -199,8 +199,10 @@ Having a backup and restore plan in place is an important part of any deployment
 For information about how to use Azure's Role-Based Access Control to manage access to Web Apps deployment, see [RBAC and Web App Publishing](http://azure.microsoft.com/blog/2015/01/05/rbac-and-azure-websites-publishing).
 
 For information about other deployment topics, see the Deploy section in [Web Apps Documentation](/documentation/services/web-sites/).
+<!-- deleted by customization
 
 ## What's changed
 * For a guide to the change from Websites to Azure Websites see: [Azure Websites and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
 * For a guide to the change of the Management Portal to the new portal see: [Reference for navigating the preview portal](https://manage.windowsazure.cn/)
+-->
  

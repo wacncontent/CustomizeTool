@@ -7,27 +7,23 @@
 	manager="dwrede" 
 	editor=""/>
 
-<tags 
-	ms.service="media-services" 
-	ms.workload="media" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
+<tags
+	ms.service="media-services"
 	ms.date="09/07/2015"
-	ms.author="juliako"/>
+	wacn.date=""/>
 
 
 #Playing your content with existing players
 
 Azure Media Services supports many popular streaming formats, such as Smooth Streaming, HTTP Live Streaming, and MPEG-Dash. This topic points you to existing players that you can use to test your streams.  
 
->[AZURE.NOTE]To play dynamically packaged or dynamically encrypted content, make sure to get at least one streaming unit for the streaming endpoint from which you plan to deliver your content. For information about scaling streaming units, see: [How to scale streaming units](media-services-manage-origins.md#scale_streaming_endpoints).
+>[AZURE.NOTE]To play dynamically packaged or dynamically encrypted content, make sure to get at least one streaming unit for the streaming endpoint from which you plan to deliver your content. For information about scaling streaming units, see: [How to scale streaming units](media-services-manage-origins#scale_streaming_endpoints).
 
 ###Azure Management Portal Media Services content Player
 
 The **Azure Management Portal** provides a content player that you can use to test your video.
 
-Click on the desired video (make sure it was [published](media-services-manage-content.md#publish)) and click the **Play** button at the bottom of the portal. 
+Click on the desired video (make sure it was [published](media-services-manage-content#publish)) and click the **Play** button at the bottom of the portal. 
  
 Some considerations apply:
 
@@ -77,8 +73,9 @@ To test HLS URLs you can also use:
 
 ##Developing video players
 
-For information about how to develop your own players, see [Developing video players](media-services-develop-video-players.md)
+For information about how to develop your own players, see [Developing video players](media-services-develop-video-players)
 
+<!-- deleted by customization
 
 ##Media Services learning paths
 
@@ -86,5 +83,6 @@ You can view AMS learning paths here:
 
 - [AMS Live Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/)
 - [AMS on Demand Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/)
+-->
  
 [AMSPlayer]: ./media/media-services-playback-content-with-existing-players/media-services-portal-player.png 

@@ -1,19 +1,15 @@
 <properties 
 	pageTitle="Starting and stopping virtual machines with Azure Automation - PowerShell Workflow | Windows Azure"
-	description="Graphical version of Azure Automation solution including runbooks to start and stop classic virtual machines."
+   description="<!-- deleted by customization Graphical --><!-- keep by customization: begin -->PowerShell<!-- keep by customization: end --> version of Azure Automation solution including runbooks to start and stop classic virtual machines."
 	services="automation"
 	documentationCenter=""
 	authors="bwren"
 	manager="stevenka"
 	editor="tysonn" />
-<tags 
+<tags
 	ms.service="automation"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.tgt_pltfrm="na"
-	ms.workload="infrastructure-services"
 	ms.date="09/25/2015"
-	ms.author="bwren" />
+	wacn.date=""/>
 
 # Azure Automation solution - starting and stopping virtual machines
 
@@ -25,14 +21,14 @@ This Azure Automation solution includes runbooks to start and stop classic virtu
 - Use the runbooks as tutorials to learn runbook authoring concepts. 
 
 > [AZURE.SELECTOR]
-- [Graphical](automation-solution-startstopvm-graphical)
+<!-- deleted by customization - [Graphical](/documentation/articles/automation-solution-startstopvm-graphical) -->
 - [PowerShell Workflow](automation-solution-startstopvm-psworkflow)
 
-This is the PowerShell Workflow runbook version of this solution. It is also available using [graphical runbooks](automation-solutions-startstopvm-graphical).
+This is the PowerShell Workflow runbook version of this solution.<!-- deleted by customization It is also available using [graphical runbooks](/documentation/articles/automation-solutions-startstopvm-graphical). -->
 
 ## Getting the solution
 
-This solution consists of two PowerShell Workflow runbooks that you can download from the following links.  See the [graphical version](automation-solutions-startstopvm-graphical) of this solution for links to the graphical runbooks.
+This solution consists of two PowerShell Workflow runbooks that you can download from the following links. <!-- deleted by customization  See the [graphical version](/documentation/articles/automation-solutions-startstopvm-graphical) of this solution for links to the graphical runbooks. -->
 
 | Runbook | Link | Type | Description |
 |:---|:---|:---|:---|

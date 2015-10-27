@@ -7,14 +7,10 @@
 	manager="wpickett" 
 	editor="jimbe"/>
 
-<tags 
-	ms.service="app-service" 
-	ms.workload="na" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="dotnet" 
-	ms.topic="article" 
-	ms.date="09/16/2015" 
-	ms.author="cephalin;riande"/>
+<tags
+	ms.service="app-service"
+	ms.date="09/16/2015"
+	wacn.date=""/>
 
 
 # Deploy an ASP.NET MVC 5 mobile web app in Azure Websites
@@ -73,6 +69,18 @@ this topic:
 -   [Starter project download][StarterProject]
 -   [Completed project download][CompletedProject]
 
+<!-- keep by customization: begin -->
+<h2>Steps in this tutorial</h2>
+
+- [Deploy the starter project to a Windows Azure Website][]
+- [Bootstrap CSS Framework][]
+- [Override the Views, Layouts, and Partial Views][]
+- [Improve the Speakers List][]
+- [Improve the Tags List][]
+- [Improve the Dates List][]
+- [Improve the SessionsTable View][]
+- [Improve the SessionByCode View][]
+<!-- keep by customization: end -->
 ##<a name="bkmk_DeployStarterProject"></a>Deploy the starter project to an Azure web app
 
 1.	Download the conference-listing application [starter project][StarterProject].
@@ -711,10 +719,12 @@ mobile-friendly Web applications. These include:
 -   [The Bootstrap Playground][]
 -   [W3C Recommendation Mobile Web Application Best Practices][]
 -   [W3C Candidate Recommendation for media queries][]
+<!-- deleted by customization
 
 ## What's changed
 * For a guide to the change from Websites to Azure Websites see: [Azure Websites and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
 * For a guide to the change of the Management Portal to the new portal see: [Reference for navigating the preview portal](https://manage.windowsazure.cn/)
+-->
 
 <!-- Internal Links -->
 [Deploy the starter project to an Azure web app]: #bkmk_DeployStarterProject

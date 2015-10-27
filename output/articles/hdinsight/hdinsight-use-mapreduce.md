@@ -9,13 +9,9 @@
 	tags="azure-portal"/>
 
 <tags
-   ms.service="hdinsight"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="big-data"
-   ms.date="09/23/2015"
-   ms.author="larryfr"/>
+	ms.service="hdinsight"
+	ms.date="09/23/2015"
+	wacn.date=""/>
 
 # Use MapReduce in Hadoop on HDInsight
 
@@ -55,8 +51,10 @@ For more information, see [Hadoop Streaming](http://hadoop.apache.org/docs/r1.2.
 For examples of using Hadoop streaming with HDInsight, see the following:
 
 * [Develop C# Hadoop streaming programs](hdinsight-hadoop-develop-deploy-streaming-jobs)
+<!-- deleted by customization
 
 * [Develop Python MapReduce jobs](hdinsight-hadoop-streaming-python)
+-->
 
 ##<a id="data"></a>About the sample data
 
@@ -156,9 +154,11 @@ HDInsight can run HiveQL jobs by using a variety of methods. Use the following t
 
 | **Use this**...                                                    | **...to do this**                                       | ...with this **cluster operating system** | ...from this **client operating system** |
 |:-------------------------------------------------------------------|:--------------------------------------------------------|:------------------------------------------|:-----------------------------------------|
+<!-- deleted by customization
 | [SSH](hdinsight-hadoop-use-mapreduce-ssh)                       | Use the Hadoop command through **SSH**                  | Linux                                     | Linux, Unix, Mac OS X, or Windows        |
-| [Curl](hdinsight-hadoop-use-mapreduce-curl)                     | Submit the job remotely by using **REST**               | Linux or Windows                          | Linux, Unix, Mac OS X, or Windows        |
-| [Windows PowerShell](hdinsight-hadoop-use-mapreduce-powershell) | Submit the job remotely by using **Windows PowerShell** | Linux or Windows                          | Windows                                  |
+-->
+| [Curl](/documentation/articles/hdinsight-hadoop-use-mapreduce-curl)                     | Submit the job remotely by using **REST**               | <!-- deleted by customization Linux or -->Windows                          | <!-- deleted by customization Linux, Unix, Mac OS X, or -->Windows        |
+| [Windows PowerShell](/documentation/articles/hdinsight-hadoop-use-mapreduce-powershell) | Submit the job remotely by using **Windows PowerShell** | <!-- deleted by customization Linux or -->Windows                          | Windows                                  |
 | [Remote Desktop](hdinsight-hadoop-use-mapreduce-remote-desktop)    | Use the Hadoop command through **Remote Desktop**       | Windows                                   | Windows                                  |
 
 ##<a id="nextsteps"></a>Next steps
@@ -166,12 +166,14 @@ HDInsight can run HiveQL jobs by using a variety of methods. Use the following t
 Although MapReduce provides powerful diagnostic abilities, it can be a bit challenging to master. There are several Java-based frameworks that make it easier to define MapReduce applications, as well as technologies such as Pig and Hive, which provide an easier way to work with data in HDInsight. To learn more, see the following articles:
 
 * [Develop Java MapReduce programs for HDInsight](hdinsight-develop-deploy-java-mapreduce)
+<!-- deleted by customization
 
 * [Develop Python streaming MapReduce programs for HDInsight](hdinsight-hadoop-streaming-python)
 
 * [Develop C# Hadoop streaming MapReduce programs for HDInsight][hdinsight-develop-streaming]
 
 * [Develop Scalding MapReduce jobs with Apache Hadoop on HDInsight](hdinsight-hadoop-mapreduce-scalding)
+-->
 
 * [Use Hive with HDInsight][hdinsight-use-hive]
 
@@ -188,7 +190,5 @@ Although MapReduce provides powerful diagnostic abilities, it can be a bit chall
 [hdinsight-use-pig]: hdinsight-use-pig
 [hdinsight-samples]: hdinsight-run-samples
 [hdinsight-provision]: hdinsight-provision-clusters
-
 [powershell-install-configure]: powershell-install-configure
-
 [image-hdi-wordcountdiagram]: ./media/hdinsight-use-mapreduce/HDI.WordCountDiagram.gif

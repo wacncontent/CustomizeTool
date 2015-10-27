@@ -10,18 +10,16 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.workload="big-data"
-	ms.tgt_pltfrm="na"
-	ms.devlang="dotnet"
-	ms.topic="article"
 	ms.date="07/09/2015"
-	ms.author="jgao"/>
+	wacn.date=""/>
 
 # The C# streaming word count MapReduce sample in Hadoop on HDInsight
 
 Hadoop provides a streaming API to MapReduce, which enables you to write map and reduce functions in languages other than Java. This tutorial shows how to write MapReduce programs in C# by using the Hadoop Streaming interface and how to run the programs in Azure HDInsight by using Azure PowerShell cmdlets.
+<!-- deleted by customization
 
 > [AZURE.NOTE] The steps in this tutorial apply only to Windows-based HDInsight clusters. For an example of streaming for Linux-based HDInsight clusters, see [Develop Python streaming programs for HDInsight](hdinsight-hadoop-streaming-python).
+-->
 
 In the example, the mapper and the reducer are executables that read the input from [stdin][stdin-stdout-stderr](line-by-line) and emit the output to [stdout][stdin-stdout-stderr]. The program counts all of the words in the text.
 
@@ -193,14 +191,11 @@ For tutorials that run other samples and provide instructions for running Pig, H
 [stdin-stdout-stderr]: http://msdn.microsoft.com/zh-cn/library/3x292kth(v=vs.110).aspx
 
 [powershell-install-configure]: install-configure-powershell
-
 [hdinsight-get-started]: hdinsight-get-started
-
 [hdinsight-samples]: hdinsight-run-samples
 [hdinsight-sample-10gb-graysort]: hdinsight-sample-10gb-graysort
 [hdinsight-sample-csharp-streaming]: hdinsight-sample-csharp-streaming
 [hdinsight-sample-pi-estimator]: hdinsight-sample-pi-estimator
 [hdinsight-sample-wordcount]: hdinsight-sample-wordcount
-
 [hdinsight-use-hive]: hdinsight-use-hive
 [hdinsight-use-pig]: hdinsight-use-pig

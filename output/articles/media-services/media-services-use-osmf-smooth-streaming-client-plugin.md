@@ -7,14 +7,10 @@
 	manager="dwrede" 
 	editor=""/>
 
-<tags 
-	ms.service="media-services" 
-	ms.workload="media" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="09/28/2015" 
-	ms.author="juliako"/>
+<tags
+	ms.service="media-services"
+	ms.date="09/28/2015"
+	wacn.date=""/>
 
 
 
@@ -398,6 +394,7 @@ The Smooth Streaming for OSMF dynamic plugin is compatible with [Strobe Media Pl
 
 For more information on general OSMF development, please see the official [OSMF development page](http://osmf.org/resources.html).
 
+<!-- deleted by customization
 
 ##Media Services learning paths
 
@@ -405,6 +402,7 @@ You can view AMS learning paths here:
 
 - [AMS Live Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/)
 - [AMS on Demand Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/)
+-->
 
 
 ##See Also

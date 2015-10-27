@@ -7,14 +7,10 @@
 	manager="dwrede" 
 	editor=""/>
 
-<tags 
-	ms.service="cache" 
-	ms.workload="tbd" 
-	ms.tgt_pltfrm="cache-redis" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="10/01/2015" 
-	ms.author="sdanie"/>
+<tags
+	ms.service="cache"
+	ms.date="10/01/2015"
+	wacn.date=""/>
 
 # How to configure Virtual Network Support for a Premium Azure Redis Cache
 Azure Redis Cache has different cache offerings which provide flexibility in the choice of cache size and features, including the new Premium tier, currently in preview.
@@ -26,7 +22,7 @@ For information on other premium cache features, see [How to configure persisten
 >[AZURE.NOTE] The Azure Redis Cache Premium tier is currently in preview.
 
 ## Why VNET?
-[Azure Virtual Network (VNET)](https://azure.microsoft.com/en-us/services/networking/) deployment provides enhanced security and isolation for your Azure Redis Cache, as well as subnets, access control policies, and other features to further restrict access to Azure Redis Cache.
+[Azure Virtual Network (VNET)](https://azure.microsoft.com/services/networking/) deployment provides enhanced security and isolation for your Azure Redis Cache, as well as subnets, access control policies, and other features to further restrict access to Azure Redis Cache.
 
 ## Virtual network support
 Virtual Network (VNET) support is configured on the **New Redis Cache** blade during cache creation. To create a cache, sign-in to the [Azure preview portal](https://manage.windowsazure.cn) and click **New**->**DATA SERVICE**>**Redis Cache**.

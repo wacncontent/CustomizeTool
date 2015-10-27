@@ -1,13 +1,9 @@
 <properties services="virtual-machines" title="Setting up PowerShell" authors="JoeDavies-MSFT" solutions="" manager="timlt" editor="tysonn" />
 
 <tags
-   ms.service="virtual-machines"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm=""
-   ms.workload="infrastructure"
-   ms.date="05/12/2015"
-   ms.author="josephd" />
+	ms.service="virtual-machines"
+	ms.date="05/12/2015"
+	wacn.date=""/>
 
 ## Setting up PowerShell
 

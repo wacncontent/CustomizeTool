@@ -1,6 +1,6 @@
 
 This section shows how to send notifications from a .NET console app and any other.
-If you are using Mobile Services please refer to the [Get Started with Push](mobile-services-dotnet-backend-windows-store-dotnet-get-started-push) tutorials. If you want to use Java or PHP refer to [How to use Notification Hubs from Java/PHP](notification-hubs-java-backend-how-to). You can send notifications from any backend using the [Notification Hub REST interface](http://msdn.microsoft.com/zh-cn/zh-cn/library/azure/dn223264.aspx).
+If you are using Mobile Services please refer to the [Get Started with Push](mobile-services-dotnet-backend-windows-store-dotnet-get-started-push) tutorials. If you want to use Java or PHP refer to [How to use Notification Hubs from Java/PHP](notification-hubs-java-backend-how-to). You can send notifications from any backend using the [Notification Hub REST interface](http://msdn.microsoft.com/zh-cn/library/azure/dn223264.aspx).
 
 The following code sends notifications to Windows Store, Windows Phone, iOS, and Android devices. 
 
@@ -99,4 +99,4 @@ Skip steps 1-3 if you created a console app when you completed [Get started with
 [wns object]: http://go.microsoft.com/fwlink/p/?LinkId=260591
 [Notification Hubs Guidance]: http://msdn.microsoft.com/zh-cn/library/jj927170.aspx
 [Notification Hubs How-To for Windows Store]: http://msdn.microsoft.com/zh-cn/library/jj927172.aspx
-[Notification Hubs REST interface]: http://msdn.microsoft.com/zh-cn/zh-cn/library/azure/dn223264.aspx
+[Notification Hubs REST interface]: http://msdn.microsoft.com/zh-cn/library/azure/dn223264.aspx

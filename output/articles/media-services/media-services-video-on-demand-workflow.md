@@ -7,14 +7,10 @@
 	manager="dwrede" 
 	editor=""/>
 
-<tags 
-	ms.service="media-services" 
-	ms.workload="media" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="09/07/2015"   
-	ms.author="juliako"/>
+<tags
+	ms.service="media-services"
+	ms.date="09/07/2015"
+	wacn.date=""/>
 
 
 #Delivering Media on-Demand with Azure Media Services
@@ -88,16 +84,18 @@ This article contains links to topics that show how to set up your development e
 
 ##Concepts
 
-For concepts related to delivering your content on demand, see [Media Services Concepts](media-services-concepts.md).
+For concepts related to delivering your content on demand, see [Media Services Concepts](media-services-concepts).
 players.md).
 
 
+<!-- deleted by customization
 ##Next steps: AMS learning paths
 
 You can view AMS learning paths here:
 
 - [AMS Live Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/)
 - [AMS on Demand Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/)
+-->
 
 [vod-overview]: ./media/media-services-video-on-demand-workflow/media-services-video-on-demand.png
  

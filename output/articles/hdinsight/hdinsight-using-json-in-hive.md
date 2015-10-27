@@ -8,13 +8,9 @@
    editor="cgronlun"/>
 
 <tags
-   ms.service="hdinsight"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="big-data"
-   ms.date="06/22/2015"
-   ms.author="rashimg"/>
+	ms.service="hdinsight"
+	ms.date="06/22/2015"
+	wacn.date=""/>
 
 
 # Process and analyze JSON documents using Hive in HDInsight
@@ -247,11 +243,12 @@ For other related articles, see
 
 - [Use Hive and HiveQL with Hadoop in HDInsight to analyze a sample Apache log4j file](hdinsight-use-hive)
 - [Analyze flight delay data by using Hive in HDInsight](hdinsight-analyze-flight-delay-data)
+<!-- deleted by customization
 - [Analyze Twitter data using Hive in HDInsight](hdinsight-analyze-twitter-data)
 - [Run a Hadoop job using DocumentDB and HDInsight](documentdb-run-hadoop-with-hdinsight)
+-->
 
 [hdinsight-python]: hdinsight-python
-
 [image-hdi-hivejson-flatten]: ./media/hdinsight-using-json-in-hive/flatten.png
 [image-hdi-hivejson-getjsonobject]: ./media/hdinsight-using-json-in-hive/getjsonobject.png
 [image-hdi-hivejson-jsontuple]: ./media/hdinsight-using-json-in-hive/jsontuple.png

@@ -8,14 +8,10 @@
 	editor="cgronlun"
 	tags="azure-portal"/>
 
-<tags 
-	ms.service="hdinsight" 
-	ms.workload="big-data" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="08/07/2015" 
-	ms.author="nitinme"/>
+<tags
+	ms.service="hdinsight"
+	ms.date="08/07/2015"
+	wacn.date=""/>
 
 # Use Hive with HDInsight to analyze logs from websites
 
@@ -38,11 +34,16 @@ In this sample, you will use an HDInsight cluster to analyze website log files t
 
 
 ##To run the sample
+<!-- deleted by customization
 
 1. From the [Azure Preview Portal](https://ms.portal.azure.com/), from the Startboard (if you pinned the cluster there), click the cluster tile on which you want to run the sample.
 
 2. From the cluster blade, under **Quick Links**, click **Cluster Dashboard**, and then from the **Cluster Dashboard** blade, click **HDInsight Cluster Dashboard**. Alternatively, you can directly open the dashboard by using the following URL:
 
+-->
+<!-- keep by customization: begin -->
+1. From the Azure Portal, click the cluster on which you want to run the sample, and then click **Query Console** at the bottom. Alternatively, you can directly open the Query Console by using the following URL:
+<!-- keep by customization: end -->
 	 	https://<clustername>.azurehdinsight.cn
 	
 	When prompted, authenticate by using the administrator user name and password you used when provisioning the cluster.
@@ -57,6 +58,5 @@ Try the following sample: [Analyzing sensor data using Hive with HDInsight](hdin
 
 [hdinsight-provision]: hdinsight-provision-clusters
 [hdinsight-sensor-data-sample]: hdinsight-use-hive-sensor-data-analysis
-
 [img-hdi-weblogs-sample]: ./media/hdinsight-hive-analyze-website-log/hdinsight-weblogs-sample.png
  

@@ -7,14 +7,10 @@
 	manager="dwrede" 
 	editor=""/>
 
-<tags 
-	ms.service="media-services" 
-	ms.workload="media" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="ne" 
-	ms.topic="article" 
-	ms.date="10/15/2015"  
-	ms.author="juliako"/>
+<tags
+	ms.service="media-services"
+	ms.date="10/15/2015"
+	wacn.date=""/>
 
 #Working with Channels that Receive Multi-bitrate Live Stream from On-premises Encoders
 
@@ -31,10 +27,10 @@ The following diagram represents a live streaming workflow that uses an on-premi
 
 This topic covers the following:
 
-- [Common live streaming scenario](media-services-manage-channels-overview.md#scenario)
-- [Description of a Channel and its related components](media-services-manage-channels-overview.md#channel)
-- [Considerations](media-services-manage-channels-overview.md#considerations)
-- [Tasks related to Live Streaming](media-services-manage-channels-overview.md#tasks)
+- [Common live streaming scenario](media-services-manage-channels-overview#scenario)
+- [Description of a Channel and its related components](media-services-manage-channels-overview#channel)
+- [Considerations](media-services-manage-channels-overview#considerations)
+- [Tasks related to Live Streaming](media-services-manage-channels-overview#tasks)
 
 ##<a id="scenario"></a>Common live streaming scenario
 The following steps describe tasks involved in creating common live streaming applications.
@@ -64,7 +60,7 @@ The following steps describe tasks involved in creating common live streaming ap
 1. Stop the program whenever you want to stop streaming and archiving the event.
 1. Delete the Program (and optionally delete the asset).     
 
-The [live streaming tasks](media-services-manage-channels-overview.md#tasks) section links to topics that demonstrate how to achieve tasks described above.
+The [live streaming tasks](media-services-manage-channels-overview#tasks) section links to topics that demonstrate how to achieve tasks described above.
 
 ##<a id="channel"></a>Description of a Channel and its related components
 
@@ -234,9 +230,9 @@ Other considerations related to working with channels and related components:
 
 - Every time you reconfigure the live encoder, call the **Reset** method on the channel. Before you reset the channel, you have to stop the program. After you reset the channel, restart the program. 
 - A channel can be stopped only when it is in the Running state, and all programs on the channel have been stopped.
-- By default you can only add 5 channels to your Media Services account. For more information, see [Quotas and Limitations](media-services-quotas-and-limitations.md).
+- By default you can only add 5 channels to your Media Services account. For more information, see [Quotas and Limitations](media-services-quotas-and-limitations).
 - You cannot change the input protocol while the Channel or its associated programs are running. If you require different protocols, you should create separate channels for each input protocol. 
-- You are only billed when your Channel is in the **Running** state. For more information, refer to [this](media-services-manage-channels-overview.md#states) section.
+- You are only billed when your Channel is in the **Running** state. For more information, refer to [this](media-services-manage-channels-overview#states) section.
 
 ##How to create channels that receive multi-bitrate live stream from on-premises encoders
 
@@ -246,6 +242,7 @@ Choose **Portal**, **.NET**, **REST API** to see how to create and manage channe
 
 [AZURE.INCLUDE [media-services-selector-manage-channels](../includes/media-services-selector-manage-channels.md)]
 
+<!-- deleted by customization
 
 ##Media Services learning paths
 
@@ -253,15 +250,16 @@ You can view AMS learning paths here:
 
 - [AMS Live Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/)
 - [AMS on Demand Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/)
+-->
 
 
 ##Related topics
 
-[Azure Media Services Fragmented MP4 Live Ingest Specification](media-services-fmp4-live-ingest-overview.md)
+[Azure Media Services Fragmented MP4 Live Ingest Specification](media-services-fmp4-live-ingest-overview)
 
-[Delivering Live Streaming Events with Azure Media Services](media-services-live-streaming-workflow.md)
+[Delivering Live Streaming Events with Azure Media Services](media-services-live-streaming-workflow)
 
-[Media Services Concepts](media-services-concepts.md)
+[Media Services Concepts](media-services-concepts)
 
 [live-overview]: ./media/media-services-manage-channels-overview/media-services-live-streaming-current.png
  

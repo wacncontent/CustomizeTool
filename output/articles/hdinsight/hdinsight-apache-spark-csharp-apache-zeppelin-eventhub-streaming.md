@@ -8,14 +8,10 @@
 	editor="cgronlun"
 	tags="azure-portal"/>
 
-<tags 
-	ms.service="hdinsight" 
-	ms.workload="big-data" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="09/30/2015" 
-	ms.author="nitinme"/>
+<tags
+	ms.service="hdinsight"
+	ms.date="09/30/2015"
+	wacn.date=""/>
 
 
 # Spark Streaming: Process events from Azure Event Hubs with Apache Spark on HDInsight
@@ -23,8 +19,10 @@
 Spark Streaming extends the core Spark API to build scalable, high-throughput, fault-tolerant stream processing applications. Data can be ingested from many sources. In this article we use Event Hubs to ingest data. Event Hubs is a highly scalable ingestion system that can intake millions of events per second. 
 
 In this tutorial, you will learn how to create an Azure Event Hub, how to ingest messages into an Event Hub using a console application in C#, and to retrieve them in parallel using a Zeppelin notebook configured for Apache Spark in HDInsight.
+<!-- deleted by customization
 
 > [AZURE.NOTE] To follow the instructions in this article, you will have to use both versions of the Azure Management Portal. To create an Event Hub you will use the [Azure Management Portal](https://manage.windowsazure.cn). To work with the HDInsight Spark cluster, you will use the [Azure Preview Portal](https://ms.portal.azure.com/).  
+-->
 
 **Prerequisites:**
 
@@ -187,9 +185,8 @@ Instructions on how to perform these steps and a sample streaming application ca
 [hdinsight-versions]: hdinsight-component-versioning
 [hdinsight-upload-data]: hdinsight-upload-data
 [hdinsight-storage]: hdinsight-use-blob-storage
-
 [azure-purchase-options]: /pricing/overview/
 [azure-member-offers]: http://azure.microsoft.com/pricing/member-offers/
 [azure-trial]: /pricing/1rmb-trial/
 [azure-management-portal]: https://manage.windowsazure.cn/
-[azure-create-storageaccount]: storage-create-storage-account 
+[azure-create-storageaccount]: storage-create-storage-account

@@ -9,12 +9,8 @@
 
 <tags
 	ms.service="app-service-web"
-	ms.workload="web"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="10/16/2015"
-	ms.author="cephalin"/>
+	wacn.date=""/>
 
 # Get started with test in production for Web Apps
 

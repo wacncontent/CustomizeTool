@@ -9,12 +9,8 @@
 
 <tags
 	ms.service="app-service"
-	ms.workload="web"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="get-started-article" 
 	ms.date="09/15/2015"
-	ms.author="ccompy"/>
+	wacn.date=""/>
 
 # How to Create a Web App in an Azure Websites Environment #
 

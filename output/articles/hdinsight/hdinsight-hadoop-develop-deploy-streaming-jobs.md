@@ -11,12 +11,8 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.workload="big-data"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="10/15/2015"
-	ms.author="jgao"/>
+	wacn.date=""/>
 
 
 
@@ -25,8 +21,10 @@
 Hadoop provides a streaming API for MapReduce that enables you to write map and reduce functions in languages other than Java. This tutorial walks you through creating a C# word-count program, which counts the occurrences of a given word in the input data you provide. The following illustration shows how the MapReduce framework does a word count:
 
 ![HDI.WordCountDiagram][image-hdi-wordcountdiagram]
+<!-- deleted by customization
 
 > [AZURE.NOTE] The steps in this article apply only to Windows-based Azure HDInsight clusters. For an example of streaming for Linux-based HDInsight, see [Develop Python streaming programs for HDInsight](hdinsight-hadoop-streaming-python).
+-->
 
 This tutorial shows you how to:
 
@@ -34,15 +32,21 @@ This tutorial shows you how to:
 - Run the same MapReduce job on Azure HDInsight
 - Retrieve the results of the MapReduce job
 
+<!-- keep by customization: begin -->
+<a name="prerequisites"></a>
+<!-- keep by customization: end -->
 ##Prerequisites
 
 Before you begin this tutorial, you must have done the following:
 
 - Install the HDInsight Emulator. For instructions, see [Get started using HDInsight Emulator][hdinsight-get-started-emulator].
 - Install Azure PowerShell on the emulator computer. For instructions, see [Install and configure Azure PowerShell][powershell-install].
-- Obtain an Azure subscription. For instructions, see [Purchase Options][azure-purchase-options], [Member Offers][azure-member-offers], or [Trial][azure-trial].
+- Obtain an Azure subscription. For instructions, see [Purchase Options][azure-purchase-options],<!-- deleted by customization [Member Offers][azure-member-offers], or --> [Trial][azure-trial].
 
 
+<!-- keep by customization: begin -->
+<a name="develop"></a>
+<!-- keep by customization: end -->
 ##Develop a word-count Hadoop streaming program in C&#35;
 
 The word-count solution contains two console application projects: mapper and reducer. The mapper application streams each word into the console, and the reducer application counts the number of words that are streamed from a document. Both the mapper and the reducer read characters, line by line, from the standard input stream (stdin) and write to the standard output stream (stdout).
@@ -156,6 +160,9 @@ The mapper and reducer executables are located at:
 - C:\Tutorials\WordCount\WordCountReducer\bin\Debug\WordCountReducer.exe
 
 
+<!-- keep by customization: begin -->
+<a name="test"></a>
+<!-- keep by customization: end -->
 ##Test the program on the emulator
 
 Do the following to test the program on the HDInsight Emulator:
@@ -288,6 +295,9 @@ This tutorial uses the .txt files located in the %hadoop_home% directory.
 
 	You can append "|more" at the end of the command to get the page view.
 
+<!-- keep by customization: begin -->
+<a id="upload"></a>
+<!-- keep by customization: end -->
 ##Upload data to Azure Blob storage
 Azure HDInsight uses Azure Blob storage as the default file system. You can configure an HDInsight cluster to use additional Blob storage for the data files. In this section, you will create an Azure Storage account and upload the data files to the Blob storage. The data files are the .txt files in the %hadoop_home%\share\doc\hadoop\common directory.
 
@@ -377,6 +387,9 @@ Azure HDInsight uses Azure Blob storage as the default file system. You can conf
 	You shall see both application files listed there.
 
 
+<!-- keep by customization: begin -->
+<a name="run"></a>
+<!-- keep by customization: end -->
 ##Run the MapReduce job on Azure HDInsight
 
 This section provides an Azure PowerShell script that performs all the tasks related to running a MapReduce job. The list of tasks includes:
@@ -493,6 +506,9 @@ This section provides an Azure PowerShell script that performs all the tasks rel
 For an HDInsight .NET SDK sample on submitting Hadoop streaming jobs, see [Submit Hadoop jobs programmatically][hdinsight-submit-jobs].
 
 
+<!-- keep by customization: begin -->
+<a name="retrieve"></a>
+<!-- keep by customization: end -->
 ##Retrieve the MapReduce job output
 This section shows you how to download and display the output. For information on displaying the results in Excel, see [Connect Excel to HDInsight with the Microsoft Hive ODBC Driver][hdinsight-ODBC] and [Connect Excel to HDInsight with Power Query][hdinsight-power-query].
 
@@ -517,6 +533,9 @@ This section shows you how to download and display the output. For information o
 
 		Get-AzureStorageBlobContent -Container $ContainerName -Blob $blobName -Context $storageContext -Force
 		cat "./$blobName" | findstr "there"
+<!-- keep by customization: begin -->
+<a id="nextsteps"></a>
+<!-- keep by customization: end -->
 
 
 
@@ -533,24 +552,22 @@ In this tutorial, you have learned how to develop a Hadoop streaming MapReduce j
 - [Use Pig with HDInsight][hdinsight-use-pig]
 
 [azure-purchase-options]: /pricing/overview/
+<!-- deleted by customization
 [azure-member-offers]: http://azure.microsoft.com/pricing/member-offers/
+-->
 [azure-trial]: /pricing/1rmb-trial/
 
 [hdinsight-develop-mapreduce]: hdinsight-develop-deploy-java-mapreduce
 [hdinsight-submit-jobs]: hdinsight-submit-hadoop-jobs-programmatically
-
 [hdinsight-get-started-emulator]: hdinsight-get-started-emulator
 [hdinsight-emulator-wasb]: hdinsight-get-started-emulator#blobstorage
 [hdinsight-upload-data]: hdinsight-upload-data
 [hdinsight-storage]: hdinsight-use-blob-storage
 [hdinsight-admin-powershell]: hdinsight-administer-use-powershell
-
 [hdinsight-use-hive]: hdinsight-use-hive
 [hdinsight-use-pig]: hdinsight-use-pig
 [hdinsight-ODBC]: hdinsight-connect-excel-hive-ODBC-driver
 [hdinsight-power-query]: hdinsight-connect-excel-power-query
-
-[powershell-PSCredential]: http:/social.technet.microsoft.com/wiki/contents/articles/4546.working-with-passwords-secure-strings-and-credentials-in-windows-powershell.aspx
+[powershell-PSCredential]: http://social.technet.microsoft.com/wiki/contents/articles/4546.working-with-passwords-secure-strings-and-credentials-in-windows-powershell.aspx
 [powershell-install]: powershell-install-configure
-
 [image-hdi-wordcountdiagram]: ./media/hdinsight-hadoop-develop-deploy-streaming-jobs/HDI.WordCountDiagram.gif "MapReduce wordcount application flow"

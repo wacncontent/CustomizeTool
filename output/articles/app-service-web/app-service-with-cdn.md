@@ -7,14 +7,10 @@
 	manager="wpickett" 
 	editor="jimbe"/>
 
-<tags 
-	ms.service="cdn" 
-	ms.workload="tbd" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="dotnet" 
-	ms.topic="article" 
-	ms.date="08/18/2015" 
-	ms.author="cephalin"/>
+<tags
+	ms.service="cdn"
+	ms.date="08/18/2015"
+	wacn.date=""/>
 
 # Integrate an Azure web app with Azure CDN #
 

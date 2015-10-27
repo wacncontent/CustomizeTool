@@ -7,14 +7,10 @@
 	manager="wpickett" 
 	editor="jimbe"/>
 
-<tags 
-	ms.service="app-service-web" 
-	ms.workload="web" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="dotnet" 
-	ms.topic="article" 
-	ms.date="09/22/2015" 
-	ms.author="tdykstra"/>
+<tags
+	ms.service="app-service-web"
+	ms.date="09/22/2015"
+	wacn.date=""/>
 
 # How to use Azure table storage with the WebJobs SDK
 
@@ -26,6 +22,17 @@ The guide assumes you know [how to create a WebJob project in Visual Studio with
 		
 Some of the code snippets show the `Table` attribute used in functions that are [called manually](websites-dotnet-webjobs-sdk-storage-queues-how-to#manual), that is, not by using one of the trigger attributes. 
 
+<!-- keep by customization: begin -->
+## Table of contents
+
+-   [How to add entities to a table](#ingress)
+-   [Real-time monitoring](#monitor)
+-   [How to read multiple entities from a table](#multiple)
+-   [How to read a single entity from a table](#readone)
+-   [How to use the .NET Storage API directly to work with a table](#readone)
+-   [Related topics covered by the queues how-to article](#queues)
+-   [Next steps](#nextsteps)
+<!-- keep by customization: end -->
 ## <a id="ingress"></a> How to add entities to a table
 
 To add entities to a table, use the `Table` attribute with an `ICollector<T>` or `IAsyncCollector<T>` parameter where `T` specifies the schema of the entities you want to add. The attribute constructor takes a string parameter that specifies the name of the table. 

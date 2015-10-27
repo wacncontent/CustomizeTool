@@ -8,12 +8,8 @@
 	tags=""/>
 <tags
 	ms.service="hdinsight"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.tgt_pltfrm="na"
-	ms.workload="na"
 	ms.date="09/25/2015"
-	ms.author="paulettm"/>
+	wacn.date=""/>
 # HDInsight Application Partners
 
 ![](./media/hdinsight-application-partners/dataguise1.png)  

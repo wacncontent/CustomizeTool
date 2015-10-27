@@ -7,14 +7,10 @@
 	manager="dwrede" 
 	editor=""/>
 
-<tags 
-	ms.service="media-services" 
-	ms.workload="media" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="09/07/2015" 
-	ms.author="juliako"/>
+<tags
+	ms.service="media-services"
+	ms.date="09/07/2015"
+	wacn.date=""/>
 
 #Azure Media Services Fragmented MP4 Live Ingest Specification
 
@@ -69,7 +65,7 @@ Here are the detailed requirements:
 
 ##Timescale 
 
-[[MS-SSTR]](https://msdn.microsoft.com/zh-cn/library/ff469518.aspx) describes the usage of “Timescale” for SmoothStreamingMedia (Section 2.2.2.1), StreamElement (Section 2.2.2.3), StreamFragmentElement(2.2.2.6) and LiveSMIL (Section 2.2.7.3.1). If timescale value is not present, the default value used is 10,000,000 (10 MHz). Although Smooth Streaming Format Specification doesn’t block usage of other timescale values, most of the encoder implementations uses this default value (10 MHz) to generate Smooth Streaming ingest data. Due to [Azure Media Dynamic Packaging](media-services-dynamic-packaging-overview.md) feature, it is recommend to use 90 kHz timescale for video streams and 44.1 or 48.1 kHz for audio streams. If different timescale values are used for different streams, the stream level timescale MUST be sent. Please refer to [[MS-SSTR]](https://msdn.microsoft.com/zh-cn/library/ff469518.aspx).     
+[[MS-SSTR]](https://msdn.microsoft.com/zh-cn/library/ff469518.aspx) describes the usage of “Timescale” for SmoothStreamingMedia (Section 2.2.2.1), StreamElement (Section 2.2.2.3), StreamFragmentElement(2.2.2.6) and LiveSMIL (Section 2.2.7.3.1). If timescale value is not present, the default value used is 10,000,000 (10 MHz). Although Smooth Streaming Format Specification doesn’t block usage of other timescale values, most of the encoder implementations uses this default value (10 MHz) to generate Smooth Streaming ingest data. Due to [Azure Media Dynamic Packaging](media-services-dynamic-packaging-overview) feature, it is recommend to use 90 kHz timescale for video streams and 44.1 or 48.1 kHz for audio streams. If different timescale values are used for different streams, the stream level timescale MUST be sent. Please refer to [[MS-SSTR]](https://msdn.microsoft.com/zh-cn/library/ff469518.aspx).     
 
 ##Definition of “Stream”  
 
@@ -195,6 +191,7 @@ Below is a recommended implementation for redundant audio tracks:
 2. Use separate streams to send the two lowest video bitrates. Each of these streams SHOULD also contain a copy of each unique audio track.  For example, when multiple languages are supported, these streams SHOULD contain audio tracks for each language.
 3. Use separate server (encoder) instances to encode and send the redundant streams mentioned in (1) and (2). 
 
+<!-- deleted by customization
 
 ##Media Services learning paths
 
@@ -202,6 +199,7 @@ You can view AMS learning paths here:
 
 - [AMS Live Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/)
 - [AMS on Demand Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/)
+-->
 
 
 

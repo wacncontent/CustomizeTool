@@ -6,14 +6,10 @@
 	authors="bwren"
 	manager="stevenka"
 	editor="tysonn" />
-<tags 
+<tags
 	ms.service="automation"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.tgt_pltfrm="na"
-	ms.workload="infrastructure-services"
 	ms.date="09/25/2015"
-	ms.author="bwren" />
+	wacn.date=""/>
 
 # Azure Automation solution - starting and stopping virtual machines
 

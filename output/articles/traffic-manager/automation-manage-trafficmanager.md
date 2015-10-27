@@ -7,14 +7,10 @@
  manager="adinah" 
  editor=""/>
 
-<tags 
- ms.service="traffic-manager" 
- ms.workload="infrastructure-services" 
- ms.tgt_pltfrm="na" 
- ms.devlang="na" 
- ms.topic="article" 
- ms.date="08/12/2015" 
- ms.author="joaoma"/>
+<tags
+	ms.service="traffic-manager"
+	ms.date="08/12/2015"
+	wacn.date=""/>
 
 
 #Managing Azure Traffic Manager using Azure Automation

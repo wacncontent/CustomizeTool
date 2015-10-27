@@ -36,7 +36,7 @@ In this section, you'll modify the simulated device application to send interact
 [IoT Hub Developer Guide - C2D]: iot-hub-devguide#c2d
 
 <!-- Images -->
-[10]: .media/iot-hub-getstarted-cloud-csharp/create-identity-csharp1.png
+[10]: ./media/iot-hub-getstarted-cloud-csharp/create-identity-csharp1.png
 [12]: ./media/iot-hub-getstarted-cloud-csharp/create-identity-csharp3.png
 
 [20]: ./media/iot-hub-getstarted-cloud-csharp/create-storage1.png

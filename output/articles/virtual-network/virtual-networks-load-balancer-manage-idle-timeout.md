@@ -9,14 +9,9 @@
    />
 
 <tags
-   ms.author="danecke"
-   ms.date="09/01/2015"
-   ms.devlang="na"
-   ms.service="virtual-network"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="infrastructure-services"
-   /> 
+	ms.date="09/01/2015"
+	ms.service="virtual-network"
+	wacn.date=""/> 
    
 # Manage virtual network: Load balancer TCP idle timeout
 
@@ -37,8 +32,8 @@ TCP idle timeout can be configured for:
 * [Instance-Level Public IPs](virtual-networks-instance-level-public-ip)
 * [Load-Balanced endpoint sets](load-balancer-overview)
 * [Virtual Machine endpoints](virtual-machines-set-up-endpoints)
-* [Web roles](http://msdn.microsoft.com/zh-cn/zh-cn/library/azure/ee758711.aspx)
-* [Worker roles](http://msdn.microsoft.com/zh-cn/zh-cn/library/azure/ee758711.aspx)
+* [Web roles](http://msdn.microsoft.com/zh-cn/library/azure/ee758711.aspx)
+* [Worker roles](http://msdn.microsoft.com/zh-cn/library/azure/ee758711.aspx)
 
 ## Next Steps
 * TBD

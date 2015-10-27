@@ -6,14 +6,10 @@
    authors="telmosampaio"
    manager="carolz"
    editor="tysonn" />
-<tags 
-   ms.service="virtual-network"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="infrastructure-services"
-   ms.date="09/22/2015"
-   ms.author="telmos" />
+<tags
+	ms.service="virtual-network"
+	ms.date="09/22/2015"
+	wacn.date=""/>
 
 # What is an endpoint Access Control List (ACLs)?
 

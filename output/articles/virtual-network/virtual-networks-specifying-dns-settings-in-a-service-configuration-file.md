@@ -6,14 +6,10 @@
    authors="joaoma"
    manager="jdial"
    editor="tysonn" />
-<tags 
-   ms.service="virtual-network"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="infrastructure-services"
-   ms.date="09/01/2015"
-   ms.author="joaoma" />
+<tags
+	ms.service="virtual-network"
+	ms.date="09/01/2015"
+	wacn.date=""/>
 
 # Specifying DNS Settings in a Service Configuration File
 
@@ -33,7 +29,7 @@ A service configuration file may contain a DnsServers element with a list of IPv
 
 ## See Also
 
-[Azure Service Configuration Schema (.cscfg)](https://msdn.microsoft.com/zh-cn/zh-cn/library/azure/ee758710)
+[Azure Service Configuration Schema (.cscfg)](https://msdn.microsoft.com/zh-cn/library/azure/ee758710)
 
 [Azure Virtual Network Configuration Schema](https://msdn.microsoft.com/zh-cn/library/azure/jj157100)
 

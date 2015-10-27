@@ -8,13 +8,9 @@
    editor=""/>
 
 <tags
-   ms.service="virtual-network"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="infrastructure-services"
-   ms.date="09/16/2015"
-   ms.author="jonor;sivae"/>
+	ms.service="virtual-network"
+	ms.date="09/16/2015"
+	wacn.date=""/>
 
 # Example 1 – Build a Simple DMZ with NSGs
 

@@ -8,14 +8,10 @@
    editor="tysonn"
    tags="azure-service-management"
 />
-<tags 
-   ms.service="virtual-network"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="infrastructure-services"
-   ms.date="09/15/2015"
-   ms.author="telmos" />
+<tags
+	ms.service="virtual-network"
+	ms.date="09/15/2015"
+	wacn.date=""/>
 
 # How to create NSGs (classic) in the Azure CLI
 

@@ -8,22 +8,18 @@
 	services="media-services" 
 	documentationCenter=""/>
 
-<tags 
-	ms.service="media-services" 
-	ms.workload="media" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
+<tags
+	ms.service="media-services"
 	ms.date="09/07/2015"
-	ms.author="juliako"/>
+	wacn.date=""/>
 
 
 #Managing Assets and Related Entities with Media Services .NET SDK
 
 
 > [AZURE.SELECTOR]
-- [.NET](media-services-dotnet-manage-entities.md)
-- [REST](media-services-rest-manage-entities.md)
+- [.NET](media-services-dotnet-manage-entities)
+- [REST](media-services-rest-manage-entities)
 
 
 This topic shows how to accomplish the following Media Services management tasks:
@@ -40,7 +36,7 @@ This topic shows how to accomplish the following Media Services management tasks
 
 ##Prerequisites 
 
-See [Set up your environment](media-services-set-up-computer.md)
+See [Set up your environment](media-services-set-up-computer)
 
 ##Get an Asset Reference
 
@@ -126,7 +122,7 @@ As the number of assets you have in storage grows, it is helpful to list your as
 
 An important related task is to list assets with their associated job in Media Services. The following code example shows you how to list each IJob object, and then for each job, it displays properties about the job, all related tasks, all input assets, and all output assets. The code in this example can be useful for numerous other tasks. For example, if you want to list the output assets from one or more encoding jobs that you ran previously, this code shows how to access the output assets. When you have a reference to an output asset, you can then deliver the content to other users or applications by downloading it, or providing URLs. 
 
-For more information on options for delivering assets, see [Deliver Assets with the Media Services SDK for .NET](media-services-deliver-streaming-content.md).
+For more information on options for delivering assets, see [Deliver Assets with the Media Services SDK for .NET](media-services-deliver-streaming-content).
 
 	// List all jobs on the server, and for each job, also list 
 	// all tasks, all input assets, all output assets.
@@ -228,7 +224,7 @@ A locator is a URL that provides a direct path to access an asset, along with pe
 
 The following code example lists all locators on the server. For each locator, it shows the Id for the related asset and access policy. It also displays the type of permissions, the expiration date, and the full path to the asset.
 
-Note that a locator path to an asset is only a base URL to the asset. To create a direct path to individual files that a user or application could browse to, your code must add the specific file path to the locator path. For more information on how to do this, see the topic [Deliver Assets with the Media Services SDK for .NET](media-services-deliver-streaming-content.md).
+Note that a locator path to an asset is only a base URL to the asset. To create a direct path to individual files that a user or application could browse to, your code must add the specific file path to the locator path. For more information on how to do this, see the topic [Deliver Assets with the Media Services SDK for .NET](media-services-deliver-streaming-content).
 
 	static void ListAllLocators()
 	{
@@ -334,6 +330,7 @@ The following code example shows how to get a reference to an access policy base
 	}
 	
 
+<!-- deleted by customization
 
 ##Media Services learning paths
 
@@ -341,3 +338,4 @@ You can view AMS learning paths here:
 
 - [AMS Live Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/)
 - [AMS on Demand Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/)
+-->

@@ -7,14 +7,10 @@
 	manager="wpickett" 
 	editor="jimbe"/>
 
-<tags 
-	ms.service="app-service" 
-	ms.workload="na" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="09/16/2015" 
-	ms.author="cephalin"/>
+<tags
+	ms.service="app-service"
+	ms.date="09/16/2015"
+	wacn.date=""/>
 
 # Integrate a web app with an Azure Virtual Network #
 

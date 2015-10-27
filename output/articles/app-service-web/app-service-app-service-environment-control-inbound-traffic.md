@@ -7,14 +7,10 @@
 	manager="wpickett" 
 	editor=""/>
 
-<tags 
-	ms.service="app-service" 
-	ms.workload="na" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="09/11/2015" 
-	ms.author="stefsch"/>	
+<tags
+	ms.service="app-service"
+	ms.date="09/11/2015"
+	wacn.date=""/>	
 
 # How To Control Inbound Traffic to an Azure Websites Environment
 
@@ -129,8 +125,8 @@ For more information about the Azure Websites platform, see [Azure Websites][Azu
 [HowToCreateAnAppServiceEnvironment]: /documentation/articles/app-service-web-how-to-create-an-app-service-environment/
 [NetworkSecurityGroups]: /documentation/articles/virtual-networks-nsg/
 [AzureAppService]: /documentation/articles/app-service-value-prop-what-is/
-[IntroToAppServiceEnvironment]: /documentation/articles/app-service-app-service-environment-intro/
-[SecurelyConnecttoBackend]: /documentation/articles/app-service-app-service-environment-securely-connecting-to-backend-resources/ 
+[IntroToAppServiceEnvironment]:  /documentation/articles/app-service-app-service-environment-intro/
+[SecurelyConnecttoBackend]:  /documentation/articles/app-service-app-service-environment-securely-connecting-to-backend-resources/ 
 
 <!-- IMAGES -->
  

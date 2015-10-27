@@ -7,14 +7,10 @@
 	manager="dwrede" 
 	editor=""/>
 
-<tags 
-	ms.service="cache" 
-	ms.workload="tbd" 
-	ms.tgt_pltfrm="cache-redis" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="10/01/2015" 
-	ms.author="sdanie"/>
+<tags
+	ms.service="cache"
+	ms.date="10/01/2015"
+	wacn.date=""/>
 
 # How to configure data persistence for a Premium Azure Redis Cache
 

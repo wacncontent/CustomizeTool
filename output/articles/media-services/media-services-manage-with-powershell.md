@@ -7,21 +7,17 @@
 	services="media-services" 
 	documentationCenter=""/>
 
-<tags 
-	ms.service="media-services" 
-	ms.workload="media" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="09/07/2015" 
-	ms.author="juliako"/>
+<tags
+	ms.service="media-services"
+	ms.date="09/07/2015"
+	wacn.date=""/>
 
 
 #Manage Azure Media Services Accounts with PowerShell
 
 > [AZURE.SELECTOR]
-- [Portal](media-services-create-account.md)
-- [PowerShell](media-services-manage-with-powershell.md)
+- [Portal](media-services-create-account)
+- [PowerShell](media-services-manage-with-powershell)
 - [REST](https://msdn.microsoft.com/zh-cn/library/azure/dn167014.aspx)
 
 ##Overview 
@@ -110,6 +106,7 @@ When you are ready to delete the Azure Media account, use [Remove-AzureMediaServ
 
 	PS C:\> Remove-AzureMediaServicesAccount -Name "amstestaccount001" -Force
 
+<!-- deleted by customization
 
 ##Media Services learning paths
 
@@ -117,5 +114,6 @@ You can view AMS learning paths here:
 
 - [AMS Live Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/)
 - [AMS on Demand Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/)
+-->
 
  

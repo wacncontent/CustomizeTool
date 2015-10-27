@@ -8,14 +8,10 @@
    editor="tysonn"
    tags="azure-service-management"
 />
-<tags 
-   ms.service="virtual-network"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="infrastructure-services"
-   ms.date="09/08/2015"
-   ms.author="telmos" />
+<tags
+	ms.service="virtual-network"
+	ms.date="09/08/2015"
+	wacn.date=""/>
 
 # How to set a static private IP address (classic) in the preview portal
 

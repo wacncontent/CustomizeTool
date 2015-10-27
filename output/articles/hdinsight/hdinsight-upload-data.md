@@ -10,12 +10,8 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.workload="big-data"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="09/28/2015"
-	ms.author="jgao"/>
+	wacn.date=""/>
 
 
 
@@ -62,7 +58,7 @@ Microsoft provides the following utilities to work with Azure Blob storage:
 
 The Azure CLI is a cross-platform tool that allows you to manage Azure services. Use the following steps to upload data to Azure Blob storage:
 
-1. [Install and configure the Azure CLI for Mac, Linux and Windows](xplat-cli-install).
+1. [Install and configure the Azure CLI<!-- deleted by customization for Mac, Linux and Windows-->](/documentation/articles/xplat-cli-install).
 
 2. Open a command prompt, bash, or other shell, and use the following to authenticate to your Azure subscription.
 
@@ -153,8 +149,10 @@ The Hadoop command line is only useful for storing data into blob storage when t
 In order to use the Hadoop command, you must first connect to the headnode using one of the following methods:
 
 * **Windows-based HDInsight**: [Connect using Remote Desktop](hdinsight-administer-use-management-portal-v1#connect-to-hdinsight-clusters-by-using-rdp)
+<!-- deleted by customization
 
 * **Linux-based HDInsight**: Connect using SSH ([the SSH command](hdinsight-hadoop-linux-use-ssh-unix#connect-to-a-linux-based-hdinsight-cluster) or [PuTTY](hdinsight-hadoop-linux-use-ssh-windows#connect-to-a-linux-based-hdinsight-cluster))
+-->
 
 Once connected, you can use the following syntax to upload a file to storage.
 
@@ -214,6 +212,7 @@ Before using the tool, you must know your Azure storage account name and account
 See [Mount Azure Blob Storage as Local Drive](http://blogs.msdn.com/b/bigdatasupport/archive/2014/01/09/mount-azure-blob-storage-as-local-drive.aspx).
 
 ##Services
+<!-- deleted by customization
 
 ###Azure Data Factory
 
@@ -222,6 +221,7 @@ The Azure Data Factory service is a fully managed service for composing data sto
 Azure Data Factory can be used to move data into Azure Blob storage, or to create data pipelines that directly use HDInsight features such as Hive and Pig.
 
 For more information, see the [Azure Data Factory documentation](/documentation/services/data-factory/).
+-->
 
 ###<a id="sqoop"></a>Apache Sqoop
 
@@ -255,32 +255,24 @@ Now that you understand how to get data into HDInsight, read the following artic
 
 
 [azure-management-portal]: https://manage.windowsazure.cn
-[azure-powershell]: http://msdn.microsoft.com/zh-cn/zh-cn/library/azure/jj152841.aspx
+[azure-powershell]: http://msdn.microsoft.com/zh-cn/library/azure/jj152841.aspx
 
 [azure-storage-client-library]: storage-dotnet-how-to-use-blobs
 [azure-create-storage-account]: storage-create-storage-account
 [azure-azcopy-download]: storage-use-azcopy
 [azure-azcopy]: storage-use-azcopy
-
 [hdinsight-use-sqoop]: hdinsight-use-sqoop
-
 [hdinsight-storage]: hdinsight-use-blob-storage
 [hdinsight-submit-jobs]: hdinsight-submit-hadoop-jobs-programmatically
 [hdinsight-get-started]: hdinsight-get-started
-
 [hdinsight-use-hive]: hdinsight-use-hive
 [hdinsight-use-pig]: hdinsight-use-pig
 [hdinsight-provision]: hdinsight-provision-clusters
-
 [sqldatabase-create-configure]: sql-database-create-configure
-
 [apache-sqoop-guide]: http://sqoop.apache.org/docs/1.4.4/SqoopUserGuide.html
 
 [Powershell-install-configure]: powershell-install-configure
-
 [azurecli]: xplat-cli-install
-
-
 [image-azure-storage-explorer]: ./media/hdinsight-upload-data/HDI.AzureStorageExplorer.png
 [image-ase-addaccount]: ./media/hdinsight-upload-data/HDI.ASEAddAccount.png
 [image-ase-blob]: ./media/hdinsight-upload-data/HDI.ASEBlob.png

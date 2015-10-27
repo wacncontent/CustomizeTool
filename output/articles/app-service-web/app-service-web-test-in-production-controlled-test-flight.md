@@ -9,12 +9,8 @@
 
 <tags
 	ms.service="app-service-web"
-	ms.workload="web"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="10/16/2015"
-	ms.author="cephalin"/>
+	wacn.date=""/>
 # Flighting deployment (beta testing) in Azure Websites
 
 This tutorial shows you how to do *flighting deployments* by integrating the various capabilities of [Azure Websites](/documentation/services/web-sites/) and [Azure Application Insights](/home/features/application-insights/). 
@@ -54,7 +50,7 @@ In this tutorial, you will learn how to bring the following scenarios together t
 
 -	An Azure account
 -	A [GitHub](https://github.com/) account
-- Visual Studio 2015 - you can download the [Community edition](https://www.visualstudio.com/en-us/products/visual-studio-express-vs.aspx).
+- Visual Studio 2015 - you can download the [Community edition](https://www.visualstudio.com/products/visual-studio-express-vs.aspx).
 -	Git Shell (installed with [GitHub for Windows](https://windows.github.com/)) - this enables you to run both the Git and PowerShell commands in the same session
 -	Latest [Azure PowerShell](https://github.com/Azure/azure-powershell/releases/download/v0.9.8-September2015/azure-powershell.0.9.8.msi) bits
 -	Basic understanding of the following:

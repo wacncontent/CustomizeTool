@@ -9,12 +9,8 @@
 
 <tags
 	ms.service="app-service-web"
-	ms.devlang="php"
-	ms.topic="get-started-article"
-	ms.tgt_pltfrm="windows"
-	ms.workload="na"
 	ms.date="09/16/2015"
-	ms.author="cfowler"/>
+	wacn.date=""/>
 
 # Connect a web app in Azure Websites to Redis Cache via the Memcache protocol
 

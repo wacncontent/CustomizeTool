@@ -7,14 +7,10 @@
 	manager="dwrede" 
 	editor=""/>
 
-<tags 
-	ms.service="media-services" 
-	ms.workload="media" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="10/15/2015"  
-	ms.author="juliako"/>
+<tags
+	ms.service="media-services"
+	ms.date="10/15/2015"
+	wacn.date=""/>
 
 #Media Encoder Standard Formats and Codecs
 
@@ -105,6 +101,7 @@ File Format|Video Codec|Audio Codec
 MP4 <br/><br/>(including multi-bitrate MP4 containers) |H.264 (High, Main, and Baseline Profiles)|AAC-LC, HE-AAC v1, HE-AAC v2 
 MPEG2-TS |H.264 (High, Main, and Baseline Profiles)|AAC-LC, HE-AAC v1, HE-AAC v2 
 
+<!-- deleted by customization
 
 ##Media Services learning paths
 
@@ -112,9 +109,10 @@ You can view AMS learning paths here:
 
 - [AMS Live Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/)
 - [AMS on Demand Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/)
+-->
 
 ##See also
 
-[Encoding On-Demand Content with Azure Media Services](media-services-encode-asset.md)
+[Encoding On-Demand Content with Azure Media Services](media-services-encode-asset)
 
-[How to encode with Media Encoder Standard](media-services-dotnet-encode-with-media-encoder-standard.md)
+[How to encode with Media Encoder Standard](media-services-dotnet-encode-with-media-encoder-standard)

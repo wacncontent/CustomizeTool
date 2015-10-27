@@ -10,12 +10,8 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.workload="big-data"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="09/02/2015"
-	ms.author="larryfr"/>
+	wacn.date=""/>
 
 
 #Enable heap dumps for Hadoop services on Linux-based HDInsight (Preview)

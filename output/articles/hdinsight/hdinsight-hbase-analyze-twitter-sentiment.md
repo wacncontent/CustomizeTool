@@ -7,14 +7,10 @@
 	manager="paulettm" 
 	editor="cgronlun"/>
 
-<tags 
-	ms.service="hdinsight" 
-	ms.workload="big-data" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="07/09/2015" 
-	ms.author="jgao"/>
+<tags
+	ms.service="hdinsight"
+	ms.date="07/09/2015"
+	wacn.date=""/>
 
 # Analyze real-time Twitter sentiment with HBase in HDInsight
 
@@ -1317,9 +1313,6 @@ In this tutorial, you learned how to get tweets, analyze the sentiment of tweets
 
 [hbase-get-started]: hdinsight-hbase-get-started
 [website-get-started]: web-sites-dotnet-get-started
-
-
-
 [img-app-arch]: ./media/hdinsight-hbase-analyze-twitter-sentiment/AppArchitecture.png
 [img-twitter-app]: ./media/hdinsight-hbase-analyze-twitter-sentiment/TwitterApp.png
 [img-streaming-service]: ./media/hdinsight-hbase-analyze-twitter-sentiment/StreamingService.png
@@ -1331,10 +1324,6 @@ In this tutorial, you learned how to get tweets, analyze the sentiment of tweets
 [hdinsight-develop-mapreduce]: hdinsight-develop-deploy-java-mapreduce
 [hdinsight-analyze-twitter-data]: hdinsight-analyze-twitter-data
 [hdinsight-hbase-get-started]: hdinsight-hbase-get-started
-
-
-
-
 [curl]: http://curl.haxx.se
 [curl-download]: http://curl.haxx.se/download.html
 
@@ -1355,4 +1344,3 @@ In this tutorial, you learned how to get tweets, analyze the sentiment of tweets
 [hdinsight-use-sqoop]: hdinsight-use-sqoop
 [hdinsight-power-query]: hdinsight-connect-excel-power-query
 [hdinsight-hive-odbc]: hdinsight-connect-excel-hive-ODBC-driver
- 

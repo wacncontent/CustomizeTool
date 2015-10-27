@@ -9,14 +9,9 @@
    />
 
 <tags
-   ms.service="virtual-network"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="infrastructure-services"
-   ms.date="08/21/2015"
-   ms.author="telmos"
-   />
+	ms.service="virtual-network"
+	ms.date="08/21/2015"
+	wacn.date=""/>
    
 # Manage virtual network: Load balancer distribution mode (Source IP Affinity)
 **Source IP Affinity** (also known as **session affinity** or **client IP affinity**), an Azure load balancer distribution mode, ties connections from a single client to a single Azure-hosted server, rather than distributing each client connection dynamically to different Azure-hosted servers (the default load balancer behavior).
@@ -33,8 +28,8 @@ Source IP Affinity can be configured for:
 
 * [Virtual machine endpoints](virtual-machines-set-up-endpoints)
 * [Load-balanced endpoint sets](load-balancer-overview)
-* [Web roles](http://msdn.microsoft.com/zh-cn/zh-cn/library/azure/ee758711.aspx)
-* [Worker roles](http://msdn.microsoft.com/zh-cn/zh-cn/library/azure/ee758711.aspx)
+* [Web roles](http://msdn.microsoft.com/zh-cn/library/azure/ee758711.aspx)
+* [Worker roles](http://msdn.microsoft.com/zh-cn/library/azure/ee758711.aspx)
 
 ## Scenarios
 1. Remote Desktop Gateway cluster using a single cloud service

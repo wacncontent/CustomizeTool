@@ -6,14 +6,10 @@
    authors="joaoma"
    manager="adinah"
    editor="tysonn" />
-<tags 
-   ms.service="traffic-manager"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="infrastructure-services"
-   ms.date="08/19/2015"
-   ms.author="joaoma" />
+<tags
+	ms.service="traffic-manager"
+	ms.date="08/19/2015"
+	wacn.date=""/>
 
 # What is Traffic Manager?
 
@@ -80,7 +76,7 @@ Although each REST API element is not visible in the Management Portal, many set
 
 For more information about Windows PowerShell cmdlets for Traffic Manager, see [Azure Traffic Manager Cmdlets](https://msdn.microsoft.com/zh-cn/library/dn690250.aspx).
 
->[AZURE.NOTE] There is currently no support for configuring external endpoints (type = ‘Any’), weights for the Round Robin traffic routing method, and nested profiles with the Management Portal. You must use either REST (see [Create Definition](http://go.microsoft.com/fwlink/p/?LinkId=400772)) or Windows PowerShell (see [Add-AzureTrafficManagerEndpoint](https://msdn.microsoft.com/zh-cn/library/azure/dn690257.aspx)).
+>[AZURE.NOTE] There is currently no support for configuring external endpoints (type = ‘Any’), weights for the Round Robin traffic routing method, and nested profiles with the Management Portal. You must use either REST (see [Create Definition](https://msdn.microsoft.com/zh-cn/library/azure/hh758257.aspx)) or Windows PowerShell (see [Add-AzureTrafficManagerEndpoint](https://msdn.microsoft.com/zh-cn/library/azure/dn690257.aspx)).
 
 ### Configuring settings in the Management Portal
 
@@ -157,7 +153,7 @@ In *Figure 4*, the Traffic Manager profile in the top-level tier is a parent pro
 
 If Traffic Manager directs users to a child profile that has a small number of healthy endpoints, it is possible to overload those endpoints and cause performance issues. To prevent this situation, you can configure the parent Traffic Manager profile with a threshold of healthy endpoints that determines whether any of endpoints within the child profiles of that parent can receive traffic. For example, if you want to ensure that there are at least three healthy endpoints within the child profiles, you would set this threshold value to 3. In the example in Figure 4, you would configure the top-level tier Traffic Manager profile for this threshold.
 
-To add a Traffic Manager profile as an endpoint and configure the minimum number of healthy endpoints, you must use either REST (see [Create Definition](http://go.microsoft.com/fwlink/p/?LinkId=400772)) or Windows PowerShell (see [Add-AzureTrafficManagerEndpoint](https://msdn.microsoft.com/zh-cn/library/azure/dn690257.aspx)). You cannot use the Management Portal.
+To add a Traffic Manager profile as an endpoint and configure the minimum number of healthy endpoints, you must use either REST (see [Create Definition](https://msdn.microsoft.com/zh-cn/library/azure/hh758257.aspx)) or Windows PowerShell (see [Add-AzureTrafficManagerEndpoint](https://msdn.microsoft.com/zh-cn/library/azure/dn690257.aspx)). You cannot use the Management Portal.
 
 ## Traffic Manager figures
 

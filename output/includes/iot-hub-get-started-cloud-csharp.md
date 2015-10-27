@@ -122,7 +122,7 @@ In this section, you will create a Windows console app that reads device-to-clou
 [IoT Hub Developer Guide - Identity Registry]: iot-hub-devguide#identityregistry
 
 [Event Hubs Overview]: event-hubs-overview
-[Scaled out event processing]: https:/code.msdn.microsoft.com/windowsazure/Service-Bus-Event-Hub-45f43fc3
+[Scaled out event processing]: https://code.msdn.microsoft.com/windowsazure/Service-Bus-Event-Hub-45f43fc3
 [Azure Storage account]: storage-create-storage-account
 [EventProcessorHost]: http://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.eventprocessorhost(v=azure.95).aspx
 

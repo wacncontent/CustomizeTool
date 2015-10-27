@@ -7,26 +7,22 @@
 	manager="dwrede" 
 	editor=""/>
 
-<tags 
-	ms.service="media-services" 
-	ms.workload="media" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="10/15/2015"  
-	ms.author="juliako"/>
+<tags
+	ms.service="media-services"
+	ms.date="10/15/2015"
+	wacn.date=""/>
 
 
 #Create channels that perform live encoding from a single-bitrate to multi-bitrate stream using the Azure Management Portal
 
 > [AZURE.SELECTOR]
-- [Portal](media-services-portal-creating-live-encoder-enabled-channel.md)
-- [.NET](media-services-dotnet-creating-live-encoder-enabled-channel.md)
+- [Portal](media-services-portal-creating-live-encoder-enabled-channel)
+- [.NET](media-services-dotnet-creating-live-encoder-enabled-channel)
 - [REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn783458.aspx)
 
 This tutorial walks you through the steps of creating a **Channel** that receives a single-bitrate live stream and encodes it to multi-bitrate stream.
 
->[AZURE.NOTE]For more conceptual information related to Channels that are enabled for live encoding, see [Working with Channels that Perform Live Encoding from a Single-bitrate to Multi-bitrate Stream](media-services-manage-live-encoder-enabled-channels.md).
+>[AZURE.NOTE]For more conceptual information related to Channels that are enabled for live encoding, see [Working with Channels that Perform Live Encoding from a Single-bitrate to Multi-bitrate Stream](media-services-manage-live-encoder-enabled-channels).
 
 ##Common Live Streaming Scenario
 
@@ -73,7 +69,7 @@ The following are required to complete the tutorial.
 
 - To complete this tutorial, you need an Azure account. If you don't have an account, you can create a trial account in just a couple of minutes. 
 For details, see [Azure Trial](/pricing/1rmb-trial/).
-- A Media Services account. To create a Media Services account, see [Create Account](media-services-create-account.md).
+- A Media Services account. To create a Media Services account, see [Create Account](media-services-create-account).
 - A webcam and an encoder that can send a single bitrate live stream.
 
 ##Configure streaming endpoint using Portal
@@ -110,7 +106,7 @@ To change the number of streaming reserved units, do the following:
 2.	Select the CHANNELS page.
 3.	Select Add+ to add a new channel.
 
-Choose **Standard** encoding types. This type specifies that you want to create a Channel that is enabled for live encoding. That means the incoming single bitrate stream is sent to the Channel and encoded into a multi-bitrate stream using specified live encoder settings. For more information, see [Working with Channels that Perform Live Encoding from a Single-bitrate to Multi-bitrate Stream](media-services-manage-live-encoder-enabled-channels.md).
+Choose **Standard** encoding types. This type specifies that you want to create a Channel that is enabled for live encoding. That means the incoming single bitrate stream is sent to the Channel and encoded into a multi-bitrate stream using specified live encoder settings. For more information, see [Working with Channels that Perform Live Encoding from a Single-bitrate to Multi-bitrate Stream](media-services-manage-live-encoder-enabled-channels).
 
 ![standard0][standard0]
 
@@ -120,7 +116,7 @@ For the **Standard** encoding type, valid ingest protocol options are:
 - Single bitrate RTMP
 - RTP (MPEG-TS): MPEG-2 Transport Stream over RTP.
 
-For detailed explanation about each protocol, see [Working with Channels that Perform Live Encoding from a Single-bitrate to Multi-bitrate Stream](media-services-manage-live-encoder-enabled-channels.md).
+For detailed explanation about each protocol, see [Working with Channels that Perform Live Encoding from a Single-bitrate to Multi-bitrate Stream](media-services-manage-live-encoder-enabled-channels).
 
 ![standard1][standard1]
 
@@ -128,7 +124,7 @@ You cannot change the input protocol while the Channel or its associated program
 
 On the **Advertising Configuration** page you can specify the source for ad markers signals. When using Portal, you can only select API, which indicates that the live encoder within the Channel should listen to an asynchronous Ad Marker API. When using Portal, you can only select API.
 
-For more information, see [Working with Channels that Perform Live Encoding from a Single-bitrate to Multi-bitrate Stream](media-services-manage-live-encoder-enabled-channels.md).
+For more information, see [Working with Channels that Perform Live Encoding from a Single-bitrate to Multi-bitrate Stream](media-services-manage-live-encoder-enabled-channels).
 
 ![standard2][standard2]
 
@@ -149,7 +145,7 @@ Once you created the Channel, you can select the **ENCODER** tab where you can v
 
 ![standard5][standard5]
 
-For more information, see [Working with Channels that Perform Live Encoding from a Single-bitrate to Multi-bitrate Stream](media-services-manage-live-encoder-enabled-channels.md).
+For more information, see [Working with Channels that Perform Live Encoding from a Single-bitrate to Multi-bitrate Stream](media-services-manage-live-encoder-enabled-channels).
 
 
 ##Get ingest URLs
@@ -241,7 +237,7 @@ To build an  MPEG DASH streaming URL, append (format=mpd-time-csf) to the URL.
 
 	{streaming endpoint name-media services account name}.streaming.mediaservices.chinacloudapi.cn/{locator ID}/{filename}.ism/Manifest(format=mpd-time-csf)
 
-For more information about delivering your content, see [Delivering content](media-services-deliver-content-overview.md).
+For more information about delivering your content, see [Delivering content](media-services-deliver-content-overview).
 
 You can playback Smooth Stream using [AMS Player](http://amsplayer.azurewebsites.net/azuremediaplayer.html) or use iOS and Android devices to play HLS version 3.
 
@@ -258,6 +254,7 @@ If you are done streaming events and want to clean up the resources provisioned 
 
 - Currently, the max recommended duration of a live event is 8 hours. Please contact amslived at WindowsAzure.cn if you need to run a Channel for longer periods of time.
 - Make sure to have at least one streaming reserved unit on the streaming endpoint from which you want to stream content.
+<!-- deleted by customization
 
 ##Media Services learning paths
 
@@ -265,6 +262,7 @@ You can view AMS learning paths here:
 
 - [AMS Live Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/)
 - [AMS on Demand Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/)
+-->
 
 
 [standard0]: ./media/media-services-portal-creating-live-encoder-enabled-channel/media-services-create-channel-standard0.png

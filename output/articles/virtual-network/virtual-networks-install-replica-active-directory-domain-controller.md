@@ -9,12 +9,8 @@
 
 <tags
 	ms.service="virtual-network"
-	ms.workload="infrastructure-services"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="09/21/2015"
-	ms.author="curtand"/>
+	wacn.date=""/>
 
 
 # Install a replica Active Directory domain controller in an Azure virtual network

@@ -7,14 +7,10 @@
 	manager="dwrede" 
 	editor=""/>
 
-<tags 
-	ms.service="media-services" 
-	ms.workload="media" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="09/29/2015"    
-	ms.author="juliako"/>
+<tags
+	ms.service="media-services"
+	ms.date="09/29/2015"
+	wacn.date=""/>
 
 #Troubleshooting live streaming guide
 

@@ -10,12 +10,8 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.workload="big-data"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="10/19/2015"
-	ms.author="larryfr"/>
+	wacn.date=""/>
 
 # Customize HDInsight clusters using Script Action (Linux)
 
@@ -60,7 +56,7 @@ Name | Script
 
 2. Under __Optional Configuration__, for the **Script Actions** blade, click **add script action** to provide details about the script action, as shown below:
 
-	![Use Script Action to customize a cluster](./media/hdinsight-hadoop-customize-cluster-linux/HDI.CreateCluster.8.png "Use Script Action to customize a cluster")
+	![Use Script Action to customize a cluster](./media/hdinsight-hadoop-customize-cluster/HDI.CreateCluster.8.png "Use Script Action to customize a cluster")
 
 	| Property | Value |
 	| -------- | ----- |
@@ -507,11 +503,11 @@ You can use Ambari web UI to view information logged by scripts during cluster c
 
 2. From the bar at the top of the page, select the __ops__ entry. This will show a list of current and previous operations performed on the cluster through Ambari.
 
-	![Ambari web UI bar with ops selected](./media/hdinsight-hadoop-customize-cluster-linux/ambari-nav.png)
+	![Ambari web UI bar with ops selected](./media/hdinsight-hadoop-customize-cluster/ambari-nav.png)
 
 3. Find the entries that have __run\_customscriptaction__ in the __Operations__ column. These are created when the Script Actions are ran.
 
-	![Screenshot of operations](./media/hdinsight-hadoop-customize-cluster-linux/ambariscriptaction.png)
+	![Screenshot of operations](./media/hdinsight-hadoop-customize-cluster/ambariscriptaction.png)
 
 	Select this entry, and drill down through the links to view the STDOUT and STDERR output generated when the script was ran on the cluster.
 
@@ -527,4 +523,4 @@ See the following for information and examples on creating and using scripts to 
 
 
 
-[img-hdi-cluster-states]: ./media/hdinsight-hadoop-customize-cluster-linux/HDI-Cluster-state.png "Stages during cluster creation"
+[img-hdi-cluster-states]: ./media/hdinsight-hadoop-customize-cluster/HDI-Cluster-state.png "Stages during cluster creation"

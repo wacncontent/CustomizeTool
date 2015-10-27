@@ -8,13 +8,9 @@
    editor="cgronlun"/>
 
 <tags
-   ms.service="hdinsight"
-   ms.workload="big-data"
-   ms.tgt_pltfrm="na"
-   ms.devlang="na"
-   ms.topic="get-started-article"
-   ms.date="08/11/2015"
-   ms.author="jgao"/>
+	ms.service="hdinsight"
+	ms.date="08/11/2015"
+	wacn.date=""/>
 
 # Learn Hadoop by using the HDInsight Getting Started Gallery
 
@@ -66,4 +62,4 @@ Other ways to learn about HDInsight include:
 <!--Link references-->
 [hdinsight.learn.map]: hdinsight-learn-map
 [hdinsight.infographic]: http://go.microsoft.com/fwlink/?linkid=523960
-[azure.portal]: https://manage.windowsazure.cn
+[azure.portal]:https://manage.windowsazure.cn

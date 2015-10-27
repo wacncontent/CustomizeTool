@@ -8,14 +8,10 @@
    editor=""
    tags="azure-service-management"
 />
-<tags  
-   ms.service="virtual-network"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="infrastructure-services"
-   ms.date="10/06/2015"
-   ms.author="telmos" />
+<tags
+	ms.service="virtual-network"
+	ms.date="10/06/2015"
+	wacn.date=""/>
 
 #Control routing and use virtual appliances (classic) using the Azure CLI
 

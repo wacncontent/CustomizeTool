@@ -7,14 +7,10 @@
 	manager="wpickett" 
 	editor="mollybos"/>
 
-<tags 
-	ms.service="app-service-web" 
-	ms.workload="web" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="PHP" 
-	ms.topic="article" 
-	ms.date="08/03/2015" 
-	ms.author="tomfitz"/>
+<tags
+	ms.service="app-service-web"
+	ms.date="08/03/2015"
+	wacn.date=""/>
 
 # Create a PHP-SQL web app and deploy to Azure Websites using Git
 
@@ -25,7 +21,7 @@ This tutorial shows you how to create a PHP web app in [Azure Websites](/documen
 
 You will learn:
 
-* How to create an Azure web app and a SQL Database using the [Azure preview portal](https://manage.windowsazure.cn/). Because PHP is enabled in Azure Websites by default, nothing special is required to run your PHP code.
+* How to create an Azure web app and a SQL Database using the [Azure <!-- deleted by customization preview portal --><!-- keep by customization: begin -->Management Portal<!-- keep by customization: end -->](https://manage.windowsazure.cn/). Because PHP is enabled in Azure Websites by default, nothing special is required to run your PHP code.
 * How to publish and re-publish your application to Azure using Git.
  
 By following this tutorial, you will build a simple registration web application in PHP. The application will be hosted in an Azure Website. A screenshot of the completed application is below:
@@ -33,12 +29,15 @@ By following this tutorial, you will build a simple registration web application
 ![Azure PHP Web Site](./media/web-sites-php-sql-database-deploy-use-git/running_app_3.png)
 
 [AZURE.INCLUDE [create-account-and-websites-note](../includes/create-account-and-websites-note.md)]
+<!-- deleted by customization
 
 >[AZURE.NOTE] If you want to get started with Azure Websites before signing up for an Azure account, go to [Try Azure Websites](http://go.microsoft.com/fwlink/?LinkId=523751), where you can immediately create a short-lived starter web app in Azure Websites. No credit cards required; no commitments.
+-->
 
 ##Create an Azure web app and set up Git publishing
 
 Follow these steps to create an Azure web app and a SQL Database:
+<!-- deleted by customization
 
 1. Log in to the [Azure preview portal](https://manage.windowsazure.cn/).
 
@@ -76,9 +75,42 @@ Follow these steps to create an Azure web app and a SQL Database:
 
 6. **Set up continous deployment** becomes **No deployment found**. Click it to see the Git remote URL you need to use to deploy your PHP app later.
 
+-->
+<!-- keep by customization: begin -->
+1. Login to the [Azure Management Portal][management-portal].
+2. Click the **New** icon on the bottom left of the portal.
+![Create New Azure  Website][new- Website]
+
+3. Click ** Website**, then **Custom Create**.
+
+	![Custom Create a new  Website][custom-create]
+
+	Enter a value for **URL**, select **Create a New SQL Database** from the **Database** dropdown,  and select **Publish from source control**. Click the arrow at the bottom of the dialog.
+
+	![Fill in  Website details][ Website-details-sqlazure]
+
+4. Enter a value for the **Name** of your database, select **NEW SQL Database server**, provide login credentials, and select a region. Click the arrow at the bottom of the dialog.
+
+	![Fill in SQL Database settings][database-settings]
+
+5. Select **Local Git repository** for your source code.
+
+	![where is your source code][where-is-code]
+
+	If you have not set up a Git repository before, you must provide a user name and password.
+
+6. After the web site has been created, open the site's dashboard, and select **View deployments**.
+
+	![Web site dashboard][go-to-dashboard]
+
+9. You will see instructions for pushing your application files to the repository. Make note of these instructions - you will need them later.
+
+	![Git instructions][git-instructions]
+<!-- keep by customization: end -->
 ##Get SQL Database connection information
 
 To connect to the SQL Database instance that is linked to your web app, your will need the connection information, which you specified when you created the database. To get the SQL Database connection information, follow these steps:
+<!-- deleted by customization
 
 1. Back in the resource group's blade, click the SQL database's icon.
 
@@ -88,6 +120,18 @@ To connect to the SQL Database instance that is linked to your web app, your wil
 	
 3. From the **PHP** section of the resulting dialog, make note of the values for `Server`, `SQL Database`, and `User Name`. You will use these values later when publishing your PHP web app to Azure Websites.
 
+-->
+<!-- keep by customization: begin -->
+1. From the Azure Management Portal, click **Linked Resources**, then click the database name.
+
+	![Linked Resources][linked-resources]
+
+2. Click **View connection strings**.
+
+	![Connection string][connection-string]
+	
+3. From the **PHP** section of the resulting dialog, make note of the values for `SERVER`, `DATABASE`, and `USERNAME`.
+<!-- keep by customization: end -->
 ##Build and test your application locally
 
 The Registration application is a simple PHP application that allows you to register for an event by providing your name and email address. Information about previous registrants is displayed in a table. Registration information is stored in a SQL Database instance. The application consists of two files (copy/paste code available below):
@@ -280,10 +324,12 @@ To publish changes to application, follow these steps:
 	You will be prompted for the password you created earlier.
 
 3. Browse to **http://[web app name].chinacloudsites.cn/index.php** to see your changes.
+<!-- deleted by customization
 
 ## What's changed
 * For a guide to the change from Websites to Azure Websites see: [Azure Websites and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
 * For a guide to the change of the portal to the preview portal see: [Reference for navigating the preview portal](https://manage.windowsazure.cn/)
+-->
 
 
 
@@ -294,3 +340,4 @@ To publish changes to application, follow these steps:
 [install-git]: http://git-scm.com/
 [pdo-sqlsrv]: http://php.net/pdo_sqlsrv
  
+<!-- keep by customization: begin -->

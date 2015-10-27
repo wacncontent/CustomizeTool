@@ -9,12 +9,8 @@
 
 <tags
 	ms.service="virtual-network"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.tgt_pltfrm="na"
-	ms.workload="infrastructure-services" 
 	ms.date="08/10/2015"
-	ms.author="telmos"/>
+	wacn.date=""/>
 
 # Configure a virtual network using a network configuration file
 

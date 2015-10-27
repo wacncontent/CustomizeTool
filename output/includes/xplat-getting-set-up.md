@@ -1,13 +1,9 @@
 <properties services="virtual-machines" title="Setting up Azure CLI for service management" authors="squillace" solutions="" manager="timlt" editor="tysonn" />
 
 <tags
-   ms.service="virtual-machine"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="linux"
-   ms.workload="infrastructure"
-   ms.date="04/13/2015"
-   ms.author="rasquill" />
+	ms.service="virtual-machine"
+	ms.date="04/13/2015"
+	wacn.date=""/>
 
 ## Using Azure CLI
 

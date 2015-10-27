@@ -284,24 +284,21 @@ In this section, you'll write a Windows console app that receives interactive me
 
 [About Azure Storage]: storage-create-storage-account#create-a-storage-account
 
-[Azure IoT - Service SDK NuGet package]: https:/www.nuget.org/packages/Microsoft.Azure.Devices/
+[Azure IoT - Service SDK NuGet package]: https://www.nuget.org/packages/Microsoft.Azure.Devices/
 
 [Get Started with Event Hubs]: event-hubs-csharp-ephcs-getstarted
 [IoT Hub Developer Guide - Identity Registry]: iot-hub-devguide#identityregistry
 
 [Azure Storage scalability Guidelines]: storage-scalability-targets
-
-[Azure Block Blobs]: https:/msdn.microsoft.com/zh-cn/library/azure/ee691964.aspx
+[Azure Block Blobs]: https://msdn.microsoft.com/zh-cn/library/azure/ee691964.aspx
 
 [Service Bus documentation]: service-bus-dotnet-how-to-use-queues
-
 [Event Hubs Overview]: event-hubs-overview
 [Scaled out event processing]: https://code.msdn.microsoft.com/windowsazure/Service-Bus-Event-Hub-45f43fc3
 
 [EventProcessorHost]: http://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.eventprocessorhost(v=azure.95).aspx
 
 [Event Hubs Programming Guide]: event-hubs-programming-guide
-
 [Azure Preview Portal]: https://manage.windowsazure.cn/
 
 [Transient Fault Handling]: https://msdn.microsoft.com/zh-cn/library/hh680901(v=pandp.50).aspx
@@ -309,10 +306,7 @@ In this section, you'll write a Windows console app that receives interactive me
 [Azure Management Portal]: https://manage.windowsazure.cn/
 
 [Service Bus Queue]: service-bus-dotnet-how-to-use-queues
-
 [Build multi-tier applications with Service Bus]: service-bus-dotnet-multi-tier-app-using-service-bus-queues
-
-
 <!-- Images -->
 [10]: ./media/iot-hub-process-d2c-cloud-csharp/create-identity-csharp1.png
 [12]: ./media/iot-hub-getstarted-cloud-csharp/create-identity-csharp3.png

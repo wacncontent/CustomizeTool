@@ -9,13 +9,9 @@
 	tags="azure-portal"/>
 
 <tags
-   ms.service="hdinsight"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="big-data"
-   ms.date="09/23/2015"
-   ms.author="larryfr"/>
+	ms.service="hdinsight"
+	ms.date="09/23/2015"
+	wacn.date=""/>
 
 #Run MapReduce jobs with Hadoop on HDInsight using Curl
 
@@ -24,14 +20,16 @@
 In this document, you will learn how to use Curl to run MapReduce jobs on a Hadoop on HDInsight cluster.
 
 Curl is used to demonstrate how you can interact with HDInsight by using raw HTTP requests to run MapReduce jobs. This works by using the WebHCat REST API (formerly known as Templeton) provided by your HDInsight cluster.
+<!-- deleted by customization 
 
 > [AZURE.NOTE] If you are already familiar with using Linux-based Hadoop servers, but you are new to HDInsight, see [What you need to know about Linux-based Hadoop on HDInsight](hdinsight-hadoop-linux-information).
+-->
 
 ##<a id="prereq"></a>Prerequisites
 
 To complete the steps in this article, you will need the following:
 
-* A Hadoop on HDInsight cluster (Linux or Windows-based)
+* A Hadoop on HDInsight cluster (<!-- deleted by customization Linux or -->Windows-based)
 
 * [Curl](http://curl.haxx.se/)
 
@@ -87,7 +85,7 @@ To complete the steps in this article, you will need the following:
 
 4. When the state of the job has changed to **SUCCEEDED**, you can retrieve the results of the job from Azure Blob storage. The `statusdir` parameter that is passed with the query contains the location of the output file; in this case, **wasb:///example/curl**. This address stores the output of the job in the **example/curl** directory in the default storage container used by your HDInsight cluster.
 
-You can list and download these files by using the [Azure CLI for Mac, Linux and Windows](xplat-cli-install). For example, to list files in the **example/curl**, use the following command:
+You can list and download these files by using the [Azure CLI<!-- deleted by customization for Mac, Linux and Windows -->](/documentation/articles/xplat-cli-install). For example, to list files in the **example/curl**, use the following command:
 
 	azure storage blob list <container-name> example/curl
 

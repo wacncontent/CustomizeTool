@@ -8,13 +8,9 @@
    editor="cgronlun"/>
 
 <tags
-   ms.service="hdinsight"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="big-data" 
-   ms.date="07/29/2015"
-   ms.author="jgao"/>
+	ms.service="hdinsight"
+	ms.date="07/29/2015"
+	wacn.date=""/>
 
 # Use Apache Phoenix and SQuirreL with HBase clusters in HDinsight  
 
@@ -280,10 +276,15 @@ You need to copy it to your workstation under the [SQuirreL installation folder]
 ##Next steps
 In this article, you have learned how to use Apache Phoenix in HDInsight.  To learn more, see
 
-- [HDInsight HBase overview][hdinsight-hbase-overview]: HBase is an Apache, open-source, NoSQL database built on Hadoop that provides random access and strong consistency for large amounts of unstructured and semistructured data.
-- [Provision HBase clusters on Azure Virtual Network][hdinsight-hbase-provision-vnet]: With virtual network integration, HBase clusters can be deployed to the same virtual network as your applications so that applications can communicate with HBase directly.
+- [HDInsight HBase overview][hdinsight-hbase-overview]:
+HBase is an Apache, open-source, NoSQL database built on Hadoop that provides random access and strong consistency for large amounts of unstructured and semistructured data.
+- [Provision HBase clusters on Azure Virtual Network][hdinsight-hbase-provision-vnet]:
+With virtual network integration, HBase clusters can be deployed to the same virtual network as your applications so that applications can communicate with HBase directly.
 - [Configure HBase replication in HDInsight](hdinsight-hbase-geo-replication): Learn how to configure HBase replication across two Azure datacenters. 
-- [Analyze Twitter sentiment with HBase in HDInsight][hbase-twitter-sentiment]: Learn how to do real-time [sentiment analysis](http://en.wikipedia.org/wiki/Sentiment_analysis) of big data by using HBase in a Hadoop cluster in HDInsight.
+<!-- deleted by customization 
+- [Analyze Twitter sentiment with HBase in HDInsight][hbase-twitter-sentiment]:
+Learn how to do real-time [sentiment analysis](http://en.wikipedia.org/wiki/Sentiment_analysis) of big data by using HBase in a Hadoop cluster in HDInsight.
+-->
 
 [azure-portal]: https://manage.windowsazure.cn
 [vnet-point-to-site-connectivity]: https://msdn.microsoft.com/zh-cn/library/azure/09926218-92ab-4f43-aa99-83ab4d355555#BKMK_VNETPT
@@ -293,9 +294,10 @@ In this article, you have learned how to use Apache Phoenix in HDInsight.  To le
 [hdinsight-manage-portal]: hdinsight-administer-use-management-portal-v1#connect-to-hdinsight-clusters-by-using-rdp
 [hdinsight-hbase-provision-vnet]: hdinsight-hbase-provision-vnet
 [hdinsight-hbase-overview]: hdinsight-hbase-overview
+<!-- deleted by customization
 [hbase-twitter-sentiment]: hdinsight-hbase-analyze-twitter-sentiment
-
-[hdinsight-hbase-phoenix-sqlline]: .media/hdinsight-hbase-phoenix-squirrel/hdinsight-hbase-phoenix-sqlline.png
+-->
+[hdinsight-hbase-phoenix-sqlline]: ./media/hdinsight-hbase-phoenix-squirrel/hdinsight-hbase-phoenix-sqlline.png
 [img-certificate]: ./media/hdinsight-hbase-phoenix-squirrel/hdinsight-hbase-vpn-certificate.png
 [img-vnet-diagram]: ./media/hdinsight-hbase-phoenix-squirrel/hdinsight-hbase-vnet-point-to-site.png
 [img-squirrel-driver]: ./media/hdinsight-hbase-phoenix-squirrel/hdinsight-hbase-squirrel-driver.png

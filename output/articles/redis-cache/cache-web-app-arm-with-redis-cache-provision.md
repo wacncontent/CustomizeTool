@@ -7,14 +7,10 @@
 	manager="wpickett" 
 	editor=""/>
 
-<tags 
-	ms.service="app-service" 
-	ms.workload="web" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="07/08/2015" 
-	ms.author="tomfitz"/>
+<tags
+	ms.service="app-service"
+	ms.date="07/08/2015"
+	wacn.date=""/>
 
 # Create a Web App plus Redis Cache using a template
 
@@ -34,7 +30,12 @@ In this template, you will deploy:
 
 To run the deployment automatically, click the following button:
 
+<!-- deleted by customization
 [![Deploy to Azure](http://azuredeploy.net/deploybutton.png)](https://manage.windowsazure.cn/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F201-web-app-with-redis-cache%2Fazuredeploy.json)
+-->
+<!-- keep by customization: begin -->
+![Deploy to Azure](http://azuredeploy.net/deploybutton.png)
+<!-- keep by customization: end -->
 
 ## Parameters to specify
 

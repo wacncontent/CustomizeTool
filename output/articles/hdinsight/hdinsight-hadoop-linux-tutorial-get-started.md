@@ -9,13 +9,9 @@
 	tags="azure-portal"/>
 
 <tags
-   	ms.service="hdinsight"
-   	ms.devlang="na"
-   	ms.topic="hero-article"
-   	ms.tgt_pltfrm="na"
-   	ms.workload="big-data"
-   	ms.date="10/05/2015"
-   	ms.author="nitinme"/>
+	ms.service="hdinsight"
+	ms.date="10/05/2015"
+	wacn.date=""/>
 
 # Hadoop tutorial: Get started using Hadoop with Hive in HDInsight on Linux
 
@@ -251,7 +247,7 @@ If you'd like to learn more about creating or managing an HDInsight cluster, see
 
 - To learn about managing your Linux-based HDInsight cluster, see [Manage HDInsight clusters using Ambari](hdinsight-hadoop-manage-ambari).
 
-- To learn more about the options you can select when creating an HDInsight cluster, see [Provision HDInsight on Linux using custom options](hdinsight-hadoop-provision-linux-clusters).
+- To learn more about the options you can select when creating an HDInsight cluster, see [Provision HDInsight on Linux using custom options](hdinsight-provision-clusters).
 
 - If you are familiar with Linux, and Hadoop, but want to know specifics about Hadoop on the HDInsight, see [Working with HDInsight on Linux](hdinsight-hadoop-linux-information). This provides information such as:
 
@@ -261,19 +257,17 @@ If you'd like to learn more about creating or managing an HDInsight cluster, see
 
 
 [1]: hdinsight-hadoop-visual-studio-tools-get-started
-
 [hdinsight-provision]: hdinsight-provision-clusters
 [hdinsight-admin-powershell]: hdinsight-administer-use-powershell
 [hdinsight-upload-data]: hdinsight-upload-data
 [hdinsight-use-mapreduce]: hdinsight-use-mapreduce
 [hdinsight-use-hive]: hdinsight-use-hive
 [hdinsight-use-pig]: hdinsight-use-pig
-
 [powershell-download]: http://go.microsoft.com/fwlink/p/?linkid=320376&clcid=0x409
 [powershell-install-configure]: install-configure-powershell
 [powershell-open]: install-configure-powershell#Install
 
-[img-hdi-dashboard]: .media/hdinsight-hadoop-tutorial-get-started-windows/HDI.dashboard.png
+[img-hdi-dashboard]: ./media/hdinsight-hadoop-tutorial-get-started-windows/HDI.dashboard.png
 [img-hdi-dashboard-query-select]: ./media/hdinsight-hadoop-tutorial-get-started-windows/HDI.dashboard.query.select.png
 [img-hdi-dashboard-query-select-result]: ./media/hdinsight-hadoop-tutorial-get-started-windows/HDI.dashboard.query.select.result.png
 [img-hdi-dashboard-query-select-result-output]: ./media/hdinsight-hadoop-tutorial-get-started-windows/HDI.dashboard.query.select.result.output.png

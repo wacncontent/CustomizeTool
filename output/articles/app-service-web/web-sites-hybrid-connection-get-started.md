@@ -7,14 +7,10 @@
 	manager="wpickett" 
 	editor="mollybos"/>
 
-<tags 
-	ms.service="app-service" 
-	ms.workload="na" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="08/11/2015" 
-	ms.author="cephalin"/>
+<tags
+	ms.service="app-service"
+	ms.date="08/11/2015"
+	wacn.date=""/>
 
 #Access on-premises resources using hybrid connections in Azure Websites
 

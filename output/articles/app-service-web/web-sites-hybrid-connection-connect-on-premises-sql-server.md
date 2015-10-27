@@ -9,12 +9,8 @@
 
 <tags
 	ms.service="app-service-web"
-	ms.workload="web"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="09/01/2015"
-	ms.author="cephalin"/>
+	wacn.date=""/>
 
 # Connect to on-premises SQL Server from a web app in Azure Websites using Hybrid Connections
 
