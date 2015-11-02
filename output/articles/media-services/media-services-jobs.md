@@ -53,7 +53,7 @@ Monitor job progress using **Azure Management Portal**, **.NET** or **REST API**
 
 ##Related links
 
-[Quotas and Limitations](media-services-quotas-and-limitations) – Describes quotas used and limitations of the Media Services Encoder
+[Quotas and Limitations](/documentation/articles/media-services-quotas-and-limitations) – Describes quotas used and limitations of the Media Services Encoder
  
 
 <!-- deleted by customization

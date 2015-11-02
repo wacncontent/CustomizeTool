@@ -14,7 +14,7 @@
 
 # Restore a web app in Azure Websites
 
-This article shows you how to restore a web app that you have previously backed up by using the [Azure Websites](/documentation/services/web-sites/) Backup feature. For more information, see [Azure Websites Backups](web-sites-backup). 
+This article shows you how to restore a web app that you have previously backed up by using the [Azure Websites](/documentation/services/web-sites/) Backup feature. For more information, see [Azure Websites Backups](/documentation/articles/web-sites-backup). 
 <!-- deleted by customization
 
 [AZURE.INCLUDE [app-service-web-to-api-and-mobile](../includes/app-service-web-to-api-and-mobile.md)]
@@ -22,7 +22,7 @@ This article shows you how to restore a web app that you have previously backed 
 
 The Web Apps Restore feature lets you restore your web app on-demand to a previous state, or create a new web app based on one of your original web app's backups. Creating a new web app that runs in parallel to the latest version can be useful for A/B testing.
 
-The Web Apps Restore feature, available on the **Backups** blade in the [Azure <!-- deleted by customization preview portal --><!-- keep by customization: begin -->Management Portal<!-- keep by customization: end -->](http://manage.windowsazure.cn), is available only in Standard and Premium modes. For information about scaling your app using Standard or Premium mode, see [Scale a web app in Azure Websites](web-sites-scale). 
+The Web Apps Restore feature, available on the **Backups** blade in the [Azure <!-- deleted by customization preview portal --><!-- keep by customization: begin -->Management Portal<!-- keep by customization: end -->](http://manage.windowsazure.cn), is available only in Standard and Premium modes. For information about scaling your app using Standard or Premium mode, see [Scale a web app in Azure Websites](/documentation/articles/web-sites-scale). 
 <!-- deleted by customization
 Note that the Premium mode allows a greater number of daily backups to be performed over the Standard mode.
 -->

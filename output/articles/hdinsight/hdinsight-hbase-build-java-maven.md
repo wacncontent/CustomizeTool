@@ -25,7 +25,7 @@ Learn how to create and build an [Apache HBase](http://hbase.apache.org/) applic
 
 * [Maven](http://maven.apache.org/)
 
-* [An Azure HDInsight cluster with HBase](hdinsight-hbase-get-started#create-hbase-cluster)
+* [An Azure HDInsight cluster with HBase](/documentation/articles/hdinsight-hbase-get-started#create-hbase-cluster)
 
 ##Create the project
 
@@ -152,7 +152,7 @@ Learn how to create and build an [Apache HBase](http://hbase.apache.org/) applic
 
 	This file will be used to load the HBase configuration for an HDInsight cluster.
 
-	> [AZURE.NOTE] This is a very minimal hbase-site.xml file, and it contains the bare minimum settings for the HDInsight cluster. For a full version of the hbase-site.xml configuration file used by HDInsight, see [Manage Hadoop clusters in HDInsight by using the Azure Management Portal](hdinsight-administer-use-management-portal-v1#rdp). The hbase-site.xml file is located in the C:\apps\dist\hbase-&lt;version number>-hadoop2\conf directory. The version number portion of the file path will change as HBase is updated on the cluster.
+	> [AZURE.NOTE] This is a very minimal hbase-site.xml file, and it contains the bare minimum settings for the HDInsight cluster. For a full version of the hbase-site.xml configuration file used by HDInsight, see [Manage Hadoop clusters in HDInsight by using the Azure Management Portal](/documentation/articles/hdinsight-administer-use-management-portal-v1#rdp). The hbase-site.xml file is located in the C:\apps\dist\hbase-&lt;version number>-hadoop2\conf directory. The version number portion of the file path will change as HBase is updated on the cluster.
 
 3. Save the __hbase-site.xml__ file.
 
@@ -347,7 +347,7 @@ Learn how to create and build an [Apache HBase](http://hbase.apache.org/) applic
 
 ##Upload the JAR file and start a job
 
-> [AZURE.NOTE] There are many ways to upload a file to your HDInsight cluster, as described in [Upload data for Hadoop jobs in HDInsight](hdinsight-upload-data). The following steps use [Azure PowerShell](install-configure-powershell).
+> [AZURE.NOTE] There are many ways to upload a file to your HDInsight cluster, as described in [Upload data for Hadoop jobs in HDInsight](/documentation/articles/hdinsight-upload-data). The following steps use [Azure PowerShell](/documentation/articles/install-configure-powershell).
 
 1. After installing and configuring Azure PowerShell, create a new file named __hbase-runner.psm1__. Use the following as the contents of this file:
 

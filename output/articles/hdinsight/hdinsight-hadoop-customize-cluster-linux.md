@@ -17,7 +17,7 @@
 
 HDInsight provides a configuration option called **Script Action** that invokes custom scripts, which define the customization to be performed on the cluster during the creation process. These scripts can be used to install additional software on a cluster, or to change the configuration of applications on a cluster.
 
-> [AZURE.NOTE] The information in this article is specific to Linux-based HDInsight clusters. For a version of this article that is specific to Windows-based clusters, see [Customize HDInsight clusters using Script Action (Windows)](hdinsight-hadoop-customize-cluster)
+> [AZURE.NOTE] The information in this article is specific to Linux-based HDInsight clusters. For a version of this article that is specific to Windows-based clusters, see [Customize HDInsight clusters using Script Action (Windows)](/documentation/articles/hdinsight-hadoop-customize-cluster)
 
 ## Script Action in the cluster creation process
 
@@ -44,15 +44,15 @@ HDInsight provides several scripts to install the following components on HDInsi
 
 Name | Script
 ----- | -----
-**Install Hue** | https://hdiconfigactions.blob.core.windows.net/linuxhueconfigactionv01/install-hue-uber-v01.sh. See [Install and use Hue on HDInsight clusters](hdinsight-hadoop-hue-linux).
-**Install Spark** | https://hdiconfigactions.blob.core.windows.net/linuxsparkconfigactionv02/spark-installer-v02.sh. See [Install and use Spark on HDInsight clusters](hdinsight-hadoop-spark-install-linux).
-**Install R** | https://hdiconfigactions.blob.core.windows.net/linuxrconfigactionv01/r-installer-v01.sh. See [Install and use R on HDInsight clusters](hdinsight-hadoop-r-scripts-linux).
-**Install Solr** | https://hdiconfigactions.blob.core.windows.net/linuxsolrconfigactionv01/solr-installer-v01.sh. See [Install and use Solr on HDInsight clusters](hdinsight-hadoop-solr-install-linux).
-**Install Giraph** | https://hdiconfigactions.blob.core.windows.net/linuxgiraphconfigactionv01/giraph-installer-v01.sh. See [Install and use Giraph on HDInsight clusters](hdinsight-hadoop-giraph-install-linux).
+**Install Hue** | https://hdiconfigactions.blob.core.windows.net/linuxhueconfigactionv01/install-hue-uber-v01.sh. See [Install and use Hue on HDInsight clusters](/documentation/articles/hdinsight-hadoop-hue-linux).
+**Install Spark** | https://hdiconfigactions.blob.core.windows.net/linuxsparkconfigactionv02/spark-installer-v02.sh. See [Install and use Spark on HDInsight clusters](/documentation/articles/hdinsight-hadoop-spark-install-linux).
+**Install R** | https://hdiconfigactions.blob.core.windows.net/linuxrconfigactionv01/r-installer-v01.sh. See [Install and use R on HDInsight clusters](/documentation/articles/hdinsight-hadoop-r-scripts-linux).
+**Install Solr** | https://hdiconfigactions.blob.core.windows.net/linuxsolrconfigactionv01/solr-installer-v01.sh. See [Install and use Solr on HDInsight clusters](/documentation/articles/hdinsight-hadoop-solr-install-linux).
+**Install Giraph** | https://hdiconfigactions.blob.core.windows.net/linuxgiraphconfigactionv01/giraph-installer-v01.sh. See [Install and use Giraph on HDInsight clusters](/documentation/articles/hdinsight-hadoop-giraph-install-linux).
 
 ## Use a Script Action from the Azure Preview portal
 
-1. Start creating a cluster as described at [Create Hadoop clusters in HDInsight](hdinsight-provision-clusters#portal).
+1. Start creating a cluster as described at [Create Hadoop clusters in HDInsight](/documentation/articles/hdinsight-provision-clusters#portal).
 
 2. Under __Optional Configuration__, for the **Script Actions** blade, click **add script action** to provide details about the script action, as shown below:
 
@@ -75,9 +75,9 @@ In this section, we use Azure Resource Manager (ARM) templates to create an HDIn
 
 ### Before you begin
 
-* For information about configuring a workstation to run HDInsight Powershell cmdlets, see [Install and configure Azure PowerShell](powershell-install-configure).
-* For instructions on how to create ARM templates, see [Authoring Azure Resource Manager templates](resource-group-authoring-templates).
-* If you have not previously used Azure PowerShell with Resource Manager, see [Using Azure PowerShell with Azure Resource Manager](powershell-azure-resource-manager).
+* For information about configuring a workstation to run HDInsight Powershell cmdlets, see [Install and configure Azure PowerShell](/documentation/articles/powershell-install-configure).
+* For instructions on how to create ARM templates, see [Authoring Azure Resource Manager templates](/documentation/articles/resource-group-authoring-templates).
+* If you have not previously used Azure PowerShell with Resource Manager, see [Using Azure PowerShell with Azure Resource Manager](/documentation/articles/powershell-azure-resource-manager).
 
 ### Create clusters using script action
 
@@ -295,7 +295,7 @@ In this section, we use Azure Resource Manager (ARM) templates to create an HDIn
 
 ## Use a Script Action from Azure PowerShell
 
-In this section, we use the **<a href = "http://msdn.microsoft.com/zh-cn/library/dn858088.aspx" target="_blank">Add-AzureHDInsightScriptAction</a>** cmdlet to invoke scripts by using Script Action to customize a cluster. Before proceeding, make sure you have installed and configured Azure PowerShell. For information about configuring a workstation to run HDInsight PowerShell cmdlets, see [Install and configure Azure PowerShell](powershell-install-configure).
+In this section, we use the **<a href = "http://msdn.microsoft.com/zh-cn/library/dn858088.aspx" target="_blank">Add-AzureHDInsightScriptAction</a>** cmdlet to invoke scripts by using Script Action to customize a cluster. Before proceeding, make sure you have installed and configured Azure PowerShell. For information about configuring a workstation to run HDInsight PowerShell cmdlets, see [Install and configure Azure PowerShell](/documentation/articles/powershell-install-configure).
 
 Perform the following steps:
 
@@ -346,7 +346,7 @@ When prompted, enter the credentials for the cluster. It can take several minute
 
 The HDInsight .NET SDK provides client libraries that makes it easier to work with HDInsight from a .NET application. The following steps demonstrate how to use a script to customize a cluster from the HDInsight .NET SDK.
 
-> [AZURE.IMPORTANT] You must first create a self-signed certificate, install it on your workstation, and then upload it to your Azure subscription. For instructions, see [Create a self-signed certificate](hdinsight-administer-use-management-portal-v1#cert).
+> [AZURE.IMPORTANT] You must first create a self-signed certificate, install it on your workstation, and then upload it to your Azure subscription. For instructions, see [Create a self-signed certificate](/documentation/articles/hdinsight-administer-use-management-portal-v1/#cert).
 
 
 ### Create a Visual Studio project
@@ -477,7 +477,7 @@ The Windows Azure HDInsight service is a flexible platform that enables you to b
 
 There are two types of open-source components that are available in the HDInsight service:
 
-- **Built-in components** - These components are pre-installed on HDInsight clusters and provide core functionality of the cluster. For example, YARN ResourceManager, the Hive query language (HiveQL), and the Mahout library belong to this category. A full list of cluster components is available in [What's new in the Hadoop cluster versions provided by HDInsight?](hdinsight-component-versioning).
+- **Built-in components** - These components are pre-installed on HDInsight clusters and provide core functionality of the cluster. For example, YARN ResourceManager, the Hive query language (HiveQL), and the Mahout library belong to this category. A full list of cluster components is available in [What's new in the Hadoop cluster versions provided by HDInsight?](/documentation/articles/hdinsight-component-versioning).
 
 - **Custom components** - You, as a user of the cluster, can install or use in your workload any component available in the community or created by you.
 
@@ -515,11 +515,11 @@ You can use Ambari web UI to view information logged by scripts during cluster c
 
 See the following for information and examples on creating and using scripts to customize a cluster:
 
-- [Develop Script Action scripts for HDInsight](hdinsight-hadoop-script-actions-linux)
-- [Install and use Spark on HDInsight clusters](hdinsight-hadoop-spark-install-linux)
-- [Install and use R on HDInsight clusters](hdinsight-hadoop-r-scripts-linux)
-- [Install and use Solr on HDInsight clusters](hdinsight-hadoop-solr-install-linux)
-- [Install and use Giraph on HDInsight clusters](hdinsight-hadoop-giraph-install-linux)
+- [Develop Script Action scripts for HDInsight](/documentation/articles/hdinsight-hadoop-script-actions-linux)
+- [Install and use Spark on HDInsight clusters](/documentation/articles/hdinsight-hadoop-spark-install-linux)
+- [Install and use R on HDInsight clusters](/documentation/articles/hdinsight-hadoop-r-scripts-linux)
+- [Install and use Solr on HDInsight clusters](/documentation/articles/hdinsight-hadoop-solr-install-linux)
+- [Install and use Giraph on HDInsight clusters](/documentation/articles/hdinsight-hadoop-giraph-install-linux)
 
 
 

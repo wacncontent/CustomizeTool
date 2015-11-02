@@ -16,7 +16,7 @@
 
 2. Navigate to the **API app** blade for the API app that you deployed.
 
-	For information about the **API app** blade, and how to find it, see [Manage API apps](app-service-api-manage-in-portal).
+	For information about the **API app** blade, and how to find it, see [Manage API apps](/documentation/articles/app-service-api-manage-in-portal).
 
 4. Click the **Gateway** link.
 

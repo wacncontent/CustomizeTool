@@ -77,7 +77,7 @@ To use the Azure Command-Line Interface, you must have **Node.js** installed on 
 
 -->
 <!-- keep by customization: begin -->
-1. Browse to your  Website's dashboard in the Azure Portal, click on **Configure**.
+1. Browse to your  Website's dashboard in the Azure Management Portal, click on **Configure**.
 
 	![Configure tab on  Websites dashboard][configure]
 
@@ -156,7 +156,7 @@ As noted in the previous section, the best way to see the default PHP version, i
 
 -->
 <!-- keep by customization: begin -->
-1. Navigate to your site's dashboard in the Azure Portal, and click on **Configure**.
+1. Navigate to your site's dashboard in the Azure Management Portal, and click on **Configure**.
 
 	![Configure tab on  Websites dashboard][configure]
 
@@ -204,7 +204,7 @@ For more information, see the [PHP Developer Center](/develop/php/).
 
 -->
 <!-- keep by customization: begin -->
-1. Navigate to your site's dashboard in the Azure Portal, and click on **Configure**.
+1. Navigate to your site's dashboard in the Azure Management Portal, and click on **Configure**.
 
 	![Configure tab on  Websites dashboard][configure]
 
@@ -218,7 +218,7 @@ For more information, see the [PHP Developer Center](/develop/php/).
 <!-- keep by customization: end -->
 <!-- keep by customization: begin -->
 [PHP Developer Center Tutorials]: /develop/php/
-[How to Configure  Websites]: /zh-cn/documentation/articles/web-sites-configure/
+[How to Configure  Websites]: /documentation/articles/web-sites-configure
 [configure]: ./media/web-sites-php-configure/configure.png
 [app-settings]: ./media/web-sites-php-configure/app-settings.png
 [handler-mappings]: ./media/web-sites-php-configure/handler-mappings.png

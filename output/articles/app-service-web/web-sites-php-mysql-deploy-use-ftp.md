@@ -16,12 +16,12 @@
 #Create a PHP-MySQL web app in Azure Websites and deploy using FTP
 
 > [AZURE.SELECTOR]
-- [.Net](web-sites-dotnet-get-started)
-- [Node.js](web-sites-nodejs-develop-deploy-mac)
-- [Java](web-sites-java-get-started)
-- [PHP - Git](web-sites-php-mysql-deploy-use-git)
-- [PHP - FTP](web-sites-php-mysql-deploy-use-ftp)
-- [Python](web-sites-python-ptvs-django-mysql)
+- [.Net](/documentation/articles/web-sites-dotnet-get-started)
+- [Node.js](/documentation/articles/web-sites-nodejs-develop-deploy-mac)
+- [Java](/documentation/articles/web-sites-java-get-started)
+- [PHP - Git](/documentation/articles/web-sites-php-mysql-deploy-use-git)
+- [PHP - FTP](/documentation/articles/web-sites-php-mysql-deploy-use-ftp)
+- [Python](/documentation/articles/web-sites-python-ptvs-django-mysql)
 
 This tutorial shows you how to create a PHP-MySQL web app and how to deploy it using FTP. This tutorial assumes you have [PHP][install-php], [MySQL][install-mysql], a web server, and an FTP client installed on your computer. The instructions in this tutorial can be followed on any operating system, including Windows, Mac, and  Linux. Upon completing this guide, you will have a PHP/MySQL web app running in Azure.
  

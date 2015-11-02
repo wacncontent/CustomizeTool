@@ -17,14 +17,14 @@
 Learn how to use Apache Storm on HDInsight to process sensor data from Azure Event Hub, and visualize it by using D3.js. This document also describes how to use an Azure virtual network to connect Storm on HDInsight with HBase on HDInsight, and store data from the topology into HBase.
 <!-- deleted by customization
 
-> [AZURE.NOTE] The information in this document is based on using a Windows-based Storm on HDInsight cluster. For information on working with Azure Event Hub from Linux-based Storm on HDInsight, see [Process events from Azure Event Hubs with Storm on HDInsight](hdinsight-storm-develop-java-event-hub-topology)
+> [AZURE.NOTE] The information in this document is based on using a Windows-based Storm on HDInsight cluster. For information on working with Azure Event Hub from Linux-based Storm on HDInsight, see [Process events from Azure Event Hubs with Storm on HDInsight](/documentation/articles/hdinsight-storm-develop-java-event-hub-topology)
 -->
 
 ## Prerequisites
 
 * An Azure subscription. See [Get Azure trial](/pricing/1rmb-trial/).
 
-* An [Apache Storm on HDInsight cluster](hdinsight-storm-getting-started)
+* An [Apache Storm on HDInsight cluster](/documentation/articles/hdinsight-storm-getting-started)
 
 * [Node.js](http://nodejs.org/): Used for the web dashboard and to send sensor data to Event Hub.
 
@@ -256,7 +256,7 @@ In your development environment, use the following steps to run the Temperature 
 
 ### Publish the website dashboard
 
-1. To deploy the dashboard to an Azure Website, follow the steps in [Build and deploy a Node.js website to Azure](web-sites-nodejs-develop-deploy-mac). Note the URL of the website, which will be similar to **mywebsite.chinacloudsites.cn**.
+1. To deploy the dashboard to an Azure Website, follow the steps in [Build and deploy a Node.js website to Azure](/documentation/articles/web-sites-nodejs-develop-deploy-mac). Note the URL of the website, which will be similar to **mywebsite.chinacloudsites.cn**.
 
 2. When the website is created, go to the site in the Azure Management Portal and select the **Configure** tab. Enable **Web Sockets**, and then click **Save** at the bottom of the page.
 
@@ -274,7 +274,7 @@ In your development environment, use the following steps to run the Temperature 
 
 	This will create a file named **TemperatureMonitor-1.0-SNAPSHOT.jar** in the **target** directory of your project.
 
-2. Follow the steps in [Deploy and manage Storm topologies](hdinsight-storm-deploy-monitor-topology) to upload and start the topology on your Storm on HDInsight cluster by using the **Storm Dashboard**.
+2. Follow the steps in [Deploy and manage Storm topologies](/documentation/articles/hdinsight-storm-deploy-monitor-topology) to upload and start the topology on your Storm on HDInsight cluster by using the **Storm Dashboard**.
 
 3. After the topology has started, open a browser to the website you published on Azure, then use the `node app.js` command to send data to Event Hub. You should see the web dashboard update to display the information.
 
@@ -302,7 +302,7 @@ If you plan to use HBase with this example, you must create an Azure virtual net
 
 	- **Location**: The location must be the same as the HBase cluster that you will create.
 
-	- **DNS server**: This article uses the internal DNS server provided by Azure; therefore, you can choose **None**. More advanced networking configurations with custom DNS servers are also supported. For the detailed guidance, see [Name Resolution (DNS)](virtual-networks-name-resolution-for-vms-and-role-instances).
+	- **DNS server**: This article uses the internal DNS server provided by Azure; therefore, you can choose **None**. More advanced networking configurations with custom DNS servers are also supported. For the detailed guidance, see [Name Resolution (DNS)](/documentation/articles/virtual-networks-name-resolution-for-vms-and-role-instances).
 
 4. Click **Create a Virtual Network**. The new virtual network name will appear in the list. Wait until the Status column shows **Created**.
 
@@ -407,18 +407,18 @@ You have now learned how to use Storm to read data from Event Hub and display in
 
 * For more examples of Storm topologies with HDinsight, see:
 
-    * [Example topologies for Storm on HDInsight](hdinsight-storm-example-topology)
+    * [Example topologies for Storm on HDInsight](/documentation/articles/hdinsight-storm-example-topology)
 
 * For more information about Apache Storm, see the  [Apache Storm](https://storm.incubator.apache.org/) site.
 
-* For more information about HBase on HDInsight, see the [HBase with HDInsight Overview](hdinsight-hbase-overview).
+* For more information about HBase on HDInsight, see the [HBase with HDInsight Overview](/documentation/articles/hdinsight-hbase-overview).
 
 * For more information about Socket.io, see the [socket.io](http://socket.io/) site.
 
 * For more information about D3.js, see [D3.js - Data Driven Documents](http://d3js.org/).
 
-* For information about creating topologies in Java, see [Develop Java topologies for Apache Storm on HDInsight](hdinsight-storm-develop-java-topology).
+* For information about creating topologies in Java, see [Develop Java topologies for Apache Storm on HDInsight](/documentation/articles/hdinsight-storm-develop-java-topology).
 
-* For information about creating topologies in .NET, see [Develop C# topologies for Apache Storm on HDInsight using Visual Studio](hdinsight-storm-develop-csharp-visual-studio-topology).
+* For information about creating topologies in .NET, see [Develop C# topologies for Apache Storm on HDInsight using Visual Studio](/documentation/articles/hdinsight-storm-develop-csharp-visual-studio-topology).
 
 [azure-portal]: https://manage.windowsazure.cn/

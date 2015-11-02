@@ -17,12 +17,12 @@
 
 Windows Azure Media Services enables you to secure your media from the time it leaves your computer through storage, processing, and delivery. Media Services allows you to deliver your content encrypted dynamically with Advanced Encryption Standard (AES) (using 128-bit encryption keys) and common encryption (CENC) using PlayReady and/or Widevine DRM. Media Services also provides a service for delivering keys and PlayReady licenses to authorized clients. Currently, Media Services does not provide a Widevine license server. You can use the following AMS partners to help you deliver Widevine licenses: [Axinom](http://www.axinom.com/press/ibc-axinom-drm-6/), [EZDRM](http://ezdrm.com/), [castLabs](http://castlabs.com/company/partners/azure/).
 
-- The following image demonstrates the "PlayReady and/or Widevine DRM dynamic common encryption" workflow. For details, see [Using PlayReady and/or Widevine DRM dynamic common encryption](media-services-protect-with-drm).
+- The following image demonstrates the "PlayReady and/or Widevine DRM dynamic common encryption" workflow. For details, see [Using PlayReady and/or Widevine DRM dynamic common encryption](/documentation/articles/media-services-protect-with-drm).
 
 	![Protect with PlayReady](./media/media-services-content-protection-overview/media-services-content-protection-with-drm.png)
 
 
-- The following image demonstrates the "AES-128 dynamic encryption" workflow. For details, see [Use AES-128 Dynamic Encryption and Key Delivery Service](media-services-protect-with-aes128).
+- The following image demonstrates the "AES-128 dynamic encryption" workflow. For details, see [Use AES-128 Dynamic Encryption and Key Delivery Service](/documentation/articles/media-services-protect-with-aes128).
 
 	![Protect with AES-128](./media/media-services-content-protection-overview/media-services-content-protection-with-aes.png)
 
@@ -60,7 +60,7 @@ You also need to configure the asset's delivery policy. If you want to stream a 
 
 When a stream is requested by a player, Media Services uses the specified key to dynamically encrypt your content using AES or common encryption. To decrypt the stream, the player will request the key from the key delivery service. To decide whether or not the user is authorized to get the key, the service evaluates the authorization policies that you specified for the key.
 
->[AZURE.NOTE]To take advantage of dynamic encryption, you must first get at least one On-demand streaming unit for the streaming endpoint from which you plan to delivery your encrypted content. For more information, see [How to Scale Media Services](media-services-manage-origins#scale_streaming_endpoints).
+>[AZURE.NOTE]To take advantage of dynamic encryption, you must first get at least one On-demand streaming unit for the streaming endpoint from which you plan to delivery your encrypted content. For more information, see [How to Scale Media Services](/documentation/articles/media-services-manage-origins#scale_streaming_endpoints).
 
 ###PlayReady DRM licenses and AES clear keys delivery services
 
@@ -105,7 +105,7 @@ For more information, see [How to integrate Azure PlayReady License service with
 
 ###Integrating with partners
 
-[Using castLabs to deliver DRM licenses to Azure Media Services](media-services-castlabs-integration)
+[Using castLabs to deliver DRM licenses to Azure Media Services](/documentation/articles/media-services-castlabs-integration)
 
 <!-- deleted by customization
 

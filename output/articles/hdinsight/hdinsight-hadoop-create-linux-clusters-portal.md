@@ -52,8 +52,8 @@ The Azure preview portal is a web-based management tool for services and resourc
 
 	For more information on using SSH with HDInsight, see one of the following articles:
 
-	* [Use SSH with Linux-based Hadoop on HDInsight from Linux, Unix, or OS X](hdinsight-hadoop-linux-use-ssh-unix)
-	* [Use SSH with Linux-based Hadoop on HDInsight from Windows](hdinsight-hadoop-linux-use-ssh-windows)
+	* [Use SSH with Linux-based Hadoop on HDInsight from Linux, Unix, or OS X](/documentation/articles/hdinsight-hadoop-linux-use-ssh-unix)
+	* [Use SSH with Linux-based Hadoop on HDInsight from Windows](/documentation/articles/hdinsight-hadoop-linux-use-ssh-windows)
 
 
 7. Click **Data Source** to choose an existing data source for the cluster, or create a new one.
@@ -82,7 +82,7 @@ The Azure preview portal is a web-based management tool for services and resourc
 
 9. Click **Optional Configuration** to select the cluster version, as well as configure other optional settings such as joining a **Virtual Network**, setting up an **External Metastore** to hold data for Hive and Oozie, use Script Actions to customize a cluster to install custom components, or use additional storage accounts with the cluster.
 
-	* Click the **HDInsight Version** drop-down and select the version you want to use for the cluster. For more information, see [HDInsight cluster versions](hdinsight-component-versioning).
+	* Click the **HDInsight Version** drop-down and select the version you want to use for the cluster. For more information, see [HDInsight cluster versions](/documentation/articles/hdinsight-component-versioning).
 
 	* **Virtual Network**: Select an Azure virtual network and the subnet if you want to place the cluster into a virtual network.  
 
@@ -98,7 +98,7 @@ The Azure preview portal is a web-based management tool for services and resourc
 
 		>[AZURE.NOTE] The Azure SQL database used for the metastore must allow connectivity to other Azure services, including Azure HDInsight. On the Azure SQL database dashboard, on the right side, click the server name. This is the server on which the SQL database instance is running. Once you are on the server view, click **Configure**, and then for **Azure Services**, click **Yes**, and then click **Save**.
 
-	* **Script Actions** if you want to use a custom script to customize a cluster, as the cluster is being created. For more information about script actions, see [Customize HDInsight clusters using Script Action](hdinsight-hadoop-customize-cluster). On the Script Actions blade provide the details as shown in the screen capture.
+	* **Script Actions** if you want to use a custom script to customize a cluster, as the cluster is being created. For more information about script actions, see [Customize HDInsight clusters using Script Action](/documentation/articles/hdinsight-hadoop-customize-cluster). On the Script Actions blade provide the details as shown in the screen capture.
 
 		![Script action blade](./media/hdinsight-hadoop-create-linux-cluster-portal/HDI.CreateCluster.8.png "Specify script action")
 
@@ -144,17 +144,17 @@ Now that you have successfully created an HDInsight cluster, use the following t
 
 ###Hadoop clusters
 
-* [Use Hive with HDInsight](hdinsight-use-hive)
-* [Use Pig with HDInsight](hdinsight-use-pig)
-* [Use MapReduce with HDInsight](hdinsight-use-mapreduce)
+* [Use Hive with HDInsight](/documentation/articles/hdinsight-use-hive)
+* [Use Pig with HDInsight](/documentation/articles/hdinsight-use-pig)
+* [Use MapReduce with HDInsight](/documentation/articles/hdinsight-use-mapreduce)
 
 ###HBase clusters
 
-* [Get started with HBase on HDInsight](hdinsight-hbase-tutorial-get-stared-linux)
-* [Develop Java applications for HBase on HDInsight](hdinsight-hbase-build-java-maven-linux)
+* [Get started with HBase on HDInsight](/documentation/articles/hdinsight-hbase-tutorial-get-stared-linux)
+* [Develop Java applications for HBase on HDInsight](/documentation/articles/hdinsight-hbase-build-java-maven-linux)
 
 ###Storm clusters
 
-* [Develop Java topologies for Storm on HDInsight](hdinsight-storm-develop-java-topology)
-* [Use Python components in Storm on HDInsight](hdinsight-storm-develop-python)
-* [Deploy and monitor topologies with Storm on HDInsight](hdinsight-storm-deploy-monitor-topology-linux)
+* [Develop Java topologies for Storm on HDInsight](/documentation/articles/hdinsight-storm-develop-java-topology)
+* [Use Python components in Storm on HDInsight](/documentation/articles/hdinsight-storm-develop-python)
+* [Deploy and monitor topologies with Storm on HDInsight](/documentation/articles/hdinsight-storm-deploy-monitor-topology-linux)

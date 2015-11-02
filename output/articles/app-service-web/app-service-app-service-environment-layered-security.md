@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties 
 	pageTitle="Layered Security Architecture with Azure Websites Environments" 
 	description="Implementing a layered security architecture with Azure Websites Environments." 

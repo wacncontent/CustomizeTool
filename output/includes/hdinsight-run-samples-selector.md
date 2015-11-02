@@ -1,5 +1,5 @@
 > [AZURE.SELECTOR]
 <!-- deleted by customization
-- [Linux cluster](hdinsight-hadoop-run-samples-linux)
+- [Linux cluster](/documentation/articles/hdinsight-hadoop-run-samples-linux)
 -->
-- [Windows cluster](hdinsight-run-samples)
+- [Windows cluster](/documentation/articles/hdinsight-run-samples)

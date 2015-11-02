@@ -20,16 +20,16 @@ This topic contains links to Azure SDK for .NET Release Notes.
 
 ##Azure SDK for .NET 2.7 Release Notes
 
-[Azure SDK for .NET 2.7 Release Notes](azure-sdk-dotnet-release-notes-2_7)
+[Azure SDK for .NET 2.7 Release Notes](/documentation/articles/azure-sdk-dotnet-release-notes-2_7)
 
 ##Azure SDK for .NET 2.6 Release Notes
 
-[Azure SDK for .NET 2.6 Release Notes](azure-sdk-dotnet-release-notes-2_6)
+[Azure SDK for .NET 2.6 Release Notes](/documentation/articles/azure-sdk-dotnet-release-notes-2_6)
 <!-- deleted by customization
 
 ##Azure SDK for .NET 2.5.1 Release Notes
 
-[Azure SDK for .NET 2.5.1 Release Notes](app-service-release-notes)
+[Azure SDK for .NET 2.5.1 Release Notes](/documentation/articles/app-service-release-notes)
 -->
 
 ##Azure SDK for .NET 2.5 Release Notes

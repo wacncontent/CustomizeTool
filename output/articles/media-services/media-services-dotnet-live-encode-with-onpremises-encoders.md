@@ -19,14 +19,14 @@
 The following are required to complete the tutorial:
 
 - An Azure account.
-- A Media Services account.	To create a Media Services account, see [How to Create a Media Services Account](media-services-create-account).
-- Set up your dev environment. For more information, see [Set up your environment](media-services-set-up-computer).
+- A Media Services account.	To create a Media Services account, see [How to Create a Media Services Account](/documentation/articles/media-services-create-account).
+- Set up your dev environment. For more information, see [Set up your environment](/documentation/articles/media-services-set-up-computer).
 - A webcam. For example, [Telestream Wirecast encoder](http://www.telestream.net/wirecast/overview.htm). 
 
 Recommended to review the following articles: 
 
 - [Azure Media Services RTMP Support and Live Encoders](http://azure.microsoft.com/blog/2014/09/18/azure-media-services-rtmp-support-and-live-encoders/)
-- [Working with Channels that Receive Multi-bitrate Live Stream from On-premises Encoders](media-services-manage-channels-overview)
+- [Working with Channels that Receive Multi-bitrate Live Stream from On-premises Encoders](/documentation/articles/media-services-manage-channels-overview)
  
 
 ##Example

@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties
 	pageTitle="Provision and deploy microservices predictably in Azure"
 	description="Learn how to deploy an application composed of microservices in Azure Websites as a single unit and in a predictable manner using JSON resource group templates and PowerShell scripting."
@@ -17,7 +19,7 @@
 
 This tutorial shows how to provision and deploy an application composed of [microservices](https://en.wikipedia.org/wiki/Microservices) in [Azure Websites](/home/features/app-service/) as a single unit and in a predictable manner using JSON resource group templates and PowerShell scripting. 
 
-When provisioning and deploying high-scale applications that are composed of highly decoupled microservices, repeatability and predictability are crucial to success. [Azure Websites](/home/features/app-service/) enables you to create microservices that include web apps, mobile apps, API apps, and logic apps. [Azure Resource Manager](resource-group-overview) enables you to manage all the microservices as a unit, together with resource dependencies such as database and source control settings. Now, you can also deploy such an application using JSON templates and simple PowerShell scripting. 
+When provisioning and deploying high-scale applications that are composed of highly decoupled microservices, repeatability and predictability are crucial to success. [Azure Websites](/home/features/app-service/) enables you to create microservices that include web apps, mobile apps, API apps, and logic apps. [Azure Resource Manager](/documentation/articles/resource-group-overview) enables you to manage all the microservices as a unit, together with resource dependencies such as database and source control settings. Now, you can also deploy such an application using JSON templates and simple PowerShell scripting. 
 
 [AZURE.INCLUDE [app-service-web-to-api-and-mobile](../includes/app-service-web-to-api-and-mobile.md)] 
 
@@ -36,9 +38,9 @@ In this tutorial, you will use the following tools. Since it’s not comprehensi
 
 ### Azure Resource Manager templates (JSON) ###
  
-Every time you create a web app in Azure Websites, for example, Azure Resource Manager uses a JSON template to create the entire resource group with the component resources. A complex template from the [Azure Marketplace](/marketplace) like the [Scalable WordPress](/marketplace/partners/wordpress/scalablewordpress/) app can include the MySQL database, storage accounts, the App Service plan, the web app itself, alert rules, app settings, autoscale settings, and more, and all these templates are available to you through PowerShell. For information on how to download and use these templates, see [Using Azure PowerShell with Azure Resource Manager](powershell-azure-resource-manager).
+Every time you create a web app in Azure Websites, for example, Azure Resource Manager uses a JSON template to create the entire resource group with the component resources. A complex template from the [Azure Marketplace](/marketplace) like the [Scalable WordPress](/marketplace/partners/wordpress/scalablewordpress/) app can include the MySQL database, storage accounts, the App Service plan, the web app itself, alert rules, app settings, autoscale settings, and more, and all these templates are available to you through PowerShell. For information on how to download and use these templates, see [Using Azure PowerShell with Azure Resource Manager](/documentation/articles/powershell-azure-resource-manager).
 
-For more information on the Azure Resource Manager templates, see [Authoring Azure Resource Manager Templates](resource-group-authoring-templates)
+For more information on the Azure Resource Manager templates, see [Authoring Azure Resource Manager Templates](/documentation/articles/resource-group-authoring-templates)
 
 ### Azure SDK 2.6 for Visual Studio ###
 
@@ -50,7 +52,7 @@ For more information, see [Azure SDK 2.6 for Visual Studio](/blog/2015/04/29/ann
 
 Beginning in version 0.8.0, the Azure PowerShell installation includes the Azure Resource Manager module in addition to the Azure module. This new module enables you to script the deployment of resource groups.
 
-For more information, see [Using Azure PowerShell with Azure Resource Manager](powershell-azure-resource-manager)
+For more information, see [Using Azure PowerShell with Azure Resource Manager](/documentation/articles/powershell-azure-resource-manager)
 
 ### Azure Resource Explorer ###
 
@@ -139,7 +141,7 @@ Note the following about the highlighted JSON code:
 -	The SQLServer resource has two nested resources, each has a different value for `type`.
 -	The nested resources inside `“resources”: […]`, where the database and the firewall rules are defined, have a `dependsOn` element that specifies the resource ID of the root-level SQLServer resource. This tells Azure Resource Manager, “before you create this resource, that other resource must already exist; and if that other resource is defined in the template, then create that one first”.
 
-	>[AZURE.NOTE] For detailed information on how to use the `resourceId()` function, see [Azure Resource Manager Template Functions](resource-group-template-functions).
+	>[AZURE.NOTE] For detailed information on how to use the `resourceId()` function, see [Azure Resource Manager Template Functions](/documentation/articles/resource-group-template-functions).
 
 -	The effect of the `dependsOn` element is that Azure Resource Manager can know which resources can be created in parallel and which resources must be created sequentially. 
 
@@ -285,17 +287,17 @@ In DevOps, repeatability and predictability are keys to any successful deploymen
 
 ## Next Steps ##
 
-Find out how to [apply agile methodologies and continuously publish your microservices application with ease](app-service-agile-software-development) and advanced deployment techniques like [flighting deployment](app-service-web-test-in-production-controlled-test-flight) easily.
+Find out how to [apply agile methodologies and continuously publish your microservices application with ease](/documentation/articles/app-service-agile-software-development) and advanced deployment techniques like [flighting deployment](/documentation/articles/app-service-web-test-in-production-controlled-test-flight) easily.
 
 <a name="resources"></a>
 ## More resources ##
 
--	[Azure Resource Manager Template Language](resource-group-authoring-templates)
--	[Authoring Azure Resource Manager Templates](resource-group-authoring-templates)
--	[Azure Resource Manager Template Functions](resource-group-template-functions)
--	[Deploy an application with Azure Resource Manager template](resource-group-template-deploy)
--	[Using Azure PowerShell with Azure Resource Manager](powershell-azure-resource-manager)
--	[Troubleshooting Resource Group Deployments in Azure](resource-group-deploy-debug)
+-	[Azure Resource Manager Template Language](/documentation/articles/resource-group-authoring-templates)
+-	[Authoring Azure Resource Manager Templates](/documentation/articles/resource-group-authoring-templates)
+-	[Azure Resource Manager Template Functions](/documentation/articles/resource-group-template-functions)
+-	[Deploy an application with Azure Resource Manager template](/documentation/articles/resource-group-template-deploy)
+-	[Using Azure PowerShell with Azure Resource Manager](/documentation/articles/powershell-azure-resource-manager)
+-	[Troubleshooting Resource Group Deployments in Azure](/documentation/articles/resource-group-deploy-debug)
 
 
 

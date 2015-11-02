@@ -17,7 +17,7 @@
 
 This topic shows how to use Media Services .NET SDK to encode an asset and generate thumbnails using Media Encoder Standard. The topic defines the XML and JSON thumbnail presets that you can use to create a task that does encoding and generates thumbnails at the same time. [This](https://msdn.microsoft.com/zh-cn/library/mt269962.aspx) document contains descriptions of elements that are used by these presets.
 
-Make sure to review the [Considerations](media-services-dotnet-generate-thumbnail-with-mes#considerations) section.
+Make sure to review the [Considerations](/documentation/articles/media-services-dotnet-generate-thumbnail-with-mes#considerations) section.
 
 ##Example
 
@@ -25,7 +25,7 @@ The following code example uses Media Services .NET SDK to perform the following
 
 - Create an encoding job.
 - Get a reference to the Media Encoder Standard encoder.
-- Load the preset [XML](media-services-dotnet-generate-thumbnail-with-mes#xml) or [JSON](media-services-dotnet-generate-thumbnail-with-mes#json) that contain the encoding preset as well as information needed to generate thumbnails. You can save this  [XML](media-services-dotnet-generate-thumbnail-with-mes#xml) or [JSON](media-services-dotnet-generate-thumbnail-with-mes#json) in a file and use the following code to load the file.
+- Load the preset [XML](/documentation/articles/media-services-dotnet-generate-thumbnail-with-mes#xml) or [JSON](/documentation/articles/media-services-dotnet-generate-thumbnail-with-mes#json) that contain the encoding preset as well as information needed to generate thumbnails. You can save this  [XML](/documentation/articles/media-services-dotnet-generate-thumbnail-with-mes#xml) or [JSON](/documentation/articles/media-services-dotnet-generate-thumbnail-with-mes#json) in a file and use the following code to load the file.
 
 			// Load the XML (or JSON) from the local file.
 		    string configuration = File.ReadAllText(fileName);  
@@ -379,4 +379,4 @@ You can view AMS learning paths here:
 
 ##See Also 
 
-[Media Services Encoding Overview](media-services-encode-asset)
+[Media Services Encoding Overview](/documentation/articles/media-services-encode-asset)

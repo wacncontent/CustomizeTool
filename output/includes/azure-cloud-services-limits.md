@@ -1,6 +1,6 @@
 Resource|Default Limit|Maximum Limit
 ---|---|---
-[Web/worker roles per deployment](cloud-services-what-is)<sup>1</sup>|25|25
+[Web/worker roles per deployment](/documentation/articles/cloud-services-what-is)<sup>1</sup>|25|25
 [Instance Input Endpoints](http://msdn.microsoft.com/zh-cn/library/gg557552.aspx#InstanceInputEndpoint) per deployment|25|25
 [Input Endpoints](http://msdn.microsoft.com/zh-cn/library/gg557552.aspx#InputEndpoint) per deployment|25|25
 [Internal Endpoints](http://msdn.microsoft.com/zh-cn/library/gg557552.aspx#InternalEndpoint) per deployment|25|25

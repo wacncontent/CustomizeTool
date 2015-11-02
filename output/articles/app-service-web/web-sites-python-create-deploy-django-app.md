@@ -53,7 +53,7 @@ You will create an application using the Django web framework (see alternate ver
 - Python 2.7 or 3.4
 - setuptools, pip, virtualenv (Python 2.7 only)
 - Git
-- [Python Tools for Visual Studio][](PTVS) - Note: this is optional
+- [Python Tools for Visual Studio][](/documentation/articles/PTVS) - Note: this is optional
 
 **Note**: TFS publishing is currently not supported for Python projects.
 
@@ -83,7 +83,7 @@ The first step in creating your app is to create the web app via the [Azure Mana
 3. In the search box, type "python".
 4. In the search results, select **Django**, then click **Create**.
 5. Configure the new Django app, such as creating a new App Service plan and a new resource group for it. Then, click **Create**.
-6. Configure Git publishing for your newly created web app by following the instructions at [Continuous deployment using GIT in Azure Websites](web-sites-publish-source-control).
+6. Configure Git publishing for your newly created web app by following the instructions at [Continuous deployment using GIT in Azure Websites](/documentation/articles/web-sites-publish-source-control).
 
 -->
 <!-- keep by customization: begin -->
@@ -193,7 +193,7 @@ The next 3 sections describe how to proceed with the web app development under 3
 
 ### Clone the repository
 
-First, clone the repository using the URL provided on the Azure Management Portal. For more information, see [Continuous deployment using GIT in Azure Websites](web-sites-publish-source-control).
+First, clone the repository using the URL provided on the Azure Management Portal. For more information, see [Continuous deployment using GIT in Azure Websites](/documentation/articles/web-sites-publish-source-control).
 
 Open the solution file (.sln) that is included in the root of the repository.
 
@@ -273,7 +273,7 @@ Browse to the Azure URL to view your changes.
 
 ### Clone the repository
 
-First, clone the repository using the URL provided on the Azure Management Portal, and add the Azure repository as a remote. For more information, see [Continuous deployment using GIT in Azure Websites](web-sites-publish-source-control).
+First, clone the repository using the URL provided on the Azure Management Portal, and add the Azure repository as a remote. For more information, see [Continuous deployment using GIT in Azure Websites](/documentation/articles/web-sites-publish-source-control).
 
     git clone <repo-url>
     cd <repo-folder>
@@ -365,7 +365,7 @@ Browse to the Azure URL to view your changes.
 
 ### Clone the repository
 
-First, clone the repository using the URL provided on the Azure Management Portal, and add the Azure repository as a remote. For more information, see [Continuous deployment using GIT in Azure Websites](web-sites-publish-source-control).
+First, clone the repository using the URL provided on the Azure Management Portal, and add the Azure repository as a remote. For more information, see [Continuous deployment using GIT in Azure Websites](/documentation/articles/web-sites-publish-source-control).
 
     git clone <repo-url>
     cd <repo-folder>
@@ -572,10 +572,10 @@ For more information, see the [Python Developer Center](/develop/python/).
 
 
 <!--Link references-->
-[Django and MySQL on Azure with Python Tools for Visual Studio]: web-sites-python-ptvs-django-mysql
-[Django and SQL Database on Azure with Python Tools for Visual Studio]: web-sites-python-ptvs-django-sql
-[SQL Database]: web-sites-python-ptvs-django-sql
-[MySQL]: web-sites-python-ptvs-django-mysql
+[Django and MySQL on Azure with Python Tools for Visual Studio]: /documentation/articles/web-sites-python-ptvs-django-mysql
+[Django and SQL Database on Azure with Python Tools for Visual Studio]: /documentation/articles/web-sites-python-ptvs-django-sql
+[SQL Database]: /documentation/articles/web-sites-python-ptvs-django-sql
+[MySQL]: /documentation/articles/web-sites-python-ptvs-django-mysql
 <!--External Link references-->
 [Azure SDK for Python 2.7]: http://go.microsoft.com/fwlink/?linkid=254281
 [Azure SDK for Python 3.4]: http://go.microsoft.com/fwlink/?linkid=516990

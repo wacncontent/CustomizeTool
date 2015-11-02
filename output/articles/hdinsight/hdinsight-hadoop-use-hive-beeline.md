@@ -19,7 +19,7 @@
 
 In this article, you will learn how to use Secure Shell (SSH) to connect to a Linux-based HDInsight cluster, and then interactively submit Hive queries by using the [Beeline](https://cwiki.apache.org/confluence/display/Hive/HiveServer2+Clients#HiveServer2Clients-Beeline–NewCommandLineShell) command-line tool.
 
-> [AZURE.NOTE] Beeline used JDBC to connect to Hive. For more information on using JDBC with Hive, see [Connect to Hive on Azure HDInsight using the Hive JDBC driver](hdinsight-connect-hive-jdbc-driver).
+> [AZURE.NOTE] Beeline used JDBC to connect to Hive. For more information on using JDBC with Hive, see [Connect to Hive on Azure HDInsight using the Hive JDBC driver](/documentation/articles/hdinsight-connect-hive-jdbc-driver).
 
 ##<a id="prereq"></a>Prerequisites
 
@@ -41,13 +41,13 @@ Connect to the fully qualified domain name (FQDN) of your HDInsight cluster by u
 
 **If you provided a password for SSH authentication** when you created the HDInsight cluster, you will need to provide the password when prompted.
 
-For more information on using SSH with HDInsight, see [Use SSH with Linux-based Hadoop on HDInsight from Linux, OS X, and Unix](hdinsight-hadoop-linux-use-ssh-unix).
+For more information on using SSH with HDInsight, see [Use SSH with Linux-based Hadoop on HDInsight from Linux, OS X, and Unix](/documentation/articles/hdinsight-hadoop-linux-use-ssh-unix).
 
 ###PuTTY (Windows-based clients)
 
 Windows does not provide a built-in SSH client. We recommend using **PuTTY**, which can be downloaded from [http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html).
 
-For more information on using PuTTY, see [Use SSH with Linux-based Hadoop on HDInsight from Windows ](hdinsight-hadoop-linux-use-ssh-windows).
+For more information on using PuTTY, see [Use SSH with Linux-based Hadoop on HDInsight from Windows ](/documentation/articles/hdinsight-hadoop-linux-use-ssh-windows).
 
 ##<a id="beeline"></a>Use the Beeline command
 
@@ -193,13 +193,13 @@ As you can see, the Beeline command provides an easy way to interactively run Hi
 
 For general information on Hive in HDInsight:
 
-* [Use Hive with Hadoop on HDInsight](hdinsight-use-hive)
+* [Use Hive with Hadoop on HDInsight](/documentation/articles/hdinsight-use-hive)
 
 For information on other ways you can work with Hadoop on HDInsight:
 
-* [Use Pig with Hadoop on HDInsight](hdinsight-use-pig)
+* [Use Pig with Hadoop on HDInsight](/documentation/articles/hdinsight-use-pig)
 
-* [Use MapReduce with Hadoop on HDInsight](hdinsight-use-mapreduce)
+* [Use MapReduce with Hadoop on HDInsight](/documentation/articles/hdinsight-use-mapreduce)
 
 [hdinsight-sdk-documentation]: http://msdnstage.redmond.corp.microsoft.com/zh-cn/library/dn479185.aspx
 
@@ -214,15 +214,15 @@ For information on other ways you can work with Hadoop on HDInsight:
 [import-to-excel]: /documentation/articles/hdinsight-connect-excel-power-query/
 
 
-[hdinsight-use-oozie]: hdinsight-use-oozie
-[hdinsight-analyze-flight-data]: hdinsight-analyze-flight-delay-data
+[hdinsight-use-oozie]: /documentation/articles/hdinsight-use-oozie
+[hdinsight-analyze-flight-data]: /documentation/articles/hdinsight-analyze-flight-delay-data
 [putty]: http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html
 
-[hdinsight-storage]: hdinsight-use-blob-storage
-[hdinsight-provision]: hdinsight-provision-clusters
-[hdinsight-submit-jobs]: hdinsight-submit-hadoop-jobs-programmatically
-[hdinsight-upload-data]: hdinsight-upload-data
-[hdinsight-get-started]: hdinsight-get-started
+[hdinsight-storage]: /documentation/articles/hdinsight-use-blob-storage
+[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters
+[hdinsight-submit-jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically
+[hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
+[hdinsight-get-started]: /documentation/articles/hdinsight-get-started
 [powershell-here-strings]: http://technet.microsoft.com/zh-cn/library/ee692792.aspx
 
 [image-hdi-hive-powershell]: ./media/hdinsight-use-hive/HDI.HIVE.PowerShell.png

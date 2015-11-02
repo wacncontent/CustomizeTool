@@ -1,5 +1,5 @@
 > [AZURE.SELECTOR]
-- [Overview & data formats](machine-learning-import-data)
-- [Import data from local files](machine-learning-import-data-from-local-file)
-- [Import data from online sources](machine-learning-import-data-from-online-sources)
-- [Import data from an experiment](machine-learning-import-data-from-an-experiment)
+- [Overview & data formats](/documentation/articles/machine-learning-import-data)
+- [Import data from local files](/documentation/articles/machine-learning-import-data-from-local-file)
+- [Import data from online sources](/documentation/articles/machine-learning-import-data-from-online-sources)
+- [Import data from an experiment](/documentation/articles/machine-learning-import-data-from-an-experiment)

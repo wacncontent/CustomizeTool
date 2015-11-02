@@ -42,9 +42,9 @@ It describes additional features of Git deployment, such as virtual environment 
 
 The Azure Marketplace contains templates for the Bottle, Django and Flask frameworks. If you are developing your first web app in Azure Websites, or you are not familiar with Git, we recommend that you follow one of these tutorials, which include step-by-step instructions for building a working application from the gallery using Git deployment from Windows or Mac:
 
-- [Creating web apps with Bottle](web-sites-python-create-deploy-bottle-app)
-- [Creating web apps with Django](web-sites-python-create-deploy-django-app)
-- [Creating web apps with Flask](web-sites-python-create-deploy-flask-app)
+- [Creating web apps with Bottle](/documentation/articles/web-sites-python-create-deploy-bottle-app)
+- [Creating web apps with Django](/documentation/articles/web-sites-python-create-deploy-django-app)
+- [Creating web apps with Flask](/documentation/articles/web-sites-python-create-deploy-flask-app)
 
 
 ## Web app creation on Azure <!-- deleted by customization Preview Portal --><!-- keep by customization: begin -->Management Portal<!-- keep by customization: end -->
@@ -64,7 +64,7 @@ If you do not have an existing web app, you can create one from the [Azure Manag
 <!-- keep by customization: end -->
 ## Git Publishing
 
-Configure Git publishing for your newly created web app by following the instructions at [Continuous deployment using GIT in Azure Websites](web-sites-publish-source-control). This tutorial uses Git to create, manage, and publish our Python web app to Azure Websites.
+Configure Git publishing for your newly created web app by following the instructions at [Continuous deployment using GIT in Azure Websites](/documentation/articles/web-sites-publish-source-control). This tutorial uses Git to create, manage, and publish our Python web app to Azure Websites.
 
 Once Git publishing is set up, a Git repository will be created and associated with your web app. The repository's URL will be displayed and can henceforth be used to push data from the local development environment to the cloud. To publish applications via Git, make sure a Git client is also installed and use the instructions provided to push your web app content to Azure Websites.
 

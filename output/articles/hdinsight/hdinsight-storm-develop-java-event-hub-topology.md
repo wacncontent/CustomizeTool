@@ -23,14 +23,14 @@ In this tutorial, you will learn how to use the Event Hubs spout and bolt to rea
 * An Apache Storm on HDInsight cluster. Use one of the following getting started articles to create a cluster:
 <!-- deleted by customization
 
-    - A [Linux-based cluster](hdinsight-apache-storm-tutorial-get-started): Select this if you want to use SSH to work with the cluster from Linux, Unix, OS X, or Windows clients
+    - A [Linux-based cluster](/documentation/articles/hdinsight-apache-storm-tutorial-get-started): Select this if you want to use SSH to work with the cluster from Linux, Unix, OS X, or Windows clients
 -->
 
-    - A [Windows-based cluster](hdinsight-apache-storm-tutorial-get-started): Select this if you want to use PowerShell to work with the cluster from a Windows client
+    - A [Windows-based cluster](/documentation/articles/hdinsight-apache-storm-tutorial-get-started): Select this if you want to use PowerShell to work with the cluster from a Windows client
 
     > [AZURE.NOTE] The only difference between the two cluster types is whether you use SSH to submit the topology to the cluster or a web form.
 
-* An [Azure Event Hub](service-bus-event-hubs-csharp-ephcs-getstarted)
+* An [Azure Event Hub](/documentation/articles/service-bus-event-hubs-csharp-ephcs-getstarted)
 
 * [Oracle Java Developer Kit (JDK) version 7](https://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html) or equivalent, such as [OpenJDK](http://openjdk.java.net/)
 
@@ -43,9 +43,9 @@ In this tutorial, you will learn how to use the Event Hubs spout and bolt to rea
 
  * An SSH client. See one of the following articles for more information on using SSH with HDInsight:
 
-    - [Use SSH with Linux-based Hadoop on HDInsight from Linux, Unix, or OS X](hdinsight-hadoop-linux-use-ssh-unix)
+    - [Use SSH with Linux-based Hadoop on HDInsight from Linux, Unix, or OS X](/documentation/articles/hdinsight-hadoop-linux-use-ssh-unix)
 
-    - [Use SSH with Linux-based Hadoop on HDInsight from Windows](hdinsight-hadoop-linux-use-ssh-windows)
+    - [Use SSH with Linux-based Hadoop on HDInsight from Windows](/documentation/articles/hdinsight-hadoop-linux-use-ssh-windows)
 -->
 
 * An SCP client.<!-- deleted by customization This is provided with all Linux, Unix, and OS X systems.--> For Windows clients, we recommend PSCP, which is available from the [PuTTY download page](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html).
@@ -473,11 +473,11 @@ If you do not see files being stored to the the /devicedata location (either usi
 For more information on using the Storm UI, see the following topics:
 <!-- deleted by customization
 
-* If you are using a __Linux-based__ Storm on HDInsight cluster, see [Deploy and manage Apache Storm topologies on Linux-based HDInsight](hdinsight-storm-deploy-monitor-topology-linux)
+* If you are using a __Linux-based__ Storm on HDInsight cluster, see [Deploy and manage Apache Storm topologies on Linux-based HDInsight](/documentation/articles/hdinsight-storm-deploy-monitor-topology-linux)
 -->
 
-* If you are using a __Windows-based__ Storm on HDInsight cluster, see [Deploy and manage Apache Storm topologies on Windows-based HDInsight](hdinsight-storm-deploy-monitor-topology-linux)
+* If you are using a __Windows-based__ Storm on HDInsight cluster, see [Deploy and manage Apache Storm topologies on Windows-based HDInsight](/documentation/articles/hdinsight-storm-deploy-monitor-topology-linux)
 
 ##Next steps
 
-* [Example topologies for Storm on HDInsight](hdinsight-storm-example-topology)
+* [Example topologies for Storm on HDInsight](/documentation/articles/hdinsight-storm-example-topology)

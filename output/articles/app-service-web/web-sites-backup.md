@@ -17,7 +17,7 @@
 
 The Backup and Restore feature in [Azure Websites](/documentation/services/web-sites/) lets you easily create web app backups manually or automatically. You can restore your web app to a previous state, or create a new web app based on one of your original app's backups. 
 
-For information on restoring an Azure web app from backup, see [Restore a web app](web-sites-restore).
+For information on restoring an Azure web app from backup, see [Restore a web app](/documentation/articles/web-sites-restore).
 <!-- deleted by customization
 
 [AZURE.INCLUDE [app-service-web-to-api-and-mobile](../includes/app-service-web-to-api-and-mobile.md)] 
@@ -51,14 +51,14 @@ This information is backed up to the Azure storage account and container that yo
 <a name="requirements"></a>
 ## Requirements and restrictions
 
-* The Backup and Restore feature requires the site to be in Standard mode. For more information about scaling your webapp to use Standard mode, see [Scale a web app in Azure Websites](web-sites-scale). <!-- deleted by customization Note that Premium mode allows a greater number of daily backups to be performed over the Standard mode. -->
+* The Backup and Restore feature requires the site to be in Standard mode. For more information about scaling your webapp to use Standard mode, see [Scale a web app in Azure Websites](/documentation/articles/web-sites-scale). <!-- deleted by customization Note that Premium mode allows a greater number of daily backups to be performed over the Standard mode. -->
 
 <!-- deleted by customization
 * The Backup and Restore feature requires an Azure storage account and container that must belong to the same subscription as the web app that you are going to back up. If you do not yet have a storage account, you can create one by clicking the **Storage Account** in the **Backups** blade of the [Azure preview portal](http://manage.windowsazure.cn), and then choosing the **Storage Account** and the **Container** from the **Destination** blade. For more information on Azure storage accounts, see the [links](#moreaboutstorage) at the end of this article.
 
 -->
 <!-- keep by customization: begin -->
-* The Backup and Restore feature requires an Azure storage account and container that must belong to the same subscription as the web app that you are going to back up. If you do not yet have a storage account, you can create one by clicking the **Storage** button (grid icon) in the left pane of the Azure portal, and then choosing **New** in the command bar at the bottom. For more information on Azure storage accounts, see the [links](#moreaboutstorage) at the end of this article.
+* The Backup and Restore feature requires an Azure storage account and container that must belong to the same subscription as the web app that you are going to back up. If you do not yet have a storage account, you can create one by clicking the **Storage** button (grid icon) in the left pane of the Azure Management Portal, and then choosing **New** in the command bar at the bottom. For more information on Azure storage accounts, see the [links](#moreaboutstorage) at the end of this article.
 <!-- keep by customization: end -->
 * The Backup and Restore feature supports up to 10GB of website and database content. An error will be indicated in the Operation Logs if the backup feature cannot proceed because the payload exceeds this limit. 
 
@@ -93,7 +93,7 @@ You can make a manual backup at any time.
 
 -->
 <!-- keep by customization: begin -->
-1. In the Azure portal for your website, choose the **Backups** tab.
+1. In the Azure Management Portal for your website, choose the **Backups** tab.
 	
 	![Backups page][ChooseBackupsPage]
 	
@@ -196,7 +196,7 @@ You can make a manual backup at any time. During Preview, no more than 2 manual 
 
 Sometimes you don't want to backup everything on your web app. Here are a few examples:
 
--	You [set up weekly backups](web-sites-backup#configure-automated-backups) of your web app that contains static content that never changes, such as old blog posts or images.
+-	You [set up weekly backups](/documentation/articles/web-sites-backup#configure-automated-backups) of your web app that contains static content that never changes, such as old blog posts or images.
 -	Your web app has over 10GB of content (that's the max amount you can backup at a time).
 -	You don't want to back up the log files.
 
@@ -231,13 +231,13 @@ The below steps show how you would exclude these files from the backup.
     \site\wwwroot\Images\2014
     \site\wwwroot\Images\brand.png
 
-3. Upload this file to the `D:\home\site\wwwroot\` directory of your site using [ftp](web-sites-deploy#ftp) or any other method. If you wish, you can create the file directly in `http://{yourapp}.scm.chinacloudsites.cn/DebugConsole` and insert the content there.
+3. Upload this file to the `D:\home\site\wwwroot\` directory of your site using [ftp](/documentation/articles/web-sites-deploy#ftp) or any other method. If you wish, you can create the file directly in `http://{yourapp}.scm.chinacloudsites.cn/DebugConsole` and insert the content there.
 
 4. Run backups the same way you would normally do it, [manually](#create-a-manual-backup) or [automatically](#configure-automated-backups).
 
 Now, any files and folders that are specified in `_backup.filter` will be excluded from the backup. In this example, the log files and the 2013 and 2014 image files will no longer be backed up, as well as brand.png.
 
->[AZURE.NOTE] You restore partial backups of your site the same way you would [restore a regular backup](web-sites-restore). The restore process will do the right thing.
+>[AZURE.NOTE] You restore partial backups of your site the same way you would [restore a regular backup](/documentation/articles/web-sites-restore). The restore process will do the right thing.
 >
 >When a full backup is restored, all content on the site is replaced with whatever is in the backup. If a file is on the site but not in the backup it gets deleted. But when a partial backup is restored, any content that is located in one of the blacklisted directories, or any blacklisted file, is left as is.
 
@@ -263,17 +263,17 @@ Your backup strategy should be similar to the following:
 
 Your restore strategy should be similar to the following:
  
--	Create a [staging slot](web-sites-staged-publishing) for your web app.
+-	Create a [staging slot](/documentation/articles/web-sites-staged-publishing) for your web app.
 -	Restore the full backup of the web app on the staging slot.
 -	Restore the latest partial backup on top of the full backup restore, also on the staging slot.
 -	Test the restore to see that the staging app works properly.
--	[Swap](web-sites-staged-publishing#Swap) the staged web app into the production slot.
+-	[Swap](/documentation/articles/web-sites-staged-publishing#Swap) the staged web app into the production slot.
 
 >[AZURE.NOTE] Always test your restore process. For more information, see [Very Good Thing](http://axcient.com/blog/one-thing-can-derail-disaster-recovery-plan/). For example, certain blogging platforms, such as [Ghost](https://ghost.org/), have explicit caveats on how they behave during a backup. By testing your restore process, you can catch these caveats when you're not yet struck by a failure or disaster.
 
 <a name="nextsteps"></a>
 ## Next Steps
-For information on restoring web app from backup, see [Restore a web app in Azure Websites](web-sites-restore).
+For information on restoring web app from backup, see [Restore a web app in Azure Websites](/documentation/articles/web-sites-restore).
 
 To get started with Azure, see [Windows Azure Trial](/pricing/1rmb-trial/).
 
@@ -281,11 +281,11 @@ To get started with Azure, see [Windows Azure Trial](/pricing/1rmb-trial/).
 <a name="moreaboutstorage"></a>
 ### More about storage accounts
 
-[What is a Storage Account?](storage-whatis-account)
+[What is a Storage Account?](/documentation/articles/storage-whatis-account)
 
-[How to: Create a storage account](storage-create-storage-account)
+[How to: Create a storage account](/documentation/articles/storage-create-storage-account)
 
-[How To Monitor a Storage Account](storage-monitor-storage-account)
+[How To Monitor a Storage Account](/documentation/articles/storage-monitor-storage-account)
 
 [Understanding Azure Storage Billing](http://blogs.msdn.com/b/windowsazurestorage/archive/2010/07/09/understanding-windows-azure-storage-billing-bandwidth-transactions-and-capacity.aspx)
 <!-- deleted by customization

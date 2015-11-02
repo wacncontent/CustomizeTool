@@ -75,7 +75,7 @@ Output:
 
 ## Next steps
 
-- [Enable cache diagnostics](cache-how-to-monitor#enable-cache-diagnostics) so you can [monitor](cache-how-to-monitor) the health of your cache.
+- [Enable cache diagnostics](/documentation/articles/cache-how-to-monitor#enable-cache-diagnostics) so you can [monitor](/documentation/articles/cache-how-to-monitor) the health of your cache.
 - Read the official [Redis documentation](http://redis.io/documentation).
 
 
@@ -85,4 +85,4 @@ Output:
 [3]: ./media/cache-nodejs-get-started/cache03.png
 [4]: ./media/cache-nodejs-get-started/cache04.png
 
-[Build a Node.js Chat Application with Socket.IO on an Azure Website]: web-sites-nodejs-chat-app-socketio
+[Build a Node.js Chat Application with Socket.IO on an Azure Website]: /documentation/articles/web-sites-nodejs-chat-app-socketio

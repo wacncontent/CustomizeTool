@@ -25,13 +25,13 @@ To prevent IP addresses from changing, you can reserve an IP address. Reserved I
 1. Can I use a reserved IP for all Azure services?  
   - Reserved IPs can only be used for VMs and cloud service instance roles.
 1. How many reserved IPs can I have?  
-  - At this time, all Azure subscriptions are authorized to use 20 reserved IPs. However, you can request additional reserved IPs. See the [Subscription and Service Limits](azure-subscription-service-limits) page for more information.
+  - At this time, all Azure subscriptions are authorized to use 20 reserved IPs. However, you can request additional reserved IPs. See the [Subscription and Service Limits](/documentation/articles/azure-subscription-service-limits) page for more information.
 1. Is there a charge for reserved IPs? 
   - See [Reserved IP Address Pricing Details](/home/features/ip-addresses/#price) for pricing information.
 1. How do I reserve an IP address? 
   - You can use PowerShell or the [Azure Management REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn722420.aspx) to request a reserved IP from a particular region. Azure will reserve an IP address from that region and correlate it to your subscription. You can then use the reserved IP in that region. You cannot reserve an IP address by using the Management Portal.
 1. Can I use this with affinity group based VNets? 
-  - Reserved IPs are only supported in regional VNets. It is not supported for VNets that are associated with affinity groups. For more information about associating a VNet with a region or an affinity group, see [About Regional VNets and Affinity Groups](virtual-networks-migrate-to-regional-vnet). 
+  - Reserved IPs are only supported in regional VNets. It is not supported for VNets that are associated with affinity groups. For more information about associating a VNet with a region or an affinity group, see [About Regional VNets and Affinity Groups](/documentation/articles/virtual-networks-migrate-to-regional-vnet). 
 
 ## How to manage reserved VIPs
 
@@ -69,7 +69,7 @@ The script below creates a new reserved IP, then associates it to a new cloud se
 	| Add-AzureProvisioningConfig -Windows -AdminUsername adminuser -Password MyP@ssw0rd!! `
 	| New-AzureVM -ServiceName TestService -ReservedIPName MyReservedIP -Location "China North"
 
->[AZURE.NOTE] When you create a reserved IP to use with a cloud service, you’ll still need to refer to the VM by using *VIP:&lt;port number>* for inbound communication. Reserving an IP does not mean you can connect to the VM directly. The reserved IP is assigned to the cloud service that the VM has been deployed to. If you want to connect to a VM by IP directly, you have to configure an instance-level public IP. An instance-level public IP is a type of public IP (called a ILPIP) that is assigned directly to your VM. It cannot be reserved. See [Instance-level Public IP (ILPIP)](virtual-networks-instance-level-public-ip) for more information.
+>[AZURE.NOTE] When you create a reserved IP to use with a cloud service, you’ll still need to refer to the VM by using *VIP:&lt;port number>* for inbound communication. Reserving an IP does not mean you can connect to the VM directly. The reserved IP is assigned to the cloud service that the VM has been deployed to. If you want to connect to a VM by IP directly, you have to configure an instance-level public IP. An instance-level public IP is a type of public IP (called a ILPIP) that is assigned directly to your VM. It cannot be reserved. See [Instance-level Public IP (ILPIP)](/documentation/articles/virtual-networks-instance-level-public-ip) for more information.
 
 ## How to remove a reserved IP from a running deployment
 To remove the reserved IP added to the new service created in the script above, run the following PowerShell command:
@@ -109,8 +109,8 @@ You can also associate a reserved IP to a cloud service by using a service confi
 
 ## Next steps
 
-- Learn about [reserved private IP addresses](virtual-networks-reserved-private-ip).
+- Learn about [reserved private IP addresses](/documentation/articles/virtual-networks-reserved-private-ip).
 
-- Learn about [Instance Level Public IP (ILPIP) addresses](virtual-networks-instance-level-public-ip).
+- Learn about [Instance Level Public IP (ILPIP) addresses](/documentation/articles/virtual-networks-instance-level-public-ip).
 
 - Check the [reserved IP REST APIs](https://msdn.microsoft.com/zh-cn/library/azure/dn722420.aspx).

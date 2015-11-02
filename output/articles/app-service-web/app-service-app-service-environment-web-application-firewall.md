@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties 
 	pageTitle="Configuring a Web Application Firewall (WAF) for Azure Websites Environment" 
 	description="Learn how to configure a web application firewall in front of your Azure Websites Environment." 
@@ -25,7 +27,7 @@ For this document we will configure our Azure Websites Environment behind multip
 ![Architecture][Architecture] 
 
 ## Configuring your Azure Websites Environment ##
-To configure an Azure Websites Environment refer to [our documentation](app-service-web-how-to-create-an-app-service-environment) on the subject. Once you have an Azure Websites Environment created, you can create [Web Apps](app-service-web-overview), [API Apps](app-service-api-apps-why-best-platform) and [Mobile Apps](app-service-mobile-value-prop-preview) in this environment that will all be protected behind the WAF we configure in the next section.
+To configure an Azure Websites Environment refer to [our documentation](/documentation/articles/app-service-web-how-to-create-an-app-service-environment) on the subject. Once you have an Azure Websites Environment created, you can create [Web Apps](/documentation/articles/app-service-web-overview), [API Apps](/documentation/articles/app-service-api-apps-why-best-platform) and [Mobile Apps](/documentation/articles/app-service-mobile-value-prop-preview) in this environment that will all be protected behind the WAF we configure in the next section.
 
 ## Configuring your Barracuda WAF Cloud Service ##
 Barracuda has a [detailed article](https://techlib.barracuda.com/WAF/AzureDeploy) on deploying its WAF on a virtual machine in Azure. But because we want redundancy and not introduce a single point of failure, you want to deploy at least 2 WAF instance VMs into the same Cloud Service when following these instructions.
@@ -59,10 +61,10 @@ Clicking on the Services tab will let you configure your WAF for services it is 
 
 ![Management Add Services][ManagementAddServices]
 
-> Note: Depending on how your applications are configured and what features are being used in your Azure Websites Environment, you will need to forward traffic for TCP ports other than 80 and 443, e.g. if you have IP SSL setup for a Web App. For a list of network ports used in Azure Websites Environments, please refer to [Control Inbound Traffic documentation's](app-service-app-service-environment-control-inbound-traffic) Network Ports section.
+> Note: Depending on how your applications are configured and what features are being used in your Azure Websites Environment, you will need to forward traffic for TCP ports other than 80 and 443, e.g. if you have IP SSL setup for a Web App. For a list of network ports used in Azure Websites Environments, please refer to [Control Inbound Traffic documentation's](/documentation/articles/app-service-app-service-environment-control-inbound-traffic) Network Ports section.
 
 ## Configuring Windows Azure Traffic Manager (OPTIONAL) ##
-If your application is available in multiple regions, then you would want to load balance them behind [Azure Traffic Manager](traffic-manager). To do so you can add and endpoint in the [Azure Management Portal](https://manage.azure.com) using the Cloud Service name for your WAF in the Traffic Manager profile as shown in the image below. 
+If your application is available in multiple regions, then you would want to load balance them behind [Azure Traffic Manager](/documentation/articles/traffic-manager). To do so you can add and endpoint in the [Azure Management Portal](https://manage.azure.com) using the Cloud Service name for your WAF in the Traffic Manager profile as shown in the image below. 
 
 ![Traffic Manager Endpoint][TrafficManagerEndpoint]
 
@@ -75,7 +77,7 @@ To forward the Traffic Manager pings from your WAF to your application, you need
 ![Website Translations][WebsiteTranslations]
 
 ## Securing Traffic to Azure Websites Environment Using Network Resource Groups##
-Follow the [Control Inbound Traffic documentation](app-service-app-service-environment-control-inbound-traffic) for details on restricting traffic to your Azure Websites Environment from the WAF only by using the VIP address of your Cloud Service. Here's a sample Powershell command for performing this task for TCP port 80.
+Follow the [Control Inbound Traffic documentation](/documentation/articles/app-service-app-service-environment-control-inbound-traffic) for details on restricting traffic to your Azure Websites Environment from the WAF only by using the VIP address of your Cloud Service. Here's a sample Powershell command for performing this task for TCP port 80.
 
 
     Get-AzureNetworkSecurityGroup -Name "RestrictWestUSAppAccess" | Set-AzureNetworkSecurityRule -Name "ALLOW HTTP Barracuda" -Type Inbound -Priority 201 -Action Allow -SourceAddressPrefix '191.0.0.1'  -SourcePortRange '*' -DestinationAddressPrefix '*' -DestinationPortRange '80' -Protocol TCP

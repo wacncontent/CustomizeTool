@@ -21,41 +21,41 @@ Using the [Azure preview portal][azure-portal], you can provision Hadoop cluster
 
 [AZURE.INCLUDE [hdinsight-azure-preview-portal](../includes/hdinsight-azure-preview-portal.md)]
 
-* [Manage Hadoop clusters in HDInsight by using the Azure Management Portal](hdinsight-administer-use-management-portal-v1)
+* [Manage Hadoop clusters in HDInsight by using the Azure Management Portal](/documentation/articles/hdinsight-administer-use-management-portal-v1)
 
-> [AZURE.NOTE] The steps in this document are specific to working with Windows-based Hadoop clusters. For information on working with Linux-based clusters, see [Manage Hadoop clusters in HDInsight by using the Azure preview portal](hdinsight-administer-use-portal-linux)
+> [AZURE.NOTE] The steps in this document are specific to working with Windows-based Hadoop clusters. For information on working with Linux-based clusters, see [Manage Hadoop clusters in HDInsight by using the Azure preview portal](/documentation/articles/hdinsight-administer-use-portal-linux)
 
 
 
 > [AZURE.NOTE] There are also other tools available for administering HDInsight in addition to the preview portal.
 >
-> - [Administer HDInsight Using Azure PowerShell](hdinsight-administer-use-powershell)
-> - [Administer HDInsight Using Azure CLI](hdinsight-administer-use-command-line)
+> - [Administer HDInsight Using Azure PowerShell](/documentation/articles/hdinsight-administer-use-powershell)
+> - [Administer HDInsight Using Azure CLI](/documentation/articles/hdinsight-administer-use-command-line)
 
 **Prerequisites**
 
 Before you begin this article, you must have the following:
 
 - **An Azure subscription**. See [Get Azure trial](/pricing/1rmb-trial/).
-- **Azure Storage account** - An HDInsight cluster uses an Azure Blob storage container as the default file system. For more information about how Azure Blob storage provides a seamless experience with HDInsight clusters, see [Use Azure Blob Storage with HDInsight](hdinsight-use-blob-storage). For details on creating an Azure Storage account, see [How to Create a Storage Account](storage-create-storage-account).
+- **Azure Storage account** - An HDInsight cluster uses an Azure Blob storage container as the default file system. For more information about how Azure Blob storage provides a seamless experience with HDInsight clusters, see [Use Azure Blob Storage with HDInsight](/documentation/articles/hdinsight-use-blob-storage). For details on creating an Azure Storage account, see [How to Create a Storage Account](/documentation/articles/storage-create-storage-account).
 
 
 ##Provision HDInsight clusters
 
-For the provision instructions using the preview portal, see [Provision HDInsight clusters](hdinsight-provision-clusters#portal).
+For the provision instructions using the preview portal, see [Provision HDInsight clusters](/documentation/articles/hdinsight-provision-clusters#portal).
 
 ##Customize HDInsight clusters provision
 
-HDInsight works with a wide range of Hadoop components. For the list of the components that have been verified and supported, see [What version of Hadoop is in Azure HDInsight](hdinsight-component-versioning). You can customize HDInsight by using one of the following options:
+HDInsight works with a wide range of Hadoop components. For the list of the components that have been verified and supported, see [What version of Hadoop is in Azure HDInsight](/documentation/articles/hdinsight-component-versioning). You can customize HDInsight by using one of the following options:
 
-- Use Script Action to run custom scripts that can customize a cluster to either change cluster configuration or install custom components such as Giraph or Solr. For more information, see [Customize HDInsight cluster using Script Action](hdinsight-hadoop-customize-cluster).
-- Use the cluster customization parameters in the HDInsight .NET SDK or Azure PowerShell during cluster provisioning. These configuration changes are then preserved through the lifetime of the cluster and are not affected by cluster node reimages that Azure platform periodically performs for maintenance. For more information on using the cluster customization parameters, see [Provision HDInsight clusters](hdinsight-provision-clusters).
-- Some native Java components, like Mahout and Cascading, can be run on the cluster as JAR files. These JAR files can be distributed to Azure Blob storage, and submitted to HDInsight clusters through Hadoop job submission mechanisms. For more information, see [Submit Hadoop jobs programmatically](hdinsight-submit-hadoop-jobs-programmatically).
+- Use Script Action to run custom scripts that can customize a cluster to either change cluster configuration or install custom components such as Giraph or Solr. For more information, see [Customize HDInsight cluster using Script Action](/documentation/articles/hdinsight-hadoop-customize-cluster).
+- Use the cluster customization parameters in the HDInsight .NET SDK or Azure PowerShell during cluster provisioning. These configuration changes are then preserved through the lifetime of the cluster and are not affected by cluster node reimages that Azure platform periodically performs for maintenance. For more information on using the cluster customization parameters, see [Provision HDInsight clusters](/documentation/articles/hdinsight-provision-clusters).
+- Some native Java components, like Mahout and Cascading, can be run on the cluster as JAR files. These JAR files can be distributed to Azure Blob storage, and submitted to HDInsight clusters through Hadoop job submission mechanisms. For more information, see [Submit Hadoop jobs programmatically](/documentation/articles/hdinsight-submit-hadoop-jobs-programmatically).
 
 
 	>[AZURE.NOTE] If you have issues deploying JAR files to HDInsight clusters or calling JAR files on HDInsight clusters, contact [Microsoft Support](http://azure.microsoft.com/support/options/).
 
-	> Cascading is not supported by HDInsight, and is not eligible for Microsoft Support. For lists of supported components, see [What's new in the cluster versions provided by HDInsight?](hdinsight-component-versioning).
+	> Cascading is not supported by HDInsight, and is not eligible for Microsoft Support. For lists of supported components, see [What's new in the cluster versions provided by HDInsight?](/documentation/articles/hdinsight-component-versioning).
 
 
 Installation of custom software on the cluster by using Remote Desktop Connection is not supported. You should avoid storing any files on the drives of the head node, as they will be lost if you need to re-create the clusters. We recommend storing files on Azure Blob storage. Blob storage is persistent.
@@ -116,7 +116,7 @@ This can also be done through the Azure PowerShell cmdlets:
 - Grant-AzureHDInsightHttpServicesAccess
 - Revoke-AzureHDInsightHttpServicesAccess
 
-See [Administer HDInsight using Azure PowerShell](hdinsight-administer-use-powershell).
+See [Administer HDInsight using Azure PowerShell](/documentation/articles/hdinsight-administer-use-powershell).
 
 ##Change the HDInsight cluster username and password
 An HDInsight cluster can have two user accounts. The HDInsight cluster user account is created during the provisioning process. You can also create an RDP user account for accessing the cluster via RDP. See [Enable remote desktop](#connect-to-hdinsight-clusters-by-using-rdp).
@@ -133,7 +133,7 @@ An HDInsight cluster can have two user accounts. The HDInsight cluster user acco
 ##Scale clusters
 The cluster scaling feature allows you to change the number of worker nodes used by a cluster that is running in Azure HDInsight without having to re-create the cluster.
 
->[AZURE.NOTE] Only clusters with HDInsight version 3.1.3 or higher are supported. If you are unsure of the version of your cluster, you can check the Properties page.  See [Get familiar with the cluster portal interface](hdinsight-adminster-use-management-portal#Get-familiar-with-the-cluster-portal-interface).
+>[AZURE.NOTE] Only clusters with HDInsight version 3.1.3 or higher are supported. If you are unsure of the version of your cluster, you can check the Properties page.  See [Get familiar with the cluster portal interface](/documentation/articles/hdinsight-adminster-use-management-portal#Get-familiar-with-the-cluster-portal-interface).
 
 The impact of changing the number of data nodes for each type of cluster supported by HDInsight:
 
@@ -190,7 +190,7 @@ The impact of changing the number of data nodes for each type of cluster support
 
 ##Connect to HDInsight clusters by using RDP
 
-The credentials for the cluster that you provided at its creation give access to the services on the cluster, but not to the cluster itself through Remote Desktop. You can turn on Remote Desktop access when you provision a cluster or after a cluster is provisioned. For the instructions about enabling Remote Desktop at provision, see [Provision HDInsight cluster](hdinsight-provision-clusters).
+The credentials for the cluster that you provided at its creation give access to the services on the cluster, but not to the cluster itself through Remote Desktop. You can turn on Remote Desktop access when you provision a cluster or after a cluster is provisioned. For the instructions about enabling Remote Desktop at provision, see [Provision HDInsight cluster](/documentation/articles/hdinsight-provision-clusters).
 
 **To enable Remote Desktop**
 
@@ -238,12 +238,12 @@ In the previous screenshot, the folder name has the Hadoop version number embedd
 ##Next steps
 In this article, you have learned how to create an HDInsight cluster by using the preview portal, and how to open the Hadoop command-line tool. To learn more, see the following articles:
 
-* [Administer HDInsight Using Azure PowerShell](hdinsight-administer-use-powershell)
-* [Administer HDInsight Using Azure CLI](hdinsight-administer-use-command-line)
-* [Provision HDInsight clusters](hdinsight-provision-clusters)
-* [Submit Hadoop jobs programmatically](hdinsight-submit-hadoop-jobs-programmatically)
-* [Get Started with Azure HDInsight](hdinsight-get-started)
-* [What version of Hadoop is in Azure HDInsight?](hdinsight-component-versioning)
+* [Administer HDInsight Using Azure PowerShell](/documentation/articles/hdinsight-administer-use-powershell)
+* [Administer HDInsight Using Azure CLI](/documentation/articles/hdinsight-administer-use-command-line)
+* [Provision HDInsight clusters](/documentation/articles/hdinsight-provision-clusters)
+* [Submit Hadoop jobs programmatically](/documentation/articles/hdinsight-submit-hadoop-jobs-programmatically)
+* [Get Started with Azure HDInsight](/documentation/articles/hdinsight-get-started)
+* [What version of Hadoop is in Azure HDInsight?](/documentation/articles/hdinsight-component-versioning)
 
 [azure-portal]: https://manage.windowsazure.cn
 [image-cluster-quickcreate]: ./media/hdinsight-administer-use-management-portal-v1/HDI.QuickCreateCluster.png

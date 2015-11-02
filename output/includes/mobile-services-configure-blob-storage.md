@@ -1,6 +1,6 @@
 A new insert script is registered that generates an SAS when a new Todo item is inserted.
 
-0. If you haven't yet created your storage account, see [How To Create a Storage Account](storage-create-storage-account).
+0. If you haven't yet created your storage account, see [How To Create a Storage Account](/documentation/articles/storage-create-storage-account).
 
 1. In the Management Portal, click **Storage**, click the storage account, then click **Manage Keys**. 
 

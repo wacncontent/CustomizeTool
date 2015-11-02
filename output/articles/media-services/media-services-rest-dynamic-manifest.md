@@ -15,13 +15,13 @@
 #Creating Filters with Azure Media Services REST API
 
 > [AZURE.SELECTOR]
-- [.NET](media-services-dotnet-dynamic-manifest)
-- [REST](media-services-rest-dynamic-manifest)
+- [.NET](/documentation/articles/media-services-dotnet-dynamic-manifest)
+- [REST](/documentation/articles/media-services-rest-dynamic-manifest)
 
 
 Starting with 2.11 release, Media Services enables you to define filters for your assets. These filters are server side rules that will allow your customers to choose to do things like: playback only a section of a video (instead of playing the whole video), or specify only a subset of audio and video renditions that your customer's device can handle (instead of all the renditions that are associated with the asset). This filtering of your assets is archived through **Dynamic Manifest**s that are created upon your customer's request to stream a video based on specified filter(s).
 
-For more detailed information related to filters and Dynamic Manifest, see [Dynamic manifests overview](media-services-dynamic-manifest-overview).
+For more detailed information related to filters and Dynamic Manifest, see [Dynamic manifests overview](/documentation/articles/media-services-dynamic-manifest-overview).
 
 This topic shows how to use REST APIs to create, update, and delete filters. 
 
@@ -38,9 +38,9 @@ The following types are used when creating filters:
 
 >[AZURE.NOTE] When working with the Media Services REST API, the following considerations apply:
 >
->When accessing entities in Media Services, you must set specific header fields and values in your HTTP requests. For more information, see [Setup for Media Services REST API Development](media-services-rest-how-to-use).
+>When accessing entities in Media Services, you must set specific header fields and values in your HTTP requests. For more information, see [Setup for Media Services REST API Development](/documentation/articles/media-services-rest-how-to-use).
 
->After successfully connecting to https://media.chinacloudapi.cn, you will receive a 301 redirect specifying another Media Services URI. You must make subsequent calls to the new URI as described in [Connecting to Media Services using REST API](media-services-rest-connect_programmatically). 
+>After successfully connecting to https://media.chinacloudapi.cn, you will receive a 301 redirect specifying another Media Services URI. You must make subsequent calls to the new URI as described in [Connecting to Media Services using REST API](/documentation/articles/media-services-rest-connect_programmatically). 
 
 
 ##Create filters
@@ -327,7 +327,7 @@ To delete a local AssetFilter, use the following HTTP requests:
 
 ##Build streaming URLs that use filters
 
-For information on how to publish and deliver your assets, see [Delivering Content to Customers Overview](media-services-deliver-content-overview).
+For information on how to publish and deliver your assets, see [Delivering Content to Customers Overview](/documentation/articles/media-services-deliver-content-overview).
 
 
 The following examples show how to add filters to your streaming URLs.
@@ -365,7 +365,7 @@ You can view AMS learning paths here:
 
 ##See Also 
 
-[Dynamic manifests overview](media-services-dynamic-manifest-overview)
+[Dynamic manifests overview](/documentation/articles/media-services-dynamic-manifest-overview)
  
 
  

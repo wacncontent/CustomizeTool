@@ -19,7 +19,7 @@ Certificates can be stored securely in Azure Automation so they can be accessed 
 
 ## Windows PowerShell Cmdlets
 
-The cmdlets in the following table are used to create and manage automation certificate assets with Windows PowerShell. They ship as part of the [Azure PowerShell module](powershell-install-configure) which is available for use in Automation runbooks.
+The cmdlets in the following table are used to create and manage automation certificate assets with Windows PowerShell. They ship as part of the [Azure PowerShell module](/documentation/articles/powershell-install-configure) which is available for use in Automation runbooks.
 
 |Cmdlets|Description|
 |:---|:---|
@@ -96,11 +96,11 @@ You add a **Get-AutomationCerticiate** to a graphical runbook by right-clicking 
 
 The following image shows an example of using a certificate in a graphical runbook.  This is the same example shown above for adding a certificate to a cloud service from a textual runbook.  
 
-This example uses the **UseConnectionObject** parameter set for the Send-**TwilioSMS activity** that uses a connection object for authentication to the service.  A [pipeline link](automation-graphical-authoring-intro#links-and-workflow) must be used here since a sequence link would return a collection containing containing a single object which the Connection parameter is not expecting.
+This example uses the **UseConnectionObject** parameter set for the Send-**TwilioSMS activity** that uses a connection object for authentication to the service.  A [pipeline link](/documentation/articles/automation-graphical-authoring-intro#links-and-workflow) must be used here since a sequence link would return a collection containing containing a single object which the Connection parameter is not expecting.
 
 ![](./media/automation-certificates/add-certificate.png)
 
 
 ## See Also
 
-- [Links in graphical authoring](automation-graphical-authoring-intro#links-and-workflow) 
+- [Links in graphical authoring](/documentation/articles/automation-graphical-authoring-intro#links-and-workflow) 

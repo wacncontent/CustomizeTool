@@ -32,9 +32,9 @@ If you plan to deliver an MP4 using progressive download, use this option.
 
 	Media Services provides on-disk storage encryption for your assets, not over-the-wire like Digital Rights Manager (DRM).
 
-	If your asset is storage encrypted, you must configure asset delivery policy. For more information see [Configuring asset delivery policy](media-services-dotnet-configure-asset-delivery-policy).
+	If your asset is storage encrypted, you must configure asset delivery policy. For more information see [Configuring asset delivery policy](/documentation/articles/media-services-dotnet-configure-asset-delivery-policy).
 
-If you specify for your asset to be encrypted with a **CommonEncrypted** option, or an **EnvelopeEncypted** option, you will need to associate your asset with a **ContentKey**. For more information, see [How to create a ContentKey](media-services-dotnet-create-contentkey). 
+If you specify for your asset to be encrypted with a **CommonEncrypted** option, or an **EnvelopeEncypted** option, you will need to associate your asset with a **ContentKey**. For more information, see [How to create a ContentKey](/documentation/articles/media-services-dotnet-create-contentkey). 
 
 If you specify for your asset to be encrypted with a **StorageEncrypted** option, the Media Services SDK for .NET will create a **StorateEncrypted** **ContentKey** for your asset.
 
@@ -311,4 +311,4 @@ You can view AMS learning paths here:
 ##Next Steps
 Now that you have uploaded an asset to Media Services, go to the [How to Get a Media Processor][] topic.
 
-[How to Get a Media Processor]: media-services-get-media-processor
+[How to Get a Media Processor]: /documentation/articles/media-services-get-media-processor

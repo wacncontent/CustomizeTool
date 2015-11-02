@@ -30,7 +30,7 @@ In this sample, you'll use Hive to process historical data produced by heating, 
 
 ##Prerequisites
 
-* An HDInsight (Hadoop) cluster: See [Provision Hadoop clusters in HDInsight](hdinsight-provision-clusters) for information about creating a cluster.
+* An HDInsight (Hadoop) cluster: See [Provision Hadoop clusters in HDInsight](/documentation/articles/hdinsight-provision-clusters) for information about creating a cluster.
 
 * Microsoft Excel 2013
 

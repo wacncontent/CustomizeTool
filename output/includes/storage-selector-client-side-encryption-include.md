@@ -1,3 +1,3 @@
 > [AZURE.SELECTOR]
-- [.NET](storage-client-side-encryption)
-- [Java](storage-client-side-encryption-java)
+- [.NET](/documentation/articles/storage-client-side-encryption)
+- [Java](/documentation/articles/storage-client-side-encryption-java)

@@ -53,5 +53,5 @@ The following sample commands show how to set the properties for a runbook. This
 	Set-AzureAutomationRunbook –AutomationAccountName $automationAccountName –Name $runbookName –LogVerbose $true –Tags $tags
 
 ## Related articles
-- [Runbook Output and Messages](automation-runbook-output-and-messages) 
+- [Runbook Output and Messages](/documentation/articles/automation-runbook-output-and-messages) 
 - [Creating or Importing a Runbook](https://msdn.microsoft.com/zh-cn/library/dn643637.aspx) 

@@ -44,11 +44,11 @@ Before you begin this HBase tutorial, you must have the following:
 	- **Cluster Type**: Select **HBase**.
 	- **Cluster Operating System**: Select **Ubuntu**.
 	- **Subscription**: select your Azure subscription used for provisioning this cluster.
-	- **Resource Group**: add or select an Azure resource group.  For more information, see [Azure Resource Manager Overview](resource-group-overview).
+	- **Resource Group**: add or select an Azure resource group.  For more information, see [Azure Resource Manager Overview](/documentation/articles/resource-group-overview).
 	- **Credentials**.  Enter a password for the HTTP web service user. The default username is **admin**. You must also enter an **SSH Username** and either a **PASSWORD** or **PUBLIC KEY**, which will be used to authenticate the SSH user. Using a public key is the recommended approach. For more information on using SSH with HDInsight, see one of the following articles:
 
-		- [Use SSH with Linux-based Hadoop on HDInsight from Linux, Unix, or OS X](hdinsight-hadoop-linux-use-ssh-unix)
-		- [Use SSH with Linux-based Hadoop on HDInsight from Windows](hdinsight-hadoop-linux-use-ssh-windows)
+		- [Use SSH with Linux-based Hadoop on HDInsight from Linux, Unix, or OS X](/documentation/articles/hdinsight-hadoop-linux-use-ssh-unix)
+		- [Use SSH with Linux-based Hadoop on HDInsight from Windows](/documentation/articles/hdinsight-hadoop-linux-use-ssh-windows)
 	Click **Select** to save the changes.
 	- **Data Source**: select an existing or create a new Azure Storage account to be used as the default file system for the cluster. The storage account location determines the cluster location.  An HDInsight cluster and the dependent Azure storage account must be located in the same data center.
 	The default name for **Default Container** is the cluster name.  
@@ -77,7 +77,7 @@ It will make more sense after you finish the next procedure.
 
 **To use the HBase shell**
 
->[AZURE.NOTE] The steps provided here are from a Windows computer.  For the instructions for connecting to a Linux-based HDInsight cluster from Linux, Unix or OS X, see [Use SSH with Linux-based Hadoop on HDInsight from Linux, Unix, or OS X (preview)](hdinsight-hadoop-linux-use-ssh-unix)
+>[AZURE.NOTE] The steps provided here are from a Windows computer.  For the instructions for connecting to a Linux-based HDInsight cluster from Linux, Unix or OS X, see [Use SSH with Linux-based Hadoop on HDInsight from Linux, Unix, or OS X (preview)](/documentation/articles/hdinsight-hadoop-linux-use-ssh-unix)
 1. Open **PuTTY**.  See the Prerequisites listed at the beginning of the article.
 2. If you provided an SSH key when you created your user account during the provision process, you must perform the following step to select the private key to use when authenticating to the cluster:
 
@@ -87,7 +87,7 @@ It will make more sense after you finish the next procedure.
 4. From the Basic options for your PuTTY session screen, enter the following values:
 
 	- Host Name: the SSH address of your HDInsight server in the Host name (or IP address) field. The SSH address is your cluster name, then **-ssh.azurehdinsight.cn**. For example, *mycluster-ssh.azurehdinsight.cn*.
-	- Port: 22. The ssh port on the headnode0 is 22.  See [Information about using HDInsight on Linux (preview)](hdinsight-hadoop-linux-information#remote-access-to-services).
+	- Port: 22. The ssh port on the headnode0 is 22.  See [Information about using HDInsight on Linux (preview)](/documentation/articles/hdinsight-hadoop-linux-information#remote-access-to-services).
 4. Click **Open** to connect to the cluster.
 5. When prompted, enter the user that you entered when you created the cluster. If you provided a password for the user, you will be prompted to enter it also.
 6. Run the following command:
@@ -219,7 +219,7 @@ You can query data in HBase tables by using Hive. This section creates a Hive ta
 
 HBase in HDInsight ships with a Web UI for monitoring clusters. Using the Web UI, you can request statistics or information about regions.
 
-SSH can also be used to tunnel local requests, such as web requests, to the HDInsight cluster. The request will then be routed to the requested resource as if it had originated on the HDInsight cluster head node. For more information, see [Use SSH with Linux-based Hadoop on HDInsight from Windows (preview)](hdinsight-hadoop-linux-use-ssh-windows#tunnel).
+SSH can also be used to tunnel local requests, such as web requests, to the HDInsight cluster. The request will then be routed to the requested resource as if it had originated on the HDInsight cluster head node. For more information, see [Use SSH with Linux-based Hadoop on HDInsight from Windows (preview)](/documentation/articles/hdinsight-hadoop-linux-use-ssh-windows#tunnel).
 
 **To establish an SSH tunneling session**
 
@@ -279,8 +279,8 @@ To learn more, see:
 HBase is an Apache, open-source, NoSQL database built on Hadoop that provides random access and strong consistency for large amounts of unstructured and semistructured data.
 
 
-[hdinsight-manage-portal]: hdinsight-administer-use-management-portal-v1
-[hdinsight-upload-data]: hdinsight-upload-data
+[hdinsight-manage-portal]: /documentation/articles/hdinsight-administer-use-management-portal-v1
+[hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
 [hbase-reference]: http://hbase.apache.org/book.html#importtsv
 [hbase-schema]: http://0b4af6cdc2f0c5998459-c0245c5c937c5dedcca3f1764ecc9b2f.r43.cf2.rackcdn.com/9353-login1210_khurana.pdf
 [hbase-quick-start]: http://hbase.apache.org/book.html#quickstart
@@ -289,10 +289,10 @@ HBase is an Apache, open-source, NoSQL database built on Hadoop that provides ra
 
 
 
-[hdinsight-hbase-overview]: hdinsight-hbase-overview
-[hdinsight-hbase-provision-vnet]: hdinsight-hbase-provision-vnet
-[hdinsight-versions]: hdinsight-component-versioning
-[hbase-twitter-sentiment]: hdinsight-hbase-analyze-twitter-sentiment
+[hdinsight-hbase-overview]: /documentation/articles/hdinsight-hbase-overview
+[hdinsight-hbase-provision-vnet]: /documentation/articles/hdinsight-hbase-provision-vnet
+[hdinsight-versions]: /documentation/articles/hdinsight-component-versioning
+[hbase-twitter-sentiment]: /documentation/articles/hdinsight-hbase-analyze-twitter-sentiment
 [azure-purchase-options]: /pricing/overview/
 [azure-member-offers]: http://azure.microsoft.com/pricing/member-offers/
 [azure-trial]: /pricing/1rmb-trial/

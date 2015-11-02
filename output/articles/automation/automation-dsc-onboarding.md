@@ -16,7 +16,7 @@
 
 ## Why manage machines with Azure Automation DSC?
 
-Like [PowerShell Desired State Configuration](https://technet.microsoft.com/zh-cn/library/dn249912.aspx), Azure Automation Desired State Configuration is a simple, yet powerful, configuration management service for DSC nodes (physical and virtual machines) in any cloud or on-premises datacenter. It enables scalability across thousands of machines quickly and easily from a central, secure location. You can easily onboard machines, assign them declarative configurations, and view reports showing each machine’s compliance to the desired state you specified. The Azure Automation DSC management layer is to DSC what the Azure Automation management layer is to PowerShell scripting. In other words, in the same way that Azure Automation helps you manage Powershell scripts, it also helps you manage DSC configurations To learn more about the benefits of using Azure Automation DSC, see [Azure Automation DSC overview](automation-dsc-overview). 
+Like [PowerShell Desired State Configuration](https://technet.microsoft.com/zh-cn/library/dn249912.aspx), Azure Automation Desired State Configuration is a simple, yet powerful, configuration management service for DSC nodes (physical and virtual machines) in any cloud or on-premises datacenter. It enables scalability across thousands of machines quickly and easily from a central, secure location. You can easily onboard machines, assign them declarative configurations, and view reports showing each machine’s compliance to the desired state you specified. The Azure Automation DSC management layer is to DSC what the Azure Automation management layer is to PowerShell scripting. In other words, in the same way that Azure Automation helps you manage Powershell scripts, it also helps you manage DSC configurations To learn more about the benefits of using Azure Automation DSC, see [Azure Automation DSC overview](/documentation/articles/automation-dsc-overview). 
 
 Azure Automation DSC can be used to manage a variety of machines:
 
@@ -229,7 +229,7 @@ To troubleshoot or view the status of the Azure VM Desired State Configuration e
 After registering, each node automatically negotiates a unique certificate for authentication that expires after one year. Currently, the PowerShell DSC registration protocol cannot automatically renew certificates when they are nearing expiration, so you need to reregister the nodes after a year’s time. Before reregistering, ensure that each node is running Windows Management Framework 5.0 RTM. If a node’s authentication certificate expires, and the node is not reregistered, the node will be unable to communicate with Azure Automation and will be marked ‘Unresponsive.’ Reregistration is performed in the same way you registered the node initially. Reregistration performed 90 days or less from the certificate expiration time, or at any point after the certificate expiration time, will result in a new certificate being generated and used.
 
 ## Related Articles
-* [Azure Automation DSC overview](automation-dsc-overview)
+* [Azure Automation DSC overview](/documentation/articles/automation-dsc-overview)
 * [Azure Automation DSC cmdlets](https://msdn.microsoft.com/zh-cn/library/mt244122.aspx)
 * [Azure Automation DSC pricing](/home/features/automation/#price)
 

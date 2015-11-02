@@ -16,19 +16,19 @@
 # My first graphical runbook
 
 > [AZURE.SELECTOR]
-- [Graphical](automation-first-runbook-graphical)
-- [PowerShell Workflow](automation-first-runbook-textual)
+- [Graphical](/documentation/articles/automation-first-runbook-graphical)
+- [PowerShell Workflow](/documentation/articles/automation-first-runbook-textual)
 
-This tutorial walks you through the creation of a [graphical runbook](automation-runbook-types#graphical-runbooks) in Azure Automation.  We'll start with a simple runbook that we'll test and publish while we explain how to track the status of the runbook job.  Then we'll modify the runbook to actually manage Azure resources, in this case starting an Azure virtual machine.  We'll then make the runbook more robust by adding runbook parameters and a conditional link.  
+This tutorial walks you through the creation of a [graphical runbook](/documentation/articles/automation-runbook-types#graphical-runbooks) in Azure Automation.  We'll start with a simple runbook that we'll test and publish while we explain how to track the status of the runbook job.  Then we'll modify the runbook to actually manage Azure resources, in this case starting an Azure virtual machine.  We'll then make the runbook more robust by adding runbook parameters and a conditional link.  
 
 ## Prerequisites
 
 To complete this tutorial, you will need the following.
 
 - Azure subscription. If you don't have one yet, you can [activate your MSDN subscriber benefits](http://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/) or <a href="/pricing/1rmb-trial/" target="_blank">[sign up for a trial](/pricing/1rmb-trial/).
-- [Automation account](automation-configuring) to hold the runbook.
+- [Automation account](/documentation/articles/automation-configuring) to hold the runbook.
 - An Azure virtual machine.  We will stop and start this machine so it should not be production.
-- [Azure Active Directory user and Automation Credential asset](automation-configuring) to authenticate to Azure resources.  This user must have permission to start and stop the virtual machine.
+- [Azure Active Directory user and Automation Credential asset](/documentation/articles/automation-configuring) to authenticate to Azure resources.  This user must have permission to start and stop the virtual machine.
 
 ## Step 1 - Create new runbook
 
@@ -40,7 +40,7 @@ The Automation account page gives you a quick view of the resources in this acco
 ![Runbooks control](./media/automation-first-runbook-graphical/runbooks-control.png)
 2. Create a new runbook by clicking on the **Add a runbook** button and then **Create a new runbook**.
 3. Give the runbook the name *MyFirstRunbook-Graphical*.
-4. In this case, we're going to create a [graphical runbook](automation-graphical-authoring-intro) so select **Graphical** for **Runbook type**.<br>
+4. In this case, we're going to create a [graphical runbook](/documentation/articles/automation-graphical-authoring-intro) so select **Graphical** for **Runbook type**.<br>
 ![New runbook](./media/automation-first-runbook-graphical/new-runbook.png)
 5. Click **Create** to create the runbook and open the graphical editor.
 
@@ -71,7 +71,7 @@ Before we publish the runbook to make it available in production, we want to tes
 2. Click **Test pane** to open the Test pane.<br>
 ![Test pane](./media/automation-first-runbook-graphical/runbook-edit-toolbar-test-pane.png)
 2. Click **Start** to start the test.  This should be the only enabled option.
-3. A [runbook job](automation-runbook-execution) is created and its status displayed in the pane.  
+3. A [runbook job](/documentation/articles/automation-runbook-execution) is created and its status displayed in the pane.  
 The job status will start as *Queued* indicating that it is waiting for a runbook worker in the cloud to come available.  It will then move to *Starting*  when a worker claims the job, and then *Running* when the runbook actually starts running.  
 4. When the runbook job completes, its output is displayed.  In our case, we should see *Hello World*.<br>
 ![Hello World](./media/automation-first-runbook-graphical/test-output-hello-world.png)
@@ -86,7 +86,7 @@ The runbook that we just created is still in Draft mode. We need to publish it b
 ![Publish](./media/automation-first-runbook-graphical/runbook-edit-toolbar-publish.png)
 2. If you scroll left to view the runbook in the **Runbooks** pane now, it will show an **Authoring Status** of **Published**.
 3. Scroll back to the right to view the pane for **MyFirstRunbook**.  
-The options across the top allow us to start the runbook, schedule it to start at some time in the future, or create a [webhook](automation-webhooks) so it can be started through an HTTP call. 
+The options across the top allow us to start the runbook, schedule it to start at some time in the future, or create a [webhook](/documentation/articles/automation-webhooks) so it can be started through an HTTP call. 
 4. We just want to start the runbook so click **Start** and then **Yes** when prompted.<br>
 ![Start runbook](./media/automation-first-runbook-graphical/runbook-toolbar-start.png)
 5. A job pane is opened for the runbook job that we just created.  We can close this pane, but in this case we'll leave it open so we can watch the job's progress.
@@ -195,7 +195,7 @@ We will now modify the runbook so that it will only attempt to start the runbook
 
 ## Related articles
 
-- [Graphical authoring in Azure Automation](automation-graphical-authoring-intro)
-- [My first PowerShell Workflow runbook](automation-first-runbook-textual)
+- [Graphical authoring in Azure Automation](/documentation/articles/automation-graphical-authoring-intro)
+- [My first PowerShell Workflow runbook](/documentation/articles/automation-first-runbook-textual)
 
  

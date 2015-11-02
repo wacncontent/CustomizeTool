@@ -16,12 +16,12 @@
 #Create a PHP-MySQL web app in Azure Websites and deploy using Git
 
 > [AZURE.SELECTOR]
-- [.Net](web-sites-dotnet-get-started)
-- [Node.js](web-sites-nodejs-develop-deploy-mac)
-- [Java](web-sites-java-get-started)
-- [PHP - Git](web-sites-php-mysql-deploy-use-git)
-- [PHP - FTP](web-sites-php-mysql-deploy-use-ftp)
-- [Python](web-sites-python-ptvs-django-mysql)
+- [.Net](/documentation/articles/web-sites-dotnet-get-started)
+- [Node.js](/documentation/articles/web-sites-nodejs-develop-deploy-mac)
+- [Java](/documentation/articles/web-sites-java-get-started)
+- [PHP - Git](/documentation/articles/web-sites-php-mysql-deploy-use-git)
+- [PHP - FTP](/documentation/articles/web-sites-php-mysql-deploy-use-ftp)
+- [Python](/documentation/articles/web-sites-python-ptvs-django-mysql)
 
 This tutorial shows you how to create a PHP-MySQL web app and how to deploy it to [Azure Websites](/documentation/services/web-sites/) using Git. You will use [PHP][install-php], the MySQL Command-Line Tool (part of [MySQL][install-mysql]), a web server, and [Git][install-git] installed on your computer. The instructions in this tutorial can be followed on any operating system, including Windows, Mac, and  Linux. Upon completing this guide, you will have a PHP/MySQL web app running in Azure.
 

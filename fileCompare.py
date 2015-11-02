@@ -1,18 +1,17 @@
 # compare with mooncake
 from difflib import Differ
 import re
-
-mooncake_path = "C:/Users/Administrator/Documents/GitHub/azure-content-mooncake-pr"
+from setting import setting
 
 def compareWithMooncake(relativePath, text):
     try:
-        mooncakefile = open(mooncake_path+"/"+relativePath)
+        mooncakefile = open(setting["compare"]["path"]+relativePath)
     except IOError:
         return text
     mooncakeLines = mooncakefile.readlines()
     mooncakefile.close()
     if len(mooncakeLines) == 0 or mooncakeLines[0].strip() == "<!-- not suitable for Mooncake -->":
-        return text
+        return "".join(mooncakeLines)
     i=0
     remodeKeepLines = []
     keepCount = 0

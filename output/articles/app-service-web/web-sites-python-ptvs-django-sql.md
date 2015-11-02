@@ -215,7 +215,7 @@ Follow these links to learn more about Python Tools for Visual Studio, Django an
 
 <!--Link references-->
 [Python Developer Center]: /develop/python/
-[Azure Cloud Services]: cloud-services-python-ptvs
+[Azure Cloud Services]: /documentation/articles/cloud-services-python-ptvs
 <!--External Link references-->
 [Azure Management Portal]: https://manage.windowsazure.cn
 [Python Tools for Visual Studio]: http://aka.ms/ptvs

@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties 
 	pageTitle="Connect a web app to an API app in Azure Websites" 
 	description="This tutorial shows you how to consume an API app from an ASP.NET web app hosted in Azure Websites." 
@@ -14,15 +16,15 @@
 
 # Connect a web app to an API app in Azure Websites
 
-This tutorial shows how to consume an API app from an ASP.NET web app hosted in [Azure Websites](app-service).
+This tutorial shows how to consume an API app from an ASP.NET web app hosted in [Azure Websites](/documentation/articles/app-service).
 
 ## Prerequisites
 
 This tutorial builds upon the series from the API App tutorials:
 
-1. [Create an Azure API App](app-service-dotnet-create-api-app)
-3. [Deploy an Azure API App](app-service-dotnet-deploy-api-app)
-4. [Debug an Azure API App](app-service-dotnet-remotely-debug-api-app)
+1. [Create an Azure API App](/documentation/articles/app-service-dotnet-create-api-app)
+3. [Deploy an Azure API App](/documentation/articles/app-service-dotnet-deploy-api-app)
+4. [Debug an Azure API App](/documentation/articles/app-service-dotnet-remotely-debug-api-app)
 
 ## Make the API app publicly accessible
 
@@ -83,7 +85,7 @@ In the [Azure preview portal](https://manage.windowsazure.cn/), select the API a
 
 ## Deploy the web application to Web Apps in Azure Websites
 
-Follow the instructions available at [How to Deploy an Azure web app](web-sites-deploy).
+Follow the instructions available at [How to Deploy an Azure web app](/documentation/articles/web-sites-deploy).
 
 >[AZURE.NOTE] If you want to get started with Azure Websites before signing up for an Azure account, go to [Try Azure Websites](http://go.microsoft.com/fwlink/?LinkId=523751), where you can immediately create a short-lived starter web app in Azure Websites. No credit cards required; no commitments.
 

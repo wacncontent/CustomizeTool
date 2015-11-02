@@ -14,7 +14,7 @@
 
 # Migrating from Orchestrator to Azure Automation
 
-Runbooks in [System Center Orchestrator](http://technet.microsoft.com/zh-cn/library/hh237242.aspx) are based on activities from integration packs that are written specifically for Orchestrator while runbooks in Azure Automation are based on Windows PowerShell Workflows.  [Graphical runbooks](automation-runbook-types#graphical-runbooks) in Azure Automation have a similar appearance to Orchestrator runbooks with their activities representing PowerShell cmdlets, child runbooks, and assets.
+Runbooks in [System Center Orchestrator](http://technet.microsoft.com/zh-cn/library/hh237242.aspx) are based on activities from integration packs that are written specifically for Orchestrator while runbooks in Azure Automation are based on Windows PowerShell Workflows.  [Graphical runbooks](/documentation/articles/automation-runbook-types#graphical-runbooks) in Azure Automation have a similar appearance to Orchestrator runbooks with their activities representing PowerShell cmdlets, child runbooks, and assets.
 
 The [System Center Orchestrator Migration Toolkit](http://www.microsoft.com/download/details.aspx?id=47323&WT.mc_id=rss_alldownloads_all) includes tools to assist you in converting runbooks from Orchestrator to Azure Automation.  In addition to converting the runbooks themselves, you must convert the integration packs with the activities that they use to integration modules with Windows PowerShell cmdlets.  
 
@@ -34,7 +34,7 @@ Following is the the basic process for converting Orchestrator runbooks to Azure
 
 ## Hybrid Runbook Worker
 
-Runbooks in Orchestrator are stored on a database server and run on runbook servers, both in your local data center.  Runbooks in Azure Automation are stored in the Azure cloud and can run in your local data center using a [Hybrid Runbook Worker](automation-hybrid-runbook-worker).  This is how you will usually run runbooks converted from Orchestrator since they are designed to run on local servers.
+Runbooks in Orchestrator are stored on a database server and run on runbook servers, both in your local data center.  Runbooks in Azure Automation are stored in the Azure cloud and can run in your local data center using a [Hybrid Runbook Worker](/documentation/articles/automation-hybrid-runbook-worker).  This is how you will usually run runbooks converted from Orchestrator since they are designed to run on local servers.
 
 ## Integration Pack Converter
 
@@ -67,12 +67,12 @@ Microsoft provides [integration packs](http://technet.microsoft.com/zh-cn/librar
 
 ## Runbook Converter (coming soon)
 
-This tool will convert Orchestrator runbooks into [graphical runbooks](automation-runbook-types#graph-runbooks) that can be imported into Azure Automation.  Further details on this tool will be provided here when it comes available.
+This tool will convert Orchestrator runbooks into [graphical runbooks](/documentation/articles/automation-runbook-types#graph-runbooks) that can be imported into Azure Automation.  Further details on this tool will be provided here when it comes available.
 
 ## Related articles
 
 - [System Center 2012 - Orchestrator](http://technet.microsoft.com/zh-cn/library/hh237242.aspx)
 - [Service Management Automation](https://technet.microsoft.com/zh-cn/library/dn469260.aspx)
-- [Hybrid Runbook Worker](automation-hybrid-runbook-worker)
+- [Hybrid Runbook Worker](/documentation/articles/automation-hybrid-runbook-worker)
 - [Orchestrator Standard Activities](http://technet.microsoft.com/zh-cn/library/hh403832.aspx)
  

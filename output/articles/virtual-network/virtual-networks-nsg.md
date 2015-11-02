@@ -21,7 +21,7 @@ You can use an NSG to control traffic to one or more virtual machine (VM) instan
 
 The figure above shows a virtual network with two subnets, with an NSG associated to each subnet for traffic control.
 
->[AZURE.NOTE] Endpoint-based ACLs and network security groups are not supported on the same VM instance. If you want to use an NSG and have an endpoint ACL already in place, first remove the endpoint ACL. For information about how to do this, see [Managing Access Control Lists (ACLs) for Endpoints by using PowerShell](virtual-networks-acl-powershell).
+>[AZURE.NOTE] Endpoint-based ACLs and network security groups are not supported on the same VM instance. If you want to use an NSG and have an endpoint ACL already in place, first remove the endpoint ACL. For information about how to do this, see [Managing Access Control Lists (ACLs) for Endpoints by using PowerShell](/documentation/articles/virtual-networks-acl-powershell).
 
 ## How does a network security group work?
 
@@ -153,9 +153,9 @@ You need to consider the following limits when designing your NSGs.
 |NSGs per region per subscription|100|
 |NSG rules per NSG|200|
 
-Make sure you view all the [limits related to networking services in Azure](azure-subscription-service-limits#networking-limits) before designing your solution.
+Make sure you view all the [limits related to networking services in Azure](/documentation/articles/azure-subscription-service-limits#networking-limits) before designing your solution.
 
 ## Next steps
 
-- [Deploy NSGs in the classic deployment model](virtual-networks-create-nsg-classic-ps).
-- [Deploy NSGs in Resource Manager](virtual-networks-create-nsg-arm-pportal).
+- [Deploy NSGs in the classic deployment model](/documentation/articles/virtual-networks-create-nsg-classic-ps).
+- [Deploy NSGs in Resource Manager](/documentation/articles/virtual-networks-create-nsg-arm-pportal).

@@ -17,15 +17,15 @@
 
 
 > [AZURE.SELECTOR]
-- [REST](media-services-rest-create-contentkey)
-- [.NET](media-services-dotnet-create-contentkey)
+- [REST](/documentation/articles/media-services-rest-create-contentkey)
+- [.NET](/documentation/articles/media-services-dotnet-create-contentkey)
 
 
 Media Services enables you to create new and deliver encrypted assets. A **ContentKey** provides secure access to your **Asset**s. 
 
-When you create a new asset (for example, before you [upload files](media-services-rest-upload-files)), you can specify the following encryption options: **StorageEncrypted**, **CommonEncryptionProtected**, or **EnvelopeEncryptionProtected**. 
+When you create a new asset (for example, before you [upload files](/documentation/articles/media-services-rest-upload-files)), you can specify the following encryption options: **StorageEncrypted**, **CommonEncryptionProtected**, or **EnvelopeEncryptionProtected**. 
 
-When you deliver assets to your clients, you can [configure for assets to be dynamically encrypted](media-services-rest-configure-asset-delivery-policy) with one of the following two encryptions: **DynamicEnvelopeEncryption** or **DynamicCommonEncryption**.
+When you deliver assets to your clients, you can [configure for assets to be dynamically encrypted](/documentation/articles/media-services-rest-configure-asset-delivery-policy) with one of the following two encryptions: **DynamicEnvelopeEncryption** or **DynamicCommonEncryption**.
 
 Encrypted assets have to be associated with **ContentKey**s. This article describes how to create a content key.
 
@@ -67,9 +67,9 @@ Note that examples that generate an AES key, encrypt the key, and calculate the 
 
 >[AZURE.NOTE] When working with the Media Services REST API, the following considerations apply:
 >
->When accessing entities in Media Services, you must set specific header fields and values in your HTTP requests. For more information, see [Setup for Media Services REST API Development](media-services-rest-how-to-use).
+>When accessing entities in Media Services, you must set specific header fields and values in your HTTP requests. For more information, see [Setup for Media Services REST API Development](/documentation/articles/media-services-rest-how-to-use).
 
->After successfully connecting to https://media.chinacloudapi.cn, you will receive a 301 redirect specifying another Media Services URI. You must make subsequent calls to the new URI as described in [Connecting to Media Services using REST API](media-services-rest-connect_programmatically). 
+>After successfully connecting to https://media.chinacloudapi.cn, you will receive a 301 redirect specifying another Media Services URI. You must make subsequent calls to the new URI as described in [Connecting to Media Services using REST API](/documentation/articles/media-services-rest-connect_programmatically). 
 
 ##Retrieve the ProtectionKeyId 
  

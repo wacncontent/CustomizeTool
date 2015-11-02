@@ -20,7 +20,7 @@
 
 In this document, you will learn about the different ways to create a Linux-based HDInsight cluster on Azure, as well as optional configurations that can be used with your cluster. HDInsight provides Apache Hadoop, Apache Storm, and Apache HBase as services on the Azure cloud platform.
 
-> [AZURE.NOTE] This document provides instructions on the different ways to create a cluster. If you are looking for a quick-start approach to create a cluster, see [Get Started with Azure HDInsight on Linux](hdinsight-hadoop-linux-get-started).
+> [AZURE.NOTE] This document provides instructions on the different ways to create a cluster. If you are looking for a quick-start approach to create a cluster, see [Get Started with Azure HDInsight on Linux](/documentation/articles/hdinsight-hadoop-linux-get-started).
 
 ## What is an HDInsight cluster?
 
@@ -72,7 +72,7 @@ Spark clusters for HDInsight have three types of nodes:
 
 ###Azure Storage for HDInsight
 
-Each cluster type will also have one or more Azure Storage accounts associated with the cluster. HDInsight uses Azure blobs from these storage accounts as the data store for your cluster. Keeping the data separate from the cluster allows you to delete clusters when they aren't in use, and still preserve your data. You can then use the same storage account for a new cluster if you need to do more analysis. For more information, see [Use Azure Blob storage with HDInsight](hdinsight-use-blob-storage).
+Each cluster type will also have one or more Azure Storage accounts associated with the cluster. HDInsight uses Azure blobs from these storage accounts as the data store for your cluster. Keeping the data separate from the cluster allows you to delete clusters when they aren't in use, and still preserve your data. You can then use the same storage account for a new cluster if you need to do more analysis. For more information, see [Use Azure Blob storage with HDInsight](/documentation/articles/hdinsight-use-blob-storage).
 
 ## <a id="configuration"></a>Basic configuration options
 
@@ -106,9 +106,9 @@ You can provision HDInsight clusters on one of the following two operating syste
 
 - **HDInsight on Windows (Windows Server 2012 R2 Datacenter)**: Select this option if you need to integrate with Windows-based services and technologies that will run on the cluster with Hadoop, or if you are migrating from an existing Windows-based Hadoop distribution.
 
-- **HDInsight on Linux (Ubuntu 12.04 LTS for Linux)**: Select this option if you are familiar with Linux or Unix, migrating from an existing Linux-based Hadoop solution, or want easy integration with Hadoop ecosystem components built for Linux. For more information, see [Get started with Hadoop on Linux in HDInsight](hdinsight-hadoop-linux-get-started).
+- **HDInsight on Linux (Ubuntu 12.04 LTS for Linux)**: Select this option if you are familiar with Linux or Unix, migrating from an existing Linux-based Hadoop solution, or want easy integration with Hadoop ecosystem components built for Linux. For more information, see [Get started with Hadoop on Linux in HDInsight](/documentation/articles/hdinsight-hadoop-linux-get-started).
 
-> [AZURE.NOTE] Information in this document assumes that you are using a Linux-based HDInsight cluster. For information that is specific to Windows-based clusters, see [Create Windows-based Hadoop clusters in HDInsight](hdinsight-provision-clusters).
+> [AZURE.NOTE] Information in this document assumes that you are using a Linux-based HDInsight cluster. For information that is specific to Windows-based clusters, see [Create Windows-based Hadoop clusters in HDInsight](/documentation/articles/hdinsight-provision-clusters).
 
 ###Subscription name
 
@@ -116,7 +116,7 @@ If you have multiple Azure subscriptions, use this to select the one you want to
 
 ###Resource group
 
-Applications are typically made up of many components, for example a web app, database, database server, storage, and 3rd party services. Azure Resource Manager (ARM) enables you to work with the resources in your application as a group, referred to as an Azure Resource Group. You can deploy, update, monitor or delete all of the resources for your application in a single, coordinated operation. You use a template for deployment and that template can work for different environments such as testing, staging and production. You can clarify billing for your organization by viewing the rolled-up costs for the entire group. For more information, see [Azure Resource Manager Overview](resource-group-overview).
+Applications are typically made up of many components, for example a web app, database, database server, storage, and 3rd party services. Azure Resource Manager (ARM) enables you to work with the resources in your application as a group, referred to as an Azure Resource Group. You can deploy, update, monitor or delete all of the resources for your application in a single, coordinated operation. You use a template for deployment and that template can work for different environments such as testing, staging and production. You can clarify billing for your organization by viewing the rolled-up costs for the entire group. For more information, see [Azure Resource Manager Overview](/documentation/articles/resource-group-overview).
 
 ###Credentials
 
@@ -132,8 +132,8 @@ The SSH user can be authenticated using either a password or a certificate. Cert
 
 For more information on using SSH with HDInsight, including how to create and use SSH keys, see one of the following articles:
 
-* [For Linux, Unix, or Mac OS X clients - using SSH with HDInsight](hdinsight-hadoop-linux-use-ssh-unix)
-* [For Windows clients - using SSH with HDInsight](hdinsight-hadoop-linux-use-ssh-windows)
+* [For Linux, Unix, or Mac OS X clients - using SSH with HDInsight](/documentation/articles/hdinsight-hadoop-linux-use-ssh-unix)
+* [For Windows clients - using SSH with HDInsight](/documentation/articles/hdinsight-hadoop-linux-use-ssh-windows)
 
 ###Data source
 
@@ -149,7 +149,7 @@ When creating a new cluster, you must either create a new Azure Storage Account,
 
 HDInsight will also create a _default storage container_ on the storage account. This is the default storage for the HDInsight cluster. 
 
-By default, this container has the same name as the cluster. For more information on how HDInsight works with Azure Blob Storage, see [Use HDFS-compatible Azure Blob storage with Hadoop in HDInsight](hdinsight-hadoop-use-blob-storage).
+By default, this container has the same name as the cluster. For more information on how HDInsight works with Azure Blob Storage, see [Use HDFS-compatible Azure Blob storage with Hadoop in HDInsight](/documentation/articles/hdinsight-hadoop-use-blob-storage).
 
 >[AZURE.WARNING] Don't share one container for multiple clusters. This is not supported.
 
@@ -169,7 +169,7 @@ The following sections describe optional configuration options, as well as scena
 
 ### HDInsight version
 
-Use this to determine the version of HDInsight used for this cluster. For more information, see [Hadoop cluster versions and components in HDInsight](hdinsight-component-versioning)
+Use this to determine the version of HDInsight used for this cluster. For more information, see [Hadoop cluster versions and components in HDInsight](/documentation/articles/hdinsight-component-versioning/)
 
 ### Use Azure virtual networks
 
@@ -187,7 +187,7 @@ An [Azure Virtual Network](/documentation/services/networking/) allows you to cr
 
 For more information on Virtual Network features, benefits, and capabilities, see the [Azure Virtual Network overview](http://msdn.microsoft.com/zh-cn/library/azure/jj156007.aspx).
 
-> [AZURE.NOTE] You must create the Azure virtual network before creating a cluster. For more information, see [How to create a Virtual Network](virtual-networks-create-vnet).
+> [AZURE.NOTE] You must create the Azure virtual network before creating a cluster. For more information, see [How to create a Virtual Network](/documentation/articles/virtual-networks-create-vnet).
 >
 > Azure HDInsight only supports location-based Virtual Networks, and does not currently work with Affinity Group-based Virtual Networks. Use Azure PowerShell cmdlet Get-AzureVNetConfig to check whether an existing Azure virtual network is location-based. If your virtual network is not location-based, you have the following options:
 >
@@ -200,17 +200,17 @@ For more information on Virtual Network features, benefits, and capabilities, se
 >
 > You cannot use a v1 (Classic,) Azure Virtual Network with Linux-based HDInsight. The Virtual Network must be v2 (Azure Resource Manager,) in order for it to be listed as an option during the HDInsight cluster creation process in the Azure preview portal, or to be usable when creating a cluster from the Azure CLI or Azure PowerShell.
 >
-> If you have resources on a v1 network, and you wish to make HDInsight directly accessible to those resources through a virtual network, see [Connecting classic VNets to new VNets](virtual-networks-arm-asm-s2s) for information on how to connect a v2 Virtual Network to a v1 Virtual Network. Once this connection is established, you can create the HDInsight cluster in the v2 Virtual Network.
+> If you have resources on a v1 network, and you wish to make HDInsight directly accessible to those resources through a virtual network, see [Connecting classic VNets to new VNets](/documentation/articles/virtual-networks-arm-asm-s2s) for information on how to connect a v2 Virtual Network to a v1 Virtual Network. Once this connection is established, you can create the HDInsight cluster in the v2 Virtual Network.
 
 ### Metastore
 
 The metastore contains Hive and Oozie metadata, such as information about Hive tables, partitions, schemas, and columns. Using the metastore helps you retain your Hive and Oozie metadata, so that you don't have to re-create Hive tables or Oozie jobs when you create a new cluster.
 
-Using the Metastore configuration option allows you to specify an external metastore using SQL Database. This allows the metadata information to be preserved when you delete a cluster, as it is stored externally in the database. For instructions on how to create a SQL database in Azure, see [Create your first Azure SQL Database](sql-database-get-started).
+Using the Metastore configuration option allows you to specify an external metastore using SQL Database. This allows the metadata information to be preserved when you delete a cluster, as it is stored externally in the database. For instructions on how to create a SQL database in Azure, see [Create your first Azure SQL Database](/documentation/articles/sql-database-get-started).
 
 ###<a id="scriptaction"></a>Script action
 
-You can install additional components or customize cluster configuration by using scripts during cluster provisioning. Such scripts are invoked via **Script Action**. For more information, see [Customize HDInsight cluster using Script Action](hdinsight-hadoop-customize-cluster).
+You can install additional components or customize cluster configuration by using scripts during cluster provisioning. Such scripts are invoked via **Script Action**. For more information, see [Customize HDInsight cluster using Script Action](/documentation/articles/hdinsight-hadoop-customize-cluster).
 
 > [AZURE.IMPORTANT] Adding additional components after a cluster has been created is not supported, as these components will not be available after a cluster node is reimaged. Components installed through script actions are reinstalled as part of the reimaging process.
 
@@ -218,7 +218,7 @@ You can install additional components or customize cluster configuration by usin
 
 In some cases, you may wish to add additional storage to the cluster. For example, if you have multiple Azure Storage Accounts for different geographical regions, or for different services, but want to analyze them all with HDInsight.
 
-For more information on using secondary blob stores, see [Using Azure Blob storage with HDInsight](hdinsight-use-blob-storage).
+For more information on using secondary blob stores, see [Using Azure Blob storage with HDInsight](/documentation/articles/hdinsight-use-blob-storage).
 
 ##<a id="nextsteps"></a><a id="options"></a> Creation methods
 
@@ -226,38 +226,38 @@ In this article, you have learned basic information about creating a Linux-based
 
 | Use this to create a cluster... | Using a web browser... | Using a command-line | Using the REST API | Using an SDK | From Linux, Mac OS X, or Unix | From Windows |
 | ------------------------------- |:----------------------:|:--------------------:|:------------------:|:------------:|:-----------------------------:|:------------:|
-| [Azure preview portal](hdinsight-hadoop-create-linux-clusters-portal) | ✔     | &nbsp; | &nbsp; | &nbsp; | ✔      | ✔ |
-| [Azure CLI](hdinsight-hadoop-create-linux-clusters-azure-cli)         | &nbsp; | ✔     | &nbsp; | &nbsp; | ✔      | ✔ |
-| [Azure PowerShell](hdinsight-hadoop-create-linux-clusters-azure-powershell) | &nbsp; | ✔     | &nbsp; | &nbsp; | &nbsp; | ✔ |
-| [cURL](hdinsight-hadoop-create-linux-clusters-curl) | &nbsp; | ✔     | ✔ | &nbsp; | ✔      | ✔ |
-| [.NET SDK](hdinsight-hadoop-create-linux-clusters-dotnet) | &nbsp; | &nbsp; | &nbsp; | ✔ | ✔      | ✔ |
+| [Azure preview portal](/documentation/articles/hdinsight-hadoop-create-linux-clusters-portal) | ✔     | &nbsp; | &nbsp; | &nbsp; | ✔      | ✔ |
+| [Azure CLI](/documentation/articles/hdinsight-hadoop-create-linux-clusters-azure-cli)         | &nbsp; | ✔     | &nbsp; | &nbsp; | ✔      | ✔ |
+| [Azure PowerShell](/documentation/articles/hdinsight-hadoop-create-linux-clusters-azure-powershell) | &nbsp; | ✔     | &nbsp; | &nbsp; | &nbsp; | ✔ |
+| [cURL](/documentation/articles/hdinsight-hadoop-create-linux-clusters-curl) | &nbsp; | ✔     | ✔ | &nbsp; | ✔      | ✔ |
+| [.NET SDK](/documentation/articles/hdinsight-hadoop-create-linux-clusters-dotnet) | &nbsp; | &nbsp; | &nbsp; | ✔ | ✔      | ✔ |
 
 
 
-[hdinsight-use-mapreduce]: hdinsight-use-mapreduce
-[hdinsight-use-hive]: hdinsight-use-hive
-[hdinsight-use-pig]: hdinsight-use-pig
-[hdinsight-upload-data]: hdinsight-upload-data
+[hdinsight-use-mapreduce]: /documentation/articles/hdinsight-use-mapreduce
+[hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive
+[hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig
+[hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
 [hdinsight-sdk-documentation]: http://msdn.microsoft.com/zh-cn/library/dn479185.aspx
 
 
-[hdinsight-customize-cluster]: hdinsight-hadoop-customize-cluster
-[hdinsight-get-started]: hdinsight-get-started
-[hdinsight-admin-powershell]: hdinsight-administer-use-powershell
-[hdinsight-submit-jobs]: hdinsight-submit-hadoop-jobs-programmatically
+[hdinsight-customize-cluster]: /documentation/articles/hdinsight-hadoop-customize-cluster
+[hdinsight-get-started]: /documentation/articles/hdinsight-get-started
+[hdinsight-admin-powershell]: /documentation/articles/hdinsight-administer-use-powershell
+[hdinsight-submit-jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically
 [hdinsight-powershell-reference]: https://msdn.microsoft.com/zh-cn/library/dn858087.aspx
 
 [azure-management-portal]: https://manage.windowsazure.cn/
 
-[azure-command-line-tools]: xplat-cli
-[azure-create-storageaccount]: storage-create-storage-account
+[azure-command-line-tools]: /documentation/articles/xplat-cli
+[azure-create-storageaccount]: /documentation/articles/storage-create-storage-account
 [azure-purchase-options]: /pricing/overview/
 [azure-member-offers]: http://azure.microsoft.com/pricing/member-offers/
 [azure-trial]: /pricing/1rmb-trial/
 [hdi-remote]: /documentation/articles/hdinsight-administer-use-management-portal-v1/#rdp
 
 
-[Powershell-install-configure]: install-configure-powershell
+[Powershell-install-configure]: /documentation/articles/install-configure-powershell
 [image-hdi-customcreatecluster]: ./media/hdinsight-get-started/HDI.CustomCreateCluster.png
 [image-hdi-customcreatecluster-clusteruser]: ./media/hdinsight-get-started/HDI.CustomCreateCluster.ClusterUser.png
 [image-hdi-customcreatecluster-storageaccount]: ./media/hdinsight-get-started/HDI.CustomCreateCluster.StorageAccount.png

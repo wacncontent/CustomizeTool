@@ -180,17 +180,17 @@ Now that you have successfully created an HDInsight cluster, use the following t
 
 ###Hadoop clusters
 
-* [Use Hive with HDInsight](hdinsight-use-hive)
-* [Use Pig with HDInsight](hdinsight-use-pig)
-* [Use MapReduce with HDInsight](hdinsight-use-mapreduce)
+* [Use Hive with HDInsight](/documentation/articles/hdinsight-use-hive)
+* [Use Pig with HDInsight](/documentation/articles/hdinsight-use-pig)
+* [Use MapReduce with HDInsight](/documentation/articles/hdinsight-use-mapreduce)
 
 ###HBase clusters
 
-* [Get started with HBase on HDInsight](hdinsight-hbase-tutorial-get-stared-linux)
-* [Develop Java applications for HBase on HDInsight](hdinsight-hbase-build-java-maven-linux)
+* [Get started with HBase on HDInsight](/documentation/articles/hdinsight-hbase-tutorial-get-stared-linux)
+* [Develop Java applications for HBase on HDInsight](/documentation/articles/hdinsight-hbase-build-java-maven-linux)
 
 ###Storm clusters
 
-* [Develop Java topologies for Storm on HDInsight](hdinsight-storm-develop-java-topology)
-* [Use Python components in Storm on HDInsight](hdinsight-storm-develop-python)
-* [Deploy and monitor topologies with Storm on HDInsight](hdinsight-storm-deploy-monitor-topology-linux)
+* [Develop Java topologies for Storm on HDInsight](/documentation/articles/hdinsight-storm-develop-java-topology)
+* [Use Python components in Storm on HDInsight](/documentation/articles/hdinsight-storm-develop-python)
+* [Deploy and monitor topologies with Storm on HDInsight](/documentation/articles/hdinsight-storm-deploy-monitor-topology-linux)

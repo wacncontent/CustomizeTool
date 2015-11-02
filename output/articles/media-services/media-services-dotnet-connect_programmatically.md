@@ -16,8 +16,8 @@
 # Connecting to Media Services Account using Media Services SDK for .NET
 
 > [AZURE.SELECTOR]
-- [REST](media-services-rest-connect_programmatically)
-- [.NET](media-services-dotnet-connect_programmatically)
+- [REST](/documentation/articles/media-services-rest-connect_programmatically)
+- [.NET](/documentation/articles/media-services-dotnet-connect_programmatically)
 
 
 This topic describes how to obtain a programmatic connection to Windows Azure Media Services when you are programming with the Media Services SDK for .NET.

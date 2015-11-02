@@ -109,6 +109,6 @@ You can view AMS learning paths here:
 
 ##See Also
 
-[Develop video player applications](media-services-develop-video-players)
+[Develop video player applications](/documentation/articles/media-services-develop-video-players)
 
 [GitHub dash.js repository](https://github.com/Dash-Industry-Forum/dash.js) 

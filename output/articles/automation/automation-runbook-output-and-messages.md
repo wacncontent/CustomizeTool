@@ -28,7 +28,7 @@ The following table provides a brief description of each of the streams and thei
 
 ## Output stream
 
-The Output stream is intended for output of objects created by a script or workflow when it runs correctly. In Azure Automation, this stream is primarily used for objects intended to be consumed by [parent runbooks that call the current runbook](automation-child-runbooks). When you [call a runbook inline](automation-child-runbooks#InlineExecution) from a parent runbook, it returns data from the output stream to the parent. You should only use the output stream to communicate general information back to the user if you know the runbook will never be called by another runbook. As a best practice, however, you should typically use the [Verbose Stream](#Verbose) to communicate general information to the user.
+The Output stream is intended for output of objects created by a script or workflow when it runs correctly. In Azure Automation, this stream is primarily used for objects intended to be consumed by [parent runbooks that call the current runbook](/documentation/articles/automation-child-runbooks). When you [call a runbook inline](/documentation/articles/automation-child-runbooks#InlineExecution) from a parent runbook, it returns data from the output stream to the parent. You should only use the output stream to communicate general information back to the user if you know the runbook will never be called by another runbook. As a best practice, however, you should typically use the [Verbose Stream](#Verbose) to communicate general information to the user.
 
 You can write data to the output stream using [Write-Output](http://technet.microsoft.com/zh-cn/library/hh849921.aspx) or by putting the object on its own line in the runbook.
 
@@ -161,5 +161,5 @@ The following example starts a sample runbook and then waits for it to complete.
 
 ## Related articles
 
-- [Track a runbook job](automation-runbook-execution)
+- [Track a runbook job](/documentation/articles/automation-runbook-execution)
 - [Child Runbooks](http://msdn.microsoft.com/zh-cn/library/azure/dn857355.aspx)

@@ -1,7 +1,7 @@
 > [AZURE.SELECTOR]
 <!-- deleted by customization
-- [Preview portal](virtual-networks-create-vnet-classic-pportal)
+- [Preview portal](/documentation/articles/virtual-networks-create-vnet-classic-pportal)
 -->
-- [Azure Management Portal](virtual-networks-create-vnet-classic-portal)
-- [PowerShell](virtual-networks-create-vnet-classic-netcfg-ps)
-- [Azure CLI](virtual-networks-create-vnet-classic-cli)
+- [Azure Management Portal](/documentation/articles/virtual-networks-create-vnet-classic-portal)
+- [PowerShell](/documentation/articles/virtual-networks-create-vnet-classic-netcfg-ps)
+- [Azure CLI](/documentation/articles/virtual-networks-create-vnet-classic-cli)

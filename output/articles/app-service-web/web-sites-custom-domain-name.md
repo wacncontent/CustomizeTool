@@ -16,12 +16,12 @@
 
 > [AZURE.SELECTOR]
 <!-- deleted by customization 
-- [Buy Domain for Web Apps](custom-dns-web-site-buydomains-web-app)
+- [Buy Domain for Web Apps](/documentation/articles/custom-dns-web-site-buydomains-web-app)
 -->
-- [Web Apps with External Domains](web-sites-custom-domain-name)
-- [Web Apps with Traffic Manager](web-sites-traffic-manager-custom-domain-name)
+- [Web Apps with External Domains](/documentation/articles/web-sites-custom-domain-name)
+- [Web Apps with Traffic Manager](/documentation/articles/web-sites-traffic-manager-custom-domain-name)
 <!-- deleted by customization 
-- [GoDaddy](web-sites-godaddy-custom-domain-name)
+- [GoDaddy](/documentation/articles/web-sites-godaddy-custom-domain-name)
 -->
 
 When you create a web app, Azure assigns it to a subdomain of chinacloudsites.cn. For example, if your web app is named **contoso**, the URL is **contoso.chinacloudsites.cn**. Azure also assigns a virtual IP address.
@@ -88,7 +88,7 @@ Skip this step if you are creating a CNAME record. To create an A record, you ne
 <!-- keep by customization: begin -->
 1.	In your browser, open the [Azure Management Portal](https://manage.windowsazure.cn).
 2.	In the **Websites** tab, click the name of your site and select **Dashboard**.
-3.	Select **Manage Domains** from the bottom of the page. (If this option is disabled, make sure you are using Shared, Basic, or Standard mode. For more information, see [How to scale websites](http://www.windowsazure.cn/zh-cn/documentation/articles/web-sites-scale/).) 
+3.	Select **Manage Domains** from the bottom of the page. (If this option is disabled, make sure you are using Shared, Basic, or Standard mode. For more information, see [How to scale websites](http://www.windowsazure.cn/documentation/articles/web-sites-scale/).) 
 
 	![](./media/web-sites-custom-domain-name/dncmntask-cname-6.png)
 
@@ -132,7 +132,7 @@ Assuming the custom domain name is ‘contoso.com’, this would create the foll
 - **contoso.com** mapped to 127.0.0.1.
 - **www.contoso.com** mapped to **contoso.chinacloudsites.cn**.
 
->[AZURE.NOTE] You can use Azure DNS to host the necessary domain records for your web app. To configure your custom domain, and create your records, in Azure DNS, see [Create custom DNS records for a web app](dns-web-sites-custom-domain). 
+>[AZURE.NOTE] You can use Azure DNS to host the necessary domain records for your web app. To configure your custom domain, and create your records, in Azure DNS, see [Create custom DNS records for a web app](/documentation/articles/dns-web-sites-custom-domain). 
 
 <a name="awverify" />
 ## Create an awverify record (A records only)
@@ -155,7 +155,7 @@ Visitors to your web app will not see the awverify subdomain; it’s only for Az
 
 ## Next steps
 
-For more information please see: [Get started with Azure DNS](dns-getstarted-create-dnszone) and [Delegate Domain to Azure DNS](dns-domain-delegation) 
+For more information please see: [Get started with Azure DNS](/documentation/articles/dns-getstarted-create-dnszone) and [Delegate Domain to Azure DNS](/documentation/articles/dns-domain-delegation) 
 <!-- deleted by customization
 
 ## What's changed

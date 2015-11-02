@@ -27,10 +27,10 @@ The following diagram represents a live streaming workflow that uses an on-premi
 
 This topic covers the following:
 
-- [Common live streaming scenario](media-services-manage-channels-overview#scenario)
-- [Description of a Channel and its related components](media-services-manage-channels-overview#channel)
-- [Considerations](media-services-manage-channels-overview#considerations)
-- [Tasks related to Live Streaming](media-services-manage-channels-overview#tasks)
+- [Common live streaming scenario](/documentation/articles/media-services-manage-channels-overview#scenario)
+- [Description of a Channel and its related components](/documentation/articles/media-services-manage-channels-overview#channel)
+- [Considerations](/documentation/articles/media-services-manage-channels-overview#considerations)
+- [Tasks related to Live Streaming](/documentation/articles/media-services-manage-channels-overview#tasks)
 
 ##<a id="scenario"></a>Common live streaming scenario
 The following steps describe tasks involved in creating common live streaming applications.
@@ -60,7 +60,7 @@ The following steps describe tasks involved in creating common live streaming ap
 1. Stop the program whenever you want to stop streaming and archiving the event.
 1. Delete the Program (and optionally delete the asset).     
 
-The [live streaming tasks](media-services-manage-channels-overview#tasks) section links to topics that demonstrate how to achieve tasks described above.
+The [live streaming tasks](/documentation/articles/media-services-manage-channels-overview#tasks) section links to topics that demonstrate how to achieve tasks described above.
 
 ##<a id="channel"></a>Description of a Channel and its related components
 
@@ -230,9 +230,9 @@ Other considerations related to working with channels and related components:
 
 - Every time you reconfigure the live encoder, call the **Reset** method on the channel. Before you reset the channel, you have to stop the program. After you reset the channel, restart the program. 
 - A channel can be stopped only when it is in the Running state, and all programs on the channel have been stopped.
-- By default you can only add 5 channels to your Media Services account. For more information, see [Quotas and Limitations](media-services-quotas-and-limitations).
+- By default you can only add 5 channels to your Media Services account. For more information, see [Quotas and Limitations](/documentation/articles/media-services-quotas-and-limitations).
 - You cannot change the input protocol while the Channel or its associated programs are running. If you require different protocols, you should create separate channels for each input protocol. 
-- You are only billed when your Channel is in the **Running** state. For more information, refer to [this](media-services-manage-channels-overview#states) section.
+- You are only billed when your Channel is in the **Running** state. For more information, refer to [this](/documentation/articles/media-services-manage-channels-overview#states) section.
 
 ##How to create channels that receive multi-bitrate live stream from on-premises encoders
 
@@ -255,11 +255,11 @@ You can view AMS learning paths here:
 
 ##Related topics
 
-[Azure Media Services Fragmented MP4 Live Ingest Specification](media-services-fmp4-live-ingest-overview)
+[Azure Media Services Fragmented MP4 Live Ingest Specification](/documentation/articles/media-services-fmp4-live-ingest-overview)
 
-[Delivering Live Streaming Events with Azure Media Services](media-services-live-streaming-workflow)
+[Delivering Live Streaming Events with Azure Media Services](/documentation/articles/media-services-live-streaming-workflow)
 
-[Media Services Concepts](media-services-concepts)
+[Media Services Concepts](/documentation/articles/media-services-concepts)
 
 [live-overview]: ./media/media-services-manage-channels-overview/media-services-live-streaming-current.png
  

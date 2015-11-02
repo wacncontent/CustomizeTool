@@ -23,7 +23,7 @@ Hadoop provides a streaming API for MapReduce that enables you to write map and 
 ![HDI.WordCountDiagram][image-hdi-wordcountdiagram]
 <!-- deleted by customization
 
-> [AZURE.NOTE] The steps in this article apply only to Windows-based Azure HDInsight clusters. For an example of streaming for Linux-based HDInsight, see [Develop Python streaming programs for HDInsight](hdinsight-hadoop-streaming-python).
+> [AZURE.NOTE] The steps in this article apply only to Windows-based Azure HDInsight clusters. For an example of streaming for Linux-based HDInsight, see [Develop Python streaming programs for HDInsight](/documentation/articles/hdinsight-hadoop-streaming-python).
 -->
 
 This tutorial shows you how to:
@@ -542,7 +542,7 @@ This section shows you how to download and display the output. For information o
 ##Next steps
 In this tutorial, you have learned how to develop a Hadoop streaming MapReduce job, how to test the application on the HDInsight Emulator, and how to write an Azure PowerShell script to provision an HDInsight cluster and run a MapReduce job on the cluster. To learn more, see the following articles:
 
-- [Get started with Azure HDInsight](hdinsight-get-started)
+- [Get started with Azure HDInsight](/documentation/articles/hdinsight-get-started)
 - [Get started with the HDInsight Emulator][hdinsight-get-started-emulator]
 - [Develop Java MapReduce programs for HDInsight][hdinsight-develop-mapreduce]
 - [Use Azure Blob storage with HDInsight][hdinsight-storage]
@@ -557,17 +557,17 @@ In this tutorial, you have learned how to develop a Hadoop streaming MapReduce j
 -->
 [azure-trial]: /pricing/1rmb-trial/
 
-[hdinsight-develop-mapreduce]: hdinsight-develop-deploy-java-mapreduce
-[hdinsight-submit-jobs]: hdinsight-submit-hadoop-jobs-programmatically
-[hdinsight-get-started-emulator]: hdinsight-get-started-emulator
-[hdinsight-emulator-wasb]: hdinsight-get-started-emulator#blobstorage
-[hdinsight-upload-data]: hdinsight-upload-data
-[hdinsight-storage]: hdinsight-use-blob-storage
-[hdinsight-admin-powershell]: hdinsight-administer-use-powershell
-[hdinsight-use-hive]: hdinsight-use-hive
-[hdinsight-use-pig]: hdinsight-use-pig
-[hdinsight-ODBC]: hdinsight-connect-excel-hive-ODBC-driver
-[hdinsight-power-query]: hdinsight-connect-excel-power-query
+[hdinsight-develop-mapreduce]: /documentation/articles/hdinsight-develop-deploy-java-mapreduce
+[hdinsight-submit-jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically
+[hdinsight-get-started-emulator]: /documentation/articles/hdinsight-get-started-emulator
+[hdinsight-emulator-wasb]: /documentation/articles/hdinsight-get-started-emulator#blobstorage
+[hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
+[hdinsight-storage]: /documentation/articles/hdinsight-use-blob-storage
+[hdinsight-admin-powershell]: /documentation/articles/hdinsight-administer-use-powershell
+[hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive
+[hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig
+[hdinsight-ODBC]: /documentation/articles/hdinsight-connect-excel-hive-ODBC-driver
+[hdinsight-power-query]: /documentation/articles/hdinsight-connect-excel-power-query
 [powershell-PSCredential]: http://social.technet.microsoft.com/wiki/contents/articles/4546.working-with-passwords-secure-strings-and-credentials-in-windows-powershell.aspx
-[powershell-install]: powershell-install-configure
+[powershell-install]: /documentation/articles/powershell-install-configure
 [image-hdi-wordcountdiagram]: ./media/hdinsight-hadoop-develop-deploy-streaming-jobs/HDI.WordCountDiagram.gif "MapReduce wordcount application flow"

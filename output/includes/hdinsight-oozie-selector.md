@@ -1,5 +1,5 @@
 > [AZURE.SELECTOR]
 <!-- deleted by customization
-- [Linux cluster](hdinsight-use-oozie-linux-mac)
+- [Linux cluster](/documentation/articles/hdinsight-use-oozie-linux-mac)
 -->
-- [Windows cluster](hdinsight-use-oozie)
+- [Windows cluster](/documentation/articles/hdinsight-use-oozie)

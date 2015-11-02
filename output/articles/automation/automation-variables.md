@@ -35,7 +35,7 @@ You can store multiple values to a single variable by creating an array or hasht
 
 ## Cmdlets and workflow activities
 
-The cmdlets in the following table are used to create and manage Automation variables with Windows PowerShell. They ship as part of the [Azure PowerShell module](powershell-install-configure) which is available for use in Automation runbooks.
+The cmdlets in the following table are used to create and manage Automation variables with Windows PowerShell. They ship as part of the [Azure PowerShell module](/documentation/articles/powershell-install-configure) which is available for use in Automation runbooks.
 
 |Cmdlets|Description|
 |:---|:---|
@@ -150,6 +150,7 @@ In the following code, the collection is retrieved from the variable and used to
 	   }
 	}
 
+<!-- deleted by customization
 ### Graphical runbook samples
 
 In a graphical runbook, you add the **Get-AutomationVariable** or **Set-AutomationVariable** by right-clicking on the variable in the Library pane of the graphical editor and selecting the activity you want.
@@ -158,7 +159,7 @@ In a graphical runbook, you add the **Get-AutomationVariable** or **Set-Automati
 
 #### Setting values in a variable
 
-The following image shows sample activities to update a variable with a simple value in a graphical runbook. In this sample, a single Azure virtual machine is retrieved with **Get-AzureVM** and the computer name is saved to an existing Automation variable with a type of String.  It doesn't matter whether the [link is a pipeline or sequence](automation-graphical-authoring-intro#links-and-workflow) since we only expect a single object in the output.
+The following image shows sample activities to update a variable with a simple value in a graphical runbook. In this sample, a single Azure virtual machine is retrieved with **Get-AzureVM** and the computer name is saved to an existing Automation variable with a type of String.  It doesn't matter whether the [link is a pipeline or sequence](/documentation/articles/automation-graphical-authoring-intro#links-and-workflow) since we only expect a single object in the output.
 
 ![Set simple variable](./media/automation-variables/set-simple-variable.png)
 
@@ -166,22 +167,23 @@ The following image shows the activities used to update a variable with a comple
 
 ![Set complex variable](./media/automation-variables/set-complex-variable.png)
 
-The following image shows similar functionality as the previous example, with multiple virtual machines saved to the variable.  A [sequence link](automation-graphical-authoring-intro#links-and-workflow) must be used here so that the **Set-AutomationVariable** activity receives the entire set of virtual machines as one collection.  If a [pipeline link](automation-graphical-authoring-intro#links-and-workflow) was used, then the **Set-AutomationVariable** activity would run separately for each object with the result being that only the last virtual machine in the collection would be saved.  As explained in [Variable types](#variable-types), this is stored as a collection of PSCustomObjects.
+The following image shows similar functionality as the previous example, with multiple virtual machines saved to the variable.  A [sequence link](/documentation/articles/automation-graphical-authoring-intro#links-and-workflow) must be used here so that the **Set-AutomationVariable** activity receives the entire set of virtual machines as one collection.  If a [pipeline link](/documentation/articles/automation-graphical-authoring-intro#links-and-workflow) was used, then the **Set-AutomationVariable** activity would run separately for each object with the result being that only the last virtual machine in the collection would be saved.  As explained in [Variable types](#variable-types), this is stored as a collection of PSCustomObjects.
 
 ![Set complex collection variable](./media/automation-variables/set-complex-variable-collection.png)
 
 #### Retrieving values from a variable
 
-The following image shows sample activities that retrieve and use a variable in a graphical runbook.  The first activity retrieves the virtual machines that were saved to the variable in the previous example.  The link needs to be a [pipeline](automation-graphical-authoring-intro#links-and-workflow) so that the **Start-AzureVM** activity runs once for each object sent from the **Get-AutomationVariable** activity.  This will work the same whether a a single object or multiple objects are stored in the variable.  The **Start-AzureVM** activity uses properties of the PSCustomObject that represents each virtual machine. 
+The following image shows sample activities that retrieve and use a variable in a graphical runbook.  The first activity retrieves the virtual machines that were saved to the variable in the previous example.  The link needs to be a [pipeline](/documentation/articles/automation-graphical-authoring-intro#links-and-workflow) so that the **Start-AzureVM** activity runs once for each object sent from the **Get-AutomationVariable** activity.  This will work the same whether a a single object or multiple objects are stored in the variable.  The **Start-AzureVM** activity uses properties of the PSCustomObject that represents each virtual machine. 
 
 ![Get complex variable](./media/automation-variables/get-complex-variable.png)
 
-The following image shows how to filter the objects that are stored to a variable in a graphical runbook.  A [condition](automation-graphical-authoring-intro#links-and-workflow) is added to the link in the previous example to filter only those virtual machines that were stopped when the variable was set.
+The following image shows how to filter the objects that are stored to a variable in a graphical runbook.  A [condition](/documentation/articles/automation-graphical-authoring-intro#links-and-workflow) is added to the link in the previous example to filter only those virtual machines that were stopped when the variable was set.
 
 ![Get complex variable filtered](./media/automation-variables/get-complex-variable-filter.png)
 
 
 ## Related articles
 
-- [Links in graphical authoring](automation-graphical-authoring-intro#links-and-workflow)
+- [Links in graphical authoring](/documentation/articles/automation-graphical-authoring-intro#links-and-workflow)
+-->
  

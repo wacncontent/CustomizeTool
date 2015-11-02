@@ -22,7 +22,7 @@ In this document, you will learn how to use Curl to run MapReduce jobs on a Hado
 Curl is used to demonstrate how you can interact with HDInsight by using raw HTTP requests to run MapReduce jobs. This works by using the WebHCat REST API (formerly known as Templeton) provided by your HDInsight cluster.
 <!-- deleted by customization 
 
-> [AZURE.NOTE] If you are already familiar with using Linux-based Hadoop servers, but you are new to HDInsight, see [What you need to know about Linux-based Hadoop on HDInsight](hdinsight-hadoop-linux-information).
+> [AZURE.NOTE] If you are already familiar with using Linux-based Hadoop servers, but you are new to HDInsight, see [What you need to know about Linux-based Hadoop on HDInsight](/documentation/articles/hdinsight-hadoop-linux-information).
 -->
 
 ##<a id="prereq"></a>Prerequisites
@@ -93,7 +93,7 @@ To download a file, use the following:
 
 	azure storage blob download <container-name> <blob-name> <destination-file>
 
-> [AZURE.NOTE] You must specify the storage account name that contains the blob by using the `-a` and `-k` parameters, or set the **AZURE_STORAGE_ACCOUNT** and **AZURE_STORAGE_ACCESS_KEY** environment variables. See [how to upload data to HDInsight](hdinsight-upload-data) for more information.
+> [AZURE.NOTE] You must specify the storage account name that contains the blob by using the `-a` and `-k` parameters, or set the **AZURE_STORAGE_ACCOUNT** and **AZURE_STORAGE_ACCESS_KEY** environment variables. See [how to upload data to HDInsight](/documentation/articles/hdinsight-upload-data) for more information.
 
 ##<a id="summary"></a>Summary
 
@@ -105,10 +105,10 @@ For more information about the REST interface that is used in this article, see 
 
 For general information about MapReduce jobs in HDInsight:
 
-* [Use MapReduce with Hadoop on HDInsight](hdinsight-use-mapreduce)
+* [Use MapReduce with Hadoop on HDInsight](/documentation/articles/hdinsight-use-mapreduce)
 
 For information about other ways you can work with Hadoop on HDInsight:
 
-* [Use Hive with Hadoop on HDInsight](hdinsight-use-hive)
+* [Use Hive with Hadoop on HDInsight](/documentation/articles/hdinsight-use-hive)
 
-* [Use Pig with Hadoop on HDInsight](hdinsight-use-pig)
+* [Use Pig with Hadoop on HDInsight](/documentation/articles/hdinsight-use-pig)

@@ -1,5 +1,5 @@
 
-You can secure the communication between the web app and the browser with HTTPS, which uses Secure Socket Layer (SSL) encryption. This is the most commonly used method of securing data sent across the internet, and assures visitors that their transactions with your App are secure. This article discusses how to configure HTTPS for a web app in Azure Websites. This article does not cover client certificate authentication; for information about that, see [How To Configure TLS Mutual Authentication for Web Apps](app-service-web-configure-tls-mutual-auth).
+You can secure the communication between the web app and the browser with HTTPS, which uses Secure Socket Layer (SSL) encryption. This is the most commonly used method of securing data sent across the internet, and assures visitors that their transactions with your App are secure. This article discusses how to configure HTTPS for a web app in Azure Websites. This article does not cover client certificate authentication; for information about that, see [How To Configure TLS Mutual Authentication for Web Apps](/documentation/articles/app-service-web-configure-tls-mutual-auth).
 
 > [AZURE.NOTE] Get going faster--use the NEW Azure [guided walkthrough](http://support.microsoft.com/kb/2990804)!  It makes associating a custom domain name AND securing communication (SSL) with Azure Cloud Services or [Azure Websites](/documentation/services/web-sites/) a snap.
 
@@ -121,10 +121,10 @@ You can now upload the exported PFX file to your Azure web app.
 2. When prompted, enter the appropriate information. For example:
 
  		Country Name (2 letter code) 
-        State or Province Name (full name) []: Washington
-        Locality Name (eg, city) []: Redmond
-        Organization Name (eg, company) []: Microsoft
-        Organizational Unit Name (eg, section) []: Azure
+        State or Province Name (full name) []: /documentation/articles/Washington
+        Locality Name (eg, city) []: /documentation/articles/Redmond
+        Organization Name (eg, company) []: /documentation/articles/Microsoft
+        Organizational Unit Name (eg, section) []: /documentation/articles/Azure
         Common Name (eg, YOUR name) []: www.microsoft.com
         Email Address []:
 
@@ -244,10 +244,10 @@ OpenSSL can be used to create a certificate request that uses the SubjectAltName
 
 2. When prompted, enter the appropriate information. For example:
 
- 		Country Name (2 letter code) []: US
-        State or Province Name (full name) []: Washington
-        Locality Name (eg, city) []: Redmond
-        Organizational Unit Name (eg, section) []: Azure
+ 		Country Name (2 letter code) []: /documentation/articles/US
+        State or Province Name (full name) []: /documentation/articles/Washington
+        Locality Name (eg, city) []: /documentation/articles/Redmond
+        Organizational Unit Name (eg, section) []: /documentation/articles/Azure
         Your common name (eg, domain name) []: www.microsoft.com
  
 
@@ -434,13 +434,13 @@ Before performing the steps in this section, you must have associated a custom d
 7.	In the **certificates** section, click **Upload**
 8.	Using the **Upload a certificate** dialog, select the .pfx certificate file created earlier using the IIS Manager or OpenSSL. Specify the password, if any, that was used to secure the .pfx file. Finally, click the **Save** to upload the certificate.
 	![ssl upload][ssluploadcert]
-9. In the **ssl bindings** section of the **SSL Settings** tab, use the dropdowns to select the domain name to secure with SSL, and the certificate to use. You may also select whether to use [Server Name Indication][sni](SNI) or IP based SSL.
+9. In the **ssl bindings** section of the **SSL Settings** tab, use the dropdowns to select the domain name to secure with SSL, and the certificate to use. You may also select whether to use [Server Name Indication][sni](/documentation/articles/SNI) or IP based SSL.
 
 	![ssl bindings][sslbindings]
 	
 	* IP based SSL associates a certificate with a domain name by mapping the dedicated public IP address of the server to the domain name. This requires each domain name (contoso.com, fabricam.com, etc.) associated with your service to have a dedicated IP address. This is the traditional method of associating SSL certificates with a web server.
 
-	* SNI based SSL is an extension to SSL and [Transport Layer Security][tls](TLS) that allows multiple domains to share the same IP address, with separate security certificates for each domain. Most modern browsers (including Internet Explorer, Chrome, Firefox and Opera) support SNI, however older browsers may not support SNI. For more information on SNI, see the [Server Name Indication][sni] article on Wikipedia.
+	* SNI based SSL is an extension to SSL and [Transport Layer Security][tls](/documentation/articles/TLS) that allows multiple domains to share the same IP address, with separate security certificates for each domain. Most modern browsers (including Internet Explorer, Chrome, Firefox and Opera) support SNI, however older browsers may not support SNI. For more information on SNI, see the [Server Name Indication][sni] article on Wikipedia.
 
 10. Click **Save** to save the changes and enable SSL.
 
@@ -460,13 +460,13 @@ Before performing the steps in this section, you must have associated a custom d
 
 	![upload certificate dialog][uploadcertdlg]
 
-5. In the **ssl bindings** section of the **CONFIGURE** tab, use the dropdowns to select the domain name to secure with SSL, and the certificate to use. You may also select whether to use [Server Name Indication][sni] (SNI) or IP based SSL.
+5. In the **ssl bindings** section of the **CONFIGURE** tab, use the dropdowns to select the domain name to secure with SSL, and the certificate to use. You may also select whether to use [Server Name Indication][sni](/documentation/articles/SNI) or IP based SSL.
 
 	![ssl bindings][sslbindings]
 	
 	* IP based SSL associates a certificate with a domain name by mapping the dedicated public IP address of the server to the domain name. This requires each domain name (contoso.com, fabricam.com, etc.) associated with your service to have a dedicated IP address. This is the traditional method of associating SSL certificates with a web server.
 
-	* SNI based SSL is an extension to SSL and [Transport Layer Security][tls] (TLS) that allows multiple domains to share the same IP address, with separate security certificates for each domain. Most modern browsers (including Internet Explorer, Chrome, Firefox and Opera) support SNI, however older browsers may not support SNI. For more information on SNI, see the [Server Name Indication][sni] article on Wikipedia.
+	* SNI based SSL is an extension to SSL and [Transport Layer Security][tls](/documentation/articles/TLS) that allows multiple domains to share the same IP address, with separate security certificates for each domain. Most modern browsers (including Internet Explorer, Chrome, Firefox and Opera) support SNI, however older browsers may not support SNI. For more information on SNI, see the [Server Name Indication][sni] article on Wikipedia.
 
 6. Click **Save** to save the changes and enable SSL.
 <!-- keep by customization: end -->
@@ -487,7 +487,7 @@ At this point, you should be able to visit your web app using `HTTPS://` instead
 
 Azure Websites do *not* enforce HTTPS. Visitors may still access your web app using HTTP, which may compromise your web app's security. If you want to enforce HTTPS for your web app, you can use the **URL Rewrite** module. The URL Rewrite module is included with Azure Websites, and enables you to define rules that are applied to incoming requests before the requests are handed to your application. **It can be used for applications written in any programming language supported by Azure .** 
 
-> [AZURE.NOTE] .NET MVC applications should use the [RequireHttps](http://msdn.microsoft.com/zh-cn/library/system.web.mvc.requirehttpsattribute.aspx) filter instead of URL Rewrite. For more information on using RequireHttps, see [Deploy a secure ASP.NET MVC 5 app to a web app](web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database).
+> [AZURE.NOTE] .NET MVC applications should use the [RequireHttps](http://msdn.microsoft.com/zh-cn/library/system.web.mvc.requirehttpsattribute.aspx) filter instead of URL Rewrite. For more information on using RequireHttps, see [Deploy a secure ASP.NET MVC 5 app to a web app](/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database).
 > 
 > For information on programmatic redirection of requests using other programming languages and frameworks, consult the documentation for those technologies.
 
@@ -555,8 +555,8 @@ For more information on the IIS URL Rewrite module, see the [URL Rewrite](http:/
 ## More Resources ##
 - [Windows Azure Trust Center](/support/trust-center/security/)
 - [Configuration options unlocked in Azure Web Sites](http://azure.microsoft.com/blog/2014/01/28/more-to-explore-configuration-options-unlocked-in-windows-azure-web-sites/)
-- [Enable diagnostic logging](web-sites-enable-diagnostic-log)
-- [Configuring Web Sites](web-sites-configure)
+- [Enable diagnostic logging](/documentation/articles/web-sites-enable-diagnostic-log)
+- [Configuring Web Sites](/documentation/articles/web-sites-configure)
 - [Azure Management Portal](https://manage.windowsazure.cn)
 <!-- deleted by customization
 
@@ -567,7 +567,7 @@ For more information on the IIS URL Rewrite module, see the [URL Rewrite](http:/
 * For a guide to the change of the Management Portal to the new portal see: [Reference for navigating the preview portal](https://manage.windowsazure.cn/)
 -->
 
-[customdomain]: web-sites-custom-domain-name
+[customdomain]: /documentation/articles/web-sites-custom-domain-name
 [iiscsr]: http://technet.microsoft.com/zh-cn/library/cc732906(WS.10).aspx
 [cas]: http://go.microsoft.com/fwlink/?LinkID=269988
 [installcertiis]: http://technet.microsoft.com/zh-cn/library/cc771816(WS.10).aspx

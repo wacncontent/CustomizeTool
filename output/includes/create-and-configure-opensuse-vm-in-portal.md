@@ -13,7 +13,7 @@
 5. On the first **Virtual machine configuration** page:
 
 	- Type a **Virtual Machine Name**, such as "testlinuxvm".
-	- Verify the **Tier** and pick a **Size**. The tier determines the sizes you can choose from. The size affects the cost of using it, as well as configuration options such as how many data disks you can attach. For details, see [Sizes for virtual machines](virtual-machines-size-specs).
+	- Verify the **Tier** and pick a **Size**. The tier determines the sizes you can choose from. The size affects the cost of using it, as well as configuration options such as how many data disks you can attach. For details, see [Sizes for virtual machines](/documentation/articles/virtual-machines-size-specs).
 	- Type a **New User Name**, or accept the default, **azureuser**. This name is added to the Sudoers list file.
 	- Decide which type of **Authentication** to use. For general password guidelines, see [Strong passwords](http://msdn.microsoft.com/zh-cn/library/ms161962.aspx).
 
@@ -24,7 +24,7 @@
 	- In the **Region/Affinity Group/Virtual Network** box, select a region where this virtual image will be hosted.
 	- Under **Endpoints**, keep the SSH endpoint. You can add others now, or add, change, or delete them after the virtual machine is created.
 
-	>[AZURE.NOTE] If you want a virtual machine to use a virtual network, you **must** specify the virtual network when you create the virtual machine. You can't add a virtual machine to a virtual network after you create the virtual machine. For more information, see [Virtual Network Overview](virtual-networks-overview).
+	>[AZURE.NOTE] If you want a virtual machine to use a virtual network, you **must** specify the virtual network when you create the virtual machine. You can't add a virtual machine to a virtual network after you create the virtual machine. For more information, see [Virtual Network Overview](/documentation/articles/virtual-networks-overview).
 
 7.	On the last **Virtual machine configuration** page, keep the default settings and then click the check mark to finish.
 

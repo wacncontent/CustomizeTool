@@ -118,7 +118,7 @@ You can also associate an ILPIP to a VM by using a service configuration (CSCFG)
 
 ## Next steps
 
-[Reserved IP](virtual-networks-reserved-public-ip)
+[Reserved IP](/documentation/articles/virtual-networks-reserved-public-ip)
 
 [Reserved IP REST APIs](https://msdn.microsoft.com/zh-cn/library/azure/dn722420.aspx)
  

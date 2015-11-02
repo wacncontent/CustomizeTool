@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties
 	pageTitle="Flighting deployment (beta testing) in Azure Websites"
 	description="Learn how to flight new features in your app or beta test your updates in this end-to-end tutorial. It brings together Azure Websites features like continuous publishing, slots, traffic routing, and Application Insights integration."
@@ -41,8 +43,8 @@ with Application Insights, but you can use New Relic or other technologies that 
 
 In this tutorial, you will learn how to bring the following scenarios together to test your Azure Websites app in production:
 
-- [Route production traffic](app-service-web-test-in-production-get-start) to your beta app
-- [Instrument your app](app-insights-web-track-usage) to obtain useful metrics
+- [Route production traffic](/documentation/articles/app-service-web-test-in-production-get-start) to your beta app
+- [Instrument your app](/documentation/articles/app-insights-web-track-usage) to obtain useful metrics
 - Continuously deploy your beta app and track live app metrics
 - Compare metrics between the production app and the beta app to see how code changes translate to results
 
@@ -54,7 +56,7 @@ In this tutorial, you will learn how to bring the following scenarios together t
 -	Git Shell (installed with [GitHub for Windows](https://windows.github.com/)) - this enables you to run both the Git and PowerShell commands in the same session
 -	Latest [Azure PowerShell](https://github.com/Azure/azure-powershell/releases/download/v0.9.8-September2015/azure-powershell.0.9.8.msi) bits
 -	Basic understanding of the following:
-	-	[Azure Resource Manager](resource-group-overview) template deployment (see [Deploy a complex application predictably in Azure](app-service-deploy-complex-application-predictably))
+	-	[Azure Resource Manager](/documentation/articles/resource-group-overview) template deployment (see [Deploy a complex application predictably in Azure](/documentation/articles/app-service-deploy-complex-application-predictably))
 	-	[Git](http://git-scm.com/documentation)
 	-	[PowerShell](https://technet.microsoft.com/zh-cn/library/bb978526.aspx)
 
@@ -68,7 +70,7 @@ In this tutorial, you will learn how to bring the following scenarios together t
 
 >[AZURE.NOTE] The script used in this tutorial will automatically configure continuous publishing from your GitHub repository. This requires that your GitHub credentials are already stored in Azure, otherwise the scripted deployment will fail when attempting to configure source control settings for the web apps.
 >
->To store your GitHub credentials in Azure, create a web app in the [Azure preview portal](https://manage.windowsazure.cn) and [configure GitHub deployment](web-sites-publish-source-control#Step7). You only need to do this once.
+>To store your GitHub credentials in Azure, create a web app in the [Azure preview portal](https://manage.windowsazure.cn) and [configure GitHub deployment](/documentation/articles/web-sites-publish-source-control#Step7). You only need to do this once.
 
 In a typical DevOps scenario, you have an application that’s running live in Azure, and you want to make changes to it through continuous publishing. In this scenario, you will deploy to production a template that you have developed and tested.
 
@@ -187,7 +189,7 @@ That's it!
 
 In this section, you will configure the different deployment slots to send slot-specific telemetry to the same Application Insights resource. This way, you can compare telemetry data between traffic from different slots (deployment environments) to easily see the effect of your app changes. At the same time, you can separate the production traffic from the rest so you can continue to monitor your production app as needed.
 
-Since you're gathering data on client behavior, you will [add a telemetry initializer to your JavaScript code](app-insights-api-custom-events-metrics#js-initializer) in index.cshtml. If you want to test server-side performance, for example, you can also do similarly in your server code (see [Application Insights API for custom events and metrics]((app-insights-api-custom-events-metrics.md)).
+Since you're gathering data on client behavior, you will [add a telemetry initializer to your JavaScript code](/documentation/articles/app-insights-api-custom-events-metrics#js-initializer) in index.cshtml. If you want to test server-side performance, for example, you can also do similarly in your server code (see [Application Insights API for custom events and metrics]((app-insights-api-custom-events-metrics.md)).
 
 1. First, add the code bewteen the two `//` comments below in the JavaScript block that you added to the `<heading>` tag earlier.
 
@@ -207,7 +209,7 @@ Since you're gathering data on client behavior, you will [add a telemetry initia
 
     This initializer code causes the `appInsights` object to add the a custom property called `Environment` to every piece of telemetry it sends.
 
-2. Next, add this custom property as a [slot setting](web-sites-staged-publishing#AboutConfiguration) for your web app in Azure. To do this, run the following commands in your Git Shell session.
+2. Next, add this custom property as a [slot setting](/documentation/articles/web-sites-staged-publishing#AboutConfiguration) for your web app in Azure. To do this, run the following commands in your Git Shell session.
 
         $app = Get-AzureWebsite -Name todoapp<your_suffix> -Slot production
         $app.AppSettings.Add("environment", "Production")
@@ -228,7 +230,7 @@ Since you're gathering data on client behavior, you will [add a telemetry initia
 
 5. Click the **Favorites** button to save the current Metrics Explorer settings to something like **Custom events: Production**. You can easily switch between this view and a deployment slot view later.
 
-    > [AZURE.TIP] For even more powerful analytics, consider [integrating your Application Insights resource with Power BI](app-insights-export-power-bi).
+    > [AZURE.TIP] For even more powerful analytics, consider [integrating your Application Insights resource with Power BI](/documentation/articles/app-insights-export-power-bi).
 
 ### Add slot-specific tags to your server app metrics
 Again, for completeness you will set up the server-side app. Unlike the client app which is instrumented in JavaScript, slot-specific tags for the server app is instrumented with .NET code.
@@ -292,7 +294,7 @@ Again, for completeness you will set up the server-side app. Unlike the client a
 
     Once the script finishes, all your resources in the original resource group are retained, but a new slot named "beta" is created in it with the same configuration as the "Staging" slot that was created in the beginning.
 
-    >[AZURE.NOTE] This method of creating different deployment environments is different from the method in [Agile software development with Azure Websites](app-service-agile-software-development). Here, you create deployment environments with deployment slots, where as there you create deployment environments with resource groups. Managing deployment environments with resource groups enables you to keep the production environment off-limits to developers, but it's not easy to do testing in production, which you can do easily with slots.
+    >[AZURE.NOTE] This method of creating different deployment environments is different from the method in [Agile software development with Azure Websites](/documentation/articles/app-service-agile-software-development). Here, you create deployment environments with deployment slots, where as there you create deployment environments with resource groups. Managing deployment environments with resource groups enables you to keep the production environment off-limits to developers, but it's not easy to do testing in production, which you can do easily with slots.
 
 If you wish, you can also create an alpha app by running
 
@@ -379,11 +381,11 @@ Azure Websites makes it easy for small- to medium-sized businesses to test their
 
 ## More resources ##
 
--   [Agile software development with Azure Websites](app-service-agile-software-development)
--   [Set up staging environments for web apps in Azure Websites](web-sites-staged-publishing)
--	[Deploy a complex application predictably in Azure](app-service-deploy-complex-application-predictably)
--	[Authoring Azure Resource Manager Templates](resource-group-authoring-templates)
+-   [Agile software development with Azure Websites](/documentation/articles/app-service-agile-software-development)
+-   [Set up staging environments for web apps in Azure Websites](/documentation/articles/web-sites-staged-publishing)
+-	[Deploy a complex application predictably in Azure](/documentation/articles/app-service-deploy-complex-application-predictably)
+-	[Authoring Azure Resource Manager Templates](/documentation/articles/resource-group-authoring-templates)
 -	[JSONLint - The JSON Validator](http://jsonlint.com/)
 -	[Git Branching – Basic Branching and Merging](http://www.git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging)
--	[Azure PowerShell](powershell-install-configure)
+-	[Azure PowerShell](/documentation/articles/powershell-install-configure)
 -	[Project Kudu Wiki](https://github.com/projectkudu/kudu/wiki)

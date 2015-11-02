@@ -17,7 +17,7 @@ Automation Schedules are used to schedule runbooks to run automatically.  This c
 
 ## Windows PowerShell Cmdlets
 
-The cmdlets in the following table are used to create and manage variables with Windows PowerShell in Azure Automation. They ship as part of the [Azure PowerShell module](powershell-install-configure).
+The cmdlets in the following table are used to create and manage variables with Windows PowerShell in Azure Automation. They ship as part of the [Azure PowerShell module](/documentation/articles/powershell-install-configure).
 
 |Cmdlets|Description|
 |:---|:---|
@@ -61,5 +61,5 @@ The [New-AzureAutomationSchedule](http://msdn.microsoft.com/zh-cn/library/dn6902
 
 
 ## See Also
-- [Scheduling a runbook in Azure Automation](automation-scheduling-a-runbook)
+- [Scheduling a runbook in Azure Automation](/documentation/articles/automation-scheduling-a-runbook)
  

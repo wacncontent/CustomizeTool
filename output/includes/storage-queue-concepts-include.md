@@ -25,7 +25,7 @@ The Queue service contains the following components:
 		
 		http://myaccount.queue.core.chinacloudapi.cn/imagesToDownload
 
-- **Storage Account:** All access to Azure Storage is done through a storage account. See [Azure Storage Scalability and Performance Targets](storage-scalability-targets) for details about storage account capacity.
+- **Storage Account:** All access to Azure Storage is done through a storage account. See [Azure Storage Scalability and Performance Targets](/documentation/articles/storage-scalability-targets) for details about storage account capacity.
 
 - **Queue:** A queue contains a set of messages. All messages must be in a queue.
 

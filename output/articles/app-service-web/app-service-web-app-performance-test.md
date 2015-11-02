@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties
    pageTitle="Test your Azure web app's performance | Windows Azure"
    description="Run Azure web app performance tests to check how your app handles user load. Measure response time and find failures that might indicate problems."

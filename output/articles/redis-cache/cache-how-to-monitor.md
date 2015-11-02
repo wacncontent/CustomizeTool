@@ -20,7 +20,7 @@ When cache diagnostics are enabled, metrics for Azure Redis Cache instances are 
 
 Cache metrics are collected using the Redis [INFO](http://redis.io/commands/info) command. For more information about the different INFO commands used for each cache metric, see [Available metrics and reporting intervals](#available-metrics-and-reporting-intervals).
 
-To view cache metrics, [browse](cache-configure) to your cache instance in the [Azure preview portal](https://manage.windowsazure.cn). Metrics for Azure Redis Cache instances are accessed on the **Redis Cache** blade.
+To view cache metrics, [browse](/documentation/articles/cache-configure) to your cache instance in the [Azure preview portal](https://manage.windowsazure.cn). Metrics for Azure Redis Cache instances are accessed on the **Redis Cache** blade.
 
 ![Monitor][redis-cache-monitor-overview]
 
@@ -60,7 +60,7 @@ To view the stored metrics, examine the tables in your storage account with name
 
 Cache metrics are reported using several reporting intervals, including **Past hour**, **Today**, **Past week**, and **Custom**. The **Metric** blade for each metrics chart displays the average, minimum, and maximum values for each metric in the chart, and some metrics display a total for the reporting interval. 
 
-Each metric includes two versions. One metric measures performance for the entire cache, and for caches that use [clustering](cache-how-to-premium-clustering), a second version of the metric that includes `(Shard 0-9)` in the name measures performance for a single shard in a cache. For example if a cache has 4 shards, `Cache Hits` is the total amount of hits for the entire cache, and `Cache Hits (Shard 3)` is just the hits for that shard of the cache.
+Each metric includes two versions. One metric measures performance for the entire cache, and for caches that use [clustering](/documentation/articles/cache-how-to-premium-clustering), a second version of the metric that includes `(Shard 0-9)` in the name measures performance for a single shard in a cache. For example if a cache has 4 shards, `Cache Hits` is the total amount of hits for the entire cache, and `Cache Hits (Shard 3)` is just the hits for that shard of the cache.
 
 >[AZURE.NOTE] Even when the cache is idle with no connected active client applications, you may see some cache activity, such as connected clients, memory usage, and operations being performed. This activity is normal during the operation of an Azure Redis Cache instance.
 
@@ -106,7 +106,7 @@ The **Usage** section has **Redis Server Load**, **Memory Usage**, **Network Ban
 
 ![Usage charts][redis-cache-usage-part]
 
-The **Pricing tier** displays the cache pricing tier, and can be used to [scale](cache-how-to-scale) the cache to a different pricing tier.
+The **Pricing tier** displays the cache pricing tier, and can be used to [scale](/documentation/articles/cache-how-to-scale) the cache to a different pricing tier.
 
 The **Usage** charts display the following metrics.
 
@@ -133,7 +133,7 @@ To add or remove metrics from the chart, click the checkbox beside the name of t
 
 ![Edit chart][redis-cache-edit-chart]
 
-When you click **Save** your changes will persist until you leave the **Metric** blade. When you come back later, you'll see the original metric and time range again. For more information on customizing charts, see [Monitor service metrics](insights-how-to-customize-monitoring).
+When you click **Save** your changes will persist until you leave the **Metric** blade. When you come back later, you'll see the original metric and time range again. For more information on customizing charts, see [Monitor service metrics](/documentation/articles/insights-how-to-customize-monitoring).
 
 To view the metrics for a specific time period on a chart, hover the mouse over one of the specific bars or points on the chart that corresponds to the desired time, and the metrics for that interval are displayed.
 
@@ -141,7 +141,7 @@ To view the metrics for a specific time period on a chart, hover the mouse over 
 
 ## How to monitor a premium cache with clustering
 
-Premium caches that have [clustering](cache-how-to-premium-clustering) enabled can have up to 10 shards. Each shard has its own metrics, and these metrics are aggregated to provide metrics for the cache as a whole. Each metric includes two versions. One metric measures performance for the entire cache and a second version of the metric that includes `(Shard 0-9)` in the name measures performance for a single shard in a cache. For example if a cache has 3 shards, `Cache Hits` is the total amount of hits for the entire cache, and `Cache Hits (Shard 2)` is just the hits for that shard of the cache.
+Premium caches that have [clustering](/documentation/articles/cache-how-to-premium-clustering) enabled can have up to 10 shards. Each shard has its own metrics, and these metrics are aggregated to provide metrics for the cache as a whole. Each metric includes two versions. One metric measures performance for the entire cache and a second version of the metric that includes `(Shard 0-9)` in the name measures performance for a single shard in a cache. For example if a cache has 3 shards, `Cache Hits` is the total amount of hits for the entire cache, and `Cache Hits (Shard 2)` is just the hits for that shard of the cache.
 
 Each monitoring chart displays the top level metrics for the cache along with the metrics for each cache shard.
 
@@ -174,7 +174,7 @@ The **Operations** section has **Events** and **Alert rules** sections.
 
 To see a list of recent cache operations, click the **Events** chart to display the **Events** blade. Examples of operations include retrieving and regenerating access keys, and the activation and resolution of alert rules. For more information about each event, click the event in the **Events** blade.
 
-For more information on events, see [View events and audit logs](insights-debugging-with-events).
+For more information on events, see [View events and audit logs](/documentation/articles/insights-debugging-with-events).
 
 The **Alert rules** section displays the count of alerts for the cache instance. An alert rule enables you to monitor your cache instance and receive an email whenever a certain metric value reaches the threshold defined in the rule. 
 
@@ -218,7 +218,7 @@ When an alert rule is activated, an email is sent depending on the configuration
 
 An alert rule is considered to be resolved when the alert condition no longer evaluates to true. Once the alert rule condition is resolved, the alert icon is replaced with a check mark. For details on alert activations and resolutions, click the **Events** part on the **Redis Cache** blade to view the events on the **Events** blade.
 
-For more information about alerts in Azure, see [Receive alert notifications](insights-receive-alert-notifications).
+For more information about alerts in Azure, see [Receive alert notifications](/documentation/articles/insights-receive-alert-notifications).
   
 <!-- IMAGES -->
 [redis-cache-monitor-overview]: ./media/cache-how-to-monitor/redis-cache-monitor-overview.png

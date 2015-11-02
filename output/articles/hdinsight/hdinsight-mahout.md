@@ -20,7 +20,7 @@
 Learn how to use the [Apache Mahout](http://mahout.apache.org) machine learning library with Azure HDInsight to generate movie recommendations.
 <!-- deleted by customization
 
-> [AZURE.NOTE] The steps in this document require a Windows client and a Windows-based HDInsight cluster. For information on using Mahout from a Linux, OS X, or Unix client, with a Linux-based HDInsight cluster, see [Generate movie recommendations by using Apache Mahout with Linux-based Hadoop in HDInsight](hdinsight-hadoop-mahout-linux-mac)
+> [AZURE.NOTE] The steps in this document require a Windows client and a Windows-based HDInsight cluster. For information on using Mahout from a Linux, OS X, or Unix client, with a Linux-based HDInsight cluster, see [Generate movie recommendations by using Apache Mahout with Linux-based Hadoop in HDInsight](/documentation/articles/hdinsight-hadoop-mahout-linux-mac)
 -->
 
 
@@ -284,7 +284,7 @@ One of the classification methods available with Mahout is to build a [random fo
 
 ###Run the job
 
-1. This job requires the Hadoop command line. Enable Remote Desktop for the HDInsight cluster, then connect to it by following the instructions at [Connect to HDInsight clusters using RDP](hdinsight-administer-use-management-portal-v1#rdp).
+1. This job requires the Hadoop command line. Enable Remote Desktop for the HDInsight cluster, then connect to it by following the instructions at [Connect to HDInsight clusters using RDP](/documentation/articles/hdinsight-administer-use-management-portal-v1#rdp).
 
 3. After connecting, use the __Hadoop Command Line__ icon to open the Hadoop command line:
 
@@ -401,16 +401,16 @@ To run jobs that use these classes, connect to the HDInsight cluster, and run th
 
 Now that you have learned how to use Mahout, discover other ways of working with data on HDInsight:
 
-* [Hive with HDInsight](hadoop-use-hive)
-* [Pig with HDInsight](hadoop-use-pig)
-* [MapReduce with HDInsight](hadoop-use-mapreduce)
+* [Hive with HDInsight](/documentation/articles/hadoop-use-hive)
+* [Pig with HDInsight](/documentation/articles/hadoop-use-pig)
+* [MapReduce with HDInsight](/documentation/articles/hadoop-use-mapreduce)
 
 [build]: http://mahout.apache.org/developers/buildingmahout.html
-[aps]: powershell-install-configure
+[aps]: /documentation/articles/powershell-install-configure
 [movielens]: http://grouplens.org/datasets/movielens/
 [100k]: http://files.grouplens.org/datasets/movielens/ml-100k.zip
-[getstarted]: hdinsight-get-started
-[upload]: hdinsight-upload-data
+[getstarted]: /documentation/articles/hdinsight-get-started
+[upload]: /documentation/articles/hdinsight-upload-data
 [ml]: http://en.wikipedia.org/wiki/Machine_learning
 [forest]: http://en.wikipedia.org/wiki/Random_forest
 [management]: https://manage.windowsazure.cn/

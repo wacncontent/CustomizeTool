@@ -17,7 +17,7 @@
 
 Learn how to monitor HDInsight clusters versions 3.1 and 2.1 by using Ambari APIs.
 
-> [AZURE.NOTE] The information in this article is primarily for Windows-based HDInsight clusters, which provide a read-only version of the Ambari REST API. For Linux-based clusters, see [Manage Hadoop clusters using Ambari](hdinsight-hadoop-manage-ambari).
+> [AZURE.NOTE] The information in this article is primarily for Windows-based HDInsight clusters, which provide a read-only version of the Ambari REST API. For Linux-based clusters, see [Manage Hadoop clusters using Ambari](/documentation/articles/hdinsight-hadoop-manage-ambari).
 
 ## What is Ambari?
 
@@ -159,13 +159,13 @@ Now you have learned how to use Ambari monitoring API calls. To learn more, see:
 
 [microsoft-hadoop-SDK]: http://hadoopsdk.codeplex.com/wikipage?title=Ambari%20Monitoring%20Client
 
-[powershell-install]: install-configure-powershell
+[powershell-install]: /documentation/articles/install-configure-powershell
 [powershell-script]: http://technet.microsoft.com/zh-cn/library/ee176949.aspx
 
-[hdinsight-admin-powershell]: hdinsight-administer-use-powershell
-[hdinsight-admin-portal]: hdinsight-administer-use-management-portal-v1
-[hdinsight-admin-cli]: hdinsight-administer-use-command-line
+[hdinsight-admin-powershell]: /documentation/articles/hdinsight-administer-use-powershell
+[hdinsight-admin-portal]: /documentation/articles/hdinsight-administer-use-management-portal-v1
+[hdinsight-admin-cli]: /documentation/articles/hdinsight-administer-use-command-line
 [hdinsight-documentation]: /documentation/services/hdinsight/
-[hdinsight-get-started]: hdinsight-get-started
-[hdinsight-provision]: hdinsight-provision-clusters
+[hdinsight-get-started]: /documentation/articles/hdinsight-get-started
+[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters
 [img-jobtracker-output]: ./media/hdinsight-monitor-use-ambari-api/hdi.ambari.monitor.jobtracker.output.png

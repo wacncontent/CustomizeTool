@@ -69,7 +69,7 @@ You'll build an Orchard CMS web app that uses a default template. [Orchard](http
 
 ## Next steps
 
-* [Create an ASP.NET MVC app with auth and SQL DB and deploy to Azure Websites](web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database)-- Learn how to create a new web app in Azure Websites from Visual Studio.
+* [Create an ASP.NET MVC app with auth and SQL DB and deploy to Azure Websites](/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database)-- Learn how to create a new web app in Azure Websites from Visual Studio.
 
 ## What's changed
 * For a guide to the change from Websites to Azure Websites see: [Azure Websites and Its Impact on Existing Azure Services](/documentation/services/web-sites/)

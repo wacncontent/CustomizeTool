@@ -15,9 +15,9 @@
 #How to: Check Job Progress
 
 > [AZURE.SELECTOR]
-- [Portal](media-services-portal-check-job-progress)
-- [.NET](media-services-check-job-progress)
-- [REST](media-services-rest-check-job-progress)
+- [Portal](/documentation/articles/media-services-portal-check-job-progress)
+- [.NET](/documentation/articles/media-services-check-job-progress)
+- [REST](/documentation/articles/media-services-rest-check-job-progress)
 
 When you run jobs, you often require a way to track job progress. You can find out the Job status by using the Job's State property. For more information on the State property, see [Job Entity Properties](https://msdn.microsoft.com/zh-cn/library/azure/5100ddd7-92ff-4c37-84d2-4f84fee250a7#job_entity_properties).
 

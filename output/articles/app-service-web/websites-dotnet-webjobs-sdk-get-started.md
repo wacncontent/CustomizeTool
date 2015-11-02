@@ -14,7 +14,7 @@
 
 # Create a .NET WebJob in Azure Websites
 
-This tutorial shows how to write code for a simple multi-tier ASP.NET MVC 5 application that uses the [WebJobs SDK](websites-dotnet-webjobs-sdk) to work with [Azure queues](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/queue-centric-work-pattern) and [Azure blobs](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/unstructured-blob-storage). The tutorial shows how to deploy the application to [Azure Websites](/documentation/services/web-sites/) and [Azure SQL Database](http://msdn.microsoft.com/zh-cn/library/azure/ee336279).
+This tutorial shows how to write code for a simple multi-tier ASP.NET MVC 5 application that uses the [WebJobs SDK](/documentation/articles/websites-dotnet-webjobs-sdk) to work with [Azure queues](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/queue-centric-work-pattern) and [Azure blobs](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/unstructured-blob-storage). The tutorial shows how to deploy the application to [Azure Websites](/documentation/services/web-sites/) and [Azure SQL Database](http://msdn.microsoft.com/zh-cn/library/azure/ee336279).
 
 The sample application is an advertising bulletin board. Users can upload images for ads, and a backend process converts the images to thumbnails. The ad list page shows the thumbnails, and the ad details page shows the full size image. Here's a screenshot:
 
@@ -97,7 +97,7 @@ In a real-world application, you typically create separate accounts for applicat
 
 6. Set the **Replication** drop-down list to **Locally redundant**.
 
-	When geo-replication is enabled for a storage account, the stored content is replicated to a secondary datacenter to enable failover to that location in case of a major disaster in the primary location. Geo-replication can incur additional costs. For test and development accounts, you generally don't want to pay for geo-replication. For more information, see [Create, manage, or delete a storage account](storage-create-storage-account#replication-options).
+	When geo-replication is enabled for a storage account, the stored content is replicated to a secondary datacenter to enable failover to that location in case of a major disaster in the primary location. Geo-replication can incur additional costs. For test and development accounts, you generally don't want to pay for geo-replication. For more information, see [Create, manage, or delete a storage account](/documentation/articles/storage-create-storage-account#replication-options).
 
 5. Click **Create**.
 
@@ -162,7 +162,7 @@ In a real-world application, you typically create separate accounts for applicat
     &lt;/startup&gt;
 &lt;/configuration&gt;</pre>
 
-	By default, the WebJobs SDK looks for connection strings named AzureWebJobsStorage and AzureWebJobsDashboard. As an alternative, you can [store the connection string however you want and pass it in explicitly to the `JobHost` object](websites-dotnet-webjobs-sdk-storage-queues-how-to#config).
+	By default, the WebJobs SDK looks for connection strings named AzureWebJobsStorage and AzureWebJobsDashboard. As an alternative, you can [store the connection string however you want and pass it in explicitly to the `JobHost` object](/documentation/articles/websites-dotnet-webjobs-sdk-storage-queues-how-to#config).
 
 7. Replace both storage connection strings with the connection string you copied earlier.
 
@@ -235,9 +235,9 @@ After you've created some ads while running in the cloud, you'll view the WebJob
 
 	The complete URL will consist of what you enter here plus .chinacloudsites.cn (as shown next to the **Web app name** text box). For example, if the web app name is ContosoAds, the URL will be ContosoAds.chinacloudsites.cn.
 
-7. In the [App Service plan](azure-web-sites-web-hosting-plans-in-depth-overview) drop-down list choose **Create new App Service plan**. Enter a name for the App Service plan, such as ContosoAdsPlan.
+7. In the [App Service plan](/documentation/articles/azure-web-sites-web-hosting-plans-in-depth-overview) drop-down list choose **Create new App Service plan**. Enter a name for the App Service plan, such as ContosoAdsPlan.
 
-8. In the [Resource group](resource-group-overview) drop-down list choose **Create new resource group**.
+8. In the [Resource group](/documentation/articles/resource-group-overview) drop-down list choose **Create new resource group**.
 
 9. Enter a name for the resource group, such as ContosoAdsGroup.
 
@@ -421,7 +421,7 @@ In this section you'll do the following tasks:
 	* Added a *webjobs-list.json* file in the web project Properties folder.
 	* Installed the Microsoft.Web.WebJobs.Publish NuGet package in the WebJob project.
 
-	For more information about these changes, see [How to deploy WebJobs by using Visual Studio](websites-dotnet-deploy-webjobs).
+	For more information about these changes, see [How to deploy WebJobs by using Visual Studio](/documentation/articles/websites-dotnet-deploy-webjobs).
 
 ### Add NuGet packages
 
@@ -776,16 +776,16 @@ The WebJobs SDK calls this method when a queue message is received. The method c
 
 For more information about how to write functions that use  WebJobs SDK attributes, see the following resources:
 
-* [How to use Azure queue storage with the WebJobs SDK](websites-dotnet-webjobs-sdk-storage-queues-how-to)
-* [How to use Azure blob storage with the WebJobs SDK](websites-dotnet-webjobs-sdk-storage-blobs-how-to)
-* [How to use Azure table storage with the WebJobs SDK](websites-dotnet-webjobs-sdk-storage-tables-how-to)
-* [How to use Azure Service Bus with the WebJobs SDK](websites-dotnet-webjobs-sdk-service-bus)
+* [How to use Azure queue storage with the WebJobs SDK](/documentation/articles/websites-dotnet-webjobs-sdk-storage-queues-how-to)
+* [How to use Azure blob storage with the WebJobs SDK](/documentation/articles/websites-dotnet-webjobs-sdk-storage-blobs-how-to)
+* [How to use Azure table storage with the WebJobs SDK](/documentation/articles/websites-dotnet-webjobs-sdk-storage-tables-how-to)
+* [How to use Azure Service Bus with the WebJobs SDK](/documentation/articles/websites-dotnet-webjobs-sdk-service-bus)
 
 > [AZURE.NOTE]
 >
 > * If your web app runs on multiple VMs, multiple WebJobs will be running simultaneously, and in some scenarios this can result in the same data getting processed multiple times. This is not a problem if you use the built-in queue, blob, and Service Bus triggers. The SDK ensures that your functions will be processed only once for each message or blob.
 >
-> * For information about how to implement graceful shutdown, see [Graceful Shutdown](websites-dotnet-webjobs-sdk-storage-queues-how-to#graceful).
+> * For information about how to implement graceful shutdown, see [Graceful Shutdown](/documentation/articles/websites-dotnet-webjobs-sdk-storage-queues-how-to#graceful).
 >
 > * The code in the `ConvertImageToThumbnailJPG` method (not shown) uses classes in the `System.Drawing` namespace for simplicity. However, the classes in this namespace were designed for use with Windows Forms. They are not supported for use in a Windows or ASP.NET service. For more information about image processing options, see [Dynamic Image Generation](http://www.hanselman.com/blog/BackToBasicsDynamicImageGenerationASPNETControllersRoutingIHttpHandlersAndRunAllManagedModulesForAllRequests.aspx) and [Deep Inside Image Resizing](http://www.hanselminutes.com/313/deep-inside-image-resizing-and-scaling-with-aspnet-and-iis-with-imageresizingnet-author-na).
 
@@ -803,7 +803,7 @@ WebJobs run in the context of a web app and are not scalable separately. For exa
 
 If traffic varies by time of day or day of week, and if the backend processing you need to do can wait, you could schedule your WebJobs to run at low-traffic times. If the load is still too high for that solution, you can run the backend as a WebJob in a separate web app dedicated for that purpose. You can then scale your backend web app independently from your frontend web app.
 
-For more information, see [Scaling WebJobs](websites-webjobs-resources#scale).
+For more information, see [Scaling WebJobs](/documentation/articles/websites-webjobs-resources#scale).
 
 ### Avoiding web app timeout shut-downs
 
@@ -819,4 +819,4 @@ For more information, see [Getting a dashboard for local development with the We
 
 ### More WebJobs documentation
 
-For more information, see [Azure WebJobs documentation resources](websites-webjobs-resources).
+For more information, see [Azure WebJobs documentation resources](/documentation/articles/websites-webjobs-resources/).

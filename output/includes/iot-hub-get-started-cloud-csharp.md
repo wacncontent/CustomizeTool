@@ -118,12 +118,12 @@ In this section, you will create a Windows console app that reads device-to-clou
 
 [Azure IoT - Service SDK NuGet package]: https://www.nuget.org/packages/Microsoft.Azure.Devices/
 
-[Get Started with Event Hubs]: event-hubs-csharp-ephcs-getstarted
-[IoT Hub Developer Guide - Identity Registry]: iot-hub-devguide#identityregistry
+[Get Started with Event Hubs]: /documentation/articles/event-hubs-csharp-ephcs-getstarted
+[IoT Hub Developer Guide - Identity Registry]: /documentation/articles/iot-hub-devguide#identityregistry
 
-[Event Hubs Overview]: event-hubs-overview
+[Event Hubs Overview]: /documentation/articles/event-hubs-overview
 [Scaled out event processing]: https://code.msdn.microsoft.com/windowsazure/Service-Bus-Event-Hub-45f43fc3
-[Azure Storage account]: storage-create-storage-account
+[Azure Storage account]: /documentation/articles/storage-create-storage-account
 [EventProcessorHost]: http://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.eventprocessorhost(v=azure.95).aspx
 
 [Azure Preview Portal]: https://manage.windowsazure.cn/

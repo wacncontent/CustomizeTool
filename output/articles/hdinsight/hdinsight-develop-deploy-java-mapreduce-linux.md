@@ -17,7 +17,7 @@
 
 [AZURE.INCLUDE [pig-selector](../includes/hdinsight-maven-mapreduce-selector.md)]
 
-This documents walks you through using Apache Maven to create a MapReduce application, then deploy and run it on a Linux-based Hadoop on HDInsight cluster. For information on using a Windows-based Hadoop on HDInsight cluster, see [Develop Java MapReduce programs for Hadoop on HDInsight (Windows)](hdinsight-develop-deploy-java-mapreduce)
+This documents walks you through using Apache Maven to create a MapReduce application, then deploy and run it on a Linux-based Hadoop on HDInsight cluster. For information on using a Windows-based Hadoop on HDInsight cluster, see [Develop Java MapReduce programs for Hadoop on HDInsight (Windows)](/documentation/articles/hdinsight-develop-deploy-java-mapreduce)
 
 ##<a name="prerequisites"></a>Prerequisites
 
@@ -27,9 +27,9 @@ Before you begin this tutorial, you must have the following:
 
 - [Apache Maven](http://maven.apache.org/)
 
-- **An Azure subscription**: See [Get Azure trial](get-azure-free-trial-for-testing-hadoop-in-hdinsight).
+- **An Azure subscription**: See [Get Azure trial](/documentation/articles/get-azure-free-trial-for-testing-hadoop-in-hdinsight).
 
-- **Azure CLI**: For more information, see [Install and configure Azure CLI](xplat-cli-install)
+- **Azure CLI**: For more information, see [Install and configure Azure CLI](/documentation/articles/xplat-cli-install)
 
 ##Configure environment variables
 
@@ -238,9 +238,9 @@ This copies the files from the local system to the head node.
 
 1. Connect to HDInsight using SSH as described in the following articles:
 
-    - [Use SSH with Linux-based Hadoop on HDInsight from Linux, Unix, or OS X](hdinsight-hadoop-linux-use-ssh-unix)
+    - [Use SSH with Linux-based Hadoop on HDInsight from Linux, Unix, or OS X](/documentation/articles/hdinsight-hadoop-linux-use-ssh-unix)
 
-    - [Use SSH with Linux-based Hadoop on HDInsight from Windows](hdinsight-hadoop-linux-use-ssh-windows)
+    - [Use SSH with Linux-based Hadoop on HDInsight from Windows](/documentation/articles/hdinsight-hadoop-linux-use-ssh-windows)
 
 2. From the SSH session, use the following command to run the MapReduce application:
 
@@ -264,7 +264,7 @@ In this document, you have learned how to develop a Java MapReduce job. See the 
 
 - [Use Hive with HDInsight][hdinsight-use-hive]
 - [Use Pig with HDInsight][hdinsight-use-pig]
-- [Use MapReduce with HDInsight](hdinsight-use-mapreduce)
+- [Use MapReduce with HDInsight](/documentation/articles/hdinsight-use-mapreduce)
 
 For more information, see also the [Java Developer Center](/develop/java/).
 
@@ -272,20 +272,20 @@ For more information, see also the [Java Developer Center](/develop/java/).
 [azure-member-offers]: http://azure.microsoft.com/pricing/member-offers/
 [azure-trial]: /pricing/1rmb-trial/
 
-[hdinsight-use-sqoop]: hdinsight-use-sqoop
-[hdinsight-ODBC]: hdinsight-connect-excel-hive-ODBC-driver
-[hdinsight-power-query]: hdinsight-connect-excel-power-query
-[hdinsight-develop-streaming]: hdinsight-hadoop-develop-deploy-streaming-jobs
-[hdinsight-get-started]: hdinsight-get-started
-[hdinsight-emulator]: hdinsight-get-started-emulator
-[hdinsight-emulator-wasb]: hdinsight-get-started-emulator#blobstorage
-[hdinsight-upload-data]: hdinsight-upload-data
-[hdinsight-storage]: hdinsight-use-blob-storage
-[hdinsight-admin-powershell]: hdinsight-administer-use-powershell
-[hdinsight-use-hive]: hdinsight-use-hive
-[hdinsight-use-pig]: hdinsight-use-pig
-[hdinsight-power-query]: hdinsight-connect-excel-power-query
+[hdinsight-use-sqoop]: /documentation/articles/hdinsight-use-sqoop
+[hdinsight-ODBC]: /documentation/articles/hdinsight-connect-excel-hive-ODBC-driver
+[hdinsight-power-query]: /documentation/articles/hdinsight-connect-excel-power-query
+[hdinsight-develop-streaming]: /documentation/articles/hdinsight-hadoop-develop-deploy-streaming-jobs
+[hdinsight-get-started]: /documentation/articles/hdinsight-get-started
+[hdinsight-emulator]: /documentation/articles/hdinsight-get-started-emulator
+[hdinsight-emulator-wasb]: /documentation/articles/hdinsight-get-started-emulator#blobstorage
+[hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
+[hdinsight-storage]: /documentation/articles/hdinsight-use-blob-storage
+[hdinsight-admin-powershell]: /documentation/articles/hdinsight-administer-use-powershell
+[hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive
+[hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig
+[hdinsight-power-query]: /documentation/articles/hdinsight-connect-excel-power-query
 [powershell-PSCredential]: http://social.technet.microsoft.com/wiki/contents/articles/4546.working-with-passwords-secure-strings-and-credentials-in-windows-powershell.aspx
-[powershell-install-configure]: install-configure-powershell
+[powershell-install-configure]: /documentation/articles/install-configure-powershell
 [image-emulator-wordcount-compile]: ./media/hdinsight-develop-deploy-java-mapreduce/HDI-Emulator-Compile-Java-MapReduce.png
 [image-emulator-wordcount-run]: ./media/hdinsight-develop-deploy-java-mapreduce/HDI-Emulator-Run-Java-MapReduce.png

@@ -8,8 +8,8 @@
 
 ## How to use
 ** Test with Python 2.7.10 only **  
-1. Define your own rules in **rules.md**
-2. fileListGen.py will prepare the file list for you. But, you need to specify the global_article_path and the service_folders. By default, global_article_path is "C:/Users/Administrator/Documents/GitHub/azure-content-pr".
+1. Define your own rules in **en-us-rules.md** or **zh-cn-rules.md**
+2. Edit setting in "setting.json". There are 2 sample "setting.json": one is "setting.json", and the other is "zh-cn-setting.json"
 3. run the script: `python core.py`, and the result file will be in the output folder
 
 ## Configuration your own 'rules.md' (Important)

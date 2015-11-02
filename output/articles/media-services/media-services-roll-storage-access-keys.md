@@ -29,7 +29,7 @@ This topic describes steps you would take to roll storage keys and update Media 
 
 ## Step 1: Regenerate secondary storage access key
 
-Start with regenerating secondary storage key. By default, the secondary key is not used by Media Services.  For information on how to roll storage keys, see [How to: View, copy, and regenerate storage access keys](storage-create-storage-account#view-copy-and-regenerate-storage-access-keys).
+Start with regenerating secondary storage key. By default, the secondary key is not used by Media Services.  For information on how to roll storage keys, see [How to: View, copy, and regenerate storage access keys](/documentation/articles/storage-create-storage-account#view-copy-and-regenerate-storage-access-keys).
   
 ##<a id="step2"></a>Step 2:  Update Media Services to use the new secondary storage key
 
@@ -126,11 +126,11 @@ The .NET example below shows how to recreate a locator with the same ID.
 
 ##Step 5: Regenerate  primary storage access key
 
-Regenerate the primary storage access key. For information on how to roll storage keys, see [How to: View, copy, and regenerate storage access keys](storage-create-storage-account#view-copy-and-regenerate-storage-access-keys).
+Regenerate the primary storage access key. For information on how to roll storage keys, see [How to: View, copy, and regenerate storage access keys](/documentation/articles/storage-create-storage-account#view-copy-and-regenerate-storage-access-keys).
 
 ##Step 6: Update Media Services to use the new primary storage key
 	
-Use the same procedure as described in [step 2](media-services-roll-storage-access-keys#step2) only this time synchronize the new primary storage  access key with the Media Services account.
+Use the same procedure as described in [step 2](/documentation/articles/media-services-roll-storage-access-keys#step2) only this time synchronize the new primary storage  access key with the Media Services account.
 
 >[AZURE.NOTE]Wait for 30 minutes before performing any operations with Media Services (for example, creating new locators) in order to prevent any impact on pending jobs.
 
@@ -138,7 +138,7 @@ Use the same procedure as described in [step 2](media-services-roll-storage-acce
 
 After 30 minutes you can recreate your OnDemand locators so they take dependency on the new primary storage key and maintain the existing URL.
 
-Use the same procedure as described in [step 3](media-services-roll-storage-access-keys#step-3-update-locators).
+Use the same procedure as described in [step 3](/documentation/articles/media-services-roll-storage-access-keys#step-3-update-locators).
 
 <!-- deleted by customization
  

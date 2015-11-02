@@ -4,7 +4,7 @@
 
 > [AZURE.IMPORTANT] In Maintenance mode, you need to apply the hotfix first on one controller and then on the other controller.
 
-1. Place the device into Maintenance mode. See [Step 2: Enter Maintenance mode](storsimple-update-device#step2) for instructions on how to enter Maintenance mode.
+1. Place the device into Maintenance mode. See [Step 2: Enter Maintenance mode](/documentation/articles/storsimple-update-device#step2) for instructions on how to enter Maintenance mode.
 
 2. To apply the hotfix, type:
 
@@ -16,4 +16,4 @@
 
 5. After you have applied the hotfix on one controller, log on to the other controller. Apply the hotfix as you did for the previous controller.
 
-6. After the hotfixes are applied, exit Maintenance mode. See [Step 4: Exit Maintenance mode](storsimple-update-device#step4) for instructions.
+6. After the hotfixes are applied, exit Maintenance mode. See [Step 4: Exit Maintenance mode](/documentation/articles/storsimple-update-device#step4) for instructions.

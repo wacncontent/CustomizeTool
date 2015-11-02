@@ -68,7 +68,7 @@ For technical reasons, enabling Java for your app disables the .NET, PHP, and Py
 <a name="platform"></a>
 **Platform**. Selects whether your web app runs in a 32-bit or 64-bit environment. The 64-bit environment requires Basic or Standard mode. Free and Shared modes always run in a 32-bit environment.
 
-**Web Sockets**. Set **ON** to enable the WebSocket protocol; for example, if your web app uses [ASP.NET SignalR](http://www.asp.net/signalr) or [socket.io](web-sites-nodejs-chat-app-socketio).
+**Web Sockets**. Set **ON** to enable the WebSocket protocol; for example, if your web app uses [ASP.NET SignalR](http://www.asp.net/signalr) or [socket.io](/documentation/articles/web-sites-nodejs-chat-app-socketio).
 
 <a name="alwayson"></a>
 **Always On**. By default, web apps are unloaded if they are idle for some period of time. This lets the system conserve resources. In Basic or Standard mode, you can enable **Always On** to keep the app loaded all the time. If your app runs continuous web jobs, you should enable **Always On**, or the web jobs may not run reliably.
@@ -76,7 +76,7 @@ For technical reasons, enabling Java for your app disables the .NET, PHP, and Py
 **Managed Pipeline Version**. Sets the IIS [pipeline mode](http://www.iis.net/learn/get-started/introduction-to-iis/introduction-to-iis-architecture#Application). Leave this set to Integrated (the default) unless you have a legacy app that requires an older version of IIS.
 <!-- deleted by customization
 
-**Auto Swap**. If you enable Auto Swap for a deployment slot, Azure Websites will automatically swap the web app into production when you push an update to that slot. For more information, see [Deploy to staging slots for web apps in Azure Websites](web-sites-staged-publishing).
+**Auto Swap**. If you enable Auto Swap for a deployment slot, Azure Websites will automatically swap the web app into production when you push an update to that slot. For more information, see [Deploy to staging slots for web apps in Azure Websites](/documentation/articles/web-sites-staged-publishing).
 -->
 
 
@@ -167,7 +167,7 @@ The full FTP user name is “app\username” where *app* is the name of your web
 
 ### SSL 
 
-In Basic or Standard mode, you can upload SSL certificates for a custom domain. For more information, see [Enable HTTPS for a web app](web-sites-configure-ssl-certificate). 
+In Basic or Standard mode, you can upload SSL certificates for a custom domain. For more information, see [Enable HTTPS for a web app](/documentation/articles/web-sites-configure-ssl-certificate). 
 <!-- deleted by customization
 
 To view your uploaded certificates, click **Configure** > **Custom domains and SSL**.
@@ -178,7 +178,7 @@ To view your uploaded certificates, click **Configure** > **SSL Bindings**.
 <!-- keep by customization: end -->
 ### Domain names
 
-Add custom domain names for your web app. For more information, see [Configure a custom domain name for a web app in Azure Websites](web-sites-custom-domain-name).
+Add custom domain names for your web app. For more information, see [Configure a custom domain name for a web app in Azure Websites](/documentation/articles/web-sites-custom-domain-name).
 <!-- deleted by customization
 
 To view your domain names, click **Configure** > **Custom domains and SSL**.
@@ -189,8 +189,8 @@ To view your domain names, click **Configure** > **Domain Names**.
 <!-- keep by customization: end -->
 ### Deployments
 
-- Set up continuous deployment. See [Using Git to deploy Web Apps in Azure Websites](web-sites-publish-source-control)
-- Deployment slots. See [Deploy to Staging Environments for Web Apps in Azure Websites](web-sites-staged-publishing)
+- Set up continuous deployment. See [Using Git to deploy Web Apps in Azure Websites](/documentation/articles/web-sites-publish-source-control)
+- Deployment slots. See [Deploy to Staging Environments for Web Apps in Azure Websites](/documentation/articles/web-sites-staged-publishing)
 <!-- deleted by customization
 
 To view your deployment slots, click **Configure** > **Deployment slots**.
@@ -212,10 +212,10 @@ For more information, see [How to: Monitor web endpoint status](http://go.micros
 
 ## Next steps
 
-- [Configure a custom domain name](web-sites-custom-domain-name)
-- [Enable HTTPS](web-sites-configure-ssl-certificate)
-- [Scale a web app in Azure Websites](web-sites-scale)
-- [Monitoring basics for Web Apps in Azure Websites](web-sites-monitor)
+- [Configure a custom domain name](/documentation/articles/web-sites-custom-domain-name)
+- [Enable HTTPS](/documentation/articles/web-sites-configure-ssl-certificate)
+- [Scale a web app in Azure Websites](/documentation/articles/web-sites-scale)
+- [Monitoring basics for Web Apps in Azure Websites](/documentation/articles/web-sites-monitor)
 <!-- deleted by customization
 
 ## What's changed

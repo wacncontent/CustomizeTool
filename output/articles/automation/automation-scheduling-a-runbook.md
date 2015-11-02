@@ -54,7 +54,7 @@ A runbook can be linked to multiple schedules, and a schedule can have multiple 
 
 ### To link a schedule to a runbook with Windows PowerShell
 
-You can use the [Register-AzureAutomationScheduledRunbook](http://msdn.microsoft.com/zh-cn/library/azure/dn690265.aspx) to link a schedule to a runbook. You can specify values for the runbook’s parameters with the Parameters parameter. See [Starting a Runbook in Azure Automation](automation-starting-a-runbook) for more information on specifying parameter values.
+You can use the [Register-AzureAutomationScheduledRunbook](http://msdn.microsoft.com/zh-cn/library/azure/dn690265.aspx) to link a schedule to a runbook. You can specify values for the runbook’s parameters with the Parameters parameter. See [Starting a Runbook in Azure Automation](/documentation/articles/automation-starting-a-runbook) for more information on specifying parameter values.
 
 The following sample commands show how to link a schedule to a runbook with parameters.
 
@@ -90,4 +90,4 @@ The following sample commands show how to disable a schedule.
 ## Related articles
 
 - [Schedule Assets in Azure Automation](http://msdn.microsoft.com/zh-cn/library/azure/dn940016.aspx)
-- [Starting a Runbook in Azure Automation](automation-starting-a-runbook) 
+- [Starting a Runbook in Azure Automation](/documentation/articles/automation-starting-a-runbook) 

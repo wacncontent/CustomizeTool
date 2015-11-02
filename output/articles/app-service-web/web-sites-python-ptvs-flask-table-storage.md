@@ -82,7 +82,7 @@ To use storage operations, you need an Azure storage account. You can create a s
 
 1.  Log into the [Azure Management Portal].
 
-2. Click the **New** icon on the bottom left of the portal, then click **DATA SERVICE** > **Storage**. Give the storage account a unique name and create a new [resource group](resource-group-overview) for it.
+2. Click the **New** icon on the bottom left of the portal, then click **DATA SERVICE** > **Storage**. Give the storage account a unique name and create a new [resource group](/documentation/articles/resource-group-overview) for it.
 
   	<!-- ![New Button](./media/web-sites-python-ptvs-flask-table-storage/PollsCommonAzurePlusNew.png) -->
 
@@ -234,9 +234,9 @@ Follow these links to learn more about Python Tools for Visual Studio, Flask and
 
 <!--Link references-->
 [Python Developer Center]: /develop/python/
-[Azure Cloud Services]: cloud-services-python-ptvs
-[documentation]: storage-python-how-to-use-table-storage
-[How to Use the Table Storage Service from Python]: storage-python-how-to-use-table-storage
+[Azure Cloud Services]: /documentation/articles/cloud-services-python-ptvs
+[documentation]: /documentation/articles/storage-python-how-to-use-table-storage
+[How to Use the Table Storage Service from Python]: /documentation/articles/storage-python-how-to-use-table-storage
 <!--External Link references-->
 [Azure Management Portal]: https://manage.windowsazure.cn
 [Azure SDK for .NET]: /downloads/

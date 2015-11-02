@@ -15,9 +15,9 @@
 #How to: Check Job Progress
 
 > [AZURE.SELECTOR]
-- [Portal](media-services-portal-check-job-progress)
-- [.NET](media-services-check-job-progress)
-- [REST](media-services-rest-check-job-progress)
+- [Portal](/documentation/articles/media-services-portal-check-job-progress)
+- [.NET](/documentation/articles/media-services-check-job-progress)
+- [REST](/documentation/articles/media-services-rest-check-job-progress)
 
 ##Use Portal to check the job status
 
@@ -39,7 +39,7 @@ You can view AMS learning paths here:
 
 ##Next Step
 
-Publish your content. For more information, see [How to: Encode an Asset](media-services-manage-content#publish). 
+Publish your content. For more information, see [How to: Encode an Asset](/documentation/articles/media-services-manage-content#publish). 
 
 
 [checkstatus]: ./media/media-services-portal-check-job-progress/media-services-monitor-job-progress.png

@@ -15,9 +15,9 @@
 # Configure HBase geo-replication in HDInsight
 
 > [AZURE.SELECTOR]
-- [Configure VPN connectivity](hdinsight-hbase-geo-replication-configure-VNETs)
-- [Configure DNS](hdinsight-hbase-geo-replication-configure-DNS)
-- [Configure HBase replication](hdinsight-hbase-geo-replication) 
+- [Configure VPN connectivity](/documentation/articles/hdinsight-hbase-geo-replication-configure-VNETs)
+- [Configure DNS](/documentation/articles/hdinsight-hbase-geo-replication-configure-DNS)
+- [Configure HBase replication](/documentation/articles/hdinsight-hbase-geo-replication) 
  
 Learn how to configure HBase replication across two data centers. Some use cases for cluster replication include:
 
@@ -292,22 +292,22 @@ In this tutorial, you have learned how to configure HBase replication across two
 -->
 - [Analyzing sensor data with Storm and HBase in HDInsight (Hadoop)][hdinsight-sensor-data]
 
-[hdinsight-hbase-geo-replication-vnet]: hdinsight-hbase-geo-replication-configure-VNets
+[hdinsight-hbase-geo-replication-vnet]: /documentation/articles/hdinsight-hbase-geo-replication-configure-VNets
 <!-- deleted by customization 
-[hdinsight-hbase-geo-replication-dns]: hdinsight-hbase-geo-replication-configure-VNet
+[hdinsight-hbase-geo-replication-dns]: /documentation/articles/hdinsight-hbase-geo-replication-configure-VNet
 -->
 [img-vnet-diagram]: ./media/hdinsight-hbase-geo-replication/HDInsight.HBase.Replication.Network.diagram.png
 
-[powershell-install]: install-configure-powershell
-[hdinsight-hbase-get-started]: hdinsight-hbase-get-started
-[hdinsight-manage-portal]: hdinsight-administer-use-management-portal-v1
-[hdinsight-provision]: hdinsight-provision-clusters
-[hdinsight-hbase-replication-vnet]: hdinsight-hbase-geo-replication-configure-VNets
-[hdinsight-hbase-replication-dns]: hdinsight-hbase-geo-replication-configure-DNS
+[powershell-install]: /documentation/articles/install-configure-powershell
+[hdinsight-hbase-get-started]: /documentation/articles/hdinsight-hbase-get-started
+[hdinsight-manage-portal]: /documentation/articles/hdinsight-administer-use-management-portal-v1
+[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters
+[hdinsight-hbase-replication-vnet]: /documentation/articles/hdinsight-hbase-geo-replication-configure-VNets
+[hdinsight-hbase-replication-dns]: /documentation/articles/hdinsight-hbase-geo-replication-configure-DNS
 <!-- deleted by customization
-[hdinsight-hbase-twitter-sentiment]: hdinsight-hbase-analyze-twitter-sentiment
+[hdinsight-hbase-twitter-sentiment]: /documentation/articles/hdinsight-hbase-analyze-twitter-sentiment
 -->
-[hdinsight-sensor-data]: hdinsight-storm-sensor-data-analysis
-[hdinsight-hbase-overview]: hdinsight-hbase-overview
-[hdinsight-hbase-provision-vnet]: hdinsight-hbase-provision-vnet
-[hdinsight-hbase-get-started]: hdinsight-hbase-get-started
+[hdinsight-sensor-data]: /documentation/articles/hdinsight-storm-sensor-data-analysis
+[hdinsight-hbase-overview]: /documentation/articles/hdinsight-hbase-overview
+[hdinsight-hbase-provision-vnet]: /documentation/articles/hdinsight-hbase-provision-vnet
+[hdinsight-hbase-get-started]: /documentation/articles/hdinsight-hbase-get-started

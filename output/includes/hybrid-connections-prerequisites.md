@@ -8,4 +8,4 @@
 	- Be able to connect to Azure over port 5671.
 	- Be able to access the *hostname*:*portnumber* of the computer running your SQL Server instance.  
 
-	For more information see [Hybrid Connections Overview](integration-hybrid-connection-overview).
+	For more information see [Hybrid Connections Overview](/documentation/articles/integration-hybrid-connection-overview).

@@ -2,7 +2,7 @@ Virtual machines created with the Service Management deployment model are always
 
 If a cloud service isn't in a virtual network, it's called a *standalone* cloud service. The virtual machines in a standalone cloud service can only communicate with other virtual machines by using the other virtual machines’ public DNS names, and that traffic travels over the Internet. If a cloud service is in a virtual network, the virtual machines in that cloud service can communicate with all other virtual machines in the virtual network without sending any traffic over the Internet.
 
-If you place your virtual machines in the same standalone cloud service, you can take still use load balancing and availability sets. For details, see [Load balancing virtual machines](load-balance-virtual-machines) and [Manage the availability of virtual machines](manage-availability-virtual-machines). However, you can't organize the virtual machines on subnets or connect a standalone cloud service to your on-premises network. Here's an example:
+If you place your virtual machines in the same standalone cloud service, you can take still use load balancing and availability sets. For details, see [Load balancing virtual machines](/documentation/articles/load-balance-virtual-machines) and [Manage the availability of virtual machines](/documentation/articles/manage-availability-virtual-machines). However, you can't organize the virtual machines on subnets or connect a standalone cloud service to your on-premises network. Here's an example:
 
 ![Virtual machines in a standalone cloud service](./media/howto-connect-vm-cloud-service/CloudServiceExample.png)
 
@@ -10,7 +10,7 @@ If you place your virtual machines in a virtual network, you can decide how many
 
 ![Virtual machines in a virtual network](./media/howto-connect-vm-cloud-service/VirtualNetworkExample.png)
 
-Virtual networks are the recommended way to connect virtual machines in Azure. The best practice is to configure each tier of your application in a separate cloud service. However, you may need to combine some virtual machines from different application tiers into the same cloud service to remain within the maximum of 200 cloud services per subscription. To review this and other limits, see [Azure Subscription and Service Limits, Quotas, and Constraints](azure-subscription-service-limits).
+Virtual networks are the recommended way to connect virtual machines in Azure. The best practice is to configure each tier of your application in a separate cloud service. However, you may need to combine some virtual machines from different application tiers into the same cloud service to remain within the maximum of 200 cloud services per subscription. To review this and other limits, see [Azure Subscription and Service Limits, Quotas, and Constraints](/documentation/articles/azure-subscription-service-limits).
 
 ## Connect VMs in a virtual network
 
@@ -31,14 +31,14 @@ To connect virtual machines in a standalone cloud service:
 ![Add a virtual machine to an existing cloud service](./media/howto-connect-vm-cloud-service/Connect-VM-to-CS.png)
 
 ##Resources
-[Load balancing virtual machines](load-balance-virtual-machines)
+[Load balancing virtual machines](/documentation/articles/load-balance-virtual-machines)
 
-[Manage the availability of virtual machines](manage-availability-virtual-machines)
+[Manage the availability of virtual machines](/documentation/articles/manage-availability-virtual-machines)
 
 [Virtual Network Configuration Tasks](/documentation/services/virtual-machines/)
 
 After you create a virtual machine, it's a good idea to add a data disk so your services and workloads have a location to store data. See one of the following:
 
-[How to Attach a Data Disk to a Linux Virtual Machine](virtual-machines-linux-how-to-attach-disk)
+[How to Attach a Data Disk to a Linux Virtual Machine](/documentation/articles/virtual-machines-linux-how-to-attach-disk)
 
-[How to Attach a Data Disk to a Windows Virtual Machine](storage-windows-attach-disk)
+[How to Attach a Data Disk to a Windows Virtual Machine](/documentation/articles/storage-windows-attach-disk)

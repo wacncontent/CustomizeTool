@@ -63,9 +63,9 @@ If your probe is using HTTPs protocol you will want to add the “--no-check-cer
 ## Next Steps
 
 
-[About Traffic Manager traffic routing methods](traffic-manager-load-balancing-methods)
+[About Traffic Manager traffic routing methods](/documentation/articles/traffic-manager-load-balancing-methods)
 
-[What is Traffic Manager](traffic-manmager-overview)
+[What is Traffic Manager](/documentation/articles/traffic-manmager-overview)
 
 [Cloud Services](https://msdn.microsoft.com/zh-cn/library/jj155995.aspx)
 

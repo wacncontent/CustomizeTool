@@ -58,7 +58,7 @@ Applications can run on top of HBase by using it as a datastore. Examples includ
 
 - [Get started using HBase with Hadoop in HDInsight][hbase-get-started]
 - [Provision HDInsight clusters on Azure Virtual Network] [hbase-provision-vnet]
-- [Configure HBase replication in HDInsight](hdinsight-hbase-geo-replication)
+- [Configure HBase replication in HDInsight](/documentation/articles/hdinsight-hbase-geo-replication)
 <!-- deleted by customization 
 - [Analyze Twitter sentiment with HBase in HDInsight][hbase-twitter-sentiment]
 -->
@@ -72,18 +72,18 @@ Applications can run on top of HBase by using it as a datastore. Examples includ
 
 
 
-[hbase-provision-vnet]: hdinsight-hbase-provision-vnet
+[hbase-provision-vnet]: /documentation/articles/hdinsight-hbase-provision-vnet
 <!-- deleted by customization 
-[hbase-twitter-sentiment]: hdinsight-hbase-analyze-twitter-sentiment
+[hbase-twitter-sentiment]: /documentation/articles/hdinsight-hbase-analyze-twitter-sentiment
 -->
-[hbase-build-java-maven]: hdinsight-hbase-build-java-maven
-[hdinsight-use-hive]: hdinsight-use-hive
-[hdinsight-storage]: hdinsight-use-blob-storage
+[hbase-build-java-maven]: /documentation/articles/hdinsight-hbase-build-java-maven
+[hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive
+[hdinsight-storage]: /documentation/articles/hdinsight-use-blob-storage
 [hbase-get-started]: /documentation/articles/hdinsight-hbase-get-started/
 
 [azure-purchase-options]: /pricing/overview/
 [azure-member-offers]: http://azure.microsoft.com/pricing/member-offers/
 [azure-trial]: /pricing/1rmb-trial/
 [azure-management-portal]: https://manage.windowsazure.cn/
-[azure-create-storageaccount]: storage-create-storage-account
+[azure-create-storageaccount]: /documentation/articles/storage-create-storage-account
 [apache-hadoop]: http://hadoop.apache.org/

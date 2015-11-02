@@ -6,7 +6,7 @@ For more information about Event Hubs receive patterns, see the [Event Hubs Over
 
 This tutorial uses an [HDInsight Storm] installation, which comes with the Event Hubs spout already available.
 
-1. Follow the [HDInsight Storm - Get Started](hdinsight-storm-overview) procedure to create a new HDInsight cluster, and connect to it via Remote Desktop.
+1. Follow the [HDInsight Storm - Get Started](/documentation/articles/hdinsight-storm-overview) procedure to create a new HDInsight cluster, and connect to it via Remote Desktop.
 
 2. Copy the `%STORM_HOME%\examples\eventhubspout\eventhubs-storm-spout-0.9-jar-with-dependencies.jar` file to your local development environment. This contains the events-storm-spout.
 
@@ -220,9 +220,9 @@ This tutorial uses an [HDInsight Storm] installation, which comes with the Event
 	This class creates a new Event Hubs spout, using the properties in the configuration file to instatiate it. It is important to note that this example creates as many spouts tasks as the number of partitions in the Event Hub, in order to use the maximum parallelism allowed by that Event Hub.
 
 <!-- Links -->
-[Event Hubs Overview]: event-hubs-overview
-[HDInsight Storm]: hdinsight-storm-overview
-[HDInsight sensor analysis tutorial]: hdinsight-storm-sensor-data-analysis
+[Event Hubs Overview]: /documentation/articles/event-hubs-overview
+[HDInsight Storm]: /documentation/articles/hdinsight-storm-overview
+[HDInsight sensor analysis tutorial]: /documentation/articles/hdinsight-storm-sensor-data-analysis
 <!-- Images -->
 
 [12]: ./media/service-bus-event-hubs-getstarted/create-storm1.png

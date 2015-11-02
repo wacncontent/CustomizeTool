@@ -16,11 +16,11 @@
 
 ## Overview
 
-This guide provides C# code samples that show how to trigger a process when an Azure blob is created or updated. The code samples use [WebJobs SDK](websites-dotnet-webjobs-sdk) version 1.x.
+This guide provides C# code samples that show how to trigger a process when an Azure blob is created or updated. The code samples use [WebJobs SDK](/documentation/articles/websites-dotnet-webjobs-sdk) version 1.x.
 
-For code samples that show how to create blobs, see [How to use Azure queue storage with the WebJobs SDK](websites-dotnet-webjobs-sdk-storage-queues-how-to). 
+For code samples that show how to create blobs, see [How to use Azure queue storage with the WebJobs SDK](/documentation/articles/websites-dotnet-webjobs-sdk-storage-queues-how-to). 
 		
-The guide assumes you know [how to create a WebJob project in Visual Studio with connection strings that point to your storage account](websites-dotnet-webjobs-sdk-get-started).
+The guide assumes you know [how to create a WebJob project in Visual Studio with connection strings that point to your storage account](/documentation/articles/websites-dotnet-webjobs-sdk-get-started).
 
 <!-- keep by customization: begin -->
 ## Table of contents
@@ -41,7 +41,7 @@ The guide assumes you know [how to create a WebJob project in Visual Studio with
 
 This section shows how to use the `BlobTrigger` attribute. 
 
-> **Note:** The WebJobs SDK scans log files to watch for new or changed blobs. This process is inherently slow; a function might not get triggered until several minutes or longer after the blob is created.  If your application needs to process blobs immediately, the recommended method is to create a queue message when you create the blob, and use the [QueueTrigger](websites-dotnet-webjobs-sdk-storage-queues-how-to#trigger) attribute instead of the `BlobTrigger` attribute on the function that processes the blob.
+> **Note:** The WebJobs SDK scans log files to watch for new or changed blobs. This process is inherently slow; a function might not get triggered until several minutes or longer after the blob is created.  If your application needs to process blobs immediately, the recommended method is to create a queue message when you create the blob, and use the [QueueTrigger](/documentation/articles/websites-dotnet-webjobs-sdk-storage-queues-how-to#trigger) attribute instead of the `BlobTrigger` attribute on the function that processes the blob.
 
 ### Single placeholder for blob name with extension  
 
@@ -159,7 +159,7 @@ The `WebImage` binding code is provided in a `WebImageBinder` class that derives
 
 When a `BlobTrigger` function fails, the SDK calls it again, in case the failure was caused by a transient error. If the failure is caused by the content of the blob, the function fails every time it tries to process the blob. By default, the SDK calls a function up to 5 times for a given blob. If the fifth try fails, the SDK adds a message to a queue named *webjobs-blobtrigger-poison*.
 
-The maximum number of retries is configurable. The same [MaxDequeueCount](websites-dotnet-webjobs-sdk-storage-queues-how-to#configqueue) setting is used for poison blob handling and poison queue message handling. 
+The maximum number of retries is configurable. The same [MaxDequeueCount](/documentation/articles/websites-dotnet-webjobs-sdk-storage-queues-how-to#configqueue) setting is used for poison blob handling and poison queue message handling. 
 
 The queue message for poison blobs is a JSON object that contains the following properties:
 
@@ -224,7 +224,7 @@ If you want to force reprocessing of a blob, you can manually delete the blob re
 
 ## <a id="queues"></a>Related topics covered by the queues article
 
-For information about how to handle blob processing triggered by a queue message, or for WebJobs SDK scenarios not specific to blob processing, see [How to use Azure queue storage with the WebJobs SDK](websites-dotnet-webjobs-sdk-storage-queues-how-to). 
+For information about how to handle blob processing triggered by a queue message, or for WebJobs SDK scenarios not specific to blob processing, see [How to use Azure queue storage with the WebJobs SDK](/documentation/articles/websites-dotnet-webjobs-sdk-storage-queues-how-to). 
 
 Related topics covered in that article include the following:
 

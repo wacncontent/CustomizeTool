@@ -41,8 +41,8 @@ There are a few IP address ranges that are not allowed:
 
 ## Next Steps
 
-[How to manage Virtual Network (VNet) Properties](virtual-networks-settings)
+[How to manage Virtual Network (VNet) Properties](/documentation/articles/virtual-networks-settings)
 
-[How to manage DNS servers used by a virtual network (VNet)](virtual-networks-manage-dns-in-vnet)
+[How to manage DNS servers used by a virtual network (VNet)](/documentation/articles/virtual-networks-manage-dns-in-vnet)
 
-[How to delete a Virtual Network (VNet)](virtual-networks-delete-vnet) 
+[How to delete a Virtual Network (VNet)](/documentation/articles/virtual-networks-delete-vnet) 

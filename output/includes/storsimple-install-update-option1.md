@@ -23,11 +23,11 @@
 
     6. Click **Download**. Specify or **Browse** to a local location where you want the download to appear. The update will be downloaded in a **StorSimple Update 1.2 Appliance Update bundle** (KB3063418) folder to the chosen location. The folder can also be copied to a network share that is reachable from the device. 
     
-	This procedure describes how to install software device update as a hotfix, the disk firmware updates from the Microsoft Update server, and the LSI driver and Windows Updates from the Management Portal. You could however choose to install software, driver and disk firmware updates all as hotfixes. You will then need to download StorSimple 1.2 SAS Controller Update (KB3043005) and StorSimple 1.2 Disk Firmware Update (KB3063416) and copy to the same shared folder. To install disk firmware updates as a hotfix, follow the instructions in [installing maintenance mode hotfixes via Windows PowerShell for StorSimple](storsimple-update-device#install-hotfixes-via-windows-powershell-for-storsimple).
+	This procedure describes how to install software device update as a hotfix, the disk firmware updates from the Microsoft Update server, and the LSI driver and Windows Updates from the Management Portal. You could however choose to install software, driver and disk firmware updates all as hotfixes. You will then need to download StorSimple 1.2 SAS Controller Update (KB3043005) and StorSimple 1.2 Disk Firmware Update (KB3063416) and copy to the same shared folder. To install disk firmware updates as a hotfix, follow the instructions in [installing maintenance mode hotfixes via Windows PowerShell for StorSimple](/documentation/articles/storsimple-update-device#install-hotfixes-via-windows-powershell-for-storsimple).
     
 	> [AZURE.NOTE] The hotfix must be accessible from both controllers to detect any potential error messages from the peer controller. 
             
-2. To install the software update, access the Windows PowerShell interface on your StorSimple device serial console. Follow the detailed instructions in [Use PuTTy to connect to the serial console](storsimple-deployment-walkthrough#use-putty-to-connect-to-the-device-serial-console).
+2. To install the software update, access the Windows PowerShell interface on your StorSimple device serial console. Follow the detailed instructions in [Use PuTTy to connect to the serial console](/documentation/articles/storsimple-deployment-walkthrough#use-putty-to-connect-to-the-device-serial-console).
 
 3. At the command prompt, press **Enter**.
 
@@ -97,9 +97,9 @@
     - CisAgentVersion: 1.0.9049.0
     - MdsAgentVersion: 26.0.4696.1433 
     
-	If the version numbers do not change after applying the update, it indicates that the hotfix has failed to apply. Should you see this, please contact [Microsoft Support](storsimple-contact-microsoft-support) for further assistance.
+	If the version numbers do not change after applying the update, it indicates that the hotfix has failed to apply. Should you see this, please contact [Microsoft Support](/documentation/articles/storsimple-contact-microsoft-support) for further assistance.
     
-9. You will now install the disk firmware updates that are disruptive and take around 30-45 minutes to complete. You can choose to install these in a planned maintenance window by connecting to the device serial console. To install disk firmware updates, follow the instructions in [Install Maintenance mode updates via the Winwdow PowerShell for StorSimple](storsimple-update-device#install-maintenance-mode-updates-via-windows-powershell-for-storsimple).  
+9. You will now install the disk firmware updates that are disruptive and take around 30-45 minutes to complete. You can choose to install these in a planned maintenance window by connecting to the device serial console. To install disk firmware updates, follow the instructions in [Install Maintenance mode updates via the Winwdow PowerShell for StorSimple](/documentation/articles/storsimple-update-device#install-maintenance-mode-updates-via-windows-powershell-for-storsimple).  
 
 10. After the disk firmware updates are successfully applied and the device has exited maintenance mode, return to the Management Portal. Maintenance mode updates are not updated on the portal until 24 hours have elapsed. You may need to wait before you apply the remaining non-disruptive updates from the Management Portal. 
 

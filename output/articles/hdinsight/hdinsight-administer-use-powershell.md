@@ -34,7 +34,7 @@ Before you begin this article, you must have the following:
 
 HDInsight clusters require a Azure Resource group and a Blob container on an Azure Storage account:
 
-- Azure Resource group is a logical container for Azure resources. The Azure resource group and the HDInsight cluster don't have to be in the same location.  For more information, see [Using Azure PowerShell with Azure Resource Manager](powershell-azure-resource-manager)
+- Azure Resource group is a logical container for Azure resources. The Azure resource group and the HDInsight cluster don't have to be in the same location.  For more information, see [Using Azure PowerShell with Azure Resource Manager](/documentation/articles/powershell-azure-resource-manager)
 - HDInsight uses a Blob container of an Azure Storage account as the default file system. An Azure Storage account and a storage container are required before you can create an HDInsight cluster. The default storage account and the HDInsight cluster have to be in the same location.
 
 [AZURE.INCLUDE [provisioningnote](../includes/hdinsight-provisioning.md)]
@@ -63,7 +63,7 @@ HDInsight clusters require a Azure Resource group and a Blob container on an Azu
 	For a full list of the storage account types, see [https://msdn.microsoft.com/zh-cn/library/azure/hh264518.aspx](https://msdn.microsoft.com/zh-cn/library/azure/hh264518.aspx).
 
 
-For information on creating an Azure Storage account by using the Azure <!-- deleted by customization preview portal --><!-- keep by customization: begin -->Management Portal<!-- keep by customization: end -->, see [Create, manage, or delete a storage account](storage-create-storage-account).
+For information on creating an Azure Storage account by using the Azure <!-- deleted by customization preview portal --><!-- keep by customization: begin -->Management Portal<!-- keep by customization: end -->, see [Create, manage, or delete a storage account](/documentation/articles/storage-create-storage-account).
 
 If you have already had a Storage account but do not know the account name and account key, you can use the following commands to retrieve the information:
 
@@ -72,7 +72,7 @@ If you have already had a Storage account but do not know the account name and a
 	# List the keys for a Storage account
 	Get-AzureStorageAccountKey -ResourceGroupName <AzureResourceGroupName> -name $storageAccountName <AzureStorageAccountName>
 
-For details on getting the information by using the <!-- deleted by customization preview portal --><!-- keep by customization: begin -->Management Portal<!-- keep by customization: end -->, see the "View, copy, and regenerate storage access keys" section of [Create, manage, or delete a storage account](storage-create-storage-account).
+For details on getting the information by using the <!-- deleted by customization preview portal --><!-- keep by customization: begin -->Management Portal<!-- keep by customization: end -->, see the "View, copy, and regenerate storage access keys" section of [Create, manage, or delete a storage account](/documentation/articles/storage-create-storage-account).
 
 **To create an Azure storage container**
 
@@ -154,7 +154,7 @@ This can also be done via the <!-- deleted by customization preview portal --><!
 ##Scale clusters
 The cluster scaling feature allows you to change the number of worker nodes used by a cluster that is running in Azure HDInsight without having to re-create the cluster.
 
->[AZURE.NOTE] Only clusters with HDInsight version 3.1.3 or higher are supported. If you are unsure of the version of your cluster, you can check the Properties page.  See [Get familiar with the cluster portal interface](hdinsight-adminster-use-management-portal#Get-familiar-with-the-cluster-portal-interface).
+>[AZURE.NOTE] Only clusters with HDInsight version 3.1.3 or higher are supported. If you are unsure of the version of your cluster, you can check the Properties page.  See [Get familiar with the cluster portal interface](/documentation/articles/hdinsight-adminster-use-management-portal#Get-familiar-with-the-cluster-portal-interface).
 
 The impact of changing the number of data nodes for each type of cluster supported by HDInsight:
 
@@ -322,25 +322,25 @@ See the [Submit MapReduce jobs](#mapreduce) section in this article.
 
 
 <!-- keep by customization: begin -->
-[hdinsight-hive]: /documentation/articles/hdinsight-use-hive/
-[hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data/
+[hdinsight-hive]: /documentation/articles/hdinsight-use-hive
+[hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
 <!-- keep by customization: end -->
 [azure-purchase-options]: /pricing/overview/
 [azure-member-offers]: http://azure.microsoft.com/pricing/member-offers/
 [azure-trial]: /pricing/1rmb-trial/
 
-[hdinsight-get-started]: hdinsight-get-started
-[hdinsight-provision]: hdinsight-provision-clusters
-[hdinsight-provision-custom-options]: hdinsight-provision-clusters#configuration
-[hdinsight-submit-jobs]: hdinsight-submit-hadoop-jobs-programmatically
-[hdinsight-admin-cli]: hdinsight-administer-use-command-line
-[hdinsight-admin-portal]: hdinsight-administer-use-management-portal-v1
-[hdinsight-storage]: hdinsight-use-blob-storage
-[hdinsight-use-hive]: hdinsight-use-hive
-[hdinsight-use-mapreduce]: hdinsight-use-mapreduce
-[hdinsight-upload-data]: hdinsight-upload-data
-[hdinsight-flight]: hdinsight-analyze-flight-delay-data
+[hdinsight-get-started]: /documentation/articles/hdinsight-get-started
+[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters
+[hdinsight-provision-custom-options]: /documentation/articles/hdinsight-provision-clusters#configuration
+[hdinsight-submit-jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically
+[hdinsight-admin-cli]: /documentation/articles/hdinsight-administer-use-command-line
+[hdinsight-admin-portal]: /documentation/articles/hdinsight-administer-use-management-portal-v1
+[hdinsight-storage]: /documentation/articles/hdinsight-use-blob-storage
+[hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive
+[hdinsight-use-mapreduce]: /documentation/articles/hdinsight-use-mapreduce
+[hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
+[hdinsight-flight]: /documentation/articles/hdinsight-analyze-flight-delay-data
 [hdinsight-powershell-reference]: https://msdn.microsoft.com/zh-cn/library/dn858087.aspx
 
-[powershell-install-configure]: install-configure-powershell
+[powershell-install-configure]: /documentation/articles/install-configure-powershell
 [image-hdi-ps-provision]: ./media/hdinsight-administer-use-powershell/HDI.PS.Provision.png

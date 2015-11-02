@@ -19,7 +19,7 @@ In such situations, you will want to ensure the new infrastructure is able to co
 
 In this article, you will learn how to create a site-to-site (S2S) VPN connection between a classic VNet and an ARM VNet.
 
->[AZURE.NOTE] This article assumes you already have classic VNets, and ARM VNets, and that you are familiar with configuring a S2S VPN connection for classic VNets. For a detailed end-to-end solution on S2S VPN connectivity between classic and ARM VNets, visit [Solution Guide - Connect a classic VNet to and ARM VNet by using a S2S VPN](virtual-networks-arm-asm-s2s).
+>[AZURE.NOTE] This article assumes you already have classic VNets, and ARM VNets, and that you are familiar with configuring a S2S VPN connection for classic VNets. For a detailed end-to-end solution on S2S VPN connectivity between classic and ARM VNets, visit [Solution Guide - Connect a classic VNet to and ARM VNet by using a S2S VPN](/documentation/articles/virtual-networks-arm-asm-s2s).
 
 You can see an overview of tasks to be done to create a S2S VPN connection between a classic VNet and an ARM VNet by using Azure gateways below.
 
@@ -123,5 +123,5 @@ To create a VPN gateway for the ARM VNet, follow the instructions below.
 
 ## Next Steps
 
-- Learn more about [the Network Resource Provider (NRP) for ARM](resource-groups-networking).
-- Create an [end-to-end solution connecting a classic VNet to an ARM VNet by using a S2S VPN](virtual-networks-arm-asm-s2s).
+- Learn more about [the Network Resource Provider (NRP) for ARM](/documentation/articles/resource-groups-networking).
+- Create an [end-to-end solution connecting a classic VNet to an ARM VNet by using a S2S VPN](/documentation/articles/virtual-networks-arm-asm-s2s).

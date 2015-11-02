@@ -28,11 +28,11 @@ Apache Oozie is a workflow/coordination system that manages Hadoop jobs. It is i
 
 Before you begin this tutorial, you must have the following:
 
-- **An Azure subscription**: See [Get Azure trial](get-azure-free-trial-for-testing-hadoop-in-hdinsight).
+- **An Azure subscription**: See [Get Azure trial](/documentation/articles/get-azure-free-trial-for-testing-hadoop-in-hdinsight).
 
-- **Azure CLI**: See [Install and Configure the Azure CLI](xplat-cli-install)
+- **Azure CLI**: See [Install and Configure the Azure CLI](/documentation/articles/xplat-cli-install)
 
-- **An HDInsight cluster**: See [Get Started with HDInsight on Linux](hdinsight-hadoop-linux-tutorial-get-started)
+- **An HDInsight cluster**: See [Get Started with HDInsight on Linux](/documentation/articles/hdinsight-hadoop-linux-tutorial-get-started)
 
 - **An Azure SQL database**: This will be created using the steps in this document
 
@@ -84,9 +84,9 @@ Use the following steps to create a HiveQL script that defines a query, which wi
 
 1. Use SSH to connect to the Linux-based HDInsight cluster:
 
-    * **Linux, Unix or OS X clients**: See [Use SSH with Linux-based Hadoop on HDInsight from Linux, OS X or Unix](hdinsight-hadoop-linux-use-ssh-unix)
+    * **Linux, Unix or OS X clients**: See [Use SSH with Linux-based Hadoop on HDInsight from Linux, OS X or Unix](/documentation/articles/hdinsight-hadoop-linux-use-ssh-unix)
 
-    * **Windows clients**: See [Use SSH with Linux-based Hadoop on HDInsight from Windows](hdinsight-hadoop-linux-use-ssh-windows)
+    * **Windows clients**: See [Use SSH with Linux-based Hadoop on HDInsight from Windows](/documentation/articles/hdinsight-hadoop-linux-use-ssh-windows)
 
 2. Use the following command to create a new file:
 
@@ -197,7 +197,7 @@ Oozie workflows definitions are written in hPDL (a XML Process Definition Langua
 
 The following steps create the Azure SQL Database that data will be exported to.
 
-> [AZURE.IMPORTANT] Before performing these steps you must [install and configure the Azure CLI](xplat-cli-install). Installing the CLI and following the steps to create a database can be performed either from the HDInsight cluster or your local workstation.
+> [AZURE.IMPORTANT] Before performing these steps you must [install and configure the Azure CLI](/documentation/articles/xplat-cli-install). Installing the CLI and following the steps to create a database can be performed either from the HDInsight cluster or your local workstation.
 
 1. Use the following command to create a new Azure SQL Database server:
 
@@ -247,7 +247,7 @@ The following steps create the Azure SQL Database that data will be exported to.
 5. At the `1>` prompt, enter the following lines:
 
 		CREATE TABLE [dbo].[mobiledata](
-		[deviceplatform] [nvarchar](50),
+		[deviceplatform] [nvarchar](/documentation/articles/50),
 		[count] [bigint])
 		GO
 		CREATE CLUSTERED INDEX mobiledata_clustered_index on mobiledata(deviceplatform)
@@ -473,7 +473,7 @@ The Oozie Web UI provides a web-based view into the status of Oozie jobs on the 
 
 To access the Oozie Web UI, use the following steps:
 
-1. Create an SSH tunnel to the HDInsight cluster. For information on how to do this, see [Use SSH Tunneling to access Ambari web UI, ResourceManager, JobHistory, NameNode, Oozie, and other web UI's](hdinsight-linux-ambari-ssh-tunnel).
+1. Create an SSH tunnel to the HDInsight cluster. For information on how to do this, see [Use SSH Tunneling to access Ambari web UI, ResourceManager, JobHistory, NameNode, Oozie, and other web UI's](/documentation/articles/hdinsight-linux-ambari-ssh-tunnel).
 
 2. Once a tunnel has been created, open the Ambari web UI in your web browser. The URI for the Ambari site is **https://CLUSTERNAME.azurehdinsight.cn**. Replace **CLUSTERNAME** with the name of your Linux-based HDInsight cluster.
 
@@ -675,31 +675,31 @@ In this tutorial, you learned how to define an Oozie workflow and how to run an 
 
 
 
-[azure-data-factory-pig-hive]: data-factory-pig-hive-activities
-[hdinsight-oozie-coordinator-time]: hdinsight-use-oozie-coordinator-time
-[hdinsight-versions]: hdinsight-component-versioning
-[hdinsight-storage]: hdinsight-use-blob-storage
-[hdinsight-get-started]: hdinsight-get-started
-[hdinsight-use-sqoop]: hdinsight-use-sqoop
-[hdinsight-provision]: hdinsight-provision-clusters
-[hdinsight-upload-data]: hdinsight-upload-data
-[hdinsight-use-mapreduce]: hdinsight-use-mapreduce
-[hdinsight-use-hive]: hdinsight-use-hive
-[hdinsight-use-pig]: hdinsight-use-pig
-[hdinsight-storage]: hdinsight-use-blob-storage
-[hdinsight-get-started-emulator]: hdinsight-get-started-emulator
-[hdinsight-develop-streaming-jobs]: hdinsight-hadoop-develop-deploy-streaming-jobs
-[hdinsight-develop-mapreduce]: hdinsight-develop-deploy-java-mapreduce
-[sqldatabase-create-configue]: sql-database-create-configure
-[sqldatabase-get-started]: sql-database-get-started
-[azure-create-storageaccount]: storage-create-storage-account
+[azure-data-factory-pig-hive]: /documentation/articles/data-factory-pig-hive-activities
+[hdinsight-oozie-coordinator-time]: /documentation/articles/hdinsight-use-oozie-coordinator-time
+[hdinsight-versions]: /documentation/articles/hdinsight-component-versioning
+[hdinsight-storage]: /documentation/articles/hdinsight-use-blob-storage
+[hdinsight-get-started]: /documentation/articles/hdinsight-get-started
+[hdinsight-use-sqoop]: /documentation/articles/hdinsight-use-sqoop
+[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters
+[hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
+[hdinsight-use-mapreduce]: /documentation/articles/hdinsight-use-mapreduce
+[hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive
+[hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig
+[hdinsight-storage]: /documentation/articles/hdinsight-use-blob-storage
+[hdinsight-get-started-emulator]: /documentation/articles/hdinsight-get-started-emulator
+[hdinsight-develop-streaming-jobs]: /documentation/articles/hdinsight-hadoop-develop-deploy-streaming-jobs
+[hdinsight-develop-mapreduce]: /documentation/articles/hdinsight-develop-deploy-java-mapreduce
+[sqldatabase-create-configue]: /documentation/articles/sql-database-create-configure
+[sqldatabase-get-started]: /documentation/articles/sql-database-get-started
+[azure-create-storageaccount]: /documentation/articles/storage-create-storage-account
 [apache-hadoop]: http://hadoop.apache.org/
 [apache-oozie-400]: http://oozie.apache.org/docs/4.0.0/
 [apache-oozie-332]: http://oozie.apache.org/docs/3.3.2/
 
 [powershell-download]: /downloads/
 [powershell-about-profiles]: https://technet.microsoft.com/zh-cn/library/hh847857.aspx
-[powershell-install-configure]: powershell-install-configure
+[powershell-install-configure]: /documentation/articles/powershell-install-configure
 [powershell-start]: http://technet.microsoft.com/zh-cn/library/hh847889.aspx
 [powershell-script]: https://technet.microsoft.com/library/ee176961.aspx
 

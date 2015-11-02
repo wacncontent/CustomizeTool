@@ -1,3 +1,3 @@
 > [AZURE.SELECTOR]
-[PowerShell](virtual-network-create-udr-classic-ps)
-[Azure CLI](virtual-network-create-udr-classic-cli)
+[PowerShell](/documentation/articles/virtual-network-create-udr-classic-ps)
+[Azure CLI](/documentation/articles/virtual-network-create-udr-classic-cli)

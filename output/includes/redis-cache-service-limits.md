@@ -7,4 +7,4 @@
 
 Azure Redis Cache limits and sizes are different for each pricing tier. To see the pricing tiers and their associated sizes, see [Azure Redis Cache Pricing](/home/features/cache/#price).
 
-For more information on Azure Redis Cache configuration limits, see [Default Redis server configuration](cache-configure#default-redis-server-configuration).
+For more information on Azure Redis Cache configuration limits, see [Default Redis server configuration](/documentation/articles/cache-configure#default-redis-server-configuration).

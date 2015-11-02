@@ -16,8 +16,8 @@
 #How to Scale Encoding using the Azure Management Portal
 
 > [AZURE.SELECTOR]
-- [.NET](media-services-dotnet-encoding-units)
-- [Portal](media-services-portal-encoding-units)
+- [.NET](/documentation/articles/media-services-dotnet-encoding-units)
+- [Portal](/documentation/articles/media-services-portal-encoding-units)
 - [REST](https://msdn.microsoft.com/zh-cn/library/azure/dn859236.aspx)
 - [Java](https://github.com/southworkscom/azure-sdk-for-media-services-java-samples)
 
@@ -51,7 +51,7 @@ To change the reserved unit type and the number of encoding reserved units, do t
 
 ##Quotas and limitations
 
-For information about quotas and limitations and how to open a support ticket, see [Quotas and limitations](media-services-quotas-and-limitations).
+For information about quotas and limitations and how to open a support ticket, see [Quotas and limitations](/documentation/articles/media-services-quotas-and-limitations).
 
 
 <!-- deleted by customization

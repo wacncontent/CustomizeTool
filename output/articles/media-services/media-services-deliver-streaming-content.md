@@ -16,15 +16,15 @@
 #How to: Deliver streaming content
  
 > [AZURE.SELECTOR]
-- [REST](media-services-rest-deliver-streaming-content)
-- [.NET](media-services-deliver-streaming-content)
-- [Portal](media-services-manage-content#publish)
+- [REST](/documentation/articles/media-services-rest-deliver-streaming-content)
+- [.NET](/documentation/articles/media-services-deliver-streaming-content)
+- [Portal](/documentation/articles/media-services-manage-content#publish)
 
 ##Overview
 
-You can stream an adaptive bitrate MP4 set by creating an OnDemand streaming locator and building a streaming URL. The [encoding an asset](media-services-encode-asset) topic shows how to encode into an adaptive bitrate MP4 set. 
+You can stream an adaptive bitrate MP4 set by creating an OnDemand streaming locator and building a streaming URL. The [encoding an asset](/documentation/articles/media-services-encode-asset) topic shows how to encode into an adaptive bitrate MP4 set. 
 
->[AZURE.NOTE]If your content is encrypted, configure asset delivery policy (as described in [this](media-services-dotnet-configure-asset-delivery-policy) topic) before creating a locator. 
+>[AZURE.NOTE]If your content is encrypted, configure asset delivery policy (as described in [this](/documentation/articles/media-services-dotnet-configure-asset-delivery-policy) topic) before creating a locator. 
 
 You can also use an OnDemand streaming locator to build URLs that point to MP4 files that can be progressively downloaded.  
 
@@ -166,4 +166,4 @@ You can view AMS learning paths here:
 
 ##See Also
 
-[Download assets](media-services-deliver-asset-download)
+[Download assets](/documentation/articles/media-services-deliver-asset-download)

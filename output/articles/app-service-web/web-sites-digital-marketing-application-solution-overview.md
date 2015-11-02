@@ -33,7 +33,7 @@ The following areas are addressed in this guide:
 - [Monitor the Campaign](#monitor)
 <!-- keep by customization: end -->
 > [AZURE.NOTE]
-> This guide presents some of the most common areas and tasks that are aligned with running a digital marketing campaign in Azure Websites. However, there are other common solutions that you can implement in Azure Websites. To review these solutions, see the other guides on [Global Web Presence](web-sites-global-web-presence-solution-overview) and [Business Applications](web-sites-business-application-solution-overview).
+> This guide presents some of the most common areas and tasks that are aligned with running a digital marketing campaign in Azure Websites. However, there are other common solutions that you can implement in Azure Websites. To review these solutions, see the other guides on [Global Web Presence](/documentation/articles/web-sites-global-web-presence-solution-overview) and [Business Applications](/documentation/articles/web-sites-business-application-solution-overview).
 
 ## Create from scratch or bring existing assets
 
@@ -98,33 +98,33 @@ In the **Standard** tier, monitor app responsiveness receive email notifications
 ## More Resources
 
 - [Azure Websites Documentation](/home/features/app-service/web/)
-- [Learning Map for Azure Websites](websites-learning-map)
+- [Learning Map for Azure Websites](/documentation/articles/websites-learning-map)
 - [Azure Web Blog](/blog/topics/web/)
 
 [AZURE.INCLUDE [app-service-web-whats-changed](../includes/app-service-web-whats-changed.md)]
 
 [Azure Websites]: /home/features/web-site/
 
-[Orchard]: web-sites-dotnet-orchard-cms-gallery
-[Umbraco]: web-sites-gallery-umbraco
-[WordPress]: web-sites-php-web-site-gallery
-[MySQL]: web-sites-php-mysql-deploy-use-git
-[Azure SQL Database]: web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database
-[FTP]: web-sites-deploy#ftp
-[Visual Studio]: web-sites-dotnet-get-started
-[Visual Studio Online]: cloud-services-continuous-delivery-use-vso
-[Git]: web-sites-publish-source-control
-[deploying to a staging slot]: web-sites-staged-publishing
+[Orchard]: /documentation/articles/web-sites-dotnet-orchard-cms-gallery
+[Umbraco]: /documentation/articles/web-sites-gallery-umbraco
+[WordPress]: /documentation/articles/web-sites-php-web-site-gallery
+[MySQL]: /documentation/articles/web-sites-php-mysql-deploy-use-git
+[Azure SQL Database]: /documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database
+[FTP]: /documentation/articles/web-sites-deploy#ftp
+[Visual Studio]: /documentation/articles/web-sites-dotnet-get-started
+[Visual Studio Online]: /documentation/articles/cloud-services-continuous-delivery-use-vso
+[Git]: /documentation/articles/web-sites-publish-source-control
+[deploying to a staging slot]: /documentation/articles/web-sites-staged-publishing
 [continuously publish]:http://rickrainey.com/2014/01/21/continuous-deployment-github-with-azure-web-sites-and-staged-publishing/
 [run A/B tests]:http://blogs.msdn.com/b/tomholl/archive/2014/11/10/a-b-testing-with-azure-websites.aspx
 
-[Create an ASP.NET MVC app with auth and SQL DB and deploy to Azure Websites]: web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database
+[Create an ASP.NET MVC app with auth and SQL DB and deploy to Azure Websites]: /documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database
 [Azure Media Services]:http://blogs.technet.com/b/cbernier/archive/2013/09/03/windows-azure-media-services-and-web-sites.aspx
-[SendGrid service in Azure Marketplace]: sendgrid-dotnet-how-to-send-email
-[Mobile Services]: mobile-services-dotnet-backend-windows-store-dotnet-push-notifications-app-users
-[Notification Hub]: mobile-services-dotnet-backend-windows-store-dotnet-push-notifications-app-users
+[SendGrid service in Azure Marketplace]: /documentation/articles/sendgrid-dotnet-how-to-send-email
+[Mobile Services]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-push-notifications-app-users
+[Notification Hub]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-push-notifications-app-users
 [Azure Traffic Manager]:http://www.hanselman.com/blog/CloudPowerHowToScaleAzureWebsitesGloballyWithTrafficManager.aspx
-[integrating your web app with Azure CDN]: cdn-websites-with-cdn
+[integrating your web app with Azure CDN]: /documentation/articles/cdn-websites-with-cdn
 [CDN node]:https://msdn.microsoft.com/zh-cn/library/azure/gg680302.aspx
 
 [scale up and out]:/manage/services/web-sites/how-to-scale-websites/
@@ -137,7 +137,7 @@ In the **Standard** tier, monitor app responsiveness receive email notifications
 [ASP.NET session state]:https://msdn.microsoft.com/zh-cn/library/azure/dn690522.aspx
 [output cache]:https://msdn.microsoft.com/zh-cn/library/azure/dn798898.aspx
 
-[quick glance]: web-sites-monitor
+[quick glance]:/documentation/articles/web-sites-monitor/
 [Azure Application Insights]:http://blogs.msdn.com/b/visualstudioalm/archive/2015/01/07/application-insights-and-azure-websites.aspx
 [New Relic]:/develop/net/how-to-guides/new-relic/
 [How to: Receive Alert Notifications and Manage Alert Rules in Azure]:http://msdn.microsoft.com/zh-cn/library/azure/dn306638.aspx

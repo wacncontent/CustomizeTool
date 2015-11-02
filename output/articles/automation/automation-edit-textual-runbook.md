@@ -13,13 +13,13 @@
 
 # Editing textual runbooks in Azure Automation
 
-The textual editor in Azure Automation can be used to edit [PowerShell runbooks](automation-runbook-types#powershell-runbooks) and [PowerShell Workflow runbooks](automation-runbook-types#powershell-workflow-runbooks). This has the typical features of other code editors such as intellisense and color coding  with additional special features to assist you in accessing resources common to runbooks.  This article provides detailed steps for performing different functions with this editor.
+The textual editor in Azure Automation can be used to edit [PowerShell runbooks](/documentation/articles/automation-runbook-types#powershell-runbooks) and [PowerShell Workflow runbooks](/documentation/articles/automation-runbook-types#powershell-workflow-runbooks). This has the typical features of other code editors such as intellisense and color coding  with additional special features to assist you in accessing resources common to runbooks.  This article provides detailed steps for performing different functions with this editor.
 
 The textual editor includes a feature to insert code for activities, assets, and child runbooks into a runbook. Rather than typing in the code yourself, you can select from a list of available resources and have the appropriate code inserted into the runbook.
 
-Each runbook in Azure Automation has two versions, Draft and Published. You edit the Draft version of the workflow and then publish it so it can be executed. The Published version cannot be edited. See [Publishing a runbook](automation-creating-importing-runbook#publishing-a-runbook) for more information.
+Each runbook in Azure Automation has two versions, Draft and Published. You edit the Draft version of the workflow and then publish it so it can be executed. The Published version cannot be edited. See [Publishing a runbook](/documentation/articles/automation-creating-importing-runbook#publishing-a-runbook) for more information.
 
-To work with [Graphical Runbooks](automation-runbook-types#graphical-runbooks), see [Graphical authoring in Azure Automation](automation-graphical-authoring-intro).
+To work with [Graphical Runbooks](/documentation/articles/automation-runbook-types#graphical-runbooks), see [Graphical authoring in Azure Automation](/documentation/articles/automation-graphical-authoring-intro).
 
 ## To edit a runbook with the Azure <!-- deleted by customization preview portal --><!-- keep by customization: begin -->Management Portal<!-- keep by customization: end -->
 
@@ -43,7 +43,7 @@ Use the following procedure to open a runbook for editing in the textual editor.
 
 ### To insert code for a child runbook into a runbook
 
-2. In the Canvas of the textual editor, position the cursor where you want to place the code for the [child runbook](automation-child-runbooks).
+2. In the Canvas of the textual editor, position the cursor where you want to place the code for the [child runbook](/documentation/articles/automation-child-runbooks).
 3. Expand the **Runbooks** node in the Library control. 
 3. Right click the runbook to insert and select **Add to canvas**.
 4. The code for the child runbook is inserted with any placeholders for any runbook parameters.
@@ -54,7 +54,7 @@ Use the following procedure to open a runbook for editing in the textual editor.
 2. In the Canvas of the textual editor, position the cursor where you want to place the code for the child runbook.
 3. Expand the **Assets** node in the Library control. 
 4. Expand the node for the type of asset you want.
-3. Right click the asset to insert and select **Add to canvas**.  For [variable assets](variable-assets), select either **Add "Get Variable" to canvas** or **Add "Set Variable" to canvas** depending on whether you want to get or set the variable.
+3. Right click the asset to insert and select **Add to canvas**.  For [variable assets](/documentation/articles/variable-assets), select either **Add "Get Variable" to canvas** or **Add "Set Variable" to canvas** depending on whether you want to get or set the variable.
 4. The code for the asset is inserted into the runbook.
 
 
@@ -84,7 +84,7 @@ Use the following procedure to open a runbook for editing in the textual editor.
 
 ### To insert code for a child runbook into a runbook
 
-1. In the Canvas of the textual editor, position the cursor where you want to place the [child runbook](automation-child-runbooks).
+1. In the Canvas of the textual editor, position the cursor where you want to place the [child runbook](/documentation/articles/automation-child-runbooks).
 2. At the bottom of the screen, click **Insert** and then **Runbook**.
 3. Select the runbook to insert from the center column and click the right arrow.
 4. If the runbook has parameters, they will be listed for your information.
@@ -120,7 +120,7 @@ The following sample commands show how to retrieve the script for a runbook and 
 
 ### To Change the Contents of a Runbook Using Windows PowerShell
 
-The following sample commands show how to replace the existing contents of a runbook with the contents of a script file containing a workflow. Note that this is the same sample procedure as in [To import a runbook from a script file with Windows PowerShell](automation-creating-or-importing-a-runbook#ImportRunbookScriptPS).
+The following sample commands show how to replace the existing contents of a runbook with the contents of a script file containing a workflow. Note that this is the same sample procedure as in [To import a runbook from a script file with Windows PowerShell](/documentation/articles/automation-creating-or-importing-a-runbook#ImportRunbookScriptPS).
 
     $automationAccountName = "MyAutomationAccount"
     $runbookName = "Sample-TestRunbook"
@@ -131,13 +131,13 @@ The following sample commands show how to replace the existing contents of a run
 
 ## Related articles
 
-- [Creating or importing a runbook in Azure Automation](automation-creatnig-importing-runbook)
-- [Learning PowerShell workflow](automation-powershell-workflow)
+- [Creating or importing a runbook in Azure Automation](/documentation/articles/automation-creatnig-importing-runbook)
+- [Learning PowerShell workflow](/documentation/articles/automation-powershell-workflow)
 <!-- deleted by customization
-- [Graphical authoring in Azure Automation](automation-graphical-authoring-intro)
+- [Graphical authoring in Azure Automation](/documentation/articles/automation-graphical-authoring-intro)
 -->
-- [Certificates](automation-certificates)
-- [Connections](automation-connections)
-- [Credentials](automation-credentials)
-- [Schedules](automation-schedules)
-- [Variables](automation-variables)
+- [Certificates](/documentation/articles/automation-certificates)
+- [Connections](/documentation/articles/automation-connections)
+- [Credentials](/documentation/articles/automation-credentials)
+- [Schedules](/documentation/articles/automation-schedules)
+- [Variables](/documentation/articles/automation-variables)

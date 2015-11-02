@@ -113,6 +113,6 @@ You can view AMS learning paths here:
 
 ##See also
 
-[Encoding On-Demand Content with Azure Media Services](media-services-encode-asset)
+[Encoding On-Demand Content with Azure Media Services](/documentation/articles/media-services-encode-asset)
 
-[How to encode with Media Encoder Standard](media-services-dotnet-encode-with-media-encoder-standard)
+[How to encode with Media Encoder Standard](/documentation/articles/media-services-dotnet-encode-with-media-encoder-standard)

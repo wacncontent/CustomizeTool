@@ -30,11 +30,11 @@ Before you begin this article, you must have the following:
 
 - **An Azure subscription**. See [Get Azure trial](/pricing/1rmb-trial/).
 
-- **Azure CLI** - See [Install and configure the Azure CLI](xplat-cli-install) for installation and configuration information.
+- **Azure CLI** - See [Install and configure the Azure CLI](/documentation/articles/xplat-cli-install) for installation and configuration information.
 
 ##Installation
 
-If you have not already done so, use the [Install and configure the Azure CLI](xplat-cli-install) document to install and configure the Azure CLI.
+If you have not already done so, use the [Install and configure the Azure CLI](/documentation/articles/xplat-cli-install) document to install and configure the Azure CLI.
 
 ##Provision an HDInsight cluster
 
@@ -143,16 +143,16 @@ In this article, you have learned how to perform different HDInsight cluster adm
 * [How to use the Azure CLI] [azure-command-line-tools]
 
 
-[azure-command-line-tools]: xplat-cli-install
-[azure-create-storageaccount]: storage-create-storage-account
+[azure-command-line-tools]: /documentation/articles/xplat-cli-install
+[azure-create-storageaccount]: /documentation/articles/storage-create-storage-account
 [azure-purchase-options]: /pricing/overview/
 [azure-member-offers]: http://azure.microsoft.com/pricing/member-offers/
 [azure-trial]: /pricing/1rmb-trial/
 
 
-[hdinsight-admin-portal]: hdinsight-administer-use-management-portal-v1
-[hdinsight-admin-powershell]: hdinsight-administer-use-powershell
-[hdinsight-get-started]: hdinsight-get-started
+[hdinsight-admin-portal]: /documentation/articles/hdinsight-administer-use-management-portal-v1
+[hdinsight-admin-powershell]: /documentation/articles/hdinsight-administer-use-powershell
+[hdinsight-get-started]: /documentation/articles/hdinsight-get-started
 [image-cli-account-download-import]: ./media/hdinsight-administer-use-command-line/HDI.CLIAccountDownloadImport.png
 [image-cli-clustercreation]: ./media/hdinsight-administer-use-command-line/HDI.CLIClusterCreation.png
 [image-cli-clustercreation-config]: ./media/hdinsight-administer-use-command-line/HDI.CLIClusterCreationConfig.png

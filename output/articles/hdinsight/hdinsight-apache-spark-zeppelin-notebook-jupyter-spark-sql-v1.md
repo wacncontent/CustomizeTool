@@ -17,7 +17,7 @@
 
 [AZURE.INCLUDE [hdinsight-azure-portal](../includes/hdinsight-azure-portal.md)]
 
-* [Provision Apache Spark on HDInsight and run interactive queries using Spark SQL](hdinsight-apache-spark-zeppelin-notebook-jupyter-spark-sql)
+* [Provision Apache Spark on HDInsight and run interactive queries using Spark SQL](/documentation/articles/hdinsight-apache-spark-zeppelin-notebook-jupyter-spark-sql)
 
 Learn how to provision an Apache Spark cluster in HDInsight using the Quick Create option and then use the web-based [Zeppelin](https://zeppelin.incubator.apache.org) and [Jupyter](https://jupyter.org) notebooks to run Spark SQL interactive queries on the Spark cluster.
 
@@ -46,9 +46,9 @@ Select the new storage account from the list and click **MANAGE ACCESS KEYS** at
 	
 ##<a name="provision"></a>Provision an HDInsight Spark cluster
 
-In this section, you provision an HDInsight version 3.2 cluster, which is based on Spark version 1.3.1. For information about HDInsight versions and their SLAs, see [HDInsight component versioning](hdinsight-component-versioning).
+In this section, you provision an HDInsight version 3.2 cluster, which is based on Spark version 1.3.1. For information about HDInsight versions and their SLAs, see [HDInsight component versioning](/documentation/articles/hdinsight-component-versioning).
 
->[AZURE.NOTE] The steps in this article create an Apache Spark cluster in HDInsight by using basic configuration settings. For information about other cluster configuration settings (such as using additional storage, Azure virtual network, or a metastore for Hive), see [Provision HDInsight clusters using custom options](hdinsight-apache-spark-provision-clusters).
+>[AZURE.NOTE] The steps in this article create an Apache Spark cluster in HDInsight by using basic configuration settings. For information about other cluster configuration settings (such as using additional storage, Azure virtual network, or a metastore for Hive), see [Provision HDInsight clusters using custom options](/documentation/articles/hdinsight-apache-spark-provision-clusters).
 
 
 **To provision a Spark cluster** 
@@ -238,19 +238,19 @@ In this section, you use a Jupyter notebook to run Spark SQL queries against a S
 ##<a name="seealso"></a>See also
 
 
-* [Overview: Apache Spark on Azure HDInsight](hdinsight-apache-spark-overview)
-* [Provision a Spark on HDInsight cluster](hdinsight-apache-spark-provision-clusters)
-* [Perform interactive data analysis using Spark in HDInsight with BI tools](hdinsight-apache-spark-use-bi-tools)
-* [Use Spark in HDInsight for building machine learning applications](hdinsight-apache-spark-ipython-notebook-machine-learning)
-* [Use Spark in HDInsight for building real-time streaming applications](hdinsight-apache-spark-csharp-apache-zeppelin-eventhub-streaming)
-* [Manage resources for the Apache Spark cluster in Azure HDInsight](hdinsight-apache-spark-resource-manager)
+* [Overview: Apache Spark on Azure HDInsight](/documentation/articles/hdinsight-apache-spark-overview)
+* [Provision a Spark on HDInsight cluster](/documentation/articles/hdinsight-apache-spark-provision-clusters)
+* [Perform interactive data analysis using Spark in HDInsight with BI tools](/documentation/articles/hdinsight-apache-spark-use-bi-tools)
+* [Use Spark in HDInsight for building machine learning applications](/documentation/articles/hdinsight-apache-spark-ipython-notebook-machine-learning)
+* [Use Spark in HDInsight for building real-time streaming applications](/documentation/articles/hdinsight-apache-spark-csharp-apache-zeppelin-eventhub-streaming)
+* [Manage resources for the Apache Spark cluster in Azure HDInsight](/documentation/articles/hdinsight-apache-spark-resource-manager)
 
 
-[hdinsight-versions]: hdinsight-component-versioning
-[hdinsight-upload-data]: hdinsight-upload-data
-[hdinsight-storage]: hdinsight-use-blob-storage
+[hdinsight-versions]: /documentation/articles/hdinsight-component-versioning
+[hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
+[hdinsight-storage]: /documentation/articles/hdinsight-use-blob-storage
 [azure-purchase-options]: /pricing/overview/
 [azure-member-offers]: http://azure.microsoft.com/pricing/member-offers/
 [azure-trial]: /pricing/1rmb-trial/
 [azure-management-portal]: https://manage.windowsazure.cn/
-[azure-create-storageaccount]: storage-create-storage-account
+[azure-create-storageaccount]: /documentation/articles/storage-create-storage-account

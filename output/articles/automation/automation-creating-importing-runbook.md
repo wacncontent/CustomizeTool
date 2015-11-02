@@ -13,7 +13,7 @@
 
 # Creating or importing a runbook in Azure Automation
 
-You can add a runbook to Azure Automation by either [creating a new one](#creating-a-new-runbook) or by importing an existing runbook from a file or from the [Runbook Gallery](automation-runbook-gallery). This article provides information on creating and importing runbooks from a file.  You can get all of the details on accessing community runbooks and modules in [Runbook and module galleries for Azure Automation](automation-runbook-gallery).
+You can add a runbook to Azure Automation by either [creating a new one](#creating-a-new-runbook) or by importing an existing runbook from a file or from the [Runbook Gallery](/documentation/articles/automation-runbook-gallery). This article provides information on creating and importing runbooks from a file.  You can get all of the details on accessing community runbooks and modules in [Runbook and module galleries for Azure Automation](/documentation/articles/automation-runbook-gallery).
 
 ## Creating a new runbook
 
@@ -21,7 +21,7 @@ You can create a new runbook in Azure Automation using one of the Azure Manageme
 
 ### To create a new Azure Automation runbook with the Azure Management Portal
 
-You can only work with [PowerShell Workflow runbooks](automation-runbook-types#powershell-workflow-runbooks) in the Azure Management Portal.
+You can only work with [PowerShell Workflow runbooks](/documentation/articles/automation-runbook-types#powershell-workflow-runbooks) in the Azure Management Portal.
 
 1. In the Azure Management Portal, click, **New**, **Azure Websites**, **Automation**, **Runbook**, **Quick Create**.
 2. Enter the required information, and then click **Create**. The runbook name must start with a letter and can have letters, numbers, underscores, and dashes.
@@ -35,14 +35,14 @@ You can only work with [PowerShell Workflow runbooks](automation-runbook-types#p
 1. In the Azure Preview Portal, open your Automation account. 
 2. Click on the **Runbooks** tile to open the list of runbooks.
 3. Click on the **Add a runbook** button and then **Create a new runbook**.
-2. Type a **Name** for the runbook and select its [Type](automation-runbook-types). The runbook name must start with a letter and can have letters, numbers, underscores, and dashes.
+2. Type a **Name** for the runbook and select its [Type](/documentation/articles/automation-runbook-types). The runbook name must start with a letter and can have letters, numbers, underscores, and dashes.
 3. Click **Create** to create the runbook and open the editor.
 
 -->
 <!-- keep by customization: begin -->
 ### To create a new Azure Automation runbook with the Azure Management Portal
 
-1. In the Azure portal, click, **New**, **App Services**, **Automation**, **Runbook**, **Quick Create**.
+1. In the Azure Management Portal, click, **New**, **Azure Websites**, **Automation**, **Runbook**, **Quick Create**.
 2. Enter the required information, and then click **Create**. The runbook name must start with a letter and can have letters, numbers, underscores, and dashes.
 3. If you want to edit the runbook now, then click **Edit Runbook**. Otherwise, click **OK**.
 4. Your new runbook will appear on the **Runbooks** tab.
@@ -50,7 +50,7 @@ You can only work with [PowerShell Workflow runbooks](automation-runbook-types#p
 
 ### To create a new Azure Automation runbook with Windows PowerShell
 
-You can use the [New-AzureAutomationRunbook](https://msdn.microsoft.com/zh-cn/library/dn690272.aspx) cmdlet to create an empty [PowerShell Workflow runbook](automation-runbook-types#powershell-workflow-runbooks). You can either specify the **Name** parameter to create an empty runbook that you can later edit, or you can specify the **Path** parameter to import a script file. 
+You can use the [New-AzureAutomationRunbook](https://msdn.microsoft.com/zh-cn/library/dn690272.aspx) cmdlet to create an empty [PowerShell Workflow runbook](/documentation/articles/automation-runbook-types#powershell-workflow-runbooks). You can either specify the **Name** parameter to create an empty runbook that you can later edit, or you can specify the **Path** parameter to import a script file. 
 
 The following sample commands show how to create a new empty runbook.
 
@@ -60,13 +60,13 @@ The following sample commands show how to create a new empty runbook.
 
 ## Importing a runbook from a file into Azure Automation
 
-You can create a new runbook in Azure Automation by importing a PowerShell script or PowerShell Workflow (.ps1 extension)<!-- deleted by customization or an exported graphical runbook (.graphrunbook)-->.  You must specify the [type of runbook](automation-runbook-types) that will be created from the import taking into account the following considerations. 
+You can create a new runbook in Azure Automation by importing a PowerShell script or PowerShell Workflow (.ps1 extension)<!-- deleted by customization or an exported graphical runbook (.graphrunbook)-->.  You must specify the [type of runbook](/documentation/articles/automation-runbook-types) that will be created from the import taking into account the following considerations. 
 <!-- deleted by customization
 
-- A .graphrunbook file may only be imported into a new [graphical runbook](automation-runbook-types#graphical-runbooks), and graphical runbooks can only be created from a .graphrunbook file.
+- A .graphrunbook file may only be imported into a new [graphical runbook](/documentation/articles/automation-runbook-types#graphical-runbooks), and graphical runbooks can only be created from a .graphrunbook file.
 -->
-- A .ps1 file containing a PowerShell Workflow can only be imported into a [PowerShell Workflow runbook](automation-runbook-types#powershell-workflow-runbooks).  If the file contains multiple PowerShell Workflows, then the import will fail. You must save each workflow to its own file and import each separately.
-- A .ps1 file that does not contain a workflow can be imported into either a [PowerShell runbook](automation-runbook-types#powershell-runbooks) or a [PowerShell Workflow runbook](automation-runbook-types#powershell-workflow-runbooks).  If it is imported into a PowerShell Workflow runbook, then it will be converted to a workflow, and comments will be included in the runbook specifying the changes that were made.
+- A .ps1 file containing a PowerShell Workflow can only be imported into a [PowerShell Workflow runbook](/documentation/articles/automation-runbook-types#powershell-workflow-runbooks).  If the file contains multiple PowerShell Workflows, then the import will fail. You must save each workflow to its own file and import each separately.
+- A .ps1 file that does not contain a workflow can be imported into either a [PowerShell runbook](/documentation/articles/automation-runbook-types#powershell-runbooks) or a [PowerShell Workflow runbook](/documentation/articles/automation-runbook-types#powershell-workflow-runbooks).  If it is imported into a PowerShell Workflow runbook, then it will be converted to a workflow, and comments will be included in the runbook specifying the changes that were made.
 
 ### To import a runbook from a file with the Azure Management Portal
 You can use the following procedure to import a script file into Azure Automation.  Note that you can only import a .ps1 file into a PowerShell Workflow runbook using this portal.  You must use the Azure preview portal for other types.
@@ -88,7 +88,7 @@ You can use the following procedure to import a script file into Azure Automatio
 3. Click on the **Add a runbook** button and then **Import**.
 4. Click **Runbook file** to select the file to import
 2. If the **Name** field is enabled, then you have the option to change it.  The runbook name must start with a letter and can have letters, numbers, underscores, and dashes.
-3. Select a [runbook type](automation-runbook-types) taking into account the restrictions listed above.
+3. Select a [runbook type](/documentation/articles/automation-runbook-types) taking into account the restrictions listed above.
 3. The new runbook will appear in the list of runbooks for the Automation Account.
 4. You must [publish the runbook](#publishing-a-runbook) before you can run it.
 -->
@@ -139,8 +139,8 @@ You can use the [Publish-AzureAutomationRunbook](https://msdn.microsoft.com/zh-c
 
 ## Related articles
 
-- [Runbook and module galleries for Azure Automation](automation-runbook-gallery)
-- [Editing textual runbooks in Azure Automation](automation-edit-textual-runbook)
+- [Runbook and module galleries for Azure Automation](/documentation/articles/automation-runbook-gallery)
+- [Editing textual runbooks in Azure Automation](/documentation/articles/automation-edit-textual-runbook)
 <!-- deleted by customization
-- [Graphical authoring in Azure Automation](automation-graphical-authoring-intro)
+- [Graphical authoring in Azure Automation](/documentation/articles/automation-graphical-authoring-intro)
 -->

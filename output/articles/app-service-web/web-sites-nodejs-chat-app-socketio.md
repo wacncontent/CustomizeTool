@@ -69,7 +69,7 @@ Follow these steps to create an Azure web app, enable Git publishing, and then e
 
 > [AZURE.NOTE] To complete this tutorial, you need an Azure account. If you don't have an account, you can create a trial account in just a couple of minutes. For details, see <a href="/pricing/1rmb-trial/?WT.mc_id=A7171371E" target="_blank">Azure Trial</a>.
 
-1. Install the Azure Command-Line Interface (Azure CLI) and connect to your Azure subscription. See [Install and Configure the Azure CLI](xplat-cli).
+1. Install the Azure Command-Line Interface (Azure CLI) and connect to your Azure subscription. See [Install and Configure the Azure CLI](/documentation/articles/xplat-cli).
 
 2. If this is your first time setting up a repository in Azure, you need to create login credentials. From the Azure CLI, enter the following command:
 
@@ -290,7 +290,8 @@ For more information, see also the [Node.js Developer Center](/develop/nodejs/).
 [completed-app]: ./media/web-sites-nodejs-chat-app-socketio/websitesocketcomplete.png
 [Socket.IO GitHub repository]: https://github.com/Automattic/socket.io
 [release]: https://github.com/Automattic/socket.io/releases
-[cloudservice]: cloud-services-nodejs-chat-app-socketio
+[cloudservice]: /documentation/articles/cloud-services-nodejs-chat-app-socketio/
+
 [chat-example-view]: ./media/web-sites-nodejs-chat-app-socketio/socketio-2.png
 [npm-output]: ./media/web-sites-nodejs-chat-app-socketio/socketio-7.png
 [pricing]: /home/features/web-site/#price

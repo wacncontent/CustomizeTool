@@ -22,7 +22,7 @@ Your blobs could exist in a storage account that is associated with Media Servic
 
 ##Prerequisites
 
-- Two Media Services accounts in a new or existing Azure subscription. See the topic [How to Create a Media Services Account](media-services-create-account).
+- Two Media Services accounts in a new or existing Azure subscription. See the topic [How to Create a Media Services Account](/documentation/articles/media-services-create-account).
 - Operating Systems: Windows 10, Windows 7, Windows 2008 R2, or Windows 8.
 - .NET Framework 4.5.
 - Visual Studio 2010 SP1 (Professional, Premium, Ultimate, or Express) or later.

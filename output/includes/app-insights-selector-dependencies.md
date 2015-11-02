@@ -1,4 +1,4 @@
 > [AZURE.SELECTOR]
-- [ASP.NET](app-insights-dependencies)
-- [Java](app-insights-java-agent)
-- [Azure](insights-perf-analytics)
+- [ASP.NET](/documentation/articles/app-insights-dependencies)
+- [Java](/documentation/articles/app-insights-java-agent)
+- [Azure](/documentation/articles/insights-perf-analytics)

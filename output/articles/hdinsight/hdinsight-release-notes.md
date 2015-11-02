@@ -1044,9 +1044,9 @@ Learn how to work with HDInsight by walking through some basic scenarios (such a
 **Note**: To demonstrate the new capabilities made available by cluster customization, the procedures using Script Action to install <!-- deleted by customization Spark and -->R modules on a cluster have been documented. For further information, see:
 <!-- deleted by customization 
 
-* [Install and use Spark 1.0 on HDInsight clusters](hdinsight-hadoop-spark-install)
+* [Install and use Spark 1.0 on HDInsight clusters](/documentation/articles/hdinsight-hadoop-spark-install)
 -->
-* [Install and use R on HDInsight Hadoop clusters](hdinsight-hadoop-r-scripts)
+* [Install and use R on HDInsight Hadoop clusters](/documentation/articles/hdinsight-hadoop-r-scripts)
 
 
 
@@ -1137,7 +1137,7 @@ Regarding the Azure PowerShell and the HDInsight SDK error message: "*Cluster is
 
 * This error is a known [compatibility issue](https://social.msdn.microsoft.com/Forums/azure/a7de016d-8de1-4385-b89e-d2e7a1a9d927/hdinsight-powershellsdk-error-cluster-is-not-configured-for-http-services-access?forum=hdinsight) that may occur due to a difference in the version of the  HDInsight SDK or Azure PowerShell and the version of the cluster. Clusters created on 8/15 or later have support for new provisioning capability into virtual networks. But this capability is not correctly interpreted by older versions of the  HDInsight SDK or Azure PowerShell. The result is a failure in some job submission operations. If you use  HDInsight SDK APIs or Azure PowerShell cmdlets (**Use-AzureHDInsightCluster** or **Invoke-Hive**) to submit jobs, those operations may fail with the error message "*Cluster <clustername> is not configured for HTTP services access*." Or (depending on the operation), you may get other error messages, such as "*Cannot connect to cluster*".
 
-* These compatibility issues are resolved in the latest versions of the HDInsight SDK and Azure PowerShell. We recommend updating the HDInsight SDK to version 1.3.1.6 or later and Azure PowerShell Tools to version 0.8.8 or later. You can get access to the latest HDInsight SDK from [](http://nuget.codeplex.com/wikipage?title=Getting%20Started) and the Azure PowerShell Tools at [How to install and configure Azure PowerShell](powershell-install-configure).
+* These compatibility issues are resolved in the latest versions of the HDInsight SDK and Azure PowerShell. We recommend updating the HDInsight SDK to version 1.3.1.6 or later and Azure PowerShell Tools to version 0.8.8 or later. You can get access to the latest HDInsight SDK from [](http://nuget.codeplex.com/wikipage?title=Getting%20Started) and the Azure PowerShell Tools at [How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure).
 
 
 
@@ -1180,7 +1180,7 @@ These compatibility issues are resolved in the latest versions of the HDInsight 
 -->
 	* China North
 	* China East
-* HDInsight version 1.6 (HDP 1.1 and Hadoop 1.0.3) and HDInsight version 2.1 (HDP1.3 and Hadoop 1.2) are being removed from the Azure Management Portal. You can continue to create Hadoop clusters for these versions by using the Azure PowerShell cmdlet, [New-AzureHDInsightCluster](http://msdn.microsoft.com/zh-cn/library/dn593744.aspx) or by using the [HDInsight SDK](http://msdn.microsoft.com/zh-cn/library/azure/dn469975.aspx). Please refer to the [HDInsight component versioning](hdinsight-component-versioning) page for more information.
+* HDInsight version 1.6 (HDP 1.1 and Hadoop 1.0.3) and HDInsight version 2.1 (HDP1.3 and Hadoop 1.2) are being removed from the Azure Management Portal. You can continue to create Hadoop clusters for these versions by using the Azure PowerShell cmdlet, [New-AzureHDInsightCluster](http://msdn.microsoft.com/zh-cn/library/dn593744.aspx) or by using the [HDInsight SDK](http://msdn.microsoft.com/zh-cn/library/azure/dn469975.aspx). Please refer to the [HDInsight component versioning](/documentation/articles/hdinsight-component-versioning) page for more information.
 * Hortonworks Data Platform (HDP) changes in this release:
 
 <table border="1">
@@ -1373,7 +1373,7 @@ The following version changes were made between HDInsight 2.x (HDP1.x) and HDIns
 
 
 ### Drivers
-The Java Database Connnectivity (JDBC) driver for SQL Server is used internally by HDInsight and is not used for external operations. If you want to connect to HDInsight by using Open Database Connectivity (ODBC), please use the Microsoft Hive ODBC driver. For more information, see [Connect Excel to HDInsight with the Microsoft Hive ODBC Driver](hdinsight-connect-excel-hive-odbc-driver).
+The Java Database Connnectivity (JDBC) driver for SQL Server is used internally by HDInsight and is not used for external operations. If you want to connect to HDInsight by using Open Database Connectivity (ODBC), please use the Microsoft Hive ODBC driver. For more information, see [Connect Excel to HDInsight with the Microsoft Hive ODBC Driver](/documentation/articles/hdinsight-connect-excel-hive-odbc-driver).
 
 
 ### Bug fixes
@@ -1412,6 +1412,6 @@ Release notes for the Hortonworks Data Platforms (HDPs) that are used by HDInsig
 [webpi-link]: http://go.microsoft.com/?linkid=9811175&clcid=0x409
 
 <!-- deleted by customization
-[hdinsight-install-spark]: hdinsight-hadoop-spark-install
+[hdinsight-install-spark]: /documentation/articles/hdinsight-hadoop-spark-install
 -->
-[hdinsight-r-scripts]: hdinsight-hadoop-r-scripts
+[hdinsight-r-scripts]: /documentation/articles/hdinsight-hadoop-r-scripts

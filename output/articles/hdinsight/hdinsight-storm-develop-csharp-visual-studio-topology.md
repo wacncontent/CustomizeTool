@@ -35,11 +35,11 @@ You will also learn how to create hybrid topologies that use C# and Java compone
 
 -	Azure SDK 2.5.1 or later
 
--	HDInsight Tools for Visual Studio: See [Get started using HDInsight Tools for Visual Studio](hdinsight-hadoop-visual-studio-tools-get-started) to install and configure the HDInsight tools for Visual Studio.
+-	HDInsight Tools for Visual Studio: See [Get started using HDInsight Tools for Visual Studio](/documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started) to install and configure the HDInsight tools for Visual Studio.
 
     > [AZURE.NOTE] HDInsight Tools for Visual Studio are not supported on Visual Studio Express
 
--	Apache Storm on HDInsight cluster: See [Getting started with Apache Storm on HDInsight](hdinsight-storm-getting-started) for steps to create a cluster.
+-	Apache Storm on HDInsight cluster: See [Getting started with Apache Storm on HDInsight](/documentation/articles/hdinsight-storm-getting-started) for steps to create a cluster.
 
 	> [AZURE.NOTE] Currently, the HDInsight Tools for Visual Studio only support Storm on HDInsight versions 3.2 clusters.
 
@@ -66,7 +66,7 @@ In the steps in this document, you will use the basic Storm Application project 
 
 ##Create a C# topology
 
-1.	If you have not already installed the latest version of the HDInsight Tools for Visual Studio, see [Get started using HDInsight Tools for Visual Studio](hdinsight-hadoop-visual-studio-tools-get-started).
+1.	If you have not already installed the latest version of the HDInsight Tools for Visual Studio, see [Get started using HDInsight Tools for Visual Studio](/documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started).
 
 2.	Open Visual Studio, select **File** > **New**, and then **Project**.
 
@@ -630,7 +630,7 @@ To view errors that have occurred in a running topology, use the following steps
 
 ##Next steps
 
-Now that you have learned how to develop and deploy Storm topologies from the HDInsight tools for Visual Studio, learn how to [Process events from Azure Event Hub with Storm on HDInsight](hdinsight-storm-develop-csharp-event-hub-topology).
+Now that you have learned how to develop and deploy Storm topologies from the HDInsight tools for Visual Studio, learn how to [Process events from Azure Event Hub with Storm on HDInsight](/documentation/articles/hdinsight-storm-develop-csharp-event-hub-topology).
 
 For an example of a C# topology that splits stream data into multiple streams, see [C# Storm example](https://github.com/Blackmist/csharp-storm-example).
 
@@ -640,18 +640,18 @@ For more ways to work with HDInsight and more Storm on HDinsight samples, see th
 
 **Apache Storm on HDInsight**
 
--	[Deploy and monitor topologies with Apache Storm on HDInsight](hdinsight-storm-deploy-monitor-topology)
+-	[Deploy and monitor topologies with Apache Storm on HDInsight](/documentation/articles/hdinsight-storm-deploy-monitor-topology)
 
--	[Example topologies for Storm on HDInsight](hdinsight-storm-example-topology)
+-	[Example topologies for Storm on HDInsight](/documentation/articles/hdinsight-storm-example-topology)
 
 **Apache Hadoop on HDInsight**
 
--	[Use Hive with Hadoop on HDInsight](hdinsight-use-hive)
+-	[Use Hive with Hadoop on HDInsight](/documentation/articles/hdinsight-use-hive)
 
--	[Use Pig with Hadoop on HDInsight](hdinsight-use-pig)
+-	[Use Pig with Hadoop on HDInsight](/documentation/articles/hdinsight-use-pig)
 
--	[Use MapReduce with Hadoop on HDInsight](hdinsight-use-mapreduce)
+-	[Use MapReduce with Hadoop on HDInsight](/documentation/articles/hdinsight-use-mapreduce)
 
 **Apache HBase on HDInsight**
 
--	[Getting started with HBase on HDInsight](hdinsight-hbase-get-started)
+-	[Getting started with HBase on HDInsight](/documentation/articles/hdinsight-hbase-get-started)

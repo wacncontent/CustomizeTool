@@ -18,7 +18,7 @@
 [AZURE.INCLUDE [media-services-selector-manage-channels](../includes/media-services-selector-manage-channels.md)]
 
 
-This tutorial walks you through the steps of implementing a basic Media Services live streaming application where a channel receives a multi-bitrate live stream from an on-premises live encoder. For a more detailed overview of working with channels and related components, see [Working with channels that receive multi-bitrate live stream from on-premises encoders](media-services-manage-channels-overview).
+This tutorial walks you through the steps of implementing a basic Media Services live streaming application where a channel receives a multi-bitrate live stream from an on-premises live encoder. For a more detailed overview of working with channels and related components, see [Working with channels that receive multi-bitrate live stream from on-premises encoders](/documentation/articles/media-services-manage-channels-overview).
 
 In this tutorial, the Azure Management Portal is used to accomplish the following tasks:
 
@@ -35,7 +35,7 @@ The following are required to complete the tutorial.
 
 - To complete this tutorial, you need an Azure account. If you don't have an account, you can create a trial account in just a couple of minutes.
 For details, see [Azure Trial](/pricing/1rmb-trial/).
-- A Media Services account. To create a Media Services account, see [Create Account](media-services-create-account).
+- A Media Services account. To create a Media Services account, see [Create Account](/documentation/articles/media-services-create-account).
 - A webcam and an encoder that can send a multi-bitrate live stream.
 
 
@@ -85,7 +85,7 @@ Once the channel is created, you can get ingest URLs that you will provide to th
 
 ![ingesturls](./media/media-services-portal-get-started-with-live/media-services-ingest-urls.png)
 
-For more information about Ingest URLs, see [Using on-premises encoders to send multi-bitrate live stream to a channel](media-services-channels-overview).
+For more information about Ingest URLs, see [Using on-premises encoders to send multi-bitrate live stream to a channel](/documentation/articles/media-services-channels-overview).
 
 ## Configure a live encoder and ingest live stream
 
@@ -174,7 +174,7 @@ To build an  MPEG DASH streaming URL, append (format=mpd-time-csf) to the URL.
 
 	{streaming endpoint name-media services account name}.streaming.mediaservices.chinacloudapi.cn/{locator ID}/{filename}.ism/Manifest(format=mpd-time-csf)
 
-For more information about delivering your content, see [Delivering content](media-services-deliver-content-overview).
+For more information about delivering your content, see [Delivering content](/documentation/articles/media-services-deliver-content-overview).
 
 You can playback Smooth Stream using [AMS Player](http://amsplayer.azurewebsites.net/azuremediaplayer.html) or use iOS and Android devices to play HLS version 3.
 

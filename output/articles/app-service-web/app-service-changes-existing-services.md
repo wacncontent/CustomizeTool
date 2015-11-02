@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties 
 	pageTitle="Azure Websites and its impact on existing Azure services" 
 	description="Explains how the new Azure Websites and its features impact existing services in Azure." 

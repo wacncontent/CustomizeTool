@@ -22,7 +22,7 @@ Script Action can be used to install additional software running on a Hadoop clu
 > [AZURE.NOTE] If you experience the following error message: 
 > 
 >     System.Management.Automation.CommandNotFoundException; ExceptionMessage : The term 'Save-HDIFile' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
-> It is because you didn't include the helper methods.  See [Helper methods for custom scripts](hdinsight-hadoop-script-actions#helper-methods-for-custom-scripts).
+> It is because you didn't include the helper methods.  See [Helper methods for custom scripts](/documentation/articles/hdinsight-hadoop-script-actions#helper-methods-for-custom-scripts).
 
 ## Sample scripts
 
@@ -87,12 +87,12 @@ Name | Script
 **Install Spark** | https://hdiconfigactions.blob.core.windows.net/sparkconfigactionv03/spark-installer-v03.ps1. See [Install and use Spark on HDInsight clusters][hdinsight-install-spark].
 -->
 **Install R** | https://hdiconfigactions.blob.core.windows.net/rconfigactionv02/r-installer-v02.ps1. See [Install and use R on HDInsight clusters][hdinsight-r-scripts].
-**Install Solr** | https://hdiconfigactions.blob.core.windows.net/solrconfigactionv01/solr-installer-v01.ps1. See [Install and use Solr on HDInsight clusters](hdinsight-hadoop-solr-install).
-- **Install Giraph** | https://hdiconfigactions.blob.core.windows.net/giraphconfigactionv01/giraph-installer-v01.ps1. See [Install and use Giraph on HDInsight clusters](hdinsight-hadoop-giraph-install).
+**Install Solr** | https://hdiconfigactions.blob.core.windows.net/solrconfigactionv01/solr-installer-v01.ps1. See [Install and use Solr on HDInsight clusters](/documentation/articles/hdinsight-hadoop-solr-install).
+- **Install Giraph** | https://hdiconfigactions.blob.core.windows.net/giraphconfigactionv01/giraph-installer-v01.ps1. See [Install and use Giraph on HDInsight clusters](/documentation/articles/hdinsight-hadoop-giraph-install).
 
 Script Action can be deployed from the Azure <!-- deleted by customization preview portal --><!-- keep by customization: begin -->Management Portal<!-- keep by customization: end -->, Azure PowerShell or by using the HDInsight .NET SDK.  For more information, see [Customize HDInsight clusters using Script Action][hdinsight-cluster-customize].
 
-> [AZURE.NOTE] The sample scripts work only with HDInsight cluster version 3.1 or above. For more information on HDInsight cluster versions, see [HDInsight cluster versions](hdinsight-component-versioning).
+> [AZURE.NOTE] The sample scripts work only with HDInsight cluster version 3.1 or above. For more information on HDInsight cluster versions, see [HDInsight cluster versions](/documentation/articles/hdinsight-component-versioning).
 
 
 
@@ -251,7 +251,7 @@ A straight-forward way to test a custom script before using it in the HDInsight 
 
 This section outlines the procedure for using the HDInsight Emulator locally for testing purposes, but the procedure for using a VM is similar.
 
-**Install the HDInsight Emulator** - To run Script Action locally, you must have the HDInsight Emulator installed. For instructions on how to install it, see [Get started with the HDInsight Emulator](hdinsight-get-started-emulator).
+**Install the HDInsight Emulator** - To run Script Action locally, you must have the HDInsight Emulator installed. For instructions on how to install it, see [Get started with the HDInsight Emulator](/documentation/articles/hdinsight-get-started-emulator).
 
 **Set the execution policy for Azure PowerShell** - Open Azure PowerShell and run (as administrator) the following command to set the execution policy to *LocalMachine* and to be *Unrestricted*:
 
@@ -282,7 +282,7 @@ Note that in some cases a custom script may actually depend on HDInsight compone
 ## Debug custom scripts
 
 The script error logs are stored, along with other output, in the default Storage account that you specified for the cluster at its creation. The logs are stored in a table with the name *u<\cluster-name-fragment><\time-stamp>setuplog*. These are aggregated logs that have records from all of the nodes (head node and worker nodes) on which the script runs in the cluster.
-An easy way to check the logs is to use HDInsight Tools for Visual Studio. For installing the tools, see [Get started using Visual Studio Hadoop tools for HDInsight](hdinsight-hadoop-visual-studio-tools-get-started#install-hdinsight-tools-for-visual-studio)
+An easy way to check the logs is to use HDInsight Tools for Visual Studio. For installing the tools, see [Get started using Visual Studio Hadoop tools for HDInsight](/documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started#install-hdinsight-tools-for-visual-studio)
 
 **To check the log using Visual Studio**
 
@@ -346,15 +346,15 @@ In the event that an execution failure occurs, the output describing it will als
 - [Install and use Spark on HDInsight clusters][hdinsight-install-spark]
 -->
 - [Install and use R on HDInsight clusters][hdinsight-r-scripts]
-- [Install and use Solr on HDInsight clusters](hdinsight-hadoop-solr-install).
-- [Install and use Giraph on HDInsight clusters](hdinsight-hadoop-giraph-install).
+- [Install and use Solr on HDInsight clusters](/documentation/articles/hdinsight-hadoop-solr-install).
+- [Install and use Giraph on HDInsight clusters](/documentation/articles/hdinsight-hadoop-giraph-install).
 
-[hdinsight-provision]: hdinsight-provision-clusters
-[hdinsight-cluster-customize]: hdinsight-hadoop-customize-cluster
+[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters
+[hdinsight-cluster-customize]: /documentation/articles/hdinsight-hadoop-customize-cluster
 <!-- deleted by customization
-[hdinsight-install-spark]: hdinsight-hadoop-spark-install
+[hdinsight-install-spark]: /documentation/articles/hdinsight-hadoop-spark-install
 -->
-[hdinsight-r-scripts]: hdinsight-hadoop-r-scripts
-[powershell-install-configure]: install-configure-powershell
+[hdinsight-r-scripts]: /documentation/articles/hdinsight-hadoop-r-scripts
+[powershell-install-configure]: /documentation/articles/install-configure-powershell
 <!--Reference links in article-->
 [1]: https://msdn.microsoft.com/zh-cn/library/96xafkes(v=vs.110).aspx

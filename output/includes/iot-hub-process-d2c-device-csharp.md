@@ -32,8 +32,8 @@ In this section, you'll modify the simulated device application to send interact
 > [AZURE.NOTE] For simplicity's sake, this tutorial does not implement any retry policy. In production code, it is reccommended to implement retry policies (such as exponential backoff), as suggested in the MSDN article [Transient Fault Handling].
 
 <!-- Links -->
-[Get started with IoT Hub]: iot-hub-csharp-csharp-getstarted
-[IoT Hub Developer Guide - C2D]: iot-hub-devguide#c2d
+[Get started with IoT Hub]: /documentation/articles/iot-hub-csharp-csharp-getstarted
+[IoT Hub Developer Guide - C2D]: /documentation/articles/iot-hub-devguide#c2d
 
 <!-- Images -->
 [10]: ./media/iot-hub-getstarted-cloud-csharp/create-identity-csharp1.png

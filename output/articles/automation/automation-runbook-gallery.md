@@ -110,5 +110,5 @@ You can send requests to [User Voice](http://feedback.azure.com/forums/246290-az
 
 ## Related articles
 
-- [Creating or importing a runbook in Azure Automation](automation-creating-importing-runbook)
-- [Learning PowerShell workflow](automation-powershell-workflow)
+- [Creating or importing a runbook in Azure Automation](/documentation/articles/automation-creating-importing-runbook)
+- [Learning PowerShell workflow](/documentation/articles/automation-powershell-workflow)

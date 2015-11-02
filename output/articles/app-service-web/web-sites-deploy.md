@@ -54,8 +54,8 @@ Another deployment option is to use a cloud-based service such as [Octopus Deplo
 
 For more information, see the following resources:
 
-* [Continuous delivery to Azure using Visual Studio Online and TFVC](cloud-services-continuous-delivery-use-vso). Step-by-step tutorial that shows how to set up continuous delivery from Visual Studio Online to a web app, using TFVC. TFVC is the centralized source control option, as opposed to Git, which is the distributed source control option.
-* [Continuous delivery to Azure using Visual Studio Online and Git](cloud-services-continuous-delivery-use-vso-git). Similar to the previous tutorial but uses Git instead of TFVC.
+* [Continuous delivery to Azure using Visual Studio Online and TFVC](/documentation/articles/cloud-services-continuous-delivery-use-vso). Step-by-step tutorial that shows how to set up continuous delivery from Visual Studio Online to a web app, using TFVC. TFVC is the centralized source control option, as opposed to Git, which is the distributed source control option.
+* [Continuous delivery to Azure using Visual Studio Online and Git](/documentation/articles/cloud-services-continuous-delivery-use-vso-git). Similar to the previous tutorial but uses Git instead of TFVC.
 
 ##<a name="git"></a>Repository websites using Git
 
@@ -63,7 +63,7 @@ For more information, see the following resources:
 
 For more information, see the following resources:
 
-* [Publishing from Source Control to Web Apps with Git](web-sites-publish-source-control). How to use Git to publish directly from your local computer to Web Apps (in Azure, this method of publishing is called Local Git). Also shows how to enable continuous deployment of Git repositories from GitHub, CodePlex, or BitBucket.
+* [Publishing from Source Control to Web Apps with Git](/documentation/articles/web-sites-publish-source-control). How to use Git to publish directly from your local computer to Web Apps (in Azure, this method of publishing is called Local Git). Also shows how to enable continuous deployment of Git repositories from GitHub, CodePlex, or BitBucket.
 * [Deploying to Web Apps with GitHub using Kudu](http://azure.microsoft.com/documentation/videos/deploying-to-azure-from-github/). Video by Scott Hanselman and David Ebbo that shows how to deploy a web app directly from GitHub to Web Apps.
 * [Deploy to Azure Button for Web Apps](http://azure.microsoft.com/blog/2014/11/13/deploy-to-azure-button-for-azure-websites-2/). Blog about a method for triggering deployment from a Git repository.
 * [Azure Forum for Git, Mercurial, and Dropbox](http://social.msdn.microsoft.com/Forums/zh-cn/home?forum=windowsazurezhchshome?forum=azuregit).
@@ -74,7 +74,7 @@ If you use [Mercurial](http://mercurial.selenic.com/) as your source control sys
 
 For information about how to deploy using Mercurial, see the following resources:
 
-* [Publishing from Source Control to Web Apps with Git](web-sites-publish-source-control). Although this tutorial shows how to publish a Git repository, the process for Mercurial repositories hosted in CodePlex or BitBucket is similar.
+* [Publishing from Source Control to Web Apps with Git](/documentation/articles/web-sites-publish-source-control). Although this tutorial shows how to publish a Git repository, the process for Mercurial repositories hosted in CodePlex or BitBucket is similar.
 * [Azure Forum for Git, Mercurial, and Dropbox](http://social.msdn.microsoft.com/Forums/zh-cn/home?forum=windowsazurezhchshome?forum=azuregit).
 <!-- deleted by customization
 
@@ -91,9 +91,9 @@ For information about how to deploy using Mercurial, see the following resources
 
 For information about how to deploy to Web Apps from Visual Studio, see the following resources:
 
-* [Get started with Azure and ASP.NET](web-sites-dotnet-get-started). How to create and deploy a simple ASP.NET MVC web project by using Visual Studio and Web Deploy.
-* [How to Deploy Azure WebJobs using Visual Studio](websites-dotnet-deploy-webjobs). How to configure Console Application projects so that they deploy as WebJobs.  
-* [Deploy a Secure ASP.NET MVC 5 app with Membership, OAuth, and SQL Database to Web Apps](web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database). How to create and deploy an ASP.NET MVC web project with a SQL database, by using Visual Studio, Web Deploy, and Entity Framework Code First Migrations.
+* [Get started with Azure and ASP.NET](/documentation/articles/web-sites-dotnet-get-started). How to create and deploy a simple ASP.NET MVC web project by using Visual Studio and Web Deploy.
+* [How to Deploy Azure WebJobs using Visual Studio](/documentation/articles/websites-dotnet-deploy-webjobs). How to configure Console Application projects so that they deploy as WebJobs.  
+* [Deploy a Secure ASP.NET MVC 5 app with Membership, OAuth, and SQL Database to Web Apps](/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database). How to create and deploy an ASP.NET MVC web project with a SQL database, by using Visual Studio, Web Deploy, and Entity Framework Code First Migrations.
 * [Web Deployment Overview for Visual Studio and ASP.NET](http://msdn.microsoft.com/zh-cn/library/dd394698.aspx). A basic introduction to web deployment using Visual Studio. Dated but includes information that is still relevant, including an overview of options for deploying a database along with the web application and a list of additional deployment tasks you might have to do or manually configure Visual Studio to do for you. This topic is about deployment in general, not just about deployment to Web Apps.
 * [ASP.NET Web Deployment using Visual Studio](http://www.asp.net/mvc/tutorials/deployment/visual-studio-web-deployment/introduction). A 12-part tutorial series that covers a more complete range of deployment tasks than the others in this list. Some Azure deployment features have been added since the tutorial was written, but notes added later explain what's missing.
 * [Deploying an ASP.NET Website to Azure in Visual Studio 2012 from a Git Repository directly](http://www.dotnetcurry.com/ShowArticle.aspx?ID=881). Explains how to deploy an ASP.NET web project in Visual Studio, using the Git plug-in to commit the code to Git and connecting Azure to the Git repository. Starting in Visual Studio 2013, Git support is built-in an doesn't require installation of a plug-in.
@@ -102,13 +102,13 @@ For information about how to deploy to Web Apps from Visual Studio, see the foll
 
 For information about how to deploy to Web Apps from WebMatrix, see the following resources:
 
-* [Build and deploy a Node.js web site to Azure using WebMatrix](web-sites-nodejs-use-webmatrix).
-* [Create and deploy a PHP-MySQL web app using WebMatrix](web-sites-php-mysql-use-webmatrix).
+* [Build and deploy a Node.js web site to Azure using WebMatrix](/documentation/articles/web-sites-nodejs-use-webmatrix).
+* [Create and deploy a PHP-MySQL web app using WebMatrix](/documentation/articles/web-sites-php-mysql-use-webmatrix).
 * [WebMatrix 3: Integrated Git and Deployment to Azure](http://www.codeproject.com/Articles/577581/Webmatrixplus3-3aplusIntegratedplusGitplusandplusD). How to use WebMatrix to deploy from a Git source control repository.
 
 For more information, see the following resources:
 
-* [Create a PHP-MySQL web app and deploy using FTP](web-sites-php-mysql-deploy-use-ftp).
+* [Create a PHP-MySQL web app and deploy using FTP](/documentation/articles/web-sites-php-mysql-deploy-use-ftp).
 
 ##<a name="tfs"></a>Team Foundation Server (TFS)
 
@@ -116,7 +116,7 @@ Team Foundation Server is Microsoft's on-premises solution for source control an
 
 For more information, see the following resource:
 
-* [Continuous Delivery for Cloud Services in Azure](cloud-services-dotnet-continuous-delivery). This document is for an Azure Cloud Service, but some of its content is relevant to Web Apps.
+* [Continuous Delivery for Cloud Services in Azure](/documentation/articles/cloud-services-dotnet-continuous-delivery). This document is for an Azure Cloud Service, but some of its content is relevant to Web Apps.
 
 ##<a name="gitmercurial"></a>On-premises Git or Mercurial repositories
 
@@ -124,7 +124,7 @@ In Azure you can enter the URL of any repository that uses Git or Mercurial in o
 
 For more information, see the following resources:
 
-* [Publishing from Source Control to Web Apps with Git](web-sites-publish-source-control). How to use Git to publish directly from your local computer to a web app (in Azure, this method of publishing is called Local Git). Also shows how to enable continuous deployment of Git repositories from GitHub, CodePlex, or BitBucket.
+* [Publishing from Source Control to Web Apps with Git](/documentation/articles/web-sites-publish-source-control). How to use Git to publish directly from your local computer to a web app (in Azure, this method of publishing is called Local Git). Also shows how to enable continuous deployment of Git repositories from GitHub, CodePlex, or BitBucket.
 * [Publishing to Web Apps from any git/hg repo](http://blog.davidebbo.com/2013/04/publishing-to-azure-web-sites-from-any.html). Blog that explains the "External Repository" feature in Web Apps.
 * [Azure Forum for Git, Mercurial, and Dropbox](http://social.msdn.microsoft.com/Forums/zh-cn/home?forum=windowsazurezhchshome?forum=azuregit).
 * [Deploying TWO websites to Azure from one Git Repository](http://www.hanselman.com/blog/DeployingTWOWebsitesToWindowsAzureFromOneGitRepository.aspx). Blog post by Scott Hanselman.
@@ -155,9 +155,9 @@ You can perform MSBuild or FTP deployment functions from [Windows PowerShell](ht
 For more information, see the following resources:
 <!-- deleted by customization
 
-* [Deploy a web app linked to a GitHub repository](app-service-web-arm-from-github-provision)
-* [Provision a web app with a SQL Database](app-service-web-arm-with-sql-database-provision)
-* [Provision and deploy microservices predictably in Azure](app-service-deploy-complex-application-predictably)
+* [Deploy a web app linked to a GitHub repository](/documentation/articles/app-service-web-arm-from-github-provision)
+* [Provision a web app with a SQL Database](/documentation/articles/app-service-web-arm-with-sql-database-provision)
+* [Provision and deploy microservices predictably in Azure](/documentation/articles/app-service-deploy-complex-application-predictably)
 -->
 * [Building Real-World Cloud Apps with Azure - Automate Everything](http://asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/automate-everything). E-book chapter that explains how the sample application shown in the e-book uses Windows PowerShell scripts to create an Azure test environment and deploy to it. See the [Resources](http://asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/automate-everything#resources) section for links to additional Azure PowerShell documentation.
 * [Using Windows PowerShell Scripts to Publish to Dev and Test Environments](http://msdn.microsoft.com/zh-cn/library/dn642480.aspx). How to use Windows PowerShell deployment scripts that Visual Studio generates.
@@ -192,9 +192,9 @@ For more information, see the following resource:
 
 ##<a name="nextsteps"></a>Next Steps
 
-In some scenarios you might want to be able to easily switch back and forth between a staging and a production version of your web app. For more information, see [Staged Deployment on Web Apps](web-sites-staged-publishing).
+In some scenarios you might want to be able to easily switch back and forth between a staging and a production version of your web app. For more information, see [Staged Deployment on Web Apps](/documentation/articles/web-sites-staged-publishing).
 
-Having a backup and restore plan in place is an important part of any deployment workflow. For information about the Web Apps backup and restore feature, see [Web Apps Backups](web-sites-backup).  
+Having a backup and restore plan in place is an important part of any deployment workflow. For information about the Web Apps backup and restore feature, see [Web Apps Backups](/documentation/articles/web-sites-backup).  
 
 For information about how to use Azure's Role-Based Access Control to manage access to Web Apps deployment, see [RBAC and Web App Publishing](http://azure.microsoft.com/blog/2015/01/05/rbac-and-azure-websites-publishing).
 

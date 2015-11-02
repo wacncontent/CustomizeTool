@@ -17,8 +17,8 @@
 
 
 > [AZURE.SELECTOR]
-- [.NET](media-services-get-media-processor)
-- [REST](media-services-rest-get-media-processor)
+- [.NET](/documentation/articles/media-services-get-media-processor)
+- [REST](/documentation/articles/media-services-rest-get-media-processor)
 
 ##Overview
 
@@ -28,10 +28,10 @@ The following table provides the name and description of each available media pr
 
 Media Processor Name|Description|More Information
 ---|---|---
-Azure Media Encoder|Lets you run encoding tasks using the Azure Media Encoder.|[Azure Media Encoder](media-services-encode-asset#azure_media_encoder)
-Media Encoder Standard|Lets you run encoding tasks using the Media Encoder Standard.|[Azure Media Encoder](media-services-encode-asset#media_encoder_standard)
-Media Encoder Premium Workflow|Lets you run encoding tasks using Media Encoder Premium Workflow.|[Media Encoder Premium Workflow](media-services-encode-asset#media_encoder_premium_wokrflow)
-Azure Media Indexer| Enables you to make media files and content searchable, as well as generate closed captioning tracks and keywords.|[Indexing Media Files with Azure Media Indexer](media-services-index-content).
+Azure Media Encoder|Lets you run encoding tasks using the Azure Media Encoder.|[Azure Media Encoder](/documentation/articles/media-services-encode-asset#azure_media_encoder)
+Media Encoder Standard|Lets you run encoding tasks using the Media Encoder Standard.|[Azure Media Encoder](/documentation/articles/media-services-encode-asset#media_encoder_standard)
+Media Encoder Premium Workflow|Lets you run encoding tasks using Media Encoder Premium Workflow.|[Media Encoder Premium Workflow](/documentation/articles/media-services-encode-asset#media_encoder_premium_wokrflow)
+Azure Media Indexer| Enables you to make media files and content searchable, as well as generate closed captioning tracks and keywords.|[Indexing Media Files with Azure Media Indexer](/documentation/articles/media-services-index-content).
 Azure Media Hyperlapse (preview)|Enables you to smooth out the "bumps" in your video with video stabilization. Also allows you to speed up your content into a consumable clip.|		[Azure Media Hyperlapse](http://azure.microsoft.com/blog/?p=286281&preview=1&_ppp=61e1a0b3db)</a>
 Storage Decryption| Lets you decrypt media assets that were encrypted using storage encryption.|N/A
 Windows  Azure Media Packager|Lets you convert media assets from .mp4 to smooth streaming format. Also, lets you convert media assets from smooth streaming to the Apple HTTP Live Streaming (HLS) format.|[Task Preset Strings for the Azure Media Packager](http://msdn.microsoft.com/zh-cn/library/hh973635.aspx)
@@ -41,9 +41,9 @@ Windows  Azure Media Encryptor|Lets you encrypt media assets using PlayReady Pro
 
 >[AZURE.NOTE] When working with the Media Services REST API, the following considerations apply:
 >
->When accessing entities in Media Services, you must set specific header fields and values in your HTTP requests. For more information, see [Setup for Media Services REST API Development](media-services-rest-how-to-use).
+>When accessing entities in Media Services, you must set specific header fields and values in your HTTP requests. For more information, see [Setup for Media Services REST API Development](/documentation/articles/media-services-rest-how-to-use).
 
->After successfully connecting to https://media.chinacloudapi.cn, you will receive a 301 redirect specifying another Media Services URI. You must make subsequent calls to the new URI as described in [Connecting to Media Services using REST API](media-services-rest-connect_programmatically). 
+>After successfully connecting to https://media.chinacloudapi.cn, you will receive a 301 redirect specifying another Media Services URI. You must make subsequent calls to the new URI as described in [Connecting to Media Services using REST API](/documentation/articles/media-services-rest-connect_programmatically). 
 
 
 
@@ -95,6 +95,6 @@ You can view AMS learning paths here:
 ##Next Steps
 Now that you know how to get a media processor instance, go to the [How to Encode an Asset][] topic which will show you how to use the Azure Media Encoder to encode an asset.
 
-[How to Encode an Asset]: media-services-rest-encode-asset
+[How to Encode an Asset]: /documentation/articles/media-services-rest-encode-asset
 [Task Preset Strings for the Azure Media Encoder]: http://msdn.microsoft.com/zh-cn/library/jj129582.aspx
-[How to: Connect to Media Services Programmatically]: media-services-rest-connect_programmatically
+[How to: Connect to Media Services Programmatically]: /documentation/articles/media-services-rest-connect_programmatically

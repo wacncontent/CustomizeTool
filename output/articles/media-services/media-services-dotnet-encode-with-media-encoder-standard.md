@@ -19,9 +19,9 @@ Encoding jobs are one of the most common processing operations in Media Services
 
 This topic shows how to use .NET to encode your assets with Media Encoder Standard. Media Encoder Standard is configured using one of the encoder presets described [here](https://msdn.microsoft.com/zh-cn/library/azure/mt269960.aspx).
 
-It is recommended to always encode your mezzanine files into an adaptive bitrate MP4 set and then convert the set to the desired format using the [Dynamic Packaging](media-services-dynamic-packaging-overview). To take advantage of dynamic packaging, you must first get at least one On-demand streaming unit for the streaming endpoint from which you plan to delivery your content. For more information, see [How to Scale Media Services](media-services-manage-origins#scale_streaming_endpoints).
+It is recommended to always encode your mezzanine files into an adaptive bitrate MP4 set and then convert the set to the desired format using the [Dynamic Packaging](/documentation/articles/media-services-dynamic-packaging-overview). To take advantage of dynamic packaging, you must first get at least one On-demand streaming unit for the streaming endpoint from which you plan to delivery your content. For more information, see [How to Scale Media Services](/documentation/articles/media-services-manage-origins#scale_streaming_endpoints).
 
-If your output asset is storage encrypted, you must configure asset delivery policy. For more information see [Configuring asset delivery policy](media-services-dotnet-configure-asset-delivery-policy).
+If your output asset is storage encrypted, you must configure asset delivery policy. For more information see [Configuring asset delivery policy](/documentation/articles/media-services-dotnet-configure-asset-delivery-policy).
 
 ##Example
 
@@ -121,5 +121,5 @@ You can view AMS learning paths here:
 
 ##See Also 
 
-[How to generate thumbnail using Media Encoder Standard with .NET](media-services-dotnet-generate-thumbnail-with-mes)
-[Media Services Encoding Overview](media-services-encode-asset)
+[How to generate thumbnail using Media Encoder Standard with .NET](/documentation/articles/media-services-dotnet-generate-thumbnail-with-mes)
+[Media Services Encoding Overview](/documentation/articles/media-services-encode-asset)

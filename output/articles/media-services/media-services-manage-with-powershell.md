@@ -16,8 +16,8 @@
 #Manage Azure Media Services Accounts with PowerShell
 
 > [AZURE.SELECTOR]
-- [Portal](media-services-create-account)
-- [PowerShell](media-services-manage-with-powershell)
+- [Portal](/documentation/articles/media-services-create-account)
+- [PowerShell](/documentation/articles/media-services-manage-with-powershell)
 - [REST](https://msdn.microsoft.com/zh-cn/library/azure/dn167014.aspx)
 
 ##Overview 
@@ -29,7 +29,7 @@ This articles shows you how to use PowerShell cmdlets to manage Azure Media Serv
 
 ##Install Windows Azure PowerShell Cmdlets
 
-To install the latest Azure PowerShell cmdlets, see [How to install and configure Azure PowerShell](powershell-install-configure)
+To install the latest Azure PowerShell cmdlets, see [How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure)
 
 ##Select Azure Subscription
 

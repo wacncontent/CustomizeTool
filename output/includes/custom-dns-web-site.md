@@ -110,7 +110,7 @@ To create a CNAME record, you must add a new entry in the DNS table for your cus
 
 			get-azurewebsite yoursitename | select hostnames
 
-	* Install and configure the [Azure Command Line Interface](install-and-configure-cli), and then use the following command:
+	* Install and configure the [Azure Command Line Interface](/documentation/articles/install-and-configure-cli/), and then use the following command:
 
 			azure site domain list yoursitename
 
@@ -151,7 +151,7 @@ After the CNAME record for domain name has propagated, you must associate it wit
 
 **To add a domain name using the command-line tools**
 
-Install and configure the [Azure Command-Line Interface](install-and-configure-cli), and then use the following command:
+Install and configure the [Azure Command-Line Interface](/documentation/articles/install-and-configure-cli/), and then use the following command:
 
 	azure site domain add customdomain yoursitename
 
@@ -247,7 +247,7 @@ After the **awverify** CNAME record for domain name has propagated, you can then
 
 **To add a domain name using the Azure Command-Line Interface (Azure CLI)**
 
-Install and configure the [Azure CLI](install-and-configure-cli), and then use the following command:
+Install and configure the [Azure CLI](/documentation/articles/install-and-configure-cli/), and then use the following command:
 
 	azure site domain add customdomain yoursitename
 
@@ -281,9 +281,9 @@ Once configuration has completed, the custom domain name will be listed in the *
 
 ## Next steps
 
--   [How to manage web sites](web-sites-manage)
+-   [How to manage web sites](/documentation/articles/web-sites-manage/)
 
--   [Configure an SSL certificate for Web Sites](web-sites-configure-ssl-certificate)
+-   [Configure an SSL certificate for Web Sites](/documentation/articles/web-sites-configure-ssl-certificate/)
 
 
 <!-- Bookmarks -->
@@ -299,10 +299,10 @@ Once configuration has completed, the custom domain name will be listed in the *
 [PricingDetails]: /pricing/overview/
 [portal]: http://manage.windowsazure.cn
 [digweb]: http://www.digwebinterface.com/
-[cloudservicedns]: custom-dns
-[trafficmanager]: web-sites-traffic-manager
-[addendpoint]: traffic-manager-endpoints
-[createprofile]: traffic-manager-manage-profiles
+[cloudservicedns]: /documentation/articles/custom-dns
+[trafficmanager]: /documentation/articles/web-sites-traffic-manager
+[addendpoint]: /documentation/articles/traffic-manager-endpoints
+[createprofile]: /documentation/articles/traffic-manager-manage-profiles
 <!-- images -->
 
 [setcname1]: ../media/dncmntask-cname-5.png

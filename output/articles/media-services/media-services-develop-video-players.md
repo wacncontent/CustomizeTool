@@ -40,7 +40,7 @@ For more information:
 You can also use any of the following SDKs:
 
 - [Smooth Streaming Client SDK](http://www.iis.net/downloads/microsoft/smooth-streaming) 
-- [Smooth Streaming Windows Store App](media-services-build-smooth-streaming-apps)
+- [Smooth Streaming Windows Store App](/documentation/articles/media-services-build-smooth-streaming-apps)
 - [Microsoft Media Platform: Player Framework](http://playerframework.codeplex.com/) 
 - [HTML5 Player Framework Documentation](http://playerframework.codeplex.com/wikipage?title=HTML5%20Player&referringTitle=Documentation) 
 - [Microsoft Smooth Streaming Plugin for OSMF](https://www.microsoft.com/download/details.aspx?id=36057) 
@@ -75,7 +75,7 @@ You can view AMS learning paths here:
 
 ##See Also
 
-[Embedding a MPEG-DASH Adaptive Streaming Video in an HTML5 Application with DASH.js](media-services-embed-mpeg-dash-in-html5)
+[Embedding a MPEG-DASH Adaptive Streaming Video in an HTML5 Application with DASH.js](/documentation/articles/media-services-embed-mpeg-dash-in-html5)
 
 [GitHub dash.js repository](https://github.com/Dash-Industry-Forum/dash.js)
  

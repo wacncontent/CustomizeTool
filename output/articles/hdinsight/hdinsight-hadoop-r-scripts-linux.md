@@ -16,7 +16,7 @@
 
 You can install R on any type of cluster in Hadoop on HDInsight by using **Script Action** cluster customization. This enables data scientists and analysts to use R to deploy the powerful MapReduce/YARN programming framework to process large amounts of data on Hadoop clusters that are deployed in HDInsight.
 
-> [AZURE.NOTE] The steps in this document require a Linux-based HDInsight cluster. For information on using R with a Windows-based cluster, see [Install and use R on HDinsight Hadoop clusters (Windows)](hdinsight-hadoop-r-scripts).
+> [AZURE.NOTE] The steps in this document require a Linux-based HDInsight cluster. For information on using R with a Windows-based cluster, see [Install and use R on HDinsight Hadoop clusters (Windows)](/documentation/articles/hdinsight-hadoop-r-scripts).
 
 ## What is R?
 
@@ -56,9 +56,9 @@ Additionally, the following R packages are installed:
 
 The [https://hdiconfigactions.blob.core.windows.net/linuxrconfigactionv01/r-installer-v01.sh](https://hdiconfigactions.blob.core.windows.net/linuxrconfigactionv01/r-installer-v01.sh) script action is used to install R on an HDInsight cluster. This section provides instructions about how to use the script when provisioning the cluster using the Azure Management Portal.
 
-> [AZURE.NOTE] You can also use Azure PowerShell or the HDInsight .NET SDK to create a cluster using this script. For more information on using these methods, see [Customize HDInsight clusters with Script Actions](hdinsight-hadoop-customize-cluster).
+> [AZURE.NOTE] You can also use Azure PowerShell or the HDInsight .NET SDK to create a cluster using this script. For more information on using these methods, see [Customize HDInsight clusters with Script Actions](/documentation/articles/hdinsight-hadoop-customize-cluster).
 
-1. Start provisioning a cluster by using the steps in [Provision Linux-based HDInsight clusters](hdinsight-provision-linux-clusters#portal), but do not complete provisioning.
+1. Start provisioning a cluster by using the steps in [Provision Linux-based HDInsight clusters](/documentation/articles/hdinsight-provision-linux-clusters#portal), but do not complete provisioning.
 
 2. On the **Optional Configuration** blade, select **Script Actions**, and provide the information below:
 
@@ -71,7 +71,7 @@ The [https://hdiconfigactions.blob.core.windows.net/linuxrconfigactionv01/r-inst
 
 3. At the bottom of the **Script Actions**, use the **Select** button to save the configuration. Finally, use the **Select** button at the bottom of the **Optional Configuration** blade to save the optional configuration information.
 
-4. Continue provisining the cluster as described in [Provision Linux-based HDInsight clusters](hdinsight-provision-linux-clusters#portal).
+4. Continue provisining the cluster as described in [Provision Linux-based HDInsight clusters](/documentation/articles/hdinsight-provision-linux-clusters#portal).
 
 ## Run R scripts
 
@@ -83,9 +83,9 @@ After the cluster has finished provisioning, use the following steps to use R to
 
 	For more information on using SSH with HDInsight, see the following:
 
-	* [Use SSH with Linux-based Hadoop on HDInsight from Linux, Unix, or OS X](hdinsight-hadoop-linux-use-ssh-unix)
+	* [Use SSH with Linux-based Hadoop on HDInsight from Linux, Unix, or OS X](/documentation/articles/hdinsight-hadoop-linux-use-ssh-unix)
 
-	* [Use SSH with Linux-based Hadoop on HDInsight from Windows](hdinsight-hadoop-linux-use-ssh-windows)
+	* [Use SSH with Linux-based Hadoop on HDInsight from Windows](/documentation/articles/hdinsight-hadoop-linux-use-ssh-windows)
 
 2. From the `username@headnode1:~$` prompt, enter the following command to start an interactive R session:
 
@@ -129,17 +129,17 @@ After the cluster has finished provisioning, use the following steps to use R to
 
 ## Next steps
 
-- [Install and use Hue on HDInsight clusters](hdinsight-hadoop-hue-linux). Hue is a web UI that makes it easy to create, run and save Pig and Hive jobs, as well as browse the default storage for your HDInsight cluster.
+- [Install and use Hue on HDInsight clusters](/documentation/articles/hdinsight-hadoop-hue-linux). Hue is a web UI that makes it easy to create, run and save Pig and Hive jobs, as well as browse the default storage for your HDInsight cluster.
 
 - [Install and use Spark on HDInsight clusters][hdinsight-install-spark] for  instructions about how to use cluster customization to install and use Spark on HDInsight Hadoop clusters. Spark is an open-source parallel processing framework that supports in-memory processing to boost the performance of big data analytic applications.
 
-- [Install Giraph on HDInsight clusters](hdinsight-hadoop-giraph-install). Use cluster customization to install Giraph on HDInsight Hadoop clusters. Giraph allows you to perform graph processing using Hadoop, and it can be used with Azure HDInsight.
+- [Install Giraph on HDInsight clusters](/documentation/articles/hdinsight-hadoop-giraph-install). Use cluster customization to install Giraph on HDInsight Hadoop clusters. Giraph allows you to perform graph processing using Hadoop, and it can be used with Azure HDInsight.
 
-- [Install Solr on HDInsight clusters](hdinsight-hadoop-solr-install). Use cluster customization to install Solr on HDInsight Hadoop clusters. Solr allows you to perform powerful search operations on stored data.
+- [Install Solr on HDInsight clusters](/documentation/articles/hdinsight-hadoop-solr-install). Use cluster customization to install Solr on HDInsight Hadoop clusters. Solr allows you to perform powerful search operations on stored data.
 
-- [Install Hue on HDInsight clusters](hdinsight-hadoop-hue-linux). Use cluster customization to install Hue on HDInsight Hadoop clusters. Hue is a set of Web applications used to interact with a Hadoop cluster.
+- [Install Hue on HDInsight clusters](/documentation/articles/hdinsight-hadoop-hue-linux). Use cluster customization to install Hue on HDInsight Hadoop clusters. Hue is a set of Web applications used to interact with a Hadoop cluster.
 
-[powershell-install-configure]: install-configure-powershell-linux
-[hdinsight-provision]: hdinsight-provision-clusters-linux
-[hdinsight-cluster-customize]: hdinsight-hadoop-customize-cluster
-[hdinsight-install-spark]: hdinsight-hadoop-spark-install-linux
+[powershell-install-configure]: /documentation/articles/install-configure-powershell-linux
+[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-linux
+[hdinsight-cluster-customize]: /documentation/articles/hdinsight-hadoop-customize-cluster
+[hdinsight-install-spark]: /documentation/articles/hdinsight-hadoop-spark-install-linux

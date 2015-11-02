@@ -18,7 +18,7 @@ Azure Redis Cache has different cache offerings which provide flexibility in the
 
 The Azure Redis Cache premium tier includes clustering, persistence, and virtual network support. This article describes how to configure persistence in a premium Azure Redis Cache instance.
 
-For information on other premium cache features, see [How to configure clustering for a Premium Azure Redis Cache](cache-how-to-premium-clustering) and [How to configure Virtual Network support for a Premium Azure Redis Cache](cache-how-to-premium-vnet).
+For information on other premium cache features, see [How to configure clustering for a Premium Azure Redis Cache](/documentation/articles/cache-how-to-premium-clustering) and [How to configure Virtual Network support for a Premium Azure Redis Cache](/documentation/articles/cache-how-to-premium-vnet).
 
 >[AZURE.NOTE] The Azure Redis Cache Premium tier is currently in preview. During the preview period, persistence cannot be used in conjunction with clustering or virtual networks.
 
@@ -79,8 +79,8 @@ All backups except for the most recent one are automatically deleted. This delet
 ## Next steps
 Learn how to use more premium cache features.
 
--	[How to configure clustering for a Premium Azure Redis Cache](cache-how-to-premium-clustering)
--	[How to configure Virtual Network support for a Premium Azure Redis Cache](cache-how-to-premium-vnet)
+-	[How to configure clustering for a Premium Azure Redis Cache](/documentation/articles/cache-how-to-premium-clustering)
+-	[How to configure Virtual Network support for a Premium Azure Redis Cache](/documentation/articles/cache-how-to-premium-vnet)
   
 <!-- IMAGES -->
 

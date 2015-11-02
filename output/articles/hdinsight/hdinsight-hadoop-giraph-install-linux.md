@@ -15,11 +15,11 @@
 
 # Install Giraph on HDInsight Hadoop clusters, and use Giraph to process large-scale graphs
 
-You can install Giraph on any type of cluster in Hadoop on Azure HDInsight by using **Script Action** cluster customization. Script Action lets you run scripts to customize a cluster, only when the cluster is being created. For more information, see [Customize HDInsight clusters using Script Action](hdinsight-hadoop-customize-cluster).
+You can install Giraph on any type of cluster in Hadoop on Azure HDInsight by using **Script Action** cluster customization. Script Action lets you run scripts to customize a cluster, only when the cluster is being created. For more information, see [Customize HDInsight clusters using Script Action](/documentation/articles/hdinsight-hadoop-customize-cluster).
 
 In this topic, you will learn how to install Giraph by using Script Action. Once you have installed Giraph, you'll also learn how to use Giraph for most typical applications, which is to process large-scale graphs.
 
-> [AZURE.NOTE] The information in this article is specific to Linux-based HDInsight clusters. For information on working with Windows-based clusters, see [Install Giraph on HDInsight Hadoop clusters (Windows)](hdinsight-hadoop-giraph-install)
+> [AZURE.NOTE] The information in this article is specific to Linux-based HDInsight clusters. For information on working with Windows-based clusters, see [Install Giraph on HDInsight Hadoop clusters (Windows)](/documentation/articles/hdinsight-hadoop-giraph-install)
 
 ## <a name="whatis"></a>What is Giraph?
 
@@ -40,9 +40,9 @@ This script performs the following actions:
 
 A sample script to install Giraph on an HDInsight cluster is available from a read-only Azure storage blob at [https://hdiconfigactions.blob.core.windows.net/linuxgiraphconfigactionv01/giraph-installer-v01.sh](https://hdiconfigactions.blob.core.windows.net/linuxgiraphconfigactionv01/giraph-installer-v01.sh). This section provides instructions on how to use the sample script while creating the cluster by using the Azure Management Portal.
 
-> [AZURE.NOTE] You can also use Azure PowerShell or the HDInsight .NET SDK to create a cluster using this script. For more information on using these methods, see [Customize HDInsight clusters with Script Actions](hdinsight-hadoop-customize-cluster).
+> [AZURE.NOTE] You can also use Azure PowerShell or the HDInsight .NET SDK to create a cluster using this script. For more information on using these methods, see [Customize HDInsight clusters with Script Actions](/documentation/articles/hdinsight-hadoop-customize-cluster).
 
-1. Start creating a cluster by using the steps in [Create Linux-based HDInsight clusters](hdinsight-provision-linux-clusters#portal), but do not complete creation.
+1. Start creating a cluster by using the steps in [Create Linux-based HDInsight clusters](/documentation/articles/hdinsight-provision-linux-clusters#portal), but do not complete creation.
 
 2. On the **Optional Configuration** blade, select **Script Actions**, and provide the information below:
 
@@ -55,7 +55,7 @@ A sample script to install Giraph on an HDInsight cluster is available from a re
 
 3. At the bottom of the **Script Actions**, use the **Select** button to save the configuration. Finally, use the **Select** button at the bottom of the **Optional Configuration** blade to save the optional configuration information.
 
-4. Continue creating the cluster as described in [Create Linux-based HDInsight clusters](hdinsight-provision-linux-clusters#portal).
+4. Continue creating the cluster as described in [Create Linux-based HDInsight clusters](/documentation/articles/hdinsight-provision-linux-clusters#portal).
 
 ## <a name="usegiraph"></a>How do I use Giraph in HDInsight?
 
@@ -67,9 +67,9 @@ Once the cluster has finished creating, use the following steps to run the Simpl
 
 	For more information on using SSH with HDInsight, see the following:
 
-	* [Use SSH with Linux-based Hadoop on HDInsight from Linux, Unix, or OS X](hdinsight-hadoop-linux-use-ssh-unix)
+	* [Use SSH with Linux-based Hadoop on HDInsight from Linux, Unix, or OS X](/documentation/articles/hdinsight-hadoop-linux-use-ssh-unix)
 
-	* [Use SSH with Linux-based Hadoop on HDInsight from Windows](hdinsight-hadoop-linux-use-ssh-windows)
+	* [Use SSH with Linux-based Hadoop on HDInsight from Windows](/documentation/articles/hdinsight-hadoop-linux-use-ssh-windows)
 
 1. Use the following to create a new file named __tiny_graph.txt__:
 
@@ -136,10 +136,10 @@ Once the cluster has finished creating, use the following steps to run the Simpl
 
 ## Next steps
 
-- [Install and use Hue on HDInsight clusters](hdinsight-hadoop-hue-linux). Hue is a web UI that makes it easy to create, run and save Pig and Hive jobs, as well as browse the default storage for your HDInsight cluster.
+- [Install and use Hue on HDInsight clusters](/documentation/articles/hdinsight-hadoop-hue-linux). Hue is a web UI that makes it easy to create, run and save Pig and Hive jobs, as well as browse the default storage for your HDInsight cluster.
 
-- [Install and use Spark on HDInsight clusters](hdinsight-hadoop-spark-install-linux): Instructions on how to use cluster customization to install and use Spark on HDInsight Hadoop clusters. Spark is an open-source parallel processing framework that supports in-memory processing to boost the performance of big-data analytic applications.
+- [Install and use Spark on HDInsight clusters](/documentation/articles/hdinsight-hadoop-spark-install-linux): Instructions on how to use cluster customization to install and use Spark on HDInsight Hadoop clusters. Spark is an open-source parallel processing framework that supports in-memory processing to boost the performance of big-data analytic applications.
 
-- [Install R on HDInsight clusters](hdinsight-hadoop-r-scripts-linux): Instructions on how to use cluster customization to install and use R on HDInsight Hadoop clusters. R is an open-source language and environment for statistical computing. It provides hundreds of built-in statistical functions and its own programming language that combines aspects of functional and object-oriented programming. It also provides extensive graphical capabilities.
+- [Install R on HDInsight clusters](/documentation/articles/hdinsight-hadoop-r-scripts-linux): Instructions on how to use cluster customization to install and use R on HDInsight Hadoop clusters. R is an open-source language and environment for statistical computing. It provides hundreds of built-in statistical functions and its own programming language that combines aspects of functional and object-oriented programming. It also provides extensive graphical capabilities.
 
-- [Install Solr on HDInsight clusters](hdinsight-hadoop-solr-install-linux). Use cluster customization to install Solr on HDInsight Hadoop clusters. Solr allows you to perform powerful search operations on data stored.
+- [Install Solr on HDInsight clusters](/documentation/articles/hdinsight-hadoop-solr-install-linux). Use cluster customization to install Solr on HDInsight Hadoop clusters. Solr allows you to perform powerful search operations on data stored.

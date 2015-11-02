@@ -1,6 +1,6 @@
 > [AZURE.SELECTOR]
-- [.NET](active-directory-b2c-devquickstarts-graph-dotnet)
-- [Python](active-directory-b2c-devquickstarts-graph-python)
-- [NodeJS](active-directory-b2c-devquickstarts-graph-nodeJS)
-- [Java](active-directory-b2c-devquickstarts-graph-java)
-- [Ruby](active-directory-b2c-devquickstarts-graph-ruby)
+- [.NET](/documentation/articles/active-directory-b2c-devquickstarts-graph-dotnet)
+- [Python](/documentation/articles/active-directory-b2c-devquickstarts-graph-python)
+- [NodeJS](/documentation/articles/active-directory-b2c-devquickstarts-graph-nodeJS)
+- [Java](/documentation/articles/active-directory-b2c-devquickstarts-graph-java)
+- [Ruby](/documentation/articles/active-directory-b2c-devquickstarts-graph-ruby)

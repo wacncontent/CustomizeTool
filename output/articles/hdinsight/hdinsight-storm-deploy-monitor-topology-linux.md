@@ -16,15 +16,15 @@
 
 In this document, learn the basics of managing and monitoring Storm topologies running on Linux-based Storm on HDInsight clusters.
 
-> [AZURE.IMPORTANT] The steps in this article require a Linux-based Storm on HDInsight cluster. For information on deploying and monitoring topologies on Windows-based HDInsight, see [Deploy and manage Apache Storm topologies on Windows-based HDInsight](hdinsight-storm-deploy-monitor-topology)
+> [AZURE.IMPORTANT] The steps in this article require a Linux-based Storm on HDInsight cluster. For information on deploying and monitoring topologies on Windows-based HDInsight, see [Deploy and manage Apache Storm topologies on Windows-based HDInsight](/documentation/articles/hdinsight-storm-deploy-monitor-topology)
 
 ## Prerequisites
 
-- **A Linux-based Storm on HDInsight cluster**: see [Get started with Apache Storm on HDInsight](hdinsight-storm-get-started-linux) for steps on creating a cluster
+- **A Linux-based Storm on HDInsight cluster**: see [Get started with Apache Storm on HDInsight](/documentation/articles/hdinsight-storm-get-started-linux) for steps on creating a cluster
 
 - **Familiarity with SSH and SCP**: For more information on using SSH and SCP with HDInsight, see the following:
-    - **Linux, Unix or OS X clients**: See [Use SSH with Linux-based Hadoop on HDInsight from Linux, OS X or Unix](hdinsight-hadoop-linux-use-ssh-unix)
-    - **Windows clients**: See [Use SSH with Linux-based Hadoop on HDInsight from Windows](hdinsight-hadoop-linux-use-ssh-windows)
+    - **Linux, Unix or OS X clients**: See [Use SSH with Linux-based Hadoop on HDInsight from Linux, OS X or Unix](/documentation/articles/hdinsight-hadoop-linux-use-ssh-unix)
+    - **Windows clients**: See [Use SSH with Linux-based Hadoop on HDInsight from Windows](/documentation/articles/hdinsight-hadoop-linux-use-ssh-windows)
 
 - **An SCP client**: This is provided with all Linux, Unix, and OS X systems. For Windows clients, we recommend PSCP, which is available from the [PuTTY download page](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html).
 
@@ -36,9 +36,9 @@ In this document, learn the basics of managing and monitoring Storm topologies r
 
     For more information on using SSH to connect to your HDInsight cluster, see the following documents:
     
-        - **Linux, Unix or OS X clients**: See [Use SSH with Linux-based Hadoop on HDInsight from Linux, OS X or Unix](hdinsight-hadoop-linux-use-ssh-unix)
+        - **Linux, Unix or OS X clients**: See [Use SSH with Linux-based Hadoop on HDInsight from Linux, OS X or Unix](/documentation/articles/hdinsight-hadoop-linux-use-ssh-unix)
         
-        - **Windows clients**: See [Use SSH with Linux-based Hadoop on HDInsight from Windows](hdinsight-hadoop-linux-use-ssh-windows)
+        - **Windows clients**: See [Use SSH with Linux-based Hadoop on HDInsight from Windows](/documentation/articles/hdinsight-hadoop-linux-use-ssh-windows)
 
 2. Use the following command to start an example topology:
 
@@ -92,7 +92,7 @@ Rebalancing a topology allows the system to revise the parallelism of the topolo
 
 The Storm UI provides a web interface for working with running topologies, and is included on your HDInsight cluster.
 
-> [AZURE.IMPORTANT] The Storm UI is not publicly available over the internet, and must be accessed using an SSH tunnel to the HDInsight cluster head node. For information on creating and using an SSH tunnel, see [Use SSH Tunneling to access Ambari web UI, ResourceManager, JobHistory, NameNode, Oozie, and other web UI's](hdinsight-linux-ambari-ssh-tunnel).
+> [AZURE.IMPORTANT] The Storm UI is not publicly available over the internet, and must be accessed using an SSH tunnel to the HDInsight cluster head node. For information on creating and using an SSH tunnel, see [Use SSH Tunneling to access Ambari web UI, ResourceManager, JobHistory, NameNode, Oozie, and other web UI's](/documentation/articles/hdinsight-linux-ambari-ssh-tunnel).
 
 Use the following steps to view the Storm UI:
 
@@ -150,7 +150,7 @@ The Storm UI is built on top of the REST API, so you can perform similar managem
 
 For more information, see <a href="https://github.com/apache/storm/blob/master/STORM-UI-REST-API.md" target="_base">Storm UI REST API</a>. The following information is specific to using the REST API with Apache Storm on HDInsight.
 
-> [AZURE.IMPORTANT] The Storm REST API is not publicly available over the internet, and must be accessed using an SSH tunnel to the HDInsight cluster head node. For information on creating and using an SSH tunnel, see [Use SSH Tunneling to access Ambari web UI, ResourceManager, JobHistory, NameNode, Oozie, and other web UI's](hdinsight-linux-ambari-ssh-tunnel).
+> [AZURE.IMPORTANT] The Storm REST API is not publicly available over the internet, and must be accessed using an SSH tunnel to the HDInsight cluster head node. For information on creating and using an SSH tunnel, see [Use SSH Tunneling to access Ambari web UI, ResourceManager, JobHistory, NameNode, Oozie, and other web UI's](/documentation/articles/hdinsight-linux-ambari-ssh-tunnel).
 
 ### Base URI
 
@@ -168,6 +168,6 @@ Information that is returned from the REST API may only be usable from within th
 
 ## Next Steps
 
-Now that you've learned how to deploy and monitor topologies by using the Storm Dashboard, learn how to [Develop Java-based topologies using Maven](hdinsight-storm-develop-java-topology).
+Now that you've learned how to deploy and monitor topologies by using the Storm Dashboard, learn how to [Develop Java-based topologies using Maven](/documentation/articles/hdinsight-storm-develop-java-topology).
 
-For a list of more example topologies, see [Example topologies for Storm on HDInsight](hdinsight-storm-example-topology).
+For a list of more example topologies, see [Example topologies for Storm on HDInsight](/documentation/articles/hdinsight-storm-example-topology).

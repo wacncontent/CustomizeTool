@@ -19,7 +19,7 @@ An Automation credential asset holds a [PSCredential](http://msdn.microsoft.com/
 
 ## Windows PowerShell cmdlets
 
-The cmdlets in the following table are used to create and manage automation credential assets with Windows PowerShell.  They ship as part of the [Azure PowerShell module](powershell-install-configure) which is available for use in Automation runbooks.
+The cmdlets in the following table are used to create and manage automation credential assets with Windows PowerShell.  They ship as part of the [Azure PowerShell module](/documentation/articles/powershell-install-configure) which is available for use in Automation runbooks.
 
 |Cmdlets|Description|
 |:---|:---|
@@ -91,14 +91,14 @@ You add a **Get-AutomationPSCredential** activity to a graphical runbook by righ
 
 ![Add credential to canvas](./media/automation-credentials/credential-add-canvas.png)
 
-The following image shows an example of using a credential in a graphical runbook.  In this case, it is being used to provide authentication for a runbook to Azure resources as described in [Configuring authentication to Azure resources](#automation-configuring.md).  The first activity retrieves the credential that has access to the Azure subscription.  The **Add-AzureAccount** activity then uses this credential to provide authentication for any activities that come after it.  A [pipeline link](automation-graphical-authoring-intro#links-and-workflow) is here since **Get-AutomationPSCredential** is expecting a single object.  
+The following image shows an example of using a credential in a graphical runbook.  In this case, it is being used to provide authentication for a runbook to Azure resources as described in [Configuring authentication to Azure resources](#automation-configuring.md).  The first activity retrieves the credential that has access to the Azure subscription.  The **Add-AzureAccount** activity then uses this credential to provide authentication for any activities that come after it.  A [pipeline link](/documentation/articles/automation-graphical-authoring-intro#links-and-workflow) is here since **Get-AutomationPSCredential** is expecting a single object.  
 
 ![Add credential to canvas](./media/automation-credentials/get-credential.png)
 
 
 ## Related articles
 
-- [Links in graphical authoring](automation-graphical-authoring-intro#links-and-workflow)
+- [Links in graphical authoring](/documentation/articles/automation-graphical-authoring-intro#links-and-workflow)
 -->
 
  

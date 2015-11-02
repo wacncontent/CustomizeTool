@@ -233,7 +233,7 @@ The main advantages of using templates are:
 
 For sample templates, see [Azure quickstart templates](https://github.com/Azure/azure-quickstart-templates).
 
-For more information on the ARM Template Language, see [Azure Resource Manager Template Language](resource-group-authoring-templates).
+For more information on the ARM Template Language, see [Azure Resource Manager Template Language](/documentation/articles/resource-group-authoring-templates).
 
 The sample template above uses the virtual network and subnet resources. There are other network resources you can use as listed below:
 
@@ -258,13 +258,13 @@ You can deploy services to Azure from a template by using PowerShell, AzureCLI, 
 
 [Azure PowerShell reference for networking](https://msdn.microsoft.com/zh-cn/library/azure/mt163510.aspx)
 
-[Azure Resource Manager Template Language](resource-group-authoring-templates)
+[Azure Resource Manager Template Language](/documentation/articles/resource-group-authoring-templates)
 
 [Azure Networking – commonly used templates](https://github.com/Azure/azure-quickstart-templates)
 
-[Compute Resource Provider](virtual-machines-azurerm-versus-azuresm)
+[Compute Resource Provider](/documentation/articles/virtual-machines-azurerm-versus-azuresm)
 
-[Azure Resource Manager Overview](resource-group-overview)
+[Azure Resource Manager Overview](/documentation/articles/resource-group-overview)
 
 [Role based access control in Azure Resource Manager](https://msdn.microsoft.com/zh-cn/library/azure/dn906885.aspx) 
 

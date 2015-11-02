@@ -33,7 +33,7 @@ In this section, you'll modify the simulated device application you created in [
 > [AZURE.NOTE] For simplicity's sake, this tutorial does not implement any retry policy. In production code, it is reccommended to implement retry policies (such as exponential backoff), as suggested in the MSDN article [Transient Fault Handling].
 
 <!-- Links -->
-[IoT Hub Developer Guide - C2D]: iot-hub-devguide#c2d
+[IoT Hub Developer Guide - C2D]: /documentation/articles/iot-hub-devguide#c2d
 
 <!-- Images -->
 

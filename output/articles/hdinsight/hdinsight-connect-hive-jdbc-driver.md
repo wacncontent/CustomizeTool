@@ -63,7 +63,7 @@ An example of using a Java client to query Hive on HDInsight is available at [ht
 
 Now that you have learned how to use JDBC to work with Hive, use the following links to explore other ways to work with Azure HDInsight.
 
-* [Upload data to HDInsight](hdinsight-upload-data)
-* [Use Hive with HDInsight](hdinsight-use-hive)
-* [Use Pig with HDInsight](hdinsight-use-pig)
-* [Use MapReduce jobs with HDInsight](hdinsight-use-mapreduce)
+* [Upload data to HDInsight](/documentation/articles/hdinsight-upload-data)
+* [Use Hive with HDInsight](/documentation/articles/hdinsight-use-hive)
+* [Use Pig with HDInsight](/documentation/articles/hdinsight-use-pig)
+* [Use MapReduce jobs with HDInsight](/documentation/articles/hdinsight-use-mapreduce)

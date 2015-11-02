@@ -32,7 +32,7 @@ You can also disable individual endpoints that are part of a Traffic Manager pro
 6. Select the websites in the list to add them as endpoints for this profile. Clearing the website name removes it from the list of endpoints. Note that you can only select a single website per Azure datacenter (also known as a region). If you select a website in a datacenter that hosts multiple websites, when you select the first website, the others in the same datacenter become unavailable for selection. Also note that only Standard websites are listed.
 7. After you select the endpoints for this profile, click the checkmark on the lower right to save your changes.
 
->[AZURE.NOTE] If you are using the *Failover* traffic routing method, after you add or remove an endpoint, be sure to adjust the Failover Priority List on the Configuration page to reflect the failover order you want for your configuration. For more information, see [Configure Failover traffic routing](traffic-manager-configure-failover-load-balancing).
+>[AZURE.NOTE] If you are using the *Failover* traffic routing method, after you add or remove an endpoint, be sure to adjust the Failover Priority List on the Configuration page to reflect the failover order you want for your configuration. For more information, see [Configure Failover traffic routing](/documentation/articles/traffic-manager-configure-failover-load-balancing).
 
 ## To disable an endpoint
 
@@ -60,13 +60,13 @@ You can also disable individual endpoints that are part of a Traffic Manager pro
 
 ## Additional resources
 
-[Traffic Manager overview](traffic-manager-overview)
+[Traffic Manager overview](/documentation/articles/traffic-manager-overview)
 
-[About Traffic Manager monitoring](traffic-manager-monitoring)
+[About Traffic Manager monitoring](/documentation/articles/traffic-manager-monitoring)
 
-[Traffic Manager - Disable, enable or delete a profile](disable-enable-or-delete-a-profile)
+[Traffic Manager - Disable, enable or delete a profile](/documentation/articles/disable-enable-or-delete-a-profile)
 
-[Traffic Manager - Disable or enable an endpoint](disable-or-enable-an-endpoint)
+[Traffic Manager - Disable or enable an endpoint](/documentation/articles/disable-or-enable-an-endpoint)
 
 [Operations on Traffic Manager (REST API Reference)](https://msdn.microsoft.com/zh-CN/library/hh758255.aspx)
 

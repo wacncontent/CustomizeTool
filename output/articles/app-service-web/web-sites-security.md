@@ -32,7 +32,7 @@ One of the challenges of developing a web app is how to provide a safe and secur
 <!-- keep by customization: end -->
 ##<a name="https"></a> Secure communications
 
-If you use the ***.chinacloudsites.cn** domain name created for your web app, you can immediately use HTTPS, as an SSL certificate is provided for all ***.chinacloudsites.cn** domain names. If your site uses a [custom domain name](web-sites-custom-domain-name), you can upload an SSL certificate to [enable HTTPS](web-sites-configure-ssl-certificate) for the custom domain.
+If you use the ***.chinacloudsites.cn** domain name created for your web app, you can immediately use HTTPS, as an SSL certificate is provided for all ***.chinacloudsites.cn** domain names. If your site uses a [custom domain name](/documentation/articles/web-sites-custom-domain-name), you can upload an SSL certificate to [enable HTTPS](/documentation/articles/web-sites-configure-ssl-certificate) for the custom domain.
 
 ##<a name="develop"></a> Secure development
 
@@ -61,7 +61,7 @@ Azure Websites allows you to store configuration information as part of the Web 
 
 **App settings** and **connection strings** are configurable using the [Azure <!-- deleted by customization preview portal --><!-- keep by customization: begin -->Management Portal<!-- keep by customization: end -->](http://manage.windowsazure.cn) or utilities such as PowerShell or the Azure CLI.
 
-For more information on app settings and connection strings, see [Configuring web apps](web-sites-configure).
+For more information on app settings and connection strings, see [Configuring web apps](/documentation/articles/web-sites-configure).
 
 <!-- deleted by customization
 ### FTPS
@@ -89,7 +89,7 @@ For more information on the security of the Azure platform, information on repor
 
 For more information on **web.config** or **applicationhost.config** files in web apps, see [Configuration options unlocked in Azure Websites web apps](http://azure.microsoft.com/blog/2014/01/28/more-to-explore-configuration-options-unlocked-in-windows-azure-web-sites/).
 
-For information on logging information for web apps, which may be useful in detecting attacks, see [Enable diagnostic logging](web-sites-enable-diagnostic-log).
+For information on logging information for web apps, which may be useful in detecting attacks, see [Enable diagnostic logging](/documentation/articles/web-sites-enable-diagnostic-log).
 <!-- deleted by customization
 
 ## What's changed

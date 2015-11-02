@@ -19,12 +19,12 @@
 Azure provides built-in diagnostics to assist with debugging an [Azure Websites web app](/documentation/services/web-sites/). In this article you'll learn how to enable diagnostic logging and add instrumentation to your application, as well as how to access the information logged by Azure.
 <!-- deleted by customization
 
-This article uses the [Azure preview portal](https://manage.windowsazure.cn/), Azure PowerShell, and the Azure Command-Line Interface (Azure CLI) to work with diagnostic logs. For information on working with diagnostic logs using Visual Studio, see [Troubleshooting Azure in Visual Studio](web-sites-dotnet-troubleshoot-visual-studio).
+This article uses the [Azure preview portal](https://manage.windowsazure.cn/), Azure PowerShell, and the Azure Command-Line Interface (Azure CLI) to work with diagnostic logs. For information on working with diagnostic logs using Visual Studio, see [Troubleshooting Azure in Visual Studio](/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio).
 
 [AZURE.INCLUDE [app-service-web-to-api-and-mobile](../includes/app-service-web-to-api-and-mobile.md)]
 -->
 <!-- keep by customization: begin -->
-This article uses the [Azure Management Portal](https://manage.windowsazure.cn/), Azure PowerShell, and the Azure Command-Line Interface (Azure CLI) to work with diagnostic logs. For information on working with diagnostic logs using Visual Studio, see [Troubleshooting Azure in Visual Studio](web-sites-dotnet-troubleshoot-visual-studio).
+This article uses the [Azure Management Portal](https://manage.windowsazure.cn/), Azure PowerShell, and the Azure Command-Line Interface (Azure CLI) to work with diagnostic logs. For information on working with diagnostic logs using Visual Studio, see [Troubleshooting Azure in Visual Studio](/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio).
 ##Table of Contents##
 
 - [What is: Web Site diagnostics?](#whatisdiag)
@@ -53,7 +53,7 @@ Application diagnostics allows you to capture information produced by a web appl
 
 	System.Diagnostics.Trace.TraceError("If you're seeing this, something bad happened");
 
-At runtime you can retrieve these logs to help with troubleshooting. For more information, see [Troubleshooting Azure web apps in Visual Studio](web-sites-dotnet-troubleshoot-visual-studio).
+At runtime you can retrieve these logs to help with troubleshooting. For more information, see [Troubleshooting Azure web apps in Visual Studio](/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio).
 
 Azure Websites web apps also log deployment information when you publish content to a web app. This happens automatically and there are no configuration settings for deployment logging. Deployment logging allows you to determine why a deployment failed. For example, if you are using a custom deployment script, you might use deployment logging to determine why the script is failing.
 
@@ -92,7 +92,7 @@ While all three storage locations provide the same basic information for logged 
 
 > [AZURE.NOTE] Information stored in **table storage** or **blob  storage** can only be accessed using a storage client or an application that can directly work with these storage systems. For example, Visual Studio 2013 contains a Storage Explorer that can be used to explore table or blob storage, and HDInsight can access data stored in blob storage. You can also write an application that accesses Azure Storage by using one of the [Azure SDKs](/downloads/#).
 
-> [AZURE.NOTE] Diagnostics can also be enabled from Azure PowerShell using the **Set-AzureWebsite** cmdlet. If you have not installed Azure PowerShell, or have not configured it to use your Azure Subscription, see [How to Use Azure PowerShell](install-configure-powershell).
+> [AZURE.NOTE] Diagnostics can also be enabled from Azure PowerShell using the **Set-AzureWebsite** cmdlet. If you have not installed Azure PowerShell, or have not configured it to use your Azure Subscription, see [How to Use Azure PowerShell](/documentation/articles/install-configure-powershell/).
 
 ##<a name="download"></a> How to: Download logs
 
@@ -124,7 +124,7 @@ To download the log files, start a new instance of Azure PowerShell and use the 
 
 This will save the logs for the web app specified by the **-Name** parameter to a file named **logs.zip** in the current directory.
 
-> [AZURE.NOTE] If you have not installed Azure PowerShell, or have not configured it to use your Azure Subscription, see [How to Use Azure PowerShell](install-configure-powershell).
+> [AZURE.NOTE] If you have not installed Azure PowerShell, or have not configured it to use your Azure Subscription, see [How to Use Azure PowerShell](/documentation/articles/install-configure-powershell/).
 
 ### Download with Azure Command-Line Interface
 
@@ -134,7 +134,7 @@ To download the log files using the Azure Command Line Interface, open a new com
 
 This will save the logs for the web app named 'webappname' to a file named **diagnostics.zip** in the current directory.
 
-> [AZURE.NOTE] If you have not installed the Azure Command-Line Interface (Azure CLI), or have not configured it to use your Azure Subscription, see [How to Use Azure CLI](xplat-cli-install).
+> [AZURE.NOTE] If you have not installed the Azure Command-Line Interface (Azure CLI), or have not configured it to use your Azure Subscription, see [How to Use Azure CLI](/documentation/articles/xplat-cli-install).
 <!-- deleted by customization
 
 ## How to: View logs in Application Insights
@@ -142,13 +142,13 @@ This will save the logs for the web app named 'webappname' to a file named **dia
 Visual Studio Application Insights provides tools for filtering and searching logs, and for correlating the logs with requests and other events.
 
 1. Add the Application Insights SDK to your project in Visual Studio.
- * In Solution Explorer, right click your project and choose Add Application Insights. You'll be guided through steps that include creating an Application Insights resource. [Learn more](app-insights-start-monitoring-app-health-usage)
+ * In Solution Explorer, right click your project and choose Add Application Insights. You'll be guided through steps that include creating an Application Insights resource. [Learn more](/documentation/articles/app-insights-start-monitoring-app-health-usage)
 2. Add the Trace Listener package to your project.
- * Right click your project and choose Manage NuGet Packages. Select `Microsoft.ApplicationInsights.TraceListener` [Learn more](app-insights-asp-net-trace-logs)
+ * Right click your project and choose Manage NuGet Packages. Select `Microsoft.ApplicationInsights.TraceListener` [Learn more](/documentation/articles/app-insights-asp-net-trace-logs)
 3. Upload your project and run it to generate log data.
-4. In the [Azure preview portal](http://manage.windowsazure.cn/), browse to your new Application Insights resource, and open **Search**. You'll see your log data, along with request, usage and other telemetry. Some telemetry might take a few minutes to arrive: click Refresh. [Learn more](app-insights-diagnostic-search)
+4. In the [Azure preview portal](http://manage.windowsazure.cn/), browse to your new Application Insights resource, and open **Search**. You'll see your log data, along with request, usage and other telemetry. Some telemetry might take a few minutes to arrive: click Refresh. [Learn more](/documentation/articles/app-insights-diagnostic-search)
 
-[Learn more about performance tracking with Application Insights](insights-perf-analytics)
+[Learn more about performance tracking with Application Insights](/documentation/articles/insights-perf-analytics)
 -->
 
 ##<a name="streamlogs"></a> How to: Stream logs
@@ -177,7 +177,7 @@ To filter specific log types, such as HTTP, use the **-Path** parameter. For exa
 
 To see a list of available paths, use the -ListPath parameter.
 
-> [AZURE.NOTE] If you have not installed Azure PowerShell, or have not configured it to use your Azure Subscription, see [How to Use Azure PowerShell](install-configure-powershell).
+> [AZURE.NOTE] If you have not installed Azure PowerShell, or have not configured it to use your Azure Subscription, see [How to Use Azure PowerShell](/documentation/articles/install-configure-powershell/).
 
 ### Streaming with Azure Command-Line Interface
 
@@ -195,7 +195,7 @@ To filter specific log types, such as HTTP, use the **--Path** parameter. For ex
 
 	azure site log tail webappname --path http
 
-> [AZURE.NOTE] If you have not installed the Azure Command-Line Interface, or have not configured it to use your Azure Subscription, see [How to Use Azure Command-Line Interface](xplat-cli-install).
+> [AZURE.NOTE] If you have not installed the Azure Command-Line Interface, or have not configured it to use your Azure Subscription, see [How to Use Azure Command-Line Interface](/documentation/articles/xplat-cli-install).
 
 ##<a name="understandlogs"></a> How to: Understand diagnostics logs
 
@@ -274,8 +274,8 @@ The web server logs are formatted using the [W3C extended log file format](http:
 
 ##<a name="nextsteps"></a> Next steps
 
-- [How to Monitor Web Apps](web-sites-monitor)
-- [Troubleshooting Azure web apps in Visual Studio](web-sites-dotnet-troubleshoot-visual-studio)
+- [How to Monitor Web Apps](/documentation/articles/web-sites-monitor/)
+- [Troubleshooting Azure web apps in Visual Studio](/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio)
 - [Analyze web app Logs in HDInsight](http://gallery.technet.microsoft.com/scriptcenter/Analyses-Windows-Azure-web-0b27d413)
 <!-- deleted by customization
 

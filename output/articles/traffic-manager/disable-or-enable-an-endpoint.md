@@ -34,9 +34,9 @@ You can also disable individual endpoints that are part of a Traffic Manager pro
 
 ## Next Steps
 
-[Traffic Manager - Disable, enable or delete a profile](disable-enable-or-delete-a-profile)
+[Traffic Manager - Disable, enable or delete a profile](/documentation/articles/disable-enable-or-delete-a-profile)
 
-[What is Traffic Manager?](traffic-manager)
+[What is Traffic Manager?](/documentation/articles/traffic-manager)
 
 [Cloud Services](https://msdn.microsoft.com/zh-cn/library/jj155995.aspx)
 

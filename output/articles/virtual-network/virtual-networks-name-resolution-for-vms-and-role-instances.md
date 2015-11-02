@@ -151,7 +151,7 @@ You can specify multiple DNS servers to be used by your VMs and role instances. 
 
 ### Specifying a DNS server in the Management Portal
 
-When you create a virtual network in the Management Portal, you can specify the IP address and name of the DNS server(s) that you want to use. Once the virtual network is created, the virtual machines and role instances that you deploy to the virtual network are automatically configured with the specified DNS settings.  DNS servers specified for a specific cloud service (Azure classic) or a network interface card (ARM-based deployments) take precedence over those specificed for the virtual network.  See [About Configuring a Virtual Network in the Management Portal](virtual-networks-settings).
+When you create a virtual network in the Management Portal, you can specify the IP address and name of the DNS server(s) that you want to use. Once the virtual network is created, the virtual machines and role instances that you deploy to the virtual network are automatically configured with the specified DNS settings.  DNS servers specified for a specific cloud service (Azure classic) or a network interface card (ARM-based deployments) take precedence over those specificed for the virtual network.  See [About Configuring a Virtual Network in the Management Portal](/documentation/articles/virtual-networks-settings).
 
 ### Specifying a DNS server by using configuration files (Azure classic)
 
@@ -170,8 +170,8 @@ The service configuration file is created for each cloud service that you add to
 
 [Virtual Network Configuration Schema](https://msdn.microsoft.com/zh-cn/library/azure/jj157100)
 
-[About Configuring Virtual Network Settings in the Management Portal](virtual-networks-settings) 
+[About Configuring Virtual Network Settings in the Management Portal](/documentation/articles/virtual-networks-settings) 
 
-[Configure a Virtual Network by Using a Network Configuration File](virtual-networks-using-network-configuration-file) 
+[Configure a Virtual Network by Using a Network Configuration File](/documentation/articles/virtual-networks-using-network-configuration-file) 
 
 

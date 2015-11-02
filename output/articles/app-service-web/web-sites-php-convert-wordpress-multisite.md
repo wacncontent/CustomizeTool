@@ -102,7 +102,7 @@ When the *SSL settings* are displayed, you will see the fields where you will in
 
 -->
 <!-- keep by customization: begin -->
-Return to your  Website through the Azure Portal, and this time click the **CONFIGURE** tab. The **MANAGE DOMAINS** button should be available. Click it.
+Return to your  Website through the Azure Management Portal, and this time click the **CONFIGURE** tab. The **MANAGE DOMAINS** button should be available. Click it.
 
 The *Manage custom domains* dialog show pop up. This is where you will input all the domains which you wish to assign to your  Website. If a domain is not listed here, it will not be available for mapping inside WordPress, regardless of how the domain DNS is setup.
 <!-- keep by customization: end -->

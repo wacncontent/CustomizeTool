@@ -63,7 +63,7 @@ In this release the following updates were made to Web Tools Extensions. For mor
 
 - Support for DreamSpark accounts added
 - Full change to Azure Tools made to support the new Azure Resource Management APIs
-- Support for Azure Websites added to [Cloud Explorer](azure-sdk-dot-net-release-notes-2_7#cloud_explorer)
+- Support for Azure Websites added to [Cloud Explorer](/documentation/articles/azure-sdk-dot-net-release-notes-2_7#cloud_explorer)
 
 ####Known issues
 

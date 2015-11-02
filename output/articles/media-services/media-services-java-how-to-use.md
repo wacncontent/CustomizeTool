@@ -21,7 +21,7 @@
 <!-- keep by customization: end -->
 ##Setting Up an Azure Account for Media Services
 
-To set up your Media Services account, use the Azure Management Portal. See the topic [How to Create a Media Services Account](media-services-create-account). After creating your account in the Management Portal, you are ready to set up your computer for Media Services development. 
+To set up your Media Services account, use the Azure Management Portal. See the topic [How to Create a Media Services Account](/documentation/articles/media-services-create-account). After creating your account in the Management Portal, you are ready to set up your computer for Media Services development. 
 
 <!-- keep by customization: begin -->
 <a id="setup-dev"></a>
@@ -32,7 +32,7 @@ This section contains general prerequisites for Media Services development using
 
 ###Prerequisites
 
--   A Media Services account in a new or existing Azure subscription. See the topic [How to Create a Media Services Account](media-services-create-account).
+-   A Media Services account in a new or existing Azure subscription. See the topic [How to Create a Media Services Account](/documentation/articles/media-services-create-account).
 -   The Azure Libraries for Java, which you can install from the [Azure Java Developer Center][].
 
 <!-- keep by customization: begin -->
@@ -42,7 +42,7 @@ This section contains general prerequisites for Media Services development using
 
 The following code shows how to create an asset, upload a media file to the asset, run a job with a task to transform the asset, and create a locator in order to stream your video.  
 
-You'll need to set up a media services account before using this code. For information about setting up an account, see [How to Create a Media Services Account](media-services-create-account).
+You'll need to set up a media services account before using this code. For information about setting up an account, see [How to Create a Media Services Account](/documentation/articles/media-services-create-account).
 
 Substitute your values for the `clientId` and `clientSecret` variables. The code also relies on a locally stored file. You'll need to provide your own file to use.
 	

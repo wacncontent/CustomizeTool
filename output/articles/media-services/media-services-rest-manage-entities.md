@@ -16,8 +16,8 @@
 #Managing Media Services Entities with REST API
 
 > [AZURE.SELECTOR]
-- [REST](media-services-rest-manage-entities)
-- [.NET](media-services-dotnet-manage-entities)
+- [REST](/documentation/articles/media-services-rest-manage-entities)
+- [.NET](/documentation/articles/media-services-dotnet-manage-entities)
 
 Windows Azure Media Services is a REST-based service built on OData v3. Because of this, you can add, query, update, and delete entities in much the same way as you can on any other OData service. Exceptions will be called out when applicable. For more information on OData, see [Open Data Protocol documentation](http://www.odata.org/documentation/).
 
@@ -28,9 +28,9 @@ Windows Azure Media Services is a REST-based service built on OData v3. Because 
 
 >[AZURE.NOTE] When working with the Media Services REST API, the following considerations apply:
 >
->When accessing entities in Media Services, you must set specific header fields and values in your HTTP requests. For more information, see [Setup for Media Services REST API Development](media-services-rest-how-to-use).
+>When accessing entities in Media Services, you must set specific header fields and values in your HTTP requests. For more information, see [Setup for Media Services REST API Development](/documentation/articles/media-services-rest-how-to-use).
 
->After successfully connecting to https://media.chinacloudapi.cn, you will receive a 301 redirect specifying another Media Services URI. You must make subsequent calls to the new URI as described in [Connecting to Media Services using REST API](media-services-rest-connect_programmatically). 
+>After successfully connecting to https://media.chinacloudapi.cn, you will receive a 301 redirect specifying another Media Services URI. You must make subsequent calls to the new URI as described in [Connecting to Media Services using REST API](/documentation/articles/media-services-rest-connect_programmatically). 
 
 
 ##Adding entities

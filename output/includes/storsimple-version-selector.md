@@ -1,5 +1,5 @@
 > [AZURE.SELECTOR]
-- [Update 1](storsimple-deployment-walkthrough-u1)
-- [GA Release](storsimple-deployment-walkthrough)
+- [Update 1](/documentation/articles/storsimple-deployment-walkthrough-u1)
+- [GA Release](/documentation/articles/storsimple-deployment-walkthrough)
 
 

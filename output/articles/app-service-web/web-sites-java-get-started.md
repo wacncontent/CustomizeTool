@@ -14,16 +14,16 @@
 # Create a Java web app in Azure Websites
 
 > [AZURE.SELECTOR]
-- [.Net](web-sites-dotnet-get-started)
-- [Node.js](web-sites-nodejs-develop-deploy-mac)
-- [Java](web-sites-java-get-started)
-- [PHP - Git](web-sites-php-mysql-deploy-use-git)
-- [PHP - FTP](web-sites-php-mysql-deploy-use-ftp)
-- [Python](web-sites-python-ptvs-django-mysql)
+- [.Net](/documentation/articles/web-sites-dotnet-get-started)
+- [Node.js](/documentation/articles/web-sites-nodejs-develop-deploy-mac)
+- [Java](/documentation/articles/web-sites-java-get-started)
+- [PHP - Git](/documentation/articles/web-sites-php-mysql-deploy-use-git)
+- [PHP - FTP](/documentation/articles/web-sites-php-mysql-deploy-use-ftp)
+- [Python](/documentation/articles/web-sites-python-ptvs-django-mysql)
 
 This tutorial shows how to create a web app on Windows Azure by using Java, through either the Azure Marketplace or the configuration UI in the [Web Apps feature in Azure Websites][].
 
-If you don't want to use either of those techniques—for example, if you want to customize your application container—see [Upload a custom Java web app to Azure](web-sites-java-custom-upload).
+If you don't want to use either of those techniques—for example, if you want to customize your application container—see [Upload a custom Java web app to Azure](/documentation/articles/web-sites-java-custom-upload).
 
 > [AZURE.NOTE] To complete this tutorial, you need a Windows Azure account. If you don't have an account, you can <!-- deleted by customization [activate your MSDN subscriber benefits][] or -->[sign up for a trial][].
 <!-- deleted by customization
@@ -100,7 +100,7 @@ Now that you've created the web app with an app container, see the **Next steps*
 
 ## Next steps
 
-At this point, you have a Java application server running as your Java web app on Azure. To add in your own application or webpage, see [Add an application or webpage to your Java web app](web-sites-java-add-app).
+At this point, you have a Java application server running as your Java web app on Azure. To add in your own application or webpage, see [Add an application or webpage to your Java web app](/documentation/articles/web-sites-java-add-app).
 <!-- deleted by customization
 
 For more information, see the [Java Developer Center](/develop/java/).

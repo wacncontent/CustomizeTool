@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties
 	pageTitle="Move Web App Resources to another Resource Group"
 	description="Describes the scenarios where you can move Web Apps and Azure Websites from one Resource Group to another."
@@ -14,7 +16,7 @@
 	
 # Supported Move Configurations
 
-You can move Azure Web App resources using the [ARM Move Resources Api](resource-group-move-resources).
+You can move Azure Web App resources using the [ARM Move Resources Api](/documentation/articles/resource-group-move-resources).
 
 Azure Web Apps currently supports the following move scenarios:
 

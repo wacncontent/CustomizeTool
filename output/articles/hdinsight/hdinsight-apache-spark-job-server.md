@@ -60,19 +60,19 @@ Example:
 
 ##<a name="seealso"></a>See also
 
-* [Overview: Apache Spark on Azure HDInsight](hdinsight-apache-spark-overview)
-* [Provision a Spark on HDInsight cluster](hdinsight-apache-spark-provision-clusters)
-* [Perform interactive data analysis using Spark in HDInsight with BI tools](hdinsight-apache-spark-use-bi-tools)
-* [Use Spark in HDInsight for building machine learning applications](hdinsight-apache-spark-ipython-notebook-machine-learning)
-* [Use Spark in HDInsight for building real-time streaming applications](hdinsight-apache-spark-csharp-apache-zeppelin-eventhub-streaming)
-* [Manage resources for the Apache Spark cluster in Azure HDInsight](hdinsight-apache-spark-resource-manager)
+* [Overview: Apache Spark on Azure HDInsight](/documentation/articles/hdinsight-apache-spark-overview)
+* [Provision a Spark on HDInsight cluster](/documentation/articles/hdinsight-apache-spark-provision-clusters)
+* [Perform interactive data analysis using Spark in HDInsight with BI tools](/documentation/articles/hdinsight-apache-spark-use-bi-tools)
+* [Use Spark in HDInsight for building machine learning applications](/documentation/articles/hdinsight-apache-spark-ipython-notebook-machine-learning)
+* [Use Spark in HDInsight for building real-time streaming applications](/documentation/articles/hdinsight-apache-spark-csharp-apache-zeppelin-eventhub-streaming)
+* [Manage resources for the Apache Spark cluster in Azure HDInsight](/documentation/articles/hdinsight-apache-spark-resource-manager)
 
 
-[hdinsight-versions]: hdinsight-component-versioning
-[hdinsight-upload-data]: hdinsight-upload-data
-[hdinsight-storage]: hdinsight-use-blob-storage
+[hdinsight-versions]: /documentation/articles/hdinsight-component-versioning
+[hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
+[hdinsight-storage]: /documentation/articles/hdinsight-use-blob-storage
 [azure-purchase-options]: /pricing/overview/
 [azure-member-offers]: http://azure.microsoft.com/pricing/member-offers/
 [azure-trial]: /pricing/1rmb-trial/
 [azure-management-portal]: https://manage.windowsazure.cn/
-[azure-create-storageaccount]: storage-create-storage-account
+[azure-create-storageaccount]: /documentation/articles/storage-create-storage-account

@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties 
 	pageTitle="Introduction to Azure Websites Environment" 
 	description="Learn about the Azure Websites Environment feature that provides secure, VNet-joined, dedicated scale units for running all of your apps." 
@@ -30,7 +32,7 @@ For an overview of how Azure Websites Environments enable high scale and secure 
 
 For a deep-dive on horizontally scaling using multiple Azure Websites Environments see the article on how to setup a [geo-distributed app footprint][GeodistributedAppFootprint].
 
-To see how the security architecture shown in the AzureCon Deep Dive was configured, see the article on implementing a [layered security architecture](app-service-app-service-environment-layered-security) with Azure Websites Environments.
+To see how the security architecture shown in the AzureCon Deep Dive was configured, see the article on implementing a [layered security architecture](/documentation/articles/app-service-app-service-environment-layered-security) with Azure Websites Environments.
 
 [AZURE.INCLUDE [app-service-web-to-api-and-mobile](../includes/app-service-web-to-api-and-mobile.md)] 
 
@@ -75,7 +77,7 @@ For details on using an Azure Websites Environment with ExpressRoute, see the fo
 [AZURE.INCLUDE [app-service-web-try-app-service](../includes/app-service-web-try-app-service.md)]
 
 <!-- LINKS -->
-[PremiumTier]: http://azure.microsoft.com/home/features/web-site/#price
+[PremiumTier]: /home/features/app-service/#price
 [MoreInfoOnVirtualNetworks]: /documentation/articles/virtual-networks-faq/
 [AppServicePlan]: /documentation/articles/azure-web-sites-web-hosting-plans-in-depth-overview/
 [Azure preview portal]: http://manage.windowsazure.cn
@@ -95,7 +97,7 @@ For details on using an Azure Websites Environment with ExpressRoute, see the fo
 [SecurelyConnectingToBackends]:  /documentation/articles/app-service-app-service-environment-securely-connecting-to-backend-resources/
 [NetworkArchitectureOverview]:  /documentation/articles/app-service-app-service-environment-network-architecture-overview/
 [NetworkConfigDetailsForExpressRoute]:  /documentation/articles/app-service-app-service-environment-network-configuration-expressroute/
-[AppServicePricing]: http://azure.microsoft.com/home/features/web-site/#price 
+[AppServicePricing]: /home/features/app-service/#price 
 
 <!-- IMAGES -->
 

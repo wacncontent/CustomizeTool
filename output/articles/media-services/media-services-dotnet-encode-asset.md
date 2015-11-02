@@ -17,9 +17,9 @@
 
 
 > [AZURE.SELECTOR]
-- [REST](media-services-rest-encode-asset)
-- [.NET](media-services-dotnet-encode-asset)
-- [Portal](media-services-manage-content#encode)
+- [REST](/documentation/articles/media-services-rest-encode-asset)
+- [.NET](/documentation/articles/media-services-dotnet-encode-asset)
+- [Portal](/documentation/articles/media-services-manage-content#encode)
 
 ##Overview
 
@@ -27,9 +27,9 @@ In order to deliver digital video over the internet you must compress the media.
 
 Encoding jobs are one of the most common processing operations in Media Services. You create encoding jobs to convert media files from one encoding to another. When you encode, you can use the Media Services built-in Media Encoder. You can also use an encoder provided by a Media Services partner; third party encoders are available through the Azure Marketplace. You can specify the details of encoding tasks by using preset strings defined for your encoder, or by using preset configuration files. To see the types of presets that are available, see [Task Presets for Azure Media Services](https://msdn.microsoft.com/zh-cn/library/azure/dn619392.aspx). If you used a third party encoder, you should [validate your files](https://msdn.microsoft.com/zh-cn/library/azure/dn750842.aspx).
 
-It is recommended to always encode your mezzanine files into an adaptive bitrate MP4 set and then convert the set to the desired format using the [Dynamic Packaging](media-services-dynamic-packaging-overview). To take advantage of dynamic packaging, you must first get at least one On-demand streaming unit for the streaming endpoint from which you plan to delivery your content. For more information, see [How to Scale Media Services](media-services-manage-origins#scale_streaming_endpoints).
+It is recommended to always encode your mezzanine files into an adaptive bitrate MP4 set and then convert the set to the desired format using the [Dynamic Packaging](/documentation/articles/media-services-dynamic-packaging-overview). To take advantage of dynamic packaging, you must first get at least one On-demand streaming unit for the streaming endpoint from which you plan to delivery your content. For more information, see [How to Scale Media Services](/documentation/articles/media-services-manage-origins#scale_streaming_endpoints).
 
-If your output asset is storage encrypted, you must configure asset delivery policy. For more information see [Configuring asset delivery policy](media-services-dotnet-configure-asset-delivery-policy).
+If your output asset is storage encrypted, you must configure asset delivery policy. For more information see [Configuring asset delivery policy](/documentation/articles/media-services-dotnet-configure-asset-delivery-policy).
 
 ##Create a job with a single encoding task 
 
@@ -218,6 +218,6 @@ You can view AMS learning paths here:
 
 ##See Also 
 
-[Media Services Encoding Overview](media-services-encode-asset)
+[Media Services Encoding Overview](/documentation/articles/media-services-encode-asset)
 
  

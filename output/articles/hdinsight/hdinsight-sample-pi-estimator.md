@@ -18,7 +18,7 @@
 HDInsight clusters come with a jar file with several MarReduce samples. This article shows you how to run the pi estimator sample using Azure PowerShell. the pi estimator sample estimates the value of the mathematical constant pi 
 <!-- deleted by customization
 
-> [AZURE.NOTE] The steps in this document require a Windows-based HDInsight cluster. For information on running this and other samples with Linux-based clusters, see [Run the Hadoop samples in HDInsight](hdinsight-hadoop-run-samples-linux)
+> [AZURE.NOTE] The steps in this document require a Windows-based HDInsight cluster. For information on running this and other samples with Linux-based clusters, see [Run the Hadoop samples in HDInsight](/documentation/articles/hdinsight-hadoop-run-samples-linux)
 -->
 
 The program uses a statistical (quasi-Monte Carlo) method to estimate the value of pi. Points placed at random inside of a unit square also fall within a circle inscribed within that square with a probability equal to the area of the circle, pi/4. The value of pi can be estimated from the value of 4R, where R is the ratio of the number of points that are inside the circle to the total number of points that are within the square. The larger the sample of points used, the better the estimate is.
@@ -31,8 +31,8 @@ The other samples that are available to help you get up to speed in using HDInsi
 **Other related articles:**
 
 * [Get Started with Azure HDInsight][hdinsight-get-started]
-* [Develop Java MapReduce programs for Hadoop in HDInsight](hdinsight-develop-deploy-java-mapreduce)
-* [Submit Hadoop jobs in HDInsight](hdinsight-submit-hadoop-jobs-programmatically)
+* [Develop Java MapReduce programs for Hadoop in HDInsight](/documentation/articles/hdinsight-develop-deploy-java-mapreduce)
+* [Submit Hadoop jobs in HDInsight](/documentation/articles/hdinsight-submit-hadoop-jobs-programmatically)
 * [Sample: 10GB GraySort][hdinsight-sample-10gb-graysort]
 * [Sample: Wordcount][hdinsight-sample-wordcount]
 * [Sample: C# Steaming][hdinsight-sample-cs-streaming]
@@ -46,7 +46,7 @@ The other samples that are available to help you get up to speed in using HDInsi
 **Prerequisites**:
 
 - **An Azure subscription**. See [Get Azure trial](/pricing/1rmb-trial/).
-- **an HDInsight cluster**. For instructions on the various ways in which such clusters can be created, see [Provision HDInsight Clusters](hdinsight-provision-clusters).
+- **an HDInsight cluster**. For instructions on the various ways in which such clusters can be created, see [Provision HDInsight Clusters](/documentation/articles/hdinsight-provision-clusters).
 - **A workstation with Azure PowerShell**. See [Install and use Azure PowerShell](/documentation/articles/install-configure-powershell).
 <!-- keep by customization: begin -->
 <a id="run-sample"></a>
@@ -474,13 +474,13 @@ For tutorials that describe running other samples and provide instructions on us
 
 [hdinsight-sdk-documentation]: http://msdnstage.redmond.corp.microsoft.com/zh-cn/library/dn479185.aspx
 
-[powershell-install-configure]: install-configure-powershell
-[hdinsight-get-started]: hdinsight-get-started
-[hdinsight-samples]: hdinsight-run-samples
-[hdinsight-sample-10gb-graysort]: hdinsight-sample-10gb-graysort
-[hdinsight-sample-csharp-streaming]: hdinsight-sample-csharp-streaming
-[hdinsight-sample-pi-estimator]: hdinsight-sample-pi-estimator
-[hdinsight-sample-wordcount]: hdinsight-sample-wordcount
-[hdinsight-use-hive]: hdinsight-use-hive
-[hdinsight-use-pig]: hdinsight-use-pig
-[hdinsight-sample-cs-streaming]: hdinsight-sample-csharp-streaming
+[powershell-install-configure]: /documentation/articles/install-configure-powershell
+[hdinsight-get-started]: /documentation/articles/hdinsight-get-started
+[hdinsight-samples]: /documentation/articles/hdinsight-run-samples
+[hdinsight-sample-10gb-graysort]: /documentation/articles/hdinsight-sample-10gb-graysort
+[hdinsight-sample-csharp-streaming]: /documentation/articles/hdinsight-sample-csharp-streaming
+[hdinsight-sample-pi-estimator]: /documentation/articles/hdinsight-sample-pi-estimator
+[hdinsight-sample-wordcount]: /documentation/articles/hdinsight-sample-wordcount
+[hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive
+[hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig
+[hdinsight-sample-cs-streaming]: /documentation/articles/hdinsight-sample-csharp-streaming

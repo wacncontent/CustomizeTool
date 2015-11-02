@@ -22,7 +22,7 @@ In this document, you will learn how to use Curl to run Pig Latin jobs on an Azu
 Curl is used to demonstrate how you can interact with HDInsight by using raw HTTP requests to run, monitor, and retrieve the results of Pig jobs. This works by using the WebHCat REST API (formerly known as Templeton) that is provided by your HDInsight cluster.
 <!-- deleted by customization
 
-> [AZURE.NOTE] If you are already familiar with using Linux-based Hadoop servers, but are new to HDInsight, see [Linux-based HDInsight Tips](hdinsight-hadoop-linux-information).
+> [AZURE.NOTE] If you are already familiar with using Linux-based Hadoop servers, but are new to HDInsight, see [Linux-based HDInsight Tips](/documentation/articles/hdinsight-hadoop-linux-information).
 -->
 
 ##<a id="prereq"></a>Prerequisites
@@ -108,10 +108,10 @@ For more information about the REST interface used in this article, see the [Web
 
 For general information about Pig on HDInsight:
 
-* [Use Pig with Hadoop on HDInsight](hdinsight-use-pig)
+* [Use Pig with Hadoop on HDInsight](/documentation/articles/hdinsight-use-pig)
 
 For information about other ways you can work with Hadoop on HDInsight:
 
-* [Use Hive with Hadoop on HDInsight](hdinsight-use-hive)
+* [Use Hive with Hadoop on HDInsight](/documentation/articles/hdinsight-use-hive)
 
-* [Use MapReduce with Hadoop on HDInsight](hdinsight-use-mapreduce)
+* [Use MapReduce with Hadoop on HDInsight](/documentation/articles/hdinsight-use-mapreduce)

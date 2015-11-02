@@ -16,7 +16,7 @@
 #Using PlayReady and/or Widevine Dynamic Common Encryption
 
 > [AZURE.SELECTOR]
-- [.NET](media-services-protect-with-drm)
+- [.NET](/documentation/articles/media-services-protect-with-drm)
 - [Java](https://github.com/southworkscom/azure-sdk-for-media-services-java-samples)
 
 Windows Azure Media Services enables you to deliver encrypted MPEG-DASH, Smooth Streaming, and HTTP-Live-Streaming (HLS) streams protected with [Microsoft PlayReady DRM](https://www.microsoft.com/playready/overview/) licenses. It also enables you to delivery encrypted DASH streams with Widevine DRM licenses. Both PlayReady and Widevine are encrypted per the Common Encryption (ISO/IEC 23001-7 CENC) specification. You can use [AMS .NET SDK](https://www.nuget.org/packages/windowsazure.mediaservices/) (starting with the version 3.5.1) or REST API to configure your AssetDeliveryConfiguration to use Widevine.
@@ -25,7 +25,7 @@ Media Services provides a service for delivering Microsoft PlayReady licenses. M
 
 >[AZURE.NOTE] Currently, Media Services does not provide a Widevine license server. You can use the following AMS partners to help you deliver Widevine licenses: [Axinom](http://www.axinom.com/press/ibc-axinom-drm-6/), [EZDRM](http://ezdrm.com/), [castLabs](http://castlabs.com/company/partners/azure/).
 >
-> For more information, see: integration with [Axinom](media-services-axinom-integration) and [castLabs](media-services-castlabs-integration).
+> For more information, see: integration with [Axinom](/documentation/articles/media-services-axinom-integration) and [castLabs](/documentation/articles/media-services-castlabs-integration).
 
 Media Services supports multiple ways of authorizing users who make key requests. The content key authorization policy could have one or more authorization restrictions: open or token restriction. The token restricted policy must be accompanied by a token issued by a Secure Token Service (STS). Media Services supports tokens in the [Simple Web Tokens](https://msdn.microsoft.com/zh-cn/library/gg185950.aspx#BKMK_2) (SWT) format and [JSON Web Token](https://msdn.microsoft.com/zh-cn/library/gg185950.aspx#BKMK_3) (JWT) format. For more information, see Configure the content key’s authorization policy.
 
@@ -33,7 +33,7 @@ To take advantage of dynamic encryption, you need to have an asset that contains
 
 This topic would be useful to developers that work on applications that deliver media protected with multiple DRMs, such as PlayReady and Widevine. The topic shows you how to configure the PlayReady license delivery service with authorization policies so that only authorized clients could receive PlayReady or Widevine licenses. It also shows how to use dynamic encryption encryption with PlayReady or Widevine DRM over DASH.
 
->[AZURE.NOTE]To start using dynamic encryption, you must first get at least one scale unit (also known as streaming unit). For more information, see [How to Scale a Media Service](media-services-manage-origins#scale_streaming_endpoints).
+>[AZURE.NOTE]To start using dynamic encryption, you must first get at least one scale unit (also known as streaming unit). For more information, see [How to Scale a Media Service](/documentation/articles/media-services-manage-origins#scale_streaming_endpoints).
 
 ##Configuring Dynamic Common Encryption and DRM License Delivery Services
 
@@ -50,7 +50,7 @@ The following are general steps that you would need to perform when protecting y
 
 >[AZURE.NOTE] Currently, Media Services does not provide a Widevine license server. You can use the following AMS partners to help you deliver Widevine licenses: [Axinom](http://www.axinom.com/press/ibc-axinom-drm-6/), [EZDRM](http://ezdrm.com/), [castLabs](http://castlabs.com/company/partners/azure/).
 >
-> For more information, see: integration with [Axinom](media-services-axinom-integration) and [castLabs](media-services-castlabs-integration).
+> For more information, see: integration with [Axinom](/documentation/articles/media-services-axinom-integration) and [castLabs](/documentation/articles/media-services-castlabs-integration).
 
 You will find a complete .NET example at the end of the topic.
 
@@ -68,27 +68,27 @@ If you add or update an asset delivery policy, you must delete the associated lo
 
 In order to manage, encode, and stream your videos, you must first upload your content into Windows Azure Media Services. Once uploaded, your content is stored securely in the cloud for further processing and streaming. 
 
-For detailed information, see [Upload Files into a Media Services account](media-services-dotnet-upload-files).
+For detailed information, see [Upload Files into a Media Services account](/documentation/articles/media-services-dotnet-upload-files).
 
 ##Encode the asset containing the file to the adaptive bitrate MP4 set
 
-With dynamic encryption all you need is to create an asset that contains a set of multi-bitrate MP4 files or multi-bitrate Smooth Streaming source files. Then, based on the specified format in the manifest and fragment request, the On-Demand Streaming server will ensure that you receive the stream in the protocol you have chosen. As a result, you only need to store and pay for the files in single storage format and Media Services service will build and serve the appropriate response based on requests from a client. For more information, see the [Dynamic Packaging Overview](media-services-dynamic-packaging-overview) topic.
+With dynamic encryption all you need is to create an asset that contains a set of multi-bitrate MP4 files or multi-bitrate Smooth Streaming source files. Then, based on the specified format in the manifest and fragment request, the On-Demand Streaming server will ensure that you receive the stream in the protocol you have chosen. As a result, you only need to store and pay for the files in single storage format and Media Services service will build and serve the appropriate response based on requests from a client. For more information, see the [Dynamic Packaging Overview](/documentation/articles/media-services-dynamic-packaging-overview) topic.
 
-For instructions on how to encode, see [How to encode an asset using Media Encoder Standard](media-services-dotnet-encode-with-media-encoder-standard).
+For instructions on how to encode, see [How to encode an asset using Media Encoder Standard](/documentation/articles/media-services-dotnet-encode-with-media-encoder-standard).
 	
 
 ##<a id="create_contentkey"></a>Create a content key and associate it with the encoded asset
 
 In Media Services, the content key contains the key that you want to encrypt an asset with.
 
-For detailed information, see [Create content key](media-services-dotnet-create-contentkey).
+For detailed information, see [Create content key](/documentation/articles/media-services-dotnet-create-contentkey).
 
 
 ##<a id="configure_key_auth_policy"></a>Configure the content key’s authorization policy
 
 Media Services supports multiple ways of authenticating users who make key requests. The content key authorization policy must be configured by you and met by the client (player) in order for the key to be delivered to the client. The content key authorization policy could have one or more authorization restrictions: open, token restriction, or IP restriction.
 
-For detailed information, see [Configure Content Key Authorization Policy](media-services-dotnet-configure-content-key-auth-policy#playready-dynamic-encryption).
+For detailed information, see [Configure Content Key Authorization Policy](/documentation/articles/media-services-dotnet-configure-content-key-auth-policy#playready-dynamic-encryption).
 
 ##<a id="configure_asset_delivery_policy"></a>Configure asset delivery policy 
 
@@ -98,7 +98,7 @@ Configure the delivery policy for your asset. Some things that the asset deliver
 - The asset delivery protocol (for example, MPEG DASH, HLS, HDS, Smooth Streaming or all). 
 - The type of dynamic encryption (in this case, Common Encryption). 
 
-For detailed information, see [Configure asset delivery policy ](media-services-rest-configure-asset-delivery-policy).
+For detailed information, see [Configure asset delivery policy ](/documentation/articles/media-services-rest-configure-asset-delivery-policy).
 
 ##<a id="create_locator"></a>Create an OnDemand streaming locator in order to get a streaming URL
 
@@ -106,7 +106,7 @@ You will need to provide your user with the streaming URL for Smooth, DASH or HL
 
 >[AZURE.NOTE]If you add or update your asset’s delivery policy, you must delete an existing locator (if any) and create a new locator.
 
-For instructions on how to publish an asset and build a streaming URL, see [Build a streaming URL](media-services-deliver-streaming-content).
+For instructions on how to publish an asset and build a streaming URL, see [Build a streaming URL](/documentation/articles/media-services-deliver-streaming-content).
 
 ##Get a test token
 

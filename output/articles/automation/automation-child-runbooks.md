@@ -24,11 +24,11 @@ When you invoke a runbook inline, it runs in the same job as the parent runbook.
 
 When a runbook is published, any child runbooks that it calls must already be published. This is because Azure Automation builds an association with any child runbooks when a runbook is compiled. If they aren’t, the parent runbook will appear to publish properly, it but will generate an exception when it’s started. If this happens, you can republish the parent runbook in order to properly reference the child runbooks. You do not need to republish the parent runbook if any of the child runbooks are changed because the association will have already been created.
 
-The parameters of a child runbook called inline can be any data type including complex objects, and there is no [JSON serialization](automation-starting-a-runbook#runbook-parameters) as there is when you start the runbook using the Azure Management Portal or with the Start-AzureAutomationRunbook cmdlet.
+The parameters of a child runbook called inline can be any data type including complex objects, and there is no [JSON serialization](/documentation/articles/automation-starting-a-runbook#runbook-parameters) as there is when you start the runbook using the Azure Management Portal or with the Start-AzureAutomationRunbook cmdlet.
 
 ### Runbook types
 
-You can't use a [PowerShell Workflow runbook](automation-runbook-types#powershell-workflow-runbooks) or a [Graphical runbook](automation-runbook-types#graphical-runbooks) as a child in a [PowerShell runbook](automation-runbook-types#powershell-runbooks) using inline execution.  Similarly, you can't use a PowerShell runbook as a child with inline execution in a PowerShell Workflow runbook or a Graph icalrunbook.  PowerShell runbooks can only use another PowerShell as a child.  Graphical and PowerShell Workflow runbooks can use each other as child runbooks.
+You can't use a [PowerShell Workflow runbook](/documentation/articles/automation-runbook-types#powershell-workflow-runbooks) or a [Graphical runbook](/documentation/articles/automation-runbook-types#graphical-runbooks) as a child in a [PowerShell runbook](/documentation/articles/automation-runbook-types#powershell-runbooks) using inline execution.  Similarly, you can't use a PowerShell runbook as a child with inline execution in a PowerShell Workflow runbook or a Graph icalrunbook.  PowerShell runbooks can only use another PowerShell as a child.  Graphical and PowerShell Workflow runbooks can use each other as child runbooks.
 
 When you call a Graphical or PowerShell Workflow child runbook using inline execution, you just use the name of the runbook.  When you call a PowerShell child runbook, you must preceded its name with *.\\* to specify that the script is located in the local directory. 
 
@@ -47,11 +47,11 @@ Following is the same example using a PowerShell runbook as the child.
 
 ##  Starting a child runbook using cmdlet
 
-You can use the [Start-AzureAutomationRunbook](http://msdn.microsoft.com/zh-cn/library/dn690259.aspx) cmdlet to start a runbook as described in [To start a runbook with Windows PowerShell](automation-starting-a-runbook#starting-a-runbook-with-windows-powershell). When you start a child runbook from a cmdlet, the parent runbook will move to the next line as soon as the job is created for the child runbook. If you need to retrieve any output from the runbook, then you need to access the job using [Get-AzureAutomationJobOutput](http://msdn.microsoft.com/zh-cn/library/dn690268.aspx).
+You can use the [Start-AzureAutomationRunbook](http://msdn.microsoft.com/zh-cn/library/dn690259.aspx) cmdlet to start a runbook as described in [To start a runbook with Windows PowerShell](/documentation/articles/automation-starting-a-runbook#starting-a-runbook-with-windows-powershell). When you start a child runbook from a cmdlet, the parent runbook will move to the next line as soon as the job is created for the child runbook. If you need to retrieve any output from the runbook, then you need to access the job using [Get-AzureAutomationJobOutput](http://msdn.microsoft.com/zh-cn/library/dn690268.aspx).
 
-The job from a child runbook started with a cmdlet will run in a separate job from the parent runbook. This results in more jobs than invoking the script inline and makes them more difficult to track. The parent can start multiple child runbooks though without waiting for each to complete. For that same kind of parallel execution calling the child runbooks inline, the parent runbook would need to use the [parallel keyword](automation-powershell-workflow#parallel-processing).
+The job from a child runbook started with a cmdlet will run in a separate job from the parent runbook. This results in more jobs than invoking the script inline and makes them more difficult to track. The parent can start multiple child runbooks though without waiting for each to complete. For that same kind of parallel execution calling the child runbooks inline, the parent runbook would need to use the [parallel keyword](/documentation/articles/automation-powershell-workflow#parallel-processing).
 
-Parameters for a child runbook started with a cmdlet are provided as a hashtable as described in [Runbook Parameters](automation-starting-a-runbook#runbook-parameters). Only simple data types can be used. If the runbook has a parameter with a complex data type, then it must be called inline.
+Parameters for a child runbook started with a cmdlet are provided as a hashtable as described in [Runbook Parameters](/documentation/articles/automation-starting-a-runbook#runbook-parameters). Only simple data types can be used. If the runbook has a parameter with a complex data type, then it must be called inline.
 
 ### Example
 
@@ -87,5 +87,5 @@ The following table summarizes the differences between the two methods for calli
 
 ## Related articles
 
-- [Starting a runbook in Azure Automation](automation-starting-a-runbook)
-- [Runbook output and messages in Azure Automation](automation-runbook-output-and-messages)
+- [Starting a runbook in Azure Automation](/documentation/articles/automation-starting-a-runbook)
+- [Runbook output and messages in Azure Automation](/documentation/articles/automation-runbook-output-and-messages)

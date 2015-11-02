@@ -17,7 +17,7 @@
 
 Learn how to analyze flight delay data using Hive on Linux-based HDInsight then export the data to Azure SQL Database using using Sqoop.
 
-> [AZURE.NOTE] While individual pieces of this document can be used with Windows-based HDInsight clusters (Python and Hive for example,) many steps are specific to Linux-based clusters. For steps that will work with a Windows-based cluster, see [Analyze flight delay data using Hive in HDInsight](hdinsight-analyze-flight-delay-data)
+> [AZURE.NOTE] While individual pieces of this document can be used with Windows-based HDInsight clusters (Python and Hive for example,) many steps are specific to Linux-based clusters. For steps that will work with a Windows-based cluster, see [Analyze flight delay data using Hive in HDInsight](/documentation/articles/hdinsight-analyze-flight-delay-data)
 
 ###Prerequisites
 
@@ -25,11 +25,11 @@ Before you begin this tutorial, you must have the following:
 
 - **An Azure subscription**. See [Get Azure trial](/pricing/1rmb-trial/).
 
-- __An HDInsight cluster__. See [Get started using Hadoop with Hive in HDInsight on Linux](hdinsight-hadoop-linux-tutorial-get-started) for steps on creating a new Linux-based HDInsight cluster.
+- __An HDInsight cluster__. See [Get started using Hadoop with Hive in HDInsight on Linux](/documentation/articles/hdinsight-hadoop-linux-tutorial-get-started) for steps on creating a new Linux-based HDInsight cluster.
 
-- __Azure SQL Database__. You will use an Azure SQL database as a destination data store. If you do not have a SQL Database already, see [How to create and configure an Azure SQL Database to create one](sql-database-create-configure)
+- __Azure SQL Database__. You will use an Azure SQL database as a destination data store. If you do not have a SQL Database already, see [How to create and configure an Azure SQL Database to create one](/documentation/articles/sql-database-create-configure)
 
-- __Azure CLI__. If you have not installed the Azure CLI, see [Install and Configure the Azure CLI](xplat-cli-install) for more steps.
+- __Azure CLI__. If you have not installed the Azure CLI, see [Install and Configure the Azure CLI](/documentation/articles/xplat-cli-install) for more steps.
 
 
 ##Download the flight data
@@ -60,9 +60,9 @@ Before you begin this tutorial, you must have the following:
 		
 	For more information on using SSH with Linux-based HDInsight, see the following articles:
 	
-	* [Use SSH with Linux-based Hadoop on HDInsight from Linux, Unix, or OS X](hdinsight-hadoop-linux-use-ssh-unix)
+	* [Use SSH with Linux-based Hadoop on HDInsight from Linux, Unix, or OS X](/documentation/articles/hdinsight-hadoop-linux-use-ssh-unix)
 
-	* [Use SSH with Linux-based Hadoop on HDInsight from Windows](hdinsight-hadoop-linux-use-ssh-windows)
+	* [Use SSH with Linux-based Hadoop on HDInsight from Windows](/documentation/articles/hdinsight-hadoop-linux-use-ssh-windows)
 	
 3. Once connected, use the following to unzip the .zip file:
 
@@ -216,7 +216,7 @@ Use the following steps to create an Azure SQL Database. This will be used to ho
 5. At the `1>` prompt, enter the following lines:
 
         CREATE TABLE [dbo].[delays](
-		[origin_city_name] [nvarchar](50) NOT NULL,
+		[origin_city_name] [nvarchar](/documentation/articles/50) NOT NULL,
 		[weather_delay] float,
 		CONSTRAINT [PK_delays] PRIMARY KEY CLUSTERED   
 		([origin_city_name] ASC))
@@ -285,17 +285,17 @@ Now you understand how to upload a file to Azure Blob storage, how to populate a
 
 [rita-website]: http://www.transtats.bts.gov/DL_SelectFields.asp?Table_ID=236&DB_Short_Name=On-Time
 [cindygross-hive-tables]: http://blogs.msdn.com/b/cindygross/archive/2013/02/06/hdinsight-hive-internal-and-external-tables-intro.aspx
-[powershell-install-configure]: install-configure-powershell
-[hdinsight-use-oozie]: hdinsight-use-oozie-linux-mac
-[hdinsight-use-hive]: hdinsight-use-hive
-[hdinsight-provision]: hdinsight-provision-clusters
-[hdinsight-storage]: hdinsight-hadoop-use-blob-storage
-[hdinsight-upload-data]: hdinsight-upload-data
-[hdinsight-get-started]: hdinsight-hadoop-linux-tutorial-get-started
-[hdinsight-use-sqoop]: hdinsight-use-sqoop
-[hdinsight-use-pig]: hdinsight-use-pig
-[hdinsight-develop-streaming]: hdinsight-hadoop-streaming-python
-[hdinsight-develop-mapreduce]: hdinsight-develop-deploy-java-mapreduce-linux
+[powershell-install-configure]: /documentation/articles/install-configure-powershell
+[hdinsight-use-oozie]: /documentation/articles/hdinsight-use-oozie-linux-mac
+[hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive
+[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters
+[hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage
+[hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
+[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-linux-tutorial-get-started
+[hdinsight-use-sqoop]: /documentation/articles/hdinsight-use-sqoop
+[hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig
+[hdinsight-develop-streaming]: /documentation/articles/hdinsight-hadoop-streaming-python
+[hdinsight-develop-mapreduce]: /documentation/articles/hdinsight-develop-deploy-java-mapreduce-linux
 [hadoop-hiveql]: https://cwiki.apache.org/confluence/display/Hive/LanguageManual+DDL
 
 [technetwiki-hive-error]: http://social.technet.microsoft.com/wiki/contents/articles/23047.hdinsight-hive-error-unable-to-rename.aspx

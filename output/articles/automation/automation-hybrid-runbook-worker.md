@@ -50,17 +50,17 @@ Consider the following recommendations for hybrid workers:
 The procedure below describes how to install and configure Hybrid Runbook Worker.  Perform the first two steps once for your Automation environment and then repeat the remaining steps for each worker computer.
 
 ### 1. Create Operations Management Suite workspace
-If you do not already have an Operations Management Suite workspace, then create one using instructions at  [Set up your Operational Insights workspace](operational-insights-onboard-in-minutes). You can use an existing workspace if you already have one.
+If you do not already have an Operations Management Suite workspace, then create one using instructions at  [Set up your Operational Insights workspace](/documentation/articles/operational-insights-onboard-in-minutes). You can use an existing workspace if you already have one.
 
 ### 2. Add Automation solution to Operations Management Suite workspace
 Solutions add functionality to Operations Management Suite.  The Automation solution adds functionality for Azure Automation including support for Hybrid Runbook Worker.  When you add the solution to your workspace, it will automatically push down worker components to the agent computer that you will install in the next step.
 
-Follow the instructions at [To add a solution using the Solutions Gallery](operational-insights-setup-workspace#1-add-solutions) to add the **Automation** solution to your Operations Management Suite workspace.
+Follow the instructions at [To add a solution using the Solutions Gallery](/documentation/articles/operational-insights-setup-workspace#1-add-solutions) to add the **Automation** solution to your Operations Management Suite workspace.
 
 ### 3. Install the Microsoft Management Agent
 The Microsoft Management Agent connects computers to Operations Management Suite.  When you install the agent on your on-premises machine and connect it to your workspace, it will automatically download the components required for Hybrid Runbook Worker.
 
-Follow the instructions at [Connect computers directly to Operational Insights](operational-insights-direct-agent) to install the agent on the on-premises machine.  You can repeat this process for multiple computers to add multiple workers to your environment.
+Follow the instructions at [Connect computers directly to Operational Insights](/documentation/articles/operational-insights-direct-agent) to install the agent on the on-premises machine.  You can repeat this process for multiple computers to add multiple workers to your environment.
 
 When the agent has successfully connected to Operations Management Suite, it will be listed on the **Connected Sources** tab of the Operations Management Suite **Settings** pane.  You can verify that the agent has correctly downloaded the Automation solution when it has a folder called **AzureAutomationFiles** in C:\Program Files\Microsoft Monitoring Agent\Agent. 
 
@@ -98,7 +98,7 @@ You can remove Hybrid Runbook Worker from an on-premise machine with by running 
 
 ## Starting runbooks on Hybrid Runbook Worker
 
-[Starting a Runbook in Azure Automation](automation-starting-a-runbook) describes different methods for starting a runbook.  Hybrid Runbook Worker adds a **RunOn** option where you can specify the name of a Hybrid Runbook Worker Group.  If a group is specified, then the runbook is retrieved and run by of the workers in that group.  If this option is not specified, then it is run in Azure Automation as normal.
+[Starting a Runbook in Azure Automation](/documentation/articles/automation-starting-a-runbook) describes different methods for starting a runbook.  Hybrid Runbook Worker adds a **RunOn** option where you can specify the name of a Hybrid Runbook Worker Group.  If a group is specified, then the runbook is retrieved and run by of the workers in that group.  If this option is not specified, then it is run in Azure Automation as normal.
 
 When you start a runbook in the Azure preview portal, you will be presented with a **Run on** option where you can select **Azure** or **Hybrid Worker**.  If you select **Hybrid Worker**, then you can select the group from a dropdown.
 
@@ -108,11 +108,11 @@ Use the **RunOn** parameter  You could use the following command to start a runb
 
 >[AZURE.NOTE] The **RunOn** parameter was added to the **Start-AzureAutomationRunbook** cmdlet in version 0.9.1 of Windows Azure PowerShell.  You should [download the latest version](http://azure.microsoft.com/downloads) if you have an earlier one installed.  You only need to install this version on a workstation where you will be starting the runbook from Windows PowerShell.  You do not need to install it on the worker computer unless you intend to start runbooks from that computer.  You cannot currently start a runbook on a Hybrid Runbook Worker from another runbook since this would require the latest version of Azure Powershell to be installed in your Automation account.  The latest version will be automatically updated in Azure Automation and automatically pushed down to the workers soon.
 
->[AZURE.NOTE] Hybrid Runbook Worker can only run [Graphical and PowerShell Workflow runbooks](automation-runbook-types).  You cannot currently start a [PowerShell runbook](automation-runbook-types) on a Hybrid Runbook Worker. 
+>[AZURE.NOTE] Hybrid Runbook Worker can only run [Graphical and PowerShell Workflow runbooks](/documentation/articles/automation-runbook-types).  You cannot currently start a [PowerShell runbook](/documentation/articles/automation-runbook-types) on a Hybrid Runbook Worker. 
 
 ## Troubleshooting runbooks on Hybrid Runbook Worker
 
-[Runbook output and messages](automation-runbook-output-and-messages) are sent to Azure Automation from hybrid workers just like runbook jobs run in the cloud.  You can also enable the Verbose and Progress streams the same way you would for other runbooks.  
+[Runbook output and messages](/documentation/articles/automation-runbook-output-and-messages) are sent to Azure Automation from hybrid workers just like runbook jobs run in the cloud.  You can also enable the Verbose and Progress streams the same way you would for other runbooks.  
 
 Logs are stored locally on each hybrid worker at C:\ProgramData\Microsoft\System Center\Orchestrator\7.2\SMA\Sandboxes.
 
@@ -123,7 +123,7 @@ There is no difference in the structure of runbooks that run in Azure Automation
 
 ### Runbook permissions
 
-Runbooks will run in the context of the local System account on the Hybrid Runbook Worker, so they must provide their own authentication to resources that they they will access.  They cannot use the same [method that is typically used for runbooks authenticating to Azure resources](automation-configuring#configuring-authentication-to-azure-resources) since they will be accessing resources outside of Azure.
+Runbooks will run in the context of the local System account on the Hybrid Runbook Worker, so they must provide their own authentication to resources that they they will access.  They cannot use the same [method that is typically used for runbooks authenticating to Azure resources](/documentation/articles/automation-configuring#configuring-authentication-to-azure-resources) since they will be accessing resources outside of Azure.
 
 You can use use [Credential](http://msdn.microsoft.com/zh-cn/library/dn940015.aspx) and [Certificate](http://msdn.microsoft.com/zh-cn/library/dn940013.aspx) assets in your runbook with cmdlets that allow you to specify credentials so you can authenticate to different resources.  The following example shows a portion of a runbook that restarts a computer.  It retrieves credentials from a credential asset and the name of the computer from a variable asset and then uses these values with the Restart-Computer cmdlet.
 
@@ -132,7 +132,7 @@ You can use use [Credential](http://msdn.microsoft.com/zh-cn/library/dn940015.as
 
 	Restart-Computer -ComputerName $Computer  -Credential $Cred
 
-You can also leverage [InlineScript](automation-powershell-workflow#inline-script) which will allow you to run blocks of code on another computer with credentials specified by the [PSCredential common parameter](http://technet.microsoft.com/zh-cn/library/jj129719.aspx).
+You can also leverage [InlineScript](/documentation/articles/automation-powershell-workflow#inline-script) which will allow you to run blocks of code on another computer with credentials specified by the [PSCredential common parameter](http://technet.microsoft.com/zh-cn/library/jj129719.aspx).
 
 
 ### Authoring and testing runbooks
@@ -157,6 +157,6 @@ You can use the following criteria to determine whether Azure Automation with Hy
 
 ## Related articles
 
-- [Starting a Runbook in Azure Automation](automation-starting-a-runbook)
+- [Starting a Runbook in Azure Automation](/documentation/articles/automation-starting-a-runbook)
 - [Editing a Runbook in Azure Automation](https://msdn.microsoft.com/zh-cn/library/dn879137.aspx)
  

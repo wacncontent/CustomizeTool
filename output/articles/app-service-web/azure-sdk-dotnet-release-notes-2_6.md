@@ -17,7 +17,7 @@
 
 This document contains the release notes for the Azure SDK for .NET 2.6 release. 
 
-With Azure SDK 2.6 you can develop cloud service applications (PaaS) targeting .NET 4.5.2 or .NET 4.6 provided that you manually install the target .NET Framework on the Cloud Service Role. See [Install .NET on a Cloud Service Role](cloud-services-dotnet-install-dotnet).
+With Azure SDK 2.6 you can develop cloud service applications (PaaS) targeting .NET 4.5.2 or .NET 4.6 provided that you manually install the target .NET Framework on the Cloud Service Role. See [Install .NET on a Cloud Service Role](/documentation/articles/cloud-services-dotnet-install-dotnet/).
 
 
 ##Service Bus updates
@@ -38,7 +38,7 @@ With Azure SDK 2.6 you can develop cloud service applications (PaaS) targeting .
 
 	Now HDInsight Tools for Visual Studio support connecting to HDInsight emulator, so you could develop your Hive scripts locally without introducing any cost, then execute those scripts against your HDInsight clusters. 
 
-	For more information, refer to [this manual](hdinsight-hadoop-emulator-get-started).
+	For more information, refer to [this manual](/documentation/articles/hdinsight-hadoop-emulator-get-started/).
 
 - **HDInsight Tools for Visual Studio support for generic Hadoop clusters** (Preview)
 
@@ -48,7 +48,7 @@ With Azure SDK 2.6 you can develop cloud service applications (PaaS) targeting .
 	- write Hive query with enhanced IntelliSense/auto-completion support, 
 	- view all the jobs in your cluster with an intuitive UI. 
 
-	For more information, refer to [this manual](hdinsight-hadoop-emulator-get-started).
+	For more information, refer to [this manual](/documentation/articles/hdinsight-hadoop-emulator-get-started/).
 
 ##In-Role Cache updates
 

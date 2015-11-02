@@ -23,7 +23,7 @@ In this tutorial, you will learn how to use the HDInsight Tools for Visual Studi
 * **EventHubReader**: Reads data from Event Hubs and stores it in Azure Table storage
 <!-- deleted by customization
 
-[AZURE.NOTE] The steps in this document only work with a Windows-based HDInsight cluster. For a Java version of this project, which will work with either a Linux-based or Windows-based cluster, see [Process events from Azure Event Hubs with Storm on HDInsight (Java)](hdinsight-storm-develop-java-event-hub-topology).
+[AZURE.NOTE] The steps in this document only work with a Windows-based HDInsight cluster. For a Java version of this project, which will work with either a Linux-based or Windows-based cluster, see [Process events from Azure Event Hubs with Storm on HDInsight (Java)](/documentation/articles/hdinsight-storm-develop-java-event-hub-topology).
 -->
 
 ## Prerequisites
@@ -554,7 +554,7 @@ Export an import allows you to persist checkpoint data when you need to delete t
 
 In this document, you have learned how to use the Java Event Hubs Spout and Bolt from a C# topology to work with data in Azure Event Hub. To learn more about creating C# topologies, see the following.
 
-* [Develop C# topologies for Apache Storm on HDInsight using Visual Studio](hdinsight-storm-develop-csharp-visual-studio-topology)
+* [Develop C# topologies for Apache Storm on HDInsight using Visual Studio](/documentation/articles/hdinsight-storm-develop-csharp-visual-studio-topology)
 
-* [Example topologies for Storm on HDInsight](hdinsight-storm-example-topology)
+* [Example topologies for Storm on HDInsight](/documentation/articles/hdinsight-storm-example-topology)
  

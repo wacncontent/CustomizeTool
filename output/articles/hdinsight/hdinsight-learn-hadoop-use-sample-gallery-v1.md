@@ -27,7 +27,7 @@ The HDInsight Getting Started Gallery provides an easy and quick way learn Hadoo
 
 [AZURE.INCLUDE [hdinsight-azure-portal](../includes/hdinsight-azure-portal.md)]
 
-* [Learn Hadoop by using the HDInsight Getting Started Gallery](hdinsight-learn-hadoop-use-sample-gallery)
+* [Learn Hadoop by using the HDInsight Getting Started Gallery](/documentation/articles/hdinsight-learn-hadoop-use-sample-gallery)
 
 
 ![HDInsight Hadoop, Storm, and HBase Getting Started Gallery solutions including sample data.][hdinsight.sample.gallery]
@@ -60,6 +60,6 @@ Other ways to learn about HDInsight include:
 [hdinsight.twitter.sample]: ./media/hdinsight-learn-hadoop-use-sample-gallery/HDInsight-Twitter-Trend-Analysis-sample.png
 
 <!--Link references-->
-[hdinsight.learn.map]: hdinsight-learn-map
+[hdinsight.learn.map]: /documentation/articles/hdinsight-learn-map
 [hdinsight.infographic]: http://go.microsoft.com/fwlink/?linkid=523960
 [azure.portal]:https://manage.windowsazure.cn

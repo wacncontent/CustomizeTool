@@ -25,9 +25,9 @@ To complete this tutorial and use the Hadoop tools in Visual Studio, you'll need
 - An Azure HDInsight cluster:<!-- deleted by customization Either a Linux-based or --> Windows-based cluster will work with the steps in this document. See one of the following for information on creating a cluster:
 <!-- deleted by customization 
 
-	- [Get started using Linux-based HDInsight](hdinsight-hadoop-linux-tutorial-get-started)
+	- [Get started using Linux-based HDInsight](/documentation/articles/hdinsight-hadoop-linux-tutorial-get-started)
 -->
-	- [Get started using Windows-based HDInsight](hdinsight-hadoop-tutorial-get-started-windows)
+	- [Get started using Windows-based HDInsight](/documentation/articles/hdinsight-hadoop-tutorial-get-started-windows)
 
 - A workstation with the following software:
 
@@ -53,7 +53,7 @@ HDInsight Tools for Visual Studio and Microsoft Hive ODBC Driver are packaged wi
 ## Connect to Azure subscriptions
 The HDInsight Tools for Visual Studio allows you to connect to your HDInsight clusters, perform some basic management operations, and run Hive queries.
 
->[AZURE.NOTE] For information on connecting to HDInsight Emulator, see [Get started with the HDInsight Emulator](hdinsight-get-started-emulator#vstools).
+>[AZURE.NOTE] For information on connecting to HDInsight Emulator, see [Get started with the HDInsight Emulator](/documentation/articles/hdinsight-get-started-emulator#vstools).
 
 >[AZURE.NOTE] For information on connecting to a generic Hadoop cluster (preview), see [Write and submit Hive queries using Visual Studio](http://blogs.msdn.com/b/xiaoyong/archive/2015/05/04/how-to-write-and-submit-hive-queries-using-visual-studio.aspx).
 
@@ -225,16 +225,16 @@ In this article, you learned how to connect to HDInsight clusters from Visual St
 
 <!--Link references-->
 <!-- keep by customization: begin -->
-[hdinsight.submit.jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically/
+[hdinsight.submit.jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically
 <!-- keep by customization: end -->
-[hdinsight-provision]: hdinsight-provision-clusters
-[hdinsight.introduction]: hdinsight-introduction
-[hdinsight.get.started]: hdinsight-get-started
-[hdinsight.hive]: hdinsight-use-hive
-[hdinsight.submit.jobs]: hdinsight-submit-hadoop-jobs-programmatically
+[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters
+[hdinsight.introduction]: /documentation/articles/hdinsight-introduction
+[hdinsight.get.started]: /documentation/articles/hdinsight-get-started
+[hdinsight.hive]: /documentation/articles/hdinsight-use-hive
+[hdinsight.submit.jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically
 <!-- deleted by customization 
-[hdinsight.analyze.twitter.data]: hdinsight-analyze-twitter-data
+[hdinsight.analyze.twitter.data]: /documentation/articles/hdinsight-analyze-twitter-data
 -->
-[hdinsight.storm.visual.studio.tools]: hdinsight-storm-develop-csharp-visual-studio-topology
-[hdinsight.access.application.logs]: hdinsight-hadoop-access-yarn-app-logs
+[hdinsight.storm.visual.studio.tools]: /documentation/articles/hdinsight-storm-develop-csharp-visual-studio-topology
+[hdinsight.access.application.logs]: /documentation/articles/hdinsight-hadoop-access-yarn-app-logs
 [apache.hive]: http://hive.apache.org

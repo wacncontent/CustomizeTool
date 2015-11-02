@@ -16,7 +16,7 @@
 
 
 # Azure Resource Manager support for Azure Traffic Manager Preview
-Azure Resource Manager (ARM) is the new management framework for services in Azure.  Azure Traffic Manager profiles can now be managed using Azure Resource Manager-based APIs and tools. To learn more about Azure Resource Manager, see [Using Resource groups to manage your Azure resources](azure-preview-portal-using-resource-groups).
+Azure Resource Manager (ARM) is the new management framework for services in Azure.  Azure Traffic Manager profiles can now be managed using Azure Resource Manager-based APIs and tools. To learn more about Azure Resource Manager, see [Using Resource groups to manage your Azure resources](/documentation/articles/azure-preview-portal-using-resource-groups).
 
 >[AZURE.NOTE] ARM support for Traffic Manager is currently in Preview, including REST API, Azure PowerShell, Azure CLI and .NET SDK.
 
@@ -204,7 +204,7 @@ This sequence can also be piped:
 
 ## See Also
 
-[What is Traffic Manager?](traffic-manager-overview)
+[What is Traffic Manager?](/documentation/articles/traffic-manager-overview)
 
 [Getting started with Azure cmdlets](https://msdn.microsoft.com/zh-cn/library/jj554332.aspx)
  

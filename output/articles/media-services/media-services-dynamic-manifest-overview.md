@@ -23,7 +23,7 @@ This topics discusses common scenarios in which using filters would be very bene
 When delivering your content to customers (streaming live events or video-on-demand) your goal is to deliver a high quality video to various devices under different network conditions. To achieve this goal do the following:
 
 - encode your stream to multi-bitrate ([adaptive bitrate](http://en.wikipedia.org/wiki/Adaptive_bitrate_streaming)) video stream (this will take care of quality and network conditions) and 
-- use Media Services [Dynamic Packaging](media-services-dynamic-packaging-overview) to dynamically re-package your stream into different protocols (this will take care of streaming on different devices). Media Services supports delivery of the following adaptive bitrate streaming technologies: HTTP Live Streaming (HLS), Smooth Streaming, MPEG DASH, and HDS (for Adobe PrimeTime/Access licensees only). 
+- use Media Services [Dynamic Packaging](/documentation/articles/media-services-dynamic-packaging-overview) to dynamically re-package your stream into different protocols (this will take care of streaming on different devices). Media Services supports delivery of the following adaptive bitrate streaming technologies: HTTP Live Streaming (HLS), Smooth Streaming, MPEG DASH, and HDS (for Adobe PrimeTime/Access licensees only). 
 
 ###Manifest files 
 
@@ -65,14 +65,14 @@ Here is an example of a manifest file:
 	
 ###Dynamic manifests
 
-There are [scenarios](media-services-dynamic-manifest-overview#scenarios) when your client needs more flexibility than what's described in the default asset's manifest file. For example:
+There are [scenarios](/documentation/articles/media-services-dynamic-manifest-overview#scenarios) when your client needs more flexibility than what's described in the default asset's manifest file. For example:
 
 - Device specific: deliver only the specified renditions and\or specified language tracks that are supported by the device that is used to playback the content ("rendition filtering"). 
 - Reduce the manifest to show a sub-clip of a live event ("sub-clip filtering").
 - Trim the start of a video ("trimming a video").
 - Adjust Presentation Window (DVR) in order to provide a limited length of the DVR window in the player ("adjusting presentation window") .
  
-To achieve this flexibility, Media Services offers **Dynamic Manifests** based on pre-defined [filters](media-services-dynamic-manifest-overview#filters).  Once you define the filters, your clients could use them to stream a specific rendition or sub-clips of your video. They would specify filter(s) in the streaming URL. Filters could be applied to adaptive bitrate streaming protocols supported by [Dynamic Packaging](media-services-dynamic-packaging-overview): HLS, MPEG-DASH, Smooth Streaming, and HDS. For example:
+To achieve this flexibility, Media Services offers **Dynamic Manifests** based on pre-defined [filters](/documentation/articles/media-services-dynamic-manifest-overview#filters).  Once you define the filters, your clients could use them to stream a specific rendition or sub-clips of your video. They would specify filter(s) in the streaming URL. Filters could be applied to adaptive bitrate streaming protocols supported by [Dynamic Packaging](/documentation/articles/media-services-dynamic-packaging-overview): HLS, MPEG-DASH, Smooth Streaming, and HDS. For example:
 
 MPEG DASH URL with filter
 
@@ -83,7 +83,7 @@ Smooth Streaming URL with filter
 	http://testendpoint-testaccount.streaming.mediaservices.chinacloudapi.cn/fecebb23-46f6-490d-8b70-203e86b0df58/BigBuckBunny.ism/Manifest(filter=MyLocalFilter)
 
 
-For more information about how to deliver your content and build streaming URLs, see [Delivering content overview](media-services-deliver-content-overview).
+For more information about how to deliver your content and build streaming URLs, see [Delivering content overview](/documentation/articles/media-services-deliver-content-overview).
 
 
 >[AZURE.NOTE]Note that Dynamic Manifests do not change the asset and the default manifest for that asset. Your client can choose to request a stream with or without filters. 
@@ -170,7 +170,7 @@ You can combine multiple filtering rules in a single filter. As an example you c
 
 The following topic discusses Media Services entities that are related to filters. The topic also shows how to programmatically create filters.  
 
-[Create filters with REST APIs](media-services-rest-dynamic-manifest).
+[Create filters with REST APIs](/documentation/articles/media-services-rest-dynamic-manifest).
 
 ## Combining multiple filters (filter composition)
 
@@ -210,7 +210,7 @@ You can view AMS learning paths here:
 
 ##See Also
 
-[Delivering Content to Customers Overview](media-services-deliver-content-overview)
+[Delivering Content to Customers Overview](/documentation/articles/media-services-deliver-content-overview)
 
 [renditions1]: ./media/media-services-dynamic-manifest-overview/media-services-rendition-filter.png
 [renditions2]: ./media/media-services-dynamic-manifest-overview/media-services-rendition-filter2.png

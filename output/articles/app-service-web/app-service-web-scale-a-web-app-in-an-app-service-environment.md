@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties 
 	pageTitle="How to Scale a Web App in an Azure Websites Environment" 
 	description="Scaling a web app in an Azure Websites Environment" 
@@ -78,6 +80,6 @@ For more information about the Azure Websites platform, see [Azure Websites][Azu
 [HowtoConfigureASE]: /documentation/articles/app-service-web-configure-an-app-service-environment/
 [CreateWebappinASE]: /documentation/articles/app-service-web-how-to-create-a-web-app-in-an-ase/
 [Appserviceplans]: /documentation/articles/azure-web-sites-web-hosting-plans-in-depth-overview/
-[AppServicePricing]: http://azure.microsoft.com/home/features/web-site/#price 
+[AppServicePricing]: /home/features/app-service/#price 
 [AzureAppService]: /documentation/articles/app-service-value-prop-what-is/
  

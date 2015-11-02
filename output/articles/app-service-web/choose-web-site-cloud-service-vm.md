@@ -53,7 +53,7 @@ Here are some common application scenarios with recommendations as to which Azur
 
 ### <a id="onprem"></a> I need a web front end with background processing and database backend to run business applications integrated with on premise assets.
 
-Azure Websites is a great solution for complex business applications. It lets you develop apps that scale automatically on a load balanced platform, are secured with Active Directory, and connect to your on-premises resources. It makes managing those apps easy through a world-class management portal and APIs, and allows you to gain insight into how customers are using them with app insight tools. The [Webjobs][] feature lets you run background processes and tasks as part of your web tier<!-- deleted by customization , while hybrid connectivity and [VNET features](fundamentals-introduction-to-azure#networking) make it easy to connect back to on-premises resources -->. Azure Websites provides three 9's SLA for web apps and enables you to:
+Azure Websites is a great solution for complex business applications. It lets you develop apps that scale automatically on a load balanced platform, are secured with Active Directory, and connect to your on-premises resources. It makes managing those apps easy through a world-class management portal and APIs, and allows you to gain insight into how customers are using them with app insight tools. The [Webjobs][] feature lets you run background processes and tasks as part of your web tier<!-- deleted by customization , while hybrid connectivity and [VNET features](/documentation/articles/fundamentals-introduction-to-azure#networking) make it easy to connect back to on-premises resources -->. Azure Websites provides three 9's SLA for web apps and enables you to:
 
 * Run your applications reliably on a self-healing, auto-patching cloud platform.
 * Scale automatically across a global network of datacenters.
@@ -140,7 +140,7 @@ HTTP-based web services enable you to support a wide variety of clients, includi
 - Use the published site to provide REST APIs to any HTTP clients, including mobile clients.
 <!-- deleted by customization
 
-In addition, Azure Websites has a new preview feature for REST APIs:  API apps.  For more information about API apps, see [What are API apps](app-service-api-apps-why-best-platform).
+In addition, Azure Websites has a new preview feature for REST APIs:  API apps.  For more information about API apps, see [What are API apps](/documentation/articles/app-service-api-apps-why-best-platform).
 -->
 
 ##<a name="features"></a>Feature Comparison
@@ -160,11 +160,11 @@ Deploy code with Web Deploy|X||X|Cloud Services supports the use of Web Deploy t
 WebMatrix support|X||X|
 Access to services like Service Bus, Storage, SQL Database|X|X|X|
 Host web or web services tier of a multi-tier architecture|X|X|X|
-Host middle tier of a multi-tier architecture|X|X|X|Azure Websites web apps can easily host a REST API middle tier, and the [WebJobs](http://go.microsoft.com/fwlink/?linkid=390226) feature can host background processing jobs. You can run WebJobs in a dedicated website to achieve independent scalability for the tier. The preview [API apps](app-service-api-apps-why-best-platform) feature provides even more features for hosting REST services.
+Host middle tier of a multi-tier architecture|X|X|X|Azure Websites web apps can easily host a REST API middle tier, and the [WebJobs](http://go.microsoft.com/fwlink/?linkid=390226) feature can host background processing jobs. You can run WebJobs in a dedicated website to achieve independent scalability for the tier. The preview [API apps](/documentation/articles/app-service-api-apps-why-best-platform) feature provides even more features for hosting REST services.
 Integrated MySQL-as-a-service support|X|X|X|Cloud Services can integrate MySQL-as-a-service through ClearDB's offerings, but not as part of the Management Portal workflow.
 Support for ASP.NET, classic ASP, Node.js, PHP, Python|X|X|X|
 Scale out to multiple instances without redeploy|X|X|X|Virtual Machines can scale out to multiple instances, but the services running on them must be written to handle this scale-out. You have to configure a load balancer to route requests across the machines, and create an Affinity Group to prevent simultaneous restarts of all instances due to maintenance or hardware failures.
-Support for SSL|X|X|X|For Azure Websites web apps, SSL for custom domain names is only supported for Basic and Standard mode. For information about using SSL with web apps, see [Configuring an SSL certificate for an Azure Website](web-sites-configure-ssl-certificate).
+Support for SSL|X|X|X|For Azure Websites web apps, SSL for custom domain names is only supported for Basic and Standard mode. For information about using SSL with web apps, see [Configuring an SSL certificate for an Azure Website](/documentation/articles/web-sites-configure-ssl-certificate).
 Visual Studio integration|X|X|X|
 Remote Debugging|X|X|X|
 Deploy code with TFS|X|X|X|
@@ -185,8 +185,8 @@ Can listen to ETW events||X|X|
 
 For more information about the three web hosting options, see the following resources:
 
-* [Introducing Azure](fundamentals-introduction-to-azure)
-* [Compute Hosting Options Provided by Azure](fundamentals-application-models)
+* [Introducing Azure](/documentation/articles/fundamentals-introduction-to-azure)
+* [Compute Hosting Options Provided by Azure](/documentation/articles/fundamentals-application-models)
 
 To get started with the option(s) you choose for your application, see the following resources:
 
@@ -199,7 +199,7 @@ To get started with the option(s) you choose for your application, see the follo
   [Cloud Services]: /documentation/services/cloud-services/
   [Virtual Machines]: /documentation/services/virtual-machines/
   [ClearDB]: http://www.cleardb.com/
-  [WebJobs]: websites-webjobs-resources
+  [WebJobs]: /documentation/articles/websites-webjobs-resources/
   [Configuring an SSL certificate for an Azure Website]: /documentation/articles/web-sites-configure-ssl-certificate/
 <!-- deleted by customization
   [azurestore]: http://azure.microsoft.com/gallery/store/

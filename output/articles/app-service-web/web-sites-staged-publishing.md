@@ -24,7 +24,7 @@ When you deploy your web app to [Azure Websites](/documentation/services/web-sit
 
 - After a swap, the slot with previously staged web app now has the previous production web app. If the changes swapped into the production slot are not as you expected, you can perform the same swap immediately to get your "last known good site" back.
 
-Each App Service plan mode supports a different number of deployment slots. To find out the number of slots your web app's mode supports, see [Azure Websites Pricing](/home/features/web-site/#price).
+Each App Service plan mode supports a different number of deployment slots. To find out the number of slots your web app's mode supports, see [Azure Websites Pricing](/home/features/app-service/#price).
 
 - When your web app has multiple slots, you cannot change the mode.
 
@@ -96,7 +96,7 @@ The web app must be running in the **Standard** <!-- deleted by customization or
 	
 5. Click the site URL in the dashboard view. Notice the the deployment slot has its own hostname and is also a live site. To limit public access to the deployment slot, see [Azure Web Sites – block web access to non-production deployment slots](http://ruslany.net/2014/04/azure-web-sites-block-web-access-to-non-production-deployment-slots/).
 <!-- keep by customization: end -->
-There is no content after deployment slot creation. You can deploy to the slot from a different repository branch, or an altogether different repository. You can also change the slot's configuration. Use the publish profile or deployment credentials associated with the deployment slot for content updates.  For example, you can [publish to this slot with git](web-sites-publish-source-control).
+There is no content after deployment slot creation. You can deploy to the slot from a different repository branch, or an altogether different repository. You can also change the slot's configuration. Use the publish profile or deployment credentials associated with the deployment slot for content updates.  For example, you can [publish to this slot with git](/documentation/articles/web-sites-publish-source-control).
 
 <a name="AboutConfiguration"></a>
 ## Configuration for deployment slots ##
@@ -181,7 +181,7 @@ In the blade for a deployment slot, click **Delete** in the command bar.
 
 Azure PowerShell is a module that provides cmdlets to manage Azure through Windows PowerShell, including support for managing web app deployment slots in Azure Websites.
 
-- For information on installing and configuring Azure PowerShell, and on authenticating Azure PowerShell with your Azure subscription, see [How to install and configure Windows Azure PowerShell](install-configure-powershell).  
+- For information on installing and configuring Azure PowerShell, and on authenticating Azure PowerShell with your Azure subscription, see [How to install and configure Windows Azure PowerShell](/documentation/articles/install-configure-powershell).  
 
 - In order to use the new Azure Resource Manager mode for PowerShell cmdlets start with the following: `Switch-AzureMode -Name AzureResourceManager`.
 
@@ -232,7 +232,7 @@ Azure PowerShell is a module that provides cmdlets to manage Azure through Windo
 
 The Azure CLI provides cross-platform commands for working with Azure, including support for managing Web App deployment slots.
 
-- For instructions on installing and configuring the Azure CLI, including information on how to connect Azure CLI to your Azure subscription, see [Install and Configure the Azure CLI](xplat-cli-install).
+- For instructions on installing and configuring the Azure CLI, including information on how to connect Azure CLI to your Azure subscription, see [Install and Configure the Azure CLI](/documentation/articles/xplat-cli-install).
 
 -  To list the commands available for Azure Websites in the Azure CLI, call `azure site -h`.
 

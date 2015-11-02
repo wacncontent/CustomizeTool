@@ -19,7 +19,7 @@
 
 Learn how to use Sqoop to import and export between a Linux-based HDInsight cluster and Azure SQL Database or SQL Server database.
 
-> [AZURE.NOTE] The steps in this article use SSH to connect to a Linux-based HDInsight cluster. Windows clients can also use Azure PowerShell to work with Sqoop on Linux-based clusters as documented in [Use Sqoop with Hadoop in HDInsight (PowerShell)](hdinsight-use-sqoop).
+> [AZURE.NOTE] The steps in this article use SSH to connect to a Linux-based HDInsight cluster. Windows clients can also use Azure PowerShell to work with Sqoop on Linux-based clusters as documented in [Use Sqoop with Hadoop in HDInsight (PowerShell)](/documentation/articles/hdinsight-use-sqoop).
 
 ##What is Sqoop?
 
@@ -36,9 +36,9 @@ Before you begin this tutorial, you must have the following:
 
 - **Workstation**: A computer with an SSH client.
 
-- **Azure CLI**: For more information, see [Install and Configure the Azure CLI](xplat-cli-install)
+- **Azure CLI**: For more information, see [Install and Configure the Azure CLI](/documentation/articles/xplat-cli-install)
 
-- **Linux-based HDInsight cluster**: For instructions about cluster provision, see [Get started using HDInsight](hdinsight-hadoop-linux-tutorial-get-started) or [Provision HDInsight clusters][hdinsight-provision].
+- **Linux-based HDInsight cluster**: For instructions about cluster provision, see [Get started using HDInsight](/documentation/articles/hdinsight-hadoop-linux-tutorial-get-started) or [Provision HDInsight clusters][hdinsight-provision].
 
 - **Azure SQL database**: This document provides instructions for creating an example SQL database. For more information on SQL Database, see [Get started using Azure SQL database][sqldatabase-get-started].
 
@@ -99,9 +99,9 @@ You will first export **hivesampletable** to the Azure SQL database or to SQL Se
 
 	For more information on using SSH to connect to HDInsight, see the following documents:
 
-    * **Linux, Unix or OS X clients**: See [Connect to a Linux-based HDInsight cluster from Linux, OS X or Unix](hdinsight-hadoop-linux-use-ssh-unix#connect-to-a-linux-based-hdinsight-cluster)
+    * **Linux, Unix or OS X clients**: See [Connect to a Linux-based HDInsight cluster from Linux, OS X or Unix](/documentation/articles/hdinsight-hadoop-linux-use-ssh-unix#connect-to-a-linux-based-hdinsight-cluster)
 
-    * **Windows clients**: See [Connect to a Linux-based HDInsight cluster from Windows](hdinsight-hadoop-linux-use-ssh-windows#connect-to-a-linux-based-hdinsight-cluster)
+    * **Windows clients**: See [Connect to a Linux-based HDInsight cluster from Windows](/documentation/articles/hdinsight-hadoop-linux-use-ssh-windows#connect-to-a-linux-based-hdinsight-cluster)
 
 3. Use the following command to install FreeTDS:
 
@@ -122,14 +122,14 @@ You will first export **hivesampletable** to the Azure SQL database or to SQL Se
 5. At the `1>` prompt, enter the following lines:
 
         CREATE TABLE [dbo].[mobiledata](
-		[clientid] [nvarchar](50),
-		[querytime] [nvarchar](50),
-		[market] [nvarchar](50),
-		[deviceplatform] [nvarchar](50),
-		[devicemake] [nvarchar](50),
-		[devicemodel] [nvarchar](50),
-		[state] [nvarchar](50),
-		[country] [nvarchar](50),
+		[clientid] [nvarchar](/documentation/articles/50),
+		[querytime] [nvarchar](/documentation/articles/50),
+		[market] [nvarchar](/documentation/articles/50),
+		[deviceplatform] [nvarchar](/documentation/articles/50),
+		[devicemake] [nvarchar](/documentation/articles/50),
+		[devicemodel] [nvarchar](/documentation/articles/50),
+		[state] [nvarchar](/documentation/articles/50),
+		[country] [nvarchar](/documentation/articles/50),
 		[querydwelltime] [float],
 		[sessionid] [bigint],
 		[sessionpagevieworder] [bigint])
@@ -215,14 +215,14 @@ You can also use Sqoop to import and export data from SQL Server, either in your
     The TSQL statements to create the **mobiledata** table are similar those used for SQL Database, with the exception of creating a clusterd index - this is not required for SQL Server:
 
         CREATE TABLE [dbo].[mobiledata](
-        [clientid] [nvarchar](50),
-        [querytime] [nvarchar](50),
-        [market] [nvarchar](50),
-        [deviceplatform] [nvarchar](50),
-        [devicemake] [nvarchar](50),
-        [devicemodel] [nvarchar](50),
-        [state] [nvarchar](50),
-        [country] [nvarchar](50),
+        [clientid] [nvarchar](/documentation/articles/50),
+        [querytime] [nvarchar](/documentation/articles/50),
+        [market] [nvarchar](/documentation/articles/50),
+        [deviceplatform] [nvarchar](/documentation/articles/50),
+        [devicemake] [nvarchar](/documentation/articles/50),
+        [devicemodel] [nvarchar](/documentation/articles/50),
+        [state] [nvarchar](/documentation/articles/50),
+        [country] [nvarchar](/documentation/articles/50),
         [querydwelltime] [float],
         [sessionid] [bigint],
         [sessionpagevieworder] [bigint])
@@ -241,18 +241,18 @@ Now you have learned how to use Sqoop. To learn more, see:
 
 
 
-[hdinsight-versions]: hdinsight-component-versioning
-[hdinsight-provision]: hdinsight-provision-clusters
-[hdinsight-get-started]: hdinsight-get-started
-[hdinsight-storage]: hdinsight-use-blob-storage
-[hdinsight-analyze-flight-data]: hdinsight-analyze-flight-delay-data
-[hdinsight-use-oozie]: hdinsight-use-oozie
-[hdinsight-upload-data]: hdinsight-upload-data
-[hdinsight-submit-jobs]: hdinsight-submit-hadoop-jobs-programmatically
-[sqldatabase-get-started]: sql-database-get-started
-[sqldatabase-create-configue]: sql-database-create-configure
+[hdinsight-versions]: /documentation/articles/hdinsight-component-versioning
+[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters
+[hdinsight-get-started]: /documentation/articles/hdinsight-get-started
+[hdinsight-storage]: /documentation/articles/hdinsight-use-blob-storage
+[hdinsight-analyze-flight-data]: /documentation/articles/hdinsight-analyze-flight-delay-data
+[hdinsight-use-oozie]: /documentation/articles/hdinsight-use-oozie
+[hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
+[hdinsight-submit-jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically
+[sqldatabase-get-started]: /documentation/articles/sql-database-get-started
+[sqldatabase-create-configue]: /documentation/articles/sql-database-create-configure
 [powershell-start]: http://technet.microsoft.com/zh-cn/library/hh847889.aspx
-[powershell-install]: install-configure-powershell
+[powershell-install]: /documentation/articles/install-configure-powershell
 [powershell-script]: http://technet.microsoft.com/zh-cn/library/ee176949.aspx
 
 [sqoop-user-guide-1.4.4]: https://sqoop.apache.org/docs/1.4.4/SqoopUserGuide.html

@@ -16,12 +16,12 @@
 #Use SSH with Linux-based Hadoop on HDInsight from Windows
 
 > [AZURE.SELECTOR]
-- [Windows](hdinsight-hadoop-linux-use-ssh-windows)
-- [Linux, Unix, OS X](hdinsight-hadoop-linux-use-ssh-unix)
+- [Windows](/documentation/articles/hdinsight-hadoop-linux-use-ssh-windows)
+- [Linux, Unix, OS X](/documentation/articles/hdinsight-hadoop-linux-use-ssh-unix)
 
 [Secure Shell (SSH)](https://en.wikipedia.org/wiki/Secure_Shell) allows you to remotely perform operations on your Liux-based HDInsight clusters using a command-line interface. This document provides information on connecting to HDInsight from Windows-based clients by using the PuTTY SSH client.
 
-> [AZURE.NOTE] The steps in this article assume you are using a Windows-based client. If you are using a Linux, Unix, or OS X client, see [Use SSH with Linux-based Hadoop on HDInsight from Linux, Unix, or OS X](hdinsight-hadoop-linux-use-ssh-unix).
+> [AZURE.NOTE] The steps in this article assume you are using a Windows-based client. If you are using a Linux, Unix, or OS X client, see [Use SSH with Linux-based Hadoop on HDInsight from Linux, Unix, or OS X](/documentation/articles/hdinsight-hadoop-linux-use-ssh-unix).
 
 ##Prerequisites
 
@@ -31,7 +31,7 @@
 
 OR
 
-* [Azure CLI for Mac, Linux and Windows](xplat-cli-install).
+* [Azure CLI for Mac, Linux and Windows](/documentation/articles/xplat-cli-install).
 
 ##What is SSH?
 
@@ -91,7 +91,7 @@ When creating a Linux-based HDInsight cluster, you must provide the public key c
 
 * **Azure CLI for Mac, Linux and Windows** - Uses command-line commands to create the cluster.
 
-Each of these methods will require the public key. For complete information on creating a Linux-based HDInsight cluster, see [Provision Linux-based HDInsight clusters](hdinsight-provision-clusters).
+Each of these methods will require the public key. For complete information on creating a Linux-based HDInsight cluster, see [Provision Linux-based HDInsight clusters](/documentation/articles/hdinsight-provision-clusters).
 
 ###Azure preview portal
 
@@ -105,9 +105,9 @@ This creates a login for the specified user, and enables either password authent
 
 ###Azure Command-Line Interface for Mac, Linux, and Windows
 
-You can use the [Azure CLI for Mac, Linux and Windows](xplat-cli-install) to create a new cluster by using the `azure hdinsight cluster create` command.
+You can use the [Azure CLI for Mac, Linux and Windows](/documentation/articles/xplat-cli-install) to create a new cluster by using the `azure hdinsight cluster create` command.
 
-For more information on using this command, see [Provision Hadoop Linux clusters in HDInsight using custom options](hdinsight-provision-clusters).
+For more information on using this command, see [Provision Hadoop Linux clusters in HDInsight using custom options](/documentation/articles/hdinsight-provision-clusters).
 
 ##Connect to a Linux-based HDInsight cluster
 
@@ -133,7 +133,7 @@ For more information on using this command, see [Provision Hadoop Linux clusters
 
 6. When prompted, enter the user that you entered when you created the cluster. If you provided a password for the user, you will be prompted to enter it also.
 
-> [AZURE.NOTE] The above steps assume you are using port 22, which will connect to headnode0 on the HDInsight cluster. If you use port 23, you will connect to headnode1. For more information on the head nodes, see [Availability and reliability of Hadoop clusters in HDInsight](hdinsight-high-availability-linux).
+> [AZURE.NOTE] The above steps assume you are using port 22, which will connect to headnode0 on the HDInsight cluster. If you use port 23, you will connect to headnode1. For more information on the head nodes, see [Availability and reliability of Hadoop clusters in HDInsight](/documentation/articles/hdinsight-high-availability-linux).
 
 ###Connect to worker nodes
 
@@ -215,16 +215,16 @@ SSH can be used to tunnel local requests, such as web requests, to the HDInsight
 
 > [AZURE.IMPORTANT] An SSH tunnel is a requirement for accessing the web UI for some Hadoop services. For example, both the Job History UI or Resource Manager UI can only be accessed using an SSH tunnel.
 
-For more information on creating and using an SSH tunnel, see [Use SSH Tunneling to access Ambari web UI, ResourceManager, JobHistory, NameNode, Oozie, and other web UI's](hdinsight-linux-ambari-ssh-tunnel).
+For more information on creating and using an SSH tunnel, see [Use SSH Tunneling to access Ambari web UI, ResourceManager, JobHistory, NameNode, Oozie, and other web UI's](/documentation/articles/hdinsight-linux-ambari-ssh-tunnel).
 
 ##Next steps
 
 Now that you understand how to authenticate by using an SSH key, learn how to use MapReduce with Hadoop on HDInsight.
 
-* [Use Hive with HDInsight](hdinsight-use-hive)
+* [Use Hive with HDInsight](/documentation/articles/hdinsight-use-hive)
 
-* [Use Pig with HDInsight](hdinsight-use-pig)
+* [Use Pig with HDInsight](/documentation/articles/hdinsight-use-pig)
 
-* [Use MapReduce jobs with HDInsight](hdinsight-use-mapreduce)
+* [Use MapReduce jobs with HDInsight](/documentation/articles/hdinsight-use-mapreduce)
 
 [preview-portal]: https://manage.windowsazure.cn/

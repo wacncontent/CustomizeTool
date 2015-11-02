@@ -25,10 +25,10 @@ All traffic requests to *www.contoso.com* will now be directed to *contoso.traff
 
 ## Next steps
 
-[About Traffic Manager traffic routing methods](traffic-manager-load-balancing-methods)
+[About Traffic Manager traffic routing methods](/documentation/articles/traffic-manager-load-balancing-methods)
 
-[Traffic Manager - Disable, enable or delete a profile](disable-enable-or-delete-a-profile)
+[Traffic Manager - Disable, enable or delete a profile](/documentation/articles/disable-enable-or-delete-a-profile)
 
-[Traffic Manager - Disable or enable an endpoint](disable-or-enable-an-endpoint)
+[Traffic Manager - Disable or enable an endpoint](/documentation/articles/disable-or-enable-an-endpoint)
 
-[What is Traffic Manager?](traffic-manager-overview)
+[What is Traffic Manager?](/documentation/articles/traffic-manager-overview)

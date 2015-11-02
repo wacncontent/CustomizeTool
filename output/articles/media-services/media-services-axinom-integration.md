@@ -15,8 +15,8 @@
 #Using Axinom to deliver Widevine licenses to Azure Media Services  
 
 > [AZURE.SELECTOR]
-- [castLabs](media-services-castlabs-integration)
-- [Axinom](media-services-axinom-integration)
+- [castLabs](/documentation/articles/media-services-castlabs-integration)
+- [Axinom](/documentation/articles/media-services-axinom-integration)
 
 ##Overview
 
@@ -43,7 +43,7 @@ You can configure dynamic CENC protection with multi-DRM for DASH streaming havi
 1. PlayReady protection for MS Edge and IE11, that could have a token authorization restrictions. The token restricted policy must be accompanied by a token issued by a Secure Token Service (STS), such as Azure Active Directory;
 1. Widevine protection for Chrome, it can require token authentication with token issued by another STS. 
 
-Please see [JWT Token Generation](media-services-axinom-integration#jwt-token-generation) section for why Azure Active Directory cannot be used as an STS for Axinom’s Widevine license server.
+Please see [JWT Token Generation](/documentation/articles/media-services-axinom-integration#jwt-token-generation) section for why Azure Active Directory cannot be used as an STS for Axinom’s Widevine license server.
 
 ###Considerations
 
@@ -188,11 +188,11 @@ The following parameters are required in the mini-solution leveraging Axinom Wid
 
 Parameter|How it is used
 ---|---
-Communication key ID|Must be included as value of the claim "com_key_id" in JWT token (see [this](media-services-axinom-integration#jwt-token-generation) section).
-Communication key|Must be used as the signing key of JWT token (see [this](media-services-axinom-integration#jwt-token-generation) section).
-Key seed|Must be used to generate content key with any given content key ID (see  [this](media-services-axinom-integration#content-protection) section).
-Widevine License acquisition URL|Must be used in configuring asset delivery policy for DASH streaming (see  [this](media-services-axinom-integration#content-protection) section ).
-Content Key ID|Must be included as part of the value of Entitlement Message claim of JWT token (see [this](media-services-axinom-integration#jwt-token-generation) section). 
+Communication key ID|Must be included as value of the claim "com_key_id" in JWT token (see [this](/documentation/articles/media-services-axinom-integration#jwt-token-generation) section).
+Communication key|Must be used as the signing key of JWT token (see [this](/documentation/articles/media-services-axinom-integration#jwt-token-generation) section).
+Key seed|Must be used to generate content key with any given content key ID (see  [this](/documentation/articles/media-services-axinom-integration#content-protection) section).
+Widevine License acquisition URL|Must be used in configuring asset delivery policy for DASH streaming (see  [this](/documentation/articles/media-services-axinom-integration#content-protection) section ).
+Content Key ID|Must be included as part of the value of Entitlement Message claim of JWT token (see [this](/documentation/articles/media-services-axinom-integration#jwt-token-generation) section). 
 
 ##Media Services learning paths
 

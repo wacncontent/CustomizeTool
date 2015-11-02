@@ -23,11 +23,11 @@ In Azure Media Services, a **Channel** represents a pipeline for processing live
 
 Starting with the Media Services 2.10 release, when you create a Channel, you can specify in which way you want for your channel to receive the input stream and whether or not you want for the channel to perform live encoding of your stream. You have two options:    
 
-- **None** – Specify this value, if you plan to use an on-premises live encoder which will output multi-bitrate stream. In this case, the incoming stream passed through to the output without any encoding. This is the behavior of a Channel prior to 2.10 release.  For more detailed information about working with channels of this type, see [Working with Channels that Receive Multi-bitrate Live Stream from On-premises Encoders](media-services-manage-channels-overview).
+- **None** – Specify this value, if you plan to use an on-premises live encoder which will output multi-bitrate stream. In this case, the incoming stream passed through to the output without any encoding. This is the behavior of a Channel prior to 2.10 release.  For more detailed information about working with channels of this type, see [Working with Channels that Receive Multi-bitrate Live Stream from On-premises Encoders](/documentation/articles/media-services-manage-channels-overview).
 
 - **Standard** – Choose this value, if you plan to use Media Services to encode your single bitrate live stream to multi-bitrate stream. 
 
->[AZURE.NOTE]This topic discusses attributes of channels that are enabled to perform live encoding (**Standard** encoding type). For information about working with channels that are not enabled to perform live encoding, see [Working with Channels that Receive Multi-bitrate Live Stream from On-premises Encoders](media-services-manage-channels-overview).
+>[AZURE.NOTE]This topic discusses attributes of channels that are enabled to perform live encoding (**Standard** encoding type). For information about working with channels that are not enabled to perform live encoding, see [Working with Channels that Receive Multi-bitrate Live Stream from On-premises Encoders](/documentation/articles/media-services-manage-channels-overview).
 
 The following diagram represents a live streaming workflow where a channel receives a single bitrate stream in one of the following protocols: RTMP, Smooth Streaming, or RTP (MPEG-TS); it then encodes the stream to a multi-bitrate stream. 
 
@@ -36,9 +36,9 @@ The following diagram represents a live streaming workflow where a channel recei
 
 ##In this topic
 
-- Overview of a [common live streaming scenario](media-services-manage-live-encoder-enabled-channels#scenario)
-- [Description of a Channel and its related components](media-services-manage-live-encoder-enabled-channels#channel)
-- [Considerations](media-services-manage-live-encoder-enabled-channels#Considerations)
+- Overview of a [common live streaming scenario](/documentation/articles/media-services-manage-live-encoder-enabled-channels#scenario)
+- [Description of a Channel and its related components](/documentation/articles/media-services-manage-live-encoder-enabled-channels#channel)
+- [Considerations](/documentation/articles/media-services-manage-live-encoder-enabled-channels#Considerations)
 
 
 ##<a id="scenario"></a>Common Live Streaming Scenario
@@ -73,7 +73,7 @@ The following are general steps involved in creating common live streaming appli
 1. Stop the program whenever you want to stop streaming and archiving the event.
 1. Delete the Program (and optionally delete the asset).   
 
-The [live streaming tasks](media-services-manage-channels-overview#tasks) section links to topics that demonstrate how to achieve tasks described above.
+The [live streaming tasks](/documentation/articles/media-services-manage-channels-overview#tasks) section links to topics that demonstrate how to achieve tasks described above.
 
 
 ##<a id="channel"></a>Channel's input (ingest) configurations
@@ -177,7 +177,7 @@ Use on-premises live encoders from vendors like Elemental Technologies, Ericsson
 
 Considerations:
 
-Same as for [single bitrate RTMP](media-services-manage-live-encoder-enabled-channels#single_bitrate_RTMP).
+Same as for [single bitrate RTMP](/documentation/articles/media-services-manage-live-encoder-enabled-channels#single_bitrate_RTMP).
 
 ####Other considerations
 
@@ -301,7 +301,7 @@ A Unique ID for the commercial break, to be used by downstream application to ta
 
 ###Show slate
 
-Optional. Signals the live encoder to switch to the [default slate](media-services-manage-live-encoder-enabled-channels#default_slate) image during a commercial break and hide the incoming video feed. Audio is also muted during slate. Default is **false**. 
+Optional. Signals the live encoder to switch to the [default slate](/documentation/articles/media-services-manage-live-encoder-enabled-channels#default_slate) image during a commercial break and hide the incoming video feed. Audio is also muted during slate. Default is **false**. 
  
 The image used will be the one specified via the default slate asset Id property at the time of the channel creation. 
 The slate will be stretched to fit the display image size. 
@@ -389,9 +389,9 @@ Stopped|Stopped|No
 - You cannot change the input protocol while the Channel or its associated programs are running. If you require different protocols, you should create separate channels for each input protocol. 
 - Every time you reconfigure the live encoder, call the **Reset** method on the channel. Before you reset the channel, you have to stop the program. After you reset the channel, restart the program. 
 - A channel can be stopped only when it is in the Running state, and all programs on the channel have been stopped.
-- By default you can only add 5 channels to your Media Services account. This is a soft quota on all new accounts. For more information, see [Quotas and Limitations](media-services-quotas-and-limitations).
+- By default you can only add 5 channels to your Media Services account. This is a soft quota on all new accounts. For more information, see [Quotas and Limitations](/documentation/articles/media-services-quotas-and-limitations).
 - You cannot change the input protocol while the Channel or its associated programs are running. If you require different protocols, you should create separate channels for each input protocol.
-- You are only billed when your Channel is in the **Running** state. For more information, refer to [this](media-services-manage-live-encoder-enabled-channels#states) section.
+- You are only billed when your Channel is in the **Running** state. For more information, refer to [this](/documentation/articles/media-services-manage-live-encoder-enabled-channels#states) section.
 - Currently, the max recommended duration of a live event is 8 hours. Please contact amslived at WindowsAzure.cn if you need to run a Channel for longer periods of time.
 - Make sure to have at least one streaming reserved unit on the streaming endpoint from which you want to stream content.
 
@@ -399,15 +399,15 @@ Stopped|Stopped|No
 
 - Channel start up can take 20+ minutes.
 - RTP support is catered towards professional broadcasters. Please review the notes on RTP in [this](http://azure.microsoft.com/blog/2015/04/13/an-introduction-to-live-encoding-with-azure-media-services/) blog.
-- Slate images should conform to restrictions described [here](media-services-manage-live-encoder-enabled-channels#default_slate). If you attempt create a Channel with a default slate that is larger than 1920x1080, the request will eventually error out.
+- Slate images should conform to restrictions described [here](/documentation/articles/media-services-manage-live-encoder-enabled-channels#default_slate). If you attempt create a Channel with a default slate that is larger than 1920x1080, the request will eventually error out.
 
 ###How to create channels that perform live encoding from a singe bitrate to adaptive bitrate stream 
 
 Choose **Portal**, **.NET**, **REST API** to see how to create and manage channels and programs.
 
 > [AZURE.SELECTOR]
-- [Portal](media-services-portal-creating-live-encoder-enabled-channel)
-- [.NET SDK](media-services-dotnet-creating-live-encoder-enabled-channel)
+- [Portal](/documentation/articles/media-services-portal-creating-live-encoder-enabled-channel)
+- [.NET SDK](/documentation/articles/media-services-dotnet-creating-live-encoder-enabled-channel)
 - [REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn783458.aspx)
 
 <!-- deleted by customization
@@ -422,11 +422,11 @@ You can view AMS learning paths here:
 
 ##Related topics
 
-[Delivering Live Streaming Events with Azure Media Services](media-services-live-streaming-workflow)
+[Delivering Live Streaming Events with Azure Media Services](/documentation/articles/media-services-live-streaming-workflow)
 
-[Media Services Concepts](media-services-concepts)
+[Media Services Concepts](/documentation/articles/media-services-concepts)
 
-[Azure Media Services Fragmented MP4 Live Ingest Specification](media-services-fmp4-live-ingest-overview)
+[Azure Media Services Fragmented MP4 Live Ingest Specification](/documentation/articles/media-services-fmp4-live-ingest-overview)
 
 [live-overview]: ./media/media-services-manage-live-encoder-enabled-channels/media-services-live-streaming-new.png
  

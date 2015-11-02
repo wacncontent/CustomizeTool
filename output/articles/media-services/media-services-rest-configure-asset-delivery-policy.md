@@ -20,7 +20,7 @@ If you plan to deliver dynamically encrypted assets, one of the steps in the Med
 
 This topic discusses why and how to create and configure asset delivery policies. 
 
->[AZURE.NOTE]To be able to use dynamic packaging and dynamic encryption, you must make sure to have at least one scale unit (also known as streaming unit). For more information, see [How to Scale a Media Service](media-services-manage-origins#scale_streaming_endpoints). 
+>[AZURE.NOTE]To be able to use dynamic packaging and dynamic encryption, you must make sure to have at least one scale unit (also known as streaming unit). For more information, see [How to Scale a Media Service](/documentation/articles/media-services-manage-origins#scale_streaming_endpoints). 
 >
 >Also, your asset must contain a set of adaptive bitrate MP4s or adaptive bitrate Smooth Streaming files.  
 
@@ -48,13 +48,13 @@ HDS
 
 	{streaming endpoint name-media services account name}.streaming.mediaservices.chinacloudapi.cn/{locator ID}/{filename}.ism/Manifest(format=f4m-f4f)
 
-For instructions on how to publish an asset and build a streaming URL, see [Build a streaming URL](media-services-deliver-streaming-content).
+For instructions on how to publish an asset and build a streaming URL, see [Build a streaming URL](/documentation/articles/media-services-deliver-streaming-content).
 
 >[AZURE.NOTE] When working with the Media Services REST API, the following considerations apply:
 >
->When accessing entities in Media Services, you must set specific header fields and values in your HTTP requests. For more information, see [Setup for Media Services REST API Development](media-services-rest-how-to-use).
+>When accessing entities in Media Services, you must set specific header fields and values in your HTTP requests. For more information, see [Setup for Media Services REST API Development](/documentation/articles/media-services-rest-how-to-use).
 
->After successfully connecting to https://media.chinacloudapi.cn, you will receive a 301 redirect specifying another Media Services URI. You must make subsequent calls to the new URI as described in [Connecting to Media Services using REST API](media-services-rest-connect_programmatically). 
+>After successfully connecting to https://media.chinacloudapi.cn, you will receive a 301 redirect specifying another Media Services URI. You must make subsequent calls to the new URI as described in [Connecting to Media Services using REST API](/documentation/articles/media-services-rest-connect_programmatically). 
 
 
 ##Clear asset delivery policy 
@@ -137,7 +137,7 @@ Response:
 
 ###Create content key of the EnvelopeEncryption type and link it to the asset
 
-When specifying DynamicEnvelopeEncryption delivery policy, you need to make sure to link your asset to a content key of the EnvelopeEncryption type. For more information, see: [Creating a content key](media-services-rest-create-contentkey)).
+When specifying DynamicEnvelopeEncryption delivery policy, you need to make sure to link your asset to a content key of the EnvelopeEncryption type. For more information, see: [Creating a content key](/documentation/articles/media-services-rest-create-contentkey)).
 
 
 ###<a id="get_delivery_url"></a>Get delivery URL
@@ -230,7 +230,7 @@ See [Link asset with asset delivery policy](#link_asset_with_asset_delivery_poli
 
 ###Create content key of the CommonEncryption type and link it to the asset
 
-When specifying DynamicCommonEncryption delivery policy, you need to make sure to link your asset to a content key of the CommonEncryption type. For more information, see: [Creating a content key](media-services-rest-create-contentkey)).
+When specifying DynamicCommonEncryption delivery policy, you need to make sure to link your asset to a content key of the CommonEncryption type. For more information, see: [Creating a content key](/documentation/articles/media-services-rest-create-contentkey)).
 
 
 ###Get Delivery URL

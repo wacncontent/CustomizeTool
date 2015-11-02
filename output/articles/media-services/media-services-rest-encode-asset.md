@@ -17,9 +17,9 @@
 
 
 > [AZURE.SELECTOR]
-- [.NET](media-services-dotnet-encode-asset)
-- [REST](media-services-rest-encode-asset)
-- [Portal](media-services-manage-content#encode)
+- [.NET](/documentation/articles/media-services-dotnet-encode-asset)
+- [REST](/documentation/articles/media-services-rest-encode-asset)
+- [Portal](/documentation/articles/media-services-manage-content#encode)
 
 ##Overview
 In order to deliver digital video over the internet you must compress the media. Digital video files are quite large and may be too big to deliver over the internet or for your customers’ devices to display properly. Encoding is the process of compressing video and audio so your customers can view your media.
@@ -33,20 +33,20 @@ Each Job can have one or more Tasks depending on the type of processing that you
 - through OData batch processing.
   
 
-It is recommended to always encode your mezzanine files into an adaptive bitrate MP4 set and then convert the set to the desired format using the [Dynamic Packaging](https://msdn.microsoft.com/zh-cn/library/azure/jj889436.aspx). To take advantage of dynamic packaging, you must first get at least one On-demand streaming unit for the streaming endpoint from which you plan to delivery your content. For more information, see [How to Scale Media Services](media-services-manage-origins#scale_streaming_endpoints).
+It is recommended to always encode your mezzanine files into an adaptive bitrate MP4 set and then convert the set to the desired format using the [Dynamic Packaging](https://msdn.microsoft.com/zh-cn/library/azure/jj889436.aspx). To take advantage of dynamic packaging, you must first get at least one On-demand streaming unit for the streaming endpoint from which you plan to delivery your content. For more information, see [How to Scale Media Services](/documentation/articles/media-services-manage-origins#scale_streaming_endpoints).
 
-If your output asset is storage encrypted, you must configure asset delivery policy. For more information see [Configuring asset delivery policy](media-services-rest-configure-asset-delivery-policy).
+If your output asset is storage encrypted, you must configure asset delivery policy. For more information see [Configuring asset delivery policy](/documentation/articles/media-services-rest-configure-asset-delivery-policy).
 
 
->[AZURE.NOTE]Before you start referencing media processors, verify that you have the correct media processor ID. For more information, see [Get Media Processors](media-services-rest-get-media-processor).
+>[AZURE.NOTE]Before you start referencing media processors, verify that you have the correct media processor ID. For more information, see [Get Media Processors](/documentation/articles/media-services-rest-get-media-processor).
 
 ##Create a job with a single encoding task 
 
 >[AZURE.NOTE] When working with the Media Services REST API, the following considerations apply:
 >
->When accessing entities in Media Services, you must set specific header fields and values in your HTTP requests. For more information, see [Setup for Media Services REST API Development](media-services-rest-how-to-use).
+>When accessing entities in Media Services, you must set specific header fields and values in your HTTP requests. For more information, see [Setup for Media Services REST API Development](/documentation/articles/media-services-rest-how-to-use).
 
->After successfully connecting to https://media.chinacloudapi.cn, you will receive a 301 redirect specifying another Media Services URI. You must make subsequent calls to the new URI as described in [Connecting to Media Services using REST API](media-services-rest-connect_programmatically). 
+>After successfully connecting to https://media.chinacloudapi.cn, you will receive a 301 redirect specifying another Media Services URI. You must make subsequent calls to the new URI as described in [Connecting to Media Services using REST API](/documentation/articles/media-services-rest-connect_programmatically). 
 
 
 The following example shows you how to create and post a Job with one Task set to encode a video at a specific resolution and quality. When encoding with Azure Media Encoder, you can use task configuration presets specified [here](https://msdn.microsoft.com/zh-cn/library/azure/dn619389.aspx).
@@ -265,9 +265,9 @@ You can view AMS learning paths here:
 
 
 ##Next Steps
-Now that you know how to create a job to encode an assset, go to the [How To Check Job Progress with Media Services](media-services-rest-check-job-progress) topic.
+Now that you know how to create a job to encode an assset, go to the [How To Check Job Progress with Media Services](/documentation/articles/media-services-rest-check-job-progress) topic.
 
 
 ##See Also
 
-[Get Media Processors](media-services-rest-get-media-processor)
+[Get Media Processors](/documentation/articles/media-services-rest-get-media-processor)

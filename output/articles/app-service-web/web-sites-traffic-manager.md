@@ -29,7 +29,7 @@ Azure Traffic Manager uses three different load balancing methods. These are des
 	
 * **Performance**: The Performance method distributes traffic based on the shortest round trip time to clients. The Performance method can be used for web apps within the same region or in different regions. 
 
-For detailed information about load balancing in Azure Traffic Manager, see [About Traffic Manager Load Balancing Methods](traffic-manager-load-balancing-methods).
+For detailed information about load balancing in Azure Traffic Manager, see [About Traffic Manager Load Balancing Methods](/documentation/articles/traffic-manager-load-balancing-methods).
 
 ##Web Apps and Traffic Manager Profiles 
 To configure the control of web app traffic, you create a profile in Azure Traffic Manager that uses one of the three load balancing methods described previously, and then add the endpoints (in this case, web apps) for which you want to control traffic to the profile. Your web app status (running, stopped or deleted) is regularly communicated to the profile so that Azure Traffic Manager can direct traffic accordingly.
@@ -46,15 +46,15 @@ When using Azure Traffic Manager with Azure, keep in mind the following points:
 
 * After you add a web app to a profile, the **Site URL** on the Dashboard of the web app's portal page will display the custom domain URL of the web app if you have set one up. Otherwise, it will display the Traffic Manager profile URL (for example, `contoso.trafficmgr.com`). Both the direct domain name of the web app and the Traffic Manager URL will be visible on the web app's Configure page under the **Domain Names** section.
 
-* Your custom domain names will work as expected, but in addition to adding them to your web apps, you must also configure your DNS map to point to the Traffic Manager URL. For information on how to set up a custom domain for a Azure web app,  see [Configuring a custom domain name for an Azure web site](web-sites-custom-domain-name).
+* Your custom domain names will work as expected, but in addition to adding them to your web apps, you must also configure your DNS map to point to the Traffic Manager URL. For information on how to set up a custom domain for a Azure web app,  see [Configuring a custom domain name for an Azure web site](/documentation/articles/web-sites-custom-domain-name).
 
 * You can only add web apps that are in standard mode to a Azure Traffic Manager profile.
 
 ## Next Steps
 
-For a conceptual and technical overview of Azure Traffic Manager, see [Traffic Manager Overview](traffic-manager-overview). 
+For a conceptual and technical overview of Azure Traffic Manager, see [Traffic Manager Overview](/documentation/articles/traffic-manager-overview). 
 
-For detailed information about load balancing in Azure Traffic Manager, see [About Traffic Manager Load Balancing Methods](traffic-manager-load-balancing-methods).
+For detailed information about load balancing in Azure Traffic Manager, see [About Traffic Manager Load Balancing Methods](/documentation/articles/traffic-manager-load-balancing-methods).
 
 For more information about using Traffic Manager with Web Apps, see the blog posts 
 [Using Azure Traffic Manager with Azure Web Sites](http://blogs.msdn.com/b/waws/archive/2014/03/18/using-windows-azure-traffic-manager-with-waws.aspx) and [Azure Traffic Manager can now integrate with Azure Web Sites](http://azure.microsoft.com/blog/2014/03/27/azure-traffic-manager-can-now-integrate-with-azure-web-sites/).

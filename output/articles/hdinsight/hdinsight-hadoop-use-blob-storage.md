@@ -99,11 +99,11 @@ When provisioning an HDInsight cluster from the preview portal, you have the opt
 
 ###Using Azure CLI
 
-If you have [installed and configured the Azure CLI](xplat-cli-install), the following command can be used to a storage account and container.
+If you have [installed and configured the Azure CLI](/documentation/articles/xplat-cli-install), the following command can be used to a storage account and container.
 
 	azure storage account create <storageaccountname> --type LRS
 
-> [AZURE.NOTE] The `--type` parameter indicates how the storage account will be replicated. For more information, see [Azure Storage Replication](storage-redundancy)
+> [AZURE.NOTE] The `--type` parameter indicates how the storage account will be replicated. For more information, see [Azure Storage Replication](/documentation/articles/storage-redundancy)
 
 You will be prompted to specify the geographic region that the storage account will be located in. You should create the storage account in the same region that you plan on creating your HDInsight cluster.
 
@@ -115,11 +115,11 @@ Once the storage account is created, use the following command to retrieve the s
 <!-- keep by customization: begin -->
 ### Using the Azure Management Portal
 
-When provisioning an HDInsight cluster from the Azure portal, there are two options: **Quick Create** and **Custom Create**. The Quick Create option requires that the Azure Storage account is created beforehand. For instructions, see [How to Create a Storage Account][azure-storage-create].
+When provisioning an HDInsight cluster from the Azure Management Portal, there are two options: **Quick Create** and **Custom Create**. The Quick Create option requires that the Azure Storage account is created beforehand. For instructions, see [How to Create a Storage Account][azure-storage-create].
 
 By using the Quick Create option, you can choose an existing storage account. The provision process creates a new container with the same name as the HDInsight cluster name. If a container with the same name already exists, <clusterName>-<x> will be used. For example, *myHDIcluster-1*. This container is used as the default file system.
 
-![Using Quick Create for a new Hadoop cluster in HDInsight in the Azure portal.][img-hdi-quick-create]
+![Using Quick Create for a new Hadoop cluster in HDInsight in the Azure Management Portal.][img-hdi-quick-create]
 
 By using Custom Create, you have one of the following options for the default storage account:
 
@@ -323,14 +323,14 @@ For more information, see:
 * [Use Hive with HDInsight][hdinsight-use-hive]
 * [Use Pig with HDInsight][hdinsight-use-pig]
 
-[powershell-install]: install-configure-powershell
-[hdinsight-provision]: hdinsight-provision-clusters
-[hdinsight-get-started]: hdinsight-hadoop-tutorial-get-started-windows
-[hdinsight-upload-data]: hdinsight-upload-data
-[hdinsight-use-hive]: hdinsight-use-hive
-[hdinsight-use-pig]: hdinsight-use-pig
+[powershell-install]: /documentation/articles/install-configure-powershell
+[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters
+[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows
+[hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
+[hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive
+[hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig
 [blob-storage-restAPI]: http://msdn.microsoft.com/zh-cn/library/azure/dd135733.aspx
-[azure-storage-create]: storage-create-storage-account
+[azure-storage-create]: /documentation/articles/storage-create-storage-account
 [img-hdi-powershell-blobcommands]: ./media/hdinsight-hadoop-use-blob-storage/HDI.PowerShell.BlobCommands.png
 [img-hdi-quick-create]: ./media/hdinsight-hadoop-use-blob-storage/HDI.QuickCreateCluster.png
 [img-hdi-custom-create-storage-account]: ./media/hdinsight-hadoop-use-blob-storage/HDI.CustomCreateStorageAccount.png  

@@ -235,11 +235,11 @@ You can also retrieve the output of an activity in a **PowerShell Expression** d
 
 ### Checkpoints
 
-The same guidance for setting [checkpoints](automation-powershell-workflow#checkpoints) in your runbook applies to graphical runbooks.  You can add an activity for the Checkpoint-Workflow cmdlet where you need to set a checkpoint.  You should then follow this activity with an Add-AzureAccount in case the runbook starts from this checkpoint on a different worker. 
+The same guidance for setting [checkpoints](/documentation/articles/automation-powershell-workflow#checkpoints) in your runbook applies to graphical runbooks.  You can add an activity for the Checkpoint-Workflow cmdlet where you need to set a checkpoint.  You should then follow this activity with an Add-AzureAccount in case the runbook starts from this checkpoint on a different worker. 
 
 ## Authenticating to Azure resources
 
-Most runbooks in Azure Automation will require authentication to Azure resources.  The typical method used for this authentication is the Add-AzureAccount cmdlet with a [credential asset](http://msdn.microsoft.com/zh-cn/library/dn940015.aspx) that represents an Active Directory user with access to the Azure account.  This is discussed in [Configuring Azure Automation](automation-configuring).
+Most runbooks in Azure Automation will require authentication to Azure resources.  The typical method used for this authentication is the Add-AzureAccount cmdlet with a [credential asset](http://msdn.microsoft.com/zh-cn/library/dn940015.aspx) that represents an Active Directory user with access to the Azure account.  This is discussed in [Configuring Azure Automation](/documentation/articles/automation-configuring).
 
 You can add this functionality to a graphical runbook by adding a credential asset to the canvas followed by an Add-AzureAccount activity.  Add-AzureAccount uses the credential activity for its input.  This is illustrated in the following example.
 
@@ -284,6 +284,6 @@ Data created by any activity that does not have an outgoing link will be added t
 
 ## Related articles
 
-- [Learning Windows PowerShell Workflow](automation-powershell-workflow)
+- [Learning Windows PowerShell Workflow](/documentation/articles/automation-powershell-workflow)
 - [Automation assets](http://msdn.microsoft.com/zh-cn/library/azure/dn939988.aspx)
  

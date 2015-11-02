@@ -19,7 +19,7 @@ In such situations, you will want to ensure the new infrastructure is able to co
 
 ![](./media/virtual-networks-arm-asm-s2s/figure01.png)
 
->[AZURE.NOTE] This document walks you through an end-to-end solution, for testing purposes. If you already have your VNets setup, and are familiar with VPN gateways and site-to-site connection in Azure, visit [Configure a S2S VPN between an ARM VNet and a classic VNet](virtual-networks-arm-asm-s2s-howto).
+>[AZURE.NOTE] This document walks you through an end-to-end solution, for testing purposes. If you already have your VNets setup, and are familiar with VPN gateways and site-to-site connection in Azure, visit [Configure a S2S VPN between an ARM VNet and a classic VNet](/documentation/articles/virtual-networks-arm-asm-s2s-howto).
 
 To test this scenario, you will:
 
@@ -356,5 +356,5 @@ Now that you have the two VNets connected, it is time to test the connectivity b
 
 ## Next Steps
 
-- Learn more about [the Network Resource Provider (NRP) for ARM](resource-groups-networking).
-- View the general guidelines on how to [create a S2S VPN connection between a classic VNet and an ARM VNet](virtual-networks-arm-asm-s2s-howto).
+- Learn more about [the Network Resource Provider (NRP) for ARM](/documentation/articles/resource-groups-networking).
+- View the general guidelines on how to [create a S2S VPN connection between a classic VNet and an ARM VNet](/documentation/articles/virtual-networks-arm-asm-s2s-howto).

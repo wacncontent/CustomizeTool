@@ -81,5 +81,5 @@ You can view AMS learning paths here:
    
 ##See Also 
 
-[Deliver streaming content](media-services-deliver-streaming-content)
+[Deliver streaming content](/documentation/articles/media-services-deliver-streaming-content)
 

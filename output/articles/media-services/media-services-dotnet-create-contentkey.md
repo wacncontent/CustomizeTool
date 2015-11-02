@@ -16,14 +16,14 @@
 #Create ContentKeys with .NET
 
 > [AZURE.SELECTOR]
-- [REST](media-services-rest-create-contentkey)
-- [.NET](media-services-dotnet-create-contentkey)
+- [REST](/documentation/articles/media-services-rest-create-contentkey)
+- [.NET](/documentation/articles/media-services-dotnet-create-contentkey)
 
 Media Services enables you to create and deliver encrypted assets. A **ContentKey** provides secure access to your **Asset**s. 
 
-When you create a new asset (for example, before you [upload files](media-services-dotnet-upload-files)), you can specify the following encryption options: **StorageEncrypted**, **CommonEncryptionProtected**, or **EnvelopeEncryptionProtected**. 
+When you create a new asset (for example, before you [upload files](/documentation/articles/media-services-dotnet-upload-files)), you can specify the following encryption options: **StorageEncrypted**, **CommonEncryptionProtected**, or **EnvelopeEncryptionProtected**. 
 
-When you deliver assets to your clients, you can [configure for assets to be dynamically encrypted](media-services-dotnet-configure-asset-delivery-policy) with one of the following two encryptions: **DynamicEnvelopeEncryption** or **DynamicCommonEncryption**.
+When you deliver assets to your clients, you can [configure for assets to be dynamically encrypted](/documentation/articles/media-services-dotnet-configure-asset-delivery-policy) with one of the following two encryptions: **DynamicEnvelopeEncryption** or **DynamicCommonEncryption**.
 
 Encrypted assets have to be associated with **ContentKey**s. This article describes how to create a content key.
 

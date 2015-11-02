@@ -28,7 +28,7 @@ Windows Azure Redis Cache is available in the following tiers:
 
 -	**Basic** – Single node. Multiple sizes up to 53 GB.
 -	**Standard** – Two-node Primary/Replica. Multiple sizes up to 53 GB. 99.9% SLA.
--	**Premium** – Currently in preview. Two-node Primary/Replica with up to 10 shards. Multiple sizes from 6 GB to 530 GB (contact us for more). All Standard tier features and more including support for [Redis cluster](cache-how-to-premium-clustering), [Redis persistence](cache-how-to-premium-persistence), and [Azure Virtual Network](cache-how-to-premium-vnet). No SLA during the preview period.
+-	**Premium** – Currently in preview. Two-node Primary/Replica with up to 10 shards. Multiple sizes from 6 GB to 530 GB (contact us for more). All Standard tier features and more including support for [Redis cluster](/documentation/articles/cache-how-to-premium-clustering), [Redis persistence](/documentation/articles/cache-how-to-premium-persistence), and [Azure Virtual Network](/documentation/articles/cache-how-to-premium-vnet). No SLA during the preview period.
 
 Each tier differs in terms of features and pricing. The features are covered later in this guide, and for more information on pricing, see [Cache Pricing Details][].
 
@@ -271,7 +271,7 @@ For more information about configuring these settings and using the Azure Redis 
 Now that you've learned the basics of Azure Redis Cache,
 follow these links to learn how to do more complex caching tasks.
 
--	[Enable cache diagnostics](cache-how-to-monitor#enable-cache-diagnostics) so you can [cache-how-to-monitor.md) the health of your cache. You can view the metrics in the preview portal and you can also [download and review](https://github.com/rustd/RedisSamples/tree/master/CustomMonitoring) them using the tools of your choice.
+-	[Enable cache diagnostics](/documentation/articles/cache-how-to-monitor#enable-cache-diagnostics) so you can [cache-how-to-monitor.md) the health of your cache. You can view the metrics in the preview portal and you can also [download and review](https://github.com/rustd/RedisSamples/tree/master/CustomMonitoring) them using the tools of your choice.
 -	Check out the [StackExchange.Redis cache client documentation][].
 	-	Azure Redis Cache can be accessed from many Redis clients and development languages. For more information, see [http://redis.io/clients][] and [Develop in other languages for Azure Redis Cache][].
 	-	Azure Redis Cache can also be used with services such as Redsmin. For more information, see  [How to retrieve an Azure Redis connection string and use it with Redsmin][].

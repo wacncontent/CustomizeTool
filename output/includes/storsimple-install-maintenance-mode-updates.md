@@ -10,7 +10,7 @@
 
      `Get-HcsUpdateAvailability` 
     
-4. You will be notified if updates are available and whether the updates are disruptive or non-disruptive. To apply disruptive updates, you need to put the device into Maintenance mode. See [Step 2: Enter Maintenance mode](storsimple-update-device#step2) for instructions.
+4. You will be notified if updates are available and whether the updates are disruptive or non-disruptive. To apply disruptive updates, you need to put the device into Maintenance mode. See [Step 2: Enter Maintenance mode](/documentation/articles/storsimple-update-device#step2) for instructions.
 
 5. When your device is in Maintenance mode, at the command prompt, type: `Start-HcsUpdate`
 
@@ -24,4 +24,4 @@
 
 7. When the update is installed on the current controller and it has restarted, connect to the other controller and perform steps 1 through 6.
 
-8. After both controllers are updated, exit Maintenance mode. See [Step 4: Exit Maintenance mode](storsimple-update-device#step4) for instructions.
+8. After both controllers are updated, exit Maintenance mode. See [Step 4: Exit Maintenance mode](/documentation/articles/storsimple-update-device#step4) for instructions.

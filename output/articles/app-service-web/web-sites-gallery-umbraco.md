@@ -91,7 +91,7 @@ That’s it! You've successfully created a blog web app using Umbraco CMS, in ju
 
 [Umbraco Video Tutorials](https://umbraco.com/help-and-support/video-tutorials.aspx)
 
-[Azure Management Portal Documentation](preview-portal)
+[Azure Management Portal Documentation](/documentation/articles/preview-portal)
 
 [Azure Management Portal (Channel 9)](http://channel9.msdn.com/Blogs/Windows-Azure/Azure-Preview-portal) 
 

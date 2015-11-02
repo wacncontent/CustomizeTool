@@ -61,13 +61,13 @@ There are free web-based DNS lookup and dig services available. Some of these gi
 
 ## See Also
 
-[About Traffic Manager traffic routing Methods](traffic-manager-load-balancing-methods)
+[About Traffic Manager traffic routing Methods](/documentation/articles/traffic-manager-load-balancing-methods)
 
-[Traffic Manager - Disable, enable or delete a profile](disable-enable-or-delete-a-profile)
+[Traffic Manager - Disable, enable or delete a profile](/documentation/articles/disable-enable-or-delete-a-profile)
 
-[Traffic Manager - Disable or enable an endpoint](disable-or-enable-an-endpoint)
+[Traffic Manager - Disable or enable an endpoint](/documentation/articles/disable-or-enable-an-endpoint)
 
-[What is Traffic Manager?](traffic-manager-overview)
+[What is Traffic Manager?](/documentation/articles/traffic-manager-overview)
 
 [Cloud Services](https://msdn.microsoft.com/zh-CN/library/jj155995.aspx)
 

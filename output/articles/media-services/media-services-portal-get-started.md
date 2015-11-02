@@ -125,7 +125,7 @@ Media Services provides dynamic packaging which allows you to deliver your adapt
 To take advantage of dynamic packaging, you need to do the following:
 
 - Encode your mezzanine (source) file into a set of adaptive bitrate MP4 files or adaptive bitrate Smooth Streaming files (the encoding steps are demonstrated later in this tutorial).
-- Get at least one On-Demand streaming unit for the streaming endpoint from which you plan to delivery your content. For more information, see [How to scale On-Demand Streaming reserved units](media-services-manage-origins#scale_streaming_endpoints).
+- Get at least one On-Demand streaming unit for the streaming endpoint from which you plan to delivery your content. For more information, see [How to scale On-Demand Streaming reserved units](/documentation/articles/media-services-manage-origins#scale_streaming_endpoints).
 
 With dynamic packaging you only need to store and pay for the files in single storage format and Media Services will build and serve the appropriate response based on requests from a client.
 

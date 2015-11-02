@@ -17,7 +17,7 @@ Azure Redis Cache has different cache offerings which provide flexibility in the
 
 The Azure Redis Cache premium tier includes clustering, persistence, and virtual network (VNET) support. A VNET is a representation of your own network in the cloud. When an Azure Redis Cache instance is configured with a VNET, it is not publicly addressable and can only be accessed from clients within the VNET. This article describes how to configure Virtual Network Support for a premium Azure Redis Cache instance.
 
-For information on other premium cache features, see [How to configure persistence for a Premium Azure Redis Cache](cache-how-to-premium-persistence) and [How to configure clustering for a Premium Azure Redis Cache](cache-how-to-premium-clustering).
+For information on other premium cache features, see [How to configure persistence for a Premium Azure Redis Cache](/documentation/articles/cache-how-to-premium-persistence) and [How to configure clustering for a Premium Azure Redis Cache](/documentation/articles/cache-how-to-premium-clustering).
 
 >[AZURE.NOTE] The Azure Redis Cache Premium tier is currently in preview.
 
@@ -33,9 +33,9 @@ To configure VNET support, first select one of the **Premium** caches in the **C
 
 ![Choose your pricing tier][redis-cache-premium-pricing-tier]
 
-Azure Redis Cache VNET integration is configured in the **Virtual Network** blade. From here you can select an existing classic VNET. To use a new VNET, follow the steps in [Create a virtual network (classic) by using the Azure preview portal](virtual-networks-create-vnet-classic-pportal) and then return to the **Redis Cache Virtual Network** blade to select it.
+Azure Redis Cache VNET integration is configured in the **Virtual Network** blade. From here you can select an existing classic VNET. To use a new VNET, follow the steps in [Create a virtual network (classic) by using the Azure preview portal](/documentation/articles/virtual-networks-create-vnet-classic-pportal) and then return to the **Redis Cache Virtual Network** blade to select it.
 
->[AZURE.NOTE] During the preview period for premium cache, Azure Redis Cache works with classic VNETs. For information on creating a classic VNET, see [Create a virtual network (classic) by using the Azure preview portal](virtual-networks-create-vnet-classic-pportal).
+>[AZURE.NOTE] During the preview period for premium cache, Azure Redis Cache works with classic VNETs. For information on creating a classic VNET, see [Create a virtual network (classic) by using the Azure preview portal](/documentation/articles/virtual-networks-create-vnet-classic-pportal).
 
 ![Virtual network][redis-cache-vnet]
 
@@ -68,7 +68,7 @@ The following list contains some common configuration errors that can prevent Az
 -	Blocked redis role instance VMs from communicating with each other inside the subnet. Redis role instances should be allowed to talk to each other using TCP on any of the ports used, which may be subject to change, but at a minimum can be assumed to be all the ports used in the redis CSDEF file.
 -	Blocked Azure Load Balancer from connecting to the redis VMs on TCP/HTTP port 16001. Azure Redis Cache depends on the default Azure load balancer probe to determine which role instances are up. The default load balancer probe works by pinging the Azure Guest Agent on port 16001. Only the role instances which respond to the ping will be placed in rotation to receive traffic forwarded by the ILB. When no instances are in rotation because pings fail because the ports are blocked, then the ILB will not accept any incoming TCP connections.
 -	Blocked client application's web traffic used for SSL public key validation. Clients of redis (within the virtual network) must to be able to do HTTP traffic to the public internet in order to download CA certificates and certificate revocation lists in order to do SSL certificate validation when they use port 6380 to connect to Redis and do SSL server authentication.
--	Blocked Azure Load Balancer from connecting to Redis VMs in a cluster via TCP on port 1300x (13000, 13001, etc.) or 1500x (15000, 15001, etc.). VNets are configured in the csdef file with a load balancer probe to open these ports. The Azure load balancer needs to be permitted by NSGs, the default NSGs do this using the tag AZURE_LOADBALANCER. The Azure load balancer has a single static IP address of 168.63.126.16. For more information, see [What is a Network Security Group (NSG)?](virtual-networks-nsg).
+-	Blocked Azure Load Balancer from connecting to Redis VMs in a cluster via TCP on port 1300x (13000, 13001, etc.) or 1500x (15000, 15001, etc.). VNets are configured in the csdef file with a load balancer probe to open these ports. The Azure load balancer needs to be permitted by NSGs, the default NSGs do this using the tag AZURE_LOADBALANCER. The Azure load balancer has a single static IP address of 168.63.126.16. For more information, see [What is a Network Security Group (NSG)?](/documentation/articles/virtual-networks-nsg).
 
 ## Can I use VNETs with a standard or basic cache?
 
@@ -77,8 +77,8 @@ VNETs can only be used with premium caches.
 ## Next steps
 Learn how to use more premium cache features.
 
--	[How to configure persistence for a Premium Azure Redis Cache](cache-how-to-premium-persistence)
--	[How to configure clustering for a Premium Azure Redis Cache](cache-how-to-premium-clustering)
+-	[How to configure persistence for a Premium Azure Redis Cache](/documentation/articles/cache-how-to-premium-persistence)
+-	[How to configure clustering for a Premium Azure Redis Cache](/documentation/articles/cache-how-to-premium-clustering)
 
 
 

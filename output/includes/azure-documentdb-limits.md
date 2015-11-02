@@ -28,4 +28,4 @@ Maximum number of points in a polygon argument in a ST_WITHIN query* |16
 Maximum number of collection creates per minute* |5
 Maximum number of scale operations per minute* |5
 
-Quotas listed with an asterisk (*) [can be adjusted by contacting Azure support](documentdb-increase-limits).
+Quotas listed with an asterisk (*) [can be adjusted by contacting Azure support](/documentation/articles/documentdb-increase-limits).

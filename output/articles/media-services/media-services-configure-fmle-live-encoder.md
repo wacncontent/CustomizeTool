@@ -15,21 +15,21 @@
 #Use the FMLE encoder to send a single bitrate live stream 
 
 > [AZURE.SELECTOR]
-- [FMLE](media-services-configure-fmle-live-encoder)
-- [Elemental Live](media-services-configure-elemental-live-encoder)
-- [Tricaster](media-services-configure-tricaster-live-encoder)
-- [Wirecast](media-services-configure-wirecast-live-encoder)
+- [FMLE](/documentation/articles/media-services-configure-fmle-live-encoder)
+- [Elemental Live](/documentation/articles/media-services-configure-elemental-live-encoder)
+- [Tricaster](/documentation/articles/media-services-configure-tricaster-live-encoder)
+- [Wirecast](/documentation/articles/media-services-configure-wirecast-live-encoder)
 
-This topic shows how to configure the [Flash Media Live Encoder](http://www.adobe.com/products/flash-media-encoder.html) (FMLE) encoder to send a single bitrate stream to AMS channels that are enabled for live encoding. For more information, see [Working with Channels that are Enabled to Perform Live Encoding with Azure Media Services](media-services-manage-live-encoder-enabled-channels).
+This topic shows how to configure the [Flash Media Live Encoder](http://www.adobe.com/products/flash-media-encoder.html) (FMLE) encoder to send a single bitrate stream to AMS channels that are enabled for live encoding. For more information, see [Working with Channels that are Enabled to Perform Live Encoding with Azure Media Services](/documentation/articles/media-services-manage-live-encoder-enabled-channels).
 
-This tutorial shows how to manage Azure Media Services (AMS) with Azure Media Services Explorer (AMSE) tool. This tool only runs on Windows PC. If you are on Mac or Linux, use the Azure Management Portal to create [channels](media-services-portal-creating-live-encoder-enabled-channel#create-a-channel) and [programs](media-services-portal-creating-live-encoder-enabled-channel#create-and-manage-a-program). 
+This tutorial shows how to manage Azure Media Services (AMS) with Azure Media Services Explorer (AMSE) tool. This tool only runs on Windows PC. If you are on Mac or Linux, use the Azure Management Portal to create [channels](/documentation/articles/media-services-portal-creating-live-encoder-enabled-channel#create-a-channel) and [programs](/documentation/articles/media-services-portal-creating-live-encoder-enabled-channel#create-and-manage-a-program). 
 
 Note that this tutorial describes using AAC. However, FMLE doesn’t supports AAC by default. You would need to purchase a plugin for AAC encoding such as from MainConcept: [AAC plugin](http://www.mainconcept.com/products/plug-ins/plug-ins-for-adobe/aac-encoder-fmle.html)
 
 ##Prerequisites
 
-- [Create an Azure Media Services account](media-services-create-account)
-- Ensure there is a Streaming Endpoint running with at least one streaming unit allocated. For more information, see [Manage Streaming Endpoints in a Media Services Account](media-services-manage-origins) 
+- [Create an Azure Media Services account](/documentation/articles/media-services-create-account)
+- Ensure there is a Streaming Endpoint running with at least one streaming unit allocated. For more information, see [Manage Streaming Endpoints in a Media Services Account](/documentation/articles/media-services-manage-origins) 
 - Install the latest version of the [AMSE](https://github.com/Azure/Azure-Media-Services-Explorer) tool. 
 - Launch the tool and connect to your AMS account.
 
@@ -56,9 +56,9 @@ Note that this tutorial describes using AAC. However, FMLE doesn’t supports AA
 >[AZURE.NOTE] The channel can take as long as 20 minutes to start.  
 
 
-While the channel is starting you can [configure the encoder](media-services-configure-fmle-live-encoder#configure_fmle_rtmp).
+While the channel is starting you can [configure the encoder](/documentation/articles/media-services-configure-fmle-live-encoder#configure_fmle_rtmp).
 
->[AZURE.IMPORTANT] Note that billing starts as soon as Channel goes into a ready state. For more information, see [Channel's states](media-services-manage-live-encoder-enabled-channels#states).
+>[AZURE.IMPORTANT] Note that billing starts as soon as Channel goes into a ready state. For more information, see [Channel's states](/documentation/articles/media-services-manage-live-encoder-enabled-channels#states).
 
 ##<a id=configure_fmle_rtmp></a>Configure the FMLE encoder
 
@@ -136,7 +136,7 @@ In this tutorial the following output settings are used. The rest of this sectio
 
 If the stream appears in the player, then the encoder has been properly configured to connect to AMS. 
 
-If an error is received, the channel will need to be reset and encoder settings adjusted. Please see the [troubleshooting](media-services-troubleshooting-live-streaming) topic for guidance.  
+If an error is received, the channel will need to be reset and encoder settings adjusted. Please see the [troubleshooting](/documentation/articles/media-services-troubleshooting-live-streaming) topic for guidance.  
 
 ##Create a program
 
@@ -158,7 +158,7 @@ The stream is now ready to be embedded in a player, or distributed to an audienc
 
 ## Troubleshooting
 
-Please see the [troubleshooting](media-services-troubleshooting-live-streaming) topic for guidance. 
+Please see the [troubleshooting](/documentation/articles/media-services-troubleshooting-live-streaming) topic for guidance. 
 
 ##Media Services learning paths
 <!-- deleted by customization

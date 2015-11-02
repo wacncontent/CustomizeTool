@@ -18,7 +18,7 @@ In this article, you will learn how to create an ASP.NET MVC line-of-business ap
 
 The Azure Active Directory tenant that you use can be an Azure-only directory, or it can be directory-synced with your on-premise Active Directory (AD) to create a single sign-on experience for workers that are on-premise or remote.
 
->[AZURE.NOTE] For Azure Websites you can configure authentication against an Azure Active Directory tenant with a few clicks of a button. For more information, see [Use Active Directory for authentication in Azure Websites](web-sites-authentication-authorization).
+>[AZURE.NOTE] For Azure Websites you can configure authentication against an Azure Active Directory tenant with a few clicks of a button. For more information, see [Use Active Directory for authentication in Azure Websites](/documentation/articles/web-sites-authentication-authorization).
 
 <!-- keep by customization: begin -->
 - [What you will build](#bkmk_build)
@@ -371,9 +371,9 @@ Now that you have configured the authorizations and line-of-business functionali
 <a name="bkmk_resources"></a>
 ## Further resources
 
-- [Protect the Application with SSL and the Authorize Attribute](web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database#protect-the-application-with-ssl-and-the-authorize-attribute)
-- [Use Active Directory for authentication in Azure Websites](web-sites-authentication-authorization)
-- [Create a .NET MVC web app in Azure Websites with AD FS authentication](web-sites-dotnet-lob-application-adfs)
+- [Protect the Application with SSL and the Authorize Attribute](/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database#protect-the-application-with-ssl-and-the-authorize-attribute)
+- [Use Active Directory for authentication in Azure Websites](/documentation/articles/web-sites-authentication-authorization)
+- [Create a .NET MVC web app in Azure Websites with AD FS authentication](/documentation/articles/web-sites-dotnet-lob-application-adfs)
 - [Windows Azure Active Directory Samples and Documentation](https://github.com/AzureADSamples)
 - [Vittorio Bertocci's blog](http://blogs.msdn.com/b/vbertocci/)
 - [Migrate a VS2013 Web Project From WIF to Katana](http://www.cloudidentity.com/blog/2014/09/15/MIGRATE-A-VS2013-WEB-PROJECT-FROM-WIF-TO-KATANA/)

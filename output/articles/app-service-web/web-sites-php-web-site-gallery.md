@@ -59,11 +59,11 @@ The Azure Marketplace makes available a wide range of popular web apps developed
 
 5. Select a **Resource Group** or create a new one.
 
-	For more information about resource groups, see [Using the Azure Preview Portal to manage your Azure resources](resource-group-portal).
+	For more information about resource groups, see [Using the Azure Preview Portal to manage your Azure resources](/documentation/articles/resource-group-portal).
 
 5. Select an **App Service plan/Location** or create a new one.
 
-	For more information about App Service plans, see [App Service plans overview](azure-web-sites-web-hosting-plans-in-depth-overview)	
+	For more information about App Service plans, see [App Service plans overview](/documentation/articles/azure-web-sites-web-hosting-plans-in-depth-overview)	
 
 7. Click **Database**, and then in the **New MySQL Database** blade provide the required values for configuring your MySQL database.
 

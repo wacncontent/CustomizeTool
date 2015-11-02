@@ -16,7 +16,7 @@
 
 Social websites are one of the major driving forces for big-data adoption. Public APIs provided by sites like Twitter are a useful source of data for analyzing and understanding popular trends. In this tutorial, you will get tweets by using a Twitter streaming API, and then use Apache Hive on Azure HDInsight to get a list of Twitter users who sent the most tweets that contained a certain word.
 
-> [AZURE.NOTE] The steps in this document require a Windows-based HDInsight cluster. For steps specific to a Linux-based cluster, see [Analyze Twitter data using Hive in HDInsight (Linux)](hdinsight-analyze-twitter-data-linux).
+> [AZURE.NOTE] The steps in this document require a Windows-based HDInsight cluster. For steps specific to a Linux-based cluster, see [Analyze Twitter data using Hive in HDInsight (Linux)](/documentation/articles/hdinsight-analyze-twitter-data-linux).
 
 
 
@@ -543,16 +543,16 @@ In this tutorial we have seen how to transform an unstructured JSON dataset into
 [twitter-statuses-filter]: https://dev.twitter.com/docs/api/1.1/post/statuses/filter
 
 [powershell-start]: http://technet.microsoft.com/zh-cn/library/hh847889.aspx
-[powershell-install]: install-configure-powershell
+[powershell-install]: /documentation/articles/install-configure-powershell
 [powershell-script]: http://technet.microsoft.com/zh-cn/library/ee176961.aspx
 
 
-[hdinsight-provision]: hdinsight-provision-clusters
-[hdinsight-get-started]: hdinsight-get-started
-[hdinsight-storage-powershell]: hdinsight-use-blob-storage#powershell
-[hdinsight-analyze-flight-delay-data]: hdinsight-analyze-flight-delay-data
-[hdinsight-storage]: hdinsight-use-blob-storage
-[hdinsight-use-sqoop]: hdinsight-use-sqoop
-[hdinsight-power-query]: hdinsight-connect-excel-power-query
-[hdinsight-hive-odbc]: hdinsight-connect-excel-hive-ODBC-driver
-[hdinsight-hbase-twitter-sentiment]: hdinsight-hbase-analyze-twitter-sentiment
+[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters
+[hdinsight-get-started]: /documentation/articles/hdinsight-get-started
+[hdinsight-storage-powershell]: /documentation/articles/hdinsight-use-blob-storage#powershell
+[hdinsight-analyze-flight-delay-data]: /documentation/articles/hdinsight-analyze-flight-delay-data
+[hdinsight-storage]: /documentation/articles/hdinsight-use-blob-storage
+[hdinsight-use-sqoop]: /documentation/articles/hdinsight-use-sqoop
+[hdinsight-power-query]: /documentation/articles/hdinsight-connect-excel-power-query
+[hdinsight-hive-odbc]: /documentation/articles/hdinsight-connect-excel-hive-ODBC-driver
+[hdinsight-hbase-twitter-sentiment]: /documentation/articles/hdinsight-hbase-analyze-twitter-sentiment

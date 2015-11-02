@@ -30,11 +30,11 @@ The following diagram shows the dynamic packaging workflow.
 ![Dynamic Encoding](./media/media-services-dynamic-packaging-overview/media-services-dynamic-packaging.png)
 
 
->[AZURE.NOTE]To take advantage of dynamic packaging, you must first get at least one On-demand streaming unit for the streaming endpoint from which you plan to delivery your content. For more information, see [How to Scale Media Services](media-services-manage-origins#scale_streaming_endpoints).
+>[AZURE.NOTE]To take advantage of dynamic packaging, you must first get at least one On-demand streaming unit for the streaming endpoint from which you plan to delivery your content. For more information, see [How to Scale Media Services](/documentation/articles/media-services-manage-origins#scale_streaming_endpoints).
 
 ##Common scenario
 
-1. Upload an input file (called a mezzanine file). For example, H.264, MP4, or WMV (for the list of supported formats see [Formats Supported by the Media Services Encoder](media-services-azure-media-encoder-formats)).
+1. Upload an input file (called a mezzanine file). For example, H.264, MP4, or WMV (for the list of supported formats see [Formats Supported by the Media Services Encoder](/documentation/articles/media-services-azure-media-encoder-formats)).
 
 1. Encode your mezzanine file to H.264 MP4 adaptive bitrate sets.
 
@@ -42,7 +42,7 @@ The following diagram shows the dynamic packaging workflow.
 
 1. Build the streaming URLs to access and stream your content.
 
->[AZURE.NOTE]Not all MP4 file formats are supported by dynamic packaging, for more information, see [Unsupported formats for dynamic packaging](media-services-dynamic-packaging-overview#unsupported_formats).
+>[AZURE.NOTE]Not all MP4 file formats are supported by dynamic packaging, for more information, see [Unsupported formats for dynamic packaging](/documentation/articles/media-services-dynamic-packaging-overview#unsupported_formats).
 
 ##Preparing assets for dynamic streaming
 
@@ -75,7 +75,7 @@ Once you have the adaptive bitrate sets, you can publish your asset by creating 
 
 For information on how to create locators and use dynamic packaging to stream your content, see the following topics:
 
-[Delivering Content to Customers Overview](media-services-deliver-content-overview).
+[Delivering Content to Customers Overview](/documentation/articles/media-services-deliver-content-overview).
 
 Configure asset delivery policy using **.NET** or **REST API**.
 

@@ -52,9 +52,9 @@ Learn how to process and analyze JSON files using Hive in HDInsight. The followi
 	    ]
 	}
 
-The file can be found at wasb://processjson@hditutorialdata.blob.core.windows.net/. For more information on using Azure Blob storage with HDInsight, see [Use HDFS-compatible Azure Blob storage with Hadoop in HDInsight](hdinsight-hadoop-use-blob-storage). You can copy the file to the default container of your cluster if you want.
+The file can be found at wasb://processjson@hditutorialdata.blob.core.windows.net/. For more information on using Azure Blob storage with HDInsight, see [Use HDFS-compatible Azure Blob storage with Hadoop in HDInsight](/documentation/articles/hdinsight-hadoop-use-blob-storage). You can copy the file to the default container of your cluster if you want.
 
-In this tutorial, you will use the Hive console.  For instructions of opening the Hive console, see [Use Hive with Hadoop on HDInsight with Remote Desktop](hdinsight-hadoop-use-hive-remote-desktop).
+In this tutorial, you will use the Hive console.  For instructions of opening the Hive console, see [Use Hive with Hadoop on HDInsight with Remote Desktop](/documentation/articles/hdinsight-hadoop-use-hive-remote-desktop).
 
 ##Flatten JSON documents
 
@@ -241,14 +241,14 @@ In conclusion, the type of JSON operator in Hive that you choose depends on your
 
 For other related articles, see
 
-- [Use Hive and HiveQL with Hadoop in HDInsight to analyze a sample Apache log4j file](hdinsight-use-hive)
-- [Analyze flight delay data by using Hive in HDInsight](hdinsight-analyze-flight-delay-data)
+- [Use Hive and HiveQL with Hadoop in HDInsight to analyze a sample Apache log4j file](/documentation/articles/hdinsight-use-hive)
+- [Analyze flight delay data by using Hive in HDInsight](/documentation/articles/hdinsight-analyze-flight-delay-data)
 <!-- deleted by customization
-- [Analyze Twitter data using Hive in HDInsight](hdinsight-analyze-twitter-data)
-- [Run a Hadoop job using DocumentDB and HDInsight](documentdb-run-hadoop-with-hdinsight)
+- [Analyze Twitter data using Hive in HDInsight](/documentation/articles/hdinsight-analyze-twitter-data)
+- [Run a Hadoop job using DocumentDB and HDInsight](/documentation/articles/documentdb-run-hadoop-with-hdinsight)
 -->
 
-[hdinsight-python]: hdinsight-python
+[hdinsight-python]: /documentation/articles/hdinsight-python
 [image-hdi-hivejson-flatten]: ./media/hdinsight-using-json-in-hive/flatten.png
 [image-hdi-hivejson-getjsonobject]: ./media/hdinsight-using-json-in-hive/getjsonobject.png
 [image-hdi-hivejson-jsontuple]: ./media/hdinsight-using-json-in-hive/jsontuple.png

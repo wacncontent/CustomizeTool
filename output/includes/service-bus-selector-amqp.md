@@ -1,6 +1,6 @@
 > [AZURE.SELECTOR]
-- [NET](service-bus-amqp-dotnet)
-- [Java](service-bus-amqp-java)
-- [PHP](service-bus-amqp-php)
-- [Python](service-bus-amqp-python)
-- [Apache](service-bus-amqp-apache)
+- [NET](/documentation/articles/service-bus-amqp-dotnet)
+- [Java](/documentation/articles/service-bus-amqp-java)
+- [PHP](/documentation/articles/service-bus-amqp-php)
+- [Python](/documentation/articles/service-bus-amqp-python)
+- [Apache](/documentation/articles/service-bus-amqp-apache)

@@ -1,4 +1,4 @@
 > [AZURE.SELECTOR]
-- [Portal](media-services-manage-content#encode)
-- [.NET](media-services-dotnet-encode-asset)
-- [REST API](media-services-rest-encode-asset)
+- [Portal](/documentation/articles/media-services-manage-content#encode)
+- [.NET](/documentation/articles/media-services-dotnet-encode-asset)
+- [REST API](/documentation/articles/media-services-rest-encode-asset)

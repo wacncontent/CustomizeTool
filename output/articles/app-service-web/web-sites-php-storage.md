@@ -325,7 +325,7 @@ To make your application store data into the cloud you need to first create a st
 
 1. Login to the [Azure Management Portal][management-portal].
 
-2. Click the **New** icon on the bottom left of the portal, then click **DATA SERVICE** > **Storage**. Give the storage account a unique name and create a new [resource group](resource-group-overview) for it.
+2. Click the **New** icon on the bottom left of the portal, then click **DATA SERVICE** > **Storage**. Give the storage account a unique name and create a new [resource group](/documentation/articles/resource-group-overview) for it.
 
 	![Create a new storage account][storage-quick-create]
 	
@@ -374,7 +374,7 @@ Follow these steps to create an Azure web app:
 <!-- deleted by customization
 1. Login to the [Azure Management Portal][management-portal].
 
-2. Create an empty web app with the instructions at [How to: Create a web app Using the Azure Management Portal](web-sites-create-deploy#createawebsiteportal). Be sure to create a new [App Service plan](azure-web-sites-web-hosting-plans-in-depth-overview) and select the resource group you created previously for the storage account.
+2. Create an empty web app with the instructions at [How to: Create a web app Using the Azure Management Portal](/documentation/articles/web-sites-create-deploy#createawebsiteportal). Be sure to create a new [App Service plan](/documentation/articles/azure-web-sites-web-hosting-plans-in-depth-overview) and select the resource group you created previously for the storage account.
 
 	When the web app has been created, the **Notifications** button will flash a green **SUCCESS** and the web app's blade is open to show that it belongs to the new resource group you created.
 

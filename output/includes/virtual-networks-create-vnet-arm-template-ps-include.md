@@ -2,9 +2,9 @@
 
 To deploy the ARM template you downloaded by using PowerShell, follow the steps below.
 
-1. If you have never used Azure PowerShell, see [How to Install and Configure Azure PowerShell](powershell-install-configure) and follow the instructions all the way to the end to sign into Azure and select your subscription.
+1. If you have never used Azure PowerShell, see [How to Install and Configure Azure PowerShell](/documentation/articles/powershell-install-configure) and follow the instructions all the way to the end to sign into Azure and select your subscription.
 
-3. If necessary, run the **New-AzureRMResourceGroup** cmdlet to create a new resource group. The command below creates a resource group named *TestRG* in the *China North* azure region. For more information about resource groups, visit [Azure Resource Manager Overview](resource-group-overview).
+3. If necessary, run the **New-AzureRMResourceGroup** cmdlet to create a new resource group. The command below creates a resource group named *TestRG* in the *China North* azure region. For more information about resource groups, visit [Azure Resource Manager Overview](/documentation/articles/resource-group-overview).
 
 		New-AzureRMResourceGroup -Name TestRG -Location centralus
 		

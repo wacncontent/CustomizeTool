@@ -19,11 +19,11 @@
 
 [AZURE.INCLUDE [virtual-networks-static-private-ip-intro-include](../includes/virtual-networks-static-private-ip-intro-include.md)]
 
-[AZURE.INCLUDE [azure-arm-classic-important-include](../includes/azure-arm-classic-important-include.md)] This article covers the Resource Manager deployment model. You can also [manage static private IP address in the classic deployment model](virtual-networks-static-private-ip-classic-pportal).
+[AZURE.INCLUDE [azure-arm-classic-important-include](../includes/azure-arm-classic-important-include.md)] This article covers the Resource Manager deployment model. You can also [manage static private IP address in the classic deployment model](/documentation/articles/virtual-networks-static-private-ip-classic-pportal).
 
 [AZURE.INCLUDE [virtual-networks-static-ip-scenario-include](../includes/virtual-networks-static-ip-scenario-include.md)]
 
-The sample steps below expect a simple environment already created. If you want to run the steps as they are displayed in this document, first build the test environment described in [create a vnet](virtual-networks-create-vnet-arm-pportal).
+The sample steps below expect a simple environment already created. If you want to run the steps as they are displayed in this document, first build the test environment described in [create a vnet](/documentation/articles/virtual-networks-create-vnet-arm-pportal).
 
 ## How to create a VM for testing static private IP addresses
 
@@ -89,6 +89,6 @@ To remove the static private IP address from the VM created above, follow the st
 
 ## Next steps
 
-- Learn about [reserved public IP](virtual-networks-reserved-public-ip) addresses.
-- Learn about [instance-level public IP (ILPIP)](virtual-networks-instance-level-public-ip) addresses.
+- Learn about [reserved public IP](/documentation/articles/virtual-networks-reserved-public-ip) addresses.
+- Learn about [instance-level public IP (ILPIP)](/documentation/articles/virtual-networks-instance-level-public-ip) addresses.
 - Consult the [Reserved IP REST APIs](https://msdn.microsoft.com/zh-cn/library/azure/dn722420.aspx).

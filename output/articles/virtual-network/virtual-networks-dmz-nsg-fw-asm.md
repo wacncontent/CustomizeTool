@@ -559,6 +559,6 @@ If you wish to install a sample application for this, and other DMZ Examples, on
 [4]: ./media/virtual-networks-dmz-nsg-fw-asm/firewallruleactivate.png "Firewall Rule Activation"
 
 <!--Link References-->
-[HOME]: best-practices-network-security
+[HOME]: /documentation/articles/best-practices-network-security
 [SampleApp]: ./virtual-networks-sample-app.md
 [Example1]: ./virtual-networks-dmz-nsg-asm.md

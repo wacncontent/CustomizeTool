@@ -26,7 +26,7 @@ You can quickly create a Traffic Manager profile by using Quick Create in the Az
 2. **Log in to the Azure Management Portal.** To create a new Traffic Manager profile, click **New** on the lower left of the portal, click **Network Services > Traffic Manager**, and then click **Quick Create** to begin configuring your profile.
 3. **Configure the DNS prefix.** Give your traffic manager profile a unique DNS prefix name. You can specify only the prefix for a Traffic Manager domain name.
 4. **Select the subscription.** Select the appropriate Azure subscription. Each profile is associated with a single subscription. If you only have one subscription, this option does not appear.
-5. **Select the traffic routing method.** Select the traffic routing method in **traffic routing Policy**. For more information about traffic routing methods, see [About Traffic Manager traffic routing methods](traffic-manager-load-balancing-methods).
+5. **Select the traffic routing method.** Select the traffic routing method in **traffic routing Policy**. For more information about traffic routing methods, see [About Traffic Manager traffic routing methods](/documentation/articles/traffic-manager-load-balancing-methods).
 6. **Click “Create” to create your new profile**. When the profile configuration is completed, you can locate your profile in the Traffic Manager pane in the Azure Management Portal.
 7. **Configure endpoints, monitoring, and additional settings in the Azure Management Portal.** Because you can only configure basic settings by using Quick Create, it is necessary to configure additional settings, such as the list of endpoints and the endpoint failover order, in order to complete your desired configuration. 
 
@@ -46,7 +46,7 @@ You can disable an existing Traffic Manager profile so that it will not refer us
 
 1. Select the profile that you want to enable. To select the profile, on the Traffic Manager page, highlight the profile by clicking the column next to the profile name. Do not click the name of the profile or the arrow next to the name, as this will take you to the settings page for the profile.
 2. After selecting the profile, click **Enable** at the bottom of the page.
-3. Modify the DNS resource record on your Internet DNS server to use the CNAME record type, which maps your company domain name to the domain name of your Traffic Manager profile. For more information, see [Point a company Internet domain to a Traffic Manager domain](traffic-manager-point-internet-domain).
+3. Modify the DNS resource record on your Internet DNS server to use the CNAME record type, which maps your company domain name to the domain name of your Traffic Manager profile. For more information, see [Point a company Internet domain to a Traffic Manager domain](/documentation/articles/traffic-manager-point-internet-domain).
 4. Traffic will start being directed to the endpoints again.
 
 ### To delete a profile
@@ -71,15 +71,15 @@ You can view the change history for your Traffic Manager profile in the Azure Ma
 
 ## Additional resources
 
-[What is Traffic Manager?](traffic-manager-overview)
+[What is Traffic Manager?](/documentation/articles/traffic-manager-overview)
 
-[Manage endpoints in Traffic Manager](traffic-manager-endpoints)
+[Manage endpoints in Traffic Manager](/documentation/articles/traffic-manager-endpoints)
 
-[About Traffic Manager monitoring](traffic-manager-monitoring)
+[About Traffic Manager monitoring](/documentation/articles/traffic-manager-monitoring)
 
-[Traffic Manager - Disable, enable or delete a profile](disable-enable-or-delete-a-profile)
+[Traffic Manager - Disable, enable or delete a profile](/documentation/articles/disable-enable-or-delete-a-profile)
 
-[Traffic Manager - Disable or enable an endpoint](disable-or-enable-an-endpoint)
+[Traffic Manager - Disable or enable an endpoint](/documentation/articles/disable-or-enable-an-endpoint)
 
 [Operations on Traffic Manager (REST API Reference)](https://msdn.microsoft.com/zh-CN/library/hh758255.aspx)
 

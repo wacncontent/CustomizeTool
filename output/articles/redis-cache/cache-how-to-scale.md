@@ -20,7 +20,7 @@ Azure Redis Cache has different cache offerings which provide flexibility in the
 
 ## When to scale
 
-You can use the [monitoring](cache-how-to-monitor) features of Azure Redis Cache to monitor the health and performance of your cache applications and to help determine if there is a need to scale the cache. 
+You can use the [monitoring](/documentation/articles/cache-how-to-monitor) features of Azure Redis Cache to monitor the health and performance of your cache applications and to help determine if there is a need to scale the cache. 
 
 You can monitor the following metrics to help determine if you need to scale.
 
@@ -29,10 +29,10 @@ You can monitor the following metrics to help determine if you need to scale.
 -	Network Bandwidth
 -	CPU Usage
 
-If you determine that your cache is no longer meeting the requirements of your application, you can change to a larger or smaller cache pricing tier that is right for your application. For more information on determining which cache pricing tier to use, see [What Redis Cache offering and size should I use](cache-faq#what-redis-cache-offering-and-size-should-i-use).
+If you determine that your cache is no longer meeting the requirements of your application, you can change to a larger or smaller cache pricing tier that is right for your application. For more information on determining which cache pricing tier to use, see [What Redis Cache offering and size should I use](/documentation/articles/cache-faq#what-redis-cache-offering-and-size-should-i-use).
 
 ## Scale a cache
-To scale your cache, [browse to the cache](cache-configure#configure-redis-cache-settings) in the [preview portal](https://manage.windowsazure.cn) and click **Settings**, **Pricing tier**.
+To scale your cache, [browse to the cache](/documentation/articles/cache-configure#configure-redis-cache-settings) in the [preview portal](https://manage.windowsazure.cn) and click **Settings**, **Pricing tier**.
 
 You can also click the **Standard tier** or **Basic tier** part in the **Redis Cache** blade.
 

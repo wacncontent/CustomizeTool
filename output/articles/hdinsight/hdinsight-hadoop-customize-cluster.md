@@ -21,10 +21,10 @@ HDInsight provides a configuration option called **Script Action** that invokes 
 [AZURE.INCLUDE [hdinsight-azure-preview-portal](../includes/hdinsight-azure-preview-portal.md)]
 -->
 
-* [Customize HDInsight clusters using Script Action](hdinsight-hadoop-customize-cluster-v1)
+* [Customize HDInsight clusters using Script Action](/documentation/articles/hdinsight-hadoop-customize-cluster-v1)
 <!-- deleted by customization
 
-> [AZURE.NOTE] The information in this article is specific to Windows-based HDInsight clusters. For a version of this article that is specific to Linux-based clusters, see [Customize HDInsight clusters using Script Action (Linux)](hdinsight-hadoop-customize-cluster)
+> [AZURE.NOTE] The information in this article is specific to Windows-based HDInsight clusters. For a version of this article that is specific to Linux-based clusters, see [Customize HDInsight clusters using Script Action (Linux)](/documentation/articles/hdinsight-hadoop-customize-cluster)
 -->
 
 HDInsight clusters can be customized in a variety of other ways as well, such as including additional Azure Storage accounts, changing the Hadoop configuration files (core-site.xml, hive-site.xml, etc.), or adding shared libraries (e.g., Hive, Oozie) into common locations in the cluster. These customizations can be done through Azure PowerShell, the Azure HDInsight .NET SDK, or the Azure <!-- deleted by customization Preview portal --><!-- keep by customization: begin -->Management Portal<!-- keep by customization: end -->. For more information, see [Create Hadoop clusters in HDInsight ][hdinsight-provision-cluster].
@@ -51,8 +51,8 @@ Name | Script
 **Install Spark** | https://hdiconfigactions.blob.core.windows.net/sparkconfigactionv03/spark-installer-v03.ps1. See [Install and use Spark on HDInsight clusters][hdinsight-install-spark].
 -->
 **Install R** | https://hdiconfigactions.blob.core.windows.net/rconfigactionv02/r-installer-v02.ps1. See [Install and use R on HDInsight clusters][hdinsight-install-r].
-**Install Solr** | https://hdiconfigactions.blob.core.windows.net/solrconfigactionv01/solr-installer-v01.ps1. See [Install and use Solr on HDInsight clusters](hdinsight-hadoop-solr-install).
-- **Install Giraph** | https://hdiconfigactions.blob.core.windows.net/giraphconfigactionv01/giraph-installer-v01.ps1. See [Install and use Giraph on HDInsight clusters](hdinsight-hadoop-giraph-install).
+**Install Solr** | https://hdiconfigactions.blob.core.windows.net/solrconfigactionv01/solr-installer-v01.ps1. See [Install and use Solr on HDInsight clusters](/documentation/articles/hdinsight-hadoop-solr-install).
+- **Install Giraph** | https://hdiconfigactions.blob.core.windows.net/giraphconfigactionv01/giraph-installer-v01.ps1. See [Install and use Giraph on HDInsight clusters](/documentation/articles/hdinsight-hadoop-giraph-install).
 
 
 
@@ -61,7 +61,7 @@ Name | Script
 
 **From the Azure Preview portal**
 
-1. Start creating a cluster as described at [Create Hadoop clusters in HDInsight](hdinsight-provision-clusters#portal).
+1. Start creating a cluster as described at [Create Hadoop clusters in HDInsight](/documentation/articles/hdinsight-provision-clusters#portal).
 2. Under Optional Configuration, for the **Script Actions** blade, click **add script action** to provide details about the script action, as shown below:
 
 	![Use Script Action to customize a cluster](./media/hdinsight-hadoop-customize-cluster/HDI.CreateCluster.8.png "Use Script Action to customize a cluster")
@@ -71,7 +71,7 @@ Name | Script
 ## Call scripts using the Azure Management Portal
 
 **From the Azure Management Portal**
-1. Start provisioning a cluster using the **CUSTOM CREATE** option, as described at [Provisioning a cluster using custom options](/documentation/articles/hdinsight-provision-clusters/#portal). 
+1. Start provisioning a cluster using the **CUSTOM CREATE** option, as described at [Provisioning a cluster using custom options](/documentation/articles/hdinsight-provision-clusters#portal). 
 2. On the **Script Actions** page of the wizard, click **add script action** to provide details about the script action, as shown below:
 
 	![Use Script Action to customize a cluster](./media/hdinsight-hadoop-customize-cluster/HDI.CustomProvision.Page6.png "Use Script Action to customize a cluster")
@@ -297,7 +297,7 @@ The HDInsight .NET SDK provides a <a href="http://msdn.microsoft.com/zh-cn/libra
 
 		Install-Package Microsoft.WindowsAzure.Management.HDInsight
 
-2. Create a cluster by using the SDK. For instructions, see [Provision HDInsight cluster using .NET SDK](/documentation/articles/hdinsight-provision-clusters/#sdk).
+2. Create a cluster by using the SDK. For instructions, see [Provision HDInsight cluster using .NET SDK](/documentation/articles/hdinsight-provision-clusters#sdk).
 
 3. Use the **ScriptAction** class to invoke a custom script as shown below:
 
@@ -344,14 +344,14 @@ See [Develop Script Action scripts for HDInsight][hdinsight-write-script].
 - [Install and use Spark on HDInsight clusters][hdinsight-install-spark]
 -->
 - [Install and use R on HDInsight clusters][hdinsight-install-r]
-- [Install and use Solr on HDInsight clusters](hdinsight-hadoop-solr-install).
-- [Install and use Giraph on HDInsight clusters](hdinsight-hadoop-giraph-install).
+- [Install and use Solr on HDInsight clusters](/documentation/articles/hdinsight-hadoop-solr-install).
+- [Install and use Giraph on HDInsight clusters](/documentation/articles/hdinsight-hadoop-giraph-install).
 
 <!-- deleted by customization
-[hdinsight-install-spark]: hdinsight-hadoop-spark-install
+[hdinsight-install-spark]: /documentation/articles/hdinsight-hadoop-spark-install
 -->
-[hdinsight-install-r]: hdinsight-hadoop-r-scripts
-[hdinsight-write-script]: hdinsight-hadoop-script-actions
-[hdinsight-provision-cluster]: hdinsight-provision-clusters
-[powershell-install-configure]: install-configure-powershell
+[hdinsight-install-r]: /documentation/articles/hdinsight-hadoop-r-scripts
+[hdinsight-write-script]: /documentation/articles/hdinsight-hadoop-script-actions
+[hdinsight-provision-cluster]: /documentation/articles/hdinsight-provision-clusters
+[powershell-install-configure]: /documentation/articles/install-configure-powershell
 [img-hdi-cluster-states]: ./media/hdinsight-hadoop-customize-cluster/HDI-Cluster-state.png "Stages during cluster creation"

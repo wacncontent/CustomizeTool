@@ -104,7 +104,7 @@ For information about the Media Services REST API version history, see [Azure Me
 
 - Announcing the general availability of Media Encoder Standard. For more information, see [this blog post](http://azure.microsoft.com/blog/2015/07/16/announcing-the-general-availability-of-media-encoder-standard/).
 
-	Media Encoder Standard uses presets described in [this](http://go.microsoft.com/fwlink/?LinkId=618336) section. Note that when using a preset for 4k encodes, you should get the **Premium** reserved unit type. For more information, see [How to Scale Encoding](media-services-portal-encoding-units).
+	Media Encoder Standard uses presets described in [this](http://go.microsoft.com/fwlink/?LinkId=618336) section. Note that when using a preset for 4k encodes, you should get the **Premium** reserved unit type. For more information, see [How to Scale Encoding](/documentation/articles/media-services-portal-encoding-units).
 - Live Real-time captions with Azure Media Services and Player. For more information, see  [this blog post](https://azure.microsoft.com/blog/2015/07/08/live-real-time-captions-with-azure-media-services-and-player/)
 
 ###Media Services .NET SDK Updates
@@ -135,8 +135,8 @@ For more information, see [Using Json Web Keys from OpenID Connect discovery spe
 
 Announcing the following new features:
 
-- [A preview of Live Encoding with Media Services](media-services-manage-live-encoder-enabled-channels)
-- [Dynamic manifest](media-services-dynamic-manifest-overview)
+- [A preview of Live Encoding with Media Services](/documentation/articles/media-services-manage-live-encoder-enabled-channels)
+- [Dynamic manifest](/documentation/articles/media-services-dynamic-manifest-overview)
 - [A preview of Azure Media Hyperlapse media processor](http://azure.microsoft.com/blog/?p=286281&preview=1&_ppp=61e1a0b3db)
 
 ##<a id="april_changes_15"></a>April 2015 Release
@@ -144,7 +144,7 @@ Announcing the following new features:
 ###General Media Services Updates
 
 - [Announcing Azure Media Player](http://azure.microsoft.com/blog/2015/04/15/announcing-azure-media-player/).
-- Starting with Media Services REST 2.10, channels that are configured to ingest an RTMP protocol, are created with primary and secondary ingest URLs. For more information, see [Channel ingest configurations](media-services-manage-channels-overview#channel_input)
+- Starting with Media Services REST 2.10, channels that are configured to ingest an RTMP protocol, are created with primary and secondary ingest URLs. For more information, see [Channel ingest configurations](/documentation/articles/media-services-manage-channels-overview#channel_input)
 - Azure Media Indexer updates
 	- Support for Spanish Language
 	- New configuration xml format
@@ -218,7 +218,7 @@ This release marked the default Microsoft.WindowsAzure.MediaServices.Client.Cont
 - Media Services now enables you to ingest a live Smooth Streaming (FMP4) content over an SSL connection. To ingest over SSL, make sure to update the ingest URL to HTTPS.  For more information about live streaming, see [Working with Azure Media Services Live Streaming].
 - Note that currently, you cannot ingest an RTMP live stream over an SSL connection.
 - You can also stream your content over an SSL connection. To do this, make sure your streaming URLs start with HTTPS.
-- Note that you can only stream over SSL if the streaming endpoint from which you deliver your content was created after September 10th, 2014. If your streaming URLs are based on the streaming endpoints created after September 10th, the URL contains “streaming.mediaservices.chinacloudapi.cn” (the new format). Streaming URLs that contain “origin.mediaservices.chinacloudapi.cn” (the old format) do not support SSL. If your URL is in the old format and you want to be able to stream over SSL, [create a new streaming endpoint](media-services-manage-origins). Use URLs created based on the new streaming endpoint to stream your content over SSL.
+- Note that you can only stream over SSL if the streaming endpoint from which you deliver your content was created after September 10th, 2014. If your streaming URLs are based on the streaming endpoints created after September 10th, the URL contains “streaming.mediaservices.chinacloudapi.cn” (the new format). Streaming URLs that contain “origin.mediaservices.chinacloudapi.cn” (the old format) do not support SSL. If your URL is in the old format and you want to be able to stream over SSL, [create a new streaming endpoint](/documentation/articles/media-services-manage-origins). Use URLs created based on the new streaming endpoint to stream your content over SSL.
    
 ##<a id="october_changes_14"></a>October 2014 Release
 

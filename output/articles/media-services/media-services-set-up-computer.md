@@ -15,8 +15,8 @@
 # Set up your environment
 
 > [AZURE.SELECTOR]
-- [Portal](media-services-create-account)
-- [PowerShell](media-services-manage-with-powershell)
+- [Portal](/documentation/articles/media-services-create-account)
+- [PowerShell](/documentation/articles/media-services-manage-with-powershell)
 - [REST](https://msdn.microsoft.com/zh-cn/library/azure/dn167014.aspx)
 <a id="create_account"></a>
 

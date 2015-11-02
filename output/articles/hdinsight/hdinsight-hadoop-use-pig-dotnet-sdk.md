@@ -25,7 +25,7 @@ The HDInsight .NET SDK provides .NET client libraries that makes it easier to wo
 [AZURE.INCLUDE [azure-portal](../includes/hdinsight-azure-portal.md)]
 -->
 
-* [Run Pig jobs using the .NET SDK for Hadoop in HDInsight](hdinsight-hadoop-use-pig-dotnet-sdk-v1)
+* [Run Pig jobs using the .NET SDK for Hadoop in HDInsight](/documentation/articles/hdinsight-hadoop-use-pig-dotnet-sdk-v1)
 
 ##<a id="prereq"></a>Prerequisites
 
@@ -39,7 +39,7 @@ To complete the steps in this article, you will need the following.
 
 To authenticate the application to Azure HDInsight, you must create a self-signed certificate, install it on your development workstation, and also upload it to your Azure subscription.
 
-For instructions on how to do this, see [Create a self-signed certificate](hdinsight-administer-use-management-portal-v1#cert).
+For instructions on how to do this, see [Create a self-signed certificate](/documentation/articles/hdinsight-administer-use-management-portal-v1/#cert).
 
 > [AZURE.NOTE] When creating the certificate, be sure to note the friendly name you use, as it will be used later.
 
@@ -156,11 +156,11 @@ As you can see, the .NET SDK for Hadoop allows you to create .NET applications t
 
 For general information on Pig in HDInsight.
 
-* [Use Pig with Hadoop on HDInsight](hdinsight-use-pig)
+* [Use Pig with Hadoop on HDInsight](/documentation/articles/hdinsight-use-pig)
 
 For information on other ways you can work with Hadoop on HDInsight.
 
-* [Use Hive with Hadoop on HDInsight](hdinsight-use-hive)
+* [Use Hive with Hadoop on HDInsight](/documentation/articles/hdinsight-use-hive)
 
-* [Use MapReduce with Hadoop on HDInsight](hdinsight-use-mapreduce)
+* [Use MapReduce with Hadoop on HDInsight](/documentation/articles/hdinsight-use-mapreduce)
 [preview-portal]: https://manage.windowsazure.cn/

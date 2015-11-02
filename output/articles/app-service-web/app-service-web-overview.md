@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties
 	pageTitle="Web Apps overview"
 	description="Learn more about Azure Websites"
@@ -41,7 +43,7 @@ Azure Websites is a fully managed platform that enables you to build, deploy and
 - **Deployment Slots** - Implement [Staged Deployment] [Slots] to verify your code in a pre-production environment which is identical to your production web app in Azure Websites. When satisfied, release a new version of your App with zero downtime by performing a swap operation. 
 - **Testing in Production** - Take Staged Deployments to the next level and perform A/B testing to verify your new code with a configurable fraction of your live traffic. 
 - **Webjobs** - Run any program or script on Web Apps VMs. Run jobs continuously or on a schedule and scale to run on multiple VMs. Use the Azure [WebJobs SDK][Webjobs] to integrate with Azure Storage or Service Bus.
-- **Hybrid connections** - - Access on-premises data using [hybrid connections](integration-hybrid-connection-overview) and [VNET](web-sites-integrate-with-vnet).
+- **Hybrid connections** - - Access on-premises data using [hybrid connections](/documentation/articles/integration-hybrid-connection-overview) and [VNET](/documentation/articles/web-sites-integrate-with-vnet).
 
 ## Getting Started ##
 To get started with Web Apps, follow the [Create an ASP.NET web app] [create] tutorial.
@@ -54,7 +56,7 @@ For more information on Azure Websites platform, see [Azure Websites][appservice
 * For a guide to the change from Websites to Azure Websites see: [Azure Websites and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
 * For a guide to the change of the Management Portal to the new portal see: [Reference for navigating the preview portal](https://manage.windowsazure.cn/)
 
-[appservice]: app-service-value-prop-what-is
-[create]: web-sites-dotnet-get-started
-[Webjobs]: websites-dotnet-webjobs-sdk-get-started
-[Slots]: web-sites-staged-publishing
+[appservice]: /documentation/articles/app-service-value-prop-what-is
+[create]: /documentation/articles/web-sites-dotnet-get-started
+[Webjobs]: /documentation/articles/websites-dotnet-webjobs-sdk-get-started
+[Slots]: /documentation/articles/web-sites-staged-publishing

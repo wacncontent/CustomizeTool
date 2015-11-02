@@ -15,7 +15,7 @@
 
 This topic describes how to review and update the configuration for your Azure Redis Cache instances, and covers the default Redis server configuration for Azure Redis Cache instances.
 
->[AZURE.NOTE] The Azure Redis Cache Premium tier is currently in preview. During the preview period, premium features can only be configured during the cache creation process. For more information on using premium cache features, see [How to configure persistence for a Premium Azure Redis Cache](cache-how-to-premium-persistence), [How to configure clustering for a Premium Azure Redis Cache](cache-how-to-premium-clustering), and [How to configure Virtual Network support for a Premium Azure Redis Cache](cache-how-to-premium-vnet).
+>[AZURE.NOTE] The Azure Redis Cache Premium tier is currently in preview. During the preview period, premium features can only be configured during the cache creation process. For more information on using premium cache features, see [How to configure persistence for a Premium Azure Redis Cache](/documentation/articles/cache-how-to-premium-persistence), [How to configure clustering for a Premium Azure Redis Cache](/documentation/articles/cache-how-to-premium-clustering), and [How to configure Virtual Network support for a Premium Azure Redis Cache](/documentation/articles/cache-how-to-premium-vnet).
 
 ## Configure Redis cache settings
 
@@ -55,7 +55,7 @@ By default, non-SSL access is disabled for new caches. To enable the non-SSL por
 
 ## Pricing tier
 
-Click **Pricing tier** to view or change the pricing tier for your cache. For more information on scaling, see [How to Scale Azure Redis Cache](cache-how-to-scale).
+Click **Pricing tier** to view or change the pricing tier for your cache. For more information on scaling, see [How to Scale Azure Redis Cache](/documentation/articles/cache-how-to-scale).
 
 ![Redis Cache pricing tier](./media/cache-configure/pricing-tier.png)
 
@@ -65,7 +65,7 @@ Click **Diagnostics** to configure the storage account used to store cache diagn
 
 ![Redis Cache Diagnostics](./media/cache-configure/IC808317.png)
 
-For more information, see [How to monitor Azure Redis Cache](cache-how-to-monitor).
+For more information, see [How to monitor Azure Redis Cache](/documentation/articles/cache-how-to-monitor).
 
 ## Maxmemory-policy and maxmemory-reserved
 
@@ -104,7 +104,7 @@ For more information, see [Redis Keyspace Notifications](http://redis.io/topics/
 
 The **Users** section provides support for role-based access control (RBAC) in the preview portal to help organizations meet their access management requirements simply and precisely. For more information, see [Role-based access control in the Azure preview portal](http://go.microsoft.com/fwlink/?LinkId=512803).
 
-The **Tags** section helps you organize your resources. For more information, see [Using tags to organize your Azure resources](resource-group-using-tags).
+The **Tags** section helps you organize your resources. For more information, see [Using tags to organize your Azure resources](/documentation/articles/resource-group-using-tags).
 
 ## Default Redis server configuration
 
@@ -163,8 +163,8 @@ You can securely issue commands to your Azure Redis Cache instances using the **
 
 >[AZURE.IMPORTANT] The Redis Console does not work with VNET or clustering. 
 >
->-	[VNET](cache-how-to-premium-vnet) - When your cache is part of a VNET, only clients in the VNET can access the cache. Because the Redis Console uses the redis-cli.exe client hosted on VMs that are not part of your VNET, it can't connect to your cache.
->-	[Clustering](cache-how-to-premium-clustering) - The Redis Console uses the redis-cli.exe client which does not support clustering at this time. The redis-cli utility in the [unstable](http://redis.io/download) branch of the Redis repository at GitHub implements basic support when started with the `-c` switch. For more information see [Playing with the cluster](http://redis.io/topics/cluster-tutorial#playing-with-the-cluster) on [http://redis.io](http://redis.io) in the [Redis cluster tutorial](http://redis.io/topics/cluster-tutorial).
+>-	[VNET](/documentation/articles/cache-how-to-premium-vnet) - When your cache is part of a VNET, only clients in the VNET can access the cache. Because the Redis Console uses the redis-cli.exe client hosted on VMs that are not part of your VNET, it can't connect to your cache.
+>-	[Clustering](/documentation/articles/cache-how-to-premium-clustering) - The Redis Console uses the redis-cli.exe client which does not support clustering at this time. The redis-cli utility in the [unstable](http://redis.io/download) branch of the Redis repository at GitHub implements basic support when started with the `-c` switch. For more information see [Playing with the cluster](http://redis.io/topics/cluster-tutorial#playing-with-the-cluster) on [http://redis.io](http://redis.io) in the [Redis cluster tutorial](http://redis.io/topics/cluster-tutorial).
 
 To access the Redis Console, click **Console** from the **Redis Cache** blade.
 
@@ -177,4 +177,4 @@ To issue commands against your cache instance, simply type in the desired comman
 For list of Redis commands that are disabled for Azure Redis Cache, see the previous [Redis commands not supported in Azure Redis Cache](#redis-commands-not-supported-in-azure-redis-cache) section. For more information about Redis commands, see [http://redis.io/commands](http://redis.io/commands). 
 
 ## Next steps
--	For more information on working with Redis commands, see [How can I run Redis commands?](cache-faq#how-can-i-run-redis-commands).
+-	For more information on working with Redis commands, see [How can I run Redis commands?](/documentation/articles/cache-faq#how-can-i-run-redis-commands).

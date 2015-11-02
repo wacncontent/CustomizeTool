@@ -194,7 +194,7 @@ To do this... | Use this...
 
 * [WordPress optimization](http://codex.wordpress.org/WordPress_Optimization)
 
-* [Convert WordPress to Multisite in Azure Websites](web-sites-php-convert-wordpress-multisite)
+* [Convert WordPress to Multisite in Azure Websites](/documentation/articles/web-sites-php-convert-wordpress-multisite)
 
 * [ClearDB upgrade wizard for Azure](http://www.cleardb.com/store/azure/upgrade)
 
@@ -245,37 +245,37 @@ To do this... | Use this...
 [cdbnstore]: http://www.cleardb.com/store/azure
 [storageplugin]: https://wordpress.org/plugins/windows-azure-storage/
 [sendgridplugin]: http://wordpress.org/plugins/sendgrid-email-delivery-simplified/
-[phpwebsite]: web-sites-php-configure
-[customdomain]: web-sites-custom-domain-name
+[phpwebsite]: /documentation/articles/web-sites-php-configure
+[customdomain]: /documentation/articles/web-sites-custom-domain-name
 [trafficmanager]: /blog/2014/03/27/azure-traffic-manager-can-now-integrate-with-azure-web-sites/
-[backup]: web-sites-backup
-[restore]: web-sites-restore
+[backup]: /documentation/articles/web-sites-backup
+[restore]: /documentation/articles/web-sites-restore
 [rediscache]: http://msdn.microsoft.com/zh-cn/library/azure/dn690470.aspx
 [managedcache]: http://msdn.microsoft.com/zh-cn/library/azure/dn386122.aspx
-[websitescale]: web-sites-scale
+[websitescale]: /documentation/articles/web-sites-scale
 [managedcachescale]: http://msdn.microsoft.com/zh-cn/library/azure/dn386113.aspx
 [cleardbscale]: http://www.cleardb.com/developers/cdbr/introduction
-[staging]: web-sites-staged-publishing
-[monitor]: web-sites-monitor
-[log]: web-sites-enable-diagnostic-log
-[httpscustomdomain]: web-sites-configure-ssl-certificate
-[mysqlwindows]: virtual-machines-mysql-windows-server-2008r2
-[mysqllinux]: virtual-machines-linux-mysql-use-opensuse
+[staging]: /documentation/articles/web-sites-staged-publishing
+[monitor]: /documentation/articles/web-sites-monitor
+[log]: /documentation/articles/web-sites-enable-diagnostic-log
+[httpscustomdomain]: /documentation/articles/web-sites-configure-ssl-certificate
+[mysqlwindows]: /documentation/articles/virtual-machines-mysql-windows-server-2008r2
+[mysqllinux]: /documentation/articles/virtual-machines-linux-mysql-use-opensuse
 [cge]: http://www.mysql.com/products/cluster/
-[websitepricing]: /home/features/web-site/#price
+[websitepricing]: /home/features/app-service/#price
 [export]: http://en.support.wordpress.com/export/
 [import]: http://wordpress.org/plugins/wordpress-importer/
 [wordpressbackup]: http://wordpress.org/plugins/wordpress-importer/
 [wordpressdbbackup]: http://codex.wordpress.org/Backing_Up_Your_Database
-[createwordpress]: web-sites-php-web-site-gallery
+[createwordpress]: /documentation/articles/web-sites-php-web-site-gallery
 [velvet]: https://wordpress.org/plugins/velvet-blues-update-urls/
 [mgmtportal]: https://manage.windowsazure.cn/
 [wordpressbackup]: http://codex.wordpress.org/WordPress_Backups
 [wordpressdbbackup]: http://codex.wordpress.org/Backing_Up_Your_Database
 [workbench]: http://www.mysql.com/products/workbench/
 [searchandreplace]: http://interconnectit.com/124/search-and-replace-for-wordpress-databases/
-[deploy]: web-sites-deploy
-[posh]: install-configure-powershell
-[Azure CLI]: xplat-cli-install
+[deploy]: /documentation/articles/web-sites-deploy
+[posh]: /documentation/articles/install-configure-powershell
+[Azure CLI]: /documentation/articles/xplat-cli-install
 [storesendgrid]: /gallery/store/sendgrid/sendgrid-azure/
-[cdn]: cdn-how-to-use
+[cdn]: /documentation/articles/cdn-how-to-use

@@ -56,6 +56,7 @@ The following table will help you determine the method to start a runbook in Azu
    </ul>
   </td>
  </tr>
+<!-- deleted by customization
  <tr>
   <td><a href="/documentation/articles/automation-webhooks/">Webhook</a></td>
   <td>
@@ -78,6 +79,7 @@ The following table will help you determine the method to start a runbook in Azu
    </ul>
   </td>
  </tr>
+-->
  <tr>
   <td><a href="/documentation/articles/automation-scheduling-a-runbook">Schedule</a></td>
   <td>

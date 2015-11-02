@@ -21,7 +21,7 @@ When you create a connection, you must specify a *connection type*. The connecti
 
 ## Windows PowerShell Cmdlets
 
-The cmdlets in the following table are used to create and manage Automation connections with Windows PowerShell They ship as part of the [Azure PowerShell module](powershell-install-configure) which is available for use in Automation runbooks.
+The cmdlets in the following table are used to create and manage Automation connections with Windows PowerShell They ship as part of the [Azure PowerShell module](/documentation/articles/powershell-install-configure) which is available for use in Automation runbooks.
 
 |Cmdlet|Description|
 |:---|:---|
@@ -101,7 +101,7 @@ You add a **Get-AutomationConnection** activity to a graphical runbook by right-
 
 ![](./media/automation-connections/connection-add-canvas.png)
 
-The following image shows an example of using a connection in a graphical runbook.  This is the same example shown above for sending a text message using Twilio from a textual runbook.  This example uses the **UseConnectionObject** parameter set for the **Send-TwilioSMS** activity that uses a connection object for authentication to the service.  A [pipeline link](automation-graphical-authoring-intro#links-and-workflow) is used here since the Connection parameter is expecting a single object.
+The following image shows an example of using a connection in a graphical runbook.  This is the same example shown above for sending a text message using Twilio from a textual runbook.  This example uses the **UseConnectionObject** parameter set for the **Send-TwilioSMS** activity that uses a connection object for authentication to the service.  A [pipeline link](/documentation/articles/automation-graphical-authoring-intro#links-and-workflow) is used here since the Connection parameter is expecting a single object.
 
 The reason that a PowerShell expression is used for the value in the **To** parameter instead of a Constant value is that this parameter expects a string array value type so that you can send to multiple numbers.  A PowerShell expression allows you to provide a single value or an array.
 
@@ -116,6 +116,6 @@ The image below shows the same example as above but uses the **SpecifyConnection
 
 ## Related articles
 
-- [Links in graphical authoring](automation-graphical-authoring-intro#links-and-workflow)
+- [Links in graphical authoring](/documentation/articles/automation-graphical-authoring-intro#links-and-workflow)
 -->
  

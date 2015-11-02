@@ -16,7 +16,7 @@
 
 ## Overview
 
-This tutorial shows you how to create an ASP.NET 5 web app using [Visual Studio Code (VS Code)](http://code.visualstudio.com//Docs/whyvscode) and deploy it to [Azure Websites](app-service-value-prop-what-is). ASP.NET 5 is a significant redesign of ASP.NET. ASP.NET 5 is a new open-source and cross-platform framework for building modern cloud-based web apps using .NET. For more information, see [Introduction to ASP.NET 5](http://docs.asp.net/en/latest/conceptual-overview/aspnet.html). For information about Azure Websites web apps, see [Web Apps Overview](app-service-web-overview).
+This tutorial shows you how to create an ASP.NET 5 web app using [Visual Studio Code (VS Code)](http://code.visualstudio.com//Docs/whyvscode) and deploy it to [Azure Websites](/documentation/articles/app-service-value-prop-what-is). ASP.NET 5 is a significant redesign of ASP.NET. ASP.NET 5 is a new open-source and cross-platform framework for building modern cloud-based web apps using .NET. For more information, see [Introduction to ASP.NET 5](http://docs.asp.net/en/latest/conceptual-overview/aspnet.html). For information about Azure Websites web apps, see [Web Apps Overview](/documentation/articles/app-service-web-overview).
 
 [AZURE.INCLUDE [app-service-web-try-app-service.md](../includes/app-service-web-try-app-service.md)]
 
@@ -149,7 +149,7 @@ The following steps will guide you through creating a web app in the Azure previ
 
 4. Enter a value for **Name**, such as **SampleWebAppDemo**. Note that this name needs to be unique, and the portal will enforce that when you attempt to enter the name. Therefore, if you select a enter a different value, you'll need to substitute that value for each occurrence of **SampleWebAppDemo** that you see in this tutorial. 
 
-5. Select an existing **App Service Plan** or create a new one. If you create a new plan, select the pricing tier, location, and other options. For more information on App Service plans, see the article, [App Service plans in-depth overview](azure-web-sites-web-hosting-plans-in-depth-overview).
+5. Select an existing **App Service Plan** or create a new one. If you create a new plan, select the pricing tier, location, and other options. For more information on App Service plans, see the article, [App Service plans in-depth overview](/documentation/articles/azure-web-sites-web-hosting-plans-in-depth-overview).
 
 	![Azure new web app blade](./media/web-sites-create-web-app-using-vscode/10-azure-newappblade.png)
 
@@ -265,4 +265,4 @@ This can be done in two ways:
 ![Azure web app](./media/web-sites-create-web-app-using-vscode/21-azurewebapp.png)
 
 ## Summary
-In this tutorial, you learned how to create a web app in VS Code and deploy it to Azure. For more information about VS Code, see the article, [Why Visual Studio Code?](https://code.visualstudio.com/Docs/) For information about Azure Websites web apps, see [Web Apps Overview](app-service-web-overview). 
+In this tutorial, you learned how to create a web app in VS Code and deploy it to Azure. For more information about VS Code, see the article, [Why Visual Studio Code?](https://code.visualstudio.com/Docs/) For information about Azure Websites web apps, see [Web Apps Overview](/documentation/articles/app-service-web-overview). 

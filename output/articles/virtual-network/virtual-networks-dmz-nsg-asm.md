@@ -544,6 +544,6 @@ If you wish to install a sample application for this, and other DMZ Examples, on
 [1]: ./media/virtual-networks-dmz-nsg-asm/example1design.png "Inbound DMZ with NSG"
 
 <!--Link References-->
-[HOME]: best-practices-network-security
+[HOME]: /documentation/articles/best-practices-network-security
 [SampleApp]: ./virtual-networks-sample-app.md
 

@@ -54,8 +54,8 @@ In your database, define the stored procedure with the same name as SqlWriterSto
 In your database, define the table type with the same name as SqlWriterTableType. Notice that the schema of the table type should be same as the schema returned by your input data.
 
 	CREATE TYPE [dbo].[MarketingType] AS TABLE(
-	    [ProfileID] [varchar](256) NOT NULL,
-	    [State] [varchar](256) NOT NULL,
+	    [ProfileID] [varchar](/documentation/articles/256) NOT NULL,
+	    [State] [varchar](/documentation/articles/256) NOT NULL,
 	)
 
 The stored procedure feature takes advantage of [Table-Valued Parameters](https://msdn.microsoft.com/zh-cn/library/bb675163.aspx).

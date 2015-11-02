@@ -15,9 +15,9 @@
 # Configure a VPN connection between two Azure virtual networks  
 
 > [AZURE.SELECTOR]
-- [Configure VPN connectivity](hdinsight-hbase-geo-replication-configure-VNETs)
-- [Configure DNS](hdinsight-hbase-geo-replication-configure-DNS)
-- [Configure HBase replication](hdinsight-hbase-geo-replication) 
+- [Configure VPN connectivity](/documentation/articles/hdinsight-hbase-geo-replication-configure-VNETs)
+- [Configure DNS](/documentation/articles/hdinsight-hbase-geo-replication-configure-DNS)
+- [Configure HBase replication](/documentation/articles/hdinsight-hbase-geo-replication) 
 
 Azure virtual network site-to-site connectivity uses a VPN gateway to provide a secure tunnel using Ipsec/IKE. The VNets can be in different subscriptions and different regions. You can even combine VNet to VNet communication with multi-site configurations. There are several reasons for VNet to VNet connectivity:
 
@@ -25,7 +25,7 @@ Azure virtual network site-to-site connectivity uses a VPN gateway to provide a 
 - Regional multi-tier applications with strong isolation boundary 
 - Cross subscription, inter-organization communication in Azure
 
-For more information, see [Configure a VNet to VNet connection](virtual-networks-configure-vnet-to-vnet-connection). 
+For more information, see [Configure a VNet to VNet connection](/documentation/articles/virtual-networks-configure-vnet-to-vnet-connection). 
 <!-- deleted by customization
 
 To see it on video:
@@ -81,7 +81,7 @@ Before you begin this tutorial, you must have the following:
 
 	- **DNS SERVER**: (Leave it blank) 
 	
-		You will need your own DNS server for name resolution within virtual networks. For more information on when to use Azure-provided name resolution and when to use your own DNS server, see [Name Resolution (DNS)](virtual-networks-name-resolution-for-vms-and-role-instances). For instructions to configure name resolution between VNets, see [Configure DNS between two Azure virtual networks][hdinsight-hbase-dns].
+		You will need your own DNS server for name resolution within virtual networks. For more information on when to use Azure-provided name resolution and when to use your own DNS server, see [Name Resolution (DNS)](/documentation/articles/virtual-networks-name-resolution-for-vms-and-role-instances). For instructions to configure name resolution between VNets, see [Configure DNS between two Azure virtual networks][hdinsight-hbase-dns].
   
 	- **Configure a point-to-site VPN**: (unchecked)
 
@@ -247,16 +247,16 @@ In this tutorial you have learned how to configure a VPN connection between two 
 
 
 
-[hdinsight-hbase-geo-replication-dns]: hdinsight-hbase-geo-replication-configure-DNS
-[hdinsight-hbase-geo-replication]: hdinsight-hbase-geo-replication
+[hdinsight-hbase-geo-replication-dns]: /documentation/articles/hdinsight-hbase-geo-replication-configure-DNS
+[hdinsight-hbase-geo-replication]: /documentation/articles/hdinsight-hbase-geo-replication
 [azure-purchase-options]: /pricing/overview/
 [azure-member-offers]: http://azure.microsoft.com/pricing/member-offers/
 [azure-trial]: /pricing/1rmb-trial/
 [azure-portal]: https://manage.windowsazure.cn
 
-[powershell-install]: install-configure-powershell
-[hdinsight-hbase-replication]: hdinsight-hbase-geo-replication
-[hdinsight-hbase-dns]: hdinsight-hbase-geo-replication-configure-DNS
+[powershell-install]: /documentation/articles/install-configure-powershell
+[hdinsight-hbase-replication]: /documentation/articles/hdinsight-hbase-geo-replication
+[hdinsight-hbase-dns]: /documentation/articles/hdinsight-hbase-geo-replication-configure-DNS
 [img-vnet-diagram]: ./media/hdinsight-hbase-geo-replication-configure-VNets/HDInsight.HBase.VPN.diagram.png
 [img-vnet-lnet-diagram]: ./media/hdinsight-hbase-geo-replication-configure-VNets/HDInsight.HBase.VPN.LNet.diagram.png
 [img-vpn-status]: ./media/hdinsight-hbase-geo-replication-configure-VNets/HDInsight.HBase.VPN.status.png 

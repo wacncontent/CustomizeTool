@@ -17,7 +17,7 @@
 
 A second head node is used by Linux-based Hadoop clusters deployed by Azure HDInsight. This increases the availability and reliability of Hadoop services and jobs running in Azure.
 
-> [AZURE.NOTE] The steps used in this document are specific to Linux-based HDInsight clusters. If you are using a Windows-based cluster, see [Availability and reliability of Windows-based Hadoop clusters in HDInsight](hdinsight-high-availability) for Windows-specific information.
+> [AZURE.NOTE] The steps used in this document are specific to Linux-based HDInsight clusters. If you are using a Windows-based cluster, see [Availability and reliability of Windows-based Hadoop clusters in HDInsight](/documentation/articles/hdinsight-high-availability) for Windows-specific information.
 
 ##Understanding the head nodes
 
@@ -124,7 +124,7 @@ Each head node can have unique log entries, so you should check the logs on both
 
 ###Ambari
 
-> [AZURE.NOTE] Accessing log files through Ambari requires an SSH tunnel, as the web sites for the individual services are not exposed publicly on the Internet. For information on using an SSH tunnel, see [Use SSH Tunneling to access Ambari web UI, ResourceManager, JobHistory, NameNode, Oozie, and other web UI's](hdinsight-linux-ambari-ssh-tunnel).
+> [AZURE.NOTE] Accessing log files through Ambari requires an SSH tunnel, as the web sites for the individual services are not exposed publicly on the Internet. For information on using an SSH tunnel, see [Use SSH Tunneling to access Ambari web UI, ResourceManager, JobHistory, NameNode, Oozie, and other web UI's](/documentation/articles/hdinsight-linux-ambari-ssh-tunnel).
 
 From the Ambari Web UI, select the service you wish to view logs for (for example, YARN,) and then use **Quick Links** to select which head node to view the logs for.
 
@@ -150,14 +150,14 @@ In this document you have learned how Azure HDInsight provides high availability
 
 - [Ambari REST Reference](https://github.com/apache/ambari/blob/trunk/ambari-server/docs/api/v1/index.md)
 
-- [Install and configure the Azure CLI](xplat-cli-install)
+- [Install and configure the Azure CLI](/documentation/articles/xplat-cli-install)
 
-- [Install and configure Azure PowerShell](powershell-install-configure)
+- [Install and configure Azure PowerShell](/documentation/articles/powershell-install-configure)
 
-- [Manage HDInsight using Ambari](hdinsight-hadoop-manage-ambari)
+- [Manage HDInsight using Ambari](/documentation/articles/hdinsight-hadoop-manage-ambari)
 
-- [Provision Linux-based HDInsight clusters](hdinsight-provision-clusters)
+- [Provision Linux-based HDInsight clusters](/documentation/articles/hdinsight-provision-clusters)
 
 [preview-portal]: https://manage.windowsazure.cn/
-[azure-powershell]: powershell-install-configure
-[azure-cli]: xplat-cli-install
+[azure-powershell]: /documentation/articles/powershell-install-configure
+[azure-cli]: /documentation/articles/xplat-cli-install

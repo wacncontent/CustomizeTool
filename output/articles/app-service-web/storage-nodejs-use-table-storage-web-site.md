@@ -58,7 +58,7 @@ Create an Azure storage account. The app will use this account to store the to-d
 
 1.  Log into the [Azure Management Portal](https://manage.windowsazure.cn).
 
-2. Click the **New** icon on the bottom left of the portal, then click **DATA SERVICE** > **Storage**. Give the storage account a unique name and create a new [resource group](resource-group-overview) for it.
+2. Click the **New** icon on the bottom left of the portal, then click **DATA SERVICE** > **Storage**. Give the storage account a unique name and create a new [resource group](/documentation/articles/resource-group-overview) for it.
 
   	![New Button](./media/storage-nodejs-use-table-storage-web-site/configure-storage.png)
 
@@ -70,7 +70,7 @@ Create an Azure storage account. The app will use this account to store the to-d
 
 -->
 <!-- keep by customization: begin -->
-1. Open your web browser and go to the [Azure Portal]. If prompted, login with your Azure subscription information.
+1. Open your web browser and go to the [Azure Management Portal]. If prompted, login with your Azure subscription information.
 
 2. At the bottom of the portal, click **+ NEW** and then select **Storage Account**.
 
@@ -665,8 +665,8 @@ While the steps in this article describe using the Table Service to store inform
 * For a guide to the change of the Azure Management Portal to the Azure preview portal see: [Reference for navigating the preview portal](https://manage.windowsazure.cn/)
 -->
 
-[Build and deploy a Node.js web app in Azure Websites]: web-sites-nodejs-develop-deploy-mac
-[Continuous deployment using GIT in Azure Websites]: web-sites-publish-source-control
+[Build and deploy a Node.js web app in Azure Websites]: /documentation/articles/web-sites-nodejs-develop-deploy-mac
+[Continuous deployment using GIT in Azure Websites]: /documentation/articles/web-sites-publish-source-control
 [Azure Developer Center]: /develop/nodejs/
 
 
@@ -676,9 +676,9 @@ While the steps in this article describe using the Table Service to store inform
 [for free]: http://windowsazure.cn
 [Git remote]: http://git-scm.com/docs/git-remote
 
-[Node.js web app with MongoDB]: web-sites-nodejs-store-data-mongodb
-[Azure CLI]: xplat-cli-install
-[Continuous deployment using GIT in Azure Websites]: web-sites-publish-source-control
+[Node.js web app with MongoDB]: /documentation/articles/web-sites-nodejs-store-data-mongodb
+[Azure CLI]: /documentation/articles/xplat-cli-install
+[Continuous deployment using GIT in Azure Websites]: /documentation/articles/web-sites-publish-source-control
 [azure]: https://github.com/Azure/azure-sdk-for-node
 [node-uuid]: https://www.npmjs.com/package/node-uuid
 [nconf]: https://www.npmjs.com/package/nconf
@@ -700,4 +700,4 @@ While the steps in this article describe using the Table Service to store inform
 [app-settings-save]: ./media/storage-nodejs-use-table-storage-web-site/savebutton.png
 [app-settings]: ./media/storage-nodejs-use-table-storage-web-site/storage-tasks-appsettings.png
 
-[Create and deploy a Node.js application to an Azure Web Site]: web-sites-nodejs-develop-deploy-mac
+[Create and deploy a Node.js application to an Azure Web Site]: /documentation/articles/web-sites-nodejs-develop-deploy-mac

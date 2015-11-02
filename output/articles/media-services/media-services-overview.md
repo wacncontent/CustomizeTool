@@ -18,7 +18,7 @@ Windows Azure Media Services is an extensible cloud-based platform that enables 
 
 You can build end-to-end workflows using entirely Media Services. You can also choose to use third-party components for some parts of your workflow. For example, encode using a third-party encoder. Then, upload, protect, package, deliver using Media Services.
 
-You can choose to stream your content live or deliver content on demand. This topic shows common scenarios for delivering your content [live](media-services-overview#live_scenarios) or [on demand](media-services-overview#vod_scenarios). The topic also links to other relevant topics.
+You can choose to stream your content live or deliver content on demand. This topic shows common scenarios for delivering your content [live](/documentation/articles/media-services-overview#live_scenarios) or [on demand](/documentation/articles/media-services-overview#vod_scenarios). The topic also links to other relevant topics.
 
 ## SDKs and tools 
 
@@ -48,15 +48,15 @@ You can view AMS learning paths here:
 To start using Azure Media Services, you should have the following:
  
 3. An Azure account. If you don't have an account, you can create a trial account in just a couple of minutes. For details, see [Azure Trial](/pricing/1rmb-trial/).
-2. An Azure Media Services account. Use Azure Management Portal, .NET, or REST API to create Azure Media Services account. For more information, see [Create Account](media-services-create-account).
-3. (Optional) Set up development environment. Choose .NET or REST API for your development environment. For more information, see [Set up environment](media-services-dotnet-how-to-use). 
+2. An Azure Media Services account. Use Azure Management Portal, .NET, or REST API to create Azure Media Services account. For more information, see [Create Account](/documentation/articles/media-services-create-account).
+3. (Optional) Set up development environment. Choose .NET or REST API for your development environment. For more information, see [Set up environment](/documentation/articles/media-services-dotnet-how-to-use). 
 
-	Also, learn how to connect  programmatically [Connect](media-services-dotnet-connect_programmatically).
-4. (Recommended) Allocate one or more scale units. It is recommended to allocate one or more scale units for applications in production environment.   For more information, see [Managing streaming endpoints](media-services-manage-origins).
+	Also, learn how to connect  programmatically [Connect](/documentation/articles/media-services-dotnet-connect_programmatically).
+4. (Recommended) Allocate one or more scale units. It is recommended to allocate one or more scale units for applications in production environment.   For more information, see [Managing streaming endpoints](/documentation/articles/media-services-manage-origins).
 
 ##Concepts
 
-For more information, see [Concepts](media-services-concepts).
+For more information, see [Concepts](/documentation/articles/media-services-concepts).
 
 
 ##<a id="vod_scenarios"></a>Delivering Media on-Demand with Azure Media Services: common scenarios and tasks
@@ -122,14 +122,14 @@ To be able to use dynamic encryption, you must first get at least one streaming 
 
 ###Also See
 
-- [How to upload content](media-services-manage-content#upload)
-- [How to get media processor](media-services-get-media-processor)
-- [How to encode content](media-services-manage-content#encode)
-- [How to monitor jobs](media-services-portal-check-job-progress)
-- [How to index content](media-services-manage-content#index)
-- [How to protect content](media-services-manage-content#encrypt)
-- [How to protect publish](media-services-manage-content#publish)
-- [How to scale encoding](media-services-portal-encoding-units)
+- [How to upload content](/documentation/articles/media-services-manage-content#upload)
+- [How to get media processor](/documentation/articles/media-services-get-media-processor)
+- [How to encode content](/documentation/articles/media-services-manage-content#encode)
+- [How to monitor jobs](/documentation/articles/media-services-portal-check-job-progress)
+- [How to index content](/documentation/articles/media-services-manage-content#index)
+- [How to protect content](/documentation/articles/media-services-manage-content#encrypt)
+- [How to protect publish](/documentation/articles/media-services-manage-content#publish)
+- [How to scale encoding](/documentation/articles/media-services-portal-encoding-units)
 
 ##<a id="live_scenarios"></a>Delivering Live Streaming Events with Azure Media Services
 
@@ -149,7 +149,7 @@ When working with Live Streaming the following components are commonly involved:
 		
 **Windows Azure Media Services** (AMS) provides the ability to ingest,  encode, preview, store, and deliver your live streaming content.
 
-When delivering your content to customers your goal is to deliver a high quality video to various devices under different network conditions. To take care of quality and network conditions, use live encoders to encode your stream to multi-bitrate (adaptive bitrate) video stream.  To take care of streaming on different devices, use Media Services [dynamic packaging](media-services-dynamic-packaging-overview) to dynamically re-package your stream to different protocols. Media Services supports delivery of the following adaptive bitrate streaming technologies: HTTP Live Streaming (HLS), Smooth Streaming, MPEG DASH, and HDS (for Adobe PrimeTime/Access licensees only).
+When delivering your content to customers your goal is to deliver a high quality video to various devices under different network conditions. To take care of quality and network conditions, use live encoders to encode your stream to multi-bitrate (adaptive bitrate) video stream.  To take care of streaming on different devices, use Media Services [dynamic packaging](/documentation/articles/media-services-dynamic-packaging-overview) to dynamically re-package your stream to different protocols. Media Services supports delivery of the following adaptive bitrate streaming technologies: HTTP Live Streaming (HLS), Smooth Streaming, MPEG DASH, and HDS (for Adobe PrimeTime/Access licensees only).
 
 In Azure Media Services, **Channels**, **Programs**, and **StreamingEndpoints** handle all the live streaming functionalities including ingest, formatting, DVR, security, scalability and redundancy. 
 
@@ -169,7 +169,7 @@ The following diagram shows the major parts of the AMS platform that are involve
 
 ![Live workflow][live-overview1]
 
-For more information, see [Working with Channels that are Enabled to Perform Live Encoding with Azure Media Services](media-services-manage-live-encoder-enabled-channels). 
+For more information, see [Working with Channels that are Enabled to Perform Live Encoding with Azure Media Services](/documentation/articles/media-services-manage-live-encoder-enabled-channels). 
 
 
 ###Working with Channels that receive multi-bitrate live stream from on-premises Encoders
@@ -180,17 +180,17 @@ The following diagram shows the major parts of the AMS platform that are involve
 ![Live workflow][live-overview2]
 
 For more information, see [Working with Channels that Receive Multi-bitrate Live Stream from On-premises Encoders
-](media-services-manage-channels-overview). 
+](/documentation/articles/media-services-manage-channels-overview). 
 
 ##Consuming content
 
 Azure Media Services provides the tools you need to create rich, dynamic client player applications for most platforms including: iOS Devices, Android Devices, Windows, Windows Phone, Xbox, and Set-top boxes. The following topic provides links to SDKs and Player Frameworks that you can use to develop your own client applications that can consume streaming media from Media Services.
 
-[Developing Video Player Applications](media-services-develop-video-players)
+[Developing Video Player Applications](/documentation/articles/media-services-develop-video-players)
 
 ##Enabling Azure CDN
 
-Media Services supports integration with Azure CDN. For information on how to enable Azure CDN, see [How to Manage Streaming Endpoints in a Media Services Account](media-services-manage-origins#enable_cdn).
+Media Services supports integration with Azure CDN. For information on how to enable Azure CDN, see [How to Manage Streaming Endpoints in a Media Services Account](/documentation/articles/media-services-manage-origins#enable_cdn).
 
 ##Scaling a Media Services account
 
@@ -198,7 +198,7 @@ You can scale **Media Services** by specifying the number of **Streaming Reserve
 
 You can also scale your Media Services account by adding storage accounts to it. Each storage account is limited to 500 TB. To expand your storage beyond the default limitations, you can choose to attach multiple storage accounts to a single Media Services account.
 
-[This](media-services-how-to-scale) topic links to relevant topics.
+[This](/documentation/articles/media-services-how-to-scale) topic links to relevant topics.
 
 ##Support
 

@@ -33,7 +33,7 @@ In this document, you will learn how to use Power BI to create a report and dash
 
     * Visual Studio 2015 [CTP6](http://visualstudio.com/downloads/visual-studio-2015-ctp-vs)
 
-* The HDInsight Tools for Visual Studio: See [Get started using the HDInsight Tools for Visual Studio](hdinsight-hadoop-visual-studio-tools-get-started) for information on installation information.
+* The HDInsight Tools for Visual Studio: See [Get started using the HDInsight Tools for Visual Studio](/documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started) for information on installation information.
 
 ## How it works
 
@@ -133,4 +133,4 @@ The topology will continue to run until you stop it or delete the Storm on HDIns
 
 In this document, you learned how to send data from a Storm topology to Power BI using REST. For information on how to work with other Azure technologies, see the following:
 
-* [Example topologies for Storm on HDInsight](hdinsight-storm-example-topology)
+* [Example topologies for Storm on HDInsight](/documentation/articles/hdinsight-storm-example-topology)

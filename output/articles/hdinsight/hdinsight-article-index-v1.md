@@ -42,83 +42,83 @@ For a complete set of articles about using Linux and Linux clusters, go to the [
 
 ## Hadoop: Batch query
 
-* [Run four easy samples](hdinsight-run-samples)
-* [Use Hive and HiveQL with Hadoop to analyze a sample Apache log4j file](hdinsight-use-hive)
-* [Use Pig with Hadoop](hdinsight-use-pig)
-* [Use MapReduce in Hadoop](hdinsight-use-mapreduce)
+* [Run four easy samples](/documentation/articles/hdinsight-run-samples)
+* [Use Hive and HiveQL with Hadoop to analyze a sample Apache log4j file](/documentation/articles/hdinsight-use-hive)
+* [Use Pig with Hadoop](/documentation/articles/hdinsight-use-pig)
+* [Use MapReduce in Hadoop](/documentation/articles/hdinsight-use-mapreduce)
 
 ## Hadoop & Excel
 
-* [Connect Excel to Hadoop using Power Query](hdinsight-connect-excel-power-query)
-* [Connect Excel to Hadoop with the Hive ODBC driver](hdinsight-connect-excel-hive-odbc-driver)
+* [Connect Excel to Hadoop using Power Query](/documentation/articles/hdinsight-connect-excel-power-query)
+* [Connect Excel to Hadoop with the Hive ODBC driver](/documentation/articles/hdinsight-connect-excel-hive-odbc-driver)
 
 
 ## Hadoop: Advanced techniques
 
-* [Serialize data in Hadoop with the Microsoft Avro Library](hdinsight-dotnet-avro-serialization)
-* [Process and analyze JSON documents using Hive](hdinsight-using-json-in-hive)
-* [Use Python with Hive and Pig](hdinsight-python)
+* [Serialize data in Hadoop with the Microsoft Avro Library](/documentation/articles/hdinsight-dotnet-avro-serialization)
+* [Process and analyze JSON documents using Hive](/documentation/articles/hdinsight-using-json-in-hive)
+* [Use Python with Hive and Pig](/documentation/articles/hdinsight-python)
 * [Optimize Hive queries for Hadoop](hdinsight-hadoop-optimize-hive-query–v1.md)
 * [Run Pig jobs using the .NET SDK for Hadoop](hdinsight-hadoop-use-pig-dotnet-sdk-v1.md )
-* [Use C# user-defined functions with Hive and Pig streaming](hdinsight-hadoop-hive-pig-udf-dotnet-csharp)
-* [Develop C# Hadoop streaming programs](hdinsight-hadoop-develop-deploy-streaming-jobs)
+* [Use C# user-defined functions with Hive and Pig streaming](/documentation/articles/hdinsight-hadoop-hive-pig-udf-dotnet-csharp)
+* [Develop C# Hadoop streaming programs](/documentation/articles/hdinsight-hadoop-develop-deploy-streaming-jobs)
 
 ## HBase: NoSQL database
 
-* [Configure HBase geo-replication](hdinsight-hbase-geo-replication)
-* [Use Maven to build Java applications that use HBase](hdinsight-hbase-build-java-maven)
-* [Analyze real-time Twitter sentiment on HBase](hdinsight-hbase-analyze-twitter-sentiment)
+* [Configure HBase geo-replication](/documentation/articles/hdinsight-hbase-geo-replication)
+* [Use Maven to build Java applications that use HBase](/documentation/articles/hdinsight-hbase-build-java-maven)
+* [Analyze real-time Twitter sentiment on HBase](/documentation/articles/hdinsight-hbase-analyze-twitter-sentiment)
 
 ## Apache Storm: Stream query
 
-* [Get started with the Storm Starter samples](hdinsight-apache-storm-tutorial-get-started-v1)
-* [Deploy and manage Apache Storm topologies](hdinsight-storm-deploy-monitor-topology)
-* [Develop C# topologies for Apache Storm using Hadoop tools for Visual Studio](hdinsight-storm-develop-csharp-visual-studio-topology)
-* [Develop Java-based topologies for a basic word-count application with Apache Storm and Maven](hdinsight-storm-develop-java-topology)
-* [Process events from Azure Event Hubs with Storm](hdinsight-storm-develop-csharp-event-hub-topology)
-* [Use Power BI to visualize data from an Apache Storm topology](hdinsight-storm-power-bi-topology)
-* [Process vehicle sensor data from Azure Event Hubs using Apache Storm](hdinsight-storm-iot-eventhub-documentdb)
+* [Get started with the Storm Starter samples](/documentation/articles/hdinsight-apache-storm-tutorial-get-started-v1)
+* [Deploy and manage Apache Storm topologies](/documentation/articles/hdinsight-storm-deploy-monitor-topology)
+* [Develop C# topologies for Apache Storm using Hadoop tools for Visual Studio](/documentation/articles/hdinsight-storm-develop-csharp-visual-studio-topology)
+* [Develop Java-based topologies for a basic word-count application with Apache Storm and Maven](/documentation/articles/hdinsight-storm-develop-java-topology)
+* [Process events from Azure Event Hubs with Storm](/documentation/articles/hdinsight-storm-develop-csharp-event-hub-topology)
+* [Use Power BI to visualize data from an Apache Storm topology](/documentation/articles/hdinsight-storm-power-bi-topology)
+* [Process vehicle sensor data from Azure Event Hubs using Apache Storm](/documentation/articles/hdinsight-storm-iot-eventhub-documentdb)
 <!-- deleted by customization 
 
 ## Apache Spark
 
 For articles about using native Apache Spark clusters in the Azure preview portal, go to the [HDInsight documentation page](/documentation/services/hdinsight/).
 
-* [Overview: Apache Spark on Azure HDInsight](hdinsight-apache-spark-overview)
-* [Install and use Spark on Hadoop clusters](hdinsight-hadoop-spark-install)
-* [Spark job server on HDInsight clusters](hdinsight-apache-spark-job-server)
-* [Provision Apache Spark and run interactive queries using Spark SQL](hdinsight-apache-spark-zeppelin-notebook-jupyter-spark-sql-v1)
+* [Overview: Apache Spark on Azure HDInsight](/documentation/articles/hdinsight-apache-spark-overview)
+* [Install and use Spark on Hadoop clusters](/documentation/articles/hdinsight-hadoop-spark-install)
+* [Spark job server on HDInsight clusters](/documentation/articles/hdinsight-apache-spark-job-server)
+* [Provision Apache Spark and run interactive queries using Spark SQL](/documentation/articles/hdinsight-apache-spark-zeppelin-notebook-jupyter-spark-sql-v1)
 
 -->
 
 ## Big data solutions
 
-* [Analyze sensor data using the Hive Query Console](hdinsight-hive-analyze-sensor-data)
-* [Analyze flight delay data by using Hive](hdinsight-analyze-flight-delay-data)
-* [Analyze stored Twitter data using Hive](hdinsight-analyze-twitter-data)
-* [Determine Twitter trending topics with Apache Storm](hdinsight-storm-twitter-trending)
-* [Analyze sensor data with Apache Storm, Event Hub, and HBase](hdinsight-storm-sensor-data-analysis)
+* [Analyze sensor data using the Hive Query Console](/documentation/articles/hdinsight-hive-analyze-sensor-data)
+* [Analyze flight delay data by using Hive](/documentation/articles/hdinsight-analyze-flight-delay-data)
+* [Analyze stored Twitter data using Hive](/documentation/articles/hdinsight-analyze-twitter-data)
+* [Determine Twitter trending topics with Apache Storm](/documentation/articles/hdinsight-storm-twitter-trending)
+* [Analyze sensor data with Apache Storm, Event Hub, and HBase](/documentation/articles/hdinsight-storm-sensor-data-analysis)
 
 ## Machine learning in HDInsight
 
-* [Generate movie recommendations by using Apache Mahout with Hadoop](hdinsight-mahout)
-* [Learning path: Build advanced analytics solutions](machine-learning-data-science-how-to-create-machine-learning-service)
-* [Learning path: Advanced data processing](machine-learning-data-science-advanced-data-processing)
+* [Generate movie recommendations by using Apache Mahout with Hadoop](/documentation/articles/hdinsight-mahout)
+* [Learning path: Build advanced analytics solutions](/documentation/articles/machine-learning-data-science-how-to-create-machine-learning-service)
+* [Learning path: Advanced data processing](/documentation/articles/machine-learning-data-science-advanced-data-processing)
 <!-- deleted by customization * [Predict taxi tips with HDInsight and Machine Learning](/documentation/articles/machine-learning-data-science-process-hive-walkthrough) -->
 
 ## Extensibility
 
-* [Extend HDInsight capabilities with Azure Virtual Network](hdinsight-extend-hadoop-virtual-network)
+* [Extend HDInsight capabilities with Azure Virtual Network](/documentation/articles/hdinsight-extend-hadoop-virtual-network)
 <!-- deleted by customization * [Install and use Spark on Hadoop clusters](/documentation/articles/hdinsight-hadoop-spark-install) -->
-* [Use Giraph on HDInsight clusters to process large-scale graphs](hdinsight-hadoop-giraph-install-v1)
-* [Install and use Solr on Hadoop clusters](hdinsight-hadoop-solr-install-v1)
+* [Use Giraph on HDInsight clusters to process large-scale graphs](/documentation/articles/hdinsight-hadoop-giraph-install-v1)
+* [Install and use Solr on Hadoop clusters](/documentation/articles/hdinsight-hadoop-solr-install-v1)
 
 ## Operations
 
-* [Provision clusters on Windows](hdinsight-provision-clusters-v1)
-* [Provision HBase clusters on Azure Virtual Network](hdinsight-hbase-provision-vnet)
-* [Customize HDInsight clusters using Script Action](hdinsight-hadoop-customize-cluster-v1)
-* [Availability and reliability of Hadoop clusters in HDInsight](hdinsight-high-availability)
+* [Provision clusters on Windows](/documentation/articles/hdinsight-provision-clusters-v1)
+* [Provision HBase clusters on Azure Virtual Network](/documentation/articles/hdinsight-hbase-provision-vnet)
+* [Customize HDInsight clusters using Script Action](/documentation/articles/hdinsight-hadoop-customize-cluster-v1)
+* [Availability and reliability of Hadoop clusters in HDInsight](/documentation/articles/hdinsight-high-availability)
 
 ## Reference
 
@@ -129,8 +129,8 @@ For articles about using native Apache Spark clusters in the Azure preview porta
 
 ## Troubleshoot
 
-* [Release notes](hdinsight-release-notes)
-* [Collect heap dumps](hdinsight-hadoop-collect-debug-heap-dumps)
-* [Access application logs](hdinsight-hadoop-access-yarn-app-logs)
-* [Interpret error messages](hdinsight-debug-jobs)
+* [Release notes](/documentation/articles/hdinsight-release-notes)
+* [Collect heap dumps](/documentation/articles/hdinsight-hadoop-collect-debug-heap-dumps)
+* [Access application logs](/documentation/articles/hdinsight-hadoop-access-yarn-app-logs)
+* [Interpret error messages](/documentation/articles/hdinsight-debug-jobs)
 * [Get help on the forum](https://social.msdn.microsoft.com/forums/azure/home?forum=hdinsight)

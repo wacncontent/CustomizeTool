@@ -1,6 +1,6 @@
 > [AZURE.SELECTOR]
 <!-- deleted by customization
-- [Preview portal](virtual-networks-static-private-ip-arm-pportal)
+- [Preview portal](/documentation/articles/virtual-networks-static-private-ip-arm-pportal)
 -->
-- [PowerShell](virtual-networks-static-private-ip-arm-ps)
-- [Azure CLI](virtual-networks-static-private-ip-arm-cli)
+- [PowerShell](/documentation/articles/virtual-networks-static-private-ip-arm-ps)
+- [Azure CLI](/documentation/articles/virtual-networks-static-private-ip-arm-cli)

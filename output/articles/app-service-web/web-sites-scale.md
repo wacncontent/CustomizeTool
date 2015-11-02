@@ -24,7 +24,7 @@ Scaling up on Azure web apps involves two related actions: changing your App Ser
 
 Changing modes and configuring them is easily done in the Scale tab of the management portal. You can scale up or down as required. These changes take only seconds to apply and affect all web apps in your App Service plan. They do not require your code to be changed or your applications to be redeployed.
 
-For information about App Service plans, see [What is an App Service Plan?](web-sites-web-hosting-plan-overview) and [App Service Plans In-Depth Overview](azure-web-sites-web-hosting-plans-in-depth-overview). For information the pricing and features of individual App Service plans, see [Azure Websites Pricing Details](/home/features/web-site/#price).  
+For information about App Service plans, see [What is an App Service Plan?](/documentation/articles/web-sites-web-hosting-plan-overview) and [App Service Plans In-Depth Overview](/documentation/articles/azure-web-sites-web-hosting-plans-in-depth-overview). For information the pricing and features of individual App Service plans, see [Azure Websites Pricing Details](/home/features/web-site/#price).  
 <!-- deleted by customization
 
 > [AZURE.NOTE] Before switching a web app from the **Free** mode to **Basic**, **Standard**, or **Premium** mode, you must first remove the spending caps in place for your Azure Websites subscription. To view or change options for your Windows Azure Websites subscription, see [Windows Azure Subscriptions][azuresubscriptions].
@@ -264,7 +264,7 @@ Depending on the web app's mode, the following developer-oriented features are a
 
 ### Web Endpoint Monitoring ###
 
-- Web endpoint monitoring is available in the **Basic**, **Standard**<!-- deleted by customization and **Premium** --> modes. For more information about web endpoint monitoring, see [How to Monitor Web Apps](web-sites-monitor).
+- Web endpoint monitoring is available in the **Basic**, **Standard**<!-- deleted by customization and **Premium** --> modes. For more information about web endpoint monitoring, see [How to Monitor Web Apps](/documentation/articles/web-sites-monitor).
 
 - For detailed information about all of the remaining features in the App Service plans, including pricing and features of interest to all users (including developers), see [Azure Websites Pricing Details](/home/features/web-site/#price).
 <!-- deleted by customization
@@ -293,10 +293,8 @@ Depending on the web app's mode, the following developer-oriented features are a
 	[Azure Websites Pricing Details](/home/features/web-site/#price)
 <!-- deleted by customization
 	
-	[Azure Websites Pricing Details - SSL Connections](/home/features/web-site/#price#ssl-connections)
+	[Azure Websites Pricing Details - SSL Connections](/home/features/web-site/#price//blogs.msdn.com/b/windowsazure/archive/2014/02/10/best-practices-windows-azure-websites-waws.aspx).
 -->
-
-- For information on Azure Websites best practices, including building a scalable and resilient architecture, see [Best Practices: Azure Websites](http://blogs.msdn.com/b/windowsazure/archive/2014/02/10/best-practices-windows-azure-websites-waws.aspx).
 <!-- deleted by customization
 
 - Videos on scaling Web Apps:
@@ -311,7 +309,7 @@ Depending on the web app's mode, the following developer-oriented features are a
 -->
 
 <!-- LINKS -->
-[vmsizes]: virtual-machines-size-specs
+[vmsizes]:/documentation/articles/virtual-machines-size-specs/
 [SQLaccountsbilling]:/home/features/sql-database/#price
 [azuresubscriptions]:https://manage.windowsazure.cn
 [portal]: https://manage.windowsazure.cn/

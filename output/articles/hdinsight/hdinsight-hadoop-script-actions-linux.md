@@ -16,7 +16,7 @@
 
 Script Actions are a way to customize Azure HDInsight clusters by specifying cluster configuration settings during installation, or installing additional services, tools, or other software on the cluster.
 
-> [AZURE.NOTE] The information in this document is specific to Linux-based HDInsight clusters. For information on using Script Actions with Windows-based clusters, see [Script action development with HDInsight (Windows)](hdinsight-hadoop-script-actions).
+> [AZURE.NOTE] The information in this document is specific to Linux-based HDInsight clusters. For information on using Script Actions with Windows-based clusters, see [Script action development with HDInsight (Windows)](/documentation/articles/hdinsight-hadoop-script-actions).
 
 ## What are Script Actions?
 
@@ -24,7 +24,7 @@ Script actions are Bash scripts that run on the cluster nodes during provisionin
 
 Script Action can be used when provisioning a cluster using the __Azure preview portal__, __Azure PowerShell__, or the __HDInsight .NET SDK__.
 
-For an walkthrough of customizing a cluster using Script Actions, see [Customize HDInsight clusters using script actions](hdinsight-hadoop-customize-cluster).
+For an walkthrough of customizing a cluster using Script Actions, see [Customize HDInsight clusters using script actions](/documentation/articles/hdinsight-hadoop-customize-cluster).
 
 ## <a name="bestPracticeScripting"></a>Best practices for script development
 
@@ -43,7 +43,7 @@ When you develop a custom script for an HDInsight cluster, there are several bes
 
 ### <a name="bPS1"></a>Target the Hadoop version
 
-Different versions of HDInsight have different versions of Hadoop services and components installed. If your script expects a specific version of a service or component, you should only use the script with the version of HDInsight that includes the required components. You can find information on component versions included with HDInsight using the [HDInsight component versioning](hdinsight-component-versioning) document.
+Different versions of HDInsight have different versions of Hadoop services and components installed. If your script expects a specific version of a service or component, you should only use the script with the version of HDInsight that includes the required components. You can find information on component versions included with HDInsight using the [HDInsight component versioning](/documentation/articles/hdinsight-component-versioning) document.
 
 ### <a name="bPS2"></a>Provide stable links to script resources
 
@@ -93,7 +93,7 @@ By default, `echo` will send the string to STDOUT. To direct it to STDERR, add `
 
 This redirects information sent to STDOUT (1, which is default so not listed here,) to STDERR (2). For more information on IO redirection, see [http://www.tldp.org/LDP/abs/html/io-redirection.html](http://www.tldp.org/LDP/abs/html/io-redirection.html).
 
-For more information on viewing information logged by Script Actions, see [Customize HDInsight clusters using Script Action](hdinsight-hadoop-customize-cluster#troubleshooting)
+For more information on viewing information logged by Script Actions, see [Customize HDInsight clusters using Script Action](/documentation/articles/hdinsight-hadoop-customize-cluster#troubleshooting)
 
 ###<a name="bps8"></a> Save files as ASCII with LF line endings
 
@@ -167,19 +167,19 @@ Here are the steps we took when preparing to deploy these scripts:
 
 ## <a name="runScriptAction"></a>How to run a script action
 
-You can use Script Actions to customize HDInsight clusters by using the Azure Management Portal, Azure PowerShell, or the HDInsight .NET SDK. For instructions, see [How to use Script Action](hdinsight-hadoop-customize-cluster#howto).
+You can use Script Actions to customize HDInsight clusters by using the Azure Management Portal, Azure PowerShell, or the HDInsight .NET SDK. For instructions, see [How to use Script Action](/documentation/articles/hdinsight-hadoop-customize-cluster#howto).
 
 ## <a name="sampleScripts"></a>Custom script samples
 
 Microsoft provides sample scripts to install components on an HDInsight cluster. The sample scripts and instructions on how to use them are available at the links below:
 
-- [Install and use Hue on HDInsight clusters](hdinsight-hadoop-hue-linux)
-- [Install and use Spark on HDInsight clusters](hdinsight-hadoop-spark-install-linux)
-- [Install and use R on HDInsight Hadoop clusters](hdinsight-hadoop-r-scripts-linux)
-- [Install and use Solr on HDInsight clusters](hdinsight-hadoop-solr-install-linux)
-- [Install and use Giraph on HDInsight clusters](hdinsight-hadoop-giraph-install-linux)  
+- [Install and use Hue on HDInsight clusters](/documentation/articles/hdinsight-hadoop-hue-linux)
+- [Install and use Spark on HDInsight clusters](/documentation/articles/hdinsight-hadoop-spark-install-linux)
+- [Install and use R on HDInsight Hadoop clusters](/documentation/articles/hdinsight-hadoop-r-scripts-linux)
+- [Install and use Solr on HDInsight clusters](/documentation/articles/hdinsight-hadoop-solr-install-linux)
+- [Install and use Giraph on HDInsight clusters](/documentation/articles/hdinsight-hadoop-giraph-install-linux)  
 
-> [AZURE.NOTE] The documents linked above are specific to Linux-based HDInsight clusters. For a scripts that work with Windows-based HDInsight, see [Script action development with HDInsight (Windows)](hdinsight-hadoop-script-actions) or use the links available at the top of each article.
+> [AZURE.NOTE] The documents linked above are specific to Linux-based HDInsight clusters. For a scripts that work with Windows-based HDInsight, see [Script action development with HDInsight (Windows)](/documentation/articles/hdinsight-hadoop-script-actions) or use the links available at the top of each article.
 
 ##Troubleshooting
 
@@ -214,4 +214,4 @@ For the above command, replace __INFILE__ with the file containing the BOM. __OU
 
 ## <a name="seeAlso"></a>See also
 
-[Customize HDInsight clusters using Script Action](hdinsight-hadoop-customize-cluster)
+[Customize HDInsight clusters using Script Action](/documentation/articles/hdinsight-hadoop-customize-cluster)

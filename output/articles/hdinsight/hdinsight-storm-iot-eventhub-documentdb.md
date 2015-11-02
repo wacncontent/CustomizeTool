@@ -52,4 +52,4 @@ A complete, automated solution for this scenario is available as part of the <a 
 
 ## Next Steps
 
-For more example Storm topologies, see [Example topologies for Storm on HDInsight](hdinsight-storm-example-topology).
+For more example Storm topologies, see [Example topologies for Storm on HDInsight](/documentation/articles/hdinsight-storm-example-topology).

@@ -16,7 +16,7 @@
 
 ## Overview
 
-This topic explains how to use Visual Studio to deploy a Console Application project to a web app in [Azure Websites](/documentation/services/web-sites/) as an [Azure WebJob](websites-webjobs-resources). For information about how to deploy WebJobs by using the [Azure Management Portal](https://manage.windowsazure.cn/), see [Run Background tasks with WebJobs](web-sites-create-web-jobs).
+This topic explains how to use Visual Studio to deploy a Console Application project to a web app in [Azure Websites](/documentation/services/web-sites/) as an [Azure WebJob](/documentation/articles/websites-webjobs-resources/). For information about how to deploy WebJobs by using the [Azure Management Portal](https://manage.windowsazure.cn/), see [Run Background tasks with WebJobs](/documentation/articles/web-sites-create-web-jobs).
 
 When Visual Studio deploys a WebJobs-enabled Console Application project, it performs two tasks:
 
@@ -123,7 +123,7 @@ The **Add Azure WebJob** dialog enables you to enter WebJob name and scheduling 
 
 ![Add Azure WebJob dialog](./media/websites-dotnet-deploy-webjobs/aaw2.png)
 
-The fields in this dialog correspond to fields on the **New Job** dialog of the Azure Management Portal. For more information, see [Run Background tasks with WebJobs](web-sites-create-web-jobs).
+The fields in this dialog correspond to fields on the **New Job** dialog of the Azure Management Portal. For more information, see [Run Background tasks with WebJobs](/documentation/articles/web-sites-create-web-jobs).
 
 For a scheduled WebJob (not for continuous WebJobs), Visual Studio creates an [Azure Scheduler](/home/features/scheduler/) job collection if one doesn't exist yet, and it creates a job in the collection:
 
@@ -180,7 +180,7 @@ You can edit this file directly, and Visual Studio provides IntelliSense. The fi
   
 ## <a id="deploy"></a>Deploy a WebJobs project
 
-A WebJobs project that you have linked to a web project deploys automatically with the web project. For information about web project deployment, see [How to deploy to Web Apps](web-sites-deploy).
+A WebJobs project that you have linked to a web project deploys automatically with the web project. For information about web project deployment, see [How to deploy to Web Apps](/documentation/articles/web-sites-deploy).
 
 To deploy a WebJobs project by itself, right-click the project in **Solution Explorer**, and click **Publish as Azure WebJob**. 
 

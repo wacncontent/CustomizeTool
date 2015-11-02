@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties 
 	pageTitle="Provision a web app that uses a SQL Database" 
 	description="Use an Azure Resource Manager template to deploy a web app that includes a SQL Database." 
@@ -17,9 +19,9 @@
 In this topic, you will learn how to create an Azure Resource Manager template that deploys a web app and SQL Database. You will learn how to define which resources are deployed and 
 how to define parameters that are specified when the deployment is executed. You can use this template for your own deployments, or customize it to meet your requirements.
 
-For more information about creating templates, see [Authoring Azure Resource Manager Templates](resource-group-authoring-templates).
+For more information about creating templates, see [Authoring Azure Resource Manager Templates](/documentation/articles/resource-group-authoring-templates).
 
-For more information about deploying apps, see [Deploy a complex application predictably in Azure](app-service-deploy-complex-application-predictably).
+For more information about deploying apps, see [Deploy a complex application predictably in Azure](/documentation/articles/app-service-deploy-complex-application-predictably).
 
 For the complete template, see [Web App With SQL Database template](https://github.com/Azure/azure-quickstart-templates/blob/master/201-web-app-sql-database/azuredeploy.json).
 

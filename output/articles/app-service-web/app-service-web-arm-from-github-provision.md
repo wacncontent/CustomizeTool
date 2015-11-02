@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties 
 	pageTitle="Deploy a web app that is linked to a GitHub repository" 
 	description="Use an Azure Resource Manager template to deploy a web app that contains a project from a GitHub repository." 
@@ -17,7 +19,7 @@
 In this topic, you will learn how to create an Azure Resource Manager template that deploys a web app that is linked to a project in a GitHub repository. You will learn how to define which resources are deployed and 
 how to define parameters that are specified when the deployment is executed. You can use this template for your own deployments, or customize it to meet your requirements.
 
-For more information about creating templates, see [Authoring Azure Resource Manager Templates](resource-group-authoring-templates).
+For more information about creating templates, see [Authoring Azure Resource Manager Templates](/documentation/articles/resource-group-authoring-templates).
 
 For the complete template, see [Web App Linked to GitHub template](https://github.com/Azure/azure-quickstart-templates/blob/master/201-web-app-github-deploy/azuredeploy.json).
 
@@ -69,7 +71,7 @@ plan.
 The web app also has a child resource which is defined in **resources** section below. This child resource defines source control for the project deployed with the web app. In this template, the source control 
 is linked to a particular GitHub repository. The GitHub repository is defined with the code **"RepoUrl":"https://github.com/davidebbo-test/Mvc52Application.git"** You might hard-code the repository URL when you want to create a template that repeatedly deploys a single project while requiring the minimum number of parameters.
 Instead of hard-coding the repository URL, you can add a parameter for the repository URL and use that value for the **RepoUrl** property. You can see an example of repository URL parameter in the 
-[Web App with Web Jobs template](app-service-web-deploy-web-app-with-webjobs).
+[Web App with Web Jobs template](/documentation/articles/app-service-web-deploy-web-app-with-webjobs).
 
     {
       "apiVersion":"2015-04-01",

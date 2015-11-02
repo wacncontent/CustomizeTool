@@ -20,7 +20,7 @@
 
 Using the [Azure preview portal][preview-portal], you can provision and manage Linux-based Hadoop clusters in Azure HDInsight.
 
-> [AZURE.NOTE] The steps in this document are specific to working with Linux-based Hadoop clusters. For information on working with Windows-based clusters, see [Manage Hadoop clusters in HDInsight by using the Azure preview portal](hdinsight-administer-use-management-portal-v1)
+> [AZURE.NOTE] The steps in this document are specific to working with Linux-based Hadoop clusters. For information on working with Windows-based clusters, see [Manage Hadoop clusters in HDInsight by using the Azure preview portal](/documentation/articles/hdinsight-administer-use-management-portal-v1)
 
 
 [AZURE.INCLUDE [preview-portal](../includes/hdinsight-azure-preview-portal-nolink.md)]
@@ -29,9 +29,9 @@ Using the [Azure preview portal][preview-portal], you can provision and manage L
 ## Other tools for administering HDInsight
 There are also other tools available for administering HDInsight in addition to the Azure Management Portal.
 
-- [Administer HDInsight Using Azure CLI](hdinsight-administer-use-command-line): The Azure CLI is a cross-platform command line tool that allows you to manage Azure services
+- [Administer HDInsight Using Azure CLI](/documentation/articles/hdinsight-administer-use-command-line): The Azure CLI is a cross-platform command line tool that allows you to manage Azure services
 
-- [Administer HDInsight Using Azure PowerShell](hdinsight-administer-use-powershell): Azure PowerShell provides PowerShell cmdlets for managing Azure services
+- [Administer HDInsight Using Azure PowerShell](/documentation/articles/hdinsight-administer-use-powershell): Azure PowerShell provides PowerShell cmdlets for managing Azure services
 
 ## Prerequisites
 
@@ -69,9 +69,9 @@ You can provision HDInsight clusters from the Azure Management Portal by using t
 
     For more information on using SSH with HDInsight, see one of the following articles:
 
-	* [Use SSH with Linux-based Hadoop on HDInsight from Linux, Unix, or OS X](hdinsight-hadoop-linux-use-ssh-unix)
+	* [Use SSH with Linux-based Hadoop on HDInsight from Linux, Unix, or OS X](/documentation/articles/hdinsight-hadoop-linux-use-ssh-unix)
 
-	* [Use SSH with Linux-based Hadoop on HDInsight from Windows](hdinsight-hadoop-linux-use-ssh-windows)
+	* [Use SSH with Linux-based Hadoop on HDInsight from Windows](/documentation/articles/hdinsight-hadoop-linux-use-ssh-windows)
 
 7. For __Data Source__, you can select the entry to choose an existing data source, or create a new one.
 
@@ -103,11 +103,11 @@ You can provision HDInsight clusters from the Azure Management Portal by using t
 
 9. Select __Optional Configuration__. This blade allows you to configure the following items:
 
-	* __HDInsight Version__: The version of HDInsight used for the cluster. For more information on HDInsight versioning, see [HDInsight component versioning](hdinsight-component-versioning)
+	* __HDInsight Version__: The version of HDInsight used for the cluster. For more information on HDInsight versioning, see [HDInsight component versioning](/documentation/articles/hdinsight-component-versioning)
 
 	* __External Metastores__: This allows you to select a SQL Database, which will be used to store configuration information for Oozie and Hive. This allows you to reuse the configuration when deleting and recreating a cluster, instead of having to recreate the Hive and Oozie configuration each time.
 
-	* __Virtual Network__: This allows you to place the HDInsight cluster on the same virtual network as other resources, such as SQL Database or an Azure Virtual Machine. Placing resources on a virtual network allows the to directly communicate with each other, bypassing the public gateways that handle incoming traffic from the Internet. For more information on how HDInsight benefits from Azure Virtual Networks, see [Extend HDInsight capabilities by using Azure Virtual Network](hdinsight-extend-hadoop-virtual-network).
+	* __Virtual Network__: This allows you to place the HDInsight cluster on the same virtual network as other resources, such as SQL Database or an Azure Virtual Machine. Placing resources on a virtual network allows the to directly communicate with each other, bypassing the public gateways that handle incoming traffic from the Internet. For more information on how HDInsight benefits from Azure Virtual Networks, see [Extend HDInsight capabilities by using Azure Virtual Network](/documentation/articles/hdinsight-extend-hadoop-virtual-network).
 
 		> [AZURE.IMPORTANT] You must create the Azure Virtual Network before creating the HDInsight cluster, as you cannot create a new network from HDInsight configuration.
 		>
@@ -115,9 +115,9 @@ You can provision HDInsight clusters from the Azure Management Portal by using t
         >
         > You cannot use a v1 (Classic,) Azure Virtual Network with Linux-based HDInsight. The Virtual Network must be v2 (Azure Resource Manager,) in order for it to be listed as an option during the HDInsight cluster creation process in the Azure preview portal, or to be usable when creating a cluster from the Azure CLI or Azure PowerShell.
         >
-        > If you have resources on a v1 network, and you wish to make HDInsight directly accessible to those resources through a virtual network, see [Connecting classic VNets to new VNets](virtual-networks-arm-asm-s2s) for information on how to connect a v2 Virtual Network to a v1 Virtual Network. Once this connection is established, you can create the HDInsight cluster in the v2 Virtual Network.
+        > If you have resources on a v1 network, and you wish to make HDInsight directly accessible to those resources through a virtual network, see [Connecting classic VNets to new VNets](/documentation/articles/virtual-networks-arm-asm-s2s) for information on how to connect a v2 Virtual Network to a v1 Virtual Network. Once this connection is established, you can create the HDInsight cluster in the v2 Virtual Network.
 
-	* __Script Actions__: This allows you to specify Bash scripts that customize the HDInsight cluster during provisioning. For example, there is a [script that installs Hue](hdinsight-hadoop-hue-linux) (a graphical client for working with Hadoop.) For more information on Script Actions, see [Customize HDInsight clusters using Script Action](hdinsight-hadoop-customize-cluster).
+	* __Script Actions__: This allows you to specify Bash scripts that customize the HDInsight cluster during provisioning. For example, there is a [script that installs Hue](/documentation/articles/hdinsight-hadoop-hue-linux) (a graphical client for working with Hadoop.) For more information on Script Actions, see [Customize HDInsight clusters using Script Action](/documentation/articles/hdinsight-hadoop-customize-cluster).
 
 	* __Azure Storage Keys__: This allows you to associate additional storage accounts with the HDInsight server.
 
@@ -161,7 +161,7 @@ Use the following to understand the icons at the top of this blade, and in the _
 
 * __Documentation__: Links to documentation for Azure HDInsight.
 
-> [AZURE.IMPORTANT] To manage the services provided by the HDInsight cluster, you must use Ambari Web or the Ambari REST API. For more information on using Ambari, see [Manage HDInsight clusters using Ambari](hdinsight-hadoop-manage-ambari).
+> [AZURE.IMPORTANT] To manage the services provided by the HDInsight cluster, you must use Ambari Web or the Ambari REST API. For more information on using Ambari, see [Manage HDInsight clusters using Ambari](/documentation/articles/hdinsight-hadoop-manage-ambari).
 
 ### <a name="scaling"></a>Scaling
 
@@ -169,7 +169,7 @@ To scale a cluster using the portal, select your HDInsight cluster and then sele
 
 ![image of scaling ui](./media/hdinsight-administer-use-portal-linux/scaling.png)
 
-For more information on scaling operations, see [Information about using HDInsight on Linux](hdinsight-hadoop-linux-information#scaling).
+For more information on scaling operations, see [Information about using HDInsight on Linux](/documentation/articles/hdinsight-hadoop-linux-information#scaling).
 
 ## Monitor a cluster
 
@@ -177,16 +177,16 @@ The __Usage__ section of the HDInsight cluster blade dislays information about t
 
 ![Usage information](./media/hdinsight-administer-use-portal-linux/usage.png)
 
-> [AZURE.IMPORTANT] To monitor the services provided by the HDInsight cluster, you must use Ambari Web or the Ambari REST API. For more information on using Ambari, see [Manage HDInsight clusters using Ambari](hdinsight-hadoop-manage-ambari)
+> [AZURE.IMPORTANT] To monitor the services provided by the HDInsight cluster, you must use Ambari Web or the Ambari REST API. For more information on using Ambari, see [Manage HDInsight clusters using Ambari](/documentation/articles/hdinsight-hadoop-manage-ambari)
 
 ## Next steps
 In this article, you have learned how to create an HDInsight cluster by using the Azure Management Portal, and how to open the Hadoop command-line tool. To learn more, see the following articles:
 
-* [Administer HDInsight Using Azure PowerShell](hdinsight-administer-use-powershell)
-* [Administer HDInsight Using Azure CLI](hdinsight-administer-use-command-line)
-* [Provision HDInsight clusters](hdinsight-provision-clusters)
-* [Submit Hadoop jobs programmatically](hdinsight-submit-hadoop-jobs-programmatically)
-* [Get Started with Azure HDInsight](hdinsight-get-started)
-* [What version of Hadoop is in Azure HDInsight?](hdinsight-component-versioning)
+* [Administer HDInsight Using Azure PowerShell](/documentation/articles/hdinsight-administer-use-powershell)
+* [Administer HDInsight Using Azure CLI](/documentation/articles/hdinsight-administer-use-command-line)
+* [Provision HDInsight clusters](/documentation/articles/hdinsight-provision-clusters)
+* [Submit Hadoop jobs programmatically](/documentation/articles/hdinsight-submit-hadoop-jobs-programmatically)
+* [Get Started with Azure HDInsight](/documentation/articles/hdinsight-get-started)
+* [What version of Hadoop is in Azure HDInsight?](/documentation/articles/hdinsight-component-versioning)
 
 [preview-portal]: https://manage.windowsazure.cn

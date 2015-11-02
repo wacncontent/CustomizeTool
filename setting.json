@@ -1,0 +1,11 @@
+{
+  "path": "C:/Users/Administrator/Documents/GitHub/azure-content-pr/",
+  "language": "en-us",
+  "folders": [ "articles/app-service-web/", "articles/automation/", "articles/hdinsight/", "articles/media-services/", "articles/redis-cache/", "articles/traffic-manager/", "articles/virtual-network/", "includes/" ],
+  "output_folder": "output/", 
+  "compare": {
+    "compare": true,
+    "path": "C:/Users/Administrator/Documents/GitHub/azure-content-mooncake-pr"
+  },
+  "updateFileList": true
+}

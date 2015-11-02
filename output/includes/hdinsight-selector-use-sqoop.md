@@ -1,5 +1,5 @@
 > [AZURE.SELECTOR]
 <!-- deleted by customization
-- [SSH](hdinsight-use-sqoop)
+- [SSH](/documentation/articles/hdinsight-use-sqoop)
 -->
-- [PowerShell](hdinsight-use-sqoop)
+- [PowerShell](/documentation/articles/hdinsight-use-sqoop)

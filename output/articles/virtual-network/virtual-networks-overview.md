@@ -65,11 +65,11 @@ You can use two types of load balancers in Azure:
 
 - **Internal load balancer**. You can use an internal load balancer to provide high availability for IaaS VMs and PaaS role instances accessed from other services in your VNet.
 
-To learn more about load balancing in Azure, visit [Load balancer overview](load-balancer-overview).
+To learn more about load balancing in Azure, visit [Load balancer overview](/documentation/articles/load-balancer-overview).
 
 ## Network Security Groups (NSG)
 
-You can create NSGs to control inbound and outbound access to network interfaces (NICs), VMs, and subnets. Each NSG contains one or more rules specifying whether or not traffic is approved or denied based on source IP address, source port, destination IP address, and destination port. To learn more about NSGs, visit [What is a Network Security Group](virtual-networks-nsg).
+You can create NSGs to control inbound and outbound access to network interfaces (NICs), VMs, and subnets. Each NSG contains one or more rules specifying whether or not traffic is approved or denied based on source IP address, source port, destination IP address, and destination port. To learn more about NSGs, visit [What is a Network Security Group](/documentation/articles/virtual-networks-nsg).
 
 ## Virtual appliances
 
@@ -77,15 +77,15 @@ A virtual appliance is just another VM in your VNet that runs a software based a
 
 For instance, NSGs can be used to provide security on your VNet. However, NSGs provide layer 4 Access Control List (ACL) to incoming and outgoing packets. If you want to use a layer 7 security model, you need to use a firewall appliance.
 
-Virtual appliances depend on [user defined routes and IP forwarding](virtual-networks-udr-overview).
+Virtual appliances depend on [user defined routes and IP forwarding](/documentation/articles/virtual-networks-udr-overview).
 
 ## Next steps
 
-- [Create a VNet](virtual-networks-create-vnet-arm-pportal) and subnets.
-- [Create a VM in a VNet](virtual-machines-windows-tutorial).
-- Learn about [NSGs](virtual-networks-nsg).
-- Learn about [load balancers](load-balancer-overview).
-- [Reserve an internal IP address](virtual-networks-reserved-private-ip)
-- [Reserve a public IP address](virtual-networks-reserved-public-ip).
-- Learn about [user defined routes and IP forwarding](virtual-networks-udr-overview).
+- [Create a VNet](/documentation/articles/virtual-networks-create-vnet-arm-pportal) and subnets.
+- [Create a VM in a VNet](/documentation/articles/virtual-machines-windows-tutorial).
+- Learn about [NSGs](/documentation/articles/virtual-networks-nsg).
+- Learn about [load balancers](/documentation/articles/load-balancer-overview).
+- [Reserve an internal IP address](/documentation/articles/virtual-networks-reserved-private-ip)
+- [Reserve a public IP address](/documentation/articles/virtual-networks-reserved-public-ip).
+- Learn about [user defined routes and IP forwarding](/documentation/articles/virtual-networks-udr-overview).
 

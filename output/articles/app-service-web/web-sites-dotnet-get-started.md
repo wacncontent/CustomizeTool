@@ -15,16 +15,16 @@
 # Create an ASP.NET web app in Azure Websites
 
 > [AZURE.SELECTOR]
-- [.Net](web-sites-dotnet-get-started)
-- [Node.js](web-sites-nodejs-develop-deploy-mac)
-- [Java](web-sites-java-get-started)
-- [PHP - Git](web-sites-php-mysql-deploy-use-git)
-- [PHP - FTP](web-sites-php-mysql-deploy-use-ftp)
-- [Python](web-sites-python-ptvs-django-mysql)
+- [.Net](/documentation/articles/web-sites-dotnet-get-started)
+- [Node.js](/documentation/articles/web-sites-nodejs-develop-deploy-mac)
+- [Java](/documentation/articles/web-sites-java-get-started)
+- [PHP - Git](/documentation/articles/web-sites-php-mysql-deploy-use-git)
+- [PHP - FTP](/documentation/articles/web-sites-php-mysql-deploy-use-ftp)
+- [Python](/documentation/articles/web-sites-python-ptvs-django-mysql)
 
 ## Overview
 
-This tutorial shows how to create an ASP.NET web application and deploy it to a [web app in Azure Websites](app-service-web-overview) by using Visual Studio 2015 or Visual Studio 2013. The tutorial assumes that you have no prior experience with using Azure or ASP.NET. On completing the tutorial, you'll have a simple web application up and running in the cloud.
+This tutorial shows how to create an ASP.NET web application and deploy it to a [web app in Azure Websites](/documentation/articles/app-service-web-overview) by using Visual Studio 2015 or Visual Studio 2013. The tutorial assumes that you have no prior experience with using Azure or ASP.NET. On completing the tutorial, you'll have a simple web application up and running in the cloud.
 
 The following illustration shows the completed application:
 
@@ -32,7 +32,7 @@ The following illustration shows the completed application:
 
 You'll learn:
 
-* How to prepare your machine for Azure development by installing the [Azure SDK for .NET](dotnet-sdk).
+* How to prepare your machine for Azure development by installing the [Azure SDK for .NET](/documentation/articles/dotnet-sdk).
 * How to set up Visual Studio to create a new Azure Websites web app while it creates an ASP.NET MVC 5 web project.
 * How to deploy a web project to an Azure Websites web app by using Visual Studio.
 * How to use the [Azure Management Portal](https://manage.windowsazure.cn) to monitor and manage your web app.
@@ -75,7 +75,7 @@ The diagram illustrates what you're doing in the create and deploy steps.
 3. Make sure that **.NET Framework 4.5.2** is selected as the target framework.
 <!-- deleted by customization
 
-4.  [Azure Application Insights](app-insights-overview) monitors your web app for availability, performance, and usage. Clear the **Add Application Insights to Project** check box if you don't want to try it.
+4.  [Azure Application Insights](/documentation/articles/app-insights-overview) monitors your web app for availability, performance, and usage. Clear the **Add Application Insights to Project** check box if you don't want to try it.
 -->
 
 4. Name the application **MyExample**.
@@ -182,7 +182,7 @@ In this section you deploy web project to the web app, as illustrated in step 2 
 
 -->
 <!-- keep by customization: begin -->
-7. In the **Azure App Service Activity** window, click **Publish MyExample to this Web App now**.
+7. In the **Azure Websites Activity** window, click **Publish MyExample to this Web App now**.
 
 	![Web app created](./media/web-sites-dotnet-get-started/GS13sitecreated.png)
 
@@ -271,13 +271,13 @@ The [Azure Management Portal](/home/features/management-portal/) is a web interf
 
 4. Click the **Configure** tab.
 
-	The [Configure](/zh-cn/documentation/articles/web-sites-configure//) tab enables you to control the .NET version used for the site, enable features such as [WebSockets](/blog/2013/11/14/introduction-to-websockets-on-windows-azure-web-sites/) and [diagnostic logging](/zh-cn/documentation/articles/web-sites-enable-diagnostic-log/), set [connection string values](http://azure.microsoft.com/blog/2013/07/17/windows-azure-web-sites-how-application-strings-and-connection-strings-work/), and more. 
+	The [Configure](/documentation/articles/web-sites-configure//) tab enables you to control the .NET version used for the site, enable features such as [WebSockets](/blog/2013/11/14/introduction-to-websockets-on-windows-azure-web-sites/) and [diagnostic logging](/documentation/articles/web-sites-enable-diagnostic-log), set [connection string values](http://azure.microsoft.com/blog/2013/07/17/windows-azure-web-sites-how-application-strings-and-connection-strings-work/), and more. 
 
 	![Portal web site configure tab](./media/web-sites-dotnet-get-started-vs2013/portalconfigure.png)
   
 5. Click the **Scale** tab.
 
-	For the paid tiers of the  Websites service, the [Scale](/zh-cn/documentation/articles/web-sites-scale/) tab enables you to control the size and number of machines that service your web application in order to handle variations in traffic.
+	For the paid tiers of the  Websites service, the [Scale](/documentation/articles/web-sites-scale) tab enables you to control the size and number of machines that service your web application in order to handle variations in traffic.
 
 	You can scale manually or configure criteria or schedules for automatic scaling.
 
@@ -291,24 +291,24 @@ In this tutorial, you've seen how to create a simple web application and deploy 
 
 * How to add database and authorization functionality
 
-	For a tutorial that shows how to access a database and restrict some application functions to authorized users, see [Deploy a secure ASP.NET MVC app with membership, OAuth, and SQL Database to an Azure web app](web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database). That tutorial assumes some knowledge of MVC 5; if you are new to MVC 5, see [Getting Started with ASP.NET MVC 5](http://www.asp.net/mvc/overview/getting-started/introduction/getting-started).
+	For a tutorial that shows how to access a database and restrict some application functions to authorized users, see [Deploy a secure ASP.NET MVC app with membership, OAuth, and SQL Database to an Azure web app](/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/). That tutorial assumes some knowledge of MVC 5; if you are new to MVC 5, see [Getting Started with ASP.NET MVC 5](http://www.asp.net/mvc/overview/getting-started/introduction/getting-started).
 
 * Other ways to deploy a web project
 
-	For information about other ways to deploy web projects to web apps, by using Visual Studio or by [automating deployment](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/continuous-integration-and-continuous-delivery) from a [source control system](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/source-control), see [How to deploy an Azure web app](web-sites-deploy).
+	For information about other ways to deploy web projects to web apps, by using Visual Studio or by [automating deployment](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/continuous-integration-and-continuous-delivery) from a [source control system](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/source-control), see [How to deploy an Azure web app](/documentation/articles/web-sites-deploy).
 
 	Visual Studio can also generate Windows PowerShell scripts that you can use to automate deployment. For more information, see [Automate Everything (Building Real-World Cloud Apps with Azure)](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/automate-everything).
 
 * How to troubleshoot a web app
 
-	Visual Studio provides features that make it easy to view Azure logs as they are generated in real time. You can also run in debug mode remotely in Azure. For more information, see [Troubleshooting Azure web apps in Visual Studio](web-sites-dotnet-troubleshoot-visual-studio).
+	Visual Studio provides features that make it easy to view Azure logs as they are generated in real time. You can also run in debug mode remotely in Azure. For more information, see [Troubleshooting Azure web apps in Visual Studio](/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio).
 
 * How to add a custom domain name and SSL
 
 	For information about how to use SSL and your own domain (for example, www.contoso.com instead of contoso.chinacloudsites.cn), see the following resources:
 
-	* [Configure a custom domain name in Azure Websites](web-sites-custom-domain-name)
-	* [Enable HTTPS for an Azure website](web-sites-configure-ssl-certificate)
+	* [Configure a custom domain name in Azure Websites](/documentation/articles/web-sites-custom-domain-name)
+	* [Enable HTTPS for an Azure website](/documentation/articles/web-sites-configure-ssl-certificate)
 
 * How to add real-time features such as chat
 
@@ -316,12 +316,12 @@ In this tutorial, you've seen how to create a simple web application and deploy 
 
 * How to choose between Azure Websites, Azure Cloud Services, and Azure Virtual Machines for web applications
 
-	In Azure, you can run web applications in Azure Websites as shown in this tutorial, or in Cloud Services or in Virtual Machines. For more information, see [Azure web apps, cloud services, and VMs: When to use which?](choose-web-site-cloud-service-vm).
+	In Azure, you can run web applications in Azure Websites as shown in this tutorial, or in Cloud Services or in Virtual Machines. For more information, see [Azure web apps, cloud services, and VMs: When to use which?](/documentation/articles/choose-web-site-cloud-service-vm/).
 
-* [How to choose or create an App Service plan](azure-web-sites-web-hosting-plans-in-depth-overview)
+* [How to choose or create an App Service plan](/documentation/articles/azure-web-sites-web-hosting-plans-in-depth-overview)
 <!-- deleted by customization
 
-* [How to choose or create a resource group](azure-preview-portal-using-resource-groups)
+* [How to choose or create a resource group](/documentation/articles/azure-preview-portal-using-resource-groups)
 
 ## What's changed
 * For a guide to the change from Websites to Azure Websites, see [Azure Websites and existing Azure services](/documentation/services/web-sites/).

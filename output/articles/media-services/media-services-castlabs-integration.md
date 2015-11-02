@@ -16,8 +16,8 @@
 #Using castLabs to deliver Widevine licenses to Azure Media Services
 
 > [AZURE.SELECTOR]
-- [Axinom](media-services-axinom-integration)
-- [castLabs](media-services-castlabs-integration)
+- [Axinom](/documentation/articles/media-services-axinom-integration)
+- [castLabs](/documentation/articles/media-services-castlabs-integration)
 
 ##Overview
 

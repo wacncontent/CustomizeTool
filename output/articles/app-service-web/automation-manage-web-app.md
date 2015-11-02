@@ -36,5 +36,5 @@ Web App can be managed in Azure Automation by using the PowerShell cmdlets that 
 
 Now that you've learned the basics of Azure Automation and how it can be used to manage Azure Web App, follow these links to learn more about Azure Automation.
 
-* See the Azure Automation [Getting Started Tutorial](automation-intro)
+* See the Azure Automation [Getting Started Tutorial](/documentation/articles/automation-intro)
  

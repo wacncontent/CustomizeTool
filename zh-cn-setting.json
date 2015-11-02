@@ -1,0 +1,11 @@
+{
+  "path": "C:/Users/Administrator/Documents/GitHub/815/",
+  "language": "en-us",
+  "folders": [ "articles/", "includes/" ],
+  "output_folder": "zh-cn-output/", 
+  "compare": {
+    "compare": false,
+    "path": ""
+  },
+  "updateFileList": true
+}

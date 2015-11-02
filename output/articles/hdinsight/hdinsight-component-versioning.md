@@ -44,7 +44,7 @@ The component versions associated with HDInsight cluster versions may change in 
 
 **Release notes**
 
-See [HDInsight release notes](hdinsight-release-notes) for additional release notes on the latest versions of HDInsight.
+See [HDInsight release notes](/documentation/articles/hdinsight-release-notes) for additional release notes on the latest versions of HDInsight.
 
 ### Select a version when provisioning an HDInsight cluster
 
@@ -58,7 +58,7 @@ Some of the salient features of the HDInsight platform include:
 
 	Spark can also be used to perform conventional disk-based data processing. Spark improves the traditional MapReduce framework by avoiding writes to disk in the intermediate stages. Also, Spark is compatible with the Hadoop Distributed File System (HDFS) and Azure Blob storage so the existing data can easily be processed via Spark.
 
-	Spark can also be added using Script Action.  Script action adds either Spark 1.2.0 to HDInsight 3.2 cluster or Spark 1.0.2 to HDInsight 3.1 cluster. For more information, see [Install and use Spark on HDInsight Hadoop clusters](hdinsight-hadoop-spark-install).
+	Spark can also be added using Script Action.  Script action adds either Spark 1.2.0 to HDInsight 3.2 cluster or Spark 1.0.2 to HDInsight 3.1 cluster. For more information, see [Install and use Spark on HDInsight Hadoop clusters](/documentation/articles/hdinsight-hadoop-spark-install).
 -->
 
 
@@ -122,7 +122,7 @@ The SLA is defined in terms of a "Support Window". A Support Window refers to th
 
 The **Deprecation Date** is the date after which the cluster version cannot be created on HDInsight.
 
-> [AZURE.NOTE] Both HDInsight 2.1 and 3.0 clusters run on Azure Guest OS [Family 4](cloud-services-guestos-update-matrix), which uses the 64-bit version of Windows Server 2012 R2 and supports .NET Framework 4.0, 4.5. and 4.5.1.
+> [AZURE.NOTE] Both HDInsight 2.1 and 3.0 clusters run on Azure Guest OS [Family 4](/documentation/articles/cloud-services-guestos-update-matrix), which uses the 64-bit version of Windows Server 2012 R2 and supports .NET Framework 4.0, 4.5. and 4.5.1.
 
 ## Hortonworks release notes associated with HDInsight versions##
 
@@ -144,7 +144,7 @@ The **Deprecation Date** is the date after which the cluster version cannot be c
 
 [wa-forums]: http://azure.microsoft.com/support/forums/
 
-[connect-excel-with-hive-ODBC]: hdinsight-connect-excel-hive-ODBC-driver
+[connect-excel-with-hive-ODBC]: /documentation/articles/hdinsight-connect-excel-hive-ODBC-driver
 [hdp-2-2]: http://docs.hortonworks.com/HDPDocuments/HDP2/HDP-2.2.0/HDP_2.2.0_Release_Notes_20141202_version/index.html
 
 [hdp-2-1-7]: http://docs.hortonworks.com/HDPDocuments/HDP2/HDP-2.1.7-Win/bk_releasenotes_HDP-Win/content/ch_relnotes-HDP-2.1.7.html

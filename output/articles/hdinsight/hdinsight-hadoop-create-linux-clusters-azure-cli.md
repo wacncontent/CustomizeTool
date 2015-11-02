@@ -27,11 +27,11 @@ The steps in this document walk through the process of creating a new HDInsight 
 
 - **An Azure subscription**. See [Get Azure trial](/pricing/1rmb-trial/).
 
-- __Azure CLI__. For information on installing the CLI, see [Install the Azure CLI](xplat-cli-install).
+- __Azure CLI__. For information on installing the CLI, see [Install the Azure CLI](/documentation/articles/xplat-cli-install).
 
 ##Login to your Azure subscription
 
-Follow the steps documented in [Connect to an Azure subscription from the Azure Command-Line Interface (Azure CLI)](xplat-cli-connect) and connect to your subscription using the __login__ method.
+Follow the steps documented in [Connect to an Azure subscription from the Azure Command-Line Interface (Azure CLI)](/documentation/articles/xplat-cli-connect) and connect to your subscription using the __login__ method.
 
 ##Create a cluster
 
@@ -65,8 +65,8 @@ The following steps should be performed from a command-prompt, shell or terminal
     * __sshUserName__: The name of the first SSH user to create for this cluster. SSH will be used to remotely access the cluster using this account. The name must be unique, and cannot be the name of an account already in use on the cluster. Invalid names include root, storm, and hbase.
     * __sshPublicKey__: If you are using the template that requires an SSH public key, you must add your public key on this line. For more information on generating and working with public keys, see the following articles:
 
-        * [Use SSH with Linux-based Hadoop on HDInsight from Linux, Unix, or OS X](hdinsight-hadoop-linux-use-ssh-unix)
-        * [Use SSH with Linux-based Hadoop on HDInsight from Windows](hdinsight-hadoop-linux-use-ssh-windows)
+        * [Use SSH with Linux-based Hadoop on HDInsight from Linux, Unix, or OS X](/documentation/articles/hdinsight-hadoop-linux-use-ssh-unix)
+        * [Use SSH with Linux-based Hadoop on HDInsight from Windows](/documentation/articles/hdinsight-hadoop-linux-use-ssh-windows)
 
     * __sshPassword__: If you are using the template that requires an SSH password, you must add a password on this line.
 
@@ -98,17 +98,17 @@ Now that you have successfully created an HDInsight cluster, use the following t
 
 ###Hadoop clusters
 
-* [Use Hive with HDInsight](hdinsight-use-hive)
-* [Use Pig with HDInsight](hdinsight-use-pig)
-* [Use MapReduce with HDInsight](hdinsight-use-mapreduce)
+* [Use Hive with HDInsight](/documentation/articles/hdinsight-use-hive)
+* [Use Pig with HDInsight](/documentation/articles/hdinsight-use-pig)
+* [Use MapReduce with HDInsight](/documentation/articles/hdinsight-use-mapreduce)
 
 ###HBase clusters
 
-* [Get started with HBase on HDInsight](hdinsight-hbase-tutorial-get-stared-linux)
-* [Develop Java applications for HBase on HDInsight](hdinsight-hbase-build-java-maven-linux)
+* [Get started with HBase on HDInsight](/documentation/articles/hdinsight-hbase-tutorial-get-stared-linux)
+* [Develop Java applications for HBase on HDInsight](/documentation/articles/hdinsight-hbase-build-java-maven-linux)
 
 ###Storm clusters
 
-* [Develop Java topologies for Storm on HDInsight](hdinsight-storm-develop-java-topology)
-* [Use Python components in Storm on HDInsight](hdinsight-storm-develop-python)
-* [Deploy and monitor topologies with Storm on HDInsight](hdinsight-storm-deploy-monitor-topology-linux)
+* [Develop Java topologies for Storm on HDInsight](/documentation/articles/hdinsight-storm-develop-java-topology)
+* [Use Python components in Storm on HDInsight](/documentation/articles/hdinsight-storm-develop-python)
+* [Deploy and monitor topologies with Storm on HDInsight](/documentation/articles/hdinsight-storm-deploy-monitor-topology-linux)

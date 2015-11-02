@@ -25,7 +25,7 @@ In this document, you will learn how to create a basic C# Storm topology that tr
 
 ## Prerequisites
 
--	HDInsight tools for Visual Studio: See [Get started using the HDInsight tools for Visual Studio](hdinsight-hadoop-visual-studio-tools-get-started) for installation information.
+-	HDInsight tools for Visual Studio: See [Get started using the HDInsight tools for Visual Studio](/documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started) for installation information.
 
 -	Apache Storm on HDInsight cluster
 
@@ -195,5 +195,5 @@ When you are ready to stop the topology, return to the **CorrelationTopology** p
 
 ##Next steps
 
-For more Storm examples, see [Example topologies for Storm on HDInsight](hdinsight-storm-example-topology).
+For more Storm examples, see [Example topologies for Storm on HDInsight](/documentation/articles/hdinsight-storm-example-topology).
  

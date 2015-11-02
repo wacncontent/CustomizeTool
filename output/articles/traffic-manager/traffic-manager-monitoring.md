@@ -71,7 +71,7 @@ An example timeline illustrating the monitoring process with a single cloud serv
 1. **GET** – The Traffic Manager monitoring system performs a GET on the path and file you specified in the monitoring settings.
 2. **200 OK** – The monitoring system expects an HTTP 200 OK message back within 10 seconds. When it receives this response, it assumes that the cloud service is available. 
 
->[AZURE.NOTE] Traffic Manager only considers an endpoint to be Online if the return message is a 200 OK. If a non-200 response is received, it will assume the endpoint is not available and will count this as a failed check. More details about troubleshooting failed checks see [Troubleshooting degraded status on Azure Traffic Manager](traffic-manager-troubleshooting-degraded).
+>[AZURE.NOTE] Traffic Manager only considers an endpoint to be Online if the return message is a 200 OK. If a non-200 response is received, it will assume the endpoint is not available and will count this as a failed check. More details about troubleshooting failed checks see [Troubleshooting degraded status on Azure Traffic Manager](/documentation/articles/traffic-manager-troubleshooting-degraded).
 
 3. **30 seconds between checks** – This check will be performed every 30 seconds.
 4. **Cloud service unavailable** – The cloud service becomes unavailable. Traffic Manager will not know until the next monitor check.
@@ -85,7 +85,7 @@ An example timeline illustrating the monitoring process with a single cloud serv
 
 ## Child and parent endpoint status for nested profiles
 
-The following table describes the behavior of Traffic Manager monitoring for child and parent profiles of a nested profile and the minChildEndpoints setting. For more information, see [What is Traffic Manager?](traffic-manager-overview).
+The following table describes the behavior of Traffic Manager monitoring for child and parent profiles of a nested profile and the minChildEndpoints setting. For more information, see [What is Traffic Manager?](/documentation/articles/traffic-manager-overview).
 
 |Child Profile Monitor status|Parent Endpoint Monitor status|Notes|
 |---|---|---|
@@ -104,13 +104,13 @@ The following table describes the behavior of Traffic Manager monitoring for chi
 
 ## See Also
 
-[What is Traffic Manager?](traffic-manager-overview)
+[What is Traffic Manager?](/documentation/articles/traffic-manager-overview)
 
-[About Traffic Manager traffic routing Methods](traffic-manager-load-balancing-methods)
+[About Traffic Manager traffic routing Methods](/documentation/articles/traffic-manager-load-balancing-methods)
 
 [Cloud Services](https://msdn.microsoft.com/zh-CN/library/jj155995.aspx)
 
 [Websites](/home/features/web-site/)
 
-[Troubleshooting degraded status on Azure Traffic Manager](traffic-manager-troubleshooting-degraded)
+[Troubleshooting degraded status on Azure Traffic Manager](/documentation/articles/traffic-manager-troubleshooting-degraded)
  

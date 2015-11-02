@@ -25,7 +25,7 @@ The Azure REST API allows you to perform management operations on services hoste
 
 - __Azure CLI__. The Azure CLI is used to create a service principal, which is then used to generate authentication tokens for requests to the Azure REST API.
 
-    For information on installing the CLI, see [Install the Azure CLI](xplat-cli-install).
+    For information on installing the CLI, see [Install the Azure CLI](/documentation/articles/xplat-cli-install).
 
 - __cURL__. This utility is available through your package management system, or can be downloaded from [http://curl.haxx.se/](http://curl.haxx.se/).
 
@@ -251,7 +251,7 @@ This example will be used in the steps in this document. You must replace the pl
 
 ##Login to your Azure subscription
 
-Follow the steps documented in [Connect to an Azure subscription from the Azure Command-Line Interface (Azure CLI)](xplat-cli-connect) and connect to your subscription using the __login__ method.
+Follow the steps documented in [Connect to an Azure subscription from the Azure Command-Line Interface (Azure CLI)](/documentation/articles/xplat-cli-connect) and connect to your subscription using the __login__ method.
 
 ##Create a service principal
 
@@ -342,17 +342,17 @@ Now that you have successfully created an HDInsight cluster, use the following t
 
 ###Hadoop clusters
 
-* [Use Hive with HDInsight](hdinsight-use-hive)
-* [Use Pig with HDInsight](hdinsight-use-pig)
-* [Use MapReduce with HDInsight](hdinsight-use-mapreduce)
+* [Use Hive with HDInsight](/documentation/articles/hdinsight-use-hive)
+* [Use Pig with HDInsight](/documentation/articles/hdinsight-use-pig)
+* [Use MapReduce with HDInsight](/documentation/articles/hdinsight-use-mapreduce)
 
 ###HBase clusters
 
-* [Get started with HBase on HDInsight](hdinsight-hbase-tutorial-get-stared-linux)
-* [Develop Java applications for HBase on HDInsight](hdinsight-hbase-build-java-maven-linux)
+* [Get started with HBase on HDInsight](/documentation/articles/hdinsight-hbase-tutorial-get-stared-linux)
+* [Develop Java applications for HBase on HDInsight](/documentation/articles/hdinsight-hbase-build-java-maven-linux)
 
 ###Storm clusters
 
-* [Develop Java topologies for Storm on HDInsight](hdinsight-storm-develop-java-topology)
-* [Use Python components in Storm on HDInsight](hdinsight-storm-develop-python)
-* [Deploy and monitor topologies with Storm on HDInsight](hdinsight-storm-deploy-monitor-topology-linux)
+* [Develop Java topologies for Storm on HDInsight](/documentation/articles/hdinsight-storm-develop-java-topology)
+* [Use Python components in Storm on HDInsight](/documentation/articles/hdinsight-storm-develop-python)
+* [Deploy and monitor topologies with Storm on HDInsight](/documentation/articles/hdinsight-storm-deploy-monitor-topology-linux)

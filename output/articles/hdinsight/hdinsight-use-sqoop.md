@@ -22,7 +22,7 @@ Learn how to use Azure PowerShell and the HDInsight .NET SDK from a workstation 
 
 > [AZURE.NOTE] The steps in this article can be used with either a Windows-based or Linux-based HDInsight cluster; however, these steps will only work from a Windows client.
 >
-> If you are using a Linux, OS X, or Unix client and a Linux-based HDInsight server, see [Use Sqoop with Hadoop in HDInsight (SSH)](hdinsight-use-sqoop)
+> If you are using a Linux, OS X, or Unix client and a Linux-based HDInsight server, see [Use Sqoop with Hadoop in HDInsight (SSH)](/documentation/articles/hdinsight-use-sqoop)
 -->
 
 ##What is Sqoop?
@@ -75,7 +75,7 @@ Before you begin this tutorial, you must have the following:
 	
 			* When you are using SQL Server on an Azure virtual machine, any virtual network configuration can be used if the virtual machine hosting SQL Server is a member of the same virtual network as HDInsight.
 	
-		* To provision an HDInsight cluster on a virtual network, see [Provision Hadoop clusters in HDInsight using custom options](hdinsight-provision-clusters)
+		* To provision an HDInsight cluster on a virtual network, see [Provision Hadoop clusters in HDInsight using custom options](/documentation/articles/hdinsight-provision-clusters)
 	
 		> [AZURE.NOTE] SQL Server must also allow authentication. You must use a SQL Server login to complete the steps in this article.
 	
@@ -173,25 +173,25 @@ You will create two tables in the Azure SQL database or in SQL Server. These are
 
 		# SQL query strings for creating tables and clustered indexes
 		$cmdCreateLog4jTable = "CREATE TABLE [dbo].[log4jlogs](
-		    [t1] [nvarchar](50),
-		    [t2] [nvarchar](50),
-		    [t3] [nvarchar](50),
-		    [t4] [nvarchar](50),
-		    [t5] [nvarchar](50),
-		    [t6] [nvarchar](50),
-		    [t7] [nvarchar](50))"
+		    [t1] [nvarchar](/documentation/articles/50),
+		    [t2] [nvarchar](/documentation/articles/50),
+		    [t3] [nvarchar](/documentation/articles/50),
+		    [t4] [nvarchar](/documentation/articles/50),
+		    [t5] [nvarchar](/documentation/articles/50),
+		    [t6] [nvarchar](/documentation/articles/50),
+		    [t7] [nvarchar](/documentation/articles/50))"
 
 		$cmdCreateLog4jClusteredIndex = "CREATE CLUSTERED INDEX log4jlogs_clustered_index on log4jlogs(t1)"
 
 		$cmdCreateMobileTable = " CREATE TABLE [dbo].[mobiledata](
-		[clientid] [nvarchar](50),
-		[querytime] [nvarchar](50),
-		[market] [nvarchar](50),
-		[deviceplatform] [nvarchar](50),
-		[devicemake] [nvarchar](50),
-		[devicemodel] [nvarchar](50),
-		[state] [nvarchar](50),
-		[country] [nvarchar](50),
+		[clientid] [nvarchar](/documentation/articles/50),
+		[querytime] [nvarchar](/documentation/articles/50),
+		[market] [nvarchar](/documentation/articles/50),
+		[deviceplatform] [nvarchar](/documentation/articles/50),
+		[devicemake] [nvarchar](/documentation/articles/50),
+		[devicemodel] [nvarchar](/documentation/articles/50),
+		[state] [nvarchar](/documentation/articles/50),
+		[country] [nvarchar](/documentation/articles/50),
 		[querydwelltime] [float],
 		[sessionid] [bigint],
 		[sessionpagevieworder][bigint])"
@@ -238,23 +238,23 @@ You will create two tables in the Azure SQL database or in SQL Server. These are
 4. Enter the following information in the query window:
 
 		CREATE TABLE [dbo].[log4jlogs](
-		 [t1] [nvarchar](50),
-		 [t2] [nvarchar](50),
-		 [t3] [nvarchar](50),
-		 [t4] [nvarchar](50),
-		 [t5] [nvarchar](50),
-		 [t6] [nvarchar](50),
-		 [t7] [nvarchar](50))
+		 [t1] [nvarchar](/documentation/articles/50),
+		 [t2] [nvarchar](/documentation/articles/50),
+		 [t3] [nvarchar](/documentation/articles/50),
+		 [t4] [nvarchar](/documentation/articles/50),
+		 [t5] [nvarchar](/documentation/articles/50),
+		 [t6] [nvarchar](/documentation/articles/50),
+		 [t7] [nvarchar](/documentation/articles/50))
 
 		CREATE TABLE [dbo].[mobiledata](
-		 [clientid] [nvarchar](50),
-		 [querytime] [nvarchar](50),
-		 [market] [nvarchar](50),
-		 [deviceplatform] [nvarchar](50),
-		 [devicemake] [nvarchar](50),
-		 [devicemodel] [nvarchar](50),
-		 [state] [nvarchar](50),
-		 [country] [nvarchar](50),
+		 [clientid] [nvarchar](/documentation/articles/50),
+		 [querytime] [nvarchar](/documentation/articles/50),
+		 [market] [nvarchar](/documentation/articles/50),
+		 [deviceplatform] [nvarchar](/documentation/articles/50),
+		 [devicemake] [nvarchar](/documentation/articles/50),
+		 [devicemodel] [nvarchar](/documentation/articles/50),
+		 [state] [nvarchar](/documentation/articles/50),
+		 [country] [nvarchar](/documentation/articles/50),
 		 [querydwelltime] [float],
 		 [sessionid] [bigint],
 		 [sessionpagevieworder][bigint])
@@ -357,8 +357,8 @@ In this section, you will use Azure PowerShell to run the Sqoop export command t
 
 > [AZURE.NOTE] Other than connection string information, the steps in this section should work for an Azure SQL database or for SQL Server. These steps were tested by using the following configuration:
 >
-> * **Azure virtual network point-to-site configuration**: A virtual network connected the HDInsight cluster to a SQL Server in a private datacenter. See [Configure a Point-to-Site VPN in the Management Portal](vpn-gateway-point-to-site-create) for more information.
-> * **Azure HDInsight 3.1**: See [Provision Hadoop clusters in HDInsight using custom options](hdinsight-provision-clusters) for information about creating a cluster on a virtual network.
+> * **Azure virtual network point-to-site configuration**: A virtual network connected the HDInsight cluster to a SQL Server in a private datacenter. See [Configure a Point-to-Site VPN in the Management Portal](/documentation/articles/vpn-gateway-point-to-site-create) for more information.
+> * **Azure HDInsight 3.1**: See [Provision Hadoop clusters in HDInsight using custom options](/documentation/articles/hdinsight-provision-clusters) for information about creating a cluster on a virtual network.
 > * **SQL Server 2014**: Configured to allow authentication and running the VPN client configuration package to connect securely to the virtual network.
 
 **To export the log4j log file**
@@ -593,18 +593,18 @@ Now you have learned how to use Sqoop. To learn more, see:
 
 [azure-management-portal]: https://manage.windowsazure.cn/
 
-[hdinsight-versions]: hdinsight-component-versioning
-[hdinsight-provision]: hdinsight-provision-clusters
-[hdinsight-get-started]: hdinsight-get-started
-[hdinsight-storage]: hdinsight-use-blob-storage
-[hdinsight-analyze-flight-data]: hdinsight-analyze-flight-delay-data
-[hdinsight-use-oozie]: hdinsight-use-oozie
-[hdinsight-upload-data]: hdinsight-upload-data
-[hdinsight-submit-jobs]: hdinsight-submit-hadoop-jobs-programmatically
-[sqldatabase-get-started]: sql-database-get-started
-[sqldatabase-create-configue]: sql-database-create-configure
+[hdinsight-versions]: /documentation/articles/hdinsight-component-versioning
+[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters
+[hdinsight-get-started]: /documentation/articles/hdinsight-get-started
+[hdinsight-storage]: /documentation/articles/hdinsight-use-blob-storage
+[hdinsight-analyze-flight-data]: /documentation/articles/hdinsight-analyze-flight-delay-data
+[hdinsight-use-oozie]: /documentation/articles/hdinsight-use-oozie
+[hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
+[hdinsight-submit-jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically
+[sqldatabase-get-started]: /documentation/articles/sql-database-get-started
+[sqldatabase-create-configue]: /documentation/articles/sql-database-create-configure
 [powershell-start]: http://technet.microsoft.com/zh-cn/library/hh847889.aspx
-[powershell-install]: install-configure-powershell
+[powershell-install]: /documentation/articles/install-configure-powershell
 [powershell-script]: http://technet.microsoft.com/zh-cn/library/ee176949.aspx
 
 [sqoop-user-guide-1.4.4]: https://sqoop.apache.org/docs/1.4.4/SqoopUserGuide.html

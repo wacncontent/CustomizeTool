@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties
 	pageTitle="Reference for navigating the Azure Management Portal"
 	description="Learn the different user experiences for Azure Websites Web between the management portal and the Azure Management Portal"
@@ -42,7 +44,7 @@ When you create a web app, you specify URL, App Service plan, and location in th
 
 ![](./media/app-service-web-app-azure-portal/CreateWebAppSettings.png)
 
-In addition, the new portal lets you define other common settings. For example, [resource groups](resource-group-overview) make it simple to see and manage related Azure resources. 
+In addition, the new portal lets you define other common settings. For example, [resource groups](/documentation/articles/resource-group-overview) make it simple to see and manage related Azure resources. 
 
 ## Navigation example: settings and features
 
@@ -72,7 +74,7 @@ Other than the brand name, a few things in the portal have been renamed or group
 
 ## More Resources
 
-[The Azure cloud application platform](app-service-cloud-app-platform)
+[The Azure cloud application platform](/documentation/articles/app-service-cloud-app-platform)
 
 [New portal]: https://manage.windowsazure.cn
 [Azure Marketplace]: /marketplace/

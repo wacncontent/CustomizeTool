@@ -7,8 +7,10 @@ import mdReader
 import re
 import os
 import sys
-from fileListGen import genFileList, global_article_path
+from fileListGen import genFileList
 from fileCompare import compareWithMooncake
+from codecs import open
+from setting import setting
 
 __author__ = 'Steven'
 
@@ -35,26 +37,42 @@ class Core:
 
 
     def customize(self, pMdList, pRuleDict):
-
         # Create result directory
         # os.mkdir('Archive')
         # iterate the markdown file list and do the replacing
         for mdFile in pMdList:
             result = ''
             print(mdFile)
-            with open(mdFile, "r") as text:
-                # for content in text.readlines():
-                result = self.multiple_replace(pRuleDict, text.read())
-                # print(result)
+            if setting["language"] == "zh-cn":
+                text = open(mdFile, "r", "utf8")
+                try:
+                    result = self.multiple_replace(pRuleDict, text.read())
+                except IOError:
+                    text.close()
+                    text = open(mdFile, "r", "gbk")
+                    result = self.multiple_replace(pRuleDict, text.read())
+                    text.close()
+            else:
+                with open(mdFile, "r") as text:
+                    # for content in text.readlines():
+                    result = self.multiple_replace(pRuleDict, text.read())
+                    # print(result)
             # Write result into Archive/mdFile
-            mdFile = mdFile[len(global_article_path)+1:]
-            result = compareWithMooncake(mdFile, result)
-            with open('output/'+mdFile, 'w') as bakFile:
-                bakFile.write(result)
-                print('\033[1;33m '+ mdFile+'\033[0m \033 customize success, the result file is: \033[1;32m'+ mdFile+'.bak\033[0m\n')
+            mdFile = mdFile[len(setting["path"])-1:]
+            if setting["language"] == "zh-cn":
+                if setting["compare"]["compare"]:
+                    result = compareWithMooncake(mdFile, result)
+                bakFile = open('output/'+mdFile, 'w', "utf8")
+            else:
+                if setting["compare"]["compare"]:
+                    result = compareWithMooncake(mdFile, result)
+                bakFile = open(setting["output_folder"]+mdFile, 'w')
+            bakFile.write(result)
+            print('\033[1;33m '+ mdFile+'\033[0m \033 customize success, the result file is: \033[1;32m'+ mdFile+'.bak\033[0m\n')
 
 if __name__ == "__main__":
-    genFileList("modified.txt")
+    if setting["updateFileList"] == True:
+        genFileList("modified.txt")
     core = Core()
     rule = ruleReader.RuleReader()
     md = mdReader.MdReader()

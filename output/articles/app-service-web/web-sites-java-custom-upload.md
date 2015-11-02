@@ -16,7 +16,7 @@
 
 This topic explains how to upload a custom Java web app to [Azure Websites] Web Apps. Included is information that applies to any Java website or web app, and also some examples for specific applications.
 
-Note that Azure provides a means for creating Java web apps using the Azure <!-- deleted by customization preview portal's --><!-- keep by customization: begin -->Management Portal's<!-- keep by customization: end --> configuration UI, <!-- deleted by customization and the Azure Marketplace, -->as documented at [Create a Java web app in Azure Websites](web-sites-java-get-started). This tutorial is for scenarios in which you do not want to use the portal configuration UI <!-- deleted by customization or the Azure Marketplace-->.  
+Note that Azure provides a means for creating Java web apps using the Azure <!-- deleted by customization preview portal's --><!-- keep by customization: begin -->Management Portal's<!-- keep by customization: end --> configuration UI, <!-- deleted by customization and the Azure Marketplace, -->as documented at [Create a Java web app in Azure Websites](/documentation/articles/web-sites-java-get-started). This tutorial is for scenarios in which you do not want to use the portal configuration UI <!-- deleted by customization or the Azure Marketplace-->.  
 
 ## Configuration guidelines
 

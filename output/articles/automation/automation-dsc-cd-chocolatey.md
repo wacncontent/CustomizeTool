@@ -33,11 +33,11 @@ Package managers such as [apt-get](https://en.wikipedia.org/wiki/Advanced_Packag
 
 Desired State Configuration (DSC) ([overview](https://technet.microsoft.com/library/dn249912.aspx)) is a PowerShell tool that allows you to declare the configuration that you want for a machine.  For example, you can say, “I want Chocolatey installed, I want IIS installed, I want port 80 opened, I want version 1.0.0 of my website installed.”  The DSC Local Configuration Manager (LCM) implements that configuration. A DSC Pull Server holds a repository of configurations for your machines. The LCM on each machine checks in periodically to see if its configuration matches the stored configuration. It can either report status or attempt to bring the machine back into alignment with the stored configuration. You can edit the stored configuration on the pull server to cause a machine or set of machines to come into alignment with the changed configuration.
 
-Azure Automation is a managed service in Windows Azure that allows you to automate various tasks using runbooks, nodes, credentials, resources and assets such as schedules and global variables. Azure Automation DSC extends this automation capability to include PowerShell DSC tools.  Here’s a great [overview](automation-dsc-overview).
+Azure Automation is a managed service in Windows Azure that allows you to automate various tasks using runbooks, nodes, credentials, resources and assets such as schedules and global variables. Azure Automation DSC extends this automation capability to include PowerShell DSC tools.  Here’s a great [overview](/documentation/articles/automation-dsc-overview).
 
 A DSC Resource is a module of code that has specific capabilities, such as managing networking, Active Directory, or SQL Server.  The Chocolatey DSC Resource knows how to access a NuGet Server (among others), download packages, install packages, and so on.  There are many other DSC Resources in the [PowerShell Gallery](http://www.powershellgallery.com/packages?q=dsc+resources&prerelease=&sortOrder=package-title).  These modules are installed into your Azure Automation DSC Pull Server (by you) so they can be used by your configurations.
 
-ARM templates provide a declarative way of generating your infrastructure - things like networks, subnets, network security and routing, load balancers, NICs, VMs, and so on.  Here’s an [article](resource-manager-deployment-model) that compares the ARM deployment model (declarative) with the Azure Service Management (ASM, or classic) deployment model (imperative).  And another [article](../virtual-machines\virtual-machines-azurerm-versus-azuresm.md) about the core resource providers, compute, storage and network.
+ARM templates provide a declarative way of generating your infrastructure - things like networks, subnets, network security and routing, load balancers, NICs, VMs, and so on.  Here’s an [article](/documentation/articles/resource-manager-deployment-model) that compares the ARM deployment model (declarative) with the Azure Service Management (ASM, or classic) deployment model (imperative).  And another [article](../virtual-machines\virtual-machines-azurerm-versus-azuresm.md) about the core resource providers, compute, storage and network.
 
 One key feature of an ARM template is its ability to install a VM extension into the VM as it’s provisioned.  A VM extension has specific capabilities such as running a custom script, installing anti-virus software, or running a DSC configuration script.  There are many other types of VM extensions.
 
@@ -49,7 +49,7 @@ In the bottom left portion of the picture, there is an Azure Resource Manager (A
 
 Presumably you’re already doing the bit at the top, or most of it.  Creating the nuspec, compiling and storing it in a NuGet server is a small thing.  And you’re already managing VMs.  Taking the next step to continuous deployment requires setting up the pull server (once), registering your nodes with it (once), and creating and storing the configuration there (initially).  Then as packages are upgraded and deployed to the repository, refresh the Configuration and Node Configuration in the pull server (repeat as needed).
 
-If you’re not starting with an ARM template, that’s also OK.  There are PowerShell cmdlets designed to help you register your VMs with the pull server and all of the rest. For more details, see this article: [Onboarding machines for management by Azure Automation DSC](automation-dsc-onboarding)
+If you’re not starting with an ARM template, that’s also OK.  There are PowerShell cmdlets designed to help you register your VMs with the pull server and all of the rest. For more details, see this article: [Onboarding machines for management by Azure Automation DSC](/documentation/articles/automation-dsc-onboarding)
 
 
 ## Step 1: Setting up the pull server and automation account
@@ -180,6 +180,6 @@ Full source for this usage example is in [this Visual Studio project](https://gi
 
 ##Related Articles##
 
-- [Azure Automation DSC Overview](automation-dsc-overview)
+- [Azure Automation DSC Overview](/documentation/articles/automation-dsc-overview)
 - [Azure Automation DSC cmdlets] (https://msdn.microsoft.com/zh-cn/library/mt244122.aspx)
-- [Onboarding machines for management by Azure Automation DSC](automation-dsc-onboarding)
+- [Onboarding machines for management by Azure Automation DSC](/documentation/articles/automation-dsc-onboarding)

@@ -182,7 +182,7 @@ In this document, learn how to use Maven to create a basic word count MapReduce 
 
 ## Run the job on a Linux-based cluster
 
-> [AZURE.NOTE] The following steps use SSH and the Hadoop command. For other methods of running MapReduce jobs, see [Use MapReduce in Hadoop on HDInsight](hdinsight-use-mapreduce).
+> [AZURE.NOTE] The following steps use SSH and the Hadoop command. For other methods of running MapReduce jobs, see [Use MapReduce in Hadoop on HDInsight](/documentation/articles/hdinsight-use-mapreduce).
 
 1. Use the following command to upload the package to your HDInsight cluster:
 
@@ -227,9 +227,9 @@ In this document, learn how to use Maven to create a basic word count MapReduce 
 
 ## Run the job on a Windows-based cluster
 
-> [AZURE.NOTE] The following steps use Windows PowerShell. For other methods of running MapReduce jobs, see [Use MapReduce in Hadoop on HDInsight](hdinsight-use-mapreduce).
+> [AZURE.NOTE] The following steps use Windows PowerShell. For other methods of running MapReduce jobs, see [Use MapReduce in Hadoop on HDInsight](/documentation/articles/hdinsight-use-mapreduce).
 
-1. [Install and configure Azure PowerShell](install-configure-powershell).
+1. [Install and configure Azure PowerShell](/documentation/articles/install-configure-powershell).
 
 2. Download [hdinsight-tools.psm1](https://github.com/Blackmist/hdinsight-tools/blob/master/hdinsight-tools.psm1) and save to a file named **hdinsight-tools.psm1**.
 
@@ -282,8 +282,8 @@ In this document, learn how to use Maven to create a basic word count MapReduce 
 
 Now that you have learned how to use Scalding to create MapReduce jobs for HDInsight, use the following links to explore other ways to work with Azure HDInsight.
 
-* [Use Hive with HDInsight](hdinsight-use-hive)
+* [Use Hive with HDInsight](/documentation/articles/hdinsight-use-hive)
 
-* [Use Pig with HDInsight](hdinsight-use-pig)
+* [Use Pig with HDInsight](/documentation/articles/hdinsight-use-pig)
 
-* [Use MapReduce jobs with HDInsight](hdinsight-use-mapreduce)
+* [Use MapReduce jobs with HDInsight](/documentation/articles/hdinsight-use-mapreduce)

@@ -31,7 +31,7 @@ You'll learn:
 * How to store relational data in the cloud by using Azure SQL Database.
 * How to deploy a web project that uses a database to a [web app](/documentation/services/web-sites/) in Azure Websites.
 
->[AZURE.NOTE] This is a long tutorial. If you want a quick introduction to Azure Websites and Visual Studio web projects, see [Create an ASP.NET web app in Azure Websites](web-sites-dotnet-get-started). For troubleshooting info, see the [Troubleshooting](#troubleshooting) section.
+>[AZURE.NOTE] This is a long tutorial. If you want a quick introduction to Azure Websites and Visual Studio web projects, see [Create an ASP.NET web app in Azure Websites](/documentation/articles/web-sites-dotnet-get-started). For troubleshooting info, see the [Troubleshooting](#troubleshooting) section.
 >
 <!-- deleted by customization
 >Or if you want to get started with Azure Websites before signing up for an Azure account, go to [Try Azure Websites](http://go.microsoft.com/fwlink/?LinkId=523751), where you can immediately create a short-lived starter web app in Azure Websites. No credit cards required; no commitments.
@@ -75,11 +75,11 @@ To set up your development environment, you must install [Visual Studio 2013 Upd
 
 5. In the **App Service plan** drop-down select **Create new App Service plan** and enter a name, such as "StandardWeb" as shown in the illustration.
 
-	If you prefer, you can select an App Service plan that you already have. For information about App Service plans, see [App Service plans in-depth overview](azure-web-sites-web-hosting-plans-in-depth-overview). 
+	If you prefer, you can select an App Service plan that you already have. For information about App Service plans, see [App Service plans in-depth overview](/documentation/articles/azure-web-sites-web-hosting-plans-in-depth-overview). 
 
 5. In the **Resource group** drop-down select **Create new resource group** and enter a name, such as "ExampleMVC", as shown in the illustration.
 
-	If you prefer, you can select a resource group that you already have. But if you create a new resource group and only use it for this tutorial, it will be easy to delete all Azure resources you created for the tutorial when you're done with them. For information about resource groups, see [Azure Resource Manager overview](resource-group-overview). 
+	If you prefer, you can select a resource group that you already have. But if you create a new resource group and only use it for this tutorial, it will be easy to delete all Azure resources you created for the tutorial when you're done with them. For information about resource groups, see [Azure Resource Manager overview](/documentation/articles/resource-group-overview). 
 
 7. Select a region near you. 
 
@@ -734,7 +734,7 @@ If you run into problems, here are some suggestions for what to try.
 
 * Errors provisioning SQL Database - Make sure you have the current SDK installed. Versions before 2.7.1 have a bug that in some scenarios causes errors when VS tries to create the database server or the database.
 * Error message "operation is not supported for your subscription offer type" when creating Azure resources - Same as above.
-* Errors when deploying - Consider going through the [basic ASP.NET deployment](web-sites-dotnet-get-started) article. That deployment scenario is simpler and if you have the same problem there it may be easier to isolate. For example, in some enterprise environments a corporate firewall may prevent Web Deploy from making the kinds of connections to Azure that it requires.
+* Errors when deploying - Consider going through the [basic ASP.NET deployment](/documentation/articles/web-sites-dotnet-get-started) article. That deployment scenario is simpler and if you have the same problem there it may be easier to isolate. For example, in some enterprise environments a corporate firewall may prevent Web Deploy from making the kinds of connections to Azure that it requires.
 * No option to select connection string in the Publish Web wizard when you deploy - If you used a different method to create your Azure resources (for example, you are trying to deploy to  a web app and a SQL database created in the portal), the SQL database may not be associated with the web app. The easiest solution is to create a new web app and database by using VS as shown in the tutorial. You don't have to start the tutorial over -- in the Publish Web wizard you can opt to create a new web app and you get the same Azure resource creation dialog that you get when you create the project.
 * Directions for Google or Facebook developer portal are out of date - See the featured Disqus comment at the end of this tutorial.
 

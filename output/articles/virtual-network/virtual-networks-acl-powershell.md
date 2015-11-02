@@ -13,7 +13,7 @@
 
 # How to manage Access Control Lists (ACLs) for Endpoints by using PowerShell
 
-You can create and manage Network Access Control Lists (ACLs) for endpoints by using Azure PowerShell or in the Management Portal. In this topic, you'll find procedures for ACL common tasks that you can complete using PowerShell. For the list of Azure PowerShell cmdlets see [Azure Management Cmdlets](https://msdn.microsoft.com/zh-cn/library/azure/jj152841.aspx). For more information about ACLs, see [What is a Network Access Control List (ACL)?](virtual-networks-acl). If you want to manage your ACLs by using the Management Portal, see [How to Set Up Endpoints to a Virtual Machine](virtual-machines-set-up-endpoints).
+You can create and manage Network Access Control Lists (ACLs) for endpoints by using Azure PowerShell or in the Management Portal. In this topic, you'll find procedures for ACL common tasks that you can complete using PowerShell. For the list of Azure PowerShell cmdlets see [Azure Management Cmdlets](https://msdn.microsoft.com/zh-cn/library/azure/jj152841.aspx). For more information about ACLs, see [What is a Network Access Control List (ACL)?](/documentation/articles/virtual-networks-acl). If you want to manage your ACLs by using the Management Portal, see [How to Set Up Endpoints to a Virtual Machine](/documentation/articles/virtual-machines-set-up-endpoints).
 
 ## Manage Network ACLs by using Azure PowerShell
 
@@ -89,6 +89,6 @@ In certain scenarios, you might want to remove a Network ACL object from a virtu
 
 ## See Also
 
-[What is a Network Access Control List (ACL)?](virtual-networks-acl)
+[What is a Network Access Control List (ACL)?](/documentation/articles/virtual-networks-acl)
 
-[How to Set Up Communication with a Virtual Machine](virtual-machines-set-up-endpoints) 
+[How to Set Up Communication with a Virtual Machine](/documentation/articles/virtual-machines-set-up-endpoints) 

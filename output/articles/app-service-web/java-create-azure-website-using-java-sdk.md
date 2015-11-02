@@ -30,7 +30,7 @@ This walkthrough shows you how to create an Azure SDK for Java application that 
 
 ### Software Installations
 
-The AzureWebDemo application code in this article was written using Azure Java SDK 0.7.0, which you can install using the [Web Platform Installer][](WebPI). In addition, make sure to use the latest version of the [Azure Toolkit for Eclipse][]. After you install the SDK, update the dependencies in your Eclipse project by running **Update Index** in **Maven Repositories**, then re-add the latest version of each package in the **Dependencies** window. You can verify the version of your installed software in Eclipse by clicking **Help > Installation Details**; you should have at least the following versions:
+The AzureWebDemo application code in this article was written using Azure Java SDK 0.7.0, which you can install using the [Web Platform Installer][](/documentation/articles/WebPI). In addition, make sure to use the latest version of the [Azure Toolkit for Eclipse][]. After you install the SDK, update the dependencies in your Eclipse project by running **Update Index** in **Maven Repositories**, then re-add the latest version of each package in the **Dependencies** window. You can verify the version of your installed software in Eclipse by clicking **Help > Installation Details**; you should have at least the following versions:
 
 - Package for Windows Azure Libraries for Java 0.7.0.20150309
 - Eclipse IDE for Java EE Developers 4.4.2.20150219
@@ -429,7 +429,7 @@ Export the web project files as a web archive (WAR) file so that you can deploy 
 
     `<project-path>/JSPHello/src/JSPHello.war`
 
-For more information on deploying WAR files, see [Add a Java application to Azure Websites](web-sites-java-add-app).
+For more information on deploying WAR files, see [Add a Java application to Azure Websites](/documentation/articles/web-sites-java-add-app).
 
 
 ### Deploying the Hello World Application Using FTP
@@ -442,7 +442,7 @@ Select a third-party FTP client to publish the application. This procedure descr
 
 For more information on deployment to an Azure Websites web app using FTP, see the following topics:
 
-- [Deploy using an FTP utility](web-sites-deploy)
+- [Deploy using an FTP utility](/documentation/articles/web-sites-deploy)
 
 
 #### Set up deployment credentials

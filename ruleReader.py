@@ -4,6 +4,7 @@
 # Version: 0.1
 import sys
 from collections import OrderedDict
+from setting import setting
 
 __author__ = 'Steven'
 
@@ -20,7 +21,7 @@ class RuleReader:
         self.isConst = True
     # Function to get rules from "rules.txt"
     def getRules(self):
-        RULE_FILE = 'rules.txt'
+        RULE_FILE = setting["language"]+'-rules.txt'
         COMMENT_PREFIX = '#'
         RULE_SEP = '='
         UNSURE = '???'

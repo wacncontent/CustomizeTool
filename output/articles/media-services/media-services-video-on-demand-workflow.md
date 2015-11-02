@@ -84,7 +84,7 @@ This article contains links to topics that show how to set up your development e
 
 ##Concepts
 
-For concepts related to delivering your content on demand, see [Media Services Concepts](media-services-concepts).
+For concepts related to delivering your content on demand, see [Media Services Concepts](/documentation/articles/media-services-concepts).
 players.md).
 
 

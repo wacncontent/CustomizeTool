@@ -16,12 +16,12 @@
 #Creating Filters with Azure Media Services .NET SDK
 
 > [AZURE.SELECTOR]
-- [.NET](media-services-dotnet-dynamic-manifest)
-- [REST](media-services-rest-dynamic-manifest)
+- [.NET](/documentation/articles/media-services-dotnet-dynamic-manifest)
+- [REST](/documentation/articles/media-services-rest-dynamic-manifest)
 
 Starting with 2.11 release, Media Services enables you to define filters for your assets. These filters are server side rules that will allow your customers to choose to do things like: playback only a section of a video (instead of playing the whole video), or specify only a subset of audio and video renditions that your customer's device can handle (instead of all the renditions that are associated with the asset). This filtering of your assets is achieved through **Dynamic Manifest**s that are created upon your customer's request to stream a video based on specified filter(s).
 
-For more detailed information related to filters and Dynamic Manifest, see [Dynamic manifests overview](media-services-dynamic-manifest-overview).
+For more detailed information related to filters and Dynamic Manifest, see [Dynamic manifests overview](/documentation/articles/media-services-dynamic-manifest-overview).
 
 This topic shows how to use Media Services .NET SDK to create, update, and delete filters. 
 
@@ -103,7 +103,7 @@ The following code shows how to use .NET to create, update,read, and delete asse
 
 ##Build streaming URLs that use filters
 
-For information on how to publish and deliver your assets, see [Delivering Content to Customers Overview](media-services-deliver-content-overview).
+For information on how to publish and deliver your assets, see [Delivering Content to Customers Overview](/documentation/articles/media-services-deliver-content-overview).
 
 
 The following examples show how to add filters to your streaming URLs.
@@ -142,6 +142,6 @@ You can view AMS learning paths here:
 
 ##See Also 
 
-[Dynamic manifests overview](media-services-dynamic-manifest-overview)
+[Dynamic manifests overview](/documentation/articles/media-services-dynamic-manifest-overview)
  
 

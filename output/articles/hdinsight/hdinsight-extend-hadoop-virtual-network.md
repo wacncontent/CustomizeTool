@@ -55,7 +55,7 @@ Azure Virtual Network allows you to extend your Hadoop solutions to incorporate 
 
 	* **Invoking HDInsight services or jobs** from an LOB application. An example is using HBase Java APIs to store and retrieve data from an HDInsight HBase cluster.
 
-For more information on Virtual Network features, benefits, and capabilities, see the [Azure Virtual Network overview](virtual-networks-overview).
+For more information on Virtual Network features, benefits, and capabilities, see the [Azure Virtual Network overview](/documentation/articles/virtual-networks-overview).
 
 > [AZURE.NOTE] You must create the Azure Virtual Network before provisioning an HDInsight cluster. For more information, see [Virtual Network configuration tasks](/documentation/services/networking/).
 >
@@ -66,10 +66,10 @@ For more information on Virtual Network features, benefits, and capabilities, se
 >
 > You cannot use a v1 (Classic,) Azure Virtual Network with Linux-based HDInsight. The Virtual Network must be v2 (Azure Resource Manager,) in order for it to be listed as an option during the HDInsight cluster creation process in the Azure preview portal, or to be usable when creating a cluster from the Azure CLI or Azure PowerShell.
 >
-> If you have resources on a v1 network, and you wish to make HDInsight directly accessible to those resources through a virtual network, see [Connecting classic VNets to new VNets](virtual-networks-arm-asm-s2s) for information on how to connect a v2 Virtual Network to a v1 Virtual Network. Once this connection is established, you can create the HDInsight cluster in the v2 Virtual Network.
+> If you have resources on a v1 network, and you wish to make HDInsight directly accessible to those resources through a virtual network, see [Connecting classic VNets to new VNets](/documentation/articles/virtual-networks-arm-asm-s2s) for information on how to connect a v2 Virtual Network to a v1 Virtual Network. Once this connection is established, you can create the HDInsight cluster in the v2 Virtual Network.
 -->
 
-For more information on provisioning an HDInsight cluster on a virtual network, see [Provisioning Hadoop clusters in HDInsight](hdinsight-provision-clusters).
+For more information on provisioning an HDInsight cluster on a virtual network, see [Provisioning Hadoop clusters in HDInsight](/documentation/articles/hdinsight-provision-clusters).
 
 ##<a id="tasks"></a>Tasks and information
 
@@ -81,7 +81,7 @@ The HDInsight cluster will be assigned a specific fully qualified domain name (F
 
 	https://<clustername>.azurehdinsight.cn/ambari/api/v1/clusters/<clustername>.azurehdinsight.cn/services/<servicename>/components/<componentname>
 
-> [AZURE.NOTE] For more information on using Ambari with HDInsight, see [Monitor Hadoop clusters in HDInsight using the Ambari API](hdinsight-monitor-use-ambari-api).
+> [AZURE.NOTE] For more information on using Ambari with HDInsight, see [Monitor Hadoop clusters in HDInsight using the Ambari API](/documentation/articles/hdinsight-monitor-use-ambari-api).
 
 You must specify the cluster name and a service and component running on the cluster, such as the YARN resource manager.
 
@@ -89,7 +89,7 @@ You must specify the cluster name and a service and component running on the clu
 
 For example, to return the FQDN from an HDInsight Hadoop cluster, you can use one of the following methods to retrieve the data for the YARN resource manager:
 
-* [Azure PowerShell](powershell-install-configure)
+* [Azure PowerShell](/documentation/articles/powershell-install-configure)
 
 		$ClusterDnsName = <clustername>
 		$Username = <cluster admin username>
@@ -116,7 +116,7 @@ To connect to HBase remotely by using the Java API, you must determine the ZooKe
 
 To get the ZooKeeper quorum address, use one of the following methods to query the Ambari management service:
 
-* [Azure PowerShell](powershell-install-configure)
+* [Azure PowerShell](/documentation/articles/powershell-install-configure)
 
 		$ClusterDnsName = <clustername>
 		$Username = <cluster admin username>
@@ -136,7 +136,7 @@ To get the ZooKeeper quorum address, use one of the following methods to query t
 
 		curl -G -u <username>:<password> "https://<clustername>.azurehdinsight.cn/ambari/api/v1/clusters/<clustername>.azurehdinsight.cn/configurations?type=hbase-site&tag=default&fields=items/properties/hbase.zookeeper.quorum" | jq .items[0].properties[]
 
-> [AZURE.NOTE] For more information on using Ambari with HDInsight, see [Monitor Hadoop clusters in HDInsight using the Ambari API](hdinsight-monitor-use-ambari-api).
+> [AZURE.NOTE] For more information on using Ambari with HDInsight, see [Monitor Hadoop clusters in HDInsight using the Ambari API](/documentation/articles/hdinsight-monitor-use-ambari-api).
 
 Once you have the quorum information, use it in your client application.
 
@@ -169,10 +169,10 @@ If you encounter problems accessing a service from HDInsight, consult the docume
 
 The following examples demonstrate how to use HDInsight with Azure Virtual Network:
 
-* [Analyze sensor data with Storm and HBase in HDInsight](hdinsight-storm-sensor-data-analysis) - Demonstrates how to configure a Storm and HBase cluster in a virtual network, as well as how to remotely write data to HBase from Storm.
+* [Analyze sensor data with Storm and HBase in HDInsight](/documentation/articles/hdinsight-storm-sensor-data-analysis) - Demonstrates how to configure a Storm and HBase cluster in a virtual network, as well as how to remotely write data to HBase from Storm.
 
-* [Provision Hadoop clusters in HDInsight](hdinsight-provision-clusters) - Provides information on provisioning Hadoop clusters, including information on using Azure Virtual Network.
+* [Provision Hadoop clusters in HDInsight](/documentation/articles/hdinsight-provision-clusters) - Provides information on provisioning Hadoop clusters, including information on using Azure Virtual Network.
 
-* [Use Sqoop with Hadoop in HDInsight](hdinsight-use-sqoop) - Provides information on using Sqoop to transfer data with SQL Server over a virtual network.
+* [Use Sqoop with Hadoop in HDInsight](/documentation/articles/hdinsight-use-sqoop) - Provides information on using Sqoop to transfer data with SQL Server over a virtual network.
 
-To learn more about Azure virtual networks, see the [Azure Virtual Network overview](virtual-networks-overview).
+To learn more about Azure virtual networks, see the [Azure Virtual Network overview](/documentation/articles/virtual-networks-overview).

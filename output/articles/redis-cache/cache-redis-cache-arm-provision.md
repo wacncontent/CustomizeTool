@@ -19,11 +19,11 @@ how to define parameters that are specified when the deployment is executed. You
 
 Currently, diagnostic settings are shared for all caches in the same region for a subscription. Updating one cache in the region will affect all other caches in the region.
 
-For more information about creating templates, see [Authoring Azure Resource Manager Templates](resource-group-authoring-templates).
+For more information about creating templates, see [Authoring Azure Resource Manager Templates](/documentation/articles/resource-group-authoring-templates).
 
 For the complete template, see [Redis Cache template](https://github.com/Azure/azure-quickstart-templates/blob/master/101-redis-cache/azuredeploy.json).
 
->[AZURE.NOTE] ARM templates for the new [Premium tier](cache-premium-tier-intro) are coming soon. To check for the latest templates, see [Azure Quickstart Templates](https://azure.microsoft.com/documentation/templates/) and search for `Redis Cache`.
+>[AZURE.NOTE] ARM templates for the new [Premium tier](/documentation/articles/cache-premium-tier-intro) are coming soon. To check for the latest templates, see [Azure Quickstart Templates](https://azure.microsoft.com/documentation/templates/) and search for `Redis Cache`.
 
 ## What you will deploy
 

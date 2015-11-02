@@ -18,9 +18,9 @@
 
 You can run programs or scripts in WebJobs in your [Azure Websites](/documentation/services/web-sites/) web app in three ways: on demand, continuously, or on a schedule. There is no additional cost to use WebJobs.
 
-This article shows how to deploy WebJobs by using the [Azure Management Portal](https://manage.windowsazure.cn/). For information about how to deploy by using Visual Studio or a continuous delivery process, see [How to Deploy Azure WebJobs to Web Apps](websites-dotnet-deploy-webjobs).
+This article shows how to deploy WebJobs by using the [Azure Management Portal](https://manage.windowsazure.cn/). For information about how to deploy by using Visual Studio or a continuous delivery process, see [How to Deploy Azure WebJobs to Web Apps](/documentation/articles/websites-dotnet-deploy-webjobs).
 
-The Azure WebJobs SDK simplifies many WebJobs programming tasks. For more information, see [What is the WebJobs SDK](websites-dotnet-webjobs-sdk).
+The Azure WebJobs SDK simplifies many WebJobs programming tasks. For more information, see [What is the WebJobs SDK](/documentation/articles/websites-dotnet-webjobs-sdk).
 <!-- deleted by customization
 
 [AZURE.INCLUDE [app-service-web-to-api-and-mobile](../includes/app-service-web-to-api-and-mobile.md)] 
@@ -231,7 +231,8 @@ For more information, see [Azure WebJobs Recommended Resources][WebJobsRecommend
 -->
 
 [PSonWebJobs]:http://blogs.msdn.com/b/nicktrog/archive/2014/01/22/running-powershell-web-jobs-on-azure-websites.aspx
-[WebJobsRecommendedResources]: websites-webjobs-resources
+[WebJobsRecommendedResources]:/documentation/articles/websites-webjobs-resources/
+
 [OnDemandWebJob]: ./media/web-sites-create-web-jobs/01aOnDemandWebJob.png
 [WebJobsList]: ./media/web-sites-create-web-jobs/02aWebJobsList.png
 [NewContinuousJob]: ./media/web-sites-create-web-jobs/03aNewContinuousJob.png

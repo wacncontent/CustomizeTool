@@ -34,7 +34,7 @@ This sample shows how to:
 
 For more information, see the [StackExchange.Redis](https://github.com/StackExchange/StackExchange.Redis) documentation on github, and for more usage scenarios see the [StackExchange.Redis.Tests](https://github.com/StackExchange/StackExchange.Redis/tree/master/StackExchange.Redis.Tests) unit tests.
 
-[How to use Azure Redis Cache with Python](cache-python-get-started) shows how to get started with Azure Redis Cache using Python and the [redis-py](https://github.com/andymccurdy/redis-py) client.
+[How to use Azure Redis Cache with Python](/documentation/articles/cache-python-get-started) shows how to get started with Azure Redis Cache using Python and the [redis-py](https://github.com/andymccurdy/redis-py) client.
 
 The [PHP example](https://msdn.microsoft.com/zh-cn/library/azure/dn690470.aspx#PHPExample) shows you how to get started using Azure Redis Cache with PHP and the [predis](https://github.com/nrk/predis) client.
 

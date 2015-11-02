@@ -45,7 +45,7 @@ You will create an application using the Flask web framework (see alternate vers
 - Python 2.7 or 3.4
 - setuptools, pip, virtualenv (Python 2.7 only)
 - Git
-- [Python Tools for Visual Studio][](PTVS) - Note: this is optional
+- [Python Tools for Visual Studio][](/documentation/articles/PTVS) - Note: this is optional
 
 **Note**: TFS publishing is currently not supported for Python projects.
 
@@ -72,12 +72,12 @@ The first step in creating your app is to create the web app via the [Azure Mana
 3. In the search box, type "python".
 4. In the search results, select **Flask**, then click **Create**.
 5. Configure the new Flask app, such as creating a new App Service plan and a new resource group for it. Then, click **Create**.
-6. Configure Git publishing for your newly created web app by following the instructions at [Continuous deployment using GIT in Azure Websites](web-sites-publish-source-control).
+6. Configure Git publishing for your newly created web app by following the instructions at [Continuous deployment using GIT in Azure Websites](/documentation/articles/web-sites-publish-source-control).
 
 
 -->
 <!-- keep by customization: begin -->
-The first step in creating your app is to create the web app via the [Azure Portal](https://manage.windowsazure.cn). To do this, you will need to login to the portal and click the NEW button in the bottom left corner. A window will appear. Click **Quick Create**, enter a URL, and select **Create Web Site**.
+The first step in creating your app is to create the web app via the [Azure Management Portal](https://manage.windowsazure.cn). To do this, you will need to login to the portal and click the NEW button in the bottom left corner. A window will appear. Click **Quick Create**, enter a URL, and select **Create Web Site**.
 
 ![](./media/web-sites-python-create-deploy-django-app/django-ws-003.png)
 
@@ -170,7 +170,7 @@ The next 3 sections describe how to proceed with the web app development under 3
 
 ### Clone the repository
 
-First, clone the repository using the URL provided on the Azure Management Portal. For more information, see [Continuous deployment using GIT in Azure Websites](web-sites-publish-source-control).
+First, clone the repository using the URL provided on the Azure Management Portal. For more information, see [Continuous deployment using GIT in Azure Websites](/documentation/articles/web-sites-publish-source-control).
 
 Open the solution file (.sln) that is included in the root of the repository.
 
@@ -237,7 +237,7 @@ Browse to the Azure URL to view your changes.
 
 ### Clone the repository
 
-First, clone the repository using the URL provided on the Azure Management Portal, and add the Azure repository as a remote. For more information, see [Continuous deployment using GIT in Azure Websites](web-sites-publish-source-control).
+First, clone the repository using the URL provided on the Azure Management Portal, and add the Azure repository as a remote. For more information, see [Continuous deployment using GIT in Azure Websites](/documentation/articles/web-sites-publish-source-control).
 
     git clone <repo-url>
     cd <repo-folder>
@@ -316,7 +316,7 @@ Browse to the Azure URL to view your changes.
 
 ### Clone the repository
 
-First, clone the repository using the URL provided on the Azure Management Portal, and add the Azure repository as a remote. For more information, see [Continuous deployment using GIT in Azure Websites](web-sites-publish-source-control).
+First, clone the repository using the URL provided on the Azure Management Portal, and add the Azure repository as a remote. For more information, see [Continuous deployment using GIT in Azure Websites](/documentation/articles/web-sites-publish-source-control).
 
     git clone <repo-url>
     cd <repo-folder>
@@ -427,7 +427,7 @@ For more information, see also the [Python Developer Center](/develop/python/).
 
 <!--Link references-->
 [Flask and MongoDB on Azure with Python Tools for Visual Studio]: https://github.com/microsoft/ptvs/wiki/Flask-and-MongoDB-on-Azure
-[Flask and Azure Table Storage on Azure with Python Tools for Visual Studio]: web-sites-python-ptvs-flask-table-storage
+[Flask and Azure Table Storage on Azure with Python Tools for Visual Studio]: /documentation/articles/web-sites-python-ptvs-flask-table-storage
 <!--External Link references-->
 [Azure SDK for Python 2.7]: http://go.microsoft.com/fwlink/?linkid=254281
 [Azure SDK for Python 3.4]: http://go.microsoft.com/fwlink/?linkid=516990

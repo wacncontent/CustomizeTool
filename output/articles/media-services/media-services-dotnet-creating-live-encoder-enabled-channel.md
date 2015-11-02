@@ -16,15 +16,15 @@
 #Create Channels that Perform Live Encoding from a Single-bitrate to Multi-bitrate Stream using .NET SDK
 
 > [AZURE.SELECTOR]
-- [Portal](media-services-portal-creating-live-encoder-enabled-channel)
-- [.NET](media-services-dotnet-creating-live-encoder-enabled-channel)
+- [Portal](/documentation/articles/media-services-portal-creating-live-encoder-enabled-channel)
+- [.NET](/documentation/articles/media-services-dotnet-creating-live-encoder-enabled-channel)
 - [REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn783458.aspx)
 
 ##Overview
 
 This tutorial walks you through the steps of creating a **Channel** that receives a single-bitrate live stream and encodes it to multi-bitrate stream.
 
->[AZURE.NOTE]For more conceptual information related to Channels that are enabled for live encoding, see [Working with Channels that Perform Live Encoding from a Single-bitrate to Multi-bitrate Stream](media-services-manage-live-encoder-enabled-channels).
+>[AZURE.NOTE]For more conceptual information related to Channels that are enabled for live encoding, see [Working with Channels that Perform Live Encoding from a Single-bitrate to Multi-bitrate Stream](/documentation/articles/media-services-manage-live-encoder-enabled-channels).
 
 
 ##Common Live Streaming Scenario
@@ -88,7 +88,7 @@ The following are required to complete the tutorial.
 
 - To complete this tutorial, you need an Azure account. If you don't have an account, you can create a trial account in just a couple of minutes.
 For details, see [Azure Trial](/pricing/1rmb-trial/).
-- A Media Services account. To create a Media Services account, see [Create Account](media-services-create-account).
+- A Media Services account. To create a Media Services account, see [Create Account](/documentation/articles/media-services-create-account).
 - Visual Studio 2010 SP1 or higher.
 - You must use Media Services .NET SDK version 3.2.0.0 or newer.
 - A webcam and an encoder that can send a single bitrate live stream.

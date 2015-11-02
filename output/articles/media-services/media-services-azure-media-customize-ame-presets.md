@@ -230,7 +230,7 @@ The following code snippet shows how to do these steps:
 
 
 
->[AZURE.NOTE]This snippet loads each asset sequentially for simplicity. In production environments assets would be loaded in bulk. For more information on uploading multiple assets in bulk see [Ingesting Assets in Bulk with the Media Services SDK for .NET](media-services-dotnet-upload-files#ingest_in_bulk).
+>[AZURE.NOTE]This snippet loads each asset sequentially for simplicity. In production environments assets would be loaded in bulk. For more information on uploading multiple assets in bulk see [Ingesting Assets in Bulk with the Media Services SDK for .NET](/documentation/articles/media-services-dotnet-upload-files#ingest_in_bulk).
 
 For complete sample code see [Creating Overlays with Media Services Encoder](https://code.msdn.microsoft.com/Creating-Audio-and-Video-c2942c47).  
 
@@ -383,7 +383,7 @@ The following code snippet shows how to do these steps:
 		} 
 
 
-This snippet loads each asset sequentially for simplicity. In production environments assets would be loaded in bulk. For more information on uploading multiple assets in bulk see [Ingesting Assets in Bulk with the Media Services SDK for .NET](media-services-dotnet-upload-files#ingest_in_bulk). For complete sample code see [Stitching with Media Services Encoder](https://code.msdn.microsoft.com/Stitching-with-Media-8fd5f203).
+This snippet loads each asset sequentially for simplicity. In production environments assets would be loaded in bulk. For more information on uploading multiple assets in bulk see [Ingesting Assets in Bulk with the Media Services SDK for .NET](/documentation/articles/media-services-dotnet-upload-files#ingest_in_bulk). For complete sample code see [Stitching with Media Services Encoder](https://code.msdn.microsoft.com/Stitching-with-Media-8fd5f203).
 
 ###Stitching Videos from a Single Asset
 

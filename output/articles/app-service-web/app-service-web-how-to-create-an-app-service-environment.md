@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties 
 	pageTitle="How to Create an Azure Websites Environment" 
 	description="Creation flow description for app service environments" 
@@ -140,5 +142,5 @@ For more information about the Azure Websites platform, see [Azure Websites][Azu
 <!--Links-->
 [WhatisASE]: /documentation/articles/app-service-app-service-environment-intro/
 [ASEConfig]: /documentation/articles/app-service-web-configure-an-app-service-environment/
-[AppServicePricing]: http://azure.microsoft.com/home/features/web-site/#price 
+[AppServicePricing]: /home/features/app-service/#price 
 [AzureAppService]: /documentation/articles/app-service-value-prop-what-is/ 

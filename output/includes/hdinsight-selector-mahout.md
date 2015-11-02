@@ -1,5 +1,5 @@
 > [AZURE.SELECTOR]
 <!-- deleted by customization
-- [SSH](hdinsight-hadoop-mahout-linux-mac)
+- [SSH](/documentation/articles/hdinsight-hadoop-mahout-linux-mac)
 -->
-- [PowerShell](hdinsight-mahout)
+- [PowerShell](/documentation/articles/hdinsight-mahout)
