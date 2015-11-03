@@ -1,35 +1,11 @@
 {
-  "path": "C:/Users/Administrator/Documents/GitHub/azure-content-pr/",
-  "language": "en-us",
-  "folders": [
-    "articles/app-service-web/",
-    "articles/automation/",
-    "articles/hdinsight/",
-    "articles/media-services/",
-    "articles/redis-cache/",
-    "articles/traffic-manager/",
-    "articles/virtual-network/",
-    "articles/application-gateway/",
-    "articles/backup/",
-    "articles/batch/",
-    "articles/cache/",
-    "articles/cdn/",
-    "articles/cloud-services/",
-    "articles/event-hubs/",
-    "articles/expressroute/",
-    "articles/mobile-services/",
-    "articles/notification-hubs/",
-    "articles/scheduler/",
-    "articles/service-bus/",
-    "articles/site-recovery/",
-    "articles/sql-database/",
-    "articles/storage/",
-    "articles/virtual-machines/"
-  ],
-  "output_folder": "output/",
+  "path": "C:/Users/Administrator/Documents/GitHub/azure-content-zhcn-pr/",
+  "language": "zh-cn",
+  "folders": [ "articles/app-service-web/", "articles/automation/", "articles/hdinsight/", "articles/media-services/", "articles/redis-cache/", "articles/traffic-manager/", "articles/virtual-network/" ],
+  "output_folder": "zh-cn-output/", 
   "compare": {
-    "compare": true,
-    "path": "C:/Users/Administrator/Documents/GitHub/azure-content-mooncake-pr/"
+    "compare": false,
+    "path": ""
   },
   "updateFileList": true,
   "includes_search_keys": {
@@ -39,23 +15,7 @@
     "articles/media-services/": [ "media" ],
     "articles/redis-cache/": [ "cache" ],
     "articles/traffic-manager/": [ "traffic" ],
-    "articles/virtual-network/": [ "virtual-network", "vnet" ],
-    "articles/application-gateway/": [ "application-gateway" ],
-    "articles/backup/": [ "backup" ],
-    "articles/batch/": [ "batch" ],
-    "articles/cache/": [ "cache" ],
-    "articles/cdn/": [ "cdn" ],
-    "articles/cloud-services/": [ "cloud-services" ],
-    "articles/event-hubs/": [ "event-hubs" ],
-    "articles/expressroute/": [ "expressroute" ],
-    "articles/mobile-services/": [ "mobile-services" ],
-    "articles/notification-hubs/": [ "notification-hubs" ],
-    "articles/scheduler/": [ "scheduler" ],
-    "articles/service-bus/": [ "service-bus" ],
-    "articles/site-recovery/": [ "site-recovery" ],
-    "articles/sql-database/": [ "sql-database" ],
-    "articles/storage/": [ "storage" ],
-    "articles/virtual-machines/": [ "virtual-machines", "vm" ]
+    "articles/virtual-network/": [ "virtual-network", "vnet" ]
   },
   "check_dates": false
 }

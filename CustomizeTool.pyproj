@@ -66,6 +66,8 @@
     <Folder Include="zh-cn-output\includes\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="all-services-setting.json" />
+    <Content Include="en-us-setting.json" />
     <Content Include="mdFile.md" />
     <Content Include="modified.txt" />
     <Content Include="newLinks.txt" />
@@ -73,7 +75,7 @@
     <Content Include="output\test\active-directory-aadconnect-account-summary.md" />
     <Content Include="output\test\keyword_test.md" />
     <Content Include="README.md" />
-    <Content Include="zh-cn-rule.txt" />
+    <Content Include="zh-cn-rules.txt" />
     <Content Include="en-us-rules.txt" />
     <Content Include="setting.json" />
     <Content Include="test\active-directory-aadconnect-account-summary.md" />

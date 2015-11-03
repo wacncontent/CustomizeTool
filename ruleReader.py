@@ -22,6 +22,7 @@ class RuleReader:
     # Function to get rules from "rules.txt"
     def getRules(self):
         RULE_FILE = setting["language"]+'-rules.txt'
+        print RULE_FILE
         COMMENT_PREFIX = '#'
         RULE_SEP = '='
         UNSURE = '???'

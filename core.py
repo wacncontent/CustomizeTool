@@ -66,7 +66,7 @@ class Core:
             if setting["language"] == "zh-cn":
                 if setting["compare"]["compare"]:
                     result = compareWithMooncake(mdFile, result)
-                bakFile = open('output/'+mdFile, 'w', "utf8")
+                bakFile = open(setting["output_folder"]+mdFile, 'w', "utf8")
             else:
                 if setting["compare"]["compare"]:
                     result = compareWithMooncake(mdFile, result)

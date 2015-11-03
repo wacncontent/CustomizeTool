@@ -1,11 +1,21 @@
 {
-  "path": "C:/Users/Administrator/Documents/GitHub/815/",
-  "language": "en-us",
-  "folders": [ "articles/", "includes/" ],
+  "path": "C:/Users/Administrator/Documents/GitHub/azure-content-zhcn-pr/",
+  "language": "zh-cn",
+  "folders": [ "articles/app-service-web/", "articles/automation/", "articles/hdinsight/", "articles/media-services/", "articles/redis-cache/", "articles/traffic-manager/", "articles/virtual-network/" ],
   "output_folder": "zh-cn-output/", 
   "compare": {
     "compare": false,
     "path": ""
   },
-  "updateFileList": false
+  "updateFileList": true,
+  "includes_search_keys": {
+    "articles/app-service-web/": [ "web" ],
+    "articles/automation/": [ "automation" ],
+    "articles/hdinsight/": [ "hdinsight" ],
+    "articles/media-services/": [ "media" ],
+    "articles/redis-cache/": [ "cache" ],
+    "articles/traffic-manager/": [ "traffic" ],
+    "articles/virtual-network/": [ "virtual-network", "vnet" ]
+  },
+  "check_dates": false
 }

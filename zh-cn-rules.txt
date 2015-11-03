@@ -1,5 +1,5 @@
 [CONST]
-#æ‰¹å¤„ç† = æ‰¹å¤„ç† (Batch)
+# Åú´¦Àí = Åú´¦Àí (Batch)
 # domain name replacement
 
 # group 1
@@ -60,7 +60,7 @@ VNetUSWest = VNetChinsNorth
 Microsoft Azure = Windows Azure
 Microsoft dot com = WindowsAzure.cn
 
-SQL Database = SQL æ•°æ®åº“
+# SQL Database = SQL Êı¾İ¿â
 
 # Redirect URL
 

@@ -9,7 +9,7 @@ def findRedirect(urllist):
     errorOut = open("errorLinks.txt", "w")
     oldLinkFile = open("oldLinks.txt", "a")
     for url in urllist:
-        oldLinkFile.writelines(url+"\n")
+        oldLinkFile.write(url+"\n")
         print("processing: "+url)
         try:
             link = urllib2.urlopen(url)
