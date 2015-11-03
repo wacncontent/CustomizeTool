@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties 
 	pageTitle="Analyze real-time Twitter sentiment with HBase | Windows Azure" 
 	description="Learn how to do real-time sentiment analysis of big data from Twitter using HBase in an HDInsight (Hadoop) cluster." 
@@ -7,10 +9,10 @@
 	manager="paulettm" 
 	editor="cgronlun"/>
 
-<tags
-	ms.service="hdinsight"
-	ms.date="07/09/2015"
-	wacn.date=""/>
+<tags 
+	ms.service="hdinsight" 
+	ms.date="07/09/2015" 
+	wacn.date/>
 
 # Analyze real-time Twitter sentiment with HBase in HDInsight
 

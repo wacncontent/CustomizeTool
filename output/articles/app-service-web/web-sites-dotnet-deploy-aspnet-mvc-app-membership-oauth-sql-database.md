@@ -34,7 +34,7 @@ You'll learn:
 >[AZURE.NOTE] This is a long tutorial. If you want a quick introduction to Azure Websites and Visual Studio web projects, see [Create an ASP.NET web app in Azure Websites](/documentation/articles/web-sites-dotnet-get-started). For troubleshooting info, see the [Troubleshooting](#troubleshooting) section.
 >
 <!-- deleted by customization
->Or if you want to get started with Azure Websites before signing up for an Azure account, go to [Try Azure Websites](http://go.microsoft.com/fwlink/?LinkId=523751), where you can immediately create a short-lived starter web app in Azure Websites. No credit cards required; no commitments.
+>Or if you want to get started with Azure Websites before signing up for an Azure account, go to [Try Azure Websites](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure Websites. No credit cards required; no commitments.
 -->
 
 ## Prerequisites

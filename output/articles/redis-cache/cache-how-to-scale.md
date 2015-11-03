@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties 
 	pageTitle="How to Scale Azure Redis Cache" 
 	description="Learn how to scale your Azure Redis Cache instances" 
@@ -7,16 +9,16 @@
 	manager="dwrede" 
 	editor=""/>
 
-<tags
-	ms.service="cache"
-	ms.date="09/30/2015"
+<tags 
+	ms.service="cache" 
+	ms.date="09/10/2015" 
 	wacn.date=""/>
 
 # How to Scale Azure Redis Cache
 
->[AZURE.NOTE] The Azure Redis Cache scaling feature is currently in preview. During the preview period, you cannot scale to, from, or within a premium tier cache.
+>[AZURE.NOTE] The Azure Redis Cache scaling feature is currently in preview.
 
-Azure Redis Cache has different cache offerings which provide flexibility in the choice of cache size and features. If the requirements of your application change after a cache is created, you can scale the size of the cache using the **Change pricing tier** blade in the [Azure preview portal](https://manage.windowsazure.cn).
+Azure Redis Cache has different cache offerings which provide flexibility in the choice of cache size and features. If the requirements of your application change after a cache is created, you can scale the size of the cache using the **Change pricing tier** blade in the [Azure Management Portal](https://manage.windowsazure.cn).
 
 ## When to scale
 
@@ -32,7 +34,7 @@ You can monitor the following metrics to help determine if you need to scale.
 If you determine that your cache is no longer meeting the requirements of your application, you can change to a larger or smaller cache pricing tier that is right for your application. For more information on determining which cache pricing tier to use, see [What Redis Cache offering and size should I use](/documentation/articles/cache-faq#what-redis-cache-offering-and-size-should-i-use).
 
 ## Scale a cache
-To scale your cache, [browse to the cache](/documentation/articles/cache-configure#configure-redis-cache-settings) in the [preview portal](https://manage.windowsazure.cn) and click **Settings**, **Pricing tier**.
+To scale your cache, [browse to the cache](https://msdn.microsoft.com/zh-cn/library/azure/dn793612.aspx#RedisCacheConfiguration) in the [Azure Management Portal](https://manage.windowsazure.cn) and click the **Standard tier** or **Basic tier** part in the **Redis Cache** blade.
 
 You can also click the **Standard tier** or **Basic tier** part in the **Redis Cache** blade.
 
@@ -44,7 +46,6 @@ Select the desired pricing tier from the **Pricing tier** blade and click **Sele
 
 >[AZURE.NOTE] You can scale to a different pricing tier with the following restrictions.
 >
->-	You can't scale to or from a **Premium** cache.
 >-	You can't scale from a **Standard** cache to a **Basic** cache.
 >-	You can scale from a **Basic** cache to a **Standard** cache but you can't change the size at the same time. If you need a different size, you can do a subsequent scaling operation to the desired size.
 >-	You can't scale from a larger size down to the **C0 (250 MB)** size.
@@ -57,7 +58,7 @@ When scaling is complete, the status changes from **Scaling** to **Running**.
 
 ## How to automate a scaling operation
 
-In addition to scaling your Azure Redis Cache instance in the preview portal you can scale using the [Windows Azure Management Libraries (MAML)](http://azure.microsoft.com/updates/management-libraries-for-net-release-announcement/). To scale your cache, call the `IRedisOperations.CreateOrUpdate` method and pass in the new size for the `RedisProperties.SKU.Capacity`.
+In addition to scaling your Azure Redis Cache instance in the Azure Management Portal you can scale using the [Windows Azure Management Libraries (MAML)](http://azure.microsoft.com/updates/management-libraries-for-net-release-announcement/). To scale your cache, call the `IRedisOperations.CreateOrUpdate` method and pass in the new size for the `RedisProperties.SKU.Capacity`.
 
     static void Main(string[] args)
     {
@@ -82,10 +83,6 @@ For more information, see the [Manage Redis Cache using MAML](https://github.com
 ## Scaling FAQ
 
 The following list contains answers to commonly asked questions about Azure Redis Cache scaling.
-
-## Can I scale to, from, or within a Premium cache
-
-During the preview period, scaling is not available for **Premium** caches.
 
 ## After scaling, do I have to change my cache name or access keys
 
@@ -117,8 +114,6 @@ Note that while Standard caches have a 99.9% SLA for availability, there is no S
 
 ## Operations that are not supported
 
-You can't scale to, from, or within a **Premium** cache.
-
 You can't change from a **Standard** to a **Basic** cache.
 
 You can scale from a **Basic** cache to a **Standard** cache but you can't change the size at the same time. If you need a different size, you can do a subsequent scaling operation to the desired size.
@@ -133,7 +128,7 @@ Scaling takes approximately 20 minutes, depending on how much data is in the cac
 
 ## How can I tell when scaling is complete
 
-In the preview portal you can see the scaling operation in progress. When scaling is complete, the status of the cache changes to **Running**.
+In the portal you can see the scaling operation in progress. When scaling is complete, the status of the cache changes to **Running**.
 
 ## Why is this feature in preview
 

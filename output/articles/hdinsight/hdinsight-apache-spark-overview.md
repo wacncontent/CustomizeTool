@@ -1,16 +1,17 @@
+<!-- not suitable for Mooncake -->
+
 <properties 
-	pageTitle="An overview of Apache Spark in HDInsight | Windows Azure" 
+	pageTitle="An overview of Apache Spark in HDInsight | Azure" 
 	description="An introduction to Apache Spark in HDInsight and scenarios in which to use Spark on HDInsight in your applications." 
 	services="hdinsight" 
 	documentationCenter="" 
 	authors="nitinme" 
 	manager="paulettm" 
-	editor="cgronlun"
-	tags="azure-portal"/>
+	editor="cgronlun"/>
 
-<tags
-	ms.service="hdinsight"
-	ms.date="09/30/2015"
+<tags 
+	ms.service="hdinsight" 
+	ms.date="07/19/2015" 
 	wacn.date=""/>
 
 # Overview: Apache Spark on Azure HDInsight 
@@ -26,9 +27,7 @@ When you provision a Spark cluster in HDInsight, you provision Azure compute res
 
 
 
-Watch a quick overview video describing Apache Spark on Azure HDInsight.
 
-> [AZURE.VIDEO announcing-apache-spark-on-azure-hdinsight]
 
 ## Why use Spark on Azure HDInsight? 
 
@@ -37,7 +36,7 @@ Azure HDInsight offers a fully managed Spark service. Benefits of using Spark on
 | Feature                             | Description       |
 |-------------------------------------|-------------------|
 | Ease of provisioning            | You can provision a new Spark cluster on HDInsight in minutes using the Azure Management Portal, Azure PowerShell, or the HDInsight .NET SDK. See [Provision a Spark cluster in HDInsight](/documentation/articles/hdinsight-apache-spark-provision-clusters) |
-| Ease of use                     | Spark in HDInsight clusters includes Zeppelin and Jupyter notebooks pre-configured. You can use these for interactive data processing and visualization. The URLs for these notebooks are https://CLUSTERNAME.azurehdinsight.cn/zeppelin and https://CLUSTERNAME.azurehdinsight.cn/jupyter. Replace __CLUSTERNAME__ with the name of your HDInsight cluster.|
+| Ease of use                     | Spark in HDInsight clusters includes Zeppelin and Jupyter notebooks pre-configured. You can use these for interactive data processing and visualization. You can launch these notebooks from the cluster dashboard to work directly against a Spark cluster.|
 | REST APIs                       | Spark in HDInsight includes Spark job server, which is a REST API server that enables users to remotely submit and monitor running jobs. |
 | Concurrent Queries              | Spark in HDInsight supports concurrent queries. This enables multiple queries from one user or multiple queries from various users and applications to share the same cluster resources. |
 | Caching on SSDs                 | You can choose to cache data either in memory or in SSDs attached to the cluster nodes. Caching in memory provides the best query performance but could be expensive; caching in SSDs provides a great option for improving query performance without the need to create a cluster of a size that is required to fit the entire dataset in memory.|

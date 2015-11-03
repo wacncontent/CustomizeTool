@@ -39,7 +39,7 @@ For tutorials and sample code with more complex Node.js applications, or for oth
 > To complete this tutorial, you need a Windows Azure account. If you don't have an account, you can <!-- deleted by customization [activate your MSDN subscriber benefits](/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F) or -->[sign up for a trial](/pricing/1rmb-trial/?WT.mc_id=A261C142F).
 <!-- deleted by customization
 >
-> If you want to get started with Azure Websites before you sign up for an Azure account, go to [Try Azure Websites](http://go.microsoft.com/fwlink/?LinkId=523751). There, you can immediately create a short-lived starter web app in Azure Websites—no credit card required, and no commitments.
+> If you want to get started with Azure Websites before you sign up for an Azure account, go to [Try Azure Websites](https://tryappservice.azure.com/). There, you can immediately create a short-lived starter web app in Azure Websites—no credit card required, and no commitments.
 -->
 
 ## Create a web app and enable Git publishing

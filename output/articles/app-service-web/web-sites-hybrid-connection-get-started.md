@@ -154,7 +154,7 @@ At this point, you have completed an important part of the cloud hybrid connecti
 
 Now that the hybrid connection infrastructure is complete, you can create a hybrid application that uses it. 
 
->[AZURE.NOTE] If you want to get started with Azure Websites before signing up for an Azure account, go to [Try Azure Websites](http://go.microsoft.com/fwlink/?LinkId=523751), where you can immediately create a short-lived starter web app in Azure Websites. No credit cards required; no commitments.
+>[AZURE.NOTE] If you want to get started with Azure Websites before signing up for an Azure account, go to [Try Azure Websites](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure Websites. No credit cards required; no commitments.
 
 <a name="NextSteps"></a>
 ## Next Steps ##

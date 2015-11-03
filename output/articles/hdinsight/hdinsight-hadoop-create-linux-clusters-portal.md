@@ -1,6 +1,8 @@
+<!-- not suitable for Mooncake -->
+
 <properties
    	pageTitle="Create Hadoop, HBase, or Storm clusters on Linux in HDInsight using the portal | Windows Azure"
-   	description="Learn how to create Hadoop, HBase, or Storm clusters on Linux for HDInsight using a web browser and the Azure preview portal."
+   	description="Learn how to create Hadoop, HBase, or Storm clusters on Linux for HDInsight using a web browser and the Azure Management Portal."
    	services="hdinsight"
    	documentationCenter=""
    	authors="nitinme"
@@ -14,25 +16,25 @@
 	wacn.date=""/>
 
 
-#Create Linux-based clusters in HDInsight using the Azure preview portal
+#Create Linux-based clusters in HDInsight using the Azure Management Portal
 
 [AZURE.INCLUDE [selector](../includes/hdinsight-create-linux-cluster-selector.md)]
 
-The Azure preview portal is a web-based management tool for services and resources hosted in the Windows Azure cloud. Use the information in this document to create a new Linux-based HDInsight cluster using the preview portal and your web browser
+The Azure Management Portal is a web-based management tool for services and resources hosted in the Windows Azure cloud. Use the information in this document to create a new Linux-based HDInsight cluster using the Management Portal and your web browser
 
 ##Prerequisites
 
 - **An Azure subscription**. See [Get Azure trial](/pricing/1rmb-trial/).
 
-- __A modern web browser__. The Azure preview portal uses HTML5 and Javascript, and may not function correctly in older web browsers.
+- __A modern web browser__. The Azure Management Portal uses HTML5 and Javascript, and may not function correctly in older web browsers.
 
 ##Create a cluster
 
-1. Sign in to the [Azure preview portal](https://manage.windowsazure.cn).
+1. Sign in to the [Azure Management Portal](https://manage.windowsazure.cn).
 
 2. Click **NEW**, Click **Data Analytics**, and then click **HDInsight**.
 
-    ![Creating a new cluster in the Azure Preview Portal](./media/hdinsight-hadoop-create-linux-cluster-portal/HDI.CreateCluster.1.png "Creating a new cluster in the Azure Preview Portal")
+    ![Creating a new cluster in the Azure Management Portal](./media/hdinsight-hadoop-create-linux-cluster-portal/HDI.CreateCluster.1.png "Creating a new cluster in the Azure Management Portal")
 
 3. Enter a **Cluster Name**, select **Hadoop** for the **Cluster Type**, and from the **Cluster Operating System** drop-down, select **Ubuntu**. A green check will appear beside the cluster name if it is available.
 
@@ -134,7 +136,7 @@ The Azure preview portal is a web-based management tool for services and resourc
 
 	* **Users** (![users icon](./media/hdinsight-hadoop-create-linux-cluster-portal/users.png)): Allows you to set permissions for _portal management_ of this cluster for other users on your Azure subscription.
 
-		> [AZURE.IMPORTANT] This _only_ affects access and permissions to this cluster in the Azure preview portal, and has no effect on who can connect to or submit jobs to the HDInsight cluster.
+		> [AZURE.IMPORTANT] This _only_ affects access and permissions to this cluster in the Azure Management Portal, and has no effect on who can connect to or submit jobs to the HDInsight cluster.
 
 	* **Tags** (![tag icon](./media/hdinsight-hadoop-create-linux-cluster-portal/tags.png)): Tags allows you to set key/value pairs to define a custom taxonomy of your cloud services. For example, you may create a key named __project__, and then use a common value for all services associated with a specific project.
 

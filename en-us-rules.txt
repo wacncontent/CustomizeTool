@@ -127,6 +127,65 @@ http://go.microsoft.com/fwlink/?LinkID{equal}324844 = https://technet.microsoft.
 http://go.microsoft.com/fwlink/p/?LinkId{equal}390561 = https://social.msdn.microsoft.com/Forums/azure/zh-cn/home?forum{equal}azureautomation
 http://go.microsoft.com/fwlink/?linkid{equal}618336&clcid{equal}0x409 = https://msdn.microsoft.com/zh-cn/library/azure/mt269960.aspx
 http://go.microsoft.com/fwlink/p/?LinkId{equal}400772 = https://msdn.microsoft.com/zh-cn/library/azure/hh758257.aspx
+http://go.microsoft.com/fwlink/?LinkId{equal}296833 = https://msdn.microsoft.com/library/azure/ee460799.aspx
+http://go.microsoft.com/fwlink/?LinkId{equal}523751 = https://tryappservice.azure.com/
+http://go.microsoft.com/fwlink/?LinkId{equal}386611 = http://download.microsoft.com/download/4/3/9/43902EC9-410E-4875-8800-0788BE146A3D/Windows%20Azure%20Network%20Security%20Whitepaper%20-%20FINAL.docx
+http://go.microsoft.com/fwlink/?LinkId{equal}272001 = https://datamarket.azure.com/application/2cdbc511-cb12-4715-9871-c7e7fbbb82a6
+http://aka.ms/ampdocs = http://amp.azure.net/libs/amp/latest/docs/
+http://aka.ms/ampsignup = http://amp.azure.net/signup/
+http://go.microsoft.com/fwlink/?LinkId{equal}255386 = http://download.microsoft.com/download/F/4/2/F42AB12D-C935-4E65-9D98-4E56F9ACBC8E/wpilauncher.exe
+https://newrelic.com/docs/site/finding-help = https://docs.newrelic.com/docs/accounts-partnerships/education/getting-started-new-relic/finding-help
+http://www.windowsazure.com/develop/nodejs/tutorials/app-using-socketio/ = https://azure.microsoft.com/en-us/documentation/articles/cloud-services-nodejs-chat-app-socketio/
+http://feedback.windowsazure.com/forums/34192--general-feedback = http://feedback.azure.com/forums/34192--general-feedback
+http://go.microsoft.com/fwlink/p/?LinkId{equal}400774 = https://msdn.microsoft.com/library/dn690257.aspx
+http://go.microsoft.com/fwlink/?LinkId{equal}309356 = https://msdn.microsoft.com/library/azure/dn306638.aspx
+http://go.microsoft.com/fwlink/?linkid{equal}517284&clcid{equal}0x409 = http://download.microsoft.com/download/7/1/B/71BA74D8-B9A0-4E6C-9159-A8335D54437E/vs_community.exe
+http://go.microsoft.com/fwlink/?LinkId{equal}510086 = http://wiki.apache.org/hadoop/MapReduce
+http://go.microsoft.com/fwlink/?LinkId{equal}510084 = http://hadoop.apache.org/
+http://go.microsoft.com/fwlink/?LinkId{equal}510085 = https://cwiki.apache.org/confluence/display/Hive/Home%3bjsessionid{equal}AF5B37E667D7DBA633313BB2280C9072
+http://aka.ms/runbookauthor/cmdlet/setazurerunbookdefinition = https://msdn.microsoft.com/en-us/library/dn690267.aspx
+http://go.microsoft.com/fwlink/?LinkId{equal}623850 = https://azure.microsoft.com/en-us/blog/announcing-the-azure-sdk-2-7-1-for-net/
+http://aka.ms/indexersql = http://manlingtest-samplescdn.streaming.mediaservices.windows.net/be5e4df9-6ec6-44e4-9e6e-40c82dc95d1c/Azure%20Media%20Indexer%20SQL%20Add-on.zip
+http://go.microsoft.com/fwlink/?LinkId{equal}248092 = https://azure.microsoft.com/en-us/documentation/articles/virtual-networks-settings/
+http://go.microsoft.com/fwlink/?LinkId{equal}248094 = https://azure.microsoft.com/en-us/documentation/articles/virtual-networks-create-vnet-classic-portal/
+http://go.microsoft.com/fwlink/?LinkID{equal}394765 = https://msdn.microsoft.com/en-us/library/azure/mt125356.aspx
+http://go.microsoft.com/fwlink/?LinkId{equal}618336 = https://msdn.microsoft.com/library/azure/mt269960.aspx
+http://aka.ms/websitesmigration = http://www.movemetothecloud.net/
+http://aka.ms/websitesmigrationresources = http://www.movemetothecloud.net/resources
+https://go.microsoft.com/fwLink/?LinkID{equal}282635&clcid{equal}0x409 = https://azure.microsoft.com/en-us/pricing/details/hdinsight/
+http://go.microsoft.com/fwlink/p/?LinkID{equal}397274 = https://azure.microsoft.com/en-us/documentation/articles/integration-hybrid-connection-overview/
+http://go.microsoft.com/fwlink/?LinkId{equal}507720 = https://msdn.microsoft.com/en-us/library/azure/dn783467.aspx
+http://aka.ms/scriptcentergallery = https://gallery.technet.microsoft.com/scriptcenter/site/search?f%5B0%5D.Type{equal}RootCategory&f%5B0%5D.Value{equal}WindowsAzure&f%5B0%5D.Text{equal}Windows%20Azure&f%5B1%5D.Type{equal}SubCategory&f%5B1%5D.Value{equal}WindowsAzure_automation&f%5B1%5D.Text{equal}Automation
+http://go.microsoft.com/fwlink/?LinkId{equal}512803 = https://azure.microsoft.com/en-us/documentation/articles/role-based-access-control-configure/
+http://go.microsoft.com/fwlink/?linkid{equal}390226 = https://azure.microsoft.com/en-us/documentation/articles/websites-webjobs-resources/
+http://go.microsoft.com/fwlink/p/?LinkId{equal}400880 = https://msdn.microsoft.com/en-us/library/dn690254.aspx
+http://aka.ms/azurebizapp = https://azure.microsoft.com/en-us/documentation/articles/web-sites-business-application-solution-overview/
+http://go.microsoft.com/fwlink/?LinkId{equal}534000 = https://msdn.microsoft.com/library/bfsktky3(v{equal}vs.110).aspx
+http://aka.ms/runbookauthor/cmdlet/getazurerunbookdefinition = https://msdn.microsoft.com/en-us/library/dn690269.aspx
+http://aka.ms/ampinfo = https://azure.microsoft.com/en-us/services/media-services/media-player/
+http://go.microsoft.com/fwlink/?LinkId{equal}623831 = https://azure.microsoft.com/en-us/blog/announcing-the-azure-sdk-2-7-1-for-net/
+http://go.microsoft.com/fwlink/?LinkId{equal}390465 = https://www.visualstudio.com/en-us/downloads/download-visual-studio-vs
+https://go.microsoft.com/fwlink/?LinkId{equal}532606 = http://download.microsoft.com/download/0/B/C/0BC321A4-013F-479C-84E6-4A2F90B11269/vs_community.exe
+http://go.microsoft.com/fwlink/?LinkId{equal}619108 = https://azure.microsoft.com/en-us/documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started/
+http://go.microsoft.com/fwLink/?LinkID{equal}279906&clcid{equal}0x409 = https://azure.microsoft.com/en-us/documentation/articles/web-sites-monitor/
+http://go.microsoft.com/fwlink/?LinkId{equal}617530 = https://azure.microsoft.com/en-us/services/data-factory/
+http://go.microsoft.com/fwlink/?LinkID{equal}533259 = https://msdn.microsoft.com/en-us/library/azure/microsoft.windowsazure.mediaservices.client.ilocator.update(v{equal}azure.10).aspx
+http://go.microsoft.com/fwlink/?LinkID{equal}90561 = http://www.w3.org/TR/WD-logfile.html
+http://go.microsoft.com/fwlink/?LinkId{equal}617318 = https://msdn.microsoft.com/library/cc838192(v{equal}VS.95).aspx#Silverlight_Support_for_Output_Protection
+http://go.microsoft.com/fwlink/?LinkID{equal}397979 = https://azure.microsoft.com/en-us/documentation/articles/web-sites-hybrid-connection-connect-on-premises-sql-server/
+http://aka.ms/dacpac = https://msdn.microsoft.com/en-us/library/azure/ee730904.aspx
+http://go.microsoft.com/fwlink/?LinkID{equal}256666 = https://manage.windowsazure.com/
+http://go.microsoft.com/fwlink/?LinkId{equal}510237 = http://hbase.apache.org/book.html#architecture
+http://go.microsoft.com/fwlink/?LinkId{equal}517284 = http://download.microsoft.com/download/7/1/B/71BA74D8-B9A0-4E6C-9159-A8335D54437E/vs_community.exe
+http://go.microsoft.com/fwlink/?LinkID{equal}524028&clcid{equal}0x409 = http://download.microsoft.com/download/2/2/0/220DE2F1-8AB3-474D-8F8B-C998F7C56B5D/Azure%20WebJobs%20SDK%20Cheat%20Sheet%202014.pdf
+http://go.microsoft.com/fwlink/?LinkId{equal}510087 = http://hadoop.apache.org/docs/r1.0.4/hdfs_design.html
+http://aka.ms/azlocations = https://azure.microsoft.com/en-us/regions/
+http://go.microsoft.com/fwlink/p/?linkid{equal}398592&clcid{equal}0x409 = https://msdn.microsoft.com/en-us/library/dn690516.aspx
+http://go.microsoft.com/fwlink/?LinkId{equal}532824 = https://azure.microsoft.com/en-us/blog/azure-media-services-rtmp-support-and-live-encoders/
+http://go.microsoft.com/fwlink/?LinkId{equal}390560 = https://azure.microsoft.com/en-us/documentation/articles/automation-create-runbook-from-samples/
+http://go.microsoft.com/fwlink/?LinkId{equal}306566 = https://www.visualstudio.com/en-us/downloads
+http://go.microsoft.com/fwlink/?LinkId{equal}324796#BKMK_AccountVCert = https://msdn.microsoft.com/library/azure/hh531793.aspx
+http://go.microsoft.com/fwlink/?LinkId{equal}398536 = https://portal.azure.com/
 
 # aka.ms
 http://aka.ms/runbookauthor/azure/automationaccounts = /documentation/articles/automation-configuring/
@@ -258,12 +317,12 @@ hdinsight-apache-storm-tutorial-get-started-linux = hdinsight-apache-storm-tutor
 # [link text](/documentation/articles/xxx-xxx-xxx.md#xxx-xxx)
 # [link text](/documentation/articles/xxx-xxx-xxx.md)
 \[([^\[|^\]]*)\]\s*\(/documentation/articles/([\w|\-]+)\.md/?\) = [\1](/documentation/articles/\2)
-\[([^\[|^\]]*)\]\s*\(/documentation/articles/([\w|\-]+)\.md/?(#[^\(|^\)|^/]*)/?\) = [\1](/documentation/articles/\2\4)
+\[([^\[|^\]]*)\]\s*\(/documentation/articles/([\w|\-]+)\.md/?(#[^\(|^\)|^/]*)/?\) = [\1](/documentation/articles/\2\3)
 
 # [link text]: /documentation/articles/xxx-xxx-xxx.md#xxx-xxx
 # [link text]: /documentation/articles/xxx-xxx-xxx.md
 \[([^\[|^\]]*)\]:\s*/documentation/articles/([\w|\-]+)\.md/?\s*\n = [\1]: /documentation/articles/\2\n
-\[([^\[|^\]]*)\]:\s*/documentation/articles/([\w|\-]+)\.md/?(#[^/]*)/\s*\n? = [\1]: /documentation/articles/\2\4\n
+\[([^\[|^\]]*)\]:\s*/documentation/articles/([\w|\-]+)\.md/?(#[^/]*)/\s*\n? = [\1]: /documentation/articles/\2\3\n
 
 # href="hdinsight-use-mapreduce.md"
 # href="../hdinsight-hadoop-linux-use-ssh-unix/"

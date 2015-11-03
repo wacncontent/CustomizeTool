@@ -1,0 +1,23 @@
+new docs: 18, word count: {word_count_TODO}
+articles/redis-cache/cache-configure.md
+articles/redis-cache/cache-dotnet-how-to-use-azure-redis-cache.md
+articles/redis-cache/cache-faq.md
+articles/redis-cache/cache-how-to-monitor.md
+articles/redis-cache/cache-how-to-premium-clustering.md
+articles/redis-cache/cache-how-to-premium-persistence.md
+articles/redis-cache/cache-how-to-premium-vnet.md
+articles/redis-cache/cache-how-to-scale.md
+articles/redis-cache/cache-howto-common-cache-patterns.md
+articles/redis-cache/cache-howto-manage-redis-cache-powershell.md
+articles/redis-cache/cache-java-get-started.md
+articles/redis-cache/cache-manage-cli.md
+articles/redis-cache/cache-nodejs-get-started.md
+articles/redis-cache/cache-premium-tier-intro.md
+articles/redis-cache/cache-python-get-started.md
+articles/redis-cache/cache-redis-cache-arm-provision.md
+articles/redis-cache/cache-redis-samples.md
+articles/redis-cache/cache-web-app-arm-with-redis-cache-provision.md
+
+new includes: 2
+includes/cache-deploy-parameters.md
+includes/redis-cache-service-limits.md

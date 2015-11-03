@@ -1,5 +1,7 @@
+<!-- not suitable for Mooncake -->
+
 <properties
-   pageTitle="Use SSH keys with Hadoop on Linux-based clusters from Windows | Windows Azure"
+   pageTitle="Use SSH keys with Hadoop on Linux-based clusters from Windows | Azure"
    description="Learn how to create and use SSH keys to authenticate to Linux-based HDInsight clusters. Connect clusters from Windows-based clients by using the PuTTY SSH client."
    services="hdinsight"
    documentationCenter=""
@@ -9,11 +11,11 @@
 	tags="azure-portal"/>
 
 <tags
-	ms.service="hdinsight"
-	ms.date="09/15/2015"
-	wacn.date=""/>
+   ms.service="hdinsight" 
+   ms.date="09/15/2015"
+   wacn.date=""/>
 
-#Use SSH with Linux-based Hadoop on HDInsight from Windows
+#Use SSH with Linux-based Hadoop on HDInsight from Windows (preview)
 
 > [AZURE.SELECTOR]
 - [Windows](/documentation/articles/hdinsight-hadoop-linux-use-ssh-windows)
@@ -31,7 +33,7 @@
 
 OR
 
-* [Azure CLI for Mac, Linux and Windows](/documentation/articles/xplat-cli-install).
+* [Azure CLI for Mac, Linux and Windows](/documentation/articles/xplat-cli).
 
 ##What is SSH?
 
@@ -72,7 +74,7 @@ Use the following information if you plan on using SSH keys with your cluster. I
 4. For added security, you can enter a passphrase in the **Key passphrase** field, and then type the same value in the **Confirm passphrase** field.
 
 	![passphrase](./media/hdinsight-hadoop-linux-use-ssh-windows/key.png)
-
+	
 	> [AZURE.NOTE] We strongly recommend that you use a secure passphrase for the key. However, if you forget the passphrase, there is no way to recover it.
 
 5. Click **Save private key** to save the key to a **.ppk** file. This key will be used to authenticate to your Linux-based HDInsight cluster.
@@ -81,33 +83,31 @@ Use the following information if you plan on using SSH keys with your cluster. I
 
 6. Click **Save public key** to save the key as a **.txt** file. This allows you to reuse the public key in the future when you create additional Linux-based HDInsight clusters.
 
-	> [AZURE.NOTE] The public key is also displayed at the top of PuTTYGen. You can right-click this field, copy the value, and then paste it into a form when creating a cluster using the Azure preview portal.
+	> [AZURE.NOTE] The public key is also displayed at the top of PuTTYGen. You can right-click this field, copy the value, and then paste it into a form, such as the HDInsight wizard in the Azure Management Portal.
 
 ##Create a Linux-based HDInsight cluster
 
 When creating a Linux-based HDInsight cluster, you must provide the public key created previously. From Windows-based clients, there are two ways to create a Linux-based HDInsight cluster:
 
-* **Azure preview portal** - Uses a web-based portal to create the cluster.
+* **Azure Management Portal** - Uses a web-based portal to create the cluster.
 
-* **Azure CLI for Mac, Linux and Windows** - Uses command-line commands to create the cluster.
+* **Azure Cross-Platform Command-Line Interface (xplat-cli)** - Uses command-line commands to create the cluster.
 
-Each of these methods will require the public key. For complete information on creating a Linux-based HDInsight cluster, see [Provision Linux-based HDInsight clusters](/documentation/articles/hdinsight-provision-clusters).
+Each of these methods will require the public key. For complete information on creating a Linux-based HDInsight cluster, see <a href="/documentation/articles/hdinsight-provision-clusters/" target="_blank">Provision Linux-based HDInsight clusters</a>.
 
-###Azure preview portal
+###Azure Management Portal
 
-When using the [Azure preview portal][preview-portal] to create a Linux-based HDInsight cluster, you must enter an **SSH Username**, and select to enter a **PASSWORD** or **SSH PUBLIC KEY**.
-
-If you select **SSH PUBLIC KEY**, you can either paste the public key (displayed in the __Public key for pasting into OpenSSH authorized_keys file__ field in PuttyGen,) into the __SSH PublicKey__ field, or select __Select a file__ to browse and select the file that contains the public key.
+When using the portal to create a Linux-based HDInsight cluster, you must enter a user name and password or public key into the following form:
 
 ![Image of form asking for public key](./media/hdinsight-hadoop-linux-use-ssh-windows/ssh-key.png)
 
 This creates a login for the specified user, and enables either password authentication or SSH key authentication.
 
-###Azure Command-Line Interface for Mac, Linux, and Windows
+###Azure Cross-Platform Command-Line Interface
 
-You can use the [Azure CLI for Mac, Linux and Windows](/documentation/articles/xplat-cli-install) to create a new cluster by using the `azure hdinsight cluster create` command.
+You can use the <a href="/documentation/articles/xplat-cli/" target="_brad">Azure Cross-Platform Command-Line Interface</a> to create a new cluster by using the `azure hdinsight cluster create` command.
 
-For more information on using this command, see [Provision Hadoop Linux clusters in HDInsight using custom options](/documentation/articles/hdinsight-provision-clusters).
+For more information on using this command, see <a href="/documentation/articles/hdinsight-provision-clusters/" target="_blank">Provision Hadoop Linux clusters in HDInsight using custom options</a>.
 
 ##Connect to a Linux-based HDInsight cluster
 
@@ -189,15 +189,15 @@ If you need to add more accounts to your cluster, perform the following steps:
 
 2. From an SSH session to the cluster, add the new user with the following command:
 
-		sudo adduser --disabled-password <username>
+		sudo adduser --disabled-password <username> 
 
 	This will create a new user account, but will disable password authentication.
 
 3. Create the directory and files to hold the key by using the following commands:
 
-        sudo mkdir -p /home/<username>/.ssh
-        sudo touch /home/<username>/.ssh/authorized_keys
-        sudo nano /home/<username>/.ssh/authorized_keys
+		sudo mkdir -p /home/<username>/.ssh
+		sudo touch /home/<username>/.ssh/authorized_keys
+		sudo nano /home/<username>/.ssh/authorized_keys
 
 4. When the nano editor opens, copy and paste in the contents of the public key for the new user account. Finally, use **Ctrl-X** to save the file and exit the editor.
 
@@ -226,5 +226,4 @@ Now that you understand how to authenticate by using an SSH key, learn how to us
 * [Use Pig with HDInsight](/documentation/articles/hdinsight-use-pig)
 
 * [Use MapReduce jobs with HDInsight](/documentation/articles/hdinsight-use-mapreduce)
-
-[preview-portal]: https://manage.windowsazure.cn/
+ 

@@ -1,6 +1,8 @@
+<!-- not suitable for Mooncake -->
+
 <properties
-	pageTitle="High availability features of Linux-based HDInsight (Hadoop) | Windows Azure"
-	description="Learn how Linux-based HDInsight clusters improve reliability and availability by using an additional head node. You will learn how this impacts Hadoop services such as Ambari and Hive, as well as how to individually connect to each head node using SSH."
+	pageTitle="Availability of Hadoop clusters in HDInsight | Azure"
+	description="Linux-based HDInsight clusters improve reliability and availability by using an additional head node."
 	services="hdinsight"
 	editor="cgronlun"
 	manager="paulettm"
@@ -10,7 +12,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="10/19/2015"
+	ms.date="07/24/2014"
 	wacn.date=""/>
 
 #Availability and reliability of Hadoop clusters in HDInsight
@@ -124,12 +126,16 @@ Each head node can have unique log entries, so you should check the logs on both
 
 ###Ambari
 
-> [AZURE.NOTE] Accessing log files through Ambari requires an SSH tunnel, as the web sites for the individual services are not exposed publicly on the Internet. For information on using an SSH tunnel, see [Use SSH Tunneling to access Ambari web UI, ResourceManager, JobHistory, NameNode, Oozie, and other web UI's](/documentation/articles/hdinsight-linux-ambari-ssh-tunnel).
+> [AZURE.NOTE] Accessing log files through Ambari requires an SSH tunnel, as the web sites for the individual services are not exposed publicly on the Internet. For information on using an SSH tunnel, see one of the following:
+>
+> * [Use SSH with Linux-based Hadoop on HDInsight from Linux, Unix, or OS X](/documentation/articles/hdinsight-hadoop-linux-use-ssh-unix#tunnel)
+>
+> * [Use SSH with Linux-based Hadoop on HDInsight from Windows](/documentation/articles/hdinsight-hadoop-linux-use-ssh-windows#tunnel)
 
 From the Ambari Web UI, select the service you wish to view logs for (for example, YARN,) and then use **Quick Links** to select which head node to view the logs for.
 
 ![Using quick links to view logs](./media/hdinsight-high-availability-linux/viewlogs.png)
-
+<!--
 ## How to configure the size of the head node ##
 
 The size of the head node can only be selected during cluster creation. The default size for head nodes is **A3**, which provides 4 cores, 7GB memory, and 285GB of local storage. You can find a list of the different VM sizes available for HDInsight, including the core, memory, and local storage for each, on the [HDInsight pricing page](/home/features/hdinsight/#price).
@@ -143,14 +149,14 @@ When creating a new cluster, you can specify the size of the nodes. The followin
 * **Azure CLI**: When using the `azure hdinsight cluster create` command, you can set the size of the head node using the `--headNodeSize` parameter.
 
 * **Azure PowerShell**: When using the `New-AzureHDInsightCluster` cmdlet, you can set the size of the head node using the `-HeadNodeVMSize` parameter.
-
+-->
 ##Next steps
 
 In this document you have learned how Azure HDInsight provides high availability for Hadoop. Use the following to learn more about things mentioned in this document.
 
 - [Ambari REST Reference](https://github.com/apache/ambari/blob/trunk/ambari-server/docs/api/v1/index.md)
 
-- [Install and configure the Azure CLI](/documentation/articles/xplat-cli-install)
+- [Install and configure the Azure CLI](/documentation/articles/xplat-cli)
 
 - [Install and configure Azure PowerShell](/documentation/articles/powershell-install-configure)
 
@@ -160,4 +166,4 @@ In this document you have learned how Azure HDInsight provides high availability
 
 [preview-portal]: https://manage.windowsazure.cn/
 [azure-powershell]: /documentation/articles/powershell-install-configure
-[azure-cli]: /documentation/articles/xplat-cli-install
+[azure-cli]: /documentation/articles/xplat-cli

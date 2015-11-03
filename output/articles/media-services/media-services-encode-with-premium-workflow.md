@@ -1,18 +1,20 @@
+<!-- not suitable for Mooncake -->
+
 <properties 
 	pageTitle="Advanced encoding with Media Encoder Premium Workflow" 
 	description="Learn how to encode with Media Encoder Premium Workflow. Code samples are written in C# and use the Media Services SDK for .NET." 
 	services="media-services" 
 	documentationCenter="" 
-	authors="juliako,anilmur" 
+	authors="juliako" 
 	manager="dwrede" 
 	editor=""/>
 
-<tags
-	ms.service="media-services"
-	ms.date="10/15/2015"
+<tags 
+	ms.service="media-services" 
+	ms.date="08/11/2015" 
 	wacn.date=""/>
 
-#Advanced encoding with Media Encoder Premium Workflow
+#Advanced encoding with Media Encoder Premium Workflow (public preview)
 
 **Note** Media Encoder Premium Workflow media processor discussed in this topic is not available in China. 
 
@@ -32,7 +34,7 @@ Encoding tasks for the **Media Encoder Premium Workflow** require a separate con
 
 ##Encode
 
-Encoding tasks for the **Media Encoder Premium Workflow** require a separate configuration file, called a Workflow file. These files have a .workflow extension and are created using the [Workflow Designer](/documentation/articles/media-services-workflow-designer) tool.
+Encoding tasks for the **Media Encoder Premium Workflow** require a separate configuration file, called a Workflow file. These files have a .workflow extension and are created using the [Workflow Designer](/documentation/articles/media-services-workflow-designer) tool. 
 
 
 You can also get the default workflow files [here](https://github.com/Azure/azure-media-services-samples/tree/master/Encoding%20Presets/VoD/MediaEncoderPremiumWorkfows). The folder also contains the description of these files.
@@ -264,12 +266,3 @@ The following is a complete example. For information on how to set up with Media
 ##Known issues
 
 If your input video does not contain closed captioning, the output Asset will still contain an empty TTML file. 
-
-
-##Media Services learning paths
-
-You can view AMS learning paths here:
-
-- [AMS Live Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/)
-- [AMS on Demand Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/)
-

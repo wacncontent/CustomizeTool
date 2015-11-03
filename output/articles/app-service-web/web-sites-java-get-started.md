@@ -115,6 +115,6 @@ For more information, see the [Java Developer Center](/develop/java/).
 [activate your MSDN subscriber benefits]: /pricing/1rmb-trial/
 [sign up for a trial]: /pricing/1rmb-trial/
 [Web Apps feature in Azure Websites]: /documentation/services/web-sites/
-[Try Azure Websites]: http://go.microsoft.com/fwlink/?LinkId=523751
+[Try Azure Websites]: https://tryappservice.azure.com/
 [Azure Websites and existing Azure services]: /documentation/services/web-sites/
 [Reference for navigating the Azure Management Portal]: https://manage.windowsazure.cn/

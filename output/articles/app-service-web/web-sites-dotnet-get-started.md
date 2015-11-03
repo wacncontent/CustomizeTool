@@ -47,7 +47,7 @@ You need an Azure account to complete this tutorial. You can:
 <!-- deleted by customization
 * [Activate MSDN subscriber benefits](/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F). Your MSDN subscription gives you credits every month that you can use for paid Azure services.
 
-> [AZURE.NOTE] If you want to get started with Azure Websites before you sign up for an Azure account, go to [Try Azure Websites](http://go.microsoft.com/fwlink/?LinkId=523751). There, you can immediately create a short-lived starter web app in Azure Websites—no credit card required, and no commitments.
+> [AZURE.NOTE] If you want to get started with Azure Websites before you sign up for an Azure account, go to [Try Azure Websites](https://tryappservice.azure.com/). There, you can immediately create a short-lived starter web app in Azure Websites—no credit card required, and no commitments.
 
 In this video, Scott Hanselman shows how easy it is to sign up for a trial of Windows Azure. (Duration: 1:58)
 

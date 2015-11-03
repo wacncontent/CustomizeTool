@@ -45,7 +45,7 @@ You will build a simple line-of-business Create-Read-Update-Delete (CRUD) applic
 
 [AZURE.INCLUDE [free-trial-note](../includes/free-trial-note.md)]
 
->[AZURE.NOTE] If you want to get started with Azure Websites before signing up for an Azure account, go to [Try Azure Websites](http://go.microsoft.com/fwlink/?LinkId=523751), where you can immediately create a short-lived starter web app in Azure Websites. No credit cards required; no commitments.
+>[AZURE.NOTE] If you want to get started with Azure Websites before signing up for an Azure account, go to [Try Azure Websites](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure Websites. No credit cards required; no commitments.
 
 You need the following to complete this tutorial:
 

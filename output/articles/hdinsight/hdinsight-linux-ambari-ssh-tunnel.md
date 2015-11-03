@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties
 pageTitle="Use SSH Tunneling to access Ambari web UI, ResourceManager, JobHistory, NameNode, Oozie and other web UI's"
 description="Learn how to use an SSH tunnel to securely browse web resources hosted on your Linux-based HDInsight nodes."
@@ -9,7 +11,7 @@ editor="cgronlun"/>
 
 <tags
 	ms.service="hdinsight"
-	ms.date="10/09/2015"
+	ms.date="08/18/2015"
 	wacn.date=""/>
 
 #Use SSH Tunneling to access Ambari web UI, ResourceManager, JobHistory, NameNode, Oozie, and other web UI's

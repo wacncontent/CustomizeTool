@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties
 	pageTitle="HBase tutorial: Get started with HBase in Hadoop | Windows Azure"
 	description="Follow this HBase tutorial to get started using Apache HBase with Hadoop in HDInsight. Create tables from the HBase shell and query them using Hive."
@@ -33,10 +35,10 @@ Before you begin this HBase tutorial, you must have the following:
 
 [AZURE.INCLUDE [provisioningnote](../includes/hdinsight-provisioning.md)]
 
-**To provision an HBase cluster by using the Azure preview portal**
+**To provision an HBase cluster by using the Azure Management Portal**
 
 
-1. Sign in to the [Azure Preview portal][azure-portal].
+1. Sign in to the [Azure Management Portal][azure-portal].
 2. Click **New** in the upper left corner, and then click **Data + Analytics**, **HDInsight**.
 3. Enter the following values:
 
@@ -296,9 +298,8 @@ HBase is an Apache, open-source, NoSQL database built on Hadoop that provides ra
 [azure-purchase-options]: /pricing/overview/
 [azure-member-offers]: http://azure.microsoft.com/pricing/member-offers/
 [azure-trial]: /pricing/1rmb-trial/
-[azure-portal]: https://manage.windowsazure.cn/
-[azure-create-storageaccount]: /documentation/articles/storage-create-storage-account/
-
+[azure-portal]: https://manage.windowsazure.cn
+[azure-create-storageaccount]: /documentation/articles/storage-create-storage-account
 [img-hdinsight-hbase-cluster-quick-create]: ./media/hdinsight-hbase-tutorial-get-started-linux/hdinsight-hbase-quick-create.png
 [img-hdinsight-hbase-hive-editor]: ./media/hdinsight-hbase-tutorial-get-started-linux/hdinsight-hbase-hive-editor.png
 [img-hdinsight-hbase-file-browser]: ./media/hdinsight-hbase-tutorial-get-started-linux/hdinsight-hbase-file-browser.png

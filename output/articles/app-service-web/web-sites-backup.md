@@ -188,7 +188,7 @@ You can make a manual backup at any time. During Preview, no more than 2 manual 
 * Although you can back up more than one web app to the same storage account, for ease of maintenance, consider creating a separate storage account for each web app.
 <!-- deleted by customization
 
->[AZURE.NOTE] If you want to get started with Azure Websites before signing up for an Azure account, go to [Try Azure Websites](http://go.microsoft.com/fwlink/?LinkId=523751), where you can immediately create a short-lived starter web app in Azure Websites. No credit cards required; no commitments.
+>[AZURE.NOTE] If you want to get started with Azure Websites before signing up for an Azure account, go to [Try Azure Websites](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure Websites. No credit cards required; no commitments.
 -->
 
 <a name="partialbackups"></a>

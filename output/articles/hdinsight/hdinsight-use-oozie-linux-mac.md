@@ -1,16 +1,17 @@
+<!-- not suitable for Mooncake -->
+
 <properties
-	pageTitle="Use Hadoop Oozie workflows in Linux-based HDInsight | Windows Azure"
-	description="Use Hadoop Oozie in Linux-based HDInsight. Learn how to define an Oozie workflow, and submit an Oozie job."
+	pageTitle="Use Hadoop Oozie in HDInsight | Windows Azure"
+	description="Use Hadoop Oozie in HDInsight, a big data service. Learn how to define an Oozie workflow, and submit an Oozie job."
 	services="hdinsight"
 	documentationCenter=""
 	authors="Blackmist"
 	manager="paulettm"
-	editor="cgronlun"
-	tags="azure-portal"/>
+	editor="cgronlun"/>
 
 <tags
 	ms.service="hdinsight"
-	ms.date="10/09/2015"
+	ms.date="07/24/2015"
 	wacn.date=""/>
 
 
@@ -28,9 +29,9 @@ Apache Oozie is a workflow/coordination system that manages Hadoop jobs. It is i
 
 Before you begin this tutorial, you must have the following:
 
-- **An Azure subscription**: See [Get Azure trial](/documentation/articles/get-azure-free-trial-for-testing-hadoop-in-hdinsight).
+- **An Azure subscription**
 
-- **Azure CLI**: See [Install and Configure the Azure CLI](/documentation/articles/xplat-cli-install)
+- **Azure CLI**: See [Install and Configure the Azure CLI](/documentation/articles/xplat-cli)
 
 - **An HDInsight cluster**: See [Get Started with HDInsight on Linux](/documentation/articles/hdinsight-hadoop-linux-tutorial-get-started)
 
@@ -197,7 +198,7 @@ Oozie workflows definitions are written in hPDL (a XML Process Definition Langua
 
 The following steps create the Azure SQL Database that data will be exported to.
 
-> [AZURE.IMPORTANT] Before performing these steps you must [install and configure the Azure CLI](/documentation/articles/xplat-cli-install). Installing the CLI and following the steps to create a database can be performed either from the HDInsight cluster or your local workstation.
+> [AZURE.IMPORTANT] Before performing these steps you must [install and configure the Azure CLI](/documentation/articles/xplat-cli). Installing the CLI and following the steps to create a database can be performed either from the HDInsight cluster or your local workstation.
 
 1. Use the following command to create a new Azure SQL Database server:
 
@@ -473,7 +474,11 @@ The Oozie Web UI provides a web-based view into the status of Oozie jobs on the 
 
 To access the Oozie Web UI, use the following steps:
 
-1. Create an SSH tunnel to the HDInsight cluster. For information on how to do this, see [Use SSH Tunneling to access Ambari web UI, ResourceManager, JobHistory, NameNode, Oozie, and other web UI's](/documentation/articles/hdinsight-linux-ambari-ssh-tunnel).
+1. Create an SSH tunnel to the HDInsight cluster. For information on how to do this, see one of the following:
+
+	* [Use SSH with Linux-based Hadoop on HDInsight from Linux, Unix, or OS X](/documentation/articles/hdinsight-hadoop-linux-use-ssh-unix#tunnel)
+
+	* [Use SSH with Linux-based Hadoop on HDInsight from Windows](/documentation/articles/hdinsight-hadoop-linux-use-ssh-windows#tunnel)
 
 2. Once a tunnel has been created, open the Ambari web UI in your web browser. The URI for the Ambari site is **https://CLUSTERNAME.azurehdinsight.cn**. Replace **CLUSTERNAME** with the name of your Linux-based HDInsight cluster.
 
@@ -697,11 +702,11 @@ In this tutorial, you learned how to define an Oozie workflow and how to run an 
 [apache-oozie-400]: http://oozie.apache.org/docs/4.0.0/
 [apache-oozie-332]: http://oozie.apache.org/docs/3.3.2/
 
-[powershell-download]: /downloads/
+[powershell-download]: http://www.windowsazure.cn/downloads/
 [powershell-about-profiles]: https://technet.microsoft.com/zh-cn/library/hh847857.aspx
 [powershell-install-configure]: /documentation/articles/powershell-install-configure
 [powershell-start]: http://technet.microsoft.com/zh-cn/library/hh847889.aspx
-[powershell-script]: https://technet.microsoft.com/library/ee176961.aspx
+[powershell-script]: https://technet.microsoft.com/zh-cn/library/ee176961.aspx
 
 [cindygross-hive-tables]: http://blogs.msdn.com/b/cindygross/archive/2013/02/06/hdinsight-hive-internal-and-external-tables-intro.aspx
 

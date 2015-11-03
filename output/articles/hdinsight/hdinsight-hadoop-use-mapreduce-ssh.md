@@ -1,5 +1,7 @@
+<!-- not suitable for Mooncake -->
+
 <properties
-   pageTitle="MapReduce and SSH connection with Hadoop in HDInsight | Windows Azure"
+   pageTitle="MapReduce and SSH connection with Hadoop in HDInsight | Azure"
    description="Learn how to use SSH to run MapReduce jobs using Hadoop on HDInsight."
    services="hdinsight"
    documentationCenter=""
@@ -9,9 +11,9 @@
 	tags="azure-portal"/>
 
 <tags
-	ms.service="hdinsight"
-	ms.date="09/23/2015"
-	wacn.date=""/>
+   ms.service="hdinsight" 
+   ms.date="07/06/2015"
+   wacn.date=""/>
 
 # Use MapReduce with Hadoop on HDInsight with SSH
 

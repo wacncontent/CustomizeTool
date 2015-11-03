@@ -117,7 +117,7 @@ Applications have read-only access to much (though not all) of the registry of t
 Write-access to the registry is blocked, including access to any per-user registry keys. From an application perspective, write access to the registry should never be relied upon in a cloud environment since applications can (and do) get migrated across different virtual machines. The only persistent writeable storage that can be depended on by a web application is the per-app content directory structure stored on the Web Apps UNC shares. 
 <!-- deleted by customization
 
->[AZURE.NOTE] If you want to get started with Azure Websites before signing up for an Azure account, go to [Try Azure Websites](http://go.microsoft.com/fwlink/?LinkId=523751), where you can immediately create a short-lived starter web app in Azure Websites. No credit cards required; no commitments.
+>[AZURE.NOTE] If you want to get started with Azure Websites before signing up for an Azure account, go to [Try Azure Websites](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure Websites. No credit cards required; no commitments.
 
 [AZURE.INCLUDE [app-service-web-whats-changed](../includes/app-service-web-whats-changed.md)]
 -->

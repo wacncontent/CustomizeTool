@@ -1,0 +1,562 @@
+url: https://chocolatey.org/packages/git
+error: HTTP Error 403: Forbidden
+url: http://schemas.microsoft.com/ws/2008/06/identity/claims/windowsaccountname
+error: HTTP Error 404: Not Found
+url: https://technet.microsoft.com/en-us/library/dn249912.aspx)
+error: HTTP Error 404: Not Found
+url: http://msdn.microsoft.com/library/azure/gg680302.aspx)
+error: HTTP Error 404: Not Found
+url: http://www.microsoft.com/download/details.aspx?id=40769
+error: HTTP Error 403: Forbidden
+url: http://yourdomain/MSAdaptiveStreamingPlugin-v1.0.3-osmf2.0.swf
+error: <urlopen error [Errno 11001] getaddrinfo failed>
+url: https://wamsprodglobal001acs.accesscontrol.chinacloudapi.cn"
+error: <urlopen error [Errno 11001] getaddrinfo failed>
+url: https://wamsbayclus001rest-hs.net/api/Locators('nb%3Alid%3AUUID%3A8e5a821d-2194-4d00-8884-adf979856874')",
+error: <urlopen error [Errno 11001] getaddrinfo failed>
+url: https://sendgrid.com
+error: HTTP Error 403: Forbidden
+url: http://schema.management.azure.com/schemas/2014-04-01-preview/VNET.json",
+error: HTTP Error 400: Bad Request
+url: http://blog-ndrouin.azurewebsites.net/streaming-media-terminology-explained/
+error: <urlopen error [Errno 11001] getaddrinfo failed>
+url: http://docs.hortonworks.com/HDPDocuments/HDP2/HDP-2.1-latest/bk_installing_manually_book/content/rpm-chap1-11.html
+error: HTTP Error 404: Not Found
+url: https://portalvhdsq3m25bf47d15c.blob.core.windows.net/asset-e47b43fd-05dc-4587-ac87-5916439ad07f/Windows%208_%20Cliffjumpers.mp4?st=2012-11-28T16%3A31%3A57Z&se=2014-11-28T16%3A31%3A57Z&sr=c&si=2a6dbb1e-f906-4187-a3d3-7e517192cbd0&sig=qrXYZBekqlbbYKqwovxzaVZNLv9cgyINgMazSCbdrfU%3D
+error: HTTP Error 403: Server failed to authenticate the request. Make sure the value of Authorization header is formed correctly including the signature.
+url: http://ToDoApp*&lt;your_suffix>*.azurewebsites.net/
+error: <urlopen error [Errno 11001] getaddrinfo failed>
+url: http://schemas.xmlsoap.org/ws/2009/11/swt-token-profile-1.0",
+error: HTTP Error 400: Bad Request
+url: https://media.windows.net/api/Assets('nb%3Acid%3AUUID%3Aaab7f15b-3136-4ddf-9962-e9ecb28fb9d2')"}}],
+error: HTTP Error 400: Bad Request
+url: https://management.azure.com/subscriptions/SUBSCRIPTIONID/resourcegroups/GROUPNAME/providers/microsoft.resources/deployments/DEPLOYMENTNAME?api-version=2015-01-01
+error: HTTP Error 404: Not Found
+url: https://wamsbayclus001rest-hs.cloudapp.net/api/$metadata#ContentKeyAuthorizationPolicyOptions/@Element","Id":"nb:ckpoid:UUID:1052308c-4df7-4fdb-8d21-4d2141fc2be0","Name":"","KeyDeliveryType":1,"KeyDeliveryConfiguration":
+error: HTTP Error 400: Api Version Not Specified
+url: https://{clusterDns}.azurehdinsight.net/ambari/api/v1/clusters/{clusterDns}.azurehdinsight.net/services/{servicename}/components/{componentname}
+error: <urlopen error [Errno 11001] getaddrinfo failed>
+url: https://resources.azure.com
+error: HTTP Error 401: Unauthorized
+url: https://testrest.cloudapp.net/api/Assets('nb%3Acid%3AUUID%3A910ffdc1-2e25-4b17-8a42-61ffd4b8914c')
+error: <urlopen error [Errno 11001] getaddrinfo failed>
+url: https://github.com/Azure/azure-media-player-framework/wiki/How-to-use-Azure-media-player-framework
+error: HTTP Error 404: Not Found
+url: https://<yourHBaseClusterName>.azurehdinsight.net
+error: <urlopen error [Errno 11001] getaddrinfo failed>
+url: https://wamsbayclus001rest-hs.cloudapp.net/api/Jobs('nb%3Ajid%3AUUID%3A71d2dd33-efdf-ec43-8ea1-136a110bd42c')/OutputMediaAssets
+error: HTTP Error 400: Api Version Not Specified
+url: http://az673227.vo.msecnd.net/bundles/bootstrap?v=1.0.0.25449
+error: HTTP Error 404: Not Found
+url: https://help.github.com/articles/fork-a-repo/)
+error: HTTP Error 404: Not Found
+url: https://deploy.azure.com
+error: HTTP Error 401: Unauthorized
+url: https://wamsbayclus001rest-hs.cloudapp.net/api/$metadata#Locators/@Element",
+error: HTTP Error 400: Api Version Not Specified
+url: http://go.microsoft.com/fwlink/p/?linkid=323511&clcid=0x409
+error: HTTP Error 403: Forbidden
+url: http://az673227.vo.msecnd.net/Content/css?v=1.0.0.25474
+error: HTTP Error 404: Not Found
+url: https://storagetestaccount001.blob.core.windows.net/asset-f438649c-313c-46e2-8d68-7d2550288247?sv=2012-02-12&sr=c&si=af57bdd8-6751-4e84-b403-f3c140444b54&sig=fE4btwEfZtVQFeC0Wh3Kwks2OFPQfzl5qTMW5YytiuY%3D&st=2015-02-18T16%3A45%3A53Z&se=2015-02-19T00%3A05%3A53Z",
+error: HTTP Error 403: Server failed to authenticate the request. Make sure the value of Authorization header is formed correctly including the signature.
+url: https://wamsbayclus001rest-hs.cloudapp.net/api/$metadata#ContentKeyAuthorizationPolicyOptions/@Element","Id":"nb:ckpoid:UUID:e42bbeae-de42-4077-90e9-a844f297ef70","Name":
+error: HTTP Error 400: Api Version Not Specified
+url: http://en.wikipedia.org/wiki/Plain_Old_CLR_Object)
+error: HTTP Error 404: Not Found
+url: http://www.microsoft.com/download/details.aspx?displaylang=en&id=24659
+error: HTTP Error 403: Forbidden
+url: https://wamsbayclus001rest-hs.cloudapp.net/api/$metadata#AccessPolicies/@Element",
+error: HTTP Error 400: Api Version Not Specified
+url: http://www.iab.net/media/file/VASTv3.0.pdf
+error: HTTP Error 403: Forbidden
+url: http://umbraco.com/help-and-support/customer-area/courier-2-support-and-download/developer-documentation
+error: HTTP Error 404: Not Found
+url: http://azuredeploy.net/deploybutton.png)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F201-web-app-with-redis-cache%2Fazuredeploy.json
+error: HTTP Error 500: Internal Server Error
+url: https://msdn.microsoft.com/library/hh873175(v=vs.110).aspx)
+error: HTTP Error 404: Not Found
+url: http://www.microsoft.com/download/en/details.aspx?displaylang=en&id=22
+error: HTTP Error 403: Forbidden
+url: https://CLUSTERNAME.azurehdinsight.net/api/v1/clusters/CLUSTERNAME/configurations?type=oozie-site&tag=TOPOLOGY_RESOLVED
+error: <urlopen error [Errno 11001] getaddrinfo failed>
+url: https://wamsbayclus001rest-hs.net/api/Locators('nb%3Alid%3AUUID%3A71d2dd33-efdf-ec43-8ea1-136a110bd42c')/Asset
+error: <urlopen error [Errno 11001] getaddrinfo failed>
+url: https://raw.githubusercontent.com/telmosampaio/azure-templates/master/201-IaaS-WebFrontEnd-SQLBackEnd/
+error: HTTP Error 400: Bad Request
+url: http://schemas.microsoft.com/ws/2008/06/identity/claims/authenticationinstant
+error: HTTP Error 404: Not Found
+url: http://axcient.com/blog/one-thing-can-derail-disaster-recovery-plan/
+error: HTTP Error 403: Forbidden
+url: https://mysparkcluster.azurehdinsight.net/sparkjobserver/contexts/mystreaming
+error: HTTP Error 401: Credentials required
+url: http://aka.ms/websitesmigrationresources)
+error: HTTP Error 403: Forbidden
+url: https://en.wikipedia.org/wiki/Opus_(audio_format
+error: HTTP Error 404: Not Found
+url: https://wamsbayclus001rest-hs.net/api/Assets('nb%3Acid%3AUUID%3A9bc8ff20-24fb-4fdb-9d7c-b04c7ee573a1')
+error: <urlopen error [Errno 11001] getaddrinfo failed>
+url: https://media.windows.net/api/Assets('nb%3Acid%3AUUID%3A2a22445d-1500-80c6-4b34-f1e5190d33c6')
+error: HTTP Error 400: Api Version Not Specified
+url: http://az673227.vo.msecnd.net/bundles/bootstrap?v=1.0.0.25474
+error: HTTP Error 404: Not Found
+url: https://chocolatey.org/
+error: HTTP Error 403: Forbidden
+url: http://jquery.com/
+error: HTTP Error 403: Forbidden
+url: http://schemas.xmlsoap.org/ws/2005/05/identity/claims/upn
+error: HTTP Error 404: Not Found
+url: http://www.iab.net/vmap-1.0
+error: HTTP Error 403: Forbidden
+url: http://go.microsoft.com/fwlink/?LinkID=253622&clcid=0x409
+error: HTTP Error 404: Not Found
+url: http://www.microsoft.com/download/details.aspx?id=44921
+error: HTTP Error 403: Forbidden
+url: https://wamsbayclus001rest-hs.cloudapp.net/api/$metadata#Assets",
+error: HTTP Error 400: Api Version Not Specified
+url: http://code.visualstudio.com/Docs/setup
+error: HTTP Error 500: Internal Server Error
+url: http://go.microsoft.com/fwlink/?LinkId=390521
+error: HTTP Error 403: Forbidden
+url: http://<yourCDNName>.vo.msecnd.net/MemeGenerator/Generate?top={0}&bottom={1}
+error: <urlopen error [Errno 11001] getaddrinfo failed>
+url: http://go.microsoft.com/fwlink/p/?LinkId=400772)
+error: HTTP Error 403: Forbidden
+url: http://uri.to/scriptaction.ps1"
+error: HTTP Error 400: Bad Request
+url: http://www.microsoft.com/en-us/download/details.aspx?id=48729
+error: HTTP Error 403: Forbidden
+url: http://www.microsoft.com/download/details.aspx?id=39379
+error: HTTP Error 403: Forbidden
+url: http://www.microsoft.com/download/details.aspx?id=34595
+error: HTTP Error 403: Forbidden
+url: https://wamsbayclus001rest-hs.cloudapp.net/api/$metadata#ContentKeys/@Element",
+error: HTTP Error 400: Api Version Not Specified
+url: https://media.windows.net/api/AssetDeliveryPolicies('nb%3Aadpid%3AUUID%3A92b0f6ba-3c9f-49b6-a5fa-2a8703b04ecd')
+error: HTTP Error 400: Api Version Not Specified
+url: http://wamsbayclus001rest-hs.net/52034bf6-dfae-4d83-aad3-3bd87dcb1a5d/",
+error: <urlopen error [Errno 11001] getaddrinfo failed>
+url: http://www.infochimps.com/
+error: HTTP Error 403: Forbidden
+url: https://management.core.windows.net/
+error: HTTP Error 500: Internal Server Error
+url: https://sendgrid.com/docs/Classroom/Send/api_keys.html
+error: HTTP Error 403: Forbidden
+url: https://wamsbayclus001rest-hs.net/api/Locators('nb%3Alid%3AUUID%3A52034bf6-dfae-4d83-aad3-3bd87dcb1a5d')",
+error: <urlopen error [Errno 11001] getaddrinfo failed>
+url: https://$clusterName.azurehdinsight.net:443/oozie/v2/job/$oozieJobId
+error: <urlopen error [Errno 11001] getaddrinfo failed>
+url: https://twitter.com/RickAndMSFT)
+error: HTTP Error 404: Not Found
+url: https://www.microsoft.com/playready/overview/
+error: HTTP Error 403: Forbidden
+url: http://portalvhdsq3m25bf47d15c.blob.core.windows.net/vast/PlayerTestVMAP.xml"]]
+error: HTTP Error 400: Bad Request
+url: https://$clusterName.azurehdinsight.net:443/ambari
+error: <urlopen error [Errno 11001] getaddrinfo failed>
+url: http://schemas.microsoft.com/Azure/MediaServices/KeyDelivery/TokenRestrictionTemplate/v1
+error: HTTP Error 404: Not Found
+url: http://https://technet.microsoft.com/library/dn249922.aspx?f=255&MSPPError=-2147217396
+error: <urlopen error [Errno 11001] getaddrinfo failed>
+url: http://ppe.blogs.msdn.com/b/windowsazure/archive/2013/11/18/disabling-arr-s-instance-affinity-in-windows-azure-web-sites.aspx
+error: HTTP Error 503: Service Unavailable
+url: https://wamsbayclus001rest-hs.cloudapp.net/api/Jobs('nb%3Ajid%3AUUID%3A71d2dd33-efdf-ec43-8ea1-136a110bd42c')/Tasks
+error: HTTP Error 400: Api Version Not Specified
+url: http://www.microsoft.com/download/details.aspx?id=47324&WT.mc_id=rss_alldownloads_all
+error: HTTP Error 403: Forbidden
+url: https://hdi0211v2.azurehdinsight.net/ambari/api/v1/clusters/hdi0211v2.azurehdinsight.net/hosts/headnode0",
+error: <urlopen error [Errno 11001] getaddrinfo failed>
+url: https://wamsbayclus001rest-hs.cloudapp.net/api/$metadata#Edm.String","value":"7D9BB04D9D0A4A24800CADBFEF232689E048F69C
+error: HTTP Error 400: Api Version Not Specified
+url: http://www.microsoft.com/download/details.aspx?id=39305
+error: HTTP Error 403: Forbidden
+url: https://www.microsoft.com/web/handlers/webpi.ashx/getinstaller/VWDOrVs2013AzurePack.appids
+error: HTTP Error 403: Forbidden
+url: https://wamsbayclus001rest-hs.net/api/Locators('nb%3Alid%3AUUID%3A52034bf6-dfae-4d83-aad3-3bd87dcb1a5d')/Asset
+error: <urlopen error [Errno 11001] getaddrinfo failed>
+url: https://github.com/davidebbo-test/Mvc52Application.git",
+error: HTTP Error 406: Not Acceptable
+url: https://www.microsoft.com/download/details.aspx?id=44921
+error: HTTP Error 403: Forbidden
+url: https://storagetestaccount001.blob.core.windows.net/asset-9bc8ff20-24fb-4fdb-9d7c-b04c7ee573a1",
+error: HTTP Error 400: Bad Request
+url: http://www.microsoft.com/download/details.aspx?id=39638
+error: HTTP Error 403: Forbidden
+url: http://www.microsoft.com/server-cloud/solutions/business-intelligence/default.aspx
+error: HTTP Error 403: Forbidden
+url: https://STORAGE-URI/public/MODULE-NAME.zip
+error: <urlopen error [Errno 11001] getaddrinfo failed>
+url: https://www.microsoft.com/web/handlers/webpi.ashx/getinstaller/VWDOrVs2015AzurePack.appids
+error: HTTP Error 403: Forbidden
+url: http://wamsblureg001orig-hs.cloudapp.net/5389c0c5-340f-48d7-90bc-0aab664e5f02/Windows%208_%20You%20and%20Me%20Together-m3u8-aapl.ism/Manifest(format=m3u8-aapl)
+error: HTTP Error 404: Not Found
+url: https://hdiconfigactions.blob.core.windows.net/linuxrconfigactionv01/r-installer-v01.sh",
+error: HTTP Error 400: Bad Request
+url: https://www.microsoft.com/web/handlers/webpi.ashx/getinstaller/VS2013CommunityAzurePack.appids
+error: HTTP Error 403: Forbidden
+url: http://localhost:8983/solr/collection1/select?q=*%3A*&wt=json&indent=true
+error: <urlopen error [Errno 10061] No connection could be made because the target machine actively refused it>
+url: http://nsl.cs.unb.ca/NSL-KDD/
+error: <urlopen error [Errno 11001] getaddrinfo failed>
+url: http://headnode0.mycluster-ssh.j7.internal.cloudapp.net:8080/api/v1/clusters/mycluster/services/HDFS?fields=ServiceInfo/state",
+error: <urlopen error [Errno 11001] getaddrinfo failed>
+url: http://www.microsoft.com/download/details.aspx?id=17851
+error: HTTP Error 403: Forbidden
+url: http://www.microsoft.com/download/details.aspx?id=40855
+error: HTTP Error 403: Forbidden
+url: http://go.microsoft.com/fwlink/?LinkId=246619
+error: HTTP Error 403: Forbidden
+url: http://headnode0.CLUSTERNAME-ssh.d9.internal.cloudapp.net:11000/oozie
+error: <urlopen error [Errno 11001] getaddrinfo failed>
+url: http://www.microsoft.com/visualstudio/11/downloads
+error: HTTP Error 403: Forbidden
+url: http://schemas.microsoft.com/windowsazure
+error: HTTP Error 404: Not Found
+url: http://go.microsoft.com/fwlink/?LinkId=616229
+error: HTTP Error 403: Forbidden
+url: http://www.microsoft.com/download/details.aspx?id=39622
+error: HTTP Error 403: Forbidden
+url: https://wamsbayclus001rest-hs.cloudapp.net/api/$metadata#ContentKeyAuthorizationPolicies/@Element","Id":"nb:ckpid:UUID:db4593da-f4d1-4cc5-a92a-d20eacbabee4","Name":
+error: HTTP Error 400: Api Version Not Specified
+url: http://az673227.vo.msecnd.net/bundles/modernizer?v=1.0.0.25474
+error: HTTP Error 404: Not Found
+url: https://storagetestaccount001.blob.core.windows.net/asset-71d2dd33-efdf-ec43-8ea1-136a110bd42c",
+error: HTTP Error 400: Bad Request
+url: http://www.whatismyip.com/
+error: HTTP Error 403: Forbidden
+url: https://wamsbayclus001rest-hs.cloudapp.net/api/$metadata#ContentKeyAuthorizationPolicyOptions/@Element","Id":"nb:ckpoid:UUID:e1ef6145-46e8-4ee6-9756-b1cf96328c23","Name":
+error: HTTP Error 400: Api Version Not Specified
+url: http://www.microsoft.com/web/downloads/platform.aspx
+error: HTTP Error 403: Forbidden
+url: http://www.iab.net/guidelines/508676/digitalvideo/vsuite/vmap
+error: HTTP Error 403: Forbidden
+url: http://en.wikipedia.org/wiki/Adaptive_bitrate_streaming)
+error: HTTP Error 404: Not Found
+url: http://wamsblureg001orig-hs.cloudapp.net/2e4e7d1f-b72a-4994-a406-810c796fc4fc/The%20Surface%20Movement-m3u8-aapl.ism/Manifest(format=m3u8-aapl)
+error: HTTP Error 404: Not Found
+url: https://management.azure.com/subscriptions/SUBSCRIPTIONID/resourcegroups/GROUPNAME?api-version=2015-01-01
+error: HTTP Error 404: Not Found
+url: http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name
+error: HTTP Error 404: Not Found
+url: http://&lt;site-name&gt;.scm.azurewebsite.net
+error: <urlopen error [Errno 11001] getaddrinfo failed>
+url: http://schema.management.azure.com/schemas/2014-04-01-preview/deploymentTemplate.json",
+error: HTTP Error 400: Bad Request
+url: https://media.windows.net/api/Assets('nb%3Acid%3AUUID%3A3f1fe4a2-68f5-4190-9557-cd45beccef92')"}}],
+error: HTTP Error 400: Bad Request
+url: http://testurl
+error: <urlopen error [Errno 11001] getaddrinfo failed>
+url: https://hdiconfigactions.blob.core.windows.net/linuxrconfigactionv01/r-installer-v01.sh"),
+error: HTTP Error 400: Bad Request
+url: http://schemas.microsoft.com/Azure/MediaServices/KeyDelivery/PlayReadyTemplate/v1\
+error: HTTP Error 404: Not Found
+url: http://umbraco.com/products/more-add-ons/courier-2
+error: HTTP Error 404: Not Found
+url: https://$clusterName.azurehdinsight.net:443/oozie/v2/admin/status
+error: <urlopen error [Errno 11001] getaddrinfo failed>
+url: https://media.windows.net/API/
+error: HTTP Error 400: Api Version Not Specified
+url: http://schemastore.org/schemas/json/webjobs-list.json",
+error: HTTP Error 400: Bad Request
+url: https://wamsbayclus001rest-hs.net/api/Locators('nb%3Alid%3AUUID%3A8e5a821d-2194-4d00-8884-adf979856874')/AccessPolicy
+error: <urlopen error [Errno 11001] getaddrinfo failed>
+url: https://storagetestaccount001.blob.core.windows.net/asset-71d2dd33-efdf-ec43-8ea1-136a110bd42c?st=2012-05-14T21%3A36%3A33Z&se=2012-05-15T02%3A36%3A33Z&sr=c&si=8e5a821d-2194-4d00-8884-adf979856874&sig=y75dViDpC5V8WutrXM%2B%2FGpR3uOtqmlISiNlHU1YUBOg%3D",
+error: HTTP Error 403: Server failed to authenticate the request. Make sure the value of Authorization header is formed correctly including the signature.
+url: http://az673227.vo.msecnd.net/bundles/modernizer?v=1.0.0.25449
+error: HTTP Error 404: Not Found
+url: https://wamsbayclus001rest-hs.cloudapp.net/api/$metadata#Files/@Element",
+error: HTTP Error 400: Api Version Not Specified
+url: https://zudio.co/
+error: HTTP Error 403: Forbidden
+url: http://schemas.microsoft.com/iis/media/v4/TM/TaskDefinition#
+error: HTTP Error 404: Not Found
+url: https://wamsbayclus001rest-hs.cloudapp.net/api/$metadata#MediaProcessors",
+error: HTTP Error 400: Api Version Not Specified
+url: https://s1events.azure-automation.net/webhooks?token=8ud0dSrSo%2fvHWpYbklW%3c8s0GrOKJZ9Nr7zqcS%2bIQr4c%3d
+error: HTTP Error 405: Method Not Allowed
+url: https://media.windows.net/api/$metadata#Jobs","value":[{"Id":"nb:jid:UUID:f3c43f94-327f-2347-90bb-3bf79f8559f1","Name":
+error: HTTP Error 400: Api Version Not Specified
+url: http://schemas.microsoft.com/XML-Document-Transform
+error: HTTP Error 404: Not Found
+url: http://drm-widevine-licensing.axtest.net/AcquireLicense
+error: HTTP Error 405: Method Not Allowed
+url: https://wamsbjbclus001rest-hs.chinacloudapp.cn/API/"
+error: HTTP Error 400: Bad Request
+url: http://go.microsoft.com/fwlink/?linkid=324322&clcid=0x409
+error: HTTP Error 403: Forbidden
+url: https://sendgrid.com/docs/Code_Examples/csharp.html
+error: HTTP Error 403: Forbidden
+url: http://getbootstrap.com/components/
+error: HTTP Error 403: Forbidden
+url: https://github.com/Azure/azure-sdk-tools/releases
+error: HTTP Error 404: Not Found
+url: https://hdiconfigactions.blob.core.windows.net/sparkconfigactionv03/spark-installer-v03.ps1"),
+error: HTTP Error 400: Bad Request
+url: http://az673227.vo.msecnd.net/bundles/jquery?v=1.0.0.25474
+error: HTTP Error 404: Not Found
+url: http://msdn.microsoft.com/library/dn921828.aspx
+error: <urlopen error [Errno 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond>
+url: http://www.microsoft.com/en-us/download/details.aspx?id=49150
+error: HTTP Error 403: Forbidden
+url: https://wamsbayclus001rest-hs.cloudapp.net/api/Jobs('nb%3Ajid%3AUUID%3A9bc8ff20-24fb-4fdb-9d7c-b04c7ee573a1')/InputMediaAssets
+error: HTTP Error 400: Api Version Not Specified
+url: http://www.iab.net/media/file/VPAID_2.0_Final_04-10-2012.pdf
+error: HTTP Error 403: Forbidden
+url: http://www.microsoft.com/download/details.aspx?id=24659
+error: HTTP Error 403: Forbidden
+url: https://github.com/Azure/azure-sdk-for-media-services-extensions)
+error: HTTP Error 404: Not Found
+url: https://amsaccount1.keydelivery.mediaservices.windows.net/?KID=dc88f996-2859-4cf7-a279-c52a9d6b2f04
+error: <urlopen error [Errno 11001] getaddrinfo failed>
+url: http://ToDoApp*&lt;unique_string>*master.azurewebsites.net/
+error: <urlopen error [Errno 11001] getaddrinfo failed>
+url: http://www.microsoft.com/download/details.aspx?id=47323&WT.mc_id=rss_alldownloads_all
+error: HTTP Error 403: Forbidden
+url: https://github.com/apache/storm/blob/master/storm-multilang/python/src/main/resources/resources/storm.py,
+error: HTTP Error 404: Not Found
+url: http://feedback.azure.com/forums/293565-azure-media-player/filters/my_feedback
+error: HTTP Error 404: Not Found
+url: http://www.microsoft.com/download/en/details.aspx?id=20098
+error: HTTP Error 403: Forbidden
+url: https://hdi0211v2.azurehdinsight.net/ambari/api/v1/clusters/hdi0211v2.azurehdinsight.net/services/mapreduce",
+error: <urlopen error [Errno 11001] getaddrinfo failed>
+url: http://contoso.azurewebsites.net/archive
+error: HTTP Error 404: Not Found
+url: https://drm-widevine-licensing.axtest.net/AcquireLicense
+error: HTTP Error 405: Method Not Allowed
+url: https://github.com/Azure/azure-media-player-framework
+error: HTTP Error 404: Not Found
+url: https://wamsbayclus001rest-hs.cloudapp.net/api/Operations('nb%3Aopid%3AUUID%3Acc339c28-6bba-4f7d-bee5-91ea4a0a907e')",
+error: HTTP Error 400: Bad Request
+url: https://wamsbayclus001rest-hs.cloudapp.net/api/Jobs('nb%3Ajid%3AUUID%3A71d2dd33-efdf-ec43-8ea1-136a110bd42c')",
+error: HTTP Error 400: Bad Request
+url: https://stream.twitter.com/1.1/statuses/filter.json"
+error: HTTP Error 400: Bad Request
+url: https://storagetestaccount001.blob.core.windows.net/asset-f438649c-313c-46e2-8d68-7d2550288247",
+error: HTTP Error 400: Bad Request
+url: http://openvideoplayer.sf.net/mast
+error: HTTP Error 403: Forbidden
+url: http://www.flickr.com/photos/alan-light/218493788/)
+error: HTTP Error 404: Not Found
+url: https://hdi0211v2.azurehdinsight.net/ambari/api/v1/clusters/hdi0211v2.azurehdinsight.net/hosts/workernode0",
+error: <urlopen error [Errno 11001] getaddrinfo failed>
+url: https://media.windows.net/api/ContentKeys('nb%3Akid%3AUUID%3A32e6efaf-5fba-4538-b115-9d1cefe43510')
+error: HTTP Error 400: Api Version Not Specified
+url: https://{0}/federationmetadata/2007-06/federationmetadata.xml
+error: <urlopen error [Errno 11001] getaddrinfo failed>
+url: https://mysparkcluster.azurehdinsight.net/sparkjobserver/jobs?appName=streamingjar&classPath=org.apache.spark.streaming.eventhubs.example.EventCountJobServer&context=mystreaming
+error: HTTP Error 401: Credentials required
+url: https://msdn.microsoft.com/library/ff469518.aspx
+error: [Errno 10054] An existing connection was forcibly closed by the remote host
+url: http://localhost:50111
+error: <urlopen error [Errno 10061] No connection could be made because the target machine actively refused it>
+url: https://wamsbayclus001rest-hs.cloudapp.net/api/$metadata","value":[{"name":"AccessPolicies","url":"AccessPolicies"},{"name":"Locators","url":"Locators"},{"name":"ContentKeys","url":"ContentKeys"},{"name":"ContentKeyAuthorizationPolicyOptions","url":"ContentKeyAuthorizationPolicyOptions"},{"name":"ContentKeyAuthorizationPolicies","url":"ContentKeyAuthorizationPolicies"},{"name":"Files","url":"Files"},{"name":"Assets","url":"Assets"},{"name":"AssetDeliveryPolicies","url":"AssetDeliveryPolicies"},{"name":"IngestManifestFiles","url":"IngestManifestFiles"},{"name":"IngestManifestAssets","url":"IngestManifestAssets"},{"name":"IngestManifests","url":"IngestManifests"},{"name":"StorageAccounts","url":"StorageAccounts"},{"name":"Tasks","url":"Tasks"},{"name":"NotificationEndPoints","url":"NotificationEndPoints"},{"name":"Jobs","url":"Jobs"},{"name":"TaskTemplates","url":"TaskTemplates"},{"name":"JobTemplates","url":"JobTemplates"},{"name":"MediaProcessors","url":"MediaProcessors"},{"name":"EncodingReservedUnitTypes","url":"EncodingReservedUnitTypes"},{"name":"Operations","url":"Operations"},{"name":"StreamingEndpoints","url":"StreamingEndpoints"},{"name":"Channels","url":"Channels"},{"name":"Programs","url":"Programs
+error: HTTP Error 400: Bad Request
+url: https://<clustername>.azurehdinsight.net/ambari/api/v1/clusters/<clustername>.azurehdinsight.net/configurations?type=hbase-site&tag=default&fields=items/properties/hbase.zookeeper.quorum
+error: <urlopen error [Errno 11001] getaddrinfo failed>
+url: http://schemas.microsoft.com/Azure/MediaServices/KeyDelivery/PlayReadyTemplate/v1
+error: HTTP Error 404: Not Found
+url: https://umbraco.com/help-and-support/video-tutorials.aspx
+error: HTTP Error 404: Not Found
+url: https://www.microsoft.com/download/details.aspx?id=36057
+error: HTTP Error 403: Forbidden
+url: http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier
+error: HTTP Error 404: Not Found
+url: http://aka.ms/wmf5latest
+error: HTTP Error 403: Forbidden
+url: http://www.windowsazure.com/media/encoding/Preset/2014/03
+error: HTTP Error 404: Not Found
+url: https://$clusterName.azurehdinsight.net:443/oozie/v2/
+error: <urlopen error [Errno 11001] getaddrinfo failed>
+url: http://www.microsoft.com/web/handlers/webpi.ashx/getinstaller/azurephpsdk.appids
+error: HTTP Error 403: Forbidden
+url: http://d3js.org/
+error: HTTP Error 403: Forbidden
+url: http://nsl.cs.unb.ca/NSL-KDD/KDDTrain+.arff
+error: <urlopen error [Errno 11001] getaddrinfo failed>
+url: https://wamsbayclus001rest-hs.cloudapp.net/api/$metadata#MediaProcessors","value":[{"Id":"nb:mpid:UUID:1b1da727-93ae-4e46-a8a1-268828765609","Description":
+error: HTTP Error 400: Api Version Not Specified
+url: https://www.microsoft.com/mediaplatform/sspk.aspx
+error: HTTP Error 403: Forbidden
+url: http://www.microsoft.com/server-cloud/products/windows-azure-pack/default.aspx
+error: HTTP Error 403: Forbidden
+url: http://maven.apache.org/POM/4.0.0
+error: HTTP Error 404: Not Found
+url: http://www.w3.org/2001/XMLSchema-instance"
+error: HTTP Error 403: Forbidden
+url: http://www.w3.org/2001/XMLSchema-instance\
+error: HTTP Error 404: Not Found
+url: http://getbootstrap.com/
+error: HTTP Error 403: Forbidden
+url: https://media.windows.net/api/
+error: HTTP Error 400: Api Version Not Specified
+url: http://portalvhdsq3m25bf47d15c.blob.core.windows.net/vast/PlayerTestVAST.xml"]]
+error: HTTP Error 400: Bad Request
+url: http://www.microsoft.com/download/details.aspx?id=40886
+error: HTTP Error 403: Forbidden
+url: http://devplatem.vo.msecnd.net/Sintel/Sintel_H264.ism/manifest"
+error: HTTP Error 404: Not Found
+url: http://www.redpoint.net/Products/BigData.aspx
+error: HTTP Error 403: Forbidden
+url: https://twitter.com/blowdart)
+error: HTTP Error 404: Not Found
+url: https://hdiconfigactions.blob.core.windows.net/rconfigactionv02/r-installer-v02.ps11
+error: HTTP Error 404: The specified blob does not exist.
+url: https://v1v2teststorage1.blob.core.windows.net/vhd/vm01.vhd
+error: HTTP Error 404: The specified resource does not exist.
+url: https://CLUSTERNAME.azurehdinsight.net/api/v1/clusters/CLUSTERNAME/configurations/service_config_versions?service_name=HDFS&service_config_version=1
+error: <urlopen error [Errno 11001] getaddrinfo failed>
+url: http://az673227.vo.msecnd.net/bundles/jquery?v=1.0.0.25449
+error: HTTP Error 404: Not Found
+url: http://go.microsoft.com/fwlink/?LinkID=510314
+error: HTTP Error 403: Forbidden
+url: https://$clusterName.azurehdinsight.net:443/oozie/v1/
+error: <urlopen error [Errno 11001] getaddrinfo failed>
+url: http://wamsblureg001orig-hs.cloudapp.net/aa152d7f-3c54-487b-ba07-a58e0e33280b/wp-m3u8-aapl.ism/Manifest(format=m3u8-aapl)
+error: HTTP Error 404: Not Found
+url: http://hortonworks.com/hadoop/tez/
+error: HTTP Error 302: The HTTP server returned a redirect error that would lead to an infinite loop.
+The last 30x error message was:
+Moved Temporarily
+url: http://www.microsoft.com/playready/documents/
+error: HTTP Error 403: Forbidden
+url: https://<ClusterName>.azurehdinsight.net/hbaserest/Contacts1/1000
+error: <urlopen error [Errno 11001] getaddrinfo failed>
+url: https://ghost.org/
+error: HTTP Error 403: Forbidden
+url: http://schemastore.org/schemas/json/webjob-publish-settings.json",
+error: HTTP Error 400: Bad Request
+url: http://nsl.cs.unb.ca/NSL-KDD/KDDTest+.arff
+error: <urlopen error [Errno 11001] getaddrinfo failed>
+url: https://media.windows.net/api/$metadata#Locators/@Element","Id":"nb:lid:UUID:be245661-2bbd-4fc6-b14f-9cf9a1492e5e","ExpirationDateTime":"2015-03-20T06:34:47.267872+00:00","Type":2,"Path":"http://amstest1.streaming.mediaservices.windows.net/be245661-2bbd-4fc6-b14f-9cf9a1492e5e/","BaseUri":"http://amstest1.streaming.mediaservices.windows.net","ContentAccessComponent":"be245661-2bbd-4fc6-b14f-9cf9a1492e5e","AccessPolicyId":"nb:pid:UUID:1480030d-c481-430a-9687-535c6a5cb272","AssetId":"nb:cid:UUID:cc1e445d-1500-80bd-538e-f1e4b71b465e","StartTime":"2015-02-18T06:34:47.267872+00:00","Name
+error: HTTP Error 400: Api Version Not Specified
+url: http://cdnurl.vo.msecnd.net/.../{0}?
+error: HTTP Error 404: Not Found
+url: https://msdn.microsoft.com/library/azure/microsoft.windowsazure.mediaservices.client.istreamingendpoint(v=azure.10).aspx)
+error: HTTP Error 404: Not Found
+url: https://code.visualstudio.com/Docs/
+error: HTTP Error 500: Internal Server Error
+url: https://www.microsoft.com/playready/licensing/compliance/
+error: HTTP Error 403: Forbidden
+url: http://hortonworks.com/blog/benchmarking-apache-hive-13-enterprise-hadoop/
+error: HTTP Error 302: The HTTP server returned a redirect error that would lead to an infinite loop.
+The last 30x error message was:
+Moved Temporarily
+url: http://msdn.microsoft.com/evalcenter/jj554510.aspx
+error: HTTP Error 404: Not Found
+url: https://hdi0211v2.azurehdinsight.net/ambari/api/v1/clusters/hdi0211v2.azurehdinsight.net/",
+error: <urlopen error [Errno 11001] getaddrinfo failed>
+url: https://mysparkcluster.azurehdinsight.net/sparkjobserver/contexts/mystreaming?num-cpu-cores=4&memory-per-node=1024m
+error: HTTP Error 401: Credentials required
+url: https://wamsbayclus001rest-hs.cloudapp.net/api/$metadata#Edm.String",
+error: HTTP Error 400: Api Version Not Specified
+url: http://smf.blob.core.windows.net/samples/win8/ads/vast_linear.xml"
+error: HTTP Error 400: Bad Request
+url: http://schemas.microsoft.com/ws/2008/06/identity/claims/role
+error: HTTP Error 404: Not Found
+url: http://chocolatey.org/
+error: HTTP Error 403: Forbidden
+url: https://<ClusterName>.azurehdinsight.net/hbaserest/Contacts1/schema
+error: <urlopen error [Errno 11001] getaddrinfo failed>
+url: http://getfoxyproxy.org/,
+error: HTTP Error 404: Not Found
+url: http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceConfiguration
+error: HTTP Error 404: Not Found
+url: http://mywebsite.azurewebsites.net"
+error: <urlopen error [Errno 11001] getaddrinfo failed>
+url: https://msdn.microsoft.com/library/azure/dn783468.aspx)
+error: HTTP Error 404: Not Found
+url: https://<HBaseClusterName>.azurehdinsight.net/
+error: <urlopen error [Errno 11001] getaddrinfo failed>
+url: http://umbraco.com/help-and-support/video-tutorials/getting-started/working-with-webmatrix
+error: HTTP Error 404: Not Found
+url: http://hortonworks.com/hadoop/mahout/
+error: HTTP Error 302: The HTTP server returned a redirect error that would lead to an infinite loop.
+The last 30x error message was:
+Moved Temporarily
+url: https://wamsbayclus001rest-hs.net/api/Locators('nb%3Alid%3AUUID%3A52034bf6-dfae-4d83-aad3-3bd87dcb1a5d')/AccessPolicy
+error: <urlopen error [Errno 11001] getaddrinfo failed>
+url: https://code.visualstudio.com/Docs/ASPnet5#_installing-aspnet-5-and-dnx
+error: HTTP Error 500: Internal Server Error
+url: https://msdn.microsoft.com/library/azure/dn690257.aspx)
+error: HTTP Error 404: Not Found
+url: https://wamsbayclus001rest-hs.cloudapp.net/api/ContentKeyAuthorizationPolicyOptions('nb%3Ackpoid%3AUUID%3A57829b17-1101-4797-919b-f816f4a007b7')
+error: HTTP Error 400: Api Version Not Specified
+url: https://media.windows.net/api/$metadata#AccessPolicies/@Element","Id":"nb:pid:UUID:69c80d98-7830-407f-a9af-e25f4b0d3e5f","Created":"2015-02-18T06:52:09.8862191Z","LastModified":"2015-02-18T06:52:09.8862191Z","Name":
+error: HTTP Error 400: Api Version Not Specified
+url: https://hdi0211v2.azurehdinsight.net/ambari/api/v1/clusters/hdi0211v2.azurehdinsight.net/services/hdfs",
+error: <urlopen error [Errno 11001] getaddrinfo failed>
+url: https://media.windows.net/api/$metadata#AssetDeliveryPolicies/@Element",
+error: HTTP Error 400: Api Version Not Specified
+url: https://wamsbayclus001rest-hs.cloudapp.net/api/$metadata#ContentKeyAuthorizationPolicyOptions/@Element","Id":"nb:ckpoid:UUID:57829b17-1101-4797-919b-f816f4a007b7","Name":"policy","KeyDeliveryType":2,"KeyDeliveryConfiguration":"","Restrictions":[{"Name":
+error: HTTP Error 400: Api Version Not Specified
+url: http://az673227.vo.msecnd.net/Content/css?v=1.0.0.25449
+error: HTTP Error 404: Not Found
+url: http://www.example.com\
+error: <urlopen error [Errno 11001] getaddrinfo failed>
+url: http://[name].antdf0.antares-test.windows-int.net
+error: <urlopen error [Errno 11001] getaddrinfo failed>
+url: https://media.windows.net/
+error: HTTP Error 400: Api Version Not Specified
+url: https://www.microsoft.com/download/details.aspx?id=42629
+error: HTTP Error 403: Forbidden
+url: http://azure.microsoft.com/gallery/store/memcachier/memcachier/
+error: HTTP Error 404: Not Found
+url: https://hdiconfigactions.blob.core.windows.net/
+error: HTTP Error 400: Value for one of the query parameters specified in the request URI is invalid.
+url: http://testacs.com
+error: <urlopen error [Errno 11002] getaddrinfo failed>
+url: http://wamsblureg001orig-hs.cloudapp.net/6651424c-a9d1-419b-895c-6993f0f48a26/The%20making%20of%20Microsoft%20Surface-m3u8-aapl.ism/Manifest(format=m3u8-aapl)
+error: HTTP Error 404: Not Found
+url: http://www.freshconsulting.com/building-data-import-tool-azure-webjobs/
+error: HTTP Error 403: Forbidden
+url: https://www.microsoft.com/web/handlers/webpi.ashx/getinstaller/VS2015CommunityAzurePack.appids
+error: HTTP Error 403: Forbidden
+url: http://schemas.microsoft.com/Azure/MediaServices/KeyDelivery/TokenRestrictionTemplate/v1\
+error: HTTP Error 404: Not Found
+url: http://go.microsoft.com/fwlink/?linkid=518003&clcid=0x409
+error: HTTP Error 403: Forbidden
+url: https://$clusterName.azurehdinsight.net:443/oozie/v2/jobs
+error: <urlopen error [Errno 11001] getaddrinfo failed>
+url: https://$clusterName.azurehdinsight.net:443/oozie/v2/job/
+error: <urlopen error [Errno 11001] getaddrinfo failed>
+url: http://code.visualstudio.com//Docs/whyvscode
+error: HTTP Error 500: Internal Server Error
+url: http://git-scm.com/%20target="_blank
+error: HTTP Error 404: Not Found
+url: https://wamsbayclus001rest-hs.cloudapp.net/api/
+error: HTTP Error 400: Api Version Not Specified
+url: http://azure.microsoft.com/documentatgion/services/redis-cache/
+error: HTTP Error 404: Not Found
+url: http://asp.net/identity/)
+error: HTTP Error 404: Not Found
+url: https://wamsbayclus001rest-hs.cloudapp.net/api/ContentKeys('nb%3Akid%3AUUID%3A01e6ea36-2285-4562-91f1-82c45736047c')
+error: HTTP Error 400: Api Version Not Specified
+url: http://schemas.microsoft.com/2003/10/Serialization/
+error: HTTP Error 404: Not Found
+url: http://azure.microsoft.com/gallery/store/garantiadata/memcached/
+error: HTTP Error 404: Not Found
+url: https://wamsprodglobal001acs.accesscontrol.windows.net/v2/OAuth2-13
+error: HTTP Error 400: Bad Request
+url: http://<yourCDNName>.vo.msecnd.net/{0}?v=
+error: <urlopen error [Errno 11001] getaddrinfo failed>
+url: http://<yourCDNName>.vo.msecnd.net/bundles/jquery?v=<W.X.Y.Z>")
+error: <urlopen error [Errno 11001] getaddrinfo failed>
+url: https://wamsbayclus001rest-hs.cloudapp.net/api/$metadata#ContentKeyAuthorizationPolicies/@Element","Id":"nb:ckpid:UUID:cc3c64a8-e2fc-4e09-bf60-ac954251a387","Name":
+error: HTTP Error 400: Api Version Not Specified
+url: http://www.microsoft.com/download/details.aspx?id=42666
+error: HTTP Error 403: Forbidden
+url: http://ecn.channel9.msdn.com/o9/content/smf/smoothcontent/elephantsdream/Elephants_Dream_1024-h264-st-aac.ism/manifest
+error: HTTP Error 504: Gateway Timeout
+url: http://schemas.microsoft.com/ServiceHosting/2011/07/NetworkConfiguration
+error: HTTP Error 404: Not Found
+url: https://wamsbayclus001rest-hs.cloudapp.net/api/$metadata#Assets/@Element",
+error: HTTP Error 400: Api Version Not Specified
+url: http://maven.apache.org/guides/introduction/introduction-to-the-pom.html)
+error: HTTP Error 404: Not Found
+url: http://www.microsoft.com/web/platform/database.aspx
+error: HTTP Error 403: Forbidden
+url: https://newrelic.com/docs/site/geography
+error: HTTP Error 404: Not Found
+url: https://manage.azure.com
+error: <urlopen error [Errno 11001] getaddrinfo failed>

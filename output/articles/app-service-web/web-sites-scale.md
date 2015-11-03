@@ -269,7 +269,7 @@ Depending on the web app's mode, the following developer-oriented features are a
 - For detailed information about all of the remaining features in the App Service plans, including pricing and features of interest to all users (including developers), see [Azure Websites Pricing Details](/home/features/web-site/#price).
 <!-- deleted by customization
 
->[AZURE.NOTE] If you want to get started with Azure Websites before signing up for an Azure account, go to [Try Azure Websites](http://go.microsoft.com/fwlink/?LinkId=523751), where you can immediately create a short-lived starter web app in Azure Websites. No credit cards required; no commitments.
+>[AZURE.NOTE] If you want to get started with Azure Websites before signing up for an Azure account, go to [Try Azure Websites](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure Websites. No credit cards required; no commitments.
 -->
 
 <a name="Next Steps"></a>	

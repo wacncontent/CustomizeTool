@@ -28,6 +28,9 @@
     <Compile Include="fileListGen.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="linkChecker.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="mdReader.py" />
     <Compile Include="ruleReader.py" />
     <Compile Include="fileCompare.py">
@@ -51,16 +54,25 @@
     </Interpreter>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="lastMonth\" />
+    <Folder Include="output\newDocList\" />
+    <Folder Include="output\updatedDocList\" />
+    <Folder Include="zh-cn-output\" />
     <Folder Include="output\" />
     <Folder Include="output\include\" />
     <Folder Include="output\test\" />
     <Folder Include="test\" />
+    <Folder Include="zh-cn-output\articles\" />
+    <Folder Include="zh-cn-output\includes\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="mdFile.md" />
     <Content Include="modified.txt" />
+    <Content Include="newLinks.txt" />
+    <Content Include="oldLinks.txt" />
     <Content Include="output\test\active-directory-aadconnect-account-summary.md" />
     <Content Include="output\test\keyword_test.md" />
+    <Content Include="README.md" />
     <Content Include="zh-cn-rule.txt" />
     <Content Include="en-us-rules.txt" />
     <Content Include="setting.json" />
@@ -69,6 +81,7 @@
     <Content Include="test\keyword_test.md" />
     <Content Include="test\keyword_test.md.bak" />
     <Content Include="untracked.txt" />
+    <Content Include="zh-cn-setting.json" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

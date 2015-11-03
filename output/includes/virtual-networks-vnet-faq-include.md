@@ -253,13 +253,13 @@ No. You cannot associate ACLs or NSGs to VNets. However, ACLs can be defined on 
 
 ### Is there a VNet security whitepaper?
 
-Yes. You can download it [here](http://go.microsoft.com/fwlink/?LinkId=386611).
+Yes. You can download it [here](http://download.microsoft.com/download/4/3/9/43902EC9-410E-4875-8800-0788BE146A3D/Windows%20Azure%20Network%20Security%20Whitepaper%20-%20FINAL.docx).
 
 ## APIs, Schemas, and Tools
 
 ### Can I manage VNets from code?
 
-Yes. You can use REST APIs to manage VNets and cross-premises connectivity. More information can be found [here](http://go.microsoft.com/fwlink/?LinkId=296833).
+Yes. You can use REST APIs to manage VNets and cross-premises connectivity. More information can be found [here](https://msdn.microsoft.com/library/azure/ee460799.aspx).
 
 ### Is there tooling support for VNets?
 

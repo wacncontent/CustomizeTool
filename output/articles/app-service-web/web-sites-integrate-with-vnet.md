@@ -1,26 +1,25 @@
+<!-- not suitable for Mooncake -->
+
 <properties 
 	pageTitle="Integrate a web app with an Azure Virtual Network" 
 	description="Shows you how to connect an Azure web app in Azure Websites to a new or existing Azure virtual network" 
-	services="app-service" 
+	services="app-service\web" 
 	documentationCenter="" 
 	authors="cephalin" 
 	manager="wpickett" 
-	editor="jimbe"/>
+	editor=""/>
 
-<tags
-	ms.service="app-service"
-	ms.date="09/16/2015"
+<tags 
+	ms.service="app-service-web" 
+	ms.date="08/11/2015" 
 	wacn.date=""/>
 
 # Integrate a web app with an Azure Virtual Network #
-
 This document describes the virtual network integration preview feature and shows how to set it up with Web Apps in [Azure Websites](/documentation/services/web-sites/).  If you are unfamiliar with Azure Virtual Networks, this is a capability that will allow you to build hybrid solutions with your Azure and on-premise resources.  
 
 This integration gives your web app access to resources in your virtual network but does not grant access to your web app from the virtual network.  Some standard scenarios are where your web app needs access to a database or web services that are running in virtual machines in your virtual network or even in your own data center.  It does not allow you to mount a drive.  It also currently does not support enabling integration with authentication systems in your virtual network.  The feature is in Preview though and will continue to be improved before reaching GA.
 
 For more details on Azure Virtual Networks see Virtual Network Overview about the use cases and benefits of an Azure Virtual Network.
-
-[AZURE.INCLUDE [app-service-web-to-api-and-mobile](../includes/app-service-web-to-api-and-mobile.md)]
 
 ## Getting started ##
 Here are some things to keep in mind before connecting your web app to a virtual network.
