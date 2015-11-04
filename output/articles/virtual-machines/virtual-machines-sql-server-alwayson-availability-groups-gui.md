@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Configure AlwaysOn Availability Groups (GUI) | Microsoft Azure"
+	pageTitle="Configure AlwaysOn Availability Groups (GUI) | Windows Azure"
 	description="Create an AlwaysOn Availability Group with Azure Virtual Machines. This tutorial primarily uses the user interface and tools rather than scripting."
 	services="virtual-machines"
 	documentationCenter="na"
@@ -9,27 +9,23 @@
 	tags="azure-service-management" />
 <tags
 	ms.service="virtual-machines"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.tgt_pltfrm="vm-windows-sql-server"
-	ms.workload="infrastructure-services"
 	ms.date="08/12/2015"
-	ms.author="jroth" />
+	wacn.date=""/>
 
 # Configure AlwaysOn Availability Groups in Azure VM (GUI)
 
 > [AZURE.SELECTOR]
-- [Portal](virtual-machines-sql-server-alwayson-availability-groups-gui.md)
-- [PowerShell](virtual-machines-sql-server-alwayson-availability-groups-powershell.md)
+- [Portal](/documentation/articles/virtual-machines-sql-server-alwayson-availability-groups-gui)
+- [PowerShell](/documentation/articles/virtual-machines-sql-server-alwayson-availability-groups-powershell)
 
 <br/>
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
 
 
 This end-to-end tutorial shows you how to implement Availability Groups using SQL Server AlwaysOn running on Azure virtual machines.
 
->[AZURE.NOTE] In the Azure Management Portal, there is a new gallery setup for AlwaysOn Availability Groups with a Listener. This configures everything you need for AlwaysOn Availability Groups automatically. For more information, see [SQL Server AlwaysOn Offering in Microsoft Azure Portal Gallery](http://blogs.technet.com/b/dataplatforminsider/archive/2014/08/25/sql-server-alwayson-offering-in-microsoft-azure-portal-gallery.aspx). To use PowerShell, see the tutorial of the same scenario at [Configure AlwaysOn Availability Groups in Azure with PowerShell](virtual-machines-sql-server-alwayson-availability-groups-powershell.md).
+>[AZURE.NOTE] In the Azure Management Portal, there is a new gallery setup for AlwaysOn Availability Groups with a Listener. This configures everything you need for AlwaysOn Availability Groups automatically. For more information, see [SQL Server AlwaysOn Offering in Windows Azure Management Portal Gallery](http://blogs.technet.com/b/dataplatforminsider/archive/2014/08/25/sql-server-alwayson-offering-in-microsoft-azure-portal-gallery.aspx). To use PowerShell, see the tutorial of the same scenario at [Configure AlwaysOn Availability Groups in Azure with PowerShell](/documentation/articles/virtual-machines-sql-server-alwayson-availability-groups-powershell).
 
 At the end of the tutorial, your SQL Server AlwaysOn solution in Azure will consist of the following elements:
 
@@ -53,15 +49,15 @@ This tutorial assumes the following:
 
 - You already have an Azure account.
 
-- You already know how to provision a SQL Server VM from the virtual machine gallery using the GUI. For more information, see [Provisioning a SQL Server Virtual Machine on Azure](virtual-machines-provision-sql-server.md)
+- You already know how to provision a SQL Server VM from the virtual machine gallery using the GUI. For more information, see [Provisioning a SQL Server Virtual Machine on Azure](/documentation/articles/virtual-machines-provision-sql-server)
 
-- You already have a solid understanding of AlwaysOn Availability Groups. For more information, see [AlwaysOn Availability Groups (SQL Server)](https://msdn.microsoft.com/library/hh510230.aspx).
+- You already have a solid understanding of AlwaysOn Availability Groups. For more information, see [AlwaysOn Availability Groups (SQL Server)](https://msdn.microsoft.com/zh-cn/library/hh510230.aspx).
 
->[AZURE.NOTE] If you are interested in using AlwaysOn Availability Groups with SharePoint, also see [Configure SQL Server 2012 AlwaysOn Availability Groups for SharePoint 2013](https://technet.microsoft.com/library/jj715261.aspx).
+>[AZURE.NOTE] If you are interested in using AlwaysOn Availability Groups with SharePoint, also see [Configure SQL Server 2012 AlwaysOn Availability Groups for SharePoint 2013](https://technet.microsoft.com/zh-cn/library/jj715261.aspx).
 
 ## Create the Virtual Network and Domain Controller Server
 
-You begin with a new Azure trial account. Once you have finished your account setup, you should be in the home screen of the Azure portal.
+You begin with a new Azure trial account. Once you have finished your account setup, you should be in the home screen of the Azure Management Portal.
 
 1. Click the **New** button at the lower-left corner of the page, as shown below.
 
@@ -75,7 +71,7 @@ You begin with a new Azure trial account. Once you have finished your account se
 
 	|Page|Settings|
 |---|---|
-|Virtual Network Details|**NAME = ContosoNET**<br/>**REGION = West US**|
+|Virtual Network Details|**NAME = ContosoNET**<br/>**REGION = China North**|
 |DNS Servers and VPN Connectivity|None|
 |Virtual Network Address Spaces|Settings are shown in the screenshot below: ![Create Virtual Network](./media/virtual-machines-sql-server-alwayson-availability-groups-gui/IC784620.png)|
 
@@ -92,7 +88,7 @@ You begin with a new Azure trial account. Once you have finished your account se
 |Virtual machine configuration|**CLOUD SERVICE** = Create a new cloud service<br/>**CLOUD SERVICE DNS NAME** = A unique cloud service name<br/>**DNS NAME** = A unique name (ex: ContosoDC123)<br/>**REGION/AFFINITY GROUP/VIRTUAL NETWORK** = ContosoNET<br/>**VIRTUAL NETWORK SUBNETS** = Back(10.10.2.0/24)<br/>**STORAGE ACCOUNT** = Use an automatically generated storage account<br/>**AVAILABILITY SET** = (None)|
 |Virtual machine options|Use defaults|
 
-Once you finish configuring the new VM, wait for the VM to be provsioned. This process takes some time to complete, and if you click to the **Virtual Machine** tab in the Azure portal, you can see ContosoDC cycling states from **Starting (Provisioning)** to **Stopped**, **Starting**, **Running (Provisioning)**, and finally **Running**.
+Once you finish configuring the new VM, wait for the VM to be provsioned. This process takes some time to complete, and if you click to the **Virtual Machine** tab in the Azure Management Portal, you can see ContosoDC cycling states from **Starting (Provisioning)** to **Stopped**, **Starting**, **Running (Provisioning)**, and finally **Running**.
 
 The DC server is now successfully provisioned. Next, you will configure the Active Directory domain on this DC server.
 
@@ -116,7 +112,7 @@ In the following steps, you configure the ContosoDC machine as a domain controll
 
 1. Select the **Active Directory Domain Services** and **DNS Server** roles. When prompted, add any additional features required by these roles.
 
-	>[AZURE.NOTE] You will get a validation warning that there is no static IP address. If you are testing the configuration, click continue. For production scenarios [use PowerShell to set the static IP address of the domain controller machine](./virtual-network/virtual-networks-reserved-private-ip.md).
+	>[AZURE.NOTE] You will get a validation warning that there is no static IP address. If you are testing the configuration, click continue. For production scenarios [use PowerShell to set the static IP address of the domain controller machine](./networking/virtual-networks-reserved-private-ip.md).
 
 	![Add Roles Dialog](./media/virtual-machines-sql-server-alwayson-availability-groups-gui/IC784624.png)
 
@@ -192,7 +188,7 @@ Now that you have finished configuring Active Directory and the user objects, yo
 
 ## Create the SQL Server VMs
 
-Next, create three VMs, including a WSFC cluster node and two SQL Server VMs. To create each of the VMs, go back to the Azure Portal, click **New**, **Compute**, **Virtual Machine**, and then **From Gallery**. Then use the templates in the following table to help you create the VMs.
+Next, create three VMs, including a WSFC cluster node and two SQL Server VMs. To create each of the VMs, go back to the Azure Management Portal, click **New**, **Compute**, **Virtual Machine**, and then **From Gallery**. Then use the templates in the following table to help you create the VMs.
 
 |Page|VM1|VM2|VM3|
 |---|---|---|---|
@@ -323,7 +319,7 @@ Follow the steps below to accomplish these tasks that fully configures the clust
 |Access Point for Administering the Cluster|Type **Cluster1** in **Cluster Name**|
 |Confirmation|Use defaults unless you are using Storage Spaces. See the note following this table.|
 
-	>[AZURE.WARNING] If you are using [Storage Spaces](https://technet.microsoft.com/library/hh831739), which groups multiple disks into storage pools, you must uncheck the **Add all eligible storage to the cluster** checkbox on the **Confirmation** page. If you do not uncheck this option, the virtual disks will be detached during the clustering process. As a result, they will also not appear in Disk Manager or Explorer until the storage spaces are removed from cluster and reattached using PowerShell.
+	>[AZURE.WARNING] If you are using [Storage Spaces](https://technet.microsoft.com/zh-cn/library/hh831739), which groups multiple disks into storage pools, you must uncheck the **Add all eligible storage to the cluster** checkbox on the **Confirmation** page. If you do not uncheck this option, the virtual disks will be detached during the clustering process. As a result, they will also not appear in Disk Manager or Explorer until the storage spaces are removed from cluster and reattached using PowerShell.
 
 1. In the left-pane, expand **Failover Cluster Manager**, and then click **Cluster1.corp.contoso.com**.
 
@@ -347,7 +343,7 @@ Follow the steps below to accomplish these tasks that fully configures the clust
 
 1. In the **Confirmation** page, click **Next** to add the nodes.
 
-	>[AZURE.WARNING] If you are using [Storage Spaces](https://technet.microsoft.com/library/hh831739), which groups multiple disks into storage pools, you must uncheck the **Add all eligible storage to the cluster** checkbox. If you do not uncheck this option, the virtual disks will be detached during the clustering process. As a result, they will also not appear in Disk Manager or Explorer until the storage spaces are removed from cluster and reattached using PowerShell.
+	>[AZURE.WARNING] If you are using [Storage Spaces](https://technet.microsoft.com/zh-cn/library/hh831739), which groups multiple disks into storage pools, you must uncheck the **Add all eligible storage to the cluster** checkbox. If you do not uncheck this option, the virtual disks will be detached during the clustering process. As a result, they will also not appear in Disk Manager or Explorer until the storage spaces are removed from cluster and reattached using PowerShell.
 
 1. Once the nodes are added to the cluster, click **Finish**. Failover Cluster Manager should now show that your cluster has three nodes and list them in the **Nodes** container.
 
@@ -515,7 +511,7 @@ You are now ready to configure an availability group. Below is an outline of wha
 
 	![New AG Wizard, Select Initial Data Synchronization](./media/virtual-machines-sql-server-alwayson-availability-groups-gui/IC665529.gif)
 
-1. In the **Validation** page, click **Next**. This page should look similar to below. There is a warning for the listener configuration because you have not configured an availability group listener. You can ignore this warning, because this tutorial does not configure a listener. To configure the listener after completing this tutorial, see [Configure an ILB listener for AlwaysOn Availability Groups in Azure](virtual-machines-sql-server-configure-ilb-alwayson-availability-group-listener.md).
+1. In the **Validation** page, click **Next**. This page should look similar to below. There is a warning for the listener configuration because you have not configured an availability group listener. You can ignore this warning, because this tutorial does not configure a listener. To configure the listener after completing this tutorial, see [Configure an ILB listener for AlwaysOn Availability Groups in Azure](/documentation/articles/virtual-machines-sql-server-configure-ilb-alwayson-availability-group-listener).
 
 	![New AG Wizard, Validation](./media/virtual-machines-sql-server-alwayson-availability-groups-gui/IC665530.gif)
 
@@ -537,9 +533,9 @@ You are now ready to configure an availability group. Below is an outline of wha
 
 	![AG in Failover Cluster Manager](./media/virtual-machines-sql-server-alwayson-availability-groups-gui/IC665534.gif)
 
->[AZURE.WARNING] Do not try to fail over the availability group from the Failover Cluster Manager. All failover operations should be performed from within **AlwaysOn Dashboard** in SSMS. For more information, see [Restrictions on Using The WSFC Failover Cluster Manager with Availability Groups](https://msdn.microsoft.com/library/ff929171.aspx).
+>[AZURE.WARNING] Do not try to fail over the availability group from the Failover Cluster Manager. All failover operations should be performed from within **AlwaysOn Dashboard** in SSMS. For more information, see [Restrictions on Using The WSFC Failover Cluster Manager with Availability Groups](https://msdn.microsoft.com/zh-cn/library/ff929171.aspx).
 
 ## Next Steps
-You have now successfully implemented SQL Server AlwaysOn by creating an availability group in Azure. To configure a listener for this availability group, see [Configure an ILB listener for AlwaysOn Availability Groups in Azure](virtual-machines-sql-server-configure-ilb-alwayson-availability-group-listener.md).
+You have now successfully implemented SQL Server AlwaysOn by creating an availability group in Azure. To configure a listener for this availability group, see [Configure an ILB listener for AlwaysOn Availability Groups in Azure](/documentation/articles/virtual-machines-sql-server-configure-ilb-alwayson-availability-group-listener).
 
-For other information about using SQL Server in Azure, see [SQL Server on Azure Virtual Machines](../articles/virtual-machines/virtual-machines-sql-server-infrastructure-services.md).
+For other information about using SQL Server in Azure, see [SQL Server on Azure Virtual Machines](/documentation/articles/virtual-machines-sql-server-infrastructure-services).

@@ -1,5 +1,5 @@
 <properties
- pageTitle="Virtual machine sizes | Microsoft Azure"
+ pageTitle="Virtual machine sizes | Windows Azure"
  description="Lists the different sizes for virtual machines and their capacities."
  services="virtual-machines"
  documentationCenter=""
@@ -9,13 +9,9 @@
  tags="azure-resource-manager,azure-service-management"/>
 
 <tags
-ms.service="virtual-machines"
- ms.devlang="na"
- ms.topic="article"
- ms.tgt_pltfrm="vm-multiple"
- ms.workload="infrastructure-services"
- ms.date="09/02/2015"
- ms.author="cynthn"/>
+	ms.service="virtual-machines"
+	ms.date="09/02/2015"
+	wacn.date=""/>
 
 # Sizes for virtual machines
 
@@ -25,7 +21,7 @@ This article describes the available sizes and options for the virtual machine-b
 
 Azure Virtual Machines and Cloud Services are two of several types of compute resources offered by Azure. For explanations, see [Compute hosting options provided by Azure](http://go.microsoft.com/fwlink/p/?LinkID=311926).
 
->[AZURE.NOTE] To see related Azure limits, see [Azure subscription and service limits, quotas, and constraints](../azure-subscription-service-limits.md).
+>[AZURE.NOTE] To see related Azure limits, see [Azure subscription and service limits, quotas, and constraints](/documentation/articles/azure-subscription-service-limits).
 
 ## Planning considerations
 
@@ -36,17 +32,17 @@ Virtual machines are available in two tiers: basic and standard. Both types offe
 *   Dv2-series, a follow-on to the original D-series, features a more powerful CPU. The Dv2-series CPU is about 35% faster than the D-series CPU. It is based on the latest generation 2.4 GHz Intel Xeon® E5-2673 v3 (Haswell) processor, and with the Intel Turbo Boost Technology 2.0, can go up to 3.2 GHz. The Dv2-series has the same memory and disk configurations as the D-series.
 
     Dv2-series regional availability will be based on this schedule:
-        Oct'15: US East 2, US Central, US North Central, US West
-        Nov'15: US East, Europe North, Europe West
+        Oct'15: China East 2, US Central, US North Central, US West
+        Nov'15: China East, Europe North, Europe West
         Jan'16: US South Central, APAC East, APAC Southeast, Japan East, Japan West,
                 Australia East, Australia Southeast, Brazil South
 
 
 *   G-series VMs offer the biggest size and best performance and run on hosts that have Intel Xeon E5 V3 family processors.
 
-*   DS-series and GS-series VMs can use Premium Storage, which provides high-performance, low-latency storage for I/O intensive workloads. These VMs use solid-state drives (SSDs) to host a virtual machine’s disks and also provide a local SSD disk cache. Premium Storage is available in certain regions. For details, see [Premium Storage: High-performance storage for Azure virtual machine workloads](../storage-premium-storage-preview-portal.md).
+*   DS-series and GS-series VMs can use Premium Storage, which provides high-performance, low-latency storage for I/O intensive workloads. These VMs use solid-state drives (SSDs) to host a virtual machine’s disks and also provide a local SSD disk cache. Premium Storage is available in certain regions. For details, see [Premium Storage: High-performance storage for Azure virtual machine workloads](/documentation/articles/storage-premium-storage-preview-portal).
 
-The size of the virtual machine affects the pricing. The size also affects the processing, memory, and storage capacity of the virtual machine. Storage costs are calculated separately based on used pages in the storage account. For details, see [Virtual Machines Pricing Details](http://azure.microsoft.com/pricing/details/virtual-machines/) and [Azure Storage Pricing](http://azure.microsoft.com/pricing/details/storage/). For more details about storage for VMss, see [About disks and VHDs for virtual machines ](virtual-machines-disks-vhds.md).
+The size of the virtual machine affects the pricing. The size also affects the processing, memory, and storage capacity of the virtual machine. Storage costs are calculated separately based on used pages in the storage account. For details, see [Virtual Machines Pricing Details](/home/features/virtual-machines/#price) and [Azure Storage Pricing](/home/features/storage/#price). For more details about storage for VMss, see [About disks and VHDs for virtual machines ](/documentation/articles/virtual-machines-disks-vhds).
 
 The following considerations might help you decide on a size:
 
@@ -56,7 +52,7 @@ The following considerations might help you decide on a size:
 
 *   Select a virtual machine that has four or eight CPU cores when using SQL Server Enterprise Edition.  
 
-*   Some of the physical hosts in Azure data centers may not support larger virtual machine sizes, such as A5 – A11\. As a result, you may see the error message **Failed to configure virtual machine <machine name>** or **Failed to create virtual machine <machine name>** when resizing an existing virtual machine to a new size; creating a new virtual machine in a virtual network created before April 16, 2013; or adding a new virtual machine to an existing cloud service. See the topic [Error: “Failed to configure virtual machine”](https://social.msdn.microsoft.com/Forums/en-US/9693f56c-fcd3-4d42-850e-5e3b56c7d6be/error-failed-to-configure-virtual-machine-with-a5-a6-or-a7-vm-size?forum=WAVirtualMachinesforWindows) on the support forum for workarounds for each deployment scenario.  
+*   Some of the physical hosts in Azure data centers may not support larger virtual machine sizes, such as A5 – A11\. As a result, you may see the error message **Failed to configure virtual machine <machine name>** or **Failed to create virtual machine <machine name>** when resizing an existing virtual machine to a new size; creating a new virtual machine in a virtual network created before April 16, 2013; or adding a new virtual machine to an existing cloud service. See the topic [Error: “Failed to configure virtual machine”](https://social.msdn.microsoft.com/Forums/9693f56c-fcd3-4d42-850e-5e3b56c7d6be/error-failed-to-configure-virtual-machine-with-a5-a6-or-a7-vm-size?forum=WAVirtualMachinesforWindows) on the support forum for workarounds for each deployment scenario.  
 
 *   The A8/A10 and A9/A11 virtual machine sizes have the same capacities. The A8 and A9 virtual machine instances include an additional network adapter that is connected to a remote direct memory access (RDMA) network for fast communication between virtual machines. The A8 and A9 instances are designed for high-performance computing applications that require constant and low-latency communication between nodes during execution, for example, applications that use the Message Passing Interface (MPI). The A10 and A11 virtual machine instances do not include the additional network adapter. A10 and A11 instances are designed for high-performance computing applications that do not require constant and low-latency communication between nodes, also known as parametric or embarrassingly parallel applications.
 
@@ -66,11 +62,11 @@ The following considerations might help you decide on a size:
 
 This table shows limits that apply regardless of a virtual machine's size, for virtual machines created using the Service Management deployment model.
 
-[AZURE.INCLUDE [azure-virtual-machines-limits](../../includes/azure-virtual-machines-limits.md)]
+[AZURE.INCLUDE [azure-virtual-machines-limits](../includes/azure-virtual-machines-limits.md)]
 
 This table shows limits that apply regardless of a virtual machine's size, for virtual machines created using the Resource Manager deployment model.
 
-[AZURE.INCLUDE [azure-virtual-machines-limits-azure-resource-manager](../../includes/azure-virtual-machines-limits-azure-resource-manager.md)]
+[AZURE.INCLUDE [azure-virtual-machines-limits-azure-resource-manager](../includes/azure-virtual-machines-limits-azure-resource-manager.md)]
 
 ## Size tables
 
@@ -80,7 +76,7 @@ The following tables show the sizes and the capacities they provide.
 
 ### Basic tier
 
-|Size – Azure Portal\cmdlets & APIs|CPU cores|Memory|Max. disk sizes – virtual machine|Max. data disks 1023 GB each)|Max. IOPS (300 per disk)|
+|Size – Azure Management Portal\cmdlets & APIs|CPU cores|Memory|Max. disk sizes – virtual machine|Max. data disks 1023 GB each)|Max. IOPS (300 per disk)|
 |---|---|---|---|---|---|
 |A0\Basic_A0|1|768 MB|<p>OS = 1023 GB</p><p>Temporary = 20 GB</p>|1|1x300|
 |A1\Basic_A1|1|1.75 GB|<p>OS = 1023 GB</p><p>Temporary = 40 GB</p>|2|2x300|
@@ -90,7 +86,7 @@ The following tables show the sizes and the capacities they provide.
 
 ### Standard tier: A-series
 
-|Size – Azure Portal\cmdlets & APIs|CPU cores|Memory|Max. disk sizes – virtual machine|Max. data disks (1023 GB each)|Max. IOPS (500 per disk)|
+|Size – Azure Management Portal\cmdlets & APIs|CPU cores|Memory|Max. disk sizes – virtual machine|Max. data disks (1023 GB each)|Max. IOPS (500 per disk)|
 |---|---|---|---|---|---|
 |A0\ExtraSmall|1|768 MB|<p>OS = 1023 GB</p><p>Temporary = 20 GB</p>|1|1x500|
 |A1\Small|1|1.75 GB|<p>OS = 1023 GB</p><p>Temporary = 70 GB</p>|2|2x500|
@@ -107,7 +103,7 @@ The following tables show the sizes and the capacities they provide.
 
 ### Standard tier: D-series
 
-|Size – Azure Portal\cmdlets & APIs|CPU cores|Memory|Max. disk sizes – virtual machine|Max. data disks (1023 GB each)|Max. IOPS (500 per disk)|
+|Size – Azure Management Portal\cmdlets & APIs|CPU cores|Memory|Max. disk sizes – virtual machine|Max. data disks (1023 GB each)|Max. IOPS (500 per disk)|
 |---|---|---|---|---|---|
 |Standard_D1\same|1|3.5 GB|<p>OS = 1023 GB</p><p>Temporary (SSD) =50 GB</p>|2|2x500|
 |Standard_D2\same|2|7 GB|<p>OS = 1023 GB</p><p>Temporary (SSD) =100 GB</p>|4|4x500|
@@ -120,7 +116,7 @@ The following tables show the sizes and the capacities they provide.
 
 ### Standard tier: Dv2-series
 
-|Size – Azure Portal\cmdlets & APIs|CPU cores|Memory|Max. disk sizes – virtual machine|Max. data disks (1023 GB each)|Max. IOPS (500 per disk)|
+|Size – Azure Management Portal\cmdlets & APIs|CPU cores|Memory|Max. disk sizes – virtual machine|Max. data disks (1023 GB each)|Max. IOPS (500 per disk)|
 |---|---|---|---|---|---|
 |Standard_D1_v2\same|1|3.5 GB|<p>OS = 1023 GB</p><p>Temporary (SSD) =50 GB</p>|2|2x500|
 |Standard_D2_v2\same|2|7 GB|<p>OS = 1023 GB</p><p>Temporary (SSD) =100 GB</p>|4|4x500|
@@ -134,7 +130,7 @@ The following tables show the sizes and the capacities they provide.
 
 ### Standard tier: DS-series*
 
-|Size – Azure Portal\cmdlets & APIs|CPU cores|Memory|Max. disk sizes – virtual machine|Max. data disks (1023 GB each)|Cache size (GB)|Max. disk IOPS &amp; bandwidth|
+|Size – Azure Management Portal\cmdlets & APIs|CPU cores|Memory|Max. disk sizes – virtual machine|Max. data disks (1023 GB each)|Cache size (GB)|Max. disk IOPS &amp; bandwidth|
 |---|---|---|---|---|---|---|
 |Standard_DS1\same|1|3.5|<p>OS = 1023 GB</p><p>Local SSD disk = 7 GB</p>|2|43|<p>3,200</p><p>32 MB per second</p>|
 |Standard_DS2\same|2|7|<p>OS = 1023 GB</p><p>Local SSD disk = 14 GB</p>|4|86|<p>6,400</p><p>64 MB per second</p>|
@@ -145,11 +141,11 @@ The following tables show the sizes and the capacities they provide.
 |Standard_DS13\same|8|56|<p>OS = 1023 GB</p><p>Local SSD disk = 112 GB</p>|16|288|<p>25,600</p><p>256 MB per second</p>|
 |Standard_DS14\same|16|112|<p>OS = 1023 GB</p><p>Local SSD disk = 224 GB</p>|32|576|<p>50,000</p><p>512 MB per second</p>|
 
-*The maximum input/output operations per second (IOPS) and throughput (bandwidth) possible with a DS series VM is affected by the size of the disk. For details, see [Premium Storage: High-performance storage for Azure virtual machine workloads](../storage-premium-storage-preview-portal.md).
+*The maximum input/output operations per second (IOPS) and throughput (bandwidth) possible with a DS series VM is affected by the size of the disk. For details, see [Premium Storage: High-performance storage for Azure virtual machine workloads](/documentation/articles/storage-premium-storage-preview-portal).
 
 ### Standard tier: G-series
 
-|Size – Azure Portal\cmdlets &amp; APIs|CPU cores|Memory|Max. disk sizes – virtual machine|Max. data disks (1023 GB each)|Max. IOPS (500 per disk)|
+|Size – Azure Management Portal\cmdlets &amp; APIs|CPU cores|Memory|Max. disk sizes – virtual machine|Max. data disks (1023 GB each)|Max. IOPS (500 per disk)|
 |---|---|---|---|---|---|
 |Standard_G1\same|2|28 GB|<p>OS = 1023 GB</p><p>Local SSD disk = 384 GB</p>|4|4 x 500|
 |Standard_G2\same|4|56 GB|<p>OS = 1023 GB</p><p>Local SSD disk = 768 GB</p>|8|8 x 500|
@@ -159,7 +155,7 @@ The following tables show the sizes and the capacities they provide.
 
 ### Standard tier: GS-series
 
-|Size – Azure Portal\cmdlets & APIs|CPU cores|Memory|Max. disk sizes – virtual machine|Max. data disks (1023 GB each)|Cache size (GB)|Max. disk IOPS &amp; bandwidth|
+|Size – Azure Management Portal\cmdlets & APIs|CPU cores|Memory|Max. disk sizes – virtual machine|Max. data disks (1023 GB each)|Cache size (GB)|Max. disk IOPS &amp; bandwidth|
 |---|---|---|---|---|---|---|
 |Standard_GS1|2|28|<p>OS = 1023 GB</p><p>Local SSD disk = 56 GB</p>|4|264|<p>5,000</p><p>125 MB per second</p>|
 |Standard_GS2|4|56|<p>OS = 1023 GB</p><p>Local SSD disk = 112 GB</p>|8|528|<p>10,000</p><p>250 MB per second</p>|
@@ -170,6 +166,6 @@ The following tables show the sizes and the capacities they provide.
 
 ### See also
 
-[Azure subscription and service limits, quotas, and constraints](../azure-subscription-service-limits.md)
+[Azure subscription and service limits, quotas, and constraints](/documentation/articles/azure-subscription-service-limits)
 
-[About the A8, A9, A10, and A11 compute intensive instances](virtual-machines-a8-a9-a10-a11-specs.md)
+[About the A8, A9, A10, and A11 compute intensive instances](/documentation/articles/virtual-machines-a8-a9-a10-a11-specs)

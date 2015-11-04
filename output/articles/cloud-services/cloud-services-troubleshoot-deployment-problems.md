@@ -1,5 +1,5 @@
 <properties 
- pageTitle="Troubleshoot Cloud Service deployment problems | Microsoft Azure" 
+ pageTitle="Troubleshoot Cloud Service deployment problems | Windows Azure" 
  description="There are a few common probelms you may run into when deploying a Cloud Service to Azure. This article provides solutions to some of them." 
    services="cloud-services"
    documentationCenter=""
@@ -7,14 +7,10 @@
    manager="msmets"
    editor=""
    tags="top-support-issue"/>
-<tags 
-   ms.service="cloud-services"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="tbd"
-   ms.date="10/14/2015"
-   ms.author="jarrettr" />
+<tags
+	ms.service="cloud-services"
+	ms.date="10/14/2015"
+	wacn.date=""/>
 
 # How to troubleshoot Cloud Service deployment problems you may run into
 
@@ -26,7 +22,7 @@ When you deploy a Cloud Service application package to Azure, you can obtain inf
 
 If you need more help at any point in this article, you can contact the Azure experts on [the MSDN Azure and the Stack Overflow forums](http://azure.microsoft.com/support/forums/).
 
-Alternatively, you can also file an Azure support incident. Go to the [Azure Support site](http://azure.microsoft.com/support/options/) and click on **Get Support**. For information about using Azure Support, read the [Microsoft Azure Support FAQ](http://azure.microsoft.com/support/faq/).
+Alternatively, you can also file an Azure support incident. Go to the [Azure Support site](http://azure.microsoft.com/support/options/) and click on **Get Support**. For information about using Azure Support, read the [Windows Azure Support FAQ](/support/faq/).
 
 
 
@@ -66,14 +62,14 @@ To find out if an automatic upgrade is preventing you from doing a VIP swap:
 
 This condition could indicate a problem with your application code, package or configuration file. If true, then you should be able to see the Status changing every few minutes and the Azure Management Portal may say something like **Recycling**, **Busy**, or **Initializing**. This indicates that there is something wrong with the application that is keeping the role instance from running.
 
-For more information on how to troubleshoot for this problem, see the blog post [Azure PaaS Compute Diagnostics Data] and [Common Issues Which Cause Roles to Recycle](cloud-services-troubleshoot-common-issues-which-cause-roles-recycle.md)
+For more information on how to troubleshoot for this problem, see the blog post [Azure PaaS Compute Diagnostics Data] and [Common Issues Which Cause Roles to Recycle](/documentation/articles/cloud-services-troubleshoot-common-issues-which-cause-roles-recycle)
 
 ## Problem: My application stopped working
 
 1. In the Management Portal, click the role instance.
 2. In the **Properties** pane of the Management Portal, consider the following conditions to resolve your problem:
    * If the role instance has recently stopped (you can check the value of **Abort count**), the deployment could be updating. Wait to see if the role instance resumes functioning on its own.
-   * If the role instance is Busy, check your application code to see if the [StatusCheck](https://msdn.microsoft.com/library/microsoft.windowsazure.serviceruntime.roleenvironment.statuscheck) event is handled. You might need to add or fix some code that handles this event.
+   * If the role instance is Busy, check your application code to see if the [StatusCheck](https://msdn.microsoft.com/zh-cn/library/microsoft.windowsazure.serviceruntime.roleenvironment.statuscheck) event is handled. You might need to add or fix some code that handles this event.
    * Go through the diagnostic data and troubleshooting scenarios in the blog post [Azure PaaS Compute Diagnostics Data].
 
 >[AZURE.WARNING] If you restart your cloud service, you reset the properties for the deployment, effectively erasing the information for the original problem.

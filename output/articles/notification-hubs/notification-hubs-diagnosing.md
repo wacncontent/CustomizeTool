@@ -7,14 +7,10 @@
 	manager="dwrede" 
 	editor=""/>
 
-<tags 
-	ms.service="notification-hubs" 
-	ms.workload="mobile" 
-	ms.tgt_pltfrm="NA" 
-	ms.devlang="multiple" 
-	ms.topic="article" 
-	ms.date="07/14/2015" 
-	ms.author="wesmc"/>
+<tags
+	ms.service="notification-hubs"
+	ms.date="07/14/2015"
+	wacn.date=""/>
 
 #Azure Notification Hubs - Diagnosis guidelines
 
@@ -25,13 +21,13 @@ One of the most common questions we hear from Azure Notification Hubs customers 
 First of all, it is critical to understand how Azure Notification Hubs pushes out notifications to the devices.
 ![][0]
 
-In a typical send notification flow, the message is sent from the **application backend** to **Azure Notification Hub (NH)** which in turn does some processing on all the registrations taking into account the configured tags & tag expressions to determine "targets" i.e. all the registrations that need to receive the push notification. These registrations can span across any or all of our supported platforms - iOS, Google, Windows, Windows Phone, Kindle and Baidu for China Android. Once the targets are established, NH then pushes out notifications, split across multiple batch of registrations, to the device platform specific **Push Notification Service (PNS)** - e.g. APNS for Apple, GCM for Google etc. NH authenticates with the respective PNS based on the credentials you set in the Azure Portal on the Configure Notification Hub page. The PNS then forwards the notifications to the respective **client devices**. This is the platform recommended way to deliver push notifications and note that the final leg of notification delivery takes place between the platform PNS and the device. Therefore we have four major components - *client*, *application backend*, *Azure Notification Hubs (NH)* and *Push Notification Services (PNS)* and any of these may cause notifications getting dropped. More details on this architecture is available on [Notification Hubs Overview].
+In a typical send notification flow, the message is sent from the **application backend** to **Azure Notification Hub (NH)** which in turn does some processing on all the registrations taking into account the configured tags & tag expressions to determine "targets" i.e. all the registrations that need to receive the push notification. These registrations can span across any or all of our supported platforms - iOS, Google, Windows, Windows Phone, Kindle and Baidu for China Android. Once the targets are established, NH then pushes out notifications, split across multiple batch of registrations, to the device platform specific **Push Notification Service (PNS)** - e.g. APNS for Apple, GCM for Google etc. NH authenticates with the respective PNS based on the credentials you set in the Azure Management Portal on the Configure Notification Hub page. The PNS then forwards the notifications to the respective **client devices**. This is the platform recommended way to deliver push notifications and note that the final leg of notification delivery takes place between the platform PNS and the device. Therefore we have four major components - *client*, *application backend*, *Azure Notification Hubs (NH)* and *Push Notification Services (PNS)* and any of these may cause notifications getting dropped. More details on this architecture is available on [Notification Hubs Overview].
 
 Failure to deliver notifications may happen during the initial test/staging phase which may indicate a configuration issue or it may happen in production where either all or some of the notifications may be getting dropped indicating some deeper application or messaging pattern issue. In the section, below we will look at various dropped notifications scenarios ranging from common to the rarer kind, some of which you may find obvious and some others not so much. 
 
 ##Azure Notifications Hub mis-configuration 
 
-Azure Notification Hubs needs to authenticate itself in the context of the developer's application to be able to successfully send notifications to the respective PNS. This is made possible by the developer creating a developer account with the respective platform (Google, Apple, Windows etc) and then registering their application where they get credentials which need to be configured in the Azure portal under Notification Hubs configuration section. If no notifications are making through, first step should be to ensure that the correct credentials are configured in the Notification Hub matching them with the application created under their platform specific developer account. You will find our [Getting Started Tutorials] useful to go over this process in a step by step manner. Here are some common mis-configurations:
+Azure Notification Hubs needs to authenticate itself in the context of the developer's application to be able to successfully send notifications to the respective PNS. This is made possible by the developer creating a developer account with the respective platform (Google, Apple, Windows etc) and then registering their application where they get credentials which need to be configured in the Azure Management Portal under Notification Hubs configuration section. If no notifications are making through, first step should be to ensure that the correct credentials are configured in the Notification Hub matching them with the application created under their platform specific developer account. You will find our [Getting Started Tutorials] useful to go over this process in a step by step manner. Here are some common mis-configurations:
 
 1. **General**
  
@@ -109,7 +105,7 @@ Here we will examine the various avenues to diagnose and root cause any Notifica
 
 1. **Visual Studio**
 
-	If you use Visual Studio for development then you can connect to Microsoft Azure and view and manage a bunch of Azure services including Notifications Hub from "Server Explorer". This is primarily useful for your dev/test environment. 
+	If you use Visual Studio for development then you can connect to Windows Azure and view and manage a bunch of Azure services including Notifications Hub from "Server Explorer". This is primarily useful for your dev/test environment. 
 
 	![][9]
 
@@ -125,7 +121,7 @@ Here we will examine the various avenues to diagnose and root cause any Notifica
 
 ###Verify message notifications
 
-1. **Azure Portal**
+1. **Azure Management Portal**
 
 	You can go to the "Debug" tab to send test notifications to your clients without needing any service backend up and running. 
 
@@ -150,7 +146,7 @@ Here we will examine the various avenues to diagnose and root cause any Notifica
 When you send a notification via Notification Hubs, initially it just gets queued up for NH to do processing to figure out all its targets and then eventually NH sends it to the PNS. This means that when you are using REST API or any of the client SDK, the successful return of your send call only means that the message has been successfully queued up with Notification Hub. It doesn’t give an insight into what happened when NH eventually got to send the message to PNS. If your notification is not arriving at the client device, there is a possibility that when NH tried to deliver the message to PNS, there was an error e.g. the payload size exceeded the maximum allowed by the PNS or the credentials configured in NH are invalid etc. 
 To get an insight into the PNS errors, we have introduced a property called [EnableTestSend feature]. This property is automatically enabled when you send test messages from the portal or Visual Studio client and therefore allows you to see detailed debugging information. You can use this via APIs taking the example of the .NET SDK where it is available now and will be added to all client SDKs eventually. To use this with the REST call, simply append a querystring parameter called "test" at the end of your send call e.g. 
 
-	https://mynamespace.servicebus.windows.net/mynotificationhub/messages?api-version=2013-10&test
+	https://mynamespace.servicebus.chinacloudapi.cn/mynotificationhub/messages?api-version=2013-10&test
 
 *Example (.NET SDK)*
  
@@ -187,9 +183,9 @@ This message indicates either invalid credentials are configured in the notifica
 
 ###Review telemetry 
 
-1. **Use Azure Portal**
+1. **Use Azure Management Portal**
 
-	Azure portal enables you to get a quick overview of all the activity on your Notification Hub. 
+	Azure Management Portal enables you to get a quick overview of all the activity on your Notification Hub. 
 	
 	a) From the "dashboard" tab you can view an aggregated view of the registrations, notifications as well as errors per platform. 
 	
@@ -226,19 +222,19 @@ More details here -
 [10]: ./media/notification-hubs-diagnosing/VSTestNotification.png
  
 <!-- LINKS -->
-[Notification Hubs Overview]: notification-hubs-overview.md
-[Getting Started Tutorials]: notification-hubs-windows-store-dotnet-get-started.md
-[Template guidance]: https://msdn.microsoft.com/library/dn530748.aspx 
+[Notification Hubs Overview]: /documentation/articles/notification-hubs-overview
+[Getting Started Tutorials]: /documentation/articles/notification-hubs-windows-store-dotnet-get-started
+[Template guidance]: https://msdn.microsoft.com/zh-cn/library/dn530748.aspx 
 [APNS guidance]: https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/ApplePushService.html#//apple_ref/doc/uid/TP40008194-CH100-SW4
 [GCM guidance]: http://developer.android.com/google/gcm/adv.html
-[Export/Import Registrations]: http://msdn.microsoft.com/library/dn790624.aspx
-[ServiceBus Explorer]: http://msdn.microsoft.com/library/dn530751.aspx
+[Export/Import Registrations]: http://msdn.microsoft.com/zh-cn/library/dn790624.aspx
+[ServiceBus Explorer]: http://msdn.microsoft.com/zh-cn/library/dn530751.aspx
 [ServiceBus Explorer code]: https://code.msdn.microsoft.com/windowsazure/Service-Bus-Explorer-f2abca5a
-[VS Server Explorer Overview]: http://msdn.microsoft.com/library/windows/apps/xaml/dn792122.aspx 
+[VS Server Explorer Overview]: http://msdn.microsoft.com/zh-cn/library/windows/apps/xaml/dn792122.aspx 
 [VS Server Explorer Blog post - 1]: http://azure.microsoft.com/blog/2014/04/09/deep-dive-visual-studio-2013-update-2-rc-and-azure-sdk-2-3/#NotificationHubs 
 [VS Server Explorer Blog post - 2]: http://azure.microsoft.com/blog/2014/08/04/announcing-release-of-visual-studio-2013-update-3-and-azure-sdk-2-4/ 
-[EnableTestSend feature]: http://msdn.microsoft.com/library/microsoft.servicebus.notifications.notificationhubclient.enabletestsend.aspx
-[Programmatic Telemetry Access]: http://msdn.microsoft.com/library/azure/dn458823.aspx
+[EnableTestSend feature]: http://msdn.microsoft.com/zh-cn/library/microsoft.servicebus.notifications.notificationhubclient.enabletestsend.aspx
+[Programmatic Telemetry Access]: http://msdn.microsoft.com/zh-cn/library/azure/dn458823.aspx
 [Telemetry Access via APIs sample]: https://github.com/Azure/azure-notificationhubs-samples/tree/master/FetchNHTelemetryInExcel
 
  

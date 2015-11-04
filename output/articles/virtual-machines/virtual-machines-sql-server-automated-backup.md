@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Automated Backup for SQL Server Virtual Machines | Microsoft Azure"
+   pageTitle="Automated Backup for SQL Server Virtual Machines | Windows Azure"
    description="Explains the Automated Backup feature for SQL Server running in Azure Virtual Machines."
    services="virtual-machines"
    documentationCenter="na"
@@ -8,27 +8,23 @@
    editor="monicar"
    tags="azure-resource-manager" />
 <tags
-   ms.service="virtual-machines"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="vm-windows-sql-server"
-   ms.workload="infrastructure-services"
-   ms.date="08/05/2015"
-   ms.author="jroth" />
+	ms.service="virtual-machines"
+	ms.date="08/05/2015"
+	wacn.date=""/>
 
 # Automated Backup for SQL Server in Azure Virtual Machines
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
 
 
 
-Automated Backup automatically configures [Managed Backup to Microsoft Azure](https://msdn.microsoft.com/library/dn449496.aspx) for all existing and new databases on an Azure VM running SQL Server 2014 Standard or Enterprise. This enables you to configure regular database backups that utilize durable Azure blob storage.
+Automated Backup automatically configures [Managed Backup to Windows Azure](https://msdn.microsoft.com/zh-cn/library/dn449496.aspx) for all existing and new databases on an Azure VM running SQL Server 2014 Standard or Enterprise. This enables you to configure regular database backups that utilize durable Azure blob storage.
 
 >[AZURE.NOTE] Automated Backup relies on the SQL Server IaaS Agent. To install and configure the agent, you must have the Azure VM Agent running on the target virtual machine. Newer virtual machine gallery images have this option enabled by default, but the Azure VM Agent might be missing on existing VMs. If you are using your own VM image, you will also need to install the SQL Server IaaS Agent. For more information, see [VM Agent and Extensions](http://azure.microsoft.com/blog/2014/04/15/vm-agent-and-extensions-part-2/).
 
 ## Automated Backup Settings
 
-The following table describes the options that can be configured for Automated Backup. The actual configuration steps vary depending on whether you use the Azure Portal or Azure Windows PowerShell commands.
+The following table describes the options that can be configured for Automated Backup. The actual configuration steps vary depending on whether you use the Azure Management Portal or Azure Windows PowerShell commands.
 
 |Setting|Range (Default)|Description|
 |---|---|---|
@@ -42,11 +38,11 @@ The following table describes the options that can be configured for Automated B
 
 You can use the [Azure Preview Portal](http://go.microsoft.com/fwlink/?LinkID=525040&clcid=0x409) to configure Automated Backup when you create a new SQL Server 2014 Virtual Machine. The following screenshot shows these options under **OPTIONAL CONFIGURATION** | **SQL AUTOMATED BACKUP**.
 
-![SQL Automatic Backup configuration in Azure Portal](./media/virtual-machines-sql-server-automated-backup/IC778483.jpg)
+![SQL Automatic Backup configuration in Azure Management Portal](./media/virtual-machines-sql-server-automated-backup/IC778483.jpg)
 
 For existing SQL Server 2014 virtual machines, select the **Auto backup** settings in the **Configuration** section of the virtual machine properties. In the **Automated backup** window, you can enable the feature, set the retention period, select the storage account, and set encryption. This is shown in the following screenshot.
 
-![Automated Backup Configuration in Azure Portal](./media/virtual-machines-sql-server-automated-backup/IC792133.jpg)
+![Automated Backup Configuration in Azure Management Portal](./media/virtual-machines-sql-server-automated-backup/IC792133.jpg)
 
 >[AZURE.NOTE] When you enable Automated Backup for the first time, Azure configures the SQL Server IaaS Agent in the background. During this time, the portal will not show that Automated Backup is configured. Wait several minutes for the agent to be installed, configured. After that the portal will reflect the new settings.
 
@@ -106,10 +102,10 @@ The following products are compatible with the SQL Server IaaS Agent features 
 
 ## Next Steps
 
-Automated Backup configures Managed Backup on Azure VMs. So it is important to [review the documentation for Managed Backup](https://msdn.microsoft.com/library/dn449496.aspx) to understand the behavior and implications.
+Automated Backup configures Managed Backup on Azure VMs. So it is important to [review the documentation for Managed Backup](https://msdn.microsoft.com/zh-cn/library/dn449496.aspx) to understand the behavior and implications.
 
-You can find additional backup and restore guidance for SQL Server on Azure VMs in the following topic: [Backup and Restore for SQL Server in Azure Virtual Machines](virtual-machines-sql-server-backup-and-restore.md).
+You can find additional backup and restore guidance for SQL Server on Azure VMs in the following topic: [Backup and Restore for SQL Server in Azure Virtual Machines](/documentation/articles/virtual-machines-sql-server-backup-and-restore).
 
-A related feature for SQL Server VMs in Azure is [Automated Patching for SQL Server in Azure Virtual Machines](virtual-machines-sql-server-automated-patching.md).
+A related feature for SQL Server VMs in Azure is [Automated Patching for SQL Server in Azure Virtual Machines](/documentation/articles/virtual-machines-sql-server-automated-patching).
 
-Review other [resources for running SQL Server in Azure Virtual Machines](virtual-machines-sql-server-infrastructure-services.md).
+Review other [resources for running SQL Server in Azure Virtual Machines](/documentation/articles/virtual-machines-sql-server-infrastructure-services).

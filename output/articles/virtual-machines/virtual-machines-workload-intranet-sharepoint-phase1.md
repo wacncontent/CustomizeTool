@@ -1,5 +1,5 @@
 <properties
-	pageTitle="SharePoint Server 2013 farm Phase 1 | Microsoft Azure"
+	pageTitle="SharePoint Server 2013 farm Phase 1 | Windows Azure"
 	description="Create the virtual network and other Azure infrastructure elements in Phase 1 of the SharePoint Server 2013 farm in Azure."
 	documentationCenter=""
 	services="virtual-machines"
@@ -10,19 +10,15 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.workload="infrastructure-services"
-	ms.tgt_pltfrm="Windows"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="07/21/2015"
-	ms.author="josephd"/>
+	wacn.date=""/>
 
 # SharePoint Intranet Farm Workload Phase 1: Configure Azure
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
 
 
-In this phase of deploying an intranet-only SharePoint 2013 farm with SQL Server AlwaysOn Availability Groups in Azure infrastructure services, you build out the Azure networking and storage infrastructure in Azure Service Management. You must complete this phase before moving on to [Phase 2](virtual-machines-workload-intranet-sharepoint-phase2.md). See [Deploying SharePoint with SQL Server AlwaysOn Availability Groups in Azure](virtual-machines-workload-intranet-sharepoint-overview.md) for all of the phases.
+In this phase of deploying an intranet-only SharePoint 2013 farm with SQL Server AlwaysOn Availability Groups in Azure infrastructure services, you build out the Azure networking and storage infrastructure in Azure Service Management. You must complete this phase before moving on to [Phase 2](/documentation/articles/virtual-machines-workload-intranet-sharepoint-phase2). See [Deploying SharePoint with SQL Server AlwaysOn Availability Groups in Azure](/documentation/articles/virtual-machines-workload-intranet-sharepoint-overview) for all of the phases.
 
 Azure must be provisioned with these basic network components:
 
@@ -56,7 +52,7 @@ Item | Subnet name | Subnet address space | Purpose
 
 **Table S: Subnets in the virtual network**
 
-> [AZURE.NOTE] This pre-defined architecture uses a single subnet for simplicity. If you want to overlay a set of traffic filters to emulate subnet isolation, you can use Azure [Network Security Groups](virtual-networks-nsg.md).
+> [AZURE.NOTE] This pre-defined architecture uses a single subnet for simplicity. If you want to overlay a set of traffic filters to emulate subnet isolation, you can use Azure [Network Security Groups](/documentation/articles/virtual-networks-nsg).
 
 For the two on-premises DNS servers that you want to use when initially setting up the domain controllers in your virtual network, fill in Table D. Give each DNS server a friendly name and a single IP address. This friendly name does not need to match the host name or computer name of the DNS server. Note that two blank entries are listed, but you can add more. Work with your IT department to determine this list.
 
@@ -79,9 +75,9 @@ Item | Local network address space
 
 **Table L: Address prefixes for the local network**
 
-To create the virtual network with the settings from Tables V, S, D, and L, use the instructions in [Create a Cross-Premises Virtual Network Using Configuration Tables](virtual-machines-workload-deploy-vnet-config-tables.md).
+To create the virtual network with the settings from Tables V, S, D, and L, use the instructions in [Create a Cross-Premises Virtual Network Using Configuration Tables](/documentation/articles/virtual-machines-workload-deploy-vnet-config-tables).
 
-> [AZURE.NOTE] This procedure steps you through creating a virtual network that uses a site-to-site VPN connection. For information about using ExpressRoute for your site-to-site connection, see [ExpressRoute Technical Overview](../expressroute/expressroute-introduction.md).
+> [AZURE.NOTE] This procedure steps you through creating a virtual network that uses a site-to-site VPN connection. For information about using ExpressRoute for your site-to-site connection, see [ExpressRoute Technical Overview](/documentation/articles/expressroute-introduction).
 
 After creating the Azure virtual network, the Azure Management Portal will determine the following:
 
@@ -90,13 +86,13 @@ After creating the Azure virtual network, the Azure Management Portal will deter
 
 To see these in the Azure Management Portal after you create the virtual network, click **Networks**, click the name of the virtual network, and then click the **Dashboard** menu option.
 
-Next, you’ll configure the virtual network gateway to create a secure site-to-site VPN connection. See [Configure the Virtual Network Gateway in the Management Portal](../vpn-gateway/vpn-gateway-configure-vpn-gateway-mp.md) for the instructions.
+Next, you’ll configure the virtual network gateway to create a secure site-to-site VPN connection. See [Configure the Virtual Network Gateway in the Management Portal](/documentation/articles/vpn-gateway-configure-vpn-gateway-mp) for the instructions.
 
-Next, create the site-to-site VPN connection between the new virtual network and an on-premises VPN device. For the details, see [Configure a Virtual Network Gateway in the Management Portal](../vpn-gateway/vpn-gateway-configure-vpn-gateway-mp.md) for the instructions.
+Next, create the site-to-site VPN connection between the new virtual network and an on-premises VPN device. For the details, see [Configure a Virtual Network Gateway in the Management Portal](/documentation/articles/vpn-gateway-configure-vpn-gateway-mp) for the instructions.
 
 Next, ensure that the address space of the virtual network is reachable from your on-premises network. This is usually done by adding a route corresponding to the virtual network address space to your VPN device and then advertising that route to the rest of the routing infrastructure of your organization network. Work with your IT department to determine how to do this.
 
-Next, use the instructions in [How to install and configure Azure PowerShell](../install-configure-powershell.md) to install Azure PowerShell on your local computer. Open an Azure PowerShell command prompt.
+Next, use the instructions in [How to install and configure Azure PowerShell](/documentation/articles/install-configure-powershell) to install Azure PowerShell on your local computer. Open an Azure PowerShell command prompt.
 
 First, select the correct Azure subscription with these commands. Replace everything within the quotes, including the < and > characters, with the correct names.
 
@@ -158,18 +154,18 @@ This is the configuration resulting from the successful completion of this phase
 
 ## Next step
 
-To continue with the configuration of this workload, go to [Phase 2: Configure Domain Controllers](virtual-machines-workload-intranet-sharepoint-phase2.md).
+To continue with the configuration of this workload, go to [Phase 2: Configure Domain Controllers](/documentation/articles/virtual-machines-workload-intranet-sharepoint-phase2).
 
 ## Additional resources
 
-[Deploying SharePoint with SQL Server AlwaysOn Availability Groups in Azure](virtual-machines-workload-intranet-sharepoint-overview.md)
+[Deploying SharePoint with SQL Server AlwaysOn Availability Groups in Azure](/documentation/articles/virtual-machines-workload-intranet-sharepoint-overview)
 
-[SharePoint farms hosted in Azure infrastructure services](virtual-machines-sharepoint-infrastructure-services.md)
+[SharePoint farms hosted in Azure infrastructure services](/documentation/articles/virtual-machines-sharepoint-infrastructure-services)
 
 [SharePoint with SQL Server AlwaysOn Infographic](http://go.microsoft.com/fwlink/?LinkId=394788)
 
-[Microsoft Azure Architectures for SharePoint 2013](https://technet.microsoft.com/library/dn635309.aspx)
+[Windows Azure Architectures for SharePoint 2013](https://technet.microsoft.com/zh-cn/library/dn635309.aspx)
 
-[Azure Infrastructure Services implementation guidelines](virtual-machines-infrastructure-services-implementation-guidelines.md)
+[Azure Infrastructure Services implementation guidelines](/documentation/articles/virtual-machines-infrastructure-services-implementation-guidelines)
 
-[Azure Infrastructure Services Workload: High-availability line of business application](virtual-machines-workload-high-availability-lob-application.md)
+[Azure Infrastructure Services Workload: High-availability line of business application](/documentation/articles/virtual-machines-workload-high-availability-lob-application)

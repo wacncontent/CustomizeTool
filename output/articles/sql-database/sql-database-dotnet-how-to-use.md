@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="How to use SQL Database (.NET) | Microsoft Azure" 
+	pageTitle="How to use SQL Database (.NET) | Windows Azure" 
 	description="Get started with SQL Database. Learn how to create a SQL Database instance and connect to it using ADO.NET, ODBC, and EntityClient Provider." 
 	services="sql-database" 
 	documentationCenter=".net" 
@@ -7,14 +7,10 @@
 	manager="jeffreyg" 
 	editor=""/>
 
-<tags 
-	ms.service="sql-database" 
-	ms.workload="data-management" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="07/07/2015" 
-	ms.author="jeffreyg"/>
+<tags
+	ms.service="sql-database"
+	ms.date="07/07/2015"
+	wacn.date=""/>
 
 
 # How to use Azure SQL Database in .NET applications
@@ -34,7 +30,7 @@ SQL Database provides a relational database management system for Azure and is b
 
 SQL Database provides relational data storage, access, and management services on Azure. To use it, you'll need an Azure subscription.
 
-1. Open a web browser, and browse to [http://azure.microsoft.com/](http://azure.microsoft.com). To get started with a free account, click free trial in the upper right corner and follow the steps.
+1. Open a web browser, and browse to [http://azure.microsoft.com/](http://azure.microsoft.com). To get started with a free account, click trial in the upper right corner and follow the steps.
 
 2. Your account is now created. You are ready to get started.
 
@@ -45,7 +41,7 @@ Next, create and configure a database and server. In the Azure Management Portal
 
 **Create a database instance and logical server:**
 
-1. Sign in to the [Azure Management Portal](http://manage.windowsazure.com).
+1. Sign in to the [Azure Management Portal](http://manage.windowsazure.cn).
 
 2. Click **NEW** at the bottom of the page.
 
@@ -128,7 +124,7 @@ This section shows how to connect to SQL Database instance using different
 .NET Framework data providers. For central recommendations about connecting to an SQL Database server and database, see:
 
 
-- [Connections to SQL Database: Central recommendations](../sql-database-connect-central-recommendations.md).
+- [Connections to SQL Database: Central recommendations](/documentation/articles/sql-database-connect-central-recommendations).
 
 
 If you choose to use Visual Studio and your configuration doesn't
@@ -149,7 +145,7 @@ Provider for SQL Server.
 
 The standard connection string looks like this:
 
-    Server=tcp:.database.windows.net;
+    Server=tcp:.database.chinacloudapi.cn;
     Database=;
     User ID=@;
     Password=;
@@ -161,7 +157,7 @@ connection string as shown in the following code sample:
 
     SqlConnectionStringBuilder csBuilder;
     csBuilder = new SqlConnectionStringBuilder();
-    csBuilder.DataSource = xxxxxxxxxx.database.windows.net;
+    csBuilder.DataSource = xxxxxxxxxx.database.chinacloudapi.cn;
     csBuilder.InitialCatalog = testDB;
     csBuilder.Encrypt = true;
     csBuilder.TrustServerCertificate = false;
@@ -175,7 +171,7 @@ file:
 
     <connectionStrings>
       <add name="ConnectionString" 
-           connectionString ="Server=tcp:xxxxxxxxxx.database.windows.net;Database=testDB;User ID=MyAdmin@xxxxxxxxxx;Password=pass@word1;Trusted_Connection=False;Encrypt=True;" />
+           connectionString ="Server=tcp:xxxxxxxxxx.database.chinacloudapi.cn;Database=testDB;User ID=MyAdmin@xxxxxxxxxx;Password=pass@word1;Trusted_Connection=False;Encrypt=True;" />
     </connectionStrings>
 
 To retrieve the connection string in a configuration file, you use the
@@ -193,7 +189,7 @@ The **System.Data.Odbc** namespace is the.NET Framework Data Provider
 for ODBC. The following is a sample ODBC connection string:
 
     Driver={SQL Server Native Client 10.0};
-    Server=tcp:.database.windows.net;
+    Server=tcp:.database.chinacloudapi.cn;
     Database=;
     Uid=@;
     Pwd=;
@@ -203,7 +199,7 @@ The **OdbcConnection** class represents an open connection to a data
 source. Here is a code sample on how to open a connection:
 
     string cs = "Driver={SQL Server Native Client 10.0};" +
-                "Server=tcp:xxxxxxxxxx.database.windows.net;" +
+                "Server=tcp:xxxxxxxxxx.database.chinacloudapi.cn;" +
                 "Database=testDB;"+
                 "Uid=MyAdmin@xxxxxxxxxx;" +
                 "Pwd=pass@word1;"+
@@ -235,11 +231,11 @@ classes generated from the conceptual model.
 
 Here is a connection string sample:
 
-    metadata=res://*/SchoolModel.csdl|res://*/SchoolModel.ssdl|res://*/SchoolModel.msl;provider=System.Data.SqlClient;provider connection string="Data Source=xxxxxxxxxx.database.windows.net;Initial Catalog=School;Persist Security Info=True;User ID=MyAdmin;Password=***********"
+    metadata=res://*/SchoolModel.csdl|res://*/SchoolModel.ssdl|res://*/SchoolModel.msl;provider=System.Data.SqlClient;provider connection string="Data Source=xxxxxxxxxx.database.chinacloudapi.cn;Initial Catalog=School;Persist Security Info=True;User ID=MyAdmin;Password=***********"
 
-For more information, see [EntityClient Provider for the Entity Framework](http://msdn.microsoft.com/library/bb738561.aspx).
+For more information, see [EntityClient Provider for the Entity Framework](http://msdn.microsoft.com/zh-cn/library/bb738561.aspx).
 
 ## Next Steps
 
-Now that you have learned the basics of connecting to SQL Database, see [Development: How-to Topics (SQL Database)](http://msdn.microsoft.com/library/windowsazure/ee621787.aspx)
+Now that you have learned the basics of connecting to SQL Database, see [Development: How-to Topics (SQL Database)](http://msdn.microsoft.com/zh-cn/library/azure/ee621787.aspx)
  

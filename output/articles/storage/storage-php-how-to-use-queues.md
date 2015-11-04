@@ -1,5 +1,5 @@
 <properties
-	pageTitle="How to use Queue storage from PHP | Microsoft Azure"
+	pageTitle="How to use Queue storage from PHP | Windows Azure"
 	description="Learn how to use the Azure Queue storage service to create and delete queues, and insert, get, and delete messages. Samples are written in PHP."
 	documentationCenter="php"
 	services="storage"
@@ -9,24 +9,20 @@
 
 <tags
 	ms.service="storage"
-	ms.workload="storage"
-	ms.tgt_pltfrm="na"
-	ms.devlang="PHP"
-	ms.topic="article"
 	ms.date="09/23/2015"
-	ms.author="tomfitz"/>
+	wacn.date=""/>
 
 # How to use Queue storage from PHP
 
-[AZURE.INCLUDE [storage-selector-queue-include](../../includes/storage-selector-queue-include.md)]
+[AZURE.INCLUDE [storage-selector-queue-include](../includes/storage-selector-queue-include.md)]
 
 ## Overview
 
 This guide will show you how to perform common scenarios by using the Azure Queue storage service. The samples are written via classes from the Windows SDK for PHP. The covered scenarios include inserting, peeking, getting, and deleting queue messages, as well as creating and deleting queues.
 
-[AZURE.INCLUDE [storage-queue-concepts-include](../../includes/storage-queue-concepts-include.md)]
+[AZURE.INCLUDE [storage-queue-concepts-include](../includes/storage-queue-concepts-include.md)]
 
-[AZURE.INCLUDE [storage-create-account-include](../../includes/storage-create-account-include.md)]
+[AZURE.INCLUDE [storage-create-account-include](../includes/storage-create-account-include.md)]
 
 ## Create a PHP application
 
@@ -36,7 +32,7 @@ In this guide, you will use Queue storage features that can be called within a P
 
 ## Get the Azure Client Libraries
 
-[AZURE.INCLUDE [get-client-libraries](../../includes/get-client-libraries.md)]
+[AZURE.INCLUDE [get-client-libraries](../includes/get-client-libraries.md)]
 
 ## Configure your application to access Queue storage
 
@@ -110,7 +106,7 @@ A **QueueRestProxy** object lets you create a queue by using the **createQueue**
 	catch(ServiceException $e){
 		// Handle exception based on error codes and messages.
 		// Error codes and messages are here:
-		// http://msdn.microsoft.com/library/azure/dd179446.aspx
+		// http://msdn.microsoft.com/zh-cn/library/azure/dd179446.aspx
 		$code = $e->getCode();
 		$error_message = $e->getMessage();
 		echo $code.": ".$error_message."<br />";
@@ -140,7 +136,7 @@ To add a message to a queue, use **QueueRestProxy->createMessage**. The method t
 	catch(ServiceException $e){
 		// Handle exception based on error codes and messages.
 		// Error codes and messages are here:
-		// http://msdn.microsoft.com/library/azure/dd179446.aspx
+		// http://msdn.microsoft.com/zh-cn/library/azure/dd179446.aspx
 		$code = $e->getCode();
 		$error_message = $e->getMessage();
 		echo $code.": ".$error_message."<br />";
@@ -169,7 +165,7 @@ You can peek at a message (or messages) at the front of a queue without removing
 	catch(ServiceException $e){
 		// Handle exception based on error codes and messages.
 		// Error codes and messages are here:
-		// http://msdn.microsoft.com/library/azure/dd179446.aspx
+		// http://msdn.microsoft.com/zh-cn/library/azure/dd179446.aspx
 		$code = $e->getCode();
 		$error_message = $e->getMessage();
 		echo $code.": ".$error_message."<br />";
@@ -223,7 +219,7 @@ Your code removes a message from a queue in two steps. First, you call **QueueRe
 	catch(ServiceException $e){
 		// Handle exception based on error codes and messages.
 		// Error codes and messages are here:
-		// http://msdn.microsoft.com/library/azure/dd179446.aspx
+		// http://msdn.microsoft.com/zh-cn/library/azure/dd179446.aspx
 		$code = $e->getCode();
 		$error_message = $e->getMessage();
 		echo $code.": ".$error_message."<br />";
@@ -265,7 +261,7 @@ You can change the contents of a message in-place in the queue by calling **Queu
 	catch(ServiceException $e){
 		// Handle exception based on error codes and messages.
 		// Error codes and messages are here:
-		// http://msdn.microsoft.com/library/azure/dd179446.aspx
+		// http://msdn.microsoft.com/zh-cn/library/azure/dd179446.aspx
 		$code = $e->getCode();
 		$error_message = $e->getMessage();
 		echo $code.": ".$error_message."<br />";
@@ -312,7 +308,7 @@ There are two ways that you can customize message retrieval from a queue. First,
 	catch(ServiceException $e){
 		// Handle exception based on error codes and messages.
 		// Error codes and messages are here:
-		// http://msdn.microsoft.com/library/azure/dd179446.aspx
+		// http://msdn.microsoft.com/zh-cn/library/azure/dd179446.aspx
 		$code = $e->getCode();
 		$error_message = $e->getMessage();
 		echo $code.": ".$error_message."<br />";
@@ -338,7 +334,7 @@ You can get an estimate of the number of messages in a queue. The **QueueRestPro
 	catch(ServiceException $e){
 		// Handle exception based on error codes and messages.
 		// Error codes and messages are here:
-		// http://msdn.microsoft.com/library/azure/dd179446.aspx
+		// http://msdn.microsoft.com/zh-cn/library/azure/dd179446.aspx
 		$code = $e->getCode();
 		$error_message = $e->getMessage();
 		echo $code.": ".$error_message."<br />";
@@ -365,7 +361,7 @@ To delete a queue and all the messages in it, call the **QueueRestProxy->deleteQ
 	catch(ServiceException $e){
 		// Handle exception based on error codes and messages.
 		// Error codes and messages are here:
-		// http://msdn.microsoft.com/library/azure/dd179446.aspx
+		// http://msdn.microsoft.com/zh-cn/library/azure/dd179446.aspx
 		$code = $e->getCode();
 		$error_message = $e->getMessage();
 		echo $code.": ".$error_message."<br />";
@@ -376,12 +372,12 @@ To delete a queue and all the messages in it, call the **QueueRestProxy->deleteQ
 
 Now that you've learned the basics of Azure Queue storage, follow these links to learn about more complex storage tasks:
 
-- See the MSDN reference [Azure Storage](http://msdn.microsoft.com/library/azure/gg433040.aspx).
+- See the MSDN reference [Azure Storage](http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx).
 - Visit the [Azure Storage Team blog](http://blogs.msdn.com/b/windowsazurestorage/).
 
 For more information, see also the [PHP Developer Center](/develop/php/).
 
 [download]: http://go.microsoft.com/fwlink/?LinkID=252473
 [require_once]: http://www.php.net/manual/en/function.require-once.php
-[Azure Management Portal]: http://manage.windowsazure.com/
-[Storing and Accessing Data in Azure]: http://msdn.microsoft.com/library/azure/gg433040.aspx
+[Azure Management Portal]: http://manage.windowsazure.cn/
+[Storing and Accessing Data in Azure]: http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx

@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Use SSH to connect to Linux virtual machines | Microsoft Azure" 
+	pageTitle="Use SSH to connect to Linux virtual machines | Windows Azure" 
 	description="Learn how to generate and use SSH keys with a Linux virtual machine on Azure." 
 	services="virtual-machines" 
 	documentationCenter="" 
@@ -8,14 +8,10 @@
 	editor=""
 	tags="azure-service-management,azure-resource-manager" />
 
-<tags 
-	ms.service="virtual-machines" 
-	ms.workload="infrastructure-services" 
-	ms.tgt_pltfrm="vm-linux" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="10/05/2015" 
-	ms.author="szark"/>
+<tags
+	ms.service="virtual-machines"
+	ms.date="10/05/2015"
+	wacn.date=""/>
 
 #How to Use SSH with Linux on Azure
 
@@ -69,7 +65,7 @@ The **myCert.pem** file is the public key that may then be used to provision a L
 
 2.	Connect to the Linux virtual machine using `ssh`. You will be prompted to accept the fingerprint of the host's public key the first time you log in.
 
-		# ssh -i  myPrivateKey.key -p <port> username@servicename.cloudapp.net
+		# ssh -i  myPrivateKey.key -p <port> username@servicename.chinacloudapp.cn
 
 3.	(Optional) You may copy `myPrivateKey.key` to `~/.ssh/id_rsa` so that your OpenSSH client can automatically pick this up without the use of the `-i` option.
 

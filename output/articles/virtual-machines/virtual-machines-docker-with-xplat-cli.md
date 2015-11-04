@@ -9,20 +9,16 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.devlang="multiple"
-	ms.topic="article"
-	ms.tgt_pltfrm="vm-linux"
-	ms.workload="infrastructure-services"
 	ms.date="09/22/2015"
-	ms.author="rasquill"/>
+	wacn.date=""/>
 
 # Using the Docker VM Extension from the Azure Command-line Interface (Azure CLI)
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
 
 
 
-This topic describes how to create a VM with the Docker VM Extension from the service management (asm) mode in Azure CLI on any platform. [Docker](https://www.docker.com/) is one of the most popular virtualization approaches that uses [Linux containers](http://en.wikipedia.org/wiki/LXC) rather than virtual machines as a way of isolating data and computing on shared resources. You can use the Docker VM extension to the [Azure Linux Agent](virtual-machines-linux-agent-user-guide.md) to create a Docker VM that hosts any number of containers for your applications on Azure. To see a high-level discussion of containers and their advantages, see the [Docker High Level Whiteboard](http://channel9.msdn.com/Blogs/Regular-IT-Guy/Docker-High-Level-Whiteboard).
+This topic describes how to create a VM with the Docker VM Extension from the service management (asm) mode in Azure CLI on any platform. [Docker](https://www.docker.com/) is one of the most popular virtualization approaches that uses [Linux containers](http://en.wikipedia.org/wiki/LXC) rather than virtual machines as a way of isolating data and computing on shared resources. You can use the Docker VM extension to the [Azure Linux Agent](/documentation/articles/virtual-machines-linux-agent-user-guide) to create a Docker VM that hosts any number of containers for your applications on Azure. To see a high-level discussion of containers and their advantages, see the [Docker High Level Whiteboard](http://channel9.msdn.com/Blogs/Regular-IT-Guy/Docker-High-Level-Whiteboard).
 
 + [How to use the Docker VM Extension with Azure]
 + [Virtual Machine Extensions for Linux and Windows]
@@ -43,23 +39,23 @@ The complete process to use Docker on Azure is simple:
 
 ### Install the Azure Command-Line Interface (Azure CLI)
 
-To install and configure the Azure CLI, see [How to install the Azure Command-Line Interface](../xplat-cli-install.md). To confirm the installation, type `azure` at the command prompt and after a short moment you should see the Azure CLI ASCII art, which lists the basic commands available to you. If the installation worked correctly, you should be able to type `azure help vm` and see that one of the listed commands is "docker".
+To install and configure the Azure CLI, see [How to install the Azure Command-Line Interface](/documentation/articles/xplat-cli-install). To confirm the installation, type `azure` at the command prompt and after a short moment you should see the Azure CLI ASCII art, which lists the basic commands available to you. If the installation worked correctly, you should be able to type `azure help vm` and see that one of the listed commands is "docker".
 
 > [AZURE.NOTE] Docker has a setup program for Windows, [Boot2Docker](https://docs.docker.com/installation/windows/), which you can also use to automate the creation of a docker client that you can use to work with Azure VMs as docker hosts.
 
 ### Connect the Azure CLI to to your Azure Account
-Before you can use the Azure CLI you must associate your Azure account credentials with the Azure CLI on your platform. The section [How to connect to your Azure subscription](../xplat-cli-connect.md) explains how to either download and import your **.publishsettings** file or associate your Azure CLI with an organizational id.
+Before you can use the Azure CLI you must associate your Azure account credentials with the Azure CLI on your platform. The section [How to connect to your Azure subscription](/documentation/articles/xplat-cli-connect) explains how to either download and import your **.publishsettings** file or associate your Azure CLI with an organizational id.
 
 > [AZURE.NOTE] There are some differences in behavior when using one or the other methods of authentication, so do be sure to read the document above to understand the different functionality.
 
 ### Install Docker and use the Docker VM Extension for Azure
 Follow the [Docker installation instructions](https://docs.docker.com/installation/#installation) to install Docker locally on your computer.
 
-To use Docker with an Azure Virtual Machine, the Linux image used for the VM must have the [Azure Linux VM Agent](virtual-machines-linux-agent-user-guide.md) installed. Currently, there are only two types of images that provide this:
+To use Docker with an Azure Virtual Machine, the Linux image used for the VM must have the [Azure Linux VM Agent](/documentation/articles/virtual-machines-linux-agent-user-guide) installed. Currently, there are only two types of images that provide this:
 
 + An Ubuntu image from the Azure Image Gallery or
 
-+ A custom Linux image that you have created with the Azure Linux VM Agent installed and configured. See [Azure Linux VM Agent](virtual-machines-linux-agent-user-guide.md) for more information about how to build a custom Linux VM with the Azure VM Agent.
++ A custom Linux image that you have created with the Azure Linux VM Agent installed and configured. See [Azure Linux VM Agent](/documentation/articles/virtual-machines-linux-agent-user-guide) for more information about how to build a custom Linux VM with the Azure VM Agent.
 
 ### Using the Azure Image Gallery
 
@@ -70,7 +66,7 @@ From a Bash or Terminal session, use the following Azure CLI command to locate t
 and select one of the image names, such as `b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04-LTS-amd64-server-20140724-en-us-30GB`, and use the following command to create a new VM using that image.
 
 ```
-azure vm docker create -e 22 -l "West US" <vm-cloudservice name> "b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04-LTS-amd64-server-20140724-en-us-30GB" <username> <password>
+azure vm docker create -e 22 -l "China North" <vm-cloudservice name> "b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04-LTS-amd64-server-20140724-en-us-30GB" <username> <password>
 ```
 
 where:
@@ -91,13 +87,13 @@ If the command was successful, you should see something like the following, depe
 
 To test the Docker VM you have created in Azure, type
 
-`docker --tls -H tcp://<vm-name-you-used>.cloudapp.net:2376 info`
+`docker --tls -H tcp://<vm-name-you-used>.chinacloudapp.cn:2376 info`
 
 where *&lt;vm-name-you-used&gt;* is the name of the virtual machine that you used in your call to `azure vm docker create`. You should see something similar to the following, which indicates that your Docker Host VM is up and running in Azure and waiting for your commands. 
 
 Now you can try to connect using your docker client to obtain information (in some Docker client setups, such as that on Mac, you may have to use `sudo`):
 
-	sudo docker --tls -H tcp://testsshasm.cloudapp.net:2376 info
+	sudo docker --tls -H tcp://testsshasm.chinacloudapp.cn:2376 info
 	Password:
 	Containers: 0
 	Images: 0
@@ -173,10 +169,10 @@ You are ready to go to the [Docker User Guide] and use your Docker VM. To create
 
 
 <!--Link references-->
-[Link 1 to another azure.microsoft.com documentation topic]: virtual-machines-windows-tutorial.md
-[Link 2 to another azure.microsoft.com documentation topic]: ../web-sites-custom-domain-name.md
-[Link 3 to another azure.microsoft.com documentation topic]: ../storage-whatis-account.md
-[How to use the Docker VM Extension with the Portal]: http://azure.microsoft.com/documentation/articles/virtual-machines-docker-with-portal/
+[Link 1 to another azure.microsoft.com documentation topic]: /documentation/articles/virtual-machines-windows-tutorial
+[Link 2 to another azure.microsoft.com documentation topic]: /documentation/articles/web-sites-custom-domain-name
+[Link 3 to another azure.microsoft.com documentation topic]: /documentation/articles/storage-whatis-account
+[How to use the Docker VM Extension with the Portal]: /documentation/articles/virtual-machines-docker-with-portal/
 
 [Docker User Guide]: https://docs.docker.com/userguide/
  

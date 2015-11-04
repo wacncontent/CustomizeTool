@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Getting started with queue storage and Visual Studio connected services (WebJob projects) | Microsoft Azure"
+	pageTitle="Getting started with queue storage and Visual Studio connected services (WebJob projects) | Windows Azure"
 	description="How to get started using Azure Queue storage in a WebJob project after connecting to a storage account using Visual Studio connected services."
 	services="storage"
 	documentationCenter=""
@@ -9,23 +9,19 @@
 
 <tags
 	ms.service="storage"
-	ms.workload="web"
-	ms.tgt_pltfrm="vs-getting-started"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="09/03/2015"
-	ms.author="patshea"/>
+	wacn.date=""/>
 
 # Getting started with Azure Queue storage and Visual Studio connected services (WebJob Projects)
 
 > [AZURE.SELECTOR]
-> - [Getting started](vs-storage-webjobs-getting-started-queues.md)
-> - [What happened](vs-storage-webjobs-what-happened.md)
+> - [Getting started](/documentation/articles/vs-storage-webjobs-getting-started-queues)
+> - [What happened](/documentation/articles/vs-storage-webjobs-what-happened)
 
 > [AZURE.SELECTOR]
-> - [Blobs](vs-storage-webjobs-getting-started-blobs.md)
-> - [Queues](vs-storage-webjobs-getting-started-queues.md)
-> - [Tables](vs-storage-webjobs-getting-started-tables.md)
+> - [Blobs](/documentation/articles/vs-storage-webjobs-getting-started-blobs)
+> - [Queues](/documentation/articles/vs-storage-webjobs-getting-started-queues)
+> - [Tables](/documentation/articles/vs-storage-webjobs-getting-started-tables)
 
 ## Overview
 
@@ -33,13 +29,13 @@ This article describes how get started using Azure Queue storage in a Visual Stu
 
 This article provides C# code samples that show how to use the Azure WebJobs SDK version 1.x with the Azure Queue storage service.
 
-Azure Queue storage is a service for storing large numbers of messages that can be accessed from anywhere in the world via authenticated calls using HTTP or HTTPS. A single queue message can be up to 64 KB in size, and a queue can contain millions of messages, up to the total capacity limit of a storage account. See [How to use Queue Storage from .NET](storage-dotnet-how-to-use-queues.md) for more information. For more information about ASP.NET, see [ASP.NET](http://www.asp.net).
+Azure Queue storage is a service for storing large numbers of messages that can be accessed from anywhere in the world via authenticated calls using HTTP or HTTPS. A single queue message can be up to 64 KB in size, and a queue can contain millions of messages, up to the total capacity limit of a storage account. See [How to use Queue Storage from .NET](/documentation/articles/storage-dotnet-how-to-use-queues) for more information. For more information about ASP.NET, see [ASP.NET](http://www.asp.net).
 
 
 
 ## How to trigger a function when a queue message is received
 
-To write a function that the WebJobs SDK calls when a queue message is received, use the **QueueTrigger** attribute. The attribute constructor takes a string parameter that specifies the name of the queue to poll. You can also [set the queue name dynamically](how-to-set-configuration-options).
+To write a function that the WebJobs SDK calls when a queue message is received, use the **QueueTrigger** attribute. The attribute constructor takes a string parameter that specifies the name of the queue to poll. You can also [set the queue name dynamically](/documentation/articles/how-to-set-configuration-options).
 
 ### String queue messages
 
@@ -161,7 +157,7 @@ Here is a sample log written by the sample code:
 		id=262e49cd-26d3-4303-ae88-33baf8796d91
 		popReceipt=AgAAAAMAAAAAAAAAfc9H0n/izwE=
 		dequeueCount=1
-		queue endpoint=https://contosoads.queue.core.windows.net/
+		queue endpoint=https://contosoads.queue.core.chinacloudapi.cn/
 		queueTrigger=Hello world!
 
 ## Graceful shutdown
@@ -268,7 +264,7 @@ The **IBinder** interface can also be used with the **Table** and **Blob** attri
 
 ## How to read and write blobs and tables while processing a queue message
 
-The **Blob** and **Table** attributes enable you to read and write blobs and tables. The samples in this section apply to blobs. For code samples that show how to trigger processes when blobs are created or updated, see [How to use Azure blob storage with the WebJobs SDK](websites-dotnet-webjobs-sdk-storage-blobs-how-to.md), and for code samples that read and write tables, see [How to use Azure table storage with the WebJobs SDK](websites-dotnet-webjobs-sdk-storage-tables-how-to.md).
+The **Blob** and **Table** attributes enable you to read and write blobs and tables. The samples in this section apply to blobs. For code samples that show how to trigger processes when blobs are created or updated, see [How to use Azure blob storage with the WebJobs SDK](/documentation/articles/websites-dotnet-webjobs-sdk-storage-blobs-how-to), and for code samples that read and write tables, see [How to use Azure table storage with the WebJobs SDK](/documentation/articles/websites-dotnet-webjobs-sdk-storage-tables-how-to).
 
 ### String queue messages triggering blob operations
 
@@ -284,7 +280,7 @@ The following example uses **Stream** objects to read and write blobs. The queue
 		    blobInput.CopyTo(blobOutput, 4096);
 		}
 
-The **Blob** attribute constructor takes a **blobPath** parameter that specifies the container and blob name. For more information about this placeholder, see [How to use Azure blob storage with the WebJobs SDK](websites-dotnet-webjobs-sdk-storage-blobs-how-to.md),
+The **Blob** attribute constructor takes a **blobPath** parameter that specifies the container and blob name. For more information about this placeholder, see [How to use Azure blob storage with the WebJobs SDK](/documentation/articles/websites-dotnet-webjobs-sdk-storage-blobs-how-to),
 
 When the attribute decorates a **Stream** object, another constructor parameter specifies the **FileAccess** mode as read, write, or read/write.
 
@@ -506,7 +502,7 @@ Output from Console methods that you call in a function or in the **Main()** met
 
 Console output can't be linked to a particular method invocation because the Console is single-threaded, while many job functions may be running at the same time. That's why the  SDK provides each function invocation with its own unique log writer object.
 
-To write [application tracing logs](web-sites-dotnet-troubleshoot-visual-studio.md#logsoverview), use **Console.Out** (creates logs marked as INFO) and **Console.Error** (creates logs marked as ERROR). An alternative is to use [Trace or TraceSource](http://blogs.msdn.com/b/mcsuksoldev/archive/2014/09/04/adding-trace-to-azure-web-sites-and-web-jobs.aspx), which provides Verbose, Warning, and Critical levels in addition to Info and Error. Application tracing logs appear in the web app log files, Azure tables, or Azure blobs depending on how you configure your Azure web app. As is true of all Console output, the most recent 100 application logs also appear in the Dashboard page for the WebJob, not the page for a function invocation.
+To write [application tracing logs](/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio#logsoverview), use **Console.Out** (creates logs marked as INFO) and **Console.Error** (creates logs marked as ERROR). An alternative is to use [Trace or TraceSource](http://blogs.msdn.com/b/mcsuksoldev/archive/2014/09/04/adding-trace-to-azure-web-sites-and-web-jobs.aspx), which provides Verbose, Warning, and Critical levels in addition to Info and Error. Application tracing logs appear in the web app log files, Azure tables, or Azure blobs depending on how you configure your Azure web app. As is true of all Console output, the most recent 100 application logs also appear in the Dashboard page for the WebJob, not the page for a function invocation.
 
 Console output appears in the Dashboard only if the program is running in an Azure WebJob, not if the program is running locally or in some other environment.
 
@@ -553,4 +549,4 @@ And in an Azure table the **Console.Out** and **Console.Error** logs look like t
 
 ##Next steps
 
-This article has provided code samples that show how to handle common scenarios for working with Azure queues. For more information about how to use Azure WebJobs and the WebJobs SDK, see [Azure WebJobs Recommended Resources](http://go.microsoft.com/fwlink/?linkid=390226).
+This article has provided code samples that show how to handle common scenarios for working with Azure queues. For more information about how to use Azure WebJobs and the WebJobs SDK, see [Azure WebJobs Recommended Resources](/documentation/articles/websites-webjobs-resources/).

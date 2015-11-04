@@ -1,5 +1,5 @@
 <properties
-	pageTitle="How to use an HTML client | Microsoft Azure"
+	pageTitle="How to use an HTML client | Windows Azure"
 	description="Learn how to use an HTML client for Azure Mobile Services."
 	services="mobile-services"
 	documentationCenter=""
@@ -9,22 +9,18 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.workload="mobile"
-	ms.tgt_pltfrm="mobile-html"
-	ms.devlang="javascript"
-	ms.topic="article"
 	ms.date="09/24/2015"
-	ms.author="glenga"/>
+	wacn.date=""/>
 
 # How to use an HTML/JavaScript client for Azure Mobile Services
 
-[AZURE.INCLUDE [mobile-services-selector-client-library](../../includes/mobile-services-selector-client-library.md)]
+[AZURE.INCLUDE [mobile-services-selector-client-library](../includes/mobile-services-selector-client-library.md)]
 
 ##Overview
 
-This guide shows you how to perform common scenarios using an HTML/JavaScript client for Azure Mobile Services, which includes Windows Store JavaScript and PhoneGap/Cordova apps. The scenarios covered include querying for data, inserting, updating, and deleting data, authenticating users, and handling errors. If you are new to Mobile Services, you should consider first completing the [Mobile Services quickstart](mobile-services-html-get-started.md). The quickstart tutorial helps you configure your account and create your first mobile service.
+This guide shows you how to perform common scenarios using an HTML/JavaScript client for Azure Mobile Services, which includes Windows Store JavaScript and PhoneGap/Cordova apps. The scenarios covered include querying for data, inserting, updating, and deleting data, authenticating users, and handling errors. If you are new to Mobile Services, you should consider first completing the [Mobile Services quickstart](/documentation/articles/mobile-services-html-get-started). The quickstart tutorial helps you configure your account and create your first mobile service.
 
-[AZURE.INCLUDE [mobile-services-concepts](../../includes/mobile-services-concepts.md)]
+[AZURE.INCLUDE [mobile-services-concepts](../includes/mobile-services-concepts.md)]
 
 ##<a name="create-client"></a>How to: Create the Mobile Services client
 
@@ -43,7 +39,7 @@ In the editor, open or create a JavaScript file, and add the following code that
 	var MobileServiceClient = WindowsAzure.MobileServiceClient;
     var client = new MobileServiceClient('AppUrl', 'AppKey');
 
-You must replace the placeholder `AppUrl` with the application URL of your mobile service and `AppKey` with the application key, which you obtain from the [Azure portal](http://manage.windowsazure.com/).
+You must replace the placeholder `AppUrl` with the application URL of your mobile service and `AppKey` with the application key, which you obtain from the [Azure Management Portal](http://manage.windowsazure.cn/).
 
 >[AZURE.IMPORTANT]The application key is intended to filter-out random request against your mobile service, and it is distributed with the application. Because this key is not encrypted, it cannot be considered secure. To truly secure your mobile service data, you must instead authenticate users before allowing access. For more information, see [How to: Authenticate users](#authentication).
 
@@ -295,9 +291,9 @@ String IDs provide you with the following benefits:
 + Records are easier to merge from different tables or databases.
 + IDs values can integrate better with an application's logic.
 
-When a string ID value is not already set on an inserted record, Mobile Services generates a unique value for the ID. For more information on how to generate your own ID values, either on the client or in a .NET backend, see [How to: Generate unique ID values](mobile-services-how-to-use-server-scripts.md#generate-guids).
+When a string ID value is not already set on an inserted record, Mobile Services generates a unique value for the ID. For more information on how to generate your own ID values, either on the client or in a .NET backend, see [How to: Generate unique ID values](/documentation/articles/mobile-services-how-to-use-server-scripts#generate-guids).
 
-You can also use integer IDs for your tables. To use an integer ID, you must create your table with the `mobile table create` command using the `--integerId` option. This command is used with the Command-line Interface (CLI) for Azure. For more information on using the CLI, see [CLI to manage Mobile Services tables](../virtual-machines-command-line-tools.md#Mobile_Tables).
+You can also use integer IDs for your tables. To use an integer ID, you must create your table with the `mobile table create` command using the `--integerId` option. This command is used with the Command-line Interface (CLI) for Azure. For more information on using the CLI, see [CLI to manage Mobile Services tables](/documentation/articles/virtual-machines-command-line-tools#Mobile_Tables).
 
 ##<a name="modifying"></a>How to: Modify data in a mobile service
 
@@ -367,7 +363,7 @@ In a Windows Store app, the results of a query can be used to create a [WinJS.Bi
 
 ##<a name="custom-api"></a>How to: Call a custom API
 
-A custom API enables you to define custom endpoints that expose server functionality that does not map to an insert, update, delete, or read operation. By using a custom API, you can have more control over messaging, including reading and setting HTTP message headers and defining a message body format other than JSON. For an example of how to create a custom API in your mobile service, see [How to: define a custom API endpoint](mobile-services-dotnet-backend-define-custom-api.md).
+A custom API enables you to define custom endpoints that expose server functionality that does not map to an insert, update, delete, or read operation. By using a custom API, you can have more control over messaging, including reading and setting HTTP message headers and defining a message body format other than JSON. For an example of how to create a custom API in your mobile service, see [How to: define a custom API endpoint](/documentation/articles/mobile-services-dotnet-backend-define-custom-api).
 
 You call a custom API from the client by calling the [invokeApi](https://github.com/Azure/azure-mobile-services/blob/master/sdk/Javascript/src/MobileServiceClient.js#L337) method on **MobileServiceClient**. For example, the following line of code sends a POST request to the **completeAll** API on the mobile service:
 
@@ -399,7 +395,7 @@ Two authentication flows are supported: a _server flow_ and a _client flow_. The
 
 ###Server flow
 To have Mobile Services manage the authentication process in your Windows Store or HTML5 app,
-you must register your app with your identity provider. Then in your mobile service, you need to configure the application ID and secret provided by your provider. For more information, see the tutorial [Add authentication to your app](mobile-services-html-get-started-users.md).
+you must register your app with your identity provider. Then in your mobile service, you need to configure the application ID and secret provided by your provider. For more information, see the tutorial [Add authentication to your app](/documentation/articles/mobile-services-html-get-started-users).
 
 Once you have registered your identity provider, simply call the [LoginAsync method] with the [MobileServiceAuthenticationProvider] value of your provider. For example, to login with Facebook use the following code.
 
@@ -528,7 +524,7 @@ In some cases, the call to the login method can be avoided after the first time 
 
 ##<a name="push-notifications"></a>How to: Register for push notifications
 
-When your app is a PhoneGap or Apache Cordova HTML/JavaScript app, the native mobile platform enables you to receive push notifications on the device. The [Apache Cordova plugin for Azure Mobile Services](https://github.com/Azure/azure-mobile-services-cordova) enables you to register for push notifications with Azure Notification Hubs. The specific notification service used depends on the native device platform on which the code executes. For an example of how to do this, see the sample, [Use Microsoft Azure to push notifications to Cordova apps](https://github.com/Azure/mobile-services-samples/tree/master/CordovaNotificationsArticle).
+When your app is a PhoneGap or Apache Cordova HTML/JavaScript app, the native mobile platform enables you to receive push notifications on the device. The [Apache Cordova plugin for Azure Mobile Services](https://github.com/Azure/azure-mobile-services-cordova) enables you to register for push notifications with Azure Notification Hubs. The specific notification service used depends on the native device platform on which the code executes. For an example of how to do this, see the sample, [Use Windows Azure to push notifications to Cordova apps](https://github.com/Azure/mobile-services-samples/tree/master/CordovaNotificationsArticle).
 
 >[AZURE.NOTE]This plugin currently only supports iOS and Android devices. For a solution that also includes Windows devices, see the article [Push Notifications to PhoneGap Apps using Notification Hubs Integration](http://blogs.msdn.com/b/azuremobile/archive/2014/06/17/push-notifications-to-phonegap-apps-using-notification-hubs-integration.aspx).
 
@@ -627,7 +623,7 @@ Filters are used for a lot more than customizing request headers. They can be us
 
 ##<a name="hostnames"></a>How to: Use cross-origin resource sharing
 
-To control which websites are allowed to interact with and send requests to your mobile service, make sure to add the host name of the website you use to host it to the Cross-Origin Resource Sharing (CORS) whitelist. For a JavaScript backend mobile service, you can configure the whitelist on the Configure tab in the [Azure Management portal](https://manage.windowsazure.com). You can use wildcards if required. By default, new Mobile Services instruct browsers to permit access only from `localhost`, and Cross-Origin Resource Sharing (CORS) allows JavaScript code running in a browser on an external hostname to interact with your Mobile Service.  This configuration is not necessary for WinJS applications.
+To control which websites are allowed to interact with and send requests to your mobile service, make sure to add the host name of the website you use to host it to the Cross-Origin Resource Sharing (CORS) whitelist. For a JavaScript backend mobile service, you can configure the whitelist on the Configure tab in the [Azure Management portal](https://manage.windowsazure.cn). You can use wildcards if required. By default, new Mobile Services instruct browsers to permit access only from `localhost`, and Cross-Origin Resource Sharing (CORS) allows JavaScript code running in a browser on an external hostname to interact with your Mobile Service.  This configuration is not necessary for WinJS applications.
 
 <!-- Anchors. -->
 [What is Mobile Services]: #what-is
@@ -654,16 +650,16 @@ To control which websites are allowed to interact with and send requests to your
 
 
 <!-- URLs. -->
-[then]: http://msdn.microsoft.com/library/windows/apps/br229728.aspx
-[done]: http://msdn.microsoft.com/library/windows/apps/hh701079.aspx
-[Learn more about the  differences between then and done]: http://msdn.microsoft.com/library/windows/apps/hh700334.aspx
-[how to handle errors in promises]: http://msdn.microsoft.com/library/windows/apps/hh700337.aspx
+[then]: http://msdn.microsoft.com/zh-cn/library/windows/apps/br229728.aspx
+[done]: http://msdn.microsoft.com/zh-cn/library/windows/apps/hh701079.aspx
+[Learn more about the  differences between then and done]: http://msdn.microsoft.com/zh-cn/library/windows/apps/hh700334.aspx
+[how to handle errors in promises]: http://msdn.microsoft.com/zh-cn/library/windows/apps/hh700337.aspx
 
-[sessionStorage]: http://msdn.microsoft.com/library/cc197062(v=vs.85).aspx
-[localStorage]: http://msdn.microsoft.com/library/cc197062(v=vs.85).aspx
+[sessionStorage]: http://msdn.microsoft.com/zh-cn/library/cc197062(v=vs.85).aspx
+[localStorage]: http://msdn.microsoft.com/zh-cn/library/cc197062(v=vs.85).aspx
 
-[ListView]: http://msdn.microsoft.com/library/windows/apps/br211837.aspx
-[Data binding (Windows Store apps using JavaScript and HTML)]: http://msdn.microsoft.com/library/windows/apps/hh758311.aspx
+[ListView]: http://msdn.microsoft.com/zh-cn/library/windows/apps/br211837.aspx
+[Data binding (Windows Store apps using JavaScript and HTML)]: http://msdn.microsoft.com/zh-cn/library/windows/apps/hh758311.aspx
 [login]: https://github.com/Azure/azure-mobile-services/blob/master/sdk/Javascript/src/MobileServiceClient.js#L301
 [ASCII control codes C0 and C1]: http://en.wikipedia.org/wiki/Data_link_escape_character#C1_set
 [OData system query options reference]: http://go.microsoft.com/fwlink/p/?LinkId=444502

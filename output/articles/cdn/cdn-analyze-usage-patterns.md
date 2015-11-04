@@ -7,14 +7,10 @@
 	manager="dwrede" 
 	editor=""/>
 
-<tags 
-	ms.service="cdn" 
-	ms.workload="tbd" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="09/01/2015" 
-	ms.author="juliako"/>
+<tags
+	ms.service="cdn"
+	ms.date="09/01/2015"
+	wacn.date=""/>
 
 #Analyze CDN usage patterns 
 

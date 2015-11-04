@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="Default TEMP folder size is too small for a role | Microsoft Azure"
+   pageTitle="Default TEMP folder size is too small for a role | Windows Azure"
    description="A cloud service role has a limited amount of space for the TEMP folder. This article provides some suggestions on how to avoid running out of space."
    services="cloud-services"
    documentationCenter=""
@@ -7,14 +7,10 @@
    manager="msmets"
    editor=""
    tags="top-support-issue"/>
-<tags 
-   ms.service="cloud-services"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="tbd"
-   ms.date="10/14/2015"
-   ms.author="jarrettr" />
+<tags
+	ms.service="cloud-services"
+	ms.date="10/14/2015"
+	wacn.date=""/>
 
 # Default TEMP folder size is too small on a Cloud Service Web/Worker role
 
@@ -26,7 +22,7 @@ The default temporary directory of a cloud service worker or web role has a maxi
 
 If you need more help at any point in this article, you can contact the Azure experts on [the MSDN Azure and the Stack Overflow forums](http://azure.microsoft.com/support/forums/).
 
-Alternatively, you can also file an Azure support incident. Go to the [Azure Support site](http://azure.microsoft.com/support/options/) and click on **Get Support**. For information about using Azure Support, read the [Microsoft Azure Support FAQ](http://azure.microsoft.com/support/faq/).
+Alternatively, you can also file an Azure support incident. Go to the [Azure Support site](http://azure.microsoft.com/support/options/) and click on **Get Support**. For information about using Azure Support, read the [Windows Azure Support FAQ](/support/faq/).
 
 
 ## Why do I run out of space?
@@ -35,9 +31,9 @@ The standard Windows environment variables TEMP and TMP are available to code ru
 ## Suggestion to fix the problem
 Implement one of the following alternatives:
 
-- Configure a local storage resource, and access it directly instead of using **TEMP** or **TMP**. To access a local storage resource from code running within your application, call the [RoleEnvironment.GetLocalResource](https://msdn.microsoft.com/library/microsoft.windowsazure.serviceruntime.roleenvironment.getlocalresource.aspx) method. For more information about setting up local storage resources, see [Configure Local Storage Resources](cloud-services-configure-local-storage-resources.md).
+- Configure a local storage resource, and access it directly instead of using **TEMP** or **TMP**. To access a local storage resource from code running within your application, call the [RoleEnvironment.GetLocalResource](https://msdn.microsoft.com/zh-cn/library/microsoft.windowsazure.serviceruntime.roleenvironment.getlocalresource.aspx) method. For more information about setting up local storage resources, see [Configure Local Storage Resources](/documentation/articles/cloud-services-configure-local-storage-resources).
 
-- Configure a local storage resource, and point the TEMP and TMP directories to point to the path of the local storage resource. This modification should be performed within the [RoleEntryPoint.OnStart](https://msdn.microsoft.com/library/microsoft.windowsazure.serviceruntime.roleentrypoint.onstart.aspx) method.
+- Configure a local storage resource, and point the TEMP and TMP directories to point to the path of the local storage resource. This modification should be performed within the [RoleEntryPoint.OnStart](https://msdn.microsoft.com/zh-cn/library/microsoft.windowsazure.serviceruntime.roleentrypoint.onstart.aspx) method.
 
 The following code example shows how to modify the target directories for TEMP and TMP from within the OnStart method:
 

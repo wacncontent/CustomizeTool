@@ -45,7 +45,7 @@ Watch a demo video of this tutorial to learn Hadoop on HDInsight:
 
 In conjunction with the general availability of Azure HDInsight, Microsoft also provides HDInsight Emulator for Azure, formerly known as *Microsoft HDInsight Developer Preview*. The Emulator targets developer scenarios and only supports single-node deployments. For information about using HDInsight Emulator, see [Get Started with the HDInsight Emulator][hdinsight-emulator].
 
-> [AZURE.NOTE] For instructions on how to provision an HBase cluster, see [Provision HBase cluster in HDInsight][hdinsight-hbase-custom-provision]. See <a href="http://go.microsoft.com/fwlink/?LinkId=510237">What's the difference between Hadoop and HBase?</a> to understand why you might choose one database over the other.
+> [AZURE.NOTE] For instructions on how to provision an HBase cluster, see [Provision HBase cluster in HDInsight][hdinsight-hbase-custom-provision]. See <a href="http://hbase.apache.org/book.html#architecture">What's the difference between Hadoop and HBase?</a> to understand why you might choose one database over the other.
 
 ## Prerequisites
 
@@ -247,10 +247,10 @@ In this Hadoop tutorial, you learned how to provision a Hadoop cluster on Window
 [azure-trial]: /pricing/1rmb-trial/
 [azure-management-portal]: https://manage.windowsazure.cn/
 [azure-create-storageaccount]: /documentation/articles/storage-create-storage-account
-[apache-hadoop]: http://go.microsoft.com/fwlink/?LinkId=510084
-[apache-hive]: http://go.microsoft.com/fwlink/?LinkId=510085
-[apache-mapreduce]: http://go.microsoft.com/fwlink/?LinkId=510086
-[apache-hdfs]: http://go.microsoft.com/fwlink/?LinkId=510087
+[apache-hadoop]: http://hadoop.apache.org/
+[apache-hive]: https://cwiki.apache.org/confluence/display/Hive/Home%3bjsessionid=AF5B37E667D7DBA633313BB2280C9072
+[apache-mapreduce]: http://wiki.apache.org/hadoop/MapReduce
+[apache-hdfs]: http://hadoop.apache.org/docs/r1.0.4/hdfs_design.html
 [hdinsight-hbase-custom-provision]: /documentation/articles/hdinsight-hbase-tutorial-get-started
 [powershell-download]: http://go.microsoft.com/fwlink/p/?linkid=320376&clcid=0x409
 [powershell-install-configure]: /documentation/articles/install-configure-powershell

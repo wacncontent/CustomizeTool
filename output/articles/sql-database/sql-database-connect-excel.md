@@ -10,24 +10,20 @@
 
 <tags
 	ms.service="sql-database"
-	ms.workload="data-management"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="get-started-article"
 	ms.date="10/09/2015"
-	ms.author="joseidz"/>
+	wacn.date=""/>
 
 
 # Connect to an Azure SQL database with Excel
 
 > [AZURE.SELECTOR]
-- [C#](sql-database-connect-query.md)
-- [SSMS](sql-database-connect-query-ssms.md)
-- [Excel](sql-database-connect-excel.md)
+- [C#](/documentation/articles/sql-database-connect-query)
+- [SSMS](/documentation/articles/sql-database-connect-query-ssms)
+- [Excel](/documentation/articles/sql-database-connect-excel)
 
-This article shows you how to connect Excel to an Azure SQL database and create a report over the data in the database. You'll need a SQL database first. If you don't have one, see [Create your first SQL database](sql-database-get-started.md) to get a database with sample data up and running in a few minutes. This article is based on the sample data from that article, but you can follow similar steps on your own data.
+This article shows you how to connect Excel to an Azure SQL database and create a report over the data in the database. You'll need a SQL database first. If you don't have one, see [Create your first SQL database](/documentation/articles/sql-database-get-started) to get a database with sample data up and running in a few minutes. This article is based on the sample data from that article, but you can follow similar steps on your own data.
 
-You'll also need a copy of Excel. This article uses [Microsoft Excel 2016](https://products.office.com/en-US/).
+You'll also need a copy of Excel. This article uses [Microsoft Excel 2016](https://products.office.com/).
 
 ## Connect and create a report
 
@@ -39,7 +35,7 @@ You'll also need a copy of Excel. This article uses [Microsoft Excel 2016](https
 
 	The Data Connection Wizard opens.
 
-3.	In the **Connect to Database Server** dialog box, type the **Server name** that hosts the logical server you want to connect to in the form **<*servername*>.database.windows.net**. For example, **adventureserver.database.windows.net**.
+3.	In the **Connect to Database Server** dialog box, type the **Server name** that hosts the logical server you want to connect to in the form **<*servername*>.database.chinacloudapi.cn**. For example, **adventureserver.database.chinacloudapi.cn**.
 
 4.	In the **Log on Credentials** section, click **Use the following User Name and Password**, type the **User Name** and **Password** you set up for the SQL Database server when you created it, and then click **Next**.
 
@@ -65,7 +61,7 @@ You'll also need a copy of Excel. This article uses [Microsoft Excel 2016](https
 
 ## Next steps
 
-If you are a Software as a Service (SaaS) developer, learn about [Elastic Database pools](sql-database-elastic-pool.md). You can easily manage large collections of databases using [Elastic Database jobs](sql-database-elastic-jobs-overview.md).
+If you are a Software as a Service (SaaS) developer, learn about [Elastic Database pools](/documentation/articles/sql-database-elastic-pool). You can easily manage large collections of databases using [Elastic Database jobs](/documentation/articles/sql-database-elastic-jobs-overview).
 
 <!--Image references-->
 [1]: ./media/sql-database-connect-excel/connect-to-database-server.png

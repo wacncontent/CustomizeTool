@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Query SQL Database with C# | Microsoft Azure"
+	pageTitle="Query SQL Database with C# | Windows Azure"
 	description="Details about IP addresses, connection strings, config file for secure login, and free Visual Studio all to enable your C# program to connect to your Azure SQL Database database in the cloud, by using ADO.NET."
 	services="sql-database"
 	documentationCenter=""
@@ -9,20 +9,16 @@
 
 <tags
 	ms.service="sql-database"
-	ms.workload="data-management"
-	ms.tgt_pltfrm="na"
-	ms.devlang="dotnet"
-	ms.topic="get-started-article"
 	ms.date="10/09/2015"
-	ms.author="genemi"/>
+	wacn.date=""/>
 
 
 # Connect to and query your SQL Database with C&#x23;
 
 > [AZURE.SELECTOR]
-- [C#](sql-database-connect-query.md)
-- [SSMS](sql-database-connect-query-ssms.md)
-- [Excel](sql-database-connect-excel.md)
+- [C#](/documentation/articles/sql-database-connect-query)
+- [SSMS](/documentation/articles/sql-database-connect-query-ssms)
+- [Excel](/documentation/articles/sql-database-connect-excel)
 
 You want to write a C# program that uses ADO.NET to connect to an Azure SQL Database database in the cloud. 
 
@@ -35,17 +31,17 @@ This topic describes every step for people who are new to Azure SQL Database and
 To run the C# code sample, you must have:
 
 
-- An Azure account and subscription. You can sign up for a [free trial](http://azure.microsoft.com/pricing/free-trial/).
+- An Azure account and subscription. You can sign up for a [trial](/pricing/1rmb-trial/).
 
 
 - An **AdventureWorksLT** demonstration database on the Azure SQL Database service.
- - [Create the demo database](sql-database-get-started.md) in minutes.
+ - [Create the demo database](/documentation/articles/sql-database-get-started) in minutes.
 
 
 - Visual Studio 2013 update 4 (or later). Microsoft now provides Visual Studio Community for *free*.
  - [Visual Studio Community, download](http://www.visualstudio.com/products/visual-studio-community-vs)
  - [More options for free Visual Studio](http://www.visualstudio.com/products/free-developer-offers-vs.aspx)
- - Or, let the [step](#InstallVSForFree) later in this topic describe how the [Azure preview portal](http://portal.azure.com/) guides you to the install of Visual Studio.
+ - Or, let the [step](#InstallVSForFree) later in this topic describe how the [Azure preview portal](http://manage.windowsazure.cn/) guides you to the install of Visual Studio.
 
 
 <a name="InstallVSForFree" id="InstallVSForFree"></a>
@@ -58,13 +54,13 @@ To run the C# code sample, you must have:
 If you need to install Visual Studio, you can:
 
 - Install Visual Studio Community for free by navigating your browser to Visual Studio product webpages that provide free downloads and other options; or
-- Let the [Azure preview portal](http://portal.azure.com/) guide you to the download webpage, which described next.
+- Let the [Azure preview portal](http://manage.windowsazure.cn/) guide you to the download webpage, which described next.
 
 
 ### Visual Studio through the Azure preview portal
 
 
-1. Login through the [Azure preview portal](http://portal.azure.com/), http://portal.azure.com/.
+1. Login through the [Azure preview portal](http://manage.windowsazure.cn/), http://manage.windowsazure.cn/.
 
 2. Click **BROWSE* ALL** > **SQL databases**. A blade opens that searches for databases.
 
@@ -126,12 +122,12 @@ Our C# sample uses the .NET Framework assembly **System.Configuration.dll**, so 
 ## Step 4: Get the connection string
 
 
-Use the [Azure preview portal](http://portal.azure.com/) to copy the connection string for your database.
+Use the [Azure preview portal](http://manage.windowsazure.cn/) to copy the connection string for your database.
 
 Your first use will be to connect Visual Studio to your Azure SQL Database **AdventureWorksLT** database.
 
 
-[AZURE.INCLUDE [sql-database-include-connection-string-20-portalshots](../../includes/sql-database-include-connection-string-20-portalshots.md)]
+[AZURE.INCLUDE [sql-database-include-connection-string-20-portalshots](../includes/sql-database-include-connection-string-20-portalshots.md)]
 
 
 ## Step 5: Add the connection string to the App.config file
@@ -152,7 +148,7 @@ Your first use will be to connect Visual Studio to your Azure SQL Database **Adv
 		<connectionStrings>
 			<clear />
 			<add name="ConnectionString4NoUserIDNoPassword"
-			connectionString="Server=tcp:{your_serverName_here}.database.windows.net,1433; Database={your_databaseName_here}; Connection Timeout=30; Encrypt=True; TrustServerCertificate=False;"
+			connectionString="Server=tcp:{your_serverName_here}.database.chinacloudapi.cn,1433; Database={your_databaseName_here}; Connection Timeout=30; Encrypt=True; TrustServerCertificate=False;"
 			/>
 		</connectionStrings>
 	</configuration>
@@ -306,7 +302,7 @@ We try to keep the C# sample short. Yet we added code to read a config file to h
 
 > [AZURE.WARNING] In the interest of code brevity, we opted not to include code for exception handling and retry logic in this educational sample. However your production programs that interact with a cloud database should include both.
 >
-> [Here](sql-database-develop-csharp-retry-windows.md) is a link to a code sample that has retry logic.
+> [Here](/documentation/articles/sql-database-develop-csharp-retry-windows) is a link to a code sample that has retry logic.
 
 
 ## Step 7: Add allowed IP address range in the server firewall
@@ -315,16 +311,16 @@ We try to keep the C# sample short. Yet we added code to read a config file to h
 Your client C# program cannot connect to Azure SQL Database until the IP address of the client computer has been added in the SQL Database firewall. Your program will fail with a handy error message that states the necessary IP address.
 
 
-You can use the [Azure preview portal](http://portal.azure.com/) to add the IP address.
+You can use the [Azure preview portal](http://manage.windowsazure.cn/) to add the IP address.
 
 
 
-[AZURE.INCLUDE [sql-database-include-ip-address-22-v12portal](../../includes/sql-database-include-ip-address-22-v12portal.md)]
+[AZURE.INCLUDE [sql-database-include-ip-address-22-v12portal](../includes/sql-database-include-ip-address-22-v12portal.md)]
 
 
 
 For more information, see:<br/>
-[How to: Configure firewall settings on SQL Database](sql-database-configure-firewall-settings.md)
+[How to: Configure firewall settings on SQL Database](/documentation/articles/sql-database-configure-firewall-settings)
 
 
 
@@ -342,9 +338,9 @@ For more information, see:<br/>
 ## Related links
 
 
-- [Client quick-start code samples to SQL Database](sql-database-develop-quick-start-client-code-samples.md)
+- [Client quick-start code samples to SQL Database](/documentation/articles/sql-database-develop-quick-start-client-code-samples)
 
-- If your client program runs on an Azure VM, learn about TCP ports other than 1433 at:<br/>[Ports beyond 1433 for ADO.NET 4.5 and SQL Database V12](sql-database-develop-direct-route-ports-adonet-v12.md).
+- If your client program runs on an Azure VM, learn about TCP ports other than 1433 at:<br/>[Ports beyond 1433 for ADO.NET 4.5 and SQL Database V12](/documentation/articles/sql-database-develop-direct-route-ports-adonet-v12).
 
 
 

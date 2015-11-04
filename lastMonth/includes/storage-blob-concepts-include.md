@@ -20,7 +20,7 @@ The Blob service contains the following components:
 ![Blob1][Blob1]
 
 -   **Storage Account:** All access to Azure Storage is done
-    through a storage account. See [Azure Storage Scalability and Performance Targets](/documentation/articles/storage-scalability-targets) for details about storage account capacity.
+    through a storage account. See [Azure Storage Scalability and Performance Targets](storage-scalability-targets.md) for details about storage account capacity.
 
 -   **Container:** A container provides a grouping of a set of blobs.
     All blobs must be in a container. An account can contain an
@@ -33,17 +33,17 @@ The Blob service contains the following components:
     
 	*Page blobs* can be up to 1 TB in size, and are more efficient for frequent read/write operations. Azure Virtual Machines use page blobs as OS and data disks.
 
-	For more information about blobs, see [Understanding Block Blobs, Page Blobs, and Append Blobs](https://msdn.microsoft.com/zh-cn/library/azure/ee691964.aspx).
+	For more information about blobs, see [Understanding Block Blobs, Page Blobs, and Append Blobs](https://msdn.microsoft.com/library/azure/ee691964.aspx).
 
 ## Naming and referencing containers and blobs
 
 You can address a blob in your storage account using the following URL format:
    
-    http://<storage-account-name>.blob.core.chinacloudapi.cn/<container-name>/<blob-name>  
+    http://<storage-account-name>.blob.core.windows.net/<container-name>/<blob-name>  
       
 For example, here is a URL that addresses one of the blobs in the diagram above:  
 
-    http://sally.blob.core.chinacloudapi.cn/movies/MOV1.AVI
+    http://sally.blob.core.windows.net/movies/MOV1.AVI
 
 ### Container naming rules
 

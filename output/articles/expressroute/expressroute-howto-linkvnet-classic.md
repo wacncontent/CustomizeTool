@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="Linking virtual networks to ExpressRoute circuits | Microsoft Azure"
+   pageTitle="Linking virtual networks to ExpressRoute circuits | Windows Azure"
    description="This document provides an overview of how to link virtual networks (VNets) to ExpressRoute circuits."
    services="expressroute"
    documentationCenter="na"
@@ -7,31 +7,27 @@
    manager="carolz"
    editor=""
    tags="azure-service-management"/>
-<tags 
-   ms.service="expressroute"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="infrastructure-services"
-   ms.date="09/21/2015"
-   ms.author="cherylmc" />
+<tags
+	ms.service="expressroute"
+	ms.date="09/21/2015"
+	wacn.date=""/>
 
 # Linking VNets to ExpressRoute circuits
 
 This article give you an overview of how to link virtual networks (VNets) to ExpressRoute circuits. Virtual networks can either be in the same subscription, or be part of another subscription. This article applies to VNets deployed using the classic deployment model.
 
->[AZURE.IMPORTANT] It's important to know that Azure currently works with two deployment models: Resource Manager, and classic. Before you begin your configuration, make sure that you understand the deployment models and tools. For information about the deployment models, see [Azure deployment models](../azure-classic-rm.md)
+>[AZURE.IMPORTANT] It's important to know that Azure currently works with two deployment models: Resource Manager, and classic. Before you begin your configuration, make sure that you understand the deployment models and tools. For information about the deployment models, see [Azure deployment models](/documentation/articles/azure-classic-rm)
 
 ## Configuration prerequisites
 
-- You will need the latest version of the Azure PowerShell modules. You can download the latest PowerShell module from the PowerShell section of the [Azure Downloads page](http://azure.microsoft.com/downloads). Follow the instructions on the [How to install and configure Azure PowerShell](../powershell-install-configure.md) page for step-by-step guidance on how to configure your computer to use the Azure PowerShell modules. 
-- Make sure that you have reviewed the [prerequisites](expressroute-prerequisites.md) page, the  [routing requirements](expressroute-routing.md) page and the [workflows](expressroute-workflows.md) page before you begin configuration.
+- You will need the latest version of the Azure PowerShell modules. You can download the latest PowerShell module from the PowerShell section of the [Azure Downloads page](http://azure.microsoft.com/downloads). Follow the instructions on the [How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure) page for step-by-step guidance on how to configure your computer to use the Azure PowerShell modules. 
+- Make sure that you have reviewed the [prerequisites](/documentation/articles/expressroute-prerequisites) page, the  [routing requirements](/documentation/articles/expressroute-routing) page and the [workflows](/documentation/articles/expressroute-workflows) page before you begin configuration.
 - You must have an active ExpressRoute circuit. 
-	- Follow the instructions to [create an ExpressRoute circuit](expressroute-howto-circuit-classic.md) and have the circuit enabled by your connectivity provider. 
-	- Ensure that you have Azure private peering configured for your circuit. See the [configure routing](expressroute-howto-routing-classic.md) article for routing instructions. 
+	- Follow the instructions to [create an ExpressRoute circuit](/documentation/articles/expressroute-howto-circuit-classic) and have the circuit enabled by your connectivity provider. 
+	- Ensure that you have Azure private peering configured for your circuit. See the [configure routing](/documentation/articles/expressroute-howto-routing-classic) article for routing instructions. 
 	- Azure private peering must be configured and the BGP peering between your network and Microsoft must be up for you to enable end-to-end connectivity.
 
-You can link up to 10 VNets to an ExpressRoute circuit. All ExpressRoute circuits must be in the same geopolitical region. You can link a larger number of virtual networks to your ExpressRoute circuit if you enabled the ExpressRoute premium add-on. Check out the [FAQ](expressroute-faqs.md) for more details on the premium add-on. 
+You can link up to 10 VNets to an ExpressRoute circuit. All ExpressRoute circuits must be in the same geopolitical region. You can link a larger number of virtual networks to your ExpressRoute circuit if you enabled the ExpressRoute premium add-on. Check out the [FAQ](/documentation/articles/expressroute-faqs) for more details on the premium add-on. 
 
 ## Linking a VNet in the same Azure subscription to an ExpressRoute circuit
 
@@ -143,5 +139,5 @@ The circuit user can run the following cmdlet to redeem a link authorization.
 
 ## Next steps
 
-For more information about ExpressRoute, see the [ExpressRoute FAQ](expressroute-faqs.md).
+For more information about ExpressRoute, see the [ExpressRoute FAQ](/documentation/articles/expressroute-faqs).
 

@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Compute-intensive Java application on a VM | Microsoft Azure"
+	pageTitle="Compute-intensive Java application on a VM | Windows Azure"
 	description="Learn how to create an Azure virtual machine that runs a compute-intensive Java application that can be monitored by another Java application."
 	services="virtual-machines"
 	documentationCenter="java"
@@ -10,21 +10,17 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.workload="infrastructure-services"
-	ms.tgt_pltfrm="vm-windows"
-	ms.devlang="Java"
-	ms.topic="article"
 	ms.date="09/22/2015"
-	ms.author="robmcm"/>
+	wacn.date=""/>
 
 # How to run a compute-intensive task in Java on a virtual machine
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
  
 
 With Azure, you can use a virtual machine to handle compute-intensive tasks. For example, a virtual machine can handle tasks and deliver results to client machines or mobile applications. After reading this article, you will have an understanding of how to create a virtual machine that runs a compute-intensive Java application that can be monitored by another Java application.
 
-This tutorial assumes you know how to create Java console applications, can import libraries to your Java application, and can generate a Java archive (JAR). No knowledge of Microsoft Azure is assumed.
+This tutorial assumes you know how to create Java console applications, can import libraries to your Java application, and can generate a Java archive (JAR). No knowledge of Windows Azure is assumed.
 
 You will learn:
 
@@ -44,11 +40,11 @@ The following is an example of the Java application monitoring the compute-inten
 
 ![Traveling Salesman Problem client][client_output]
 
-[AZURE.INCLUDE [create-account-and-vms-note](../../includes/create-account-and-vms-note.md)]
+[AZURE.INCLUDE [create-account-and-vms-note](../includes/create-account-and-vms-note.md)]
 
 ## To create a virtual machine
 
-1. Log in to the [Azure Management Portal](https://manage.windowsazure.com).
+1. Log in to the [Azure Management Portal](https://manage.windowsazure.cn).
 2. Click **New**, click **Compute**, click **Virtual machine**, and then click **From Gallery**.
 3. In the **Virtual machine image select** dialog box, select **JDK 7 Windows Server 2012**.
 Note that **JDK 6 Windows Server 2012** is available in case you have legacy applications that are not yet ready to run in JDK 7.
@@ -61,8 +57,8 @@ Note that **JDK 6 Windows Server 2012** is available in case you have legacy app
     5. Click **Next**.
 5. In the next **Virtual machine configuration** dialog box:
     1. For **Cloud service**, use the default **Create a new cloud service**.
-    2. The value for **Cloud service DNS name** must be unique across cloudapp.net. If needed, modify this value so that Azure indicates it is unique.
-    2. Specify a region, affinity group, or virtual network. For purposes of this tutorial, specify a region such as **West US**.
+    2. The value for **Cloud service DNS name** must be unique across chinacloudapp.cn. If needed, modify this value so that Azure indicates it is unique.
+    2. Specify a region, affinity group, or virtual network. For purposes of this tutorial, specify a region such as **China North**.
     2. For **Storage Account**, select **Use an automatically generated storage account**.
     3. For **Availability Set**, select **(None)**.
     4. Click **Next**.
@@ -72,7 +68,7 @@ Note that **JDK 6 Windows Server 2012** is available in case you have legacy app
 
 ## To remotely log in to your virtual machine
 
-1. Log on to the [Management Portal](https://manage.windowsazure.com).
+1. Log on to the [Management Portal](https://manage.windowsazure.cn).
 2. Click **Virtual machines**.
 3. Click the name of the virtual machine that you want to log in to.
 4. Click **Connect**.
@@ -88,7 +84,7 @@ container for addressing Service Bus resources within your application.
 
 To create a service namespace:
 
-1.  Log on to the [Azure Management Portal](https://manage.windowsazure.com).
+1.  Log on to the [Azure Management Portal](https://manage.windowsazure.cn).
 2.  In the lower-left navigation pane of the Management Portal, click **Service Bus, Access Control & Caching**.
 3.  In the upper-left pane of the Management Portal, click the **Service
     Bus** node, and then click the **New** button.  
@@ -126,8 +122,8 @@ namespace.
 
 ## How to create a Java application that performs a compute-intensive task
 
-1. On your development machine (which does not have to be the virtual machine that you created), download the [Azure SDK for Java](http://azure.microsoft.com/develop/java/).
-2. Create a Java console application using the example code at the end of this section. In this tutorial, we'll use **TSPSolver.java** as the Java file name. Modify the **your\_service\_bus\_namespace**, **your\_service\_bus\_owner**, and **your\_service\_bus\_key** placeholders to use your service bus **namespace**, **Default Issuer** and **Default Key** values, respectively.
+1. On your development machine (which does not have to be the virtual machine that you created), download the [Azure SDK for Java](/develop/java/).
+2. Create a Java console application using the example code at the end of this section. In this tutorial, we'll use **TSPSolver.java** as the Java file name. Modify the **your_service_bus_namespace**, **your_service_bus_owner**, and **your_service_bus_key** placeholders to use your service bus **namespace**, **Default Issuer** and **Default Key** values, respectively.
 3. After coding, export the application to a runnable Java archive (JAR), and package the required libraries into the generated JAR. In this tutorial, we'll use **TSPSolver.jar** as the generated JAR name.
 
 <p/>
@@ -246,8 +242,8 @@ namespace.
 	            Configuration config = ServiceBusConfiguration.configureWithWrapAuthentication(
 	                    "your_service_bus_namespace", "your_service_bus_owner",
                         "your_service_bus_key",
-                        ".servicebus.windows.net",
-                        "-sb.accesscontrol.windows.net/WRAPv0.9");
+                        ".servicebus.chinacloudapi.cn",
+                        "-sb.accesscontrol.chinacloudapi.cn/WRAPv0.9");
 
 	            service = ServiceBusService.create(config);
 
@@ -317,7 +313,7 @@ namespace.
 
 ## How to create a Java application that monitors the progress of the compute-intensive task
 
-1. On your development machine, create a Java console application using the example code at the end of this section. In this tutorial, we'll use **TSPClient.java** as the Java file name. As shown earlier, modify the **your\_service\_bus\_namespace**, **your\_service\_bus\_owner**, and **your\_service\_bus\_key** placeholders to use your service bus **namespace**, **Default Issuer** and **Default Key** values, respectively.
+1. On your development machine, create a Java console application using the example code at the end of this section. In this tutorial, we'll use **TSPClient.java** as the Java file name. As shown earlier, modify the **your_service_bus_namespace**, **your_service_bus_owner**, and **your_service_bus_key** placeholders to use your service bus **namespace**, **Default Issuer** and **Default Key** values, respectively.
 2. Export the application to a runnable JAR, and package the required libraries into the generated JAR. In this tutorial, we'll use **TSPClient.jar** as the generated JAR name.
 
 <p/>
@@ -350,8 +346,8 @@ namespace.
 	                Configuration config;
 	                config = ServiceBusConfiguration.configureWithWrapAuthentication(
 	                        namespace, issuer, key,
-                            ".servicebus.windows.net",
-                            "-sb.accesscontrol.windows.net/WRAPv0.9");
+                            ".servicebus.chinacloudapi.cn",
+                            "-sb.accesscontrol.chinacloudapi.cn/WRAPv0.9");
 
 	                ServiceBusContract service = ServiceBusService.create(config);
 
@@ -540,4 +536,4 @@ For both the solver and client applications, you can press **Ctrl+C** to exit if
 [namespace_list]: ./media/virtual-machines-java-run-compute-intensive-task/SvcBusQueues_05_NamespaceList.jpg
 [properties_pane]: ./media/virtual-machines-java-run-compute-intensive-task/SvcBusQueues_06_PropertiesPane.jpg
 [default_key]: ./media/virtual-machines-java-run-compute-intensive-task/SvcBusQueues_07_DefaultKey.jpg
-[add_ca_cert]: ../java-add-certificate-ca-store.md
+[add_ca_cert]: /documentation/articles/java-add-certificate-ca-store

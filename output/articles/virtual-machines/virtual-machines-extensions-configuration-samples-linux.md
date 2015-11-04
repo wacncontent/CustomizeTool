@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Sample configuration for Linux VM extensions | Microsoft Azure"
+   pageTitle="Sample configuration for Linux VM extensions | Windows Azure"
    description="Sample configuration for authoring templates with extensions for Linux VMs"
    services="virtual-machines"
    documentationCenter=""
@@ -9,24 +9,20 @@
    tags="azure-resource-manager"/>
 
 <tags
-   ms.service="virtual-machines"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="vm-linux"
-   ms.workload="infrastructure-services"
-   ms.date="09/01/2015"
-   ms.author="kundanap"/>
+	ms.service="virtual-machines"
+	ms.date="09/01/2015"
+	wacn.date=""/>
 
 # Linux VM extension configuration samples
 
 This article provides sample configuration for configuring Azure VM extensions for Linux VMs.
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-rm-include.md)] classic deployment model.
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] classic deployment model.
 
 
-To learn more about these extensions click here : [Azure VM Extensions Overview.](https://msdn.microsoft.com/library/azure/dn606311.aspx)
+To learn more about these extensions click here : [Azure VM Extensions Overview.](https://msdn.microsoft.com/zh-cn/library/azure/dn606311.aspx)
 
-To learn more about authoring extension templates click here : [Authoring Extension Templates.](virtual-machines-extensions-authoring-templates.md)
+To learn more about authoring extension templates click here : [Authoring Extension Templates.](/documentation/articles/virtual-machines-extensions-authoring-templates)
 
 This article lists expected configuration values for some of the Linux Extensions.
 
@@ -71,7 +67,7 @@ Rest of the article provides sample configurations for Linux VM Extensions.
         "typeHandlerVersion": "1.3",
         "settings": {
             "fileUris": [
-                "http: //Yourstorageaccount.blob.core.windows.net/customscriptfiles/start.ps1"
+                "http: //Yourstorageaccount.blob.core.chinacloudapi.cn/customscriptfiles/start.ps1"
             ],
             "commandToExecute": "powershell.exe-ExecutionPolicyUnrestricted-Filestart.ps1"
         }

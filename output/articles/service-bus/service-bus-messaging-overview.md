@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Service Bus Messaging overview | Microsoft Azure"
+	pageTitle="Service Bus Messaging overview | Windows Azure"
 	description="Service Bus Messaging: Flexible Data Delivery in the Cloud"
 	services="service-bus"
 	documentationCenter=".net"
@@ -9,12 +9,8 @@
 
 <tags
 	ms.service="service-bus"
-	ms.workload="tbd"
-	ms.tgt_pltfrm="na"
-	ms.devlang="multiple"
-	ms.topic="article"
 	ms.date="09/04/2015"
-	ms.author="sethm"/>
+	wacn.date=""/>
 
 
 # Service Bus messaging: flexible data delivery in the cloud
@@ -41,7 +37,7 @@ Relayed messaging provides many benefits, but requires the server and client to 
 
 In contrast to the relayed messaging scheme, brokered messaging can be thought of as asynchronous, or "temporally decoupled." Producers (senders) and consumers (receivers) do not have to be online at the same time. The messaging infrastructure reliably stores messages in a "broker" (such as a queue) until the consuming party is ready to receive them. This allows the components of the distributed application to be disconnected, either voluntarily; for example, for maintenance, or due to a component crash, without affecting the entire system. Furthermore, the receiving application may only have to come online during certain times of the day, such as an inventory management system that only is required to run at the end of the business day.
 
-The core components of the Service Bus brokered messaging infrastructure are queues, topics, and subscriptions.  The primary difference is that topics support publish/subscribe capabilities that can be used for sophisticated content-based routing and delivery logic, including sending to multiple recipients. These components enable new asynchronous messaging scenarios, such as temporal decoupling, publish/subscribe, and load balancing. For more information about these messaging entities, see [Service Bus queues, topics, and subscriptions](service-bus-queues-topics-subscriptions.md).
+The core components of the Service Bus brokered messaging infrastructure are queues, topics, and subscriptions.  The primary difference is that topics support publish/subscribe capabilities that can be used for sophisticated content-based routing and delivery logic, including sending to multiple recipients. These components enable new asynchronous messaging scenarios, such as temporal decoupling, publish/subscribe, and load balancing. For more information about these messaging entities, see [Service Bus queues, topics, and subscriptions](/documentation/articles/service-bus-queues-topics-subscriptions).
 
 As with the relayed messaging infrastructure, the brokered messaging capability is provided for WCF and .NET Framework programmers, and also via REST.
 
@@ -49,9 +45,9 @@ As with the relayed messaging infrastructure, the brokered messaging capability 
 
 To learn more about Service Bus messaging, see the following topics.
 
-- [Service Bus queues, topics, and subscriptions](service-bus-queues-topics-subscriptions.md)
-- [Service Bus fundamentals](service-bus-fundamentals-hybrid-solutions.md)
-- [Service Bus architecture](service-bus-architecture.md)
-- [How to use Service Bus Queues](service-bus-dotnet-how-to-use-queues.md)
-- [How to use Service Bus Topics](service-bus-dotnet-how-to-use-topics-subscriptions.md)
+- [Service Bus queues, topics, and subscriptions](/documentation/articles/service-bus-queues-topics-subscriptions)
+- [Service Bus fundamentals](/documentation/articles/service-bus-fundamentals-hybrid-solutions)
+- [Service Bus architecture](/documentation/articles/service-bus-architecture)
+- [How to use Service Bus Queues](/documentation/articles/service-bus-dotnet-how-to-use-queues)
+- [How to use Service Bus Topics](/documentation/articles/service-bus-dotnet-how-to-use-topics-subscriptions)
  

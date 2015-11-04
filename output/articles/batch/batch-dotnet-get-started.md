@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Tutorial - Get started with the Azure Batch .NET Library | Microsoft Azure"
+	pageTitle="Tutorial - Get started with the Azure Batch .NET Library | Windows Azure"
 	description="Learn basic concepts about Azure Batch and how to develop for the Batch service with a simple scenario"
 	services="batch"
 	documentationCenter=".net"
@@ -9,26 +9,22 @@
 
 <tags
 	ms.service="batch"
-	ms.devlang="dotnet"
-	ms.topic="hero-article"
-	ms.tgt_pltfrm="na"
-	ms.workload="big-compute"
 	ms.date="09/23/2015"
-	ms.author="yidingz"/>
+	wacn.date=""/>
 
 # Get started with the Azure Batch Library for .NET  
 
-Start working with the Azure Batch .NET Library by creating a console application that sets up support files and a program that runs on several compute nodes in an Azure Batch pool. The tasks that are created in this tutorial evaluate text in files uploaded to Azure Storage and return the words that most commonly appear in those files. The samples are written in C# and use the [Azure Batch .NET Library](https://msdn.microsoft.com/library/azure/mt348682.aspx).
+Start working with the Azure Batch .NET Library by creating a console application that sets up support files and a program that runs on several compute nodes in an Azure Batch pool. The tasks that are created in this tutorial evaluate text in files uploaded to Azure Storage and return the words that most commonly appear in those files. The samples are written in C# and use the [Azure Batch .NET Library](https://msdn.microsoft.com/zh-cn/library/azure/mt348682.aspx).
 
 ## Prerequisites
 
 - The accounts:
 
-	- **Azure account** - You can create a free trial account in just a couple of minutes. For details, see [Azure Free Trial](http://azure.microsoft.com/pricing/free-trial/).
+	- **Azure account** - You can create a trial account in just a couple of minutes. For details, see [Azure Trial](/pricing/1rmb-trial/).
 
-	- **Batch account** - See the **Batch Account** section of [Azure Batch technical overview](batch-technical-overview.md).
+	- **Batch account** - See the **Batch Account** section of [Azure Batch technical overview](/documentation/articles/batch-technical-overview).
 
-	- **Storage account** - See the **Create a storage account** section of [About Azure storage accounts](../storage-create-storage-account.md). In this tutorial, you create a container in this account named **testcon1**.
+	- **Storage account** - See the **Create a storage account** section of [About Azure storage accounts](/documentation/articles/storage-create-storage-account). In this tutorial, you create a container in this account named **testcon1**.
 
 - A Visual Studio console application project:
 
@@ -38,11 +34,11 @@ Start working with the Azure Batch .NET Library by creating a console applicatio
 
 - The NuGet assemblies:
 
-	1. After you create your project in Visual Studio, right-click the project in **Solution Explorer** and choose **Manage NuGet Packages**. Search online for **Azure.Batch** and then click **Install** to install the Microsoft Azure Batch package and dependencies.
+	1. After you create your project in Visual Studio, right-click the project in **Solution Explorer** and choose **Manage NuGet Packages**. Search online for **Azure.Batch** and then click **Install** to install the Windows Azure Batch package and dependencies.
 
 	2. Search online for **WindowsAzure.Storage** and then click **Install** to install the Azure Storage package and dependencies.
 
-> [AZURE.TIP] This tutorial makes use of some of the core Batch concepts discussed in [API basics for Azure Batch](batch-api-basics.md), highly recommended reading for those new to Batch.
+> [AZURE.TIP] This tutorial makes use of some of the core Batch concepts discussed in [API basics for Azure Batch](/documentation/articles/batch-api-basics), highly recommended reading for those new to Batch.
 
 ## Step 1: Create and upload the support files
 
@@ -63,11 +59,11 @@ To support the application, a container is created in Azure Storage, the text fi
 
 	- **[account-name]** - The name of the storage account that you previously created.
 
-	- **[account-key]** - The primary key of the storage account. You can find the primary key on the Storage page in the Azure portal.
+	- **[account-key]** - The primary key of the storage account. You can find the primary key on the Storage page in the Azure Management Portal.
 
 2. Save the App.config file.
 
-To learn more about Azure Storage connection strings, see [Configure Azure Storage Connection Strings](../storage/storage-configure-connection-string.md).
+To learn more about Azure Storage connection strings, see [Configure Azure Storage Connection Strings](/documentation/articles/storage-configure-connection-string).
 
 ### Create the storage container
 
@@ -107,9 +103,9 @@ To learn more about Azure Storage connection strings, see [Configure Azure Stora
 
 5. Save the Program.cs file.
 
-	> [AZURE.NOTE] In a production environment, it is recommended that you use a [shared access signature](https://msdn.microsoft.com/library/azure/ee395415.aspx).
+	> [AZURE.NOTE] In a production environment, it is recommended that you use a [shared access signature](https://msdn.microsoft.com/zh-cn/library/azure/ee395415.aspx).
 
-To learn more about Blob storage, see [How to use Blob storage from .NET](../storage/storage-dotnet-how-to-use-blobs.md)
+To learn more about Blob storage, see [How to use Blob storage from .NET](/documentation/articles/storage-dotnet-how-to-use-blobs)
 
 ### Create the processing program
 
@@ -208,7 +204,7 @@ A pool of compute nodes is the first set of resources that you must create when 
 			BatchSharedKeyCredentials cred = new BatchSharedKeyCredentials("[account-url]", "[account-name]", "[account-key]");
 			BatchClient client = BatchClient.Open(cred);
 
-	Replace the bracketed values with those associated with your Batch account, each of which can be found in the [Azure Preview portal](https://portal.azure.com). To locate these values, log in to the [Azure Preview portal](https://portal.azure.com) and:
+	Replace the bracketed values with those associated with your Batch account, each of which can be found in the [Azure Preview portal](https://manage.windowsazure.cn). To locate these values, log in to the [Azure Preview portal](https://manage.windowsazure.cn) and:
 
 	- **[account-name]** - Click **Batch Accounts**, select the Batch account you created earlier
 	- **[account-url]** - Within the Batch account blade, click **Properties** > **URL**
@@ -304,18 +300,18 @@ After the job is created, tasks can be added to it. Each task runs on a compute 
 		{
 			CloudJob job = client.JobOperations.GetJob("testjob1");
 			ResourceFile programFile = new ResourceFile(
-				"https://[account-name].blob.core.windows.net/testcon1/ProcessTaskData.exe",
+				"https://[account-name].blob.core.chinacloudapi.cn/testcon1/ProcessTaskData.exe",
 				"ProcessTaskData.exe");
       	  ResourceFile assemblyFile = new ResourceFile(
-				"https://[account-name].blob.core.windows.net/testcon1/Microsoft.WindowsAzure.Storage.dll",
+				"https://[account-name].blob.core.chinacloudapi.cn/testcon1/Microsoft.WindowsAzure.Storage.dll",
 				"Microsoft.WindowsAzure.Storage.dll");
 			for (int i = 1; i < 4; ++i)
 			{
 				string blobName = "taskdata" + i;
 				string taskName = "mytask" + i;
-				ResourceFile taskData = new ResourceFile("https://[account-name].blob.core.windows.net/testcon1/" +
+				ResourceFile taskData = new ResourceFile("https://[account-name].blob.core.chinacloudapi.cn/testcon1/" +
 				  blobName, blobName);
-				CloudTask task = new CloudTask(taskName, "ProcessTaskData.exe https://[account-name].blob.core.windows.net/testcon1/" +
+				CloudTask task = new CloudTask(taskName, "ProcessTaskData.exe https://[account-name].blob.core.chinacloudapi.cn/testcon1/" +
 				  blobName + " 3");
 				List<ResourceFile> taskFiles = new List<ResourceFile>();
 				taskFiles.Add(taskData);
@@ -487,10 +483,10 @@ Because you are charged for resources in Azure, it's always a good idea to delet
 			Task status: Completed
 			Task start: 7/17/2015 8:31:57 PM
 
-8. At this point you can go into the Azure portal to look at the resources that were created. To delete the resources, press Enter until the program finishes.
+8. At this point you can go into the Azure Management Portal to look at the resources that were created. To delete the resources, press Enter until the program finishes.
 
 ## Next steps
 
-1. Now that you've learned the basics of running tasks, you can learn about how to automatically scale compute nodes when the demand for your application changes. To do this, see [Automatically scale Compute Nodes in an Azure Batch Pool](batch-automatic-scaling.md)
+1. Now that you've learned the basics of running tasks, you can learn about how to automatically scale compute nodes when the demand for your application changes. To do this, see [Automatically scale Compute Nodes in an Azure Batch Pool](/documentation/articles/batch-automatic-scaling)
 
-2. Some applications produce large amounts of data that can be difficult to process. One way to solve this is through [efficient list querying](batch-efficient-list-queries.md).
+2. Some applications produce large amounts of data that can be difficult to process. One way to solve this is through [efficient list querying](/documentation/articles/batch-efficient-list-queries).

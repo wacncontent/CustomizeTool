@@ -1,25 +1,21 @@
 <properties 
-pageTitle="Common startup tasks for Cloud Services | Microsoft Azure" 
+pageTitle="Common startup tasks for Cloud Services | Windows Azure" 
 description="Provides some examples of common startup tasks you may want to perform in your cloud services web role or worker role." 
 services="cloud-services" 
 documentationCenter="" 
 authors="Thraka" 
 manager="timlt" 
 editor=""/>
-<tags 
-ms.service="cloud-services" 
-ms.workload="tbd" 
-ms.tgt_pltfrm="na" 
-ms.devlang="na" 
-ms.topic="article" 
-ms.date="08/24/2015" 
-ms.author="adegeo"/>
+<tags
+	ms.service="cloud-services"
+	ms.date="08/24/2015"
+	wacn.date=""/>
 
 # Common Cloud Service startup tasks
 
 This article provides some examples of common startup tasks you may want to perform in your cloud service. You can use startup tasks to perform operations before a role starts. Operations that you might want to perform include installing a component, registering COM components, setting registry keys, or starting a long running process. 
 
-See [this article](cloud-services-startup-tasks.md) to understand how startup tasks work, and specifically how to create the entries that define a startup task.
+See [this article](/documentation/articles/cloud-services-startup-tasks) to understand how startup tasks work, and specifically how to create the entries that define a startup task.
 
 Many of the tasks here use the 
 
@@ -60,7 +56,7 @@ If you need environment variables defined for a specific task, that isn't shared
 </ServiceDefinition>
 ```
 
-Variables can also use a [valid Azure XPath value](https://msdn.microsoft.com/library/azure/hh404006.aspx) to reference something about the deployment. Instead of using the `value` attribute, define a [RoleInstanceValue] child element.
+Variables can also use a [valid Azure XPath value](https://msdn.microsoft.com/zh-cn/library/azure/hh404006.aspx) to reference something about the deployment. Instead of using the `value` attribute, define a [RoleInstanceValue] child element.
 
 ```xml
 <Variable name="PathToStartupStorage">
@@ -71,7 +67,7 @@ Variables can also use a [valid Azure XPath value](https://msdn.microsoft.com/li
 
 ## Configure IIS startup with AppCmd.exe
 
-The [AppCmd.exe](https://technet.microsoft.com/library/jj635852.aspx) command line tool can be used to manage IIS settings at startup on Azure. *AppCmd.exe* provides convenient, command line access to configuration settings for use in startup tasks on Azure. Using *AppCmd.exe*, Website settings can be added, modified, or removed for applications and sites.
+The [AppCmd.exe](https://technet.microsoft.com/zh-cn/library/jj635852.aspx) command line tool can be used to manage IIS settings at startup on Azure. *AppCmd.exe* provides convenient, command line access to configuration settings for use in startup tasks on Azure. Using *AppCmd.exe*, Website settings can be added, modified, or removed for applications and sites.
 
 However, there are a few things to watch out for in the use of *AppCmd.exe* as a startup task:
 
@@ -81,13 +77,13 @@ However, there are a few things to watch out for in the use of *AppCmd.exe* as a
 
 For the reasons listed, it is often wise to check the **errorlevel** after calling *AppCmd.exe*, which is easy to do if you wrap the call to *AppCmd.exe* with a *.cmd* file. If you detect a known **errorlevel** response, you can ignore it, otherwise return it. This is demonstrated in the example below.
 
-The errorlevels returned by *AppCmd.exe* are listed in the winerror.h file, and can also be seen on [MSDN](https://msdn.microsoft.com/library/windows/desktop/ms681382.aspx).
+The errorlevels returned by *AppCmd.exe* are listed in the winerror.h file, and can also be seen on [MSDN](https://msdn.microsoft.com/zh-cn/library/windows/desktop/ms681382.aspx).
 
 ### Example
 
 This example adds a compression section and a compression entry for JSON to the *Web.config* file, with error handling and logging.
 
-The relevant sections of the [ServiceDefinition.csdef] file are shown here, which include setting the [executionContext](https://msdn.microsoft.com/library/azure/gg557552.aspx#Task) attribute to `elevated` to give *AppCmd.exe* sufficient permissions to change the settings in the *Web.config* file:
+The relevant sections of the [ServiceDefinition.csdef] file are shown here, which include setting the [executionContext](https://msdn.microsoft.com/zh-cn/library/azure/gg557552.aspx#Task) attribute to `elevated` to give *AppCmd.exe* sufficient permissions to change the settings in the *Web.config* file:
 
 ```xml
 <ServiceDefinition name="MyService" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceDefinition">
@@ -305,7 +301,7 @@ As an example, this **Startup.cmd** batch file uses the **PathToStartupStorage**
 
     EXIT /b 0
 
-You can access local storage from the Azure SDK by using the [GetLocalResource](https://msdn.microsoft.com/library/azure/microsoft.windowsazure.serviceruntime.roleenvironment.getlocalresource.aspx) method. Standard file read and write operations will then work to read and write the contents of the local storage resource. 
+You can access local storage from the Azure SDK by using the [GetLocalResource](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.serviceruntime.roleenvironment.getlocalresource.aspx) method. Standard file read and write operations will then work to read and write the contents of the local storage resource. 
 
 ```csharp
 string localStoragePath = Microsoft.WindowsAzure.ServiceRuntime.RoleEnvironment.GetLocalResource("StartupLocalStorage").RootPath;
@@ -482,23 +478,23 @@ If you want to copy or create a file during your startup task that is then acces
 
 ## Next steps
 
-Review the cloud [service model and package](cloud-services-model-and-package.md)
+Review the cloud [service model and package](/documentation/articles/cloud-services-model-and-package)
 
-Learn more about how [Tasks](cloud-services-startup-tasks.md) work.
+Learn more about how [Tasks](/documentation/articles/cloud-services-startup-tasks) work.
 
-[Create and deploy](cloud-services-how-to-create-deploy-portal.md) your cloud service package.
+[Create and deploy](/documentation/articles/cloud-services-how-to-create-deploy-portal) your cloud service package.
 
 
-[ServiceDefinition.csdef]: cloud-services-model-and-package.md#csdef
-[Task]: https://msdn.microsoft.com/library/azure/gg557552.aspx#Task
-[Runtime]: https://msdn.microsoft.com/en-us/library/azure/gg557552.aspx#Runtime
-[Startup]: https://msdn.microsoft.com/library/azure/gg557552.aspx#Startup
-[Runtime]: https://msdn.microsoft.com/library/azure/gg557552.aspx#Runtime
-[Environment]: https://msdn.microsoft.com/library/azure/gg557552.aspx#Environment
-[Variable]: https://msdn.microsoft.com/library/azure/gg557552.aspx#Variable
-[RoleInstanceValue]: https://msdn.microsoft.com/library/azure/gg557552.aspx#RoleInstanceValue
-[RoleEnvironment]: https://msdn.microsoft.com/library/azure/microsoft.windowsazure.serviceruntime.roleenvironment.aspx
-[Endpoints]: https://msdn.microsoft.com/library/azure/gg557552.aspx#Endpoints
-[LocalStorage]: https://msdn.microsoft.com/library/azure/gg557552.aspx#LocalStorage
-[LocalResources]: https://msdn.microsoft.com/library/azure/gg557552.aspx#LocalResources
-[RoleInstanceValue]: https://msdn.microsoft.com/library/azure/gg557552.aspx#RoleInstanceValue
+[ServiceDefinition.csdef]: /documentation/articles/cloud-services-model-and-package#csdef
+[Task]: https://msdn.microsoft.com/zh-cn/library/azure/gg557552.aspx#Task
+[Runtime]: https://msdn.microsoft.com/zh-cn/library/azure/gg557552.aspx#Runtime
+[Startup]: https://msdn.microsoft.com/zh-cn/library/azure/gg557552.aspx#Startup
+[Runtime]: https://msdn.microsoft.com/zh-cn/library/azure/gg557552.aspx#Runtime
+[Environment]: https://msdn.microsoft.com/zh-cn/library/azure/gg557552.aspx#Environment
+[Variable]: https://msdn.microsoft.com/zh-cn/library/azure/gg557552.aspx#Variable
+[RoleInstanceValue]: https://msdn.microsoft.com/zh-cn/library/azure/gg557552.aspx#RoleInstanceValue
+[RoleEnvironment]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.serviceruntime.roleenvironment.aspx
+[Endpoints]: https://msdn.microsoft.com/zh-cn/library/azure/gg557552.aspx#Endpoints
+[LocalStorage]: https://msdn.microsoft.com/zh-cn/library/azure/gg557552.aspx#LocalStorage
+[LocalResources]: https://msdn.microsoft.com/zh-cn/library/azure/gg557552.aspx#LocalResources
+[RoleInstanceValue]: https://msdn.microsoft.com/zh-cn/library/azure/gg557552.aspx#RoleInstanceValue

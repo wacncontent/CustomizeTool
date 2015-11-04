@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Create and manage a SQL Database elastic database pool | Microsoft Azure"
+	pageTitle="Create and manage a SQL Database elastic database pool | Windows Azure"
 	description="Create a single pool of resources to share across a group of Azure SQL Databases."
 	services="sql-database"
 	documentationCenter=""
@@ -9,22 +9,18 @@
 
 <tags
 	ms.service="sql-database"
-	ms.devlang="NA"
 	ms.date="10/08/2015"
-	ms.author="sstein"
-	ms.workload="data-management"
-	ms.topic="article"
-	ms.tgt_pltfrm="NA"/>
+	wacn.date=""/>
 
 
 # Create an elastic database pool
 
 > [AZURE.SELECTOR]
-- [Azure portal](sql-database-elastic-pool-portal.md)
-- [C#](sql-database-client-library.md)
-- [PowerShell](sql-database-elastic-pool-powershell.md)
+- [Azure Management Portal](/documentation/articles/sql-database-elastic-pool-portal)
+- [C#](/documentation/articles/sql-database-client-library)
+- [PowerShell](/documentation/articles/sql-database-elastic-pool-powershell)
 
-This article shows you how to create an elastic database pool, which simplifies the process of creating, maintaining, and managing performance and cost for multiple databases. Before you start, you need at least one database on a SQL Database V12 server. If you don't have one, see [Create your first Azure SQL Database](sql-database-get-started.md) to create one in under five minutes.
+This article shows you how to create an elastic database pool, which simplifies the process of creating, maintaining, and managing performance and cost for multiple databases. Before you start, you need at least one database on a SQL Database V12 server. If you don't have one, see [Create your first Azure SQL Database](/documentation/articles/sql-database-get-started) to create one in under five minutes.
 
 
 > [AZURE.NOTE] Elastic database pools are currently in preview and only available with SQL Database V12 servers.
@@ -41,7 +37,7 @@ In the [Azure preview portal](https://ms.portal.azure.com/) click **SQL servers*
 
 -or-
 
-If you see a message saying there is a recommended pool for a server, click it to easily review and create a pool that is optimized for your server's databases. For details, see [Recommended elastic database pools](sql-database-elastic-pool-portal.md#recommended-elastic-database-pools).
+If you see a message saying there is a recommended pool for a server, click it to easily review and create a pool that is optimized for your server's databases. For details, see [Recommended elastic database pools](/documentation/articles/sql-database-elastic-pool-portal#recommended-elastic-database-pools).
    
   
 ![Create Elastic Pool][1]
@@ -55,7 +51,7 @@ The **Elastic database pool** blade provides options for choosing the pricing ti
 
 ## Step 2: choose a pricing tier
 
-The pool's pricing tier determines the features available to the elastic databases in the pool, and the maximum number of eDTUs (eDTU MAX), and storage (GBs) available to each database. For details, see [Service Tiers](sql-database-service-tiers.md#Service-tiers-for-elastic-database-pools).
+The pool's pricing tier determines the features available to the elastic databases in the pool, and the maximum number of eDTUs (eDTU MAX), and storage (GBs) available to each database. For details, see [Service Tiers](/documentation/articles/sql-database-service-tiers#Service-tiers-for-elastic-database-pools).
 
 >[AZURE.NOTE] Currently in the preview, you cannot change the pricing tier of an elastic database pool after it is created. To change the pricing tier for an existing elastic pool create a new elastic pool in the desired pricing tier and migrate the elastic databases to this new pool.
 
@@ -102,7 +98,7 @@ You configure the performance of the pool by setting the performance parameters 
 
    ![Configure Elastic Pool][3]
 
-There are three parameters you can set that define the performance for the pool: the eDTU Guarantee for the pool, and the eDTU MIN and eDTU MAX for elastic databases in the pool. The following table describes each, and provides some guidance for how to set them. For specific available value settings , see [elastic database pool reference](sql-database-elastic-pool-reference.md).
+There are three parameters you can set that define the performance for the pool: the eDTU Guarantee for the pool, and the eDTU MIN and eDTU MAX for elastic databases in the pool. The following table describes each, and provides some guidance for how to set them. For specific available value settings , see [elastic database pool reference](/documentation/articles/sql-database-elastic-pool-reference).
 
 | Performance parameter | Description |
 | :--- | :--- |
@@ -137,7 +133,7 @@ Just like elastic database pool pricing tier recommendations, recommended pools 
 
 After the pool is created, you can add or remove databases in and out of the pool by selecting or clearing databases on the **Add Databases** page.
 
-After creating a pool you can also use Transact-SQL to create new elastic databases in the pool and move databases in and out of a pool. For details see, [Elastic database pool reference - Transact-SQL](sql-database-elastic-pool-reference.md#Transact-SQL).*
+After creating a pool you can also use Transact-SQL to create new elastic databases in the pool and move databases in and out of a pool. For details see, [Elastic database pool reference - Transact-SQL](/documentation/articles/sql-database-elastic-pool-reference#Transact-SQL).*
 
 
 ## Monitor and manage an elastic database pool
@@ -147,7 +143,7 @@ After creating an elastic database pool, you can monitor and manage the pool in 
 After creating a pool, you can:
 
 - Select **Configure pool** to change the pool eDTU and eDTU per database settings.
-- Select **Create job** and manage the databases in the pool by creating elastic jobs. Elastic jobs let you run Transact-SQL scripts against any number of databases in the pool. For more information, see [Elastic database jobs overview](sql-database-elastic-jobs-overview.md).
+- Select **Create job** and manage the databases in the pool by creating elastic jobs. Elastic jobs let you run Transact-SQL scripts against any number of databases in the pool. For more information, see [Elastic database jobs overview](/documentation/articles/sql-database-elastic-jobs-overview).
 - Select **Manage jobs** to administer existing elastic jobs.
 
 
@@ -173,16 +169,16 @@ Click **Edit chart** to add parameters so you can easily view telemetry data for
 
 
 ## Next steps
-After creating an elastic database pool, you can manage the databases in the pool by creating elastic jobs. Elastic jobs facilitate running Transact-SQL scripts against any number of databases in the pool. For more information, see [Elastic database jobs overview](sql-database-elastic-jobs-overview.md).
+After creating an elastic database pool, you can manage the databases in the pool by creating elastic jobs. Elastic jobs facilitate running Transact-SQL scripts against any number of databases in the pool. For more information, see [Elastic database jobs overview](/documentation/articles/sql-database-elastic-jobs-overview).
 
 
 
 ## Additional resources
 
-- [SQL Database elastic pool](sql-database-elastic-pool.md)
-- [Create a SQL Database elastic pool with PowerShell](sql-database-elastic-pool-powershell.md)
-- [Create and manage SQL Database with C#](sql-database-client-library.md)
-- [Elastic database reference](sql-database-elastic-pool-reference.md)
+- [SQL Database elastic pool](/documentation/articles/sql-database-elastic-pool)
+- [Create a SQL Database elastic pool with PowerShell](/documentation/articles/sql-database-elastic-pool-powershell)
+- [Create and manage SQL Database with C#](/documentation/articles/sql-database-client-library)
+- [Elastic database reference](/documentation/articles/sql-database-elastic-pool-reference)
 
 
 <!--Image references-->

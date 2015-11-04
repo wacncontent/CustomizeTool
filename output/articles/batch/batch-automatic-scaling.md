@@ -1,6 +1,6 @@
 
 <properties
-	pageTitle="Automatically Scale Compute Nodes in an Azure Batch Pool | Microsoft Azure"
+	pageTitle="Automatically Scale Compute Nodes in an Azure Batch Pool | Windows Azure"
 	description="Enable automatic scaling on a cloud pool to dynamically adjust the number of compute nodes in the pool."
 	services="batch"
 	documentationCenter=""
@@ -10,16 +10,12 @@
 
 <tags
 	ms.service="batch"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.tgt_pltfrm="vm-windows"
-	ms.workload="multiple"
 	ms.date="08/26/2015"
-	ms.author="davidmu"/>
+	wacn.date=""/>
 
 # Automatically scale compute nodes in an Azure Batch pool
 
-Automatically scaling compute nodes in an Azure Batch pool is the dynamic adjustment of processing power used by your application. This ease of adjustment saves you time and money. To learn more about compute nodes and pools, see the [Azure Batch technical overview](batch-technical-overview.md).
+Automatically scaling compute nodes in an Azure Batch pool is the dynamic adjustment of processing power used by your application. This ease of adjustment saves you time and money. To learn more about compute nodes and pools, see the [Azure Batch technical overview](/documentation/articles/batch-technical-overview).
 
 Automatic scaling occurs when it is enabled on a pool and a formula is associated with the pool. The formula is used to determine the number of compute nodes that are needed to process the application. Acting on samples that are collected periodically, the number of available compute nodes in the pool are adjusted every 15 minutes based on the associated formula.
 
@@ -29,7 +25,7 @@ Automatic scaling can be set when a pool is created, or enabled later on an exis
 
 ## Scale compute resources automatically
 
-The scaling formulas you define determine the number of available compute nodes in a pool for the next interval of processing. An automatic scaling formula is simply a string value assigned to a pool's [autoScaleFormula](https://msdn.microsoft.com/library/azure/dn820173.aspx) element in a request body (REST API) or [CloudPool.AutoScaleFormula](https://msdn.microsoft.com/library/azure/microsoft.azure.batch.cloudpool.autoscaleformula.aspx) property (.NET API). This formula string cannot exceed 8KB in size, can include up to 100 statements separated by semicolons, and can include line breaks and comments.
+The scaling formulas you define determine the number of available compute nodes in a pool for the next interval of processing. An automatic scaling formula is simply a string value assigned to a pool's [autoScaleFormula](https://msdn.microsoft.com/zh-cn/library/azure/dn820173.aspx) element in a request body (REST API) or [CloudPool.AutoScaleFormula](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.cloudpool.autoscaleformula.aspx) property (.NET API). This formula string cannot exceed 8KB in size, can include up to 100 statements separated by semicolons, and can include line breaks and comments.
 
 Statements in a formula are free-formed expressions. They can include any system-defined variables, user-defined variables, constant values, and supported operations on these variables or constants.
 
@@ -40,7 +36,7 @@ Complex formulas are created by using multiple statements and variables:
 	VAR₀ = Expression₀(system-defined variables);
 	VAR₁ = Expression₁(system-defined variables, VAR₀);
 
-> [AZURE.NOTE] An automatic scaling formula is comprised of [Batch REST](https://msdn.microsoft.com/library/azure/dn820158.aspx) API variables, types, operations, and functions. These are used in formula strings even while working with the [Batch .NET](https://msdn.microsoft.com/library/azure/mt348682.aspx) library.
+> [AZURE.NOTE] An automatic scaling formula is comprised of [Batch REST](https://msdn.microsoft.com/zh-cn/library/azure/dn820158.aspx) API variables, types, operations, and functions. These are used in formula strings even while working with the [Batch .NET](https://msdn.microsoft.com/zh-cn/library/azure/mt348682.aspx) library.
 
 ### Variables
 
@@ -364,7 +360,7 @@ These methods can be used to get sample data.
           <li><p><b>doubleVec GetSample(double count)</b> - Specifies the number of samples that are required from the most recent samples.</p>
 				  <p>A sample is 5 seconds worth of metrics data. GetSample(1) returns the last available sample, but for metrics like $CPUPercent you shouldn’t use this because it isn’t possible to know when the sample was collected. It might be recent, or because of system issues, it might be much older. It is better to use a time interval as shown below.</p></li>
           <li><p><b>doubleVec GetSample((timestamp | timeinterval) startTime [, double samplePercent])</b> – Specifies a time frame for gathering sample data and optionally specifies the percentage of samples that must be in the requested range.</p>
-          <p>$CPUPercent.GetSample(TimeInterval\_Minute\*10), should return 200 samples if all samples for the last ten minutes are present in the CPUPercent history. If the last minute of history is still not present, only 180 samples are returned.</p>
+          <p>$CPUPercent.GetSample(TimeInterval_Minute\*10), should return 200 samples if all samples for the last ten minutes are present in the CPUPercent history. If the last minute of history is still not present, only 180 samples are returned.</p>
 					<p>$CPUPercent.GetSample(TimeInterval\_Minute\*10, 80) succeeds, and $CPUPercent.GetSample(TimeInterval_Minute\*10,95) fails.</p></li>
           <li><p><b>doubleVec GetSample((timestamp | timeinterval) startTime, (timestamp | timeinterval) endTime [, double samplePercent])</b> – Specifies a time frame for gathering data with both a start time and an end time.</p></li></ul>
 		  <p>Note that there is a delay between when a sample is collected and when it is available to a formula; this must be considered when using the GetSample method; see GetSamplePercent below.</td>
@@ -457,13 +453,13 @@ Here's the complete formula:
 
 To enable automatic scaling when creating a pool, use one of the following techniques:
 
-- [New-AzureBatchPool](https://msdn.microsoft.com/library/azure/mt125936.aspx) – This Azure PowerShell cmdlet uses the AutoScaleFormula parameter to specify the automatic scaling formula.
-- [BatchClient.PoolOperations.CreatePool](https://msdn.microsoft.com/library/azure/microsoft.azure.batch.pooloperations.createpool.aspx) – After this .NET method is called to create a pool, you'll then set the pool's [CloudPool.AutoScaleEnabled](https://msdn.microsoft.com/library/azure/microsoft.azure.batch.cloudpool.autoscaleenabled.aspx) and [CloudPool.AutoScaleFormula](https://msdn.microsoft.com/library/azure/microsoft.azure.batch.cloudpool.autoscaleformula.aspx) properties to enable automatic scaling.
-- [Add a pool to an account](https://msdn.microsoft.com/library/azure/dn820174.aspx) – The enableAutoScale and autoScaleFormula elements are used in this REST API request to set up automatic scaling for the pool when it is created.
+- [New-AzureBatchPool](https://msdn.microsoft.com/zh-cn/library/azure/mt125936.aspx) – This Azure PowerShell cmdlet uses the AutoScaleFormula parameter to specify the automatic scaling formula.
+- [BatchClient.PoolOperations.CreatePool](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.pooloperations.createpool.aspx) – After this .NET method is called to create a pool, you'll then set the pool's [CloudPool.AutoScaleEnabled](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.cloudpool.autoscaleenabled.aspx) and [CloudPool.AutoScaleFormula](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.cloudpool.autoscaleformula.aspx) properties to enable automatic scaling.
+- [Add a pool to an account](https://msdn.microsoft.com/zh-cn/library/azure/dn820174.aspx) – The enableAutoScale and autoScaleFormula elements are used in this REST API request to set up automatic scaling for the pool when it is created.
 
-> [AZURE.NOTE] If you set up automatic scaling when the pool is created using one of the techniques above, the *targetDedicated* parameter for the pool is not (and must not) be specified when created. Also note that if you wish to manually resize an autoscale-enabled pool (for example with [BatchClient.PoolOperations.ResizePool](https://msdn.microsoft.com/library/azure/microsoft.azure.batch.pooloperations.resizepool.aspx)) then you must first disable automatic scaling on the pool, then resize the pool.
+> [AZURE.NOTE] If you set up automatic scaling when the pool is created using one of the techniques above, the *targetDedicated* parameter for the pool is not (and must not) be specified when created. Also note that if you wish to manually resize an autoscale-enabled pool (for example with [BatchClient.PoolOperations.ResizePool](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.pooloperations.resizepool.aspx)) then you must first disable automatic scaling on the pool, then resize the pool.
 
-The following code snippet shows the creation of an autoscale-enabled [CloudPool](https://msdn.microsoft.com/library/azure/microsoft.azure.batch.cloudpool.aspx) using the [Batch .NET](https://msdn.microsoft.com/library/azure/mt348682.aspx) library whose formula sets the target number of nodes to 5 on Mondays, and 1 on every other day of the week. In the snippet, "myBatchClient" is a properly initialized instance of [BatchClient](http://msdn.microsoft.com/library/azure/microsoft.azure.batch.batchclient.aspx)):
+The following code snippet shows the creation of an autoscale-enabled [CloudPool](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.cloudpool.aspx) using the [Batch .NET](https://msdn.microsoft.com/zh-cn/library/azure/mt348682.aspx) library whose formula sets the target number of nodes to 5 on Mondays, and 1 on every other day of the week. In the snippet, "myBatchClient" is a properly initialized instance of [BatchClient](http://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.batchclient.aspx)):
 
 		CloudPool pool myBatchClient.PoolOperations.CreatePool("mypool", "3", "small");
 		pool.AutoScaleEnabled = true;
@@ -474,12 +470,12 @@ The following code snippet shows the creation of an autoscale-enabled [CloudPool
 
 If you've already set up a pool with a specified number of compute nodes using the *targetDedicated* parameter, you can update the existing pool at a later time to automatically scale. Do this in one of these ways:
 
-- [BatchClient.PoolOperations.EnableAutoScale](https://msdn.microsoft.com/library/azure/microsoft.azure.batch.pooloperations.enableautoscale.aspx) – This .NET method requires the ID of an existing pool and the automatic scaling formula to apply to the pool.
-- [Enable automatic scaling on a pool](https://msdn.microsoft.com/library/azure/dn820173.aspx) – This REST API request requires the ID of the existing pool in the URI and the automatic scaling formula in the request body.
+- [BatchClient.PoolOperations.EnableAutoScale](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.pooloperations.enableautoscale.aspx) – This .NET method requires the ID of an existing pool and the automatic scaling formula to apply to the pool.
+- [Enable automatic scaling on a pool](https://msdn.microsoft.com/zh-cn/library/azure/dn820173.aspx) – This REST API request requires the ID of the existing pool in the URI and the automatic scaling formula in the request body.
 
 > [AZURE.NOTE] If a value was specified for the *targetDedicated* parameter when the pool was created, it is ignored when the automatic scaling formula is evaluated.
 
-This code snippet demonstrates enabling autoscaling on an existing pool using the [Batch .NET](https://msdn.microsoft.com/library/azure/mt348682.aspx) library. Note that both enabling and updating the formula on an existing pool use the same method. As such, this technique would *update* the formula on the specified pool if autoscaling had already been enabled. This snippet assumes that "myBatchClient" is a properly initialized instance of [BatchClient](http://msdn.microsoft.com/library/azure/microsoft.azure.batch.batchclient.aspx), and "mypool" is the ID of an existing [CloudPool](https://msdn.microsoft.com/library/azure/microsoft.azure.batch.cloudpool.aspx).
+This code snippet demonstrates enabling autoscaling on an existing pool using the [Batch .NET](https://msdn.microsoft.com/zh-cn/library/azure/mt348682.aspx) library. Note that both enabling and updating the formula on an existing pool use the same method. As such, this technique would *update* the formula on the specified pool if autoscaling had already been enabled. This snippet assumes that "myBatchClient" is a properly initialized instance of [BatchClient](http://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.batchclient.aspx), and "mypool" is the ID of an existing [CloudPool](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.cloudpool.aspx).
 
 		 // Define the autoscaling formula. In this snippet, the  formula sets the target number of nodes to 5 on
 		 // Mondays, and 1 on every other day of the week
@@ -493,12 +489,12 @@ This code snippet demonstrates enabling autoscaling on an existing pool using th
 
 It’s always good practice to evaluate a formula before you use it in your application. A formula is evaluated by performing a "test run" of the formula on an existing pool. Do this by using:
 
-- [BatchClient.PoolOperations.EvaluateAutoScale](https://msdn.microsoft.com/library/azure/microsoft.azure.batch.pooloperations.evaluateautoscale.aspx) or [BatchClient.PoolOperations.EvaluateAutoScaleAsync](https://msdn.microsoft.com/library/azure/microsoft.azure.batch.pooloperations.evaluateautoscaleasync.aspx) – These .NET methods require the ID of an existing pool and the string that contains the automatic scaling formula. The results of the call are contained in an instance of the [AutoScaleEvaluation](https://msdn.microsoft.com/library/azure/microsoft.azure.batch.autoscaleevaluation.aspx) class.
-- [Evaluate an automatic scaling formula](https://msdn.microsoft.com/library/azure/dn820183.aspx) – In this REST API request, the pool ID is specified in the URI and the automatic scaling formula is specified in the *autoScaleFormula* element of the request body. The response of the operation contains any error information that might be related to the formula.
+- [BatchClient.PoolOperations.EvaluateAutoScale](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.pooloperations.evaluateautoscale.aspx) or [BatchClient.PoolOperations.EvaluateAutoScaleAsync](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.pooloperations.evaluateautoscaleasync.aspx) – These .NET methods require the ID of an existing pool and the string that contains the automatic scaling formula. The results of the call are contained in an instance of the [AutoScaleEvaluation](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.autoscaleevaluation.aspx) class.
+- [Evaluate an automatic scaling formula](https://msdn.microsoft.com/zh-cn/library/azure/dn820183.aspx) – In this REST API request, the pool ID is specified in the URI and the automatic scaling formula is specified in the *autoScaleFormula* element of the request body. The response of the operation contains any error information that might be related to the formula.
 
 > [AZURE.NOTE] To evaluate an autoscaling formula, you must first have enabled autoscaling on the pool using a valid formula.
 
-In this code snippet using the [Batch .NET](https://msdn.microsoft.com/library/azure/mt348682.aspx) library, we evaluate a formula prior to applying it to the [CloudPool](https://msdn.microsoft.com/library/azure/microsoft.azure.batch.cloudpool.aspx).
+In this code snippet using the [Batch .NET](https://msdn.microsoft.com/zh-cn/library/azure/mt348682.aspx) library, we evaluate a formula prior to applying it to the [CloudPool](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.cloudpool.aspx).
 
 		// First obtain a reference to the existing pool
 		CloudPool pool = myBatchClient.PoolOperations.GetPool("mypool");
@@ -543,11 +539,11 @@ Successful evaluation of the formula in this snippet will result in output simil
 
 Periodically checking the results of automatic scaling runs should be done to a formula is performing as expected. Do this in one of these ways:
 
-- [CloudPool.AutoScaleRun](https://msdn.microsoft.com/library/azure/microsoft.azure.batch.cloudpool.autoscalerun.aspx) – When using the .NET library, this property of a pool provides an instance of the [AutoScaleRun](https://msdn.microsoft.com/library/azure/microsoft.azure.batch.autoscalerun.aspx) class which provides the following properties of the latest automatic scaling run:
-  - [AutoScaleRun.Error](https://msdn.microsoft.com/library/azure/microsoft.azure.batch.autoscalerun.error.aspx)
-  - [AutoScaleRun.Results](https://msdn.microsoft.com/library/azure/microsoft.azure.batch.autoscalerun.results.aspx)
-  - [AutoScaleRun.Timestamp](https://msdn.microsoft.com/library/azure/microsoft.azure.batch.autoscalerun.timestamp.aspx)
-- [Get information about a pool](https://msdn.microsoft.com/library/dn820165.aspx) – This REST API request returns information about the pool, which includes the latest automatic scaling run.
+- [CloudPool.AutoScaleRun](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.cloudpool.autoscalerun.aspx) – When using the .NET library, this property of a pool provides an instance of the [AutoScaleRun](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.autoscalerun.aspx) class which provides the following properties of the latest automatic scaling run:
+  - [AutoScaleRun.Error](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.autoscalerun.error.aspx)
+  - [AutoScaleRun.Results](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.autoscalerun.results.aspx)
+  - [AutoScaleRun.Timestamp](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.autoscalerun.timestamp.aspx)
+- [Get information about a pool](https://msdn.microsoft.com/zh-cn/library/dn820165.aspx) – This REST API request returns information about the pool, which includes the latest automatic scaling run.
 
 ## Example formulas
 
@@ -584,7 +580,7 @@ In this example, the pool size is adjusted based on the number of tasks in the q
 
 ### Example 3
 
-Another example that adjusts the pool size based on the number of tasks, this formula also takes into account the [MaxTasksPerComputeNode](https://msdn.microsoft.com/library/azure/microsoft.azure.batch.cloudpool.maxtaskspercomputenode.aspx) value that has been set for the pool. This is particularly useful in situations where parallel task execution on compute nodes is desired.
+Another example that adjusts the pool size based on the number of tasks, this formula also takes into account the [MaxTasksPerComputeNode](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.cloudpool.maxtaskspercomputenode.aspx) value that has been set for the pool. This is particularly useful in situations where parallel task execution on compute nodes is desired.
 
 		// Determine whether 70% of the samples have been recorded in the past 15 minutes; if not, use last sample
 		$Samples = $ActiveTasks.GetSamplePercent(TimeInterval_Minute * 15);
@@ -603,11 +599,11 @@ Another example that adjusts the pool size based on the number of tasks, this fo
 
 1. To fully assess the efficiency of your application, you might need to access a compute node. To take advantage of remote access, a user account must be added to the node that you want to access and an RDP file must be retrieved for that node.
     - Add the user account in one of these ways:
-        * [New-AzureBatchVMUser](https://msdn.microsoft.com/library/mt149846.aspx) – This PowerShell cmdlet takes the pool name, compute node name, account name, and password as parameters.
-        * [BatchClient.PoolOperations.CreateComputeNodeUser](https://msdn.microsoft.com/library/azure/microsoft.azure.batch.pooloperations.createcomputenodeuser.aspx) – This .NET method creates an instance of the [ComputeNodeUser](https://msdn.microsoft.com/library/microsoft.azure.batch.computenodeuser.aspx) class on which the account name and password can be set for the compute node, and [ComputeNodeUser.Commit](https://msdn.microsoft.com/library/microsoft.azure.batch.computenodeuser.commit.aspx) is then called on the instance to create the user on that node.
-        * [Add a user account to a node](https://msdn.microsoft.com/library/dn820137.aspx) – The name of the pool and the compute node are specified in the URI and the account name and password are sent to the node in the request body of this REST API request.
+        * [New-AzureBatchVMUser](https://msdn.microsoft.com/zh-cn/library/mt149846.aspx) – This PowerShell cmdlet takes the pool name, compute node name, account name, and password as parameters.
+        * [BatchClient.PoolOperations.CreateComputeNodeUser](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.pooloperations.createcomputenodeuser.aspx) – This .NET method creates an instance of the [ComputeNodeUser](https://msdn.microsoft.com/zh-cn/library/microsoft.azure.batch.computenodeuser.aspx) class on which the account name and password can be set for the compute node, and [ComputeNodeUser.Commit](https://msdn.microsoft.com/zh-cn/library/microsoft.azure.batch.computenodeuser.commit.aspx) is then called on the instance to create the user on that node.
+        * [Add a user account to a node](https://msdn.microsoft.com/zh-cn/library/dn820137.aspx) – The name of the pool and the compute node are specified in the URI and the account name and password are sent to the node in the request body of this REST API request.
     - Get the RDP file:
-        * [BatchClient.PoolOperations.GetRDPFile](https://msdn.microsoft.com/library/azure/microsoft.azure.batch.pooloperations.getrdpfile.aspx) – This .NET method requires the ID of the pool, the node ID, and the name of the RDP file to create.
-        * [Get a remote desktop protocol file from a node](https://msdn.microsoft.com/library/dn820120.aspx) – This REST API request requires the name of the pool and the name of the compute node. The response contains the contents of the RDP file.
-        * [Get-AzureBatchRDPFile](https://msdn.microsoft.com/library/mt149851.aspx) – This PowerShell cmdlet gets the RDP file from the specified compute node and saves it to the specified file location or to a stream.
-2.	Some applications produce large amounts of data that can be difficult to process. One way to solve this is through [efficient list querying](batch-efficient-list-queries.md).
+        * [BatchClient.PoolOperations.GetRDPFile](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.pooloperations.getrdpfile.aspx) – This .NET method requires the ID of the pool, the node ID, and the name of the RDP file to create.
+        * [Get a remote desktop protocol file from a node](https://msdn.microsoft.com/zh-cn/library/dn820120.aspx) – This REST API request requires the name of the pool and the name of the compute node. The response contains the contents of the RDP file.
+        * [Get-AzureBatchRDPFile](https://msdn.microsoft.com/zh-cn/library/mt149851.aspx) – This PowerShell cmdlet gets the RDP file from the specified compute node and saves it to the specified file location or to a stream.
+2.	Some applications produce large amounts of data that can be difficult to process. One way to solve this is through [efficient list querying](/documentation/articles/batch-efficient-list-queries).

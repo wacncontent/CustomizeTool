@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Send email using SendGrid | Microsoft Azure" 
+	pageTitle="Send email using SendGrid | Windows Azure" 
 	description="Learn how to use the SendGrid service to send email from your Azure Mobile Services app." 
 	services="mobile-services" 
 	documentationCenter="" 
@@ -7,14 +7,10 @@
 	manager="sendgrid" 
 	editor=""/>
 
-<tags 
-	ms.service="mobile-services" 
-	ms.workload="mobile" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="multiple" 
-	ms.topic="article" 
-	ms.date="07/31/2015" 
-	ms.author="Erikre"/>
+<tags
+	ms.service="mobile-services"
+	ms.date="07/31/2015"
+	wacn.date=""/>
 
 
 # Send email from Mobile Services with SendGrid
@@ -33,7 +29,7 @@ This tutorial is based on the Mobile Services quickstart. Before you start this 
 
 ## <a name="sign-up"></a>Create a new SendGrid account
 
-[AZURE.INCLUDE [sendgrid-sign-up](../../includes/sendgrid-sign-up.md)]
+[AZURE.INCLUDE [sendgrid-sign-up](../includes/sendgrid-sign-up.md)]
 
 ## <a name="add-script"></a>Register a new script that sends emails
 
@@ -88,7 +84,7 @@ This tutorial is based on the Mobile Services quickstart. Before you start this 
 
 	- **_from-address_**: the address from which the email originates. Consider using a registered domain address that belongs to your organization. 
 
-     > [AZURE.NOTE] If you do not have a registered domain, you can instead use the domain of your Mobile Service, in the format *notifications@_your-mobile-service_.azure-mobile.net*. However, messages sent to your mobile service domain are ignored.
+     > [AZURE.NOTE] If you do not have a registered domain, you can instead use the domain of your Mobile Service, in the format *notifications@_your-mobile-service_.azure-mobile.cn*. However, messages sent to your mobile service domain are ignored.
 
 6. Click the **Save** button. You have now configured a script to send an email each time a record is inserted into the **TodoItem** table.
 
@@ -133,7 +129,7 @@ these links to learn more about SendGrid.
 [Get started with Mobile Services]: /develop/mobile/tutorials/get-started
 [sign up page]: https://sendgrid.com/windowsazure.html
 [Multiple User Credentials page]: https://sendgrid.com/credentials
-[Azure Management Portal]: https://manage.windowsazure.com/
+[Azure Management Portal]: https://manage.windowsazure.cn/
 [cloud-based email service]: https://sendgrid.com/email-solutions
 [transactional email delivery]: https://sendgrid.com/transactional-email
 

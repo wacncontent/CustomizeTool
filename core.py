@@ -12,6 +12,7 @@ from fileCompare import compareWithMooncake
 from codecs import open
 from setting import setting
 from linkChecker import checkLinks, getOldLinks, findRedirect
+from wordCounter import countAll
 
 __author__ = 'Steven'
 
@@ -88,6 +89,7 @@ if __name__ == "__main__":
         mdList = md.getMdList()
 
         core.customize(mdList, ruleDict)
+        countAll()
     except IOError as e:
         print(e)
         sys.exit()

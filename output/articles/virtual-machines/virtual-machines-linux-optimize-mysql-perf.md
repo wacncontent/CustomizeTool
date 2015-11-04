@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Optimize MySQL Performance on Linux VMs | Microsoft Azure"
+	pageTitle="Optimize MySQL Performance on Linux VMs | Windows Azure"
 	description="Learn how to optimize MySQL running on an Azure virtual machine (VM) running Linux."
 	services="virtual-machines"
 	documentationCenter=""
@@ -10,18 +10,14 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.workload="infrastructure-services"
-	ms.tgt_pltfrm="vm-linux"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="05/21/2015"
-	ms.author="ningk"/>
+	wacn.date=""/>
 
 #Optimizing MySQL Performance on Azure Linux VMs
 
 There are many factors that impact MySQL performance on Azure, both in virtual hardware selection and software configuration. This article focuses on optimizing performance through storage, system, and database configurations.
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
 
 
 ##Utilizing RAID on an Azure virtual machine
@@ -33,7 +29,7 @@ In addition to disk I/O, MySQL performance improves when you increase the RAID l
 
 You may also want to consider the chunk size. In general when you have a larger chunk size, you will get lower overhead, especially for large writes. However, when the chunk size is too large, it might add additional overhead and you cannot take advantage of the RAID. The current default size is 512KB, which is proven to be optimal for most general production environments. See [Appendix C](#AppendixC) for details.   
 
-Please note that there are limits on how many disks you can add for different virtual machine types. These limits are detailed in [Virtual Machine and Cloud Service Sizes for Azure](http://msdn.microsoft.com/library/azure/dn197896.aspx). You will need 4 attached data disks to follow the RAID example in this article, although you could choose to set up RAID with fewer disks.  
+Please note that there are limits on how many disks you can add for different virtual machine types. These limits are detailed in [Virtual Machine and Cloud Service Sizes for Azure](http://msdn.microsoft.com/zh-cn/library/azure/dn197896.aspx). You will need 4 attached data disks to follow the RAID example in this article, although you could choose to set up RAID with fewer disks.  
 
 This article assumes you have already created a Linux virtual machine and have MYSQL installed and configured. For more information on getting started please refer to How to install MySQL on Azure.  
 
@@ -71,7 +67,7 @@ You can see the added drives in the virtual machine by looking at the kernel mes
 ####Step 2: Create RAID with the additional disks
 Follow this article for detailed RAID setup steps:  
 
-[Configure software RAID on Linux](virtual-machines-linux-configure-RAID.md)
+[Configure software RAID on Linux](/documentation/articles/virtual-machines-linux-configure-RAID)
 
 >[AZURE.NOTE] If you are using the XFS file system, follow the steps below after you have created RAID.
 

@@ -9,19 +9,15 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.workload="mobile"
-	ms.tgt_pltfrm="mobile-sencha"
-	ms.devlang="multiple"
-	ms.topic="get-started-article"
 	ms.date="10/09/2015"
-	ms.author="glenga"/>
+	wacn.date=""/>
 
 # <a name="getting-started"> </a>Get started with Mobile Services and Sencha Touch
 
-[AZURE.INCLUDE [mobile-services-selector-get-started](../../includes/mobile-services-selector-get-started.md)]
+[AZURE.INCLUDE [mobile-services-selector-get-started](../includes/mobile-services-selector-get-started.md)]
 &nbsp;
 
-[AZURE.INCLUDE [mobile-services-hero-slug](../../includes/mobile-services-hero-slug.md)]
+[AZURE.INCLUDE [mobile-services-hero-slug](../includes/mobile-services-hero-slug.md)]
 
 ##Overview
 
@@ -46,7 +42,7 @@ A screenshot from the completed app is shown below:
 
 ## <a name="create-new-service"> </a>Create a new mobile service
 
-[AZURE.INCLUDE [mobile-services-create-new-service](../../includes/mobile-services-create-new-service.md)]
+[AZURE.INCLUDE [mobile-services-create-new-service](../includes/mobile-services-create-new-service.md)]
 
 ##Create a TodoItems Table
 
@@ -168,7 +164,7 @@ Now that the Azure extension has been downloaded and installed in your applicati
 
 	While you can pass the configuration object directly to the init method, we suggest creating a Sencha application configuration property called **azure** and placing all the appropriate information there. You can then pass this property value to the Ext.Azure.init method.
 
-	When you create a mobile service in Azure (see [Getting Started with Azure](http://senchaazuredocs.azurewebsites.net/#!/guide/getting_started)), an application key and URL are assigned to that service. This information must be provided to your Azure package so it can connect to your service.
+	When you create a mobile service in Azure (see [Getting Started with Azure](http://senchaazuredocs.chinacloudsites.cn/#!/guide/getting_started)), an application key and URL are assigned to that service. This information must be provided to your Azure package so it can connect to your service.
 
 	This example shows a very simple Azure configuration and initialization supplying only the application key and URL:
 
@@ -179,7 +175,7 @@ Now that the Azure extension has been downloaded and installed in your applicati
 
 	        azure: {
     	        appKey: 'myazureservice-access-key',
-        	    appUrl: 'myazure-service.azure-mobile.net'
+        	    appUrl: 'myazure-service.azure-mobile.cn'
 	        },
 
     	    launch: function() {
@@ -611,7 +607,7 @@ Our final step is to finish editing the main application file, and provide infor
     	],
 
 	    azure : {
-    	    appUrl : 'YOUR_APP_URL.azure-mobile.net',
+    	    appUrl : 'YOUR_APP_URL.azure-mobile.cn',
         	appKey : 'YOUR_APP_KEY'
     	},
 
@@ -714,7 +710,7 @@ The example outlined here is provided in the Sencha Touch Extension for Azure pa
 For more information about getting started with Sencha Touch please visit the full set of [guides](http://docs.sencha.com/touch/#!/guide)
 
 
-[AZURE.INCLUDE [app-service-disqus-feedback-slug](../../includes/app-service-disqus-feedback-slug.md)]
+[AZURE.INCLUDE [app-service-disqus-feedback-slug](../includes/app-service-disqus-feedback-slug.md)]
 
 <!-- images -->
 [0]: ./media/partner-sencha-mobile-services-get-started/finished-app.png

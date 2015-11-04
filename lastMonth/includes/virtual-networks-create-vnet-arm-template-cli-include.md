@@ -2,7 +2,7 @@
 
 To deploy the ARM template you downloaded by using Azure CLI, follow the steps below.
 
-1. If you have never used Azure CLI, see [Install and Configure the Azure CLI](/documentation/articles/xplat-cli-install) and follow the instructions up to the point where you select your Azure account and subscription.
+1. If you have never used Azure CLI, see [Install and Configure the Azure CLI](xplat-cli-install.md) and follow the instructions up to the point where you select your Azure account and subscription.
 2. Run the **azure config mode** command to switch to Resource Manager mode, as shown below.
 
 		azure config mode arm
@@ -11,7 +11,7 @@ To deploy the ARM template you downloaded by using Azure CLI, follow the steps b
 
 		info:    New mode is arm
 
-3. If necessary, run the **azure group create** to create a new resource group, as shown below. Notice the output of the command. The list shown after the output explains the parameters used. For more information about resource groups, visit [Azure Resource Manager Overview](/documentation/articles/resource-group-overview).
+3. If necessary, run the **azure group create** to create a new resource group, as shown below. Notice the output of the command. The list shown after the output explains the parameters used. For more information about resource groups, visit [Azure Resource Manager Overview](resource-group-overview.md).
 
 		azure group create -n TestRG -l centralus
 
@@ -52,7 +52,7 @@ To deploy the ARM template you downloaded by using Azure CLI, follow the steps b
 		data:    Mode               : Incremental
 		data:    Name           Type    Value
 		data:    -------------  ------  --------------
-		data:    location       String  China North
+		data:    location       String  Central US
 		data:    vnetName       String  TestVNet
 		data:    addressPrefix  String  192.168.0.0/16
 		data:    subnet1Prefix  String  192.168.1.0/24

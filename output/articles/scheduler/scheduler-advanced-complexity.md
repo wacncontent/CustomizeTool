@@ -6,14 +6,10 @@
  authors="krisragh" 
  manager="dwrede" 
  editor=""/>
-<tags 
- ms.service="scheduler" 
- ms.workload="infrastructure-services" 
- ms.tgt_pltfrm="na" 
- ms.devlang="dotnet" 
- ms.topic="article" 
- ms.date="08/04/2015" 
- ms.author="krisragh"/>
+<tags
+	ms.service="scheduler"
+	ms.date="08/04/2015"
+	wacn.date=""/>
 
 # How to Build Complex Schedules and Advanced Recurrence with Azure Scheduler  
 
@@ -31,7 +27,7 @@ With this flexibility, Azure Scheduler lets you support a wide variety of busine
 -	Image processing – e.g. every weekday, during off-peak hours, use cloud computing to compress images uploaded that day
 
 
-In this article, we walk through example jobs that you can create with Azure Scheduler. We provide the JSON data that describes each schedule. If you use the [Scheduler REST API](https://msdn.microsoft.com/library/azure/dn528946.aspx), you can use this same JSON for [creating an Azure Scheduler job](https://msdn.microsoft.com/library/azure/dn528937.aspx).
+In this article, we walk through example jobs that you can create with Azure Scheduler. We provide the JSON data that describes each schedule. If you use the [Scheduler REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn528946.aspx), you can use this same JSON for [creating an Azure Scheduler job](https://msdn.microsoft.com/zh-cn/library/azure/dn528937.aspx).
 
 ## Supported Scenarios
 
@@ -52,7 +48,7 @@ Date-Time references in Azure Scheduler jobs follow the [ISO-8601 specification]
 
 ## How To: Use JSON and REST API for Creating Schedules
 
-To create a simple schedule using the JSON examples in this article and the Azure Scheduler REST API, [first create a cloud service](https://msdn.microsoft.com/library/azure/dn528943.aspx), [then create a job collection](https://msdn.microsoft.com/library/azure/dn528940.aspx), and [finally create a job](https://msdn.microsoft.com/library/azure/dn528937.aspx). When you create a job, you can specify scheduling and recurrence using JSON like the one excerpted below:
+To create a simple schedule using the JSON examples in this article and the Azure Scheduler REST API, [first create a cloud service](https://msdn.microsoft.com/zh-cn/library/azure/dn528943.aspx), [then create a job collection](https://msdn.microsoft.com/zh-cn/library/azure/dn528940.aspx), and [finally create a job](https://msdn.microsoft.com/zh-cn/library/azure/dn528937.aspx). When you create a job, you can specify scheduling and recurrence using JSON like the one excerpted below:
 
 	{
 	    "startTime": "2012-08-04T00:00Z", // optional
@@ -178,22 +174,22 @@ The schedules below all assume that the _interval_ is set to 1\. Also, one must 
 
 ## See Also
  
- [What is Scheduler?](scheduler-intro.md)
+ [What is Scheduler?](/documentation/articles/scheduler-intro)
  
- [Scheduler Concepts, Terminology, and Entity Hierarchy](scheduler-concepts-terms.md)
+ [Scheduler Concepts, Terminology, and Entity Hierarchy](/documentation/articles/scheduler-concepts-terms)
  
- [Get Started Using Scheduler in the Management Portal](scheduler-get-started-portal.md)
+ [Get Started Using Scheduler in the Management Portal](/documentation/articles/scheduler-get-started-portal)
  
- [Plans and Billing in Azure Scheduler](scheduler-plans-billing.md)
+ [Plans and Billing in Azure Scheduler](/documentation/articles/scheduler-plans-billing)
  
- [Scheduler REST API Reference](https://msdn.microsoft.com/library/dn528946)   
+ [Scheduler REST API Reference](https://msdn.microsoft.com/zh-cn/library/dn528946)   
  
- [Scheduler PowerShell Cmdlets Reference](scheduler-powershell-reference.md)
+ [Scheduler PowerShell Cmdlets Reference](/documentation/articles/scheduler-powershell-reference)
  
- [Scheduler High-Availability and Reliability](scheduler-high-availability-reliability.md)
+ [Scheduler High-Availability and Reliability](/documentation/articles/scheduler-high-availability-reliability)
  
- [Scheduler Limits, Defaults, and Error Codes](scheduler-limits-defaults-errors.md)
+ [Scheduler Limits, Defaults, and Error Codes](/documentation/articles/scheduler-limits-defaults-errors)
  
- [Scheduler Outbound Authentication](scheduler-outbound-authentication.md)
+ [Scheduler Outbound Authentication](/documentation/articles/scheduler-outbound-authentication)
  
   

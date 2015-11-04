@@ -11,7 +11,7 @@ Latest Freshness check:  2015-09-02 , GeneMi.
 ### Obtain the connection string from the Azure portal
 
 
-Use the [Azure preview portal](https://manage.windowsazure.cn/) to obtain the connection string necessary for your client program to interact with Azure SQL Database: 
+Use the [Azure preview portal](http://portal.azure.com/) to obtain the connection string necessary for your client program to interact with Azure SQL Database: 
 
 
 1. Click **BROWSE** > **SQL databases**.
@@ -34,7 +34,7 @@ Use the [Azure preview portal](https://manage.windowsazure.cn/) to obtain the co
 
 
 
-For more information, see:<br/>[Connection Strings and Configuration Files](http://msdn.microsoft.com/zh-cn/library/ms254494.aspx).
+For more information, see:<br/>[Connection Strings and Configuration Files](http://msdn.microsoft.com/library/ms254494.aspx).
 
 
 

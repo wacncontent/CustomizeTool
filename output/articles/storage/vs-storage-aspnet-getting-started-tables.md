@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Get started with table storage and Visual Studio connected services (ASP.NET) | Microsoft Azure"
+	pageTitle="Get started with table storage and Visual Studio connected services (ASP.NET) | Windows Azure"
 	description="How to get started using Azure Table storage in an ASP.NET project in Visual Studio after connecting to a storage account using Visual Studio connected services"
 	services="storage"
 	documentationCenter=""
@@ -9,26 +9,22 @@
 
 <tags
 	ms.service="storage"
-	ms.workload="web"
-	ms.tgt_pltfrm="vs-getting-started"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="09/03/2015"
-	ms.author="patshea"/>
+	wacn.date=""/>
 
 # Get started with table storage and Visual Studio connected services (ASP.NET)
 > [AZURE.SELECTOR]
-> - [Getting Started](vs-storage-aspnet-getting-started-tables.md)
-> - [What Happened](vs-storage-aspnet-what-happened.md)
+> - [Getting Started](/documentation/articles/vs-storage-aspnet-getting-started-tables)
+> - [What Happened](/documentation/articles/vs-storage-aspnet-what-happened)
 
 > [AZURE.SELECTOR]
-> - [Blobs](vs-storage-aspnet-getting-started-blobs.md)
-> - [Queues](vs-storage-aspnet-getting-started-queues.md)
-> - [Tables](vs-storage-aspnet-getting-started-tables.md)
+> - [Blobs](/documentation/articles/vs-storage-aspnet-getting-started-blobs)
+> - [Queues](/documentation/articles/vs-storage-aspnet-getting-started-queues)
+> - [Tables](/documentation/articles/vs-storage-aspnet-getting-started-tables)
 
 ## Overview
 This article describes how get started using Azure Table storage in Visual Studio after you have created or referenced an Azure storage account in an ASP.NET project by using the  Visual Studio **Add Connected Services** dialog. This article shows you how to perform common tasks in Azure tables, including creating and
-deleting a table, as well as working with table entities. The samples are written in C\# code and use the [Azure Storage Client Library for .NET](https://msdn.microsoft.com/library/azure/dn261237.aspx). For more general information about using Azure table storage, see [How to use Table storage from .NET](storage-dotnet-how-to-use-tables.md).
+deleting a table, as well as working with table entities. The samples are written in C\# code and use the [Azure Storage Client Library for .NET](https://msdn.microsoft.com/zh-cn/library/azure/dn261237.aspx). For more general information about using Azure table storage, see [How to use Table storage from .NET](/documentation/articles/storage-dotnet-how-to-use-tables).
 
 Azure Table storage enables you to store large amounts of structured data. The service is a NoSQL datastore that accepts authenticated calls from inside and outside the Azure cloud. Azure tables are ideal for storing structured, non-relational data.
 
@@ -166,4 +162,4 @@ You can delete an entity after you find it. The following code looks for a custo
 
 ## Next steps
 
-[AZURE.INCLUDE [vs-storage-dotnet-tables-next-steps](../../includes/vs-storage-dotnet-tables-next-steps.md)]
+[AZURE.INCLUDE [vs-storage-dotnet-tables-next-steps](../includes/vs-storage-dotnet-tables-next-steps.md)]

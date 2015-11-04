@@ -9,18 +9,14 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.workload="mobile"
-	ms.tgt_pltfrm="na"
-	ms.devlang="multiple"
-	ms.topic="article"
-	ms.date="09/15/2015" 
-	ms.author="ggailey777"/> 
+	ms.date="09/15/2015"
+	wacn.date=""/> 
 
 # Store your mobile service project code in source control
 
 > [AZURE.SELECTOR]
-- [.NET backend](mobile-services-dotnet-backend-store-code-source-control.md)
-- [Javascript backend](mobile-services-store-scripts-source-control.md)
+- [.NET backend](/documentation/articles/mobile-services-dotnet-backend-store-code-source-control)
+- [Javascript backend](/documentation/articles/mobile-services-store-scripts-source-control)
 
 This topic shows you how to use the source control provided by Azure Mobile Services to store your server scripts. Scripts and other JavaScript backend code files can be promoted from your local Git repository to your production mobile service. It also shows how to define shared code that can be required by multiple scripts and how to use the package.json file to add Node.js modules to your mobile service.
 
@@ -28,7 +24,7 @@ To complete this tutorial, you must have already created a mobile service by com
 
 ##<a name="enable-source-control"></a>Enable source control in your mobile service
 
-[AZURE.INCLUDE [mobile-services-enable-source-control](../../includes/mobile-services-enable-source-control.md)]
+[AZURE.INCLUDE [mobile-services-enable-source-control](../includes/mobile-services-enable-source-control.md)]
 
 ##<a name="clone-repo"></a>Install Git and create the local repository
 
@@ -147,10 +143,10 @@ Now that you have completed this tutorial you know how to store your scripts in 
 
 <!-- URLs. -->
 [Git website]: http://git-scm.com
-[Source control]: http://msdn.microsoft.com/library/windowsazure/c25aaede-c1f0-4004-8b78-113708761643
+[Source control]: http://msdn.microsoft.com/zh-cn/library/azure/c25aaede-c1f0-4004-8b78-113708761643
 [Installing Git]: http://git-scm.com/book/en/Getting-Started-Installing-Git
-[Get started with Mobile Services]: mobile-services-ios-get-started.md
-[Work with server scripts in Mobile Services]: mobile-services-how-to-use-server-scripts.md
-[Azure Management Portal]: https://manage.windowsazure.com/
+[Get started with Mobile Services]: /documentation/articles/mobile-services-ios-get-started
+[Work with server scripts in Mobile Services]: /documentation/articles/mobile-services-how-to-use-server-scripts
+[Azure Management Portal]: https://manage.windowsazure.cn/
 [Modules]: http://nodejs.org/api/modules.html
 [node-uuid]: https://npmjs.org/package/node-uuid

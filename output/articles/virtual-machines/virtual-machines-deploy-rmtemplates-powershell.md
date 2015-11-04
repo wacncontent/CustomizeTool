@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Manage Azure Resource Manager VMs | Microsoft Azure"
+	pageTitle="Manage Azure Resource Manager VMs | Windows Azure"
 	description="Manage virtual machines using Azure Resource Manager, templates, and PowerShell."
 	services="virtual-machines"
 	documentationCenter=""
@@ -10,23 +10,19 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.workload="infrastructure-services"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="10/08/2015"
-	ms.author="davidmu"/>
+	wacn.date=""/>
 
 # Manage virtual machines using Azure Resource Manager and PowerShell
 
 > [AZURE.SELECTOR]
-- [Preview Portal](virtual-machines-windows-tutorial.md)
-- [PowerShell - Windows](virtual-machines-deploy-rmtemplates-powershell.md)
-- [Azure CLI](virtual-machines-deploy-rmtemplates-azure-cli.md)
+- [Preview Portal](/documentation/articles/virtual-machines-windows-tutorial)
+- [PowerShell - Windows](/documentation/articles/virtual-machines-deploy-rmtemplates-powershell)
+- [Azure CLI](/documentation/articles/virtual-machines-deploy-rmtemplates-azure-cli)
 
-Using Azure PowerShell and Resource Manager templates provides you with a lot of power and flexibility when managing resources in Microsoft Azure. You can use the tasks in this article to create and manage virtual machine resources.
+Using Azure PowerShell and Resource Manager templates provides you with a lot of power and flexibility when managing resources in Windows Azure. You can use the tasks in this article to create and manage virtual machine resources.
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-rm-include.md)] [classic deployment model](virtual-machines-windows-tutorial-classic-portal.md).
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] [classic deployment model](/documentation/articles/virtual-machines-windows-tutorial-classic-portal).
 
 These tasks use a Resource Manager template and PowerShell:
 
@@ -43,19 +39,19 @@ These tasks use only PowerShell:
 - [Restart a virtual machine](#restart)
 - [Delete a virtual machine](#delete)
 
-[AZURE.INCLUDE [powershell-preview](../../includes/powershell-preview-inline-include.md)]
+[AZURE.INCLUDE [powershell-preview](../includes/powershell-preview-inline-include.md)]
 
 ## Azure Resource Manager templates and resource groups
 
 Some of the tasks in this article show you how to use Azure Resource Manager templates and PowerShell to automatically deploy and manage Azure virtual machines.
 
-Most applications running in Microsoft Azure are built from a combination of different cloud resource types, such as one or more virtual machines and storage accounts, a SQL database, or a virtual network. Azure Resource Manager templates make it possible for you to manage these different resources together by using a JSON description of the resources and associated configuration and deployment parameters.
+Most applications running in Windows Azure are built from a combination of different cloud resource types, such as one or more virtual machines and storage accounts, a SQL database, or a virtual network. Azure Resource Manager templates make it possible for you to manage these different resources together by using a JSON description of the resources and associated configuration and deployment parameters.
 
 After you define a JSON-based resource template, you can use it with a PowerShell command to deploy the defined resources in Azure. You can run these commands either separately in the PowerShell command shell, or you can integrate them with a script that contains additional automation logic.
 
 The resources you create using Azure Resource Manager templates are deployed to either a new or existing *Azure resource group*. A resource group allows you to manage multiple deployed resources together as a logical group; this means that you to manage the overall lifecycle of the group/application.
 
-If you're interested in authoring templates, see [Authoring Azure Resource Manager templates](resource-group-authoring-templates.md).
+If you're interested in authoring templates, see [Authoring Azure Resource Manager templates](/documentation/articles/resource-group-authoring-templates).
 
 ### Create a resource group
 
@@ -67,7 +63,7 @@ In the following command, replace *resource group name* with the name of the new
 
 ## <a id="windowsvm"></a>TASK: Create a virtual machine
 
-This task uses a template from the template gallery. To learn more about the template, see [Deploy a simple Windows VM in West US](https://azure.microsoft.com/documentation/templates/101-simple-windows-vm/).
+This task uses a template from the template gallery. To learn more about the template, see [Deploy a simple Windows VM in China North](https://azure.microsoft.com/documentation/templates/101-simple-windows-vm/).
 
 ![](./media/virtual-machines-deploy-rmtemplates-powershell/windowsvm.png)
 
@@ -141,9 +137,9 @@ You're prompted to supply the values of parameters in the **parameters** section
 	cmdlet New-AzureRmResourceGroupDeployment at command pipeline position 1
 	Supply values for the following parameters:
 	(Type !? for Help.)
-	osDiskVhdUri: http://saacct.blob.core.windows.net/vhds/osdiskforwindows.vhd
+	osDiskVhdUri: http://saacct.blob.core.chinacloudapi.cn/vhds/osdiskforwindows.vhd
 	osType: windows
-	location: West US
+	location: China North
 	vmSize: Standard_A3
 	...
 
@@ -257,7 +253,7 @@ It returns something like this:
 	                               "Name": "osdisk",
 	                               "SourceImage": null,
 	                               "VirtualHardDisk": {
-	                                 "Uri": "http://saacct.blob.core.windows.net/vhds/osdiskforwindowssimple.vhd"
+	                                 "Uri": "http://saacct.blob.core.chinacloudapi.cn/vhds/osdiskforwindowssimple.vhd"
 	                               }
 	                             },
 	                             "SourceImage": null
@@ -368,10 +364,10 @@ If you would like to see a video of this task being done, take a look at this:
 [AZURE.VIDEO start-stop-restart-and-delete-vms-in-microsoft-azure-with-powershell]
 
 ## Additional resources
-[Azure Quickstart Templates](http://azure.microsoft.com/documentation/templates/) and [App Frameworks](virtual-machines-app-frameworks.md)
+[Azure Quickstart Templates](http://azure.microsoft.com/documentation/templates/) and [App Frameworks](/documentation/articles/virtual-machines-app-frameworks)
 
-[Azure compute, network and storage providers under Azure Resource Manager](virtual-machines-azurerm-versus-azuresm.md)
+[Azure compute, network and storage providers under Azure Resource Manager](/documentation/articles/virtual-machines-azurerm-versus-azuresm)
 
-[Azure Resource Manager overview](resource-group-overview.md)
+[Azure Resource Manager overview](/documentation/articles/resource-group-overview)
 
-[Virtual machines documentation](http://azure.microsoft.com/documentation/services/virtual-machines/)
+[Virtual machines documentation](/documentation/services/virtual-machines/)

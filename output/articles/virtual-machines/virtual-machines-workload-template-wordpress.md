@@ -1,5 +1,5 @@
 <properties
-	pageTitle="WordPress on Ubuntu with ARM template | Microsoft Azure"
+	pageTitle="WordPress on Ubuntu with ARM template | Windows Azure"
 	description="Easily deploy a single WordPress server running Ubuntu using a Resource Manager Template and the Azure Preview Portal, Azure PowerShell, or the Azure CLI."
 	services="virtual-machines"
 	documentationCenter=""
@@ -10,16 +10,12 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.workload="infrastructure-services"
-	ms.tgt_pltfrm="vm-linux"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="10/08/2015"
-	ms.author="davidmu"/>
+	wacn.date=""/>
 
 # Deploy a WordPress server on Ubuntu with an Azure Resource Manager template
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-rm-include.md)] classic deployment model. You can't create this resource with the classic deployment model.
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] classic deployment model. You can't create this resource with the classic deployment model.
 
 Use the instructions in this article to deploy a WordPress server running on Ubuntu using a Resource Manager template. This template creates a single virtual machine in a new virtual network.
 
@@ -29,7 +25,7 @@ You can run the template with the Azure Preview portal, Azure PowerShell, or the
 
 ## Azure Preview portal
 
-To deploy this workload using a Resource Manager template and the Azure Preview portal, click [here](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2Fwordpress-single-vm-ubuntu%2Fazuredeploy.json).
+To deploy this workload using a Resource Manager template and the Azure Preview portal, click [here](https://manage.windowsazure.cn/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2Fwordpress-single-vm-ubuntu%2Fazuredeploy.json).
 
 ![](./media/virtual-machines-workload-template-wordpress/azure-portal-template.png)
 
@@ -45,13 +41,13 @@ Depending on the template, it can take some time for Azure to build the workload
 
 ## Azure PowerShell
 
-[AZURE.INCLUDE [powershell-preview](../../includes/powershell-preview-inline-include.md)]
+[AZURE.INCLUDE [powershell-preview](../includes/powershell-preview-inline-include.md)]
 
 Fill in an Azure deployment name, a new Resource Group name, and an Azure datacenter location in the following set of commands. Remove everything within the quotes, including the < and > characters.
 
 	$deployName="<deployment name>"
 	$RGName="<resource group name>"
-	$locName="<Azure location, such as West US>"
+	$locName="<Azure location, such as China North>"
 	$templateURI="https://raw.githubusercontent.com/azure/azure-quickstart-templates/master/wordpress-single-vm-ubuntu/azuredeploy.json"
 	New-AzureRmResourceGroup -Name $RGName -Location $locName
 	New-AzureRmResourceGroupDeployment -Name $deployName -ResourceGroupName $RGName -TemplateUri $templateURI
@@ -60,7 +56,7 @@ Here is an example.
 
 	$deployName="TestDeployment"
 	$RGName="TestRG"
-	$locname="West US"
+	$locname="China North"
 	$templateURI="https://raw.githubusercontent.com/azure/azure-quickstart-templates/master/wordpress-single-vm-ubuntu/azuredeploy.json"
 	New-AzureRmResourceGroup -Name $RGName -Location $locName
 	New-AzureRmResourceGroupDeployment -Name $deployName -ResourceGroupName $RGName -TemplateUri $templateURI
@@ -73,7 +69,7 @@ When the template execution is complete, you now have WordPress server running o
 
 ## Azure CLI
 
-Before you begin, make sure you have the right version of Azure CLI installed, you have logged in, and you have switched to the new Resource Manager mode. For the details, click [here](virtual-machines-deploy-rmtemplates-azure-cli.md#getting-ready).
+Before you begin, make sure you have the right version of Azure CLI installed, you have logged in, and you have switched to the new Resource Manager mode. For the details, click [here](/documentation/articles/virtual-machines-deploy-rmtemplates-azure-cli#getting-ready).
 
 First, you create a new resource group. Use the following command and specify the name of the group and the Azure data center location into which you want to deploy.
 
@@ -94,14 +90,14 @@ When the template execution is complete, you now have WordPress server running o
 
 ## Additional resources
 
-[Deploy and manage Virtual Machines using Azure Resource Manager templates and Azure PowerShell](virtual-machines-deploy-rmtemplates-powershell.md)
+[Deploy and manage Virtual Machines using Azure Resource Manager templates and Azure PowerShell](/documentation/articles/virtual-machines-deploy-rmtemplates-powershell)
 
-[Azure Compute, Network and Storage Providers under Azure Resource Manager](virtual-machines-azurerm-versus-azuresm.md)
+[Azure Compute, Network and Storage Providers under Azure Resource Manager](/documentation/articles/virtual-machines-azurerm-versus-azuresm)
 
-[Azure Resource Manager Overview](../resource-group-overview.md)
+[Azure Resource Manager Overview](/documentation/articles/resource-group-overview)
 
-[Deploy and manage virtual machines using Azure Resource Manager templates and the Azure CLI](virtual-machines-deploy-rmtemplates-azure-cli.md)
+[Deploy and manage virtual machines using Azure Resource Manager templates and the Azure CLI](/documentation/articles/virtual-machines-deploy-rmtemplates-azure-cli)
 
-[Virtual machines documentation](http://azure.microsoft.com/documentation/services/virtual-machines/)
+[Virtual machines documentation](/documentation/services/virtual-machines/)
 
-[How to install and configure Azure PowerShell](../install-configure-powershell.md)
+[How to install and configure Azure PowerShell](/documentation/articles/install-configure-powershell)

@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Administering a Mobile Service from the command line | Microsoft Azure" 
+	pageTitle="Administering a Mobile Service from the command line | Windows Azure" 
 	description="Learn how to create, deploy, and manage your Azure Mobile Service using command-line tools." 
 	services="mobile-services" 
 	documentationCenter="Mobile" 
@@ -7,14 +7,10 @@
 	manager="dwrede" 
 	editor=""/>
 
-<tags 
-	ms.service="mobile-services" 
-	ms.workload="mobile" 
-	ms.tgt_pltfrm="NA" 
-	ms.devlang="multiple" 
-	ms.topic="article" 
-	ms.date="07/22/2015" 
-	ms.author="glenga"/>
+<tags
+	ms.service="mobile-services"
+	ms.date="07/22/2015"
+	wacn.date=""/>
 
 # Automate mobile services with command-line tools 
 
@@ -178,13 +174,13 @@ For more information about registering scripts, see [Mobile Services server scri
 <!-- URLs. -->
 [Mobile Services server script reference]: http://go.microsoft.com/fwlink/p?LinkId=262293
 
-[Azure Management Portal]: https://manage.windowsazure.com/
+[Azure Management Portal]: https://manage.windowsazure.cn/
 [nodejs-org]: http://nodejs.org/
 [install-node-linux]: https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager
 
 [mac-installer]: http://go.microsoft.com/fwlink/p?LinkId=252249
 [windows-installer]: http://go.microsoft.com/fwlink/p?LinkID=275464
-[reference-docs]: http://azure.microsoft.com/documentation/articles/virtual-machines-command-line-tools/#Commands_to_manage_mobile_services
+[reference-docs]: /documentation/articles/virtual-machines-command-line-tools/#Commands_to_manage_mobile_services
 [How to install the Azure Command-Line Tools for Mac and Linux]: http://go.microsoft.com/fwlink/p/?LinkId=275795
 
  

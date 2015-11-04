@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Python web app with Django on Linux | Microsoft Azure" 
+	pageTitle="Python web app with Django on Linux | Windows Azure" 
 	description="Learn how to host a Django-based web application on Azure using a Linux virtual machine." 
 	services="virtual-machines" 
 	documentationCenter="python" 
@@ -8,24 +8,20 @@
 	editor=""
 	tags=“azure-service-management"/>
 
-<tags 
-	ms.service="virtual-machines" 
-	ms.workload="web" 
-	ms.tgt_pltfrm="vm-linux" 
-	ms.devlang="python" 
-	ms.topic="article" 
-	ms.date="05/20/2015" 
-	ms.author="huvalo"/>
+<tags
+	ms.service="virtual-machines"
+	ms.date="05/20/2015"
+	wacn.date=""/>
 	
 # Django Hello World web application on a Linux VM
 
 > [AZURE.SELECTOR]
-- [Windows](virtual-machines-python-django-web-app-windows-server.md)
-- [Mac/Linux](virtual-machines-python-django-web-app-linux.md)
+- [Windows](/documentation/articles/virtual-machines-python-django-web-app-windows-server)
+- [Mac/Linux](/documentation/articles/virtual-machines-python-django-web-app-linux)
 
 <br>
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
 
 
 This tutorial describes how to host a Django-based website on Microsoft 
@@ -43,7 +39,7 @@ A screenshot of the completed application is below:
 
 ![A browser window displaying the hello world page on Azure](./media/virtual-machines-python-django-web-app-linux/mac-linux-django-helloworld-browser.png)
 
-[AZURE.INCLUDE [create-account-and-vms-note](../../includes/create-account-and-vms-note.md)]
+[AZURE.INCLUDE [create-account-and-vms-note](../includes/create-account-and-vms-note.md)]
 
 ## Creating and configuring an Azure virtual machine to host Django
 
@@ -52,7 +48,7 @@ A screenshot of the completed application is below:
   **Note:** you *only* need to create the virtual machine. Stop at the section titled *How to log on to the virtual machine after you create it*.
 
 1. Instruct Azure to direct port **80** traffic from the web to port **80** on the virtual machine:
-	* Navigate to your newly created virtual machine in the Azure Portal and click the *ENDPOINTS* tab.
+	* Navigate to your newly created virtual machine in the Azure Management Portal and click the *ENDPOINTS* tab.
 	* Click the *ADD* button at the bottom of the screen.
 	![add endpoint](./media/virtual-machines-python-django-web-app-linux/mac-linux-django-helloworld-add-endpoint.png)
 	* Open up the *TCP* protocol's *PUBLIC PORT 80* as *PRIVATE PORT 80*.
@@ -60,7 +56,7 @@ A screenshot of the completed application is below:
 
 ## <a id="setup"> </a>Setting up the development environment
 
-**Note:** If you need to install Python or would like to use the Client Libraries, please see the [Python Installation Guide](../python-how-to-install.md).
+**Note:** If you need to install Python or would like to use the Client Libraries, please see the [Python Installation Guide](/documentation/articles/python-how-to-install).
 
 The Ubuntu Linux VM already comes with Python 2.7 pre-installed, but it doesn't have Apache or django installed.  Follow these steps to connect to your VM and install Apache and django.
 
@@ -111,7 +107,7 @@ The Ubuntu Linux VM already comes with Python 2.7 pre-installed, but it doesn't 
 
 ## Setting up Apache
 
-1.  Create an Apache virtual host configuration file **/etc/apache2/sites-available/helloworld.conf**. Set the contents to the following, and make sure to replace *yourVmUrl* with the actual URL of the machine you are using (for example *pyubuntu.cloudapp.net*).
+1.  Create an Apache virtual host configuration file **/etc/apache2/sites-available/helloworld.conf**. Set the contents to the following, and make sure to replace *yourVmUrl* with the actual URL of the machine you are using (for example *pyubuntu.chinacloudapp.cn*).
 
 		<VirtualHost *:80>
 		ServerName yourVmUrl

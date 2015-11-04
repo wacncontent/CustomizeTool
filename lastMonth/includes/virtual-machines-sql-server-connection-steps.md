@@ -18,7 +18,7 @@ The connection path is summarized by the following diagram:
 
 In order to access SQL Server from the internet, the virtual machine must have an endpoint to listen for incoming TCP communication. This Azure configuration step, directs incoming TCP port traffic to a TCP port that is accessible to the virtual machine.
 
->[AZURE.NOTE] If you are connecting within the same cloud service or virtual network, you do not have to create a publically accessible endpoint. In that case, you could continue to the next step. For more information, see [Connectivity Considerations for SQL Server in Azure Virtual Machines](https://msdn.microsoft.com/zh-cn/library/azure/dn133152.aspx).
+>[AZURE.NOTE] If you are connecting within the same cloud service or virtual network, you do not have to create a publically accessible endpoint. In that case, you could continue to the next step. For more information, see [Connection Scenarios](../articles/virtual-machines/virtual-machines-sql-server-connectivity.md#connection-scenarios).
 
 1. On the Azure Management Portal, click on **VIRTUAL MACHINES**.
 	
@@ -68,7 +68,7 @@ In order to access SQL Server from the internet, the virtual machine must have a
 
 	![Rule Name](./media/virtual-machines-sql-server-connection-steps/17Rule-Name.png)
 
-Open additional ports for other components as needed. For more information, see [Configuring the Windows Firewall to Allow SQL Server Access](http://msdn.microsoft.com/zh-cn/library/cc646023.aspx).
+Open additional ports for other components as needed. For more information, see [Configuring the Windows Firewall to Allow SQL Server Access](http://msdn.microsoft.com/library/cc646023.aspx).
 
 
 ### Configure SQL Server to listen on the TCP protocol
@@ -89,7 +89,7 @@ Open additional ports for other components as needed. For more information, see 
 
 7. Close SQL Server Configuration Manager.
 
-For more information about enabling protocols for the SQL Server Database Engine, see [Enable or Disable a Server Network Protocol](http://msdn.microsoft.com/zh-cn/library/ms191294.aspx).
+For more information about enabling protocols for the SQL Server Database Engine, see [Enable or Disable a Server Network Protocol](http://msdn.microsoft.com/library/ms191294.aspx).
 
 ### Configure SQL Server for mixed mode authentication
 
@@ -159,7 +159,7 @@ To connect to the Database Engine from another computer, you must create at leas
 
 12. Click OK.
 
-For more information about SQL Server logins, see [Create a Login](http://msdn.microsoft.com/zh-cn/library/aa337562.aspx).
+For more information about SQL Server logins, see [Create a Login](http://msdn.microsoft.com/library/aa337562.aspx).
 
 ### Determine the DNS name of the virtual machine
 

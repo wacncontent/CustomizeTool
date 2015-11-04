@@ -22,7 +22,7 @@ The word "blob" is short for "Binary Large OBject", and it describes exactly wha
 
 To use blobs, you first create an Azure *storage account*. As part of this, you specify the Azure datacenter that will store the objects you create using this account. Wherever it lives, each blob you create belongs to some container in your storage account. To access a blob, an application provides a URL with the form:
 
-http://&lt;*StorageAccount*&gt;.blob.core.chinacloudapi.cn/&lt;*Container*&gt;/&lt;*BlobName*&gt;
+http://&lt;*StorageAccount*&gt;.blob.core.windows.net/&lt;*Container*&gt;/&lt;*BlobName*&gt;
 
 &lt;*StorageAccount*&gt; is a unique identifier assigned when a new storage account is created, while &lt;*Container*&gt; and &lt;*BlobName*&gt; are the names of a specific container and a blob within that container. 
 
@@ -99,7 +99,7 @@ As the diagram shows, SQL Data Sync can synchronize data across different locati
 
 Synchronization can be bi-directional, and you determine exactly what data is synchronized and how frequently it's done. (Synchronization between databases isn't atomic, however - there's always at least some delay.) And however it's used, setting up synchronization with SQL Data Sync is entirely configuration-driven; there's no code to write.
 
-<div style="display:none">
+
 ### <a name="datarpt"></a>SQL Data Reporting using Virtual Machines
 
 Once a database contains data, somebody will probably want to create reports using that data. Azure can run SQL Server Reporting Services (SSRS) in Azure Virtual Machines, which is functionally equivalent to running SQL Server Reporting Services on-premises. Then you can use SSRS to run reports on data stored in an Azure SQL Database.  [Figure 5](#Fig5) shows how the process works.
@@ -115,7 +115,7 @@ Next, a user of the application accesses the report (step 3). The application pa
 Embedding a report in an application, the scenario shown here, isn't the only option. It's also possible to view reports in Report Manager on the VM, SharePoint on the VM, or in other ways. Reports can also be combined, with one report containing a link to another.
 
 SSRS on an Azure VM gives you full functionality as a reporting solution in the cloud. Reports can use any data source supported by SSRS. Applications and reports can include embedded code or assemblies to support custom behaviors. Report execution and rendering are fast because report server content and engine run together on the same virtual server.
-</div>
+
 
 
 ## <a name="tblstor"></a>Table Storage
@@ -130,7 +130,7 @@ Azure Table Storage is an example of this kind of NoSQL approach. Despite its na
 
 Like blobs, each table is associated with an Azure storage account. Tables are also named much like blobs, with a URL of the form
 
-http://&lt;*StorageAccount*&gt;.table.core.chinacloudapi.cn/&lt;*TableName*&gt;
+http://&lt;*StorageAccount*&gt;.table.core.windows.net/&lt;*TableName*&gt;
 
 As the figure shows, each table is divided into some number of partitions, each of which can be stored on a separate machine. (This is a form of sharding, as with SQL Federation.) Both Azure applications and applications running elsewhere can access a table using either the RESTful OData protocol or the Azure Storage Client library.
 

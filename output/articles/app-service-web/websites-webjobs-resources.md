@@ -37,7 +37,7 @@ The WebJobs dashboard in the Azure Management Portal provides powerful managemen
 * [How to use Azure blob storage with the WebJobs SDK](/documentation/articles/websites-dotnet-webjobs-sdk-storage-blobs-how-to)
 * [How to use Azure table storage with the WebJobs SDK](/documentation/articles/websites-dotnet-webjobs-sdk-storage-tables-how-to)
 * [How to use Azure Service Bus with the WebJobs SDK](/documentation/articles/websites-dotnet-webjobs-sdk-service-bus)
-* [Azure WebJobs SDK Quick Reference (PDF download)](http://go.microsoft.com/fwlink/?LinkID=524028&clcid=0x409)
+* [Azure WebJobs SDK Quick Reference (PDF download)](http://download.microsoft.com/download/2/2/0/220DE2F1-8AB3-474D-8F8B-C998F7C56B5D/Azure%20WebJobs%20SDK%20Cheat%20Sheet%202014.pdf)
 * [WebJobs settings documentation in GitHub](https://github.com/projectkudu/kudu/wiki/Web-jobs).
 <!-- deleted by customization
 * Videos

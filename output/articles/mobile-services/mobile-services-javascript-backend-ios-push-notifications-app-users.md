@@ -10,16 +10,12 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.workload="mobile"
-	ms.tgt_pltfrm="mobile-ios"
-	ms.devlang="objective-c"
-	ms.topic="article"
 	ms.date="10/01/2015"
-	ms.author="krisragh"/>
+	wacn.date=""/>
 
 # Send Push Notifications to Authenticated Users
 
-[AZURE.INCLUDE [mobile-services-selector-push-users](../../includes/mobile-services-selector-push-users.md)]
+[AZURE.INCLUDE [mobile-services-selector-push-users](../includes/mobile-services-selector-push-users.md)]
 
 In this topic, you learn how to send push notifications to an authenticated user on iOS. Before starting this tutorial, complete [Get started with authentication] and [Get started with push notifications] first.
 
@@ -28,7 +24,7 @@ In this tutorial, you require users to authenticate first, register with the not
 
 ##<a name="register"></a>Update Service to Require Authentication to Register
 
-[AZURE.INCLUDE [mobile-services-javascript-backend-push-notifications-app-users](../../includes/mobile-services-javascript-backend-push-notifications-app-users.md)]
+[AZURE.INCLUDE [mobile-services-javascript-backend-push-notifications-app-users](../includes/mobile-services-javascript-backend-push-notifications-app-users.md)]
 
 Replace the `insert` function with the following code, then click **Save**. This insert script uses the user ID tag to send a push notification to all iOS app registrations from the logged-in user:
 
@@ -51,11 +47,11 @@ function insert(item, user, request) {
 
 ##<a name="update-app"></a>Update App to Login Before Registration
 
-[AZURE.INCLUDE [mobile-services-ios-push-notifications-app-users-login](../../includes/mobile-services-ios-push-notifications-app-users-login.md)]
+[AZURE.INCLUDE [mobile-services-ios-push-notifications-app-users-login](../includes/mobile-services-ios-push-notifications-app-users-login.md)]
 
 ##<a name="test"></a>Test App
 
-[AZURE.INCLUDE [mobile-services-ios-push-notifications-app-users-test-app](../../includes/mobile-services-ios-push-notifications-app-users-test-app.md)]
+[AZURE.INCLUDE [mobile-services-ios-push-notifications-app-users-test-app](../includes/mobile-services-ios-push-notifications-app-users-test-app.md)]
 
 
 
@@ -67,8 +63,7 @@ function insert(item, user, request) {
 
 
 <!-- URLs. -->
-[Get started with authentication]: mobile-services-ios-get-started-users.md
-[Get started with push notifications]: mobile-services-javascript-backend-ios-get-started-push.md
-
-[Azure Management Portal]: https://manage.windowsazure.com/
-[Mobile Services .NET How-to Conceptual Reference]: mobile-services-ios-how-to-use-client-library.md
+[Get started with authentication]: /documentation/articles/mobile-services-ios-get-started-users
+[Get started with push notifications]: /documentation/articles/mobile-services-javascript-backend-ios-get-started-push
+[Azure Management Portal]: https://manage.windowsazure.cn/
+[Mobile Services .NET How-to Conceptual Reference]: /documentation/articles/mobile-services-ios-how-to-use-client-library

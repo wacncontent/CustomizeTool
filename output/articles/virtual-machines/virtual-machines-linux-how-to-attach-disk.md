@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Attach a disk to a Linux VM | Microsoft Azure"
+	pageTitle="Attach a disk to a Linux VM | Windows Azure"
 	description="Learn how to attach a data disk to an Azure virtual machine running Linux and initialize it so it's ready for use."
 	services="virtual-machines"
 	documentationCenter=""
@@ -10,16 +10,12 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.workload="infrastructure-services"
-	ms.tgt_pltfrm="vm-linux"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="08/11/2015"
-	ms.author="dkshir"/>
+	wacn.date=""/>
 
 # How to Attach a Data Disk to a Linux Virtual Machine
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
 
 
 You can attach both empty disks and disks that contain data. In both cases, the disks are actually .vhd files that reside in an Azure storage account. Also in both cases, after you attach the disk, you'll need to initialize it so it's ready for use. This article refers to virtual machines created using the classic deployment model.
@@ -27,7 +23,7 @@ You can attach both empty disks and disks that contain data. In both cases, the 
 > [AZURE.NOTE] It's a best practice to use one or more separate disks to store a virtual machine's data. When you create an Azure virtual machine, it has an operating system disk and a temporary disk. **Do not use the temporary disk to store data.** As the name implies, it provides temporary storage only. It offers no redundancy or backup because it doesn't reside in Azure storage.
 > The temporary disk is typically managed by the Azure Linux Agent and automatically mounted to **/mnt/resource** (or **/mnt** on Ubuntu images). On the other hand, a data disk might be named by the Linux kernel something like `/dev/sdc`, and you'll need to partition, format, and mount this resource. See the [Azure Linux Agent User Guide][Agent] for details.
 
-[AZURE.INCLUDE [howto-attach-disk-windows-linux](../../includes/howto-attach-disk-linux.md)]
+[AZURE.INCLUDE [howto-attach-disk-windows-linux](../includes/howto-attach-disk-linux.md)]
 
 ## How to: Initialize a new data disk in Linux
 
@@ -167,10 +163,10 @@ You can attach both empty disks and disks that contain data. In both cases, the 
 ## Additional Resources
 [How to log on to a virtual machine running Linux][Logon]
 
-[How to detach a disk from a Linux virtual machine ](virtual-machines-linux-how-to-detach-disk.md)
+[How to detach a disk from a Linux virtual machine ](/documentation/articles/virtual-machines-linux-how-to-detach-disk)
 
-[Using the Azure CLI with the Service Management API](virtual-machines-command-line-tools.md)
+[Using the Azure CLI with the Service Management API](/documentation/articles/virtual-machines-command-line-tools)
 
 <!--Link references-->
-[Agent]: virtual-machines-linux-agent-user-guide.md
-[Logon]: virtual-machines-linux-how-to-log-on.md
+[Agent]: /documentation/articles/virtual-machines-linux-agent-user-guide
+[Logon]: /documentation/articles/virtual-machines-linux-how-to-log-on

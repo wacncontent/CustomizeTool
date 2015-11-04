@@ -103,7 +103,7 @@ Use the following procedure to open a runbook for editing in the textual editor.
 
 ## To edit an Azure Automation runbook using Windows PowerShell
 
-To edit a runbook with Windows PowerShell, you edit the workflow using the editor of your choice and save it to a .ps1 file. You can use the [Get-AzureAutomationRunbookDefinition](http://aka.ms/runbookauthor/cmdlet/getazurerunbookdefinition) cmdlet to retrieve the contents of the runbook and then [Set-AzureAutomationRunbookDefinition](http://aka.ms/runbookauthor/cmdlet/setazurerunbookdefinition) cmdlet to replace the existing draft workflow with the modified one.
+To edit a runbook with Windows PowerShell, you edit the workflow using the editor of your choice and save it to a .ps1 file. You can use the [Get-AzureAutomationRunbookDefinition](https://msdn.microsoft.com/zh-cn/library/dn690269.aspx) cmdlet to retrieve the contents of the runbook and then [Set-AzureAutomationRunbookDefinition](https://msdn.microsoft.com/zh-cn/library/dn690267.aspx) cmdlet to replace the existing draft workflow with the modified one.
 
 ### To Retrieve the Contents of a Runbook Using Windows PowerShell
 

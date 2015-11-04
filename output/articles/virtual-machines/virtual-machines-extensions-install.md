@@ -1,5 +1,5 @@
 <properties
- pageTitle="Manage virtual machine extensions | Microsoft Azure"
+ pageTitle="Manage virtual machine extensions | Windows Azure"
  description="Describes how to add, find, update, and remove extensions for Azure virtual machines, in the classic deployment model."
  services="virtual-machines"
  documentationCenter=""
@@ -8,25 +8,21 @@
  editor=""
  tags="azure-service-management"/>
 <tags
- ms.service="virtual-machines"
- ms.devlang="na"
- ms.topic="article"
- ms.tgt_pltfrm="vm-multiple"
- ms.workload="infrastructure-services"
- ms.date="08/25/2015"
- ms.author="rasquill"/>
+	ms.service="virtual-machines"
+	ms.date="08/25/2015"
+	wacn.date=""/>
 #Manage virtual machine extensions
 
 Describes how to find, add, modify, or remove VM Extensions with either Windows or Linux Virtual Machines on Azure.
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)] Resource Manager mode
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager mode
 
 
 ##Using VM Extensions
 
 Azure VM Extensions implement behaviors or features that either help other programs work on Azure VMs (for example, the **WebDeployForVSDevTest** extension allows Visual Studio to Web Deploy solutions on your Azure VM) or provide the ability for you to interact with the VM to support some other behavior (for example, you can use the VM Access extensions from Powershell, the Azure CLI, and REST clients to reset or modify remote access values on your Azure VM).
 
->[AZURE.IMPORTANT] For a complete list of extensions by the features they support, see [Azure VM Extensions and Features](https://msdn.microsoft.com/library/dn606311.aspx). Because each VM extension supports a specific feature, exactly what you can and cannot do with an extension depends on the extension. Therefore, before modifying your VM, make sure you have read the documentation for the VM Extension you want to use. Removing some VM Extensions is not supported; others have properties that can be set that change VM behavior radically.
+>[AZURE.IMPORTANT] For a complete list of extensions by the features they support, see [Azure VM Extensions and Features](https://msdn.microsoft.com/zh-cn/library/dn606311.aspx). Because each VM extension supports a specific feature, exactly what you can and cannot do with an extension depends on the extension. Therefore, before modifying your VM, make sure you have read the documentation for the VM Extension you want to use. Removing some VM Extensions is not supported; others have properties that can be set that change VM behavior radically.
 
 The most common tasks are:
 
@@ -40,13 +36,13 @@ The most common tasks are:
 
 ##Find Available Extensions
 
-Azure VM Extensions are (For a complete list of extensions by the features they support, see [Azure VM Extensions and Features](https://msdn.microsoft.com/library/dn606311.aspx).) You can locate the extension and extended information using:
+Azure VM Extensions are (For a complete list of extensions by the features they support, see [Azure VM Extensions and Features](https://msdn.microsoft.com/zh-cn/library/dn606311.aspx).) You can locate the extension and extended information using:
 
 -   PowerShell
 -   Azure Cross-Platform Interface (Azure CLI)
 -   Service Management REST API
 
-either [Azure PowerShell](https://msdn.microsoft.com/library/azure/dn495240.aspx) cmdlets or the [Service Management REST APIs](https://msdn.microsoft.com/library/ee460799.aspx) to find information about available extensions.
+either [Azure PowerShell](https://msdn.microsoft.com/zh-cn/library/azure/dn495240.aspx) cmdlets or the [Service Management REST APIs](https://msdn.microsoft.com/zh-cn/library/ee460799.aspx) to find information about available extensions.
 
 ###Azure PowerShell
 
@@ -54,9 +50,9 @@ Some extensions have Powershell cmdlets that are specific to them, which may mak
 
 You can use the following cmdlets to obtain information about available extensions:
 
--   For instances of web roles or worker roles, you can use the [Get-AzureServiceAvailableExtension](https://msdn.microsoft.com/library/azure/dn722498.aspx)
+-   For instances of web roles or worker roles, you can use the [Get-AzureServiceAvailableExtension](https://msdn.microsoft.com/zh-cn/library/azure/dn722498.aspx)
     cmdlet.
--   For instances of Virtual Machines, you can use the [Get-AzureVMAvailableExtension](https://msdn.microsoft.com/library/azure/dn722480.aspx) cmdlet.
+-   For instances of Virtual Machines, you can use the [Get-AzureVMAvailableExtension](https://msdn.microsoft.com/zh-cn/library/azure/dn722480.aspx) cmdlet.
 
      For example, the following code example shows how to list the
     information for the **IaaSDiagnostics** extension using PowerShell.
@@ -113,9 +109,9 @@ For example, the following code example shows how to list the information for th
 
 You can use the following REST APIs to obtain information about available extensions:
 
--   For instances of web roles or worker roles, you can use the [List Available Extensions](https://msdn.microsoft.com/library/dn169559.aspx) operation. To list the versions of available extensions, you can use [List Extension Versions](https://msdn.microsoft.com/library/dn495437.aspx).
+-   For instances of web roles or worker roles, you can use the [List Available Extensions](https://msdn.microsoft.com/zh-cn/library/dn169559.aspx) operation. To list the versions of available extensions, you can use [List Extension Versions](https://msdn.microsoft.com/zh-cn/library/dn495437.aspx).
 
--   For instances of Virtual Machines, you can use the [List Resource Extensions](https://msdn.microsoft.com/library/dn495441.aspx) operation. To list the versions of available extensions, you can use [List Resource Extension Versions](https://msdn.microsoft.com/library/dn495440.aspx).
+-   For instances of Virtual Machines, you can use the [List Resource Extensions](https://msdn.microsoft.com/zh-cn/library/dn495441.aspx) operation. To list the versions of available extensions, you can use [List Resource Extension Versions](https://msdn.microsoft.com/zh-cn/library/dn495440.aspx).
 
 ##Add, Update, or Disable Extensions
 
@@ -139,8 +135,8 @@ APIs, you receive information about how the extension is to be configured. The i
 
 You can use the following REST APIs to know whether an extension requires a configuration of public and private parameters:
 
--   For instances of web roles or worker roles, the **PublicConfigurationSchema** and **PrivateConfigurationSchema** elements contain the information in the response from the [List Available Extensions](https://msdn.microsoft.com/library/dn169559.aspx) operation.
+-   For instances of web roles or worker roles, the **PublicConfigurationSchema** and **PrivateConfigurationSchema** elements contain the information in the response from the [List Available Extensions](https://msdn.microsoft.com/zh-cn/library/dn169559.aspx) operation.
 
--   For instances of Virtual Machines, the **PublicConfigurationSchema** and **PrivateConfigurationSchema** elements contain the information in the response from the [List Resource Extensions](https://msdn.microsoft.com/library/dn495441.aspx) operation.
+-   For instances of Virtual Machines, the **PublicConfigurationSchema** and **PrivateConfigurationSchema** elements contain the information in the response from the [List Resource Extensions](https://msdn.microsoft.com/zh-cn/library/dn495441.aspx) operation.
 
 >[AZURE.NOTE]Extensions can also use configurations that are defined with JSON. When these types of extensions are used, only the **SampleConfig** element is used.

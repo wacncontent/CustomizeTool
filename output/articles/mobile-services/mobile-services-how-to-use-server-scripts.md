@@ -7,14 +7,10 @@
 	manager="dwrede" 
 	editor=""/>
 
-<tags 
-	ms.service="mobile-services" 
-	ms.workload="mobile" 
-	ms.tgt_pltfrm="javascript" 
-	ms.devlang="multiple" 
-	ms.topic="article" 
-	ms.date="08/17/2015" 
-	ms.author="ricksal"/>
+<tags
+	ms.service="mobile-services"
+	ms.date="08/17/2015"
+	wacn.date=""/>
 
 
 # Work with a JavaScript backend mobile service
@@ -230,7 +226,7 @@ The value for the `id` must be unique and it must not include characters from th
 +  Printable characters: **"**(0x0022), **\+** (0x002B), **/** (0x002F), **?** (0x003F), **\\** (0x005C), **`** (0x0060)
 +  The ids "." and ".."
 
-You can also use integer IDs for your tables. To use an integer ID, you must create your table with the `mobile table create` command using the `--integerId` option. This command is used with the Command-line Interface (CLI) for Azure. For more information on using the CLI, see [CLI to manage Mobile Services tables](../virtual-machines-command-line-tools.md#Mobile_Tables).
+You can also use integer IDs for your tables. To use an integer ID, you must create your table with the `mobile table create` command using the `--integerId` option. This command is used with the Command-line Interface (CLI) for Azure. For more information on using the CLI, see [CLI to manage Mobile Services tables](/documentation/articles/virtual-machines-command-line-tools#Mobile_Tables).
 
 
 ###<a name="access-headers"></a>How to: Access custom parameters
@@ -239,7 +235,7 @@ When you send a request to your mobile service, you can include custom parameter
 
 For example, the following URI for a POST request tells the service to not permit the insertion of a new *TodoItem* that has the same text value:
 
-		https://todolist.azure-mobile.net/tables/TodoItem?duplicateText=false
+		https://todolist.azure-mobile.cn/tables/TodoItem?duplicateText=false
 
 These custom query parameters are accessed as JSON values from the **parameters** property of the [request object]. The **request** object is supplied by Mobile Services to any function registered to a table operation. The following server script for the insert operation checks the value of the `duplicateText` parameter before the insert operation is run:
 
@@ -328,7 +324,7 @@ When custom API functions are called by the Mobile Services runtime, both a [req
 
 The **send** function on the [response object] returns your desired response to the client. This code is invoked by sending a POST request to the following URL:
 
-		https://todolist.azure-mobile.net/api/hello  
+		https://todolist.azure-mobile.cn/api/hello  
 
 The global state is maintained between executions. 
 
@@ -372,7 +368,7 @@ The following **OrderPizza** custom API function returns a simple XML document a
 
 This custom API function is invoked by an HTTP GET request to the following endpoint:
 
-		https://todolist.azure-mobile.net/api/orderpizza
+		https://todolist.azure-mobile.cn/api/orderpizza
 
 ###<a name="get-api-user"></a>How to: Work with users and headers in a custom API
 
@@ -394,7 +390,7 @@ The following **OrderPizza** custom API function sets the owner property of an i
 
 This custom API function is invoked by an HTTP POST request to the following endpoint:
 
-		https://<service>.azure-mobile.net/api/orderpizza
+		https://<service>.azure-mobile.cn/api/orderpizza
 
 You can also access a specific HTTP header from the [request object], as shown in the following code:
 
@@ -409,8 +405,8 @@ This simple example reads a custom header named `my-custom-header`, then returns
 
 Mobile Services enables you to define multiple paths, or routes, in a custom API. For example, HTTP GET requests to the following URLs in a **calculator** custom API will invoke an **add** or **subtract** function, respectively: 
 
-+ `https://<service>.azure-mobile.net/api/calculator/add`
-+ `https://<service>.azure-mobile.net/api/calculator/sub`
++ `https://<service>.azure-mobile.cn/api/calculator/add`
++ `https://<service>.azure-mobile.cn/api/calculator/sub`
 
 Multiple routes are defined by exporting a **register** function, which is passed an **api** object (similar to the [express object in express.js]) that is used to register routes under the custom API endpoint. The following example implements the **add** and **sub** methods in the **calculator** custom API: 
 
@@ -433,11 +429,11 @@ The **api** object passed to the **register** function exposes a function for ea
 
 The two routes in the above custom API example can be invoked by HTTP GET requests as follows (shown with the response):
 
-+ `https://<service>.azure-mobile.net/api/calculator/add?a=1&b=2`
++ `https://<service>.azure-mobile.cn/api/calculator/add?a=1&b=2`
 
 		{"result":3}
 
-+ `https://<service>.azure-mobile.net/api/calculator/sub?a=3&b=5`
++ `https://<service>.azure-mobile.cn/api/calculator/sub?a=3&b=5`
 
 		{"result":-2}
 
@@ -924,7 +920,7 @@ The primary way to debug and troubleshoot your server scripts is by writing to t
 
 To write to the logs, use the global [console object]. Use the **log** or **info** function to log information-level warnings. The **warning** and **error** functions log their respective levels, which are called-out in the logs. 
 
-> [AZURE.NOTE] To view the logs for your mobile service, log on to the [Management Portal](https://manage.windowsazure.com/), select your mobile service, and then choose the **Logs** tab.
+> [AZURE.NOTE] To view the logs for your mobile service, log on to the [Management Portal](https://manage.windowsazure.cn/), select your mobile service, and then choose the **Logs** tab.
 
 You can also use the logging functions of the [console object] to format your messages using parameters. The following example supplies a JSON object as a parameter to the message string:
 
@@ -985,42 +981,42 @@ To avoid overloading your log, you should remove or disable calls to console.log
 [4]: ./media/mobile-services-how-to-use-server-scripts/4-mobile-source-local-cli.png
 
 <!-- URLs. -->
-[Mobile Services server script reference]: http://msdn.microsoft.com/library/windowsazure/jj554226.aspx
+[Mobile Services server script reference]: http://msdn.microsoft.com/zh-cn/library/azure/jj554226.aspx
 [Schedule backend jobs in Mobile Services]: /develop/mobile/tutorials/schedule-backend-tasks/
-[request object]: http://msdn.microsoft.com/library/windowsazure/jj554218.aspx
-[response object]: http://msdn.microsoft.com/library/windowsazure/dn303373.aspx
-[User object]: http://msdn.microsoft.com/library/windowsazure/jj554220.aspx
-[push object]: http://msdn.microsoft.com/library/windowsazure/jj554217.aspx
-[insert function]: http://msdn.microsoft.com/library/windowsazure/jj554229.aspx
-[insert]: http://msdn.microsoft.com/library/windowsazure/jj554229.aspx
-[update function]: http://msdn.microsoft.com/library/windowsazure/jj554214.aspx
-[delete function]: http://msdn.microsoft.com/library/windowsazure/jj554215.aspx
-[read function]: http://msdn.microsoft.com/library/windowsazure/jj554224.aspx
-[update]: http://msdn.microsoft.com/library/windowsazure/jj554214.aspx
-[delete]: http://msdn.microsoft.com/library/windowsazure/jj554215.aspx
-[read]: http://msdn.microsoft.com/library/windowsazure/jj554224.aspx
-[query object]: http://msdn.microsoft.com/library/windowsazure/jj613353.aspx
-[apns object]: http://msdn.microsoft.com/library/windowsazure/jj839711.aspx
-[mpns object]: http://msdn.microsoft.com/library/windowsazure/jj871025.aspx
-[wns object]: http://msdn.microsoft.com/library/windowsazure/jj860484.aspx
-[table object]: http://msdn.microsoft.com/library/windowsazure/jj554210.aspx
-[tables object]: http://msdn.microsoft.com/library/windowsazure/jj614364.aspx
-[mssql object]: http://msdn.microsoft.com/library/windowsazure/jj554212.aspx
-[console object]: http://msdn.microsoft.com/library/windowsazure/jj554209.aspx
-[Read and write data]: http://msdn.microsoft.com/library/windowsazure/jj631640.aspx
-[Validate data]: http://msdn.microsoft.com/library/windowsazure/jj631638.aspx
-[Modify the request]: http://msdn.microsoft.com/library/windowsazure/jj631635.aspx
-[Modify the response]: http://msdn.microsoft.com/library/windowsazure/jj631631.aspx
-[Management Portal]: https://manage.windowsazure.com/
-[Schedule jobs]: http://msdn.microsoft.com/library/windowsazure/jj860528.aspx
+[request object]: http://msdn.microsoft.com/zh-cn/library/azure/jj554218.aspx
+[response object]: http://msdn.microsoft.com/zh-cn/library/azure/dn303373.aspx
+[User object]: http://msdn.microsoft.com/zh-cn/library/azure/jj554220.aspx
+[push object]: http://msdn.microsoft.com/zh-cn/library/azure/jj554217.aspx
+[insert function]: http://msdn.microsoft.com/zh-cn/library/azure/jj554229.aspx
+[insert]: http://msdn.microsoft.com/zh-cn/library/azure/jj554229.aspx
+[update function]: http://msdn.microsoft.com/zh-cn/library/azure/jj554214.aspx
+[delete function]: http://msdn.microsoft.com/zh-cn/library/azure/jj554215.aspx
+[read function]: http://msdn.microsoft.com/zh-cn/library/azure/jj554224.aspx
+[update]: http://msdn.microsoft.com/zh-cn/library/azure/jj554214.aspx
+[delete]: http://msdn.microsoft.com/zh-cn/library/azure/jj554215.aspx
+[read]: http://msdn.microsoft.com/zh-cn/library/azure/jj554224.aspx
+[query object]: http://msdn.microsoft.com/zh-cn/library/azure/jj613353.aspx
+[apns object]: http://msdn.microsoft.com/zh-cn/library/azure/jj839711.aspx
+[mpns object]: http://msdn.microsoft.com/zh-cn/library/azure/jj871025.aspx
+[wns object]: http://msdn.microsoft.com/zh-cn/library/azure/jj860484.aspx
+[table object]: http://msdn.microsoft.com/zh-cn/library/azure/jj554210.aspx
+[tables object]: http://msdn.microsoft.com/zh-cn/library/azure/jj614364.aspx
+[mssql object]: http://msdn.microsoft.com/zh-cn/library/azure/jj554212.aspx
+[console object]: http://msdn.microsoft.com/zh-cn/library/azure/jj554209.aspx
+[Read and write data]: http://msdn.microsoft.com/zh-cn/library/azure/jj631640.aspx
+[Validate data]: http://msdn.microsoft.com/zh-cn/library/azure/jj631638.aspx
+[Modify the request]: http://msdn.microsoft.com/zh-cn/library/azure/jj631635.aspx
+[Modify the response]: http://msdn.microsoft.com/zh-cn/library/azure/jj631631.aspx
+[Management Portal]: https://manage.windowsazure.cn/
+[Schedule jobs]: http://msdn.microsoft.com/zh-cn/library/azure/jj860528.aspx
 [Validate and modify data in Mobile Services by using server scripts]: /develop/mobile/tutorials/validate-modify-and-augment-data-dotnet/
-[Commands to manage Azure Mobile Services]: ../virtual-machines-command-line-tools.md#Mobile_Scripts
+[Commands to manage Azure Mobile Services]: /documentation/articles/virtual-machines-command-line-tools#Mobile_Scripts
 [Windows Store Push]: /develop/mobile/tutorials/get-started-with-push-dotnet/
 [Windows Phone Push]: /develop/mobile/tutorials/get-started-with-push-wp8/
 [iOS Push]: /develop/mobile/tutorials/get-started-with-push-ios/
 [Android Push]: /develop/mobile/tutorials/get-started-with-push-android/
 [Azure SDK for Node.js]: http://go.microsoft.com/fwlink/p/?LinkId=275539
-[Send HTTP request]: http://msdn.microsoft.com/library/windowsazure/jj631641.aspx
+[Send HTTP request]: http://msdn.microsoft.com/zh-cn/library/azure/jj631641.aspx
 [Send email from Mobile Services with SendGrid]: /develop/mobile/tutorials/send-email-with-sendgrid/
 [Get started with authentication]: http://go.microsoft.com/fwlink/p/?LinkId=287177
 [crypto API]: http://go.microsoft.com/fwlink/p/?LinkId=288802
@@ -1029,15 +1025,15 @@ To avoid overloading your log, you should remove or disable calls to console.log
 [url API]: http://go.microsoft.com/fwlink/p/?LinkId=288805
 [util API]: http://go.microsoft.com/fwlink/p/?LinkId=288806
 [zlib API]: http://go.microsoft.com/fwlink/p/?LinkId=288807
-[Custom API]: http://msdn.microsoft.com/library/windowsazure/dn280974.aspx
+[Custom API]: http://msdn.microsoft.com/zh-cn/library/azure/dn280974.aspx
 [Call a custom API from the client]: /develop/mobile/tutorials/call-custom-api-dotnet/#define-custom-api
 [express.js library]: http://go.microsoft.com/fwlink/p/?LinkId=309046
 [Define a custom API that supports periodic notifications]: /develop/mobile/tutorials/create-pull-notifications-dotnet/
 [express object in express.js]: http://expressjs.com/api.html#express
 [Store server scripts in source control]: /develop/mobile/tutorials/store-scripts-in-source-control/
 [Leverage shared code and Node.js modules in your server scripts]: /develop/mobile/tutorials/store-scripts-in-source-control/#use-npm
-[service object]: http://msdn.microsoft.com/library/windowsazure/dn303371.aspx
-[App settings]: http://msdn.microsoft.com/library/dn529070.aspx
-[config module]: http://msdn.microsoft.com/library/dn508125.aspx
+[service object]: http://msdn.microsoft.com/zh-cn/library/azure/dn303371.aspx
+[App settings]: http://msdn.microsoft.com/zh-cn/library/dn529070.aspx
+[config module]: http://msdn.microsoft.com/zh-cn/library/dn508125.aspx
 [Support for package.json in Azure Mobile Services]: http://go.microsoft.com/fwlink/p/?LinkId=391036
  

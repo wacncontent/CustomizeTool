@@ -1,0 +1,15 @@
+new docs: 11, word count: {word_count_TODO}
+articles/batch/batch-api-basics.md
+articles/batch/batch-apps-dotnet-get-started.md
+articles/batch/batch-automatic-scaling.md
+articles/batch/batch-development-libraries-tools.md
+articles/batch/batch-dotnet-get-started.md
+articles/batch/batch-efficient-list-queries.md
+articles/batch/batch-hpc-solutions.md
+articles/batch/batch-parallel-node-tasks.md
+articles/batch/batch-powershell-cmdlets-get-started.md
+articles/batch/batch-technical-overview.md
+articles/batch/big-compute-resources.md
+
+new includes: 1
+includes/azure-batch-limits.md

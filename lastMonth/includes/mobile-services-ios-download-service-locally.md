@@ -24,5 +24,5 @@
 
 
 <!-- URLs. -->
-[Azure Management Portal]: https://manage.windowsazure.cn/
+[Azure Management Portal]: https://manage.windowsazure.com/
 

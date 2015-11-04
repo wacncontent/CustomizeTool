@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Deploy Resources Using .NET Libraries | Microsoft Azure"
-	description="Learn to use the Compute, Storage, and Network .NET libraries to create and delete resources in Microsoft Azure using the Resource Manager."
+	pageTitle="Deploy Resources Using .NET Libraries | Windows Azure"
+	description="Learn to use the Compute, Storage, and Network .NET libraries to create and delete resources in Windows Azure using the Resource Manager."
 	services="virtual-machines,virtual-network,storage"
 	documentationCenter=""
 	authors="davidmu1"
@@ -10,29 +10,25 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.workload="multiple"
-	ms.tgt_pltfrm="vm-windows"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="07/28/2015"
-	ms.author="davidmu"/>
+	wacn.date=""/>
 
 # Deploy Azure Resources Using the Compute, Network, and Storage .NET Libraries
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-rm-include.md)] classic deployment model.
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] classic deployment model.
 
 
-This tutorial shows you how to use some of the available clients in the Compute, Storage, and Network .NET libraries to create and delete resources in Microsoft Azure. It also shows you how to authenticate the requests to Azure Resource Manager by using Azure Active Directory.
+This tutorial shows you how to use some of the available clients in the Compute, Storage, and Network .NET libraries to create and delete resources in Windows Azure. It also shows you how to authenticate the requests to Azure Resource Manager by using Azure Active Directory.
 
-[AZURE.INCLUDE [free-trial-note](../../includes/free-trial-note.md)]
+[AZURE.INCLUDE [free-trial-note](../includes/free-trial-note.md)]
 
 To complete this tutorial you also need:
 
-- [Visual Studio](http://msdn.microsoft.com/library/dd831853.aspx)
-- [Azure storage account](../storage-create-storage-account.md)
-- [Windows Management Framework 3.0](http://www.microsoft.com/en-us/download/details.aspx?id=34595) or [Windows Management Framework 4.0](http://www.microsoft.com/en-us/download/details.aspx?id=40855)
+- [Visual Studio](http://msdn.microsoft.com/zh-cn/library/dd831853.aspx)
+- [Azure storage account](/documentation/articles/storage-create-storage-account)
+- [Windows Management Framework 3.0](http://www.microsoft.com/download/details.aspx?id=34595) or [Windows Management Framework 4.0](http://www.microsoft.com/download/details.aspx?id=40855)
 
-[AZURE.INCLUDE [powershell-preview](../../includes/powershell-preview-inline-include.md)]
+[AZURE.INCLUDE [powershell-preview](../includes/powershell-preview-inline-include.md)]
 
 It takes about 30 minutes to do these steps.
 
@@ -103,7 +99,7 @@ Now that the Azure Active Directory application is created and the authenticatio
 		private static string GetAuthorizationHeader()
         {
           ClientCredential cc = new ClientCredential("{application-id}", "{password}");
-            var context = new AuthenticationContext("https://login.windows.net/{tenant-id}");
+            var context = new AuthenticationContext("https://login.chinacloudapi.cn/{tenant-id}");
             var result = context.AcquireToken("https://management.azure.com/", cc);
 
           if (result == null)
@@ -131,7 +127,7 @@ Now that the Azure Active Directory application is created and the authenticatio
 
 ### Register the providers and create a resource group
 
-Resources are always deployed to a resource group. You use the [ResourceGroup](https://msdn.microsoft.com/library/azure/microsoft.azure.management.resources.models.resourcegroup.aspx) and the [ResourceManagementClient](https://msdn.microsoft.com/library/azure/microsoft.azure.management.resources.resourcemanagementclient.aspx) classes to create the resource group that the resources are deployed to.
+Resources are always deployed to a resource group. You use the [ResourceGroup](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.management.resources.models.resourcegroup.aspx) and the [ResourceManagementClient](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.management.resources.resourcemanagementclient.aspx) classes to create the resource group that the resources are deployed to.
 
 1.	Add the following method to the Program class to create the resource group:
 
@@ -141,7 +137,7 @@ Resources are always deployed to a resource group. You use the [ResourceGroup](h
 
           using (var resourceManagementClient = new ResourceManagementClient(credential))
 		  {
-		    var rgResult = await resourceManagementClient.ResourceGroups.CreateOrUpdateAsync("mytestrg1", new ResourceGroup { Location = "West US" });
+		    var rgResult = await resourceManagementClient.ResourceGroups.CreateOrUpdateAsync("mytestrg1", new ResourceGroup { Location = "China North" });
             Console.WriteLine(rgResult.StatusCode);
             var rpResult = await resourceManagementClient.Providers.RegisterAsync("Microsoft.Storage");
             Console.WriteLine(rpResult.StatusCode);
@@ -173,7 +169,7 @@ A storage account is needed to store the virtual hard disk file that is created 
               "mytestrg1",
               "mytestsa1",
               new StorageAccountCreateParameters()
-              { AccountType = AccountType.StandardLRS, Location = "West US" } );
+              { AccountType = AccountType.StandardLRS, Location = "China North" } );
             Console.WriteLine(saResult.StatusCode);
           }
         }
@@ -205,7 +201,7 @@ A virtual machine is most productive when it is added to a virtual network.
               "mytestvn1",
               new VirtualNetwork
               {
-                Location = "West US",
+                Location = "China North",
                 AddressSpace = new AddressSpace { AddressPrefixes = new List<string> { "10.0.0.0/16" } },
                 Subnets = new List<Subnet> { subnet }
               });
@@ -223,7 +219,7 @@ A virtual machine is most productive when it is added to a virtual network.
               "mytestip1",
               new PublicIpAddress
               {
-                Location = "West US",
+                Location = "China North",
                 PublicIpAllocationMethod = "Dynamic"
               });
             Console.WriteLine(vnResult.StatusCode);
@@ -237,7 +233,7 @@ A virtual machine is most productive when it is added to a virtual network.
               new NetworkInterface
               {
                 Name = "mytestnic1",
-                Location = "West US",
+                Location = "China North",
                 IpConfigurations = new List<NetworkInterfaceIpConfiguration>
                 {
                   new NetworkInterfaceIpConfiguration
@@ -279,7 +275,7 @@ Now that you created all of the supporting resources, you can create a virtual m
               new AvailabilitySet
               {
                 Name = "mytestav1",
-                Location = "West US"
+                Location = "China North"
               } );
             Console.WriteLine(avSetResponse.StatusCode);
 
@@ -292,7 +288,7 @@ Now that you created all of the supporting resources, you can create a virtual m
               new VirtualMachine
               {
                 Name = "mytestvm1",
-                Location = "West US",
+                Location = "China North",
                 AvailabilitySetReference = new AvailabilitySetReference
                 {
                   ReferenceUri = avSetResponse.AvailabilitySet.Id
@@ -333,7 +329,7 @@ Now that you created all of the supporting resources, you can create a virtual m
                     CreateOption = "FromImage",
                     VirtualHardDisk = new VirtualHardDisk
                     {
-                      Uri = "http://mytestsa1.blob.core.windows.net/vhds/myosdisk1.vhd"
+                      Uri = "http://mytestsa1.blob.core.chinacloudapi.cn/vhds/myosdisk1.vhd"
                     }
                   }
                 }
@@ -342,7 +338,7 @@ Now that you created all of the supporting resources, you can create a virtual m
           }
         }
 
-	>[AZURE.NOTE] Image vhd names change regularly in the image gallery, so you need to get a current image name to deploy the virtual machine. To do this, see [Manage Images Windows using Windows PowerShell](https://msdn.microsoft.com/library/azure/dn790330.aspx), and then replace {source-image-name} with the name of the vhd file that you want to use. For example,  "a699494373c04fc0bc8f2bb1389d6106__Windows-Server-2012-R2-201411.01-en.us-127GB.vhd".
+	>[AZURE.NOTE] Image vhd names change regularly in the image gallery, so you need to get a current image name to deploy the virtual machine. To do this, see [Manage Images Windows using Windows PowerShell](https://msdn.microsoft.com/zh-cn/library/azure/dn790330.aspx), and then replace {source-image-name} with the name of the vhd file that you want to use. For example,  "a699494373c04fc0bc8f2bb1389d6106__Windows-Server-2012-R2-201411.01-en.us-127GB.vhd".
 
 	Replace {subscription-id} with the identifier of your subscription.
 

@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="How to use SQL Azure (Java) | Microsoft Azure" 
+	pageTitle="How to use SQL Azure (Java) | Windows Azure" 
 	description="Learn how to use the Azure SQL Database from Java code." 
 	services="sql-database" 
 	documentationCenter="java" 
@@ -7,14 +7,10 @@
 	manager="jeffreyg" 
 	editor="jimbe"/>
 
-<tags 
-	ms.service="sql-database" 
-	ms.workload="data-management" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="Java" 
-	ms.topic="article" 
-	ms.date="10/12/2015" 
-	ms.author="genemi"/>
+<tags
+	ms.service="sql-database"
+	ms.date="10/12/2015"
+	wacn.date=""/>
 
 # How to Use Azure SQL Database in Java
 
@@ -27,7 +23,7 @@ Azure SQL Database provides a relational database management system for Azure, a
 
 
 ## Concepts
-Because Azure SQL Database is built on SQL Server technologies, accessing SQL Database from Java is very similar to accessing SQL Server from Java. You can develop an application locally (using SQL Server) and then connect to SQL Database by changing only the connection string. You can use a SQL Server JDBC driver for your application. However, there are some differences between SQL Database and SQL Server that could affect your application. For more information, see [Guidelines and Limitations (SQL Database)](http://msdn.microsoft.com/library/windowsazure/ff394102.aspx).
+Because Azure SQL Database is built on SQL Server technologies, accessing SQL Database from Java is very similar to accessing SQL Server from Java. You can develop an application locally (using SQL Server) and then connect to SQL Database by changing only the connection string. You can use a SQL Server JDBC driver for your application. However, there are some differences between SQL Database and SQL Server that could affect your application. For more information, see [Guidelines and Limitations (SQL Database)](http://msdn.microsoft.com/zh-cn/library/azure/ff394102.aspx).
 
 For additional resources for SQL Database, see the [Next steps][] section.
 
@@ -37,14 +33,14 @@ The following are prerequisites if you intend to use SQL Database with Java.
 
 * A Java Developer Kit (JDK), v 1.6 or later.
 * An Azure subscription, which can be acquired from <http://www.microsoft.com/windowsazure/offers/>.
-* If you are using Eclipse, you'll need Eclipse IDE for Java EE Developers, Indigo or later. This can be downloaded from <http://www.eclipse.org/downloads/>. You will also need the Azure Toolkit for Eclipse. During installation of this plugin, ensure that Microsoft JDBC Driver 4.0 for SQL Server is included. For more information, see [Installing the Azure Toolkit for Eclipse](http://msdn.microsoft.com/library/windowsazure/hh690946.aspx).
+* If you are using Eclipse, you'll need Eclipse IDE for Java EE Developers, Indigo or later. This can be downloaded from <http://www.eclipse.org/downloads/>. You will also need the Azure Toolkit for Eclipse. During installation of this plugin, ensure that Microsoft JDBC Driver 4.0 for SQL Server is included. For more information, see [Installing the Azure Toolkit for Eclipse](http://msdn.microsoft.com/zh-cn/library/azure/hh690946.aspx).
 * If you are not using Eclipse, you will need the Microsoft JDBC Driver 4.0 for SQL Server, which you can download from <http://www.microsoft.com/download/details.aspx?id=11774>.
 
 ## Creating an Azure SQL Database
 
 Before using Azure SQL Database in Java code, you will need to create an Azure SQL Database server.
 
-1. Login to the [Azure Management Portal](https://manage.windowsazure.com).
+1. Login to the [Azure Management Portal](https://manage.windowsazure.cn).
 2. Click **New**.
 
     ![Create new SQL database][create_new]
@@ -67,7 +63,7 @@ Before using Azure SQL Database in Java code, you will need to create an Azure S
 
 ## Determining the SQL Database connection string
 
-1. Login to the [Azure Management Portal](https://manage.windowsazure.com).
+1. Login to the [Azure Management Portal](https://manage.windowsazure.cn).
 2. Click **SQL Databases**.
 3. Click the database that you want to use.
 4. Click **Show connection strings**.
@@ -79,7 +75,7 @@ Before using Azure SQL Database in Java code, you will need to create an Azure S
 7. You can now paste this value into your code file to create a connection string of the following form. Replace *your_server* (in two places) with the text you copied in the previous step, and replace *your_password* with the password value you specified when you created your SQL Database account. (Also replace the values assigned to **database=** and **user=** if you did not use **gettingstarted** and **MySQLAdmin**, respectively.) 
 
     String connectionString =
-		"jdbc:sqlserver://*your_server*.database.windows.net:1433" + ";" +  
+		"jdbc:sqlserver://*your_server*.database.chinacloudapi.cn:1433" + ";" +  
     	"database=gettingstarted" + ";" + 
     	"user=MySQLAdmin@*your_server*" + ";" +  
     	"password=*your_password*" + ";" +  
@@ -91,7 +87,7 @@ We'll actually use this string later in this guide, for now you know the steps t
 
 ## To allow access to a range of IP addresses
 
-1. Login to the [Management Portal](https://manage.windowsazure.com).
+1. Login to the [Management Portal](https://manage.windowsazure.cn).
 2. Click **SQL Databases**.
 3. Click **Servers**.
 4. Click the server that you want to use.
@@ -117,7 +113,7 @@ We'll actually use this string later in this guide, for now you know the steps t
     4. In the **Add Library** dialog, select **Microsoft JDBC Driver 4.0 for SQL Server**, click **Next**, and then click **Finish**.
     5. Click **OK** to close the **Properties** dialog.
 
-    If you are not using Eclipse, add the Microsoft JDBC Driver 4.0 for SQL Server JAR to your class path. For related information, see [Using the JDBC Driver](http://msdn.microsoft.com/library/ms378526.aspx).
+    If you are not using Eclipse, add the Microsoft JDBC Driver 4.0 for SQL Server JAR to your class path. For related information, see [Using the JDBC Driver](http://msdn.microsoft.com/zh-cn/library/ms378526.aspx).
 
 4. Within your **HelloSQLAzure.java** code, add in `import` statements as shown in the following:
 
@@ -127,7 +123,7 @@ We'll actually use this string later in this guide, for now you know the steps t
 5. Specify your connection string. Following is an example. As above, replace *your_server* (in two places), *your_user* and *your_password* with the values appropriate for your SQL Database server.
 
         String connectionString =
-        	"jdbc:sqlserver://your_server.database.windows.net:1433" + ";" +  
+        	"jdbc:sqlserver://your_server.database.chinacloudapi.cn:1433" + ";" +  
         		"database=master" + ";" + 
         		"user=your_user@your_server" + ";" +  
         		"password=your_password";
@@ -162,7 +158,7 @@ The following code shows you how to create a table named **Person**.
 			// your_user@your_server,
 			// and your_password.
 			String connectionString = 
-				"jdbc:sqlserver://your_server.database.windows.net:1433" + ";" +  
+				"jdbc:sqlserver://your_server.database.chinacloudapi.cn:1433" + ";" +  
 					"database=gettingstarted" + ";" + 
 					"user=your_user@your_server" + ";" +  
 					"password=your_password";
@@ -185,8 +181,8 @@ The following code shows you how to create a table named **Person**.
 			    String sqlString = 
 					"CREATE TABLE Person (" + 
 			        	"[PersonID] [int] IDENTITY(1,1) NOT NULL," +
-			            "[LastName] [nvarchar](50) NOT NULL," + 
-			            "[FirstName] [nvarchar](50) NOT NULL)";
+			            "[LastName] [nvarchar](/documentation/articles/50) NOT NULL," + 
+			            "[FirstName] [nvarchar](/documentation/articles/50) NOT NULL)";
 			
 			    // Use the connection to create the SQL statement.
 			    statement = connection.createStatement();
@@ -239,7 +235,7 @@ The following code shows you how to create an index named **index1** on the **Pe
 	// your_user@your_server,
 	// and your_password.
 	String connectionString = 
-		"jdbc:sqlserver://your_server.database.windows.net:1433" + ";" +  
+		"jdbc:sqlserver://your_server.database.chinacloudapi.cn:1433" + ";" +  
 			"database=gettingstarted" + ";" + 
 			"user=your_user@your_server" + ";" +  
 			"password=your_password";
@@ -285,7 +281,7 @@ The following code shows you how to add rows to the **Person** table.
 	// your_user@your_server,
 	// and your_password.
 	String connectionString = 
-		"jdbc:sqlserver://your_server.database.windows.net:1433" + ";" +  
+		"jdbc:sqlserver://your_server.database.chinacloudapi.cn:1433" + ";" +  
 			"database=gettingstarted" + ";" + 
 			"user=your_user@your_server" + ";" +  
 			"password=your_password";
@@ -337,7 +333,7 @@ The following code shows you how to retrieve rows from the **Person** table.
 	// your_user@your_server,
 	// and your_password.
 	String connectionString = 
-		"jdbc:sqlserver://your_server.database.windows.net:1433" + ";" +  
+		"jdbc:sqlserver://your_server.database.chinacloudapi.cn:1433" + ";" +  
 			"database=gettingstarted" + ";" + 
 			"user=your_user@your_server" + ";" +  
 			"password=your_password";
@@ -406,7 +402,7 @@ The following code shows you how to retrieve a count of rows from the **Person**
 	// your_user@your_server,
 	// and your_password.
 	String connectionString = 
-		"jdbc:sqlserver://your_server.database.windows.net:1433" + ";" +  
+		"jdbc:sqlserver://your_server.database.chinacloudapi.cn:1433" + ";" +  
 			"database=gettingstarted" + ";" + 
 			"user=your_user@your_server" + ";" +  
 			"password=your_password";
@@ -457,7 +453,7 @@ The following code shows you how to update rows. In this example, the **LastName
 	// your_user@your_server,
 	// and your_password.
 	String connectionString = 
-		"jdbc:sqlserver://your_server.database.windows.net:1433" + ";" +  
+		"jdbc:sqlserver://your_server.database.chinacloudapi.cn:1433" + ";" +  
 			"database=gettingstarted" + ";" + 
 			"user=your_user@your_server" + ";" +  
 			"password=your_password";
@@ -502,7 +498,7 @@ The following code shows you how to delete rows. In this example, any rows where
 	// your_user@your_server,
 	// and your_password.
 	String connectionString = 
-		"jdbc:sqlserver://your_server.database.windows.net:1433" + ";" +  
+		"jdbc:sqlserver://your_server.database.chinacloudapi.cn:1433" + ";" +  
 			"database=gettingstarted" + ";" + 
 			"user=your_user@your_server" + ";" +  
 			"password=your_password";
@@ -548,7 +544,7 @@ The following code shows you how to determine whether a table exists.
 	// your_user@your_server,
 	// and your_password.
 	String connectionString = 
-		"jdbc:sqlserver://your_server.database.windows.net:1433" + ";" +  
+		"jdbc:sqlserver://your_server.database.chinacloudapi.cn:1433" + ";" +  
 			"database=gettingstarted" + ";" + 
 			"user=your_user@your_server" + ";" +  
 			"password=your_password";
@@ -603,7 +599,7 @@ The following code shows you how to drop an index named **index1** on the **Pers
 	// your_user@your_server,
 	// and your_password.
 	String connectionString = 
-		"jdbc:sqlserver://your_server.database.windows.net:1433" + ";" +
+		"jdbc:sqlserver://your_server.database.chinacloudapi.cn:1433" + ";" +
 			"database=gettingstarted" + ";" +
 			"user=your_user@your_server" + ";" +
 			"password=your_password";
@@ -649,7 +645,7 @@ The following code shows you how to drop a table named **Person**.
 	// your_user@your_server,
 	// and your_password.
 	String connectionString = 
-		"jdbc:sqlserver://your_server.database.windows.net:1433" + ";" +  
+		"jdbc:sqlserver://your_server.database.chinacloudapi.cn:1433" + ";" +  
 			"database=gettingstarted" + ";" + 
 			"user=your_user@your_server" + ";" +  
 			"password=your_password";
@@ -695,7 +691,7 @@ To use SQL Database in Java within an Azure deployment, in addition to having Mi
 3. In the **New Assembly Directive** dialog, click **Java Build Path Entries** and then click **Next**.
 4. Select **Microsoft JDBC Driver 4.0 SQL Server** and then click **Finish**.
 5. Click **OK** to close the **Properties** dialog.
-6. Export your project's WAR file to your approot folder, and rebuild your Azure project, per the steps documented at [Creating a Hello World Application Using the Azure Toolkit for Eclipse](http://msdn.microsoft.com/library/windowsazure/hh690944.aspx). That topic also describes how to run your application in the compute emulator, and in Azure.
+6. Export your project's WAR file to your approot folder, and rebuild your Azure project, per the steps documented at [Creating a Hello World Application Using the Azure Toolkit for Eclipse](http://msdn.microsoft.com/zh-cn/library/azure/hh690944.aspx). That topic also describes how to run your application in the compute emulator, and in Azure.
 
 **Packaging the Microsoft JDBC Driver 4.0 SQL Server if you are not using Eclipse**
 
@@ -703,7 +699,7 @@ To use SQL Database in Java within an Azure deployment, in addition to having Mi
 
 ## Next steps
 
-To learn more about Microsoft JDBC Driver for SQL Server, see [Overview of the JDBC Driver](http://msdn.microsoft.com/library/ms378749.aspx). To learn more about SQL Database, see [SQL Database Overview](http://msdn.microsoft.com/library/windowsazure/ee336241.aspx).
+To learn more about Microsoft JDBC Driver for SQL Server, see [Overview of the JDBC Driver](http://msdn.microsoft.com/zh-cn/library/ms378749.aspx). To learn more about SQL Database, see [SQL Database Overview](http://msdn.microsoft.com/zh-cn/library/azure/ee336241.aspx).
 
 For more information, see also the [Java Developer Center](/develop/java/).
 

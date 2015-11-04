@@ -1,5 +1,5 @@
 ﻿<properties
-   pageTitle="Get started with Azure Batch PowerShell | Microsoft Azure"
+   pageTitle="Get started with Azure Batch PowerShell | Windows Azure"
    description="Get a quick introduction to the Azure PowerShell cmdlets you can use to manage the Azure Batch service"
    services="batch"
    documentationCenter=""
@@ -8,24 +8,20 @@
    editor=""/>
 
 <tags
-   ms.service="batch"
-   ms.devlang="NA"
-   ms.topic="get-started-article"
-   ms.tgt_pltfrm="powershell"
-   ms.workload="big-compute"
-   ms.date="10/13/2015"
-   ms.author="danlep"/>
+	ms.service="batch"
+	ms.date="10/13/2015"
+	wacn.date=""/>
 
 # Get started with Azure Batch PowerShell cmdlets
 This article is a quick introduction to the Azure PowerShell cmdlets you can use to manage your Batch accounts and get information about your Batch jobs, tasks, and other details.
 
-For detailed cmdlet syntax, type `get-help <Cmdlet_name>` or see the [Azure Batch cmdlet reference](https://msdn.microsoft.com/library/azure/mt125957.aspx).
+For detailed cmdlet syntax, type `get-help <Cmdlet_name>` or see the [Azure Batch cmdlet reference](https://msdn.microsoft.com/zh-cn/library/azure/mt125957.aspx).
 
-[AZURE.INCLUDE [powershell-preview-include](../../includes/powershell-preview-include.md)]
+[AZURE.INCLUDE [powershell-preview-include](../includes/powershell-preview-include.md)]
 
 ## Prerequisites
 
-* **Azure PowerShell** - The Batch cmdlets ship in the Azure Resource Manager module. See [Azure Resource Manager cmdlets](https://msdn.microsoft.com/library/azure/mt125356.aspx) for prerequisites, installation instructions, and basic usage.
+* **Azure PowerShell** - The Batch cmdlets ship in the Azure Resource Manager module. See [Azure Resource Manager cmdlets](https://msdn.microsoft.com/zh-cn/library/azure/mt125356.aspx) for prerequisites, installation instructions, and basic usage.
 
 
 
@@ -40,16 +36,16 @@ For detailed cmdlet syntax, type `get-help <Cmdlet_name>` or see the [Azure Batc
 
 ### Create a Batch account
 
-**New-AzureRmBatchAccount** creates a new Batch account in a specified resource group. If you don't already have a resource group, create one by running the [New-AzureRmResourceGroup](https://msdn.microsoft.com/library/azure/mt603739.aspx) cmdlet, specifying one of the Azure regions in the **Location** parameter, such as "Central US". For example:
+**New-AzureRmBatchAccount** creates a new Batch account in a specified resource group. If you don't already have a resource group, create one by running the [New-AzureRmResourceGroup](https://msdn.microsoft.com/zh-cn/library/azure/mt603739.aspx) cmdlet, specifying one of the Azure regions in the **Location** parameter, such as "China North". For example:
 
 ```
-New-AzureRmResourceGroup –Name MyBatchResourceGroup –location "Central US"
+New-AzureRmResourceGroup –Name MyBatchResourceGroup –location "China North"
 ```
 
 Then, create a new Batch account account in the resource group, also specifying an account name for <*account_name*> and a location where the Batch service is available. Creating the account can take several minutes to complete. For example:
 
 ```
-New-AzureRmBatchAccount –AccountName <account_name> –Location "Central US" –ResourceGroupName MyBatchResourceGroup
+New-AzureRmBatchAccount –AccountName <account_name> –Location "China North" –ResourceGroupName MyBatchResourceGroup
 ```
 
 > [AZURE.NOTE] The Batch account name must be unique to Azure, contain between 3 and 24 characters, and use lowercase letters and numbers only.
@@ -148,6 +144,6 @@ To remove the upper bound, set **MaxCount** to 0 or less.
 
 ## Related topics
 * [Download Azure PowerShell](http://go.microsoft.com/?linkid=9811175)
-* [How to install and configure Azure PowerShell](../powershell-install-configure.md)
-* [Azure Batch cmdlet reference](https://msdn.microsoft.com/library/azure/mt125957.aspx)
-* [Query the Batch service efficiently](batch-efficient-list-queries.md)
+* [How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure)
+* [Azure Batch cmdlet reference](https://msdn.microsoft.com/zh-cn/library/azure/mt125957.aspx)
+* [Query the Batch service efficiently](/documentation/articles/batch-efficient-list-queries)

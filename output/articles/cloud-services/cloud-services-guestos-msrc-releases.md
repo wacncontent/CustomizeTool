@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="List of updates applied to the Azure Guest OS | Microsoft Azure" 
+   pageTitle="List of updates applied to the Azure Guest OS | Windows Azure" 
    description="The list of updates applied to Guest OS releases" 
    services="cloud-services" 
    documentationCenter="na" 
@@ -8,13 +8,9 @@
    editor=""/>
 
 <tags
-   ms.service="cloud-services"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="tbd" 
-   ms.date="10/18/2015"
-   ms.author="yuemlu"/>
+	ms.service="cloud-services"
+	ms.date="10/18/2015"
+	wacn.date=""/>
 
 # Azure Guest OS 
 
@@ -223,9 +219,9 @@ The following tables show the Microsoft Security Response Center (MSRC) updates 
 [3077657]: http://support.microsoft.com/kb/3077657
 [3057154]: http://support.microsoft.com/kb/3057154
 
-[MS15-034]: https://technet.microsoft.com/library/security/MS15-034
+[MS15-034]: https://technet.microsoft.com/zh-cn/library/security/MS15-034
 
-[3042553]: https://support.microsoft.com/en-us/kb/3042553/
+[3042553]: https://support.microsoft.com/kb/3042553/
 
 [3034682]: http://support.microsoft.com/kb/3034682
 [3036220]: http://support.microsoft.com/kb/3036220
@@ -301,6 +297,6 @@ The following tables show the Microsoft Security Response Center (MSRC) updates 
 
 
 
-[archive]: https://msdn.microsoft.com/library/azure/dn391773.aspx
-[family-explain]: cloud-services-guestos-update-matrix.md#guest-os-family-version-and-release-explanation
+[archive]: https://msdn.microsoft.com/zh-cn/library/azure/dn391773.aspx
+[family-explain]: /documentation/articles/cloud-services-guestos-update-matrix#guest-os-family-version-and-release-explanation
  

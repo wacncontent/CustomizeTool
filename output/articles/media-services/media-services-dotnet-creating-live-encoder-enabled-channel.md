@@ -33,7 +33,7 @@ The following steps describe tasks involved in creating common live streaming ap
 
 >[AZURE.NOTE] Currently, the max recommended duration of a live event is 8 hours. Please contact amslived at WindowsAzure.cn if you need to run a Channel for longer periods of time.
 
-1. Connect a video camera to a computer. Launch and configure an on-premises live encoder that can output a single bitrate stream in one of the following protocols: RTMP, Smooth Streaming, or RTP (MPEG-TS). For more information, see [Azure Media Services RTMP Support and Live Encoders](http://go.microsoft.com/fwlink/?LinkId=532824).
+1. Connect a video camera to a computer. Launch and configure an on-premises live encoder that can output a single bitrate stream in one of the following protocols: RTMP, Smooth Streaming, or RTP (MPEG-TS). For more information, see [Azure Media Services RTMP Support and Live Encoders](https://azure.microsoft.com/zh-cn/blog/azure-media-services-rtmp-support-and-live-encoders/).
 
 	This step could also be performed after you create your Channel. 
 

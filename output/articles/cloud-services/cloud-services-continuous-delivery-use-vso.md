@@ -1,6 +1,6 @@
 <properties
 	pageTitle="Continuous delivery with Visual Studio Online in Azure"
-	description="Learn how to configure your Visual Studio Online team projects to automatically build and deploy to the Web App feature in Azure App Service or cloud services."
+	description="Learn how to configure your Visual Studio Online team projects to automatically build and deploy to the Web App feature in Azure Websites or cloud services."
 	services="cloud-services"
 	documentationCenter=".net"
 	authors="kempb"
@@ -9,16 +9,12 @@
 
 <tags
 	ms.service="cloud-services"
-	ms.workload="tbd"
-	ms.tgt_pltfrm="na"
-	ms.devlang="dotnet"
-	ms.topic="article"
 	ms.date="09/02/2015"
-	ms.author="kempb"/>
+	wacn.date=""/>
 
 # Continuous delivery to Azure using Visual Studio Online
 
-You can configure your Visual Studio Online team projects to automatically build and deploy to Azure web apps or cloud services.  (For information on how to set up a continuous build and deploy system using an *on-premises* Team Foundation Server, see [Continuous Delivery for Cloud Services in Azure](cloud-services-dotnet-continuous-delivery.md).)
+You can configure your Visual Studio Online team projects to automatically build and deploy to Azure web apps or cloud services.  (For information on how to set up a continuous build and deploy system using an *on-premises* Team Foundation Server, see [Continuous Delivery for Cloud Services in Azure](/documentation/articles/cloud-services-dotnet-continuous-delivery).)
 
 This tutorial assumes you have Visual Studio 2013 and the Azure SDK installed. If you don't already have Visual Studio 2013, download it by choosing the **Get started for free** link at [www.visualstudio.com](http://www.visualstudio.com). Install the Azure SDK from [here](http://go.microsoft.com/fwlink/?LinkId=239540).
 
@@ -37,7 +33,7 @@ Follow the instructions [here](http://go.microsoft.com/fwlink/?LinkId=512980) to
 You can deploy a web app or a cloud service (Azure Application) by following the steps in this walkthrough.
 If you want to create a new solution, create a new Azure Cloud Service project,
 or a new ASP.NET MVC project. Make sure that the project targets .NET Framework 4 or 4.5, and if you are creating a cloud service project, add an ASP.NET MVC web role and a worker role, and choose Internet application for the web role. When prompted, choose **Internet Application**.
-If you want to create a web app, choose the ASP.NET Web Application project template, and then choose MVC. See [Create an ASP.NET web app in Azure App Service](../web-sites-dotnet-get-started.md).
+If you want to create a web app, choose the ASP.NET Web Application project template, and then choose MVC. See [Create an ASP.NET web app in Azure Websites](/documentation/articles/web-sites-dotnet-get-started).
 
 	> [AZURE.NOTE] Visual Studio Online only support CI deployments of Visual Studio Web Applications at this time. Web Site projects are out of scope.
 
@@ -63,7 +59,7 @@ If you want to create a web app, choose the ASP.NET Web Application project temp
 
 ## Step 3: Connect the project to Azure
 
-1. Now that you have a VSO team project with some source code in it, you are ready to connect your team project to Azure.  In the [Azure Management Portal](http://manage.windowsazure.com), select your cloud service or web app, or create a new one by choosing the **+** icon at the bottom left and choosing **Cloud Service** or **Web App** and then **Quick Create**. Choose the **Set up publishing with Visual Studio Online** link.
+1. Now that you have a VSO team project with some source code in it, you are ready to connect your team project to Azure.  In the [Azure Management Portal](http://manage.windowsazure.cn), select your cloud service or web app, or create a new one by choosing the **+** icon at the bottom left and choosing **Cloud Service** or **Web App** and then **Quick Create**. Choose the **Set up publishing with Visual Studio Online** link.
 
 	![][10]
 
@@ -162,7 +158,7 @@ If you want to create a web app, choose the ASP.NET Web Application project temp
 
 	![][29]
 
-1. In the [Azure Management Portal](http://manage.windowsazure.com), you can view the associated deployment on the **Deployments** tab when the staging environment is selected.
+1. In the [Azure Management Portal](http://manage.windowsazure.cn), you can view the associated deployment on the **Deployments** tab when the staging environment is selected.
 
 	![][30]
 
@@ -269,7 +265,7 @@ This step applies only to web apps, not cloud services. To put a quality gate on
 	![][50]
 
 ## Next steps
-For more about unit testing in Visual Studio Online, see [Run unit tests in your build](http://go.microsoft.com/fwlink/p/?LinkId=510474). If you're using Git, see [Share your code in Git](http://www.visualstudio.com/get-started/share-your-code-in-git-vs.aspx) and [Continuous deployment using GIT in Azure App Service](../web-sites-publish-source-control.md).  For more information about Visual Studio Online, see [Visual Studio Online](http://go.microsoft.com/fwlink/?LinkId=253861).
+For more about unit testing in Visual Studio Online, see [Run unit tests in your build](http://go.microsoft.com/fwlink/p/?LinkId=510474). If you're using Git, see [Share your code in Git](http://www.visualstudio.com/get-started/share-your-code-in-git-vs.aspx) and [Continuous deployment using GIT in Azure Websites](/documentation/articles/web-sites-publish-source-control).  For more information about Visual Studio Online, see [Visual Studio Online](http://go.microsoft.com/fwlink/?LinkId=253861).
 
 [0]: ./media/cloud-services-continuous-delivery-use-vso/tfs0.PNG
 [1]: ./media/cloud-services-continuous-delivery-use-vso/tfs1.png

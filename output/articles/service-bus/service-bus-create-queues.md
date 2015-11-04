@@ -1,19 +1,15 @@
 <properties 
-   pageTitle="Write applications that use Service Bus queues | Microsoft Azure"
+   pageTitle="Write applications that use Service Bus queues | Windows Azure"
    description="How to write a simple queue-based application that uses Service Bus."
    services="service-bus"
    documentationCenter="na"
    authors="sethmanheim"
    manager="timlt"
    editor="tysonn" />
-<tags 
-   ms.service="service-bus"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="na"
-   ms.date="09/16/2015"
-   ms.author="sethm" />
+<tags
+	ms.service="service-bus"
+	ms.date="09/16/2015"
+	wacn.date=""/>
 
 # Create applications that use Service Bus queues
 
@@ -55,21 +51,21 @@ The following section shows how to use Service Bus to build this application.
 
 ### Sign up for a Service Bus account and subscription
 
-You’ll need an Azure account in order to start working with Service Bus. If you do not already have one, you can sign up for a free trial [here](http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A85619ABF).
+You’ll need an Azure account in order to start working with Service Bus. If you do not already have one, you can sign up for a trial [here](/pricing/1rmb-trial/?WT.mc_id=A85619ABF).
 
 ### Create a service namespace
 
-Once you have a subscription, you can create a new namespace. You’ll have to give your new namespace a unique name across all Service Bus accounts. Each namespace acts as a container for a set of Service Bus entities. For more information, see [How To: Create or Modify a Service Bus Service Namespace](https://msdn.microsoft.com/library/azure/hh690931.aspx).
+Once you have a subscription, you can create a new namespace. You’ll have to give your new namespace a unique name across all Service Bus accounts. Each namespace acts as a container for a set of Service Bus entities. For more information, see [How To: Create or Modify a Service Bus Service Namespace](https://msdn.microsoft.com/zh-cn/library/azure/hh690931.aspx).
 
 ### Install the NuGet package
 
-To use the Service Bus service namespace, an application must reference the Service Bus assembly, specifically Microsoft.ServiceBus.dll. You can find this assembly as part of the Microsoft Azure SDK, and the download is available at the [Azure SDK download page](http://azure.microsoft.com/downloads/). However, the Service Bus NuGet package is the easiest way to get the Service Bus API and to configure your application with all of the Service Bus dependencies. For details about using NuGet and the Service Bus package, see [Using the NuGet Service Bus Package](https://msdn.microsoft.com/library/dn741354.aspx).
+To use the Service Bus service namespace, an application must reference the Service Bus assembly, specifically Microsoft.ServiceBus.dll. You can find this assembly as part of the Windows Azure SDK, and the download is available at the [Azure SDK download page](/downloads/). However, the Service Bus NuGet package is the easiest way to get the Service Bus API and to configure your application with all of the Service Bus dependencies. For details about using NuGet and the Service Bus package, see [Using the NuGet Service Bus Package](https://msdn.microsoft.com/zh-cn/library/dn741354.aspx).
 
 ### Create the queue
 
-Management operations for Service Bus messaging entities (queues and publish/subscribe topics) are performed via the [NamespaceManager](https://msdn.microsoft.com/library/azure/microsoft.servicebus.namespacemanager.aspx) class. Service Bus uses a [Shared Access Signature (SAS)](service-bus-sas-overview.md) based security model. The [TokenProvider](https://msdn.microsoft.com/library/azure/microsoft.servicebus.tokenprovider.aspx) class represents a security token provider with built-in factory methods returning some well-known token providers. We’ll use a [CreateSharedAccessSignatureTokenProvider](https://msdn.microsoft.com/library/azure/microsoft.servicebus.tokenprovider.createsharedaccesssignaturetokenprovider.aspx) method to hold the SAS credentials. The [NamespaceManager](https://msdn.microsoft.com/library/azure/microsoft.servicebus.namespacemanager.aspx) instance is then constructed with the base address of the Service Bus namespace and the token provider.
+Management operations for Service Bus messaging entities (queues and publish/subscribe topics) are performed via the [NamespaceManager](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.namespacemanager.aspx) class. Service Bus uses a [Shared Access Signature (SAS)](/documentation/articles/service-bus-sas-overview) based security model. The [TokenProvider](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.tokenprovider.aspx) class represents a security token provider with built-in factory methods returning some well-known token providers. We’ll use a [CreateSharedAccessSignatureTokenProvider](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.tokenprovider.createsharedaccesssignaturetokenprovider.aspx) method to hold the SAS credentials. The [NamespaceManager](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.namespacemanager.aspx) instance is then constructed with the base address of the Service Bus namespace and the token provider.
 
-The [NamespaceManager](https://msdn.microsoft.com/library/azure/microsoft.servicebus.namespacemanager.aspx) class provides methods to create, enumerate and delete messaging entities. The code that is shown here shows how the [NamespaceManager](https://msdn.microsoft.com/library/azure/microsoft.servicebus.namespacemanager.aspx) instance is created and used to create the **DataCollectionQueue** queue.
+The [NamespaceManager](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.namespacemanager.aspx) class provides methods to create, enumerate and delete messaging entities. The code that is shown here shows how the [NamespaceManager](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.namespacemanager.aspx) instance is created and used to create the **DataCollectionQueue** queue.
 
 ```
 Uri uri = ServiceBusEnvironment.CreateServiceUri("sb", 
@@ -84,11 +80,11 @@ NamespaceManager namespaceManager =
 namespaceManager.CreateQueue("DataCollectionQueue");
 ```
 
-Note that there are overloads of the [CreateQueue](https://msdn.microsoft.com/library/azure/hh322663.aspx) method that enable properties of the queue to be tuned. For example, you can set the default time-to-live (TTL) value for messages sent to the queue.
+Note that there are overloads of the [CreateQueue](https://msdn.microsoft.com/zh-cn/library/azure/hh322663.aspx) method that enable properties of the queue to be tuned. For example, you can set the default time-to-live (TTL) value for messages sent to the queue.
 
 ### Send messages to the queue
 
-For run-time operations on Service Bus entities; for example, sending and receiving messages, an application must first create a [MessagingFactory](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.messagingfactory.aspx) object. Similar to the [NamespaceManager](https://msdn.microsoft.com/library/azure/microsoft.servicebus.namespacemanager.aspx) class, the [MessagingFactory](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.messagingfactory.aspx) instance is created from the base address of the service namespace and the token provider.
+For run-time operations on Service Bus entities; for example, sending and receiving messages, an application must first create a [MessagingFactory](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.messagingfactory.aspx) object. Similar to the [NamespaceManager](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.namespacemanager.aspx) class, the [MessagingFactory](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.messagingfactory.aspx) instance is created from the base address of the service namespace and the token provider.
 
 ```
  BrokeredMessage bm = new BrokeredMessage(salesData);
@@ -97,9 +93,9 @@ For run-time operations on Service Bus entities; for example, sending and receiv
  bm.Properties["MachineID"] = "POS_1";
 ```
 
-Messages sent to and received from Service Bus queues, are instances of the [BrokeredMessage](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.brokeredmessage.aspx) class. This class consists of a set of standard properties (such as [Label](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.brokeredmessage.label.aspx) and [TimeToLive](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.brokeredmessage.timetolive.aspx)), a dictionary that is used to hold application properties, and a body of arbitrary application data. An application can set the body by passing in any serializable object (the following example passes in a **SalesData** object that represents the sales data from the POS terminal), which will use the [DataContractSerializer](https://msdn.microsoft.com/library/azure/system.runtime.serialization.datacontractserializer.aspx) to serialize the object. Alternatively, a [Stream](https://msdn.microsoft.com/library/azure/system.io.stream.aspx) object can be provided.
+Messages sent to and received from Service Bus queues, are instances of the [BrokeredMessage](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.brokeredmessage.aspx) class. This class consists of a set of standard properties (such as [Label](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.brokeredmessage.label.aspx) and [TimeToLive](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.brokeredmessage.timetolive.aspx)), a dictionary that is used to hold application properties, and a body of arbitrary application data. An application can set the body by passing in any serializable object (the following example passes in a **SalesData** object that represents the sales data from the POS terminal), which will use the [DataContractSerializer](https://msdn.microsoft.com/zh-cn/library/azure/system.runtime.serialization.datacontractserializer.aspx) to serialize the object. Alternatively, a [Stream](https://msdn.microsoft.com/zh-cn/library/azure/system.io.stream.aspx) object can be provided.
 
-The easiest way to send messages to a given queue, in our case the **DataCollectionQueue**, is to use [CreateMessageSender](https://msdn.microsoft.com/library/azure/hh322659.aspx) to create a [MessageSender](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.messagesender.aspx) object directly from the [MessagingFactory](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.messagingfactory.aspx) instance.
+The easiest way to send messages to a given queue, in our case the **DataCollectionQueue**, is to use [CreateMessageSender](https://msdn.microsoft.com/zh-cn/library/azure/hh322659.aspx) to create a [MessageSender](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.messagesender.aspx) object directly from the [MessagingFactory](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.messagingfactory.aspx) instance.
 
 ```
 MessageSender sender = factory.CreateMessageSender("DataCollectionQueue");
@@ -108,18 +104,18 @@ sender.Send(bm);
 
 ### Receiving messages from the queue
 
-The easiest way to receive messages from the queue is to use a [MessageReceiver](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.messagereceiver.aspx) object which you can create directly from the [MessagingFactory](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.messagingfactory.aspx) using [CreateMessageReceiver](https://msdn.microsoft.com/library/azure/hh322642.aspx). Message receivers can work in two different modes: **ReceiveAndDelete** and **PeekLock**. The [ReceiveMode](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.receivemode.aspx) is set when the message receiver is created, as a parameter to the [CreateMessageReceiver](https://msdn.microsoft.com/library/azure/hh322642.aspx) call.
+The easiest way to receive messages from the queue is to use a [MessageReceiver](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.messagereceiver.aspx) object which you can create directly from the [MessagingFactory](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.messagingfactory.aspx) using [CreateMessageReceiver](https://msdn.microsoft.com/zh-cn/library/azure/hh322642.aspx). Message receivers can work in two different modes: **ReceiveAndDelete** and **PeekLock**. The [ReceiveMode](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.receivemode.aspx) is set when the message receiver is created, as a parameter to the [CreateMessageReceiver](https://msdn.microsoft.com/zh-cn/library/azure/hh322642.aspx) call.
 
 
 When using the **ReceiveAndDelete** mode, the receive is a single-shot operation; that is, when Service Bus receives the request, it marks the message as being consumed and returns it to the application. **ReceiveAndDelete** mode is the simplest model and works best for scenarios in which the application can tolerate not processing a message if a failure were to occur. To understand this, consider a scenario in which the consumer issues the receive request and then crashes before processing it. Since Service Bus marked the message as being consumed, when the application restarts and starts consuming messages again, it will have missed the message that was consumed before the crash.
 
-In **PeekLock** mode, the receive becomes a two-stage operation, which makes it possible to support applications that cannot tolerate missing messages. When Service Bus receives the request, it finds the next message to be consumed, locks it to prevent other consumers receiving it, and then returns it to the application. After the application finishes processing the message (or stores it reliably for future processing), it completes the second stage of the receive process by calling [Complete](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.brokeredmessage.complete.aspx) on the received message. When Service Bus sees the [Complete](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.brokeredmessage.complete.aspx) call, it marks the message as being consumed.
+In **PeekLock** mode, the receive becomes a two-stage operation, which makes it possible to support applications that cannot tolerate missing messages. When Service Bus receives the request, it finds the next message to be consumed, locks it to prevent other consumers receiving it, and then returns it to the application. After the application finishes processing the message (or stores it reliably for future processing), it completes the second stage of the receive process by calling [Complete](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.brokeredmessage.complete.aspx) on the received message. When Service Bus sees the [Complete](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.brokeredmessage.complete.aspx) call, it marks the message as being consumed.
 
-Two other outcomes are possible. First, if the application is unable to process the message for some reason, it can call [Abandon](https://msdn.microsoft.com/library/azure/hh181837.aspx) on the received message (instead of [Complete](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.brokeredmessage.complete.aspx)). This causes Service Bus to unlock the message and make it available to be received again, either by the same consumer or by another completing consumer. Second, there is a time-out associated with the lock and if the application cannot process the message before the lock time-out expires (for example, if the application crashes), then Service Bus will unlock the message and make it available to be received again.
+Two other outcomes are possible. First, if the application is unable to process the message for some reason, it can call [Abandon](https://msdn.microsoft.com/zh-cn/library/azure/hh181837.aspx) on the received message (instead of [Complete](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.brokeredmessage.complete.aspx)). This causes Service Bus to unlock the message and make it available to be received again, either by the same consumer or by another completing consumer. Second, there is a time-out associated with the lock and if the application cannot process the message before the lock time-out expires (for example, if the application crashes), then Service Bus will unlock the message and make it available to be received again.
 
-Note that if the application crashes after it processes the message but before the [Complete](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.brokeredmessage.complete.aspx) request was issued, the message will be redelivered to the application when it restarts. This is often termed *At Least Once * processing. This means that each message will be processed at least once but in certain situations the same message may be redelivered. If the scenario cannot tolerate duplicate processing, then additional logic is required in the application to detect duplicates. This can be achieved based on the [MessageId](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.brokeredmessage.messageid.aspx) property of the message. The value of this property remains constant across delivery attempts. This is termed *Exactly Once* processing.
+Note that if the application crashes after it processes the message but before the [Complete](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.brokeredmessage.complete.aspx) request was issued, the message will be redelivered to the application when it restarts. This is often termed *At Least Once * processing. This means that each message will be processed at least once but in certain situations the same message may be redelivered. If the scenario cannot tolerate duplicate processing, then additional logic is required in the application to detect duplicates. This can be achieved based on the [MessageId](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.brokeredmessage.messageid.aspx) property of the message. The value of this property remains constant across delivery attempts. This is termed *Exactly Once* processing.
 
-The code that is shown here receives and processes a message using the **PeekLock** mode, which is the default if no [ReceiveMode](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.receivemode.aspx) value is explicitly provided.
+The code that is shown here receives and processes a message using the **PeekLock** mode, which is the default if no [ReceiveMode](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.receivemode.aspx) value is explicitly provided.
 
 ```
 MessageReceiver receiver = factory.CreateMessageReceiver("DataCollectionQueue");
@@ -137,7 +133,7 @@ catch (Exception e)
 
 ### Use the queue client
 
-The examples earlier in this section created [MessageSender](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.messagesender.aspx) and [MessageReceiver](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.messagereceiver.aspx) objects directly from the [MessagingFactory](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.messagingfactory.aspx) to send and receive messages from the queue, respectively. An alternative approach is to use the [QueueClient](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.queueclient.aspx) class, which supports both send and receive operations in addition to more advanced features, such as sessions.
+The examples earlier in this section created [MessageSender](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.messagesender.aspx) and [MessageReceiver](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.messagereceiver.aspx) objects directly from the [MessagingFactory](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.messagingfactory.aspx) to send and receive messages from the queue, respectively. An alternative approach is to use the [QueueClient](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.queueclient.aspx) class, which supports both send and receive operations in addition to more advanced features, such as sessions.
 
 ```
 QueueClient queueClient = factory.CreateQueueClient("DataCollectionQueue");
@@ -158,4 +154,4 @@ catch (Exception e)
 
 ## Next steps
 
-Now that you've learned the basics of queues, see [Create applications that use Service Bus topics and subscriptions](service-bus-create-topics-subscriptions.md) to continue this discussion using the publish/subscribe capabilities of Service Bus brokered messaging.
+Now that you've learned the basics of queues, see [Create applications that use Service Bus topics and subscriptions](/documentation/articles/service-bus-create-topics-subscriptions) to continue this discussion using the publish/subscribe capabilities of Service Bus brokered messaging.

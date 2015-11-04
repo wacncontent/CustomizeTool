@@ -1,5 +1,5 @@
 ﻿<properties
-	pageTitle="Create a snapshot of a blob | Microsoft Azure"
+	pageTitle="Create a snapshot of a blob | Windows Azure"
 	description="A guide for creating snapshots of Azure storage blobs"
 	services="storage"
 	documentationCenter=""
@@ -7,14 +7,10 @@
 	manager="adinah"
 	editor=""/>
 
-<tags 
-	ms.service="storage" 
-	ms.workload="storage" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="09/01/2015" 
-	ms.author="tamram"/>
+<tags
+	ms.service="storage"
+	ms.date="09/01/2015"
+	wacn.date=""/>
 
 # Create a blob snapshot
 
@@ -22,7 +18,7 @@
 
 A snapshot is a read-only version of a blob that's taken at a point in time. Snapshots are useful for backing up blobs. After a snapshot has been created, you can read, copy, or delete it, but you cannot modify it.
 
-A snapshot of a blob has the same name as the base blob from which the snapshot is taken, with a **DateTime** value appended to indicate the time at which the snapshot was taken. For example, if a page blob URI is `http://storagesample.core.blob.windows.net/mydrives/myvhd`, the snapshot URI will be similar to `http://storagesample.core.blob.windows.net/mydrives/myvhd?snapshot=2011-03-09T01:42:34.9360000Z`. All of a blob's snapshots share its URI and are distinguished only by the appended **DateTime** value.
+A snapshot of a blob has the same name as the base blob from which the snapshot is taken, with a **DateTime** value appended to indicate the time at which the snapshot was taken. For example, if a page blob URI is `http://storagesample.core.blob.chinacloudapi.cn/mydrives/myvhd`, the snapshot URI will be similar to `http://storagesample.core.blob.chinacloudapi.cn/mydrives/myvhd?snapshot=2011-03-09T01:42:34.9360000Z`. All of a blob's snapshots share its URI and are distinguished only by the appended **DateTime** value.
 
 A blob can have any number of snapshots. Snapshots persist until they are explicitly deleted. Note that a snapshot cannot outlive its source blob. You can enumerate the snapshots associated with your blob to track your current snapshots.
 

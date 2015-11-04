@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Recover your mobile service in the event of a disaster | Microsoft Azure"
+	pageTitle="Recover your mobile service in the event of a disaster | Windows Azure"
 	description="Learn how to recover your mobile service in the event of a disaster."
 	services="mobile-services"
 	documentationCenter=""
@@ -9,12 +9,8 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.workload="mobile"
-	ms.tgt_pltfrm="na"
-	ms.devlang="multiple"
-	ms.topic="article"
 	ms.date="08/08/2015"
-	ms.author="christopheranderson"/>
+	wacn.date=""/>
 
 # Recover your mobile service in the event of a disaster
 
@@ -27,7 +23,7 @@ To make recovery easier in case of an availability problem, you can prepare for 
 + **Back up your data in the Azure mobile service SQL Database**
 	Your mobile service application data is stored in an Azure SQL Database. We recommend that you back it up as prescribed in the [SQL Database business continuity guidance].
 + **Back up your mobile service scripts**
-	We recommend that you store your mobile service scripts in a source-control system such as [Team Foundation Service] or [GitHub] and not rely only on the copies in the mobile service itself. You can download the scripts via the Azure portal, using the Mobile Services [source control feature], or [using the Azure CLI]. Pay close attention to features labeled as "preview" in the portal, as recovery for those scripts is not guaranteed and you might need to recover them from your own source control original.
+	We recommend that you store your mobile service scripts in a source-control system such as [Team Foundation Service] or [GitHub] and not rely only on the copies in the mobile service itself. You can download the scripts via the Azure Management Portal, using the Mobile Services [source control feature], or [using the Azure CLI]. Pay close attention to features labeled as "preview" in the portal, as recovery for those scripts is not guaranteed and you might need to recover them from your own source control original.
 + **Reserve a secondary mobile service**
 	In the event of an availability problem with your mobile service, you may have to redeploy it to an alternate Azure region. To ensure capacity is available (for example under rare circumstances such as the loss of an entire region), we recommend that you create a secondary mobile service in your alternate region and set its mode the same as or higher than the mode of your primary service. (If your primary service is in Basic mode, you can make the secondary service either Basic or Standard. But if the primary is Standard, then the secondary must also be Standard.)
 
@@ -36,8 +32,8 @@ To make recovery easier in case of an availability problem, you can prepare for 
 These circumstances indicate a problem that might require a recovery operation:
 
 + Apps that are connected to your mobile service can't communicate with it for an extended period of time.
-+ Mobile service status is displayed as **Unhealthy** in the [Azure portal].
-+ An **Unhealthy** banner appears at the top of every tab for your mobile service in the Azure portal, and management operations produce error messages.
++ Mobile service status is displayed as **Unhealthy** in the [Azure Management Portal].
++ An **Unhealthy** banner appears at the top of every tab for your mobile service in the Azure Management Portal, and management operations produce error messages.
 + The [Azure Service Dashboard] indicates an availability problem.
 
 ## <a name="recover"></a>Recover from a disaster
@@ -48,7 +44,7 @@ If you're prompted by the Service Dashboard, execute the following steps to rest
 
 To recover your mobile service after an outage:
 
-1. In the Azure portal, ensure that the status of your service is reported as **Unhealthy**.
+1. In the Azure Management Portal, ensure that the status of your service is reported as **Unhealthy**.
 
 2. If you already reserved a secondary mobile service, you can skip this step.
 
@@ -66,7 +62,7 @@ To recover your mobile service after an outage:
 
 		azure mobile migrate PrimaryService SecondaryService
 		info:    Executing command mobile migrate
-		Warning: this action will use the capacity from the mobile service 'SecondaryService' and delete it and the host name for 'PrimaryService' may not resolve for up to 30 minutes. Do you want to migrate the mobile service 'PrimaryService'? [y/n]: y
+		Warning: this action will use the capacity from the mobile service 'SecondaryService' and delete it and the host name for 'PrimaryService' may not resolve for up to 30 minutes. Do you want to migrate the mobile service 'PrimaryService'? [y/n]: /documentation/articles/y
 		+ Performing migration
 		+ Migration with id '0123456789abcdef0123456789abcdef' started. The migration may take several minutes to complete.
 		+ Cleaning up
@@ -79,19 +75,19 @@ To recover your mobile service after an outage:
 
 6. Make sure that your recovered service is communicating with your Azure SQL Database. The recover command recovers the mobile service, but retains the connection to the original database. If the problem in the primary Azure region also affects the database, the recovered service may still not be running correctly. You can use the Azure Service Dashboard to examine the database status for a given region. If the original database is not working, you can recover it:
 	+ Recover your Azure SQL Database to the Azure region where you just recovered your mobile service, as described in [SQL Database business continuity guidance].
-	+ In the Azure portal, on the **"Configure"** tab of your mobile service, choose "Change database" and then select the newly recovered database.
+	+ In the Azure Management Portal, on the **"Configure"** tab of your mobile service, choose "Change database" and then select the newly recovered database.
 
 7. Your mobile service is now hosted in a different physical location. You'll need to update your publishing and/or git credentials to allow for updating your running site.
-	+ If you are using a **.NET backend**, set up your publishing profile again, as described in [Publish your mobile service](mobile-services-dotnet-backend-windows-store-dotnet-get-started/#publish-your-mobile-service). This will update your publishing details to point to the new service location.
+	+ If you are using a **.NET backend**, set up your publishing profile again, as described in [Publish your mobile service](/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started#publish-your-mobile-service). This will update your publishing details to point to the new service location.
 	+ If you are using a **Javascript backend** and managing your service with the Portal, you don't need to take any extra action.
 	+ If you are using a **Javascript backend** and managing your service with node, update your git remote to point to the new repository. To do this, you remove the .git file path from your git remote:
 
 		1. Find your current origin remote:
 				git remote -v
-				 origin  https://myservice.scm.azure-mobile.net/myservice.git (fetch)
-				 origin  https://myservice.scm.azure-mobile.net/myservice.git (push)
+				 origin  https://myservice.scm.azure-mobile.cn/myservice.git (fetch)
+				 origin  https://myservice.scm.azure-mobile.cn/myservice.git (push)
 		3. Update the remote using with the same url, but without the final .git file path:
-				git remote set-url origin https://myservice.scm.azure-mobile.net
+				git remote set-url origin https://myservice.scm.azure-mobile.cn
 		4. Pull from origin to verify that it is working correctly.
 
 Now you should be in a state where your mobile service has been recovered to a new Azure region and is now accepting traffic from your store apps using its original URL.
@@ -101,12 +97,12 @@ Now you should be in a state where your mobile service has been recovered to a n
 <!-- Images. -->
 
 <!-- URLs. -->
-[SQL Database business continuity guidance]: http://msdn.microsoft.com/library/windowsazure/hh852669.aspx
+[SQL Database business continuity guidance]: http://msdn.microsoft.com/zh-cn/library/azure/hh852669.aspx
 [Team Foundation Service]: http://tfs.visualstudio.com/
 
-[source control feature]: http://www.windowsazure.com/develop/mobile/tutorials/store-scripts-in-source-control/
-[using the Azure CLI]: http://www.windowsazure.com/develop/mobile/tutorials/command-line-administration/
-[Azure portal]: http://manage.windowsazure.com/
-[Azure Service Dashboard]: http://www.windowsazure.com/support/service-dashboard/
-[Automate mobile services with the Azure CLI]: http://www.windowsazure.com/develop/mobile/tutorials/command-line-administration/
+[source control feature]: /develop/mobile/tutorials/store-scripts-in-source-control/
+[using the Azure CLI]: /develop/mobile/tutorials/command-line-administration/
+[Azure Management Portal]: http://manage.windowsazure.cn/
+[Azure Service Dashboard]: http://azure.microsoft.com/support/service-dashboard/
+[Automate mobile services with the Azure CLI]: /develop/mobile/tutorials/command-line-administration/
  

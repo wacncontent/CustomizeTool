@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Azure Site Recovery network mapping | Microsoft Azure"
+	pageTitle="Azure Site Recovery network mapping | Windows Azure"
 	description="Azure Site Recovery coordinates the replication, failover, and recovery of virtual machines and physical servers located on-premises to Azure or to a secondary on-premises site."
 	services="site-recovery"
 	documentationCenter=""
@@ -9,18 +9,14 @@
 
 <tags
 	ms.service="site-recovery"
-	ms.devlang="na"
-	ms.topic="get-started-article"
-	ms.tgt_pltfrm="na"
-	ms.workload="storage-backup-recovery"
 	ms.date="10/07/2015"
-	ms.author="raynew"/>
+	wacn.date=""/>
 
 
 # Azure Site Recovery network mapping
 
 
-Azure Site Recovery contributes to your business continuity and disaster recovery (BCDR) strategy by orchestrating replication, failover, and recovery of virtual machines and physical servers. Read about possible deployment scenarios in the [Site Recovery overview](site-recovery-overview.md).
+Azure Site Recovery contributes to your business continuity and disaster recovery (BCDR) strategy by orchestrating replication, failover, and recovery of virtual machines and physical servers. Read about possible deployment scenarios in the [Site Recovery overview](/documentation/articles/site-recovery-overview).
 
 
 ## About this article
@@ -133,4 +129,4 @@ Network mapping of VMNetwork1-Chicago is changed. | VM-1 will be connected to th
 
 ## Next steps
 
-Now that you have a better understanding of network mapping, start reading the [best practices](site-recovery-best-practices.md) to prepare for deployment.
+Now that you have a better understanding of network mapping, start reading the [best practices](/documentation/articles/site-recovery-best-practices) to prepare for deployment.

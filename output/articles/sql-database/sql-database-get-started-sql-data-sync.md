@@ -9,12 +9,8 @@
 
 <tags
 	ms.service="sql-database"
-	ms.workload="data-management"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="10/01/2015"
-	ms.author="jhubbard"/>
+	wacn.date=""/>
 
 
 #Getting Started with Azure SQL Data Sync (Preview)
@@ -26,7 +22,7 @@ This tutorial assumes minimal prior experience with SQL Server and Azure SQL Dat
 
 ## Step 1: Connect to the Azure SQL Database
 
-1. Sign in to the [Management Portal](http://manage.windowsazure.com).
+1. Sign in to the [Management Portal](http://manage.windowsazure.cn).
 
 2. Click **SQL DATABASES** in the left pane.
 
@@ -64,7 +60,7 @@ Be sure that you have the following installed on the computer you install the Cl
 <a id="InstallClient"></a>
 ### Step 2b: Install a new Client Agent
 
-Follow the instruction at [Install a Client Agent (SQL Data Sync)](http://msdn.microsoft.com/library/jj823137.aspx) to install the agent.
+Follow the instruction at [Install a Client Agent (SQL Data Sync)](http://msdn.microsoft.com/zh-cn/library/jj823137.aspx) to install the agent.
 
 
 
@@ -82,7 +78,7 @@ Follow the instruction at [Install a Client Agent (SQL Data Sync)](http://msdn.m
 ## Step 3: Register a SQL Server database with the Client Agent
 
 After the Client Agent is installed, register every on-premises SQL Server database that you intend to include in a sync group with the agent.
-To register a database with the agent, follow the instructions at [Register a SQL Server Database with a Client Agent](http://msdn.microsoft.com/library/jj823138.aspx).
+To register a database with the agent, follow the instructions at [Register a SQL Server Database with a Client Agent](http://msdn.microsoft.com/zh-cn/library/jj823138.aspx).
 
 
 
@@ -92,7 +88,7 @@ To register a database with the agent, follow the instructions at [Register a SQ
 <a id="StartNewSGWizard"></a>
 ### Step 4a: Start the New Sync Group wizard
 
-1.	Return to the [Management Portal](http://manage.windowsazure.com).
+1.	Return to the [Management Portal](http://manage.windowsazure.cn).
 2.	Click **SQL DATABASES**.
 3.	Click **ADD SYNC** at the bottom of the page then select New Sync Group from the drawer.
 
@@ -157,7 +153,7 @@ Repeat this step for each additional database you want to add to the sync group.
 
 Azure SQL Data Sync allows you to select tables and columns to synchronize. If you also want to filter a column so that only rows with specific values (such as, Age>=65) are synchronized, use the SQL Data Sync portal at Azure and the documentation at Select the Tables, Columns, and Rows to Synchronize to define the data to sync.
 
-1.	Return to the [Management Portal](http://manage.windowsazure.com).
+1.	Return to the [Management Portal](http://manage.windowsazure.cn).
 2.	Click **SQL DATABASES**.
 3.	Click the **SYNC** tab.
 4.	Click the name of this sync group.
@@ -179,7 +175,7 @@ Azure SQL Data Sync allows you to select tables and columns to synchronize. If y
 You can always synchronize a sync group by clicking SYNC at the bottom of the Data Sync landing page.
 If you want a sync group to synchronize on a schedule, you configure the sync group.
 
-1.	Return to the [Management Portal](http://manage.windowsazure.com).
+1.	Return to the [Management Portal](http://manage.windowsazure.cn).
 2.	Click **SQL DATABASES**.
 3.	Click the **SYNC** tab.
 4.	Click the name of this sync group.
@@ -199,8 +195,8 @@ Congratulations. You have created a sync group that includes both a SQL Database
 For additional information on SQL Database and SQL Data Sync see:
 
 * [Download SQL Data Sync technical documentation](http://download.microsoft.com/download/4/E/3/4E394315-A4CB-4C59-9696-B25215A19CEF/SQL_Data_Sync_Preview.pdf)
-* [SQL Database Overview](sql-database-technical-overview.md)
-* [Database Lifecycle Management](https://msdn.microsoft.com/library/jj907294.aspx)
+* [SQL Database Overview](/documentation/articles/sql-database-technical-overview)
+* [Database Lifecycle Management](https://msdn.microsoft.com/zh-cn/library/jj907294.aspx)
  
 
  

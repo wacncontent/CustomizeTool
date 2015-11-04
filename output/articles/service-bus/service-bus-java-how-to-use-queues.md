@@ -1,5 +1,5 @@
 <properties
-	pageTitle="How to use Service Bus queues with Java | Microsoft Azure"
+	pageTitle="How to use Service Bus queues with Java | Windows Azure"
 	description="Learn how to use Service Bus queues in Azure. Code samples written in Java."
 	services="service-bus"
 	documentationCenter="java"
@@ -9,29 +9,25 @@
 
 <tags
 	ms.service="service-bus"
-	ms.workload="tbd"
-	ms.tgt_pltfrm="na"
-	ms.devlang="Java"
-	ms.topic="article"
 	ms.date="10/07/2015"
-	ms.author="sethm"/>
+	wacn.date=""/>
 
 # How to use Service Bus queues
 
-[AZURE.INCLUDE [service-bus-selector-queues](../../includes/service-bus-selector-queues.md)]
+[AZURE.INCLUDE [service-bus-selector-queues](../includes/service-bus-selector-queues.md)]
 
 This article describes how to use Service Bus queues. The samples are
 written in Java and use the [Azure SDK for Java][]. The
 scenarios covered include **creating queues**, **sending and receiving
 messages**, and **deleting queues**.
 
-[AZURE.INCLUDE [service-bus-java-how-to-create-queue](../../includes/service-bus-java-how-to-create-queue.md)]
+[AZURE.INCLUDE [service-bus-java-how-to-create-queue](../includes/service-bus-java-how-to-create-queue.md)]
 
 ## Configure your application to use Service Bus
 
-Make sure you have installed the [Azure SDK for Java][] before building this sample. If you are using Eclipse, you can install the [Azure Toolkit for Eclipse][] that includes the Azure SDK for Java. You can then add the **Microsoft Azure Libraries for Java** to your project:
+Make sure you have installed the [Azure SDK for Java][] before building this sample. If you are using Eclipse, you can install the [Azure Toolkit for Eclipse][] that includes the Azure SDK for Java. You can then add the **Windows Azure Libraries for Java** to your project:
 
-![](media/service-bus-java-how-to-use-queues/eclipselibs.png)
+![](./media/service-bus-java-how-to-use-queues/eclipselibs.png)
 
 Add the following `import` statements to the top of the Java file:
 
@@ -60,7 +56,7 @@ can be used to create a queue named "TestQueue", with a namespace named "HowToSa
 					"HowToSample",
 					"RootManageSharedAccessKey",
 					"SAS_key_value",
-					".servicebus.windows.net"
+					".servicebus.chinacloudapi.cn"
 					);
 
     ServiceBusContract service = ServiceBusService.create(config);
@@ -108,7 +104,7 @@ message for the `TestQueue` queue previously created in the `HowToSample` namesp
         System.exit(-1);
     }
 
-Messages sent to, and received from Service Bus queues are instances of the [BrokeredMessage][] class. [BrokeredMessage][] objects have a set of standard properties (such as [Label](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.brokeredmessage.label.aspx) and [TimeToLive](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.brokeredmessage.timetolive.aspx)), a dictionary
+Messages sent to, and received from Service Bus queues are instances of the [BrokeredMessage][] class. [BrokeredMessage][] objects have a set of standard properties (such as [Label](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.brokeredmessage.label.aspx) and [TimeToLive](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.brokeredmessage.timetolive.aspx)), a dictionary
 that is used to hold custom application specific properties, and a body of arbitrary application data. An application can set the body of the message by passing any serializable object into the constructor of the [BrokeredMessage][], and the appropriate serializer will then be used to serialize the object. Alternatively, you can provide a **java.IO.InputStream** object.
 
 The following example demonstrates how to send five test messages to the
@@ -250,8 +246,8 @@ Now that you've learned the basics of Service Bus queues, see [Queues, topics, a
 For more information, see the [Java Developer Center](/develop/java/).
 
 
-  [Azure SDK for Java]: http://azure.microsoft.com/develop/java/
-  [Azure Toolkit for Eclipse]: https://msdn.microsoft.com/library/azure/hh694271.aspx
-  [Azure Management Portal]: http://manage.windowsazure.com/
-  [Queues, topics, and subscriptions]: service-bus-queues-topics-subscriptions.md
-  [BrokeredMessage]: https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.brokeredmessage.aspx
+  [Azure SDK for Java]: /develop/java/
+  [Azure Toolkit for Eclipse]: https://msdn.microsoft.com/zh-cn/library/azure/hh694271.aspx
+  [Azure Management Portal]: http://manage.windowsazure.cn/
+  [Queues, topics, and subscriptions]: /documentation/articles/service-bus-queues-topics-subscriptions
+  [BrokeredMessage]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.brokeredmessage.aspx

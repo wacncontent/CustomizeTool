@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Site Recovery Workload Guidance | Microsoft Azure" 
+	pageTitle="Site Recovery Workload Guidance | Windows Azure" 
 	description="Azure Site Recovery coordinates the replication, failover and recovery of virtual machines and physical servers located on on-premises to Azure or to a secondary on-premises site." 
 	services="site-recovery" 
 	documentationCenter="" 
@@ -7,14 +7,10 @@
 	manager="abhiag" 
 	editor=""/>
 
-<tags 
-	ms.service="site-recovery" 
-	ms.devlang="na"
-	ms.topic="article"
-	ms.tgt_pltfrm="na"
-	ms.workload="storage-backup-recovery" 
-	ms.date="09/21/2015" 
-	ms.author="pratshar"/>
+<tags
+	ms.service="site-recovery"
+	ms.date="09/21/2015"
+	wacn.date=""/>
 
 # Site Recovery Workload Guidance
 

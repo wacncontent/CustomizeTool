@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="How to configure a cloud service (preview portal) | Microsoft Azure" 
+	pageTitle="How to configure a cloud service (preview portal) | Windows Azure" 
 	description="Learn how to configure cloud services in Azure. Learn to update the cloud service configuration and configure remote access to role instances. These examples use the Azure preview portal." 
 	services="cloud-services" 
 	documentationCenter="" 
@@ -7,14 +7,10 @@
 	manager="timlt" 
 	editor=""/>
 
-<tags 
-	ms.service="cloud-services" 
-	ms.workload="tbd" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
+<tags
+	ms.service="cloud-services"
 	ms.date="09/22/2015"
-	ms.author="adegeo"/>
+	wacn.date=""/>
 
 
 
@@ -22,8 +18,8 @@
 # How to Configure Cloud Services
 
 > [AZURE.SELECTOR]
-- [Azure Portal](cloud-services-how-to-configure.md)
-- [Azure Preview Portal](cloud-services-how-to-configure-portal.md)
+- [Azure Management Portal](/documentation/articles/cloud-services-how-to-configure)
+- [Azure Preview Portal](/documentation/articles/cloud-services-how-to-configure-portal)
 
 You can configure the most commonly used settings for a cloud service in the Azure Management Portal. Or, if you like to update your configuration files directly, download a service configuration file to update, and then upload the updated file and update the cloud service with the configuration changes. Either way, the configuration updates are pushed out to all role instances.
 
@@ -33,7 +29,7 @@ Azure can only ensure 99.95 percent service availability during the configuratio
 
 ## Change a cloud service
 
-1. In the [Azure Preview Portal](http://portal.azure.com/), navigate to your cloud service.
+1. In the [Azure Preview Portal](http://manage.windowsazure.cn/), navigate to your cloud service.
 
 2. Click on the **Settings** icon or the **Essentials/All settings** link to open up the **Settings** blade.
 
@@ -54,13 +50,13 @@ Azure can only ensure 99.95 percent service availability during the configuratio
     ![Cloud Service Instance Buttons](./media/cloud-services-how-to-configure-portal/cs-instance-buttons.png)
 
 >[AZURE.NOTE]
->The operating system used for the cloud service cannot be changed using the **Azure Preview Portal**, you can only change this setting through the [non-preview portal](http://manage.windowsazure.com/). This is detailed [here](cloud-services-how-to-configure.md#update-a-cloud-service-configuration-file).
+>The operating system used for the cloud service cannot be changed using the **Azure Preview Portal**, you can only change this setting through the [non-preview portal](http://manage.windowsazure.cn/). This is detailed [here](/documentation/articles/cloud-services-how-to-configure#update-a-cloud-service-configuration-file).
 
 ## Update a cloud service configuration file
 
 1. First, download the existing cloud service configuration file (.cscfg).
 
-    1. In the [Azure Preview Portal](http://portal.azure.com/), navigate to your cloud service.
+    1. In the [Azure Preview Portal](http://manage.windowsazure.cn/), navigate to your cloud service.
 
     2. Click on the **Settings** icon or the **Essentials/All settings** link to open up the **Settings** blade.
 
@@ -86,11 +82,11 @@ Azure can only ensure 99.95 percent service availability during the configuratio
 
 ## Configure remote access to role instances
 
-Remote access cannot be configured using the **Azure Preview Portal**, you can only change this setting through the [non-preview portal](http://manage.windowsazure.com/). This is described [here](cloud-services-role-enable-remote-desktop.md).
+Remote access cannot be configured using the **Azure Preview Portal**, you can only change this setting through the [non-preview portal](http://manage.windowsazure.cn/). This is described [here](/documentation/articles/cloud-services-role-enable-remote-desktop).
 			
 ## Next steps
 
-* Learn how to [deploy a cloud service](cloud-services-how-to-create-deploy-portal.md).
-* Configure a [custom domain name](cloud-services-custom-domain-name-portal.md).
-* [Manage your cloud service](cloud-services-how-to-manage-portal.md).
-* Configure [ssl certificates](cloud-services-configure-ssl-certificate-portal.md).
+* Learn how to [deploy a cloud service](/documentation/articles/cloud-services-how-to-create-deploy-portal).
+* Configure a [custom domain name](/documentation/articles/cloud-services-custom-domain-name-portal).
+* [Manage your cloud service](/documentation/articles/cloud-services-how-to-manage-portal).
+* Configure [ssl certificates](/documentation/articles/cloud-services-configure-ssl-certificate-portal).

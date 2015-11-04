@@ -1,23 +1,19 @@
 <properties 
-   pageTitle="Service Bus and Java with AMQP 1.0 | Microsoft Azure"
+   pageTitle="Service Bus and Java with AMQP 1.0 | Windows Azure"
    description="Using Service Bus from Java with AMQP."
    services="service-bus"
    documentationCenter="na"
    authors="sethmanheim"
    manager="timlt"
    editor="tysonn" /> 
-<tags 
-   ms.service="service-bus"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="na"
-   ms.date="10/07/2015"
-   ms.author="sethm" />
+<tags
+	ms.service="service-bus"
+	ms.date="10/07/2015"
+	wacn.date=""/>
 
 # Using Service Bus from Java with AMQP 1.0
 
-[AZURE.INCLUDE [service-bus-selector-amqp](../../includes/service-bus-selector-amqp.md)]
+[AZURE.INCLUDE [service-bus-selector-amqp](../includes/service-bus-selector-amqp.md)]
 
 The Java Message Service (JMS) is a standard API for working with message-oriented middleware on the Java platform. Azure Service Bus has been tested with the AMQP 1.0 based JMS client library developed by the Apache Qpid project. This library supports the full JMS 1.1 API and can be used with any AMQP 1.0 compliant messaging service. This scenario is also supported in Service Bus for Windows Server (Service Bus on-premises). For more information, see [AMQP in Service Bus for Windows Server][].
 
@@ -48,7 +44,7 @@ The Qpid Properties File JNDI Provider is configured using a properties file of 
 
 # Register a ConnectionFactory in JNDI using the form:
 # connectionfactory.[jndi_name] = [ConnectionURL]
-connectionfactory.SBCONNECTIONFACTORY = amqps://[username]:[password]@[namespace].servicebus.windows.net
+connectionfactory.SBCONNECTIONFACTORY = amqps://[username]:[password]@[namespace].servicebus.chinacloudapi.cn
 
 # Register some queues in JNDI using the form
 # queue.[jndi_name] = [physical_name]
@@ -65,32 +61,32 @@ The entry used to define a **ConnectionFactory** in the Qpid Properties File JND
 connectionfactory.[jndi_name] = [ConnectionURL]
 ```
 
-Where `[jndi\_name]` and `[ConnectionURL]` have the following meanings:
+Where `[jndi_name]` and `[ConnectionURL]` have the following meanings:
 
 | Name            | Meaning                                                                                                                                    |   |   |   |   |
 |-----------------|--------------------------------------------------------------------------------------------------------------------------------------------|---|---|---|---|
-| `[jndi\_name]`    | The logical name of the connection factory. This name is resolved in the Java application by using the JNDI `IntialContext.lookup()` method. |   |   |   |   |
+| `[jndi_name]`    | The logical name of the connection factory. This name is resolved in the Java application by using the JNDI `IntialContext.lookup()` method. |   |   |   |   |
 | `[ConnectionURL]` | A URL that provides the JMS library with the information required to the AMQP broker.                                                      |   |   |   |   |
 
 The format of the connection URL is as follows:
 
 ```
-amqps://[username]:[password]@[namespace].servicebus.windows.net
+amqps://[username]:[password]@[namespace].servicebus.chinacloudapi.cn
 ```
 
 Where `[namespace]`, `[username]`, and `[password]` have the following meanings:
 
 | Name          | Meaning                                                                        |   |   |   |   |
 |---------------|--------------------------------------------------------------------------------|---|---|---|---|
-| `[namespace]` | The Service Bus namespace obtained from the Azure portal.                      |   |   |   |   |
-| `[username]`  | The Service Bus issuer name obtained from the Azure portal.                    |   |   |   |   |
-| `[password]`  | URL-encoded form of the Service Bus issuer key obtained from the Azure portal. |   |   |   |   |
+| `[namespace]` | The Service Bus namespace obtained from the Azure Management Portal.                      |   |   |   |   |
+| `[username]`  | The Service Bus issuer name obtained from the Azure Management Portal.                    |   |   |   |   |
+| `[password]`  | URL-encoded form of the Service Bus issuer key obtained from the Azure Management Portal. |   |   |   |   |
 
 > [AZURE.NOTE] You must URL-encode the password manually. A useful URL encoding utility is available at [http://www.w3schools.com/tags/ref_urlencode.asp](http://www.w3schools.com/tags/ref_urlencode.asp).
 
 For example, if the information obtained from the portal is as follows:
 
-| Namespace:   | test.servicebus.windows.net                  |
+| Namespace:   | test.servicebus.chinacloudapi.cn                  |
 |--------------|----------------------------------------------|
 | Issuer name: | owner                                        |
 | Issuer key:  | abcdefg |
@@ -98,7 +94,7 @@ For example, if the information obtained from the portal is as follows:
 Then in order to define a **ConnectionFactory** object named `SBCONNECTIONFACTORY`, the configuration string would be as follows:
 
 ```
-connectionfactory.SBCONNECTIONFACTORY = amqps://owner:abcdefg@test.servicebus.windows.net
+connectionfactory.SBCONNECTIONFACTORY = amqps://owner:abcdefg@test.servicebus.chinacloudapi.cn
 ```
 
 #### Configuring destinations
@@ -110,11 +106,11 @@ queue.[jndi_name] = [physical_name]
 topic.[jndi_name] = [physical_name]
 ```
 
-Where `[jndi\_name]` and `[physical\_name]` have the following meanings:
+Where `[jndi_name]` and `[physical_name]` have the following meanings:
 
 | Name              | Meaning                                                                                                                                  |
 |-------------------|------------------------------------------------------------------------------------------------------------------------------------------|
-| `[jndi\_name]`    | The logical name of the destination. This is name is resolved in the Java application by using the JNDI `IntialContext.lookup()` method. |
+| `[jndi_name]`    | The logical name of the destination. This is name is resolved in the Java application by using the JNDI `IntialContext.lookup()` method. |
 | `[physical\name]` | The name of the Service Bus entity to which the application sends or receives messages.                                                  |
 
 Note the following:
@@ -122,7 +118,7 @@ Note the following:
 - The `[physical\name]` value can be a Service Bus queue or topic.
 - When receiving from a Service Bus topic subscription, the physical name specified in JNDI should be the name of the topic. The subscription name is provided when the durable subscription is created in the JMS application code.
 - It is also possible to treat a Service Bus topic subscription as a JMS Queue. There are several advantages to this approach: the same receiver code can be used for queues and topic subscriptions, and all the address information (the topic and subscription names) is externalized in the properties file.
-- To treat a Service Bus topic subscription as a JMS Queue, the entry in properties file should be of the form: `queue.[jndi\_name] = [topic\_name]/Subscriptions/[subscription\_name]`.|
+- To treat a Service Bus topic subscription as a JMS Queue, the entry in properties file should be of the form: `queue.[jndi_name] = [topic_name]/Subscriptions/[subscription_name]`.|
 
 To define a logical JMS destination named "TOPIC" that maps to a Service Bus topic named "topic1," the entry in the properties file would be as follows:
 
@@ -178,7 +174,7 @@ The JMS specification defines how the exception contract of the API methods and 
 
 -   Register an **ExceptionListener** with the JMS connection using **connection.setExceptionListener**. This enables a client to be notified of a problem asynchronously. This notification is particularly important for connections that only consume messages, as they would have no other way to learn that their connection has failed. The **ExceptionListener** is called if there is a problem with the underlying AMQP connection, session, or link. In this situation, the application program should recreate the **JMS Connection**, **Session**, **MessageProducer** and **MessageConsumer** objects from scratch.
 
--   To verify that a message has been successfully sent from a **MessageProducer** to a Service Bus entity, ensure that the application has been configured with the **qpid.sync\_publish** system property set. You can do this by starting the program with the **-Dqpid.sync\_publish=true** Java VM option set on the command line when starting the application. Setting this option configures the library to not return from the send call until confirmation has been received that the message has been accepted by Service Bus. If a problem occurs during the send operation, a **JMSException** is raised. There are two possible causes: 
+-   To verify that a message has been successfully sent from a **MessageProducer** to a Service Bus entity, ensure that the application has been configured with the **qpid.sync_publish** system property set. You can do this by starting the program with the **-Dqpid.sync_publish=true** Java VM option set on the command line when starting the application. Setting this option configures the library to not return from the send call until confirmation has been received that the message has been accepted by Service Bus. If a problem occurs during the send operation, a **JMSException** is raised. There are two possible causes: 
 	1. If the problem is due to Service Bus rejecting the particular message being sent, then a **MessageRejectedException** exception will be raised. This error is either transitory, or due to some problem with the message. The recommended course of action is to make several attempts to retry the operation with some back-off logic. If the problem persists, then the message should be abandoned with an error logged locally. There is no need to recreate the **JMS Connection**, **Session**, or **MessageProducer** objects in this situation. 
 	2. If the problem is due to Service Bus closing the AMQP Link, then an **InvalidDestinationException** exception will be raised. This can be due to a transient problem, or due to the message entity being deleted. In either case, the **JMS Connection**, **Session**, and **MessageProducer** objects should be recreated. If the error condition was transient, then this operation will eventually be successful. If the entity has been deleted, the failure will be permanent.
 
@@ -394,7 +390,7 @@ The following tables show how the JMS Standard Headers and the [BrokeredMessage]
 | JMSDeliveryMode  | Not currently available        | Service Bus only supports durable messages; for example, DeliveryMode.PERSISTENT, regardless of what is specified.                                                                                                                                                                                                                                                                                                                                                         |
 | JMSDestination   | Message.To                     | -                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 | JMSExpiration    | Message. TimeToLive            | Conversion                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
-| JMSMessageID     | Message.MessageID              | By default, JMSMessageID is encoded in binary form in the AMQP message. On receipt of binary message-id, the .NET client library converts to a string representation based on the unicode values of the bytes. To switch the JMS library to use string message ids, append the “binary-messageid=false” string to the query parameters of the JNDI ConnectionURL. For example: “amqps://[username]:[password]@[namespace].servicebus.windows.net? binary-messageid=false”. |
+| JMSMessageID     | Message.MessageID              | By default, JMSMessageID is encoded in binary form in the AMQP message. On receipt of binary message-id, the .NET client library converts to a string representation based on the unicode values of the bytes. To switch the JMS library to use string message ids, append the “binary-messageid=false” string to the query parameters of the JNDI ConnectionURL. For example: “amqps://[username]:[password]@[namespace].servicebus.chinacloudapi.cn? binary-messageid=false”. |
 | JMSPriority      | Not currently available        | Service Bus does not support message priority.                                                                                                                                                                                                                                                                                                                                                                                                                             |
 | JMSRedelivered   | Not currently available        | -                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 | JMSReplyTo       | Message. ReplyTo               | -                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
@@ -440,7 +436,7 @@ Ready to learn more? Visit the following links:
 - [Service Bus AMQP overview]
 - [AMQP in Service Bus for Windows Server]
 
-[AMQP in Service Bus for Windows Server]: https://msdn.microsoft.com/library/dn574799.aspx
-[BrokeredMessage]: https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.brokeredmessage.aspx
+[AMQP in Service Bus for Windows Server]: https://msdn.microsoft.com/zh-cn/library/dn574799.aspx
+[BrokeredMessage]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.brokeredmessage.aspx
 
-[Service Bus AMQP overview]: service-bus-amqp-overview.md
+[Service Bus AMQP overview]: /documentation/articles/service-bus-amqp-overview

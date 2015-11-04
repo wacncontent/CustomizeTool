@@ -1,5 +1,5 @@
 <properties
-   pageTitle="ExpressRoute customer router configuration samples | Microsoft Azure"
+   pageTitle="ExpressRoute customer router configuration samples | Windows Azure"
    description="This page provides router config samples for Cisco and Juniper routers."
    documentationCenter="na"
    services="expressroute"
@@ -7,13 +7,9 @@
    manager="carolz"
    editor="" />
 <tags
-   ms.service="expressroute"
-   ms.devlang="na"
-   ms.topic="article" 
-   ms.tgt_pltfrm="na"
-   ms.workload="infrastructure-services"
-   ms.date="10/07/2015"
-   ms.author="cherylmc"/>
+	ms.service="expressroute"
+	ms.date="10/07/2015"
+	wacn.date=""/>
 
 # Router configuration samples to setup and manage routing
 
@@ -21,7 +17,7 @@ This page provides interface and routing configuration samples for Cisco IOS-XE 
 
 >[AZURE.IMPORTANT] Samples in this page are intended to be purely for guidance. You must work with your vendor's sales / technical team and your networking team to come up with appropriate configurations to meet your needs. Microsoft will not support issues related to configurations listed in this page. You must contact your device vendor for support issues.
 
-Router configuration samples below apply to all peerings. Review [ExpressRoute peerings](expressroute-circuit-peerings.md) and [ExpressRoute routing requirements](expressroute-routing.md) for more details on routing.
+Router configuration samples below apply to all peerings. Review [ExpressRoute peerings](/documentation/articles/expressroute-circuit-peerings) and [ExpressRoute routing requirements](/documentation/articles/expressroute-routing) for more details on routing.
 
 ## Cisco IOS-XE based routers
 
@@ -208,4 +204,4 @@ You can use route-maps and prefix lists to filter prefixes propagated into your 
 
 ## Next Steps
 
-See the [ExpressRoute FAQ](expressroute-faqs.md) for more details.
+See the [ExpressRoute FAQ](/documentation/articles/expressroute-faqs) for more details.

@@ -1,0 +1,37 @@
+new docs: 22, word count: {word_count_TODO}
+articles/backup/backup-azure-alternate-dpm-server.md
+articles/backup/backup-azure-backup-cloud-as-tape.md
+articles/backup/backup-azure-backup-faq.md
+articles/backup/backup-azure-backup-import-export.md
+articles/backup/backup-azure-backup-sharepoint.md
+articles/backup/backup-azure-backup-sql.md
+articles/backup/backup-azure-backup-windows-server.md
+articles/backup/backup-azure-dpm-introduction.md
+articles/backup/backup-azure-manage-vms.md
+articles/backup/backup-azure-manage-windows-server.md
+articles/backup/backup-azure-microsoft-azure-backup.md
+articles/backup/backup-azure-restore-vms.md
+articles/backup/backup-azure-restore-windows-server.md
+articles/backup/backup-azure-vms-automation.md
+articles/backup/backup-azure-vms-introduction.md
+articles/backup/backup-azure-vms-troubleshoot.md
+articles/backup/backup-azure-vms.md
+articles/backup/backup-client-automation.md
+articles/backup/backup-configure-vault.md
+articles/backup/backup-dpm-automation.md
+articles/backup/backup-introduction-to-azure-backup.md
+articles/backup/backup-try-azure-backup-in-10-mins.md
+
+new includes: 12
+includes/azure-backup-limits.md
+includes/backup-create-vault-wgif.md
+includes/backup-create-vault.md
+includes/backup-download-credentials.md
+includes/backup-install-agent.md
+includes/storsimple-add-backup-policy.md
+includes/storsimple-add-modify-backup-schedule.md
+includes/storsimple-create-custom-backup-policy.md
+includes/storsimple-create-manual-backup-gov.md
+includes/storsimple-create-manual-backup.md
+includes/storsimple-delete-backup-policy.md
+includes/storsimple-take-backup.md

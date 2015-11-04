@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Set up PostgreSQL on a Linux VM | Microsoft Azure"
+	pageTitle="Set up PostgreSQL on a Linux VM | Windows Azure"
 	description="Learn how to install and configure PostgreSQL on a Linux virtual machine in Azure"
 	services="virtual-machines"
 	documentationCenter=""
@@ -10,12 +10,8 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.tgt_pltfrm="vm-linux"
-	ms.workload="infrastructure-services"
 	ms.date="08/10/2015"
-	ms.author="mingzhan"/>
+	wacn.date=""/>
 
 
 # Install and configure PostgreSQL on Azure
@@ -25,17 +21,17 @@ PostgreSQL is an advanced open-source database similar to Oracle and DB2. It inc
 In this article, you will learn how to install and configure PostgreSQL on an Azure virtual machine running Linux.
 
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-both-include.md)]
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-both-include.md)]
 
 
 ## Install PostgreSQL
 
 > [AZURE.NOTE] You must already have an Azure virtual machine running Linux in order to complete this tutorial. To create and set up a Linux VM before proceeding, see the
-[Azure Linux VM tutorial](virtual-machines-linux-tutorial.md).
+[Azure Linux VM tutorial](/documentation/articles/virtual-machines-linux-tutorial).
 
 In this case, use port 1999 as the PostgreSQL port.  
 
-Connect to the Linux VM you created via PuTTY. If this is the first time you're using an Azure Linux VM, see [How to Use SSH with Linux on Azure](virtual-machines-linux-use-ssh-key.md) to learn how to use PuTTY to connect to a Linux VM.
+Connect to the Linux VM you created via PuTTY. If this is the first time you're using an Azure Linux VM, see [How to Use SSH with Linux on Azure](/documentation/articles/virtual-machines-linux-use-ssh-key) to learn how to use PuTTY to connect to a Linux VM.
 
 1. Run the following command to switch to the root (admin):
 

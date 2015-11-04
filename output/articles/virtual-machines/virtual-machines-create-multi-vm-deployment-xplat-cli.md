@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Create a multi-VM deployment with the Azure CLI | Microsoft Azure"
+   pageTitle="Create a multi-VM deployment with the Azure CLI | Windows Azure"
    description="Learn how to create a multi-VM deployment using the classic deployment model and the Azure CLI."
    services="virtual-machines"
    documentationCenter="nodejs"
@@ -9,17 +9,13 @@
    tags="azure-service-management"/>
 
    <tags
-   ms.service="virtual-machines"
-   ms.devlang="nodejs"
-   ms.topic="article"
-   ms.tgt_pltfrm="Linux"
-   ms.workload="infrastructure-services"
-   ms.date="02/20/2015"
-   ms.author="alanst"/>
+	ms.service="virtual-machines"
+	ms.date="02/20/2015"
+	wacn.date=""/>
 
 # Create a multi-VM deployment with the Azure CLI
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
  
 
 The following script will show you how to configure a multi-VM multi-cloud service deployment in a VNET using Azure Command-Line Interface (Azure CLI).
@@ -35,10 +31,10 @@ The code to set this up is relatively straightforward:
 
 >[AZURE.NOTE] You will likely need to change the cloud service names servercs and workercs to be unique cloud service names
 
-    azure network vnet create samplevnet -l "West US"
-    azure vm create -l "West US" -w samplevnet -e 10000 -z Small -n servervm servercs b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_10-amd64-server-20150202-en-us-30GB azureuser Password@1
-    azure vm create -l "West US" -w samplevnet -e 10001 -z Small –n clientvm1 clientcs b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_10-amd64-server-20150202-en-us-30GB azureuser Password@1
-    azure vm create -l "West US" -w samplevnet -e 10002 -c -z Small -n clientvm2 clientcs b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_10-amd64-server-20150202-en-us-30GB azureuser Password@1
+    azure network vnet create samplevnet -l "China North"
+    azure vm create -l "China North" -w samplevnet -e 10000 -z Small -n servervm servercs b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_10-amd64-server-20150202-en-us-30GB azureuser Password@1
+    azure vm create -l "China North" -w samplevnet -e 10001 -z Small –n clientvm1 clientcs b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_10-amd64-server-20150202-en-us-30GB azureuser Password@1
+    azure vm create -l "China North" -w samplevnet -e 10002 -c -z Small -n clientvm2 clientcs b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_10-amd64-server-20150202-en-us-30GB azureuser Password@1
     azure vm disk attach-new servervm 100
     azure vm disk attach-new servervm 500
     azure vm endpoint create servervm 443 443 -n https -o tcp
@@ -67,6 +63,6 @@ While you can find more information by using the –help option on any of the Az
 ## Next steps
 
 
-* [Linux and open-source computing on Azure](virtual-machines-linux-opensource.md)
-* [How to log on to a virtual machine running Linux](virtual-machines-linux-how-to-log-on.md)
+* [Linux and open-source computing on Azure](/documentation/articles/virtual-machines-linux-opensource)
+* [How to log on to a virtual machine running Linux](/documentation/articles/virtual-machines-linux-how-to-log-on)
  

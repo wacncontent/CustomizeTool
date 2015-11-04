@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Get started with authentication (Windows Phone) | Microsoft Azure" 
+	pageTitle="Get started with authentication (Windows Phone) | Windows Azure" 
 	description="Learn how to use Mobile Services to authenticate users of your Windows Phone app through a variety of identity providers, including Google, Facebook, Twitter, and Microsoft." 
 	services="mobile-services" 
 	documentationCenter="windows" 
@@ -7,18 +7,14 @@
 	manager="dwrede" 
 	editor=""/>
 
-<tags 
-	ms.service="mobile-services" 
-	ms.workload="mobile" 
-	ms.tgt_pltfrm="mobile-windows-phone" 
-	ms.devlang="dotnet" 
-	ms.topic="article" 
-	ms.date="07/23/2015" 
-	ms.author="glenga"/>
+<tags
+	ms.service="mobile-services"
+	ms.date="07/23/2015"
+	wacn.date=""/>
 
 # Add authentication to your Mobile Services app
 
-[AZURE.INCLUDE [mobile-services-selector-get-started-users-legacy](../../includes/mobile-services-selector-get-started-users-legacy.md)]
+[AZURE.INCLUDE [mobile-services-selector-get-started-users-legacy](../includes/mobile-services-selector-get-started-users-legacy.md)]
 
 ##Overview
 
@@ -34,14 +30,14 @@ This tutorial is based on the Mobile Services quickstart. You must also first co
 
 ##<a name="register"></a>Register your app for authentication and configure Mobile Services
 
-[AZURE.INCLUDE [mobile-services-register-authentication](../../includes/mobile-services-register-authentication.md)] 
+[AZURE.INCLUDE [mobile-services-register-authentication](../includes/mobile-services-register-authentication.md)] 
 
 ##<a name="permissions"></a>Restrict permissions to authenticated users
 
-[AZURE.INCLUDE [mobile-services-restrict-permissions-javascript-backend](../../includes/mobile-services-restrict-permissions-javascript-backend.md)] 
+[AZURE.INCLUDE [mobile-services-restrict-permissions-javascript-backend](../includes/mobile-services-restrict-permissions-javascript-backend.md)] 
 
 
-&nbsp;&nbsp;3. In Visual Studio 2012 Express for Windows Phone, open the project that you created when you completed the tutorial [Add Mobile Services to an existing app](mobile-services-windows-phone-get-started-data.md).
+&nbsp;&nbsp;3. In Visual Studio 2012 Express for Windows Phone, open the project that you created when you completed the tutorial [Add Mobile Services to an existing app](/documentation/articles/mobile-services-windows-phone-get-started-data).
 
 &nbsp;&nbsp;4. Press the F5 key to run this quickstart-based app; verify that an unhandled exception with a status code of 401 (Unauthorized) is raised after the app starts. This happens because the app attempts to access Mobile Services as an unauthenticated user, but the *TodoItem* table now requires authentication.
 
@@ -49,15 +45,15 @@ Next, you will update the app to authenticate users before requesting resources 
 
 ##<a name="add-authentication"></a>Add authentication to the app
 
-[AZURE.INCLUDE [mobile-services-windows-phone-authenticate-app](../../includes/mobile-services-windows-phone-authenticate-app.md)]
+[AZURE.INCLUDE [mobile-services-windows-phone-authenticate-app](../includes/mobile-services-windows-phone-authenticate-app.md)]
 
 ##<a name="tokens"></a>Store the authorization tokens on the client
 
-[AZURE.INCLUDE [mobile-services-windows-phone-authenticate-app-with-token](../../includes/mobile-services-windows-phone-authenticate-app-with-token.md)] 
+[AZURE.INCLUDE [mobile-services-windows-phone-authenticate-app-with-token](../includes/mobile-services-windows-phone-authenticate-app-with-token.md)] 
 
 ## <a name="next-steps"> </a>Next steps
 
-In the next tutorial, [Service-side authorization of Mobile Services users](mobile-services-javascript-backend-service-side-authorization.md), you will take the user ID value provided by Mobile Services based on an authenticated user and use it to filter the data returned by Mobile Services. 
+In the next tutorial, [Service-side authorization of Mobile Services users](/documentation/articles/mobile-services-javascript-backend-service-side-authorization), you will take the user ID value provided by Mobile Services based on an authenticated user and use it to filter the data returned by Mobile Services. 
 
 <!-- Anchors. -->
 [Register your app for authentication and configure Mobile Services]: #register
@@ -74,7 +70,7 @@ In the next tutorial, [Service-side authorization of Mobile Services users](mobi
 
 <!-- URLs. -->
 [Submit an app page]: http://go.microsoft.com/fwlink/p/?LinkID=266582
-[Add Mobile Services to an existing app]: mobile-services-windows-phone-get-started-data.md
-[Authorize users with scripts]: ../mobile-services-windows-phone-authorize-users-in-scripts.md
-[Azure Management Portal]: https://manage.windowsazure.com/
+[Add Mobile Services to an existing app]: /documentation/articles/mobile-services-windows-phone-get-started-data
+[Authorize users with scripts]: /documentation/articles/mobile-services-windows-phone-authorize-users-in-scripts
+[Azure Management Portal]: https://manage.windowsazure.cn/
  

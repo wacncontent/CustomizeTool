@@ -1,5 +1,5 @@
 <properties
-	pageTitle="What happened to my ASP.NET 5 project (Visual Studio connected services) | Microsoft Azure Storage"
+	pageTitle="What happened to my ASP.NET 5 project (Visual Studio connected services) | Windows Azure Storage"
 	description="Describes what happens after connecting to an Azure storage account in a Visual Studio ASP.NET 5 project using Visual Studio connected services"
 	services="storage"
 	documentationCenter=""
@@ -9,23 +9,19 @@
 
 <tags
 	ms.service="storage"
-	ms.workload="web"
-	ms.tgt_pltfrm="vs-what-happened"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="09/03/2015"
-	ms.author="patshea"/>
+	wacn.date=""/>
 
 # What happened to my ASP.NET 5 project (Visual Studio Azure Storage connected services)?
 
 > [AZURE.SELECTOR]
-> - [Getting Started](vs-storage-aspnet5-getting-started-blobs.md)
-> - [What Happened](vs-storage-aspnet5-what-happened.md)
+> - [Getting Started](/documentation/articles/vs-storage-aspnet5-getting-started-blobs)
+> - [What Happened](/documentation/articles/vs-storage-aspnet5-what-happened)
 
 > [AZURE.SELECTOR]
-> - [Blobs](vs-storage-aspnet5-getting-started-blobs.md)
-> - [Queues](vs-storage-aspnet5-getting-started-queues.md)
-> - [Tables](vs-storage-aspnet5-getting-started-tables.md)
+> - [Blobs](/documentation/articles/vs-storage-aspnet5-getting-started-blobs)
+> - [Queues](/documentation/articles/vs-storage-aspnet5-getting-started-queues)
+> - [Tables](/documentation/articles/vs-storage-aspnet5-getting-started-tables)
 
 ## References added
 

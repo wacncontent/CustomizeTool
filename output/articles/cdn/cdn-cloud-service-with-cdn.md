@@ -7,14 +7,10 @@
 	manager="wpickett" 
 	editor="tysonn"/>
 
-<tags 
-	ms.service="cdn" 
-	ms.workload="tbd" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="dotnet" 
-	ms.topic="article" 
-	ms.date="09/01/2015" 
-	ms.author="cephalin"/>
+<tags
+	ms.service="cdn"
+	ms.date="09/01/2015"
+	wacn.date=""/>
 
 
 # <a name="intro"></a> Integrate a cloud service with Azure CDN 
@@ -45,11 +41,11 @@ You will deploy a cloud service Web role using the default ASP.NET MVC template,
 
 This tutorial has the following prerequisites:
 
--	An active [Microsoft Azure account](/account/)
--	Visual Studio 2013 with [Azure SDK](http://go.microsoft.com/fwlink/p/?linkid=323510&clcid=0x409)
+-	An active [Windows Azure account](/account/)
+-	Visual Studio 2013 with [Azure SDK](https://www.microsoft.com/web/handlers/webpi.ashx/getinstaller/VWDOrVs2013AzurePack.appids)
 
 > [AZURE.NOTE] You need an Azure account to complete this tutorial:
-> + You can [open an Azure account for free](/pricing/free-trial/) - You get credits you can use to try out paid Azure services, and even after they're used up you can keep the account and use free Azure services, such as Websites.
+> + You can [open an Azure account for free](/pricing/1rmb-trial/) - You get credits you can use to try out paid Azure services, and even after they're used up you can keep the account and use free Azure services, such as Websites.
 > + You can [activate MSDN subscriber benefits](/pricing/member-offers/msdn-benefits-details/) - Your MSDN subscription gives you credits every month that you can use for paid Azure services.
 
 <a name="deploy"></a>
@@ -59,63 +55,63 @@ In this section, you will deploy the default ASP.NET MVC application template in
 
 1. In Visual Studio 2013, create a new Azure cloud service from the menu bar by going to **File > New > Project > Cloud > Azure Cloud Service**. Give it a name and click **OK**.
 
-	![](media/cdn-cloud-service-with-cdn/cdn-cs-1-new-project.PNG)
+	![](./media/cdn-cloud-service-with-cdn/cdn-cs-1-new-project.PNG)
 
 2. Select **ASP.NET Web Role** and click the **>** button. Click OK.
 
-	![](media/cdn-cloud-service-with-cdn/cdn-cs-2-select-role.PNG)
+	![](./media/cdn-cloud-service-with-cdn/cdn-cs-2-select-role.PNG)
 
 3. Select **MVC** and click **OK**.
 
-	![](media/cdn-cloud-service-with-cdn/cdn-cs-3-mvc-template.PNG)
+	![](./media/cdn-cloud-service-with-cdn/cdn-cs-3-mvc-template.PNG)
 
 4. Now, publish this Web role to an Azure cloud service. Right-click the cloud service project and select **Publish**.
 
-	![](media/cdn-cloud-service-with-cdn/cdn-cs-4-publish-a.png)
+	![](./media/cdn-cloud-service-with-cdn/cdn-cs-4-publish-a.png)
 
-5. If you have not yet signed into Microsoft Azure, click the **Sign In** button.
+5. If you have not yet signed into Windows Azure, click the **Sign In** button.
 
-	![](media/cdn-cloud-service-with-cdn/cdn-cs-5-publish-signin.png)
+	![](./media/cdn-cloud-service-with-cdn/cdn-cs-5-publish-signin.png)
 
 6. In the sign-in page, sign in with the Microsoft account you used to activate your Azure account.
 7. Once you're signed in, click **Next**.
 
-	![](media/cdn-cloud-service-with-cdn/cdn-cs-6-publish-signedin.png)
+	![](./media/cdn-cloud-service-with-cdn/cdn-cs-6-publish-signedin.png)
 
 8. Assuming that you haven't created a cloud service or storage account, Visual Studio will help you create both. In the **Create Cloud Service and Account** dialog, type the desired service name. Then, click **Create**.
 
-	![](media/cdn-cloud-service-with-cdn/cdn-cs-7-publish-createserviceandstorage.png)
+	![](./media/cdn-cloud-service-with-cdn/cdn-cs-7-publish-createserviceandstorage.png)
 
 9. In the publish settings page, verify the configuration and click **Publish**.
 
-	![](media/cdn-cloud-service-with-cdn/cdn-cs-8-publish-finalize.png)
+	![](./media/cdn-cloud-service-with-cdn/cdn-cs-8-publish-finalize.png)
 
-	>[AZURE.NOTE] The publishing process for cloud services takes a long time. The Enable Web Deploy for all roles option can make debugging your cloud service much quicker by providing fast (but temporary) updates to your Web roles. For more information on this option, see [Publishing a Cloud Service using the Azure Tools](http://msdn.microsoft.com/library/ff683672.aspx).
+	>[AZURE.NOTE] The publishing process for cloud services takes a long time. The Enable Web Deploy for all roles option can make debugging your cloud service much quicker by providing fast (but temporary) updates to your Web roles. For more information on this option, see [Publishing a Cloud Service using the Azure Tools](http://msdn.microsoft.com/zh-cn/library/ff683672.aspx).
 
-	When the **Microsoft Azure Activity Log** shows that publishing status is **Completed**, you will create a CDN endpoint that's integrated with this cloud service. 
+	When the **Windows Azure Activity Log** shows that publishing status is **Completed**, you will create a CDN endpoint that's integrated with this cloud service. 
 
-1. To create a CDN endpoint, log into your [Azure management portal](http://manage.windowsazure.com/). 
-2. Click **New** > **App Services** > **CDN** > **Quick Create**. Select **http://*&lt;servicename>*.cloudapp.net/cdn/** and click **Create**.
+1. To create a CDN endpoint, log into your [Azure management portal](http://manage.windowsazure.cn/). 
+2. Click **New** > **Azure Websites** > **CDN** > **Quick Create**. Select **http://*&lt;servicename>*.chinacloudapp.cn/cdn/** and click **Create**.
 
-	![](media/cdn-cloud-service-with-cdn/cdn-cs-10-createcdn.png)
+	![](./media/cdn-cloud-service-with-cdn/cdn-cs-10-createcdn.png)
 
-	>[AZURE.NOTE] Once your CDN endpoint is created, the Azure portal will show you its URL and the origin domain that it's integrated with. However, it can take awhile for the new CDN endpoint's configuration to be fully propagated to all the CDN node locations. 
+	>[AZURE.NOTE] Once your CDN endpoint is created, the Azure Management Portal will show you its URL and the origin domain that it's integrated with. However, it can take awhile for the new CDN endpoint's configuration to be fully propagated to all the CDN node locations. 
 
 	Note that the CDN endpoint is tied to the path **cdn/** of your cloud service. You can either create a **cdn** folder in your **WebRole1** project, or you can use URL rewrite to strip all incoming links of this path. In this tutorial, you will take the latter route.
 
-3. Back in the Azure portal, in the **CDN** tab, click the name of the CDN endpoint you just created.
+3. Back in the Azure Management Portal, in the **CDN** tab, click the name of the CDN endpoint you just created.
 
-	![](media/cdn-cloud-service-with-cdn/cdn-cs-11-disablequerya.png)
+	![](./media/cdn-cloud-service-with-cdn/cdn-cs-11-disablequerya.png)
 
 3. Click **Enable Query String** to enable query strings in the CDN cache. Once you enable this, the same link accessed with different query strings will be cached as separate entries.
 
-	![](media/cdn-cloud-service-with-cdn/cdn-cs-12-disablequeryb.png)
+	![](./media/cdn-cloud-service-with-cdn/cdn-cs-12-disablequeryb.png)
 
 	>[AZURE.NOTE] While enabling the query string is not necessary for this tutorial section, you want to do this as early as possible for convenience since any change here is going to take time to propagate to all the CDN nodes, and you don't want any non-query-string-enabled content to clog up the CDN cache (updating CDN content will be discussed later).
 
 3. Ping your CDN endpoint to make sure that it's propagated to the CDN nodes. You may need to wait up to an hour before it will respond to pings.
 
-	![](media/cdn-cloud-service-with-cdn/cdn-cs-13-testcdn.png)
+	![](./media/cdn-cloud-service-with-cdn/cdn-cs-13-testcdn.png)
 
 2. Back in Visual Studio 2013, open **Web.config** in your **WebRole1** project and add the following code into the `<system.webServer>` tag:  
 
@@ -133,7 +129,7 @@ In this section, you will deploy the default ASP.NET MVC application template in
 
 4. Publish the cloud service again. Right-click the cloud service project and select **Publish**.
 
-	![](media/cdn-cloud-service-with-cdn/cdn-cs-4-publish-a.png)
+	![](./media/cdn-cloud-service-with-cdn/cdn-cs-4-publish-a.png)
 
 1. When the publishing status is **Completed**, open a browser window and navigate to **http://*&lt;cdnName>*.vo.msecnd.net/Content/bootstrap.css**. In my setup, this URL is:
 
@@ -141,17 +137,17 @@ In this section, you will deploy the default ASP.NET MVC application template in
 
 	Which corresponds to the following origin URL at the CDN endpoint:
 
-		http://cephalinservice.cloudapp.net/cdn/Content/bootstrap.css
+		http://cephalinservice.chinacloudapp.cn/cdn/Content/bootstrap.css
 
 	After URL rewrite in my Web app, the actual file that gets cached to my CDN cache is:
 
-		http://cephalinservice.cloudapp.net/Content/bootstrap.css
+		http://cephalinservice.chinacloudapp.cn/Content/bootstrap.css
 
 	When you navigate to **http://*&lt;cdnName>*.vo.msecnd.net/Content/bootstrap.css**, you will be prompted to download the bootstrap.css that came from your published Web app. 
 
-	![](media/cdn-cloud-service-with-cdn/cdn-1-browser-access.PNG)
+	![](./media/cdn-cloud-service-with-cdn/cdn-1-browser-access.PNG)
 
-You can similarly access any publicly accessible URL at **http://*&lt;serviceName>*.cloudapp.net/**, straight from your CDN endpoint. For example:
+You can similarly access any publicly accessible URL at **http://*&lt;serviceName>*.chinacloudapp.cn/**, straight from your CDN endpoint. For example:
 
 -	A .js file from the /Script path
 -	Any content file from the /Content path
@@ -160,12 +156,12 @@ You can similarly access any publicly accessible URL at **http://*&lt;serviceNam
 
 In fact, with the above configuration, you can host the entire cloud service from **http://*&lt;cdnName>*.vo.msecnd.net/**. If I navigate to **http://az632148.vo.msecnd.net/**, I get the action result from Home/Index.
 
-![](media/cdn-cloud-service-with-cdn/cdn-2-home-page.PNG)
+![](./media/cdn-cloud-service-with-cdn/cdn-2-home-page.PNG)
 
 This does not mean, however, that it's always a good idea (or generally a good idea) to serve an entire cloud service through Azure CDN. Some of the caveats are:
 
 -	This approach requires your entire site to be public, because Azure CDN cannot serve any private content.
--	If the CDN endpoint goes offline for any reason, whether scheduled maintenance or user error, your entire cloud service goes offline unless the customers can be redirected to the origin URL **http://*&lt;serviceName>*.cloudapp.net/**. 
+-	If the CDN endpoint goes offline for any reason, whether scheduled maintenance or user error, your entire cloud service goes offline unless the customers can be redirected to the origin URL **http://*&lt;serviceName>*.chinacloudapp.cn/**. 
 -	Even with the custom Cache-Control settings (see [Configure caching options for static files in your cloud service](#caching)), a CDN endpoint does not improve the performance of highly-dynamic content. If you tried to load the home page from your CDN endpoint as shown above, notice that it took at least 5 seconds to load the default home page the first time, which is a fairly simple page. Imagine what would happen to the client experience if this page contains dynamic content that must update every minute. Serving dynamic content from a CDN endpoint requires short cache expiration, which translates to frequent cache misses at the CDN endpoint. This hurts the performance of your cloud service and defeats the purpose of a CDN.
 
 The alternative is to determine which content to serve from Azure CDN on a case-by-case basis in your cloud service. To that end, you have already seen how to access individual content files from the CDN endpoint. I will show you how to serve a specific controller action through the CDN endpoint in [Serve content from controller actions through Azure CDN](#controller).
@@ -213,7 +209,7 @@ When you integrate a cloud service Web role with Azure CDN, it is relatively eas
 
 Suppose in your cloud service you want to generate memes based on a young Chuck Norris image (photo by [Alan Light](http://www.flickr.com/photos/alan-light/218493788/)) like this:
 
-![](media/cdn-cloud-service-with-cdn/cdn-5-memegenerator.PNG)
+![](./media/cdn-cloud-service-with-cdn/cdn-5-memegenerator.PNG)
 
 You have a simple `Index` action that allows the customers to specify the superlatives in the image, then generates the meme once they post to the action. Since it's Chuck Norris, you would expect this page to become wildly popular globally. This is a good example of serving semi-dynamic content with Azure CDN. 
 
@@ -319,11 +315,11 @@ Follow the steps above to setup this controller action:
 
 2. Right-click in the default `Index()` action and select **Add View**.
 
-	![](media/cdn-cloud-service-with-cdn/cdn-6-addview.PNG)
+	![](./media/cdn-cloud-service-with-cdn/cdn-6-addview.PNG)
 
 3.  Accept the settings below and click **Add**.
 
-	![](media/cdn-cloud-service-with-cdn/cdn-7-configureview.PNG)
+	![](./media/cdn-cloud-service-with-cdn/cdn-7-configureview.PNG)
 
 4. Open the new *Views\MemeGenerator\Index.cshtml* and replace the content with the following simple HTML for submitting the superlatives:
 
@@ -337,7 +333,7 @@ Follow the steps above to setup this controller action:
 		    <input class="btn" type="submit" value="Generate meme" />
 		</form>
 
-5. Publish the cloud service again and navigate to **http://*&lt;serviceName>*.cloudapp.net/MemeGenerator/Index** in your browser. 
+5. Publish the cloud service again and navigate to **http://*&lt;serviceName>*.chinacloudapp.cn/MemeGenerator/Index** in your browser. 
 
 When you submit the form values to `/MemeGenerator/Index`, the `Index_Post` action method returns a link to the `Show` action method with the respective input identifier. When you click the link, you reach the following code:  
 
@@ -366,11 +362,11 @@ If your local debugger is attached, then you will get the regular debug experien
 
 Which corresponds to the following origin URL at your CDN endpoint:
 
-	http://<youCloudServiceName>.cloudapp.net/cdn/MemeGenerator/Generate?top=<formInput>&bottom=<formInput>
+	http://<youCloudServiceName>.chinacloudapp.cn/cdn/MemeGenerator/Generate?top=<formInput>&bottom=<formInput>
 
 After URL rewrite rule previously applied, the actual file that gets cached to your CDN endpoint is:
 
-	http://<youCloudServiceName>.cloudapp.net/MemeGenerator/Generate?top=<formInput>&bottom=<formInput>
+	http://<youCloudServiceName>.chinacloudapp.cn/MemeGenerator/Generate?top=<formInput>&bottom=<formInput>
 
 You can then use the `OutputCacheAttribute` attribute on the `Generate` method to specify how the action result should be cached, which Azure CDN will honor. The code below specify a cache expiration of 1 hour (3,600 seconds).
 
@@ -400,7 +396,7 @@ In the **WebRole1** project that you created in [Integrate an Azure CDN endpoint
 		...
     }
 
-The first `bundles.Add()` statement adds a script bundle at the virtual directory `~/bundles/jquery`. Then, open *Views\Shared\_Layout.cshtml* to see how the script bundle tag is rendered. You should be able to find the following line of Razor code:
+The first `bundles.Add()` statement adds a script bundle at the virtual directory `~/bundles/jquery`. Then, open *Views\Shared_Layout.cshtml* to see how the script bundle tag is rendered. You should be able to find the following line of Razor code:
 
     @Scripts.Render("~/bundles/jquery")
 
@@ -416,7 +412,7 @@ This enables you to debug the JavaScript code in your development environment wh
 
 Follow the steps below to integration ASP.NET bundling and minification with your CDN endpoint.
 
-1. Back in *App_Start\BundleConfig.cs*, modify the `bundles.Add()` methods to use a different [Bundle constructor](http://msdn.microsoft.com/library/jj646464.aspx), one that specifies a CDN address. To do this, replace the `RegisterBundles` method definition with the following code:  
+1. Back in *App_Start\BundleConfig.cs*, modify the `bundles.Add()` methods to use a different [Bundle constructor](http://msdn.microsoft.com/zh-cn/library/jj646464.aspx), one that specifies a CDN address. To do this, replace the `RegisterBundles` method definition with the following code:  
 
 		public static void RegisterBundles(BundleCollection bundles)
 		{
@@ -457,7 +453,7 @@ Follow the steps below to integration ASP.NET bundling and minification with you
 
 	This constructor tells ASP.NET bundling and minification to render individual script files when debugged locally, but use the specified CDN address to access the script in question. However, note two important characteristics with this carefully crafted CDN URL:
 	
-	-	The origin for this CDN URL is `http://<yourCloudService>.cloudapp.net/bundles/jquery?v=<W.X.Y.Z>`, which is actually the virtual directory of the script bundle in your cloud service.
+	-	The origin for this CDN URL is `http://<yourCloudService>.chinacloudapp.cn/bundles/jquery?v=<W.X.Y.Z>`, which is actually the virtual directory of the script bundle in your cloud service.
 	-	Since you are using CDN constructor, the CDN script tag for the bundle no longer contains the automatically generated version string in the rendered URL. You must manually generate a unique version string every time the script bundle is modified to force a cache miss at your Azure CDN. At the same time, this unique version string must remain constant through the life of the deployment to maximize cache hits at your Azure CDN after the bundle is deployed.
 	-	The query string v=<W.X.Y.Z> pulls from *Properties\AssemblyInfo.cs* in your Web role project. You can have a deployment workflow that includes incrementing the assembly version every time you publish to Azure. Or, you can just modify *Properties\AssemblyInfo.cs* in your project to automatically increment the version string every time you build, using the wildcard character '*'. For example:
 	
@@ -508,9 +504,9 @@ Follow the steps below to integration ASP.NET bundling and minification with you
 
 When your Azure CDN endpoint fails for any reason, you want your Web page to be smart enough to access your origin Web server as the fallback option for loading JavaScript or Bootstrap. It's serious enough to lose images on your website due to CDN unavailability, but much more severe to lose crucial page functionality provided by your scripts and stylesheets.
 
-The [Bundle](http://msdn.microsoft.com/library/system.web.optimization.bundle.aspx) class contains a property called [CdnFallbackExpression](http://msdn.microsoft.com/library/system.web.optimization.bundle.cdnfallbackexpression.aspx) that enables you to configure the fallback mechanism for CDN failure. To use this property, follow the steps below:
+The [Bundle](http://msdn.microsoft.com/zh-cn/library/system.web.optimization.bundle.aspx) class contains a property called [CdnFallbackExpression](http://msdn.microsoft.com/zh-cn/library/system.web.optimization.bundle.cdnfallbackexpression.aspx) that enables you to configure the fallback mechanism for CDN failure. To use this property, follow the steps below:
 
-1. In your Web role project, open *App_Start\BundleConfig.cs*, where you added a CDN URL in each [Bundle constructor](http://msdn.microsoft.com/library/jj646464.aspx), and make the following highlighted changes to add fallback mechanism to the default bundles:  
+1. In your Web role project, open *App_Start\BundleConfig.cs*, where you added a CDN URL in each [Bundle constructor](http://msdn.microsoft.com/zh-cn/library/jj646464.aspx), and make the following highlighted changes to add fallback mechanism to the default bundles:  
 
 		public static void RegisterBundles(BundleCollection bundles)
 		{
@@ -616,8 +612,8 @@ The [Bundle](http://msdn.microsoft.com/library/system.web.optimization.bundle.as
 	But since the first part of the || expression will always return true (in the line directly above that), the document.write() function will never run.
 
 ## More Information ##
-- [Overview of the Azure Content Delivery Network (CDN)](http://msdn.microsoft.com/library/azure/ff919703.aspx)
-- [Serve Content from Azure CDN in Your Web Application](cdn-serve-content-from-cdn-in-your-web-application.md)
-- [Integrate an Azure Website with Azure CDN](cdn-websites-with-cdn.md)
+- [Overview of the Azure Content Delivery Network (CDN)](http://msdn.microsoft.com/zh-cn/library/azure/ff919703.aspx)
+- [Serve Content from Azure CDN in Your Web Application](/documentation/articles/cdn-serve-content-from-cdn-in-your-web-application)
+- [Integrate an Azure Website with Azure CDN](/documentation/articles/cdn-websites-with-cdn)
 - [ASP.NET Bundling and Minification](http://www.asp.net/mvc/tutorials/mvc-4/bundling-and-minification)
-- [Using CDN for Azure](cdn-how-to-use.md)
+- [Using CDN for Azure](/documentation/articles/cdn-how-to-use)

@@ -1,19 +1,15 @@
 <properties 
-   pageTitle="ExpressRoute circuits and routing domains | Microsoft Azure"
+   pageTitle="ExpressRoute circuits and routing domains | Windows Azure"
    description="This page provides an overview of ExpressRoute circuits and the routing domains."
    documentationCenter="na"
    services="expressroute"
    authors="cherylmc"
    manager="carolz"
    editor=""/>
-<tags 
-   ms.service="expressroute"
-   ms.devlang="na"
-   ms.topic="article" 
-   ms.tgt_pltfrm="na"
-   ms.workload="infrastructure-services" 
-   ms.date="09/22/2015"
-   ms.author="cherylmc"/>
+<tags
+	ms.service="expressroute"
+	ms.date="09/22/2015"
+	wacn.date=""/>
 
 # ExpressRoute circuits and routing domains
 
@@ -33,7 +29,7 @@ Each circuit has a fixed bandwidth (50 Mbps, 100 Mbps, 200 Mbps, 500 Mbps, 1 Gbp
 
 ### Quotas, limits, and limitations
 
-Default quotas and limits apply for every ExpressRoute circuit. Refer to the [Azure Subscription and Service Limits, Quotas, and Constraints](../articles/azure-subscription-service-limits.md) page for up-to-date information on quotas.
+Default quotas and limits apply for every ExpressRoute circuit. Refer to the [Azure Subscription and Service Limits, Quotas, and Constraints](/documentation/articles/azure-subscription-service-limits) page for up-to-date information on quotas.
 
 ## ExpressRoute routing domains
 
@@ -45,25 +41,25 @@ An ExpressRoute circuit has multiple routing domains associated with it: Azure p
 
 ### Private peering
 
-Azure compute services, namely virtual machines (IaaS) and cloud services (PaaS), that are deployed within a virtual network can be connected through the private peering domain. The private peering domain is considered to be a trusted extension of your core network into Microsoft Azure. You can set up bi-directional connectivity between your core network and Azure virtual networks (VNets). This will let you connect to virtual machines and cloud services directly on their private IP addresses.  
+Azure compute services, namely virtual machines (IaaS) and cloud services (PaaS), that are deployed within a virtual network can be connected through the private peering domain. The private peering domain is considered to be a trusted extension of your core network into Windows Azure. You can set up bi-directional connectivity between your core network and Azure virtual networks (VNets). This will let you connect to virtual machines and cloud services directly on their private IP addresses.  
 
-You can connect more than one virtual network to the private peering domain. Review the [FAQ page](expressroute-faqs.md) for information on limits and limitations. You can visit the [Azure Subscription and Service Limits, Quotas, and Constraints](../articles/azure-subscription-service-limits.md) page for up-to-date information on limits.  Refer to the [Routing](expressroute-routing.md) page for detailed information on routing configuration.
+You can connect more than one virtual network to the private peering domain. Review the [FAQ page](/documentation/articles/expressroute-faqs) for information on limits and limitations. You can visit the [Azure Subscription and Service Limits, Quotas, and Constraints](/documentation/articles/azure-subscription-service-limits) page for up-to-date information on limits.  Refer to the [Routing](/documentation/articles/expressroute-routing) page for detailed information on routing configuration.
 
 ### Public peering
 
 Services such as Azure Storage, SQL databases and Websites are offered on public IP addresses. You can privately connect to services hosted on public IP addresses, including VIPs of your cloud services, through the public peering routing domain. You can connect the public peering domain to your DMZ and connect to all Azure services on their public IP addresses from your WAN without having to connect through the internet. 
 
-Connectivity is always initiated from your WAN to Microsoft Azure services. Microsoft Azure services will not be able to initiate connections into your network through this routing domain. Once public peering is enabled, you will be able to connect to all Azure services. We do not allow you to selectively pick services for which we advertise routes to. You can review the list of prefixes we advertise to you through this peering on the [Microsoft Azure Datacenter IP Ranges](http://www.microsoft.com/download/details.aspx?id=41653) page. The page is updated weekly.
+Connectivity is always initiated from your WAN to Windows Azure services. Windows Azure services will not be able to initiate connections into your network through this routing domain. Once public peering is enabled, you will be able to connect to all Azure services. We do not allow you to selectively pick services for which we advertise routes to. You can review the list of prefixes we advertise to you through this peering on the [Windows Azure Datacenter IP Ranges](http://www.microsoft.com/download/details.aspx?id=41653) page. The page is updated weekly.
 
-You can define custom route filters within your network to consume only the routes you need. Refer to the  [Routing](expressroute-routing.md) page for detailed information on routing configuration. You can define custom route filters within your network to consume only the routes you need. 
+You can define custom route filters within your network to consume only the routes you need. Refer to the  [Routing](/documentation/articles/expressroute-routing) page for detailed information on routing configuration. You can define custom route filters within your network to consume only the routes you need. 
 
-See the [FAQ page](expressroute-faqs.md) for more information on services supported through the public peering routing domain. 
+See the [FAQ page](/documentation/articles/expressroute-faqs) for more information on services supported through the public peering routing domain. 
  
 ### Microsoft peering
 
-Connectivity to all other Microsoft online services (such as Office 365 services) will be through the Microsoft peering. We enable bi-directional connectivity between your WAN and Microsoft cloud services through the Microsoft peering routing domain. You must connect to Microsoft cloud services only over public IP addresses that are owned by you or your connectivity provider and you must adhere to all the defined rules. See the [ExpressRoute prerequisites](expressroute-prerequisites.md) page for more information.
+Connectivity to all other Microsoft online services (such as Office 365 services) will be through the Microsoft peering. We enable bi-directional connectivity between your WAN and Microsoft cloud services through the Microsoft peering routing domain. You must connect to Microsoft cloud services only over public IP addresses that are owned by you or your connectivity provider and you must adhere to all the defined rules. See the [ExpressRoute prerequisites](/documentation/articles/expressroute-prerequisites) page for more information.
 
-See the [FAQ page](expressroute-faqs.md) for more information on services supported, costs, and configuration details. See the [ExpressRoute Locations](expressroute-locations.md) page for information on the list of connectivity providers offering Microsoft peering support.
+See the [FAQ page](/documentation/articles/expressroute-faqs) for more information on services supported, costs, and configuration details. See the [ExpressRoute Locations](/documentation/articles/expressroute-locations) page for information on the list of connectivity providers offering Microsoft peering support.
 
 ## Routing domain comparison
 
@@ -79,13 +75,13 @@ The table below compares the three routing domains.
 
 You can choose to enable one or more of the routing domains as part of their ExpressRoute circuit. You can choose to have all the routing domains put on the same VPN if you want to combine them into a single routing domain. You can also put them on different routing domains, similar to the diagram. The recommended configuration is that private peering is connected directly to the core network, and the public and Microsoft peering links are connected to your DMZ.
  
-If you choose to have all three peering sessions, you must have three pairs of BGP sessions (one pair for each peering type). The BGP session pairs provide a highly available link. If you are connecting through layer 2 connectivity providers, you will be responsible for configuring and managing routing . You can learn more by reviewing the [workflows](expressroute-workflows.md) for setting up ExpressRoute.
+If you choose to have all three peering sessions, you must have three pairs of BGP sessions (one pair for each peering type). The BGP session pairs provide a highly available link. If you are connecting through layer 2 connectivity providers, you will be responsible for configuring and managing routing . You can learn more by reviewing the [workflows](/documentation/articles/expressroute-workflows) for setting up ExpressRoute.
 
 ## Next steps
 
-- Find a service provider. See [ExpressRoute service providers and locations](expressroute-locations.md).
-- Ensure that all prerequisites are met. See [ExpressRoute prerequisites](expressroute-prerequisites.md).
+- Find a service provider. See [ExpressRoute service providers and locations](/documentation/articles/expressroute-locations).
+- Ensure that all prerequisites are met. See [ExpressRoute prerequisites](/documentation/articles/expressroute-prerequisites).
 - Configure your ExpressRoute connection.
-	- [Create an ExpressRoute circuit](expressroute-howto-circuit-classic.md)
-	- [Configure routing (circuit peerings)](expressroute-howto-routing-classic.md)
-	- [Link a VNet to an ExpressRoute circuit](expressroute-howto-linkvnet-classic.md)
+	- [Create an ExpressRoute circuit](/documentation/articles/expressroute-howto-circuit-classic)
+	- [Configure routing (circuit peerings)](/documentation/articles/expressroute-howto-routing-classic)
+	- [Link a VNet to an ExpressRoute circuit](/documentation/articles/expressroute-howto-linkvnet-classic)

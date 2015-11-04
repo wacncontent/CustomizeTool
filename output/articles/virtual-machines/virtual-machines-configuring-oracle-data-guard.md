@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Configuring Oracle Data Guard in VMs | Microsoft Azure"
+	pageTitle="Configuring Oracle Data Guard in VMs | Windows Azure"
 	description="Step through a tutorial for setting up and implementing Oracle Data Guard on Azure virtual machines for high availability and disaster recovery."
 	services="virtual-machines"
 	authors="bbenz"
@@ -7,16 +7,12 @@
 	tags="azure-service-management"/>
 <tags
 	ms.service="virtual-machines"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.tgt_pltfrm="vm-windows"
-	ms.workload="infrastructure-services"
 	ms.date="06/22/2015"
-	ms.author="bbenz" />
+	wacn.date=""/>
 
 #Configuring Oracle Data Guard for Azure
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
 
 
 This tutorial demonstrates how to setup and implement Oracle Data Guard in Azure Virtual Machines environment for high availability and disaster recovery. The tutorial focuses on one way replication for non-RAC Oracle databases.
@@ -27,11 +23,11 @@ This tutorial assumes that you already have theoretical and practical knowledge 
 
 In addition, the tutorial assumes that you have already implemented the following prerequisites:
 
-- You’ve already reviewed the High Availability and Disaster Recovery Considerations section in the [Oracle Virtual Machine images - Miscellaneous Considerations](virtual-machines-miscellaneous-considerations-oracle-virtual-machine-images.md) topic. Note that Azure supports standalone Oracle Database instances but not Oracle Real Application Clusters (Oracle RAC) currently.
+- You’ve already reviewed the High Availability and Disaster Recovery Considerations section in the [Oracle Virtual Machine images - Miscellaneous Considerations](/documentation/articles/virtual-machines-miscellaneous-considerations-oracle-virtual-machine-images) topic. Note that Azure supports standalone Oracle Database instances but not Oracle Real Application Clusters (Oracle RAC) currently.
 
-- You have created two Virtual Machines (VMs) in Azure using the same platform provided Oracle Enterprise Edition image on Windows Server. For information, see [Creating an Oracle Database 12c Virtual Machine in Azure](virtual-machines-creating-oracle-webLogic-server-12c-virtual-machine.md) and [Azure Virtual Machines](http://azure.microsoft.com/documentation/services/virtual-machines/). Make sure that the Virtual Machines are in the [same cloud service](virtual-machines-load-balance.md) and in the same [Virtual Network](azure.microsoft.com/documentation/services/virtual-network/) to ensure they can access each other over the persistent private IP address. Additionally, it is recommended to place the VMs in the same [availability set](virtual-machines-manage-availability.md) to allow Azure to place them into separate fault domains and upgrade domains. Note that Oracle Data Guard is only available with Oracle Database Enterprise Edition. Each machine must have at least 2 GB of memory and 5 GB of disk space. For the most up-to-date information on the platform provided VM sizes, see [Virtual Machine Sizes for Azure](http://msdn.microsoft.com/en-us/library/dn197896.aspx). If you need additional disk volume for your VMs, you can attach additional disks. For information, see [How to Attach a Data Disk to a Virtual Machine](storage-windows-attach-disk.md).
+- You have created two Virtual Machines (VMs) in Azure using the same platform provided Oracle Enterprise Edition image on Windows Server. For information, see [Creating an Oracle Database 12c Virtual Machine in Azure](/documentation/articles/virtual-machines-creating-oracle-webLogic-server-12c-virtual-machine) and [Azure Virtual Machines](/documentation/services/virtual-machines/). Make sure that the Virtual Machines are in the [same cloud service](/documentation/articles/virtual-machines-load-balance) and in the same [Virtual Network](azure.microsoft.com/documentation/services/networking/) to ensure they can access each other over the persistent private IP address. Additionally, it is recommended to place the VMs in the same [availability set](/documentation/articles/virtual-machines-manage-availability) to allow Azure to place them into separate fault domains and upgrade domains. Note that Oracle Data Guard is only available with Oracle Database Enterprise Edition. Each machine must have at least 2 GB of memory and 5 GB of disk space. For the most up-to-date information on the platform provided VM sizes, see [Virtual Machine Sizes for Azure](http://msdn.microsoft.com/zh-cn/library/dn197896.aspx). If you need additional disk volume for your VMs, you can attach additional disks. For information, see [How to Attach a Data Disk to a Virtual Machine](/documentation/articles/storage-windows-attach-disk).
 
-- You’ve set the Virtual Machine names as “Machine1” for the primary VM and “Machine2” for the standby VM at the Azure Portal.
+- You’ve set the Virtual Machine names as “Machine1” for the primary VM and “Machine2” for the standby VM at the Azure Management Portal.
 
 - You’ve set the **ORACLE_HOME** environment variable to point to the same oracle root installation path in the primary and standby Virtual Machines, such as `C:\OracleDatabase\product\11.2.0\dbhome_1\database`.
 
@@ -82,7 +78,7 @@ Create a physical standby database
 >| **Oracle Release**   | Oracle11g Enterprise Release (11.2.0.4.0) | Oracle11g Enterprise Release (11.2.0.4.0) |
 >| **Machine Name**     | Machine1                                  | Machine2                                  |
 >| **Operating System** | Windows 2008 R2                           | Windows 2008 R2                           |
->| **Oracle SID**       | TEST                                      | TEST\_STBY                                |
+>| **Oracle SID**       | TEST                                      | TEST_STBY                                |
 >| **Memory**           | Min 2 GB                                  | Min 2 GB                                  |
 >| **Disk Space**       | Min 5 GB                                  | Min 5 GB                                  |
 
@@ -136,9 +132,9 @@ To be able to ship and apply archived logs from the Primary server to the Standb
 
 >[AZURE.IMPORTANT] When using Oracle Database 12c, there is a new user, **SYSDG**, which you can use to administer Oracle Data Guard. For more information, see [Changes in Oracle Database 12c Release](http://docs.oracle.com/cd/E16655_01/server.121/e10638/release_changes.htm).
 
-In addition, make sure that the ORACLE\_HOME environment is already defined in Machine1. If not, define it as an environment variable using the Environment Variables dialog box. To access this dialog box, start the **System** utility by double-clicking the System icon in the **Control Panel**; then click the **Advanced** tab and choose **Environment Variables**. Click the **New** button under the **System Variables** to set the environment variables. After setting up the environment variables, close the existing Windows command prompt and open up a new one.
+In addition, make sure that the ORACLE_HOME environment is already defined in Machine1. If not, define it as an environment variable using the Environment Variables dialog box. To access this dialog box, start the **System** utility by double-clicking the System icon in the **Control Panel**; then click the **Advanced** tab and choose **Environment Variables**. Click the **New** button under the **System Variables** to set the environment variables. After setting up the environment variables, close the existing Windows command prompt and open up a new one.
 
-Run the following statement to switch to the Oracle\_Home directory, such as C:\\OracleDatabase\\product\\11.2.0\\dbhome\_1\\database.
+Run the following statement to switch to the Oracle_Home directory, such as C:\\OracleDatabase\\product\\11.2.0\\dbhome_1\\database.
 
 	cd %ORACLE_HOME%\database
 
@@ -146,7 +142,7 @@ Then, create a password file using the password file creation utility, [ORAPWD](
 
 	ORAPWD FILE=PWDTEST.ora PASSWORD=password FORCE=y
 
-This command creates a password file, named as PWDTEST.ora, in the ORACLE\_HOME\\database directory. You should copy this file to %ORACLE\_HOME%\\database directory in Machine2 manually.
+This command creates a password file, named as PWDTEST.ora, in the ORACLE_HOME\\database directory. You should copy this file to %ORACLE_HOME%\\database directory in Machine2 manually.
 
 #### Configure a standby redo log
 
@@ -241,7 +237,7 @@ You can control the Data Guard environment using the parameters in the INIT.ORA 
 	SQL> create pfile from spfile;
 	File created.
 
-Next, you need to edit the pfile to add the standby parameters. To do this, open the INITTEST.ORA file in the location of %ORACLE\_HOME%\\database. Next, append the following statements to the INITTEST.ora file. Note that the naming convention for your INIT.ORA file is INIT\<YourDatabaseName\>.ORA.
+Next, you need to edit the pfile to add the standby parameters. To do this, open the INITTEST.ORA file in the location of %ORACLE_HOME%\\database. Next, append the following statements to the INITTEST.ora file. Note that the naming convention for your INIT.ORA file is INIT\<YourDatabaseName\>.ORA.
 
 	db_name='TEST'
 	db_unique_name='TEST'
@@ -291,7 +287,7 @@ Next, run startup nomount command as follows:
 
 Now, create a spfile:
 
-	SQL>create spfile frompfile='c:\OracleDatabase\product\11.2.0\dbhome\_1\database\initTEST.ora';
+	SQL>create spfile frompfile='c:\OracleDatabase\product\11.2.0\dbhome_1\database\initTEST.ora';
 
 	File created.
 
@@ -316,9 +312,9 @@ Then, use the startup command to start an instance:
 ##Create a physical standby database
 This section focuses on the steps that you must perform in Machine2 to prepare the physical standby database.
 
-First, you need to remote desktop to Machine2 via the Azure Portal.
+First, you need to remote desktop to Machine2 via the Azure Management Portal.
 
-Then, on the Standby Server (Machine2), create all the necessary folders for the standby database, such as C:\\\<YourLocalFolder\>\\TEST. While following this tutorial, make sure that the folder structure matches the folder structure on Machine1 to keep all the necessary files, such as controlfile, datafiles, redologfiles, udump, bdump and cdump files. In addition, define the ORACLE\_HOME and ORACLE\_BASE environment variables in Machine2. If not, define them as an environment variable using the Environment Variables dialog box. To access this dialog box, start the **System** utility by double-clicking the System icon in the **Control Panel**; then click the **Advanced** tab and choose **Environment Variables**. Click the **New** button under the **System Variables** to set the environment variables. After setting up the environment variables, you need to close the existing Windows command prompt and open up a new one to see the changes.
+Then, on the Standby Server (Machine2), create all the necessary folders for the standby database, such as C:\\\<YourLocalFolder\>\\TEST. While following this tutorial, make sure that the folder structure matches the folder structure on Machine1 to keep all the necessary files, such as controlfile, datafiles, redologfiles, udump, bdump and cdump files. In addition, define the ORACLE_HOME and ORACLE_BASE environment variables in Machine2. If not, define them as an environment variable using the Environment Variables dialog box. To access this dialog box, start the **System** utility by double-clicking the System icon in the **Control Panel**; then click the **Advanced** tab and choose **Environment Variables**. Click the **New** button under the **System Variables** to set the environment variables. After setting up the environment variables, you need to close the existing Windows command prompt and open up a new one to see the changes.
 
 Next, follow these steps:
 
@@ -342,7 +338,7 @@ Next, follow these steps:
 
 ### 1. Prepare an initialization parameter file for standby database
 
-This section demonstrates how to prepare an initialization parameter file for the standby database. To do this, first copy the INITTEST.ORA file from Machine 1 to Machine2 manually. You should be able to see the INITTEST.ORA file in the %ORACLE\_HOME%\\database folder in both machines. Then, modify the INITTEST.ora file in Machine2 to set it up for the standby role as specified below:
+This section demonstrates how to prepare an initialization parameter file for the standby database. To do this, first copy the INITTEST.ORA file from Machine 1 to Machine2 manually. You should be able to see the INITTEST.ORA file in the %ORACLE_HOME%\\database folder in both machines. Then, modify the INITTEST.ora file in Machine2 to set it up for the standby role as specified below:
 
 	db_name='TEST'
 	db_unique_name='TEST_STBY'
@@ -368,16 +364,16 @@ The previous statement block includes two important setup items:
 
 Then, you need to start the standby instance. On the standby database server, enter the following command at a Windows command prompt to create an Oracle instance by creating a new Windows service:
 
-	oradim -NEW -SID TEST\_STBY -STARTMODE MANUAL
+	oradim -NEW -SID TEST_STBY -STARTMODE MANUAL
 
-Note that the **Oradim** command creates an Oracle instance but does not start it. You can find it in the C:\\OracleDatabase\\product\\11.2.0\\dbhome\_1\\BIN directory.
+Note that the **Oradim** command creates an Oracle instance but does not start it. You can find it in the C:\\OracleDatabase\\product\\11.2.0\\dbhome_1\\BIN directory.
 
 ##Configure the listener and tnsnames to support the database on primary and standby machines
 Before you create a standby database, you need to make sure that the primary and standby databases in your configuration can talk to each other. To do this, you need to configure both the listener and TNSNames either manually or by using the network configuration utility NETCA. This is a mandatory task when you use the Recovery Manager utility (RMAN).
 
 ### Configure listener.ora on both servers to hold entries for both databases
 
-Remote desktop to Machine1 and edit the listener.ora file as specified below. When you edit the listener.ora file, always make sure that the opening and closing parenthesis line up in the same column. You can find the listener.ora file in the following folder: c:\\OracleDatabase\\product\\11.2.0\\dbhome\_1\\NETWORK\\ADMIN\\.
+Remote desktop to Machine1 and edit the listener.ora file as specified below. When you edit the listener.ora file, always make sure that the opening and closing parenthesis line up in the same column. You can find the listener.ora file in the following folder: c:\\OracleDatabase\\product\\11.2.0\\dbhome_1\\NETWORK\\ADMIN\\.
 
 	# listener.ora Network Configuration File: C:\OracleDatabase\product\11.2.0\dbhome_1\network\admin\listener.ora
 
@@ -427,7 +423,7 @@ Next, remote desktop to Machine2 and edit the listener.ora file as follows:
 
 ### Configure tnsnames.ora on the primary and standby Virtual Machines to hold entries for both primary and standby databases
 
-Remote desktop to Machine1 and edit the tnsnames.ora file as specified below. You can find the tnsnames.ora file in the following folder: c:\\OracleDatabase\\product\\11.2.0\\dbhome\_1\\NETWORK\\ADMIN\\.
+Remote desktop to Machine1 and edit the tnsnames.ora file as specified below. You can find the tnsnames.ora file in the following folder: c:\\OracleDatabase\\product\\11.2.0\\dbhome_1\\NETWORK\\ADMIN\\.
 
 	TEST =
 	  (DESCRIPTION =
@@ -627,4 +623,4 @@ If you have not enabled flashback on the original primary database, it’s recom
 We recommend that you enable flashback database on the primary and the standby databases. When a failover happens, the primary database can be flashed back to the time before the failover and quickly converted to a standby database.
 
 ##Additional Resources
-[Oracle Virtual Machine images for Azure](virtual-machines-oracle-list-oracle-virtual-machine-images.md)
+[Oracle Virtual Machine images for Azure](/documentation/articles/virtual-machines-oracle-list-oracle-virtual-machine-images)

@@ -7,14 +7,10 @@
 	manager="mkjain" 
 	editor=""/>
 
-<tags 
-	ms.service="site-recovery" 
-	ms.devlang="na"
-	ms.topic="article"
-	ms.tgt_pltfrm="na"
-	ms.workload="storage-backup-recovery" 
-	ms.date="09/01/2015" 
-	ms.author="anbacker"/>
+<tags
+	ms.service="site-recovery"
+	ms.date="09/01/2015"
+	wacn.date=""/>
 	
 # Monitor and troubleshoot protection for VMware, VMM, Hyper-V and Physical sites
 
@@ -25,19 +21,19 @@ This Monitoring and Troubleshooting Guide enables you to learn tracking the repl
 ### VMware/Physical Site Deployment for replication between on-premises and Azure.
 To setup DR between on-premises VMware/Physical machine; Configuration Server, Master Target and Process Server needs to configured. While enabling protection for the source server Azure Site Recovery will install Mobility service. Post on-premises outage once the source server fails-over to Azure, customers needs to setup a Process Server in Azure and a Master Target server on-premises to protect the source server back to rebuilt on-premises. 
 
-![VMware/Physical Site Deployment for replication between on-premises & Azure](media/site-recovery-monitoring-and-troubleshooting/image18.png)
+![VMware/Physical Site Deployment for replication between on-premises & Azure](./media/site-recovery-monitoring-and-troubleshooting/image18.png)
 
 ### VMM Site Deployment for replication between on-premises site.
 
-As part of setting up DR between two on-premises location; Azure Site Recovery Provider needs to be downloaded and installed on the VMM server. Provider needs internet connectivity to ensure that all the operations triggered from Azure Portal gets translated to on-premises operations like enable protection, shutdown primary side virtual machines as part of failovers etc.
+As part of setting up DR between two on-premises location; Azure Site Recovery Provider needs to be downloaded and installed on the VMM server. Provider needs internet connectivity to ensure that all the operations triggered from Azure Management Portal gets translated to on-premises operations like enable protection, shutdown primary side virtual machines as part of failovers etc.
 
-![VMM Site Deployment for replication between on-premises site](media/site-recovery-monitoring-and-troubleshooting/image1.png)
+![VMM Site Deployment for replication between on-premises site](./media/site-recovery-monitoring-and-troubleshooting/image1.png)
 
 ### VMM Site Deployment for replication between on-premises & Azure.
 
 As part of setting up DR between on-premises & Azure; Azure Site Recovery Provider needs to be downloaded and installed on the VMM server along with Azure Recovery Services Agent which needs to be installed on each Hyper-V host. Refer [Understanding Site to Azure Protection](./site-recovery-understanding-site-to-azure-protection.md) for more information.
 
-![VMM Site Deployment for replication between on-premises & Azure](media/site-recovery-monitoring-and-troubleshooting/image2.png)
+![VMM Site Deployment for replication between on-premises & Azure](./media/site-recovery-monitoring-and-troubleshooting/image2.png)
 
 ### Hyper-V Site Deployment for replication between on-premises & Azure
 
@@ -47,39 +43,39 @@ This is same as that of VMM Deployment – only difference being Provider & Agen
 
 Every operation in ASR gets audited and is tracked under the “JOBS” tab. In case of any configuration, protection or recovery error navigate to the JOBS tab and see if there are any failures.
 
-![Monitor configuration, protection and recovery operations](media/site-recovery-monitoring-and-troubleshooting/image3.png)
+![Monitor configuration, protection and recovery operations](./media/site-recovery-monitoring-and-troubleshooting/image3.png)
 
 Once you find failures under the JOBS view, select the JOB and click ERROR DETAILS for that job.
 
-![Monitor configuration, protection and recovery operations](media/site-recovery-monitoring-and-troubleshooting/image4.png)
+![Monitor configuration, protection and recovery operations](./media/site-recovery-monitoring-and-troubleshooting/image4.png)
 
 The error details will help you identify possible cause and recommendation for the issue.
 
-![Monitor configuration, protection and recovery operations](media/site-recovery-monitoring-and-troubleshooting/image5.png)
+![Monitor configuration, protection and recovery operations](./media/site-recovery-monitoring-and-troubleshooting/image5.png)
 
 In the above case there seems to be another operation which is in progress because of which Protection configuration is failing. Ensure that you resolve the issue as per the recommendation – there-after click RESART to re-initiate the operation.
 
-![Monitor configuration, protection and recovery operations](media/site-recovery-monitoring-and-troubleshooting/image6.png)
+![Monitor configuration, protection and recovery operations](./media/site-recovery-monitoring-and-troubleshooting/image6.png)
 
 Option to RESTART is not available for all operations – for those which doesn’t have the RESTART option navigate back to the object and redo the operation once again. Every JOB can be cancelled at any point of time while in-progress using the CANCEL button.
 
-![Monitor configuration, protection and recovery operations](media/site-recovery-monitoring-and-troubleshooting/image7.png)
+![Monitor configuration, protection and recovery operations](./media/site-recovery-monitoring-and-troubleshooting/image7.png)
 
 ## Monitor replication health for virtual machine
 
-ASR provider central & remote monitoring through the Azure Portal for each of the protected entities. Navigate to the PROTECTED ITEMS there-after select VMM CLOUDS or PROTECTION GROUPS. VMM CLOUDS tab is only for VMM based deployments and all other scenarios have the protected entities under PROTECTION GROUPS tab.
+ASR provider central & remote monitoring through the Azure Management Portal for each of the protected entities. Navigate to the PROTECTED ITEMS there-after select VMM CLOUDS or PROTECTION GROUPS. VMM CLOUDS tab is only for VMM based deployments and all other scenarios have the protected entities under PROTECTION GROUPS tab.
 
-![Monitor replication health for virtual machine](media/site-recovery-monitoring-and-troubleshooting/image8.png)
+![Monitor replication health for virtual machine](./media/site-recovery-monitoring-and-troubleshooting/image8.png)
 
 There-after select the protected entity under the respective cloud or the protection group. Once you select the protected entity all allowed operations are shown in the bottom pane.
 
-![Monitor replication health for virtual machine](media/site-recovery-monitoring-and-troubleshooting/image9.png)
+![Monitor replication health for virtual machine](./media/site-recovery-monitoring-and-troubleshooting/image9.png)
 
 As shown above in-case the virtual machine HEALTH is critical – you can click the ERROR DETAILS button on the bottom to see the error. Based on the “Possible causes” and “Recommendation” mentioned resolve the issue.
 
-![Monitor replication health for virtual machine](media/site-recovery-monitoring-and-troubleshooting/image10.png)
+![Monitor replication health for virtual machine](./media/site-recovery-monitoring-and-troubleshooting/image10.png)
 
-![Monitor replication health for virtual machine](media/site-recovery-monitoring-and-troubleshooting/image11.png)
+![Monitor replication health for virtual machine](./media/site-recovery-monitoring-and-troubleshooting/image11.png)
 
 Note: If there are any active operations which are in-progress or failed then navigate to the JOBS view as mentioned earlier to view the JOB specific error.
 
@@ -88,15 +84,15 @@ Note: If there are any active operations which are in-progress or failed then na
 Connect to the on-premises Hyper-V manager console, select the virtual
 machine and see the replication health.
 
-![Troubleshoot on-premises Hyper-V issues](media/site-recovery-monitoring-and-troubleshooting/image12.png)
+![Troubleshoot on-premises Hyper-V issues](./media/site-recovery-monitoring-and-troubleshooting/image12.png)
 
 In this case *Replication Health* is being indicated as Critical – *View
 Replication Health* to see the details.
 
-![Troubleshoot on-premises Hyper-V issues](media/site-recovery-monitoring-and-troubleshooting/image13.png)
+![Troubleshoot on-premises Hyper-V issues](./media/site-recovery-monitoring-and-troubleshooting/image13.png)
 
 For cases where replication is paused for the virtual machine, right-click Select *Replication*->*Resume replication*
-![Troubleshoot on-premises Hyper-V issues](media/site-recovery-monitoring-and-troubleshooting/image19.png)
+![Troubleshoot on-premises Hyper-V issues](./media/site-recovery-monitoring-and-troubleshooting/image19.png)
 
 In case virtual machine migrates a new Hyper-V host (within the cluster or a standalone machine), which has been configured through ASR, replication for the virtual machine wouldn't be impacted. Ensure that the new Hyper-V host meets all the per-requisites and is configured using ASR.
 
@@ -105,26 +101,26 @@ In case virtual machine migrates a new Hyper-V host (within the cluster or a sta
 | Event  Sources               	| Details                                                                                                                                                                                        	|
 |-------------------------	|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------	|
 | **Applications and Service Logs/Microsoft/VirtualMachineManager/Server/Admin** (VMM Server)	|  This provides useful logging for troubleshooting many different VMM issues. |
-| **Applications and Service Logs/MicrosoftAzureRecoveryServices/Replication** (Hyper-V Host)	| This provides useful logging for troubleshooting many Microsoft Azure Recovery Services Agent issues. <br/> ![Event source for Hyper-V host](media/site-recovery-monitoring-and-troubleshooting/eventviewer03.png) |
-| **Applications and Service Logs/Microsoft/Azure Site Recovery/Provider/Operational** (Hyper-V Host)	| This provides useful logging for troubleshooting many Microsoft Azure Site Recovery Service issues. <br/> ![Event source for Hyper-V host](media/site-recovery-monitoring-and-troubleshooting/eventviewer02.png) |
-| **Applications and Service Logs/Microsoft/Windows/Hyper-V-VMMS/Admin** (Hyper-V Host)	| This provides useful logging for troubleshooting many Hyper-V virtual machine management issues. <br/> ![Event source for Hyper-V host](media/site-recovery-monitoring-and-troubleshooting/eventviewer01.png) |
+| **Applications and Service Logs/MicrosoftAzureRecoveryServices/Replication** (Hyper-V Host)	| This provides useful logging for troubleshooting many Windows Azure Recovery Services Agent issues. <br/> ![Event source for Hyper-V host](./media/site-recovery-monitoring-and-troubleshooting/eventviewer03.png) |
+| **Applications and Service Logs/Microsoft/Azure Site Recovery/Provider/Operational** (Hyper-V Host)	| This provides useful logging for troubleshooting many Windows Azure Site Recovery Service issues. <br/> ![Event source for Hyper-V host](./media/site-recovery-monitoring-and-troubleshooting/eventviewer02.png) |
+| **Applications and Service Logs/Microsoft/Windows/Hyper-V-VMMS/Admin** (Hyper-V Host)	| This provides useful logging for troubleshooting many Hyper-V virtual machine management issues. <br/> ![Event source for Hyper-V host](./media/site-recovery-monitoring-and-troubleshooting/eventviewer01.png) |
 
 
 ### Hyper-V Replication Logging Options
 
 All events pertaining to Hyper-V Replica are logged in the Hyper-V-VMMS\\Admin log located under **Applications and Services Logs\\Microsoft\\Windows**. In addition, an Analytic log can be enabled for Hyper-V-VMMS. To enable this log, first make the Analytic and Debug logs viewable in the Event Viewer. Open Event Viewer, then in the **View menu**, click **Show Analytic and Debug logs**.
 
-![Troubleshoot on-premises Hyper-V issues](media/site-recovery-monitoring-and-troubleshooting/image14.png)
+![Troubleshoot on-premises Hyper-V issues](./media/site-recovery-monitoring-and-troubleshooting/image14.png)
 
 An Analytic log is visible under Hyper-V-VMMS
 
-![Troubleshoot on-premises Hyper-V issues](media/site-recovery-monitoring-and-troubleshooting/image15.png)
+![Troubleshoot on-premises Hyper-V issues](./media/site-recovery-monitoring-and-troubleshooting/image15.png)
 
 In the **Actions** pane, click on **Enable Log**. Once enabled, it
 appears in **Performance Monitor** as an Event Trace Session located
 under **Data Collector Sets.**
 
-![Troubleshoot on-premises Hyper-V issues](media/site-recovery-monitoring-and-troubleshooting/image16.png)
+![Troubleshoot on-premises Hyper-V issues](./media/site-recovery-monitoring-and-troubleshooting/image16.png)
 
 To view the information collected, first stop the tracing session by disabling the log, and then save the log and re-open it in Event Viewer or use other tools to convert it as desired.
 
@@ -150,7 +146,7 @@ to collect the required logs.
 
 Tool collects the logs locally under a randomly named sub-folder under **%LocalAppData%\ElevatedDiagnostics**
 
-![Sample steps shown from Hyper-V site protection.](media/site-recovery-monitoring-and-troubleshooting/animate01.gif)
+![Sample steps shown from Hyper-V site protection.](./media/site-recovery-monitoring-and-troubleshooting/animate01.gif)
 
 ### Opening a support ticket
 

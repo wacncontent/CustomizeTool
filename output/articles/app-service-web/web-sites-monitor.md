@@ -55,7 +55,7 @@
 
 ##<a name="howtoreceivealerts"></a>How to: Receive alerts from web app metrics
 
-In **Standard** web app mode, you can receive alerts based on your web app monitoring metrics. The alert feature requires that you first configure a web endpoint for monitoring, which you can do in the **Monitoring** section of the **Configure** page. You can also choose to have email sent when a metric you choose reaches a value that you specify. For more information, see [How to: Receive Alert Notifications and Manage Alert Rules in Azure](http://go.microsoft.com/fwlink/?LinkId=309356).  
+In **Standard** web app mode, you can receive alerts based on your web app monitoring metrics. The alert feature requires that you first configure a web endpoint for monitoring, which you can do in the **Monitoring** section of the **Configure** page. You can also choose to have email sent when a metric you choose reaches a value that you specify. For more information, see [How to: Receive Alert Notifications and Manage Alert Rules in Azure](https://msdn.microsoft.com/zh-cn/library/azure/dn306638.aspx).  
 
 ##<a name="howtoviewusage"></a>How to: View usage quotas for a web app
 
@@ -244,7 +244,7 @@ The .htm files include the following sections:
 
 **Log File Type: Web Server Logging**
 
-- Location: /LogFiles/http/RawLogs. The information stored in the files is formatted using the [W3C extended log format](http://go.microsoft.com/fwlink/?LinkID=90561). The s-computername, s-ip and cs-version fields are not used by Azure web apps.
+- Location: /LogFiles/http/RawLogs. The information stored in the files is formatted using the [W3C extended log format](http://www.w3.org/TR/WD-logfile.html). The s-computername, s-ip and cs-version fields are not used by Azure web apps.
 
 - Read Files with: Log Parser. Used to parse and query IIS log files. Log Parser 2.2 is available on the Microsoft Download Center at <a href="http://go.microsoft.com/fwlink/?LinkId=246619">http://go.microsoft.com/fwlink/?LinkId=246619</a>.
 

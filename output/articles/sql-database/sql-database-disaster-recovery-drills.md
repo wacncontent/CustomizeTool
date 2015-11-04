@@ -8,13 +8,9 @@
    editor="monicar"/>
 
 <tags
-   ms.service="sql-database"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="data-management" 
-   ms.date="07/15/2015"
-   ms.author="mihaelab"/>
+	ms.service="sql-database"
+	ms.date="07/15/2015"
+	wacn.date=""/>
 
 #Performing Disaster Recovery Drill
 
@@ -26,7 +22,7 @@ Performing a disaster recovery drill consists of:
 - Recovering 
 - Validate application integrity post recovery
 
-Depending how you [design for business continuity](sql-database-business-continuity.md), the workflow to execute the drill can vary. Below we describe the best practices conducting a disaster recovery drill in the context of Azure SQL Database. 
+Depending how you [design for business continuity](/documentation/articles/sql-database-business-continuity), the workflow to execute the drill can vary. Below we describe the best practices conducting a disaster recovery drill in the context of Azure SQL Database. 
 
 ##Geo-Restore
 
@@ -38,8 +34,8 @@ To prevent the potential data loss when conducting a disaster recovery drill, we
 
 ####Recovery
 
-- Perform the Geo-Restore of the database into a different server as described [here](sql-database-disaster-recovery.md). 
-- Change the application configuration to connect to the recovered database(s) and follow the [Finalize a Recovered Database](sql-database-recovered-finalize.md) guide to complete the recovery.
+- Perform the Geo-Restore of the database into a different server as described [here](/documentation/articles/sql-database-disaster-recovery). 
+- Change the application configuration to connect to the recovered database(s) and follow the [Finalize a Recovered Database](/documentation/articles/sql-database-recovered-finalize) guide to complete the recovery.
 
 ####Validation
 
@@ -52,12 +48,12 @@ A database that is protected using Standard Geo-Replication can only have one no
 ####Outage simulation
 
 - Simulate workload on primary database. If the primary is active at the time of termination data loss might occur, which will make the drill more realistic.
-- Delete the primary database or [perform forced termination](sql-database-disaster-recovery.md) of the link on the secondary database side.
+- Delete the primary database or [perform forced termination](/documentation/articles/sql-database-disaster-recovery) of the link on the secondary database side.
 
 ####Recovery
 
 - Change the application configuration to connect to the former read-only secondary which will become fully accessible and the application can use it as the new primary. 
-- Follow the [Finalize a Recovered Database](sql-database-recovered-finalize.md) guide to complete the recovery.
+- Follow the [Finalize a Recovered Database](/documentation/articles/sql-database-recovered-finalize) guide to complete the recovery.
 
 ####Validation
 
@@ -69,13 +65,13 @@ The disaster recovery drill will be conducted by using a parallel target server 
 
 ####Outage simulation
 
-- [Create a new active geo-replication link](sql-database-business-continuity-design.md) from primary database to a secondary test server. If the primary is active at the time of termination the data loss might occur, which will make the drill more realistic.
-- [Perform forced termination](sql-database-disaster-recovery.md) of the link on the secondary database which resides on the test server.
+- [Create a new active geo-replication link](/documentation/articles/sql-database-business-continuity-design) from primary database to a secondary test server. If the primary is active at the time of termination the data loss might occur, which will make the drill more realistic.
+- [Perform forced termination](/documentation/articles/sql-database-disaster-recovery) of the link on the secondary database which resides on the test server.
 
 ####Recovery
 
 - Change the application configuration to connect to the former read only secondary which will become available for writes after termination.
-- Follow the [Finalize a Recovered Database](sql-database-recovered-finalize.md) guide to complete the recovery.
+- Follow the [Finalize a Recovered Database](/documentation/articles/sql-database-recovered-finalize) guide to complete the recovery.
 
 ####Validation
 

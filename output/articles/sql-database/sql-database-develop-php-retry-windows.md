@@ -1,5 +1,5 @@
 <properties
-	pageTitle="PHP on Windows to SQL DB | Microsoft Azure"
+	pageTitle="PHP on Windows to SQL DB | Windows Azure"
 	description="Presents a sample PHP program that connects to Azure SQL Database from a Windows client with transient fault handling, and provides links to the necessary software components needed by the client."
 	services="sql-database"
 	documentationCenter=""
@@ -10,37 +10,33 @@
 
 <tags
 	ms.service="sql-database"
-	ms.workload="data-management"
-	ms.tgt_pltfrm="na"
-	ms.devlang="php"
-	ms.topic="article"
 	ms.date="07/21/2015"
-	ms.author="mebha"/>
+	wacn.date=""/>
 
 
 # Connect to SQL Database by using PHP on Windows with Transient Fault Handling
 
 
-[AZURE.INCLUDE [sql-database-develop-includes-selector-language-platform-depth](../../includes/sql-database-develop-includes-selector-language-platform-depth.md)]
+[AZURE.INCLUDE [sql-database-develop-includes-selector-language-platform-depth](../includes/sql-database-develop-includes-selector-language-platform-depth.md)]
 
 
 This topic illustrates how you can connect to Azure SQL Database from a client application written in PHP that runs on Windows.
 
 
-[AZURE.INCLUDE [sql-database-develop-includes-prerequisites-php-windows](../../includes/sql-database-develop-includes-prerequisites-php-windows.md)]
+[AZURE.INCLUDE [sql-database-develop-includes-prerequisites-php-windows](../includes/sql-database-develop-includes-prerequisites-php-windows.md)]
 
 
 ## Create a database and retrieve your connection string
 
 
-See the [Getting Started Topic](sql-database-get-started.md) to learn how to create a sample database and retrieve your connection string. It is important you follow the guide to create an **AdventureWorks database template**. The samples shown below only work with the **AdventureWorks schema**. 
+See the [Getting Started Topic](/documentation/articles/sql-database-get-started) to learn how to create a sample database and retrieve your connection string. It is important you follow the guide to create an **AdventureWorks database template**. The samples shown below only work with the **AdventureWorks schema**. 
 
 
 ## Connect and query your database 
 
 The demo program is designed so that a transient error during an attempt to connect leads to a retry. But a transient error during query command causes the program to discard the connection and create a new connection, before retrying the query command. We neither recommend nor disrecommend this design choice. The demo program illustrates some of the design flexibility that is available to you.
 
-<br>The length of this code sample is due mostly to the catch exception logic. A shorter version of this Program.cs file is available this [here](sql-database-develop-php-simple-windows.md).
+<br>The length of this code sample is due mostly to the catch exception logic. A shorter version of this Program.cs file is available this [here](/documentation/articles/sql-database-develop-php-simple-windows).
 <br>The Main method is in Program.cs. The callstack runs as follows:
 * Main calls ConnectAndQuery.
 * ConnectAndQuery calls EstablishConnection.
@@ -54,7 +50,7 @@ The [sqlsrv_query()](http://php.net/manual/en/function.sqlsrv-query.php) functio
 		$maxCountTriesConnectAndQuery = 3;  // You can adjust the various retry count values.
 		$secondsBetweenRetries = 4;  // Simple retry strategy.
 		$errNo = 0;
-		$serverName = "tcp:yourdatabase.database.windows.net,1433";
+		$serverName = "tcp:yourdatabase.database.chinacloudapi.cn,1433";
 		$connectionOptions = array("Database"=>"AdventureWorks",
 		   "Uid"=>"yourusername", "PWD"=>"yourpassword", "LoginTimeout" => $connectionTimeoutSeconds);
 		$conn;
@@ -136,6 +132,6 @@ The [sqlsrv_query()](http://php.net/manual/en/function.sqlsrv-query.php) functio
 	
 ## Next steps
 
-For more information regarding PHP installation and usage, see [Accessing SQL Server Databases with PHP](http://technet.microsoft.com/library/cc793139.aspx).
+For more information regarding PHP installation and usage, see [Accessing SQL Server Databases with PHP](http://technet.microsoft.com/zh-cn/library/cc793139.aspx).
 
  

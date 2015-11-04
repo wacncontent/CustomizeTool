@@ -7,14 +7,10 @@
 	manager="jeffreyg" 
 	authors="sidneyh"/>
 
-<tags 
-	ms.service="sql-database" 
-	ms.workload="sql-database" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="09/22/2015" 
-	ms.author="sidneyh" />
+<tags
+	ms.service="sql-database"
+	ms.date="09/22/2015"
+	wacn.date=""/>
 
 # Upgrade to the latest elastic database client library
 
@@ -37,7 +33,7 @@ Performing these steps in order ensures that old versions of the client library 
 
 **2. Upgrade your scripts.** If you are using **PowerShell** scripts to manage shards, [download the new library version](https://www.nuget.org/packages/Microsoft.Azure.SqlDatabase.ElasticScale.Client/) and copy it into the directory from which you execute scripts. 
 
-**3. Upgrade your split-merge service.** If you use the elastic database split-merge tool to reorganize sharded data, [download and deploy the latest version of the tool](https://www.nuget.org/packages/Microsoft.Azure.SqlDatabase.ElasticScale.Service.SplitMerge/). Detailed upgrade steps for the Service can be found [here](sql-database-elastic-scale-overview-split-and-merge.md). 
+**3. Upgrade your split-merge service.** If you use the elastic database split-merge tool to reorganize sharded data, [download and deploy the latest version of the tool](https://www.nuget.org/packages/Microsoft.Azure.SqlDatabase.ElasticScale.Service.SplitMerge/). Detailed upgrade steps for the Service can be found [here](/documentation/articles/sql-database-elastic-scale-overview-split-and-merge). 
 
 **4. Upgrade your Shard Map Manager DBs**. Upgrade the metadata supporting your Shard Maps in Azure SQL Database.  There are two ways you can accomplish this, using PowerShell or C#. Both options are shown below.
 
@@ -57,7 +53,7 @@ Performing these steps in order ensures that old versions of the client library 
  
 ***Option 2: Upgrade metadata using C#***
 
-Alternatively, create a Visual Studio application that opens your ShardMapManager, iterates over all shards, and performs the metadata upgrade by calling the methods [UpgradeLocalStore](https://msdn.microsoft.com/library/azure/microsoft.azure.sqldatabase.elasticscale.shardmanagement.shardmapmanager.upgradelocalstore.aspx) and [UpgradeGlobalStore](https://msdn.microsoft.com/library/azure/microsoft.azure.sqldatabase.elasticscale.shardmanagement.shardmapmanager.upgradeglobalstore.aspx) as in this example: 
+Alternatively, create a Visual Studio application that opens your ShardMapManager, iterates over all shards, and performs the metadata upgrade by calling the methods [UpgradeLocalStore](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.sqldatabase.elasticscale.shardmanagement.shardmapmanager.upgradelocalstore.aspx) and [UpgradeGlobalStore](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.sqldatabase.elasticscale.shardmanagement.shardmapmanager.upgradeglobalstore.aspx) as in this example: 
 
 	ShardMapManager smm =
 	   ShardMapManagerFactory.GetSqlShardMapManager
@@ -92,7 +88,7 @@ These techniques for metadata upgrades can be applied multiple times without har
 Initial Preview version 
 
 
-[AZURE.INCLUDE [elastic-scale-include](../../includes/elastic-scale-include.md)]  
+[AZURE.INCLUDE [elastic-scale-include](../includes/elastic-scale-include.md)]  
 
 
 <!--Image references-->

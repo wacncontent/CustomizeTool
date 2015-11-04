@@ -24,4 +24,4 @@ You have now created a new mobile service that can be used by your mobile apps.
 
 
 <!-- URLs. -->
-[Management Portal]: https://manage.windowsazure.cn/
+[Management Portal]: https://manage.windowsazure.com/

@@ -1,23 +1,19 @@
 <properties 
-   pageTitle="Service Bus queues, topics, and subscriptions | Microsoft Azure"
+   pageTitle="Service Bus queues, topics, and subscriptions | Windows Azure"
    description="Overview of Service Bus messaging entities."
    services="service-bus"
    documentationCenter="na"
    authors="sethmanheim"
    manager="timlt"
    editor="tysonn" />
-<tags 
-   ms.service="service-bus"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="na"
-   ms.date="09/04/2015"
-   ms.author="sethm" />
+<tags
+	ms.service="service-bus"
+	ms.date="09/04/2015"
+	wacn.date=""/>
 
 # Service Bus queues, topics, and subscriptions
 
-Microsoft Azure Service Bus supports a set of cloud-based, message-oriented-middleware technologies including reliable message queuing and durable publish/subscribe messaging. These brokered messaging capabilities can be thought of as decoupled messaging features that support publish-subscribe, temporal decoupling, and load balancing scenarios using the Service Bus messaging fabric. Decoupled communication has many advantages; for example, clients and servers can connect as needed and perform their operations in an asynchronous fashion.
+Windows Azure Service Bus supports a set of cloud-based, message-oriented-middleware technologies including reliable message queuing and durable publish/subscribe messaging. These brokered messaging capabilities can be thought of as decoupled messaging features that support publish-subscribe, temporal decoupling, and load balancing scenarios using the Service Bus messaging fabric. Decoupled communication has many advantages; for example, clients and servers can connect as needed and perform their operations in an asynchronous fashion.
 
 The messaging entities that form the core of the brokered messaging capabilities in Service Bus are queues, topics/subscriptions, rules/actions, and Event Hubs.
 
@@ -29,7 +25,7 @@ A related benefit is “load leveling,” which enables producers and consumers 
 
 Using queues to intermediate between message producers and consumers provides an inherent loose coupling between the components. Because producers and consumers are not aware of each other, a consumer can be upgraded without having any effect on the producer.
 
-Creating a queue is a multi-step process. You perform management operations for Service Bus messaging entities (both queues and topics) via the [Microsoft.ServiceBus.NamespaceManager](https://msdn.microsoft.com/library/azure/microsoft.servicebus.namespacemanager.aspx) class, which is constructed by supplying the base address of the Service Bus namespace and the user credentials. [NamespaceManager](https://msdn.microsoft.com/library/azure/microsoft.servicebus.namespacemanager.aspx) provides methods to create, enumerate and delete messaging entities. After creating a [Microsoft.ServiceBus.TokenProvider](https://msdn.microsoft.com/library/azure/microsoft.servicebus.tokenprovider.aspx) object from the SAS name and key, and a service namespace management object, you can use the the [Microsoft.ServiceBus.NamespaceManager.CreateQueue](https://msdn.microsoft.com/library/azure/hh293157.aspx) method to create the queue. For example:
+Creating a queue is a multi-step process. You perform management operations for Service Bus messaging entities (both queues and topics) via the [Microsoft.ServiceBus.NamespaceManager](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.namespacemanager.aspx) class, which is constructed by supplying the base address of the Service Bus namespace and the user credentials. [NamespaceManager](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.namespacemanager.aspx) provides methods to create, enumerate and delete messaging entities. After creating a [Microsoft.ServiceBus.TokenProvider](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.tokenprovider.aspx) object from the SAS name and key, and a service namespace management object, you can use the the [Microsoft.ServiceBus.NamespaceManager.CreateQueue](https://msdn.microsoft.com/zh-cn/library/azure/hh293157.aspx) method to create the queue. For example:
 
 ```
 // Create management credentials
@@ -71,15 +67,15 @@ while ((message = myQueueClient.Receive(new TimeSpan(hours: 0, minutes: 0, secon
     }
 ```
 
-In the [ReceiveAndDelete](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.receivemode.aspx) mode, the receive operation is single-shot; that is, when Service Bus receives the request, it marks the message as being consumed and returns it to the application. [ReceiveAndDelete](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.receivemode.aspx) mode is the simplest model and works best for scenarios in which the application can tolerate not processing a message in the event of a failure. To understand this, consider a scenario in which the consumer issues the receive request and then crashes before processing it. Because Service Bus marks the message as being consumed, when the application restarts and begins consuming messages again, it will have missed the message that was consumed prior to the crash.
+In the [ReceiveAndDelete](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.receivemode.aspx) mode, the receive operation is single-shot; that is, when Service Bus receives the request, it marks the message as being consumed and returns it to the application. [ReceiveAndDelete](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.receivemode.aspx) mode is the simplest model and works best for scenarios in which the application can tolerate not processing a message in the event of a failure. To understand this, consider a scenario in which the consumer issues the receive request and then crashes before processing it. Because Service Bus marks the message as being consumed, when the application restarts and begins consuming messages again, it will have missed the message that was consumed prior to the crash.
 
-In [PeekLock](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.receivemode.aspx) mode, the receive operation becomes two-stage, which makes it possible to support applications that cannot tolerate missing messages. When Service Bus receives the request, it finds the next message to be consumed, locks it to prevent other consumers from receiving it, and then returns it to the application. After the application finishes processing the message (or stores it reliably for future processing), it completes the second stage of the receive process by calling [Complete](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.brokeredmessage.complete.aspx) on the received message. When Service Bus sees the [Complete](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.brokeredmessage.complete.aspx) call, it marks the message as being consumed.
+In [PeekLock](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.receivemode.aspx) mode, the receive operation becomes two-stage, which makes it possible to support applications that cannot tolerate missing messages. When Service Bus receives the request, it finds the next message to be consumed, locks it to prevent other consumers from receiving it, and then returns it to the application. After the application finishes processing the message (or stores it reliably for future processing), it completes the second stage of the receive process by calling [Complete](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.brokeredmessage.complete.aspx) on the received message. When Service Bus sees the [Complete](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.brokeredmessage.complete.aspx) call, it marks the message as being consumed.
 
-If the application is unable to process the message for some reason, it can call the [Abandon](https://msdn.microsoft.com/library/azure/hh181837.aspx) method on the received message (instead of [Complete](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.brokeredmessage.complete.aspx)). This enables Service Bus to unlock the message and make it available to be received again, either by the same consumer or by another competing consumer. Secondly, there is a timeout associated with the lock and if the application fails to process the message before the lock timeout expires (for example, if the application crashes), then Service Bus unlocks the message and makes it available to be received again.
+If the application is unable to process the message for some reason, it can call the [Abandon](https://msdn.microsoft.com/zh-cn/library/azure/hh181837.aspx) method on the received message (instead of [Complete](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.brokeredmessage.complete.aspx)). This enables Service Bus to unlock the message and make it available to be received again, either by the same consumer or by another competing consumer. Secondly, there is a timeout associated with the lock and if the application fails to process the message before the lock timeout expires (for example, if the application crashes), then Service Bus unlocks the message and makes it available to be received again.
 
-Note that in the event that the application crashes after processing the message, but before the [Complete](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.brokeredmessage.complete.aspx) request is issued, the message is redelivered to the application when it restarts. This is often called *At Least Once *processing; that is, each message is processed at least once. However, in certain situations the same message may be redelivered. If the scenario cannot tolerate duplicate processing, then additional logic is required in the application to detect duplicates which can be achieved based upon the **MessageId** property of the message, which remains constant across delivery attempts. This is known as *Exactly Once* processing.
+Note that in the event that the application crashes after processing the message, but before the [Complete](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.brokeredmessage.complete.aspx) request is issued, the message is redelivered to the application when it restarts. This is often called *At Least Once *processing; that is, each message is processed at least once. However, in certain situations the same message may be redelivered. If the scenario cannot tolerate duplicate processing, then additional logic is required in the application to detect duplicates which can be achieved based upon the **MessageId** property of the message, which remains constant across delivery attempts. This is known as *Exactly Once* processing.
 
-For more information and a working example of how to create and send messages to and from queues, see the [Service Bus Brokered Messaging .NET Tutorial](https://msdn.microsoft.com/library/azure/hh367512.aspx).
+For more information and a working example of how to create and send messages to and from queues, see the [Service Bus Brokered Messaging .NET Tutorial](https://msdn.microsoft.com/zh-cn/library/azure/hh367512.aspx).
 
 ## Topics and subscriptions
 
@@ -87,7 +83,7 @@ In contrast to queues, in which each message is processed by a single consumer, 
 
 By way of comparison, the message-sending functionality of a queue maps directly to a topic and its message-receiving functionality maps to a subscription. Among other things, this means that subscriptions support the same patterns described earlier in this section with regard to queues: competing consumer, temporal decoupling, load leveling, and load balancing.
 
-Creating a topic is similar to creating a queue, as shown in the example in the previous section. Create the service URI, and then use the [NamespaceManager](https://msdn.microsoft.com/library/azure/microsoft.servicebus.namespacemanager.aspx) class to create the namespace client. You can then create a topic using the [CreateTopic](https://msdn.microsoft.com/library/azure/hh293080.aspx) method. For example:
+Creating a topic is similar to creating a queue, as shown in the example in the previous section. Create the service URI, and then use the [NamespaceManager](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.namespacemanager.aspx) class to create the namespace client. You can then create a topic using the [CreateTopic](https://msdn.microsoft.com/zh-cn/library/azure/hh293080.aspx) method. For example:
 
 ```
 TopicDescription dataCollectionTopic = namespaceClient.CreateTopic("DataCollectionTopic");
@@ -118,7 +114,7 @@ foreach (BrokeredMessage message in messageList)
 }
 ```
 
-Similar to queues, messages are received from a subscription using a [SubscriptionClient](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.subscriptionclient.aspx) object instead of a [QueueClient](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.queueclient.aspx) object. Create the subscription client, passing the name of the topic, the name of the subscription, and (optionally) the receive mode as parameters. For example, with the **Inventory** subscription:
+Similar to queues, messages are received from a subscription using a [SubscriptionClient](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.subscriptionclient.aspx) object instead of a [QueueClient](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.queueclient.aspx) object. Create the subscription client, passing the name of the topic, the name of the subscription, and (optionally) the receive mode as parameters. For example, with the **Inventory** subscription:
 
 ```
 // Create the subscription client
@@ -154,11 +150,11 @@ namespaceManager.CreateSubscription("IssueTrackingTopic", "Dashboard", new SqlFi
 
 With this subscription filter in place, only messages that have the `StoreName` property set to `Store1` are copied to the virtual queue for the `Dashboard` subscription.
 
-For more information about possible filter values, see the documentation for the [SqlFilter](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.sqlfilter.aspx) and [SqlRuleAction](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.sqlruleaction.aspx) classes. Also, see the [Brokered Messaging: Advanced Filters](http://code.msdn.microsoft.com/Brokered-Messaging-6b0d2749) sample.
+For more information about possible filter values, see the documentation for the [SqlFilter](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.sqlfilter.aspx) and [SqlRuleAction](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.sqlruleaction.aspx) classes. Also, see the [Brokered Messaging: Advanced Filters](http://code.msdn.microsoft.com/Brokered-Messaging-6b0d2749) sample.
 
 ## Event Hubs
 
-[Event Hubs](http://azure.microsoft.com/services/event-hubs/) is an event processing service, used to provide event and telemetry ingress to Azure at massive scale, with low latency and high reliability. This service, when used with other downstream services, is particularly useful in application instrumentation, user experience or workflow processing, and Internet of Things (IoT) scenarios.
+[Event Hubs](/home/features/event-hubs/) is an event processing service, used to provide event and telemetry ingress to Azure at massive scale, with low latency and high reliability. This service, when used with other downstream services, is particularly useful in application instrumentation, user experience or workflow processing, and Internet of Things (IoT) scenarios.
 
 Event Hubs are a message streaming construct, and although they may appear similar to queues and topics, they have very different characteristics. For example, Event Hubs do not provide message TTL, deadlettering, transactions, or acknowledgments as these are traditional brokered messaging features not streaming features. Event Hubs provide other stream-related features such as partitioning, preserving order, and stream replay.
 
@@ -166,8 +162,8 @@ Event Hubs are a message streaming construct, and although they may appear simil
 
 See the following advanced topics for more information and examples of using Service Bus brokered messaging entities.
 
-- [Service Bus messaging overview](service-bus-messaging-overview.md)
-- [Service Bus brokered messaging .NET tutorial](https://msdn.microsoft.com/library/azure/hh367512.aspx)
-- [Event Hubs developer guide](../event-hubs-programming-guide.md)
+- [Service Bus messaging overview](/documentation/articles/service-bus-messaging-overview)
+- [Service Bus brokered messaging .NET tutorial](https://msdn.microsoft.com/zh-cn/library/azure/hh367512.aspx)
+- [Event Hubs developer guide](/documentation/articles/event-hubs-programming-guide)
 - [Brokered Messaging: Advanced Filters](http://code.msdn.microsoft.com/Brokered-Messaging-6b0d2749)
 

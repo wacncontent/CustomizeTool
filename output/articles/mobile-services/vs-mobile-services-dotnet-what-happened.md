@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="What happened to my .NET project after adding Mobile Services by using Visual Studio Connected Services | Microsoft Azure" 
+	pageTitle="What happened to my .NET project after adding Mobile Services by using Visual Studio Connected Services | Windows Azure" 
 	description="Describes what happened in your Visual Studio .NET project after adding Azure Mobile Services by using Connected Services " 
 	services="mobile-services" 
 	documentationCenter="" 
@@ -7,20 +7,16 @@
 	manager="douge" 
 	editor=""/>
 
-<tags 
-	ms.service="mobile-services" 
-	ms.workload="mobile" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="dotnet" 
-	ms.topic="article" 
-	ms.date="09/17/2015" 
-	ms.author="patshea"/>
+<tags
+	ms.service="mobile-services"
+	ms.date="09/17/2015"
+	wacn.date=""/>
 
 # What happened to my Visual Studio .NET project after adding Azure Mobile Services by using Connected Services?
 
 > [AZURE.SELECTOR]
-> - [Getting Started](vs-mobile-services-dotnet-getting-started.md)
-> - [What Happened](vs-mobile-services-dotnet-what-happened.md)
+> - [Getting Started](/documentation/articles/vs-mobile-services-dotnet-getting-started)
+> - [What Happened](/documentation/articles/vs-mobile-services-dotnet-what-happened)
 
 ## References Added
 
@@ -41,4 +37,4 @@ In your App.xaml.cs file, a **MobileServiceClient** object was created with the 
 If a .NET mobile service is created in the Connected Service Provider, then a mobile services project is created and added to the solution.
 
 
-[Learn more about mobile services](http://azure.microsoft.com/documentation/services/mobile-services/) 
+[Learn more about mobile services](/documentation/services/mobile-services/) 

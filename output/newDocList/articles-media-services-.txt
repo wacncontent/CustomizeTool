@@ -1,4 +1,4 @@
-new docs: 95, word count: {word_count_TODO}
+new docs: 95, word count: 134455
 articles/media-services/meda-services-managing-multiple-storage-accounts.md
 articles/media-services/media-services-axinom-integration.md
 articles/media-services/media-services-azure-media-customize-ame-presets.md

@@ -1,5 +1,5 @@
 <properties
-    pageTitle="How to use Azure Blob storage from iOS | Microsoft Azure"
+    pageTitle="How to use Azure Blob storage from iOS | Windows Azure"
     description="Learn how to use Azure Blob storage to upload, download, list, and delete blob content. Samples written in Objective-C."
     services="storage"
     documentationCenter="ios"
@@ -7,25 +7,21 @@
     manager="jahogg"/>
 
 <tags
-    ms.service="storage"
-    ms.workload="storage"
-    ms.tgt_pltfrm="na"
-    ms.devlang="Objective-C"
-    ms.topic="article"
-    ms.date="10/07/2015"
-    ms.author="micurd"/>
+	ms.service="storage"
+	ms.date="10/07/2015"
+	wacn.date=""/>
 
 # How to use Blob storage from iOS
 
-[AZURE.INCLUDE [storage-selector-blob-include](../../includes/storage-selector-blob-include.md)]
+[AZURE.INCLUDE [storage-selector-blob-include](../includes/storage-selector-blob-include.md)]
 
 ## Overview
 
-This article will show you how to perform common scenarios using Microsoft Azure Blob storage. The samples are written in Objective-C and use the [Azure Storage iOS Library](https://github.com/Azure/azure-storage-ios). The scenarios covered include **uploading**, **listing**, **downloading**, and **deleting** blobs. For more information on blobs, see the [Next Steps](#next-steps) section. You can also download the [sample app](https://github.com/Azure/azure-storage-ios/tree/master/BlobSample) to quickly see the use of Azure Storage in an iOS application.
+This article will show you how to perform common scenarios using Windows Azure Blob storage. The samples are written in Objective-C and use the [Azure Storage iOS Library](https://github.com/Azure/azure-storage-ios). The scenarios covered include **uploading**, **listing**, **downloading**, and **deleting** blobs. For more information on blobs, see the [Next Steps](#next-steps) section. You can also download the [sample app](https://github.com/Azure/azure-storage-ios/tree/master/BlobSample) to quickly see the use of Azure Storage in an iOS application.
 
-[AZURE.INCLUDE [storage-blob-concepts-include](../../includes/storage-blob-concepts-include.md)]
+[AZURE.INCLUDE [storage-blob-concepts-include](../includes/storage-blob-concepts-include.md)]
 
-[AZURE.INCLUDE [storage-create-account-include](../../includes/storage-create-account-include.md)]
+[AZURE.INCLUDE [storage-create-account-include](../includes/storage-create-account-include.md)]
 
 ## Build the framework file
 In order to use the Azure Storage iOS library, you will first need to build the framework file.
@@ -76,7 +72,7 @@ When using Shared Key authentication, you will create a "connection string." The
 
 - The **DefaultEndpointsProtocol** - you can choose http or https. However, using https is highly recommended.
 - The **Account Name** - the name of your Storage account
-- The **Account Key** - If using the [Management Portal](manage.windowsazure.com), you can find this by clicking *Manage Access Keys*. If you're using the [Preview Portal](portal.azure.com), you can click the Key icon to find this information.
+- The **Account Key** - If using the [Management Portal](manage.windowsazure.cn), you can find this by clicking *Manage Access Keys*. If you're using the [Preview Portal](portal.azure.com), you can click the Key icon to find this information.
 
 Here is how it will look in your application:
 
@@ -90,7 +86,7 @@ When you create the SAS, you can specify the time interval over which the SAS is
 
 The following example shows how to use Azure CLI to generate a SAS token that grants read and write permissions for the container,*sascontainer*, until 12:00AM (UTC) September 5, 2015.  
 
-1. First, follow this [guide](../xplat-cli/#how-to-install-the-azure-cli)  to learn how to install Azure CLI and connect to your Azure subscription.
+1. First, follow this [guide](/documentation/articles/xplat-cli#how-to-install-the-azure-cli)  to learn how to install Azure CLI and connect to your Azure subscription.
 
 2. Next, type the following command in Azure CLI to get the connection string for your account:
 
@@ -106,14 +102,14 @@ The following example shows how to use Azure CLI to generate a SAS token that gr
 
 5. The SAS URL should look similar to the following:
 
-		https://myaccount.blob.core.windows.net/sascontainer/sasblob.txt?sv=2012-02-12&st=2013-04-29T22%3A18%3A26Z&se=2013-04-30T02%3A23%3A26Z&sr=b&sp=rw&sig=Z%2FRHIX5Xcg0Mq2rqI3OlWTjEg2tYkboXr1P9ZUXDtkk%3D
+		https://myaccount.blob.core.chinacloudapi.cn/sascontainer/sasblob.txt?sv=2012-02-12&st=2013-04-29T22%3A18%3A26Z&se=2013-04-30T02%3A23%3A26Z&sr=b&sp=rw&sig=Z%2FRHIX5Xcg0Mq2rqI3OlWTjEg2tYkboXr1P9ZUXDtkk%3D
 
 6. In your iOS application, you can now get a reference to your container by using the SAS URL in the following manner:
 
 		// Get a reference to a container in your Storage account
     	AZSCloudBlobContainer *blobContainer = [[AZSCloudBlobContainer alloc] initWithUrl:[NSURL URLWithString:@" your SAS URL"]];
 
-As you can see, when using a SAS token, you’re not exposing your account name and account key in your iOS application. You can learn more about SAS by checking out the [Shared Access Signature tutorial](../storage-dotnet-shared-access-signature-part-1).
+As you can see, when using a SAS token, you’re not exposing your account name and account key in your iOS application. You can learn more about SAS by checking out the [Shared Access Signature tutorial](/documentation/articles/storage-dotnet-shared-access-signature-part-1).
 
 ##Asynchronous Operations
 > [AZURE.NOTE] All methods that perform a request against the service are asynchronous operations. In the code samples, you’ll find that these methods have a completion handler. Code inside the completion handler will run **after** the request is completed. Code after the completion handler will run **while** the request is being made.
@@ -206,7 +202,7 @@ The following example shows how to upload a block blob from an NSString. If a bl
 
 You can confirm that this works by looking at the [Portal](portal.azure.com) or any [Storage explorer](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/03/11/windows-azure-storage-explorers-2014.aspx) and verifying that the container, *containerpublic*, contains the blob, *sampleblob*. In this sample, we used a public container so you can also verify that this worked by going to the blobs URI:
 
-    https://nameofyourstorageaccount.blob.core.windows.net/containerpublic/sampleblob
+    https://nameofyourstorageaccount.blob.core.chinacloudapi.cn/containerpublic/sampleblob
 
 In addition to uploading a block blob from an NSString, similar methods exist for NSData, NSInputStream or a local file.
 
@@ -354,9 +350,9 @@ Now that you've learned the basics of Blob storage, follow these links to learn 
 - [Azure Storage REST API]
 - [Azure Storage Team Blog]
 
-If you have questions regarding this library feel free to post to our [MSDN Azure forum](http://social.msdn.microsoft.com/Forums/windowsazure/en-US/home?forum=windowsazuredata) or [Stack Overflow](http://stackoverflow.com/questions/tagged/windows-azure-storage+or+windows-azure-storage+or+azure-storage-blobs+or+azure-storage-tables+or+azure-table-storage+or+windows-azure-queues+or+azure-storage-queues+or+azure-storage-emulator+or+azure-storage-files).
+If you have questions regarding this library feel free to post to our [MSDN Azure forum](http://social.msdn.microsoft.com/Forums/zh-cn/home?forum=windowsazurezhchsen-US/home?forum=windowsazuredata) or [Stack Overflow](http://stackoverflow.com/questions/tagged/windows-azure-storage+or+windows-azure-storage+or+azure-storage-blobs+or+azure-storage-tables+or+azure-table-storage+or+windows-azure-queues+or+azure-storage-queues+or+azure-storage-emulator+or+azure-storage-files).
 If you have feature suggestions for Azure Storage please post to [Azure Storage Feedback](http://feedback.azure.com/forums/217298-storage).
 
 [Azure Storage iOS Library]: https://github.com/azure/azure-storage-ios
-[Azure Storage REST API]: http://msdn.microsoft.com/library/azure/gg433040.aspx
+[Azure Storage REST API]: http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx
 [Azure Storage Team Blog]: http://blogs.msdn.com/b/windowsazurestorage

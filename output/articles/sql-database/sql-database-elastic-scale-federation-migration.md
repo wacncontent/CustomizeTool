@@ -7,14 +7,10 @@
     authors="sidneyh" 
     editor=""/>
 
-<tags 
-    ms.service="sql-database" 
-    ms.workload="sql-database" 
-    ms.tgt_pltfrm="na" 
-    ms.devlang="na" 
-    ms.topic="article" 
-    ms.date="08/14/2015" 
-    ms.author="sidneyh"/>
+<tags
+	ms.service="sql-database"
+	ms.date="08/14/2015"
+	wacn.date=""/>
 
 # Federations migration 
 
@@ -69,7 +65,7 @@ With Federations, a connection is established to a particular federation member 
 
     USE FEDERATION CustomerFederation(cid=100) WITH RESET, FILTERING=OFF`
 
-With the Elastic database tools APIs, a connection to a particular shard is established via [data dependent routing](sql-database-elastic-scale-data-dependent-routing.md) with the  **OpenConnectionForKey** method on the **RangeShardMap** class. 
+With the Elastic database tools APIs, a connection to a particular shard is established via [data dependent routing](/documentation/articles/sql-database-elastic-scale-data-dependent-routing) with the  **OpenConnectionForKey** method on the **RangeShardMap** class. 
 
     //Connect and issue queries on the shard with key=100 
     using (SqlConnection conn = rangeShardMap.OpenConnectionForKey(100, csb))  
@@ -86,13 +82,13 @@ With the Elastic database tools APIs, a connection to a particular shard is esta
         } 
     }
 
-The steps in this section are necessary but may not address all migration scenarios that arise. For more information, please see the [conceptual overview of elastic database tools](sql-database-elastic-scale-introduction.md) and the [API reference](http://go.microsoft.com/?linkid=9862604).
+The steps in this section are necessary but may not address all migration scenarios that arise. For more information, please see the [conceptual overview of elastic database tools](/documentation/articles/sql-database-elastic-scale-introduction) and the [API reference](http://go.microsoft.com/?linkid=9862604).
 
 ## Switch out existing federation members 
 
 ![Switch out the federation members for the shards][3]
 
-Once the application has been modified with the inclusion of the Elastic database tools APIs, the last step in the migration of a Federations application is to **SWITCH OUT** the federation members (for more information, please see the MSDN reference for [ALTER FEDERATION (Azure SQL Database](http://msdn.microsoft.com/library/dn269988(v=sql.120).aspx)). The end result of issuing a **SWITCH OUT** against a particular federation member is the removal of all federation constraints and metadata rendering the federation member as a regular Azure SQL Database, no different than any other Azure SQL Database.  
+Once the application has been modified with the inclusion of the Elastic database tools APIs, the last step in the migration of a Federations application is to **SWITCH OUT** the federation members (for more information, please see the MSDN reference for [ALTER FEDERATION (Azure SQL Database](http://msdn.microsoft.com/zh-cn/library/dn269988(v=sql.120).aspx)). The end result of issuing a **SWITCH OUT** against a particular federation member is the removal of all federation constraints and metadata rendering the federation member as a regular Azure SQL Database, no different than any other Azure SQL Database.  
 
 Note that issuing a **SWITCH OUT** against a federation member is a one-way operation and cannot be undone. Once performed, the resulting database cannot be added back to a federation, and the USE FEDERATION commands will no longer work for this database. 
 
@@ -108,9 +104,9 @@ The Federations Migration Utility provides the abilities to:
 
 ## Feature comparison
 
-Although Elastic database tools offers many additional features (for example, [multi-shard querying](sql-database-elastic-scale-multishard-querying.md), [splitting and merging shards](sql-database-elastic-scale-overview-split-and-merge.md), [shard elasticity](sql-database-elastic-scale-elasticity.md), [client-side caching](sql-database-elastic-scale-shard-map-management.md), and more), there are a few noteworthy Federations features that are not supported in elastic database tools.
+Although Elastic database tools offers many additional features (for example, [multi-shard querying](/documentation/articles/sql-database-elastic-scale-multishard-querying), [splitting and merging shards](/documentation/articles/sql-database-elastic-scale-overview-split-and-merge), [shard elasticity](/documentation/articles/sql-database-elastic-scale-elasticity), [client-side caching](/documentation/articles/sql-database-elastic-scale-shard-map-management), and more), there are a few noteworthy Federations features that are not supported in elastic database tools.
   
-- The use of **FILTERING=ON**. Instead, it is recommended that you use row-level security (RLS) for row filtering. Like filtering in Federations, RLS automatically adds a predicate to all queries on a sharded table. For details, see [Multi-tenant applications with elastic database tools and row-level security](sql-database-elastic-tools-multi-tenant-row-level-security.md). 
+- The use of **FILTERING=ON**. Instead, it is recommended that you use row-level security (RLS) for row filtering. Like filtering in Federations, RLS automatically adds a predicate to all queries on a sharded table. For details, see [Multi-tenant applications with elastic database tools and row-level security](/documentation/articles/sql-database-elastic-tools-multi-tenant-row-level-security). 
  
  Alternatively, you can build the filtering logic into the query issued against the shard. For example: 
 
@@ -136,7 +132,7 @@ Although Elastic database tools offers many additional features (for example, [m
 ##Need more time for migration? 
 If your application is not yet ready to work without Federations, then contact Microsoft Support using instructions mentioned [here](https://support.microsoft.com/kb/3087180). 
 
-[AZURE.INCLUDE [elastic-scale-include](../../includes/elastic-scale-include.md)]
+[AZURE.INCLUDE [elastic-scale-include](../includes/elastic-scale-include.md)]
 
 <!--Anchors-->
 [Create Shard Map Manager from a Federation Root]:#create-shard-map-manager

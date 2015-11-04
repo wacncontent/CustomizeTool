@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="SQL Database downlevel clients support for auditing and Dynamic Data Masking | Microsoft Azure" 
+	pageTitle="SQL Database downlevel clients support for auditing and Dynamic Data Masking | Windows Azure" 
 	description="Learn about SQL Database downlevel clients support for auditing and Dynamic Data Masking." 
 	services="sql-database" 
 	documentationCenter="" 
@@ -7,27 +7,23 @@
 	manager="jeffreyg" 
 	editor=""/>
 
-<tags 
-	ms.service="sql-database" 
-	ms.workload="data-management" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="09/01/2015" 
-	ms.author="nadavhelfman"/>
+<tags
+	ms.service="sql-database"
+	ms.date="09/01/2015"
+	wacn.date=""/>
  
 # SQL Database -  Downlevel clients support for auditing and Dynamic Data Masking 
 
 
-[Auditing](sql-database-auditing-get-started.md) and [Dynamic Data Masking](sql-database-dynamic-data-masking-get-started.md) work with SQL clients that support TDS redirection. 
+[Auditing](/documentation/articles/sql-database-auditing-get-started) and [Dynamic Data Masking](/documentation/articles/sql-database-dynamic-data-masking-get-started) work with SQL clients that support TDS redirection. 
 
 Any client which implements TDS 7.4 should also support redirection. Exceptions to this include JDBC 4.0 in which the redirection feature is not fully supported and Tedious for Node.JS in which redirection was not implemented.
 
 For "Downlevel clients", i.e. which support TDS version 7.3 and below - the server FQDN in the connection string should be modified:
 
-Original server FQDN in the connection string: <*server name*>.database.windows.net
+Original server FQDN in the connection string: <*server name*>.database.chinacloudapi.cn
 
-Modified server FQDN in the connection string: <*server name*>.database.**secure**.windows.net
+Modified server FQDN in the connection string: <*server name*>.database.**secure**.chinacloudapi.cn
 
 A partial list of "Downlevel clients" includes: 
 

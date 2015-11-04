@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Configure an external Listener for AlwaysOn Availability Groups | Microsoft Azure"
+	pageTitle="Configure an external Listener for AlwaysOn Availability Groups | Windows Azure"
 	description="This tutorial walks you through steps of creating an AlwaysOn Availability Group Listener in Azure that is externally accessible by using the public Virtual IP address of the associated cloud service."
 	services="virtual-machines"
 	documentationCenter="na"
@@ -7,27 +7,23 @@
 	manager="jeffreyg"
 	editor="monicar"
 	tags="azure-service-management" />
-<tags 
+<tags
 	ms.service="virtual-machines"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.tgt_pltfrm="vm-windows-sql-server"
-	ms.workload="infrastructure-services"
 	ms.date="09/16/2015"
-	ms.author="jroth" />
+	wacn.date=""/>
 
 # Configure an external listener for AlwaysOn Availability Groups in Azure
 
 > [AZURE.SELECTOR]
-- [Internal Listener](virtual-machines-sql-server-configure-ilb-alwayson-availability-group-listener.md)
-- [External Listener](virtual-machines-sql-server-configure-public-alwayson-availability-group-listener.md)
+- [Internal Listener](/documentation/articles/virtual-machines-sql-server-configure-ilb-alwayson-availability-group-listener)
+- [External Listener](/documentation/articles/virtual-machines-sql-server-configure-public-alwayson-availability-group-listener)
 
 This topic shows you how to configure a listener for an AlwaysOn Availability Group that is externally accessible on the internet. This is made possible associating the cloud service's **public Virtual IP (VIP)** address with the listener.
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
  
 
-Your Availability Group can contain replicas that are on-premises only, Azure only, or span both on-premises and Azure for hybrid configurations. Azure replicas can reside within the same region or across multiple regions using multiple virtual networks (VNets). The steps below assume you have already [configured an availability group](virtual-machines-sql-server-alwayson-availability-groups-gui.md) but have not configured a listener. 
+Your Availability Group can contain replicas that are on-premises only, Azure only, or span both on-premises and Azure for hybrid configurations. Azure replicas can reside within the same region or across multiple regions using multiple virtual networks (VNets). The steps below assume you have already [configured an availability group](/documentation/articles/virtual-machines-sql-server-alwayson-availability-groups-gui) but have not configured a listener. 
 
 Note the following limitations on the availability group listener in Azure when you are deploying using the cloud service pubic VIP address:
 
@@ -41,15 +37,15 @@ Note the following limitations on the availability group listener in Azure when 
 
 ## Determine the accessibility of the Listener
 
-[AZURE.INCLUDE [ag-listener-accessibility](../../includes/virtual-machines-ag-listener-determine-accessibility.md)]
+[AZURE.INCLUDE [ag-listener-accessibility](../includes/virtual-machines-ag-listener-determine-accessibility.md)]
 
-This article focuses on creating a listener that uses **external load balancing**. If you want a listener that is private to your virtual network, see the version of this article that provides steps for setting up an [listener with ILB](virtual-machines-sql-server-configure-ilb-alwayson-availability-group-listener.md)
+This article focuses on creating a listener that uses **external load balancing**. If you want a listener that is private to your virtual network, see the version of this article that provides steps for setting up an [listener with ILB](/documentation/articles/virtual-machines-sql-server-configure-ilb-alwayson-availability-group-listener)
 
 ## Create load-balanced VM endpoints with direct server return
 
 External load balancing uses the virtual the public Virtual IP address of the cloud service that hosts your VMs. So you do not need to create or configure the load balancer in this case. 
 
-[AZURE.INCLUDE [load-balanced-endpoints](../../includes/virtual-machines-ag-listener-load-balanced-endpoints.md)]
+[AZURE.INCLUDE [load-balanced-endpoints](../includes/virtual-machines-ag-listener-load-balanced-endpoints.md)]
 
 1. Copy the PowerShell script below into a text editor and set the variable values to suit your environment (defaults have been provided for some parameters). Note that if your availability group spans Azure regions, you must run the script once in each datacenter for the cloud service and nodes that reside in that datacenter.
 
@@ -67,17 +63,17 @@ External load balancing uses the virtual the public Virtual IP address of the cl
 
 ## Verify that KB2854082 is installed if necessary
 
-[AZURE.INCLUDE [kb2854082](../../includes/virtual-machines-ag-listener-kb2854082.md)]
+[AZURE.INCLUDE [kb2854082](../includes/virtual-machines-ag-listener-kb2854082.md)]
 
 ## Open the firewall ports in availability group nodes
 
-[AZURE.INCLUDE [firewall](../../includes/virtual-machines-ag-listener-open-firewall.md)]
+[AZURE.INCLUDE [firewall](../includes/virtual-machines-ag-listener-open-firewall.md)]
 
 ## Create the availability group listener
 
-[AZURE.INCLUDE [firewall](../../includes/virtual-machines-ag-listener-create-listener.md)]
+[AZURE.INCLUDE [firewall](../includes/virtual-machines-ag-listener-create-listener.md)]
 
-1. For external load balancing, you must obtain the public virtual IP address of the cloud service that contains your replicas. Log into the Azure portal. Navigate to the cloud service that contains your availability group VM. Open the **Dashboard** view. 
+1. For external load balancing, you must obtain the public virtual IP address of the cloud service that contains your replicas. Log into the Azure Management Portal. Navigate to the cloud service that contains your availability group VM. Open the **Dashboard** view. 
 
 3. Note the address shown under **Public Virtual IP (VIP) Address**. If your solution spans VNets, repeat this step for each cloud service that contains a VM that hosts a replica.
 
@@ -102,21 +98,21 @@ External load balancing uses the virtual the public Virtual IP address of the cl
 
 ## Bring the listener online
 
-[AZURE.INCLUDE [Bring-Listener-Online](../../includes/virtual-machines-ag-listener-bring-online.md)]
+[AZURE.INCLUDE [Bring-Listener-Online](../includes/virtual-machines-ag-listener-bring-online.md)]
 
 ## Follow-up items
 
-[AZURE.INCLUDE [Follow-up](../../includes/virtual-machines-ag-listener-follow-up.md)]
+[AZURE.INCLUDE [Follow-up](../includes/virtual-machines-ag-listener-follow-up.md)]
 
 ## Test the availability group listener (within the same VNet)
 
-[AZURE.INCLUDE [Test-Listener-Within-VNET](../../includes/virtual-machines-ag-listener-test.md)]
+[AZURE.INCLUDE [Test-Listener-Within-VNET](../includes/virtual-machines-ag-listener-test.md)]
 
 ## Test the availability group listener (over the internet)
 
 In order to access the listener from outside the virtual network, you must be using external/public load balancing (described in this topic) rather than ILB, which is only accesible within the same VNet. In the connection string, you specify the cloud service name. For example, if you had a cloud service with the name *mycloudservice*, the sqlcmd statement would be as follows:
 
-	sqlcmd -S "mycloudservice.cloudapp.net,<EndpointPort>" -d "<DatabaseName>" -U "<LoginId>" -P "<Password>"  -Q "select @@servername, db_name()" -l 15
+	sqlcmd -S "mycloudservice.chinacloudapp.cn,<EndpointPort>" -d "<DatabaseName>" -U "<LoginId>" -P "<Password>"  -Q "select @@servername, db_name()" -l 15
 
 Unlike the previous example, SQL authentication must be used, because the caller cannot use windows authentication over the internet. For more information, see [AlwaysOn Availability Group in Azure VM: Client Connectivity Scenarios](http://blogs.msdn.com/b/sqlcat/archive/2014/02/03/alwayson-availability-group-in-windows-azure-vm-client-connectivity-scenarios.aspx). When using SQL authentication, make sure that you create the same login on both replicas. For more information about troubleshooting logins with Availability Groups, see [How to map logins or use contained SQL database user to connect to other replicas and map to availability databases](http://blogs.msdn.com/b/alwaysonpro/archive/2014/02/19/how-to-map-logins-or-use-contained-sql-database-user-to-connect-to-other-replicas-and-map-to-availability-databases.aspx).
 
@@ -124,5 +120,5 @@ If the AlwaysOn replicas are in different subnets, clients must specify **Multis
 
 ## Next Steps
 
-[AZURE.INCLUDE [Listener-Next-Steps](../../includes/virtual-machines-ag-listener-next-steps.md)]
+[AZURE.INCLUDE [Listener-Next-Steps](../includes/virtual-machines-ag-listener-next-steps.md)]
 

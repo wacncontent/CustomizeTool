@@ -6,14 +6,10 @@
  authors="krisragh" 
  manager="dwrede" 
  editor=""/>
-<tags 
- ms.service="scheduler" 
- ms.workload="infrastructure-services" 
- ms.tgt_pltfrm="na" 
- ms.devlang="dotnet" 
- ms.topic="article" 
- ms.date="08/04/2015" 
- ms.author="krisragh"/>
+<tags
+	ms.service="scheduler"
+	ms.date="08/04/2015"
+	wacn.date=""/>
  
 # Plans and Billing in Azure Scheduler
 
@@ -23,7 +19,7 @@ Job collections are the billable entity in Azure Scheduler. Job collections cont
 
 |**Job Collection Plan**|**Max # of Jobs per Job Collection**|**Max Recurrence**|**Max Job Collections per Subscription**|**Limits**|
 |:---|:---|:---|:---|:---|
-|**Free**|5 jobs per job collection|Once per hour. Cannot execute jobs more often than once an hour|A subscription is allowed up to 1 free job collection|Cannot use [HTTP outbound authorization object](scheduler-outbound-authentication.md)
+|**Free**|5 jobs per job collection|Once per hour. Cannot execute jobs more often than once an hour|A subscription is allowed up to 1 free job collection|Cannot use [HTTP outbound authorization object](/documentation/articles/scheduler-outbound-authentication)
 |**Standard**|50 jobs per job collection|Once per minute. Cannot execute jobs more often than once a minute|A subscription is allowed up to 100 standard job collections|Access to full feature set of Scheduler|
 |**Premium**|50 jobs per job collection|Once per minute. Cannot execute jobs more often than once a minute|A subscription is allowed up to 10,000 premium job collections. <a href="mailto:wapteams@microsoft.com">Contact us</a> for more.|Access to full feature set of Scheduler|
 
@@ -34,7 +30,7 @@ You may upgrade or downgrade a job collection plan anytime among the Free, Stand
 - A free job collection already exists in the subscription
 - A job in the job collection has a higher recurrence than allowed for jobs in free job collections. The maximum recurrence allowed in a free job collection is once per hour
 - There are more than 5 jobs in the job collection
-- A job in the job collection has an HTTP or HTTPS action that uses an [HTTP outbound authorization object](scheduler-outbound-authentication.md)
+- A job in the job collection has an HTTP or HTTPS action that uses an [HTTP outbound authorization object](/documentation/articles/scheduler-outbound-authentication)
 
 ## Billing and Azure Plans
 
@@ -64,25 +60,25 @@ Although you may disable all jobs within a job collection in a single operation,
 
 ## Pricing
 
-For pricing details, please see [Scheduler Pricing](http://azure.microsoft.com/pricing/details/scheduler/).
+For pricing details, please see [Scheduler Pricing](/home/features/scheduler/#price).
 
 ## See Also
  
- [What is Scheduler?](scheduler-intro.md)
+ [What is Scheduler?](/documentation/articles/scheduler-intro)
  
- [Scheduler Concepts, Terminology, and Entity Hierarchy](scheduler-concepts-terms.md)
+ [Scheduler Concepts, Terminology, and Entity Hierarchy](/documentation/articles/scheduler-concepts-terms)
 
- [Get Started Using Scheduler in the Management Portal](scheduler-get-started-portal.md)
+ [Get Started Using Scheduler in the Management Portal](/documentation/articles/scheduler-get-started-portal)
 
- [How to Build Complex Schedules and Advanced Recurrence with Azure Scheduler](scheduler-advanced-complexity.md)
+ [How to Build Complex Schedules and Advanced Recurrence with Azure Scheduler](/documentation/articles/scheduler-advanced-complexity)
 
- [Scheduler REST API Reference](https://msdn.microsoft.com/library/dn528946)   
+ [Scheduler REST API Reference](https://msdn.microsoft.com/zh-cn/library/dn528946)   
 
- [Scheduler PowerShell Cmdlets Reference](scheduler-powershell-reference.md)
+ [Scheduler PowerShell Cmdlets Reference](/documentation/articles/scheduler-powershell-reference)
  
- [Scheduler High-Availability and Reliability](scheduler-high-availability-reliability.md)
+ [Scheduler High-Availability and Reliability](/documentation/articles/scheduler-high-availability-reliability)
 
- [Scheduler Limits, Defaults, and Error Codes](scheduler-limits-defaults-errors.md)
+ [Scheduler Limits, Defaults, and Error Codes](/documentation/articles/scheduler-limits-defaults-errors)
 
- [Scheduler Outbound Authentication](scheduler-outbound-authentication.md)
+ [Scheduler Outbound Authentication](/documentation/articles/scheduler-outbound-authentication)
   

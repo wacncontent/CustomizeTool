@@ -4,6 +4,7 @@ import re
 from os.path import isfile
 from filecmp import cmp
 
+
 ms_date_reg = 'ms.date="(?P<date>[^"]+)"'
 
 def genFileList(fileName):
@@ -15,6 +16,7 @@ def genFileList(fileName):
         newDocCount = 0
         updatedDocList = ""
         updatedDocCount = 0
+        wordCount = 0
         for file in fileList:
             file = file.replace("\\", "/")
             fileType = isUpdatedOrNew(file)

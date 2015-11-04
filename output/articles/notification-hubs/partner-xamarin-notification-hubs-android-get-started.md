@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Get started with Notification Hubs for Xamarin.Android apps | Microsoft Azure"
+	pageTitle="Get started with Notification Hubs for Xamarin.Android apps | Windows Azure"
 	description="In this tutorial, you learn how to use Azure Notification Hubs to send push notifications to a Xamarin Android application."
 	authors="ysxu"
 	manager="dwrede"
@@ -9,16 +9,12 @@
 
 <tags
 	ms.service="notification-hubs"
-	ms.workload="mobile"
-	ms.tgt_pltfrm="mobile-xamarin-android"
-	ms.devlang="dotnet"
-	ms.topic="hero-article"
 	ms.date="10/19/2015"
-	ms.author="wesmc"/>
+	wacn.date=""/>
 
 # Get started with Notification Hubs
 
-[AZURE.INCLUDE [notification-hubs-selector-get-started](../../includes/notification-hubs-selector-get-started.md)]
+[AZURE.INCLUDE [notification-hubs-selector-get-started](../includes/notification-hubs-selector-get-started.md)]
 
 ##Overview
 
@@ -39,15 +35,15 @@ This tutorial requires the following:
 
 Completing this tutorial is a prerequisite for all other Notification Hubs tutorials for Xamarin.Android apps.
 
-> [AZURE.IMPORTANT] To complete this tutorial, you must have an active Azure account. If you don't have an account, you can create a free trial account in just a couple of minutes. For details, see [Azure Free Trial](http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A9C9624B5&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fen-us%2Fdocumentation%2Farticles%2Fpartner-xamarin-notification-hubs-android-get-started%2F).
+> [AZURE.IMPORTANT] To complete this tutorial, you must have an active Azure account. If you don't have an account, you can create a trial account in just a couple of minutes. For details, see [Azure Trial](/pricing/1rmb-trial/?WT.mc_id=A9C9624B5&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fen-us%2Fdocumentation%2Farticles%2Fpartner-xamarin-notification-hubs-android-get-started%2F).
 
 ##<a name="register"></a>Enable Google Cloud Messaging
 
-[AZURE.INCLUDE [mobile-services-enable-Google-cloud-messaging](../../includes/mobile-services-enable-google-cloud-messaging.md)]
+[AZURE.INCLUDE [mobile-services-enable-Google-cloud-messaging](../includes/mobile-services-enable-google-cloud-messaging.md)]
 
 ##<a name="configure-hub"></a>Configure your notification hub
 
-[AZURE.INCLUDE [notification-hubs-android-configure-push](../../includes/notification-hubs-android-configure-push.md)]
+[AZURE.INCLUDE [notification-hubs-android-configure-push](../includes/notification-hubs-android-configure-push.md)]
 
 ##<a name="connecting-app"></a>Connect your app to the notification hub
 
@@ -87,8 +83,8 @@ The Google Cloud Messaging Client available on the Xamarin Component Store simpl
 1. Gather the following information for your Android app and notification hub:
 
 	- **GoogleProjectNumber**:  Get this Project Number value from the overview of your app on the Google Developer Portal. You made a note of this value earlier when you created the app on the portal.
-	- **Listen connection string**: On the dashboard in the Azure portal, click **View connection strings**. Copy the *DefaultListenSharedAccessSignature* connection string for this value.
-	- **Hub name**: This is the name of your hub from the Azure portal. For example, *mynotificationhub2*.
+	- **Listen connection string**: On the dashboard in the Azure Management Portal, click **View connection strings**. Copy the *DefaultListenSharedAccessSignature* connection string for this value.
+	- **Hub name**: This is the name of your hub from the Azure Management Portal. For example, *mynotificationhub2*.
 
 	Create a **Constants.cs** class for your Xamarin project and define the following constant values in the class. Replace the placeholders with your values.
 
@@ -348,7 +344,7 @@ If you run this app in the emulator, make sure that you use an Android Virtual D
 ##Send notifications from your backend
 
 
-You can test receiving notifications in your app by sending notifications in the Azure portal via the debug tab on the notification hub, as shown in the screen below.
+You can test receiving notifications in your app by sending notifications in the Azure Management Portal via the debug tab on the notification hub, as shown in the screen below.
 
 ![][30]
 
@@ -358,8 +354,8 @@ Push notifications are normally sent in a backend service like Mobile Services o
 Here is a list of some other tutorials that you may want to review for sending notifications:
 
 - ASP.NET: See [Use Notification Hubs to push notifications to users].
-- Azure Notification Hubs Java SDK: See [How to use Notification Hubs from Java](notification-hubs-java-backend-how-to.md) for sending notifications from Java. This has been tested in Eclipse for Android Development.
-- PHP: See [How to use Notification Hubs from PHP](notification-hubs-php-backend-how-to.md).
+- Azure Notification Hubs Java SDK: See [How to use Notification Hubs from Java](/documentation/articles/notification-hubs-java-backend-how-to) for sending notifications from Java. This has been tested in Eclipse for Android Development.
+- PHP: See [How to use Notification Hubs from PHP](/documentation/articles/notification-hubs-php-backend-how-to).
 
 
 In the next subsections of the tutorial, you send notifications by using a .NET console app, and by using a mobile service through a node script.
@@ -383,7 +379,7 @@ Microsoft provides the Azure Service Bus SDK for sending notifications on the .N
 
         using Microsoft.ServiceBus.Notifications;
 
-3. In your `Program` class, add the following method. Update the placeholder text with your *DefaultFullSharedAccessSignature* connection string and hub name from the Azure portal.
+3. In your `Program` class, add the following method. Update the placeholder text with your *DefaultFullSharedAccessSignature* connection string and hub name from the Azure Management Portal.
 
         private static async void SendNotificationAsync()
         {
@@ -404,7 +400,7 @@ Microsoft provides the Azure Service Bus SDK for sending notifications on the .N
 
 1. Follow [Get started with Mobile Services].
 
-1. Sign in to the [Azure portal], and select your mobile service.
+1. Sign in to the [Azure Management Portal], and select your mobile service.
 
 2. Select the **Scheduler** tab on the top.
 
@@ -482,10 +478,10 @@ In this simple example, you broadcasted notifications to all your Android device
 [Get started with Mobile Services]: /develop/mobile/tutorials/get-started-xamarin-android/#create-new-service
 [JavaScript and HTML]: /develop/mobile/tutorials/get-started-with-push-js
 
-[Azure portal]: https://manage.windowsazure.com/
+[Azure Management Portal]: https://manage.windowsazure.cn/
 [wns object]: http://go.microsoft.com/fwlink/p/?LinkId=260591
-[Notification Hubs Guidance]: http://msdn.microsoft.com/library/jj927170.aspx
-[Notification Hubs How-To for Android]: http://msdn.microsoft.com/library/dn282661.aspx
+[Notification Hubs Guidance]: http://msdn.microsoft.com/zh-cn/library/jj927170.aspx
+[Notification Hubs How-To for Android]: http://msdn.microsoft.com/zh-cn/library/dn282661.aspx
 
 [Use Notification Hubs to push notifications to users]: /manage/services/notification-hubs/notify-users-aspnet
 [Use Notification Hubs to send breaking news]: /manage/services/notification-hubs/breaking-news-dotnet

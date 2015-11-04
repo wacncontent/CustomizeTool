@@ -1,5 +1,5 @@
 <properties
-	pageTitle=".NET multi-tier application | Microsoft Azure"
+	pageTitle=".NET multi-tier application | Windows Azure"
 	description="A .NET tutorial that helps you develop a multi-tier app in Azure that uses Service Bus queues to communicate between tiers."
 	services="service-bus"
 	documentationCenter=".net"
@@ -9,18 +9,14 @@
 
 <tags
 	ms.service="service-bus"
-	ms.workload="tbd"
-	ms.tgt_pltfrm="na"
-	ms.devlang="dotnet"
-	ms.topic="hero-article"
 	ms.date="10/07/2015"
-	ms.author="sethm"/>
+	wacn.date=""/>
 
 # .NET multi-tier application using Azure Service Bus queues
 
 ## Introduction
 
-Developing for Microsoft Azure is easy using Visual Studio and the free Azure SDK for .NET. If you do not already have Visual Studio, the SDK will automatically install Visual Studio Express, so you can start developing for Azure entirely for free. This article assumes you have no prior experience using Azure. After completing this tutorial, you will have an application that uses
+Developing for Windows Azure is easy using Visual Studio and the free Azure SDK for .NET. If you do not already have Visual Studio, the SDK will automatically install Visual Studio Express, so you can start developing for Azure entirely for free. This article assumes you have no prior experience using Azure. After completing this tutorial, you will have an application that uses
 multiple Azure resources running in your local environment and
 that demonstrates how a multi-tier application works.
 
@@ -33,7 +29,7 @@ You will learn:
     and worker roles.
 -   How to communicate between tiers using Service Bus queues.
 
-[AZURE.INCLUDE [create-account-note](../../includes/create-account-note.md)]
+[AZURE.INCLUDE [create-account-note](../includes/create-account-note.md)]
 
 In this tutorial you'll build and run the multi-tier application in an Azure cloud service. The front end will be an ASP.NET MVC web role and the back end will be a worker-role. You can create the same multi-tier application with the front end as a web project that is deployed to an Azure website instead of a cloud service. For instructions about what to do differently on an Azure website front end, see the [Next steps](#nextsteps) section.
 
@@ -135,14 +131,14 @@ created. The combination of namespace and SAS key
 provides the credentials for Service Bus to authenticate access to an
 application.
 
-### Set up the namespace using the Azure portal
+### Set up the namespace using the Azure Management Portal
 
-1.  Log on to the [Azure portal][].
+1.  Log on to the [Azure Management Portal][].
 
-2.  In the left navigation pane of the Azure portal, click
+2.  In the left navigation pane of the Azure Management Portal, click
     **Service Bus**.
 
-3.  In the lower pane of the Azure portal, click **Create**.
+3.  In the lower pane of the Azure Management Portal, click **Create**.
 
     ![][6]
 
@@ -225,7 +221,7 @@ queue and displaying status information about the queue.
     **Manage NuGet Packages** or **Add Library Package Reference**.
 
 7.  Select **Online** on the left side of the dialog box. Search for
-    "**Service Bus**" and select the **Microsoft Azure Service
+    "**Service Bus**" and select the **Windows Azure Service
     Bus** item. Then complete the installation and close this dialog box.
 
     ![][13]
@@ -330,7 +326,7 @@ In this section, you create the various pages that your application displays.
 7.  Click **Add**.
 
 8.  Now, change the displayed name of your application. In **Solution Explorer**, double-click the
-    **Views\Shared\\_Layout.cshtml** file to open it in the Visual
+    **Views\Shared\_Layout.cshtml** file to open it in the Visual
     Studio editor.
 
 9.  Replace all occurrences of **My ASP.NET Application** with
@@ -366,7 +362,7 @@ Service Bus queue.
 
 2.  Name the class QueueConnector.cs. Click **Add** to create the class.
 
-3.  Now, add code that encapsulates the connection information and initializes the connection to a Service Bus queue. In QueueConnector.cs, add the following code, and enter values for **Namespace** (your service namespace) and **yourKey**, which is the SAS key you obtained from the [Azure portal][Azure portal] earlier.
+3.  Now, add code that encapsulates the connection information and initializes the connection to a Service Bus queue. In QueueConnector.cs, add the following code, and enter values for **Namespace** (your service namespace) and **yourKey**, which is the SAS key you obtained from the [Azure Management Portal][Azure Management Portal] earlier.
 
         using System;
         using System.Collections.Generic;
@@ -383,7 +379,7 @@ Service Bus queue.
                 // on every request.
                 public static QueueClient OrdersQueueClient;
 
-                // Obtain these values from the Azure portal.
+                // Obtain these values from the Azure Management Portal.
                 public const string Namespace = "your service bus namespace";
 
                 // The name of your queue.
@@ -505,7 +501,7 @@ To instantiate a client (for example, a Service Bus [QueueClient][]), you can re
 
 	<ConfigurationSettings>
     ...
-    	<Setting name="Microsoft.ServiceBus.ConnectionString" value="Endpoint=sb://[yourServiceNamespace].servicebus.windows.net/;SharedSecretIssuer=RootManageSharedAccessKey;SharedSecretValue=[yourKey]" />
+    	<Setting name="Microsoft.ServiceBus.ConnectionString" value="Endpoint=sb://[yourServiceNamespace].servicebus.chinacloudapi.cn/;SharedSecretIssuer=RootManageSharedAccessKey;SharedSecretValue=[yourKey]" />
 	</ConfigurationSettings>
 
 The following code retrieves the connection string, creates a queue, and initializes the connection to the queue.
@@ -614,28 +610,28 @@ To implement the application you create in this tutorial as a standard web proje
 
 3. You can test the front-end and back-end separately, or you can run both simultaneously in separate Visual Studio instances.
 
-To learn how to deploy the front end to an Azure website, see [Create an ASP.NET web app in Azure App Service](../app-service-web/web-sites-dotnet-get-started.md). To learn how to deploy the back end to an Azure cloud service, see [.NET Multi-Tier Application Using Storage Tables, Queues, and Blobs][mutitierstorage].
+To learn how to deploy the front end to an Azure website, see [Create an ASP.NET web app in Azure Websites](/documentation/articles/web-sites-dotnet-get-started). To learn how to deploy the back end to an Azure cloud service, see [.NET Multi-Tier Application Using Storage Tables, Queues, and Blobs][mutitierstorage].
 
 
   [0]: ./media/service-bus-dotnet-multi-tier-app-using-service-bus-queues/getting-started-multi-tier-01.png
   [1]: ./media/service-bus-dotnet-multi-tier-app-using-service-bus-queues/getting-started-multi-tier-100.png
-  [sbqueuecomparison]: service-bus-azure-and-service-bus-queues-compared-contrasted.md
+  [sbqueuecomparison]: /documentation/articles/service-bus-azure-and-service-bus-queues-compared-contrasted
   [2]: ./media/service-bus-dotnet-multi-tier-app-using-service-bus-queues/getting-started-multi-tier-101.png
   [Get Tools and SDK]: http://go.microsoft.com/fwlink/?LinkId=271920
   [3]: ./media/service-bus-dotnet-multi-tier-app-using-service-bus-queues/getting-started-3.png
 
 
-  [GetSetting]: https://msdn.microsoft.com/library/azure/microsoft.windowsazure.cloudconfigurationmanager.getsetting.aspx
-  [Microsoft.WindowsAzure.Configuration.CloudConfigurationManager]: https://msdn.microsoft.com/library/azure/microsoft.windowsazure.cloudconfigurationmanager.aspx
-  [NamespaceMananger]: https://msdn.microsoft.com/library/azure/microsoft.servicebus.namespacemanager.aspx
+  [GetSetting]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.cloudconfigurationmanager.getsetting.aspx
+  [Microsoft.WindowsAzure.Configuration.CloudConfigurationManager]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.cloudconfigurationmanager.aspx
+  [NamespaceMananger]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.namespacemanager.aspx
 
-  [QueueClient]: https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.queueclient.aspx
+  [QueueClient]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.queueclient.aspx
 
-  [TopicClient]: https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.topicclient.aspx
+  [TopicClient]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.topicclient.aspx
 
-  [EventHubClient]: https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.eventhubclient.aspx
+  [EventHubClient]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.eventhubclient.aspx
 
-  [Azure portal]: http://manage.windowsazure.com
+  [Azure Management Portal]: http://manage.windowsazure.cn
   [6]: ./media/service-bus-dotnet-multi-tier-app-using-service-bus-queues/sb-queues-03.png
   [7]: ./media/service-bus-dotnet-multi-tier-app-using-service-bus-queues/sb-queues-04.png
   [8]: ./media/service-bus-dotnet-multi-tier-app-using-service-bus-queues/getting-started-multi-tier-09.png
@@ -663,8 +659,8 @@ To learn how to deploy the front end to an Azure website, see [Create an ASP.NET
   [32]: ./media/service-bus-dotnet-multi-tier-app-using-service-bus-queues/getting-started-41.png
   [33]: ./media/service-bus-dotnet-multi-tier-app-using-service-bus-queues/getting-started-42-webpi.png
   [35]: ./media/service-bus-dotnet-multi-tier-app-using-service-bus-queues/multi-web-45.png
-  [sbmsdn]: http://msdn.microsoft.com/library/azure/ee732537.aspx  
+  [sbmsdn]: http://msdn.microsoft.com/zh-cn/library/azure/ee732537.aspx  
   [sbwacom]: /documentation/services/service-bus/  
-  [sbwacomqhowto]: service-bus-dotnet-how-to-use-queues.md  
+  [sbwacomqhowto]: /documentation/articles/service-bus-dotnet-how-to-use-queues
   [mutitierstorage]: https://code.msdn.microsoft.com/Windows-Azure-Multi-Tier-eadceb36
-  [executionmodels]: ../cloud-services/fundamentals-application-models.md
+  [executionmodels]: /documentation/articles/fundamentals-application-models

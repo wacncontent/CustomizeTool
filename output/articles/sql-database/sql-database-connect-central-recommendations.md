@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Connect to SQL Database: Best Practices | Microsoft Azure" 
+	pageTitle="Connect to SQL Database: Best Practices | Windows Azure" 
 	description="A starting point topic that gathers together links and best practice recommendations for client programs that connect to Azure SQL Database from technologies such as ADO.NET and PHP." 
 	services="sql-database" 
 	documentationCenter="" 
@@ -8,14 +8,10 @@
 	editor=""/>
 
 
-<tags 
-	ms.service="sql-database" 
-	ms.workload="data-management" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="09/15/2015" 
-	ms.author="genemi"/>
+<tags
+	ms.service="sql-database"
+	ms.date="09/15/2015"
+	wacn.date=""/>
 
 
 # Connecting to SQL Database: Best Practices and Design Guidelines
@@ -27,10 +23,10 @@ This topic is a good place to get started with client connectivity to Azure SQL 
 ## Technology-independent recommendations
 
 
-- [Guidelines for Connecting to Azure SQL Database Programmatically](http://msdn.microsoft.com/library/azure/ee336282.aspx) - discussions include the following:
- - [Ports and Firewalls](sql-database-configure-firewall-settings.md/)
+- [Guidelines for Connecting to Azure SQL Database Programmatically](http://msdn.microsoft.com/zh-cn/library/azure/ee336282.aspx) - discussions include the following:
+ - [Ports and Firewalls](/documentation/articles/sql-database-configure-firewall-settings)
  - Connection strings
-- [Azure SQL Database Resource Management](https://msdn.microsoft.com/library/azure/dn338083.aspx) - discussions include the following:
+- [Azure SQL Database Resource Management](https://msdn.microsoft.com/zh-cn/library/azure/dn338083.aspx) - discussions include the following:
  - Resource governance
  - Enforcement of limits
  - Throttling
@@ -63,7 +59,7 @@ The contained user approach has advantages and disadvantages:
  - A person who is a contained user in several databases might have more passwords to remember or update.
 
 
-Further information is given in - [Contained Databases](http://msdn.microsoft.com/library/ff929071.aspx).
+Further information is given in - [Contained Databases](http://msdn.microsoft.com/zh-cn/library/ff929071.aspx).
 
 
 ## Connection recommendations
@@ -73,11 +69,11 @@ Further information is given in - [Contained Databases](http://msdn.microsoft.co
  - The default of 15 seconds is too short for connections that depend on the internet.
 
 
-- Ensure that your [Azure SQL Database firewall](sql-database-firewall-configure.md) allows outgoing TCP communication on port 1433.
+- Ensure that your [Azure SQL Database firewall](/documentation/articles/sql-database-firewall-configure) allows outgoing TCP communication on port 1433.
  - You can configure the firewall settings on an SQL Database server or to an individual database.
 
 
-- If your client program connects to SQL Database V12 while your client runs on an Azure virtual machine (VM), you must open the port ranges 11000-11999 and 14000-14999 on the VM. Click [here](sql-database-develop-direct-route-ports-adonet-v12.md) for details.
+- If your client program connects to SQL Database V12 while your client runs on an Azure virtual machine (VM), you must open the port ranges 11000-11999 and 14000-14999 on the VM. Click [here](/documentation/articles/sql-database-develop-direct-route-ports-adonet-v12) for details.
 
 
 - To handle *transient faults*, add [*retry* logic](#TransientFaultsAndRetryLogicGm) to your client programs that interact with Azure SQL Database.
@@ -86,7 +82,7 @@ Further information is given in - [Contained Databases](http://msdn.microsoft.co
 ### Connection pool
 
 
-If you are using a [connection pool](http://msdn.microsoft.com/library/8xx3tyca.aspx), close the connection the instant your program is not actively using it, and is not preparing to reuse it.
+If you are using a [connection pool](http://msdn.microsoft.com/zh-cn/library/8xx3tyca.aspx), close the connection the instant your program is not actively using it, and is not preparing to reuse it.
 
 Unless your program will reuse the connection for another operation immediately and without pause, we recommend the following pattern:
 
@@ -109,7 +105,7 @@ The maximum duration of a blocking period is 60 seconds.
 
 
 Client connections to Azure SQL Database V12 sometimes bypass the proxy and interact directly with the database. Ports other than 1433 become important. For details see:<br/>
-[Ports beyond 1433 for ADO.NET 4.5 and SQL Database V12](sql-database-develop-direct-route-ports-adonet-v12.md)
+[Ports beyond 1433 for ADO.NET 4.5 and SQL Database V12](/documentation/articles/sql-database-develop-direct-route-ports-adonet-v12)
 
 
 The next section has more to say about retry logic and transient fault handling.
@@ -130,22 +126,22 @@ However, a reconfiguration might cause your client program to lose its connectio
 Your client program can try to reestablish a connection after waiting for perhaps 6 to 60 seconds between retries. You must provide the retry logic in your client.
 
 For code samples that illustrate retry logic, see:
-- [Client quick-start code samples to SQL Database](sql-database-develop-quick-start-client-code-samples.md)
+- [Client quick-start code samples to SQL Database](/documentation/articles/sql-database-develop-quick-start-client-code-samples)
 
 
 ### Error numbers for transient faults
 
 
-When any error occurs with SQL Database, an [SqlException](http://msdn.microsoft.com/library/system.data.sqlclient.sqlexception.aspx) is thrown. The **SqlException** contains a numeric error code in its **Number** property. If the error code identifies a transient error, your program should retry the call.
+When any error occurs with SQL Database, an [SqlException](http://msdn.microsoft.com/zh-cn/library/system.data.sqlclient.sqlexception.aspx) is thrown. The **SqlException** contains a numeric error code in its **Number** property. If the error code identifies a transient error, your program should retry the call.
 
 
-- [Error messages for SQL Database client programs](sql-database-develop-error-messages.md#bkmk_connection_errors)
+- [Error messages for SQL Database client programs](/documentation/articles/sql-database-develop-error-messages#bkmk_connection_errors)
  - Its **Transient Errors, Connection-Loss Errors** section is a list of the transient errors that warrant an automatic retry.
  - For example, retry if the error number 40613 occurs, which says something similar to<br/>*Database 'mydatabase' on server 'theserver' is not currently available.*
 
 
 For further information see:
-- [Azure SQL Database Development: How-to Topics](http://msdn.microsoft.com/library/azure/ee621787.aspx)
+- [Azure SQL Database Development: How-to Topics](http://msdn.microsoft.com/zh-cn/library/azure/ee621787.aspx)
 - [Troubleshoot connection problems to Azure SQL Database](http://support.microsoft.com/kb/2980233/)
 
 
@@ -158,16 +154,16 @@ The following topics contains links to code samples for several languages and dr
 Various code samples are given for clients that run on both Windows, Linux, and Mac OS X.
 
 
-**General samples:** There are [code samples](sql-database-develop-quick-start-client-code-samples.md) for a variety of programming languages, including PHP, Python, Node.js, and .NET CSharp. Also, samples are given for clients that run on Windows, Linux, and Mac OS X.
+**General samples:** There are [code samples](/documentation/articles/sql-database-develop-quick-start-client-code-samples) for a variety of programming languages, including PHP, Python, Node.js, and .NET CSharp. Also, samples are given for clients that run on Windows, Linux, and Mac OS X.
 
 
 **Elastic scale:** For information about connectivity to Elastic Scale databases, see:
 
-- [Get Started with Azure SQL Database Elastic Scale Preview](sql-database-elastic-scale-get-started.md)
-- [Data dependent routing](sql-database-elastic-scale-data-dependent-routing.md)
+- [Get Started with Azure SQL Database Elastic Scale Preview](/documentation/articles/sql-database-elastic-scale-get-started)
+- [Data dependent routing](/documentation/articles/sql-database-elastic-scale-data-dependent-routing)
 
 
 **Driver libraries:** For information about connection driver libraries, including recommended versions, see:
 
-- [Connection Libraries for SQL Database and SQL Server](sql-database-libraries.md)
+- [Connection Libraries for SQL Database and SQL Server](/documentation/articles/sql-database-libraries)
 

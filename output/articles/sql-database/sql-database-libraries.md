@@ -10,12 +10,8 @@
 
 <tags
 	ms.service="sql-database"
-	ms.workload="data-management" 
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="06/24/2015"
-	ms.author="pehteh"/>
+	wacn.date=""/>
 
 
 # Connection Libraries for SQL Database and SQL Server
@@ -40,9 +36,9 @@ The following table displays libraries that are released by Microsoft. The **Lib
 | Platform | Oper Sys | Libraries<br/>for Download | Version<br/>of Driver | Description<br/>of Driver | More<br/>Info |
 | :--- | :--- | :--- | :--- | :--- | :-- |
 | .NET | Cross-platform (.NET) | [ADO.NET, System .Data .SqlClient](http://www.microsoft.com/download/details.aspx?id=30653) | 4.5+ | SQL Server Provider for .NET Framework | . |
-| PHP | Windows | [PHP for SQL Server](http://www.microsoft.com/download/details.aspx?id=20098) | 2.0+ | PHP Driver for SQL Server | [Link](http://msdn.microsoft.com/library/dn865013.aspx) |
-| Java | Windows | [JDBC for SQL Server](https://www.microsoft.com/download/details.aspx?id=11774) | 2.0+ |  Type 4 JDBC driver that provides database connectivity through the standard JDBC API | [Link](http://msdn.microsoft.com/library/dn425070.aspx) |
-| ODBC | Windows | [ODBC for SQL Server](http://www.microsoft.com/download/details.aspx?id=36434) | 11.0+ | Microsoft ODBC Driver for SQL Server | [Link](http://msdn.microsoft.com/library/jj730308.aspx) |
+| PHP | Windows | [PHP for SQL Server](http://www.microsoft.com/download/details.aspx?id=20098) | 2.0+ | PHP Driver for SQL Server | [Link](http://msdn.microsoft.com/zh-cn/library/dn865013.aspx) |
+| Java | Windows | [JDBC for SQL Server](https://www.microsoft.com/download/details.aspx?id=11774) | 2.0+ |  Type 4 JDBC driver that provides database connectivity through the standard JDBC API | [Link](http://msdn.microsoft.com/zh-cn/library/dn425070.aspx) |
+| ODBC | Windows | [ODBC for SQL Server](http://www.microsoft.com/download/details.aspx?id=36434) | 11.0+ | Microsoft ODBC Driver for SQL Server | [Link](http://msdn.microsoft.com/zh-cn/library/jj730308.aspx) |
 | ODBC | Suse Linux | [ODBC for SQL Server](http://www.microsoft.com/download/details.aspx?id=34687) | 11.0+ | Microsoft ODBC Driver for SQL Server | . |
 | ODBC | Redhat Linux | [ODBC for SQL Server](http://www.microsoft.com/download/details.aspx?id=34687) | 11.0+ | Microsoft ODBC Driver for SQL Server | . |
 
@@ -56,7 +52,7 @@ The Microsoft OLE DB Provider for DB2 Version 5.0 (Data Provider) lets you creat
 For more information, see:
 
 
-- [Microsoft OLE DB Provider for DB2 Version 5.0](http://msdn.microsoft.com/library/dn745875.aspx)
+- [Microsoft OLE DB Provider for DB2 Version 5.0](http://msdn.microsoft.com/zh-cn/library/dn745875.aspx)
 - [Microsoft OLEDB Provider for DB2 v4.0 for Microsoft SQL Server 2012](http://www.microsoft.com/download/details.aspx?id=29100)
 
 

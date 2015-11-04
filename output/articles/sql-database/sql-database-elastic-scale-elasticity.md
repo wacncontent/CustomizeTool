@@ -7,18 +7,14 @@
 	authors="sidneyh" 
 	editor=""/>
 
-<tags 
-	ms.service="sql-database" 
-	ms.workload="sql-database" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="09/22/2015" 
-	ms.author="sidneyh"/>
+<tags
+	ms.service="sql-database"
+	ms.date="09/22/2015"
+	wacn.date=""/>
 
 # Shard elasticity 
 
-**Shard elasticity** enables application developers to dynamically grow and shrink database resources according to need, enabling one to optimize the performance of their applications, and also to minimize costs. The combination of the **Elastic Database tools** for Azure SQL Database along with the [Basic, Standard, and Premium service tiers](sql-database-service-tiers) provides very compelling elasticity scenarios.  Elastic database tools enable horizontal scaling - a design pattern in which databases (also [known as "shards”](sql-database-elastic-scale-glossary.md)) are added or removed from a shard set to grow or shrink capacity. Similarly, the SQL Database service tiers provide **vertical scaling** capabilities in that a single database's resources can scale up or down to appropriately match demand.  Together, the vertical scaling of a single shard and the horizontal scaling of many shards, affords application developers a very flexible environment that can scale to meet performance, capacity and cost-optimization needs.
+**Shard elasticity** enables application developers to dynamically grow and shrink database resources according to need, enabling one to optimize the performance of their applications, and also to minimize costs. The combination of the **Elastic Database tools** for Azure SQL Database along with the [Basic, Standard, and Premium service tiers](/documentation/articles/sql-database-service-tiers) provides very compelling elasticity scenarios.  Elastic database tools enable horizontal scaling - a design pattern in which databases (also [known as "shards”](/documentation/articles/sql-database-elastic-scale-glossary)) are added or removed from a shard set to grow or shrink capacity. Similarly, the SQL Database service tiers provide **vertical scaling** capabilities in that a single database's resources can scale up or down to appropriately match demand.  Together, the vertical scaling of a single shard and the horizontal scaling of many shards, affords application developers a very flexible environment that can scale to meet performance, capacity and cost-optimization needs.
 
 With the newly introduced **elastic database pools** capability, vertical scaling is even simpler to achieve. Pools allow an individual database’s resource consumption to grow or shrink *automatically* within a budget shared among the entire pool. For applications that choose not to take advantage of elastic database pools, this article will describe other techniques for implementing policy-based mechanics for managing vertical scaling, as well as some common scenarios for automating horizontal scaling operations.
 
@@ -126,7 +122,7 @@ Based on the outcome of the rule, the action (or non-action) is the result. The 
 * The increase or decrease of the service tier or performance level of the shard 
 * The addition or removal of a shard from a shard set.
 
-Note that in both horizontal and vertical scaling solutions, the result of an action is not immediate. When scaling vertically, for example, the issuing of the ALTER DATABASE command to increase the service tier of a Basic database to a Premium database takes a variable amount of time. The duration is largely dependent on the size of the database (for more information please see [Change Service Tiers and Performance Levels](http://msdn.microsoft.com/library/azure/dn369872.aspx). Similarly, the allocation or provisioning of a new shard is not instantaneous either. Thus, for both vertical and horizontal scaling, applications should take into account the non-zero time for altering or provisioning a new database.  
+Note that in both horizontal and vertical scaling solutions, the result of an action is not immediate. When scaling vertically, for example, the issuing of the ALTER DATABASE command to increase the service tier of a Basic database to a Premium database takes a variable amount of time. The duration is largely dependent on the size of the database (for more information please see [Change Service Tiers and Performance Levels](http://msdn.microsoft.com/zh-cn/library/azure/dn369872.aspx). Similarly, the allocation or provisioning of a new shard is not instantaneous either. Thus, for both vertical and horizontal scaling, applications should take into account the non-zero time for altering or provisioning a new database.  
 
 ## Example shard elasticity scenario 
 
@@ -146,7 +142,7 @@ This can be done by either provisioning a new shard in advance of every new day 
 
 To facilitate the actual implementation of both horizontal and vertical scaling scenarios, a number of [Shard elasticity example scripts](http://go.microsoft.com/?linkid=9862617) have been created and posted on Script Center. Written to run in the Azure Automation service, these PowerShell runbooks provide a number of methods that interact with the elastic database client library and Azure SQL Database.  Building upon, or extracting from these code samples, one can craft the necessary scripts in order to automate the horizontal, vertical or both scaling scenarios for their application. 
 
-[AZURE.INCLUDE [elastic-scale-include](../../includes/elastic-scale-include.md)]
+[AZURE.INCLUDE [elastic-scale-include](../includes/elastic-scale-include.md)]
 
 <!--Image references-->
 

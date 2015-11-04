@@ -292,10 +292,10 @@ In this Hadoop tutorial, you learned how to provision a Hadoop cluster on Window
 [azure-trial]: /pricing/1rmb-trial/
 [azure-management-portal]: https://ms.portal.azure.com/
 [azure-create-storageaccount]: /documentation/articles/storage-create-storage-account
-[apache-hadoop]: http://go.microsoft.com/fwlink/?LinkId=510084
-[apache-hive]: http://go.microsoft.com/fwlink/?LinkId=510085
-[apache-mapreduce]: http://go.microsoft.com/fwlink/?LinkId=510086
-[apache-hdfs]: http://go.microsoft.com/fwlink/?LinkId=510087
+[apache-hadoop]: http://hadoop.apache.org/
+[apache-hive]: https://cwiki.apache.org/confluence/display/Hive/Home%3bjsessionid=AF5B37E667D7DBA633313BB2280C9072
+[apache-mapreduce]: http://wiki.apache.org/hadoop/MapReduce
+[apache-hdfs]: http://hadoop.apache.org/docs/r1.0.4/hdfs_design.html
 [hdinsight-hbase-custom-provision]: /documentation/articles/hdinsight-hbase-tutorial-get-started
 [powershell-download]: http://go.microsoft.com/fwlink/p/?linkid=320376&clcid=0x409
 [powershell-install-configure]: /documentation/articles/install-configure-powershell

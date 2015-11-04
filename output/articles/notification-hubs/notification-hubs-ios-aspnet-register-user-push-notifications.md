@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Register the current user for push notifications by using Web API | Microsoft Azure"
+	pageTitle="Register the current user for push notifications by using Web API | Windows Azure"
 	description="Learn how to request push notification registration in an iOS app with Azure Notification Hubs when registeration is performed by ASP.NET Web API."
 	services="notification-hubs"
 	documentationCenter="ios"
@@ -9,18 +9,14 @@
 
 <tags
 	ms.service="notification-hubs"
-	ms.workload="mobile"
-	ms.tgt_pltfrm="ios"
-	ms.devlang="objective-c"
-	ms.topic="article"
 	ms.date="09/24/2015"
-	ms.author="wesmc"/>
+	wacn.date=""/>
 
 # Register the current user for push notifications by using ASP.NET
 
 > [AZURE.SELECTOR]
-- [Windows Store C#](notification-hubs-windows-store-aspnet-register-user-push-notifications.md)
-- [iOS](notification-hubs-ios-aspnet-register-user-push-notifications.md)
+- [Windows Store C#](/documentation/articles/notification-hubs-windows-store-aspnet-register-user-push-notifications)
+- [iOS](/documentation/articles/notification-hubs-ios-aspnet-register-user-push-notifications)
 
 
 
@@ -199,7 +195,7 @@ This topic shows you how to request push notification registration with Azure No
 		    // build auth string
 		    NSString* authString = [NSString stringWithFormat:@"%@:%@", self.User.text, self.Password.text];
 
-		    NSMutableURLRequest* request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://nhnotifyuser.azurewebsites.net/api/register"]];
+		    NSMutableURLRequest* request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://nhnotifyuser.chinacloudsites.cn/api/register"]];
 		    [request setHTTPMethod:@"POST"];
 		    [request setHTTPBody:[json dataUsingEncoding:NSUTF8StringEncoding]];
 		    [request addValue:[@([json lengthOfBytesUsingEncoding:NSUTF8StringEncoding]) description] forHTTPHeaderField:@"Content-Length"];
@@ -235,5 +231,5 @@ Now that the client app has been updated, return to the [Notify users with Notif
 <!-- URLs. -->
 [Notify users with Notification Hubs]: /manage/services/notification-hubs/notify-users-aspnet
 
-[Azure Management Portal]: https://manage.windowsazure.com/
+[Azure Management Portal]: https://manage.windowsazure.cn/
 [Get Started with Notification Hubs]: /manage/services/notification-hubs/get-started-notification-hubs-ios

@@ -1,5 +1,5 @@
 <properties
- pageTitle="Linux RDMA cluster to run MPI applications | Microsoft Azure"
+ pageTitle="Linux RDMA cluster to run MPI applications | Windows Azure"
  description="Create a Linux cluster of size A8 or A9 VMs to use RDMA to run MPI apps."
  services="virtual-machines"
  documentationCenter=""
@@ -8,20 +8,16 @@
  editor=""
  tags="azure-service-management"/>
 <tags
-ms.service="virtual-machines"
- ms.devlang="na"
- ms.topic="article"
- ms.tgt_pltfrm="vm-linux"
- ms.workload="infrastructure-services"
- ms.date="09/21/2015"
- ms.author="danlep"/>
+	ms.service="virtual-machines"
+	ms.date="09/21/2015"
+	wacn.date=""/>
 
 # Set up a Linux RDMA cluster to run MPI applications
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
 
 
-This article shows you how to set up a Linux RDMA cluster in Azure with [size A8 and A9 virtual machines](virtual-machines-a8-a9-a10-a11-specs.md) to run parallel Message Passing Interface (MPI) applications. When you configure size A8 and A9 Linux-based VMs to run a supported MPI implementation, MPI applications communicate efficiently over a low latency, high throughput network in Azure that is based on remote direct memory access (RDMA) technology.
+This article shows you how to set up a Linux RDMA cluster in Azure with [size A8 and A9 virtual machines](/documentation/articles/virtual-machines-a8-a9-a10-a11-specs) to run parallel Message Passing Interface (MPI) applications. When you configure size A8 and A9 Linux-based VMs to run a supported MPI implementation, MPI applications communicate efficiently over a low latency, high throughput network in Azure that is based on remote direct memory access (RDMA) technology.
 
 >[AZURE.NOTE] Azure Linux RDMA is currently supported with Intel MPI Library version 5 running on SUSE Linux Enterprise Server 12 (SLES 12). This article is based on Intel MPI version 5.0.3.048.
 >
@@ -32,11 +28,11 @@ This article shows you how to set up a Linux RDMA cluster in Azure with [size A8
 
 Following are methods you can use to create a Linux RDMA cluster either with or without a job scheduler.
 
-* **HPC Pack** - Create a Microsoft HPC Pack cluster in Azure and add compute nodes that run supported Linux distributions (Linux compute node support starts in HPC Pack 2012 R2 Update 2). Certain Linux nodes can be configured to access the RDMA network. See [Get started with Linux compute nodes in an HPC Pack cluster in Azure](virtual-machines-linux-cluster.md).
+* **HPC Pack** - Create a Microsoft HPC Pack cluster in Azure and add compute nodes that run supported Linux distributions (Linux compute node support starts in HPC Pack 2012 R2 Update 2). Certain Linux nodes can be configured to access the RDMA network. See [Get started with Linux compute nodes in an HPC Pack cluster in Azure](/documentation/articles/virtual-machines-linux-cluster).
 
-* **Azure CLI scripts** - As shown in the steps in the rest of this article, use the [Azure Command Line Interface](../xplat-cli-install.md) (CLI) for Mac, Linux, and Windows to script the deployement of a virtual network and the other necessary components to create a Linux cluster. The CLI in the classic (Service Management) deployment mode creates the cluster nodes serially, so if you are deploying many compute nodes it might take several minutes to complete the deployment.
+* **Azure CLI scripts** - As shown in the steps in the rest of this article, use the [Azure Command Line Interface](/documentation/articles/xplat-cli-install) (CLI) for Mac, Linux, and Windows to script the deployement of a virtual network and the other necessary components to create a Linux cluster. The CLI in the classic (Service Management) deployment mode creates the cluster nodes serially, so if you are deploying many compute nodes it might take several minutes to complete the deployment.
 
-* **Azure Resource Manager templates** - By creating a straightforward Azure Resource Manager JSON template file and running Azure CLI commands for Resource Manager or by using the Azure Preview Portal, deploy multiple A8 and A9 Linux VMs as well as define virtual networks, static IP addresses, DNS settings, and other resources to create a compute cluster that can take advantage of the RDMA network to run MPI workloads. You can [create your own template](../resource-group-authoring-templates.md), or check the [Azure Quickstart Templates page](https://azure.microsoft.com/documentation/templates/) for templates contributed by Microsoft or the community to deploy the solution you want. Resource Manager templates generally provide the fastest and most reliable way to deploy a Linux cluster.
+* **Azure Resource Manager templates** - By creating a straightforward Azure Resource Manager JSON template file and running Azure CLI commands for Resource Manager or by using the Azure Preview Portal, deploy multiple A8 and A9 Linux VMs as well as define virtual networks, static IP addresses, DNS settings, and other resources to create a compute cluster that can take advantage of the RDMA network to run MPI workloads. You can [create your own template](/documentation/articles/resource-group-authoring-templates), or check the [Azure Quickstart Templates page](https://azure.microsoft.com/documentation/templates/) for templates contributed by Microsoft or the community to deploy the solution you want. Resource Manager templates generally provide the fastest and most reliable way to deploy a Linux cluster.
 
 ## Deployment in Azure Service Management with Azure CLI scripts
 
@@ -46,13 +42,13 @@ The following steps will help you use the Azure CLI to deploy a SLES 12 VM, inst
 
 *   **Client computer** - You'll need a Mac, Linux, or Windows-based client computer to communicate with Azure. These steps assume you are using a Linux client.
 
-*   **Azure subscription** - If you don't have an account, you can create a free trial account in just a couple of minutes. For details, see [Azure Free Trial](http://azure.microsoft.com/pricing/free-trial/).
+*   **Azure subscription** - If you don't have an account, you can create a trial account in just a couple of minutes. For details, see [Azure Trial](/pricing/1rmb-trial/).
 
 *   **Cores quota** - You might need to increase the quota of cores to deploy a cluster of A8 or A9 VMs. For example, you will need at least 128 cores if you want to deploy 8 A9 VMs as shown in this article. To increase a quota, [open an online customer support request](http://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/) at no charge.
 
-*   **Azure CLI** - [Install](../xplat-cli-install.md) the Azure CLI and [configure it ](../xplat-cli-connect.md) to connect to your Azure subscription from the client computer.
+*   **Azure CLI** - [Install](/documentation/articles/xplat-cli-install) the Azure CLI and [configure it ](/documentation/articles/xplat-cli-connect) to connect to your Azure subscription from the client computer.
 
-*   **Intel MPI** - As part of customizing a Linux VM image for your cluster (see details later in this article), you need to download and install  Intel MPI Library 5 runtime from the [Intel.com site](https://software.intel.com/en-us/intel-mpi-library/) on an Azure Linux VM you provision. To prepare for this, after you register with Intel, follow the link in the confirmation email to the related web page and copy the download link for the .tgz file for the appropriate version of Intel MPI. This article is based on Intel MPI version 5.0.3.048.
+*   **Intel MPI** - As part of customizing a Linux VM image for your cluster (see details later in this article), you need to download and install  Intel MPI Library 5 runtime from the [Intel.com site](https://software.intel.com/intel-mpi-library/) on an Azure Linux VM you provision. To prepare for this, after you register with Intel, follow the link in the confirmation email to the related web page and copy the download link for the .tgz file for the appropriate version of Intel MPI. This article is based on Intel MPI version 5.0.3.048.
 
 ### Provision a SLES 12 VM
 
@@ -94,15 +90,15 @@ where
 
 * the external SSH port number (22 in this example, which is the SSH default) is any valid port number; the internal SSH  port number will be set to 22
 
-* a new cloud service will be created in the Azure region specified by the location; specify a location such as "West US" in which the A8 and A9 instances are available
+* a new cloud service will be created in the Azure region specified by the location; specify a location such as "China North" in which the A8 and A9 instances are available
 
 * the image name currently can be `b4590d9e3ed742e4a1d46e5424aa335e__suse-sles-12-hpc-v20150708` (free of charge) or `b4590d9e3ed742e4a1d46e5424aa335e__suse-sles-12-hpc-priority-v20150708` for SUSE priority support (charges apply)
 
 ### Customize the VM
 
-After the VM completes provisioning, SSH to the VM using the VM's external IP address (or DNS name) and the external port number you configured, and customize it. For connection details, see [How to Log on to a Virtual Machine Running Linux](virtual-machines-linux-how-to-log-on.md). You should perform commands as the user you configured on the VM, unless root access is required to complete a step.
+After the VM completes provisioning, SSH to the VM using the VM's external IP address (or DNS name) and the external port number you configured, and customize it. For connection details, see [How to Log on to a Virtual Machine Running Linux](/documentation/articles/virtual-machines-linux-how-to-log-on). You should perform commands as the user you configured on the VM, unless root access is required to complete a step.
 
->[AZURE.IMPORTANT]Microsoft Azure does not provide root access to Linux VMs. To gain administrative access when connected as a user to the VM, run commands using `sudo`.
+>[AZURE.IMPORTANT]Windows Azure does not provide root access to Linux VMs. To gain administrative access when connected as a user to the VM, run commands using `sudo`.
 
 *   **Updates** - Install updates using **zypper**. You might also want to install NFS utilities.  
 
@@ -176,7 +172,7 @@ To capture the image, first run the following command in the Linux VM. This depr
 sudo waagent -deprovision
 ```
 
-Then, from your client computer, run the following Azure CLI commands to capture the image. See [How to Capture a Linux Virtual Machine to Use as a Template](virtual-machines-linux-capture-image.md) for details.  
+Then, from your client computer, run the following Azure CLI commands to capture the image. See [How to Capture a Linux Virtual Machine to Use as a Template](/documentation/articles/virtual-machines-linux-capture-image) for details.  
 
 ```
 azure vm shutdown <vm-name>
@@ -197,15 +193,15 @@ Modify the following Bash script with appropriate values for your environment, a
 # Create a custom private network in Azure
 # Replace 10.32.0.0 with your virtual network address space
 # Replace <network-name> with your network identifier
-# Select a region where A8 and A9 VMs are available, such as West US
+# Select a region where A8 and A9 VMs are available, such as China North
 # See Azure Pricing pages for prices and availability of A8 and A9 VMs
 
-azure network vnet create -l "West US" -e 10.32.0.0 -i 16 <network-name>
+azure network vnet create -l "China North" -e 10.32.0.0 -i 16 <network-name>
 
 # Create a cloud service. All the A8 and A9 instances need to be in the same cloud service for Linux RDMA to work across InfiniBand.
 # Note: The current maximum number of VMs in a cloud service is 50. If you need to provision more than 50 VMs in the same cloud service in your cluster, contact Azure Support.
 
-azure service create <cloud-service-name> --location "West US" –s <subscription-ID>
+azure service create <cloud-service-name> --location "China North" –s <subscription-ID>
 
 # Define a prefix naming scheme for compute nodes, e.g., cluster11, cluster12, etc.
 
@@ -368,4 +364,4 @@ You should see output similar to the following on a working cluster with two nod
 
 * Try deploying and running your Linux MPI applications on your Linux cluster.
 
-* See the [Intel MPI Library documentation](https://software.intel.com/en-us/articles/intel-mpi-library-documentation/) for guidance on Intel MPI.
+* See the [Intel MPI Library documentation](https://software.intel.com/articles/intel-mpi-library-documentation/) for guidance on Intel MPI.

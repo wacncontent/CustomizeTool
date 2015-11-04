@@ -1,6 +1,6 @@
 <properties
 	title="Elastic database Split-Merge tool tutorial"
-	pageTitle="Elastic database Split-Merge tool tutorial | Microsoft Azure"
+	pageTitle="Elastic database Split-Merge tool tutorial | Windows Azure"
 	description="Splitting and Merging with elastic database tools"
 	metaKeywords="elastic database tools, split and merge, Azure SQL Database sharding, elastic scale, splitting and merging elastic databases"
 	services="sql-database" documentationCenter=""  
@@ -9,12 +9,8 @@
 
 <tags
 	ms.service="sql-database"
-	ms.workload="sql-database"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="08/14/2015"
-	ms.author="sidneyh" />
+	wacn.date=""/>
 
 # Elastic database Split-Merge tool tutorial
 
@@ -28,13 +24,13 @@ The steps above download the Split-Merge files to the current directory. The fil
 
 ## Prerequisites
 
-1. Create an Azure SQL DB database that will be used as the Split-Merge status database. Go to the [Azure portal](https://ms.portal.azure.com). Create a new **SQL Database**. Fill in the database name and create a new user and password. Be sure to record the name and password for later use.
+1. Create an Azure SQL DB database that will be used as the Split-Merge status database. Go to the [Azure Management Portal](https://ms.portal.azure.com). Create a new **SQL Database**. Fill in the database name and create a new user and password. Be sure to record the name and password for later use.
 
 2. Ensure that your Azure SQL DB server allows Azure Services to connect to it. In the portal, in the **Firewall Settings**, ensure that the **Allow access to Azure Services** setting is set to **On**. Click the "save" icon.
 
     ![Allowed services][1]
 
-3. Create an Azure Storage account that will be used for diagnostics output. Go to the Azure preview portal. In the left bar, click **New**, click **Data + Storage**, then **Storage**.
+3. Create an Azure Storage account that will be used for diagnostics output. Go to the Azure preview portal. In the left bar, click **New**, click **DATA SERVICE**, then **Storage**.
 
 4. Create an Azure Cloud Service that will contain your Split-Merge service.  Go to the Azure preview portal. In the left bar, click **New**, then **Compute**, **Cloud Service**, and **Create**. 
 
@@ -49,26 +45,26 @@ The steps above download the Split-Merge files to the current directory. The fil
 
 3. Either create a new database or choose an existing database to serve as the status database for Split/Merge operations and retrieve the connection string of that database. 
 
-	**Important** At this time, the status database must use the Latin  collation (SQL\_Latin1\_General\_CP1\_CI\_AS). For more information, see [Windows Collation Name (Transact-SQL)](https://msdn.microsoft.com/library/ms188046.aspx).
+	**Important** At this time, the status database must use the Latin  collation (SQL_Latin1_General_CP1_CI_AS). For more information, see [Windows Collation Name (Transact-SQL)](https://msdn.microsoft.com/zh-cn/library/ms188046.aspx).
 
 	With Azure SQL DB, the connection string typically is of the form:
 
-        "Server=myservername.database.windows.net; Database=mydatabasename;User ID=myuserID; Password=mypassword; Encrypt=True; Connection Timeout=30" .
+        "Server=myservername.database.chinacloudapi.cn; Database=mydatabasename;User ID=myuserID; Password=mypassword; Encrypt=True; Connection Timeout=30" .
 4.    Enter this connection string in the cscfg file in both the **SplitMergeWeb** and **SplitMergeWorker** role sections in the ElasticScaleMetadata setting.
 
 5.    For the **SplitMergeWorker** role, enter a valid connection string to Azure storage for the **WorkerRoleSynchronizationStorageAccountConnectionString** setting.
         
 ### Configuring security
-For detailed instructions to configure the security of the service, refer to the [Split-Merge security configuration](sql-database-elastic-scale-split-merge-security-configuration.md).
+For detailed instructions to configure the security of the service, refer to the [Split-Merge security configuration](/documentation/articles/sql-database-elastic-scale-split-merge-security-configuration).
 
 For the purposes of  a simple test deployment suitable to complete this tutorial, a minimal set of configuration steps will be performed to get the service up and running. These steps enable only the one machine/account executing them to communicate with the service.
 
 ### Creating a self-signed certificate
 
-Create a new directory and from this directory execute the following command using a [Developer Command Prompt for Visual Studio](http://msdn.microsoft.com/library/ms229859.aspx) window:
+Create a new directory and from this directory execute the following command using a [Developer Command Prompt for Visual Studio](http://msdn.microsoft.com/zh-cn/library/ms229859.aspx) window:
 
     makecert ^
-    -n "CN=*.cloudapp.net" ^
+    -n "CN=*.chinacloudapp.cn" ^
     -r -cy end -sky exchange -eku "1.3.6.1.5.5.7.3.1,1.3.6.1.5.5.7.3.2" ^
     -a sha1 -len 2048 ^
     -sr currentuser -ss root ^
@@ -92,7 +88,7 @@ Execute the following command from the same window where makecert was executed; 
 
 ### Upload the PFX file to the cloud service
 
-Go to the [Azure preview portal](https://portal.azure.com).
+Go to the [Azure preview portal](https://manage.windowsazure.cn).
 
 1. Select **Cloud Services**.
 2. Select the cloud service you created above for the Split/Merge service.
@@ -119,11 +115,11 @@ For the web role:
     <Certificate name="DataEncryptionPrimary" thumbprint="" thumbprintAlgorithm="sha1" />
 
 
-Please note that for production deployments separate certificates should be used for the CA, for encryption, the Server certificate and client certificates. For detailed instructions on this, see [Security Configuration](sql-database-elastic-scale-split-merge-security-configuration.md).
+Please note that for production deployments separate certificates should be used for the CA, for encryption, the Server certificate and client certificates. For detailed instructions on this, see [Security Configuration](/documentation/articles/sql-database-elastic-scale-split-merge-security-configuration).
 
 ### Deploying your Split-Merge service
 
-1. Go to the [Azure portal](https://manage.windowsazure.com).
+1. Go to the [Azure Management Portal](https://manage.windowsazure.cn).
 2. Click the **Cloud Services** tab on the left, and select the cloud service that you created earlier.
 3. Click **Dashboard**.
 4. Choose the staging environment, then click **Upload a new staging deployment**.
@@ -147,10 +143,10 @@ If your worker role fails to come online, but your web role succeeds, it is most
 * Check that the server and database exist, and that the user id and password are correct.
 * For Azure SQL DB, the connection string should be of the form:
 
-        "Server=myservername.database.windows.net; Database=mydatabasename;User ID=myuserID; Password=mypassword; Encrypt=True; Connection Timeout=30" .
+        "Server=myservername.database.chinacloudapi.cn; Database=mydatabasename;User ID=myuserID; Password=mypassword; Encrypt=True; Connection Timeout=30" .
 
 * Ensure that the server name does not begin with **https://**.
-* Ensure that your Azure SQL DB server allows Azure Services to connect to it. To do this, open https://manage.windowsazure.com, click “SQL Databases” on the left, click “Servers” at the top, and select your server. Click **Configure** at the top and ensure that the **Azure Services** setting is set to “Yes”. (See the Prerequisites section at the top of this article).
+* Ensure that your Azure SQL DB server allows Azure Services to connect to it. To do this, open https://manage.windowsazure.cn, click “SQL Databases” on the left, click “Servers” at the top, and select your server. Click **Configure** at the top and ensure that the **Azure Services** setting is set to “Yes”. (See the Prerequisites section at the top of this article).
 
 ## Testing your Split-Merge service deployment
 
@@ -234,14 +230,14 @@ The script files included are:
         .\SetupSampleSplitMergeEnvironment.ps1 `
             -UserName 'mysqluser' `
             -Password 'MySqlPassw0rd' `
-            -ShardMapManagerServerName 'abcdefghij.database.windows.net'
+            -ShardMapManagerServerName 'abcdefghij.database.chinacloudapi.cn'
 
 4.    Execute the Getmappings.ps1 script to view the mappings that currently exist in the sample environment.
 
         .\GetMappings.ps1 `
             -UserName 'mysqluser' `
             -Password 'MySqlPassw0rd' `
-            -ShardMapManagerServerName 'abcdefghij.database.windows.net'
+            -ShardMapManagerServerName 'abcdefghij.database.chinacloudapi.cn'
 
 5.    Execute the ExecuteSampleSplitMerge.ps1 script to execute a split operation (moving half the data on the first shard to the second shard) and then a merge operation (moving the data back onto the first shard). If you configured SSL and left the http endpoint disabled, ensure that you use the https:// endpoint instead.
 
@@ -250,8 +246,8 @@ The script files included are:
         .\ExecuteSampleSplitMerge.ps1 `
             -UserName 'mysqluser' `
             -Password 'MySqlPassw0rd' `
-            -ShardMapManagerServerName 'abcdefghij.database.windows.net' `
-            -SplitMergeServiceEndpoint 'https://mysplitmergeservice.cloudapp.net' `
+            -ShardMapManagerServerName 'abcdefghij.database.chinacloudapi.cn' `
+            -SplitMergeServiceEndpoint 'https://mysplitmergeservice.chinacloudapp.cn' `
             -CertificateThumbprint '0123456789abcdef0123456789abcdef01234567'
 
     If you receive the below error, it is most likely a problem with your Web endpoint’s certificate. Try connecting to the Web endpoint with your favorite Web browser and check if there is a certificate error.
@@ -260,7 +256,7 @@ The script files included are:
 
     If it succeeded, the output should look like the below:
 
-        > .\ExecuteSampleSplitMerge.ps1 -UserName 'mysqluser' -Password 'MySqlPassw0rd' -ShardMapManagerServerName 'abcdefghij.database.windows.net' -SplitMergeServiceEndpoint 'http://mysplitmergeservice.cloudapp.net' –CertificateThumbprint 0123456789abcdef0123456789abcdef01234567
+        > .\ExecuteSampleSplitMerge.ps1 -UserName 'mysqluser' -Password 'MySqlPassw0rd' -ShardMapManagerServerName 'abcdefghij.database.chinacloudapi.cn' -SplitMergeServiceEndpoint 'http://mysplitmergeservice.chinacloudapp.cn' –CertificateThumbprint 0123456789abcdef0123456789abcdef01234567
         Sending split request
         Began split operation with id dc68dfa0-e22b-4823-886a-9bdc903c80f3
         Polling split-merge request status. Press Ctrl-C to end
@@ -326,7 +322,7 @@ If you cannot submit requests you may see this:
 
 In this case, check your configuration file, in particular the setting for **WorkerRoleSynchronizationStorageAccountConnectionString**. This error typically indicates that the worker role could not successfully initialize the metadata database on first use. 
 
-[AZURE.INCLUDE [elastic-scale-include](../../includes/elastic-scale-include.md)]
+[AZURE.INCLUDE [elastic-scale-include](../includes/elastic-scale-include.md)]
 
 <!--Image references-->
 [1]: ./media/sql-database-elastic-scale-configure-deploy-split-and-merge/allowed-services.png

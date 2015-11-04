@@ -1,5 +1,5 @@
 <properties
-	pageTitle="SharePoint Server 2013 farm Phase 4 | Microsoft Azure"
+	pageTitle="SharePoint Server 2013 farm Phase 4 | Windows Azure"
 	description="Create the SharePoint server virtual machines and a new SharePoint farm in Phase 4 of the SharePoint Server 2013 farm in Azure."
 	documentationCenter=""
 	services="virtual-machines"
@@ -10,21 +10,17 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.workload="infrastructure-services"
-	ms.tgt_pltfrm="Windows"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="07/22/2015"
-	ms.author="josephd"/>
+	wacn.date=""/>
 
 # SharePoint Intranet Farm Workload Phase 4: Configure SharePoint servers
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
  
 
 In this phase of deploying an intranet-only SharePoint 2013 farm with SQL Server AlwaysOn Availability Groups in Azure infrastructure services, you build out the application and web tiers of the SharePoint farm and create the farm by using the SharePoint Configuration Wizard.
 
-You must complete this phase before moving on to [Phase 5](virtual-machines-workload-intranet-sharepoint-phase5.md). See [Deploying SharePoint with SQL Server AlwaysOn Availability Groups in Azure](virtual-machines-workload-intranet-sharepoint-overview.md) for all of the phases.
+You must complete this phase before moving on to [Phase 5](/documentation/articles/virtual-machines-workload-intranet-sharepoint-phase5). See [Deploying SharePoint with SQL Server AlwaysOn Availability Groups in Azure](/documentation/articles/virtual-machines-workload-intranet-sharepoint-overview) for all of the phases.
 
 ## Create the SharePoint server virtual machines in Azure
 
@@ -38,7 +34,7 @@ Use the following block of Azure PowerShell commands to create the virtual machi
 - Table A, for your availability sets
 - Table C, for your cloud services
 
-Recall that you defined Table M in [Phase 2: Configure domain controllers](virtual-machines-workload-intranet-sharepoint-phase2.md) and Tables V, S, A, and C in [Phase 1: Configure Azure](virtual-machines-workload-intranet-sharepoint-phase1.md).
+Recall that you defined Table M in [Phase 2: Configure domain controllers](/documentation/articles/virtual-machines-workload-intranet-sharepoint-phase2) and Tables V, S, A, and C in [Phase 1: Configure Azure](/documentation/articles/virtual-machines-workload-intranet-sharepoint-phase1).
 
 When you have supplied all the proper values, run the resulting block at the Azure PowerShell command prompt.
 
@@ -99,9 +95,9 @@ When you have supplied all the proper values, run the resulting block at the Azu
 
 	New-AzureVM –ServiceName $serviceName -VMs $vm1 -VNetName $vnetName
 
-Use the [Logging on to a virtual machine with a Remote Desktop connection procedure](virtual-machines-workload-intranet-sharepoint-phase2.md#logon) four times, once for each SharePoint server, to log on by using the [Domain]\sp_farm_db account credentials. You created these credentials in [Phase 2: Configure domain controllers](virtual-machines-workload-intranet-sharepoint-phase2.md).
+Use the [Logging on to a virtual machine with a Remote Desktop connection procedure](/documentation/articles/virtual-machines-workload-intranet-sharepoint-phase2#logon) four times, once for each SharePoint server, to log on by using the [Domain]\sp_farm_db account credentials. You created these credentials in [Phase 2: Configure domain controllers](/documentation/articles/virtual-machines-workload-intranet-sharepoint-phase2).
 
-Use the [To test connectivity procedure](virtual-machines-workload-intranet-sharepoint-phase2.md#testconn) four times, once for each SharePoint server, to test connectivity to locations on your organization network.
+Use the [To test connectivity procedure](/documentation/articles/virtual-machines-workload-intranet-sharepoint-phase2#testconn) four times, once for each SharePoint server, to test connectivity to locations on your organization network.
 
 > [AZURE.NOTE] The SharePoint servers are created from the SharePoint Server 2013 Trial image. You need to convert the installation to use a Retail or Volume License key for either the Standard or Enterprise edition of SharePoint Server 2013. 
 
@@ -115,7 +111,7 @@ Use these steps to configure the first SharePoint server in the farm:
 4.	On the **Connect to a server farm** page, select **Create a new server farm**, and then click **Next**.
 5.	On the **Specify Configuration Database Settings** page:
  - In **Database server**, type the name of the primary database server.
- - In **Username**, type [Domain]**\sp_farm_db** (created in [Phase 2: Configure domain controllers](virtual-machines-workload-intranet-sharepoint-phase2.md)). Recall that the sp_farm_db account has sysadmin privileges on the database server.
+ - In **Username**, type [Domain]**\sp_farm_db** (created in [Phase 2: Configure domain controllers](/documentation/articles/virtual-machines-workload-intranet-sharepoint-phase2)). Recall that the sp_farm_db account has sysadmin privileges on the database server.
  - In **Password**, type the sp_farm_db account password.
 6.	Click **Next**.
 7.	On the **Specify Farm Security Settings** page, type a passphrase twice. Record the passphrase and store it in a secure location for future reference. Click **Next**.
@@ -141,7 +137,7 @@ When SharePoint creates the farm, it configures a set of server logins on the pr
 
 However, by default, SharePoint databases are not contained databases. Therefore, you will need to manually configure the secondary database server so that it has the same set of logins for SharePoint farm accounts as the primary database server. You can perform this synchronization from SQL Server Management Studio by connecting to both servers at the same time.
 
-After you finish this initial setup, more configuration options for the capabilities of the SharePoint farm are available. For more information, see [Planning for SharePoint 2013 on Azure infrastructure services](http://msdn.microsoft.com/library/dn275958.aspx).
+After you finish this initial setup, more configuration options for the capabilities of the SharePoint farm are available. For more information, see [Planning for SharePoint 2013 on Azure infrastructure services](http://msdn.microsoft.com/zh-cn/library/dn275958.aspx).
 
 ## Configure internal load balancing
 
@@ -182,18 +178,18 @@ This is the configuration that results from the successful completion of this ph
 
 ## Next step
 
-To continue with the configuration of this workload, go to [Phase 5: Create the availability group and add the SharePoint databases](virtual-machines-workload-intranet-sharepoint-phase5.md).
+To continue with the configuration of this workload, go to [Phase 5: Create the availability group and add the SharePoint databases](/documentation/articles/virtual-machines-workload-intranet-sharepoint-phase5).
 
 ## Additional resources
 
-[Deploying SharePoint with SQL Server AlwaysOn Availability Groups in Azure](virtual-machines-workload-intranet-sharepoint-overview.md)
+[Deploying SharePoint with SQL Server AlwaysOn Availability Groups in Azure](/documentation/articles/virtual-machines-workload-intranet-sharepoint-overview)
 
-[SharePoint farms hosted in Azure infrastructure services](virtual-machines-sharepoint-infrastructure-services.md)
+[SharePoint farms hosted in Azure infrastructure services](/documentation/articles/virtual-machines-sharepoint-infrastructure-services)
 
 [SharePoint with SQL Server AlwaysOn infographic](http://go.microsoft.com/fwlink/?LinkId=394788)
 
-[Microsoft Azure architectures for SharePoint 2013](https://technet.microsoft.com/library/dn635309.aspx)
+[Windows Azure architectures for SharePoint 2013](https://technet.microsoft.com/zh-cn/library/dn635309.aspx)
 
-[Azure infrastructure services implementation guidelines](virtual-machines-infrastructure-services-implementation-guidelines.md)
+[Azure infrastructure services implementation guidelines](/documentation/articles/virtual-machines-infrastructure-services-implementation-guidelines)
 
-[Azure Infrastructure Services Workload: High-availability line of business application](virtual-machines-workload-high-availability-lob-application.md)
+[Azure Infrastructure Services Workload: High-availability line of business application](/documentation/articles/virtual-machines-workload-high-availability-lob-application)

@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Different ways to create a Linux VM | Microsoft Azure"
+	pageTitle="Different ways to create a Linux VM | Windows Azure"
 	description="Lists the different ways to create a Linux virtual machine on Azure and gives links to further instructions."
 	services="virtual-machines"
 	documentationCenter=""
@@ -10,12 +10,8 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.tgt_pltfrm="vm-linux"
-	ms.workload="infrastructure-services"
 	ms.date="08/12/2015"
-	ms.author="dkshir"/>
+	wacn.date=""/>
 
 # Different Ways to Create a Linux Virtual Machine
 
@@ -25,9 +21,9 @@ Azure Resource Manager templates were recently introduced as a way to create and
 
 ## Tool choices
 
-### GUI: The Azure Portal or Preview Portal
+### GUI: The Azure Management Portal or Preview Portal
 
-The graphical user interface of the Azure portal is an easy way to try out a virtual machine, especially if you're just starting out with Azure. Use either the [Azure portal](http://manage.windowsazure.com) or the [Azure preview portal](http://portal.azure.com) to create the VM. For general instructions, see [Create a Custom Virtual Machine][] and select any Linux image from the **Gallery**. Note that the [Azure portal](http://manage.windowsazure.com) creates virtual machines using only the classic deployment model.
+The graphical user interface of the Azure Management Portal is an easy way to try out a virtual machine, especially if you're just starting out with Azure. Use either the [Azure Management Portal](http://manage.windowsazure.cn) or the [Azure preview portal](http://manage.windowsazure.cn) to create the VM. For general instructions, see [Create a Custom Virtual Machine][] and select any Linux image from the **Gallery**. Note that the [Azure Management Portal](http://manage.windowsazure.cn) creates virtual machines using only the classic deployment model.
 
 ### Command Shell: Azure CLI or Azure PowerShell
 
@@ -73,30 +69,21 @@ Use an image based on an existing Azure virtual machine by *capturing* that VM, 
 [Equivalent Resource Manager and Service Management Commands for VM Operations with the Azure CLI for Mac, Linux, and Windows][]
 
 <!-- LINKS -->
-[overview]: ../resource-group-overview.md
-
-[Create a Virtual Machine Running Windows]: virtual-machines-windows-tutorial.md
-[Create a Virtual Machine Running Linux]: virtual-machines-linux-tutorial.md
-
-[Equivalent Resource Manager and Service Management Commands for VM Operations with the Azure CLI for Mac, Linux, and Windows]:xplat-cli-azure-manage-vm-asm-arm.md
-[Deploy and Manage Virtual Machines using Azure Resource Manager Templates and the Azure CLI]: virtual-machines-deploy-rmtemplates-azure-cli.md
-[Deploy and Manage Virtual Machines using Azure Resource Manager Templates and PowerShell]:  virtual-machines-deploy-rmtemplates-powershell.md
-[Use Azure PowerShell to create and preconfigure Linux-based Virtual Machines]: virtual-machines-ps-create-preconfigure-linux-vms.md
-
-[How to Create a Custom Virtual Machine Running Linux in Azure]: virtual-machines-linux-create-custom.md
-[How to Capture a Linux Virtual Machine to Use as a Template with the CLI]: virtual-machines-linux-capture-image.md
-
-[Creating and Uploading a Virtual Hard Disk that Contains the Linux Operating System]: virtual-machines-linux-create-upload-vhd.md
-
-[Creating a virtual machine for a website with Visual Studio]: virtual-machines-dotnet-create-visual-studio-powershell.md
-[Deploy Azure Resources Using the Compute, Network, and Storage .NET Libraries]: virtual-machines-arm-deployment.md
-
-[Log On to the Virtual Machine]: virtual-machines-linux-how-to-log-on.md
-
-[Attach a Data Disk]: virtual-machines-linux-how-to-attach-disk.md
-
-[Base Configuration Test Environment]: virtual-machines-base-configuration-test-environment.md
-[Azure hybrid cloud test environments]: virtual-machines-hybrid-cloud-test-environments.md
-
-[Create a Virtual Machine Running Linux]: virtual-machines-linux-tutorial.md
-[Create a Custom Virtual Machine]: virtual-machines-create-custom.md
+[overview]: /documentation/articles/resource-group-overview
+[Create a Virtual Machine Running Windows]: /documentation/articles/virtual-machines-windows-tutorial
+[Create a Virtual Machine Running Linux]: /documentation/articles/virtual-machines-linux-tutorial
+[Equivalent Resource Manager and Service Management Commands for VM Operations with the Azure CLI for Mac, Linux, and Windows]: /documentation/articles/xplat-cli-azure-manage-vm-asm-arm
+[Deploy and Manage Virtual Machines using Azure Resource Manager Templates and the Azure CLI]: /documentation/articles/virtual-machines-deploy-rmtemplates-azure-cli
+[Deploy and Manage Virtual Machines using Azure Resource Manager Templates and PowerShell]: /documentation/articles/virtual-machines-deploy-rmtemplates-powershell
+[Use Azure PowerShell to create and preconfigure Linux-based Virtual Machines]: /documentation/articles/virtual-machines-ps-create-preconfigure-linux-vms
+[How to Create a Custom Virtual Machine Running Linux in Azure]: /documentation/articles/virtual-machines-linux-create-custom
+[How to Capture a Linux Virtual Machine to Use as a Template with the CLI]: /documentation/articles/virtual-machines-linux-capture-image
+[Creating and Uploading a Virtual Hard Disk that Contains the Linux Operating System]: /documentation/articles/virtual-machines-linux-create-upload-vhd
+[Creating a virtual machine for a website with Visual Studio]: /documentation/articles/virtual-machines-dotnet-create-visual-studio-powershell
+[Deploy Azure Resources Using the Compute, Network, and Storage .NET Libraries]: /documentation/articles/virtual-machines-arm-deployment
+[Log On to the Virtual Machine]: /documentation/articles/virtual-machines-linux-how-to-log-on
+[Attach a Data Disk]: /documentation/articles/virtual-machines-linux-how-to-attach-disk
+[Base Configuration Test Environment]: /documentation/articles/virtual-machines-base-configuration-test-environment
+[Azure hybrid cloud test environments]: /documentation/articles/virtual-machines-hybrid-cloud-test-environments
+[Create a Virtual Machine Running Linux]: /documentation/articles/virtual-machines-linux-tutorial
+[Create a Custom Virtual Machine]: /documentation/articles/virtual-machines-create-custom

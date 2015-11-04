@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="What happened to my Cordova project (Visual Studio Connected Services) | Microsoft Azure" 
+	pageTitle="What happened to my Cordova project (Visual Studio Connected Services) | Windows Azure" 
 	description="Describes what happened to your Azure Cordova project after adding Azure Mobile Services by using Visual Studio Connected Services " 
 	services="mobile-services" 
 	documentationCenter="na" 
@@ -7,20 +7,16 @@
 	manager="douge" 
 	editor=""/>
 
-<tags 
-	ms.service="mobile-services" 
-	ms.workload="mobile" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="multiple" 
-	ms.topic="article" 
-	ms.date="09/17/2015" 
-	ms.author="patshea"/>
+<tags
+	ms.service="mobile-services"
+	ms.date="09/17/2015"
+	wacn.date=""/>
 
 # What happened to my Azure Cordova project after adding Azure Mobile Services by using Visual Studio Connected Services?
 
 > [AZURE.SELECTOR]
-> - [Getting Started](vs-mobile-services-cordova-getting-started.md)
-> - [What Happened](vs-mobile-services-cordova-what-happened.md)
+> - [Getting Started](/documentation/articles/vs-mobile-services-cordova-getting-started)
+> - [What Happened](/documentation/articles/vs-mobile-services-cordova-what-happened)
 
 ##References Added
 
@@ -33,8 +29,8 @@ Under `services\mobileServices\settings`, a new JavaScript (.js) file with a **M
 	var mobileServiceClient;
 	document.addEventListener("deviceready", function() {
             mobileServiceClient = new WindowsAzure.MobileServiceClient(
-	        "<your mobile service name>.azure-mobile.net",
+	        "<your mobile service name>.azure-mobile.cn",
 	        "<insert your key>"
 	    );
 
-[Learn more about mobile services](http://azure.microsoft.com/documentation/services/mobile-services/) 
+[Learn more about mobile services](/documentation/services/mobile-services/) 

@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Service-side authorization of users in a .NET backend mobile service | Microsoft Azure"
+	pageTitle="Service-side authorization of users in a .NET backend mobile service | Windows Azure"
 	description="Learn how to restrict access for authorize users in a .NET backend mobile service"
 	services="mobile-services"
 	documentationCenter="windows"
@@ -9,12 +9,8 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.workload="mobile"
-	ms.tgt_pltfrm="mobile-multiple"
-	ms.topic="article"
-	ms.devlang="dotnet"
 	ms.date="10/01/2015"
-	ms.author="krisragh"/>
+	wacn.date=""/>
 
 # Service-side authorization of users in Mobile Services
 
@@ -32,7 +28,7 @@ This tutorial is based on the Mobile Services Quick Start and builds on the [Add
 
 		public string UserId { get; set; }
 
-	>[AZURE.NOTE] To make this data model change and maintain existing data in the database, you must use [Code First Migrations](mobile-services-dotnet-backend-how-to-use-code-first-migrations.md).
+	>[AZURE.NOTE] To make this data model change and maintain existing data in the database, you must use [Code First Migrations](/documentation/articles/mobile-services-dotnet-backend-how-to-use-code-first-migrations).
 
 2. In Visual Studio, expand the Controllers folder,  open **TodoItemController.cs** and add the following using statement:
 
@@ -77,4 +73,4 @@ This tutorial is based on the Mobile Services Quick Start and builds on the [Add
 [3]: ./media/mobile-services-dotnet-backend-ios-authorize-users-in-scripts/mobile-quickstart-startup-ios.png
 
 <!-- URLs. -->
-[Add Authentication to Existing Mobile Services App]: mobile-services-dotnet-backend-ios-get-started-users.md
+[Add Authentication to Existing Mobile Services App]: /documentation/articles/mobile-services-dotnet-backend-ios-get-started-users

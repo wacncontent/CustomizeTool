@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="How to use Service Bus topics with PHP | Microsoft Azure" 
+	pageTitle="How to use Service Bus topics with PHP | Windows Azure" 
 	description="Learn how to use Service Bus topics with PHP in Azure." 
 	services="service-bus" 
 	documentationCenter="php" 
@@ -7,27 +7,23 @@
 	manager="timlt" 
 	editor=""/>
 
-<tags 
-	ms.service="service-bus" 
-	ms.workload="tbd" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="PHP" 
-	ms.topic="article" 
-	ms.date="10/06/2015" 
-	ms.author="sethm"/>
+<tags
+	ms.service="service-bus"
+	ms.date="10/06/2015"
+	wacn.date=""/>
 
 
 # How to use Service Bus topics and subscriptions
 
-[AZURE.INCLUDE [service-bus-selector-topics](../../includes/service-bus-selector-topics.md)]
+[AZURE.INCLUDE [service-bus-selector-topics](../includes/service-bus-selector-topics.md)]
 
-This article shows you how to use Service Bus topics and subscriptions. The samples are written in PHP and use the [Azure SDK for PHP](../php-download-sdk.md). The scenarios covered include **creating topics and subscriptions**, **creating subscription filters**, **sending messages to a topic**, **receiving messages from a subscription**, and **deleting topics and subscriptions**.
+This article shows you how to use Service Bus topics and subscriptions. The samples are written in PHP and use the [Azure SDK for PHP](/documentation/articles/php-download-sdk). The scenarios covered include **creating topics and subscriptions**, **creating subscription filters**, **sending messages to a topic**, **receiving messages from a subscription**, and **deleting topics and subscriptions**.
 
-[AZURE.INCLUDE [howto-service-bus-topics](../../includes/howto-service-bus-topics.md)]
+[AZURE.INCLUDE [howto-service-bus-topics](../includes/howto-service-bus-topics.md)]
 
 ## Create a PHP application
 
-The only requirement for creating a PHP application that accesses the Azure Blob service is to reference classes in the [Azure SDK for PHP](../php-download-sdk.md) from within your code. You can use any development tools to create your application, or Notepad.
+The only requirement for creating a PHP application that accesses the Azure Blob service is to reference classes in the [Azure SDK for PHP](/documentation/articles/php-download-sdk) from within your code. You can use any development tools to create your application, or Notepad.
 
 > [AZURE.NOTE] Your PHP installation must also have the [OpenSSL extension](http://php.net/openssl) installed and enabled.
 
@@ -35,7 +31,7 @@ This article describes how to use service features which can be called within a 
 
 ## Get the Azure client libraries
 
-[AZURE.INCLUDE [get-client-libraries](../../includes/get-client-libraries.md)]
+[AZURE.INCLUDE [get-client-libraries](../includes/get-client-libraries.md)]
 
 ## Configure your application to use Service Bus
 
@@ -63,7 +59,7 @@ To instantiate an Azure Service Bus client you must first have a valid connectio
 Endpoint=[yourEndpoint];SharedSecretIssuer=[Default Issuer];SharedSecretValue=[Default Key]
 ```
 
-Where `Endpoint` is typically of the format `https://[yourNamespace].servicebus.windows.net`.
+Where `Endpoint` is typically of the format `https://[yourNamespace].servicebus.chinacloudapi.cn`.
 
 To create any Azure service client you must use the **ServicesBuilder** class. You can:
 
@@ -108,7 +104,7 @@ try	{
 catch(ServiceException $e){
 	// Handle exception based on error codes and messages.
 	// Error codes and messages are here: 
-	// http://msdn.microsoft.com/library/windowsazure/dd179357
+	// http://msdn.microsoft.com/zh-cn/library/azure/dd179357
 	$code = $e->getCode();
 	$error_message = $e->getMessage();
 	echo $code.": ".$error_message."<br />";
@@ -143,7 +139,7 @@ try	{
 catch(ServiceException $e){
 	// Handle exception based on error codes and messages.
 	// Error codes and messages are here: 
-	// http://msdn.microsoft.com/library/windowsazure/dd179357
+	// http://msdn.microsoft.com/zh-cn/library/azure/dd179357
 	$code = $e->getCode();
 	$error_message = $e->getMessage();
 	echo $code.": ".$error_message."<br />";
@@ -212,7 +208,7 @@ try	{
 catch(ServiceException $e){
 	// Handle exception based on error codes and messages.
 	// Error codes and messages are here: 
-	// http://msdn.microsoft.com/library/windowsazure/hh780775
+	// http://msdn.microsoft.com/zh-cn/library/azure/hh780775
 	$code = $e->getCode();
 	$error_message = $e->getMessage();
 	echo $code.": ".$error_message."<br />";
@@ -280,7 +276,7 @@ try	{
 catch(ServiceException $e){
 	// Handle exception based on error codes and messages.
 	// Error codes and messages are here:
-	// http://msdn.microsoft.com/library/windowsazure/hh780735
+	// http://msdn.microsoft.com/zh-cn/library/azure/hh780735
 	$code = $e->getCode();
 	$error_message = $e->getMessage();
 	echo $code.": ".$error_message."<br />";
@@ -318,7 +314,7 @@ try	{
 catch(ServiceException $e){
 	// Handle exception based on error codes and messages.
 	// Error codes and messages are here: 
-	// http://msdn.microsoft.com/library/windowsazure/dd179357
+	// http://msdn.microsoft.com/zh-cn/library/azure/dd179357
 	$code = $e->getCode();
 	$error_message = $e->getMessage();
 	echo $code.": ".$error_message."<br />";
@@ -335,7 +331,7 @@ $serviceBusRestProxy->deleteSubscription("mytopic", "mysubscription");
 
 Now that you've learned the basics of Service Bus queues, see [Queues, topics, and subscriptions][] for more information.
 
-[Queues, topics, and subscriptions]: service-bus-queues-topics-subscriptions.md
-[sqlfilter]: http://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.sqlfilter.sqlexpression.aspx
+[Queues, topics, and subscriptions]: /documentation/articles/service-bus-queues-topics-subscriptions
+[sqlfilter]: http://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.sqlfilter.sqlexpression.aspx
 [require-once]: http://php.net/require_once
-[Azure Queues and Service Bus queues]: service-bus-azure-and-service-bus-queues-compared-contrasted.md#capacity-and-quotas
+[Azure Queues and Service Bus queues]: /documentation/articles/service-bus-azure-and-service-bus-queues-compared-contrasted#capacity-and-quotas

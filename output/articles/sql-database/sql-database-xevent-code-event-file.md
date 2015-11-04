@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="XEvent Event File code for SQL Database | Microsoft Azure" 
+	pageTitle="XEvent Event File code for SQL Database | Windows Azure" 
 	description="Provides PowerShell and Transact-SQL for a two-phase code sample that demonstrates the Event File target in an extended event on Azure SQL Database. Azure Storage is a required part of this scenario." 
 	services="sql-database" 
 	documentationCenter="" 
@@ -9,14 +9,10 @@
 	tags=""/>
 
 
-<tags 
-	ms.service="sql-database" 
-	ms.workload="data-management" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="09/30/2015" 
-	ms.author="genemi"/>
+<tags
+	ms.service="sql-database"
+	ms.date="09/30/2015"
+	wacn.date=""/>
 
 
 # Event File target code for extended events in SQL Database
@@ -25,7 +21,7 @@
 You want a complete code sample for a robust way to capture and report information for an extended event.
 
 
-In Microsoft SQL Server the [Event File target](http://msdn.microsoft.com/library/ff878115.aspx) is used to store event outputs into a local hard drive file. But such files are not available to Azure SQL Database. Instead we use the Azure Storage service to support the Event File target.
+In Microsoft SQL Server the [Event File target](http://msdn.microsoft.com/zh-cn/library/ff878115.aspx) is used to store event outputs into a local hard drive file. But such files are not available to Azure SQL Database. Instead we use the Azure Storage service to support the Event File target.
 
 
 This topic presents a two-phase code sample:
@@ -41,16 +37,16 @@ This topic presents a two-phase code sample:
 ## Prerequisites
 
 
-- An Azure account and subscription. You can sign up for a [free trial](http://azure.microsoft.com/pricing/free-trial/).
+- An Azure account and subscription. You can sign up for a [trial](/pricing/1rmb-trial/).
 
 
 - Any database you can create a table in.
- - Optionally you can [create an **AdventureWorksLT** demonstration database](sql-database-get-started.md) in minutes.
+ - Optionally you can [create an **AdventureWorksLT** demonstration database](/documentation/articles/sql-database-get-started) in minutes.
 
 
 - SQL Server Management Studio (ssms.exe), its August 2015 Preview or a later version. 
 You can download the latest ssms.exe from:
- - Topic titled [Download SQL Server Management Studio](http://msdn.microsoft.com/library/mt238290.aspx).
+ - Topic titled [Download SQL Server Management Studio](http://msdn.microsoft.com/zh-cn/library/mt238290.aspx).
  - [A direct link to the download.](http://go.microsoft.com/fwlink/?linkid=616025)
  - Microsoft recommends that you update your ssms.exe periodically. In some cases ssms.exe will be updated monthly.
 
@@ -113,7 +109,7 @@ $policySasStartTime  = '2015-08-01'
 
 
 $storageAccountName     = 'gmstorageaccountxevent'
-$storageAccountLocation = 'West US'
+$storageAccountLocation = 'China North'
 $contextName            = 'gmcontext'
 $containerName          = 'gmcontainerxevent'
 $policySasToken      = 'gmpolicysastoken'
@@ -344,11 +340,11 @@ GO
 IF EXISTS
 	(SELECT * FROM sys.database_scoped_credentials
 		-- TODO: Assign AzureStorageAccount name, and the associated Container name.
-		WHERE name = 'https://gmstorageaccountxevent.blob.core.windows.net/gmcontainerxevent')
+		WHERE name = 'https://gmstorageaccountxevent.blob.core.chinacloudapi.cn/gmcontainerxevent')
 BEGIN
 	DROP DATABASE SCOPED CREDENTIAL
 		-- TODO: Assign AzureStorageAccount name, and the associated Container name.
-		[https://gmstorageaccountxevent.blob.core.windows.net/gmcontainerxevent] ;
+		[https://gmstorageaccountxevent.blob.core.chinacloudapi.cn/gmcontainerxevent] ;
 END
 GO
 
@@ -358,7 +354,7 @@ CREATE
 	CREDENTIAL
 		-- use '.blob.',   and not '.queue.' or '.table.' etc.
 		-- TODO: Assign AzureStorageAccount name, and the associated Container name.
-		[https://gmstorageaccountxevent.blob.core.windows.net/gmcontainerxevent]
+		[https://gmstorageaccountxevent.blob.core.chinacloudapi.cn/gmcontainerxevent]
 	WITH
 		IDENTITY = 'SHARED ACCESS SIGNATURE',  -- "SAS" token.
 		-- TODO: Paste in the long SasToken string here for Secret, but exclude any leading '?'.
@@ -400,7 +396,7 @@ CREATE
 			-- TODO: Assign AzureStorageAccount name, and the associated Container name.
 			-- Also, tweak the .xel file name at end, if you like.
 			SET filename =
-				'https://gmstorageaccountxevent.blob.core.windows.net/gmcontainerxevent/anyfilenamexel242b.xel'
+				'https://gmstorageaccountxevent.blob.core.chinacloudapi.cn/gmcontainerxevent/anyfilenamexel242b.xel'
 			)
 	WITH
 		(MAX_MEMORY = 10 MB,
@@ -455,7 +451,7 @@ SELECT
 		sys.fn_xe_file_target_read_file
 			(
 				-- TODO: Fill in Storage Account name, and the associated Container name.
-				'https://gmstorageaccountxevent.blob.core.windows.net/gmcontainerxevent/anyfilenamexel242b',
+				'https://gmstorageaccountxevent.blob.core.chinacloudapi.cn/gmcontainerxevent/anyfilenamexel242b',
 				null, null, null
 			);
 GO
@@ -471,7 +467,7 @@ GO
 
 DROP DATABASE SCOPED CREDENTIAL
 	-- TODO: Assign AzureStorageAccount name, and the associated Container name.
-	[https://gmstorageaccountxevent.blob.core.windows.net/gmcontainerxevent]
+	[https://gmstorageaccountxevent.blob.core.chinacloudapi.cn/gmcontainerxevent]
 	;
 GO
 
@@ -578,18 +574,18 @@ Suppose you wanted to run the preceding Transact-SQL sample on Microsoft SQL Ser
 
 The primary topic for extended events on Azure SQL Database is:
 
-- [Extended events in SQL Database](sql-database-xevent-db-diff-from-svr.md) - is the primary topic for extended events on Azure SQL database.
+- [Extended events in SQL Database](/documentation/articles/sql-database-xevent-db-diff-from-svr) - is the primary topic for extended events on Azure SQL database.
  - It contrasts aspects of extended events that differ between Azure SQL Database versus Microsoft SQL Server.
 
 
-- [Ring Buffer target code for extended events in SQL Database](sql-database-xevent-code-ring-buffer.md) - provides a sister code sample which is quick and easy, but which is more for brief testing and is less robust for larger activity.
+- [Ring Buffer target code for extended events in SQL Database](/documentation/articles/sql-database-xevent-code-ring-buffer) - provides a sister code sample which is quick and easy, but which is more for brief testing and is less robust for larger activity.
 
 
 For more info about accounts and containers in the Azure Storage service, see:
 
-- [How to use Blob storage from .NET](storage-dotnet-how-to-use-blobs.md/)
-- [Naming and Referencing Containers, Blobs, and Metadata](http://msdn.microsoft.com/library/azure/dd135715.aspx)
-- [Working with the Root Container](http://msdn.microsoft.com/library/azure/ee395424.aspx)
+- [How to use Blob storage from .NET](/documentation/articles/storage-dotnet-how-to-use-blobs)
+- [Naming and Referencing Containers, Blobs, and Metadata](http://msdn.microsoft.com/zh-cn/library/azure/dd135715.aspx)
+- [Working with the Root Container](http://msdn.microsoft.com/zh-cn/library/azure/ee395424.aspx)
 
 
 <!--

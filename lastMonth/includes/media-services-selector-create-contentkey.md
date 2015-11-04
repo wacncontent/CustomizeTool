@@ -1,4 +1,4 @@
 > [AZURE.SELECTOR] 
-- [.NET](/documentation/articles/media-services-dotnet-create-contentkey)
-- [REST API](/documentation/articles/media-services-rest-create-contentkey)
+- [.NET](../articles/media-services/media-services-dotnet-create-contentkey.md)
+- [REST API](../articles/media-services/media-services-rest-create-contentkey.md)
 - [Java](https://github.com/southworkscom/azure-sdk-for-media-services-java-samples)

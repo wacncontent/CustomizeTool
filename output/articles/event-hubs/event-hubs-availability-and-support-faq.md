@@ -1,19 +1,15 @@
 <properties 
-   pageTitle="Event Hubs availability and support | Microsoft Azure"
+   pageTitle="Event Hubs availability and support | Windows Azure"
    description="Event Hubs availability and support FAQ."
    services="event-hubs"
    documentationCenter="na"
    authors="sethmanheim"
    manager="timlt"
    editor="" />
-<tags 
-   ms.service="event-hubs"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="tbd"
-   ms.date="10/07/2015"
-   ms.author="sethm" />
+<tags
+	ms.service="event-hubs"
+	ms.date="10/07/2015"
+	wacn.date=""/>
 
 # Event Hubs availability and support FAQ
 
@@ -23,7 +19,7 @@ This article discusses availability information and answers some frequently-aske
 
 ## Pricing information
 
-For complete information about Event Hubs pricing, see the [Event Hubs pricing details](http://azure.microsoft.com/pricing/details/event-hubs/).
+For complete information about Event Hubs pricing, see the [Event Hubs pricing details](/home/features/event-hubs/#price).
 
 ## How are Event Hubs ingress events calculated?
 
@@ -33,7 +29,7 @@ Events consumed from an Event Hub, as well as management operations and control 
 
 ## What are Event Hubs throughput units?
 
-Event Hubs throughput units are explicitly selected by the user, either through the Azure portal or Event Hubs management APIs. Throughput units apply to all Event Hubs in a Service Bus namespace, and each throughput unit entitles the namespace to the following capabilities:
+Event Hubs throughput units are explicitly selected by the user, either through the Azure Management Portal or Event Hubs management APIs. Throughput units apply to all Event Hubs in a Service Bus namespace, and each throughput unit entitles the namespace to the following capabilities:
 
 - Up to 1 MB per second of ingress events (events sent into an Event Hub), but no more than 1000 ingress events, management operations or control API calls per second.
 
@@ -73,11 +69,11 @@ Yes, as long as all the Event Hubs, queues, and topics are in the same Service B
 
 ## Do brokered connection charges apply to Event Hubs?
 
-For senders, connection charges apply only when the AMQP protocol is used. There are no connection charges for sending events using HTTP, regardless of the number of sending systems or devices. If you plan to use AMQP (for example, to achieve more efficient event streaming or to enable bi-directional communication on Internet of Things command and control scenarios), please refer to the [Service Bus pricing information](http://azure.microsoft.com/pricing/details/service-bus/) page for information about what constitutes a brokered connection, and how they are metered.
+For senders, connection charges apply only when the AMQP protocol is used. There are no connection charges for sending events using HTTP, regardless of the number of sending systems or devices. If you plan to use AMQP (for example, to achieve more efficient event streaming or to enable bi-directional communication on Internet of Things command and control scenarios), please refer to the [Service Bus pricing information](/home/features/service-bus/#price) page for information about what constitutes a brokered connection, and how they are metered.
 
 ## What is the difference between Event Hubs Basic and Standard tiers?
 
-Event Hubs Standard tier provides features beyond what is available in Event Hubs Basic, as well as in some competitive systems. These features include retention periods of more than 24 hours, and the ability to use a single AMQP connection to send commands to large numbers of devices with sub-second latencies, as well as to send telemetry from those devices into Event Hubs. Refer to the [pricing details]([Event Hubs Pricing Details](http://azure.microsoft.com/pricing/details/event-hubs/)) for the list of features.
+Event Hubs Standard tier provides features beyond what is available in Event Hubs Basic, as well as in some competitive systems. These features include retention periods of more than 24 hours, and the ability to use a single AMQP connection to send commands to large numbers of devices with sub-second latencies, as well as to send telemetry from those devices into Event Hubs. Refer to the [pricing details]([Event Hubs Pricing Details](/home/features/event-hubs/#price)) for the list of features.
 
 ## Geographic Availability
 
@@ -85,8 +81,8 @@ Event Hubs is available in the following regions:
 
 |Geo|Regions|
 |---|---|
-|United States|Central US, East US, East US 2, South Central US, West US|
-|Europe|North Europe, West Europe|
+|United States|China North, China East, China East 2, China East, China North|
+|Europe|China North, West Europe|
 |Asia Pacific|East Asia, Southeast Asia|
 |Japan|Japan East, Japan West|
 |Brazil|Brazil South|
@@ -106,6 +102,6 @@ To learn more about Event Hubs, see the following articles:
 - A complete [sample application that uses Event Hubs].
 - A [queued messaging solution] using Service Bus queues.
 
-[Event Hubs overview]: event-hubs-overview.md
+[Event Hubs overview]: /documentation/articles/event-hubs-overview
 [sample application that uses Event Hubs]: https://code.msdn.microsoft.com/Service-Bus-Event-Hub-286fd097
-[queued messaging solution]: ../service-bus/service-bus-dotnet-multi-tier-app-using-service-bus-queues.md
+[queued messaging solution]: /documentation/articles/service-bus-dotnet-multi-tier-app-using-service-bus-queues

@@ -1,19 +1,15 @@
 <properties 
-   pageTitle="Insulating Service Bus applications against outages and disasters | Microsoft Azure"
+   pageTitle="Insulating Service Bus applications against outages and disasters | Windows Azure"
    description="Describes techniques you can use to protect applications against a potential Service Bus outage."
    services="service-bus"
    documentationCenter="na"
    authors="sethmanheim"
    manager="timlt"
    editor="tysonn" /> 
-<tags 
-   ms.service="service-bus"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="na"
-   ms.date="09/18/2015"
-   ms.author="sethm" />
+<tags
+	ms.service="service-bus"
+	ms.date="09/18/2015"
+	wacn.date=""/>
 
 # Best Practices for insulating applications against Service Bus outages and disasters
 
@@ -41,13 +37,13 @@ A non-partitioned queue or topic is assigned to one messaging store. If this mes
 
 ## Protecting against datacenter outages or disasters
 
-To allow for a failover between two datacenters, you can create a Service Bus service namespace in each datacenter. For example, the Service Bus service namespace **contosoPrimary.servicebus.windows.net** might be located in the United States (North/Central) region, and **contosoSecondary.servicebus.windows.net** might be located in the United States (South/Central) region. If a Service Bus messaging entity must remain accessible in the presence of a datacenter outage, you can create that entity in both namespaces.
+To allow for a failover between two datacenters, you can create a Service Bus service namespace in each datacenter. For example, the Service Bus service namespace **contosoPrimary.servicebus.chinacloudapi.cn** might be located in the United States (North/Central) region, and **contosoSecondary.servicebus.chinacloudapi.cn** might be located in the United States (South/Central) region. If a Service Bus messaging entity must remain accessible in the presence of a datacenter outage, you can create that entity in both namespaces.
 
 For more information, see the "Failure of Service Bus within an Azure datacenter" section in [Asynchronous Messaging Patterns and High Availability][].
 
 ## Protecting relay endpoints against datacenter outages or disasters
 
-Geo-replication of relay endpoints allows a service that exposes a relay endpoint to be reachable in the presence of Service Bus outages. To achieve geo-replication, the service must create two relay endpoints in different namespaces. The namespaces must reside in different datacenters and the two endpoints must have different names. For example, a primary endpoint can be reached under **contosoPrimary.servicebus.windows.net/myPrimaryService**, while its secondary counterpart can be reached under **contosoSecondary.servicebus.windows.net/mySecondaryService**.
+Geo-replication of relay endpoints allows a service that exposes a relay endpoint to be reachable in the presence of Service Bus outages. To achieve geo-replication, the service must create two relay endpoints in different namespaces. The namespaces must reside in different datacenters and the two endpoints must have different names. For example, a primary endpoint can be reached under **contosoPrimary.servicebus.chinacloudapi.cn/myPrimaryService**, while its secondary counterpart can be reached under **contosoSecondary.servicebus.chinacloudapi.cn/mySecondaryService**.
 
 The service then listens on both endpoints, and a client can invoke the service via either endpoint. A client application randomly picks one of the relays as the primary endpoint, and sends its request to the active endpoint. If the operation fails with an error code, this failure indicates that the relay endpoint is not available. The application opens a channel to the backup endpoint and reissues the request. At that point the active and the backup endpoints switch roles: the client application considers the old active endpoint to be the new backup endpoint, and the old backup endpoint to be the new active endpoint. If both send operations fail, the roles of the two entities remain unchanged and an error is returned.
 
@@ -55,13 +51,13 @@ The [Geo-replication with Service Bus Relayed Messages][] sample demonstrates ho
 
 ## Protecting queues and topics against datacenter outages or disasters
 
-To achieve resilience against datacenter outages when using brokered messaging, Service Bus supports two approaches: *active* and *passive* replication. For each approach, if a given queue or topic must remain accessible in the presence of a datacenter outage, you can create it in both namespaces. Both entities can have the same name. For example, a primary queue can be reached under **contosoPrimary.servicebus.windows.net/myQueue**, while its secondary counterpart can be reached under **contosoSecondary.servicebus.windows.net/myQueue**.
+To achieve resilience against datacenter outages when using brokered messaging, Service Bus supports two approaches: *active* and *passive* replication. For each approach, if a given queue or topic must remain accessible in the presence of a datacenter outage, you can create it in both namespaces. Both entities can have the same name. For example, a primary queue can be reached under **contosoPrimary.servicebus.chinacloudapi.cn/myQueue**, while its secondary counterpart can be reached under **contosoSecondary.servicebus.chinacloudapi.cn/myQueue**.
 
 If the application does not require permanent sender-to-receiver communication, the application can implement a durable client-side queue to prevent message loss and to shield the sender from any transient Service Bus errors.
 
 ## Active replication
 
-Active replication uses entities in both service namespaces for every operation. Any client that sends a message sends two copies of the same message. The first copy is sent to the primary entity (for example, **contosoPrimary.servicebus.windows.net/sales**), and the second copy of the message is sent to the secondary entity (for example, **contosoSecondary.servicebus.windows.net/sales**).
+Active replication uses entities in both service namespaces for every operation. Any client that sends a message sends two copies of the same message. The first copy is sent to the primary entity (for example, **contosoPrimary.servicebus.chinacloudapi.cn/sales**), and the second copy of the message is sent to the secondary entity (for example, **contosoSecondary.servicebus.chinacloudapi.cn/sales**).
 
 A client receives messages from both queues. The receiver processes the first copy of a message, and the second copy is suppressed. To suppress duplicate messages, the sender must tag each message with a unique identifier. Both copies of the message must be tagged with the same identifier. You can use the [BrokeredMessage.MessageId][] or [BrokeredMessage.Label][] properties, or a custom property to tag the message. The receiver must maintain a list of messages that it has already received.
 
@@ -98,13 +94,13 @@ To learn more about disaster recovery, see these articles:
 - [Azure SQL Database Business Continuity][]
 - [Azure Business Continuity Technical Guidance][]
 
-  [Service Bus Authentication]: service-bus-authentication-and-authorization.md
-  [Partitioning Messaging Entities]: service-bus-partitioning.md
-  [Asynchronous Messaging Patterns and High Availability]: https://msdn.microsoft.com/library/azure/dn292562.aspx
+  [Service Bus Authentication]: /documentation/articles/service-bus-authentication-and-authorization
+  [Partitioning Messaging Entities]: /documentation/articles/service-bus-partitioning
+  [Asynchronous Messaging Patterns and High Availability]: https://msdn.microsoft.com/zh-cn/library/azure/dn292562.aspx
   [Geo-replication with Service Bus Relayed Messages]: http://code.msdn.microsoft.com/Geo-replication-with-16dbfecd
-  [BrokeredMessage.MessageId]: https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.brokeredmessage.messageid.aspx
-  [BrokeredMessage.Label]: https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.brokeredmessage.label.aspx
+  [BrokeredMessage.MessageId]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.brokeredmessage.messageid.aspx
+  [BrokeredMessage.Label]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.brokeredmessage.label.aspx
   [Geo-replication with Service Bus Brokered Messages]: http://code.msdn.microsoft.com/Geo-replication-with-f5688664
   [Durable Message Sender]: http://code.msdn.microsoft.com/Service-Bus-Durable-Sender-0763230d
-  [Azure SQL Database Business Continuity]: https://msdn.microsoft.com/library/azure/hh852669.aspx
-  [Azure Business Continuity Technical Guidance]: https://msdn.microsoft.com/library/azure/hh873027.aspx
+  [Azure SQL Database Business Continuity]: https://msdn.microsoft.com/zh-cn/library/azure/hh852669.aspx
+  [Azure Business Continuity Technical Guidance]: https://msdn.microsoft.com/zh-cn/library/azure/hh873027.aspx

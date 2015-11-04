@@ -6,40 +6,36 @@ documentationCenter=".net"
 authors="Thraka" 
 manager="timlt" 
 editor=""/>
-<tags 
-ms.service="cloud-services" 
-ms.workload="tbd" 
-ms.tgt_pltfrm="na" 
-ms.devlang="na" 
-ms.topic="article" 
-ms.date="09/08/2015" 
-ms.author="adegeo"/>
+<tags
+	ms.service="cloud-services"
+	ms.date="09/08/2015"
+	wacn.date=""/>
 
 # Customize the Lifecycle of a Web or Worker role in .NET
 
-When you create a worker role, you extend the [RoleEntryPoint](https://msdn.microsoft.com/library/azure/microsoft.windowsazure.serviceruntime.roleentrypoint.aspx) class which provides methods for you to override that let you respond to lifecycle events. For web roles this class is optional, so you much use it to respond to lifecycle events.
+When you create a worker role, you extend the [RoleEntryPoint](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.serviceruntime.roleentrypoint.aspx) class which provides methods for you to override that let you respond to lifecycle events. For web roles this class is optional, so you much use it to respond to lifecycle events.
 
 ## Extend the RoleEntryPoint class
 
-The [RoleEntryPoint](https://msdn.microsoft.com/library/azure/microsoft.windowsazure.serviceruntime.roleentrypoint.aspx) class includes methods that are called by Azure when it **starts**, **runs**, or **stops** a web or worker role. You can optionally override these methods to manage role initialization, role shutdown sequences, or the execution thread of the role. 
+The [RoleEntryPoint](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.serviceruntime.roleentrypoint.aspx) class includes methods that are called by Azure when it **starts**, **runs**, or **stops** a web or worker role. You can optionally override these methods to manage role initialization, role shutdown sequences, or the execution thread of the role. 
 
 When extending **RoleEntryPoint**, you should be aware of the following behaviors of the methods:
 
--   The [OnStart](https://msdn.microsoft.com/library/azure/microsoft.windowsazure.serviceruntime.roleentrypoint.onstart.aspx) and [OnStop](https://msdn.microsoft.com/library/azure/microsoft.windowsazure.serviceruntime.roleentrypoint.onstop.aspx) methods return a boolean value, so it is possible to return **false** from these methods.
+-   The [OnStart](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.serviceruntime.roleentrypoint.onstart.aspx) and [OnStop](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.serviceruntime.roleentrypoint.onstop.aspx) methods return a boolean value, so it is possible to return **false** from these methods.
 
      If your code returns **false**, the role process is abruptly terminated, without running any shutdown sequence you may have in place. In general, you should avoid returning **false** from the **OnStart** method.
      
 -   Any uncaught exception within an overload of a **RoleEntryPoint** method is treated as an unhandled exception.
 
-     If an exception occurs within one of the lifecycle methods, Azure will raise the [UnhandledException](https://msdn.microsoft.com/library/system.appdomain.unhandledexception.aspx) event, and then the process is terminated. After your role has been taken offline, it will be restarted by Azure. When an unhandled exception occurs, the [Stopping](https://msdn.microsoft.com/library/azure/microsoft.windowsazure.serviceruntime.roleenvironment.stopping.aspx) event is not raised, and the **OnStop** method is not called.
+     If an exception occurs within one of the lifecycle methods, Azure will raise the [UnhandledException](https://msdn.microsoft.com/zh-cn/library/system.appdomain.unhandledexception.aspx) event, and then the process is terminated. After your role has been taken offline, it will be restarted by Azure. When an unhandled exception occurs, the [Stopping](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.serviceruntime.roleenvironment.stopping.aspx) event is not raised, and the **OnStop** method is not called.
 
-If your role does not start, or is recycling between the initializing, busy, and stopping states, your code may be throwing an unhandled exception within one of the lifecycle events each time the role restarts. In this case, use the [UnhandledException](https://msdn.microsoft.com/library/system.appdomain.unhandledexception.aspx) event to determine the cause of the exception and handle it appropriately. Your role may also be returning from the [Run](https://msdn.microsoft.com/library/azure/microsoft.windowsazure.serviceruntime.roleentrypoint.run.aspx) method, which causes the role to restart. For more information about deployment states, see [Common Issues Which Cause Roles to Recycle](https://msdn.microsoft.com/library/azure/gg465402.aspx).
+If your role does not start, or is recycling between the initializing, busy, and stopping states, your code may be throwing an unhandled exception within one of the lifecycle events each time the role restarts. In this case, use the [UnhandledException](https://msdn.microsoft.com/zh-cn/library/system.appdomain.unhandledexception.aspx) event to determine the cause of the exception and handle it appropriately. Your role may also be returning from the [Run](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.serviceruntime.roleentrypoint.run.aspx) method, which causes the role to restart. For more information about deployment states, see [Common Issues Which Cause Roles to Recycle](https://msdn.microsoft.com/zh-cn/library/azure/gg465402.aspx).
 
-> [AZURE.NOTE] If you are using the [Azure Tools for Microsoft Visual Studio](https://msdn.microsoft.com/library/azure/ee405484.aspx) to develop your application, the role project templates automatically extend the **RoleEntryPoint** class for you, in the WebRole.cs and WorkerRole.cs files.
+> [AZURE.NOTE] If you are using the [Azure Tools for Microsoft Visual Studio](https://msdn.microsoft.com/zh-cn/library/azure/ee405484.aspx) to develop your application, the role project templates automatically extend the **RoleEntryPoint** class for you, in the WebRole.cs and WorkerRole.cs files.
 
 ## OnStart method
 
-The **OnStart** method is called when your role instance is brought online by Azure. While the OnStart code is executing, the role instance is marked as **Busy** and no external traffic will be directed to it by the load balancer. You can override this method to perform initialization work, such as implementing event handlers and starting [Azure Diagnostics](cloud-services-how-to-monitor.md).
+The **OnStart** method is called when your role instance is brought online by Azure. While the OnStart code is executing, the role instance is marked as **Busy** and no external traffic will be directed to it by the load balancer. You can override this method to perform initialization work, such as implementing event handlers and starting [Azure Diagnostics](/documentation/articles/cloud-services-how-to-monitor).
 
 If **OnStart** returns **true**, the instance is successfully initialized and Azure calls the **RoleEntryPoint.Run** method. If **OnStart** returns **false**, the role terminates immediately, without executing any planned shutdown sequences.
 
@@ -75,7 +71,7 @@ Overriding the **Run** method is not required; the default implementation starts
 
 ### Implementing the ASP.NET lifecycle methods for a web role
 
-You can use the ASP.NET lifecycle methods, in addition to those provided by the **RoleEntryPoint** class, to manage initialization and shutdown sequences for a web role. This may be useful for compatibility purposes if you are porting an existing ASP.NET application to Azure. The ASP.NET lifecycle methods are called from within the **RoleEntryPoint** methods. The **Application\_Start** method is called after the **RoleEntryPoint.OnStart** method finishes. The **Application\_End** method is called before the **RoleEntryPoint.OnStop** method is called.
+You can use the ASP.NET lifecycle methods, in addition to those provided by the **RoleEntryPoint** class, to manage initialization and shutdown sequences for a web role. This may be useful for compatibility purposes if you are porting an existing ASP.NET application to Azure. The ASP.NET lifecycle methods are called from within the **RoleEntryPoint** methods. The **Application_Start** method is called after the **RoleEntryPoint.OnStart** method finishes. The **Application_End** method is called before the **RoleEntryPoint.OnStop** method is called.
 
 ## Next steps
-Learn how to [create a cloud service package](cloud-services-model-and-package.md).
+Learn how to [create a cloud service package](/documentation/articles/cloud-services-model-and-package).

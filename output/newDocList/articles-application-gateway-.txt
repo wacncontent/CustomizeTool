@@ -1,0 +1,10 @@
+new docs: 7, word count: {word_count_TODO}
+articles/application-gateway/application-gateway-create-gateway-arm-template.md
+articles/application-gateway/application-gateway-create-gateway-arm.md
+articles/application-gateway/application-gateway-create-gateway.md
+articles/application-gateway/application-gateway-ilb-arm.md
+articles/application-gateway/application-gateway-ilb.md
+articles/application-gateway/application-gateway-introduction.md
+articles/application-gateway/application-gateway-ssl.md
+
+new includes: 0

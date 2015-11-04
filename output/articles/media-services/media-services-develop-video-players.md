@@ -22,16 +22,16 @@ Azure Media Services provides the tools you need to create rich, dynamic client 
 
 ##Azure Media Player
 
-[Azure Media Player](http://aka.ms/ampinfo) is a web video player built to play back media content from Windows Azure Media Services on a wide variety of browsers and devices. Azure Media Player utilizes industry standards, such as HTML5, Media Source Extensions (MSE), and Encrypted Media Extensions (EME) to provide an enriched adaptive streaming experience. When these standards are not available on a device or in a browser, Azure Media Player uses Flash and Silverlight as fallback technology. Regardless of the playback technology used, developers will have a unified JavaScript interface to access APIs. This allows for content served by Azure Media Services to be played across a wide-range of devices and browsers without any extra effort.
+[Azure Media Player](/documentation/services/media-services/) is a web video player built to play back media content from Windows Azure Media Services on a wide variety of browsers and devices. Azure Media Player utilizes industry standards, such as HTML5, Media Source Extensions (MSE), and Encrypted Media Extensions (EME) to provide an enriched adaptive streaming experience. When these standards are not available on a device or in a browser, Azure Media Player uses Flash and Silverlight as fallback technology. Regardless of the playback technology used, developers will have a unified JavaScript interface to access APIs. This allows for content served by Azure Media Services to be played across a wide-range of devices and browsers without any extra effort.
 
 Windows Azure Media Services allows for content to be served up with DASH, Smooth Streaming, and HLS streaming formats to play back content. Azure Media Player takes into account these various formats and automatically plays the best link based on the platform/browser capabilities. Windows Azure Media Services also allows for dynamic encryption of assets with PlayReady encryption or AES-128 bit envelope encryption. Azure Media Player allows for decryption of PlayReady and AES-128 bit encrypted content when appropriately configured. 
 
 For more information:
 
-- [Azure Media Player](http://aka.ms/ampinfo)
-- [Azure Media Player Documentation](http://aka.ms/ampdocs) 
+- [Azure Media Player](/documentation/services/media-services/)
+- [Azure Media Player Documentation](http://amp.azure.net/libs/amp/latest/docs/) 
 - [Azure Media Player Getting Started Blog](http://azure.microsoft.com/blog/2015/04/15/announcing-azure-media-player)
-- [Sign up to stay up to date with the latest from Azure Media Player](http://aka.ms/ampsignup)
+- [Sign up to stay up to date with the latest from Azure Media Player](http://amp.azure.net/signup/)
 - [Add new feature requests, ideas, feedback](http://feedback.azure.com/forums/293565-azure-media-player/filters/my_feedback) 
 
 

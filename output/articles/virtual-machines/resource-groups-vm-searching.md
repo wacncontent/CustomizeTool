@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Navigate and select VM images | Microsoft Azure"
+   pageTitle="Navigate and select VM images | Windows Azure"
    description="Learn how to determine the publisher, offer, and SKU for images when creating an Azure virtual machine with the Resource Manager deployment model."
    services="virtual-machines"
    documentationCenter=""
@@ -10,20 +10,16 @@
    />
 
 <tags
-   ms.service="virtual-machines"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="command-line-interface"
-   ms.workload="infrastructure"
-   ms.date="08/25/2015"
-   ms.author="rasquill"/>
+	ms.service="virtual-machines"
+	ms.date="08/25/2015"
+	wacn.date=""/>
 
 # Navigate and select Azure virtual machine images with Windows PowerShell and the Azure CLI
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-rm-include.md)] classic deployment model.
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] classic deployment model.
 
 
-This article describes how to navigate and select virtual machine images, using a recent installation of either the Azure CLI or Azure PowerShell. As a prerequisite, you would need to change to the Resource Manager mode. With the Azure CLI, enter that mode by typing `azure config mode arm`. With PowerShell, type `Switch-AzureMode AzureResourceManager`. See [Using Azure CLI with Resource Manager](xplat-cli-azure-resource-manager.md) and [Using Azure PowerShell with Azure Resource Manager](../powershell-azure-resource-manager.md) for more complete update and configuration details.
+This article describes how to navigate and select virtual machine images, using a recent installation of either the Azure CLI or Azure PowerShell. As a prerequisite, you would need to change to the Resource Manager mode. With the Azure CLI, enter that mode by typing `azure config mode arm`. With PowerShell, type `Switch-AzureMode AzureResourceManager`. See [Using Azure CLI with Resource Manager](/documentation/articles/xplat-cli-azure-resource-manager) and [Using Azure PowerShell with Azure Resource Manager](/documentation/articles/powershell-azure-resource-manager) for more complete update and configuration details.
 
 ## Table of commonly used images
 
@@ -71,7 +67,7 @@ The easiest and quickest way to locate an image to use either with `azure vm qui
 
 The **Urn** column will be the form you pass to `azure vm quick-create`.
 
-Often, however, you don't yet know what is available. In this case, you can navigate images by discovering publishers first by using `azure vm image list-publishers` and responding to the location prompt with a data center location you expect to use for your resource group. For example, the following lists all image publishers in the West US location (pass the location argument by lowercasing and removing spaces from the standard locations)
+Often, however, you don't yet know what is available. In this case, you can navigate images by discovering publishers first by using `azure vm image list-publishers` and responding to the location prompt with a data center location you expect to use for your resource group. For example, the following lists all image publishers in the China North location (pass the location argument by lowercasing and removing spaces from the standard locations)
 
     azure vm image list-publishers
     info:    Executing command vm image list-publishers
@@ -85,7 +81,7 @@ Often, however, you don't yet know what is available. In this case, you can navi
     data:    AlertLogic.Extension                            westus  
 
 
-These lists can be quite long, so the example list above is just a snippet. Let's say that I noticed that Canonical is, indeed, an image publisher in the West US location. You can now find their offers by calling `azure vm image list-offers` and pass the location and the publisher at the prompts, like the following example:
+These lists can be quite long, so the example list above is just a snippet. Let's say that I noticed that Canonical is, indeed, an image publisher in the China North location. You can now find their offers by calling `azure vm image list-offers` and pass the location and the publisher at the prompts, like the following example:
 
     azure vm image list-offers
     info:    Executing command vm image list-offers
@@ -97,7 +93,7 @@ These lists can be quite long, so the example list above is just a snippet. Let'
     data:    canonical  UbuntuServer  westus  
     info:    vm image list-offers command OK
 
-Now we know that in the West US region, Canonical publishes the **UbuntuServer** offer on Azure. But what SKUs? To get those, you call `azure vm image list-skus` and respond to the prompt with the location, publisher, and offer that you have discovered.
+Now we know that in the China North region, Canonical publishes the **UbuntuServer** offer on Azure. But what SKUs? To get those, you call `azure vm image list-skus` and respond to the prompt with the location, publisher, and offer that you have discovered.
 
     azure vm image list-skus
     info:    Executing command vm image list-skus
@@ -138,7 +134,7 @@ With this information, you can now find exactly the image you want by calling th
     data:    canonical  ubuntuserver  14.04.2-LTS  14.04.201504270  westus    canonical:ubuntuserver:14.04.2-LTS:14.04.201504270
     info:    vm image list command OK
 
-Now you can choose precisely the image you want to use. To create a virtual machine quickly by using the URN information, which you just found, or to use a template with that URN information, see [Using the Azure CLI for Mac, Linux, and Windows with Azure Resource Manager](xplat-cli-azure-resource-manager.md).
+Now you can choose precisely the image you want to use. To create a virtual machine quickly by using the URN information, which you just found, or to use a template with that URN information, see [Using the Azure CLI for Mac, Linux, and Windows with Azure Resource Manager](/documentation/articles/xplat-cli-azure-resource-manager).
 
 ### Video walkthrough
 
@@ -169,7 +165,7 @@ To do this in PowerShell, first switch to the Resource Manager mode of Azure Pow
 
 For the first step above, list the publishers with these commands.
 
-	$locName="<Azure location, such as West US>"
+	$locName="<Azure location, such as China North>"
 	Get-AzureVMImagePublisher -Location $locName | Select PublisherName
 
 Fill in your chosen publisher name and run these commands.
@@ -186,7 +182,7 @@ From the display of the **Get-AzureVMImageSku** command, you have all the inform
 
 Here is an example.
 
-	PS C:\> $locName="West US"
+	PS C:\> $locName="China North"
 	PS C:\> Get-AzureVMImagePublisher -Location $locName | Select PublisherName
 
 	PublisherName

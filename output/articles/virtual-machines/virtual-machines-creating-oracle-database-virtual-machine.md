@@ -1,30 +1,26 @@
 <properties 
-	pageTitle="Create an Oracle Database VM with the Azure portal | Microsoft Azure" 
+	pageTitle="Create an Oracle Database VM with the Azure Management Portal | Windows Azure" 
 	description="Learn how to create a virtual machine with an Oracle Database on it using the classic deployment model and the Azure preview portal." 
 	services="virtual-machines" 
 	authors="bbenz" 
 	documentationCenter=""
 	tags="azure-service-management"/>
 	
-<tags 
-	ms.service="virtual-machines" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.tgt_pltfrm="Windows" 
-	ms.workload="infrastructure-services" 
-	ms.date="06/22/2015" 
-	ms.author="bbenz" />
+<tags
+	ms.service="virtual-machines"
+	ms.date="06/22/2015"
+	wacn.date=""/>
 	
 #Create an Oracle Database virtual machine in Azure
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
 
 
 The following example shows you how you can create a virtual machine (VM) based on a Microsoft-provided Oracle Database image running on Windows Server 2012 in Azure. There are two steps. First, create the VM, and then create the Oracle Database inside the VM. The example shown is Oracle Database version 12c, but the steps are virtually identical for version 11g.
 
 ##To create an Oracle Database VM in Azure
 
-1.	Log in to the [Azure portal](https://ms.portal.azure.com/).
+1.	Log in to the [Azure Management Portal](https://ms.portal.azure.com/).
 
 2.	Click **Marketplace**, click **Compute**, and then type **Oracle** into the search box.
 
@@ -57,7 +53,7 @@ The following example shows you how you can create a virtual machine (VM) based 
 
 ##To create your database using the Oracle Database VM in Azure
 
-1.	Log in to the [Azure portal](https://ms.portal.azure.com/).
+1.	Log in to the [Azure Management Portal](https://ms.portal.azure.com/).
 
 2.	Click **Virtual Machines**.
 
@@ -87,20 +83,20 @@ The following example shows you how you can create a virtual machine (VM) based 
 
 	a.	**Step 1:** Click **Create Database** and then click **Next**.
 
-		![](media/virtual-machines-creating-oracle-database-virtual-machine/image5.png)
+		![](./media/virtual-machines-creating-oracle-database-virtual-machine/image5.png)
 
 	b. **Step 2:** Enter a value for **Global Database Name**. Enter and confirm a value for **Administrative Password**. This password is for your Oracle database **SYSTEM** user. Clear **Create As Container Database**. Click **Next**.
 
-		![](media/virtual-machines-creating-oracle-database-virtual-machine/image6.png)
+		![](./media/virtual-machines-creating-oracle-database-virtual-machine/image6.png)
 
 	c. **Step 3:** The prerequisites check should proceed automatically, advancing to **Step 4**.
 
 	d. **Step 4:** Review the **Create Database – Summary** options, and then click **Finish**.
 
-		![](media/virtual-machines-creating-oracle-database-virtual-machine/image7.png)
+		![](./media/virtual-machines-creating-oracle-database-virtual-machine/image7.png)
 	e. **Step 5:** The **Progress Page** will report the status of your database creation.
 
-		![](media/virtual-machines-creating-oracle-database-virtual-machine/image8.png)
+		![](./media/virtual-machines-creating-oracle-database-virtual-machine/image8.png)
 	f. After your database is created, you’ll have the option to use the **Password Management** dialog box. Modify password settings if needed for your requirements, and then close the dialog boxes to exit the **Database Configuration Assistant** wizard.
 
 ##To confirm your database is installed
@@ -111,11 +107,11 @@ The following example shows you how you can create a virtual machine (VM) based 
 
 3.	Run the following command at the SQL Plus command prompt.
 
-		**select \* from GLOBAL\_NAME;**
+		**select \* from GLOBAL_NAME;**
 
 	The result should be the global name of the database that you created.
 
-	![](media/virtual-machines-creating-oracle-database-virtual-machine/image9.png)
+	![](./media/virtual-machines-creating-oracle-database-virtual-machine/image9.png)
 
 ##Allowing your database to be reached remotely
 To allow your database to be reached remotely (for example, from a client computer running Java code), you’ll need to start the database listener, open port 1521 in your virtual machine’s firewall, and create a public endpoint for port 1521.
@@ -149,7 +145,7 @@ To allow your database to be reached remotely (for example, from a client comput
 
 ### Create a public endpoint for port 1521
 
-1.	Log in to the [Azure portal](https://ms.portal.azure.com/).
+1.	Log in to the [Azure Management Portal](https://ms.portal.azure.com/).
 
 2.	Click **Browse**.
 
@@ -176,9 +172,9 @@ To allow your database to be reached remotely (for example, from a client comput
 10. Click **OK**.
 
 ##Enabling Oracle Database Enterprise Manager remote access
-If you want to enable remote access to Oracle Database Enterprise Manager, open port 5500 in your firewall, and create a virtual machine endpoint for 5500 in the Azure portal (using the steps shown earlier for opening port 1521 and creating an endpoint for 1521). Then, to run the Oracle Enterprise Manager from the remote computer, open a browser to the URL in the form of `http://<<unique_domain_name>>:5500/em`.
+If you want to enable remote access to Oracle Database Enterprise Manager, open port 5500 in your firewall, and create a virtual machine endpoint for 5500 in the Azure Management Portal (using the steps shown earlier for opening port 1521 and creating an endpoint for 1521). Then, to run the Oracle Enterprise Manager from the remote computer, open a browser to the URL in the form of `http://<<unique_domain_name>>:5500/em`.
 
-> [AZURE.NOTE] You can determine the value for *\<\<unique\_domain\_name\>\>* within the [Azure portal](https://ms.portal.azure.com/) by clicking **Virtual Machines** and then selecting the virtual machine that you are using to run Oracle Database).
+> [AZURE.NOTE] You can determine the value for *\<\<unique_domain_name\>\>* within the [Azure Management Portal](https://ms.portal.azure.com/) by clicking **Virtual Machines** and then selecting the virtual machine that you are using to run Oracle Database).
 
 ##Configuring Popular Options and Advanced Options Bundles
 If you chose the **Oracle Database with Popular Options** or the **Oracle Database with Advanced Options bundle**, the next step is to configure the add-on features in your Oracle installation. Refer to the Oracle documentation for instruction on setting these up on Windows, as configurations can vary widely based on your needs of each individual component.
@@ -190,12 +186,12 @@ The **Oracle Database with Advanced Options bundle** includes license-included i
 ##Additional resources
 Now that you’ve set up your virtual machine and created your database, see the following topics for additional information.
 
--	[Oracle virtual machine images - Miscellaneous considerations](virtual-machines-miscellaneous-considerations-oracle-virtual-machine-images.md)
+-	[Oracle virtual machine images - Miscellaneous considerations](/documentation/articles/virtual-machines-miscellaneous-considerations-oracle-virtual-machine-images)
 
 -	[Oracle Database 12c Documentation Library](http://www.oracle.com/pls/db1211/homepage)
 
 -	[Connecting to Oracle Database from a Java Application](http://docs.oracle.com/cd/E11882_01/appdev.112/e12137/getconn.htm#TDPJD136)
 
--	[Oracle virtual machine images for Azure](virtual-machines-oracle-list-oracle-virtual-machine-images.md)
+-	[Oracle virtual machine images for Azure](/documentation/articles/virtual-machines-oracle-list-oracle-virtual-machine-images)
 
 -	[Oracle Database 2 Day DBA 12c Release 1](http://docs.oracle.com/cd/E16655_01/server.121/e17643/toc.htm)

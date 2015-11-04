@@ -9,31 +9,27 @@
 
 <tags
 	ms.service="sql-database"
-	ms.workload="sql-database"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="07/21/2015"
-	ms.author="ddove; sidneyh"/>
+	wacn.date=""/>
 
 # Create and manage a SQL Database elastic jobs with Portal (preview)
 
 > [AZURE.SELECTOR]
-- [Azure portal](sql-database-elastic-jobs-create-and-manage.md)
-- [PowerShell](sql-database-elastic-jobs-powershell.md)
+- [Azure Management Portal](/documentation/articles/sql-database-elastic-jobs-create-and-manage)
+- [PowerShell](/documentation/articles/sql-database-elastic-jobs-powershell)
 
 
-**Elastic Database jobs** enables easily and reliable management of a group of databases, by simplifying the execution of administrative operations such as schema changes, credentials management, reference data updates, performance data collection or tenant (customer) telemetry collection. Elastic Database jobs is currently available through the Azure portal and PowerShell cmdlets. However, the Azure portal surfaces reduced functionality limited to execution across all databases in an [Elastic Database pool (preview)](sql-database-elastic-pool.md). To access additional features and execution of scripts across a group of databases including a custom-defined collection or a shard set (created using [Elastic Database client library](sql-database-elastic-scale-introduction.md)), see [Creating and managing jobs using PowerShell](sql-database-elastic-jobs-powershell.md). For more information about jobs, see [Elastic Database jobs overview](sql-database-elastic-jobs-overview.md). 
+**Elastic Database jobs** enables easily and reliable management of a group of databases, by simplifying the execution of administrative operations such as schema changes, credentials management, reference data updates, performance data collection or tenant (customer) telemetry collection. Elastic Database jobs is currently available through the Azure Management Portal and PowerShell cmdlets. However, the Azure Management Portal surfaces reduced functionality limited to execution across all databases in an [Elastic Database pool (preview)](/documentation/articles/sql-database-elastic-pool). To access additional features and execution of scripts across a group of databases including a custom-defined collection or a shard set (created using [Elastic Database client library](/documentation/articles/sql-database-elastic-scale-introduction)), see [Creating and managing jobs using PowerShell](/documentation/articles/sql-database-elastic-jobs-powershell). For more information about jobs, see [Elastic Database jobs overview](/documentation/articles/sql-database-elastic-jobs-overview). 
 
 ## Prerequisites
 
-* An Azure subscription. For a free trial, see [Free one-month trial](http://azure.microsoft.com/pricing/free-trial/).
-* An elastic database pool. See [About Elastic database pools](sql-database-elastic-pool.md)
-* Installation of elastic database job service components. See [Installing the elastic database job service](sql-database-elastic-jobs-service-installation.md).
+* An Azure subscription. For a trial, see [Free one-month trial](/pricing/1rmb-trial/).
+* An elastic database pool. See [About Elastic database pools](/documentation/articles/sql-database-elastic-pool)
+* Installation of elastic database job service components. See [Installing the elastic database job service](/documentation/articles/sql-database-elastic-jobs-service-installation).
 
 ## Creating jobs
 
-1. Using the [Azure portal](https://portal.azure.com), from an existing elastic database job pool, click **Create job**.
+1. Using the [Azure Management Portal](https://manage.windowsazure.cn), from an existing elastic database job pool, click **Create job**.
 2. Type in the username and password of the database administrator (created at installation of Jobs) for the jobs control database (metadata storage for jobs).
 
 	![Name the job, type or paste in code, and click Run][1]
@@ -104,7 +100,7 @@ If a job fails, a log of its execution can found. Click the name of the failed j
 ![Check a failed job][4]
 
 
-[AZURE.INCLUDE [elastic-scale-include](../../includes/elastic-scale-include.md)]
+[AZURE.INCLUDE [elastic-scale-include](../includes/elastic-scale-include.md)]
 
 <!--Image references-->
 [1]: ./media/sql-database-elastic-jobs-create-and-manage/screen-1.png

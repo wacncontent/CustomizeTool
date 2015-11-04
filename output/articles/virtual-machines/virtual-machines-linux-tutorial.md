@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Create a virtual machine running Linux | Microsoft Azure"
+	pageTitle="Create a virtual machine running Linux | Windows Azure"
 	description="Learn to create Azure virtual machine (VM) running Linux by using an image from Azure and the Azure Command-Line Interface."
 	services="virtual-machines"
 	documentationCenter=""
@@ -10,22 +10,18 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.workload="infrastructure-services"
-	ms.tgt_pltfrm="vm-linux"
-	ms.devlang="na"
-	ms.topic="hero-article"
 	ms.date="07/13/2015"
-	ms.author="rasquill"/>
+	wacn.date=""/>
 
 # Create a Virtual Machine Running Linux
 
 > [AZURE.SELECTOR]
-- [Azure Portal](virtual-machines-linux-tutorial-portal-rm.md)
-- [Azure CLI](virtual-machines-linux-tutorial.md)
+- [Azure Management Portal](/documentation/articles/virtual-machines-linux-tutorial-portal-rm)
+- [Azure CLI](/documentation/articles/virtual-machines-linux-tutorial)
 
-Creating an Azure virtual machine (VM) that runs Linux is easy to do from the command line or from the portal. This tutorial shows you how to use the Azure Command-Line Interface for Mac, Linux, and Windows (the Azure CLI) to create quickly an Ubuntu Server VM running in Azure, connect to it using **ssh**, and creating and mounting a new disk. (This topic uses an Ubuntu Server VM, but you can also create Linux VMs using [your own images as templates](virtual-machines-linux-create-upload-vhd.md).)
+Creating an Azure virtual machine (VM) that runs Linux is easy to do from the command line or from the portal. This tutorial shows you how to use the Azure Command-Line Interface for Mac, Linux, and Windows (the Azure CLI) to create quickly an Ubuntu Server VM running in Azure, connect to it using **ssh**, and creating and mounting a new disk. (This topic uses an Ubuntu Server VM, but you can also create Linux VMs using [your own images as templates](/documentation/articles/virtual-machines-linux-create-upload-vhd).)
 
-[AZURE.INCLUDE [free-trial-note](../../includes/free-trial-note.md)]
+[AZURE.INCLUDE [free-trial-note](../includes/free-trial-note.md)]
 
 ## Video walkthrough
 
@@ -35,13 +31,13 @@ Here's a walkthrough of this tutorial.
 
 ## Install the Azure CLI
 
-The first step is to [install the Azure CLI](../xplat-cli-install.md).
+The first step is to [install the Azure CLI](/documentation/articles/xplat-cli-install).
 
 Good. Now make sure you're in the Resource Manager mode by typing `azure config mode arm`.
 
-Even better. Now [log in with your work or school id](../xplat-cli-connect.md#use-the-log-in-method) by typing `azure login` and following the prompts.
+Even better. Now [log in with your work or school id](/documentation/articles/xplat-cli-connect#use-the-log-in-method) by typing `azure login` and following the prompts.
 
-> [AZURE.NOTE] If you receive an error logging in, you may need to [create a work or school id from your personal Microsoft account](resource-group-create-work-id-from-personal.md).
+> [AZURE.NOTE] If you receive an error logging in, you may need to [create a work or school id from your personal Microsoft account](/documentation/articles/resource-group-create-work-id-from-personal).
 
 ## Create your Azure VM
 
@@ -67,7 +63,7 @@ Now create your VM by typing `azure vm quick-create`, and you'll receive prompts
 	Resource group name: myuniquegroupname
 	Virtual machine name: myuniquevmname
 	Location name: westus
-	Operating system Type [Windows, Linux]: Linux
+	Operating system Type [Windows, Linux]: /documentation/articles/Linux
 	ImageURN (format: "publisherName:offer:skus:version"): canonical:ubuntuserver:14.04.2-LTS:latest
 	User name: ops
 	Password: *********
@@ -120,7 +116,7 @@ Now create your VM by typing `azure vm quick-create`, and you'll receive prompts
 	data:        Caching                     :ReadWrite
 	data:        CreateOption                :FromImage
 	data:        Vhd:
-	data:          Uri                       :https://cli3c0464f24f1bf4f014323.blob.core.windows.net/vhds/cli3c0464f24f1bf4f0-os-1432328438224.vhd
+	data:          Uri                       :https://cli3c0464f24f1bf4f014323.blob.core.chinacloudapi.cn/vhds/cli3c0464f24f1bf4f0-os-1432328438224.vhd
 	data:
 	data:    OS Profile:
 	data:      Computer Name                 :myuniquevmname
@@ -147,7 +143,7 @@ Your VM is up and running and waiting for you to connect.
 
 ## Connecting to your VM
 
-With Linux VMs, you typically connect using **ssh**. This topic connects to a VM using usernames and passwords; to use public and private key pairs to communicate with your VM, see [How to Use SSH with Linux on Azure](virtual-machines-linux-use-ssh-key.md).
+With Linux VMs, you typically connect using **ssh**. This topic connects to a VM using usernames and passwords; to use public and private key pairs to communicate with your VM, see [How to Use SSH with Linux on Azure](/documentation/articles/virtual-machines-linux-use-ssh-key).
 
 If you're not familiar with connecting with **ssh**, the command takes the form `ssh <username>@<publicdnsaddress> -p <the ssh port>`. In this case, we use the username and password from the previous step and port 22, which is the default **ssh** port.
 
@@ -195,7 +191,7 @@ Attaching a new disk is quick. Just type `azure vm disk attach-new <myuniquegrou
 	azure vm disk attach-new myuniquegroupname myuniquevmname 5
 	info:    Executing command vm disk attach-new
 	+ Looking up the VM "myuniquevmname"
-	info:    New data disk location: https://cliexxx.blob.core.windows.net/vhds/myuniquevmname-20150526-0xxxxxxx43.vhd
+	info:    New data disk location: https://cliexxx.blob.core.chinacloudapi.cn/vhds/myuniquevmname-20150526-0xxxxxxx43.vhd
 	+ Updating VM "myuniquevmname"
 	info:    vm disk attach-new command OK
 
@@ -289,7 +285,7 @@ The data disk is now ready to use as `/datadrive`.
 	bin   datadrive  etc   initrd.img  lib64       media  opt   root  sbin  sys  usr  vmlinuz
 	boot  dev        home  lib         lost+found  mnt    proc  run   srv   tmp  var
 
-> [AZURE.NOTE] You can also connect to your Linux virtual machine using an SSH key for identification. For details, see [How to Use SSH with Linux on Azure](virtual-machines-linux-use-ssh-key.md).
+> [AZURE.NOTE] You can also connect to your Linux virtual machine using an SSH key for identification. For details, see [How to Use SSH with Linux on Azure](/documentation/articles/virtual-machines-linux-use-ssh-key).
 
 ## Next Steps
 
@@ -297,10 +293,10 @@ Remember, that your new disk will not typically be available to the VM if it reb
 
 To learn more about Linux on Azure, see:
 
-- [Linux and Open-Source Computing on Azure](virtual-machines-linux-opensource.md)
+- [Linux and Open-Source Computing on Azure](/documentation/articles/virtual-machines-linux-opensource)
 
-- [How to use the Azure Command-Line Interface](../virtual-machines-command-line-tools.md)
+- [How to use the Azure Command-Line Interface](/documentation/articles/virtual-machines-command-line-tools)
 
-- [Deploy a LAMP app using the Azure CustomScript Extension for Linux](virtual-machines-linux-script-lamp.md)
+- [Deploy a LAMP app using the Azure CustomScript Extension for Linux](/documentation/articles/virtual-machines-linux-script-lamp)
 
-- [The Docker Virtual Machine Extension for Linux on Azure](virtual-machines-docker-vm-extension.md)
+- [The Docker Virtual Machine Extension for Linux on Azure](/documentation/articles/virtual-machines-docker-vm-extension)

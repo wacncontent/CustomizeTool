@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Get started with Azure Notification Hubs for Windows Phone | Microsoft Azure"
+	pageTitle="Get started with Azure Notification Hubs for Windows Phone | Windows Azure"
 	description="In this tutorial, you learn how to use Azure Notification Hubs to push notifications to a Windows Phone 8 or Windows Phone 8.1 Silverlight application."
 	services="notification-hubs"
 	documentationCenter="windows"
@@ -9,20 +9,16 @@
 
 <tags
 	ms.service="notification-hubs"
-	ms.workload="mobile"
-	ms.tgt_pltfrm="mobile-windows-phone"
-	ms.devlang="dotnet"
-	ms.topic="hero-article"
 	ms.date="09/08/2015"
-	ms.author="wesmc"/>
+	wacn.date=""/>
 
 # Get started with Notification Hubs for Windows Phone
 
-[AZURE.INCLUDE [notification-hubs-selector-get-started](../../includes/notification-hubs-selector-get-started.md)]
+[AZURE.INCLUDE [notification-hubs-selector-get-started](../includes/notification-hubs-selector-get-started.md)]
 
 ##Overview
 
-This tutorial shows you how to use Azure Notification Hubs to send push notifications to a Windows Phone 8 or Windows Phone 8.1 Silverlight application. If you are targeting Windows Phone 8.1 (non-Silverlight), then refer to the [Windows Universal](notification-hubs-windows-store-dotnet-get-started.md) version.
+This tutorial shows you how to use Azure Notification Hubs to send push notifications to a Windows Phone 8 or Windows Phone 8.1 Silverlight application. If you are targeting Windows Phone 8.1 (non-Silverlight), then refer to the [Windows Universal](/documentation/articles/notification-hubs-windows-store-dotnet-get-started) version.
 In this tutorial, you create a blank Windows Phone 8 app that receives push notifications by using the Microsoft Push Notification Service (MPNS). When you're finished, you'll be able to use your notification hub to broadcast push notifications to all the devices running your app.
 
 > [AZURE.NOTE] The Notification Hubs Windows Phone SDK does not support using the Windows Push Notification Service (WNS) with Windows Phone 8.1 Silverlight apps. To use WNS (instead of MPNS) with Windows Phone 8.1 Silverlight apps, follow the [Notification Hubs - Windows Phone Silverlight tutorial], which uses REST APIs.
@@ -37,13 +33,13 @@ This tutorial requires the following:
 
 Completing this tutorial is a prerequisite for all other Notification Hubs tutorials for Windows Phone 8 apps.
 
-> [AZURE.NOTE] To complete this tutorial, you must have an active Azure account. If you don't have an account, you can create a free trial account in just a couple of minutes. For details, see [Azure Free Trial](http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fen-us%2Fdocumentation%2Farticles%2Fnotification-hubs-windows-phone-get-started%2F).
+> [AZURE.NOTE] To complete this tutorial, you must have an active Azure account. If you don't have an account, you can create a trial account in just a couple of minutes. For details, see [Azure Trial](/pricing/1rmb-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fen-us%2Fdocumentation%2Farticles%2Fnotification-hubs-windows-phone-get-started%2F).
 
 ##Create your notification hub
 
-1. Sign in to the [Azure portal], and then click **+NEW** at the bottom of the screen.
+1. Sign in to the [Azure Management Portal], and then click **+NEW** at the bottom of the screen.
 
-2. Click **App Services**, click **Service Bus**, click **Notification Hub**, and then click **Quick Create**.
+2. Click **Azure Websites**, click **Service Bus**, click **Notification Hub**, and then click **Quick Create**.
 
    	![][7]
 
@@ -69,7 +65,7 @@ Completing this tutorial is a prerequisite for all other Notification Hubs tutor
 
 You now have the connection strings that are required to register your Windows Phone 8 app and send notifications.
 
-> [AZURE.NOTE] This tutorial uses MPNS in unauthenticated mode. MPNS unauthenticated mode comes with restrictions on notifications that you can send to each channel. Notification Hubs supports [MPNS authenticated mode](http://msdn.microsoft.com/library/windowsphone/develop/ff941099.aspx) by allowing you to upload your certificate.
+> [AZURE.NOTE] This tutorial uses MPNS in unauthenticated mode. MPNS unauthenticated mode comes with restrictions on notifications that you can send to each channel. Notification Hubs supports [MPNS authenticated mode](http://msdn.microsoft.com/zh-cn/library/windowsphone/develop/ff941099.aspx) by allowing you to upload your certificate.
 
 ##Connecting your app to the notification hub
 
@@ -129,7 +125,7 @@ You now have the connection strings that are required to register your Windows P
 
 ##Send the notification from your backend
 
-You can send notifications by using Notification Hubs from any backend via the <a href="http://msdn.microsoft.com/library/windowsazure/dn223264.aspx">REST interface</a>. In this tutorial, you send notifications by using a .NET console application. For an example of how to send notifications from an Azure Mobile Services backend that's integrated with Notification Hubs, see "Get started with push notifications in Mobile Services" ([.NET backend](../mobile-services-javascript-backend-windows-phone-get-started-push.md) | [JavaScript backend](../mobile-services-javascript-backend-windows-phone-get-started-push.md)).  For an example of how to send notifications by using the REST APIs, see "How to use Notification Hubs from Java/PHP" ([Java](notification-hubs-java-backend-how-to.md) | [PHP](notification-hubs-php-backend-how-to.md)).
+You can send notifications by using Notification Hubs from any backend via the <a href="http://msdn.microsoft.com/zh-cn/library/azure/dn223264.aspx">REST interface</a>. In this tutorial, you send notifications by using a .NET console application. For an example of how to send notifications from an Azure Mobile Services backend that's integrated with Notification Hubs, see "Get started with push notifications in Mobile Services" ([.NET backend](/documentation/articles/mobile-services-javascript-backend-windows-phone-get-started-push) | [JavaScript backend](/documentation/articles/mobile-services-javascript-backend-windows-phone-get-started-push)).  For an example of how to send notifications by using the REST APIs, see "How to use Notification Hubs from Java/PHP" ([Java](/documentation/articles/notification-hubs-java-backend-how-to) | [PHP](/documentation/articles/notification-hubs-php-backend-how-to)).
 
 1. Right-click the solution, select **Add** and **New Project...**, and then under **Visual C#**, click **Windows** and **Console Application**, and click **OK**.
 
@@ -208,11 +204,11 @@ In this simple example, you broadcasted notifications to all your Windows Phone 
 
 <!-- URLs. -->
 [Visual Studio 2012 Express for Windows Phone]: https://go.microsoft.com/fwLink/p/?LinkID=268374
-[Azure portal]: https://manage.windowsazure.com/
-[Notification Hubs Guidance]: http://msdn.microsoft.com/library/jj927170.aspx
-[MPNS authenticated mode]: http://msdn.microsoft.com/library/windowsphone/develop/ff941099(v=vs.105).aspx
-[Use Notification Hubs to push notifications to users]: notification-hubs-aspnet-backend-windows-dotnet-notify-users.md
-[Use Notification Hubs to send breaking news]: notification-hubs-windows-phone-send-breaking-news.md
-[toast catalog]: http://msdn.microsoft.com/library/windowsphone/develop/jj662938(v=vs.105).aspx
-[tile catalog]: http://msdn.microsoft.com/library/windowsphone/develop/hh202948(v=vs.105).aspx
+[Azure Management Portal]: https://manage.windowsazure.cn/
+[Notification Hubs Guidance]: http://msdn.microsoft.com/zh-cn/library/jj927170.aspx
+[MPNS authenticated mode]: http://msdn.microsoft.com/zh-cn/library/windowsphone/develop/ff941099(v=vs.105).aspx
+[Use Notification Hubs to push notifications to users]: /documentation/articles/notification-hubs-aspnet-backend-windows-dotnet-notify-users
+[Use Notification Hubs to send breaking news]: /documentation/articles/notification-hubs-windows-phone-send-breaking-news
+[toast catalog]: http://msdn.microsoft.com/zh-cn/library/windowsphone/develop/jj662938(v=vs.105).aspx
+[tile catalog]: http://msdn.microsoft.com/zh-cn/library/windowsphone/develop/hh202948(v=vs.105).aspx
 [Notification Hub - WP Silverlight tutorial]: https://github.com/Azure/azure-notificationhubs-samples/tree/master/PushToSLPhoneApp

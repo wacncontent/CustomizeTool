@@ -1,5 +1,5 @@
 <properties
-pageTitle="Considerations for using Oracle VM images | Microsoft Azure"
+pageTitle="Considerations for using Oracle VM images | Windows Azure"
 description="Learn about supported configurations and limitations for an Oracle VM on Windows Server in Azure before you deploy."
 services="virtual-machines"
 documentationCenter=""
@@ -8,18 +8,14 @@ authors="bbenz"
 tags="azure-service-management"/>
 
 <tags
-ms.service="virtual-machines"
-ms.devlang="na"
-ms.topic="article"
-ms.tgt_pltfrm="vm-windows"
-ms.workload="infrastructure-services"
-ms.date="06/22/2015"
-ms.author="bbenz" />
+	ms.service="virtual-machines"
+	ms.date="06/22/2015"
+	wacn.date=""/>
 
 #Miscellaneous considerations for Oracle virtual machine images
 
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
 
 
 This article covers considerations for Oracle virtual machines in Azure, which are based on Oracle software images provided by Microsoft, with Windows Server as the operating system.  
@@ -35,7 +31,7 @@ Azure does not currently support Oracle Real Application Clusters (RAC) of the O
 
 ### No static internal IP
 
-Azure assigns each virtual machine an internal IP address. Unless the virtual machine is part of a virtual network, the IP address of the virtual machine is dynamic and might change after the virtual machine restarts. This can cause issues because the Oracle Database expects the IP address to be static. To avoid the issue, consider adding the virtual machine to an Azure Virtual Network. See [Virtual Network](http://azure.microsoft.com/documentation/services/virtual-network/) and [Create a virtual network in Azure](create-virtual-network.md) for more information.
+Azure assigns each virtual machine an internal IP address. Unless the virtual machine is part of a virtual network, the IP address of the virtual machine is dynamic and might change after the virtual machine restarts. This can cause issues because the Oracle Database expects the IP address to be static. To avoid the issue, consider adding the virtual machine to an Azure Virtual Network. See [Virtual Network](/documentation/services/networking/) and [Create a virtual network in Azure](/documentation/articles/create-virtual-network) for more information.
 
 ### Attached disk configuration options
 
@@ -48,11 +44,11 @@ Although the simplest approach is to attach a single disk to the virtual machine
 Consider two different approaches for attaching multiple disks based on whether you want to prioritize the performance of read operations or write operations for your database:
 
 - **Oracle ASM on its own** is likely to result in better write operation performance, but worse IOPS for read operations as compared to the approach using Windows Server 2012 storage pools. The following illustration logically depicts this arrangement.  
-	![](media/virtual-machines-miscellaneous-considerations-oracle-virtual-machine-images/image2.png)
+	![](./media/virtual-machines-miscellaneous-considerations-oracle-virtual-machine-images/image2.png)
 
-- **Oracle ASM with Windows Server 2012 storage pools** is likely to result in better read operation IOPS performance if your database primarily performs read operations, or if you value the performance of read operations over write operations. An image based on the Windows Server 2012 operating system is required. See [Deploy storage spaces on a stand-alone server](http://technet.microsoft.com/library/jj822938.aspx) for more information about storage pools. In this arrangement, two equal subsets of attached disks are first “striped” together as physical disks in two storage pool volumes, and then the volumes are added to an ASM disk group. The following illustration logically depicts this arrangement.  
+- **Oracle ASM with Windows Server 2012 storage pools** is likely to result in better read operation IOPS performance if your database primarily performs read operations, or if you value the performance of read operations over write operations. An image based on the Windows Server 2012 operating system is required. See [Deploy storage spaces on a stand-alone server](http://technet.microsoft.com/zh-cn/library/jj822938.aspx) for more information about storage pools. In this arrangement, two equal subsets of attached disks are first “striped” together as physical disks in two storage pool volumes, and then the volumes are added to an ASM disk group. The following illustration logically depicts this arrangement.  
 
-	![](media/virtual-machines-miscellaneous-considerations-oracle-virtual-machine-images/image3.png)  
+	![](./media/virtual-machines-miscellaneous-considerations-oracle-virtual-machine-images/image3.png)  
 
 >[AZURE.IMPORTANT] Evaluate the trade-off between write performance and read performance on a case-by-case basis. Your actual results can vary when you use these approaches.
 
@@ -60,7 +56,7 @@ Consider two different approaches for attaching multiple disks based on whether 
 
 When using Oracle Database in Azure virtual machines, you are responsible for implementing a high availability and disaster recovery solution to avoid any downtime. You are also responsible for backing up your own data and application.
 
-High availability and disaster recovery for Oracle Database Enterprise Edition (without RAC) on Azure can be achieved using [Data Guard, Active Data Guard](http://www.oracle.com/technetwork/articles/oem/dataguardoverview-083155.html), or [Oracle Golden Gate](http://www.oracle.com/technetwork/middleware/goldengate), with two databases in two separate virtual machines. Both virtual machines should be in the same [cloud service](cloud-services-connect-virtual-machine.md) and the same [virtual network](http://azure.microsoft.com/documentation/services/virtual-network/) to ensure they can access each other over the private persistent IP address.  Additionally, we recommend to place the virtual machines in the same [availability set](manage-availability-virtual-machines.md) to allow Azure to place them into separate fault domains and upgrade domains. Note that only virtual machines in the same cloud service can participate in the same availability set. Each virtual machine must have at least 2 GB of memory and 5 GB of disk space.
+High availability and disaster recovery for Oracle Database Enterprise Edition (without RAC) on Azure can be achieved using [Data Guard, Active Data Guard](http://www.oracle.com/technetwork/articles/oem/dataguardoverview-083155.html), or [Oracle Golden Gate](http://www.oracle.com/technetwork/middleware/goldengate), with two databases in two separate virtual machines. Both virtual machines should be in the same [cloud service](/documentation/articles/cloud-services-connect-virtual-machine) and the same [virtual network](/documentation/services/networking/) to ensure they can access each other over the private persistent IP address.  Additionally, we recommend to place the virtual machines in the same [availability set](/documentation/articles/manage-availability-virtual-machines) to allow Azure to place them into separate fault domains and upgrade domains. Note that only virtual machines in the same cloud service can participate in the same availability set. Each virtual machine must have at least 2 GB of memory and 5 GB of disk space.
 
 With Oracle Data Guard, high availability can be achieved with a primary database in one virtual machine, a secondary (standby) database in another virtual machine, and one-way replication set up between them. The result is read access to the copy of the database. With Oracle GoldenGate, you can configure bi-directional replication between the two databases. To learn how to set up a high-availability solution for your databases using these tools, see [Active Data Guard](http://www.oracle.com/technetwork/database/features/availability/data-guard-documentation-152848.html) and [GoldenGate](http://docs.oracle.com/goldengate/1212/gg-winux/index.html) documentation at the Oracle website. If you need read-write access to the copy of the database, you can use [Oracle Active Data Guard](http://www.oracle.com/uk/products/database/options/active-data-guard/overview/index.html).
 
@@ -76,9 +72,9 @@ With Oracle Data Guard, high availability can be achieved with a primary databas
 
 -  **WebLogic Server expects public and private ports to be the same for T3 access (for example, when using Enterprise JavaBeans).** Consider a multi-tier scenario where a service layer (EJB) application is running on a WebLogic Server cluster consisting of two or more managed servers, in a cloud service named **SLWLS**. The client tier is in a different cloud service, running a simple Java program trying to call EJB in the service layer. Because it is necessary to load balance the service layer, a public load-balanced endpoint needs to be created for the Virtual Machines in the WebLogic Server cluster. If the private port that you specify for that endpoint is different from the public port (for example, 7006:7008), an error such as the following occurs:
 
-		[java] javax.naming.CommunicationException [Root exception is java.net.ConnectException: t3://example.cloudapp.net:7006:
+		[java] javax.naming.CommunicationException [Root exception is java.net.ConnectException: t3://example.chinacloudapp.cn:7006:
 
-		Bootstrap to: example.cloudapp.net/138.91.142.178:7006' over: 't3' got an error or timed out]
+		Bootstrap to: example.chinacloudapp.cn/138.91.142.178:7006' over: 't3' got an error or timed out]
 
 	This is because for any remote T3 access, WebLogic Server expects the load balancer port and the WebLogic managed server port to be the same. In the above case, the client is accessing port 7006 (the load balancer port) and the managed server is listening on 7008 (the private port). Note that this restriction is applicable only for T3 access, not HTTP.
 
@@ -107,4 +103,4 @@ For related information, see KB article **860340.1** at <http://support.oracle.c
 -  **64-bit JDK.** The Oracle WebLogic Server virtual machine images and the Oracle JDK virtual machine images provided by Azure contain the 64-bit versions of both Windows Server and the JDK.
 
 ##Additional resources
-[Oracle virtual machine images for Azure](virtual-machines-oracle-list-oracle-virtual-machine-images.md)
+[Oracle virtual machine images for Azure](/documentation/articles/virtual-machines-oracle-list-oracle-virtual-machine-images)

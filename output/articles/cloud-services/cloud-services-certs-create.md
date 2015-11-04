@@ -1,27 +1,23 @@
 <properties 
-	pageTitle="Cloud Services and management certificates | Microsoft Azure" 
-	description="Learn how to create and use certificates with Microsoft Azure" 
+	pageTitle="Cloud Services and management certificates | Windows Azure" 
+	description="Learn how to create and use certificates with Windows Azure" 
 	services="cloud-services" 
 	documentationCenter=".net" 
 	authors="Thraka" 
 	manager="timlt" 
 	editor=""/>
 
-<tags 
-	ms.service="cloud-services" 
-	ms.workload="tbd" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
+<tags
+	ms.service="cloud-services"
 	ms.date="10/09/2015"
-	ms.author="adegeo"/>
+	wacn.date=""/>
 
 # Certificates overview for Azure Cloud Services
 Certificates are used in Azure for cloud services ([service certificates](#what-are-service-certificates)) and for authenticating with the management API ([management certificates](#what-are-management-certificates)). This topic gives a general overview of both certificate types, how to [create](#create) them, and how to [deploy](#deploy) them to Azure.
 
 Certificates used in Azure are x.509 v3 certificates and can be signed by another trusted certificate or they can be self-signed. A self-signed certificate is signed by its own creator, and because of this, are not trusted by default. Most browsers can ignore this. Self-signed certificates should only be used by yourself when developing and testing your cloud services. 
 
-Certificates used by Azure can contain a private or a public key. Certificates have a thumbprint that provides a means to identify them in an unambiguous way. This thumbprint is used in the Azure [configuration file](cloud-services-configure-ssl-certificate.md) to identify which certificate a cloud service should use. 
+Certificates used by Azure can contain a private or a public key. Certificates have a thumbprint that provides a means to identify them in an unambiguous way. This thumbprint is used in the Azure [configuration file](/documentation/articles/cloud-services-configure-ssl-certificate) to identify which certificate a cloud service should use. 
 
 ## What are service certificates?
 Service certificates are attached to cloud services and enable secure communication to and from the service. For example, if you deployed a web role, you would want to supply a certificate that can authenticate an exposed HTTPS endpoint. Service certificates, defined in your service definition, are automatically deployed to the virtual machine that is running an instance of your role. 
@@ -49,7 +45,7 @@ You can use any tool available to create a self-signed certificate as long as th
 * Contains a private key.
 * Created for key exchange (.pfx file).
 * Subject name must match the domain used to access the cloud service. 
-    > You cannot acquire an SSL certificate for the cloudapp.net (or for any Azure related) domain; the certificate's subject name must match the custom domain name used to access your application. For example, **contoso.net**, not **contoso.cloudapp.net**.
+    > You cannot acquire an SSL certificate for the chinacloudapp.cn (or for any Azure related) domain; the certificate's subject name must match the custom domain name used to access your application. For example, **contoso.net**, not **contoso.chinacloudapp.cn**.
 * Minimum of 2048-bit encryption.
 * **Service Certificate Only**: Client-side certificate must reside in the *Personal* certificate store.
 
@@ -67,15 +63,15 @@ This utility is installed with Visual Studio 2013/2015. It is a console utility 
 There are many pages on the internet that cover how to do this with IIS. [Here](https://www.sslshopper.com/article-how-to-create-a-self-signed-certificate-in-iis-7.html) is a great one I found that I think explains it well. 
 
 ### Java
-You can use Java to [create a certificate](../app-service-web/java-create-azure-website-using-java-sdk.md#create-a-certificate).
+You can use Java to [create a certificate](/documentation/articles/java-create-azure-website-using-java-sdk#create-a-certificate).
 
 ### Linux
 [This](..\virtual-machines\virtual-machines-linux-use-ssh-key.md) article describes how to create certificates with SSH.
 
 ## Next steps
 
-[Upload your service certificate to the Azure Portal](cloud-services-configure-ssl-certificate.md) (or the [Preview Portal](cloud-services-configure-ssl-certificate-portal.md)) and [configure them](cloud-services-xml-certs.md) for the cloud service.
+[Upload your service certificate to the Azure Management Portal](/documentation/articles/cloud-services-configure-ssl-certificate) (or the [Preview Portal](/documentation/articles/cloud-services-configure-ssl-certificate-portal)) and [configure them](/documentation/articles/cloud-services-xml-certs) for the cloud service.
 
-Upload a [management API certificate](../azure-api-management-certs.md) to the Azure Portal.
+Upload a [management API certificate](/documentation/articles/azure-api-management-certs) to the Azure Management Portal.
 
 >[AZURE.NOTE] The Azure Preview Portal does not use management certificates to access the API but instead uses user accounts.

@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Steps for configuring an ExpressRoute circuit | Microsoft Azure"
+   pageTitle="Steps for configuring an ExpressRoute circuit | Windows Azure"
    description="This article walks you through the steps for creating and provisioning an ExpressRoute circuit. This article also shows you how to check the status, update, or delete and deprovision your circuit."
    documentationCenter="na"
    services="expressroute"
@@ -8,24 +8,20 @@
    editor=""
    tags="azure-service-management"/>
 <tags
-   ms.service="expressroute"
-   ms.devlang="na"
-   ms.topic="article" 
-   ms.tgt_pltfrm="na"
-   ms.workload="infrastructure-services"
-   ms.date="10/13/2015"
-   ms.author="cherylmc"/>
+	ms.service="expressroute"
+	ms.date="10/13/2015"
+	wacn.date=""/>
 
 # Create and modify an ExpressRoute circuit
 
 This article walks you through the steps to create an ExpressRoute circuit using PowerShell cmdlets and the classic deployment model. The steps below will also show you how to check the status, update, or delete and deprovision an ExpressRoute circuit. 
 
->[AZURE.IMPORTANT] It's important to know that Azure currently works with two deployment models: Resource Manager, and classic. Before you begin your configuration, make sure that you understand the deployment models and tools. For information about the deployment models, see [Azure deployment models](../azure-classic-rm.md).
+>[AZURE.IMPORTANT] It's important to know that Azure currently works with two deployment models: Resource Manager, and classic. Before you begin your configuration, make sure that you understand the deployment models and tools. For information about the deployment models, see [Azure deployment models](/documentation/articles/azure-classic-rm).
 
 ## Configuration prerequisites
 
-- You will need the latest version of the Azure PowerShell modules. You can download the latest PowerShell module from the PowerShell section of the [Azure Downloads page](http://azure.microsoft.com/downloads). Follow the instructions on the [How to install and configure Azure PowerShell](../powershell-install-configure.md) page for step-by-step guidance on how to configure your computer to use the Azure PowerShell modules. 
-- Make sure that you have reviewed the [Prerequisites](expressroute-prerequisites.md) page and the [Workflows](expressroute-workflows.md) page before you begin configuration.
+- You will need the latest version of the Azure PowerShell modules. You can download the latest PowerShell module from the PowerShell section of the [Azure Downloads page](http://azure.microsoft.com/downloads). Follow the instructions on the [How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure) page for step-by-step guidance on how to configure your computer to use the Azure PowerShell modules. 
+- Make sure that you have reviewed the [Prerequisites](/documentation/articles/expressroute-prerequisites) page and the [Workflows](/documentation/articles/expressroute-workflows) page before you begin configuration.
 
 ## Create and provision an ExpressRoute circuit
 
@@ -105,7 +101,7 @@ This article walks you through the steps to create an ExpressRoute circuit using
 
 		New-AzureDedicatedCircuit -CircuitName $CircuitName -ServiceProviderName $ServiceProvider -Bandwidth $Bandwidth -Location $Location -sku Standard
 
-	Or, if you want to create an ExpressRoute circuit with the premium add-on, use the following example below. Refer to the [ExpressRoute FAQ](expressroute-faqs.md) page for more details on the premium add-on.
+	Or, if you want to create an ExpressRoute circuit with the premium add-on, use the following example below. Refer to the [ExpressRoute FAQ](/documentation/articles/expressroute-faqs) page for more details on the premium add-on.
 
 		New-AzureDedicatedCircuit -CircuitName $CircuitName -ServiceProviderName $ServiceProvider -Bandwidth $Bandwidth -Location $Location -sku Premium
 	
@@ -188,11 +184,11 @@ This article walks you through the steps to create an ExpressRoute circuit using
 
 6. **Create your routing configuration.**
 	
-	Refer to the [ExpressRoute circuit routing configuration (create and modify circuit peerings)](expressroute-howto-routing-classic.md) page for step-by-step instructions. 
+	Refer to the [ExpressRoute circuit routing configuration (create and modify circuit peerings)](/documentation/articles/expressroute-howto-routing-classic) page for step-by-step instructions. 
 
 7. **Link a VNet to an ExpressRoute circuit.** 
 
-	Next, link a VNet to your ExpressRoute circuit. Refer to [Linking ExpressRoute circuits to vnets](expressroute-howto-linkvnet-classic.md) for step by step instructions. If you need to create a virtual network for ExpressRoute, see [Creating a virtual network for ExpressRoute](expressroute-howto-createvnet-classic.md) for instructions.
+	Next, link a VNet to your ExpressRoute circuit. Refer to [Linking ExpressRoute circuits to vnets](/documentation/articles/expressroute-howto-linkvnet-classic) for step by step instructions. If you need to create a virtual network for ExpressRoute, see [Creating a virtual network for ExpressRoute](/documentation/articles/expressroute-howto-createvnet-classic) for instructions.
 
 ##  How to get the status of an ExpressRoute circuit
 
@@ -245,7 +241,7 @@ You can do the following:
 - Enable / disable ExpressRoute premium add-on for your ExpressRoute circuit without any downtime.
 - Increase the bandwidth of your ExpressRoute circuit without any downtime.
 
-Refer to the [ExpressRoute FAQ](expressroute-faqs.md) page for more information on limits and limitations. 
+Refer to the [ExpressRoute FAQ](/documentation/articles/expressroute-faqs) page for more information on limits and limitations. 
 
 ### How to enable the ExpressRoute premium add-on
 
@@ -290,7 +286,7 @@ The premium add-on is now disabled for your circuit.
 
 ### How to update the ExpressRoute circuit bandwidth
 
-Check the [ExpressRoute FAQ](expressroute-faqs.md) page for supported bandwidth options for your provider. You can pick any size greater than the size of your existing circuit. Once you decided what size you need, you can use the following command to re-size your circuit.
+Check the [ExpressRoute FAQ](/documentation/articles/expressroute-faqs) page for supported bandwidth options for your provider. You can pick any size greater than the size of your existing circuit. Once you decided what size you need, you can use the following command to re-size your circuit.
 
 		PS C:\> Set-AzureDedicatedCircuitProperties -ServiceKey ********************************* -Bandwidth 1000
 		
@@ -321,5 +317,5 @@ If the service provider has deprovisioned the circuit (the service provider prov
 
 ## Next steps
 
-- [Configure routing](expressroute-howto-routing-classic.md)
-- [Link a VNet to an ExpressRoute circuit](expressroute-howto-linkvnet-classic.md) 
+- [Configure routing](/documentation/articles/expressroute-howto-routing-classic)
+- [Link a VNet to an ExpressRoute circuit](/documentation/articles/expressroute-howto-linkvnet-classic) 

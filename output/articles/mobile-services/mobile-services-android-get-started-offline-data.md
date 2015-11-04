@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Add Offline Data Sync to your Android Mobile Services app | Microsoft Azure"
+	pageTitle="Add Offline Data Sync to your Android Mobile Services app | Windows Azure"
 	description="Learn how to use Azure Mobile Services to cache and sync offline data in your Android application"
 	documentationCenter="android"
 	authors="RickSaling"
@@ -9,16 +9,12 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.workload="mobile"
-	ms.tgt_pltfrm="mobile-android"
-	ms.devlang="java"
-	ms.topic="article"
 	ms.date="10/01/2015"
-	ms.author="ricksal"/>
+	wacn.date=""/>
 
 # Add Offline Data Sync to your Android Mobile Services app
 
-[AZURE.INCLUDE [mobile-services-selector-offline](../../includes/mobile-services-selector-offline.md)]
+[AZURE.INCLUDE [mobile-services-selector-offline](../includes/mobile-services-selector-offline.md)]
 
 ## Summary
 
@@ -31,7 +27,7 @@ Whether you are offline or connected, conflicts can arise any time multiple chan
 
 ## What you need to get started
 
-[AZURE.INCLUDE [mobile-services-android-prerequisites](../../includes/mobile-services-android-prerequisites.md)]
+[AZURE.INCLUDE [mobile-services-android-prerequisites](../includes/mobile-services-android-prerequisites.md)]
 
 ## Update the app to support offline sync
 
@@ -184,7 +180,7 @@ One thing which is important to point out: if there are pending changes in the l
 
 4. Turn on WiFi in the device or simulator. Next, press the **Refresh** button.
 
-5. View the TodoItem data again in the Azure portal. The new and changed TodoItems should now appear.
+5. View the TodoItem data again in the Azure Management Portal. The new and changed TodoItems should now appear.
 
 
 ## Next Steps
@@ -210,11 +206,10 @@ One thing which is important to point out: if there are pending changes in the l
 [Mobile Services sample repository on GitHub]: https://github.com/Azure/mobile-services-samples
 
 
-[Get started with Mobile Services]: mobile-services-android-get-started.md
-[Handling Conflicts with Offline Support for Mobile Services]:  mobile-services-android-handling-conflicts-offline-data.md
-[Soft Delete]: mobile-services-using-soft-delete.md
-
+[Get started with Mobile Services]: /documentation/articles/mobile-services-android-get-started
+[Handling Conflicts with Offline Support for Mobile Services]: /documentation/articles/mobile-services-android-handling-conflicts-offline-data
+[Soft Delete]: /documentation/articles/mobile-services-using-soft-delete
 [Cloud Cover: Offline Sync in Azure Mobile Services]: http://channel9.msdn.com/Shows/Cloud+Cover/Episode-155-Offline-Storage-with-Donna-Malayeri
 [Azure Friday: Offline-enabled apps in Azure Mobile Services]: http://azure.microsoft.com/documentation/videos/azure-mobile-services-offline-enabled-apps-with-donna-malayeri/
 
-[Mobile Services Quick Start tutorial]: mobile-services-android-get-started.md
+[Mobile Services Quick Start tutorial]: /documentation/articles/mobile-services-android-get-started

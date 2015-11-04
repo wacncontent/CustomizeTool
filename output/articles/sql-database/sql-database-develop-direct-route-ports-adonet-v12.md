@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Ports beyond 1433 for SQL Database | Microsoft Azure"
+	pageTitle="Ports beyond 1433 for SQL Database | Windows Azure"
 	description="Client connections from ADO.NET to Azure SQL Database V12 sometimes bypass the proxy and interact directly with the database. Ports other than 1433 become important."
 	services="sql-database"
 	documentationCenter=""
@@ -8,14 +8,10 @@
 	editor="" />
 
 
-<tags 
-	ms.service="sql-database" 
-	ms.workload="data-management" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="09/15/2015" 
-	ms.author="genemi"/>
+<tags
+	ms.service="sql-database"
+	ms.date="09/15/2015"
+	wacn.date=""/>
 
 
 # Ports beyond 1433 for ADO.NET 4.5 and SQL Database V12
@@ -74,7 +70,7 @@ Ensure that the port ranges of 11000-11999 and 14000-14999 on your Azure client 
 - In particular, ports in the range must be free of any other outbound blockers.
 
 - On your Azure VM, the **Windows Firewall with Advanced Security** controls the port settings.
- - You can use the [firewall's user interface](http://msdn.microsoft.com/library/cc646023.aspx) to add a rule for which you specify the **TCP** protocol along with a port range with the syntax like **11000-11999**.
+ - You can use the [firewall's user interface](http://msdn.microsoft.com/zh-cn/library/cc646023.aspx) to add a rule for which you specify the **TCP** protocol along with a port range with the syntax like **11000-11999**.
 
 
 ## Version clarifications
@@ -112,11 +108,11 @@ The client connection differences between SQL Database V11 and V12 are highlight
 - [TDS protocol version list](http://www.freetds.org/userguide/tdshistory.htm)
 
 
-- [Connecting to SQL Database: Links, Best Practices and Design Guidelines](sql-database-connect-central-recommendations.md)
+- [Connecting to SQL Database: Links, Best Practices and Design Guidelines](/documentation/articles/sql-database-connect-central-recommendations)
 
 
-- [Azure SQL Database firewall](sql-database-firewall-configure.md)
+- [Azure SQL Database firewall](/documentation/articles/sql-database-firewall-configure)
 
 
-- [How to: Configure firewall settings on SQL Database](sql-database-configure-firewall-settings.md)
+- [How to: Configure firewall settings on SQL Database](/documentation/articles/sql-database-configure-firewall-settings)
 

@@ -8,12 +8,8 @@
 
 <tags
 	ms.service="notification-hubs"
-	ms.workload="mobile"
-	ms.tgt_pltfrm="mobile-windows"
-	ms.devlang="multiple"
-	ms.topic="article"
-	ms.date="08/18/2015" 
-	ms.author="wesmc"/>
+	ms.date="08/18/2015"
+	wacn.date=""/>
 
 # Send cross-platform notifications to users with Notification Hubs
 
@@ -104,9 +100,9 @@ Now that you have completed this tutorial, find out more about Notification Hubs
 [Push to users Mobile Services]: /manage/services/notification-hubs/notify-users/
 [Visual Studio 2012 Express for Windows 8]: http://go.microsoft.com/fwlink/?LinkId=257546
 
-[Management Portal]: https://manage.windowsazure.com/
-[Use Notification Hubs to send breaking news]: notification-hubs-windows-store-dotnet-send-breaking-news.md
+[Management Portal]: https://manage.windowsazure.cn/
+[Use Notification Hubs to send breaking news]: /documentation/articles/notification-hubs-windows-store-dotnet-send-breaking-news
 [Azure Notification Hubs]: http://go.microsoft.com/fwlink/p/?LinkId=314257
-[Notify users with Notification Hubs]: notification-hubs-aspnet-backend-windows-dotnet-notify-users.md
+[Notify users with Notification Hubs]: /documentation/articles/notification-hubs-aspnet-backend-windows-dotnet-notify-users
 [Templates]: http://go.microsoft.com/fwlink/p/?LinkId=317339
-[Notification Hub How to for Windows Store]: http://msdn.microsoft.com/library/windowsazure/jj927172.aspx
+[Notification Hub How to for Windows Store]: http://msdn.microsoft.com/zh-cn/library/azure/jj927172.aspx

@@ -14,7 +14,7 @@
 
    ![](./media/mobile-services-dotnet-adal-register-client/mobile-services-native-selection.png)
 
-5. In the **Redirect URI** box, enter the /login/done endpoint for your mobile service. This value should be similar to https://todolist.azure-mobile.cn/login/done.
+5. In the **Redirect URI** box, enter the /login/done endpoint for your mobile service. This value should be similar to https://todolist.azure-mobile.net/login/done.
 
    ![](./media/mobile-services-dotnet-adal-register-client/mobile-services-native-redirect-uri.png)
 
@@ -29,4 +29,4 @@
 Your mobile service is now configured in AAD to receive single sign-on logins from your app.
 
 
-[Azure Management Portal]: https://manage.windowsazure.cn/
+[Azure Management Portal]: https://manage.windowsazure.com/

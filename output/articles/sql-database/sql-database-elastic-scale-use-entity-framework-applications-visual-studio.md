@@ -7,18 +7,14 @@
 	authors="sidneyh" 
 	editor=""/>
 
-<tags 
-	ms.service="sql-database" 
-	ms.workload="sql-database" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="07/24/2015" 
-	ms.author="sidneyh"/>
+<tags
+	ms.service="sql-database"
+	ms.date="07/24/2015"
+	wacn.date=""/>
 
 # Elastic Database client library with Entity Framework 
  
-You can use the elastic database client library with Microsoft’s Entity Framework (EF) to build applications that take advantage of database sharding, facilitating scaling-out your application's data tier. This document shows the changes in an Entity Framework application that are needed to integrate with the elastic database tools' capabilities. The focus is on composing [shard map management](sql-database-elastic-scale-shard-map-management.md) and [data-dependent routing](sql-database-elastic-scale-data-dependent-routing.md) with the Entity Framework **Code First** approach. The [Code First – New Database](http://msdn.microsoft.com/data/jj193542.aspx) tutorial for EF serves as our running example throughout this document. The sample code accompanying this document is part of elastic database tools' set of samples in the Visual Studio Code Samples.
+You can use the elastic database client library with Microsoft’s Entity Framework (EF) to build applications that take advantage of database sharding, facilitating scaling-out your application's data tier. This document shows the changes in an Entity Framework application that are needed to integrate with the elastic database tools' capabilities. The focus is on composing [shard map management](/documentation/articles/sql-database-elastic-scale-shard-map-management) and [data-dependent routing](/documentation/articles/sql-database-elastic-scale-data-dependent-routing) with the Entity Framework **Code First** approach. The [Code First – New Database](http://msdn.microsoft.com/data/jj193542.aspx) tutorial for EF serves as our running example throughout this document. The sample code accompanying this document is part of elastic database tools' set of samples in the Visual Studio Code Samples.
   
 ## Downloading and Running the Sample Code
 To download the code for this article:
@@ -53,7 +49,7 @@ All these approaches rely on the DbContext class to transparently manage databas
 
 ## Elastic database tools assumptions 
 
-For term definitions, see [Elastic Database tools glossary](sql-database-elastic-scale-glossary.md).
+For term definitions, see [Elastic Database tools glossary](/documentation/articles/sql-database-elastic-scale-glossary).
 
 With elastic database client library, you define partitions of your application data called shardlets. Shardlets are identified by a sharding key and are mapped to specific databases. An application may have as many databases as needed and distribute the shardlets to provide enough capacity or performance given current business requirements. The mapping of sharding key values to the databases is stored by a shard map provided by the elastic database client APIs. We call this capability **Shard Map Management**, or SMM for short. The shard map also serves as the broker of database connections for requests that carry a sharding key. We refer to this capability as **data-dependent routing**. 
  
@@ -160,7 +156,7 @@ Use the new constructor for your DbContext subclass instead of the default const
 The new constructor opens the connection to the shard that holds the data for the shardlet identified by the value of **tenantid1**. The code in the **using** block stays unchanged to access the **DbSet** for blogs using EF on the shard for **tenantid1**. This changes semantics for the code in the using block such that all database operations are now scoped to the one shard where **tenantid1** is kept. For instance, a LINQ query over the blogs **DbSet** would only return blogs stored on the current shard, but not the ones stored on other shards.  
 
 #### Transient faults handling
-The Microsoft Patterns & Practices team published the [The Transient Fault Handling Application Block](https://msdn.microsoft.com/library/dn440719.aspx). The library is used with elastic scale client library in combination with EF. However, ensure that any transient exception returns to a place where we can ensure that the new constructor is being used after a transient fault so that any new connection attempt is made using the constructors we have tweaked. Otherwise, a connection to the correct shard is not guaranteed, and there are no assurances the connection is maintained as changes to the shard map occur. 
+The Microsoft Patterns & Practices team published the [The Transient Fault Handling Application Block](https://msdn.microsoft.com/zh-cn/library/dn440719.aspx). The library is used with elastic scale client library in combination with EF. However, ensure that any transient exception returns to a place where we can ensure that the new constructor is being used after a transient fault so that any new connection attempt is made using the constructors we have tweaked. Otherwise, a connection to the correct shard is not guaranteed, and there are no assurances the connection is maintained as changes to the shard map occur. 
 
 The following code sample illustrates how a SQL retry policy can be used around the new **DbContext** subclass constructors: 
 
@@ -275,7 +271,7 @@ The approaches outlined in this document entail a couple of limitations:
 Entity Framework applications can easily benefit from the elastic database tools in Azure SQL Database. Through the steps outlined in this document, EF applications can use the elastic database client library's capability for data dependent routing by refactoring constructors of the **DbContext** subclasses used in the EF application. This limits the  changes required to those places where **DbContext** classes already exist. In addition, EF applications can continue to benefit from automatic schema deployment by combining the steps that invoke the necessary EF migrations with the registration of new shards and mappings in the shard map. 
 
 
-[AZURE.INCLUDE [elastic-scale-include](../../includes/elastic-scale-include.md)]
+[AZURE.INCLUDE [elastic-scale-include](../includes/elastic-scale-include.md)]
 
 <!--Image references-->
 [1]: ./media/sql-database-elastic-scale-use-entity-framework-applications-visual-studio/sample.png

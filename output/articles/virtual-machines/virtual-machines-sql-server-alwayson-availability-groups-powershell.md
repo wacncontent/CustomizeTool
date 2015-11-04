@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Configure AlwaysOn Availability Groups in an Azure VM | Microsoft Azure"
+	pageTitle="Configure AlwaysOn Availability Groups in an Azure VM | Windows Azure"
 	description="This tutorial uses resources created with  the classic deployment model, and uses PowerShell to create an AlwaysOn Availability Group in Azure."
 	services="virtual-machines"
 	documentationCenter="na"
@@ -9,22 +9,18 @@
 	tags="azure-service-management" />
 <tags
 	ms.service="virtual-machines"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.tgt_pltfrm="vm-windows-sql-server"
-	ms.workload="infrastructure-services"
 	ms.date="08/14/2015"
-	ms.author="jroth" />
+	wacn.date=""/>
 
 # Configure AlwaysOn Availability Groups in Azure VM (PowerShell)
 
 > [AZURE.SELECTOR]
-- [Portal](virtual-machines-sql-server-alwayson-availability-groups-gui.md)
-- [PowerShell](virtual-machines-sql-server-alwayson-availability-groups-powershell.md)
+- [Portal](/documentation/articles/virtual-machines-sql-server-alwayson-availability-groups-gui)
+- [PowerShell](/documentation/articles/virtual-machines-sql-server-alwayson-availability-groups-powershell)
 
 <br/>
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
 
 
 Azure virtual machines (VMs) can help database administrators to implement lower the cost of a high availability SQL Server system. This tutorial shows you how to implement an availability group using SQL Server AlwaysOn end-to-end inside an Azure environment. At the end of the tutorial, your SQL Server AlwaysOn solution in Azure will consist of the following elements:
@@ -47,9 +43,9 @@ This tutorial is intended to show you the steps required to set up the described
 
 - You have installed the [Azure PowerShell cmdlets](..\powershell-install-configure.md).
 
-- You already know how to provision a SQL Server VM from the virtual machine gallery using the GUI. For more information, see [Provisioning a SQL Server Virtual Machine on Azure](virtual-machines-provision-sql-server.md)
+- You already know how to provision a SQL Server VM from the virtual machine gallery using the GUI. For more information, see [Provisioning a SQL Server Virtual Machine on Azure](/documentation/articles/virtual-machines-provision-sql-server)
 
-- You already have a solid understanding of AlwaysOn Availability Groups for on-premise solutions. For more information, see [AlwaysOn Availability Groups (SQL Server)](https://msdn.microsoft.com/library/hh510230.aspx).
+- You already have a solid understanding of AlwaysOn Availability Groups for on-premise solutions. For more information, see [AlwaysOn Availability Groups (SQL Server)](https://msdn.microsoft.com/zh-cn/library/hh510230.aspx).
 
 ## Connect to Your Azure Subscription and Create the Virtual Network
 
@@ -65,7 +61,7 @@ This tutorial is intended to show you the steps required to set up the described
 
 1. Define a series of variables that you will use to create your cloud IT infrastructure.
 
-		$location = "West US"
+		$location = "China North"
 		$affinityGroupName = "ContosoAG"
 		$affinityGroupDescription = "Contoso SQL HADR Affinity Group"
 		$affinityGroupLabel = "IaaS BI Affinity Group"
@@ -73,7 +69,7 @@ This tutorial is intended to show you the steps required to set up the described
 		$virtualNetworkName = "ContosoNET"
 		$storageAccountName = "<uniquestorageaccountname>"
 		$storageAccountLabel = "Contoso SQL HADR Storage Account"
-		$storageAccountContainer = "https://" + $storageAccountName + ".blob.core.windows.net/vhds/"
+		$storageAccountContainer = "https://" + $storageAccountName + ".blob.core.chinacloudapi.cn/vhds/"
 		$winImageName = (Get-AzureVMImage | where {$_.Label -like "Windows Server 2008 R2 SP1*"} | sort PublishedDate -Descending)[0].ImageName
 		$sqlImageName = (Get-AzureVMImage | where {$_.Label -like "SQL Server 2012 SP1 Enterprise*"} | sort PublishedDate -Descending)[0].ImageName
 		$dcServerName = "ContosoDC"
@@ -252,7 +248,7 @@ The DC server is now successfully provisioned. Next, you will configure the Acti
 		$acl.AddAccessRule($ace1)
 		Set-Acl -Path "DC=corp,DC=contoso,DC=com" -AclObject $acl
 
-	The GUID specified above is the GUID for the computer object type. The **CORP\Install** account needs the **Read All Properties** and **Create Computer Objects** permission in order to create the Active Direct objects for the WSFC cluster. The **Read All Properties** permission is already given to CORP\Install by default, so you do not need to grant it explicitly. For more information on permissions needed to create the WSFC cluster, see [Failover Cluster Step-by-Step Guide: Configuring Accounts in Active Directory](https://technet.microsoft.com/library/cc731002%28v=WS.10%29.aspx).
+	The GUID specified above is the GUID for the computer object type. The **CORP\Install** account needs the **Read All Properties** and **Create Computer Objects** permission in order to create the Active Direct objects for the WSFC cluster. The **Read All Properties** permission is already given to CORP\Install by default, so you do not need to grant it explicitly. For more information on permissions needed to create the WSFC cluster, see [Failover Cluster Step-by-Step Guide: Configuring Accounts in Active Directory](https://technet.microsoft.com/zh-cn/library/cc731002%28v=WS.10%29.aspx).
 
 	Now that you have finished configuring Active Directory and the user objects, you will create two SQL Server VMs and join them to this domain.
 
@@ -536,7 +532,7 @@ Finally, you are ready to configure the availability group. You will use the SQL
 		$svc2.Start();
 		$svc2.WaitForStatus([System.ServiceProcess.ServiceControllerStatus]::Running,$timeout)
 
-1. Download **CreateAzureFailoverCluster.ps1** from [Create WSFC Cluster for AlwaysOn Availability Groups in Azure VM](http://gallery.technet.microsoft.com/scriptcenter/Create-WSFC-Cluster-for-7c207d3a) to the local working directory. You will use this script to help you create a functional WSFC cluster. For important information on how WSFC interacts with the Azure network, see [High Availability and Disaster Recovery for SQL Server in Azure Virtual Machines](virtual-machines-sql-server-high-availability-and-disaster-recovery-solutions.md).
+1. Download **CreateAzureFailoverCluster.ps1** from [Create WSFC Cluster for AlwaysOn Availability Groups in Azure VM](http://gallery.technet.microsoft.com/scriptcenter/Create-WSFC-Cluster-for-7c207d3a) to the local working directory. You will use this script to help you create a functional WSFC cluster. For important information on how WSFC interacts with the Azure network, see [High Availability and Disaster Recovery for SQL Server in Azure Virtual Machines](/documentation/articles/virtual-machines-sql-server-high-availability-and-disaster-recovery-solutions).
 
 1. Change to your working directory and create the WSFC cluster with the downloaded script.
 
@@ -627,6 +623,6 @@ Finally, you are ready to configure the availability group. You will use the SQL
 		    -Database $db
 
 ## Next Steps
-You have now successfully implemented SQL Server AlwaysOn by creating an availability group in Azure. To configure a listener for this availability group, see [Configure an ILB listener for AlwaysOn Availability Groups in Azure](virtual-machines-sql-server-configure-ilb-alwayson-availability-group-listener.md).
+You have now successfully implemented SQL Server AlwaysOn by creating an availability group in Azure. To configure a listener for this availability group, see [Configure an ILB listener for AlwaysOn Availability Groups in Azure](/documentation/articles/virtual-machines-sql-server-configure-ilb-alwayson-availability-group-listener).
 
-For other information about using SQL Server in Azure, see [SQL Server on Azure Virtual Machines](../articles/virtual-machines/virtual-machines-sql-server-infrastructure-services.md).
+For other information about using SQL Server in Azure, see [SQL Server on Azure Virtual Machines](/documentation/articles/virtual-machines-sql-server-infrastructure-services).

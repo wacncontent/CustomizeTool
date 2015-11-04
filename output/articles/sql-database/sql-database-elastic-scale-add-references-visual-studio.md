@@ -7,14 +7,10 @@
 	authors="sidneyh" 
 	editor=""/>
 
-<tags 
-	ms.service="sql-database" 
-	ms.workload="sql-database" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="07/24/2015" 
-	ms.author="sidneyh"/>
+<tags
+	ms.service="sql-database"
+	ms.date="07/24/2015"
+	wacn.date=""/>
 
 # How to: add Elastic Database client library references to a Visual Studio project 
 
@@ -34,7 +30,7 @@
 
 The client library reference has now been added to your project. 
 
-[AZURE.INCLUDE [elastic-scale-include](../../includes/elastic-scale-include.md)]
+[AZURE.INCLUDE [elastic-scale-include](../includes/elastic-scale-include.md)]
 
 <!--Image references-->
 [1]: ./media/sql-database-elastic-scale-add-references-visual-studio/search-online.png

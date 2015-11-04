@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Routing requirements for ExpressRoute | Microsoft Azure"
+   pageTitle="Routing requirements for ExpressRoute | Windows Azure"
    description="This page provides detailed requirements for configuring and managing routing for ExpressRoute circuits."
    documentationCenter="na"
    services="expressroute"
@@ -7,20 +7,16 @@
    manager="carolz"
    editor=""/>
 <tags
-   ms.service="expressroute"
-   ms.devlang="na"
-   ms.topic="get-started-article"
-   ms.tgt_pltfrm="na"
-   ms.workload="infrastructure-services"
-   ms.date="10/06/2015"
-   ms.author="cherylmc"/>
+	ms.service="expressroute"
+	ms.date="10/06/2015"
+	wacn.date=""/>
 
 
 # ExpressRoute routing requirements  
 
 To connect to Microsoft cloud services using ExpressRoute, you’ll need to setup and manage routing. Some connectivity providers offer setting up and managing routing as a managed service. Check with your connectivity provider to see if they offer this service. If they don't, you must adhere to the requirements described below. 
 
-Refer to the [Circuits and routing domains](expressroute-circuit-peerings.md) article for a description of the routing sessions that need to be setup in order to facilitate connectivity.
+Refer to the [Circuits and routing domains](/documentation/articles/expressroute-circuit-peerings) article for a description of the routing sessions that need to be setup in order to facilitate connectivity.
 
 **Note:** Microsoft does not support any router redundancy protocols (e.g., HSRP, VRRP) for high availability configurations. We rely on a redundant pair of BGP sessions per peering for high availability.
 
@@ -75,7 +71,7 @@ Make sure that your IP address and AS number are registered to you in one of the
 
 ## Dynamic route exchange
 
-Routing exchange will be over eBGP protocol. EBGP sessions are established between the MSEEs and your routers. Authentication of BGP sessions is not a requirement. If required, an MD5 hash can be configured. See the [Configure routing](expressroute-howto-routing-classic.md) and [Circuit provisioning workflows and circuit states](expressroute-workflows.md) for information about configuring BGP sessions.
+Routing exchange will be over eBGP protocol. EBGP sessions are established between the MSEEs and your routers. Authentication of BGP sessions is not a requirement. If required, an MD5 hash can be configured. See the [Configure routing](/documentation/articles/expressroute-howto-routing-classic) and [Circuit provisioning workflows and circuit states](/documentation/articles/expressroute-workflows) for information about configuring BGP sessions.
 
 ## Autonomous System numbers
 
@@ -110,24 +106,24 @@ This section provides an overview of how BGP communities will be used with Expre
 
 If you are connecting to Microsoft through ExpressRoute at any one peering location within a geopolitical region, you will have access to all Microsoft cloud services across all regions within the geopolitical boundary. 
 
-For example, if you connected to Microsoft in Amsterdam through ExpressRoute, you will have access to all Microsoft cloud services hosted in North Europe and West Europe. 
+For example, if you connected to Microsoft in Amsterdam through ExpressRoute, you will have access to all Microsoft cloud services hosted in China North and West Europe. 
 
-Refer to the [ExpressRoute partners and peering locations](expressroute-locations.md) page for a detailed list of geopolitical regions, associated Azure regions, and corresponding ExpressRoute peering locations.
+Refer to the [ExpressRoute partners and peering locations](/documentation/articles/expressroute-locations) page for a detailed list of geopolitical regions, associated Azure regions, and corresponding ExpressRoute peering locations.
 
 You can purchase more than one ExpressRoute circuit per geopolitical region. Having multiple connections offers you significant benefits on high availability due to geo-redundancy. In cases where you have multiple ExpressRoute circuits, you will receive the same set of prefixes advertised from Microsoft on the public peering and Microsoft peering paths. This means you will have multiple paths from your network into Microsoft. This can potentially cause sub-optimal routing decisions to be made within your network. As a result,  you may experience sub-optimal connectivity experiences to different services. 
 
 Microsoft will tag prefixes advertised through public peering and Microsoft peering with appropriate BGP community values indicating the region the prefixes are hosted in. You can rely on the community values to make appropriate routing decisions to offer optimal routing to customers.
 
-| **Geopolitical Region** | **Microsoft Azure region (Same applies to Office 365)** | **BGP community value** |
+| **Geopolitical Region** | **Windows Azure region (Same applies to Office 365)** | **BGP community value** |
 |---|---|---|
-| **US** |	East US | 12076:3004 |
-|    | East US 2 | 12076:3005 |
-|    | West US | 12076:3006 |
-|    | Central US | 12076:3009 |
-|    | North Central US | 12076:3007 |
-|    | South Central US | 12076:3008 |
+| **US** |	China East | 12076:3004 |
+|    | China East 2 | 12076:3005 |
+|    | China North | 12076:3006 |
+|    | China North | 12076:3009 |
+|    | China North | 12076:3007 |
+|    | China East | 12076:3008 |
 | **South America** | Brazil South | 12076:3014 |
-| **Europe** | North Europe | 12076:3003 |
+| **Europe** | China North | 12076:3003 |
 |    | West Europe | 12076:3002 |
 | **Asia Pacific** | East Asia | 12076:3010 |
 |    | Southeast Asia | 12076:3011 |
@@ -162,8 +158,8 @@ Microsoft does not honor any BGP community values that you set. You are required
 
 - Configure your ExpressRoute connection.
 
-	- [Create an ExpressRoute circuit](expressroute-howto-circuit-classic.md)
-	- [Configure routing](expressroute-howto-routing-classic.md)
-	- [Link a VNet to an ExpressRoute circuit](expressroute-howto-linkvnet-classic.md)
+	- [Create an ExpressRoute circuit](/documentation/articles/expressroute-howto-circuit-classic)
+	- [Configure routing](/documentation/articles/expressroute-howto-routing-classic)
+	- [Link a VNet to an ExpressRoute circuit](/documentation/articles/expressroute-howto-linkvnet-classic)
 
 

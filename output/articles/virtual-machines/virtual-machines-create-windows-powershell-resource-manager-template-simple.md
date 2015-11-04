@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Create a VM with a template | Microsoft Azure"
+	pageTitle="Create a VM with a template | Windows Azure"
 	description="Use a Resource Manager template and Azure PowerShell to create a new Windows virtual machine."
 	services="virtual-machines"
 	documentationCenter=""
@@ -10,23 +10,19 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.workload="infrastructure-services"
-	ms.tgt_pltfrm="vm-windows"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="10/08/2015"
-	ms.author="davidmu"/>
+	wacn.date=""/>
 
 # Create a Windows virtual machine with a Resource Manager template and PowerShell
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-rm-include.md)] classic deployment model.
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] classic deployment model.
 
 
 You can easily create a new Windows-based Azure virtual machine (VM) using a Resource Manager template with Azure PowerShell. This template creates a single virtual machine running Windows in a new virtual network with a single subnet in a new resource group.
 
 ![](./media/virtual-machines-create-windows-powershell-resource-manager-template-simple/windowsvm.png)
 
-[AZURE.INCLUDE [powershell-preview](../../includes/powershell-preview-inline-include.md)]
+[AZURE.INCLUDE [powershell-preview](../includes/powershell-preview-inline-include.md)]
 
 ## Create a Windows VM
 
@@ -36,7 +32,7 @@ Fill in an Azure deployment name, Resource Group name, and Azure datacenter loca
 
 	$deployName="<deployment name>"
 	$RGName="<resource group name>"
-	$locName="<Azure location, such as West US>"
+	$locName="<Azure location, such as China North>"
 	$templateURI="https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-simple-windows-vm/azuredeploy.json"
 	New-AzureRmResourceGroup –Name $RGName –Location $locName
 	New-AzureRmResourceGroupDeployment -Name $deployName -ResourceGroupName $RGName -TemplateUri $templateURI
@@ -45,7 +41,7 @@ When you run the **New-AzureRmResourceGroupDeployment** command, you will be pro
 
 	$deployName="TestDeployment"
 	$RGName="TestRG"
-	$locname="West US"
+	$locname="China North"
 	$templateURI="https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-simple-windows-vm/azuredeploy.json"
 	New-AzureRmResourceGroup –Name $RGName –Location $locName
 	New-AzureRmResourceGroupDeployment -Name $deployName -ResourceGroupName $RGName -TemplateUri $templateURI
@@ -92,14 +88,14 @@ You now have a new Windows virtual machine named MyWindowsVM in your new resourc
 
 ## Additional Resources
 
-[Azure Compute, Network and Storage Providers under Azure Resource Manager](virtual-machines-azurerm-versus-azuresm.md)
+[Azure Compute, Network and Storage Providers under Azure Resource Manager](/documentation/articles/virtual-machines-azurerm-versus-azuresm)
 
-[Azure Resource Manager Overview](resource-group-overview.md)
+[Azure Resource Manager Overview](/documentation/articles/resource-group-overview)
 
-[Create a Windows virtual machine with Azure Resource Manager and PowerShell](virtual-machines-create-windows-powershell-resource-manager.md)
+[Create a Windows virtual machine with Azure Resource Manager and PowerShell](/documentation/articles/virtual-machines-create-windows-powershell-resource-manager)
 
-[Create a Windows virtual machine with PowerShell and Azure Service Manager](virtual-machines-create-windows-powershell-service-manager.md)
+[Create a Windows virtual machine with PowerShell and Azure Service Manager](/documentation/articles/virtual-machines-create-windows-powershell-service-manager)
 
-[Virtual machines documentation](http://azure.microsoft.com/documentation/services/virtual-machines/)
+[Virtual machines documentation](/documentation/services/virtual-machines/)
 
-[How to install and configure Azure PowerShell](install-configure-powershell.md)
+[How to install and configure Azure PowerShell](/documentation/articles/install-configure-powershell)

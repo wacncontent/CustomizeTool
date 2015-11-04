@@ -1,5 +1,5 @@
 <properties
-	pageTitle="How to use Service Bus topics with Java | Microsoft Azure"
+	pageTitle="How to use Service Bus topics with Java | Windows Azure"
 	description="Learn how to use Service Bus topics and subscriptions in Azure. Code samples are written for Java applications."
 	services="service-bus"
 	documentationCenter="java"
@@ -9,27 +9,23 @@
 
 <tags
 	ms.service="service-bus"
-	ms.workload="tbd"
-	ms.tgt_pltfrm="na"
-	ms.devlang="Java"
-	ms.topic="article"
 	ms.date="10/07/2015"
-	ms.author="sethm"/>
+	wacn.date=""/>
 
 # How to use Service Bus topics and subscriptions
 
-[AZURE.INCLUDE [service-bus-selector-topics](../../includes/service-bus-selector-topics.md)]
+[AZURE.INCLUDE [service-bus-selector-topics](../includes/service-bus-selector-topics.md)]
 
 This guide describes how to use Service Bus topics and subscriptions. The samples are written in Java and use the [Azure SDK for Java][]. The scenarios covered include **creating topics and subscriptions**, **creating subscription filters**, **sending messages to a topic**, **receiving messages from a subscription**, and
 **deleting topics and subscriptions**.
 
-[AZURE.INCLUDE [service-bus-java-how-to-create-topic](../../includes/service-bus-java-how-to-create-topic.md)]
+[AZURE.INCLUDE [service-bus-java-how-to-create-topic](../includes/service-bus-java-how-to-create-topic.md)]
 
 ## Configure your application to use Service Bus
 
-Make sure you have installed the [Azure SDK for Java][] before building this sample. If you are using Eclipse, you can install the [Azure Toolkit for Eclipse][] that includes the Azure SDK for Java. You can then add the **Microsoft Azure Libraries for Java** to your project:
+Make sure you have installed the [Azure SDK for Java][] before building this sample. If you are using Eclipse, you can install the [Azure Toolkit for Eclipse][] that includes the Azure SDK for Java. You can then add the **Windows Azure Libraries for Java** to your project:
 
-![](media/service-bus-java-how-to-use-topics-subscriptions/eclipselibs.png)
+![](./media/service-bus-java-how-to-use-topics-subscriptions/eclipselibs.png)
 
 Add the following import statements to the top of the Java file:
 
@@ -58,7 +54,7 @@ can be used to create a topic named `TestTopic`, with a namespace called `HowToS
           "HowToSample",
           "RootManageSharedAccessKey",
           "SAS_key_value",
-          ".servicebus.windows.net"
+          ".servicebus.chinacloudapi.cn"
           );
 
 	ServiceBusContract service = ServiceBusService.create(config);
@@ -321,10 +317,10 @@ with the topic. Subscriptions can also be deleted independently.
 
 Now that you've learned the basics of Service Bus queues, see [Service Bus queues, topics, and subscriptions][] for more information.
 
-  [Azure SDK for Java]: http://azure.microsoft.com/develop/java/
-  [Azure Toolkit for Eclipse]: https://msdn.microsoft.com/en-us/library/azure/hh694271.aspx
-  [Azure portal]: http://manage.windowsazure.com/
-  [Service Bus queues, topics, and subscriptions]: service-bus-queues-topics-subscriptions.md
-  [SqlFilter]: http://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.sqlfilter.aspx 
-  [SqlFilter.SqlExpression]: https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.sqlfilter.sqlexpression.aspx
-  [BrokeredMessage]: https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.brokeredmessage.aspx
+  [Azure SDK for Java]: /develop/java/
+  [Azure Toolkit for Eclipse]: https://msdn.microsoft.com/zh-cn/library/azure/hh694271.aspx
+  [Azure Management Portal]: http://manage.windowsazure.cn/
+  [Service Bus queues, topics, and subscriptions]: /documentation/articles/service-bus-queues-topics-subscriptions
+  [SqlFilter]: http://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.sqlfilter.aspx 
+  [SqlFilter.SqlExpression]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.sqlfilter.sqlexpression.aspx
+  [BrokeredMessage]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.brokeredmessage.aspx

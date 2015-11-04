@@ -1,9 +1,7 @@
-<!-- not suitable for mooncake-->
-
 > [AZURE.SELECTOR]
-- [Overview](/documentation/articles/hdinsight-provision-clusters)
-- [Azure Management Portal](/documentation/articles/hdinsight-hadoop-create-linux-clusters-portal)
-- [Azure CLI](/documentation/articles/hdinsight-hadoop-create-linux-clusters-azure-cli)
-- [Azure PowerShell](/documentation/articles/hdinsight-hadoop-create-linux-clusters-azure-powershell)
-- [REST API (cURL)](/documentation/articles/hdinsight-hadoop-create-linux-clusters-curl-rest)
-- [.NET SDK](/documentation/articles/hdinsight-hadoop-create-linux-clusters-dotnet-sdk)
+- [Overview](hdinsight-hadoop-provision-linux-clusters.md)
+- [Azure preview portal](hdinsight-hadoop-create-linux-clusters-portal.md)
+- [Azure CLI](hdinsight-hadoop-create-linux-clusters-azure-cli.md)
+- [Azure PowerShell](hdinsight-hadoop-create-linux-clusters-azure-powershell.md)
+- [REST API (cURL)](hdinsight-hadoop-create-linux-clusters-curl-rest.md)
+- [.NET SDK](hdinsight-hadoop-create-linux-clusters-dotnet-sdk.md)

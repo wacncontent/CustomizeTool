@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Create and configure a VM | Microsoft Azure"
+	pageTitle="Create and configure a VM | Windows Azure"
 	description="Create and configure an Azure virtual machine with the Powershell and the Resource Manager deployment model."
 	services="virtual-machines"
 	documentationCenter=""
@@ -10,16 +10,12 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.workload="infrastructure-services"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="10/08/2015"
-	ms.author="cynthn"/>
+	wacn.date=""/>
 
 # Create and configure a Windows Virtual Machine with Resource Manager and Azure PowerShell
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-rm-include.md)] [classic deployment model](virtual-machines-ps-create-preconfigure-windows-vms.md).
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] [classic deployment model](/documentation/articles/virtual-machines-ps-create-preconfigure-windows-vms).
 
 These steps show you how to construct a set of Azure PowerShell commands to create and configure an Azure virtual machine. You can use this building block process to quickly create a command set for a new Windows-based virtual machine and expand an existing deployment. You can also use it to create multiple command sets that quickly build out a custom dev/test or IT pro environment.
 
@@ -27,7 +23,7 @@ These steps follow a fill-in-the-blanks approach for creating Azure PowerShell c
 
 ## Step 1: Install Azure PowerShell
 
-You must also have Azure PowerShell version 1.0.0 or later. If you have not installed and configured Azure PowerShell, click [here](../powershell-install-configure.md) for instructions.
+You must also have Azure PowerShell version 1.0.0 or later. If you have not installed and configured Azure PowerShell, click [here](/documentation/articles/powershell-install-configure) for instructions.
 
 You can check the version of Azure PowerShell that you have installed with this command at the Azure PowerShell prompt.
 
@@ -39,7 +35,7 @@ Here is an example.
 	-------
 	1.0.0
 
-If you do not have Version 1.0.0 or later, you must remove Azure PowerShell using Programs and Features from the Control Panel and then install the latest version. See [How to Install and Configure Azure PowerShell](../powershell-install-configure.md) for more information.
+If you do not have Version 1.0.0 or later, you must remove Azure PowerShell using Programs and Features from the Control Panel and then install the latest version. See [How to Install and Configure Azure PowerShell](/documentation/articles/powershell-install-configure) for more information.
 
 ## Step 2: Set your subscription
 
@@ -69,7 +65,7 @@ In this section we will show you how to create each resource for your new virtua
 VMs created using the Resource Manager deployment model require a resource group. If needed, create a new resource group for your new virtual machine. Replace everything within the quotes, including the < and > characters, with the correct names.
 
 	$rgName="<resource group name>"
-	$locName="<location name, such as West US>"
+	$locName="<location name, such as China North>"
 	New-AzureRmResourceGroup -Name $rgName -Location $locName
 
 You can use this command to list your existing resource groups.
@@ -87,7 +83,7 @@ To see a list of the Azure locations where you can create Resource Manager-based
 VMs created with the Resource Manager deployment model require a Resource Manager-based storage account. If needed, create a new storage account for your new virtual machine with these commands.
 
 	$rgName="<resource group name>"
-	$locName="<location name, such as West US>"
+	$locName="<location name, such as China North>"
 	$saName="<storage account name>"
 	$saType="<storage account type, specify one: Standard_LRS, Standard_GRS, Standard_RAGRS, or Premium_LRS>"
 	New-AzureRmStorageAccount -Name $saName -ResourceGroupName $rgName –Type $saType -Location $locName
@@ -111,7 +107,7 @@ VMs created with the Resource Manager deployment model can use a public domain n
 To test whether a chosen domain name label is globally unique, use these commands.
 
 	$domName="<domain name label to test>"
-	$loc="<short name of an Azure location, for example, for West US, the short name is westus>"
+	$loc="<short name of an Azure location, for example, for China North, the short name is westus>"
 	Test-AzureRmDnsAvailability -DomainQualifiedName $domName -Location $loc
 
 If DNSNameAvailability is "True", your proposed name is globally unique.
@@ -123,7 +119,7 @@ If needed, create a new availability set for the new virtual machine with these 
 
 	$avName="<availability set name>"
 	$rgName="<resource group name>"
-	$locName="<location name, such as West US>"
+	$locName="<location name, such as China North>"
 	New-AzureRmAvailabilitySet –Name $avName –ResourceGroupName $rgName -Location $locName
 
 Use this command to list the existing availability sets.
@@ -132,12 +128,12 @@ Use this command to list the existing availability sets.
 
 ### NAT rules	
 	
-Resource Manager-based virtual machines can be configured with inbound NAT rules to allow incoming traffic from the Internet and be placed in a load balanced set. In both cases, you must specify a load balancer instance and other settings. For more information, see [Create a load balancer using Azure Resource Manager](../load-balancer/load-balancer-arm-powershell.md).
+Resource Manager-based virtual machines can be configured with inbound NAT rules to allow incoming traffic from the Internet and be placed in a load balanced set. In both cases, you must specify a load balancer instance and other settings. For more information, see [Create a load balancer using Azure Resource Manager](/documentation/articles/load-balancer-arm-powershell).
 
 VMs created with the Resource Manager deployment model require a Resource Manager virtual network. If needed, create a new Resource Manager-based virtual network with at least one subnet for the new virtual machine. Here is an example for a new virtual network named **TestNet** with two subnets named **frontendSubnet** and **backendSubnet**.
 
 	$rgName="LOBServers"
-	$locName="West US"
+	$locName="China North"
 	$frontendSubnet=New-AzureRmVirtualNetworkSubnetConfig -Name frontendSubnet -AddressPrefix 10.0.1.0/24
 	$backendSubnet=New-AzureRmVirtualNetworkSubnetConfig -Name backendSubnet -AddressPrefix 10.0.2.0/24
 	New-AzureRmVirtualNetwork -Name TestNet -ResourceGroupName $rgName -Location $locName -AddressPrefix 10.0.0.0/16 -Subnet $frontendSubnet,$backendSubnet
@@ -152,7 +148,7 @@ Use these commands to list the existing virtual networks.
 Open a fresh instance of the text editor of your choice or the PowerShell Integrated Scripting Environment (ISE) and copy the following lines to start your command set. Specify the name of the resource group, Azure location, and storage account for this new virtual machine. Replace everything within the quotes, including the < and > characters, with the correct names.
 
 	$rgName="<resource group name>"
-	$locName="<Azure location, such as West US>"
+	$locName="<Azure location, such as China North>"
 	$saName="<storage account name>"
 
 You must specify the name of a Resource Manager-based virtual network and the index number of a subnet in the virtual network.  Use these commands to list the subnets for a virtual network.
@@ -215,7 +211,7 @@ To create a NIC and add it to a load balancer instance for an inbound NAT rule, 
 - The index number of the back end address pool of the load balancer instance to assign to the NIC.
 - The index number of the inbound NAT rule to assign to the NIC.
 
-For information on how to create a load balancer instance with inbound NAT rules, see [Create a load balancer using Azure Resource Manager](../load-balancer/load-balancer-arm-powershell.md).
+For information on how to create a load balancer instance with inbound NAT rules, see [Create a load balancer using Azure Resource Manager](/documentation/articles/load-balancer-arm-powershell).
 
 Copy these lines to your command set and specify the needed names and index numbers.
 
@@ -235,7 +231,7 @@ To create a NIC and add it to a load balancer instance for a load-balanced set, 
 - The name of a previously-created load balancer instance that has a rule for the load-balanced traffic.
 - The index number of the back end address pool of the load balancer instance to assign to the NIC.
 
-For information on how to create a load balancer instance with rules for load-balanced traffic, see [Create a load balancer using Azure Resource Manager](../load-balancer/load-balancer-arm-powershell.md).
+For information on how to create a load balancer instance with rules for load-balanced traffic, see [Create a load balancer using Azure Resource Manager](/documentation/articles/load-balancer-arm-powershell).
 
 Copy these lines to your command set and specify the needed names and index numbers.
 
@@ -297,7 +293,7 @@ Next, you need to determine the publisher, offer, and SKU of the image for your 
 |MicrosoftWindowsServerEssentials | WindowsServerEssentials | WindowsServerEssentials |
 |MicrosoftWindowsServerHPCPack | WindowsServerHPCPack | 2012R2 |
 
-If the virtual machine image you need is not listed, use the instructions [here](resource-groups-vm-searching.md#powershell) to determine the publisher, offer, and SKU names.
+If the virtual machine image you need is not listed, use the instructions [here](/documentation/articles/resource-groups-vm-searching#powershell) to determine the publisher, offer, and SKU names.
 
 Copy these commands to your command set and fill in the publisher, offer, and SKU names.
 
@@ -339,7 +335,7 @@ Here is the Azure PowerShell command set to create this virtual machine.
 
 	# Set values for existing resource group and storage account names
 	$rgName="LOBServers"
-	$locName="West US"
+	$locName="China North"
 	$saName="contosolobserverssa"
 
 	# Set the existing virtual network and subnet index
@@ -386,12 +382,12 @@ Here is the Azure PowerShell command set to create this virtual machine.
 
 ## Additional Resources
 
-[Azure Compute, Network and Storage Providers under Azure Resource Manager](virtual-machines-azurerm-versus-azuresm.md)
+[Azure Compute, Network and Storage Providers under Azure Resource Manager](/documentation/articles/virtual-machines-azurerm-versus-azuresm)
 
-[Azure Resource Manager Overview](../resource-group-overview.md)
+[Azure Resource Manager Overview](/documentation/articles/resource-group-overview)
 
-[Deploy and Manage Azure Virtual Machines using Resource Manager Templates and PowerShell](virtual-machines-deploy-rmtemplates-powershell.md)
+[Deploy and Manage Azure Virtual Machines using Resource Manager Templates and PowerShell](/documentation/articles/virtual-machines-deploy-rmtemplates-powershell)
 
-[Create a Windows virtual machine with a Resource Manager template and PowerShell](virtual-machines-create-windows-powershell-resource-manager-template-simple)
+[Create a Windows virtual machine with a Resource Manager template and PowerShell](/documentation/articles/virtual-machines-create-windows-powershell-resource-manager-template-simple)
 
-[How to install and configure Azure PowerShell](../install-configure-powershell.md)
+[How to install and configure Azure PowerShell](/documentation/articles/install-configure-powershell)

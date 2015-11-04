@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Using Azure Storage with a Jenkins Continuous Integration Solution | Microsoft Azure" 
+	pageTitle="Using Azure Storage with a Jenkins Continuous Integration Solution | Windows Azure" 
 	description="This tutorial show how to use the Azure blob service as a repository for build artifacts created by a Jenkins continuous integration solution." 
 	services="storage" 
 	documentationCenter="java" 
@@ -7,14 +7,10 @@
 	manager="wpickett" 
 	editor="jimbe"/>
 
-<tags 
-	ms.service="storage" 
-	ms.workload="storage" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="Java" 
-	ms.topic="article" 
-	ms.date="10/12/2015" 
-	ms.author="robmcm"/>
+<tags
+	ms.service="storage"
+	ms.date="10/12/2015"
+	wacn.date=""/>
 
 # Using Azure Storage with a Jenkins Continuous Integration solution
 
@@ -71,7 +67,7 @@ To use the Blob service with Jenkins, you'll need to install the Azure Storage p
 1. Within the Jenkins dashboard, click **Manage Jenkins**.
 2. In the **Manage Jenkins** page, click **Manage Plugins**.
 3. Click the **Available** tab.
-4. In the **Artifact Uploaders** section, check **Microsoft Azure Storage plugin**.
+4. In the **Artifact Uploaders** section, check **Windows Azure Storage plugin**.
 5. Click either **Install without restart** or **Download now and install after restart**.
 6. Restart Jenkins.
 
@@ -79,9 +75,9 @@ To use the Blob service with Jenkins, you'll need to install the Azure Storage p
 
 1. Within the Jenkins dashboard, click **Manage Jenkins**.
 2. In the **Manage Jenkins** page, click **Configure System**.
-3. In the **Microsoft Azure Storage Account Configuration** section:
-    1. Enter your storage account name, which you can obtain from the Azure portal, <https://manage.windowsazure.com>.
-    2. Enter your storage account key, also obtainable from the Azure portal.
+3. In the **Windows Azure Storage Account Configuration** section:
+    1. Enter your storage account name, which you can obtain from the Azure Management Portal, <https://manage.windowsazure.cn>.
+    2. Enter your storage account key, also obtainable from the Azure Management Portal.
     3. Use the default value for **Blob Service Endpoint URL** if you are using the public Azure cloud. If you are using a different Azure cloud, use the endpoint as specified in the Azure management portal for your storage account. 
     4. Click **Validate storage credentials** to validate your storage account. 
     5. [Optional] If you have additional storage accounts that you want made available to your Jenkins CI, click **Add more Storage Accounts**.
@@ -113,11 +109,11 @@ For instruction purposes, first we'll need to create a job that will create seve
 8. Click **Make new container public by default** for this example. (If you want to use a private container, you'll need to create a shared access signature to allow access. That is beyond the scope of this topic. You can learn more about shared access signatures at [Creating a Shared Access Signature](http://go.microsoft.com/fwlink/?LinkId=279889).)
 9. [Optional] Click **Clean container before uploading** if you want the container to be cleared of contents before build artifacts are uploaded (leave it unchecked if you do not want to clean the contents of the container).
 10. For **List of Artifacts to upload**, enter **text/*.txt**.
-11. For **Common virtual path for uploaded artifacts**, for purposes of this tutorial, enter **${BUILD\_ID}/${BUILD\_NUMBER}**.
+11. For **Common virtual path for uploaded artifacts**, for purposes of this tutorial, enter **${BUILD_ID}/${BUILD_NUMBER}**.
 12. Click **Save** to save your settings.
 13. In the Jenkins dashboard, click **Build Now** to run **MyJob**. Examine the console output for status. Status messages for Azure storage will be included in the console output when the post-build action starts to upload build artifacts.
 14. Upon successful completion of the job, you can examine the build artifacts by opening the public blob.
-    1. Login to the Azure management portal, <https://manage.windowsazure.com>.
+    1. Login to the Azure management portal, <https://manage.windowsazure.cn>.
     2. Click **Storage**.
     3. Click the storage account name that you used for Jenkins.
     4. Click **Containers**.
@@ -145,16 +141,16 @@ The following provides an overview of the Blob service components.
 
 - **Storage Account**: All access to Azure Storage is done through a storage account. This is the highest level of the namespace for accessing blobs. An account can contain an unlimited number of containers, as long as their total size is under 100TB.
 - **Container**: A container provides a grouping of a set of blobs. All blobs must be in a container. An account can contain an unlimited number of containers. A container can store an unlimited number of blobs.
-- **Blob**: A file of any type and size. There are two types of blobs that can be stored in Azure Storage: block and page blobs. Most files are block blobs. A single block blob can be up to 200GB in size. This tutorial uses block blobs. Page blobs, another blob type, can be up to 1TB in size, and are more efficient when ranges of bytes in a file are modified frequently. For more information about blobs, see [Understanding Block Blobs and Page Blobs](http://msdn.microsoft.com/library/azure/ee691964.aspx).
+- **Blob**: A file of any type and size. There are two types of blobs that can be stored in Azure Storage: block and page blobs. Most files are block blobs. A single block blob can be up to 200GB in size. This tutorial uses block blobs. Page blobs, another blob type, can be up to 1TB in size, and are more efficient when ranges of bytes in a file are modified frequently. For more information about blobs, see [Understanding Block Blobs and Page Blobs](http://msdn.microsoft.com/zh-cn/library/azure/ee691964.aspx).
 - **URL format**: Blobs are addressable using the following URL format:
 
-    `http://storageaccount.blob.core.windows.net/container_name/blob_name`
+    `http://storageaccount.blob.core.chinacloudapi.cn/container_name/blob_name`
     
     (The format above applies to the public Azure cloud. If you are using a different Azure cloud, use the endpoint within the Azure management portal to determine your URL endpoint.)
 
-    In the format above, `storageaccount` represents the name of your storage account, `container_name` represents the name of your container, and `blob_name` represents the name of your blob, respectively. Within the container name, you can have multiple paths, separated by a forward slash, **/**. The example container name in this tutorial was **MyJob**, and **${BUILD\_ID}/${BUILD\_NUMBER}** was used for the common virtual path, resulting in the blob having a URL of the following form:
+    In the format above, `storageaccount` represents the name of your storage account, `container_name` represents the name of your container, and `blob_name` represents the name of your blob, respectively. Within the container name, you can have multiple paths, separated by a forward slash, **/**. The example container name in this tutorial was **MyJob**, and **${BUILD_ID}/${BUILD_NUMBER}** was used for the common virtual path, resulting in the blob having a URL of the following form:
 
-    `http://example.blob.core.windows.net/myjob/2014-04-14_23-57-00/1/hello.txt`
+    `http://example.blob.core.chinacloudapi.cn/myjob/2014-04-14_23-57-00/1/hello.txt`
 
 ## Next steps
 

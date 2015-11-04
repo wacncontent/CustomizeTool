@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Change the drive letter of the temporary disk | Microsoft Azure"
+	pageTitle="Change the drive letter of the temporary disk | Windows Azure"
 	description="Change the drive letter of the temporary disk on a Windows virtual machine created with the classic deployment model."
 	services="virtual-machines"
 	documentationCenter=""
@@ -11,16 +11,12 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.workload="infrastructure-services"
-	ms.tgt_pltfrm="vm-windows"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="05/27/2015"
-	ms.author="cynthn"/>
+	wacn.date=""/>
 
 #Change the drive letter of the Windows temporary disk on a virtual machine created with the classic deployment model
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
 
 
 If you need to use the D drive to store data, follow these instructions to use a different drive for the temporary disk. Never use the temporary disk to store data that you need to keep.
@@ -43,7 +39,7 @@ If you want to use an existing data disk on the D drive, make sure you've also u
 
 4. Log on again and change the drive letter from D to E.
 
-5. From the [Azure portal](http://manage.windowsazure.com), attach an existing data disk or an empty data disk.
+5. From the [Azure Management Portal](http://manage.windowsazure.cn), attach an existing data disk or an empty data disk.
 
 6.	Log on to the virtual machine again, initialize the disk, and assign D as the drive letter for the disk you just attached.
 
@@ -63,14 +59,8 @@ If you want to use an existing data disk on the D drive, make sure you've also u
 [About Azure Storage accounts][Storage]
 
 <!--Link references-->
-[Attach]: storage-windows-attach-disk.md
-
-
-
-[VHD]: virtual-machines-create-upload-vhd-windows-server.md
-
-[Logon]: virtual-machines-log-on-windows-server.md
-
-[Detach]: storage-windows-detach-disk.md
-
-[Storage]: ../storage-whatis-account.md
+[Attach]: /documentation/articles/storage-windows-attach-disk
+[VHD]: /documentation/articles/virtual-machines-create-upload-vhd-windows-server
+[Logon]: /documentation/articles/virtual-machines-log-on-windows-server
+[Detach]: /documentation/articles/storage-windows-detach-disk
+[Storage]: /documentation/articles/storage-whatis-account

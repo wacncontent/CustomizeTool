@@ -7,14 +7,10 @@
 	manager="dwrede" 
 	editor=""/>
 
-<tags 
-	ms.service="mobile-services" 
-	ms.workload="mobile" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="multiple" 
-	ms.topic="article" 
-	ms.date="09/14/2015" 
-	ms.author="glenga"/>
+<tags
+	ms.service="mobile-services"
+	ms.date="09/14/2015"
+	wacn.date=""/>
 
 # Build a .NET backend mobile service that uses Table storage
 
@@ -28,13 +24,13 @@ First, you need to configure your mobile service and .NET backend code project t
 
 1. In **Solution Explorer** in Visual Studio, right-click the .NET backend project, and then select **Manage NuGet Packages**.
 
-2. In the left pane, select the **Online** category, select **Stabile Only**, search for **MobileServices**, click **Install** on the **Microsoft Azure Mobile Services .NET Backend Azure Storage Extension** package, then accept the license agreements. 
+2. In the left pane, select the **Online** category, select **Stabile Only**, search for **MobileServices**, click **Install** on the **Windows Azure Mobile Services .NET Backend Azure Storage Extension** package, then accept the license agreements. 
 
   	![](./media/mobile-services-dotnet-backend-store-data-table-storage/mobile-add-storage-nuget-package-dotnet.png)
 
   	This adds support for Azure storage services to the .NET backend mobile service project.
 
-3. If you haven't yet created your storage account, see [How To Create a Storage Account](../storage-create-storage-account.md).
+3. If you haven't yet created your storage account, see [How To Create a Storage Account](/documentation/articles/storage-create-storage-account).
 
 4. In the Management Portal, click **Storage**, click the storage account, then click **Manage Keys**. 
 
@@ -135,9 +131,9 @@ You are now ready to test the app.
 
 Now that you have seen how easy it is to use Table storage with .NET backend, consider exploring some other backend storage options:
 
-+ [Connect to an on-premises SQL Server using Hybrid Connections](mobile-services-dotnet-backend-hybrid-connections-get-started.md)</br>Hybrid Connections lets your mobile service securely connect to your on-premises assets. In this way, you can make your on-premises data accessible to your mobile clients by using Azure. Supported assets include any resource that runs on a static TCP port, including Microsoft SQL Server, MySQL, HTTP Web APIs, and most custom web services.
++ [Connect to an on-premises SQL Server using Hybrid Connections](/documentation/articles/mobile-services-dotnet-backend-hybrid-connections-get-started)</br>Hybrid Connections lets your mobile service securely connect to your on-premises assets. In this way, you can make your on-premises data accessible to your mobile clients by using Azure. Supported assets include any resource that runs on a static TCP port, including Microsoft SQL Server, MySQL, HTTP Web APIs, and most custom web services.
 
-+ [Upload images to Azure Storage using Mobile Services](mobile-services-dotnet-backend-windows-store-dotnet-upload-data-blob-storage.md)</br>Shows you how to extend the TodoList sample project to let you upload images from your app to Azure Blob storage.
++ [Upload images to Azure Storage using Mobile Services](/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-upload-data-blob-storage)</br>Shows you how to extend the TodoList sample project to let you upload images from your app to Azure Blob storage.
 
 <!-- Anchors. -->
 [Create a non-relational store]: #create-store
@@ -149,8 +145,8 @@ Now that you have seen how easy it is to use Table storage with .NET backend, co
 
 
 <!-- URLs. -->
-[Get started with Mobile Services]: mobile-services-dotnet-backend-windows-store-dotnet-get-started.md
-[Azure Management Portal]: https://manage.windowsazure.com/
-[What is the Table Service]: ../storage-dotnet-how-to-use-tables.md#what-is
+[Get started with Mobile Services]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started
+[Azure Management Portal]: https://manage.windowsazure.cn/
+[What is the Table Service]: /documentation/articles/storage-dotnet-how-to-use-tables#what-is
 [MongoLab Add-on Page]: /gallery/store/mongolab/mongolab
  

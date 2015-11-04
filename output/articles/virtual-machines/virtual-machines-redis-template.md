@@ -10,23 +10,19 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.workload="multiple"
-	ms.tgt_pltfrm="vm-windows"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="05/04/2015"
-	ms.author="twieman"/>
+	wacn.date=""/>
 
 # Redis cluster with a Resource Manager template
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-rm-include.md)] classic deployment model.
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] classic deployment model.
 
 
 Redis is an open-source key-value cache and store, where keys can contain data structures such as strings, hashes, lists, sets and sorted sets. Redis supports a set of atomic operations on these data types.  With the release of Redis version 3.0, Redis Cluster is now available in the latest stable version of Redis.  Redis Cluster is a distributed implementation of Redis where data is automatically sharded across multiple Redis nodes, with the ability to continue operations when a subset of nodes is experiencing failures.
 
-Microsoft Azure Redis Cache is a dedicated Redis cache service, managed by Microsoft, but not all Microsoft Azure customers want to use Azure Redis Cache.  Some want to keep their Redis cache behind a subnet within their own Azure deployments, while others are more comfortable hosting their own Redis servers on Linux virtual machines in order to fully take advantage of all Redis features.
+Windows Azure Redis Cache is a dedicated Redis cache service, managed by Microsoft, but not all Windows Azure customers want to use Azure Redis Cache.  Some want to keep their Redis cache behind a subnet within their own Azure deployments, while others are more comfortable hosting their own Redis servers on Linux virtual machines in order to fully take advantage of all Redis features.
 
-This tutorial will walk through using a sample Azure Resource Manager  template to deploy a Redis cluster on Ubuntu VMs within a subnet in a resource group in Microsoft Azure.  In addition to Redis 3.0 Cluster, this template also supports deploying Redis 2.8 with Redis Sentinel.  Note that this tutorial will focus on the Redis 3.0 Cluster implementation.
+This tutorial will walk through using a sample Azure Resource Manager  template to deploy a Redis cluster on Ubuntu VMs within a subnet in a resource group in Windows Azure.  In addition to Redis 3.0 Cluster, this template also supports deploying Redis 2.8 with Redis Sentinel.  Note that this tutorial will focus on the Redis 3.0 Cluster implementation.
 
 The Redis cluster is created behind a subnet, so there is no public IP access to the Redis cluster.  As part of the deployment, an optional “jump box” can be deployed.  This “jump box” is an Ubuntu VM deployed in the subnet as well, but it *does* expose a public IP address with an open SSH port that you can SSH to.  Then from the “jump box”, you can SSH to all the Redis VMs in the subnet.
 
@@ -34,13 +30,13 @@ This template utilizes a “t-shirt size” concept in order to specify a “Sma
 
 The Redis Cluster template for the “Medium” t-shirt size creates this configuration:
 
-![cluster-architecture](media/virtual-machines-redis-template/cluster-architecture.png)
+![cluster-architecture](./media/virtual-machines-redis-template/cluster-architecture.png)
 
 Before diving into more details related to Azure Resource Manager and the template we will use for this deployment, make sure you have Azure PowerShell or the Azure CLI configured correctly.
 
-[AZURE.INCLUDE [arm-getting-setup-powershell](../../includes/arm-getting-setup-powershell.md)]
+[AZURE.INCLUDE [arm-getting-setup-powershell](../includes/arm-getting-setup-powershell.md)]
 
-[AZURE.INCLUDE [xplat-getting-set-up-arm](../../includes/xplat-getting-set-up-arm.md)]
+[AZURE.INCLUDE [xplat-getting-set-up-arm](../includes/xplat-getting-set-up-arm.md)]
 
 ## Deploy a Redis cluster by using a Resource Manager template
 
@@ -230,7 +226,7 @@ Here is an example you can find in the azuredeploy-parameters.json file.  Note t
 		"value": ""
 	},
 	"location": {
-		"value": "West US"
+		"value": "China North"
 	},
 	"virtualNetworkName": {
 		"value": "redisClustVnet"
@@ -262,14 +258,14 @@ Here is an example you can find in the azuredeploy-parameters.json file.  Note t
 }
 ```
 
->[AZURE.NOTE] The parameter `storageAccountName` must be a non-existent, unique Storage account name that satisfies the naming requirements for a Microsoft Azure Storage account (lowercase letters and numbers only).  This Storage account will be created as part of the deployment process.
+>[AZURE.NOTE] The parameter `storageAccountName` must be a non-existent, unique Storage account name that satisfies the naming requirements for a Windows Azure Storage account (lowercase letters and numbers only).  This Storage account will be created as part of the deployment process.
 
 Fill in an Azure deployment name, resource group name, Azure location, and the folder of your saved JSON files. Then run these commands:
 
 ```powershell
 $deployName="<deployment name>, such as TestDeployment"
 $RGName="<resource group name>, such as TestRG"
-$locName="<Azure location, such as West US>"
+$locName="<Azure location, such as China North>"
 $folderName="<folder name, such as C:\Azure\Templates\RedisCluster>"
 $templateFile= $folderName + "\azuredeploy.json"
 $templateParameterFile= $folderName + "\azuredeploy-parameters.json"
@@ -326,7 +322,7 @@ During the deployment, you will see something like this:
                     adminUsername    String                     myadmin
                     adminPassword    SecureString
                     storageAccountName  String                     myuniqstgacct87
-                    location         String                     West US
+                    location         String                     China North
                     virtualNetworkName  String                     redisClustVnet
                     addressPrefix    String                     10.0.0.0/16
                     subnetName       String                     Subnet1
@@ -348,7 +344,7 @@ During the deployment, you will see something like this:
 
 During and after deployment, you can check all the requests that were made during provisioning, including any errors that occurred.
 
-To do that, go to the [Azure portal](https://portal.azure.com), and do the following:
+To do that, go to the [Azure Management Portal](https://manage.windowsazure.cn), and do the following:
 
 - In the left-hand navigation bar, click **Browse**, and then scroll down and click **Resource Groups**.
 - Select the resource group that you just created, to bring up the “Resource Group” blade.
@@ -366,7 +362,7 @@ Remove-AzureResourceGroup –Name "<resource group name>"
 To deploy a Redis cluster via the Azure CLI, first create a resource group by specifying a name and a location:
 
 ```powershell
-azure group create TestRG "West US"
+azure group create TestRG "China North"
 ```
 
 Pass this resource group name, the location of the JSON template file, and the location of the parameters file (see the above Azure PowerShell section for details) into the following command:
@@ -387,7 +383,7 @@ In order to create a robust and reusable approach to Resource Manager template d
 
 This diagram describes the relationships between all files downloaded from GitHub for this deployment:
 
-![redis-files](media/virtual-machines-redis-template/redis-files.png)
+![redis-files](./media/virtual-machines-redis-template/redis-files.png)
 
 This section steps you through the structure of the azuredeploy.json template for the Redis cluster.
 
@@ -432,7 +428,7 @@ The "variables" section specifies variables that can be used throughout this tem
 
 ```json
 "vmStorageAccountContainerName": "vhd-redis",
-"vmStorageAccountDomain": ".blob.core.windows.net",
+"vmStorageAccountDomain": ".blob.core.chinacloudapi.cn",
 "vnetID": "[resourceId('Microsoft.Network/virtualNetworks', parameters('virtualNetworkName'))]",
 ...
 "machineSettings": {
@@ -491,7 +487,7 @@ If you want to customize the size of the Redis Cluster deployment, then you can 
 
 Note:  The `totalMemberCountExcludingLast` and `totalMemberCount` properties are needed because the template language currently does not have “math” operations.
 
-More information regarding the template language can be found in MSDN at [Azure Resource Manager Template Language](../resource-group-authoring-templates.md).
+More information regarding the template language can be found in MSDN at [Azure Resource Manager Template Language](/documentation/articles/resource-group-authoring-templates).
 
 ### "resources" section
 
@@ -658,7 +654,7 @@ You can see that this resource depends on the resource VM already being deployed
 
 By familiarizing yourself with the other files included in this deployment, you will be able to understand all the details and best practices required to organize and orchestrate complex deployment strategies for multi-node solutions, based on any technology, leveraging Azure Resource Manager templates. While not mandatory, a recommended approach is to structure your template files as highlighted by the following diagram:
 
-![redis-template-structure](media/virtual-machines-redis-template/redis-template-structure.png)
+![redis-template-structure](./media/virtual-machines-redis-template/redis-template-structure.png)
 
 In essence, this approach suggests to:
 
@@ -668,4 +664,4 @@ In essence, this approach suggests to:
 - For identical members of a group of resources (nodes in a cluster, etc.), create specific templates that leverage resource looping in order to deploy multiple instances with unique properties.
 - For all post-deployment tasks (product installation, configurations, etc.), leverage script deployment extensions and create scripts specific to each technology.
 
-For more information, see [Azure Resource Manager Template Language](../resource-group-authoring-templates.md).
+For more information, see [Azure Resource Manager Template Language](/documentation/articles/resource-group-authoring-templates).

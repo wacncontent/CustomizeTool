@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Use Azure Premium Storage with SQL Server | Microsoft Azure"
+	pageTitle="Use Azure Premium Storage with SQL Server | Windows Azure"
 	description="This article uses resources created with the classic deployment model, and gives guidance on using Azure Premium Storage with SQL Server running on Azure Virtual Machines."
 	services="virtual-machines"
 	documentationCenter=""
@@ -10,21 +10,17 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.tgt_pltfrm="vm-windows-sql-server"
-	ms.workload="infrastructure-services"
 	ms.date="10/02/2015"
-	ms.author="jroth"/>
+	wacn.date=""/>
 
 # Use Azure Premium Storage with SQL Server on Virtual Machines
 
 
 ## Overview
 
-[Azure Premium Storage](../storage-premium-storage-preview-portal.md) is the next generation of storage that provides low latency and high throughput IO. It works best for key IO intensive workloads, such as SQL Server on IaaS [Virtual Machines](http://azure.microsoft.com/services/virtual-machines/). 
+[Azure Premium Storage](/documentation/articles/storage-premium-storage-preview-portal) is the next generation of storage that provides low latency and high throughput IO. It works best for key IO intensive workloads, such as SQL Server on IaaS [Virtual Machines](/home/features/virtual-machines/). 
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
  
 
 This article provides planning and guidance for migrating a Virtual Machine running SQL Server to use Premium Storage. This includes Azure infrastructure (networking, storage) and guest Windows VM steps. The example in the [Appendix](#appendix-migrating-a-multisite-alwayson-cluster-to-premium-storage) shows a full comphrensive end to end migration of how to move larger VMs to take advantage of improved local SSD storage with PowerShell.
@@ -37,7 +33,7 @@ It is important to understand the end-to-end process of utilizing Azure Premium 
 - Possible migration approaches.
 - Full end-to-end example showing Azure, Windows, and SQL Server steps for  the migration of an existing AlwaysOn implementation.
 
-For more background information on SQL Server in Azure Virtual Machines, see [SQL Server in Azure Virtual Machines](virtual-machines-sql-server-infrastructure-services.md).
+For more background information on SQL Server in Azure Virtual Machines, see [SQL Server in Azure Virtual Machines](/documentation/articles/virtual-machines-sql-server-infrastructure-services).
 
 **Author:** Daniel Sol
 **Technical Reviewers:** Luis Carlos Vargas Herring, Sanjay Mishra, Pravin Mital, Juergen Thomas, Gonzalo Ruiz.
@@ -48,7 +44,7 @@ There are several prerequisites for using Premium Storage.
 
 ### Machine Size
 
-For using Premium Storage you will need to use DS series Virtual Machines (VM). If you have not used DS Series machines in your cloud service before, you must delete the existing VM, keep the attached disks, and then create a new cloud service before recreating  the VM as DS* role size. For more information on Virtual Machine sizes, see [Virtual Machine and Cloud Service Sizes for Azure](virtual-machines-size-specs.md).
+For using Premium Storage you will need to use DS series Virtual Machines (VM). If you have not used DS Series machines in your cloud service before, you must delete the existing VM, keep the attached disks, and then create a new cloud service before recreating  the VM as DS* role size. For more information on Virtual Machine sizes, see [Virtual Machine and Cloud Service Sizes for Azure](/documentation/articles/virtual-machines-size-specs).
 
 ### Cloud Services
 
@@ -103,7 +99,7 @@ Once the VHDs have been attached, the cache setting cannot be altered. You would
 
 ### Windows Storage Spaces
 
-You can use [Windows Storage Spaces](https://technet.microsoft.com/library/hh831739.aspx) as you did with previous Standard Storage, this will allow you to migrate a VM that is already utilizing Storage Spaces. The example in [Appendix](#appendix-migrating-a-multisite-alwayson-cluster-to-premium-storage) (step 9 and forward) demonstrates the Powershell code to extract and import a VM with multiple attached VHDs. 
+You can use [Windows Storage Spaces](https://technet.microsoft.com/zh-cn/library/hh831739.aspx) as you did with previous Standard Storage, this will allow you to migrate a VM that is already utilizing Storage Spaces. The example in [Appendix](#appendix-migrating-a-multisite-alwayson-cluster-to-premium-storage) (step 9 and forward) demonstrates the Powershell code to extract and import a VM with multiple attached VHDs. 
 
 Storage Pools were used with Standard Azure storage account to enhance throughput and reduce latency. You might find value in testing Storage Pools with Premium Storage for new deployments, but they do add additional complexity with storage setup. 
 
@@ -148,9 +144,9 @@ Once you have mapped VHDs to Physical Disks in Storage Pools you can then detach
 
 ### VM Storage Bandwidth and VHD Storage Throughput 
 
-The amount of storage performance depends on the DS* VM size specified and the VHD sizes. The VMs have different allowances for the number of VHDs that can be attached and the maximum bandwidth they will support (MB/s). For the specific bandwidth numbers, see [Virtual Machine and Cloud Service Sizes for Azure](virtual-machines-size-specs.md).
+The amount of storage performance depends on the DS* VM size specified and the VHD sizes. The VMs have different allowances for the number of VHDs that can be attached and the maximum bandwidth they will support (MB/s). For the specific bandwidth numbers, see [Virtual Machine and Cloud Service Sizes for Azure](/documentation/articles/virtual-machines-size-specs).
 
-Increased IOPS are achieved with larger disk sizes. You should consider this when you think about your migration path. For details, [see the table for IOPS and Disk Types](../storage-premium-storage-preview-portal.md#scalability-and-performance-targets-when-using-premium-storage). 
+Increased IOPS are achieved with larger disk sizes. You should consider this when you think about your migration path. For details, [see the table for IOPS and Disk Types](/documentation/articles/storage-premium-storage-preview-portal#scalability-and-performance-targets-when-using-premium-storage). 
 
 Finally, consider that VMs have different maximum disk bandwidths they will support for all disks attached. Under high load, you could saturate the maximum disk bandwidth available for that VM role size. For example a Standard_DS14 will support up to 512MB/s; therefore, with three P30 disks you could saturate the disk bandwidth of the VM. But in this example, the throughput limit could be exceeded depending on the mix of read and write IOs.
 
@@ -244,8 +240,8 @@ The example below shows how to place the OS VHD onto premium storage and attach 
     #Note the size specified ‘-DiskSizeInGB 1023’, this will attach 2 x P30 Premium Storage Disk Type
     #Utilising the Premium Storage enabled Storage account
     
-    $vmConfigsl | Add-AzureDataDisk -CreateNew -DiskSizeInGB 1023 -LUN 0 -HostCaching "ReadOnly"  -DiskLabel "DataDisk1" -MediaLocation "https://$newxiostorageaccountname.blob.core.windows.net/vhds/$vmName-data1.vhd"
-    $vmConfigsl | Add-AzureDataDisk -CreateNew -DiskSizeInGB 1023 -LUN 1 -HostCaching "None"  -DiskLabel "logDisk1" -MediaLocation "https://$newxiostorageaccountname.blob.core.windows.net/vhds/$vmName-log1.vhd"
+    $vmConfigsl | Add-AzureDataDisk -CreateNew -DiskSizeInGB 1023 -LUN 0 -HostCaching "ReadOnly"  -DiskLabel "DataDisk1" -MediaLocation "https://$newxiostorageaccountname.blob.core.chinacloudapi.cn/vhds/$vmName-data1.vhd"
+    $vmConfigsl | Add-AzureDataDisk -CreateNew -DiskSizeInGB 1023 -LUN 1 -HostCaching "None"  -DiskLabel "logDisk1" -MediaLocation "https://$newxiostorageaccountname.blob.core.chinacloudapi.cn/vhds/$vmName-log1.vhd"
     
     #Create VM
     $vmConfigsl  | New-AzureVM –ServiceName $destcloudsvc -VNetName $vnet ## Optional (-ReservedIPName $reservedVIPName)  
@@ -280,7 +276,7 @@ This scenario demonstrates where you have existing customized images that reside
 
  
 #### Step 3: Use Existing Image
-You can use an existing image. Or, you can [take an image of an existing machine](virtual-machines-capture-image-windows-server.md). Note the machine you image does not have to be DS* machine. Once you have the image, the following steps show how to copy it to the Premium Storage account with the **Start-AzureStorageBlobCopy** PowerShell commandlet. 
+You can use an existing image. Or, you can [take an image of an existing machine](/documentation/articles/virtual-machines-capture-image-windows-server). Note the machine you image does not have to be DS* machine. Once you have the image, the following steps show how to copy it to the Premium Storage account with the **Start-AzureStorageBlobCopy** PowerShell commandlet. 
 
     #Get storage account keys:
     #Standard Storage account
@@ -340,8 +336,8 @@ Here you are building the VM from your image and attaching two Premium Storage V
     #Create VM Config
     $vmConfigsl2 = New-AzureVMConfig -Name $vmName -InstanceSize $newInstanceSize -ImageName $newimageName  -AvailabilitySetName $availabilitySet  ` | Add-AzureProvisioningConfig -Windows ` -AdminUserName $userName -Password $pass | Set-AzureSubnet -SubnetNames $subnet | Set-AzureStaticVNetIP -IPAddress $ipaddr
     
-    $vmConfigsl2 | Add-AzureDataDisk -CreateNew -DiskSizeInGB 1023 -LUN 0 -HostCaching "ReadOnly"  -DiskLabel "DataDisk1" -MediaLocation "https://$newxiostorageaccountname.blob.core.windows.net/vhds/$vmName-Datadisk-1.vhd" 
-    $vmConfigsl2 | Add-AzureDataDisk -CreateNew -DiskSizeInGB 1023 -LUN 1 -HostCaching "None"  -DiskLabel "LogDisk1" -MediaLocation "https://$newxiostorageaccountname.blob.core.windows.net/vhds/$vmName-logdisk-1.vhd" 
+    $vmConfigsl2 | Add-AzureDataDisk -CreateNew -DiskSizeInGB 1023 -LUN 0 -HostCaching "ReadOnly"  -DiskLabel "DataDisk1" -MediaLocation "https://$newxiostorageaccountname.blob.core.chinacloudapi.cn/vhds/$vmName-Datadisk-1.vhd" 
+    $vmConfigsl2 | Add-AzureDataDisk -CreateNew -DiskSizeInGB 1023 -LUN 1 -HostCaching "None"  -DiskLabel "LogDisk1" -MediaLocation "https://$newxiostorageaccountname.blob.core.chinacloudapi.cn/vhds/$vmName-logdisk-1.vhd" 
      
     
     
@@ -370,7 +366,7 @@ On-premises SQL Server AlwaysOn Availability Groups use a Listener on-premises t
  
 ![DeploymentsUseAlwaysOn][6]
 
-In Microsoft Azure you can have only one IP address assigned to a NIC on the VM, so in order to achieve the same layer of abstraction as on-premises, Azure utilizes the IP address that is assigned to the Internal/External Load Balancers (ILB/ELB). The IP resource that is shared between the servers is set to the same IP as the ILB/ELB. This is published in the DNS, and client traffic is passed through the ILB/ELB to the Primary SQL Server replica. The ILB/ELB knows which SQL Server is primary since it uses probes to probe the AlwaysOn IP resource. In the previous example, it probes each node that has an endpoint referenced by the ELB/ILB, whichever responds is the Primary SQL Server. 
+In Windows Azure you can have only one IP address assigned to a NIC on the VM, so in order to achieve the same layer of abstraction as on-premises, Azure utilizes the IP address that is assigned to the Internal/External Load Balancers (ILB/ELB). The IP resource that is shared between the servers is set to the same IP as the ILB/ELB. This is published in the DNS, and client traffic is passed through the ILB/ELB to the Primary SQL Server replica. The ILB/ELB knows which SQL Server is primary since it uses probes to probe the AlwaysOn IP resource. In the previous example, it probes each node that has an endpoint referenced by the ELB/ILB, whichever responds is the Primary SQL Server. 
 
 > [AZURE.NOTE] The ILB and ELB are both assigned to a particular Azure cloud service, therefore any cloud migration in Azure will most likely mean that the Load Balancer IP will change. 
 
@@ -656,7 +652,7 @@ The code below will dump out the VNN settings and set it for you, please note, f
 
 In a later migration step you will need to update the AlwaysOn listener with an updated IP address that will reference a load balancer, this will involve an IP Address resource removal and addition. After the IP update, you need to ensure the new IP address has been updated in DNS Zone and that the clients are updating their local DNS cache. 
 
-If you clients reside in a different network segment and reference a different DNS server, you need to consider what happens about DNS Zone Transfer during the migration, as the application reconnect time will be constrained by at least the Zone Transfer Time of any new IP addresses for the listener. If you are under time constraint here, you should discuss and test forcing an incremental zone transfer with your Windows teams, and also put the DNS host record to a lower Time To Live (TTL), so the clients update. For more information, see [Incremental Zone Transfers](https://technet.microsoft.com/library/cc958973.aspx) and [Start-DnsServerZoneTransfer](https://technet.microsoft.com/library/jj649917.aspx).
+If you clients reside in a different network segment and reference a different DNS server, you need to consider what happens about DNS Zone Transfer during the migration, as the application reconnect time will be constrained by at least the Zone Transfer Time of any new IP addresses for the listener. If you are under time constraint here, you should discuss and test forcing an incremental zone transfer with your Windows teams, and also put the DNS host record to a lower Time To Live (TTL), so the clients update. For more information, see [Incremental Zone Transfers](https://technet.microsoft.com/zh-cn/library/cc958973.aspx) and [Start-DnsServerZoneTransfer](https://technet.microsoft.com/zh-cn/library/jj649917.aspx).
 
 By default the TTL for DNS Record that is associated with the Listener in AlwaysOn in Azure is 1200 seconds. You may wish to reduce this if you are under time constraint during your migration to ensure the clients update their DNS with the updated IP address for the listener. You can see and modify the configuration by dumping out the configuration of the VNN:
 
@@ -674,7 +670,7 @@ Please note, the lower the ‘HostRecordTTL’, a higher amount of DNS traffic w
 
 If your SQL client application supports the .Net 4.5 SQLClient, then you can use ‘MULTISUBNETFAILOVER=TRUE’ keyword, this is recommended to be applied as it allows for faster connection to SQL AlwaysOn Availability Group during failover. It enumerates through all IP addresses associated with the AlwaysOn listener in parallel, and performs a more aggressive TCP connection retry speed during a failover.
 
-For more information regarding the settings above, please see [MultiSubnetFailover Keyword and Associated Features](https://msdn.microsoft.com/library/hh213080.aspx#MultiSubnetFailover). Also see [SqlClient Support for High Availability, Disaster Recovery](https://msdn.microsoft.com/library/hh205662(v=vs.110).aspx).
+For more information regarding the settings above, please see [MultiSubnetFailover Keyword and Associated Features](https://msdn.microsoft.com/zh-cn/library/hh213080.aspx#MultiSubnetFailover). Also see [SqlClient Support for High Availability, Disaster Recovery](https://msdn.microsoft.com/zh-cn/library/hh205662(v=vs.110).aspx).
 
 #### Step 5: Cluster Quorum Settings
 
@@ -683,7 +679,7 @@ As you are going to be taking out at least one SQL Server down at a time, you sh
 
     Set-ClusterQuorum -NodeMajority  
 
-For more information on managing and configuring the cluster quorum, please see [Configure and Manage the Quorum in a Windows Server 2012 Failover Cluster](https://technet.microsoft.com/en-us/library/jj612870.aspx).
+For more information on managing and configuring the cluster quorum, please see [Configure and Manage the Quorum in a Windows Server 2012 Failover Cluster](https://technet.microsoft.com/library/jj612870.aspx).
 
 #### Step 6: Extract Existing Endpoints and ACLs
     #GET Endpoint info
@@ -777,7 +773,7 @@ For TLOG volumes these should be set to NONE.
        Write-Host "Copying Disk Lun $lun, Label : $disklabel, VHD : $vhdname has cache setting : $cacheoption"
     
        #Start async copy
-       Start-AzureStorageBlobCopy -srcUri "https://$origstorageaccountname.blob.core.windows.net/vhds/$vhdname" `
+       Start-AzureStorageBlobCopy -srcUri "https://$origstorageaccountname.blob.core.chinacloudapi.cn/vhds/$vhdname" `
     -SrcContext $origContext `
     -DestContainer $containerName `
     -DestBlob $vhdname `
@@ -821,7 +817,7 @@ For information for individual blobs:
     
     #Registering OS disk, but as XIO disk
     $xioDiskName = $osdiskforbuild + "xio"
-    Add-AzureDisk -DiskName $xioDiskName -MediaLocation  "https://$newxiostorageaccountname.blob.core.windows.net/vhds/$osvhd"  -Label "BootDisk" -OS "Windows"
+    Add-AzureDisk -DiskName $xioDiskName -MediaLocation  "https://$newxiostorageaccountname.blob.core.chinacloudapi.cn/vhds/$osvhd"  -Label "BootDisk" -OS "Windows"
 
 #### Step 12: Import Secondary into New Cloud Service
 
@@ -852,7 +848,7 @@ The code below also uses the added option here you can import the machine and us
     $vhdname = $attachdatadisk.vhdname
     
     ###Attaching disks to a VM during a deploy to a new cloud service and new storage account is different from just attaching VHDs to just a redeploy in a new cloud service
-    $vmConfig | Add-AzureDataDisk -ImportFrom -MediaLocation "https://$newxiostorageaccountname.blob.core.windows.net/vhds/$vhdname" -LUN $lunNo -HostCaching $hostcach -DiskLabel $label
+    $vmConfig | Add-AzureDataDisk -ImportFrom -MediaLocation "https://$newxiostorageaccountname.blob.core.chinacloudapi.cn/vhds/$vhdname" -LUN $lunNo -HostCaching $hostcach -DiskLabel $label
     
     }
     
@@ -877,7 +873,7 @@ The code below also uses the added option here you can import the machine and us
     
     #SET Azure ACLs or Network Security Groups & Windows FWs 
      
-    #http://msdn.microsoft.com/en-us/library/azure/dn495192.aspx
+    #http://msdn.microsoft.com/zh-cn/library/azure/dn495192.aspx
     
     ####WAIT FOR FULL AlwaysOn RESYNCRONISATION!!!!!!!!!#####
 
@@ -1008,7 +1004,7 @@ For TLOG volumes these should be set to NONE.
        Write-Host "Copying Disk Lun $lun, Label : $disklabel, VHD : $vhdname has cache setting : $cacheoption"
       
        #Start async copy
-       Start-AzureStorageBlobCopy -srcUri "https://$origstorageaccountname2nd.blob.core.windows.net/vhds/$vhdname" `
+       Start-AzureStorageBlobCopy -srcUri "https://$origstorageaccountname2nd.blob.core.chinacloudapi.cn/vhds/$vhdname" `
 	    -SrcContext $origContext `
 	    -DestContainer $containerName `
 	    -DestBlob $vhdname `
@@ -1054,7 +1050,7 @@ For information for individual blobs:
     
     #Registering OS disk, but as XIO disk
     $xioDiskName = $osdiskforbuild + "xio"
-    Add-AzureDisk -DiskName $xioDiskName -MediaLocation  "https://$newxiostorageaccountnamenode2.blob.core.windows.net/vhds/$osvhd"  -Label "BootDisk" -OS "Windows" 
+    Add-AzureDisk -DiskName $xioDiskName -MediaLocation  "https://$newxiostorageaccountnamenode2.blob.core.chinacloudapi.cn/vhds/$osvhd"  -Label "BootDisk" -OS "Windows" 
     
     #Build VM Config
     $ipaddr = "192.168.0.4"
@@ -1079,7 +1075,7 @@ For information for individual blobs:
     
     ###This is different to just a straight cloud service change
     #note if you do not have a disk label the command below will fail, populate as required.
-    $vmConfig | Add-AzureDataDisk -ImportFrom -MediaLocation "https://$newxiostorageaccountnamenode2.blob.core.windows.net/vhds/$vhdname" -LUN $lunNo -HostCaching $hostcach -DiskLabel $label
+    $vmConfig | Add-AzureDataDisk -ImportFrom -MediaLocation "https://$newxiostorageaccountnamenode2.blob.core.chinacloudapi.cn/vhds/$vhdname" -LUN $lunNo -HostCaching $hostcach -DiskLabel $label
     
     }
     
@@ -1099,7 +1095,7 @@ For information for individual blobs:
     
     #SET ACLs or Azure Network Security Groups & Windows FWs 
      
-    #http://msdn.microsoft.com/en-us/library/azure/dn495192.aspx
+    #http://msdn.microsoft.com/zh-cn/library/azure/dn495192.aspx
 
 #### Step 23: Test Failover
 
@@ -1129,9 +1125,9 @@ To add in IP Address, see the [Appendix](#appendix-migrating-a-multisite-alwayso
 	![Appendix15][25]
 
 ## Additional Resources
-- [Azure Premium Storage](../storage-premium-storage-preview-portal.md)
-- [Virtual Machines](http://azure.microsoft.com/services/virtual-machines/)
-- [SQL Server in Azure Virtual Machines](virtual-machines-sql-server-infrastructure-services.md)
+- [Azure Premium Storage](/documentation/articles/storage-premium-storage-preview-portal)
+- [Virtual Machines](/home/features/virtual-machines/)
+- [SQL Server in Azure Virtual Machines](/documentation/articles/virtual-machines-sql-server-infrastructure-services)
 
 <!-- IMAGES -->
 [1]: ./media/virtual-machines-sql-server-use-premium-storage/1_VNET_Portal.png

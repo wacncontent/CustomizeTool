@@ -9,19 +9,15 @@
 
 <tags
 	ms.service="notification-hubs"
-	ms.workload="mobile"
-	ms.tgt_pltfrm="ios"
-	ms.devlang="objective-c"
-	ms.topic="article"
 	ms.date="09/24/2015"
-	ms.author="wesmc"/>
+	wacn.date=""/>
 
 #Azure Notification Hubs Rich Push
 
 
 ##Overview
 
-In order to engage users with instant rich contents, an application might want to push beyond plain text. These notifications promote user interactions and  present content such as urls, sounds, images/coupons, and more. This tutorial builds on the [Notify Users](notification-hubs-aspnet-backend-ios-notify-users.md) topic, and shows how to send push notifications that incorporate payloads (for example, image).
+In order to engage users with instant rich contents, an application might want to push beyond plain text. These notifications promote user interactions and  present content such as urls, sounds, images/coupons, and more. This tutorial builds on the [Notify Users](/documentation/articles/notification-hubs-aspnet-backend-ios-notify-users) topic, and shows how to send push notifications that incorporate payloads (for example, image).
 
 
 This tutorial is compatible with iOS 7 & 8.
@@ -40,7 +36,7 @@ At a high level:
 
 ## WebAPI Project
 
-1. In Visual Studio, open the **AppBackend** project that you created in the [Notify Users](notification-hubs-aspnet-backend-ios-notify-users.md) tutorial.
+1. In Visual Studio, open the **AppBackend** project that you created in the [Notify Users](/documentation/articles/notification-hubs-aspnet-backend-ios-notify-users) tutorial.
 2. Obtain an image you would like to notify users with, and put it in an **img** folder in your project directory.
 3. Click **Show All Files** in the Solution Explorer, and right-click the folder to **Include In Project**.
 4. With the image selected, change its Build Action in Properties window to **Embedded Resource**.
@@ -96,7 +92,7 @@ At a high level:
             }
         }
 
-> [AZURE.NOTE]  (optional) Refer to [How to embed and access resources by using Visual C#](http://support.microsoft.com/kb/319292) for more information on how to add and obtain project resources.
+> [AZURE.NOTE](/documentation/articles/optional) Refer to [How to embed and access resources by using Visual C#](http://support.microsoft.com/kb/319292) for more information on how to add and obtain project resources.
 
 7. In **NotificationsController.cs**, redefine **NotificationsController**  with the following snippets. This sends an initial silent rich notification id to device and allows client-side retrieval of image:
 
@@ -142,7 +138,7 @@ Now that you have modified your app backend to send just the *id* of a notificat
 
     ![][IOS3]
 
-3. Go to **Main.storyboard**, and make sure you have a View Controller (refered to as Home View Controller in this tutorial) from [Notify User](notification-hubs-aspnet-backend-ios-notify-users.md) tutorial.
+3. Go to **Main.storyboard**, and make sure you have a View Controller (refered to as Home View Controller in this tutorial) from [Notify User](/documentation/articles/notification-hubs-aspnet-backend-ios-notify-users) tutorial.
 
 4. Add a **Navigation Controller** to your storyboard, and control-drag to Home View Controller to make it the **root view** of navigation. Make sure the **Is Initial View Controller** in Attributes inspector is selected for the Navigation Controller only.
 

@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="Supportability and retirement policy guide for Azure Guest OS | Microsoft Azure" 
+   pageTitle="Supportability and retirement policy guide for Azure Guest OS | Windows Azure" 
    description="Provides information about what Microsoft will support as regards to the Azure Guest OS used by Cloud Services." 
    services="cloud-services" 
    documentationCenter="na" 
@@ -8,16 +8,12 @@
    editor=""/>
 
 <tags
-   ms.service="cloud-services"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="tbd" 
-   ms.date="08/18/2015"
-   ms.author="adegeo"/>
+	ms.service="cloud-services"
+	ms.date="08/18/2015"
+	wacn.date=""/>
 
 # Azure Guest OS supportability and retirement policy
-The information on this page relates to the Azure Guest operating system ([Guest OS](https://msdn.microsoft.com/library/azure/ff729422.aspx)) for Cloud Services worker and web roles (PaaS). It does not apply to Virtual Machines (IaaS). 
+The information on this page relates to the Azure Guest operating system ([Guest OS](https://msdn.microsoft.com/zh-cn/library/azure/ff729422.aspx)) for Cloud Services worker and web roles (PaaS). It does not apply to Virtual Machines (IaaS). 
 
 Microsoft has a published [support policy for the Guest OS](http://support.microsoft.com/gp/azure-cloud-lifecycle-faq). The page you are reading now describes how the policy is implemented.
 
@@ -27,7 +23,7 @@ The policy is
 2. Microsoft will support the **at least the latest two versions of the supported Guest OS families**. 
 3. Microsoft will support the at **least the latest two versions of the Azure SDK**. When a version of the SDK is retired, customers will have 12 months from the official retirement date to update to a newer version. 
 
-At times more than two families or releases may be supported. Official Guest OS support information will appear on the [Azure Guest OS Releases and SDK Compatibility Matrix](cloud-services-guestos-update-matrix.md).
+At times more than two families or releases may be supported. Official Guest OS support information will appear on the [Azure Guest OS Releases and SDK Compatibility Matrix](/documentation/articles/cloud-services-guestos-update-matrix).
 
 
 ## When a Guest OS family or version is retired 
@@ -40,7 +36,7 @@ New Guest OS **versions** are introduced about every month to incorporate the la
 ### Process during a Guest OS family retirement 
 
 
-Once the retirement is announced, customers have a 12 month "transition" period before the older family is officially removed from service. This transition time may be extended at the discretion of Microsoft. Updates will be posted on the [Azure Guest OS Releases and SDK Compatibility Matrix](cloud-services-guestos-update-matrix.md).
+Once the retirement is announced, customers have a 12 month "transition" period before the older family is officially removed from service. This transition time may be extended at the discretion of Microsoft. Updates will be posted on the [Azure Guest OS Releases and SDK Compatibility Matrix](/documentation/articles/cloud-services-guestos-update-matrix).
 
 A gradual retirement process will begin 6 months into the transition period. During this time:
 
@@ -61,7 +57,7 @@ At 60 days into the lifespan a version is "*disabled*". "Disabled" means that th
 
 At a later time, the Guest OS version "*expires*" and any installations still running that version are force upgraded and set to automatically update the Guest OS in the future. Expiration is done in batches so the period of time from disablement to expiration can vary. 
 
-These periods may be made longer at Microsoft's discretion to ease customer transitions. Any changes will be communicated on the [Azure Guest OS Releases and SDK Compatibility Matrix](cloud-services-guestos-update-matrix.md).
+These periods may be made longer at Microsoft's discretion to ease customer transitions. Any changes will be communicated on the [Azure Guest OS Releases and SDK Compatibility Matrix](/documentation/articles/cloud-services-guestos-update-matrix).
 
 
 
@@ -81,11 +77,11 @@ You should use latest Guest OS family for designing your Cloud Services.
 
 1. Start planning your migration to a newer family early. 
 2. Set up temporary test deployments to test your Cloud Service running on the new family. 
-3. [Set your Guest OS version](https://msdn.microsoft.com/library/azure/gg433101.aspx) to "Automatic" (osVersion=* in the [.CSCFG](https://msdn.microsoft.com/library/azure/gg456324.aspx) file) so the migration to new Guest OS versions occurs automatically.
+3. [Set your Guest OS version](https://msdn.microsoft.com/zh-cn/library/azure/gg433101.aspx) to "Automatic" (osVersion=* in the [.CSCFG](https://msdn.microsoft.com/zh-cn/library/azure/gg456324.aspx) file) so the migration to new Guest OS versions occurs automatically.
 
 **What if my web application requires deeper integration with the OS?**
 
-If your web application architecture requires deeper dependency on the underlying operating system, use platform supported capabilities such as "[Startup Tasks](https://msdn.microsoft.com/library/windowsazure/gg456327.aspx)" or other extensibility mechanisms which may exist in the future. Alternatively, you can also use [Azure Virtual Machines](http://azure.microsoft.com/documentation/scenarios/virtual-machines/) (IaaS – Infrastructure as a Service), where you are responsible for maintaining the underlying operating system.
+If your web application architecture requires deeper dependency on the underlying operating system, use platform supported capabilities such as "[Startup Tasks](https://msdn.microsoft.com/zh-cn/library/azure/gg456327.aspx)" or other extensibility mechanisms which may exist in the future. Alternatively, you can also use [Azure Virtual Machines](http://azure.microsoft.com/documentation/scenarios/virtual-machines/) (IaaS – Infrastructure as a Service), where you are responsible for maintaining the underlying operating system.
  
 ## Next steps
-Review the latest [Guest OS releases](cloud-services-guestos-update-matrix.md).
+Review the latest [Guest OS releases](/documentation/articles/cloud-services-guestos-update-matrix).

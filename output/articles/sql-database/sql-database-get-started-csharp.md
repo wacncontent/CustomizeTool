@@ -8,32 +8,28 @@
    editor=""/>
 
 <tags
-   ms.service="sql-database"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="powershell"
-   ms.workload="data-management" 
-   ms.date="09/01/2015"
-   ms.author="sstein"/>
+	ms.service="sql-database"
+	ms.date="09/01/2015"
+	wacn.date=""/>
 
 # Create a SQL Database with C&#x23;
 
 **Single database**
 
 > [AZURE.SELECTOR]
-- [Azure Preview Portal](sql-database-get-started.md)
-- [C#](sql-database-get-started-csharp.md)
-- [PowerShell](sql-database-get-started-powershell.md)
+- [Azure Preview Portal](/documentation/articles/sql-database-get-started)
+- [C#](/documentation/articles/sql-database-get-started-csharp)
+- [PowerShell](/documentation/articles/sql-database-get-started-powershell)
 
 
 
 This article provides commands to create an Azure SQL database with C# using the [Azure SQL Database Library for .NET](https://www.nuget.org/packages/Microsoft.Azure.Management.Sql).
 
-This article shows how to create a single database, for creating elastic databases see [Create an Elastic database pool](sql-database-elastic-pool-portal.md).
+This article shows how to create a single database, for creating elastic databases see [Create an Elastic database pool](/documentation/articles/sql-database-elastic-pool-portal).
 
 Individual code snippets are broken out for clarity and a sample console application brings all the commands together in the section at the bottom of this article.
 
-The Azure SQL Database Library for .NET provides an [Azure Resource Manager](resource-group-overview.md)-based API that wraps the [Resource Manager-based SQL Database REST API](https://msdn.microsoft.com/library/azure/mt163571.aspx). This client library follows the common pattern for Resource Manager-based client libraries. Resource Manager requires resource groups, and authenticating with [Azure Active Directory](https://msdn.microsoft.com/library/azure/mt168838.aspx) (AAD).
+The Azure SQL Database Library for .NET provides an [Azure Resource Manager](/documentation/articles/resource-group-overview)-based API that wraps the [Resource Manager-based SQL Database REST API](https://msdn.microsoft.com/zh-cn/library/azure/mt163571.aspx). This client library follows the common pattern for Resource Manager-based client libraries. Resource Manager requires resource groups, and authenticating with [Azure Active Directory](https://msdn.microsoft.com/zh-cn/library/azure/mt168838.aspx) (AAD).
 
 <br>
 
@@ -60,9 +56,9 @@ Get the required management libraries by installing the following packages using
 
 You must first enable your client application to access the REST API by setting up the required authentication.
 
-The [Azure Resource Manager REST APIs](https://msdn.microsoft.com/library/azure/dn948464.aspx) use Azure Active Directory for authentication. 
+The [Azure Resource Manager REST APIs](https://msdn.microsoft.com/zh-cn/library/azure/dn948464.aspx) use Azure Active Directory for authentication. 
 
-To authenticate your client application based on the current user you must first register your application in the AAD domain associated with the subscription under which the Azure resources have been created. If your Azure subscription was created with a Microsoft account rather than a work or school account you will already have a default AAD domain. Registering the application can be done in the [Azure Portal](https://manage.windowsazure.com/). 
+To authenticate your client application based on the current user you must first register your application in the AAD domain associated with the subscription under which the Azure resources have been created. If your Azure subscription was created with a Microsoft account rather than a work or school account you will already have a default AAD domain. Registering the application can be done in the [Azure Management Portal](https://manage.windowsazure.cn/). 
 
 To create a new application and register it in the correct active directory do the following:
 
@@ -112,7 +108,7 @@ To create a new application and register it in the correct active directory do t
 
 The domain name is required for your code. An easy way to identify the proper domain name is to:
 
-1. Go to the [Azure preview portal](https://portal.azure.com).
+1. Go to the [Azure preview portal](https://manage.windowsazure.cn).
 2. Hover over your name in the upper right corner and note the Domain that appears in the pop-up window.
 
     ![Identify domain name][3]
@@ -137,7 +133,7 @@ The client application must retrieve the application access token for the curren
     private static AuthenticationResult GetAccessToken()
     {
         AuthenticationContext authContext = new AuthenticationContext
-            ("https://login.windows.net/" + domainName /* Tenant ID or AAD domain */);
+            ("https://login.chinacloudapi.cn/" + domainName /* Tenant ID or AAD domain */);
 
         AuthenticationResult token = authContext.AcquireToken
             ("https://management.azure.com/"/* the Azure Resource Management endpoint */,
@@ -165,7 +161,7 @@ With Resource Manager, all resources must be created in a resource group. A reso
     // Resource group parameters
     ResourceGroup resourceGroupParameters = new ResourceGroup()
     {
-        Location = "South Central US"
+        Location = "China East"
     };
     
     //Create a resource group
@@ -184,7 +180,7 @@ SQL databases are contained in servers. The server name must be globally unique 
     // Create a server
     ServerCreateOrUpdateParameters serverParameters = new ServerCreateOrUpdateParameters()
     {
-        Location = "South Central US",
+        Location = "China East",
         Properties = new ServerCreateOrUpdateProperties()
         {
             AdministratorLogin = "ServerAdmin",
@@ -200,7 +196,7 @@ SQL databases are contained in servers. The server name must be globally unique 
 
 ## Create a server firewall rule to allow access to the server
 
-By default a server cannot be connected to from any location. In order to connect to a server or any databases on the server, a [firewall rule](https://msdn.microsoft.com/library/azure/ee621782.aspx) must be defined that allows access from the client IP address.
+By default a server cannot be connected to from any location. In order to connect to a server or any databases on the server, a [firewall rule](https://msdn.microsoft.com/zh-cn/library/azure/ee621782.aspx) must be defined that allows access from the client IP address.
 
 The following example creates a rule that opens access to the server from any IP address. It is recommended that you create appropriate SQL logins and passwords to secure your database and not rely on firewall rules as a primary defense against intrusion. 
 
@@ -296,7 +292,7 @@ The following command will create a new Basic database if a database with the sa
 
 
 
-        private static string domainName = "microsoft.onmicrosoft.com";
+        private static string domainName = "microsoft.partner.onmschina.cn";
 
         private static string serverLocation = "Japan West";
 
@@ -396,7 +392,7 @@ The following command will create a new Basic database if a database with the sa
         private static AuthenticationResult GetAccessToken()
         {
             AuthenticationContext authContext = new AuthenticationContext
-                ("https://login.windows.net/" + domainName /* Tenant ID or AAD domain */);
+                ("https://login.chinacloudapi.cn/" + domainName /* Tenant ID or AAD domain */);
 
             AuthenticationResult token = authContext.AcquireToken
                 ("https://management.azure.com/"/* the Azure Resource Management endpoint */,
@@ -412,12 +408,12 @@ The following command will create a new Basic database if a database with the sa
 
 ## Next Steps
 
-- [Connect to and query your SQL Database with C#](sql-database-connect-query.md)
-- [Connect with SQL Server Management Studio (SSMS)](sql-database-connect-to-database.md)
+- [Connect to and query your SQL Database with C#](/documentation/articles/sql-database-connect-query)
+- [Connect with SQL Server Management Studio (SSMS)](/documentation/articles/sql-database-connect-to-database)
 
 ## Additional Resources
 
-- [SQL Database](https://azure.microsoft.com/documentation/services/sql-database/)
+- [SQL Database](/documentation/services/sql-database/)
 
 
 

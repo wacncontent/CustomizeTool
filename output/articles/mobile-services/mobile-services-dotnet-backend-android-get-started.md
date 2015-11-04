@@ -10,22 +10,18 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.workload="mobile"
-	ms.tgt_pltfrm="mobile-android"
-	ms.devlang="java"
-	ms.topic="get-started-article"
 	ms.date="10/07/2015"
-	ms.author="ricksal"/>
+	wacn.date=""/>
 
 
 # <a name="getting-started"> </a>Get started with Mobile Services
 
-[AZURE.INCLUDE [mobile-services-selector-get-started](../../includes/mobile-services-selector-get-started.md)]
+[AZURE.INCLUDE [mobile-services-selector-get-started](../includes/mobile-services-selector-get-started.md)]
 &nbsp;
 
-[AZURE.INCLUDE [mobile-services-hero-slug](../../includes/mobile-services-hero-slug.md)]
+[AZURE.INCLUDE [mobile-services-hero-slug](../includes/mobile-services-hero-slug.md)]
 
-This tutorial shows you how to add a cloud-based backend service to an Android app using Azure Mobile Services. In this tutorial, you will create both a new mobile service and a simple _To do list_ app that stores app data in the new mobile service. The mobile service that you will create uses the supported .NET languages using Visual Studio for server-side business logic and to manage the mobile service. To create a mobile service that lets you write your server-side business logic in JavaScript, see the [JavaScript backend version](mobile-services-android-get-started.md) of this topic.
+This tutorial shows you how to add a cloud-based backend service to an Android app using Azure Mobile Services. In this tutorial, you will create both a new mobile service and a simple _To do list_ app that stores app data in the new mobile service. The mobile service that you will create uses the supported .NET languages using Visual Studio for server-side business logic and to manage the mobile service. To create a mobile service that lets you write your server-side business logic in JavaScript, see the [JavaScript backend version](/documentation/articles/mobile-services-android-get-started) of this topic.
 
 A screenshot from the completed app is below:
 
@@ -35,12 +31,12 @@ Completing this tutorial requires the [Android Developer Tools][Android Studio],
 
 The downloaded quickstart project contains the Mobile Services SDK for Android.
 
-> [AZURE.IMPORTANT] To complete this tutorial, you need an Azure account. If you don't have an account, you can sign up for an Azure trial and get up to 10 free mobile services that you can keep using even after your trial ends. For details, see [Azure Free Trial](http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=AE564AB28).
+> [AZURE.IMPORTANT] To complete this tutorial, you need an Azure account. If you don't have an account, you can sign up for an Azure trial and get up to 10 free mobile services that you can keep using even after your trial ends. For details, see [Azure Trial](/pricing/1rmb-trial/?WT.mc_id=AE564AB28).
 
 
 ## <a name="create-new-service"> </a>Create a new mobile service
 
-[AZURE.INCLUDE [mobile-services-dotnet-backend-create-new-service](../../includes/mobile-services-dotnet-backend-create-new-service.md)]
+[AZURE.INCLUDE [mobile-services-dotnet-backend-create-new-service](../includes/mobile-services-dotnet-backend-create-new-service.md)]
 
 ## Download the mobile service to your local computer
 
@@ -58,11 +54,11 @@ Now that you have created the mobile service, download your personalized mobile 
 
 ## Test the mobile service
 
-[AZURE.INCLUDE [mobile-services-dotnet-backend-test-local-service](../../includes/mobile-services-dotnet-backend-test-local-service.md)]
+[AZURE.INCLUDE [mobile-services-dotnet-backend-test-local-service](../includes/mobile-services-dotnet-backend-test-local-service.md)]
 
 ## Publish your mobile service
 
-[AZURE.INCLUDE [mobile-services-dotnet-backend-publish-service](../../includes/mobile-services-dotnet-backend-publish-service.md)]
+[AZURE.INCLUDE [mobile-services-dotnet-backend-publish-service](../includes/mobile-services-dotnet-backend-publish-service.md)]
 
 ## Create a new Android app
 
@@ -82,7 +78,7 @@ In this section you will create a new Android app that is connected to your mobi
 
 ## Run your Android app
 
-[AZURE.INCLUDE [mobile-services-run-your-app](../../includes/mobile-services-android-get-started.md)]
+[AZURE.INCLUDE [mobile-services-run-your-app](../includes/mobile-services-android-get-started.md)]
 
 ## <a name="next-steps"> </a>Next Steps
 Now that you have completed the quickstart, learn how to perform additional important tasks in Mobile Services:
@@ -120,12 +116,11 @@ Now that you have completed the quickstart, learn how to perform additional impo
 [15]: ./media/mobile-services-dotnet-backend-android-get-started/mobile-services-import-android-project.png
 
 <!-- URLs. -->
-[Get started (Eclipse)]: mobile-services-dotnet-backend-android-get-started-ec.md
-[Add push notifications to your app]: mobile-services-dotnet-backend-android-get-started-push.md
-[Add authentication to your app]: mobile-services-dotnet-backend-android-get-started-auth.md
+[Get started (Eclipse)]: /documentation/articles/mobile-services-dotnet-backend-android-get-started-ec
+[Add push notifications to your app]: /documentation/articles/mobile-services-dotnet-backend-android-get-started-push
+[Add authentication to your app]: /documentation/articles/mobile-services-dotnet-backend-android-get-started-auth
 [Android SDK]: https://go.microsoft.com/fwLink/p/?LinkID=280125
 [Android Studio]: https://developer.android.com/sdk/index.html
 [Mobile Services Android SDK]: https://go.microsoft.com/fwLink/p/?LinkID=266533
-[Troubleshoot a Mobile Services .NET backend]: mobile-services-dotnet-backend-how-to-troubleshoot.md
-
-[Management Portal]: https://manage.windowsazure.com/
+[Troubleshoot a Mobile Services .NET backend]: /documentation/articles/mobile-services-dotnet-backend-how-to-troubleshoot
+[Management Portal]: https://manage.windowsazure.cn/

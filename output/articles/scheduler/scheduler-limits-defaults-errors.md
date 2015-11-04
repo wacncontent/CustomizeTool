@@ -7,19 +7,15 @@
  manager="dwrede"
  editor=""/>
 <tags
- ms.service="scheduler"
- ms.workload="infrastructure-services"
- ms.tgt_pltfrm="na"
- ms.devlang="dotnet"
- ms.topic="article"
- ms.date="07/28/2015"
- ms.author="krisragh"/>
+	ms.service="scheduler"
+	ms.date="07/28/2015"
+	wacn.date=""/>
 
 # Scheduler Limits, Defaults, and Error Codes
 
 ## Scheduler Quotas, Limits, Defaults, and Throttles
 
-[AZURE.INCLUDE [scheduler-limits-table](../../includes/scheduler-limits-table.md)]
+[AZURE.INCLUDE [scheduler-limits-table](../includes/scheduler-limits-table.md)]
 
 ## The x-ms-request-id Header
 
@@ -31,7 +27,7 @@ If a request is consistently failing and you have verified that the request is p
 
 In addition to standard HTTP status codes, the Azure Scheduler REST API returns extended error codes and error messages. The extended codes do not replace the standard HTTP status codes, but provide additional, actionable information that can be used in conjunction with the standard HTTP status codes.
 
-For example, an HTTP 404 error can occur for numerous reasons, so having the additional information in the extended message can assist with problem resolution. For more information on the standard HTTP codes returned by the REST API, see [Service Management Status and Error Codes](https://msdn.microsoft.com/library/windowsazure/ee460801.aspx). REST API operations for the Service Management API return standard HTTP status codes, as defined in the[HTTP/1.1 Status Code Definitions](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html). The following table describes common errors that may be returned by the service.
+For example, an HTTP 404 error can occur for numerous reasons, so having the additional information in the extended message can assist with problem resolution. For more information on the standard HTTP codes returned by the REST API, see [Service Management Status and Error Codes](https://msdn.microsoft.com/zh-cn/library/azure/ee460801.aspx). REST API operations for the Service Management API return standard HTTP status codes, as defined in the[HTTP/1.1 Status Code Definitions](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html). The following table describes common errors that may be returned by the service.
 
 |Error code|HTTP status code|User message|
 |----|----|----|
@@ -59,16 +55,16 @@ API operations may also return additional error information that is defined by t
 
 ## See Also
 
- [Scheduler Concepts, Terminology, and Entity Hierarchy](scheduler-concepts-terms.md)
+ [Scheduler Concepts, Terminology, and Entity Hierarchy](/documentation/articles/scheduler-concepts-terms)
 
- [Get Started Using Scheduler in the Management Portal](scheduler-get-started-portal.md)
+ [Get Started Using Scheduler in the Management Portal](/documentation/articles/scheduler-get-started-portal)
 
- [Plans and Billing in Azure Scheduler](scheduler-plans-billing.md)
+ [Plans and Billing in Azure Scheduler](/documentation/articles/scheduler-plans-billing)
 
- [How to Build Complex Schedules and Advanced Recurrence with Azure Scheduler](scheduler-advanced-complexity.md)
+ [How to Build Complex Schedules and Advanced Recurrence with Azure Scheduler](/documentation/articles/scheduler-advanced-complexity)
 
- [Scheduler REST API Reference](https://msdn.microsoft.com/library/dn528946)
+ [Scheduler REST API Reference](https://msdn.microsoft.com/zh-cn/library/dn528946)
 
- [Scheduler High-Availability and Reliability](scheduler-high-availability-reliability.md)
+ [Scheduler High-Availability and Reliability](/documentation/articles/scheduler-high-availability-reliability)
 
- [Scheduler Outbound Authentication](scheduler-outbound-authentication.md)
+ [Scheduler Outbound Authentication](/documentation/articles/scheduler-outbound-authentication)

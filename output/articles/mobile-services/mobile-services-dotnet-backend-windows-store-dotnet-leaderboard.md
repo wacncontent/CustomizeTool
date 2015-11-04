@@ -7,14 +7,10 @@
 	editor="" 
 	services="mobile-services"/>
 
-<tags 
-	ms.service="mobile-services" 
-	ms.workload="mobile" 
-	ms.tgt_pltfrm="mobile-windows-store" 
-	ms.devlang="dotnet" 
-	ms.topic="article" 
-	ms.date="09/24/2015" 
-	ms.author="glenga"/>
+<tags
+	ms.service="mobile-services"
+	ms.date="09/24/2015"
+	wacn.date=""/>
 
 # Creating a Leaderboard App with Azure Mobile Services .NET Backend
 
@@ -109,7 +105,7 @@ Add another class named `PlayerRank`.
 	    }
 	}
 
-Notice that both classes inherit from the **EntityData** class. Deriving from **EntityData** makes it easy for the app consume the data, using the cross-platform client library for Azure Mobile Services. **EntityData** also makes it easier for an app to [handle database write conflicts](mobile-services-windows-store-dotnet-handle-database-conflicts.md).
+Notice that both classes inherit from the **EntityData** class. Deriving from **EntityData** makes it easy for the app consume the data, using the cross-platform client library for Azure Mobile Services. **EntityData** also makes it easier for an app to [handle database write conflicts](/documentation/articles/mobile-services-windows-store-dotnet-handle-database-conflicts).
 
 The `PlayerRank` class has a [navigation property](http://msdn.microsoft.com/data/jj713564.aspx) that points to the related `Player` entity. The **[ForeignKey]** attribute tells EF that the `Player` property represents a foreign key.
 
@@ -139,7 +135,7 @@ This step adds a file named PlayerController.cs to the project.
 
 The controller derives from **TableController<T>**. This class inherits **ApiController**, but is specialized for Azure Mobile Services.
  
-- Routing: The default route for a **TableController** is `/tables/{table_name}/{id}`, where *table_name* matches the entity name. So the route for the Player controller is */tables/player/{id}*. This routing convention makes **TableController** consistent with the Mobile Services [REST API](http://msdn.microsoft.com/library/azure/jj710104.aspx).
+- Routing: The default route for a **TableController** is `/tables/{table_name}/{id}`, where *table_name* matches the entity name. So the route for the Player controller is */tables/player/{id}*. This routing convention makes **TableController** consistent with the Mobile Services [REST API](http://msdn.microsoft.com/zh-cn/library/azure/jj710104.aspx).
 - Data access: For database operations, the **TableController** class uses the **IDomainManager** interface, which defines an abstraction for data access.  The scaffolding uses **EntityDomainManager**, which is a concrete implementation of **IDomainManager** that wraps an EF context. 
 
 Now add a second controller for PlayerRank entities. Follow the same steps, but choose PlayerRank for the model class. Use the same data context class; don't create a new one. Name the controller "PlayerRankController".
@@ -660,7 +656,7 @@ All data binding happens through the view model.
 
 ## Publish your mobile service
 
-In this step, you will publish your mobile service to Microsoft Azure and modify the app to use the live service.
+In this step, you will publish your mobile service to Windows Azure and modify the app to use the live service.
 
 In Solution Explorer, right-click the Leaderboard project and select **Publish**.
  
@@ -700,7 +696,7 @@ Pass the service URL and the application key to the **MobileServiceClient** cons
     sealed partial class App : Application
     {
         // TODO: Replace these strings with the real URL and key.
-        const string serviceUrl = "https://yourapp.azure-mobile.net/";
+        const string serviceUrl = "https://yourapp.azure-mobile.cn/";
         const string appKey = "YOUR ACCESSS KEY";
 
         public static MobileServiceClient MobileService = new MobileServiceClient(serviceUrl, appKey);
@@ -757,8 +753,8 @@ Now when you run the app, it communicates with the real service.
 
 [Learn more about Azure Mobile Services]: /develop/mobile/resources/
 [Learn more about Web API]: http://asp.net/web-api
-[Handle database write conflicts]: mobile-services-windows-store-dotnet-handle-database-conflicts.md
-[Add push notifications]: ../notification-hubs-windows-store-dotnet-get-started.md
+[Handle database write conflicts]: /documentation/articles/mobile-services-windows-store-dotnet-handle-database-conflicts
+[Add push notifications]: /documentation/articles/notification-hubs-windows-store-dotnet-get-started
 [Get started with authentication]: /develop/mobile/tutorials/get-started-with-users-dotnet
 
  

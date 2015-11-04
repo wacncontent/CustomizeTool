@@ -1,4 +1,4 @@
-new docs: 32, word count: {word_count_TODO}
+new docs: 32, word count: 44513
 articles/automation/automation-certificates.md
 articles/automation/automation-child-runbooks.md
 articles/automation/automation-configuring.md

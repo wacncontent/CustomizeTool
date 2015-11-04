@@ -52,7 +52,7 @@ Locators have an expiration date. When using Portal to publish your assets, loca
 
 >[AZURE.NOTE] If you used Portal to create locators before March 2015, locators with a two years expiration date were created.  
 
-To update expiration date on a locator, use [REST](http://msdn.microsoft.com/zh-cn/library/azure/hh974308.aspx#update_a_locator ) or [.NET](http://go.microsoft.com/fwlink/?LinkID=533259) APIs. Note that when you update the expiration date of a SAS locator, the URL changes. 
+To update expiration date on a locator, use [REST](http://msdn.microsoft.com/zh-cn/library/azure/hh974308.aspx#update_a_locator ) or [.NET](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.mediaservices.client.ilocator.update(v=azure.10).aspx) APIs. Note that when you update the expiration date of a SAS locator, the URL changes. 
  
 Locators are not designed to manage per-user access control. To give different access rights to individual users, use Digital Rights Management (DRM) solutions. For more information, see [Securing Media](http://msdn.microsoft.com/zh-cn/library/azure/dn282272.aspx).
 

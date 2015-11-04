@@ -10,12 +10,8 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.workload="mobile"
-	ms.tgt_pltfrm="NA"
-	ms.devlang="multiple"
-	ms.topic="article"
 	ms.date="09/14/2015"
-	ms.author="glenga"/>
+	wacn.date=""/>
 
 # How to make data model changes to a .NET backend mobile service
 
@@ -29,7 +25,7 @@ Note that automatic migrations are not supported in a .NET backend project.
 
 As you add functionality to your .NET backend mobile service, you add new controllers to expose new endpoints in your API. You create a new API as either a custom controller or a table controller. A [TableController<TEntity>] exposes a data type that inherits from [EntityData]. To enable data to be persisted to the database, this data type must also be added to the data model as a new [DbSet<T>] in the [DbContext]. To learn more about Code First in the Entity Framework, see [Creating a Model with Code First](https://msdn.microsoft.com/data/ee712907#codefirst).
 
-Visual Studio makes it easy to create a new table controller to expose a new data type to client apps. For more information, see [How to use controllers to access data in mobile services](https://msdn.microsoft.com/library/windows/apps/xaml/dn614132.aspx).
+Visual Studio makes it easy to create a new table controller to expose a new data type to client apps. For more information, see [How to use controllers to access data in mobile services](https://msdn.microsoft.com/zh-cn/library/windows/apps/xaml/dn614132.aspx).
 
 ## Data model initializers
 
@@ -37,7 +33,7 @@ Mobile Services provides two data model initializer base classes in a .NET backe
 
 >[AZURE.NOTE]When you publish a .NET backend mobile service, the initializer is not run until a data access operation occurs. This means that for a newly published service, the data tables used for storage aren't created until a data access operation, such as a query, is requested by the client.
 >
->You can also execute a data access operation by using the built-in API help functionality, accessed from the **Try it out** link on the start page. For more information on using the API pages to test your mobile service, see the section Test the mobile service project locally in [Add Mobile Services to an existing app](mobile-services-dotnet-backend-windows-universal-dotnet-get-started-data.md#test-the-service-locally).  
+>You can also execute a data access operation by using the built-in API help functionality, accessed from the **Try it out** link on the start page. For more information on using the API pages to test your mobile service, see the section Test the mobile service project locally in [Add Mobile Services to an existing app](/documentation/articles/mobile-services-dotnet-backend-windows-universal-dotnet-get-started-data#test-the-service-locally).  
 
 Both initializers delete from the database all tables, views, functions, and procedures in the schema used by the mobile service.
 
@@ -167,11 +163,11 @@ This code calls the [AddOrUpdate] helper extension method to add seed data to th
 [2]: ./media/mobile-services-dotnet-backend-how-to-use-code-first-migrations/sql-database-drop-tables.png
 
 <!-- URLs -->
-[DropCreateDatabaseIfModelChanges]: http://msdn.microsoft.com/library/gg679604(v=vs.113).aspx
-[Seed]: http://msdn.microsoft.com/library/hh829453(v=vs.113).aspx
-[Azure Management Portal]: https://manage.windowsazure.com/
-[DbContext]: http://msdn.microsoft.com/library/system.data.entity.dbcontext(v=vs.113).aspx
-[AddOrUpdate]: http://msdn.microsoft.com/library/system.data.entity.migrations.idbsetextensions.addorupdate(v=vs.103).aspx
-[TableController<TEntity>]: https://msdn.microsoft.com/library/azure/dn643359.aspx
-[EntityData]: https://msdn.microsoft.com/library/azure/microsoft.windowsazure.mobile.service.entitydata.aspx
-[DbSet<T>]: https://msdn.microsoft.com/library/azure/gg696460.aspx
+[DropCreateDatabaseIfModelChanges]: http://msdn.microsoft.com/zh-cn/library/gg679604(v=vs.113).aspx
+[Seed]: http://msdn.microsoft.com/zh-cn/library/hh829453(v=vs.113).aspx
+[Azure Management Portal]: https://manage.windowsazure.cn/
+[DbContext]: http://msdn.microsoft.com/zh-cn/library/system.data.entity.dbcontext(v=vs.113).aspx
+[AddOrUpdate]: http://msdn.microsoft.com/zh-cn/library/system.data.entity.migrations.idbsetextensions.addorupdate(v=vs.103).aspx
+[TableController<TEntity>]: https://msdn.microsoft.com/zh-cn/library/azure/dn643359.aspx
+[EntityData]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.mobile.service.entitydata.aspx
+[DbSet<T>]: https://msdn.microsoft.com/zh-cn/library/azure/gg696460.aspx

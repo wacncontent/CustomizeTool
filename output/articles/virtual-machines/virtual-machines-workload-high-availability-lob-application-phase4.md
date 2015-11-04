@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Line of business application Phase 4 | Microsoft Azure" 
+	pageTitle="Line of business application Phase 4 | Windows Azure" 
 	description="Create the web servers and load your line of business application on them in Phase 4 of the line of business application in Azure." 
 	documentationCenter=""
 	services="virtual-machines" 
@@ -8,23 +8,19 @@
 	editor=""
 	tags="azure-resource-manager"/>
 
-<tags 
-	ms.service="virtual-machines" 
-	ms.workload="infrastructure-services" 
-	ms.tgt_pltfrm="Windows" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="08/11/2015" 
-	ms.author="josephd"/>
+<tags
+	ms.service="virtual-machines"
+	ms.date="08/11/2015"
+	wacn.date=""/>
 
 # Line of Business Application Workload Phase 4: Configure web servers
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-rm-include.md)] classic deployment model.
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] classic deployment model.
  
 
 In this phase of deploying a high availability line of business application in Azure infrastructure services, you build out the web servers and load your line of business application on them.
 
-You must complete this phase before moving on to [Phase 5](virtual-machines-workload-high-availability-LOB-application-phase5.md). See [Deploy a high-availability line of business application in Azure](virtual-machines-workload-high-availability-LOB-application-overview.md) for all of the phases.
+You must complete this phase before moving on to [Phase 5](/documentation/articles/virtual-machines-workload-high-availability-LOB-application-phase5). See [Deploy a high-availability line of business application in Azure](/documentation/articles/virtual-machines-workload-high-availability-LOB-application-overview) for all of the phases.
 
 ## Create the web server virtual machines in Azure
 
@@ -71,7 +67,7 @@ Next, use the following block of PowerShell commands to create the virtual machi
 - Table ST, for your storage accounts
 - Table A, for your availability sets
 
-Recall that you defined Table M in [Phase 2](virtual-machines-workload-high-availability-LOB-application-phase2.md) and Tables V, S, ST, and A in [Phase 1](virtual-machines-workload-high-availability-LOB-application-phase1.md).
+Recall that you defined Table M in [Phase 2](/documentation/articles/virtual-machines-workload-high-availability-LOB-application-phase2) and Tables V, S, ST, and A in [Phase 1](/documentation/articles/virtual-machines-workload-high-availability-LOB-application-phase1).
 
 When you have supplied all the proper values, run the resulting block at the Azure PowerShell prompt.
 
@@ -162,16 +158,16 @@ This diagram is the configuration resulting from the successful completion of th
 
 ## Next Step
 
-To continue with the configuration of this workload, go to [Phase 5: Create the availability group and add the application databases](virtual-machines-workload-high-availability-LOB-application-phase5.md).
+To continue with the configuration of this workload, go to [Phase 5: Create the availability group and add the application databases](/documentation/articles/virtual-machines-workload-high-availability-LOB-application-phase5).
 
 ## Additional Resources
 
-[Deploy a high-availability line of business application in Azure](virtual-machines-workload-high-availability-LOB-application-overview.md)
+[Deploy a high-availability line of business application in Azure](/documentation/articles/virtual-machines-workload-high-availability-LOB-application-overview)
 
 [Line of Business Applications architecture blueprint](http://msdn.microsoft.com/dn630664)
 
-[Set up a web-based LOB application in a hybrid cloud for testing](../virtual-network/virtual-networks-setup-lobapp-hybrid-cloud-testing.md)
+[Set up a web-based LOB application in a hybrid cloud for testing](/documentation/articles/virtual-networks-setup-lobapp-hybrid-cloud-testing)
 
-[Azure infrastructure services implementation guidelines](virtual-machines-infrastructure-services-implementation-guidelines.md)
+[Azure infrastructure services implementation guidelines](/documentation/articles/virtual-machines-infrastructure-services-implementation-guidelines)
 
-[Azure Infrastructure Services Workload: SharePoint Server 2013 farm](virtual-machines-workload-intranet-sharepoint-farm.md)
+[Azure Infrastructure Services Workload: SharePoint Server 2013 farm](/documentation/articles/virtual-machines-workload-intranet-sharepoint-farm)

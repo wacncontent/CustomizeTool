@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Define a custom API that supports pull notifications | Microsoft Azure" 
+	pageTitle="Define a custom API that supports pull notifications | Windows Azure" 
 	description="Learn how to Define a custom API that supports periodic notifications in Windows Store apps that use Azure Mobile Services." 
 	services="mobile-services" 
 	documentationCenter="windows" 
@@ -7,14 +7,10 @@
 	manager="dwrede" 
 	editor=""/>
 
-<tags 
-	ms.service="mobile-services" 
-	ms.workload="mobile" 
-	ms.tgt_pltfrm="windows" 
-	ms.devlang="dotnet" 
-	ms.topic="article" 
-	ms.date="08/08/2015" 
-	ms.author="glenga"/>
+<tags
+	ms.service="mobile-services"
+	ms.date="08/08/2015"
+	wacn.date=""/>
 
 # Define a custom API that supports periodic notifications
 
@@ -92,7 +88,7 @@ This tutorial is based on the Mobile Services quickstart. Before you start this 
 
 	The **exports.get** function is used because the client will send a GET request to access the tile template.
 
-   	> [AZURE.NOTE] This custom API script uses the Node.js [wns module](http://go.microsoft.com/fwlink/p/?LinkId=306750), which is referenced by using the **require** function. This module is different from the [wns object](http://go.microsoft.com/fwlink/p/?LinkId=260591) returned by the [push object](http://msdn.microsoft.com/library/windowsazure/jj554217.aspx), which is used to send push notifications from server scripts.
+   	> [AZURE.NOTE] This custom API script uses the Node.js [wns module](http://go.microsoft.com/fwlink/p/?LinkId=306750), which is referenced by using the **require** function. This module is different from the [wns object](http://go.microsoft.com/fwlink/p/?LinkId=260591) returned by the [push object](http://msdn.microsoft.com/zh-cn/library/azure/jj554217.aspx), which is used to send push notifications from server scripts.
 
 Next, you will modify the quickstart app to start periodic notifications that update the live tile by requesting the new custom API.
 
@@ -155,13 +151,10 @@ Now that you have created a periodic notification, consider finding out more abo
 [Windows Push Notifications & Live Connect]: http://go.microsoft.com/fwlink/?LinkID=257677
 [Mobile Services server script reference]: http://go.microsoft.com/fwlink/?LinkId=262293
 [My Apps dashboard]: http://go.microsoft.com/fwlink/?LinkId=262039
-[Get started with Mobile Services]: mobile-services-javascript-backend-windows-store-dotnet-get-started.md
-[Add Mobile Services to an existing app]: ../mobile-services-windows-store-dotnet-get-started.md
-[Get started with push notifications]: ../mobile-services-javascript-backend-windows-store-dotnet-get-started-push.md
+[Get started with Mobile Services]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started
+[Add Mobile Services to an existing app]: /documentation/articles/mobile-services-windows-store-dotnet-get-started
+[Get started with push notifications]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-push
+[Azure Management Portal]: https://manage.windowsazure.cn/
+[Periodic notifications]: http://msdn.microsoft.com/zh-cn/library/windows/apps/jj150587.aspx
 
-[Azure Management Portal]: https://manage.windowsazure.com/
-[Periodic notifications]: http://msdn.microsoft.com/library/windows/apps/jj150587.aspx
-
-[Mobile Services .NET How-to Conceptual Reference]: mobile-services-windows-dotnet-how-to-use-client-library.md
-
- 
+[Mobile Services .NET How-to Conceptual Reference]: /documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library

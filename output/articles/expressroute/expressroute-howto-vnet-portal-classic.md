@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Configure a Virtual Network and Gateway for ExpressRoute | Microsoft Azure"
+   pageTitle="Configure a Virtual Network and Gateway for ExpressRoute | Windows Azure"
    description="This article walks you through setting up a virtual network (VNet) for ExpressRoute"
    documentationCenter="na"
    services="expressroute"
@@ -8,29 +8,25 @@
    editor=""
    tags="azure-service-management"/>
 
-<tags 
-   ms.service="expressroute"
-   ms.devlang="na"
-   ms.topic="article" 
-   ms.tgt_pltfrm="na"
-   ms.workload="infrastructure-services" 
-   ms.date="10/19/2015"
-   ms.author="cherylmc"/>
+<tags
+	ms.service="expressroute"
+	ms.date="10/19/2015"
+	wacn.date=""/>
 
 # Configure a Virtual Network for ExpressRoute
 
 These steps will walk you through configuring a virtual network and a gateway for use with ExpressRoute using the classic deployment model and Service Management. Currently, we do not have documentation for configuring a VNet for ExpressRoute using the Resource Manager deployment model. When we do have a published article, we'll add a link to it.
 
->[AZURE.IMPORTANT] It's important to know that Azure currently works with two deployment models: Resource Manager, and classic. Before you begin your configuration, make sure that you understand the deployment models and tools. For information about the deployment models, see [Azure deployment models](../azure-classic-rm.md)
+>[AZURE.IMPORTANT] It's important to know that Azure currently works with two deployment models: Resource Manager, and classic. Before you begin your configuration, make sure that you understand the deployment models and tools. For information about the deployment models, see [Azure deployment models](/documentation/articles/azure-classic-rm)
 
-1. Log in to the **Azure Portal**.
+1. Log in to the **Azure Management Portal**.
 
 2. In the lower left-hand corner of the screen, click **New**. In the navigation pane, click **Network Services**, and then click **Virtual Network**. Click **Custom Create** to begin the configuration wizard.
 
 3. On the **Virtual Network Details** page, enter the information below.
 
 	- **Name** – Name your virtual network. You’ll use this virtual network name when you deploy your VMs and PaaS instances, so you may not want to make the name too complicated.
-	- **Location** – The location is directly related to the physical location (region) where you want your resources (VMs) to reside. For example, if you want the VMs that you deploy to this virtual network to be physically located in East US, select that location. You can’t change the region associated with your virtual network after you create it.
+	- **Location** – The location is directly related to the physical location (region) where you want your resources (VMs) to reside. For example, if you want the VMs that you deploy to this virtual network to be physically located in China East, select that location. You can’t change the region associated with your virtual network after you create it.
 
 4. On the **DNS Servers and VPN Connectivity** page, enter the following information, and then click the next arrow on the lower right. 
 
@@ -62,12 +58,12 @@ These steps will walk you through configuring a virtual network and a gateway fo
 
 10. When the gateway starts creating, you’ll see a message letting you know that the gateway has been started. It may take up to 15 minutes for the gateway to create.
 
-11. Link your network to a circuit. Follow the instructions in the article [How to link VNets to ExpressRoute circuits](expressroute-howto-linkvnet-classic.md).
+11. Link your network to a circuit. Follow the instructions in the article [How to link VNets to ExpressRoute circuits](/documentation/articles/expressroute-howto-linkvnet-classic).
 
 ## Next steps
 
 - If you want to add virtual machines to your virtual network, see [Virtual Machines learning paths](https://azure.microsoft.com/documentation/learning-paths/virtual-machines/).
-- If you want to learn more about ExpressRoute, see [ExpressRoute Technical Overview](expressroute-introduction.md).
+- If you want to learn more about ExpressRoute, see [ExpressRoute Technical Overview](/documentation/articles/expressroute-introduction).
 
 
  

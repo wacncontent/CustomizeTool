@@ -7,18 +7,14 @@
 	manager="jwhit" 
 	editor=""/>
 
-<tags 
-	ms.service="site-recovery" 
-	ms.devlang="na"
-	ms.topic="article"
-	ms.tgt_pltfrm="na"
-	ms.workload="storage-backup-recovery" 
-	ms.date="10/07/2015" 
-	ms.author="raynew"/>
+<tags
+	ms.service="site-recovery"
+	ms.date="10/07/2015"
+	wacn.date=""/>
 
 # Creating recovery plans
 
-The Site Recovery service contributes to a robust business continuity and disaster recovery (BCDR) solution that protects your on-premises physical servers and virtual machines by orchestrating and automating replication and failover to Azure, or to a secondary on-premises datacenter. For an introduction to Site Recovery deployment scenarios read the [Site Recovery Overview](site-recovery-overview.md).
+The Site Recovery service contributes to a robust business continuity and disaster recovery (BCDR) solution that protects your on-premises physical servers and virtual machines by orchestrating and automating replication and failover to Azure, or to a secondary on-premises datacenter. For an introduction to Site Recovery deployment scenarios read the [Site Recovery Overview](/documentation/articles/site-recovery-overview).
 
 ## About this article
 
@@ -79,7 +75,7 @@ If you're replicating to Azure you can integrate Azure automation runbooks into 
 Note the following before you start:
 
 - Write scripts using Windows PowerShell.
-- VMM cmdlets are delivered in a Windows PowerShell module. The VMM Windows PowerShell module is installed when you install the VMM console. The VMM module can be loaded into your script using the following command in the script: Import-Module -Name virtualmachinemanager. [Get more details](hhttps://technet.microsoft.com/library/hh875013.aspx).
+- VMM cmdlets are delivered in a Windows PowerShell module. The VMM Windows PowerShell module is installed when you install the VMM console. The VMM module can be loaded into your script using the following command in the script: Import-Module -Name virtualmachinemanager. [Get more details](hhttps://technet.microsoft.com/zh-cn/library/hh875013.aspx).
 - Ensure you have at least one library server in your VMM deployment. By default the library share path for a VMM server is located locally on the VMM server with the folder name MSCVMMLibrary.
 - If your library share path is remote (or local but not shared with MSCVMMLibrary, configure the share as follows (using \\libserver2.contoso.com\share\ as an example):
 	- Open the Registry Editor.
@@ -92,7 +88,7 @@ Note the following before you start:
 - 	Ensure that you test the script with a user account that has the same permissions as the VMM Service account, to ensure that stand-alone tested scripts run in the same way that they will in recovery plans.
 - 	On the VMM server, set the execution policy to bypass as follows:
 	- Open the 64-bit Windows PowerShell console using elevated privileges.
-	- Type: **Set-executionpolicy bypass**. [Get more details](https://technet.microsoft.com/library/ee176961.aspx).
+	- Type: **Set-executionpolicy bypass**. [Get more details](https://technet.microsoft.com/zh-cn/library/ee176961.aspx).
 - Ensure that you use try-catch blocks, so that the exceptions are handled gracefully. If there is an exception in the script it stops running and the task shows as failed.  If an error does occur, any remaining part of the script won't run. If this occurs when you are running an unplanned failover, the recovery plan will continue. If this occurs when you are running a planned failover, the recovery plan will stop. If this occurs, fix the script, make sure it runs as expected, and then run the recovery plan again.
 - The Write-Host command doesn’t work in a recovery plan script, and the script will fail. If you want to create output, create a proxy script that in turn runs your main script, and ensure that all output is piped out using the >> command.
 - The script times out if it does not return within 600 seconds.
@@ -106,7 +102,7 @@ Create the script as follows:
 
 #### Create an Azure automation runbook
 
-You can extend your recovery plan by running an Azure automation runbook as part of the plan. [Read more](site-recovery-runbook-automation.md).
+You can extend your recovery plan by running an Azure automation runbook as part of the plan. [Read more](/documentation/articles/site-recovery-runbook-automation).
 
 
 ### Add custom settings to a recovery plan
@@ -121,7 +117,7 @@ You can extend your recovery plan by running an Azure automation runbook as part
 
 ## Run a failover
 
-You can run different types of failovers recovery plan, including a test failover to check your environment, and a planned or unplanned failover. Read more about failover and get instructions for running different types of failovers [here](site-recovery-failover.md) about failover.
+You can run different types of failovers recovery plan, including a test failover to check your environment, and a planned or unplanned failover. Read more about failover and get instructions for running different types of failovers [here](/documentation/articles/site-recovery-failover) about failover.
 
 
  

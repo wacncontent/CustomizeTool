@@ -1,5 +1,5 @@
 <properties
-	pageTitle="DataStax on Ubuntu with a Resource Manager template | Microsoft Azure"
+	pageTitle="DataStax on Ubuntu with a Resource Manager template | Windows Azure"
 	description="Learn to easily deploy a new DataStax cluster on Ubuntu VMs by using Azure PowerShell or the Azure CLI and a Resource Manager template"
 	services="virtual-machines"
 	documentationCenter=""
@@ -9,37 +9,33 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.workload="multiple"
-	ms.tgt_pltfrm="vm-windows"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="04/29/2015"
-	ms.author="scoriani"/>
+	wacn.date=""/>
 
 # DataStax on Ubuntu with a Resource Manager template
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-rm-include.md)] classic deployment model.
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] classic deployment model.
 
 
 DataStax is a recognized industry leader in developing and delivering solutions based on Apache Cassandra--the commercially supported, enterprise-ready NoSQL distributed database technology that is widely acknowledged as agile, always on, and predictably scalable to any size. DataStax offers both the Enterprise (DSE) and Community (DSC) flavors. It also provides capabilities like in-memory computing, enterprise-level security, fast and powerful integrated analytics, and enterprise search.
 
-In addition to what is already available in Azure Marketplace, now you can also easily deploy a new DataStax cluster on Ubuntu VMs by using a Resource Manager template deployed through [Azure PowerShell](../powershell-install-configure.md) or the [Azure CLI](../xplat-cli-install.md).
+In addition to what is already available in Azure Marketplace, now you can also easily deploy a new DataStax cluster on Ubuntu VMs by using a Resource Manager template deployed through [Azure PowerShell](/documentation/articles/powershell-install-configure) or the [Azure CLI](/documentation/articles/xplat-cli-install).
 
 Newly deployed clusters based on this template will have the topology described in the following diagram, although other topologies can be easily achieved by customizing the template presented in this article:
 
-![cluster-architecture](media/virtual-machines-datastax-template/cluster-architecture.png)
+![cluster-architecture](./media/virtual-machines-datastax-template/cluster-architecture.png)
 
 Using parameters, you can define the number of nodes that will be deployed in the new Apache Cassandra cluster. An instance of the DataStax Operations Center service will be also deployed in a stand-alone VM within the same virtual network, giving you the ability to monitor the status of the cluster and all individual nodes, add/remove nodes, and perform all administrative tasks related to that cluster.
 
-Once the deployment is complete, you can access the DataStax Operations Center VM instance by using the configured DNS address. The OpsCenter VM has SSH port 22 enabled, as well as port 8443 for HTTPS. The DNS address for the operations center will include *dnsName* and *region* entered as parameters, resulting in the format `{dnsName}.{region}.cloudapp.azure.com`. If you created a deployment with the *dnsName* parameter set to "datastax” in the "West US” region, you could access the DataStax Operations Center VM for the deployment at `https://datastax.westus.cloudapp.azure.com:8443`.
+Once the deployment is complete, you can access the DataStax Operations Center VM instance by using the configured DNS address. The OpsCenter VM has SSH port 22 enabled, as well as port 8443 for HTTPS. The DNS address for the operations center will include *dnsName* and *region* entered as parameters, resulting in the format `{dnsName}.{region}.cloudapp.azure.com`. If you created a deployment with the *dnsName* parameter set to "datastax” in the "China North” region, you could access the DataStax Operations Center VM for the deployment at `https://datastax.westus.cloudapp.azure.com:8443`.
 
 > [AZURE.NOTE] The certificate used in the deployment is a self-signed certificate that will create a browser warning. You can follow the process on the [DataStax](http://www.datastax.com/) website for replacing the certificate with your own SSL certificate.
 
 Before diving into more details related to Azure Resource Manager and the template we will use for this deployment, make sure you have Azure PowerShell or the Azure CLI configured correctly.
 
-[AZURE.INCLUDE [arm-getting-setup-powershell](../../includes/arm-getting-setup-powershell.md)]
+[AZURE.INCLUDE [arm-getting-setup-powershell](../includes/arm-getting-setup-powershell.md)]
 
-[AZURE.INCLUDE [xplat-getting-set-up-arm](../../includes/xplat-getting-set-up-arm.md)]
+[AZURE.INCLUDE [xplat-getting-set-up-arm](../includes/xplat-getting-set-up-arm.md)]
 
 ## Create a Datastax-based Cassandra cluster by using a Resource Manager template
 
@@ -98,7 +94,7 @@ In the "parameters" section at the top of the azuredeploy.json file, you’ll fi
 	"parameters": {
 		"region": {
 			"type": "string",
-			"defaultValue": "West US",
+			"defaultValue": "China North",
 			"metadata": {
 				"Description": "Location where resources will be provisioned"
 			}
@@ -197,7 +193,7 @@ Here is an example set of parameters from the azuredeploy-parameters.json file:
 			"value": ""
 		},
 		"region": {
-			"value": "West US"
+			"value": "China North"
 		},
 		"opsCenterAdminPassword": {
 			"value": ""
@@ -217,7 +213,7 @@ Fill in an Azure deployment name, resource group name, Azure location, and the f
 
 	$deployName="<deployment name>"
 	$RGName="<resource group name>"
-	$locName="<Azure location, such as West US>"
+	$locName="<Azure location, such as China North>"
 	$folderName="<folder name, such as C:\Azure\Templates\DataStax>"
 	$templateFile= $folderName + "\azuredeploy.json"
 	$templateParameterFile= $folderName + "\azuredeploy-parameters.json"
@@ -232,7 +228,7 @@ When deploying, please keep in mind that a new Azure storage account needs to be
 
 During and after deployment, you can check all the requests that were made during provisioning, including any errors that occurred.  
 
-To do that, go to the [Azure portal](https://portal.azure.com) and do the following:
+To do that, go to the [Azure Management Portal](https://manage.windowsazure.cn) and do the following:
 
 - Click **Browse** on the left-hand navigation bar, and then scroll down and click **Resource Groups**.  
 - Click the resource group that you just created, to bring up the "Resource Group” blade.  
@@ -247,7 +243,7 @@ After your tests, if you need to remove this resource group and all of its resou
 
 To deploy a DataStax cluster via the Azure CLI, first create a resource group by specifying a name and a location:
 
-	azure group create dsc "West US"
+	azure group create dsc "China North"
 
 Pass this resource group name, the location of the JSON template file, and the location of the parameters file (see the above Azure PowerShell section for details) into the following command:
 
@@ -404,7 +400,7 @@ When ephemeral-nodes-resources.json is invoked from within the main azuredeploy.
 			          "osDisk": {
 			            "name": "osdisk",
 			            "vhd": {
-			              "uri": "[concat('http://',variables('storageAccountName'),'.blob.core.windows.net/vhds/', variables('vmName'), copyindex(), '-osdisk.vhd')]"
+			              "uri": "[concat('http://',variables('storageAccountName'),'.blob.core.chinacloudapi.cn/vhds/', variables('vmName'), copyindex(), '-osdisk.vhd')]"
 			            },
 			            "caching": "ReadWrite",
 			            "createOption": "FromImage"
@@ -415,7 +411,7 @@ When ephemeral-nodes-resources.json is invoked from within the main azuredeploy.
 			              "diskSizeGB": 1023,
 			              "lun": 0,
 			              "vhd": {
-			                "Uri": "[concat('http://', variables('storageAccountName'),'.blob.core.windows.net/','vhds/', variables('vmName'), copyindex(), 'DataDisk1.vhd')]"
+			                "Uri": "[concat('http://', variables('storageAccountName'),'.blob.core.chinacloudapi.cn/','vhds/', variables('vmName'), copyindex(), 'DataDisk1.vhd')]"
 			              },
 			              "caching": "None",
 			              "createOption": "Empty"
@@ -468,7 +464,7 @@ Another interesting fragment to explore is the one related to CustomScriptForLin
 
 By familiarizing yourself with the other files included in this deployment, you will be able to understand all the details and best practices required to organize and orchestrate complex deployment strategies for multi-node solutions, based on any technology, by leveraging Azure Resource Manager templates. While not mandatory, a recommended approach is to structure your template files as highlighted by the following diagram:
 
-![datastax-template-structure](media/virtual-machines-datastax-template/datastax-template-structure.png)
+![datastax-template-structure](./media/virtual-machines-datastax-template/datastax-template-structure.png)
 
 In essence, this approach suggests to:
 
@@ -478,4 +474,4 @@ In essence, this approach suggests to:
 -	For identical members of a group of resources (nodes in a cluster, etc.), create specific templates that leverage resource looping in order to deploy multiple instances with unique properties.
 -	For all post-deployment tasks (product installation, configurations, etc.), leverage script deployment extensions and create scripts specific to each technology.
 
-For more information, see [Azure Resource Manager template language](../resource-group-authoring-templates.md).
+For more information, see [Azure Resource Manager template language](/documentation/articles/resource-group-authoring-templates).

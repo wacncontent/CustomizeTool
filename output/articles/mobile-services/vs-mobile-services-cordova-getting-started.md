@@ -7,20 +7,16 @@
 	manager="douge" 
 	editor=""/>
 
-<tags 
-	ms.service="mobile-services" 
-	ms.workload="mobile" 
-	ms.tgt_pltfrm="vs-getting-started" 
-	ms.devlang="multiple" 
-	ms.topic="article" 
-	ms.date="09/17/2015" 
-	ms.author="patshea"/>
+<tags
+	ms.service="mobile-services"
+	ms.date="09/17/2015"
+	wacn.date=""/>
 
 # Getting Started with Mobile Services (Cordova Projects)
 
 > [AZURE.SELECTOR]
-> - [Getting Started](vs-mobile-services-cordova-getting-started.md)
-> - [What Happened](vs-mobile-services-cordova-what-happened.md)
+> - [Getting Started](/documentation/articles/vs-mobile-services-cordova-getting-started)
+> - [What Happened](/documentation/articles/vs-mobile-services-cordova-what-happened)
 
 ##First steps
 The first step you need to do in order to follow the code in these examples depends on what type of mobile service you connected to.
@@ -37,11 +33,11 @@ The following code gets a reference to a table that contains data for a TodoItem
 
     var todoTable = mobileServiceClient.getTable('TodoItem');
 
-For these examples to work, permissions on the table must be set to **Anybody with an Application Key**. Later, you can set up authentication. See [Get started with authentication](mobile-services-html-get-started-users.md).
+For these examples to work, permissions on the table must be set to **Anybody with an Application Key**. Later, you can set up authentication. See [Get started with authentication](/documentation/articles/mobile-services-html-get-started-users).
 
 ##Add an item to a table
 
-Insert a new item into a data table. An id (a GUID of type string) is automatically created as the primary key for the new row. Call the **done** method on the returned [Promise](https://msdn.microsoft.com/library/dn802826.aspx) object to get a copy of the inserted object and handle any errors.
+Insert a new item into a data table. An id (a GUID of type string) is automatically created as the primary key for the new row. Call the **done** method on the returned [Promise](https://msdn.microsoft.com/zh-cn/library/dn802826.aspx) object to get a copy of the inserted object and handle any errors.
 
     function TodoItem(text) {
         this.text = text;
@@ -73,11 +69,11 @@ You can use the where method to modify the query. Here's an example that filters
             items = results.slice();
         });
 
-For more examples of queries you can use, see [query]((http://msdn.microsoft.com/library/azure/jj613353.aspx)) object.
+For more examples of queries you can use, see [query]((http://msdn.microsoft.com/zh-cn/library/azure/jj613353.aspx)) object.
 
 ##Update a table item
 
-Update a row in a data table. In this code, when the mobile service responds, the item is removed from the list. Call the **done** method on the returned [Promise](https://msdn.microsoft.com/library/dn802826.aspx) object to get a copy of the inserted object and handle any errors.
+Update a row in a data table. In this code, when the mobile service responds, the item is removed from the list. Call the **done** method on the returned [Promise](https://msdn.microsoft.com/zh-cn/library/dn802826.aspx) object to get a copy of the inserted object and handle any errors.
 
     todoTable.update(todoItem).done(function (item) {
         // Update a local collection of items.
@@ -86,10 +82,10 @@ Update a row in a data table. In this code, when the mobile service responds, th
 
 ##Delete a table item
 
-Delete a row in a data table using the **del** method. Call the **done** method on the returned [Promise](https://msdn.microsoft.com/library/dn802826.aspx) object to get a copy of the inserted object and handle any errors.
+Delete a row in a data table using the **del** method. Call the **done** method on the returned [Promise](https://msdn.microsoft.com/zh-cn/library/dn802826.aspx) object to get a copy of the inserted object and handle any errors.
 
     todoTable.del(todoItem).done(function (item) {
         items.splice(items.indexOf(todoItem), 1);
     });
 
-[Learn more about mobile services](http://azure.microsoft.com/documentation/services/mobile-services/)
+[Learn more about mobile services](/documentation/services/mobile-services/)

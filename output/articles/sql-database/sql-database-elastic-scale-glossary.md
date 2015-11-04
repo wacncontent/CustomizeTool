@@ -7,14 +7,10 @@
     authors="sidneyh" 
     editor=""/>
 
-<tags 
-    ms.service="sql-database" 
-    ms.workload="sql-database" 
-    ms.tgt_pltfrm="na" 
-    ms.devlang="na" 
-    ms.topic="article" 
-    ms.date="07/24/2015" 
-    ms.author="sidneyh"/>
+<tags
+	ms.service="sql-database"
+	ms.date="07/24/2015"
+	wacn.date=""/>
 
 # Elastic Database tools glossary
 The following terms are defined for the Elastic Database tools, a feature of Azure SQL Database. The tools include the client library, the split-merge tool, elastic pools, and queries.
@@ -72,7 +68,7 @@ The following terms are defined for the Elastic Database tools, a feature of Azu
 
 **Vertical Scaling**: The act of scaling up (or down) the performance level of an individual shard. For example, changing a shard from Standard to Premium (which results in more computing resources). 
 
-[AZURE.INCLUDE [elastic-scale-include](../../includes/elastic-scale-include.md)]  
+[AZURE.INCLUDE [elastic-scale-include](../includes/elastic-scale-include.md)]  
 
 <!--Image references-->
 [1]: ./media/sql-database-elastic-scale-glossary/glossary.png

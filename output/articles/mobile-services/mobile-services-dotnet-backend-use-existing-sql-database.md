@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Build a service using an existing SQL database with the Mobile Services .NET backend | Microsoft Azure"
+	pageTitle="Build a service using an existing SQL database with the Mobile Services .NET backend | Windows Azure"
 	description="Learn how to use an existing cloud or on-premises SQL database with your .NET based mobile service"
 	services="mobile-services"
 	documentationCenter=""
@@ -9,12 +9,8 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.workload="mobile"
-	ms.tgt_pltfrm="na"
-	ms.devlang="multiple"
-	ms.topic="article" 
 	ms.date="08/01/2015"
-	ms.author="glenga"/>
+	wacn.date=""/>
 
 
 # Build a service using an existing SQL database with the Mobile Services .NET backend
@@ -24,9 +20,9 @@ The Mobile Services .NET backend makes it easy to take advantage of existing ass
 <a name="ExistingModel"></a>
 ## Exploring the existing database model
 
-For this tutorial we will use the database that was created with your mobile service, but we will not use the default model that is created. Instead, we will manually create an arbitrary model that will represent an existing application that you may have. For full details about how to connect to an on-premises database instead, check out [Connect to an on-premises SQL Server from an Azure mobile service using Hybrid Connections](mobile-services-dotnet-backend-hybrid-connections-get-started.md).
+For this tutorial we will use the database that was created with your mobile service, but we will not use the default model that is created. Instead, we will manually create an arbitrary model that will represent an existing application that you may have. For full details about how to connect to an on-premises database instead, check out [Connect to an on-premises SQL Server from an Azure mobile service using Hybrid Connections](/documentation/articles/mobile-services-dotnet-backend-hybrid-connections-get-started).
 
-1. Start by creating a Mobile Services server project in **Visual Studio 2013 Update 2** or by using the quickstart project that you can download on the Mobile Services tab for your service in the [Azure Management Portal](http://manage.windowsazure.com). For the purposes of this tutorial, we will assume your server project name is **ShoppingService**.
+1. Start by creating a Mobile Services server project in **Visual Studio 2013 Update 2** or by using the quickstart project that you can download on the Mobile Services tab for your service in the [Azure Management Portal](http://manage.windowsazure.cn). For the purposes of this tutorial, we will assume your server project name is **ShoppingService**.
 
 2. Create a **Customer.cs** file inside the **Models** folder and use the following implementation. You will need to add an assembly reference to **System.ComponentModel.DataAnnotations** to your project.
 
@@ -112,7 +108,7 @@ The data model you would like to use with your mobile service may be arbitrarily
             }
         }
 
-    Note that this class is similar to the **Customer** class in the model, except the relationship property to **Order** is removed. For an object to work correctly with Mobile Services offline sync, it needs a set of *system properties* for optimistic concurrency, so you will notice that the DTO inherits from [**EntityData**](http://msdn.microsoft.com/library/microsoft.windowsazure.mobile.service.entitydata.aspx), which contains those properties. The int-based **CustomerId** property from the original model is replaced by the string-based **Id** property from **EntityData**, which will be the **Id** that Mobile Services will use.
+    Note that this class is similar to the **Customer** class in the model, except the relationship property to **Order** is removed. For an object to work correctly with Mobile Services offline sync, it needs a set of *system properties* for optimistic concurrency, so you will notice that the DTO inherits from [**EntityData**](http://msdn.microsoft.com/zh-cn/library/microsoft.windowsazure.mobile.service.entitydata.aspx), which contains those properties. The int-based **CustomerId** property from the original model is replaced by the string-based **Id** property from **EntityData**, which will be the **Id** that Mobile Services will use.
 
 2. Create the **MobileOrder.cs** file in the **DataObjects** folder of your service project.
 
@@ -179,7 +175,7 @@ The data model you would like to use with your mobile service may be arbitrarily
         using Microsoft.WindowsAzure.Mobile.Service.Tables;
         using System.Linq;
 
-5. In the body of **ExistingContext**, override [**OnModelCreating**](http://msdn.microsoft.com/library/system.data.entity.dbcontext.onmodelcreating.aspx):
+5. In the body of **ExistingContext**, override [**OnModelCreating**](http://msdn.microsoft.com/zh-cn/library/system.data.entity.dbcontext.onmodelcreating.aspx):
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -190,7 +186,7 @@ The data model you would like to use with your mobile service may be arbitrarily
             base.OnModelCreating(modelBuilder);
         }
 
-5. Let's populate the database with some example data. Open the file **WebApiConfig.cs**. Create a new [**IDatabaseInitializer**](http://msdn.microsoft.com/library/gg696323.aspx) and configure it in the **Register** method as shown below.
+5. Let's populate the database with some example data. Open the file **WebApiConfig.cs**. Create a new [**IDatabaseInitializer**](http://msdn.microsoft.com/zh-cn/library/gg696323.aspx) and configure it in the **Register** method as shown below.
 
         using Microsoft.WindowsAzure.Mobile.Service;
         using ShoppingService.Models;
@@ -273,7 +269,7 @@ AutoMapper will now map the objects to one another. All properties with correspo
 <a name="DomainManager"></a>
 ## Implementing domain-specific logic
 
-The next step is to implement a [**MappedEntityDomainManager**](http://msdn.microsoft.com/library/dn643300.aspx), which serves as an abstraction layer between our mapped data store and the controller which will serve HTTP traffic from our clients. We will be able to write our controller in the next section purely in terms of the DTOs and the **MappedEntityDomainManager** we add here will handle the communication with the original data store, while also giving us a place to implement any logic specific to it.
+The next step is to implement a [**MappedEntityDomainManager**](http://msdn.microsoft.com/zh-cn/library/dn643300.aspx), which serves as an abstraction layer between our mapped data store and the controller which will serve HTTP traffic from our clients. We will be able to write our controller in the next section purely in terms of the DTOs and the **MappedEntityDomainManager** we add here will handle the communication with the original data store, while also giving us a place to implement any logic specific to it.
 
 1. Add a **MobileCustomerDomainManager.cs** to the **Models** folder of your project. Paste in the following implementation:
 

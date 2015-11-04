@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Run Cassandra with Linux on Azure | Microsoft Azure" 
+	pageTitle="Run Cassandra with Linux on Azure | Windows Azure" 
 	description="How to run a Cassandra cluster on Linux in Azure Virtual Machines from a Node.js app" 
 	services="virtual-machines" 
 	documentationCenter="nodejs" 
@@ -8,29 +8,25 @@
 	editor=""
 	azure-service-management"/>
 
-<tags 
-	ms.service="virtual-machines" 
-	ms.workload="infrastructure-services" 
-	ms.tgt_pltfrm="vm-linux" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="08/30/2015" 
-	ms.author="mwasson"/>
+<tags
+	ms.service="virtual-machines"
+	ms.date="08/30/2015"
+	wacn.date=""/>
 
 
 # Running Cassandra with Linux on Azure and Accessing it from Node.js 
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)] [Resource Manager model](virtual-machines-datastax-template.md).
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] [Resource Manager model](/documentation/articles/virtual-machines-datastax-template).
 
 ## Overview
-Microsoft Azure is an open cloud platform that runs both Microsoft as well as non-Microsoft software which  includes operating systems, application servers, messaging middleware as well as SQL and NoSQL databases from both commercial and open source models. Building resilient services on public clouds including Azure requires careful planning and deliberate architecture for both applications servers as well storage layers. Cassandra’s distributed storage architecture naturally helps in building highly available systems that are fault tolerant for cluster failures. Cassandra is a cloud scale NoSQL database maintained by Apache Software Foundation at cassandra.apache.org; Cassandra is written in Java and hence runs on both on Windows as well as Linux platforms. 
+Windows Azure is an open cloud platform that runs both Microsoft as well as non-Microsoft software which  includes operating systems, application servers, messaging middleware as well as SQL and NoSQL databases from both commercial and open source models. Building resilient services on public clouds including Azure requires careful planning and deliberate architecture for both applications servers as well storage layers. Cassandra’s distributed storage architecture naturally helps in building highly available systems that are fault tolerant for cluster failures. Cassandra is a cloud scale NoSQL database maintained by Apache Software Foundation at cassandra.apache.org; Cassandra is written in Java and hence runs on both on Windows as well as Linux platforms. 
 
-The focus of this article is to show Cassandra deployment on Ubuntu as a single and multi-data center cluster leveraging Microsoft Azure Virtual Machines and Virtual Networks. The cluster deployment for production optimized workloads is out of scope of this article as it requires multi-disk node configuration, appropriate ring topology design and data modeling to support the needed replication, data consistency, throughput and high availability requirements. 
+The focus of this article is to show Cassandra deployment on Ubuntu as a single and multi-data center cluster leveraging Windows Azure Virtual Machines and Virtual Networks. The cluster deployment for production optimized workloads is out of scope of this article as it requires multi-disk node configuration, appropriate ring topology design and data modeling to support the needed replication, data consistency, throughput and high availability requirements. 
 
 This article takes a fundamental approach to show what is involved in building the Cassandra cluster compared Docker, Chef or Puppet which can make the infrastructure deployment a lot easier.  
 
 ## The Deployment Models 
-Microsoft Azure networking allows the deployment of isolated private clusters, the access of which can be restricted to attain fine grained network security.  Since this article is about showing the Cassandra deployment at a fundamental level, we will not focus on the consistency level and the optimal storage design for throughput. Here is the list of networking requirements for our hypothetical cluster:
+Windows Azure networking allows the deployment of isolated private clusters, the access of which can be restricted to attain fine grained network security.  Since this article is about showing the Cassandra deployment at a fundamental level, we will not focus on the consistency level and the optimal storage design for throughput. Here is the list of networking requirements for our hypothetical cluster:
 
 - External systems can’t access Cassandra database from within or outside Azure
 - Cassandra cluster has to be behind a load balancer for thrift traffic
@@ -45,7 +41,7 @@ Cassandra can be deployed to a single Azure region or to multiple regions based 
 ### Single Region Deployment
 We will start with a single region deployment and harvest the learnings in creating a multi-region model. Azure virtual networking will be used to create isolated subnets so that the network security requirements mentioned above can be met.  The process described in creating the single region deployment uses Ubuntu 14.04 LTS and Cassandra 2.08; however, the process can easily be adopted to the other Linux variants. The following are some of the systemic characteristics of the single region deployment.  
 
-**High Availability:** The Cassandra nodes shown in the Figure 1 are deployed to two availability sets so that the nodes are spread between multiple fault domains for high availability. VMs annotated with each availability set is mapped to 2 fault domains.  Microsoft Azure uses the concept of fault domain to manage unplanned down time (e.g. hardware or software failures) while the concept of upgrade domain (e.g. host or guest OS patching/upgrades, application upgrades) is used for managing scheduled down time. Please see [Disaster Recovery and High Availability for Azure Applications](http://msdn.microsoft.com/library/dn251004.aspx) for the role of fault and upgrade domains in attaining high availability. 
+**High Availability:** The Cassandra nodes shown in the Figure 1 are deployed to two availability sets so that the nodes are spread between multiple fault domains for high availability. VMs annotated with each availability set is mapped to 2 fault domains.  Windows Azure uses the concept of fault domain to manage unplanned down time (e.g. hardware or software failures) while the concept of upgrade domain (e.g. host or guest OS patching/upgrades, application upgrades) is used for managing scheduled down time. Please see [Disaster Recovery and High Availability for Azure Applications](http://msdn.microsoft.com/zh-cn/library/dn251004.aspx) for the role of fault and upgrade domains in attaining high availability. 
 
 ![Single region deployment](./media/virtual-machines-linux-nodejs-running-cassandra/cassandra-linux1.png)
 
@@ -53,7 +49,7 @@ Figure 1: Single region deployment
 
 Note that at the time of this writing, Azure doesn’t allow the explicit mapping of a group of VMs to a specific fault domain; consequently, even with the deployment model shown in Figure 1, it is statistically probable that all the virtual machines may be mapped to two fault domains instead of four. 
 
-**Load Balancing Thrift Traffic:** Thrift client libraries inside the web server connect to the cluster through an internal load balancer. This requires the process of adding the internal load balancer to the “data” subnet (refer Figure 1) in the context of the cloud service hosting the Cassandra cluster. Once the internal load balancer is defined, each node requires the load balanced endpoint to be added with the annotations of a load balanced set with previously defined load balancer name. See [Azure Internal Load Balancing ](../load-balancer/load-balancer-internal-overview.md)for more details.
+**Load Balancing Thrift Traffic:** Thrift client libraries inside the web server connect to the cluster through an internal load balancer. This requires the process of adding the internal load balancer to the “data” subnet (refer Figure 1) in the context of the cloud service hosting the Cassandra cluster. Once the internal load balancer is defined, each node requires the load balanced endpoint to be added with the annotations of a load balanced set with previously defined load balancer name. See [Azure Internal Load Balancing ](/documentation/articles/load-balancer-internal-overview)for more details.
 
 **Cluster Seeds:** It is important to select the most highly available nodes for seeds as the new nodes will communicate with seed nodes to discover the topology of the cluster. One node from each availability set is designated as seed nodes to avoid single point of failure. 
 
@@ -75,16 +71,16 @@ Single region Cassandra cluster configuration:
 | Snitch | GossipingPropertyFileSnitch see [Snitches](http://www.datastax.com/documentation/cassandra/2.0/cassandra/architecture/architectureSnitchesAbout_c.html) in Cassandra documentation for more information | NetworkTopologyStrategy uses a concept of snitch to understand the topology. GossipingPropertyFileSnitch gives better control in mapping each node to data center and rack. The cluster then uses gossip to propagate this information. This is much simpler in dynamic IP setting relative to PropertyFileSnitch |
 
 
-**Azure Considerations for Cassandra Cluster:** Microsoft Azure Virtual Machines capability uses Azure Blob storage for disk persistence; Azure Storage saves 3 replicas of each disk for high durability. That means each row of data inserted into a Cassandra table is already stored in 3 replicas and hence data consistency is already taken care of even if the Replication Factor (RF) is 1. The main problem with Replication Factor being 1 is that the application will experience downtime even if a single Cassandra node fails. However, if a node is down for the problems (e.g. hardware, system software failures) recognized by Azure Fabric Controller, it will provision a new node in its place using the same storage drives. Provisioning a new node to replace the old one may take a few minutes.  Similarly for planned maintenance activities like guest OS changes, Cassandra upgrades and application changes Azure Fabric Controller performs rolling upgrades of the nodes in the cluster.  Rolling upgrades also may take down a few nodes at a time and hence the cluster may experience brief downtime for a few partitions. However, the data will not be lost due to the built-in Azure Storage redundancy.  
+**Azure Considerations for Cassandra Cluster:** Windows Azure Virtual Machines capability uses Azure Blob storage for disk persistence; Azure Storage saves 3 replicas of each disk for high durability. That means each row of data inserted into a Cassandra table is already stored in 3 replicas and hence data consistency is already taken care of even if the Replication Factor (RF) is 1. The main problem with Replication Factor being 1 is that the application will experience downtime even if a single Cassandra node fails. However, if a node is down for the problems (e.g. hardware, system software failures) recognized by Azure Fabric Controller, it will provision a new node in its place using the same storage drives. Provisioning a new node to replace the old one may take a few minutes.  Similarly for planned maintenance activities like guest OS changes, Cassandra upgrades and application changes Azure Fabric Controller performs rolling upgrades of the nodes in the cluster.  Rolling upgrades also may take down a few nodes at a time and hence the cluster may experience brief downtime for a few partitions. However, the data will not be lost due to the built-in Azure Storage redundancy.  
 
 For systems deployed to Azure that doesn’t require high availability (e.g. around 99.9 which is equivalent to 8.76 hrs/year; see [High Availability](http://en.wikipedia.org/wiki/High_availability) for details) you may be able to run with RF=1 and Consistency Level=ONE.  For applications with high availability requirements, RF=3 and Consistency Level=QUORUM will tolerate the down time of one of the nodes one of the replicas. RF=1 in traditional deployments (e.g. on-premise) can’t be used due to the possible data loss resulting from problems like disk failures.   
 
 ## Multi-region Deployment
 Cassandra’s data-center-aware replication and consistency model described above helps with the multi-region deployment out of the box without the need for any external tooling. This is quite different from the traditional relational databases where the setup for database mirroring for multi-master writes can be quite complex. Cassandra in a multi-region set up can help with the usage scenarios including the following: 
 
-**Proximity based deployment:** Multi-tenant applications, with clear mapping of tenant users -to-region, can be benefited by the multi-region cluster’s low latencies. For example a learning management systems for educational institutions can deploy a distributed cluster in East US and West US regions to serve the respective campuses for transactional as well as analytics. The data can be locally consistent at the time reads and writes and can be eventually consistent across both the regions. There are other examples like media distribution, e-commerce and anything and everything that serves geo concentrated user base is a good use case for this deployment model. 
+**Proximity based deployment:** Multi-tenant applications, with clear mapping of tenant users -to-region, can be benefited by the multi-region cluster’s low latencies. For example a learning management systems for educational institutions can deploy a distributed cluster in China East and China North regions to serve the respective campuses for transactional as well as analytics. The data can be locally consistent at the time reads and writes and can be eventually consistent across both the regions. There are other examples like media distribution, e-commerce and anything and everything that serves geo concentrated user base is a good use case for this deployment model. 
 
-**High Availability:** Redundancy is a key factor in attaining high availability of software and hardware; see Building Reliable Cloud Systems on Microsoft Azure for details. On Microsoft Azure, the only reliable way of achieving true redundancy is by deploying a multi-region cluster. Applications can be deployed in an active-active or active-passive mode and if one of the regions is down, Azure Traffic Manager can redirect traffic to the active region.  With the single region deployment, if the availability is 99.9, a two-region deployment can attain an availability of 99.9999 computed by the formula: (1-(1-0.999) * (1-0.999))*100); see the above paper for details. 
+**High Availability:** Redundancy is a key factor in attaining high availability of software and hardware; see Building Reliable Cloud Systems on Windows Azure for details. On Windows Azure, the only reliable way of achieving true redundancy is by deploying a multi-region cluster. Applications can be deployed in an active-active or active-passive mode and if one of the regions is down, Azure Traffic Manager can redirect traffic to the active region.  With the single region deployment, if the availability is 99.9, a two-region deployment can attain an availability of 99.9999 computed by the formula: (1-(1-0.999) * (1-0.999))*100); see the above paper for details. 
 
 **Disaster Recovery:** Multi-region Cassandra cluster, if properly designed, can withstand catastrophic data center outages. If one region is down, the application deployed to other regions can start serving the end users. Like any other business continuity implementations, the application has to be tolerant for some data loss resulting from the data in the asynchronous pipeline. However, Cassandra makes the recovery much swifter than the time taken by traditional database recovery processes. Figure 2 shows the typical multi-region deployment model with eight nodes in each region. Both regions are mirror images of each other for the same of symmetry; real world designs depend on the workload type (e.g. transactional or analytical), RPO, RTO, data consistency and availability requirements. 
 
@@ -120,7 +116,7 @@ The following software versions are used during the deployment:
 <tr><td>JRE	</td><td>[JRE 8](http://www.oracle.com/technetwork/java/javase/downloads/server-jre8-downloads-2133154.html) </td><td>8U5</td></tr>
 <tr><td>JNA	</td><td>[JNA](https://github.com/twall/jna) </td><td> 3.2.7</td></tr>
 <tr><td>Cassandra</td><td>[Apache Cassandra 2.0.8](http://www.apache.org/dist/cassandra/2.0.8/apache-cassandra-2.0.8-bin.tar.gz)</td><td> 2.0.8</td></tr>
-<tr><td>Ubuntu	</td><td>[Mcrosoft Azure Portal](http://azure.microsoft.com) </td><td>14.04 LTS</td></tr>
+<tr><td>Ubuntu	</td><td>[Mcrosoft Azure Management Portal](http://azure.microsoft.com) </td><td>14.04 LTS</td></tr>
 </table>
 
 Since downloading of JRE requires manual acceptance of Oracle license, to simplify the deployment, download all the required software to the desktop for later uploading into the Ubuntu template image we will be creating as a precursor to the cluster deployment. 
@@ -155,8 +151,8 @@ Enter the following information on the “Virtual machine configuration” scree
 <table>
 <tr><th>FIELD NAME             </th><th> FIELD VALUE	                   </th><th> REMARKS                                 </th></tr>
 <tr><td> CLOUD SERVICE	</td><td> Create a new cloud service	</td><td>Cloud service is a container compute resources like virtual machines</td></tr>
-<tr><td> CLOUD SERVICE DNS NAME	</td><td>ubuntu-template.cloudapp.net	</td><td>Give a machine agnostic load balancer name</td></tr>
-<tr><td> REGION/AFFINITY GROUP/VIRTUAL NETWORK </td><td>	West US	</td><td> Select a region from which your web applications access the Cassandra cluster</td></tr>
+<tr><td> CLOUD SERVICE DNS NAME	</td><td>ubuntu-template.chinacloudapp.cn	</td><td>Give a machine agnostic load balancer name</td></tr>
+<tr><td> REGION/AFFINITY GROUP/VIRTUAL NETWORK </td><td>	China North	</td><td> Select a region from which your web applications access the Cassandra cluster</td></tr>
 <tr><td>STORAGE ACCOUNT </td><td>	Use default	</td><td>Use the default storage account  or a pre-created storage account in a particular region</td></tr>
 <tr><td>AVAILABILITY SET </td><td>	None </td><td>	Leave it blank</td></tr>
 <tr><td>ENDPOINTS	</td><td>Use default </td><td>	Use the default SSH configuration </td></tr>
@@ -168,7 +164,7 @@ Click right arrow, leave the defaults on the screen #3 and click the “check”
 ####STEP 1: Upload tarballs 
 Using scp or pscp, copy the previously downloaded software to ~/downloads directory using the following command format: 
 
-#####pscp server-jre-8u5-linux-x64.tar.gz localadmin@hk-cas-template.cloudapp.net:/home/localadmin/downloads/server-jre-8u5-linux-x64.tar.gz
+#####pscp server-jre-8u5-linux-x64.tar.gz localadmin@hk-cas-template.chinacloudapp.cn:/home/localadmin/downloads/server-jre-8u5-linux-x64.tar.gz
 
 Repeat the above command for JRE as well as for the Cassandra bits. 
 
@@ -289,11 +285,11 @@ Edit cassandra.yaml on each VM to reflect configuration needed by all the virtua
 </table>
 
 ####Step 6: Capture the VM image
-Log into the virtual machine using the hostname (hk-cas-template.cloudapp.net) and the SSH private key previously created. See How to Use SSH with Linux on Azure for details on how to log in using the command ssh or putty.exe. 
+Log into the virtual machine using the hostname (hk-cas-template.chinacloudapp.cn) and the SSH private key previously created. See How to Use SSH with Linux on Azure for details on how to log in using the command ssh or putty.exe. 
 
 Execute the following sequence of actions to capture the image:
 #####1. Deprovision
-Use the command “sudo waagent –deprovision+user” to remove Virtual Machine instance specific information. See for [How to Capture a Linux Virtual Machine](virtual-machines-linux-capture-image.md) to Use as a Template more details on the image capture process. 
+Use the command “sudo waagent –deprovision+user” to remove Virtual Machine instance specific information. See for [How to Capture a Linux Virtual Machine](/documentation/articles/virtual-machines-linux-capture-image) to Use as a Template more details on the image capture process. 
 
 #####2: Shutdown the VM
 Make sure that the virtual machine is highlighted and click the SHUTDOWN link from the bottom command bar.
@@ -305,12 +301,12 @@ This will take a few seconds and the image should be available in MY IMAGES sect
 
 ##Single Region Deployment Process
 **Step 1: Create the Virtual Network**
-Log into the management portal and create a Virtual Network with the attributes show in the table. See [Configure a Cloud-Only Virtual Network in the Management Portal](../virtual-network/virtual-networks-create-vnet.md) for detailed steps of the process.      
+Log into the management portal and create a Virtual Network with the attributes show in the table. See [Configure a Cloud-Only Virtual Network in the Management Portal](/documentation/articles/virtual-networks-create-vnet) for detailed steps of the process.      
 
 <table>
 <tr><th>VM Attribute Name</th><th>Value</th><th>Remarks</th></tr>
 <tr><td>Name</td><td>vnet-cass-west-us</td><td></td></tr>	
-<tr><td>Region</td><td>West US</td><td></td></tr>	
+<tr><td>Region</td><td>China North</td><td></td></tr>	
 <tr><td>DNS Servers	</td><td>None</td><td>Ignore this as we are not using a DNS Server</td></tr>
 <tr><td>Configure a point-to-site VPN</td><td>None</td><td> Ignore this</td></tr>
 <tr><td>Configure a site-to-site VPN</td><td>Nnone</td><td> Ignore this</td></tr>
@@ -472,12 +468,12 @@ Please note that the keyspace created in step 4 uses SimpleStrategy with a  repl
 Will leverage the single region deployment completed and repeat the same process for installing the second region. The key difference between the single and multiple region deployment is the VPN tunnel setup for inter-region communication; we will start with the network installation, provision the VMs and configure Cassandra. 
 
 ###Step 1: Create the Virtual Network at the 2nd Region
-Log into the management portal and create a Virtual Network with the attributes show in the table. See [Configure a Cloud-Only Virtual Network in the Management Portal](../virtual-network/virtual-networks-create-vnet.md) for detailed steps of the process.      
+Log into the management portal and create a Virtual Network with the attributes show in the table. See [Configure a Cloud-Only Virtual Network in the Management Portal](/documentation/articles/virtual-networks-create-vnet) for detailed steps of the process.      
 
 <table>
 <tr><th>Attribute Name    </th><th>Value	</th><th>Remarks</th></tr>
 <tr><td>Name	</td><td>vnet-cass-east-us</td><td></td></tr>	
-<tr><td>Region	</td><td>East US</td><td></td></tr>	
+<tr><td>Region	</td><td>China East</td><td></td></tr>	
 <tr><td>DNS Servers		</td><td></td><td>Ignore this as we are not using a DNS Server</td></tr>
 <tr><td>Configure a point-to-site VPN</td><td></td><td>		Ignore this</td></tr>
 <tr><td>Configure a site-to-site VPN</td><td></td><td>		Ignore this</td></tr>
@@ -495,14 +491,14 @@ Add the following subnets:
 
 
 ###Step 2: Create Local Networks
-A Local Network in Azure virtual networking is a proxy address space that maps to a remote site including a private cloud or another Azure region. This proxy address space is bound to a remote gateway for routing network to the right networking destinations. See [Configure a VNet to VNet Connection](../vpn-gateway/virtual-networks-configure-vnet-to-vnet-connection.md) for the instructions on establishing VNET-to-VNET connection. 
+A Local Network in Azure virtual networking is a proxy address space that maps to a remote site including a private cloud or another Azure region. This proxy address space is bound to a remote gateway for routing network to the right networking destinations. See [Configure a VNet to VNet Connection](/documentation/articles/virtual-networks-configure-vnet-to-vnet-connection) for the instructions on establishing VNET-to-VNET connection. 
 
 Create two local networks per the following details:
 
 | Network Name | VPN Gateway Address | Address Space | Remarks |
 | ------------ | ------------------- | ------------- | ------- |
-| hk-lnet-map-to-east-us | 23.1.1.1  | 10.2.0.0/16   | While creating the Local Network give a placeholder gateway address. The real gateway address is filled once the gateway is created. Make sure the address space exactly matches the respective remote VNET; in this case the VNET created in the East US region. |
-| hk-lnet-map-to-west-us | 23.2.2.2  | 10.1.0.0/16   | While creating the Local Network give a placeholder gateway address. The real gateway address is filled once the gateway is created. Make sure the address space exactly matches the respective remote VNET; in this case the VNET created in the West US region. |
+| hk-lnet-map-to-east-us | 23.1.1.1  | 10.2.0.0/16   | While creating the Local Network give a placeholder gateway address. The real gateway address is filled once the gateway is created. Make sure the address space exactly matches the respective remote VNET; in this case the VNET created in the China East region. |
+| hk-lnet-map-to-west-us | 23.2.2.2  | 10.1.0.0/16   | While creating the Local Network give a placeholder gateway address. The real gateway address is filled once the gateway is created. Make sure the address space exactly matches the respective remote VNET; in this case the VNET created in the China North region. |
 
 
 ###Step 3: Map “Local” network to the respective VNETs
@@ -707,7 +703,7 @@ Using one of the Linux VMs crated in the "web" tier previously, we will execute 
 
 
 ## Conclusion 
-Microsoft Azure is a flexible platform that allows the running of both Microsoft as well as open source software as demonstrated by this exercise. Highly available Cassandra clusters can be deployed on a single data center through the spreading of the cluster nodes across multiple fault domains. Cassandra clusters can also be deployed across multiple geographically distant Azure regions for disaster proof systems. Azure and Cassandra together enables the construction of highly scalable, highly available and disaster recoverable cloud services needed by today's internet scale services.  
+Windows Azure is a flexible platform that allows the running of both Microsoft as well as open source software as demonstrated by this exercise. Highly available Cassandra clusters can be deployed on a single data center through the spreading of the cluster nodes across multiple fault domains. Cassandra clusters can also be deployed across multiple geographically distant Azure regions for disaster proof systems. Azure and Cassandra together enables the construction of highly scalable, highly available and disaster recoverable cloud services needed by today's internet scale services.  
 
 ##References##
 - [http://cassandra.apache.org](http://cassandra.apache.org)

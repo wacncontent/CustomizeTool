@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Extended events in SQL Database | Microsoft Azure" 
+	pageTitle="Extended events in SQL Database | Windows Azure" 
 	description="Describes extended events (XEvents) in Azure SQL Database, and how event sessions differ slightly from event sessions in Microsoft SQL Server." 
 	services="sql-database" 
 	documentationCenter="" 
@@ -9,14 +9,10 @@
 	tags=""/>
 
 
-<tags 
-	ms.service="sql-database" 
-	ms.workload="data-management" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="10/13/2015" 
-	ms.author="genemi"/>
+<tags
+	ms.service="sql-database"
+	ms.date="10/13/2015"
+	wacn.date=""/>
 
 
 # Extended events in SQL Database
@@ -44,21 +40,21 @@ This topic explains how the implementation of extended events in Azure SQL Datab
 This topic assumes you already have some knowledge of:
 
 
-- [Azure SQL Database service](http://azure.microsoft.com/services/sql-database/).
+- [Azure SQL Database service](/home/features/sql-database/).
 
 
-- [Extended events](http://msdn.microsoft.com/library/bb630282.aspx) in Microsoft SQL Server.
+- [Extended events](http://msdn.microsoft.com/zh-cn/library/bb630282.aspx) in Microsoft SQL Server.
  - The bulk of our documentation about extended events applies to both SQL Server and SQL Database.
 
 
 Prior exposure to the following items is helpful when choosing the Event File as the [target](#AzureXEventsTargets):
 
 
-- [Azure Storage service](http://azure.microsoft.com/services/storage/)
+- [Azure Storage service](/home/features/storage/)
 
 
 - PowerShell
- - [Using Azure PowerShell with Azure Storage](storage-powershell-guide-full.md) - Provides comprehensive information about PowerShell and the Azure Storage service.
+ - [Using Azure PowerShell with Azure Storage](/documentation/articles/storage-powershell-guide-full) - Provides comprehensive information about PowerShell and the Azure Storage service.
 
 
 ## Code samples
@@ -67,12 +63,12 @@ Prior exposure to the following items is helpful when choosing the Event File as
 Related topics provide two code samples:
 
 
-- [Ring Buffer target code for extended events in SQL Database](sql-database-xevent-code-ring-buffer.md)
+- [Ring Buffer target code for extended events in SQL Database](/documentation/articles/sql-database-xevent-code-ring-buffer)
  - Short simple Transact-SQL script.
  - We emphasize in the code sample topic that, when you are done with a Ring Buffer target, you should release its resources by executing an alter-drop `ALTER EVENT SESSION ... ON DATABASE DROP TARGET ...;` statement. Later you can add another instance of Ring Buffer by `ALTER EVENT SESSION ... ON DATABASE ADD TARGET ...`.
 
 
-- [Event File target code for extended events in SQL Database](sql-database-xevent-code-event-file.md)
+- [Event File target code for extended events in SQL Database](/documentation/articles/sql-database-xevent-code-event-file)
  - Phase 1 is PowerShell to create an Azure Storage container.
  - Phase 2 is Transact-SQL that uses the Azure Storage container.
 
@@ -80,10 +76,10 @@ Related topics provide two code samples:
 ## Transact-SQL differences
 
 
-- When you execute the [CREATE EVENT SESSION](http://msdn.microsoft.com/library/bb677289.aspx) command on SQL Server, you use the **ON SERVER** clause. But on SQL Database you use the **ON DATABASE** clause instead.
+- When you execute the [CREATE EVENT SESSION](http://msdn.microsoft.com/zh-cn/library/bb677289.aspx) command on SQL Server, you use the **ON SERVER** clause. But on SQL Database you use the **ON DATABASE** clause instead.
 
 
-- The **ON DATABASE** clause also applies to the [ALTER EVENT SESSION](http://msdn.microsoft.com/library/bb630368.aspx) and [DROP EVENT SESSION](http://msdn.microsoft.com/library/bb630257.aspx) Transact-SQL commands.
+- The **ON DATABASE** clause also applies to the [ALTER EVENT SESSION](http://msdn.microsoft.com/zh-cn/library/bb630368.aspx) and [DROP EVENT SESSION](http://msdn.microsoft.com/zh-cn/library/bb630257.aspx) Transact-SQL commands.
 
 
 - A best practice is to include the event session option of **STARTUP_STATE = ON** in your **CREATE EVENT SESSION**  or **ALTER EVENT SESSION** statements.
@@ -93,7 +89,7 @@ Related topics provide two code samples:
 ## New catalog views
 
 
-The extended events feature is supported by several [catalog views](http://msdn.microsoft.com/library/ms174365.aspx). Catalog views tell you about *metadata or definitions* of user-created event sessions in the current database. The views do not return information about instances of active event sessions.
+The extended events feature is supported by several [catalog views](http://msdn.microsoft.com/zh-cn/library/ms174365.aspx). Catalog views tell you about *metadata or definitions* of user-created event sessions in the current database. The views do not return information about instances of active event sessions.
 
 
 | Name of<br/>catalog view | Description |
@@ -105,13 +101,13 @@ The extended events feature is supported by several [catalog views](http://msdn.
 | **sys.database_event_sessions** | Returns a row for each event session in the SQL Database database. |
 
 
-In Microsoft SQL Server, similar catalog views have names that include *.server\_* instead of *.database\_*. The name pattern is like **sys.server_event_%**.
+In Microsoft SQL Server, similar catalog views have names that include *.server_* instead of *.database_*. The name pattern is like **sys.server_event_%**.
 
 
-## New dynamic management views [(DMVs)](http://msdn.microsoft.com/library/ms188754.aspx)
+## New dynamic management views [(DMVs)](http://msdn.microsoft.com/zh-cn/library/ms188754.aspx)
 
 
-Azure SQL Database has [dynamic management views (DMVs)](http://msdn.microsoft.com/library/bb677293.aspx) that support extended events. DMVs tell you about *active* event sessions.
+Azure SQL Database has [dynamic management views (DMVs)](http://msdn.microsoft.com/zh-cn/library/bb677293.aspx) that support extended events. DMVs tell you about *active* event sessions.
 
 
 | Name of DMV | Description |
@@ -123,7 +119,7 @@ Azure SQL Database has [dynamic management views (DMVs)](http://msdn.microsoft.c
 | **sys.dm_xe_database_sessions** | Returns a row for each event session that is scoped to the current database. |
 
 
-In Microsoft SQL Server, similar catalog views are named without the *\_database* portion of the name, such as:
+In Microsoft SQL Server, similar catalog views are named without the *_database* portion of the name, such as:
 
 
 - **sys.dm_xe_sessions**, instead of name<br/>**sys.dm_xe_database_sessions**.
@@ -182,12 +178,12 @@ SELECT
 Here are targets that can capture results from your event sessions on SQL Database:
 
 
-- [Ring Buffer target](http://msdn.microsoft.com/library/ff878182.aspx) - Briefly holds event data in memory.
-- [Event Counter target](http://msdn.microsoft.com/library/ff878025.aspx) - Counts all events that occur during an extended events session.
-- [Event File target](http://msdn.microsoft.com/library/ff878115.aspx) - Writes complete buffers to an Azure Storage container.
+- [Ring Buffer target](http://msdn.microsoft.com/zh-cn/library/ff878182.aspx) - Briefly holds event data in memory.
+- [Event Counter target](http://msdn.microsoft.com/zh-cn/library/ff878025.aspx) - Counts all events that occur during an extended events session.
+- [Event File target](http://msdn.microsoft.com/zh-cn/library/ff878115.aspx) - Writes complete buffers to an Azure Storage container.
 
 
-The [Event Tracing for Windows (ETW)](http://msdn.microsoft.com/library/ms751538.aspx) API is not available for extended events on SQL Database.
+The [Event Tracing for Windows (ETW)](http://msdn.microsoft.com/zh-cn/library/ms751538.aspx) API is not available for extended events on SQL Database.
 
 
 ## Restrictions
@@ -230,7 +226,7 @@ If you receive an error message that says a memory maximum was enforced, some co
 - Run fewer concurrent event sessions.
 
 
-- Through your **CREATE** and **ALTER** statements for event sessions, reduce the amount of memory you specify on the **MAX\_MEMORY** clause.
+- Through your **CREATE** and **ALTER** statements for event sessions, reduce the amount of memory you specify on the **MAX_MEMORY** clause.
 
 
 ### Network latency
@@ -244,16 +240,16 @@ The **Event File** target might experience network latency or failures while per
 ## Related links
 
 
-- [Using Azure PowerShell with Azure Storage](storage-powershell-guide-full.md).
-- [Azure Storage Cmdlets](http://msdn.microsoft.com/library/dn806401.aspx)
+- [Using Azure PowerShell with Azure Storage](/documentation/articles/storage-powershell-guide-full).
+- [Azure Storage Cmdlets](http://msdn.microsoft.com/zh-cn/library/dn806401.aspx)
 
 
-- [Using Azure PowerShell with Azure Storage](storage-powershell-guide-full.md) - Provides comprehensive information about PowerShell and the Azure Storage service.
-- [How to use Blob storage from .NET](storage-dotnet-how-to-use-blobs.md)
+- [Using Azure PowerShell with Azure Storage](/documentation/articles/storage-powershell-guide-full) - Provides comprehensive information about PowerShell and the Azure Storage service.
+- [How to use Blob storage from .NET](/documentation/articles/storage-dotnet-how-to-use-blobs)
 
 
-- [CREATE CREDENTIAL (Transact-SQL)](http://msdn.microsoft.com/library/ms189522.aspx)
-- [CREATE EVENT SESSION (Transact-SQL)](http://msdn.microsoft.com/library/bb677289.aspx)
+- [CREATE CREDENTIAL (Transact-SQL)](http://msdn.microsoft.com/zh-cn/library/ms189522.aspx)
+- [CREATE EVENT SESSION (Transact-SQL)](http://msdn.microsoft.com/zh-cn/library/bb677289.aspx)
 
 
 - [Jonathan Kehayias' blog posts about extended events in Microsoft SQL Server](http://www.sqlskills.com/blogs/jonathan/category/extended-events/)
@@ -265,6 +261,6 @@ Other code sample topics for extended events are available at the following link
 <!--
 ('lock_acquired' event.)
 
-- Code sample for SQL Server: [Determine Which Queries Are Holding Locks](http://msdn.microsoft.com/library/bb677357.aspx)
-- Code sample for SQL Server: [Find the Objects That Have the Most Locks Taken on Them](http://msdn.microsoft.com/library/bb630355.aspx)
+- Code sample for SQL Server: [Determine Which Queries Are Holding Locks](http://msdn.microsoft.com/zh-cn/library/bb677357.aspx)
+- Code sample for SQL Server: [Find the Objects That Have the Most Locks Taken on Them](http://msdn.microsoft.com/zh-cn/library/bb630355.aspx)
 -->

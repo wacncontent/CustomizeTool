@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Continuous delivery for cloud services with TFS in Azure | Microsoft Azure"
+	pageTitle="Continuous delivery for cloud services with TFS in Azure | Windows Azure"
 	description="Learn how to set up continuous delivery for Azure cloud apps. Code samples for MSBuild command-line statements and PowerShell scripts."
 	services="cloud-services"
 	documentationCenter=""
@@ -9,12 +9,8 @@
 
 <tags
 	ms.service="cloud-services"
-	ms.workload="tbd"
-	ms.tgt_pltfrm="na"
-	ms.devlang="dotnet"
-	ms.topic="article"
 	ms.date="08/19/2015"
-	ms.author="kempb"/>
+	wacn.date=""/>
 
 # Continuous Delivery for Cloud Services in Azure
 
@@ -63,7 +59,7 @@ everything is configured correctly and that the MSBuild command does
 what you want it to do. You can either add this command line to existing
 build scripts on the build server, or you can use the command line in a
 TFS Build Definition, as described in the next section. For more
-information about command-line parameters and MSBuild, see [MSBuild Command Line Reference](https://msdn.microsoft.com/library/ms164311%28v=vs.140%29.aspx).
+information about command-line parameters and MSBuild, see [MSBuild Command Line Reference](https://msdn.microsoft.com/zh-cn/library/ms164311%28v=vs.140%29.aspx).
 
 1.  If Visual Studio is installed on the build server, click
     **Start**, click **All Programs**, and then locate and click
@@ -244,7 +240,7 @@ Template workflow activities in Visual Studio TFS Team Build.
         will be used as a prefix in a fully qualified domain name and
         hence it must be unique.
 
-            New-AzureService -ServiceName "mytestcloudservice" -Location "North Central US" -Label "mytestcloudservice"
+            New-AzureService -ServiceName "mytestcloudservice" -Location "China North" -Label "mytestcloudservice"
 
     -   To create a new storage account, you can call this script or use
         the Azure Management Portal. The storage account name
@@ -252,7 +248,7 @@ Template workflow activities in Visual Studio TFS Team Build.
         hence it must be unique. You can try using the same name as the
         cloud service.
 
-            New-AzureStorageAccount -ServiceName "mytestcloudservice" -Location "North Central US" -Label "mytestcloudservice"
+            New-AzureStorageAccount -ServiceName "mytestcloudservice" -Location "China North" -Label "mytestcloudservice"
 
 7.  Call the script directly from Azure PowerShell, or wire up this
     script to your host build automation to occur after the package
@@ -307,7 +303,7 @@ Template workflow activities in Visual Studio TFS Team Build.
     key and upload certificates to each target cloud service using the
     Azure Management Portal. Read the following article to learn
     more:
-    [http://msdn.microsoft.com/library/windowsazure/gg443832.aspx][].
+    [http://msdn.microsoft.com/zh-cn/library/azure/gg443832.aspx][].
 
     **Upgrade Deployment vs. Delete Deployment -\> New Deployment**
 
@@ -344,7 +340,7 @@ piped into the standard build output.
 
 2.  Select the **Process** tab.
 
-3.	Follow [these instructions](http://msdn.microsoft.com/library/dd647551.aspx) to add an
+3.	Follow [these instructions](http://msdn.microsoft.com/zh-cn/library/dd647551.aspx) to add an
     Activity project for the build process template, download the default template, add it to
 	the project and check it in. Give the build process template a new name, such as
 	AzureBuildProcessTemplate.
@@ -770,9 +766,9 @@ Write-Output "$(Get-Date -f $timeStampFormat) - Azure Cloud Service deploy scrip
 
 ## Next steps
 
-To enable remote debugging when using continuous delivery, see [Enable remote debugging when using continuous delivery to publish to Azure](cloud-services-virtual-machines-dotnet-continuous-delivery-remote-debugging.md).
+To enable remote debugging when using continuous delivery, see [Enable remote debugging when using continuous delivery to publish to Azure](/documentation/articles/cloud-services-virtual-machines-dotnet-continuous-delivery-remote-debugging).
 
-  [Continuous Delivery to Azure by Using Visual Studio Online]: cloud-services-continuous-delivery-use-vso.md  
+  [Continuous Delivery to Azure by Using Visual Studio Online]: /documentation/articles/cloud-services-continuous-delivery-use-vso
   [Team Foundation Build Service]: http://go.microsoft.com/fwlink/p/?LinkId=239963
   [.NET Framework 4]: http://go.microsoft.com/fwlink/?LinkId=239538
   [.NET Framework 4.5]: http://go.microsoft.com/fwlink/?LinkId=245484
@@ -783,7 +779,7 @@ To enable remote debugging when using continuous delivery, see [Enable remote de
   [0]: ./media/cloud-services-dotnet-continuous-delivery/tfs-01.png
   [2]: ./media/cloud-services-dotnet-continuous-delivery/tfs-02.png
   [Azure PowerShell cmdlets]: http://go.microsoft.com/fwlink/?LinkId=256262
-  [the .publishsettings file]: https://manage.windowsazure.com/download/publishprofile.aspx?wa=wsignin1.0
+  [the .publishsettings file]: https://manage.windowsazure.cn/download/publishprofile.aspx?wa=wsignin1.0
   [end of this article]: #script
 
   [3]: ./media/cloud-services-dotnet-continuous-delivery/common-task-tfs-03.png

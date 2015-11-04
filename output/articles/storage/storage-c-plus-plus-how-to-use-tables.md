@@ -1,5 +1,5 @@
 <properties
-    pageTitle="How to use Table storage (C++) | Microsoft Azure"
+    pageTitle="How to use Table storage (C++) | Windows Azure"
     description="Learn how to use the Table storage service in Azure. Samples are written in C++."
     services="storage"
     documentationCenter=".net"
@@ -8,25 +8,21 @@
     editor=""/>
 
 <tags
-    ms.service="storage"
-    ms.workload="storage"
-    ms.tgt_pltfrm="na"
-    ms.devlang="na"
-    ms.topic="article"
+	ms.service="storage"
 	ms.date="09/23/2015"
-    ms.author="tamram"/>
+	wacn.date=""/>
 
 # How to use Table storage from C++
 
-[AZURE.INCLUDE [storage-selector-table-include](../../includes/storage-selector-table-include.md)]
+[AZURE.INCLUDE [storage-selector-table-include](../includes/storage-selector-table-include.md)]
 
 ## Overview  
 This guide will show you how to perform common scenarios by using the Azure Table storage service. The samples are written in C++ and use the [Azure Storage Client Library for C++](https://github.com/Azure/azure-storage-cpp/blob/v1.0.0/README.md). The scenarios covered include **creating and deleting a table** and **working with table entities**.
 
 >[AZURE.NOTE] This guide targets the Azure Storage Client Library for C++ version 1.0.0 and above. The recommended version is Storage Client Library 1.0.0, which is available via [NuGet](http://www.nuget.org/packages/wastorage) or [GitHub](https://github.com/).
 
-[AZURE.INCLUDE [storage-table-concepts-include](../../includes/storage-table-concepts-include.md)]
-[AZURE.INCLUDE [storage-create-account-include](../../includes/storage-create-account-include.md)]
+[AZURE.INCLUDE [storage-table-concepts-include](../includes/storage-table-concepts-include.md)]
+[AZURE.INCLUDE [storage-create-account-include](../includes/storage-create-account-include.md)]
 
 
 ## Create a C++ application  
@@ -46,17 +42,17 @@ Add the following include statements to the top of the C++ file where you want t
 	#include "was/table.h"
 
 ## Set up an Azure storage connection string  
-An Azure storage client uses a storage connection string to store endpoints and credentials for accessing data management services. When running a client application, you must provide the storage connection string in the following format. Use the name of your storage account and the storage access key for the storage account listed in the Azure portal for the *AccountName* and *AccountKey* values. For information on storage accounts and access keys, see [About Azure storage accounts](storage-create-storage-account.md). This example shows how you can declare a static field to hold the connection string:  
+An Azure storage client uses a storage connection string to store endpoints and credentials for accessing data management services. When running a client application, you must provide the storage connection string in the following format. Use the name of your storage account and the storage access key for the storage account listed in the Azure Management Portal for the *AccountName* and *AccountKey* values. For information on storage accounts and access keys, see [About Azure storage accounts](/documentation/articles/storage-create-storage-account). This example shows how you can declare a static field to hold the connection string:  
 
 	// Define the connection string with your values.
 	const utility::string_t storage_connection_string(U("DefaultEndpointsProtocol=https;AccountName=your_storage_account;AccountKey=your_storage_account_key"));
 
-To test your application in your local Windows-based computer, you can use the Azure [storage emulator](storage-use-emulator.md) that is installed with the [Azure SDK](http://azure.microsoft.com/downloads/). The storage emulator is a utility that simulates the Azure Blob, Queue, and Table services available on your local development machine. The following example shows how you can declare a static field to hold the connection string to your local storage emulator:  
+To test your application in your local Windows-based computer, you can use the Azure [storage emulator](/documentation/articles/storage-use-emulator) that is installed with the [Azure SDK](/downloads/). The storage emulator is a utility that simulates the Azure Blob, Queue, and Table services available on your local development machine. The following example shows how you can declare a static field to hold the connection string to your local storage emulator:  
 
 	// Define the connection string with Azure storage emulator.
 	const utility::string_t storage_connection_string(U("UseDevelopmentStorage=true;"));  
 
-To start the Azure storage emulator, click the **Start** button or press the Windows key. Begin typing **Azure Storage Emulator**, and then select **Microsoft Azure Storage Emulator** from the list of applications.  
+To start the Azure storage emulator, click the **Start** button or press the Windows key. Begin typing **Azure Storage Emulator**, and then select **Windows Azure Storage Emulator** from the list of applications.  
 
 The following samples assume that you have used one of these two methods to get the storage connection string.  
 
@@ -87,7 +83,7 @@ A **cloud_table_client** object lets you get reference objects for tables and en
 	table.create_if_not_exists();  
 
 ## Add an entity to a table
-To add an entity to a table, create a new **table_entity** object and pass it to **table_operation::insert_entity**. The following code uses the customer's first name as the row key and last name as the partition key. Together, an entity's partition and row key uniquely identify the entity in the table. Entities with the same partition key can be queried faster than those with different partition keys, but using diverse partition keys allows for greater parallel operation scalability. For more information, see [Microsoft Azure storage performance and scalability checklist](storage-performance-checklist.md).
+To add an entity to a table, create a new **table_entity** object and pass it to **table_operation::insert_entity**. The following code uses the customer's first name as the row key and last name as the partition key. Together, an entity's partition and row key uniquely identify the entity in the table. Entities with the same partition key can be queried faster than those with different partition keys, but using diverse partition keys allows for greater parallel operation scalability. For more information, see [Windows Azure storage performance and scalability checklist](/documentation/articles/storage-performance-checklist).
 
 The following code creates a new instance of **table_entity** with some customer data to be stored. The code next calls **table_operation::insert_entity** to create a **table_operation** object to insert an entity into a table, and associates the new table entity with it. Finally, the code calls the execute method on the **cloud_table** object. And the new **table_operation** sends a request to the Table service to insert the new customer entity into the "people" table.  
 
@@ -408,8 +404,8 @@ Finally, the following code example deletes a table from a storage account. A ta
 ## Next steps
 Now that you've learned the basics of table storage, follow these links to learn more about Azure Storage:  
 
--	[How to use Blob storage from C++](storage-c-plus-plus-how-to-use-blobs.md)
--	[How to use Queue storage from C++](storage-c-plus-plus-how-to-use-queues.md)
--	[List Azure Storage resources in C++](storage-c-plus-plus-enumeration.md)
+-	[How to use Blob storage from C++](/documentation/articles/storage-c-plus-plus-how-to-use-blobs)
+-	[How to use Queue storage from C++](/documentation/articles/storage-c-plus-plus-how-to-use-queues)
+-	[List Azure Storage resources in C++](/documentation/articles/storage-c-plus-plus-enumeration)
 -	[Storage Client Library for C++ reference](http://azure.github.io/azure-storage-cpp)
--	[Azure Storage documentation](http://azure.microsoft.com/documentation/services/storage/)
+-	[Azure Storage documentation](/documentation/services/storage/)

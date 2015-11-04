@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Get started with SQL database auditing | Microsoft Azure" 
+	pageTitle="Get started with SQL database auditing | Windows Azure" 
 	description="Get started with SQL database auditing" 
 	services="sql-database" 
 	documentationCenter="" 
@@ -7,14 +7,10 @@
 	manager="jeffreyg" 
 	editor=""/>
 
-<tags 
-	ms.service="sql-database" 
-	ms.workload="data-management" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="10/08/2015" 
-	ms.author="jeffreyg"/>
+<tags
+	ms.service="sql-database"
+	ms.date="10/08/2015"
+	wacn.date=""/>
  
 # Get started with SQL database auditing 
 <p> Azure SQL Database Auditing tracks database events and writes audited events to an audit log in your Azure Storage account. Auditing is generally available for Basic, Standard, and Premium service tiers.
@@ -29,7 +25,7 @@ Auditing tools enable and facilitate adherence to compliance standards but don't
 
 ##<a id="subheading-1"></a>Azure SQL Database Auditing basics
 
-The following sections describe the configuration of Auditing using the Azure Preview Portal. You may also [Set up auditing for your database using the Classic Azure Portal].
+The following sections describe the configuration of Auditing using the Azure Preview Portal. You may also [Set up auditing for your database using the Classic Azure Management Portal].
 
 SQL Database auditing allows you to:
 
@@ -56,12 +52,12 @@ Audit logs are stored in your Azure storage account. You can define an audit log
 
 An auditing policy can be defined for a specific database or as a default server policy. A default server auditing policy will apply to all databases on a server which do not have a specific overriding database auditing policy defined.
 
-Before setting up audit auditing check if you are using a ["Downlevel Client"](sql-database-auditing-and-dynamic-data-masking-downlevel-clients.md).
+Before setting up audit auditing check if you are using a ["Downlevel Client"](/documentation/articles/sql-database-auditing-and-dynamic-data-masking-downlevel-clients).
 
 
 ##<a id="subheading-2"></a>Set up auditing for your database
 
-1. Launch the <a href="https://portal.azure.com" target="_blank">Azure Preview Portal</a> at https://portal.azure.com. Alternatively, you can also launch the <a href= "https://manage.windowsazure.com/" target="_bank">Classic Azure Portal</a> at https://manage.windowsazure.com/. Refer to details below.
+1. Launch the <a href="https://manage.windowsazure.cn" target="_blank">Azure Preview Portal</a> at https://manage.windowsazure.cn. Alternatively, you can also launch the <a href= "https://manage.windowsazure.cn/" target="_bank">Classic Azure Management Portal</a> at https://manage.windowsazure.cn/. Refer to details below.
 
 2. navigate to the configuration blade of the SQL Database / SQL Server you want to audit. Click the **Settings** button on top and then, in the Setting blade, and select **Auditing**.
 
@@ -74,7 +70,7 @@ Before setting up audit auditing check if you are using a ["Downlevel Client"](s
 4. Under **LOGGING BY EVENT**, click **SUCCESS** and **FAILURE** to log all events, or choose individual event categories.
 
 
-5. If you are configuring Auditing for a SQL Database, Click on **To enforce auditing click here ...** and on **SECURITY ENABLED ACCESS** select **REQUIRED**. If you are configuring Auditing for a SQL Server you have two options: (a) after step #6, navigate for each SQL database on the server and apply this step, or (2) [Modify Server FDQN in the connection string](sql-database-auditing-and-dynamic-data-masking-downlevel-clients.md).
+5. If you are configuring Auditing for a SQL Database, Click on **To enforce auditing click here ...** and on **SECURITY ENABLED ACCESS** select **REQUIRED**. If you are configuring Auditing for a SQL Server you have two options: (a) after step #6, navigate for each SQL database on the server and apply this step, or (2) [Modify Server FDQN in the connection string](/documentation/articles/sql-database-auditing-and-dynamic-data-masking-downlevel-clients).
 
 
 	![][5]
@@ -96,13 +92,13 @@ For more detailed instructions on working with the report template, read the <a 
 ![][6]
 
 
-##<a id="subheading-4"></a>Set up auditing for your database using the Classic Azure Portal
+##<a id="subheading-4"></a>Set up auditing for your database using the Classic Azure Management Portal
 
-1. Launch the <a href= "https://manage.windowsazure.com/" target="_bank">Classic Azure Portal</a> at https://manage.windowsazure.com/.
+1. Launch the <a href= "https://manage.windowsazure.cn/" target="_bank">Classic Azure Management Portal</a> at https://manage.windowsazure.cn/.
  
 2.   Click the SQL Database / SQL Server you want to audit, and then click the **AUDITING & SECURITY** tab. 
 
-3.   If you are configuring Auditing for a SQL Database, On **SECURITY ENABLED ACCESS** select **REQUIRED**. If you are configuring Auditing for a SQL Server you have two options: (a) after step #7, navigate for each SQL database on the server and apply this step, or (2) [Modify Server FDQN in the connection string](sql-database-auditing-and-dynamic-data-masking-downlevel-clients.md).
+3.   If you are configuring Auditing for a SQL Database, On **SECURITY ENABLED ACCESS** select **REQUIRED**. If you are configuring Auditing for a SQL Server you have two options: (a) after step #7, navigate for each SQL database on the server and apply this step, or (2) [Modify Server FDQN in the connection string](/documentation/articles/sql-database-auditing-and-dynamic-data-masking-downlevel-clients).
 
 4. At the auditing section click **ENABLED**.
 
@@ -123,7 +119,7 @@ For more detailed instructions on working with the report template, read the <a 
 
 
 ##<a id="subheading-3">Practices for usage in production</a>
-The description in this section refers to screen captures above. Either <a href="https://portal.azure.com" target="_blank">Azure Preview Portal</a> or <a href= "https://manage.windowsazure.com/" target="_bank">Classic Azure Portal</a> may be used.
+The description in this section refers to screen captures above. Either <a href="https://manage.windowsazure.cn" target="_blank">Azure Preview Portal</a> or <a href= "https://manage.windowsazure.cn/" target="_bank">Classic Azure Management Portal</a> may be used.
  
 
 ##<a id="subheading-4"></a>Storage Key Regeneration
@@ -142,13 +138,13 @@ In production you are likely to refresh your storage keys periodically. When ref
 ##<a id="subheading-4"></a>Automation
 There are several PowerShell cmdlets you can use to configure auditing in Azure SQL Database:
 
-- [Get-AzureRMSqlDatabaseAuditingPolicy](https://msdn.microsoft.com/library/azure/mt603731.aspx)
-- [Get-AzureRMSqlServerAuditingPolicy](https://msdn.microsoft.com/library/azure/mt619329.aspx)
-- [Remove-AzureRMSqlDatabaseAuditing](https://msdn.microsoft.com/library/azure/mt603796.aspx)
-- [Remove-AzureRMSqlServerAuditing](https://msdn.microsoft.com/library/azure/mt603574.aspx)
-- [Set-AzureRMSqlDatabaseAuditingPolicy](https://msdn.microsoft.com/library/azure/mt603531.aspx)
-- [Set-AzureRMSqlServerAuditingPolicy](https://msdn.microsoft.com/library/azure/mt603794.aspx)
-- [Use-AzureRMSqlServerAuditingPolicy](https://msdn.microsoft.com/library/azure/mt619353.aspx)
+- [Get-AzureRMSqlDatabaseAuditingPolicy](https://msdn.microsoft.com/zh-cn/library/azure/mt603731.aspx)
+- [Get-AzureRMSqlServerAuditingPolicy](https://msdn.microsoft.com/zh-cn/library/azure/mt619329.aspx)
+- [Remove-AzureRMSqlDatabaseAuditing](https://msdn.microsoft.com/zh-cn/library/azure/mt603796.aspx)
+- [Remove-AzureRMSqlServerAuditing](https://msdn.microsoft.com/zh-cn/library/azure/mt603574.aspx)
+- [Set-AzureRMSqlDatabaseAuditingPolicy](https://msdn.microsoft.com/zh-cn/library/azure/mt603531.aspx)
+- [Set-AzureRMSqlServerAuditingPolicy](https://msdn.microsoft.com/zh-cn/library/azure/mt603794.aspx)
+- [Use-AzureRMSqlServerAuditingPolicy](https://msdn.microsoft.com/zh-cn/library/azure/mt619353.aspx)
 
 
 
@@ -159,7 +155,7 @@ There are several PowerShell cmdlets you can use to configure auditing in Azure 
 [Azure SQL Database Auditing basics]: #subheading-1
 [Set up auditing for your database]: #subheading-2
 [Analyze audit logs and reports]: #subheading-3
-[Set up auditing for your database using the Classic Azure Portal]: #subheading-4
+[Set up auditing for your database using the Classic Azure Management Portal]: #subheading-4
 
 
 <!--Image references-->
@@ -180,8 +176,6 @@ There are several PowerShell cmdlets you can use to configure auditing in Azure 
 
 
 <!--Link references-->
-[Link 1 to another azure.microsoft.com documentation topic]: ../virtual-machines-windows-tutorial.md
-[Link 2 to another azure.microsoft.com documentation topic]: ../web-sites-custom-domain-name.md
-[Link 3 to another azure.microsoft.com documentation topic]: ../storage-whatis-account.md
-
- 
+[Link 1 to another azure.microsoft.com documentation topic]: /documentation/articles/virtual-machines-windows-tutorial
+[Link 2 to another azure.microsoft.com documentation topic]: /documentation/articles/web-sites-custom-domain-name
+[Link 3 to another azure.microsoft.com documentation topic]: /documentation/articles/storage-whatis-account

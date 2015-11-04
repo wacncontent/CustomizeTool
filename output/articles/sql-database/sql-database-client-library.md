@@ -8,20 +8,16 @@
    editor=""/>
 
 <tags
-   ms.service="sql-database"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="powershell"
-   ms.workload="data-management" 
-   ms.date="08/25/2015"
-   ms.author="sstein"/>
+	ms.service="sql-database"
+	ms.date="08/25/2015"
+	wacn.date=""/>
 
 # Create and manage SQL Database with C&#x23;
 
 > [AZURE.SELECTOR]
-- [Azure Preview Portal](sql-database-elastic-pool-portal.md)
-- [C#](sql-database-client-library.md)
-- [PowerShell](sql-database-elastic-pool-powershell.md)
+- [Azure Preview Portal](/documentation/articles/sql-database-elastic-pool-portal)
+- [C#](/documentation/articles/sql-database-client-library)
+- [PowerShell](/documentation/articles/sql-database-elastic-pool-powershell)
 
 
 ## Overview
@@ -30,7 +26,7 @@ This article provides commands to perform many Azure SQL Database management tas
 
 Individual code snippets are broken out for clarity and a sample console application brings all the commands together in the section at the bottom of this article.
 
-The Azure SQL Database Library for .NET provides an [Azure Resource Manager](resource-group-overview.md)-based API that wraps the [Resource Manager-based SQL Database REST API](https://msdn.microsoft.com/library/azure/mt163571.aspx). This client library follows the common pattern for Resource Manager-based client libraries. Resource Manager requires resource groups, and authenticating with [Azure Active Directory](https://msdn.microsoft.com/library/azure/mt168838.aspx) (AAD).
+The Azure SQL Database Library for .NET provides an [Azure Resource Manager](/documentation/articles/resource-group-overview)-based API that wraps the [Resource Manager-based SQL Database REST API](https://msdn.microsoft.com/zh-cn/library/azure/mt163571.aspx). This client library follows the common pattern for Resource Manager-based client libraries. Resource Manager requires resource groups, and authenticating with [Azure Active Directory](https://msdn.microsoft.com/zh-cn/library/azure/mt168838.aspx) (AAD).
 
 <br>
 
@@ -53,9 +49,9 @@ Get the required management libraries by installing the following packages using
 
 You must first enable your application to access the REST API by setting up the required authentication.
 
-The [Azure Resource Manager REST APIs](https://msdn.microsoft.com/library/azure/dn948464.aspx) use Azure Active Directory for authentication rather than the certificates used by the earlier Azure Service Management REST APIs. 
+The [Azure Resource Manager REST APIs](https://msdn.microsoft.com/zh-cn/library/azure/dn948464.aspx) use Azure Active Directory for authentication rather than the certificates used by the earlier Azure Service Management REST APIs. 
 
-To authenticate your client application based on the current user you must first register your application in the AAD domain associated with the subscription under which the Azure resources have been created. If your Azure subscription was created with a Microsoft account rather than a work or school account you will already have a default AAD domain. Registering the application can be done in the [management portal](https://manage.windowsazure.com/). 
+To authenticate your client application based on the current user you must first register your application in the AAD domain associated with the subscription under which the Azure resources have been created. If your Azure subscription was created with a Microsoft account rather than a work or school account you will already have a default AAD domain. Registering the application can be done in the [management portal](https://manage.windowsazure.cn/). 
 
 To create a new application and register it in the correct active directory do the following:
 
@@ -105,7 +101,7 @@ To create a new application and register it in the correct active directory do t
 
 The domain name is required for your code. An easy way to identify the proper domain name is to:
 
-1. Go to the [Azure preview portal](https://portal.azure.com).
+1. Go to the [Azure preview portal](https://manage.windowsazure.cn).
 2. Hover over your name in the upper right corner and note the Domain that appears in the pop-up window.
 
     ![Identify domain name][3]
@@ -131,8 +127,8 @@ The client application must retrieve the application access token for the curren
     private static AuthenticationResult GetAccessToken()
     {
         AuthenticationContext authContext = new AuthenticationContext
-            ("https://login.windows.net/" /* AAD URI */ 
-                + "domain.onmicrosoft.com" /* Tenant ID or AAD domain */);
+            ("https://login.chinacloudapi.cn/" /* AAD URI */ 
+                + "domain.partner.onmschina.cn" /* Tenant ID or AAD domain */);
 
         AuthenticationResult token = authContext.AcquireToken
             ("https://management.azure.com/"/* the Azure Resource Management endpoint */, 
@@ -163,7 +159,7 @@ With Resource Manager, all resources must be created in a resource group. A reso
     // Resource group parameters
     ResourceGroup resourceGroupParameters = new ResourceGroup()
     {
-        Location = "South Central US"
+        Location = "China East"
     };
     
     //Create a resource group
@@ -182,7 +178,7 @@ SQL databases are contained in servers. The server name must be globally unique 
     // Create a server
     ServerCreateOrUpdateParameters serverParameters = new ServerCreateOrUpdateParameters()
     {
-        Location = "South Central US",
+        Location = "China East",
         Properties = new ServerCreateOrUpdateProperties()
         {
             AdministratorLogin = "ServerAdmin",
@@ -198,7 +194,7 @@ SQL databases are contained in servers. The server name must be globally unique 
 
 ## Create a server firewall rule to allow access to the server
 
-By default a server cannot be connected to from any location. In order to connect to a server using TDS and submit T-SQL to the server, or to any databases on the server, a [firewall rule](https://msdn.microsoft.com/library/azure/ee621782.aspx) must be defined that allows access from the client IP address.
+By default a server cannot be connected to from any location. In order to connect to a server using TDS and submit T-SQL to the server, or to any databases on the server, a [firewall rule](https://msdn.microsoft.com/zh-cn/library/azure/ee621782.aspx) must be defined that allows access from the client IP address.
 
 The following example creates a rule that opens access to the server from any IP address. It is recommended that you create appropriate SQL logins and passwords to secure your database and not rely on firewall rules as a primary defense against intrusion. 
 
@@ -297,7 +293,7 @@ To create a new pool on a server:
     // Create elastic pool: configure create or update parameters and properties explicitly
     ElasticPoolCreateOrUpdateParameters newPoolParameters = new ElasticPoolCreateOrUpdateParameters()
     {
-        Location = "South Central US",
+        Location = "China East",
         Properties = new ElasticPoolCreateOrUpdateProperties()
         {
             Edition = "Standard",
@@ -336,7 +332,7 @@ To create a new pool on a server:
 
 ## Move an existing database into an elastic database pool
 
-*After creating a pool you can also use Transact-SQL for moving existing databases in and out of a pool. For details see, [Elastic database pool reference - Transact-SQL](sql-database-elastic-pool-reference.md#Transact-SQL).*
+*After creating a pool you can also use Transact-SQL for moving existing databases in and out of a pool. For details see, [Elastic database pool reference - Transact-SQL](/documentation/articles/sql-database-elastic-pool-reference#Transact-SQL).*
 
 To move an existing database into a pool:
 
@@ -368,7 +364,7 @@ To move an existing database into a pool:
 
 ## Create a new database in an elastic database pool
 
-*After creating a pool you can also use Transact-SQL for creating new elastic databases in the pool. For details see, [Elastic database pool reference - Transact-SQL](sql-database-elastic-pool-reference.md#Transact-SQL).*
+*After creating a pool you can also use Transact-SQL for creating new elastic databases in the pool. For details see, [Elastic database pool reference - Transact-SQL](/documentation/articles/sql-database-elastic-pool-reference#Transact-SQL).*
 
 To create a new database directly in a pool:
 
@@ -446,8 +442,8 @@ To delete a resource group:
         private static AuthenticationResult GetAccessToken()
         {
             AuthenticationContext authContext = new AuthenticationContext
-                ("https://login.windows.net/" /* AAD URI */ 
-                + "domain.onmicrosoft.com" /* Tenant ID or AAD domain */);
+                ("https://login.chinacloudapi.cn/" /* AAD URI */ 
+                + "domain.partner.onmschina.cn" /* Tenant ID or AAD domain */);
 
             AuthenticationResult token = authContext.AcquireToken
                 ("https://management.azure.com/"/* the Azure Resource Management endpoint */, 
@@ -461,8 +457,8 @@ To delete a resource group:
         private static AuthenticationResult GetAccessTokenUsingUserCredentials(UserCredential userCredential)
         {
             AuthenticationContext authContext = new AuthenticationContext
-                ("https://login.windows.net/" /* AAD URI */
-                + "YOU.onmicrosoft.com" /* Tenant ID or AAD domain */);
+                ("https://login.chinacloudapi.cn/" /* AAD URI */
+                + "YOU.partner.onmschina.cn" /* Tenant ID or AAD domain */);
 
             AuthenticationResult token = authContext.AcquireToken(
                 "https://management.azure.com/"/* the Azure Resource Management endpoint */,
@@ -496,7 +492,7 @@ To delete a resource group:
             // Resource group parameters
             ResourceGroup resourceGroupParameters = new ResourceGroup()
             {
-                Location = "South Central US"
+                Location = "China East"
             };
 
             //Create a resource group
@@ -512,7 +508,7 @@ To delete a resource group:
             // Create a server
             ServerCreateOrUpdateParameters serverParameters = new ServerCreateOrUpdateParameters()
             {
-                Location = "South Central US",
+                Location = "China East",
                 Properties = new ServerCreateOrUpdateProperties()
                 {
                     AdministratorLogin = "ServerAdmin",
@@ -590,7 +586,7 @@ To delete a resource group:
             // Create elastic pool: configure create or update parameters and properties explicitly
             ElasticPoolCreateOrUpdateParameters newPoolParameters = new ElasticPoolCreateOrUpdateParameters()
             {
-                Location = "South Central US",
+                Location = "China East",
                 Properties = new ElasticPoolCreateOrUpdateProperties()
                 {
                     Edition = "Standard",
@@ -781,11 +777,11 @@ To delete a resource group:
 
 ## Additional Resources
 
-[SQL Database](https://azure.microsoft.com/documentation/services/sql-database/)
+[SQL Database](/documentation/services/sql-database/)
 
-[Azure Resource Management APIs](https://msdn.microsoft.com/library/azure/dn948464.aspx)
+[Azure Resource Management APIs](https://msdn.microsoft.com/zh-cn/library/azure/dn948464.aspx)
 
-[Elastic database pool reference](sql-database-elastic-pool-reference.md).
+[Elastic database pool reference](/documentation/articles/sql-database-elastic-pool-reference).
 
 
 <!--Image references-->

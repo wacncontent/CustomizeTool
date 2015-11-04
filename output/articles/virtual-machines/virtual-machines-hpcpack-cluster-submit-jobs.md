@@ -1,5 +1,5 @@
 <properties
- pageTitle="Submit jobs to an HPC Pack cluster in Azure | Microsoft Azure"
+ pageTitle="Submit jobs to an HPC Pack cluster in Azure | Windows Azure"
  description="Learn how to set up an on-premises computer to submit jobs to an HPC Pack cluster in Azure"
  services="virtual-machines"
  documentationCenter=""
@@ -8,17 +8,13 @@
  editor=""
  tags="azure-resource-manager,azure-service-management"/>
 <tags
-ms.service="virtual-machines"
- ms.devlang="na"
- ms.topic="article"
- ms.tgt_pltfrm="vm-multiple"
- ms.workload="big-compute"
- ms.date="09/28/2015"
- ms.author="danlep"/>
+	ms.service="virtual-machines"
+	ms.date="09/28/2015"
+	wacn.date=""/>
 
 # Submit HPC jobs from an on-premises computer to an HPC Pack cluster in Azure
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-both-include.md)]
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-both-include.md)]
 
 This article shows you how to configure an on-premises client computer running Windows to
 run HPC Pack job submission tools that communicate with an HPC Pack
@@ -32,14 +28,14 @@ run job submission tools.
 ## Prerequisites
 
 * **HPC Pack head node deployed in an Azure VM** - You can use
-automated tools such as an [Azure quickstart template](https://azure.microsoft.com/en-us/documentation/templates/) or an [Azure PowerShell script](virtual-machines-hpcpack-cluster-powershell-script.md)
+automated tools such as an [Azure quickstart template](https://azure.microsoft.com/documentation/templates/) or an [Azure PowerShell script](/documentation/articles/virtual-machines-hpcpack-cluster-powershell-script)
 to deploy the head node and cluster, or you can deploy the cluster
 manually in Azure as you would for an on-premises cluster. You will need the DNS
 name of the head node and the credentials of a cluster administrator to
 complete the steps in this article.
 
     If you deployed the head node manually, ensure that an HTTPS endpoint is configured in the VM. If it is not, set one up. See [How to Set Up Endpoints to a Virtual
-Machine](virtual-machines-set-up-endpoints.md).
+Machine](/documentation/articles/virtual-machines-set-up-endpoints).
 
 * **HPC Pack installation media** - The free installation package for the
 latest version of HPC Pack (HPC Pack 2012 R2) is available from the
@@ -48,7 +44,7 @@ Center](http://go.microsoft.com/fwlink/?LinkId=328024). Ensure that you
 select the same version of HPC Pack that is installed on the head node
 VM.
 
-* **Client computer** - You'll need a Windows or Windows Server client computer that can run HPC Pack client utilities (see [system requirements](https://technet.microsoft.com/library/dn535781.aspx)). If you only want to use the HPC Pack web portal or REST API to submit jobs, you can use a client computer of your choice.
+* **Client computer** - You'll need a Windows or Windows Server client computer that can run HPC Pack client utilities (see [system requirements](https://technet.microsoft.com/zh-cn/library/dn535781.aspx)). If you only want to use the HPC Pack web portal or REST API to submit jobs, you can use a client computer of your choice.
 
 
 ## Step 1: Install and configure the web components on the head node
@@ -61,9 +57,9 @@ configure the components by running the HPC PowerShell script
 **Set-HPCWebComponents.ps1**.
 
 For detailed procedures, see [Install the Microsoft HPC Pack Web
-Components](http://technet.microsoft.com/library/hh314627.aspx).
+Components](http://technet.microsoft.com/zh-cn/library/hh314627.aspx).
 
->[AZURE.TIP] If you use an automated method such as the [HPC Pack IaaS deployment script](virtual-machines-hpcpack-cluster-powershell-script.md) to create the cluster,
+>[AZURE.TIP] If you use an automated method such as the [HPC Pack IaaS deployment script](/documentation/articles/virtual-machines-hpcpack-cluster-powershell-script) to create the cluster,
 you can optionally install and configure the web web components as part
 of the deployment.
 
@@ -90,7 +86,7 @@ of the deployment.
     .\Set-HPCWebComponents.ps1 –Service REST –enable
     ```
 
-4. When prompted to select a certificate, choose the certificate that corresponds to the public DNS name of the head node (CN=&lt;*HeadNodeDnsName*&gt;.cloudapp.net).
+4. When prompted to select a certificate, choose the certificate that corresponds to the public DNS name of the head node (CN=&lt;*HeadNodeDnsName*&gt;.chinacloudapp.cn).
 
     >[AZURE.NOTE] You need to select this certificate to submit jobs later to the head node from an on-premises computer. Don't select or configure a certificate that corresponds to the computer name of the head node in the Active Directory domain (for example, CN=*MyHPCHeadNode.HpcAzure.local*).
 
@@ -118,11 +114,11 @@ client computer. You'll need the certificate to be in .CER format.
 
 **To export the certificate from the head node**
 
-1. On the head node, add the Certificates snap-in to a Microsoft Management Console for the Local Computer account. For steps to add the snap-in, see [Add the Certificates Snap-in to an MMC](https://technet.microsoft.com/library/cc754431.aspx).
+1. On the head node, add the Certificates snap-in to a Microsoft Management Console for the Local Computer account. For steps to add the snap-in, see [Add the Certificates Snap-in to an MMC](https://technet.microsoft.com/zh-cn/library/cc754431.aspx).
 
 2. In the console tree, expand **Certificates – Local Computer**, expand **Personal**, and then click **Certificates**.
 
-3. Locate the certificate that you configured for the HPC Pack web components in [Step 1: Install and configure the web components on the head node](#step-1:-install-and-configure-the-web-components-on-the-head-node) (for example, named &lt;*HeadNodeDnsName*&gt;.cloudapp.net).
+3. Locate the certificate that you configured for the HPC Pack web components in [Step 1: Install and configure the web components on the head node](#step-1:-install-and-configure-the-web-components-on-the-head-node) (for example, named &lt;*HeadNodeDnsName*&gt;.chinacloudapp.cn).
 
 4. Right-click the certificate, click **All Tasks**, and then click **Export**.
 
@@ -162,7 +158,7 @@ computer**
 2. Type a sample command. For example, to list all jobs on the cluster, type the following
 
     ```
-    job list /scheduler:https://<HeadNodeDnsName>.cloudapp.net /all
+    job list /scheduler:https://<HeadNodeDnsName>.chinacloudapp.cn /all
     ```
     >[AZURE.TIP] Use the full DNS name of the head node, not the IP address, in the scheduler URL. If you specify the IP address, you’ll see an error similar to "The server certificate needs to either have a valid chain of trust or to be placed in the trusted root store".
 
@@ -179,11 +175,11 @@ computer**
 
     b. Click **Windows Credentials**, and then click **Add a generic credential**.
 
-    c. Specify the Internet address https://&lt;*HeadNodeDnsName*&gt;.cloudapp.net/HpcScheduler, and provide the user name (in the form &lt;DomainName&gt;\&lt;UserName&gt;) and password of the HPC cluster administrator or another cluster user that you configured.
+    c. Specify the Internet address https://&lt;*HeadNodeDnsName*&gt;.chinacloudapp.cn/HpcScheduler, and provide the user name (in the form &lt;DomainName&gt;\&lt;UserName&gt;) and password of the HPC cluster administrator or another cluster user that you configured.
 
 2. On the client computer, start HPC Job Manager.
 
-3. In the **Select Head Node** dialog box, type the URL to the head node in Azure in the form  https://&lt;*HeadNodeDnsName*&gt;.cloudapp.net.
+3. In the **Select Head Node** dialog box, type the URL to the head node in Azure in the form  https://&lt;*HeadNodeDnsName*&gt;.chinacloudapp.cn.
 
     HPC Job Manager opens and shows a list of jobs on the head node.
 
@@ -191,9 +187,9 @@ computer**
 
 1. Start a web browser on the client computer, and type the following address:
     ```
-    https://HeadNodeDnsName.cloudapp.net/HpcPortal
+    https://HeadNodeDnsName.chinacloudapp.cn/HpcPortal
     ```
-2. In the security dialog box that appears, type the domain credentials of the HPC cluster administrator. (You can also add other cluster users in different roles. For more information, see [Managing Cluster Users](https://technet.microsoft.com/library/ff919335.aspx).)
+2. In the security dialog box that appears, type the domain credentials of the HPC cluster administrator. (You can also add other cluster users in different roles. For more information, see [Managing Cluster Users](https://technet.microsoft.com/zh-cn/library/ff919335.aspx).)
 
     The portal opens to the job list view.
 

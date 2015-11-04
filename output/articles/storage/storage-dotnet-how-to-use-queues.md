@@ -1,6 +1,6 @@
 <properties
-	pageTitle="How to use Queue storage from .NET | Microsoft Azure"
-	description="Learn how to use Microsoft Azure Queue storage to create and delete queues and insert, peek, get, and delete queue messages."
+	pageTitle="How to use Queue storage from .NET | Windows Azure"
+	description="Learn how to use Windows Azure Queue storage to create and delete queues and insert, peek, get, and delete queue messages."
 	services="storage"
 	documentationCenter=".net"
 	authors="tamram"
@@ -9,16 +9,12 @@
 
 <tags
 	ms.service="storage"
-	ms.workload="storage"
-	ms.tgt_pltfrm="na"
-	ms.devlang="dotnet"
-	ms.topic="hero-article" 
 	ms.date="08/04/2015"
-	ms.author="tamram"/>
+	wacn.date=""/>
 
 # How to use Queue storage from .NET
 
-[AZURE.INCLUDE [storage-selector-queue-include](../../includes/storage-selector-queue-include.md)]
+[AZURE.INCLUDE [storage-selector-queue-include](../includes/storage-selector-queue-include.md)]
 
 ## Overview
 
@@ -28,17 +24,17 @@ and use the Azure Storage Client for .NET. The scenarios covered include **inser
 **peeking**, **getting**, and **deleting** queue messages, as well as
 **creating and deleting queues**.
 
-[AZURE.INCLUDE [storage-dotnet-client-library-version-include](../../includes/storage-dotnet-client-library-version-include.md)]
+[AZURE.INCLUDE [storage-dotnet-client-library-version-include](../includes/storage-dotnet-client-library-version-include.md)]
 
-[AZURE.INCLUDE [storage-queue-concepts-include](../../includes/storage-queue-concepts-include.md)]
+[AZURE.INCLUDE [storage-queue-concepts-include](../includes/storage-queue-concepts-include.md)]
 
-[AZURE.INCLUDE [storage-create-account-include](../../includes/storage-create-account-include.md)]
+[AZURE.INCLUDE [storage-create-account-include](../includes/storage-create-account-include.md)]
 
-[AZURE.INCLUDE [storage-configure-connection-string-include](../../includes/storage-configure-connection-string-include.md)]
+[AZURE.INCLUDE [storage-configure-connection-string-include](../includes/storage-configure-connection-string-include.md)]
 
 ## Programmatically access Queue storage
 
-[AZURE.INCLUDE [storage-dotnet-obtain-assembly](../../includes/storage-dotnet-obtain-assembly.md)]
+[AZURE.INCLUDE [storage-dotnet-obtain-assembly](../includes/storage-dotnet-obtain-assembly.md)]
 
 ### Namespace declarations
 Add the following code namespace declarations to the top of any C\# file
@@ -50,7 +46,7 @@ in which you wish to programmatically access Azure Storage:
 
 Make sure you reference the `Microsoft.WindowsAzure.Storage.dll` assembly.
 
-[AZURE.INCLUDE [storage-dotnet-retrieve-conn-string](../../includes/storage-dotnet-retrieve-conn-string.md)]
+[AZURE.INCLUDE [storage-dotnet-retrieve-conn-string](../includes/storage-dotnet-retrieve-conn-string.md)]
 
 ## Create a queue
 
@@ -186,7 +182,7 @@ has been processed.
 
 ## Use Async-Await pattern with common Queue storage APIs
 
-This example shows how to use the Async-Await pattern with common Queue storage APIs. The sample calls the asynchronous version of each of the given methods, as indicated by the *Async* suffix of each method. When an async method is used, the async-await pattern suspends local execution until the call completes. This behavior allows the current thread to do other work, which helps avoid performance bottlenecks and improves the overall responsiveness of your application. For more details on using the Async-Await pattern in .NET see [Async and Await (C# and Visual Basic)](https://msdn.microsoft.com/library/hh191443.aspx)
+This example shows how to use the Async-Await pattern with common Queue storage APIs. The sample calls the asynchronous version of each of the given methods, as indicated by the *Async* suffix of each method. When an async method is used, the async-await pattern suspends local execution until the call completes. This behavior allows the current thread to do other work, which helps avoid performance bottlenecks and improves the overall responsiveness of your application. For more details on using the Async-Await pattern in .NET see [Async and Await (C# and Visual Basic)](https://msdn.microsoft.com/zh-cn/library/hh191443.aspx)
 
     // Create the queue if it doesn't already exist
     if(await queue.CreateIfNotExistsAsync())
@@ -294,21 +290,21 @@ to learn about more complex storage tasks.
 
 - View the Queue service reference documentation for complete details about available APIs:
     - [Storage Client Library for .NET reference](http://go.microsoft.com/fwlink/?LinkID=390731&clcid=0x409)
-    - [REST API reference](http://msdn.microsoft.com/library/azure/dd179355)
-- Learn about more advanced tasks you can perform with Azure Storage at [Storing and Accessing Data in Azure](http://msdn.microsoft.com/library/azure/gg433040.aspx)
-- Learn how to simplify the code you write to work with Azure Storage by using the [Azure WebJobs SDK](../websites-dotnet-webjobs-sdk/).
+    - [REST API reference](http://msdn.microsoft.com/zh-cn/library/azure/dd179355)
+- Learn about more advanced tasks you can perform with Azure Storage at [Storing and Accessing Data in Azure](http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx)
+- Learn how to simplify the code you write to work with Azure Storage by using the [Azure WebJobs SDK](/documentation/articles/websites-dotnet-webjobs-sdk).
 - View more feature guides to learn about additional options for storing data in Azure.
-    - Use [Table Storage](storage-dotnet-how-to-use-tables.md) to store structured data. 
-    - Use [Blob Storage](storage-dotnet-how-to-use-blobs.md) to store unstructured data.
-    - Use [SQL Database](sql-database-dotnet-how-to-use.md) to store relational data.
+    - Use [Table Storage](/documentation/articles/storage-dotnet-how-to-use-tables) to store structured data. 
+    - Use [Blob Storage](/documentation/articles/storage-dotnet-how-to-use-blobs) to store unstructured data.
+    - Use [SQL Database](/documentation/articles/sql-database-dotnet-how-to-use) to store relational data.
 
   [Download and install the Azure SDK for .NET]: /develop/net/
   [.NET client library reference]: http://go.microsoft.com/fwlink/?LinkID=390731&clcid=0x409
-  [Creating a Azure Project in Visual Studio]: http://msdn.microsoft.com/library/azure/ee405487.aspx
-  [CloudStorageAccount]: http://msdn.microsoft.com/library/azure/microsoft.windowsazure.cloudstorageaccount_methods.aspx
-  [Storing and Accessing Data in Azure]: http://msdn.microsoft.com/library/azure/gg433040.aspx
+  [Creating a Azure Project in Visual Studio]: http://msdn.microsoft.com/zh-cn/library/azure/ee405487.aspx
+  [CloudStorageAccount]: http://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.cloudstorageaccount_methods.aspx
+  [Storing and Accessing Data in Azure]: http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx
   [Azure Storage Team Blog]: http://blogs.msdn.com/b/windowsazurestorage/
-  [Configuring Connection Strings]: http://msdn.microsoft.com/library/azure/ee758697.aspx
+  [Configuring Connection Strings]: http://msdn.microsoft.com/zh-cn/library/azure/ee758697.aspx
   [OData]: http://nuget.org/packages/Microsoft.Data.OData/5.0.2
   [Edm]: http://nuget.org/packages/Microsoft.Data.Edm/5.0.2
   [Spatial]: http://nuget.org/packages/System.Spatial/5.0.2

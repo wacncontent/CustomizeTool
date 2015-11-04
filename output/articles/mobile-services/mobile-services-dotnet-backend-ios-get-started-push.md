@@ -9,25 +9,21 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.workload="mobile"
-	ms.tgt_pltfrm="ios"
-	ms.devlang="objective-c"
-	ms.topic="article"
 	ms.date="09/28/2015"
-	ms.author="krisragh"/>
+	wacn.date=""/>
 
 
 # Add Push Notifications to iOS App and .NET Backend
 
-[AZURE.INCLUDE [mobile-services-selector-get-started-push](../../includes/mobile-services-selector-get-started-push.md)]
+[AZURE.INCLUDE [mobile-services-selector-get-started-push](../includes/mobile-services-selector-get-started-push.md)]
 
-This topic shows you how to add push notifications to the [quickstart project](mobile-services-dotnet-backend-ios-get-started.md), so that your mobile service sends a push notification each time a record is inserted. You must complete [Get Started with Mobile Services] first.
+This topic shows you how to add push notifications to the [quickstart project](/documentation/articles/mobile-services-dotnet-backend-ios-get-started), so that your mobile service sends a push notification each time a record is inserted. You must complete [Get Started with Mobile Services] first.
 
-[AZURE.INCLUDE [Enable Apple Push Notifications](../../includes/enable-apple-push-notifications.md)]
+[AZURE.INCLUDE [Enable Apple Push Notifications](../includes/enable-apple-push-notifications.md)]
 
 ## <a id="configure"></a>Configure Azure to Send Push Notifications
 
-[AZURE.INCLUDE [Configure Push Notifications in Azure Mobile Services](../../includes/mobile-services-apns-configure-push.md)]
+[AZURE.INCLUDE [Configure Push Notifications in Azure Mobile Services](../includes/mobile-services-apns-configure-push.md)]
 
 ##<a id="update-server"></a>Update Backend Code to Send Push Notifications
 
@@ -56,11 +52,11 @@ This topic shows you how to add push notifications to the [quickstart project](m
 
 ##<a name="publish-the-service"></a>Publish Mobile Service to Azure
 
-[AZURE.INCLUDE [mobile-services-dotnet-backend-publish-service](../../includes/mobile-services-dotnet-backend-publish-service.md)]
+[AZURE.INCLUDE [mobile-services-dotnet-backend-publish-service](../includes/mobile-services-dotnet-backend-publish-service.md)]
 
-[AZURE.INCLUDE [Add Push Notifications to App](../../includes/add-push-notifications-to-app.md)]
+[AZURE.INCLUDE [Add Push Notifications to App](../includes/add-push-notifications-to-app.md)]
 
-[AZURE.INCLUDE [Test Push Notifications in App](../../includes/test-push-notifications-in-app.md)]
+[AZURE.INCLUDE [Test Push Notifications in App](../includes/test-push-notifications-in-app.md)]
 
 <!-- Anchors.  -->
 [Generate the certificate signing request]: #certificates
@@ -118,12 +114,12 @@ This topic shows you how to add push notifications to the [quickstart project](m
 [iOS Provisioning Portal]: http://go.microsoft.com/fwlink/p/?LinkId=272456
 [Mobile Services iOS SDK]: https://go.microsoft.com/fwLink/p/?LinkID=266533
 [Apple Push Notification Service]: http://go.microsoft.com/fwlink/p/?LinkId=272584
-[Get started with Mobile Services]: mobile-services-dotnet-backend-ios-get-started.md
-[Azure Management Portal]: https://manage.windowsazure.com/
+[Get started with Mobile Services]: /documentation/articles/mobile-services-dotnet-backend-ios-get-started
+[Azure Management Portal]: https://manage.windowsazure.cn/
 [apns object]: http://go.microsoft.com/fwlink/p/?LinkId=272333
 
-[Get started with authentication]: mobile-services-dotnet-backend-ios-get-started-users.md
-[Mobile Services Objective-C how-to conceptual reference]: mobile-services-windows-dotnet-how-to-use-client-library.md
-[What are Notification Hubs?]: ../notification-hubs-overview.md
-[Send broadcast notifications to subscribers]: ../notification-hubs-ios-send-breaking-news.md
-[Send template-based notifications to subscribers]: ../notification-hubs-ios-send-localized-breaking-news.md
+[Get started with authentication]: /documentation/articles/mobile-services-dotnet-backend-ios-get-started-users
+[Mobile Services Objective-C how-to conceptual reference]: /documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library
+[What are Notification Hubs?]: /documentation/articles/notification-hubs-overview
+[Send broadcast notifications to subscribers]: /documentation/articles/notification-hubs-ios-send-breaking-news
+[Send template-based notifications to subscribers]: /documentation/articles/notification-hubs-ios-send-localized-breaking-news

@@ -5,9 +5,7 @@
 
 	![Set up source control](./media/mobile-services-enable-source-control/mobile-setup-source-control.png)
 
-
 3. Supply a **User name**, **New password**, confirm the password, then click the check button. 
-
 
 	The Git repository is created in your mobile service. Make a note of the credentials you just supplied; you will use them to access this and other Mobile Services repositories in your subscription.
 

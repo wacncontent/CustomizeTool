@@ -7,22 +7,18 @@
 	manager="dwrede" 
 	editor=""/>
 
-<tags 
-	ms.service="notification-hubs" 
-	ms.workload="mobile" 
-	ms.tgt_pltfrm="java" 
-	ms.devlang="java" 
-	ms.topic="article" 
-	ms.date="07/17/2015" 
-	ms.author="yuaxu"/>
+<tags
+	ms.service="notification-hubs"
+	ms.date="07/17/2015"
+	wacn.date=""/>
 
 # How to use Notification Hubs from Java
-[AZURE.INCLUDE [notification-hubs-backend-how-to-selector](../../includes/notification-hubs-backend-how-to-selector.md)]
+[AZURE.INCLUDE [notification-hubs-backend-how-to-selector](../includes/notification-hubs-backend-how-to-selector.md)]
 		
 This topic describes the key features of the new fully supported official Azure Notification Hub Java SDK. 
 This is an open source project and you can view the entire SDK code at [Java SDK]. 
 
-In general, you can access all Notification Hubs features from a Java/PHP/Python/Ruby back-end using the Notification Hub REST interface as described in the MSDN topic [Notification Hubs REST APIs](http://msdn.microsoft.com/library/dn223264.aspx). This Java SDK provides a thin wrapper over these REST interfaces in Java. 
+In general, you can access all Notification Hubs features from a Java/PHP/Python/Ruby back-end using the Notification Hub REST interface as described in the MSDN topic [Notification Hubs REST APIs](http://msdn.microsoft.com/zh-cn/library/dn223264.aspx). This Java SDK provides a thin wrapper over these REST interfaces in Java. 
 
 The SDK supports currently:
 
@@ -298,11 +294,11 @@ In this topic we showed how to create a simple Java REST client for Notification
 	- [Send cross-platform notifications to authenticated users]
 
 [Java SDK]: https://github.com/Azure/azure-notificationhubs-java-backend
-[Get started tutorial]: http://azure.microsoft.com/documentation/articles/notification-hubs-ios-get-started/
-[Get Started with Notification Hubs]: http://www.windowsazure.com/manage/services/notification-hubs/getting-started-windows-dotnet/
-[Send breaking news]: http://www.windowsazure.com/manage/services/notification-hubs/breaking-news-dotnet/
-[Send localized breaking news]: http://www.windowsazure.com/manage/services/notification-hubs/breaking-news-localized-dotnet/
-[Send notifications to authenticated users]: http://www.windowsazure.com/manage/services/notification-hubs/notify-users/
-[Send cross-platform notifications to authenticated users]: http://www.windowsazure.com/manage/services/notification-hubs/notify-users-xplat-mobile-services/
+[Get started tutorial]: /documentation/articles/notification-hubs-ios-get-started/
+[Get Started with Notification Hubs]: http://azure.microsoft.com/manage/services/notification-hubs/getting-started-windows-dotnet/
+[Send breaking news]: http://azure.microsoft.com/manage/services/notification-hubs/breaking-news-dotnet/
+[Send localized breaking news]: http://azure.microsoft.com/manage/services/notification-hubs/breaking-news-localized-dotnet/
+[Send notifications to authenticated users]: http://azure.microsoft.com/manage/services/notification-hubs/notify-users/
+[Send cross-platform notifications to authenticated users]: http://azure.microsoft.com/manage/services/notification-hubs/notify-users-xplat-mobile-services/
 [Maven]: http://maven.apache.org/
  

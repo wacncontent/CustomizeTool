@@ -24,11 +24,12 @@
     "articles/site-recovery/",
     "articles/sql-database/",
     "articles/storage/",
-    "articles/virtual-machines/"
+    "articles/virtual-machines/",
+    "articles/"
   ],
   "output_folder": "output/",
   "compare": {
-    "compare": true,
+    "compare": false,
     "path": "C:/Users/Administrator/Documents/GitHub/azure-content-mooncake-pr/"
   },
   "updateFileList": true,
@@ -55,7 +56,8 @@
     "articles/site-recovery/": [ "site-recovery" ],
     "articles/sql-database/": [ "sql-database" ],
     "articles/storage/": [ "storage" ],
-    "articles/virtual-machines/": [ "virtual-machines", "vm" ]
+    "articles/virtual-machines/": [ "virtual-machines", "vm" ],
+    "articles/": [ "" ]
   },
   "check_dates": false
 }

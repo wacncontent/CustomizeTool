@@ -9,16 +9,12 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.workload="mobile"
-	ms.tgt_pltfrm="mobile-android"
-	ms.devlang="java"
-	ms.topic="article"
 	ms.date="10/05/2015"
-	ms.author="ricksal"/>
+	wacn.date=""/>
 
 # Upload images to Azure Storage from an Android  device
 
-[AZURE.INCLUDE [mobile-services-selector-upload-data-blob-storage](../../includes/mobile-services-selector-upload-data-blob-storage.md)]
+[AZURE.INCLUDE [mobile-services-selector-upload-data-blob-storage](../includes/mobile-services-selector-upload-data-blob-storage.md)]
 
 This topic shows how to enable your Android Azure Mobile Services app to upload images to Azure Storage.
 
@@ -31,7 +27,7 @@ Before you start this tutorial, you must first complete the Mobile Services quic
 
 This tutorial also requires the following:
 
-+ An [Azure Storage account](../storage-create-storage-account.md)
++ An [Azure Storage account](/documentation/articles/storage-create-storage-account)
 + An Android device with a camera
 
 ## How the app works
@@ -45,14 +41,14 @@ Uploading the photo image is a multistep process:
 
 So what is a SAS?
 
-It's not safe to store the credentials needed to upload data to the Azure Storage service inside your client app. Instead, you store these credentials in your mobile service and use them to generate a Shared Access Signature (SAS) that grants permission to upload a new image. The SAS, a credential with a 5 minute expiration, is returned securely by Mobile Services to the client app. The app then uses this temporary credential to upload the image. For more information, see [Shared Access Signatures, Part 1: Understanding the SAS Model](storage-dotnet-shared-access-signature-part-1.md)
+It's not safe to store the credentials needed to upload data to the Azure Storage service inside your client app. Instead, you store these credentials in your mobile service and use them to generate a Shared Access Signature (SAS) that grants permission to upload a new image. The SAS, a credential with a 5 minute expiration, is returned securely by Mobile Services to the client app. The app then uses this temporary credential to upload the image. For more information, see [Shared Access Signatures, Part 1: Understanding the SAS Model](/documentation/articles/storage-dotnet-shared-access-signature-part-1)
 
 ## Code Sample
 [Here](https://github.com/Azure/mobile-services-samples/tree/master/UploadImages) is the completed client source code part of this app. To run it you must complete the Mobile Services backend parts of this tutorial.
 
 ## Update the registered insert script in the Management Portal
 
-[AZURE.INCLUDE [mobile-services-configure-blob-storage](../../includes/mobile-services-configure-blob-storage.md)]
+[AZURE.INCLUDE [mobile-services-configure-blob-storage](../includes/mobile-services-configure-blob-storage.md)]
 
 
 ## Update the quickstart app to capture and upload images.
@@ -369,7 +365,7 @@ This code sends a request to the mobile service to insert a new TodoItem. The re
 
 4. Press **Upload**. Note how the ToDoItem has been added to the list, as usual.
 
-5. In the Microsoft Azure portal, go to your storage account and press the **Containers** tab, and press the name of your container in the list.
+5. In the Windows Azure Management Portal, go to your storage account and press the **Containers** tab, and press the name of your container in the list.
 
 6. A list of your uploaded blob files will appear. Select one and press **Download**.
 
@@ -410,14 +406,13 @@ Now that you have been able to securely upload images by integrating your mobile
 
 
 <!-- URLs. -->
-[Send email from Mobile Services with SendGrid]: store-sendgrid-mobile-services-send-email-scripts.md
-[Schedule backend jobs in Mobile Services]: mobile-services-schedule-recurring-tasks.md
+[Send email from Mobile Services with SendGrid]: /documentation/articles/store-sendgrid-mobile-services-send-email-scripts
+[Schedule backend jobs in Mobile Services]: /documentation/articles/mobile-services-schedule-recurring-tasks
 [Send push notifications to Windows Store apps using Service Bus from a .NET back-end]: http://go.microsoft.com/fwlink/?LinkId=277073&clcid=0x409
-[Mobile Services server script reference]: mobile-services-how-to-use-server-scripts.md
-[Get started with Mobile Services]: mobile-services-javascript-backend-windows-store-dotnet-get-started.md
-
-[Azure Management Portal]: https://manage.windowsazure.com/
-[How To Create a Storage Account]: ../storage-create-storage-account.md
+[Mobile Services server script reference]: /documentation/articles/mobile-services-how-to-use-server-scripts
+[Get started with Mobile Services]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started
+[Azure Management Portal]: https://manage.windowsazure.cn/
+[How To Create a Storage Account]: /documentation/articles/storage-create-storage-account
 [Azure Storage Client library for Store apps]: http://go.microsoft.com/fwlink/p/?LinkId=276866
-[Mobile Services .NET How-to Conceptual Reference]: mobile-services-windows-dotnet-how-to-use-client-library.md
-[App settings]: http://msdn.microsoft.com/library/windowsazure/b6bb7d2d-35ae-47eb-a03f-6ee393e170f7
+[Mobile Services .NET How-to Conceptual Reference]: /documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library
+[App settings]: http://msdn.microsoft.com/zh-cn/library/azure/b6bb7d2d-35ae-47eb-a03f-6ee393e170f7

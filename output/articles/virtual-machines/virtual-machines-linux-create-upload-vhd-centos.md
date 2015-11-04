@@ -10,12 +10,8 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.workload="infrastructure-services"
-	ms.tgt_pltfrm="vm-linux"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="10/05/2015"
-	ms.author="szarkos"/>
+	wacn.date=""/>
 
 # Prepare a CentOS-Based Virtual Machine for Azure
 
@@ -25,14 +21,14 @@
 
 ##Prerequisites##
 
-This article assumes that you have already installed a CentOS (or similar derivative) Linux operating system to a virtual hard disk. Multiple tools exist to create .vhd files, for example a virtualization solution such as Hyper-V. For instructions, see [Install the Hyper-V Role and Configure a Virtual Machine](http://technet.microsoft.com/library/hh846766.aspx).
+This article assumes that you have already installed a CentOS (or similar derivative) Linux operating system to a virtual hard disk. Multiple tools exist to create .vhd files, for example a virtualization solution such as Hyper-V. For instructions, see [Install the Hyper-V Role and Configure a Virtual Machine](http://technet.microsoft.com/zh-cn/library/hh846766.aspx).
 
 
 **CentOS Installation Notes**
 
 - The newer VHDX format is not supported in Azure. You can convert the disk to VHD format using Hyper-V Manager or the convert-vhd cmdlet.
 
-- When installing the Linux system it is recommended that you use standard partitions rather than LVM (often the default for many installations). This will avoid LVM name conflicts with cloned VMs, particularly if an OS disk ever needs to be attached to another VM for troubleshooting.  LVM or [RAID](virtual-machines-linux-configure-raid.md) may be used on data disks if preferred.
+- When installing the Linux system it is recommended that you use standard partitions rather than LVM (often the default for many installations). This will avoid LVM name conflicts with cloned VMs, particularly if an OS disk ever needs to be attached to another VM for troubleshooting.  LVM or [RAID](/documentation/articles/virtual-machines-linux-configure-raid) may be used on data disks if preferred.
 
 - NUMA is not supported for larger VM sizes due to a bug in Linux kernel versions below 2.6.37. This issue primarily impacts distributions using the upstream Red Hat 2.6.32 kernel. Manual installation of the Azure Linux agent (waagent) will automatically disable NUMA in the GRUB configuration for the Linux kernel. More information about this can be found in the steps below.
 
@@ -68,7 +64,7 @@ This article assumes that you have already installed a CentOS (or similar deriva
 		PEERDNS=yes
 		IPV6INIT=no
 
-6.	Move (or remove) udev rules to avoid generating static rules for the Ethernet interface. These rules cause problems when cloning a virtual machine in Microsoft Azure or Hyper-V:
+6.	Move (or remove) udev rules to avoid generating static rules for the Ethernet interface. These rules cause problems when cloning a virtual machine in Windows Azure or Hyper-V:
 
 		# sudo mkdir -m 0700 /var/lib/waagent
 		# sudo mv /lib/udev/rules.d/75-persistent-net-generator.rules /var/lib/waagent/
@@ -116,34 +112,34 @@ This article assumes that you have already installed a CentOS (or similar deriva
 
 		[openlogic]
 		name=CentOS-$releasever - openlogic packages for $basearch
-		baseurl=http://olcentgbl.trafficmanager.net/openlogic/$releasever/openlogic/$basearch/
+		baseurl=http://olcentgbl.trafficmanager.cn/openlogic/$releasever/openlogic/$basearch/
 		enabled=1
 		gpgcheck=0
 
 		[base]
 		name=CentOS-$releasever - Base
-		baseurl=http://olcentgbl.trafficmanager.net/centos/$releasever/os/$basearch/
+		baseurl=http://olcentgbl.trafficmanager.cn/centos/$releasever/os/$basearch/
 		gpgcheck=1
 		gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6
 
 		#released updates
 		[updates]
 		name=CentOS-$releasever - Updates
-		baseurl=http://olcentgbl.trafficmanager.net/centos/$releasever/updates/$basearch/
+		baseurl=http://olcentgbl.trafficmanager.cn/centos/$releasever/updates/$basearch/
 		gpgcheck=1
 		gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6
 
 		#additional packages that may be useful
 		[extras]
 		name=CentOS-$releasever - Extras
-		baseurl=http://olcentgbl.trafficmanager.net/centos/$releasever/extras/$basearch/
+		baseurl=http://olcentgbl.trafficmanager.cn/centos/$releasever/extras/$basearch/
 		gpgcheck=1
 		gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6
 
 		#additional packages that extend functionality of existing packages
 		[centosplus]
 		name=CentOS-$releasever - Plus
-		baseurl=http://olcentgbl.trafficmanager.net/centos/$releasever/centosplus/$basearch/
+		baseurl=http://olcentgbl.trafficmanager.cn/centos/$releasever/centosplus/$basearch/
 		gpgcheck=1
 		enabled=0
 		gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6
@@ -151,7 +147,7 @@ This article assumes that you have already installed a CentOS (or similar deriva
 		#contrib - packages by Centos Users
 		[contrib]
 		name=CentOS-$releasever - Contrib
-		baseurl=http://olcentgbl.trafficmanager.net/centos/$releasever/contrib/$basearch/
+		baseurl=http://olcentgbl.trafficmanager.cn/centos/$releasever/contrib/$basearch/
 		gpgcheck=1
 		enabled=0
 		gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6
@@ -256,7 +252,7 @@ Preparing a CentOS 7 virtual machine for Azure is very similar to CentOS 6, howe
 		PEERDNS=yes
 		IPV6INIT=no
 
-5.	Move (or remove) udev rules to avoid generating static rules for the Ethernet interface. These rules cause problems when cloning a virtual machine in Microsoft Azure or Hyper-V:
+5.	Move (or remove) udev rules to avoid generating static rules for the Ethernet interface. These rules cause problems when cloning a virtual machine in Windows Azure or Hyper-V:
 
 		# sudo mkdir -m 0700 /var/lib/waagent
 		# sudo mv /lib/udev/rules.d/75-persistent-net-generator.rules /var/lib/waagent/ 2>/dev/null
@@ -274,34 +270,34 @@ Preparing a CentOS 7 virtual machine for Azure is very similar to CentOS 6, howe
 
 		[openlogic]
 		name=CentOS-$releasever - openlogic packages for $basearch
-		baseurl=http://olcentgbl.trafficmanager.net/openlogic/$releasever/openlogic/$basearch/
+		baseurl=http://olcentgbl.trafficmanager.cn/openlogic/$releasever/openlogic/$basearch/
 		enabled=1
 		gpgcheck=0
 
 		[base]
 		name=CentOS-$releasever - Base
-		baseurl=http://olcentgbl.trafficmanager.net/centos/$releasever/os/$basearch/
+		baseurl=http://olcentgbl.trafficmanager.cn/centos/$releasever/os/$basearch/
 		gpgcheck=1
 		gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
 
 		#released updates
 		[updates]
 		name=CentOS-$releasever - Updates
-		baseurl=http://olcentgbl.trafficmanager.net/centos/$releasever/updates/$basearch/
+		baseurl=http://olcentgbl.trafficmanager.cn/centos/$releasever/updates/$basearch/
 		gpgcheck=1
 		gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
 
 		#additional packages that may be useful
 		[extras]
 		name=CentOS-$releasever - Extras
-		baseurl=http://olcentgbl.trafficmanager.net/centos/$releasever/extras/$basearch/
+		baseurl=http://olcentgbl.trafficmanager.cn/centos/$releasever/extras/$basearch/
 		gpgcheck=1
 		gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
 
 		#additional packages that extend functionality of existing packages
 		[centosplus]
 		name=CentOS-$releasever - Plus
-		baseurl=http://olcentgbl.trafficmanager.net/centos/$releasever/centosplus/$basearch/
+		baseurl=http://olcentgbl.trafficmanager.cn/centos/$releasever/centosplus/$basearch/
 		gpgcheck=1
 		enabled=0
 		gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
@@ -309,7 +305,7 @@ Preparing a CentOS 7 virtual machine for Azure is very similar to CentOS 6, howe
 		#contrib - packages by Centos Users
 		[contrib]
 		name=CentOS-$releasever - Contrib
-		baseurl=http://olcentgbl.trafficmanager.net/centos/$releasever/contrib/$basearch/
+		baseurl=http://olcentgbl.trafficmanager.cn/centos/$releasever/contrib/$basearch/
 		gpgcheck=1
 		enabled=0
 		gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7

@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Spark on Ubuntu Resource Manager Template | Microsoft Azure"
+	pageTitle="Spark on Ubuntu Resource Manager Template | Windows Azure"
 	description="How to deploy a new Spark cluster on Ubuntu VMs using Azure PowerShell or the Azure CLI and a Resource Manager template"
 	services="virtual-machines"
 	documentationCenter=""
@@ -10,21 +10,17 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.tgt_pltfrm="vm-linux"
-	ms.workload="multiple"
 	ms.date="05/16/2015"
-	ms.author="paolosalvatori"/>
+	wacn.date=""/>
 
 # Spark on Ubuntu with a Resource Manager template
 
 Apache Spark is a fast engine for large-scale data processing. Spark has an advanced DAG execution engine that supports cyclic data flow and in-memory computing, and it can access diverse data sources, including HDFS, Spark, HBase, and S3.
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-rm-include.md)] classic deployment model. You can't deploy this resource with the classic deployment model.
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] classic deployment model. You can't deploy this resource with the classic deployment model.
 
 
-In addition to running on the Mesos or YARN cluster managers, Spark provides a simple standalone deployment mode. This tutorial will walk you through how to use a sample Azure Resource Manager template to deploy a Spark cluster on Ubuntu VMs through [Azure PowerShell](../powershell-install-configure.md) or the [Azure CLI](../xplat-cli-install.md).
+In addition to running on the Mesos or YARN cluster managers, Spark provides a simple standalone deployment mode. This tutorial will walk you through how to use a sample Azure Resource Manager template to deploy a Spark cluster on Ubuntu VMs through [Azure PowerShell](/documentation/articles/powershell-install-configure) or the [Azure CLI](/documentation/articles/xplat-cli-install).
 
 This template deploys a Spark cluster on the Ubuntu virtual machines. This template also provisions a storage account, virtual network, availability sets, public IP addresses and network interfaces required by the installation. The Spark cluster is created behind a subnet, so there is no public IP access to the cluster.  As part of the deployment, an optional "jump box" can be deployed. This "jump box" is an Ubuntu VM deployed in the subnet as well, but it *does* expose a public IP address with an open SSH port that you can connect to. Then from the "jump box", you can SSH to all the Spark VMs in the subnet.
 
@@ -36,7 +32,7 @@ The template utilizes a "t-shirt size" concept in order to specify a "Small", "M
 
 Newly deployed clusters based on this template will have the topology described in the following diagram, although other topologies can be easily achieved by customizing the template presented in this article:
 
-![cluster-architecture](media/virtual-machines-spark-template/cluster-architecture.png)
+![cluster-architecture](./media/virtual-machines-spark-template/cluster-architecture.png)
 
 As shown in the above image, the deployment topology consists of the following elements:
 
@@ -47,13 +43,13 @@ As shown in the above image, the deployment topology consists of the following e
 -	Four slave nodes running in the same virtual subnet and availability set as the master node.
 -	A jump-box VM located in the same virtual network and subnet that can be used to access the cluster.
 
-Spark version 3.0.0 is the default version and can be changed to any pre-built binaries available on the Spark repository. There is also a provision in the script to uncomment the build from source. A static IP address will be assigned to each Spark master node: 10.0.0.10. A static IP address will be assigned to each Spark slave node in order to work around the current limitation of not being able to dynamically compose a list of IP addresses from within the template. (By default, the first node will be assigned the private IP address of 10.0.0.30, the second node will be assigned 10.0.0.31, and so on.) To check deployment errors, go to the new Azure portal and look under **Resource Group** > **Last deployment** > **Check Operation Details**.
+Spark version 3.0.0 is the default version and can be changed to any pre-built binaries available on the Spark repository. There is also a provision in the script to uncomment the build from source. A static IP address will be assigned to each Spark master node: 10.0.0.10. A static IP address will be assigned to each Spark slave node in order to work around the current limitation of not being able to dynamically compose a list of IP addresses from within the template. (By default, the first node will be assigned the private IP address of 10.0.0.30, the second node will be assigned 10.0.0.31, and so on.) To check deployment errors, go to the new Azure Management Portal and look under **Resource Group** > **Last deployment** > **Check Operation Details**.
 
 Before diving into more details related to Azure Resource Manager and the template we will use for this deployment, make sure you have Azure PowerShell or the Azure CLI configured correctly.
 
-[AZURE.INCLUDE [arm-getting-setup-powershell](../../includes/arm-getting-setup-powershell.md)]
+[AZURE.INCLUDE [arm-getting-setup-powershell](../includes/arm-getting-setup-powershell.md)]
 
-[AZURE.INCLUDE [xplat-getting-set-up-arm](../../includes/xplat-getting-set-up-arm.md)]
+[AZURE.INCLUDE [xplat-getting-set-up-arm](../includes/xplat-getting-set-up-arm.md)]
 
 ## Create a Spark cluster by using a Resource Manager template
 
@@ -147,7 +143,7 @@ In the "parameters" section at the top of the azuredeploy.json file, you'll find
 	},
 	"region": {
 		"type": "string",
-		"defaultValue": "West US",
+		"defaultValue": "China North",
 		"metadata": {
 			"Description": "Location where resources will be provisioned"
 		}
@@ -260,7 +256,7 @@ Here is an example set of parameters from the azuredeploy-parameters.json file. 
     "value": "Passw0rd!"
   },
   "region": {
-    "value": "West US"
+    "value": "China North"
   },
   "virtualNetworkName": {
     "value": "sparkClustVnet"
@@ -299,7 +295,7 @@ Fill in an Azure deployment name, resource group name, Azure location, and the f
 ```powershell
 $deployName="<deployment name>"
 $RGName="<resource group name>"
-$locName="<Azure location, such as West US>"
+$locName="<Azure location, such as China North>"
 $folderName="<folder name, such as C:\Azure\Templates\Spark>"
 $templateFile= $folderName + "\azuredeploy.json"
 $templateParameterFile= $folderName + "\azuredeploy-parameters.json"
@@ -366,7 +362,7 @@ Parameters        :
                     imageOffer       String                     UbuntuServer
                     imageSKU         String                     14.04.2-LTS
                     storageAccountName  String                  paolosspark
-                    region           String                     West US
+                    region           String                     China North
                     virtualNetworkName  String                  sparkClustVnet
                     addressPrefix    String                     10.0.0.0/16
 										subnetName       String                     Subnet1
@@ -381,14 +377,14 @@ Parameters        :
 
 During and after deployment, you can check all the requests that were made during provisioning, including any errors that occurred.
 
-To do that, go to the [Azure portal](https://portal.azure.com) and do the following:
+To do that, go to the [Azure Management Portal](https://manage.windowsazure.cn) and do the following:
 
 - Click **Browse** on the left-hand navigation bar, and then scroll down and click **Resource Groups**.
 - Click the resource group that you just created, to bring up the "Resource Group" blade.
 - By clicking the **Events** bar graph in the **Monitoring** part of the "Resource Group" blade, you can see the events for your deployment.
 - By clicking individual events, you can drill further down into the details of each individual operation made on behalf of the template.
 
-![portal-events](media/virtual-machines-spark-template/portal-events.png)
+![portal-events](./media/virtual-machines-spark-template/portal-events.png)
 
 After your tests, if you need to remove this resource group and all of its resources (the storage account, virtual machine, and virtual network), use this single command:
 
@@ -400,7 +396,7 @@ Remove-AzureResourceGroup -Name "<resource group name>" -Force
 
 To deploy a Spark cluster via the Azure CLI, first create a resource group by specifying a name and a location:
 
-	azure group create SparkResourceGroup "West US"
+	azure group create SparkResourceGroup "China North"
 
 Pass this resource group name, the location of the JSON template file, and the location of the parameters file (see the above Azure PowerShell section for details) into the following command:
 
@@ -416,7 +412,7 @@ In order to design a robust and reusable Resource Manager template, additional t
 
 This diagram describes the relationships between all the files downloaded from GitHub for this deployment:
 
-![spark-files](media/virtual-machines-spark-template/spark-files.png)
+![spark-files](./media/virtual-machines-spark-template/spark-files.png)
 
 This section steps you through the structure of the azuredeploy.json file for the Spark cluster.
 
@@ -494,7 +490,7 @@ The **vmStorageAccountContainerName** variable is an example of a simple name/va
 
 If you want to customize the size of the Spark cluster deployment, then you can change the properties of the variables **tshirtSizeS**, **tshirtSizeM**, and **tshirtSizeL** in the azuredeploy.json template.  
 
-More information regarding the template language can be found on MSDN at [Azure Resource Manager Template Language](../resource-group-authoring-templates.md).
+More information regarding the template language can be found on MSDN at [Azure Resource Manager Template Language](/documentation/articles/resource-group-authoring-templates).
 
 
 ### "resources" section
@@ -643,7 +639,7 @@ A resource that uses the **copy** element will "copy" itself for the number of t
 			"osDisk" : {
 				"name": "osdisk",
 				"vhd": {
-					"uri": "[concat('https://',parameters('storageAccountName'),'.blob.core.windows.net/',variables('vmStorageAccountContainerName'),'/','osdisk', copyindex() ,'.vhd')]"
+					"uri": "[concat('https://',parameters('storageAccountName'),'.blob.core.chinacloudapi.cn/',variables('vmStorageAccountContainerName'),'/','osdisk', copyindex() ,'.vhd')]"
 					},
 					"caching": "ReadWrite",
 					"createOption": "FromImage"
@@ -697,7 +693,7 @@ A resource that uses the **copy** element will "copy" itself for the number of t
 				"osDisk" : {
 					"name": "osdisksl",
 					"vhd": {
-						"uri": "[concat('https://',parameters('storageAccountName'),'.blob.core.windows.net/',variables('vmStorageAccountContainerName'),'/','osdisksl', copyindex() ,'.vhd')]"
+						"uri": "[concat('https://',parameters('storageAccountName'),'.blob.core.chinacloudapi.cn/',variables('vmStorageAccountContainerName'),'/','osdisksl', copyindex() ,'.vhd')]"
 					},
 					"caching": "ReadWrite",
 					"createOption": "FromImage"
@@ -827,7 +823,7 @@ If you look at the JSON snippet of the latest virtual machine extension, you can
 
 By familiarizing yourself with the other files included in this deployment, you will be able to understand all the details and best practices required to organize and orchestrate complex deployment strategies for multi-node solutions, based on any technology, leveraging Azure Resource Manager templates. While not mandatory, a recommended approach is to structure your template files as highlighted by the following diagram:
 
-![spark-template-structure](media/virtual-machines-spark-template/spark-template-structure.png)
+![spark-template-structure](./media/virtual-machines-spark-template/spark-template-structure.png)
 
 In essence, this approach suggests to:
 
@@ -837,12 +833,12 @@ In essence, this approach suggests to:
 -	For identical members of a group of resources (nodes in a cluster, etc.), create specific templates that leverage resource looping in order to deploy multiple instances with unique properties.
 -	For all post-deployment tasks (product installation, configurations, etc.), leverage script deployment extensions and create scripts specific to each technology.
 
-For more information, see [Azure Resource Manager Template Language](../resource-group-authoring-templates.md).
+For more information, see [Azure Resource Manager Template Language](/documentation/articles/resource-group-authoring-templates).
 
 ## Next steps
 
-Read more details on [deploying a template](../resource-group-template-deploy.md).
+Read more details on [deploying a template](/documentation/articles/resource-group-template-deploy).
 
-Discover more [application frameworks](virtual-machines-app-frameworks.md).
+Discover more [application frameworks](/documentation/articles/virtual-machines-app-frameworks).
 
-[Troubleshoot template deployments](resource-group-deploy-debug.md).
+[Troubleshoot template deployments](/documentation/articles/resource-group-deploy-debug).

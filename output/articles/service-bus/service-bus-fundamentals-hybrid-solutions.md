@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Azure Service Bus | Microsoft Azure" 
+	pageTitle="Azure Service Bus | Windows Azure" 
 	description="An introduction to different ways you can use the Service Bus to connect Azure applications to other software." 
 	services="service-bus" 
 	documentationCenter=".net" 
@@ -7,14 +7,10 @@
 	manager="timlt" 
 	editor=""/>
 
-<tags 
-	ms.service="service-bus" 
-	ms.workload="tbd" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="multiple" 
-	ms.topic="article" 
-	ms.date="07/25/2015" 
-	ms.author="sethm"/>
+<tags
+	ms.service="service-bus"
+	ms.date="07/25/2015"
+	wacn.date=""/>
 
 # Azure Service Bus
 
@@ -104,7 +100,7 @@ Relays are the right solution when you need direct communication between applica
 
 ## Event Hubs
 
-Event Hubs is a highly scalable ingestion system that can process millions of events per second, enabling your application to process and analyze the massive amounts of data produced by your connected devices and applications. For example, you could use an Event Hub to collect live engine performance data from a fleet of cars. Once collected into Event Hubs, you can transform and store data using any real-time analytics provider or storage cluster. For more information about Event Hubs, see the [Event Hubs overview](../event-hubs-overview.md).
+Event Hubs is a highly scalable ingestion system that can process millions of events per second, enabling your application to process and analyze the massive amounts of data produced by your connected devices and applications. For example, you could use an Event Hub to collect live engine performance data from a fleet of cars. Once collected into Event Hubs, you can transform and store data using any real-time analytics provider or storage cluster. For more information about Event Hubs, see the [Event Hubs overview](/documentation/articles/event-hubs-overview).
 
 ## Summary
 
@@ -114,16 +110,16 @@ Connecting applications has always been part of building complete solutions, and
 
 Now that you've learned the fundamentals of Azure Service Bus, follow these links to learn more.
 
-- How to use [Service Bus queues](service-bus-dotnet-how-to-use-queues.md).
-- How to use [Service Bus topics](service-bus-dotnet-how-to-use-topics-subscriptions.md).
-- How to use [Service Bus relay](service-bus-dotnet-how-to-use-relay.md).
+- How to use [Service Bus queues](/documentation/articles/service-bus-dotnet-how-to-use-queues).
+- How to use [Service Bus topics](/documentation/articles/service-bus-dotnet-how-to-use-topics-subscriptions).
+- How to use [Service Bus relay](/documentation/articles/service-bus-dotnet-how-to-use-relay).
 - Service Bus samples: see the overview on [MSDN][]. 
 
 [svc-bus]: ./media/fundamentals-service-bus-hybrid-solutions/SvcBus_01_architecture.png
 [queues]: ./media/fundamentals-service-bus-hybrid-solutions/SvcBus_02_queues.png
 [topics-subs]: ./media/fundamentals-service-bus-hybrid-solutions/SvcBus_03_topicsandsubscriptions.png
 [relay]: ./media/fundamentals-service-bus-hybrid-solutions/SvcBus_04_relay.png
-[MSDN]: https://msdn.microsoft.com/library/dn194201.aspx 
+[MSDN]: https://msdn.microsoft.com/zh-cn/library/dn194201.aspx 
 
 [1]: ./media/service-bus-fundamentals-hybrid-solutions/SvcBus_01_architecture.png
 [2]: ./media/service-bus-fundamentals-hybrid-solutions/SvcBus_02_queues.png

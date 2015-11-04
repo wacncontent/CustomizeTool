@@ -1,5 +1,5 @@
 <properties 
-  pageTitle="Deploying Your Own Private Docker Registry on Azure | Microsoft Azure"
+  pageTitle="Deploying Your Own Private Docker Registry on Azure | Windows Azure"
   description="Describes how you can use Docker Registry to host your container images on the Azure Blob Storage service."
   services="virtual-machines"
   documentationCenter="virtual-machines"
@@ -9,22 +9,18 @@
   tags="azure-service-management,azure-resource-manager" />
 
 <tags
-  ms.service="virtual-machines"
-  ms.devlang="multiple"
-  ms.topic="article"
-  ms.tgt_pltfrm="vm-linux"
-  ms.workload="infrastructure-services"
-  ms.date="06/17/2015" 
-  ms.author="ahmetb" />
+	ms.service="virtual-machines"
+	ms.date="06/17/2015"
+	wacn.date=""/>
 
 # Deploying Your Own Private Docker Registry on Azure
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-both-include.md)]
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-both-include.md)]
 
 
 
 This document describes what a Docker private registry is and shows how you can deploy a Docker Registry 2.0
-container image to a Docker private registry on Microsoft Azure using Azure Blob Storage.
+container image to a Docker private registry on Windows Azure using Azure Blob Storage.
 
 This document assumes:
 
@@ -53,7 +49,7 @@ and use a private Docker registry in Azure that you control yourself.
 
 ## Why should you Host a Docker Registry on Azure?
 
-By hosting your Docker Registry instance on Microsoft Azure and storing your
+By hosting your Docker Registry instance on Windows Azure and storing your
 images on Azure Blob Storage, you can have several benefits:
 
 **Security:** Your Docker images do not leave Azure datacenters, so they do
@@ -63,7 +59,7 @@ images on Azure Blob Storage, you can have several benefits:
 datacenter or region as your applications. This means the images will be
 pulled faster and more reliably compared to Docker Hub.
 
-**Reliability:** By using Microsoft Azure Blob Storage, you can make use
+**Reliability:** By using Windows Azure Blob Storage, you can make use
 of many storage properties like high availability, redundancy, premium
 storage (SSDs), and so on.
 

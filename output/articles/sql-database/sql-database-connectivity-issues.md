@@ -7,14 +7,10 @@
 	manager="jeffreyg" 
 	editor=""/>
 
-<tags 
-	ms.service="sql-database" 
-	ms.devlang="NA" 
-	ms.workload="data-management" 
-	ms.topic="article" 
-	ms.tgt_pltfrm="NA" 
-	ms.date="07/24/2015" 
-	ms.author="sstein"/>
+<tags
+	ms.service="sql-database"
+	ms.date="07/24/2015"
+	wacn.date=""/>
 
 
 # SQL Database Connection Issues
@@ -26,8 +22,8 @@ This article provides an overview on how to use various troubleshooters when you
 
 Use SQL Server Management Studio or SQLCMD.EXE to verify that you can connect to the database.
 
-- For directions on connecting to SQL Database with SQL Server Management Studio (SSMS), see [How to connect to an Azure SQL Database with SSMS](sql-database-connect-to-database.md).
-- For directions on connecting to SQL Database with SQLCMD, see [How to: Connect to Azure SQL Database Using sqlcmd](https://msdn.microsoft.com/library/azure/ee336280.aspx).
+- For directions on connecting to SQL Database with SQL Server Management Studio (SSMS), see [How to connect to an Azure SQL Database with SSMS](/documentation/articles/sql-database-connect-to-database).
+- For directions on connecting to SQL Database with SQLCMD, see [How to: Connect to Azure SQL Database Using sqlcmd](https://msdn.microsoft.com/zh-cn/library/azure/ee336280.aspx).
 
 
 
@@ -35,7 +31,7 @@ Use SQL Server Management Studio or SQLCMD.EXE to verify that you can connect to
 
 Ensure that firewall rule to allow all Azure services is enabled for the server/database.
 
-- For information about firewall rules and enabling connections from Azure, see [Azure SQL Database Firewall](https://msdn.microsoft.com/library/azure/ee621782.aspx#ConnectingFromAzure).
+- For information about firewall rules and enabling connections from Azure, see [Azure SQL Database Firewall](https://msdn.microsoft.com/zh-cn/library/azure/ee621782.aspx#ConnectingFromAzure).
 
 
 
@@ -43,11 +39,11 @@ Ensure that firewall rule to allow all Azure services is enabled for the server/
 
 Ensure that firewall rules to allow access from specific network(s) is enabled for the server/database.
 
-- For general information about firewall rules, see [Azure SQL Database Firewall](https://msdn.microsoft.com/library/azure/ee621782.aspx).
-- For directions on setting up firewall rules, see [How to: Configure Firewall Settings (Azure SQL Database)](https://msdn.microsoft.com/library/azure/jj553530.aspx).
+- For general information about firewall rules, see [Azure SQL Database Firewall](https://msdn.microsoft.com/zh-cn/library/azure/ee621782.aspx).
+- For directions on setting up firewall rules, see [How to: Configure Firewall Settings (Azure SQL Database)](https://msdn.microsoft.com/zh-cn/library/azure/jj553530.aspx).
 
 
-## If the firewall rules are configured correctly, then try the [Troubleshoot Microsoft Azure SQL Database connectivity](https://support2.microsoft.com/common/survey.aspx?scid=sw;en;3844&showpage=1) guided walkthrough.
+## If the firewall rules are configured correctly, then try the [Troubleshoot Windows Azure SQL Database connectivity](https://support2.microsoft.com/common/survey.aspx?scid=sw;en;3844&showpage=1) guided walkthrough.
 
 The above support article provides help for the following SQL Database connectivity issues:
 
@@ -62,12 +58,12 @@ The above support article provides help for the following SQL Database connectiv
 
 ## Additional Information
 
-- For additional information about connecting to SQL Database, see [Guidelines for Connecting to Azure SQL Database Programmatically](https://msdn.microsoft.com/library/azure/ee336282.aspx).   
+- For additional information about connecting to SQL Database, see [Guidelines for Connecting to Azure SQL Database Programmatically](https://msdn.microsoft.com/zh-cn/library/azure/ee336282.aspx).   
 
-- Details about specific connection errors can be found in the **Transient faults, Connection-loss errors** section in [Error messages for SQL Database client programs](sql-database-develop-error-messages.md#bkmk_connection_errors).
+- Details about specific connection errors can be found in the **Transient faults, Connection-loss errors** section in [Error messages for SQL Database client programs](/documentation/articles/sql-database-develop-error-messages#bkmk_connection_errors).
 
-- Connection event data can be accessed by querying for connectivity events using the [**sys.event_log (Azure SQL Database)**](https://msdn.microsoft.com/library/dn270018.aspx) view.
+- Connection event data can be accessed by querying for connectivity events using the [**sys.event_log (Azure SQL Database)**](https://msdn.microsoft.com/zh-cn/library/dn270018.aspx) view.
 
-- Metrics of database connectivity events can be accessed by querying the [**sys.database_connection_stats (Azure SQL Database)**](https://msdn.microsoft.com/library/dn269986.aspx) view.
+- Metrics of database connectivity events can be accessed by querying the [**sys.database_connection_stats (Azure SQL Database)**](https://msdn.microsoft.com/zh-cn/library/dn269986.aspx) view.
 
  

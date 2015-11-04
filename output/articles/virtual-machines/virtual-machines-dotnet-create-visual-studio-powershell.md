@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Creating a VM for a web project using Visual Studio | Microsoft Azure"
+	pageTitle="Creating a VM for a web project using Visual Studio | Windows Azure"
 	description="Create a virtual machine for a web application"
 	services="virtual-machines"
 	documentationCenter=""
@@ -9,12 +9,8 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.workload="infrastructure-services"
-	ms.tgt_pltfrm="vm-multiple"
-	ms.devlang="dotnet"
-	ms.topic="article"
 	ms.date="10/19/2015"
-	ms.author="kempb"/>
+	wacn.date=""/>
 
 # Creating a virtual machine for a web application with Visual Studio
 
@@ -27,7 +23,7 @@ To create a virtual machine when you create a web application, follow these step
 
 	![][0]
 
-3. For this example, in the drop-down list under Microsoft Azure, choose **Virtual Machine (v1)**, and then click the **OK** button.
+3. For this example, in the drop-down list under Windows Azure, choose **Virtual Machine (v1)**, and then click the **OK** button.
 4. Sign in to Azure if you're prompted. The **Create Virtual Machine** dialog box appears.
 
 	![][2]
@@ -59,7 +55,7 @@ To create a virtual machine when you create a web application, follow these step
 
 ## Next steps
 
-If you want to customize the published scripts you created, read more in-depth information at [Using Windows PowerShell Scripts to Publish to Dev and Test Environments](http://msdn.microsoft.com/library/dn642480.aspx).
+If you want to customize the published scripts you created, read more in-depth information at [Using Windows PowerShell Scripts to Publish to Dev and Test Environments](http://msdn.microsoft.com/zh-cn/library/dn642480.aspx).
 
 [0]: ./media/virtual-machines-dotnet-create-visual-studio-powershell/CreateVM_NewProject.PNG
 [1]: ./media/dotnet-visual-studio-create-virtual-machine/CreateVM_SignIn.PNG

@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="How to use AzCopy with Microsoft Azure Storage" 
+	pageTitle="How to use AzCopy with Windows Azure Storage" 
 	description="Learn how to use the AzCopy utility to upload, download, and copy blob and file content." 
 	services="storage" 
 	documentationCenter="" 
@@ -7,20 +7,16 @@
 	manager="adinah" 
 	editor="cgronlun"/>
 
-<tags 
-	ms.service="storage" 
-	ms.workload="storage" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="09/03/2015" 
-	ms.author="tamram"/>
+<tags
+	ms.service="storage"
+	ms.date="09/03/2015"
+	wacn.date=""/>
 
 # Getting Started with the AzCopy Command-Line Utility
 
 ## Overview
 
-AzCopy is a command-line utility designed for high-performance uploading, downloading, and copying data to and from Microsoft Azure Blob, File, and Table storage. This guide provides an overview for using AzCopy.
+AzCopy is a command-line utility designed for high-performance uploading, downloading, and copying data to and from Windows Azure Blob, File, and Table storage. This guide provides an overview for using AzCopy.
 
 > [AZURE.NOTE] This guide assumes that you have installed AzCopy 3.2.0 or later. AzCopy 3.x is now in general availability.
 > 
@@ -29,7 +25,7 @@ AzCopy is a command-line utility designed for high-performance uploading, downlo
 > Note that for AzCopy 4.x, command-line options and functionality may change in future releases.
 
 
-We also released an open-sourced library based on the core data movement framework that powers AzCopy, please find more details at [Introducing Azure Storage Data Movement Library Preview] (https://azure.microsoft.com/en-us/blog/introducing-azure-storage-data-movement-library-preview-2/)
+We also released an open-sourced library based on the core data movement framework that powers AzCopy, please find more details at [Introducing Azure Storage Data Movement Library Preview] (https://azure.microsoft.com/blog/introducing-azure-storage-data-movement-library-preview-2/)
 
 ## Download and install AzCopy
 
@@ -49,7 +45,7 @@ Next, open a command window, and navigate to the AzCopy installation directory o
 
 **Upload a file from the file system to Blob storage:**
 	
-	AzCopy /Source:C:\myfolder /Dest:https://myaccount.blob.core.windows.net/mycontainer /DestKey:key /Pattern:abc.txt
+	AzCopy /Source:C:\myfolder /Dest:https://myaccount.blob.core.chinacloudapi.cn/mycontainer /DestKey:key /Pattern:abc.txt
 
 Note that when copying single file, please specify option /Pattern with the file name. You can find more samples in the later section of this article.
 
@@ -164,7 +160,7 @@ Parameters for AzCopy are described in the table below. You can also type one of
     <td><b>/Snapshot</b></td>
     <td>Indicates whether to transfer snapshots. This option is only valid when the source is a blob. 
         <br />
-        The transferred blob snapshots are renamed in this format: [blob-name] (snapshot-time)[extension]. 
+        The transferred blob snapshots are renamed in this format: [blob-name](/documentation/articles/snapshot-time)[extension]. 
         <br />
         By default, snapshots are not copied.</td>
     <td>Y</td>
@@ -439,13 +435,13 @@ The examples below demonstrate a variety of scenarios for copying blobs with AzC
 
 **Upload a file from the file system to Blob storage:**
 	
-	AzCopy /Source:C:\myfolder /Dest:https://myaccount.blob.core.windows.net/mycontainer /DestKey:key /Pattern:abc.txt
+	AzCopy /Source:C:\myfolder /Dest:https://myaccount.blob.core.chinacloudapi.cn/mycontainer /DestKey:key /Pattern:abc.txt
 
 **Download a blob from Blob storage to the file system:**
 
-	AzCopy /Source:https://myaccount.blob.core.windows.net/mycontainer /Dest:C:\myfolder /SourceKey:key /Pattern:abc.txt
+	AzCopy /Source:https://myaccount.blob.core.chinacloudapi.cn/mycontainer /Dest:C:\myfolder /SourceKey:key /Pattern:abc.txt
 
-For more information about working with your storage access keys, please see [View, copy, and regenerate storage access keys](../storage-create-storage-account/#regeneratestoragekeys).
+For more information about working with your storage access keys, please see [View, copy, and regenerate storage access keys](/documentation/articles/storage-create-storage-account#regeneratestoragekeys).
 
 ### Copy a blob via server-side copy
 
@@ -453,11 +449,11 @@ When you copy a blob within a storage account or across storage accounts, a serv
 
 **Copy a blob within a storage account:**
 
-	AzCopy /Source:https://myaccount.blob.core.windows.net/mycontainer1 /Dest:https://myaccount.blob.core.windows.net/mycontainer2 /SourceKey:key /DestKey:key /Pattern:abc.txt 
+	AzCopy /Source:https://myaccount.blob.core.chinacloudapi.cn/mycontainer1 /Dest:https://myaccount.blob.core.chinacloudapi.cn/mycontainer2 /SourceKey:key /DestKey:key /Pattern:abc.txt 
 
 **Copy a blob across storage accounts:**
 
-	AzCopy /Source:https://sourceaccount.blob.core.windows.net/mycontainer1 /Dest:https://destaccount.blob.core.windows.net/mycontainer2 /SourceKey:key1 /DestKey:key2 /Pattern:abc.txt
+	AzCopy /Source:https://sourceaccount.blob.core.chinacloudapi.cn/mycontainer1 /Dest:https://destaccount.blob.core.chinacloudapi.cn/mycontainer2 /SourceKey:key1 /DestKey:key2 /Pattern:abc.txt
  
 ### Copy a blob from the secondary region 
 
@@ -465,35 +461,35 @@ If your storage account has read-access geo-redundant storage enabled, then you 
 
 **Copy a blob to the primary account from the secondary:**
 
-	AzCopy /Source:https://myaccount1-secondary.blob.core.windows.net/mynewcontainer1 /Dest:https://myaccount2.blob.core.windows.net/mynewcontainer2 /SourceKey:key1 /DestKey:key2 /Pattern:abc.txt
+	AzCopy /Source:https://myaccount1-secondary.blob.core.chinacloudapi.cn/mynewcontainer1 /Dest:https://myaccount2.blob.core.chinacloudapi.cn/mynewcontainer2 /SourceKey:key1 /DestKey:key2 /Pattern:abc.txt
 
 **Download a blob in the secondary to a file in the file system:**
 
-	AzCopy /Source:https://myaccount-secondary.blob.core.windows.net/mynewcontainer /Dest:C:\myfolder /SourceKey:key /Pattern:abc.txt
+	AzCopy /Source:https://myaccount-secondary.blob.core.chinacloudapi.cn/mynewcontainer /Dest:C:\myfolder /SourceKey:key /Pattern:abc.txt
 
 ### Upload a file to a new blob container or virtual directory
 
 **Upload a file to a new blob container**
 
-	AzCopy /Source:C:\myfolder /Dest:https://myaccount.blob.core.windows.net/mynewcontainer /DestKey:key /Pattern:abc.txt
+	AzCopy /Source:C:\myfolder /Dest:https://myaccount.blob.core.chinacloudapi.cn/mynewcontainer /DestKey:key /Pattern:abc.txt
 
 Note that if the specified destination container does not exist, AzCopy will create it and upload the file into it.
 
 **Upload a file to a new blob virtual directory**
 
-	AzCopy /Source:C:\myfolder /Dest:https://myaccount.blob.core.windows.net/mycontainer/vd /DestKey:key /Pattern:abc.txt
+	AzCopy /Source:C:\myfolder /Dest:https://myaccount.blob.core.chinacloudapi.cn/mycontainer/vd /DestKey:key /Pattern:abc.txt
 
 Note that if the specified virtual directory does not exist, AzCopy will upload the file to include the virtual directory in its name (*e.g.*, `vd/abc.txt` in the example above).
 
 ### Download a blob to a new folder
 
-	AzCopy /Source:https://myaccount.blob.core.windows.net/mycontainer /Dest:C:\myfolder /SourceKey:key /Pattern:abc.txt
+	AzCopy /Source:https://myaccount.blob.core.chinacloudapi.cn/mycontainer /Dest:C:\myfolder /SourceKey:key /Pattern:abc.txt
 
 If the folder `C:\myfolder` does not yet exist, AzCopy will create it in the file system and download `abc.txt ` into the new folder.
 
 ### Upload files and subfolders in a directory to a container, recursively
 
-	AzCopy /Source:C:\myfolder /Dest:https://myaccount.blob.core.windows.net/mycontainer /DestKey:key /S
+	AzCopy /Source:C:\myfolder /Dest:https://myaccount.blob.core.chinacloudapi.cn/mycontainer /DestKey:key /S
 
 Specifying option `/S` copies the contents of the specified directory to Blob storage recursively, meaning that all subfolders and their files will be copied as well. For instance, assume the following files reside in folder `C:\myfolder`:
 
@@ -513,7 +509,7 @@ After the copy operation, the container will include the following files:
 
 ### Upload files from a directory to a container, non-recursively
 
-	AzCopy /Source:C:\myfolder /Dest:https://myaccount.blob.core.windows.net/mycontainer /DestKey:key
+	AzCopy /Source:C:\myfolder /Dest:https://myaccount.blob.core.chinacloudapi.cn/mycontainer /DestKey:key
 
 If you do not specify option `/S` on the command line, AzCopy will not copy recursively. Only the files in the specified directory are copied; any subfolders and their files are NOT copied. For instance, assume the following files reside in folder `C:\myfolder`:
 
@@ -531,7 +527,7 @@ After the copy operation, the container will include the following files:
 
 ### Download all blobs in a container to a directory in the file system, recursively
 
-	AzCopy /Source:https://myaccount.blob.core.windows.net/mycontainer /Dest:C:\myfolder /SourceKey:key /S
+	AzCopy /Source:https://myaccount.blob.core.chinacloudapi.cn/mycontainer /Dest:C:\myfolder /SourceKey:key /S
 
 Assume the following blobs reside in the specified container:  
 
@@ -551,7 +547,7 @@ After the copy operation, the directory `C:\myfolder` will include the following
 
 ### Download blobs in a virtual blob directory to a directory in the file system, recursively
 
-	AzCopy /Source:https://myaccount.blob.core.windows.net/mycontainer/vd1/ /Dest:C:\myfolder /SourceKey:key /S
+	AzCopy /Source:https://myaccount.blob.core.chinacloudapi.cn/mycontainer/vd1/ /Dest:C:\myfolder /SourceKey:key /S
 
 Assume the following blobs reside in the specified container:
 
@@ -568,7 +564,7 @@ After the copy operation, the directory `C:\myfolder` will include the following
 
 ### Upload files matching the specified file pattern to a container, recursively 
 
-	AzCopy /Source:C:\myfolder /Dest:https://myaccount.blob.core.windows.net/mycontainer /DestKey:key /Pattern:a* /S
+	AzCopy /Source:C:\myfolder /Dest:https://myaccount.blob.core.chinacloudapi.cn/mycontainer /DestKey:key /Pattern:a* /S
 
 Assume the following files reside in folder `C:\myfolder`:
 
@@ -589,7 +585,7 @@ After the copy operation, the container will include the following files:
 	
 ### Download blobs with the specified prefix to the file system, recursively
 
-	AzCopy /Source:https://myaccount.blob.core.windows.net/mycontainer /Dest:C:\myfolder /SourceKey:key /Pattern:a /S
+	AzCopy /Source:https://myaccount.blob.core.chinacloudapi.cn/mycontainer /Dest:C:\myfolder /SourceKey:key /Pattern:a /S
 
 Assume the following blobs reside in the specified container. All blobs beginning with the prefix `a` will be copied:
 
@@ -611,7 +607,7 @@ Note that the prefix applies to the virtual directory, which forms the first par
 
 ### Copy a blob and its snapshots to another storage account
 
-	AzCopy /Source:https://sourceaccount.blob.core.windows.net/mycontainer1 /Dest:https://destaccount.blob.core.windows.net/mycontainer2 /SourceKey:key1 /DestKey:key2 /Pattern:abc.txt /Snapshot
+	AzCopy /Source:https://sourceaccount.blob.core.chinacloudapi.cn/mycontainer1 /Dest:https://destaccount.blob.core.chinacloudapi.cn/mycontainer2 /SourceKey:key1 /DestKey:key2 /Pattern:abc.txt /Snapshot
 
 After the copy operation, the target container will include the blob and its snapshots. Assuming the blob in the example above has two snapshots, the container will include the following blob and snapshots:
 
@@ -630,7 +626,7 @@ You can include any AzCopy command-line parameters in a response file. AzCopy pr
 
 Assume a response file named `source.txt` that specifies a source container:
 
-	/Source:http://myaccount.blob.core.windows.net/mycontainer
+	/Source:http://myaccount.blob.core.chinacloudapi.cn/mycontainer
 
 And a response file named `dest.txt` that specifies a destination folder in the file system:
 
@@ -646,13 +642,13 @@ To call AzCopy with these response files, all of which reside in a directory `C:
 
 AzCopy processes this command just as it would if you included all of the individual parameters on the command line:
 
-	AzCopy /Source:http://myaccount.blob.core.windows.net/mycontainer /Dest:C:\myfolder /SourceKey:<sourcekey> /S /Y
+	AzCopy /Source:http://myaccount.blob.core.chinacloudapi.cn/mycontainer /Dest:C:\myfolder /SourceKey:<sourcekey> /S /Y
 
 **Specify a multi-line response file**
 
 Assume a response file named `copyoperation.txt`, that contains the following lines. Each AzCopy parameter is specified on its own line:
 
-	/Source:http://myaccount.blob.core.windows.net/mycontainer
+	/Source:http://myaccount.blob.core.chinacloudapi.cn/mycontainer
 	/Dest:C:\myfolder
 	/SourceKey:<sourcekey>
 	/S 
@@ -664,11 +660,11 @@ To call AzCopy with this response files, use this command:
 
 AzCopy processes this command just as it would if you included all of the individual parameters on the command line:	
 
-	AzCopy /Source:http://myaccount.blob.core.windows.net/mycontainer /Dest:C:\myfolder /SourceKey:<sourcekey> /S /Y
+	AzCopy /Source:http://myaccount.blob.core.chinacloudapi.cn/mycontainer /Dest:C:\myfolder /SourceKey:<sourcekey> /S /Y
 
 Note that each AzCopy parameter must be specified all on one line. For example, AzCopy will fail if you split the parameter across two lines, as shown here for the `/sourcekey` parameter:
 
-	http://myaccount.blob.core.windows.net/mycontainer
+	http://myaccount.blob.core.chinacloudapi.cn/mycontainer
  	C:\myfolder
 	/sourcekey:
 	[sourcekey]
@@ -679,19 +675,19 @@ Note that each AzCopy parameter must be specified all on one line. For example, 
 	
 **Specify a SAS for the source container using the /sourceSAS option**
 
-	AzCopy /Source:https://myaccount.blob.core.windows.net/mycontainer1 /DestC:\myfolder /SourceSAS:SAS /S
+	AzCopy /Source:https://myaccount.blob.core.chinacloudapi.cn/mycontainer1 /DestC:\myfolder /SourceSAS:SAS /S
 
 **Specify a SAS for the source container on the source container URI**
 
-	AzCopy /Source:https://myaccount.blob.core.windows.net/mycontainer1/?SourceSASToken /Dest:C:\myfolder /S
+	AzCopy /Source:https://myaccount.blob.core.chinacloudapi.cn/mycontainer1/?SourceSASToken /Dest:C:\myfolder /S
 
 **Specify a SAS for the destination container using the /destSAS option**
 
-	AzCopy /Source:C:\myfolder /Dest:https://myaccount.blob.core.windows.net/mycontainer1 /DestSAS:SAS /Pattern:abc.txt
+	AzCopy /Source:C:\myfolder /Dest:https://myaccount.blob.core.chinacloudapi.cn/mycontainer1 /DestSAS:SAS /Pattern:abc.txt
 
 **Specify a SAS for the source and destination containers**
 
-	AzCopy /Source:https://myaccount.blob.core.windows.net/mycontainer1 /Dest:https://myaccount.blob.core.windows.net/mycontainer2 /SourceSAS:SAS1 /DestSAS:SAS2 /Pattern:abc.txt
+	AzCopy /Source:https://myaccount.blob.core.chinacloudapi.cn/mycontainer1 /Dest:https://myaccount.blob.core.chinacloudapi.cn/mycontainer2 /SourceSAS:SAS1 /DestSAS:SAS2 /Pattern:abc.txt
 
 ### Specify a journal file folder
 
@@ -701,13 +697,13 @@ If the journal file does exist, AzCopy will check whether the command line that 
 
 **Use the default location for the journal file**
 
-	AzCopy /Source:C:\myfolder /Dest:https://myaccount.blob.core.windows.net/mycontainer /DestKey:key /Z
+	AzCopy /Source:C:\myfolder /Dest:https://myaccount.blob.core.chinacloudapi.cn/mycontainer /DestKey:key /Z
 
 If you omit option `/Z`, or specify option `/Z` without the folder path, as shown above, AzCopy creates the journal file in the default location, which is `%SystemDrive%\Users\%username%\AppData\Local\Microsoft\Azure\AzCopy`. If the journal file already exists, then AzCopy resumes the operation based on the journal file. 
 
 **Specify a custom location for the journal file**
 
-	AzCopy /Source:C:\myfolder /Dest:https://myaccount.blob.core.windows.net/mycontainer /DestKey:key /Z:C:\journalfolder\
+	AzCopy /Source:C:\myfolder /Dest:https://myaccount.blob.core.chinacloudapi.cn/mycontainer /DestKey:key /Z:C:\journalfolder\
 
 This example creates the journal file if it does not already exist. If it does exist, then AzCopy resumes the operation based on the journal file.
 
@@ -722,20 +718,20 @@ This example resumes the last operation, which may have failed to complete.
 
 **Write to the verbose log file in the default location**
 
-	AzCopy /Source:C:\myfolder /Dest:https://myaccount.blob.core.windows.net/mycontainer /DestKey:key /V
+	AzCopy /Source:C:\myfolder /Dest:https://myaccount.blob.core.chinacloudapi.cn/mycontainer /DestKey:key /V
 
 If you specify option `/V` without providing a file path to the verbose log, then AzCopy creates the log file in the default location, which is `%SystemDrive%\Users\%username%\AppData\Local\Microsoft\Azure\AzCopy`.
 
 **Write to the verbose log file in a custom location**
 
-	AzCopy /Source:C:\myfolder /Dest:https://myaccount.blob.core.windows.net/mycontainer /DestKey:key /V:C:\myfolder\azcopy1.log
+	AzCopy /Source:C:\myfolder /Dest:https://myaccount.blob.core.chinacloudapi.cn/mycontainer /DestKey:key /V:C:\myfolder\azcopy1.log
 
 Note that if you specify a relative path following option `/V`, such as `/V:test/azcopy1.log`, then the verbose log is created in the current working directory within a subfolder named `test`.
 
 
 ### Set the last-modified time of downloaded files to be same as the source blobs
 
-	AzCopy /Source:https://myaccount.blob.core.windows.net/mycontainer /Dest:C:\myfolder /SourceKey:key /MT
+	AzCopy /Source:https://myaccount.blob.core.chinacloudapi.cn/mycontainer /Dest:C:\myfolder /SourceKey:key /MT
 
 ### Exclude blobs from the copy operation based on their last-modified time
 
@@ -743,11 +739,11 @@ Specify the `/MT` option to compare the last-modified time of the source blob an
 
 **Exclude blobs whose last modified time is the same or newer than the destination file**
 
-	AzCopy /Source:https://myaccount.blob.core.windows.net/mycontainer /Dest:C:\myfolder /SourceKey:key /MT /XN
+	AzCopy /Source:https://myaccount.blob.core.chinacloudapi.cn/mycontainer /Dest:C:\myfolder /SourceKey:key /MT /XN
 
 **Exclude blobs whose last modified time is the same or older than the destination file**
 
-	AzCopy /Source:https://myaccount.blob.core.windows.net/mycontainer /Dest:C:\myfolder /SourceKey:key /MT /XO
+	AzCopy /Source:https://myaccount.blob.core.chinacloudapi.cn/mycontainer /Dest:C:\myfolder /SourceKey:key /MT /XO
 
 ### Specify the number of concurrent operations to start
 
@@ -764,7 +760,7 @@ AzCopy by default copies data between two storage endpoints asynchronously. Ther
 
 The `/SyncCopy` option ensures that the copy operation will get consistent speed. AzCopy performs the synchronous copy by downloading the blobs to copy from the specified source to local memory, and then uploading them to the Blob storage destination.
 
-	AzCopy /Source:https://myaccount1.blob.core.windows.net/myContainer/ /Dest:https://myaccount2.blob.core.windows.net/myContainer/ /SourceKey:key1 /DestKey:key2 /Pattern:ab /SyncCopy
+	AzCopy /Source:https://myaccount1.blob.core.chinacloudapi.cn/myContainer/ /Dest:https://myaccount2.blob.core.chinacloudapi.cn/myContainer/ /SourceKey:key1 /DestKey:key2 /Pattern:ab /SyncCopy
 
 Note that `/SyncCopy` might generate additional egress cost comparing to asynchronous copy, the recommended approach is to use this option in the Azure VM which is in the same region as your source storage account to avoid egress cost.
 
@@ -772,11 +768,11 @@ Note that `/SyncCopy` might generate additional egress cost comparing to asynchr
 
 By default, AzCopy sets the content type of a destination blob to `application/octet-stream`. Beginning with version 3.1.0, you can explicitly specify the content type via the option `/SetContentType:[content-type]`. This syntax sets the content type for all blobs in a copy operation.
 
-	AzCopy /Source:C:\myfolder\ /Dest:https://myaccount.blob.core.windows.net/myContainer/ /DestKey:key /Pattern:ab /SetContentType:video/mp4
+	AzCopy /Source:C:\myfolder\ /Dest:https://myaccount.blob.core.chinacloudapi.cn/myContainer/ /DestKey:key /Pattern:ab /SetContentType:video/mp4
 
 If you specify `/SetContentType` without a value, then AzCopy will set each blob or file's content type according to its file extension.
 
-	AzCopy /Source:C:\myfolder\ /Dest:https://myaccount.blob.core.windows.net/myContainer/ /DestKey:key /Pattern:ab /SetContentType
+	AzCopy /Source:C:\myfolder\ /Dest:https://myaccount.blob.core.chinacloudapi.cn/myContainer/ /DestKey:key /Pattern:ab /SetContentType
 
 ## Copy files in Azure File storage with AzCopy (preview version only)
 
@@ -784,27 +780,27 @@ The examples below demonstrate a variety of scenarios for copying Azure files wi
 
 ### Download a file from an Azure file share to the file system
 
-	AzCopy /Source:https://myaccount.file.core.windows.net/myfileshare/myfolder1/ /Dest:C:\myfolder /SourceKey:key /Pattern:abc.txt
+	AzCopy /Source:https://myaccount.file.core.chinacloudapi.cn/myfileshare/myfolder1/ /Dest:C:\myfolder /SourceKey:key /Pattern:abc.txt
 
 Note that if the specified source is an Azure file share, then you must either specify the exact file name, (*e.g.* `abc.txt`) to copy a single file, or specify option `/S` to copy all files in the share recursively. Attempting to specify both a file pattern and option `/S` together will result in an error.
 
 ### Download files and folders in an Azure file share to the file system, recursively, specify the share access signature
 
-	AzCopy /Source:https://myaccount.file.core.windows.net/myfileshare/ /Dest:C:\myfolder /SourceSAS:SAS /S
+	AzCopy /Source:https://myaccount.file.core.chinacloudapi.cn/myfileshare/ /Dest:C:\myfolder /SourceSAS:SAS /S
 
 Note that any empty folders will not be copied.
 
 
 ### Upload files and folders from the file system to an Azure file share, recursively
 
-	AzCopy /Source:C:\myfolder /Dest:https://myaccount.file.core.windows.net/myfileshare/ /DestKey:key /S
+	AzCopy /Source:C:\myfolder /Dest:https://myaccount.file.core.chinacloudapi.cn/myfileshare/ /DestKey:key /S
 
 Note that any empty folders will not be copied.
 
 
 ### Upload files matching the specified file pattern to an Azure file share, recursively
 
-	AzCopy /Source:C:\myfolder /Dest:https://myaccount.file.core.windows.net/myfileshare/ /DestKey:key /Pattern:ab* /S
+	AzCopy /Source:C:\myfolder /Dest:https://myaccount.file.core.chinacloudapi.cn/myfileshare/ /DestKey:key /Pattern:ab* /S
 
 ### Asynchronously copy files in Azure File Storage
 
@@ -812,15 +808,15 @@ Azure File Storage supports server side asynchronous copying.
 
 Asynchronous copying from File Storage to File Storage:
 
-	AzCopy /Source:https://myaccount1.file.core.windows.net/myfileshare1/ /Dest:https://myaccount2.file.core.windows.net/myfileshare2/ /SourceKey:key1 /DestKey:key2 /S
+	AzCopy /Source:https://myaccount1.file.core.chinacloudapi.cn/myfileshare1/ /Dest:https://myaccount2.file.core.chinacloudapi.cn/myfileshare2/ /SourceKey:key1 /DestKey:key2 /S
 
 Asynchronous copying from File Storage to Block Blob:
   
-	AzCopy /Source:https://myaccount1.file.core.windows.net/myfileshare/ /Dest:https://myaccount2.blob.core.windows.net/mycontainer/ /SourceKey:key1 /DestKey:key2 /S
+	AzCopy /Source:https://myaccount1.file.core.chinacloudapi.cn/myfileshare/ /Dest:https://myaccount2.blob.core.chinacloudapi.cn/mycontainer/ /SourceKey:key1 /DestKey:key2 /S
 
 Asynchronous copying from Block/Page Blob Storage to File Storage:
 
-	AzCopy /Source:https://myaccount1.blob.core.windows.net/mycontainer/ /Dest:https://myaccount2.file.core.windows.net/myfileshare/ /SourceKey:key1 /DestKey:key2 /S
+	AzCopy /Source:https://myaccount1.blob.core.chinacloudapi.cn/mycontainer/ /Dest:https://myaccount2.file.core.chinacloudapi.cn/myfileshare/ /SourceKey:key1 /DestKey:key2 /S
 
 Note that asynchronous copying from File Storage to Page Blob is not supported.
 
@@ -828,11 +824,11 @@ Note that asynchronous copying from File Storage to Page Blob is not supported.
 
 Besides the asynchronous copying, user can also specify option `/SyncCopy` to copy data from File Storage to File Storage, from File Storage to Blob Storage and from Blob Storage to File Storage synchronously, AzCopy does this by downloading the source data to local memory and upload it again to destination.
 
-	AzCopy /Source:https://myaccount1.file.core.windows.net/myfileshare1/ /Dest:https://myaccount2.file.core.windows.net/myfileshare2/ /SourceKey:key1 /DestKey:key2 /S /SyncCopy
+	AzCopy /Source:https://myaccount1.file.core.chinacloudapi.cn/myfileshare1/ /Dest:https://myaccount2.file.core.chinacloudapi.cn/myfileshare2/ /SourceKey:key1 /DestKey:key2 /S /SyncCopy
 
-	AzCopy /Source:https://myaccount1.file.core.windows.net/myfileshare/ /Dest:https://myaccount2.blob.core.windows.net/mycontainer/ /SourceKey:key1 /DestKey:key2 /S /SyncCopy
+	AzCopy /Source:https://myaccount1.file.core.chinacloudapi.cn/myfileshare/ /Dest:https://myaccount2.blob.core.chinacloudapi.cn/mycontainer/ /SourceKey:key1 /DestKey:key2 /S /SyncCopy
 	
-	AzCopy /Source:https://myaccount1.blob.core.windows.net/mycontainer/ /Dest:https://myaccount2.file.core.windows.net/myfileshare/ /SourceKey:key1 /DestKey:key2 /S /SyncCopy
+	AzCopy /Source:https://myaccount1.blob.core.chinacloudapi.cn/mycontainer/ /Dest:https://myaccount2.file.core.chinacloudapi.cn/myfileshare/ /SourceKey:key1 /DestKey:key2 /S /SyncCopy
 
 When copying from File Storage to Blob Storage, the default blob type is block blob, user can specify option `/BlobType:page` to change the destination blob type.
 
@@ -845,7 +841,7 @@ The examples below demonstrate a variety of scenarios for copying Azure Table En
 
 ### Export entities to the local file system
 
-	AzCopy /Source:https://myaccount.table.core.windows.net/myTable/ /Dest:C:\myfolder\ /SourceKey:key
+	AzCopy /Source:https://myaccount.table.core.chinacloudapi.cn/myTable/ /Dest:C:\myfolder\ /SourceKey:key
 
 AzCopy writes a manifest file to the specified destination folder or blob container. The manifest file is used by the import process to locate the necessary data files and perform data validation during the import process. The manifest file uses the following naming convention by default:
 
@@ -853,33 +849,33 @@ AzCopy writes a manifest file to the specified destination folder or blob contai
 
 User can also specify the option `/Manifest:<manifest file name>` to set the manifest file name.
 
-	AzCopy /Source:https://myaccount.table.core.windows.net/myTable/ /Dest:C:\myfolder\ /SourceKey:key /Manifest:abc.manifest
+	AzCopy /Source:https://myaccount.table.core.chinacloudapi.cn/myTable/ /Dest:C:\myfolder\ /SourceKey:key /Manifest:abc.manifest
 
 
 ### Export entites to JSON and CSV data file format
 
 AzCopy by default exports Table entites to JSON files, user can specify option `/PayloadFormat:JSON|CSV` to decide the exported data file type.
 
-	AzCopy /Source:https://myaccount.table.core.windows.net/myTable/ /Dest:C:\myfolder\ /SourceKey:key /PayloadFormat:CSV
+	AzCopy /Source:https://myaccount.table.core.chinacloudapi.cn/myTable/ /Dest:C:\myfolder\ /SourceKey:key /PayloadFormat:CSV
 
 When specifying the CSV payload format, besides the data files with `.csv` extension that will be found in the place specified by the parameter `/Dest`, AzCopy will generate scheme file with file extension `.schema.csv` for each data file.
 Note that AzCopy does not include the support for “importing” CSV data file, you can use JSON format to export and import table data.
 
 ### Export entities to an Azure blob
 
-	AzCopy /Source:https://myaccount.table.core.windows.net/myTable/ /Dest:https://myaccount.blob.core.windows.net/mycontainer/ /SourceKey:key1 /Destkey:key2
+	AzCopy /Source:https://myaccount.table.core.chinacloudapi.cn/myTable/ /Dest:https://myaccount.blob.core.chinacloudapi.cn/mycontainer/ /SourceKey:key1 /Destkey:key2
 
 AzCopy will generate a JSON data file into the local folder or blob container with following naming convention:
 
 	<account name>_<table name>_<timestamp>_<volume index>_<CRC>.json
 
-The generated JSON data file follows the payload format for minimal metadata. For details on this payload format, see [Payload Format for Table Service Operations](http://msdn.microsoft.com/library/azure/dn535600.aspx).
+The generated JSON data file follows the payload format for minimal metadata. For details on this payload format, see [Payload Format for Table Service Operations](http://msdn.microsoft.com/zh-cn/library/azure/dn535600.aspx).
 
 Note that when exporting Storage Table Entities to Storage Blob, AzCopy will export the Table entities to local temporary data files firstly and then upload them to Blob, these temporary data files are put into the journal file folder with the default path “<code>%LocalAppData%\Microsoft\Azure\AzCopy</code>”, you can specify option /Z:[journal-file-folder] to change the journal file folder location and thus change the temporary data files location. The temporary data files’ size is decided by your table entities’ size and the size you specified with the option /SplitSize, although the temporary data file in local disk will be deleted instantly once it has been uploaded to the Blob, please make sure you have enough local disk space to store these temporary data files before they are deleted, 
 
 ### Split the export files
 
-	AzCopy /Source:https://myaccount.table.core.windows.net/mytable/ /Dest:C:\myfolder /SourceKey:key /S /SplitSize:100
+	AzCopy /Source:https://myaccount.table.core.chinacloudapi.cn/mytable/ /Dest:C:\myfolder /SourceKey:key /S /SplitSize:100
 
 AzCopy uses a *volume index* in the split data file names to distinguish multiple files. The volume index consists of two parts, a *partition key range index* and a *split file index*. Both indexes are zero-based.
 
@@ -894,7 +890,7 @@ Note that the minimum possible value for option `/SplitSize` is 32MB. If the spe
 
 ### Export entities concurrently
 
-	AzCopy /Source:https://myaccount.table.core.windows.net/myTable/ /Dest:C:\myfolder\ /SourceKey:key /PKRS:"aa#bb"
+	AzCopy /Source:https://myaccount.table.core.chinacloudapi.cn/myTable/ /Dest:C:\myfolder\ /SourceKey:key /PKRS:"aa#bb"
 
 AzCopy will start concurrent operations to export entities when the user specifies option `/PKRS`. Each operation exports one partition key range.
 
@@ -902,7 +898,7 @@ Note that the number of concurrent operations is also controlled by option `/NC`
 
 ### Import entities concurrently
 
-	AzCopy /Source:C:\myfolder\ /Dest:https://myaccount.table.core.windows.net/mytable1/ /DestKey:key /Manifest:"myaccount_mytable_20140103T112020.manifest" /EntityOperation:InsertOrReplace 
+	AzCopy /Source:C:\myfolder\ /Dest:https://myaccount.table.core.chinacloudapi.cn/mytable1/ /DestKey:key /Manifest:"myaccount_mytable_20140103T112020.manifest" /EntityOperation:InsertOrReplace 
 
 The option `/EntityOperation` indicates how to insert entities into the table. Possible values are:
 
@@ -942,12 +938,12 @@ Note that FIPS compliant algorithms is disabled by default on your Windows machi
 
 | Version | What's New                                                                                      				| Referenced .NET Client Library Version | Target Storage REST API Version |
 |---------|-----------------------------------------------------------------------------------------------------------------|--------|----------|
-| [**V4.2.0**](http://xdmrelease.blob.core.windows.net/azcopy-4-2-0-preview/MicrosoftAzureStorageTools.msi)  | **Current preview version. Includes all the functionality from V3.2.0. Also supports File Storage Share SAS, File Storage asynchronous copying, exporting Table entities to CSV and specifying manifest name when exporting Table entities** | **V5.0.0** | **2015-02-21**
-| [**V3.2.0**](http://xdmrelease.blob.core.windows.net/azcopy-3-2-0/MicrosoftAzureStorageTools.msi)  | **Current release version. Supports Append Blob and FIPS compliant MD5 Setting** | **V5.0.0** | **2015-02-21**
-| [V4.1.0](http://xdmrelease.blob.core.windows.net/azcopy-4-1-0-preview/MicrosoftAzureStorageTools.msi)  | Includes all the functionality from V3.1.0. Supports synchronously copying blobs and files and specifying content type for destination blobs and files | V4.3.0 | 2014-02-14
-| [V3.1.0](http://xdmrelease.blob.core.windows.net/azcopy-3-1-0/MicrosoftAzureStorageTools.msi)  | Supports synchronously copying blobs and specifying content type for destination blobs.| V4.3.0 | 2014-02-14
-| [V4.0.0](http://xdmrelease.blob.core.windows.net/azcopy-4-0-0-preview/MicrosoftAzureStorageTools.msi)  | Includes all the functionality from V3.0.0. Also supports copying files to or from Azure File storage, and copying entities to or from Azure Table storage.| V4.2.1 | 2014-02-14
-| [V3.0.0](http://xdmrelease.blob.core.windows.net/azcopy-3-0-0/MicrosoftAzureStorageTools.msi)  | Modifies AzCopy command-line syntax to require parameter names, and redesigns the command-line help. This version only supports copying to and from Azure Blob storage.| V4.2.1 | 2014-02-14
+| [**V4.2.0**](http://xdmrelease.blob.core.chinacloudapi.cn/azcopy-4-2-0-preview/MicrosoftAzureStorageTools.msi)  | **Current preview version. Includes all the functionality from V3.2.0. Also supports File Storage Share SAS, File Storage asynchronous copying, exporting Table entities to CSV and specifying manifest name when exporting Table entities** | **V5.0.0** | **2015-02-21**
+| [**V3.2.0**](http://xdmrelease.blob.core.chinacloudapi.cn/azcopy-3-2-0/MicrosoftAzureStorageTools.msi)  | **Current release version. Supports Append Blob and FIPS compliant MD5 Setting** | **V5.0.0** | **2015-02-21**
+| [V4.1.0](http://xdmrelease.blob.core.chinacloudapi.cn/azcopy-4-1-0-preview/MicrosoftAzureStorageTools.msi)  | Includes all the functionality from V3.1.0. Supports synchronously copying blobs and files and specifying content type for destination blobs and files | V4.3.0 | 2014-02-14
+| [V3.1.0](http://xdmrelease.blob.core.chinacloudapi.cn/azcopy-3-1-0/MicrosoftAzureStorageTools.msi)  | Supports synchronously copying blobs and specifying content type for destination blobs.| V4.3.0 | 2014-02-14
+| [V4.0.0](http://xdmrelease.blob.core.chinacloudapi.cn/azcopy-4-0-0-preview/MicrosoftAzureStorageTools.msi)  | Includes all the functionality from V3.0.0. Also supports copying files to or from Azure File storage, and copying entities to or from Azure Table storage.| V4.2.1 | 2014-02-14
+| [V3.0.0](http://xdmrelease.blob.core.chinacloudapi.cn/azcopy-3-0-0/MicrosoftAzureStorageTools.msi)  | Modifies AzCopy command-line syntax to require parameter names, and redesigns the command-line help. This version only supports copying to and from Azure Blob storage.| V4.2.1 | 2014-02-14
 | V2.5.1  | Optimizes performance when using options /xo and /xn. Fixes bugs related to special characters in source file names and journal file corruption after user input the wrong command-line syntax.| V4.1.0 | 2014-02-14
 | V2.5.0  | Optimizes performance for large-scale copy scenarios, and introduces several important usability improvements.| V4.1.0 | 2014-02-14
 | V2.4.1  | Supports specifying the destination folder in the installation wizard.| V4.0.0 | 2014-02-14
@@ -965,16 +961,16 @@ For more information about Azure Storage and AzCopy, see the following resources
 
 ### Azure Storage documentation:
 
-- [Introduction to Azure Storage](storage-introduction.md)
-- [Store files in Blob storage](storage-dotnet-how-to-use-blobs.md)
-- [Create an SMB file share in Azure with File storage](storage-dotnet-how-to-use-files.md)
+- [Introduction to Azure Storage](/documentation/articles/storage-introduction)
+- [Store files in Blob storage](/documentation/articles/storage-dotnet-how-to-use-blobs)
+- [Create an SMB file share in Azure with File storage](/documentation/articles/storage-dotnet-how-to-use-files)
 
 ### Azure Storage blog posts:
-- [DML: Introducing azure storage data movement library preview] (https://azure.microsoft.com/en-us/blog/introducing-azure-storage-data-movement-library-preview-2/)
+- [DML: Introducing azure storage data movement library preview] (https://azure.microsoft.com/blog/introducing-azure-storage-data-movement-library-preview-2/)
 - [AzCopy: Introducing synchronous copy and customized content type] (http://blogs.msdn.com/b/windowsazurestorage/archive/2015/01/13/azcopy-introducing-synchronous-copy-and-customized-content-type.aspx)
 - [AzCopy: Announcing General Availability of AzCopy 3.0 plus preview release of AzCopy 4.0 with Table and File support](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/10/29/azcopy-announcing-general-availability-of-azcopy-3-0-plus-preview-release-of-azcopy-4-0-with-table-and-file-support.aspx)
 - [AzCopy: Optimized for Large-Scale Copy Scenarios](http://go.microsoft.com/fwlink/?LinkId=507682)
-- [Introducing Microsoft Azure File Service](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/12/introducing-microsoft-azure-file-service.aspx)
+- [Introducing Windows Azure File Service](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/12/introducing-microsoft-azure-file-service.aspx)
 - [AzCopy: Support for read-access geo-redundant storage](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/04/07/azcopy-support-for-read-access-geo-redundant-account.aspx)
 - [AzCopy: Transfer data with re-startable mode and SAS token](http://blogs.msdn.com/b/windowsazurestorage/archive/2013/09/07/azcopy-transfer-data-with-re-startable-mode-and-sas-token.aspx)
 - [AzCopy: Using cross-account Copy Blob](http://blogs.msdn.com/b/windowsazurestorage/archive/2013/04/01/azcopy-using-cross-account-copy-blob.aspx)

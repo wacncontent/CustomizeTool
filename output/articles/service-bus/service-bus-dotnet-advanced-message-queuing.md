@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="How to use AMQP 1.0 with the .NET Service Bus API | Microsoft Azure" 
+	pageTitle="How to use AMQP 1.0 with the .NET Service Bus API | Windows Azure" 
 	description="Learn how to use Advanced Message Queuing Protodol (AMQP) 1.0 with the Azure .NET Service Bus API." 
 	services="service-bus" 
 	documentationCenter=".net" 
@@ -7,14 +7,10 @@
 	manager="timlt" 
 	editor="tysonn"/>
 
-<tags 
-	ms.service="service-bus" 
-	ms.workload="tbd" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="dotnet" 
-	ms.topic="article" 
-	ms.date="10/08/2015" 
-	ms.author="sethm"/>
+<tags
+	ms.service="service-bus"
+	ms.date="10/08/2015"
+	wacn.date=""/>
 
 # How to use AMQP 1.0 with the Service Bus .NET API
 
@@ -26,7 +22,7 @@ This article explains how to use the Service Bus brokered messaging features (qu
 
 ## Get started with Service Bus
 
-This article assumes that you already have a Service Bus namespace containing a queue named "queue1." If you do not, then you can create the namespace and queue using the [Azure portal](http://manage.windowsazure.com). For more information about how to create Service Bus namespaces and queues, see [How to Use Service Bus Queues](service-bus-dotnet-how-to-use-queues.md).
+This article assumes that you already have a Service Bus namespace containing a queue named "queue1." If you do not, then you can create the namespace and queue using the [Azure Management Portal](http://manage.windowsazure.cn). For more information about how to create Service Bus namespaces and queues, see [How to Use Service Bus Queues](/documentation/articles/service-bus-dotnet-how-to-use-queues).
 
 ## Download the Service Bus SDK
 
@@ -36,7 +32,7 @@ AMQP 1.0 support is available in Service Bus SDK version 2.1 or later. You can d
 
 By default, the Service Bus .NET client library communicates with the Service Bus service using a dedicated SOAP-based protocol. To use AMQP 1.0 instead of the default protocol requires explicit configuration on the Service Bus connection string as described in the next section. Other than this change, application code remains basically unchanged when using AMQP 1.0.
 
-In the current release, there are a few API features that are not supported when using AMQP. These unsupported features are listed later in the section [Unsupported features and restrictions](#unsupported-features-and-restrictions). Some of the advanced configuration settings also have a different meaning when using AMQP. None of these settings are used in this article, but more details are available in the [Service Bus AMQP overview](service-bus-amqp-dotnet.md#unsupported-features-restrictions-and-behavioral-differences).
+In the current release, there are a few API features that are not supported when using AMQP. These unsupported features are listed later in the section [Unsupported features and restrictions](#unsupported-features-and-restrictions). Some of the advanced configuration settings also have a different meaning when using AMQP. None of these settings are used in this article, but more details are available in the [Service Bus AMQP overview](/documentation/articles/service-bus-amqp-dotnet#unsupported-features-restrictions-and-behavioral-differences).
 
 ### Configure via App.config
 
@@ -49,7 +45,7 @@ A sample App.config file is shown here:
 <configuration>
   	<appSettings>
 	    <add key="Microsoft.ServiceBus.ConnectionString"
-       	     value="Endpoint=sb://[namespace].servicebus.windows.net;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=[SAS key];TransportType=Amqp" />
+       	     value="Endpoint=sb://[namespace].servicebus.chinacloudapi.cn;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=[SAS key];TransportType=Amqp" />
 	    	<add key="EntityName" value="queue1" />
 	</appSettings>
 </configuration>
@@ -60,10 +56,10 @@ A sample App.config file is shown here:
 The value of the **Microsoft.ServiceBus.ConnectionString** setting is the Service Bus connection string that is used to configure the connection to Service Bus. The format is as follows:
 
 ```
-Endpoint=sb://[namespace].servicebus.windows.net;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=[SAS key];TransportType=Amqp
+Endpoint=sb://[namespace].servicebus.chinacloudapi.cn;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=[SAS key];TransportType=Amqp
 ```
 
-Where `[namespace]` and `[SAS key]` are obtained from the Azure portal. For more information, see [How to Use Service Bus Queues][].
+Where `[namespace]` and `[SAS key]` are obtained from the Azure Management Portal. For more information, see [How to Use Service Bus Queues][].
 
 When using AMQP, the connection string is appended with `;TransportType=Amqp`, which tells the client library to make its connection to Service Bus using AMQP 1.0.
 
@@ -225,9 +221,9 @@ exit
 
 This topic showed how to send messages to Service Bus using .NET and also how to receive those messages using .NET. However, one of the key benefits of AMQP 1.0 is that it enables applications to be built from components written in different languages, with messages exchanged reliably and at full fidelity.
 
-Using the sample .NET application described above and a similar Java application taken from a companion guide, [How to use the Java Message Service (JMS) API with Service Bus & AMQP 1.0](service-bus-java-how-to-use-jms-api-amqp.md), it's possible to exchange messages between .NET and Java. 
+Using the sample .NET application described above and a similar Java application taken from a companion guide, [How to use the Java Message Service (JMS) API with Service Bus & AMQP 1.0](/documentation/articles/service-bus-java-how-to-use-jms-api-amqp), it's possible to exchange messages between .NET and Java. 
 
-For more information about the details of cross-platform messaging using Service Bus and AMQP 1.0, see the [Service Bus AMQP 1.0 overview](service-bus-amqp-overview.md).
+For more information about the details of cross-platform messaging using Service Bus and AMQP 1.0, see the [Service Bus AMQP 1.0 overview](/documentation/articles/service-bus-amqp-overview).
 
 ### JMS to .NET
 
@@ -306,19 +302,19 @@ The following features of the .NET Service Bus API are not currently supported w
 * Session lock renewal
 * Some minor differences in behavior
 
-For more information, see the [Service Bus AMQP overview](service-bus-amqp-dotnet.md). This topic includes a detailed list of unsupported APIs.
+For more information, see the [Service Bus AMQP overview](/documentation/articles/service-bus-amqp-dotnet). This topic includes a detailed list of unsupported APIs.
 
 ## Summary
 
 This topic showed how to access the Service Bus brokered messaging features (queues and publish/subscribe topics) from .NET using AMQP 1.0 and the Service Bus .NET API.
 
-You can also use Service Bus AMQP 1.0 from other languages including Java, C, Python, and PHP. Components built using these languages can exchange messages reliably and at full fidelity using AMQP 1.0 in Service Bus. For more information, see the [Service Bus AMQP overview](service-bus-amqp-dotnet.md).
+You can also use Service Bus AMQP 1.0 from other languages including Java, C, Python, and PHP. Components built using these languages can exchange messages reliably and at full fidelity using AMQP 1.0 in Service Bus. For more information, see the [Service Bus AMQP overview](/documentation/articles/service-bus-amqp-dotnet).
 
 ## Next steps
 
 Now that you've read an overview of Service Bus and AMQP with .NET, see the following links for more information.
 
-* [AMQP 1.0 support in Azure Service Bus](service-bus-amqp-overview.md)
-* [How to use the Java Message Service (JMS) API with Service Bus & AMQP 1.0](service-bus-java-how-to-use-jms-api-amqp.md)
-* [How to Use Service Bus Queues](service-bus-dotnet-how-to-use-queues.md)
+* [AMQP 1.0 support in Azure Service Bus](/documentation/articles/service-bus-amqp-overview)
+* [How to use the Java Message Service (JMS) API with Service Bus & AMQP 1.0](/documentation/articles/service-bus-java-how-to-use-jms-api-amqp)
+* [How to Use Service Bus Queues](/documentation/articles/service-bus-dotnet-how-to-use-queues)
  

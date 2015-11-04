@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Configuring Oracle GoldenGate in VMs | Microsoft Azure"
+	pageTitle="Configuring Oracle GoldenGate in VMs | Windows Azure"
 	description="Step through a tutorial for setting up and implementing Oracle GoldenGate on Azure Windows Server VMs for high availability and disaster recovery."
 	services="virtual-machines"
 	authors="bbenz"
@@ -7,17 +7,13 @@
 	tags="azure-service-management"/>
 <tags
 	ms.service="virtual-machines"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.tgt_pltfrm="vm-windows"
-	ms.workload="infrastructure-services"
 	ms.date="06/22/2015"
-	ms.author="bbenz" />
+	wacn.date=""/>
 
 	
 #Configuring Oracle GoldenGate for Azure
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
 
 
 This tutorial demonstrates how to setup Oracle GoldenGate for Azure Virtual Machines environment for high availability and disaster recovery. The tutorial focuses on [bi-directional replication](http://docs.oracle.com/goldengate/1212/gg-winux/GWUAD/wu_about_gg.htm) for non-RAC Oracle databases and requires that both sites are active.
@@ -30,13 +26,13 @@ This tutorial assumes that you already have theoretical and practical knowledge 
 
 In addition, the tutorial assumes that you have already implemented the following prerequisites:
 
-- You’ve already reviewed the High Availability and Disaster Recovery Considerations section in the [Oracle Virtual Machine images - Miscellaneous Considerations](virtual-machines-miscellaneous-considerations-oracle-virtual-machine-images.md) topic. Note that Azure supports standalone Oracle Database instances but not Oracle Real Application Clusters (Oracle RAC) currently.
+- You’ve already reviewed the High Availability and Disaster Recovery Considerations section in the [Oracle Virtual Machine images - Miscellaneous Considerations](/documentation/articles/virtual-machines-miscellaneous-considerations-oracle-virtual-machine-images) topic. Note that Azure supports standalone Oracle Database instances but not Oracle Real Application Clusters (Oracle RAC) currently.
 
 - You’ve downloaded the Oracle GoldenGate software from the [Oracle Downloads](http://www.oracle.com/us/downloads/index.html) web site. You’ve selected the Product Pack Oracle Fusion Middleware – Data Integration. Then, you’ve selected Oracle GoldenGate on Oracle v11.2.1 Media Pack for Microsoft Windows x64 (64-bit) for an Oracle 11g database. Next, download Oracle GoldenGate V11.2.1.0.3 for Oracle 11g 64bit on Windows 2008 (64bit).
 
-- You have created two Virtual Machines (VMs) in Azure using the platform provided Oracle Enterprise Edition image on Windows Server. For information, see [Creating an Oracle Database 12c Virtual Machine in Azure](#z3dc8d3c097cf414e9048f7a89c026f80) and [Azure Virtual Machines](http://azure.microsoft.com/documentation/services/virtual-machines/). Make sure that the Virtual Machines are in the [same cloud service](virtual-machines-load-balance.md) and in the same [Virtual Network](http://azure.microsoft.com/documentation/services/virtual-network/) to ensure they can access each other over the persistent private IP address.
+- You have created two Virtual Machines (VMs) in Azure using the platform provided Oracle Enterprise Edition image on Windows Server. For information, see [Creating an Oracle Database 12c Virtual Machine in Azure](#z3dc8d3c097cf414e9048f7a89c026f80) and [Azure Virtual Machines](/documentation/services/virtual-machines/). Make sure that the Virtual Machines are in the [same cloud service](/documentation/articles/virtual-machines-load-balance) and in the same [Virtual Network](/documentation/services/networking/) to ensure they can access each other over the persistent private IP address.
 
-- You’ve set the Virtual Machine names as “MachineGG1” for Site A and “MachineGG2” for Site B at the Azure Portal.
+- You’ve set the Virtual Machine names as “MachineGG1” for Site A and “MachineGG2” for Site B at the Azure Management Portal.
 
 - You’ve created test databases “TestGG1” on Site A and “TestGG2” on Site B.
 
@@ -135,10 +131,10 @@ And run:
 	      grant delete any table to ggate;
 	      grant drop any table to ggate;
 
-Next, locate the INIT\<DatabaseSID\>.ORA file in the %ORACLE\_HOME%\\database folder on Site A and Site B and append the following database parameters to INITTEST.ora:
+Next, locate the INIT\<DatabaseSID\>.ORA file in the %ORACLE_HOME%\\database folder on Site A and Site B and append the following database parameters to INITTEST.ora:
 
-	UNDO\_MANAGEMENT=AUTO
-	UNDO\_RETENTION=86400
+	UNDO_MANAGEMENT=AUTO
+	UNDO_RETENTION=86400
 
 For a full list of all Oracle GoldenGate GGSCI commands, see [Reference for Oracle GoldenGate for Windows](http://docs.oracle.com/goldengate/1212/gg-winux/GWURF/ggsci_commands.htm).
 
@@ -183,7 +179,7 @@ Next, create and enable a database trigger, INVENTORY_CDR_TRG, on the newly crea
 ##2. Prepare Site A and Site B for database replication
 This section explains how to prepare Site A and Site B for database replication. You must perform all the steps of this section on both sites: Site A and Site B.
 
-First, remote desktop to Site A and Site B via the Azure Portal. Switch the database to archivelog mode using the SQL*Plus command window:
+First, remote desktop to Site A and Site B via the Azure Management Portal. Switch the database to archivelog mode using the SQL*Plus command window:
 
 	sql>shutdown immediate
 	sql>startup mount
@@ -618,4 +614,4 @@ Remote desktop to Site A and check if the replication has taken place:
 	101 DVD 10 22-MAR-13
 
 ##Additional Resources
-[Oracle Virtual Machine images for Azure](virtual-machines-oracle-list-oracle-virtual-machine-images.md)
+[Oracle Virtual Machine images for Azure](/documentation/articles/virtual-machines-oracle-list-oracle-virtual-machine-images)

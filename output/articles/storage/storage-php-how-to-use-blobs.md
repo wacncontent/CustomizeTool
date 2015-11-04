@@ -1,5 +1,5 @@
 <properties
-	pageTitle="How to use blob storage from PHP | Microsoft Azure"
+	pageTitle="How to use blob storage from PHP | Windows Azure"
 	description="Learn how to use the Azure blob service to upload, list, download, and delete blobs. Code samples are written in PHP."
 	documentationCenter="php"
 	services="storage"
@@ -9,24 +9,20 @@
 
 <tags
 	ms.service="storage"
-	ms.workload="storage"
-	ms.tgt_pltfrm="na"
-	ms.devlang="PHP"
-	ms.topic="article"
 	ms.date="09/01/2015"
-	ms.author="tomfitz"/>
+	wacn.date=""/>
 
 # How to use blob storage from PHP
 
-[AZURE.INCLUDE [storage-selector-blob-include](../../includes/storage-selector-blob-include.md)]
+[AZURE.INCLUDE [storage-selector-blob-include](../includes/storage-selector-blob-include.md)]
 
 ## Overview
 
 This guide shows you how to perform common scenarios using the Azure blob service. The samples are written in PHP and use the [Azure SDK for PHP] [download]. The scenarios covered include **uploading**, **listing**, **downloading**, and **deleting** blobs. For more information on blobs, see the [Next steps](#next-steps) section.
 
-[AZURE.INCLUDE [storage-blob-concepts-include](../../includes/storage-blob-concepts-include.md)]
+[AZURE.INCLUDE [storage-blob-concepts-include](../includes/storage-blob-concepts-include.md)]
 
-[AZURE.INCLUDE [storage-create-account-include](../../includes/storage-create-account-include.md)]
+[AZURE.INCLUDE [storage-create-account-include](../includes/storage-create-account-include.md)]
 
 ## Create a PHP application
 
@@ -36,7 +32,7 @@ In this guide, you use service features, which can be called within a PHP applic
 
 ## Get the Azure Client Libraries
 
-[AZURE.INCLUDE [get-client-libraries](../../includes/get-client-libraries.md)]
+[AZURE.INCLUDE [get-client-libraries](../includes/get-client-libraries.md)]
 
 ## Configure your application to access the blob service
 
@@ -85,7 +81,7 @@ For the examples outlined here, the connection string will be passed directly.
 
 ## Create a container
 
-[AZURE.INCLUDE [storage-container-naming-rules-include](../../includes/storage-container-naming-rules-include.md)]
+[AZURE.INCLUDE [storage-container-naming-rules-include](../includes/storage-container-naming-rules-include.md)]
 
 A **BlobRestProxy** object lets you create a blob container with the **createContainer** method. When creating a container, you can set options on the container, but doing so is not required. (The example below shows how to set the container access control list (ACL) and container metadata.)
 
@@ -131,13 +127,13 @@ A **BlobRestProxy** object lets you create a blob container with the **createCon
 	catch(ServiceException $e){
 		// Handle exception based on error codes and messages.
 		// Error codes and messages are here:
-		// http://msdn.microsoft.com/library/azure/dd179439.aspx
+		// http://msdn.microsoft.com/zh-cn/library/azure/dd179439.aspx
 		$code = $e->getCode();
 		$error_message = $e->getMessage();
 		echo $code.": ".$error_message."<br />";
 	}
 
-Calling **setPublicAccess(PublicAccessType::CONTAINER\_AND\_BLOBS)** makes the container and blob data accessible via anonymous requests. Calling **setPublicAccess(PublicAccessType::BLOBS_ONLY)** makes only blob data accessible via anonymous requests. For more information about container ACLs, see [Set container ACL (REST API)][container-acl].
+Calling **setPublicAccess(PublicAccessType::CONTAINER_AND_BLOBS)** makes the container and blob data accessible via anonymous requests. Calling **setPublicAccess(PublicAccessType::BLOBS_ONLY)** makes only blob data accessible via anonymous requests. For more information about container ACLs, see [Set container ACL (REST API)][container-acl].
 
 For more information about Blob service error codes, see [Blob Service Error Codes][error-codes].
 
@@ -164,13 +160,13 @@ To upload a file as a blob, use the **BlobRestProxy->createBlockBlob** method. T
 	catch(ServiceException $e){
 		// Handle exception based on error codes and messages.
 		// Error codes and messages are here:
-		// http://msdn.microsoft.com/library/azure/dd179439.aspx
+		// http://msdn.microsoft.com/zh-cn/library/azure/dd179439.aspx
 		$code = $e->getCode();
 		$error_message = $e->getMessage();
 		echo $code.": ".$error_message."<br />";
 	}
 
-Note that the previous sample uploads a blob as a stream. However, a blob can also be uploaded as a string using, for example, the [file\_get\_contents][file_get_contents] function. To do this using the previous sample, change `$content = fopen("c:\myfile.txt", "r");` to `$content = file_get_contents("c:\myfile.txt");`.
+Note that the previous sample uploads a blob as a stream. However, a blob can also be uploaded as a string using, for example, the [file_get_contents][file_get_contents] function. To do this using the previous sample, change `$content = fopen("c:\myfile.txt", "r");` to `$content = file_get_contents("c:\myfile.txt");`.
 
 ## List the blobs in a container
 
@@ -198,7 +194,7 @@ To list the blobs in a container, use the **BlobRestProxy->listBlobs** method wi
 	catch(ServiceException $e){
 		// Handle exception based on error codes and messages.
 		// Error codes and messages are here:
-		// http://msdn.microsoft.com/library/azure/dd179439.aspx
+		// http://msdn.microsoft.com/zh-cn/library/azure/dd179439.aspx
 		$code = $e->getCode();
 		$error_message = $e->getMessage();
 		echo $code.": ".$error_message."<br />";
@@ -226,13 +222,13 @@ To download a blob, call the **BlobRestProxy->getBlob** method, then call the **
 	catch(ServiceException $e){
 		// Handle exception based on error codes and messages.
 		// Error codes and messages are here:
-		// http://msdn.microsoft.com/library/azure/dd179439.aspx
+		// http://msdn.microsoft.com/zh-cn/library/azure/dd179439.aspx
 		$code = $e->getCode();
 		$error_message = $e->getMessage();
 		echo $code.": ".$error_message."<br />";
 	}
 
-Note that the example above gets a blob as a stream resource (the default behavior). However, you can use the [stream\_get\_contents][stream-get-contents] function to convert the returned stream to a string.
+Note that the example above gets a blob as a stream resource (the default behavior). However, you can use the [stream_get_contents][stream-get-contents] function to convert the returned stream to a string.
 
 ## Delete a blob
 
@@ -254,7 +250,7 @@ To delete a blob, pass the container name and blob name to **BlobRestProxy->dele
 	catch(ServiceException $e){
 		// Handle exception based on error codes and messages.
 		// Error codes and messages are here:
-		// http://msdn.microsoft.com/library/azure/dd179439.aspx
+		// http://msdn.microsoft.com/zh-cn/library/azure/dd179439.aspx
 		$code = $e->getCode();
 		$error_message = $e->getMessage();
 		echo $code.": ".$error_message."<br />";
@@ -280,7 +276,7 @@ Finally, to delete a blob container, pass the container name to **BlobRestProxy-
 	catch(ServiceException $e){
 		// Handle exception based on error codes and messages.
 		// Error codes and messages are here:
-		// http://msdn.microsoft.com/library/azure/dd179439.aspx
+		// http://msdn.microsoft.com/zh-cn/library/azure/dd179439.aspx
 		$code = $e->getCode();
 		$error_message = $e->getMessage();
 		echo $code.": ".$error_message."<br />";
@@ -290,7 +286,7 @@ Finally, to delete a blob container, pass the container name to **BlobRestProxy-
 
 Now that you've learned the basics of the Azure blob service, follow these links to learn about more complex storage tasks.
 
-- See the MSDN reference: [Azure Storage](http://msdn.microsoft.com/library/azure/gg433040.aspx)
+- See the MSDN reference: [Azure Storage](http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx)
 - Visit the [Azure Storage team blog](http://blogs.msdn.com/b/windowsazurestorage/)
 - See the PHP block blob example at <https://github.com/WindowsAzure/azure-sdk-for-php-samples/blob/master/storage/BlockBlobExample.php>.
 - See the PHP page blob example at <https://github.com/WindowsAzure/azure-sdk-for-php-samples/blob/master/storage/PageBlobExample.php>
@@ -299,9 +295,9 @@ For more information, see also the [PHP Developer Center](/develop/php/).
 
 
 [download]: http://go.microsoft.com/fwlink/?LinkID=252473
-[Storing and accessing data in Azure]: http://msdn.microsoft.com/library/azure/gg433040.aspx
-[container-acl]: http://msdn.microsoft.com/library/azure/dd179391.aspx
-[error-codes]: http://msdn.microsoft.com/library/azure/dd179439.aspx
+[Storing and accessing data in Azure]: http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx
+[container-acl]: http://msdn.microsoft.com/zh-cn/library/azure/dd179391.aspx
+[error-codes]: http://msdn.microsoft.com/zh-cn/library/azure/dd179439.aspx
 [file_get_contents]: http://php.net/file_get_contents
 [require_once]: http://php.net/require_once
 [fopen]: http://www.php.net/fopen

@@ -1,19 +1,15 @@
 <properties 
-   pageTitle="Best practices for improving performance Using Service Bus | Microsoft Azure"
+   pageTitle="Best practices for improving performance Using Service Bus | Windows Azure"
    description="Describes how to use Azure Service Bus to optimize performance when exchanging brokered messages. "
    services="service-bus"
    documentationCenter="na"
    authors="sethmanheim"
    manager="timlt"
    editor="tysonn" /> 
-<tags 
-   ms.service="service-bus"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="na"
-   ms.date="09/18/2015"
-   ms.author="sethm" />
+<tags
+	ms.service="service-bus"
+	ms.date="09/18/2015"
+	wacn.date=""/>
 
 # Best Practices for performance improvements using Service Bus brokered messaging
 
@@ -277,16 +273,15 @@ To maximize throughput, do the following:
 
 To learn more about optimizing Service Bus performance, see [Partitioning Messaging Entities][].
 
-  [QueueClient]: https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.queueclient.aspx
-  [MessageSender]: https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.messagesender.aspx
-  [MessagingFactory]: https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.messagingfactory.aspx
-  [PeekLock]: https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.receivemode.aspx
-  [ReceiveAndDelete]: https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.receivemode.aspx
-  [BatchFlushInterval]: https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.netmessagingtransportsettings.batchflushinterval.aspx
-  [EnableBatchedOperations]: https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.queuedescription.enablebatchedoperations.aspx
-  [QueueClient.PrefetchCount]: https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.queueclient.prefetchcount.aspx
-  [SubscriptionClient.PrefetchCount]: https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.subscriptionclient.prefetchcount.aspx
-  [ForcePersistence]: https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.brokeredmessage.forcepersistence.aspx
-  [EnablePartitioning]: https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.queuedescription.enablepartitioning.aspx
-  [Partitioning Messaging Entities]: service-bus-partitioning.md
-  
+  [QueueClient]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.queueclient.aspx
+  [MessageSender]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.messagesender.aspx
+  [MessagingFactory]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.messagingfactory.aspx
+  [PeekLock]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.receivemode.aspx
+  [ReceiveAndDelete]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.receivemode.aspx
+  [BatchFlushInterval]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.netmessagingtransportsettings.batchflushinterval.aspx
+  [EnableBatchedOperations]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.queuedescription.enablebatchedoperations.aspx
+  [QueueClient.PrefetchCount]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.queueclient.prefetchcount.aspx
+  [SubscriptionClient.PrefetchCount]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.subscriptionclient.prefetchcount.aspx
+  [ForcePersistence]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.brokeredmessage.forcepersistence.aspx
+  [EnablePartitioning]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.queuedescription.enablepartitioning.aspx
+  [Partitioning Messaging Entities]: /documentation/articles/service-bus-partitioning

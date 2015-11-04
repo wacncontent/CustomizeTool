@@ -9,17 +9,13 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.workload="mobile"
-	ms.tgt_pltfrm="mobile-android"
-	ms.devlang="java"
-	ms.topic="article"
-	ms.date="10/05/2015" 
-	ms.author="ricksal"/>
+	ms.date="10/05/2015"
+	wacn.date=""/>
 
 
 # How to use the Android client library for Mobile Services
 
-[AZURE.INCLUDE [mobile-services-selector-client-library](../../includes/mobile-services-selector-client-library.md)]
+[AZURE.INCLUDE [mobile-services-selector-client-library](../includes/mobile-services-selector-client-library.md)]
 
 This guide shows you how to perform common scenarios using the Android client for Azure Mobile Services.  The scenarios covered include querying for data; inserting, updating, and deleting data, authenticating users, handling errors, and customizing the client.
 
@@ -27,7 +23,7 @@ If you are new to Mobile Services, you should first complete the quickstart tuto
 
 You can find the Javadocs API reference for the Android client library [here](http://go.microsoft.com/fwlink/p/?LinkId=298735).
 
-[AZURE.INCLUDE [mobile-services-concepts](../../includes/mobile-services-concepts.md)]
+[AZURE.INCLUDE [mobile-services-concepts](../includes/mobile-services-concepts.md)]
 
 ##<a name="setup"></a>Setup and Prerequisites
 
@@ -48,7 +44,7 @@ The corresponding typed client side object is the following:
 When dynamic schema is enabled, Azure Mobile Services automatically generates new columns based on the object in the insert or update request. For more information, see [Dynamic schema](http://go.microsoft.com/fwlink/p/?LinkId=296271).
 
 ##<a name="create-client"></a>How to: Create the Mobile Services client
-The following code creates the [MobileServiceClient](http://dl.windowsazure.com/androiddocs/com/microsoft/windowsazure/mobileservices/MobileServiceClient.html) object that is used to access your mobile service. The code goes in the `onCreate` method of the Activity class specified in *AndroidManifest.xml* as a **MAIN** action and **LAUNCHER** category.
+The following code creates the [MobileServiceClient](http://dl.windowsazure.cn/androiddocs/com/microsoft/windowsazure/mobileservices/MobileServiceClient.html) object that is used to access your mobile service. The code goes in the `onCreate` method of the Activity class specified in *AndroidManifest.xml* as a **MAIN** action and **LAUNCHER** category.
 
 		MobileServiceClient mClient = new MobileServiceClient(
 				"MobileServiceUrl", // Replace with the above Site URL
@@ -61,7 +57,7 @@ In the code above, replace `MobileServiceUrl` and `AppKey` with the mobile servi
 
 The easiest way to query or modify data in the mobile service is by using the *typed programming model*, since Java is a strongly typed language (later on we will discuss the *untyped* model). This model provides seamless serialization and deserialization to JSON using the [gson](http://go.microsoft.com/fwlink/p/?LinkId=290801) library when sending data between the client and the mobile service: the developer doesn't have to do anything, the framework handles it all.
 
-The first thing you do to query or modify data is to create a [MobileServiceTable](http://go.microsoft.com/fwlink/p/?LinkId=296835) object by calling the **getTable** method on the [**MobileServiceClient**](http://dl.windowsazure.com/androiddocs/com/microsoft/windowsazure/mobileservices/MobileServiceClient.html).  We will look at two overloads of this method:
+The first thing you do to query or modify data is to create a [MobileServiceTable](http://go.microsoft.com/fwlink/p/?LinkId=296835) object by calling the **getTable** method on the [**MobileServiceClient**](http://dl.windowsazure.cn/androiddocs/com/microsoft/windowsazure/mobileservices/MobileServiceClient.html).  We will look at two overloads of this method:
 
 	public class MobileServiceClient {
 	    public <E> MobileServiceTable<E> getTable(Class<E> clazz);
@@ -651,9 +647,9 @@ You must also call the adapter any time you modify the *ToDoItem* table if you w
 
 ##<a name="custom-api"></a>How to: Call a custom API
 
-A custom API enables you to define custom endpoints that expose server functionality that does not map to an insert, update, delete, or read operation. By using a custom API, you can have more control over messaging, including reading and setting HTTP message headers and defining a message body format other than JSON. For an example of how to create a custom API in your mobile service, see [How to: define a custom API endpoint](mobile-services-dotnet-backend-define-custom-api.md).
+A custom API enables you to define custom endpoints that expose server functionality that does not map to an insert, update, delete, or read operation. By using a custom API, you can have more control over messaging, including reading and setting HTTP message headers and defining a message body format other than JSON. For an example of how to create a custom API in your mobile service, see [How to: define a custom API endpoint](/documentation/articles/mobile-services-dotnet-backend-define-custom-api).
 
-[AZURE.INCLUDE [mobile-services-android-call-custom-api](../../includes/mobile-services-android-call-custom-api.md)]
+[AZURE.INCLUDE [mobile-services-android-call-custom-api](../includes/mobile-services-android-call-custom-api.md)]
 
 
 ##<a name="authentication"></a>How to: Authenticate users
@@ -679,7 +675,7 @@ Mobile Services supports the following existing identity providers that you can 
 
 You can set permissions on tables to restrict access for specific operations to only authenticated users. You can also use the ID of an authenticated user to modify requests.
 
-These first two tasks are done using the [Azure Management Portal](https://manage.windowsazure.com/). For more information, see [Get started with authentication](http://go.microsoft.com/fwlink/p/?LinkId=296316).
+These first two tasks are done using the [Azure Management Portal](https://manage.windowsazure.cn/). For more information, see [Get started with authentication](http://go.microsoft.com/fwlink/p/?LinkId=296316).
 
 ### <a name="caching"></a>How to: Add authentication code to your app
 
@@ -931,5 +927,5 @@ This general method can be used whenever we have a complex object that is not au
 
 
 <!-- URLs. -->
-[Get started with Mobile Services]: mobile-services-android-get-started.md
+[Get started with Mobile Services]: /documentation/articles/mobile-services-android-get-started
 [ASCII control codes C0 and C1]: http://en.wikipedia.org/wiki/Data_link_escape_character#C1_set

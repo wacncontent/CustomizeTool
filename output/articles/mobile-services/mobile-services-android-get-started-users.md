@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Get started with authentication on Android (JavaScript backend) | Microsoft Azure"
+	pageTitle="Get started with authentication on Android (JavaScript backend) | Windows Azure"
 	description="Learn how to use Mobile Services to authenticate users of your Android app through a variety of identity providers, including Google, Facebook, Twitter, and Microsoft  (JavaScript backend)."
 	services="mobile-services"
 	documentationCenter="android"
@@ -9,16 +9,12 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.workload="mobile"
-	ms.tgt_pltfrm="mobile-android"
-	ms.devlang="java"
-	ms.topic="article"
 	ms.date="10/05/2015"
-	ms.author="ricksal"/>
+	wacn.date=""/>
 
 # Add authentication to your Mobile Services Android app (JavaScript backend)
 
-[AZURE.INCLUDE [mobile-services-selector-get-started-users](../../includes/mobile-services-selector-get-started-users.md)]
+[AZURE.INCLUDE [mobile-services-selector-get-started-users](../includes/mobile-services-selector-get-started-users.md)]
 
 ## Summary
 
@@ -31,15 +27,15 @@ This tutorial walks you through the basic steps to enable authentication in your
 
 ##Prerequisites
 
-[AZURE.INCLUDE [mobile-services-android-prerequisites](../../includes/mobile-services-android-prerequisites.md)]
+[AZURE.INCLUDE [mobile-services-android-prerequisites](../includes/mobile-services-android-prerequisites.md)]
 
 ## Register your app for authentication and configure Mobile Services
 
-[AZURE.INCLUDE [mobile-services-register-authentication](../../includes/mobile-services-register-authentication.md)]
+[AZURE.INCLUDE [mobile-services-register-authentication](../includes/mobile-services-register-authentication.md)]
 
 ## Restrict permissions to authenticated users
 
-[AZURE.INCLUDE [mobile-services-restrict-permissions-javascript-backend](../../includes/mobile-services-restrict-permissions-javascript-backend.md)]
+[AZURE.INCLUDE [mobile-services-restrict-permissions-javascript-backend](../includes/mobile-services-restrict-permissions-javascript-backend.md)]
 
 1. In Android Studio, open the project that you created when you completed the tutorial [Get started with Mobile Services].
 
@@ -51,15 +47,15 @@ Next, you will update the app to authenticate users before requesting resources 
 
 ## Add authentication to the app
 
-[AZURE.INCLUDE [mobile-services-android-authenticate-app](../../includes/mobile-services-android-authenticate-app.md)]
+[AZURE.INCLUDE [mobile-services-android-authenticate-app](../includes/mobile-services-android-authenticate-app.md)]
 
 ## <a name="cache-tokens"></a>Cache authentication tokens on the client
 
-[AZURE.INCLUDE [mobile-services-android-authenticate-app-with-token](../../includes/mobile-services-android-authenticate-app-with-token.md)]
+[AZURE.INCLUDE [mobile-services-android-authenticate-app-with-token](../includes/mobile-services-android-authenticate-app-with-token.md)]
 
 ## <a name="refresh-tokens"></a>Refresh the token cache
 
-[AZURE.INCLUDE [mobile-services-android-authenticate-app-refresh-token](../../includes/mobile-services-android-authenticate-app-refresh-token.md)]
+[AZURE.INCLUDE [mobile-services-android-authenticate-app-refresh-token](../includes/mobile-services-android-authenticate-app-refresh-token.md)]
 
 
 
@@ -106,4 +102,4 @@ In the next tutorial, [Authorize users with scripts], you will take the user ID 
 [Get started with push notifications]: /develop/mobile/tutorials/get-started-with-push-android
 [Authorize users with scripts]: /develop/mobile/tutorials/authorize-users-in-scripts-android
 
-[Azure Management Portal]: https://manage.windowsazure.com/
+[Azure Management Portal]: https://manage.windowsazure.cn/

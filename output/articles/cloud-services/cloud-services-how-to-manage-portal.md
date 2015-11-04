@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="How to manage a cloud service (preview portal) | Microsoft Azure" 
+	pageTitle="How to manage a cloud service (preview portal) | Windows Azure" 
 	description="Learn how to manage cloud services in the Azure Preview Portal. These examples use the Azure preview portal." 
 	services="cloud-services" 
 	documentationCenter="" 
@@ -7,21 +7,17 @@
 	manager="timlt" 
 	editor=""/>
 
-<tags 
-	ms.service="cloud-services" 
-	ms.workload="tbd" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
+<tags
+	ms.service="cloud-services"
 	ms.date="09/22/2015"
-	ms.author="adegeo"/>
+	wacn.date=""/>
 
 
 # How to Manage Cloud Services
 
 > [AZURE.SELECTOR]
-- [Azure Portal](cloud-services-how-to-manage.md)
-- [Azure Preview Portal](cloud-services-how-to-manage-portal.md)
+- [Azure Management Portal](/documentation/articles/cloud-services-how-to-manage)
+- [Azure Preview Portal](/documentation/articles/cloud-services-how-to-manage-portal)
 
 In the **Cloud Services** area of the Azure Preview Portal, you can update a service role or a deployment, promote a staged deployment to production, link resources to your cloud service so that you can see the resource dependencies and scale the resources together, and delete a cloud service or a deployment.
 
@@ -78,7 +74,7 @@ You can swap deployments from the **Cloud Services** page or the dashboard.
 
 ## How to: Link a resource to a cloud service
 
-The Azure Preview Portal does not link resources together like the current Azure Portal does. Instead, you must deploy additional resources to the same resource group being used by the Cloud Service.
+The Azure Preview Portal does not link resources together like the current Azure Management Portal does. Instead, you must deploy additional resources to the same resource group being used by the Cloud Service.
 
 ## How to: Delete deployments and a cloud service
 
@@ -103,13 +99,13 @@ Use the following procedure to delete a deployment or your cloud service.
 5. To delete the cloud service, click **Delete cloud service**. Then, at the confirmation prompt, click **Yes**.
 
 > [AZURE.NOTE]
-> If verbose monitoring is configured for your cloud service, Azure does not delete the monitoring data from your storage account when you delete the cloud service. You will need to delete the data manually. For information about where to find the metrics tables, see [this](cloud-services-how-to-monitor.md) article.
+> If verbose monitoring is configured for your cloud service, Azure does not delete the monitoring data from your storage account when you delete the cloud service. You will need to delete the data manually. For information about where to find the metrics tables, see [this](/documentation/articles/cloud-services-how-to-monitor) article.
 
-[Azure Preview Portal]: https://portal.azure.com
+[Azure Preview Portal]: https://manage.windowsazure.cn
 
 ## Next steps
 
-* [General configuration of your cloud service](cloud-services-how-to-configure-portal.md).
-* Learn how to [deploy a cloud service](cloud-services-how-to-create-deploy-portal.md).
-* Configure a [custom domain name](cloud-services-custom-domain-name-portal.md).
-* Configure [ssl certificates](cloud-services-configure-ssl-certificate-portal.md).
+* [General configuration of your cloud service](/documentation/articles/cloud-services-how-to-configure-portal).
+* Learn how to [deploy a cloud service](/documentation/articles/cloud-services-how-to-create-deploy-portal).
+* Configure a [custom domain name](/documentation/articles/cloud-services-custom-domain-name-portal).
+* Configure [ssl certificates](/documentation/articles/cloud-services-configure-ssl-certificate-portal).

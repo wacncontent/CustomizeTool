@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Azure Resource Manager Architecture | Microsoft Azure"
+   pageTitle="Azure Resource Manager Architecture | Windows Azure"
    description="Learn about the architecture of Resource Manager and the relationships between the compute, network, and storage resource providers."
    services="virtual-machines"
    documentationCenter=""
@@ -10,16 +10,12 @@
 
 <tags
 	ms.service="azure-resource-manager"
-	ms.workload="infrastructure-services"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="08/25/2015"
-	ms.author="davidmu"/>
+	wacn.date=""/>
 
 # Azure Resource Manager Architecture
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-rm-include.md)] classic deployment model.
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] classic deployment model.
 
 
 
@@ -69,16 +65,16 @@ This application consists of:
 
 All of these resources of this application are managed through the single resource group that contains them.
 
-You can also see the componentization and dependent relationships between resources when you create a Resource Manager-based virtual machine using Azure PowerShell or the Azure CLI. Before you can run the command that creates the virtual machine, you must create a resource group, a storage account, a virtual network with a subnet, and a NIC with an IP address. For more information, see [Create and preconfigure a Windows Virtual Machine with Resource Manager and Azure PowerShell](virtual-machines-ps-create-preconfigure-windows-resource-manager-vms.md).
+You can also see the componentization and dependent relationships between resources when you create a Resource Manager-based virtual machine using Azure PowerShell or the Azure CLI. Before you can run the command that creates the virtual machine, you must create a resource group, a storage account, a virtual network with a subnet, and a NIC with an IP address. For more information, see [Create and preconfigure a Windows Virtual Machine with Resource Manager and Azure PowerShell](/documentation/articles/virtual-machines-ps-create-preconfigure-windows-resource-manager-vms).
 
 ## Next steps
 
-[Deploy and Manage Virtual Machines using Azure Resource Manager Templates and the Azure CLI](virtual-machines-deploy-rmtemplates-azure-cli.md)
+[Deploy and Manage Virtual Machines using Azure Resource Manager Templates and the Azure CLI](/documentation/articles/virtual-machines-deploy-rmtemplates-azure-cli)
 
-[Deploy and Manage Azure Virtual Machines using Resource Manager Templates and PowerShell](virtual-machines-deploy-rmtemplates-powershell.md)
+[Deploy and Manage Azure Virtual Machines using Resource Manager Templates and PowerShell](/documentation/articles/virtual-machines-deploy-rmtemplates-powershell)
 
 ## Additional resources
 
-[Azure Compute, Network and Storage Providers under Azure Resource Manager](virtual-machines-azurerm-versus-azuresm.md)
+[Azure Compute, Network and Storage Providers under Azure Resource Manager](/documentation/articles/virtual-machines-azurerm-versus-azuresm)
 
-[Azure Resource Manager Overview](resource-group-overview.md)
+[Azure Resource Manager Overview](/documentation/articles/resource-group-overview)

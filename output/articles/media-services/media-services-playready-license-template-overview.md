@@ -73,7 +73,7 @@ This is the “top level” class in the template hierarchy. Meaning that the re
 
 >[AZURE.IMPORTANT]These types of restrictions can be very powerful but can also affect the consumer experience. If the output protections are configured too restrictive, the content might be unplayable on some clients. For more information, see the PlayReady Compliance Rules document.
 
-For an example of what protection levels Silverlight supports, see: [Silverlight support for output protections](http://go.microsoft.com/fwlink/?LinkId=617318).
+For an example of what protection levels Silverlight supports, see: [Silverlight support for output protections](https://msdn.microsoft.com/zh-cn/library/cc838192(v=VS.95).aspx#Silverlight_Support_for_Output_Protection).
 
 ##<a id="schema"></a>PlayReady license template XML schema
 	

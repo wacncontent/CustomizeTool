@@ -7,40 +7,36 @@
     manager="jhubbard" 
     authors="sidneyh"/>
 
-<tags 
-    ms.service="sql-database" 
-    ms.workload="sql-database" 
-    ms.tgt_pltfrm="na" 
-    ms.devlang="na" 
-    ms.topic="article" 
-    ms.date="07/07/2015" 
-    ms.author="sidneyh" />
+<tags
+	ms.service="sql-database"
+	ms.date="07/07/2015"
+	wacn.date=""/>
 
 # Split-Merge security configuration  
 
-To use the Split/Merge service, you must correctly configure security. The service is part of the Elastic Scale feature of Microsoft Azure SQL Database. For more information, see [Elastic Scale Split and Merge Service Tutorial](sql-database-elastic-scale-configure-deploy-split-and-merge.md)
+To use the Split/Merge service, you must correctly configure security. The service is part of the Elastic Scale feature of Windows Azure SQL Database. For more information, see [Elastic Scale Split and Merge Service Tutorial](/documentation/articles/sql-database-elastic-scale-configure-deploy-split-and-merge)
 
 ## Configuring certificates
 
 Certificates are configured in two ways. 
 
-1. [To Configure the SSL Certificate](To#Configure#the#SSL#Certificate)
-2. [To Configure Client Certificates](To#Configure#Client#Certificates) 
+1. [To Configure the SSL Certificate](/documentation/articles/To#Configure#the#SSL#Certificate)
+2. [To Configure Client Certificates](/documentation/articles/To#Configure#Client#Certificates) 
 
 ## To obtain certificates
 
-Certificates can be obtained from public Certificate Authorities (CAs) or from the [Windows Certificate Service](http://msdn.microsoft.com/library/windows/desktop/aa376539.aspx). These are the preferred methods to obtain certificates.
+Certificates can be obtained from public Certificate Authorities (CAs) or from the [Windows Certificate Service](http://msdn.microsoft.com/zh-cn/library/windows/desktop/aa376539.aspx). These are the preferred methods to obtain certificates.
 
 If those options are not available, you can generate **self-signed certificates**.
  
 ## Tools to generate certificates
 
-* [makecert.exe](http://msdn.microsoft.com/library/bfsktky3.aspx)
-* [pvk2pfx.exe](http://msdn.microsoft.com/library/windows/hardware/ff550672.aspx)
+* [makecert.exe](http://msdn.microsoft.com/zh-cn/library/bfsktky3.aspx)
+* [pvk2pfx.exe](http://msdn.microsoft.com/zh-cn/library/windows/hardware/ff550672.aspx)
 
 ### To run the tools
 
-* From a Developer Command Prompt for Visual Studios, see [Visual Studio Command Prompt](http://msdn.microsoft.com/library/ms229859.aspx) 
+* From a Developer Command Prompt for Visual Studios, see [Visual Studio Command Prompt](http://msdn.microsoft.com/zh-cn/library/ms229859.aspx) 
 
     If installed, go to:
 
@@ -53,45 +49,45 @@ A SSL certificate is required to encrypt the communication and authenticate the 
 
 ### Create a new self-signed certificate
 
-1.    [Create a Self-Signed Certificate](Create#a#Self-Signed#Certificate)
-2.    [Create PFX file for Self-Signed SSL Certificate](Create#PFX#file#for#Self-Signed#SSL#Certificate)
-3.    [Upload SSL Certificate to Cloud Service](Upload#SSL#Certificate#to#Cloud#Service)
-4.    [Update SSL Certificate in Service Configuration File](Update#SSL#Certificate#in#Service#Configuration#File)
-5.    [Import SSL Certification Authority](Import#SSL#Certification#Authority)
+1.    [Create a Self-Signed Certificate](/documentation/articles/Create#a#Self-Signed#Certificate)
+2.    [Create PFX file for Self-Signed SSL Certificate](/documentation/articles/Create#PFX#file#for#Self-Signed#SSL#Certificate)
+3.    [Upload SSL Certificate to Cloud Service](/documentation/articles/Upload#SSL#Certificate#to#Cloud#Service)
+4.    [Update SSL Certificate in Service Configuration File](/documentation/articles/Update#SSL#Certificate#in#Service#Configuration#File)
+5.    [Import SSL Certification Authority](/documentation/articles/Import#SSL#Certification#Authority)
 
 ### To Use an existing certificate from the certificate store
-1. [Export SSL Certificate From Certificate Store](Export#SSL#Certificate#From#Certificate#Store)
-2. [Upload SSL Certificate to Cloud Service](Upload#SSL#Certificate#to#Cloud#Service)
-3. [Update SSL Certificate in Service Configuration File](Update#SSL#Certificate#in#Service#Configuration#File)
+1. [Export SSL Certificate From Certificate Store](/documentation/articles/Export#SSL#Certificate#From#Certificate#Store)
+2. [Upload SSL Certificate to Cloud Service](/documentation/articles/Upload#SSL#Certificate#to#Cloud#Service)
+3. [Update SSL Certificate in Service Configuration File](/documentation/articles/Update#SSL#Certificate#in#Service#Configuration#File)
 
 ### To Use an existing certificate in a PFX file
 
-1. [Upload SSL Certificate to Cloud Service](Upload#SSL#Certificate#to#Cloud#Service)
-2. [Update SSL Certificate in Service Configuration File](Update#SSL#Certificate#in#Service#Configuration#File)
+1. [Upload SSL Certificate to Cloud Service](/documentation/articles/Upload#SSL#Certificate#to#Cloud#Service)
+2. [Update SSL Certificate in Service Configuration File](/documentation/articles/Update#SSL#Certificate#in#Service#Configuration#File)
 
 ## To configure client certificates
 Client certificates are required in order to authenticate requests to the service. Choose the most applicable of the three scenarios below, and execute all its steps:
 
 ### Turn off client certificates
-1.    [Turn Off Client Certificate-Based Authentication](Turn#Off#Client#Certificate-Based#Authentication)
+1.    [Turn Off Client Certificate-Based Authentication](/documentation/articles/Turn#Off#Client#Certificate-Based#Authentication)
 
 ### Issue new self-signed client certificates
-1.    [Create a Self-Signed Certification Authority](Create#a#Self-Signed#Certification#Authority)
-2.    [Upload CA Certificate to Cloud Service](Upload#CA#Certificate#to#Cloud#Service)
-3.    [Update CA Certificate in Service Configuration File](Update#CA#Certificate#in#Service#Configuration#File)
-4.    [Issue Client Certificates](Issue#Client#Certificates)
-5.    [Create PFX files for Client Certificates](Create#PFX#files#for#Client#Certificates)
-6.    [Import Client Certificate](Import#Client#Certificate)
-7.    [Copy Client Certificate Thumbprints](Copy#Client#Certificate#Thumbprints)
-8.    [Configure Allowed Clients in the Service Configuration File](Configure#Allowed#Clients#in#the#Service#Configuration#File)
+1.    [Create a Self-Signed Certification Authority](/documentation/articles/Create#a#Self-Signed#Certification#Authority)
+2.    [Upload CA Certificate to Cloud Service](/documentation/articles/Upload#CA#Certificate#to#Cloud#Service)
+3.    [Update CA Certificate in Service Configuration File](/documentation/articles/Update#CA#Certificate#in#Service#Configuration#File)
+4.    [Issue Client Certificates](/documentation/articles/Issue#Client#Certificates)
+5.    [Create PFX files for Client Certificates](/documentation/articles/Create#PFX#files#for#Client#Certificates)
+6.    [Import Client Certificate](/documentation/articles/Import#Client#Certificate)
+7.    [Copy Client Certificate Thumbprints](/documentation/articles/Copy#Client#Certificate#Thumbprints)
+8.    [Configure Allowed Clients in the Service Configuration File](/documentation/articles/Configure#Allowed#Clients#in#the#Service#Configuration#File)
 
 ### Use existing client certificates
-1.    [Find CA Public Key](Find#CA#Public Key)
-2.    [Upload CA Certificate to Cloud Service](Upload#CA#certificate#to#cloud#service)
-3.    [Update CA Certificate in Service Configuration File](Update#CA#Certificate#in#Service#Configuration#File)
-4.    [Copy Client Certificate Thumbprints](Copy#Client#Certificate#Thumbprints)
-5.    [Configure Allowed Clients in the Service Configuration File](Configure#Allowed#Clients#in#the#Service#Configuration File)
-6.    [Configure Client Certificate Revocation Check](Configure#Client#Certificate#Revocation#Check)
+1.    [Find CA Public Key](/documentation/articles/Find#CA#Public Key)
+2.    [Upload CA Certificate to Cloud Service](/documentation/articles/Upload#CA#certificate#to#cloud#service)
+3.    [Update CA Certificate in Service Configuration File](/documentation/articles/Update#CA#Certificate#in#Service#Configuration#File)
+4.    [Copy Client Certificate Thumbprints](/documentation/articles/Copy#Client#Certificate#Thumbprints)
+5.    [Configure Allowed Clients in the Service Configuration File](/documentation/articles/Configure#Allowed#Clients#in#the#Service#Configuration File)
+6.    [Configure Client Certificate Revocation Check](/documentation/articles/Configure#Client#Certificate#Revocation#Check)
 
 ## Allowed IP addresses
 
@@ -103,21 +99,21 @@ A certificate is required to encrypt the credentials that are stored in the meta
 
 ### Use a new self-signed certificate
 
-1.     [Create a Self-Signed Certificate](Create#a#Self-Signed#Certificate)
-2.     [Create PFX file for Self-Signed Encryption Certificate](Create#PFX#file#for#Self-Signed#Encryption#Certificate)
-3.     [Upload Encryption Certificate to Cloud Service](Upload#Encryption#Certificate#to#Cloud#Service)
-4.     [Update Encryption Certificate in Service Configuration File](Update#Encryption#Certificate#in#Service#Configuration#File)
+1.     [Create a Self-Signed Certificate](/documentation/articles/Create#a#Self-Signed#Certificate)
+2.     [Create PFX file for Self-Signed Encryption Certificate](/documentation/articles/Create#PFX#file#for#Self-Signed#Encryption#Certificate)
+3.     [Upload Encryption Certificate to Cloud Service](/documentation/articles/Upload#Encryption#Certificate#to#Cloud#Service)
+4.     [Update Encryption Certificate in Service Configuration File](/documentation/articles/Update#Encryption#Certificate#in#Service#Configuration#File)
 
 ### Use an existing certificate from the certificate store
 
-1.     [Export Encryption Certificate From Certificate Store](Export#Encryption#Certificate#From#Certificate#Store)
-2.     [Upload Encryption Certificate to Cloud Service](Upload#Encryption#Certificate#to#Cloud#Service)
-3.     [Update Encryption Certificate in Service Configuration File](Update#Encryption#Certificate#in#Service#Configuration#File)
+1.     [Export Encryption Certificate From Certificate Store](/documentation/articles/Export#Encryption#Certificate#From#Certificate#Store)
+2.     [Upload Encryption Certificate to Cloud Service](/documentation/articles/Upload#Encryption#Certificate#to#Cloud#Service)
+3.     [Update Encryption Certificate in Service Configuration File](/documentation/articles/Update#Encryption#Certificate#in#Service#Configuration#File)
 
 ### Use an existing certificate in a PFX file
 
-1.     [Upload Encryption Certificate to Cloud Service](Upload#Encryption#Certificate#to#Cloud#Service)
-2.     [Update Encryption Certificate in Service Configuration File](Update#Encryption#Certificate#in#Service#Configuration#File)
+1.     [Upload Encryption Certificate to Cloud Service](/documentation/articles/Upload#Encryption#Certificate#to#Cloud#Service)
+2.     [Update Encryption Certificate in Service Configuration File](/documentation/articles/Update#Encryption#Certificate#in#Service#Configuration#File)
 
 ## The default configuration
 
@@ -191,7 +187,7 @@ This topic is for reference only. Please follow the configuration steps outlined
 Execute:
 
     makecert ^
-      -n "CN=myservice.cloudapp.net" ^
+      -n "CN=myservice.chinacloudapp.cn" ^
       -e MM/DD/YYYY ^
       -r -cy end -sky exchange -eku "1.3.6.1.5.5.7.3.1" ^
       -a sha1 -len 2048 ^
@@ -199,7 +195,7 @@ Execute:
 
 To customize:
 
-*    -n with the service URL. Wildcards ("CN=*.cloudapp.net") and alternative names ("CN=myservice1.cloudapp.net, CN=myservice2.cloudapp.net") are supported.
+*    -n with the service URL. Wildcards ("CN=*.chinacloudapp.cn") and alternative names ("CN=myservice1.chinacloudapp.cn, CN=myservice2.chinacloudapp.cn") are supported.
 *    -e with the certificate expiration date
 Create a strong password and specify it when prompted.
 
@@ -244,7 +240,7 @@ Follow these steps in all account/machine that will communicate with the service
 
 ## Turn off client certificate-based authentication
 
-Only client certificate-based authentication is supported and disabling it will allow for public access to the service endpoints, unless other mechanisms are in place (e.g. Microsoft Azure Virtual Network).
+Only client certificate-based authentication is supported and disabling it will allow for public access to the service endpoints, unless other mechanisms are in place (e.g. Windows Azure Virtual Network).
 
 Change these settings to false in the service configuration file to turn the feature off:
 
@@ -472,7 +468,7 @@ In the Certificate Import Wizard:
 
 ## Upload certificate
 
-In the [Azure Management Portal](http://portal.azure.com/)
+In the [Azure Management Portal](http://manage.windowsazure.cn/)
 
 1. Select **Cloud Services**.
 2. Select the cloud service.
@@ -484,10 +480,10 @@ In the [Azure Management Portal](http://portal.azure.com/)
 
 ## Other security considerations
  
-The SSL settings described in this document encrypt communication between the service and its clients when the HTTPS endpoint is used. This is important since credentials for database access and potentially other sensitive information are contained in the communication. Note, however, that the service persists internal status, including credentials, in its internal tables in the Microsoft Azure SQL database that you have provided for metadata storage in your Microsoft Azure subscription. That database was defined as part of the following setting in your service configuration file (.CSCFG file): 
+The SSL settings described in this document encrypt communication between the service and its clients when the HTTPS endpoint is used. This is important since credentials for database access and potentially other sensitive information are contained in the communication. Note, however, that the service persists internal status, including credentials, in its internal tables in the Windows Azure SQL database that you have provided for metadata storage in your Windows Azure subscription. That database was defined as part of the following setting in your service configuration file (.CSCFG file): 
 
     <Setting name="ElasticScaleMetadata" value="Server=…" />
 
 Credentials stored in this database are encrypted. However, as a best practice, ensure that both web and worker roles of your service deployments are kept up to date and secure as they both have access to the metadata database and the certificate used for encryption and decryption of stored credentials. 
 
-[AZURE.INCLUDE [elastic-scale-include](../../includes/elastic-scale-include.md)]
+[AZURE.INCLUDE [elastic-scale-include](../includes/elastic-scale-include.md)]

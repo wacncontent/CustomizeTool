@@ -58,7 +58,7 @@ This tutorial contains the following sections:
 ##Set up the Development Environment 
 To start, set up your development environment by installing the Visual Studio 2013 and the Azure SDK for .NET.
 
-1. Install [Visual Studio 2013](http://go.microsoft.com/fwlink/?LinkId=306566), if you don't already have it installed.  
+1. Install [Visual Studio 2013](https://www.visualstudio.com/zh-cn/downloads), if you don't already have it installed.  
 2. Install [Azure SDK for Visual Studio 2013](http://go.microsoft.com/fwlink/?linkid=324322&clcid=0x409). This tutorial requires Visual Studio 2013 before installing the Azure SDK for Visual Studio 2013. Depending on how many of the SDK dependencies you already have on your machine, installing the SDK could take a long time, from several minutes to a half hour or more.  
 
 3. If you are prompted to run or save the installation executable, click **Run**.

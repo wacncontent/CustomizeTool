@@ -8,22 +8,18 @@
     editor=""/>
 
 <tags
-    ms.service="sql-database"
-    ms.devlang="NA"
-    ms.topic="article"
-    ms.tgt_pltfrm="powershell"
-    ms.workload="data-management" 
-    ms.date="10/08/2015"
-    ms.author="sstein"/>
+	ms.service="sql-database"
+	ms.date="10/08/2015"
+	wacn.date=""/>
 
 # Create a SQL Database using PowerShell
 
 **Single database**
 
 > [AZURE.SELECTOR]
-- [Azure Preview Portal](sql-database-get-started.md)
-- [C#](sql-database-get-started-csharp.md)
-- [PowerShell](sql-database-get-started-powershell.md)
+- [Azure Preview Portal](/documentation/articles/sql-database-get-started)
+- [C#](/documentation/articles/sql-database-get-started-csharp)
+- [PowerShell](/documentation/articles/sql-database-get-started-powershell)
 
 
 ## Overview
@@ -33,7 +29,7 @@ This article shows you how to create a SQL Database using PowerShell.
 > [AZURE.IMPORTANT] Starting with the release of Azure PowerShell 1.0 Preview, the Switch-AzureMode cmdlet is no longer available, and cmdlets that were in the Azure ResourceManger module have been renamed. The examples in this article use the new PowerShell 1.0 Preview naming convention. For detailed information, see [Deprecation of Switch-AzureMode in Azure PowerShell](https://github.com/Azure/azure-powershell/wiki/Deprecation-of-Switch-AzureMode-in-Azure-PowerShell).
 
 
-To run PowerShell cmdlets, you need to have Azure PowerShell installed and running, and due to the removal of Switch-AzureMode, you should download and install the latest Azure PowerShell by running the [Microsoft Web Platform Installer](http://go.microsoft.com/fwlink/p/?linkid=320376&clcid=0x409). For detailed information, see [How to install and configure Azure PowerShell](../powershell-install-configure.md).
+To run PowerShell cmdlets, you need to have Azure PowerShell installed and running, and due to the removal of Switch-AzureMode, you should download and install the latest Azure PowerShell by running the [Microsoft Web Platform Installer](http://go.microsoft.com/fwlink/p/?linkid=320376&clcid=0x409). For detailed information, see [How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure).
 
 - If you need an Azure subscription simply click **FREE TRIAL** at the top of this page, and then come back to finish this article.
 
@@ -42,7 +38,7 @@ To run PowerShell cmdlets, you need to have Azure PowerShell installed and runni
 
 Now that you are running the Azure Resource Manager module you have access to all the necessary cmdlets to create a SQL database. 
 
-First you must establish access to your Azure account so run the following cmdlet and you will be presented with a sign in screen to enter your credentials. Use the same email and password that you use to sign in to the Azure portal.
+First you must establish access to your Azure account so run the following cmdlet and you will be presented with a sign in screen to enter your credentials. Use the same email and password that you use to sign in to the Azure Management Portal.
 
 	Add-AzureAccount
 
@@ -63,7 +59,7 @@ Now you have access to run cmdlets against your selected Azure subscription so t
 
 Run the following command to create a new resource group:
 
-	New-AzureRMResourceGroup -Name "resourcegroupsqlgsps" -Location "West US"
+	New-AzureRMResourceGroup -Name "resourcegroupsqlgsps" -Location "China North"
 
 After successfully creating the new resource group you see information on screen that includes **ProvisioningState : Succeeded**.
 
@@ -72,7 +68,7 @@ After successfully creating the new resource group you see information on screen
 
 SQL Databases are created inside Azure SQL Database servers. Run **New-AzureRMSqlServer** to create a new server. Replace the ServerName with the name for your server. It must be unique to all Azure SQL Servers so you will get an error here if the server name is already taken. Also worth noting is that this command may take several minutes to complete. You can edit the command to use any valid location you choose but you should use the same location you used for the resource group created in the previous step.
 
-	New-AzureRMSqlServer -ResourceGroupName "resourcegroupsqlgsps" -ServerName "server1" -Location "West US" -ServerVersion "12.0"
+	New-AzureRMSqlServer -ResourceGroupName "resourcegroupsqlgsps" -ServerName "server1" -Location "China North" -ServerVersion "12.0"
 
 When you run this command a window opens asking for a **User name** and **Password**. This is  not your Azure credentials, enter the user name and password that will be the administrator credentials you want to create for the new server.
 
@@ -88,7 +84,7 @@ The firewall rule details appear after the rule is successfully created.
 
 To allow other Azure services to access the server add a firewall rule and set both the StartIpAddress and EndIpAddress to 0.0.0.0. Note that this allows Azure traffic from any Azure subscription to access the server.
 
-For more information, see [Azure SQL Database Firewall](https://msdn.microsoft.com/library/azure/ee621782.aspx).
+For more information, see [Azure SQL Database Firewall](https://msdn.microsoft.com/zh-cn/library/azure/ee621782.aspx).
 
 
 ## Create a SQL database
@@ -137,9 +133,9 @@ The database details appear after the database is successfully created.
 
 ## Next steps
 
-- [Connect with SQL Server Management Studio (SSMS)](sql-database-connect-to-database.md)
+- [Connect with SQL Server Management Studio (SSMS)](/documentation/articles/sql-database-connect-to-database)
 
 
 ## Additional Resources
 
-- [Azure SQL Database](https://azure.microsoft.com/documentation/services/sql-database/)
+- [Azure SQL Database](/documentation/services/sql-database/)

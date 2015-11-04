@@ -9,16 +9,12 @@
 
 <tags
 	ms.service="event-hubs"
-	ms.workload="core"
-	ms.tgt_pltfrm="c"
-	ms.devlang="java"
-	ms.topic="article" 
 	ms.date="09/01/2015"
-	ms.author="sethm"/>
+	wacn.date=""/>
 
 # Get started with Event Hubs
 
-[AZURE.INCLUDE [service-bus-selector-get-started](../../includes/service-bus-selector-get-started.md)]
+[AZURE.INCLUDE [service-bus-selector-get-started](../includes/service-bus-selector-get-started.md)]
 
 ## Introduction
 
@@ -30,17 +26,17 @@ In this tutorial, you will learn how to ingest messages into an Event Hub using 
 
 In order to complete this tutorial you will need the following:
 
-+ A C development environment. For this tutorial, we will assume the gcc stack on an [Azure Linux VM](../virtual-machines/virtual-machines-linux-tutorial.md) with Ubuntu 14.04. Instructions for other environments will be provided in external links.
++ A C development environment. For this tutorial, we will assume the gcc stack on an [Azure Linux VM](/documentation/articles/virtual-machines-linux-tutorial) with Ubuntu 14.04. Instructions for other environments will be provided in external links.
 
 + A Java development environment configured to run [Maven](http://maven.apache.org/). For this tutorial, we will assume [Eclipse](https://www.eclipse.org/).
 
-+ An active Azure account. If you don't have an account, you can create a free trial account in just a couple of minutes. For details, see [Azure Free Trial](https://azure.microsoft.com/pricing/free-trial/).
++ An active Azure account. If you don't have an account, you can create a trial account in just a couple of minutes. For details, see [Azure Trial](https://azure.microsoft.com/pricing/1rmb-trial/).
 
 ## Create an Event Hub
 
-1. Log on to the [Azure portal], and click **NEW** at the bottom of the screen.
+1. Log on to the [Azure Management Portal], and click **NEW** at the bottom of the screen.
 
-2. Click **App Services**, then **Service Bus**, then **Event Hub**, and then **Quick Create**.
+2. Click **Azure Websites**, then **Service Bus**, then **Event Hub**, and then **Quick Create**.
 
 	![][1]
 
@@ -66,9 +62,9 @@ In order to complete this tutorial you will need the following:
 
 Your Event Hub is now created, and you have the connection strings you need to send and receive events.
 
-[AZURE.INCLUDE [service-bus-event-hubs-get-started-send-c](../../includes/service-bus-event-hubs-get-started-send-c.md)]
+[AZURE.INCLUDE [service-bus-event-hubs-get-started-send-c](../includes/service-bus-event-hubs-get-started-send-c.md)]
 
-[AZURE.INCLUDE [service-bus-event-hubs-get-started-receive-storm](../../includes/service-bus-event-hubs-get-started-receive-storm.md)]
+[AZURE.INCLUDE [service-bus-event-hubs-get-started-receive-storm](../includes/service-bus-event-hubs-get-started-receive-storm.md)]
 
 ## Run the applications
 
@@ -101,12 +97,10 @@ The following resources are available for developing applications integrating Ev
 [23]: ./media/event-hubs-c-storm-getstarted/receive-storm3.png
 
 <!-- Links -->
-[Azure portal]: https://manage.windowsazure.com/
+[Azure Management Portal]: https://manage.windowsazure.cn/
 [Event Processor Host]: https://www.nuget.org/packages/Microsoft.Azure.ServiceBus.EventProcessorHost
-[Event Hubs overview]: event-hubs-overview.md
-
+[Event Hubs overview]: /documentation/articles/event-hubs-overview
 [Apache Storm]: https://storm.incubator.apache.org
-[HDInsight Storm overview]: ../hdinsight/hdinsight-storm-overview.md/
-[Analyzing sensor data with Storm and HDInsight]: ../hdinsight/hdinsight-storm-sensor-data-analysis.md
-[Develop streaming data processing applications with SCP.NET and C# on Storm and HDInsight]: ../hdinsight/hdinsight-storm-develop-csharp-visual-studio-topology.md
- 
+[HDInsight Storm overview]: /documentation/articles/hdinsight-storm-overview
+[Analyzing sensor data with Storm and HDInsight]: /documentation/articles/hdinsight-storm-sensor-data-analysis
+[Develop streaming data processing applications with SCP.NET and C# on Storm and HDInsight]: /documentation/articles/hdinsight-storm-develop-csharp-visual-studio-topology

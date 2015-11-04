@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="Troubleshooting roles that fail to start | Microsoft Azure"
+   pageTitle="Troubleshooting roles that fail to start | Windows Azure"
    description="Here are some common reasons as to why a Cloud Service role may fail to start. Solutions to these problems are also provided."
    services="cloud-services"
    documentationCenter=""
@@ -7,14 +7,10 @@
    manager="msmets"
    editor=""
    tags="top-support-issue"/>
-<tags 
-   ms.service="cloud-services"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="tbd"
-   ms.date="10/14/2015"
-   ms.author="jarrettr" />
+<tags
+	ms.service="cloud-services"
+	ms.date="10/14/2015"
+	wacn.date=""/>
 
 # Common steps in troubleshooting Cloud Service roles that fail to start
 
@@ -24,7 +20,7 @@ Here are some common problems and solutions related to Azure Cloud Service roles
 
 If you need more help at any point in this article, you can contact the Azure experts on [the MSDN Azure and the Stack Overflow forums](http://azure.microsoft.com/support/forums/).
 
-Alternatively, you can also file an Azure support incident. Go to the [Azure Support site](http://azure.microsoft.com/support/options/) and click on **Get Support**. For information about using Azure Support, read the [Microsoft Azure Support FAQ](http://azure.microsoft.com/support/faq/).
+Alternatively, you can also file an Azure support incident. Go to the [Azure Support site](http://azure.microsoft.com/support/options/) and click on **Get Support**. For information about using Azure Support, read the [Windows Azure Support FAQ](/support/faq/).
 
 
 ## Missing DLLs or dependencies
@@ -71,9 +67,9 @@ You can use remote desktop to access the role and view more complete errors remo
 
 1. Ensure that Azure SDK 1.3 or higher is installed.
 
-2. During the deployment of the solution using Visual Studio, choose to “Configure Remote Desktop connections…” For more information on configuring the Remote Desktop connection, see [Using Remote Desktop with Azure Roles](https://msdn.microsoft.com/library/gg443832.aspx).
+2. During the deployment of the solution using Visual Studio, choose to “Configure Remote Desktop connections…” For more information on configuring the Remote Desktop connection, see [Using Remote Desktop with Azure Roles](https://msdn.microsoft.com/zh-cn/library/gg443832.aspx).
 
-3. In the Microsoft Azure Management Portal, once the instance shows a status of **Ready**, click on one of the role instances.
+3. In the Windows Azure Management Portal, once the instance shows a status of **Ready**, click on one of the role instances.
 
 4. Click the **Connect** icon in the **Remote Access** area of the ribbon
 
@@ -103,7 +99,7 @@ For example:
 
 ## Diagnose issues using the Compute Emulator
 
-You can use the Azure Microsoft Azure compute emulator to diagnose and troubleshoot issues of missing dependencies and web.config errors.
+You can use the Azure Windows Azure compute emulator to diagnose and troubleshoot issues of missing dependencies and web.config errors.
 
 For best results in using this method of diagnosis, you should use a computer or virtual machine that has a clean installation of Windows. To best simulate the Azure environment you should use Windows Server 2008 R2 x64.
 
@@ -123,7 +119,7 @@ For best results in using this method of diagnosis, you should use a computer or
 
 ## Diagnose issues using IntelliTrace
 
-For worker and web roles that use .NET Framework 4, you can use [IntelliTrace](https://msdn.microsoft.com/library/dd264915.aspx) which is available in [Microsoft Visual Studio Ultimate](https://www.visualstudio.com/products/visual-studio-ultimate-with-MSDN-vs).
+For worker and web roles that use .NET Framework 4, you can use [IntelliTrace](https://msdn.microsoft.com/zh-cn/library/dd264915.aspx) which is available in [Microsoft Visual Studio Ultimate](https://www.visualstudio.com/products/visual-studio-ultimate-with-MSDN-vs).
 
 Follow these steps to deploy the service with IntelliTrace enabled:
 

@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="How to use Service Bus queues with PHP | Microsoft Azure" 
+	pageTitle="How to use Service Bus queues with PHP | Windows Azure" 
 	description="Learn how to use Service Bus queues in Azure. Code samples written in PHP." 
 	services="service-bus" 
 	documentationCenter="php" 
@@ -7,26 +7,22 @@
 	manager="timlt" 
 	editor=""/>
 
-<tags 
-	ms.service="service-bus" 
-	ms.workload="na" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="PHP" 
-	ms.topic="article" 
-	ms.date="10/14/2015" 
-	ms.author="sethm"/>
+<tags
+	ms.service="service-bus"
+	ms.date="10/14/2015"
+	wacn.date=""/>
 
 # How to use Service Bus queues
 
-[AZURE.INCLUDE [service-bus-selector-queues](../../includes/service-bus-selector-queues.md)]
+[AZURE.INCLUDE [service-bus-selector-queues](../includes/service-bus-selector-queues.md)]
 
-This guide shows you how to use Service Bus queues. The samples are written in PHP and use the [Azure SDK for PHP](../php-download-sdk.md). The scenarios covered include **creating queues**, **sending and receiving messages**, and **deleting queues**.
+This guide shows you how to use Service Bus queues. The samples are written in PHP and use the [Azure SDK for PHP](/documentation/articles/php-download-sdk). The scenarios covered include **creating queues**, **sending and receiving messages**, and **deleting queues**.
 
-[AZURE.INCLUDE [howto-service-bus-queues](../../includes/howto-service-bus-queues.md)]
+[AZURE.INCLUDE [howto-service-bus-queues](../includes/howto-service-bus-queues.md)]
 
 ## Create a PHP application
 
-The only requirement for creating a PHP application that accesses the Azure Blob service is the referencing of classes in the [Azure SDK for PHP](../php-download-sdk.md) from within your code. You can use any development tools to create your application, or Notepad.
+The only requirement for creating a PHP application that accesses the Azure Blob service is the referencing of classes in the [Azure SDK for PHP](/documentation/articles/php-download-sdk) from within your code. You can use any development tools to create your application, or Notepad.
 
 > [AZURE.NOTE] Your PHP installation must also have the [OpenSSL extension](http://php.net/openssl) installed and enabled.
 
@@ -34,7 +30,7 @@ In this guide, you will use service features which can be called from within a P
 
 ## Get the Azure client libraries
 
-[AZURE.INCLUDE [get-client-libraries](../../includes/get-client-libraries.md)]
+[AZURE.INCLUDE [get-client-libraries](../includes/get-client-libraries.md)]
 
 ## Configure your application to use Service Bus
 
@@ -58,7 +54,7 @@ To instantiate a Service Bus client, you must first have a valid connection stri
 
 	Endpoint=[yourEndpoint];SharedSecretIssuer=[Default Issuer];SharedSecretValue=[Default Key]
 
-Where **Endpoint** is typically of the format `https://[yourNamespace].servicebus.windows.net`.
+Where **Endpoint** is typically of the format `https://[yourNamespace].servicebus.chinacloudapi.cn`.
 
 To create any Azure service client you must use the **ServicesBuilder** class. You can:
 
@@ -102,7 +98,7 @@ The following example shows how to instantiate a **ServiceBusRestProxy** and cal
 	catch(ServiceException $e){
 		// Handle exception based on error codes and messages.
 		// Error codes and messages are here: 
-		// http://msdn.microsoft.com/library/windowsazure/dd179357
+		// http://msdn.microsoft.com/zh-cn/library/azure/dd179357
 		$code = $e->getCode();
 		$error_message = $e->getMessage();
 		echo $code.": ".$error_message."<br />";
@@ -135,7 +131,7 @@ To send a message to a Service Bus queue, your application calls the **ServiceBu
 	catch(ServiceException $e){
 		// Handle exception based on error codes and messages.
 		// Error codes and messages are here: 
-		// http://msdn.microsoft.com/library/windowsazure/hh780775
+		// http://msdn.microsoft.com/zh-cn/library/azure/hh780775
 		$code = $e->getCode();
 		$error_message = $e->getMessage();
 		echo $code.": ".$error_message."<br />";
@@ -185,7 +181,7 @@ The following example shows how a message can be received and processed using **
 	catch(ServiceException $e){
 		// Handle exception based on error codes and messages.
 		// Error codes and messages are here:
-		// http://msdn.microsoft.com/library/windowsazure/hh780735
+		// http://msdn.microsoft.com/zh-cn/library/azure/hh780735
 		$code = $e->getCode();
 		$error_message = $e->getMessage();
 		echo $code.": ".$error_message."<br />";
@@ -205,7 +201,7 @@ Now that you've learned the basics of Service Bus queues, see [Queues, topics, a
 
 For more information, also see the [PHP Developer Center](/develop/php/).
 
-[Queues, Topics, and Subscriptions]: service-bus-queues-topics-subscriptions.md
+[Queues, Topics, and Subscriptions]: /documentation/articles/service-bus-queues-topics-subscriptions
 [require_once]: http://php.net/require_once
 
  

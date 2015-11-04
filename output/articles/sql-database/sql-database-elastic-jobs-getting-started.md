@@ -8,34 +8,30 @@
 
 <tags
 	ms.service="sql-database"
-	ms.workload="sql-database"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="08/04/2015"
-	ms.author="sidneyh; ddove" />
+	wacn.date=""/>
 
 # Getting started with Elastic Database jobs
 
-Elastic Database jobs (preview) for Azure SQL Database allows you to reliability execute T-SQL scripts that span multiple databases while automatically retrying and providing eventual completion guarantees. For more information about the Elastic Database job feature, please see the [feature overview page](sql-database-elastic-jobs-overview.md).
+Elastic Database jobs (preview) for Azure SQL Database allows you to reliability execute T-SQL scripts that span multiple databases while automatically retrying and providing eventual completion guarantees. For more information about the Elastic Database job feature, please see the [feature overview page](/documentation/articles/sql-database-elastic-jobs-overview).
 
-This topic extends the sample found in [Getting started with Elastic Database tools](sql-database-elastic-scale-get-started.md). When completed, you will: learn how to create and manage jobs that manage a group of related databases.
+This topic extends the sample found in [Getting started with Elastic Database tools](/documentation/articles/sql-database-elastic-scale-get-started). When completed, you will: learn how to create and manage jobs that manage a group of related databases.
 
 ## Prerequisites
 
-Download and run the [Getting started with Elastic Database tools sample](sql-database-elastic-scale-get-started.md).
+Download and run the [Getting started with Elastic Database tools sample](/documentation/articles/sql-database-elastic-scale-get-started).
 
 ## Create a shard map manager using the sample app
 
 Here you will create a shard map manager along with several shards, followed by insertion of data into the shards. If you happen to already have shards setup with sharded data in them, you can skip the following steps and move to the next section.
 
-1. Build and run the **Getting started with Elastic Database tools** sample application. Follow the steps until step 7 in the section [Download and run the sample app](sql-database-elastic-scale-get-started.md#Getting-started-with-elastic-database-tools). At the end of Step 7, you will see the following command prompt:
+1. Build and run the **Getting started with Elastic Database tools** sample application. Follow the steps until step 7 in the section [Download and run the sample app](/documentation/articles/sql-database-elastic-scale-get-started#Getting-started-with-elastic-database-tools). At the end of Step 7, you will see the following command prompt:
 
 	![command prompt][1]
 
 2.  In the command window, type "1" and press **Enter**. This creates the shard map manager, and adds two shards to the server. Then type "3" and press **Enter**; repeat the action four times. This inserts sample data rows in your shards.
 
-3.  The [Azure preview portal](https://portal.azure.com) should show three new databases in your v12 server:
+3.  The [Azure preview portal](https://manage.windowsazure.cn) should show three new databases in your v12 server:
 
 	![Visual Studio confirmation][2]
 
@@ -435,10 +431,10 @@ You can now use Excel’s powerful data functions. You can use the connection st
 ### Cost
 There is no additional charge for using the Elastic Database Query feature. However, at this time this feature is available only on premium databases as an end point, but the shards can be of any service tier.
 
-For pricing information see [SQL Database Pricing Details](http://azure.microsoft.com/pricing/details/sql-database/).
+For pricing information see [SQL Database Pricing Details](/home/features/sql-database/#price).
 
 
-[AZURE.INCLUDE [elastic-scale-include](../../includes/elastic-scale-include.md)]
+[AZURE.INCLUDE [elastic-scale-include](../includes/elastic-scale-include.md)]
 
 <!--Image references-->
 [1]: ./media/sql-database-elastic-query-getting-started/cmd-prompt.png

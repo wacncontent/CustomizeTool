@@ -54,6 +54,6 @@ Sample route table in JSON format:
 
 ### Additional resources
 
-- Get more information about [UDRs](/documentation/articles/virtual-networks-udr-overview).
-- Read the [REST API reference documentation](https://msdn.microsoft.com/zh-cn/library/azure/mt502549.aspx) for route tables.
-- Read the [REST API reference documentation](https://msdn.microsoft.com/zh-cn/library/azure/mt502539.aspx) for user defined routes (UDRs).
+- Get more information about [UDRs](virtual-networks-udr-overview.md).
+- Read the [REST API reference documentation](https://msdn.microsoft.com/library/azure/mt502549.aspx) for route tables.
+- Read the [REST API reference documentation](https://msdn.microsoft.com/library/azure/mt502539.aspx) for user defined routes (UDRs).

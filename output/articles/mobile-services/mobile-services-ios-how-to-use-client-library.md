@@ -9,22 +9,18 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.workload="mobile"
-	ms.tgt_pltfrm="mobile-ios"
-	ms.devlang="objective-c"
-	ms.topic="article"
 	ms.date="10/01/2015"
-	ms.author="krisragh"/>
+	wacn.date=""/>
 
 # How to Use iOS Client Library for Azure Mobile Services
 
-[AZURE.INCLUDE [mobile-services-selector-client-library](../../includes/mobile-services-selector-client-library.md)]
+[AZURE.INCLUDE [mobile-services-selector-client-library](../includes/mobile-services-selector-client-library.md)]
 
 This guide teaches you to perform common scenarios using the Azure Mobile Services [iOS SDK]. If you are new to Mobile Services, first complete [Mobile Services Quick Start] to configure your account, create a table, and create a mobile service.
 
 > [AZURE.NOTE] This guide uses the latest [iOS Mobile Services SDK](https://go.microsoft.com/fwLink/?LinkID=266533&clcid=0x409). If your project uses an older version of the SDK, first upgrade the framework in Xcode.
 
-[AZURE.INCLUDE [mobile-services-concepts](../../includes/mobile-services-concepts.md)]
+[AZURE.INCLUDE [mobile-services-concepts](../includes/mobile-services-concepts.md)]
 
 ##<a name="Setup"></a>Setup and Prerequisites
 
@@ -241,9 +237,9 @@ At minimum, the `id` attribute must be set when making deletes.
 
 ##<a name="#custom-api"></a>How to: Call a custom API
 
-A custom API enables you to define custom endpoints that expose server functionality that does not map to an insert, update, delete, or read operation. By using a custom API, you can have more control over messaging, including reading and setting HTTP message headers and defining a message body format other than JSON. For an example of how to create a custom API in your mobile service, see [How to: define a custom API endpoint](mobile-services-dotnet-backend-define-custom-api.md).
+A custom API enables you to define custom endpoints that expose server functionality that does not map to an insert, update, delete, or read operation. By using a custom API, you can have more control over messaging, including reading and setting HTTP message headers and defining a message body format other than JSON. For an example of how to create a custom API in your mobile service, see [How to: define a custom API endpoint](/documentation/articles/mobile-services-dotnet-backend-define-custom-api).
 
-[AZURE.INCLUDE [mobile-services-ios-call-custom-api](../../includes/mobile-services-ios-call-custom-api.md)]
+[AZURE.INCLUDE [mobile-services-ios-call-custom-api](../includes/mobile-services-ios-call-custom-api.md)]
 
 
 ##<a name="authentication"></a>How to: Authenticate Users
@@ -262,7 +258,7 @@ When authentication succeeds, you get back a user object with a user ID value an
 
 Here is how you can add server-managed login to the [Mobile Services Quick Start] project; you may use similar code for your other projects. For more information and to see an end-to-end example in action, see [Authentication].
 
-[AZURE.INCLUDE [mobile-services-ios-authenticate-app](../../includes/mobile-services-ios-authenticate-app.md)]
+[AZURE.INCLUDE [mobile-services-ios-authenticate-app](../includes/mobile-services-ios-authenticate-app.md)]
 
 ### Client-managed Login (Single Sign-on)
 
@@ -280,7 +276,7 @@ The following example uses the [Live Connect SDK] to enable single sign-on for i
 
 ##<a name="caching-tokens"></a>How to: Cache Authentication Tokens
 
-Let's see how you may cache tokens in the [Mobile Services Quick Start] project; you may apply similar steps to any project. [AZURE.INCLUDE [mobile-services-ios-authenticate-app-with-token](../../includes/mobile-services-ios-authenticate-app-with-token.md)]
+Let's see how you may cache tokens in the [Mobile Services Quick Start] project; you may apply similar steps to any project. [AZURE.INCLUDE [mobile-services-ios-authenticate-app-with-token](../includes/mobile-services-ios-authenticate-app-with-token.md)]
 
 ##<a name="errors"></a>How to: Handle Errors
 
@@ -317,20 +313,19 @@ The file [`<WindowsAzureMobileServices/MSError.h>`](https://github.com/Azure/azu
 <!-- Images. -->
 
 <!-- URLs. -->
-[Mobile Services Quick Start]: mobile-services-ios-get-started.md
-[Get started with Mobile Services]: mobile-services-ios-get-started.md
+[Mobile Services Quick Start]: /documentation/articles/mobile-services-ios-get-started
+[Get started with Mobile Services]: /documentation/articles/mobile-services-ios-get-started
 [Mobile Services SDK]: https://go.microsoft.com/fwLink/p/?LinkID=266533
 [Authentication]: /develop/mobile/tutorials/get-started-with-users-ios
 [iOS SDK]: https://developer.apple.com/xcode
 
 [Handling Expired Tokens]: http://go.microsoft.com/fwlink/p/?LinkId=301955
 [Live Connect SDK]: http://go.microsoft.com/fwlink/p/?LinkId=301960
-[Permissions]: http://msdn.microsoft.com/library/windowsazure/jj193161.aspx
-[Service-side Authorization]:
-mobile-services-javascript-backend-service-side-authorization.md
+[Permissions]: http://msdn.microsoft.com/zh-cn/library/azure/jj193161.aspx
+[Service-side Authorization]: /documentation/articles/mobile-services-javascript-backend-service-side-authorization
 [Dynamic Schema]: http://go.microsoft.com/fwlink/p/?LinkId=296271
-[Create a table]: http://msdn.microsoft.com/library/windowsazure/jj193162.aspx
+[Create a table]: http://msdn.microsoft.com/zh-cn/library/azure/jj193162.aspx
 [NSDictionary object]: http://go.microsoft.com/fwlink/p/?LinkId=301965
 [ASCII control codes C0 and C1]: http://en.wikipedia.org/wiki/Data_link_escape_character#C1_set
-[CLI to manage Mobile Services tables]: ../virtual-machines-command-line-tools.md#Mobile_Tables
+[CLI to manage Mobile Services tables]: /documentation/articles/virtual-machines-command-line-tools#Mobile_Tables
 [Conflict-Handler]: mobile-services-ios-handling-conflicts-offline-data.md#add-conflict-handling

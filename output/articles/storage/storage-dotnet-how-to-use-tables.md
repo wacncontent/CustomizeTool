@@ -1,6 +1,6 @@
 <properties
-	pageTitle="How to use Table storage from .NET | Microsoft Azure"
-	description="Learn how to use Microsoft Azure Table storage to create and delete tables and insert and query entities in a table."
+	pageTitle="How to use Table storage from .NET | Windows Azure"
+	description="Learn how to use Windows Azure Table storage to create and delete tables and insert and query entities in a table."
 	services="storage"
 	documentationCenter=".net"
 	authors="tamram"
@@ -9,17 +9,13 @@
 
 <tags
 	ms.service="storage"
-	ms.workload="storage"
-	ms.tgt_pltfrm="na"
-	ms.devlang="dotnet"
-	ms.topic="hero-article"
 	ms.date="08/04/2015"
-	ms.author="tamram"/>
+	wacn.date=""/>
 
 
 # How to use Table storage from .NET
 
-[AZURE.INCLUDE [storage-selector-table-include](../../includes/storage-selector-table-include.md)]
+[AZURE.INCLUDE [storage-selector-table-include](../includes/storage-selector-table-include.md)]
 
 ## Overview
 
@@ -28,17 +24,17 @@ Azure Table storage service. The samples are written in C\# code
 and use the Azure Storage Client Library for .NET. The scenarios covered include creating and
 deleting a table, as well as working with table entities.
 
-[AZURE.INCLUDE [storage-dotnet-client-library-version-include](../../includes/storage-dotnet-client-library-version-include.md)]
+[AZURE.INCLUDE [storage-dotnet-client-library-version-include](../includes/storage-dotnet-client-library-version-include.md)]
 
-[AZURE.INCLUDE [storage-table-concepts-include](../../includes/storage-table-concepts-include.md)]
+[AZURE.INCLUDE [storage-table-concepts-include](../includes/storage-table-concepts-include.md)]
 
-[AZURE.INCLUDE [storage-create-account-include](../../includes/storage-create-account-include.md)]
+[AZURE.INCLUDE [storage-create-account-include](../includes/storage-create-account-include.md)]
 
-[AZURE.INCLUDE [storage-configure-connection-string-include](../../includes/storage-configure-connection-string-include.md)]
+[AZURE.INCLUDE [storage-configure-connection-string-include](../includes/storage-configure-connection-string-include.md)]
 
 ## Programmatically access Table storage
 
-[AZURE.INCLUDE [storage-dotnet-obtain-assembly](../../includes/storage-dotnet-obtain-assembly.md)]
+[AZURE.INCLUDE [storage-dotnet-obtain-assembly](../includes/storage-dotnet-obtain-assembly.md)]
 
 ### Namespace declarations
 Add the following code namespace declarations to the top of any C\# file
@@ -50,7 +46,7 @@ in which you wish to programmatically access Azure Storage.
 
 Make sure you reference the `Microsoft.WindowsAzure.Storage.dll` assembly.
 
-[AZURE.INCLUDE [storage-dotnet-retrieve-conn-string](../../includes/storage-dotnet-retrieve-conn-string.md)]
+[AZURE.INCLUDE [storage-dotnet-retrieve-conn-string](../includes/storage-dotnet-retrieve-conn-string.md)]
 
 ## Create a table
 
@@ -449,7 +445,7 @@ period of time following the deletion.
 
 ## Retrieve entities in pages asynchronously
 
-If you are reading a large number of entities, and you want to process/display entities as they are retrieved rather than waiting for them all to return, you can retrieve entities by using a segmented query. This example shows how to return results in pages by using the Async-Await pattern so that execution is not blocked while you're waiting for a large set of results to return. For more details on using the Async-Await pattern in .NET, see [Asynchronous programming with Async and Await (C# and Visual Basic)](https://msdn.microsoft.com/library/hh191443.aspx).
+If you are reading a large number of entities, and you want to process/display entities as they are retrieved rather than waiting for them all to return, you can retrieve entities by using a segmented query. This example shows how to return results in pages by using the Async-Await pattern so that execution is not blocked while you're waiting for a large set of results to return. For more details on using the Async-Await pattern in .NET, see [Asynchronous programming with Async and Await (C# and Visual Basic)](https://msdn.microsoft.com/zh-cn/library/hh191443.aspx).
 
     // Initialize a default TableQuery to retrieve all the entities in the table.
     TableQuery<CustomerEntity> tableQuery = new TableQuery<CustomerEntity>();
@@ -483,11 +479,11 @@ to learn about more complex storage tasks:
   <ul>
     <li><a href="http://go.microsoft.com/fwlink/?LinkID=390731&clcid=0x409">Storage Client Library for .NET reference</a>
     </li>
-    <li><a href="http://msdn.microsoft.com/library/azure/dd179355">REST API reference</a></li>
+    <li><a href="http://msdn.microsoft.com/zh-cn/library/azure/dd179355">REST API reference</a></li>
   </ul>
 </li>
-<li>Learn about more advanced tasks you can perform with Azure Storage by reviewing <a href="http://msdn.microsoft.com/library/azure/gg433040.aspx">Azure Storage documentation</a>.</li>
-<li>Learn how to simplify the code you write to work with Azure Storage by using the <a href="../websites-dotnet-webjobs-sdk/">Azure WebJobs SDK</a>.</li>
+<li>Learn about more advanced tasks you can perform with Azure Storage by reviewing <a href="http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx">Azure Storage documentation</a>.</li>
+<li>Learn how to simplify the code you write to work with Azure Storage by using the <a href="/documentation/articles/websites-dotnet-webjobs-sdk">Azure WebJobs SDK</a>.</li>
 <li>View more feature guides to learn about additional options for storing data in Azure:
   <ul>
     <li>Use <a href="/documentation/articles/storage-dotnet-how-to-use-blobs/">Blob storage</a> to store unstructured data.</li>
@@ -498,7 +494,7 @@ to learn about more complex storage tasks:
 </ul>
 
   [Download and install the Azure SDK for .NET]: /develop/net/
-  [Creating an Azure Project in Visual Studio]: http://msdn.microsoft.com/library/azure/ee405487.aspx
+  [Creating an Azure Project in Visual Studio]: http://msdn.microsoft.com/zh-cn/library/azure/ee405487.aspx
 
   [Blob5]: ./media/storage-dotnet-how-to-use-table-storage/blob5.png
   [Blob6]: ./media/storage-dotnet-how-to-use-table-storage/blob6.png
@@ -508,9 +504,9 @@ to learn about more complex storage tasks:
 
   [Introducing Upsert and Query Projection blog post]: http://blogs.msdn.com/b/windowsazurestorage/archive/2011/09/15/windows-azure-tables-introducing-upsert-and-query-projection.aspx
   [.NET Client Library reference]: http://go.microsoft.com/fwlink/?LinkID=390731&clcid=0x409
-  [Storing and accessing data in Azure]: http://msdn.microsoft.com/library/azure/gg433040.aspx
+  [Storing and accessing data in Azure]: http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx
   [Azure Storage Team blog]: http://blogs.msdn.com/b/windowsazurestorage/
-  [Configure Azure Storage connection strings]: http://msdn.microsoft.com/library/azure/ee758697.aspx
+  [Configure Azure Storage connection strings]: http://msdn.microsoft.com/zh-cn/library/azure/ee758697.aspx
   [OData]: http://nuget.org/packages/Microsoft.Data.OData/5.0.2
   [Edm]: http://nuget.org/packages/Microsoft.Data.Edm/5.0.2
   [Spatial]: http://nuget.org/packages/System.Spatial/5.0.2

@@ -1,23 +1,19 @@
 <properties 
-   pageTitle="Service Bus and Python with AMQP 1.0 | Microsoft Azure"
+   pageTitle="Service Bus and Python with AMQP 1.0 | Windows Azure"
    description="Using Service Bus from Python with AMQP."
    services="service-bus"
    documentationCenter="na"
    authors="sethmanheim"
    manager="timlt"
    editor="tysonn" /> 
-<tags 
-   ms.service="service-bus"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="na"
-   ms.date="10/07/2015"
-   ms.author="sethm" />
+<tags
+	ms.service="service-bus"
+	ms.date="10/07/2015"
+	wacn.date=""/>
 
 # Using Service Bus from Python with AMQP 1.0
 
-[AZURE.INCLUDE [service-bus-selector-amqp](../../includes/service-bus-selector-amqp.md)]
+[AZURE.INCLUDE [service-bus-selector-amqp](../includes/service-bus-selector-amqp.md)]
 
 Proton-Python is a Python language binding to Proton-C; that is, Proton-Python is implemented as a wrapper around an engine implemented in C.
 
@@ -38,7 +34,7 @@ The following code shows how to send a message to a Service Bus messaging entity
 ```
 messenger = Messenger()
 message = Message()
-message.address = "amqps://[username]:[password]@[namespace].servicebus.windows.net/[entity]"
+message.address = "amqps://[username]:[password]@[namespace].servicebus.chinacloudapi.cn/[entity]"
 
 message.body = u"This is a text string"
 messenger.put(message)
@@ -51,7 +47,7 @@ The following code shows how to receive a message from a Service Bus messaging e
 
 ```
 messenger = Messenger()
-address = "amqps://[username]:[password]@[namespace].servicebus.windows.net/[entity]"
+address = "amqps://[username]:[password]@[namespace].servicebus.chinacloudapi.cn/[entity]"
 messenger.subscribe(address)
 
 messenger.start()
@@ -211,7 +207,7 @@ Ready to learn more? Visit the following links:
 - [Service Bus AMQP overview]
 - [AMQP in Service Bus for Windows Server]
 
-[BrokeredMessage]: https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.brokeredmessage.aspx
-[AMQP in Service Bus for Windows Server]: https://msdn.microsoft.com/library/dn574799.aspx
+[BrokeredMessage]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.brokeredmessage.aspx
+[AMQP in Service Bus for Windows Server]: https://msdn.microsoft.com/zh-cn/library/dn574799.aspx
 
-[Service Bus AMQP overview]: service-bus-amqp-overview.md
+[Service Bus AMQP overview]: /documentation/articles/service-bus-amqp-overview

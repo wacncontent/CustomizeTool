@@ -1,3 +1,3 @@
 > [AZURE.SELECTOR]
-- [Portal](/documentation/articles/media-services-manage-content)
-- [.NET](/documentation/articles/media-services-index-content)
+- [Portal](../articles/media-services/media-services-manage-content.md)
+- [.NET](../articles/media-services/media-services-index-content.md)

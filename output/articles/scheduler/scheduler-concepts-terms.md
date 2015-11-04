@@ -1,5 +1,5 @@
 <properties
- pageTitle="Scheduler concepts, terms, and entities | Microsoft Azure"
+ pageTitle="Scheduler concepts, terms, and entities | Windows Azure"
  description="Azure Scheduler concepts, terminology, and entity hierarchy, including jobs and job collections.  Shows a comprehensive example of a scheduled job."
  services="scheduler"
  documentationCenter=".NET"
@@ -7,13 +7,9 @@
  manager="dwrede"
  editor=""/>
 <tags
- ms.service="scheduler"
- ms.workload="infrastructure-services"
- ms.tgt_pltfrm="na"
- ms.devlang="dotnet"
- ms.topic="get-started-article"
- ms.date="08/04/2015"
- ms.author="krisragh"/>
+	ms.service="scheduler"
+	ms.date="08/04/2015"
+	wacn.date=""/>
 
 # Scheduler concepts, terminology, + entity hierarchy
 
@@ -34,10 +30,10 @@ At a high level, the scheduler and the service management API expose the followi
 
 |Capability|Description and URI address|
 |---|---|
-|**Cloud service management**|GET, PUT, and DELETE support for creating and modifying cloud services <p>`https://management.core.windows.net/{subscriptionId}/cloudservices/{cloudServiceName}`</p>|
-|**Job collection management**|GET, PUT, and DELETE support for creating and modifying job collections and the jobs contained therein. A job collection is a container for jobs and maps to quotas and shared settings. Examples of quotas, described later, are maximum number of jobs and smallest recurrence interval. <p>PUT and DELETE: `https://management.core.windows.net/{subscriptionId}/cloudservices/{cloudServiceName}/resources/scheduler/jobcollections/{jobCollectionName}`</p><p>GET: `https://management.core.windows.net/{subscriptionId}/cloudservices/{cloudServiceName}/resources/scheduler/~/jobcollections/{jobCollectionName}`</p>
-|**Job management**|GET, PUT, POST, PATCH, and DELETE support for creating and modifying jobs. All jobs must belong to a job collection that already exists, so there is no implicit creation. <p>`https://management.core.windows.net/{subscriptionId}/cloudservices/{cloudServiceName}/resources/scheduler/~/jobcollections/{jobCollectionName}/jobs/{jobId}`</p>|
-|**Job history management**|GET support for fetching 60 days of job execution history, such as job elapsed time and job execution results. Adds query string parameter support for filtering based on state and status. <P>`https://management.core.windows.net/{subscriptionId}/cloudservices/{cloudServiceName}/resources/scheduler/~/jobcollections/{jobCollectionName}/jobs/{jobId}/history`</p>|
+|**Cloud service management**|GET, PUT, and DELETE support for creating and modifying cloud services <p>`https://management.core.chinacloudapi.cn/{subscriptionId}/cloudservices/{cloudServiceName}`</p>|
+|**Job collection management**|GET, PUT, and DELETE support for creating and modifying job collections and the jobs contained therein. A job collection is a container for jobs and maps to quotas and shared settings. Examples of quotas, described later, are maximum number of jobs and smallest recurrence interval. <p>PUT and DELETE: `https://management.core.chinacloudapi.cn/{subscriptionId}/cloudservices/{cloudServiceName}/resources/scheduler/jobcollections/{jobCollectionName}`</p><p>GET: `https://management.core.chinacloudapi.cn/{subscriptionId}/cloudservices/{cloudServiceName}/resources/scheduler/~/jobcollections/{jobCollectionName}`</p>
+|**Job management**|GET, PUT, POST, PATCH, and DELETE support for creating and modifying jobs. All jobs must belong to a job collection that already exists, so there is no implicit creation. <p>`https://management.core.chinacloudapi.cn/{subscriptionId}/cloudservices/{cloudServiceName}/resources/scheduler/~/jobcollections/{jobCollectionName}/jobs/{jobId}`</p>|
+|**Job history management**|GET support for fetching 60 days of job execution history, such as job elapsed time and job execution results. Adds query string parameter support for filtering based on state and status. <P>`https://management.core.chinacloudapi.cn/{subscriptionId}/cloudservices/{cloudServiceName}/resources/scheduler/~/jobcollections/{jobCollectionName}/jobs/{jobId}/history`</p>|
 
 ## Job types
 
@@ -147,7 +143,7 @@ The action in the example above is an HTTP action. Below is an example of a stor
 			},
 	}
 
-The “errorAction” is the error handler, the action invoked when the primary action fails. You can use this variable to call an error-handling endpoint or send a user notification. This can be used for reaching a secondary endpoint in the case that the primary is not available (e.g., in the case of a disaster at the endpoint’s site) or can be used for notifying an error handling endpoint. Just like the primary action, the error action can be simple or composite logic based on other actions. To learn how to create a SAS token, refer to [Create and Use a Shared Access Signature](https://msdn.microsoft.com/library/azure/jj721951.aspx).
+The “errorAction” is the error handler, the action invoked when the primary action fails. You can use this variable to call an error-handling endpoint or send a user notification. This can be used for reaching a secondary endpoint in the case that the primary is not available (e.g., in the case of a disaster at the endpoint’s site) or can be used for notifying an error handling endpoint. Just like the primary action, the error action can be simple or composite logic based on other actions. To learn how to create a SAS token, refer to [Create and Use a Shared Access Signature](https://msdn.microsoft.com/zh-cn/library/azure/jj721951.aspx).
 
 ## recurrence
 
@@ -189,20 +185,20 @@ The retry interval, specified with the **retryInterval** object, is the interval
 
 ## See also
 
- [What is Scheduler?](scheduler-intro.md)
+ [What is Scheduler?](/documentation/articles/scheduler-intro)
 
- [Get started using Azure Scheduler in the Azure portal](scheduler-get-started-portal.md)
+ [Get started using Azure Scheduler in the Azure Management Portal](/documentation/articles/scheduler-get-started-portal)
 
- [Plans and billing in Azure Scheduler](scheduler-plans-billing.md)
+ [Plans and billing in Azure Scheduler](/documentation/articles/scheduler-plans-billing)
 
- [How to build complex schedules and advanced recurrence with Azure Scheduler](scheduler-advanced-complexity.md)
+ [How to build complex schedules and advanced recurrence with Azure Scheduler](/documentation/articles/scheduler-advanced-complexity)
 
- [Azure Scheduler REST API reference](https://msdn.microsoft.com/library/dn528946)
+ [Azure Scheduler REST API reference](https://msdn.microsoft.com/zh-cn/library/dn528946)
 
- [Azure Scheduler PowerShell cmdlets reference](scheduler-powershell-reference.md)
+ [Azure Scheduler PowerShell cmdlets reference](/documentation/articles/scheduler-powershell-reference)
 
- [Azure Scheduler high-availability and reliability](scheduler-high-availability-reliability.md)
+ [Azure Scheduler high-availability and reliability](/documentation/articles/scheduler-high-availability-reliability)
 
- [Azure Scheduler limits, defaults, and error codes](scheduler-limits-defaults-errors.md)
+ [Azure Scheduler limits, defaults, and error codes](/documentation/articles/scheduler-limits-defaults-errors)
 
- [Azure Scheduler outbound authentication](scheduler-outbound-authentication.md)
+ [Azure Scheduler outbound authentication](/documentation/articles/scheduler-outbound-authentication)

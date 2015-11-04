@@ -8,20 +8,16 @@
 	editor="genemi"/>
 
 
-<tags 
-	ms.service="sql-database" 
-	ms.workload="data-management" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="java" 
-	ms.topic="article" 
-	ms.date="09/28/2015" 
-	ms.author="lbosq"/>
+<tags
+	ms.service="sql-database"
+	ms.date="09/28/2015"
+	wacn.date=""/>
 
 
 # Connect to SQL Database by using Java with JDBC on Windows
 
 
-[AZURE.INCLUDE [sql-database-develop-includes-selector-language-platform-depth](../../includes/sql-database-develop-includes-selector-language-platform-depth.md)]
+[AZURE.INCLUDE [sql-database-develop-includes-selector-language-platform-depth](../includes/sql-database-develop-includes-selector-language-platform-depth.md)]
 
 
 This topic presents a Java code sample that you can use to connect to Azure SQL Database. The Java sample relies on the Java Development Kit (JDK) version 1.8. The sample connects to an Azure SQL Database by using the JDBC driver.
@@ -32,7 +28,7 @@ This topic presents a Java code sample that you can use to connect to Azure SQL 
 
 - [Microsoft JDBC Driver for SQL Server - SQL JDBC 4](http://www.microsoft.com/download/details.aspx?displaylang=en&id=11774).
 - Any operating system platform that runs [Java Development Kit 1.8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html).
-- An existing database on SQL Azure. See the [Get Started topic](sql-database-get-started.md) to learn how to create a sample database and retrieve your connection string.
+- An existing database on SQL Azure. See the [Get Started topic](/documentation/articles/sql-database-get-started) to learn how to create a sample database and retrieve your connection string.
 
 
 ## Test environment
@@ -58,7 +54,7 @@ Could this instead be a #tempPerson table, so that the Java code sample could be
 ## Connection string for your SQL Database
 
 
-The code sample creates a `Connection` object by using a connection string. You can find the connection string by using the [Azure preview portal](http://portal.azure.com/). For details about finding the connection string, see [Create your first Azure SQL Database](sql-database-get-started.md).
+The code sample creates a `Connection` object by using a connection string. You can find the connection string by using the [Azure preview portal](http://manage.windowsazure.cn/). For details about finding the connection string, see [Create your first Azure SQL Database](/documentation/articles/sql-database-get-started).
 
 
 > [AZURE.NOTE] JTDS JDBC driver
@@ -86,13 +82,13 @@ Here next is the bulk of the Java code sample. The sample includes the `main` fu
 	
 		public static void main(String[] args) {
 			String connectionString =
-				"jdbc:sqlserver://your_server.database.windows.net:1433;" 
+				"jdbc:sqlserver://your_server.database.chinacloudapi.cn:1433;" 
 				+ "database=your_database;"
 				+ "user=your_user@your_server;"
 				+ "password={your_password};"
 				+ "encrypt=true;"
 				+ "trustServerCertificate=false;"
-				+ "hostNameInCertificate=*.database.windows.net;"
+				+ "hostNameInCertificate=*.database.chinacloudapi.cn;"
 				+ "loginTimeout=30;"; 
 	
 			// Declare the JDBC objects.

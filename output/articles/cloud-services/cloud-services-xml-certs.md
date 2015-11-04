@@ -7,14 +7,10 @@
 	manager="timlt" 
 	editor=""/>
 
-<tags 
-	ms.service="cloud-services" 
-	ms.workload="tbd" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
+<tags
+	ms.service="cloud-services"
 	ms.date="07/24/2015"
-	ms.author="adegeo"/>
+	wacn.date=""/>
 
 
 
@@ -68,4 +64,4 @@ Here is an example of a certificate defined in the service config.
 **Note** the matching `name` attributes.
 
 ## Next steps
-Review the [Service Definition XML](https://msdn.microsoft.com/library/azure/ee758711.aspx) schema and the [Service Config XML](https://msdn.microsoft.com/library/azure/ee758710.aspx) schema.
+Review the [Service Definition XML](https://msdn.microsoft.com/zh-cn/library/azure/ee758711.aspx) schema and the [Service Config XML](https://msdn.microsoft.com/zh-cn/library/azure/ee758710.aspx) schema.

@@ -39,6 +39,9 @@
     <Compile Include="setting.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="wordCounter.py">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Interpreter Include="env27\">

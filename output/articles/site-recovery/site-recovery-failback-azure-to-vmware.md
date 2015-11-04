@@ -8,17 +8,13 @@
    editor=""/>
 
 <tags
-   ms.service="site-recovery"
-   ms.devlang="powershell"
-   ms.tgt_pltfrm="na"
-   ms.topic="article"
-   ms.workload="required" 
-   ms.date="10/07/2015"
-   ms.author="ruturajd@microsoft.com"/>
+	ms.service="site-recovery"
+	ms.date="10/07/2015"
+	wacn.date=""/>
 
 # Steps to failback from Azure to VMware
 
-This document will walk you through the steps you need to failback from Azure back to your VMware site. You must have already followed the steps given in the tutorial for [VMware to Azure protection and recovery](site-recovery-vmware-to-azure.md).
+This document will walk you through the steps you need to failback from Azure back to your VMware site. You must have already followed the steps given in the tutorial for [VMware to Azure protection and recovery](/documentation/articles/site-recovery-vmware-to-azure).
 
 After a successful failover to Azure, the virtual machines will be
 available in the virtual machines tab. When you decide to failback –
@@ -193,15 +189,15 @@ perl-Pod-Escapes-1.04-136.el6\_6.1.x86\_64.rpm
 
 perl-Pod-Simple-3.13-136.el6\_6.1.x86\_64.rpm
 
-perl-libs-5.10.1-136.el6\_6.1.x86\_64.rpm
+perl-libs-5.10.1-136.el6\_6.1.x86_64.rpm
 
-perl-version-0.77-136.el6\_6.1.x86\_64.rpm
+perl-version-0.77-136.el6_6.1.x86_64.rpm
 
-rsync-3.0.6-12.el6.x86\_64.rpm
+rsync-3.0.6-12.el6.x86_64.rpm
 
-snappy-1.1.0-1.el6.x86\_64.rpm
+snappy-1.1.0-1.el6.x86_64.rpm
 
-wget-1.12-5.el6\_6.1.x86\_64.rpm
+wget-1.12-5.el6_6.1.x86_64.rpm
 
 NOTE: If source machine uses Reiser or XFS filesystem for root or boot
 device, then following packages should be download and installed on
@@ -215,13 +211,13 @@ Linux Master Target prior to the protection.
 \# wget
 <http://elrepo.org/linux/elrepo/el6/x86_64/RPMS/reiserfs-utils-3.6.21-1.el6.elrepo.x86_64.rpm>
 
-\# rpm -ivh kmod-reiserfs-0.0-1.el6.elrepo.x86\_64.rpm
-reiserfs-utils-3.6.21-1.el6.elrepo.x86\_64.rpm
+\# rpm -ivh kmod-reiserfs-0.0-1.el6.elrepo.x86_64.rpm
+reiserfs-utils-3.6.21-1.el6.elrepo.x86_64.rpm
 
 \# wget
 <http://mirror.centos.org/centos/6.6/os/x86_64/Packages/xfsprogs-3.1.1-16.el6.x86_64.rpm>
 
-\# rpm -ivh xfsprogs-3.1.1-16.el6.x86\_64.rpm
+\# rpm -ivh xfsprogs-3.1.1-16.el6.x86_64.rpm
 
 #### Apply Custom Configuration Changes
 
@@ -275,7 +271,7 @@ endpoint created for ssh to login to the Linux Master Target Server.
 Extract the files from the gzipped Linux Master Target Server installer
 tar archive by executing
 
-*“tar –xvzf Microsoft-ASR\_UA\_8.2.0.0\_RHEL6-64\*”* from the directory
+*“tar –xvzf Microsoft-ASR_UA_8.2.0.0_RHEL6-64\*”* from the directory
 where you had copied the Linux Master Target Server installer to.
 
 ![](./media/site-recovery-failback-azure-to-vmware/image16.png)
@@ -372,7 +368,7 @@ To do this,
 
 ### Protection plan for VMs
 
-On the Azure portal, look at the states of the virtual machine and
+On the Azure Management Portal, look at the states of the virtual machine and
 ensure that they are failed over.
 
 ![](./media/site-recovery-failback-azure-to-vmware/image21.png)
@@ -407,7 +403,7 @@ virtual machine.
     e.  Once you have identified the VMs you want to protect, select
         them one by one.
 
-5.  When you select a virtual machine to protect (and it has already failed over to Azure) you will get a popup window that gives two entries for the virtual machine. This is because the CS has detected two instances of the virtual machines registered to it. You need to remove the entry for the on-premises VM so that you can protect the correct VM. Note that you will see the entries by its computer hostname. To identify the correct Azure VM entry here, you can log into the Azure VM and go to C:\Program Files (x86)\Microsoft Azure Site Recovery\Application Data\etc. In the file drscout.conf , identify the Host ID. In the vContinuum dialog, keep the entry for which the hostID is found in the VM. Delete all other entries.
+5.  When you select a virtual machine to protect (and it has already failed over to Azure) you will get a popup window that gives two entries for the virtual machine. This is because the CS has detected two instances of the virtual machines registered to it. You need to remove the entry for the on-premises VM so that you can protect the correct VM. Note that you will see the entries by its computer hostname. To identify the correct Azure VM entry here, you can log into the Azure VM and go to C:\Program Files (x86)\Windows Azure Site Recovery\Application Data\etc. In the file drscout.conf , identify the Host ID. In the vContinuum dialog, keep the entry for which the hostID is found in the VM. Delete all other entries.
 
 ![](./media/site-recovery-failback-azure-to-vmware/image22.png)
 

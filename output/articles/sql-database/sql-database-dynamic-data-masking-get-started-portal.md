@@ -1,6 +1,6 @@
 <properties 
-   pageTitle="Get started with SQL Database Dynamic Data Masking (Azure portal)" 
-   description="How to get started with SQL Database Dynamic Data Masking in the Azure portal" 
+   pageTitle="Get started with SQL Database Dynamic Data Masking (Azure Management Portal)" 
+   description="How to get started with SQL Database Dynamic Data Masking in the Azure Management Portal" 
    services="sql-database" 
    documentationCenter="" 
    authors="nadavhelfman" 
@@ -8,18 +8,14 @@
    editor="v-romcal"/>
 
 <tags
-   ms.service="sql-database"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="data-services" 
-   ms.date="07/30/2015"
-   ms.author="nadavh; ronmat; v-romcal; sstein; ronitr"/>
+	ms.service="sql-database"
+	ms.date="07/30/2015"
+	wacn.date=""/>
 
-# Get started with SQL Database Dynamic Data Masking (Azure portal)
+# Get started with SQL Database Dynamic Data Masking (Azure Management Portal)
 
 > [AZURE.SELECTOR]
-- [Dynamic Data Masking - Azure Preview portal](sql-database-dynamic-data-masking-get-started.md)
+- [Dynamic Data Masking - Azure Preview portal](/documentation/articles/sql-database-dynamic-data-masking-get-started)
 
 ## Overview
 
@@ -31,11 +27,11 @@ For example, a call center support person may identify callers by several digits
 
 ## SQL Database Dynamic Data Masking basics
 
-You set up dynamic data masking policy in the Azure portal under the Auditing & Security tab for your database.
-Before setting up dynamic data masking check if you are using a ["Downlevel Client"](sql-database-auditing-and-dynamic-data-masking-downlevel-clients.md).
+You set up dynamic data masking policy in the Azure Management Portal under the Auditing & Security tab for your database.
+Before setting up dynamic data masking check if you are using a ["Downlevel Client"](/documentation/articles/sql-database-auditing-and-dynamic-data-masking-downlevel-clients).
 
 
-> [AZURE.NOTE] To set up dynamic data masking in the Azure Preview portal, see [Get started with SQL Database Dynamic Data Masking (Azure Preview portal)](sql-database-dynamic-data-masking-get-started.md). 
+> [AZURE.NOTE] To set up dynamic data masking in the Azure Preview portal, see [Get started with SQL Database Dynamic Data Masking (Azure Preview portal)](/documentation/articles/sql-database-dynamic-data-masking-get-started). 
 
 
 ### Dynamic data masking permissions
@@ -63,12 +59,12 @@ Dynamic data masking can be configured by the Azure Database admin, server admin
 <a name="Anchor1"></a>
 ### Security-enabled connection string
 
-If you are using a ["Downlevel Client"](sql-database-auditing-and-dynamic-data-masking-downlevel-clients.md), then you must update existing clients (example: applications) to use a modified connection string format. Please click [here](sql-database-auditing-and-dynamic-data-masking-downlevel-clients.md) for details.
+If you are using a ["Downlevel Client"](/documentation/articles/sql-database-auditing-and-dynamic-data-masking-downlevel-clients), then you must update existing clients (example: applications) to use a modified connection string format. Please click [here](/documentation/articles/sql-database-auditing-and-dynamic-data-masking-downlevel-clients) for details.
 
 
-## Set up dynamic data masking for your database using the Azure portal
+## Set up dynamic data masking for your database using the Azure Management Portal
 
-1. Launch the Azure portal at [https://manage.windowsazure.com](https://manage.windowsazure.com).
+1. Launch the Azure Management Portal at [https://manage.windowsazure.cn](https://manage.windowsazure.cn).
 
 2. Click the database you want to mask, and then click the **AUDITING & SECURITY** tab.
 
@@ -95,8 +91,8 @@ If you are using a ["Downlevel Client"](sql-database-auditing-and-dynamic-data-m
 
 ## Set up dynamic data masking for your database using Powershell cmdlets
 
-See [Azure SQL Database Cmdlets](https://msdn.microsoft.com/library/azure/mt163521.aspx).
+See [Azure SQL Database Cmdlets](https://msdn.microsoft.com/zh-cn/library/azure/mt163521.aspx).
 
 ## Set up dynamic data masking for your database using REST API
 
-See [Operations for Azure SQL Databases](https://msdn.microsoft.com/library/dn505719.aspx).
+See [Operations for Azure SQL Databases](https://msdn.microsoft.com/zh-cn/library/dn505719.aspx).

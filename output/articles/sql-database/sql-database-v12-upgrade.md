@@ -7,31 +7,27 @@
 	manager="jeffreyg"
 	editor=""/>
 
-<tags 
-	ms.service="sql-database" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.tgt_pltfrm="na" 
-	ms.workload="data-management" 
-	ms.date="10/08/2015" 
-	ms.author="sstein"/>
+<tags
+	ms.service="sql-database"
+	ms.date="10/08/2015"
+	wacn.date=""/>
 
 
 # Upgrade to SQL Database V12
 
 
 > [AZURE.SELECTOR]
-- [Azure Preview Portal](sql-database-v12-upgrade.md)
-- [PowerShell](sql-database-upgrade-server.md)
+- [Azure Preview Portal](/documentation/articles/sql-database-v12-upgrade)
+- [PowerShell](/documentation/articles/sql-database-upgrade-server)
 
 
-SQL Database V12 is the latest version of SQL Database and it has [many advantages over the previous V2 version](sql-database-v12-whats-new.md). This article shows how to upgrade V2 servers to V12 using the Azure preview portal. 
+SQL Database V12 is the latest version of SQL Database and it has [many advantages over the previous V2 version](/documentation/articles/sql-database-v12-whats-new). This article shows how to upgrade V2 servers to V12 using the Azure preview portal. 
 
-During the process of upgrading to SQL Database V12 you must also [update all Web and Business databases to a new service tier](sql-database-upgrade-new-service-tiers.md). The following directions include the steps to update your Web and Business databases with pricing tier recommendations based on your database's historical usage. 
+During the process of upgrading to SQL Database V12 you must also [update all Web and Business databases to a new service tier](/documentation/articles/sql-database-upgrade-new-service-tiers). The following directions include the steps to update your Web and Business databases with pricing tier recommendations based on your database's historical usage. 
 
 
 
-1. In the [Azure Preview Portal](http://portal.azure.com/) browse to the server you want to upgrade by selecting **BROWSE ALL** > **SQL servers**, and selecting the desired server.
+1. In the [Azure Preview Portal](http://manage.windowsazure.cn/) browse to the server you want to upgrade by selecting **BROWSE ALL** > **SQL servers**, and selecting the desired server.
 2. Select **Latest SQL database update**, then select **Upgrade this server**.
 
       ![upgrade server][1]
@@ -73,8 +69,8 @@ After all databases on the server are eligible you are ready to start the upgrad
 
 ## Related Links
 
-- [What's new in SQL Database V12](sql-database-v12-whats-new.md)
-- [Plan and prepare to upgrade to SQL Database V12](sql-database-v12-plan-prepare-upgrade.md)
+- [What's new in SQL Database V12](/documentation/articles/sql-database-v12-whats-new)
+- [Plan and prepare to upgrade to SQL Database V12](/documentation/articles/sql-database-v12-plan-prepare-upgrade)
 
 
 <!--Image references-->

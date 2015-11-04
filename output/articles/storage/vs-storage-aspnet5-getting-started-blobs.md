@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Get started with blob storage and Visual Studio connected services (ASP.NET 5) | Microsoft Azure"
+	pageTitle="Get started with blob storage and Visual Studio connected services (ASP.NET 5) | Windows Azure"
 	description="How to get started using Azure Blob storage in a Visual Studio ASP.NET 5 project after you have created a storage account using Visual Studio connected services"
 	services="storage"
 	documentationCenter=""
@@ -9,23 +9,19 @@
 
 <tags
 	ms.service="storage"
-	ms.workload="web"
-	ms.tgt_pltfrm="vs-getting-started"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="09/03/2015"
-	ms.author="patshea"/>
+	wacn.date=""/>
 
 # Get started with Azure Blob storage and Visual Studio connected services (ASP.NET 5)
 
 > [AZURE.SELECTOR]
-> - [Getting started](vs-storage-aspnet5-getting-started-blobs.md)
-> - [What happened](vs-storage-aspnet5-what-happened.md)
+> - [Getting started](/documentation/articles/vs-storage-aspnet5-getting-started-blobs)
+> - [What happened](/documentation/articles/vs-storage-aspnet5-what-happened)
 
 > [AZURE.SELECTOR]
-> - [Blobs](vs-storage-aspnet5-getting-started-blobs.md)
-> - [Queues](vs-storage-aspnet5-getting-started-queues.md)
-> - [Tables](vs-storage-aspnet5-getting-started-tables.md)
+> - [Blobs](/documentation/articles/vs-storage-aspnet5-getting-started-blobs)
+> - [Queues](/documentation/articles/vs-storage-aspnet5-getting-started-queues)
+> - [Tables](/documentation/articles/vs-storage-aspnet5-getting-started-tables)
 
 ##Overview
 
@@ -81,7 +77,7 @@ You can also use the **CloudBlobClient** to create a container in your storage a
     await container.CreateIfNotExistsAsync();
 
 
-**NOTE:** The APIs that perform calls to Azure storage in ASP.NET 5 are asynchronous. See [Asynchronous programming with Async and Await](http://msdn.microsoft.com/library/hh191443.aspx) for more information. The code below assumes async programming methods are being used.
+**NOTE:** The APIs that perform calls to Azure storage in ASP.NET 5 are asynchronous. See [Asynchronous programming with Async and Await](http://msdn.microsoft.com/zh-cn/library/hh191443.aspx) for more information. The code below assumes async programming methods are being used.
 
 To make the files within the container available to everyone, you can set the container to be public by using the following code.
 
@@ -137,7 +133,7 @@ To list the blobs in a container, first get a container reference. You can then 
             }
         } while (token != null);
 
-There are others ways to list the contents of a blob container. See [How to use blob storage from .NET](storage-dotnet-how-to-use-blobs.md#list-the-blobs-in-a-container) for more information.
+There are others ways to list the contents of a blob container. See [How to use blob storage from .NET](/documentation/articles/storage-dotnet-how-to-use-blobs#list-the-blobs-in-a-container) for more information.
 
 ##Download a blob
 TTo download a blob, first get a reference to the blob, and then call the **DownloadToStreamAsync** method. The following example uses the **DownloadToStreamAsync** method to transfer the blob contents to a stream object that you can then save as a local file.
@@ -151,7 +147,7 @@ TTo download a blob, first get a reference to the blob, and then call the **Down
     	await blockBlob.DownloadToStreamAsync(fileStream);
 	}
 
-There are other ways to save blobs as files. See [How to use blob storage from .NET](storage-dotnet-how-to-use-blobs.md/#download-blobs) for more information.
+There are other ways to save blobs as files. See [How to use blob storage from .NET](/documentation/articles/storage-dotnet-how-to-use-blobs#download-blobs) for more information.
 
 ##Delete a blob
 To delete a blob, first get a reference to the blob, and then call the **DeleteAsync** method on it.
@@ -164,4 +160,4 @@ To delete a blob, first get a reference to the blob, and then call the **DeleteA
 
 ## Next steps
 
-[AZURE.INCLUDE [vs-storage-dotnet-blobs-next-steps](../../includes/vs-storage-dotnet-blobs-next-steps.md)]
+[AZURE.INCLUDE [vs-storage-dotnet-blobs-next-steps](../includes/vs-storage-dotnet-blobs-next-steps.md)]

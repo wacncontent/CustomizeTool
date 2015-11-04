@@ -1,8 +1,8 @@
-## How to create a VNet in the Azure Management Portal
+## How to create a VNet in the Azure portal
 
 To create a VNet based on the scenario above, follow the steps below.
 
-1. From a browser, navigate to http://manage.windowsazure.cn and, if necessary, sign in with your Azure account.
+1. From a browser, navigate to http://manage.windowsazure.com and, if necessary, sign in with your Azure account.
 2. Click **NEW** > **NETWORK SERVICES** > **VIRTUAL NETWORK** > **CUSTOM CREATE** as shown in the figure below.
 
 	![Create VNet in portal](./media/virtual-networks-create-vnet-classic-portal-include/vnet-create-portal-figure1.gif)

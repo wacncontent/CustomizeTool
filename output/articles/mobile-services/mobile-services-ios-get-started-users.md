@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Add Authentication to Existing Azure Mobile Services App (iOS) | JavaScript Backend | Microsoft Azure"
+	pageTitle="Add Authentication to Existing Azure Mobile Services App (iOS) | JavaScript Backend | Windows Azure"
 	description="Learn how to use Mobile Services to authenticate users of your iOS app through a variety of identity providers, including Google, Facebook, Twitter, and Microsoft."
 	services="mobile-services"
 	documentationCenter="ios"
@@ -9,40 +9,36 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.workload="mobile"
-	ms.tgt_pltfrm="mobile-ios"
-	ms.devlang="objective-c"
-	ms.topic="article"
 	ms.date="10/01/2015"
-	ms.author="krisragh"/>
+	wacn.date=""/>
 
 # Add Authentication to Existing App
 
-[AZURE.INCLUDE [mobile-services-selector-get-started-users](../../includes/mobile-services-selector-get-started-users.md)]
+[AZURE.INCLUDE [mobile-services-selector-get-started-users](../includes/mobile-services-selector-get-started-users.md)]
 
 In this tutorial, you add authentication to the [Mobile Services Quick Start tutorial] using a supported identity provider.
 
-We recommend that you complete the [Mobile Services Quick Start tutorial] first. Alternatively, just download the Quick Start iOS project: click Azure Portal > **Mobile Services** > your mobile service > the cloud sign on top left > **iOS** > **Create a New iOS App** > **Download and run your app** > **Objective-C** > **Download**. Remember to click **Create TodoItem Table** before you click **Download**, if you haven't already created the table.
+We recommend that you complete the [Mobile Services Quick Start tutorial] first. Alternatively, just download the Quick Start iOS project: click Azure Management Portal > **Mobile Services** > your mobile service > the cloud sign on top left > **iOS** > **Create a New iOS App** > **Download and run your app** > **Objective-C** > **Download**. Remember to click **Create TodoItem Table** before you click **Download**, if you haven't already created the table.
 
 ##<a name="register"></a>Register App for Authentication
 
-[AZURE.INCLUDE [mobile-services-register-authentication](../../includes/mobile-services-register-authentication.md)]
+[AZURE.INCLUDE [mobile-services-register-authentication](../includes/mobile-services-register-authentication.md)]
 
 ##<a name="permissions"></a>Restrict Data Permissions to Authenticated Users
 
-[AZURE.INCLUDE [mobile-services-restrict-permissions-javascript-backend](../../includes/mobile-services-restrict-permissions-javascript-backend.md)]
+[AZURE.INCLUDE [mobile-services-restrict-permissions-javascript-backend](../includes/mobile-services-restrict-permissions-javascript-backend.md)]
 
 ##<a name="add-authentication"></a>Add Authentication to App
 
-[AZURE.INCLUDE [mobile-services-ios-authenticate-app](../../includes/mobile-services-ios-authenticate-app.md)]
+[AZURE.INCLUDE [mobile-services-ios-authenticate-app](../includes/mobile-services-ios-authenticate-app.md)]
 
 ##<a name="store-authentication"></a>Store Authentication Tokens in App
 
-[AZURE.INCLUDE [mobile-services-ios-authenticate-app-with-token](../../includes/mobile-services-ios-authenticate-app-with-token.md)]
+[AZURE.INCLUDE [mobile-services-ios-authenticate-app-with-token](../includes/mobile-services-ios-authenticate-app-with-token.md)]
 
 ## <a name="next-steps"></a>Next Steps
 
-Next, learn [how to use the user ID value to filter returned data](mobile-services-javascript-backend-service-side-authorization.md).
+Next, learn [how to use the user ID value to filter returned data](/documentation/articles/mobile-services-javascript-backend-service-side-authorization).
 
 <!-- Anchors. -->
 [Register your app for authentication and configure Mobile Services]: #register
@@ -71,7 +67,7 @@ Next, learn [how to use the user ID value to filter returned data](mobile-servic
 
 
 <!-- URLs. -->
-[Service-side authorization of Mobile Services users]: mobile-services-javascript-backend-service-side-authorization.md
+[Service-side authorization of Mobile Services users]: /documentation/articles/mobile-services-javascript-backend-service-side-authorization
 [Submit an app page]: http://go.microsoft.com/fwlink/p/?LinkID=266582
 [My Applications]: http://go.microsoft.com/fwlink/p/?LinkId=262039
 [Live SDK for Windows]: http://go.microsoft.com/fwlink/p/?LinkId=262253
@@ -82,4 +78,4 @@ Next, learn [how to use the user ID value to filter returned data](mobile-servic
 [Get started with push notifications]: /develop/mobile/tutorials/get-started-with-push-ios
 [Authorize users with scripts]: /develop/mobile/tutorials/authorize-users-in-scripts-ios
 
-[Azure Management Portal]: https://manage.windowsazure.com/
+[Azure Management Portal]: https://manage.windowsazure.cn/

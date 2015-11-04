@@ -9,18 +9,14 @@
 
 <tags
 	ms.service="notification-hubs"
-	ms.workload="mobile"
-	ms.tgt_pltfrm="mobile-windows"
-	ms.devlang="dotnet"
-	ms.topic="article"
-	ms.date="09/08/2015" 
-	ms.author="wesmc"/>
+	ms.date="09/08/2015"
+	wacn.date=""/>
 
 # Use Notification Hubs to send localized breaking news
 
 > [AZURE.SELECTOR]
-- [Windows Store C#](notification-hubs-windows-store-dotnet-send-localized-breaking-news.md)
-- [iOS](notification-hubs-ios-send-localized-breaking-news.md)
+- [Windows Store C#](/documentation/articles/notification-hubs-windows-store-dotnet-send-localized-breaking-news)
+- [iOS](/documentation/articles/notification-hubs-ios-send-localized-breaking-news)
 
 ##Overview
 
@@ -171,7 +167,7 @@ Notifications singleton in the *OnLaunched* method:
 
 ##Send localized notifications from your back-end
 
-[AZURE.INCLUDE [notification-hubs-localized-back-end](../../includes/notification-hubs-localized-back-end.md)]
+[AZURE.INCLUDE [notification-hubs-localized-back-end](../includes/notification-hubs-localized-back-end.md)]
 
 
 
@@ -227,8 +223,8 @@ For more information on using templates, see [Notify users with Notification Hub
 [Authorize users with scripts]: /develop/mobile/tutorials/authorize-users-in-scripts-dotnet
 [JavaScript and HTML]: /develop/mobile/tutorials/get-started-with-push-js
 
-[Azure Management Portal]: https://manage.windowsazure.com/
+[Azure Management Portal]: https://manage.windowsazure.cn/
 [wns object]: http://go.microsoft.com/fwlink/p/?LinkId=260591
-[Notification Hubs Guidance]: http://msdn.microsoft.com/library/jj927170.aspx
-[Notification Hubs How-To for iOS]: http://msdn.microsoft.com/library/jj927168.aspx
-[Notification Hubs How-To for Windows Store]: http://msdn.microsoft.com/library/jj927172.aspx
+[Notification Hubs Guidance]: http://msdn.microsoft.com/zh-cn/library/jj927170.aspx
+[Notification Hubs How-To for iOS]: http://msdn.microsoft.com/zh-cn/library/jj927168.aspx
+[Notification Hubs How-To for Windows Store]: http://msdn.microsoft.com/zh-cn/library/jj927172.aspx

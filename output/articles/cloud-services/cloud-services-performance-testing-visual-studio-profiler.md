@@ -9,14 +9,10 @@
 	tags="" 
 	/>
 
-<tags 
-	ms.service="cloud-services" 
-	ms.workload="na" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="multiple" 
-	ms.topic="article" 
-	ms.date="09/14/2015" 
-	ms.author="patshea"/>
+<tags
+	ms.service="cloud-services"
+	ms.date="09/14/2015"
+	wacn.date=""/>
 
 # Testing the Performance of a Cloud Service Locally in the Azure Compute Emulator Using the Visual Studio Profiler
 
@@ -179,8 +175,8 @@ Instrumenting Azure binaries in the emulator is not supported in the Visual Stud
 
 
 
-[1]: http://msdn.microsoft.com/library/azure/hh369930.aspx
-[2]: http://msdn.microsoft.com/library/azure/hh411542.aspx
+[1]: http://msdn.microsoft.com/zh-cn/library/azure/hh369930.aspx
+[2]: http://msdn.microsoft.com/zh-cn/library/azure/hh411542.aspx
 [3]: http://blogs.msdn.com/b/habibh/archive/2009/06/30/walkthrough-using-the-tier-interaction-profiler-in-visual-studio-team-system-2010.aspx
 [4]: ./media/cloud-services-performance-testing-visual-studio-profiler/ProfilingLocally09.png
 [5]: ./media/cloud-services-performance-testing-visual-studio-profiler/ProfilingLocally10.png

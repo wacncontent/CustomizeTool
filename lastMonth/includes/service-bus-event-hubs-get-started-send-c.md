@@ -1,7 +1,7 @@
 ## Send messages to Event Hubs
 In this section we will write a C app to send events to your event hub. We will make use of the Proton AMQP library from the [Apache Qpid project](http://qpid.apache.org/). This is analogous to using Service Bus Queues and Topics with AMQP from C as shown [here](https://code.msdn.microsoft.com/windowsazure/Using-Apache-Qpid-Proton-C-afd76504). For more information refer to [Qpid Proton documentation](http://qpid.apache.org/proton/index.html).
 
-1. From the [Qpid AMQP Messenger page](http://qpid.apache.org/components/messenger/index.html), click the **Installing Qpid Proton** link and follow the instructions depending on your environment. We will assume a Linux environment, e.g. an [Azure Linux VM](/documentation/articles/virtual-machines-linux-tutorial) with Ubuntu 14.04.
+1. From the [Qpid AMQP Messenger page](http://qpid.apache.org/components/messenger/index.html), click the **Installing Qpid Proton** link and follow the instructions depending on your environment. We will assume a Linux environment, e.g. an [Azure Linux VM](../articles/virtual-machines/virtual-machines-linux-tutorial.md) with Ubuntu 14.04.
 
 2. To compile the Proton library, install the following packages:
 
@@ -59,7 +59,7 @@ In this section we will write a C app to send events to your event hub. We will 
 		}
 
 		int sendMessage(pn_messenger_t * messenger) {
-			char * address = (char *) "amqps://SendRule:{Send Rule key}@{namespace name}.servicebus.chinacloudapi.cn/{event hub name}";
+			char * address = (char *) "amqps://SendRule:{Send Rule key}@{namespace name}.servicebus.windows.net/{event hub name}";
 			char * msgtext = (char *) "Hello from C!";
 
 			pn_message_t * message;

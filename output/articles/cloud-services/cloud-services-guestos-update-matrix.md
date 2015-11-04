@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="Learn about the latest Azure Guest OS Releases | Microsoft Azure" 
+   pageTitle="Learn about the latest Azure Guest OS Releases | Windows Azure" 
    description="The latest release news and SDK compatibility for Azure Cloud Services Guest OS." 
    services="cloud-services" 
    documentationCenter="na" 
@@ -8,13 +8,9 @@
    editor=""/>
 
 <tags
-   ms.service="cloud-services"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="tbd" 
-   ms.date="10/15/2015"
-   ms.author="yuemlu"/>
+	ms.service="cloud-services"
+	ms.date="10/15/2015"
+	wacn.date=""/>
 
 # Azure Guest OS Releases and SDK Compatibility Matrix
 Provides you with up-to-date information about the latest Azure Guest OS releases for Cloud Services. This information will help you plan your upgrade path before a a Guest OS is disabled.
@@ -61,7 +57,7 @@ May Guest OS rollout is starting today May 20 2015, and projected to be released
 ###### **April 17 2015**
 Guest OS versions 4.19, 3.26, 2.38 were released today.
 
-This release contains [MS15-034](https://technet.microsoft.com/library/security/MS15-034), a **critical** patch for Windows HTTP Servers.
+This release contains [MS15-034](https://technet.microsoft.com/zh-cn/library/security/MS15-034), a **critical** patch for Windows HTTP Servers.
 
 Guest OS versions 4.17, 3.24, 2.36 will be disabled on May 17 2015.
 
@@ -237,7 +233,7 @@ This table shows which Guest OS family is compatible with which Azure SDK versio
 ## Guest OS System Update Process
 This page includes information on upcoming Guest OS Releases. Customers have indicated that they want to know when a release occurs because their cloud service roles will reboot if they are set to "Automatic" update. Guest OS releases typically occur at least 5 days after the MSRC update release that occurs on the second Tuesday of every month. New releases include all the relevant MSRC patches for each Guest OS family. 
 
-Microsoft Azure is constantly releasing updates. The Guest OS is only one such update in the pipeline. A release can be affected by a number of factors too numerous to list here. In addition, Azure runs on literally hundreds of thousands of machines. This means that it's impossible to give an exact date and time when your role(s) will reboot. We will update the [Guest OS Update RSS Feed][rss] with the latest information we have, but consider that time an approximate window. We are aware that this is problematic for customers and working on a plan to limit or time reboots. 
+Windows Azure is constantly releasing updates. The Guest OS is only one such update in the pipeline. A release can be affected by a number of factors too numerous to list here. In addition, Azure runs on literally hundreds of thousands of machines. This means that it's impossible to give an exact date and time when your role(s) will reboot. We will update the [Guest OS Update RSS Feed][rss] with the latest information we have, but consider that time an approximate window. We are aware that this is problematic for customers and working on a plan to limit or time reboots. 
 
 When a new release of the Guest OS is published, it can take time to fully propagate across Azure. As services are updated to the new Guest OS, they are rebooted honoring update domains. Services set to use "Automatic" updates will get a release first. After the update, you’ll see the new Guest OS version listed for your service in the Azure Management Portal. Rereleases may occur during this period. Some versions may be deployed over longer periods of time and automatic upgrade reboots may not occur for many weeks after the official release date. Once a Guest OS is available, you can then explicitly choose that version from the portal or in your configuration file. 
 
@@ -331,22 +327,21 @@ Because of the partial rollout of the last two releases, people on auto update o
 | 2.19 rel1 | WA-GUEST-OS-2.19_201309-01 | Sept 23 2013 | N/A | May 14 2014 |
 
 
-[Azure Guest OS Update Settings]: cloud-services-how-to-configure.md
+[Azure Guest OS Update Settings]: /documentation/articles/cloud-services-how-to-configure
 [rss]: http://sxp.microsoft.com/feeds/3.0/msdntn/WindowsAzureOSUpdates
 [ssl3 announcement]: http://azure.microsoft.com/blog/2014/12/09/azure-security-ssl-3-0-update/
-[Microsoft Security Advisory 3009008]: https://technet.microsoft.com/library/security/3009008.aspx
+[Microsoft Security Advisory 3009008]: https://technet.microsoft.com/zh-cn/library/security/3009008.aspx
 [ssl3-fixit]: http://go.microsoft.com/?linkid=9863266
-[MS14-066]: https://technet.microsoft.com/library/security/ms14-066.aspx
-[MS14-046]: https://technet.microsoft.com/library/security/ms14-046.aspx
-[retire policy sdk]: https://msdn.microsoft.com/library/dn479282.aspx
-[server and gos]: https://msdn.microsoft.com/library/dn775043.aspx
+[MS14-066]: https://technet.microsoft.com/zh-cn/library/security/ms14-066.aspx
+[MS14-046]: https://technet.microsoft.com/zh-cn/library/security/ms14-046.aspx
+[retire policy sdk]: https://msdn.microsoft.com/zh-cn/library/dn479282.aspx
+[server and gos]: https://msdn.microsoft.com/zh-cn/library/dn775043.aspx
 [azuresupport]: http://azure.microsoft.com/support/options/
 [net install pkg]: http://www.microsoft.com/download/details.aspx?id=42643
 [msrc]: http://www.microsoft.com/security/msrc/default.aspx
-[update guest os portal]: https://msdn.microsoft.com/library/gg433101.aspx
-[update guest os svc]: https://msdn.microsoft.com/library/gg456324.aspx
+[update guest os portal]: https://msdn.microsoft.com/zh-cn/library/gg433101.aspx
+[update guest os svc]: https://msdn.microsoft.com/zh-cn/library/gg456324.aspx
 [restarts]: http://blogs.msdn.com/b/kwill/archive/2012/09/19/role-instance-restarts-due-to-os-upgrades.aspx
-[patches]: cloud-services-guestos-msrc-releases.md
-[retirepolicy]: cloud-services-guestos-retirement-policy.md
-[fam1retire]: cloud-services-guestos-family1-retirement.md
- 
+[patches]: /documentation/articles/cloud-services-guestos-msrc-releases
+[retirepolicy]: /documentation/articles/cloud-services-guestos-retirement-policy
+[fam1retire]: /documentation/articles/cloud-services-guestos-family1-retirement

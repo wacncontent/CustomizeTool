@@ -1,5 +1,5 @@
 <properties
-    pageTitle="What happened to my cloud service project? | Microsoft Azure | Visual Studio connected services"
+    pageTitle="What happened to my cloud service project? | Windows Azure | Visual Studio connected services"
 	description="Describes what happens in a cloud services project after connecting to an Azure storage account using Visual Studio connected services"
     services="storage"
 	documentationCenter=""
@@ -9,18 +9,14 @@
 
 <tags
 	ms.service="storage"
-	ms.workload="web"
-	ms.tgt_pltfrm="vs-what-happened"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="09/03/2015"
-	ms.author="patshea"/>
+	wacn.date=""/>
 
 # What happened to my cloud services project (Visual Studio Azure Storage connected service)?
 
 > [AZURE.SELECTOR]
-> - [Getting started](vs-storage-cloud-services-getting-started-blobs.md)
-> - [What happened](vs-storage-cloud-services-what-happened.md)
+> - [Getting started](/documentation/articles/vs-storage-cloud-services-getting-started-blobs)
+> - [What happened](/documentation/articles/vs-storage-cloud-services-what-happened)
 
 
 ## References added

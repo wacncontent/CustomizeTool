@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Add authentication to your HTML/JavaScript app | Microsoft Azure" 
+	pageTitle="Add authentication to your HTML/JavaScript app | Windows Azure" 
 	description="Learn how to use Mobile Services to authenticate users of your HTML app through a variety of identity providers, including Google, Facebook, Twitter, and Microsoft account." 
 	services="mobile-services" 
 	documentationCenter="" 
@@ -7,18 +7,14 @@
 	manager="dwrede" 
 	editor=""/>
 
-<tags 
-	ms.service="mobile-services" 
-	ms.workload="mobile" 
-	ms.tgt_pltfrm="mobile-multiple" 
-	ms.devlang="javascript" 
-	ms.topic="article" 
-	ms.date="07/21/2015" 
-	ms.author="glenga"/>
+<tags
+	ms.service="mobile-services"
+	ms.date="07/21/2015"
+	wacn.date=""/>
 
 # Add authentication to your Mobile Services app 
 
-[AZURE.INCLUDE [mobile-services-selector-get-started-users](../../includes/mobile-services-selector-get-started-users.md)]
+[AZURE.INCLUDE [mobile-services-selector-get-started-users](../includes/mobile-services-selector-get-started-users.md)]
 
 This topic shows you how to authenticate users in Azure Mobile Services from your HTML app, including PhoneGap or Cordova apps.  In this tutorial, you add authentication to the quickstart project using an identity provider that is supported by Mobile Services. After being successfully authenticated and authorized by Mobile Services, the user ID value is displayed.  
 
@@ -26,11 +22,11 @@ This tutorial is based on the Mobile Services quickstart. You must also first co
 
 ##<a name="register"></a>Register your app for authentication and configure Mobile Services
 
-[AZURE.INCLUDE [mobile-services-register-authentication](../../includes/mobile-services-register-authentication.md)] 
+[AZURE.INCLUDE [mobile-services-register-authentication](../includes/mobile-services-register-authentication.md)] 
 
 ##<a name="permissions"></a>Restrict permissions to authenticated users
 
-[AZURE.INCLUDE [mobile-services-restrict-permissions-javascript-backend](../../includes/mobile-services-restrict-permissions-javascript-backend.md)] 
+[AZURE.INCLUDE [mobile-services-restrict-permissions-javascript-backend](../includes/mobile-services-restrict-permissions-javascript-backend.md)] 
 
 
 3. In the app directory, launch one of the following command files from the **server** subfolder.
@@ -132,9 +128,7 @@ In the next tutorial, [Authorize users with scripts], you will take the user ID 
 [15]: ./media/mobile-services-html-get-started-users/mobile-portal-change-table-perms.png
 
 <!-- URLs. -->
-[Get started with Mobile Services]: mobile-services-html-get-started.md
-[Authorize users with scripts]: mobile-services-javascript-backend-service-side-authorization.md
-
-[Azure Management Portal]: https://manage.windowsazure.com/
-[Mobile Services HTML/JavaScript How-to Conceptual Reference]: mobile-services-html-how-to-use-client-library.md
- 
+[Get started with Mobile Services]: /documentation/articles/mobile-services-html-get-started
+[Authorize users with scripts]: /documentation/articles/mobile-services-javascript-backend-service-side-authorization
+[Azure Management Portal]: https://manage.windowsazure.cn/
+[Mobile Services HTML/JavaScript How-to Conceptual Reference]: /documentation/articles/mobile-services-html-how-to-use-client-library

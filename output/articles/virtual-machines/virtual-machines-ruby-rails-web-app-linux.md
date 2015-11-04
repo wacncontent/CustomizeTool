@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Host a Ruby on Rails website on a Linux VM | Microsoft Azure"
+	pageTitle="Host a Ruby on Rails website on a Linux VM | Windows Azure"
 	description="Set up and host a Ruby on Rails-based website on Azure using a Linux virtual machine."
 	services="virtual-machines"
 	documentationCenter="ruby"
@@ -10,12 +10,8 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.workload="web"
-	ms.tgt_pltfrm="vm-linux"
-	ms.devlang="ruby"
-	ms.topic="article"
 	ms.date="06/09/2015"
-	ms.author="mwasson"/>
+	wacn.date=""/>
 
 
 
@@ -27,7 +23,7 @@ This tutorial shows how to host a Ruby on Rails website on Azure using a Linux v
 
 This tutorial was validated using Ubuntu Server 14.04 LTS. If you use a different Linux distribution, you might need to modify the steps to install Rails.
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
 
 
 ## Create an Azure VM
@@ -38,7 +34,7 @@ To create the VM, you can use the Azure Management Portal or the Azure Command-L
 
 ### Azure Management Portal
 
-1. Sign into the [Azure Management Portal](http://manage.windowsazure.com)
+1. Sign into the [Azure Management Portal](http://manage.windowsazure.cn)
 2. Click **New** > **Compute** > **Virtual Machine** > **Quick Create**. Select a Linux image.
 3. Enter a password.
 
@@ -147,17 +143,14 @@ To use Azure services from your Ruby application, see:
 
 
 <!-- WA.com links -->
-[blobs]: ../storage-ruby-how-to-use-blob-storage.md
-
+[blobs]: /documentation/articles/storage-ruby-how-to-use-blob-storage
 [cdn-howto]: /develop/ruby/app-services/
 
-[management-portal]: https://manage.windowsazure.com/
+[management-portal]: https://manage.windowsazure.cn/
 
 [tables]: /develop/ruby/how-to-guides/table-service/
 
-[vm-instructions]: virtual-machines-linux-tutorial.md
-
-
+[vm-instructions]: /documentation/articles/virtual-machines-linux-tutorial
 <!-- External Links -->
 [rails-guides]: http://guides.rubyonrails.org/
 

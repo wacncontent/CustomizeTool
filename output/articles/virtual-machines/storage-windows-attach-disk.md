@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Attach a disk to a VM | Microsoft Azure"
+	pageTitle="Attach a disk to a VM | Windows Azure"
 	description="Attach a data disk to a virtual machine created with the classic deployment model and initialize it."
 	services="virtual-machines, storage"
 	documentationCenter=""
@@ -10,16 +10,12 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.workload="infrastructure-services"
-	ms.tgt_pltfrm="vm-windows"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="07/16/2015"
-	ms.author="cynthn"/>
+	wacn.date=""/>
 
 # Attach a data disk to a Windows virtual machine created with the classic deployment model
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)] [Resource Manager model](virtual-machines-attach-disk-preview.md).
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] [Resource Manager model](/documentation/articles/virtual-machines-attach-disk-preview).
 
 You can attach empty disks and disks with data. In both cases, the disks are actually .vhd files that reside in an Azure storage account. Also in both cases, after you attach the disk, you'll need to initialize it so it's ready for use.
 
@@ -31,7 +27,7 @@ Here's a walkthrough of the steps in this tutorial.
 
 [AZURE.VIDEO attaching-a-data-disk-to-a-windows-vm]
 
-[AZURE.INCLUDE [howto-attach-disk-windows-linux](../../includes/howto-attach-disk-windows-linux.md)]
+[AZURE.INCLUDE [howto-attach-disk-windows-linux](../includes/howto-attach-disk-windows-linux.md)]
 
 ## <a id="initializeinWS"></a>How to: initialize a new data disk in Windows Server
 
@@ -51,12 +47,12 @@ Here's a walkthrough of the steps in this tutorial.
 
 	![Volume successfully initialized](./media/storage-windows-attach-disk/newvolumecreated.png)
 
-> [AZURE.NOTE] The size of the virtual machine determines how many disks you can attach to it. For details, see [Sizes for virtual machines](virtual-machines-size-specs.md).
+> [AZURE.NOTE] The size of the virtual machine determines how many disks you can attach to it. For details, see [Sizes for virtual machines](/documentation/articles/virtual-machines-size-specs).
 
 ## Additional resources
 
-[How to detach a disk from a Windows virtual machine](storage-windows-detach-disk.md)
+[How to detach a disk from a Windows virtual machine](/documentation/articles/storage-windows-detach-disk)
 
-[About disks and VHDs for virtual machines](virtual-machines-disks-vhds.md)
+[About disks and VHDs for virtual machines](/documentation/articles/virtual-machines-disks-vhds)
 
-[logon]: virtual-machines-log-on-windows-server.md
+[logon]: /documentation/articles/virtual-machines-log-on-windows-server

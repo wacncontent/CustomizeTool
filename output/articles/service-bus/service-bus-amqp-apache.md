@@ -1,27 +1,23 @@
 <properties 
-   pageTitle="How to install Apache Qpid Proton-C on a Linux VM | Microsoft Azure"
+   pageTitle="How to install Apache Qpid Proton-C on a Linux VM | Windows Azure"
    description="How to create a CentOS Linux VM using Azure Virtual Machines and how to build and install the Apache Qpid Proton-C library."
    services="service-bus"
    documentationCenter="na"
    authors="sethmanheim"
    manager="timlt"
    editor="tysonn" /> 
-<tags 
-   ms.service="service-bus"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="na"
-   ms.date="10/07/2015"
-   ms.author="sethm" />
+<tags
+	ms.service="service-bus"
+	ms.date="10/07/2015"
+	wacn.date=""/>
 
 # Install Apache Qpid Proton-C on an Azure Linux VM
 
-[AZURE.INCLUDE [service-bus-selector-amqp](../../includes/service-bus-selector-amqp.md)]
+[AZURE.INCLUDE [service-bus-selector-amqp](../includes/service-bus-selector-amqp.md)]
 
 This section shows how to create a CentOS Linux VM using Azure Virtual Machines and how to download, build and install the Apache Qpid Proton-C library along with the Python and PHP language bindings. After completing these steps, you will be able to run the Python and PHP samples included with this guide.
 
-The first step is performed using the [Azure portal][]. The following screen shot shows how a CentOS VM named "scott-centos" is created:
+The first step is performed using the [Azure Management Portal][]. The following screen shot shows how a CentOS VM named "scott-centos" is created:
 
 ![Proton on a Azure Linux VM][0]
 
@@ -106,12 +102,12 @@ Ready to learn more? Visit the following links:
 
 - [Service Bus AMQP overview]
 
-[Service Bus AMQP overview]: service-bus-amqp-overview.md
+[Service Bus AMQP overview]: /documentation/articles/service-bus-amqp-overview
 [0]: ./media/service-bus-amqp-apache/amqp-apache-1.png
 [1]: ./media/service-bus-amqp-apache/amqp-apache-2.png
 [2]: ./media/service-bus-amqp-apache/amqp-apache-3.png
 [3]: ./media/service-bus-amqp-apache/amqp-apache-4.png
 
-[Azure portal]: http://manage.windowsazure.com
+[Azure Management Portal]: http://manage.windowsazure.cn
 
 

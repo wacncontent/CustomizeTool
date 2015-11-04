@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Get started with blob storage and Visual Studio connected services (ASP.NET) | Microsoft Azure"
+	pageTitle="Get started with blob storage and Visual Studio connected services (ASP.NET) | Windows Azure"
 	description="How to get started using Azure Blob storage in an ASP.NET project in Visual Studio after connecting to a storage account using Visual Studio connected services"
 	services="storage"
 	documentationCenter=""
@@ -9,30 +9,26 @@
 
 <tags
 	ms.service="storage"
-	ms.workload="web"
-	ms.tgt_pltfrm="vs-getting-started"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="09/03/2015"
-	ms.author="patshea"/>
+	wacn.date=""/>
 
 # Get started with blob storage and Visual Studio connected services (ASP.NET)
 
 > [AZURE.SELECTOR]
-> - [Getting started](vs-storage-aspnet-getting-started-blobs.md)
-> - [What happened](vs-storage-aspnet-what-happened.md)
+> - [Getting started](/documentation/articles/vs-storage-aspnet-getting-started-blobs)
+> - [What happened](/documentation/articles/vs-storage-aspnet-what-happened)
 
 > [AZURE.SELECTOR]
-> - [Blobs](vs-storage-aspnet-getting-started-blobs.md)
-> - [Queues](vs-storage-aspnet-getting-started-queues.md)
-> - [Tables](vs-storage-aspnet-getting-started-tables.md)
+> - [Blobs](/documentation/articles/vs-storage-aspnet-getting-started-blobs)
+> - [Queues](/documentation/articles/vs-storage-aspnet-getting-started-queues)
+> - [Tables](/documentation/articles/vs-storage-aspnet-getting-started-tables)
 
 ## Overview
 
 This article describes how to get started using Azure Blob storage after you have created or referenced an Azure storage account in an ASP.NET app by using the  Visual Studio **Add Connected Services** dialog box. The article shows you how to create blob containers and perform other common tasks such as uploading, listing, downloading, and deleting blobs. The samples are written in C\# and
-use the [Azure Storage Client Library for .NET](https://msdn.microsoft.com/library/azure/dn261237.aspx).
+use the [Azure Storage Client Library for .NET](https://msdn.microsoft.com/zh-cn/library/azure/dn261237.aspx).
 
- - For more general information about using Azure Blob storage, see [How to use Blob storage from .NET](storage-dotnet-how-to-use-blobs.md).
+ - For more general information about using Azure Blob storage, see [How to use Blob storage from .NET](/documentation/articles/storage-dotnet-how-to-use-blobs).
  - For more information about ASP.NET projects, see [ASP.NET](http://www.asp.net).
 
 
@@ -70,7 +66,7 @@ To programmatically access blobs in ASP.NET projects, you need to add the follow
         // Get a reference to a container named “mycontainer.”
         CloudBlobContainer container = blobClient.GetContainerReference("mycontainer");
 
-> [AZURE.NOTE] Some of the APIs that perform calls out to Azure Storage in ASP.NET 5 are asynchronous. See [Asynchronous Programming with Async and Await](http://msdn.microsoft.com/library/hh191443.aspx) for more information.
+> [AZURE.NOTE] Some of the APIs that perform calls out to Azure Storage in ASP.NET 5 are asynchronous. See [Asynchronous Programming with Async and Await](http://msdn.microsoft.com/zh-cn/library/hh191443.aspx) for more information.
 
 
 ## Create a blob container in code
@@ -152,9 +148,9 @@ When you call **ListBlobs** on the 'photos' container (as shown in the previous 
 will contain **CloudBlobDirectory** and **CloudBlockBlob** objects
 representing the directories and blobs contained at the top level. The following example shows the resulting output.
 
-	Directory: https://<accountname>.blob.core.windows.net/photos/2010/
-	Directory: https://<accountname>.blob.core.windows.net/photos/2011/
-	Block blob of length 505623: https://<accountname>.blob.core.windows.net/photos/photo1.jpg
+	Directory: https://<accountname>.blob.core.chinacloudapi.cn/photos/2010/
+	Directory: https://<accountname>.blob.core.chinacloudapi.cn/photos/2011/
+	Block blob of length 505623: https://<accountname>.blob.core.chinacloudapi.cn/photos/photo1.jpg
 
 
 Optionally, you can set the **UseFlatBlobListing** parameter of of the **ListBlobs** method to
@@ -168,14 +164,14 @@ Optionally, you can set the **UseFlatBlobListing** parameter of of the **ListBlo
 
 And the next example shows the results.
 
-	Block blob of length 4: https://<accountname>.blob.core.windows.net/photos/2010/architecture/description.txt
-	Block blob of length 314618: https://<accountname>.blob.core.windows.net/photos/2010/architecture/photo3.jpg
-	Block blob of length 522713: https://<accountname>.blob.core.windows.net/photos/2010/architecture/photo4.jpg
-	Block blob of length 4: https://<accountname>.blob.core.windows.net/photos/2011/architecture/description.txt
-	Block blob of length 419048: https://<accountname>.blob.core.windows.net/photos/2011/architecture/photo5.jpg
-	Block blob of length 506388: https://<accountname>.blob.core.windows.net/photos/2011/architecture/photo6.jpg
-	Block blob of length 399751: https://<accountname>.blob.core.windows.net/photos/2011/photo7.jpg
-	Block blob of length 505623: https://<accountname>.blob.core.windows.net/photos/photo1.jpg
+	Block blob of length 4: https://<accountname>.blob.core.chinacloudapi.cn/photos/2010/architecture/description.txt
+	Block blob of length 314618: https://<accountname>.blob.core.chinacloudapi.cn/photos/2010/architecture/photo3.jpg
+	Block blob of length 522713: https://<accountname>.blob.core.chinacloudapi.cn/photos/2010/architecture/photo4.jpg
+	Block blob of length 4: https://<accountname>.blob.core.chinacloudapi.cn/photos/2011/architecture/description.txt
+	Block blob of length 419048: https://<accountname>.blob.core.chinacloudapi.cn/photos/2011/architecture/photo5.jpg
+	Block blob of length 506388: https://<accountname>.blob.core.chinacloudapi.cn/photos/2011/architecture/photo6.jpg
+	Block blob of length 399751: https://<accountname>.blob.core.chinacloudapi.cn/photos/2011/photo7.jpg
+	Block blob of length 505623: https://<accountname>.blob.core.chinacloudapi.cn/photos/photo1.jpg
 
 
 
@@ -262,4 +258,4 @@ Because the sample method calls an asynchronous method, it must be prefaced with
 
 ## Next steps
 
-[AZURE.INCLUDE [vs-storage-dotnet-blobs-next-steps](../../includes/vs-storage-dotnet-blobs-next-steps.md)]
+[AZURE.INCLUDE [vs-storage-dotnet-blobs-next-steps](../includes/vs-storage-dotnet-blobs-next-steps.md)]

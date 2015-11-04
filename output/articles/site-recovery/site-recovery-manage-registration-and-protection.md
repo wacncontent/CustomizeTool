@@ -7,14 +7,10 @@
 	manager="jwhit" 
 	editor=""/>
 
-<tags 
-	ms.service="site-recovery" 
-	ms.devlang="na"
-	ms.topic="article"
-	ms.tgt_pltfrm="na"
-	ms.workload="storage-backup-recovery" 
-	ms.date="10/07/2015" 
-	ms.author="raynew"/>
+<tags
+	ms.service="site-recovery"
+	ms.date="10/07/2015"
+	wacn.date=""/>
 
 # Manage registration and protection
 
@@ -35,7 +31,7 @@ You unregister a VMM server from a vault by deleting the server on the **Servers
 
 On the VMM server you want to remove:
 
-1. Unregister the VMM server from the Azure portal.
+1. Unregister the VMM server from the Azure Management Portal.
 2. On the VMM server, download the cleanup script.
 3. Open PowerShell with the Run as Administrator option to change the execution policy for the default (LocalMachine) scope.
 4. Follow the instructions in the script. 

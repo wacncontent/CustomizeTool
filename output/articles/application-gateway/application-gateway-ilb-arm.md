@@ -1,32 +1,28 @@
 <properties 
-   pageTitle="Create and Configure an Application Gateway with Internal Load Balancer (ILB) using Azure Resource Manager | Microsoft Azure"
+   pageTitle="Create and Configure an Application Gateway with Internal Load Balancer (ILB) using Azure Resource Manager | Windows Azure"
    description="This page provides instructions to create, configure, start, and delete an Azure Application Gateway with Internal Load balancer (ILB) for Azure resource manager"
    documentationCenter="na"
    services="application-gateway"
    authors="joaoma"
    manager="jdial"
    editor="tysonn"/>
-<tags 
-   ms.service="application-gateway"
-   ms.devlang="na"
-   ms.topic="hero-article" 
-   ms.tgt_pltfrm="na"
-   ms.workload="infrastructure-services" 
-   ms.date="09/21/2015"
-   ms.author="joaoma"/>
+<tags
+	ms.service="application-gateway"
+	ms.date="09/21/2015"
+	wacn.date=""/>
 
 
 # Create an Application Gateway with an Internal Load Balancer (ILB) using Azure Resource Manager
 
 > [AZURE.SELECTOR]
-- [Azure classic steps](application-gateway-ilb.md)
-- [Resource Manager Powershell steps](application-gateway-ilb-arm.md)
+- [Azure classic steps](/documentation/articles/application-gateway-ilb)
+- [Resource Manager Powershell steps](/documentation/articles/application-gateway-ilb-arm)
 
 Application Gateway can be configured with an internet facing VIP or with an internal end-point not exposed to the internet, also known as Internal Load Balancer (ILB) endpoint. Configuring the gateway with an ILB is useful for internal line of business applications not exposed to internet. It's also useful for services/tiers within a multi-tier application which sit in a security boundary not exposed to internet, but still require round robin load distribution, session stickiness, or SSL termination. This article will walk you through the steps to configure an application gateway with an ILB.
 
 ## Before you begin
 
-1. Install latest version of the Azure PowerShell cmdlets using the Web Platform Installer. You can download and install the latest version from the **Windows PowerShell** section of the [Download page](http://azure.microsoft.com/downloads/).
+1. Install latest version of the Azure PowerShell cmdlets using the Web Platform Installer. You can download and install the latest version from the **Windows PowerShell** section of the [Download page](/downloads/).
 2. You will create a virtual network and subnet for Application Gateway. Make sure no Virtual machines or cloud deployments are using the subnet. Application gateway must be by itself in a virtual network subnet.
 3. The servers which you will configure to use the Application gateway must exist or have their endpoints created either in the virtual network, or with a public IP/VIP assigned.
 
@@ -57,7 +53,7 @@ Here follows the steps needed to create an Application Gateway:
 
 ## Create a resource group for Resource Manager
 
-Make sure you switch PowerShell mode to use the ARM cmdlets. More info is available at Using [Windows Powershell with Resource Manager](powershell-azure-resource-manager.md).
+Make sure you switch PowerShell mode to use the ARM cmdlets. More info is available at Using [Windows Powershell with Resource Manager](/documentation/articles/powershell-azure-resource-manager).
 
 ### Step 1
 
@@ -86,11 +82,11 @@ To see a list of available subscriptions, use the ‘Get-AzureSubscription’ cm
 
 Create a new resource group (skip this step if using an existing resource group)
 
-    New-AzureResourceGroup -Name appgw-rg -location "West US"
+    New-AzureResourceGroup -Name appgw-rg -location "China North"
 
 Azure Resource Manager requires that all resource groups specify a location. This is used as the default location for resources in that resource group. Make sure all commands to create an Application Gateway will use the same resource group.
 
-In the example above we created a resource group called "appgw-rg" and location "West US". 
+In the example above we created a resource group called "appgw-rg" and location "China North". 
 
 ## Create virtual network, subnet for Application Gateway
 
@@ -104,9 +100,9 @@ Assigns the Address range 10.0.0.0/24 to subnet variable to be used to create a 
 
 ### Step 2
 	
-	$vnet = New-AzurevirtualNetwork -Name appgwvnet -ResourceGroupName appgw-rg -Location "West US" -AddressPrefix 10.0.0.0/16 -Subnet $subnetconfig
+	$vnet = New-AzurevirtualNetwork -Name appgwvnet -ResourceGroupName appgw-rg -Location "China North" -AddressPrefix 10.0.0.0/16 -Subnet $subnetconfig
 
-Creates a virtual network named "appgwvnet" in resource group "appw-rg" for the West US region using the prefix 10.0.0.0/16 with subnet 10.0.0.0/24	
+Creates a virtual network named "appgwvnet" in resource group "appw-rg" for the China North region using the prefix 10.0.0.0/16 with subnet 10.0.0.0/24	
 	
 ### Step 3
 
@@ -169,7 +165,7 @@ Configures the instance size of the Application Gateway
 
 ## Create Application Gateway using New-AzureApplicationGateway
 
-	$appgw = New-AzureApplicationGateway -Name appgwtest -ResourceGroupName appgw-rg -Location "West US" -BackendAddressPools $pool -BackendHttpSettingsCollection $poolSetting -FrontendIpConfigurations $fipconfig  -GatewayIpConfigurations $gipconfig -FrontendPorts $fp -HttpListeners $listener -RequestRoutingRules $rule -Sku $sku
+	$appgw = New-AzureApplicationGateway -Name appgwtest -ResourceGroupName appgw-rg -Location "China North" -BackendAddressPools $pool -BackendHttpSettingsCollection $poolSetting -FrontendIpConfigurations $fipconfig  -GatewayIpConfigurations $gipconfig -FrontendPorts $fp -HttpListeners $listener -RequestRoutingRules $rule -Sku $sku
 
 Creates an Application Gateway will all configuration items from the steps above. In the example the Application Gateway is called "appgwtest". 
 
@@ -209,7 +205,7 @@ Use `Start-AzureApplicationGateway` to start the Application Gateway:
 
 Use the `Get-AzureApplicationGateway` cmdlet to check the status of gateway. If *Start-AzureApplicationGateway* succeeded in the previous step, the State should be *Running*, and the Vip and DnsName should have valid entries. 
 
-This sample shows an application gateway that is up, running, and is ready to take traffic destined to `http://<generated-dns-name>.cloudapp.net`. 
+This sample shows an application gateway that is up, running, and is ready to take traffic destined to `http://<generated-dns-name>.chinacloudapp.cn`. 
 
 	PS C:\> Get-AzureApplicationGateway -Name appgwtest -ResourceGroupName appgw-rg
 
@@ -223,7 +219,7 @@ This sample shows an application gateway that is up, running, and is ready to ta
 	GatewaySize   : Medium 
 	State         : Running 
 	Vip           : 138.91.170.26 
-	DnsName       : appgw-1b8402e8-3e0d-428d-b661-289c16c82101.cloudapp.net
+	DnsName       : appgw-1b8402e8-3e0d-428d-b661-289c16c82101.chinacloudapp.cn
 
 
 ## Delete an Application Gateway
@@ -280,12 +276,12 @@ To verify that the service has been removed, you can use the `Get-AzureApplicati
 
 ## Next Steps
 
-If you want to configure SSL offload, see [Configure Application Gateway for SSL offload](application-gateway-ssl.md).
+If you want to configure SSL offload, see [Configure Application Gateway for SSL offload](/documentation/articles/application-gateway-ssl).
 
-If you want to configure an application gateway to use with ILB, see [Create an Application Gateway with an Internal Load Balancer (ILB)](application-gateway-ilb.md).
+If you want to configure an application gateway to use with ILB, see [Create an Application Gateway with an Internal Load Balancer (ILB)](/documentation/articles/application-gateway-ilb).
 
 If you want more information about load balancing options in general, see:
 
-- [Azure Load Balancer](https://azure.microsoft.com/documentation/services/load-balancer/)
-- [Azure Traffic Manager](https://azure.microsoft.com/documentation/services/traffic-manager/)
+- [Azure Load Balancer](/documentation/services/load-balancer/)
+- [Azure Traffic Manager](/documentation/services/traffic-manager/)
 

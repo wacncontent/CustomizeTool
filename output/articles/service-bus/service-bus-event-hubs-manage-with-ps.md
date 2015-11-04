@@ -8,24 +8,20 @@
    editor=""/>
 
 <tags
-   ms.service="service-bus"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="tbd"
-   ms.date="08/14/2015"
-   ms.author="sethm"/>
+	ms.service="service-bus"
+	ms.date="08/14/2015"
+	wacn.date=""/>
 
 # Use PowerShell to manage Service Bus and Event Hubs resources
 
-Microsoft Azure PowerShell is a scripting environment that you can use to control and automate the deployment and management of Azure services. This article describes how to use PowerShell to provision and manage Service Bus entities such as namespaces, queues, and Event Hubs using a local Azure PowerShell console.
+Windows Azure PowerShell is a scripting environment that you can use to control and automate the deployment and management of Azure services. This article describes how to use PowerShell to provision and manage Service Bus entities such as namespaces, queues, and Event Hubs using a local Azure PowerShell console.
 
 ## Prerequisites
 
 Before you begin, you'll need the following:
 
 - An Azure subscription. Azure is a subscription-based platform. For more
-information about obtaining a subscription, see [Purchase Options], [Member Offers], or [Free Trial].
+information about obtaining a subscription, see [Purchase Options], [Member Offers], or [Trial].
 
 - A computer with Azure PowerShell. For instructions, see [Install and configure Azure PowerShell]
 
@@ -86,7 +82,7 @@ This part of the script does the following:
 	``` powershell
 
 	$Namespace = "MyServiceBusNS"
-	$Location = "West US"
+	$Location = "China North"
 
 	# Query to see if the namespace currently exists
 	$CurrentNamespace = Get-AzureSBNamespace -Name $Namespace
@@ -266,12 +262,12 @@ Some ready-made script are also available for download:
 
 <!--Anchors-->
 
-[Purchase Options]: http://azure.microsoft.com/pricing/purchase-options/
+[Purchase Options]: /pricing/overview/
 [Member Offers]: http://azure.microsoft.com/pricing/member-offers/
-[Free Trial]: http://azure.microsoft.com/pricing/free-trial/
+[Trial]: /pricing/1rmb-trial/
 [Service Bus NuGet package]: http://www.nuget.org/packages/WindowsAzure.ServiceBus/
-[Get-AzureSBNamespace]: https://msdn.microsoft.com/library/azure/dn495122.aspx
-[New-AzureSBNamespace]: https://msdn.microsoft.com/library/azure/dn495165.aspx
-[Get-AzureSBAuthorizationRule]: https://msdn.microsoft.com/library/azure/dn495113.aspx
-[.NET API for Service Bus]: https://msdn.microsoft.com/library/microsoft.servicebus.aspx
-[Install and configure Azure PowerShell]: ../install-configure-powershell.md
+[Get-AzureSBNamespace]: https://msdn.microsoft.com/zh-cn/library/azure/dn495122.aspx
+[New-AzureSBNamespace]: https://msdn.microsoft.com/zh-cn/library/azure/dn495165.aspx
+[Get-AzureSBAuthorizationRule]: https://msdn.microsoft.com/zh-cn/library/azure/dn495113.aspx
+[.NET API for Service Bus]: https://msdn.microsoft.com/zh-cn/library/microsoft.servicebus.aspx
+[Install and configure Azure PowerShell]: /documentation/articles/install-configure-powershell

@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="How to use Service Bus queues in Node.js | Microsoft Azure" 
+	pageTitle="How to use Service Bus queues in Node.js | Windows Azure" 
 	description="Learn how to use Service Bus queues in Azure from a Node.js app." 
 	services="service-bus" 
 	documentationCenter="nodejs" 
@@ -7,22 +7,18 @@
 	manager="timlt" 
 	editor=""/>
 
-<tags 
-	ms.service="service-bus" 
-	ms.workload="tbd" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="nodejs" 
-	ms.topic="article" 
-	ms.date="10/06/2015" 
-	ms.author="sethm"/>
+<tags
+	ms.service="service-bus"
+	ms.date="10/06/2015"
+	wacn.date=""/>
 
 # How to use Service Bus queues
 
-[AZURE.INCLUDE [service-bus-selector-queues](../../includes/service-bus-selector-queues.md)]
+[AZURE.INCLUDE [service-bus-selector-queues](../includes/service-bus-selector-queues.md)]
 
 This article describes how to use Service Bus queues. The samples are written in JavaScript and use the Node.js Azure module. The scenarios covered include **creating queues**, **sending and receiving messages**, and **deleting queues**. For more information on queues, see the [Next steps][] section.
 
-[AZURE.INCLUDE [howto-service-bus-queues](../../includes/howto-service-bus-queues.md)]
+[AZURE.INCLUDE [howto-service-bus-queues](../includes/howto-service-bus-queues.md)]
 
 ## Create a Node.js application
 
@@ -52,7 +48,7 @@ To use Azure Service Bus, download and use the Node.js Azure package. This packa
 		└── request@2.21.0 (json-stringify-safe@4.0.0, forever-agent@0.5.0, aws-sign@0.3.0, tunnel-agent@0.3.0, oauth-sign@0.3.0, qs@0.6.5, cookie-jar@0.3.0, node-uuid@1.4.0, http-signature@0.9.11, form-data@0.0.8, hawk@0.13.1)
 	```
 
-3. You can manually run the **ls** command to verify that a **node\_modules** folder was created. Inside that folder find the **azure** package, which contains the libraries you need to access Service Bus queues.
+3. You can manually run the **ls** command to verify that a **node_modules** folder was created. Inside that folder find the **azure** package, which contains the libraries you need to access Service Bus queues.
 
 ### Import the module
 
@@ -64,11 +60,11 @@ var azure = require('azure');
 
 ### Set up an Azure Service Bus connection
 
-The Azure module reads the environment variables AZURE\_SERVICEBUS\_NAMESPACE and AZURE\_SERVICEBUS\_ACCESS\_KEY to obtain information required to connect to Service Bus. If these environment variables are not set, you must specify the account information when calling **createServiceBusService**.
+The Azure module reads the environment variables AZURE_SERVICEBUS_NAMESPACE and AZURE_SERVICEBUS_ACCESS_KEY to obtain information required to connect to Service Bus. If these environment variables are not set, you must specify the account information when calling **createServiceBusService**.
 
 For an example of setting the environment variables in a configuration file for an Azure Cloud Service, see [Node.js Cloud Service with Storage][].
 
-For an example of setting the environment variables in the Azure portal for an Azure Website, see [Node.js Web Application with Storage][].
+For an example of setting the environment variables in the Azure Management Portal for an Azure Website, see [Node.js Web Application with Storage][].
 
 ## Create a queue
 
@@ -193,12 +189,12 @@ To learn more, see the following resources.
 -   [Node.js Developer Center](/develop/nodejs/)
 
   [Azure SDK for Node]: https://github.com/Azure/azure-sdk-for-node
-  [Azure portal]: http://manage.windowsazure.com
+  [Azure Management Portal]: http://manage.windowsazure.cn
   
-  [Node.js Cloud Service]: ../cloud-services/cloud-services-nodejs-develop-deploy-app.md
-  [Queues, topics, and subscriptions]: service-bus-queues-topics-subscriptions.md
-  [Create and deploy a Node.js application to an Azure Website]: ../app-service-web/web-sites-nodejs-develop-deploy-mac.md
-  [Node.js Cloud Service with Storage]: ../cloud-services/storage-nodejs-use-table-storage-cloud-service-app.md
-  [Node.js Web Application with Storage]: ../storage/storage-nodejs-how-to-use-table-storage.md
-  [Azure Queues and Service Bus queues]: service-bus-azure-and-service-bus-queues-compared-contrasted.md#capacity-and-quotas
+  [Node.js Cloud Service]: /documentation/articles/cloud-services-nodejs-develop-deploy-app
+  [Queues, topics, and subscriptions]: /documentation/articles/service-bus-queues-topics-subscriptions
+  [Create and deploy a Node.js application to an Azure Website]: /documentation/articles/web-sites-nodejs-develop-deploy-mac
+  [Node.js Cloud Service with Storage]: /documentation/articles/storage-nodejs-use-table-storage-cloud-service-app
+  [Node.js Web Application with Storage]: /documentation/articles/storage-nodejs-how-to-use-table-storage
+  [Azure Queues and Service Bus queues]: /documentation/articles/service-bus-azure-and-service-bus-queues-compared-contrasted#capacity-and-quotas
  

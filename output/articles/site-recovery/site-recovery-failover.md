@@ -7,18 +7,14 @@
 	manager="jwhit" 
 	editor=""/>
 
-<tags 
-	ms.service="site-recovery" 
-	ms.devlang="na"
-	ms.topic="article"
-	ms.tgt_pltfrm="na"
-	ms.workload="storage-backup-recovery" 
-	ms.date="10/12/2015" 
-	ms.author="raynew"/>
+<tags
+	ms.service="site-recovery"
+	ms.date="10/12/2015"
+	wacn.date=""/>
 
 # Failover in Site Recovery
 
-The [Azure Site Recovery service](site-recovery-overview.md) contributes to a robust business continuity and disaster recovery (BCDR) solution that protects your on-premises physical servers and virtual machines by orchestrating and automating replication and failover to Azure, or to a secondary on-premises datacenter. This article provides information and instructions for recovering (failing over and failing back) virtual machines and physical servers that are protected with Site Recovery. 
+The [Azure Site Recovery service](/documentation/articles/site-recovery-overview) contributes to a robust business continuity and disaster recovery (BCDR) solution that protects your on-premises physical servers and virtual machines by orchestrating and automating replication and failover to Azure, or to a secondary on-premises datacenter. This article provides information and instructions for recovering (failing over and failing back) virtual machines and physical servers that are protected with Site Recovery. 
 
 If you have any questions after reading this article post them on the [Azure Recovery Services Forum](https://social.msdn.microsoft.com/forums/azure/home?forum=hypervrecovmgr).
 
@@ -29,9 +25,9 @@ After you've set up protection for virtual machines and physical servers they be
 
 **Failover** | **When to run** | **Details** | **Process**
 ---|---|---|---
-**Test failover** | Run to validate your replication strategy or perform a disaster recovery drill | <p>No data loss or downtime</p><p>No impact on replication</p><p>No impact on your production environment</p> | <p>Start the failover</p><p>Specify how test machines will be connected to networks after failover</p><p>Track progress on the **Jobs** tab. Test machines are created and start in the secondary location</p><p>Azure - connect to the machine in the Azure portal</p><p>Secondary site - access the machine on the same host and cloud</p><p>Complete testing and automatically clean up test failover settings.</p>
-**Planned failover** | <p>Run to meet compliance requirements</p><p>Run for planned maintenance</p><p>Run to fail over data to keep workloads running for known outages - such as an expected power failure or severe weather reports</p> <p>Run to failback after failover from primary to secondary | <p>No data loss</p><p>Downtime is incurred during the time it takes to shut down the virtual machine on the primary and bring it up on the secondary location.</p><p>Virtual machines are impact as  target machines becomes source machines after failover.</p> | <p>Start the failover</p><p>Track progress on the **Jobs** tab. Source machines are shut down</p><p>Replica machines start in the secondary location</p><p>Azure - connect to the replica machine in the Azure portal</p><p>Secondary site - access the machine on the same host and in the same cloud</p><p>Commit the failover</p>
-**Unplanned failover** | <p>Run this type of failover reactive manner when a primary site becomes inaccessible because of an unexpected incident, such as a power outage or virus attack</p><p>You can run an unplanned failover can be done even if primary site isn't available.<p> | <p>Data loss dependent on replication frequency settings</p> <p>Data will be up-to-date in accordance with the last time it was synchronized</p> | <p>Start the failover</p><p>Track progress on the **Jobs** tab. Optionally try to shut down virtual machines and synchronize latest data</p><p>Replica machines start in the secondary location</p><p>Azure - connect to the replica machine in the Azure portal</p><p>Secondary site access the machine on the same host and in the same cloud</p><p>Commit the failover</p>
+**Test failover** | Run to validate your replication strategy or perform a disaster recovery drill | <p>No data loss or downtime</p><p>No impact on replication</p><p>No impact on your production environment</p> | <p>Start the failover</p><p>Specify how test machines will be connected to networks after failover</p><p>Track progress on the **Jobs** tab. Test machines are created and start in the secondary location</p><p>Azure - connect to the machine in the Azure Management Portal</p><p>Secondary site - access the machine on the same host and cloud</p><p>Complete testing and automatically clean up test failover settings.</p>
+**Planned failover** | <p>Run to meet compliance requirements</p><p>Run for planned maintenance</p><p>Run to fail over data to keep workloads running for known outages - such as an expected power failure or severe weather reports</p> <p>Run to failback after failover from primary to secondary | <p>No data loss</p><p>Downtime is incurred during the time it takes to shut down the virtual machine on the primary and bring it up on the secondary location.</p><p>Virtual machines are impact as  target machines becomes source machines after failover.</p> | <p>Start the failover</p><p>Track progress on the **Jobs** tab. Source machines are shut down</p><p>Replica machines start in the secondary location</p><p>Azure - connect to the replica machine in the Azure Management Portal</p><p>Secondary site - access the machine on the same host and in the same cloud</p><p>Commit the failover</p>
+**Unplanned failover** | <p>Run this type of failover reactive manner when a primary site becomes inaccessible because of an unexpected incident, such as a power outage or virus attack</p><p>You can run an unplanned failover can be done even if primary site isn't available.<p> | <p>Data loss dependent on replication frequency settings</p> <p>Data will be up-to-date in accordance with the last time it was synchronized</p> | <p>Start the failover</p><p>Track progress on the **Jobs** tab. Optionally try to shut down virtual machines and synchronize latest data</p><p>Replica machines start in the secondary location</p><p>Azure - connect to the replica machine in the Azure Management Portal</p><p>Secondary site access the machine on the same host and in the same cloud</p><p>Commit the failover</p>
 
 
 The types of failovers that are supported depend on your deployment scenario.
@@ -50,7 +46,7 @@ Physical server to Azure | Not supported | This scenario uses continuous replica
 
 ## Failover and failback
 
-You fail over virtual machines to a secondary on-premises site or to Azure, depending on your deployment. A machine that fails over to Azure is created as an Azure virtual machine. You can fail over a single virtual machine or physical server, or a recovery plan. Recovery plans consists of one or more ordered groups that contain protected virtual machines or physical servers. They're used to orchestrate failover of multiple machines which fail over according to the group they're in. [Read more](site-recovery-create-recovery-plans.md) about recovery plans. 
+You fail over virtual machines to a secondary on-premises site or to Azure, depending on your deployment. A machine that fails over to Azure is created as an Azure virtual machine. You can fail over a single virtual machine or physical server, or a recovery plan. Recovery plans consists of one or more ordered groups that contain protected virtual machines or physical servers. They're used to orchestrate failover of multiple machines which fail over according to the group they're in. [Read more](/documentation/articles/site-recovery-create-recovery-plans) about recovery plans. 
 
 After failover completes and your machines are up and running in a secondary location note that:
 
@@ -76,7 +72,7 @@ If you've failed over to Azure your virtual machines are protected by the Azure 
 	- **Secondary site**—If you fail over part of a primary site to a secondary site and you want to connect back to the primary site, use a site-to-site VPN connection to connect failed over applications on the secondary site to infrastructure components running on the primary site. If an entire subnet fails over you can retain the virtual machine IP address. If you fail over a partial subnet you can't retain the virtual machine IP address because subnets can't be split between sites.
 	- **Azure**—If you fail over a partial site to Azure and want to connect back to the primary site, you can use a site-to-site VPN to connect a failed over application in Azure to infrastructure components running on the primary site. Note that if the entire subnet fails over you can retain the virtual machine IP address. If you fail over a partial subnet you can't retain the virtual machine IP address because subnets can't be split between sites.
  
-- **Drive letter**—If you want to retain the drive letter on virtual machines after failover you can set the SAN policy for the virtual machine to **On**. Virtual machine disks come online automatically. [Read more](https://technet.microsoft.com/library/gg252636.aspx).
+- **Drive letter**—If you want to retain the drive letter on virtual machines after failover you can set the SAN policy for the virtual machine to **On**. Virtual machine disks come online automatically. [Read more](https://technet.microsoft.com/zh-cn/library/gg252636.aspx).
 - **Route client requests**—Site Recovery works with Azure Traffic Manager to route client requests to your application after failover.
 
 
@@ -105,7 +101,7 @@ This procedure describes how to run a test failover for a recovery plan. Alterna
 1. Select **Recovery Plans** > *recoveryplan_name*. Click **Failover** > **Test Failover**.
 2. On the **Confirm Test Failover** page, specify how replica machines will be connected to an Azure network after failover.
 3. If you're failing over to Azure and data encryption is enabled for the cloud, in **Encryption Key** select the certificate that was issued when you enabled data encryption during Provider installation. 
-4. Track failover progress on the **Jobs** tab. You should be able to see the test replica machine in the Azure portal.
+4. Track failover progress on the **Jobs** tab. You should be able to see the test replica machine in the Azure Management Portal.
 5. You can access replica machines in Azure from your on-premises site initiate an RDP connection to the virtual machine. port 3389 will need to be open on the endpoint for the virtual machine.
 5. Once you're done, When the failover reaches the **Complete testing** phase , click **Complete Test** to finish.
 5. In **Notes** record and save any observations associated with the test failover.
@@ -148,7 +144,7 @@ If the virtual machines involved in test failover use DHCP, a test DHCP server s
 
 
 ### Prepare Active Directory
-To run a test failover for application testing, you’ll need a copy of the production Active Directory environment in your test environment. Go through [test failover considerations for active directory](site-recovery-active-directory.md#considerations-for-test-failover]) section for more details. 
+To run a test failover for application testing, you’ll need a copy of the production Active Directory environment in your test environment. Go through [test failover considerations for active directory](/documentation/articles/site-recovery-active-directory#considerations-for-test-failover]) section for more details. 
 
 
 ### Prepare DNS
@@ -231,7 +227,7 @@ This procedure describes how to run an unplanned failover for a recovery plan. A
 
 ## Failback to an alternate location
 
-If you've deployed protection between a [Hyper-V site and Azure](site-recovery-hyper-v-site-to-azure.md) you have to ability to failback from Azure to an alternate on-premises location. This is useful if you need to set up new on-premises hardware. Here's how you do it.
+If you've deployed protection between a [Hyper-V site and Azure](/documentation/articles/site-recovery-hyper-v-site-to-azure) you have to ability to failback from Azure to an alternate on-premises location. This is useful if you need to set up new on-premises hardware. Here's how you do it.
 
 1. If you're setting up new hardware install Windows Server 2012 R2 and the Hyper-V role on the server.
 2. Create a virtual network switch with the same name that you had on the original server.

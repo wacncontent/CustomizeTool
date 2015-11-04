@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Web App with Express (Node.js) | Microsoft Azure" 
+	pageTitle="Web App with Express (Node.js) | Windows Azure" 
 	description="A tutorial that builds on the cloud service tutorial, and demonstrates how to use the Express module." 
 	services="cloud-services" 
 	documentationCenter="nodejs" 
@@ -7,14 +7,10 @@
 	manager="wpickett" 
 	editor=""/>
 
-<tags 
-	ms.service="cloud-services" 
-	ms.workload="tbd" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="nodejs" 
-	ms.topic="article" 
-	ms.date="09/01/2015" 
-	ms.author="mwasson"/>
+<tags
+	ms.service="cloud-services"
+	ms.date="09/01/2015"
+	wacn.date=""/>
 
 
 
@@ -40,7 +36,7 @@ Perform the following steps to create a new cloud service project named 'express
 
 	![Azure PowerShell icon](./media/cloud-services-nodejs-develop-deploy-express-app/azure-powershell-start.png)
 
-	[AZURE.INCLUDE [install-dev-tools](../../includes/install-dev-tools.md)]
+	[AZURE.INCLUDE [install-dev-tools](../includes/install-dev-tools.md)]
 
 2. Change directories to the **c:\\node** directory and then enter the following commands to create a new solution named **expressapp** and a web role named **WebRole1**:
 
@@ -128,7 +124,7 @@ After testing the application, use the **Stop-AzureEmulator** cmdlet to stop the
 
 In the Azure PowerShell window, use the **Publish-AzureServiceProject** cmdlet to deploy the application to a cloud service
 
-    PS C:\node\expressapp\WebRole1> Publish-AzureServiceProject -ServiceName myexpressapp -Location "East US" -Launch
+    PS C:\node\expressapp\WebRole1> Publish-AzureServiceProject -ServiceName myexpressapp -Location "China East" -Launch
 
 Once the deployment operation completes, your browser will open and display the web page.
 
@@ -138,7 +134,7 @@ Once the deployment operation completes, your browser will open and display the 
 
 For more information, see the [Node.js Developer Center](/develop/nodejs/).
 
-  [Node.js Web Application]: http://www.windowsazure.com/develop/nodejs/tutorials/getting-started/
+  [Node.js Web Application]: /develop/nodejs/tutorials/getting-started/
   [Express]: http://expressjs.com/
   [http://jade-lang.com]: http://jade-lang.com
 

@@ -82,7 +82,7 @@ credentials for the namespace. You can obtain these credentials from the Azure m
 4.  Make a note of the primary key, or copy it to the clipboard.
 
 
-  [Azure Management Portal]: http://manage.windowsazure.cn
+  [Azure Management Portal]: http://manage.windowsazure.com
   [0]: ./media/service-bus-java-how-to-create-topic/sb-queues-13.png
   [2]: ./media/service-bus-java-how-to-create-topic/sb-queues-04.png
   [3]: ./media/service-bus-java-how-to-create-topic/sb-queues-09.png

@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Getting started with cross-database query(Vertical Partitioning) | Microsoft Azure"	
+	pageTitle="Getting started with cross-database query(Vertical Partitioning) | Windows Azure"	
 	description="how to use elastic database query with vertically partitioned databases"
 	services="sql-database"
 	documentationCenter=""  
@@ -8,20 +8,16 @@
 
 <tags
 	ms.service="sql-database"
-	ms.workload="sql-database"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="10/19/2015"
-	ms.author="torsteng" />
+	wacn.date=""/>
 
 # Getting started with cross-database query (vertical partitioning) 
 
-Elastic database query (preview) for Azure SQL Database allows you to run T-SQL queries that span multiple databases using a single connection point. This topic applies to [vertically partitioned databases](sql-database-elastic-query-vertical-partitioning.md).  
+Elastic database query (preview) for Azure SQL Database allows you to run T-SQL queries that span multiple databases using a single connection point. This topic applies to [vertically partitioned databases](/documentation/articles/sql-database-elastic-query-vertical-partitioning).  
 
 When completed, you will: learn how to configure and use an Azure SQL Database to perform queries that span multiple related databases. 
 
-For more information about the elastic database query feature, please see  [Azure SQL Database elastic database query overview](sql-database-elastic-query-overview.md). 
+For more information about the elastic database query feature, please see  [Azure SQL Database elastic database query overview](/documentation/articles/sql-database-elastic-query-overview). 
 
 ## Create the sample databases
 
@@ -43,8 +39,8 @@ Now, execute following query on the Customers database to create the CustomerInf
 
 	CREATE TABLE [dbo].[CustomerInformation]( 
 		[CustomerID] [int] NOT NULL, 
-		[CustomerName] [varchar](50) NULL, 
-		[Company] [varchar](50) NULL 
+		[CustomerName] [varchar](/documentation/articles/50) NULL, 
+		[Company] [varchar](/documentation/articles/50) NULL 
 		CONSTRAINT [CustID] PRIMARY KEY CLUSTERED ([CustomerID] ASC) 
 	) 
 	INSERT INTO [dbo].[CustomerInformation] ([CustomerID], [CustomerName], [Company]) VALUES (1, 'Jack', 'ABC') 
@@ -72,7 +68,7 @@ To create an external data source, execute the following command on the Orders d
 
 	CREATE EXTERNAL DATA SOURCE MyElasticDBQueryDataSrc WITH 
 		(TYPE = RDBMS, 
-		LOCATION = '<server_name>.database.windows.net', 
+		LOCATION = '<server_name>.database.chinacloudapi.cn', 
 		DATABASE_NAME = 'Customers', 
 		CREDENTIAL = ElasticDBQueryCred, 
 	) ;
@@ -82,8 +78,8 @@ Create an external table on the Orders database, which matches the definition of
 
 	CREATE EXTERNAL TABLE [dbo].[CustomerInformation] 
 	( [CustomerID] [int] NOT NULL, 
-	  [CustomerName] [varchar](50) NOT NULL, 
-	  [Company] [varchar](50) NOT NULL) 
+	  [CustomerName] [varchar](/documentation/articles/50) NOT NULL, 
+	  [Company] [varchar](/documentation/articles/50) NOT NULL) 
 	WITH 
 	( DATA_SOURCE = MyElasticDBQueryDataSrc) 
 
@@ -100,10 +96,10 @@ Once you have defined your external data source and your external tables you can
 
 Currently, the elastic database query feature is included into the cost of your Azure SQL Database.  
 
-For pricing information see [SQL Database Pricing](/pricing/details/sql-database). 
+For pricing information see [SQL Database Pricing](/home/features/sql-database). 
 
 
-[AZURE.INCLUDE [elastic-scale-include](../../includes/elastic-scale-include.md)]
+[AZURE.INCLUDE [elastic-scale-include](../#priceincludes/elastic-scale-include.md)]
 
 <!--Image references-->
 

@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Manage your virtual machines by using Azure PowerShell | Microsoft Azure"
+   pageTitle="Manage your virtual machines by using Azure PowerShell | Windows Azure"
    description="Learn commands that you can use to automate tasks in managing your virtual machines."
    services="virtual-machines"
    documentationCenter="windows"
@@ -9,22 +9,18 @@
    tags="azure-service-management"/>
 
    <tags
-   ms.service="virtual-machines"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="vm-windows"
-   ms.workload="infrastructure-services"
-   ms.date="06/24/2015"
-   ms.author="kasing"/>
+	ms.service="virtual-machines"
+	ms.date="06/24/2015"
+	wacn.date=""/>
 
 # Manage your virtual machines by using Azure PowerShell
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
 
 
 Many tasks you do each day to manage your VMs can be automated by using Azure PowerShell cmdlets. This article gives you example commands for simpler tasks, and links to articles that show the commands for more complex tasks.
 
->[AZURE.NOTE] If you haven't installed and configured Azure PowerShell yet, you can get instructions in the article [How to install and configure Azure PowerShell](../install-configure-powershell.md).
+>[AZURE.NOTE] If you haven't installed and configured Azure PowerShell yet, you can get instructions in the article [How to install and configure Azure PowerShell](/documentation/articles/install-configure-powershell).
 
 ## How to use the example commands
 You'll need to replace some of the text in the commands with text that's appropriate for your environment. The < and > symbols indicate text you need to replace. When you replace the text, remove the symbols but leave the quote marks in place.
@@ -84,14 +80,14 @@ To attach an existing data disk, run this command:
 To attach data disks from an existing .vhd file in blob storage, run this command:
 
     Add-AzureDataDisk -ImportFrom -MediaLocation `
-              "<https://mystorage.blob.core.windows.net/mycontainer/MyExistingDisk.vhd>" `
+              "<https://mystorage.blob.core.chinacloudapi.cn/mycontainer/MyExistingDisk.vhd>" `
               -DiskLabel "<main>" -LUN <0> `
               | Update-AzureVM
 
 ## Create a Windows-based VM
 
 To create a new Windows-based virtual machine in Azure, use the instructions in
-[Use Azure PowerShell to create and preconfigure Windows-based virtual machines](virtual-machines-ps-create-preconfigure-windows-vms.md). This topic steps you through the creation of an Azure PowerShell command set that creates a Windows-based VM that can be preconfigured:
+[Use Azure PowerShell to create and preconfigure Windows-based virtual machines](/documentation/articles/virtual-machines-ps-create-preconfigure-windows-vms). This topic steps you through the creation of an Azure PowerShell command set that creates a Windows-based VM that can be preconfigured:
 
 - With Active Directory domain membership.
 - With additional disks.

@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Site Recovery storage mapping | Microsoft Azure"
+	pageTitle="Site Recovery storage mapping | Windows Azure"
 	description="Azure Site Recovery coordinates the replication, failover, and recovery of virtual machines and physical servers located on-premises to Azure or to a secondary on-premises site."
 	services="site-recovery"
 	documentationCenter=""
@@ -9,18 +9,14 @@
 
 <tags
 	ms.service="site-recovery"
-	ms.devlang="na"
-	ms.topic="get-started-article"
-	ms.tgt_pltfrm="na"
-	ms.workload="storage-backup-recovery"
 	ms.date="10/07/2015"
-	ms.author="raynew"/>
+	wacn.date=""/>
 
 
 # Azure Site Recovery storage mapping
 
 
-Azure Site Recovery contributes to your business continuity and disaster recovery (BCDR) strategy by orchestrating replication, failover, and recovery of virtual machines and physical servers. Read about possible deployment scenarios in the [Site Recovery overview](site-recovery-overview.md).
+Azure Site Recovery contributes to your business continuity and disaster recovery (BCDR) strategy by orchestrating replication, failover, and recovery of virtual machines and physical servers. Read about possible deployment scenarios in the [Site Recovery overview](/documentation/articles/site-recovery-overview).
 
 
 ## About this article
@@ -53,7 +49,7 @@ You map between storage classifications on source and target VMM servers, or on 
 
 - Storage classifications must be available to the host groups located in source and target clouds.
 - Classifications don’t need to have the same type of storage. For example, you can map a source classification that contains SMB shares to a target classification that contains CSVs.
-- Read more in [How to create storage classifications in VMM](https://technet.microsoft.com/library/gg610685.aspx).
+- Read more in [How to create storage classifications in VMM](https://technet.microsoft.com/zh-cn/library/gg610685.aspx).
 
 ## Example
 
@@ -105,4 +101,4 @@ VM5 | C:\ClusterStorage\SourceVolume3 | N/A | No mapping, so the default storage
 
 ## Next steps
 
-Now that you have a better understanding of storage mapping, start reading the [best practices](site-recovery-best-practices.md) to prepare for deployment.
+Now that you have a better understanding of storage mapping, start reading the [best practices](/documentation/articles/site-recovery-best-practices) to prepare for deployment.

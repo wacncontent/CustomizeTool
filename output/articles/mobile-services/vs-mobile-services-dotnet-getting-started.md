@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Get Started with a Visual Studio .NET mobile services project (Connected Services) | Microsoft Azure"
+	pageTitle="Get Started with a Visual Studio .NET mobile services project (Connected Services) | Windows Azure"
 	description="How to get started with Azure Mobile Services in a Visual Studio .NET project"
 	services="mobile-services"
 	documentationCenter=""
@@ -9,18 +9,14 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.workload="mobile"
-	ms.tgt_pltfrm="vs-getting-started"
-	ms.devlang="dotnet"
-	ms.topic="article"
-	ms.date="09/17/2015" 
-	ms.author="patshea"/>
+	ms.date="09/17/2015"
+	wacn.date=""/>
 
 # Getting Started with Mobile Services (.NET Projects)
 
 > [AZURE.SELECTOR]
-> - [Getting Started](vs-mobile-services-dotnet-getting-started.md)
-> - [What Happened](vs-mobile-services-dotnet-what-happened.md)
+> - [Getting Started](/documentation/articles/vs-mobile-services-dotnet-getting-started)
+> - [What Happened](/documentation/articles/vs-mobile-services-dotnet-what-happened)
 
 The first step you need to do in order to follow the code in these examples depends on what type of mobile service you connected to.
 
@@ -45,7 +41,7 @@ The following code creates a reference to a table (`todoTable`) that contains da
 
 	IMobileServiceTable<TodoItem> todoTable = App.<yourClient>.GetTable<TodoItem>();
 
-This code works if your table has permissions set to **Anybody with an Application Key**. If you change the permissions to secure your mobile service, you'll need to add user authentication support. See [Get Started with Authentication](mobile-services-dotnet-backend-windows-universal-dotnet-get-started-users.md).
+This code works if your table has permissions set to **Anybody with an Application Key**. If you change the permissions to secure your mobile service, you'll need to add user authentication support. See [Get Started with Authentication](/documentation/articles/mobile-services-dotnet-backend-windows-universal-dotnet-get-started-users).
 
 #####Add a table item
 
@@ -83,4 +79,4 @@ Delete a row in the database. The parameter item is the TodoItem object to be de
 	await todoTable.DeleteAsync(item);
 
 
-[Learn more about mobile services](http://azure.microsoft.com/documentation/services/mobile-services/)
+[Learn more about mobile services](/documentation/services/mobile-services/)

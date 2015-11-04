@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Handle database write conflicts with optimistic concurrency (Windows Store) | Microsoft Azure" 
+	pageTitle="Handle database write conflicts with optimistic concurrency (Windows Store) | Windows Azure" 
 	description="Learn how to handle database write conflicts on both the server and in your Windows Store application." 
 	documentationCenter="windows" 
 	authors="wesmc7777" 
@@ -7,14 +7,10 @@
 	editor="" 
 	services="mobile-services"/>
 
-<tags 
-	ms.service="mobile-services" 
-	ms.workload="mobile" 
-	ms.tgt_pltfrm="mobile-windows" 
-	ms.devlang="dotnet" 
-	ms.topic="article" 
-	ms.date="10/05/2015" 
-	ms.author="wesmc"/>
+<tags
+	ms.service="mobile-services"
+	ms.date="10/05/2015"
+	wacn.date=""/>
 
 # Handling database write conflicts
 
@@ -370,7 +366,7 @@ This tutorial demonstrated how to enable a Windows Store app to handle write con
 <!-- URLs. -->
 [Optimistic Concurrency Control]: http://go.microsoft.com/fwlink/?LinkId=330935
 [Get started with Mobile Services]: /develop/mobile/tutorials/get-started/#create-new-service
-[Azure Account]: http://www.windowsazure.com/pricing/free-trial/
+[Azure Account]: /pricing/1rmb-trial/
 [Validate and modify data with scripts]: /develop/mobile/tutorials/validate-modify-and-augment-data-dotnet
 [Refine queries with paging]: /develop/mobile/tutorials/add-paging-to-data-dotnet
 [Get started with Mobile Services]: /develop/mobile/tutorials/get-started
@@ -378,8 +374,8 @@ This tutorial demonstrated how to enable a Windows Store app to handle write con
 [Add authentication to your app]: /develop/mobile/tutorials/get-started-with-users-dotnet
 [Add push notifications to your app]: /develop/mobile/tutorials/get-started-with-push-dotnet
 
-[Azure Management Portal]: https://manage.windowsazure.com/
-[Management Portal]: https://manage.windowsazure.com/
+[Azure Management Portal]: https://manage.windowsazure.cn/
+[Management Portal]: https://manage.windowsazure.cn/
 [Windows Phone 8 SDK]: http://go.microsoft.com/fwlink/p/?LinkID=268374
 [Mobile Services SDK]: http://go.microsoft.com/fwlink/p/?LinkID=268375
 [Developer Code Samples site]:  http://go.microsoft.com/fwlink/p/?LinkId=271146

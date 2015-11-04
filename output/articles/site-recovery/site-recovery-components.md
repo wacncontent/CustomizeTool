@@ -9,16 +9,12 @@
 
 <tags
 	ms.service="site-recovery"
-	ms.workload="backup-recovery"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="get-started-article"
 	ms.date="08/10/2015"
-	ms.author="raynew"/>
+	wacn.date=""/>
 
 # Site Recovery components
 
-Azure Site Recovery contributes to your business continuity and disaster recovery (BCDR) strategy by orchestrating replication, failover and recovery of virtual machines and physical servers. Machines can be replicated to Azure, or to a secondary on-premises data center. [Read an overview](site-recovery-overview.md).
+Azure Site Recovery contributes to your business continuity and disaster recovery (BCDR) strategy by orchestrating replication, failover and recovery of virtual machines and physical servers. Machines can be replicated to Azure, or to a secondary on-premises data center. [Read an overview](/documentation/articles/site-recovery-overview).
 
 This article summarizes and describes the Site Recovery components that are installed on servers and virtual machines.
 
@@ -111,12 +107,12 @@ The Provider runs on your VMM servers, Hyper-V host servers if you don't have a 
 - If you want the server on which the provider runs to connect to the internet using a proxy server you can either use the existing proxy settings, or specify a custom proxy.
 - The proxy needs to allow these addresses through the firewall:
 
-	-  *.accesscontrol.windows.net
-	-  .backup.windowsazure.com
-	-  *.blob.core.windows.net
-	-  *.store.core.windows.net
+	-  *.accesscontrol.chinacloudapi.cn
+	-  .backup.windowsazure.cn
+	-  *.blob.core.chinacloudapi.cn
+	-  *.store.core.chinacloudapi.cn
 
-- If you have IP address-based rules on your firewall make sure they allow communication from the configuration server to IP addresses described in [Azure Datacenter IP ranges](https://www.microsoft.com/download/details.aspx?id=41653) and for HTTPS (443). You'll need to whitelist IP address ranges of the Azure region you plan to use and for West US.
+- If you have IP address-based rules on your firewall make sure they allow communication from the configuration server to IP addresses described in [Azure Datacenter IP ranges](https://www.microsoft.com/download/details.aspx?id=41653) and for HTTPS (443). You'll need to whitelist IP address ranges of the Azure region you plan to use and for China North.
 - If you're deploying Site Recovery with VMM and you use a custom proxy, a VMM RunAs account (DRAProxyAccount) will be created automatically using the proxy credentials you specify in the custom proxy settings in the Site Recovery portal. You'll need to set up the proxy server so that this account can authenticate successfully.
 - If you're using a proxy traffic sent from the provider installed on a Hyper-V host server to the proxy must be sent over HTTP.
 
@@ -163,7 +159,7 @@ Install on VMware virtual machines or physical servers. Machines and servers mus
 	-  Following storage supported: File system: EXT3, ETX4, ReiserFS, XFS/Multipath software-Device Mapper (multipath)/Volume manager: LVM2\. Physical servers with HP CCISS controller storage aren't supported.
 
 
-For detailed planning information about these components read the capacity planning section in [this article](site-recovery-vmware-to-azure.md).
+For detailed planning information about these components read the capacity planning section in [this article](/documentation/articles/site-recovery-vmware-to-azure).
 
 
 ## Keep components up-to-date
@@ -176,4 +172,4 @@ For detailed planning information about these components read the capacity plann
 
 ## Next steps
 
-Start configuring the components for your deployment scenario. [Learn more](site-recovery-overview.md).
+Start configuring the components for your deployment scenario. [Learn more](/documentation/articles/site-recovery-overview).

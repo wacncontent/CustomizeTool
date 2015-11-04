@@ -1,26 +1,22 @@
 <properties 
-   pageTitle="Introduction to Application Gateway | Microsoft Azure"
+   pageTitle="Introduction to Application Gateway | Windows Azure"
    description="This page provides an overview of the Application Gateway service for layer 7 load balancing, including gateway sizes, HTTP load balancing, cookie based session affinity, and SSL offload."
    documentationCenter="na"
    services="application-gateway"
    authors="joaoma"
    manager="jdial"
    editor="tysonn"/>
-<tags 
-   ms.service="application-gateway"
-   ms.devlang="na"
-   ms.topic="article" 
-   ms.tgt_pltfrm="na"
-   ms.workload="infrastructure-services" 
-   ms.date="08/23/2015"
-   ms.author="joaoma"/>
+<tags
+	ms.service="application-gateway"
+	ms.date="08/23/2015"
+	wacn.date=""/>
 
 # What is Application Gateway?
 
 
-Microsoft Azure Application Gateway provides an Azure-managed HTTP load balancing solution based on layer 7 load balancing. 
+Windows Azure Application Gateway provides an Azure-managed HTTP load balancing solution based on layer 7 load balancing. 
 
-Application load balancing  enables IT administrators and developers to create routing rules for network traffic based on HTTP.  The application gateway service is highly available and metered. For the SLA and Pricing, please refer to the [SLA](http://azure.microsoft.com/support/legal/sla/) and [Pricing](https://azure.microsoft.com/pricing/details/application-gateway/) pages.
+Application load balancing  enables IT administrators and developers to create routing rules for network traffic based on HTTP.  The application gateway service is highly available and metered. For the SLA and Pricing, please refer to the [SLA](http://azure.microsoft.com/support/legal/sla/) and [Pricing](/home/features/application-gateway/#price) pages.
 
 Application Gateway currently supports layer 7 application delivery for the following:
 
@@ -60,8 +56,8 @@ You can create and manage the application gateway by using REST APIs and by usin
 
 ## Next Steps
 
-Create an Application Gateway. See [Create an Application Gateway](application-gateway-create-gateway.md).
+Create an Application Gateway. See [Create an Application Gateway](/documentation/articles/application-gateway-create-gateway).
 
-Configure SSL offload. See [Configure SSL Offload with Application Gateway](application-gateway-ssl.md).
+Configure SSL offload. See [Configure SSL Offload with Application Gateway](/documentation/articles/application-gateway-ssl).
 
 

@@ -8,13 +8,9 @@
    editor="monicar"/>
 
 <tags
-   ms.service="sql-database"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="data-management" 
-   ms.date="09/30/2015"
-   ms.author="sstein"/>
+	ms.service="sql-database"
+	ms.date="09/30/2015"
+	wacn.date=""/>
 
 # Azure SQL Database Query Performance Insight
 
@@ -26,19 +22,19 @@ Managing and tuning the performance of relational databases is a challenging tas
 - The ability to drill down into the details of a query.
 ​
 
-> [AZURE.NOTE] Query Performance Insight is currently in preview and is only available in the [Azure Preview Portal](https://portal.azure.com/).
+> [AZURE.NOTE] Query Performance Insight is currently in preview and is only available in the [Azure Preview Portal](https://manage.windowsazure.cn/).
 
 
 
 ## Prerequisites
 
 - Query Performance Insight is only available with Azure SQL Database V12.
-- Query Performance Insight requires that [Query Store](https://msdn.microsoft.com/library/dn817826.aspx) is running, so it is enabled automatically when you sign up for Query Performance Insight.
+- Query Performance Insight requires that [Query Store](https://msdn.microsoft.com/zh-cn/library/dn817826.aspx) is running, so it is enabled automatically when you sign up for Query Performance Insight.
  
  
 ## Permissions
 
-The following [role-based access control](role-based-access-control-configure.md) permissions are required to use Query Performance Insight: 
+The following [role-based access control](/documentation/articles/role-based-access-control-configure) permissions are required to use Query Performance Insight: 
 
 - **Reader**, **Owner**, **Contributor**, **SQL DB Contributor** or **SQL Server Contributor** permissions are required to view the top resource consuming queries and charts. 
 - **Owner**, **Contributor**, **SQL DB Contributor** or **SQL Server Contributor** permissions are required to view query text.
@@ -63,7 +59,7 @@ Query Performance Insight is easy to use:
 
 ## Review top DTU consuming queries
 
-In the [preview portal](https://portal.azure.com) do the following:
+In the [preview portal](https://manage.windowsazure.cn) do the following:
 
 1. Browse to a SQL database and click **Query Performance Insight**. 
 
@@ -103,7 +99,7 @@ Query Performance Insight helps you understand the impact of your query workload
 
 Database workloads are dynamic and change continuously. Monitor your queries and continue to fine tune them to refine performance. 
 
-Check out the [Index Advisor](sql-database-index-advisor.md) for additional recommendations for improving the performance of your SQL database.
+Check out the [Index Advisor](/documentation/articles/sql-database-index-advisor) for additional recommendations for improving the performance of your SQL database.
 
 <!--Image references-->
 [1]: ./media/sql-database-query-performance/tile.png

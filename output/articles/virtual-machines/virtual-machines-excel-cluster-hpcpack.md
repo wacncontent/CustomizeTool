@@ -1,5 +1,5 @@
 <properties
- pageTitle="HPC Pack cluster for Excel and SOA | Microsoft Azure"
+ pageTitle="HPC Pack cluster for Excel and SOA | Windows Azure"
  description="Get started with an HPC Pack cluster to run Excel and SOA workloads, using the Resource Manager deployment model."
  services="virtual-machines"
  documentationCenter=""
@@ -9,19 +9,15 @@
  tags="azure-resource-manager"/>
 
 <tags
- ms.service="virtual-machines"
- ms.devlang="na"
- ms.topic="article"
- ms.tgt_pltfrm="vm-windows"
- ms.workload="big-compute"
- ms.date="08/18/2015"
- ms.author="danlep"/>
+	ms.service="virtual-machines"
+	ms.date="08/18/2015"
+	wacn.date=""/>
 
 # Get started with an HPC Pack cluster in Azure to run Excel and SOA workloads
 
 This article shows you how to deploy an HPC Pack cluster on Azure infrastructure services (IaaS) using an Azure quickstart template or an Azure PowerShell deployment script. You'll use Azure Marketplace VM images designed to run Microsoft Excel or service-oriented architecture (SOA) workloads with HPC Pack. You can use the cluster to run simple Excel HPC and SOA services from an on-premises client computer. The Excel HPC services include Excel workbook offloading and Excel user-defined functions, or UDFs.
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-rm-include.md)] classic deployment model.
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] classic deployment model.
 
 
 At a high level the following diagram shows the HPC Pack cluster you'll create.
@@ -32,9 +28,9 @@ At a high level the following diagram shows the HPC Pack cluster you'll create.
 
 * **Client computer** - You'll need a Windows-based client computer to run the Azure PowerShell cluster deployment script (if you choose that deployment method) and to submit sample Excel and SOA jobs to the cluster.
 
-* **Azure subscription** - If you don't have an account, you can create a free trial account in just a couple of minutes. For details, see [Azure Free Trial](http://azure.microsoft.com/pricing/free-trial/).
+* **Azure subscription** - If you don't have an account, you can create a trial account in just a couple of minutes. For details, see [Azure Trial](/pricing/1rmb-trial/).
 
-* **Cores quota** - You might need to increase the quota of cores, especially if you choose to deploy several cluster nodes with multicore VM sizes. If you are using an Azure quickstart template, be aware that the cores quota in Resource Manager is per Azure region, and you might need to increase the quota in a specific region. See [Azure subscription limits, quotas, and constraints](../azure-subscription-service-limits.md). To increase a quota, you can [open an online customer support request](http://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/) at no charge.
+* **Cores quota** - You might need to increase the quota of cores, especially if you choose to deploy several cluster nodes with multicore VM sizes. If you are using an Azure quickstart template, be aware that the cores quota in Resource Manager is per Azure region, and you might need to increase the quota in a specific region. See [Azure subscription limits, quotas, and constraints](/documentation/articles/azure-subscription-service-limits). To increase a quota, you can [open an online customer support request](http://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/) at no charge.
 
 
 ## Step 1. Set up an HPC Pack cluster in Azure
@@ -71,7 +67,7 @@ Use an Azure quickstart template to quickly and easily deploy an HPC Pack cluste
 
     d. Create a new resource group for the cluster, such as *hpc01RG*.
 
-    e. Choose a location for the resource group, such as East US.
+    e. Choose a location for the resource group, such as China East.
 
     f. On the **Legal terms** page, review the terms. If you agree, click **Buy**.
 
@@ -95,13 +91,13 @@ The HPC Pack IaaS deployment script provides another versatile way to deploy an 
 
 **Additional prerequisites**
 
-* **Azure PowerShell** - [Install and configure Azure PowerShell](../powershell-install-configure.md) (version 0.8.10 or later) on your client computer.
+* **Azure PowerShell** - [Install and configure Azure PowerShell](/documentation/articles/powershell-install-configure) (version 0.8.10 or later) on your client computer.
 
 * **HPC Pack IaaS deployment script** - Download and unpack the latest version of the script from the [Microsoft Download Center](https://www.microsoft.com/download/details.aspx?id=44949). Check the version of the script by running `New-HPCIaaSCluster.ps1 –Version`. This article is based on version 4.4.0 or later of the script.
 
 **Create the configuration file**
 
- The HPC Pack IaaS deployment script uses an XML configuration file as input which describes the infrastructure of the HPC cluster. To deploy a cluster consisting of a head node and 18 compute nodes created from the compute node image that includes Microsoft Excel, substitute values for your environment into the following sample configuration file. For more information about the configuration file, see the Manual.rtf file in the script folder and [Create an HPC cluster with the HPC Pack IaaS deployment script](virtual-machines-hpcpack-cluster-powershell-script.md).
+ The HPC Pack IaaS deployment script uses an XML configuration file as input which describes the infrastructure of the HPC cluster. To deploy a cluster consisting of a head node and 18 compute nodes created from the compute node image that includes Microsoft Excel, substitute values for your environment into the following sample configuration file. For more information about the configuration file, see the Manual.rtf file in the script folder and [Create an HPC cluster with the HPC Pack IaaS deployment script](/documentation/articles/virtual-machines-hpcpack-cluster-powershell-script).
 
 ```
 <?xml version="1.0" encoding="utf-8"?>
@@ -110,7 +106,7 @@ The HPC Pack IaaS deployment script provides another versatile way to deploy an 
     <SubscriptionName>MySubscription</SubscriptionName>
     <StorageAccount>hpc01</StorageAccount>
   </Subscription>
-  <Location>West US</Location>
+  <Location>China North</Location>
   <VNet>
     <VNetName>hpc-vnet01</VNetName>
     <SubnetName>Subnet-1</SubnetName>
@@ -236,7 +232,7 @@ Follow these steps to offload an Excel workbook to run on the HPC Pack cluster i
 4.	Download the full [HPC Pack 2012 R2 Update 2 installation](http://www.microsoft.com/download/details.aspx?id=47755) and install the HPC Pack client,
 or download and install the [HPC Pack 2012 R2 Update 2 client utilities](https://www.microsoft.com/download/details.aspx?id=47754) and the appropriate Visual C++ 2010 redistributable for your computer ([x64](http://www.microsoft.com/download/details.aspx?id=14632), [x86](https://www.microsoft.com/download/details.aspx?id=5555)).
 
-5.	In this example, we use a sample Excel workbook named ConvertiblePricing_Complete.xlsb, available for download [here](https://www.microsoft.com/en-us/download/details.aspx?id=2939).
+5.	In this example, we use a sample Excel workbook named ConvertiblePricing_Complete.xlsb, available for download [here](https://www.microsoft.com/download/details.aspx?id=2939).
 
 6.	Copy the Excel workbook to a working folder such as D:\Excel\Run.
 
@@ -273,7 +269,7 @@ or download and install the [HPC Pack 2012 R2 Update 2 client utilities](https:/
 
 To run Excel UDFs, follow the preceding steps 1 – 3 to set up the client computer. For Excel UDFs, you don't need to have the Excel application installed on compute nodes, so you could choose a normal compute node image in Step 1 instead of the compute node image with Excel.
 
->[AZURE.NOTE] There is a 34 character limit in the Excel 2010 and 2013 cluster connector dialog box. If the full cluster name is longer, e.g. hpcexcelhn01.southeastasia.cloudapp.azure.com, it won't fit in the dialog box. The workaround is to apply the Update 2 QFE KB3085833 (download [here](http://www.microsoft.com/en-us/download/details.aspx?id=48725)) for SOA Session API on the client machine, then set a machine wide variable e.g. *CCP_IAASHN* with the value of the long cluster name and input *%CCP_IAASHN%* in the dialog box as the cluster head node name.
+>[AZURE.NOTE] There is a 34 character limit in the Excel 2010 and 2013 cluster connector dialog box. If the full cluster name is longer, e.g. hpcexcelhn01.southeastasia.cloudapp.azure.com, it won't fit in the dialog box. The workaround is to apply the Update 2 QFE KB3085833 (download [here](http://www.microsoft.com/download/details.aspx?id=48725)) for SOA Session API on the client machine, then set a machine wide variable e.g. *CCP_IAASHN* with the value of the long cluster name and input *%CCP_IAASHN%* in the dialog box as the cluster head node name.
 
 After the cluster is successfully deployed, continue with the following steps to run a sample built-in Excel UDF. For customized Excel UDFs, see these [resources](http://social.technet.microsoft.com/wiki/contents/articles/1198.windows-hpc-and-microsoft-excel-resources-for-building-cluster-ready-workbooks.aspx) to build the XLLs and deploy them on the IaaS cluster.
 
@@ -315,7 +311,7 @@ const string headnode = "[headnode]";
 // After e.g.
 const string headnode = "hpc01.eastus.cloudapp.azure.com";
 or
-const string headnode = "hpc01.cloudapp.net";
+const string headnode = "hpc01.chinacloudapp.cn";
 ```
 
 * Optionally, use default TransportScheme in SessionStartInfo or explicitly set it to Http.
@@ -373,7 +369,7 @@ The SOA client application requires no changes except altering the head name to 
 
 * See [these resources](http://social.technet.microsoft.com/wiki/contents/articles/1198.windows-hpc-and-microsoft-excel-resources-for-building-cluster-ready-workbooks.aspx) for more information about running Excel workloads with HPC Pack.
 
-* See [Managing SOA Services in Microsoft HPC Pack](https://technet.microsoft.com/library/ff919412.aspx) for more about deploying and managing SOA services with HPC Pack.
+* See [Managing SOA Services in Microsoft HPC Pack](https://technet.microsoft.com/zh-cn/library/ff919412.aspx) for more about deploying and managing SOA services with HPC Pack.
 
 <!--Image references-->
 [scenario]: ./media/virtual-machines-excel-cluster-hpcpack/scenario.png

@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Register for Microsoft authentication | Microsoft Azure" 
+	pageTitle="Register for Microsoft authentication | Windows Azure" 
 	description="Learn how to register for Microsoft authentication in your Azure Mobile Services application." 
 	authors="ggailey777" 
 	services="mobile-services" 
@@ -7,18 +7,14 @@
 	manager="dwrede" 
 	editor=""/>
 
-<tags 
-	ms.service="mobile-services" 
-	ms.workload="mobile" 
-	ms.tgt_pltfrm="NA" 
-	ms.devlang="multiple" 
-	ms.topic="article" 
-	ms.date="08/08/2015" 
-	ms.author="glenga"/>
+<tags
+	ms.service="mobile-services"
+	ms.date="08/08/2015"
+	wacn.date=""/>
 
 # Register your app to use Microsoft account for authentication
 
-[AZURE.INCLUDE [mobile-services-selector-register-identity-provider](../../includes/mobile-services-selector-register-identity-provider.md)]
+[AZURE.INCLUDE [mobile-services-selector-register-identity-provider](../includes/mobile-services-selector-register-identity-provider.md)]
 
 ## Overview 
 
@@ -40,7 +36,7 @@ Windows Store apps must first be registered with the Windows Dev Center.
 
    	This creates a new Windows Store registration for your app.
 
-3. In Visual Studio, open the project that you created when you completed the tutorial [Get started with Mobile Services](mobile-services-dotnet-backend-windows-store-dotnet-get-started.md).
+3. In Visual Studio, open the project that you created when you completed the tutorial [Get started with Mobile Services](/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started).
 
 4. In solution explorer, right-click the Windows Store app project, click **Store**, and then click **Associate App with the Store...**. 
 
@@ -56,7 +52,7 @@ Windows Store apps must first be registered with the Windows Dev Center.
 
 6. Back in the Windows Dev Center page for your new app, click **Services** > **Push notifications**. 
 
-7. In the **Push notifications** page, click **Live Services site** under **Windows Push Notification Services (WNS) and Microsoft Azure Mobile Services**.
+7. In the **Push notifications** page, click **Live Services site** under **Windows Push Notification Services (WNS) and Windows Azure Mobile Services**.
 
 This displays the Microsoft account page for your app.
 
@@ -68,9 +64,9 @@ The first step in this section applies only to Windows Phone 8, Windows Phone 8.
 
    	This reserves you app name with Microsoft account and displays the Microsoft account page for your app.
 
-2. In the Microsoft account page for your app, click **API Settings**, select enable **Mobile or desktop client app**, set the mobile service URL as the **Target domain**, supply a value of `https://<mobile_service>.azure-mobile.net/` in **Redirect URL**, then click **Save**.
+2. In the Microsoft account page for your app, click **API Settings**, select enable **Mobile or desktop client app**, set the mobile service URL as the **Target domain**, supply a value of `https://<mobile_service>.azure-mobile.cn/` in **Redirect URL**, then click **Save**.
 
-	 >[AZURE.NOTE]For a .NET backend mobile service published to Azure by using Visual Studio, the redirect URL is the URL of your mobile service appended with the path _signin-microsoft_ your mobile service as a .NET service, such as `https://todolist.azure-mobile.net/signin-microsoft`. 
+	 >[AZURE.NOTE]For a .NET backend mobile service published to Azure by using Visual Studio, the redirect URL is the URL of your mobile service appended with the path _signin-microsoft_ your mobile service as a .NET service, such as `https://todolist.azure-mobile.cn/signin-microsoft`. 
 
     ![Microsoft account API settings](./media/mobile-services-how-to-register-microsoft-authentication/mobile-services-win8-app-push-auth-2.png)
 
@@ -100,5 +96,5 @@ Both your mobile service and your app are now configured to work with Microsoft 
 [Submit an app page]: http://go.microsoft.com/fwlink/p/?LinkID=266582
 [My Applications]: http://go.microsoft.com/fwlink/p/?LinkId=262039
 
-[Azure Management Portal]: https://manage.windowsazure.com/
+[Azure Management Portal]: https://manage.windowsazure.cn/
  

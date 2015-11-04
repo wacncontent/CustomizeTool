@@ -8,13 +8,9 @@
    editor="monicar"/>
 
 <tags
-   ms.service="sql-database"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="data-management" 
-   ms.date="10/07/2015"
-   ms.author="sashan"/>
+	ms.service="sql-database"
+	ms.date="10/07/2015"
+	wacn.date=""/>
 
 # Designing cloud applications for business continuity using Geo-Replication
 
@@ -28,13 +24,13 @@ This option is best suited for applications with the following characteristics:
 + strong dependency on read-write (RW) access to data 
 + cross region connectivity between the application logic and the database is not acceptable due to latency and traffic cost    
 
-In this case the application deployment topology is optimized for handling regional disasters when all application components are impacted and need to failover as a unit. For geographic redundancy both the application logic and the database are replicated to another region but not used for application workload under the normal conditions. The application in the secondary region should be configured to use a SQL connection string to the secondary database. Traffic manager is set up to use [failover routing method](traffic-manager-configure-failover-load-balancing.md).  
+In this case the application deployment topology is optimized for handling regional disasters when all application components are impacted and need to failover as a unit. For geographic redundancy both the application logic and the database are replicated to another region but not used for application workload under the normal conditions. The application in the secondary region should be configured to use a SQL connection string to the secondary database. Traffic manager is set up to use [failover routing method](/documentation/articles/traffic-manager-configure-failover-load-balancing).  
 
-> [AZURE.NOTE] [Azure traffic manager](traffic-manager-overview.md) is used throughout this article for illustration purposes only. You can use any load balancing solution that supports failover routing method.    
+> [AZURE.NOTE] [Azure traffic manager](/documentation/articles/traffic-manager-overview) is used throughout this article for illustration purposes only. You can use any load balancing solution that supports failover routing method.    
  
-In addition to the main application instances you should consider deploying a small [worker role application](cloud-services-choose-me.md#tellmecs) that monitors your primary database by issuing periodic T-SQL read-only (RO) commands. You can use it to automatically trigger failover, to generate an alert on your application's admin console or both. To ensure that monitoring is not impacted by region-wide outages you should deploy the monitoring application instances to each region and have them connected to the database in the other region but only the instance in the secondary region needs to be active.
+In addition to the main application instances you should consider deploying a small [worker role application](/documentation/articles/cloud-services-choose-me#tellmecs) that monitors your primary database by issuing periodic T-SQL read-only (RO) commands. You can use it to automatically trigger failover, to generate an alert on your application's admin console or both. To ensure that monitoring is not impacted by region-wide outages you should deploy the monitoring application instances to each region and have them connected to the database in the other region but only the instance in the secondary region needs to be active.
 
-> [AZURE.NOTE] If you are using [Active geo-replication](https://msdn.microsoft.com/library/azure/dn741339.aspx) you can have both monitoring applications active and probe both primary and secondary databases. The latter can be used to detect a failure in the secondary region and alert when the application is not protected.     
+> [AZURE.NOTE] If you are using [Active geo-replication](https://msdn.microsoft.com/zh-cn/library/azure/dn741339.aspx) you can have both monitoring applications active and probe both primary and secondary databases. The latter can be used to detect a failure in the secondary region and alert when the application is not protected.     
 
 The following diagram shows this configuration before an outage. 
 
@@ -42,8 +38,8 @@ The following diagram shows this configuration before an outage.
 
 After an outage in the primary region the monitoring application detects that the primary database is not accessible and registers an alert. Depending on your application SLA you can decide how many consecutive monitoring probes should fail before it declares a database outage. To achieve coordinated failover of the application end-point and the database you should have the monitoring application perform the following steps: 
 
-1. [update the status of the primary end-point](https://msdn.microsoft.com/library/hh758250.aspx) to trigger end-point failover.
-2. call the secondary database to [initiate database failover](https://msdn.microsoft.com/library/azure/dn509573.aspx) 
+1. [update the status of the primary end-point](https://msdn.microsoft.com/zh-cn/library/hh758250.aspx) to trigger end-point failover.
+2. call the secondary database to [initiate database failover](https://msdn.microsoft.com/zh-cn/library/azure/dn509573.aspx) 
 
 After failover the application will process the user requests in the secondary region but will remain co-located with the database because the primary database will now be in the secondary region. This is illustrated by the next diagram. In all diagrams solid lines indicates active connections, dotted lines indicate suspended connections and stop signs indicate action triggers. 
 
@@ -52,7 +48,7 @@ After failover the application will process the user requests in the secondary r
 
 If an outage happens in the secondary region the replication link between the primary and the secondary database will be suspended and the monitoring application will register an alert that the primary database is exposed. This will not impact the application's performance but it will operate exposed and therefore at higher risk in case both regions fail in succession. 
 
-> [AZURE.NOTE] We only recommend deployment configurations with a single DR region. This is because most of the Azure geographies have two regions. These configurations will not protect your application from a catastrophic failure of both regions. In an unlikely event of such a failure you can recover your databases in a third region using [geo-restore operation](sql-database-disaster-recovery.md#recovery-using-geo-restore).
+> [AZURE.NOTE] We only recommend deployment configurations with a single DR region. This is because most of the Azure geographies have two regions. These configurations will not protect your application from a catastrophic failure of both regions. In an unlikely event of such a failure you can recover your databases in a third region using [geo-restore operation](/documentation/articles/sql-database-disaster-recovery#recovery-using-geo-restore).
  
 Once the outage is mitigated the secondary database will be automatically synchronized with the primary. During synchronization performance of the primary could be slightly impacted depending on the amount of data that needs to be synchronized. The following diagram illustrates an outage in the secondary region.
 
@@ -74,11 +70,11 @@ This option is best suited for applications with the following characteristics:
 + read-only logic can be separated from read-write logic by using a different connection string 
 + read-only logic does not depend on data being fully synchronized with the latest updates  
 
-If your applications has these characteristics load balancing the end user connections across multiple application instances in different regions can improve performance and the end-user experience. To achieve that each region should have an active instance of the application with the read-write (RW) logic connected to the primary database in the primary region. The read-only (RO) logic should be connected to a secondary database in the same region as the application instance. Traffic manager should be set up to use [round-robin routing](traffic-manager-configure-round-robin-load-balancing.md) or [performance routing](traffic-manager-configure-performance-load-balancing.md) with [end-point monitoring](traffic-manager-monitoring.md) enabled for each application instance.
+If your applications has these characteristics load balancing the end user connections across multiple application instances in different regions can improve performance and the end-user experience. To achieve that each region should have an active instance of the application with the read-write (RW) logic connected to the primary database in the primary region. The read-only (RO) logic should be connected to a secondary database in the same region as the application instance. Traffic manager should be set up to use [round-robin routing](/documentation/articles/traffic-manager-configure-round-robin-load-balancing) or [performance routing](/documentation/articles/traffic-manager-configure-performance-load-balancing) with [end-point monitoring](/documentation/articles/traffic-manager-monitoring) enabled for each application instance.
 
 As in pattern #1, you should consider deploying a similar monitoring application. But unlike pattern #1 it will not be responsible for triggering the end-point failover. 
 
-> [AZURE.NOTE] While this pattern uses more than one secondary database only one of the secondaries would be used for failover for the reasons noted earlier. Because this pattern requires read-only access to the secondary it requires [Active geo-replication](https://msdn.microsoft.com/library/azure/dn741339.aspx). 
+> [AZURE.NOTE] While this pattern uses more than one secondary database only one of the secondaries would be used for failover for the reasons noted earlier. Because this pattern requires read-only access to the secondary it requires [Active geo-replication](https://msdn.microsoft.com/zh-cn/library/azure/dn741339.aspx). 
 
 Traffic manager should be configured for performance routing to direct the user connections to the application instance closest to the user's geographic location. The following diagram illustrates this configuration before an outage. 
 ![Figure 4](./media/sql-database-designing-cloud-solutions-for-disaster-recovery/pattern2-1.png)
@@ -86,7 +82,7 @@ Traffic manager should be configured for performance routing to direct the user 
 If a database outage is detected in the primary region you initiate failover of the primary database to one of the secondary regions, which will change the location of the primary database. Traffic manager will automatically exclude the offline end-point from the routing table but will continue routing the end user traffic to the remaining online instances. Because the primary database is now in a different region all online instances must change their read-write SQL connection string to connect to the new primary. It is important that you make this change prior to initiating the database failover. The read-only SQL connection strings should remain unchanged as they always point to the database in the same region. The failover steps are:  
 
 1. change read-write SQL connection strings to point to the new primary
-2. call the designated secondary database to [initiate database failover](https://msdn.microsoft.com/library/azure/dn509573.aspx) 
+2. call the designated secondary database to [initiate database failover](https://msdn.microsoft.com/zh-cn/library/azure/dn509573.aspx) 
 
 The following diagram illustrates the new configuration after the failover.
 ![Figure 5](./media/sql-database-designing-cloud-solutions-for-disaster-recovery/pattern2-2.png)
@@ -109,7 +105,7 @@ This option is best suited for applications with the following characteristics:
 + any data loss is high business risk, the database failover can only be used as a last resort if the outage is permanent
 + the application can operate in "read-only mode" for a period of time 
 
-In this pattern the application switches to read-only mode when connected to the secondary database. The application logic in the primary region is co-located with the primary database and operates in read-write mode (RW), the application logic in the secondary region is co-located with the secondary database and is ready to operate in read-only  mode (RO).  Traffic manager should be set up to use [failover routing](traffic-manager-configure-failover-load-balancing.md) with [end-point monitoring](traffic-manager-monitoring.md) enabled for both application instances.
+In this pattern the application switches to read-only mode when connected to the secondary database. The application logic in the primary region is co-located with the primary database and operates in read-write mode (RW), the application logic in the secondary region is co-located with the secondary database and is ready to operate in read-only  mode (RO).  Traffic manager should be set up to use [failover routing](/documentation/articles/traffic-manager-configure-failover-load-balancing) with [end-point monitoring](/documentation/articles/traffic-manager-monitoring) enabled for both application instances.
 
 The following diagram illustrates this configuration before an outage. 
 ![Figure 7](./media/sql-database-designing-cloud-solutions-for-disaster-recovery/pattern3-1.png)
@@ -120,7 +116,7 @@ When traffic manager detects a connectivity failure to the primary region it wil
 
 Once the outage in the primary region is mitigated traffic manager will detect the restoration of connectivity in the primary region and will switch user traffic back to the application instance in the primary region. That application instance resumes and operates in read-write mode using the primary database. 
 
-> [AZURE.NOTE] Because this pattern requires read-only access to the secondary it requires [Active geo-replication](https://msdn.microsoft.com/library/azure/dn741339.aspx). 
+> [AZURE.NOTE] Because this pattern requires read-only access to the secondary it requires [Active geo-replication](https://msdn.microsoft.com/zh-cn/library/azure/dn741339.aspx). 
 
 In case of an outage in the secondary region traffic manager will mark the application end-point in the primary region as degraded and the replication channel will be suspended. However it will not impact the application's performance during the outage. Once the outage is mitigated the secondary database will be immediately synchronized with the primary. During synchronization performance of the primary could be slightly impacted depending on the amount of data that needs to be synchronized. 
 

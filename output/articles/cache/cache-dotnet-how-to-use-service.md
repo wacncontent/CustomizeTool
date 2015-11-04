@@ -7,14 +7,10 @@
 	manager="dwrede" 
 	editor=""/>
 
-<tags 
-	ms.service="cache" 
-	ms.workload="web" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="dotnet" 
-	ms.topic="article" 
-	ms.date="08/18/2015" 
-	ms.author="sdanie"/>
+<tags
+	ms.service="cache"
+	ms.date="08/18/2015"
+	wacn.date=""/>
 
 # How to Use Azure Managed Cache Service
 
@@ -95,9 +91,9 @@ For **Location**, specify a region for the cache. For the best performance, crea
 
 Choose the **Sku** and **Memory** that meets the needs of your application. Note that some cache features, such as notifications and high availability, are only available with certain cache offerings. For more information on choosing the cache offering and size that's best for your application, see [Cache offerings][].
 
- In the following example, a Basic 128MB cache is created with name contosocache, in the South Central US geographic region.
+ In the following example, a Basic 128MB cache is created with name contosocache, in the China East geographic region.
 
-	New-AzureManagedCache -Name contosocache -Location "South Central US" -Sku Basic -Memory 128MB
+	New-AzureManagedCache -Name contosocache -Location "China East" -Sku Basic -Memory 128MB
 
 >For a complete list of parameters and values that can be used when creating a cache, see the [New-AzureManagedCache][] cmdlet documentation.
 
@@ -110,7 +106,7 @@ You can monitor the creation progress in the Azure PowerShell window. Once the c
 	VERBOSE: Subscription "MySubscription" is selected as the default subscription.
 	VERBOSE: To view all the subscriptions, please use Get-AzureSubscription.
 	VERBOSE: To switch to a different subscription, please use Select-AzureSubscription.
-	PS C:\> New-AzureManagedCache -Name contosocache -Location "South Central US" -Sku Basic -Memory 128MB
+	PS C:\> New-AzureManagedCache -Name contosocache -Location "China East" -Sku Basic -Memory 128MB
 	VERBOSE: Intializing parameters...
 	VERBOSE: Creating prerequisites...
 	VERBOSE: Verify cache service name...
@@ -119,7 +115,7 @@ You can monitor the creation progress in the Azure PowerShell window. Once the c
 
 
 	Name     : contosocache
-	Location : South Central US
+	Location : China East
 	State    : Active
 	Sku      : Basic
 	Memory   : 128MB
@@ -486,26 +482,26 @@ follow these links to learn how to do more complex caching tasks.
   
    
 <!-- LINKS -->
-[Azure Management Portal]: https://manage.windowsazure.com/
-[How to: Configure a Cache Client Programmatically]: http://msdn.microsoft.com/library/windowsazure/gg618003.aspx
+[Azure Management Portal]: https://manage.windowsazure.cn/
+[How to: Configure a Cache Client Programmatically]: http://msdn.microsoft.com/zh-cn/library/azure/gg618003.aspx
 [Session State Provider for Azure Cache]: http://go.microsoft.com/fwlink/?LinkId=320835
 [Azure AppFabric Cache: Caching Session State]: http://www.microsoft.com/showcase/details.aspx?uuid=87c833e9-97a9-42b2-8bb1-7601f9b5ca20
 [Output Cache Provider for Azure Cache]: http://go.microsoft.com/fwlink/?LinkId=320837
-[Azure Shared Caching]: http://msdn.microsoft.com/library/windowsazure/gg278356.aspx
+[Azure Shared Caching]: http://msdn.microsoft.com/zh-cn/library/azure/gg278356.aspx
 [Team Blog]: http://blogs.msdn.com/b/windowsazure/
 [Azure Caching]: http://www.microsoft.com/showcase/Search.aspx?phrase=azure+caching
 [How to Configure Virtual Machine Sizes]: http://go.microsoft.com/fwlink/?LinkId=164387
 [Azure Caching Capacity Planning Considerations]: http://go.microsoft.com/fwlink/?LinkId=320167
 [Azure Caching]: http://go.microsoft.com/fwlink/?LinkId=252658
-[How to: Set the Cacheability of an ASP.NET Page Declaratively]: http://msdn.microsoft.com/library/zd1ysf1y.aspx
-[How to: Set a Page's Cacheability Programmatically]: http://msdn.microsoft.com/library/z852zf6b.aspx
+[How to: Set the Cacheability of an ASP.NET Page Declaratively]: http://msdn.microsoft.com/zh-cn/library/zd1ysf1y.aspx
+[How to: Set a Page's Cacheability Programmatically]: http://msdn.microsoft.com/zh-cn/library/z852zf6b.aspx
 [Overview of Azure Managed Cache Service]: http://go.microsoft.com/fwlink/?LinkId=320830
 [Managed Cache Service]: http://go.microsoft.com/fwlink/?LinkId=320830
 [OutputCache Directive]: http://go.microsoft.com/fwlink/?LinkId=251979
 [Troubleshooting and Diagnostics]: http://go.microsoft.com/fwlink/?LinkId=320839
 [NuGet Package Manager Installation]: http://go.microsoft.com/fwlink/?LinkId=240311
-[Cache Pricing Details]: http://www.windowsazure.com/pricing/details/cache/
-[Management Portal]: https://manage.windowsazure.com/
+[Cache Pricing Details]: /home/features/cache/#price
+[Management Portal]: https://manage.windowsazure.cn/
 [Cache offerings]: http://go.microsoft.com/fwlink/?LinkId=317277
 [Capacity planning]: http://go.microsoft.com/fwlink/?LinkId=320167
 [Expiration and Eviction]: http://go.microsoft.com/fwlink/?LinkId=317278
@@ -516,8 +512,8 @@ follow these links to learn how to do more complex caching tasks.
 [New-AzureManagedCache]: http://go.microsoft.com/fwlink/?LinkId=400495
 [Azure Managed Cache Cmdlets]: http://go.microsoft.com/fwlink/?LinkID=398555
 [How to install and configure Azure PowerShell]: http://go.microsoft.com/fwlink/?LinkId=400494
-[Add-AzureAccount]: http://msdn.microsoft.com/library/dn495128.aspx
-[Select-AzureSubscription]: http://msdn.microsoft.com/library/dn495203.aspx
+[Add-AzureAccount]: http://msdn.microsoft.com/zh-cn/library/dn495128.aspx
+[Select-AzureSubscription]: http://msdn.microsoft.com/zh-cn/library/dn495203.aspx
 
-[Which Azure Cache offering is right for me?]: http://msdn.microsoft.com/library/azure/dn766201.aspx
+[Which Azure Cache offering is right for me?]: http://msdn.microsoft.com/zh-cn/library/azure/dn766201.aspx
  

@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Line of business application Phase 1 | Microsoft Azure" 
+	pageTitle="Line of business application Phase 1 | Windows Azure" 
 	description="Create the virtual network and other Azure infrastructure elements in Phase 1 of the line of business application in Azure." 
 	documentationCenter=""
 	services="virtual-machines" 
@@ -8,21 +8,17 @@
 	editor=""
 	tags="azure-resource-manager"/>
 
-<tags 
-	ms.service="virtual-machines" 
-	ms.workload="infrastructure-services" 
-	ms.tgt_pltfrm="Windows" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="08/11/2015" 
-	ms.author="josephd"/>
+<tags
+	ms.service="virtual-machines"
+	ms.date="08/11/2015"
+	wacn.date=""/>
 
 # Line of Business Application Workload Phase 1: Configure Azure
  
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-rm-include.md)] classic deployment model.
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] classic deployment model.
 
  
-In this phase of deploying an intranet-only, high-availability line of business application in Azure infrastructure services, you build out the Azure networking and storage infrastructure. You must complete this phase before moving on to [Phase 2](virtual-machines-workload-high-availability-LOB-application-phase2.md). See [Deploy a High-Availability Line of Business Application in Azure](virtual-machines-workload-high-availability-LOB-application-overview.md) for all of the phases.
+In this phase of deploying an intranet-only, high-availability line of business application in Azure infrastructure services, you build out the Azure networking and storage infrastructure. You must complete this phase before moving on to [Phase 2](/documentation/articles/virtual-machines-workload-high-availability-LOB-application-phase2). See [Deploy a High-Availability Line of Business Application in Azure](/documentation/articles/virtual-machines-workload-high-availability-LOB-application-overview) for all of the phases.
 
 Azure must be provisioned with these basic network components:
 
@@ -64,7 +60,7 @@ Item | Subnet name | Subnet address space | Purpose
 
 **Table S: Subnets in the virtual network**
 
-> [AZURE.NOTE] This pre-defined architecture uses a single subnet for simplicity. If you want to overlay a set of traffic filters to emulate subnet isolation, you can use Azure [Network Security Groups](virtual-networks-nsg.md).
+> [AZURE.NOTE] This pre-defined architecture uses a single subnet for simplicity. If you want to overlay a set of traffic filters to emulate subnet isolation, you can use Azure [Network Security Groups](/documentation/articles/virtual-networks-nsg).
 
 For the two on-premises DNS servers that you want to use when initially setting up the domain controllers in your virtual network, fill in Table D. Give each DNS server a friendly name and a single IP address. This friendly name does not need to match the host name or computer name of the DNS server. Note that two blank entries are listed, but you can add more. Work with your IT department to determine this list. 
 
@@ -116,7 +112,7 @@ To list the Azure locations where you can create Resource Manager-based virtual 
 Create your new resource group with these commands.
 
 	$rgName="<resource group name>"
-	$locName="<an Azure location, such as West US>"
+	$locName="<an Azure location, such as China North>"
 	New-AzureResourceGroup -Name $rgName -Location $locName
 
 Resource Manager-based virtual machines require a Resource Manager-based storage account.
@@ -198,7 +194,7 @@ Next, use these commands to create the gateways for the site-to-site VPN connect
 	$vnetConnectionKey="<Table V – Item 8 – Value column>"
 	$vnetConnection=New-AzureVirtualNetworkGatewayConnection -Name $vnetConnectionName -ResourceGroupName $rgName -Location $locName -ConnectionType IPsec -SharedKey $vnetConnectionKey -VirtualNetworkGateway1 $vnetGateway -LocalNetworkGateway2 $localGateway
 
-Next, configure on-premises VPN device to connect to the Azure VPN gateway. For more information, see [Configure your VPN device](../virtual-networks/vpn-gateway-configure-vpn-gateway-mp.md#configure-your-vpn-device).
+Next, configure on-premises VPN device to connect to the Azure VPN gateway. For more information, see [Configure your VPN device](/documentation/articles/vpn-gateway-configure-vpn-gateway-mp#configure-your-vpn-device).
 
 To configure your on-premises VPN device, you will need the following:
 
@@ -236,16 +232,16 @@ This is the configuration resulting from the successful completion of this phase
 
 ## Next step
 
-To continue with the configuration of this workload, go to [Phase 2: Configure Domain Controllers](virtual-machines-workload-high-availability-LOB-application-phase2.md).
+To continue with the configuration of this workload, go to [Phase 2: Configure Domain Controllers](/documentation/articles/virtual-machines-workload-high-availability-LOB-application-phase2).
 
 ## Additional resources
 
-[Deploy a high-availability line of business application in Azure](virtual-machines-workload-high-availability-LOB-application-overview.md)
+[Deploy a high-availability line of business application in Azure](/documentation/articles/virtual-machines-workload-high-availability-LOB-application-overview)
 
 [Line of Business Applications architecture blueprint](http://msdn.microsoft.com/dn630664)
 
-[Set up a web-based LOB application in a hybrid cloud for testing](../virtual-network/virtual-networks-setup-lobapp-hybrid-cloud-testing.md)
+[Set up a web-based LOB application in a hybrid cloud for testing](/documentation/articles/virtual-networks-setup-lobapp-hybrid-cloud-testing)
 
-[Azure infrastructure services implementation guidelines](virtual-machines-infrastructure-services-implementation-guidelines.md)
+[Azure infrastructure services implementation guidelines](/documentation/articles/virtual-machines-infrastructure-services-implementation-guidelines)
 
-[Azure Infrastructure Services Workload: SharePoint Server 2013 farm](virtual-machines-workload-intranet-sharepoint-farm.md)
+[Azure Infrastructure Services Workload: SharePoint Server 2013 farm](/documentation/articles/virtual-machines-workload-intranet-sharepoint-farm)

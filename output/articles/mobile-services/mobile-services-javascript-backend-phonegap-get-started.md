@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Get started with Azure Mobile Services for PhoneGap/cordova apps | Microsoft Azure"
+	pageTitle="Get started with Azure Mobile Services for PhoneGap/cordova apps | Windows Azure"
 	description="Follow this tutorial to get started using Azure Mobile Services for PhoneGap development for iOS, Android, and Windows Phone."
 	services="mobile-services"
 	documentationCenter=""
@@ -9,19 +9,15 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.workload="mobile"
-	ms.tgt_pltfrm="mobile-phonegap"
-	ms.devlang="multiple"
-	ms.topic="get-started-article" 
 	ms.date="10/05/2015"
-	ms.author="ggailey777"/>
+	wacn.date=""/>
 
 # Get started with Mobile Services
 
-[AZURE.INCLUDE [mobile-services-selector-get-started](../../includes/mobile-services-selector-get-started.md)]
+[AZURE.INCLUDE [mobile-services-selector-get-started](../includes/mobile-services-selector-get-started.md)]
 &nbsp;
 
-[AZURE.INCLUDE [mobile-services-hero-slug](../../includes/mobile-services-hero-slug.md)]
+[AZURE.INCLUDE [mobile-services-hero-slug](../includes/mobile-services-hero-slug.md)]
 
 This tutorial shows you how to add a cloud-based backend service to an app using Azure Mobile Services. In this tutorial, you will create both a new mobile service and a simple _To do list_ app that stores app data in the new mobile service.
 
@@ -35,7 +31,7 @@ Completing this tutorial requires the following:
 
 + PhoneGap tools (v3.2+ required for Windows Phone 8 projects).
 
-+ An active Microsoft Azure account.
++ An active Windows Azure account.
 
 + PhoneGap supports developing for multiple platforms. In addition to the PhoneGap tools themselves, you must install the tools for each platform you are targeting:
 
@@ -46,7 +42,7 @@ Completing this tutorial requires the following:
 
 ## Create a new mobile service
 
-[AZURE.INCLUDE [mobile-services-create-new-service](../../includes/mobile-services-create-new-service.md)]
+[AZURE.INCLUDE [mobile-services-create-new-service](../includes/mobile-services-create-new-service.md)]
 
 ## Create a new PhoneGap app
 
@@ -161,10 +157,10 @@ Now that you have completed the quickstart, learn how to perform additional impo
 * **[Add push notifications to your app](https://msdn.microsoft.com/magazine/dn879353.aspx)**  
   Learn how to register for and send push notifications to your app.
 
-* **[Mobile Services HTML/JavaScript How-to Conceptual Reference](mobile-services-html-how-to-use-client-library.md)**  
+* **[Mobile Services HTML/JavaScript How-to Conceptual Reference](/documentation/articles/mobile-services-html-how-to-use-client-library)**  
   Learn more about how to use the JavaScript client library to access data, call custom APIs, and perform authentication.
 
-[AZURE.INCLUDE [app-service-disqus-feedback-slug](../../includes/app-service-disqus-feedback-slug.md)]
+[AZURE.INCLUDE [app-service-disqus-feedback-slug](../includes/app-service-disqus-feedback-slug.md)]
 
 <!-- Images. -->
 [0]: ./media/mobile-services-javascript-backend-phonegap-get-started/portal-screenshot1.png
@@ -174,9 +170,9 @@ Now that you have completed the quickstart, learn how to perform additional impo
 [4]: ./media/mobile-services-javascript-backend-phonegap-get-started/mobile-portal-quickstart-android.png
 
 <!-- URLs. -->
-[Add authentication to your app]: mobile-services-html-get-started-users.md
+[Add authentication to your app]: /documentation/articles/mobile-services-html-get-started-users
 [Android SDK]: https://go.microsoft.com/fwLink/p/?LinkID=280125
-[Management Portal]: https://manage.windowsazure.com/
+[Management Portal]: https://manage.windowsazure.cn/
 [Xcode]: https://go.microsoft.com/fwLink/p/?LinkID=266532
 [Visual Studio 2012 Express for Windows Phone]: https://go.microsoft.com/fwLink/p/?LinkID=268374
  

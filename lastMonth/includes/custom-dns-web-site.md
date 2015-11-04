@@ -1,12 +1,12 @@
 #Configuring a custom domain name for an Azure website
 
-When you create a website, Azure provides a friendly subdomain on the chinacloudsites.cn domain so your users can access your website using a URL like http://&lt;mysite>.chinacloudsites.cn. However, if you configure your websites for Shared or Standard mode, you can map your website to your own domain name.
+When you create a website, Azure provides a friendly subdomain on the azurewebsites.net domain so your users can access your website using a URL like http://&lt;mysite>.azurewebsites.net. However, if you configure your websites for Shared or Standard mode, you can map your website to your own domain name.
 
 Optionally, you can use Azure Traffic Manager to load balance incoming traffic to your website. For more information on how Traffic Manager works with Websites, see [Controlling Azure Web Sites Traffic with Azure Traffic Manager][trafficmanager].
 
 > [AZURE.NOTE] The procedures in this task apply to Azure Websites; for Cloud Services, see <a href="/develop/net/common-tasks/custom-dns/">Configuring a Custom Domain Name in Azure</a>.
 
-> [AZURE.NOTE] The steps in this task require you to configure your websites for Shared or Standard mode, which may change how much you are billed for your subscription. See <a href="/home/features/web-site/#price">Websites Pricing Details</a> for more information.
+> [AZURE.NOTE] The steps in this task require you to configure your websites for Shared or Standard mode, which may change how much you are billed for your subscription. See <a href="/pricing/details/web-sites/">Websites Pricing Details</a> for more information.
 
 In this article:
 
@@ -22,7 +22,7 @@ CNAME (or alias records) and A records both allow you to associate a domain name
 
 ###CNAME or Alias record
 
-A CNAME record maps a *specific* domain, such as **contoso.com** or **www.contoso.com**, to a canonical domain name. In this case, the canonical domain name is the either the **&lt;myapp>.chinacloudsites.cn** domain name of your Azure website or the **&lt;myapp>.trafficmgr.com** domain name of your Traffic Manager profile. Once created, the CNAME creates an alias for the **&lt;myapp>.chinacloudsites.cn** or **&lt;myapp>.trafficmgr.com** domain name. The CNAME entry will resolve to the IP address of your **&lt;myapp>.chinacloudsites.cn** or **&lt;myapp>.trafficmgr.com** domain name automatically, so if the IP address of the website changes, you do not have to take any action.
+A CNAME record maps a *specific* domain, such as **contoso.com** or **www.contoso.com**, to a canonical domain name. In this case, the canonical domain name is the either the **&lt;myapp>.azurewebsites.net** domain name of your Azure website or the **&lt;myapp>.trafficmgr.com** domain name of your Traffic Manager profile. Once created, the CNAME creates an alias for the **&lt;myapp>.azurewebsites.net** or **&lt;myapp>.trafficmgr.com** domain name. The CNAME entry will resolve to the IP address of your **&lt;myapp>.azurewebsites.net** or **&lt;myapp>.trafficmgr.com** domain name automatically, so if the IP address of the website changes, you do not have to take any action.
 
 > [AZURE.NOTE] Some domain registrars only allow you to map subdomains when using a CNAME record, such as www.contoso.com, and not root names, such as contoso.com. For more information on CNAME records, see the documentation provided by your registrar, <a href="http://en.wikipedia.org/wiki/CNAME_record">the Wikipedia entry on CNAME record</a>, or the <a href="http://tools.ietf.org/html/rfc1035">IETF Domain Names - Implementation and Specification</a> document.
 
@@ -110,7 +110,7 @@ To create a CNAME record, you must add a new entry in the DNS table for your cus
 
 			get-azurewebsite yoursitename | select hostnames
 
-	* Install and configure the [Azure Command Line Interface](/documentation/articles/install-and-configure-cli), and then use the following command:
+	* Install and configure the [Azure Command Line Interface](/manage/install-and-configure-cli/), and then use the following command:
 
 			azure site domain list yoursitename
 
@@ -151,7 +151,7 @@ After the CNAME record for domain name has propagated, you must associate it wit
 
 **To add a domain name using the command-line tools**
 
-Install and configure the [Azure Command-Line Interface](/documentation/articles/install-and-configure-cli), and then use the following command:
+Install and configure the [Azure Command-Line Interface](/manage/install-and-configure-cli/), and then use the following command:
 
 	azure site domain add customdomain yoursitename
 
@@ -193,7 +193,7 @@ To create an A record, you must first find the IP address of your website. Then 
 
 5. On the **Manage custom domains** dialog, locate **The IP Address to use when configuring A records**. Copy the IP address. This will be used when creating the A record.
 
-5. On the **Manage custom domains** dialog, note awverify domain name at the end of the text at the top of the dialog. It should be **awverify.mysite.chinacloudsites.cn** where **mysite** is the name of your website. Copy this, as it is the domain name used when creating the verification CNAME record.
+5. On the **Manage custom domains** dialog, note awverify domain name at the end of the text at the top of the dialog. It should be **awverify.mysite.azurewebsites.net** where **mysite** is the name of your website. Copy this, as it is the domain name used when creating the verification CNAME record.
 
 6. Log on to your DNS registrar's website, and go to the page for managing DNS. Look for links or areas of the site labeled as **Domain Name**, **DNS**, or **Name Server Management**.
 
@@ -222,7 +222,7 @@ To create an A record, you must first find the IP address of your website. Then 
 
 		This example demonstrates creating an A record for the root domain. If you wish to create a wildcard entry to cover all subdomains, you would enter '__*__' as the subdomain.
 
-7. Next, create a CNAME record that has an alias of **awverify**, and a canonical domain of **awverify.mysite.chinacloudsites.cn** that you obtained earlier.
+7. Next, create a CNAME record that has an alias of **awverify**, and a canonical domain of **awverify.mysite.azurewebsites.net** that you obtained earlier.
 
 	> [AZURE.NOTE] While an alias of awverify may work for some registrars, others may require the full alias domain name of awverify.www.customdomainname.com or awverify.customdomainname.com.
 
@@ -235,7 +235,7 @@ To create an A record, you must first find the IP address of your website. Then 
 	</tr>
 	<tr>
 	<td>awverify</td>
-	<td>awverify.contoso.chinacloudsites.cn</td>
+	<td>awverify.contoso.azurewebsites.net</td>
 	</tr>
 	</table>
 
@@ -247,7 +247,7 @@ After the **awverify** CNAME record for domain name has propagated, you can then
 
 **To add a domain name using the Azure Command-Line Interface (Azure CLI)**
 
-Install and configure the [Azure CLI](/documentation/articles/install-and-configure-cli), and then use the following command:
+Install and configure the [Azure CLI](/manage/install-and-configure-cli/), and then use the following command:
 
 	azure site domain add customdomain yoursitename
 
@@ -281,9 +281,9 @@ Once configuration has completed, the custom domain name will be listed in the *
 
 ## Next steps
 
--   [How to manage web sites](/documentation/articles/web-sites-manage)
+-   [How to manage web sites](/manage/services/web-sites/how-to-manage-websites/)
 
--   [Configure an SSL certificate for Web Sites](/documentation/articles/web-sites-configure-ssl-certificate)
+-   [Configure an SSL certificate for Web Sites](/develop/net/common-tasks/enable-ssl-web-site/)
 
 
 <!-- Bookmarks -->
@@ -296,13 +296,14 @@ Once configuration has completed, the custom domain name will be listed in the *
 
 <!-- Links -->
 
-[PricingDetails]: /pricing/overview/
-[portal]: http://manage.windowsazure.cn
+[PricingDetails]: /pricing/details/
+[portal]: http://manage.windowsazure.com
 [digweb]: http://www.digwebinterface.com/
-[cloudservicedns]: /documentation/articles/custom-dns
-[trafficmanager]: /documentation/articles/web-sites-traffic-manager
-[addendpoint]: /documentation/articles/traffic-manager-endpoints
-[createprofile]: /documentation/articles/traffic-manager-manage-profiles
+[cloudservicedns]: ../articles/custom-dns.md
+[trafficmanager]: ../articles/app-service-web/web-sites-traffic-manager.md
+[addendpoint]: ../articles/traffic-manager/traffic-manager-endpoints.md
+[createprofile]: ../articles/traffic-manager/traffic-manager-manage-profiles.md
+
 <!-- images -->
 
 [setcname1]: ../media/dncmntask-cname-5.png

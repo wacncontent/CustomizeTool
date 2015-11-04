@@ -9,15 +9,11 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.devlang="dotnet"
-	ms.topic="article"
-	ms.tgt_pltfrm="mobile-xamarin"
-	ms.workload="mobile"
 	ms.date="10/05/2015"
-	ms.author="wesmc"/>
+	wacn.date=""/>
 
 # Add push notifications to your Xamarin.Forms app
-[AZURE.INCLUDE [mobile-services-selector-get-started-push](../../includes/mobile-services-selector-get-started-push.md)]
+[AZURE.INCLUDE [mobile-services-selector-get-started-push](../includes/mobile-services-selector-get-started-push.md)]
 
 ##Overview
 
@@ -45,7 +41,7 @@ In this topic:
 
 ## <a name="create-service"></a>Create a New Mobile Service
 
-[AZURE.INCLUDE [mobile-services-create-new-service-data](../../includes/mobile-services-create-new-service-data.md)]
+[AZURE.INCLUDE [mobile-services-create-new-service-data](../includes/mobile-services-create-new-service-data.md)]
 
 To be able to store app data in the new mobile service, you must first create a new table.  
 
@@ -122,7 +118,7 @@ To be able to send push notifications to an iOS app from mobile services, you mu
 
     ![][102]
 
-2. Type a name for your app in **Description**, enter and remember the unique **Bundle Identifier**, check the "Push Notifications" option in the "App Services" section, and then click **Continue**. This example uses the ID **MobileServices.Quickstart** but you may not reuse this same ID, as app IDs must be unique across all users. As such, it is recommended that you append your full name or initials after the app name.
+2. Type a name for your app in **Description**, enter and remember the unique **Bundle Identifier**, check the "Push Notifications" option in the "Azure Websites" section, and then click **Continue**. This example uses the ID **MobileServices.Quickstart** but you may not reuse this same ID, as app IDs must be unique across all users. As such, it is recommended that you append your full name or initials after the app name.
 
     ![][103]
 
@@ -379,11 +375,11 @@ You'll add push notifications to the Android app by using the Google Cloud Messa
 
 ###<a id="register"></a>Enable Google Cloud Messaging
 
-[AZURE.INCLUDE [mobile-services-enable-Google-cloud-messaging](../../includes/mobile-services-enable-google-cloud-messaging.md)]
+[AZURE.INCLUDE [mobile-services-enable-Google-cloud-messaging](../includes/mobile-services-enable-google-cloud-messaging.md)]
 
 ###<a id="configure"></a>Configure your mobile service to send push requests
 
-[AZURE.INCLUDE [mobile-services-android-configure-push](../../includes/mobile-services-android-configure-push.md)]
+[AZURE.INCLUDE [mobile-services-android-configure-push](../includes/mobile-services-android-configure-push.md)]
 
 ###<a id="update-scripts"></a>Update the registered insert script to send notifications
 
@@ -765,7 +761,7 @@ Finally, you must update the script registered to the insert operation on the To
 
 	![Toast notification received](./media/partner-xamarin-mobile-services-xamarin-forms-get-started-push/mobile-quickstart-push5-wp8.png)
 
-	>[AZURE.NOTE]You will not receive the notification when you are still in the app. To receive a toast notification while the app is active, you must handle the [ShellToastNotificationReceived](http://msdn.microsoft.com/library/windowsphone/develop/microsoft.phone.notification.httpnotificationchannel.shelltoastnotificationreceived(v=vs.105).aspx) event.
+	>[AZURE.NOTE]You will not receive the notification when you are still in the app. To receive a toast notification while the app is active, you must handle the [ShellToastNotificationReceived](http://msdn.microsoft.com/zh-cn/library/windowsphone/develop/microsoft.phone.notification.httpnotificationchannel.shelltoastnotificationreceived(v=vs.105).aspx) event.
    
 <!-- Anchors. -->
 [Generate the certificate signing request]: #certificates
@@ -831,12 +827,11 @@ Finally, you must update the script registered to the insert operation on the To
 [iOS Provisioning Portal]: http://go.microsoft.com/fwlink/p/?LinkId=272456
 [Mobile Services iOS SDK]: https://go.microsoft.com/fwLink/p/?LinkID=266533
 [Apple Push Notification Service]: http://go.microsoft.com/fwlink/p/?LinkId=272584
-[Get started with Mobile Services]: mobile-services-ios-get-started.md
-
+[Get started with Mobile Services]: /documentation/articles/mobile-services-ios-get-started
 [Xamarin Device Provisioning]: http://developer.xamarin.com/guides/ios/getting_started/installation/device_provisioning/
 
 
-[Azure Management Portal]: https://manage.windowsazure.com/
+[Azure Management Portal]: https://manage.windowsazure.cn/
 [apns object]: http://go.microsoft.com/fwlink/p/?LinkId=272333
 [Azure Mobile Services Component]: http://components.xamarin.com/view/azure-mobile-services/
 [completed example project]: http://go.microsoft.com/fwlink/p/?LinkId=331303

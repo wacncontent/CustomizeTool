@@ -1,4 +1,4 @@
-new docs: 18, word count: {word_count_TODO}
+new docs: 18, word count: 18748
 articles/redis-cache/cache-configure.md
 articles/redis-cache/cache-dotnet-how-to-use-azure-redis-cache.md
 articles/redis-cache/cache-faq.md

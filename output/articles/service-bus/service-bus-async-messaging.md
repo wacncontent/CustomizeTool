@@ -1,19 +1,15 @@
 <properties 
-   pageTitle="Service Bus asynchronous messaging | Microsoft Azure"
+   pageTitle="Service Bus asynchronous messaging | Windows Azure"
    description="Description of Service Bus asynchronous brokered messaging."
    services="service-bus"
    documentationCenter="na"
    authors="sethmanheim"
    manager="timlt"
    editor="tysonn" /> 
-<tags 
-   ms.service="service-bus"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="na"
-   ms.date="09/18/2015"
-   ms.author="sethm" />
+<tags
+	ms.service="service-bus"
+	ms.date="09/18/2015"
+	wacn.date=""/>
 
 # Asynchronous messaging patterns and high availability
 
@@ -152,22 +148,22 @@ if (sendAvailabilityOptions.BacklogQueueCount < 1)
 
 Now that you've learned the basics of asynchronous messaging in Service Bus, read more details about [paired namespaces and cost implications].
 
-  [ServerBusyException]: https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.serverbusyexception.aspx
-  [System.TimeoutException]: https://msdn.microsoft.com/library/system.timeoutexception.aspx
-  [MessagingException]: https://msdn.microsoft.com/en-us/library/azure/microsoft.servicebus.messaging.messagingexception.aspx
-  [Best Practices for Insulating Service Bus Applications Against Service Bus Outages and Disasters]: service-bus-outages-disasters.md
-  [Microsoft.ServiceBus.Messaging.MessagingFactory]: https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.messagingfactory.aspx
-  [MessageReceiver]: https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.messagereceiver.aspx
-  [QueueClient]: https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.queueclient.aspx
-  [TopicClient]: https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.topicclient.aspx
-  [Microsoft.ServiceBus.Messaging.PairedNamespaceOptions]: https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.pairednamespaceoptions.aspx
-  [MessagingFactory]: https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.messagingfactory.aspx
-  [SendAvailabilityPairedNamespaceOptions]:https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.sendavailabilitypairednamespaceoptions.aspx
-  [NamespaceManager]: https://msdn.microsoft.com/library/azure/microsoft.servicebus.namespacemanager.aspx
-  [PairNamespaceAsync]: https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.messagingfactory.pairnamespaceasync.aspx
-  [EnableSyphon]: https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.sendavailabilitypairednamespaceoptions.enablesyphon.aspx
-  [System.TimeSpan.Zero]: https://msdn.microsoft.com/library/azure/system.timespan.zero.aspx
-  [IsTransient]: https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.messagingexception.istransient.aspx
-  [UnauthorizedAccessException]: https://msdn.microsoft.com/library/azure/system.unauthorizedaccessexception.aspx
-  [BacklogQueueCount]: https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.sendavailabilitypairednamespaceoptions.backlogqueuecount.aspx
-  [paired namespaces and cost implications]: service-bus-paired-namespaces.md
+  [ServerBusyException]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.serverbusyexception.aspx
+  [System.TimeoutException]: https://msdn.microsoft.com/zh-cn/library/system.timeoutexception.aspx
+  [MessagingException]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.messagingexception.aspx
+  [Best Practices for Insulating Service Bus Applications Against Service Bus Outages and Disasters]: /documentation/articles/service-bus-outages-disasters
+  [Microsoft.ServiceBus.Messaging.MessagingFactory]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.messagingfactory.aspx
+  [MessageReceiver]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.messagereceiver.aspx
+  [QueueClient]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.queueclient.aspx
+  [TopicClient]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.topicclient.aspx
+  [Microsoft.ServiceBus.Messaging.PairedNamespaceOptions]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.pairednamespaceoptions.aspx
+  [MessagingFactory]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.messagingfactory.aspx
+  [SendAvailabilityPairedNamespaceOptions]:https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.sendavailabilitypairednamespaceoptions.aspx
+  [NamespaceManager]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.namespacemanager.aspx
+  [PairNamespaceAsync]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.messagingfactory.pairnamespaceasync.aspx
+  [EnableSyphon]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.sendavailabilitypairednamespaceoptions.enablesyphon.aspx
+  [System.TimeSpan.Zero]: https://msdn.microsoft.com/zh-cn/library/azure/system.timespan.zero.aspx
+  [IsTransient]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.messagingexception.istransient.aspx
+  [UnauthorizedAccessException]: https://msdn.microsoft.com/zh-cn/library/azure/system.unauthorizedaccessexception.aspx
+  [BacklogQueueCount]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.sendavailabilitypairednamespaceoptions.backlogqueuecount.aspx
+  [paired namespaces and cost implications]: /documentation/articles/service-bus-paired-namespaces

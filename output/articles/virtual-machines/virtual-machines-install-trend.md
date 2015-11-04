@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Install Trend Micro Deep Security on a VM | Microsoft Azure"
+	pageTitle="Install Trend Micro Deep Security on a VM | Windows Azure"
 	description="This article describes how to install and configure Trend Micro security on a VM created with the classic deployment model in Azure."
 	services="virtual-machines"
 	documentationCenter=""
@@ -10,30 +10,26 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.workload="infrastructure-services"
-	ms.tgt_pltfrm="vm-multiple"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="10/14/2015"
-	ms.author="dkshir"/>
+	wacn.date=""/>
 
 
 # How to install and configure Trend Micro Deep Security as a Service on a Windows VM
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
 
 
 This article shows you how to install and configure Trend Micro Deep Security as a Service on a new or existing virtual machine (VM) running Windows Server. Deep Security as a Service includes anti-malware protection, a firewall, an intrusion prevention system, and integrity monitoring.
 
 The client is installed as a security extension via the VM Agent. On a new virtual machine, you'll install the VM Agent along with the Deep Security Agent. On an existing virtual machine that doesn't have the VM Agent, you'll need to download and install it first. This article covers both situations.
 
-If you have existing subscription from Trend Micro for an on-premises solution, you can use it to help protect your Azure virtual machines. If you're not a customer yet, you can sign up for a trial subscription. For more information about this solution, see the Trend Micro blog post [Microsoft Azure VM Agent Extension For Deep Security](http://go.microsoft.com/fwlink/p/?LinkId=403945).
+If you have existing subscription from Trend Micro for an on-premises solution, you can use it to help protect your Azure virtual machines. If you're not a customer yet, you can sign up for a trial subscription. For more information about this solution, see the Trend Micro blog post [Windows Azure VM Agent Extension For Deep Security](http://go.microsoft.com/fwlink/p/?LinkId=403945).
 
 ## Install the Deep Security Agent on a new virtual machine
 
-The [Azure portal](http://manage.windowsazure.com) lets you install the VM Agent and the Trend Micro security extension when you use the **From Gallery** option to create the virtual machine. Using this approach is an easy way to add protection from Trend Micro if you're creating a single virtual machine.
+The [Azure Management Portal](http://manage.windowsazure.cn) lets you install the VM Agent and the Trend Micro security extension when you use the **From Gallery** option to create the virtual machine. Using this approach is an easy way to add protection from Trend Micro if you're creating a single virtual machine.
 
-This **From Gallery** option opens a wizard that helps you set up the virtual machine. You use the last page of the wizard to install the VM Agent and Trend Micro security extension. For general instructions, see [Create a virtual machine running Windows in the Azure portal](virtual-machines-windows-tutorial-classic-portal.md). When you get to the last page of the wizard, do the following:
+This **From Gallery** option opens a wizard that helps you set up the virtual machine. You use the last page of the wizard to install the VM Agent and Trend Micro security extension. For general instructions, see [Create a virtual machine running Windows in the Azure Management Portal](/documentation/articles/virtual-machines-windows-tutorial-classic-portal). When you get to the last page of the wizard, do the following:
 
 1.	Under **VM Agent**, check **Install VM Agent**.
 
@@ -47,7 +43,7 @@ This **From Gallery** option opens a wizard that helps you set up the virtual ma
 
 To do this, you'll need the following:
 
-- The Azure PowerShell module, version 0.8.2 or newer, installed on your local computer. You can check the version of Azure PowerShell that you have installed by using the **Get-Module azure | format-table version** command. For instructions and a link to the latest version, see [How to install and configure Azure PowerShell](../install-configure-powershell.md).
+- The Azure PowerShell module, version 0.8.2 or newer, installed on your local computer. You can check the version of Azure PowerShell that you have installed by using the **Get-Module azure | format-table version** command. For instructions and a link to the latest version, see [How to install and configure Azure PowerShell](/documentation/articles/install-configure-powershell).
 
 - The VM Agent installed on the target virtual machine.
 
@@ -72,7 +68,7 @@ If the VM Agent is installed, run these commands.
 
 It takes a few minutes for the agent to start running when it is installed. After that, you'll need to activate Deep Security on the virtual machine so it can be managed by a Deep Security Manager. See the following for additional instructions:
 
-- Trend's article about this solution, [Instant-On Cloud Security for Microsoft Azure](http://go.microsoft.com/fwlink/?LinkId=404101)
+- Trend's article about this solution, [Instant-On Cloud Security for Windows Azure](http://go.microsoft.com/fwlink/?LinkId=404101)
 - A [sample Windows PowerShell script](http://go.microsoft.com/fwlink/?LinkId=404100) to configure the virtual machine
 - [Instructions](http://go.microsoft.com/fwlink/?LinkId=404099)  for the sample
 
@@ -84,5 +80,5 @@ It takes a few minutes for the agent to start running when it is installed. Afte
 
 
 <!--Link references-->
-[How to log on to a virtual machine running Windows Server]: virtual-machines-log-on-windows-server.md
+[How to log on to a virtual machine running Windows Server]: /documentation/articles/virtual-machines-log-on-windows-server
 [Azure VM Extensions and features]: http://go.microsoft.com/fwlink/p/?linkid=390493&clcid=0x409

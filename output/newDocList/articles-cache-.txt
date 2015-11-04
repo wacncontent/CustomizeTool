@@ -1,0 +1,5 @@
+new docs: 2, word count: {word_count_TODO}
+articles/cache/cache-dotnet-how-to-use-in-role.md
+articles/cache/cache-dotnet-how-to-use-service.md
+
+new includes: 0

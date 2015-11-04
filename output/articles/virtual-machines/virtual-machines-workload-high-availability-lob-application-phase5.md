@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Line of business application Phase 5 | Microsoft Azure" 
+	pageTitle="Line of business application Phase 5 | Windows Azure" 
 	description="Create an availability group and add your application databases to it in Phase 5 of the line of business application in Azure." 
 	documentationCenter=""
 	services="virtual-machines" 
@@ -8,23 +8,19 @@
 	editor=""
 	tags="azure-resource-manager"/>
 
-<tags 
-	ms.service="virtual-machines" 
-	ms.workload="infrastructure-services" 
-	ms.tgt_pltfrm="Windows" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="08/11/2015" 
-	ms.author="josephd"/>
+<tags
+	ms.service="virtual-machines"
+	ms.date="08/11/2015"
+	wacn.date=""/>
 
 # Line of Business Application Workload Phase 5: Create the availability group and add the application databases
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-rm-include.md)] classic deployment model.
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] classic deployment model.
 
 
 In this final phase of deploying a high-availability line of business application in Azure infrastructure services, you create a new SQL Server AlwaysOn Availability Group and add the databases of the application.
 
-See [Deploy a high-availability line of business application in Azure](virtual-machines-workload-high-availability-LOB-application-overview.md) for all of the phases.
+See [Deploy a high-availability line of business application in Azure](/documentation/articles/virtual-machines-workload-high-availability-LOB-application-overview) for all of the phases.
 
 ## Create the Availability Group and add databases
 
@@ -112,18 +108,18 @@ You are now ready to begin rolling out this new application to your intranet use
 
 ## Configure a listener for the AlwaysOn Availability Group
 
-You can optionally create a listener configuration for the AlwaysOn Availability Group. For the steps, see [Tutorial: Listener Configuration for AlwaysOn Availability Groups](https://msdn.microsoft.com/library/dn425027.aspx). These instructions step you through  creating only a single listener (recommended) and to use a static IP address of an internal load balancing instance.
+You can optionally create a listener configuration for the AlwaysOn Availability Group. For the steps, see [Tutorial: Listener Configuration for AlwaysOn Availability Groups](https://msdn.microsoft.com/zh-cn/library/dn425027.aspx). These instructions step you through  creating only a single listener (recommended) and to use a static IP address of an internal load balancing instance.
 
 Once the listener is configured, you need to configure all the web server virtual machines to use the listener, instead of the name of the first SQL server in the cluster. Rather than using a new DNS name and record that maps to the virtual IP address of the internal load balancing instance, configure the web server virtual machines to use a SQL Alias. For details and steps, see [SQL Alias for SharePoint](http://blogs.msdn.com/b/priyo/archive/2013/09/13/sql-alias-for-sharepoint.aspx).
 
 ## Additional resources
 
-[Deploy a high-availability line of business application in Azure](virtual-machines-workload-high-availability-LOB-application-overview.md)
+[Deploy a high-availability line of business application in Azure](/documentation/articles/virtual-machines-workload-high-availability-LOB-application-overview)
 
 [Line of Business Applications architecture blueprint](http://msdn.microsoft.com/dn630664)
 
-[Set up a web-based LOB application in a hybrid cloud for testing](../virtual-network/virtual-networks-setup-lobapp-hybrid-cloud-testing.md)
+[Set up a web-based LOB application in a hybrid cloud for testing](/documentation/articles/virtual-networks-setup-lobapp-hybrid-cloud-testing)
 
-[Azure infrastructure services implementation guidelines](virtual-machines-infrastructure-services-implementation-guidelines.md)
+[Azure infrastructure services implementation guidelines](/documentation/articles/virtual-machines-infrastructure-services-implementation-guidelines)
 
-[Azure Infrastructure Services Workload: SharePoint Server 2013 farm](virtual-machines-workload-intranet-sharepoint-farm.md)
+[Azure Infrastructure Services Workload: SharePoint Server 2013 farm](/documentation/articles/virtual-machines-workload-intranet-sharepoint-farm)

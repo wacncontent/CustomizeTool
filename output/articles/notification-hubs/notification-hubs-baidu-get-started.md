@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Get started with Azure Notification Hubs using Baidu | Microsoft Azure"
+	pageTitle="Get started with Azure Notification Hubs using Baidu | Windows Azure"
 	description="In this tutorial, you learn how to use Azure Notification Hubs to push notifications to Android devices using Baidu."
 	services="notification-hubs"
 	documentationCenter="android"
@@ -9,16 +9,12 @@
 
 <tags
 	ms.service="notification-hubs"
-	ms.devlang="java"
-	ms.topic="hero-article"
-	ms.tgt_pltfrm="mobile-baidu"
-	ms.workload="mobile"
 	ms.date="10/19/2015"
-	ms.author="wesmc"/>
+	wacn.date=""/>
 
 # Get started with Notification Hubs using Baidu
 
-[AZURE.INCLUDE [notification-hubs-selector-get-started](../../includes/notification-hubs-selector-get-started.md)]
+[AZURE.INCLUDE [notification-hubs-selector-get-started](../includes/notification-hubs-selector-get-started.md)]
 
 ##Overview
 
@@ -32,7 +28,7 @@ This tutorial requires the following:
 + [Mobile Services Android SDK]
 + [Baidu Push Android SDK]
 
->[AZURE.NOTE] To complete this tutorial, you must have an active Azure account. If you don't have an account, you can create a free trial account in just a couple of minutes. For details, see [Azure Free Trial](http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fen-us%2Fdocumentation%2Farticles%2Fnotification-hubs-baidu-get-started%2F).
+>[AZURE.NOTE] To complete this tutorial, you must have an active Azure account. If you don't have an account, you can create a trial account in just a couple of minutes. For details, see [Azure Trial](/pricing/1rmb-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fen-us%2Fdocumentation%2Farticles%2Fnotification-hubs-baidu-get-started%2F).
 
 
 ##Create a Baidu account
@@ -141,9 +137,9 @@ You will see the **保存成功！** (**Successfully saved!**) message.
 
 ##Configure your notification hub
 
-1. Sign in to the [Azure portal], and then click **+NEW** at the bottom of the screen.
+1. Sign in to the [Azure Management Portal], and then click **+NEW** at the bottom of the screen.
 
-2. Click **App Services**, click **Service Bus**, click **Notification Hub**, and then click **Quick Create**.
+2. Click **Azure Websites**, click **Service Bus**, click **Notification Hub**, and then click **Quick Create**.
 
 3. Provide a name for your **Notification Hub**, select the **Region** and the **Namespace** where this notification hub will be created, and then click **Create a New Notification Hub**.  
 
@@ -264,7 +260,7 @@ You will see the **保存成功！** (**Successfully saved!**) message.
 				public static String NotificationHubConnectionString = "...";
 			}
 
-	Set the value of **API_KEY** with what you retrieved from the Baidu cloud project earlier, **NotificationHubName** with your notification hub name from the Azure portal and **NotificationHubConnectionString** with DefaultListenSharedAccessSignature from the Azure portal.
+	Set the value of **API_KEY** with what you retrieved from the Baidu cloud project earlier, **NotificationHubName** with your notification hub name from the Azure Management Portal and **NotificationHubConnectionString** with DefaultListenSharedAccessSignature from the Azure Management Portal.
 
 11. Add a new class called **DemoApplication.java**, and add the following code to it:
 
@@ -399,23 +395,23 @@ You will see the **保存成功！** (**Successfully saved!**) message.
 ##Send notifications to your app
 
 
-You can test receiving notifications in your app by sending notifications in the Azure portal via the debug tab on the notification hub, as shown in the screen below.
+You can test receiving notifications in your app by sending notifications in the Azure Management Portal via the debug tab on the notification hub, as shown in the screen below.
 
 ![](./media/notification-hubs-windows-store-dotnet-get-started/notification-hub-debug.png)
 
 Push notifications are normally sent in a back-end service like Mobile Services or ASP.NET using a compatible library. You can also use the REST API directly to send notification messages if a library is not available for your back-end. 
 
-In this tutorial, we will keep it simple and just demonstrate testing your client app by sending notifications using the .NET SDK for notification hubs in a console application instead of a backend service. We recommend the [Use Notification Hubs to push notifications to users](notification-hubs-aspnet-backend-windows-dotnet-notify-users.md) tutorial as the next step for sending notifications from an ASP.NET backend. However, the following approaches can be used for sending notifications:
+In this tutorial, we will keep it simple and just demonstrate testing your client app by sending notifications using the .NET SDK for notification hubs in a console application instead of a backend service. We recommend the [Use Notification Hubs to push notifications to users](/documentation/articles/notification-hubs-aspnet-backend-windows-dotnet-notify-users) tutorial as the next step for sending notifications from an ASP.NET backend. However, the following approaches can be used for sending notifications:
 
-* **REST Interface**:  You can support notification on any backend platform using  the [REST interface](http://msdn.microsoft.com/library/windowsazure/dn223264.aspx).
+* **REST Interface**:  You can support notification on any backend platform using  the [REST interface](http://msdn.microsoft.com/zh-cn/library/azure/dn223264.aspx).
 
-* **Microsoft Azure Notification Hubs .NET SDK**: In the Nuget Package Manager for Visual Studio, run [Install-Package Microsoft.Azure.NotificationHubs](https://www.nuget.org/packages/Microsoft.Azure.NotificationHubs/).
+* **Windows Azure Notification Hubs .NET SDK**: In the Nuget Package Manager for Visual Studio, run [Install-Package Microsoft.Azure.NotificationHubs](https://www.nuget.org/packages/Microsoft.Azure.NotificationHubs/).
 
-* **Node.js** : [How to use Notification Hubs from Node.js](notification-hubs-nodejs-how-to-use-notification-hubs.md).
+* **Node.js** : [How to use Notification Hubs from Node.js](/documentation/articles/notification-hubs-nodejs-how-to-use-notification-hubs).
 
-* **Azure Mobile Services**: For an example of how to send notifications from an Azure Mobile Services backend that's integrated with Notification Hubs, see "Get started with push notifications in Mobile Services" ([.NET backend](../mobile-services/mobile-services-javascript-backend-windows-store-dotnet-get-started-push.md) | [JavaScript backend](../mobile-services/mobile-services-javascript-backend-windows-store-dotnet-get-started-push.md)).
+* **Azure Mobile Services**: For an example of how to send notifications from an Azure Mobile Services backend that's integrated with Notification Hubs, see "Get started with push notifications in Mobile Services" ([.NET backend](/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-push) | [JavaScript backend](/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-push)).
 
-* **Java / PHP**: For an example of how to send notifications by using the REST APIs, see "How to use Notification Hubs from Java/PHP" ([Java](notification-hubs-java-backend-how-to.md) | [PHP](notification-hubs-php-backend-how-to.md)).
+* **Java / PHP**: For an example of how to send notifications by using the REST APIs, see "How to use Notification Hubs from Java/PHP" ([Java](/documentation/articles/notification-hubs-java-backend-how-to) | [PHP](/documentation/articles/notification-hubs-php-backend-how-to)).
 
 ##(Optional) Send notifications from a .NET console app.
 
@@ -500,5 +496,5 @@ To send a test notification you can use the debug tab of the portal. If you buil
 <!-- URLs. -->
 [Mobile Services Android SDK]: https://go.microsoft.com/fwLink/?LinkID=280126&clcid=0x409
 [Baidu Push Android SDK]: http://developer.baidu.com/wiki/index.php?title=docs/cplat/push/sdk/clientsdk
-[Azure portal]: https://manage.windowsazure.com/
+[Azure Management Portal]: https://manage.windowsazure.cn/
 [Baidu portal]: http://www.baidu.com/

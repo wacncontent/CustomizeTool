@@ -1,5 +1,5 @@
 <properties
-   pageTitle="ExpressRoute locations | Microsoft Azure"
+   pageTitle="ExpressRoute locations | Windows Azure"
    description="This article provides a detailed overview of locations where services are offered and how to connect to Azure regions."
    services="expressroute"
    documentationCenter="na"
@@ -7,13 +7,9 @@
    manager="carolz"
    editor="" />
 <tags
-   ms.service="expressroute"
-   ms.devlang="na"
-   ms.topic="get-started-article"
-   ms.tgt_pltfrm="na"
-   ms.workload="infrastructure-services"
-   ms.date="09/22/2015"
-   ms.author="cherylmc" />
+	ms.service="expressroute"
+	ms.date="09/22/2015"
+	wacn.date=""/>
 
 # ExpressRoute partners and peering locations
 
@@ -29,9 +25,9 @@ You will have access to Azure services across all regions within a geopolitical 
 
 |**Geopolitical region**|**Azure regions**|**ExpressRoute locations**|
 |---|---|---|
-|**US**|All US Regions - East US, West US, East US 2, Central US, South Central US, North Central US|Atlanta, Chicago, Dallas, Los Angeles, New York, Seattle, Silicon Valley, Washington DC|
+|**US**|All US Regions - China East, China North, China East 2, China North, China East, China North|Atlanta, Chicago, Dallas, Los Angeles, New York, Seattle, Silicon Valley, Washington DC|
 |**South America**|Brazil South|Sao Paulo|
-|**Europe**|North Europe, West Europe|Amsterdam, London|
+|**Europe**|China North, West Europe|Amsterdam, London|
 |**Asia**|East Asia, Southeast Asia|Hong Kong, Singapore|
 |**Japan**|Japan West, Japan East|Tokyo|
 |**Australia**|Australia Southeast, Australia East|Melbourne, Sydney|
@@ -53,7 +49,7 @@ Connectivity across geopolitical regions is not supported on the standard Expres
 
 ### Production Azure
 
-| **Service provider**  |**Microsoft Azure** | **Office 365** | **Locations** |
+| **Service provider**  |**Windows Azure** | **Office 365** | **Locations** |
 |-----------------------|--------------------|----------------|---------------|
 | **[Aryaka Networks]( http://www.aryaka.com/)** | Supported | Not Supported | Silicon Valley, Singapore, Washington DC |
 | **[AT&T NetBond]( https://www.synaptic.att.com/clouduser/html/productdetail/ATT_NetBond.htm)** | Supported | Supported | Amsterdam, London+, Dallas, Silicon Valley, Washington DC |
@@ -86,7 +82,7 @@ Connectivity across geopolitical regions is not supported on the standard Expres
 
 #### US Government cloud
 
-| **Service provider**  |**Microsoft Azure** | **Office 365** | **Locations** |
+| **Service provider**  |**Windows Azure** | **Office 365** | **Locations** |
 |-----------------------|--------------------|----------------|---------------|
 | **[AT&T NetBond]( https://www.synaptic.att.com/clouduser/html/productdetail/ATT_NetBond.htm)** | Coming Soon | Not Supported | Chicago+, Washington DC+ |
 | **[Equinix](http://www.equinix.com/partners/microsoft-azure/)** | Coming Soon | Not Supported | Chicago,  Washington DC |
@@ -107,7 +103,7 @@ If your connectivity provider is not listed in previous sections, you can still 
 - Have your connectivity provider extend your network to the peering location of choice.
 	- Ensure that your connectivity provider extends your connectivity in a highly available manner so that there are no single points of failure.
 - Order an ExpressRoute circuit with the exchange as your connectivity provider to connect to Microsoft.
-	- Follow steps in [Create an ExpressRoute circuit](expressroute-howto-circuit-classic.md) to set up connectivity.
+	- Follow steps in [Create an ExpressRoute circuit](/documentation/articles/expressroute-howto-circuit-classic) to set up connectivity.
 
 |**Connectivity provider**|**Exchange**|**Peering locations**|
 |---|---|---|
@@ -124,5 +120,5 @@ Enabling private connectivity to fit your needs can be challenging, based on the
 
 ## Next steps
 
-- For more information about ExpressRoute, see the [ExpressRoute FAQ](expressroute-faqs.md).
-- Ensure that all prerequisites are met. See [ExpressRoute prerequisites](expressroute-prerequisites.md).
+- For more information about ExpressRoute, see the [ExpressRoute FAQ](/documentation/articles/expressroute-faqs).
+- Ensure that all prerequisites are met. See [ExpressRoute prerequisites](/documentation/articles/expressroute-prerequisites).

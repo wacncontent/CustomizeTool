@@ -1,6 +1,6 @@
 <properties
-   pageTitle="Azure portal keyboard shortcuts | Microsoft Azure"
-   description="This article will always be an up-to-date listing of the keyboard shortcuts that work throughout the Azure portal. Individual services might have their own specialized keyboard shortcuts."
+   pageTitle="Azure Management Portal keyboard shortcuts | Windows Azure"
+   description="This article will always be an up-to-date listing of the keyboard shortcuts that work throughout the Azure Management Portal. Individual services might have their own specialized keyboard shortcuts."
    services="cloud-services"
    documentationCenter=""
    authors="curtand"
@@ -8,15 +8,11 @@
    editor=""/>
 
 <tags
-   ms.service="multiple"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="na"
-   ms.date="09/10/2015"
-   ms.author="curtand"/>
+	ms.service="multiple"
+	ms.date="09/10/2015"
+	wacn.date=""/>
 
-# Azure portal keyboard shortcuts
+# Azure Management Portal keyboard shortcuts
 
 ## Open hubs
 
@@ -48,4 +44,4 @@
 
 ## Next steps
 
-Get to know the Azure Portal better: http://azure.microsoft.com.
+Get to know the Azure Management Portal better: http://azure.microsoft.com.

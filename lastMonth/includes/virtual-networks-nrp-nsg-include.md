@@ -72,6 +72,6 @@ Default security rules have the same properties available in security rules. The
 
 ### Additional resources
 
-- Get more information about [NSGs](/documentation/articles/virtual-networks-nsg).
-- Read the [REST API reference documentation](https://msdn.microsoft.com/zh-cn/library/azure/mt163615.aspx) for NSGs.
-- Read the [REST API reference documentation](https://msdn.microsoft.com/zh-cn/library/azure/mt163580.aspx) for security rules.
+- Get more information about [NSGs](virtual-networks-nsg.md).
+- Read the [REST API reference documentation](https://msdn.microsoft.com/library/azure/mt163615.aspx) for NSGs.
+- Read the [REST API reference documentation](https://msdn.microsoft.com/library/azure/mt163580.aspx) for security rules.

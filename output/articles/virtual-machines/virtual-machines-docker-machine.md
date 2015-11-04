@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Use docker-machine with Azure | Microsoft Azure"
+   pageTitle="Use docker-machine with Azure | Windows Azure"
    description="Shows how to get up and running on Azure with Docker Machine on Ubuntu, using the classic deployment model."
    services="virtual-machines"
    documentationCenter="virtual-machines"
@@ -9,20 +9,16 @@
    tags="azure-service-management"/>
 
 <tags
-   ms.service="virtual-machines"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="vm-linux"
-   ms.workload="infrastructure"
-   ms.date="09/22/2015"
-   ms.author="rasquill"/>
+	ms.service="virtual-machines"
+	ms.date="09/22/2015"
+	wacn.date=""/>
 
 # How to use docker-machine with Azure
 
 This topic describes how to use [Docker](https://www.docker.com/) with [machine](https://github.com/docker/machine) and the [Azure CLI](https://github.com/Azure/azure-xplat-cli) to create an Azure Virtual Machine to quickly and easily manage Linux containers from a computer running Ubuntu. To demonstrate, the tutorial shows how to deploy both the [busybox Docker Hub image](https://registry.hub.docker.com/_/busybox/) image and also the [nginx Docker Hub image](https://registry.hub.docker.com/_/nginx/) and configures the container to route web requests to the nginx container. (The Docker **machine** documentation describes how to modify these instructions for other platforms.)
 
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
 
 
 There are some prerequisites for completing this tutorial. You will need to install the following:
@@ -62,7 +58,7 @@ If you have experience with Linux distributions, you may already have these file
 
 		openssl x509 -inform pem -in mycert.pem -outform der -out mycert.cer
 
-2. Upload your certificate's .cer file to Azure. In the [Azure Portal](https://manage.windowsazure.com), click **Settings** in the bottom left of the service area (shown below)
+2. Upload your certificate's .cer file to Azure. In the [Azure Management Portal](https://manage.windowsazure.cn), click **Settings** in the bottom left of the service area (shown below)
 
 	![][portalsettingsitem]
 
@@ -201,7 +197,7 @@ Open your favorite browser and have a look.
 
 <!--Every topic should have next steps and links to the next logical set of content to keep the customer engaged-->
 ## Next steps
-Go to the [Docker user guide](https://docs.docker.com/userguide/) and create some applications on Microsoft Azure. Or, go play with [**docker** and swarm](https://github.com/docker/swarm) on Azure](virtual-machines-docker-swarm) and see how swarm can be used with docker and Azure.
+Go to the [Docker user guide](https://docs.docker.com/userguide/) and create some applications on Windows Azure. Or, go play with [**docker** and swarm](https://github.com/docker/swarm) on Azure](virtual-machines-docker-swarm) and see how swarm can be used with docker and Azure.
 
 <!--Image references-->
 [nginx]: ./media/virtual-machines-docker-machine/nginxondocker.png
@@ -210,6 +206,6 @@ Go to the [Docker user guide](https://docs.docker.com/userguide/) and create som
 [uploaditem]: ./media/virtual-machines-docker-machine/uploaditem.png
 
 <!--Link references-->
-[Link 1 to another azure.microsoft.com documentation topic]: virtual-machines-windows-tutorial.md
-[Link 2 to another azure.microsoft.com documentation topic]: ../web-sites-custom-domain-name.md
-[Link 3 to another azure.microsoft.com documentation topic]: ../storage-whatis-account.md
+[Link 1 to another azure.microsoft.com documentation topic]: /documentation/articles/virtual-machines-windows-tutorial
+[Link 2 to another azure.microsoft.com documentation topic]: /documentation/articles/web-sites-custom-domain-name
+[Link 3 to another azure.microsoft.com documentation topic]: /documentation/articles/storage-whatis-account

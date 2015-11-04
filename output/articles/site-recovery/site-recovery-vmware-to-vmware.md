@@ -7,14 +7,10 @@
 	manager="jwhit" 
 	editor=""/>
 
-<tags 
-	ms.service="site-recovery" 
-	ms.workload="backup-recovery" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="10/07/2015" 
-	ms.author="raynew"/>
+<tags
+	ms.service="site-recovery"
+	ms.date="10/07/2015"
+	wacn.date=""/>
 
 
 # Set up protection between on-premises VMware sites
@@ -27,16 +23,16 @@ InMage Scout in Azure Site Recovery provides real-time replication between on-pr
 
 ## Prerequisites
 
-- **Azure account**—You'll need a [Microsoft Azure](http://azure.microsoft.com/) account. You can start with a [free trial](pricing/free-trial/).
+- **Azure account**—You'll need a [Windows Azure](http://azure.microsoft.com/) account. You can start with a [trial](/documentation/articles/free-trial).
 
 
 ## Step 1: Create a vault
 
-1. Sign in to the [Management Portal](https://portal.azure.com).
+1. Sign in to the [Management Portal](https://manage.windowsazure.cn).
 2. Click **Data Services** > **Recovery Services** > **Site Recovery Vault**.
 3. Click **Create New** > **Quick Create**.
 4. In **Name** enter a friendly name to identify the vault.
-5. In **Region** select the geographic region for the vault. To check supported regions see Geographic Availability in [Azure Site Recovery Pricing Details](pricing/details/site-recovery/).
+5. In **Region** select the geographic region for the vault. To check supported regions see Geographic Availability in [Azure Site Recovery Pricing Details](/documentation/articles/site-recovery).
 
 Check the status bar to confirm that the vault was successfully created. The vault will be listed as **Active** on the main Recovery Services page.
 

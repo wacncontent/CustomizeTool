@@ -9,12 +9,8 @@
 
 <tags
 	ms.service="site-recovery"
-	ms.workload="backup-recovery"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="10/12/2015"
-	ms.author="raynew"/>
+	wacn.date=""/>
 
 # Set up protection between on-premises VMM sites
 
@@ -22,7 +18,7 @@
 ## Overview
 
 
-Azure Site Recovery contributes to your business continuity and disaster recovery (BCDR) strategy by orchestrating replication, failover and recovery of virtual machines in a number of deployment scenarios. For a full list of deployment scenarios see  [Azure Site Recovery overview](site-recovery-overview.md).
+Azure Site Recovery contributes to your business continuity and disaster recovery (BCDR) strategy by orchestrating replication, failover and recovery of virtual machines in a number of deployment scenarios. For a full list of deployment scenarios see  [Azure Site Recovery overview](/documentation/articles/site-recovery-overview).
 
 This scenario guide describes how to deploy Site Recovery to orchestrate and automate protection for workloads running on virtual machines on Hyper-V host servers that are located in VMM private clouds. In this scenario virtual machines are replicated from a primary VMM site to a secondary VMM site using Hyper-V Replica.
 
@@ -35,8 +31,8 @@ If you run into problems setting up this scenario post your questions on the [Az
 Make sure you have these prerequisites in place:
 ### Azure prerequisites
 
-- You'll need a [Microsoft Azure](http://azure.microsoft.com/) account. If you don't have one, start with a [free trial](http://aka.ms/try-azure). In addition you can read about [Azure Site Recovery Manager pricing](http://go.microsoft.com/fwlink/?LinkId=378268).
-- To understand how information and data are used, read the [Microsoft Azure Privacy Statement](http://go.microsoft.com/fwlink/?LinkId=324899) and additional <a href="#privacy">Privacy information for Site Recovery</a> at the bottom of this topic.
+- You'll need a [Windows Azure](http://azure.microsoft.com/) account. If you don't have one, start with a [trial](http://aka.ms/try-azure). In addition you can read about [Azure Site Recovery Manager pricing](http://go.microsoft.com/fwlink/?LinkId=378268).
+- To understand how information and data are used, read the [Windows Azure Privacy Statement](http://go.microsoft.com/fwlink/?LinkId=324899) and additional <a href="#privacy">Privacy information for Site Recovery</a> at the bottom of this topic.
 
 ### VMM prerequisites
 - You'll need at least one VMM server.
@@ -51,7 +47,7 @@ Make sure you have these prerequisites in place:
 	- One or more virtual machines on the host server.
 - Learn more about setting up VMM clouds:
 	- Read more about private VMM clouds in [What’s New in Private Cloud with System Center 2012 R2 VMM](http://go.microsoft.com/fwlink/?LinkId=324952) and in [VMM 2012 and the clouds](http://go.microsoft.com/fwlink/?LinkId=324956).
-	- Learn about [Configuring the VMM cloud fabric](https://msdn.microsoft.com/library/azure/dn469075.aspx#BKMK_Fabric)
+	- Learn about [Configuring the VMM cloud fabric](https://msdn.microsoft.com/zh-cn/library/azure/dn469075.aspx#BKMK_Fabric)
 	- After your cloud fabric elements are in place learn about creating private clouds in  [Creating a private cloud in VMM](http://go.microsoft.com/fwlink/?LinkId=324953) and [Walkthrough: Creating private clouds with System Center 2012 SP1 VMM](http://go.microsoft.com/fwlink/?LinkId=324954).
 
 ### Hyper-V prerequisites
@@ -83,7 +79,7 @@ For instructions see [How to create storage classifications in VMM](http://go.mi
 
 ## Step 1: Create a Site Recovery vault
 
-1. Sign in to the [Management Portal](https://portal.azure.com) from the VMM server you want to register.
+1. Sign in to the [Management Portal](https://manage.windowsazure.cn) from the VMM server you want to register.
 
 2. Expand **Data Services** > **Recovery Services** and click **Site Recovery Vault**.
 
@@ -109,13 +105,13 @@ Generate a registration key in the vault. After you download the Azure Site Reco
 	![Quick Start Icon](./media/site-recovery-vmm-to-vmm/ASRE2EHVR_QuickStartIcon.png)
 
 2. In the dropdown list, select **Between two on-premises Hyper-V sites**.
-3. In **Prepare VMM Servers**, click **Generate registration key file**. The key file is generated automatically and is valid for 5 days after it's generated. If you're not accessing the Azure portal from the VMM server you'll need to copy this file to the server.
+3. In **Prepare VMM Servers**, click **Generate registration key file**. The key file is generated automatically and is valid for 5 days after it's generated. If you're not accessing the Azure Management Portal from the VMM server you'll need to copy this file to the server.
 
 	![Registration key](./media/site-recovery-vmm-to-vmm/ASRE2EHVR_E2ERegisterKey.png)
 
 ## Step 3: Install the Azure Site Recovery Provider
 
-4. On the *Quick Start* page, in **Prepare VMM servers**, click *Download Microsoft Azure Site Recovery Provider for installation on VMM servers* to obtain the latest version of the Provider installation file.
+4. On the *Quick Start* page, in **Prepare VMM servers**, click *Download Windows Azure Site Recovery Provider for installation on VMM servers* to obtain the latest version of the Provider installation file.
 
 2. Run this file on the source VMM server. If VMM is deployed in a cluster and you're installing the Provider for the first time install it on an active node and finish the installation to register the VMM server in the vault. Then install the Provider on the other nodes. Note that if you're upgrading the Provider you'll need to upgrade on all nodes because they should all be running the same Provider version.
 
@@ -141,12 +137,12 @@ Generate a registration key in the vault. After you download the Azure Site Reco
 	- If you want to use a custom proxy you should set it up before you install the Provider. When you configure custom proxy settings a test will run to check the proxy connection.
 	- If you do use a custom proxy, or your default proxy requires authentication you'll need to enter the proxy details, including the proxy address and port.
 	- Following urls should be accessible from the VMM Server and the Hyper-v hosts
-		- *.hypervrecoverymanager.windowsazure.com
-		- *.accesscontrol.windows.net
-		- *.backup.windowsazure.com
-		- *.blob.core.windows.net
-		- *.store.core.windows.net
-	- Allow the IP addresses described in [Azure Datacenter IP Ranges](http://go.microsoft.com/fwlink/?LinkId=511094) and HTTPS (443) protocol. You would have to white-list IP ranges of the Azure region that you plan to use and that of West US.
+		- *.hypervrecoverymanager.windowsazure.cn
+		- *.accesscontrol.chinacloudapi.cn
+		- *.backup.windowsazure.cn
+		- *.blob.core.chinacloudapi.cn
+		- *.store.core.chinacloudapi.cn
+	- Allow the IP addresses described in [Azure Datacenter IP Ranges](http://go.microsoft.com/fwlink/?LinkId=511094) and HTTPS (443) protocol. You would have to white-list IP ranges of the Azure region that you plan to use and that of China North.
 
 	- If you use a custom proxy a VMM RunAs account (DRAProxyAccount) will be created automatically using the specified proxy credentials. Configure the proxy server so that this account can authenticate successfully. The VMM RunAs account settings can be modified in the VMM console. To do this, open the Settings workspace, expand Security, click Run As Accounts, and then modify the password for DRAProxyAccount. You’ll need to restart the VMM service so that this setting takes effect.
 
@@ -309,7 +305,7 @@ After a recovery plan has been created, it appears in the list on the **Recovery
 ###Run a test failover
 
 1. On the **Recovery Plans** tab, select the plan and click **Test Failover**.
-2. On the **Confirm Test Failover** page, select **None**. Note that with this option enabled the failed over replica virtual machines won't be connected to any network. This will test that the virtual machine fails over as expected but does not test your replication network environment. Look at how to [run a test failover](site-recovery-failover.md#run-a-test-failover) for more details about how to use different networking options.
+2. On the **Confirm Test Failover** page, select **None**. Note that with this option enabled the failed over replica virtual machines won't be connected to any network. This will test that the virtual machine fails over as expected but does not test your replication network environment. Look at how to [run a test failover](/documentation/articles/site-recovery-failover#run-a-test-failover) for more details about how to use different networking options.
 
 7. The test virtual machine will be created on the same host as the host on which the replica virtual machine exists. It is added to the same cloud in which the replica virtual machine is located.
 
@@ -340,8 +336,8 @@ Run this sample script to update DNS, specifying the IP address you retrieved us
 
 ##<a name="privacy"></a>Privacy information for Site Recovery
 
-This section provides additional privacy information for the Microsoft Azure Site Recovery service (“Service”). To view the privacy statement for Microsoft Azure services, see the
-[Microsoft Azure Privacy Statement](http://go.microsoft.com/fwlink/?LinkId=324899)
+This section provides additional privacy information for the Windows Azure Site Recovery service (“Service”). To view the privacy statement for Windows Azure services, see the
+[Windows Azure Privacy Statement](http://go.microsoft.com/fwlink/?LinkId=324899)
 
 **Feature: Registration**
 
@@ -352,7 +348,7 @@ This section provides additional privacy information for the Microsoft Azure Sit
 	- Name of the VMM server—The VMM server name is required to identify and communicate with the appropriate VMM server on which the clouds are located.
 	- Cloud names from the VMM server—The cloud name is required when using the Service cloud pairing/unpairing feature described below. When you decide to pair your cloud from a primary data center with another cloud in the recovery data center, the names of all the clouds from the recovery data center are presented.
 
-- **Choice**: This information is an essential part of the Service registration process because it helps you and the Service to identify the VMM server for which you want to provide Azure Site Recovery protection, as well as to identify the correct registered VMM server. If you don’t want to send this information to the Service, do not use this Service. If you register your server and then later want to unregister it, you can do so by deleting the VMM server information from the Service portal (which is the Azure portal).
+- **Choice**: This information is an essential part of the Service registration process because it helps you and the Service to identify the VMM server for which you want to provide Azure Site Recovery protection, as well as to identify the correct registered VMM server. If you don’t want to send this information to the Service, do not use this Service. If you register your server and then later want to unregister it, you can do so by deleting the VMM server information from the Service portal (which is the Azure Management Portal).
 
 **Feature: Enable Azure Site Recovery protection**
 

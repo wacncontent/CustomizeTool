@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="C# retry logic to connect to SQL Database | Microsoft Azure" 
+	pageTitle="C# retry logic to connect to SQL Database | Windows Azure" 
 	description="C# sample includes retry logic for reliably interacting with Azure SQL Database." 
 	services="sql-database" 
 	documentationCenter="" 
@@ -8,20 +8,16 @@
 	editor=""/>
 
 
-<tags 
-	ms.service="sql-database" 
-	ms.workload="data-management" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="10/15/2015" 
-	ms.author="genemi"/>
+<tags
+	ms.service="sql-database"
+	ms.date="10/15/2015"
+	wacn.date=""/>
 
 
 # Code sample: Retry logic in C# for connecting to SQL Database
 
 
-[AZURE.INCLUDE [sql-database-develop-includes-selector-language-platform-depth](../../includes/sql-database-develop-includes-selector-language-platform-depth.md)]
+[AZURE.INCLUDE [sql-database-develop-includes-selector-language-platform-depth](../includes/sql-database-develop-includes-selector-language-platform-depth.md)]
 
 
 This topic provides a C# code sample that demonstrates custom retry logic. The retry logic is designed to gracefully process temporary errors or *transient faults* that tend to go away if the program waits a few seconds and retries.
@@ -47,7 +43,7 @@ Your program must distinguish between transient errors versus persistent errors.
 The list of error numbers that are categorized as transient faults is available at:
 
 
-- [Error messages for SQL Database client programs](sql-database-develop-error-messages.md#bkmk_connection_errors)
+- [Error messages for SQL Database client programs](/documentation/articles/sql-database-develop-error-messages#bkmk_connection_errors)
  - See the top section about *Transient Errors, Connection-Loss Errors*.
 
 
@@ -60,7 +56,7 @@ The C# code sample in the present topic contains custom detection and retry logi
 The code sample follows a few basic guidelines or recommendations that apply regardless of which technology you use to interact with Azure SQL Database. You can see the general recommendations at:
 
 
-- [Connecting to SQL Database: Links, Best Practices and Design Guidelines](sql-database-connect-central-recommendations.md)
+- [Connecting to SQL Database: Links, Best Practices and Design Guidelines](/documentation/articles/sql-database-connect-central-recommendations)
 
 
 The C# code sample consists of one file named Program.cs.  Its code is pasted into the next section.
@@ -189,7 +185,7 @@ SELECT TOP 3
 			_sqlConnectionSB = new C.SqlConnectionStringBuilder();
 
 			// Change these values to your values.
-			_sqlConnectionSB["Server"] = "tcp:myazuresqldbserver.database.windows.net,1433";
+			_sqlConnectionSB["Server"] = "tcp:myazuresqldbserver.database.chinacloudapi.cn,1433";
 			_sqlConnectionSB["User ID"] = "MyLogin";  // "@yourservername"  as suffix sometimes.
 			_sqlConnectionSB["Password"] = "MyPassword";
 			_sqlConnectionSB["Database"] = "MyDatabase";
@@ -279,5 +275,5 @@ Run the program with the "test" parameter, and verify it first fails but then su
 ## Related links
 
 
-- [Client quick-start code samples to SQL Database](sql-database-develop-quick-start-client-code-samples.md)
+- [Client quick-start code samples to SQL Database](/documentation/articles/sql-database-develop-quick-start-client-code-samples)
 

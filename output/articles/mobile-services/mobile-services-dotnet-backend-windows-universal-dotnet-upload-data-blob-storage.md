@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Upload images to Azure Blob storage from a universal Windows app | Microsoft Azure" 
+	pageTitle="Upload images to Azure Blob storage from a universal Windows app | Windows Azure" 
 	description="Learn how to use a .NET backend mobile service to upload images to Azure Blob Storage and access the images from your universal Windows app." 
 	documentationCenter="windows" 
 	authors="ggailey777" 
@@ -7,18 +7,14 @@
 	manager="dwrede" 
 	editor=""/>
 
-<tags 
-	ms.service="mobile-services" 
-	ms.workload="mobile" 
-	ms.tgt_pltfrm="mobile-windows-store" 
-	ms.devlang="dotnet" 
-	ms.topic="article" 
-	ms.date="07/13/2015" 
-	ms.author="glenga"/>
+<tags
+	ms.service="mobile-services"
+	ms.date="07/13/2015"
+	wacn.date=""/>
 
 # Upload images to Azure Storage by using Mobile Services
 
-[AZURE.INCLUDE [mobile-services-selector-upload-data-blob-storage](../../includes/mobile-services-selector-upload-data-blob-storage.md)]
+[AZURE.INCLUDE [mobile-services-selector-upload-data-blob-storage](../includes/mobile-services-selector-upload-data-blob-storage.md)]
 
 ##Overview
 This topic shows you how to use Azure Mobile Services to enable your app to upload and store user-generated images in Azure Storage. Mobile Services uses a SQL Database to store data. However, binary large object (BLOB) data is more efficiently stored in Azure Blob storage service. 
@@ -32,24 +28,24 @@ In this tutorial you add functionality to the Mobile Services quickstart app to 
 This tutorial requires the following:
 
 + Microsoft Visual Studio 2013 Update 3, or a later version.
-+ [Azure Storage account](../storage-create-storage-account.md)
++ [Azure Storage account](/documentation/articles/storage-create-storage-account)
 + A camera or other image capture device attached to your computer.
 
 This tutorial is based on the Mobile Services quickstart. Before you start this tutorial, you must first complete [Get started with Mobile Services]. 
 
-[AZURE.INCLUDE [mobile-services-dotnet-backend-configure-blob-storage](../../includes/mobile-services-dotnet-backend-configure-blob-storage.md)]
+[AZURE.INCLUDE [mobile-services-dotnet-backend-configure-blob-storage](../includes/mobile-services-dotnet-backend-configure-blob-storage.md)]
 
-[AZURE.INCLUDE [mobile-services-windows-universal-dotnet-upload-to-blob-storage](../../includes/mobile-services-windows-universal-dotnet-upload-to-blob-storage.md)]
+[AZURE.INCLUDE [mobile-services-windows-universal-dotnet-upload-to-blob-storage](../includes/mobile-services-windows-universal-dotnet-upload-to-blob-storage.md)]
 
 ##Next steps
 
 Now that you have been able to securely upload images by integrating your mobile service with the Blob service, check out some of the other backend service and integration topics:
 
-+ [Schedule backend jobs in Mobile Services](../mobile-services-dotnet-backend-schedule-recurring-tasks.md)
++ [Schedule backend jobs in Mobile Services](/documentation/articles/mobile-services-dotnet-backend-schedule-recurring-tasks)
 
      Learn how to use the Mobile Services job scheduler functionality to define server script code that is executed on a schedule that you define.
 
-+ [Mobile Services .NET How-to Conceptual Reference](../mobile-services-windows-dotnet-how-to-use-client-library.md)
++ [Mobile Services .NET How-to Conceptual Reference](/documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library)
 
      Learn more about how to use Mobile Services with .NET
  
@@ -65,8 +61,8 @@ Now that you have been able to securely upload images by integrating your mobile
 <!-- Images. --> 
 
 <!-- URLs. -->
-[Get started with Mobile Services]: ../mobile-services-windows-store-dotnet-get-started.md
-[Azure Management Portal]: https://manage.windowsazure.com/
-[How To Create a Storage Account]: ../storage-create-storage-account.md
+[Get started with Mobile Services]: /documentation/articles/mobile-services-windows-store-dotnet-get-started
+[Azure Management Portal]: https://manage.windowsazure.cn/
+[How To Create a Storage Account]: /documentation/articles/storage-create-storage-account
 [Azure Storage Client library for Store apps]: http://go.microsoft.com/fwlink/p/?LinkId=276866 
  

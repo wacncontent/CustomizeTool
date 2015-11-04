@@ -4,13 +4,11 @@ By default, all requests to mobile service resources are restricted to clients t
 
 1. In Visual Studio, open your mobile service project, expand the Controllers folder, and open **TodoItemController.cs**. The **TodoItemController** class implements data access for the TodoItem table. Add the following `using` statement:
 
-
-
 		using Microsoft.WindowsAzure.Mobile.Service.Security;
 
-2. Apply the following AuthorizeLevel attribute to the **TodoItemController** class:
+2. Apply the following _AuthorizeLevel_ attribute to the **TodoItemController** class. 
 
-		[AuthorizeLevel(AuthorizationLevel.User)] 
+		[AuthorizeLevel(AuthorizationLevel.User)]
 
 	This makes sure that all operations against the _TodoItem_ table require an authenticated user. You can also apply the *AuthorizeLevel* attribute at the method level.
 
@@ -24,4 +22,4 @@ By default, all requests to mobile service resources are restricted to clients t
 
 	This is the password that you use (with no username) to test the API help pages when you run the service locally.  This string value is not used by the live site in Azure, and you do not need to use the actual application key; any valid string value will work.
  
-5. Republish your project.
+4. Republish your project.

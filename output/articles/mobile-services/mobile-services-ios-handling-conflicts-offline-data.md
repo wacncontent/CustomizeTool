@@ -9,21 +9,17 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.workload="mobile"
-	ms.tgt_pltfrm="mobile-ios"
-	ms.devlang="objective-c"
-	ms.topic="article"
 	ms.date="09/16/2015"
-	ms.author="krisragh;donnam"/>
+	wacn.date=""/>
 
 
 # Handling Conflicts with Offline Data Sync in Mobile Services
 
-[AZURE.INCLUDE [mobile-services-selector-offline-conflicts](../../includes/mobile-services-selector-offline-conflicts.md)]
+[AZURE.INCLUDE [mobile-services-selector-offline-conflicts](../includes/mobile-services-selector-offline-conflicts.md)]
 
 This topic shows you how to synchronize data and handle conflicts when using the offline capabilities of Azure Mobile Services. This tutorial builds on the [Get Started with Offline Data] tutorial.
 
->[AZURE.NOTE] To complete this tutorial, you need a Azure account. If you don't have an account, you can create a free trial account in just a couple of minutes. For details, see <a href="http://www.windowsazure.com/pricing/free-trial/?WT.mc_id=AE564AB28" target="_blank">Azure Free Trial</a>.
+>[AZURE.NOTE] To complete this tutorial, you need a Azure account. If you don't have an account, you can create a trial account in just a couple of minutes. For details, see <a href="/pricing/1rmb-trial/?WT.mc_id=AE564AB28" target="_blank">Azure Trial</a>.
 
 
 ## Download iOS Project
@@ -137,7 +133,7 @@ Perform the refresh gesture in the app instances by dragging from the top. Now y
 [Adding a Scene to a Storyboard]: https://developer.apple.com/library/ios/recipes/xcode_help-IB_storyboard/chapters/StoryboardScene.html
 [Core Data]: https://developer.apple.com/library/ios/documentation/Cocoa/Conceptual/CoreData/cdProgrammingGuide.html
 [Download the preview SDK here]: http://aka.ms/Gc6fex
-[How to use the Mobile Services client library for iOS]: mobile-services-ios-how-to-use-client-library.md
+[How to use the Mobile Services client library for iOS]: /documentation/articles/mobile-services-ios-how-to-use-client-library
 [Getting Started Offline iOS Sample]: https://github.com/Azure/mobile-services-samples/tree/master/TodoOffline/iOS/blog20140611
-[Get Started with Offline Data]: mobile-services-ios-get-started-offline-data.md
-[Get started with Mobile Services]: mobile-services-ios-get-started.md
+[Get Started with Offline Data]: /documentation/articles/mobile-services-ios-get-started-offline-data
+[Get started with Mobile Services]: /documentation/articles/mobile-services-ios-get-started

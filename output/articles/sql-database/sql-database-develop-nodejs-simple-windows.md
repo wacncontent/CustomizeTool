@@ -8,20 +8,16 @@
 	editor=""/>
 
 
-<tags 
-	ms.service="sql-database" 
-	ms.workload="data-management" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="nodejs" 
-	ms.topic="article" 
-	ms.date="07/30/2015" 
-	ms.author="mebha"/>
+<tags
+	ms.service="sql-database"
+	ms.date="07/30/2015"
+	wacn.date=""/>
 
 
 # Connect to SQL Database by using Node.js on Windows
 
 
-[AZURE.INCLUDE [sql-database-develop-includes-selector-language-platform-depth](../../includes/sql-database-develop-includes-selector-language-platform-depth.md)]
+[AZURE.INCLUDE [sql-database-develop-includes-selector-language-platform-depth](../includes/sql-database-develop-includes-selector-language-platform-depth.md)]
 
 
 This topic presents a Node.js code sample that you can use to connect to Azure SQL Database. The Node.js program runs on a Windows client computer. To manage the connection, the msnodesql driver is used.
@@ -51,7 +47,7 @@ Next navigate to node_modules\msnodesql folder and run the **msnodesql-0.2.1-v0.
 
 ### Create a database and retrieve your connection string
  
-See the [Get Started topic](sql-database-get-started.md) to learn how to create a sample database and retrieve your connection string. It is important you follow the guide to create an **AdventureWorks database template**. The samples shown below will only work with the **AdventureWorks schema**. 
+See the [Get Started topic](/documentation/articles/sql-database-get-started) to learn how to create a sample database and retrieve your connection string. It is important you follow the guide to create an **AdventureWorks database template**. The samples shown below will only work with the **AdventureWorks schema**. 
 
 
 ## Connect to your SQL Database
@@ -65,7 +61,7 @@ See the [Get Started topic](sql-database-get-started.md) to learn how to create 
 		var http = require('http');
 		var fs = require('fs');
 		var useTrustedConnection = false;
-		var conn_str = "Driver={SQL Server Native Client 11.0};Server=tcp:yourserver.database.windows.net;" + 
+		var conn_str = "Driver={SQL Server Native Client 11.0};Server=tcp:yourserver.database.chinacloudapi.cn;" + 
 		(useTrustedConnection == true ? "Trusted_Connection={Yes};" : "UID=yourusername;PWD=yourpassword;") + 
 		"Database={AdventureWorks};"
 		sql.open(conn_str, function (err, conn) {
@@ -92,7 +88,7 @@ See the [Get Started topic](sql-database-get-started.md) to learn how to create 
 	var http = require('http');
 	var fs = require('fs');
 	var useTrustedConnection = false;
-	var conn_str = "Driver={SQL Server Native Client 11.0};Server=tcp:yourserver.database.windows.net;" + 
+	var conn_str = "Driver={SQL Server Native Client 11.0};Server=tcp:yourserver.database.chinacloudapi.cn;" + 
 	(useTrustedConnection == true ? "Trusted_Connection={Yes};" : "UID=yourusername;PWD=yourpassword;") + 
 	"Database={AdventureWorks};"
 	sql.open(conn_str, function (err, conn) {
@@ -124,7 +120,7 @@ See the [Get Started topic](sql-database-get-started.md) to learn how to create 
 	var http = require('http');
 	var fs = require('fs');
 	var useTrustedConnection = false;
-	var conn_str = "Driver={SQL Server Native Client 11.0};Server=tcp:yourserver.database.windows.net;" + 
+	var conn_str = "Driver={SQL Server Native Client 11.0};Server=tcp:yourserver.database.chinacloudapi.cn;" + 
 	(useTrustedConnection == true ? "Trusted_Connection={Yes};" : "UID=yourusername;PWD=yourpassword;") + 
 	"Database={AdventureWorks};"
 	sql.open(conn_str, function (err, conn) {
@@ -159,7 +155,7 @@ The method **conn.beginTransactions** will not work in Azure SQL Database. Inste
 	var http = require('http');
 	var fs = require('fs');
 	var useTrustedConnection = false;
-	var conn_str = "Driver={SQL Server Native Client 11.0};Server=tcp:yourserver.database.windows.net;" + 
+	var conn_str = "Driver={SQL Server Native Client 11.0};Server=tcp:yourserver.database.chinacloudapi.cn;" + 
 	(useTrustedConnection == true ? "Trusted_Connection={Yes};" : "UID=yourusername;PWD=yourpassword;") + 
 	"Database={AdventureWorks};"
 	sql.open(conn_str, function (err, conn) {
@@ -201,7 +197,7 @@ For this code sample to work, you must first have or create a stored procedure t
 	var http = require('http');
 	var fs = require('fs');
 	var useTrustedConnection = false;
-	var conn_str = "Driver={SQL Server Native Client 11.0};Server=tcp:yourserver.database.windows.net;" + 
+	var conn_str = "Driver={SQL Server Native Client 11.0};Server=tcp:yourserver.database.chinacloudapi.cn;" + 
 	(useTrustedConnection == true ? "Trusted_Connection={Yes};" : "UID=yourusername;PWD=yourpassword;") + 
 	"Database={AdventureWorks};"
 	sql.open(conn_str, function (err, conn) {

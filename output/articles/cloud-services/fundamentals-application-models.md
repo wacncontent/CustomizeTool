@@ -8,14 +8,10 @@
 	documentationCenter=""
 	manager="timlt"/>
 
-<tags 
-	ms.service="multiple" 
-	ms.workload="multiple" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="09/08/2015" 
-	ms.author="adegeo;cephalin;kathydav"/>
+<tags
+	ms.service="multiple"
+	ms.date="09/08/2015"
+	wacn.date=""/>
 
 
 
@@ -26,32 +22,32 @@ Azure provides different hosting models for running applications. Each one provi
 
 | Compute Options    | Audience   |
 | ------------------ | --------   |
-| [App Service]      | Scalable Web Apps, Mobile Apps, API Apps, and Logic Apps for any device |
+| [Azure Websites]      | Scalable Web Apps, Mobile Apps, API Apps, and Logic Apps for any device |
 | [Cloud Services]   | Highly available, scalable n-tier cloud apps with more control of the OS |
 | [Virtual Machines] | Customized Windows and Linux VMs with complete control of the OS |
 
-[AZURE.INCLUDE [content](../../includes/app-service-choose-me-content.md)]
+[AZURE.INCLUDE [content](../includes/app-service-choose-me-content.md)]
 
-[AZURE.INCLUDE [content](../../includes/cloud-services-choose-me-content.md)]
+[AZURE.INCLUDE [content](../includes/cloud-services-choose-me-content.md)]
 
-[AZURE.INCLUDE [content](../../includes/virtual-machines-choose-me-content.md)]
+[AZURE.INCLUDE [content](../includes/virtual-machines-choose-me-content.md)]
 
 ## Other Options
 
 Azure also offers other compute hosting models for more specialized purposes, such as the following:
 
-* [Mobile Services](/services/mobile-services/)  
+* [Mobile Services](/home/features/mobile-services/)  
   Optimized to provide a cloud back-end for apps that run on mobile devices.
-* [Batch](/services/batch/)  
+* [Batch](/home/features/batch/)  
   Optimized for processing large volumes of similar tasks, ideally workloads which lend themselves to running as parallel tasks on multiple computers.
-* [HDInsight (Hadoop)](/services/hdinsight/)  
+* [HDInsight (Hadoop)](/home/features/hdinsight/)  
   Optimized for running [MapReduce](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/data-storage-options/#hadoop) jobs on Hadoop clusters. 
 
 ## What should I use? Making a choice
 
 All three of the general purpose Azure compute hosting models let you build scalable, reliable applications in the cloud. Given this essential similarity, which one should you use?
 
-App Service is the best choice for most web apps. Deployment and management are integrated into the platform, sites can scale quickly to handle high traffic loads, and the built-in load balancing and traffic manager provide high availability. You can move existing sites to App Service easily with an [online migration tool](https://www.migratetoazure.net/), use an open-source app from the Web Application Gallery, or create a new site using the framework and tools of your choice. The [WebJobs](http://go.microsoft.com/fwlink/?linkid=390226) feature makes it easy to add background job processing to your app, or even run a compute workload that isn't a web app at all. 
+Azure Websites is the best choice for most web apps. Deployment and management are integrated into the platform, sites can scale quickly to handle high traffic loads, and the built-in load balancing and traffic manager provide high availability. You can move existing sites to Azure Websites easily with an [online migration tool](https://www.migratetoazure.net/), use an open-source app from the Web Application Gallery, or create a new site using the framework and tools of your choice. The [WebJobs](/documentation/articles/websites-webjobs-resources/) feature makes it easy to add background job processing to your app, or even run a compute workload that isn't a web app at all. 
 
 If you need more control over the web server environment, such as the ability to remote into your server or configure server startup tasks, Azure Cloud Services is typically the best option.
 
@@ -70,13 +66,13 @@ As the figure illustrates, the Cloud Services VMs run in a separate cloud servic
 [07_CombineTechnologies]: ./media/fundamentals-application-models/ExecModels_07_CombineTechnologies.png
 !-->
 
-[App Service]: #tellmeas
+[Azure Websites]: #tellmeas
 [Virtual Machines]: #tellmevm
 [Cloud Services]: #tellmecs
 
 ## Next steps
 
-* [Compare](../choose-web-site-cloud-service-vm/) App Service, Cloud Services, and Virtual Machines
-* Learn more about [App Service](../app-service-web-overview.md)
-* Learn more about [Cloud Service](services/cloud-services/)
-* Learn more about [Virtual Machines](https://msdn.microsoft.com/library/azure/jj156143.aspx) 
+* [Compare](/documentation/articles/choose-web-site-cloud-service-vm) Azure Websites, Cloud Services, and Virtual Machines
+* Learn more about [Azure Websites](/documentation/articles/app-service-web-overview)
+* Learn more about [Cloud Service](/home/features/cloud-services/)
+* Learn more about [Virtual Machines](https://msdn.microsoft.com/zh-cn/library/azure/jj156143.aspx) 

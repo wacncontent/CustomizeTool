@@ -21,7 +21,7 @@ The new Twitter v1.1 APIs requires your app to authenticate before accessing res
 
 	![](./media/mobile-services-register-twitter-access/mobile-identity-tab-twitter-only.png)
 
-7. Click the **Configure** tab, scroll down to **App settings** and enter a **Name** and **Value** pair for each of the following that you obtained from the Twitter site, then click **Save**.
+2. Click the **Configure** tab, scroll down to **App settings** and enter a **Name** and **Value** pair for each of the following that you obtained from the Twitter site, then click **Save**.
 
 	+ `TWITTER_ACCESS_TOKEN`
 	+ `TWITTER_ACCESS_TOKEN_SECRET`
@@ -32,7 +32,7 @@ The new Twitter v1.1 APIs requires your app to authenticate before accessing res
 
 <!-- URLs. -->
 [Mobile Services server script reference]: http://go.microsoft.com/fwlink/?LinkId=262293
-[Azure Management Portal]: https://manage.windowsazure.cn/
-[Register your apps for Twitter login with Mobile Services]: /documentation/articles//mobile-services-how-to-register-twitter-authentication
+[Azure Management Portal]: https://manage.windowsazure.com/
+[Register your apps for Twitter login with Mobile Services]: ../articles/mobile-services/mobile-services-how-to-register-twitter-authentication.md
 [Twitter Developers]: http://go.microsoft.com/fwlink/p/?LinkId=268300
-[App settings]: http://msdn.microsoft.com/zh-cn/library/azure/b6bb7d2d-35ae-47eb-a03f-6ee393e170f7
+[App settings]: http://msdn.microsoft.com/library/azure/b6bb7d2d-35ae-47eb-a03f-6ee393e170f7

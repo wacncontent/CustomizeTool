@@ -8,22 +8,18 @@
     editor=""/>
 
 <tags
-    ms.service="sql-database"
-    ms.workload="sql-database"
-    ms.tgt_pltfrm="na"
-    ms.devlang="na"
-    ms.topic="article"
-    ms.date="08/27/2015"
-    ms.author="sidneyh"/>
+	ms.service="sql-database"
+	ms.date="08/27/2015"
+	wacn.date=""/>
 
 # Elastic Database features overview
 
 **Elastic Database** features enables you to use the virtually unlimited database resources of **Azure SQL Database** to create solutions for transactional workloads, and especially Software as a Service (SaaS) applications. Elastic Database features are composed of the following:
 
-* Elastic Database tools: These two tools simplify development and management of sharded database solutions. The tools are: the [Elastic Database client library](sql-database-elastic-database-client-library.md) and the [Elastic Database split-merge tool](sql-database-elastic-scale-overview-split-and-merge.md). 
-* [Elastic Database pools](sql-database-elastic-pool-guidance.md) (preview): A pool is a collection of databases to which you can add or remove databases at any time. The databases in the pool share a fixed amount of resources (known as database throughput units, or DTUs). You pay a fixed price for the resources, which enables you to easily calculate costs while managing performance. 
-* [Elastic Database jobs](sql-database-elastic-jobs-overview.md) (preview): Use jobs to manage large numbers of Azure SQL databases. Easily perform administrative operations such as schema changes, credentials management, reference data updates, performance data collection or tenant (customer) telemetry collection using jobs.
-* [Elastic Database query](sql-database-elastic-query-overview.md) (preview): Enables you to run a Transact-SQL query that spans multiple databases. This enables connection to reporting tools such as Excel, PowerBI, Tableau, etc.
+* Elastic Database tools: These two tools simplify development and management of sharded database solutions. The tools are: the [Elastic Database client library](/documentation/articles/sql-database-elastic-database-client-library) and the [Elastic Database split-merge tool](/documentation/articles/sql-database-elastic-scale-overview-split-and-merge). 
+* [Elastic Database pools](/documentation/articles/sql-database-elastic-pool-guidance) (preview): A pool is a collection of databases to which you can add or remove databases at any time. The databases in the pool share a fixed amount of resources (known as database throughput units, or DTUs). You pay a fixed price for the resources, which enables you to easily calculate costs while managing performance. 
+* [Elastic Database jobs](/documentation/articles/sql-database-elastic-jobs-overview) (preview): Use jobs to manage large numbers of Azure SQL databases. Easily perform administrative operations such as schema changes, credentials management, reference data updates, performance data collection or tenant (customer) telemetry collection using jobs.
+* [Elastic Database query](/documentation/articles/sql-database-elastic-query-overview) (preview): Enables you to run a Transact-SQL query that spans multiple databases. This enables connection to reporting tools such as Excel, PowerBI, Tableau, etc.
 
 The graphic below shows an architecture that includes the **Elastic Database features** in relation to a collection of databases. 
 
@@ -35,7 +31,7 @@ In this graphic, colors of the database represent schemas. Databases with the sa
 
 1. A set of **Azure SQL databases** are hosted on Azure using sharding architecture. 
 2. The **Elastic Database client library** is used to manage a shard set.
-3. A subset of the databases are put into an **Elastic Database pool**. (See [Tame explosive growth with elastic databases](sql-database-elastic-pool.md)). 
+3. A subset of the databases are put into an **Elastic Database pool**. (See [Tame explosive growth with elastic databases](/documentation/articles/sql-database-elastic-pool)). 
 4. An **Elastic Database job** runs T-SQL scripts against all databases.
 5. The **split-merge tool** is used to move data from one shard to another.
 6. The **Elastic Database query** allows you to write a query that spans all databases in the shard set.
@@ -61,7 +57,7 @@ Vertical scaling refers to increasing or decreasing the performance level of an 
 
 Most cloud-scale database applications will use a combination of these two strategies. For example, a Software as a Service application may use horizontal scaling to provision new end-customers and vertical scaling to allow each end-customer’s database to grow or shrink resources as needed by the workload.
 
-* Horizontal scaling is managed using the [Elastic Database client library](sql-database-elastic-database-client-library.md).
+* Horizontal scaling is managed using the [Elastic Database client library](/documentation/articles/sql-database-elastic-database-client-library).
 
 * Vertical scaling is accomplished using Azure PowerShell cmdlets to change the service tier, or by placing databases in an Elastic Database pool.
 
@@ -82,20 +78,20 @@ Some applications use the simplest approach of creating a separate database for 
 
 ![Single tenant versus multi-tenant][4]
 
-Others scenarios pack multiple tenants together into databases, rather than isolating them into separate databases. This is a typical **multi-tenant sharding pattern** – and it may be driven by the fact that an application manages large numbers of very small tenants. In multi-tenant sharding, the rows in the database tables are all designed to carry a key identifying the tenant ID or sharding key. Again, the application tier is responsible for routing a tenant’s request to the appropriate database, and this can be supported by the elastic database client library. In addition, row-level security can be used to filter which rows each tenant can access – for details, see [Multi-tenant applications with elastic database tools and row-level security](sql-database-elastic-tools-multi-tenant-row-level-security.md). Redistributing data among databases may be needed with the multi-tenant sharding pattern, and this is facilitated by the elastic database split-merge tool.
+Others scenarios pack multiple tenants together into databases, rather than isolating them into separate databases. This is a typical **multi-tenant sharding pattern** – and it may be driven by the fact that an application manages large numbers of very small tenants. In multi-tenant sharding, the rows in the database tables are all designed to carry a key identifying the tenant ID or sharding key. Again, the application tier is responsible for routing a tenant’s request to the appropriate database, and this can be supported by the elastic database client library. In addition, row-level security can be used to filter which rows each tenant can access – for details, see [Multi-tenant applications with elastic database tools and row-level security](/documentation/articles/sql-database-elastic-tools-multi-tenant-row-level-security). Redistributing data among databases may be needed with the multi-tenant sharding pattern, and this is facilitated by the elastic database split-merge tool.
 
 ### Move data from multiple to single-tenancy databases
-When creating a SaaS application, it is typical to offer prospective customers a trial version of the software. In this case, it is cost-effective to use a multi-tenant database for the data. However, when a prospect becomes a customer, a single-tenant database is better since it provides better performance. If the customer had created data during the trial period, use the [split-merge tool](sql-database-elastic-scale-overview-split-and-merge.md) to move the data from the multi-tenant to the new single-tenant database.
+When creating a SaaS application, it is typical to offer prospective customers a trial version of the software. In this case, it is cost-effective to use a multi-tenant database for the data. However, when a prospect becomes a customer, a single-tenant database is better since it provides better performance. If the customer had created data during the trial period, use the [split-merge tool](/documentation/articles/sql-database-elastic-scale-overview-split-and-merge) to move the data from the multi-tenant to the new single-tenant database.
 
 ## Next steps
 
-For a sample app that demonstrates the client library, see [Get started with Elastic Datbabase tools](sql-database-elastic-scale-get-started.md).
+For a sample app that demonstrates the client library, see [Get started with Elastic Datbabase tools](/documentation/articles/sql-database-elastic-scale-get-started).
 
-To use the split-merge tool, you must [configure security](sql-database-elastic-scale-split-merge-security-configuration.md). 
+To use the split-merge tool, you must [configure security](/documentation/articles/sql-database-elastic-scale-split-merge-security-configuration). 
 
-To see the specifics of the Elastic Database pool, see [Price and performance considerations for an elastic database pool](sql-database-elastic-pool-guidance.md), or create a new pool with the [tutorial](sql-database-elastic-pool-portal.md).  
+To see the specifics of the Elastic Database pool, see [Price and performance considerations for an elastic database pool](/documentation/articles/sql-database-elastic-pool-guidance), or create a new pool with the [tutorial](/documentation/articles/sql-database-elastic-pool-portal).  
 
-[AZURE.INCLUDE [elastic-scale-include](../../includes/elastic-scale-include.md)]
+[AZURE.INCLUDE [elastic-scale-include](../includes/elastic-scale-include.md)]
 
 ### Feedback please!
 What can we do better? Does this topic explain the feature clearly? Or are you puzzled by any bit of it? We aim to please, so use the voting buttons, and tell us how we failed (or succeeded). And if you want us to contact you, include your email in your feedback.

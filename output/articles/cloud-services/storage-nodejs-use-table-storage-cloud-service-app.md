@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Web app with table storage (Node.js) | Microsoft Azure" 
+	pageTitle="Web app with table storage (Node.js) | Windows Azure" 
 	description="A tutorial that builds on the Web App with Express tutorial by adding Azure Storage services and the Azure module." 
 	services="cloud-services, storage" 
 	documentationCenter="nodejs" 
@@ -7,14 +7,10 @@
 	manager="wpickett" 
 	editor=""/>
 
-<tags 
-	ms.service="storage" 
-	ms.workload="storage" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="nodejs" 
-	ms.topic="article" 
-	ms.date="09/01/2015" 
-	ms.author="tarcher"/>
+<tags
+	ms.service="storage"
+	ms.date="09/01/2015"
+	wacn.date=""/>
 
 
 
@@ -375,12 +371,12 @@ In the Windows PowerShell window, call the following cmdlet to redeploy your hos
 
     PS C:\node\tasklist\WebRole1> Publish-AzureServiceProject -name myuniquename -location datacentername -launch
 
-Replace **myuniquename** with a unique name for this application. Replace **datacentername** with the name of an Azure data center, such as **West US**.
+Replace **myuniquename** with a unique name for this application. Replace **datacentername** with the name of an Azure data center, such as **China North**.
 
 After the deployment is complete, you should see a response similar to the following:
 
-	PS C:\node\tasklist> publish-azureserviceproject -servicename tasklist -location "West US"
-	WARNING: Publishing tasklist to Microsoft Azure. This may take several minutes...
+	PS C:\node\tasklist> publish-azureserviceproject -servicename tasklist -location "China North"
+	WARNING: Publishing tasklist to Windows Azure. This may take several minutes...
 	WARNING: 2:18:42 PM - Preparing runtime deployment for service 'tasklist'
 	WARNING: 2:18:42 PM - Verifying storage account 'tasklist'...
 	WARNING: 2:18:43 PM - Preparing deployment for tasklist with Subscription ID: 65a1016d-0f67-45d2-b838-b8f373d6d52e...
@@ -390,7 +386,7 @@ After the deployment is complete, you should see a response similar to the follo
 	WARNING: 2:22:48 PM - Created Deployment ID: b7134ab29b1249ff84ada2bd157f296a.
 	WARNING: 2:22:48 PM - Initializing...
 	WARNING: 2:22:49 PM - Instance WebRole1_IN_0 of role WebRole1 is ready.
-	WARNING: 2:22:50 PM - Created Website URL: http://tasklist.cloudapp.net/.
+	WARNING: 2:22:50 PM - Created Website URL: http://tasklist.chinacloudapp.cn/.
 
 As before, because you specified the **-launch** option, the browser opens and displays your application running in Azure when publishing is completed.
 
@@ -399,7 +395,7 @@ As before, because you specified the **-launch** option, the browser opens and d
 ## Stopping and Deleting Your Application
 
 After deploying your application, you may want to disable it so you can
-avoid costs or build and deploy other applications within the free trial
+avoid costs or build and deploy other applications within the trial
 time period.
 
 Azure bills web role instances per hour of server time consumed.
@@ -423,8 +419,8 @@ The following steps show you how to stop and delete your application.
 
 	Deleting the service may take several minutes. After the service has been deleted you receive a message indicating that the service was deleted.
 
-  [Node.js Web Application using Express]: http://azure.microsoft.com/develop/nodejs/tutorials/web-app-with-express/
-  [Storing and Accessing Data in Azure]: http://msdn.microsoft.com/library/azure/gg433040.aspx
-  [Node.js Web Application]: http://azure.microsoft.com/develop/nodejs/tutorials/getting-started/
+  [Node.js Web Application using Express]: /develop/nodejs/tutorials/web-app-with-express/
+  [Storing and Accessing Data in Azure]: http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx
+  [Node.js Web Application]: /develop/nodejs/tutorials/getting-started/
  
  

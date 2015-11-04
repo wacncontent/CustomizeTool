@@ -9,31 +9,27 @@
 
 <tags
 	ms.service="notification-hubs"
-	ms.workload="mobile"
-	ms.tgt_pltfrm="ios"
-	ms.devlang="objective-c"
-	ms.topic="article"
 	ms.date="09/24/2015"
-	ms.author="wesmc"/>
+	wacn.date=""/>
 
 #Azure Notification Hubs Notify Users
 
-[AZURE.INCLUDE [notification-hubs-selector-aspnet-backend-notify-users](../../includes/notification-hubs-selector-aspnet-backend-notify-users.md)]
+[AZURE.INCLUDE [notification-hubs-selector-aspnet-backend-notify-users](../includes/notification-hubs-selector-aspnet-backend-notify-users.md)]
 
 ##Overview
 
-Push notification support in Azure enables you to access an easy-to-use, multiplatform, and scaled-out push infrastructure, which greatly simplifies the implementation of push notifications for both consumer and enterprise applications for mobile platforms. This tutorial shows you how to use Azure Notification Hubs to send push notifications to a specific app user on a specific device. An ASP.NET WebAPI backend is used to authenticate clients and to generate notifications, as shown in the guidance topic [Registering from your app backend](http://msdn.microsoft.com/library/dn743807.aspx).
+Push notification support in Azure enables you to access an easy-to-use, multiplatform, and scaled-out push infrastructure, which greatly simplifies the implementation of push notifications for both consumer and enterprise applications for mobile platforms. This tutorial shows you how to use Azure Notification Hubs to send push notifications to a specific app user on a specific device. An ASP.NET WebAPI backend is used to authenticate clients and to generate notifications, as shown in the guidance topic [Registering from your app backend](http://msdn.microsoft.com/zh-cn/library/dn743807.aspx).
 
-> [AZURE.NOTE] This tutorial assumes that you have created and configured your notification hub as described in [Getting Started with Notification Hubs (iOS)](notification-hubs-ios-get-started.md). This tutorial is also the prerequisite to the [Secure Push (iOS)](notification-hubs-aspnet-backend-ios-secure-push.md) tutorial.
-> If you are using Mobile Services as your backend service, see the [Mobile Services version](../mobile-services-javascript-backend-ios-push-notifications-app-users.md) of this tutorial.
+> [AZURE.NOTE] This tutorial assumes that you have created and configured your notification hub as described in [Getting Started with Notification Hubs (iOS)](/documentation/articles/notification-hubs-ios-get-started). This tutorial is also the prerequisite to the [Secure Push (iOS)](/documentation/articles/notification-hubs-aspnet-backend-ios-secure-push) tutorial.
+> If you are using Mobile Services as your backend service, see the [Mobile Services version](/documentation/articles/mobile-services-javascript-backend-ios-push-notifications-app-users) of this tutorial.
 
 
 
-[AZURE.INCLUDE [notification-hubs-aspnet-backend-notifyusers](../../includes/notification-hubs-aspnet-backend-notifyusers.md)]
+[AZURE.INCLUDE [notification-hubs-aspnet-backend-notifyusers](../includes/notification-hubs-aspnet-backend-notifyusers.md)]
 
 ## Modify your iOS app
 
-1. Open the Single Page view app you created in the [Getting Started with Notification Hubs (iOS)](notification-hubs-ios-get-started.md) tutorial.
+1. Open the Single Page view app you created in the [Getting Started with Notification Hubs (iOS)](/documentation/articles/notification-hubs-ios-get-started) tutorial.
 
 	> [AZURE.NOTE] In this section we assume that your project is configured with an empty organization name. If not, you will need to prepend your organization name to all class names.
 
@@ -44,13 +40,13 @@ Push notification support in Azure enables you to access an easy-to-use, multipl
 	+ **Username**: A UITextField with placeholder text, *Enter Username*, immediately beneath the send results label and constrained to the left and right margins and beneath the send results label.
 	+ **Password**: A UITextField with placeholder text, *Enter Password*, immediately beneath the username text field and constrained to the left and right margins and beneath the username text field. Check the **Secure Text Entry** option in the Attribute Inspector, under *Return Key*.
 	+ **Log in**: A UIButton labeled immediately beneath the password text field and uncheck the **Enabled** option in the Attributes Inspector, under *Control-Content*
-	+ **WNS**: Label and switch to enable sending the notification Windows Notification Service if it has been setup on the hub. See the [Windows Getting Started](notification-hubs-windows-store-dotnet-get-started.md) tutorial.
-	+ **GCM**: Label and switch to enable sending the notification to Google Cloud Messaging if it has been setup on the hub. See [Android Getting Started](notification-hubs-android-get-started.md) tutorial.
+	+ **WNS**: Label and switch to enable sending the notification Windows Notification Service if it has been setup on the hub. See the [Windows Getting Started](/documentation/articles/notification-hubs-windows-store-dotnet-get-started) tutorial.
+	+ **GCM**: Label and switch to enable sending the notification to Google Cloud Messaging if it has been setup on the hub. See [Android Getting Started](/documentation/articles/notification-hubs-android-get-started) tutorial.
 	+ **APNS**: Label and switch to enable sending the notification to the Apple Platform Notification Service.
 	+ **Recipent Username**:A UITextField with placeholder text, *Recipient username tag*, immediately beneath the GCM label and constrained to the left and right margins and beneath the GCM label.
 
 
-	Some components were added in the [Getting Started with Notification Hubs (iOS)](notification-hubs-ios-get-started.md) tutorial.
+	Some components were added in the [Getting Started with Notification Hubs (iOS)](/documentation/articles/notification-hubs-ios-get-started) tutorial.
 
 3. **Ctrl** drag from the components in the view to ViewController.h and add these new outlets.
 
@@ -70,7 +66,7 @@ Push notification support in Azure enables you to access an easy-to-use, multipl
 
 		- (IBAction)LogInAction:(id)sender;
 
-4. In ViewController.h, add the following `#define` just below your import statements. Substitute the *<Enter Your Backend Endpoint\>* placeholder with the Destination URL you used to deploy your app backend in the previous section. For example, *http://you_backend.azurewebsites.net*.
+4. In ViewController.h, add the following `#define` just below your import statements. Substitute the *<Enter Your Backend Endpoint\>* placeholder with the Destination URL you used to deploy your app backend in the previous section. For example, *http://you_backend.chinacloudsites.cn*.
 
 		#define BACKEND_ENDPOINT @"<Enter Your Backend Endpoint>"
 
@@ -263,7 +259,7 @@ Push notification support in Azure enables you to access an easy-to-use, multipl
 
 		@end
 
-	The code above implements the logic explained in the guidance article [Registering from your app backend](http://msdn.microsoft.com/library/dn743807.aspx) using NSURLSession to perform REST calls to your app backend, and NSUserDefaults to locally store the registrationId returned by the notification hub.
+	The code above implements the logic explained in the guidance article [Registering from your app backend](http://msdn.microsoft.com/zh-cn/library/dn743807.aspx) using NSURLSession to perform REST calls to your app backend, and NSUserDefaults to locally store the registrationId returned by the notification hub.
 
 	Note that this class requires its property **authorizationHeader** to be set in order to work properly. This property is set by the **ViewController** class after the log in.
 

@@ -1,5 +1,5 @@
 <properties
-  pageTitle="Create a MongoDB cluster on Ubuntu | Microsoft Azure"
+  pageTitle="Create a MongoDB cluster on Ubuntu | Windows Azure"
   description="Create a MongoDB cluster on Ubuntu using a Azure Resource Manager template via Azure PowerShell or the Azure CLI"
   services="virtual-machines"
   documentationCenter=""
@@ -9,26 +9,22 @@
   tags="azure-resource-manager"/>
 
 <tags
-  ms.service="virtual-machines"
-  ms.workload="multiple"
-  ms.tgt_pltfrm="vm-windows"
-  ms.devlang="na"
-  ms.topic="article"
-  ms.date="04/29/2015"
-  ms.author="scoriani"/>
+	ms.service="virtual-machines"
+	ms.date="04/29/2015"
+	wacn.date=""/>
 
 # Create a MongoDB cluster on Ubuntu using a Azure Resource Manager template
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-rm-include.md)] classic deployment model.
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] classic deployment model.
 
 
 MongoDB is an open-source document database that provides high performance, high availability, and automatic scaling. MongoDB can be installed as a stand-alone database or within a cluster, leveraging built-in replication capabilities. In some cases, you can use replication to increase read capacity. Clients have the ability to send read and write operations to different servers. You can also maintain copies in different data centers to increase the locality and availability of data for distributed applications. With MongoDB, replication also provides redundancy and increases data availability. With multiple copies of data on different database servers, replication protects a database from the loss of a single server. Replication also allows you to recover from hardware failure and service interruptions. With additional copies of the data, you can dedicate one to disaster recovery, reporting, or backup.
 
-In addition to the various flavors that were already available in the Azure Marketplace, now you can also easily deploy a new MongoDB cluster on Ubuntu VMs using a Azure Resource Manager template deployed through [Azure PowerShell](../powershell-install-configure.md) or the [Azure CLI](../xplat-cli-install.md).
+In addition to the various flavors that were already available in the Azure Marketplace, now you can also easily deploy a new MongoDB cluster on Ubuntu VMs using a Azure Resource Manager template deployed through [Azure PowerShell](/documentation/articles/powershell-install-configure) or the [Azure CLI](/documentation/articles/xplat-cli-install).
 
 Newly deployed clusters based on this template will have the topology described in the following diagram, although other topologies can be easily achieved by customizing the template presented in this article.
 
-![cluster-architecture](media/virtual-machines-mongodb-template/cluster-architecture.png)
+![cluster-architecture](./media/virtual-machines-mongodb-template/cluster-architecture.png)
 
 Through a parameter you can define the number of nodes that will be deployed in the new MongoDB cluster and, based on another parameter, a VM instance (Jumpbox) with a public IP address may be also deployed within the same VNET, giving you the ability to connect to the cluster from public Internet and perform any sort of administrative task related that cluster. Another option available as a parameter, is the ability to add an Arbiter node to the replica set, that is typically suggested when that has an even number of members. For more information on MongoDB replication topologies and details, see the official [MongoDB documentation](http://docs.mongodb.org/manual/core/replication-introduction/).
 
@@ -36,9 +32,9 @@ Once the deployment is complete you can access the Jumpbox using the configured 
 
 Before diving into more details related to the Azure Resource Manager and the template we will use for this deployment, make sure you have Azure PowerShell or the Azure CLI configured correctly.
 
-[AZURE.INCLUDE [arm-getting-setup-powershell](../../includes/arm-getting-setup-powershell.md)]
+[AZURE.INCLUDE [arm-getting-setup-powershell](../includes/arm-getting-setup-powershell.md)]
 
-[AZURE.INCLUDE [xplat-getting-set-up-arm](../../includes/xplat-getting-set-up-arm.md)]
+[AZURE.INCLUDE [xplat-getting-set-up-arm](../includes/xplat-getting-set-up-arm.md)]
 
 ## Create a MongoDB cluster with a Resource Manager template
 
@@ -253,7 +249,7 @@ The following example shows the set of parameters from the azuredeploy-parameter
           "value": ""
       },
       "region": {
-          "value": "West US"
+          "value": "China North"
       },
       "virtualNetworkName": {
           "value": "mongodbVnet"
@@ -294,7 +290,7 @@ Fill in an Azure deployment name, resource group name, Azure location, and the f
 
     $deployName="<deployment name>"
     $RGName="<resource group name>"
-    $locName="<Azure location, such as West US>"
+    $locName="<Azure location, such as China North>"
     $folderName="<folder name, such as C:\Azure\Templates\MongoDB>"
     $templateFile= $folderName + "\azuredeploy.json"
     $templateParameterFile= $folderName + "\azuredeploy-parameters.json"
@@ -309,7 +305,7 @@ When deploying, keep in mind that a new Azure storage account needs to be create
 
 During and after deployment, you can check all the requests that were made during provisioning, including any errors that occurred.
 
-To do that, go to the [Azure portal](https://portal.azure.com) and do the following:
+To do that, go to the [Azure Management Portal](https://manage.windowsazure.cn) and do the following:
 
 - Click **Browse** on the left navigation bar, scroll down and then click **Resource Groups**.
 - After clicking the resource group that you just created, it will bring up the Resource group blade.
@@ -324,7 +320,7 @@ After your tests, if you need to remove this resource group and all of its resou
 
 To deploy a MongoDB cluster via the Azure CLI, first create a resource group by specifying a name and a location with the following command.
 
-    azure group create mdbc "West US"
+    azure group create mdbc "China North"
 
 Pass this resource group name, the location of the JSON template file, and the location of the parameters file (see the earlier PowerShell section for details) into the following command.
 
@@ -340,7 +336,7 @@ To design a robust and reusable Azure Resource Manager template, additional thin
 
 The following diagram describes the relationships between all the files downloaded from GitHub for this deployment.
 
-![mongodb-files](media/virtual-machines-mongodb-template/mongodb-files.png)
+![mongodb-files](./media/virtual-machines-mongodb-template/mongodb-files.png)
 
 This section steps you through the structure of the azuredeploy.json file for the MongoDB cluster.
 
@@ -423,7 +419,7 @@ The variables section specifies variables that can be used throughout this templ
               "imageSKU": "14.04.2-LTS"
           },
           "vmStorageAccountContainerName": "vhd-mongodb",
-          "vmStorageAccountDomain": ".blob.core.windows.net",
+          "vmStorageAccountDomain": ".blob.core.chinacloudapi.cn",
           "vnetID": "[resourceId('Microsoft.Network/virtualNetworks', parameters('virtualNetworkName'))]",
           "sharedScriptUrl": "[concat('https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/shared_scripts/', variables('osFamilySpec').osName, '/')]",
           "scriptUrl": "https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/mongodb-high-availability/",
@@ -683,7 +679,7 @@ Another interesting fragment to explore, is the one related to CustomScriptForLi
 
 By familiarizing yourself with the other files included in this deployment, you will be able to understand all the details and best practices required to organize and orchestrate complex deployment strategies for multi-node solutions, based on any technology, leveraging Azure Resource Manager templates. While not mandatory, a recommended approach is to structure your template files as shown in the following diagram.
 
-![mongodb-template-structure](media/virtual-machines-mongodb-template/mongodb-template-structure.png)
+![mongodb-template-structure](./media/virtual-machines-mongodb-template/mongodb-template-structure.png)
 
 In essence, this approach suggests that you:
 
@@ -693,4 +689,4 @@ In essence, this approach suggests that you:
 -	For identical members of a group of resources (nodes in a cluster, etc.), create specific templates that leverage resource looping in order to deploy multiple instances with unique properties.
 -	For all post deployment tasks (for example, product installation, configurations, etc.), leverage script deployment extensions and create scripts specific to each technology.
 
-For more information, see [Azure Resource Manager Template Language](../resource-group-authoring-templates.md).
+For more information, see [Azure Resource Manager Template Language](/documentation/articles/resource-group-authoring-templates).

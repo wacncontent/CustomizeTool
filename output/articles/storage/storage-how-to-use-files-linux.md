@@ -1,5 +1,5 @@
 <properties
-	pageTitle="How to use Azure File storage with Linux | Microsoft Azure"
+	pageTitle="How to use Azure File storage with Linux | Windows Azure"
         description="Create a file share in the cloud and mount it from an Azure VM or an on-premises application running on Linux."
         services="storage"
         documentationCenter="na"
@@ -47,7 +47,7 @@ To mount the file share from a virtual machine running Linux, you may need to in
 
 Next, you need to make a mount point (mkdir mymountpoint), and then issue the mount command that is similar to this:
 
-     sudo mount -t cifs //myaccountname.file.core.windows.net/mysharename ./mymountpoint -o vers=3.0,username=myaccountname,password=StorageAccountKeyEndingIn==,dir_mode=0777,file_mode=0777
+     sudo mount -t cifs //myaccountname.file.core.chinacloudapi.cn/mysharename ./mymountpoint -o vers=3.0,username=myaccountname,password=StorageAccountKeyEndingIn==,dir_mode=0777,file_mode=0777
 
 You can also add settings in your /etc/fstab to mount the share.
 
@@ -55,48 +55,48 @@ Note that 0777 here represent a directory/file permission code that gives execut
  
 Also to keep a file share mounted after reboot, you can add a setting like below in your /etc/fstab:
 
-    //myaccountname.file.core.windows.net/mysharename /mymountpoint cifs vers=3.0,username= myaccountname,password= StorageAccountKeyEndingIn==,dir_mode=0777,file_mode=0777
+    //myaccountname.file.core.chinacloudapi.cn/mysharename /mymountpoint cifs vers=3.0,username= myaccountname,password= StorageAccountKeyEndingIn==,dir_mode=0777,file_mode=0777
 
 For example, if you created a Azure VM using Linux image Ubuntu Server 15.04 (which is available from the Azure image gallery), you can mount the file as below:
 
     azureuser@azureconubuntu:~$ sudo apt-get install apt-file
     azureuser@azureconubuntu:~$ sudo mkdir /mnt/mountpoint
-    azureuser@azureconubuntu:~$ sudo mount -t cifs //myaccountname.file.core.windows.net/mysharename /mnt/mountpoint -o vers=3.0,user=myaccountname,password=StorageAccountKeyEndingIn==,dir_mode=0777,file_mode=0777
+    azureuser@azureconubuntu:~$ sudo mount -t cifs //myaccountname.file.core.chinacloudapi.cn/mysharename /mnt/mountpoint -o vers=3.0,user=myaccountname,password=StorageAccountKeyEndingIn==,dir_mode=0777,file_mode=0777
     azureuser@azureconubuntu:~$ df -h /mnt/mountpoint
     Filesystem  Size  Used Avail Use% Mounted on
-    //myaccountname.file.core.windows.net/mysharename  5.0T   64K  5.0T   1% /mnt/mountpoint
+    //myaccountname.file.core.chinacloudapi.cn/mysharename  5.0T   64K  5.0T   1% /mnt/mountpoint
 
 If you use CentOS 7.1, you can mount the file as below:
 
     [azureuser@AzureconCent ~]$ sudo yum install samba-client samba-common cifs-utils
-    [azureuser@AzureconCent ~]$ sudo mount -t cifs //myaccountname.file.core.windows.net/mysharename /mnt/mountpoint -o vers=3.0,user=myaccountname,password=StorageAccountKeyEndingIn==,dir_mode=0777,file_mode=0777
+    [azureuser@AzureconCent ~]$ sudo mount -t cifs //myaccountname.file.core.chinacloudapi.cn/mysharename /mnt/mountpoint -o vers=3.0,user=myaccountname,password=StorageAccountKeyEndingIn==,dir_mode=0777,file_mode=0777
     [azureuser@AzureconCent ~]$ df -h /mnt/mountpoint
     Filesystem  Size  Used Avail Use% Mounted on
-    //myaccountname.file.core.windows.net/mysharename  5.0T   64K  5.0T   1% /mnt/mountpoint
+    //myaccountname.file.core.chinacloudapi.cn/mysharename  5.0T   64K  5.0T   1% /mnt/mountpoint
 
 If you use Open SUSE 13.2, you can mount the file as below:
 
     azureuser@AzureconSuse:~> sudo zypper install samba*  
     azureuser@AzureconSuse:~> sudo mkdir /mnt/mountpoint
-    azureuser@AzureconSuse:~> sudo mount -t cifs //myaccountname.file.core.windows.net/mysharename /mnt/mountpoint -o vers=3.0,user=myaccountname,password=StorageAccountKeyEndingIn==,dir_mode=0777,file_mode=0777
+    azureuser@AzureconSuse:~> sudo mount -t cifs //myaccountname.file.core.chinacloudapi.cn/mysharename /mnt/mountpoint -o vers=3.0,user=myaccountname,password=StorageAccountKeyEndingIn==,dir_mode=0777,file_mode=0777
     azureuser@AzureconSuse:~> df -h /mnt/mountpoint
     Filesystem  Size  Used Avail Use% Mounted on
-    //myaccountname.file.core.windows.net/mysharename  5.0T   64K  5.0T   1% /mnt/mountpoint
+    //myaccountname.file.core.chinacloudapi.cn/mysharename  5.0T   64K  5.0T   1% /mnt/mountpoint
 
 ## Manage the file share ##
 
-The [Azure preview portal](https://portal.azure.com/) now provides a user interface for managing Azure File Storage. You can perform the following actions from your web browser:
+The [Azure preview portal](https://manage.windowsazure.cn/) now provides a user interface for managing Azure File Storage. You can perform the following actions from your web browser:
 
 - Upload and download files to and from your file share.
 - Monitor the actual usage of each file share.
 - Adjust the file share size quota.
 - Copy the `net use` command to use to mount your file share from a Windows client. 
 
-You can also use the Azure Cross-Platform Command-Line Interface (Azure CLI) from Linux to manage the file share. Azure CLI provides a set of open source, cross-platform commands for you to work with Azure Storage, including File storage. It provides much of the same functionality found in the Azure Portal as well as rich data access functionality. For examples, see [Using the Azure CLI with Azure Storage](storage-azure-cli.md).
+You can also use the Azure Cross-Platform Command-Line Interface (Azure CLI) from Linux to manage the file share. Azure CLI provides a set of open source, cross-platform commands for you to work with Azure Storage, including File storage. It provides much of the same functionality found in the Azure Management Portal as well as rich data access functionality. For examples, see [Using the Azure CLI with Azure Storage](/documentation/articles/storage-azure-cli).
 
 ## Develop with File storage ##
 
-As a developer, you can build an application with File storage by using the [Azure Storage Client Library for Java](https://github.com/azure/azure-storage-java). For code examples, see [How to use File storage from Java](storage-java-how-to-use-file-storage.md).
+As a developer, you can build an application with File storage by using the [Azure Storage Client Library for Java](https://github.com/azure/azure-storage-java). For code examples, see [How to use File storage from Java](/documentation/articles/storage-java-how-to-use-file-storage).
 
 You can also use the [Azure Storage Client Library for Node.js](https://github.com/Azure/azure-storage-node) to develop against File storage.
 
@@ -112,20 +112,20 @@ See these links for more information about Azure File storage.
 
 ### Conceptual articles
 
-- [How to use Azure File Storage with Windows](storage-dotnet-how-to-use-files.md)
+- [How to use Azure File Storage with Windows](/documentation/articles/storage-dotnet-how-to-use-files)
 
 ### Tooling support for File storage
 
-- [How to use AzCopy with Microsoft Azure Storage](storage-use-azcopy.md)
-- [Using the Azure CLI with Azure Storage](storage-azure-cli.md#create-and-manage-file-shares)
+- [How to use AzCopy with Windows Azure Storage](/documentation/articles/storage-use-azcopy)
+- [Using the Azure CLI with Azure Storage](/documentation/articles/storage-azure-cli#create-and-manage-file-shares)
 
 ### Reference
 
-- [File Service REST API reference](http://msdn.microsoft.com/library/azure/dn167006.aspx)
+- [File Service REST API reference](http://msdn.microsoft.com/zh-cn/library/azure/dn167006.aspx)
 
 ### Blog posts
 
 - [Azure File storage is now generally available](http://go.microsoft.com/fwlink/?LinkID=626728&clcid=0x409)
 - [Deep dive with Azure File storage](http://go.microsoft.com/fwlink/?LinkID=626729&clcid=0x409) 
-- [Introducing Microsoft Azure File Service](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/12/introducing-microsoft-azure-file-service.aspx)
-- [Persisting connections to Microsoft Azure Files](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/27/persisting-connections-to-microsoft-azure-files.aspx)
+- [Introducing Windows Azure File Service](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/12/introducing-microsoft-azure-file-service.aspx)
+- [Persisting connections to Windows Azure Files](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/27/persisting-connections-to-microsoft-azure-files.aspx)

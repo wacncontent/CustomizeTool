@@ -1,5 +1,5 @@
 <properties
-	pageTitle="How to: Configure firewall settings | Microsoft Azure"
+	pageTitle="How to: Configure firewall settings | Windows Azure"
 	description="Learn how to configure the firewall for IP addresses that access Azure SQL databases."
 	services="sql-database"
 	documentationCenter=""
@@ -10,30 +10,26 @@
 
 <tags
 	ms.service="sql-database"
-	ms.workload="data-management"
-	ms.tgt_pltfrm="na"
-	ms.devlang="dotnet"
-	ms.topic="article" 
 	ms.date="09/04/2015"
-	ms.author="rickbyh"/>
+	wacn.date=""/>
 
 
 # How to: Configure firewall settings on SQL Database
 
 
-Microsoft Azure SQL Database uses firewall rules to allow connections to your servers and databases. You can define server-level and database-level firewall settings for the master or a user database in your Azure SQL Database server to selectively allow access to the database.
+Windows Azure SQL Database uses firewall rules to allow connections to your servers and databases. You can define server-level and database-level firewall settings for the master or a user database in your Azure SQL Database server to selectively allow access to the database.
 
-> [AZURE.IMPORTANT] To allow applications from Azure to connect to your database server, Azure connections must be enabled. For more information about firewall rules and enabling connections from Azure, see [Azure SQL Database Firewall](sql-database-firewall-configure.md). You may have to open some additional TCP ports if you are making connections inside the Azure cloud boundary. For more information, see the **V12 of SQL Database: Outside vs inside** section of [Ports beyond 1433 for ADO.NET 4.5 and SQL Database V12](sql-database-develop-direct-route-ports-adonet-v12.md)
+> [AZURE.IMPORTANT] To allow applications from Azure to connect to your database server, Azure connections must be enabled. For more information about firewall rules and enabling connections from Azure, see [Azure SQL Database Firewall](/documentation/articles/sql-database-firewall-configure). You may have to open some additional TCP ports if you are making connections inside the Azure cloud boundary. For more information, see the **V12 of SQL Database: Outside vs inside** section of [Ports beyond 1433 for ADO.NET 4.5 and SQL Database V12](/documentation/articles/sql-database-develop-direct-route-ports-adonet-v12)
 
 
 ## Server-level firewall rules
 
-Server-level firewall rules can be created and managed through the Microsoft Azure Management Portal, Transact-SQL, Azure PowerShell, or REST API.
+Server-level firewall rules can be created and managed through the Windows Azure Management Portal, Transact-SQL, Azure PowerShell, or REST API.
 
-### Manage server-level firewall rules through the New Azure Portal
+### Manage server-level firewall rules through the New Azure Management Portal
 
 
-[AZURE.INCLUDE [sql-database-include-ip-address-22-v12portal](../../includes/sql-database-include-ip-address-22-v12portal.md)]
+[AZURE.INCLUDE [sql-database-include-ip-address-22-v12portal](../includes/sql-database-include-ip-address-22-v12portal.md)]
 
 
 ## Manage server-level firewall rules through Management Portal 
@@ -89,7 +85,7 @@ Server-level firewall rules can be created and managed through the Microsoft Azu
 
 	To create or update a server-level firewall rule, execute the POST method using the following:
  
-		https://management.core.windows.net:8443/{subscriptionId}/services/sqlservers/servers/Contoso/firewallrules
+		https://management.core.chinacloudapi.cn:8443/{subscriptionId}/services/sqlservers/servers/Contoso/firewallrules
 	
 	Request Body
 
@@ -102,7 +98,7 @@ Server-level firewall rules can be created and managed through the Microsoft Azu
 
 	To remove an existing server-level firewall rule, execute the DELETE method using the following:
 	 
-		https://management.core.windows.net:8443/{subscriptionId}/services/sqlservers/servers/Contoso/firewallrules/ContosoFirewallRule
+		https://management.core.chinacloudapi.cn:8443/{subscriptionId}/services/sqlservers/servers/Contoso/firewallrules/ContosoFirewallRule
  
 ## Database-level firewall rules
 
@@ -120,23 +116,23 @@ Server-level firewall rules can be created and managed through the Microsoft Azu
 
 ## Manage firewall rules using the Service Management REST API
 
-* [Create Firewall Rule](https://msdn.microsoft.com/library/azure/dn505712.aspx)
-* [Delete Firewall Rule](https://msdn.microsoft.com/library/azure/dn505706.aspx)
-* [Get Firewall Rule](https://msdn.microsoft.com/library/azure/dn505698.aspx)
-* [List Firewall Rules](https://msdn.microsoft.com/library/azure/dn505715.aspx)
+* [Create Firewall Rule](https://msdn.microsoft.com/zh-cn/library/azure/dn505712.aspx)
+* [Delete Firewall Rule](https://msdn.microsoft.com/zh-cn/library/azure/dn505706.aspx)
+* [Get Firewall Rule](https://msdn.microsoft.com/zh-cn/library/azure/dn505698.aspx)
+* [List Firewall Rules](https://msdn.microsoft.com/zh-cn/library/azure/dn505715.aspx)
 
 ## Manage firewall rules using PowerShell
 
-* [New-AzureSqlDatabaseServerFirewallRule](https://msdn.microsoft.com/library/azure/dn546724.aspx)
-* [Remove-AzureSqlDatabaseServerFirewallRule](https://msdn.microsoft.com/library/azure/dn546727.aspx)
-* [Set-AzureSqlDatabaseServerFirewallRule](https://msdn.microsoft.com/library/azure/dn546739.aspx)
-* [Get-AzureSqlDatabaseServerFirewallRule](https://msdn.microsoft.com/library/azure/dn546731.aspx)
+* [New-AzureSqlDatabaseServerFirewallRule](https://msdn.microsoft.com/zh-cn/library/azure/dn546724.aspx)
+* [Remove-AzureSqlDatabaseServerFirewallRule](https://msdn.microsoft.com/zh-cn/library/azure/dn546727.aspx)
+* [Set-AzureSqlDatabaseServerFirewallRule](https://msdn.microsoft.com/zh-cn/library/azure/dn546739.aspx)
+* [Get-AzureSqlDatabaseServerFirewallRule](https://msdn.microsoft.com/zh-cn/library/azure/dn546731.aspx)
  
 ## Next steps
 
-For a tutorial on creating a database, see [Create your first Azure SQL Database](sql-database-get-started.md).
-For help in connecting to an Azure SQL database from open source or third-party applications, see [Guidelines for Connecting to Azure SQL Database Programmatically](https://msdn.microsoft.com/library/azure/ee336282.aspx).
-To understand how to navigate to databases see [Managing Databases and Logins in Azure SQL Database](https://msdn.microsoft.com/library/azure/ee336235.aspx).
+For a tutorial on creating a database, see [Create your first Azure SQL Database](/documentation/articles/sql-database-get-started).
+For help in connecting to an Azure SQL database from open source or third-party applications, see [Guidelines for Connecting to Azure SQL Database Programmatically](https://msdn.microsoft.com/zh-cn/library/azure/ee336282.aspx).
+To understand how to navigate to databases see [Managing Databases and Logins in Azure SQL Database](https://msdn.microsoft.com/zh-cn/library/azure/ee336235.aspx).
 
 <!--Image references-->
 [1]: ./media/sql-database-configure-firewall-settings/AzurePortalBrowseForFirewall.png

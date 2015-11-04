@@ -7,19 +7,15 @@ authors="cristy"
 manager="timlt"
 editor=""/>
 <tags
-ms.service="cloud-services"
-ms.workload="tbd"
-ms.tgt_pltfrm="na"
-ms.devlang="na"
-ms.topic="article"
-ms.date="06/11/2015"
-ms.author="cristyg"/>
+	ms.service="cloud-services"
+	ms.date="06/11/2015"
+	wacn.date=""/>
 
 # Configure Local Storage Resources
 
-A local storage resource is a reserved directory in the file system of the virtual machine in which an instance of a role is running. You can store information in your virtual machine instance so that code running in the instance can access the local storage resource when it needs to write to or read from a file. For example, a local storage resource can be used to cache data that may need to be accessed again while the service is running in Azure. You can also configure local storage resource to store files during startup. For more information on configuring local storage resources for startup, see [Using Local Storage to Store Files During Startup](https://msdn.microsoft.com/library/azure/hh974419.aspx)
+A local storage resource is a reserved directory in the file system of the virtual machine in which an instance of a role is running. You can store information in your virtual machine instance so that code running in the instance can access the local storage resource when it needs to write to or read from a file. For example, a local storage resource can be used to cache data that may need to be accessed again while the service is running in Azure. You can also configure local storage resource to store files during startup. For more information on configuring local storage resources for startup, see [Using Local Storage to Store Files During Startup](https://msdn.microsoft.com/zh-cn/library/azure/hh974419.aspx)
 
-A local storage resource is declared in the service definition file. You can declare any number of local storage resources for a role. Each local storage resource is reserved for every instance of that role. The minimum amount of disk space that you can allocate for a local storage resource is 1 MB. The maximum amount that you can allocate for any given local resource depends on the size of the virtual machine that is specified for the role. Each virtual machine size has a corresponding total storage allocation, and the total space allocated for all local storage resources declared for a role cannot exceed the maximum size allotted for that virtual machine size. For more information about the maximum amount of local disk space that is allotted for each virtual machine size, see [Configure Sizes for Cloud Services](https://msdn.microsoft.com/library/azure/ee814754.aspx).
+A local storage resource is declared in the service definition file. You can declare any number of local storage resources for a role. Each local storage resource is reserved for every instance of that role. The minimum amount of disk space that you can allocate for a local storage resource is 1 MB. The maximum amount that you can allocate for any given local resource depends on the size of the virtual machine that is specified for the role. Each virtual machine size has a corresponding total storage allocation, and the total space allocated for all local storage resources declared for a role cannot exceed the maximum size allotted for that virtual machine size. For more information about the maximum amount of local disk space that is allotted for each virtual machine size, see [Configure Sizes for Cloud Services](https://msdn.microsoft.com/zh-cn/library/azure/ee814754.aspx).
 
 > [AZURE.NOTE]
 >
@@ -54,13 +50,13 @@ The following service definition file shows two local storage resources that are
       </WebRole>
     </ServiceDefinition>
 
-For more information about the service definition file, see [Azure Service Definition Schema (.csdef File)](https://msdn.microsoft.com/library/azure/ee758711.aspx).
+For more information about the service definition file, see [Azure Service Definition Schema (.csdef File)](https://msdn.microsoft.com/zh-cn/library/azure/ee758711.aspx).
 
-> [AZURE.NOTE] If you are using the Azure Tools for Microsoft Visual Studio, you can define a local storage resource within the **Properties** pages for the role. For more information, see [Configuring the Azure Application with Visual Studio](https://msdn.microsoft.com/library/ee405486.aspx).
+> [AZURE.NOTE] If you are using the Azure Tools for Microsoft Visual Studio, you can define a local storage resource within the **Properties** pages for the role. For more information, see [Configuring the Azure Application with Visual Studio](https://msdn.microsoft.com/zh-cn/library/ee405486.aspx).
 
 ## Accessing a local storage resource programmatically
 
-To access the local storage resource, the application must retrieve the path from the [GetLocalResource](https://msdn.microsoft.com/library/azure/microsoft.windowsazure.serviceruntime.roleenvironment.getlocalresource.aspx) method. You can then use standard file read and write operations to read and write the contents of the local storage resource. For example, the following sample shows how to read the contents of a file called **MyTest.txt** from the local storage resource, and display it on the home page of an MVC 3 application:
+To access the local storage resource, the application must retrieve the path from the [GetLocalResource](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.serviceruntime.roleenvironment.getlocalresource.aspx) method. You can then use standard file read and write operations to read and write the contents of the local storage resource. For example, the following sample shows how to read the contents of a file called **MyTest.txt** from the local storage resource, and display it on the home page of an MVC 3 application:
 
     using Microsoft.WindowsAzure.ServiceRuntime;
     using System;
@@ -86,9 +82,9 @@ To access the local storage resource, the application must retrieve the path fro
 
 ## Accessing a local storage resource at runtime
 
-The Azure Managed Library provides classes for accessing the local storage resource from within code that is running in a role instance. The [RoleEnvironment.GetLocalResource](https://msdn.microsoft.com/library/microsoft.windowsazure.serviceruntime.roleenvironment.getlocalresource.aspx) method returns a reference to a named [LocalResource](https://msdn.microsoft.com/library/microsoft.windowsazure.serviceruntime.localresource.aspx) object.
+The Azure Managed Library provides classes for accessing the local storage resource from within code that is running in a role instance. The [RoleEnvironment.GetLocalResource](https://msdn.microsoft.com/zh-cn/library/microsoft.windowsazure.serviceruntime.roleenvironment.getlocalresource.aspx) method returns a reference to a named [LocalResource](https://msdn.microsoft.com/zh-cn/library/microsoft.windowsazure.serviceruntime.localresource.aspx) object.
 
-Because the **LocalResource** object represents a directory, you can read from it and write to it by using the standard .NET file I/O classes. To determine the path to the local storage resource's directory, use the [LocalResource.RootPath](https://msdn.microsoft.com/library/microsoft.windowsazure.serviceruntime.localresource.rootpath.aspx) property. This property returns the full path to the local storage resource, including the named resource directory. For example, if your service is running in the development environment, the local storage resource is defined within your local file system, and the **RootPath** property would return a value similar to the following:
+Because the **LocalResource** object represents a directory, you can read from it and write to it by using the standard .NET file I/O classes. To determine the path to the local storage resource's directory, use the [LocalResource.RootPath](https://msdn.microsoft.com/zh-cn/library/microsoft.windowsazure.serviceruntime.localresource.rootpath.aspx) property. This property returns the full path to the local storage resource, including the named resource directory. For example, if your service is running in the development environment, the local storage resource is defined within your local file system, and the **RootPath** property would return a value similar to the following:
 
 
     C:\Users\myaccount\AppData\Local\dftmp\s0\deployment(1)\res\deployment(1).MyService.MyService_WebRole.0\directory\localStoreOne\
@@ -102,4 +98,4 @@ Code running in a role instance can access a local storage resource that is defi
 
 ## Next steps
 
-- [Set Up a Cloud Service for Azure](https://msdn.microsoft.com/library/azure/hh124108.aspx)
+- [Set Up a Cloud Service for Azure](https://msdn.microsoft.com/zh-cn/library/azure/hh124108.aspx)

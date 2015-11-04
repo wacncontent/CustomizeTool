@@ -1,5 +1,5 @@
 <properties
-			pageTitle="How to use Azure File storage with Windows | Microsoft Azure"
+			pageTitle="How to use Azure File storage with Windows | Windows Azure"
             description="Create a file share in the cloud and manage file content. Mount a file share from an Azure VM or from an on-premises application."
             services="storage"
             documentationCenter=".net"
@@ -27,17 +27,17 @@ Applications running in Azure can easily mount file shares from Azure virtual ma
 
 File storage is built on the same technology as Blob, Table, and Queue storage, so File storage is able to leverage the existing availability, durability, scalability, and geo-redundancy that is built into the Azure storage platform.
 
-For information on using File storage with Linux, see [How to use Azure File Storage with Linux](storage-how-to-use-files-linux.md).
+For information on using File storage with Linux, see [How to use Azure File Storage with Linux](/documentation/articles/storage-how-to-use-files-linux).
 
-For information on scalability targets for File storage, see [Azure Storage Scalability and Performance Targets](storage-scalability-targets.md#scalability-targets-for-standard-storage-accounts).
+For information on scalability targets for File storage, see [Azure Storage Scalability and Performance Targets](/documentation/articles/storage-scalability-targets#scalability-targets-for-standard-storage-accounts).
 
-[AZURE.INCLUDE [storage-dotnet-client-library-version-include](../../includes/storage-dotnet-client-library-version-include.md)]
+[AZURE.INCLUDE [storage-dotnet-client-library-version-include](../includes/storage-dotnet-client-library-version-include.md)]
 
-[AZURE.INCLUDE [storage-file-concepts-include](../../includes/storage-file-concepts-include.md)]
+[AZURE.INCLUDE [storage-file-concepts-include](../includes/storage-file-concepts-include.md)]
 
 ## About this tutorial
 
-This getting started tutorial demonstrates the basics of using Microsoft Azure File storage. In this tutorial, we will:
+This getting started tutorial demonstrates the basics of using Windows Azure File storage. In this tutorial, we will:
 
 - Use Azure PowerShell to show how to create a new Azure File share, add a directory, upload a local file to the share, and list the files in the directory.
 - Mount the file share from an Azure virtual machine, just as you would mount any SMB share.
@@ -48,7 +48,7 @@ This getting started tutorial demonstrates the basics of using Microsoft Azure F
 	- Copy a file to another file in the same storage account.
 	- Copy a file to a blob in the same storage account.
 
-File storage is now supported for all storage accounts, so you can either use an existing storage account, or you can create a new storage account. See [How to create, manage, or delete a storage account](storage-create-storage-account.md#create-a-storage-account) for information on creating a new storage account.
+File storage is now supported for all storage accounts, so you can either use an existing storage account, or you can create a new storage account. See [How to create, manage, or delete a storage account](/documentation/articles/storage-create-storage-account#create-a-storage-account) for information on creating a new storage account.
 
 ## Use the Azure preview portal to manage a file share
 
@@ -65,7 +65,7 @@ Next, we'll use Azure PowerShell to create a file share. Once the file share has
 
 ### Install the PowerShell cmdlets for Azure Storage
 
-To prepare to use PowerShell, download and install the Azure PowerShell cmdlets. See [How to install and configure Azure PowerShell](../install-configure-powershell.md) for the install point and installation instructions.
+To prepare to use PowerShell, download and install the Azure PowerShell cmdlets. See [How to install and configure Azure PowerShell](/documentation/articles/install-configure-powershell) for the install point and installation instructions.
 
 > [AZURE.NOTE] It's recommended that you download and install or upgrade to the latest Azure PowerShell module.
 
@@ -73,7 +73,7 @@ Open an Azure PowerShell window by clicking **Start** and typing **Azure PowerSh
 
 ### Create a context for your storage account and key
 
-Now, create the storage account context. The context encapsulates the storage account name and account key. For instructions on copying your account key from the Azure portal, see [View, copy, and regenerate storage access keys](storage-create-storage-account.md#view-copy-and-regenerate-storage-access-keys).
+Now, create the storage account context. The context encapsulates the storage account name and account key. For instructions on copying your account key from the Azure Management Portal, see [View, copy, and regenerate storage access keys](/documentation/articles/storage-create-storage-account#view-copy-and-regenerate-storage-access-keys).
 
 Replace `storage-account-name` and `storage-account-key` with your storage account name and key in the following example.
 
@@ -89,7 +89,7 @@ Next, create the new share, named `logs`.
 
 You now have a file share in File storage. Next we'll add a directory and a file.
 
-> [AZURE.IMPORTANT] The name of your file share must be all lowercase. For complete details about naming file shares and files, see [Naming and Referencing Shares, Directories, Files, and Metadata](https://msdn.microsoft.com/library/azure/dn167011.aspx).
+> [AZURE.IMPORTANT] The name of your file share must be all lowercase. For complete details about naming file shares and files, see [Naming and Referencing Shares, Directories, Files, and Metadata](https://msdn.microsoft.com/zh-cn/library/azure/dn167011.aspx).
 
 ### Create a directory in the file share
 
@@ -144,15 +144,15 @@ When a client accesses File storage, the SMB version used depends on the SMB ver
 
 To demonstrate how to mount an Azure file share, we'll now create an Azure virtual machine running Windows, and remote into it to mount the share.
 
-1. First, create a new Azure virtual machine by following the instructions in [Create a virtual machine running Windows Server](../virtual-machines-windows-tutorial.md).
-2. Next, remote into the virtual machine by following the instructions in [How to log on to a virtual machine running Windows Server](../virtual-machines-log-on-windows-server.md).
+1. First, create a new Azure virtual machine by following the instructions in [Create a virtual machine running Windows Server](/documentation/articles/virtual-machines-windows-tutorial).
+2. Next, remote into the virtual machine by following the instructions in [How to log on to a virtual machine running Windows Server](/documentation/articles/virtual-machines-log-on-windows-server).
 3. Open a PowerShell window on the virtual machine.
 
 ### Persist your storage account credentials for the virtual machine
 
 Before mounting to the file share, first persist your storage account credentials on the virtual machine. This step allows Windows to automatically reconnect to the file share when the virtual machine reboots. To persist your account credentials, run the `cmdkey` command from the PowerShell window on the virtual machine. Replace `<storage-account-name>` with the name of your storage account, and `<storage-account-key>` with your storage account key.
 
-	cmdkey /add:<storage-account-name>.file.core.windows.net /user:<storage-account-name> /pass:<storage-account-key>
+	cmdkey /add:<storage-account-name>.file.core.chinacloudapi.cn /user:<storage-account-name> /pass:<storage-account-key>
 
 Windows will now reconnect to your file share when the virtual machine reboots. You can verify that the share has been reconnected by running the `net use` command from a PowerShell window.
 
@@ -162,20 +162,20 @@ Note that credentials are persisted only in the context in which `cmdkey` runs. 
 
 Once you have a remote connection to the virtual machine, you can run the `net use` command to mount the file share, using the following syntax. Replace `<storage-account-name>` with the name of your storage account, and `<share-name>` with the name of your File storage share.
 
-    net use <drive-letter>: \\<storage-account-name>.file.core.windows.net\<share-name>
+    net use <drive-letter>: \\<storage-account-name>.file.core.chinacloudapi.cn\<share-name>
 
 	example :
-	net use z: \\samples.file.core.windows.net\logs
+	net use z: \\samples.file.core.chinacloudapi.cn\logs
 
 Since you persisted your storage account credentials in the previous step, you do not need to provide them with the `net use` command. If you have not already persisted your credentials, then include them as a parameter passed to the `net use` command, as shown in the following example.
 
-    net use <drive-letter>: \\<storage-account-name>.file.core.windows.net\<share-name> /u:<storage-account-name> <storage-account-key>
+    net use <drive-letter>: \\<storage-account-name>.file.core.chinacloudapi.cn\<share-name> /u:<storage-account-name> <storage-account-key>
 
 	example :
-	net use z: \\samples.file.core.windows.net\logs /u:samples <storage-account-key>
+	net use z: \\samples.file.core.chinacloudapi.cn\logs /u:samples <storage-account-key>
 
 You can now work with the File Storage share from the virtual machine as you
-would with any other drive. You can issue standard file commands from the command prompt, or view the mounted share and its contents from File Explorer. You can also run code within the virtual machine that accesses the file share using standard Windows file I/O APIs, such as those provided by the [System.IO namespaces](http://msdn.microsoft.com/library/gg145019.aspx) in the .NET Framework.
+would with any other drive. You can issue standard file commands from the command prompt, or view the mounted share and its contents from File Explorer. You can also run code within the virtual machine that accesses the file share using standard Windows file I/O APIs, such as those provided by the [System.IO namespaces](http://msdn.microsoft.com/zh-cn/library/gg145019.aspx) in the .NET Framework.
 
 You can also mount the file share from a role running in an Azure cloud service by remoting into the role.
 
@@ -227,7 +227,7 @@ Open the program.cs file from Solution Explorer, and add the following namespace
 
 ### Retrieve your connection string programmatically
 
-You can retrieve your saved credentials from the app.config file using either the `Microsoft.WindowsAzure.CloudConfigurationManager` class, or the `System.Configuration.ConfigurationManager `class. The Microsoft Azure Configuration Manager package, which includes the `Microsoft.WindowsAzure.CloudConfigurationManager` class, is available on [Nuget](https://www.nuget.org/packages/Microsoft.WindowsAzure.ConfigurationManager).
+You can retrieve your saved credentials from the app.config file using either the `Microsoft.WindowsAzure.CloudConfigurationManager` class, or the `System.Configuration.ConfigurationManager `class. The Windows Azure Configuration Manager package, which includes the `Microsoft.WindowsAzure.CloudConfigurationManager` class, is available on [Nuget](https://www.nuget.org/packages/Microsoft.WindowsAzure.ConfigurationManager).
 
 The example here shows how to retrieve your credentials using the `CloudConfigurationManager` class and encapsulate them with the `CloudStorageAccount` class. Add the following code to the `Main()` method in program.cs.
 
@@ -354,13 +354,13 @@ The following example creates a shared access policy on a share, and then uses t
         Console.WriteLine(fileSas.DownloadText());
     }
 
-For more information about creating and using shared access signatures, see [Shared Access Signatures: Understanding the SAS model](storage-dotnet-shared-access-signature-part-1.md) and [Create and use a SAS with the Blob service](storage-dotnet-shared-access-signature-part-2.md).
+For more information about creating and using shared access signatures, see [Shared Access Signatures: Understanding the SAS model](/documentation/articles/storage-dotnet-shared-access-signature-part-1) and [Create and use a SAS with the Blob service](/documentation/articles/storage-dotnet-shared-access-signature-part-2).
 
 ### Copy files
 
 Beginning with version 5.x of the Azure Storage Client Library, you can copy a file to another file, a file to a blob, or a blob to a file. In the next sections, we demonstrate how to perform these copy operations programmatically.
 
-You can also use AzCopy to copy one file to another or to copy a blob to a file or vice versa. See [How to use AzCopy with Microsoft Azure Storage](storage-use-azcopy.md#copy-files-in-azure-file-storage-with-azcopy-preview-version-only) for details about copying files with AzCopy.
+You can also use AzCopy to copy one file to another or to copy a blob to a file or vice versa. See [How to use AzCopy with Windows Azure Storage](/documentation/articles/storage-use-azcopy#copy-files-in-azure-file-storage-with-azcopy-preview-version-only) for details about copying files with AzCopy.
 
 > [AZURE.NOTE] If you are copying a blob to a file, or a file to a blob, you must use a shared access signature (SAS) to authenticate the source object, even if you are copying within the same storage account.
 
@@ -461,7 +461,7 @@ You can copy a blob to a file in the same way. If the source object is a blob, t
 
 Azure Storage Analytics now supports metrics for File storage. With metrics data, you can trace requests and diagnose issues.
 
-You can enable metrics for File storage from the Azure portal. You can also enable metrics programmatically by calling the Set File Service Properties operation via the REST API, or one of its analogues in the Storage Client Library.
+You can enable metrics for File storage from the Azure Management Portal. You can also enable metrics programmatically by calling the Set File Service Properties operation via the REST API, or one of its analogues in the Storage Client Library.
 
 ## File storage FAQ
 
@@ -521,22 +521,22 @@ See these links for more information about Azure File storage.
 
 ### Conceptual articles
 
-- [How to use Azure File Storage with Linux](storage-how-to-use-files-linux.md)
+- [How to use Azure File Storage with Linux](/documentation/articles/storage-how-to-use-files-linux)
 
 ### Tooling support for File storage
 
-- [Using Azure PowerShell with Azure Storage](storage-powershell-guide-full.md)
-- [How to use AzCopy with Microsoft Azure Storage](storage-use-azcopy.md)
-- [Using the Azure CLI with Azure Storage](storage-azure-cli.md#create-and-manage-file-shares)
+- [Using Azure PowerShell with Azure Storage](/documentation/articles/storage-powershell-guide-full)
+- [How to use AzCopy with Windows Azure Storage](/documentation/articles/storage-use-azcopy)
+- [Using the Azure CLI with Azure Storage](/documentation/articles/storage-azure-cli#create-and-manage-file-shares)
 
 ### Reference
 
-- [Storage Client Library for .NET reference](https://msdn.microsoft.com/library/azure/dn261237.aspx)
-- [File Service REST API reference](http://msdn.microsoft.com/library/azure/dn167006.aspx)
+- [Storage Client Library for .NET reference](https://msdn.microsoft.com/zh-cn/library/azure/dn261237.aspx)
+- [File Service REST API reference](http://msdn.microsoft.com/zh-cn/library/azure/dn167006.aspx)
 
 ### Blog posts
 
 - [Azure File storage is now generally available](http://go.microsoft.com/fwlink/?LinkID=626728&clcid=0x409)
 - [Deep dive with Azure File storage](http://go.microsoft.com/fwlink/?LinkID=626729&clcid=0x409) 
-- [Introducing Microsoft Azure File Service](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/12/introducing-microsoft-azure-file-service.aspx)
-- [Persisting connections to Microsoft Azure Files](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/27/persisting-connections-to-microsoft-azure-files.aspx)
+- [Introducing Windows Azure File Service](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/12/introducing-microsoft-azure-file-service.aspx)
+- [Persisting connections to Windows Azure Files](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/27/persisting-connections-to-microsoft-azure-files.aspx)

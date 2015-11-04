@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="XEvent Event File code for SQL Database | Microsoft Azure" 
+	pageTitle="XEvent Event File code for SQL Database | Windows Azure" 
 	description="Provides a Transact-SQL code sample that is made easy and quick by use of the Ring Buffer target, in Azure SQL Database." 
 	services="sql-database" 
 	documentationCenter="" 
@@ -9,20 +9,16 @@
 	tags=""/>
 
 
-<tags 
-	ms.service="sql-database" 
-	ms.workload="data-management" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="09/30/2015" 
-	ms.author="genemi"/>
+<tags
+	ms.service="sql-database"
+	ms.date="09/30/2015"
+	wacn.date=""/>
 
 
 # Ring Buffer target code for extended events in SQL Database
 
 
-You want a complete code sample for the easiest quick way to capture and report information for an extended event during a test. The easiest target for extended event data is the [Ring Buffer target](http://msdn.microsoft.com/library/ff878182.aspx).
+You want a complete code sample for the easiest quick way to capture and report information for an extended event during a test. The easiest target for extended event data is the [Ring Buffer target](http://msdn.microsoft.com/zh-cn/library/ff878182.aspx).
 
 
 This topic presents a Transact-SQL code sample that:
@@ -51,16 +47,16 @@ This topic presents a Transact-SQL code sample that:
 ## Prerequisites
 
 
-- An Azure account and subscription. You can sign up for a [free trial](http://azure.microsoft.com/pricing/free-trial/).
+- An Azure account and subscription. You can sign up for a [trial](/pricing/1rmb-trial/).
 
 
 - Any database you can create a table in.
- - Optionally you can [create an **AdventureWorksLT** demonstration database](sql-database-get-started.md) in minutes.
+ - Optionally you can [create an **AdventureWorksLT** demonstration database](/documentation/articles/sql-database-get-started) in minutes.
 
 
 - SQL Server Management Studio (ssms.exe), its August 2015 Preview or a later version. 
 You can download the latest ssms.exe from:
- - [A link in topic.](http://msdn.microsoft.com/library/mt238290.aspx)
+ - [A link in topic.](http://msdn.microsoft.com/zh-cn/library/mt238290.aspx)
  - [A direct link to the download.](http://go.microsoft.com/fwlink/?linkid=616025)
  - Microsoft recommends that you update your ssms.exe periodically.
 
@@ -362,18 +358,18 @@ ALTER EVENT SESSION eventsession_gm_azuresqldb51
 The primary topic for extended events on Azure SQL Database is:
 
 
-- [Extended event considerations in SQL Database](sql-database-xevent-db-diff-from-svr.md), which contrasts some aspects of extended events that differ between Azure SQL Database versus Microsoft SQL Server.
+- [Extended event considerations in SQL Database](/documentation/articles/sql-database-xevent-db-diff-from-svr), which contrasts some aspects of extended events that differ between Azure SQL Database versus Microsoft SQL Server.
 
 
 Other code sample topics for extended events are available at the following links. However, you must routinely check any sample to see whether the sample targets Microsoft SQL Server versus Azure SQL Database. Then you can decide whether minor changes are needed to run the sample.
 
 
-- Code sample for Azure SQL Database: [Event File target code for extended events in SQL Database](sql-database-xevent-code-event-file.md)
+- Code sample for Azure SQL Database: [Event File target code for extended events in SQL Database](/documentation/articles/sql-database-xevent-code-event-file)
 
 
 <!--
 ('lock_acquired' event.)
 
-- Code sample for SQL Server: [Determine Which Queries Are Holding Locks](http://msdn.microsoft.com/library/bb677357.aspx)
-- Code sample for SQL Server: [Find the Objects That Have the Most Locks Taken on Them](http://msdn.microsoft.com/library/bb630355.aspx)
+- Code sample for SQL Server: [Determine Which Queries Are Holding Locks](http://msdn.microsoft.com/zh-cn/library/bb677357.aspx)
+- Code sample for SQL Server: [Find the Objects That Have the Most Locks Taken on Them](http://msdn.microsoft.com/zh-cn/library/bb630355.aspx)
 -->

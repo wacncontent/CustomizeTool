@@ -33,7 +33,7 @@ You can download the existing ARM template for creating a VNet and two subnets f
 
 		{
 		  "location": {
-		    "value": "China North"
+		    "value": "Central US"
 		  },
 		  "vnetName": {
 		      "value": "TestVNet"

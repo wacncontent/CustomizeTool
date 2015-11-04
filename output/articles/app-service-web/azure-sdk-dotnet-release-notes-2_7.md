@@ -24,7 +24,7 @@ The document also contain the release notes for the Azure SDK for .NET 2.7.1 rel
 
 Azure SDK 2.7 is only supported in Visual Studio 2015 and Visual Studio 2013. [Azure SDK 2.6](/downloads/) is the last supported SDK for Visual Studio 2012.
 
-For detailed information about this release, see [Azure SDK 2.7 announcement post](https://azure.microsoft.com/blog/2015/07/20/announcing-the-azure-sdk-2-7-for-net/) and [Azure SDK 2.7.1 announcement post](http://go.microsoft.com/fwlink/?LinkId=623850).
+For detailed information about this release, see [Azure SDK 2.7 announcement post](https://azure.microsoft.com/blog/2015/07/20/announcing-the-azure-sdk-2-7-for-net/) and [Azure SDK 2.7.1 announcement post](https://azure.microsoft.com/zh-cn/blog/announcing-the-azure-sdk-2-7-1-for-net/).
 
 ##Azure SDK for .NET 2.7
 
@@ -45,7 +45,7 @@ General bug fixes and improvements. For detail on updates and features, please r
 
 ###HDInsight Tools 
 
-In this release the following updates were made. These updates are in preview. For more information, see [this blog](http://go.microsoft.com/fwlink/?LinkId=619108).
+In this release the following updates were made. These updates are in preview. For more information, see [this blog](/documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started/).
 
 - Hive graphs for Hive on Tez jobs
 - Full Hive DML IntelliSense support
@@ -54,8 +54,8 @@ In this release the following updates were made. These updates are in preview. F
 
 ####Breaking changes
 
-- Old **Storm** project must be upgraded when using this version of the tools. For more information, see [this blog](http://go.microsoft.com/fwlink/?LinkId=619108).
-- Visual Studio Web Express is no longer supported. For more information, see [this blog](http://go.microsoft.com/fwlink/?LinkId=619108).
+- Old **Storm** project must be upgraded when using this version of the tools. For more information, see [this blog](/documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started/).
+- Visual Studio Web Express is no longer supported. For more information, see [this blog](/documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started/).
 
 ###Azure Websites Tools
 
@@ -104,7 +104,7 @@ If you’re using an Azure Resource Group project from a previous version of the
 
 ###Azure Data Factory Tools for Visual Studio 
 
-Introducing **Azure Data Factory Tools** for Visual Studio. Below are the enabled features. See [this blog](http://go.microsoft.com/fwlink/?LinkId=617530) for more information.
+Introducing **Azure Data Factory Tools** for Visual Studio. Below are the enabled features. See [this blog](/documentation/services/data-factory/) for more information.
 
 - **Template based authoring**: Select use-cased based templates, data movement templates or data processing templates to deploy an end-to-end data integration solution and get started hands-on quickly with Data Factory. 
 - **Integration with Solution Explorer for authoring and deploying Data Factory entities**: Create & deploy pipelines and related entities as Visual Studio projects. 
@@ -119,7 +119,7 @@ Introducing **Azure Data Factory Tools** for Visual Studio. Below are the enable
 The following section contains updates that were introduced with the Azure SDK for .NET 2.7.1 release.
 ###HDInsight Tools 
 
-For more detailed explanation about HDInsight tools updates, see [this blog](http://go.microsoft.com/fwlink/?LinkId=623831).
+For more detailed explanation about HDInsight tools updates, see [this blog](https://azure.microsoft.com/zh-cn/blog/announcing-the-azure-sdk-2-7-1-for-net/).
 
 - Hive Job Operator View (a new feature)
 
@@ -139,7 +139,7 @@ For more detailed explanation about HDInsight tools updates, see [this blog](htt
 
 	We have improved the IntelliSense by adding more user friendly suggestions. For example, table alias can now also be suggested in IntelliSense so you can write your query more easily. Also, we have improved the Hive metadata loading so it will just take several seconds to list all the databases, tables and columns of your Hive metastore.
 
-For more detailed explanation about HDInsight tools updates, see [this blog](http://go.microsoft.com/fwlink/?LinkId=623831).
+For more detailed explanation about HDInsight tools updates, see [this blog](https://azure.microsoft.com/zh-cn/blog/announcing-the-azure-sdk-2-7-1-for-net/).
 
 ###Improvements in Visual Studio 2013
 
@@ -153,7 +153,7 @@ Installing the Azure SDK 2.6 or 2.7.1 for Visual Studio Community 2013 on a non-
 LightSwitch projects are not compatibile with this release. This issue will be resolved with the next SDK release.
 
 ##Also see
-[Azure SDK 2.7.1 announcement post](http://go.microsoft.com/fwlink/?LinkId=623850)
+[Azure SDK 2.7.1 announcement post](https://azure.microsoft.com/zh-cn/blog/announcing-the-azure-sdk-2-7-1-for-net/)
 
 [Azure SDK 2.7 announcement post](https://azure.microsoft.com/blog/2015/07/20/announcing-the-azure-sdk-2-7-for-net/)
 

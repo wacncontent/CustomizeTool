@@ -24,7 +24,7 @@ You can monitor the number of queued encoding jobs, failed encoding tasks, activ
 
 ##<a id="configuremonitoring"></a>How to: Monitoring a Media Services account
 
-1. In the [Management Portal](http://go.microsoft.com/fwlink/?LinkID=256666), click **Media Services**, and then click the Media Services account name to open the dashboard. 
+1. In the [Management Portal](https://manage.windowsazure.cn/), click **Media Services**, and then click the Media Services account name to open the dashboard. 
 
 	![MediaServices_Dashboard][dashboard]
 

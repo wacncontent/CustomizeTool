@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Line of business application Phase 3 | Microsoft Azure" 
+	pageTitle="Line of business application Phase 3 | Windows Azure" 
 	description="Create the computers and the SQL Server cluster and enable Availability Groups in Phase 3 of the line of business application in Azure." 
 	documentationCenter=""
 	services="virtual-machines" 
@@ -8,25 +8,21 @@
 	editor=""
 	tags="azure-resource-manager"/>
 
-<tags 
-	ms.service="virtual-machines" 
-	ms.workload="infrastructure-services" 
-	ms.tgt_pltfrm="Windows" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="08/11/2015" 
-	ms.author="josephd"/>
+<tags
+	ms.service="virtual-machines"
+	ms.date="08/11/2015"
+	wacn.date=""/>
 
 # Line of Business Application Workload Phase 3: Configure SQL Server infrastructure
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-rm-include.md)] classic deployment model.
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] classic deployment model.
 
 
 In this phase of deploying a high-availability line of business application in Azure infrastructure services, you configure the two computers running SQL Server and the cluster majority node computer, and then combine them into a Windows Server cluster. 
 
-You must complete this phase before moving on to [Phase 4](virtual-machines-workload-high-availability-LOB-application-phase4.md). See [Deploy a High-Availability Line of Business Application in Azure](virtual-machines-workload-high-availability-LOB-application-overview.md) for all of the phases.
+You must complete this phase before moving on to [Phase 4](/documentation/articles/virtual-machines-workload-high-availability-LOB-application-phase4). See [Deploy a High-Availability Line of Business Application in Azure](/documentation/articles/virtual-machines-workload-high-availability-LOB-application-overview) for all of the phases.
 
-> [AZURE.NOTE] These instructions use a SQL Server image in the Azure image gallery and you are charged ongoing costs for the use of the SQL Server license. It is also possible to create virtual machines in Azure and install your own SQL Server licenses, but you must have Software Assurance and License Mobility to use your SQL Server license on a virtual machine, including an Azure virtual machine. For more information about installing SQL Server on a virtual machine, see [Installation for SQL Server](https://msdn.microsoft.com/library/bb500469.aspx).
+> [AZURE.NOTE] These instructions use a SQL Server image in the Azure image gallery and you are charged ongoing costs for the use of the SQL Server license. It is also possible to create virtual machines in Azure and install your own SQL Server licenses, but you must have Software Assurance and License Mobility to use your SQL Server license on a virtual machine, including an Azure virtual machine. For more information about installing SQL Server on a virtual machine, see [Installation for SQL Server](https://msdn.microsoft.com/zh-cn/library/bb500469.aspx).
 
 ## Create the SQL Server cluster virtual machines in Azure
 
@@ -40,7 +36,7 @@ Use the following block of PowerShell commands to create the virtual machines fo
 - Table ST, for your storage accounts
 - Table A, for your availability sets
 
-Recall that you defined Table M in [Phase 2](virtual-machines-workload-high-availability-LOB-application-phase2.md) and Tables V, S, ST, and A in [Phase 1](virtual-machines-workload-high-availability-LOB-application-phase1.md).
+Recall that you defined Table M in [Phase 2](/documentation/articles/virtual-machines-workload-high-availability-LOB-application-phase2) and Tables V, S, ST, and A in [Phase 1](/documentation/articles/virtual-machines-workload-high-availability-LOB-application-phase1).
 
 > [AZURE.NOTE] This article contains commands for versions of Azure PowerShell up to *but not including* versions 1.0.0 and later. You can check your version of Azure PowerShell with the **Get-Module azure | format-table version** command. The Azure PowerShell command blocks in this article are in the process of being tested and updated to support the new cmdlets in Azure PowerShell versions 1.0.0 and later. Thank you for your patience.
 
@@ -167,7 +163,7 @@ Use the following procedure twice, once for each virtual machine running SQL Ser
 6.	Click **OK** to close the window.
 7.	In the left pane, expand the **Security folder**.
 8.	Right-click **Logins**, and then click **New login**.
-9.	In **Login name**, type *domain*\sqladmin in (in which *domain* is the name of the domain in which the sqladmin account was created in [Phase 2](virtual-machines-workload-high-availability-LOB-application-phase2.md)). 
+9.	In **Login name**, type *domain*\sqladmin in (in which *domain* is the name of the domain in which the sqladmin account was created in [Phase 2](/documentation/articles/virtual-machines-workload-high-availability-LOB-application-phase2)). 
 10.	Under **Select a page**, click **Server Roles**, click **sysadmin**, and then click **OK**.
 11.	Close SQL Server 2014 Management Studio.
 
@@ -184,7 +180,7 @@ The SQL Server service requires a port that clients use to access the database s
 
 For each of the SQL Server virtual machines, sign out as the local administrator. 
 
-For information about optimizing SQL Server performance in Azure, see [Performance Best Practices for SQL Server in Azure Virtual Machines](virtual-machines-sql-server-performance-best-practices.md). You can also disable Geo Redundant Storage (GRS) for the line of business application storage account and use storage spaces to optimize IOPs.
+For information about optimizing SQL Server performance in Azure, see [Performance Best Practices for SQL Server in Azure Virtual Machines](/documentation/articles/virtual-machines-sql-server-performance-best-practices). You can also disable Geo Redundant Storage (GRS) for the line of business application storage account and use storage spaces to optimize IOPs.
 
 ## Configure the cluster majority node server
 
@@ -208,7 +204,7 @@ SQL Server AlwaysOn Availability Groups rely on the Windows Server Failover Clus
 - The secondary virtual machine running SQL Server
 - The cluster majority node
 
-The failover cluster requires at least three virtual machines. Two machines host SQL Server, in which the secondary virtual machine is a synchronous secondary replica, ensuring zero data loss if the primary machine fails. The third virtual machine does not need to host SQL Server. The cluster majority node functions as a quorum witness in the WSFC. Because the WSFC cluster relies on a quorum to monitor health, there must always be a majority to ensure that the WSFC cluster is online. If only two machines are in a cluster, and one fails, there can be no majority when only one out of two fails. For more information, see [WSFC Quorum Modes and Voting Configuration (SQL Server)](http://msdn.microsoft.com/library/hh270280.aspx).
+The failover cluster requires at least three virtual machines. Two machines host SQL Server, in which the secondary virtual machine is a synchronous secondary replica, ensuring zero data loss if the primary machine fails. The third virtual machine does not need to host SQL Server. The cluster majority node functions as a quorum witness in the WSFC. Because the WSFC cluster relies on a quorum to monitor health, there must always be a majority to ensure that the WSFC cluster is online. If only two machines are in a cluster, and one fails, there can be no majority when only one out of two fails. For more information, see [WSFC Quorum Modes and Voting Configuration (SQL Server)](http://msdn.microsoft.com/zh-cn/library/hh270280.aspx).
 
 For both SQL Server virtual machines and for the cluster majority node, run the following command at an administrator-level Windows PowerShell prompt:
 
@@ -216,7 +212,7 @@ For both SQL Server virtual machines and for the cluster majority node, run the 
 
 Due to current non-RFC-compliant behavior by DHCP in Azure, creation of a Windows Server Failover Cluster (WSFC) cluster can fail. For details, search for "WSFC cluster behavior in Azure networking" in High Availability and Disaster Recovery for SQL Server in Azure Virtual Machines. However, there is a workaround. Use the following steps to create the cluster.
 
-1.	Log on to the primary SQL Server virtual machine with the sqladmin account created in [Phase 2](virtual-machines-workload-high-availability-LOB-application-phase2.md).
+1.	Log on to the primary SQL Server virtual machine with the sqladmin account created in [Phase 2](/documentation/articles/virtual-machines-workload-high-availability-LOB-application-phase2).
 2.	From the Start screen, type **Failover**, and then click **Failover Cluster Manager**.
 3.	In the left pane, right-click **Failover Cluster Manager**, and then click **Create Cluster**.
 4.	On the **Before You Begin** page, click **Next**.
@@ -235,7 +231,7 @@ Due to current non-RFC-compliant behavior by DHCP in Azure, creation of a Window
 17.	To add the remaining nodes to the cluster, right-click your cluster name in the left pane, and then click **Add Node**.
 18.	On the **Before You Begin** page, click **Next**. 
 19.	On the **Select Servers** page, type the name and then click **Add** to add both the secondary SQL server and cluster majority node to the cluster. After adding the two computers, click **Next**.
-If a machine cannot be added, and the error message is "the Remote Registry is not running," do the following. Log on to the machine, open the Services snap-in (services.msc), and enable the Remote Registry. For more information, see [Unable to connect to Remote Registry service](http://technet.microsoft.com/library/bb266998.aspx). 
+If a machine cannot be added, and the error message is "the Remote Registry is not running," do the following. Log on to the machine, open the Services snap-in (services.msc), and enable the Remote Registry. For more information, see [Unable to connect to Remote Registry service](http://technet.microsoft.com/zh-cn/library/bb266998.aspx). 
 20.	On the **Validation Warning** page, click **No, I do not require support from Microsoft for this cluster, and therefore do not want to run the validation tests. When I click Next, continue creating the cluster.**, and then click **Next**. 
 21.	On the **Confirmation** page, click **Next**.
 22.	On the **Summary** page, click **Finish**.
@@ -243,11 +239,11 @@ If a machine cannot be added, and the error message is "the Remote Registry is n
 
 ## Enable AlwaysOn Availability Groups
 
-The next step is to enable AlwaysOn Availability Groups using the SQL Server Configuration Manager. Note that an availability group in SQL Server differs from an Azure availability set. An availability group contains databases that are highly-available and recoverable. An Azure availability set allocates virtual machines to different fault domains. For more information about fault domains, see [Manage the Availability of Virtual Machines](virtual-machines-manage-availability.md). 
+The next step is to enable AlwaysOn Availability Groups using the SQL Server Configuration Manager. Note that an availability group in SQL Server differs from an Azure availability set. An availability group contains databases that are highly-available and recoverable. An Azure availability set allocates virtual machines to different fault domains. For more information about fault domains, see [Manage the Availability of Virtual Machines](/documentation/articles/virtual-machines-manage-availability). 
 
 Use these steps to enable AlwaysOn Availability Groups on SQL Server.
 
-1.	Log on to the primary SQL Server virtual machine with the sqladmin account created in [Phase 2](virtual-machines-workload-high-availability-LOB-application-phase2.md).
+1.	Log on to the primary SQL Server virtual machine with the sqladmin account created in [Phase 2](/documentation/articles/virtual-machines-workload-high-availability-LOB-application-phase2).
 2.	On the Start screen, type **SQL Server Configuration**, and then click **SQL Server Configuration Manager**.
 3.	In the left pane, click **SQL Server Services**.
 4.	In the contents pane, double-click **SQL Server (MSSQLSERVER)**.
@@ -262,17 +258,17 @@ This diagram shows the configuration resulting from the successful completion of
 
 ## Next step
 
-To continue with the configuration of this workload, go to [Phase 4: Configure Web Servers](virtual-machines-workload-high-availability-LOB-application-phase4.md).
+To continue with the configuration of this workload, go to [Phase 4: Configure Web Servers](/documentation/articles/virtual-machines-workload-high-availability-LOB-application-phase4).
 
 ## Additional resources
 
-[Deploy a high-availability line of business application in Azure](virtual-machines-workload-high-availability-LOB-application-overview.md)
+[Deploy a high-availability line of business application in Azure](/documentation/articles/virtual-machines-workload-high-availability-LOB-application-overview)
 
 [Line of Business Applications architecture blueprint](http://msdn.microsoft.com/dn630664)
 
-[Set up a web-based LOB application in a hybrid cloud for testing](../virtual-network/virtual-networks-setup-lobapp-hybrid-cloud-testing.md)
+[Set up a web-based LOB application in a hybrid cloud for testing](/documentation/articles/virtual-networks-setup-lobapp-hybrid-cloud-testing)
 
-[Azure infrastructure services implementation guidelines](virtual-machines-infrastructure-services-implementation-guidelines.md)
+[Azure infrastructure services implementation guidelines](/documentation/articles/virtual-machines-infrastructure-services-implementation-guidelines)
 
-[Azure Infrastructure Services Workload: SharePoint Server 2013 farm](virtual-machines-workload-intranet-sharepoint-farm.md)
+[Azure Infrastructure Services Workload: SharePoint Server 2013 farm](/documentation/articles/virtual-machines-workload-intranet-sharepoint-farm)
 

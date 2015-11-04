@@ -72,7 +72,7 @@
 		Context ctx;
 
 
-13. In the `MyHandler` class, add the following code to override the **onRegistered** method: which registers your device with the mobile service Notification Hub.
+13. In the `MyHandler` class, add the following code to override the **onRegistered** method, which registers your device with the mobile service Notification Hub.
 
 		@Override
 		public void onRegistered(Context context,  final String gcmRegistrationId) {
@@ -125,7 +125,7 @@
 		}
 
 
-15. Back in the TodoActivity.java file, update the **onCreate** method of the ToDoActivity class to register the notification handler class. Make sure to add this code after the MobileServiceClient is instantiated.
+15. Back in the TodoActivity.java file, update the **onCreate** method of the *ToDoActivity* class to register the notification handler class. Make sure to add this code after the *MobileServiceClient* is instantiated.
 
 
 		NotificationsManager.handleNotifications(this, SENDER_ID, MyHandler.class);

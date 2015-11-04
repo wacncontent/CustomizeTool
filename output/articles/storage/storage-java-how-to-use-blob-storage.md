@@ -1,5 +1,5 @@
 <properties
-	pageTitle="How to use Azure Blob storage from Java | Microsoft Azure"
+	pageTitle="How to use Azure Blob storage from Java | Windows Azure"
 	description="Learn how to use Azure Blob storage to upload, download, list, and delete blob content. Samples written in Java."
 	services="storage"
 	documentationCenter="java"
@@ -9,26 +9,22 @@
 
 <tags
 	ms.service="storage"
-	ms.workload="storage"
-	ms.tgt_pltfrm="na"
-	ms.devlang="Java"
-	ms.topic="article"
-	ms.date="08/31/2015" 
-	ms.author="robmcm"/>
+	ms.date="08/31/2015"
+	wacn.date=""/>
 
 # How to use Blob storage from Java
 
-[AZURE.INCLUDE [storage-selector-blob-include](../../includes/storage-selector-blob-include.md)]
+[AZURE.INCLUDE [storage-selector-blob-include](../includes/storage-selector-blob-include.md)]
 
 ## Overview
 
-This article will show you how to perform common scenarios using the Microsoft Azure Blob storage. The samples are written in Java and use the [Azure Storage SDK for Java][]. The scenarios covered include **uploading**, **listing**, **downloading**, and **deleting** blobs. For more information on blobs, see the [Next Steps](#NextSteps) section.
+This article will show you how to perform common scenarios using the Windows Azure Blob storage. The samples are written in Java and use the [Azure Storage SDK for Java][]. The scenarios covered include **uploading**, **listing**, **downloading**, and **deleting** blobs. For more information on blobs, see the [Next Steps](#NextSteps) section.
 
 > [AZURE.NOTE] An SDK is available for developers who are using Azure Storage on Android devices. For more information, see the [Azure Storage SDK for Android][].
 
-[AZURE.INCLUDE [storage-blob-concepts-include](../../includes/storage-blob-concepts-include.md)]
+[AZURE.INCLUDE [storage-blob-concepts-include](../includes/storage-blob-concepts-include.md)]
 
-[AZURE.INCLUDE [storage-create-account-include](../../includes/storage-create-account-include.md)]
+[AZURE.INCLUDE [storage-create-account-include](../includes/storage-create-account-include.md)]
 
 ## Create a Java application
 
@@ -47,7 +43,7 @@ Add the following import statements to the top of the Java file where you want t
 ## Set up an Azure Storage connection string
 
 An Azure Storage client uses a storage connection string to store
-endpoints and credentials for accessing data management services. When running in a client application, you must provide the storage connection string in the following format, using the name of your storage account and the Primary access key for the storage account listed in the Azure portal for the *AccountName* and *AccountKey* values. The following example shows how you can declare a static field to hold the connection string.
+endpoints and credentials for accessing data management services. When running in a client application, you must provide the storage connection string in the following format, using the name of your storage account and the Primary access key for the storage account listed in the Azure Management Portal for the *AccountName* and *AccountKey* values. The following example shows how you can declare a static field to hold the connection string.
 
     // Define the connection-string with your values
     public static final String storageConnectionString =
@@ -55,7 +51,7 @@ endpoints and credentials for accessing data management services. When running i
         "AccountName=your_storage_account;" +
         "AccountKey=your_storage_account_key";
 
-In an application running within a role in Microsoft Azure, this string can be stored in the service configuration file, *ServiceConfiguration.cscfg*, and can be accessed with a call to the **RoleEnvironment.getConfigurationSettings** method. The followng example gets the connection string from a **Setting** element named *StorageConnectionString* in the service configuration file.
+In an application running within a role in Windows Azure, this string can be stored in the service configuration file, *ServiceConfiguration.cscfg*, and can be accessed with a call to the **RoleEnvironment.getConfigurationSettings** method. The followng example gets the connection string from a **Setting** element named *StorageConnectionString* in the service configuration file.
 
     // Retrieve storage account from connection-string.
     String storageConnectionString =
@@ -69,7 +65,7 @@ A **CloudBlobClient** object lets you get reference objects for containers and b
 
 > [AZURE.NOTE] There are additional ways to create **CloudStorageAccount** objects; for more information, see **CloudStorageAccount** in the [Azure Storage Client SDK Reference].
 
-[AZURE.INCLUDE [storage-container-naming-rules-include](../../includes/storage-container-naming-rules-include.md)]
+[AZURE.INCLUDE [storage-container-naming-rules-include](../includes/storage-container-naming-rules-include.md)]
 
 Use the **CloudBlobClient** object to get a reference to the container you want to use. You can create the container if it doesn't exist with the **createIfNotExists** method, which will otherwise return the existing container. By default, the new container is private, so you must specify your storage access key (as you did earlier) to download blobs from this container.
 
@@ -268,6 +264,6 @@ For more information, see also the [Java Developer Center](/develop/java/).
 [Azure SDK for Java]: http://go.microsoft.com/fwlink/?LinkID=525671
 [Azure Storage SDK for Java]: https://github.com/azure/azure-storage-java
 [Azure Storage SDK for Android]: https://github.com/azure/azure-storage-android
-[Azure Storage Client SDK Reference]: http://dl.windowsazure.com/storage/javadoc/
-[Azure Storage REST API]: http://msdn.microsoft.com/library/azure/gg433040.aspx
+[Azure Storage Client SDK Reference]: http://dl.windowsazure.cn/storage/javadoc/
+[Azure Storage REST API]: http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx
 [Azure Storage Team Blog]: http://blogs.msdn.com/b/windowsazurestorage/

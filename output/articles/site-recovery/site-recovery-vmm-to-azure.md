@@ -9,18 +9,14 @@
 
 <tags
 	ms.service="site-recovery"
-	ms.workload="backup-recovery"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="hero-article"
 	ms.date="10/12/2015"
-	ms.author="raynew"/>
+	wacn.date=""/>
 
 #  Set up protection between an on-premises VMM site and Azure
 
 ## Overview
 
-Azure Site Recovery contributes to your business continuity and disaster recovery (BCDR) strategy by orchestrating replication, failover and recovery of virtual machines in a number of deployment scenarios. For a full list of deployment scenarios see  [Azure Site Recovery overview](site-recovery-overview.md).
+Azure Site Recovery contributes to your business continuity and disaster recovery (BCDR) strategy by orchestrating replication, failover and recovery of virtual machines in a number of deployment scenarios. For a full list of deployment scenarios see  [Azure Site Recovery overview](/documentation/articles/site-recovery-overview).
 
 This scenario guide describes how to deploy Site Recovery to orchestrate and automate protection for workloads running on virtual machines on Hyper-V host servers that are located in VMM private clouds. In this scenario virtual machines are replicated from a primary VMM site to Azure using Hyper-V Replica.
 
@@ -33,9 +29,9 @@ If you run into problems setting up this scenario post your questions on the [Az
 Make sure you have these prerequisites in place:
 ### Azure prerequisites
 
-- You'll need a [Microsoft Azure](http://azure.microsoft.com/) account. If you don't have one, start with a [free trial](http://aka.ms/try-azure). In addition you can read about [Azure Site Recovery Manager pricing](http://go.microsoft.com/fwlink/?LinkId=378268).
-- You'll need an Azure storage account to store data replicated to Azure. The account needs geo-replication enabled. It should be in the same region as the Azure Site Recovery service, and be associated with the same subscription. To learn more about setting up Azure storage, see [Introduction to Microsoft Azure Storage](http://go.microsoft.com/fwlink/?LinkId=398704).
-- You'll need to make sure that virtual machines you want to protect comply with Azure requirements. See [Virtual machine support](https://msdn.microsoft.com/library/azure/dn469078.aspx#BKMK_E2A) for details.
+- You'll need a [Windows Azure](http://azure.microsoft.com/) account. If you don't have one, start with a [trial](http://aka.ms/try-azure). In addition you can read about [Azure Site Recovery Manager pricing](http://go.microsoft.com/fwlink/?LinkId=378268).
+- You'll need an Azure storage account to store data replicated to Azure. The account needs geo-replication enabled. It should be in the same region as the Azure Site Recovery service, and be associated with the same subscription. To learn more about setting up Azure storage, see [Introduction to Windows Azure Storage](http://go.microsoft.com/fwlink/?LinkId=398704).
+- You'll need to make sure that virtual machines you want to protect comply with Azure requirements. See [Virtual machine support](https://msdn.microsoft.com/zh-cn/library/azure/dn469078.aspx#BKMK_E2A) for details.
 
 ### VMM prerequisites
 - You'll need  VMM server running on System Center 2012 R2.
@@ -46,7 +42,7 @@ Make sure you have these prerequisites in place:
 	- One or more virtual machines on the source Hyper-V server. The virtual machines should be generation 1.
 - Learn more about setting up VMM clouds:
 	- Read more about private VMM clouds in [What’s New in Private Cloud with System Center 2012 R2 VMM](http://go.microsoft.com/fwlink/?LinkId=324952) and in [VMM 2012 and the clouds](http://go.microsoft.com/fwlink/?LinkId=324956).
-	- Learn about [Configuring the VMM cloud fabric](https://msdn.microsoft.com/library/azure/dn469075.aspx#BKMK_Fabric)
+	- Learn about [Configuring the VMM cloud fabric](https://msdn.microsoft.com/zh-cn/library/azure/dn469075.aspx#BKMK_Fabric)
 	- After your cloud fabric elements are in place learn about creating private clouds in  [Creating a private cloud in VMM](http://go.microsoft.com/fwlink/?LinkId=324953) and [Walkthrough: Creating private clouds with System Center 2012 SP1 VMM](http://go.microsoft.com/fwlink/?LinkId=324954).
 
 ### Hyper-V prerequisites
@@ -78,7 +74,7 @@ If you want to deploy network mapping you'll need the following:
 
 ## Step 1: Create a Site Recovery vault
 
-1. Sign in to the [Management Portal](https://portal.azure.com) from the VMM server you want to register.
+1. Sign in to the [Management Portal](https://manage.windowsazure.cn) from the VMM server you want to register.
 
 
 2. Expand
@@ -89,7 +85,7 @@ If you want to deploy network mapping you'll need the following:
 
 4. In *Name*, enter a friendly name to identify the vault.
 
-5. In *Region*, select the geographic region for the vault. Available geographic regions include East Asia, West Europe, West US, East US, North Europe, Southeast Asia.
+5. In *Region*, select the geographic region for the vault. Available geographic regions include East Asia, West Europe, China North, China East, China North, Southeast Asia.
 6. Click *Create vault*.
 
 	![New Vault](./media/site-recovery-vmm-to-azure/ASRE2AVMM_HvVault.png)
@@ -105,14 +101,14 @@ Generate a registration key in the vault. After you download the Azure Site Reco
 
 	![Quick Start Icon](./media/site-recovery-vmm-to-azure/ASRE2AVMM_QuickStartIcon.png)
 
-2. In the dropdown list, select **Between an on-premises Hyper-V site and Microsoft Azure**.
-3. In **Prepare VMM Servers**, click **Generate registration key** file. The key file is generated automatically and is valid for 5 days after it's generated. If you're not accessing the Azure portal from the VMM server you'll need to copy this file to the server.
+2. In the dropdown list, select **Between an on-premises Hyper-V site and Windows Azure**.
+3. In **Prepare VMM Servers**, click **Generate registration key** file. The key file is generated automatically and is valid for 5 days after it's generated. If you're not accessing the Azure Management Portal from the VMM server you'll need to copy this file to the server.
 
 	![Registration key](./media/site-recovery-vmm-to-azure/ASRE2AVMM_RegisterKey.png)
 
 ## Step 3: Install the Azure Site Recovery Provider
 
-4. On the *Quick Start* page, in **Prepare VMM servers**, click *Download Microsoft Azure Site Recovery Provider for installation on VMM servers* to obtain the latest version of the Provider installation file.
+4. On the *Quick Start* page, in **Prepare VMM servers**, click *Download Windows Azure Site Recovery Provider for installation on VMM servers* to obtain the latest version of the Provider installation file.
 
 2. Run this file on the source VMM server. If VMM is deployed in a cluster and you're installing the Provider for the first time install it on an active node and finish the installation to register the VMM server in the vault. Then install the Provider on the other nodes. Note that if you're upgrading the Provider you'll need to upgrade on all nodes because they should all be running the same Provider version.
 
@@ -138,12 +134,12 @@ Generate a registration key in the vault. After you download the Azure Site Reco
 	- If you want to use a custom proxy you should set it up before you install the Provider. When you configure custom proxy settings a test will run to check the proxy connection.
 	- If you do use a custom proxy, or your default proxy requires authentication you'll need to enter the proxy details, including the proxy address and port.
 	- Following urls should be accessible from the VMM Server and the Hyper-v hosts
-		- *.hypervrecoverymanager.windowsazure.com
-		- *.accesscontrol.windows.net
-		- *.backup.windowsazure.com
-		- *.blob.core.windows.net
-		- *.store.core.windows.net
-	- Allow the IP addresses described in [Azure Datacenter IP Ranges](http://go.microsoft.com/fwlink/?LinkId=511094) and HTTPS (443) protocol. You would have to white-list IP ranges of the Azure region that you plan to use and that of West US.
+		- *.hypervrecoverymanager.windowsazure.cn
+		- *.accesscontrol.chinacloudapi.cn
+		- *.backup.windowsazure.cn
+		- *.blob.core.chinacloudapi.cn
+		- *.store.core.chinacloudapi.cn
+	- Allow the IP addresses described in [Azure Datacenter IP Ranges](http://go.microsoft.com/fwlink/?LinkId=511094) and HTTPS (443) protocol. You would have to white-list IP ranges of the Azure region that you plan to use and that of China North.
 
 	- If you use a custom proxy a VMM RunAs account (DRAProxyAccount) will be created automatically using the specified proxy credentials. Configure the proxy server so that this account can authenticate successfully. The VMM RunAs account settings can be modified in the VMM console. To do this, open the Settings workspace, expand Security, click Run As Accounts, and then modify the password for DRAProxyAccount. You’ll need to restart the VMM service so that this setting takes effect.
 
@@ -222,7 +218,7 @@ After the VMM server is registered, you can configure cloud protection settings.
 
 1. On the Quick Start page, click **Set up protection for VMM clouds**.
 2. On the **Protected Items** tab, click on the cloud you want to configure and go to the **Configuration** tab.
-3. In <b>Target</b>, select <b>Microsoft Azure</b>.
+3. In <b>Target</b>, select <b>Windows Azure</b>.
 4. In <b>Storage Account</b>, select the Azure storage account you want to use to replicate your virtual machines to.
 5. Set <b>Encrypt stored data</b> to <b>Off</b>. This setting specifies that data should be encrypted replicated between the on-premises site and Azure.
 6. In <b>Copy frequency</b> leave the default setting. This value specifies how frequently data should be synchronized between source and target locations.
@@ -310,7 +306,7 @@ To test your deployment you can run a test failover for a single virtual machine
 
 	![Create recovery plan](./media/site-recovery-vmm-to-azure/ASRE2AVMM_SelectVMRP.png)
 
-After a recovery plan has been created it appears in the **Recovery Plans** tab. You can also add [Azure Automation Runbooks](site-recovery-runbook-automation.md) to the recovery plan to automate failover time actions.
+After a recovery plan has been created it appears in the **Recovery Plans** tab. You can also add [Azure Automation Runbooks](/documentation/articles/site-recovery-runbook-automation) to the recovery plan to automate failover time actions.
 
 ### Run a test failover
 
@@ -319,10 +315,10 @@ There are two ways to run a test failover to Azure.
 - Test failover without an Azure network—This type of test failover checks that the virtual machine comes up correctly in Azure. The virtual machine won’t be connected to any Azure network after failover.
 - Test failover with an Azure network—This type of failover checks that the entire replication environment comes up as expected and that failed over the virtual machines will be connected to the specified target Azure network. For subnet handling, for test failover the subnet of the test virtual machine will be figured out based on the subnet of the replica virtual machine. This is different to regular replication when the subnet of a replica virtual machine is based on the subnet of the source virtual machine.
 
-If you want to run a test failover for a virtual machine enabled for protection to Azure without specifying an Azure target network you don’t need to prepare anything. To run a test failover with a target Azure network you’ll need to create a new Azure network that’s isolated from your Azure production network (default behavior when you create a new network in Azure). Look at how to [run a test failover](site-recovery-failover.md#run-a-test-failover) for more details. 
+If you want to run a test failover for a virtual machine enabled for protection to Azure without specifying an Azure target network you don’t need to prepare anything. To run a test failover with a target Azure network you’ll need to create a new Azure network that’s isolated from your Azure production network (default behavior when you create a new network in Azure). Look at how to [run a test failover](/documentation/articles/site-recovery-failover#run-a-test-failover) for more details. 
 
 
-You will also need to set up the infrastructure for the replicated virtual machine to work as expected. For example, a virtual machine with Domain Controller and DNS can be replicated to Azure using Azure Site Recovery and can be created in the test network using Test Failover. Look at [test failover considerations for active directory](site-recovery-active-directory.md#considerations-for-test-failover) section for more details. 
+You will also need to set up the infrastructure for the replicated virtual machine to work as expected. For example, a virtual machine with Domain Controller and DNS can be replicated to Azure using Azure Site Recovery and can be created in the test network using Test Failover. Look at [test failover considerations for active directory](/documentation/articles/site-recovery-active-directory#considerations-for-test-failover) section for more details. 
 
 To run a test failover do the following:
 
@@ -332,12 +328,12 @@ To run a test failover do the following:
 	![No network](./media/site-recovery-vmm-to-azure/ASRE2AVMM_TestFailoverNoNetwork.png)
 
 1. If data encryption is enabled for the cloud, in **Encryption Key** select the certificate that was issued during installation of the Provider on the VMM server, when you turned on the option to enable data encryption for a cloud.
-1. On the **Jobs** tab you can track failover progress. You should also be able to see the virtual machine test replica in the Azure portal. If you’re set up to access virtual machines from your on-premises network you can initiate a Remote Desktop connection to the virtual machine.
+1. On the **Jobs** tab you can track failover progress. You should also be able to see the virtual machine test replica in the Azure Management Portal. If you’re set up to access virtual machines from your on-premises network you can initiate a Remote Desktop connection to the virtual machine.
 1. When the failover reaches the **Complete testing** phase , click **Complete Test** to finish up the test failover. You can drill down to the **Job** tab to track failover progress and status, and to perform any actions that are needed.
-1. After  failover you'll be able to see the virtual machine test replica in the Azure portal. If you’re set up to access virtual machines from your on-premises network you can initiate a Remote Desktop connection to the virtual machine. Note that:
+1. After  failover you'll be able to see the virtual machine test replica in the Azure Management Portal. If you’re set up to access virtual machines from your on-premises network you can initiate a Remote Desktop connection to the virtual machine. Note that:
 
     1. Verify that the virtual machines start successfully
-    1. If you want to connect to the virtual machine in Azure using Remote Desktop after the failover, enable Remote Desktop Connection on the virtual machine before you run the test failover. You will also need to add an RDP endpoint on the virtual machine. You can leverage an [Azure Automation Runbooks](site-recovery-runbook-automation.md) to do that.
+    1. If you want to connect to the virtual machine in Azure using Remote Desktop after the failover, enable Remote Desktop Connection on the virtual machine before you run the test failover. You will also need to add an RDP endpoint on the virtual machine. You can leverage an [Azure Automation Runbooks](/documentation/articles/site-recovery-runbook-automation) to do that.
     1. After failover if you use a public IP address to connect to the virtual machine in Azure using Remote Desktop, ensure you don't have any domain policies that prevent you from connecting to a virtual machine using a public address.
 
 1.  After the testing is complete do the following:

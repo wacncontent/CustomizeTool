@@ -8,28 +8,24 @@
    editor=""/>
 
 <tags
-   ms.service="sql-database"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="data-services"
-   ms.date="10/13/2015"
-   ms.author="thmullan;jackr"/>
+	ms.service="sql-database"
+	ms.date="10/13/2015"
+	wacn.date=""/>
 
 
 # Securing your SQL Database
 
 ## Overview
 
-This article walks through the basics of securing the data tier of an application using Azure SQL Database. In particular, this article will get you started with resources for limiting access, protecting data, and monitoring activities on a database created in the [Get started with SQL Database tutorial](sql-database-get-started.md). For a complete overview of security features available on all flavors of SQL, see the [Security Center for SQL Server Database Engine and Azure SQL Database](https://msdn.microsoft.com/library/bb510589). Additional information is also available in the [Security and Azure SQL Database technical white paper](https://download.microsoft.com/download/A/C/3/AC305059-2B3F-4B08-9952-34CDCA8115A9/Security_and_Azure_SQL_Database_White_paper.pdf) (PDF). 
+This article walks through the basics of securing the data tier of an application using Azure SQL Database. In particular, this article will get you started with resources for limiting access, protecting data, and monitoring activities on a database created in the [Get started with SQL Database tutorial](/documentation/articles/sql-database-get-started). For a complete overview of security features available on all flavors of SQL, see the [Security Center for SQL Server Database Engine and Azure SQL Database](https://msdn.microsoft.com/zh-cn/library/bb510589). Additional information is also available in the [Security and Azure SQL Database technical white paper](https://download.microsoft.com/download/A/C/3/AC305059-2B3F-4B08-9952-34CDCA8115A9/Security_and_Azure_SQL_Database_White_paper.pdf) (PDF). 
 
 ## Connection security
 
 Connection Security refers to how you restrict and secure connections to your database using firewall rules and connection encryption.
 
-Firewall rules are used by both the server and the database to reject connection attempts from IP addresses that have not been explicitly whitelisted. To allow your application or client machine's public IP address to attempt connecting to a new database, you must first create a server-level firewall rule using the Azure Management Portal, REST API, or PowerShell. As a best practice, you should restrict the IP address ranges allowed through your server firewall as much as possible. For more information, see [Azure SQL Database Firewall](https://msdn.microsoft.com/library/ee621782).
+Firewall rules are used by both the server and the database to reject connection attempts from IP addresses that have not been explicitly whitelisted. To allow your application or client machine's public IP address to attempt connecting to a new database, you must first create a server-level firewall rule using the Azure Management Portal, REST API, or PowerShell. As a best practice, you should restrict the IP address ranges allowed through your server firewall as much as possible. For more information, see [Azure SQL Database Firewall](https://msdn.microsoft.com/zh-cn/library/ee621782).
 
-All connections to Azure SQL Database require encryption (SSL/TLS) at all times while data is "in transit" to and from the database. In your application's connection string, you must specify parameters to encrypt the connection and *not* to trust the server certificate (this is done for you if you copy your connection string out of the Azure Management Portal), otherwise the connection will not verify the identity of the server and will be susceptible to "man-in-the-middle" attacks. For the ADO.NET driver, for instance, these connection string parameters are **Encrypt=True** and **TrustServerCertificate=False**. For more information, see [Azure SQL Database Connection Encryption and Certificate Validation](https://msdn.microsoft.com/library/azure/ff394108#encryption).
+All connections to Azure SQL Database require encryption (SSL/TLS) at all times while data is "in transit" to and from the database. In your application's connection string, you must specify parameters to encrypt the connection and *not* to trust the server certificate (this is done for you if you copy your connection string out of the Azure Management Portal), otherwise the connection will not verify the identity of the server and will be susceptible to "man-in-the-middle" attacks. For the ADO.NET driver, for instance, these connection string parameters are **Encrypt=True** and **TrustServerCertificate=False**. For more information, see [Azure SQL Database Connection Encryption and Certificate Validation](https://msdn.microsoft.com/zh-cn/library/azure/ff394108#encryption).
 
 
 ## Authentication
@@ -39,9 +35,9 @@ Authentication refers to how you prove your identity when connecting to the data
  - **SQL Authentication**, which uses a username and password
  - **Azure Active Directory Authentication**, which uses identities managed by Azure Active Directory and is supported for managed and integrated domains
 
-When you created the logical server for your database, you specified a "server admin" login with a username and password. Using these credentials, you can authenticate to any database on that server as the database owner, or "dbo." If you want to use Azure Active Directory Authentication, you must create another server admin called the "Azure AD admin," which is allowed to administer Azure AD users and groups. This admin can also perform all operations that a regular server admin can. See [Connecting to SQL Database By Using Azure Active Directory Authentication](sql-database-aad-authentication.md) for a walkthrough of how to create an Azure AD admin to enable Azure Active Directory Authentication.
+When you created the logical server for your database, you specified a "server admin" login with a username and password. Using these credentials, you can authenticate to any database on that server as the database owner, or "dbo." If you want to use Azure Active Directory Authentication, you must create another server admin called the "Azure AD admin," which is allowed to administer Azure AD users and groups. This admin can also perform all operations that a regular server admin can. See [Connecting to SQL Database By Using Azure Active Directory Authentication](/documentation/articles/sql-database-aad-authentication) for a walkthrough of how to create an Azure AD admin to enable Azure Active Directory Authentication.
 
-As a best practice your application should use a different account to authenticate -- this way you can limit the permissions granted to the application and reduce the risks of malicious activity in case your application code is vulnerable to a SQL injection attack. The recommended approach is to create a [contained database user](https://msdn.microsoft.com/library/ff929188), which allows your app to authenticate directly to a single database. You can create a contained database user that uses SQL Authentication by executing the following T-SQL command while connected to your user database as the server admin login:
+As a best practice your application should use a different account to authenticate -- this way you can limit the permissions granted to the application and reduce the risks of malicious activity in case your application code is vulnerable to a SQL injection attack. The recommended approach is to create a [contained database user](https://msdn.microsoft.com/zh-cn/library/ff929188), which allows your app to authenticate directly to a single database. You can create a contained database user that uses SQL Authentication by executing the following T-SQL command while connected to your user database as the server admin login:
 
 ```
 CREATE USER ApplicationUser WITH PASSWORD = 'strong_password'; -- SQL Authentication
@@ -55,7 +51,7 @@ CREATE USER [Azure_AD_principal_name | Azure_AD_group_display_name] FROM EXTERNA
 
 In either case, your application's connection string should specify these user credentials, rather than the server admin login, to connect to the database.
 
-For more information on authenticating to a SQL Database, see [Managing Databases and Logins in Azure SQL Database](sql-database-manage-logins.md).
+For more information on authenticating to a SQL Database, see [Managing Databases and Logins in Azure SQL Database](/documentation/articles/sql-database-manage-logins).
 
 
 ## Authorization
@@ -70,14 +66,14 @@ The server admin account you are connecting with is a member of db_owner, which 
 
 There are ways to further limit what a user can do with Azure SQL Database:
 
-* [Database Roles](https://msdn.microsoft.com/library/ms189121) other than db_datareader and db_datawriter can be used to create more powerful application user accounts or less powerful management accounts.
-* Granular [Permissions](https://msdn.microsoft.com/library/ms191291) let you control which operations you can do on individual columns, tables, views, procedures, and other objects in the database.
-* [Impersonation](https://msdn.microsoft.com/library/vstudio/bb669087) and [module-signing](https://msdn.microsoft.com/library/bb669102) can be used to securely elevate permissions temporarily.
-* [Row-Level Security](https://msdn.microsoft.com/library/dn765131) can be used limit which rows a user can access.
-* [Data Masking](sql-database-dynamic-data-masking-get-started.md) can be used to limit exposure of sensitive data.
-* [Stored procedures](https://msdn.microsoft.com/library/ms190782) can be used to limit the actions that can be taken on the database.
+* [Database Roles](https://msdn.microsoft.com/zh-cn/library/ms189121) other than db_datareader and db_datawriter can be used to create more powerful application user accounts or less powerful management accounts.
+* Granular [Permissions](https://msdn.microsoft.com/zh-cn/library/ms191291) let you control which operations you can do on individual columns, tables, views, procedures, and other objects in the database.
+* [Impersonation](https://msdn.microsoft.com/zh-cn/library/vstudio/bb669087) and [module-signing](https://msdn.microsoft.com/zh-cn/library/bb669102) can be used to securely elevate permissions temporarily.
+* [Row-Level Security](https://msdn.microsoft.com/zh-cn/library/dn765131) can be used limit which rows a user can access.
+* [Data Masking](/documentation/articles/sql-database-dynamic-data-masking-get-started) can be used to limit exposure of sensitive data.
+* [Stored procedures](https://msdn.microsoft.com/zh-cn/library/ms190782) can be used to limit the actions that can be taken on the database.
 
-Managing databases and logical servers from the Azure Management Portal or using the Azure Resource Manager API is controlled by your portal user account's role assignments. For more information on this topic, see [Role-based access control in Azure Preview portal](../role-based-access-control-configure.md).
+Managing databases and logical servers from the Azure Management Portal or using the Azure Resource Manager API is controlled by your portal user account's role assignments. For more information on this topic, see [Role-based access control in Azure Preview portal](/documentation/articles/role-based-access-control-configure).
 
 
 ## Encryption
@@ -94,14 +90,14 @@ ALTER DATABASE [AdventureWorks] SET ENCRYPTION ON;
 
 For other ways to encrypt your data secrets, consider:
 
-* [Cell-level encryption](https://msdn.microsoft.com/library/ms179331.aspx) to encrypt specific columns or even cells of data with different encryption keys.
+* [Cell-level encryption](https://msdn.microsoft.com/zh-cn/library/ms179331.aspx) to encrypt specific columns or even cells of data with different encryption keys.
 * If you need a Hardware Security Module or central management of your encryption key hierarchy, consider using [Azure Key Vault with SQL Server in an Azure VM](http://blogs.technet.com/b/kv/archive/2015/01/12/using-the-key-vault-for-sql-server-encryption.aspx).
 
 
 ## Auditing
 
-Auditing and tracking database events can help you maintain regulatory compliance and identify suspicious activity. SQL Database Auditing allows you to record events in your database to an audit log in your Azure Storage account. SQL Database Auditing also integrates with Microsoft Power BI to facilitate drill-down reports and analyses. For more information, see [Get started with SQL Database Auditing](sql-database-auditing-get-started.md).
+Auditing and tracking database events can help you maintain regulatory compliance and identify suspicious activity. SQL Database Auditing allows you to record events in your database to an audit log in your Azure Storage account. SQL Database Auditing also integrates with Microsoft Power BI to facilitate drill-down reports and analyses. For more information, see [Get started with SQL Database Auditing](/documentation/articles/sql-database-auditing-get-started).
 
 ## Compliance
 
-In addition to the above features and functionality that can help your application meet various security compliance requirements, Azure SQL Database also participates in regular audits and has been certified against a number of compliance standards. For more information, see the [Microsoft Azure Trust Center](http://azure.microsoft.com/support/trust-center/), where you can find the most current list of [SQL Database compliance certifications](http://azure.microsoft.com/support/trust-center/services/).
+In addition to the above features and functionality that can help your application meet various security compliance requirements, Azure SQL Database also participates in regular audits and has been certified against a number of compliance standards. For more information, see the [Windows Azure Trust Center](http://azure.microsoft.com/support/trust-center/), where you can find the most current list of [SQL Database compliance certifications](http://azure.microsoft.com/support/trust-center/services/).

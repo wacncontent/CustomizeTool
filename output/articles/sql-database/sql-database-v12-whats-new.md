@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="What's new in SQL Database V12 | Microsoft Azure" 
+	pageTitle="What's new in SQL Database V12 | Windows Azure" 
 	description="Describes why business systems that are using Azure SQL Database in the cloud will benefit by upgrading to version V12 now." 
 	services="sql-database" 
 	documentationCenter="" 
@@ -8,14 +8,10 @@
 	editor=""/>
 
 
-<tags 
-	ms.service="sql-database" 
-	ms.workload="data-management" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="get-started-article" 
-	ms.date="09/15/2015" 
-	ms.author="genemi"/>
+<tags
+	ms.service="sql-database"
+	ms.date="09/15/2015"
+	wacn.date=""/>
 
 
 # What's new in SQL Database V12
@@ -31,7 +27,7 @@ We continue to add features to V12. So we encourage you to visit our Service Upd
 - Filtered to General Availability [(GA) announcements](http://azure.microsoft.com/updates/?service=sql-database&update-type=general-availability) for SQL Database features.
 
 
-The latest information about resource limits for SQL Database is documented at:<br/>[Azure SQL Database Resource Limits](sql-database-resource-limits.md).
+The latest information about resource limits for SQL Database is documented at:<br/>[Azure SQL Database Resource Limits](/documentation/articles/sql-database-resource-limits).
 
 
 ## Increased application compatibility with SQL Server
@@ -40,15 +36,15 @@ The latest information about resource limits for SQL Database is documented at:<
 A key goal for SQL Database V12 was to improve the compatibility with Microsoft SQL Server 2014. Among other areas, V12 achieves parity with SQL Server in the important area of programmability. For instance:
 
 
-- [Common Language Runtime (CLR) assemblies](http://msdn.microsoft.com/library/ms189524.aspx)
-- [Window functions](http://msdn.microsoft.com/library/bb934097.aspx), with [OVER](http://msdn.microsoft.com/library/ms189461.aspx) 
-- [XML indexes](http://msdn.microsoft.com/library/bb934097.aspx) and [selective XML indexes](http://msdn.microsoft.com/library/jj670104.aspx)
-- [Change tracking](http://msdn.microsoft.com/library/bb933875.aspx)
-- [SELECT...INTO](http://msdn.microsoft.com/library/ms188029.aspx)
-- [Full-text search](http://msdn.microsoft.com/library/ms142571.aspx)
+- [Common Language Runtime (CLR) assemblies](http://msdn.microsoft.com/zh-cn/library/ms189524.aspx)
+- [Window functions](http://msdn.microsoft.com/zh-cn/library/bb934097.aspx), with [OVER](http://msdn.microsoft.com/zh-cn/library/ms189461.aspx) 
+- [XML indexes](http://msdn.microsoft.com/zh-cn/library/bb934097.aspx) and [selective XML indexes](http://msdn.microsoft.com/zh-cn/library/jj670104.aspx)
+- [Change tracking](http://msdn.microsoft.com/zh-cn/library/bb933875.aspx)
+- [SELECT...INTO](http://msdn.microsoft.com/zh-cn/library/ms188029.aspx)
+- [Full-text search](http://msdn.microsoft.com/zh-cn/library/ms142571.aspx)
 
 
-Please see [here](http://msdn.microsoft.com/library/azure/ee336281.aspx) for the small set of features not yet supported in SQL Database.
+Please see [here](http://msdn.microsoft.com/zh-cn/library/azure/ee336281.aspx) for the small set of features not yet supported in SQL Database.
 
 
 ## More premium performance, new performance levels
@@ -57,9 +53,9 @@ Please see [here](http://msdn.microsoft.com/library/azure/ee336281.aspx) for the
 In V12, we increased the database throughput units (DTUs) allocated to all Premium performance levels by 25% at no additional cost. Even greater performance gains can be achieved with new features like:
 
 
-- Support for in-memory [columnstore indexes](http://msdn.microsoft.com/library/gg492153.aspx).
-- [Table partitioning by rows](http://msdn.microsoft.com/library/ms187802.aspx) with related enhancements to [TRUNCATE TABLE](http://msdn.microsoft.com/library/ms177570.aspx).
-- The availability of dynamic management views [(DMVs)](http://msdn.microsoft.com/library/ms188754.aspx) to help monitor and tune performance.
+- Support for in-memory [columnstore indexes](http://msdn.microsoft.com/zh-cn/library/gg492153.aspx).
+- [Table partitioning by rows](http://msdn.microsoft.com/zh-cn/library/ms187802.aspx) with related enhancements to [TRUNCATE TABLE](http://msdn.microsoft.com/zh-cn/library/ms177570.aspx).
+- The availability of dynamic management views [(DMVs)](http://msdn.microsoft.com/zh-cn/library/ms188754.aspx) to help monitor and tune performance.
 
 
 ### Reliable performance
@@ -71,18 +67,18 @@ If your client program connects to SQL Database V12 while your client runs on an
 - 14000-14999
 
 
-Click [here](sql-database-develop-direct-route-ports-adonet-v12.md) for details about the ports for SQL Database V12. The ports are needed by performance enhancements in SQL Database V12.
+Click [here](/documentation/articles/sql-database-develop-direct-route-ports-adonet-v12) for details about the ports for SQL Database V12. The ports are needed by performance enhancements in SQL Database V12.
 
 
 ## Better support for cloud SaaS vendors
 
 
-Only in V12, we released the new Standard performance level S3 and the public preview of [elastic database pools](sql-database-elastic-pool.md).
+Only in V12, we released the new Standard performance level S3 and the public preview of [elastic database pools](/documentation/articles/sql-database-elastic-pool).
 This is a solution specifically designed for cloud SaaS vendors.  With elastic database pools, you can:
 
 
 - Share DTUs amongst databases to reduce costs for large numbers of databases.
-- Execute [elastic database jobs](sql-database-elastic-jobs-overview.md) to manage databases at scale.
+- Execute [elastic database jobs](/documentation/articles/sql-database-elastic-jobs-overview) to manage databases at scale.
 
 
 ## Security enhancements
@@ -91,12 +87,12 @@ This is a solution specifically designed for cloud SaaS vendors.  With elastic d
 Security is a primary concern for anyone who runs their business in the cloud. The latest security features released in V12 include:
 
 
-- [Row-level security](http://msdn.microsoft.com/library/dn765131.aspx) (RLS)
-- [Dynamic Data Masking](sql-database-dynamic-data-masking-get-started.md)
-- [Contained databases](http://msdn.microsoft.com/library/azure/ff394108.aspx)
-- [Application roles](http://msdn.microsoft.com/library/ms190998.aspx) managed with GRANT, DENY, REVOKE
-- [Transparent Data Encryption](http://msdn.microsoft.com/library/0bf7e8ff-1416-4923-9c4c-49341e208c62.aspx) (TDE)
-- [Connecting to SQL Database By Using Azure Active Directory Authentication](sql-database-aad-authentication.md)
+- [Row-level security](http://msdn.microsoft.com/zh-cn/library/dn765131.aspx) (RLS)
+- [Dynamic Data Masking](/documentation/articles/sql-database-dynamic-data-masking-get-started)
+- [Contained databases](http://msdn.microsoft.com/zh-cn/library/azure/ff394108.aspx)
+- [Application roles](http://msdn.microsoft.com/zh-cn/library/ms190998.aspx) managed with GRANT, DENY, REVOKE
+- [Transparent Data Encryption](http://msdn.microsoft.com/zh-cn/library/0bf7e8ff-1416-4923-9c4c-49341e208c62.aspx) (TDE)
+- [Connecting to SQL Database By Using Azure Active Directory Authentication](/documentation/articles/sql-database-aad-authentication)
  - SQL Database now supports Azure Active Directory authentication, a mechanism of connecting to SQL Database by using identities in Azure Active Directory (Azure AD). With Azure Active Directory authentication you can centrally manage the identities of database users and other Microsoft services in one central location.
 
 
@@ -113,7 +109,7 @@ V12 offers significantly improved recovery point objectives (RPOs) and estimated
 | Active geo-replication | • RPO < 5 minutes.<br/>• ERT < 1 hour. | • RPO < 5 seconds.<br/>• ERT < 30 seconds. |
 
 
-See [SQL Database business continuity](http://msdn.microsoft.com/library/azure/hh852669.aspx) for more information.
+See [SQL Database business continuity](http://msdn.microsoft.com/zh-cn/library/azure/hh852669.aspx) for more information.
 
 
 ## More reasons to upgrade now
@@ -133,7 +129,7 @@ There are many good reasons why customers should upgrade now to Azure SQL Databa
 One easy way to see if you have a database or logical server running on an earlier version of the SQL Database service is to do the following:
 
 
-1. Go to the [Azure preview portal](http://portal.azure.com/).
+1. Go to the [Azure preview portal](http://manage.windowsazure.cn/).
 2. Click **Browse**.
 3. Click **SQL Servers**.
 4. The icon next to your server or database tells the story:
@@ -151,7 +147,7 @@ Another technique to ascertain the version is to run the `SELECT @@version;` sta
 A V12 database can be hosted only on a V12 logical server. And a V12 server can host only V12 databases.
 
 
-If you are not yet running on V12, you can upgrade your logical server by following the steps in [Upgrade to SQL Database V12 in place](sql-database-v12-upgrade.md).
+If you are not yet running on V12, you can upgrade your logical server by following the steps in [Upgrade to SQL Database V12 in place](/documentation/articles/sql-database-v12-upgrade).
 
 
 ## <a name="V12AzureSqlDbPreviewGaTable"></a> General Availability regions
@@ -160,4 +156,4 @@ If you are not yet running on V12, you can upgrade your logical server by follow
 - By July 31, 2015, all regions had been promoted to General Availability (GA).
 - V12 was released in December 2014, but only at the status of Preview.
 
-[Supplemental Terms of Use for Microsoft Azure Previews](http://azure.microsoft.com/support/legal/preview-supplemental-terms/).
+[Supplemental Terms of Use for Windows Azure Previews](http://azure.microsoft.com/support/legal/preview-supplemental-terms/).

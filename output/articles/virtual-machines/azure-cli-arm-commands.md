@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Use the Azure CLI with Resource Manager | Microsoft Azure"
+	pageTitle="Use the Azure CLI with Resource Manager | Windows Azure"
 	description="Learn about using the Azure CLI for Mac, Linux, and Windows to manage Azure resources using the CLI in Azure Resource Manager mode."
 	services="virtual-machines,mobile-services,cloud-services"
 	documentationCenter=""
@@ -10,16 +10,12 @@
 
 <tags
 	ms.service="multiple"
-	ms.workload="multiple"
-	ms.tgt_pltfrm="command-line-interface"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="10/07/2015"
-	ms.author="danlep"/>
+	wacn.date=""/>
 
 # Using the Azure CLI for Mac, Linux, and Windows with Azure Resource Manager
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-rm-include.md)] [classic deployment model](virtual-machines-command-line-tools.md)
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] [classic deployment model](/documentation/articles/virtual-machines-command-line-tools)
 
 This article describes how to use the Azure Command-Line Interface (Azure CLI) in the Azure Resource Manager mode to create, manage, and delete services on the command line of Mac, Linux, and Windows computers. You can perform many of the same tasks using the various libraries of the Azure SDKs, with Azure PowerShell, and using the Azure Preview Portal.
 
@@ -35,17 +31,17 @@ In addition to command-specific optional parameters documented here, there are t
 
 ## Imperative and declarative approaches
 
-As with the [Azure Service Management mode](../virtual-machines-command-line-tools.md), the Resource Manager mode of the Azure CLI gives you commands that create resources imperatively on the command line. For example, if you type `azure group create <groupname> <location>` you are asking Azure to create a resource group, and with `azure group deployment create <resourcegroup> <deploymentname>` you are instructing Azure to create a deployment of any number of items and place them in a group. Because each type of resource has imperative commands, you can chain them together to create fairly complex deployments.
+As with the [Azure Service Management mode](/documentation/articles/virtual-machines-command-line-tools), the Resource Manager mode of the Azure CLI gives you commands that create resources imperatively on the command line. For example, if you type `azure group create <groupname> <location>` you are asking Azure to create a resource group, and with `azure group deployment create <resourcegroup> <deploymentname>` you are instructing Azure to create a deployment of any number of items and place them in a group. Because each type of resource has imperative commands, you can chain them together to create fairly complex deployments.
 
-However, using resource group _templates_ that describe a resource group is a declarative approach that is far more powerful, allowing you to automate complex deployments of (almost) any number of resources for (almost) any purpose. When using templates, the only imperative command is to deploy one. For a general overview of templates, resources, and resource groups, see [Azure Resource Group Overview](resource-groups-overview).  
+However, using resource group _templates_ that describe a resource group is a declarative approach that is far more powerful, allowing you to automate complex deployments of (almost) any number of resources for (almost) any purpose. When using templates, the only imperative command is to deploy one. For a general overview of templates, resources, and resource groups, see [Azure Resource Group Overview](/documentation/articles/resource-groups-overview).  
 
 ##Usage requirements
 
 The set-up requirements to use the Resource Manager mode with the Azure CLI are:
 
-- an Azure account ([get a free trial here](http://azure.microsoft.com/pricing/free-trial/))
-- [installing the Azure CLI](../xplat-cli-install.md)
-- [configuring the Azure CLI](../xplat-cli-connect.md) to use an Azure Active Directory identity or a Service Principal
+- an Azure account ([get a trial here](/pricing/1rmb-trial/))
+- [installing the Azure CLI](/documentation/articles/xplat-cli-install)
+- [configuring the Azure CLI](/documentation/articles/xplat-cli-connect) to use an Azure Active Directory identity or a Service Principal
 
 Once you have an account and have installed the Azure CLI, you must
 
@@ -54,7 +50,7 @@ Once you have an account and have installed the Azure CLI, you must
 
 
 ## azure account: Manage your account information and publish settings
-Your Azure subscription information is used by the tool to connect to your account. This information can be obtained from the Azure portal in a publish settings file as described here. You can import the publish settings file as a persistent local configuration setting that the tool will use for subsequent operations. You only need to import your publish settings once.
+Your Azure subscription information is used by the tool to connect to your account. This information can be obtained from the Azure Management Portal in a publish settings file as described here. You can import the publish settings file as a persistent local configuration setting that the tool will use for subsequent operations. You only need to import your publish settings once.
 
 **List the imported subscriptions**
 
@@ -216,7 +212,7 @@ Your Azure subscription information is used by the tool to connect to your accou
 **Commands to manage virtual networks**
 
 	network vnet create [options] <resource-group> <name> <location>
-Allows to create a new virtual network. In the following example we create a virtual network named newvnet for resource group myresourcegroup in the West US region.
+Allows to create a new virtual network. In the following example we create a virtual network named newvnet for resource group myresourcegroup in the China North region.
 
 
 	azure network vnet create myresourcegroup newvnet "west us"

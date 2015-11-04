@@ -1,20 +1,16 @@
 <properties 
-	pageTitle="Get started with Azure Storage in five minutes | Microsoft Azure" 
-	description="Quickly ramp up on Microsoft Azure Blobs, Table, and Queues using Azure QuickStarts, Visual Studio, and the Azure Storage emulator. Run your first Azure Storage application in five minutes." 
+	pageTitle="Get started with Azure Storage in five minutes | Windows Azure" 
+	description="Quickly ramp up on Windows Azure Blobs, Table, and Queues using Azure QuickStarts, Visual Studio, and the Azure Storage emulator. Run your first Azure Storage application in five minutes." 
 	services="storage" 
 	documentationCenter=".net" 
 	authors="tamram" 
 	manager="adinah" 
 	editor=""/>
 
-<tags 
-	ms.service="storage" 
-	ms.workload="storage" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="dotnet" 
-	ms.topic="article" 
-	ms.date="09/28/2015" 
-	ms.author="tamram;selcint"/>
+<tags
+	ms.service="storage"
+	ms.date="09/28/2015"
+	wacn.date=""/>
 
 # Get started with Azure Storage in five minutes 
 
@@ -31,7 +27,7 @@ If you want to learn more about Azure Storage before diving into the code, see [
 Make sure you have the following prerequisites before you start:
 
 1. To compile and build the application, you'll need a version of [Visual Studio](https://www.visualstudio.com/) installed on your computer. 
-2. Install the latest version [Azure SDK for .NET](http://azure.microsoft.com/downloads/). The SDK includes the Azure QuickStart sample projects, the Azure storage emulator, and the [Azure Storage Client Library for .NET](https://msdn.microsoft.com/library/azure/wa_storage_30_reference_home.aspx).
+2. Install the latest version [Azure SDK for .NET](/downloads/). The SDK includes the Azure QuickStart sample projects, the Azure storage emulator, and the [Azure Storage Client Library for .NET](https://msdn.microsoft.com/zh-cn/library/azure/wa_storage_30_reference_home.aspx).
 3. Make sure that you have [.NET Framework 4.5](http://www.microsoft.com/download/details.aspx?id=30653) installed on your computer, as it is required by the Azure QuickStart sample projects that we'll be using in this tutorial. If you are not sure which version of .NET Framework is installed in your computer, see [How to: Determine Which .NET Framework Versions Are Installed](https://msdn.microsoft.com/vstudio/hh925568.aspx). Or, press the **Start** button or the Windows key, type **Control Panel**. Then, click **Programs** > **Programs and Features**, and determine whether the .NET Framework 4.5 is listed among the installed programs.
 
 The latest version of the Azure Storage Client Library binaries is available on [NuGet](https://www.nuget.org/packages/WindowsAzure.Storage/).
@@ -39,7 +35,7 @@ The latest version of the Azure Storage Client Library binaries is available on 
 
 ## Run your first Azure Storage application locally against the Azure Storage Emulator
 
-When developing an application that uses Azure Storage, you can run against the [Azure Storage Emulator](storage-use-emulator.md). The storage emulator provides a local environment that emulates the Azure Blob, Queue, and Table services for development purposes. You can use the storage emulator to test your storage application locally, without creating an Azure subscription or storage account, and without incurring any cost.
+When developing an application that uses Azure Storage, you can run against the [Azure Storage Emulator](/documentation/articles/storage-use-emulator). The storage emulator provides a local environment that emulates the Azure Blob, Queue, and Table services for development purposes. You can use the storage emulator to test your storage application locally, without creating an Azure subscription or storage account, and without incurring any cost.
 
 To try it, let’s create a simple Azure Storage application using one of the Azure QuickStarts sample projects in Visual Studio. This tutorial focuses on the **Azure Blob Storage**, **Azure Table Storage**, and **Azure Queue Storage** sample projects:
 
@@ -64,8 +60,8 @@ Next, run the sample application in the Azure Storage Emulator:
 
 To run against Azure Storage in the cloud, you'll need an Azure subscription and a storage account, if you don't have one already: 
 
-- To get an Azure subscription, see [Free Trial](http://azure.microsoft.com/pricing/free-trial/), [Purchase Options](http://azure.microsoft.com/pricing/purchase-options/), and [Member Offers](http://azure.microsoft.com/pricing/member-offers/) (for members of MSDN, Microsoft Partner Network, and BizSpark, and other Microsoft programs).
-- To create a storage account in Azure, see [How to create, manage, or delete a storage account](storage-create-storage-account.md).
+- To get an Azure subscription, see [Trial](/pricing/1rmb-trial/), [Purchase Options](/pricing/overview/), and [Member Offers](http://azure.microsoft.com/pricing/member-offers/) (for members of MSDN, Microsoft Partner Network, and BizSpark, and other Microsoft programs).
+- To create a storage account in Azure, see [How to create, manage, or delete a storage account](/documentation/articles/storage-create-storage-account).
 
 Once you have an account, you can create a simple Azure Storage application using one of the Azure QuickStarts sample projects in Visual Studio. This tutorial focuses on **Azure Blob Storage**, **Azure Table Storage**, and **Azure Queue Storage** sample projects:
 
@@ -87,7 +83,7 @@ Next, run the sample application:
 2.	Uncomment the connection string for the Azure Storage Service and provide the storage account name and access key in the App.config file:
 	`<add key="StorageConnectionString" value="DefaultEndpointsProtocol=https;AccountName=[AccountName];AccountKey=[AccountKey]"`
 
-	To find the storage account name and access key, see [What is a Storage Account](storage-whatis-account.md).
+	To find the storage account name and access key, see [What is a Storage Account](/documentation/articles/storage-whatis-account).
 
 3.	After you provide the storage account name and access key in the App.config file, on the **File** menu, click **Save All** to save all the project files.
 4.	On the **Build** menu, click **Build Solution**.
@@ -98,13 +94,13 @@ Next, run the sample application:
 
 See these resources to learn more about Azure Storage:
 
-* [Introduction to Microsoft Azure Storage](storage-introduction.md)
-* [How to use Blob Storage from .NET](storage-dotnet-how-to-use-blobs.md)
-* [How to use Table Storage from .NET](storage-dotnet-how-to-use-tables.md)
-* [How to use Queue Storage from .NET](storage-dotnet-how-to-use-queues.md)
-* [Azure Storage Documentation](http://azure.microsoft.com/documentation/services/storage/)
-* [Azure Storage Client Library](https://msdn.microsoft.com/library/azure/wa_storage_30_reference_home.aspx)
-* [Azure Storage REST API](https://msdn.microsoft.com/library/azure/dd179355.aspx)
+* [Introduction to Windows Azure Storage](/documentation/articles/storage-introduction)
+* [How to use Blob Storage from .NET](/documentation/articles/storage-dotnet-how-to-use-blobs)
+* [How to use Table Storage from .NET](/documentation/articles/storage-dotnet-how-to-use-tables)
+* [How to use Queue Storage from .NET](/documentation/articles/storage-dotnet-how-to-use-queues)
+* [Azure Storage Documentation](/documentation/services/storage/)
+* [Azure Storage Client Library](https://msdn.microsoft.com/zh-cn/library/azure/wa_storage_30_reference_home.aspx)
+* [Azure Storage REST API](https://msdn.microsoft.com/zh-cn/library/azure/dd179355.aspx)
 
 [Image1]: ./media/storage-getting-started-guide/QuickStart.png
  

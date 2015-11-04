@@ -7,13 +7,9 @@
 	manager="dwrede"
 	editor="mollybos"/>
 <tags
-	ms.service="mobile-services" 
-	ms.workload="mobile"
-	ms.tgt_pltfrm="mobile-multiple"
-	ms.devlang="multiple"
-	ms.topic="article"
+	ms.service="mobile-services"
 	ms.date="09/16/2015"
-	ms.author="glenga"/>
+	wacn.date=""/>
 
 # Supporting multiple device platforms from a single mobile service
 
@@ -40,11 +36,11 @@ Tables in the following sections link to the client-specific tutorials that show
 
 ###.NET backend
 
-In a .NET backend mobile service, you send notifications by calling the [SendAsync] method on the [PushClient](http://msdn.microsoft.com/library/azure/microsoft.windowsazure.mobile.service.notifications.pushclient.aspx) object obtained from the [ApiServices.Push](http://msdn.microsoft.com/library/azure/microsoft.windowsazure.mobile.service.apiservices.push.aspx) property. The push notification sent (native or template) depends on the specific [IPushMessage](http://msdn.microsoft.com/library/azure/microsoft.windowsazure.mobile.service.notifications.ipushmessage.aspx)-derived object that is passed to the [SendAsync] method, as shown in the following table:
+In a .NET backend mobile service, you send notifications by calling the [SendAsync] method on the [PushClient](http://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.mobile.service.notifications.pushclient.aspx) object obtained from the [ApiServices.Push](http://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.mobile.service.apiservices.push.aspx) property. The push notification sent (native or template) depends on the specific [IPushMessage](http://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.mobile.service.notifications.ipushmessage.aspx)-derived object that is passed to the [SendAsync] method, as shown in the following table:
 
-|Platform |[APNS](mobile-services-dotnet-backend-ios-get-started-push.md)|[GCM](mobile-services-dotnet-backend-android-get-started-push.md) |[WNS](mobile-services-dotnet-backend-windows-store-dotnet-get-started-push.md) | MPNS
+|Platform |[APNS](/documentation/articles/mobile-services-dotnet-backend-ios-get-started-push)|[GCM](/documentation/articles/mobile-services-dotnet-backend-android-get-started-push) |[WNS](/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-push) | MPNS
 |-----|-----|----|----|-----|
-|Native|[ApplePushMessage](http://msdn.microsoft.com/library/azure/microsoft.windowsazure.mobile.service.applepushmessage.aspx)   |[GooglePushMessage](http://msdn.microsoft.com/library/azure/microsoft.windowsazure.mobile.service.googlepushmessage.aspx)     |[WindowsPushMessage](http://msdn.microsoft.com/library/azure/microsoft.windowsazure.mobile.service.windowspushmessage.aspx) | [MpnsPushMessage](http://msdn.microsoft.com/library/azure/microsoft.windowsazure.mobile.service.mpnspushmessage.aspx) |
+|Native|[ApplePushMessage](http://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.mobile.service.applepushmessage.aspx)   |[GooglePushMessage](http://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.mobile.service.googlepushmessage.aspx)     |[WindowsPushMessage](http://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.mobile.service.windowspushmessage.aspx) | [MpnsPushMessage](http://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.mobile.service.mpnspushmessage.aspx) |
 
 The following code sends a push notification from a .NET backend service to all iOS and Windows Store device registrations:
 
@@ -77,9 +73,9 @@ When you use template client registrations rather than native client registratio
 
 In a JavaScript backend mobile service, you send notifications by calling the **send** method on the platform-specific object obtained from the global [push object], as shown in the following table:
 
-|Platform |[APNS](mobile-services-javascript-backend-ios-get-started-push.md)|[GCM](mobile-services-javascript-backend-android-get-started-push.md) |[WNS](mobile-services-javascript-backend-windows-store-dotnet-get-started-push.md) |[MPNS](mobile-services-javascript-backend-windows-phone-get-started-push.md)|
+|Platform |[APNS](/documentation/articles/mobile-services-javascript-backend-ios-get-started-push)|[GCM](/documentation/articles/mobile-services-javascript-backend-android-get-started-push) |[WNS](/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-push) |[MPNS](/documentation/articles/mobile-services-javascript-backend-windows-phone-get-started-push)|
 |-----|-----|----|----|-----|
-|Native|[apns object](http://msdn.microsoft.com/library/azure/jj839711.aspx)   |[gcm object](http://msdn.microsoft.com/library/azure/dn126137.aspx)     |[wns object](http://msdn.microsoft.com/library/azure/jj860484.aspx) | [mpns object](http://msdn.microsoft.com/library/azure/jj871025.aspx) |
+|Native|[apns object](http://msdn.microsoft.com/zh-cn/library/azure/jj839711.aspx)   |[gcm object](http://msdn.microsoft.com/zh-cn/library/azure/dn126137.aspx)     |[wns object](http://msdn.microsoft.com/zh-cn/library/azure/jj860484.aspx) | [mpns object](http://msdn.microsoft.com/zh-cn/library/azure/jj871025.aspx) |
 
 The following code sends push notification to all Android and Windows Phone registrations:
 
@@ -137,7 +133,7 @@ Cross-platform tools are available that provide a richer native experience on a 
 
 + [**PhoneGap**](https://go.microsoft.com/fwLink/p/?LinkID=390707)**/**[**Cordova**](http://cordova.apache.org/)<br/>PhoneGap (a distribution of the Apache Cordova project) is a free and open source framework that lets you use standardized web APIs, HTML and JavaScript to develop a single app that runs on Android, iOS and Windows devices. PhoneGap provides a web view based UI, but with a user experience enhanced by accessing native resources on the device, such as such as push notifications, the accelerometer, camera, storage, geolocation, and the in-app browser. For more information, see the [PhoneGap quickstart tutorial][PhoneGap].
 
-	Visual Studio now also enables you to build cross-platform Cordova apps by using the Multi-Device Hybrid Apps extension for Visual Studio, which is pre-release software. For more information, see [Getting Started with Multi-Device Hybrid Apps Using HTML and JavaScript](http://msdn.microsoft.com/library/dn771545.aspx).
+	Visual Studio now also enables you to build cross-platform Cordova apps by using the Multi-Device Hybrid Apps extension for Visual Studio, which is pre-release software. For more information, see [Getting Started with Multi-Device Hybrid Apps Using HTML and JavaScript](http://msdn.microsoft.com/zh-cn/library/dn771545.aspx).
 
 + [**Sencha Touch**](http://go.microsoft.com/fwlink/p/?LinkId=509988)<br/>Sencha Touch provides a set of controls, optimized for touch screens, that provide a like-native experience on a wide variety of mobile devices from a single HTML and JavaScript code base. Sencha Touch can be used along with PhoneGap or Cordova libraries to provide users access to native device resources. For more information, see the [Sencha Touch quickstart tutorial][Sencha].
 
@@ -145,7 +141,7 @@ Cross-platform tools are available that provide a richer native experience on a 
 
 
 <!-- URLs -->
-[Azure Management portal]: https://manage.windowsazure.com
+[Azure Management portal]: https://manage.windowsazure.cn
 [Azure Notification Hubs]: /develop/net/how-to-guides/service-bus-notification-hubs/
 [SSO Windows Store]: /develop/mobile/tutorials/single-sign-on-windows-8-dotnet/
 [SSO Windows Phone]: /develop/mobile/tutorials/single-sign-on-wp8/
@@ -157,14 +153,14 @@ Cross-platform tools are available that provide a richer native experience on a 
 [Get started with push Windows Phone]: /develop/mobile/tutorials/get-started-with-push-wp8/
 [Get started with push iOS]: /develop/mobile/tutorials/get-started-with-push-ios/
 [Get started with push Android]: /develop/mobile/tutorials/get-started-with-push-android/
-[Dynamic schema]: http://msdn.microsoft.com/library/windowsazure/jj193175.aspx
-[How to use a .NET client with Mobile Services]: documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library/
-[push object]: http://msdn.microsoft.com/library/windowsazure/jj554217.aspx
-[TemplatePushMessage]:http://msdn.microsoft.com/library/azure/microsoft.windowsazure.mobile.service.templatepushmessage.aspx
-[PhoneGap]: mobile-services-javascript-backend-phonegap-get-started.md
-[Sencha]: partner-sencha-mobile-services-get-started.md
-[Appcelerator]: ../partner-appcelerator-mobile-services-javascript-backend-appcelerator-get-started.md
-[SendAsync]: http://msdn.microsoft.com/library/microsoft.windowsazure.mobile.service.notifications.pushclient.sendasync.aspx
-[What's next for Windows Phone 8 developers]: http://msdn.microsoft.com/library/windows/apps/dn655121(v=vs.105).aspx
+[Dynamic schema]: http://msdn.microsoft.com/zh-cn/library/azure/jj193175.aspx
+[How to use a .NET client with Mobile Services]: /documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library
+[push object]: http://msdn.microsoft.com/zh-cn/library/azure/jj554217.aspx
+[TemplatePushMessage]:http://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.mobile.service.templatepushmessage.aspx
+[PhoneGap]: /documentation/articles/mobile-services-javascript-backend-phonegap-get-started
+[Sencha]: /documentation/articles/partner-sencha-mobile-services-get-started
+[Appcelerator]: /documentation/articles/partner-appcelerator-mobile-services-javascript-backend-appcelerator-get-started
+[SendAsync]: http://msdn.microsoft.com/zh-cn/library/microsoft.windowsazure.mobile.service.notifications.pushclient.sendasync.aspx
+[What's next for Windows Phone 8 developers]: http://msdn.microsoft.com/zh-cn/library/windows/apps/dn655121(v=vs.105).aspx
 [Building universal Windows apps for all Windows devices]: http://go.microsoft.com/fwlink/p/?LinkId=509905
 [Universal Windows app project for Azure Mobile Services using MVVM]: http://code.msdn.microsoft.com/Universal-Windows-app-for-db3564de

@@ -1,5 +1,5 @@
 <properties
-	pageTitle="SharePoint Server Farm configuration | Microsoft Azure"
+	pageTitle="SharePoint Server Farm configuration | Windows Azure"
 	description="Learn about the default configuration of SharePoint farms when you use the SharePoint Server Farm feature of the Azure preview portal."
 	services="virtual-machines"
 	documentationCenter=""
@@ -9,17 +9,13 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.workload="infrastructure-services"
-	ms.tgt_pltfrm="Windows"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="10/05/2015"
-	ms.author="josephd"/>
+	wacn.date=""/>
 
 
 # SharePoint Server Farm configuration details
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
  
 
 SharePoint Server Farm is a feature of the Azure preview portal that automatically creates a preconfigured SharePoint Server 2013 farm for you. There are two farm configurations:
@@ -29,7 +25,7 @@ SharePoint Server Farm is a feature of the Azure preview portal that automatical
 
 The following sections provide configuration details for each farm.
 
-For additional information, see [SharePoint Server Farm](virtual-machines-sharepoint-farm-azure-preview.md).
+For additional information, see [SharePoint Server Farm](/documentation/articles/virtual-machines-sharepoint-farm-azure-preview).
 
 ## Basic SharePoint farm
 
@@ -132,12 +128,12 @@ Here are the configuration details:
 
 ## Azure Resource Manager
 
-The SharePoint Server Farm feature of the Azure preview portal creates virtual machines in Service Management. To create SharePoint Server 2013 farms in Azure Resource Manager, see [Deploy SharePoint Farms with Azure Resource Manager templates](virtual-machines-workload-template-sharepoint.md).
+The SharePoint Server Farm feature of the Azure preview portal creates virtual machines in Service Management. To create SharePoint Server 2013 farms in Azure Resource Manager, see [Deploy SharePoint Farms with Azure Resource Manager templates](/documentation/articles/virtual-machines-workload-template-sharepoint).
 
 ## Additional resources
 
-[SharePoint Server Farm](virtual-machines-sharepoint-farm-azure-preview.md)
+[SharePoint Server Farm](/documentation/articles/virtual-machines-sharepoint-farm-azure-preview)
 
-[SharePoint farms hosted in Azure infrastructure services](virtual-machines-sharepoint-infrastructure-services.md)
+[SharePoint farms hosted in Azure infrastructure services](/documentation/articles/virtual-machines-sharepoint-infrastructure-services)
 
-[Set up a SharePoint intranet farm in a hybrid cloud for testing](../virtual-network/virtual-networks-setup-sharepoint-hybrid-cloud-testing.md)
+[Set up a SharePoint intranet farm in a hybrid cloud for testing](/documentation/articles/virtual-networks-setup-sharepoint-hybrid-cloud-testing)

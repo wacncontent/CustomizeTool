@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Get started with authentication (Android) | Microsoft Azure"
+	pageTitle="Get started with authentication (Android) | Windows Azure"
 	description="Learn how to use Mobile Services to authenticate users of your Windows Store app through a variety of identity providers, including Google, Facebook, Twitter, and Microsoft."
 	services="mobile-services"
 	documentationCenter="android"
@@ -9,16 +9,12 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.workload="mobile"
-	ms.tgt_pltfrm="mobile-android"
-	ms.devlang="java"
-	ms.topic="article"
-	ms.date="10/05/2015" 
-	ms.author="ricksal"/>
+	ms.date="10/05/2015"
+	wacn.date=""/>
 
 # Add authentication to your Mobile Services Android app
 
-[AZURE.INCLUDE [mobile-services-selector-get-started-users](../../includes/mobile-services-selector-get-started-users.md)]
+[AZURE.INCLUDE [mobile-services-selector-get-started-users](../includes/mobile-services-selector-get-started-users.md)]
 
 ## Summary
 
@@ -29,17 +25,17 @@ This tutorial walks you through the basic steps to enable authentication in your
 
 ## Prerequisites
 
-[AZURE.INCLUDE [mobile-services-android-prerequisites](../../includes/mobile-services-android-prerequisites.md)]
+[AZURE.INCLUDE [mobile-services-android-prerequisites](../includes/mobile-services-android-prerequisites.md)]
 
 ##<a name="register"></a>Register your app for authentication and configure Mobile Services
 
-[AZURE.INCLUDE [mobile-services-register-authentication](../../includes/mobile-services-register-authentication.md)]
+[AZURE.INCLUDE [mobile-services-register-authentication](../includes/mobile-services-register-authentication.md)]
 
-[AZURE.INCLUDE [mobile-services-dotnet-backend-aad-server-extension](../../includes/mobile-services-dotnet-backend-aad-server-extension.md)]
+[AZURE.INCLUDE [mobile-services-dotnet-backend-aad-server-extension](../includes/mobile-services-dotnet-backend-aad-server-extension.md)]
 
 ##<a name="permissions"></a>Restrict permissions to authenticated users
 
-[AZURE.INCLUDE [mobile-services-restrict-permissions-dotnet-backend](../../includes/mobile-services-restrict-permissions-dotnet-backend.md)]
+[AZURE.INCLUDE [mobile-services-restrict-permissions-dotnet-backend](../includes/mobile-services-restrict-permissions-dotnet-backend.md)]
 
 3. Open the project that you created when you completed the tutorial [Get started with Mobile Services].
 
@@ -51,15 +47,15 @@ Next, you will update the app to authenticate users before requesting resources 
 
 ##<a name="add-authentication"></a>Add authentication to the app
 
-[AZURE.INCLUDE [mobile-services-android-authenticate-app](../../includes/mobile-services-android-authenticate-app.md)]
+[AZURE.INCLUDE [mobile-services-android-authenticate-app](../includes/mobile-services-android-authenticate-app.md)]
 
 ## <a name="cache-tokens"></a>Cache authentication tokens on the client
 
-[AZURE.INCLUDE [mobile-services-android-authenticate-app-with-token](../../includes/mobile-services-android-authenticate-app-with-token.md)]
+[AZURE.INCLUDE [mobile-services-android-authenticate-app-with-token](../includes/mobile-services-android-authenticate-app-with-token.md)]
 
 ## <a name="refresh-tokens"></a>Refresh the token cache
 
-[AZURE.INCLUDE [mobile-services-android-authenticate-app-refresh-token](../../includes/mobile-services-android-authenticate-app-refresh-token.md)]
+[AZURE.INCLUDE [mobile-services-android-authenticate-app-refresh-token](../includes/mobile-services-android-authenticate-app-refresh-token.md)]
 
 ##<a name="next-steps"></a>Next steps
 
@@ -75,11 +71,10 @@ In the next tutorial, [Service-side authorization of Mobile Services users][Auth
 [Next Steps]:#next-steps
 
 <!-- URLs. -->
-[Get started with Mobile Services]: mobile-services-dotnet-backend-android-get-started.md
-[Get started with authentication]: mobile-services-dotnet-backend-android-get-started-users.md
-[Get started with push notifications]: mobile-services-dotnet-backend-android-get-started-push.md
-[Authorize users with scripts]: ../mobile-services-dotnet-backend-android-authorize-users-in-scripts.md
-
-[Azure Management Portal]: https://manage.windowsazure.com/
+[Get started with Mobile Services]: /documentation/articles/mobile-services-dotnet-backend-android-get-started
+[Get started with authentication]: /documentation/articles/mobile-services-dotnet-backend-android-get-started-users
+[Get started with push notifications]: /documentation/articles/mobile-services-dotnet-backend-android-get-started-push
+[Authorize users with scripts]: /documentation/articles/mobile-services-dotnet-backend-android-authorize-users-in-scripts
+[Azure Management Portal]: https://manage.windowsazure.cn/
 [Mobile Services .NET How-to Conceptual Reference]: /develop/mobile/how-to-guides/work-with-net-client-library
-[Register your Windows Store app package for Microsoft authentication]: ../mobile-services-how-to-register-store-app-package-microsoft-authentication.md
+[Register your Windows Store app package for Microsoft authentication]: /documentation/articles/mobile-services-how-to-register-store-app-package-microsoft-authentication

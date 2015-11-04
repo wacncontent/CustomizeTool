@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Service Bus AMQP overview (Java) | Microsoft Azure" 
+	pageTitle="Service Bus AMQP overview (Java) | Windows Azure" 
 	description="Learn about using Java with the Advanced Message Queuing Protocol (AMQP) 1.0 in Azure." 
 	services="service-bus" 
 	documentationCenter="java" 
@@ -7,19 +7,15 @@
 	manager="timlt" 
 	editor=""/>
 
-<tags 
-	ms.service="service-bus" 
-	ms.workload="tbd" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="Java" 
-	ms.topic="article" 
-	ms.date="07/21/2015" 
-	ms.author="sethm"/>
+<tags
+	ms.service="service-bus"
+	ms.date="07/21/2015"
+	wacn.date=""/>
 
 
 # AMQP 1.0 support in Service Bus
 
-Both the Azure Service Bus cloud service and on-prem [Service Bus for Windows Server (Service Bus 1.1)](https://msdn.microsoft.com/library/dn282144.aspx) support the Advanced Message Queueing Protocol (AMQP) 1.0. AMQP enables you to build cross-platform, hybrid applications using an open standard protocol. You can construct applications using components that are built using different languages and frameworks, and that run on different operating systems. All these components can connect to Service Bus and seamlessly exchange structured business messages efficiently and at full fidelity.
+Both the Azure Service Bus cloud service and on-prem [Service Bus for Windows Server (Service Bus 1.1)](https://msdn.microsoft.com/zh-cn/library/dn282144.aspx) support the Advanced Message Queueing Protocol (AMQP) 1.0. AMQP enables you to build cross-platform, hybrid applications using an open standard protocol. You can construct applications using components that are built using different languages and frameworks, and that run on different operating systems. All these components can connect to Service Bus and seamlessly exchange structured business messages efficiently and at full fidelity.
 
 ## Introduction: What is AMQP 1.0 and why is it important?
 
@@ -91,10 +87,10 @@ For more information about how to obtain and use these libraries with Service Bu
 
 *    [How to use AMQP 1.0 with the Service Bus .NET API](http://aka.ms/lym3vk)
 *    [How to use the Java Message Service (JMS) API with Service Bus & AMQP 1.0](http://aka.ms/ll1fm3)
-*    [Service Bus AMQP Developer's Guide](http://msdn.microsoft.com/library/jj841071.aspx)
+*    [Service Bus AMQP Developer's Guide](http://msdn.microsoft.com/zh-cn/library/jj841071.aspx)
 *    [OASIS Advanced Message Queuing Protocol (AMQP) Version 1.0 specification](http://docs.oasis-open.org/amqp/core/v1.0/os/amqp-core-complete-v1.0-os.pdf)
 
 [0]: ./media/service-bus-java-amqp-overview/Example1.png
-[Service Bus AMQP Developer's Guide]: http://msdn.microsoft.com/library/jj841071.aspx
+[Service Bus AMQP Developer's Guide]: http://msdn.microsoft.com/zh-cn/library/jj841071.aspx
 
  

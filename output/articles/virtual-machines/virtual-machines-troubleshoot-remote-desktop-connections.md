@@ -1,5 +1,5 @@
 ﻿<properties
-	pageTitle="Troubleshoot Remote Desktop connection on a Windows VM | Microsoft Azure"
+	pageTitle="Troubleshoot Remote Desktop connection on a Windows VM | Windows Azure"
 	description="Troubleshoot Remote Desktop or RDP connections to an Azure virtual machine running Windows."
 	services="virtual-machines"
 	documentationCenter=""
@@ -10,47 +10,43 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.workload="infrastructure-services"
-	ms.tgt_pltfrm="vm-windows"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="09/16/2015"
-	ms.author="dkshir"/>
+	wacn.date=""/>
 
 # Troubleshoot Remote Desktop connections to an Azure virtual machine running Windows
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-both-include.md)]
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-both-include.md)]
 
 
 There can be various reasons for Remote Desktop (RDP) to fail connecting to your Azure virtual machine running Windows. This article will help you find out the causes and correct them.
 
-> [AZURE.NOTE] This article only applies to Azure virtual machines running Windows. For troubleshooting connections to Azure virtual machines running Linux, see [this article](virtual-machines-troubleshoot-ssh-connections.md).
+> [AZURE.NOTE] This article only applies to Azure virtual machines running Windows. For troubleshooting connections to Azure virtual machines running Linux, see [this article](/documentation/articles/virtual-machines-troubleshoot-ssh-connections).
 
 ## Contact Azure Customer Support
 
 If you need more help at any point in this article, you can contact the Azure experts on [the MSDN Azure and the Stack Overflow forums](http://azure.microsoft.com/support/forums/).
 
-Alternatively, you can also file an Azure support incident. Go to the [Azure Support site](http://azure.microsoft.com/support/options/) and click on **Get Support**. For information about using Azure Support, read the [Microsoft Azure Support FAQ](http://azure.microsoft.com/support/faq/).
+Alternatively, you can also file an Azure support incident. Go to the [Azure Support site](http://azure.microsoft.com/support/options/) and click on **Get Support**. For information about using Azure Support, read the [Windows Azure Support FAQ](/support/faq/).
 
 
 ## Basic steps
 
 These basic steps can help resolve most of the Remote Desktop connection failures:
 
-- Reset Remote Desktop service from the [Azure portal](https://portal.azure.com). Click **Browse all** > **Virtual machines (classic)** > your Windows virtual machine > **Reset Remote Access**.
+- Reset Remote Desktop service from the [Azure Management Portal](https://manage.windowsazure.cn). Click **Browse all** > **Virtual machines (classic)** > your Windows virtual machine > **Reset Remote Access**.
 
 ![Reset Remote Access](./media/virtual-machines-troubleshoot-remote-desktop-connections/Portal-RDP-Reset-Windows.png)
 
-- [Restart the virtual machine](https://msdn.microsoft.com/library/azure/dn763934.aspx).
+- [Restart the virtual machine](https://msdn.microsoft.com/zh-cn/library/azure/dn763934.aspx).
 
-- [Resize the virtual machine](https://msdn.microsoft.com/library/dn168976.aspx).
+- [Resize the virtual machine](https://msdn.microsoft.com/zh-cn/library/dn168976.aspx).
 
 
 ## Run the Azure IaaS Diagnostics package on Windows
 
 If you are troubleshooting from a computer running Windows 8, Windows 8.1, Windows Server 2012, or Windows Server 2012 R2, you can try running the [Azure IaaS (Windows) diagnostics package](http://support.microsoft.com/kb/2976864). This package can address many of the common problems with the Remote Desktop.
 
-1.	Click **Microsoft Azure IaaS (Windows) diagnostics package** on the [Support diagnostics page](https://home.diagnostics.support.microsoft.com/SelfHelp?knowledgebaseArticleFilter=2976864). Click **Create** for a new diagnostics session. You can either **Share** this session with a different target computer or **Download** it on your local machine.
+1.	Click **Windows Azure IaaS (Windows) diagnostics package** on the [Support diagnostics page](https://home.diagnostics.support.microsoft.com/SelfHelp?knowledgebaseArticleFilter=2976864). Click **Create** for a new diagnostics session. You can either **Share** this session with a different target computer or **Download** it on your local machine.
 2.	**Run** the session, **Accept** the Microsoft license agreement and **Start** the diagnostic tool.
 3.	Authenticate your Azure subscription in the pop-up window and follow along with the prompts.
 4.	On the **Which of the following issues are you experiencing with your Azure VM?** page, select the **RDP connectivity to an Azure VM (Reboot Required)** issue.
@@ -77,7 +73,7 @@ The following are the most common errors you might encounter when trying to Remo
 
 Cause: The 120-day licensing grace period for the Remote Desktop Server role has expired and you need to install licenses.
 
-As a workaround, save a local copy of the RDP file from the Azure portal and run this command at a Windows PowerShell command prompt to connect.
+As a workaround, save a local copy of the RDP file from the Azure Management Portal and run this command at a Windows PowerShell command prompt to connect.
 
 		mstsc <File name>.RDP /admin
 
@@ -95,12 +91,12 @@ Cause: The Remote Desktop client on your computer could not resolve the name of 
 Possible solutions:
 
 - If you are on an organization intranet, make sure that your computer has access to the proxy server and can send HTTPS traffic to it.
-- If you are using a locally stored RDP file, try using the one generated by the Azure portal. This will ensure you have the correct DNS name for the virtual machine or the cloud service and the endpoint port of the virtual machine. Here is a sample RDP file generated by the Azure portal:
+- If you are using a locally stored RDP file, try using the one generated by the Azure Management Portal. This will ensure you have the correct DNS name for the virtual machine or the cloud service and the endpoint port of the virtual machine. Here is a sample RDP file generated by the Azure Management Portal:
 
-		full address:s:tailspin-azdatatier.cloudapp.net:55919
+		full address:s:tailspin-azdatatier.chinacloudapp.cn:55919
 		prompt for credentials:i:1
 
-The address portion in this RDP file has the fully qualified domain name of the cloud service containing the VM (tailspin-azdatatier.cloudapp.net in this example) and the external TCP port of the endpoint for Remote Desktop traffic (55919).
+The address portion in this RDP file has the fully qualified domain name of the cloud service containing the VM (tailspin-azdatatier.chinacloudapp.cn in this example) and the external TCP port of the endpoint for Remote Desktop traffic (55919).
 
 <a id="rdpauth"></a>
 ### Remote Desktop connection error: An authentication error has occurred. The Local Security Authority cannot be contacted.
@@ -129,7 +125,7 @@ If you have promoted your virtual machine to a domain controller in a new Active
 
 Make sure that the account name is a name that the virtual machine can verify as a valid account, and that the password is correct.
 
-If you need to change the password of the local administrator account, see [How to reset a password or the Remote Desktop service for Windows virtual machines](virtual-machines-windows-reset-password.md).
+If you need to change the password of the local administrator account, see [How to reset a password or the Remote Desktop service for Windows virtual machines](/documentation/articles/virtual-machines-windows-reset-password).
 
 <a id="rdpconnect"></a>
 ### Remote Desktop connection error: This computer can't connect to the remote computer.
@@ -143,17 +139,17 @@ Make sure that the account you are using to connect has Remote Desktop logon rig
 
 ## Detailed troubleshooting
 
-If none of these errors occurred and you still could not connect to the VM via Remote Desktop, read [this article](virtual-machines-rdp-detailed-troubleshoot.md) to figure out other causes.
+If none of these errors occurred and you still could not connect to the VM via Remote Desktop, read [this article](/documentation/articles/virtual-machines-rdp-detailed-troubleshoot) to figure out other causes.
 
 
 ## Additional resources
 
 [Azure IaaS (Windows) diagnostics package](https://home.diagnostics.support.microsoft.com/SelfHelp?knowledgebaseArticleFilter=2976864)
 
-[How to reset a password or the Remote Desktop service for Windows virtual machines](virtual-machines-windows-reset-password.md)
+[How to reset a password or the Remote Desktop service for Windows virtual machines](/documentation/articles/virtual-machines-windows-reset-password)
 
-[How to install and configure Azure PowerShell](../install-configure-powershell.md)
+[How to install and configure Azure PowerShell](/documentation/articles/install-configure-powershell)
 
-[Troubleshoot Secure Shell (SSH) connections to a Linux-based Azure virtual machine](virtual-machines-troubleshoot-ssh-connections.md)
+[Troubleshoot Secure Shell (SSH) connections to a Linux-based Azure virtual machine](/documentation/articles/virtual-machines-troubleshoot-ssh-connections)
 
-[Troubleshoot access to an application running on an Azure virtual machine](virtual-machines-troubleshoot-access-application.md)
+[Troubleshoot access to an application running on an Azure virtual machine](/documentation/articles/virtual-machines-troubleshoot-access-application)

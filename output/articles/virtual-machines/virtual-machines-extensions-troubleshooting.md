@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Troubleshooting Azure VM extensions failures | Microsoft Azure"
+   pageTitle="Troubleshooting Azure VM extensions failures | Windows Azure"
    description="Learn about troubleshooting Azure VM extension failures"
    services="virtual-machines"
    documentationCenter=""
@@ -9,17 +9,13 @@
    tags="top-support-issue,azure-resource-manager"/>
 
 <tags
-   ms.service="virtual-machines"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="infrastructure-services"
-   ms.date="09/01/2015"
-   ms.author="kundanap"/>
+	ms.service="virtual-machines"
+	ms.date="09/01/2015"
+	wacn.date=""/>
 
 # Troubleshooting Azure VM Extension failures.
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-rm-include.md)] classic deployment model.
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] classic deployment model.
 
 
 ## Overview of Azure Resource Manager Templates.
@@ -27,7 +23,7 @@
 Azure Resource Manager Template allows you to declaratively specify the Azure IaaS infrastructure in Json language by defining the dependencies between resources.
 
 
-Click the article  [Authoring Extension Templates](virtual-machines-extensions-authoring-templates.md) to learn more about authoring templates for using Extensions.
+Click the article  [Authoring Extension Templates](/documentation/articles/virtual-machines-extensions-authoring-templates) to learn more about authoring templates for using Extensions.
 
 In this article we'll learn about troubleshooting some of the common VM Extension failures.
 

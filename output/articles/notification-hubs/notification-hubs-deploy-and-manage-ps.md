@@ -7,14 +7,10 @@
 	manager="dwrede" 
 	editor="" />
 
-<tags 
-	ms.service="notification-hubs" 
-	ms.workload="mobile" 
-	ms.tgt_pltfrm="powershell" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="09/24/2015" 
-	ms.author="wesmc"/>
+<tags
+	ms.service="notification-hubs"
+	ms.date="09/24/2015"
+	wacn.date=""/>
 
 # Deploy and Manage Notification Hubs using PowerShell
 
@@ -25,7 +21,7 @@ This article shows you how to use Create and Manage Azure Notification Hubs usin
 + Create a Notification Hub
 + Set Credentials
 
-If you also need to create a new service bus namespace for your notification hubs, see [Manage Service Bus with PowerShell](../service-bus/service-bus-powershell-how-to-provision.md).
+If you also need to create a new service bus namespace for your notification hubs, see [Manage Service Bus with PowerShell](/documentation/articles/service-bus-powershell-how-to-provision).
 
 Managing Notifications Hubs is not supported directly by the cmdlets included with Azure PowerShell. The best approach from PowerShell is to reference the Microsoft.ServiceBus.dll assembly. The assembly is distributed with the [Service Bus NuGet package](http://www.nuget.org/packages/WindowsAzure.ServiceBus/).
 
@@ -36,7 +32,7 @@ Before you begin this article, you must have the following:
 
 - An Azure subscription. Azure is a subscription-based platform. For more
 information about obtaining a subscription, see [Purchase Options],
-[Member Offers], or [Free Trial].
+[Member Offers], or [Trial].
 
 - A computer with Azure PowerShell. For instructions, see [Install and configure Azure PowerShell].
 
@@ -79,7 +75,7 @@ catch [System.Exception]
 
 ## Create the NamespaceManager class
 
-To provision Notification Hubs and other Service Bus entities, create an instance of the [NamespaceManager](http://msdn.microsoft.com/library/microsoft.servicebus.namespacemanager.aspx) class from the SDK. 
+To provision Notification Hubs and other Service Bus entities, create an instance of the [NamespaceManager](http://msdn.microsoft.com/zh-cn/library/microsoft.servicebus.namespacemanager.aspx) class from the SDK. 
 
 You can use the [Get-AzureSBAuthorizationRule] cmdlet included with Azure PowerShell to retrieve an authorization rule that's used to provide a connection string. We'll store a reference to the `NamespaceManager` instance in the `$NamespaceManager` variable. We will use `$NamespaceManager` to provision a notification hub.
 
@@ -94,7 +90,7 @@ Write-Output "NamespaceManager object for the [$Namespace] namespace has been su
 
 ## Provisioning a new Notification Hub 
 
-To provision a new notification hub, use the [.NET API for Service Bus]. This article focuses only on notification hubs. To work with other service bus entities, see [Manage Service Bus with PowerShell](../service-bus/service-bus-powershell-how-to-provision.md).
+To provision a new notification hub, use the [.NET API for Service Bus]. This article focuses only on notification hubs. To work with other service bus entities, see [Manage Service Bus with PowerShell](/documentation/articles/service-bus-powershell-how-to-provision).
 
 In this part of the script you set up four local variables. 
 
@@ -103,7 +99,7 @@ In this part of the script you set up four local variables.
 3. `$WnsPackageSid` : Set this to the package SID for you Windows App from the [Windows Dev Center](http://go.microsoft.com/fwlink/p/?linkid=266582&clcid=0x409).
 4. `$WnsSecretkey`: Set this to the secret key for you Windows App from the [Windows Dev Center](http://go.microsoft.com/fwlink/p/?linkid=266582&clcid=0x409).
 
-These variables are used to connect to your Service Bus namespace and create a new Notification Hub configured to handle Windows Notification Services (WNS) notifications with WNS credentials for a Windows App. For information on obtaining the package SID and secret key see, the [Getting Started with Notification Hubs](notification-hubs-windows-store-dotnet-get-started.md) tutorial. 
+These variables are used to connect to your Service Bus namespace and create a new Notification Hub configured to handle Windows Notification Services (WNS) notifications with WNS credentials for a Windows App. For information on obtaining the package SID and secret key see, the [Getting Started with Notification Hubs](/documentation/articles/notification-hubs-windows-store-dotnet-get-started) tutorial. 
 
 + The script snippet uses the `NamespaceManager` object to check to see if the Notification Hub identified by `$Path` exists.
 
@@ -157,7 +153,7 @@ else
 
 ## Additional Resources
 
-- [Manage Service Bus with PowerShell](../service-bus/service-bus-powershell-how-to-provision.md)
+- [Manage Service Bus with PowerShell](/documentation/articles/service-bus-powershell-how-to-provision)
 - [How to create Service Bus queues, topics and subscriptions using a PowerShell script](http://blogs.msdn.com/b/paolos/archive/2014/12/02/how-to-create-a-service-bus-queues-topics-and-subscriptions-using-a-powershell-script.aspx)
 - [How to create a Service Bus Namespace and an Event Hub using a PowerShell script](http://blogs.msdn.com/b/paolos/archive/2014/12/01/how-to-create-a-service-bus-namespace-and-an-event-hub-using-a-powershell-script.aspx)
 
@@ -165,12 +161,12 @@ Some ready-made scripts are also available for download:
 - [Service Bus PowerShell Scripts](https://code.msdn.microsoft.com/windowsazure/Service-Bus-PowerShell-a46b7059)
  
 
-[Purchase Options]: http://azure.microsoft.com/pricing/purchase-options/
+[Purchase Options]: /pricing/overview/
 [Member Offers]: http://azure.microsoft.com/pricing/member-offers/
-[Free Trial]: http://azure.microsoft.com/pricing/free-trial/
-[Install and configure Azure PowerShell]: ../install-configure-powershell.md
-[.NET API for Service Bus]: https://msdn.microsoft.com/library/microsoft.servicebus.aspx
-[Get-AzureSBNamespace]: https://msdn.microsoft.com/library/azure/dn495122.aspx
-[New-AzureSBNamespace]: https://msdn.microsoft.com/library/azure/dn495165.aspx
-[Get-AzureSBAuthorizationRule]: https://msdn.microsoft.com/library/azure/dn495113.aspx
+[Trial]: /pricing/1rmb-trial/
+[Install and configure Azure PowerShell]: /documentation/articles/install-configure-powershell
+[.NET API for Service Bus]: https://msdn.microsoft.com/zh-cn/library/microsoft.servicebus.aspx
+[Get-AzureSBNamespace]: https://msdn.microsoft.com/zh-cn/library/azure/dn495122.aspx
+[New-AzureSBNamespace]: https://msdn.microsoft.com/zh-cn/library/azure/dn495165.aspx
+[Get-AzureSBAuthorizationRule]: https://msdn.microsoft.com/zh-cn/library/azure/dn495113.aspx
  

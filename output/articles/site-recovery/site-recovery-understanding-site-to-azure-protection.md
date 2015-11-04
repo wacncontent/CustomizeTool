@@ -7,14 +7,10 @@
 	manager="mkjain" 
 	editor=""/>
 
-<tags 
-	ms.service="site-recovery" 
-	ms.devlang="na"
-	ms.topic="article"
-	ms.tgt_pltfrm="na"
-	ms.workload="storage-backup-recovery" 
-	ms.date="09/01/2015" 
-	ms.author="anbacker"/>
+<tags
+	ms.service="site-recovery"
+	ms.date="09/01/2015"
+	wacn.date=""/>
 
 
 # Understanding Hyper-V or VMM site to Azure protection
@@ -27,7 +23,7 @@ This article describes the technical concepts which helps you successfully confi
 
 As part of setting up DR between on-premises & Azure; Azure Site Recovery Provider needs to be downloaded and installed on the VMM server along with Azure Recovery Services Agent which needs to be installed on each Hyper-V host.
 
-![VMM Site Deployment for replication between on-premises & Azure](media/site-recovery-understanding-site-to-azure-protection/image00.png)
+![VMM Site Deployment for replication between on-premises & Azure](./media/site-recovery-understanding-site-to-azure-protection/image00.png)
 
 Hyper-V Site deployment is same as that of VMM Deployment – only difference being Provider & Agent gets installed on the Hyper-V host itself.
 
@@ -36,16 +32,16 @@ Hyper-V Site deployment is same as that of VMM Deployment – only difference be
 ### Enable Protection
 Once you protect a virtual machine from portal or on-premises, an ASR job named *Enable Protection* will be initiated and can be monitored under the JOBS tab. 
 
-![Troubleshoot on-premises Hyper-V issues](media/site-recovery-understanding-site-to-azure-protection/image01.png)
+![Troubleshoot on-premises Hyper-V issues](./media/site-recovery-understanding-site-to-azure-protection/image01.png)
 
-*Enable Protection* job checks for the prerequisites before invoking [CreateReplicationRelationship](https://msdn.microsoft.com/library/hh850036.aspx) which creates replication to Azure using inputs configured during protection. *Enable Protection* job starts the initial replication from on-premises by invoking [StartReplication](https://msdn.microsoft.com/library/hh850303.aspx) which sends the virtual machine's virtual disks to Azure.
+*Enable Protection* job checks for the prerequisites before invoking [CreateReplicationRelationship](https://msdn.microsoft.com/zh-cn/library/hh850036.aspx) which creates replication to Azure using inputs configured during protection. *Enable Protection* job starts the initial replication from on-premises by invoking [StartReplication](https://msdn.microsoft.com/zh-cn/library/hh850303.aspx) which sends the virtual machine's virtual disks to Azure.
 
-![Troubleshoot on-premises Hyper-V issues](media/site-recovery-understanding-site-to-azure-protection/image02.png)
+![Troubleshoot on-premises Hyper-V issues](./media/site-recovery-understanding-site-to-azure-protection/image02.png)
 
 ### Finalize Protection
-A [Hyper-V VM snapshot](https://technet.microsoft.com/library/dd560637.aspx) is taken when Initial Replication is triggered. Virtual hard disks are processed one by one till all the disks are uploaded to Azure. This normally takes a while to complete based on the disk size and the bandwidth. Refer [How to manage on-premises to Azure protection network bandwidth usage](https://support.microsoft.com/kb/3056159) for optimizing your network usage. Once initial replication completes *Finalize protection on the virtual machine* job configures the network and post-replication settings. While Initial Replication is in-progress all the changes to the disks gets tracked as mentioned in Delta Replication section below. Additional disk storage will be consumed for the snapshot and HRL files while Initial Replication is in-progress. On completion of an Initial Replication, Hyper-V VM snapshot will be deleted which results in merging data changes post Initial Replication to the parent disk.
+A [Hyper-V VM snapshot](https://technet.microsoft.com/zh-cn/library/dd560637.aspx) is taken when Initial Replication is triggered. Virtual hard disks are processed one by one till all the disks are uploaded to Azure. This normally takes a while to complete based on the disk size and the bandwidth. Refer [How to manage on-premises to Azure protection network bandwidth usage](https://support.microsoft.com/kb/3056159) for optimizing your network usage. Once initial replication completes *Finalize protection on the virtual machine* job configures the network and post-replication settings. While Initial Replication is in-progress all the changes to the disks gets tracked as mentioned in Delta Replication section below. Additional disk storage will be consumed for the snapshot and HRL files while Initial Replication is in-progress. On completion of an Initial Replication, Hyper-V VM snapshot will be deleted which results in merging data changes post Initial Replication to the parent disk.
 
-![Troubleshoot on-premises Hyper-V issues](media/site-recovery-understanding-site-to-azure-protection/image03.png)
+![Troubleshoot on-premises Hyper-V issues](./media/site-recovery-understanding-site-to-azure-protection/image03.png)
 
 ### Delta Replication
 Hyper-V Replica Replication Tracker, which is part of the Hyper-V Replica Replication Engine, tracks the changes to a virtual hard disk as Hyper-V Replication Logs (*.hrl). HRL files will be located in the same directory as of the associated disks. Each disk configured for replication will have an associated HRL file. This log(s) is (are) sent to the customer's storage account after initial replication is complete. When a log is in transit to the Azure, the changes in the primary are tracked in another log file in the same directory.
@@ -58,7 +54,7 @@ A virtual machine is marked for re-synchronization when both Delta Replication f
 After re-synchronization completes, normal Delta Replication should resume. Re-synchronization can be resumed in the event of an outage (e.g. network outage, VMMS crash, etc.). 
 
 By default *Automatically scheduled re-synchronization* is configured during the non-office work hours. If the virtual machine needs to be re-synchronized manually, select the virtual machine from the portal and click RESYNCHRONIZE.
-![Troubleshoot on-premises Hyper-V issues](media/site-recovery-understanding-site-to-azure-protection/image04.png)
+![Troubleshoot on-premises Hyper-V issues](./media/site-recovery-understanding-site-to-azure-protection/image04.png)
 
 Re-synchronization uses a fixed-block chunking algorithm where Source and Target files are divided into fixed chunks; check-sum for each chunk are generated and then compared to determine which block(s) from the Source need to be applied to the Target. 
 
@@ -72,7 +68,7 @@ There is built-in retry logic when replication errors occur. This can be classif
 
 ## Understanding Hyper-V virtual machine protection and recovery life cycle
 
-![Understanding the Hyper-V virtual machine protection & recovery life cycle](media/site-recovery-understanding-site-to-azure-protection/image05.png)
+![Understanding the Hyper-V virtual machine protection & recovery life cycle](./media/site-recovery-understanding-site-to-azure-protection/image05.png)
 
 ## Other references
 

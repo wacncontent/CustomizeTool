@@ -35,7 +35,7 @@ This topic covers the following:
 ##<a id="scenario"></a>Common live streaming scenario
 The following steps describe tasks involved in creating common live streaming applications.
 
-1. Connect a video camera to a computer. Launch and configure an on-premises live encoder that outputs a multi-bitrate RTMP or Fragmented MP4 (Smooth Streaming) stream. For more information, see [Azure Media Services RTMP Support and Live Encoders](http://go.microsoft.com/fwlink/?LinkId=532824).
+1. Connect a video camera to a computer. Launch and configure an on-premises live encoder that outputs a multi-bitrate RTMP or Fragmented MP4 (Smooth Streaming) stream. For more information, see [Azure Media Services RTMP Support and Live Encoders](https://azure.microsoft.com/zh-cn/blog/azure-media-services-rtmp-support-and-live-encoders/).
 	
 	This step could also be performed after you create your Channel.
 
@@ -95,7 +95,7 @@ Media Services supports ingesting live feeds using the following streaming proto
 	
 		In this scenario both encoders push data to both primary and secondary URLs. This provides the best reliability and fault tolerance as well as data redundancy. It can tolerate both encoder failures and also disconnects even if one encoder stops working. This scenario assumes encoders are time sync and provides exactly same data.  
 
-For information about RTMP live encoders, see [Azure Media Services RTMP Support and Live Encoders](http://go.microsoft.com/fwlink/?LinkId=532824).
+For information about RTMP live encoders, see [Azure Media Services RTMP Support and Live Encoders](https://azure.microsoft.com/zh-cn/blog/azure-media-services-rtmp-support-and-live-encoders/).
 
 The following considerations apply:
 

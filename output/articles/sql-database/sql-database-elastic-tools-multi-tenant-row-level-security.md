@@ -7,26 +7,22 @@
 	manager="jeffreyg" 
 	authors="tmullaney"/>
 
-<tags 
-	ms.service="sql-database" 
-	ms.workload="sql-database" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="08/19/2015" 
-	ms.author="thmullan;torsteng;sidneyh" />
+<tags
+	ms.service="sql-database"
+	ms.date="08/19/2015"
+	wacn.date=""/>
 
 # Multi-tenant applications with elastic database tools and row-level security 
 
-[Elastic database tools](sql-database-elastic-scale-get-started.md) and [row-level security (RLS)](https://msdn.microsoft.com/library/dn765131) offer a powerful set of capabilities for flexibly and efficiently scaling the data tier of a multi-tenant application with Azure SQL Database. This article illustrates how to use these technologies together to build an application with a highly scalable data tier that supports multi-tenant shards, using **ADO.NET SqlClient** and/or **Entity Framework**. 
+[Elastic database tools](/documentation/articles/sql-database-elastic-scale-get-started) and [row-level security (RLS)](https://msdn.microsoft.com/zh-cn/library/dn765131) offer a powerful set of capabilities for flexibly and efficiently scaling the data tier of a multi-tenant application with Azure SQL Database. This article illustrates how to use these technologies together to build an application with a highly scalable data tier that supports multi-tenant shards, using **ADO.NET SqlClient** and/or **Entity Framework**. 
 
 * **Elastic database tools** enables developers to scale out the data tier of an application via industry-standard sharding practices using a set of .NET libraries and Azure service templates. Managing shards with using the Elastic Database Client Library helps automate and streamline many of the infrastructural tasks typically associated with sharding. 
 
-* **Row-level security** enables developers to store data for multiple tenants in the same database using security policies to filter out rows that do not belong to the tenant executing a query. Centralizing access logic with RLS inside the database, rather than in the application, simplifies maintenance and reduces the risk of error as an application’s codebase grows. RLS requires the latest [Azure SQL Database update (V12)](sql-database-preview-whats-new.md). 
+* **Row-level security** enables developers to store data for multiple tenants in the same database using security policies to filter out rows that do not belong to the tenant executing a query. Centralizing access logic with RLS inside the database, rather than in the application, simplifies maintenance and reduces the risk of error as an application’s codebase grows. RLS requires the latest [Azure SQL Database update (V12)](/documentation/articles/sql-database-preview-whats-new). 
 
 Using these features together, an application can benefit from cost savings and efficiency gains by storing data for multiple tenants in the same shard database. At the same time, an application still has the flexibility to offer isolated, single-tenant shards for “premium” tenants who require stricter performance guarantees since multi-tenant shards do not guarantee equal resource distribution among tenants.  
 
-In short, the elastic database client library’s [data dependent routing](sql-database-elastic-scale-data-dependent-routing.md) APIs automatically connect tenants to the correct shard database containing their sharding key (generally a “TenantId”). Once connected, an RLS security policy within the database ensures that tenants can only access rows that contain their TenantId. It is assumed that all tables contain a TenantId column to indicate which rows belong to each tenant. 
+In short, the elastic database client library’s [data dependent routing](/documentation/articles/sql-database-elastic-scale-data-dependent-routing) APIs automatically connect tenants to the correct shard database containing their sharding key (generally a “TenantId”). Once connected, an RLS security policy within the database ensures that tenants can only access rows that contain their TenantId. It is assumed that all tables contain a TenantId column to indicate which rows belong to each tenant. 
 
 ![Blogging app architecture][1]
 
@@ -38,7 +34,7 @@ In short, the elastic database client library’s [data dependent routing](sql-d
 * Download sample project: [Elastic DB Tools for Azure SQL - Multi-Tenant Shards](http://go.microsoft.com/?linkid=9888163)
   * Fill in the information for your databases at the beginning of **Program.cs** 
 
-This project extends the one described in [Elastic DB Tools for Azure SQL - Entity Framework Integration](sql-database-elastic-scale-use-entity-framework-applications-visual-studio.md) by adding support for multi-tenant shard databases. It builds a simple console application for creating blogs and posts, with four tenants and two multi-tenant shard databases as illustrated in the above diagram. 
+This project extends the one described in [Elastic DB Tools for Azure SQL - Entity Framework Integration](/documentation/articles/sql-database-elastic-scale-use-entity-framework-applications-visual-studio) by adding support for multi-tenant shard databases. It builds a simple console application for creating blogs and posts, with four tenants and two multi-tenant shard databases as illustrated in the above diagram. 
 
 Build and run the application. This will bootstrap the elastic database tools’ shard map manager and run the following tests: 
 
@@ -54,11 +50,11 @@ Notice that because RLS has not yet been enabled in the shard databases, each of
 
 ## Step 1) Application tier: Set CONTEXT_INFO to TenantId
 
-After connecting to a shard database using the elastic database client library’s data dependent routing APIs, the application still needs to tell the database which TenantId is using that connection so that an RLS security policy can filter out rows belonging to other tenants. The recommended way to pass this information is to set [CONTEXT_INFO](https://msdn.microsoft.com/library/ms180125) to the current TenantId for that connection. Note that on Azure SQL Database, CONTEXT_INFO is pre-populated with a session-specific GUID, so you *must* set CONTEXT_INFO to the correct TenantId before executing any queries on a new connection to ensure that no rows are inadvertently leaked.
+After connecting to a shard database using the elastic database client library’s data dependent routing APIs, the application still needs to tell the database which TenantId is using that connection so that an RLS security policy can filter out rows belonging to other tenants. The recommended way to pass this information is to set [CONTEXT_INFO](https://msdn.microsoft.com/zh-cn/library/ms180125) to the current TenantId for that connection. Note that on Azure SQL Database, CONTEXT_INFO is pre-populated with a session-specific GUID, so you *must* set CONTEXT_INFO to the correct TenantId before executing any queries on a new connection to ensure that no rows are inadvertently leaked.
 
 ### Entity Framework
 
-For applications using Entity Framework, the easiest approach is to set CONTEXT_INFO within the ElasticScaleContext override described in [Data Dependent Routing using EF DbContext](sql-database-elastic-scale-use-entity-framework-applications-visual-studio.md/#data-dependent-routing-using-ef-dbcontext). Before returning the connection brokered through data dependent routing, simply create and execute a SqlCommand that sets CONTEXT_INFO to the shardingKey (TenantId) specified for that connection. This way, you only need to write code once to set CONTEXT_INFO. 
+For applications using Entity Framework, the easiest approach is to set CONTEXT_INFO within the ElasticScaleContext override described in [Data Dependent Routing using EF DbContext](/documentation/articles/sql-database-elastic-scale-use-entity-framework-applications-visual-studio#data-dependent-routing-using-ef-dbcontext). Before returning the connection brokered through data dependent routing, simply create and execute a SqlCommand that sets CONTEXT_INFO to the shardingKey (TenantId) specified for that connection. This way, you only need to write code once to set CONTEXT_INFO. 
 
 ```
 // ElasticScaleContext.cs 
@@ -193,7 +189,7 @@ Now that the application is setting CONTEXT_INFO to the current TenantId before 
 
 RLS is implemented in T-SQL: a user-defined predicate function defines the filtering logic, and a security policy binds this function to any number of tables. For this project, the predicate function will simply verify that the application (rather than some other SQL user) is connected to the database, and that the value of CONTEXT_INFO matches the TenantId of a given row. Rows that meet these conditions will be allowed through the filter for SELECT, UPDATE, and DELETE queries. If CONTEXT_INFO has not been set, no rows will be returned. 
 
-To enable RLS, execute the following T-SQL on all shards using either Visual Studio (SSDT), SSMS, or the PowerShell script included in the project (or if you are using [Elastic Database Jobs](sql-database-elastic-jobs-overview.md), you can use it to automate execution of this T-SQL on all shards): 
+To enable RLS, execute the following T-SQL on all shards using either Visual Studio (SSDT), SSMS, or the PowerShell script included in the project (or if you are using [Elastic Database Jobs](/documentation/articles/sql-database-elastic-jobs-overview), you can use it to automate execution of this T-SQL on all shards): 
 
 ```
 CREATE SCHEMA rls -- separate schema to organize RLS objects 
@@ -332,10 +328,10 @@ GO
 
 ## Summary 
 
-Elastic database tools and row-level security can be used together to scale out an application’s data tier with support for both multi-tenant and single-tenant shards. Multi-tenant shards can be used to store data more efficiently (particularly in cases where a large number of tenants have only a few rows of data), while single-tenant shards can be used to support premium tenants with stricter performance and isolation requirements.  For more information, see the [Elastic Database Tools Documentation Map](sql-database-elastic-scale-documentation-map.md) or the [Row-Level Security reference](https://msdn.microsoft.com/library/dn765131) on MSDN. 
+Elastic database tools and row-level security can be used together to scale out an application’s data tier with support for both multi-tenant and single-tenant shards. Multi-tenant shards can be used to store data more efficiently (particularly in cases where a large number of tenants have only a few rows of data), while single-tenant shards can be used to support premium tenants with stricter performance and isolation requirements.  For more information, see the [Elastic Database Tools Documentation Map](/documentation/articles/sql-database-elastic-scale-documentation-map) or the [Row-Level Security reference](https://msdn.microsoft.com/zh-cn/library/dn765131) on MSDN. 
 
 
-[AZURE.INCLUDE [elastic-scale-include](../../includes/elastic-scale-include.md)]
+[AZURE.INCLUDE [elastic-scale-include](../includes/elastic-scale-include.md)]
 
 <!--Image references-->
 [1]: ./media/sql-database-elastic-tools-multi-tenant-row-level-security/blogging-app.png

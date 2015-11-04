@@ -7,14 +7,10 @@
 	authors="sidneyh" 
 	editor=""/>
 
-<tags 
-	ms.service="sql-database" 
-	ms.workload="sql-database" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="07/24/2015" 
-	ms.author="sidneyh"/>
+<tags
+	ms.service="sql-database"
+	ms.date="07/24/2015"
+	wacn.date=""/>
 
 # Shard map management
 In a sharded database environment, a **shard map** maintains information allowing an application to connect to the correct database based upon the value of the **sharding key**. Understanding how these maps are constructed is crucial to managing shards with the elastic database client library.
@@ -210,7 +206,7 @@ Most use of the shard map manager will come from the applications that require d
 
 Note that these applications (using **ShardMapManager** opened with read-only credentials) will be unable to make changes to the maps or mappings.  For those needs, create administrative-specific applications or PowerShell scripts that supply higher-privileged credentials as discussed earlier.   
 
-For more details, see [Data dependent routing](sql-database-elastic-scale-data-dependent-routing.md). 
+For more details, see [Data dependent routing](/documentation/articles/sql-database-elastic-scale-data-dependent-routing). 
 
 ## Modifying a shard map 
 
@@ -246,9 +242,9 @@ Mappings are immutable objects in .Net.  All of the methods above that change ma
 
 Applications often need to simply add new shards to handle data that is expected from new keys or key ranges, for a shard map that already exists. For example, an application sharded by Tenant ID may need to provision a new shard for a new tenant, or data sharded monthly may need a new shard provisioned before the start of each new month. 
 
-If the new range of key values is not already part of an existing mapping and no data movement is necessary, it is very simple to add the new shard and associate the new key or range to that shard. For details on adding new shards, see [Adding a new shard](sql-database-elastic-scale-add-a-shard.md).
+If the new range of key values is not already part of an existing mapping and no data movement is necessary, it is very simple to add the new shard and associate the new key or range to that shard. For details on adding new shards, see [Adding a new shard](/documentation/articles/sql-database-elastic-scale-add-a-shard).
 
-For scenarios that require data movement, however, the split-merge tool is needed to orchestrate the data movement between shards in combination with the necessary shard map updates. For details on using the split-merge yool, see [Overview of split-merge](sql-database-elastic-scale-overview-split-and-merge.md) 
+For scenarios that require data movement, however, the split-merge tool is needed to orchestrate the data movement between shards in combination with the necessary shard map updates. For details on using the split-merge yool, see [Overview of split-merge](/documentation/articles/sql-database-elastic-scale-overview-split-and-merge) 
 
-[AZURE.INCLUDE [elastic-scale-include](../../includes/elastic-scale-include.md)]
+[AZURE.INCLUDE [elastic-scale-include](../includes/elastic-scale-include.md)]
  

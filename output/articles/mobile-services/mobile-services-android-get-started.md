@@ -9,20 +9,16 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.workload="mobile"
-	ms.tgt_pltfrm="mobile-android"
-	ms.devlang="java"
-	ms.topic="hero-article"
 	ms.date="10/08/2015"
-	ms.author="ricksal"/>
+	wacn.date=""/>
 
 # Get started with Mobile Services for Android  (JavaScript backend)
 
-[AZURE.INCLUDE [mobile-services-selector-get-started](../../includes/mobile-services-selector-get-started.md)]
+[AZURE.INCLUDE [mobile-services-selector-get-started](../includes/mobile-services-selector-get-started.md)]
 
 &nbsp;
 
-[AZURE.INCLUDE [mobile-services-hero-slug](../../includes/mobile-services-hero-slug.md)]
+[AZURE.INCLUDE [mobile-services-hero-slug](../includes/mobile-services-hero-slug.md)]
 
 This tutorial shows you how to add a cloud-based backend service to an Android app using Azure Mobile Services. In this tutorial, you will create both a new mobile service and a simple **To do list** app that stores app data in the new mobile service.
 
@@ -37,12 +33,12 @@ Completing this tutorial requires the [Android Developer Tools](https://develope
 
 The downloaded quickstart project contains the Azure Mobile Services SDK for Android.
 
-> [AZURE.IMPORTANT] To complete this tutorial, you need an Azure account. If you don't have an account, you can create a free trial account in just a couple of minutes. For details, see [Azure Free Trial](http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=AE564AB28).
+> [AZURE.IMPORTANT] To complete this tutorial, you need an Azure account. If you don't have an account, you can create a trial account in just a couple of minutes. For details, see [Azure Trial](/pricing/1rmb-trial/?WT.mc_id=AE564AB28).
 
 
 ## Create a new mobile service
 
-[AZURE.INCLUDE [mobile-services-create-new-service](../../includes/mobile-services-create-new-service.md)]
+[AZURE.INCLUDE [mobile-services-create-new-service](../includes/mobile-services-create-new-service.md)]
 
 ## Create a new Android app
 
@@ -69,7 +65,7 @@ In this section you will create a new Android app that is connected to your mobi
 
 ## Run your Android app
 
-[AZURE.INCLUDE [mobile-services-run-your-app](../../includes/mobile-services-android-get-started.md)]
+[AZURE.INCLUDE [mobile-services-run-your-app](../includes/mobile-services-android-get-started.md)]
 
 
 ## <a name="next-steps"> </a>Next Steps
@@ -85,14 +81,14 @@ Now that you have completed the quickstart, learn how to perform additional impo
   <br/>Learn how to send a very basic push notification to your app.
 
 
-[AZURE.INCLUDE [app-service-disqus-feedback-slug](../../includes/app-service-disqus-feedback-slug.md)]
+[AZURE.INCLUDE [app-service-disqus-feedback-slug](../includes/app-service-disqus-feedback-slug.md)]
 
 
 <!-- URLs. -->
-[Get started (Eclipse)]: mobile-services-android-get-started-ec.md
-[Get started with data]: mobile-services-android-get-started-data.md
-[Get started with authentication]: mobile-services-android-get-started-users.md
-[Get started with push notifications]: mobile-services-javascript-backend-android-get-started-push.md
+[Get started (Eclipse)]: /documentation/articles/mobile-services-android-get-started-ec
+[Get started with data]: /documentation/articles/mobile-services-android-get-started-data
+[Get started with authentication]: /documentation/articles/mobile-services-android-get-started-users
+[Get started with push notifications]: /documentation/articles/mobile-services-javascript-backend-android-get-started-push
 [Mobile Services Android SDK]: https://go.microsoft.com/fwLink/p/?LinkID=266533
 
-[Management Portal]: https://manage.windowsazure.com/
+[Management Portal]: https://manage.windowsazure.cn/

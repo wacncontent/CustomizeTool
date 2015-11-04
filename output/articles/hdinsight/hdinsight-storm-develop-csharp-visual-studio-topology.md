@@ -29,9 +29,9 @@ You will also learn how to create hybrid topologies that use C# and Java compone
 
 	-	Visual Studio 2012 with [Update 4](http://www.microsoft.com/download/details.aspx?id=39305)
 
-	-	Visual Studio 2013 with [Update 4](http://www.microsoft.com/download/details.aspx?id=44921) or [Visual Studio 2013 Community](http://go.microsoft.com/fwlink/?LinkId=517284)
+	-	Visual Studio 2013 with [Update 4](http://www.microsoft.com/download/details.aspx?id=44921) or [Visual Studio 2013 Community](http://download.microsoft.com/download/7/1/B/71BA74D8-B9A0-4E6C-9159-A8335D54437E/vs_community.exe)
 
-	-	Visual Studio 2015 or [Visual Studio 2015 Community](https://go.microsoft.com/fwlink/?LinkId=532606)
+	-	Visual Studio 2015 or [Visual Studio 2015 Community](http://download.microsoft.com/download/0/B/C/0BC321A4-013F-479C-84E6-4A2F90B11269/vs_community.exe)
 
 -	Azure SDK 2.5.1 or later
 

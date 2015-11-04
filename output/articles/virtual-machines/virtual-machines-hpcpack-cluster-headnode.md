@@ -1,6 +1,6 @@
 <properties
- pageTitle="Create an HPC Pack head node in an Azure VM | Microsoft Azure"
- description="Learn how to use the Azure portal and the classic deployment model to create a Microsoft HPC Pack head node in an Azure VM."
+ pageTitle="Create an HPC Pack head node in an Azure VM | Windows Azure"
+ description="Learn how to use the Azure Management Portal and the classic deployment model to create a Microsoft HPC Pack head node in an Azure VM."
  services="virtual-machines"
  documentationCenter=""
  authors="dlepow"
@@ -8,17 +8,13 @@
  editor=""
  tags="azure-service-management"/>
 <tags
-ms.service="virtual-machines"
- ms.devlang="na"
- ms.topic="article"
- ms.tgt_pltfrm="vm-multiple"
- ms.workload="big-compute"
- ms.date="09/28/2015"
- ms.author="danlep"/>
+	ms.service="virtual-machines"
+	ms.date="09/28/2015"
+	wacn.date=""/>
 
 # Create the head node of an HPC Pack cluster in an Azure VM with a Marketplace image
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
 
 
 This article shows you how to use the [Microsoft HPC Pack virtual machine image](https://azure.microsoft.com/marketplace/partners/microsoft/hpcpack2012r2onwindowsserver2012r2/) in the Azure Marketplace
@@ -34,7 +30,7 @@ is also pre-installed.
 
 
 For a production deployment of an HPC Pack cluster in Azure, we recommend an automated deployment method, such as the [HPC Pack IaaS deployment
-script](virtual-machines-hpcpack-cluster-powershell-script.md) or an Azure Resource Manager [quickstart template](https://azure.microsoft.com/documentation/templates/).
+script](/documentation/articles/virtual-machines-hpcpack-cluster-powershell-script) or an Azure Resource Manager [quickstart template](https://azure.microsoft.com/documentation/templates/).
 
 ## Planning considerations
 
@@ -48,15 +44,15 @@ The following are high level steps to create an Azure VM for the HPC
 Pack head node. You can use a variety of Azure tools to do these steps in the Azure classic (Service Management) deployment model.
 
 
-1. If you plan to create a VNet for the head node VM, see [Create a virtual nework (classic) by using the Azure preview portal](../virtual-networks/virtual-networks-create-vnet-classic-pportal.md).
+1. If you plan to create a VNet for the head node VM, see [Create a virtual nework (classic) by using the Azure preview portal](/documentation/articles/virtual-networks-create-vnet-classic-pportal).
 
     **Considerations**
 
     * You can accept the default configuration of the virtual network address space and subnets.
 
-    * If you plan to use a compute-intensive instance size (A8 – A11) for the HPC Pack head node or when later adding compute resources to the cluster, choose a region in which the instances are available. When using A8 or A9 instances for MPI workloads, also ensure that the address space of the virtual network doesn't overlap the address space reserved by the RDMA network in Azure (172.16.0.0/12). For more information, see [About the A8, A9, A10, and A11 compute-intensive instances](virtual-machines-a8-a9-a10-a11-specs.md).
+    * If you plan to use a compute-intensive instance size (A8 – A11) for the HPC Pack head node or when later adding compute resources to the cluster, choose a region in which the instances are available. When using A8 or A9 instances for MPI workloads, also ensure that the address space of the virtual network doesn't overlap the address space reserved by the RDMA network in Azure (172.16.0.0/12). For more information, see [About the A8, A9, A10, and A11 compute-intensive instances](/documentation/articles/virtual-machines-a8-a9-a10-a11-specs).
 
-2. If you need to create a new Active Directory forest on a separate VM, see [Install a new Active Directory forest on an Azure virtual network](../active-directory/active-directory-new-forest-virtual-machine.md).
+2. If you need to create a new Active Directory forest on a separate VM, see [Install a new Active Directory forest on an Azure virtual network](/documentation/articles/active-directory-new-forest-virtual-machine).
 
     **Considerations**
 
@@ -64,7 +60,7 @@ Pack head node. You can use a variety of Azure tools to do these steps in the Az
 
     * For a simple proof of concept deployment, you can omit this step and later promote the head node VM as a domain controller.
 
-3. In the Azure Management Portal or Azure Preview Portal, create a classic VM by selecting the HPC Pack 2012 R2 image from the Azure Marketplace. (See steps for the Management Portal [here](virtual-machines-windows-tutorial-classic-portal.md).)
+3. In the Azure Management Portal or Azure Preview Portal, create a classic VM by selecting the HPC Pack 2012 R2 image from the Azure Marketplace. (See steps for the Management Portal [here](/documentation/articles/virtual-machines-windows-tutorial-classic-portal).)
 
     **Considerations**
 
@@ -80,7 +76,7 @@ Pack head node. You can use a variety of Azure tools to do these steps in the Az
 
     * If you created the VM in an Azure VNet with an existing domain forest, connect to the VM. Then use standard Server Manager or Windows PowerShell tools to join it to the domain forest. Then restart.
 
-    * If the VM wasn’t created in an Azure VNet, or it was created in a VNet without an existing domain forest, then promote it as a domain controller. To do this, connect to the VM, and then use standard Server Manager or Windows PowerShell tools. For detailed steps, see [Install a New Windows Server 2012 Active Directory Forest](https://technet.microsoft.com/library/jj574166.aspx).
+    * If the VM wasn’t created in an Azure VNet, or it was created in a VNet without an existing domain forest, then promote it as a domain controller. To do this, connect to the VM, and then use standard Server Manager or Windows PowerShell tools. For detailed steps, see [Install a New Windows Server 2012 Active Directory Forest](https://technet.microsoft.com/zh-cn/library/jj574166.aspx).
 
 5. After the VM is running and is joined to an Active Directory forest, start the HPC Pack services on the head node. To do this:
 
@@ -103,9 +99,9 @@ Pack head node. You can use a variety of Azure tools to do these steps in the Az
 example, you can start HPC Cluster Manager, or start working with the
 HPC PowerShell cmdlets.
 
-* [Add compute node VMs](virtual-machines-hpcpack-cluster-node-manage.md) to your cluster, or add [Azure burst nodes](virtual-machines-hpcpack-cluster-node-burst.md) in a cloud service.
+* [Add compute node VMs](/documentation/articles/virtual-machines-hpcpack-cluster-node-manage) to your cluster, or add [Azure burst nodes](/documentation/articles/virtual-machines-hpcpack-cluster-node-burst) in a cloud service.
 
-* Try running a test workload on the cluster. For an example, see the HPC Pack [getting started guide](https://technet.microsoft.com/library/jj884144).
+* Try running a test workload on the cluster. For an example, see the HPC Pack [getting started guide](https://technet.microsoft.com/zh-cn/library/jj884144).
 
 <!--Image references-->
 [headnode]: ./media/virtual-machines-hpcpack-cluster-headnode/headnode.png

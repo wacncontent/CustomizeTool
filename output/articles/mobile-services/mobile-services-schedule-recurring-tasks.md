@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Schedule backend tasks in a JavaScript backend mobile service | Microsoft Azure"
+	pageTitle="Schedule backend tasks in a JavaScript backend mobile service | Windows Azure"
 	description="Use the scheduler in Azure Mobile Services to define JavaScript backend jobs that run on a schedule."
 	services="mobile-services"
 	documentationCenter=""
@@ -9,18 +9,14 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.workload="mobile"
-	ms.tgt_pltfrm="mobile-multiple"
-	ms.devlang="multiple"
-	ms.topic="article"
 	ms.date="09/14/2015"
-	ms.author="glenga"/>
+	wacn.date=""/>
 
 # Schedule recurring jobs in Mobile Services
 
 > [AZURE.SELECTOR]
-- [.NET backend](mobile-services-dotnet-backend-schedule-recurring-tasks.md)
-- [Javascript backend](mobile-services-schedule-recurring-tasks.md)
+- [.NET backend](/documentation/articles/mobile-services-dotnet-backend-schedule-recurring-tasks)
+- [Javascript backend](/documentation/articles/mobile-services-schedule-recurring-tasks)
 
 This topic shows you how to use the job scheduler functionality in the Management Portal to define server script code that is executed based on a schedule that you define. In this case, the script periodically check with a remote service, in this case Twitter, and stores the results in a new table. Some other periodic tasks that can be scheduled include:
 
@@ -32,7 +28,7 @@ This tutorial shows you how to use the job scheduler to create a scheduled job t
 
 ##<a name="get-oauth-credentials"></a>Register for access to Twitter v1.1 APIs and store credentials
 
-[AZURE.INCLUDE [mobile-services-register-twitter-access](../../includes/mobile-services-register-twitter-access.md)]
+[AZURE.INCLUDE [mobile-services-register-twitter-access](../includes/mobile-services-register-twitter-access.md)]
 
 ##<a name="create-table"></a>Create the new Updates table
 
@@ -132,7 +128,7 @@ Now, you can create the scheduled job that accesses Twitter and stores tweet dat
 
    	This script calls the Twitter query API using stored credentials to request recent tweets that contain the hashtag `#mobileservices`. Duplicate tweets and replies are removed from the results before they are stored in the table.
 
-    >[AZURE.NOTE]This sample assumes that only a few rows are inserted into the table during each scheduled run. In cases where many rows are inserted in a loop you may run out of connections when running on the Free tier. In this case, you should perform inserts in batches. For more information, see [How to: Perform bulk inserts](mobile-services-how-to-use-server-scripts.md#bulk-inserts).
+    >[AZURE.NOTE]This sample assumes that only a few rows are inserted into the table during each scheduled run. In cases where many rows are inserted in a loop you may run out of connections when running on the Free tier. In this case, you should perform inserts in batches. For more information, see [How to: Perform bulk inserts](/documentation/articles/mobile-services-how-to-use-server-scripts#bulk-inserts).
 
 6. Click **Run Once** to test the script.
 
@@ -161,8 +157,8 @@ Congratulations, you have successfully created a new scheduled job in your mobil
 
 <!-- URLs. -->
 [Mobile Services server script reference]: http://go.microsoft.com/fwlink/?LinkId=262293
-[WindowsAzure.com]: http://www.windowsazure.com/
-[Azure Management Portal]: https://manage.windowsazure.com/
+[WindowsAzure.com]: http://azure.microsoft.com/
+[Azure Management Portal]: https://manage.windowsazure.cn/
 [Register your apps for Twitter login with Mobile Services]: /develop/mobile/how-to-guides/register-for-twitter-authentication
 [Twitter Developers]: http://go.microsoft.com/fwlink/p/?LinkId=268300
-[App settings]: http://msdn.microsoft.com/library/windowsazure/b6bb7d2d-35ae-47eb-a03f-6ee393e170f7
+[App settings]: http://msdn.microsoft.com/zh-cn/library/azure/b6bb7d2d-35ae-47eb-a03f-6ee393e170f7

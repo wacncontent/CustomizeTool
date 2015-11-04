@@ -1,5 +1,5 @@
 <properties
- pageTitle="Manage HPC Pack cluster compute nodes | Microsoft Azure"
+ pageTitle="Manage HPC Pack cluster compute nodes | Windows Azure"
  description="Learn about PowerShell script tools to add, remove, start, and stop HPC Pack cluster compute nodes in Azure"
  services="virtual-machines"
  documentationCenter=""
@@ -8,17 +8,13 @@
  editor=""
  tags="azure-service-management"/>
 <tags
-ms.service="virtual-machines"
- ms.devlang="na"
- ms.topic="article"
- ms.tgt_pltfrm="vm-multiple"
- ms.workload="big-compute"
- ms.date="09/28/2015"
- ms.author="danlep"/>
+	ms.service="virtual-machines"
+	ms.date="09/28/2015"
+	wacn.date=""/>
 
 # Manage the number and availability of compute nodes in an HPC Pack cluster in Azure
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
 
 
 If you created an HPC Pack cluster in Azure VMs, you might want ways to easily add, remove,
@@ -32,7 +28,7 @@ run each of the scripts as an administrator.
 
 ## Prerequisites
 
-* **HPC Pack cluster in Azure VMs** - Create an HPC Pack cluster in the classic (Service Management) deployment model by using at least HPC Pack 2012 R2 Update 1. For example, you can automate the deployment by using the HPC Pack VM image in the Azure Marketplace and an Azure PowerShell script. For information and prerequisites, see [Create an HPC Cluster with the HPC Pack IaaS deployment script](virtual-machines-hpcpack-cluster-powershell-script.md).
+* **HPC Pack cluster in Azure VMs** - Create an HPC Pack cluster in the classic (Service Management) deployment model by using at least HPC Pack 2012 R2 Update 1. For example, you can automate the deployment by using the HPC Pack VM image in the Azure Marketplace and an Azure PowerShell script. For information and prerequisites, see [Create an HPC Cluster with the HPC Pack IaaS deployment script](/documentation/articles/virtual-machines-hpcpack-cluster-powershell-script).
 
 * **Azure management certificate or publish settings file** - You need to do one of the following on the head node:
 
@@ -81,7 +77,7 @@ Add-HPCIaaSNode.ps1 [-ServiceName] <String> [-ImageName] <String>
 
 * **DomainUserPassword*** Password of the domain user
 
-* **NodeNameSeries** (optional) 0 Naming pattern for the compute nodes. format must be &lt;*Root\_Name*&gt;&lt;*Start\_Number*&gt;%. For example, MyCN%10% means a series of the compute node names starting from MyCN11. If not specified, the script uses the configured node naming series in the HPC cluster.
+* **NodeNameSeries** (optional) 0 Naming pattern for the compute nodes. format must be &lt;*Root_Name*&gt;&lt;*Start_Number*&gt;%. For example, MyCN%10% means a series of the compute node names starting from MyCN11. If not specified, the script uses the configured node naming series in the HPC cluster.
 
 ### Example
 
@@ -111,7 +107,7 @@ Remove-HPCIaaSNode.ps1 -Node <Object> [-DeleteVHD] [-Force] [-Confirm] [<CommonP
 
  * **Name** - Names of cluster nodes to be removed. Wildcards are supported. The parameter set name is Name. You can't specify both the **Name** and **Node** parameters.
 
-* **Node** * The HpcNode object for the nodes to be removed, which can be obtained through the HPC PowerShell cmdlet [Get-HpcNode](https://technet.microsoft.com/library/dn887927.aspx). The parameter set name is Node. You can't specify both the **Name** and **Node** parameters.
+* **Node** * The HpcNode object for the nodes to be removed, which can be obtained through the HPC PowerShell cmdlet [Get-HpcNode](https://technet.microsoft.com/zh-cn/library/dn887927.aspx). The parameter set name is Node. You can't specify both the **Name** and **Node** parameters.
 
 * **DeleteVHD** (optional) - Setting to delete the associated disks for the VMs that are removed.
 
@@ -145,7 +141,7 @@ Start-HPCIaaSNode.ps1 -Node <Object> [<CommonParameters>]
 
 * **Name** - Names of the cluster nodes to be started. Wildcards are supported. The parameter set name is Name. You cannot specify both the **Name** and **Node** parameters.
 
-* **Node**- The HpcNode object for the nodes to be started, which can be obtained through the HPC PowerShell cmdlet [Get-HpcNode](https://technet.microsoft.com/library/dn887927.aspx). The parameter set name is Node. You cannot specify both the **Name** and **Node** parameters.
+* **Node**- The HpcNode object for the nodes to be started, which can be obtained through the HPC PowerShell cmdlet [Get-HpcNode](https://technet.microsoft.com/zh-cn/library/dn887927.aspx). The parameter set name is Node. You cannot specify both the **Name** and **Node** parameters.
 
 ### Example
 
@@ -187,4 +183,4 @@ Stop-HPCIaaSNode.ps1 –Name HPCNodeCN-* -Force
 
 * If you want a way to
 automatically grow or shrink the Azure computing resources according to
-the current workload of jobs and tasks on the cluster, see [Grow and shrink Azure compute resources in an HPC Pack cluste](virtual-machines-hpcpack-cluster-node-autogrowshrink.md).
+the current workload of jobs and tasks on the cluster, see [Grow and shrink Azure compute resources in an HPC Pack cluste](/documentation/articles/virtual-machines-hpcpack-cluster-node-autogrowshrink).

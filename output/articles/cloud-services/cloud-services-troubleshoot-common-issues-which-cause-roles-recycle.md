@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="Common causes of Cloud Service roles recycling | Microsoft Azure"
+   pageTitle="Common causes of Cloud Service roles recycling | Windows Azure"
    description="A cloud service role that sudden recycles can cause significant downtime. Here are some common issues that cause roles to be recycled, which may help imporve downtime."
    services="cloud-services"
    documentationCenter=""
@@ -7,14 +7,10 @@
    manager="msmets"
    editor=""
    tags="top-support-issue"/>
-<tags 
-   ms.service="cloud-services"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="tbd"
-   ms.date="10/14/2015"
-   ms.author="jarrettr" />
+<tags
+	ms.service="cloud-services"
+	ms.date="10/14/2015"
+	wacn.date=""/>
 
 # Common issues which cause roles to recycle
 
@@ -24,7 +20,7 @@ Provided are some of the common causes of deployment problems and troubleshootin
 
 If you need more help at any point in this article, you can contact the Azure experts on [the MSDN Azure and the Stack Overflow forums](http://azure.microsoft.com/support/forums/).
 
-Alternatively, you can also file an Azure support incident. Go to the [Azure Support site](http://azure.microsoft.com/support/options/) and click on **Get Support**. For information about using Azure Support, read the [Microsoft Azure Support FAQ](http://azure.microsoft.com/support/faq/).
+Alternatively, you can also file an Azure support incident. Go to the [Azure Support site](http://azure.microsoft.com/support/options/) and click on **Get Support**. For information about using Azure Support, read the [Windows Azure Support FAQ](/support/faq/).
 
 
 ## Missing runtime dependencies
@@ -68,11 +64,11 @@ To ensure that your `DiagnosticsConnectionString` setting is correct before you 
 - The `DiagnosticsConnectionString` setting points to a valid storage account in Azure.  
   By default, this setting points to the emulated storage account, so you must explicitly change this setting before you deploy your application package. If you do not change this setting, an exception is thrown when the role instance attempts to start the diagnostic monitor. This may cause the role instance to recycle indefinitely.
   
-- The connection string is specified in the following [format](storage-configure-connection-string.md) (the protocol must be specified as HTTPS). Replace *MyAccountName* with the name of your storage account, and *MyAccountKey* with your access key:    
+- The connection string is specified in the following [format](/documentation/articles/storage-configure-connection-string) (the protocol must be specified as HTTPS). Replace *MyAccountName* with the name of your storage account, and *MyAccountKey* with your access key:    
 
         DefaultEndpointsProtocol=https;AccountName=MyAccountName;AccountKey=MyAccountKey
 
-  If you are developing your application using the Azure Tools for Microsoft Visual Studio, you can use the [property pages](https://msdn.microsoft.com/library/ee405486) to set this value. 
+  If you are developing your application using the Azure Tools for Microsoft Visual Studio, you can use the [property pages](https://msdn.microsoft.com/zh-cn/library/ee405486) to set this value. 
 
 
 
@@ -89,7 +85,7 @@ View more [troubleshooting articles](..\?tag=top-support-issue&service=cloud-ser
 
 
 
-[RoleEntryPoint]: https://msdn.microsoft.com/library/microsoft.windowsazure.serviceruntime.roleentrypoint.aspx
-[OnStart]: https://msdn.microsoft.com/library/microsoft.windowsazure.serviceruntime.roleentrypoint.onstart.aspx
-[OnStop]: https://msdn.microsoft.com/library/microsoft.windowsazure.serviceruntime.roleentrypoint.onstop.aspx
-[Run]: https://msdn.microsoft.com/library/microsoft.windowsazure.serviceruntime.roleentrypoint.run.aspx
+[RoleEntryPoint]: https://msdn.microsoft.com/zh-cn/library/microsoft.windowsazure.serviceruntime.roleentrypoint.aspx
+[OnStart]: https://msdn.microsoft.com/zh-cn/library/microsoft.windowsazure.serviceruntime.roleentrypoint.onstart.aspx
+[OnStop]: https://msdn.microsoft.com/zh-cn/library/microsoft.windowsazure.serviceruntime.roleentrypoint.onstop.aspx
+[Run]: https://msdn.microsoft.com/zh-cn/library/microsoft.windowsazure.serviceruntime.roleentrypoint.run.aspx

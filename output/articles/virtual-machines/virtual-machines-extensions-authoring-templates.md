@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Authoring Templates with Azure VM Extensions | Microsoft Azure"
+   pageTitle="Authoring Templates with Azure VM Extensions | Windows Azure"
    description="Learn more about authoring Templates with Extensions"
    services="virtual-machines"
    documentationCenter=""
@@ -9,24 +9,20 @@
    tags="azure-resource-manager"/>
 
 <tags
-   ms.service="virtual-machines"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="infrastructure-services"
-   ms.date="09/01/2015"
-   ms.author="kundanap"/>
+	ms.service="virtual-machines"
+	ms.date="09/01/2015"
+	wacn.date=""/>
 
 # Authoring Azure Resource Manager Templates with VM Extensions.
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-rm-include.md)] classic deployment model.
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] classic deployment model.
  
 
 ## Overview of Azure Resource Manager Templates.
 
 Azure Resource Manager Template allows you to declaratively specify the Azure IaaS infrastructure in Json language by defining the dependencies between resources. For a detailed overview of Azure Resource Manager Templates, please refer to the articles below:
 
-[Resource Group Overview](../resource-group-overview.md)
+[Resource Group Overview](/documentation/articles/resource-group-overview)
 
 ## Sample template snippet for VM Extensions.
 Deploying VM Extension as part of Azure Resource Manager template requires you to declaratively specify the Extension configuration in the template.
@@ -79,9 +75,9 @@ Note : Its always recommended to use the latest extension version to get the mos
 
 The next step with authoring extension template is to identify the format for providing configuration parameters. Each extension supports its own set of parameters.
 
-To look at sample configuration for Windows Extensions, click the documentation [Windows Extensions Samples](virtual-machines-extensions-configuration-samples-windows.md).
+To look at sample configuration for Windows Extensions, click the documentation [Windows Extensions Samples](/documentation/articles/virtual-machines-extensions-configuration-samples-windows).
 
-To look at sample configuration for Linux Extensions, click the documentation for  [Linux Extensions Samples ](virtual-machines-extensions-configuration-samples-linux.md).
+To look at sample configuration for Linux Extensions, click the documentation for  [Linux Extensions Samples ](/documentation/articles/virtual-machines-extensions-configuration-samples-linux).
 
 Please refer to the following to the VM Templates to get a fully complete Template with VM Extensions.
 

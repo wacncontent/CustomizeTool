@@ -9,18 +9,14 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.workload="mobile"
-	ms.tgt_pltfrm="na" 
-	ms.devlang="multiple"
-	ms.topic="article"
 	ms.date="09/15/2015"
-	ms.author="glenga"/> 
+	wacn.date=""/> 
 
 # Store your mobile service project code in source control
 
 > [AZURE.SELECTOR]
-- [.NET backend](mobile-services-dotnet-backend-store-code-source-control.md)
-- [Javascript backend](mobile-services-store-scripts-source-control.md)
+- [.NET backend](/documentation/articles/mobile-services-dotnet-backend-store-code-source-control)
+- [Javascript backend](/documentation/articles/mobile-services-store-scripts-source-control)
 
 This topic shows you how to use the source control provided by Azure Mobile Services to store your .NET backend service project. Your project can be published by simply uploading from your local Git repository to your production mobile service.
 
@@ -28,7 +24,7 @@ To complete this tutorial, you must have already created a mobile service by com
 
 ##<a name="enable-source-control"></a>Enable source control in your mobile service
 
-[AZURE.INCLUDE [mobile-services-enable-source-control](../../includes/mobile-services-enable-source-control.md)]
+[AZURE.INCLUDE [mobile-services-enable-source-control](../includes/mobile-services-enable-source-control.md)]
 
 ##<a name="clone-repo"></a>Install Git and create the local repository
 
@@ -94,8 +90,8 @@ Now, your mobile service project is maintained in source control, and you can pu
 
 <!-- URLs. -->
 [Git website]: http://git-scm.com
-[Source control]: http://msdn.microsoft.com/library/windowsazure/c25aaede-c1f0-4004-8b78-113708761643
+[Source control]: http://msdn.microsoft.com/zh-cn/library/azure/c25aaede-c1f0-4004-8b78-113708761643
 [Installing Git]: http://git-scm.com/book/en/Getting-Started-Installing-Git
-[Get started with Mobile Services]: mobile-services-dotnet-backend-ios-get-started.md
-[Azure Management Portal]: https://manage.windowsazure.com/
-[How to make data model changes to a .NET backend mobile service]: mobile-services-dotnet-backend-how-to-use-code-first-migrations.md
+[Get started with Mobile Services]: /documentation/articles/mobile-services-dotnet-backend-ios-get-started
+[Azure Management Portal]: https://manage.windowsazure.cn/
+[How to make data model changes to a .NET backend mobile service]: /documentation/articles/mobile-services-dotnet-backend-how-to-use-code-first-migrations

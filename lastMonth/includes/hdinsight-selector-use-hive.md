@@ -1,13 +1,9 @@
 > [AZURE.SELECTOR]
-- [Overview](/documentation/articles/hdinsight-use-hive)
-<!-- deleted by customization
-- [Beeline](/documentation/articles/hdinsight-hadoop-use-hive-beeline)
--->
-- [Query Console](/documentation/articles/hdinsight-hadoop-use-hive-query-console)
-- [Visual Studio](/documentation/articles/hdinsight-hadoop-use-hive-visual-studio)
-- [PowerShell](/documentation/articles/hdinsight-hadoop-use-hive-powershell)
-<!-- deleted by customization
-- [SSH](/documentation/articles/hdinsight-hadoop-use-hive-ssh)
--->
-- [Remote Desktop](/documentation/articles/hdinsight-hadoop-use-hive-remote-desktop)
-- [Curl](/documentation/articles/hdinsight-hadoop-use-hive-curl)
+- [Overview](../articles/hdinsight/hdinsight-use-hive.md)
+- [Beeline](../articles/hdinsight/hdinsight-hadoop-use-hive-beeline.md)
+- [Query Console](../articles/hdinsight/hdinsight-hadoop-use-hive-query-console.md)
+- [Visual Studio](../articles/hdinsight/hdinsight-hadoop-use-hive-visual-studio.md)
+- [PowerShell](../articles/hdinsight/hdinsight-hadoop-use-hive-powershell.md)
+- [SSH](../articles/hdinsight/hdinsight-hadoop-use-hive-ssh.md)
+- [Remote Desktop](../articles/hdinsight/hdinsight-hadoop-use-hive-remote-desktop.md)
+- [Curl](../articles/hdinsight/hdinsight-hadoop-use-hive-curl.md)

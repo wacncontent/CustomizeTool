@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Configure SSL for a cloud service | Microsoft Azure" 
+	pageTitle="Configure SSL for a cloud service | Windows Azure" 
 	description="Learn how to specify an HTTPS endpoint for a web role and how to upload an SSL certificate to secure your application." 
 	services="cloud-services" 
 	documentationCenter=".net" 
@@ -7,14 +7,10 @@
 	manager="timlt" 
 	editor=""/>
 
-<tags 
-	ms.service="cloud-services" 
-	ms.workload="tbd" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
+<tags
+	ms.service="cloud-services"
 	ms.date="09/22/2015"
-	ms.author="adegeo"/>
+	wacn.date=""/>
 
 
 
@@ -22,18 +18,18 @@
 # Configuring SSL for an application in Azure
 
 > [AZURE.SELECTOR]
-- [Azure Portal](cloud-services-configure-ssl-certificate.md)
-- [Azure Preview Portal](cloud-services-configure-ssl-certificate-portal.md)
+- [Azure Management Portal](/documentation/articles/cloud-services-configure-ssl-certificate)
+- [Azure Preview Portal](/documentation/articles/cloud-services-configure-ssl-certificate-portal)
 
 Secure Socket Layer (SSL) encryption is the most commonly used method of securing data sent across the internet. This common task discusses how to specify an HTTPS endpoint for a web role and how to upload an SSL certificate to secure your application.
 
-> [AZURE.NOTE] The procedures in this task apply to Azure Cloud Services; for Websites, see [Configuring an SSL certificate for an Azure website](../web-sites-configure-ssl-certificate.md).
+> [AZURE.NOTE] The procedures in this task apply to Azure Cloud Services; for Websites, see [Configuring an SSL certificate for an Azure website](/documentation/articles/web-sites-configure-ssl-certificate).
 
 This task will use a production deployment; information on using a staging deployment is provided at the end of this topic.
 
-Read [this](cloud-services-how-to-create-deploy.md) first if you have not yet created a cloud service.
+Read [this](/documentation/articles/cloud-services-how-to-create-deploy) first if you have not yet created a cloud service.
 
-[AZURE.INCLUDE [websites-cloud-services-css-guided-walkthrough](../../includes/websites-cloud-services-css-guided-walkthrough.md)]
+[AZURE.INCLUDE [websites-cloud-services-css-guided-walkthrough](../includes/websites-cloud-services-css-guided-walkthrough.md)]
 
 
 ## Step 1: Get an SSL certificate
@@ -44,10 +40,10 @@ The certificate must meet the following requirements for SSL certificates in Azu
 
 -   The certificate must contain a private key.
 -   The certificate must be created for key exchange, exportable to a Personal Information Exchange (.pfx) file.
--   The certificate's subject name must match the domain used to access the cloud service. You cannot obtain an SSL certificate from a certificate authority (CA) for the cloudapp.net domain. You must acquire a custom domain name to use when access your service. When you request a certificate from a CA the certificate's subject name must match the custom domain name used to access your application. For example, if your custom domain name is **contoso.com** you would request a certificate from your CA for ***.contoso.com** or **www.contoso.com**.
+-   The certificate's subject name must match the domain used to access the cloud service. You cannot obtain an SSL certificate from a certificate authority (CA) for the chinacloudapp.cn domain. You must acquire a custom domain name to use when access your service. When you request a certificate from a CA the certificate's subject name must match the custom domain name used to access your application. For example, if your custom domain name is **contoso.com** you would request a certificate from your CA for ***.contoso.com** or **www.contoso.com**.
 -   The certificate must use a minimum of 2048-bit encryption.
 
-For test purposes, you can [create](cloud-services-certs-create.md) and use a self-signed certificate. A self-signed certificate is not authenticated through a CA and can use the cloudapp.net domain as the website URL. For example, the task below uses a self-signed certificate in which  the common name (CN) used in the certificate is **sslexample.cloudapp.net**.
+For test purposes, you can [create](/documentation/articles/cloud-services-certs-create) and use a self-signed certificate. A self-signed certificate is not authenticated through a CA and can use the chinacloudapp.cn domain as the website URL. For example, the task below uses a self-signed certificate in which  the common name (CN) used in the certificate is **sslexample.chinacloudapp.cn**.
 
 Next, you must include information about the certificate in your service definition and service configuration files.
 
@@ -163,17 +159,17 @@ connect to it using HTTPS.
 
     ![SSL example web site][3]
 
-If you want to use SSL for a staging deployment instead of a production deployment, you'll first need to determine the URL used for the staging deployment. Deploy your cloud service to the staging environment without including a certificate or any certificate information. Once deployed, you can determine the GUID-based URL, which is listed in the management portal's **Site URL** field. Create a certificate with the common name (CN) equal to the GUID-based URL (for example, **32818777-6e77-4ced-a8fc-57609d404462.cloudapp.net**), use the management portal to add the certificate to your staged cloud service, add the certificate information to your CSDEF and CSCFG files, repackage your application, and update your staged deployment to use the new package and CSCFG file.
+If you want to use SSL for a staging deployment instead of a production deployment, you'll first need to determine the URL used for the staging deployment. Deploy your cloud service to the staging environment without including a certificate or any certificate information. Once deployed, you can determine the GUID-based URL, which is listed in the management portal's **Site URL** field. Create a certificate with the common name (CN) equal to the GUID-based URL (for example, **32818777-6e77-4ced-a8fc-57609d404462.chinacloudapp.cn**), use the management portal to add the certificate to your staged cloud service, add the certificate information to your CSDEF and CSCFG files, repackage your application, and update your staged deployment to use the new package and CSCFG file.
 
 ## Next steps
 
-* [General configuration of your cloud service](cloud-services-how-to-configure.md).
-* Learn how to [deploy a cloud service](cloud-services-how-to-create-deploy.md).
-* Configure a [custom domain name](cloud-services-custom-domain-name.md).
-* [Manage your cloud service](cloud-services-how-to-manage.md).
+* [General configuration of your cloud service](/documentation/articles/cloud-services-how-to-configure).
+* Learn how to [deploy a cloud service](/documentation/articles/cloud-services-how-to-create-deploy).
+* Configure a [custom domain name](/documentation/articles/cloud-services-custom-domain-name).
+* [Manage your cloud service](/documentation/articles/cloud-services-how-to-manage).
 
 
-  [Azure Management Portal]: http://manage.windowsazure.com
+  [Azure Management Portal]: http://manage.windowsazure.cn
   [0]: ./media/cloud-services-configure-ssl-certificate/CreateCloudService.png
   [1]: ./media/cloud-services-configure-ssl-certificate/AddCertificate.png
   [2]: ./media/cloud-services-configure-ssl-certificate/CopyURL.png

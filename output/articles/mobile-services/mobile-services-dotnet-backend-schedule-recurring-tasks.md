@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Schedule backend tasks in a .NET backend mobile service | Microsoft Azure"
+	pageTitle="Schedule backend tasks in a .NET backend mobile service | Windows Azure"
 	description="Use the scheduler in Azure Mobile Services to define .NET backend jobs that run on a schedule."
 	services="mobile-services" 
 	documentationCenter="" 
@@ -7,20 +7,16 @@
 	manager="dwrede" 
 	editor=""/>
 
-<tags 
-	ms.service="mobile-services" 
-	ms.workload="mobile" 
-	ms.tgt_pltfrm="mobile-multiple" 
-	ms.devlang="multiple" 
-	ms.topic="article" 
-	ms.date="09/14/2015" 
-	ms.author="glenga"/>
+<tags
+	ms.service="mobile-services"
+	ms.date="09/14/2015"
+	wacn.date=""/>
 
 # Schedule recurring jobs in Mobile Services 
 
 > [AZURE.SELECTOR]
-- [.NET backend](mobile-services-dotnet-backend-schedule-recurring-tasks.md)
-- [Javascript backend](mobile-services-schedule-recurring-tasks.md)
+- [.NET backend](/documentation/articles/mobile-services-dotnet-backend-schedule-recurring-tasks)
+- [Javascript backend](/documentation/articles/mobile-services-schedule-recurring-tasks)
  
 This topic shows you how to use the job scheduler functionality in the Management Portal to define server script code that is executed based on a schedule that you define. In this case, the script periodically check with a remote service, in this case Twitter, and stores the results in a new table. Some other periodic tasks that can be scheduled include:
 
@@ -34,7 +30,7 @@ This tutorial walks you through how to use the job scheduler to create a schedul
 
 ##<a name="get-oauth-credentials"></a>Register for access to Twitter v1.1 APIs and store credentials
 
-[AZURE.INCLUDE [mobile-services-register-twitter-access](../../includes/mobile-services-register-twitter-access.md)]
+[AZURE.INCLUDE [mobile-services-register-twitter-access](../includes/mobile-services-register-twitter-access.md)]
 
 &nbsp;&nbsp;7. In Solution Explorer in Visual Studio, open the web.config file for the mobile service project, locate the `MS_TwitterConsumerKey` and `MS_TwitterConsumerSecret` app settings and replace the values of these keys with Twitter consumer key and consumer secret values that you set in the portal.
 
@@ -92,7 +88,7 @@ Next, you need to create a new table in which to store tweets.
 
 	The Updates table, which is created in the database when the DbSet is first accessed, is used by the service to store tweet data.  
 
-	>[AZURE.NOTE] When using the default database initializer, Entity Framework will drop and recreate the database whenever it detects a data model change in the Code First model definition. To make this data model change and maintain existing data in the database, you must use Code First Migrations. The default initializer cannot be used against a SQL Database in Azure. For more information, see [How to Use Code First Migrations to Update the Data Model](mobile-services-dotnet-backend-use-code-first-migrations.md).  
+	>[AZURE.NOTE] When using the default database initializer, Entity Framework will drop and recreate the database whenever it detects a data model change in the Code First model definition. To make this data model change and maintain existing data in the database, you must use Code First Migrations. The default initializer cannot be used against a SQL Database in Azure. For more information, see [How to Use Code First Migrations to Update the Data Model](/documentation/articles/mobile-services-dotnet-backend-use-code-first-migrations).  
 
 Next, you create the scheduled job that accesses Twitter and stores tweet data in the new Updates table.
 
@@ -294,8 +290,8 @@ Congratulations, you have successfully created a new scheduled job in your mobil
 [9]: ./media/mobile-services-dotnet-backend-schedule-recurring-tasks/mobile-service-try-this-out.png
 
 <!-- URLs. -->
-[Azure Management Portal]: https://manage.windowsazure.com/
-[Register your apps for Twitter login with Mobile Services]: mobile-services-how-to-register-twitter-authentication.md
+[Azure Management Portal]: https://manage.windowsazure.cn/
+[Register your apps for Twitter login with Mobile Services]: /documentation/articles/mobile-services-how-to-register-twitter-authentication
 [Twitter Developers]: http://go.microsoft.com/fwlink/p/?LinkId=268300
-[App settings]: http://msdn.microsoft.com/library/windowsazure/b6bb7d2d-35ae-47eb-a03f-6ee393e170f7
+[App settings]: http://msdn.microsoft.com/zh-cn/library/azure/b6bb7d2d-35ae-47eb-a03f-6ee393e170f7
 [LINQ to Twitter CodePlex project]: http://linqtotwitter.codeplex.com/ 

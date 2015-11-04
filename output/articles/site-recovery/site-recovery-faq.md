@@ -7,20 +7,16 @@
 	manager="jwhit"
 	editor="tysonn"/>
 
-<tags 
+<tags
 	ms.service="site-recovery"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.tgt_pltfrm="na" 
-	ms.workload="storage-backup-recovery"
-	ms.date="08/26/2015" 
-	ms.author="lauraa"/>
+	ms.date="08/26/2015"
+	wacn.date=""/>
 
 
 # Azure Site Recovery: Frequently asked questions
 ## About this article
 
-This article includes frequently asked questions about Azure Site Recovery. For an introduction to Site Recovery and related deployment scenarios, read the [Site Recovery Overview](site-recovery-overview.md).
+This article includes frequently asked questions about Azure Site Recovery. For an introduction to Site Recovery and related deployment scenarios, read the [Site Recovery Overview](/documentation/articles/site-recovery-overview).
 
 If you have other questions after reading this article, you can post them on the [Azure Recovery Services Forum](https://social.msdn.microsoft.com/Forums/azure/home?forum=hypervrecovmgr).
 
@@ -56,7 +52,7 @@ This isn't supported. Send us your feedback through [Azure Site Recovery Feedbac
 *Hyper-V & VMM scenarios* supports dynamic disks. *VMware virtual machine or Physical machine scenarios* doesn't support dynamic disk. Send us your feedback through [Azure Site Recovery Feedback Forum](http://feedback.azure.com/forums/256299-site-recovery).
 
 ### What kind of storage accounts types are supported?
-[Standard Geo-redundant storage](../storage/storage-redundancy.md#geo-redundant-storage) is supported. [Premium Storage Account]((../storage/storage-premium-storage-preview-portal/) is supported only for [VMware virtual machine or Physical machine scenarios](site-recovery-vmware-to-azure.md). Support for Standard locally redundant storage is in backlogs, send us your feedback through [Support for locally redundant storage support](http://feedback.azure.com/forums/256299-site-recovery/suggestions/7204469-local-redundant-type-azure-storage-support).
+[Standard Geo-redundant storage](/documentation/articles/storage-redundancy#geo-redundant-storage) is supported. [Premium Storage Account]((../storage/storage-premium-storage-preview-portal/) is supported only for [VMware virtual machine or Physical machine scenarios](/documentation/articles/site-recovery-vmware-to-azure). Support for Standard locally redundant storage is in backlogs, send us your feedback through [Support for locally redundant storage support](http://feedback.azure.com/forums/256299-site-recovery/suggestions/7204469-local-redundant-type-azure-storage-support).
 
 ### Can I extend replication from existing recovery site to a tertiary site?
 This isn't supported. Send us your feedback through [Azure Site Recovery Feedback Forum - Support for extending replication](http://feedback.azure.com/forums/256299-site-recovery/suggestions/6097959-support-for-exisiting-extended-replication).
@@ -82,11 +78,11 @@ Windows Server 2012 and Windows Server 2012 R2 can be used when you choose Hyper
 
 
 ### What versions of Hyper-V guest operating systems are supported?
-The most current list of supported guest operating systems is available in the topic titled [About Virtual Machines and Guest Operating Systems](https://technet.microsoft.com/library/cc794868%28v=ws.10%29.aspx).
+The most current list of supported guest operating systems is available in the topic titled [About Virtual Machines and Guest Operating Systems](https://technet.microsoft.com/zh-cn/library/cc794868%28v=ws.10%29.aspx).
 
 ### Can I configure virtual machine protection when Hyper-V is running on a client operating system?
 
-You can't configure Hyper-V runing on a client operating system to replicate virtual machines to Azure. Hyper-V Replica is only supported on server operating systems. You can replicate your physical client computers to Azure using [this article](site-recovery-vmware-to-azure.md). 
+You can't configure Hyper-V runing on a client operating system to replicate virtual machines to Azure. Hyper-V Replica is only supported on server operating systems. You can replicate your physical client computers to Azure using [this article](/documentation/articles/site-recovery-vmware-to-azure). 
 
 ### Does ASR support generation 2 machines?
 
@@ -102,7 +98,7 @@ Yes, ASR supports both dedicated and shared infrastructure models.
 No. In fact, your tenants do not need access to the ASR portal. Only the service provider administrator performs actions on the ASR portal in Azure.
 
 ### Will my tenants receive a bill from Azure?
-No. Microsoft Azure's billing relationship remains directly with the service provider. Service providers are responsible for generating specific bills for their tenants.
+No. Windows Azure's billing relationship remains directly with the service provider. Service providers are responsible for generating specific bills for their tenants.
 
 ### Will my tenants application data ever go to Azure?
 When using a service provider-owned site for DR, application data never goes to Azure. Data is encrypted and replicated directly between the service provider sites.
@@ -115,7 +111,7 @@ No, ASR is designed as a first-class, public cloud DRaaS solution. Data is repli
 Yes.
 
 ### What platforms do you currently support?
-We support Azure Pack, Cloud Platform System, and System Center based Hyper 2012 and higher deployments. To learn more about the ASR and Azure Pack integration, see [Configure protection for virtual machines](https://technet.microsoft.com/library/dn850370.aspx).
+We support Azure Pack, Cloud Platform System, and System Center based Hyper 2012 and higher deployments. To learn more about the ASR and Azure Pack integration, see [Configure protection for virtual machines](https://technet.microsoft.com/zh-cn/library/dn850370.aspx).
 
 ### Do you also support single Azure Pack and single VMM server deployments?
 Yes, single SCVMM deployments is supported for either scenarios – DR between service provider sites and DR between a service provider site and Azure.
@@ -125,7 +121,7 @@ Single Azure Pack deployment is also supported when you enable DR between servic
 ## Deploy between Hyper-V sites and Azure (without VMM)
 
 ### Does ASR require that you enable site-to-site VPN?
-No, it is not mandatory; ASR works over the public Internet as well. However, if you have configured site-to-site VPN, you will be able to access the failed over virtual machines in the same manner as before. For more information about networking considerations when enabling Disaster Recovery to Azure, see the [Networking Infrastructure Setup for Microsoft Azure as a Disaster Recovery Site blog](http://azure.microsoft.com/blog/2014/09/04/networking-infrastructure-setup-for-microsoft-azure-as-a-disaster-recovery-site/).
+No, it is not mandatory; ASR works over the public Internet as well. However, if you have configured site-to-site VPN, you will be able to access the failed over virtual machines in the same manner as before. For more information about networking considerations when enabling Disaster Recovery to Azure, see the [Networking Infrastructure Setup for Windows Azure as a Disaster Recovery Site blog](http://azure.microsoft.com/blog/2014/09/04/networking-infrastructure-setup-for-microsoft-azure-as-a-disaster-recovery-site/).
 
 ### Do I need to pay anything in addition to the ASR Protection charge?
 In steady state, we replicate changes to Geo-Redundant Azure Storage and you don’t need to pay any Azure IaaS virtual machine charges (a significant advantage). When you perform a failover to Azure, ASR automatically creates Azure IaaS virtual machines, after which you are billed for the compute resources that you consume in Azure.
@@ -154,7 +150,7 @@ No the server doesn't need to be in a domain
 Windows Server 2012 and Windows Server 2012 R2 can be used when using ASR and Hyper-V replication between a Hyper-V sites and Azure.
 
 ### What versions of guest operating systems are supported?
-The most current list of supported guest operating systems is available in the article titled [About Virtual Machines and Guest Operating Systems](https://technet.microsoft.com/library/cc794868%28v=ws.10%29.aspx).
+The most current list of supported guest operating systems is available in the article titled [About Virtual Machines and Guest Operating Systems](https://technet.microsoft.com/zh-cn/library/cc794868%28v=ws.10%29.aspx).
 
 ## Deploy between two VMM datacenters
 
@@ -235,7 +231,7 @@ Yes. Failing back from Azure back to your on-premises site is simple using the o
 
 ### Is automatic failover possible?
 
-There's no automatic failover option. You can either hit a single button in the portal to trigger a failover, or you can use [Site Recovery PowerShell](https://msdn.microsoft.com/library/dn850420.aspx) to trigger a failover. You use on-premises Orchestrator or Operations Manager to witness a virtual machine failure and then decide to trigger the failover using the SDK. This makes it an automatic process.
+There's no automatic failover option. You can either hit a single button in the portal to trigger a failover, or you can use [Site Recovery PowerShell](https://msdn.microsoft.com/zh-cn/library/dn850420.aspx) to trigger a failover. You use on-premises Orchestrator or Operations Manager to witness a virtual machine failure and then decide to trigger the failover using the SDK. This makes it an automatic process.
 
 
 
@@ -249,10 +245,10 @@ You can subscribe to email alerts directly from the ASR service to be notified a
 
 To start deploying ASR:
 
-- [Set up protection between an on-premises VMM site and Azure](site-recovery-vmm-to-azure.md) 
-- [Set up protection between an on-premises Hyper-V site and Azure](site-recovery-hyper-v-site-to-azure.md) 
-- [Set up protection between two on-premises VMM sites](site-recovery-vmm-to-vmm.md) 
-- [Set up protection between two on-premises VMM sites with SAN](site-recovery-vmm-san.md) 
-- [Set up protection with a single VMM server](site-recovery-single-vmm.md) 
+- [Set up protection between an on-premises VMM site and Azure](/documentation/articles/site-recovery-vmm-to-azure) 
+- [Set up protection between an on-premises Hyper-V site and Azure](/documentation/articles/site-recovery-hyper-v-site-to-azure) 
+- [Set up protection between two on-premises VMM sites](/documentation/articles/site-recovery-vmm-to-vmm) 
+- [Set up protection between two on-premises VMM sites with SAN](/documentation/articles/site-recovery-vmm-san) 
+- [Set up protection with a single VMM server](/documentation/articles/site-recovery-single-vmm) 
 
  

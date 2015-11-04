@@ -1,19 +1,15 @@
 <properties 
-   pageTitle="Configure Application Gateway for SSL offload | Microsoft Azure"
+   pageTitle="Configure Application Gateway for SSL offload | Windows Azure"
    description="This article provides instructions to configure SSL offload on an Azure Application Gateway."
    documentationCenter="na"
    services="application-gateway"
    authors="joaoma"
    manager="jdial"
    editor="tysonn"/>
-<tags 
-   ms.service="application-gateway"
-   ms.devlang="na"
-   ms.topic="article" 
-   ms.tgt_pltfrm="na"
-   ms.workload="infrastructure-services" 
-   ms.date="09/25/2015"
-   ms.author="joaoma"/>
+<tags
+	ms.service="application-gateway"
+	ms.date="09/25/2015"
+	wacn.date=""/>
 
 # Configure an Application Gateway for SSL offload
 
@@ -21,7 +17,7 @@ Application Gateway can be configured to terminate the SSL session at the gatewa
 
 ## Before you begin
 
-1. Install latest version of the Azure PowerShell cmdlets using the Web Platform Installer. You can download and install the latest version from the **Windows PowerShell** section of the [Download page](http://azure.microsoft.com/downloads/).
+1. Install latest version of the Azure PowerShell cmdlets using the Web Platform Installer. You can download and install the latest version from the **Windows PowerShell** section of the [Download page](/downloads/).
 2. Verify that you have a working virtual network with a valid subnet.
 3. Verify that you have backend servers either in the virtual network, or with a public IP/VIP assigned.
 
@@ -219,7 +215,7 @@ This sample shows an application gateway that is up, running, and is ready to ta
 	GatewaySize   : Medium
 	State         : Running
 	VirtualIPs    : {23.96.22.241}
-	DnsName       : appgw-4c960426-d1e6-4aae-8670-81fd7a519a43.cloudapp.net
+	DnsName       : appgw-4c960426-d1e6-4aae-8670-81fd7a519a43.chinacloudapp.cn
 
 
 ## Next Steps
@@ -227,5 +223,5 @@ This sample shows an application gateway that is up, running, and is ready to ta
 
 If you want more information about load balancing options in general, see:
 
-- [Azure Load Balancer](https://azure.microsoft.com/documentation/services/load-balancer/)
-- [Azure Traffic Manager](https://azure.microsoft.com/documentation/services/traffic-manager/)
+- [Azure Load Balancer](/documentation/services/load-balancer/)
+- [Azure Traffic Manager](/documentation/services/traffic-manager/)

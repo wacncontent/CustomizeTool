@@ -2,10 +2,10 @@
 
 You can use the Azure CLI to manage your Azure resources from the command prompt from any computer running Windows, Linux, or OSX. To create a VNet by using the Azure CLI, follow the steps below.
 
-1. If you have never used Azure CLI, see [Install and Configure the Azure CLI](/documentation/articles/xplat-cli-install) and follow the instructions up to the point where you select your Azure account and subscription.
+1. If you have never used Azure CLI, see [Install and Configure the Azure CLI](xplat-cli-install.md) and follow the instructions up to the point where you select your Azure account and subscription.
 2. Run the **azure network vnet create** command to create a VNet and a subnet, as shown below. The list shown after the output explains the parameters used.
 
-			azure network vnet create --vnet TestVNet -e 192.168.0.0 -i 16 -n FrontEnd -p 192.168.1.0 -r 24 -l "China North"
+			azure network vnet create --vnet TestVNet -e 192.168.0.0 -i 16 -n FrontEnd -p 192.168.1.0 -r 24 -l "Central US"
 	
 	Expected output:
 
@@ -21,7 +21,7 @@ You can use the Azure CLI to manage your Azure resources from the command prompt
 	- **-n (or --subnet-name**). Name of the first subnet. For our scenario, *FrontEnd*.
 	- **-p (or --subnet-start-ip)**. Starting IP address for subnet, or subnet address space. For our scenario, *192.168.1.0*.
 	- **-r (or --subnet-cidr)**. Network mask in CIDR format for subnet. For our scenario, *24*.
-	- **-l (or --location)**. Azure region where the VNet will be created. For our scenario, *China North*.
+	- **-l (or --location)**. Azure region where the VNet will be created. For our scenario, *Central US*.
 
 3. Run the **azure network vnet subnet create** command to create a subnet as shown below. The list shown after the output explains the parameters used.
 
@@ -53,7 +53,7 @@ You can use the Azure CLI to manage your Azure resources from the command prompt
 			Virtual network name: TestVNet
 			+ Looking up the virtual network sites
 			data:    Name                            : TestVNet
-			data:    Location                        : China North
+			data:    Location                        : Central US
 			data:    State                           : Created
 			data:    Address space                   : 192.168.0.0/16
 			data:    Subnets:

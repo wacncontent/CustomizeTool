@@ -7,14 +7,10 @@
 	manager="dwrede" 
 	editor=""/>
 
-<tags 
-	ms.service="cdn" 
-	ms.workload="tbd" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="09/01/2015" 
-	ms.author="juliako"/>
+<tags
+	ms.service="cdn"
+	ms.date="09/01/2015"
+	wacn.date=""/>
 
 #Restrict access to your content by country
 
@@ -22,7 +18,7 @@ When a user requests your content, by default, the content is served regardless 
 
 >[AZURE.NOTE]Once the configuration is set up, it will apply to all CDN endpoints in your subscription.
 
-For information about considerations that apply to configuring this type of restrictions, see the [Considerations](cdn-restrict-access-by-country.md#considerations) section at the end of the topic.  
+For information about considerations that apply to configuring this type of restrictions, see the [Considerations](/documentation/articles/cdn-restrict-access-by-country#considerations) section at the end of the topic.  
 
 ![Country filtering](./media/cdn-filtering/cdn-country-filtering.png)
 
@@ -45,7 +41,7 @@ Example directory path filter:
 
 ##Step 3: Define the countries
 
-Select the countries that you want to block or allow for the path. For more information, see the [Country codes](cdn-country-codes.md) topic.
+Select the countries that you want to block or allow for the path. For more information, see the [Country codes](/documentation/articles/cdn-country-codes) topic.
 
 For example, the rule of blocking /Photos/Strasbourg/ will filter files including:
 
@@ -55,7 +51,7 @@ For example, the rule of blocking /Photos/Strasbourg/ will filter files includin
 
 ##Country codes
 
-The **Country Filtering** feature uses country codes to define the countries from which a request will be allowed or blocked for a secured directory. You will find the country codes in [this](cdn-country-codes.md) topic. If you specify “EU” (Europe) or "AP" (Asia/Pacific), a subset of IP addresses that originate from any country in that regions will be blocked or allowed. 
+The **Country Filtering** feature uses country codes to define the countries from which a request will be allowed or blocked for a secured directory. You will find the country codes in [this](/documentation/articles/cdn-country-codes) topic. If you specify “EU” (Europe) or "AP" (Asia/Pacific), a subset of IP addresses that originate from any country in that regions will be blocked or allowed. 
 
 
 ##<a id="considerations"></a>Considerations

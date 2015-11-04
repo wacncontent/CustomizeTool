@@ -1,5 +1,5 @@
 <properties
-    pageTitle="Elastic database query for vertical partitioning | Microsoft Azure"
+    pageTitle="Elastic database query for vertical partitioning | Windows Azure"
     description="how to set up cross-database queries over vertical partitions"    
     services="sql-database"
     documentationCenter=""  
@@ -7,17 +7,13 @@
     authors="sidneyh"/>
 
 <tags
-    ms.service="sql-database"
-    ms.workload="sql-database"
-    ms.tgt_pltfrm="na"
-    ms.devlang="na"
-    ms.topic="article"
-    ms.date="10/19/2015"
-    ms.author="torsteng" />
+	ms.service="sql-database"
+	ms.date="10/19/2015"
+	wacn.date=""/>
 
 # Elastic database query for vertical partitioning
 
-This document explains how to setup elastic query for cross-database querying scenarios (vertical partitioning) and how to perform your queries. For a definition of the vertical partitioning scenario, see [Azure SQL Database elastic database query overview (preview)](sql-database-elastic-query-overview.md).
+This document explains how to setup elastic query for cross-database querying scenarios (vertical partitioning) and how to perform your queries. For a definition of the vertical partitioning scenario, see [Azure SQL Database elastic database query overview (preview)](/documentation/articles/sql-database-elastic-query-overview).
 
 ## Creating database objects
 
@@ -27,13 +23,13 @@ For vertically partitioned scenarios, elastic query extends the current T-SQL DD
 
 Defining the database objects for elastic database query relies on the following T-SQL statements which are explained further for the vertical partitioning scenario below: 
 
-* [CREATE MASTER KEY](https://msdn.microsoft.com/library/ms174382.aspx) 
+* [CREATE MASTER KEY](https://msdn.microsoft.com/zh-cn/library/ms174382.aspx) 
 
-* [CREATE DATABASE SCOPED CREDENTIAL](https://msdn.microsoft.com/library/mt270260.aspx)
+* [CREATE DATABASE SCOPED CREDENTIAL](https://msdn.microsoft.com/zh-cn/library/mt270260.aspx)
 
-* [CREATE/DROP EXTERNAL DATA SOURCE](https://msdn.microsoft.com/library/dn935022.aspx)  
+* [CREATE/DROP EXTERNAL DATA SOURCE](https://msdn.microsoft.com/zh-cn/library/dn935022.aspx)  
 
-* [CREATE/DROP EXTERNAL TABLE](https://msdn.microsoft.com/library/dn935021.aspx) 
+* [CREATE/DROP EXTERNAL TABLE](https://msdn.microsoft.com/zh-cn/library/dn935021.aspx) 
 
 ### 1.1 Database scoped master key and credentials 
 
@@ -82,7 +78,7 @@ The following example illustrates the use of the CREATE statement for external d
 	WITH 
 	( 
 		TYPE=RDBMS, 
-		LOCATION='myserver.database.windows.net', 
+		LOCATION='myserver.database.chinacloudapi.cn', 
 		DATABASE_NAME='ReferenceData', 
 		CREDENTIAL= SqlUser 
 	); 
@@ -178,7 +174,7 @@ You can use regular SQL Server connection strings to connect your BI and data in
 * Elastic query works best for queries where most of the computation can be done on the remote databases. You typically get the best query performance with selective filter predicates that can be evaluated on the remote databases or joins that can be performed completely on the remote database. Other query patterns may need to load large amounts of data from the remote database and may perform poorly. 
 
 
-[AZURE.INCLUDE [elastic-scale-include](../../includes/elastic-scale-include.md)]
+[AZURE.INCLUDE [elastic-scale-include](../includes/elastic-scale-include.md)]
 
 
 <!--Image references-->

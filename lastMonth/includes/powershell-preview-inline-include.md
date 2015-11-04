@@ -2,5 +2,5 @@ This topic includes PowerShell cmdlets from Azure PowerShell 1.0 Preview. If you
 
 When using Azure PowerShell 0.9.8, you must first enable the Resource Manager mode by running the **Switch-AzureMode AzureResourceManager** command. This command is not necessary in 1.0 Preview.
 
-For information about the 1.0 Preview release, including notes about recommended use, see [Azure PowerShell 1.0 Preview](https://azure.microsoft.com/blog/azps-1-0-pre/). For information about installing Azure PowerShell 1.0 Preview, see [Azure Resource Manager Cmdlets](https://msdn.microsoft.com/library/mt125356.aspx). For information about significant changes in Resource Manager commands, see [Changes to Azure Resource Manager management PowerShell cmdlets](/documentation/articles/powershell-preview-resource-manager-changes).
+For information about the 1.0 Preview release, including notes about recommended use, see [Azure PowerShell 1.0 Preview](https://azure.microsoft.com/blog/azps-1-0-pre/). For information about installing Azure PowerShell 1.0 Preview, see [Azure Resource Manager Cmdlets](https://msdn.microsoft.com/library/mt125356.aspx). For information about significant changes in Resource Manager commands, see [Changes to Azure Resource Manager management PowerShell cmdlets](../articles/powershell-preview-resource-manager-changes.md).
 

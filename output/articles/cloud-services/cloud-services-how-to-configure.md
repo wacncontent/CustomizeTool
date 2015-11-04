@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="How to configure a cloud service | Microsoft Azure" 
+	pageTitle="How to configure a cloud service | Windows Azure" 
 	description="Learn how to configure cloud services in Azure. Learn to update the cloud service configuration and configure remote access to role instances." 
 	services="cloud-services" 
 	documentationCenter="" 
@@ -7,14 +7,10 @@
 	manager="timlt" 
 	editor=""/>
 
-<tags 
-	ms.service="cloud-services" 
-	ms.workload="tbd" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
+<tags
+	ms.service="cloud-services"
 	ms.date="09/22/2015"
-	ms.author="adegeo"/>
+	wacn.date=""/>
 
 
 
@@ -22,18 +18,18 @@
 # How to Configure Cloud Services
 
 > [AZURE.SELECTOR]
-- [Azure Portal](cloud-services-how-to-configure.md)
-- [Azure Preview Portal](cloud-services-how-to-configure-portal.md)
+- [Azure Management Portal](/documentation/articles/cloud-services-how-to-configure)
+- [Azure Preview Portal](/documentation/articles/cloud-services-how-to-configure-portal)
 
 You can configure the most commonly used settings for a cloud service in the Azure Management Portal. Or, if you like to update your configuration files directly, download a service configuration file to update, and then upload the updated file and update the cloud service with the configuration changes. Either way, the configuration updates are pushed out to all role instances.
 
-The Azure Management Portal also allows you to [enable Remote Desktop Connection for a Role in Azure Cloud Services](cloud-services-role-enable-remote-desktop.md)
+The Azure Management Portal also allows you to [enable Remote Desktop Connection for a Role in Azure Cloud Services](/documentation/articles/cloud-services-role-enable-remote-desktop)
 
 Azure can only ensure 99.95 percent service availability during the configuration updates if you have at least two role instances for every role. That enables one virtual machine to process client requests while the other is being updated. For more information, see [Service Level Agreements](http://azure.microsoft.com/support/legal/sla/).
 
 ## Change a cloud service
 
-1. In the [Azure Portal](http://manage.windowsazure.com/), click **Cloud Services**, click the name of the cloud service, and then click **Configure**.
+1. In the [Azure Management Portal](http://manage.windowsazure.cn/), click **Cloud Services**, click the name of the cloud service, and then click **Configure**.
 
     ![Configuration Page](./media/cloud-services-how-to-configure/CloudServices_ConfigurePage1.png)
     
@@ -82,8 +78,8 @@ Azure can only ensure 99.95 percent service availability during the configuratio
 
 ## Next steps
 
-* Learn how to [deploy a cloud service](cloud-services-how-to-create-deploy.md).
-* Configure a [custom domain name](cloud-services-custom-domain-name.md).
-* [Manage your cloud service](cloud-services-how-to-manage.md).
-* [Enable Remote Desktop Connection for a Role in Azure Cloud Services](cloud-services-role-enable-remote-desktop.md)
-* Configure [ssl certificates](cloud-services-configure-ssl-certificate.md).
+* Learn how to [deploy a cloud service](/documentation/articles/cloud-services-how-to-create-deploy).
+* Configure a [custom domain name](/documentation/articles/cloud-services-custom-domain-name).
+* [Manage your cloud service](/documentation/articles/cloud-services-how-to-manage).
+* [Enable Remote Desktop Connection for a Role in Azure Cloud Services](/documentation/articles/cloud-services-role-enable-remote-desktop)
+* Configure [ssl certificates](/documentation/articles/cloud-services-configure-ssl-certificate).

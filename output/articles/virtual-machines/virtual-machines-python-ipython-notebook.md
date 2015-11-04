@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Create an Jupyter/IPython Notebook | Microsoft Azure"
+	pageTitle="Create an Jupyter/IPython Notebook | Windows Azure"
 	description="Learn how to deploy the Jupyter/IPython Notebook on a Linux virtual machine created with the resource manager deployment model in Azure."
 	services="virtual-machines"
 	documentationCenter="python"
@@ -10,12 +10,8 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.workload="infrastructure-services"
-	ms.tgt_pltfrm="vm-linux"
-	ms.devlang="python"
-	ms.topic="article"
 	ms.date="05/20/2015"
-	ms.author="huvalo"/>
+	wacn.date=""/>
 
 # Jupyter Notebook on Azure
 
@@ -32,11 +28,11 @@ scalable computational resources with all the power of Python and its many
 libraries.  Since the installation is handled by the service, users can access these
 resources without the need for administration and configuration by the user.
 
-If the notebook service does not work for your scenario please continue to read this article which will will show you how to deploy the Jupyter Notebook on Microsoft Azure, using Linux virtual machines (VMs).
+If the notebook service does not work for your scenario please continue to read this article which will will show you how to deploy the Jupyter Notebook on Windows Azure, using Linux virtual machines (VMs).
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-rm-include.md)] classic deployment model.
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] classic deployment model.
 
-[AZURE.INCLUDE [create-account-and-vms-note](../../includes/create-account-and-vms-note.md)]
+[AZURE.INCLUDE [create-account-and-vms-note](../includes/create-account-and-vms-note.md)]
 
 ## Create and configure a VM on Azure
 
@@ -242,7 +238,7 @@ can be shared with other Jupyter users.  The Jupyter Notebook can be used as a
 local application, but it is ideally suited for cloud deployments on Azure
 
 The core features of Jupyter are also available inside Visual Studio via the
-[Python Tools for Visual Studio][] (PTVS). PTVS is a free and open-source plug-in
+[Python Tools for Visual Studio][](/documentation/articles/PTVS). PTVS is a free and open-source plug-in
 from Microsoft that turns Visual Studio into an advanced Python development
 environment that includes an advanced editor with IntelliSense, debugging,
 profiling and parallel computing integration.
@@ -251,6 +247,6 @@ profiling and parallel computing integration.
 
 For more information, see the [Python Developer Center](/develop/python/).
 
-[portal-vm-linux]: https://azure.microsoft.com/en-us/documentation/articles/virtual-machines-linux-tutorial-portal-rm/
+[portal-vm-linux]: /documentation/articles/virtual-machines-linux-tutorial-portal-rm/
 [repository]: https://github.com/ipython/ipython
 [Python Tools for Visual Studio]: http://aka.ms/ptvs

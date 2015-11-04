@@ -1,6 +1,6 @@
 <properties
-   pageTitle="Azure virtual machine deployment with Chef | Microsoft Azure"
-   description="Learn how to use Chef to do automated virtual machine deployment and configuration on Microsoft Azure"
+   pageTitle="Azure virtual machine deployment with Chef | Windows Azure"
+   description="Learn how to use Chef to do automated virtual machine deployment and configuration on Windows Azure"
    services="virtual-machines"
    documentationCenter=""
    authors="diegoviso"
@@ -53,7 +53,7 @@ Then create a second directory called c:\chef\cookbooks.
 
 We now need to download our Azure settings file so Chef can communicate with our Azure subscription.
 
-Download your publish settings from [here](https://manage.windowsazure.com/publishsettings/).
+Download your publish settings from [here](https://manage.windowsazure.cn/publishsettings/).
 
 Save the publish settings file in C:\chef.
 
@@ -202,7 +202,7 @@ The parameters are self-explanatory. Substitute your particular variables and ru
 
 > [AZURE.NOTE] Through the the command line, I’m also automating my endpoint network filter rules by using the –tcp-endpoints parameter. I’ve opened up ports 80 and 3389 to provide access to my web page and RDP session.
 
-Once you run the command, go to the Azure portal and you will see your machine begin to provision.
+Once you run the command, go to the Azure Management Portal and you will see your machine begin to provision.
 
 ![][13]
 
@@ -216,7 +216,7 @@ Once the deployment is complete, we should be able to connect to the web service
 
 As you can see, I got creative with my HTML code.
 
-Don’t forget we can also connect through an RDP session from the Azure portal via port 3389.
+Don’t forget we can also connect through an RDP session from the Azure Management Portal via port 3389.
 
 I hope this has been helpful! Go  and start your infrastructure as code journey with Azure today!
 

@@ -1,6 +1,6 @@
 <properties
 	pageTitle="Base Configuration Test Environment with Azure Resource Manager"
-	description="Learn how to create a simple dev/test environment that simulates a simplified intranet in Microsoft Azure using Resource Manager."
+	description="Learn how to create a simple dev/test environment that simulates a simplified intranet in Windows Azure using Resource Manager."
 	documentationCenter=""
 	services="virtual-machines"
 	authors="JoeDavies-MSFT"
@@ -10,19 +10,15 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.workload="infrastructure-services"
-	ms.tgt_pltfrm="Windows"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="07/23/2015"
-	ms.author="josephd"/>
+	wacn.date=""/>
 
 # Base Configuration test environment with Azure Resource Manager
 
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-rm-include.md)] [classic deployment model](virtual-machines-base-configuration-test-environment.md).
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] [classic deployment model](/documentation/articles/virtual-machines-base-configuration-test-environment).
 
-This article provides you with step-by-step instructions to create the Base Configuration test environment in a Microsoft Azure Virtual Network, using virtual machines created in Resource Manager. 
+This article provides you with step-by-step instructions to create the Base Configuration test environment in a Windows Azure Virtual Network, using virtual machines created in Resource Manager. 
 
 You can use the resulting test environment:
 
@@ -51,13 +47,13 @@ There are four phases to setting up the Corpnet subnet of the Windows Server 201
 3.	Configure APP1.
 4.	Configure CLIENT1.
 
-If you do not already have an Azure account, you can sign up for a free trial at [Try Azure](http://azure.microsoft.com/pricing/free-trial/). If you have an MSDN Subscription, see [Azure benefit for MSDN subscribers](http://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/).
+If you do not already have an Azure account, you can sign up for a trial at [Try Azure](/pricing/1rmb-trial/). If you have an MSDN Subscription, see [Azure benefit for MSDN subscribers](http://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/).
 
-> [AZURE.NOTE] Virtual machines in Azure incur an ongoing monetary cost when they are running. This cost is billed against your free trial, MSDN subscription, or paid subscription. For more information about the costs of running Azure virtual machines, see [Virtual Machines Pricing Details](http://azure.microsoft.com/pricing/details/virtual-machines/) and [Azure Pricing Calculator](http://azure.microsoft.com/pricing/calculator/). To keep costs down, see [Minimizing the costs of test environment virtual machines in Azure](#costs).
+> [AZURE.NOTE] Virtual machines in Azure incur an ongoing monetary cost when they are running. This cost is billed against your trial, MSDN subscription, or paid subscription. For more information about the costs of running Azure virtual machines, see [Virtual Machines Pricing Details](/home/features/virtual-machines/#price) and [Azure Pricing Calculator](http://azure.microsoft.com/pricing/calculator/). To keep costs down, see [Minimizing the costs of test environment virtual machines in Azure](#costs).
 
 ## Phase 1: Create the virtual network
 
-First, if needed, use the instructions in [How to install and configure Azure PowerShell](../install-configure-powershell.md) to install Azure PowerShell on your local computer. Open an Azure PowerShell prompt.
+First, if needed, use the instructions in [How to install and configure Azure PowerShell](/documentation/articles/install-configure-powershell) to install Azure PowerShell on your local computer. Open an Azure PowerShell prompt.
 
 > [AZURE.NOTE] This article contains commands for versions of Azure PowerShell up to *but not including* versions 1.0.0 and later. You can check your version of Azure PowerShell with the **Get-Module azure | format-table version** command. The Azure PowerShell command blocks in this article are in the process of being tested and updated to support the new cmdlets in Azure PowerShell versions 1.0.0 and later. Thank you for your patience.
 
@@ -84,7 +80,7 @@ To list the Azure locations where you can create Resource Manager-based virtual 
 Create your new resource group with these commands. Replace everything within the quotes, including the < and > characters, with the correct names.
 
 	$rgName="<resource group name>"
-	$locName="<location name, such as West US>"
+	$locName="<location name, such as China North>"
 	New-AzureResourceGroup -Name $rgName -Location $locName
 
 Resource Manager-based virtual machines require a Resource Manager-based storage account. You must pick a globally unique name for your storage account that contains only lowercase letters and numbers. You can use this command to list the existing storage accounts.
@@ -110,7 +106,7 @@ Create a new storage account for your new test environment with these commands.
 Next, you create the TestLab Azure Virtual Network that will host the Corpnet subnet of the base configuration.
 
 	$rgName="<name of your new resource group>"
-	$locName="<Azure location name, such as West US>"
+	$locName="<Azure location name, such as China North>"
 	$corpnetSubnet=New-AzureVirtualNetworkSubnetConfig -Name Corpnet -AddressPrefix 10.0.0.0/24
 	New-AzurevirtualNetwork -Name TestLab -ResourceGroupName $rgName -Location $locName -AddressPrefix 10.0.0.0/8 -Subnet $corpnetSubnet –DNSServer 10.0.0.4
 
@@ -125,7 +121,7 @@ DC1 is a domain controller for the corp.contoso.com Active Directory Domain Serv
 First, fill in the name of your resource group, Azure location, and storage account name and run these commands at the Azure PowerShell command prompt on your local computer to create an Azure Virtual Machine for DC1.
 
 	$rgName="<resource group name>"
-	$locName="<Azure location, such as West US>"
+	$locName="<Azure location, such as China North>"
 	$saName="<storage account name>"
 	$vnet=Get-AzurevirtualNetwork -Name TestLab -ResourceGroupName $rgName
 	$pip = New-AzurePublicIpAddress -Name DC1-NIC -ResourceGroupName $rgName -Location $locName -AllocationMethod Dynamic
@@ -206,7 +202,7 @@ APP1 provides web and file sharing services.
 First, fill in the name of your resource group, Azure location, and storage account name and run these commands at the Azure PowerShell command prompt on your local computer to create an Azure Virtual Machine for APP1.
 
 	$rgName="<resource group name>"
-	$locName="<Azure location, such as West US>"
+	$locName="<Azure location, such as China North>"
 	$saName="<storage account name>"
 	$vnet=Get-AzurevirtualNetwork -Name TestLab -ResourceGroupName $rgName
 	$pip = New-AzurePublicIpAddress -Name APP1-NIC -ResourceGroupName $rgName -Location $locName -AllocationMethod Dynamic
@@ -255,7 +251,7 @@ CLIENT1 acts as a typical laptop, tablet, or desktop computer on the Contoso int
 First, fill in the name of your resource group, Azure location, and storage account name and run these commands at the Azure PowerShell command prompt on your local computer to create an Azure Virtual Machine for CLIENT1.
 
 	$rgName="<resource group name>"
-	$locName="<Azure location, such as West US>"
+	$locName="<Azure location, such as China North>"
 	$saName="<storage account name>"
 	$vnet=Get-AzurevirtualNetwork -Name TestLab -ResourceGroupName $rgName
 	$pip = New-AzurePublicIpAddress -Name CLIENT1-NIC -ResourceGroupName $rgName -Location $locName -AllocationMethod Dynamic
@@ -304,9 +300,9 @@ Your base configuration in Azure is now ready for application development and te
 
 ## Additional resources
 
-[Hybrid cloud test environments](../virtual-network/virtual-networks-setup-hybrid-cloud-environment-testing.md)
+[Hybrid cloud test environments](/documentation/articles/virtual-networks-setup-hybrid-cloud-environment-testing)
 
-[Base Configuration test environment](virtual-machines-base-configuration-test-environment.md)
+[Base Configuration test environment](/documentation/articles/virtual-machines-base-configuration-test-environment)
 
 
 ## <a id="costs"></a>Minimizing the costs of test environment virtual machines in Azure

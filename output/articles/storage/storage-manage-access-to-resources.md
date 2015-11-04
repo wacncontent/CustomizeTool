@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Manage anonymous access to containers and blobs | Microsoft Azure" 
+	pageTitle="Manage anonymous access to containers and blobs | Windows Azure" 
 	description="Learn how to make containers and blobs available for anonymous access." 
 	services="storage" 
 	documentationCenter="" 
@@ -7,14 +7,10 @@
 	manager="jdial" 
 	editor=""/>
 
-<tags 
-	ms.service="storage" 
-	ms.workload="storage" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="09/28/2015" 
-	ms.author="micurd;tamram"/>
+<tags
+	ms.service="storage"
+	ms.date="09/28/2015"
+	wacn.date=""/>
 
 # Manage Access to Azure Storage Resources
 
@@ -77,6 +73,6 @@ The following table shows which operations may be called by anonymous users when
 
 ## See Also
 
-- [Authentication for the Azure Storage Services](https://msdn.microsoft.com/library/azure/dd179428.aspx)
-- [Shared access signatures: Understanding the SAS Model](storage-dotnet-shared-access-signature-part-1.md)
-- [Delegating Access with a Shared Access Signature](https://msdn.microsoft.com/library/azure/ee395415.aspx) 
+- [Authentication for the Azure Storage Services](https://msdn.microsoft.com/zh-cn/library/azure/dd179428.aspx)
+- [Shared access signatures: Understanding the SAS Model](/documentation/articles/storage-dotnet-shared-access-signature-part-1)
+- [Delegating Access with a Shared Access Signature](https://msdn.microsoft.com/zh-cn/library/azure/ee395415.aspx) 

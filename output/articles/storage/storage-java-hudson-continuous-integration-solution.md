@@ -1,5 +1,5 @@
 <properties
-	pageTitle="How to use Hudson with the Azure Blob service | Microsoft Azure"
+	pageTitle="How to use Hudson with the Azure Blob service | Windows Azure"
 	description="Describes how to use Hudson with Azure Blob storage as a repository for build artifacts."
 	services="storage"
 	documentationCenter="java"
@@ -9,12 +9,8 @@
 
 <tags
 	ms.service="storage"
-	ms.workload="storage"
-	ms.tgt_pltfrm="na"
-	ms.devlang="Java"
-	ms.topic="article"
-	ms.date="10/12/2015" 
-	ms.author="robmcm"/>
+	ms.date="10/12/2015"
+	wacn.date=""/>
 
 # Using Azure Storage with a Hudson Continuous Integration solution
 
@@ -76,7 +72,7 @@ To use the Blob service with Hudson, you'll need to install the Azure Storage pl
 2. On the **Manage Hudson** page, click **Manage Plugins**.
 3. Click the **Available** tab.
 4. Click **Others**.
-5. In the **Artifact Uploaders** section, select **Microsoft Azure Storage plugin**.
+5. In the **Artifact Uploaders** section, select **Windows Azure Storage plugin**.
 6. Click **Install**.
 7. After the installation is complete, restart Hudson.
 
@@ -84,13 +80,13 @@ To use the Blob service with Hudson, you'll need to install the Azure Storage pl
 
 1. Within the Hudson dashboard, click **Manage Hudson**.
 2. On the **Manage Hudson** page, click **Configure System**.
-3. In the **Microsoft Azure Storage Account Configuration** section:
+3. In the **Windows Azure Storage Account Configuration** section:
 
-    a. Enter your storage account name, which you can obtain from the [Azure portal](https://manage.windowsazure.com).
+    a. Enter your storage account name, which you can obtain from the [Azure Management Portal](https://manage.windowsazure.cn).
 
-    b. Enter your storage account key, also obtainable from the Azure portal.
+    b. Enter your storage account key, also obtainable from the Azure Management Portal.
 
-    c. Use the default value for **Blob Service Endpoint URL** if you are using the public Azure cloud. If you are using a different Azure cloud, use the endpoint as specified in the Azure portal for your storage account.
+    c. Use the default value for **Blob Service Endpoint URL** if you are using the public Azure cloud. If you are using a different Azure cloud, use the endpoint as specified in the Azure Management Portal for your storage account.
 
     d. Click **Validate storage credentials** to validate your storage account.
 
@@ -113,7 +109,7 @@ For instruction purposes, first we'll need to create a job that will create seve
         date /t > date.txt
         time /t >> date.txt
 
-5. In the **Post-build Actions** section of the job configuration, click **Upload artifacts to Microsoft Azure Blob storage**.
+5. In the **Post-build Actions** section of the job configuration, click **Upload artifacts to Windows Azure Blob storage**.
 6. For **Storage Account Name**, select the storage account to use.
 7. For **Container Name**, specify the container name. (The container will be created if it does not already exist when the build artifacts are uploaded.) You can use environment variables, so for this example enter **${JOB_NAME}** as the container name.
 
@@ -124,12 +120,12 @@ For instruction purposes, first we'll need to create a job that will create seve
 8. Click **Make new container public by default** for this example. (If you want to use a private container, you'll need to create a shared access signature to allow access. That is beyond the scope of this article. You can learn more about shared access signatures at [Creating a Shared Access Signature](http://go.microsoft.com/fwlink/?LinkId=279889).)
 9. [Optional] Click **Clean container before uploading** if you want the container to be cleared of contents before build artifacts are uploaded (leave it unchecked if you do not want to clean the contents of the container).
 10. For **List of Artifacts to upload**, enter **text/*.txt**.
-11. For **Common virtual path for uploaded artifacts**, enter **${BUILD\_ID}/${BUILD\_NUMBER}**.
+11. For **Common virtual path for uploaded artifacts**, enter **${BUILD_ID}/${BUILD_NUMBER}**.
 12. Click **Save** to save your settings.
 13. In the Hudson dashboard, click **Build Now** to run **MyJob**. Examine the console output for status. Status messages for Azure Storage will be included in the console output when the post-build action starts to upload build artifacts.
 14. Upon successful completion of the job, you can examine the build artifacts by opening the public blob.
 
-    a. Sign in to the [Azure portal](https://manage.windowsazure.com).
+    a. Sign in to the [Azure Management Portal](https://manage.windowsazure.cn).
 
     b. Click **Storage**.
 
@@ -161,16 +157,16 @@ The following provides an overview of the Blob service components.
 
 - **Storage account**: All access to Azure Storage is done through a storage account. This is the highest level of the namespace for accessing blobs. An account can contain an unlimited number of containers, as long as their total size is under 100 TB.
 - **Container**: A container provides a grouping of a set of blobs. All blobs must be in a container. An account can contain an unlimited number of containers. A container can store an unlimited number of blobs.
-- **Blob**: A file of any type and size. There are two types of blobs that can be stored in Azure Storage: block and page blobs. Most files are block blobs. A single block blob can be up to 200 GB in size. This tutorial uses block blobs. Page blobs, another blob type, can be up to 1 TB in size, and are more efficient when ranges of bytes in a file are modified frequently. For more information about blobs, see [Understanding Block Blobs and Page Blobs](http://msdn.microsoft.com/library/azure/ee691964.aspx).
+- **Blob**: A file of any type and size. There are two types of blobs that can be stored in Azure Storage: block and page blobs. Most files are block blobs. A single block blob can be up to 200 GB in size. This tutorial uses block blobs. Page blobs, another blob type, can be up to 1 TB in size, and are more efficient when ranges of bytes in a file are modified frequently. For more information about blobs, see [Understanding Block Blobs and Page Blobs](http://msdn.microsoft.com/zh-cn/library/azure/ee691964.aspx).
 - **URL format**: Blobs are addressable using the following URL format:
 
-    `http://storageaccount.blob.core.windows.net/container_name/blob_name`
+    `http://storageaccount.blob.core.chinacloudapi.cn/container_name/blob_name`
 
-    (The format above applies to the public Azure cloud. If you are using a different Azure cloud, use the endpoint within the Azure portal to determine your URL endpoint.)
+    (The format above applies to the public Azure cloud. If you are using a different Azure cloud, use the endpoint within the Azure Management Portal to determine your URL endpoint.)
 
-    In the format above, `storageaccount` represents the name of your storage account, `container_name` represents the name of your container, and `blob_name` represents the name of your blob, respectively. Within the container name, you can have multiple paths, separated by a forward slash, **/**. The example container name in this tutorial was **MyJob**, and **${BUILD\_ID}/${BUILD\_NUMBER}** was used for the common virtual path, resulting in the blob having a URL of the following form:
+    In the format above, `storageaccount` represents the name of your storage account, `container_name` represents the name of your container, and `blob_name` represents the name of your blob, respectively. Within the container name, you can have multiple paths, separated by a forward slash, **/**. The example container name in this tutorial was **MyJob**, and **${BUILD_ID}/${BUILD_NUMBER}** was used for the common virtual path, resulting in the blob having a URL of the following form:
 
-    `http://example.blob.core.windows.net/myjob/2014-05-01_11-56-22/1/hello.txt`
+    `http://example.blob.core.chinacloudapi.cn/myjob/2014-05-01_11-56-22/1/hello.txt`
 
 ## Next steps
 

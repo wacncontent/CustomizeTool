@@ -1,25 +1,21 @@
 <properties 
-   pageTitle="Azure Storage Scalability and Performance Targets | Microsoft Azure"
+   pageTitle="Azure Storage Scalability and Performance Targets | Windows Azure"
    description="Learn about the scalability and performance targets for Azure Storage, including capacity, request rate, and inbound and outbound bandwidth for both standard and premium storage accounts. Understand performance targets for partitions within each of the Azure Storage services."
    services="storage"
    documentationCenter="na"
    authors="tamram"
    manager="na"
    editor="na" />
-<tags 
-   ms.service="storage"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="storage"
-   ms.date="09/27/2015"
-   ms.author="tamram" />
+<tags
+	ms.service="storage"
+	ms.date="09/27/2015"
+	wacn.date=""/>
 
 # Azure Storage Scalability and Performance Targets
 
-This topic describes the scalability and performance topics for Microsoft Azure Storage. For a summary of other Azure limits, see [Azure Subscription and Service Limits, Quotas, and Constraints](../azure-subscription-service-limits.md).
+This topic describes the scalability and performance topics for Windows Azure Storage. For a summary of other Azure limits, see [Azure Subscription and Service Limits, Quotas, and Constraints](/documentation/articles/azure-subscription-service-limits).
 
->[AZURE.NOTE] All storage accounts run on the new flat network topology and support the scalability and performance targets outlined below, regardless of when they were created. For more information on the Azure Storage flat network architecture and on scalability, see [Microsoft Azure Storage: A Highly Available Cloud Storage Service with Strong Consistency](http://blogs.msdn.com/b/windowsazurestorage/archive/2011/11/20/windows-azure-storage-a-highly-available-cloud-storage-service-with-strong-consistency.aspx).
+>[AZURE.NOTE] All storage accounts run on the new flat network topology and support the scalability and performance targets outlined below, regardless of when they were created. For more information on the Azure Storage flat network architecture and on scalability, see [Windows Azure Storage: A Highly Available Cloud Storage Service with Strong Consistency](http://blogs.msdn.com/b/windowsazurestorage/archive/2011/11/20/windows-azure-storage-a-highly-available-cloud-storage-service-with-strong-consistency.aspx).
 
 <!-- -->
 
@@ -27,19 +23,19 @@ This topic describes the scalability and performance topics for Microsoft Azure 
 
 >When your application reaches the limit of what a partition can handle for your workload, Azure Storage will begin to return error code 503 (Server Busy) or error code 500 (Operation Timeout) responses. When this occurs, the application should use an exponential backoff policy for retries. The exponential backoff allows the load on the partition to decrease, and to ease out spikes in traffic to that partition.
 
-If the needs of your application exceed the scalability targets of a single storage account, you can build your application to use multiple storage accounts, and partition your data objects across those storage accounts. See [Storage Pricing Details](http://azure.microsoft.com/pricing/details/storage/) for information on volume pricing.
+If the needs of your application exceed the scalability targets of a single storage account, you can build your application to use multiple storage accounts, and partition your data objects across those storage accounts. See [Storage Pricing Details](/home/features/storage/#price) for information on volume pricing.
 
 ## Scalability Targets for Standard Storage Accounts
 
-[AZURE.INCLUDE [azure-storage-limits](../../includes/azure-storage-limits.md)]
+[AZURE.INCLUDE [azure-storage-limits](../includes/azure-storage-limits.md)]
 
 ## Scalability Targets for Premium Storage Accounts
 
-[AZURE.INCLUDE [azure-storage-limits-premium-storage](../../includes/azure-storage-limits-premium-storage.md)]
+[AZURE.INCLUDE [azure-storage-limits-premium-storage](../includes/azure-storage-limits-premium-storage.md)]
 
 ## Storage Limits - Azure Resource Manager
 
-[AZURE.INCLUDE [azure-storage-limits-azure-resource-manager](../../includes/azure-storage-limits-azure-resource-manager.md)]
+[AZURE.INCLUDE [azure-storage-limits-azure-resource-manager](../includes/azure-storage-limits-azure-resource-manager.md)]
 
 ## Partitions in Azure Storage
 
@@ -65,12 +61,12 @@ Partitions affect load balancing and scalability for each of the storage service
 
 ## See Also
 
-- [Storage Pricing Details](http://azure.microsoft.com/pricing/details/storage/)
-- [Azure Subscription and Service Limits, Quotas, and Constraints](../azure-subscription-service-limits.md)
-- [Premium Storage: High-Performance Storage for Azure Virtual Machine Workloads](storage-premium-storage-preview-portal/)
-- [Azure Storage Replication](storage-redundancy.md)
-- [Microsoft Azure Storage Performance and Scalability Checklist](storage-performance-checklist.md)
-- [Microsoft Azure Storage: A Highly Available Cloud Storage Service with Strong Consistency](http://blogs.msdn.com/b/windowsazurestorage/archive/2011/11/20/windows-azure-storage-a-highly-available-cloud-storage-service-with-strong-consistency.aspx)
+- [Storage Pricing Details](/home/features/storage/#price)
+- [Azure Subscription and Service Limits, Quotas, and Constraints](/documentation/articles/azure-subscription-service-limits)
+- [Premium Storage: High-Performance Storage for Azure Virtual Machine Workloads](/documentation/articles/storage-premium-storage-preview-portal)
+- [Azure Storage Replication](/documentation/articles/storage-redundancy)
+- [Windows Azure Storage Performance and Scalability Checklist](/documentation/articles/storage-performance-checklist)
+- [Windows Azure Storage: A Highly Available Cloud Storage Service with Strong Consistency](http://blogs.msdn.com/b/windowsazurestorage/archive/2011/11/20/windows-azure-storage-a-highly-available-cloud-storage-service-with-strong-consistency.aspx)
 
 
 

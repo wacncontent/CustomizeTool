@@ -7,27 +7,23 @@
 	authors="sidneyh" 
 	editor=""/>
 
-<tags 
-	ms.service="sql-database" 
-	ms.workload="sql-database" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="08/03/2015" 
-	ms.author="ddove; sidneyh"/>
+<tags
+	ms.service="sql-database"
+	ms.date="08/03/2015"
+	wacn.date=""/>
 
 # Installing Elastic Database jobs overview
-**Elastic Database jobs** can be installed via PowerShell or through the Azure portal, although you will only gain access to create and manage jobs using the PowerShell API only if you install the PowerShell package. Additionally, the PowerShell APIs provide significantly more functionality over the portal at this point in time. For more information about **Elastic Database jobs**, see [Elastic Database jobs overview](sql-database-elastic-jobs-overview.md).
+**Elastic Database jobs** can be installed via PowerShell or through the Azure Management Portal, although you will only gain access to create and manage jobs using the PowerShell API only if you install the PowerShell package. Additionally, the PowerShell APIs provide significantly more functionality over the portal at this point in time. For more information about **Elastic Database jobs**, see [Elastic Database jobs overview](/documentation/articles/sql-database-elastic-jobs-overview).
 
 If you have already installed **Elastic Database jobs** through the Portal from an existing **Elastic Database pool**, the latest Powershell preview includes scripts to upgrade your existing installation. It is highly recommended to upgrade your installation to the latest **Elastic Database jobs** components in order to take advantage of new functionality exposed via the PowerShell APIs.
 
 ## Prerequisites
-* An Azure subscription. For a free trial, see [Free trial](http://azure.microsoft.com/pricing/free-trial/).
-* Azure PowerShell version >= 0.8.16. Install the latest version (0.9.5) through the [Web Platform Installer](http://go.microsoft.com/fwlink/p/?linkid=320376). For detailed information, see [How to install and configure Azure PowerShell](powershell-install-configure.md).
+* An Azure subscription. For a trial, see [Free trial](/pricing/1rmb-trial/).
+* Azure PowerShell version >= 0.8.16. Install the latest version (0.9.5) through the [Web Platform Installer](http://go.microsoft.com/fwlink/p/?linkid=320376). For detailed information, see [How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure).
 * [NuGet Command-line Utility](https://nuget.org/nuget.exe) is used to install the Elastic Database jobs package. For more information, see http://docs.nuget.org/docs/start-here/installing-nuget.
 
 ## Download and import the Elastic Database jobs PowerShell package
-1. Launch Microsoft Azure PowerShell command window and navigate to the directory where you downloaded NuGet Command-line Utility (nuget.exe).
+1. Launch Windows Azure PowerShell command window and navigate to the directory where you downloaded NuGet Command-line Utility (nuget.exe).
 
 2. Download and import **Elastic Database jobs** package into the current directory with the following command:
 
@@ -45,11 +41,11 @@ If you have already installed **Elastic Database jobs** through the Portal from 
 		PS C:\*Microsoft.Azure.SqlDatabase.Jobs.x.x.xxxx.x*\tools>.\InstallElasticDatabaseJobsCmdlets.ps1
 
 ## Install the Elastic Database jobs components using PowerShell
-1.	Launch a Microsoft Azure PowerShell command window and navigate to the \tools sub-directory under the Microsoft.Azure.SqlDatabase.Jobs.x.x.xxx.x folder: Type cd \tools
+1.	Launch a Windows Azure PowerShell command window and navigate to the \tools sub-directory under the Microsoft.Azure.SqlDatabase.Jobs.x.x.xxx.x folder: Type cd \tools
 
 		PS C:\*Microsoft.Azure.SqlDatabase.Jobs.x.x.xxxx.x*>cd tools
 
-2.	Execute the .\InstallElasticDatabaseJobs.ps1 PowerShell script and supply values for its requested variables. This script will create the components described in [Elastic Database jobs components and pricing](sql-database-elastic-jobs-overview/#components-and-pricing) along with configuring the Azure Cloud Service to appropriately use the dependent components.
+2.	Execute the .\InstallElasticDatabaseJobs.ps1 PowerShell script and supply values for its requested variables. This script will create the components described in [Elastic Database jobs components and pricing](/documentation/articles/sql-database-elastic-jobs-overview#components-and-pricing) along with configuring the Azure Cloud Service to appropriately use the dependent components.
 
 		PS C:\*Microsoft.Azure.SqlDatabase.Jobs.x.x.xxxx.x*\tools>Unblock-File .\InstallElasticDatabaseJobs.ps1 
 		PS C:\*Microsoft.Azure.SqlDatabase.Jobs.x.x.xxxx.x*\tools>.\InstallElasticDatabaseJobs.ps1
@@ -73,7 +69,7 @@ The parameters provided on this sample invocation can be modified for your desir
 
 	<tr>
 	<td>ResourceGroupLocation</td>
-	<td>Provides the Azure location to be used for the newly created Azure components. This parameter defaults to the Central US location.</td>
+	<td>Provides the Azure location to be used for the newly created Azure components. This parameter defaults to the China North location.</td>
 </tr>
 
 <tr>
@@ -84,13 +80,13 @@ The parameters provided on this sample invocation can be modified for your desir
 </tr>
 	<tr>
 	<td>ServiceVmSize</td>
-	<td>Provides the VM size for usage within the Cloud Service. This parameter defaults to A0. Parameters values of A0/A1/A2/A3 are accepted which cause the worker role to use an ExtraSmall/Small/Medium/Large size, respectively. Fo more information on worker role sizes, see [Elastic Database jobs components and pricing](sql-database-elastic-jobs-overview/#components-and-pricing).</td>
+	<td>Provides the VM size for usage within the Cloud Service. This parameter defaults to A0. Parameters values of A0/A1/A2/A3 are accepted which cause the worker role to use an ExtraSmall/Small/Medium/Large size, respectively. Fo more information on worker role sizes, see [Elastic Database jobs components and pricing](/documentation/articles/sql-database-elastic-jobs-overview#components-and-pricing).</td>
 </tr>
 
 </tr>
 	<tr>
 	<td>SqlServerDatabaseSlo</td>
-	<td>Provides the service level objective for a Standard edition. This parameter defaults to S0. Parameter values of S0/S1/S2/S3 are accepted which cause the Azure SQL Database to use the respective SLO. For more information on SQL Database SLOs, see [Elastic Database jobs components and pricing](sql-database-elastic-jobs-overview/#components-and-pricing).</td>
+	<td>Provides the service level objective for a Standard edition. This parameter defaults to S0. Parameter values of S0/S1/S2/S3 are accepted which cause the Azure SQL Database to use the respective SLO. For more information on SQL Database SLOs, see [Elastic Database jobs components and pricing](/documentation/articles/sql-database-elastic-jobs-overview#components-and-pricing).</td>
 </tr>
 
 </tr>
@@ -143,14 +139,14 @@ To update the VM size of an installation, run the following script with paramete
 
 	<tr>
 	<td>ServiceVmSize</td>
-	<td>Provides the VM size for usage within the Cloud Service. This parameter defaults to A0. Parameters values of A0/A1/A2/A3 are accepted which cause the worker role to use an ExtraSmall/Small/Medium/Large size, respectively. Fo more information on worker role sizes, see [Elastic Database jobs components and pricing](sql-database-elastic-jobs-overview/#components-and-pricing).</td>
+	<td>Provides the VM size for usage within the Cloud Service. This parameter defaults to A0. Parameters values of A0/A1/A2/A3 are accepted which cause the worker role to use an ExtraSmall/Small/Medium/Large size, respectively. Fo more information on worker role sizes, see [Elastic Database jobs components and pricing](/documentation/articles/sql-database-elastic-jobs-overview#components-and-pricing).</td>
 </tr>
 
 </table>
 
 ## Install the Elastic Database jobs components using the Portal
 
-Once you have [created an Elastic Database pool](sql-database-elastic-pool-portal.md), you can install **Elastic Database jobs** components to enable execution of administrative tasks against each database in the Elastic Database pool. Unlike when using the **Elastic Database jobs** PowerShell APIs, the portal interface is currently restricted to only executing against an existing pool.
+Once you have [created an Elastic Database pool](/documentation/articles/sql-database-elastic-pool-portal), you can install **Elastic Database jobs** components to enable execution of administrative tasks against each database in the Elastic Database pool. Unlike when using the **Elastic Database jobs** PowerShell APIs, the portal interface is currently restricted to only executing against an existing pool.
 
 
 **Estimated time to complete:** 10 minutes.
@@ -166,7 +162,7 @@ Once you have [created an Elastic Database pool](sql-database-elastic-pool-porta
 
 	![Create username and password][2]
 
-6. Click the OK button. The components are created for you in a few minutes in a new [Resource group](../resource-group-portal.md). The new resource group is pinned to the start board, as shown below. Once created, elastic database jobs (Cloud Service, SQL Database, Service Bus, and Storage) are all created in the group.
+6. Click the OK button. The components are created for you in a few minutes in a new [Resource group](/documentation/articles/resource-group-portal). The new resource group is pinned to the start board, as shown below. Once created, elastic database jobs (Cloud Service, SQL Database, Service Bus, and Storage) are all created in the group.
 
 	![resource group in start board][3]
 
@@ -174,12 +170,12 @@ Once you have [created an Elastic Database pool](sql-database-elastic-pool-porta
 
 	![Deployment still in progress][4]
 
-If uninstallation is required, delete the resource group. See [How to uninstall the Elastic Database job components](sql-database-elastic-jobs-uninstall.md).
+If uninstallation is required, delete the resource group. See [How to uninstall the Elastic Database job components](/documentation/articles/sql-database-elastic-jobs-uninstall).
 
 ## Next steps
 
-Ensure a credential with the appropriate rights for script execution is created on each database in the group, for more information see [How to add users to all database in my group of databases](sql-database-elastic-jobs-add-logins-to-dbs.md). 
-See [Creating and managing an Elastic Database jobs](sql-database-elastic-jobs-create-and-manage.md) to get started.
+Ensure a credential with the appropriate rights for script execution is created on each database in the group, for more information see [How to add users to all database in my group of databases](/documentation/articles/sql-database-elastic-jobs-add-logins-to-dbs). 
+See [Creating and managing an Elastic Database jobs](/documentation/articles/sql-database-elastic-jobs-create-and-manage) to get started.
 
 <!--Image references-->
 [1]: ./media/sql-database-elastic-jobs-service-installation/screen-1.png

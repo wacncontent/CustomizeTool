@@ -6,14 +6,10 @@
 	 authors="zhangmanling" 
 	 manager="dwrede" 
 	 editor=""/>
-<tags 
-	 ms.service="cdn" 
-	 ms.workload="media" 
-	 ms.tgt_pltfrm="na" 
-	 ms.devlang="na" 
-	 ms.topic="article" 
-	 ms.date="09/01/2015" 
-	 ms.author="mazha"/>
+<tags
+	ms.service="cdn"
+	ms.date="09/01/2015"
+	wacn.date=""/>
 
 
 
@@ -25,7 +21,7 @@ Note that now you can also create a custom origin and it does not have to be Azu
 
 ##To Create a New CDN Endpoint  
 
-1.	Log into the [Azure Management Portal](http://manage.windowsazure.com/).
+1.	Log into the [Azure Management Portal](http://manage.windowsazure.cn/).
 2.	In the navigation pane, click **CDN**.
 3.	On the ribbon, click **New**. In the **New** dialog, select **APP SERVICES**, then **CDN**, then **QUICK CREATE**.
 4.	In the **ORIGIN TYPE** dropdown, select an origin type form the list of available origin type.
@@ -47,7 +43,7 @@ Note that now you can also create a custom origin and it does not have to be Azu
 >[AZURE.NOTE] The configuration created for the endpoint will not immediately be available; it can take up to 60 minutes for the registration to propagate through the CDN network. Users who try to use the CDN domain name immediately may receive status code 400 (Bad Request) until the content is available via the CDN.
 
 ##See Also
-[How to Map Content Delivery Network (CDN) Content to a Custom Domain](cdn-map-content-to-custom-domain.md)
+[How to Map Content Delivery Network (CDN) Content to a Custom Domain](/documentation/articles/cdn-map-content-to-custom-domain)
 
 [createnew]: ./media/cdn-create-new-endpoint/cdn-create-new-account.png
 

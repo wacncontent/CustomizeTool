@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Equivalent Azure CLI commands for VM tasks | Microsoft Azure"
+	pageTitle="Equivalent Azure CLI commands for VM tasks | Windows Azure"
 	description="Equivalent Azure CLI commands to create and manage Azure VMs in Azure Resource Manager and Azure Service Management modes"
 	services="virtual-machines"
 	documentationCenter=""
@@ -10,31 +10,27 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.tgt_pltfrm="command-line-interface"
-	ms.workload="infrastructure-services"
 	ms.date="08/28/2015"
-	ms.author="danlep"/>
+	wacn.date=""/>
 
 
 # Equivalent Resource Manager and Service Management commands for VM tasks with the Azure CLI for Mac, Linux, and Windows
-This article shows equivalent Microsoft Azure command-line interface (Azure CLI) commands to create and manage Azure VMs in Azure Service Management and Azure Resource Manager. Use this as a handy guide to migrate scripts from one command mode to the other.
+This article shows equivalent Windows Azure command-line interface (Azure CLI) commands to create and manage Azure VMs in Azure Service Management and Azure Resource Manager. Use this as a handy guide to migrate scripts from one command mode to the other.
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-both-include.md)]
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-both-include.md)]
 
 
 
-* If you haven't already installed the Azure CLI and connected to your subscription, see [Install the Azure CLI](../xplat-cli-install.md) and [Connect to an Azure subscription from the Azure CLI](../xplat-cli-connect.md). When you want to use the Resource Manager mode commands, be sure to connect with the login method.
+* If you haven't already installed the Azure CLI and connected to your subscription, see [Install the Azure CLI](/documentation/articles/xplat-cli-install) and [Connect to an Azure subscription from the Azure CLI](/documentation/articles/xplat-cli-connect). When you want to use the Resource Manager mode commands, be sure to connect with the login method.
 
-* To get started with the Resource Manager mode in the Azure CLI and switch command modes, see [Using the Azure Command-Line Interface with the Resource Manager](xplat-cli-azure-resource-manager.md). By default the CLI starts in Service Management mode. To change to Resource Manager mode, run `azure config mode arm`. To go back to Service Management mode, run `azure config mode asm`.
+* To get started with the Resource Manager mode in the Azure CLI and switch command modes, see [Using the Azure Command-Line Interface with the Resource Manager](/documentation/articles/xplat-cli-azure-resource-manager). By default the CLI starts in Service Management mode. To change to Resource Manager mode, run `azure config mode arm`. To go back to Service Management mode, run `azure config mode asm`.
 
 * For online command help and options, type `azure <command> <subcommand> --help` or `azure help <command> <subcommand>`.
 
 ## VM tasks
 The next table compares common VM tasks you can perform with Azure CLI commands in Service Management and Resource Manager. With many Resource Manager commands you need to pass the name of an existing resource group.
 
-> [AZURE.NOTE] These examples don't include template-based operations in Resource Manager. For information, see [Using the Azure Command-Line Interface with the Resource Manager](xplat-cli-azure-resource-manager.md).
+> [AZURE.NOTE] These examples don't include template-based operations in Resource Manager. For information, see [Using the Azure Command-Line Interface with the Resource Manager](/documentation/articles/xplat-cli-azure-resource-manager).
 
 Task | Service Management | Resource Manager
 -------------- | ----------- | -------------------------
@@ -68,6 +64,6 @@ Get all available VM sizes | Not available | `azure vm sizes [options]`
 
 ## Next steps
 
-* For more about using the Azure CLI to work with Resource Manager resources, see [Using the Azure Command-Line Interface with the Resource Manager](xplat-cli-azure-resource-manager.md) and [Managing Role-Based Access Control with the Azure Command-Line Interface](../role-based-access-control-xplat-cli-install.md).
-* For additional examples of the CLI commands, see [Using the Azure Command-Line Interface with Azure Service Management](../virtual-machines-command-line-tools.md) and
-[Using the Azure CLI with Azure Resource Manager](azure-cli-arm-commands.md).
+* For more about using the Azure CLI to work with Resource Manager resources, see [Using the Azure Command-Line Interface with the Resource Manager](/documentation/articles/xplat-cli-azure-resource-manager) and [Managing Role-Based Access Control with the Azure Command-Line Interface](/documentation/articles/role-based-access-control-xplat-cli-install).
+* For additional examples of the CLI commands, see [Using the Azure Command-Line Interface with Azure Service Management](/documentation/articles/virtual-machines-command-line-tools) and
+[Using the Azure CLI with Azure Resource Manager](/documentation/articles/azure-cli-arm-commands).

@@ -2,6 +2,7 @@
 
    	![](./media/download-android-sample-code/mobile-services-android-studio-project.png)
 
+
    	Notice that there are `//TODO` comments that specify the steps you must take to make this app work with your mobile service.
 
 2. From the **Run** menu, click **Run app**.

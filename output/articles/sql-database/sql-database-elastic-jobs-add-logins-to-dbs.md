@@ -7,21 +7,17 @@
 	manager="jeffreyg" 
 	authors="sidneyh"/>
 
-<tags 
-	ms.service="sql-database" 
-	ms.workload="sql-database" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="07/27/2015" 
-	ms.author="ddove; sidneyh" />
+<tags
+	ms.service="sql-database"
+	ms.date="07/27/2015"
+	wacn.date=""/>
 
 # How to add users to an Elastic Database pool
 
-The **Elastic Database jobs** feature (preview) enables you to run a Transact-SQL script across a group of databases including custom-defined collection of databases, an **Elastic Database pool** or an **Elastic Database shard set** in Azure SQL Database. To run the script, a user with the appropriate permissions must be added to every database in which the job will execute. For more information, see [Managing Databases and Logins in Azure SQL Database](https://msdn.microsoft.com/library/azure/ee336235.aspx) or [Adding Users to Your SQL Azure Database](http://azure.microsoft.com/blog/2010/06/21/adding-users-to-your-sql-azure-database/)
+The **Elastic Database jobs** feature (preview) enables you to run a Transact-SQL script across a group of databases including custom-defined collection of databases, an **Elastic Database pool** or an **Elastic Database shard set** in Azure SQL Database. To run the script, a user with the appropriate permissions must be added to every database in which the job will execute. For more information, see [Managing Databases and Logins in Azure SQL Database](https://msdn.microsoft.com/zh-cn/library/azure/ee336235.aspx) or [Adding Users to Your SQL Azure Database](http://azure.microsoft.com/blog/2010/06/21/adding-users-to-your-sql-azure-database/)
 
 ## Prerequisites
-* Install the [elastic job components](sql-database-elastic-jobs-service-installation.md). 
+* Install the [elastic job components](/documentation/articles/sql-database-elastic-jobs-service-installation). 
 
 ## How to add the users to the databases
 
@@ -37,9 +33,9 @@ The **Elastic Database jobs** feature (preview) enables you to run a Transact-SQ
 
 ## Next steps
 
-Create and manage jobs, see [Creating and managing elastic database jobs](sql-database-elastic-jobs-create-and-manage.md).
+Create and manage jobs, see [Creating and managing elastic database jobs](/documentation/articles/sql-database-elastic-jobs-create-and-manage).
 
-[AZURE.INCLUDE [elastic-scale-include](../../includes/elastic-scale-include.md)]
+[AZURE.INCLUDE [elastic-scale-include](../includes/elastic-scale-include.md)]
 
 <!--Image references-->
 [1]: ./media/sql-database-elastic-jobs-overview/elastic-jobs.png

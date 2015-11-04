@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Configure software RAID on avirtual machine running Linux | Microsoft Azure" 
+	pageTitle="Configure software RAID on avirtual machine running Linux | Windows Azure" 
 	description="Learn how to use mdadm to configure RAID on Linux in Azure." 
 	services="virtual-machines" 
 	documentationCenter="" 
@@ -9,27 +9,23 @@
 	editor=""
 	tag="azure-service-management,azure-resource-manager" />
 
-<tags 
-	ms.service="virtual-machines" 
-	ms.workload="infrastructure-services" 
-	ms.tgt_pltfrm="vm-linux" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="07/29/2015" 
-	ms.author="szark"/>
+<tags
+	ms.service="virtual-machines"
+	ms.date="07/29/2015"
+	wacn.date=""/>
 
 
 
 # Configure Software RAID on Linux
 It's a common scenario to use software RAID on Linux virtual machines in Azure to present multiple attached data disks as a single RAID device. Typically this can be used to improve performance and allow for improved throughput compared to using just a single disk.
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-both-include.md)]
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-both-include.md)]
  
 
 ## Attaching data disks
-Two or more empty data disks will typically be needed to configure a RAID device.  This article will not go into detail on how to attach data disks to a Linux virtual machine.  Please see the Microsoft Azure article [attach a disk](storage-windows-attach-disk.md#attachempty) for detailed instructions on how to attach an empty data disk to a Linux virtual machine on Azure.
+Two or more empty data disks will typically be needed to configure a RAID device.  This article will not go into detail on how to attach data disks to a Linux virtual machine.  Please see the Windows Azure article [attach a disk](/documentation/articles/storage-windows-attach-disk#attachempty) for detailed instructions on how to attach an empty data disk to a Linux virtual machine on Azure.
 
->[AZURE.NOTE] The ExtraSmall VM size does not support more than one data disk attached to the virtual machine.  Please see [Virtual Machine and Cloud Service Sizes for Microsoft Azure](https://msdn.microsoft.com/library/azure/dn197896.aspx) for detailed information about VM sizes and the number of data disks supported.
+>[AZURE.NOTE] The ExtraSmall VM size does not support more than one data disk attached to the virtual machine.  Please see [Virtual Machine and Cloud Service Sizes for Windows Azure](https://msdn.microsoft.com/zh-cn/library/azure/dn197896.aspx) for detailed information about VM sizes and the number of data disks supported.
 
 
 ## Install the mdadm utility

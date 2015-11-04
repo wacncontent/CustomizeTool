@@ -8,36 +8,32 @@
     editor=""/>
 
 <tags
-    ms.service="sql-database"
-    ms.devlang="NA"
-    ms.topic="article"
-    ms.tgt_pltfrm="powershell"
-    ms.workload="data-management" 
-    ms.date="10/13/2015"
-    ms.author="sstein"/>
+	ms.service="sql-database"
+	ms.date="10/13/2015"
+	wacn.date=""/>
 
 # Import a BACPAC file to create a new Azure SQL database using PowerShell
 
 **Single database**
 
 > [AZURE.SELECTOR]
-- [Azure Preview Portal](sql-database-import.md)
-- [PowerShell](sql-database-import-powershell.md)
+- [Azure Preview Portal](/documentation/articles/sql-database-import)
+- [PowerShell](/documentation/articles/sql-database-import-powershell)
 
 
 This article provides directions for creating an Azure SQL database by importing a BACPAC with PowerShell.
 
-A BACPAC is a .bacpac file that contains a database schema and data. For details, see Backup Package (.bacpac) in [Data-tier Applications](https://msdn.microsoft.com/library/ee210546.aspx).
+A BACPAC is a .bacpac file that contains a database schema and data. For details, see Backup Package (.bacpac) in [Data-tier Applications](https://msdn.microsoft.com/zh-cn/library/ee210546.aspx).
 
-The database is created from a BACPAC imported from an Azure storage blob container. If you don't have a .bacpac file in Azure storage you can create one by following the steps in [Create and export a BACPAC of an Azure SQL Database](sql-database-export-powershell.md).
+The database is created from a BACPAC imported from an Azure storage blob container. If you don't have a .bacpac file in Azure storage you can create one by following the steps in [Create and export a BACPAC of an Azure SQL Database](/documentation/articles/sql-database-export-powershell).
 
-> [AZURE.NOTE] Azure SQL Database automatically creates and maintains backups for every user database that you can restore. For details, see [Business Continuity Overview](sql-database-business-continuity.md).
+> [AZURE.NOTE] Azure SQL Database automatically creates and maintains backups for every user database that you can restore. For details, see [Business Continuity Overview](/documentation/articles/sql-database-business-continuity).
 
 
 To import a SQL database you need the following:
 
 - An Azure subscription. If you need an Azure subscription simply click **FREE TRIAL** at the top of this page, and then come back to finish this article.
-- A .bacpac file (BACPAC) of the database you want to restore. The BACPAC needs to be in an [Azure Storage account (classic)](storage-create-storage-account.md) blob container.
+- A .bacpac file (BACPAC) of the database you want to restore. The BACPAC needs to be in an [Azure Storage account (classic)](/documentation/articles/storage-create-storage-account) blob container.
 
 
 > [AZURE.IMPORTANT] This article contains commands for versions of Azure PowerShell up to *but not including* versions 1.0 and later. You can check your version of Azure PowerShell with the **Get-Module azure | format-table version** command.
@@ -46,7 +42,7 @@ To import a SQL database you need the following:
 
 ## Configure your credentials and select your subscription
 
-First you must establish access to your Azure account so start PowerShell and then run the following cmdlet. In the login screen enter the same email and password that you use to sign in to the Azure portal.
+First you must establish access to your Azure account so start PowerShell and then run the following cmdlet. In the login screen enter the same email and password that you use to sign in to the Azure Management Portal.
 
 	Add-AzureAccount
 
@@ -74,7 +70,7 @@ The database name is the name you want for the new database.
     $DatabaseName = "databasename"
 
 
-The following variables are from the storage account where your BACPAC is located. In the [Azure Preview Portal](https://portal.azure.com) browse to your storage account to get these values. You can find the primary access key by clicking **All settings** and then **Keys** from your storage account's blade.
+The following variables are from the storage account where your BACPAC is located. In the [Azure Preview Portal](https://manage.windowsazure.cn) browse to your storage account to get these values. You can find the primary access key by clicking **All settings** and then **Keys** from your storage account's blade.
 
 The blob name is the name of an existing .bacpac file that you want to create the database from. You need to include the .bacpac extension.
 
@@ -141,13 +137,13 @@ Running this command will prompt you for a password. Enter the admin login and p
 
 ## Next steps
 
-- [Connect with SQL Server Management Studio (SSMS)](sql-database-connect-to-database.md)
+- [Connect with SQL Server Management Studio (SSMS)](/documentation/articles/sql-database-connect-to-database)
 
 
 
 
 ## Additional resources
 
-- [Business Continuity Overview](sql-database-business-continuity.md)
-- [Disaster Recovery Drills](sql-database-disaster-recovery-drills.md)
-- [SQL Database documentation](https://azure.microsoft.com/documentation/services/sql-database/)
+- [Business Continuity Overview](/documentation/articles/sql-database-business-continuity)
+- [Disaster Recovery Drills](/documentation/articles/sql-database-disaster-recovery-drills)
+- [SQL Database documentation](/documentation/services/sql-database/)

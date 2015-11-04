@@ -102,7 +102,7 @@ Before you begin the instructions in this article, you must have the following:
 	- Zookeeper nodes (3 nodes) (Free for A1 Zookeepers)
 -->
 
-	Customers are billed for the usage of those nodes for the duration of the cluster’s life. Billing starts once a cluster is created and stops when the cluster is deleted (clusters can’t be de-allocated or put on hold). The cluster size affects the cluster price. For learning purposes, it is recommended to use 1 data node. For more information about HDInsight pricing, see [HDInsight pricing](https://go.microsoft.com/fwLink/?LinkID=282635&clcid=0x409).
+	Customers are billed for the usage of those nodes for the duration of the cluster’s life. Billing starts once a cluster is created and stops when the cluster is deleted (clusters can’t be de-allocated or put on hold). The cluster size affects the cluster price. For learning purposes, it is recommended to use 1 data node. For more information about HDInsight pricing, see [HDInsight pricing](/home/features/hdinsight/#price).
 
 
 	>[AZURE.NOTE] The cluster size limit varies among Azure subscriptions. Contact billing support to increase the limit.
@@ -111,7 +111,7 @@ Before you begin the instructions in this article, you must have the following:
 
 	![Azure regions](./media/hdinsight-provision-clusters-v1/Azure.regions.png)
 
-	For a list of supported regions, click the **Region** drop-down list on [HDInsight pricing](https://go.microsoft.com/fwLink/?LinkID=282635&clcid=0x409).
+	For a list of supported regions, click the **Region** drop-down list on [HDInsight pricing](/home/features/hdinsight/#price).
 
 - **Node size**
 

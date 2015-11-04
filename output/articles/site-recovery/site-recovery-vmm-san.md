@@ -9,16 +9,12 @@
 
 <tags
 	ms.service="site-recovery"
-	ms.workload="backup-recovery"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="10/12/2015"
-	ms.author="raynew"/>
+	wacn.date=""/>
 
 # Set up protection between on-premises VMM sites with SAN
 
-Azure Site Recovery contributes to your business continuity and disaster recovery (BCDR) strategy by orchestrating replication, failover and recovery of virtual machines and physical servers. Read about possible deployment scenarios in the [Azure Site Recovery overview](site-recovery-overview.md).
+Azure Site Recovery contributes to your business continuity and disaster recovery (BCDR) strategy by orchestrating replication, failover and recovery of virtual machines and physical servers. Read about possible deployment scenarios in the [Azure Site Recovery overview](/documentation/articles/site-recovery-overview).
 
 This walkthrough describes how to deploy Site Recovery to orchestrate and automate protection for virtual machine workloads running on an on-premises Hyper-V server that's managed by System Center VMM to another VMM on-premises site, using storage array-based (SAN) replication.
 
@@ -55,7 +51,7 @@ This scenario protects your workloads by backing up Hyper-V virtual machines fro
 
 ### Azure prerequisites
 
-- You'll need a [Microsoft Azure](http://azure.microsoft.com/) account. You can start with a [free trial](http://aka.ms/try-azure). Get pricing information at [Azure Site Recovery Manager Pricing Details](http://go.microsoft.com/fwlink/?LinkId=378268).
+- You'll need a [Windows Azure](http://azure.microsoft.com/) account. You can start with a [trial](http://aka.ms/try-azure). Get pricing information at [Azure Site Recovery Manager Pricing Details](http://go.microsoft.com/fwlink/?LinkId=378268).
 
 ### VMM prerequisites
 
@@ -107,7 +103,7 @@ Site Recovery orchestrates protection for virtual machines located on Hyper-V ho
 
 - [What’s New in Private Cloud](http://go.microsoft.com/fwlink/?LinkId=324952)
 - [VMM 2012 and the clouds](http://go.microsoft.com/fwlink/?LinkId=324956) on Gunter Danzeisen's blog.
-- [Configuring the VMM cloud fabric](https://msdn.microsoft.com/library/azure/dn883636.aspx#BKMK_Fabric)
+- [Configuring the VMM cloud fabric](https://msdn.microsoft.com/zh-cn/library/azure/dn883636.aspx#BKMK_Fabric)
 - [Creating a private cloud in VMM](http://go.microsoft.com/fwlink/?LinkId=324953)
 - [Walkthrough: Creating private clouds](http://go.microsoft.com/fwlink/?LinkId=324954) in Keith Mayer's blog.
 
@@ -160,7 +156,7 @@ Create a replication group which includes all the LUNs that will need to replica
 
 If you want to configure network mapping do the following:
 
-1. Read about [Network mapping](https://msdn.microsoft.com/library/azure/dn801052.aspx).
+1. Read about [Network mapping](https://msdn.microsoft.com/zh-cn/library/azure/dn801052.aspx).
 2. Prepare VM networks in VMM:
 
 	- Learn about [setting up logical networks](http://go.microsoft.com/fwlink/?LinkId=386307).Set up logical networks—Read Configuring Logical Networking in VMM Overview.
@@ -169,7 +165,7 @@ If you want to configure network mapping do the following:
 ## Step 2: Create a vault
 
 
-1. Sign in to the [Management Portal](https://portal.azure.com).
+1. Sign in to the [Management Portal](https://manage.windowsazure.cn).
 
 
 2. Expand **Data Services** > **Recovery Services** and click **Site Recovery Vault**.
@@ -198,7 +194,7 @@ Check the status bar to confirm that the vault was successfully created. The vau
 
 	![Registration key](./media/site-recovery-vmm-san/SRSAN_QuickStartRegKey.png)
 
-4. On the *Quick Start* page, in **Prepare VMM servers**, click *Download Microsoft Azure Site Recovery Provider for installation on VMM servers* to obtain the latest version of the Provider installation file.
+4. On the *Quick Start* page, in **Prepare VMM servers**, click *Download Windows Azure Site Recovery Provider for installation on VMM servers* to obtain the latest version of the Provider installation file.
 
 2. Run this file on the source VMM server. If VMM is deployed in a cluster and you're installing the Provider for the first time install it on an active node and finish the installation to register the VMM server in the vault. Then install the Provider on the other nodes. Note that if you're upgrading the Provider you'll need to upgrade on all nodes because they should all be running the same Provider version.
 
@@ -224,12 +220,12 @@ Check the status bar to confirm that the vault was successfully created. The vau
 	- If you want to use a custom proxy you should set it up before you install the Provider. When you configure custom proxy settings a test will run to check the proxy connection.
 	- If you do use a custom proxy, or your default proxy requires authentication you'll need to enter the proxy details, including the proxy address and port.
 	- Following urls should be accessible from the VMM Server and the Hyper-v hosts
-		- *.hypervrecoverymanager.windowsazure.com
-		- *.accesscontrol.windows.net
-		- *.backup.windowsazure.com
-		- *.blob.core.windows.net
-		- *.store.core.windows.net
-	- Allow the IP addresses described in [Azure Datacenter IP Ranges](http://go.microsoft.com/fwlink/?LinkId=511094) and HTTPS (443) protocol. You would have to white-list IP ranges of the Azure region that you plan to use and that of West US.
+		- *.hypervrecoverymanager.windowsazure.cn
+		- *.accesscontrol.chinacloudapi.cn
+		- *.backup.windowsazure.cn
+		- *.blob.core.chinacloudapi.cn
+		- *.store.core.chinacloudapi.cn
+	- Allow the IP addresses described in [Azure Datacenter IP Ranges](http://go.microsoft.com/fwlink/?LinkId=511094) and HTTPS (443) protocol. You would have to white-list IP ranges of the Azure region that you plan to use and that of China North.
 
 	- If you use a custom proxy a VMM RunAs account (DRAProxyAccount) will be created automatically using the specified proxy credentials. Configure the proxy server so that this account can authenticate successfully. The VMM RunAs account settings can be modified in the VMM console. To do this, open the Settings workspace, expand Security, click Run As Accounts, and then modify the password for DRAProxyAccount. You’ll need to restart the VMM service so that this setting takes effect.
 
@@ -364,7 +360,7 @@ Test your deployment to make sure virtual machines and data fail over as expecte
 	![Add virtual machines](./media/site-recovery-vmm-san/SRSAN_RPlanVM.png)
 5. After a recovery plan has been created, it appears in the list on the **Recovery Plans** tab.
 6. On the **Recovery Plans** tab, select the plan and click **Test Failover**.
-7. On the **Confirm Test Failover** page, select **None**. Note that with this option enabled the failed over replica virtual machines won't be connected to any network. This will test that the virtual machine fails over as expected but does not test your replication network environment. Look at how to [run a test failover](site-recovery-failover.md#run-a-test-failover) for more details about how to use different networking options.
+7. On the **Confirm Test Failover** page, select **None**. Note that with this option enabled the failed over replica virtual machines won't be connected to any network. This will test that the virtual machine fails over as expected but does not test your replication network environment. Look at how to [run a test failover](/documentation/articles/site-recovery-failover#run-a-test-failover) for more details about how to use different networking options.
 
 
 	![Select test network](./media/site-recovery-vmm-san/SRSAN_TestFailover1.png)

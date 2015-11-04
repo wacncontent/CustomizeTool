@@ -8,12 +8,8 @@
 	editor="tysonn" />
 <tags
 	ms.service="site-recovery"
-	ms.devlang="na"
-	ms.topic="get-started-article"
-	ms.tgt_pltfrm="na"
-	ms.workload="infrastructure-services"
 	ms.date="08/05/2015"
-	ms.author="lauraa" />
+	wacn.date=""/>
 
 # Capacity planning for Hyper-V replication
 
@@ -123,11 +119,11 @@ If you have already prepared a standalone Hyper-V host a recovery server, then y
 
 	h. Open firewall ports on all recovery Hyper-V hosts:
           Port 443 (Certificate auth):
-             Get-ClusterNode | ForEach-Object {Invoke-command -computername \$\_.name -scriptblock {Enable-Netfirewallrule -displayname "Hyper-V Replica HTTPS Listener (TCP-In)"}}
+             Get-ClusterNode | ForEach-Object {Invoke-command -computername \$_.name -scriptblock {Enable-Netfirewallrule -displayname "Hyper-V Replica HTTPS Listener (TCP-In)"}}
 
 
           Port 80 (Kerberos auth):
-              Get-ClusterNode | ForEach-Object {Invoke-command -computername \$\_.name -scriptblock {Enable-Netfirewallrule -displayname "Hyper-V Replica HTTP Listener (TCP-In)"}}
+              Get-ClusterNode | ForEach-Object {Invoke-command -computername \$_.name -scriptblock {Enable-Netfirewallrule -displayname "Hyper-V Replica HTTP Listener (TCP-In)"}}
 
 
 ## Step 3: Run the capacity planner tool
@@ -228,16 +224,16 @@ The following resources can help you with capacity planning for Hyper-V replicat
 
 - [Guided Hands-On Lab](http://go.microsoft.com/fwlink/?LinkId=510893)—Get a great walkthrough of capacity planning with the tool on Keith Mayer’s TechNet blog.
 
-- [Performance and Scaling Testing - On-Premises to On-Premises](https://msdn.microsoft.com/library/azure/dn760892.aspx)—Read the results of replication testing for an on-premises to on-premises deployment.
+- [Performance and Scaling Testing - On-Premises to On-Premises](https://msdn.microsoft.com/zh-cn/library/azure/dn760892.aspx)—Read the results of replication testing for an on-premises to on-premises deployment.
 
 
 ## Next steps
 
 To start deploying ASR:
 
-- [Set up protection between an on-premises VMM site and Azure](site-recovery-vmm-to-azure.md)
-- [Set up protection between an on-premises Hyper-V site and Azure](site-recovery-hyper-v-site-to-azure)
-- [Set up protection between two on-premises VMM sites](site-recovery-vmm-to-vmm)
-- [Set up protection between two on-premises VMM sites with SAN](site-recovery-vmm-san)
-- [Set up protection with a single VMM server](site-recovery-single-vmm)
+- [Set up protection between an on-premises VMM site and Azure](/documentation/articles/site-recovery-vmm-to-azure)
+- [Set up protection between an on-premises Hyper-V site and Azure](/documentation/articles/site-recovery-hyper-v-site-to-azure)
+- [Set up protection between two on-premises VMM sites](/documentation/articles/site-recovery-vmm-to-vmm)
+- [Set up protection between two on-premises VMM sites with SAN](/documentation/articles/site-recovery-vmm-san)
+- [Set up protection with a single VMM server](/documentation/articles/site-recovery-single-vmm)
  

@@ -1,7 +1,7 @@
 ## Send messages to Event Hubs
-In this section we will write a Java console app to send events to your Event Hub. We will make use of the JMS AMQP provider from the [Apache Qpid project](http://qpid.apache.org/). This is analogous to using Service Bus queues and topics with AMQP through Java as shown [here](/documentation/articles/service-bus-java-how-to-use-jms-api-amqp). For more information, refer to [Qpid JMS documentation](http://qpid.apache.org/releases/qpid-0.30/programming/book/QpidJMS.html) and [Java Messaging Service](http://www.oracle.com/technetwork/java/jms/index.html).
+In this section we will write a Java console app to send events to your Event Hub. We will make use of the JMS AMQP provider from the [Apache Qpid project](http://qpid.apache.org/). This is analogous to using Service Bus queues and topics with AMQP through Java as shown [here](../articles/service-bus/service-bus-java-how-to-use-jms-api-amqp.md). For more information, refer to [Qpid JMS documentation](http://qpid.apache.org/releases/qpid-0.30/programming/book/QpidJMS.html) and [Java Messaging Service](http://www.oracle.com/technetwork/java/jms/index.html).
 
-1. In Eclipse, install the [Azure Toolkit for Eclipse](https://msdn.microsoft.com/zh-cn/library/azure/hh690946.aspx). This includes the Qpid JMS AMQP client libraries.
+1. In Eclipse, install the [Azure Toolkit for Eclipse](https://msdn.microsoft.com/library/azure/hh690946.aspx). This includes the Qpid JMS AMQP client libraries.
 
 2. In Eclipse, create a new Java project named **Sender**.
 
@@ -18,7 +18,7 @@ In this section we will write a Java console app to send events to your Event Hu
 
 			# Register a ConnectionFactory in JNDI using the form:
 			# connectionfactory.[jndi_name] = [ConnectionURL]
-			connectionfactory.SBCF = amqps://SendRule:{Send Rule key}@{namespace name}.servicebus.chinacloudapi.cn/?sync-publish=false
+			connectionfactory.SBCF = amqps://SendRule:{Send Rule key}@{namespace name}.servicebus.windows.net/?sync-publish=false
 
 			# Register some queues in JNDI using the form
 			# queue.[jndi_name] = [physical_name]
@@ -89,7 +89,7 @@ In this section we will write a Java console app to send events to your Event Hu
 
 
 <!-- Links -->
-[Azure Management Portal]: https://manage.windowsazure.cn/
+[Azure Management Portal]: https://manage.windowsazure.com/
 
 
 <!-- Images -->

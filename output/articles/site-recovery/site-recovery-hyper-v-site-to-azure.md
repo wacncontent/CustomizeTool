@@ -9,12 +9,8 @@
 
 <tags
 	ms.service="site-recovery"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.tgt_pltfrm="na"
-	ms.workload="storage-backup-recovery"
 	ms.date="10/12/2015"
-	ms.author="raynew"/>
+	wacn.date=""/>
 
 
 # Set up protection between an on-premises Hyper-V site and Azure
@@ -22,7 +18,7 @@
 
 ## Overview
 
-Azure Site Recovery contributes to your business continuity and disaster recovery (BCDR) strategy by orchestrating replication, failover and recovery of virtual machines and physical servers. Read about possible deployment scenarios in the [Site Recovery Overview](site-recovery-overview.md).
+Azure Site Recovery contributes to your business continuity and disaster recovery (BCDR) strategy by orchestrating replication, failover and recovery of virtual machines and physical servers. Read about possible deployment scenarios in the [Site Recovery Overview](/documentation/articles/site-recovery-overview).
 
 This article describes how to deploy Site Recovery to replicate virtual machines located on on-premises Hyper-V servers running Windows Server 2012 R2. Replication to Azure storage is orchestrated by Site Recovery. This deployment is particularly useful if you're running Hyper-V servers but System Center Virtual Machine Manager (VMM) isn't deployed.
 
@@ -40,8 +36,8 @@ Make sure you have everything in place before you begin.
 
 ### Azure prerequisites
 
-- You'll need a [Microsoft Azure](http://azure.microsoft.com/) account. You can start with a [free trial](pricing/free-trial/).
-- You'll need an Azure storage account to store replicated data. The account needs geo-replication enabled. It should be in the same region as the Azure Site Recovery vault and be associated with the same subscription. To learn more read [Introduction to Microsoft Azure Storage](../storage/storage-introduction.md).
+- You'll need a [Windows Azure](http://azure.microsoft.com/) account. You can start with a [trial](/documentation/articles/free-trial).
+- You'll need an Azure storage account to store replicated data. The account needs geo-replication enabled. It should be in the same region as the Azure Site Recovery vault and be associated with the same subscription. To learn more read [Introduction to Windows Azure Storage](/documentation/articles/storage-introduction).
 - You'll need an Azure virtual network so that replicated virtual machines are connected to a network after failover.
 
 ### Hyper-V prerequisites
@@ -49,11 +45,11 @@ Make sure you have everything in place before you begin.
 - In the source on-premises site you'll need at least one server running Windows Server 2012 R2 with the Hyper-V role.
 - The Hyper-V server should contain one or more virtual machines.
 - Hyper-V servers should be connected to the Internet, either directly or via a proxy.
-- Hyper-V servers should have fixes mentioned in [KB2961977](https://support.microsoft.com/en-us/kb/2961977 "KB2961977") installed.
+- Hyper-V servers should have fixes mentioned in [KB2961977](https://support.microsoft.com/kb/2961977 "KB2961977") installed.
 
 ### Virtual machine prerequisites
 
-Virtual machines you want to protect should conform with [Virtual Machine prerequisites](site-recovery-best-practices.md#virtual-machines).
+Virtual machines you want to protect should conform with [Virtual Machine prerequisites](/documentation/articles/site-recovery-best-practices#virtual-machines).
 
 ### Provider and agent prerequisites
 
@@ -62,11 +58,11 @@ As part of Azure Site Recovery deployment you’ll install the Azure Site Recove
 - You should run the latest versions of the Provider and agent.
 - All Hyper-V servers in a vault should have the same versions.
 - The Provider will need to connect to Azure Site Recovery over the Internet. You can select to do this without a proxy, using proxy settings currently configured on the VMM server, or using custom proxy settings that you configure during Provider installation. To use an existing proxy server ensure that the URLs for connecting to Azure are allowed through the firewall
-	- *.hypervrecoverymanager.windowsazure.com
-	- *.accesscontrol.windows.net
-	- *.backup.windowsazure.com		
-	- *.blob.core.windows.net
-	- *.store.core.windows.net
+	- *.hypervrecoverymanager.windowsazure.cn
+	- *.accesscontrol.chinacloudapi.cn
+	- *.backup.windowsazure.cn		
+	- *.blob.core.chinacloudapi.cn
+	- *.store.core.chinacloudapi.cn
  
 - To use a custom proxy set up the proxy server before installing the Provider. During Provider setup you’ll need to specify the proxy server address and port, and credentials that can be used for access. Note that HTTPS based proxy is not supported.
 
@@ -77,7 +73,7 @@ The picture below shows the different communication channels and ports used by A
 
 ## Step 1: Create a vault
 
-1. Sign in to the [Management Portal](https://portal.azure.com).
+1. Sign in to the [Management Portal](https://manage.windowsazure.cn).
 
 
 2. Expand **Data Services** > **Recovery Services** and click **Site Recovery Vault**.
@@ -87,7 +83,7 @@ The picture below shows the different communication channels and ports used by A
 
 4. In **Name**, enter a friendly name to identify the vault.
 
-5. In **Region**, select the geographic region for the vault. To check supported regions see Geographic Availability in [Azure Site Recovery Pricing Details](pricing/details/site-recovery/).
+5. In **Region**, select the geographic region for the vault. To check supported regions see Geographic Availability in [Azure Site Recovery Pricing Details](/documentation/articles/site-recovery).
 
 6. Click **Create vault**.
 
@@ -145,13 +141,13 @@ Install the Provider and agent. If you're installing on a Hyper-V cluster, perfo
 	- If the default proxy on the Hyper-V server requires authentication then you should select to use a custom proxy server. Type in the default proxy details and specify credentials.
 	- If you want to use a custom proxy server set it up before you install the Provider.
 	- Following urls should be accessible from Hyper-v host
-		- *.hypervrecoverymanager.windowsazure.com
-		- *.accesscontrol.windows.net
-		- *.backup.windowsazure.com
-		- *.blob.core.windows.net
-		- *.store.core.windows.net
+		- *.hypervrecoverymanager.windowsazure.cn
+		- *.accesscontrol.chinacloudapi.cn
+		- *.backup.windowsazure.cn
+		- *.blob.core.chinacloudapi.cn
+		- *.store.core.chinacloudapi.cn
 
-	- Allow the IP addresses described in [Azure Datacenter IP Ranges](http://go.microsoft.com/fwlink/?LinkId=511094) and HTTPS (443) protocol. You would have to white-list IP ranges of the Azure region that you plan to use and that of West US.
+	- Allow the IP addresses described in [Azure Datacenter IP Ranges](http://go.microsoft.com/fwlink/?LinkId=511094) and HTTPS (443) protocol. You would have to white-list IP ranges of the Azure region that you plan to use and that of China North.
 
 9. On the **Vault Settings** page, click **Browse** to select the key file. Specify the Azure Site Recovery subscription, the vault name, and the Hyper-V site to which the Hyper-V server belongs.
 
@@ -178,8 +174,8 @@ Install the Provider and agent. If you're installing on a Hyper-V cluster, perfo
 			C:\ASR> setupdr.exe /i
 	>5. Register the provider by running the following command
 	>
-	    	CD C:\Program Files\Microsoft Azure Site Recovery Provider\
-	    	C:\Program Files\Microsoft Azure Site Recovery Provider\> DRConfigurator.exe /r  /Friendlyname <friendly name of the server> /Credentials <path of the credentials file>
+	    	CD C:\Program Files\Windows Azure Site Recovery Provider\
+	    	C:\Program Files\Windows Azure Site Recovery Provider\> DRConfigurator.exe /r  /Friendlyname <friendly name of the server> /Credentials <path of the credentials file>
 
 
 	>----------
@@ -192,7 +188,7 @@ Install the Provider and agent. If you're installing on a Hyper-V cluster, perfo
 	> - **/proxyUsername** : Optional parameter that specifies the Proxy user name (if proxy requires authentication).
 	> - **/proxyPassword** :Optional parameter that specifies the Password for authenticating with the proxy server (if proxy requires authentication).
 
->[AZURE.TIP]You can configure each of the individual Hyper-V host to use different network bandwidth settings to replicate virtual machines to Azure. Learn more about [How to Manage on-premises to Azure protection network bandwidth usage](https://support.microsoft.com/en-us/kb/3056159)  
+>[AZURE.TIP]You can configure each of the individual Hyper-V host to use different network bandwidth settings to replicate virtual machines to Azure. Learn more about [How to Manage on-premises to Azure protection network bandwidth usage](https://support.microsoft.com/kb/3056159)  
 
 
 ## Step 4: Create Azure resources
@@ -262,7 +258,7 @@ Add virtual machines to a protection group to enable protection for them.
 
 ## Step 7: Create a recovery plan
 
-In order to test the deployment you can run a test failover for a single virtual machine or a recovery plan that contains one or more virtual machines. To create a recovery plan [follow these instructions](site-recovery-create-recovery-plans.md)
+In order to test the deployment you can run a test failover for a single virtual machine or a recovery plan that contains one or more virtual machines. To create a recovery plan [follow these instructions](/documentation/articles/site-recovery-create-recovery-plans)
 
 ## Step 8: Test the deployment
 
@@ -271,10 +267,10 @@ There are two ways to run a test failover to Azure.
 - Test failover without an Azure network—This type of test failover checks that the virtual machine comes up correctly in Azure. The virtual machine won’t be connected to any Azure network after failover.
 - Test failover with an Azure network—This type of failover checks that the entire replication environment comes up as expected and that failed over the virtual machines will be connected to the specified target Azure network. For subnet handling, for test failover the subnet of the test virtual machine will be figured out based on the subnet of the replica virtual machine. This is different to regular replication when the subnet of a replica virtual machine is based on the subnet of the source virtual machine.
 
-If you want to run a test failover for a virtual machine enabled for protection to Azure without specifying an Azure target network you don’t need to prepare anything. To run a test failover with a target Azure network you’ll need to create a new Azure network that’s isolated from your Azure production network (default behavior when you create a new network in Azure). Look at how to [run a test failover](site-recovery-failover.md#run-a-test-failover) for more details. 
+If you want to run a test failover for a virtual machine enabled for protection to Azure without specifying an Azure target network you don’t need to prepare anything. To run a test failover with a target Azure network you’ll need to create a new Azure network that’s isolated from your Azure production network (default behavior when you create a new network in Azure). Look at how to [run a test failover](/documentation/articles/site-recovery-failover#run-a-test-failover) for more details. 
 
 
-You will also need to set up the infrastructure for the replicated virtual machine to work as expected. For example, a virtual machine with Domain Controller and DNS can be replicated to Azure using Azure Site Recovery and can be created in the test network using Test Failover. Look at [test failover considerations for active directory](site-recovery-active-directory.md#considerations-for-test-failover) section for more details. 
+You will also need to set up the infrastructure for the replicated virtual machine to work as expected. For example, a virtual machine with Domain Controller and DNS can be replicated to Azure using Azure Site Recovery and can be created in the test network using Test Failover. Look at [test failover considerations for active directory](/documentation/articles/site-recovery-active-directory#considerations-for-test-failover) section for more details. 
 
 To run the test failover do the following:
 
@@ -283,12 +279,12 @@ To run the test failover do the following:
 
 	![Test failover](./media/site-recovery-hyper-v-site-to-azure/SRHVSite_TestFailoverNoNetwork.png)
 
-3. On the **Jobs** tab you can track failover progress. You should also be able to see the virtual machine test replica in the Azure portal. If you’re set up to access virtual machines from your on-premises network you can initiate a Remote Desktop connection to the virtual machine.
+3. On the **Jobs** tab you can track failover progress. You should also be able to see the virtual machine test replica in the Azure Management Portal. If you’re set up to access virtual machines from your on-premises network you can initiate a Remote Desktop connection to the virtual machine.
 4. When the failover reaches the **Complete testing** phase , click **Complete Test** to finish up the test failover. You can drill down to the **Job** tab to track failover progress and status, and to perform any actions that are needed.
-5. After  failover you'll be able to see the virtual machine test replica in the Azure portal. If you’re set up to access virtual machines from your on-premises network you can initiate a Remote Desktop connection to the virtual machine.
+5. After  failover you'll be able to see the virtual machine test replica in the Azure Management Portal. If you’re set up to access virtual machines from your on-premises network you can initiate a Remote Desktop connection to the virtual machine.
 
 	1. Verify that the virtual machines start successfully.
-    2. If you want to connect to the virtual machine in Azure using Remote Desktop after the failover, enable Remote Desktop Connection on the virtual machine before you run the test failover. You will also need to add an RDP endpoint on the virtual machine. You can leverage an [Azure Automation Runbooks](site-recovery-runbook-automation.md) to do that.
+    2. If you want to connect to the virtual machine in Azure using Remote Desktop after the failover, enable Remote Desktop Connection on the virtual machine before you run the test failover. You will also need to add an RDP endpoint on the virtual machine. You can leverage an [Azure Automation Runbooks](/documentation/articles/site-recovery-runbook-automation) to do that.
     3. After failover if you use a public IP address to connect to the virtual machine in Azure using Remote Desktop, ensure you don't have any domain policies that prevent you from connecting to a virtual machine using a public address.
 
 6. After the testing is complete do the following:
@@ -296,7 +292,7 @@ To run the test failover do the following:
 	- Click **The test failover is complete**. Clean up the test environment to automatically power off and delete the test virtual machines.
 	- Click **Notes** to record and save any observations associated with the test failover.
 7. When the failover reaches the **Complete testing** phase finish the verification as follows:
-	1. View the replica virtual machine in the Azure portal. Verify that the virtual machine starts successfully.
+	1. View the replica virtual machine in the Azure Management Portal. Verify that the virtual machine starts successfully.
 	2. If you’re set up to access virtual machines from your on-premises network you can initiate a Remote Desktop connection to the virtual machine.
 	3. Click **Complete the test** to finish it.
 	4. Click **Notes** to record and save any observations associated with the test failover.
@@ -304,4 +300,4 @@ To run the test failover do the following:
 
 ## Next steps
 
-After your deployment is set up and running, [learn more](site-recovery-failover.md) about failover.
+After your deployment is set up and running, [learn more](/documentation/articles/site-recovery-failover) about failover.

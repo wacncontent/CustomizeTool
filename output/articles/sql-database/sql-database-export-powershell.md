@@ -9,12 +9,8 @@
 
 <tags
 	ms.service="sql-database"
-	ms.devlang="NA"
 	ms.date="10/13/2015"
-	ms.author="sstein"
-	ms.workload="data-management"
-	ms.topic="article"
-	ms.tgt_pltfrm="NA"/>
+	wacn.date=""/>
 
 
 # Create and export a BACPAC of an Azure SQL database using PowerShell
@@ -22,15 +18,15 @@
 **Single database**
 
 > [AZURE.SELECTOR]
-- [Azure Preview Portal](sql-database-export.md)
-- [PowerShell](sql-database-export-powershell.md)
+- [Azure Preview Portal](/documentation/articles/sql-database-export)
+- [PowerShell](/documentation/articles/sql-database-export-powershell)
 
 
 This article provides directions for exporting a BACPAC of your Azure SQL database with PowerShell.
 
-A BACPAC is a .bacpac file that contains a database schema and data. For details, see Backup Package (.bacpac) in [Data-tier Applications](https://msdn.microsoft.com/library/ee210546.aspx).
+A BACPAC is a .bacpac file that contains a database schema and data. For details, see Backup Package (.bacpac) in [Data-tier Applications](https://msdn.microsoft.com/zh-cn/library/ee210546.aspx).
 
-> [AZURE.NOTE] Azure SQL Database automatically creates backups for every user database. For details, see [Business Continuity Overview](sql-database-business-continuity.md).
+> [AZURE.NOTE] Azure SQL Database automatically creates backups for every user database. For details, see [Business Continuity Overview](/documentation/articles/sql-database-business-continuity).
 
 The BACPAC is exported into an Azure storage blob container that you can download once the operation successfully completes.
 
@@ -38,15 +34,15 @@ The BACPAC is exported into an Azure storage blob container that you can downloa
 To complete this article you need the following:
 
 - An Azure subscription. If you need an Azure subscription simply click **FREE TRIAL** at the top of this page, and then come back to finish this article.
-- An Azure SQL Database. If you do not have a SQL database, create one following the steps in this article: [Create your first Azure SQL Database](sql-database-get-started.md).
-- An [Azure Storage account](storage-create-storage-account.md) with a blob container to store the BACPAC. Currently the storage account must use the classic deployment model so choose **Classic** when creating a storage account.
-- Azure PowerShell. You can download and install the Azure PowerShell modules by running the [Microsoft Web Platform Installer](http://go.microsoft.com/fwlink/p/?linkid=320376&clcid=0x409). For detailed information, see [How to install and configure Azure PowerShell](powershell-install-configure.md).
+- An Azure SQL Database. If you do not have a SQL database, create one following the steps in this article: [Create your first Azure SQL Database](/documentation/articles/sql-database-get-started).
+- An [Azure Storage account](/documentation/articles/storage-create-storage-account) with a blob container to store the BACPAC. Currently the storage account must use the classic deployment model so choose **Classic** when creating a storage account.
+- Azure PowerShell. You can download and install the Azure PowerShell modules by running the [Microsoft Web Platform Installer](http://go.microsoft.com/fwlink/p/?linkid=320376&clcid=0x409). For detailed information, see [How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure).
 
 
 
 ## Configure your credentials and select your subscription
 
-First you must establish access to your Azure account so start PowerShell and then run the following cmdlet. In the login screen enter the same email and password that you use to sign in to the Azure portal.
+First you must establish access to your Azure account so start PowerShell and then run the following cmdlet. In the login screen enter the same email and password that you use to sign in to the Azure Management Portal.
 
 	Add-AzureAccount
 
@@ -72,7 +68,7 @@ Replace the server and database names with the server and database that currentl
     $DatabaseName = "nameofdatabasetobackup"
     $BlobName = "filename.bacpac"
 
-In the [Azure Preview Portal](https://portal.azure.com) browse to your storage account to get these values. You can find the primary access key by clicking **All settings** and then **Keys** from your storage account's blade.
+In the [Azure Preview Portal](https://manage.windowsazure.cn) browse to your storage account to get these values. You can find the primary access key by clicking **All settings** and then **Keys** from your storage account's blade.
 
     $StorageName = "storageaccountname"
     $ContainerName = "blobcontainername"
@@ -135,11 +131,11 @@ Running this command will prompt you for a password. Enter the admin password fo
 
 ## Next steps
 
-- [Import an Azure SQL database](sql-database-import-powershell.md)
+- [Import an Azure SQL database](/documentation/articles/sql-database-import-powershell)
 
 
 ## Additional resources
 
-- [Business Continuity Overview](sql-database-business-continuity.md)
-- [Disaster Recovery Drills](sql-database-disaster-recovery-drills.md)
-- [SQL Database documentation](https://azure.microsoft.com/documentation/services/sql-database/)
+- [Business Continuity Overview](/documentation/articles/sql-database-business-continuity)
+- [Disaster Recovery Drills](/documentation/articles/sql-database-disaster-recovery-drills)
+- [SQL Database documentation](/documentation/services/sql-database/)

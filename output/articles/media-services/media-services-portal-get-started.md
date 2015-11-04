@@ -148,7 +148,7 @@ This section describes the steps you can take to encode your content with Azure 
 
 	+ **Encode with PlayReady content protection**. This preset produces an asset encoded with PlayReady content protection.  
 
-		By default the Media Services PlayReady license service is used. To specify some other service from which clients can obtain a license to play the PlayReady encrypted content, use REST or Media Services .NET SDK APIs. For more information, see [Using Static Encryption to Protect your Content]() and set the **licenseAcquisitionUrl** property in the Media Encryptor preset. Alternatively, you can use dynamic encryption and set the **PlayReadyLicenseAcquisitionUrl** property as described in [Using PlayReady Dynamic Encryption and License Delivery Service](http://go.microsoft.com/fwlink/?LinkId=507720 ).
+		By default the Media Services PlayReady license service is used. To specify some other service from which clients can obtain a license to play the PlayReady encrypted content, use REST or Media Services .NET SDK APIs. For more information, see [Using Static Encryption to Protect your Content]() and set the **licenseAcquisitionUrl** property in the Media Encryptor preset. Alternatively, you can use dynamic encryption and set the **PlayReadyLicenseAcquisitionUrl** property as described in [Using PlayReady Dynamic Encryption and License Delivery Service](https://msdn.microsoft.com/zh-cn/library/azure/dn783467.aspx ).
 	+ **Playback on PC/Mac (via Flash/Silverlight)**. This preset produces a Smooth Streaming asset with the following characteristics: 44.1 kHz 16 bits/sample stereo audio CBR encoded at 96 kbps using AAC, and 720p video CBR encoded at 6 bitrates ranging from 3400 kbps to 400 kbps using H.264 Main Profile, and two second GOPs.
 	+ **Playback via HTML5 (IE/Chrome/Safari)**. This preset produces a single MP4 file with the following characteristics: 44.1 kHz 16 bits/sample stereo audio CBR encoded at 128 kbps using AAC, and 720p video CBR encoded at 4500 kbps using H.264 Main Profile.
 	+ **Playback on iOS devices and PC/Mac**. This preset produces an asset with the same characteristics as the Smooth Streaming asset (described earlier), but in a format that can be used to deliver Apple HLS streams to iOS devices.
@@ -192,7 +192,7 @@ Locators have an expiration date. When using the portal to publish your assets, 
 
 >[AZURE.NOTE] If you used the portal to create locators before March 2015, locators with a two year expiration date were created.  
 
-To update an expiration date on a locator, use [REST](http://msdn.microsoft.com/zh-cn/library/azure/hh974308.aspx#update_a_locator ) or [.NET](http://go.microsoft.com/fwlink/?LinkID=533259) APIs. Note that when you update the expiration date of a SAS locator, the URL changes.
+To update an expiration date on a locator, use [REST](http://msdn.microsoft.com/zh-cn/library/azure/hh974308.aspx#update_a_locator ) or [.NET](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.mediaservices.client.ilocator.update(v=azure.10).aspx) APIs. Note that when you update the expiration date of a SAS locator, the URL changes.
 
 ### Publish
 

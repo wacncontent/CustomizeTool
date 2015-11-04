@@ -75,4 +75,4 @@ Sample public IP address in JSON format:
 
 ### Additional resources
 
-- Read the [REST API reference documentation](https://msdn.microsoft.com/zh-cn/library/azure/mt163579.aspx) for NICs.
+- Read the [REST API reference documentation](https://msdn.microsoft.com/library/azure/mt163579.aspx) for NICs.

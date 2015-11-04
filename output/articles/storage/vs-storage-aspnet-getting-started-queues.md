@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Get started with queue storage and Visual Studio connected services (ASP.NET) | Microsoft Azure"
+	pageTitle="Get started with queue storage and Visual Studio connected services (ASP.NET) | Windows Azure"
 	description="How to get started using Azure Queue storage in an ASP.NET project in Visual Studio after connecting to a storage account using Visual Studio connected services"
 	services="storage"
 	documentationCenter=""
@@ -9,29 +9,25 @@
 
 <tags
 	ms.service="storage"
-	ms.workload="web"
-	ms.tgt_pltfrm="vs-getting-started"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="09/03/2015"
-	ms.author="patshea"/>
+	wacn.date=""/>
 
 # Get started with Azure Queue storage and Visual Studio connected services
 
 > [AZURE.SELECTOR]
-> - [Getting Started](vs-storage-aspnet-getting-started-queues.md)
-> - [What Happened](vs-storage-aspnet-what-happened.md)
+> - [Getting Started](/documentation/articles/vs-storage-aspnet-getting-started-queues)
+> - [What Happened](/documentation/articles/vs-storage-aspnet-what-happened)
 
 > [AZURE.SELECTOR]
-> - [Blobs](vs-storage-aspnet-getting-started-blobs.md)
-> - [Queues](vs-storage-aspnet-getting-started-queues.md)
-> - [Tables](vs-storage-aspnet-getting-started-tables.md)
+> - [Blobs](/documentation/articles/vs-storage-aspnet-getting-started-blobs)
+> - [Queues](/documentation/articles/vs-storage-aspnet-getting-started-queues)
+> - [Tables](/documentation/articles/vs-storage-aspnet-getting-started-tables)
 
 ## Overview
 
 This article describes how get started using Azure Queue storage in Visual Studio after you have created or referenced an Azure storage account in an ASP.NET project by using the  Visual Studio **Add Connected Services** dialog.
 
-We'll show you how to create and access an Azure Queue in your storage account. We'll also show you how to perform basic queue operations, such as adding, modifying, reading and removing queue messages. The samples are written in C# code and use the [Azure Storage Client Library for .NET](https://msdn.microsoft.com/library/azure/dn261237.aspx). For more information about ASP.NET, see [ASP.NET](http://www.asp.net).
+We'll show you how to create and access an Azure Queue in your storage account. We'll also show you how to perform basic queue operations, such as adding, modifying, reading and removing queue messages. The samples are written in C# code and use the [Azure Storage Client Library for .NET](https://msdn.microsoft.com/zh-cn/library/azure/dn261237.aspx). For more information about ASP.NET, see [ASP.NET](http://www.asp.net).
 
 Azure Queue storage is a service for storing large numbers of messages that can be accessed from anywhere in the world via authenticated calls using HTTP or HTTPS. A single queue message can be up to 64 KB in size, and a queue can contain millions of messages, up to the total capacity limit of a storage account.
 
@@ -160,7 +156,7 @@ property returns the last value retrieved by the
 
 ## Use Async-Await pattern with common queueAPIs
 
-This example shows how to use the Async-Await pattern with common queueAPIs. The sample calls the async version of each of the given methods, this can be seen by the Async post-fix of each method. When an async method is used the async-await pattern suspends local execution until the call completes. This behavior allows the current thread to do other work which helps avoid performance bottlenecks and improves the overall responsiveness of your application. For more details on using the Async-Await pattern in .NET see [Async and Await (C# and Visual Basic)] (https://msdn.microsoft.com/library/hh191443.aspx)
+This example shows how to use the Async-Await pattern with common queueAPIs. The sample calls the async version of each of the given methods, this can be seen by the Async post-fix of each method. When an async method is used the async-await pattern suspends local execution until the call completes. This behavior allows the current thread to do other work which helps avoid performance bottlenecks and improves the overall responsiveness of your application. For more details on using the Async-Await pattern in .NET see [Async and Await (C# and Visual Basic)] (https://msdn.microsoft.com/zh-cn/library/hh191443.aspx)
 
     // Get a reference to the CloudQueue object named 'messageQueue' as described in "Access a queue in code"
 
@@ -193,4 +189,4 @@ To delete a queue and all the messages contained in it, call the
 
 ## Next steps
 
-[AZURE.INCLUDE [vs-storage-dotnet-queues-next-steps](../../includes/vs-storage-dotnet-queues-next-steps.md)]
+[AZURE.INCLUDE [vs-storage-dotnet-queues-next-steps](../includes/vs-storage-dotnet-queues-next-steps.md)]

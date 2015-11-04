@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Sample configuration for Windows VM extensions | Microsoft Azure"
+   pageTitle="Sample configuration for Windows VM extensions | Windows Azure"
    description="Sample configuration for authoring templates with extensions"
    services="virtual-machines"
    documentationCenter=""
@@ -9,22 +9,18 @@
    tags="azure-resource-manager"/>
 
 <tags
-   ms.service="virtual-machines"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="vm-windows"
-   ms.workload="infrastructure-services"
-   ms.date="09/01/2015"
-   ms.author="kundanap"/>
+	ms.service="virtual-machines"
+	ms.date="09/01/2015"
+	wacn.date=""/>
 
 # Azure Windows VM Extension Configuration Samples.
 
 This article provides sample configuration for configuring Azure VM Extensions for Windows VMs.
 
 
-To learn more about these extensions click here : [Azure VM Extensions Overview.](https://msdn.microsoft.com/library/azure/dn606311.aspx)
+To learn more about these extensions click here : [Azure VM Extensions Overview.](https://msdn.microsoft.com/zh-cn/library/azure/dn606311.aspx)
 
-To learn more about authoring extension templates click here : [Authoring Extension Templates.](virtual-machines-extensions-authoring-templates.md)
+To learn more about authoring extension templates click here : [Authoring Extension Templates.](/documentation/articles/virtual-machines-extensions-authoring-templates)
 
 This article lists expected configuration values for some of the Windows Extensions.
 
@@ -61,7 +57,7 @@ Before deploying the extension please check the latest extension version and rep
         "typeHandlerVersion": "1.4",
         "settings": {
             "fileUris": [
-                "http: //Yourstorageaccount.blob.core.windows.net/customscriptfiles/start.ps1"
+                "http: //Yourstorageaccount.blob.core.chinacloudapi.cn/customscriptfiles/start.ps1"
             ],
             "commandToExecute": "powershell.exe-ExecutionPolicyUnrestricted-Filestart.ps1"
         }
@@ -244,7 +240,7 @@ Before deploying the extension please check the latest extension version and rep
             }
           }
 
-### Barracuda VPN Connectivity Agent for Microsoft Azure
+### Barracuda VPN Connectivity Agent for Windows Azure
           {
             "publisher": "Barracuda.Azure.ConnectivityAgent",
             "type": "BarracudaConnectivityAgent",
@@ -281,7 +277,7 @@ Before deploying the extension please check the latest extension version and rep
 
 ### Azure Diagnostics
 
-Click here for an overview of [Azure Diagnostics Extension](https://msdn.microsoft.com/library/azure/dn782207.aspx/)
+Click here for an overview of [Azure Diagnostics Extension](https://msdn.microsoft.com/zh-cn/library/azure/dn782207.aspx/)
 
           {
             "publisher": "Microsoft.Azure.Diagnostics",
@@ -294,7 +290,7 @@ Click here for an overview of [Azure Diagnostics Extension](https://msdn.microso
             "protectedSettings": {
             "storageAccountName": "[parameters('diagnosticsStorageAccount')]",
             "storageAccountKey": "[listkeys(variables('accountid'), '2015-05-01-preview').key1]",
-            "storageAccountEndPoint": "https://core.windows.net"
+            "storageAccountEndPoint": "https://core.chinacloudapi.cn"
           }
           }
 

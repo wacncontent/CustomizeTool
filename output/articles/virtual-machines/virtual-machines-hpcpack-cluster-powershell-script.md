@@ -1,5 +1,5 @@
 <properties
-   pageTitle="PowerShell script to deploy HPC Pack cluster | Microsoft Azure"
+   pageTitle="PowerShell script to deploy HPC Pack cluster | Windows Azure"
    description="Run a Windows PowerShell script to deploy a complete HPC Pack cluster in Azure infrastructure services"
    services="virtual-machines"
    documentationCenter=""
@@ -8,17 +8,13 @@
    editor=""
    tags="azure-service-management"/>
 <tags
-   ms.service="virtual-machines"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="vm-multiple"
-   ms.workload="big-compute"
-   ms.date="09/29/2015"
-   ms.author="danlep"/>
+	ms.service="virtual-machines"
+	ms.date="09/29/2015"
+	wacn.date=""/>
 
 # Create a high performance computing (HPC) cluster in Azure VMs with the HPC Pack IaaS deployment script
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
 
 
 
@@ -30,16 +26,16 @@ distributions or Windows Server operating systems.
 Depending on your environment and choices, the script can create all the cluster infrastructure, including the Azure virtual network, storage accounts, cloud services, domain controller, remote or local SQL databases, head node, broker nodes, compute nodes, and Azure cloud service (“burst”, or PaaS) nodes. Alternatively, the script can use pre-existing Azure infrastructure and then create the HPC cluster head node, broker nodes, compute nodes, and Azure burst nodes.
 
 
-For background information about planning an HPC Pack cluster, see the [Product Evaluation and Planning](https://technet.microsoft.com/library/jj899596.aspx) and [Getting Started](https://technet.microsoft.com/library/jj899590.aspx) content in the HPC Pack TechNet Library.
+For background information about planning an HPC Pack cluster, see the [Product Evaluation and Planning](https://technet.microsoft.com/zh-cn/library/jj899596.aspx) and [Getting Started](https://technet.microsoft.com/zh-cn/library/jj899590.aspx) content in the HPC Pack TechNet Library.
 
 >[AZURE.NOTE]You can also use an Azure Resource Manager template to deploy an HPC Pack cluster. For an example, see [Create an HPC cluster](https://azure.microsoft.com/documentation/templates/create-hpc-cluster/), [Create an HPC cluster with a custom compute node image](https://azure.microsoft.com/documentation/templates/create-hpc-cluster-custom-image/), or [Create an HPC cluster with Linux compute nodes](https://azure.microsoft.com/documentation/templates/create-hpc-cluster-linux-cn/).
 
 ## Prerequisites
 
-* **Azure subscription** - You can use a subscription in either the Azure Global or Azure China service. Your subscription limits will affect the number and type of cluster nodes you can deploy. For information, see [Azure subscription and service limits, quotas, and constraints](../azure-subscription-service-limits.md).
+* **Azure subscription** - You can use a subscription in either the Azure Global or Azure China service. Your subscription limits will affect the number and type of cluster nodes you can deploy. For information, see [Azure subscription and service limits, quotas, and constraints](/documentation/articles/azure-subscription-service-limits).
 
 
-* **Windows client computer with Azure PowerShell 0.8.7 or later installed and configured** - See [How to install and configure Azure PowerShell](../powershell-install-configure.md). The script runs in Azure Service Management.
+* **Windows client computer with Azure PowerShell 0.8.7 or later installed and configured** - See [How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure). The script runs in Azure Service Management.
 
 
 * **HPC Pack IaaS deployment script** - Download and unpack the latest version of the script from the [Microsoft Download Center](https://www.microsoft.com/download/details.aspx?id=44949). You can check the version of the script by running `New-HPCIaaSCluster.ps1 –Version`. This article is based on version 4.4.0 of the script.
@@ -417,7 +413,7 @@ will run on the head node after the head node is configured.
 
 * **“VNet doesn’t exist” error** - If you run the HPC Pack IaaS deployment script to deploy multiple
 clusters in Azure concurrently under one subscription, one or more
-deployments may fail with the error “VNet *VNet\_Name* doesn't exist”.
+deployments may fail with the error “VNet *VNet_Name* doesn't exist”.
 If this error occurs, re-run the script for the failed deployment.
 
 * **Problem accessing the Internet from the Azure virtual network** - If you create an HPC Pack cluster with a new domain controller by using
@@ -447,8 +443,8 @@ extension might be stuck in the installing state.
 
 ## Next steps
 
-* Try running a test workload on the cluster. For an example, see the HPC Pack [getting started guide](https://technet.microsoft.com/library/jj884144).
+* Try running a test workload on the cluster. For an example, see the HPC Pack [getting started guide](https://technet.microsoft.com/zh-cn/library/jj884144).
 
-* For a tutorial that uses the script to create a cluster and run an HPC workload, see [Get started with an HPC Pack cluster in Azure to run Excel and SOA workloads](virtual-machines-excel-cluster-hpcpac) or [Run NAMD with Microsoft HPC Pack on Linux compute nodes in Azure](virtual-machines-linux-cluster-hpcpack-namd.md).
+* For a tutorial that uses the script to create a cluster and run an HPC workload, see [Get started with an HPC Pack cluster in Azure to run Excel and SOA workloads](/documentation/articles/virtual-machines-excel-cluster-hpcpac) or [Run NAMD with Microsoft HPC Pack on Linux compute nodes in Azure](/documentation/articles/virtual-machines-linux-cluster-hpcpack-namd).
 
-* Try HPC Pack's tools to start, stop, add, and remove compute nodes from a cluster you create. See [Manage compute nodes in an HPC Pack cluster in Azure](virtual-machines-hpcpack-cluster-node-manage.md)
+* Try HPC Pack's tools to start, stop, add, and remove compute nodes from a cluster you create. See [Manage compute nodes in an HPC Pack cluster in Azure](/documentation/articles/virtual-machines-hpcpack-cluster-node-manage)

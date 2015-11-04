@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Service-side authorization of users in a JavaScript backend mobile service | Microsoft Azure"
+	pageTitle="Service-side authorization of users in a JavaScript backend mobile service | Windows Azure"
 	description="Learn how to authorize users in JavaScript backend of Azure Mobile Services"
 	services="mobile-services"
 	documentationCenter=""
@@ -9,12 +9,8 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.workload="mobile"
-	ms.tgt_pltfrm="mobile-multiple"
-	ms.topic="article"
-	ms.devlang="javascript"
 	ms.date="08/25/2015"
-	ms.author="krisragh"/>
+	wacn.date=""/>
 
 # Service-side authorization of users in Mobile Services
 
@@ -39,7 +35,7 @@ This tutorial is based on the Mobile Services Quick Start and builds on the [Add
 
 	This script adds the user ID of the authenticated user to the item before insertion.
 
-    >[AZURE.NOTE] Make sure that [dynamic schema](https://msdn.microsoft.com/library/azure/jj193175.aspx) is enabled. Otherwise, the *userId* column is not added automatically. This setting is enabled by default for a new mobile service.
+    >[AZURE.NOTE] Make sure that [dynamic schema](https://msdn.microsoft.com/zh-cn/library/azure/jj193175.aspx) is enabled. Otherwise, the *userId* column is not added automatically. This setting is enabled by default for a new mobile service.
 
 3. Similarly, replace the existing **Read** operation with the following function. This script filters returned TodoItem objects so that a user receives only the items that they insert themselves.
 
@@ -67,5 +63,5 @@ This tutorial is based on the Mobile Services Quick Start and builds on the [Add
 [My Apps dashboard]: http://go.microsoft.com/fwlink/p/?LinkId=262039
 [Add Authentication to Existing Mobile Services App]: /develop/mobile/tutorials/get-started-with-users-ios
 
-[Azure Management Portal]: https://manage.windowsazure.com/
+[Azure Management Portal]: https://manage.windowsazure.cn/
  

@@ -1,7 +1,7 @@
 
 <properties 
-  pageTitle="Azure Storage replication | Microsoft Azure" 
-  description="Data in your Microsoft Azure storage account is replicated for durability and high availability. Replication options include locally redundant storage (LRS), zone-redundant storage (ZRS), geo-redundant storage (GRS), and read-access geo-redundant storage (RA-GRS)." 
+  pageTitle="Azure Storage replication | Windows Azure" 
+  description="Data in your Windows Azure storage account is replicated for durability and high availability. Replication options include locally redundant storage (LRS), zone-redundant storage (ZRS), geo-redundant storage (GRS), and read-access geo-redundant storage (RA-GRS)." 
   services="storage" 
   documentationCenter="" 
   authors="tamram" 
@@ -19,7 +19,7 @@
 
 # Azure Storage replication
 
-The data in your Microsoft Azure storage account is always replicated to ensure durability and high availability, meeting the [Azure Storage SLA](http://azure.microsoft.com/support/legal/sla/) even in the face of transient hardware failures.
+The data in your Windows Azure storage account is always replicated to ensure durability and high availability, meeting the [Azure Storage SLA](http://azure.microsoft.com/support/legal/sla/) even in the face of transient hardware failures.
 
 When you create a storage account, you must select one of the following replication options:  
 
@@ -72,21 +72,21 @@ When you create a storage account, you select the primary region for the account
 
 |Primary            |Secondary
 | ---------------   |----------------
-|North Central US   |South Central US
-|South Central US   |North Central US
-|East US            |West US
-|West US            |East US
-|US East 2          |Central US
-|Central US         |US East 2
-|North Europe       |West Europe
-|West Europe        |North Europe
+|China North   |China East
+|China East   |China North
+|China East            |China North
+|China North            |China East
+|China East 2          |China North
+|China North         |China East 2
+|China North       |West Europe
+|West Europe        |China North
 |South East Asia    |East Asia
 |East Asia          |South East Asia
 |East China         |North China
 |North China        |East China
 |Japan East         |Japan West
 |Japan West         |Japan East
-|Brazil South       |South Central US
+|Brazil South       |China East
 |Australia East     |Australia Southeast
 |Australia Southeast|Australia East  
 
@@ -95,11 +95,11 @@ When you create a storage account, you select the primary region for the account
 
 Read-access geo-redundant storage (RA-GRS) maximizes availability for your storage account, by providing read-only access to the data in the secondary location, in addition to the replication across two regions provided by GRS. In the event that data becomes unavailable in the primary region, your application can read data from the secondary region.
 
-When you enable read-only access to your data in the secondary region, your data is available on a secondary endpoint, in addition to the primary endpoint for your storage account. The secondary endpoint is similar to the primary endpoint, but appends the suffix `–secondary` to the account name. For example, if your primary endpoint for the Blob service is `myaccount.blob.core.windows.net`, then your secondary endpoint is `myaccount-secondary.blob.core.windows.net`. The access keys for your storage account are the same for both the primary and secondary endpoints.
+When you enable read-only access to your data in the secondary region, your data is available on a secondary endpoint, in addition to the primary endpoint for your storage account. The secondary endpoint is similar to the primary endpoint, but appends the suffix `–secondary` to the account name. For example, if your primary endpoint for the Blob service is `myaccount.blob.core.chinacloudapi.cn`, then your secondary endpoint is `myaccount-secondary.blob.core.chinacloudapi.cn`. The access keys for your storage account are the same for both the primary and secondary endpoints.
 
 ## Next steps
 
-- [Azure Storage scalability and performance targets](storage-scalability-targets.md)
-- [Microsoft Azure Storage redundancy options and read access geo redundant storage ](http://blogs.msdn.com/b/windowsazurestorage/archive/2013/12/11/introducing-read-access-geo-replicated-storage-ra-grs-for-windows-azure-storage.aspx)  
-- [Microsoft Azure Storage Emulator 3.1 with RA-GRS ](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/08/microsoft-azure-storage-emulator-3-1-with-ra-grs.aspx)
+- [Azure Storage scalability and performance targets](/documentation/articles/storage-scalability-targets)
+- [Windows Azure Storage redundancy options and read access geo redundant storage ](http://blogs.msdn.com/b/windowsazurestorage/archive/2013/12/11/introducing-read-access-geo-replicated-storage-ra-grs-for-windows-azure-storage.aspx)  
+- [Windows Azure Storage Emulator 3.1 with RA-GRS ](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/08/microsoft-azure-storage-emulator-3-1-with-ra-grs.aspx)
 - [Azure Storage SOSP Paper](http://blogs.msdn.com/b/windowsazurestorage/archive/2011/11/20/windows-azure-storage-a-highly-available-cloud-storage-service-with-strong-consistency.aspx)  

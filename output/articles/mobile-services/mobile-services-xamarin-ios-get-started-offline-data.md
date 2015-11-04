@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Using offline data in Mobile Services (Xamarin iOS) | Microsoft Azure" 
+	pageTitle="Using offline data in Mobile Services (Xamarin iOS) | Windows Azure" 
 	description="Learn how to use Azure Mobile Services to cache and sync offline data in your Xamarin iOS application" 
 	documentationCenter="xamarin" 
 	authors="lindydonna" 
@@ -7,18 +7,14 @@
 	manager="dwrede" 
 	services="mobile-services"/>
 
-<tags 
-	ms.service="mobile-services" 
-	ms.workload="mobile" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="dotnet" 
-	ms.topic="article" 
+<tags
+	ms.service="mobile-services"
 	ms.date="07/01/2015"
-	ms.author="donnam"/>
+	wacn.date=""/>
 
 # Using offline data sync in Mobile Services
 
-[AZURE.INCLUDE [mobile-services-selector-offline](../../includes/mobile-services-selector-offline.md)]
+[AZURE.INCLUDE [mobile-services-selector-offline](../includes/mobile-services-selector-offline.md)]
 
 This topic walks through the offline sync capabilities of Azure Mobile Services in the todo list quickstart app. Offline sync allows you to easily create apps that are usable even when the end user has no network access.
 
@@ -29,7 +25,7 @@ Offline sync has several potential uses:
 * Allow end-users to create and modify data even when there is no network access, supporting scenarios with little or no connectivity
 * Sync data across multiple devices and detect conflicts when the same record is modified by two devices
 
->[AZURE.NOTE] To complete this tutorial, you need a Azure account. If you don't have an account, you can sign up for an Azure trial and get up to 10 free mobile services that you can keep using even after your trial ends. For details, see <a href="http://www.windowsazure.com/pricing/free-trial/?WT.mc_id=AE564AB28" target="_blank">Azure Free Trial</a>. 
+>[AZURE.NOTE] To complete this tutorial, you need a Azure account. If you don't have an account, you can sign up for an Azure trial and get up to 10 free mobile services that you can keep using even after your trial ends. For details, see <a href="/pricing/1rmb-trial/?WT.mc_id=AE564AB28" target="_blank">Azure Trial</a>. 
 >
 > If this is your first experience with Mobile Services, you should first complete [Get started with Mobile Services].
 
@@ -146,7 +142,7 @@ In this section you will reconnect the app to the mobile service. This simulates
 
 2. Rebuild and run the app. Notice that the data looks the same as the offline scenario even though the app is now connected to the mobile service. This is because this app always uses the `IMobileServiceSyncTable` that is pointed to the local store.
 
-3. Log into the Microsoft Azure Management portal and look at the database for your mobile service. If your service uses the JavaScript backend, you can browse the data from the **Data** tab of the mobile service. 
+3. Log into the Windows Azure Management portal and look at the database for your mobile service. If your service uses the JavaScript backend, you can browse the data from the **Data** tab of the mobile service. 
 
     If you are using the .NET backend for your mobile service, in Visual Studio go to **Server Explorer** -> **Azure** -> **SQL Databases**. Right click your database and select **Open in SQL Server Object Explorer**.
 
@@ -158,7 +154,7 @@ In this section you will reconnect the app to the mobile service. This simulates
 
 ##Summary
 
-[AZURE.INCLUDE [mobile-services-offline-summary-csharp](../../includes/mobile-services-offline-summary-csharp.md)]
+[AZURE.INCLUDE [mobile-services-offline-summary-csharp](../includes/mobile-services-offline-summary-csharp.md)]
 
 ## Next steps
 
@@ -174,11 +170,10 @@ In this section you will reconnect the app to the mobile service. This simulates
 <!-- Images -->
 
 <!-- URLs. -->
-[Handling conflicts with offline support for Mobile Services]: ../mobile-services-xamarin-ios-handling-conflicts-offline-data.md 
-[Get started with Mobile Services]: mobile-services-ios-get-started.md
-[How to use the Xamarin Component client for Azure Mobile Services]: partner-xamarin-mobile-services-how-to-use-client-library.md
-[Soft Delete]: mobile-services-using-soft-delete.md
-
+[Handling conflicts with offline support for Mobile Services]: /documentation/articles/mobile-services-xamarin-ios-handling-conflicts-offline-data
+[Get started with Mobile Services]: /documentation/articles/mobile-services-ios-get-started
+[How to use the Xamarin Component client for Azure Mobile Services]: /documentation/articles/partner-xamarin-mobile-services-how-to-use-client-library
+[Soft Delete]: /documentation/articles/mobile-services-using-soft-delete
 [Xamarin Studio]: http://xamarin.com/download
 [Xamarin extension]: http://xamarin.com/visual-studio
  

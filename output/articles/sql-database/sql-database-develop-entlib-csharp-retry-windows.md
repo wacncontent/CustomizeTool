@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="EntLib retry to connect to SQL Database | Microsoft Azure"
+	pageTitle="EntLib retry to connect to SQL Database | Windows Azure"
 	description="Enterprise Library is designed to ease several tasks for client programs of cloud services, including the integration of retry logic for transient faults."
 	services="sql-database"
 	documentationCenter=""
@@ -8,14 +8,10 @@
 	editor="" />
 
 
-<tags 
-	ms.service="sql-database" 
-	ms.workload="data-management" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="dotnet" 
-	ms.topic="article" 
-	ms.date="10/16/2015" 
-	ms.author="genemi"/>
+<tags
+	ms.service="sql-database"
+	ms.date="10/16/2015"
+	wacn.date=""/>
 
 
 # Code sample: Retry logic from Enterprise Library 6, in C&#x23; for connecting to SQL Database
@@ -67,7 +63,7 @@ Ways you can install EntLib60:
  - In NuGet, search for **enterpriselibrary**.
 
 
-- In the [home documentation topic for EntLib60](http://msdn.microsoft.com/library/dn169621.aspx), find the row labeled **Downloads**, and then click [Microsoft Enterprise Library 6](http://go.microsoft.com/fwlink/?linkid=290898) to download the binary .DLL assembly files.
+- In the [home documentation topic for EntLib60](http://msdn.microsoft.com/zh-cn/library/dn169621.aspx), find the row labeled **Downloads**, and then click [Microsoft Enterprise Library 6](http://go.microsoft.com/fwlink/?linkid=290898) to download the binary .DLL assembly files.
 
 
 EntLib60 has several .DLL assembly files whose names start with the same prefix **Microsoft.Practices.EnterpriseLibrary.&#x2a;.dll**, but this code sample is only interested in the following two assemblies:
@@ -255,7 +251,7 @@ SELECT TOP 3
          this.sqlConnectionSB = new C.SqlConnectionStringBuilder();
 
          // Change these values to your values.
-         this.sqlConnectionSB["Server"] = "tcp:myazuresqldbserver.database.windows.net,1433";
+         this.sqlConnectionSB["Server"] = "tcp:myazuresqldbserver.database.chinacloudapi.cn,1433";
          this.sqlConnectionSB["User ID"] = "MyLogin";  // "@yourservername"  as suffix sometimes.
          this.sqlConnectionSB["Password"] = "MyPassword";
          this.sqlConnectionSB["Database"] = "MyDatabase";
@@ -303,7 +299,7 @@ SELECT TOP 3
 
 
 - Numerous links to further information is provided in: 
-[Enterprise Library 6 – April 2013](http://msdn.microsoft.com/library/dn169621.aspx)
+[Enterprise Library 6 – April 2013](http://msdn.microsoft.com/zh-cn/library/dn169621.aspx)
  - This topic has a button at its top that offers to [download the EntLib60 source code](http://go.microsoft.com/fwlink/p/?LinkID=290898), if you are curious to see the source code.
 
 
@@ -311,14 +307,14 @@ SELECT TOP 3
 [Developer's Guide to Microsoft Enterprise Library, 2nd Edition](http://www.microsoft.com/download/details.aspx?id=41145).
 
 
-- [Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling Namespace](http://msdn.microsoft.com/library/microsoft.practices.enterpriselibrary.transientfaulthandling.aspx)
+- [Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling Namespace](http://msdn.microsoft.com/zh-cn/library/microsoft.practices.enterpriselibrary.transientfaulthandling.aspx)
 
 
-- [Enterprise Library 6 Class Library reference](http://msdn.microsoft.com/library/dn170426.aspx)
+- [Enterprise Library 6 Class Library reference](http://msdn.microsoft.com/zh-cn/library/dn170426.aspx)
 
 
-- [Code sample: Retry logic in C# for connecting to SQL Database with ADO.NET](sql-database-develop-csharp-retry-windows.md)
+- [Code sample: Retry logic in C# for connecting to SQL Database with ADO.NET](/documentation/articles/sql-database-develop-csharp-retry-windows)
 
 
-- [Client quick-start code samples to SQL Database](sql-database-develop-quick-start-client-code-samples.md)
+- [Client quick-start code samples to SQL Database](/documentation/articles/sql-database-develop-quick-start-client-code-samples)
 

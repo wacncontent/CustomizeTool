@@ -84,7 +84,7 @@ namespace. You can obtain these credentials from the Azure management portal.
 
 4.  Make a note of the primary key, or copy it to the clipboard.
 
-  [Azure Management Portal]: http://manage.windowsazure.cn
-  [Azure Management Portal]: http://manage.windowsazure.cn
+  [Azure Management Portal]: http://manage.windowsazure.com
+  [Azure Management Portal]: http://manage.windowsazure.com
 
   [34]: ./media/service-bus-java-how-to-create-queue/VSProperties.png

@@ -9,47 +9,43 @@
    editor="tysonn"/>
 
 <tags
-   ms.service="virtual-machines"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="vm-linux"
-   ms.workload="infrastructure"
-   ms.date="09/22/2015"
-   ms.author="rasquill"/>
+	ms.service="virtual-machines"
+	ms.date="09/22/2015"
+	wacn.date=""/>
 
 # How to use docker with swarm
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
 
 
 This topic shows a very simple way to use [docker](https://www.docker.com/) with [swarm](https://github.com/docker/swarm) to create a swarm-managed cluster on Azure. It creates four virtual machines in Azure, one to act as the swarm manager, and three as part of the cluster of docker hosts. When you are finished, you can use swarm to see the cluster and then begin to use docker on it. In addition, the Azure CLI calls in this topic use the service management (asm) mode. 
 
 > [AZURE.NOTE] This is an early version of software, so check back for updates about using this on Azure to create large, balanced, and controlled clusters of Docker containers, as well as checking the docker swarm documentation to discover all its features.
 <!-- -->
-> In addition, this topic uses docker with swarm and the Azure CLI *without* using **docker-machine** in order to show how the different tools work together but remain independent. **docker-machine** has **--swarm** switches that enable you to use **docker-machine** to directly add nodes to a swarm. For an example, see the [docker-machine](https://github.com/docker/machine) documentation. If you missed **docker-machine** running against Azure VMs, see [How to use docker-machine with Azure](virtual-machines-docker-machine.md).
+> In addition, this topic uses docker with swarm and the Azure CLI *without* using **docker-machine** in order to show how the different tools work together but remain independent. **docker-machine** has **--swarm** switches that enable you to use **docker-machine** to directly add nodes to a swarm. For an example, see the [docker-machine](https://github.com/docker/machine) documentation. If you missed **docker-machine** running against Azure VMs, see [How to use docker-machine with Azure](/documentation/articles/virtual-machines-docker-machine).
 
 ## Create docker hosts with Azure Virtual Machines
 
 This topic creates four VMs, but you can use any number you want. Call the following with *&lt;password&gt;* replaced by the password you have chosen.
 
-    azure vm docker create swarm-master -l "East US" -e 22 $imagename ops <password>
-    azure vm docker create swarm-node-1 -l "East US" -e 22 $imagename ops <password>
-    azure vm docker create swarm-node-2 -l "East US" -e 22 $imagename ops <password>
-    azure vm docker create swarm-node-3 -l "East US" -e 22 $imagename ops <password>
+    azure vm docker create swarm-master -l "China East" -e 22 $imagename ops <password>
+    azure vm docker create swarm-node-1 -l "China East" -e 22 $imagename ops <password>
+    azure vm docker create swarm-node-2 -l "China East" -e 22 $imagename ops <password>
+    azure vm docker create swarm-node-3 -l "China East" -e 22 $imagename ops <password>
 
 When you're done you should be able to use **azure vm list** to see your Azure VMs:
 
     $ azure vm list | grep "swarm-[mn]"
-    data:    swarm-master     ReadyRole           East US       swarm-master.cloudapp.net                               100.78.186.65
-    data:    swarm-node-1     ReadyRole           East US       swarm-node-1.cloudapp.net                               100.66.72.126
-    data:    swarm-node-2     ReadyRole           East US       swarm-node-2.cloudapp.net                               100.72.18.47  
-    data:    swarm-node-3     ReadyRole           East US       swarm-node-3.cloudapp.net                               100.78.24.68  
+    data:    swarm-master     ReadyRole           China East       swarm-master.chinacloudapp.cn                               100.78.186.65
+    data:    swarm-node-1     ReadyRole           China East       swarm-node-1.chinacloudapp.cn                               100.66.72.126
+    data:    swarm-node-2     ReadyRole           China East       swarm-node-2.chinacloudapp.cn                               100.72.18.47  
+    data:    swarm-node-3     ReadyRole           China East       swarm-node-3.chinacloudapp.cn                               100.78.24.68  
 
 ## Installing swarm on the swarm master VM
 
 This topic uses the [container model of installation from the docker swarm documentation](https://github.com/docker/swarm#1---docker-image) -- but you could also SSH to the **swarm-master**. In this model, **swarm** is downloaded as a docker container running swarm. Below, we perform this step *remotely from our laptop by using docker* to connect to the **swarm-master** VM and tell it to use the cluster id creation command, **swarm create**. The cluster id is how **swarm** discovers the members of the swarm group. (You can also clone the repository and build it yourself, which will give you full control and enable debugging.)
 
-    $ docker --tls -H tcp://swarm-master.cloudapp.net:2376 run --rm swarm create
+    $ docker --tls -H tcp://swarm-master.chinacloudapp.cn:2376 run --rm swarm create
     Unable to find image 'swarm:latest' locally
     511136ea3c5a: Pull complete
     a8bbe4db330c: Pull complete
@@ -70,10 +66,10 @@ That last line is the cluster id; copy it somewhere because you will use it agai
 > To confirm this, run `docker -H tcp://`*&lt;hostname&gt;* ` images` to list the container processes on the **swarm-master** machine and on another node for comparison (because we ran the previous swarm command with the **--rm** switch, the container was removed after it finished, so using **docker ps -a** won't return anything).:
 
 
-        $ docker --tls -H tcp://swarm-master.cloudapp.net:2376 images
+        $ docker --tls -H tcp://swarm-master.chinacloudapp.cn:2376 images
         REPOSITORY          TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
         swarm               latest              92d78d321ff2        11 days ago         7.19 MB
-        $ docker --tls -H tcp://swarm-node-1.cloudapp.net:2376 images
+        $ docker --tls -H tcp://swarm-node-1.chinacloudapp.cn:2376 images
         REPOSITORY          TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
         $
 <P />
@@ -95,7 +91,7 @@ For each node, list the endpoint information using the Azure CLI. Below we do th
 
 Using **docker** and the `-H` option to point the docker client at your node VM, join that node to the swarm you are creating by passing the cluster id and the node's docker port (the latter using **--addr**):
 
-    $ docker --tls -H tcp://swarm-node-1.cloudapp.net:2376 run -d swarm join --addr=138.91.112.194:2376 token://36731c17189fd8f450c395db8437befd
+    $ docker --tls -H tcp://swarm-node-1.chinacloudapp.cn:2376 run -d swarm join --addr=138.91.112.194:2376 token://36731c17189fd8f450c395db8437befd
     Unable to find image 'swarm:latest' locally
     511136ea3c5a: Pull complete
     a8bbe4db330c: Pull complete
@@ -111,7 +107,7 @@ Using **docker** and the `-H` option to point the docker client at your node VM,
 
 That looks good. To confirm that **swarm** is running on **swarm-node-1** we type:
 
-    $ docker --tls -H tcp://swarm-node-1.cloudapp.net:2376 ps -a
+    $ docker --tls -H tcp://swarm-node-1.chinacloudapp.cn:2376 ps -a
         CONTAINER ID        IMAGE               COMMAND                CREATED             STATUS              PORTS               NAMES
         bbf88f61300b        swarm:latest        "/swarm join --addr=   13 seconds ago      Up 12 seconds       2375/tcp            angry_mclean
 
@@ -119,12 +115,12 @@ Repeat for all the other nodes in the cluster. In our case, we do that for **swa
 
 ## Begin managing the swarm cluster
 
-    $ docker --tls -H tcp://swarm-master.cloudapp.net:2376 run -d -p 2375:2375 swarm manage token://36731c17189fd8f450c395db8437befd
+    $ docker --tls -H tcp://swarm-master.chinacloudapp.cn:2376 run -d -p 2375:2375 swarm manage token://36731c17189fd8f450c395db8437befd
     d7e87c2c147ade438cb4b663bda0ee20981d4818770958f5d317d6aebdcaedd5
 
 and then you can list out your nodes in your cluster:
 
-    ralph@local:~$ docker --tls -H tcp://swarm-master.cloudapp.net:2376 run --rm swarm list token://73f8bc512e94195210fad6e9cd58986f
+    ralph@local:~$ docker --tls -H tcp://swarm-master.chinacloudapp.cn:2376 run --rm swarm list token://73f8bc512e94195210fad6e9cd58986f
     54.149.104.203:2375
     54.187.164.89:2375
     92.222.76.190:2375
@@ -136,5 +132,4 @@ Go run things on your swarm. To look for inspiration, see [https://github.com/do
 
 <!-- links -->
 
-[docker-machine-azure]: virtual-machines-docker-machine.md
- 
+[docker-machine-azure]: /documentation/articles/virtual-machines-docker-machine

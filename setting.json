@@ -1,11 +1,11 @@
 {
-  "path": "C:/Users/Administrator/Documents/GitHub/azure-content-zhcn-pr/",
-  "language": "zh-cn",
+  "path": "C:/Users/Administrator/Documents/GitHub/azure-content-pr/",
+  "language": "en-us",
   "folders": [ "articles/app-service-web/", "articles/automation/", "articles/hdinsight/", "articles/media-services/", "articles/redis-cache/", "articles/traffic-manager/", "articles/virtual-network/" ],
-  "output_folder": "zh-cn-output/", 
+  "output_folder": "output/",
   "compare": {
-    "compare": false,
-    "path": ""
+    "compare": true,
+    "path": "C:/Users/Administrator/Documents/GitHub/azure-content-mooncake-pr/"
   },
   "updateFileList": true,
   "includes_search_keys": {

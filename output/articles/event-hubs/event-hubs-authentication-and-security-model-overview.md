@@ -1,19 +1,15 @@
 <properties 
-   pageTitle="Overview of Event Hubs authentication and security model | Microsoft Azure"
+   pageTitle="Overview of Event Hubs authentication and security model | Windows Azure"
    description="Event Hubs FAQ"
    services="event-hubs"
    documentationCenter="na"
    authors="sethmanheim"
    manager="timlt"
    editor="" />
-<tags 
-   ms.service="event-hubs"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="tbd"
-   ms.date="10/07/2015"
-   ms.author="sethm" />
+<tags
+	ms.service="event-hubs"
+	ms.date="10/07/2015"
+	wacn.date=""/>
 
 # Event Hubs authentication and security model overview
 
@@ -25,7 +21,7 @@ The Event Hubs security model meets the following requirements:
 
 ## Device authentication
 
-The Event Hubs security model is based on a combination of [Shared Access Signature (SAS)](service-bus-shared-access-signature-authentication.md) tokens and event publishers. An event publisher defines a virtual endpoint for an Event Hub. The publisher can only be used to send messages to an Event Hub. It is not possible to receive messages from a publisher.
+The Event Hubs security model is based on a combination of [Shared Access Signature (SAS)](/documentation/articles/service-bus-shared-access-signature-authentication) tokens and event publishers. An event publisher defines a virtual endpoint for an Event Hub. The publisher can only be used to send messages to an Event Hub. It is not possible to receive messages from a publisher.
 
 Typically, an Event Hub employs one publisher per device. All messages that are sent to any of the publishers of an Event Hub are enqueued within that Event Hub. Publishers allow fine-grained access control and throttling.
 
@@ -67,7 +63,7 @@ You can generate tokens using the SAS key. You must produce only one token per d
 public static string SharedAccessSignatureTokenProvider.GetSharedAccessSignature(string keyName, string sharedAccessKey, string resource, TimeSpan tokenTimeToLive)
 ```
 
-When calling this method, the URI should be specified as `//<NAMESPACE>.servicebus.windows.net/<EVENT_HUB_NAME>/publishers/<PUBLISHER_NAME>`. For all tokens, the URI is identical, with the exception of `PUBLISHER_NAME`, which should be different for each token. Ideally, `PUBLISHER_NAME` represents the ID of the device that receives that token.
+When calling this method, the URI should be specified as `//<NAMESPACE>.servicebus.chinacloudapi.cn/<EVENT_HUB_NAME>/publishers/<PUBLISHER_NAME>`. For all tokens, the URI is identical, with the exception of `PUBLISHER_NAME`, which should be different for each token. Ideally, `PUBLISHER_NAME` represents the ID of the device that receives that token.
 
 This method generates a token with the following structure:
 
@@ -149,7 +145,6 @@ To learn more about Event Hubs, visit the following topics:
 - A complete [sample application that uses Event Hubs].
 - A [queued messaging solution] using Service Bus queues.
 
-[Event Hubs overview]: event-hubs-overview.md
+[Event Hubs overview]: /documentation/articles/event-hubs-overview
 [sample application that uses Event Hubs]: https://code.msdn.microsoft.com/Service-Bus-Event-Hub-286fd097
-[queued messaging solution]: ../service-bus/service-bus-dotnet-multi-tier-app-using-service-bus-queues.md
- 
+[queued messaging solution]: /documentation/articles/service-bus-dotnet-multi-tier-app-using-service-bus-queues

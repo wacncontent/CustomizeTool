@@ -7,14 +7,10 @@
 	manager="jwhit" 
 	editor=""/>
 
-<tags 
-	ms.service="site-recovery" 
-	ms.devlang="na"
-	ms.topic="get-started-article"
-	ms.tgt_pltfrm="na"
-	ms.workload="storage-backup-recovery" 
-	ms.date="08/10/2015" 
-	ms.author="raynew"/>
+<tags
+	ms.service="site-recovery"
+	ms.date="08/10/2015"
+	wacn.date=""/>
 
 #  Network infrastructure considerations for Site Recovery
 
@@ -46,7 +42,7 @@ To deploy a single VMM on a VM with Hyper-V Replica:
 
 1. Set up the VMM on a VM with SQL Server installed.
 2. Add the hosts to be managed to clouds on this VMM server.
-3. Log in to the Azure portal and then configure clouds for protection.
+3. Log in to the Azure Management Portal and then configure clouds for protection.
 4. Enable replication for all the VMs that need to be protected by the VMM server.
 5. Go to the Hyper-V Manager console, choose Hyper-V Replica, and then enable replication on the VMM VM.
 6. Ensure that the VMM VM is not added to the clouds that are protected by ASR service so that the Hyper-V Replication settings are not overridden by ASR.
@@ -62,7 +58,7 @@ In the event of a disaster, workloads can be recovered as follows:
 ### Clustered VMM server
 
 
-[Deploying VMM in a cluster](https://technet.microsoft.com/en-us/library/gg610675.aspx) provides high availability and protection against hardware failover. If you're deploying your VMM cluster with Site Recovery note that:
+[Deploying VMM in a cluster](https://technet.microsoft.com/library/gg610675.aspx) provides high availability and protection against hardware failover. If you're deploying your VMM cluster with Site Recovery note that:
 
 The VMM server should be deployed in a stretched cluster across geographically separate sites.
 The SQL Server database used by VMM should be protected with SQL Server AlwaysOn availability groups with a replica on the secondary site.
@@ -204,4 +200,4 @@ The Networking infrastructure setup for Azure as a Disaster Recovery Site [blog 
 
 ## Next Steps
 
-[Learn](site-recovery-network-mapping.md) how Site Recovery maps source and target networks.
+[Learn](/documentation/articles/site-recovery-network-mapping) how Site Recovery maps source and target networks.

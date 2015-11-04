@@ -7,14 +7,10 @@
 	manager="jeffreyg" 
 	editor=""/>
 
-<tags 
+<tags
 	ms.service="sql-database"
-	ms.devlang="NA"
-	ms.date="10/08/2015" 
-	ms.author="sstein" 
-	ms.workload="data-management" 
-	ms.topic="article" 
-	ms.tgt_pltfrm="NA"/>
+	ms.date="10/08/2015"
+	wacn.date=""/>
 
 
 # Price and performance considerations for an elastic database pool
@@ -22,8 +18,8 @@
 
 This document provides guidance to help assess if using an elastic database pool for a group of databases is cost efficient based on database usage patterns and pricing differences between an elastic database pool and single databases. Additional guidance is also provided to assist in determining the current pool size required for an existing set of SQL databases.  
 
-- For an overview of elastic database pools, see [SQL Database elastic database pools](sql-database-elastic-pool.md).
-- For detailed information about elastic database pools, see [SQL Database elastic database pool reference](sql-database-elastic-pool-reference.md).
+- For an overview of elastic database pools, see [SQL Database elastic database pools](/documentation/articles/sql-database-elastic-pool).
+- For detailed information about elastic database pools, see [SQL Database elastic database pool reference](/documentation/articles/sql-database-elastic-pool-reference).
 
 
 > [AZURE.NOTE] Elastic database pools are currently in preview, and only available with SQL Database V12 servers.
@@ -79,7 +75,7 @@ The following rules of thumb related to database count and database utilization 
 
 ### Minimum number of databases
 
-If the sum of the DTUs of performance levels for single databases is more than 1.5x the eDTUs needed for the pool, then an elastic pool is more cost effective. For available sizes, see [eDTU and storage limits for elastic database pools and elastic databases](sql-database-elastic-pool-reference.md#edtu-and-storage-limits-for-elastic-pools-and-elastic-databases).
+If the sum of the DTUs of performance levels for single databases is more than 1.5x the eDTUs needed for the pool, then an elastic pool is more cost effective. For available sizes, see [eDTU and storage limits for elastic database pools and elastic databases](/documentation/articles/sql-database-elastic-pool-reference#edtu-and-storage-limits-for-elastic-pools-and-elastic-databases).
 
 
 ***Example***<br>
@@ -115,14 +111,14 @@ The following heuristic can help estimate whether an elastic database pool is mo
     
     MAX(*Total number of DBs* * *average DTU utilization per DB*, *number of concurrently peaking DBs* * *Peak DTU utilization per DB*)
 
-2. Select the smallest available eDTU value for the pool that is greater than the estimate from Step 1. For available eDTU choices, see the valid values for eDTUs listed here: [eDTU and storage limits for elastic database pools and elastic databases](sql-database-elastic-pool-reference.md#edtu-and-storage-limits-for-elastic-pools-and-elastic-databases).
+2. Select the smallest available eDTU value for the pool that is greater than the estimate from Step 1. For available eDTU choices, see the valid values for eDTUs listed here: [eDTU and storage limits for elastic database pools and elastic databases](/documentation/articles/sql-database-elastic-pool-reference#edtu-and-storage-limits-for-elastic-pools-and-elastic-databases).
 
 
 3. Calculate the price for the pool as follows:
 
     pool price = *pool eDTUs* * *pool eDTU unit price*
 
-    See [SQL Database Pricing](http://azure.microsoft.com/pricing/details/sql-database/) for pricing information.   
+    See [SQL Database Pricing](/home/features/sql-database/#price) for pricing information.   
 
 
 4. Compare the pool price from Step 3 to the price of using the appropriate performance levels for single databases. 
@@ -136,14 +132,14 @@ The best size for an elastic database pool depends on the aggregate eDTUs and st
 * Maximum DTUs utilized by all databases in the pool.
 * Maximum storage bytes utilized by all databases in the pool. 
 
-For available sizes, see [eDTU and storage limits for elastic database pools and elastic databases](sql-database-elastic-pool-reference.md#edtu-and-storage-limits-for-elastic-pools-and-elastic-databases).
+For available sizes, see [eDTU and storage limits for elastic database pools and elastic databases](/documentation/articles/sql-database-elastic-pool-reference#edtu-and-storage-limits-for-elastic-pools-and-elastic-databases).
 
 
 ### Use Service Tier Advisor (STA) and Dynamic Management Views (DMVs) for sizing recommendations   
 
 STA and DMVs provide different tooling options and capabilities for sizing an elastic database pool. Regardless of the tooling option used, the sizing estimate should only be used for initial assessment and creation of elastic database pools. Once a pool is created, its resource usage should be accurately monitored and the performance settings of the pool adjusted up and down as needed. 
 
-**STA**<br>STA is a built-in tool in [the preview portal](https://portal.azure.com) that automatically evaluates historical resource utilization of databases in an existing SQL Database server and recommends an appropriate elastic database pool configuration. For details, see [Elastic database pool pricing tier recommendations](sql-database-elastic-pool-portal.md#elastic-database-pool-pricing-tier-recommendations).
+**STA**<br>STA is a built-in tool in [the preview portal](https://manage.windowsazure.cn) that automatically evaluates historical resource utilization of databases in an existing SQL Database server and recommends an appropriate elastic database pool configuration. For details, see [Elastic database pool pricing tier recommendations](/documentation/articles/sql-database-elastic-pool-portal#elastic-database-pool-pricing-tier-recommendations).
 
 **DMV sizing tool**<br>DMV sizing tool is provided as a PowerShell script and enables customizing the sizing estimates of an elastic database pool for existing databases in a server. 
 
@@ -165,11 +161,11 @@ STA evaluates the utilization history of databases and recommends an elastic dat
 
 STA is available in the preview portal when adding an elastic database pool to an existing server. If recommendations for an elastic database pool are available for that server, they are displayed in the “Elastic Database Pool’ creation page. Customers can always change the recommended configurations to create their own elastic database pool grouping. 
 
-For details, see [Elastic database pool pricing tier recommendations](sql-database-elastic-pool-portal.md#elastic-database-pool-pricing-tier-recommendations)
+For details, see [Elastic database pool pricing tier recommendations](/documentation/articles/sql-database-elastic-pool-portal#elastic-database-pool-pricing-tier-recommendations)
 
 ### Estimating elastic pool size using Dynamic Management Views (DMVs) 
 
-The [sys.dm_db_resource_stats](https://msdn.microsoft.com/library/dn800981.aspx) DMV measures resource utilization of an individual database. This DMV provides CPU, IO, log, and log utilization of a database as a percentage of the database's performance level limit. This data can be used to calculate the DTU utilization of a database in any given 15 second interval. 
+The [sys.dm_db_resource_stats](https://msdn.microsoft.com/zh-cn/library/dn800981.aspx) DMV measures resource utilization of an individual database. This DMV provides CPU, IO, log, and log utilization of a database as a percentage of the database's performance level limit. This data can be used to calculate the DTU utilization of a database in any given 15 second interval. 
 
 The aggregate eDTU utilization for an elastic database pool in a 15 second interval can be estimated by aggregating the eDTU utilization for all candidate databases during that time. Depending on the specific performance goals, it may make sense to discard a small percentage of the sample data. For example, a 99th percentile value of aggregate eDTUs across all time intervals can be applied to exclude outliers and provide an elastic database pool eDTU to fit 99% of the sampled time intervals. 
 
@@ -192,7 +188,7 @@ Install the following prior to running the script.:
 ### Script details
 
 
-You can run the script from your local machine or a VM on the cloud. When running it from your local machine, you may incur data egress charges because the script needs to download data from your target databases. Below shows data volume estimation based on number of target databases and duration of running the script. For Azure data transfer costs refer to [Data Transfer Pricing Details](http://azure.microsoft.com/pricing/details/data-transfers/).
+You can run the script from your local machine or a VM on the cloud. When running it from your local machine, you may incur data egress charges because the script needs to download data from your target databases. Below shows data volume estimation based on number of target databases and duration of running the script. For Azure data transfer costs refer to [Data Transfer Pricing Details](/home/features/data-transfers/#price).
        
  -     1 database per hour = 38KB
  -     1 database per day = 900KB
@@ -208,7 +204,7 @@ If you need to exclude additional databases from the target server, you may chan
 
 The script needs an output database to store intermediate data for analysis. You can use a new or existing database. Although not technically required for the tool to run, the output database should be in a different server to avoid impacting the analysis outcome. Suggest the performance level of the output database to be at least S0 or higher. When collecting a long duration of data for a large number of databases, you may consider upgrading your output database to a higher performance level.
 
-The script needs you to provide the credentials to connect to the target server (the elastic database pool candidate) with full server name like “abcdef.database.windows.net”. Currently the script doesn’t support analyzing more than one server at a time.
+The script needs you to provide the credentials to connect to the target server (the elastic database pool candidate) with full server name like “abcdef.database.chinacloudapi.cn”. Currently the script doesn’t support analyzing more than one server at a time.
 
 
 After submitting values for the initial set of parameters, you are prompted to log on to your azure account. This is for logging on to your target server, not the output database server.
@@ -225,12 +221,12 @@ When the script completes it will output the estimated number of eDTUs required 
 
     
     param (
-    [Parameter(Mandatory=$true)][string]$AzureSubscriptionName, # Azure Subscription name - can be found on the Azure portal: https://portal.azure.com/
-    [Parameter(Mandatory=$true)][string]$ResourceGroupName, # Resource Group name - can be found on the Azure portal: https://portal.azure.com/
-    [Parameter(Mandatory=$true)][string]$servername, # full server name like "abcdefg.database.windows.net"
+    [Parameter(Mandatory=$true)][string]$AzureSubscriptionName, # Azure Subscription name - can be found on the Azure Management Portal: https://manage.windowsazure.cn/
+    [Parameter(Mandatory=$true)][string]$ResourceGroupName, # Resource Group name - can be found on the Azure Management Portal: https://manage.windowsazure.cn/
+    [Parameter(Mandatory=$true)][string]$servername, # full server name like "abcdefg.database.chinacloudapi.cn"
     [Parameter(Mandatory=$true)][string]$username, # user name
     [Parameter(Mandatory=$true)][string]$serverPassword, # password
-    [Parameter(Mandatory=$true)][string]$outputServerName, # metrics collection database for analysis. full server name like "zyxwvu.database.windows.net"
+    [Parameter(Mandatory=$true)][string]$outputServerName, # metrics collection database for analysis. full server name like "zyxwvu.database.chinacloudapi.cn"
     [Parameter(Mandatory=$true)][string]$outputdatabaseName,
     [Parameter(Mandatory=$true)][string]$outputDBUsername,
     [Parameter(Mandatory=$true)][string]$outputDBpassword,

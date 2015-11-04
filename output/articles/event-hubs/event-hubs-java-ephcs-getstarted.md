@@ -9,16 +9,12 @@
 
 <tags
 	ms.service="event-hubs"
-	ms.workload="core"
-	ms.tgt_pltfrm="csharp"
-	ms.devlang="csharp"
-	ms.topic="article"
 	ms.date="07/21/2015"
-	ms.author="sethm"/>
+	wacn.date=""/>
 
 # Get started with Event Hubs
 
-[AZURE.INCLUDE [service-bus-selector-get-started](../../includes/service-bus-selector-get-started.md)]
+[AZURE.INCLUDE [service-bus-selector-get-started](../includes/service-bus-selector-get-started.md)]
 
 ## Introduction
 
@@ -34,13 +30,13 @@ In order to complete this tutorial you will need the following:
 
 + Microsoft Visual Studio Express 2013 for Windows
 
-+ An active Azure account. <br/>If you don't have an account, you can create a free trial account in just a couple of minutes. For details, see <a href="http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fen-us%2Fdevelop%2Fmobile%2Ftutorials%2Fget-started%2F" target="_blank">Azure Free Trial</a>.
++ An active Azure account. <br/>If you don't have an account, you can create a trial account in just a couple of minutes. For details, see <a href="/pricing/1rmb-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fen-us%2Fdevelop%2Fmobile%2Ftutorials%2Fget-started%2F" target="_blank">Azure Trial</a>.
 
 ## Create an event hub
 
 1. Log on to the [Azure management portal], and click **NEW** at the bottom of the screen.
 
-2. Click **App Services**, then **Service Bus**, then **Event Hub**, then **Quick Create**.
+2. Click **Azure Websites**, then **Service Bus**, then **Event Hub**, then **Quick Create**.
 
 	![][1]
 
@@ -70,10 +66,10 @@ In order to complete this tutorial you will need the following:
 
 Your Event Hub is now created, and you have the connection strings you need to send and receive events.
 
-[AZURE.INCLUDE [service-bus-event-hubs-get-started-send-java](../../includes/service-bus-event-hubs-get-started-send-java.md)]
+[AZURE.INCLUDE [service-bus-event-hubs-get-started-send-java](../includes/service-bus-event-hubs-get-started-send-java.md)]
 
 
-[AZURE.INCLUDE [service-bus-event-hubs-get-started-receive-ephcs](../../includes/service-bus-event-hubs-get-started-receive-ephcs.md)]
+[AZURE.INCLUDE [service-bus-event-hubs-get-started-receive-ephcs](../includes/service-bus-event-hubs-get-started-receive-ephcs.md)]
 
 ## Run the applications
 
@@ -111,10 +107,9 @@ For more information, see also the [Java Developer Center](/develop/java/).
 [22]: ./media/event-hubs-java-ephcs-getstarted/run-csharp-ephcs2.png
 
 <!-- Links -->
-[Azure Management Portal]: https://manage.windowsazure.com/
+[Azure Management Portal]: https://manage.windowsazure.cn/
 [Event Processor Host]: https://www.nuget.org/packages/Microsoft.Azure.ServiceBus.EventProcessorHost
-[Event Hubs Overview]: http://msdn.microsoft.com/library/azure/dn836025.aspx
+[Event Hubs Overview]: http://msdn.microsoft.com/zh-cn/library/azure/dn836025.aspx
 [sample application that uses Event Hubs]: https://code.msdn.microsoft.com/windowsazure/Service-Bus-Event-Hub-286fd097
 [Scale out Event Processing with Event Hubs]: https://code.msdn.microsoft.com/windowsazure/Service-Bus-Event-Hub-45f43fc3
-[queued messaging solution]: ../service-bus-dotnet-multi-tier-app-using-service-bus-queues.md
- 
+[queued messaging solution]: /documentation/articles/service-bus-dotnet-multi-tier-app-using-service-bus-queues

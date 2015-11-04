@@ -1,5 +1,5 @@
 <properties
-	pageTitle="On-premises application with blob storage (Java) | Microsoft Azure"
+	pageTitle="On-premises application with blob storage (Java) | Windows Azure"
 	description="Learn how to create a console application that uploads an image to Azure, and then displays the image in your browser. Code samples in Java."
 	services="storage"
 	documentationCenter="java"
@@ -9,12 +9,8 @@
 
 <tags
 	ms.service="storage"
-	ms.workload="storage"
-	ms.tgt_pltfrm="na"
-	ms.devlang="Java"
-	ms.topic="article"
-	ms.date="08/31/2015" 
-	ms.author="robmcm"/>
+	ms.date="08/31/2015"
+	wacn.date=""/>
 
 # On-premises application with blob storage
 
@@ -43,7 +39,7 @@ HTML file that displays the image in your browser.
     **FileInputStream** constructor in the example to use a different
     image path and file name.
 
-[AZURE.INCLUDE [create-account-note](../../includes/create-account-note.md)]
+[AZURE.INCLUDE [create-account-note](../includes/create-account-note.md)]
 
 ## To use Azure blob storage to upload a file
 
@@ -67,8 +63,8 @@ Declare a class named **StorageSample**, and include the open bracket,
 Within the **StorageSample** class, declare a string variable that will
 contain the default endpoint protocol, your storage account name, and
 your storage access key, as specified in your Azure storage
-account. Replace the placeholder values **your\_account\_name** and
-**your\_account\_key** with your own account name and account key,
+account. Replace the placeholder values **your_account_name** and
+**your_account_key** with your own account name and account key,
 respectively.
 
     public static final String storageConnectionString =
@@ -257,8 +253,8 @@ Close **MakeHTMLPage** by inserting a close bracket: **}**
 Close **StorageSample** by inserting a close bracket: **}**
 
 The following is the complete code for this example. Remember to modify
-the placeholder values **your\_account\_name** and
-**your\_account\_key** to use your account name and account key,
+the placeholder values **your_account_name** and
+**your_account_key** to use your account name and account key,
 respectively.
 
     import com.microsoft.azure.storage.*;
@@ -430,10 +426,10 @@ Follow these links to learn more about more complex storage tasks.
 - [Azure Storage Team Blog][]
 
   [Download the Azure SDK for Java]: http://go.microsoft.com/fwlink/?LinkID=525671
-  [How to Create a Storage Account]: storage-create-storage-account.md#create-a-storage-account
+  [How to Create a Storage Account]: /documentation/articles/storage-create-storage-account#create-a-storage-account
   [How to Manage Storage Accounts]: storage-create-storage-account.md#view-copy-and-regenerate-storage-access-keys
-  [How to Use the Blob Storage Service from Java]: storage-java-how-to-use-blob-storage.md
+  [How to Use the Blob Storage Service from Java]: /documentation/articles/storage-java-how-to-use-blob-storage
   [Azure Storage SDK for Java]: https://github.com/azure/azure-storage-java
-  [Azure Storage Client SDK Reference]: http://dl.windowsazure.com/storage/javadoc/
-  [Azure Storage REST API]: http://msdn.microsoft.com/library/azure/gg433040.aspx
+  [Azure Storage Client SDK Reference]: http://dl.windowsazure.cn/storage/javadoc/
+  [Azure Storage REST API]: http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx
   [Azure Storage Team Blog]: http://blogs.msdn.com/b/windowsazurestorage/

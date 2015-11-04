@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Node.js Getting Started Guide | Microsoft Azure"
+	pageTitle="Node.js Getting Started Guide | Windows Azure"
 	description="Learn how to create a simple Node.js web application and deploy it to an Azure cloud service."
 	services="cloud-services"
 	documentationCenter="nodejs"
@@ -9,19 +9,15 @@
 
 <tags
 	ms.service="cloud-services"
-	ms.workload="tbd"
-	ms.tgt_pltfrm="na" 
-	ms.devlang="nodejs"
-	ms.topic="hero-article"
 	ms.date="08/31/2015"
-	ms.author="mwasson"/>
+	wacn.date=""/>
 
 
 # Build and deploy a Node.js application to an Azure Cloud Service
 
 > [AZURE.SELECTOR]
-- [Node.js](cloud-services-nodejs-develop-deploy-app.md)
-- [.NET](cloud-services-dotnet-get-started.md)
+- [Node.js](/documentation/articles/cloud-services-nodejs-develop-deploy-app)
+- [.NET](/documentation/articles/cloud-services-dotnet-get-started)
 
 This tutorial shows how to create a simple Node.js application running
 in an Azure Cloud Service. Cloud Services are the building blocks of
@@ -29,7 +25,7 @@ scalable cloud applications in Azure. They allow the separation and independent
 management and scale-out of front-end and back-end components of your application.  Cloud Services
 provide a robust dedicated virtual machine for hosting each role reliably.
 
-For more information on Cloud Services, and how they compare to Azure Websites and Virtual machines, see [Azure Websites, Cloud Services and Virtual Machines comparison](../choose-web-site-cloud-service-vm.md).
+For more information on Cloud Services, and how they compare to Azure Websites and Virtual machines, see [Azure Websites, Cloud Services and Virtual Machines comparison](/documentation/articles/choose-web-site-cloud-service-vm).
 
 >[AZURE.TIP] Looking to build a simple website? If your scenario involves just a simple website front-end, consider <a href="/documentation/articles/web-sites-nodejs-develop-deploy-mac/">using a lightweight web app.</a> You can easily upgrade to a Cloud Service as your web app grows and your requirements change.
 
@@ -46,8 +42,8 @@ The application is a simple "hello world" application:
 
 > [AZURE.NOTE] This tutorial uses Azure PowerShell, which requires Windows.
 
-- Install and configure [Azure Powershell](../install-configure-powershell.md).
-- Download and install the [Azure SDK for .NET 2.7](http://www.microsoft.com/en-us/download/details.aspx?id=48178). In the install setup, select:
+- Install and configure [Azure Powershell](/documentation/articles/install-configure-powershell).
+- Download and install the [Azure SDK for .NET 2.7](http://www.microsoft.com/download/details.aspx?id=48178). In the install setup, select:
     - MicrosoftAzureAuthoringTools
     - MicrosoftAzureComputeEmulator
 
@@ -59,7 +55,7 @@ Perform the following tasks to create a new Azure Cloud Service project, along w
 
 1. Run **Azure PowerShell** as Administrator. (From the **Start Menu** or **Start Screen**, search for **Azure PowerShell**.)
 
-2.  [Connect PowerShell](powershell-install-configure.md#how-to-connect-to-your-subscription) to your subscription.
+2.  [Connect PowerShell](/documentation/articles/powershell-install-configure#how-to-connect-to-your-subscription) to your subscription.
 3.  Enter the following PowerShell cmdlet to create to create the project:
 
         New-AzureServiceProject helloworld
@@ -103,7 +99,7 @@ This code is essentially the same as the "Hello World" sample on the [nodejs.org
 
 ## Deploy the application to Azure
 
-	[AZURE.INCLUDE [create-account-note](../../includes/create-account-note.md)]
+	[AZURE.INCLUDE [create-account-note](../includes/create-account-note.md)]
 
 
 ### Download the Azure publishing settings
@@ -131,7 +127,7 @@ To deploy your application to Azure, you must first download the publishing sett
 To publish, run the following commands:
 
   	$ServiceName = "NodeHelloWorld" + $(Get-Date -Format ('ddhhmm'))   
-	Publish-AzureServiceProject -ServiceName $ServiceName  -Location "East US" -Launch
+	Publish-AzureServiceProject -ServiceName $ServiceName  -Location "China East" -Launch
 
 - **-ServiceName** specifies the name for the deployment. This must be a unique name, otherwise the publish process will fail. The **Get-Date** command tacks on a date/time string that should make the name unique.
 
@@ -187,7 +183,7 @@ After deploying your application, you may want to disable it so you can avoid ex
 
 	![The status of the Remove-AzureService command](./media/cloud-services-nodejs-develop-deploy-app/node49.png)
 
-	> [AZURE.NOTE] Deleting the service does not delete the storage account that was created when the service was initially published, and you will continue to be billed for storage used. For more information on deleting a storage account, see [How to Delete a Storage Account from an Azure Subscription](http://msdn.microsoft.com/library/windowsazure/hh531562.aspx).
+	> [AZURE.NOTE] Deleting the service does not delete the storage account that was created when the service was initially published, and you will continue to be billed for storage used. For more information on deleting a storage account, see [How to Delete a Storage Account from an Azure Subscription](http://msdn.microsoft.com/zh-cn/library/azure/hh531562.aspx).
 
 ## Next steps
 
@@ -197,14 +193,14 @@ For more information, see the [Node.js Developer Center](/develop/nodejs/).
 [mkdir]: ./media/cloud-services-nodejs-develop-deploy-app/getting-started-6.png
 [nodejs.org]: http://nodejs.org/
 [A directory listing of the helloworld folder.]: ./media/cloud-services-nodejs-develop-deploy-app/getting-started-7.png
-[Overview of Creating a Hosted Service for Azure]: http://msdn.microsoft.com/library/windowsazure/jj155995.aspx
+[Overview of Creating a Hosted Service for Azure]: http://msdn.microsoft.com/zh-cn/library/azure/jj155995.aspx
 [A directory listing of the WebRole1 folder]: ./media/cloud-services-nodejs-develop-deploy-app/getting-started-8.png
 [The menu displayed when right-clicking the Azure emulator from the task bar.]: ./media/cloud-services-nodejs-develop-deploy-app/getting-started-11.png
-[A browser window displaying http://www.windowsazure.com/ with the Free Trial link highlighted]: ./media/cloud-services-nodejs-develop-deploy-app/getting-started-12.png
+[A browser window displaying http://azure.microsoft.com/ with the Trial link highlighted]: ./media/cloud-services-nodejs-develop-deploy-app/getting-started-12.png
 [A browser window displaying the liveID sign in page]: ./media/cloud-services-nodejs-develop-deploy-app/getting-started-13.png
 [Internet Explorer displaying the save as dialog for the publishSettings file.]: ./media/cloud-services-nodejs-develop-deploy-app/getting-started-14.png
 
 [The full status output of the Publish-AzureService command]: ./media/cloud-services-nodejs-develop-deploy-app/node20.png
-[How to Delete a Storage Account from an Azure Subscription]: https://www.windowsazure.com/manage/services/storage/how-to-manage-a-storage-account/
+[How to Delete a Storage Account from an Azure Subscription]: /documentation/articles/storage-manage-storage-account/
 [powershell-menu]: ./media/cloud-services-nodejs-develop-deploy-app/azure-powershell-start.png
  

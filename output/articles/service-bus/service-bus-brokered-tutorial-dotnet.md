@@ -1,19 +1,15 @@
 <properties 
-   pageTitle="Service Bus brokered messaging .NET tutorial | Microsoft Azure"
+   pageTitle="Service Bus brokered messaging .NET tutorial | Windows Azure"
    description="Brokered messaging .NET tutorial."
    services="service-bus"
    documentationCenter="na"
    authors="sethmanheim"
    manager="timlt"
    editor="tysonn" />
-<tags 
-   ms.service="service-bus"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="na"
-   ms.date="09/14/2015"
-   ms.author="sethm" />
+<tags
+	ms.service="service-bus"
+	ms.date="09/14/2015"
+	wacn.date=""/>
 
 # Service Bus brokered messaging .NET tutorial
 
@@ -21,7 +17,7 @@ Azure Service Bus provides two comprehensive messaging solutions – one, throug
 
 The second messaging solution enables “brokered” messaging capabilities. These can be thought of as asynchronous, or decoupled messaging features that support publish-subscribe, temporal decoupling, and load balancing scenarios using the Service Bus messaging infrastructure. Decoupled communication has many advantages; for example, clients and servers can connect as needed and perform their operations in an asynchronous fashion.
 
-This tutorial is intended to give you an overview and hands-on experience with queues, one of the core components of Service Bus brokered messaging. After you work through the sequence of topics in this tutorial, you will have an application that populates a list of messages, creates a queue, and sends messages to that queue. Finally, the application receives and displays the messages from the queue, then cleans up its resources and exits. For a corresponding tutorial that describes how to build an application that uses the Service Bus "relayed" messaging capabilities, see the [Service Bus relayed messaging tutorial](service-bus-relay-tutorial.md).
+This tutorial is intended to give you an overview and hands-on experience with queues, one of the core components of Service Bus brokered messaging. After you work through the sequence of topics in this tutorial, you will have an application that populates a list of messages, creates a queue, and sends messages to that queue. Finally, the application receives and displays the messages from the queue, then cleans up its resources and exits. For a corresponding tutorial that describes how to build an application that uses the Service Bus "relayed" messaging capabilities, see the [Service Bus relayed messaging tutorial](/documentation/articles/service-bus-relay-tutorial).
 
 ## Introduction and prerequisites
 
@@ -31,15 +27,15 @@ The following are some administrative and prerequisite steps you should follow b
 
 ### Create a service namespace and obtain a SAS key
 
-1. To create a service namespace, follow the steps outlined in [How To: Create or Modify a Service Bus Service Namespace](https://msdn.microsoft.com/library/azure/hh690931.aspx).
+1. To create a service namespace, follow the steps outlined in [How To: Create or Modify a Service Bus Service Namespace](https://msdn.microsoft.com/zh-cn/library/azure/hh690931.aspx).
 
-1. In the main window of the Azure portal, click the name of the namespace you created in the previous step.
+1. In the main window of the Azure Management Portal, click the name of the namespace you created in the previous step.
 
 1. Click **Configure**.
 
 1. In the **shared access signature generator** section, make a note of the primary key associated with the **RootManagerSharedAccessKey** policy, or copy it to the clipboard. You will use this value later in this tutorial.
 
-The next step is to create a Visual Studio project and write two helper functions that load a comma-delimited list of messages into a strongly-typed [BrokeredMessage](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.brokeredmessage.aspx) .NET [List](https://msdn.microsoft.com/library/6sh2ey19.aspx) object.
+The next step is to create a Visual Studio project and write two helper functions that load a comma-delimited list of messages into a strongly-typed [BrokeredMessage](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.brokeredmessage.aspx) .NET [List](https://msdn.microsoft.com/zh-cn/library/6sh2ey19.aspx) object.
 
 ### Create a Visual Studio project
 
@@ -99,7 +95,7 @@ The next step is to create a Visual Studio project and write two helper function
 
 ### Create a function that parses a list of messages
 
-1. Before the `Main()` method, declare two variables: one of type **DataTable**, to contain the list of messages in Data.csv. The other should be of type List object, strongly typed to [BrokeredMessage](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.brokeredmessage.aspx). The latter is the list of brokered messages that subsequent steps in the tutorial will use.
+1. Before the `Main()` method, declare two variables: one of type **DataTable**, to contain the list of messages in Data.csv. The other should be of type List object, strongly typed to [BrokeredMessage](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.brokeredmessage.aspx). The latter is the list of brokered messages that subsequent steps in the tutorial will use.
 
 	```
 	namespace Microsoft.ServiceBus.Samples
@@ -111,7 +107,7 @@ The next step is to create a Visual Studio project and write two helper function
 	        privatestatic List<BrokeredMessage> MessageList;
 	```
 
-1. Outside `Main()`, define a `ParseCSV()` method that parses the list of messages in Data.csv and loads the messages into a [DataTable](https://msdn.microsoft.com/library/azure/system.data.datatable.aspx) table, as shown here. The method returns a **DataTable** object.
+1. Outside `Main()`, define a `ParseCSV()` method that parses the list of messages in Data.csv and loads the messages into a [DataTable](https://msdn.microsoft.com/zh-cn/library/azure/system.data.datatable.aspx) table, as shown here. The method returns a **DataTable** object.
 
 	```
 	static DataTable ParseCSVFile()
@@ -267,7 +263,7 @@ In this step, you define the management operations you will use to create shared
 	}
 	```
 
-1. The next step is to create a SAS credential using a [TokenProvider](https://msdn.microsoft.com/library/azure/microsoft.servicebus.tokenprovider.aspx) object. The creation method takes the SAS key name and value obtained in the `CollectUserInput()` method. Add the following code to the `Queue()` method:
+1. The next step is to create a SAS credential using a [TokenProvider](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.tokenprovider.aspx) object. The creation method takes the SAS key name and value obtained in the `CollectUserInput()` method. Add the following code to the `Queue()` method:
 
 	```
 	staticvoid Queue()
@@ -412,7 +408,7 @@ In this step, you create a queue, then send the messages contained in the list o
 	MessagingFactory factory = MessagingFactory.Create(ServiceBusEnvironment.CreateServiceUri("sb", ServiceNamespace, string.Empty), credentials);
 	```
 
-1. Next, create the queue object using the [QueueClient](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.queueclient.aspx) class. Add the following code directly after the code you added in the last step:
+1. Next, create the queue object using the [QueueClient](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.queueclient.aspx) class. Add the following code directly after the code you added in the last step:
 
 	```
 	QueueClient myQueueClient = factory.CreateQueueClient("IssueTrackingQueue");
@@ -438,7 +434,7 @@ In this step, you obtain the list of messages from the queue you created in the 
 
 ### Create a receiver and receive messages from the queue
 
-In the `Queue()` method, iterate through the queue and receive the messages using the [Microsoft.ServiceBus.Messaging.QueueClient.Receive](https://msdn.microsoft.com/library/azure/hh322678.aspx) method, printing out each message to the console. Add the following code directly beneath the code you added in the previous step:
+In the `Queue()` method, iterate through the queue and receive the messages using the [Microsoft.ServiceBus.Messaging.QueueClient.Receive](https://msdn.microsoft.com/zh-cn/library/azure/hh322678.aspx) method, printing out each message to the console. Add the following code directly beneath the code you added in the previous step:
 
 	```
 	Console.WriteLine("Now receiving messages from Queue.");
@@ -632,7 +628,7 @@ In Visual Studio, from the **Build** menu, click **Build Solution**, or press F6
 
 1. Before you run the application, you must ensure that you have created a service namespace and obtained a SAS key, as described in [Introduction and Prerequsites](#introduction-and-prerequisites).
 
-1. Open a browser and go to the [Azure portal](http://manage.windowsazure.com).
+1. Open a browser and go to the [Azure Management Portal](http://manage.windowsazure.cn).
 
 1. Click **Service Bus** in the left-hand tree.
 
@@ -642,11 +638,11 @@ In Visual Studio, from the **Build** menu, click **Build Solution**, or press F6
 
 ## Next steps
 
-This tutorial showed how to build a Service Bus client application and service using the Service Bus brokered messaging capabilities. For a similar tutorial that uses Service Bus [relayed messaging](service-bus-messaging-overview.md/#Relayed-messaging), see the [Service Bus relayed messaging tutorial](service-bus-relay-tutorial.md).
+This tutorial showed how to build a Service Bus client application and service using the Service Bus brokered messaging capabilities. For a similar tutorial that uses Service Bus [relayed messaging](/documentation/articles/service-bus-messaging-overview#Relayed-messaging), see the [Service Bus relayed messaging tutorial](/documentation/articles/service-bus-relay-tutorial).
 
 To learn more about Service Bus, see the following topics.
 
-- [Service Bus messaging overview](service-bus-messaging-overview.md)
-- [Service Bus fundamentals](service-bus-fundamentals-hybrid-solutions.md)
-- [Service Bus architecture](service-bus-architecture.md)
+- [Service Bus messaging overview](/documentation/articles/service-bus-messaging-overview)
+- [Service Bus fundamentals](/documentation/articles/service-bus-fundamentals-hybrid-solutions)
+- [Service Bus architecture](/documentation/articles/service-bus-architecture)
 

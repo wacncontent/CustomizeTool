@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Get started with custom authentication | Microsoft Azure" 
+	pageTitle="Get started with custom authentication | Windows Azure" 
 	description="Learn how to authenticate users with a username and password." 
 	documentationCenter="Mobile" 
 	authors="mattchenderson" 
@@ -7,14 +7,10 @@
 	editor="" 
 	services="mobile-services"/>
 
-<tags 
-	ms.service="mobile-services" 
-	ms.workload="mobile" 
-	ms.tgt_pltfrm="mobile-multiple" 
-	ms.devlang="multiple" 
-	ms.topic="article" 
-	ms.date="09/28/2015" 
-	ms.author="mahender"/>
+<tags
+	ms.service="mobile-services"
+	ms.date="09/28/2015"
+	wacn.date=""/>
 
 # Get started with custom authentication
 
@@ -107,7 +103,7 @@ At this point, you have everything you need to begin creating user accounts. In 
 
     If you need to collect and store other information during registration, you should do it here.
 
-2. In your mobile service backend project, right-click **Controllers**, click **Add** and **Controller**, create a new **Microsoft Azure Mobile Services Custom Controller** named `CustomRegistrationController`, then add the following `using` statements:
+2. In your mobile service backend project, right-click **Controllers**, click **Add** and **Controller**, create a new **Windows Azure Mobile Services Custom Controller** named `CustomRegistrationController`, then add the following `using` statements:
 
 		using Microsoft.WindowsAzure.Mobile.Service.Security;
 		using System.Text.RegularExpressions;
@@ -208,7 +204,7 @@ If you use the visual studio 2013, you maybe need to install the `WindowsAzure.M
             }
         }
 
-	This represents information about your user and will be made available to you on the backend via [GetIdentitiesAsync](https://msdn.microsoft.com/library/azure/microsoft.windowsazure.mobile.service.security.serviceuser.getidentitiesasync.aspx). If you are adding custom claims, make sure that they are captured in this object.
+	This represents information about your user and will be made available to you on the backend via [GetIdentitiesAsync](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.mobile.service.security.serviceuser.getidentitiesasync.aspx). If you are adding custom claims, make sure that they are captured in this object.
 
 3. Add the following implementation of the abstract method `ConfigureMiddleware` to **CustomLoginProvider**. 
 
@@ -285,7 +281,7 @@ Next, you create an endpoint for your users to sign-in. The username and passwor
 
 	This class represents a successfully login with the user ID and the authentication token. Note that this class has the same shape as the MobileServiceUser class on the client, which makes it easier to hand the login response on a strongly-typed client.
 
-2. Right-click **Controllers**, click **Add** and **Controller**, create a new **Microsoft Azure Mobile Services Custom Controller** named `CustomLoginController`, then add the following `using` statements:
+2. Right-click **Controllers**, click **Add** and **Controller**, create a new **Windows Azure Mobile Services Custom Controller** named `CustomLoginController`, then add the following `using` statements:
 
 		using Microsoft.WindowsAzure.Mobile.Service.Security;
 		using System.Security.Claims;
@@ -338,7 +334,7 @@ Next, you create an endpoint for your users to sign-in. The username and passwor
 
 ## Configure the mobile service to require authentication
 
-[AZURE.INCLUDE [mobile-services-restrict-permissions-dotnet-backend](../../includes/mobile-services-restrict-permissions-dotnet-backend.md)]
+[AZURE.INCLUDE [mobile-services-restrict-permissions-dotnet-backend](../includes/mobile-services-restrict-permissions-dotnet-backend.md)]
 
 
 ## Test the sign-in flow using the test client
@@ -393,13 +389,13 @@ This section describes the steps needed to access the custom authentication endp
 
 	You only need to call the **CustomRegistration** endpoint once to create an account for a given user, as long as you keep the user login information in the Accounts table. For examples of how to call a custom API on the various supported client platforms, see the article [Custom API in Azure Mobile Services – client SDKs](http://blogs.msdn.com/b/carlosfigueira/archive/2013/06/19/custom-api-in-azure-mobile-services-client-sdks.aspx).
 	 
-	> [AZURE.IMPORTANT] Because this user provisioning step occurs only once, you should consider creating the user account in some out-of-band fashion. For a public registration endpoint, you should also consider implementing an SMS-based or email-based verification process, or some other safeguard to prevent the generation of fruadulent accounts. You can use Twilio to send SMS messages from Mobile services. You can also use SendGrid to send emails from Mobile Services. For more inforation on using SendGrid, see [Send email from Mobile Services with SendGrid](store-sendgrid-mobile-services-send-email-scripts.md). 
+	> [AZURE.IMPORTANT] Because this user provisioning step occurs only once, you should consider creating the user account in some out-of-band fashion. For a public registration endpoint, you should also consider implementing an SMS-based or email-based verification process, or some other safeguard to prevent the generation of fruadulent accounts. You can use Twilio to send SMS messages from Mobile services. You can also use SendGrid to send emails from Mobile Services. For more inforation on using SendGrid, see [Send email from Mobile Services with SendGrid](/documentation/articles/store-sendgrid-mobile-services-send-email-scripts). 
 	
 3. Use the appropriate **invokeApi** method again, this time to call the **CustomLogin** endpoint, passing the runtime-supplied username and password in the message body. 
 
 	This time, you must capture the *userId* and *authenticationToken* values returned in the response object after a successful login. 
 	
-4. Use the returned *userId* and *authenticationToken* values to create a new **MobileServiceUser** object and set it as the current user for your **MobileServiceClient** instance, as shown in the topic [Add authentication to existing app](mobile-services-dotnet-backend-ios-get-started-users.md). Because the CustomLogin result is the same shape as the **MobileServiceUser** object, you should be able to make a direct cast of the result. 
+4. Use the returned *userId* and *authenticationToken* values to create a new **MobileServiceUser** object and set it as the current user for your **MobileServiceClient** instance, as shown in the topic [Add authentication to existing app](/documentation/articles/mobile-services-dotnet-backend-ios-get-started-users). Because the CustomLogin result is the same shape as the **MobileServiceUser** object, you should be able to make a direct cast of the result. 
 
 This completes this tutorial. 
 
@@ -416,9 +412,8 @@ This completes this tutorial.
 
 
 <!-- URLs. -->
-[Add authentication to your app]: ../mobile-services-dotnet-backend-windows-store-dotnet-get-started-users.md
-[Get started with Mobile Services]: mobile-services-dotnet-backend-windows-store-dotnet-get-started.md
-
-[ClaimsIdentity]: https://msdn.microsoft.com/library/system.security.claims.claimsidentity(v=vs.110).aspx
-[ProviderCredentials]: https://msdn.microsoft.com/library/azure/microsoft.windowsazure.mobile.service.security.providercredentials.aspx
+[Add authentication to your app]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-users
+[Get started with Mobile Services]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started
+[ClaimsIdentity]: https://msdn.microsoft.com/zh-cn/library/system.security.claims.claimsidentity(v=vs.110).aspx
+[ProviderCredentials]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.mobile.service.security.providercredentials.aspx
  

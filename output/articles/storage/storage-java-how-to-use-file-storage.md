@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="How to use File storage from Java | Microsoft Azure" 
+	pageTitle="How to use File storage from Java | Windows Azure" 
 	description="Learn how to use the Azure file service to upload, download, list, and delete files. Samples written in Java." 
 	services="storage" 
 	documentationCenter="java" 
@@ -7,26 +7,22 @@
 	manager="wpickett" 
 	editor="jimbe" />
 
-<tags 
-	ms.service="storage" 
-	ms.workload="storage" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="Java" 
-	ms.topic="article" 
-	ms.date="09/01/2015" 
-	ms.author="v-dedomi"/>
+<tags
+	ms.service="storage"
+	ms.date="09/01/2015"
+	wacn.date=""/>
 
 # How to use File Storage from Java
 
-[AZURE.INCLUDE [storage-selector-file-include](../../includes/storage-selector-file-include.md)]
+[AZURE.INCLUDE [storage-selector-file-include](../includes/storage-selector-file-include.md)]
 
 ## Overview
 
-In this guide you'll learn how to perform basic operations on the  Microsoft Azure File storage service. Through samples written in Java you'll learn how to  create shares and directories, upload, list, and delete files. If you are new to Microsoft Azure's File Storage service, going through the concepts in the sections that follow will be very helpful in understanding the samples.
+In this guide you'll learn how to perform basic operations on the  Windows Azure File storage service. Through samples written in Java you'll learn how to  create shares and directories, upload, list, and delete files. If you are new to Windows Azure's File Storage service, going through the concepts in the sections that follow will be very helpful in understanding the samples.
 
-[AZURE.INCLUDE [storage-file-concepts-include](../../includes/storage-file-concepts-include.md)]
+[AZURE.INCLUDE [storage-file-concepts-include](../includes/storage-file-concepts-include.md)]
 
-[AZURE.INCLUDE [storage-create-account-include](../../includes/storage-create-account-include.md)]
+[AZURE.INCLUDE [storage-create-account-include](../includes/storage-create-account-include.md)]
 
 ## Create a Java application
 
@@ -213,10 +209,10 @@ If you would like to learn more about other Azure storage APIs, follow these lin
 - [Azure Storage REST API]
 - [Azure Storage Team Blog]
 
-[Azure SDK for Java]: http://azure.microsoft.com/develop/java/
+[Azure SDK for Java]: /develop/java/
 [Azure Storage SDK for Java]: https://github.com/azure/azure-storage-java
 [Azure Storage SDK for Android]: https://github.com/azure/azure-storage-android
-[Azure Storage Client SDK Reference]: http://dl.windowsazure.com/storage/javadoc/
-[Azure Storage REST API]: http://msdn.microsoft.com/library/azure/gg433040.aspx
+[Azure Storage Client SDK Reference]: http://dl.windowsazure.cn/storage/javadoc/
+[Azure Storage REST API]: http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx
 [Azure Storage Team Blog]: http://blogs.msdn.com/b/windowsazurestorage/
  

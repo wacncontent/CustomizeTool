@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Role Based Access Control in Mobile Services using .NET and the Azure Active Directory (Windows Store) | Microsoft Azure"
+	pageTitle="Role Based Access Control in Mobile Services using .NET and the Azure Active Directory (Windows Store) | Windows Azure"
 	description="Learn how to control access based on Azure Active Directory roles in your Windows Store application using a Mobile Service with a .NET backend."
 	documentationCenter="windows"
 	authors="wesmc7777"
@@ -8,17 +8,13 @@
 	services="mobile-services"/>
 
 <tags
-	ms.service="mobile-services" 
-	ms.workload="mobile"
-	ms.tgt_pltfrm="mobile-multiple"
-	ms.devlang="dotnet"
-	ms.topic="article"
+	ms.service="mobile-services"
 	ms.date="09/03/2015"
-	ms.author="wesmc"/>
+	wacn.date=""/>
 
 # Role Based Access Control in Mobile Services using JavaScript and the Azure Active Directory
 
-[AZURE.INCLUDE [mobile-services-selector-rbac](../../includes/mobile-services-selector-rbac.md)]
+[AZURE.INCLUDE [mobile-services-selector-rbac](../includes/mobile-services-selector-rbac.md)]
 
 ##Overview
 
@@ -44,13 +40,13 @@ This tutorial requires the following:
 
 During the [Add Authentication to your app] tutorial, you created a registration for the integrated application when you completed the [Register to use an Azure Active Directory Login] step. In this section you generate a key to be used when reading directory information with that integrated application's client ID.
 
-[AZURE.INCLUDE [mobile-services-generate-aad-app-registration-access-key](../../includes/mobile-services-generate-aad-app-registration-access-key.md)]
+[AZURE.INCLUDE [mobile-services-generate-aad-app-registration-access-key](../includes/mobile-services-generate-aad-app-registration-access-key.md)]
 
 
 
 ##Create a Sales group with membership
 
-[AZURE.INCLUDE [mobile-services-aad-rbac-create-sales-group](../../includes/mobile-services-aad-rbac-create-sales-group.md)]
+[AZURE.INCLUDE [mobile-services-aad-rbac-create-sales-group](../includes/mobile-services-aad-rbac-create-sales-group.md)]
 
 
 
@@ -101,8 +97,8 @@ In this section you will create a new custom authorization attribute that can be
 	        private ApiServices services = null;
 
 	        // Constants used with ADAL and the Graph REST API for AAD
-	        private const string AadInstance = "https://login.windows.net/{0}";
-	        private const string GraphResourceId = "https://graph.windows.net/";
+	        private const string AadInstance = "https://login.chinacloudapi.cn/{0}";
+	        private const string GraphResourceId = "https://graph.chinacloudapi.cn/";
 	        private const string APIVersion = "?api-version=2013-04-05";
 
 	        // App settings pulled from the Mobile Service
@@ -367,7 +363,7 @@ In this section you will create a new custom authorization attribute that can be
 
 ##Test the client's access
 
-[AZURE.INCLUDE [mobile-services-aad-rbac-test-app](../../includes/mobile-services-aad-rbac-test-app.md)]
+[AZURE.INCLUDE [mobile-services-aad-rbac-test-app](../includes/mobile-services-aad-rbac-test-app.md)]
 
 
 
@@ -379,12 +375,12 @@ In this section you will create a new custom authorization attribute that can be
 [0]: ./media/mobile-services-dotnet-backend-windows-store-dotnet-aad-rbac/add-authorize-aad-role-class.png
 
 <!-- URLs. -->
-[Add Authentication to your app]: mobile-services-dotnet-backend-windows-universal-dotnet-get-started-users.md
-[How to Register with the Azure Active Directory]: mobile-services-how-to-register-active-directory-authentication.md
-[Azure Management Portal]: https://manage.windowsazure.com/
-[Directory Sync Scenarios]: http://msdn.microsoft.com/library/azure/jj573653.aspx
-[Store Server Scripts]: mobile-services-store-scripts-source-control.md
-[Register to use an Azure Active Directory Login]: mobile-services-how-to-register-active-directory-authentication.md
-[Graph REST API]: http://msdn.microsoft.com/library/azure/hh974478.aspx
-[IsMemberOf]: http://msdn.microsoft.com/library/azure/dn151601.aspx
-[ADAL for .NET]: https://msdn.microsoft.com/library/azure/jj573266.aspx
+[Add Authentication to your app]: /documentation/articles/mobile-services-dotnet-backend-windows-universal-dotnet-get-started-users
+[How to Register with the Azure Active Directory]: /documentation/articles/mobile-services-how-to-register-active-directory-authentication
+[Azure Management Portal]: https://manage.windowsazure.cn/
+[Directory Sync Scenarios]: http://msdn.microsoft.com/zh-cn/library/azure/jj573653.aspx
+[Store Server Scripts]: /documentation/articles/mobile-services-store-scripts-source-control
+[Register to use an Azure Active Directory Login]: /documentation/articles/mobile-services-how-to-register-active-directory-authentication
+[Graph REST API]: http://msdn.microsoft.com/zh-cn/library/azure/hh974478.aspx
+[IsMemberOf]: http://msdn.microsoft.com/zh-cn/library/azure/dn151601.aspx
+[ADAL for .NET]: https://msdn.microsoft.com/zh-cn/library/azure/jj573266.aspx

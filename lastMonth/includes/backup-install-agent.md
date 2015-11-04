@@ -2,7 +2,7 @@
 
 After creating the Azure Backup vault, an agent should be installed on each of your on-premises servers (Windows Server, Windows client or Data Protection Manager server) that enables back up of data and applications to Azure.
 
-1. Sign in to the [Management Portal](https://manage.windowsazure.cn)
+1. Sign in to the [Management Portal](https://manage.windowsazure.com/)
 
 2. Click **Recovery Services**, then select the backup vault that you want to register with a server. The Quick Start page for that backup vault appears.
 
@@ -38,9 +38,9 @@ After creating the Azure Backup vault, an agent should be installed on each of y
 
     > [AZURE.WARNING] If the passphrase is lost or forgotten; Microsoft cannot help in recovering the backup data. The end user owns the encryption passphrase and Microsoft does not have visibility into the passphrase used by the end user. Please save the file in a secure location as it is required during a recovery operation.
 
-10. Once you click the **Finish** button, the machine is registered successfully to the vault and you are now ready to start backing up to Windows Azure.
+10. Once you click the **Finish** button, the machine is registered successfully to the vault and you are now ready to start backing up to Microsoft Azure.
 
-11. When using Windows Azure Backup standalone you can modify the settings specified during the registration workflow by clicking on the **Change Properties** option in the Azure Backup mmc snap in.
+11. When using Microsoft Azure Backup standalone you can modify the settings specified during the registration workflow by clicking on the **Change Properties** option in the Azure Backup mmc snap in.
 
     ![Change Properties](./media/backup-install-agent/change.png)
 

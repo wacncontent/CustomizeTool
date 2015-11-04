@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Use PowerShell to Create a VM With a Native Mode Report Server | Microsoft Azure"
+	pageTitle="Use PowerShell to Create a VM With a Native Mode Report Server | Windows Azure"
 	description="This topic describes and walks you through the deployment and configuration of a SQL Server Reporting Services native mode report server in an Azure Virtual Machine. "
 	services="virtual-machines"
 	documentationCenter="na"
@@ -7,18 +7,14 @@
 	manager="jeffreyg"
 	editor="monicar" 
 	tags="azure-service-management"/>
-<tags 
+<tags
 	ms.service="virtual-machines"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.tgt_pltfrm="vm-windows-sql-server"
-	ms.workload="infrastructure-services"
 	ms.date="08/19/2015"
-	ms.author="jroth" />
+	wacn.date=""/>
 
 # Use PowerShell to Create an Azure VM With a Native Mode Report Server
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
  
 
 This topic describes and walks you through the deployment and configuration of a SQL Server Reporting Services native mode report server in an Azure Virtual Machine. The steps in this document use a combination of manual steps to create the virtual machine and a Windows PowerShell script to configure Reporting Services on the VM. The configuration script includes opening a firewall port for HTTP or HTTPs.
@@ -33,17 +29,17 @@ This topic describes and walks you through the deployment and configuration of a
 	
 	- To verify the core limit of your subscription, in the Azure Management Portal, click SETTINGS in the left pane and then Click USAGE in the top menu.
 	
-	- To increase the core quota, contact [Azure Support](http://azure.microsoft.com/support/options/). For VM size information, see [Virtual Machine Sizes for Azure](virtual-machines-size-specs.md).
+	- To increase the core quota, contact [Azure Support](http://azure.microsoft.com/support/options/). For VM size information, see [Virtual Machine Sizes for Azure](/documentation/articles/virtual-machines-size-specs).
 
 - **Windows PowerShell Scripting**: The topic assumes that you have a basic working knowledge of Windows PowerShell. For more information about using Windows PowerShell, see the following:
 
-	- [Starting Windows PowerShell on Windows Server](https://technet.microsoft.com/library/hh847814.aspx)
+	- [Starting Windows PowerShell on Windows Server](https://technet.microsoft.com/zh-cn/library/hh847814.aspx)
 	
-	- [Getting Started with Windows PowerShell](https://technet.microsoft.com/library/hh857337.aspx)
+	- [Getting Started with Windows PowerShell](https://technet.microsoft.com/zh-cn/library/hh857337.aspx)
 
 ## Step 1: Provision an Azure Virtual Machine
 
-1. Browse to the [Azure Management Portal](https://manage.windowsazure.com).
+1. Browse to the [Azure Management Portal](https://manage.windowsazure.cn).
 
 1. Click **Virtual Machines** in the left pane.
 
@@ -61,7 +57,7 @@ This topic describes and walks you through the deployment and configuration of a
 
 	![next](./media/virtual-machines-sql-server-create-native-mode-report-server-powershell/IC692021.gif)
 
-	If you need the Reporting Services data driven subscriptions feature, choose **SQL Server 2014 RTM Enterprise – Windows Server 2012 R2**. For more information on SQL Server editions and feature support, see [Features Supported by the Editions of SQL Server 2012](https://msdn.microsoft.com/library/cc645993.aspx#Reporting).
+	If you need the Reporting Services data driven subscriptions feature, choose **SQL Server 2014 RTM Enterprise – Windows Server 2012 R2**. For more information on SQL Server editions and feature support, see [Features Supported by the Editions of SQL Server 2012](https://msdn.microsoft.com/zh-cn/library/cc645993.aspx#Reporting).
 
 1. On the **Virtual machine configuration** page, edit the following fields:
 									
@@ -71,7 +67,7 @@ This topic describes and walks you through the deployment and configuration of a
 	
 	- **Tier**: Standard
 	
-	- **Size:A3** is the recommended VM size for SQL Server workloads. If a VM is only used as a report server, a VM size of A2 is sufficient unless the report server experiences a large workload. For VM pricing information, see [Virtual Machines Pricing](http://azure.microsoft.com/pricing/details/virtual-machines/).
+	- **Size:A3** is the recommended VM size for SQL Server workloads. If a VM is only used as a report server, a VM size of A2 is sufficient unless the report server experiences a large workload. For VM pricing information, see [Virtual Machines Pricing](/home/features/virtual-machines/#price).
 	
 	- **New User Name**: the name you provide is created as an administrator on the VM.
 	
@@ -95,7 +91,7 @@ This topic describes and walks you through the deployment and configuration of a
 
 		- **HTTP**: The default public and private ports are **80**. Note that if you use a private port other than 80, modify **$HTTPport = 80** in the http script.
 
-		- **HTTPS**: The default public and private ports are **443**. A security best practice is to change the private port and configure your firewall and the report server to use the private port. For more information on endpoints, see [How to Set Up Communication with a Virtual Machine](virtual-machines-set-up-endpoints.md). Note that if you use a port other than 443, change the parameter **$HTTPsport = 443** in the HTTPS script.
+		- **HTTPS**: The default public and private ports are **443**. A security best practice is to change the private port and configure your firewall and the report server to use the private port. For more information on endpoints, see [How to Set Up Communication with a Virtual Machine](/documentation/articles/virtual-machines-set-up-endpoints). Note that if you use a port other than 443, change the parameter **$HTTPsport = 443** in the HTTPS script.
 	
 	- Click next . ![next](./media/virtual-machines-sql-server-create-native-mode-report-server-powershell/IC692021.gif)
 
@@ -123,15 +119,15 @@ In order to use HTTPS on the VM, you need a trusted SSL certificate. Depending o
 
 	For more information about requesting a server certificates, see the following: 
 	
-	- Use [Certreq](https://technet.microsoft.com/library/cc725793.aspx), [Certreq](https://technet.microsoft.com/library/cc725793.aspx).
+	- Use [Certreq](https://technet.microsoft.com/zh-cn/library/cc725793.aspx), [Certreq](https://technet.microsoft.com/zh-cn/library/cc725793.aspx).
 	
 	- Security Tools to Administer Windows Server 2012.
 
-	[Security Tools to Administer Windows Server 2012](https://technet.microsoft.com/library/jj730960.aspx)
+	[Security Tools to Administer Windows Server 2012](https://technet.microsoft.com/zh-cn/library/jj730960.aspx)
 
 	>[AZURE.NOTE] The **issued to** field of the trusted SSL certificate should be the same as the **Cloud Service DNS NAME** you used for the new VM.
 
-1. **Install the server certificate on the Web server**. The Web server in this case is the VM that hosts the report server and the website is created in later steps when you configure Reporting Services. For more information about installing the server certificate on the Web server by using the Certificate MMC snap-in, see [Install a Server Certificate](https://technet.microsoft.com/library/cc740068).
+1. **Install the server certificate on the Web server**. The Web server in this case is the VM that hosts the report server and the website is created in later steps when you configure Reporting Services. For more information about installing the server certificate on the Web server by using the Certificate MMC snap-in, see [Install a Server Certificate](https://technet.microsoft.com/zh-cn/library/cc740068).
 	
 	If you want to use the script included with this topic, to configure the report server, the value of the certificates **Thumbprint** is required as a parameter of the script. See the next section for details on how to obtain the thumbprint of the certificate.
 
@@ -141,7 +137,7 @@ In order to use HTTPS on the VM, you need a trusted SSL certificate. Depending o
 
 A self-signed certificate was created on the VM when the VM was provisioned. The certificate has the same name as the VM DNS name. In order to avoid certificate errors, it is required that the certificate is trusted on the VM itself, and also by all users of the site.
 
-1. To trust the root CA of the certificate on the Local VM, add the certificate to the **Trusted Root Certification Authorities**. The following is a summary of the steps required. For detailed steps on how to trust the CA, see [Install a Server Certificate](https://technet.microsoft.com/library/cc740068).
+1. To trust the root CA of the certificate on the Local VM, add the certificate to the **Trusted Root Certification Authorities**. The following is a summary of the steps required. For detailed steps on how to trust the CA, see [Install a Server Certificate](https://technet.microsoft.com/zh-cn/library/cc740068).
 
 	1. From the Azure Management portal, select the VM and click connect. Depending on your browser configuration, you may be prompted to save an .rdp file for connecting to the VM.
 	
@@ -151,19 +147,19 @@ A self-signed certificate was created on the VM when the VM was provisioned. The
 		
 		![login inlcudes vm name](./media/virtual-machines-sql-server-create-native-mode-report-server-powershell/IC764111.png)
 	
-	1. Run mmc.exe. For more information, see [How to: View Certificates with the MMC Snap-in](https://msdn.microsoft.com/library/ms788967.aspx).
+	1. Run mmc.exe. For more information, see [How to: View Certificates with the MMC Snap-in](https://msdn.microsoft.com/zh-cn/library/ms788967.aspx).
 	
 	1. In the console application **File** menu, add the **Certificates** snap-in, select **Computer Account** when prompted, and then click **Next**.
 	
 	1. Select **Local Computer** to manage and then click **Finish**.
 	
-	1. Click **Ok** and then expand the **Certificates -Personal** nodes and then click **Certificates**. The certificate is named after the DNS name of the VM and ends with **cloudapp.net**. Right-click the certificate name and click **Copy**.
+	1. Click **Ok** and then expand the **Certificates -Personal** nodes and then click **Certificates**. The certificate is named after the DNS name of the VM and ends with **chinacloudapp.cn**. Right-click the certificate name and click **Copy**.
 	
 	1. Expand the **Trusted Root Certification Authorities** node and then right-click **Certificates** and then click **Paste**.
 	
 	1. To validate, double click on the certificate name under **Trusted Root Certification Authorities** and verify that there are no errors and you see your certificate. If you want to use the HTTPS script included with this topic, to configure the report server, the value of the certificates **Thumbprint** is required as a parameter of the script. **To get the thumbprint value**, complete the following. There is also a PowerShell sample to retrieve the thumbprint in section [Use script to configure the report server and HTTPS](#use-script-to-configure-the-report-server-and-HTTPS).
 		
-		1. Double-click the name of the certificate, for example ssrsnativecloud.cloudapp.net.
+		1. Double-click the name of the certificate, for example ssrsnativecloud.chinacloudapp.cn.
 		
 		1. Click the **Details** tab.
 		
@@ -185,7 +181,7 @@ This section walks you through configuring the VM as a Reporting Services native
 
 - Use Configuration Manager to Configure the Report Server.
 
-For more detailed steps, see the section [Connect to the Virtual Machine and Start the Reporting Services Configuration Manager](virtual-machines-sql-server-business-intelligence.md#connect-to-the-virtual-machine-and-start-the-reporting-services-configuration-manager).
+For more detailed steps, see the section [Connect to the Virtual Machine and Start the Reporting Services Configuration Manager](/documentation/articles/virtual-machines-sql-server-business-intelligence#connect-to-the-virtual-machine-and-start-the-reporting-services-configuration-manager).
 
 **Authentication Note:** Windows authentication is the recommended authentication method and it is the default Reporting Services authentication. Only users that are configured on the VM can access Reporting Services and assigned to Reporting Services roles.
 
@@ -360,7 +356,7 @@ To use Windows PowerShell to configure the report server, complete the following
 		$ErrorActionPreference = "Stop"
 		$httpsport=443 # modify if you used a different port number when the HTTPS endpoint was created.
 		
-		# You can run the following command to get (.cloudapp.net certificates) so you can copy the thumbprint / certificate hash
+		# You can run the following command to get (.chinacloudapp.cn certificates) so you can copy the thumbprint / certificate hash
 		#dir cert:\LocalMachine -rec | Select-Object * | where {$_.issuer -like "*cloudapp*" -and $_.pspath -like "*root*"} | select dnsnamelist, thumbprint, issuer
 		#
 		# The certifacte hash is a REQUIRED parameter
@@ -376,7 +372,7 @@ To use Windows PowerShell to configure the report server, complete the following
 		$server = $env:COMPUTERNAME
 		# If the certificate is not a wildcard certificate, comment out the following line, and enable the full $DNSNAme reference.
 		$DNSName="+"
-		#$DNSName="$server.cloudapp.net"
+		#$DNSName="$server.chinacloudapp.cn"
 		$DNSNameAndPort = $DNSName + ":$httpsport"
 		
 		## Utility method for verifying an operation's result
@@ -521,7 +517,7 @@ To use Windows PowerShell to configure the report server, complete the following
 	
 	- On the VM Run mmc.exe and then add the **Certificates** snap-in.
 	
-	- Under the **Trusted Root Certificate Authorities** node double-click your certificate name. If you are using the self-signed certificate of the VM, the certificate is named after the DNS name of the VM and ends with **cloudapp.net**.
+	- Under the **Trusted Root Certificate Authorities** node double-click your certificate name. If you are using the self-signed certificate of the VM, the certificate is named after the DNS name of the VM and ends with **chinacloudapp.cn**.
 	
 	- Click the **Details** tab.
 	
@@ -535,7 +531,7 @@ To use Windows PowerShell to configure the report server, complete the following
 
 1. Modify the **$DNSName** parameter: 
 
-	- The script is configured for a wild card certificate $DNSName="+". If you do no want to configure for a wildcard certificate binding, comment out $DNSName="+" and enable the following line, the full $DNSNAme reference, ##$DNSName="$server.cloudapp.net".
+	- The script is configured for a wild card certificate $DNSName="+". If you do no want to configure for a wildcard certificate binding, comment out $DNSName="+" and enable the following line, the full $DNSNAme reference, ##$DNSName="$server.chinacloudapp.cn".
 
 		Change the $DNSName value if you do not want to use the virtual machine’s DNS name for Reporting Services. If you use the parameter, the certificate must also use this name and you register the name globally on a DNS server.
 
@@ -571,7 +567,7 @@ If you do not want to run the PowerShell script to configure the report server, 
 
 1. By default, RS is configured for HTTP port 80 with IP “All Assigned”. To add HTTPS:
 
-	1. In **SSL Certificate**: select the certificate you want to use, for example [VM name].cloudapp.net. If no certificates are listed, see the section **Step 2: Create a Server Certificate** for information on how to install and trust the certificate on the VM.
+	1. In **SSL Certificate**: select the certificate you want to use, for example [VM name].chinacloudapp.cn. If no certificates are listed, see the section **Step 2: Create a Server Certificate** for information on how to install and trust the certificate on the VM.
 	
 	1. Under **SSL Port**: choose 443. If you configured the HTTPS private endpoint in the VM with a different private port, use that value here.
 	
@@ -603,7 +599,7 @@ If you do not want to run the PowerShell script to configure the report server, 
 
 To connect remotely to Report Manager or the Report Server on the virtual machine, a TCP Endpoint is required on the VM. It is required to open the same port in the VM’s firewall. The endpoint was created when the VM was provisioned.
 
-This section provides basic information on how to open the firewall port. For more information, see [Configure a Firewall for Report Server Access](https://technet.microsoft.com/library/bb934283.aspx)
+This section provides basic information on how to open the firewall port. For more information, see [Configure a Firewall for Report Server Access](https://technet.microsoft.com/zh-cn/library/bb934283.aspx)
 
 >[AZURE.NOTE] If you used the script to configure the report server, you can skip this section. The script included a step to open the firewall port.
 
@@ -635,27 +631,27 @@ To verify that the basic report server functionality is now working, open your b
 
 - From your local computer, browse to the **remote** report Manager on the VM. Update the DNS name in the following example as appropriate. When prompted for a password, use the administrator credentials you created when the VM was provisioned. The user name is in the [Domain]\[user name] format, where the domain is the VM computer name, for example ssrsnativecloud\testuser. If you are not using HTTP**S**, remove the **s** in the URL. See the next section for information on creating additional users on VM.
 
-		https://ssrsnativecloud.cloudapp.net/Reports
+		https://ssrsnativecloud.chinacloudapp.cn/Reports
 
 - From your local computer, browse to the remote report server URL. Update the DNS name in the following example as appropriate. If you are not using HTTPS, remove the s in the URL.
 
-		https://ssrsnativecloud.cloudapp.net/ReportServer
+		https://ssrsnativecloud.chinacloudapp.cn/ReportServer
 
 ## Create Users and Assign Roles
 
 After configuring and verifying the report server, a common administrative task is to create one or more users and assign users to Reporting Services roles. For more information, see the following:
 
-- [Create a local user account](https://technet.microsoft.com/library/cc770642.aspx)
+- [Create a local user account](https://technet.microsoft.com/zh-cn/library/cc770642.aspx)
 
-- [Grant User Access to a Report Server (Report Manager)](https://msdn.microsoft.com/library/ms156034.aspx))
+- [Grant User Access to a Report Server (Report Manager)](https://msdn.microsoft.com/zh-cn/library/ms156034.aspx))
 
-- [Create and Manage Role Assignments](https://msdn.microsoft.com/library/ms155843.aspx)
+- [Create and Manage Role Assignments](https://msdn.microsoft.com/zh-cn/library/ms155843.aspx)
 
 ## To Create and Publish Reports to the Azure Virtual Machine
 
-The following table summarizes some of the options available to publish existing reports from an on-premises computer to the report server hosted on the Microsoft Azure Virtual Machine:
+The following table summarizes some of the options available to publish existing reports from an on-premises computer to the report server hosted on the Windows Azure Virtual Machine:
 
-- **RS.exe script**: Use RS.exe script to copy report items from and existing report server to your Microsoft Azure Virtual Machine. For more information, see the section “Native mode to Native Mode – Microsoft Azure Virtual Machine” in [Sample Reporting Services rs.exe Script to Migrate Content between Report Servers](https://msdn.microsoft.com/library/dn531017.aspx).
+- **RS.exe script**: Use RS.exe script to copy report items from and existing report server to your Windows Azure Virtual Machine. For more information, see the section “Native mode to Native Mode – Windows Azure Virtual Machine” in [Sample Reporting Services rs.exe Script to Migrate Content between Report Servers](https://msdn.microsoft.com/zh-cn/library/dn531017.aspx).
 
 - **Report Builder**: The virtual machine includes the click-once version of Microsoft SQL Server Report Builder. To start Report builder the first time on the virtual machine:
 
@@ -663,7 +659,7 @@ The following table summarizes some of the options available to publish existing
 	
 	1. Browse to report manager on the virtual machine and click **Report Builder**  in the ribbon.
 
-	For more information, see [Installing, Uninstalling, and Supporting Report Builder](https://technet.microsoft.com/library/dd207038.aspx).
+	For more information, see [Installing, Uninstalling, and Supporting Report Builder](https://technet.microsoft.com/zh-cn/library/dd207038.aspx).
 
 - **SQL Server Data Tools: VM**:  If you created the VM with SQL Server 2012, then SQL Server Data Tools is installed on the virtual machine and can be used to create **Report Server Projects** and reports on the virtual machine. SQL Server Data Tools can publish the reports to the report server on the virtual machine.
 	
@@ -679,21 +675,21 @@ The following table summarizes some of the options available to publish existing
 
 	![ssdt project properties for SSRS project](./media/virtual-machines-sql-server-create-native-mode-report-server-powershell/IC650114.gif)
 
-- **Use script**: Use script to copy report server content. For more information, see [Sample Reporting Services rs.exe Script to Migrate Content between Report Servers](https://msdn.microsoft.com/library/dn531017.aspx).
+- **Use script**: Use script to copy report server content. For more information, see [Sample Reporting Services rs.exe Script to Migrate Content between Report Servers](https://msdn.microsoft.com/zh-cn/library/dn531017.aspx).
 
 ## Minimize cost if you are not using the VM
 
->[AZURE.NOTE] To minimize charges for your Azure Virtual Machines when not in use, shut down the VM from the Azure Management portal. If you use the Windows power options inside a VM to shut down the VM, you are still charged the same amount for the VM. To reduce charges, you need to shut down the VM in the Azure Management Portal. If you no longer need the VM, remember to delete the VM and the associated .vhd files to avoid storage charges.For more information, see the FAQ section at [Virtual Machines Pricing Details](http://azure.microsoft.com/pricing/details/virtual-machines).
+>[AZURE.NOTE] To minimize charges for your Azure Virtual Machines when not in use, shut down the VM from the Azure Management portal. If you use the Windows power options inside a VM to shut down the VM, you are still charged the same amount for the VM. To reduce charges, you need to shut down the VM in the Azure Management Portal. If you no longer need the VM, remember to delete the VM and the associated .vhd files to avoid storage charges.For more information, see the FAQ section at [Virtual Machines Pricing Details](/home/features/virtual-machines).
 
 ## More Information
 
 ### Resources
 
-- For similar content related to a single server deployment of SQL Server Business Intelligence and SharePoint 2013, see [Use Windows PowerShell to Create an Azure VM With SQL Server BI and SharePoint 2013](https://msdn.microsoft.com/library/azure/dn385843.aspx).
+- For similar content related to a single server deployment of SQL Server Business Intelligence and SharePoint 2013, see [Use Windows PowerShell to Create an Azure VM With SQL Server BI and SharePoint 2013](https:/#price/msdn.microsoft.com/zh-cn/library/azure/dn385843.aspx).
 
-- For similar content related to a multi-server deployment of SQL Server Business Intelligence and SharePoint 2013, see [Deploy SQL Server Business Intelligence in Azure Virtual Machines](https://msdn.microsoft.com/library/dn321998.aspx).
+- For similar content related to a multi-server deployment of SQL Server Business Intelligence and SharePoint 2013, see [Deploy SQL Server Business Intelligence in Azure Virtual Machines](https://msdn.microsoft.com/zh-cn/library/dn321998.aspx).
 
-- For General information related to deployments of SQL Server Business Intelligence in Azure Virtual Machines, see [SQL Server Business Intelligence in Azure Virtual Machines](virtual-machines-sql-server-business-intelligence.md).
+- For General information related to deployments of SQL Server Business Intelligence in Azure Virtual Machines, see [SQL Server Business Intelligence in Azure Virtual Machines](/documentation/articles/virtual-machines-sql-server-business-intelligence).
 
 - For more information about the cost of Azure compute charges, see the Virtual Machines tab of [Azure pricing calculator](http://azure.microsoft.com/pricing/calculator/?scenario=virtual-machines).
 
@@ -703,4 +699,4 @@ The following table summarizes some of the options available to publish existing
 
 ### Links to other resources for SQL Server in Azure VMs
 
-[SQL Server on Azure Virtual Machines Overview](virtual-machines-sql-server-infrastructure-services.md)
+[SQL Server on Azure Virtual Machines Overview](/documentation/articles/virtual-machines-sql-server-infrastructure-services)

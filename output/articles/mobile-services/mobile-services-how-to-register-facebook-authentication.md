@@ -7,22 +7,18 @@
 	manager="dwrede" 
 	editor=""/>
 
-<tags 
-	ms.service="mobile-services" 
-	ms.workload="mobile" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="multiple" 
-	ms.topic="article" 
-	ms.date="09/25/2015" 
-	ms.author="glenga"/>
+<tags
+	ms.service="mobile-services"
+	ms.date="09/25/2015"
+	wacn.date=""/>
 
 # Register your apps for Facebook authentication with Mobile Services
 
-[AZURE.INCLUDE [mobile-services-selector-register-identity-provider](../../includes/mobile-services-selector-register-identity-provider.md)]
+[AZURE.INCLUDE [mobile-services-selector-register-identity-provider](../includes/mobile-services-selector-register-identity-provider.md)]
 
 This topic shows you how to register your apps to be able to use Facebook to authenticate with Azure Mobile Services. 
 
->[AZURE.NOTE] This tutorial is about [Azure Mobile Services], a solution to help you build scalable mobile applications for any platform. Mobile Services makes it easy to sync data, authenticate users, and send push notifications. This page supports the [Get Started with Authentication](mobile-services-ios-get-started-users.md) tutorial which shows how to log users into your app. If this is your first experience with Mobile Services, please complete the tutorial [Get Started with Mobile Services](mobile-services-ios-get-started.md).
+>[AZURE.NOTE] This tutorial is about [Azure Mobile Services], a solution to help you build scalable mobile applications for any platform. Mobile Services makes it easy to sync data, authenticate users, and send push notifications. This page supports the [Get Started with Authentication](/documentation/articles/mobile-services-ios-get-started-users) tutorial which shows how to log users into your app. If this is your first experience with Mobile Services, please complete the tutorial [Get Started with Mobile Services](/documentation/articles/mobile-services-ios-get-started).
 	
 To complete the procedure in this topic, you must have a Facebook account that has a verified email address and a mobile phone number. To create a new Facebook account, go to [facebook.com](http://go.microsoft.com/fwlink/p/?LinkId=268285).
 
@@ -53,7 +49,7 @@ To complete the procedure in this topic, you must have a Facebook account that h
 8. Click the **Advanced** tab, type the URL of your mobile service appended with the path _/login/facebook_ in **Valid OAuth redirect URIs**, then click **Save Changes**. 
 	&nbsp;
 
-     >[AZURE.NOTE] For a .NET backend mobile service published to Azure by using Visual Studio, the redirect URL is the URL of your mobile service appended with the path _signin-facebook_ your mobile service as a .NET service, such as `https://todolist.azure-mobile.net/signin-facebook`.  
+     >[AZURE.NOTE] For a .NET backend mobile service published to Azure by using Visual Studio, the redirect URL is the URL of your mobile service appended with the path _signin-facebook_ your mobile service as a .NET service, such as `https://todolist.azure-mobile.cn/signin-facebook`.  
        
 
 9. Click **Status & Review** > **Yes** to enable general public access to your app.
@@ -72,6 +68,6 @@ You are now ready to use a Facebook login for authentication in your app by prov
 <!-- URLs. -->
 [Facebook Developers]: http://go.microsoft.com/fwlink/p/?LinkId=268286
 [Get started with authentication]: /develop/mobile/tutorials/get-started-with-users-dotnet/
-[Azure Management Portal]: https://manage.windowsazure.com/
+[Azure Management Portal]: https://manage.windowsazure.cn/
 [Azure Mobile Services]: http://azure.microsoft.com/services/mobile-services/
  

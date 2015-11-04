@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Get started with a Javascript mobile app after adding Mobile Services by using Visual Studio Connected Services | Microsoft Azure " 
+	pageTitle="Get started with a Javascript mobile app after adding Mobile Services by using Visual Studio Connected Services | Windows Azure " 
 	description="How to get started with Mobile Services in a JavaScript project in Visual Studio" 
 	services="mobile-services" 
 	documentationCenter="" 
@@ -7,20 +7,16 @@
 	manager="douge" 
 	editor=""/>
 
-<tags 
-	ms.service="mobile-services" 
-	ms.workload="mobile" 
-	ms.tgt_pltfrm="vs-getting-started" 
-	ms.devlang="JavaScript" 
-	ms.topic="article" 
-	ms.date="09/17/2015" 
-	ms.author="patshea"/>
+<tags
+	ms.service="mobile-services"
+	ms.date="09/17/2015"
+	wacn.date=""/>
 
 # Getting Started with with a Javascript mobile app after adding Azure Mobile Services by using Visual Studio Connected Services
 
 > [AZURE.SELECTOR]
-> - [Getting Started](vs-mobile-services-javascript-getting-started.md)
-> - [What Happened](vs-mobile-services-javascript-what-happened.md)
+> - [Getting Started](/documentation/articles/vs-mobile-services-javascript-getting-started)
+> - [What Happened](/documentation/articles/vs-mobile-services-javascript-what-happened)
 
 The first step you need to do in order to follow the code in these examples depends on what type of mobile service you connected to.
 
@@ -70,11 +66,11 @@ You can use the where method to modify the query. Here's an example that filters
         listItems.winControl.itemDataSource = todoItems.dataSource;
     });
 
-For more examples of queries you can use, see [query object](http://msdn.microsoft.com/library/azure/jj613353.aspx).
+For more examples of queries you can use, see [query object](http://msdn.microsoft.com/zh-cn/library/azure/jj613353.aspx).
 
 ##Update an entry
 
-Update a row in a data table. In this example, *todoItem* is the updated item, and *item* is the same item as returned from the mobile service. When the mobile service responds, the item is updated in the local todoItems list using the [splice](http://msdn.microsoft.com/library/windows/apps/Hh700810.aspx) method. Call the **done** method on the returned [Promise](https://msdn.microsoft.com/library/dn802826.aspx) object to get a copy of the inserted object and handle any errors.
+Update a row in a data table. In this example, *todoItem* is the updated item, and *item* is the same item as returned from the mobile service. When the mobile service responds, the item is updated in the local todoItems list using the [splice](http://msdn.microsoft.com/zh-cn/library/windows/apps/Hh700810.aspx) method. Call the **done** method on the returned [Promise](https://msdn.microsoft.com/zh-cn/library/dn802826.aspx) object to get a copy of the inserted object and handle any errors.
 
         todoTable.update(todoItem).done(function (item) {
             todoItems.splice(todoItems.indexOf(item), 1, item);
@@ -82,7 +78,7 @@ Update a row in a data table. In this example, *todoItem* is the updated item, a
 
 #####Delete an entry
 
-Delete a row in a data table. Call the [done]() method on the returned [Promise](https://msdn.microsoft.com/library/dn802826.aspx) object to get a copy of the inserted object and handle any errors.
+Delete a row in a data table. Call the [done]() method on the returned [Promise](https://msdn.microsoft.com/zh-cn/library/dn802826.aspx) object to get a copy of the inserted object and handle any errors.
 
 	todoTable.del(todoItem).done(function (item) {
 	    todoItems.splice(todoItems.indexOf(item), 1);
@@ -90,4 +86,4 @@ Delete a row in a data table. Call the [done]() method on the returned [Promise]
 
 
 
-[Learn more about mobile services](http://azure.microsoft.com/documentation/services/mobile-services/) 
+[Learn more about mobile services](/documentation/services/mobile-services/) 

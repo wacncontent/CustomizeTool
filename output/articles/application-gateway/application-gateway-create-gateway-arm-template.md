@@ -1,20 +1,16 @@
 
 <properties 
-   pageTitle="Create Application Gateway using Azure Resource Manager templates| Microsoft Azure"
+   pageTitle="Create Application Gateway using Azure Resource Manager templates| Windows Azure"
    description="This page provides instructions to create an Azure Application Gateway using Azure Resource Manager template"
    documentationCenter="na"
    services="application-gateway"
    authors="joaoma"
    manager="jdial"
    editor="tysonn"/>
-<tags 
-   ms.service="application-gateway"
-   ms.devlang="na"
-   ms.topic="hero-article" 
-   ms.tgt_pltfrm="na"
-   ms.workload="infrastructure-services" 
-   ms.date="09/21/2015"
-   ms.author="joaoma"/>
+<tags
+	ms.service="application-gateway"
+	ms.date="09/21/2015"
+	wacn.date=""/>
 
 
 # Create Application Gateway using ARM template
@@ -22,9 +18,9 @@
 Application Gateway is load balancer layer 7. It provides failover, performance routing HTTP requests between different servers, whether they are on the cloud or on premise. Application gateway has the following application delivery features: HTTP load balancing, Cookie based session affinity, SSL offload. 
 
 > [AZURE.SELECTOR]
-- [Azure Classic Powershell steps](application-gateway-create-gateway.md)
-- [Azure Resource Manager Powershell steps](application-gateway-create-gateway-arm.md)
-- [Azure Resource Manager template steps](application-gateway-create-gateway-arm-template.md)
+- [Azure Classic Powershell steps](/documentation/articles/application-gateway-create-gateway)
+- [Azure Resource Manager Powershell steps](/documentation/articles/application-gateway-create-gateway-arm)
+- [Azure Resource Manager template steps](/documentation/articles/application-gateway-create-gateway-arm-template)
 
 
 <BR>
@@ -34,7 +30,7 @@ You will learn how to download and modify and existing ARM template from GitHub,
 If you are simply deploying the ARM template directly from GitHub, without any changes, skip to deploy a template from github.
 
 
->[AZURE.IMPORTANT] Before you work with Azure resources, it's important to understand that Azure currently has two deployment models: Resource Manager, and classic. Make sure you understand [deployment models and tools](azure-classic-rm.md) before working with any Azure resource. You can view the documentation for different tools by clicking the tabs at the top of this article.This document will cover creating an Application Gateway using Azure Resource Manager. To use the classic version, go to [create an Application Gateway classic deployment using PowerShell](application-gateway-create-gateway.md).
+>[AZURE.IMPORTANT] Before you work with Azure resources, it's important to understand that Azure currently has two deployment models: Resource Manager, and classic. Make sure you understand [deployment models and tools](/documentation/articles/azure-classic-rm) before working with any Azure resource. You can view the documentation for different tools by clicking the tabs at the top of this article.This document will cover creating an Application Gateway using Azure Resource Manager. To use the classic version, go to [create an Application Gateway classic deployment using PowerShell](/documentation/articles/application-gateway-create-gateway).
 
 
 
@@ -97,7 +93,7 @@ You can download the existing ARM template for creating a VNet and two subnets f
 		   "contentVersion": "1.0.0.0",
 		   "parameters": {
 		     "location": {
-		       "value": "East US"
+		       "value": "China East"
 		     },
 		     "addressPrefix": {
 		      "value": "10.0.0.0/16"
@@ -124,7 +120,7 @@ You can download the existing ARM template for creating a VNet and two subnets f
  
 ## Deploy The ARM template by using PowerShell
 
-1. If you have never used Azure PowerShell, see [How to Install and Configure Azure PowerShell](powershell-install-configure.md) and follow the instructions all the way to the end to sign into Azure and select your subscription.
+1. If you have never used Azure PowerShell, see [How to Install and Configure Azure PowerShell](/documentation/articles/powershell-install-configure) and follow the instructions all the way to the end to sign into Azure and select your subscription.
 2. From an Azure PowerShell prompt, run the  **Switch-AzureMode** cmdlet to switch to Resource Manager mode, as shown below.
 
 		Switch-AzureMode AzureResourceManager
@@ -135,9 +131,9 @@ Expected output:
 
 >[AZURE.WARNING] The Switch-AzureMode cmdlet will be deprecated soon. When that happens, all Resource Manager cmdlets will be renamed.
 	
-3. If needed, create a new resource group using `New-AzureResourceGroup` cmdlet.In the example below, you will create a new resource group called AppgatewayRG in East US location:
+3. If needed, create a new resource group using `New-AzureResourceGroup` cmdlet.In the example below, you will create a new resource group called AppgatewayRG in China East location:
 
-		PS C:\> New-AzureResourceGroup -Name AppgatewayRG -Location "East US"
+		PS C:\> New-AzureResourceGroup -Name AppgatewayRG -Location "China East"
 		VERBOSE: 5:38:49 PM - Created resource group 'AppgatewayRG' in location 'eastus'
 
 
@@ -168,7 +164,7 @@ The output generated by the command line will be the following:
 		Parameters        :
                    Name             Type                       Value
                    ===============  =========================  ==========
-                   location         String                     East US
+                   location         String                     China East
                    addressPrefix    String                     10.0.0.0/16
                    subnetPrefix     String                     10.0.0.0/24
                    skuName          String                     Standard_Small
@@ -183,7 +179,7 @@ The output generated by the command line will be the following:
 
 To deploy the ARM template you downloaded by using Azure CLI, follow the steps below.
 
-1. If you have never used Azure CLI, see [Install and Configure the Azure CLI](xplat-cli-install.md) and follow the instructions up to the point where you select your Azure account and subscription.
+1. If you have never used Azure CLI, see [Install and Configure the Azure CLI](/documentation/articles/xplat-cli-install) and follow the instructions up to the point where you select your Azure account and subscription.
 2. Run the **azure config mode** command to switch to Resource Manager mode, as shown below.
 
 		azure config mode arm
@@ -192,7 +188,7 @@ Here is the expected output for the command above:
 
 		info:	New mode is arm
 
-3. If necessary, run the **azure group create** to create a new resource group, as shown below. Notice the output of the command. The list shown after the output explains the parameters used. For more information about resource groups, visit [Azure Resource Manager Overview](resource-group-overview.md).
+3. If necessary, run the **azure group create** to create a new resource group, as shown below. Notice the output of the command. The list shown after the output explains the parameters used. For more information about resource groups, visit [Azure Resource Manager Overview](/documentation/articles/resource-group-overview).
 
 		azure group create -n appgatewayRG -l eastus
 
@@ -219,7 +215,7 @@ Here is the expected output for the command above:
 		data:    Mode               : Incremental
 		data:    Name               Type    Value
 		data:    -----------------  ------  --------------
-		data:    location           String  East US
+		data:    location           String  China East
 		data:    addressPrefix      String  10.0.0.0/16
 		data:    subnetPrefix       String  10.0.0.0/24	
 		data:    skuName            String  Standard_Small
@@ -236,7 +232,7 @@ Here is the expected output for the command above:
 
 ## Deploy ARM template using click to deploy
 
-Click to deploy is another way to use ARM templates. It's an easy way to use templates with the Azure portal. 
+Click to deploy is another way to use ARM templates. It's an easy way to use templates with the Azure Management Portal. 
 
 
 ### Step 1 
@@ -267,11 +263,11 @@ On "custom deployment" blade, click "create".
  
 ## Next steps
 
-If you want to configure SSL offload, see [Configure Application Gateway for SSL offload](application-gateway-ssl.md).
+If you want to configure SSL offload, see [Configure Application Gateway for SSL offload](/documentation/articles/application-gateway-ssl).
 
-If you want to configure an Application Gateway to use with ILB, see [Create an Application Gateway with an Internal Load Balancer (ILB)](application-gateway-ilb.md).
+If you want to configure an Application Gateway to use with ILB, see [Create an Application Gateway with an Internal Load Balancer (ILB)](/documentation/articles/application-gateway-ilb).
 
 If you want more information about load balancing options in general, see:
 
-- [Azure Load Balancer](https://azure.microsoft.com/documentation/services/load-balancer/)
-- [Azure Traffic Manager](https://azure.microsoft.com/documentation/services/traffic-manager/)
+- [Azure Load Balancer](/documentation/services/load-balancer/)
+- [Azure Traffic Manager](/documentation/services/traffic-manager/)

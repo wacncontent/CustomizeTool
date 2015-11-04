@@ -1,5 +1,5 @@
 <properties
-    pageTitle="Get started with table storage and Visual Studio connected services (cloud services) | Microsoft Azure"
+    pageTitle="Get started with table storage and Visual Studio connected services (cloud services) | Windows Azure"
 	description="How to get started using Azure Table storage in a cloud service project in Visual Studio after connecting to a storage account using Visual Studio connected services"
 	services="storage"
 	documentationCenter=""
@@ -9,23 +9,19 @@
 
 <tags
 	ms.service="storage"
-	ms.workload="web"
-	ms.tgt_pltfrm="vs-getting-started"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="09/03/2015"
-	ms.author="patshea"/>
+	wacn.date=""/>
 
 # Getting started with Azure table storage and Visual Studio connected services (cloud services projects)
 
 > [AZURE.SELECTOR]
-> - [Getting started](vs-storage-cloud-services-getting-started-tables.md)
-> - [What happened](vs-storage-cloud-services-what-happened.md)
+> - [Getting started](/documentation/articles/vs-storage-cloud-services-getting-started-tables)
+> - [What happened](/documentation/articles/vs-storage-cloud-services-what-happened)
 
 > [AZURE.SELECTOR]
-> - [Blobs](vs-storage-cloud-services-getting-started-blobs.md)
-> - [Queues](vs-storage-cloud-services-getting-started-queues.md)
-> - [Tables](vs-storage-cloud-services-getting-started-tables.md)
+> - [Blobs](/documentation/articles/vs-storage-cloud-services-getting-started-blobs)
+> - [Queues](/documentation/articles/vs-storage-cloud-services-getting-started-queues)
+> - [Tables](/documentation/articles/vs-storage-cloud-services-getting-started-tables)
 
 ##Overview
 
@@ -33,13 +29,13 @@ This article describes how to get started using Azure table storage in Visual St
 
 The Azure Table storage service enables you to store large amounts of structured data. The service is a NoSQL datastore that accepts authenticated calls from inside and outside the Azure cloud. Azure tables are ideal for storing structured, non-relational data.
 
-To get started, you first need to create a table in your storage account. We'll show you how to create an Azure table in code, and also how to perform basic table and entity operations, such as adding, modifying, reading and reading table entities. The samples are written in C\# code and use the [Azure Storage client library for .NET](https://msdn.microsoft.com/library/azure/dn261237.aspx).
+To get started, you first need to create a table in your storage account. We'll show you how to create an Azure table in code, and also how to perform basic table and entity operations, such as adding, modifying, reading and reading table entities. The samples are written in C\# code and use the [Azure Storage client library for .NET](https://msdn.microsoft.com/zh-cn/library/azure/dn261237.aspx).
 
-**NOTE:** Some of the APIs that perform calls out to Azure storage are asynchronous. See [Asynchronous programming with Async and Await](http://msdn.microsoft.com/library/hh191443.aspx) for more information. The code below assumes async programming methods are being used.
+**NOTE:** Some of the APIs that perform calls out to Azure storage are asynchronous. See [Asynchronous programming with Async and Await](http://msdn.microsoft.com/zh-cn/library/hh191443.aspx) for more information. The code below assumes async programming methods are being used.
 
-- See [How to use Table storage from .NET](storage-dotnet-how-to-use-tables.md) for more information on programmatically manipulating tables.
-- See [Storage documentation](https://azure.microsoft.com/documentation/services/storage/) for general information about Azure Storage.
-- See [Cloud Services documentation](http://azure.microsoft.com/documentation/services/cloud-services/) for general information about Azure cloud services.
+- See [How to use Table storage from .NET](/documentation/articles/storage-dotnet-how-to-use-tables) for more information on programmatically manipulating tables.
+- See [Storage documentation](/documentation/services/storage/) for general information about Azure Storage.
+- See [Cloud Services documentation](/documentation/services/cloud-services/) for general information about Azure cloud services.
 - See [ASP.NET](http://www.asp.net) for more information about programming ASP.NET applications.
 
 ## Access tables in code
@@ -276,4 +272,4 @@ You can delete an entity after you find it. The following code looks for a custo
 
 ## Next steps
 
-[AZURE.INCLUDE [vs-storage-dotnet-blobs-next-steps](../../includes/vs-storage-dotnet-blobs-next-steps.md)]
+[AZURE.INCLUDE [vs-storage-dotnet-blobs-next-steps](../includes/vs-storage-dotnet-blobs-next-steps.md)]

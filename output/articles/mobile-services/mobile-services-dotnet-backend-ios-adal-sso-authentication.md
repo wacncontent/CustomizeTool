@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Authenticate your app with Active Directory Authentication Library Single Sign-On (iOS) | Microsoft Azure"
+	pageTitle="Authenticate your app with Active Directory Authentication Library Single Sign-On (iOS) | Windows Azure"
 	description="Learn how to authentication users for single sign-on with ADAL in your iOS application."
 	documentationCenter="ios"
 	authors="mattchenderson"
@@ -9,16 +9,12 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.workload="mobile"
-	ms.tgt_pltfrm="mobile-ios"
-	ms.devlang="objective-c"
-	ms.topic="article"
-	ms.date="08/18/2015" 
-	ms.author="mahender"/>
+	ms.date="08/18/2015"
+	wacn.date=""/>
 
 # Authenticate your app with Active Directory Authentication Library Single Sign-On
 
-[AZURE.INCLUDE [mobile-services-selector-adal-sso](../../includes/mobile-services-selector-adal-sso.md)]
+[AZURE.INCLUDE [mobile-services-selector-adal-sso](../includes/mobile-services-selector-adal-sso.md)]
 
 ##Overview
 
@@ -37,14 +33,14 @@ This tutorial requires the following:
 
 * XCode 4.5 and iOS 6.0 (or later versions)
 * Completion of the [Get started with Mobile Services] tutorial.
-* Microsoft Azure Mobile Services SDK
+* Windows Azure Mobile Services SDK
 * The [Active Directory Authentication Library for iOS]
 
-[AZURE.INCLUDE [mobile-services-dotnet-adal-register-client](../../includes/mobile-services-dotnet-adal-register-client.md)]
+[AZURE.INCLUDE [mobile-services-dotnet-adal-register-client](../includes/mobile-services-dotnet-adal-register-client.md)]
 
 ##Configure the mobile service to require authentication
 
-[AZURE.INCLUDE [mobile-services-restrict-permissions-dotnet-backend](../../includes/mobile-services-restrict-permissions-dotnet-backend.md)]
+[AZURE.INCLUDE [mobile-services-restrict-permissions-dotnet-backend](../includes/mobile-services-restrict-permissions-dotnet-backend.md)]
 
 ##Add authentication code to the client app
 
@@ -90,13 +86,13 @@ This tutorial requires the following:
         }
 
 
-6. In the code for the `loginAndGetData` method above, replace **INSERT-AUTHORITY-HERE** with the name of the tenant in which you provisioned your application, the format should be https://login.windows.net/tenant-name.onmicrosoft.com. This value can be copied out of the Domain tab in your Azure Active Directory in the [Azure Management Portal].
+6. In the code for the `loginAndGetData` method above, replace **INSERT-AUTHORITY-HERE** with the name of the tenant in which you provisioned your application, the format should be https://login.chinacloudapi.cn/tenant-name.partner.onmschina.cn. This value can be copied out of the Domain tab in your Azure Active Directory in the [Azure Management Portal].
 
-7. In the code for the `loginAndGetData` method above, replace **INSERT-RESOURCE-URI-HERE** with the **App ID URI** for your mobile service. If you followed the [How to Register with the Azure Active Directory] topic your App ID URI should be similar to https://todolist.azure-mobile.net/login/aad.
+7. In the code for the `loginAndGetData` method above, replace **INSERT-RESOURCE-URI-HERE** with the **App ID URI** for your mobile service. If you followed the [How to Register with the Azure Active Directory] topic your App ID URI should be similar to https://todolist.azure-mobile.cn/login/aad.
 
 8. In the code for the `loginAndGetData` method above, replace **INSERT-CLIENT-ID-HERE** with the client ID you copied from the native client application.
 
-9. In the code for the `loginAndGetData` method above, replace **INSERT-REDIRECT-URI-HERE** with the /login/done endpoint for your mobile service. This should be similar to https://todolist.azure-mobile.net/login/done.
+9. In the code for the `loginAndGetData` method above, replace **INSERT-REDIRECT-URI-HERE** with the /login/done endpoint for your mobile service. This should be similar to https://todolist.azure-mobile.cn/login/done.
 
 
 3. In the QSTodoListViewController, modify `ViewDidLoad` by replacing `[self refresh]` with the following:
@@ -114,7 +110,7 @@ This tutorial requires the following:
 
 
 <!-- URLs. -->
-[Get started with Mobile Services]: mobile-services-dotnet-backend-ios-get-started.md
-[How to Register with the Azure Active Directory]: mobile-services-how-to-register-active-directory-authentication.md
-[Azure Management Portal]: https://manage.windowsazure.com/
+[Get started with Mobile Services]: /documentation/articles/mobile-services-dotnet-backend-ios-get-started
+[How to Register with the Azure Active Directory]: /documentation/articles/mobile-services-how-to-register-active-directory-authentication
+[Azure Management Portal]: https://manage.windowsazure.cn/
 [Active Directory Authentication Library for iOS]: https://github.com/MSOpenTech/azure-activedirectory-library-for-ios

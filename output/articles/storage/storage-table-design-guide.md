@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Azure Storage Table Design Guide | Microsoft Azure"
+   pageTitle="Azure Storage Table Design Guide | Windows Azure"
    description="Design Scalable and Performant Tables in Azure Table Storage"
    services="storage"
    documentationCenter="na"
@@ -8,13 +8,9 @@
    editor=""/>
 
 <tags
-   ms.service="storage"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="storage"
-   ms.date="08/03/2015"
-   ms.author="tamram"/>
+	ms.service="storage"
+	ms.date="08/03/2015"
+	wacn.date=""/>
 
 # Azure Storage Table Design Guide: Designing Scalable and Performant Tables
 
@@ -24,7 +20,7 @@ To design scalable and performant tables you must consider a number of factors s
 
 ## About the Azure Table service
 
-This section highlights some of the key features of the Table service that are especially relevant to designing for performance and scalability. If you are new to Azure Storage and the Table service, first read [Introduction to Microsoft Azure Storage](storage-introduction.md) and [How to use Table Storage from .NET](storage-dotnet-how-to-use-tables.md) before reading the remainder of this article. Although the focus of this guide is on the Table service, it will include some discussion of the Azure Queue and Blob services, and how you might use them along with the Table service in a solution.  
+This section highlights some of the key features of the Table service that are especially relevant to designing for performance and scalability. If you are new to Azure Storage and the Table service, first read [Introduction to Windows Azure Storage](/documentation/articles/storage-introduction) and [How to use Table Storage from .NET](/documentation/articles/storage-dotnet-how-to-use-tables) before reading the remainder of this article. Although the focus of this guide is on the Table service, it will include some discussion of the Azure Queue and Blob services, and how you might use them along with the Table service in a solution.  
 
 What is the Table service? As you might expect from the name, the Table service uses a tabular format to store data. In the standard terminology, each row of the table represents an entity, and the columns store the various properties of that entity. Every entity has a pair of keys to uniquely identify it, and a timestamp column that the Table service uses to track when the entity was last updated (this happens automatically and you cannot manually overwrite the timestamp with an arbitrary value). The Table service uses this last-modified timestamp (LMT) to manage optimistic concurrency.  
 
@@ -120,24 +116,24 @@ The following example shows a simple table design to store employee and departme
 </table>
 
 
-So far, this looks very similar to a table in a relational database with the key differences being the mandatory columns, and the ability to store multiple entity types in the same table. In addition, each of the user-defined properties such as **FirstName** or **Age** has a data type, such as integer or string, just like a column in a relational database. Although unlike in a relational database, the schema-less nature of the Table service means that a property need not have the same data type on each entity. To store complex data types in a single property, you must use a serialized format such as JSON or XML. For more information about the table service such as supported data types, supported date ranges, naming rules, and size constraints, see [Understanding the Table Service Data Model](http://msdn.microsoft.com/library/azure/dd179338.aspx) on MSDN.
+So far, this looks very similar to a table in a relational database with the key differences being the mandatory columns, and the ability to store multiple entity types in the same table. In addition, each of the user-defined properties such as **FirstName** or **Age** has a data type, such as integer or string, just like a column in a relational database. Although unlike in a relational database, the schema-less nature of the Table service means that a property need not have the same data type on each entity. To store complex data types in a single property, you must use a serialized format such as JSON or XML. For more information about the table service such as supported data types, supported date ranges, naming rules, and size constraints, see [Understanding the Table Service Data Model](http://msdn.microsoft.com/zh-cn/library/azure/dd179338.aspx) on MSDN.
 
 As you will see, your choice of **PartitionKey** and **RowKey** is fundamental to good table design. Every entity stored in a table must have a unique combination of **PartitionKey** and **RowKey**. As with keys in a relational database table, the **PartitionKey** and **RowKey** values are indexed to create a clustered index that enables fast look-ups; however, the Table service does not create any secondary indexes so these are the only two indexed properties (some of the patterns described later show how you can work around this apparent limitation).  
 
 A table is made up of one or more partitions, and as you will see, many of the design decisions you make will be around choosing a suitable **PartitionKey** and **RowKey** to optimize your solution. A solution could consist of just a single table that contains all your entities organized into partitions, but typically a solution will have multiple tables. Tables help you to logically organize your entities, help you manage access to the data using access control lists, and you can drop an entire table using a single storage operation.  
 
 ### Table partitions  
-The account name, table name and **PartitionKey** together identify the partition within the storage service where the table service stores the entity. As well as being part of the addressing scheme for entities, partitions define a scope for transactions (see [Entity Group Transactions](#entity-group-transactions) below), and form the basis of how the table service scales. For more information on partitions see [Azure Storage Scalability and Performance Targets](http://msdn.microsoft.com/library/azure/dn249410.aspx).  
+The account name, table name and **PartitionKey** together identify the partition within the storage service where the table service stores the entity. As well as being part of the addressing scheme for entities, partitions define a scope for transactions (see [Entity Group Transactions](#entity-group-transactions) below), and form the basis of how the table service scales. For more information on partitions see [Azure Storage Scalability and Performance Targets](http://msdn.microsoft.com/zh-cn/library/azure/dn249410.aspx).  
 
 In the Table service, an individual node services one or more complete partitions and the service scales by dynamically load-balancing partitions across nodes. If a node is under load, the table service can *split* the range of partitions serviced by that node onto different nodes; when traffic subsides, the service can *merge* the partition ranges from quiet nodes back onto a single node.  
 
-For more information about the internal details of the Table service, and in particular how the service manages partitions, see the paper [Microsoft Azure Storage: A Highly Available
+For more information about the internal details of the Table service, and in particular how the service manages partitions, see the paper [Windows Azure Storage: A Highly Available
 Cloud Storage Service with Strong Consistency](http://blogs.msdn.com/b/windowsazurestorage/archive/2011/11/20/windows-azure-storage-a-highly-available-cloud-storage-service-with-strong-consistency.aspx).  
 
 ### Entity Group Transactions
 In the Table service, Entity Group Transactions (EGTs) are the only built-in mechanism for performing atomic updates across multiple entities. EGTs are also referred to as *batch transactions* in some documentation. EGTs can only operate on entities stored in the same partition (share the same partition key in a given table), so anytime you need atomic transactional behavior across multiple entities you need to ensure that those entities are in the same partition. This is often a reason for keeping multiple entity types in the same table (and partition) and not using multiple tables for different entity types. A single EGT can operate on at most 100 entities.  If you submit multiple concurrent EGTs for processing it is important to ensure  those EGTs do not operate on entities that are common across EGTs as otherwise processing can be delayed.
 
-EGTs also introduce a potential trade-off for you to evaluate in your design: using more partitions will increase the scalability of your application because Azure has more opportunities for load balancing requests across nodes, but this might limit the ability of your application to perform atomic transactions and maintain strong consistency for your data. Furthermore, there are specific scalability targets at the level of a partition that might limit the throughput of transactions you can expect for a single node: for more information about the scalability targets for Azure storage accounts and the table service, see [Azure Storage Scalability and Performance Targets](http://msdn.microsoft.com/library/azure/dd179338.aspx) on MSDN. Later sections of this guide discuss various design strategies that help you manage trade-offs such as this one, and discuss how best to choose your partition key based on the specific requirements of your client application.  
+EGTs also introduce a potential trade-off for you to evaluate in your design: using more partitions will increase the scalability of your application because Azure has more opportunities for load balancing requests across nodes, but this might limit the ability of your application to perform atomic transactions and maintain strong consistency for your data. Furthermore, there are specific scalability targets at the level of a partition that might limit the throughput of transactions you can expect for a single node: for more information about the scalability targets for Azure storage accounts and the table service, see [Azure Storage Scalability and Performance Targets](http://msdn.microsoft.com/zh-cn/library/azure/dd179338.aspx) on MSDN. Later sections of this guide discuss various design strategies that help you manage trade-offs such as this one, and discuss how best to choose your partition key based on the specific requirements of your client application.  
 
 ### Capacity considerations
 The following table includes some of the key values to be aware of when you are designing a Table service solution:  
@@ -152,13 +148,13 @@ The following table includes some of the key values to be aware of when you are 
 | Size of the **RowKey** | A string up to 1 KB in size |
 |Size of an Entity Group Transaction | A transaction can include at most 100 entities and the payload must be less than 4 MB in size. An EGT can only update an entity once. |
 
-For more information, see [Understanding the Table Service Data Model](http://msdn.microsoft.com/library/azure/dd179338.aspx) on MSDN.  
+For more information, see [Understanding the Table Service Data Model](http://msdn.microsoft.com/zh-cn/library/azure/dd179338.aspx) on MSDN.  
 
 ### Cost considerations  
-Table storage is relatively inexpensive, but you should include cost estimates for both capacity usage and the quantity of transactions as part of your evaluation of any solution that uses the Table service. However, in many scenarios storing denormalized or duplicate data in order to improve the performance or scalability of your solution is a valid approach to take. For more information about pricing, see [Storage Pricing Details](http://azure.microsoft.com/pricing/details/storage/).  
+Table storage is relatively inexpensive, but you should include cost estimates for both capacity usage and the quantity of transactions as part of your evaluation of any solution that uses the Table service. However, in many scenarios storing denormalized or duplicate data in order to improve the performance or scalability of your solution is a valid approach to take. For more information about pricing, see [Storage Pricing Details](/home/features/storage/#price).  
 
 ### Comparing Azure Tables and SQL Azure  
-For a comparison between Azure SQL Database (a relational database service) and the Table service, see [Microsoft Azure Table Storage and Microsoft Azure SQL Database - Compared and Contrasted](http://msdn.microsoft.com/library/azure/jj553018.aspx) on MSDN.  
+For a comparison between Azure SQL Database (a relational database service) and the Table service, see [Windows Azure Table Storage and Windows Azure SQL Database - Compared and Contrasted](http://msdn.microsoft.com/zh-cn/library/azure/jj553018.aspx) on MSDN.  
 
 ## Guidelines for table design  
 These lists summarize some of the key guidelines you should keep in mind when you are designing your tables, and this guide will address them all in more detail later in. These guidelines are very different from the guidelines you would typically follow for relational database design.  
@@ -208,7 +204,7 @@ The following examples assume the table service is storing employee entities wit
 |**Age**|Integer|
 |**EmailAddress**|String|
 
-The earlier section [Azure Table service overview](#azure-table-service-overview) describes some of the key features of the Azure Table service that have a direct influence on designing for query. These result in the following general guidelines for designing Table service queries. Note that the filter syntax used in the examples below is from the Table service REST API, for more information see [Query Entities](http://msdn.microsoft.com/library/azure/dd179421.aspx) on MSDN.  
+The earlier section [Azure Table service overview](#azure-table-service-overview) describes some of the key features of the Azure Table service that have a direct influence on designing for query. These result in the following general guidelines for designing Table service queries. Note that the filter syntax used in the examples below is from the Table service REST API, for more information see [Query Entities](http://msdn.microsoft.com/zh-cn/library/azure/dd179421.aspx) on MSDN.  
 
 -	A ***Point Query*** is the most efficient lookup to use and is recommended to be used for high-volume lookups or lookups requiring lowest latency. Such a query can use the indexes to locate an individual entity very efficiently by specifying both the **PartitionKey** and **RowKey** values. For example:
 $filter=(PartitionKey eq 'Sales') and (RowKey eq '2')  
@@ -414,7 +410,7 @@ In previous sections, you have seen some detailed discussions about how to optim
 
 ![][5]
 
-The pattern map above highlights some relationships between patterns (blue) and anti-patterns (orange) that are documented in this guide. There are of course many other patterns that are worth considering. For example, one of the key scenarios for Table Service is to store [Materialized Views](https://msdn.microsoft.com/library/azure/dn589782.aspx) from the [Command Query Responsibility Segregation](https://msdn.microsoft.com/library/azure/jj554200.aspx) (CQRS) pattern.  
+The pattern map above highlights some relationships between patterns (blue) and anti-patterns (orange) that are documented in this guide. There are of course many other patterns that are worth considering. For example, one of the key scenarios for Table Service is to store [Materialized Views](https://msdn.microsoft.com/zh-cn/library/azure/dn589782.aspx) from the [Command Query Responsibility Segregation](https://msdn.microsoft.com/zh-cn/library/azure/jj554200.aspx) (CQRS) pattern.  
 
 ### Intra-partition secondary index pattern
 Store multiple copies of each entity using different **RowKey** values (in the same partition) to enable fast and efficient lookups and alternate sort orders by using different **RowKey** values. Updates between copies can be kept consistent using EGT’s.  
@@ -443,7 +439,7 @@ $filter=(PartitionKey eq 'Sales') and (RowKey ge 'empid_000100') and (RowKey le 
 -	To find all the employees in the Sales department with an email address starting with the letter 'a' use:
 $filter=(PartitionKey eq 'Sales') and (RowKey ge 'email_a') and (RowKey lt 'email_b')  
 
- Note that the filter syntax used in the examples above is from the Table service REST API, for more information see [Query Entities](http://msdn.microsoft.com/library/azure/dd179421.aspx) on MSDN.  
+ Note that the filter syntax used in the examples above is from the Table service REST API, for more information see [Query Entities](http://msdn.microsoft.com/zh-cn/library/azure/dd179421.aspx) on MSDN.  
 
 #### Issues and considerations  
 
@@ -502,7 +498,7 @@ $filter=(PartitionKey eq 'empid_Sales') and (RowKey ge '000100') and (RowKey le 
 -	To find all the employees in the Sales department with an email address that starts with 'a' sorted in email address order use:
 $filter=(PartitionKey eq 'email_Sales') and (RowKey ge 'a') and (RowKey lt 'b')  
 
-Note that the filter syntax used in the examples above is from the Table service REST API, for more information see [Query Entities](http://msdn.microsoft.com/library/azure/dd179421.aspx) on MSDN.  
+Note that the filter syntax used in the examples above is from the Table service REST API, for more information see [Query Entities](http://msdn.microsoft.com/zh-cn/library/azure/dd179421.aspx) on MSDN.  
 
 #### Issues and considerations  
 Consider the following points when deciding how to implement this pattern:  
@@ -557,7 +553,7 @@ In this example, step 4 inserts the employee into the **Archive** table. It coul
 
 It is important that the operations in steps **4** and **5** must be *idempotent* in case the worker role needs to restart the archive operation. If you are using the Table service, for step **4** you should use an "insert or replace" operation; for step **5** you should use a "delete if exists" operation in the client library you are using. If you are using another storage system, you must use an appropriate idempotent operation.  
 
-If the worker role never completes step **6**, then after a timeout the message reappears on the queue ready for the worker role to try to reprocess it. The worker role can check how many times a message on the queue has been read and, if necessary, flag it is a "poison" message for investigation by sending it to a separate queue. For more information about reading queue messages and checking the dequeue count, see [Get Messages](https://msdn.microsoft.com/library/azure/dd179474.aspx).  
+If the worker role never completes step **6**, then after a timeout the message reappears on the queue ready for the worker role to try to reprocess it. The worker role can check how many times a message on the queue has been read and, if necessary, flag it is a "poison" message for investigation by sending it to a separate queue. For more information about reading queue messages and checking the dequeue count, see [Get Messages](https://msdn.microsoft.com/zh-cn/library/azure/dd179474.aspx).  
 
 Some errors from the Table and Queue services are transient errors, and your client application should include suitable retry logic to handle them.  
 
@@ -757,7 +753,7 @@ You can get back to the date time value using the following code:
 
 The table query looks like this:  
 
-`https://myaccount.table.core.windows.net/EmployeeExpense(PartitionKey='empid')?$top=10`  
+`https://myaccount.table.core.chinacloudapi.cn/EmployeeExpense(PartitionKey='empid')?$top=10`  
 
 #### Issues and considerations  
 
@@ -1059,7 +1055,7 @@ An optimal query returns an individual entity based on a **PartitionKey** value 
 
 You should always fully test the performance of your application in such scenarios.  
 
-A query against the table service may return a maximum of 1,000 entities at one time and may execute for a maximum of five seconds. If the result set contains more than 1,000 entities, if the query did not complete within five seconds, or if the query crosses the partition boundary, the Table service returns a continuation token to enable the client application to request the next set of entities. For more information about how continuation tokens work, see [Query Timeout and Pagination](http://msdn.microsoft.com/library/azure/dd135718.aspx) on MSDN.  
+A query against the table service may return a maximum of 1,000 entities at one time and may execute for a maximum of five seconds. If the result set contains more than 1,000 entities, if the query did not complete within five seconds, or if the query crosses the partition boundary, the Table service returns a continuation token to enable the client application to request the next set of entities. For more information about how continuation tokens work, see [Query Timeout and Pagination](http://msdn.microsoft.com/zh-cn/library/azure/dd135718.aspx) on MSDN.  
 
 If you are using the Storage Client Library, it can automatically handle continuation tokens for you as it returns entities from the Table service. The following C# code sample using the Storage Client Library automatically handles continuation tokens if the table service returns them in a response:  
 
@@ -1134,7 +1130,7 @@ You should also consider how your design affects how your client application han
 
 #### Managing concurrency  
 
-By default, the table service implements optimistic concurrency checks at the level of individual entities for **Insert**, **Merge**, and **Delete** operations, although it is possible for a client to force the table service to bypass these checks. For more information about how the table service manages concurrency, see  [Managing Concurrency in Microsoft Azure Storage](storage-concurrency.md) on the Microsoft Azure web site.  
+By default, the table service implements optimistic concurrency checks at the level of individual entities for **Insert**, **Merge**, and **Delete** operations, although it is possible for a client to force the table service to bypass these checks. For more information about how the table service manages concurrency, see  [Managing Concurrency in Windows Azure Storage](/documentation/articles/storage-concurrency) on the Windows Azure web site.  
 
 #### Merge or replace  
 
@@ -1450,7 +1446,7 @@ You can use Shared Access Signature (SAS) tokens to enable client applications t
 -	You can offload some of the work that web and worker roles perform in managing your entities to client devices such as end-user computers and mobile devices.  
 -	You can assign a constrained and time limited set of permissions to a client (such as allowing read-only access to specific resources).  
 
-For more information about using SAS tokens with the Table service, see [Shared Access Signatures, Part 1: Understanding the SAS Model](../storage-dotnet-shared-access-signature-part-1/).  
+For more information about using SAS tokens with the Table service, see [Shared Access Signatures, Part 1: Understanding the SAS Model](/documentation/articles/storage-dotnet-shared-access-signature-part-1).  
 
 However, you must still generate the SAS tokens that grant a client application to the entities in the table service: you should do this in an environment that has secure access to your storage account keys. Typically, you use a web or worker role to generate the SAS tokens and deliver them to the client applications that need access to your entities. Because there is still an overhead involved in generating and delivering SAS tokens to clients, you should consider how best to reduce this overhead, especially in high-volume scenarios.  
 

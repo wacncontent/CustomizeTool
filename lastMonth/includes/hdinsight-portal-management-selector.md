@@ -1,7 +1,5 @@
 > [AZURE.SELECTOR]
-<!-- deleted by customization
-- [Portal (Linux cluster)](/documentation/articles/hdinsight-administer-use-portal-linux)
--->
-- [Portal (Windows cluster)](/documentation/articles/hdinsight-administer-use-management-portal-v1)
-- [Azure CLI](/documentation/articles/hdinsight-administer-use-command-line)
-- [Azure PowerShell](/documentation/articles/hdinsight-administer-use-powershell)
+- [Portal (Linux cluster)](../articles/hdinsight/hdinsight-administer-use-portal-linux.md)
+- [Portal (Windows cluster)](../articles/hdinsight/hdinsight-administer-use-management-portal.md)
+- [Azure CLI](../articles/hdinsight/hdinsight-administer-use-command-line.md)
+- [Azure PowerShell](../articles/hdinsight/hdinsight-administer-use-powershell.md)

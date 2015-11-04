@@ -2,9 +2,9 @@ The Domain Name System (DNS) is used to locate things on the internet. For examp
 
 The DNS system is based on *records*. Records associate a specific *name*, such as **contoso.com**, with either an IP address or another DNS name. When an application, such as a web browser, looks up a name in DNS, it finds the record, and uses whatever it points to as the address. If the value it points to is an IP address, the browser will use that value. If it points to another DNS name, then the application has to do resolution again. Ultimately, all name resolution will end in an IP address.
 
-When you create an Azure Website, a DNS name is automatically assigned to the site. This name takes the form of **&lt;yoursitename&gt;.chinacloudsites.cn**. When you add your website as an Azure Traffic Manager endpoint, your website is then accessible through the **&lt;yourtrafficmanagerprofile&gt;.trafficmanager.cn** domain.
+When you create an Azure Website, a DNS name is automatically assigned to the site. This name takes the form of **&lt;yoursitename&gt;.azurewebsites.net**. When you add your website as an Azure Traffic Manager endpoint, your website is then accessible through the **&lt;yourtrafficmanagerprofile&gt;.trafficmanager.net** domain.
 
-> [AZURE.NOTE] When your website is configured as a Traffic Manager endpoint, you will use the **.trafficmanager.cn** address when creating DNS records.
+> [AZURE.NOTE] When your website is configured as a Traffic Manager endpoint, you will use the **.trafficmanager.net** address when creating DNS records.
 
 > You can only use CNAME records with Traffic Manager
 
@@ -12,7 +12,7 @@ There are also multiple types of records, each with their own functions and limi
 
 ###CNAME or Alias record
 
-A CNAME record maps a *specific* DNS name, such as **mail.contoso.com** or **www.contoso.com**, to another (canonical) domain name. In the case of Azure Websites using Traffic Manager, the canonical domain name is the **&lt;myapp>.trafficmanager.cn** domain name of your Traffic Manager profile. Once created, the CNAME creates an alias for the **&lt;myapp>.trafficmanager.cn** domain name. The CNAME entry will resolve to the IP address of your **&lt;myapp>.trafficmanager.cn** domain name automatically, so if the IP address of the website changes, you do not have to take any action.
+A CNAME record maps a *specific* DNS name, such as **mail.contoso.com** or **www.contoso.com**, to another (canonical) domain name. In the case of Azure Websites using Traffic Manager, the canonical domain name is the **&lt;myapp>.trafficmanager.net** domain name of your Traffic Manager profile. Once created, the CNAME creates an alias for the **&lt;myapp>.trafficmanager.net** domain name. The CNAME entry will resolve to the IP address of your **&lt;myapp>.trafficmanager.net** domain name automatically, so if the IP address of the website changes, you do not have to take any action.
 
 Once traffic arrives at Traffic Manager, it then routes the traffic to your website, using the load balancing method it is configured for. This is completely transparent to visitors to your website. They will only see the custom domain name in their browser.
 

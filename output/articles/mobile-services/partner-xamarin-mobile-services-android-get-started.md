@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Get Started with Mobile Services for Xamarin.Android | Microsoft Azure" 
+	pageTitle="Get Started with Mobile Services for Xamarin.Android | Windows Azure" 
 	writer="craigd" 
 	description="Learn how to use Azure Mobile Services with your Xamarin.Android app." 
 	documentationCenter="xamarin" 
@@ -8,21 +8,17 @@
 	editor="" 
 	services="mobile-services"/>
 
-<tags 
-	ms.service="mobile-services" 
-	ms.workload="mobile" 
-	ms.tgt_pltfrm="mobile-xamarin-android" 
-	ms.devlang="dotnet" 
-	ms.topic="hero-article" 
-	ms.date="10/05/2015" 
-	ms.author="donnam"/>
+<tags
+	ms.service="mobile-services"
+	ms.date="10/05/2015"
+	wacn.date=""/>
 
 # <a name="getting-started"></a>Get started with Mobile Services
 
-[AZURE.INCLUDE [mobile-services-selector-get-started](../../includes/mobile-services-selector-get-started.md)]
+[AZURE.INCLUDE [mobile-services-selector-get-started](../includes/mobile-services-selector-get-started.md)]
 &nbsp;
 
-[AZURE.INCLUDE [mobile-services-hero-slug](../../includes/mobile-services-hero-slug.md)]
+[AZURE.INCLUDE [mobile-services-hero-slug](../includes/mobile-services-hero-slug.md)]
 
 This tutorial shows you how to add a cloud-based backend service to a Xamarin.Android app using Azure Mobile Services. In this tutorial, you will create both a new mobile service and a simple *To do list* app that stores app data in the new mobile service.
 
@@ -40,11 +36,11 @@ Completing this tutorial requires [Xamarin.Android], which installs Xamarin Stud
 
 The downloaded quickstart project contains the Azure Mobile services component for Xamarin.Android. While this project targets Android 4.2 or a later version, the Mobile Services SDK requires only Android 2.2 or a later version.
 
-> [AZURE.IMPORTANT] To complete this tutorial, you need an Azure account. If you don't have an account, you can sign up for an Azure trial and get up to 10 free mobile services that you can keep using even after your trial ends. For details, see [Azure Free Trial](http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A9C9624B5).
+> [AZURE.IMPORTANT] To complete this tutorial, you need an Azure account. If you don't have an account, you can sign up for an Azure trial and get up to 10 free mobile services that you can keep using even after your trial ends. For details, see [Azure Trial](/pricing/1rmb-trial/?WT.mc_id=A9C9624B5).
 
 ## <a name="create-new-service"> </a>Create a new mobile service
 
-[AZURE.INCLUDE [mobile-services-create-new-service](../../includes/mobile-services-create-new-service.md)]
+[AZURE.INCLUDE [mobile-services-create-new-service](../includes/mobile-services-create-new-service.md)]
 
 ## Create a new Xamarin.Android app
 
@@ -109,10 +105,10 @@ Now that you have completed the quickstart, learn how to perform additional impo
 * [Get started with push notifications]   
   Learn how to send a very basic push notification to your app.
 
-* [How to use the Xamarin Component client for Azure Mobile Services](partner-xamarin-mobile-services-how-to-use-client-library.md)  
+* [How to use the Xamarin Component client for Azure Mobile Services](/documentation/articles/partner-xamarin-mobile-services-how-to-use-client-library)  
    Learn how to query the mobile service, work with data, and access custom APIs. 
 
-[AZURE.INCLUDE [app-service-disqus-feedback-slug](../../includes/app-service-disqus-feedback-slug.md)]
+[AZURE.INCLUDE [app-service-disqus-feedback-slug](../includes/app-service-disqus-feedback-slug.md)]
 
 <!-- Anchors. -->
 [Getting started with Mobile Services]:#getting-started
@@ -138,11 +134,11 @@ Now that you have completed the quickstart, learn how to perform additional impo
 
 <!-- URLs. -->
 [Get started with data]: /develop/mobile/tutorials/get-started-with-data-xamarin-android
-[Get started with offline data sync]: mobile-services-xamarin-android-get-started-offline-data.md
+[Get started with offline data sync]: /documentation/articles/mobile-services-xamarin-android-get-started-offline-data
 [Get started with authentication]: /develop/mobile/tutorials/get-started-with-users-xamarin-android
 [Get started with push notifications]: /develop/mobile/tutorials/get-started-with-push-xamarin-android
 [Xamarin.Android]: http://xamarin.com/download
 [Mobile Services Android SDK]: https://go.microsoft.com/fwLink/p/?LinkID=266533
 [Azure]: http://azure.microsoft.com/
-[Management Portal]: https://manage.windowsazure.com/
+[Management Portal]: https://manage.windowsazure.cn/
  

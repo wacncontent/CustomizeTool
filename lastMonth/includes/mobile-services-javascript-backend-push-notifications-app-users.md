@@ -31,7 +31,7 @@
 		    for(var i = 0; i < registration.tags.length; i++) { 
 		        console.log(registration.tags[i]);           
 				if (registration.tags[i]
-				.search(/microsoft:/i) !== -1){
+				.search(/facebook:|twitter:|google:|microsoft:/i) !== -1){
 					return false;
 				}
 				return true;

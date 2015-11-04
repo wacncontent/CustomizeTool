@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Deploy and manage VM with templates | Microsoft Azure"
+	pageTitle="Deploy and manage VM with templates | Windows Azure"
 	description="Deploy and manage the most common configurations for Azure virtual machines using Resource Manager templates and Azure CLI."
 	services="virtual-machines"
 	documentationCenter=""
@@ -10,18 +10,14 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.workload="infrastructure-services"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="09/09/2015"
-	ms.author="rasquill"/>
+	wacn.date=""/>
 
 # Deploy and manage virtual machines by using Azure Resource Manager templates and the Azure CLI
 
-This article shows you how to use Azure Resource Manager templates and the Azure CLI to do the following common tasks for deploying and managing Azure virtual machines. For more templates you can use, see [Azure Quickstart templates](http://azure.microsoft.com/documentation/templates/) and [Application frameworks using templates](virtual-machines-app-frameworks.md).
+This article shows you how to use Azure Resource Manager templates and the Azure CLI to do the following common tasks for deploying and managing Azure virtual machines. For more templates you can use, see [Azure Quickstart templates](http://azure.microsoft.com/documentation/templates/) and [Application frameworks using templates](/documentation/articles/virtual-machines-app-frameworks).
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-rm-include.md)] classic deployment model. You can't use templates in the classic deployment model.
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] classic deployment model. You can't use templates in the classic deployment model.
 
 
 - [Quick-create a virtual machine in Azure](#quick-create-a-vm-in-azure)
@@ -47,7 +43,7 @@ Type `azure --version` to see whether you have already installed version 0.9.0 o
 	azure --version
     0.9.0 (node: 0.10.25)
 
-If your version is not 0.9.0 or later, you need to either [install the Azure CLI](../xplat-cli-install.md) or update by using one of the native installers or through **npm** by typing `npm update -g azure-cli`.
+If your version is not 0.9.0 or later, you need to either [install the Azure CLI](/documentation/articles/xplat-cli-install) or update by using one of the native installers or through **npm** by typing `npm update -g azure-cli`.
 
 You can also run Azure CLI as a Docker container by using the following [Docker image](https://registry.hub.docker.com/u/microsoft/azure-cli/). From a Docker host, run the following command:
 
@@ -55,11 +51,11 @@ You can also run Azure CLI as a Docker container by using the following [Docker 
 
 ### Set your Azure account and subscription
 
-If you don't already have an Azure subscription but you do have an MSDN subscription, you can activate your [MSDN subscriber benefits](http://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/). Or you can sign up for a [free trial](http://azure.microsoft.com/pricing/free-trial/).
+If you don't already have an Azure subscription but you do have an MSDN subscription, you can activate your [MSDN subscriber benefits](http://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/). Or you can sign up for a [trial](/pricing/1rmb-trial/).
 
 You need to have a work or school account to use Azure resource management templates. If you have one, you can type `azure login` and enter your user name and password, and you should successfully log in.
 
-> [AZURE.NOTE] If you don't have one, you'll see an error message indicating that you need a different type of account. To create one from your current Azure account, see [Creating a work or school identity in Azure Active Directory](resource-group-create-work-id-from-personal.md).
+> [AZURE.NOTE] If you don't have one, you'll see an error message indicating that you need a different type of account. To create one from your current Azure account, see [Creating a work or school identity in Azure Active Directory](/documentation/articles/resource-group-create-work-id-from-personal).
 
 Your account may have more than one subscription. You can list your subscriptions by typing `azure account list`, which might look something like this:
 
@@ -90,7 +86,7 @@ By default, the Azure CLI starts in the service management mode (**asm** mode). 
 
 ## Understanding Azure resource templates and resource groups
 
-Most applications are built from a combination of different resource types (such as one or more VMs and storage accounts, a SQL database, a virtual network, or a content delivery network). The default Azure service management API and the Azure portal represented these items by using a service-by-service approach. This approach requires you to deploy and manage the individual services individually (or find other tools that do so), and not as a single logical unit of deployment.
+Most applications are built from a combination of different resource types (such as one or more VMs and storage accounts, a SQL database, a virtual network, or a content delivery network). The default Azure service management API and the Azure Management Portal represented these items by using a service-by-service approach. This approach requires you to deploy and manage the individual services individually (or find other tools that do so), and not as a single logical unit of deployment.
 
 *Azure Resource Manager templates* make it possible for you to deploy and manage these different resources as one logical deployment unit in a declarative fashion. Instead of imperatively telling Azure what to deploy one command after another, you describe your entire deployment in a JSON file -- all of the resources and associated configuration and deployment parameters -- and tell Azure to deploy those resources as one group.
 
@@ -101,7 +97,7 @@ You can then manage the overall life cycle of the group's resources by using Azu
 - Audit operations.
 - Tag resources with additional metadata for better tracking.
 
-You can learn lots more about Azure resource groups and what they can do for you in the [Azure Resource Manager overview](../resource-group-overview.md). If you're interested in authoring templates, see [Authoring Azure Resource Manager templates](../resource-group-authoring-templates.md).
+You can learn lots more about Azure resource groups and what they can do for you in the [Azure Resource Manager overview](/documentation/articles/resource-group-overview). If you're interested in authoring templates, see [Authoring Azure Resource Manager templates](/documentation/articles/resource-group-authoring-templates).
 
 ## <a id="quick-create-a-vm-in-azure"></a>Task: Quick-create a VM in Azure
 
@@ -123,7 +119,7 @@ First, create your resource group.
     info:    group create command OK
 
 
-Second, you'll need an image. To find an image with the Azure CLI, see [Navigating and selecting Azure virtual machine images with PowerShell and the Azure CLI](resource-groups-vm-searching.md). But for this article, here's a short list of popular images. We'll use CoreOS's Stable image for this quick-create.
+Second, you'll need an image. To find an image with the Azure CLI, see [Navigating and selecting Azure virtual machine images with PowerShell and the Azure CLI](/documentation/articles/resource-groups-vm-searching). But for this article, here's a short list of popular images. We'll use CoreOS's Stable image for this quick-create.
 
 > [AZURE.NOTE] For ComputeImageVersion, you can also simply supply 'latest' as the parameter in both the template language and in the Azure CLI. This will allow you to always use the latest and patched version of the image without having to modify your scripts or templates. This is shown below.
 
@@ -154,7 +150,7 @@ Just create your VM by entering the `azure vm quick-create` command and being re
     Resource group name: coreos-quick
     Virtual machine name: coreos
     Location name: westus
-    Operating system Type [Windows, Linux]: linux
+    Operating system Type [Windows, Linux]: /documentation/articles/linux
     ImageURN (format: "publisherName:offer:skus:version"): coreos:coreos:stable:latest
     User name: ops
     Password: *********
@@ -207,7 +203,7 @@ Just create your VM by entering the `azure vm quick-create` command and being re
     data:        Caching                     :ReadWrite
     data:        CreateOption                :FromImage
     data:        Vhd:
-    data:          Uri                       :https://cli9fd3fce49e9a9b3d14302.blob.core.windows.net/vhds/cli9fd3fce49e9a9b3d-os-1430261892283.vhd
+    data:          Uri                       :https://cli9fd3fce49e9a9b3d14302.blob.core.chinacloudapi.cn/vhds/cli9fd3fce49e9a9b3d-os-1430261892283.vhd
     data:
     data:    OS Profile:
     data:      Computer Name                 :coreos
@@ -296,7 +292,7 @@ Once you decide on these values, you're ready to create a group for and deploy t
         }
     },
     "variables": {
-        "location": "West US",
+        "location": "China North",
         "imagePublisher": "Canonical",
         "imageOffer": "UbuntuServer",
         "OSDiskName": "osdiskforlinuxsimple",
@@ -411,7 +407,7 @@ Once you decide on these values, you're ready to create a group for and deploy t
             "osDisk": {
                 "name": "osdisk",
                 "vhd": {
-                "uri": "[concat('http://',parameters('newStorageAccountName'),'.blob.core.windows.net/',variables('vmStorageAccountContainerName'),'/',variables('OSDiskName'),'.vhd')]"
+                "uri": "[concat('http://',parameters('newStorageAccountName'),'.blob.core.chinacloudapi.cn/',variables('vmStorageAccountContainerName'),'/',variables('OSDiskName'),'.vhd')]"
                 },
                 "caching": "ReadWrite",
                 "createOption": "FromImage"
@@ -545,7 +541,7 @@ Again, you will need to find the values you want to enter for the parameters tha
             },
             "location": {
                 "type": "String",
-                "defaultValue" : "West US"
+                "defaultValue" : "China North"
             },
             "vmSize": {
                 "type": "string",
@@ -577,8 +573,8 @@ Again, you will need to find the values you want to enter for the parameters tha
             "publicIPAddressType" : "Dynamic",
             "vnetID":"[resourceId('Microsoft.Network/virtualNetworks',parameters('virtualNetworkName'))]",
             "subnet1Ref" : "[concat(variables('vnetID'),'/subnets/',variables('subnet1Name'))]",
-            "userImageName" : "[concat('http://',parameters('userImageStorageAccountName'),'.blob.core.windows.net/',parameters('userImageStorageContainerName'),'/',parameters('userImageVhdName'))]",
-            "osDiskVhdName" : "[concat('http://',parameters('userImageStorageAccountName'),'.blob.core.windows.net/',parameters('userImageStorageContainerName'),'/',parameters('vmName'),'osDisk.vhd')]"
+            "userImageName" : "[concat('http://',parameters('userImageStorageAccountName'),'.blob.core.chinacloudapi.cn/',parameters('userImageStorageContainerName'),'/',parameters('userImageVhdName'))]",
+            "osDiskVhdName" : "[concat('http://',parameters('userImageStorageAccountName'),'.blob.core.chinacloudapi.cn/',parameters('userImageStorageContainerName'),'/',parameters('vmName'),'osDisk.vhd')]"
         },
         "resources": [
         {
@@ -692,9 +688,9 @@ Again, you will need to find the values you want to enter for the parameters tha
 
 Obviously, you'll need a .vhd for this. You can use one you already have in Azure, or you can upload one.
 
-For a Windows-based virtual machine, see [Create and upload a Windows Server VHD to Azure](virtual-machines-create-upload-vhd-windows-server.md).
+For a Windows-based virtual machine, see [Create and upload a Windows Server VHD to Azure](/documentation/articles/virtual-machines-create-upload-vhd-windows-server).
 
-For a Linux-based virtual machine, see [Creating and uploading a virtual hard disk that contains the Linux operating system](virtual-machines-linux-create-upload-vhd.md).
+For a Linux-based virtual machine, see [Creating and uploading a virtual hard disk that contains the Linux operating system](/documentation/articles/virtual-machines-linux-create-upload-vhd).
 
 ### Step 3: Create the virtual machine by using the template
 
@@ -753,7 +749,7 @@ Output looks something like the following:
     data:    adminPassword                  SecureString  undefined
     data:    osType                         String        linux
     data:    subscriptionId                 String        xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
-    data:    location                       String        West US
+    data:    location                       String        China North
     data:    vmSize                         String        Standard_A2
     data:    publicIPAddressName            String        myPublicIP
     data:    vmName                         String        myVM
@@ -1092,7 +1088,7 @@ Here are the contents of the JSON file for the template. If you want the most re
                         "sourceImage": {
                             "id": "[variables('sourceImageName')]"
                         },
-                        "destinationVhdsContainer": "[concat('http://',parameters('storageAccountName'),'.blob.core.windows.net/',variables('vmStorageAccountContainerName'),'/')]"
+                        "destinationVhdsContainer": "[concat('http://',parameters('storageAccountName'),'.blob.core.chinacloudapi.cn/',variables('vmStorageAccountContainerName'),'/')]"
                     },
                     "networkProfile": {
                         "networkInterfaces": [
@@ -1186,7 +1182,7 @@ Remember that you can redeploy to a resource group, but if you are done with one
 
 ## <a id="show-the-log-for-a-resource-group-deployment"></a>Task: Show the log for a resource group deployment
 
-This one is common while you're creating or using templates. The call to display the deployment logs for a group is `azure group log show <groupname>`, which displays quite a bit of information that's useful for understanding why something happened -- or didn't. (For more information on troubleshooting your deployments, as well as other information about issues, see [Troubleshooting resource group deployments in Azure](resource-group-deploy-debug.md).)
+This one is common while you're creating or using templates. The call to display the deployment logs for a group is `azure group log show <groupname>`, which displays quite a bit of information that's useful for understanding why something happened -- or didn't. (For more information on troubleshooting your deployments, as well as other information about issues, see [Troubleshooting resource group deployments in Azure](/documentation/articles/resource-group-deploy-debug).)
 
 To target specific failures, for example, you might use tools like **jq** to query things a bit more precisely, such as which individual failures you need to correct. The following example uses **jq** to parse a deployment log for **lbgroup**, looking for failures.
 
@@ -1196,7 +1192,7 @@ You can discover very quickly what went wrong, fix, and retry. In the following 
 
     {
       "statusCode": "Conflict",
-      "statusMessage": "{\"status\":\"Failed\",\"error\":{\"code\":\"ResourceDeploymentFailure\",\"message\":\"The resource operation completed with terminal provisioning state 'Failed'.\",\"details\":[{\"code\":\"AcquireDiskLeaseFailed\",\"message\":\"Failed to acquire lease while creating disk 'osdisk' using blob with URI http://storage.blob.core.windows.net/vhds/osdisk.vhd.\"}]}}"
+      "statusMessage": "{\"status\":\"Failed\",\"error\":{\"code\":\"ResourceDeploymentFailure\",\"message\":\"The resource operation completed with terminal provisioning state 'Failed'.\",\"details\":[{\"code\":\"AcquireDiskLeaseFailed\",\"message\":\"Failed to acquire lease while creating disk 'osdisk' using blob with URI http://storage.blob.core.chinacloudapi.cn/vhds/osdisk.vhd.\"}]}}"
     }
 
 
@@ -1240,7 +1236,7 @@ And then, looking up myVM1:
     data:        Caching                     :ReadWrite
     data:        CreateOption                :FromImage
     data:        Vhd:
-    data:          Uri                       :http://zoostorageralph.blob.core.windows.net/vhds/osdisk.vhd
+    data:          Uri                       :http://zoostorageralph.blob.core.chinacloudapi.cn/vhds/osdisk.vhd
     data:
     data:    OS Profile:
     data:      Computer Name                 :myVM1
@@ -1269,7 +1265,7 @@ And then, looking up myVM1:
 
 ## <a id="log-on-to-a-linux-based-virtual-machine"></a>Task: Log on to a Linux-based virtual machine
 
-Typically Linux machines are connected to through SSH. For more information, see [How to use SSH with Linux on Azure](virtual-machines-linux-use-ssh-key.md).
+Typically Linux machines are connected to through SSH. For more information, see [How to use SSH with Linux on Azure](/documentation/articles/virtual-machines-linux-use-ssh-key).
 
 ## <a id="stop-a-virtual-machine"></a>Task: Stop a VM
 
@@ -1302,6 +1298,6 @@ Then you'll need to mount the disk, as you normally would in Linux (or in Window
 
 ## Next steps
 
-For far more examples of Azure CLI usage with the **arm** mode, see [Using the Azure CLI for Mac, Linux, and Windows with Azure Resource Manager](xplat-cli-azure-resource-manager.md). To learn more about Azure resources and their concepts, see [Azure Resource Manager overview](../resource-group-overview.md).
+For far more examples of Azure CLI usage with the **arm** mode, see [Using the Azure CLI for Mac, Linux, and Windows with Azure Resource Manager](/documentation/articles/xplat-cli-azure-resource-manager). To learn more about Azure resources and their concepts, see [Azure Resource Manager overview](/documentation/articles/resource-group-overview).
 
-For more templates you can use, see [Azure Quickstart templates](http://azure.microsoft.com/documentation/templates/) and [Application frameworks using templates](virtual-machines-app-frameworks.md).
+For more templates you can use, see [Azure Quickstart templates](http://azure.microsoft.com/documentation/templates/) and [Application frameworks using templates](/documentation/articles/virtual-machines-app-frameworks).

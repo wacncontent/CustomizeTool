@@ -7,20 +7,16 @@
 	manager="douge" 
 	editor=""/>
 
-<tags 
-	ms.service="mobile-services" 
-	ms.workload="mobile" 
-	ms.tgt_pltfrm="NA" 
-	ms.devlang="JavaScript" 
-	ms.topic="article" 
-	ms.date="09/23/2015" 
-	ms.author="patshea"/>
+<tags
+	ms.service="mobile-services"
+	ms.date="09/23/2015"
+	wacn.date=""/>
 
 # What happens to my Javascript project when I add Azure Mobile Services using Connected Visual Studio Services?
 
 > [AZURE.SELECTOR]
-> - [Getting Started](vs-mobile-services-javascript-getting-started.md)
-> - [What Happened](vs-mobile-services-javascript-what-happened.md)
+> - [Getting Started](/documentation/articles/vs-mobile-services-javascript-getting-started)
+> - [What Happened](/documentation/articles/vs-mobile-services-javascript-what-happened)
 
 ###What happened to my project?
 

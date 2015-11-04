@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="How to monitor a cloud service | Microsoft Azure" 
+	pageTitle="How to monitor a cloud service | Windows Azure" 
 	description="Learn how to monitor cloud services by using the Azure Management Portal." 
 	services="cloud-services" 
 	documentationCenter="" 
@@ -7,19 +7,15 @@
 	manager="jwhit" 
 	editor=""/>
 
-<tags 
-	ms.service="cloud-services" 
-	ms.workload="tbd" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="08/04/2015" 
-	ms.author="robb"/>
+<tags
+	ms.service="cloud-services"
+	ms.date="08/04/2015"
+	wacn.date=""/>
 
 
 #How to Monitor Cloud Services
 
-[AZURE.INCLUDE [disclaimer](../../includes/disclaimer.md)]
+[AZURE.INCLUDE [disclaimer](../includes/disclaimer.md)]
 
 You can monitor key performance metrics for your cloud services in the Azure Management Portal. You can set the level of monitoring to minimal and verbose for each service role, and can customize the monitoring displays. Verbose monitoring data is stored in a storage account, which you can access outside the portal. 
 
@@ -44,7 +40,7 @@ Use the following procedures to configure verbose or minimal monitoring in the M
 
 - Create a storage account to store the monitoring data. You can use different storage accounts for different roles. For more information, see help for **Storage Accounts**, or see [How To Create a Storage Account](/manage/services/storage/how-to-create-a-storage-account/).
 
-- Enable Azure Diagnostics for your cloud service roles. See [Configuring Diagnostics for Cloud Services](https://msdn.microsoft.com/library/azure/dn186185.aspx#BK_EnableBefore).
+- Enable Azure Diagnostics for your cloud service roles. See [Configuring Diagnostics for Cloud Services](https://msdn.microsoft.com/zh-cn/library/azure/dn186185.aspx#BK_EnableBefore).
 
 Ensure that the diagnostics connection string is present in the Role configuration. You cannot turn on verbose monitoring until you enable Azure Diagnostics and include a diagnostics connection string in the Role configuration.   
 
@@ -62,7 +58,7 @@ Ensure that the diagnostics connection string is present in the Role configurati
 
 ###To change the monitoring level to verbose or minimal###
 
-1. In the [Management Portal](https://manage.windowsazure.com/), open the **Configure** page for the cloud service deployment.
+1. In the [Management Portal](https://manage.windowsazure.cn/), open the **Configure** page for the cloud service deployment.
 
 2. In **Level**, click **Verbose** or **Minimal**. 
 
@@ -74,11 +70,11 @@ The raw performance counter data and aggregated monitoring data are stored in th
 
 ##How to: Receive alerts for cloud service metrics##
 
-You can receive alerts based on your cloud service monitoring metrics. On the **Management Services** page of the Azure Management Portal, you can create a rule to trigger an alert when the metric you choose reaches a value that you specify. You can also choose to have email sent when the alert is triggered. For more information, see [How to: Receive Alert Notifications and Manage Alert Rules in Azure](http://go.microsoft.com/fwlink/?LinkId=309356).
+You can receive alerts based on your cloud service monitoring metrics. On the **Management Services** page of the Azure Management Portal, you can create a rule to trigger an alert when the metric you choose reaches a value that you specify. You can also choose to have email sent when the alert is triggered. For more information, see [How to: Receive Alert Notifications and Manage Alert Rules in Azure](https://msdn.microsoft.com/zh-cn/library/azure/dn306638.aspx).
 
 ##How to: Add metrics to the metrics table##
 
-1. In the [Management Portal](http://manage.windowsazure.com/), open the **Monitor** page for the cloud service.
+1. In the [Management Portal](http://manage.windowsazure.cn/), open the **Monitor** page for the cloud service.
 
 	By default, the metrics table displays a subset of the available metrics. The illustration shows the default verbose metrics for a cloud service, which is limited to the Memory\Available MBytes performance counter, with data aggregated at the role level. Use **Add Metrics** to select additional aggregate and role-level metrics to monitor in the Management Portal.
 

@@ -9,18 +9,14 @@
 
 <tags
 	ms.service="notification-hubs"
-	ms.workload="mobile"
-	ms.tgt_pltfrm="ios"
-	ms.devlang="objective-c"
-	ms.topic="article"
 	ms.date="09/24/2015"
-	ms.author="wesmc"/>
+	wacn.date=""/>
 
 # Use Notification Hubs to send localized breaking news to iOS devices
 
 > [AZURE.SELECTOR]
-- [Windows Store C#](notification-hubs-windows-store-dotnet-send-localized-breaking-news)
-- [iOS](notification-hubs-ios-send-localized-breaking-news)
+- [Windows Store C#](/documentation/articles/notification-hubs-windows-store-dotnet-send-localized-breaking-news)
+- [iOS](/documentation/articles/notification-hubs-ios-send-localized-breaking-news)
 
 
 ##Overview
@@ -172,7 +168,7 @@ In order to adapt your client apps to receive localized messages, you have to re
 
 ##Send localized notifications from your back-end
 
-[AZURE.INCLUDE [notification-hubs-localized-back-end](../../includes/notification-hubs-localized-back-end.md)]
+[AZURE.INCLUDE [notification-hubs-localized-back-end](../includes/notification-hubs-localized-back-end.md)]
 
 
 ## Next Steps
@@ -201,7 +197,7 @@ A reference for the template expression language is in [Notification Hubs How-To
 
 
 <!-- URLs. -->
-[How To: Service Bus Notification Hubs (iOS Apps)]: http://msdn.microsoft.com/library/jj927168.aspx
+[How To: Service Bus Notification Hubs (iOS Apps)]: http://msdn.microsoft.com/zh-cn/library/jj927168.aspx
 [Use Notification Hubs to send breaking news]: /manage/services/notification-hubs/breaking-news-ios
 [Mobile Service]: /develop/mobile/tutorials/get-started
 [Notify users with Notification Hubs: ASP.NET]: /manage/services/notification-hubs/notify-users-aspnet
@@ -215,10 +211,9 @@ A reference for the template expression language is in [Notification Hubs How-To
 [Get started with push notifications]: /develop/mobile/tutorials/get-started-with-push-ios
 [Push notifications to app users]: /develop/mobile/tutorials/push-notifications-to-users-ios
 [Authorize users with scripts]: /develop/mobile/tutorials/authorize-users-in-scripts-ios
-[JavaScript and HTML]: ../get-started-with-push-js.md
-
-[Azure Management Portal]: https://manage.windowsazure.com/
-[Windows Developer Preview registration steps for Mobile Services]: ../mobile-services-windows-developer-preview-registration.md
+[JavaScript and HTML]: /documentation/articles/get-started-with-push-js
+[Azure Management Portal]: https://manage.windowsazure.cn/
+[Windows Developer Preview registration steps for Mobile Services]: /documentation/articles/mobile-services-windows-developer-preview-registration
 [wns object]: http://go.microsoft.com/fwlink/p/?LinkId=260591
-[Notification Hubs Guidance]: http://msdn.microsoft.com/library/jj927170.aspx
-[Notification Hubs How-To for iOS]: http://msdn.microsoft.com/library/jj927168.aspx
+[Notification Hubs Guidance]: http://msdn.microsoft.com/zh-cn/library/jj927170.aspx
+[Notification Hubs How-To for iOS]: http://msdn.microsoft.com/zh-cn/library/jj927168.aspx

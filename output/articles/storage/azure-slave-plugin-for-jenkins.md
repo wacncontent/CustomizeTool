@@ -1,5 +1,5 @@
 <properties
-    pageTitle="How to use the Azure slave plug-in with Jenkins Continuous Integration | Microsoft Azure"
+    pageTitle="How to use the Azure slave plug-in with Jenkins Continuous Integration | Windows Azure"
     description="Describes how to use the Azure slave plug-in with Jenkins Continuous Integration."
 	services="storage"
 	documentationCenter="java"
@@ -9,12 +9,8 @@
 
 <tags
 	ms.service="storage"
-	ms.workload="storage"
-	ms.tgt_pltfrm="na"
-	ms.devlang="Java"
-	ms.topic="article"
 	ms.date="09/01/2015"
-    ms.author="v-dedomi"/>
+	wacn.date=""/>
 
 # How to use the Azure slave plug-in with Jenkins Continuous Integration
 
@@ -41,13 +37,13 @@ A subscription profile, also referred to as publish settings, is an XML file tha
 * your subscription id
 * a management certificate for your subscription
 
-These can be found in your subscription profile. If you don't have a copy of your subscription profile, you can download it from [the subscription site](https://manage.windowsazure.com/publishsettings/Index?SchemaVersion=2.0). Below is an example of a subscription profile.
+These can be found in your subscription profile. If you don't have a copy of your subscription profile, you can download it from [the subscription site](https://manage.windowsazure.cn/publishsettings/Index?SchemaVersion=2.0). Below is an example of a subscription profile.
 
 	<?xml version="1.0" encoding="utf-8"?>
 		<PublishData>
   		<PublishProfile SchemaVersion="2.0" PublishMethod="AzureServiceManagementAPI">
     	<Subscription
-      		ServiceManagementUrl="https://management.core.windows.net"
+      		ServiceManagementUrl="https://management.core.chinacloudapi.cn"
       		Id="<Subscription ID value>"
       		Name="Pay-As-You-Go"
 			ManagementCertificate="<Management certificate value>" />
@@ -59,7 +55,7 @@ After you have your subscription profile, follow these steps to configure the Az
 1. In the Jenkins dashboard, click **Manage Jenkins**.
 2. Click **Configure System**.
 3. Scroll down the page to find the **Cloud** section.
-4. Click **Add new cloud > Microsoft Azure**.
+4. Click **Add new cloud > Windows Azure**.
 
 	![cloud section](./media/azure-slave-plugin-for-jenkins/jenkins-cloud-section.png)
 

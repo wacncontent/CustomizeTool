@@ -1,7 +1,5 @@
 > [AZURE.SELECTOR]
-<!-- deleted by customization
-- [Preview portal](/documentation/articles/virtual-networks-create-vnet-arm-pportal)
--->
-- [PowerShell](/documentation/articles/virtual-networks-create-vnet-arm-ps)
-- [Azure CLI](/documentation/articles/virtual-networks-create-vnet-arm-cli)
-- [ARM template](/documentation/articles/virtual-networks-create-vnet-arm-template-click)
+- [Preview portal](virtual-networks-create-vnet-arm-pportal.md)
+- [PowerShell](virtual-networks-create-vnet-arm-ps.md)
+- [Azure CLI](virtual-networks-create-vnet-arm-cli.md)
+- [ARM template](virtual-networks-create-vnet-arm-template-click.md)

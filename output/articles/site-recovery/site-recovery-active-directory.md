@@ -1,5 +1,5 @@
 <properties
-	pageTitle="ASR Guidance for Active Directory | Microsoft Azure" 
+	pageTitle="ASR Guidance for Active Directory | Windows Azure" 
 	description="This article explains in detail about how you can create a disaster recovery solution for your AD using Azure Site recovery, perform a planned/unplanned/test failovers using one-click recovery plan, supported configurations and prerequisites." 
 	services="site-recovery" 
 	documentationCenter="" 
@@ -7,14 +7,10 @@
 	manager="abhiag" 
 	editor=""/>
 
-<tags 
-	ms.service="site-recovery" 
-	ms.devlang="na"
-	ms.topic="article"
-	ms.tgt_pltfrm="na"
-	ms.workload="storage-backup-recovery" 
-	ms.date="10/12/2015" 
-	ms.author="pratshar"/>
+<tags
+	ms.service="site-recovery"
+	ms.date="10/12/2015"
+	wacn.date=""/>
 
 #Automated DR solution for Active Directory and DNS using ASR
 
@@ -45,7 +41,7 @@ Sections below explain how to enable protection on domain controller in ASR and 
 Implementing disaster recovery for AD using Azure Site Recovery requires the following pre-requisites completed.
 
 - An on-premises deployment of the Active Directory and DNS server
-- Azure Site Recovery Services vault has been created in Microsoft Azure subscription 
+- Azure Site Recovery Services vault has been created in Windows Azure subscription 
 - If Azure is your recovery site, run the Azure Virtual Machine Readiness Assessment tool  on VMs to ensure that they are compatible with Azure VMs and Azure Site Recovery Services
 
 
@@ -64,12 +60,12 @@ Enable protection of Domain Controller/DNS VM in ASR. Perform relevant Azure Sit
 ##Enable protection for AD using AD replication
 ###Site to Site scenario
 
-Create a domain controller on the secondary(DR) site and while promoting the server to domain controller role give the name of the same domain that is being used on the primary site. you can use the Active Directory Sites and Services snap-in to configure settings on the site link object to which the sites are added. By configuring settings on a site link, you can control when replication occurs between two or more sites, and how often. You can refer to ['Scheduling Replication Between Sites'](https://technet.microsoft.com/en-us/library/cc731862.aspx "") for more details.
+Create a domain controller on the secondary(DR) site and while promoting the server to domain controller role give the name of the same domain that is being used on the primary site. you can use the Active Directory Sites and Services snap-in to configure settings on the site link object to which the sites are added. By configuring settings on a site link, you can control when replication occurs between two or more sites, and how often. You can refer to ['Scheduling Replication Between Sites'](https://technet.microsoft.com/library/cc731862.aspx "") for more details.
 
 ###Site to Azure scenario
-Follow these instructions to create a [domain controller in an Azure virtual network](../virtual-network/virtual-networks-install-replica-active-directory-domain-controller.md). While promoting the server to domain controller role give the name of the same domain that is being used on the primary site.
+Follow these instructions to create a [domain controller in an Azure virtual network](/documentation/articles/virtual-networks-install-replica-active-directory-domain-controller). While promoting the server to domain controller role give the name of the same domain that is being used on the primary site.
 
-After this you should [reconfigure dns server for the virtual network](../virtual-network/virtual-networks-install-replica-active-directory-domain-controller.md#reconfigure-dns-server-for-the-virtual-network) to use the DNS server in Azure
+After this you should [reconfigure dns server for the virtual network](/documentation/articles/virtual-networks-install-replica-active-directory-domain-controller#reconfigure-dns-server-for-the-virtual-network) to use the DNS server in Azure
   
 ![Azure Network](./media/site-recovery-active-directory/azure-network.png)
 
@@ -78,7 +74,7 @@ Test Failover is done in a network that is isolated from production network so t
 
 1. Enable protection on the domain controller/DNS virtual machine as you do for any other virtual machine.
 2. Create an isolated network. Any virtual network created in Azure by default is isolated from other network. It is recommended that IP range for this network is same as that of your production network. Don't enable site to site connectivity on this network.
-3. Provide DNS IP in the network created in the step above as the IP that you expect the DNS VM to get. If you are using Azure as the DR site then you can provide the IP for the VM that will be used on failover in 'Target IP' setting in VM properties. If your DR site is on-premises and you are using DHCP then follow the instruction given here to [setup DNS and DHCP for test failover](site-recovery-failover.md#prepare-dhcp) 
+3. Provide DNS IP in the network created in the step above as the IP that you expect the DNS VM to get. If you are using Azure as the DR site then you can provide the IP for the VM that will be used on failover in 'Target IP' setting in VM properties. If your DR site is on-premises and you are using DHCP then follow the instruction given here to [setup DNS and DHCP for test failover](/documentation/articles/site-recovery-failover#prepare-dhcp) 
 
 >[AZURE.NOTE] The IP given to a virtual machine on a Test Failover is same as the IP it would get on doing a planned or unplanned failover given that this IP is available in the Test Failover network. If the same IP is not available in the test failover network, virutal machine will get some other IP available in the test failover network.
 
@@ -109,6 +105,6 @@ In case DNS is not on the same virtual machine as domain controller you’ll nee
 Using Azure Site Recovery, you can create a complete automated disaster recovery plan for your AD. You can initiate the failover within seconds from anywhere in the event of a disruption and get the AD up and running in a few minutes. In case you have an AD for multiple applications such as SharePoint and SAP in your primary site and you decide to failover the complete site, you can failover the AD using ASR first and then failover the other applications using application specific recovery plans.
 
 
-Refer to [Site recovery workload guidance](../site-recovery/site-recovery-workload.md) for more details on protecting various workloads using ASR.
+Refer to [Site recovery workload guidance](/documentation/articles/site-recovery-workload) for more details on protecting various workloads using ASR.
 
 

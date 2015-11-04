@@ -8,17 +8,13 @@
    editor=""/>
 
 <tags
-   ms.service="cloud-services"
-   ms.devlang="dotnet"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="na"
-   ms.date="08/03/2015"
-   ms.author="saurabh"/>
+	ms.service="cloud-services"
+	ms.date="08/03/2015"
+	wacn.date=""/>
 
 # Install .NET on a Cloud Service Role 
 
-This article describes how to install .NET framework on Cloud Service Web and Worker Roles. You can use these steps to install .NET framework 4.5.2 or .NET 4.6 on the Azure Guest OS Family 4. For the latest information on Guest OS releases see [Azure Guest OS Releases and SDK Compatibility Matrix](cloud-services-guestos-update-matrix.md).
+This article describes how to install .NET framework on Cloud Service Web and Worker Roles. You can use these steps to install .NET framework 4.5.2 or .NET 4.6 on the Azure Guest OS Family 4. For the latest information on Guest OS releases see [Azure Guest OS Releases and SDK Compatibility Matrix](/documentation/articles/cloud-services-guestos-update-matrix).
 
 The  process of installing .NET on your web and worker roles involves including the .NET installer package as part of your Cloud Project and launching the installer as part of the role's startup tasks.  
 
@@ -37,7 +33,7 @@ Files added this way to the Role Content Folder will automatically be added to t
 ![Role Contents with installer files][1]
 
 ## Define startup tasks for your roles
-Startup tasks allow you to perform operations before a role starts. Installing the .NET Framework as part of the startup task will ensure that the framework is installed before any of your application code is run. For more information on startup tasks see: [Run Startup Tasks in Azure](https://msdn.microsoft.com/library/azure/hh180155.aspx). 
+Startup tasks allow you to perform operations before a role starts. Installing the .NET Framework as part of the startup task will ensure that the framework is installed before any of your application code is run. For more information on startup tasks see: [Run Startup Tasks in Azure](https://msdn.microsoft.com/zh-cn/library/azure/hh180155.aspx). 
 
 1. Add the following to the *ServiceDefinition.csdef* file under the **WebRole** or **WorkerRole** node for all roles:
 	
@@ -56,7 +52,7 @@ Startup tasks allow you to perform operations before a role starts. Installing t
 	 </Startup>
 	```
 
-	The above configuration will run the console command *install.cmd* with administrator privileges so it can install the .NET framework. The configuration also creates a LocalStorage with the name *InstallLogs* to store any log information created by the install script. For more see: [Use local storage to store files during startup](https://msdn.microsoft.com/library/azure/hh974419.aspx) 
+	The above configuration will run the console command *install.cmd* with administrator privileges so it can install the .NET framework. The configuration also creates a LocalStorage with the name *InstallLogs* to store any log information created by the install script. For more see: [Use local storage to store files during startup](https://msdn.microsoft.com/zh-cn/library/azure/hh974419.aspx) 
 
 2. Create a file **install.cmd** and add it to all roles by right click on the role and selecting **Add>Existing Item...**. So all roles should now have the .NET installer file as well as the install.cmd file.
 	
@@ -132,9 +128,9 @@ When you deploy your service the startup tasks will run and install the .NET fra
 - [How to: Determine Which .NET Framework Versions Are Installed][]
 - [Troubleshooting .NET Framework Installations][]
 
-[How to: Determine Which .NET Framework Versions Are Installed]: https://msdn.microsoft.com/library/hh925568.aspx
-[Installing the .NET Framework]: https://msdn.microsoft.com/library/5a4x27ek.aspx
-[Troubleshooting .NET Framework Installations]: https://msdn.microsoft.com/library/hh925569.aspx
+[How to: Determine Which .NET Framework Versions Are Installed]: https://msdn.microsoft.com/zh-cn/library/hh925568.aspx
+[Installing the .NET Framework]: https://msdn.microsoft.com/zh-cn/library/5a4x27ek.aspx
+[Troubleshooting .NET Framework Installations]: https://msdn.microsoft.com/zh-cn/library/hh925569.aspx
 
 <!--Image references-->
 [1]: ./media/cloud-services-dotnet-install-dotnet/rolecontentwithinstallerfiles.png

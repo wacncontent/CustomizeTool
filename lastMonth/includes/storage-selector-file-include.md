@@ -1,4 +1,8 @@
 > [AZURE.SELECTOR]
-- [.NET](/storage-dotnet-how-to-use-files)
+- [.NET](../articles/storage/storage-dotnet-how-to-use-files.md)
 - [Node.js]()
-- [Java](/storage-java-how-to-use-file-storage)
+- [Java](../articles/storage/storage-java-how-to-use-file-storage.md)
+- [C++]()
+- [PHP]()
+- [Ruby]()
+- [Python]()

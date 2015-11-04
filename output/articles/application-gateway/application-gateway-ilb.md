@@ -1,32 +1,28 @@
 <properties 
-   pageTitle="Create and Configure an Application Gateway with Internal Load Balancer (ILB) in a Virtual Network | Microsoft Azure"
+   pageTitle="Create and Configure an Application Gateway with Internal Load Balancer (ILB) in a Virtual Network | Windows Azure"
    description="This page provides instructions to configure an Azure Application Gateway with an Internal Load Balanced endpoint"
    documentationCenter="na"
    services="application-gateway"
    authors="joaoma"
    manager="jdial"
    editor="tysonn"/>
-<tags 
-   ms.service="application-gateway"
-   ms.devlang="na"
-   ms.topic="article" 
-   ms.tgt_pltfrm="na"
-   ms.workload="infrastructure-services" 
-   ms.date="09/29/2015"
-   ms.author="joaoma"/>
+<tags
+	ms.service="application-gateway"
+	ms.date="09/29/2015"
+	wacn.date=""/>
 
 # Create an Application Gateway with an Internal Load Balancer (ILB)
 
 > [AZURE.SELECTOR]
-- [Azure classic steps](application-gateway-ilb.md)
-- [Resource Manager Powershell steps](application-gateway-ilb-arm.md)
+- [Azure classic steps](/documentation/articles/application-gateway-ilb)
+- [Resource Manager Powershell steps](/documentation/articles/application-gateway-ilb-arm)
 
 
 Application Gateway can be configured with an internet facing VIP or with an internal end-point not exposed to the internet, also known as Internal Load Balancer (ILB) endpoint. Configuring the gateway with an ILB is useful for internal line of business applications not exposed to internet. It's also useful for services/tiers within a multi-tier application which sit in a security boundary not exposed to internet, but still require round robin load distribution, session stickiness, or SSL termination. This article will walk you through the steps to configure an application gateway with an ILB.
 
 ## Before you begin
 
-1. Install latest version of the Azure PowerShell cmdlets using the Web Platform Installer. You can download and install the latest version from the **Windows PowerShell** section of the [Download page](http://azure.microsoft.com/downloads/).
+1. Install latest version of the Azure PowerShell cmdlets using the Web Platform Installer. You can download and install the latest version from the **Windows PowerShell** section of the [Download page](/downloads/).
 2. Verify that you have a working virtual network with valid subnet.
 3. Verify that you have backend servers either in the virtual network, or with a public IP/VIP assigned.
 
@@ -203,12 +199,12 @@ Use the `Get-AzureApplicationGateway` cmdlet to check the status of gateway. If 
 	GatewaySize   : Medium
 	State         : Running
 	VirtualIPs    : {10.0.0.10}
-	DnsName       : appgw-b2a11563-2b3a-4172-a4aa-226ee4c23eed.cloudapp.net
+	DnsName       : appgw-b2a11563-2b3a-4172-a4aa-226ee4c23eed.chinacloudapp.cn
 
 ## Next Steps
 
 
 If you want more information about load balancing options in general, see:
 
-- [Azure Load Balancer](https://azure.microsoft.com/documentation/services/load-balancer/)
-- [Azure Traffic Manager](https://azure.microsoft.com/documentation/services/traffic-manager/)
+- [Azure Load Balancer](/documentation/services/load-balancer/)
+- [Azure Traffic Manager](/documentation/services/traffic-manager/)

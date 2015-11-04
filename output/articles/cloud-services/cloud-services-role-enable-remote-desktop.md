@@ -6,21 +6,17 @@ documentationCenter=""
 authors="sbtron" 
 manager="timlt" 
 editor=""/>
-<tags 
-ms.service="cloud-services" 
-ms.workload="tbd" 
-ms.tgt_pltfrm="na" 
-ms.devlang="na" 
-ms.topic="article" 
-ms.date="10/14/2015" 
-ms.author="saurabh"/>
+<tags
+	ms.service="cloud-services"
+	ms.date="10/14/2015"
+	wacn.date=""/>
 
 # Enable Remote Desktop Connection for a Role in Azure Cloud Services
 
 >[AZURE.SELECTOR]
-- [Azure Portal](cloud-services-role-enable-remote-desktop.md)
-- [PowerShell](cloud-services-role-enable-remote-desktop-powershell.md)
-- [Visual Studio](https://msdn.microsoft.com/library/gg443832.aspx)
+- [Azure Management Portal](/documentation/articles/cloud-services-role-enable-remote-desktop)
+- [PowerShell](/documentation/articles/cloud-services-role-enable-remote-desktop-powershell)
+- [Visual Studio](https://msdn.microsoft.com/zh-cn/library/gg443832.aspx)
 
 
 Remote Desktop enables you to access the desktop of a role running in Azure. You can use a Remote Desktop connection to troubleshoot and diagnose problems with your application while it is running. 
@@ -38,7 +34,7 @@ The portal uses the Remote Desktop Extension approach so you can enable Remote D
     
     ![Cloud services remote](./media/cloud-services-role-enable-remote-desktop/CloudServices_Remote.png)
     
-    > [AZURE.WARNING] All role instances will be restarted when you first enable Remote Desktop and click OK (checkmark). To prevent a reboot, the certificate used to encrypt the password must be installed on the role. To prevent a restart, [upload a certificate for the cloud service](cloud-services-how-to-create-deploy/#how-to-upload-a-certificate-for-a-cloud-service) and then return to this dialog.
+    > [AZURE.WARNING] All role instances will be restarted when you first enable Remote Desktop and click OK (checkmark). To prevent a reboot, the certificate used to encrypt the password must be installed on the role. To prevent a restart, [upload a certificate for the cloud service](/documentation/articles/cloud-services-how-to-create-deploy#how-to-upload-a-certificate-for-a-cloud-service) and then return to this dialog.
     
 
 3. In **Roles**, select the role you want to update or select **All** for all roles.
@@ -82,10 +78,10 @@ In Visual Studio, Server Explorer:
 
 
 ### Use PowerShell to get the RDP file
-You can use the [Get-AzureRemoteDesktopFile](https://msdn.microsoft.com/library/azure/dn495261.aspx) cmdlet to retrieve the RDP file. You can then use the RDP file with Remote Desktop Connection to access the cloud service.
+You can use the [Get-AzureRemoteDesktopFile](https://msdn.microsoft.com/zh-cn/library/azure/dn495261.aspx) cmdlet to retrieve the RDP file. You can then use the RDP file with Remote Desktop Connection to access the cloud service.
 
 ### Programmatically download the RDP file through the Service Management REST API
-You can use the [Download RDP File](https://msdn.microsoft.com/library/jj157183.aspx) REST operation to download the RDP file. 
+You can use the [Download RDP File](https://msdn.microsoft.com/zh-cn/library/jj157183.aspx) REST operation to download the RDP file. 
 
 
 
@@ -93,11 +89,11 @@ You can use the [Download RDP File](https://msdn.microsoft.com/library/jj157183.
 
 This method allows you to enable Remote Desktop for the application during development. This approach requires encrypted passwords be stored in your service configuration file and any updates to the remote desktop configuration would require a redeployment of the application. If you want to avoid these downsides you should use the remote desktop extension based approach described above.  
 
-You can use Visual Studio to [enable a remote desktop connection](https://msdn.microsoft.com/library/gg443832.aspx) using the service definition file approach.  
+You can use Visual Studio to [enable a remote desktop connection](https://msdn.microsoft.com/zh-cn/library/gg443832.aspx) using the service definition file approach.  
 The steps below describe the changes needed to the service model files to enable remote desktop. Visual Studio will automatically makes these changes when publishing.
 
 ### Set up the connection in the service model 
-Use the **Imports** element to import the **RemoteAccess** module and the **RemoteForwarder** module to the [ServiceDefinition.csdef](cloud-services-model-and-package.md#csdef) file.
+Use the **Imports** element to import the **RemoteAccess** module and the **RemoteForwarder** module to the [ServiceDefinition.csdef](/documentation/articles/cloud-services-model-and-package#csdef) file.
 
 The service definition file should be similar to the following example with the `<Imports>` element added.
 
@@ -122,7 +118,7 @@ The service definition file should be similar to the following example with the 
     </WebRole>
 </ServiceDefinition>
 ```
-The [ServiceConfiguration.cscfg](cloud-services-model-and-package.md#cscfg) file should be similar to the following example, note the `<ConfigurationSettings>` and `<Certificates>` elements. The Certificate specified must be [uploaded to the cloud service](cloud-services-how-to-create-deploy/#how-to-upload-a-certificate-for-a-cloud-service).
+The [ServiceConfiguration.cscfg](/documentation/articles/cloud-services-model-and-package#cscfg) file should be similar to the following example, note the `<ConfigurationSettings>` and `<Certificates>` elements. The Certificate specified must be [uploaded to the cloud service](/documentation/articles/cloud-services-how-to-create-deploy#how-to-upload-a-certificate-for-a-cloud-service).
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -146,4 +142,4 @@ The [ServiceConfiguration.cscfg](cloud-services-model-and-package.md#cscfg) file
 
 ## Additional Resources
 
-[How to Configure Cloud Services](cloud-services-how-to-configure.md)
+[How to Configure Cloud Services](/documentation/articles/cloud-services-how-to-configure)

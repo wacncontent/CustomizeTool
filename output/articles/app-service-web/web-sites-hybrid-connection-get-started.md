@@ -16,12 +16,12 @@
 
 You can connect a web app in Azure Websites to any on-premises resource that uses a static TCP port, such as SQL Server, MySQL, HTTP Web APIs, Mobile Services, and most custom Web Services. This article shows you how to create a hybrid connection between a web app in Azure Websites and an on-premises SQL Server database.
 
-> [AZURE.NOTE] The Web Apps portion of the Hybrid Connections feature is available only in the [Azure Management Portal](https://manage.windowsazure.cn/). To create a connection in BizTalk Services, see [Hybrid Connections](http://go.microsoft.com/fwlink/p/?LinkID=397274).  
+> [AZURE.NOTE] The Web Apps portion of the Hybrid Connections feature is available only in the [Azure Management Portal](https://manage.windowsazure.cn/). To create a connection in BizTalk Services, see [Hybrid Connections](/documentation/articles/integration-hybrid-connection-overview/).  
 
 ## Prerequisites
 - An Azure subscription. For a free subscription, see [Azure Trial](/pricing/1rmb-trial/). 
 
-- To use an on-premises SQL Server or SQL Server Express database with a hybrid connection, TCP/IP needs to be enabled on a static port. Using a default instance on SQL Server is recommended because it uses static port 1433. For information on installing and configuring SQL Server Express for use with hybrid connections, see [Connect to an on-premises SQL Server from an Azure web site using Hybrid Connections](http://go.microsoft.com/fwlink/?LinkID=397979).
+- To use an on-premises SQL Server or SQL Server Express database with a hybrid connection, TCP/IP needs to be enabled on a static port. Using a default instance on SQL Server is recommended because it uses static port 1433. For information on installing and configuring SQL Server Express for use with hybrid connections, see [Connect to an on-premises SQL Server from an Azure web site using Hybrid Connections](/documentation/articles/web-sites-hybrid-connection-connect-on-premises-sql-server/).
 
 - The computer on which you install the on-premises Hybrid Connection Manager agent described later in this article:
 
@@ -159,13 +159,13 @@ Now that the hybrid connection infrastructure is complete, you can create a hybr
 <a name="NextSteps"></a>
 ## Next Steps ##
 
-- For information on creating an ASP.NET web application that uses a hybrid connection, see [Connect to an on-premises SQL Server from an Azure web site using Hybrid Connections](http://go.microsoft.com/fwlink/?LinkID=397979).
+- For information on creating an ASP.NET web application that uses a hybrid connection, see [Connect to an on-premises SQL Server from an Azure web site using Hybrid Connections](/documentation/articles/web-sites-hybrid-connection-connect-on-premises-sql-server/).
 
 - For information on using a hybrid connection with a mobile service, see [Connect to an on-premises SQL Server from an Azure mobile service using Hybrid Connections](/documentation/articles/mobile-services-dotnet-backend-hybrid-connections-get-started).
 
 ### Additional Resources
 
-[Hybrid Connections overview](http://go.microsoft.com/fwlink/p/?LinkID=397274)
+[Hybrid Connections overview](/documentation/articles/integration-hybrid-connection-overview/)
 
 [Josh Twist introduces hybrid connections (Channel 9 video)](http://channel9.msdn.com/Shows/Azure-Friday/Josh-Twist-introduces-hybrid-connections)
 

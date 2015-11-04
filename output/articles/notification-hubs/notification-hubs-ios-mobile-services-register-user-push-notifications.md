@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Register current user for push notifications using a mobile service | Microsoft Azure" 
+	pageTitle="Register current user for push notifications using a mobile service | Windows Azure" 
 	description="Learn how to request push notification registration in an iOS app with Azure Notification Hubs when registeration is performed by Azure Mobile Services." 
 	services="notification-hubs" 
 	documentationCenter="ios" 
@@ -7,20 +7,16 @@
 	manager="dwrede" 
 	editor=""/>
 
-<tags 
-	ms.service="mobile-services" 
-	ms.workload="mobile" 
-	ms.tgt_pltfrm="ios" 
-	ms.devlang="objective-c" 
-	ms.topic="article" 
-	ms.date="07/28/2015" 
-	ms.author="yuaxu"/>
+<tags
+	ms.service="mobile-services"
+	ms.date="07/28/2015"
+	wacn.date=""/>
 
 # Register the current user for push notifications by using a mobile service
 
 > [AZURE.SELECTOR]
-[Windows Store C#](notification-hubs-windows-store-mobile-services-register-user-push-notifications.md)
-[iOS](notification-hubs-ios-mobile-services-register-user-push-notifications.md)
+[Windows Store C#](/documentation/articles/notification-hubs-windows-store-mobile-services-register-user-push-notifications)
+[iOS](/documentation/articles/notification-hubs-ios-mobile-services-register-user-push-notifications)
 
 This topic shows you how to request push notification registration with Azure Notification Hubs when registration is performed by Azure Mobile Services. This topic extends the tutorial [Notify users with Notification Hubs]. You must have already completed the required steps in that tutorial to create the authenticated mobile service. For more information on the notify users scenario, see [Notify users with Notification Hubs].  
 
@@ -118,6 +114,6 @@ Now that the client app has been updated, return to the [Notify users with Notif
 [Notify users with Notification Hubs]: /manage/services/notification-hubs/notify-users
 [Get started with authentication]: /develop/mobile/tutorials/get-started-with-users-ios/
 
-[Azure Management Portal]: https://manage.windowsazure.com/
+[Azure Management Portal]: https://manage.windowsazure.cn/
 [Get Started with Notification Hubs]: /manage/services/notification-hubs/get-started-notification-hubs-ios/
  

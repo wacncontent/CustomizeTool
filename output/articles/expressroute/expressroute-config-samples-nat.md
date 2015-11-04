@@ -1,5 +1,5 @@
 <properties
-   pageTitle="ExpressRoute customer router configuration samples | Microsoft Azure"
+   pageTitle="ExpressRoute customer router configuration samples | Windows Azure"
    description="This page provides router configuration samples for Cisco and Juniper routers."
    documentationCenter="na"
    services="expressroute"
@@ -7,13 +7,9 @@
    manager="carolz"
    editor="" />
 <tags
-   ms.service="expressroute"
-   ms.devlang="na"
-   ms.topic="article" 
-   ms.tgt_pltfrm="na"
-   ms.workload="infrastructure-services"
-   ms.date="10/12/2015"
-   ms.author="cherylmc"/>
+	ms.service="expressroute"
+	ms.date="10/12/2015"
+	wacn.date=""/>
 
 # Router configuration samples to setup and manage NAT
 
@@ -21,7 +17,7 @@ This page provides NAT configuration samples for Cisco ASA and Juniper MX series
 
 >[AZURE.IMPORTANT] Samples in this page are intended to be purely for guidance. You must work with your vendor's sales / technical team and your networking team to come up with appropriate configurations to meet your needs. Microsoft will not support issues related to configurations listed in this page. You must contact your device vendor for support issues.
 
-Router configuration samples below apply to Azure Public and Microsoft peerings. You must not configure NAT for Azure private peering. Review [ExpressRoute peerings](expressroute-circuit-peerings.md) and [ExpressRoute NAT requirements](expressroute-nat.md) for more details.
+Router configuration samples below apply to Azure Public and Microsoft peerings. You must not configure NAT for Azure private peering. Review [ExpressRoute peerings](/documentation/articles/expressroute-circuit-peerings) and [ExpressRoute NAT requirements](/documentation/articles/expressroute-nat) for more details.
 
 **Note:** You MUST use separate NAT IP pools for connectivity to the internet and ExpressRoute. Using the same NAT IP pool across the internet and ExpressRoute will result in asymmetric routing and loss of connectivity.
 
@@ -218,7 +214,7 @@ Router configuration samples below apply to Azure Public and Microsoft peerings.
 
 ### 5. Configure BGP to advertise selective prefixes in each direction
 
-Refer to samples in [Routing configuration samples ](expressroute-config-samples-routing.md) page.
+Refer to samples in [Routing configuration samples ](/documentation/articles/expressroute-config-samples-routing) page.
 
 ### 6. Create policies
 
@@ -318,5 +314,5 @@ Refer to samples in [Routing configuration samples ](expressroute-config-samples
 
 ## Next steps
 
-See the [ExpressRoute FAQ](expressroute-faqs.md) for more details.
+See the [ExpressRoute FAQ](/documentation/articles/expressroute-faqs) for more details.
 

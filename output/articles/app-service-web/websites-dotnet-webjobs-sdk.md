@@ -107,5 +107,5 @@ The WebJobs SDK provides several advantages even if you don't need to work direc
 
 ## <a id="nextsteps"></a>Next steps
 
-For more information about the WebJobs SDK, see [Azure WebJobs Recommended Resources](http://go.microsoft.com/fwlink/?linkid=390226).
+For more information about the WebJobs SDK, see [Azure WebJobs Recommended Resources](/documentation/articles/websites-webjobs-resources/).
  

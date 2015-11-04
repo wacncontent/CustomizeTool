@@ -9,16 +9,12 @@
 
 <tags
 	ms.service="notification-hubs"
-	ms.workload="mobile"
-	ms.tgt_pltfrm="mobile-ios"
-	ms.devlang="objective-c"
-	ms.topic="article"
 	ms.date="09/24/2015"
-	ms.author="wesmc"/>
+	wacn.date=""/>
 
 # Use Notification Hubs to send breaking news
 
-[AZURE.INCLUDE [notification-hubs-selector-breaking-news](../../includes/notification-hubs-selector-breaking-news.md)]
+[AZURE.INCLUDE [notification-hubs-selector-breaking-news](../includes/notification-hubs-selector-breaking-news.md)]
 
 
 ##Overview
@@ -375,11 +371,11 @@ In this tutorial we learned how to broadcast breaking news by category. Consider
 
 
 <!-- URLs. -->
-[How To: Service Bus Notification Hubs (iOS Apps)]: http://msdn.microsoft.com/library/jj927168.aspx
+[How To: Service Bus Notification Hubs (iOS Apps)]: http://msdn.microsoft.com/zh-cn/library/jj927168.aspx
 [Use Notification Hubs to broadcast localized breaking news]: /manage/services/notification-hubs/breaking-news-localized-dotnet/
 [Mobile Service]: /develop/mobile/tutorials/get-started
-[Notify users with Notification Hubs]: notification-hubs-aspnet-backend-ios-notify-users.md
-[Azure Management Portal]: https://manage.windowsazure.com/
-[Notification Hubs Guidance]: http://msdn.microsoft.com/library/dn530749.aspx
-[Notification Hubs How-To for iOS]: http://msdn.microsoft.com/library/jj927168.aspx
+[Notify users with Notification Hubs]: /documentation/articles/notification-hubs-aspnet-backend-ios-notify-users
+[Azure Management Portal]: https://manage.windowsazure.cn/
+[Notification Hubs Guidance]: http://msdn.microsoft.com/zh-cn/library/dn530749.aspx
+[Notification Hubs How-To for iOS]: http://msdn.microsoft.com/zh-cn/library/jj927168.aspx
 [get-started]: /manage/services/notification-hubs/get-started-notification-hubs-ios/

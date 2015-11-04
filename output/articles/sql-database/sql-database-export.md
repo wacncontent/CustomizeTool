@@ -9,12 +9,8 @@
 
 <tags
 	ms.service="sql-database"
-	ms.devlang="NA"
 	ms.date="10/13/2015"
-	ms.author="sstein"
-	ms.workload="data-management"
-	ms.topic="article"
-	ms.tgt_pltfrm="NA"/>
+	wacn.date=""/>
 
 
 # Create and export a BACPAC of an Azure SQL database
@@ -22,14 +18,14 @@
 **Single database**
 
 > [AZURE.SELECTOR]
-- [Azure Preview Portal](sql-database-export.md)
-- [PowerShell](sql-database-export-powershell.md)
+- [Azure Preview Portal](/documentation/articles/sql-database-export)
+- [PowerShell](/documentation/articles/sql-database-export-powershell)
 
-This article provides directions for exporting a BACPAC of your Azure SQL database with the [Azure preview portal](https://portal.azure.com).
+This article provides directions for exporting a BACPAC of your Azure SQL database with the [Azure preview portal](https://manage.windowsazure.cn).
 
-A BACPAC is a .bacpac file that contains a database schema and data. For details, see Backup Package (.bacpac) in [Data-tier Applications](https://msdn.microsoft.com/library/ee210546.aspx).
+A BACPAC is a .bacpac file that contains a database schema and data. For details, see Backup Package (.bacpac) in [Data-tier Applications](https://msdn.microsoft.com/zh-cn/library/ee210546.aspx).
 
-> [AZURE.NOTE] Azure SQL Database automatically creates backups for every user database. For details, see [Business Continuity Overview](sql-database-business-continuity.md).
+> [AZURE.NOTE] Azure SQL Database automatically creates backups for every user database. For details, see [Business Continuity Overview](/documentation/articles/sql-database-business-continuity).
 
 
 The BACPAC is exported into an Azure storage blob container that you can download once the operation successfully completes.
@@ -37,15 +33,15 @@ The BACPAC is exported into an Azure storage blob container that you can downloa
 To complete this article you need the following:
 
 - An Azure subscription. If you need an Azure subscription simply click **FREE TRIAL** at the top of this page, and then come back to finish this article.
-- An Azure SQL Database. If you do not have a SQL database, create one following the steps in this article: [Create your first Azure SQL Database](sql-database-get-started.md).
-- An [Azure Storage account](storage-create-storage-account.md) with a blob container to store the database backup. Currently the storage account must use the classic deployment model so choose **Classic** when creating a storage account. 
+- An Azure SQL Database. If you do not have a SQL database, create one following the steps in this article: [Create your first Azure SQL Database](/documentation/articles/sql-database-get-started).
+- An [Azure Storage account](/documentation/articles/storage-create-storage-account) with a blob container to store the database backup. Currently the storage account must use the classic deployment model so choose **Classic** when creating a storage account. 
 
 
 ## Export your database
 
 Open the SQL Database blade for the database you want to export as a .bacpac file:
 
-1.	Go to the [Azure Preview Portal](https://portal.azure.com).
+1.	Go to the [Azure Preview Portal](https://manage.windowsazure.cn).
 2.	Click **BROWSE ALL**.
 3.	Click **SQL databases**.
 2.	Click the database you want to export as a BACPAC.
@@ -84,15 +80,15 @@ Clicking **Create** creates an export database request and submits it to the ser
 
 ## Next steps
 
-- [Import an Azure SQL database](sql-database-import.md)
+- [Import an Azure SQL database](/documentation/articles/sql-database-import)
 
 
 
 ## Additional resources
 
-- [Business Continuity Overview](sql-database-business-continuity.md)
-- [Disaster Recovery Drills](sql-database-disaster-recovery-drills.md)
-- [SQL Database documentation](https://azure.microsoft.com/documentation/services/sql-database/)
+- [Business Continuity Overview](/documentation/articles/sql-database-business-continuity)
+- [Disaster Recovery Drills](/documentation/articles/sql-database-disaster-recovery-drills)
+- [SQL Database documentation](/documentation/services/sql-database/)
 
 
 <!--Image references-->

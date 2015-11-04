@@ -6,14 +6,10 @@
 	 authors="zhangmanling" 
 	 manager="dwrede" 
 	 editor=""/>
-<tags 
-	 ms.service="cdn" 
-	 ms.workload="media" 
-	 ms.tgt_pltfrm="na" 
-	 ms.devlang="na" 
-	 ms.topic="article" 
-	 ms.date="09/01/2015" 
-	 ms.author="mazha"/>
+<tags
+	ms.service="cdn"
+	ms.date="09/01/2015"
+	wacn.date=""/>
 
 #How to map Custom Domain to Content Delivery Network (CDN) endpoint
 
@@ -43,7 +39,7 @@ The procedures in this topic will show you how to:
 
 ##<a name="subheading1"></a>Register a custom domain for an Azure CDN endpoint
 
-1.	Log into the [Azure Management Portal](http://manage.windowsazure.com/).
+1.	Log into the [Azure Management Portal](http://manage.windowsazure.cn/).
 2.	In the navigation pane, click **CDN**.
 3.	From the list view, click the name of the CDN endpoint with which you want to associate the subdomain, to navigate to the detail page for that endpoint.
 4.	On the ribbon, click **Manage Domains** to display the **Manage custom domains** dialog box. In the text of the dialog box, you'll see the host name, derived from your CDN endpoint, to use in creating a new CNAME record. The format of the host name address will appear as **az#####.vo.msecnd.net** (where **az#####** is the identifier for your CDN endpoint). You can copy this host name to use in creating the CNAME record.  
@@ -60,7 +56,7 @@ For this procedure, ignore the text that refers to the **cdnverify** subdomain.
 ##<a name="subheading2"></a>Register a custom domain for an Azure CDN endpoint using the intermediary cdnverify subdomain  
 
 
-1.	Log into the [Azure Management Portal](http://manage.windowsazure.com/).
+1.	Log into the [Azure Management Portal](http://manage.windowsazure.cn/).
 2.	In the navigation pane, click **CDN**.
 3.	From the list view, click the name of the CDN endpoint with which you want to associate the subdomain, to navigate to the detail page for that endpoint.
 4.	On the ribbon, click **Manage Domains** to display the **Manage custom domains** dialog box. In the text of the dialog box, you'll see the host name, derived from your CDN endpoint, to use in creating a new CNAME record using the **cdnverify** intermediary subdomain. The format of the host name address will appear as **cdnverify.az#####.vo.msecnd.net**. You can copy this host name to use in creating the CNAME record.

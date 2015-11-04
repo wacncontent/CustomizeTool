@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Azure Batch technical overview | Microsoft Azure"
+	pageTitle="Azure Batch technical overview | Windows Azure"
 	description="Learn about the concepts, workflows, and scenarios of the Azure Batch service"
 	services="batch"
 	documentationCenter=""
@@ -9,18 +9,14 @@
 
 <tags
 	ms.service="batch"
-	ms.workload="big-compute"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="get-started-article"
 	ms.date="07/13/2015"
-	ms.author="danlep"/>
+	wacn.date=""/>
 
 
 # Azure Batch technical overview
 Azure Batch helps you run large-scale parallel and high performance computing (HPC) applications efficiently in the cloud. It's a platform service that provides job scheduling and autoscaling of a managed collection of virtual machines (VMs) to run the jobs. By using the Batch service, you can configure batch workloads to run in Azure on demand or on a schedule, and not worry about the complexity of configuring and managing an HPC cluster, VMs, or a job scheduler.
 
->[AZURE.NOTE] To use Batch, you need an Azure account. If you don't have an account, you can create a free trial account in just a couple of minutes. For details, see [Create an Azure account](http://azure.microsoft.com/develop/php/tutorials/create-a-windows-azure-account/).
+>[AZURE.NOTE] To use Batch, you need an Azure account. If you don't have an account, you can create a trial account in just a couple of minutes. For details, see [Create an Azure account](/develop/php/tutorials/create-a-windows-azure-account/).
 
 
 ## Use cases
@@ -49,13 +45,13 @@ You can also use Batch to perform parallel calculations with a reduce step at th
 
 ## Developer scenarios
 
-Batch supports different developer scenarios to help you configure and run your large-scale parallel workloads with the Batch service. These scenarios use APIs to create and manage pools of VMs (compute nodes) and schedule the jobs and tasks that run on them. See [API basics for Azure Batch](batch-api-basics.md) for more about the Batch concepts.
+Batch supports different developer scenarios to help you configure and run your large-scale parallel workloads with the Batch service. These scenarios use APIs to create and manage pools of VMs (compute nodes) and schedule the jobs and tasks that run on them. See [API basics for Azure Batch](/documentation/articles/batch-api-basics) for more about the Batch concepts.
 
 Typical Batch developer scenarios are in the following sections.
 
 ### Scale out a parallel workload
 
-Use the Batch API to scale out intrinsically parallel work such as image rendering on a pool of up to thousands of compute cores. Instead of setting up a compute cluster or write code to queue and schedule your jobs and move the necessary input and output data, you automate the scheduling of large compute jobs and scale a pool of compute VMs up and down to run them. You can write client apps or front-ends to run jobs and tasks on demand, on a schedule, or as part of a larger workflow managed by tools such as [Azure Data Factory](https://azure.microsoft.com/documentation/services/data-factory/).
+Use the Batch API to scale out intrinsically parallel work such as image rendering on a pool of up to thousands of compute cores. Instead of setting up a compute cluster or write code to queue and schedule your jobs and move the necessary input and output data, you automate the scheduling of large compute jobs and scale a pool of compute VMs up and down to run them. You can write client apps or front-ends to run jobs and tasks on demand, on a schedule, or as part of a larger workflow managed by tools such as [Azure Data Factory](/documentation/services/data-factory/).
 
 Figure 2 shows a simplified workflow to submit an application to a Batch pool where it's distributed for processing.
 
@@ -106,11 +102,11 @@ Figure 3 shows a basic workflow to publish an application by using the Batch App
 ## <a id="BKMK_Account">Batch account</a>
 You need to create one or more unique **Batch accounts** to use and develop with the Batch service. All requests that you make to the Batch service must be authenticated using the name of an account and its access key.
 
-You can create a Batch account and manage access keys for the account in the Azure Preview portal or with the [Batch PowerShell cmdlets](batch-powershell-cmdlets-get-started.md).
+You can create a Batch account and manage access keys for the account in the Azure Preview portal or with the [Batch PowerShell cmdlets](/documentation/articles/batch-powershell-cmdlets-get-started).
 
 To create a Batch account in the portal:
 
-1. Sign in to the [Azure Preview portal](https://portal.azure.com).
+1. Sign in to the [Azure Preview portal](https://manage.windowsazure.cn).
 
 2. Click **New** > **Compute** > **Marketplace** > **Everything**, and then enter *Batch* in the search box.
 
@@ -141,8 +137,8 @@ After the account is created, you can find it in the portal to manage access key
 
 ## Additional resources
 
-* [Get Started with the Azure Batch Library for .NET](batch-dotnet-get-started.md)
-* [Azure Batch development libraries and tools](batch-development-libraries-tools.md)
+* [Get Started with the Azure Batch Library for .NET](/documentation/articles/batch-dotnet-get-started)
+* [Azure Batch development libraries and tools](/documentation/articles/batch-development-libraries-tools)
 * [Azure Batch REST API Reference](http://go.microsoft.com/fwlink/p/?LinkId=517803)
 * [Azure Batch Apps REST API Reference](http://go.microsoft.com/fwlink/p/?LinkId=517804)
 

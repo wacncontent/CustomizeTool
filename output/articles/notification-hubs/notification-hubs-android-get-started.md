@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Get started with Azure Notification Hubs for Android apps | Microsoft Azure"
+	pageTitle="Get started with Azure Notification Hubs for Android apps | Windows Azure"
 	description="In this tutorial, you learn how to use Azure Notification Hubs to push notifications to Android devices."
 	services="notification-hubs"
 	documentationCenter="android"
@@ -8,16 +8,12 @@
 	editor=""/>
 <tags
 	ms.service="notification-hubs"
-	ms.workload="mobile"
-	ms.tgt_pltfrm="mobile-android"
-	ms.devlang="java"
-	ms.topic="hero-article"
 	ms.date="10/19/2015"
-	ms.author="wesmc"/>
+	wacn.date=""/>
 
 # Get started with Notification Hubs for Android apps
 
-[AZURE.INCLUDE [notification-hubs-selector-get-started](../../includes/notification-hubs-selector-get-started.md)]
+[AZURE.INCLUDE [notification-hubs-selector-get-started](../includes/notification-hubs-selector-get-started.md)]
 
 ##Overview
 
@@ -29,7 +25,7 @@ This tutorial demonstrates the simple broadcast scenario in using Notification H
 
 ## Before you begin
 
-[AZURE.INCLUDE [notification-hubs-hero-slug](../../includes/notification-hubs-hero-slug.md)]
+[AZURE.INCLUDE [notification-hubs-hero-slug](../includes/notification-hubs-hero-slug.md)]
 
 The completed code for this tutorial can be found on GitHub [here](https://github.com/Azure/azure-notificationhubs-samples/tree/master/Android/GetStarted). 
 
@@ -39,7 +35,7 @@ The completed code for this tutorial can be found on GitHub [here](https://githu
 This tutorial requires the following:
 
 + Android Studio, which you can download from <a href="http://go.microsoft.com/fwlink/?LinkId=389797">the Android site</a>.
-+ An active Azure account. If you don't have an account, you can create a free trial account in just a couple of minutes. For details, see [Azure Free Trial](http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fen-us%2Fdocumentation%2Farticles%2Fnotification-hubs-android-get-started%2F).
++ An active Azure account. If you don't have an account, you can create a trial account in just a couple of minutes. For details, see [Azure Trial](/pricing/1rmb-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fen-us%2Fdocumentation%2Farticles%2Fnotification-hubs-android-get-started%2F).
 
 
 Completing this tutorial is a prerequisite for all other Notification Hubs tutorials for Android apps.
@@ -47,12 +43,12 @@ Completing this tutorial is a prerequisite for all other Notification Hubs tutor
 
 ##Create a project that supports Google Cloud Messaging
 
-[AZURE.INCLUDE [mobile-services-enable-Google-cloud-messaging](../../includes/mobile-services-enable-google-cloud-messaging.md)]
+[AZURE.INCLUDE [mobile-services-enable-Google-cloud-messaging](../includes/mobile-services-enable-google-cloud-messaging.md)]
 
 
 ##Configure a new notification hub
 
-[AZURE.INCLUDE [notification-hubs-android-configure-push](../../includes/notification-hubs-android-configure-push.md)]
+[AZURE.INCLUDE [notification-hubs-android-configure-push](../includes/notification-hubs-android-configure-push.md)]
 
 ##<a id="connecting-app"></a>Connect your app to the notification hub
 
@@ -70,7 +66,7 @@ Completing this tutorial is a prerequisite for all other Notification Hubs tutor
 
 ###Add Google Play services to the project
 
-[AZURE.INCLUDE [Add Play Services](../../includes/notification-hubs-android-studio-add-google-play-services.md)]
+[AZURE.INCLUDE [Add Play Services](../includes/notification-hubs-android-studio-add-google-play-services.md)]
 
 ###Add code
 
@@ -113,7 +109,7 @@ Completing this tutorial is a prerequisite for all other Notification Hubs tutor
 
 	Make sure to update the three placeholders:
 	* **SENDER_ID**: Set `SENDER_ID` to the project number that you obtained earlier from the project that you created in  the [Google Cloud Console](http://cloud.google.com/console).
-	* **HubListenConnectionString**: Set `HubListenConnectionString` to the **DefaultListenAccessSignature** connection string for your hub. You can copy that connection string by clicking **View Connection String** on the **Dashboard** tab of your hub on the [Azure portal].
+	* **HubListenConnectionString**: Set `HubListenConnectionString` to the **DefaultListenAccessSignature** connection string for your hub. You can copy that connection string by clicking **View Connection String** on the **Dashboard** tab of your hub on the [Azure Management Portal].
 	* **HubName**: Use the name of your notification hub that appears at the top of the page in Azure for your hub (**not** the full URL). For example, use `"myhub"`.
 
 
@@ -277,11 +273,11 @@ Completing this tutorial is a prerequisite for all other Notification Hubs tutor
 
 
 
-You can test receiving notifications in your app by sending notifications in the Azure portal via the debug tab on the notification hub, as shown in the screen below.
+You can test receiving notifications in your app by sending notifications in the Azure Management Portal via the debug tab on the notification hub, as shown in the screen below.
 
 ![][30]
 
-[AZURE.INCLUDE [notification-hubs-sending-notifications-from-the-portal](../../includes/notification-hubs-sending-notifications-from-the-portal.md)]
+[AZURE.INCLUDE [notification-hubs-sending-notifications-from-the-portal](../includes/notification-hubs-sending-notifications-from-the-portal.md)]
 
 
 ## (Optional) Send notifications from the app
@@ -332,19 +328,19 @@ You can test receiving notifications in your app by sending notifications in the
 
 3. In your **MainActivity.java** file, add the following members at the top of the `MainActivity` class.
 
-	Update `HubFullAccess` with the **DefaultFullSharedAccessSignature** connection string for your hub. This connection string can be copied from the [Azure portal] by clicking **View Connection String** on the **Dashboard** tab for your notification hub.
+	Update `HubFullAccess` with the **DefaultFullSharedAccessSignature** connection string for your hub. This connection string can be copied from the [Azure Management Portal] by clicking **View Connection String** on the **Dashboard** tab for your notification hub.
 
 	    private String HubEndpoint = null;
 	    private String HubSasKeyName = null;
 	    private String HubSasKeyValue = null;
 		private String HubFullAccess = "<Enter Your DefaultFullSharedAccess Connection string>";
 
-4. Your activity holds the hub name and the full shared access connection string for the hub. You must create a Software Access Signature (SaS) token to authenticate a POST request to send messages to your notification hub. This is done by parsing the key data from the connection string and then creating the SaS token, as mentioned in the [Common Concepts](http://msdn.microsoft.com/library/azure/dn495627.aspx) REST API reference.
+4. Your activity holds the hub name and the full shared access connection string for the hub. You must create a Software Access Signature (SaS) token to authenticate a POST request to send messages to your notification hub. This is done by parsing the key data from the connection string and then creating the SaS token, as mentioned in the [Common Concepts](http://msdn.microsoft.com/zh-cn/library/azure/dn495627.aspx) REST API reference.
 
 	In **MainActivity.java**, add the following method to the `MainActivity` class to parse your connection string.
 
 	    /**
-    	 * Example code from http://msdn.microsoft.com/library/azure/dn495627.aspx
+    	 * Example code from http://msdn.microsoft.com/zh-cn/library/azure/dn495627.aspx
     	 * to parse the connection string so a SaS authentication token can be
     	 * constructed.
     	 *
@@ -372,13 +368,13 @@ You can test receiving notifications in your app by sending notifications in the
 5. In **MainActivity.java**, add the following method to the `MainActivity` class to create a SaS authentication token.
 
         /**
-         * Example code from http://msdn.microsoft.com/library/azure/dn495627.aspx to
+         * Example code from http://msdn.microsoft.com/zh-cn/library/azure/dn495627.aspx to
          * construct a SaS token from the access key to authenticate a request.
          *
          * @param uri The unencoded resource URI string for this operation. The resource
          *            URI is the full URI of the Service Bus resource to which access is
          *            claimed. For example,
-         *            "http://<namespace>.servicebus.windows.net/<hubName>"
+         *            "http://<namespace>.servicebus.chinacloudapi.cn/<hubName>"
          */
         private String generateSasToken(String uri) {
 
@@ -446,7 +442,7 @@ You can test receiving notifications in your app by sending notifications in the
                         HttpClient client = new DefaultHttpClient();
 
                         // Based on reference documentation...
-                        // http://msdn.microsoft.com/library/azure/dn223273.aspx
+                        // http://msdn.microsoft.com/zh-cn/library/azure/dn223273.aspx
                         ParseConnectionString(HubFullAccess);
                         String url = HubEndpoint + HubName + "/messages/?api-version=2015-01";
                         HttpPost post = new HttpPost(url);
@@ -477,9 +473,9 @@ You can test receiving notifications in your app by sending notifications in the
 
 ####Emulator testing
 
-If you want to test on an emulator, make sure that your emulator image supports the Google API level that you choose for your app. If your image doesn't support the Google APIs, you will end up with the **SERVICE\_NOT\_AVAILABLE** exception.
+If you want to test on an emulator, make sure that your emulator image supports the Google API level that you choose for your app. If your image doesn't support the Google APIs, you will end up with the **SERVICE_NOT_AVAILABLE** exception.
 
-Also make sure that you have added your Google account to your running emulator under **Settings** > **Accounts**. Otherwise, your attempts to register with GCM may result in the **AUTHENTICATION\_FAILED** exception.
+Also make sure that you have added your Google account to your running emulator under **Settings** > **Accounts**. Otherwise, your attempts to register with GCM may result in the **AUTHENTICATION_FAILED** exception.
 
 ####Testing the app
 
@@ -537,10 +533,10 @@ To learn more general information about Notification Hubs, see [Notification Hub
 
 
 <!-- URLs. -->
-[Get started with push notifications in Mobile Services]: ../mobile-services-javascript-backend-android-get-started-push.md  
+[Get started with push notifications in Mobile Services]: /documentation/articles/mobile-services-javascript-backend-android-get-started-push
 [Mobile Services Android SDK]: https://go.microsoft.com/fwLink/?LinkID=280126&clcid=0x409
 [Referencing a library project]: http://go.microsoft.com/fwlink/?LinkId=389800
-[Azure portal]: https://manage.windowsazure.com/
-[Notification Hubs Guidance]: http://msdn.microsoft.com/library/jj927170.aspx
-[Use Notification Hubs to push notifications to users]: notification-hubs-aspnet-backend-android-notify-users.md
-[Use Notification Hubs to send breaking news]: notification-hubs-aspnet-backend-android-breaking-news.md
+[Azure Management Portal]: https://manage.windowsazure.cn/
+[Notification Hubs Guidance]: http://msdn.microsoft.com/zh-cn/library/jj927170.aspx
+[Use Notification Hubs to push notifications to users]: /documentation/articles/notification-hubs-aspnet-backend-android-notify-users
+[Use Notification Hubs to send breaking news]: /documentation/articles/notification-hubs-aspnet-backend-android-breaking-news

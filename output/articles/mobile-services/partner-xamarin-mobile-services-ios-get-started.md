@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Get Started with Mobile Services for Xamarin iOS apps | Microsoft Azure"
+	pageTitle="Get Started with Mobile Services for Xamarin iOS apps | Windows Azure"
 	description="Follow this tutorial to get started using Azure Mobile Services for Xamarin iOS development."
 	services="mobile-services"
 	documentationCenter="xamarin"
@@ -9,19 +9,15 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.workload="mobile"
-	ms.tgt_pltfrm="mobile-xamarin-ios"
-	ms.devlang="dotnet"
-	ms.topic="hero-article"
 	ms.date="10/06/2015"
-	ms.author="craig.dunn@xamarin.com"/>
+	wacn.date=""/>
 
 # <a name="getting-started"> </a>Get started with Mobile Services
 
-[AZURE.INCLUDE [mobile-services-selector-get-started](../../includes/mobile-services-selector-get-started.md)]
+[AZURE.INCLUDE [mobile-services-selector-get-started](../includes/mobile-services-selector-get-started.md)]
 &nbsp;
 
-[AZURE.INCLUDE [mobile-services-hero-slug](../../includes/mobile-services-hero-slug.md)]
+[AZURE.INCLUDE [mobile-services-hero-slug](../includes/mobile-services-hero-slug.md)]
 
 This tutorial shows you how to add a cloud-based backend service to a Xamarin.iOS app using Azure Mobile Services. In this tutorial, you will create both a new mobile service and a simple *To do list* app that stores app data in the new mobile service.
 
@@ -37,11 +33,11 @@ A screenshot from the completed app is below:
 
 Completing this tutorial requires XCode and [Xamarin Studio] for OS X or the Xamarin Visual Studio plug-in for Visual Studio on Windows. The sample will run on iOS 5.0 and newer.
 
-> [AZURE.IMPORTANT] To complete this tutorial, you need an Azure account. If you don't have an account, you can sign up for an Azure trial and get up to 10 free mobile services that you can keep using even after your trial ends. For details, see [Azure Free Trial](http://azure.microsoft.com/pricing/free-trial/).
+> [AZURE.IMPORTANT] To complete this tutorial, you need an Azure account. If you don't have an account, you can sign up for an Azure trial and get up to 10 free mobile services that you can keep using even after your trial ends. For details, see [Azure Trial](/pricing/1rmb-trial/).
 
 ## <a name="create-new-service"> </a>Create a new mobile service
 
-[AZURE.INCLUDE [mobile-services-create-new-service](../../includes/mobile-services-create-new-service.md)]
+[AZURE.INCLUDE [mobile-services-create-new-service](../includes/mobile-services-create-new-service.md)]
 
 ## Create a new Xamarin.iOS app
 
@@ -108,11 +104,11 @@ Now that you have completed the quickstart, learn how to perform additional impo
 * [Get started with push notifications]  
   Learn how to send a very basic push notification to your app.
 
-* [How to use the Xamarin Component client for Azure Mobile Services](partner-xamarin-mobile-services-how-to-use-client-library.md)  
+* [How to use the Xamarin Component client for Azure Mobile Services](/documentation/articles/partner-xamarin-mobile-services-how-to-use-client-library)  
    Learn how to query the mobile service, work with data, and access custom APIs.   
   
 
-[AZURE.INCLUDE [app-service-disqus-feedback-slug](../../includes/app-service-disqus-feedback-slug.md)]
+[AZURE.INCLUDE [app-service-disqus-feedback-slug](../includes/app-service-disqus-feedback-slug.md)]
 
 <!-- Anchors. -->
 [Getting started with Mobile Services]:#getting-started
@@ -132,11 +128,10 @@ Now that you have completed the quickstart, learn how to perform additional impo
 
 
 <!-- URLs. -->
-[Get started with offline data sync]: mobile-services-xamarin-ios-get-started-offline-data.md
-[Get started with authentication]: partner-xamarin-mobile-services-ios-get-started-users.md
-[Get started with push notifications]: partner-xamarin-mobile-services-ios-get-started-push.md
-
+[Get started with offline data sync]: /documentation/articles/mobile-services-xamarin-ios-get-started-offline-data
+[Get started with authentication]: /documentation/articles/partner-xamarin-mobile-services-ios-get-started-users
+[Get started with push notifications]: /documentation/articles/partner-xamarin-mobile-services-ios-get-started-push
 [Xamarin Studio]: http://xamarin.com/download
 [Mobile Services iOS SDK]: https://go.microsoft.com/fwLink/p/?LinkID=266533
 
-[Management Portal]: https://manage.windowsazure.com/
+[Management Portal]: https://manage.windowsazure.cn/

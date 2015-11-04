@@ -15,7 +15,7 @@ articles/sql-database/sql-database-connect-query.md
 -->
 
 
-1. Log in through the [Azure preview portal](https://manage.windowsazure.cn/), at https://manage.windowsazure.cn/.
+1. Log in through the [Azure preview portal](http://portal.azure.com/), at http://portal.azure.com/.
 
 2. In the left banner, click **BROWSE ALL**. The **Browse** blade is displayed.
 

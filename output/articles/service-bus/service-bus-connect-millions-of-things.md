@@ -1,37 +1,33 @@
 <properties 
-	pageTitle="Connect Millions of Things to the Cloud | Microsoft Azure" 
-	description="Learn how to connect millions of things to the cloud using Microsoft Azure." 
+	pageTitle="Connect Millions of Things to the Cloud | Windows Azure" 
+	description="Learn how to connect millions of things to the cloud using Windows Azure." 
 	services="service-bus,event-hubs" 
 	documentationCenter=".net" 
 	authors="sethmanheim" 
 	manager="timlt" 
 	editor=""/>
 
-<tags 
-	ms.service="service-bus" 
-	ms.workload="tbd" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="multiple" 
-	ms.topic="article" 
-	ms.date="10/06/2015" 
-	ms.author="sethm"/>
+<tags
+	ms.service="service-bus"
+	ms.date="10/06/2015"
+	wacn.date=""/>
 
 # Connect millions of things to the cloud
  
-Smart and connected "things" increasingly proliferate in modern technology ecosystems. Sensors in cars, homes, infrastructure, and appliances produce new opportunities to provide improved product quality, expanded services, and new customer engagement models. Microsoft Azure Service Bus can help you connect this emerging "Internet of things."
+Smart and connected "things" increasingly proliferate in modern technology ecosystems. Sensors in cars, homes, infrastructure, and appliances produce new opportunities to provide improved product quality, expanded services, and new customer engagement models. Windows Azure Service Bus can help you connect this emerging "Internet of things."
 
 ## Explore
 
-- [Event Hubs](event-hubs-overview.md)
-- [Sharding Pattern](http://msdn.microsoft.com/library/dn589797.aspx)
-- [Service Bus and AMQP 1.0](service-bus-amqp-overview.md)
-- [Introduction to Service Bus](http://azure.microsoft.com/services/service-bus/)
+- [Event Hubs](/documentation/articles/event-hubs-overview)
+- [Sharding Pattern](http://msdn.microsoft.com/zh-cn/library/dn589797.aspx)
+- [Service Bus and AMQP 1.0](/documentation/articles/service-bus-amqp-overview)
+- [Introduction to Service Bus](/home/features/service-bus/)
  
 ## Build
 
-- [Partitioning messaging entities](service-bus-partitioning.md)
-- [Service Bus topics](service-bus-dotnet-how-to-use-topics-subscriptions.md)
-- [Using Apache Qpid Proton C with Azure Service Bus on Linux and Windows](http://msdn.microsoft.com/library/dn235560.aspx) 
+- [Partitioning messaging entities](/documentation/articles/service-bus-partitioning)
+- [Service Bus topics](/documentation/articles/service-bus-dotnet-how-to-use-topics-subscriptions)
+- [Using Apache Qpid Proton C with Azure Service Bus on Linux and Windows](http://msdn.microsoft.com/zh-cn/library/dn235560.aspx) 
  
 ## Popular
 
@@ -40,6 +36,6 @@ Smart and connected "things" increasingly proliferate in modern technology ecosy
 ## Related services
 
 - [Internet of Things (Microsoft blog post announcement)](http://blogs.microsoft.com/iot/2015/03/16/microsoft-announces-azure-iot-suite)
-- [Azure Active Directory](http://azure.microsoft.com/services/active-directory/)
-- [Cloud Services](http://azure.microsoft.com/services/cloud-services/) 
+- [Azure Active Directory](/home/features/identity/)
+- [Cloud Services](/home/features/cloud-services/) 
  

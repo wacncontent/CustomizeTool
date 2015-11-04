@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Ingest Telemetry and Application Events at Scale | Microsoft Azure" 
+	pageTitle="Ingest Telemetry and Application Events at Scale | Windows Azure" 
 	description="Learn how to ingest telemetry and application events at scale across your business solutions." 
 	services="event-hubs,service-bus" 
 	documentationCenter=".net" 
@@ -7,14 +7,10 @@
 	manager="timlt" 
 	editor=""/>
 
-<tags 
-	ms.service="event-hubs" 
-	ms.workload="tbd" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="multiple" 
-	ms.topic="article" 
-	ms.date="10/06/2015" 
-	ms.author="sethm"/>
+<tags
+	ms.service="event-hubs"
+	ms.date="10/06/2015"
+	wacn.date=""/>
 
 # Ingest telemetry and application events at scale
  
@@ -22,17 +18,17 @@ Modern applications create a large amount of information while they are running.
 
 
 ## Explore
-- [Event Hubs](event-hubs-overview.md)
-- [Event Hubs pricing details](http://azure.microsoft.com/pricing/details/event-hubs/)
-- [Event Hubs availability and support FAQ](event-hubs-availability-and-support-faq.md)
-- [Event sourcing pattern](http://msdn.microsoft.com/library/dn589792.aspx)
+- [Event Hubs](/documentation/articles/event-hubs-overview)
+- [Event Hubs pricing details](/home/features/event-hubs/#price)
+- [Event Hubs availability and support FAQ](/documentation/articles/event-hubs-availability-and-support-faq)
+- [Event sourcing pattern](http://msdn.microsoft.com/zh-cn/library/dn589792.aspx)
  
 ## Build
-- [Event Hubs REST API reference](https://msdn.microsoft.com/library/azure/dn790674.aspx)
+- [Event Hubs REST API reference](https://msdn.microsoft.com/zh-cn/library/azure/dn790674.aspx)
 - [Event Hubs code samples](https://code.msdn.microsoft.com/site/search?query=event%20hubs&f%5B0%5D.Value=event%20hubs&f%5B0%5D.Type=SearchText&ac=5)
  
 ## Related services
-- [Service Bus](http://azure.microsoft.com/services/service-bus/)
-- [Azure Storage](http://azure.microsoft.com/services/storage/)
-- [HDInsight](http://azure.microsoft.com/services/hdinsight/)
+- [Service Bus](/home/features/service-bus/)
+- [Azure Storage](/home/features/storage/)
+- [HDInsight](/home/features/hdinsight/)
  

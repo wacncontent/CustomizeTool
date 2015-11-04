@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Create a Linux VM using Azure Powershell | Microsoft Azure"
+	pageTitle="Create a Linux VM using Azure Powershell | Windows Azure"
 	description="Learn how to create and preconfigure a Linux VM using Azure PowerShell."
 	services="virtual-machines"
 	documentationCenter=""
@@ -10,33 +10,29 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.workload="infrastructure-services"
-	ms.tgt_pltfrm="vm-linux"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="07/09/2015"
-	ms.author="cynthn"/>
+	wacn.date=""/>
 
 # Create and preconfigure a Linux virtual machine using Azure Powershell
 
 > [AZURE.SELECTOR]
-- [Azure CLI](virtual-machines-linux-tutorial.md)
-- [PowerShell](virtual-machines-ps-create-preconfigure-linux-vms.md)
+- [Azure CLI](/documentation/articles/virtual-machines-linux-tutorial)
+- [PowerShell](/documentation/articles/virtual-machines-ps-create-preconfigure-linux-vms)
 
 <br>
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
  
 
 These steps show you how to use a set of Azure PowerShell commands to create and preconfigure a Linux virtual machine using the classic management model. You can use this process to quickly create a command set for a new Linux-based virtual machine and expand an existing deployment or to create multiple command sets that quickly build out a custom dev/test or IT pro environment.
 
 These steps follow a fill-in-the-blanks approach for creating Azure PowerShell command sets. This approach can be useful if you are new to Azure PowerShell or you just want to know what values to specify for successful configuration. Advanced Azure PowerShell users can take the commands and substitute their own values for the variables (the lines beginning with "$").
 
-For the companion topic to configure Windows-based virtual machines, see [Use Azure PowerShell to create and preconfigure Windows-based virtual machines](virtual-machines-ps-create-preconfigure-windows-vms.md).
+For the companion topic to configure Windows-based virtual machines, see [Use Azure PowerShell to create and preconfigure Windows-based virtual machines](/documentation/articles/virtual-machines-ps-create-preconfigure-windows-vms).
 
 ## Step 1: Install Azure PowerShell
 
-If you haven't done so already, use the instructions in [How to install and configure Azure PowerShell](../install-configure-powershell.md) to install Azure PowerShell on your local computer. Then, open an Azure PowerShell command prompt.
+If you haven't done so already, use the instructions in [How to install and configure Azure PowerShell](/documentation/articles/install-configure-powershell) to install Azure PowerShell on your local computer. Then, open an Azure PowerShell command prompt.
 
 ## Step 2: Set your subscription and storage account
 
@@ -85,7 +81,7 @@ Option 2: Specify a name, size, and availability set name.
 	$availset="<set name>"
 	$vm1=New-AzureVMConfig -Name $vmname -InstanceSize $vmsize -ImageName $image -AvailabilitySetName $availset
 
-For the InstanceSize values for D-, DS-, or G-series virtual machines, see [Virtual Machine and Cloud Service Sizes for Azure](https://msdn.microsoft.com/library/azure/dn197896.aspx).
+For the InstanceSize values for D-, DS-, or G-series virtual machines, see [Virtual Machine and Cloud Service Sizes for Azure](https://msdn.microsoft.com/zh-cn/library/azure/dn197896.aspx).
 
 Use the following commands to specify the initial Linux user name and password (required). Choose a strong password. To check its strength, see [Password Checker: Using Strong Passwords](https://www.microsoft.com/security/pc-security/password-checker.aspx).
 
@@ -96,13 +92,13 @@ Optionally, specify a set of SSH key pairs that are already deployed in the subs
 
 	$vm1 | Add-AzureProvisioningConfig -Linux -SSHKeyPairs "<SSH key pairs>"
 
-For more information, see [How to use SSH with Linux on Azure](virtual-machines-linux-use-ssh-key.md).
+For more information, see [How to use SSH with Linux on Azure](/documentation/articles/virtual-machines-linux-use-ssh-key).
 
 Optionally, specify a list of SSH public keys that are already deployed in the subscription.
 
 	$vm1 | Add-AzureProvisioningConfig -Linux - SSHPublicKeys "<SSH public keys>"
 
-For additional preconfiguration options for Linux-based virtual machines, see the syntax for the **Linux** parameter set in [Add-AzureProvisioningConfig](https://msdn.microsoft.com/library/azure/dn495299.aspx).
+For additional preconfiguration options for Linux-based virtual machines, see the syntax for the **Linux** parameter set in [Add-AzureProvisioningConfig](https://msdn.microsoft.com/zh-cn/library/azure/dn495299.aspx).
 
 Optionally, assign the virtual machine a specific IP address, known as a static DIP.
 
@@ -142,7 +138,7 @@ Option 1: Create the virtual machine in an existing cloud service.
 
 	New-AzureVM –ServiceName "<short name of the cloud service>" -VMs $vm1
 
-The short name of the cloud service is the name that appears in the list of Azure Cloud Services in the Azure portal or in the list of resource groups in the Azure preview portal.
+The short name of the cloud service is the name that appears in the list of Azure Cloud Services in the Azure Management Portal or in the list of resource groups in the Azure preview portal.
 
 Option 2: Create the virtual machine in an existing cloud service and virtual network.
 
@@ -158,12 +154,12 @@ If you are using a text editor, copy the command set to the clipboard and then r
 
 If you create the virtual machine in the wrong subscription, storage account, cloud service, availability set, virtual network, or subnet, delete the virtual machine, correct the command block syntax, and then run the corrected command set.
 
-After the virtual machine is created, see [How to log on to a virtual machine running Linux](virtual-machines-linux-how-to-log-on.md).
+After the virtual machine is created, see [How to log on to a virtual machine running Linux](/documentation/articles/virtual-machines-linux-how-to-log-on).
 
 If you will be creating this virtual machine again or a similar one, you can:
 
 - Save this command set as a PowerShell script file (*.ps1)
-- Save this command set as an Azure automation runbook in the **Automation** section of the Azure portal
+- Save this command set as an Azure automation runbook in the **Automation** section of the Azure Management Portal
 
 ## <a id="examples"></a>Examples
 
@@ -253,14 +249,14 @@ Here is the corresponding Azure PowerShell command set to create this virtual ma
 
 ## Additional resources
 
-[Virtual machines documentation](http://azure.microsoft.com/documentation/services/virtual-machines/)
+[Virtual machines documentation](/documentation/services/virtual-machines/)
 
-[Azure virtual machines FAQ](http://msdn.microsoft.com/library/azure/dn683781.aspx)
+[Azure virtual machines FAQ](http://msdn.microsoft.com/zh-cn/library/azure/dn683781.aspx)
 
-[Overview of Azure Virtual Machines](http://msdn.microsoft.com/library/azure/jj156143.aspx)
+[Overview of Azure Virtual Machines](http://msdn.microsoft.com/zh-cn/library/azure/jj156143.aspx)
 
-[How to install and configure Azure PowerShell](../install-configure-powershell.md)
+[How to install and configure Azure PowerShell](/documentation/articles/install-configure-powershell)
 
-[How to log on to a virtual machine running Linux](virtual-machines-linux-how-to-log-on.md)
+[How to log on to a virtual machine running Linux](/documentation/articles/virtual-machines-linux-how-to-log-on)
 
-[Use Azure PowerShell to create and preconfigure Windows-based virtual machines](virtual-machines-ps-create-preconfigure-windows-vms.md)
+[Use Azure PowerShell to create and preconfigure Windows-based virtual machines](/documentation/articles/virtual-machines-ps-create-preconfigure-windows-vms)

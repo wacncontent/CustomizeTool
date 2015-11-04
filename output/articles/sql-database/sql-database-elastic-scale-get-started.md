@@ -7,14 +7,10 @@
 	authors="sidneyh" 
 	editor=""/>
 
-<tags 
-	ms.service="sql-database" 
-	ms.workload="sql-database" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="07/24/2015" 
-	ms.author="sidneyh@microsoft.com"/>
+<tags
+	ms.service="sql-database"
+	ms.date="07/24/2015"
+	wacn.date=""/>
 
 #Get started with Elastic Database tools
 
@@ -24,27 +20,27 @@ Elastic database tools simplify creating and managing applications using databas
 
 This document introduces you to the developer experience using the elastic database client library. 
 
-For more information about how elastic database tools work, see [Elastic Database tools overview](sql-database-elastic-scale-introduction.md).
+For more information about how elastic database tools work, see [Elastic Database tools overview](/documentation/articles/sql-database-elastic-scale-introduction).
 
-For a list of all topics on elastic database tools, see the [learning map](sql-database-elastic-scale-documentation-map.md)
+For a list of all topics on elastic database tools, see the [learning map](/documentation/articles/sql-database-elastic-scale-documentation-map)
 
 ## The Elastic Database sample application
 
 The sample creates a simple sharded application and explores key capabilities of elastic database tools. To download and run the application, follow the steps shown below or in the video [Elastic Scale - Get Started video](http://channel9.msdn.com/Blogs/Windows-Azure/Elastic-Scale-with-Azure-SQL-Database-Getting-Started). 
 
 ## Prerequisites
-To run the sample app, you must use Visual Studio, and you must have access to an Azure SQL Database running on Azure. If you do not already have a subscription to Azure, sign up for a [trial subscription](http://azure.microsoft.com/pricing/free-trial/).
+To run the sample app, you must use Visual Studio, and you must have access to an Azure SQL Database running on Azure. If you do not already have a subscription to Azure, sign up for a [trial subscription](/pricing/1rmb-trial/).
 ### Visual Studio and Nuget
 
 1. Visual Studio 2012 or higher with C# is required. Download a free version at [Visual Studio Downloads](http://www.visualstudio.com/downloads/download-visual-studio-vs.aspx).
 2. Nuget 2.7 or higher. To get the latest version, see [Installing NuGet](http://docs.nuget.org/docs/start-here/installing-nuget)
 ### Create an Azure SQL database
 
-* See [Getting Started with Microsoft Azure SQL Database](sql-database-get-started.md).
+* See [Getting Started with Windows Azure SQL Database](/documentation/articles/sql-database-get-started).
 
 ## Download and run the sample app
 
-The **Elastic Database with Azure SQL— Getting Started** sample application illustrates the most important aspects of the development experience for sharded applications using Azure SQL elastic database tools. It focuses on key use cases for [shard map management](sql-database-elastic-scale-shard-map-management.md), [data dependent routing](sql-database-elastic-scale-data-dependent-routing.md) and [multi-shard querying](sql-database-elastic-scale-multishard-querying.md). To download and run the sample, follow these steps: 
+The **Elastic Database with Azure SQL— Getting Started** sample application illustrates the most important aspects of the development experience for sharded applications using Azure SQL elastic database tools. It focuses on key use cases for [shard map management](/documentation/articles/sql-database-elastic-scale-shard-map-management), [data dependent routing](/documentation/articles/sql-database-elastic-scale-data-dependent-routing) and [multi-shard querying](/documentation/articles/sql-database-elastic-scale-multishard-querying). To download and run the sample, follow these steps: 
 
 1. Open Visual Studio and select **File -> New -> Project**.
 2. In the dialog, click **Online**.
@@ -66,7 +62,7 @@ The **Elastic Database with Azure SQL— Getting Started** sample application il
 
 Congratulations – you have successfully built and run your first sharded application using elastic database tools on Azure SQL Database. Take a quick look at the shards that the sample created by connecting with Visual Studio or SQL Server Management Studio to your Azure DB Server. You will notice new sample shard databases and a shard map manager database that the sample has created.
 
-**Note**   If you do not have SQL Server Management Studio, see [Managing Azure SQL Database using SQL Server Management Studio](sql-database-manage-azure-ssms.md), which includes instructions for getting the tool.  
+**Note**   If you do not have SQL Server Management Studio, see [Managing Azure SQL Database using SQL Server Management Studio](/documentation/articles/sql-database-manage-azure-ssms), which includes instructions for getting the tool.  
 
 ### Key pieces of the code sample
 
@@ -78,8 +74,8 @@ file **AddNewShardsSample.cs**. Details of this topic are covered here: [Shard M
 
 ### Other elastic scale operations
 
-1. **Splitting an existing shard**: The capability to split shards is provided through the **split-merge tool**. You can find more information on this tool here: [split-merge tool overview](sql-database-elastic-scale-overview-split-and-merge.md).
-2. **Merging existing shards**: Shard merges are also performed using the **split-merge tool**. For more information, refer to: [split-merge tool overview](sql-database-elastic-scale-overview-split-and-merge).   
+1. **Splitting an existing shard**: The capability to split shards is provided through the **split-merge tool**. You can find more information on this tool here: [split-merge tool overview](/documentation/articles/sql-database-elastic-scale-overview-split-and-merge).
+2. **Merging existing shards**: Shard merges are also performed using the **split-merge tool**. For more information, refer to: [split-merge tool overview](/documentation/articles/sql-database-elastic-scale-overview-split-and-merge).   
 
 
 ## Cost
@@ -88,12 +84,12 @@ The elastic database tools are free of charge. Elastic database tools does not i
 
 For example, the sample application creates new databases. The cost depends on the Azure SQL DB database edition you choose and the Azure usage of your application.
 
-For pricing information see [SQL Database Pricing Details](http://azure.microsoft.com/pricing/details/sql-database/).
+For pricing information see [SQL Database Pricing Details](/home/features/sql-database/#price).
 
 ## Next steps
 For more information about the elastic database tools, see:
 
-* [Elastic database tools documentation map](sql-database-elastic-scale-documentation-map.md) 
+* [Elastic database tools documentation map](/documentation/articles/sql-database-elastic-scale-documentation-map) 
 -    Code Samples: 
     -    [Elastic DB with Azure SQL - Getting Started](http://code.msdn.microsoft.com/Elastic-Scale-with-Azure-a80d8dc6?SRC=VSIDE)
     -    [Elastic DB with Azure SQL - Integrating with Entity Framework](http://code.msdn.microsoft.com/Elastic-Scale-with-Azure-bae904ba?SRC=VSIDE)

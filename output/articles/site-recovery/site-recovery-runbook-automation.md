@@ -8,13 +8,9 @@
    editor=""/>
 
 <tags
-   ms.service="site-recovery"
-   ms.devlang="powershell"
-   ms.tgt_pltfrm="na"
-   ms.topic="article"
-   ms.workload="required" 
-   ms.date="10/07/2015"
-   ms.author="ruturajd@microsoft.com"/>
+	ms.service="site-recovery"
+	ms.date="10/07/2015"
+	wacn.date=""/>
 
   
    
@@ -28,11 +24,11 @@ can orchestrate recovery of your virtual machines protected using Azure Site Rec
 recovery plans and gives you capability to execute runbooks, thus allowing powerful automation tasks.
 
 If you have not heard about Azure Automation yet, sign up
-[here](http://azure.microsoft.com/services/automation/) and
+[here](/home/features/automation/) and
 download their sample scripts
 [here](http://azure.microsoft.com/documentation/scripts/). Read
 more about [Azure Site
-Recovery](http://azure.microsoft.com/services/site-recovery/) and
+Recovery](/home/features/site-recovery/) and
 how to orchestrate recovery to Azure using recovery plans
 [here](http://azure.microsoft.com/blog/?p=166264).
 
@@ -53,7 +49,7 @@ Let us begin with a simple application consisting of two virtual machines. Here,
 
 3.  Wait till the initial replication completes and the Replication status says Protected.
 
-![](media/site-recovery-runbook-automation/01.png)
+![](./media/site-recovery-runbook-automation/01.png)
 ---------------------
 
 In this tutorial, we will create a recovery plan for the Fabrikam HRweb application to failover the application to Azure. Then we will integrate it with a runbook that will create an endpoint on the failed over Azure virtual machine to serve web pages at port 80.
@@ -69,9 +65,9 @@ start first, and then the virtual machine in group 2 will follow.
 
 Create a Recovery Plan that looks like below.
 
-![](media/site-recovery-runbook-automation/12.png)
+![](./media/site-recovery-runbook-automation/12.png)
 
-To read more about recovery plans, read documentation [here](https://msdn.microsoft.com/library/azure/dn788799.aspx "here"). 
+To read more about recovery plans, read documentation [here](https://msdn.microsoft.com/zh-cn/library/azure/dn788799.aspx "here"). 
 
 Next, let's create the necessary artifacts in Azure Automation.
 
@@ -79,7 +75,7 @@ Next, let's create the necessary artifacts in Azure Automation.
 
 You need an Azure Automation account to create runbooks. If you do not
 already have an account, navigate to Azure Automation tab denoted by
-![](media/site-recovery-runbook-automation/02.png)and create a new account.
+![](./media/site-recovery-runbook-automation/02.png)and create a new account.
 
 1.  Give the account a name to identify with.
 
@@ -87,26 +83,26 @@ already have an account, navigate to Azure Automation tab denoted by
 
 It is recommended to place the account in the same region as the ASR vault.
 
-![](media/site-recovery-runbook-automation/03.png)
+![](./media/site-recovery-runbook-automation/03.png)
 
 Next, create the following assets in the Account.
 
 ### Add a subscription name as asset
 
-1.  Add a new setting ![](media/site-recovery-runbook-automation/04.png) in the Azure Automation Assets and select to ![](media/site-recovery-runbook-automation/05.png)
+1.  Add a new setting ![](./media/site-recovery-runbook-automation/04.png) in the Azure Automation Assets and select to ![](./media/site-recovery-runbook-automation/05.png)
 
 2.  Select the variable type as **String**
 
 3.  Specify variable name as **AzureSubscriptionName**
 
-    ![](media/site-recovery-runbook-automation/06.png)
+    ![](./media/site-recovery-runbook-automation/06.png)
 
 4.  Specify your actual Azure Subscription name as the variable value.
 
-	![](media/site-recovery-runbook-automation/07_1.png)
+	![](./media/site-recovery-runbook-automation/07_1.png)
 
 You can identify the name of your subscription from the settings page of
-your account on the Azure portal. 
+your account on the Azure Management Portal. 
 
 ### Add an Azure login credential as asset
 
@@ -116,23 +112,23 @@ authenticate using your Microsoft account or a work or school account.
 You can store the account credentials in an asset to be used securely by
 the runbook.
 
-1.  Add a new setting ![](media/site-recovery-runbook-automation/04.png) in the Azure Automation Assets and select ![](media/site-recovery-runbook-automation/09.png)
+1.  Add a new setting ![](./media/site-recovery-runbook-automation/04.png) in the Azure Automation Assets and select ![](./media/site-recovery-runbook-automation/09.png)
 
 2.  Select the Credential type as **Windows PowerShell Credential**
 
 3.  Specify the name as **AzureCredential**
 
-    ![](media/site-recovery-runbook-automation/10.png)
+    ![](./media/site-recovery-runbook-automation/10.png)
 
 4.  Specify the username and password to sign-in with.
 
 Now both these settings are available in your assets.
 
-![](media/site-recovery-runbook-automation/11.png)
+![](./media/site-recovery-runbook-automation/11.png)
 
 More information about how to connect to your subscription via
 powershell is given
-[here](../install-configure-powershell.md).
+[here](/documentation/articles/install-configure-powershell).
 
 Next, you will create a runbook in Azure Automation that can add an
 endpoint for the front-end virtual machine after failover.
@@ -179,7 +175,7 @@ CloudServiceName | Azure Cloud Service name under which the virtual machine is c
 
 To identify the VmMap Key in the context you could also go to the VM properties page in ASR and look at the VM GUID property.
 
-![](media/site-recovery-runbook-automation/13.png)
+![](./media/site-recovery-runbook-automation/13.png)
 
 ## Author an Automation runbook
 
@@ -188,7 +184,7 @@ Now create the runbook to open port 80 on the front-end virtual machine.
 1.  Create a new runbook in the Azure Automation account with the name
     **OpenPort80**
 
-![](media/site-recovery-runbook-automation/14.png)
+![](./media/site-recovery-runbook-automation/14.png)
 
 2.  Navigate to the Author view of the runbook and enter the draft mode.
 
@@ -252,7 +248,7 @@ This specifies the Azure endpoint protocol, local port on the VM and its mapped 
 	}
 ```
 
-7. Once this is complete, hit Publish ![](media/site-recovery-runbook-automation/20.png) to allow your script to be available for execution. 
+7. Once this is complete, hit Publish ![](./media/site-recovery-runbook-automation/20.png) to allow your script to be available for execution. 
 
 The complete script is given below for your reference
 
@@ -302,7 +298,7 @@ The complete script is given below for your reference
 Once the script is ready, you can add it to the recovery plan that you created earlier.
 
 1.  In the recovery plan you created, choose to add a script after the
-    group 2. ![](media/site-recovery-runbook-automation/15.png)
+    group 2. ![](./media/site-recovery-runbook-automation/15.png)
 
 2.  Specify a script name. This is just a friendly name for this script for showing within the Recovery plan.
 
@@ -311,7 +307,7 @@ Once the script is ready, you can add it to the recovery plan that you created e
 
 4.  In the Azure Runbooks, select the runbook you authored.
 
-![](media/site-recovery-runbook-automation/16.png)
+![](./media/site-recovery-runbook-automation/16.png)
 
 ## Primary side scripts
 
@@ -333,16 +329,16 @@ there are no errors.
 2.  During the plan execution, you can see whether the runbook has
     executed or not via its status.
 
-    ![](media/site-recovery-runbook-automation/17.png)
+    ![](./media/site-recovery-runbook-automation/17.png)
 
 3.  You can also see the detailed runbook execution status on
     the Azure Automation jobs page for the runbook.
 
-    ![](media/site-recovery-runbook-automation/18.png)
+    ![](./media/site-recovery-runbook-automation/18.png)
 
 4.  After the failover completes, apart from the runbook execution result, you can see whether the execution is successful or not by visiting the Azure virtual machine page and looking at the endpoints. 
 
-![](media/site-recovery-runbook-automation/19.png)
+![](./media/site-recovery-runbook-automation/19.png)
 
 ## Sample scripts
 
@@ -350,7 +346,7 @@ While we walked through automating one commonly used task of adding an endpoint 
 
 ## Additional Resources
 
-[Azure Automation Overview](http://msdn.microsoft.com/library/azure/dn643629.aspx "Azure Automation Overview")
+[Azure Automation Overview](http://msdn.microsoft.com/zh-cn/library/azure/dn643629.aspx "Azure Automation Overview")
 
 [Sample Azure Automation Scripts](http://gallery.technet.microsoft.com/scriptcenter/site/search?f[0].Type=User&f[0].Value=SC%20Automation%20Product%20Team&f[0].Text=SC%20Automation%20Product%20Team "Sample Azure Automation Scripts")
 

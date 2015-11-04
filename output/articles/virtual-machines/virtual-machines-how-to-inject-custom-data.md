@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Injecting Custom Data into Virtual Machines | Microsoft Azure"
+	pageTitle="Injecting Custom Data into Virtual Machines | Windows Azure"
 	description="This topic describes how to inject custom data into an Azure virtual machine when the instance is created and how to locate the custom data on either Windows or Linux."
 	services="virtual-machines"
 	documentationCenter=""
@@ -10,19 +10,15 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.workload="infrastructure-services"
-	ms.tgt_pltfrm="vm-windows"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="07/14/2015"
-	ms.author="rasquill"/>
+	wacn.date=""/>
 
 
 #Injecting custom data into an Azure virtual machine
 
 Injecting a script or other data into an Azure virtual machine when it is being provisioned is a very common scenario, regardless of whether the operating system is Windows or a Linux distribution. 
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
 
 
 This topic describes how to:
@@ -44,7 +40,7 @@ This feature is currently supported only in the [Azure Command-Line Interface](h
     VMNAME=mycustomdataubuntu
     USERNAME=username
     VMIMAGE= An image chosen from among those listed by azure vm image list
-    azure vm create $VMNAME $VMIMAGE $USERNAME $PASSWORD --location "West US" --json -d ./custom-data.txt -e 22
+    azure vm create $VMNAME $VMIMAGE $USERNAME $PASSWORD --location "China North" --json -d ./custom-data.txt -e 22
 ```
 
 
@@ -67,7 +63,7 @@ If your Azure virtual machine is from an Ubuntu or CoreOS image, then you can us
 
 ### Ubuntu Cloud Images
 
-In most Azure Linux images, you would edit "/etc/waagent.conf" to configure the temporary resource disk and swap file. See [Azure Linux Agent user guide](virtual-machines-linux-agent-user-guide.md) for more information.
+In most Azure Linux images, you would edit "/etc/waagent.conf" to configure the temporary resource disk and swap file. See [Azure Linux Agent user guide](/documentation/articles/virtual-machines-linux-agent-user-guide) for more information.
 
 However, on the Ubuntu Cloud Images, you must use cloud-init to configure the resource disk (that is, the "ephemeral" disk) and swap partition. See the following page on the Ubuntu wiki for more details: [AzureSwapPartitions](https://wiki.ubuntu.com/AzureSwapPartitions).
 
@@ -79,6 +75,6 @@ However, on the Ubuntu Cloud Images, you must use cloud-init to configure the re
 For further information, see the [cloud-init documentation for Ubuntu](https://help.ubuntu.com/community/CloudInit).
 
 <!--Link references-->
-[Add Role Service Management REST API Reference](http://msdn.microsoft.com/library/azure/jj157186.aspx)
+[Add Role Service Management REST API Reference](http://msdn.microsoft.com/zh-cn/library/azure/jj157186.aspx)
 
 [Azure Command-line Interface](https://github.com/Azure/azure-sdk-tools-xplat)

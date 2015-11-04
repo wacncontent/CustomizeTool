@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Capture an image of a Windows VM | Microsoft Azure"
+	pageTitle="Capture an image of a Windows VM | Windows Azure"
 	description="Capture an image of a Windows virtual machine created with the classic deployment model."
 	services="virtual-machines"
 	documentationCenter=""
@@ -10,21 +10,17 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.workload="infrastructure-services"
-	ms.tgt_pltfrm="vm-windows"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="07/16/2015"
-	ms.author="cynthn"/>
+	wacn.date=""/>
 
 #Capture an image of a Windows virtual machine created with the classic deployment model.
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
 
 
 This article shows you how to capture an Azure virtual machine running Windows so you can use it as an image to create other virtual machines. This image includes the operating system disk and any data disks that are attached to the virtual machine. It doesn't include networking configurations, so you'll need to configure those when you create the other virtual machines that use the template.
 
-Azure stores the image under **My Images**. This is the same place where any images you've uploaded are stored. For details about images, see [About images for virtual machines](virtual-machines-images.md).
+Azure stores the image under **My Images**. This is the same place where any images you've uploaded are stored. For details about images, see [About images for virtual machines](/documentation/articles/virtual-machines-images).
 
 ##Before you begin##
 
@@ -33,11 +29,11 @@ These steps assume that you've already created an Azure virtual machine and conf
 - [Create a custom virtual machine running Windows] []
 - [How to attach a data disk to a virtual machine] []
 
-> [AZURE.WARNING] This process deletes the original virtual machine after it's captured, and is not intended as a way to back up a virtual machine. One possible way to do that is Azure Backup, which is available as a preview in certain regions. For details, see [Back up Azure virtual machines](../backup/backup-azure-vms.md). Other solutions are available from certified partners. To find out what’s currently available, search the Azure Marketplace.
+> [AZURE.WARNING] This process deletes the original virtual machine after it's captured, and is not intended as a way to back up a virtual machine. One possible way to do that is Azure Backup, which is available as a preview in certain regions. For details, see [Back up Azure virtual machines](/documentation/articles/backup-azure-vms). Other solutions are available from certified partners. To find out what’s currently available, search the Azure Marketplace.
 
 ##Capture the virtual machine##
 
-1. In the [Azure portal](http://manage.windowsazure.com), **Connect** to the virtual machine. For instructions, see [How to sign in to a virtual machine running Windows Server] [].
+1. In the [Azure Management Portal](http://manage.windowsazure.cn), **Connect** to the virtual machine. For instructions, see [How to sign in to a virtual machine running Windows Server] [].
 
 2.	Open a Command Prompt window as an administrator.
 
@@ -53,9 +49,9 @@ These steps assume that you've already created an Azure virtual machine and conf
 
 	![Run Sysprep](./media/virtual-machines-capture-image-windows-server/SysprepGeneral.png)
 
-7.	Sysprep shuts down the virtual machine, which changes the status of the virtual machine in the Azure portal to **Stopped**.
+7.	Sysprep shuts down the virtual machine, which changes the status of the virtual machine in the Azure Management Portal to **Stopped**.
 
-8.	In the Azure portal, click **Virtual Machines** and select the virtual machine you want to capture.
+8.	In the Azure Management Portal, click **Virtual Machines** and select the virtual machine you want to capture.
 
 9.	On the command bar, click **Capture**.
 
@@ -74,10 +70,10 @@ These steps assume that you've already created an Azure virtual machine and conf
 ##Next steps##
 The image is ready to be used to create virtual machines. To do this, you'll create a virtual machine by using the **From Gallery** menu item and selecting the image you just created. For instructions, see [Create a custom virtual machine running Windows] [].
 
-[Create a custom virtual machine running Windows]: virtual-machines-windows-create-custom.md
-[How to Attach a Data Disk to a Virtual Machine]: storage-windows-attach-disk.md
-[How to sign in to a virtual machine running Windows Server]: virtual-machines-log-on-windows-server.md
-[How to Use Sysprep: An Introduction]: http://technet.microsoft.com/library/bb457073.aspx
+[Create a custom virtual machine running Windows]: /documentation/articles/virtual-machines-windows-create-custom
+[How to Attach a Data Disk to a Virtual Machine]: /documentation/articles/storage-windows-attach-disk
+[How to sign in to a virtual machine running Windows Server]: /documentation/articles/virtual-machines-log-on-windows-server
+[How to Use Sysprep: An Introduction]: http://technet.microsoft.com/zh-cn/library/bb457073.aspx
 [Run Sysprep.exe]: ./media/virtual-machines-capture-image-windows-server/SysprepCommand.png
 [Enter Sysprep.exe options]: ./media/virtual-machines-capture-image-windows-server/SysprepGeneral.png
 [The virtual machine is stopped]: ./media/virtual-machines-capture-image-windows-server/SysprepStopped.png

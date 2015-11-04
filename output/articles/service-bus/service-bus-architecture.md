@@ -6,14 +6,10 @@
    authors="sethmanheim"
    manager="timlt"
    editor="tysonn" />
-<tags 
-   ms.service="service-bus"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="tbd"
-   ms.date="07/24/2015"
-   ms.author="sethm" />
+<tags
+	ms.service="service-bus"
+	ms.date="07/24/2015"
+	wacn.date=""/>
 
 # Service Bus Architecture
 
@@ -33,7 +29,7 @@ A Service Bus namespace is mapped to a scale unit. The scale unit handles all t
 
 - **One gateway store.** The gateway store holds the data for every entity that is defined in this scale unit. The gateway store is implemented on top of a SQL Azure database.
 
-- **Many messaging stores.** The messaging stores hold the messages of all queues, topics and subscriptions that are defined in this scale unit. It also contains all subscription data. Unless [Partitioning Messaging Entities](https://msdn.microsoft.com/library/azure/dn520246.aspx) is enabled, a queue or topic is mapped to one messaging store. Subscriptions are stored in the same messaging store as their parent topic. The messaging stores are implemented on top of SQL Azure databases.
+- **Many messaging stores.** The messaging stores hold the messages of all queues, topics and subscriptions that are defined in this scale unit. It also contains all subscription data. Unless [Partitioning Messaging Entities](https://msdn.microsoft.com/zh-cn/library/azure/dn520246.aspx) is enabled, a queue or topic is mapped to one messaging store. Subscriptions are stored in the same messaging store as their parent topic. The messaging stores are implemented on top of SQL Azure databases.
 
 - **Multiple registration stores.** The registration stores contain device registrations for all notification hubs that are defined in this scale unit. The registration stores are implemented on top of SQL Azure databases.
 
@@ -65,6 +61,6 @@ When a client sends a request to Service Bus, the Azure load balancer routes it 
 
 Now that you've read an overview of how Service Bus works, to get started visit the following links:
 
-- [Service Bus messaging overview](service-bus-messaging-overview.md)
-- [Service Bus fundamentals](service-bus-fundamentals-hybrid-solutions.md)
-- [A queued messaging solution using Service Bus queues](service-bus-dotnet-multi-tier-app-using-service-bus-queues.md)
+- [Service Bus messaging overview](/documentation/articles/service-bus-messaging-overview)
+- [Service Bus fundamentals](/documentation/articles/service-bus-fundamentals-hybrid-solutions)
+- [A queued messaging solution using Service Bus queues](/documentation/articles/service-bus-dotnet-multi-tier-app-using-service-bus-queues)

@@ -8,13 +8,9 @@
    editor=""/>
 
 <tags
-   ms.service="cloud-services"
-   ms.devlang="dotnet"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="na" 
-   ms.date="10/14/2015"
-   ms.author="cawa"/>
+	ms.service="cloud-services"
+	ms.date="10/14/2015"
+	wacn.date=""/>
 
 # How to use Visual Studio to create a Cloud Service container
 
@@ -30,5 +26,5 @@ To view **Server Explorer** in Visual Studio, on the menu bar, choose **View**, 
 
 ## Next steps
 
-Now that you have a cloud service container, you can [create and deploy](cloud-services-how-to-create-deploy.md) a cloud service.
+Now that you have a cloud service container, you can [create and deploy](/documentation/articles/cloud-services-how-to-create-deploy) a cloud service.
  

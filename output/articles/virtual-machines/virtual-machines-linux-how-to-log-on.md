@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Log on to a Linux VM in Azure | Microsoft Azure"
+	pageTitle="Log on to a Linux VM in Azure | Windows Azure"
 	description="Learn how to log on to an Azure virtual machine running Linux by using a Secure Shell (SSH) client."
 	services="virtual-machines"
 	documentationCenter=""
@@ -10,19 +10,15 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.workload="infrastructure-services"
-	ms.tgt_pltfrm="vm-linux"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="08/25/2015"
-	ms.author="rasquill"/>
+	wacn.date=""/>
 
 
 
 
 #How to Log on to a Virtual Machine Running Linux #
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)] [Resource Manager deployment model](virtual-machines-linux-tutorial-portal-rm.md).
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] [Resource Manager deployment model](/documentation/articles/virtual-machines-linux-tutorial-portal-rm).
 
 For a virtual machine running a Linux operating system, you use a Secure Shell (SSH) client to log on.
 
@@ -35,7 +31,7 @@ You'll need to install an SSH client on the computer you want to use to log on t
 
 This procedure shows you how to use the PuTTY program to access the virtual machine.
 
-1. Find the **Host Name** and **Port information** from the [Management Portal](http://manage.windowsazure.com). You can find the information that you need from the dashboard of the virtual machine. Click the virtual machine name and look for the **SSH Details** in the **Quick Glance** section of the dashboard.
+1. Find the **Host Name** and **Port information** from the [Management Portal](http://manage.windowsazure.cn). You can find the information that you need from the dashboard of the virtual machine. Click the virtual machine name and look for the **SSH Details** in the **Quick Glance** section of the dashboard.
 
 	![Obtain SSH details](./media/virtual-machines-linux-how-to-log-on/sshdetails.png)
 
@@ -45,7 +41,7 @@ This procedure shows you how to use the PuTTY program to access the virtual mach
 
 	![Open PuTTY](./media/virtual-machines-linux-how-to-log-on/putty.png)
 
-4. Log on to the virtual machine using the account that you specified when the machine was created. For more details on how to create a virtual machine with user name and password, see [Create a Virtual Machine Running Linux](virtual-machines-linux-tutorial.md).
+4. Log on to the virtual machine using the account that you specified when the machine was created. For more details on how to create a virtual machine with user name and password, see [Create a Virtual Machine Running Linux](/documentation/articles/virtual-machines-linux-tutorial).
 
 	![Log on to the virtual machine](./media/virtual-machines-linux-how-to-log-on/sshlogin.png)
 

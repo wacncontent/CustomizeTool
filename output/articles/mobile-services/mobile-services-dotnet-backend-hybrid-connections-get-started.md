@@ -7,19 +7,15 @@
 	manager="dwrede" 
 	editor=""/>
 
-<tags 
-	ms.service="mobile-services" 
-	ms.workload="mobile" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="multiple" 
-	ms.topic="article" 
-	ms.date="09/15/2015" 
-	ms.author="glenga"/>
+<tags
+	ms.service="mobile-services"
+	ms.date="09/15/2015"
+	wacn.date=""/>
 
   
 # Connect to an on-premises SQL Server from Azure Mobile Services using Hybrid Connections 
 
-When your enterprise transitions to the cloud, you might not be able to migrate all of your assets to Azure right away. Hybrid Connections lets Azure Mobile Services securely connect to your on-premises assets. In this way, you can make your on-premises data accessible to your mobile clients by using Azure. Supported assets include any resource that runs on a static TCP port, including Microsoft SQL Server, MySQL, HTTP Web APIs, and most custom web services. Hybrid Connections use Shared Access Signature (SAS) authorization to secure the connections from your mobile service and the on-premises Hybrid Connection Manager to the hybrid connection. For more information, see [Hybrid Connections Overview](../integration-hybrid-connection-overview.md).
+When your enterprise transitions to the cloud, you might not be able to migrate all of your assets to Azure right away. Hybrid Connections lets Azure Mobile Services securely connect to your on-premises assets. In this way, you can make your on-premises data accessible to your mobile clients by using Azure. Supported assets include any resource that runs on a static TCP port, including Microsoft SQL Server, MySQL, HTTP Web APIs, and most custom web services. Hybrid Connections use Shared Access Signature (SAS) authorization to secure the connections from your mobile service and the on-premises Hybrid Connection Manager to the hybrid connection. For more information, see [Hybrid Connections Overview](/documentation/articles/integration-hybrid-connection-overview).
 
 In this tutorial, you will learn how to modify a .NET backend mobile service to use a local on-premises SQL Server database instead of the default Azure SQL Database provisioned with your service. Hybrid Connections are also supported for a JavaScript backend mobile service, as described in [this article](http://blogs.msdn.com/b/azuremobile/archive/2014/05/12/connecting-to-an-external-database-with-node-js-backend-in-azure-mobile-services.aspx).
 
@@ -29,19 +25,19 @@ This tutorial requires you to have the following:
 
 - **An existing .NET backend mobile service** <br/>Follow the tutorial [Get started with Mobile Services] to create and download a new .NET backend mobile service from the [Azure Management Portal].
 
-[AZURE.INCLUDE [hybrid-connections-prerequisites](../../includes/hybrid-connections-prerequisites.md)]
+[AZURE.INCLUDE [hybrid-connections-prerequisites](../includes/hybrid-connections-prerequisites.md)]
 
 ## Install SQL Server Express, enable TCP/IP, and create a SQL Server database on-premises
 
-[AZURE.INCLUDE [hybrid-connections-create-on-premises-database](../../includes/hybrid-connections-create-on-premises-database.md)]
+[AZURE.INCLUDE [hybrid-connections-create-on-premises-database](../includes/hybrid-connections-create-on-premises-database.md)]
 
 ## Create a Hybrid Connection
 
-[AZURE.INCLUDE [hybrid-connections-create-new](../../includes/hybrid-connections-create-new.md)]
+[AZURE.INCLUDE [hybrid-connections-create-new](../includes/hybrid-connections-create-new.md)]
 
 ## Install the on-premises Hybrid Connection Manager to complete the connection
 
-[AZURE.INCLUDE [hybrid-connections-install-connection-manager](../../includes/hybrid-connections-install-connection-manager.md)]
+[AZURE.INCLUDE [hybrid-connections-install-connection-manager](../includes/hybrid-connections-install-connection-manager.md)]
 
 ## Configure the mobile service project to connect to the SQL Server database
 
@@ -49,7 +45,7 @@ In this step, you define a connection string for the on-premises database and mo
 
 1. In Visual Studio 2013, open the project that defines your .NET backend mobile service. 
 
-	To learn how to download your .NET backend project, see [Get started with Mobile Services](mobile-services-dotnet-backend-windows-store-dotnet-get-started.md) .
+	To learn how to download your .NET backend project, see [Get started with Mobile Services](/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started) .
 
 2. In Solution Explorer, open the Web.config file, locate the **connectionStrings** section, add a new SqlClient entry like the following, which points to the on-premises SQL Server database: 
 	
@@ -85,7 +81,7 @@ In this step, you define a connection string for the on-premises database and mo
 
 Before publishing to Azure and using the hybrid connection, it's a good idea to make sure that the database connection works when running locally. That way you can more easily diagnose and correct any connection issues before you republish and start using the hybrid connection.
 
-[AZURE.INCLUDE [mobile-services-dotnet-backend-test-local-service-api-documentation](../../includes/mobile-services-dotnet-backend-test-local-service-api-documentation.md)]
+[AZURE.INCLUDE [mobile-services-dotnet-backend-test-local-service-api-documentation](../includes/mobile-services-dotnet-backend-test-local-service-api-documentation.md)]
 
 ## Update Azure to use the on-premises connection string
 
@@ -122,14 +118,14 @@ Now that you have verified the database connection, you need to add an app setti
 
 ##See Also##
  
-+ [Hybrid Connections web site](../../services/biztalk-services/)
-+ [Hybrid Connections overview](../integration-hybrid-connection-overview.md)
-+ [BizTalk Services: Dashboard, Monitor, Scale, Configure, and Hybrid Connection tabs](../biztalk-dashboard-monitor-scale-tabs.md)
-+ [How to make data model changes to a .NET backend mobile service](mobile-services-dotnet-backend-how-to-use-code-first-migrations.md)
++ [Hybrid Connections web site](/home/features/biztalk-services/)
++ [Hybrid Connections overview](/documentation/articles/integration-hybrid-connection-overview)
++ [BizTalk Services: Dashboard, Monitor, Scale, Configure, and Hybrid Connection tabs](/documentation/articles/biztalk-dashboard-monitor-scale-tabs)
++ [How to make data model changes to a .NET backend mobile service](/documentation/articles/mobile-services-dotnet-backend-how-to-use-code-first-migrations)
 
 <!-- IMAGES -->
  
 
 <!-- Links -->
-[Azure Management Portal]: http://manage.windowsazure.com
-[Get started with Mobile Services]: mobile-services-dotnet-backend-windows-store-dotnet-get-started.md 
+[Azure Management Portal]: http://manage.windowsazure.cn
+[Get started with Mobile Services]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started

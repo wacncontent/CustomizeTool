@@ -1,5 +1,5 @@
 <properties
-	pageTitle="PHP on Windows to SQL DB | Microsoft Azure"
+	pageTitle="PHP on Windows to SQL DB | Windows Azure"
 	description="Presents a sample PHP program that connects to Azure SQL Database from a Windows client, and provides links to the necessary software components needed by the client."
 	services="sql-database"
 	documentationCenter=""
@@ -10,30 +10,26 @@
 
 <tags
 	ms.service="sql-database"
-	ms.workload="data-management"
-	ms.tgt_pltfrm="na"
-	ms.devlang="php"
-	ms.topic="article"
 	ms.date="07/20/2015"
-	ms.author="mebha"/>
+	wacn.date=""/>
 
 
 # Connect to SQL Database by using PHP on Windows
 
 
-[AZURE.INCLUDE [sql-database-develop-includes-selector-language-platform-depth](../../includes/sql-database-develop-includes-selector-language-platform-depth.md)]
+[AZURE.INCLUDE [sql-database-develop-includes-selector-language-platform-depth](../includes/sql-database-develop-includes-selector-language-platform-depth.md)]
 
 
 This topic illustrates how you can connect to Azure SQL Database from a client application written in PHP that runs on Windows.
 
 
-[AZURE.INCLUDE [sql-database-develop-includes-prerequisites-php-windows](../../includes/sql-database-develop-includes-prerequisites-php-windows.md)]
+[AZURE.INCLUDE [sql-database-develop-includes-prerequisites-php-windows](../includes/sql-database-develop-includes-prerequisites-php-windows.md)]
 
 
 ## Create a database and retrieve your connection string
 
 
-See the [Getting Started Topic](sql-database-get-started.md) to learn how to create a sample database and retrieve your connection string. It is important you follow the guide to create an **AdventureWorks database template**. The samples shown below only work with the **AdventureWorks schema**. 
+See the [Getting Started Topic](/documentation/articles/sql-database-get-started) to learn how to create a sample database and retrieve your connection string. It is important you follow the guide to create an **AdventureWorks database template**. The samples shown below only work with the **AdventureWorks schema**. 
 
 
 ## Connect to your SQL Database database
@@ -46,7 +42,7 @@ This **OpenConnection** function is called near the top in all of the functions 
 	{
 		try
 		{
-			$serverName = "tcp:myserver.database.windows.net,1433";
+			$serverName = "tcp:myserver.database.chinacloudapi.cn,1433";
 			$connectionOptions = array("Database"=>"AdventureWorks",
 				"Uid"=>"MyUser", "PWD"=>"MyPassword");
 			$conn = sqlsrv_connect($serverName, $connectionOptions);
@@ -93,7 +89,7 @@ The [sqlsrv_query()](http://php.net/manual/en/function.sqlsrv-query.php) functio
 ## Insert a row, pass parameters, and retrieve the generated primary key
 
 
-In SQL Database the [IDENTITY](https://msdn.microsoft.com/library/ms186775.aspx) property and the [SEQUENCE](https://msdn.microsoft.com/library/ff878058.aspx) object can be used to auto-generate [primary key](https://msdn.microsoft.com/library/ms179610.aspx) values. 
+In SQL Database the [IDENTITY](https://msdn.microsoft.com/zh-cn/library/ms186775.aspx) property and the [SEQUENCE](https://msdn.microsoft.com/zh-cn/library/ff878058.aspx) object can be used to auto-generate [primary key](https://msdn.microsoft.com/zh-cn/library/ms179610.aspx) values. 
 
 
 	function InsertData()
@@ -176,6 +172,6 @@ This code example demonstrates the use of transactions in which you:
 ## Further reading
 
 
-For more information regarding PHP installation and usage, see [Accessing SQL Server Databases with PHP](http://technet.microsoft.com/library/cc793139.aspx).
+For more information regarding PHP installation and usage, see [Accessing SQL Server Databases with PHP](http://technet.microsoft.com/zh-cn/library/cc793139.aspx).
 
  

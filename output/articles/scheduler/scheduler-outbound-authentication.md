@@ -6,14 +6,10 @@
  authors="krisragh" 
  manager="dwrede" 
  editor=""/>
-<tags 
- ms.service="scheduler" 
- ms.workload="infrastructure-services" 
- ms.tgt_pltfrm="na" 
- ms.devlang="dotnet" 
- ms.topic="article" 
- ms.date="08/04/2015" 
- ms.author="krisragh"/>
+<tags
+	ms.service="scheduler"
+	ms.date="08/04/2015"
+	wacn.date=""/>
  
 # Scheduler Outbound Authentication
 
@@ -56,11 +52,11 @@ When a request is sent with authentication info, the response contains the follo
 The following example request makes a PUT request that incorporates `ClientCertificate` authentication. The request is as follows:
 
 
-	PUT https://management.core.windows.net/7e2dffb5-45b5-475a-91be-d3d9973c82d5/cloudservices/cs-brazilsouth-scheduler/resources/scheduler/~/JobCollections/testScheduler/jobs/testScheduler 
+	PUT https://management.core.chinacloudapi.cn/7e2dffb5-45b5-475a-91be-d3d9973c82d5/cloudservices/cs-brazilsouth-scheduler/resources/scheduler/~/JobCollections/testScheduler/jobs/testScheduler 
 	x-ms-version: 2013-03-01
 	User-Agent: Microsoft.WindowsAzure.Scheduler.SchedulerClient/3.0.0.0 AzurePowershell/v0.8.10
 	Content-Type: application/json; charset=utf-8
-	Host: management.core.windows.net
+	Host: management.core.chinacloudapi.cn
 	Content-Length: 4013
 	Expect: 100-continue
 
@@ -68,7 +64,7 @@ The following example request makes a PUT request that incorporates `ClientCerti
 	  "action": {
 		"type": "http",
 		"request": {
-		  "uri": "https://management.core.windows.net/7e2dffb5-45b5-475a-91be-d3d9973c82d5/cloudservices/CS-NorthCentralUS-scheduler/resources/scheduler/~/JobCollections/testScheduler/jobs/test",
+		  "uri": "https://management.core.chinacloudapi.cn/7e2dffb5-45b5-475a-91be-d3d9973c82d5/cloudservices/CS-NorthCentralUS-scheduler/resources/scheduler/~/JobCollections/testScheduler/jobs/test",
 		  "method": "GET",
 		  "headers": {
 			"x-ms-version": "2013-03-01"
@@ -104,7 +100,7 @@ Once this request is sent, the response is as follows:
 	  "id": "testScheduler",
 	  "action": {
 		"request": {
-		  "uri": "https:\/\/management.core.windows.net\/7e2dffb5-45b5-475a-91be-d3d9973c82d5\/cloudservices\/CS-NorthCentralUS-scheduler\/resources\/scheduler\/~\/JobCollections\/testScheduler\/jobs\/test",
+		  "uri": "https:\/\/management.core.chinacloudapi.cn\/7e2dffb5-45b5-475a-91be-d3d9973c82d5\/cloudservices\/CS-NorthCentralUS-scheduler\/resources\/scheduler\/~\/JobCollections\/testScheduler\/jobs\/test",
 		  "method": "GET",
 		  "headers": {
 			"x-ms-version": "2013-03-01"
@@ -155,18 +151,18 @@ When a request is sent with authentication info, the response contains the follo
 
 The following example request makes a PUT request that incorporates `Basic` authentication. The request is as follows:
 
-	PUT https://management.core.windows.net/7e2dffb5-45b5-475a-91be-d3d9973c82d5/cloudservices/cs-brazilsouth-scheduler/resources/scheduler/~/JobCollections/testScheduler/jobs/testScheduler 
+	PUT https://management.core.chinacloudapi.cn/7e2dffb5-45b5-475a-91be-d3d9973c82d5/cloudservices/cs-brazilsouth-scheduler/resources/scheduler/~/JobCollections/testScheduler/jobs/testScheduler 
 	x-ms-version: 2013-03-01
 	User-Agent: Microsoft.WindowsAzure.Scheduler.SchedulerClient/3.0.0.0 AzurePowershell/v0.8.10
 	Content-Type: application/json; charset=utf-8
-	Host: management.core.windows.net
+	Host: management.core.chinacloudapi.cn
 	Expect: 100-continue
 
 	{
 	  "action": {
 		"type": "http",
 		"request": {
-		  "uri": "https://management.core.windows.net/7e2dffb5-45b5-475a-91be-d3d9973c82d5/cloudservices/CS-NorthCentralUS-scheduler/resources/scheduler/~/JobCollections/testScheduler/jobs/test",
+		  "uri": "https://management.core.chinacloudapi.cn/7e2dffb5-45b5-475a-91be-d3d9973c82d5/cloudservices/CS-NorthCentralUS-scheduler/resources/scheduler/~/JobCollections/testScheduler/jobs/test",
 		  "method": "GET",
 		  "headers": {
 			"x-ms-version": "2013-03-01"
@@ -201,7 +197,7 @@ Once this request is sent, the response is as follows:
 	  "id": "testScheduler",
 	  "action": {
 		"request": {
-		  "uri": "https:\/\/management.core.windows.net\/7e2dffb5-45b5-475a-91be-d3d9973c82d5\/cloudservices\/CS-NorthCentralUS-scheduler\/resources\/scheduler\/~\/JobCollections\/testScheduler\/jobs\/test",
+		  "uri": "https:\/\/management.core.chinacloudapi.cn\/7e2dffb5-45b5-475a-91be-d3d9973c82d5\/cloudservices\/CS-NorthCentralUS-scheduler\/resources\/scheduler\/~\/JobCollections\/testScheduler\/jobs\/test",
 		  "method": "GET",
 		  "headers": {
 			"x-ms-version": "2013-03-01"
@@ -235,7 +231,7 @@ When adding authentication using the `ActiveDirectoryOAuth` model, specify the f
 |_authentication (parent element)_ |Authentication object for using ActiveDirectoryOAuth authentication.|
 |_type_ |Required. Type of authentication. For ActiveDirectoryOAuth authentication, the value must be `ActiveDirectoryOAuth`.|
 |_tenant_ |Required. The tenant identifier is an ID that is used to identify the AD tenant.|
-|_audience_ |Required. This is set to https://management.core.windows.net/.|
+|_audience_ |Required. This is set to https://management.core.chinacloudapi.cn/.|
 |_clientId_ |Required. Provide the client identifier for the Azure AD application.|
 |_secret_ |Required. Secret of the client that is requesting the token.|
 
@@ -248,32 +244,32 @@ When a request is sent with authentication info, the response contains the follo
 |_authentication (parent element)_ |Authentication object for using ActiveDirectoryOAuth authentication.|
 |_type_ |Type of authentication. For ActiveDirectoryOAuth authentication, the value is `ActiveDirectoryOAuth`.|
 |_tenant_ |The tenant identifier used to identify the AD tenant.|
-|_audience_ |This is set to https://management.core.windows.net/.|
+|_audience_ |This is set to https://management.core.chinacloudapi.cn/.|
 |_clientId_ |The client identifier for the Azure AD application.|
 
 ## Sample Request and Response for ActiveDirectoryOAuth Authentication
 
 The following example request makes a PUT request that incorporates `ActiveDirectoryOAuth` authentication. The request is as follows:
 
-	PUT https://management.core.windows.net/7e2dffb5-45b5-475a-91be-d3d9973c82d5/cloudservices/cs-brazilsouth-scheduler/resources/scheduler/~/JobCollections/testScheduler/jobs/testScheduler 
+	PUT https://management.core.chinacloudapi.cn/7e2dffb5-45b5-475a-91be-d3d9973c82d5/cloudservices/cs-brazilsouth-scheduler/resources/scheduler/~/JobCollections/testScheduler/jobs/testScheduler 
 	x-ms-version: 2013-03-01
 	User-Agent: Microsoft.WindowsAzure.Scheduler.SchedulerClient/3.0.0.0 AzurePowershell/v0.8.10
 	Content-Type: application/json; charset=utf-8
-	Host: management.core.windows.net
+	Host: management.core.chinacloudapi.cn
 	Expect: 100-continue
 
 	{
 	  "action": {
 		"type": "http",
 		"request": {
-		  "uri": "https://management.core.windows.net/7e2dffb5-45b5-475a-91be-d3d9973c82d5/cloudservices/CS-NorthCentralUS-scheduler/resources/scheduler/~/JobCollections/testScheduler/jobs/test",
+		  "uri": "https://management.core.chinacloudapi.cn/7e2dffb5-45b5-475a-91be-d3d9973c82d5/cloudservices/CS-NorthCentralUS-scheduler/resources/scheduler/~/JobCollections/testScheduler/jobs/test",
 		  "method": "GET",
 		  "headers": {
 			"x-ms-version": "2013-03-01"
 		  },
 		  "authentication":{  
 			"tenant":"contoso.com",
-			"audience":"https://management.core.windows.net/",
+			"audience":"https://management.core.chinacloudapi.cn/",
 			"clientId":"8a14db88-4d1a-46c7-8429-20323727dfab",
 			"secret": "&lt;secret-key&gt;",
 			"type":"ActiveDirectoryOAuth"
@@ -304,14 +300,14 @@ Once this request is sent, the response is as follows:
 	  "id": "testScheduler",
 	  "action": {
 		"request": {
-		  "uri": "https:\/\/management.core.windows.net\/7e2dffb5-45b5-475a-91be-d3d9973c82d5\/cloudservices\/CS-NorthCentralUS-scheduler\/resources\/scheduler\/~\/JobCollections\/testScheduler\/jobs\/test",
+		  "uri": "https:\/\/management.core.chinacloudapi.cn\/7e2dffb5-45b5-475a-91be-d3d9973c82d5\/cloudservices\/CS-NorthCentralUS-scheduler\/resources\/scheduler\/~\/JobCollections\/testScheduler\/jobs\/test",
 		  "method": "GET",
 		  "headers": {
 			"x-ms-version": "2013-03-01"
 		  },
 		  "authentication":{  
 			"tenant":"contoso.com",
-			"audience":"https://management.core.windows.net/",
+			"audience":"https://management.core.chinacloudapi.cn/",
 			"clientId":"8a14db88-4d1a-46c7-8429-20323727dfab",
 			"type":"ActiveDirectoryOAuth"
 		  }
@@ -333,22 +329,22 @@ Once this request is sent, the response is as follows:
 
 ## See Also
  
- [What is Scheduler?](scheduler-intro.md)
+ [What is Scheduler?](/documentation/articles/scheduler-intro)
  
- [Scheduler Concepts, Terminology, and Entity Hierarchy](scheduler-concepts-terms.md)
+ [Scheduler Concepts, Terminology, and Entity Hierarchy](/documentation/articles/scheduler-concepts-terms)
  
- [Get Started Using Scheduler in the Management Portal](scheduler-get-started-portal.md)
+ [Get Started Using Scheduler in the Management Portal](/documentation/articles/scheduler-get-started-portal)
  
- [Plans and Billing in Azure Scheduler](scheduler-plans-billing.md)
+ [Plans and Billing in Azure Scheduler](/documentation/articles/scheduler-plans-billing)
  
- [How to Build Complex Schedules and Advanced Recurrence with Azure Scheduler](scheduler-advanced-complexity.md)
+ [How to Build Complex Schedules and Advanced Recurrence with Azure Scheduler](/documentation/articles/scheduler-advanced-complexity)
  
- [Scheduler REST API Reference](https://msdn.microsoft.com/library/dn528946)   
+ [Scheduler REST API Reference](https://msdn.microsoft.com/zh-cn/library/dn528946)   
  
- [Scheduler PowerShell Cmdlets Reference](scheduler-powershell-reference.md)
+ [Scheduler PowerShell Cmdlets Reference](/documentation/articles/scheduler-powershell-reference)
  
- [Scheduler High-Availability and Reliability](scheduler-high-availability-reliability.md)
+ [Scheduler High-Availability and Reliability](/documentation/articles/scheduler-high-availability-reliability)
  
- [Scheduler Limits, Defaults, and Error Codes](scheduler-limits-defaults-errors.md)
+ [Scheduler Limits, Defaults, and Error Codes](/documentation/articles/scheduler-limits-defaults-errors)
  
   

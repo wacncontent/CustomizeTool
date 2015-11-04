@@ -1,5 +1,3 @@
 > [AZURE.SELECTOR]
-<!-- deleted by customization
-- [Linux](/documentation/articles/hdinsight-hadoop-collect-debug-heap-dump-linux)
--->
-- [Windows](/documentation/articles/hdinsight-hadoop-collect-debug-heap-dumps)
+- [Linux](../articles/hdinsight/hdinsight-hadoop-collect-debug-heap-dump-linux.md)
+- [Windows](../articles/hdinsight/hdinsight-hadoop-collect-debug-heap-dumps.md)

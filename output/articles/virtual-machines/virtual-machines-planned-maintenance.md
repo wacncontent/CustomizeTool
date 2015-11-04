@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Planned maintenance for Azure VMs | Microsoft Azure"
+	pageTitle="Planned maintenance for Azure VMs | Windows Azure"
 	description="Understand what Azure planned maintenance is and how it affects your virtual machines running in Azure."
 	services="virtual-machines"
 	documentationCenter=""
@@ -10,27 +10,23 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.workload="infrastructure-services"
-	ms.tgt_pltfrm="vm-multiple"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="07/23/2015"
-	ms.author="kenazk"/>
+	wacn.date=""/>
 
 
 # Planned maintenance for Azure virtual machines
 
 ## Why Azure performs planned maintenance
 
-Microsoft Azure periodically performs updates across the globe to improve the reliability, performance, and security of the host infrastructure that underlies virtual machines. Many of these updates are performed without any impact to your virtual machines or Cloud Services, including memory-preserving updates.
+Windows Azure periodically performs updates across the globe to improve the reliability, performance, and security of the host infrastructure that underlies virtual machines. Many of these updates are performed without any impact to your virtual machines or Cloud Services, including memory-preserving updates.
 
 However, some updates do require a reboot to your virtual machines to apply the required updates to the infrastructure. The virtual machines are shut down while we patch the infrastructure, and then the virtual machines are restarted.
 
-Please note that there are two types of maintenance that can impact the availability of your virtual machines: planned and unplanned. This page describes how Microsoft Azure performs planned maintenance. For more information about unplanned maintenance, see [Understand planned versus unplanned maintenance](virtual-machines-manage-availability.md).
+Please note that there are two types of maintenance that can impact the availability of your virtual machines: planned and unplanned. This page describes how Windows Azure performs planned maintenance. For more information about unplanned maintenance, see [Understand planned versus unplanned maintenance](/documentation/articles/virtual-machines-manage-availability).
 
 ## Memory-preserving updates
 
-For a class of updates in Microsoft Azure, customers will not see any impact to their running virtual machines. Many of these updates are to components or services that can be updated without interfering with the running instance. Some of these updates are platform infrastructure updates on the host operating system that can be applied without requiring a full reboot of the virtual machines.
+For a class of updates in Windows Azure, customers will not see any impact to their running virtual machines. Many of these updates are to components or services that can be updated without interfering with the running instance. Some of these updates are platform infrastructure updates on the host operating system that can be applied without requiring a full reboot of the virtual machines.
 
 These updates are accomplished with technology that enables live migration (a “memory-preserving” update). When updating, the virtual machine is placed into a “paused” state, preserving the memory in RAM, while the underlying host operating system receives the necessary updates and patches. The virtual machine is resumed within 30 seconds of being paused. After resuming, the clock of the virtual machine is automatically synchronized.
 
@@ -44,7 +40,7 @@ There are two kinds of virtual machine configurations: multi-instance and single
 
 The multi-instance configuration provides redundancy, and it is recommended to ensure the availability of your application. All virtual machines in the availability set should be nearly identical and serve the same purpose to your application.
 
-For more information about configuring your virtual machines for high availability, refer to [Manage the Availability of your Virtual Machines](virtual-machines-manage-availability.md).
+For more information about configuring your virtual machines for high availability, refer to [Manage the Availability of your Virtual Machines](/documentation/articles/virtual-machines-manage-availability).
 
 By contrast, a single-instance configuration is used for standalone virtual machines that are not placed in an availability set. These virtual machines do not qualify for the service level agreement (SLA), which requires that two or more virtual machines are deployed under the same availability set.
 
@@ -59,7 +55,7 @@ In a multi-instance configuration update, virtual machines are updated in way th
 
 Each virtual machine in your availability set is assigned an update domain and a fault domain by the underlying Azure platform. Each update domain is a group of virtual machines that will be rebooted in the same time window. Each fault domain is a group of virtual machines that share a common power source and network switch.
 
-For more information about update domains and fault domains, see [Configure multiple virtual machines in an availability set for redundancy](virtual-machines-manage-availability.md#configure-multiple-virtual-machines-in-an-availability-set-for-redundancy).
+For more information about update domains and fault domains, see [Configure multiple virtual machines in an availability set for redundancy](/documentation/articles/virtual-machines-manage-availability#configure-multiple-virtual-machines-in-an-availability-set-for-redundancy).
 
 To prevent update domains from going offline at the same time, the maintenance is performed by shutting down each virtual machine in an update domain, applying the update to the host machines, restarting the virtual machines, and moving on to the next update domain. The planned maintenance event ends after all update domains have been updated.
 
@@ -95,18 +91,18 @@ Please refer to the following table for information regarding current region pai
 
 Region 1 | Region 2
 :----- | ------:
-North Central US | South Central US
-East US | West US
-US East 2 | Central US
-North Europe | West Europe
+China North | China East
+China East | China North
+China East 2 | China North
+China North | West Europe
 South East Asia | East Asia
 East China | North China
 Japan East | Japan West
-Brazil South | South Central US
+Brazil South | China East
 Australia Southeast | Australia East
 US Gov Iowa | US Gov Virginia
 
-For example, during a planned maintenance, Azure will not roll out an update to West US if East US is under maintenance at the same time. However, other regions such as North Europe can be under maintenance at the same time as East US.
+For example, during a planned maintenance, Azure will not roll out an update to China North if China East is under maintenance at the same time. However, other regions such as China North can be under maintenance at the same time as China East.
 
 <!--Anchors-->
 [image1]: ./media/virtual-machines-planned-maintenance/vmplanned1.png
@@ -115,5 +111,5 @@ For example, during a planned maintenance, Azure will not roll out an update to 
 
 
 <!--Link references-->
-[Virtual Machines Manage Availability]: virtual-machines-windows-tutorial.md
-[Understand planned versus unplanned maintenance]: virtual-machines-manage-availability.md#Understand-planned-versus-unplanned-maintenance/
+[Virtual Machines Manage Availability]: /documentation/articles/virtual-machines-windows-tutorial
+[Understand planned versus unplanned maintenance]: /documentation/articles/virtual-machines-manage-availability#Understand-planned-versus-unplanned-maintenance

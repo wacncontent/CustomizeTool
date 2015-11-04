@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Using import/export to transfer data to Blob Storage | Microsoft Azure" 
+	pageTitle="Using import/export to transfer data to Blob Storage | Windows Azure" 
 	description="Learn how to create import and export jobs in the Azure Management Portal to transfer data to blob storage." 
 	authors="tamram" 
 	manager="adinah" 
@@ -7,21 +7,17 @@
 	services="storage" 
 	documentationCenter=""/>
 
-<tags 
-	ms.service="storage" 
-	ms.workload="storage" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="09/27/2015" 
-	ms.author="tamram"/>
+<tags
+	ms.service="storage"
+	ms.date="09/27/2015"
+	wacn.date=""/>
 
 
-# Use the Microsoft Azure Import/Export Service to Transfer Data to Blob Storage
+# Use the Windows Azure Import/Export Service to Transfer Data to Blob Storage
 
 ## Overview
 
-You can use the Microsoft Azure Import/Export service to transfer large amounts of file data to Azure Blob storage in situations where uploading over the network is prohibitively expensive or not feasible. You can also use the Import/Export service to transfer large quantities of data resident in Blob storage to your on-premises installations in a timely and cost-effective manner.
+You can use the Windows Azure Import/Export service to transfer large amounts of file data to Azure Blob storage in situations where uploading over the network is prohibitively expensive or not feasible. You can also use the Import/Export service to transfer large quantities of data resident in Blob storage to your on-premises installations in a timely and cost-effective manner.
 
 To transfer a large set of file data into Blob storage, you can send one or more hard drives containing that data to an Azure data center, where your data will be uploaded to your storage account. Similarly, to export data from Blob storage, you can send empty hard drives to an Azure data center, where the Blob data from your storage account will be copied to your hard drives and then returned to you. Before you send in a drive that contains data, you'll encrypt the data on the drive; when the Import/Export service exports your data to send to you, the data will also be encrypted before shipping.
 
@@ -41,7 +37,7 @@ To begin the process of importing to or exporting from Blob storage, you first c
 
 When you create a job, you notify the Import/Export service that you will be shipping one or more hard drives to an Azure data center. For an import job, you'll be shipping hard drives containing file data. For an export job, you'll be shipping empty hard drives.
 
-To prepare your drive to ship for an import job, you'll run the **Microsoft Azure Import/Export Tool** tool, which facilitates copying your data to the drive, encrypting the data on the drive with BitLocker, and generating the drive journal files, which are discussed below.
+To prepare your drive to ship for an import job, you'll run the **Windows Azure Import/Export Tool** tool, which facilitates copying your data to the drive, encrypting the data on the drive with BitLocker, and generating the drive journal files, which are discussed below.
 
 > [AZURE.NOTE] The data on the drive must be encrypted using BitLocker Drive Encryption. This protects your data while it is in transit. For an export job, the Import/Export service will encrypt your data before shipping the drive back to you.
 
@@ -49,7 +45,7 @@ When you create an import job or an export job, you'll also need the *drive ID*,
 
 ### Requirements and Scope
 
-1.	**Subscription and storage accounts:** You must have an existing Azure subscription and one or more storage accounts to use the Import/Export service. Each job may be used to transfer data to or from only one storage account. In other words, a job cannot span across multiple storage accounts. For information on creating a new storage account, see [How to Create a Storage Account](storage-create-storage-account.md).
+1.	**Subscription and storage accounts:** You must have an existing Azure subscription and one or more storage accounts to use the Import/Export service. Each job may be used to transfer data to or from only one storage account. In other words, a job cannot span across multiple storage accounts. For information on creating a new storage account, see [How to Create a Storage Account](/documentation/articles/storage-create-storage-account).
 2.	**Hard drives:** Only 3.5 inch SATA II/III internal hard drives are supported for use with the Import/Export service. Hard drives up to 6TB are supported. For import jobs, only the first data volume on the drive will be processed. The data volume must be formatted with NTFS. You can attach a SATA II/III disk externally to most computers using an external SATA II/III USB Adapter.
 
   > [AZURE.IMPORTANT] External hard disk drives that come with an in built USB adaptor are not supported by this service. Please do not prepare an external HDD. The disk inside the external casing also cannot be used for importing data. Use a 3.5" SATA II/III **internal** hard disk drive. If you cannot connect the SATA disk directly to your machine, use an external SATA to USB adaptor. See the list of recommended adaptors in FAQ section.
@@ -65,15 +61,15 @@ Create an import job to notify the Import/Export service that you'll be shipping
 
 ### Prepare Your Drives
 
-Before you create an import job, prepare your drives with the Microsoft Azure Import/Export Tool. For more details about using the Microsoft Azure Import/Export Tool, see the [Microsoft Azure Import/Export Tool Reference](http://go.microsoft.com/fwlink/?LinkId=329032). You can download the [Microsoft Azure Import/Export Tool](http://go.microsoft.com/fwlink/?LinkID=301900&clcid=0x409) as a standalone package.
+Before you create an import job, prepare your drives with the Windows Azure Import/Export Tool. For more details about using the Windows Azure Import/Export Tool, see the [Windows Azure Import/Export Tool Reference](http://go.microsoft.com/fwlink/?LinkId=329032). You can download the [Windows Azure Import/Export Tool](http://go.microsoft.com/fwlink/?LinkID=301900&clcid=0x409) as a standalone package.
   
 To prepare your drives, follow these three steps: 
 
 1.	Determine the data to be imported, and the number of drives you'll need.
 2.	Identify the destination blobs for your data in the Azure Blob service.
-3.	Use the Microsoft Azure Import/Export Tool to copy your data to one or more hard drives.
+3.	Use the Windows Azure Import/Export Tool to copy your data to one or more hard drives.
 
-The Microsoft Azure Import/Export Tool generates a *drive journal* file for each drive as it is prepared. The drive journal file is stored on your local computer, not on the drive itself. You'll upload the journal file when you create the import job. A drive journal file includes the drive ID and the BitLocker key, as well as other information about the drive.  
+The Windows Azure Import/Export Tool generates a *drive journal* file for each drive as it is prepared. The drive journal file is stored on your local computer, not on the drive itself. You'll upload the journal file when you create the import job. A drive journal file includes the drive ID and the BitLocker key, as well as other information about the drive.  
 
 ### Create the Import Job
 
@@ -189,7 +185,7 @@ For export jobs, you can view and copy the BitLocker keys generated by the servi
 	- Anker 68UPSHHDS-BU
 	- Startech SATADOCK22UE 
 
-> [AZURE.NOTE] If you have a converter which is not listed above, you can try running the Microsoft Azure Import/Export Tool using your converter to prepare the drive and see if it works before purchasing a supported converter.
+> [AZURE.NOTE] If you have a converter which is not listed above, you can try running the Windows Azure Import/Export Tool using your converter to prepare the drive and see if it works before purchasing a supported converter.
 
 - External HDD with an inbuilt USB adaptor is not supported.
 
@@ -224,7 +220,7 @@ For export jobs, you can view and copy the BitLocker keys generated by the servi
 - No. All drives must be BitLocker-prepared.
  
 **Do I need to perform any disk preparation when creating an export job?**
-- No, but some pre-checks are recommended. Check the number of disks required using Azure Import/Export tool's [PreviewExport](https://msdn.microsoft.com/library/azure/dn722414.aspx) command. It helps you preview drive usage for the blobs you selected, based on the size of the drives you are going to use. Also check that you can read/write to the hard drive that will be shipped for the export job.
+- No, but some pre-checks are recommended. Check the number of disks required using Azure Import/Export tool's [PreviewExport](https://msdn.microsoft.com/zh-cn/library/azure/dn722414.aspx) command. It helps you preview drive usage for the blobs you selected, based on the size of the drives you are going to use. Also check that you can read/write to the hard drive that will be shipped for the export job.
 
 ### Shipping
 
@@ -245,11 +241,11 @@ For export jobs, you can view and copy the BitLocker keys generated by the servi
 **Where can I ship my data from and to?**
 
 - The Import/Export service supports importing data to and exporting data from storage accounts in the following regions:
-	- East US 
-	- West US 
-	- North Central US 
-	- South Central US 
-	- North Europe
+	- China East 
+	- China North 
+	- China North 
+	- China East 
+	- China North
 	- West Europe
 	- East Asia
 	- Southeast Asia
@@ -258,7 +254,7 @@ For export jobs, you can view and copy the BitLocker keys generated by the servi
 
 	> [AZURE.IMPORTANT] Please note that the physical media that you are shipping may need to cross international borders. You are responsible for ensuring that your physical media and data are imported and/or exported in accordance with the applicable laws. Before shipping the physical media, check with your advisors to verify that your media and data can legally be shipped to the identified data center. This will help to ensure that it reaches Microsoft in a timely manner.
 
-- In shipping your packages, you must follow the terms at [Microsoft Azure Service Terms](http://azure.microsoft.com/support/legal/services-terms/). 
+- In shipping your packages, you must follow the terms at [Windows Azure Service Terms](http://azure.microsoft.com/support/legal/services-terms/). 
 
 **Can I purchase drives for import/export jobs from Microsoft?**
 

@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Get started with push (Android) | Microsoft Azure"
+	pageTitle="Get started with push (Android) | Windows Azure"
 	description="Learn how to use Azure Mobile Services to send push notifications to your Android .Net app."
 	services="mobile-services, notification-hubs"
 	documentationCenter="android"
@@ -9,16 +9,12 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.workload="mobile"
-	ms.tgt_pltfrm="mobile-android"
-	ms.devlang="java"
-	ms.topic="article"
 	ms.date="10/01/2015"
-	ms.author="ricksal"/>
+	wacn.date=""/>
 
 # Add push notifications to your Mobile Services app
 
-[AZURE.INCLUDE [mobile-services-selector-get-started-push](../../includes/mobile-services-selector-get-started-push.md)]
+[AZURE.INCLUDE [mobile-services-selector-get-started-push](../includes/mobile-services-selector-get-started-push.md)]
 
 This topic shows how to use Azure Mobile Services to send push notifications to your Android app. In this tutorial you add push notifications using Google Cloud Messaging (GCM) to the quickstart project. When complete, your mobile service will send a push notification each time a record is inserted.
 
@@ -29,21 +25,21 @@ To see the completed source code go [here](https://github.com/RickSaling/mobile-
 
 ## Enable Google Cloud Messaging
 
-[AZURE.INCLUDE [mobile-services-enable-Google-cloud-messaging](../../includes/mobile-services-enable-google-cloud-messaging.md)]
+[AZURE.INCLUDE [mobile-services-enable-Google-cloud-messaging](../includes/mobile-services-enable-google-cloud-messaging.md)]
 
 ## Configure your mobile service to send push requests
 
-[AZURE.INCLUDE [mobile-services-android-configure-push](../../includes/mobile-services-android-configure-push.md)]
+[AZURE.INCLUDE [mobile-services-android-configure-push](../includes/mobile-services-android-configure-push.md)]
 
 ## Update the mobile service to send push notifications
 
-[AZURE.INCLUDE [mobile-services-dotnet-backend-android-push-update-service](../../includes/mobile-services-dotnet-backend-android-push-update-service.md)]
+[AZURE.INCLUDE [mobile-services-dotnet-backend-android-push-update-service](../includes/mobile-services-dotnet-backend-android-push-update-service.md)]
 
 ## Add push notifications to your app
 
 ###Verify Android SDK Version
 
-[AZURE.INCLUDE [mobile-services-verify-android-sdk-version](../../includes/mobile-services-verify-android-sdk-version.md)]
+[AZURE.INCLUDE [mobile-services-verify-android-sdk-version](../includes/mobile-services-verify-android-sdk-version.md)]
 
 
 Your next step is to install Google Play services. Google Cloud Messaging has some minimum API level requirements for development and testing, which the **minSdkVersion** property in the Manifest must conform to.
@@ -52,11 +48,11 @@ If you will be testing with an older device, then consult [Set Up Google Play Se
 
 ###Add Google Play Services to the project
 
-[AZURE.INCLUDE [Add Play Services](../../includes/mobile-services-add-google-play-services.md)]
+[AZURE.INCLUDE [Add Play Services](../includes/mobile-services-add-google-play-services.md)]
 
 ###Add code
 
-[AZURE.INCLUDE [mobile-services-android-getting-started-with-push](../../includes/mobile-services-android-getting-started-with-push.md)]
+[AZURE.INCLUDE [mobile-services-android-getting-started-with-push](../includes/mobile-services-android-getting-started-with-push.md)]
 
 ## Test the app against the published mobile service
 
@@ -64,9 +60,9 @@ You can test the app by directly attaching an Android phone with a USB cable, or
 
 ### Enable push notifications for local testing
 
-[AZURE.INCLUDE [mobile-services-dotnet-backend-configure-local-push](../../includes/mobile-services-dotnet-backend-configure-local-push.md)]
+[AZURE.INCLUDE [mobile-services-dotnet-backend-configure-local-push](../includes/mobile-services-dotnet-backend-configure-local-push.md)]
 
-[AZURE.INCLUDE [mobile-services-android-push-notifications-test](../../includes/mobile-services-android-push-notifications-test.md)]
+[AZURE.INCLUDE [mobile-services-android-push-notifications-test](../includes/mobile-services-android-push-notifications-test.md)]
 
 You have successfully completed this tutorial.
 
@@ -107,14 +103,13 @@ Learn more about Mobile Services and Notification Hubs in the following topics:
 <!-- Images. -->
 
 <!-- URLs. -->
-[Get started with push notifications (Eclipse)]: mobile-services-dotnet-backend-android-get-started-push-ec.md
-[Get started with Mobile Services]: mobile-services-dotnet-backend-android-get-started.md
-[Management Portal]: https://manage.windowsazure.com/
+[Get started with push notifications (Eclipse)]: /documentation/articles/mobile-services-dotnet-backend-android-get-started-push-ec
+[Get started with Mobile Services]: /documentation/articles/mobile-services-dotnet-backend-android-get-started
+[Management Portal]: https://manage.windowsazure.cn/
 [Mobile Services SDK]: http://go.microsoft.com/fwlink/p/?LinkId=257545
 
-[How to use the Android client library for Mobile Services]: mobile-services-android-how-to-use-client-library.md
-
-[What are Notification Hubs?]: ../notification-hubs-overview.md
-[Send broadcast notifications to subscribers]: ../notification-hubs-windows-store-dotnet-send-breaking-news.md
-[Send template-based notifications to subscribers]: ../notification-hubs-windows-store-dotnet-send-localized-breaking-news.md
-[Azure Management Portal]: https://manage.windowsazure.com/
+[How to use the Android client library for Mobile Services]: /documentation/articles/mobile-services-android-how-to-use-client-library
+[What are Notification Hubs?]: /documentation/articles/notification-hubs-overview
+[Send broadcast notifications to subscribers]: /documentation/articles/notification-hubs-windows-store-dotnet-send-breaking-news
+[Send template-based notifications to subscribers]: /documentation/articles/notification-hubs-windows-store-dotnet-send-localized-breaking-news
+[Azure Management Portal]: https://manage.windowsazure.cn/

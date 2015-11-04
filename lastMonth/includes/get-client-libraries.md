@@ -1,4 +1,4 @@
-###Install via Composer
+### Install via Composer
 
 1. [Install Git][install-git]. Note that on Windows, you must also add the Git executable to your PATH environment variable. 
 
@@ -29,7 +29,7 @@
 	php composer.phar install
 	```
 
-###Install manually
+### Install manually
 
 To download and install the PHP Client Libraries for Azure manually, follow these steps:
 
@@ -41,8 +41,7 @@ To download and install the PHP Client Libraries for Azure manually, follow thes
 
 For more information about installing the PHP Client Libraries for Azure (including information about installing as a PEAR package), see [Download the Azure SDK for PHP][download-SDK-PHP].
 
-
 [php-sdk-github]: http://go.microsoft.com/fwlink/?LinkId=252719
 [install-git]: http://git-scm.com/book/en/Getting-Started-Installing-Git
-[download-SDK-PHP]: /documentation/articles/php-download-sdk
+[download-SDK-PHP]: ../articles/php-download-sdk.md
 [composer-phar]: http://getcomposer.org/composer.phar

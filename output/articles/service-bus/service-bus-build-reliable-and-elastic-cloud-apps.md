@@ -1,20 +1,16 @@
 <properties 
-	pageTitle="Build Reliable and Elastic Cloud Apps with Messaging | Microsoft Azure" 
-	description="Learn how to build reliable and elastic cloud applications with messaging in Microsoft Azure." 
+	pageTitle="Build Reliable and Elastic Cloud Apps with Messaging | Windows Azure" 
+	description="Learn how to build reliable and elastic cloud applications with messaging in Windows Azure." 
 	services="service-bus" 
 	authors="sethmanheim" 
 	manager="timlt" 
 	editor="" 
 	documentationCenter=""/>
 
-<tags 
-	ms.service="service-bus" 
-	ms.workload="tbd" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="multiple" 
-	ms.topic="article" 
-	ms.date="10/06/2015" 
-	ms.author="sethm"/>
+<tags
+	ms.service="service-bus"
+	ms.date="10/06/2015"
+	wacn.date=""/>
 
 # Build reliable and elastic cloud apps with messaging 
  
@@ -22,25 +18,25 @@ Dynamic demand is a reality for today's applications. From seasonal and variable
  
 ## Explore
 
-- [Microsoft Azure Service Bus fundamentals](service-bus-fundamentals-hybrid-solutions.md)
-- [Queue-based load leveling pattern](http://msdn.microsoft.com/library/dn589783.aspx)
-- [Competing consumers](http://msdn.microsoft.com/library/dn568101.aspx)
+- [Windows Azure Service Bus fundamentals](/documentation/articles/service-bus-fundamentals-hybrid-solutions)
+- [Queue-based load leveling pattern](http://msdn.microsoft.com/zh-cn/library/dn589783.aspx)
+- [Competing consumers](http://msdn.microsoft.com/zh-cn/library/dn568101.aspx)
 - [Customer stories](https://customers.microsoft.com/Pages/Home.aspx)
  
 ## Build
 
-- [How to use Service Bus queues](service-bus-dotnet-how-to-use-queues.md) 
+- [How to use Service Bus queues](/documentation/articles/service-bus-dotnet-how-to-use-queues) 
 - [Deadlettering in Service Bus Brokered Messaging (October 21 2011 blog post)](http://geekswithblogs.net/asmith/articles/147398.aspx) 
-- [Best practices for insulating Service Bus applications against Service Bus outages and disasters](service-bus-outages-disasters.md)
+- [Best practices for insulating Service Bus applications against Service Bus outages and disasters](/documentation/articles/service-bus-outages-disasters)
 - [Brokered Messaging: Request Response sample](https://code.msdn.microsoft.com/Brokered-Messaging-Request-0ce8fcaf) 
-- [Multi-Tier application with Azure Service Bus](service-bus-dotnet-multi-tier-app-using-service-bus-queues.md)
+- [Multi-Tier application with Azure Service Bus](/documentation/articles/service-bus-dotnet-multi-tier-app-using-service-bus-queues)
  
 ## Popular
 
-- [Azure Queues and Azure Service Bus Queues - compared and contrasted](service-bus-azure-and-service-bus-queues-compared-contrasted.md)
-- [Service Bus REST API Reference](http://msdn.microsoft.com/library/azure/hh780717.aspx)
+- [Azure Queues and Azure Service Bus Queues - compared and contrasted](/documentation/articles/service-bus-azure-and-service-bus-queues-compared-contrasted)
+- [Service Bus REST API Reference](http://msdn.microsoft.com/zh-cn/library/azure/hh780717.aspx)
 
 ## Related services
 
-- [Cloud Services](http://azure.microsoft.com/services/cloud-services/) 
+- [Cloud Services](/home/features/cloud-services/) 
  

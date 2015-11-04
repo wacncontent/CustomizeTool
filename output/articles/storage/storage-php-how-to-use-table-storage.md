@@ -1,5 +1,5 @@
 <properties
-	pageTitle="How to use table storage from PHP | Microsoft Azure"
+	pageTitle="How to use table storage from PHP | Windows Azure"
 	description="Learn how to use the Table service from PHP to create and delete a table, and insert, delete, and query the table."
 	services="storage"
 	documentationCenter="php"
@@ -9,25 +9,21 @@
 
 <tags
 	ms.service="storage"
-	ms.workload="storage"
-	ms.tgt_pltfrm="na"
-	ms.devlang="PHP"
-	ms.topic="article"
 	ms.date="09/23/2015"
-	ms.author="tomfitz"/>
+	wacn.date=""/>
 
 
 # How to use table storage from PHP
 
-[AZURE.INCLUDE [storage-selector-table-include](../../includes/storage-selector-table-include.md)]
+[AZURE.INCLUDE [storage-selector-table-include](../includes/storage-selector-table-include.md)]
 
 ## Overview
 
 This guide shows you how to perform common scenarios using the Azure Table service. The samples are written in PHP and use the [Azure SDK for PHP][download]. The scenarios covered include **creating and deleting a table, and inserting, deleting, and querying entities in a table**. For more information on the Azure Table service, see the [Next steps](#NextSteps) section.
 
-[AZURE.INCLUDE [storage-table-concepts-include](../../includes/storage-table-concepts-include.md)]
+[AZURE.INCLUDE [storage-table-concepts-include](../includes/storage-table-concepts-include.md)]
 
-[AZURE.INCLUDE [storage-create-account-include](../../includes/storage-create-account-include.md)]
+[AZURE.INCLUDE [storage-create-account-include](../includes/storage-create-account-include.md)]
 
 ## Create a PHP application
 
@@ -37,7 +33,7 @@ In this guide, you use Table service features which can be called from within a 
 
 ## Get the Azure Client Libraries
 
-[AZURE.INCLUDE [get-client-libraries](../../includes/get-client-libraries.md)]
+[AZURE.INCLUDE [get-client-libraries](../includes/get-client-libraries.md)]
 
 ## Configure your application to access the Table service
 
@@ -106,7 +102,7 @@ A **TableRestProxy** object lets you create a table with the **createTable** met
 		$error_message = $e->getMessage();
 		// Handle exception based on error codes and messages.
 		// Error codes and messages can be found here:
-		// http://msdn.microsoft.com/library/azure/dd179438.aspx
+		// http://msdn.microsoft.com/zh-cn/library/azure/dd179438.aspx
 	}
 
 For information about restrictions on table names, see [Understanding the Table service data model][table-data-model].
@@ -140,7 +136,7 @@ To add an entity to a table, create a new **Entity** object and pass it to **Tab
 	catch(ServiceException $e){
 		// Handle exception based on error codes and messages.
 		// Error codes and messages are here:
-		// http://msdn.microsoft.com/library/azure/dd179438.aspx
+		// http://msdn.microsoft.com/zh-cn/library/azure/dd179438.aspx
 		$code = $e->getCode();
 		$error_message = $e->getMessage();
 	}
@@ -181,7 +177,7 @@ The **TableRestProxy** class offers two alternative methods for inserting entiti
 	catch(ServiceException $e){
 		// Handle exception based on error codes and messages.
 		// Error codes and messages are here:
-		// http://msdn.microsoft.com/library/azure/dd179438.aspx
+		// http://msdn.microsoft.com/zh-cn/library/azure/dd179438.aspx
 		$code = $e->getCode();
 		$error_message = $e->getMessage();
 		echo $code.": ".$error_message."<br />";
@@ -206,7 +202,7 @@ The **TableRestProxy->getEntity** method allows you to retrieve a single entity 
 	catch(ServiceException $e){
 		// Handle exception based on error codes and messages.
 		// Error codes and messages are here:
-		// http://msdn.microsoft.com/library/azure/dd179438.aspx
+		// http://msdn.microsoft.com/zh-cn/library/azure/dd179438.aspx
 		$code = $e->getCode();
 		$error_message = $e->getMessage();
 		echo $code.": ".$error_message."<br />";
@@ -236,7 +232,7 @@ Entity queries are constructed using filters (for more information, see [Queryin
 	catch(ServiceException $e){
 		// Handle exception based on error codes and messages.
 		// Error codes and messages are here:
-		// http://msdn.microsoft.com/library/azure/dd179438.aspx
+		// http://msdn.microsoft.com/zh-cn/library/azure/dd179438.aspx
 		$code = $e->getCode();
 		$error_message = $e->getMessage();
 		echo $code.": ".$error_message."<br />";
@@ -268,7 +264,7 @@ The same pattern used in the previous example can be used to retrieve any subset
 	catch(ServiceException $e){
 		// Handle exception based on error codes and messages.
 		// Error codes and messages are here:
-		// http://msdn.microsoft.com/library/azure/dd179438.aspx
+		// http://msdn.microsoft.com/zh-cn/library/azure/dd179438.aspx
 		$code = $e->getCode();
 		$error_message = $e->getMessage();
 		echo $code.": ".$error_message."<br />";
@@ -302,7 +298,7 @@ A query can retrieve a subset of entity properties. This technique, called *proj
 	catch(ServiceException $e){
 		// Handle exception based on error codes and messages.
 		// Error codes and messages are here:
-		// http://msdn.microsoft.com/library/azure/dd179438.aspx
+		// http://msdn.microsoft.com/zh-cn/library/azure/dd179438.aspx
 		$code = $e->getCode();
 		$error_message = $e->getMessage();
 		echo $code.": ".$error_message."<br />";
@@ -348,7 +344,7 @@ An existing entity can be updated by using the **Entity->setProperty** and **Ent
 	catch(ServiceException $e){
 		// Handle exception based on error codes and messages.
 		// Error codes and messages are here:
-		// http://msdn.microsoft.com/library/azure/dd179438.aspx
+		// http://msdn.microsoft.com/zh-cn/library/azure/dd179438.aspx
 		$code = $e->getCode();
 		$error_message = $e->getMessage();
 		echo $code.": ".$error_message."<br />";
@@ -373,7 +369,7 @@ To delete an entity, pass the table name, and the entity's `PartitionKey` and `R
 	catch(ServiceException $e){
 		// Handle exception based on error codes and messages.
 		// Error codes and messages are here:
-		// http://msdn.microsoft.com/library/azure/dd179438.aspx
+		// http://msdn.microsoft.com/zh-cn/library/azure/dd179438.aspx
 		$code = $e->getCode();
 		$error_message = $e->getMessage();
 		echo $code.": ".$error_message."<br />";
@@ -429,7 +425,7 @@ The following example shows how to execute **insertEntity** and **deleteEntity**
 	catch(ServiceException $e){
 		// Handle exception based on error codes and messages.
 		// Error codes and messages are here:
-		// http://msdn.microsoft.com/library/azure/dd179438.aspx
+		// http://msdn.microsoft.com/zh-cn/library/azure/dd179438.aspx
 		$code = $e->getCode();
 		$error_message = $e->getMessage();
 		echo $code.": ".$error_message."<br />";
@@ -456,7 +452,7 @@ Finally, to delete a table, pass the table name to the **TableRestProxy->deleteT
 	catch(ServiceException $e){
 		// Handle exception based on error codes and messages.
 		// Error codes and messages are here:
-		// http://msdn.microsoft.com/library/azure/dd179438.aspx
+		// http://msdn.microsoft.com/zh-cn/library/azure/dd179438.aspx
 		$code = $e->getCode();
 		$error_message = $e->getMessage();
 		echo $code.": ".$error_message."<br />";
@@ -466,16 +462,16 @@ Finally, to delete a table, pass the table name to the **TableRestProxy->deleteT
 
 Now that you’ve learned the basics of the Azure Table service, follow these links to learn about more complex storage tasks.
 
-- See the MSDN Reference: [Azure Storage](http://msdn.microsoft.com/library/azure/gg433040.aspx)
+- See the MSDN Reference: [Azure Storage](http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx)
 - Visit the [Azure Storage team blog](http://blogs.msdn.com/b/windowsazurestorage/)
 
 For more information, see also the [PHP Developer Center](/develop/php/).
 
 [download]: http://go.microsoft.com/fwlink/?LinkID=252473
-[Storing and accessing data in Azure]: http://msdn.microsoft.com/library/azure/gg433040.aspx
+[Storing and accessing data in Azure]: http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx
 [require_once]: http://php.net/require_once
-[table-service-timeouts]: http://msdn.microsoft.com/library/azure/dd894042.aspx
+[table-service-timeouts]: http://msdn.microsoft.com/zh-cn/library/azure/dd894042.aspx
 
-[table-data-model]: http://msdn.microsoft.com/library/azure/dd179338.aspx
-[filters]: http://msdn.microsoft.com/library/azure/dd894031.aspx
-[entity-group-transactions]: http://msdn.microsoft.com/library/azure/dd894038.aspx
+[table-data-model]: http://msdn.microsoft.com/zh-cn/library/azure/dd179338.aspx
+[filters]: http://msdn.microsoft.com/zh-cn/library/azure/dd894031.aspx
+[entity-group-transactions]: http://msdn.microsoft.com/zh-cn/library/azure/dd894038.aspx

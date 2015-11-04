@@ -9,12 +9,8 @@
 
 <tags
 	ms.service="notification-hubs"
-	ms.workload="mobile"
-	ms.tgt_pltfrm="multiple"
-	ms.devlang="multiple"
-	ms.topic="article"
 	ms.date="09/24/2015"
-	ms.author="wesmc"/>
+	wacn.date=""/>
 
 
 #Azure Notification Hubs
@@ -42,7 +38,7 @@ You can use Notification Hubs for both enterprise and consumer scenarios. For ex
 
 Smartphones and tablets have the ability to "notify" users when an event has occurred. These notifications can take many forms.
 
-In Windows Store and Windows Phone applications, the notification can be in the form of a _toast_: a modeless window appears, with a sound, to signal a new notification. Other notification types are supports including _tile_, _raw_, and _badge_ notifications. For more information on the types of notifications supported on Windows devices see, [Tiles, Badges, and Notifications](http://msdn.microsoft.com/library/windows/apps/hh779725.aspx).
+In Windows Store and Windows Phone applications, the notification can be in the form of a _toast_: a modeless window appears, with a sound, to signal a new notification. Other notification types are supports including _tile_, _raw_, and _badge_ notifications. For more information on the types of notifications supported on Windows devices see, [Tiles, Badges, and Notifications](http://msdn.microsoft.com/zh-cn/library/windows/apps/hh779725.aspx).
 
 On Apple iOS devices, the push similarly notifies the user with a dialog box, requesting the user to view or close the notification. Clicking **View** opens the application that is receiving the message. For more information on iOS Notifications see, [iOS Notifications](http://go.microsoft.com/fwlink/?LinkId=615245).
 
@@ -115,7 +111,7 @@ Notification hubs provide a ready-to-use push notification infrastructure with t
 
 	- *Segmentation*: Push to complex segment defined by tag expressions (for example, devices in New York following the Yankees).
 
-	Each device, when sending its handle to a notification hub, can specify one or more _tags_. For more information about [tags](http://msdn.microsoft.com/library/azure/dn530749.aspx). Tags do not have to be pre-provisioned or disposed. Tags provide a simple way to send notifications to users or interest groups. Since tags can contain any app-specific identifier (such as user or group IDs), their use frees the app back-end from the burden of having to store and manage device handles.
+	Each device, when sending its handle to a notification hub, can specify one or more _tags_. For more information about [tags](http://msdn.microsoft.com/zh-cn/library/azure/dn530749.aspx). Tags do not have to be pre-provisioned or disposed. Tags provide a simple way to send notifications to users or interest groups. Since tags can contain any app-specific identifier (such as user or group IDs), their use frees the app back-end from the burden of having to store and manage device handles.
 
 - **Personalization**: Each device can have one or more templates, to achieve per-device localization and personalization without affecting back-end code.
 
@@ -146,13 +142,13 @@ The relevant .NET managed API references for push notifications are located here
   [0]: ./media/notification-hubs-overview/registration-diagram.png
   [1]: ./media/notification-hubs-overview/notification-hub-diagram.png
   [How customers are using Notification Hubs]: http://azure.microsoft.com/services/notification-hubs
-  [Notification Hubs tutorials and guides]: http://azure.microsoft.com/documentation/services/notification-hubs
-  [iOS]: http://azure.microsoft.com/documentation/articles/notification-hubs-ios-get-started
-  [Android]: http://azure.microsoft.com/documentation/articles/notification-hubs-android-get-started
-  [Windows Universal]: http://azure.microsoft.com/documentation/articles/notification-hubs-windows-store-dotnet-get-started
-  [Windows Phone]: http://azure.microsoft.com/documentation/articles/notification-hubs-windows-phone-get-started
-  [Kindle]: http://azure.microsoft.com/documentation/articles/notification-hubs-kindle-get-started
-  [Xamarin.iOS]: http://azure.microsoft.com/documentation/articles/partner-xamarin-notification-hubs-ios-get-started
-  [Xamarin.Android]: http://azure.microsoft.com/documentation/articles/partner-xamarin-notification-hubs-android-get-started
-  [Microsoft.WindowsAzure.Messaging.NotificationHub]: http://msdn.microsoft.com/library/microsoft.windowsazure.messaging.notificationhub.aspx
-  [Microsoft.ServiceBus.Notifications]: http://msdn.microsoft.com/library/microsoft.servicebus.notifications.aspx
+  [Notification Hubs tutorials and guides]: /documentation/services/notification-hubs
+  [iOS]: /documentation/articles/notification-hubs-ios-get-started
+  [Android]: /documentation/articles/notification-hubs-android-get-started
+  [Windows Universal]: /documentation/articles/notification-hubs-windows-store-dotnet-get-started
+  [Windows Phone]: /documentation/articles/notification-hubs-windows-phone-get-started
+  [Kindle]: /documentation/articles/notification-hubs-kindle-get-started
+  [Xamarin.iOS]: /documentation/articles/partner-xamarin-notification-hubs-ios-get-started
+  [Xamarin.Android]: /documentation/articles/partner-xamarin-notification-hubs-android-get-started
+  [Microsoft.WindowsAzure.Messaging.NotificationHub]: http://msdn.microsoft.com/zh-cn/library/microsoft.windowsazure.messaging.notificationhub.aspx
+  [Microsoft.ServiceBus.Notifications]: http://msdn.microsoft.com/zh-cn/library/microsoft.servicebus.notifications.aspx

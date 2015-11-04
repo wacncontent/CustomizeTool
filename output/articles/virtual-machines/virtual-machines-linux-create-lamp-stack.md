@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Create a LAMP Stack with Azure | Microsoft Azure"
-	description="Learn how to create a LAMP Stack with Microsoft Azure using Azure virtual machines (VMs) running Linux."
+	pageTitle="Create a LAMP Stack with Azure | Windows Azure"
+	description="Learn how to create a LAMP Stack with Windows Azure using Azure virtual machines (VMs) running Linux."
 	services="virtual-machines"
 	documentationCenter=""
 	authors="NingKuang"
@@ -10,21 +10,17 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.workload="infrastructure-services"
-	ms.tgt_pltfrm="vm-linux"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="07/10/2015"
-	ms.author="ningk"/>
+	wacn.date=""/>
 
-#How to create a LAMP Stack with Microsoft Azure
+#How to create a LAMP Stack with Windows Azure
 
 A "LAMP" stack is a group of open source software that is typically installed together to enable a server to host dynamic websites and web applications. This term is actually an acronym that represents the Linux operating system with the Apache web server. The site data is stored in a MySQL database, and dynamic content is processed by PHP.  
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-both-include.md)]
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-both-include.md)]
 
 
-In this guide, we'll get a LAMP stack installed on a Linux image and deploy it on Microsoft Azure.  
+In this guide, we'll get a LAMP stack installed on a Linux image and deploy it on Windows Azure.  
 
 You will learn:  
 
@@ -32,9 +28,9 @@ You will learn:
 -	How to prepare the virtual machine for the LAMP stack.
 -	How to install software that is needed by your LAMP server on the virtual machine.
 
-It is assumed that the reader already has an Azure subscription.  If not you can sign up for a free trial at [http://azure.microsoft.com](http://azure.microsoft.com). If you have an MSDN subscription, see [Microsoft Azure Special Pricing: MSDN, MPN, and Bizspark Benefits](http://azure.microsoft.com/pricing/member-offers/msdn-benefits/?c=14-39). To learn more about Azure, see [What is Azure?](http://azure.microsoft.com/overview/what-is-azure/)
+It is assumed that the reader already has an Azure subscription.  If not you can sign up for a trial at [http://azure.microsoft.com](http://azure.microsoft.com). If you have an MSDN subscription, see [Windows Azure Special Pricing: MSDN, MPN, and Bizspark Benefits](http://azure.microsoft.com/pricing/member-offers/msdn-benefits/?c=14-39). To learn more about Azure, see [What is Azure?](http://azure.microsoft.com/overview/what-is-azure/)
 
-In addition to this topic, if you already have a virtual machine and are just looking for the basics of installing a  LAMP stack on different Linux distributions, refer to [Install the LAMP Stack on a Linux virtual machine in Azure](virtual-machines-linux-install-lamp-stack.md).
+In addition to this topic, if you already have a virtual machine and are just looking for the basics of installing a  LAMP stack on different Linux distributions, refer to [Install the LAMP Stack on a Linux virtual machine in Azure](/documentation/articles/virtual-machines-linux-install-lamp-stack).
 
 You can also deploy pre-configured LAMP images from the Azure Marketplace. The following 10 minute video introduces deploying pre-built LAMP images from the Azure Marketplace: (LAMP stack on Azure VMs](https://channel9.msdn.com/Shows/Azure-Friday/LAMP-stack-on-Azure-VMs-with-Guy-Bowerman).
 
@@ -55,12 +51,12 @@ Follow these steps to generate the SSH Authentication Key.
 -	Select and copy the public key in **Key** and save it in a file named **publicKey.pem**. Don’t click **Save public key**, because the saved public key’s file format is different from the public key we want.
 -	Click **Save private key** and save it in a file named **privateKey.ppk**.
 
-###Step 2: Create the image in the Azure Portal.
-In the [Azure Portal](https://portal.azure.com/), click **New** in the task bar and create an image by following these instructions, choosing the Linux image based on your needs. This example uses the Ubuntu 14.04 image.
+###Step 2: Create the image in the Azure Management Portal.
+In the [Azure Management Portal](https://manage.windowsazure.cn/), click **New** in the task bar and create an image by following these instructions, choosing the Linux image based on your needs. This example uses the Ubuntu 14.04 image.
 
 ![][3]
 
-For **Host Name**, specify the name for the URL that you an Internet clients will use to access this virtual machine. Define the last part of the DNS name, for example LAMPDemo, and Azure will generate the URL as Lampdemo.cloudapp.net.
+For **Host Name**, specify the name for the URL that you an Internet clients will use to access this virtual machine. Define the last part of the DNS name, for example LAMPDemo, and Azure will generate the URL as Lampdemo.chinacloudapp.cn.
 
 For **User Name**, pick a name that you will later use to login to the virtual machine.
 
@@ -78,7 +74,7 @@ Endpoints in Azure consists of a protocol (TCP or UDP), along with a public and 
 
 TCP port 80 is the default port number on which Apache listens. Opening this port with an Azure endpoint will allow you and other Internet clients access to the Apache web server.  
 
-In the Azure Portal, click **Browse -> Virtual Machine**, and then click the virtual machine that you created.
+In the Azure Management Portal, click **Browse -> Virtual Machine**, and then click the virtual machine that you created.
 
 ![][5]
 
@@ -93,8 +89,8 @@ Configure the endpoint:
 1.	Type a name for the endpoint in **Endpoint**.
 2.	Type 80 in **Public Port**. If you changed the default listen port of Apache, you should update Private Port to be the same as the Apache listen port.
 3.	Type 80 in **Public Port**. By default, HTTP traffic uses port 80.
-If you set it to 80, don’t need to include the port number in the URL that allows you to access the Apache web service. For example, http://lampdemo.cloudapp.net.
-If you set the Apache listening port to another value, such as 81, you need to add the port number to the URL to access the Apache web service. For example,  http://lampdemo.cloudapp.net:81/.
+If you set it to 80, don’t need to include the port number in the URL that allows you to access the Apache web service. For example, http://lampdemo.chinacloudapp.cn.
+If you set the Apache listening port to another value, such as 81, you need to add the port number to the URL to access the Apache web service. For example,  http://lampdemo.chinacloudapp.cn:81/.
 
 ![][7]
 
@@ -106,7 +102,7 @@ Click **OK** to add the endpoint to your virtual machine.
 ###Step 2: Connect to the image you created
 You can choose any SSH tool to connect to your new virtual machine. In this example, we use Putty.  
 
-First, get the DNS name of your virtual machine from the Azure Portal. Click **Browse -> Virtual machines ->** the name of your virtual machine **-> Properties**, and then look in the **Domain Name** field of the **Properties** tile.
+First, get the DNS name of your virtual machine from the Azure Management Portal. Click **Browse -> Virtual machines ->** the name of your virtual machine **-> Properties**, and then look in the **Domain Name** field of the **Properties** tile.
 
 Get the port number for SSH connections from the **SSH** field.   Here is an example.  
 
@@ -151,7 +147,7 @@ Once it installs, start Apache with this command:
 	sudo service httpd start
 
 ####Test Apache
-To check if Apache is successfully installed, browse to your Apache server’s DNS name (for the example URL in this article, http://lampdemo.cloudapp.net/). The page should display the words “It works!"
+To check if Apache is successfully installed, browse to your Apache server’s DNS name (for the example URL in this article, http://lampdemo.chinacloudapp.cn/). The page should display the words “It works!"
 ![][14]
 
 ####Troubleshooting
@@ -267,8 +263,7 @@ Answer “y” to download software packages. Then answer “y” to Importing G
 	warning: rpmts_HdrFromFdno: Header V3 DSA signature: NOKEY, key ID e8562897
 	updates/gpgkey                                                                                                                                                                       | 1.5 kB     00:00
 	Importing GPG key 0xE8562897 "CentOS-5 Key (CentOS 5 Official Signing Key) <centos-5-key@centos.org>" from /etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-5
-	Is this ok [y/N]: y  
-
+	Is this ok [y/N]: /documentation/articles/y
 ###Debian, Ubuntu base
 This has been tested on Ubuntu 14.04.  
 
@@ -314,7 +309,7 @@ If the OS of your virtual machine is Ubuntu, use the following command to restar
 
 	sudo service apache2 restart  
 
-Finish up by browsing to your php info page (for the example web server in this topic, the URL would be http://lampdemo.cloudapp.net/info.php).  
+Finish up by browsing to your php info page (for the example web server in this topic, the URL would be http://lampdemo.chinacloudapp.cn/info.php).  
 
 Your browser should look similar to this:
 
@@ -357,7 +352,7 @@ Once you have setup the LAMP stack successfully, you can deploy your existing we
 		sudo chmod g+w /var/www/html/                 # grant write permission to group lampappgroup
 
 	>[AZURE.NOTE] You may need to login again if you want modify a file in /var/www/html/.
--	Use any SFTP client (such as FileZilla) to connect to the DNS name of your virtual machine (for example,  lampdemo.cloudapp.net) and navigate to /**var/www/html** to publish your site.  
+-	Use any SFTP client (such as FileZilla) to connect to the DNS name of your virtual machine (for example,  lampdemo.chinacloudapp.cn) and navigate to /**var/www/html** to publish your site.  
 ![][18]
 
 

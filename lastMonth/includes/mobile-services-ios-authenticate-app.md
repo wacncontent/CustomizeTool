@@ -1,16 +1,13 @@
-
-
- Open the project file QSTodoListViewController.m and in the **viewDidLoad** method, remove the following code that reloads the data into the table:
+* Open **QSTodoListViewController.m** and add the following method. Change _facebook_ to _microsoftaccount_, _twitter_, _google_, or _windowsazureactivedirectory_ if you're not using Facebook as your identity provider.
 
 ```
         - (void) loginAndGetData
         {
             MSClient *client = self.todoService.client;
-            
             if (client.currentUser != nil) {
                 return;
             }
-            
+
             [client loginWithProvider:@"facebook" controller:self animated:YES completion:^(MSUser *user, NSError *error) {
                 [self refresh];
             }];

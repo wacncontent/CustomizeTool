@@ -1,5 +1,5 @@
 <properties
-	pageTitle="How to use Table storage from Python | Microsoft Azure"
+	pageTitle="How to use Table storage from Python | Windows Azure"
 	description="Learn how you can use the Table service from Python to create and delete a table, and to insert and query a table."
 	services="storage"
 	documentationCenter="python"
@@ -9,28 +9,24 @@
 
 <tags
 	ms.service="storage"
-	ms.workload="storage"
-	ms.tgt_pltfrm="na"
-	ms.devlang="python"
-	ms.topic="article"
 	ms.date="08/25/2015"
-	ms.author="emgerner"/>
+	wacn.date=""/>
 
 
 # How to use Table storage from Python
 
-[AZURE.INCLUDE [storage-selector-table-include](../../includes/storage-selector-table-include.md)]
+[AZURE.INCLUDE [storage-selector-table-include](../includes/storage-selector-table-include.md)]
 
 ## Overview
 
 This guide shows you how to perform common scenarios by using the Azure Table storage service. The samples are written in Python and use the [Python Azure Storage package][]. The covered scenarios include creating and deleting a
 table, in addition to inserting and querying entities in a table.
 
-[AZURE.INCLUDE [storage-table-concepts-include](../../includes/storage-table-concepts-include.md)]
+[AZURE.INCLUDE [storage-table-concepts-include](../includes/storage-table-concepts-include.md)]
 
-[AZURE.INCLUDE [storage-create-account-include](../../includes/storage-create-account-include.md)]
+[AZURE.INCLUDE [storage-create-account-include](../includes/storage-create-account-include.md)]
 
-[AZURE.NOTE] If you need to install Python or the [Python Azure package][], see the [Python installation guide](../python-how-to-install.md).
+[AZURE.NOTE] If you need to install Python or the [Python Azure package][], see the [Python installation guide](/documentation/articles/python-how-to-install).
 
 
 ## Create a table
@@ -59,12 +55,12 @@ Entities that have the same **PartitionKey** are stored on the same node. **RowK
 belongs to.
 
 To add an entity to your table, pass a dictionary object
-to the **insert\_entity** method.
+to the **insert_entity** method.
 
 	task = {'PartitionKey': 'tasksSeattle', 'RowKey': '1', 'description' : 'Take out the trash', 'priority' : 200}
 	table_service.insert_entity('tasktable', task)
 
-You can also pass an instance of the **Entity** class to the **insert\_entity** method.
+You can also pass an instance of the **Entity** class to the **insert_entity** method.
 
 	task = Entity()
 	task.PartitionKey = 'tasksSeattle'
@@ -83,7 +79,7 @@ with an updated version.
 
 If the entity that is being updated does not exist, then the update
 operation will fail. If you want to store an entity
-regardless of whether it existed before, use **insert\_or\_replace_entity**.
+regardless of whether it existed before, use **insert_or_replace_entity**.
 In the following example, the first call will replace the existing entity. The second call will insert a new entity, since no entity with the specified **PartitionKey** and **RowKey** exists in the table.
 
 	task = {'description' : 'Take out the garbage again', 'priority' : 250}
@@ -96,9 +92,9 @@ In the following example, the first call will replace the existing entity. The s
 
 Sometimes it makes sense to submit multiple operations together in a
 batch to ensure atomic processing by the server. To accomplish that, you
-use the **begin\_batch** method on **TableService** and then call the
+use the **begin_batch** method on **TableService** and then call the
 series of operations as usual. When you do want to submit the
-batch, you call **commit\_batch**. Note that all entities must be in the same partition in order to be changed as a batch. The example below adds two entities together in a batch.
+batch, you call **commit_batch**. Note that all entities must be in the same partition in order to be changed as a batch. The example below adds two entities together in a batch.
 
 	task10 = {'PartitionKey': 'tasksSeattle', 'RowKey': '10', 'description' : 'Go grocery shopping', 'priority' : 400}
 	task11 = {'PartitionKey': 'tasksSeattle', 'RowKey': '11', 'description' : 'Clean the bathroom', 'priority' : 100}
@@ -109,7 +105,7 @@ batch, you call **commit\_batch**. Note that all entities must be in the same pa
 
 ## Query for an entity
 
-To query an entity in a table, use the **get\_entity** method by
+To query an entity in a table, use the **get_entity** method by
 passing **PartitionKey** and **RowKey**.
 
 	task = table_service.get_entity('tasktable', 'tasksSeattle', '1')
@@ -167,7 +163,7 @@ to learn about more complex storage tasks:
 For more information, see also the [Python Developer Center](/develop/python/).
 
 
-[Azure Storage]: http://msdn.microsoft.com/library/azure/gg433040.aspx
+[Azure Storage]: http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx
 [Azure Storage Team blog]: http://blogs.msdn.com/b/windowsazurestorage/
 [Python Azure package]: https://pypi.python.org/pypi/azure
 [Python Azure Storage package]: https://pypi.python.org/pypi/azure-storage

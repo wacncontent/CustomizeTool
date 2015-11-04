@@ -167,7 +167,7 @@ Overview of the New Relic UI, setting user rights and profiles, using standard f
  * [Apdex](https://newrelic.com/docs/site/apdex): Overview of how Apdex measures end users' satisfaction with your application
  * [Real User Monitoring](https://newrelic.com/docs/features/real-user-monitoring): Overview of how RUM details the time it takes for your users' 
 browsers to load your webpages, where they come from, and what browsers they use
- * [Finding Help](https://newrelic.com/docs/site/finding-help): Resources available through New Relic's online Help Center
+ * [Finding Help](https://docs.newrelic.com/docs/accounts-partnerships/education/getting-started-new-relic/finding-help): Resources available through New Relic's online Help Center
 
 >[AZURE.NOTE] If you want to get started with Azure Websites before signing up for an Azure account, go to [Try Azure Websites](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure Websites. No credit cards required; no commitments.
 

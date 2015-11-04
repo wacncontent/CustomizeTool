@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Node.js application using Socket.io | Microsoft Azure" 
+	pageTitle="Node.js application using Socket.io | Windows Azure" 
 	description="Learn how to use socket.io in a node.js application hosted on Azure." 
 	services="cloud-services" 
 	documentationCenter="nodejs" 
@@ -7,14 +7,10 @@
 	manager="wpickett" 
 	editor=""/>
 
-<tags 
-	ms.service="cloud-services" 
-	ms.workload="tbd" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="nodejs" 
-	ms.topic="article" 
-	ms.date="09/01/2015" 
-	ms.author="tarcher"/>
+<tags
+	ms.service="cloud-services"
+	ms.date="09/01/2015"
+	wacn.date=""/>
 
 
 
@@ -35,7 +31,7 @@ A screenshot of the completed application is below:
 
 Ensure that the following products and versions are installed to successfully complete the example in this article:
 
-* Install [Visual Studio 2013](https://www.visualstudio.com/en-us/downloads/download-visual-studio-vs.aspx)
+* Install [Visual Studio 2013](https://www.visualstudio.com/downloads/download-visual-studio-vs.aspx)
 * Install [Node.js](https://nodejs.org/download/)
 * Install [Python version 2.7.10](https://www.python.org/)
 
@@ -154,15 +150,15 @@ Azure emulator:
 4.  To deploy the application to Azure, use the
     **Publish-AzureServiceProject** cmdlet. For example:
 
-        PS C:\node\chatapp\WorkerRole1> Publish-AzureServiceProject -ServiceName mychatapp -Location "East US" -Launch
+        PS C:\node\chatapp\WorkerRole1> Publish-AzureServiceProject -ServiceName mychatapp -Location "China East" -Launch
 
 	> [AZURE.IMPORTANT] Be sure to use a unique name, otherwise the publish process will fail. After the deployment has completed, the browser will open and navigate to the deployed service.
 	> 
-	> If you receive an error stating that the provided subscription name doesn't exist in the imported publish profile, you must download and import the publishing profile for your subscription before deploying to Azure. See the **Deploying the Application to Azure** section of [Build and deploy a Node.js application to an Azure Cloud Service](https://www.windowsazure.com/develop/nodejs/tutorials/getting-started/)
+	> If you receive an error stating that the provided subscription name doesn't exist in the imported publish profile, you must download and import the publishing profile for your subscription before deploying to Azure. See the **Deploying the Application to Azure** section of [Build and deploy a Node.js application to an Azure Cloud Service](/develop/nodejs/tutorials/getting-started/)
 
     ![A browser window displaying the service hosted on Azure][completed-app]
 
-	> [AZURE.NOTE] If you receive an error stating that the provided subscription name doesn't exist in the imported publish profile, you must download and import the publishing profile for your subscription before deploying to Azure. See the **Deploying the Application to Azure** section of [Build and deploy a Node.js application to an Azure Cloud Service](https://www.windowsazure.com/develop/nodejs/tutorials/getting-started/)
+	> [AZURE.NOTE] If you receive an error stating that the provided subscription name doesn't exist in the imported publish profile, you must download and import the publishing profile for your subscription before deploying to Azure. See the **Deploying the Application to Azure** section of [Build and deploy a Node.js application to an Azure Cloud Service](/develop/nodejs/tutorials/getting-started/)
 
 Your application is now running on Azure, and can relay chat
 messages between different clients using Socket.IO.
@@ -177,11 +173,11 @@ For more information, see also the [Node.js Developer Center](/develop/nodejs/).
 
   [chatwebsite]: /develop/nodejs/tutorials/website-using-socketio/
 
-  [Azure SLA]: http://www.windowsazure.com/support/sla/
+  [Azure SLA]: http://azure.microsoft.com/support/sla/
   [Azure SDK for Node.js GitHub repository]: https://github.com/WindowsAzure/azure-sdk-for-node
   [completed-app]: ./media/cloud-services-nodejs-chat-app-socketio/socketio-10.png
-  [Azure SDK for Node.js]: https://www.windowsazure.com/develop/nodejs/
-  [Node.js Web Application]: https://www.windowsazure.com/develop/nodejs/tutorials/getting-started/
+  [Azure SDK for Node.js]: /develop/nodejs/
+  [Node.js Web Application]: /develop/nodejs/tutorials/getting-started/
   [Socket.IO GitHub repository]: https://github.com/LearnBoost/socket.io/tree/0.9.14
   [Azure Considerations]: #windowsazureconsiderations
   [Hosting the Chat Example in a Worker Role]: #hostingthechatexampleinawebrole

@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Azure Storage samples | Microsoft Azure"
+   pageTitle="Azure Storage samples | Windows Azure"
    description="View, download, and try samples for Azure Storage. Discover getting started samples for blobs, queues, tables, and files, using the .NET, Java, Node.js, and C++ storage client libraries."
    services="storage"
    documentationCenter="na"
@@ -7,13 +7,9 @@
    manager="na"
    editor="na" />
 <tags
-   ms.service="storage"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="storage"
-   ms.date="09/01/2015"
-   ms.author="tamram" />
+	ms.service="storage"
+	ms.date="09/01/2015"
+	wacn.date=""/>
 
 # Azure Storage samples
 
@@ -22,9 +18,9 @@ Use the links below to view and download working Azure Storage samples.
 
 ## .NET samples
 
-To explore the .NET samples, download the [.NET Storage Client Library](https://www.nuget.org/packages/WindowsAzure.Storage/) from NuGet. The .NET storage client library is also available in the [Azure SDK for .NET](http://azure.microsoft.com/downloads/).
+To explore the .NET samples, download the [.NET Storage Client Library](https://www.nuget.org/packages/WindowsAzure.Storage/) from NuGet. The .NET storage client library is also available in the [Azure SDK for .NET](/downloads/).
 
-* [Get started with Azure blobs, tables, and queues in 5 minutes](storage-getting-started-guide.md)
+* [Get started with Azure blobs, tables, and queues in 5 minutes](/documentation/articles/storage-getting-started-guide)
 * [Managing concurrency using Azure Storage - sample application](https://code.msdn.microsoft.com/Managing-Concurrency-using-56018114)
 * [Get started with blobs](https://github.com/Azure/azure-storage-net/tree/master/Samples/GettingStarted/VisualStudioQuickStarts/DataBlobStorage)
 * [Get started with tables](https://github.com/Azure/azure-storage-net/tree/master/Samples/GettingStarted/VisualStudioQuickStarts/DataTableStorage)
@@ -64,17 +60,17 @@ To explore the C++ samples, download the [C++ Storage Client Library](https://ww
 ### .NET resources
 
 - [Source code for the .NET storage client library](https://github.com/Azure/azure-storage-net)
-- [.NET Client Library Reference](https://msdn.microsoft.com/library/azure/dn261237.aspx)
+- [.NET Client Library Reference](https://msdn.microsoft.com/zh-cn/library/azure/dn261237.aspx)
 
 ### Java resources
 
 - [Source code for the Java storage client library](https://github.com/azure/azure-storage-java)
-- [Java Client Library Reference](http://dl.windowsazure.com/storage/javadoc/)
+- [Java Client Library Reference](http://dl.windowsazure.cn/storage/javadoc/)
 
 ### Node.js resources
 
 - [Source code for the Node.js storage client library](https://github.com/Azure/azure-storage-node)
-- [Node.js Client Library Reference](http://dl.windowsazure.com/nodestoragedocs/index.html)
+- [Node.js Client Library Reference](http://dl.windowsazure.cn/nodestoragedocs/index.html)
 
 ### C++ resources
 

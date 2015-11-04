@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Update the Azure Linux Agent from GitHub | Microsoft Azure"
+	pageTitle="Update the Azure Linux Agent from GitHub | Windows Azure"
 	description="Learn how to the update Azure Linux Agent for your Linux VM in Azure to the lateset version from Github"
 	services="virtual-machines"
 	documentationCenter=""
@@ -10,12 +10,8 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.workload="infrastructure-services"
-	ms.tgt_pltfrm="vm-linux"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="06/16/2015"
-	ms.author="mingzhan"/>
+	wacn.date=""/>
 
 
 # How to update the Azure Linux Agent on a VM to the latest version from GitHub
@@ -25,10 +21,10 @@ To update your [Azure Linux agent](https://github.com/Azure/WALinuxAgent) on a L
 1. a running Linux vm in Azure
 2. You are connected to that Linux VM using SSH
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-both-include.md)]
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-both-include.md)]
 
 
-> [AZURE.NOTE] If you will perform this task from a Windows computer, you can use Putty to SSH into your Linux machine. For more information, see [How to Log on to a Virtual Machine Running Linux](virtual-machines-linux-how-to-log-on.md).
+> [AZURE.NOTE] If you will perform this task from a Windows computer, you can use Putty to SSH into your Linux machine. For more information, see [How to Log on to a Virtual Machine Running Linux](/documentation/articles/virtual-machines-linux-how-to-log-on).
 
 Azure-endorsed Linux distros have put the Azure Linux Agent package in their repositories, so please check and install the latest version from that Distro repository first if possible.  
 

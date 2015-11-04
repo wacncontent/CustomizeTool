@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Get Started with Azure Mobile Services for HTML/JavaScript apps | Microsoft Azure"
+	pageTitle="Get Started with Azure Mobile Services for HTML/JavaScript apps | Windows Azure"
 	description="Follow this tutorial to get started using Azure Mobile Services for HTML development."
 	services="mobile-services"
 	documentationCenter=""
@@ -9,20 +9,16 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.workload="mobile"
-	ms.tgt_pltfrm="mobile-html5"
-	ms.devlang="javascript"
-	ms.topic="get-started-article" 
 	ms.date="10/05/2015"
-	ms.author="glenga"/>
+	wacn.date=""/>
 
 
 # <a name="getting-started"> </a>Get started with Mobile Services
 
-[AZURE.INCLUDE [mobile-services-selector-get-started](../../includes/mobile-services-selector-get-started.md)]
+[AZURE.INCLUDE [mobile-services-selector-get-started](../includes/mobile-services-selector-get-started.md)]
 &nbsp;
 
-[AZURE.INCLUDE [mobile-services-hero-slug](../../includes/mobile-services-hero-slug.md)]
+[AZURE.INCLUDE [mobile-services-hero-slug](../includes/mobile-services-hero-slug.md)]
 
 ##Overview 
 
@@ -34,7 +30,7 @@ A screenshot from the completed app is below:
 
 ![][0]
 
-Completing this tutorial is a prerequisite for all other Mobile Services tutorials for HTML apps. For a PhoneGap/Cordova app, see the the [PhoneGap/Cordova version](mobile-services-javascript-backend-phonegap-get-started.md) of this tutorial.
+Completing this tutorial is a prerequisite for all other Mobile Services tutorials for HTML apps. For a PhoneGap/Cordova app, see the the [PhoneGap/Cordova version](/documentation/articles/mobile-services-javascript-backend-phonegap-get-started) of this tutorial.
 
 ##Prerequisites
 
@@ -49,12 +45,12 @@ The following are required to complete this tutorial:
 	You can use any web server to host the app, but these are the web servers that are supported by the downloaded scripts.  
 
 + A web browser that supports HTML5.
-+ An Azure account. If you don't have an account, you can create a free trial account in just a couple of minutes. For details, see [Azure Free Trial](http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fen-us%2Fdevelop%2Fmobile%2Ftutorials%2Fget-started-html%2F"%20target="_blank). 
++ An Azure account. If you don't have an account, you can create a trial account in just a couple of minutes. For details, see [Azure Trial](/pricing/1rmb-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fen-us%2Fdevelop%2Fmobile%2Ftutorials%2Fget-started-html%2F"%20target="_blank). 
 
 
 ## <a name="create-new-service"> </a>Create a new mobile service
 
-[AZURE.INCLUDE [mobile-services-create-new-service](../../includes/mobile-services-create-new-service.md)]
+[AZURE.INCLUDE [mobile-services-create-new-service](../includes/mobile-services-create-new-service.md)]
 
 ## Create a new HTML app
 
@@ -83,7 +79,7 @@ In this section you will create a new HTML app that is connected to your mobile 
 
   	![][9]
 
-	> [AZURE.IMPORTANT] If you deploy the quickstart app to a web server other than localhost, you must add the host name of the web server to the **Allow requests from host names** list. For more information, see [Cross-origin resource sharing](http://msdn.microsoft.com/library/windowsazure/dn155871.aspx"%20target="_blank).
+	> [AZURE.IMPORTANT] If you deploy the quickstart app to a web server other than localhost, you must add the host name of the web server to the **Allow requests from host names** list. For more information, see [Cross-origin resource sharing](http://msdn.microsoft.com/zh-cn/library/azure/dn155871.aspx"%20target="_blank).
 
 ## Host and run your HTML app
 
@@ -127,7 +123,7 @@ Now that you have completed the quickstart, learn how to perform additional impo
   Learn more about how to use Mobile Services with HTML/JavaScript
 
 
-[AZURE.INCLUDE [app-service-disqus-feedback-slug](../../includes/app-service-disqus-feedback-slug.md)]
+[AZURE.INCLUDE [app-service-disqus-feedback-slug](../includes/app-service-disqus-feedback-slug.md)]
 
 <!-- Anchors. -->
 [Getting started with Mobile Services]:#getting-started
@@ -148,11 +144,10 @@ Now that you have completed the quickstart, learn how to perform additional impo
 
 
 <!-- URLs. -->
-[Add authentication to your app]: mobile-services-html-get-started-users.md
-
-[Management Portal]: https://manage.windowsazure.com/
+[Add authentication to your app]: /documentation/articles/mobile-services-html-get-started-users
+[Management Portal]: https://manage.windowsazure.cn/
 [Microsoft Web Platform Installer]:  http://go.microsoft.com/fwlink/p/?LinkId=286333
 [latest version of Python]: http://go.microsoft.com/fwlink/p/?LinkId=286342
-[Mobile Services HTML/JavaScript How-to Conceptual Reference]: mobile-services-html-how-to-use-client-library.md
-[Cross-origin resource sharing]: http://msdn.microsoft.com/library/azure/dn155871.aspx
+[Mobile Services HTML/JavaScript How-to Conceptual Reference]: /documentation/articles/mobile-services-html-how-to-use-client-library
+[Cross-origin resource sharing]: http://msdn.microsoft.com/zh-cn/library/azure/dn155871.aspx
  

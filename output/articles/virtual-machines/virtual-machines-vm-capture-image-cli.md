@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Capture an image of a virtual machine running Linux using the CLI | Microsoft Azure"
+	pageTitle="Capture an image of a virtual machine running Linux using the CLI | Windows Azure"
 	description="Learn how to capture an image of an Azure virtual machine (VM) running Linux."
 	services="virtual-machines"
 	documentationCenter=""
@@ -10,19 +10,15 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.workload="infrastructure-services"
-	ms.tgt_pltfrm="vm-linux"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="02/20/2015"
-	ms.author="madhana"/>
+	wacn.date=""/>
 
 
 
 
 # How to Capture a Linux Virtual Machine to Use as a Template with the CLI##
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
  
 
 This article shows you how to capture an Azure virtual machine running Linux so you can use it like a template to create other virtual machines. This template includes the OS disk and any data disks attached the virtual machine. It doesn't include networking configuration, so you'll need to configure that when you create the other virtual machines that use the template.
@@ -104,7 +100,7 @@ Here is a sample walkthrough of capturing a virtual machine including terminal o
 
     data:    -----------  ----------------  --------  ------------------------  ------------
 
-    data:    kmorig       RoleStateUnknown  West US   kmorig.cloudapp.net       100.92.56.16
+    data:    kmorig       RoleStateUnknown  China North   kmorig.chinacloudapp.cn       100.92.56.16
 
     info:    vm list command OK
 
@@ -128,7 +124,7 @@ Here is a sample walkthrough of capturing a virtual machine including terminal o
 
     data:    -----------  ------------------  --------  ------------------------  ----------
 
-    data:    kmorig       StoppedDeallocated  West US   kmorig.cloudapp.net
+    data:    kmorig       StoppedDeallocated  China North   kmorig.chinacloudapp.cn
 
     info:    vm list command OK
 
@@ -153,13 +149,9 @@ Here is a sample walkthrough of capturing a virtual machine including terminal o
 Visit the [Azure CLI documentation page][] for more details and additional commands.
 
 
-[Azure CLI documentation page]: ../virtual-machines-command-line-tools.md
+[Azure CLI documentation page]: /documentation/articles/virtual-machines-command-line-tools
+[How to Log on to a Virtual Machine Running Linux]: /documentation/articles/virtual-machines-linux-how-to-log-on
+[About Virtual Machine Images in Azure]: http://msdn.microsoft.com/zh-cn/library/azure/dn790290.aspx
 
-[How to Log on to a Virtual Machine Running Linux]: virtual-machines-linux-how-to-log-on.md
-
-[About Virtual Machine Images in Azure]: http://msdn.microsoft.com/library/azure/dn790290.aspx
-
-[How to Create a Custom Virtual Machine]: virtual-machines-create-custom.md
-
-[How to Attach a Data Disk to a Virtual Machine]: storage-windows-attach-disk.md
- 
+[How to Create a Custom Virtual Machine]: /documentation/articles/virtual-machines-create-custom
+[How to Attach a Data Disk to a Virtual Machine]: /documentation/articles/storage-windows-attach-disk

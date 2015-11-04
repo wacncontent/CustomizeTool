@@ -1,5 +1,5 @@
 <properties
-   pageTitle="QoS Requirements for ExpressRoute | Microsoft Azure"
+   pageTitle="QoS Requirements for ExpressRoute | Windows Azure"
    description="This page provides detailed requirements for configuring and managing QoS for ExpressRoute circuits."
    documentationCenter="na"
    services="expressroute"
@@ -7,13 +7,9 @@
    manager="carolz"
    editor=""/>
 <tags
-   ms.service="expressroute"
-   ms.devlang="na"
-   ms.topic="get-started-article"
-   ms.tgt_pltfrm="na"
-   ms.workload="infrastructure-services"
-   ms.date="10/06/2015"
-   ms.author="cherylmc"/>
+	ms.service="expressroute"
+	ms.date="10/06/2015"
+	wacn.date=""/>
 
 # ExpressRoute QoS requirements
 
@@ -23,7 +19,7 @@ Skype for Business has various workloads that require differentiated QoS treatme
 
 **Note:** QoS requirements apply to the Microsoft peering only.
 
-The following table provides a list of DSCP markings used by Skype for Business. Refer to [Managing QoS for Skype for Business](https://technet.microsoft.com/library/gg405409.aspx) for more information.
+The following table provides a list of DSCP markings used by Skype for Business. Refer to [Managing QoS for Skype for Business](https://technet.microsoft.com/zh-cn/library/gg405409.aspx) for more information.
 
 | **Traffic Class** | **Treatment (DSCP Marking)** | **Skype for Business Workloads** |
 |---|---|---|
@@ -35,7 +31,7 @@ The following table provides a list of DSCP markings used by Skype for Business.
 |   | CS0 (0) | Anything else| 
 
 
-- You should classify the workloads and mark the right DSCP values. Follow the guidance provided [here](https://technet.microsoft.com/library/gg405409.aspx) on how to set DSCP markings in your network.
+- You should classify the workloads and mark the right DSCP values. Follow the guidance provided [here](https://technet.microsoft.com/zh-cn/library/gg405409.aspx) on how to set DSCP markings in your network.
 
 - You should configure and support multiple QoS queues within your network. Voice must be a standalone class and receive the EF treatment specified in RFC 3246. 
 
@@ -43,9 +39,9 @@ The following table provides a list of DSCP markings used by Skype for Business.
 
 ## Next steps
 
-- Refer to the requirements for [Routing](expressroute-routing.md) and [NAT](expressroute-nat.md).
+- Refer to the requirements for [Routing](/documentation/articles/expressroute-routing) and [NAT](/documentation/articles/expressroute-nat).
 - See the following links to configure your ExpressRoute connection.
 
-	- [Create an ExpressRoute circuit](expressroute-howto-circuit-classic.md)
-	- [Configure routing](expressroute-howto-routing-classic.md)
-	- [Link a VNet to an ExpressRoute circuit](expressroute-howto-linkvnet-classic.md)
+	- [Create an ExpressRoute circuit](/documentation/articles/expressroute-howto-circuit-classic)
+	- [Configure routing](/documentation/articles/expressroute-howto-routing-classic)
+	- [Link a VNet to an ExpressRoute circuit](/documentation/articles/expressroute-howto-linkvnet-classic)

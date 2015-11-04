@@ -1,5 +1,5 @@
 <properties
-	pageTitle="SharePoint Server 2013 farm Phase 5 | Microsoft Azure"
+	pageTitle="SharePoint Server 2013 farm Phase 5 | Windows Azure"
 	description="Create an availability group and add your SharePoint databases to it in Phase 5 of the SharePoint Server 2013 farm in Azure."
 	documentationCenter=""
 	services="virtual-machines"
@@ -10,21 +10,17 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.workload="infrastructure-services"
-	ms.tgt_pltfrm="Windows"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="07/21/2015"
-	ms.author="josephd"/>
+	wacn.date=""/>
 
 # SharePoint Intranet Farm Workload Phase 5: Create the availability group and add the SharePoint databases
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
  
 
 In this final phase of deploying an intranet-only SharePoint 2013 farm with SQL Server AlwaysOn Availability Groups in Azure infrastructure services, you create a new AlwaysOn availability group and add the databases of the SharePoint farm.
 
-See [Deploying SharePoint with SQL Server AlwaysOn Availability Groups in Azure](virtual-machines-workload-intranet-sharepoint-overview.md) for all of the phases.
+See [Deploying SharePoint with SQL Server AlwaysOn Availability Groups in Azure](/documentation/articles/virtual-machines-workload-intranet-sharepoint-overview) for all of the phases.
 
 ## Create the availability group and add databases
 
@@ -50,7 +46,7 @@ Perform the above procedure on the secondary SQL Server host, except give the sq
 
 ### Back up and restore a database
 
-The following procedures must be repeated for every database that needs to be added to the availability group. Some SharePoint 2013 databases do not support SQL Server AlwaysOn Availability Groups. For more information, see [Supported high availability and disaster recovery options for SharePoint databases](http://technet.microsoft.com/library/jj841106.aspx).
+The following procedures must be repeated for every database that needs to be added to the availability group. Some SharePoint 2013 databases do not support SQL Server AlwaysOn Availability Groups. For more information, see [Supported high availability and disaster recovery options for SharePoint databases](http://technet.microsoft.com/zh-cn/library/jj841106.aspx).
 
 Use these steps to back up a database:
 
@@ -108,23 +104,23 @@ You have successfully configured a SQL Server AlwaysOn availability group for yo
 
 ## Configure a listener for the AlwaysOn availability group
 
-You can optionally create a listener configuration for the AlwaysOn availability group. For the steps, see [Tutorial: Listener configuration for AlwaysOn Availability Groups](https://msdn.microsoft.com/library/dn425027.aspx). You should create only a single listener and configure it to use a virtual IP address of an internal load-balancing instance.
+You can optionally create a listener configuration for the AlwaysOn availability group. For the steps, see [Tutorial: Listener configuration for AlwaysOn Availability Groups](https://msdn.microsoft.com/zh-cn/library/dn425027.aspx). You should create only a single listener and configure it to use a virtual IP address of an internal load-balancing instance.
 
 Once the listener is created, you need to configure all the SharePoint virtual machines to use the listener, instead of the name of the first SQL Server computer in the cluster. Rather than using names, configure the SharePoint virtual machines to use a SQL alias. For details and steps, see [SQL alias for SharePoint](http://blogs.msdn.com/b/priyo/archive/2013/09/13/sql-alias-for-sharepoint.aspx).
 
-For additional information about SharePoint with SQL Server AlwaysOn Availability Groups, see [Configure SQL Server 2012 AlwaysOn Availability Groups for SharePoint 2013](https://technet.microsoft.com/library/jj715261.aspx).
+For additional information about SharePoint with SQL Server AlwaysOn Availability Groups, see [Configure SQL Server 2012 AlwaysOn Availability Groups for SharePoint 2013](https://technet.microsoft.com/zh-cn/library/jj715261.aspx).
 
 
 ## Additional resources
 
-[Deploying SharePoint with SQL Server AlwaysOn Availability Groups in Azure](virtual-machines-workload-intranet-sharepoint-overview.md)
+[Deploying SharePoint with SQL Server AlwaysOn Availability Groups in Azure](/documentation/articles/virtual-machines-workload-intranet-sharepoint-overview)
 
-[SharePoint farms hosted in Azure infrastructure services](virtual-machines-sharepoint-infrastructure-services.md)
+[SharePoint farms hosted in Azure infrastructure services](/documentation/articles/virtual-machines-sharepoint-infrastructure-services)
 
 [SharePoint with SQL Server AlwaysOn infographic](http://go.microsoft.com/fwlink/?LinkId=394788)
 
-[Microsoft Azure architectures for SharePoint 2013](https://technet.microsoft.com/library/dn635309.aspx)
+[Windows Azure architectures for SharePoint 2013](https://technet.microsoft.com/zh-cn/library/dn635309.aspx)
 
-[Azure infrastructure services implementation guidelines](virtual-machines-infrastructure-services-implementation-guidelines.md)
+[Azure infrastructure services implementation guidelines](/documentation/articles/virtual-machines-infrastructure-services-implementation-guidelines)
 
-[Azure Infrastructure Services Workload: High-availability line of business application](virtual-machines-workload-high-availability-lob-application.md)
+[Azure Infrastructure Services Workload: High-availability line of business application](/documentation/articles/virtual-machines-workload-high-availability-lob-application)

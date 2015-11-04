@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="How to use CDN | Microsoft Azure" 
+	pageTitle="How to use CDN | Windows Azure" 
 	description="Learn how to use the Azure Content Delivery Network (CDN) to deliver high-bandwidth content by caching blobs and static content." 
 	services="cdn" 
 	documentationCenter=".net" 
@@ -7,14 +7,10 @@
 	manager="dwrede" 
 	editor=""/>
 
-<tags 
-	ms.service="cdn" 
-	ms.workload="tbd" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="get-started-article" 
-	ms.date="09/01/2015" 
-	ms.author="mazha"/>
+<tags
+	ms.service="cdn"
+	ms.date="09/01/2015"
+	wacn.date=""/>
 
 
 # Using CDN for Azure
@@ -36,7 +32,7 @@ CDN origin is the location from which CDN fetch content and cache at the edge PO
 
 ## Step 2: Create a CDN endpoint pointing to your Azure origin
 
-Once your origin is set up, it will be available in the origin list when you [create a new CDN endpoint](cdn-create-new-endpoint.md).  
+Once your origin is set up, it will be available in the origin list when you [create a new CDN endpoint](/documentation/articles/cdn-create-new-endpoint).  
 
 > [AZURE.NOTE] The configuration created for the endpoint will not immediately be available; it can take up to 60 minutes for the registration to propagate through the CDN network. Users who try to use the CDN domain name immediately may receive status code 400 (Bad Request) until the content is available via the CDN.
 
@@ -52,5 +48,5 @@ To access cached content on the CDN, use the CDN URL provided in the portal. For
 
 ## See also
 
-[Overview of the Azure Content Delivery Network (CDN)](cdn-overview.md)
+[Overview of the Azure Content Delivery Network (CDN)](/documentation/articles/cdn-overview)
  

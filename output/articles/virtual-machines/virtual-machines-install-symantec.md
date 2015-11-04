@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Install Symantec Endpoint Protection on a VM | Microsoft Azure"
+	pageTitle="Install Symantec Endpoint Protection on a VM | Windows Azure"
 	description="Learn how to install and configure the Symantec Endpoint Protection security extension on a new or existing Azure VM created with the classic deployment model."
 	services="virtual-machines"
 	documentationCenter=""
@@ -10,16 +10,12 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.workload="infrastructure-services"
-	ms.tgt_pltfrm="vm-multiple"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="10/14/2015"
-	ms.author="dkshir"/>
+	wacn.date=""/>
 
 # How to install and configure Symantec Endpoint Protection on a Windows VM
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
 
 
 This article shows you how to install and configure the Symantec Endpoint Protection client on a new or existing virtual machine (VM) running Windows Server. This is the full client, which includes services such as virus and spyware protection, firewall, and intrusion prevention.
@@ -86,14 +82,11 @@ To verify that the Symantec security extension has been installed and is up-to-d
 <!--Link references-->
 [Symantec]: http://go.microsoft.com/fwlink/p/?LinkId=403942
 
-[Portal]: http://manage.windowsazure.com
+[Portal]: http://manage.windowsazure.cn
 
-[Create]: virtual-machines-windows-tutorial-classic-portal.md
-
-[PS]: ../powershell-install-configure.md
-
+[Create]: /documentation/articles/virtual-machines-windows-tutorial-classic-portal
+[PS]: /documentation/articles/powershell-install-configure
 [Agent]: http://go.microsoft.com/fwlink/p/?LinkId=403947
 
-[Logon]: virtual-machines-log-on-windows-server.md
-
+[Logon]: /documentation/articles/virtual-machines-log-on-windows-server
 [Ext]: http://go.microsoft.com/fwlink/p/?linkid=390493

@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Add Mobile Services to an existing app (WP8) | Microsoft Azure" 
+	pageTitle="Add Mobile Services to an existing app (WP8) | Windows Azure" 
 	description="Learn how to get started using data from your Azure Mobile Services Windows Phone 8 app." 
 	services="mobile-services" 
 	documentationCenter="windows" 
@@ -7,19 +7,15 @@
 	manager="dwrede" 
 	editor=""/>
 
-<tags 
-	ms.service="mobile-services" 
-	ms.workload="mobile" 
-	ms.tgt_pltfrm="mobile-windows-phone" 
-	ms.devlang="dotnet" 
-	ms.topic="article" 
-	ms.date="07/25/2015" 
-	ms.author="glenga"/>
+<tags
+	ms.service="mobile-services"
+	ms.date="07/25/2015"
+	wacn.date=""/>
 
 
 # Add Mobile Services to an existing app
 
-[AZURE.INCLUDE [mobile-services-selector-get-started-data](../../includes/mobile-services-selector-get-started-data.md)]
+[AZURE.INCLUDE [mobile-services-selector-get-started-data](../includes/mobile-services-selector-get-started-data.md)]
 
 ##Overview
 
@@ -32,7 +28,7 @@ You can also see Nick Harris demonstrate this in the following video:
 
 + Visual Studio 2012 Express for Windows Phone 8 and the [Windows Phone 8 SDK] running on Windows 8. To complete this tutorial to create a Windows Phone 8.1 app, you must use Visual Studio 2013 Update 2, or a later version. 
 
-+ An Azure account. If you don't have an account, you can create a free trial account in just a couple of minutes. For details, see [Azure Free Trial](http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A756A2826&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Farticles%2Fdocumentation%2Fmobile-services-windows-phone-get-started-data%2F).
++ An Azure account. If you don't have an account, you can create a trial account in just a couple of minutes. For details, see [Azure Trial](/pricing/1rmb-trial/?WT.mc_id=A756A2826&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Farticles%2Fdocumentation%2Fmobile-services-windows-phone-get-started-data%2F).
 
 ##<a name="download-app"></a>Download the GetStartedWithData project
 
@@ -56,11 +52,11 @@ This tutorial is built on the [GetStartedWithData app][Developer Code Samples si
 
 ##<a name="create-service"></a>Create a new mobile service in the Management Portal
 
-[AZURE.INCLUDE [mobile-services-create-new-service-data](../../includes/mobile-services-create-new-service-data.md)]
+[AZURE.INCLUDE [mobile-services-create-new-service-data](../includes/mobile-services-create-new-service-data.md)]
 
 ##<a name="add-table"></a>Add a new table to the mobile service
 
-[AZURE.INCLUDE [mobile-services-create-new-service-data-2](../../includes/mobile-services-create-new-service-data-2.md)]
+[AZURE.INCLUDE [mobile-services-create-new-service-data-2](../includes/mobile-services-create-new-service-data-2.md)]
 
 ##<a name="update-app"></a>Update the app to use the mobile service for data access
 
@@ -163,13 +159,13 @@ This concludes the tutorial.
 
 This tutorial demonstrated the basics of enabling a Windows Phone 8 app to work with data in Mobile Services. Next, consider reading up on one of these other topics:
 
-* [Add authentication to your app](mobile-services-windows-phone-get-started-users.md) 
+* [Add authentication to your app](/documentation/articles/mobile-services-windows-phone-get-started-users) 
   <br/>Learn how to authenticate users of your app.
 
-* [Add push notifications to your app](mobile-services-javascript-backend-windows-phone-get-started-push.md) 
+* [Add push notifications to your app](/documentation/articles/mobile-services-javascript-backend-windows-phone-get-started-push) 
   <br/>Learn how to send a very basic push notification to your app with Mobile Services.
 
-* [Mobile Services C# How-to Conceptual Reference](mobile-services-windows-dotnet-how-to-use-client-library.md)
+* [Mobile Services C# How-to Conceptual Reference](/documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library)
   <br/>Learn more about how to use Mobile Services with .NET.
  
 <!-- Anchors. -->
@@ -188,8 +184,8 @@ This tutorial demonstrated the basics of enabling a Windows Phone 8 app to work 
 
 <!-- URLs. -->
 
-[Azure Management Portal]: https://manage.windowsazure.com/
-[Management Portal]: https://manage.windowsazure.com/
+[Azure Management Portal]: https://manage.windowsazure.cn/
+[Management Portal]: https://manage.windowsazure.cn/
 [Windows Phone 8 SDK]: http://go.microsoft.com/fwlink/p/?LinkID=268374
 [Mobile Services SDK]: http://go.microsoft.com/fwlink/p/?LinkID=268375
 [Developer Code Samples site]:  http://go.microsoft.com/fwlink/p/?LinkId=271146

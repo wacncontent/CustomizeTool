@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Create, start, or delete an Application Gateway | Microsoft Azure"
+   pageTitle="Create, start, or delete an Application Gateway | Windows Azure"
    description="This page provides instructions to create, configure, start, and delete an Azure Application Gateway"
    documentationCenter="na"
    services="application-gateway"
@@ -7,22 +7,18 @@
    manager="jdial"
    editor="tysonn"/>
 <tags
-   ms.service="application-gateway"
-   ms.devlang="na"
-   ms.topic="hero-article"
-   ms.tgt_pltfrm="na"
-   ms.workload="infrastructure-services"
-   ms.date="09/21/2015"
-   ms.author="joaoma"/>
+	ms.service="application-gateway"
+	ms.date="09/21/2015"
+	wacn.date=""/>
 
 # Create, start, or delete an Application Gateway
 
 Application Gateway is load balancer layer 7. It provides failover, performance routing HTTP requests between different servers, whether they are on the cloud or on premise. Application gateway has the following application delivery features: HTTP load balancing, Cookie based session affinity, SSL offload. 
 
 > [AZURE.SELECTOR]
-- [Azure Classic Powershell steps](application-gateway-create-gateway.md)
-- [Azure Resource Manager Powershell steps](application-gateway-create-gateway-arm.md)
-- [Azure Resource Manager template steps](application-gateway-create-gateway-arm-template.md)
+- [Azure Classic Powershell steps](/documentation/articles/application-gateway-create-gateway)
+- [Azure Resource Manager Powershell steps](/documentation/articles/application-gateway-create-gateway-arm)
+- [Azure Resource Manager template steps](/documentation/articles/application-gateway-create-gateway-arm-template)
 
 
 <BR>
@@ -30,7 +26,7 @@ Application Gateway is load balancer layer 7. It provides failover, performance 
 This article walks you through the steps to create and configure, start, and delete an Application Gateway.
 
 
->[AZURE.IMPORTANT] Before you work with Azure resources, it's important to understand that Azure currently has two deployment models: Resource Manager, and classic. Make sure you understand [deployment models and tools](azure-classic-rm.md) before working with any Azure resource. You can view the documentation for different tools by clicking the tabs at the top of this article.This document will cover creating an Application Gateway using Azure Classic deployment. To use the Resource Manager version, go to [create an Application Gateway deployment using Resource Manager](application-gateway-create-gateway-arm.md).
+>[AZURE.IMPORTANT] Before you work with Azure resources, it's important to understand that Azure currently has two deployment models: Resource Manager, and classic. Make sure you understand [deployment models and tools](/documentation/articles/azure-classic-rm) before working with any Azure resource. You can view the documentation for different tools by clicking the tabs at the top of this article.This document will cover creating an Application Gateway using Azure Classic deployment. To use the Resource Manager version, go to [create an Application Gateway deployment using Resource Manager](/documentation/articles/application-gateway-create-gateway-arm).
 
 
 
@@ -38,7 +34,7 @@ This article walks you through the steps to create and configure, start, and del
 
 ## Before you begin
 
-1. Install the latest version of the Azure PowerShell cmdlets using the Web Platform Installer. You can download and install the latest version from the **Windows PowerShell** section of the [Download page](http://azure.microsoft.com/downloads/).
+1. Install the latest version of the Azure PowerShell cmdlets using the Web Platform Installer. You can download and install the latest version from the **Windows PowerShell** section of the [Download page](/downloads/).
 2. Verify that you have a working virtual network with a valid subnet. Make sure no virtual machines or cloud deployments are using the subnet. The Application Gateway must be by itself in a virtual network subnet.
 3. The servers which you will configure to use the Application Gateway must exist or have their endpoints created either in the virtual network, or with a public IP/VIP assigned.
 
@@ -353,7 +349,7 @@ Once the gateway has been configured, use the `Start-AzureApplicationGateway` cm
 
 Use the `Get-AzureApplicationGateway` cmdlet to check the status of the gateway. If *Start-AzureApplicationGateway* succeeded in the previous step, the State should be *Running*, and the Vip and DnsName should have valid entries.
 
-The following example shows an Application Gateway that is up, running, and ready to take traffic destined to `http://<generated-dns-name>.cloudapp.net`.
+The following example shows an Application Gateway that is up, running, and ready to take traffic destined to `http://<generated-dns-name>.chinacloudapp.cn`.
 
 	PS C:\> Get-AzureApplicationGateway AppGwTest
 
@@ -367,7 +363,7 @@ The following example shows an Application Gateway that is up, running, and read
 	GatewaySize   : Medium
 	State         : Running
 	Vip           : 138.91.170.26
-	DnsName       : appgw-1b8402e8-3e0d-428d-b661-289c16c82101.cloudapp.net
+	DnsName       : appgw-1b8402e8-3e0d-428d-b661-289c16c82101.chinacloudapp.cn
 
 
 ## Delete an Application Gateway
@@ -411,11 +407,11 @@ To verify that the service has been removed, you can use the `Get-AzureApplicati
 
 ## Next steps
 
-If you want to configure SSL offload, see [Configure Application Gateway for SSL offload](application-gateway-ssl.md).
+If you want to configure SSL offload, see [Configure Application Gateway for SSL offload](/documentation/articles/application-gateway-ssl).
 
-If you want to configure an Application Gateway to use with ILB, see [Create an Application Gateway with an Internal Load Balancer (ILB)](application-gateway-ilb.md).
+If you want to configure an Application Gateway to use with ILB, see [Create an Application Gateway with an Internal Load Balancer (ILB)](/documentation/articles/application-gateway-ilb).
 
 If you want more information about load balancing options in general, see:
 
-- [Azure Load Balancer](https://azure.microsoft.com/documentation/services/load-balancer/)
-- [Azure Traffic Manager](https://azure.microsoft.com/documentation/services/traffic-manager/)
+- [Azure Load Balancer](/documentation/services/load-balancer/)
+- [Azure Traffic Manager](/documentation/services/traffic-manager/)

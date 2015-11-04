@@ -1,5 +1,5 @@
 <properties
-   pageTitle="How to configure routing for an ExpressRoute circuit | Microsoft Azure"
+   pageTitle="How to configure routing for an ExpressRoute circuit | Windows Azure"
    description="This article walks you through the steps for creating and provisioning the private, public and Microsoft peering of an ExpressRoute circuit. This article also shows you how to check the status, update, or delete peerings for your circuit."
    documentationCenter="na"
    services="expressroute"
@@ -8,26 +8,22 @@
    editor=""
    tags="azure-service-management"/>
 <tags
-   ms.service="expressroute"
-   ms.devlang="na"
-   ms.topic="article" 
-   ms.tgt_pltfrm="na"
-   ms.workload="infrastructure-services"
-   ms.date="10/02/2015"
-   ms.author="cherylmc"/>
+	ms.service="expressroute"
+	ms.date="10/02/2015"
+	wacn.date=""/>
 
 # Create and modify ExpressRoute routing configuration
 
 This article walks you through the steps to create and manage routing configuration for an ExpressRoute circuit using PowerShell cmdlets and the classic deployment model.  The steps below will also show you how to check the status, update, or delete and deprovision peerings for an  ExpressRoute circuit.
 
->[AZURE.IMPORTANT] It's important to know that Azure currently works with two deployment models: Resource Manager, and classic. Before you begin your configuration, make sure that you understand the deployment models and tools. For information about the deployment models, see [Azure deployment models](../azure-classic-rm.md).
+>[AZURE.IMPORTANT] It's important to know that Azure currently works with two deployment models: Resource Manager, and classic. Before you begin your configuration, make sure that you understand the deployment models and tools. For information about the deployment models, see [Azure deployment models](/documentation/articles/azure-classic-rm).
 
 
 ## Configuration prerequisites
 
-- You will need the latest version of the Azure PowerShell modules. You can download the latest PowerShell module from the PowerShell section of the [Azure Downloads page](http://azure.microsoft.com/downloads). Follow the instructions in the [How to install and configure Azure PowerShell](../powershell-install-configure.md) page for step-by-step guidance on how to configure your computer to use the Azure PowerShell modules. 
-- Make sure that you have reviewed the [prerequisites](expressroute-prerequisites.md) page, [routing requirements](expressroute-routing.md) page and the [workflows](expressroute-workflows.md) page before you begin configuration.
-- You must have an active ExpressRoute circuit. Follow the instructions to [create an ExpressRoute circuit](expressroute-howto-circuit-classic.md) and have the circuit enabled by your connectivity provider before you proceed. The ExpressRoute circuit must be in a provisioned and enabled state for you to be able to run the cmdlets described below.
+- You will need the latest version of the Azure PowerShell modules. You can download the latest PowerShell module from the PowerShell section of the [Azure Downloads page](http://azure.microsoft.com/downloads). Follow the instructions in the [How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure) page for step-by-step guidance on how to configure your computer to use the Azure PowerShell modules. 
+- Make sure that you have reviewed the [prerequisites](/documentation/articles/expressroute-prerequisites) page, [routing requirements](/documentation/articles/expressroute-routing) page and the [workflows](/documentation/articles/expressroute-workflows) page before you begin configuration.
+- You must have an active ExpressRoute circuit. Follow the instructions to [create an ExpressRoute circuit](/documentation/articles/expressroute-howto-circuit-classic) and have the circuit enabled by your connectivity provider before you proceed. The ExpressRoute circuit must be in a provisioned and enabled state for you to be able to run the cmdlets described below.
 
 >[AZURE.IMPORTANT] These instructions only apply for circuits created with service providers offering Layer 2 connectivity services. If you are using a service provider offering managed Layer 3 services (typically an IPVPN, like MPLS), your connectivity provider will configure and manage routing for you. You will not be able to create or manage peerings in such cases. 
 
@@ -48,7 +44,7 @@ This section provides instructions on how to create, get, update, and delete the
 
 2. **Create an ExpressRoute circuit.**
 	
-	Follow the instructions to create an [ExpressRoute circuit](expressroute-howto-circuit-classic.md) and have it provisioned by the connectivity provider. If your connectivity provider offers managed Layer 3 services, you can request your connectivity provider to enable Azure private peering for you. In that case, you won't need to follow instructions listed in the next sections. However, if your connectivity provider does not manage routing for you, after creating your circuit, follow the instructions below. 
+	Follow the instructions to create an [ExpressRoute circuit](/documentation/articles/expressroute-howto-circuit-classic) and have it provisioned by the connectivity provider. If your connectivity provider offers managed Layer 3 services, you can request your connectivity provider to enable Azure private peering for you. In that case, you won't need to follow instructions listed in the next sections. However, if your connectivity provider does not manage routing for you, after creating your circuit, follow the instructions below. 
 
 3. **Check the ExpressRoute circuit to ensure it is provisioned.**
 
@@ -140,7 +136,7 @@ This section provides instructions on how to create, get, update and delete the 
 
 2. **Create an ExpressRoute circuit**
 	
-	Follow the instructions to create an [ExpressRoute circuit](expressroute-howto-circuit-classic.md) and have it provisioned by the connectivity provider. If your connectivity provider offers managed Layer 3 services, you can request your connectivity provider to enable Azure private peering for you. In that case, you won't need to follow instructions listed in the next sections. However, if your connectivity provider does not manage routing for you, after creating your circuit, follow the instructions below.
+	Follow the instructions to create an [ExpressRoute circuit](/documentation/articles/expressroute-howto-circuit-classic) and have it provisioned by the connectivity provider. If your connectivity provider offers managed Layer 3 services, you can request your connectivity provider to enable Azure private peering for you. In that case, you won't need to follow instructions listed in the next sections. However, if your connectivity provider does not manage routing for you, after creating your circuit, follow the instructions below.
 
 3. **Check ExpressRoute circuit to ensure it is provisioned**
 
@@ -233,7 +229,7 @@ This section provides instructions on how to create, get, update and delete the 
 
 2. **Create an ExpressRoute circuit**
 	
-	Follow the instructions to create an [ExpressRoute circuit](expressroute-howto-circuit-classic.md) and have it provisioned by the connectivity provider. If your connectivity provider offers managed Layer 3 services, you can request your connectivity provider to enable Azure private peering for you. In that case, you won't need to follow instructions listed in the next sections. However, if your connectivity provider does not manage routing for you, after creating your circuit, follow the instructions below.
+	Follow the instructions to create an [ExpressRoute circuit](/documentation/articles/expressroute-howto-circuit-classic) and have it provisioned by the connectivity provider. If your connectivity provider offers managed Layer 3 services, you can request your connectivity provider to enable Azure private peering for you. In that case, you won't need to follow instructions listed in the next sections. However, if your connectivity provider does not manage routing for you, after creating your circuit, follow the instructions below.
 
 3. **Check ExpressRoute circuit to ensure it is provisioned**
 
@@ -308,7 +304,7 @@ You can remove your peering configuration by running the following cmdlet.
 
 ## Next steps
 
--  Next, [Link a VNet to an ExpressRoute circuit](expressroute-howto-linkvnet-classic.md).
--  For more information about workflows, see [ExpressRoute workflows](expressroute-workflows.md).
--  For more information about circuit peering, see [ExpressRoute circuits and routing domains](expressroute-circuit-peerings.md).
+-  Next, [Link a VNet to an ExpressRoute circuit](/documentation/articles/expressroute-howto-linkvnet-classic).
+-  For more information about workflows, see [ExpressRoute workflows](/documentation/articles/expressroute-workflows).
+-  For more information about circuit peering, see [ExpressRoute circuits and routing domains](/documentation/articles/expressroute-circuit-peerings).
 

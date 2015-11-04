@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Get started with SQL Database | Microsoft Azure"
-	description="Create your first cloud database in minutes with Azure SQL Database, Microsoft's relational database management service (RDBMS) in the cloud, using the Azure portal and the AdventureWorks sample database."
+	pageTitle="Get started with SQL Database | Windows Azure"
+	description="Create your first cloud database in minutes with Azure SQL Database, Microsoft's relational database management service (RDBMS) in the cloud, using the Azure Management Portal and the AdventureWorks sample database."
 	services="sql-database"
 	documentationCenter=""
 	authors="jeffgoll"
@@ -10,34 +10,30 @@
 
 <tags
 	ms.service="sql-database"
-	ms.workload="data-management"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="hero-article"
 	ms.date="10/09/2015"
-	ms.author="jeffreyg"/>
+	wacn.date=""/>
 
 # Create your first Azure SQL database
 
 **Single database**
 
 > [AZURE.SELECTOR]
-- [Azure portal](sql-database-get-started.md)
-- [C#](sql-database-get-started-csharp.md)
-- [PowerShell](sql-database-get-started-powershell.md)
+- [Azure Management Portal](/documentation/articles/sql-database-get-started)
+- [C#](/documentation/articles/sql-database-get-started-csharp)
+- [PowerShell](/documentation/articles/sql-database-get-started-powershell)
 
 This article shows you how to create a sample SQL database in just a few minutes using the Azure preview portal. You'll learn how to:
 
 - Create a server to host the database you create, and then set up a firewall rule for it
 - Create a database from an AdventureWorks sample, which has data that you can play with
 
-You'll need an Azure account and subscription before you start. If you don't have one, sign up for a [free trial](http://azure.microsoft.com/pricing/free-trial/).
+You'll need an Azure account and subscription before you start. If you don't have one, sign up for a [trial](/pricing/1rmb-trial/).
 
-> [AZURE.NOTE] This how-to covers setting up a database using Microsoft's relational database service in the cloud, Azure SQL Database. Another option is to run SQL Server on an Azure Virtual Machine. See [Understanding Azure SQL Database and SQL Server in Azure VMs](data-management-azure-sql-database-and-sql-server-iaas.md) for a quick comparison, or you can see [Provision a SQL server virtual machine](virtual-machines-provision-sql-server.md) to get started with a virtual machine.
+> [AZURE.NOTE] This how-to covers setting up a database using Microsoft's relational database service in the cloud, Azure SQL Database. Another option is to run SQL Server on an Azure Virtual Machine. See [Understanding Azure SQL Database and SQL Server in Azure VMs](/documentation/articles/data-management-azure-sql-database-and-sql-server-iaas) for a quick comparison, or you can see [Provision a SQL server virtual machine](/documentation/articles/virtual-machines-provision-sql-server) to get started with a virtual machine.
 
 ## Step 1: sign in and start SQL database set up
-1. Sign in to the [Azure preview portal](http://portal.azure.com/).
-2. Click **New** > **Data + Storage** > **SQL Database**.
+1. Sign in to the [Azure preview portal](http://manage.windowsazure.cn/).
+2. Click **New** > **DATA SERVICE** > **SQL Database**.
 
 	![Create a new SQL database](./media/sql-database-get-started/create-db.png)
 	
@@ -75,7 +71,7 @@ The database and server aren't created yet. This happens after the next step, wh
 
 	![Create a sample database](./media/sql-database-get-started/adworks_create.png)
 
-	>[AZURE.NOTE] For this quick how-to, we didn't change the settings for **Pricing tier**, **Collation**, and **Resource group**. You can change the pricing tier of a database and scale up and down at any time, with no downtime. See [SQL Database Pricing](http://azure.microsoft.com/pricing/details/sql-database/) and [SQL database pricing tiers](sql-database-service-tiers.md) to learn more. The collation of a database can't be changed once you set it up here. See [Collation and Unicode Support](https://msdn.microsoft.com/library/ms143726.aspx) for details about collation. See [Azure Resource Manager Overview](resource-group-overview.md) for details about Azure resource groups.
+	>[AZURE.NOTE] For this quick how-to, we didn't change the settings for **Pricing tier**, **Collation**, and **Resource group**. You can change the pricing tier of a database and scale up and down at any time, with no downtime. See [SQL Database Pricing](/home/features/sql-database/#price) and [SQL database pricing tiers](/documentation/articles/sql-database-service-tiers) to learn more. The collation of a database can't be changed once you set it up here. See [Collation and Unicode Support](https://msdn.microsoft.com/zh-cn/library/ms143726.aspx) for details about collation. See [Azure Resource Manager Overview](/documentation/articles/resource-group-overview) for details about Azure resource groups.
 
 You jump back to the Azure Startboard, where a tile shows progress until the database is created and it's online. You can also click **Browse all** and then click **SQL Databases** to confirm the database is online.
 	
@@ -103,17 +99,17 @@ You need to set up a firewall rule on the server that allows connections from yo
 
 	![Add the IP address](./media/sql-database-get-started/firewall_config_new_rule.png)
 
-	>[AZURE.IMPORTANT] Your Client IP address is likely to change from time to time, and you may not be able to access your server until you create a new firewall rule. You can check your IP address using [Bing](http://www.bing.com/search?q=my%20ip%20address), and then add a single IP address or a range of IP addresses. See [How to configure firewall settings](sql-database-configure-firewall-settings.md) for details.
+	>[AZURE.IMPORTANT] Your Client IP address is likely to change from time to time, and you may not be able to access your server until you create a new firewall rule. You can check your IP address using [Bing](http://www.bing.com/search?q=my%20ip%20address), and then add a single IP address or a range of IP addresses. See [How to configure firewall settings](/documentation/articles/sql-database-configure-firewall-settings) for details.
 
 ## Next steps
 Now that you have a database with some sample data, you're ready to explore using your favorite tools.
 
-- If you're familiar with Transact-SQL and SQL Server Management Studio, learn how to [Connect and query a SQL database with SSMS](sql-database-connect-query-ssms.md).
+- If you're familiar with Transact-SQL and SQL Server Management Studio, learn how to [Connect and query a SQL database with SSMS](/documentation/articles/sql-database-connect-query-ssms).
 
-- If you know Excel, learn how to [Connect to SQL database with Excel](sql-database-connect-excel.md).
+- If you know Excel, learn how to [Connect to SQL database with Excel](/documentation/articles/sql-database-connect-excel).
 
-- If you're ready to start coding, see [Connect and query your SQL database with C#](sql-database-connect-query.md) and [Using SQL database from .NET (C#)](sql-database-develop-dotnet-simple.md). See the [Quick start code samples to SQL Database](sql-database-develop-quick-start-client-code-samples.md) for Node.js, Python, Ruby, Java, PHP and C++ samples and how-to's in addition to C#.
+- If you're ready to start coding, see [Connect and query your SQL database with C#](/documentation/articles/sql-database-connect-query) and [Using SQL database from .NET (C#)](/documentation/articles/sql-database-develop-dotnet-simple). See the [Quick start code samples to SQL Database](/documentation/articles/sql-database-develop-quick-start-client-code-samples) for Node.js, Python, Ruby, Java, PHP and C++ samples and how-to's in addition to C#.
 
-- If you want to move your on-premises SQL Server databases to Azure, see [Migrating a database to Azure SQL Database](sql-database-cloud-migrate.md) to learn more.
+- If you want to move your on-premises SQL Server databases to Azure, see [Migrating a database to Azure SQL Database](/documentation/articles/sql-database-cloud-migrate) to learn more.
 
 

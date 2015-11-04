@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Enabling storage metrics in the Azure portal | Microsoft Azure" 
+	pageTitle="Enabling storage metrics in the Azure Management Portal | Windows Azure" 
 	description="How to enable storage metrics for the Blob, Queue, Table, and File services" 
 	services="storage" 
 	documentationCenter="" 
@@ -7,14 +7,10 @@
 	manager="adinah" 
 	editor=""/>
 
-<tags 
-	ms.service="storage" 
-	ms.workload="storage" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="dotnet" 
-	ms.topic="article" 
-	ms.date="09/04/2015" 
-	ms.author="tamram"/>
+<tags
+	ms.service="storage"
+	ms.date="09/04/2015"
+	wacn.date=""/>
 
 # Enabling Storage metrics and viewing metrics data
 
@@ -56,7 +52,7 @@ The following command retrieves the current hourly metrics level and retention d
 
 `Get-AzureStorageServiceMetricsProperty -MetricsType Hour -ServiceType Blob`
 
-For information about how to configure the Azure PowerShell cmdlets to work with your Azure subscription and how to select the default storage account to use, see: [How to install and configure Azure PowerShell](../install-configure-powershell.md).
+For information about how to configure the Azure PowerShell cmdlets to work with your Azure subscription and how to select the default storage account to use, see: [How to install and configure Azure PowerShell](/documentation/articles/install-configure-powershell).
 
 ## How to enable Storage metrics programmatically
 
@@ -89,7 +85,7 @@ When you have configured Storage Metrics to monitor your storage account, it rec
 - Configure email alerts to notify you when a specific metric reaches a certain value.
 
 
-If you want to download the metrics for long-term storage or to analyze them locally, you will need to use a tool or write some code to read the tables. You must download the minute metrics for analysis. The tables do not appear if you list all the tables in your storage account, but you can access them directly by name. Many third-party storage-browsing tools are aware of these tables and enable you to view them directly (see the blog post [Microsoft Azure Storage Explorers](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/03/11/windows-azure-storage-explorers-2014.aspx) for a list of available tools).
+If you want to download the metrics for long-term storage or to analyze them locally, you will need to use a tool or write some code to read the tables. You must download the minute metrics for analysis. The tables do not appear if you list all the tables in your storage account, but you can access them directly by name. Many third-party storage-browsing tools are aware of these tables and enable you to view them directly (see the blog post [Windows Azure Storage Explorers](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/03/11/windows-azure-storage-explorers-2014.aspx) for a list of available tools).
 
 ### Hourly metrics
 - $MetricsHourPrimaryTransactionsBlob
@@ -104,7 +100,7 @@ If you want to download the metrics for long-term storage or to analyze them loc
 ### Capacity
 - $MetricsCapacityBlob
 
-You can find full details of the schemas for these tables at [Storage Analytics Metrics Table Schema](https://msdn.microsoft.com/library/azure/hh343264.aspx). The sample rows below show only a subset of the columns available, but illustrate some important features of the way Storage Metrics saves these metrics:
+You can find full details of the schemas for these tables at [Storage Analytics Metrics Table Schema](https://msdn.microsoft.com/zh-cn/library/azure/hh343264.aspx). The sample rows below show only a subset of the columns available, but illustrate some important features of the way Storage Metrics saves these metrics:
 
 | PartitionKey  |       RowKey       |                    Timestamp | TotalRequests | TotalBillableRequests | TotalIngress | TotalEgress | Availability | AverageE2ELatency | AverageServerLatency | PercentSuccess |
 |---------------|:------------------:|-----------------------------:|---------------|-----------------------|--------------|-------------|--------------|-------------------|----------------------|----------------|
@@ -122,7 +118,7 @@ In this example minute metrics data, the partition key uses the time at minute r
 
 The sample data above shows all the records for a single minute (starting at 11:00AM), so the number of QueryEntities requests plus the number of QueryEntity requests plus the number of UpdateEntity requests add up to seven, which is the total shown on the user:All row. Similarly, you can derive the average end-to-end latency 104.4286 on the user:All row by calculating ((143.8 * 5) + 3 + 9)/7.
 
-You should consider setting up alerts in the Management Portal on the Monitor page so that Storage Metrics can automatically notify you of any important changes in the behavior of your storage services.If you use a storage explorer tool to download this metrics data in a delimited format, you can use Microsoft Excel to analyze the data. See the blog post [Microsoft Azure Storage Explorers](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/03/11/windows-azure-storage-explorers-2014.aspx) for a list of available storage explorer tools.
+You should consider setting up alerts in the Management Portal on the Monitor page so that Storage Metrics can automatically notify you of any important changes in the behavior of your storage services.If you use a storage explorer tool to download this metrics data in a delimited format, you can use Microsoft Excel to analyze the data. See the blog post [Windows Azure Storage Explorers](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/03/11/windows-azure-storage-explorers-2014.aspx) for a list of available storage explorer tools.
 
 
 
@@ -189,5 +185,5 @@ The capacity used by the metrics tables is also billable: you can use the follow
 - The capacity table for blobs has two rows added each day (provided user has opted in for logs): this implies that every day the size of this table increases by up to approximately 300 bytes.
 
 ## Next-steps:
-[Enabling Storage logging and accessing log data](https://msdn.microsoft.com/library/dn782840.aspx)
+[Enabling Storage logging and accessing log data](https://msdn.microsoft.com/zh-cn/library/dn782840.aspx)
  

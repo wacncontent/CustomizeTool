@@ -1,5 +1,5 @@
 <properties
-	pageTitle="SharePoint Server 2013 farm Phase 2 | Microsoft Azure"
+	pageTitle="SharePoint Server 2013 farm Phase 2 | Windows Azure"
 	description="Create and configure the two Active Directory replica domain controllers in Phase 2 of the SharePoint Server 2013 farm in Azure."
 	documentationCenter=""
 	services="virtual-machines"
@@ -10,21 +10,17 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.workload="infrastructure-services"
-	ms.tgt_pltfrm="Windows"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="07/21/2015"
-	ms.author="josephd"/>
+	wacn.date=""/>
 
 # SharePoint Intranet Farm Workload Phase 2: Configure domain controllers
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
 
 
 In this phase of deploying an intranet-only SharePoint 2013 farm with SQL Server AlwaysOn Availability Groups in Azure infrastructure services, you configure two domain controllers in the Azure virtual network in Service Management. Client web requests for SharePoint farm resources can then be authenticated in the Azure virtual network, rather than sending that authentication traffic across the VPN or Azure ExpressRoute connection to your on-premises network.
 
-You must complete this phase before moving on to [Phase 3](virtual-machines-workload-intranet-sharepoint-phase3.md). See [Deploying SharePoint with SQL Server AlwaysOn Availability Groups in Azure](virtual-machines-workload-intranet-sharepoint-overview.md) for all of the phases.
+You must complete this phase before moving on to [Phase 3](/documentation/articles/virtual-machines-workload-intranet-sharepoint-phase3). See [Deploying SharePoint with SQL Server AlwaysOn Availability Groups in Azure](/documentation/articles/virtual-machines-workload-intranet-sharepoint-overview) for all of the phases.
 
 ## Create the domain controller virtual machines in Azure
 
@@ -44,7 +40,7 @@ Item | Virtual machine name | Gallery image | Minimum size
 
 **Table M – Virtual machines for the SharePoint 2013 intranet farm in Azure**
 
-For the complete list of virtual machine sizes, see [Sizes for virtual machines](virtual-machines-size-specs.md).
+For the complete list of virtual machine sizes, see [Sizes for virtual machines](/documentation/articles/virtual-machines-size-specs).
 
 Use the following block of Azure PowerShell commands to create the virtual machines for the two domain controllers. Specify the values for the variables, removing the < and > characters. Note that this Azure PowerShell command set uses values from the following:
 
@@ -54,7 +50,7 @@ Use the following block of Azure PowerShell commands to create the virtual machi
 - Table A, for your availability sets
 - Table C, for your cloud services
 
-Recall that you defined Tables V, S, A, and C in [Phase 1: Configure Azure](virtual-machines-workload-intranet-sharepoint-phase1.md).
+Recall that you defined Tables V, S, A, and C in [Phase 1: Configure Azure](/documentation/articles/virtual-machines-workload-intranet-sharepoint-phase1).
 
 When you have supplied all the proper values, run the resulting block at the Azure PowerShell command prompt.
 
@@ -109,11 +105,11 @@ Log on to the first domain controller computer by using the credentials of the l
 
 ### <a id="logon"></a>To log on to a virtual machine by using a Remote Desktop connection
 
-1.	In the Azure portal, in the left pane, click **Virtual Machines**.
+1.	In the Azure Management Portal, in the left pane, click **Virtual Machines**.
 2.	To connect to a VM, click **Running** in the **Status** column next to its name.
 3.	In the command bar on the bottom of the page, click **Connect**.
 4.	The portal informs you that the .rdp file is being retrieved. Click **OK**.
-5.	The browser dialog appears, asking "Do you want to open or save ComputerName.rdp from manage.windowsazure.com?" Click **Open**.
+5.	The browser dialog appears, asking "Do you want to open or save ComputerName.rdp from manage.windowsazure.cn?" Click **Open**.
 6.	In the **Remote Desktop Connection** dialog, click **Connect**.
 7.	In the **Windows Security** dialog, click **Use another account**.
 8.	In **User name**, type the name of the VM and user name of the local administrator account created with the VM (a local machine account). Use the following format: *ComputerName*\\*LocalAdministratorAccountName*
@@ -206,14 +202,14 @@ Next, perform the following steps to add more account properties to the new user
 
 Next, update the DNS servers for your virtual network so that Azure assigns virtual machines the IP addresses of the two new domain controllers to use as their DNS servers. Note that this procedure uses values from Table V (for your virtual network settings).
 
-1.	In the left pane of the Azure portal, click **Networks**, and then click the name of your virtual network (Table V – Item 1 – Value column).
+1.	In the left pane of the Azure Management Portal, click **Networks**, and then click the name of your virtual network (Table V – Item 1 – Value column).
 2.	Click **Configure**.
 3.	In **DNS Servers**, remove the entries corresponding to the DNS servers that are located on your on-premises network.
 4.	In **DNS Servers**, add two entries with friendly names and the IP addresses of these two table items:
  - Table V – Item 6 – Value column
  - Table V – Item 7 – Value column
 5.	In the command bar at the bottom, click **Save**.
-6.	In the left pane of the Azure portal, click **Virtual Machines**, and then click the **Status** column next to the name of your first domain controller.
+6.	In the left pane of the Azure Management Portal, click **Virtual Machines**, and then click the **Status** column next to the name of your first domain controller.
 7.	In the command bar, click **Restart**.
 8.	When the first domain controller is started, click the **Status** column next to the name of your second domain controller.
 9.	In the command bar, click **Restart**. Wait until the second domain controller is started.
@@ -233,18 +229,18 @@ This diagram shows the configuration resulting from the successful completion of
 
 ## Next step
 
-To continue with the configuration of this workload, go to [Phase 3: Configure SQL Server infrastructure](virtual-machines-workload-intranet-sharepoint-phase3.md).
+To continue with the configuration of this workload, go to [Phase 3: Configure SQL Server infrastructure](/documentation/articles/virtual-machines-workload-intranet-sharepoint-phase3).
 
 ## Additional resources
 
-[Deploying SharePoint with SQL Server AlwaysOn Availability Groups in Azure](virtual-machines-workload-intranet-sharepoint-overview.md)
+[Deploying SharePoint with SQL Server AlwaysOn Availability Groups in Azure](/documentation/articles/virtual-machines-workload-intranet-sharepoint-overview)
 
-[SharePoint farms hosted in Azure infrastructure services](virtual-machines-sharepoint-infrastructure-services.md)
+[SharePoint farms hosted in Azure infrastructure services](/documentation/articles/virtual-machines-sharepoint-infrastructure-services)
 
 [SharePoint with SQL Server AlwaysOn infographic](http://go.microsoft.com/fwlink/?LinkId=394788)
 
-[Microsoft Azure Architectures for SharePoint 2013](https://technet.microsoft.com/library/dn635309.aspx)
+[Windows Azure Architectures for SharePoint 2013](https://technet.microsoft.com/zh-cn/library/dn635309.aspx)
 
-[Azure infrastructure services implementation guidelines](virtual-machines-infrastructure-services-implementation-guidelines.md)
+[Azure infrastructure services implementation guidelines](/documentation/articles/virtual-machines-infrastructure-services-implementation-guidelines)
 
-[Azure Infrastructure Services Workload: High-availability line of business application](virtual-machines-workload-high-availability-lob-application.md)
+[Azure Infrastructure Services Workload: High-availability line of business application](/documentation/articles/virtual-machines-workload-high-availability-lob-application)

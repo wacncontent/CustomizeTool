@@ -33,7 +33,7 @@ A service configuration file may contain a DnsServers element with a list of IPv
 
 [Azure Virtual Network Configuration Schema](https://msdn.microsoft.com/zh-cn/library/azure/jj157100)
 
-[Configure a Virtual Network Using Network Configuration Files](http://go.microsoft.com/fwlink/?LinkId=248094)
+[Configure a Virtual Network Using Network Configuration Files](/documentation/articles/virtual-networks-create-vnet-classic-portal/)
 
-[About Virtual Network settings in the Management Portal](http://go.microsoft.com/fwlink/?LinkId=248092)
+[About Virtual Network settings in the Management Portal](/documentation/articles/virtual-networks-settings/)
 

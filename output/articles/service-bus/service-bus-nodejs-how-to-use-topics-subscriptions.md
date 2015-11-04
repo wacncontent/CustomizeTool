@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="How to use Service Bus topics with Node.js | Microsoft Azure" 
+	pageTitle="How to use Service Bus topics with Node.js | Windows Azure" 
 	description="Learn how to use Service Bus topics and subscriptions in Azure from a Node.js app." 
 	services="service-bus" 
 	documentationCenter="nodejs" 
@@ -7,19 +7,15 @@
 	manager="timlt" 
 	editor=""/>
 
-<tags 
-	ms.service="service-bus" 
-	ms.workload="tbd" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="nodejs" 
-	ms.topic="article" 
-	ms.date="10/07/2015" 
-	ms.author="sethm"/>
+<tags
+	ms.service="service-bus"
+	ms.date="10/07/2015"
+	wacn.date=""/>
 
 
 # How to Use Service Bus topics and subscriptions
 
-[AZURE.INCLUDE [service-bus-selector-topics](../../includes/service-bus-selector-topics.md)]
+[AZURE.INCLUDE [service-bus-selector-topics](../includes/service-bus-selector-topics.md)]
 
 This guide describes how to use Service Bus topics and subscriptions
 from Node.js applications. The scenarios covered include **creating
@@ -28,7 +24,7 @@ messages** to a topic, **receiving messages from a subscription**, and
 **deleting topics and subscriptions**. For more information about topics
 and subscriptions, see the [Next steps](#next-steps) section.
 
-[AZURE.INCLUDE [howto-service-bus-topics](../../includes/howto-service-bus-topics.md)]
+[AZURE.INCLUDE [howto-service-bus-topics](../includes/howto-service-bus-topics.md)]
 
 ## Create a Node.js application
 
@@ -61,7 +57,7 @@ communicate with the Service Bus REST services.
 	```
 
 3.  You can manually run the **ls** command to verify that a
-    **node\_modules** folder was created. Inside that folder find the
+    **node_modules** folder was created. Inside that folder find the
     **azure** package, which contains the libraries you need to access
     Service Bus topics.
 
@@ -76,7 +72,7 @@ var azure = require('azure');
 
 ### Set up a Service Bus connection
 
-The Azure module reads the environment variables AZURE\_SERVICEBUS\_NAMESPACE and AZURE\_SERVICEBUS\_ACCESS\_KEY for information required to connect to Service Bus. If these environment variables are not set, you must specify the account information when calling **createServiceBusService**.
+The Azure module reads the environment variables AZURE_SERVICEBUS_NAMESPACE and AZURE_SERVICEBUS_ACCESS_KEY for information required to connect to Service Bus. If these environment variables are not set, you must specify the account information when calling **createServiceBusService**.
 
 For an example of setting the environment variables in a configuration file for an Azure Cloud Service, see [Node.js Cloud Service with Storage][].
 
@@ -433,12 +429,11 @@ Now that you've learned the basics of Service Bus topics, follow these links to 
 -   Visit the [Azure SDK for Node][] repository on GitHub.
 
   [Azure SDK for Node]: https://github.com/WindowsAzure/azure-sdk-for-node
-  [Azure portal]: http://manage.windowsazure.com
-  [SqlFilter.SqlExpression]: http://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.sqlfilter.sqlexpression.aspx
-  [Queues, topics, and subscriptions]: service-bus-queues-topics-subscriptions.md
-  [SqlFilter]: http://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.sqlfilter.aspx
-  [Node.js Cloud Service]: ../cloud-services/cloud-services-nodejs-develop-deploy-app.md
-  [Create and deploy a Node.js application to an Azure Web Site]: ../app-service-web/web-sites-nodejs-develop-deploy-mac.md
-  [Node.js Cloud Service with Storage]: ../cloud-services/cloud-services-nodejs-develop-deploy-app.md
-  [Node.js Web Application with Storage]: ../cloud-services/storage-nodejs-use-table-storage-cloud-service-app.md
- 
+  [Azure Management Portal]: http://manage.windowsazure.cn
+  [SqlFilter.SqlExpression]: http://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.sqlfilter.sqlexpression.aspx
+  [Queues, topics, and subscriptions]: /documentation/articles/service-bus-queues-topics-subscriptions
+  [SqlFilter]: http://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.sqlfilter.aspx
+  [Node.js Cloud Service]: /documentation/articles/cloud-services-nodejs-develop-deploy-app
+  [Create and deploy a Node.js application to an Azure Web Site]: /documentation/articles/web-sites-nodejs-develop-deploy-mac
+  [Node.js Cloud Service with Storage]: /documentation/articles/cloud-services-nodejs-develop-deploy-app
+  [Node.js Web Application with Storage]: /documentation/articles/storage-nodejs-use-table-storage-cloud-service-app

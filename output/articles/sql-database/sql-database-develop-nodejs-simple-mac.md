@@ -8,20 +8,16 @@
 	editor=""/>
 
 
-<tags 
-	ms.service="sql-database" 
-	ms.workload="data-management" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="nodejs" 
-	ms.topic="article" 
-	ms.date="07/20/2015" 
-	ms.author="mebha"/>
+<tags
+	ms.service="sql-database"
+	ms.date="07/20/2015"
+	wacn.date=""/>
 
 
 # Connect to SQL Database by using Node.js with Tedious on Mac OS X
 
 
-[AZURE.INCLUDE [sql-database-develop-includes-selector-language-platform-depth](../../includes/sql-database-develop-includes-selector-language-platform-depth.md)]
+[AZURE.INCLUDE [sql-database-develop-includes-selector-language-platform-depth](../includes/sql-database-develop-includes-selector-language-platform-depth.md)]
 
 
 This topic presents a Node.js code sample that runs on Mac OS X. The sample connects to Azure SQL Database by using the Tedious driver.
@@ -51,7 +47,7 @@ After your machine is configured with **node** and **npm**, navigate to a direct
 ### Create an AdventureWorks database
 
 
-The code sample in this topic expects an **AdventureWorks** test database. If you do not already have one, see [Get started with SQL Database](sql-database-get-started.md). It is important that you follow the guide to create an **AdventureWorks database template**. The examples shown below work only with the **AdventureWorks schema**. 
+The code sample in this topic expects an **AdventureWorks** test database. If you do not already have one, see [Get started with SQL Database](/documentation/articles/sql-database-get-started). It is important that you follow the guide to create an **AdventureWorks database template**. The examples shown below work only with the **AdventureWorks schema**. 
 
 
 ## Connect to your SQL Database
@@ -62,8 +58,8 @@ The [new Connection](http://pekim.github.io/tedious/api-connection.html) functio
 	var config = {
 		userName: 'yourusername',
 		password: 'yourpassword',
-		server: 'yourserver.database.windows.net',
-		// If you are on Microsoft Azure, you need this:
+		server: 'yourserver.database.chinacloudapi.cn',
+		// If you are on Windows Azure, you need this:
 		options: {encrypt: true, database: 'AdventureWorks'}
 	};
 	var connection = new Connection(config);
@@ -85,7 +81,7 @@ All SQL statements are executed using the [new Request()](http://pekim.github.io
 	var config = {
 		userName: 'yourusername',
 		password: 'yourpassword',
-		server: 'yourserver.database.windows.net',
+		server: 'yourserver.database.chinacloudapi.cn',
 		// When you connect to Azure SQL Database, you need these next options.
 		options: {encrypt: true, database: 'AdventureWorks'}
 	};
@@ -125,7 +121,7 @@ All SQL statements are executed using the [new Request()](http://pekim.github.io
 ## Insert a row, apply parameters, and retrieve the generated primary key
 
 
-In SQL Database the [IDENTITY](https://msdn.microsoft.com/library/ms186775.aspx) property and the [SEQUENCE](https://msdn.microsoft.com/library/ff878058.aspx) object can be used to auto-generate [primary key](https://msdn.microsoft.com/library/ms179610.aspx) values. In this example you will see how to execute an insert-statement, safely pass parameters which protects from SQL injection, and retrieve the auto-generated primary key value.
+In SQL Database the [IDENTITY](https://msdn.microsoft.com/zh-cn/library/ms186775.aspx) property and the [SEQUENCE](https://msdn.microsoft.com/zh-cn/library/ff878058.aspx) object can be used to auto-generate [primary key](https://msdn.microsoft.com/zh-cn/library/ms179610.aspx) values. In this example you will see how to execute an insert-statement, safely pass parameters which protects from SQL injection, and retrieve the auto-generated primary key value.
 
 
 The code sample in this section applies parameters to an SQL INSERT statement. The primary key value that is generated is retrieved by the program.
@@ -137,7 +133,7 @@ The code sample in this section applies parameters to an SQL INSERT statement. T
 	var config = {
 		userName: 'yourusername',
 		password: 'yourpassword',
-		server: 'yourserver.database.windows.net',
+		server: 'yourserver.database.chinacloudapi.cn',
 		// If you are on Azure SQL Database, you need these next options.
 		options: {encrypt: true, database: 'AdventureWorks'}
 	};

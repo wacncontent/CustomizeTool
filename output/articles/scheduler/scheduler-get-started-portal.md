@@ -1,5 +1,5 @@
 <properties
- pageTitle="Get started using Azure Scheduler in the Azure portal | Microsoft Azure"
+ pageTitle="Get started using Azure Scheduler in the Azure Management Portal | Windows Azure"
  description=""
  services="scheduler"
  documentationCenter=".NET"
@@ -7,33 +7,29 @@
  manager="dwrede"
  editor=""/>
 <tags
- ms.service="scheduler"
- ms.workload="infrastructure-services"
- ms.tgt_pltfrm="na"
- ms.devlang="dotnet"
- ms.topic="hero-article"
- ms.date="08/18/2015"
- ms.author="krisragh"/>
+	ms.service="scheduler"
+	ms.date="08/18/2015"
+	wacn.date=""/>
 
-# Get started using Azure Scheduler in the Azure portal
+# Get started using Azure Scheduler in the Azure Management Portal
 
-## Configure Scheduler using the Azure portal to quickly and easily create jobs
+## Configure Scheduler using the Azure Management Portal to quickly and easily create jobs
 
-To complete this tutorial, you need an Azure account that has the Azure Scheduler feature enabled. If you don't have an account, you can create a free trial account in just a couple of minutes. For details, refer to [Azure Free Trial](https://azure.microsoft.com/en-us/pricing/free-trial/).
+To complete this tutorial, you need an Azure account that has the Azure Scheduler feature enabled. If you don't have an account, you can create a trial account in just a couple of minutes. For details, refer to [Azure Trial](https://azure.microsoft.com/pricing/1rmb-trial/).
 
 ## Get started
 
-It's easy to create jobs and job collections on Azure Scheduler using the Azure portal. This tutorial walks you through the creation of the job collection you will use to store jobs, the creation of a job in a job collection, and an overview of the job monitoring and management tasks available through the portal. You need prior experience with Azure to use this tutorial.
+It's easy to create jobs and job collections on Azure Scheduler using the Azure Management Portal. This tutorial walks you through the creation of the job collection you will use to store jobs, the creation of a job in a job collection, and an overview of the job monitoring and management tasks available through the portal. You need prior experience with Azure to use this tutorial.
 
-The first time you open the Azure portal, you are automatically placed at the **ALL ITEMS** tab. The columns in the **ALL ITEMS** tab can be sorted. To view your Scheduler jobs and job collections, click the **SCHEDULER** tab.
+The first time you open the Azure Management Portal, you are automatically placed at the **ALL ITEMS** tab. The columns in the **ALL ITEMS** tab can be sorted. To view your Scheduler jobs and job collections, click the **SCHEDULER** tab.
 
 ![][1]
 
 ## Create a job collection and a job
 
-1.  Sign in to the [Azure portal](https://manage.windowsazure.com/).  
+1.  Sign in to the [Azure Management Portal](https://manage.windowsazure.cn/).  
 
-2.  Click **App Services** > **Create New** > **Scheduler**, and then click **Custom Create**. <br /><br /> ![][2]
+2.  Click **Azure Websites** > **Create New** > **Scheduler**, and then click **Custom Create**. <br /><br /> ![][2]
 
 3.  In **Job Collection**, select the name of the existing job collection under the **Job Collection** drop-down. If you don’t have an existing job collection you’d like to add the job to, select **Create New** and enter a name to identify your new job collection.<br /><br /> ![][3]
 
@@ -226,23 +222,23 @@ Finally, for all action types, you may change the schedule itself and its recurr
 
 ## See also
 
- [What is Scheduler?](scheduler-intro.md)
+ [What is Scheduler?](/documentation/articles/scheduler-intro)
 
- [Scheduler concepts, terminology, and entity hierarchy](scheduler-concepts-terms.md)
+ [Scheduler concepts, terminology, and entity hierarchy](/documentation/articles/scheduler-concepts-terms)
 
- [Plans and billing in Azure Scheduler](scheduler-plans-billing.md)
+ [Plans and billing in Azure Scheduler](/documentation/articles/scheduler-plans-billing)
 
- [How to build complex schedules and advanced recurrence with Azure Scheduler](scheduler-advanced-complexity.md)
+ [How to build complex schedules and advanced recurrence with Azure Scheduler](/documentation/articles/scheduler-advanced-complexity)
 
- [Scheduler REST API reference](https://msdn.microsoft.com/library/dn528946)
+ [Scheduler REST API reference](https://msdn.microsoft.com/zh-cn/library/dn528946)
 
- [Scheduler PowerShell cmdlets reference](scheduler-powershell-reference.md)
+ [Scheduler PowerShell cmdlets reference](/documentation/articles/scheduler-powershell-reference)
 
- [Scheduler high-availability and reliability](scheduler-high-availability-reliability.md)
+ [Scheduler high-availability and reliability](/documentation/articles/scheduler-high-availability-reliability)
 
- [Scheduler limits, lefaults, and error codes](scheduler-limits-defaults-errors.md)
+ [Scheduler limits, lefaults, and error codes](/documentation/articles/scheduler-limits-defaults-errors)
 
- [Scheduler outbound authentication](scheduler-outbound-authentication.md)
+ [Scheduler outbound authentication](/documentation/articles/scheduler-outbound-authentication)
 
 
 

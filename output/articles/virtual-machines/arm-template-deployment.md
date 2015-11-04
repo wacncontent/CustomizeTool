@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Deploy Azure Resources using a template | Microsoft Azure"
+	pageTitle="Deploy Azure Resources using a template | Windows Azure"
 	description="Learn to use some of the available clients in the Azure Resource Management Library to deploy a virtual machine, virtual network, and storage account"
 	services="virtual-machines,virtual-networks,storage"
 	documentationCenter=""
@@ -10,29 +10,25 @@
 
 <tags
 	ms.service="azure-resource-manager"
-	ms.workload="multiple"
-	ms.tgt_pltfrm="vm-windows"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="08/25/2015"
-	ms.author="davidmu"/>
+	wacn.date=""/>
 
 # Deploy Azure resources using .NET libraries and a template
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-rm-include.md)] classic deployment model.
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] classic deployment model.
 
 
 By using resource groups and templates, you're able to manage all of the resources that support your application together. This tutorial shows you how to use some of the available clients in the Azure Resource Management Library and how to build a template to deploy a virtual machine, virtual network, and storage account.
 
-[AZURE.INCLUDE [free-trial-note](../../includes/free-trial-note.md)]
+[AZURE.INCLUDE [free-trial-note](../includes/free-trial-note.md)]
 
 To complete this tutorial you also need:
 
-- [Visual Studio](http://msdn.microsoft.com/library/dd831853.aspx)
-- [Azure storage account](../storage-create-storage-account.md)
-- [Windows Management Framework 3.0](http://www.microsoft.com/en-us/download/details.aspx?id=34595) or [Windows Management Framework 4.0](http://www.microsoft.com/en-us/download/details.aspx?id=40855)
+- [Visual Studio](http://msdn.microsoft.com/zh-cn/library/dd831853.aspx)
+- [Azure storage account](/documentation/articles/storage-create-storage-account)
+- [Windows Management Framework 3.0](http://www.microsoft.com/download/details.aspx?id=34595) or [Windows Management Framework 4.0](http://www.microsoft.com/download/details.aspx?id=40855)
 
-[AZURE.INCLUDE [powershell-preview](../../includes/powershell-preview-inline-include.md)]
+[AZURE.INCLUDE [powershell-preview](../includes/powershell-preview-inline-include.md)]
 
 It takes about 30 minutes to do these steps.
 
@@ -79,7 +75,7 @@ An Azure Resource Manager Template makes it possible for you to deploy and manag
             "contentVersion": "1.0.0.0",
         }
 
-6. [Parameters](../resource-group-authoring-templates.md#parameters) are not always required, but they make template management easier. They describe the type of the value, the default value if needed, and possibly the allowed values of the parameter. For this tutorial, the parameters that are used to create a virtual machine, a storage account, and a virtual network are added to the template.
+6. [Parameters](/documentation/articles/resource-group-authoring-templates#parameters) are not always required, but they make template management easier. They describe the type of the value, the default value if needed, and possibly the allowed values of the parameter. For this tutorial, the parameters that are used to create a virtual machine, a storage account, and a virtual network are added to the template.
 
     Add the parameters element and its child elements after the contentVersion element:
 
@@ -87,7 +83,7 @@ An Azure Resource Manager Template makes it possible for you to deploy and manag
 		  "$schema": "http://schema.management.azure.com/schemas/2014-04-01-preview/VM.json",
 		  "contentVersion": "1.0.0.0",
 		  "parameters": {
-		    "location": { "type": "String", "defaultValue" : "West US", "allowedValues": [ "West US", "East US" ] },
+		    "location": { "type": "String", "defaultValue" : "China North", "allowedValues": [ "China North", "China East" ] },
             "newStorageAccountName": { "type": "string" },
             "storageAccountType": { "type": "string", "defaultValue": "Standard_LRS", "allowedValues": [ "Standard_LRS", "Standard_GRS" ] },
             "publicIPAddressName": { "type": "string" },
@@ -110,7 +106,7 @@ An Azure Resource Manager Template makes it possible for you to deploy and manag
           },
         }
 
-7.	[Variables](../resource-group-authoring-templates.md#variables) can be used in a template to specify values that may change frequently or values that need to be created from a combination of parameter values.
+7.	[Variables](/documentation/articles/resource-group-authoring-templates#variables) can be used in a template to specify values that may change frequently or values that need to be created from a combination of parameter values.
 
     Add the variables element after the parameters section:
 
@@ -118,7 +114,7 @@ An Azure Resource Manager Template makes it possible for you to deploy and manag
 		  "$schema": "http://schema.management.azure.com/schemas/2014-04-01-preview/VM.json",
 		  "contentVersion": "1.0.0.0",
 		  "parameters": {
-		    "location": { "type": "String", "defaultValue" : "West US", "allowedValues": [ "West US", "East US" ] },
+		    "location": { "type": "String", "defaultValue" : "China North", "allowedValues": [ "China North", "China East" ] },
             "newStorageAccountName": { "type": "string" },
             "storageAccountType": { "type": "string", "defaultValue": "Standard_LRS", "allowedValues": [ "Standard_LRS", "Standard_GRS" ] },
             "publicIPAddressName": { "type": "string" },
@@ -146,7 +142,7 @@ An Azure Resource Manager Template makes it possible for you to deploy and manag
           },
         }
 
-8.	[Resources](../resource-group-authoring-templates.md#resources) such as the virtual machine, the virtual network, and the storage account are defined next in the template.
+8.	[Resources](/documentation/articles/resource-group-authoring-templates#resources) such as the virtual machine, the virtual network, and the storage account are defined next in the template.
 
     Add the resources section after the variables section:
 
@@ -154,7 +150,7 @@ An Azure Resource Manager Template makes it possible for you to deploy and manag
 		  "$schema": "http://schema.management.azure.com/schemas/2014-04-01-preview/VM.json",
 		  "contentVersion": "1.0.0.0",
 		  "parameters": {
-		    "location": { "type": "String", "defaultValue" : "West US", "allowedValues": [ "West US", "East US" ] },
+		    "location": { "type": "String", "defaultValue" : "China North", "allowedValues": [ "China North", "China East" ] },
             "newStorageAccountName": { "type": "string" },
             "storageAccountType": { "type": "string", "defaultValue": "Standard_LRS", "allowedValues": [ "Standard_LRS", "Standard_GRS" ] },
             "publicIPAddressName": { "type": "string" },
@@ -255,7 +251,7 @@ An Azure Resource Manager Template makes it possible for you to deploy and manag
               },
               "storageProfile": {
                 "sourceImage": { "id": "[variables('sourceImageName')]" },
-                "destinationVhdsContainer" : "[concat('http://',parameters('newStorageAccountName'),'.blob.core.windows.net/',parameters('vmStorageAccountContainerName'),'/')]"
+                "destinationVhdsContainer" : "[concat('http://',parameters('newStorageAccountName'),'.blob.core.chinacloudapi.cn/',parameters('vmStorageAccountContainerName'),'/')]"
               },
               "networkProfile": {
                 "networkInterfaces" : [ {
@@ -285,7 +281,7 @@ To specify values for the resource parameters that were defined in the template,
             "newStorageAccountName": { "value": "mytestsa1" },
             "storageAccountType": { "value": "Standard_LRS" },
             "publicIPaddressName": { "value": "mytestip1" },
-            "location": { "value": "West US" },
+            "location": { "value": "China North" },
             "vmStorageAccountContainerName": { "value": "vhds" },
             "vmSize": { "value": "Standard_A1" },
             "subscriptionId": { "value": "{subscription-id}" },
@@ -298,7 +294,7 @@ To specify values for the resource parameters that were defined in the template,
           }
         }
 
-    >[AZURE.NOTE] Image vhd names change regularly in the image gallery, so you need to get a current image name to deploy the virtual machine. To do this, see [About images for virtual machines](https://azure.microsoft.com/en-us/documentation/articles/virtual-machines-images/), and then replace {source-image-name} with the name of the vhd file that you want to use. For example,  "a699494373c04fc0bc8f2bb1389d6106__Windows-Server-2012-R2-201412.01-en.us-127GB.vhd". Replace {subscription-id} with the identifier of your subscription.
+    >[AZURE.NOTE] Image vhd names change regularly in the image gallery, so you need to get a current image name to deploy the virtual machine. To do this, see [About images for virtual machines](/documentation/articles/virtual-machines-images/), and then replace {source-image-name} with the name of the vhd file that you want to use. For example,  "a699494373c04fc0bc8f2bb1389d6106__Windows-Server-2012-R2-201412.01-en.us-127GB.vhd". Replace {subscription-id} with the identifier of your subscription.
 
 
 4.	Save the parameters file that you created.
@@ -319,7 +315,7 @@ NuGet packages are the easiest way to install the libraries that you need to fin
 
 2.	Type *Active Directory* in the search box, click **Install** for the Active Directory Authentication Library package, and then follow the instructions to install the package.
 
-3.	At the top of the page, select **Include Prerelease**. Type *Azure Resource Management* in the search box, click **Install** for the Microsoft Azure Resource Management Libraries, and then follow the instructions to install the package.
+3.	At the top of the page, select **Include Prerelease**. Type *Azure Resource Management* in the search box, click **Install** for the Windows Azure Resource Management Libraries, and then follow the instructions to install the package.
 
 You are now ready to start using the libraries to create your application.
 
@@ -339,7 +335,7 @@ Now that the Azure Active Directory application is created and the authenticatio
         private static string GetAuthorizationHeader()
         {
           ClientCredential cc = new ClientCredential("{application-id}", "{password}");
-            var context = new AuthenticationContext("https://login.windows.net/{tenant-id}");
+            var context = new AuthenticationContext("https://login.chinacloudapi.cn/{tenant-id}");
             var result = context.AcquireToken("https://management.azure.com/", cc);
           if (result == null)
           {
@@ -363,14 +359,14 @@ Now that the Azure Active Directory application is created and the authenticatio
 
 ##Step 5: Add the code to deploy the template
 
-Resources are always deployed from a template to a resource group. You use the [ResourceGroup](https://msdn.microsoft.com/library/azure/microsoft.azure.management.resources.models.resourcegroup.aspx) and the [ResourceManagementClient](https://msdn.microsoft.com/library/azure/microsoft.azure.management.resources.resourcemanagementclient.aspx) classes to create the resource group that the resources are deployed to.
+Resources are always deployed from a template to a resource group. You use the [ResourceGroup](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.management.resources.models.resourcegroup.aspx) and the [ResourceManagementClient](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.management.resources.resourcemanagementclient.aspx) classes to create the resource group that the resources are deployed to.
 
 1.	Add the following method to the Program class to create the resource group:
 
 		public async static void CreateResourceGroup(TokenCloudCredentials credential)
 		{
 		  Console.WriteLine("Creating the resource group...");
-		  var resourceGroup = new ResourceGroup { Location = "West US" };
+		  var resourceGroup = new ResourceGroup { Location = "China North" };
 		  using (var resourceManagementClient = new ResourceManagementClient(credential))
 		  {
 		    var rgResult = await resourceManagementClient.ResourceGroups.CreateOrUpdateAsync("mytestrg1", resourceGroup);
@@ -394,11 +390,11 @@ Resources are always deployed from a template to a resource group. You use the [
 		    Mode = DeploymentMode.Incremental,
 		    TemplateLink = new TemplateLink
 		    {
-		      Uri = new Uri("https://{storage-account-name}.blob.core.windows.net/templates/VirtualMachineTemplate.json")
+		      Uri = new Uri("https://{storage-account-name}.blob.core.chinacloudapi.cn/templates/VirtualMachineTemplate.json")
 			},
 			ParametersLink = new ParametersLink
 			{
-			  Uri = new Uri("https://{storage-account-name}.blob.core.windows.net/templates/Parameters.json")
+			  Uri = new Uri("https://{storage-account-name}.blob.core.chinacloudapi.cn/templates/Parameters.json")
 			}
 		  };
 		  using (var templateDeploymentClient = new ResourceManagementClient(credential))

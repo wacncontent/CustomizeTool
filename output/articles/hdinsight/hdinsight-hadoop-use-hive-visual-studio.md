@@ -27,7 +27,7 @@ To complete the steps in this article, you will need the following.
 
 * An Azure HDInsight (Hadoop on HDInsight) cluster (<!-- deleted by customization Linux or -->Windows-based)
 
-* Visual Studio 2012 [Update 4](http://www.microsoft.com/download/details.aspx?id=39305), Visual Studio 2013 [Update 3](http://go.microsoft.com/fwlink/?LinkId=390465), or [Visual Studio Express 2013](http://www.microsoft.com/download/details.aspx?id=40769)
+* Visual Studio 2012 [Update 4](http://www.microsoft.com/download/details.aspx?id=39305), Visual Studio 2013 [Update 3](https://www.visualstudio.com/zh-cn/downloads/download-visual-studio-vs), or [Visual Studio Express 2013](http://www.microsoft.com/download/details.aspx?id=40769)
 
 ##<a id="run"></a> Run Hive queries using the HDInsight tools for Visual Studio
 

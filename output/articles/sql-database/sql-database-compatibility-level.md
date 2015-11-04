@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Compatibility levels in SQL Database | Microsoft Azure" 
+	pageTitle="Compatibility levels in SQL Database | Windows Azure" 
 	description="Explains how to set the compatibility level for your Azure SQL Database database, and the features that are affected."
 	services="sql-database" 
 	documentationCenter="" 
@@ -8,14 +8,10 @@
 	editor=""/>
 
 
-<tags 
-	ms.service="sql-database" 
-	ms.workload="data-management" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="09/21/2015" 
-	ms.author="genemi"/>
+<tags
+	ms.service="sql-database"
+	ms.date="09/21/2015"
+	wacn.date=""/>
 
 
 # Compatibility levels in SQL Database
@@ -75,8 +71,8 @@ ALTER DATABASE YourDatabaseName SET COMPATIBILITY_LEVEL = 130;
 For more information, see:
 
 
-- [ALTER TABLE Compatibility Level (Transact-SQL)](http://msdn.microsoft.com/library/bb510680.aspx)
-- [sys.databases (Transact-SQL)](http://msdn.microsoft.com/library/ms178534.aspx)
+- [ALTER TABLE Compatibility Level (Transact-SQL)](http://msdn.microsoft.com/zh-cn/library/bb510680.aspx)
+- [sys.databases (Transact-SQL)](http://msdn.microsoft.com/zh-cn/library/ms178534.aspx)
 
 
 ## In-memory tables and columnstore indexes
@@ -101,9 +97,9 @@ Where in-memory items are involved, compatibility level 130 provides the followi
 For more information about in-memory tables, and about columnstore indexes, see:
 
 
-- [Memory-Optimized Tables](http://msdn.microsoft.com/library/dn133165.aspx)
-- [CREATE CLUSTERED COLUMNSTORE INDEX (Transact-SQL)](http://msdn.microsoft.com/library/dn511016.aspx)
-- [Columnstore Indexes Described](http://msdn.microsoft.com/library/gg492088.aspx)
+- [Memory-Optimized Tables](http://msdn.microsoft.com/zh-cn/library/dn133165.aspx)
+- [CREATE CLUSTERED COLUMNSTORE INDEX (Transact-SQL)](http://msdn.microsoft.com/zh-cn/library/dn511016.aspx)
+- [Columnstore Indexes Described](http://msdn.microsoft.com/zh-cn/library/gg492088.aspx)
 
 
 ## General features that require minimum level 130
@@ -117,7 +113,7 @@ The algorithms used by the CE have been improved. Improvements cause change, and
 
 | 130 is minimum<br/>necessary<br/>level | Query area,<br/>General | Details of<br/>query plan<br/>improvement |
 | :-- | :-- | :-- |
-| 130 | Cardinality estimator (CE) | Refinements to the cardinality estimator (CE), compared to the earlier CE at level 120.<br/><br/>In the query plan you might see: **CardinalityEstimationModelVersion="130"**<br/><br/>**Trace flag** [**9481**](http://www.sqlservergeeks.com/sql-server-2014-trace-flags-9481/) can be turned on to use the CE of level 120 when your database is at level 130.<br/><br/>**Trace flag** [**4199**](http://support.microsoft.com/kb/974006), when your database is at compatibility level 130, can be set to off to opt out of hotfixes to the query optimizer. The flag applies only to hotfixes that are implemented after level 130 is fully out of preview and is released for General Availability (GA). For details see:<br/><br/>● [DBCC TRACEON](http://msdn.microsoft.com/library/ms187329.aspx) |
+| 130 | Cardinality estimator (CE) | Refinements to the cardinality estimator (CE), compared to the earlier CE at level 120.<br/><br/>In the query plan you might see: **CardinalityEstimationModelVersion="130"**<br/><br/>**Trace flag** [**9481**](http://www.sqlservergeeks.com/sql-server-2014-trace-flags-9481/) can be turned on to use the CE of level 120 when your database is at level 130.<br/><br/>**Trace flag** [**4199**](http://support.microsoft.com/kb/974006), when your database is at compatibility level 130, can be set to off to opt out of hotfixes to the query optimizer. The flag applies only to hotfixes that are implemented after level 130 is fully out of preview and is released for General Availability (GA). For details see:<br/><br/>● [DBCC TRACEON](http://msdn.microsoft.com/zh-cn/library/ms187329.aspx) |
 | 130 | Parallel query plans for in-memory tables | Queries can use multiple threads and can run in parallel when they are against an in-memory table, meaning a table that was created with the **MEMORY_OPTIMIZED = YES** clause. Parallelism can make the queries run faster.<br/><br/>This enhancement is supported for regular Transact-SQL and user stored procedures. But it is not supported for native stored procedures which compiled into a DLL. |
 
 
@@ -141,7 +137,7 @@ In most cases the plan change improves performance of the query by involving:
 
 | 130 is minimum<br/>necessary<br/>level | Query area,<br/>Columnstore index | Details of<br/>query plan<br/>improvement |
 | :-- | :-- | :-- |
-| 130 | Function queries | Performance is improved by the switch to batch mode, in the following cases:<br/><br/>• Sorting is involved.<br/><br/>• Aggregates with *multiple* distinct functions<br/>(one function from each of two different bullets from the following list):<br/>&nbsp;&nbsp;&nbsp;▫ **COUNT** *or* **COUNT_BIG**<br/>&nbsp;&nbsp;&nbsp;▫ **AVG** *or* **SUM**<br/>&nbsp;&nbsp;&nbsp;▫ **CHECKSUM_AGG**<br/>&nbsp;&nbsp;&nbsp;▫ **STDEV** *or* **STDEVP**<br/><br/>• Window aggregate functions<br/>(described [here on MSDN](http://msdn.microsoft.com/library/ms189461.aspx), and [here by Kathi Kellenberger](http://www.bidn.com/blogs/KathiKellenberger/sql-server/4397/what-is-a-window-aggregate-function)):<br/>&nbsp;&nbsp;&nbsp;▫ **COUNT**, **COUNT_BIG**, **SUM**, **AVG**, **MIN**, **MAX**, **CLR**<br/><br/>• Window [user-defined](http://msdn.microsoft.com/library/ms131057.aspx) aggregates:<br/>&nbsp;&nbsp;&nbsp;▫ [**CHECKSUM_AGG**](http://msdn.microsoft.com/library/ms188920.aspx), [**STDEV**](http://msdn.microsoft.com/library/ms190474.aspx), [**STDEVP**](http://msdn.microsoft.com/library/ms176080.aspx), [**VAR**](http://msdn.microsoft.com/library/ms186290.aspx), [**VARP**](http://msdn.microsoft.com/library/ms188735.aspx), [**GROUPING**](http://msdn.microsoft.com/library/ms178544.aspx)<br/><br/>• Window aggregate analytic functions:<br/>&nbsp;&nbsp;&nbsp;▫ [**LAG**](http://msdn.microsoft.com/library/hh231256.aspx), [**LEAD**](http://msdn.microsoft.com/library/hh213125.aspx), [**FIRST_VALUE**](http://msdn.microsoft.com/library/hh213018.aspx), [**LAST_VALUE**](http://msdn.microsoft.com/library/hh231517.aspx), [**PERCENTILE_CONT**](http://msdn.microsoft.com/library/hh231473.aspx), [**PERCENTILE_DISC**](http://msdn.microsoft.com/library/hh231327.aspx), [**CUME_DIST**](http://msdn.microsoft.com/library/hh231078.aspx), [**PERCENT_RANK**](http://msdn.microsoft.com/library/hh213573.aspx) |
+| 130 | Function queries | Performance is improved by the switch to batch mode, in the following cases:<br/><br/>• Sorting is involved.<br/><br/>• Aggregates with *multiple* distinct functions<br/>(one function from each of two different bullets from the following list):<br/>&nbsp;&nbsp;&nbsp;▫ **COUNT** *or* **COUNT_BIG**<br/>&nbsp;&nbsp;&nbsp;▫ **AVG** *or* **SUM**<br/>&nbsp;&nbsp;&nbsp;▫ **CHECKSUM_AGG**<br/>&nbsp;&nbsp;&nbsp;▫ **STDEV** *or* **STDEVP**<br/><br/>• Window aggregate functions<br/>(described [here on MSDN](http://msdn.microsoft.com/zh-cn/library/ms189461.aspx), and [here by Kathi Kellenberger](http://www.bidn.com/blogs/KathiKellenberger/sql-server/4397/what-is-a-window-aggregate-function)):<br/>&nbsp;&nbsp;&nbsp;▫ **COUNT**, **COUNT_BIG**, **SUM**, **AVG**, **MIN**, **MAX**, **CLR**<br/><br/>• Window [user-defined](http://msdn.microsoft.com/zh-cn/library/ms131057.aspx) aggregates:<br/>&nbsp;&nbsp;&nbsp;▫ [**CHECKSUM_AGG**](http://msdn.microsoft.com/zh-cn/library/ms188920.aspx), [**STDEV**](http://msdn.microsoft.com/zh-cn/library/ms190474.aspx), [**STDEVP**](http://msdn.microsoft.com/zh-cn/library/ms176080.aspx), [**VAR**](http://msdn.microsoft.com/zh-cn/library/ms186290.aspx), [**VARP**](http://msdn.microsoft.com/zh-cn/library/ms188735.aspx), [**GROUPING**](http://msdn.microsoft.com/zh-cn/library/ms178544.aspx)<br/><br/>• Window aggregate analytic functions:<br/>&nbsp;&nbsp;&nbsp;▫ [**LAG**](http://msdn.microsoft.com/zh-cn/library/hh231256.aspx), [**LEAD**](http://msdn.microsoft.com/zh-cn/library/hh213125.aspx), [**FIRST_VALUE**](http://msdn.microsoft.com/zh-cn/library/hh213018.aspx), [**LAST_VALUE**](http://msdn.microsoft.com/zh-cn/library/hh231517.aspx), [**PERCENTILE_CONT**](http://msdn.microsoft.com/zh-cn/library/hh231473.aspx), [**PERCENTILE_DISC**](http://msdn.microsoft.com/zh-cn/library/hh231327.aspx), [**CUME_DIST**](http://msdn.microsoft.com/zh-cn/library/hh231078.aspx), [**PERCENT_RANK**](http://msdn.microsoft.com/zh-cn/library/hh213573.aspx) |
 | 130 | Single-threaded serial query plan | A query executed on a single thread can run in batch mode. This can make the query perform faster.<br/><br/>A query plan might be designed as single-threaded, or a query might run under **MAXDOP 1**. |
 | 130 | Parallel insert | Your query plan can perform some inserts in parallel.<br/<br/>The [example](#ExampleQueryParallelCciByCompatLevel) later in this topic demonstrates this parallelism. |
 | 130 | Anti-semi join | This operator can now run in batch mode. |
@@ -152,23 +148,23 @@ In most cases the plan change improves performance of the query by involving:
 
 | 120 is minimum<br/>necessary<br/>level | Query area,<br/>General | Details of<br/>query plan<br/>improvement |
 | :-- | :-- | :-- |
-| 120 | [Altering MEMORY_OPTIMIZED Tables](http://msdn.microsoft.com/library/dn269114.aspx) | Enables you to perform Transact-SQL **ALTER TABLE** operations on tables which have **MEMORY_OPTIMIZED = YES**.<br/><br/>The database application can continue to run, but operations that access the table are blocked until the **ALTER TABLE** completes. |
-| 120 | [Creating and Managing Storage for Memory-Optimized Objects](http://msdn.microsoft.com/library/dn133174.aspx) | The in-memory OLTP engine is integrated into SQL Server. This lets you have both **MEMORY_OPTIMIZED** tables and traditional disk-based tables in the same database. |
-| 120 | [Transact-SQL Support for In-Memory OLTP](http://msdn.microsoft.com/library/dn133180.aspx) | A handful of Transact-SQL commands have been enhanced to support in-memory online transaction processing (OLTP).<br/><br/>One example is the new **NATIVE_COMPILATION** keyword on the [CREATE PROCEDURE](http://msdn.microsoft.com/library/ms187926.aspx) command. |
+| 120 | [Altering MEMORY_OPTIMIZED Tables](http://msdn.microsoft.com/zh-cn/library/dn269114.aspx) | Enables you to perform Transact-SQL **ALTER TABLE** operations on tables which have **MEMORY_OPTIMIZED = YES**.<br/><br/>The database application can continue to run, but operations that access the table are blocked until the **ALTER TABLE** completes. |
+| 120 | [Creating and Managing Storage for Memory-Optimized Objects](http://msdn.microsoft.com/zh-cn/library/dn133174.aspx) | The in-memory OLTP engine is integrated into SQL Server. This lets you have both **MEMORY_OPTIMIZED** tables and traditional disk-based tables in the same database. |
+| 120 | [Transact-SQL Support for In-Memory OLTP](http://msdn.microsoft.com/zh-cn/library/dn133180.aspx) | A handful of Transact-SQL commands have been enhanced to support in-memory online transaction processing (OLTP).<br/><br/>One example is the new **NATIVE_COMPILATION** keyword on the [CREATE PROCEDURE](http://msdn.microsoft.com/zh-cn/library/ms187926.aspx) command. |
 | 120 | Cardinality estimator (CE) | Refinements to the cardinality estimator (CE), compared to the earlier CE at level 110.<br/><br/>In the query plan you might see: **CardinalityEstimationModelVersion="120"**<br/><br/>For details on how **trace flag 4199** interacts with the compatibility level value, see [KB 974006](http://support.microsoft.com/kb/974006).|
 
 
 ## Columnstore index features that require minimum level 120
 
 
-This section describes the [features of columnstore indexing](http://msdn.microsoft.com/library/dn934994.aspx) that are activated at the compatibility level 120 or higher.
+This section describes the [features of columnstore indexing](http://msdn.microsoft.com/zh-cn/library/dn934994.aspx) that are activated at the compatibility level 120 or higher.
 
 
 | 120 is minimum<br/>compatibility<br/>level | Columnstore index<br/>feature name | Columnstore index<br/>feature description |
 | :-- | :-- | :-- |
 | 120 | Snapshot isolation (SI) level, and<br/><br/>read committed snapshot isolation (RCSI) level. | When the query plan involves a columnstore index, SI and RCSI prevent data from partially complete transactions from being included in the query results, without the need for excessive locks. |
 | 120 | Index defragmentation | Deleted rows are removed without an explicit rebuild of index.<br/><br/>**ALTER INDEX ... REORGANIZE** removes deleted rows from the columnstore index while the table and index remain operational online. |
-| 120 | Accessible on an AlwaysOn [readable secondary replica](http://msdn.microsoft.com/library/ff878253.aspx) | You can improve performance for operational analytics by offloading analytics queries to an AlwaysOn secondary replica. |
+| 120 | Accessible on an AlwaysOn [readable secondary replica](http://msdn.microsoft.com/zh-cn/library/ff878253.aspx) | You can improve performance for operational analytics by offloading analytics queries to an AlwaysOn secondary replica. |
 | 120 | Aggregate push down,<br/>during table scan phase of aggregate functions | Improves performance by completing interim computations earlier in the query plan, so that less data need be copied to later phases.<br/><br/>Applies to **MIN**, **MAX**, **SUM**, **COUNT**, **AVG**.<br/><br/>Applies only when the data type is eight bytes or less, although not for strings. |
 | 120 | Push down of string-based **WHERE** clauses | The predicate pushdown optimization can speed up queries that compare string data of type &#x5b;var&#x5d;char or n&#x5b;var&#x5d;char. This optimization:<br/><br/>• Applies to the common comparison operators including **LIKE** that use bitmap filters.<br/><br/>• Works only when there is one string predicate.<br/><br/>• Works with all the collations the product supports.<br/><br/>If you want more details about bitmap filters, see this blog post: [Intro to Query Execution Bitmap Filters](http://blogs.msdn.com/b/sqlqueryprocessing/archive/2006/10/27/query-execution-bitmaps.aspx). |
 

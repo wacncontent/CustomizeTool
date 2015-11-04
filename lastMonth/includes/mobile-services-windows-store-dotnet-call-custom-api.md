@@ -27,7 +27,7 @@
 
 	This filters the items so that completed items are not returned by the query.
 
-4. In the **MainPage** class, add the following method:
+3. In the **MainPage** class, add the following method:
 
 		private async void ButtonCompleteAll_Click(object sender, RoutedEventArgs e)
 		{
@@ -51,7 +51,7 @@
 		    await dialog.ShowAsync();
 		}
 
-	This method handles the **Click** event for the new button. The [InvokeApiAsync](http://msdn.microsoft.com/zh-cn/library/windowsazure/microsoft.windowsazure.mobileservices.mobileserviceclient.invokeapiasync.aspx) method is called on the client, which sends a POST request to the new custom API. The result returned by the custom API is displayed in a message dialog, as are any errors.
+	This method handles the **Click** event for the new button. The [InvokeApiAsync](http://msdn.microsoft.com/library/windowsazure/microsoft.windowsazure.mobileservices.mobileserviceclient.invokeapiasync.aspx) method is called on the client, which sends a POST request to the new custom API. The result returned by the custom API is displayed in a message dialog, as are any errors.
 
 ## <a name="test-app"></a>Test the app
 

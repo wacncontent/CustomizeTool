@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="How to use Blob Storage from Xamarin (Preview) | Microsoft Azure" 
+	pageTitle="How to use Blob Storage from Xamarin (Preview) | Windows Azure" 
 	description="The Azure Storage Client Library for Xamarin preview enables developers to create iOS, Android, and Windows Store apps with their native user interfaces. This tutorial shows how to use Xamarin to create an Android application that uses Azure Blob storage." 
 	services="storage" 
 	documentationCenter="xamarin" 
@@ -7,18 +7,14 @@
 	manager="carolz" 
 	editor=""/>
 
-<tags 
-	ms.service="storage" 
-	ms.workload="storage" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="09/03/2015" 
-	ms.author="tamram"/>
+<tags
+	ms.service="storage"
+	ms.date="09/03/2015"
+	wacn.date=""/>
 
 # How to use Blob Storage from Xamarin (Preview)
 
-[AZURE.INCLUDE [storage-selector-blob-include](../../includes/storage-selector-blob-include.md)]
+[AZURE.INCLUDE [storage-selector-blob-include](../includes/storage-selector-blob-include.md)]
 
 ## Overview
 
@@ -26,7 +22,7 @@ Xamarin enables developers to use a shared C# codebase to create iOS, Android, a
 
 This tutorial shows you how to use Azure Blob storage with a Xamarin Android application. To learn more about Azure Storage before diving into the code, see [Next steps](#next-steps) at the end of this document.
 
-[AZURE.INCLUDE [storage-create-account-include](../../includes/storage-create-account-include.md)]
+[AZURE.INCLUDE [storage-create-account-include](../includes/storage-create-account-include.md)]
 
 ## Generate a Shared Access Signature
 
@@ -34,7 +30,7 @@ When developing with the Azure Storage Client Library for Xamarin, you cannot au
 
 In this guide, we'll use Azure PowerShell to generate a SAS token. Then we'll create a Xamarin app that uses the generated SAS.
 
-First, you’ll need to install Azure PowerShell. Check out [How to install and configure Azure PowerShell](../powershell-install-configure.md#Install) for instructions.
+First, you’ll need to install Azure PowerShell. Check out [How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure#Install) for instructions.
 
 Next, open Azure PowerShell and run the following commands. Remember to replace `ACCOUNT_NAME` and `ACCOUNT_KEY== ` with your storage account credentials. Replace `CONTAINER_NAME` with a name of your choosing.
 
@@ -45,11 +41,11 @@ Next, open Azure PowerShell and run the following commands. Remember to replace 
 
 The shared access signature URI for the new container should be similar to the following:
 
-	https://storageaccount.blob.core.windows.net/sascontainer?sv=2012-02-12&se=2013-04-13T00%3A12%3A08Z&sr=c&sp=wl&sig=t%2BbzU9%2B7ry4okULN9S0wst%2F8MCUhTjrHyV9rDNLSe8g%3Dsss
+	https://storageaccount.blob.core.chinacloudapi.cn/sascontainer?sv=2012-02-12&se=2013-04-13T00%3A12%3A08Z&sr=c&sp=wl&sig=t%2BbzU9%2B7ry4okULN9S0wst%2F8MCUhTjrHyV9rDNLSe8g%3Dsss
 
 The shared access signature that you created on the container will be valid for the next day. The signature grants full permissions (*e.g.*, read, write, delete, and list) to blobs within the container.
 
-For more information about shared access signatures, see the [SAS tutorial for .NET](storage-dotnet-shared-access-signature-part-2.md).
+For more information about shared access signatures, see the [SAS tutorial for .NET](/documentation/articles/storage-dotnet-shared-access-signature-part-2).
 
 ## Create a new Xamarin Application
 
@@ -173,8 +169,8 @@ In this tutorial, you learned how to use Azure Blob storage and SAS with a Xamar
 
 Learn more about blobs, tables, and queues by checking out the following links:
 
-[Introduction to Microsoft Azure Storage](storage-introduction.md)  
-[How to use Blob Storage from .NET](storage-dotnet-how-to-use-blobs.md)  
-[How to use Table Storage from .NET](storage-dotnet-how-to-use-tables.md)  
-[How to use Queue Storage from .NET](storage-dotnet-how-to-use-queues.md)
+[Introduction to Windows Azure Storage](/documentation/articles/storage-introduction)  
+[How to use Blob Storage from .NET](/documentation/articles/storage-dotnet-how-to-use-blobs)  
+[How to use Table Storage from .NET](/documentation/articles/storage-dotnet-how-to-use-tables)  
+[How to use Queue Storage from .NET](/documentation/articles/storage-dotnet-how-to-use-queues)
  

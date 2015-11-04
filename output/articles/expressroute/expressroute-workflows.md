@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Workflows for configuring an ExpressRoute circuit | Microsoft Azure"
+   pageTitle="Workflows for configuring an ExpressRoute circuit | Windows Azure"
    description="This page walks you through the workflows for configuring ExpressRoute circuit and peerings"
    documentationCenter="na"
    services="expressroute"
@@ -7,13 +7,9 @@
    manager="carolz"
    editor="" />
 <tags
-   ms.service="expressroute"
-   ms.devlang="na"
-   ms.topic="article" 
-   ms.tgt_pltfrm="na"
-   ms.workload="infrastructure-services"
-   ms.date="10/12/2015"
-   ms.author="cherylmc"/>
+	ms.service="expressroute"
+	ms.date="10/12/2015"
+	wacn.date=""/>
 
 # ExpressRoute workflows for circuit provisioning and circuit states
 This page walks you through the service provisioning and routing configuration workflows at a high level. 
@@ -22,13 +18,13 @@ This page walks you through the service provisioning and routing configuration w
 
 The figure and corresponding steps below show the tasks you must follow in order to have an ExpressRoute circuit provisioned end-to-end. 
 
-1. Use PowerShell to configure an ExpressRoute circuit. Follow the instructions in the [Create ExpressRoute circuits](expressroute-howto-circuit-classic.md) article for more details.
+1. Use PowerShell to configure an ExpressRoute circuit. Follow the instructions in the [Create ExpressRoute circuits](/documentation/articles/expressroute-howto-circuit-classic) article for more details.
 
 2. Order connectivity from the service provider. This process varies. Contact your connectivity provider for more details about how to order connectivity.
 
 3. Ensure that the circuit has been provisioned successfully by verifying the ExpressRoute circuit provisioning state through PowerShell. 
 
-4. Configure routing domains. If your connectivity provider manages Layer 3 for you, they will configure routing for your circuit. If your connectivity provider only offers Layer 2 services, you must configure routing per guidelines described in the [routing requirements](expressroute-routing.md) and [routing configuration](expressroute-howto-routing-classic.md) pages.
+4. Configure routing domains. If your connectivity provider manages Layer 3 for you, they will configure routing for your circuit. If your connectivity provider only offers Layer 2 services, you must configure routing per guidelines described in the [routing requirements](/documentation/articles/expressroute-routing) and [routing configuration](/documentation/articles/expressroute-howto-routing-classic) pages.
 
 	-  Enable Azure private peering - You must enable this peering to connect to VMs / cloud services deployed within virtual networks.
 	-  Enable Azure public peering - You must enable Azure public peering if you wish to connect to Azure services hosted on public IP addresses. This is a requirement to access Azure resources if you have chosen to enable default routing for Azure private peering.
@@ -39,7 +35,7 @@ The figure and corresponding steps below show the tasks you must follow in order
 
 	![](./media/expressroute-workflows/expressroute-routing-workflow.png)
 
-5. Linking virtual networks to ExpressRoute circuits - You can link virtual networks to your ExpressRoute circuit. Follow instructions [to link VNets](expressroute-howto-linkvnets-classic.md) to your circuit. These VNets can either be in the same Azure subscription as the ExpressRoute circuit, or can be in a different subscription.
+5. Linking virtual networks to ExpressRoute circuits - You can link virtual networks to your ExpressRoute circuit. Follow instructions [to link VNets](/documentation/articles/expressroute-howto-linkvnets-classic) to your circuit. These VNets can either be in the same Azure subscription as the ExpressRoute circuit, or can be in a different subscription.
 
 
 ## ExpressRoute circuit provisioning states
@@ -110,13 +106,13 @@ It is important to check the BGP session state especially for Microsoft peering.
 
 If the advertised public prefix state is set to a *validation needed* state, the BGP session is not enabled, as the advertised prefixes did not match the AS number in any of the routing registries. 
 
->[AZURE.IMPORTANT] If the advertised public prefixes state is in *manual validation* state, you must open a support ticket with [Microsoft support](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade) and provide evidence that you own the IP addresses advertised along with the associated Autonomous System number.
+>[AZURE.IMPORTANT] If the advertised public prefixes state is in *manual validation* state, you must open a support ticket with [Microsoft support](https://manage.windowsazure.cn/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade) and provide evidence that you own the IP addresses advertised along with the associated Autonomous System number.
 
 
 ## Next steps
 
 - Configure your ExpressRoute connection.
 
-	- [Create an ExpressRoute circuit](expressroute-howto-circuit-classic.md)
-	- [Configure routing](expressroute-howto-routing-classic.md)
-	- [Link a VNet to an ExpressRoute circuit](expressroute-howto-linkvnet-classic.md)
+	- [Create an ExpressRoute circuit](/documentation/articles/expressroute-howto-circuit-classic)
+	- [Configure routing](/documentation/articles/expressroute-howto-routing-classic)
+	- [Link a VNet to an ExpressRoute circuit](/documentation/articles/expressroute-howto-linkvnet-classic)

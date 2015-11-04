@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Automated SQL Server Patching in VMs | Microsoft Azure"
+   pageTitle="Automated SQL Server Patching in VMs | Windows Azure"
    description="Explains the Automated Patching feature for SQL Server Virtual Machines running in Azure."
    services="virtual-machines"
    documentationCenter="na"
@@ -8,17 +8,13 @@
    editor="monicar"
    tags="azure-resource-manager" />
 <tags
-   ms.service="virtual-machines"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="vm-windows-sql-server"
-   ms.workload="infrastructure-services"
-   ms.date="08/05/2015"
-   ms.author="jroth" />
+	ms.service="virtual-machines"
+	ms.date="08/05/2015"
+	wacn.date=""/>
 
 # Automated Patching for SQL Server in Azure Virtual Machines
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
 
 
 Automated Patching establishes a maintenance window for an Azure Virtual Machine running SQL Server 2012 or 2014. Automated Updates can only be installed during this maintenance window. For SQL Server, this ensures that system updates and any associated restarts occur at the best possible time for the database. It depends on the SQL Server IaaS Agent.
@@ -29,11 +25,11 @@ Automated Patching establishes a maintenance window for an Azure Virtual Machine
 
 You can use the [Azure Preview Portal](http://go.microsoft.com/fwlink/?LinkID=525040&clcid=0x409) to configure Automated Patching when you create a new SQL Server Virtual Machine. The following screenshot shows these options under **OPTIONAL CONFIGURATION** | **SQL AUTOMATED PATCHING**.
 
-![SQL Automatic Patching in Azure Portal](./media/virtual-machines-sql-server-automated-patching/IC778484.jpg)
+![SQL Automatic Patching in Azure Management Portal](./media/virtual-machines-sql-server-automated-patching/IC778484.jpg)
 
 For existing SQL Server 2012 or 2014 virtual machines, select the **Auto patching** settings in the **Configuration** section of the virtual machine properties. In the **Automated patching** window, you can enable the feature, set the maintenance schedule and start hour, and choose the maintenance window duration. This is shown in the following screenshot.
 
-![Automated Patching Configuration in Azure Portal](./media/virtual-machines-sql-server-automated-patching/IC792132.jpg)
+![Automated Patching Configuration in Azure Management Portal](./media/virtual-machines-sql-server-automated-patching/IC792132.jpg)
 
 >[AZURE.NOTE] When you enable Automated Patching for the first time, Azure configures the SQL Server IaaS Agent in the background. During this time, the portal will not show that Automated Patching is configured. Wait several minutes for the agent to be installed, configured. After that the portal will reflect the new settings.
 
@@ -88,6 +84,6 @@ The following products are compatible with the SQL Server IaaS Agent features 
 
 ## Next Steps
 
-A related feature for SQL Server VMs in Azure is [Automated Backup for SQL Server in Azure Virtual Machines](virtual-machines-sql-server-automated-backup.md).
+A related feature for SQL Server VMs in Azure is [Automated Backup for SQL Server in Azure Virtual Machines](/documentation/articles/virtual-machines-sql-server-automated-backup).
 
-Review other [resources for running SQL Server in Azure Virtual Machines](virtual-machines-sql-server-infrastructure-services.md).
+Review other [resources for running SQL Server in Azure Virtual Machines](/documentation/articles/virtual-machines-sql-server-infrastructure-services).

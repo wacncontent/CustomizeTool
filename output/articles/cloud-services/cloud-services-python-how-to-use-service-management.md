@@ -9,12 +9,8 @@
 
 <tags
 	ms.service="cloud-services"
-	ms.workload="tbd"
-	ms.tgt_pltfrm="na"
-	ms.devlang="python"
-	ms.topic="article"
 	ms.date="03/11/2015"
-	ms.author="huvalo"/>
+	wacn.date=""/>
 
 # How to use Service Management from Python
 
@@ -23,7 +19,7 @@ This guide will show you how to programmatically perform common service manageme
 ## <a name="WhatIs"> </a>What is Service Management
 The Service Management API provides programmatic access to much of the service management functionality available through the [management portal][management-portal]. The Azure SDK for Python allows you to manage your cloud services and storage accounts.
 
-To use the Service Management API, you will need to [create an Azure account](http://azure.microsoft.com/pricing/free-trial/).
+To use the Service Management API, you will need to [create an Azure account](/pricing/1rmb-trial/).
 
 ## <a name="Concepts"> </a>Concepts
 The Azure SDK for Python wraps the [Azure Service Management API][svc-mgmt-rest-api], which is a REST API. All API operations are performed over SSL and mutually authenticated using X.509 v3 certificates. The management service may be accessed from within a service running in Azure, or directly over the Internet from any application that can send an HTTPS request and receive an HTTPS response.
@@ -42,7 +38,7 @@ To create the `.cer` certificate, execute this:
 
 	`openssl x509 -inform pem -in mycert.pem -outform der -out mycert.cer`
 
-For more information about Azure certificates, see [Managing Certificates in Azure](http://msdn.microsoft.com/en-us/library/windowsazure/gg981929.aspx). For a complete description of OpenSSL parameters, see the documentation at [http://www.openssl.org/docs/apps/openssl.html](http://www.openssl.org/docs/apps/openssl.html).
+For more information about Azure certificates, see [Managing Certificates in Azure](http://msdn.microsoft.com/zh-cn/library/azure/gg981929.aspx). For a complete description of OpenSSL parameters, see the documentation at [http://www.openssl.org/docs/apps/openssl.html](http://www.openssl.org/docs/apps/openssl.html).
 
 After you have created these files, you will need to upload the `.cer` file to Azure via the "Upload" action of the "Settings" tab of the [management portal][management-portal], and you will need to make note of where you saved the `.pem` file.
 
@@ -64,7 +60,7 @@ You can create a self-signed management certificate on your machine using `makec
 
     makecert -sky exchange -r -n "CN=AzureCertificate" -pe -a sha1 -len 2048 -ss My "AzureCertificate.cer"
 
-The command will create the `.cer` file, and install it in the **Personal** certificate store. For more details, see [Create and Upload a Management Certificate for Azure](http://msdn.microsoft.com/en-us/library/windowsazure/gg551722.aspx).
+The command will create the `.cer` file, and install it in the **Personal** certificate store. For more details, see [Create and Upload a Management Certificate for Azure](http://msdn.microsoft.com/zh-cn/library/azure/gg551722.aspx).
 
 After you have created the certificate, you will need to upload the `.cer` file to Azure via the "Upload" action of the "Settings" tab of the [management portal][management-portal].
 
@@ -82,7 +78,7 @@ In the example above, `sms` is a **ServiceManagementService** object. The **Serv
 
 ## <a name="ListAvailableLocations"> </a>How to: List available locations
 
-To list the locations that are available for hosting services, use the **list\_locations** method:
+To list the locations that are available for hosting services, use the **list_locations** method:
 
 	from azure import *
 	from azure.servicemanagement import *
@@ -93,17 +89,17 @@ To list the locations that are available for hosting services, use the **list\_l
 	for location in result:
 		print(location.name)
 
-When you create a cloud service or storage service you will need to provide a valid location. The **list\_locations** method will always return an up-to-date list of the currently available locations. As of this writing, the available locations are:
+When you create a cloud service or storage service you will need to provide a valid location. The **list_locations** method will always return an up-to-date list of the currently available locations. As of this writing, the available locations are:
 
 - West Europe
-- North Europe
+- China North
 - Southeast Asia
 - East Asia
-- Central US
-- North Central US
-- South Central US
-- West US
-- East US
+- China North
+- China North
+- China East
+- China North
+- China East
 - Japan East
 - Japan West
 - Brazil South
@@ -112,7 +108,7 @@ When you create a cloud service or storage service you will need to provide a va
 
 ## <a name="CreateCloudService"> </a>How to: Create a cloud service
 
-When you create an application and run it in Azure, the code and configuration together are called an Azure [cloud service] (known as a *hosted service* in earlier Azure releases). The **create\_hosted\_service** method allows you to create a new hosted service by providing a hosted service name (which must be unique in Azure), a label (automatically encoded to base64), a description and a location.
+When you create an application and run it in Azure, the code and configuration together are called an Azure [cloud service] (known as a *hosted service* in earlier Azure releases). The **create_hosted_service** method allows you to create a new hosted service by providing a hosted service name (which must be unique in Azure), a label (automatically encoded to base64), a description and a location.
 
 	from azure import *
 	from azure.servicemanagement import *
@@ -122,11 +118,11 @@ When you create an application and run it in Azure, the code and configuration t
 	name = 'myhostedservice'
 	label = 'myhostedservice'
 	desc = 'my hosted service'
-	location = 'West US'
+	location = 'China North'
 
 	sms.create_hosted_service(name, label, desc, location)
 
-You can list all the hosted services for your subscription with the **list\_hosted\_services** method:
+You can list all the hosted services for your subscription with the **list_hosted_services** method:
 
 	result = sms.list_hosted_services()
 
@@ -136,7 +132,7 @@ You can list all the hosted services for your subscription with the **list\_host
 		print('Location: ' + hosted_service.hosted_service_properties.location)
 		print('')
 
-If you want to get information about a particular hosted service, you can do so by passing the hosted service name to the **get\_hosted\_service\_properties** method:
+If you want to get information about a particular hosted service, you can do so by passing the hosted service name to the **get_hosted_service_properties** method:
 
 	hosted_service = sms.get_hosted_service_properties('myhostedservice')
 
@@ -144,11 +140,11 @@ If you want to get information about a particular hosted service, you can do so 
 	print('Management URL: ' + hosted_service.url)
 	print('Location: ' + hosted_service.hosted_service_properties.location)
 
-After you have created a cloud service, you can deploy your code to the service with the **create\_deployment** method.
+After you have created a cloud service, you can deploy your code to the service with the **create_deployment** method.
 
 ## <a name="DeleteCloudService"> </a>How to: Delete a cloud service
 
-You can delete a cloud service by passing the service name to the **delete\_hosted\_service** method:
+You can delete a cloud service by passing the service name to the **delete_hosted_service** method:
 
 	sms.delete_hosted_service('myhostedservice')
 
@@ -156,7 +152,7 @@ Note that before you can delete a service, all deployments for the the service m
 
 ## <a name="DeleteDeployment"> </a>How to: Delete a deployment
 
-To delete a deployment, use the **delete\_deployment** method. The following example shows how to delete a deployment named `v1`.
+To delete a deployment, use the **delete_deployment** method. The following example shows how to delete a deployment named `v1`.
 
 	from azure import *
 	from azure.servicemanagement import *
@@ -176,7 +172,7 @@ A [storage service] gives you access to Azure [Blobs][azure-blobs], [Tables][azu
 
 	name = 'mystorageaccount'
 	label = 'mystorageaccount'
-	location = 'West US'
+	location = 'China North'
 	desc = 'My storage account description.'
 
 	result = sms.create_storage_account(name, desc, label, location=location)
@@ -184,9 +180,9 @@ A [storage service] gives you access to Azure [Blobs][azure-blobs], [Tables][azu
 	operation_result = sms.get_operation_status(result.request_id)
 	print('Operation status: ' + operation_result.status)
 
-Note in the example above that the status of the **create\_storage\_account** operation can be retrieved by passing the result returned by **create\_storage\_account** to the **get\_operation\_status** method.  
+Note in the example above that the status of the **create_storage_account** operation can be retrieved by passing the result returned by **create_storage_account** to the **get_operation_status** method.  
 
-You can list your storage accounts and their properties with the **list\_storage\_accounts** method:
+You can list your storage accounts and their properties with the **list_storage_accounts** method:
 
 	from azure import *
 	from azure.servicemanagement import *
@@ -201,7 +197,7 @@ You can list your storage accounts and their properties with the **list\_storage
 
 ## <a name="DeleteStorageService"> </a>How to: Delete a storage service
 
-You can delete a storage service by passing the storage service name to the **delete\_storage\_account** method. Deleting a storage service will delete all data stored in the service (blobs, tables and queues).
+You can delete a storage service by passing the storage service name to the **delete_storage_account** method. Deleting a storage service will delete all data stored in the service (blobs, tables and queues).
 
 	from azure import *
 	from azure.servicemanagement import *
@@ -212,7 +208,7 @@ You can delete a storage service by passing the storage service name to the **de
 
 ## <a name="ListOperatingSystems"> </a>How to: List available operating systems
 
-To list the operating systems that are available for hosting services, use the **list\_operating\_systems** method:
+To list the operating systems that are available for hosting services, use the **list_operating_systems** method:
 
 	from azure import *
 	from azure.servicemanagement import *
@@ -226,7 +222,7 @@ To list the operating systems that are available for hosting services, use the *
 		print('Family: ' + os.family_label)
 		print('Active: ' + str(os.is_active))
 
-Alternatively, you can use the **list\_operating\_system\_families** method, which groups the operating systems by family:
+Alternatively, you can use the **list_operating_system_families** method, which groups the operating systems by family:
 
 	result = sms.list_operating_system_families()
 
@@ -240,7 +236,7 @@ Alternatively, you can use the **list\_operating\_system\_families** method, whi
 
 ## <a name="CreateVMImage"> </a>How to: Create an operating system image
 
-To add an operating system image to the image repository, use the **add\_os\_image** method:
+To add an operating system image to the image repository, use the **add_os_image** method:
 
 	from azure import *
 	from azure.servicemanagement import *
@@ -257,7 +253,7 @@ To add an operating system image to the image repository, use the **add\_os\_ima
 	operation_result = sms.get_operation_status(result.request_id)
 	print('Operation status: ' + operation_result.status)
 
-To list the operating system images that are available, use the **list\_os\_images** method. This includes all platform images and user images:
+To list the operating system images that are available, use the **list_os_images** method. This includes all platform images and user images:
 
 	result = sms.list_os_images()
 
@@ -273,7 +269,7 @@ To list the operating system images that are available, use the **list\_os\_imag
 
 ## <a name="DeleteVMImage"> </a>How to: Delete an operating system image
 
-To delete a user image, use the **delete\_os\_image** method:
+To delete a user image, use the **delete_os_image** method:
 
 	from azure import *
 	from azure.servicemanagement import *
@@ -287,7 +283,7 @@ To delete a user image, use the **delete\_os\_image** method:
 
 ## <a name="CreateVM"> </a>How to: Create a virtual machine
 
-To create a virtual machine, you first need to create a [cloud service](#CreateCloudService).  Then create the virtual machine deployment using the **create\_virtual\_machine\_deployment** method:
+To create a virtual machine, you first need to create a [cloud service](#CreateCloudService).  Then create the virtual machine deployment using the **create_virtual_machine_deployment** method:
 
 	from azure import *
 	from azure.servicemanagement import *
@@ -295,7 +291,7 @@ To create a virtual machine, you first need to create a [cloud service](#CreateC
 	sms = ServiceManagementService(subscription_id, certificate_path)
 
 	name = 'myvm'
-	location = 'West US'
+	location = 'China North'
 
 	#Set the location
 	sms.create_hosted_service(service_name=name,
@@ -326,7 +322,7 @@ To create a virtual machine, you first need to create a [cloud service](#CreateC
 
 ## <a name="DeleteVM"> </a>How to: Delete a virtual machine
 
-To delete a virtual machine, you first delete the deployment using the **delete\_deployment** method:
+To delete a virtual machine, you first delete the deployment using the **delete_deployment** method:
 
 	from azure import *
 	from azure.servicemanagement import *
@@ -336,13 +332,13 @@ To delete a virtual machine, you first delete the deployment using the **delete\
 	sms.delete_deployment(service_name='myvm',
 		deployment_name='myvm')
 
-The cloud service can then be deleted using the **delete\_hosted\_service** method:
+The cloud service can then be deleted using the **delete_hosted_service** method:
 
 	sms.delete_hosted_service(service_name='myvm')
 
 ##How To: Create a Virtual Machine from a Captured Virtual Machine Image
 
-To capture a VM image, you first call the **capture\_vm\_image** method:
+To capture a VM image, you first call the **capture_vm_image** method:
 
 	from azure import *
 	from azure.servicemanagement import *
@@ -369,11 +365,11 @@ To capture a VM image, you first call the **capture\_vm\_image** method:
 			image
 		)
 
-Next, to make sure that you have successfully captured the image, use the **list\_vm\_images** api and make sure your image is displayed in the results:
+Next, to make sure that you have successfully captured the image, use the **list_vm_images** api and make sure your image is displayed in the results:
 
 	images = sms.list_vm_images()
 
-To finally create the virtual machine using the captured image, use the **create\_virtual\_machine\_deployment** method as before, but this time pass in the vm_image_name instead
+To finally create the virtual machine using the captured image, use the **create_virtual_machine_deployment** method as before, but this time pass in the vm_image_name instead
 
 	from azure import *
 	from azure.servicemanagement import *
@@ -381,7 +377,7 @@ To finally create the virtual machine using the captured image, use the **create
 	sms = ServiceManagementService(subscription_id, certificate_path)
 
 	name = 'myvm'
-	location = 'West US'
+	location = 'China North'
 
 	#Set the location
 	sms.create_hosted_service(service_name=name,
@@ -398,9 +394,9 @@ To finally create the virtual machine using the captured image, use the **create
 		role_size='Small',
 		vm_image_name = image_name)
 
-To learn more about how to capture a Linux Virtual Machine, see [How to Capture a Linux Virtual Machine.](../virtual-machines-linux-capture-image.md)
+To learn more about how to capture a Linux Virtual Machine, see [How to Capture a Linux Virtual Machine.](/documentation/articles/virtual-machines-linux-capture-image)
 
-To learn more about how to capture a Windows Virtual Machine, see [How to Capture a Windows Virtual Machine.](../virtual-machines-capture-image-windows-server.md)
+To learn more about how to capture a Windows Virtual Machine, see [How to Capture a Windows Virtual Machine.](/documentation/articles/virtual-machines-capture-image-windows-server)
 
 ## <a name="What's Next"> </a>Next Steps
 
@@ -426,21 +422,21 @@ For more information, see the [Python Developer Center](/develop/python/).
 [How to: Create a virtual machine]: #CreateVM
 [How to: Delete a virtual machine]: #DeleteVM
 [Next Steps]: #NextSteps
-[management-portal]: https://manage.windowsazure.com/
-[svc-mgmt-rest-api]: http://msdn.microsoft.com/library/windowsazure/ee460799.aspx
+[management-portal]: https://manage.windowsazure.cn/
+[svc-mgmt-rest-api]: http://msdn.microsoft.com/zh-cn/library/azure/ee460799.aspx
 
 
-[download-SDK-Python]: https://www.windowsazure.com/develop/python/common-tasks/install-python/
-[cloud service]:http://windowsazure.com/documentation/articles/cloud-services-what-is
-[service package]: http://msdn.microsoft.com/library/windowsazure/jj155995.aspx
-[Azure PowerShell cmdlets]: https://www.windowsazure.com/develop/php/how-to-guides/powershell-cmdlets/
-[cspack commandline tool]: http://msdn.microsoft.com/library/windowsazure/gg432988.aspx
-[Deploying an Azure Service]: http://msdn.microsoft.com/library/windowsazure/gg433027.aspx
-[storage service]: https://www.windowsazure.com/manage/services/storage/what-is-a-storage-account/
-[azure-blobs]: https://www.windowsazure.com/develop/python/how-to-guides/blob-service/
-[azure-tables]: https://www.windowsazure.com/develop/python/how-to-guides/table-service/
-[azure-queues]: https://www.windowsazure.com/develop/python/how-to-guides/queue-service/
-[Azure Service Configuration Schema (.cscfg)]: http://msdn.microsoft.com/library/windowsazure/ee758710.aspx
-[Cloud Services]: http://msdn.microsoft.com/library/windowsazure/jj155995.aspx
-[Virtual Machines]: http://msdn.microsoft.com/library/windowsazure/jj156003.aspx
+[download-SDK-Python]: /develop/python/common-tasks/install-python/
+[cloud service]:http://windowsazure.cn/documentation/articles/cloud-services-what-is
+[service package]: http://msdn.microsoft.com/zh-cn/library/azure/jj155995.aspx
+[Azure PowerShell cmdlets]: /develop/php/how-to-guides/powershell-cmdlets/
+[cspack commandline tool]: http://msdn.microsoft.com/zh-cn/library/azure/gg432988.aspx
+[Deploying an Azure Service]: http://msdn.microsoft.com/zh-cn/library/azure/gg433027.aspx
+[storage service]: https://azure.microsoft.com/manage/services/storage/what-is-a-storage-account/
+[azure-blobs]: /develop/python/how-to-guides/blob-service/
+[azure-tables]: /develop/python/how-to-guides/table-service/
+[azure-queues]: /develop/python/how-to-guides/queue-service/
+[Azure Service Configuration Schema (.cscfg)]: http://msdn.microsoft.com/zh-cn/library/azure/ee758710.aspx
+[Cloud Services]: http://msdn.microsoft.com/zh-cn/library/azure/jj155995.aspx
+[Virtual Machines]: http://msdn.microsoft.com/zh-cn/library/azure/jj156003.aspx
  

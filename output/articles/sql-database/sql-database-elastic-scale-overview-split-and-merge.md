@@ -6,20 +6,16 @@
     manager="jeffreyg" 
     authors="sidneyh"/>
 
-<tags 
-    ms.service="sql-database" 
-    ms.workload="sql-database" 
-    ms.tgt_pltfrm="na" 
-    ms.devlang="na" 
-    ms.topic="article" 
-    ms.date="07/29/2015" 
-    ms.author="sidneyh" />
+<tags
+	ms.service="sql-database"
+	ms.date="07/29/2015"
+	wacn.date=""/>
 
 # Scaling using the Elastic Database split-merge tool
 
 If you choose not to use the simple model of allocating separate databases for each shardlet (tenant), your application may need to flexibly redistribute data among databases when capacity needs fluctuate. Elastic database tools includes a customer-hosted split-merge tool for rebalancing the data distribution and managing hotspots for sharded applications. It builds on an underlying capability for moving shardlets on demand between different databases and integrates with shard map management to maintain consistent mappings.
 
-The split-merge tool manages scale-in and scale-out; you can add or remove databases from your shard set and use the split-merge tool to rebalance the distribution of shardlets among them. (For term definitions, see [Elastic scale glossary](sql-database-elastic-scale-glossary.md)). 
+The split-merge tool manages scale-in and scale-out; you can add or remove databases from your shard set and use the split-merge tool to rebalance the distribution of shardlets among them. (For term definitions, see [Elastic scale glossary](/documentation/articles/sql-database-elastic-scale-glossary)). 
 
 ## What's new in split-merge
 
@@ -37,7 +33,7 @@ The 1.0.0 release of the split-merge tool provides the following improvements:
 
 To upgrade to the latest version of split-merge, follow these steps:
 
-1. Download the latest version of the split-merge package from NuGet as described in [Download the split-merge packages](sql-database-elastic-scale-configure-deploy-split-and-merge.md#download-the-Split-Merge-packages).
+1. Download the latest version of the split-merge package from NuGet as described in [Download the split-merge packages](/documentation/articles/sql-database-elastic-scale-configure-deploy-split-and-merge#download-the-Split-Merge-packages).
 2. Change your cloud service configuration file for your split-merge deployment to reflect the new configuration parameters. A new required parameter is the information about the certificate used for encryption. An easy way to do this is to compare the new configuration template file from the download against your existing configuration. Make sure you add the settings for “DataEncryptionPrimaryCertificateThumbprint” and “DataEncryptionPrimary” for both the web and the worker role.
 3. Before deploying the update to Azure, ensure that all currently running split-merge operations have finished. You can easily do this by querying the RequestStatus and PendingWorkflows tables in the split-merge metadata database for ongoing requests.
 4. Update your existing cloud service deployment for split-merge in your Azure subscription with the new package and your updated service configuration file.
@@ -66,9 +62,9 @@ Figure 1: Conceptual Overview of split-merge
 
 ## Concepts & Key Features
 
-**Customer-Hosted Services**: The split-merge is delivered as a customer-hosted service. You must deploy and host the service in your Microsoft Azure subscription. The package you download from NuGet contains a configuration template to complete with the information for your specific deployment. See the [split-merge tutorial](sql-database-elastic-scale-configure-deploy-split-and-merge.md) for details. Since the service runs in your Azure subscription, you can control and configure most security aspects of the service. The default template includes the options to configure SSL, certificate-based client authentication, encryption for stored credentials, DoS guarding and IP restrictions. You can find more information on the security aspects in the following document [split-merge security configuration](sql-database-elastic-scale-split-merge-security-configuration.md).
+**Customer-Hosted Services**: The split-merge is delivered as a customer-hosted service. You must deploy and host the service in your Windows Azure subscription. The package you download from NuGet contains a configuration template to complete with the information for your specific deployment. See the [split-merge tutorial](/documentation/articles/sql-database-elastic-scale-configure-deploy-split-and-merge) for details. Since the service runs in your Azure subscription, you can control and configure most security aspects of the service. The default template includes the options to configure SSL, certificate-based client authentication, encryption for stored credentials, DoS guarding and IP restrictions. You can find more information on the security aspects in the following document [split-merge security configuration](/documentation/articles/sql-database-elastic-scale-split-merge-security-configuration).
 
-The default deployed service runs with one worker and one web role. Each uses the A1 VM size in Azure Cloud Services. While you cannot modify these settings when deploying the package, you could change them after a successful deployment in the running cloud service, (through the Azure portal). Note that the worker role must not be configured for more than a single instance for technical reasons. 
+The default deployed service runs with one worker and one web role. Each uses the A1 VM size in Azure Cloud Services. While you cannot modify these settings when deploying the package, you could change them after a successful deployment in the running cloud service, (through the Azure Management Portal). Note that the worker role must not be configured for more than a single instance for technical reasons. 
 
 **Shard Map Integration**: The split-merge service interacts with the shard map of the application. When using the split-merge service to split or merge ranges or to move shardlets between shards, the service automatically keeps the shard map up to date. To do so, the service connects to the shard map manager database of the application and maintains ranges and mappings as split/merge/move requests progress. This ensures that the shard map always presents an up-to-date view when split-merge operations are going on. Split, merge and shardlet movement operations are implemented by moving a batch of shardlets from the source shard to the target shard. During the shardlet movement operation the shardlets subject to the current batch are marked as offline in the shard map and are unavailable for data-dependent routing connections using the **OpenConnectionForKey** API. 
 
@@ -110,7 +106,7 @@ The tables ‘region’ and ‘nation’ are defined as reference tables and wil
 
 ## Getting the Service Binaries
 
-The service binaries for split-merge are provided through [Nuget](http://www.nuget.org/packages/Microsoft.Azure.SqlDatabase.ElasticScale.Service.SplitMerge/). See the step-by-step [Split-Merge tutorial](sql-database-elastic-scale-configure-deploy-split-and-merge.md) for more information about downloading the binaries.
+The service binaries for split-merge are provided through [Nuget](http://www.nuget.org/packages/Microsoft.Azure.SqlDatabase.ElasticScale.Service.SplitMerge/). See the step-by-step [Split-Merge tutorial](/documentation/articles/sql-database-elastic-scale-configure-deploy-split-and-merge) for more information about downloading the binaries.
 
 ## The split-merge user interface
 
@@ -152,7 +148,7 @@ The current implementation of the split-merge service is subject to the followin
 
 ## Billing 
 
-The split-merge service runs as a cloud service in your Microsoft Azure subscription. Therefore charges for cloud services apply to your instance of the service. Unless you frequently perform split/merge/move operations, we recommend you delete your split-merge cloud service. That saves costs for running or deployed cloud service instances. You can re-deploy and start your readily runnable configuration whenever you need to perform split or merge operations. 
+The split-merge service runs as a cloud service in your Windows Azure subscription. Therefore charges for cloud services apply to your instance of the service. Unless you frequently perform split/merge/move operations, we recommend you delete your split-merge cloud service. That saves costs for running or deployed cloud service instances. You can re-deploy and start your readily runnable configuration whenever you need to perform split or merge operations. 
  
 ## Monitoring 
 ### Status Tables 
@@ -174,7 +170,7 @@ The split-merge Service provides the **RequestStatus** table in the metadata sto
 
 ### Azure Diagnostics
 
-The split-merge service uses Azure Diagnostics based on Azure SDK 2.5 for monitoring and diagnostics. You control the diagnostics configuration as explained here: [Enabling Diagnostics in Azure Cloud Services and Virtual Machines](../cloud-services-dotnet-diagnostics.md). The download package includes two diagnostics configurations – one for the web role and one for the worker role. These diagnostics configurations for the service follow the guidance from [Cloud Service Fundamentals in Microsoft Azure](https://code.msdn.microsoft.com/windowsazure/Cloud-Service-Fundamentals-4ca72649). It includes the definitions to log Performance Counters, IIS logs, Windows Event Logs, and split-merge application event logs. 
+The split-merge service uses Azure Diagnostics based on Azure SDK 2.5 for monitoring and diagnostics. You control the diagnostics configuration as explained here: [Enabling Diagnostics in Azure Cloud Services and Virtual Machines](/documentation/articles/cloud-services-dotnet-diagnostics). The download package includes two diagnostics configurations – one for the web role and one for the worker role. These diagnostics configurations for the service follow the guidance from [Cloud Service Fundamentals in Windows Azure](https://code.msdn.microsoft.com/windowsazure/Cloud-Service-Fundamentals-4ca72649). It includes the definitions to log Performance Counters, IIS logs, Windows Event Logs, and split-merge application event logs. 
 
 ## Deploying Diagnostics 
 
@@ -200,11 +196,11 @@ To enable monitoring and diagnostics using the diagnostic configuration for the 
     
     Set-AzureServiceDiagnosticsExtension -StorageContext $storageContext -DiagnosticsConfigurationPath $config_path -ServiceName $service_name -Slot Production -Role "SplitMergeWorker" 
 
-You can find more information on how to configure and deploy diagnostics settings here: [Enabling Diagnostics in Azure Cloud Services and Virtual Machines](../cloud-services-dotnet-diagnostics.md). 
+You can find more information on how to configure and deploy diagnostics settings here: [Enabling Diagnostics in Azure Cloud Services and Virtual Machines](/documentation/articles/cloud-services-dotnet-diagnostics). 
 
 ## Retrieving diagnostics 
 
-You can easily access your diagnostics from the Visual Studio Server Explorer in the Azure part of the Server Explorer tree. Open a Visual Studio instance, and in the menu bar click View, and Server Explorer. Click the Azure icon to connect to your Azure subscription. Then navigate to Azure -> Storage -> <your storage account> -> Tables -> WADLogsTable. For more information, see [Browsing Storage Resources with Server Explorer](http://msdn.microsoft.com/library/azure/ff683677.aspx). 
+You can easily access your diagnostics from the Visual Studio Server Explorer in the Azure part of the Server Explorer tree. Open a Visual Studio instance, and in the menu bar click View, and Server Explorer. Click the Azure icon to connect to your Azure subscription. Then navigate to Azure -> Storage -> <your storage account> -> Tables -> WADLogsTable. For more information, see [Browsing Storage Resources with Server Explorer](http://msdn.microsoft.com/zh-cn/library/azure/ff683677.aspx). 
 
 ![WADLogsTable][2]
 
@@ -228,13 +224,13 @@ In addition, a uniqueness property with the sharding key as the leading column w
 -    The sharding key should be the leading column in your primary key or unique index definition. That ensures the best performance for the split or merge validation queries, and for the actual data movement and deletion operations which always operate on sharding key ranges.
 -    Collocate your split-merge service in the region and data center where your databases reside. 
 
-[AZURE.INCLUDE [elastic-scale-include](../../includes/elastic-scale-include.md)]
+[AZURE.INCLUDE [elastic-scale-include](../includes/elastic-scale-include.md)]
 
 ## References 
 
-* [split-merge tutorial](sql-database-elastic-scale-configure-deploy-split-and-merge.md)
+* [split-merge tutorial](/documentation/articles/sql-database-elastic-scale-configure-deploy-split-and-merge)
 
-* [Elastic Scale Security Considerations](sql-database-elastic-scale-split-merge-security-configuration.md)  
+* [Elastic Scale Security Considerations](/documentation/articles/sql-database-elastic-scale-split-merge-security-configuration)  
 
 
 <!--Anchors-->

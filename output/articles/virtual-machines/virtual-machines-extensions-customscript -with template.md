@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Custom scripts on VMs using templates | Microsoft Azure"
+   pageTitle="Custom scripts on VMs using templates | Windows Azure"
    description="Automate Windows and Linux Azure VM configuration tasks by using the Custom Script extension with Resource Manager templates"
    services="virtual-machines"
    documentationCenter=""
@@ -9,21 +9,17 @@
    tags="azure-resource-manager"/>
 
 <tags
-   ms.service="virtual-machines"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="vm-multiple"
-   ms.workload="infrastructure-services"
-   ms.date="07/01/2015"
-   ms.author="kundanap"/>
+	ms.service="virtual-machines"
+	ms.date="07/01/2015"
+	wacn.date=""/>
 
 # Using Custom Script extension With Azure Resource Manager templates
 
 This article gives an overview of writing Azure Resource Manager templates with Custom Script extension for bootstrapping workloads on a Linux or a Windows VM.
 
-For an overview of Custom Script extension please refer to the article [here](virtual-machines-extensions-customscript.md).
+For an overview of Custom Script extension please refer to the article [here](/documentation/articles/virtual-machines-extensions-customscript).
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-rm-include.md)] [classic deployment model](virtual-machines-extensions-customscript.md).
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] [classic deployment model](/documentation/articles/virtual-machines-extensions-customscript).
 
 Ever since its launch, Custom Script extension has been used widely to configure workloads on both Windows and Linux VMs. With the introduction of Azure Resource Manager templates, users can now create a single template that not only provisions the VM but also configures the workloads on it.
 
@@ -31,16 +27,16 @@ Ever since its launch, Custom Script extension has been used widely to configure
 
 Azure Resource Manager template allow you to declaratively specify the Azure IaaS infrastructure in Json language by defining the dependencies between resources. For a detailed overview of Azure Resource Manager templates, please refer to the articles below:
 
-<a href="https://azure.microsoft.com/en-us/documentation/articles/resource-group-overview/" target="_blank">Resource Group Overview</a>.
+<a href="/documentation/articles/resource-group-overview/" target="_blank">Resource Group Overview</a>.
 <br/>
-<a href="https://azure.microsoft.com/en-us/documentation/articles/virtual-machines-deploy-rmtemplates-azure-cli/" target="_blank">Deploying Templates with Azure CLI</a>.
+<a href="/documentation/articles/virtual-machines-deploy-rmtemplates-azure-cli/" target="_blank">Deploying Templates with Azure CLI</a>.
 <br/>
-<a href="https://azure.microsoft.com/en-us/documentation/articles/virtual-machines-deploy-rmtemplates-powershell/" target="_blank">Deploying Templates with Azure Powershell</a>.
+<a href="/documentation/articles/virtual-machines-deploy-rmtemplates-powershell/" target="_blank">Deploying Templates with Azure Powershell</a>.
 
 ### Pre-Requistes for running Custom Script extension
 
 1. Install the latest Azure PowerShell Cmdlets or Azure CLI from <a href="http://azure.microsoft.com/downloads" target="_blank">here</a>.
-2. If the scripts will be run on an existing VM, make sure VM Agent is enabled on the VM, if not follow this <a href="https://msdn.microsoft.com/library/azure/dn832621.aspx" target="_blank">article</a> to install one.
+2. If the scripts will be run on an existing VM, make sure VM Agent is enabled on the VM, if not follow this <a href="https://msdn.microsoft.com/zh-cn/library/azure/dn832621.aspx" target="_blank">article</a> to install one.
 3. Upload the scripts that you want to run on the VM to Azure Storage. The scripts can come from a single or multiple storage containers.
 4. Alternatively the scripts can also be uploaded to a Github account.
 5. The script should be authored in such a way that the entry script which is launched by the extension in turn launches other scripts.
@@ -89,7 +85,7 @@ Define the following resource in the Resource section of the template
            "typeHandlerVersion": "1.4",
            "settings": {
                "fileUris": [
-               "http://Yourstorageaccount.blob.core.windows.net/customscriptfiles/start.ps1"
+               "http://Yourstorageaccount.blob.core.chinacloudapi.cn/customscriptfiles/start.ps1"
            ],
            "commandToExecute": "powershell.exe -ExecutionPolicy Unrestricted -File start.ps1"
          }

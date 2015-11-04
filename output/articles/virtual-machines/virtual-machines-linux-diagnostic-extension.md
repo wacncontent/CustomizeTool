@@ -1,6 +1,6 @@
 
 <properties
-		pageTitle="Monitoring a Linux VM with a VM extension | Microsoft Azure"
+		pageTitle="Monitoring a Linux VM with a VM extension | Windows Azure"
 		description="Learn how to use the Linux Diagnostic Extension to monitor performance and diagnostic data of a Linux VM in Azure."
 		services="virtual-machines"
 		documentationCenter=""
@@ -10,20 +10,16 @@
   		tags="azure-service-management"/>
 
 <tags
-		ms.service="virtual-machines"
-		ms.workload="infrastructure-services"
-		ms.tgt_pltfrm="vm-linux"
-		ms.devlang="na"
-		ms.topic="article"
-		ms.date="07/20/2015"
-		ms.author="Ning"/>
+	ms.service="virtual-machines"
+	ms.date="07/20/2015"
+	wacn.date=""/>
 
 
 # Use the Linux Diagnostic Extension to monitor the performance and diagnostic data of a Linux VM
 
 ## Introduction
 
-The Linux Diagnostic Extension helps a user monitor the Linux VMs running on Microsoft Azure, with the following functionalities:
+The Linux Diagnostic Extension helps a user monitor the Linux VMs running on Windows Azure, with the following functionalities:
 
 - Collects and uploads Linux VM's system performance, diagnostic, and syslog data to user’s storage table.
 - Enables user to customize the data metrics that will be collected and uploaded.
@@ -35,20 +31,20 @@ For version 2.0, the data includes:
 - All system data specified in this [document](https://scx.codeplex.com/wikipage?title=xplatproviders").
 - User specified log files.
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
 
 
 ## How to enable the extension
-The extension can be enabled through the [Azure portal](https://ms.portal.azure.com/#), Azure PowerShell, or Azure CLI scripts.
+The extension can be enabled through the [Azure Management Portal](https://ms.portal.azure.com/#), Azure PowerShell, or Azure CLI scripts.
 
-To view and configure the system and performance data directly from the Azure portal, follow these [steps](http://azure.microsoft.com/blog/2014/09/02/windows-azure-virtual-machine-monitoring-with-wad-extension/ "URL to the Windows blog").
+To view and configure the system and performance data directly from the Azure Management Portal, follow these [steps](http://azure.microsoft.com/blog/2014/09/02/windows-azure-virtual-machine-monitoring-with-wad-extension/ "URL to the Windows blog").
 
 
 This article focuses on enabling and configuring the extension through Azure CLI commands.This allows you to read and view the data from the storage table directly.
 
 
 ## Prerequisites
-- Microsoft Azure Linux Agent version 2.0.6 or later.
+- Windows Azure Linux Agent version 2.0.6 or later.
 Note that most Azure VM Linux gallery images include version 2.0.6 or later. You can run **WAAgent -version** to confirm the version installed in the VM. If the VM is running a version earlier than 2.0.6 you can follow these [instructions](https://github.com/Azure/WALinuxAgent "instructions") to update it.
 - [Azure CLI](./xplat-cli-install.md). Follow [this guidance](./xplat-cli-install.md) to set up the Azure CLI environment on your machine. After the Azure CLI is installed, you can use the **azure** command from your command-line interface (Bash, Terminal, command prompt) to access the Azure CLI commands. For example, run **azure vm extension set --help** for detailed usage, run **azure login** to log in to Azure, run **azure vm list** to list all the virtual machines you have on Azure.
 - A storage account to store the data. You will need a previously created storage account name and access key to upload the data to your storage.
@@ -133,7 +129,7 @@ Step 2. Run **azure vm extension set vm_name LinuxDiagnostic Microsoft.OSTCExten
 
 
 ## Review your data
-The performance and diagnostic data are stored in an Azure Storage table. Review [this article](storage-ruby-how-to-use-table-storage.md) to learn how to access the data in the storage table using Azure CLI scripts.
+The performance and diagnostic data are stored in an Azure Storage table. Review [this article](/documentation/articles/storage-ruby-how-to-use-table-storage) to learn how to access the data in the storage table using Azure CLI scripts.
 
 In addition, you can use following UI tools to access the data:
 
@@ -148,4 +144,4 @@ If have enabled fileCfg or perfCfg specified in Scenario 2 and 3, you can use th
 
 ## Known issues
 - For version 2.0, the Rsyslog information and customer specified log file can only be accessed via scripting.
-- For version 2.0, if you have enabled the Linux Diagnostic extension via script first, then you cannot view the data from the Azure portal. If you enable the extension from the portal first, then the scripts will still work.
+- For version 2.0, if you have enabled the Linux Diagnostic extension via script first, then you cannot view the data from the Azure Management Portal. If you enable the extension from the portal first, then the scripts will still work.

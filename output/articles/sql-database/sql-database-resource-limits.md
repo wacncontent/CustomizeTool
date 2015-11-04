@@ -10,12 +10,8 @@
 
 <tags
 	ms.service="sql-database"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.tgt_pltfrm="na"
-	ms.workload="data-management"
 	ms.date="09/11/2015"
-	ms.author="jroth" />
+	wacn.date=""/>
 
 
 # Azure SQL Database resource limits
@@ -39,7 +35,7 @@ Monitor the resource utilization as well as the average response times of querie
 3.	Optimize queries to reduce the resource utilization of each query. For more information, see the Query Tuning/Hinting section in the Azure SQL Database Performance Guidance article.
 
 ## Enforcement of limits
-Resources other than CPU, Memory, Log I/O, and Data I/O are enforced by denying new requests when limits are reached. Clients will receive an [error message](sql-database-develop-error-messages.md) depending on the limit that has been reached.
+Resources other than CPU, Memory, Log I/O, and Data I/O are enforced by denying new requests when limits are reached. Clients will receive an [error message](/documentation/articles/sql-database-develop-error-messages) depending on the limit that has been reached.
 
 For example, the number of connections to a SQL database as well as the number of concurrent requests that can be processed are restricted. SQL Database allows the number of connections to the database to be greater than the number of concurrent requests to support connection pooling. While the amount of connections that are available can easily be controlled by the application, the amount of parallel requests is often times harder to estimate and to control. Especially during peak loads when the application either sends too many requests or the database reaches its resource limits and starts piling up worker threads due to longer running queries, errors can be encountered. 
 
@@ -47,13 +43,13 @@ For example, the number of connections to a SQL database as well as the number o
 
 For a single database, the limits of a database are defined by the database service tier and performance level. The following table describes the characteristics of Basic, Standard, and Premium databases at varying performance levels.
 
-[AZURE.INCLUDE [SQL DB service tiers table](../../includes/sql-database-service-tiers-table.md)]
+[AZURE.INCLUDE [SQL DB service tiers table](../includes/sql-database-service-tiers-table.md)]
 
-[Elastic database pools](sql-database-elastic-pool.md) share resources across databases in the pool. The following table describes the characteristics of Basic, Standard, and Premium elastic database pools.
+[Elastic database pools](/documentation/articles/sql-database-elastic-pool) share resources across databases in the pool. The following table describes the characteristics of Basic, Standard, and Premium elastic database pools.
 
-[AZURE.INCLUDE [SQL DB service tiers table for elastic databases](../../includes/sql-database-service-tiers-table-elastic-db-pools.md)]
+[AZURE.INCLUDE [SQL DB service tiers table for elastic databases](../includes/sql-database-service-tiers-table-elastic-db-pools.md)]
 
-For a detailed discussion of service tiers, see [Azure SQL Database Service Tiers and Performance Levels](sql-database-service-tiers.md).
+For a detailed discussion of service tiers, see [Azure SQL Database Service Tiers and Performance Levels](/documentation/articles/sql-database-service-tiers).
 
 ## DTU quota per server
 
@@ -69,8 +65,8 @@ Azure SQL Database has a DTU quota per logical server of currently 15000 DTUs. T
 
 ## Resources
 
-[Azure Subscription and Service Limits, Quotas, and Constraints](../azure-subscription-service-limits.md)
+[Azure Subscription and Service Limits, Quotas, and Constraints](/documentation/articles/azure-subscription-service-limits)
 
-[Azure SQL Database Service Tiers and Performance Levels](sql-database-service-tiers.md)
+[Azure SQL Database Service Tiers and Performance Levels](/documentation/articles/sql-database-service-tiers)
 
-[Error messages for SQL Database client programs](sql-database-develop-error-messages.md)
+[Error messages for SQL Database client programs](/documentation/articles/sql-database-develop-error-messages)

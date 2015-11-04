@@ -6,14 +6,10 @@
  authors="zhangmanling" 
  manager="dwrede" 
  editor=""/>
-<tags 
- ms.service="cdn" 
- ms.workload="media" 
- ms.tgt_pltfrm="na" 
- ms.devlang="dotnet" 
- ms.topic="article" 
- ms.date="09/01/2015" 
- ms.author="mazha"/>
+<tags
+	ms.service="cdn"
+	ms.date="09/01/2015"
+	wacn.date=""/>
 
 
 #How to Manage Expiration of Blob Content in the Azure Content Delivery Network (CDN)  
@@ -23,7 +19,7 @@ Blobs that benefit the most from Azure CDN caching are those that are accessed f
 You have two options for controlling the TTL.  
 
 1.	Do not set cache values thus using the default TTL of 7 days. 
-2.	Explicitly set the *x-ms-blob-cache-control* property on a **Put Blob**, **Put Block List**, or **Set Blob Properties** request, or use the Azure Managed Library to set the [BlobProperties.CacheControl](https://msdn.microsoft.com/library/microsoft.windowsazure.storage.blob.blobproperties.cachecontrol.aspx) property. Setting this property sets the value of the *Cache-Control* header for the blob. The value of the header or property should specify the appropriate value in seconds. For example, to set the maximum caching period to one year, you can specify the request header as `x-ms-blob-cache-control: public, max-age=31556926`. For details on setting caching headers, see the [HTTP/1.1 specification](http://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html).  
+2.	Explicitly set the *x-ms-blob-cache-control* property on a **Put Blob**, **Put Block List**, or **Set Blob Properties** request, or use the Azure Managed Library to set the [BlobProperties.CacheControl](https://msdn.microsoft.com/zh-cn/library/microsoft.windowsazure.storage.blob.blobproperties.cachecontrol.aspx) property. Setting this property sets the value of the *Cache-Control* header for the blob. The value of the header or property should specify the appropriate value in seconds. For example, to set the maximum caching period to one year, you can specify the request header as `x-ms-blob-cache-control: public, max-age=31556926`. For details on setting caching headers, see the [HTTP/1.1 specification](http://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html).  
 
 Any content that you wish to cache via the CDN must be stored in your Azure storage account as a publicly accessible blob. For more details on the Azure Blob service, see **Blob Service Concepts**.  
 

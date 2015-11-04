@@ -8,18 +8,14 @@
    editor="v-romcal"/>
 
 <tags
-   ms.service="sql-database"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="data-services" 
-   ms.date="07/30/2015"
-   ms.author="nadavh; ronmat; v-romcal; sstein"/>
+	ms.service="sql-database"
+	ms.date="07/30/2015"
+	wacn.date=""/>
 
 # Get started with SQL Database Dynamic Data Masking (Azure Preview portal)
 
 > [AZURE.SELECTOR]
-- [Dynamic Data Masking - Azure portal](sql-database-dynamic-data-masking-get-started-portal.md)
+- [Dynamic Data Masking - Azure Management Portal](/documentation/articles/sql-database-dynamic-data-masking-get-started-portal)
 
 ## Overview
 
@@ -32,7 +28,7 @@ For example, a call center support person may identify callers by several digits
 ## SQL Database Dynamic Data Masking basics
 
 You set up a dynamic data masking policy in the Azure Preview portal by selecting the Dynamic Data Masking operation in your SQL Database configuration blade.
-Before setting up dynamic data masking check if you are using a ["Downlevel Client"](sql-database-auditing-and-dynamic-data-masking-downlevel-clients.md).
+Before setting up dynamic data masking check if you are using a ["Downlevel Client"](/documentation/articles/sql-database-auditing-and-dynamic-data-masking-downlevel-clients).
 
 
 ### Dynamic data masking permissions
@@ -60,11 +56,11 @@ Dynamic data masking can be configured by the Azure Database admin, server admin
 <a name="Anchor1"></a>
 ### Security-enabled connection string
 
-If you are using a ["Downlevel Client"](sql-database-auditing-and-dynamic-data-masking-downlevel-clients.md), then you must update existing clients (example: applications) to use a modified connection string format. Please click [here](sql-database-auditing-and-dynamic-data-masking-downlevel-clients.md) for details.
+If you are using a ["Downlevel Client"](/documentation/articles/sql-database-auditing-and-dynamic-data-masking-downlevel-clients), then you must update existing clients (example: applications) to use a modified connection string format. Please click [here](/documentation/articles/sql-database-auditing-and-dynamic-data-masking-downlevel-clients) for details.
 
 ## Set up dynamic data masking for your database using the Azure Preview portal
 
-1. Launch the Azure Preview portal at [https://portal.azure.com](https://portal.azure.com).
+1. Launch the Azure Preview portal at [https://manage.windowsazure.cn](https://manage.windowsazure.cn).
 	 
 2. Navigate to the configuration blade of the database that includes the sensitive data you want to mask.
 	
@@ -94,13 +90,13 @@ If you are using a ["Downlevel Client"](sql-database-auditing-and-dynamic-data-m
 
 9. Click **Save** in the data masking configuration blade to save the new or updated masking policy.
 
-10. If you are using a ["Downlevel Client"](sql-database-auditing-and-dynamic-data-masking-downlevel-clients.md), then you must update existing clients (example: applications) to use a modified connection string format. For more information, see [Downlevel clients](sql-database-auditing-and-dynamic-data-masking-downlevel-clients.md).
+10. If you are using a ["Downlevel Client"](/documentation/articles/sql-database-auditing-and-dynamic-data-masking-downlevel-clients), then you must update existing clients (example: applications) to use a modified connection string format. For more information, see [Downlevel clients](/documentation/articles/sql-database-auditing-and-dynamic-data-masking-downlevel-clients).
 
 ## Set up dynamic data masking for your database using Powershell cmdlets
 
-See [Azure SQL Database Cmdlets](https://msdn.microsoft.com/library/azure/mt163521.aspx).
+See [Azure SQL Database Cmdlets](https://msdn.microsoft.com/zh-cn/library/azure/mt163521.aspx).
 
 
 ## Set up dynamic data masking for your database using REST API
 
-See [Operations for Azure SQL Databases](https://msdn.microsoft.com/library/dn505719.aspx).
+See [Operations for Azure SQL Databases](https://msdn.microsoft.com/zh-cn/library/dn505719.aspx).

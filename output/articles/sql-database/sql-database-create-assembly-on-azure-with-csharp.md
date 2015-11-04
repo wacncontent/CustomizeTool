@@ -7,14 +7,10 @@
 	manager="jeffreyg" 
 	editor=""/>
 
-<tags 
-	ms.service="sql-database" 
-	ms.workload="data-management" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="07/14/2015" 
-	ms.author="genemi"/>
+<tags
+	ms.service="sql-database"
+	ms.date="07/14/2015"
+	wacn.date=""/>
 
 
 # CREATE ASSEMBLY on Azure SQL Database with CSharp
@@ -26,7 +22,7 @@ Converting plain text "CREATE ASSEMBLY" into a link to the MSDN topic, ms189524.
 -->
 
 
-This topic provides a C# code sample you can use to issue a [CREATE ASSEMBLY](http://msdn.microsoft.com/library/ms189524.aspx) statement to Azure SQL Database. For SQL Database, the FROM clause cannot accept the simple format of a path on the local computer that hosts the database. An alternative is to first encode the binary bits of the assembly DLL into a long string containing a hexadecimal number. Then give the string as the value on the FROM clause.
+This topic provides a C# code sample you can use to issue a [CREATE ASSEMBLY](http://msdn.microsoft.com/zh-cn/library/ms189524.aspx) statement to Azure SQL Database. For SQL Database, the FROM clause cannot accept the simple format of a path on the local computer that hosts the database. An alternative is to first encode the binary bits of the assembly DLL into a long string containing a hexadecimal number. Then give the string as the value on the FROM clause.
 
 
 ### Prerequisites
@@ -35,7 +31,7 @@ This topic provides a C# code sample you can use to issue a [CREATE ASSEMBLY](ht
 To understand this topic, you must have already partially know the following:
 
 
-- [CLR Table-Valued Functions](http://msdn.microsoft.com/library/ms131103.aspx)<br/>Explains how the CREATE ASSEMBLY Transact-SQL statement works with other statements for the on-premises Microsoft SQL Server.
+- [CLR Table-Valued Functions](http://msdn.microsoft.com/zh-cn/library/ms131103.aspx)<br/>Explains how the CREATE ASSEMBLY Transact-SQL statement works with other statements for the on-premises Microsoft SQL Server.
 
 
 ## A. Overall Technique
@@ -46,7 +42,7 @@ To understand this topic, you must have already partially know the following:
 3. Run the EXE for which the C# source code is given in this topic. Tell the EXE where your DLL file is.
  - Encodes your binary DLL into a long string containing a hexadecimal number.
  - Issues a CREATE ASSEMBLY statement with the hex string given in the FROM clause.
-4. [CREATE FUNCTION](http://msdn.microsoft.com/library/ms186755.aspx) to reference a method in your assembly.
+4. [CREATE FUNCTION](http://msdn.microsoft.com/zh-cn/library/ms186755.aspx) to reference a method in your assembly.
 5. T-SQL SELECT statement to call and test your function.
 
 
@@ -128,7 +124,7 @@ The following sequence occurs when you run the EXE that is built from this C# sa
 			        /// args[0] = FullDirPathFileNameOfAssembly.
 			        /// args[1] = AssemblyName.
 			        ///    For the CREATE ASSEMBLY assemblyName statement.
-			        /// args[2] = Azure SQL Database - ServerName, including a suffix like .database.windows.net .
+			        /// args[2] = Azure SQL Database - ServerName, including a suffix like .database.chinacloudapi.cn .
 			        /// args[3] = Azure SQL Database - DatabaseName.
 			        /// args[4] = Azure SQL Database - LoginName.
 			        /// args[5] = Azure SQL Database - Password for login.
@@ -286,7 +282,7 @@ The following code block displays an example of the command line that you would 
 	CreateAssemblyFromHexString6.exe
 		C:\my\bin\debug\CreateAssemblyFunctions3.dll
 		CreateAssemblyFunctions3
-		myazuresqldbsvr2.database.windows.net
+		myazuresqldbsvr2.database.chinacloudapi.cn
 		myazuresqldbdab4
 		myazurelogin
 		Mypassword123

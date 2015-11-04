@@ -7,14 +7,10 @@
 	manager="timlt" 
 	editor=""/>
 
-<tags 
-	ms.service="batch" 
-	ms.devlang="multiple" 
-	ms.topic="article" 
-	ms.tgt_pltfrm="na" 
-	ms.workload="big-compute" 
-	ms.date="07/14/2015" 
-	ms.author="yidingz"/>
+<tags
+	ms.service="batch"
+	ms.date="07/14/2015"
+	wacn.date=""/>
 
 <!--The next line, with one pound sign at the beginning, is the page title--> 
 # API basics for Azure Batch
@@ -58,7 +54,7 @@ A Batch account is a uniquely identified entity within the Batch service. All pr
 
 ### <a name="computenode"></a>Compute Node
 
-A compute node (Node) is an Azure node that is dedicated to a specific workload for your application. The size of a Node determines the number of CPU cores, the memory capacity, and the local file system size that is allocated to the Node. A Node can be a small, large, or extralarge virtual machine as described in [Virtual Machine and Cloud Service Sizes for Azure](http://msdn.microsoft.com/library/dn197896.aspx).
+A compute node (Node) is an Azure node that is dedicated to a specific workload for your application. The size of a Node determines the number of CPU cores, the memory capacity, and the local file system size that is allocated to the Node. A Node can be a small, large, or extralarge virtual machine as described in [Virtual Machine and Cloud Service Sizes for Azure](http://msdn.microsoft.com/zh-cn/library/dn197896.aspx).
 
 The types of programs that a Node can run include executable files (.exe), command files (.cmd), batch files (.bat), and script files. A Node also has the following attributes:
 
@@ -175,11 +171,11 @@ A start task is defined by adding an JSON section to the request body for the Ad
 		“resourceFiles”:
 		[
 			{
-				“blobSource”:”http://account.blob.core.windows.net/container/myapp1.exe?st=2013-08-09T08%3a49%3a37.0000000Z&se=2013-08-10T08%3a49%3a37.0000000Z&sr=c&sp=d&si=YWJjZGTVMZw%3d%3d&sig= %2bSzBm0wi8xECuGkKw97wnkSZ%2f62sxU%2b6Hq6a7qojIVE%3d”,
+				“blobSource”:”http://account.blob.core.chinacloudapi.cn/container/myapp1.exe?st=2013-08-09T08%3a49%3a37.0000000Z&se=2013-08-10T08%3a49%3a37.0000000Z&sr=c&sp=d&si=YWJjZGTVMZw%3d%3d&sig= %2bSzBm0wi8xECuGkKw97wnkSZ%2f62sxU%2b6Hq6a7qojIVE%3d”,
 				“filePath”:”mypoolsetup.exe”
 			},
 			{
-				“blobSource”:”http://account.blob.core.windows.net/container/myapp2.exe?st=2013-08-09T08%3a49%3a37.0000000Z&se=2013-08-10T08%3a49%3a37.0000000Z&sr=c&sp=d&si=YWJjZGTVMZw%3d%3d&sig= %2bSzBm0wi8xECuGkKw97wnkSZ%2f62sxU%2b6Hq6a7qojIVE%3d”,
+				“blobSource”:”http://account.blob.core.chinacloudapi.cn/container/myapp2.exe?st=2013-08-09T08%3a49%3a37.0000000Z&se=2013-08-10T08%3a49%3a37.0000000Z&sr=c&sp=d&si=YWJjZGTVMZw%3d%3d&sig= %2bSzBm0wi8xECuGkKw97wnkSZ%2f62sxU%2b6Hq6a7qojIVE%3d”,
 				“filePath”:”myapp2.exe”
 			}
 		],
@@ -192,7 +188,7 @@ A C# interface looks like this:
 	pool.StartTask = new StartTask();
 	pool.StartTask.CommandLine = "mypoolsetup.exe";
 	pool.StartTask.ResourceFiles = new List<IResourceFile>();
-	pool.StartTask.ResourceFiles.Add(new ResourceFile("http://account.blob.core.windows.net/container/myapp1.exe?st=2013-08-09T08%3a49%3a37.0000000Z&se=2013-08-10T08%3a49%3a37.0000000Z&sr=c&sp=d&si=YWJjZGTVMZw%3d%3d&sig= %2bSzBm0wi8xECuGkKw97wnkSZ%2f62sxU%2b6Hq6a7qojIVE%3d", "mypoolsetup.exe"));
+	pool.StartTask.ResourceFiles.Add(new ResourceFile("http://account.blob.core.chinacloudapi.cn/container/myapp1.exe?st=2013-08-09T08%3a49%3a37.0000000Z&se=2013-08-10T08%3a49%3a37.0000000Z&sr=c&sp=d&si=YWJjZGTVMZw%3d%3d&sig= %2bSzBm0wi8xECuGkKw97wnkSZ%2f62sxU%2b6Hq6a7qojIVE%3d", "mypoolsetup.exe"));
 	pool.Commit();
 
 
@@ -218,11 +214,11 @@ A job manager task in a job does not have priority over tasks in other jobs. Acr
 		“resourceFiles”:
 		[
 			{
-				“blobSource”:”http://account.blob.core.windows.net/container/myapp1.exe?st=2013-08-09T08%3a49%3a37.0000000Z&se=2013-08-10T08%3a49%3a37.0000000Z&sr=c&sp=d&si=YWJjZGTVMZw%3d%3d&sig= %2bSzBm0wi8xECuGkKw97wnkSZ%2f62sxU%2b6Hq6a7qojIVE%3d”,
+				“blobSource”:”http://account.blob.core.chinacloudapi.cn/container/myapp1.exe?st=2013-08-09T08%3a49%3a37.0000000Z&se=2013-08-10T08%3a49%3a37.0000000Z&sr=c&sp=d&si=YWJjZGTVMZw%3d%3d&sig= %2bSzBm0wi8xECuGkKw97wnkSZ%2f62sxU%2b6Hq6a7qojIVE%3d”,
 				“filePath”:”myapp1.exe”
 			},
 			{
-				“blobSource”:”http://account.blob.core.windows.net/container/myapp2.exe?st=2013-08-09T08%3a49%3a37.0000000Z&se=2013-08-10T08%3a49%3a37.0000000Z&sr=c&sp=d&si=YWJjZGTVMZw%3d%3d&sig= %2bSzBm0wi8xECuGkKw97wnkSZ%2f62sxU%2b6Hq6a7qojIVE%3d”,
+				“blobSource”:”http://account.blob.core.chinacloudapi.cn/container/myapp2.exe?st=2013-08-09T08%3a49%3a37.0000000Z&se=2013-08-10T08%3a49%3a37.0000000Z&sr=c&sp=d&si=YWJjZGTVMZw%3d%3d&sig= %2bSzBm0wi8xECuGkKw97wnkSZ%2f62sxU%2b6Hq6a7qojIVE%3d”,
 				“filePath”:”myapp2.exe”
 			}
 		],
@@ -262,15 +258,15 @@ You need a Batch account to use the Batch service and you use multiple resources
 
 Each task has a working directory under which it creates zero or more directories and files for storing the program that is run by a task, the data that is processed by a task, and the output of the processing performed by a task. These directories and files are then available for use by other tasks during the running of a job. All tasks, files, and directories on a Node are owned by a single user account.
 
-The Batch service exposes a portion of the file system on a Node as the root directory. The root directory of the Node is available to a task through the AZ\_BATCH\_NODE\_ROOT\_DIR environment variable. For more information about using environment variables, see Environment settings for tasks.
+The Batch service exposes a portion of the file system on a Node as the root directory. The root directory of the Node is available to a task through the AZ_BATCH_NODE_ROOT_DIR environment variable. For more information about using environment variables, see Environment settings for tasks.
 
 The root directory contains the following sub-directories:
 
-- **Tasks** – This location is where all of the files are stored that belong to tasks that run on the Node. For each task, the Batch service creates a working directory with the unique path in the form of %AZ\_BATCH\_TASK\_ROOT\_DIR%. This directory provides Read/Write access to the task. The task can create, read, update, and delete files under this directory, and this directory is retained based on the RetentionTime constraint specified for the task.
+- **Tasks** – This location is where all of the files are stored that belong to tasks that run on the Node. For each task, the Batch service creates a working directory with the unique path in the form of %AZ_BATCH_TASK_ROOT_DIR%. This directory provides Read/Write access to the task. The task can create, read, update, and delete files under this directory, and this directory is retained based on the RetentionTime constraint specified for the task.
 
-- **Shared** – This location is a shared directory for all of the tasks under the account. On the Node, the shared directory is at %AZ\_BATCH\_NODE\_SHARED\_DIR%. This directory provides Read/Write access to the task. The task can create, read, update, and delete files under this directory.
+- **Shared** – This location is a shared directory for all of the tasks under the account. On the Node, the shared directory is at %AZ_BATCH_NODE_SHARED_DIR%. This directory provides Read/Write access to the task. The task can create, read, update, and delete files under this directory.
 
-- **Start** – This location is used by a start task as its working directory. All of the files that are downloaded by the Batch service to launch the start task are also stored under this directory. On the Node, the start directory is at %AZ\_BATCH\_NODE\_START\_DIR%. The task can create, read, update, and delete files under this directory, and this directory can be used by start tasks to configure the operating system.
+- **Start** – This location is used by a start task as its working directory. All of the files that are downloaded by the Batch service to launch the start task are also stored under this directory. On the Node, the start directory is at %AZ_BATCH_NODE_START_DIR%. The task can create, read, update, and delete files under this directory, and this directory can be used by start tasks to configure the operating system.
 
 When a Node is removed from the pool, all of the files that are stored on the Node are removed.
 
@@ -384,4 +380,4 @@ Each node in a pool is given a unique name and the node on which a task runs inc
 <!--Image references-->
 [1]: ./media/batch-api-basics/batch-api-basics-01.png
 
-[Azure Batch overview]: batch-technical-overview.md
+[Azure Batch overview]: /documentation/articles/batch-technical-overview

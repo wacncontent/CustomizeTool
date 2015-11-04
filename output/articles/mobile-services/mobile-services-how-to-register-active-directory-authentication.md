@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Register for Azure Active Directory authentication | Microsoft Azure" 
+	pageTitle="Register for Azure Active Directory authentication | Windows Azure" 
 	description="Learn how to register for Azure Active Directory authentication in your Mobile Services application." 
 	authors="wesmc7777" 
 	services="mobile-services" 
@@ -7,18 +7,14 @@
 	manager="dwrede" 
 	editor=""/>
 
-<tags 
-	ms.service="mobile-services" 
-	ms.workload="mobile" 
-	ms.tgt_pltfrm="multiple" 
-	ms.devlang="multiple" 
-	ms.topic="article" 
-	ms.date="09/24/2015" 
-	ms.author="ricksal"/>
+<tags
+	ms.service="mobile-services"
+	ms.date="09/24/2015"
+	wacn.date=""/>
 
 # Register your apps to use an Azure Active Directory Account login
 
-[AZURE.INCLUDE [mobile-services-selector-register-identity-provider](../../includes/mobile-services-selector-register-identity-provider.md)]
+[AZURE.INCLUDE [mobile-services-selector-register-identity-provider](../includes/mobile-services-selector-register-identity-provider.md)]
 
 ##Overview
 
@@ -26,7 +22,7 @@ This topic shows you how to register your apps to be able to use Azure Active Di
 
 ##Registering your app
 
->[AZURE.NOTE] The steps outlined in this topic are intended to be used with [Add Authentication to your Mobile Services app](../mobile-services-dotnet-backend-windows-store-dotnet-get-started-users.md) tutorial when you want to use [Service-directed login operations](http://msdn.microsoft.com/library/azure/dn283952.aspx) with your app. Alternatively, if your app has a requirement for [client-directed login operations](http://msdn.microsoft.com/library/azure/jj710106.aspx) for Azure Active Directory and a .NET backend mobile service you should start with the [Authenticate your app with Active Directory Authentication Library Single Sign-On](mobile-services-windows-store-dotnet-adal-sso-authentication.md) tutorial.
+>[AZURE.NOTE] The steps outlined in this topic are intended to be used with [Add Authentication to your Mobile Services app](/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-users) tutorial when you want to use [Service-directed login operations](http://msdn.microsoft.com/zh-cn/library/azure/dn283952.aspx) with your app. Alternatively, if your app has a requirement for [client-directed login operations](http://msdn.microsoft.com/zh-cn/library/azure/jj710106.aspx) for Azure Active Directory and a .NET backend mobile service you should start with the [Authenticate your app with Active Directory Authentication Library Single Sign-On](/documentation/articles/mobile-services-windows-store-dotnet-adal-sso-authentication) tutorial.
 
 1. Log on to the [Azure Management Portal], navigate to your mobile service, click the **Identity** tab, then scroll down to the **Azure active directory** identity provider section and copy the **App URL** shown there.
 
@@ -46,13 +42,13 @@ This topic shows you how to register your apps to be able to use Azure Active Di
 
 6. After the application has been added, click the **Configure** tab and copy the **Client ID** for the app.
 
-    >[AZURE.NOTE]For a .NET backend mobile service, you must also edit the **Reply URL** value under **Single Sign-on** to be the URL of your mobile service appended with the path, _signin-aad_. For example,  `https://todolist.azure-mobile.net/signin-aad`
+    >[AZURE.NOTE]For a .NET backend mobile service, you must also edit the **Reply URL** value under **Single Sign-on** to be the URL of your mobile service appended with the path, _signin-aad_. For example,  `https://todolist.azure-mobile.cn/signin-aad`
 
 7. Return to your mobile service's **Identity** tab and paste the copied **Client ID** value for the azure active directory identity provider.
  
     ![](./media/mobile-services-how-to-register-active-directory-authentication/mobile-services-clientid-pasted-waad-auth.png)
 
-8.  In the **Allowed Tenants** list, type the domain of the directory in which you registered the application (such as `contoso.onmicrosoft.com`), then click **Save**.    
+8.  In the **Allowed Tenants** list, type the domain of the directory in which you registered the application (such as `contoso.partner.onmschina.cn`), then click **Save**.    
 
 You are now ready to use an Azure Active Directory for authentication in your app. 
 
@@ -62,6 +58,6 @@ You are now ready to use an Azure Active Directory for authentication in your ap
 
 
 <!-- URLs. -->
-[Azure Management Portal]: https://manage.windowsazure.com/
+[Azure Management Portal]: https://manage.windowsazure.cn/
 
  

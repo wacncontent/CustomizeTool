@@ -1,6 +1,6 @@
 
 <properties 
-  pageTitle="Set and retrieve properties and metadata for objects in Azure Storage | Microsoft Azure" 
+  pageTitle="Set and retrieve properties and metadata for objects in Azure Storage | Windows Azure" 
   description="Store custom metadata on objects in Azure Storage, and set and retrieve system properties." 
   services="storage" 
   documentationCenter="" 
@@ -102,6 +102,6 @@ The following code example creates a new container and sets metadata for it, the
 
 ## See Also  
 
-- [Azure Storage Client Library Reference](http://msdn.microsoft.com/library/azure/wa_storage_30_reference_home.aspx)
-- [Get Started with the Blob Storage for .NET](storage-dotnet-how-to-use-blobs.md)  
+- [Azure Storage Client Library Reference](http://msdn.microsoft.com/zh-cn/library/azure/wa_storage_30_reference_home.aspx)
+- [Get Started with the Blob Storage for .NET](/documentation/articles/storage-dotnet-how-to-use-blobs)  
  

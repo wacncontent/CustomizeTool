@@ -1,25 +1,21 @@
 <properties 
-   pageTitle="Service Bus pricing and billing | Microsoft Azure"
+   pageTitle="Service Bus pricing and billing | Windows Azure"
    description="Overview of Service Bus pricing structure."
    services="service-bus"
    documentationCenter="na"
    authors="sethmanheim"
    manager="timlt"
    editor="tysonn" />
-<tags 
-   ms.service="service-bus"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="na"
-   ms.date="09/10/2015"
-   ms.author="sethm" />
+<tags
+	ms.service="service-bus"
+	ms.date="09/10/2015"
+	wacn.date=""/>
 
 # Service Bus pricing and billing
 
-Service Bus is offered in Basic, Standard, and [Premium](service-bus-premium-messaging.md) tiers. You can choose a service tier for each Service Bus service namespace that you create, and this tier selection applies across all queues, topics/subscriptions, relays, and Event Hubs created within that namespace.
+Service Bus is offered in Basic, Standard, and [Premium](/documentation/articles/service-bus-premium-messaging) tiers. You can choose a service tier for each Service Bus service namespace that you create, and this tier selection applies across all queues, topics/subscriptions, relays, and Event Hubs created within that namespace.
 
->[AZURE.NOTE] For information about current Service Bus pricing, see the [Service Bus Pricing FAQ](service-bus-pricing-faq.md).
+>[AZURE.NOTE] For information about current Service Bus pricing, see the [Service Bus Pricing FAQ](/documentation/articles/service-bus-pricing-faq).
 
 Service Bus uses the following two meters for queues and topics/subscriptions:
 
@@ -33,7 +29,7 @@ The **Premium** tier provides resource isolation at the CPU and memory layer so 
 
 Note that the standard base charge is charged only once per month per Azure subscription. This means that after you create a single Standard or Premium tier Service Bus namespace, you will be able to create as many additional Standard or Premium tier namespaces as you want under that same Azure subscription, without incurring additional base charges.
 
-All existing Service Bus namespaces created prior to November 1, 2014 were automatically placed into the Standard tier. This ensures that you continue to have access to all features currently available with Service Bus. Subsequently, you can use the Azure portal to downgrade to the Basic tier if desired.
+All existing Service Bus namespaces created prior to November 1, 2014 were automatically placed into the Standard tier. This ensures that you continue to have access to all features currently available with Service Bus. Subsequently, you can use the Azure Management Portal to downgrade to the Basic tier if desired.
 
 The following table summarizes the functional differences between the Basic and Standard/Premium tiers.
 
@@ -121,7 +117,7 @@ Relays are available only in Standard tier namespaces. Otherwise, pricing and co
 
 ### How is the Relay Hours meter calculated?
 
-See [this topic](service-bus-pricing-faq.md#How-is-the-Relay-Hours-meter-calculated?).
+See [this topic](/documentation/articles/service-bus-pricing-faq#How-is-the-Relay-Hours-meter-calculated?).
 
 ### What are brokered connections and how do I get charged for them?
 
@@ -145,5 +141,5 @@ Yes. There are no connection charges for sending events using HTTP, regardless o
 
 ## See Also
 
-[Service Bus Pricing FAQ](service-bus-pricing-faq.md)
+[Service Bus Pricing FAQ](/documentation/articles/service-bus-pricing-faq)
 

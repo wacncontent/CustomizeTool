@@ -8,20 +8,16 @@
 	editor=""/>
 
 
-<tags 
-	ms.service="sql-database" 
-	ms.workload="data-management" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="python" 
-	ms.topic="article" 
-	ms.date="07/20/2015" 
-	ms.author="mebha"/>
+<tags
+	ms.service="sql-database"
+	ms.date="07/20/2015"
+	wacn.date=""/>
 
 
 # Connect to SQL Database by using Python on Windows
 
 
-[AZURE.INCLUDE [sql-database-develop-includes-selector-language-platform-depth](../../includes/sql-database-develop-includes-selector-language-platform-depth.md)]
+[AZURE.INCLUDE [sql-database-develop-includes-selector-language-platform-depth](../includes/sql-database-develop-includes-selector-language-platform-depth.md)]
 
 
 This topic presents a code sample written in Python. The sample runs on a Windows computer. The sample and connects to Azure SQL Database by using the **pymssql** driver.
@@ -53,7 +49,7 @@ Instructions to enable the use pip can be found [here](http://stackoverflow.com/
 ## Create a database and retrieve your connection string
 
 
-See the [Getting Started Topic](sql-database-get-started.md) to learn how to create a sample database and retrieve your connection string. It is important you follow the guide to create an **AdventureWorks database template**. The samples shown below only work with the **AdventureWorks schema**. 
+See the [Getting Started Topic](/documentation/articles/sql-database-get-started) to learn how to create a sample database and retrieve your connection string. It is important you follow the guide to create an **AdventureWorks database template**. The samples shown below only work with the **AdventureWorks schema**. 
 
 
 ## Connect to your SQL Database
@@ -62,7 +58,7 @@ See the [Getting Started Topic](sql-database-get-started.md) to learn how to cre
 The [pymssql.connect](http://pymssql.org/en/latest/ref/pymssql.html) function is used to connect to SQL Database.
 
 	import pymssql
-	conn = pymssql.connect(server='yourserver.database.windows.net', user='yourusername@yourserver', password='yourpassword', database='AdventureWorks')
+	conn = pymssql.connect(server='yourserver.database.chinacloudapi.cn', user='yourusername@yourserver', password='yourpassword', database='AdventureWorks')
 
 
 ## Execute an SQL SELECT statement
@@ -71,7 +67,7 @@ The [cursor.execute](http://pymssql.org/en/latest/ref/pymssql.html#pymssql.Curso
 
 
 	import pymssql
-	conn = pymssql.connect(server='yourserver.database.windows.net', user='yourusername@yourserver', password='yourpassword', database='AdventureWorks')
+	conn = pymssql.connect(server='yourserver.database.chinacloudapi.cn', user='yourusername@yourserver', password='yourpassword', database='AdventureWorks')
 	cursor = conn.cursor()
 	cursor.execute('SELECT c.CustomerID, c.CompanyName,COUNT(soh.SalesOrderID) AS OrderCount FROM SalesLT.Customer AS c LEFT OUTER JOIN SalesLT.SalesOrderHeader AS soh ON c.CustomerID = soh.CustomerID GROUP BY c.CustomerID, c.CompanyName ORDER BY OrderCount DESC;')
 	row = cursor.fetchone()
@@ -82,11 +78,11 @@ The [cursor.execute](http://pymssql.org/en/latest/ref/pymssql.html#pymssql.Curso
 
 ## Insert a row, pass parameters, and retrieve the generated primary key
 
-In SQL Database the [IDENTITY](https://msdn.microsoft.com/library/ms186775.aspx) property and the [SEQUENCE](https://msdn.microsoft.com/library/ff878058.aspx) object can be used to auto-generate [primary key](https://msdn.microsoft.com/library/ms179610.aspx) values. 
+In SQL Database the [IDENTITY](https://msdn.microsoft.com/zh-cn/library/ms186775.aspx) property and the [SEQUENCE](https://msdn.microsoft.com/zh-cn/library/ff878058.aspx) object can be used to auto-generate [primary key](https://msdn.microsoft.com/zh-cn/library/ms179610.aspx) values. 
 
 
 	import pymssql
-	conn = pymssql.connect(server='yourserver.database.windows.net', user='yourusername@yourserver', password='yourpassword', database='AdventureWorks')
+	conn = pymssql.connect(server='yourserver.database.chinacloudapi.cn', user='yourusername@yourserver', password='yourpassword', database='AdventureWorks')
 	cursor = conn.cursor()
 	cursor.execute("INSERT SalesLT.Product (Name, ProductNumber, StandardCost, ListPrice, SellStartDate) OUTPUT INSERTED.ProductID VALUES ('SQL Server Express', 'SQLEXPRESS', 0, 0, CURRENT_TIMESTAMP)")
 	row = cursor.fetchone()
@@ -109,7 +105,7 @@ This code example demonstrates the use of transactions in which you:
 
 
 	import pymssql
-	conn = pymssql.connect(server='yourserver.database.windows.net', user='yourusername@yourserver', password='yourpassword', database='AdventureWorks')
+	conn = pymssql.connect(server='yourserver.database.chinacloudapi.cn', user='yourusername@yourserver', password='yourpassword', database='AdventureWorks')
 	cursor = conn.cursor()
 	cursor.execute("BEGIN TRANSACTION")
 	cursor.execute("INSERT SalesLT.Product (Name, ProductNumber, StandardCost, ListPrice, SellStartDate) OUTPUT INSERTED.ProductID VALUES ('SQL Server Express New', 'SQLEXPRESS New', 0, 0, CURRENT_TIMESTAMP)")

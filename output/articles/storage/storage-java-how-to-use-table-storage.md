@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="How to use Table storage from Java | Microsoft Azure" 
+	pageTitle="How to use Table storage from Java | Windows Azure" 
 	description="Learn how to use the table storage service in Azure. Code samples are written in Java code." 
 	services="storage" 
 	documentationCenter="java" 
@@ -7,19 +7,15 @@
 	manager="wpickett" 
 	editor="jimbe"/>
 
-<tags 
-	ms.service="storage" 
-	ms.workload="storage" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="Java" 
-	ms.topic="article" 
-	ms.date="08/31/2015" 
-	ms.author="robmcm"/>
+<tags
+	ms.service="storage"
+	ms.date="08/31/2015"
+	wacn.date=""/>
 
 
 # How to use Table storage from Java
 
-[AZURE.INCLUDE [storage-selector-table-include](../../includes/storage-selector-table-include.md)]
+[AZURE.INCLUDE [storage-selector-table-include](../includes/storage-selector-table-include.md)]
 
 ## Overview
 
@@ -27,9 +23,9 @@ This guide will show you how to perform common scenarios using the Azure Table s
 
 Note: An SDK is available for developers who are using Azure Storage on Android devices. For more information, see the [Azure Storage SDK for Android][]. 
 
-[AZURE.INCLUDE [storage-table-concepts-include](../../includes/storage-table-concepts-include.md)]
+[AZURE.INCLUDE [storage-table-concepts-include](../includes/storage-table-concepts-include.md)]
 
-[AZURE.INCLUDE [storage-create-account-include](../../includes/storage-create-account-include.md)]
+[AZURE.INCLUDE [storage-create-account-include](../includes/storage-create-account-include.md)]
 
 ## Create a Java application
 
@@ -39,7 +35,7 @@ To do so, you will need to install the Java Development Kit (JDK) and create an 
 
 ## Configure your application to access table storage
 
-Add the following import statements to the top of the Java file where you want to use Microsoft Azure storage APIs to access tables:
+Add the following import statements to the top of the Java file where you want to use Windows Azure storage APIs to access tables:
 
     // Include the following imports to use table APIs
     import com.microsoft.azure.storage.*;
@@ -56,7 +52,7 @@ An Azure storage client uses a storage connection string to store endpoints and 
         "AccountName=your_storage_account;" + 
         "AccountKey=your_storage_account_key";
 
-In an application running within a role in Microsoft Azure, this string can be stored in the service configuration file, *ServiceConfiguration.cscfg*, and can be accessed with a call to the **RoleEnvironment.getConfigurationSettings** method. Here's an example of getting the connection string from a **Setting** element named *StorageConnectionString* in the service configuration file:
+In an application running within a role in Windows Azure, this string can be stored in the service configuration file, *ServiceConfiguration.cscfg*, and can be accessed with a call to the **RoleEnvironment.getConfigurationSettings** method. Here's an example of getting the connection string from a **Setting** element named *StorageConnectionString* in the service configuration file:
 
     // Retrieve storage account from connection-string.
     String storageConnectionString = 
@@ -560,8 +556,8 @@ For more information, see also the [Java Developer Center](/develop/java/).
 [Azure SDK for Java]: http://go.microsoft.com/fwlink/?LinkID=525671
 [Azure Storage SDK for Java]: https://github.com/azure/azure-storage-java
 [Azure Storage SDK for Android]: https://github.com/azure/azure-storage-android
-[Azure Storage Client SDK Reference]: http://dl.windowsazure.com/storage/javadoc/
-[Azure Storage REST API]: http://msdn.microsoft.com/library/azure/gg433040.aspx
+[Azure Storage Client SDK Reference]: http://dl.windowsazure.cn/storage/javadoc/
+[Azure Storage REST API]: http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx
 [Azure Storage Team Blog]: http://blogs.msdn.com/b/windowsazurestorage/
 [blog post]: http://blogs.msdn.com/b/windowsazurestorage/archive/2011/09/15/windows-azure-tables-introducing-upsert-and-query-projection.aspx
  

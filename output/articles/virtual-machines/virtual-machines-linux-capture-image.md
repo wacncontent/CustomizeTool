@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Capture an image of a Linux VM | Microsoft Azure"
+	pageTitle="Capture an image of a Linux VM | Windows Azure"
 	description="Learn how to capture an image of a Linux-based Azure virtual machine (VM) created with the classic deployment model."
 	services="virtual-machines"
 	documentationCenter=""
@@ -10,17 +10,13 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.workload="infrastructure-services"
-	ms.tgt_pltfrm="vm-linux"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="10/14/2015"
-	ms.author="dkshir"/>
+	wacn.date=""/>
 
 
 # How to Capture a Linux Virtual Machine to Use as a Template
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
 
 
 This article shows you how to capture an Azure virtual machine running Linux so you can use it like a template to create other virtual machines. This template includes the OS disk and data disks attached to the virtual machine. It doesn't include networking configuration, so you'll need to configure that when you create the other virtual machines that use the template.
@@ -59,9 +55,9 @@ These steps assume that you've already created an Azure virtual machine using th
 4. Type **Exit** to close the SSH client.
 
 
-	>[AZURE.NOTE] The next steps assume you have already [installed the Azure CLI](../xplat-cli-install.md) on your client computer. All the steps below can also be done in the [Management Portal] [].
+	>[AZURE.NOTE] The next steps assume you have already [installed the Azure CLI](/documentation/articles/xplat-cli-install) on your client computer. All the steps below can also be done in the [Management Portal] [].
 
-5. From your client computer, open Azure CLI and login to your Azure subscription. For details, read [Connect to an Azure subscription from the Azure CLI](../xplat-cli-connect.md).
+5. From your client computer, open Azure CLI and login to your Azure subscription. For details, read [Connect to an Azure subscription from the Azure CLI](/documentation/articles/xplat-cli-connect).
 
 6. Make sure you are in Service Management mode:
 
@@ -89,13 +85,13 @@ These steps assume that you've already created an Azure virtual machine using th
 
 
 ## Next Steps
-The image is ready to be used as a template to create virtual machines. You can use the Azure CLI command `azure vm create` and supply the image name you just created. See [Using Azure CLI with the Service Management API](virtual-machines-command-line-tools.md) for details about the command. Alternatively, you can use the [Management Portal] [] to create a custom virtual machine by using the **From Gallery** method and selecting the image you just created. See [How to Create a Custom Virtual Machine] [] for more details.
+The image is ready to be used as a template to create virtual machines. You can use the Azure CLI command `azure vm create` and supply the image name you just created. See [Using Azure CLI with the Service Management API](/documentation/articles/virtual-machines-command-line-tools) for details about the command. Alternatively, you can use the [Management Portal] [] to create a custom virtual machine by using the **From Gallery** method and selecting the image you just created. See [How to Create a Custom Virtual Machine] [] for more details.
 
-**See Also:** [Azure Linux Agent User Guide](virtual-machines-linux-agent-user-guide.md)
+**See Also:** [Azure Linux Agent User Guide](/documentation/articles/virtual-machines-linux-agent-user-guide)
 
-[Management Portal]: http://manage.windowsazure.com
-[How to Log on to a Virtual Machine Running Linux]: virtual-machines-linux-how-to-log-on.md
-[About Virtual Machine Images in Azure]: virtual-machines-images.md
-[How to Create a Custom Virtual Machine]: virtual-machines-linux-create-custom.md
-[How to Attach a Data Disk to a Virtual Machine]: storage-windows-attach-disk.md
-[How to Create a Virtual Machine Running Linux]: virtual-machines-linux-tutorial.md
+[Management Portal]: http://manage.windowsazure.cn
+[How to Log on to a Virtual Machine Running Linux]: /documentation/articles/virtual-machines-linux-how-to-log-on
+[About Virtual Machine Images in Azure]: /documentation/articles/virtual-machines-images
+[How to Create a Custom Virtual Machine]: /documentation/articles/virtual-machines-linux-create-custom
+[How to Attach a Data Disk to a Virtual Machine]: /documentation/articles/storage-windows-attach-disk
+[How to Create a Virtual Machine Running Linux]: /documentation/articles/virtual-machines-linux-tutorial

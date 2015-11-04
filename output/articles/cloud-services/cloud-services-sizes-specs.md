@@ -7,21 +7,17 @@
  manager="timlt"
  editor=""/>
 <tags
- ms.service="cloud-services"
- ms.devlang="na"
- ms.topic="article"
- ms.tgt_pltfrm="na"
- ms.workload="tbd"
- ms.date="09/14/2015"
- ms.author="adegeo"/>
+	ms.service="cloud-services"
+	ms.date="09/14/2015"
+	wacn.date=""/>
 
 # Sizes for Cloud Services
 
 This topic describes the available sizes and options for Cloud Service role instances (web roles and worker roles). It also provides deployment considerations to be aware of when planning to use these resources.
 
-Azure Virtual Machines and Cloud Services are two of several types of compute resources offered by Azure. For explanations, see [Compute Hosting Options Provided by Azure](fundamentals-application-models.md).
+Azure Virtual Machines and Cloud Services are two of several types of compute resources offered by Azure. For explanations, see [Compute Hosting Options Provided by Azure](/documentation/articles/fundamentals-application-models).
 
-> [AZURE.NOTE]To see related Azure limits, see [Azure Subscription and Service Limits, Quotas, and Constraints](../azure-subscription-service-limits.md)
+> [AZURE.NOTE]To see related Azure limits, see [Azure Subscription and Service Limits, Quotas, and Constraints](/documentation/articles/azure-subscription-service-limits)
 
 ## Sizes for web and worker role instances
 
@@ -32,8 +28,8 @@ The following considerations might help you decide on a size:
 *   Dv2-series, a follow-on to the original D-series, features a more powerful CPU. The Dv2-series CPU is about 35% faster than the D-series CPU. It is based on the latest generation 2.4 GHz Intel Xeon® E5-2673 v3 (Haswell) processor, and with the Intel Turbo Boost Technology 2.0, can go up to 3.2 GHz. The Dv2-series has the same memory and disk configurations as the D-series.
 
     Dv2-series regional availability will be based on this schedule:
-        Oct'15: US East 2, US Central, US North Central, US West
-        Nov'15: US East, Europe North, Europe West
+        Oct'15: China East 2, US Central, US North Central, US West
+        Nov'15: China East, Europe North, Europe West
         Jan'16: US South Central, APAC East, APAC Southeast, Japan East, Japan West,
                 Australia East, Australia Southeast, Brazil South
 
@@ -92,4 +88,4 @@ Here is an example for setting the role size to be small for a Web Role instance
 Ensure that the local resource size specified is less than or equal to the max local resource size in the table above.
 ## Next steps
 
-[Set Up a Cloud Service for Azure](https://msdn.microsoft.com/library/hh124108)  
+[Set Up a Cloud Service for Azure](https://msdn.microsoft.com/zh-cn/library/hh124108)  

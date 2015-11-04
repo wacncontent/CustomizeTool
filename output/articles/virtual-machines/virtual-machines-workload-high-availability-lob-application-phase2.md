@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Line of business application Phase 2 | Microsoft Azure" 
+	pageTitle="Line of business application Phase 2 | Windows Azure" 
 	description="Create and configure the two Active Directory replica domain controllers in Phase 2 of the line of business application in Azure." 
 	documentationCenter=""
 	services="virtual-machines" 
@@ -8,23 +8,19 @@
 	editor=""
 	tags="azure-resource-manager"/>
 
-<tags 
-	ms.service="virtual-machines" 
-	ms.workload="infrastructure-services" 
-	ms.tgt_pltfrm="Windows" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="08/11/2015" 
-	ms.author="josephd"/>
+<tags
+	ms.service="virtual-machines"
+	ms.date="08/11/2015"
+	wacn.date=""/>
 
 # Line of Business Application Workload Phase 2: Configure domain controllers
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-rm-include.md)] classic deployment model.
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] classic deployment model.
  
 
 In this phase of deploying a high-availability line of business application in Azure infrastructure services, you configure two replica domain controllers in the Azure Virtual Network so that client web requests for web resources can be authenticated locally within the Azure virtual network, rather than sending that authentication traffic across the connection to your on-premises network. 
 
-You must complete this phase before moving on to [Phase 3](virtual-machines-workload-high-availability-LOB-application-phase3.md). See [Deploy a High-Availability Line of Business Application in Azure](virtual-machines-workload-high-availability-LOB-application-overview.md) for all of the phases.
+You must complete this phase before moving on to [Phase 3](/documentation/articles/virtual-machines-workload-high-availability-LOB-application-phase3). See [Deploy a High-Availability Line of Business Application in Azure](/documentation/articles/virtual-machines-workload-high-availability-LOB-application-overview) for all of the phases.
 
 ## Create the domain controller virtual machines in Azure
 
@@ -42,7 +38,7 @@ Item | Virtual machine name | Gallery image | Minimum size
 
 **Table M – Virtual machines for the high-availability line of business application in Azure**
 
-For the complete list of virtual machine sizes, see [Virtual Machine and Cloud Service Sizes for Azure](https://msdn.microsoft.com/library/azure/dn197896.aspx).
+For the complete list of virtual machine sizes, see [Virtual Machine and Cloud Service Sizes for Azure](https://msdn.microsoft.com/zh-cn/library/azure/dn197896.aspx).
 
 Use the following block of Azure PowerShell commands to create the virtual machines for the two domain controllers. Specify the values for the variables, removing the < and > characters. Note that this PowerShell command set uses values from the following:
 
@@ -52,7 +48,7 @@ Use the following block of Azure PowerShell commands to create the virtual machi
 - Table ST, for your storage accounts
 - Table A, for your availability sets
 
-Recall that you defined Tables V, S, ST, and A in [Phase 1: Configure Azure](virtual-machines-workload-high-availability-LOB-application-phase1.md).
+Recall that you defined Tables V, S, ST, and A in [Phase 1: Configure Azure](/documentation/articles/virtual-machines-workload-high-availability-LOB-application-phase1).
 
 > [AZURE.NOTE] This article contains commands for versions of Azure PowerShell up to *but not including* versions 1.0.0 and later. You can check your version of Azure PowerShell with the **Get-Module azure | format-table version** command. The Azure PowerShell command blocks in this article are in the process of being tested and updated to support the new cmdlets in Azure PowerShell versions 1.0.0 and later. Thank you for your patience.
 
@@ -168,7 +164,7 @@ You will be prompted to supply the credentials of a domain administrator account
 
 Next, you need to update the DNS servers for your virtual network so that Azure assigns virtual machines the IP addresses of the two new domain controllers to use as their DNS servers. Note that this procedure uses values from Table V (for your virtual network settings) and Table M (for your virtual machines).
 
-1.	In the left pane of the [Azure Preview portal](https://portal.azure.com/), click **Browse all > Virtual networks**, and then click the name of your virtual network (Table V – Item 1 – Value column).
+1.	In the left pane of the [Azure Preview portal](https://manage.windowsazure.cn/), click **Browse all > Virtual networks**, and then click the name of your virtual network (Table V – Item 1 – Value column).
 2.	On the pane for your virtual network, click **All settings**.
 3.	On the **Settings** pane, click **DNS servers**.
 4.	On the **DNS servers** pane, type the following:
@@ -199,16 +195,16 @@ This diagram shows the configuration resulting from the successful completion of
 
 ## Next step
 
-To continue with the configuration of this workload, go to [Phase 3: Configure SQL Server infrastructure](virtual-machines-workload-high-availability-LOB-application-phase3.md).
+To continue with the configuration of this workload, go to [Phase 3: Configure SQL Server infrastructure](/documentation/articles/virtual-machines-workload-high-availability-LOB-application-phase3).
 
 ## Additional resources
 
-[Deploy a high-availability line of business application in Azure](virtual-machines-workload-high-availability-LOB-application-overview.md)
+[Deploy a high-availability line of business application in Azure](/documentation/articles/virtual-machines-workload-high-availability-LOB-application-overview)
 
 [Line of Business Applications architecture blueprint](http://msdn.microsoft.com/dn630664)
 
-[Set up a web-based LOB application in a hybrid cloud for testing](../virtual-network/virtual-networks-setup-lobapp-hybrid-cloud-testing.md)
+[Set up a web-based LOB application in a hybrid cloud for testing](/documentation/articles/virtual-networks-setup-lobapp-hybrid-cloud-testing)
 
-[Azure infrastructure services implementation guidelines](virtual-machines-infrastructure-services-implementation-guidelines.md)
+[Azure infrastructure services implementation guidelines](/documentation/articles/virtual-machines-infrastructure-services-implementation-guidelines)
 
-[Azure Infrastructure Services Workload: SharePoint Server 2013 farm](virtual-machines-workload-intranet-sharepoint-farm.md)
+[Azure Infrastructure Services Workload: SharePoint Server 2013 farm](/documentation/articles/virtual-machines-workload-intranet-sharepoint-farm)

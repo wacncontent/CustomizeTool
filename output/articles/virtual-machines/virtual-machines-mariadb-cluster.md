@@ -10,16 +10,12 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.devlang="multiple"
-	ms.topic="article"
-	ms.tgt_pltfrm="vm-linux"
-	ms.workload="infrastructure-services"
 	ms.date="04/15/2015"
-	ms.author="v-ahsab"/>
+	wacn.date=""/>
 
 # MariaDB (MySQL) cluster - Azure tutorial
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
 
 
 We're creating a multi-Master [Galera](http://galeracluster.com/products/) cluster of [MariaDBs](https://mariadb.org/en/about/), a robust, scalable, and reliable drop-in replacement for MySQL, to work in a highly available environment on Azure Virtual Machines.
@@ -45,7 +41,7 @@ This topic performs the following steps:
 
 1. Create an Affinity Group to hold the resources together
 
-		azure account affinity-group create mariadbcluster --location "North Europe" --label "MariaDB Cluster"
+		azure account affinity-group create mariadbcluster --location "China North" --label "MariaDB Cluster"
 
 2. Create a Virtual Network
 
@@ -62,13 +58,13 @@ this will output something like `5112500ae3b842c8b9c604889f8753c3__OpenLogic-Cen
 
 4. Create the VM template replacing **/path/to/key.pem** with the path where you stored the generated .pem SSH key
 
-		azure vm create --virtual-network-name mariadbvnet --subnet-names mariadb --blob-url "http://mariadbstorage.blob.core.windows.net/vhds/mariadbhatemplate-os.vhd"  --vm-size Medium --ssh 22 --ssh-cert "/path/to/key.pem" --no-ssh-password mariadbtemplate 5112500ae3b842c8b9c604889f8753c3__OpenLogic-CentOS-70-20140926 azureuser
+		azure vm create --virtual-network-name mariadbvnet --subnet-names mariadb --blob-url "http://mariadbstorage.blob.core.chinacloudapi.cn/vhds/mariadbhatemplate-os.vhd"  --vm-size Medium --ssh 22 --ssh-cert "/path/to/key.pem" --no-ssh-password mariadbtemplate 5112500ae3b842c8b9c604889f8753c3__OpenLogic-CentOS-70-20140926 azureuser
 
 5. Attach 4 x 500GB data disks to the VM for use in the RAID configuration
 
-		FOR /L %d IN (1,1,4) DO azure vm disk attach-new mariadbhatemplate 512 http://mariadbstorage.blob.core.windows.net/vhds/mariadbhatemplate-data-%d.vhd
+		FOR /L %d IN (1,1,4) DO azure vm disk attach-new mariadbhatemplate 512 http://mariadbstorage.blob.core.chinacloudapi.cn/vhds/mariadbhatemplate-data-%d.vhd
 
-6. SSH into the template VM that you created at **mariadbhatemplate.cloudapp.net:22** and connect using your private key.
+6. SSH into the template VM that you created at **mariadbhatemplate.chinacloudapp.cn:22** and connect using your private key.
 
 ### Software
 
@@ -210,7 +206,7 @@ this will output something like `5112500ae3b842c8b9c604889f8753c3__OpenLogic-Cen
 
 	- Edit the **[mariadb]** section and append the below
 
-	> [AZURE.NOTE] It is recommended that **innodb\_buffer\_pool_size** be 70% of your VM's memory. It has been set at 2.45GB here for the Medium Azure VM with 3.5GB of RAM.
+	> [AZURE.NOTE] It is recommended that **innodb_buffer_pool_size** be 70% of your VM's memory. It has been set at 2.45GB here for the Medium Azure VM with 3.5GB of RAM.
 
 	        innodb_buffer_pool_size = 2508M # The buffer pool contains buffered data and the index. This is usually set to 70% of physical memory.
             innodb_log_file_size = 512M #  Redo logs ensure that write operations are fast, reliable, and recoverable after a crash
@@ -237,7 +233,7 @@ this will output something like `5112500ae3b842c8b9c604889f8753c3__OpenLogic-Cen
 
 Create 3 VMs out of the template you just created and then configure and start the cluster.
 
-1. Create the first CentOS 7 VM from the **mariadb-galera-image** image you created, providing the virtual network name **mariadbvnet** and the subnet **mariadb**, machine size **Medium**, passing in the Cloud Service name to be **mariadbha** (or whatever name you want to be accessed through mariadbha.cloudapp.net), setting the name of this machine to be **mariadb1**  and the username to be **azureuser**,  and enabling SSH access and passing the SSH certificate .pem file and replacing **/path/to/key.pem** with the path where you stored the generated .pem SSH key.
+1. Create the first CentOS 7 VM from the **mariadb-galera-image** image you created, providing the virtual network name **mariadbvnet** and the subnet **mariadb**, machine size **Medium**, passing in the Cloud Service name to be **mariadbha** (or whatever name you want to be accessed through mariadbha.chinacloudapp.cn), setting the name of this machine to be **mariadb1**  and the username to be **azureuser**,  and enabling SSH access and passing the SSH certificate .pem file and replacing **/path/to/key.pem** with the path where you stored the generated .pem SSH key.
 
 	> [AZURE.NOTE] The commands below are split over multiple lines for clarity, but you should enter each as one line.
 
@@ -324,11 +320,11 @@ then change the Probe Interval to 5 seconds and save
 
 ## Validating the cluster
 
-The hard work is done. The cluster should be now accessible at `mariadbha.cloudapp.net:3306` which will hit the load balancer and route requests between the 3 VMs smoothly and efficiently.
+The hard work is done. The cluster should be now accessible at `mariadbha.chinacloudapp.cn:3306` which will hit the load balancer and route requests between the 3 VMs smoothly and efficiently.
 
 Use your favorite MySQL client to connect or just connect from one of the VMs to verify this cluster is working.
 
-	 mysql -u cluster -h mariadbha.cloudapp.net -p
+	 mysql -u cluster -h mariadbha.chinacloudapp.cn -p
 
 Then create a new database and populate it with some data
 
@@ -369,10 +365,10 @@ You may want to take a look at [another way to cluster MySQL on Linux] and ways 
 <!--Link references-->
 [Galera]: http://galeracluster.com/products/
 [MariaDBs]: https://mariadb.org/en/about/
-[Azure CLI]: http://azure.microsoft.com/documentation/articles/xplat-cli/
-[Azure CLI command reference]: http://azure.microsoft.com/documentation/articles/virtual-machines-command-line-tools/
+[Azure CLI]: /documentation/articles/xplat-cli/
+[Azure CLI command reference]: /documentation/articles/virtual-machines-command-line-tools/
 [create an SSH key for authentication]:http://www.jeff.wilcox.name/2013/06/secure-linux-vms-with-ssh-certificates/
-[performance tuning strategy]: http://azure.microsoft.com/documentation/articles/virtual-machines-linux-optimize-mysql-perf/
-[optimize and test MySQL performance on Azure Linux VMs]:http://azure.microsoft.com/documentation/articles/virtual-machines-linux-optimize-mysql-perf/
+[performance tuning strategy]: /documentation/articles/virtual-machines-linux-optimize-mysql-perf/
+[optimize and test MySQL performance on Azure Linux VMs]:/documentation/articles/virtual-machines-linux-optimize-mysql-perf/
 [issue #1268 in the Azure CLI]:https://github.com/Azure/azure-xplat-cli/issues/1268
-[another way to cluster MySQL on Linux]: http://azure.microsoft.com/documentation/articles/virtual-machines-linux-mysql-cluster/
+[another way to cluster MySQL on Linux]: /documentation/articles/virtual-machines-linux-mysql-cluster/

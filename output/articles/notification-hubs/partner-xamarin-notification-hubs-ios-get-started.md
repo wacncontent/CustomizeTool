@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Get started with Notification Hubs for Xamarin iOS apps | Microsoft Azure"
+	pageTitle="Get started with Notification Hubs for Xamarin iOS apps | Windows Azure"
 	description="In this tutorial, you learn how to use Azure Notification Hubs to send push notifications to a Xamarin iOS application."
 	services="notification-hubs"
 	documentationCenter="xamarin"
@@ -9,16 +9,12 @@
 
 <tags
 	ms.service="notification-hubs"
-	ms.workload="mobile"
-	ms.tgt_pltfrm="mobile-xamarin-ios"
-	ms.devlang="dotnet"
-	ms.topic="hero-article"
 	ms.date="10/19/2015"
-	ms.author="yuaxu"/>
+	wacn.date=""/>
 
 # Get started with Notification Hubs
 
-[AZURE.INCLUDE [notification-hubs-selector-get-started](../../includes/notification-hubs-selector-get-started.md)]
+[AZURE.INCLUDE [notification-hubs-selector-get-started](../includes/notification-hubs-selector-get-started.md)]
 
 ##Overview
 
@@ -41,7 +37,7 @@ This tutorial requires the following:
 
 Completing this tutorial is a prerequisite for all other Notification Hubs tutorials for Xamarin.iOS apps.
 
-> [AZURE.IMPORTANT] To complete this tutorial, you must have an active Azure account. If you don't have an account, you can create a free trial account in just a couple of minutes. For details, see [Azure Free Trial](http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A643EE910&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fen-us%2Fdocumentation%2Farticles%2Fpartner-xamarin-notification-hubs-ios-get-started).
+> [AZURE.IMPORTANT] To complete this tutorial, you must have an active Azure account. If you don't have an account, you can create a trial account in just a couple of minutes. For details, see [Azure Trial](/pricing/1rmb-trial/?WT.mc_id=A643EE910&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fen-us%2Fdocumentation%2Farticles%2Fpartner-xamarin-notification-hubs-ios-get-started).
 
 The Apple Push Notification Service uses certificates to authenticate your mobile service. Follow these instructions to create the necessary certificates and upload them to your mobile service. For the official APNs feature documentation, see [Apple Push Notification Service].
 
@@ -76,7 +72,7 @@ To be able to send push notifications to an iOS app from Mobile Services, you mu
 
    	![][105]
 
-2. Type a name for your app in **Description** and a value for **Bundle Identifier**, check the **Push Notifications** option in the **App Services** section, and then click **Continue**.
+2. Type a name for your app in **Description** and a value for **Bundle Identifier**, check the **Push Notifications** option in the **Azure Websites** section, and then click **Continue**.
 
    	![][106]
 
@@ -186,9 +182,9 @@ This ensures that the Xcode project uses the new profile for code signing. Next,
 
 ##<a name="configure-hub"></a>Configure your notification hub
 
-1. Sign in to the [Azure portal], and click **+NEW** at the bottom of the screen.
+1. Sign in to the [Azure Management Portal], and click **+NEW** at the bottom of the screen.
 
-2. Click **App Services**, click **Service Bus**, click **Notification Hub**, and then click **Quick Create**.
+2. Click **Azure Websites**, click **Service Bus**, click **Notification Hub**, and then click **Quick Create**.
 
    	![][27]
 
@@ -321,7 +317,7 @@ Your notification hub is now configured to work with APNs, and you have the conn
 
 ##<a name="send"></a>Send notifications from your backend
 
-You can send notifications by using Notification Hubs from any backend via our <a href="http://msdn.microsoft.com/library/windowsazure/dn223264.aspx">REST interface</a>. In this tutorial, we will send notifications by using a .NET console app and by using a mobile service through a node script.
+You can send notifications by using Notification Hubs from any backend via our <a href="http://msdn.microsoft.com/zh-cn/library/azure/dn223264.aspx">REST interface</a>. In this tutorial, we will send notifications by using a .NET console app and by using a mobile service through a node script.
 
 To send notifications by using a .NET app:
 
@@ -357,7 +353,7 @@ You can find all the possible payloads in the Apple [Local and Push Notification
 
 To send a notification by using a mobile service, follow [Get started with Mobile Services], and then:
 
-1. Sign in to the [Azure portal], and select your mobile service.
+1. Sign in to the [Azure Management Portal], and select your mobile service.
 
 2. Select the **Scheduler** tab on the top.
 
@@ -464,9 +460,9 @@ In this simple example, you broadcasted notifications to all your iOS devices. I
 [Live SDK for Windows]: http://go.microsoft.com/fwlink/p/?LinkId=262253
 
 [Get started with Mobile Services]: /develop/mobile/tutorials/get-started-xamarin-ios
-[Azure portal]: https://manage.windowsazure.com/
-[Notification Hubs Guidance]: http://msdn.microsoft.com/library/jj927170.aspx
-[Notification Hubs How-To for iOS]: http://msdn.microsoft.com/library/jj927168.aspx
+[Azure Management Portal]: https://manage.windowsazure.cn/
+[Notification Hubs Guidance]: http://msdn.microsoft.com/zh-cn/library/jj927170.aspx
+[Notification Hubs How-To for iOS]: http://msdn.microsoft.com/zh-cn/library/jj927168.aspx
 [Install Xcode]: https://go.microsoft.com/fwLink/p/?LinkID=266532
 [iOS Provisioning Portal]: http://go.microsoft.com/fwlink/p/?LinkId=272456
 

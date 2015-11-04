@@ -1,5 +1,5 @@
 <properties
-	pageTitle="How to use Azure storage for SQL Server backup and restore | Microsoft Azure"
+	pageTitle="How to use Azure storage for SQL Server backup and restore | Windows Azure"
 	description="Backup SQL Server and SQL Database to Azure Storage. Explains the benefits of backing up SQL databases to Azure Storage, and which SQL Server and Azure Storage components are required"
 	services="sql-database, virtual-machines"
 	documentationCenter=""
@@ -9,12 +9,8 @@
 
 <tags
 	ms.service="sql-database"
-	ms.workload="data-management"
-	ms.tgt_pltfrm="na"
-	ms.devlang="vm-windows-sql-server"
-	ms.topic="article"
 	ms.date="07/16/2015"
-	ms.author="carlrab"/>
+	wacn.date=""/>
 
 
 
@@ -46,18 +42,18 @@ For a complete walkthrough of creating a storage account and performing a simple
 ## Azure Blob Storage Service Components
 
 * Storage Account: The storage account is the starting point for all storage services. To access an Azure Blob Storage service, first create an Azure Storage account. The storage account name and its access key properties are required to authenticate to the Azure Blob Storage service and its components.
-For more information about Azure Blob storage service, see [How to use the Azure Blob Storage Service](http://azure.microsoft.com/develop/net/how-to-guides/blob-storage/)
+For more information about Azure Blob storage service, see [How to use the Azure Blob Storage Service](/documentation/articles/storage-dotnet-how-to-use-blobs/)
 
 * Container: A container provides a grouping of a set of Blobs, and can store an unlimited number of Blobs. To write a SQL Server backup to an Azure Blob service, you must have at least the root container created.
 
-* Blob: A file of any type and size. There are two types of blobs that can be stored in the Azure Blob storage service: block and page blobs.  SQL Server backup uses page Blobs as the Blob type. Blobs are addressable using the following URL format: `https://<storage account>.blob.core.windows.net/<container>/<blob>`
-For more information about page Blobs, see [Understanding Block and Page Blobs](http://msdn.microsoft.com/library/azure/ee691964.aspx)
+* Blob: A file of any type and size. There are two types of blobs that can be stored in the Azure Blob storage service: block and page blobs.  SQL Server backup uses page Blobs as the Blob type. Blobs are addressable using the following URL format: `https://<storage account>.blob.core.chinacloudapi.cn/<container>/<blob>`
+For more information about page Blobs, see [Understanding Block and Page Blobs](http://msdn.microsoft.com/zh-cn/library/azure/ee691964.aspx)
 
 ## SQL Server Components
 
 * URL: A URL specifies a Uniform Resource Identifier (URI) to a unique backup file. The URL is used to provide the location and name of the SQL Server backup file. In this implementation, the only valid URL is one that points to a page Blob in an Azure Storage account. The URL must point to an actual Blob, not just a container. If the Blob does not exist, it is created. If an existing Blob is specified, BACKUP fails, unless the > WITH FORMAT option is specified.
 Following is an example of the URL you would specify in the BACKUP command:
-**`http[s]://ACCOUNTNAME.Blob.core.windows.net/<CONTAINER>/<FILENAME.bak>`
+**`http[s]://ACCOUNTNAME.Blob.core.chinacloudapi.cn/<CONTAINER>/<FILENAME.bak>`
 
 <b>Note:</b> HTTPS is not required, but is recommended.
 <b>Important</b>
