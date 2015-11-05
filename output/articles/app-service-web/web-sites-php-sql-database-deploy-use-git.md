@@ -333,6 +333,23 @@ To publish changes to application, follow these steps:
 
 
 
+<!-- keep by customization: begin -->
+[running-app]: ./media/web-sites-php-sql-database-deploy-use-git/running_app_3.png
+[new- Website]: ./media/web-sites-php-sql-database-deploy-use-git/new_Website.jpg
+[custom-create]: ./media/web-sites-php-sql-database-deploy-use-git/custom_create.png
+[website-details-sqlazure]: ./media/web-sites-php-sql-database-deploy-use-git/createphpgitsite.png
+[database-settings]: ./media/web-sites-php-sql-database-deploy-use-git/setupdb.png
+[create-server]: ./media/web-sites-php-sql-database-deploy-use-git/create_server.jpg
+[go-to-dashboard]: ./media/web-sites-php-sql-database-deploy-use-git/viewdeploy.png
+[setup-git-publishing]: ./media/web-sites-php-sql-database-deploy-use-git/setup_git_publishing.png
+[credentials]: ./media/web-sites-php-sql-database-deploy-use-git/git-deployment-credentials.png
+[git-instructions]: ./media/web-sites-php-sql-database-deploy-use-git/gitsettings.png
+[linked-resources]: ./media/web-sites-php-sql-database-deploy-use-git/linked_resources.jpg
+[connection-string]: ./media/web-sites-php-sql-database-deploy-use-git/connection_string.jpg
+[management-portal]: https://manage.windowsazure.cn/
+[sql-database-editions]: http://msdn.microsoft.com/zh-cn/library/azure/ee621788.aspx
+[where-is-code]: ./media/web-sites-php-sql-database-deploy-use-git/setupgit.png
+<!-- keep by customization: end -->
 
 [install-php]: http://www.php.net/manual/en/install.php
 [install-SQLExpress]: http://www.microsoft.com/download/details.aspx?id=29062
@@ -340,4 +357,3 @@ To publish changes to application, follow these steps:
 [install-git]: http://git-scm.com/
 [pdo-sqlsrv]: http://php.net/pdo_sqlsrv
  
-<!-- keep by customization: begin -->

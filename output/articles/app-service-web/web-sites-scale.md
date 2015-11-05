@@ -20,7 +20,7 @@ For increased performance and throughput for your web apps on Windows Azure, you
 [AZURE.INCLUDE [app-service-web-to-api-and-mobile](../includes/app-service-web-to-api-and-mobile.md)]
 -->
 
-Scaling up on Azure web apps involves two related actions: changing your App Service plan mode to a higher level of service, and configuring certain settings after you have switched to the higher level of service. Both topics are covered in this article. Higher service tiers like **Standard**<!-- deleted by customization and **Premium** --> modes offer greater robustness and flexibility in determining how your resources on Azure are used.
+Scaling up on Azure web apps involves two related actions: changing your App Service plan mode to a higher level of service, and configuring certain settings after you have switched to the higher level of service. Both topics are covered in this article. Higher service tiers like **Standard** <!-- deleted by customization and **Premium** --> modes offer greater robustness and flexibility in determining how your resources on Azure are used.
 
 Changing modes and configuring them is easily done in the Scale tab of the management portal. You can scale up or down as required. These changes take only seconds to apply and affect all web apps in your App Service plan. They do not require your code to be changed or your applications to be redeployed.
 
@@ -101,10 +101,10 @@ In this article:
 <!-- keep by customization: end -->
 <a name="scalingstandard"></a>
 <!-- ================================= -->
-## Scaling to Standard<!-- deleted by customization or Premium --> Mode
+## Scaling to Standard <!-- deleted by customization or Premium --> mode
 <!-- ================================= -->
 
-> [AZURE.NOTE] Before switching an App Service plan to **Standard**<!-- deleted by customization or **Premium** --> mode, you should remove spending caps in place for your Windows Azure Websites subscription. Otherwise, you risk your web app becoming unavailable if you reach your caps before the billing period ends. To view or change options for your Windows Azure Websites subscription, see [Windows Azure Subscriptions][azuresubscriptions].
+> [AZURE.NOTE] Before switching an App Service plan to **Standard** <!-- deleted by customization or **Premium** --> mode, you should remove spending caps in place for your Windows Azure Websites subscription. Otherwise, you risk your web app becoming unavailable if you reach your caps before the billing period ends. To view or change options for your Windows Azure Websites subscription, see [Windows Azure Subscriptions][azuresubscriptions].
 <!-- deleted by customization
 
 1. To scale to **Standard** or **Premium** mode, follow the same initial steps as when scaling to **Shared** or **Basic**, and then choose a **Standard** or **Premium** mode in **Choose your pricing tier**, then click **Select**. 
@@ -257,14 +257,14 @@ Depending on the web app's mode, the following developer-oriented features are a
 ### Debugger Support ###
 
 - Debugger support is available for the **Free**, **Shared**, and **Basic** modes at 1 concurrent connection per App Service plan.
-- Debugger support is available for the **Standard** <!-- deleted by customization and **Premium** -->modes at 5 concurrent connections per App Service plan.
+- Debugger support is available for the **Standard** <!-- deleted by customization and **Premium** --> modes at 5 concurrent connections per App Service plan.
 
 <a name="OtherFeatures"></a>
 ## Other Features
 
 ### Web Endpoint Monitoring ###
 
-- Web endpoint monitoring is available in the **Basic**, **Standard**<!-- deleted by customization and **Premium** --> modes. For more information about web endpoint monitoring, see [How to Monitor Web Apps](/documentation/articles/web-sites-monitor).
+- Web endpoint monitoring is available in the **Basic**, **Standard**<!-- deleted by customization , and **Premium** --> modes. For more information about web endpoint monitoring, see [How to Monitor Web Apps](/documentation/articles/web-sites-monitor).
 
 - For detailed information about all of the remaining features in the App Service plans, including pricing and features of interest to all users (including developers), see [Azure Websites Pricing Details](/home/features/web-site/#price).
 <!-- deleted by customization

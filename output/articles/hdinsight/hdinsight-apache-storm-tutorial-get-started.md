@@ -21,10 +21,8 @@ Apache Storm is a scalable, fault-tolerant, distributed, real-time computation s
 <!-- deleted by customization
 
 [AZURE.INCLUDE [preview portal](../includes/hdinsight-azure-preview-portal.md)]
--->
 
-* [Apache Storm Tutorial: Get started with the Storm Starter samples for big data analytics on HDInsight](/documentation/articles/hdinsight-apache-storm-tutorial-get-started-v1)
-<!-- deleted by customization
+* [Apache Storm Tutorial: Get started with the Storm Starter samples for big data analytics on HDInsight](/documentation/articles/hdinsight-apache-storm-tutorial-get-started)
 
    
 
@@ -290,4 +288,6 @@ In this Apache Storm tutorial, you used the Storm Starter to learn how to create
 [stormjavadocs]: https://storm.incubator.apache.org/apidocs/
 [azureportal]: https://manage.windowsazure.cn/
 [hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters
-<!-- deleted by customization [preview-portal]: https://manage.windowsazure.cn -->
+<!-- deleted by customization
+[preview-portal]: https://manage.windowsazure.cn/
+-->

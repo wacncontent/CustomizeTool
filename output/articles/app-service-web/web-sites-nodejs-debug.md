@@ -102,10 +102,10 @@ This will return a stream of log events that are updated as they occur on the se
 
 In this article you learned how to enable and access diagnostics information for Azure. While this information is useful in understanding problems that occur with your application, it may point to a problem with a module you are using or that the version of Node.js used by Azure Websites is different than the one used in your deployment environment.
 
+<!-- deleted by customization
 For information in working with modules on Azure, see [Using Node.js Modules with Azure Applications].
 
 For information on specifying a Node.js version for your application, see [Specifying a Node.js version in an Azure application].
-<!-- deleted by customization
 
 For more information, see also the [Node.js Developer Center](/develop/nodejs/).
 
@@ -119,7 +119,9 @@ For more information, see also the [Node.js Developer Center](/develop/nodejs/).
 [IISNode]: https://github.com/tjanczuk/iisnode
 [IISNode Readme]: https://github.com/tjanczuk/iisnode#readme
 [How to Use The Azure Command-Line Interface]: /documentation/articles/xplat-cli-install
+<!-- deleted by customization
 [Using Node.js Modules with Azure Applications]: /documentation/articles/nodejs-use-node-modules-azure-apps
 [Specifying a Node.js version in an Azure application]: /documentation/articles/nodejs-specify-node-version-azure-apps
+-->
 [restart-button]: ./media/web-sites-nodejs-debug/restartbutton.png
  

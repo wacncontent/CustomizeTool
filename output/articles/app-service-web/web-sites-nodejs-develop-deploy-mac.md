@@ -22,7 +22,7 @@
 - [PHP - FTP](/documentation/articles/web-sites-php-mysql-deploy-use-ftp)
 - [Python](/documentation/articles/web-sites-python-ptvs-django-mysql)
 
-This tutorial shows how to create a simple [Node.js](http://nodejs.org) application and deploy it to a [web app](/documentation/articles/app-service-web-overview) in [Azure Websites](/documentation/articles/app-service-value-prop-what-is) by using [Git](http://git-scm.com). The instructions in this tutorial can be followed on any operating system that is capable of running Node.js.
+This tutorial shows how to create a simple [Node.js](http://nodejs.org) application and deploy it to a [web app](/home/features/web-site/) in [Azure Websites](/documentation/services/web-sites) by using [Git](http://git-scm.com). The instructions in this tutorial can be followed on any operating system that is capable of running Node.js.
 
 You'll learn:
 
@@ -36,7 +36,7 @@ The completed application writes a short "hello world" string to the browser.
 For tutorials and sample code with more complex Node.js applications, or for other topics about how to use Node.js in Azure, see the [Node.js Developer Center](/develop/nodejs/).
 
 > [AZURE.NOTE]
-> To complete this tutorial, you need a Windows Azure account. If you don't have an account, you can <!-- deleted by customization [activate your MSDN subscriber benefits](/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F) or -->[sign up for a trial](/pricing/1rmb-trial/?WT.mc_id=A261C142F).
+> To complete this tutorial, you need a Windows Azure account. If you don't have an account, you can <!-- deleted by customization [activate your MSDN subscriber benefits](/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F) or --> [sign up for a trial](/pricing/1rmb-trial/?WT.mc_id=A261C142F).
 <!-- deleted by customization
 >
 > If you want to get started with Azure Websites before you sign up for an Azure account, go to [Try Azure Websites](https://tryappservice.azure.com/). There, you can immediately create a short-lived starter web app in Azure Websites—no credit card required, and no commitments.
@@ -243,9 +243,9 @@ From the **Web app** blade you can click **Settings > Continuous Deployment** to
 <!-- keep by customization: end -->
 ## Next steps
 
-You've deployed a Node.js application to a web app in Azure Websites. To learn more about how Azure Websites web apps run Node.js applications, see [Azure Websites: Node.js](http://blogs.msdn.com/b/silverlining/archive/2012/06/14/windows-azure-websites-node-js.aspx) and [Specifying a Node.js version in an Azure application](/documentation/articles/nodejs-specify-node-version-azure-apps).
+You've deployed a Node.js application to a web app in Azure Websites. <!-- deleted by customization To learn more about how Azure Websites web apps run Node.js applications, see [Azure Websites: Node.js](http://blogs.msdn.com/b/silverlining/archive/2012/06/14/windows-azure-websites-node-js.aspx) and [Specifying a Node.js version in an Azure application](/documentation/articles/nodejs-specify-node-version-azure-apps). -->
 
-Node.js provides a rich ecosystem of modules that can be used by your applications. To learn how Web Apps works with modules, see [Using Node.js modules with Azure applications](/documentation/articles/nodejs-use-node-modules-azure-apps).
+Node.js provides a rich ecosystem of modules that can be used by your applications. <!-- deleted by customization To learn how Web Apps works with modules, see [Using Node.js modules with Azure applications](/documentation/articles/nodejs-use-node-modules-azure-apps). -->
 
 If you encounter problems with your application after it has been deployed to Azure, see [How to debug a Node.js application in Azure Websites](/documentation/articles/web-sites-nodejs-debug) for information on diagnosing the problem.
 

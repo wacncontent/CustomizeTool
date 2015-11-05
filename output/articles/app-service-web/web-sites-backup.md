@@ -51,7 +51,7 @@ This information is backed up to the Azure storage account and container that yo
 <a name="requirements"></a>
 ## Requirements and restrictions
 
-* The Backup and Restore feature requires the site to be in Standard mode. For more information about scaling your webapp to use Standard mode, see [Scale a web app in Azure Websites](/documentation/articles/web-sites-scale). <!-- deleted by customization Note that Premium mode allows a greater number of daily backups to be performed over the Standard mode. -->
+* The Backup and Restore feature requires the site to be in Standard mode. For more information about scaling your web app to use Standard mode, see [Scale a web app in Azure Websites](/documentation/articles/web-sites-scale). <!-- deleted by customization Note that Premium mode allows a greater number of daily backups to be performed over the Standard mode. -->
 
 <!-- deleted by customization
 * The Backup and Restore feature requires an Azure storage account and container that must belong to the same subscription as the web app that you are going to back up. If you do not yet have a storage account, you can create one by clicking the **Storage Account** in the **Backups** blade of the [Azure preview portal](http://manage.windowsazure.cn), and then choosing the **Storage Account** and the **Container** from the **Destination** blade. For more information on Azure storage accounts, see the [links](#moreaboutstorage) at the end of this article.

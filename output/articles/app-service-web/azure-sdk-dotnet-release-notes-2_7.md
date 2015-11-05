@@ -102,6 +102,7 @@ If you’re using an Azure Resource Group project from a previous version of the
 - Support for viewing Premium Storage accounts through Server Explorer. Server Explorer will only display page blobs for premium storage accounts as they are the only supported type for premium storage accounts.
 -->
 
+<!-- deleted by customization
 ###Azure Data Factory Tools for Visual Studio 
 
 Introducing **Azure Data Factory Tools** for Visual Studio. Below are the enabled features. See [this blog](/documentation/services/data-factory/) for more information.
@@ -114,6 +115,7 @@ Introducing **Azure Data Factory Tools** for Visual Studio. Below are the enable
 - **Multi-Environment publishing**: Publish authored pipelines to dev, test or Prod environment by creating separate config files for each environment.
 - **Pig, Hive and .Net based Data Processing Support**: Support for Pig and Hive Scripts in Data Factory project. Support for referencing C# Project for managing .Net Activity.
 
+-->
 ##Azure SDK for .NET 2.7.1
 
 The following section contains updates that were introduced with the Azure SDK for .NET 2.7.1 release.

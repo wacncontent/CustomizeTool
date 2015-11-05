@@ -1,4 +1,4 @@
-new docs: 63, word count: 86876
+new docs: 63, word count: 86921
 articles/virtual-network/resource-groups-networking.md
 articles/virtual-network/virtual-network-create-udr-arm-cli.md
 articles/virtual-network/virtual-network-create-udr-arm-ps.md

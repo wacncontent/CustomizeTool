@@ -18,7 +18,7 @@
 
 This tutorial describes how to get started running Python in [Azure Websites](/documentation/services/web-sites/).  Web Apps provides limited free hosting and rapid deployment, and you can use Python!  As your app grows, you can switch to paid hosting, and you can also integrate with all of the other Azure services.
 
-You will create an application using the Flask web framework (see alternate versions of this tutorial for [Django](/documentation/articles/web-sites-python-create-deploy-django-app) and [Bottle](/documentation/articles/web-sites-python-create-deploy-bottle-app)).  You will create the website <!-- deleted by customizationfrom the Azure gallery-->, set up Git deployment, and clone the repository locally.  Then you will run the application locally, make changes, commit and push them to Azure.  The tutorial shows how to do this from Windows or Mac/Linux.
+You will create an application using the Flask web framework (see alternate versions of this tutorial for [Django](/documentation/articles/web-sites-python-create-deploy-django-app) and [Bottle](/documentation/articles/web-sites-python-create-deploy-bottle-app)).  You will create the website <!-- deleted by customization from the Azure gallery-->, set up Git deployment, and clone the repository locally.  Then you will run the application locally, make changes, commit and push them to Azure.  The tutorial shows how to do this from Windows or Mac/Linux.
 
 [AZURE.INCLUDE [create-account-and-websites-note](../includes/create-account-and-websites-note.md)]
 <!-- deleted by customization
@@ -45,7 +45,7 @@ You will create an application using the Flask web framework (see alternate vers
 - Python 2.7 or 3.4
 - setuptools, pip, virtualenv (Python 2.7 only)
 - Git
-- [Python Tools for Visual Studio][](/documentation/articles/PTVS) - Note: this is optional
+- [Python Tools for Visual Studio][]<!-- deleted by customization (/documentation/articles/PTVS) --> - Note: this is optional
 
 **Note**: TFS publishing is currently not supported for Python projects.
 

@@ -460,9 +460,9 @@ Another option for provisioning an HDInsight cluster is the Azure CLI. Azure CLI
 - **Node.js SDK** - <a href="https://www.npmjs.com/package/azure-mgmt-hdinsight" target="_blank">https://www.npmjs.com/package/azure-mgmt-hdinsight</a>
 - **Azure CLI** - <a href="https://github.com/azure/azure-xplat-cli/archive/hdinsight-February-18-2015.tar.gz" target="_blank">https://github.com/azure/azure-xplat-cli/archive/hdinsight-February-18-2015.tar.gz</a>  
 
-For a general guide on how to use Azure CLI, see [Azure CLI<!-- deleted by customization for Mac, Linux and Windows -->](/documentation/articles/xplat-cli-install).
+For a general guide on how to use Azure CLI, see [Azure CLI <!-- deleted by customization for Mac, Linux and Windows -->](/documentation/articles/xplat-cli-install).
 
-Instructions below guide you on how to install Azure CLI on <!-- deleted by customization Linux and -->Windows, and then how to use the command line to provision a cluster.
+Instructions below guide you on how to install Azure CLI on <!-- deleted by customization Linux and --> Windows, and then how to use the command line to provision a cluster.
 <!-- deleted by customization
 
 - [Set up the Azure CLI for Linux](#clilin)
@@ -591,7 +591,7 @@ HDInsight uses an Azure Blob storage container as the default file system. An Az
 
 		azure storage account create [options] <StorageAccountName>
 
-	When prompted for a location, select a location where an HDInsight cluster can be provisioned. The storage must be in the same location as the HDInsight cluster. Currently, only the <!-- deleted by customization **East Asia**, **Southeast Asia**, **China North**, **West Europe**, **China East**, **China North**, -->**China North**, and **China East** regions can host HDInsight clusters.  
+	When prompted for a location, select a location where an HDInsight cluster can be provisioned. The storage must be in the same location as the HDInsight cluster. Currently, only the <!-- deleted by customization **East Asia**, **Southeast Asia**, **China North**, **West Europe**, **China East**, **China North**, --> **China North**, and **China East** regions can host HDInsight clusters.  
 
 For information on creating an Azure Storage account by using the Azure Management Portal, see [Create, manage, or delete a storage account](/documentation/articles/storage-create-storage-account).
 

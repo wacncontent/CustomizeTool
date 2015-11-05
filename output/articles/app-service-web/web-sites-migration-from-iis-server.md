@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties 
 	pageTitle="Migrate an enterprise web app to Azure Websites" 
 	description="Shows how to use Web Apps Migration Assistant to quickly migrate existing IIS websites to Azure Websites" 

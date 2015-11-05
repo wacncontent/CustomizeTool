@@ -1,4 +1,4 @@
-new docs: 115, word count: 219788
+new docs: 115, word count: 220280
 articles/app-service-web/app-service-agile-software-development.md
 articles/app-service-web/app-service-app-service-environment-control-inbound-traffic.md
 articles/app-service-web/app-service-app-service-environment-geo-distributed-scale.md

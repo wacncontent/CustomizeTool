@@ -57,6 +57,8 @@ Try the following sample: [Analyzing sensor data using Hive with HDInsight](/doc
 
 
 [hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters
+<!-- deleted by customization
 [hdinsight-sensor-data-sample]: /documentation/articles/hdinsight-use-hive-sensor-data-analysis
+-->
 [img-hdi-weblogs-sample]: ./media/hdinsight-hive-analyze-website-log/hdinsight-weblogs-sample.png
  

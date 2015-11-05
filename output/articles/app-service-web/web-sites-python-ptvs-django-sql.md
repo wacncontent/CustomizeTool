@@ -18,7 +18,7 @@
 
 # Django and SQL Database on Azure with Python Tools 2.2 for Visual Studio 
 
-In this tutorial, we'll use [Python Tools for Visual Studio] to create a simple polls web app using one of the PTVS sample templates.<!-- deleted by customization -->
+In this tutorial, we'll use [Python Tools for Visual Studio] to create a simple polls web app using one of the PTVS sample templates. <!-- deleted by customization This tutorial is also available as a [video](https://www.youtube.com/watch?v=ZwcoGcIeHF4). -->
 
 We'll learn how to use a SQL database hosted on Azure, how to configure the web app to use a SQL database, and how to publish the web app to [Azure Websites](/documentation/services/web-sites/).
 

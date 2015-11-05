@@ -8,10 +8,11 @@ import re
 import os
 import sys
 from fileListGen import genFileList
-from fileCompare import compareWithMooncake
+from fileCompare import compareWithMooncake, removeDeleteAndKeep
 from codecs import open
 from setting import setting
 from linkChecker import checkLinks, getOldLinks, findRedirect
+from relativeLinkChecker import checkRelativeLink
 from wordCounter import countAll
 
 __author__ = 'Steven'
@@ -22,6 +23,7 @@ class Core:
         # Get const dict and regex dict individually
         constDict = dict[0]
         regexDict = dict[1]
+        correctDict = dict[2]
 
         # Do the const string substitution
         if len(constDict) > 0:
@@ -34,6 +36,10 @@ class Core:
         # regex = re.compile("(%s)" % "|".join(map(lambda x:x, regexDict.keys())))
         for k, v in regexDict.items():
             text = re.sub(k,v,text)
+
+        if len(correctDict) > 0:
+            correctRegex = re.compile("(%s)" % "|".join(map(re.escape, correctDict.keys())))
+            text = correctRegex.sub(lambda mo: correctDict[mo.string[mo.start():mo.end()]], text)
 
         return text
 
@@ -73,6 +79,15 @@ class Core:
                     result = compareWithMooncake(mdFile, result)
                 bakFile = open(setting["output_folder"]+mdFile, 'w')
             bakFile.write(result)
+            bakFile.close()
+            if setting["removeComment"]["remove"] == True:
+                if setting["language"] == "zh-cn":
+                    removeCommentFile = open(setting["removeComment"]["path"]+mdFile, 'w', "utf8")
+                else:
+                    removeCommentFile = open(setting["removeComment"]["path"]+mdFile, 'w')
+                removeCommentFile.write(removeDeleteAndKeep(result))
+                removeCommentFile.close()
+            checkRelativeLink(re.sub("\<\!\-\-[^\<|^\>]*\-\-\>", "", result))
             print('\033[1;33m '+ mdFile+'\033[0m \033 customize success, the result file is: \033[1;32m'+ mdFile+'.bak\033[0m\n')
         newLinkSet = set(links)
         oldLinkSet = set(getOldLinks())

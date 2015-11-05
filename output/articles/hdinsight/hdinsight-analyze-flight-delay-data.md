@@ -746,7 +746,7 @@ For a full list of the HiveQL commands, see [Hive Data Definition Language][hado
 		#SQL query string for creating AvgDelays table
 		[String]$sqlDatabaseTableName = "AvgDelays"
 		[String]$sqlCreateAvgDelaysTable = " CREATE TABLE [dbo].[$sqlDatabaseTableName](
-		            [origin_city_name] [nvarchar](/documentation/articles/50) NOT NULL,
+		            [origin_city_name] [nvarchar](50) NOT NULL,
 		            [weather_delay] float,
 		        CONSTRAINT [PK_$sqlDatabaseTableName] PRIMARY KEY CLUSTERED
 		        (

@@ -15,7 +15,7 @@
 # Install and use Solr on HDInsight Hadoop clusters
 
 
-Learn how to customize Windows based HDInsight cluster with Solr using Script Action, and how to use Solr to search data.<!-- deleted by customization For information on using Solr with a Linux-based cluster, see [Install and use Solr on HDinsight Hadoop clusters (Linux)](/documentation/articles/hdinsight-hadoop-solr-install-linux).-->
+Learn how to customize Windows based HDInsight cluster with Solr using Script Action, and how to use Solr to search data. <!-- deleted by customization For information on using Solr with a Linux-based cluster, see [Install and use Solr on HDinsight Hadoop clusters (Linux)](/documentation/articles/hdinsight-hadoop-solr-install-linux).-->
  
 You can install Solr on any type of cluster (Hadoop, Storm, HBase<!-- deleted by customization , Spark -->) on Azure HDInsight by using *Script Action*. A sample script to install Solr on an HDInsight cluster is available from a read-only Azure storage blob at [https://hdiconfigactions.blob.core.windows.net/solrconfigactionv01/solr-installer-v01.ps1](https://hdiconfigactions.blob.core.windows.net/solrconfigactionv01/solr-installer-v01.ps1). 
 

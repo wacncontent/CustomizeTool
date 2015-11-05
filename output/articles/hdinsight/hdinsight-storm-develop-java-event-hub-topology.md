@@ -48,7 +48,7 @@ In this tutorial, you will learn how to use the Event Hubs spout and bolt to rea
     - [Use SSH with Linux-based Hadoop on HDInsight from Windows](/documentation/articles/hdinsight-hadoop-linux-use-ssh-windows)
 -->
 
-* An SCP client.<!-- deleted by customization This is provided with all Linux, Unix, and OS X systems.--> For Windows clients, we recommend PSCP, which is available from the [PuTTY download page](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html).
+* An SCP client. <!-- deleted by customization This is provided with all Linux, Unix, and OS X systems.--> For Windows clients, we recommend PSCP, which is available from the [PuTTY download page](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html).
 
 ##Understanding the example
 
@@ -249,7 +249,7 @@ You must populate both of these with information about your Event Hub and HDInsi
 
 The following environment variables may be set when you install Java and the JDK on your development workstation. However, you should check that they exist and that they contain the correct values for your system.
 
-* **JAVA_HOME** - should point to the directory where the Java runtime environment (JRE) is installed. For example, <!-- deleted by customization in a Unix or Linux distribution, it should have a value similar to `/usr/lib/jvm/java-7-oracle`. -->In Windows, it would have a value similar to `c:\Program Files (x86)\Java\jre1.7`
+* **JAVA_HOME** - should point to the directory where the Java runtime environment (JRE) is installed. For example, <!-- deleted by customization in a Unix or Linux distribution, it should have a value similar to `/usr/lib/jvm/java-7-oracle`. --> In Windows, it would have a value similar to `c:\Program Files (x86)\Java\jre1.7`
 
 * **PATH** - should contain the following paths:
 
@@ -473,10 +473,10 @@ If you do not see files being stored to the the /devicedata location (either usi
 For more information on using the Storm UI, see the following topics:
 <!-- deleted by customization
 
-* If you are using a __Linux-based__ Storm on HDInsight cluster, see [Deploy and manage Apache Storm topologies on Linux-based HDInsight](/documentation/articles/hdinsight-storm-deploy-monitor-topology-linux)
+* If you are using a __Linux-based__ Storm on HDInsight cluster, see [Deploy and manage Apache Storm topologies on Linux-based HDInsight](/documentation/articles/hdinsight-storm-deploy-monitor-topology)
 -->
 
-* If you are using a __Windows-based__ Storm on HDInsight cluster, see [Deploy and manage Apache Storm topologies on Windows-based HDInsight](/documentation/articles/hdinsight-storm-deploy-monitor-topology-linux)
+* If you are using a __Windows-based__ Storm on HDInsight cluster, see [Deploy and manage Apache Storm topologies on Windows-based HDInsight](/documentation/articles/hdinsight-storm-deploy-monitor-topology)
 
 ##Next steps
 

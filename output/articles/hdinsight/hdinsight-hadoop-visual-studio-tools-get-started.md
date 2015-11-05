@@ -22,7 +22,7 @@ Learn how to use HDInsight Tools for Visual Studio to connect to HDInsight clust
 
 To complete this tutorial and use the Hadoop tools in Visual Studio, you'll need the following:
 
-- An Azure HDInsight cluster:<!-- deleted by customization Either a Linux-based or --> Windows-based cluster will work with the steps in this document. See one of the following for information on creating a cluster:
+- An Azure HDInsight cluster: <!-- deleted by customization Either a Linux-based or --> Windows-based cluster will work with the steps in this document. See one of the following for information on creating a cluster:
 <!-- deleted by customization 
 
 	- [Get started using Linux-based HDInsight](/documentation/articles/hdinsight-hadoop-linux-tutorial-get-started)
@@ -182,7 +182,7 @@ The most recent release of the tool allows you to see what’s inside your Hive 
 
 The HDInsight Visual Studio Tools support showing performance graphs for the Hive jobs ran by the Tez execution engine. For information on enabling Tez, see [use Hive in HDInsight][hdinsight.hive]. After you submit a Hive job in Visual Studio, Visual Studio shows you the graph when the job is completed.  You might need to click the **Refresh** button to get the latest job status.
 
-> [AZURE.NOTE] This feature is only available for HDInsight cluster version above 3.2.4.593, and can only work for completed jobs. This works for both Windows<!-- deleted by customization and Linux based --> clusters.
+> [AZURE.NOTE] This feature is only available for HDInsight cluster version above 3.2.4.593, and can only work for completed jobs. This works for both Windows <!-- deleted by customization and Linux based --> clusters.
 
 ![hadoop hive tez performance graph](./media/hdinsight-hadoop-visual-studio-tools-get-started/hdinsight.hive.tez.performance.graph.png)
 
@@ -228,7 +228,9 @@ In this article, you learned how to connect to HDInsight clusters from Visual St
 [hdinsight.submit.jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically
 <!-- keep by customization: end -->
 [hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters
+<!-- deleted by customization
 [hdinsight.introduction]: /documentation/articles/hdinsight-introduction
+-->
 [hdinsight.get.started]: /documentation/articles/hdinsight-get-started
 [hdinsight.hive]: /documentation/articles/hdinsight-use-hive
 [hdinsight.submit.jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically

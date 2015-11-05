@@ -17,5 +17,10 @@
     "articles/traffic-manager/": [ "traffic" ],
     "articles/virtual-network/": [ "virtual-network", "vnet" ]
   },
-  "check_dates": false
+  "check_dates": false,
+  "815path": "C:/Users/Administrator/Documents/GitHub/815/",
+    "removeComment": {
+        "remove": true,
+        "path":  "removeCommentOutput/"
+    } 
 }

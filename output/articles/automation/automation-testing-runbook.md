@@ -16,7 +16,7 @@ When you test a runbook, the [Draft version](/documentation/articles/automation-
 
 Even though the draft version is being run, the runbook still executes the workflow normally and performs any actions against resources in the environment. For this reason, you should only test runbooks at non-production resources.
 
-The procedure to test each [type of runbook](/documentation/articles/automation-runbook-types) is the same<!-- deleted by customization , and there is no difference in testing between the textual editor and the graphical editor in the Azure Management Portal -->.  
+The procedure to test each [type of runbook](/documentation/articles/automation-runbook-types) is the same<!-- deleted by customization , and there is no difference in testing between the textual editor and the graphical editor in the Azure preview portal -->.  
 
 <!-- deleted by customization
 

@@ -24,7 +24,7 @@
 
 ## Overview
 
-This tutorial shows how to create an ASP.NET web application and deploy it to a [web app in Azure Websites](/documentation/articles/app-service-web-overview) by using Visual Studio 2015 or Visual Studio 2013. The tutorial assumes that you have no prior experience with using Azure or ASP.NET. On completing the tutorial, you'll have a simple web application up and running in the cloud.
+This tutorial shows how to create an ASP.NET web application and deploy it to a [web app in Azure Websites](/home/features/web-site/) by using Visual Studio 2015 or Visual Studio 2013. The tutorial assumes that you have no prior experience with using Azure or ASP.NET. On completing the tutorial, you'll have a simple web application up and running in the cloud.
 
 The following illustration shows the completed application:
 

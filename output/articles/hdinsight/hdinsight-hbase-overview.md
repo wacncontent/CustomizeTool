@@ -51,7 +51,7 @@ The canonical use case for which BigTable (and by extension, HBase) was created 
 
 - HBase as a platform
 
-Applications can run on top of HBase by using it as a datastore. Examples include Phoenix, OpenTSDB, Kiji, and Titan. Applications can also integrate with HBase. Examples include Hive, Pig, Solr, Storm, Flume, Impala,<!-- deleted by customization Spark, --> Ganglia, and Drill.
+	Applications can run on top of HBase by using it as a datastore. Examples include Phoenix, OpenTSDB, Kiji, and Titan. Applications can also integrate with HBase. Examples include Hive, Pig, Solr, Storm, Flume, Impala, <!-- deleted by customization Spark, --> Ganglia, and Drill.
 
 
 ##<a name="next-steps"></a>Next steps

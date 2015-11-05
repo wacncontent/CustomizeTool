@@ -20,9 +20,9 @@ You can get runbooks from the [Runbook Gallery](#runbooks-in-runbook-gallery) an
 
 ## Runbooks in Runbook Gallery
 
-The [Runbook Gallery](http://gallery.technet.microsoft.com/scriptcenter/site/search?f[0].Type=RootCategory&f[0].Value=WindowsAzure&f[1].Type=SubCategory&f[1].Value=WindowsAzure_automation&f[1].Text=Automation) provides a variety of runbooks from Microsoft and the community that you can import into Azure Automation. You can either download a runbook from the gallery which is hosted in the [TechNet Script Center](http://gallery.technet.microsoft.com/), or you can directly import runbooks from the gallery from the Azure Management Portal<!-- deleted by customization and Azure Management Portal -->.
+The [Runbook Gallery](http://gallery.technet.microsoft.com/scriptcenter/site/search?f[0].Type=RootCategory&f[0].Value=WindowsAzure&f[1].Type=SubCategory&f[1].Value=WindowsAzure_automation&f[1].Text=Automation) provides a variety of runbooks from Microsoft and the community that you can import into Azure Automation. You can either download a runbook from the gallery which is hosted in the [TechNet Script Center](http://gallery.technet.microsoft.com/), or you can directly import runbooks from the gallery from the Azure Management Portal <!-- deleted by customization and Azure preview portal -->.
 
-You can only import directly from the Runbook Gallery using the Azure Management Portal<!-- deleted by customization or Azure Management Portal -->. You cannot perform this function using Windows PowerShell.
+You can only import directly from the Runbook Gallery using the Azure Management Portal <!-- deleted by customization or Azure preview portal -->. You cannot perform this function using Windows PowerShell.
 
 >[AZURE.NOTE] You should validate the contents of any runbooks that you get from the Runbook Gallery and use extreme caution in installing and running them in a production environment.|
 

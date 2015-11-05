@@ -67,11 +67,13 @@ For a complete set of articles about using Linux and Linux clusters, go to the [
 
 * [Configure HBase geo-replication](/documentation/articles/hdinsight-hbase-geo-replication)
 * [Use Maven to build Java applications that use HBase](/documentation/articles/hdinsight-hbase-build-java-maven)
+<!-- deleted by customization
 * [Analyze real-time Twitter sentiment on HBase](/documentation/articles/hdinsight-hbase-analyze-twitter-sentiment)
 
+-->
 ## Apache Storm: Stream query
 
-* [Get started with the Storm Starter samples](/documentation/articles/hdinsight-apache-storm-tutorial-get-started-v1)
+* [Get started with the Storm Starter samples](/documentation/articles/hdinsight-apache-storm-tutorial-get-started)
 * [Deploy and manage Apache Storm topologies](/documentation/articles/hdinsight-storm-deploy-monitor-topology)
 * [Develop C# topologies for Apache Storm using Hadoop tools for Visual Studio](/documentation/articles/hdinsight-storm-develop-csharp-visual-studio-topology)
 * [Develop Java-based topologies for a basic word-count application with Apache Storm and Maven](/documentation/articles/hdinsight-storm-develop-java-topology)
@@ -95,17 +97,21 @@ For articles about using native Apache Spark clusters in the Azure preview porta
 
 * [Analyze sensor data using the Hive Query Console](/documentation/articles/hdinsight-hive-analyze-sensor-data)
 * [Analyze flight delay data by using Hive](/documentation/articles/hdinsight-analyze-flight-delay-data)
+<!-- deleted by customization
 * [Analyze stored Twitter data using Hive](/documentation/articles/hdinsight-analyze-twitter-data)
 * [Determine Twitter trending topics with Apache Storm](/documentation/articles/hdinsight-storm-twitter-trending)
+-->
 * [Analyze sensor data with Apache Storm, Event Hub, and HBase](/documentation/articles/hdinsight-storm-sensor-data-analysis)
 
+<!-- deleted by customization 
 ## Machine learning in HDInsight
 
 * [Generate movie recommendations by using Apache Mahout with Hadoop](/documentation/articles/hdinsight-mahout)
 * [Learning path: Build advanced analytics solutions](/documentation/articles/machine-learning-data-science-how-to-create-machine-learning-service)
 * [Learning path: Advanced data processing](/documentation/articles/machine-learning-data-science-advanced-data-processing)
-<!-- deleted by customization * [Predict taxi tips with HDInsight and Machine Learning](/documentation/articles/machine-learning-data-science-process-hive-walkthrough) -->
+* [Predict taxi tips with HDInsight and Machine Learning](/documentation/articles/machine-learning-data-science-process-hive-walkthrough)
 
+-->
 ## Extensibility
 
 * [Extend HDInsight capabilities with Azure Virtual Network](/documentation/articles/hdinsight-extend-hadoop-virtual-network)

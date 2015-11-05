@@ -22,7 +22,7 @@ Windows Azure Automation provides a way for users to automate the manual, long-r
 ## Tutorial
 This tutorial walks you through creating an automation account, importing a sample "Hello World" runbook into Azure Automation, executing that runbook, and then viewing its output.
 
-To complete this tutorial, you will need an Azure subscription. If you don't have one yet, you can <!-- deleted by customization [activate your MSDN subscriber benefits](/documentation/articles/msdn-benefits-details) or -->[sign up for a trial](/documentation/articles/free-trial)</a>.
+To complete this tutorial, you will need an Azure subscription. If you don't have one yet, you can <!-- deleted by customization [activate your MSDN subscriber benefits](/documentation/articles/msdn-benefits-details) or --> [sign up for a trial](/pricing/1rmb-trial/)</a>.
 
 [AZURE.INCLUDE [automation-note-authentication](../includes/automation-note-authentication.md)]
 <!-- deleted by customization 

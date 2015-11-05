@@ -17,8 +17,10 @@
 
 [AZURE.INCLUDE [hive-selector](../includes/hdinsight-selector-use-hive.md)]
 
+<!-- deleted by customization
 This document provides an example of using Azure PowerShell in the Azure Resource Group mode to run Hive queries in a Hadoop on HDInsight cluster. For using Azure PowerShell in the Azure Service mode, see [Run Hive queries using PowerShell ASM mode](/documentation/articles/hdinsight-hadoop-use-hive-powershell-v1).
 
+-->
 > [AZURE.NOTE] This document does not provide a detailed description of what the HiveQL statements that are used in the examples do. For information on the HiveQL that is used in this example, see [Use Hive with Hadoop on HDInsight](/documentation/articles/hdinsight-use-hive).
 
 
@@ -29,7 +31,7 @@ This document provides an example of using Azure PowerShell in the Azure Resourc
 
 To complete the steps in this article, you will need the following.
 
-- **An Azure HDInsight (Hadoop on HDInsight) cluster (Windows-based<!-- deleted by customization or Linux-based -->)**
+- **An Azure HDInsight (Hadoop on HDInsight) cluster (Windows-based <!-- deleted by customization or Linux-based -->)**
 - **A workstation with Azure PowerShell**. See [Install and use Azure PowerShell](/documentation/articles/install-configure-powershell).
 
 <!-- keep by customization: begin -->

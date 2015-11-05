@@ -33,11 +33,11 @@ For big data to provide actionable intelligence or insight, not only must the ri
 
 ## <a name="overview"></a>Overview of the Hadoop ecosystem on HDInsight
 
-HDInsight is a cloud implementation on Windows Azure of the rapidly exanding Apache Hadoop technology stack that is the go-to solution for big data analysis. It includes implementations of Storm, HBase, Pig, Hive, Sqoop, Oozie, <!-- deleted by customization Ambari, -->and so on. HDInsight also integrates with business intelligence (BI) tools such as Excel, SQL Server Analysis Services, and SQL Server Reporting Services.
+HDInsight is a cloud implementation on Windows Azure of the rapidly exanding Apache Hadoop technology stack that is the go-to solution for big data analysis. It includes implementations of Storm, HBase, Pig, Hive, Sqoop, Oozie, <!-- deleted by customization Ambari, --> and so on. HDInsight also integrates with business intelligence (BI) tools such as Excel, SQL Server Analysis Services, and SQL Server Reporting Services.
 
-###<!-- deleted by customization Linux and --> Windows clusters
+### <!-- deleted by customization Linux and --> Windows clusters
 
-Azure HDInsight deploys and provisions Hadoop clusters in the cloud, by using<!-- deleted by customization either **Linux** or --> **Windows** as the underlying OS.
+Azure HDInsight deploys and provisions Hadoop clusters in the cloud, by using <!-- deleted by customization either **Linux** or --> **Windows** as the underlying OS.
 <!-- deleted by customization
 
 * **HDInsight on Linux** - A Hadoop cluster on Ubuntu. Use this if you are familiar with Linux or Unix, are migrating from an existing Linux-based Hadoop solution, or want easy integration with Hadoop ecosystem components built for Linux.
@@ -47,17 +47,17 @@ Azure HDInsight deploys and provisions Hadoop clusters in the cloud, by using<!-
 
 The following table compares the two:
 
-Category |<!-- deleted by customization Hadoop on Linux | --> Hadoop on Windows
----------|<!-- deleted by customization -------------------| --> --------------------
-**Cluster OS** |<!-- deleted by customization Ubuntu 12.04 Long Term Support (LTS) | --> Windows Server 2012 R2
-**Cluster Type** |<!-- deleted by customization Hadoop, HBase, Storm | --> Hadoop, HBase, Storm
-**Deployment** |<!-- deleted by customization Azure Management Portal, Azure CLI, Azure PowerShell | Azure Management Portal, --> Azure Management Portal, Azure CLI, Azure PowerShell, HDInsight .NET SDK
-**Cluster UI** |<!-- deleted by customization Ambari | --> Cluster Dashboard
-**Remote Access** |<!-- deleted by customization Secure Shell (SSH), REST API, ODBC, JDBC | --> Remote Desktop Protocol (RDP)
+Category | <!-- deleted by customization Hadoop on Linux | --> Hadoop on Windows
+---------| <!-- deleted by customization -------------------| --> --------------------
+**Cluster OS** | <!-- deleted by customization Ubuntu 12.04 Long Term Support (LTS) | --> Windows Server 2012 R2
+**Cluster Type** | <!-- deleted by customization Hadoop, HBase, Storm | --> Hadoop, HBase, Storm
+**Deployment** | <!-- deleted by customization Azure preview portal, --> Azure CLI, Azure PowerShell | Azure Management Portal, <!-- deleted by customization Azure preview portal, --> Azure CLI, Azure PowerShell, HDInsight .NET SDK
+**Cluster UI** | <!-- deleted by customization Ambari | --> Cluster Dashboard
+**Remote Access** | <!-- deleted by customization Secure Shell (SSH), REST API, ODBC, JDBC | --> Remote Desktop Protocol (RDP), REST API, ODBC, JDBC
 
 
 
-### Hadoop, HBase, Storm,<!-- deleted by customization Spark, --> and customized clusters
+### Hadoop, HBase, Storm, <!-- deleted by customization Spark, --> and customized clusters
 
 HDInsight provides cluster configurations for Hadoop, HBase, or Storm. Or, you can [customize clusters with script actions](/documentation/articles/hdinsight-hadoop-customize-cluster).
 
@@ -184,7 +184,7 @@ As part of the Azure cloud ecosystem, Hadoop in HDInsight offers a number of ben
 
 * State-of-the-art Hadoop components. For details, see [What's new in the Hadoop cluster versions provided by HDInsight?][component-versioning].
 
-* High availability and reliability of clusters. See [Availability and reliability of Hadoop clusters in HDInsight](/documentation/articles/hdinsight-high-availability-linux) for details.
+* High availability and reliability of clusters. See [Availability and reliability of Hadoop clusters in HDInsight](/documentation/articles/hdinsight-high-availability) for details.
 
 * Efficient and economical data storage with Azure Blob storage, a Hadoop-compatible option. See [Use Azure Blob storage with Hadoop in HDInsight](/documentation/articles/hdinsight-hadoop-use-blob-storage) for details.
 

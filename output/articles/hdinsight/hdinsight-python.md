@@ -151,7 +151,7 @@ When the data is returned to Pig, it will have a consistent schema as defined in
 
 ##<a name="running"></a>Running the examples
 
-<!-- deleted by customization If you are using a Linux-based HDInsight cluster, use the **SSH** steps below. -->If you are using a Windows-based HDInsight cluster and a Windows client, use the **PowerShell** steps.
+<!-- deleted by customization If you are using a Linux-based HDInsight cluster, use the **SSH** steps below. --> If you are using a Windows-based HDInsight cluster and a Windows client, use the **PowerShell** steps.
 <!-- deleted by customization
 
 ###SSH

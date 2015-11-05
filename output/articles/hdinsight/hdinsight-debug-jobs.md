@@ -115,7 +115,7 @@ The errors a user can encounter in Azure PowerShell or in the <!-- deleted by cu
 
 ### <a id="AzureRegionNotSupported"></a>AzureRegionNotSupported
 - **Description**: Could not create cluster in region *nameOfYourRegion*. Use a valid HDInsight region and retry request.
-- **Mitigation**: Customer should create the cluster region that currently supports them: <!-- deleted by customization Southeast Asia, West Europe, -->China North, China East<!-- deleted by customization , or China North -->.  
+- **Mitigation**: Customer should create the cluster region that currently supports them: <!-- deleted by customization Southeast Asia, West Europe, --> China North, China East<!-- deleted by customization , or China North -->.  
 
 ### <a id="ClusterContainerRecordNotFound"></a>ClusterContainerRecordNotFound
 - **Description**: The server could not find the requested cluster record.  
@@ -252,11 +252,11 @@ The errors a user can encounter in Azure PowerShell or in the <!-- deleted by cu
 
 ### <a id="RegionCapabilityNotAvailable"></a>RegionCapabilityNotAvailable
 - **Description**: Region capability not available for region *yourRegionName* and Subscription ID *yourSubscriptionId*.  
-- **Mitigation**: Specify a region that supports HDInsight clusters. The publicly supported regions are: <!-- deleted by customization Southeast Asia, West Europe, -->China North, China East<!-- deleted by customization , or China North -->.
+- **Mitigation**: Specify a region that supports HDInsight clusters. The publicly supported regions are: <!-- deleted by customization Southeast Asia, West Europe, --> China North, China East<!-- deleted by customization , or China North -->.
 
 ### <a id="StorageAccountNotColocated"></a>StorageAccountNotColocated
 - **Description**: Storage account *yourStorageAccountName* is in region *currentRegionName*. It should be same as the cluster region *yourClusterRegionName*.  
-- **Mitigation**: Either specify a storage account in the same region that your cluster is in or if your data is already in the storage account, create a new cluster in the same region as the existing storage account.<!-- deleted by customization If you are using the Management Portal, the UI will notify them of this issue in advance. -->
+- **Mitigation**: Either specify a storage account in the same region that your cluster is in or if your data is already in the storage account, create a new cluster in the same region as the existing storage account. <!-- deleted by customization If you are using the preview portal, the UI will notify them of this issue in advance. -->
 
 ### <a id="SubscriptionIdNotActive"></a>SubscriptionIdNotActive
 - **Description**: Given Subscription ID *yourSubscriptionId* is not active.  

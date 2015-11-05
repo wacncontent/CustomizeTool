@@ -59,5 +59,10 @@
     "articles/virtual-machines/": [ "virtual-machines", "vm" ],
     "articles/": [ "" ]
   },
-  "check_dates": false
+  "check_dates": false,
+  "815path": "C:/Users/Administrator/Documents/GitHub/815/",
+    "removeComment": {
+        "remove": true,
+        "path":  "removeCommentOutput/"
+    } 
 }

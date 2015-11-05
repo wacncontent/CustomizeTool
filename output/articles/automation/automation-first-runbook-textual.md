@@ -210,7 +210,7 @@ Our runbook currently starts the virtual machine that we hardcoded in the runboo
 12.  Click **Publish** to publish the new version of the runbook.
 13.  Stop the virtual machine that you started in the previous step.
 13.  Click **Start** to start the runbook.  Type in the **VMName** and **VMServiceName** for the virtual machine that you're going to start.<br>
-	<!-- deleted by customization
+<!-- deleted by customization
 ![Start Runbook](./media/automation-first-runbook-textual/start-runbook-input-params.png) 
 -->
 

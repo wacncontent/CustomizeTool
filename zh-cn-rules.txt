@@ -633,7 +633,7 @@ hdinsight-administer-use-management-portal(-v1)?(\.md)? = hdinsight-administer-u
 \[WindowsAzure\]: http://azure.microsoft.com = [WindowsAzure]: http://www.windowsazure.cn
 /en\-(us|US)/ = /
 
-# [CORRECTION]
+[CORRECTION]
 hdiconfigactions.blob.core.chinacloudapi.cn = hdiconfigactions.blob.core.windows.net
 hditutorialdata.blob.core.chinacloudapi.cn = hditutorialdata.blob.core.windows.net
 sidneyhcontent.blob.core.chinacloudapi.cn = sidneyhcontent.blob.core.windows.net
@@ -673,3 +673,27 @@ http://azure.microsoft.com/documentation/articles/ = /documentation/articles/
 http://azure.microsoft.com/pricing/1rmb-trial/ = /pricing/1rmb-trial/
 /zh-cn/library/windowsazure/ = /zh-cn/library/azure/
 /home/features/active-directory/ = /home/features/identity/
+/documentation/articles/app-service-value-prop-what-is = /documentation/services/web-sites
+/documentation/articles/app-service-web-overview = /home/features/web-site/
+/documentation/articles/Washington = Washington
+/documentation/articles/Redmond = Redmond
+/documentation/articles/Microsoft = Microsoft
+/documentation/articles/Azure = Azure
+/documentation/articles/US = US
+/documentation/articles/SNI = SNI
+/documentation/articles/TLS = TLS
+/documentation/articles/install-and-configure-cli = /documentation/articles/xplat-cli-install
+/documentation/articles/free-trial = /pricing/1rmb-trial/
+/documentation/articles/automation-creating-or-importing-a-runbook = /documentation/articles/automation-creating-importing-runbook
+/documentation/articles/hdinsight-adminster-use-management-portal = /documentation/articles/hdinsight-administer-use-management-portal-v1
+/documentation/articles/50 = 50
+/documentation/articles/hdinsight-apache-storm-tutorial-get-started-v1 = /documentation/articles/hdinsight-apache-storm-tutorial-get-started
+/documentation/articles/hdinsight-high-availability-linux = /documentation/articles/hdinsight-high-availability
+/documentation/articles/master-status = master-status
+/documentation/articles/hadoop-use-pig = /documentation/articles/hdinsight-hadoop-use-pig-powershell
+/documentation/articles/hadoop-use-hive = /documentation/articles/hdinsight-hadoop-use-hive-powershell
+/documentation/articles/hadoop-use-mapreduce = /documentation/articles/hdinsight-hadoop-use-mapreduce-powershell
+/documentation/articles/line-by-line = line-by-line
+/documentation/articles/hdinsight-storm-deploy-monitor-topology-linux = /documentation/articles/hdinsight-storm-deploy-monitor-topology
+/documentation/articles/10 = 10
+/documentation/articles/media-services-channels-overview = /documentation/articles/media-services-manage-channels-overview

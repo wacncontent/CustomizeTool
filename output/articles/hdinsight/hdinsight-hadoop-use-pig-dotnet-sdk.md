@@ -31,7 +31,7 @@ The HDInsight .NET SDK provides .NET client libraries that makes it easier to wo
 
 To complete the steps in this article, you will need the following.
 
-* An Azure HDInsight (Hadoop on HDInsight) cluster<!-- deleted by customization (either Windows or Linux-based) -->
+* An Azure HDInsight (Hadoop on HDInsight) cluster <!-- deleted by customization (either Windows or Linux-based) -->
 
 * Visual Studio 2012 or 2013 or 2015
 

@@ -16,7 +16,7 @@
 # Set up staging environments for web apps in Azure Websites
 <a name="Overview"></a>
 
-When you deploy your web app to [Azure Websites](/documentation/services/web-sites/), you can deploy to a separate deployment slot instead of the default production slot when running in the **Standard**<!-- deleted by customization or **Premium** --> App Service plan mode. Deployment slots are actually live web apps with their own hostnames. Web app content and configurations elements can be swapped between two deployment slots, including the production slot. Deploying your application to a deployment slot has the following benefits:
+When you deploy your web app to [Azure Websites](/documentation/services/web-sites/), you can deploy to a separate deployment slot instead of the default production slot when running in the **Standard** <!-- deleted by customization or **Premium** --> App Service plan mode. Deployment slots are actually live web apps with their own hostnames. Web app content and configurations elements can be swapped between two deployment slots, including the production slot. Deploying your application to a deployment slot has the following benefits:
 
 - You can validate web app changes in a staging deployment slot before swapping it with the production slot.
 
@@ -40,7 +40,7 @@ Each App Service plan mode supports a different number of deployment slots. To f
 <a name="Add"></a>
 ## Add a deployment slot to a web app ##
 
-The web app must be running in the **Standard** <!-- deleted by customization or **Premium** -->mode in order for you to enable multiple deployment slots.
+The web app must be running in the **Standard** <!-- deleted by customization or **Premium** --> mode in order for you to enable multiple deployment slots.
 <!-- deleted by customization
 
 1. In the [Azure Preview Portal](https://manage.windowsazure.cn/), open your web app's blade.

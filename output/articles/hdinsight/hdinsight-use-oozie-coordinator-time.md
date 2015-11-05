@@ -16,7 +16,7 @@
 
 # Use time-based Oozie coordinator with Hadoop in HDInsight to define workflows and coordinate jobs
 
-In this article, you'll learn how to define workflows and coordinators, and how to trigger the coordinator jobs, based on time. It is helpful to go through [Use Oozie with HDInsight][hdinsight-use-oozie] before you read this article. To learn Azure Data Factory, see [Use Pig and Hive with Data Factory](/documentation/articles/data-factory-pig-hive-activities).
+In this article, you'll learn how to define workflows and coordinators, and how to trigger the coordinator jobs, based on time. It is helpful to go through [Use Oozie with HDInsight][hdinsight-use-oozie] before you read this article. <!-- deleted by customization To learn Azure Data Factory, see [Use Pig and Hive with Data Factory](/documentation/articles/data-factory-pig-hive-activities). -->
 <!-- deleted by customization
 
 > [AZURE.NOTE] This article requires a Windows-based HDInsight cluster. For information on using Oozie, including time-based jobs, on a Linux-based cluster, see [Use Oozie with Hadoop to define and run a workflow on Linux-based HDInsight](/documentation/articles/hdinsight-use-oozie-linux-mac)
@@ -340,7 +340,7 @@ For more information, see [HDInsight: Hive Internal and External Tables Intro][c
 		{
 			# SQL query string for creating log4jLogsCount table
 			$cmdCreateLog4jCountTable = " CREATE TABLE [dbo].[$sqlDatabaseTableName](
-				    [Level] [nvarchar](/documentation/articles/10) NOT NULL,
+				    [Level] [nvarchar](10) NOT NULL,
 				    [Total] float,
 				CONSTRAINT [PK_$sqlDatabaseTableName] PRIMARY KEY CLUSTERED
 				(

@@ -111,7 +111,7 @@ To deploy the project to an HDInsight cluster running Apache Storm, use the foll
 
         Finally, select __Submit__ to start the topology.
 
-> [AZURE.NOTE] Once started, a Storm topology runs until stopped (killed.) To stop the topology, use either the `storm kill TOPOLOGYNAME` command from the command-line <!-- deleted by customization(SSH session to a Linux cluster for example,)--> or by using the Storm UI, select the topology, and then select the __Kill__ button.
+> [AZURE.NOTE] Once started, a Storm topology runs until stopped (killed.) To stop the topology, use either the `storm kill TOPOLOGYNAME` command from the command-line <!-- deleted by customization (SSH session to a Linux cluster for example,)--> or by using the Storm UI, select the topology, and then select the __Kill__ button.
 
 ##Python components with a Clojure topology
 
@@ -172,7 +172,7 @@ __To build an uberjar and deploy to HDInsight__, use the following steps:
 
             Finally, select __Submit__ to start the topology.
 
-> [AZURE.NOTE] Once started, a Storm topology runs until stopped (killed.) To stop the topology, use either the `storm kill TOPOLOGYNAME` command from the command-line <!-- deleted by customization(SSH session to a Linux cluster,) -->or by using the Storm UI, select the topology, and then select the __Kill__ button.
+> [AZURE.NOTE] Once started, a Storm topology runs until stopped (killed.) To stop the topology, use either the `storm kill TOPOLOGYNAME` command from the command-line <!-- deleted by customization (SSH session to a Linux cluster,) --> or by using the Storm UI, select the topology, and then select the __Kill__ button.
 <!-- deleted by customization
 
 ##Pyleus framework
@@ -353,5 +353,7 @@ Once your Linux-based HDInsight cluster has been created, use the following step
 
 In this document, you learned how to use Python components from a Storm topology. See the following documents for other ways to use Python with HDInsight:
 
+<!-- deleted by customization
 * [How to use Python for streaming MapReduce jobs](/documentation/articles/hdinsight-hadoop-streaming-python)
+-->
 * [How to use Python User Defined Functions (UDF) in Pig and Hive](/documentation/articles/hdinsight-python)

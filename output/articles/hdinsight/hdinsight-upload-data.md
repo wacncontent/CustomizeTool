@@ -58,7 +58,7 @@ Microsoft provides the following utilities to work with Azure Blob storage:
 
 The Azure CLI is a cross-platform tool that allows you to manage Azure services. Use the following steps to upload data to Azure Blob storage:
 
-1. [Install and configure the Azure CLI<!-- deleted by customization for Mac, Linux and Windows-->](/documentation/articles/xplat-cli-install).
+1. [Install and configure the Azure CLI <!-- deleted by customization for Mac, Linux and Windows-->](/documentation/articles/xplat-cli-install).
 
 2. Open a command prompt, bash, or other shell, and use the following to authenticate to your Azure subscription.
 

@@ -14,7 +14,7 @@
 
 # Install Giraph on HDInsight Hadoop clusters, and use Giraph to process large-scale graphs
 
-Learn how to customize Windows based HDInsight cluster with Giraph using Script Action, and how to use Giraph to process large-scale graphs.<!-- deleted by customization  For information on using Giraph with a Linux-based cluster, see [Install Giraph on HDInsight Hadoop clusters (Linux)](/documentation/articles/hdinsight-hadoop-giraph-install-linux). -->
+Learn how to customize Windows based HDInsight cluster with Giraph using Script Action, and how to use Giraph to process large-scale graphs. <!-- deleted by customization  For information on using Giraph with a Linux-based cluster, see [Install Giraph on HDInsight Hadoop clusters (Linux)](/documentation/articles/hdinsight-hadoop-giraph-install-linux). -->
  
 You can install Giraph on any type of cluster (Hadoop, Storm, HBase<!-- deleted by customization , Spark -->) on Azure HDInsight by using *Script Action*. A sample script to install Giraph on an HDInsight cluster is available from a read-only Azure storage blob at [https://hdiconfigactions.blob.core.windows.net/giraphconfigactionv01/giraph-installer-v01.ps1](https://hdiconfigactions.blob.core.windows.net/giraphconfigactionv01/giraph-installer-v01.ps1). The sample script works only with HDInsight cluster version 3.1. For more information on HDInsight cluster versions, see [HDInsight cluster versions](/documentation/articles/hdinsight-component-versioning).
 
@@ -384,5 +384,7 @@ Provide a cluster name and press ENTER to provision a cluster with Giraph instal
 [powershell-install]: /documentation/articles/powershell-install-configure
 [hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters
 [hdinsight-install-r]: /documentation/articles/hdinsight-hadoop-r-scripts
-<!-- deleted by customization [hdinsight-install-spark]: hdinsight-hadoop-spark-install -->
+<!-- deleted by customization
+[hdinsight-install-spark]: /documentation/articles/hdinsight-hadoop-spark-install
+-->
 [hdinsight-cluster-customize]: /documentation/articles/hdinsight-hadoop-customize-cluster

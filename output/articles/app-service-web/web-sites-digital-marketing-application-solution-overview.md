@@ -37,11 +37,11 @@ The following areas are addressed in this guide:
 
 ## Create from scratch or bring existing assets
 
-Quickly<!-- deleted by customization create new web apps from a popular CMS in the gallery or -->bring your existing web assets to Azure Websites from a variety of languages and frameworks.
+Quickly <!-- deleted by customization create new web apps from a popular CMS in the gallery or --> bring your existing web assets to Azure Websites from a variety of languages and frameworks.
 
-<!-- deleted by customization The Azure Marketplace provides templates from the popular website content management systems (CMS), such as [Orchard], [Umbraco], Drupal, and [WordPress]. -->You can create a web app using your favorite CMS flavor. You can choose from various database backends to meet your needs, including [Azure SQL Database] and [MySQL].
+<!-- deleted by customization The Azure Marketplace provides templates from the popular website content management systems (CMS), such as [Orchard], [Umbraco], Drupal, and [WordPress]. --> You can create a web app using your favorite CMS flavor. You can choose from various database backends to meet your needs, including [Azure SQL Database] and [MySQL].
 
-Your existing web assets can run on Web Apps, whether they are .NET, PHP, Java, Node.js, or Python. You can move them to Web Apps using your familiar [FTP] tools. If you frequently create digital marketing campaigns, it is possible that you have existing web assets in a source control management system. You can deploy to Web Apps directly from popular source control options, such as [Visual Studio], [Visual Studio Online], and [Git] - local, GitHub, BitBucket, DropBox, Mercurial, etc..
+Your existing web assets can run on Web Apps, whether they are .NET, PHP, Java, Node.js, or Python. You can move them to Web Apps using your familiar [FTP] tools. If you frequently create digital marketing campaigns, it is possible that you have existing web assets in a source control management system. You can deploy to Web Apps directly from popular source control options, such as [Visual Studio]<!-- deleted by customization , [Visual Studio Online],--> and [Git] - local, GitHub, BitBucket, DropBox, Mercurial, etc..
 
 ## Stay agile
 
@@ -105,14 +105,18 @@ In the **Standard** tier, monitor app responsiveness receive email notifications
 
 [Azure Websites]: /home/features/web-site/
 
+<!-- deleted by customization
 [Orchard]: /documentation/articles/web-sites-dotnet-orchard-cms-gallery
 [Umbraco]: /documentation/articles/web-sites-gallery-umbraco
 [WordPress]: /documentation/articles/web-sites-php-web-site-gallery
+-->
 [MySQL]: /documentation/articles/web-sites-php-mysql-deploy-use-git
 [Azure SQL Database]: /documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database
 [FTP]: /documentation/articles/web-sites-deploy#ftp
 [Visual Studio]: /documentation/articles/web-sites-dotnet-get-started
+<!-- deleted by customization
 [Visual Studio Online]: /documentation/articles/cloud-services-continuous-delivery-use-vso
+-->
 [Git]: /documentation/articles/web-sites-publish-source-control
 [deploying to a staging slot]: /documentation/articles/web-sites-staged-publishing
 [continuously publish]:http://rickrainey.com/2014/01/21/continuous-deployment-github-with-azure-web-sites-and-staged-publishing/

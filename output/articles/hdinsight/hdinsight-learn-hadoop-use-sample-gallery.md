@@ -22,7 +22,9 @@ The HDInsight Getting Started Gallery provides an easy and quick way learn Hadoo
 	- Windows Azure storage analytics
 - Solutions with sample data
 	- Sensor data analysis
-<!-- deleted by customization - Twitter trend analysis -->
+<!-- deleted by customization 
+	- Twitter trend analysis
+-->
 	- Website log analysis
 	- Mahout movie recommendation
 <!-- deleted by customization 

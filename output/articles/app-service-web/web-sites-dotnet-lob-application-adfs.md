@@ -47,7 +47,7 @@ You will build a basic ASP.NET application in Azure Websites with the following 
 
 You need the following to complete this tutorial:
 
-- An on-premises AD FS deployment (for an end-to-end walkthrough of the test lab that I use, see [Test Lab: Standalone STS with AD FS in Azure VM (for test only)](/documentation/articles/TODO))
+- An on-premises AD FS deployment <!-- deleted by customization (for an end-to-end walkthrough of the test lab that I use, see [Test Lab: Standalone STS with AD FS in Azure VM (for test only)](/documentation/articles/TODO)) -->
 - Permissions to create relying party trusts in AD FS Management
 - Visual Studio 2013
 - [Azure SDK 2.5.1](https://www.microsoft.com/web/handlers/webpi.ashx/getinstaller/VWDOrVs2013AzurePack.appids) or later
@@ -345,8 +345,10 @@ Since you have included group memberships as role claims in your RP trust config
 
 A reason that you would want to implement your line-of-business application with AD FS instead of Azure Active Directory is compliance issues with keeping organization data off-premise. This may also mean that your web app in Azure must access on-premise databases, since you are not allowed to use [SQL Database](/home/features/sql-database/) as the data tier for your web apps.
 
+<!-- deleted by customization
 Azure Websites supports accessing on-premise databases with two approaches: [Hybrid Connections](/documentation/articles/integration-hybrid-connection-overview) and [Virtual Networks](/documentation/articles/web-sites-integrate-with-vnet). For more information, see [Using VNET integration and Hybrid connections with Azure Websites](http://azure.microsoft.com/blog/2014/10/30/using-vnet-or-hybrid-conn-with-websites/).
 
+-->
 <a name="bkmk_resources"></a>
 ## Further resources
 

@@ -29,7 +29,7 @@ Curl is used to demonstrate how you can interact with HDInsight by using raw HTT
 
 To complete the steps in this article, you will need the following:
 
-* An Azure HDInsight (Hadoop on HDInsight) cluster (<!-- deleted by customization Linux-based or -->Windows-based)
+* An Azure HDInsight (Hadoop on HDInsight) cluster (<!-- deleted by customization Linux-based or --> Windows-based)
 
 * [Curl](http://curl.haxx.se/)
 
@@ -88,7 +88,7 @@ To complete the steps in this article, you will need the following:
 
 When the state of the job has changed to **SUCCEEDED**, you can retrieve the results of the job from Azure Blob storage. The `statusdir` parameter passed with the query contains the location of the output file; in this case, **wasb:///example/pigcurl**. This address stores the output of the job in the **example/pigcurl** directory in the default storage container used by your HDInsight cluster.
 
-You can list and download these files by using the [Azure CLI<!-- deleted by customization for Mac, Linux and Windows -->](/documentation/articles/xplat-cli-install). For example, to list files in **example/pigcurl**, use the following command:
+You can list and download these files by using the [Azure CLI <!-- deleted by customization for Mac, Linux and Windows -->](/documentation/articles/xplat-cli-install). For example, to list files in **example/pigcurl**, use the following command:
 
 	azure storage blob list <container-name> example/pigcurl
 

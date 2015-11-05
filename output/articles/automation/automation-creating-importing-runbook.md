@@ -17,7 +17,7 @@ You can add a runbook to Azure Automation by either [creating a new one](#creati
 
 ## Creating a new runbook
 
-You can create a new runbook in Azure Automation using one of the Azure Management Portals or Windows PowerShell. Once the runbook has been created, you can edit it using information in [Learning PowerShell Workflow](/documentation/articles/automation-powershell-workflow)<!-- deleted by customization and [Graphical authoring in Azure Automation](/documentation/articles/automation-graphical-authoring-intro)-->.
+You can create a new runbook in Azure Automation using one of the Azure Management Portals or Windows PowerShell. Once the runbook has been created, you can edit it using information in [Learning PowerShell Workflow](/documentation/articles/automation-powershell-workflow) <!-- deleted by customization and [Graphical authoring in Azure Automation](/documentation/articles/automation-graphical-authoring-intro)-->.
 
 ### To create a new Azure Automation runbook with the Azure Management Portal
 
@@ -60,7 +60,7 @@ The following sample commands show how to create a new empty runbook.
 
 ## Importing a runbook from a file into Azure Automation
 
-You can create a new runbook in Azure Automation by importing a PowerShell script or PowerShell Workflow (.ps1 extension)<!-- deleted by customization or an exported graphical runbook (.graphrunbook)-->.  You must specify the [type of runbook](/documentation/articles/automation-runbook-types) that will be created from the import taking into account the following considerations. 
+You can create a new runbook in Azure Automation by importing a PowerShell script or PowerShell Workflow (.ps1 extension) <!-- deleted by customization or an exported graphical runbook (.graphrunbook)-->.  You must specify the [type of runbook](/documentation/articles/automation-runbook-types) that will be created from the import taking into account the following considerations. 
 <!-- deleted by customization
 
 - A .graphrunbook file may only be imported into a new [graphical runbook](/documentation/articles/automation-runbook-types#graphical-runbooks), and graphical runbooks can only be created from a .graphrunbook file.

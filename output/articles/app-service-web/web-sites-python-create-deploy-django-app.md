@@ -18,7 +18,7 @@
 
 This tutorial describes how to get started running Python on [Azure Websites](/documentation/services/web-sites/). Web Apps provides limited free hosting and rapid deployment, and you can use Python! As your app grows, you can switch to paid hosting, and you can also integrate with all of the other Azure services.
 
-You will create an application using the Django web framework (see alternate versions of this tutorial for [Flask](/documentation/articles/web-sites-python-create-deploy-flask-app) and [Bottle](/documentation/articles/web-sites-python-create-deploy-bottle-app)). You will create the web app<!-- deleted by customization -->, set up Git deployment, and clone the repository locally. Then you will run the application locally, make changes, commit and push them to Azure. The tutorial shows how to do this from Windows or Mac/Linux.
+You will create an application using the Django web framework (see alternate versions of this tutorial for [Flask](/documentation/articles/web-sites-python-create-deploy-flask-app) and [Bottle](/documentation/articles/web-sites-python-create-deploy-bottle-app)). You will create the web app <!-- deleted by customization from the Azure Marketplace -->, set up Git deployment, and clone the repository locally. Then you will run the application locally, make changes, commit and push them to Azure. The tutorial shows how to do this from Windows or Mac/Linux.
 
 [AZURE.INCLUDE [create-account-and-websites-note](../includes/create-account-and-websites-note.md)]
 <!-- deleted by customization
@@ -53,7 +53,7 @@ You will create an application using the Django web framework (see alternate ver
 - Python 2.7 or 3.4
 - setuptools, pip, virtualenv (Python 2.7 only)
 - Git
-- [Python Tools for Visual Studio][](/documentation/articles/PTVS) - Note: this is optional
+- [Python Tools for Visual Studio][]<!-- deleted by customization (/documentation/articles/PTVS) --> - Note: this is optional
 
 **Note**: TFS publishing is currently not supported for Python projects.
 
@@ -205,7 +205,7 @@ Now we'll create a virtual environment for local development. Right-click on **P
 
 - Make sure the name of the environment is `env`.
 
-- Select the base interpreter.  Make sure to use the same version of Python that is selected for your web app (in runtime.txt or<!-- deleted by customization the **Application Settings** blade of your web app in the Azure Management Portal --><!-- keep by customization: begin --> the site configuration page<!-- keep by customization: end -->).
+- Select the base interpreter. Make sure to use the same version of Python that is selected for your web app (in runtime.txt or <!-- deleted by customization the **Application Settings** blade of your web app in the Azure Management Portal --><!-- keep by customization: begin --> the site configuration page<!-- keep by customization: end -->).
 
 - Make sure the option to download and install packages is checked.
 
@@ -283,7 +283,7 @@ First, clone the repository using the URL provided on the Azure Management Porta
 
 We'll create a new virtual environment for development purposes (do not add it to the repository). Virtual environments in Python are not relocatable, so every developer working on the application will create their own locally.
 
-Make sure to use the same version of Python that is selected for your web app (in runtime.txt or<!-- deleted by customization the Application Settings blade of your web app in the Azure Management Portal --><!-- keep by customization: begin --> the site configuration page<!-- keep by customization: end -->).
+Make sure to use the same version of Python that is selected for your web app (in runtime.txt or <!-- deleted by customization the Application Settings blade of your web app in the Azure Management Portal --><!-- keep by customization: begin --> the site configuration page<!-- keep by customization: end -->).
 
 For Python 2.7:
 
@@ -375,7 +375,7 @@ First, clone the repository using the URL provided on the Azure Management Porta
 
 We'll create a new virtual environment for development purposes (do not add it to the repository). Virtual environments in Python are not relocatable, so every developer working on the application will create their own locally.
 
-Make sure to use the same version of Python that is selected for your web app (in runtime.txt or<!-- deleted by customization the Application Settings blade of your web app in the Azure Management Portal --><!-- keep by customization: begin --> the site configuration page<!-- keep by customization: end -->).
+Make sure to use the same version of Python that is selected for your web app (in runtime.txt or <!-- deleted by customization the Application Settings blade of your web app in the Azure Management Portal --><!-- keep by customization: begin --> the site configuration page<!-- keep by customization: end -->).
 
 For Python 2.7:
 

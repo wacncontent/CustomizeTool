@@ -85,7 +85,7 @@ Once the channel is created, you can get ingest URLs that you will provide to th
 
 ![ingesturls](./media/media-services-portal-get-started-with-live/media-services-ingest-urls.png)
 
-For more information about Ingest URLs, see [Using on-premises encoders to send multi-bitrate live stream to a channel](/documentation/articles/media-services-channels-overview).
+For more information about Ingest URLs, see [Using on-premises encoders to send multi-bitrate live stream to a channel](/documentation/articles/media-services-manage-channels-overview).
 
 ## Configure a live encoder and ingest live stream
 

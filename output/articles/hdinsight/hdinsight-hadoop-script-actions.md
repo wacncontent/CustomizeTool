@@ -15,7 +15,7 @@
 
 # Develop Script Action scripts for HDInsight
 
-Learn how to write Script Action scripts for HDInsight. For information on using Script Action scripts, see [Customize HDInsight clusters using Script Action](/documentation/articles/hdinsight-hadoop-customize-cluster).<!-- deleted by customization For the same article written for the HDInsight cluster on Linux operating system, see [Develop Script Action scripts for HDInsight](/documentation/articles/hdinsight-hadoop-script-actions-linux). -->
+Learn how to write Script Action scripts for HDInsight. For information on using Script Action scripts, see [Customize HDInsight clusters using Script Action](/documentation/articles/hdinsight-hadoop-customize-cluster). <!-- deleted by customization For the same article written for the HDInsight cluster on Linux operating system, see [Develop Script Action scripts for HDInsight](/documentation/articles/hdinsight-hadoop-script-actions-linux). -->
 
 Script Action can be used to install additional software running on a Hadoop cluster or to change the configuration of applications installed on a cluster. Script actions are scripts that run on the cluster nodes when HDInsight clusters are deployed, and they are executed once nodes in the cluster complete HDInsight configuration. A script action is executed under system admin account privileges and provides full access rights to the cluster nodes. Each cluster can be provided with a list of script actions to be executed in the order in which they are specified. 
 
@@ -268,10 +268,10 @@ We need this policy to be unrestricted as scripts are not signed.
 * **Solr**. https://hdiconfigactions.blob.core.windows.net/solrconfigactionv01/solr-installer-v01.ps1
 * **Giraph**. https://hdiconfigactions.blob.core.windows.net/giraphconfigactionv01/giraph-installer-v01.ps1
 
-**Run the script action** - Open a new Azure PowerShell window in admin mode and run the <!-- deleted by customization Spark or -->R installation script from the local location where they were saved.
+**Run the script action** - Open a new Azure PowerShell window in admin mode and run the <!-- deleted by customization Spark or --> R installation script from the local location where they were saved.
 
 **Usage examples**
-When you're using the <!-- deleted by customization Spark and -->R clusters, data files needed may not be present in the HDInsight Emulator. So you may need to upload relevant .txt files that contain data to a path in HDFS and then use that path to access the data. For example:
+When you're using the <!-- deleted by customization Spark and --> R clusters, data files needed may not be present in the HDInsight Emulator. So you may need to upload relevant .txt files that contain data to a path in HDFS and then use that path to access the data. For example:
 
 	val file = sc.textFile("/example/data/gutenberg/davinci.txt")
 
@@ -292,7 +292,7 @@ An easy way to check the logs is to use HDInsight Tools for Visual Studio. For i
 4. Expand **Storage**, expand the Azure storage account used as the default file system, expand **Tables**, and then double-click the table name.
 
 
-You can also remote into the cluster nodes to see the both STDOUT and STDERR for custom scripts. The logs on each node are specific only to that node and are logged into **C:\HDInsightLogs\DeploymentAgent.log**. These log files record all outputs from the custom script.<!-- deleted by customization An example log snippet for a Spark script action looks like this: -->
+You can also remote into the cluster nodes to see the both STDOUT and STDERR for custom scripts. The logs on each node are specific only to that node and are logged into **C:\HDInsightLogs\DeploymentAgent.log**. These log files record all outputs from the custom script. <!-- deleted by customization An example log snippet for a Spark script action looks like this: -->
 <!-- deleted by customization
 
 	Microsoft.Hadoop.Deployment.Engine.CustomPowershellScriptCommand; Details : BEGIN: Invoking powershell script https://configactions.blob.core.chinacloudapi.cn/sparkconfigactions/spark-installer.ps1.;

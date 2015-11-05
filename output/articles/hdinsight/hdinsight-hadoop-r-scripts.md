@@ -16,7 +16,7 @@
 # Install and use R on HDInsight Hadoop clusters
 
 
-Learn how to customize Windows based HDInsight cluster with R using Script Action, and how to use R on HDInsight clusters.<!-- deleted by customization For information on using R with a Linux-based cluster, see [Install and use R on HDinsight Hadoop clusters (Linux)](/documentation/articles/hdinsight-hadoop-r-scripts-linux).-->
+Learn how to customize Windows based HDInsight cluster with R using Script Action, and how to use R on HDInsight clusters. <!-- deleted by customization For information on using R with a Linux-based cluster, see [Install and use R on HDinsight Hadoop clusters (Linux)](/documentation/articles/hdinsight-hadoop-r-scripts-linux).-->
  
 You can install R on any type of cluster (Hadoop, Storm, HBase<!-- deleted by customization , Spark -->) on Azure HDInsight by using *Script Action*. A sample script to install R on an HDInsight cluster is available from a read-only Azure storage blob at [https://hdiconfigactions.blob.core.windows.net/rconfigactionv02/r-installer-v02.ps1](https://hdiconfigactions.blob.core.windows.net/rconfigactionv02/r-installer-v02.ps1). 
 
@@ -315,4 +315,6 @@ Provide a cluster name and press ENTER to provision a cluster with R installed.
 [powershell-install-configure]: /documentation/articles/install-configure-powershell
 [hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters
 [hdinsight-cluster-customize]: /documentation/articles/hdinsight-hadoop-customize-cluster
+<!-- deleted by customization
 [hdinsight-install-spark]: /documentation/articles/hdinsight-hadoop-spark-install-linux
+-->

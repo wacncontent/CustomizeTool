@@ -16,7 +16,7 @@
 
 ## Overview
 
-This tutorial shows you how to create an ASP.NET 5 web app using [Visual Studio Code (VS Code)](http://code.visualstudio.com//Docs/whyvscode) and deploy it to [Azure Websites](/documentation/articles/app-service-value-prop-what-is). ASP.NET 5 is a significant redesign of ASP.NET. ASP.NET 5 is a new open-source and cross-platform framework for building modern cloud-based web apps using .NET. For more information, see [Introduction to ASP.NET 5](http://docs.asp.net/en/latest/conceptual-overview/aspnet.html). For information about Azure Websites web apps, see [Web Apps Overview](/documentation/articles/app-service-web-overview).
+This tutorial shows you how to create an ASP.NET 5 web app using [Visual Studio Code (VS Code)](http://code.visualstudio.com//Docs/whyvscode) and deploy it to [Azure Websites](/documentation/services/web-sites). ASP.NET 5 is a significant redesign of ASP.NET. ASP.NET 5 is a new open-source and cross-platform framework for building modern cloud-based web apps using .NET. For more information, see [Introduction to ASP.NET 5](http://docs.asp.net/en/latest/conceptual-overview/aspnet.html). For information about Azure Websites web apps, see [Web Apps Overview](/home/features/web-site/).
 
 [AZURE.INCLUDE [app-service-web-try-app-service.md](../includes/app-service-web-try-app-service.md)]
 
@@ -135,6 +135,7 @@ Now that you have created the web app and retrieved all the NuGet packages for t
 
 3. Close your browser. In the Command Window, press **Ctrl+C** to shut down the application or close the Command Window. 
 
+<!-- deleted by customization
 ## Create a web app in the Azure preview portal
 
 The following steps will guide you through creating a web app in the Azure preview portal.
@@ -193,6 +194,27 @@ Git is a distributed version control system that you can use to deploy your Azur
 
 	![Azure Git URL](./media/web-sites-create-web-app-using-vscode/17-azure-giturl.png)
 
+-->
+<!-- keep by customization: begin -->
+## Create a web app in the Azure Management Portal
+
+The first step in creating your app is to create the web site via the Azure Management Portal.  To do this, you will need to login to the portal and click the NEW button in the bottom left corner. A window will appear. Click **Quick Create**, enter a URL, and select **Create Web Site**.
+
+![](./media/web-sites-python-create-deploy-django-app/django-ws-003.png)
+
+The site will be quickly set up.  Next, you will add support for publishing via Git.  This can be done by choosing **Set up deployment from source control**.
+
+![](./media/web-sites-python-create-deploy-django-app/django-ws-004.png)
+
+From the **Set up deployment** dialog, scroll down and select the **Local Git** option. Click the right arrow to continue.
+
+![](./media/web-sites-python-create-deploy-django-app/django-ws-005.png)
+
+After setting up Git publishing, you will momentarily see a page informing you the repo is being created. When the repo is ready, you will be taken to the deployments tab. The deployments tab includes instructions on how to connect.  
+
+![](./media/web-sites-python-create-deploy-django-app/django-ws-006.png)
+
+<!-- keep by customization: end -->
 ## Publish your web app to Azure Websites
 
 In this section, you will create a local Git repository and push from that repository to Azure to deploy your web app to Azure.
@@ -265,4 +287,4 @@ This can be done in two ways:
 ![Azure web app](./media/web-sites-create-web-app-using-vscode/21-azurewebapp.png)
 
 ## Summary
-In this tutorial, you learned how to create a web app in VS Code and deploy it to Azure. For more information about VS Code, see the article, [Why Visual Studio Code?](https://code.visualstudio.com/Docs/) For information about Azure Websites web apps, see [Web Apps Overview](/documentation/articles/app-service-web-overview). 
+In this tutorial, you learned how to create a web app in VS Code and deploy it to Azure. For more information about VS Code, see the article, [Why Visual Studio Code?](https://code.visualstudio.com/Docs/) For information about Azure Websites web apps, see [Web Apps Overview](/home/features/web-site/). 

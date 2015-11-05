@@ -76,11 +76,10 @@ Hardware maintenance and rotation is a key issue for businesses as release cycle
 
 Azure Websites provides a stable, reliable platform which has been proven to be able to handle a wide variety of business needs from small internal development and test workloads, to highly scaled high traffic websites. By using Web Apps, you are making use of the same enterprise class hosting platform that Microsoft as a company uses for high value web workloads. Web Apps, along with all services on the Azure platform, are built with security and compliance with regulatory requirements, such as ISO (ISO/IEC 27001:2005); SOC1 and SOC2 SSAE 16/ISAE 3402 Attestations, HIPAA BAA, PCI and Fedramp, at the very heart of each element and feature, for more information please see [http://aka.ms/azurecompliance](/support/trust-center/compliance/). 
 
-Windows Azure platform allows Role Based Authorization Controls enabling enterprise levels of control to resources within Web Apps. RBAC gives enterprises the power to implement their own access management policies for all of their assets in the Azure Environment, by assigning users to groups and in turn assigning the required permissions to those groups against the asset such as a web app. For more information on RBAC in Azure, see [http://aka.ms/azurerbac](/documentation/articles/role-based-access-control-configure). By utilizing Web Apps, you can be sure your web applications are deployed in a safe and secure environment and you have full control into which territory your assets are deployed. 
+Windows Azure platform allows Role Based Authorization Controls enabling enterprise levels of control to resources within Web Apps. RBAC gives enterprises the power to implement their own access management policies for all of their assets in the Azure Environment, by assigning users to groups and in turn assigning the required permissions to those groups against the asset such as a web app. <!-- deleted by customization For more information on RBAC in Azure, see [http://aka.ms/azurerbac](/documentation/articles/role-based-access-control-configure). --> By utilizing Web Apps, you can be sure your web applications are deployed in a safe and secure environment and you have full control into which territory your assets are deployed. 
 <!-- deleted by customization
 
 Additionally, Web Apps is also able to make full use of your on premises investments by offering the ability to connect back to your internal resources, such as your data warehouse or SharePoint environment. As discussed in [High Level solution] you can make use of Hybrid Connections and Virtual Network Connectivity to establish connections to on premises infrastructure and services.
--->
 
 ### Global Scale ###
 
@@ -88,6 +87,7 @@ Azure Websites is a global and scalable platform, enabling your web applications
 
 Web Apps is available globally in 17 datacenters worldwide, and growing. For the most updated list of regions and location, see [https://azure.microsoft.com/regions/](https://azure.microsoft.com/regions/). With Web Apps, your business can easily achieve global reach and scale. As your company grows into new regions, the reporting application dashboards that you use and host on Web Apps can easily be deployed into additional datacenters and serve local users far more quickly through the combination of Web Apps and Azure Traffic Manager, all with the added benefit of the scalable infrastructure underneath being able to contract and expand as the needs of the regional offices change.
  
+-->
 ## Solution Details ##
 
 Let’s look at an example of an application migration scenario. This outlines the details of how Azure Websites features come to together to provide great solution and business value.

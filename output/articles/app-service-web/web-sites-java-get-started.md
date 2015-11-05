@@ -25,7 +25,7 @@ This tutorial shows how to create a web app on Windows Azure by using Java, thro
 
 If you don't want to use either of those techniques—for example, if you want to customize your application container—see [Upload a custom Java web app to Azure](/documentation/articles/web-sites-java-custom-upload).
 
-> [AZURE.NOTE] To complete this tutorial, you need a Windows Azure account. If you don't have an account, you can <!-- deleted by customization [activate your MSDN subscriber benefits][] or -->[sign up for a trial][].
+> [AZURE.NOTE] To complete this tutorial, you need a Windows Azure account. If you don't have an account, you can <!-- deleted by customization [activate your MSDN subscriber benefits][] or --> [sign up for a trial][].
 <!-- deleted by customization
 
 If you want to get started with Azure Websites before you sign up for an Azure account, go to [Try Azure Websites][]. There, you can immediately create a short-lived starter web app in Azure Websites—no credit card required, and no commitments.

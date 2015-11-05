@@ -110,7 +110,7 @@ To create a CNAME record, you must add a new entry in the DNS table for your cus
 
 			get-azurewebsite yoursitename | select hostnames
 
-	* Install and configure the [Azure Command Line Interface](/documentation/articles/install-and-configure-cli/), and then use the following command:
+	* Install and configure the [Azure Command Line Interface](/documentation/articles/xplat-cli-install/), and then use the following command:
 
 			azure site domain list yoursitename
 
@@ -151,7 +151,7 @@ After the CNAME record for domain name has propagated, you must associate it wit
 
 **To add a domain name using the command-line tools**
 
-Install and configure the [Azure Command-Line Interface](/documentation/articles/install-and-configure-cli/), and then use the following command:
+Install and configure the [Azure Command-Line Interface](/documentation/articles/xplat-cli-install/), and then use the following command:
 
 	azure site domain add customdomain yoursitename
 
@@ -247,7 +247,7 @@ After the **awverify** CNAME record for domain name has propagated, you can then
 
 **To add a domain name using the Azure Command-Line Interface (Azure CLI)**
 
-Install and configure the [Azure CLI](/documentation/articles/install-and-configure-cli/), and then use the following command:
+Install and configure the [Azure CLI](/documentation/articles/xplat-cli-install/), and then use the following command:
 
 	azure site domain add customdomain yoursitename
 
@@ -299,7 +299,9 @@ Once configuration has completed, the custom domain name will be listed in the *
 [PricingDetails]: /pricing/overview/
 [portal]: http://manage.windowsazure.cn
 [digweb]: http://www.digwebinterface.com/
+<!-- deleted by customization
 [cloudservicedns]: /documentation/articles/custom-dns
+-->
 [trafficmanager]: /documentation/articles/web-sites-traffic-manager
 [addendpoint]: /documentation/articles/traffic-manager-endpoints
 [createprofile]: /documentation/articles/traffic-manager-manage-profiles

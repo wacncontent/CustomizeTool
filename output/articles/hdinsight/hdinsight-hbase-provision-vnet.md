@@ -448,7 +448,9 @@ In this tutorial you learned how to provision an HBase cluster. To learn more, s
 [3]: http://technet.microsoft.com/zh-cn/library/hh847889.aspx
 
 [hbase-get-started]: /documentation/articles/hdinsight-hbase-get-started
+<!-- deleted by customization
 [hbase-twitter-sentiment]: /documentation/articles/hdinsight-hbase-twitter-sentiment
+-->
 [vnet-overview]: /documentation/articles/virtual-networks-overview
 [vm-create]: /documentation/articles/virtual-machines-windows-tutorial
 [azure-portal]: https://manage.windowsazure.cn

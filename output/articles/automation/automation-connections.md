@@ -95,6 +95,7 @@ The following sample commands show how to use the Twilio connection in the previ
 	#Send text with connection properties.
 	Send-TwilioSMS -AccountSid $Con.AccountSid -AuthToken $Con.AuthToken $Con -From $NumFrom -To $NumTo -Body $Body
 
+<!-- deleted by customization
 ### Graphical runbook samples
 
 You add a **Get-AutomationConnection** activity to a graphical runbook by right-clicking on the connection in the Library pane of the graphical editor and selecting **Add to canvas**.
@@ -112,7 +113,6 @@ The image below shows the same example as above but uses the **SpecifyConnection
 ![](./media/automation-connections/get-connection-properties.png)
 
 
-<!-- deleted by customization
 
 ## Related articles
 

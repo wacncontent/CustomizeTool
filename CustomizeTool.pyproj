@@ -32,6 +32,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="mdReader.py" />
+    <Compile Include="relativeLinkChecker.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="ruleReader.py" />
     <Compile Include="fileCompare.py">
       <SubType>Code</SubType>

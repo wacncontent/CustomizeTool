@@ -157,8 +157,8 @@ HDInsight can run HiveQL jobs by using a variety of methods. Use the following t
 <!-- deleted by customization
 | [SSH](/documentation/articles/hdinsight-hadoop-use-mapreduce-ssh)                       | Use the Hadoop command through **SSH**                  | Linux                                     | Linux, Unix, Mac OS X, or Windows        |
 -->
-| [Curl](/documentation/articles/hdinsight-hadoop-use-mapreduce-curl)                     | Submit the job remotely by using **REST**               | <!-- deleted by customization Linux or -->Windows                          | <!-- deleted by customization Linux, Unix, Mac OS X, or -->Windows        |
-| [Windows PowerShell](/documentation/articles/hdinsight-hadoop-use-mapreduce-powershell) | Submit the job remotely by using **Windows PowerShell** | <!-- deleted by customization Linux or -->Windows                          | Windows                                  |
+| [Curl](/documentation/articles/hdinsight-hadoop-use-mapreduce-curl)                     | Submit the job remotely by using **REST**               | <!-- deleted by customization Linux or --> Windows                          | <!-- deleted by customization Linux, Unix, Mac OS X, or --> Windows        |
+| [Windows PowerShell](/documentation/articles/hdinsight-hadoop-use-mapreduce-powershell) | Submit the job remotely by using **Windows PowerShell** | <!-- deleted by customization Linux or --> Windows                          | Windows                                  |
 | [Remote Desktop](/documentation/articles/hdinsight-hadoop-use-mapreduce-remote-desktop)    | Use the Hadoop command through **Remote Desktop**       | Windows                                   | Windows                                  |
 
 ##<a id="nextsteps"></a>Next steps

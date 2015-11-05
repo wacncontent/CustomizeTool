@@ -14,7 +14,7 @@
 
 #<a name="howtomonitor"></a>Monitor Web Apps in Azure Websites
 
-[Azure Websites](/documentation/services/web-sites/) provide monitoring functionality for Standard<!-- deleted by customization and Premium --> App Service plans via the Monitor management page. The Monitor management page provides performance statistics for a web app as described below.
+[Azure Websites](/documentation/services/web-sites/) provide monitoring functionality for Standard <!-- deleted by customization and Premium --> App Service plans via the Monitor management page. The Monitor management page provides performance statistics for a web app as described below.
 <!-- deleted by customization
 
 [AZURE.INCLUDE [app-service-web-to-api-and-mobile](../includes/app-service-web-to-api-and-mobile.md)]
@@ -72,7 +72,7 @@ To determine the extent that a web app is impacting resource usage quotas, follo
 	-	**File System Storage** - when this quota is reached, file system storage remains accessible for read operations, but all write operations, including those required for normal web app activity, are blocked. Write operations will resume when you reduce file usage or move the web app to an App Service plan with a higher quota.
 	-	**Linked Resources** - quotas for any linked resources of the web app, such as database or storage, are displayed here as well.
 
-	Some quotas can be applied per web hosting plan, while others can be applied per site. For detailed information on usage quotas for each Web hosting plan, see [Websites Limits](/documentation/articles/azure-subscription-service-limits#websiteslimits).
+	Some quotas can be applied per web hosting plan, while others can be applied per site. <!-- deleted by customization For detailed information on usage quotas for each Web hosting plan, see [Websites Limits](/documentation/articles/azure-subscription-service-limits#websiteslimits). -->
 
 ##<a name="resourceusage"></a> How to: Avoid exceeding your quotas
 

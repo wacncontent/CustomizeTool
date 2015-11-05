@@ -76,7 +76,7 @@ This tutorial uses only the default blob and the default storage account.
 
 	![Azure Management Portal where you can use Quick Create to set up a new storage account.][image-hdi-storageaccount-quickcreate]
 
->[AZURE.NOTE]  Make sure you create the storage account in a location that is supported for the cluster. These are: <!-- deleted by customization **East Asia**, **Southeast Asia**, **China North**, **West Europe**, **China East**, **China North**, -->**China North**, **China East**.
+>[AZURE.NOTE]  Make sure you create the storage account in a location that is supported for the cluster. These are:  <!-- deleted by customization **East Asia**, **Southeast Asia**, **China North**, **West Europe**, **China East**, **China North**, --> **China North**, **China East**.
 
 Select the new storage account from the list and click **MANAGE ACCESS KEYS** at the bottom of the page. Make a note of the **PRIMARY ACCESS KEY** (or the **SECONDARY ACCESS KEY**—either of the keys work).  You will need this later in the tutorial. For more information, see [How to Create a Storage Account][azure-create-storageaccount] .
 

@@ -52,11 +52,13 @@ Another deployment option is to use a cloud-based service such as [Octopus Deplo
 
 [Visual Studio Online](http://www.visualstudio.com/) (formerly Team Foundation Service) is Microsoft's cloud-based solution for source control and team collaboration. The service is free for a team of up to 5 developers. You can do continuous delivery to a web app in Azure Websites, and your repository can use either [Git or TFVC](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/source-control#gittfs).
 
+<!-- deleted by customization
 For more information, see the following resources:
 
 * [Continuous delivery to Azure using Visual Studio Online and TFVC](/documentation/articles/cloud-services-continuous-delivery-use-vso). Step-by-step tutorial that shows how to set up continuous delivery from Visual Studio Online to a web app, using TFVC. TFVC is the centralized source control option, as opposed to Git, which is the distributed source control option.
 * [Continuous delivery to Azure using Visual Studio Online and Git](/documentation/articles/cloud-services-continuous-delivery-use-vso-git). Similar to the previous tutorial but uses Git instead of TFVC.
 
+-->
 ##<a name="git"></a>Repository websites using Git
 
 [Git](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/source-control#gittfs) is a popular distributed source control system. Azure has built-in features that make it easy to automate deployment to a web app from popular web-based repository sites that store Git repositories, including [GitHub](http://www.github.com), [CodePlex](http://www.codeplex.com/), and [BitBucket](https://bitbucket.org/). An advantage of using Git to deploy is that it's relatively easy to roll back to an earlier deployment if that ever becomes necessary.
@@ -98,6 +100,7 @@ For information about how to deploy to Web Apps from Visual Studio, see the foll
 * [ASP.NET Web Deployment using Visual Studio](http://www.asp.net/mvc/tutorials/deployment/visual-studio-web-deployment/introduction). A 12-part tutorial series that covers a more complete range of deployment tasks than the others in this list. Some Azure deployment features have been added since the tutorial was written, but notes added later explain what's missing.
 * [Deploying an ASP.NET Website to Azure in Visual Studio 2012 from a Git Repository directly](http://www.dotnetcurry.com/ShowArticle.aspx?ID=881). Explains how to deploy an ASP.NET web project in Visual Studio, using the Git plug-in to commit the code to Git and connecting Azure to the Git repository. Starting in Visual Studio 2013, Git support is built-in an doesn't require installation of a plug-in.
 
+<!-- deleted by customization
 ##<a name="webmatrix"></a>WebMatrix
 
 For information about how to deploy to Web Apps from WebMatrix, see the following resources:
@@ -106,6 +109,7 @@ For information about how to deploy to Web Apps from WebMatrix, see the followin
 * [Create and deploy a PHP-MySQL web app using WebMatrix](/documentation/articles/web-sites-php-mysql-use-webmatrix).
 * [WebMatrix 3: Integrated Git and Deployment to Azure](http://www.codeproject.com/Articles/577581/Webmatrixplus3-3aplusIntegratedplusGitplusandplusD). How to use WebMatrix to deploy from a Git source control repository.
 
+-->
 For more information, see the following resources:
 
 * [Create a PHP-MySQL web app and deploy using FTP](/documentation/articles/web-sites-php-mysql-deploy-use-ftp).

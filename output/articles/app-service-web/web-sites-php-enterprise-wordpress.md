@@ -98,6 +98,7 @@ There are two methods of migrating an existing WordPress site to Azure Websites.
 
 ## Step-by-step instructions
 
+<!-- deleted by customization
 ### Create a new WordPress site
 
 1. Use the [Azure Marketplace][cdbnstore] to create a MySQL database of the size you identified in the [Architecture and planning](#planning) section, in the region(s) that you will host your site.
@@ -106,6 +107,7 @@ There are two methods of migrating an existing WordPress site to Azure Websites.
 
 If you are migrating an existing WordPress site, see [Migrate an existing WordPress site to Azure](#Migrate-an-existing-WordPress-site-to-Azure) after creating a new web app.
 
+-->
 ### Migrate an existing WordPress site to Azure
 
 As mentioned in the [Architecture and planning](#planning) section, there are two ways to migrate a WordPress site.
@@ -267,7 +269,9 @@ To do this... | Use this...
 [import]: http://wordpress.org/plugins/wordpress-importer/
 [wordpressbackup]: http://wordpress.org/plugins/wordpress-importer/
 [wordpressdbbackup]: http://codex.wordpress.org/Backing_Up_Your_Database
+<!-- deleted by customization
 [createwordpress]: /documentation/articles/web-sites-php-web-site-gallery
+-->
 [velvet]: https://wordpress.org/plugins/velvet-blues-update-urls/
 [mgmtportal]: https://manage.windowsazure.cn/
 [wordpressbackup]: http://codex.wordpress.org/WordPress_Backups

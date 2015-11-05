@@ -89,7 +89,7 @@ Visual Studio provides access to a subset of the web app management functions an
    
 	For information about the App Settings and Connection Strings boxes in this window, see [Azure Web Apps: How Application Strings and Connection Strings Work](http://blogs.msdn.com/b/windowsazure/archive/2013/07/17/windows-azure-web-sites-how-application-strings-and-connection-strings-work.aspx).
 
-	If you want to perform a web app management task that can't be done in this window, click **Open in Management Portal** to open a browser window to the Azure <!-- deleted by customization preview portal --><!-- keep by customization: begin -->Management Portal<!-- keep by customization: end -->. For more information, see [How to Configure Web Apps](/documentation/articles/web-sites-configure#howtochangeconfig).
+	If you want to perform a web app management task that can't be done in this window, click **Open in Management Portal** to open a browser window to the Azure <!-- deleted by customization preview portal --><!-- keep by customization: begin -->Management Portal<!-- keep by customization: end -->. For more information, see [How to Configure Web Apps](/documentation/articles/web-sites-configure/#howtochangeconfig).
 
 ## <a name="remoteview"></a>Access web app files in Server Explorer
 

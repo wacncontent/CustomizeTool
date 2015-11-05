@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties 
    pageTitle="Azure Automation DSC Overview | Windows Azure" 
    description="An Overview of Azure Automation Desired State Configuration (DSC), its terms, and known issues" 

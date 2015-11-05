@@ -1,4 +1,4 @@
-new docs: 154, word count: 288629
+new docs: 154, word count: 288804
 articles/hdinsight/automation-manage-hdinsights.md
 articles/hdinsight/hdinsight-administer-use-command-line.md
 articles/hdinsight/hdinsight-administer-use-management-portal-v1.md

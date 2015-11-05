@@ -1,6 +1,6 @@
 <properties
    pageTitle="Create Hadoop clusters in HDInsight | Windows Azure"
-   	description="Learn how to create clusters for Azure HDInsight by using the Azure <!-- deleted by customization preview portal --><!-- keep by customization: begin -->Management Portal<!-- keep by customization: end -->, Azure PowerShell, a command line, or a .NET SDK."
+   	description="Learn how to create clusters for Azure HDInsight by using the Azure <!-- deleted by customization Preview Portal --><!-- keep by customization: begin -->Management Portal<!-- keep by customization: end -->, Azure PowerShell, a command line, or a .NET SDK."
    services="hdinsight"
    documentationCenter=""
    tags="azure-portal"

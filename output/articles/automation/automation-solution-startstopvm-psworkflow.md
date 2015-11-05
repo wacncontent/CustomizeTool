@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="Starting and stopping virtual machines with Azure Automation - PowerShell Workflow | Windows Azure"
-   description="<!-- deleted by customization Graphical --><!-- keep by customization: begin -->PowerShell<!-- keep by customization: end --> version of Azure Automation solution including runbooks to start and stop classic virtual machines."
+	description="<!-- deleted by customization Graphical --><!-- keep by customization: begin -->PowerShell<!-- keep by customization: end --> version of Azure Automation solution including runbooks to start and stop classic virtual machines."
 	services="automation"
 	documentationCenter=""
 	authors="bwren"
@@ -30,14 +30,17 @@ This is the PowerShell Workflow runbook version of this solution. It is also ava
 
 ## Getting the solution
 
-This solution consists of two PowerShell Workflow runbooks that you can download from the following links. <!-- deleted by customization  See the [graphical version](/documentation/articles/automation-solutions-startstopvm-graphical) of this solution for links to the graphical runbooks. -->
+This solution consists of two PowerShell Workflow runbooks that you can download from the following links.  <!-- deleted by customization  See the [graphical version](/documentation/articles/automation-solutions-startstopvm-graphical) of this solution for links to the graphical runbooks. -->
 
 | Runbook | Link | Type | Description |
 |:---|:---|:---|:---|
 | Start-AzureVMs | [Start Azure Classic VMs](https://gallery.technet.microsoft.com/Start-Azure-Classic-VMs-86ef746b) | PowerShell Workflow | Starts all classic virtual machines in an Azure subscriptionor all virtual machines with a particular service name. |
 | Stop-AzureVMs | [Stop Azure Classic VMs](https://gallery.technet.microsoft.com/Stop-Azure-Classic-VMs-7a4ae43e) | PowerShell Workflow | Stops all virtual machines in an automation account or all virtual machines with a particular service name.  |
 
+
 <!-- keep by customization: begin -->
+[AZURE.INCLUDE [automation-azurechinacloud-environment-parameter](../includes/automation-azurechinacloud-environment-parameter.md)]
+<!-- keep by customization: end -->
 ## Installing the solution
 
 ### 1. Install the runbooks

@@ -35,7 +35,7 @@ Below is an example of a line-of-business application running on Azure Websites.
 
 Bring your existing web assets to Azure Websites from a variety of languages and frameworks.
 
-Your existing web assets can run on Azure Websites, whether they are .NET, PHP, Java, Node.js, or Python. You can move them to Web Apps using your familiar [FTP] tools or your source control management system. Web Apps supports direct publishing from popular source control options, such as [Visual Studio], [Visual Studio Online], and [Git] - local, GitHub, BitBucket, DropBox, Mercurial, etc..
+Your existing web assets can run on Azure Websites, whether they are .NET, PHP, Java, Node.js, or Python. You can move them to Web Apps using your familiar [FTP] tools or your source control management system. Web Apps supports direct publishing from popular source control options, such as [Visual Studio]<!-- deleted by customization , [Visual Studio Online], --> and [Git] - local, GitHub, BitBucket, DropBox, Mercurial, etc..
 
 ## Secure your assets
 
@@ -53,8 +53,10 @@ Connect to your web app data or resources, whether it's in the cloud for perform
 
 You can choose from various database backends in Azure to meet the needs of your web app, including [Azure SQL Database] and [MySQL]. Keeping your data securely in Azure makes data close to your web app geographically and optimizes its performance.
 
+<!-- deleted by customization
 However, your business may require its data to be kept on-premises. Azure Websites lets you easily set up a [hybrid connection] to your on-premise resource such as a database backend. If you want unified management of your on-premises connections, you integrate many web apps with one [Azure Virtual Network] that has a site-to-site VPN. You can then access on-premises resources as if your web apps are on-premises.
 
+-->
 ## Optimize
 
 Optimize your line-of-business application by scaling automatically with Autoscale, caching with Azure Redis Cache, running background tasks with WebJobs, and maintaining high availability with Azure Traffic Manager.
@@ -93,7 +95,9 @@ In the **Standard** tier, monitor app responsiveness receive email notifications
 
 [FTP]: /documentation/articles/web-sites-deploy#ftp
 [Visual Studio]: /documentation/articles/web-sites-dotnet-get-started
+<!-- deleted by customization
 [Visual Studio Online]: /documentation/articles/cloud-services-continuous-delivery-use-vso
+-->
 [Git]: /documentation/articles/web-sites-publish-source-control
 [HTTPS]: /documentation/articles/web-sites-configure-ssl-certificate
 [Azure Websites Pricing Details]: /home/features/web-site#price
@@ -103,8 +107,10 @@ In the **Standard** tier, monitor app responsiveness receive email notifications
 [Azure Trust Center]:/support/trust-center/
 [MySQL]: /documentation/articles/web-sites-php-mysql-deploy-use-git
 [Azure SQL Database]: /documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database
+<!-- deleted by customization
 [hybrid connection]: /documentation/articles/web-sites-hybrid-connection-get-started
 [Azure Virtual Network]: /documentation/articles/web-sites-integrate-with-vnet
+-->
 [scale up and out]: /documentation/articles/web-sites-scale
 [Azure Management Portal]:http://manage.windowsazure.cn/
 [Service Management API]:http://msdn.microsoft.com/zh-cn/library/azure/ee460799.aspx
@@ -117,7 +123,9 @@ In the **Standard** tier, monitor app responsiveness receive email notifications
 
 [quick glance]: /documentation/articles/web-sites-monitor
 [Azure Application Insights]:http://blogs.msdn.com/b/visualstudioalm/archive/2015/01/07/application-insights-and-azure-websites.aspx
+<!-- deleted by customization
 [New Relic]: /documentation/articles/store-new-relic-cloud-services-dotnet-application-performance-management
+-->
 [How to: Receive Alert Notifications and Manage Alert Rules in Azure]:http://msdn.microsoft.com/zh-cn/library/azure/dn306638.aspx
 
  

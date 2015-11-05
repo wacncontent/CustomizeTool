@@ -19,7 +19,7 @@
 [AZURE.INCLUDE [oozie-selector](../includes/hdinsight-oozie-selector.md)]
 
 ##Overview
-Learn how to use Apache Oozie to define a workflow and run the workflow on HDInsight. To learn about the Oozie coordinator, see [Use time-based Hadoop Oozie Coordinator with HDInsight][hdinsight-oozie-coordinator-time].<!-- deleted by customization To learn Azure Data Factory, see [Use Pig and Hive with Data Factory][azure-data-factory-pig-hive].-->
+Learn how to use Apache Oozie to define a workflow and run the workflow on HDInsight. To learn about the Oozie coordinator, see [Use time-based Hadoop Oozie Coordinator with HDInsight][hdinsight-oozie-coordinator-time]. <!-- deleted by customization To learn Azure Data Factory, see [Use Pig and Hive with Data Factory][azure-data-factory-pig-hive].-->
 
 ##What is Oozie?
 
@@ -307,7 +307,7 @@ For more information, see [HDInsight: Hive Internal and External Tables Intro][c
 		{
 			# SQL query string for creating log4jLogsCount table
 			$cmdCreateLog4jCountTable = " CREATE TABLE [dbo].[$sqlDatabaseTableName](
-				    [Level] [nvarchar](/documentation/articles/10) NOT NULL,
+				    [Level] [nvarchar](10) NOT NULL,
 				    [Total] float,
 				CONSTRAINT [PK_$sqlDatabaseTableName] PRIMARY KEY CLUSTERED
 				(

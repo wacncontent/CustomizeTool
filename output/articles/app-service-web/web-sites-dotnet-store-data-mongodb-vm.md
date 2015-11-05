@@ -53,11 +53,11 @@ Knowledge of the following is useful for this tutorial, though not required:
 
 This tutorial assumes you have created a virtual machine in Azure. After creating the virtual machine you need to install MongoDB on the virtual machine:
 
-* To create a Windows virtual machine and install MongoDB, see [Install MongoDB on a virtual machine running Windows Server in Azure][InstallMongoOnWindowsVM].
 <!-- deleted by customization
+* To create a Windows virtual machine and install MongoDB, see [Install MongoDB on a virtual machine running Windows Server in Azure][InstallMongoOnWindowsVM].
 * Alternatively, to create a Linux virtual machine and install MongoDB, see [Install MongoDB on a virtual machine running CentOS Linux in Azure][InstallMongoOnCentOSLinuxVM].
--->
 
+-->
 After you have created the virtual machine in Azure and installed MongoDB, be sure to remember the DNS name of the virtual machine ("testlinuxvm.chinacloudapp.cn", for example) and the external port for MongoDB that you specified in the endpoint.  You will need this information later in the tutorial.
 
 <a id="createapp"></a>
@@ -527,8 +527,8 @@ For more information on developing C# applications against MongoDB, see [CSharp 
 [MongoDB]: http://www.mongodb.org
 <!-- deleted by customization
 [InstallMongoOnCentOSLinuxVM]: /manage/linux/common-tasks/mongodb-on-a-linux-vm/
--->
 [InstallMongoOnWindowsVM]: /documentation/articles/virtual-machines-install-mongodb-windows-server-2008r2
+-->
 [VSEWeb]: http://www.visualstudio.com/zh-cn/downloads/download-visual-studio-vs#d-2013-express
 [VSUlt]: http://www.visualstudio.com/zh-cn/downloads/download-visual-studio-vs
 

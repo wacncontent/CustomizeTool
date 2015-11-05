@@ -25,7 +25,7 @@ Learn how to provision an HBase cluster in HDInsight, create HBase tables, and q
 
 * [HBase tutorial: Get started using Apache HBase with Hadoop in HDInsight](/documentation/articles/hdinsight-hbase-tutorial-get-started-v1)
 
-> [AZURE.NOTE] <!-- deleted by customizationThe information in this document is specific to Windows-based HDInsight clusters. For information on using Linux-based clusters, see [hdinsight-hbase-tutorial-get-started-linux).-->
+> [AZURE.NOTE] <!-- deleted by customization The information in this document is specific to Windows-based HDInsight clusters. For information on using Linux-based clusters, see [hdinsight-hbase-tutorial-get-started-linux.md). -->
 >
 > HBase (version 0.98.0) on Windows-based HDInsight is only available for use with HDInsight 3.1 clusters (based on Apache Hadoop and YARN 2.4.0). For version information, see [What's new in the Hadoop cluster versions provided by HDInsight?][hdinsight-versions]
 
@@ -187,7 +187,7 @@ HBase in HDInsight ships with a Web UI for monitoring clusters. Using the Web UI
 
 To open the Web UI, you must RDP into the cluster, and then click the HMaster Info Web UI shortcut on your desktop, or use the following URL in a web browser:
 
-	http://zookeeper[0-2]: /documentation/articles/master-status
+	http://zookeeper[0-2]: master-status
 In a high availability cluster, you'll find a link to the current active HBase master node that is hosting the Web UI.
 
 
@@ -356,7 +356,9 @@ Learn how to do real-time [sentiment analysis](http://en.wikipedia.org/wiki/Sent
 [hdinsight-hbase-overview]: /documentation/articles/hdinsight-hbase-overview
 [hdinsight-hbase-provision-vnet]: /documentation/articles/hdinsight-hbase-provision-vnet
 [hdinsight-versions]: /documentation/articles/hdinsight-component-versioning
+<!-- deleted by customization
 [hbase-twitter-sentiment]: /documentation/articles/hdinsight-hbase-analyze-twitter-sentiment
+-->
 [azure-purchase-options]: /pricing/overview/
 [azure-member-offers]: http://azure.microsoft.com/pricing/member-offers/
 [azure-trial]: /pricing/1rmb-trial/

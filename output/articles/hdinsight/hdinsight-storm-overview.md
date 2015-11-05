@@ -166,7 +166,7 @@ For more information about Trident, see the [Trident tutorial](https://storm.inc
 
 For examples of Java and Trident topologies, see the [list of example Storm topologies](/documentation/articles/hdinsight-storm-example-topology) or the storm-starter examples on your HDInsight cluster.
 
-<!-- deleted by customization The storm-starter examples are located in the __ /usr/hdp/current/storm-client/contrib/storm-starter__ directory on Linux-based clusters, and -->the **%storm_home%\contrib\storm-starter** directory on Windows-based clusters.
+<!-- deleted by customization The storm-starter examples are located in the __ /usr/hdp/current/storm-client/contrib/storm-starter__ directory on Linux-based clusters, and --> the **%storm_home%\contrib\storm-starter** directory on Windows-based clusters.
 
 ##What are some common development patterns?
 

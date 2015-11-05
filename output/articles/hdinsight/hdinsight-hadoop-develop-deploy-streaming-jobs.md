@@ -41,7 +41,7 @@ Before you begin this tutorial, you must have done the following:
 
 - Install the HDInsight Emulator. For instructions, see [Get started using HDInsight Emulator][hdinsight-get-started-emulator].
 - Install Azure PowerShell on the emulator computer. For instructions, see [Install and configure Azure PowerShell][powershell-install].
-- Obtain an Azure subscription. For instructions, see [Purchase Options][azure-purchase-options],<!-- deleted by customization [Member Offers][azure-member-offers], or --> [Trial][azure-trial].
+- Obtain an Azure subscription. For instructions, see [Purchase Options][azure-purchase-options], <!-- deleted by customization [Member Offers][azure-member-offers], or --> [Trial][azure-trial].
 
 
 <!-- keep by customization: begin -->
