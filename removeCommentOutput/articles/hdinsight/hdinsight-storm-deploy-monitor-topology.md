@@ -19,6 +19,7 @@ The Storm Dashboard allows you to easily deploy and run Apache Storm topologies 
 
 The Storm Dashboard and the Storm features in the HDInsight Tools rely on the Storm REST API, which can be used to create your own monitoring and management solutions.
 
+> [AZURE.IMPORTANT] The steps in this document require a Windows-based Storm on HDInsight cluster. For information on using a Linux-based cluster, see [Deploy and manage Apache Storm topologies on Linux-based HDInsight](/documentation/articles/hdinsight-storm-deploy-monitor-topology)
 
 ##Prerequisites
 

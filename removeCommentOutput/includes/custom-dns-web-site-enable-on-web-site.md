@@ -4,19 +4,22 @@ After the records for your domain name have propagated, you must associate them 
 >
 > You can use a service such as <a href="http://www.digwebinterface.com/">http://www.digwebinterface.com/</a> to verify that the CNAME is available.
 
+1. In your browser, open the [Azure Management Portal](https://manage.windowsazure.cn).
 
-1. In your browser, open the [Azure Management Portal](https://manage.windowsazure.com).
-
-2. In the **Websites** tab, click the name of your site, select **Dashboard**, and then select **Manage Domains** from the bottom of the page.
+2. In the **Web Apps** tab, click the name of your web app, select **Settings**, and then select **Custom domains and SSL**
 
 	![](./media/custom-dns-web-site/dncmntask-cname-6.png)
 
-6. Use the **DOMAIN NAMES** text boxes to enter the domain names to associate with this website. 
+3. In the **Custom domains and SSL** blade, click **Bring external domains**.
 
 	![](./media/custom-dns-web-site/dncmntask-cname-7.png)
 
-6. Click the check mark in the lower right corner to save the domain name configuration.
+4. Use the **DOMAIN NAMES** text boxes to enter the domain names to associate with this web app.
 
-	Once configuration has completed, the custom domain name will be listed in the **domain names** section of the **Configure** page of your web app.
+	![](./media/custom-dns-web-site/dncmntask-cname-8.png)
+
+5. Click **Save** to save the domain name configuration.
+
+	Once configuration has completed, the custom domain name will be listed in the **domain names** section of your web app.
 
 At this point, you should be able to enter the custom domain name in your browser and see that it successfully takes you to your web app.

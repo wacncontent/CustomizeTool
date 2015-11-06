@@ -503,6 +503,12 @@ Add the appSettings section to the app.config file, and set the values for your 
 
 ##Next Steps
 
+###Media Services learning paths
+
+You can view AMS learning paths here:
+
+- [AMS Live Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/)
+- [AMS on Demand Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/)
 
 ### Looking for something else?
 

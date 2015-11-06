@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties 
 	pageTitle="How to Configure an Azure Websites Environment" 
 	description="Configuration, management and monitoring of Azure Websites Environments" 
@@ -61,7 +59,7 @@ Within any single worker pool the fault tolerance requirements are that for a gi
 - if X is between 21 to 40, the amount of usable compute resources you can use for workloads is X-2
 - if X is between 41 to 53, the amount of usable compute resources you can use for workloads is X-3
 
-In addition to being able to manage the quantity of compute resources that you can assign to a given pool you also have control over the size.  With Azure Websites Environments you can choose from 4 different sizes labeled P1 through P4.  For details around those sizes and their pricing please see here [Azure Websites Pricing](/documentation/articles/app-service-value-prop-what-is) The P1 to P3 compute resource sizes are the same as what is available normally.  The P4 compute resource gives 8 cores with 14 GB of RAM and is only available in an Azure Websites Environment.
+In addition to being able to manage the quantity of compute resources that you can assign to a given pool you also have control over the size.  With Azure Websites Environments you can choose from 4 different sizes labeled P1 through P4.  For details around those sizes and their pricing please see here [Azure Websites Pricing](/documentation/services/web-sites) The P1 to P3 compute resource sizes are the same as what is available normally.  The P4 compute resource gives 8 cores with 14 GB of RAM and is only available in an Azure Websites Environment.
 
 As noted earlier, the Azure Websites Environment feature is currently in Preview and as such it still has room to grow.  In addition to additional monitoring capabilities, more management features will be rolled out as Azure Websites Environments moves to GA.  For now there are only a few things that can be managed in this interface:
 
@@ -108,7 +106,7 @@ If you want to delete an Azure Websites Environment then simply use the Delete a
 
 To get started with Azure Websites Environments, see [How To Create An Azure Websites Environment](/documentation/articles/app-service-web-how-to-create-an-app-service-environment)
 
-For more information about the Azure Websites platform, see [Azure Websites](/documentation/articles/app-service-value-prop-what-is).
+For more information about the Azure Websites platform, see [Azure Websites](/documentation/services/web-sites).
 
 [AZURE.INCLUDE [app-service-web-whats-changed](../includes/app-service-web-whats-changed.md)]
 

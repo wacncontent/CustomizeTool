@@ -9,12 +9,8 @@
 
 <tags
 	ms.service="active-directory"
-	ms.workload="identity"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="09/09/2015"
-	ms.author="rkarlin"/>
+	wacn.date=""/>
 
 
 
@@ -23,16 +19,16 @@
 
 Claims aware apps perform a redirection to the STS, which in turn requests credentials from the user in exchange for a token before redirecting the user to the application. To enable Application Proxy to be able to work with these redirects, the following steps need to be taken to enable Application Proxy to work with claims aware applications.
 
-> [AZURE.IMPORTANT] Application Proxy is a feature that is available only if you upgraded to the Premium or Basic edition of Azure Active Directory. For more information, see [Azure Active Directory editions](active-directory-editions.md).
+> [AZURE.IMPORTANT] Application Proxy is a feature that is available only if you upgraded to the Premium or Basic edition of Azure Active Directory. For more information, see [Azure Active Directory editions](/documentation/articles/active-directory-editions).
 
 
 ## Prerequisite
 
 Before performing this procedure, make sure that the STS the claims aware app redirects to is available outside your on-premises network.
 
-### Azure portal configuration
+### Azure Management Portal configuration
 
-1. Publish your application according to the instructions described in [Publish applications with Application Proxy](active-directory-application-proxy-publish.md).
+1. Publish your application according to the instructions described in [Publish applications with Application Proxy](/documentation/articles/active-directory-application-proxy-publish).
 2. In the list of applications, select the claims aware app and click **Configure**.
 3. If you chose **Passthrough** as your **Preauthentication Method**, make sure to select **HTTPS** as your **External URL** scheme.
 4. If you chose Azure Active Directory as your **Preauthentication Method**, make sure to select **None** as your **Internal Authentication Method**.

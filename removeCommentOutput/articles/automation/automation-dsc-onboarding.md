@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties 
    pageTitle="Onboarding physical and virtual machines for management by Azure Automation DSC | Windows Azure" 
    description="How to setup machines for management with Azure Automation DSC" 

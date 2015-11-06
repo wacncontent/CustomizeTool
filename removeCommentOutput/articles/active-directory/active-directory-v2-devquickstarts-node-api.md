@@ -1,5 +1,5 @@
 <properties
-	pageTitle="App Model v2.0 Node.js Web API | Microsoft Azure"
+	pageTitle="App Model v2.0 Node.js Web API | Windows Azure"
 	description="How to build a NodeJS Web API accepts tokens from both personal Microsoft Account and work or school accounts."
 	services="active-directory"
 	documentationCenter="nodejs"
@@ -9,21 +9,17 @@
 
 <tags
 	ms.service="active-directory"
-	ms.workload="identity"
-  	ms.tgt_pltfrm="na"
-	ms.devlang="javascript"
-	ms.topic="article"
 	ms.date="09/11/2015"
-	ms.author="brandwe"/>
+	wacn.date=""/>
 
 # App Model v2.0 Preview: Secure a Web API using node.js
 
 > [AZURE.NOTE]
-This information applies to the v2.0 app model public preview.  For instructions on how to integrate with the generally available Azure AD service, please refer to the [Azure Active Directory Developer Guide](active-directory-developers-guide.md).
+This information applies to the v2.0 app model public preview.  For instructions on how to integrate with the generally available Azure AD service, please refer to the [Azure Active Directory Developer Guide](/documentation/articles/active-directory-developers-guide).
 
-With the v2.0 app model, you can protecet a Web API using [OAuth 2.0](active-directory-v2-protocols.md#oauth2-authorization-code-flow) access tokens, enabling users with both personal Microsoft account and work or school accounts to securely access your Web API.
+With the v2.0 app model, you can protecet a Web API using [OAuth 2.0](/documentation/articles/active-directory-v2-protocols#oauth2-authorization-code-flow) access tokens, enabling users with both personal Microsoft account and work or school accounts to securely access your Web API.
 
-**Passport** is authentication middleware for Node.js. Extremely flexible and modular, Passport can be unobtrusively dropped in to any Express-based or Resitify web application. A comprehensive set of strategies support authentication using a username and password, Facebook, Twitter, and more. We have developed a strategy for Microsoft Azure Active Directory. We will install this module and then add the Microsoft Azure Active Directory `passport-azure-ad` plug-in.
+**Passport** is authentication middleware for Node.js. Extremely flexible and modular, Passport can be unobtrusively dropped in to any Express-based or Resitify web application. A comprehensive set of strategies support authentication using a username and password, Facebook, Twitter, and more. We have developed a strategy for Windows Azure Active Directory. We will install this module and then add the Windows Azure Active Directory `passport-azure-ad` plug-in.
 
 In order to do this, you’ll need to:
 
@@ -39,7 +35,7 @@ The completed application is provided at the end of this tutorial as well.
 
 
 ## 1. Register an App
-Create a new app at [apps.dev.microsoft.com](https://apps.dev.microsoft.com), or follow these [detailed steps](active-directory-v2-app-registration.md).  Make sure to:
+Create a new app at [apps.dev.microsoft.com](https://apps.dev.microsoft.com), or follow these [detailed steps](/documentation/articles/active-directory-v2-app-registration).  Make sure to:
 
 - Copy down the **Application Id** assigned to your app, you'll need it soon.
 - Add the **Mobile** platform for your app.
@@ -257,7 +253,7 @@ Create a `config.js` file in our favorite editor and add the following informati
 // Don't commit this file to your public repos. This config is for first-run
 exports.creds = {
 mongoose_auth_local: 'mongodb://localhost/tasklist', // Your mongo auth uri goes here
-issuer: 'https://sts.windows.net/**<your application id>**/',
+issuer: 'https://sts.chinacloudapi.cn/**<your application id>**/',
 audience: '<your redirect URI>',
 identityMetadata: 'https://login.microsoftonline.com/common/.well-known/openid-configuration' // For using Microsoft you should never need to change this.
 };
@@ -304,7 +300,7 @@ var users = [];
 var owner = null;
 // Our logger
 var log = bunyan.createLogger({
-name: 'Microsoft Azure Active Directory Sample'
+name: 'Windows Azure Active Directory Sample'
 });
 ```
 
@@ -557,7 +553,7 @@ Restify (and Express) have a lot of deep customization you can do for a REST API
 * Our Server
 */
 var server = restify.createServer({
-name: "Microsoft Azure Active Directroy TODO Server",
+name: "Windows Azure Active Directroy TODO Server",
 version: "2.0.1"
 });
 // Ensure we don't drop data on uploads
@@ -625,7 +621,7 @@ res.send(200, routes);
 next();
 });
 server.listen(serverPort, function() {
-var consoleMessage = '\n Microsoft Azure Active Directory Tutorial';
+var consoleMessage = '\n Windows Azure Active Directory Tutorial';
 consoleMessage += '\n +++++++++++++++++++++++++++++++++++++++++++++++++++++';
 consoleMessage += '\n %s server is listening at %s';
 consoleMessage += '\n Open your browser to %s/tasks\n';
@@ -854,8 +850,8 @@ For reference, the completed sample (without your configuration values) [is prov
 
 You can now move onto more advanced topics.  You may want to try:
 
-[Secure a Web App with the v2.0 app model in Node.js >>](active-directory-v2-devquickstarts-node-web.md)
+[Secure a Web App with the v2.0 app model in Node.js >>](/documentation/articles/active-directory-v2-devquickstarts-node-web)
 
 For additional resources, check out:
-- [The App Model v2.0 Preview >>](active-directory-appmodel-v2-overview.md)
+- [The App Model v2.0 Preview >>](/documentation/articles/active-directory-appmodel-v2-overview)
 - [StackOverflow "azure-active-directory" tag >>](http://stackoverflow.com/questions/tagged/azure-active-directory)

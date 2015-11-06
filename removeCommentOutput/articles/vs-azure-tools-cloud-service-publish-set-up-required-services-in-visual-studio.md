@@ -46,7 +46,7 @@ To publish a cloud service to Azure, you must first create a cloud service, whic
 
 ### To create a cloud service by using the Azure Management Portal
 
-1. Sign in to the [Azure Management Portal](http://go.microsoft.com/fwlink/?LinkId=253103) on the Microsoft website.
+1. Sign in to the [Azure Management Portal](https://manage.windowsazure.cn/) on the Microsoft website.
 
 1. (optional) To display a list of cloud services that you've already created, choose the Cloud Services link on the left side of the page.
 
@@ -62,7 +62,7 @@ To publish a cloud service to Azure, you must first create a cloud service, whic
 
 ## Create a storage account
 
-A storage account provides access to the Blob, Queue, and Table services. You can create a storage account by using Visual Studio or the [Azure Management Portal](http://go.microsoft.com/fwlink/?LinkId=253103).
+A storage account provides access to the Blob, Queue, and Table services. You can create a storage account by using Visual Studio or the [Azure Management Portal](https://manage.windowsazure.cn/).
 
 ### To create a storage account by using Visual Studio
 
@@ -80,7 +80,7 @@ A storage account provides access to the Blob, Queue, and Table services. You ca
 
 ### To create a storage account by using the Azure Management Portal
 
-1. Sign in to the [Azure Management Portal](http://go.microsoft.com/fwlink/?LinkId=253103) on the Microsoft website.
+1. Sign in to the [Azure Management Portal](https://manage.windowsazure.cn/) on the Microsoft website.
 
 1. (Optional) To view your storage accounts, choose the **Storage** link in the panel on the left side of the page.
 
@@ -94,7 +94,7 @@ A storage account provides access to the Blob, Queue, and Table services. You ca
 
 1. In the list of regions, choose a region where most of your users are located.
 
-1. Specify whether you want to enable geo-replication. If you enable geo-replication, your data will be saved in multiple physical locations to reduce the chance of loss. This feature makes storage more expensive, but you can reduce the cost by enabling geo-location when you create the storage account instead of adding the feature later. For more information, see [Geo-replication](http://go.microsoft.com/fwlink/?LinkId=253108).
+1. Specify whether you want to enable geo-replication. If you enable geo-replication, your data will be saved in multiple physical locations to reduce the chance of loss. This feature makes storage more expensive, but you can reduce the cost by enabling geo-location when you create the storage account instead of adding the feature later. For more information, see [Geo-replication](http://blogs.msdn.com/b/windowsazurestorage/archive/2011/09/15/introducing-geo-replication-for-windows-azure-storage.aspx).
 
 1. At the bottom of the window, choose the **Create Storage Account** link.
 
@@ -120,7 +120,7 @@ You must configure any role that accesses storage services to use the Azure stor
 
 1. In the **Subscription** list, choose your subscription. If the list of subscriptions doesn't include the one that you want, choose the **Download Publish Settings** link.
 
-1. In the **Account name** list, choose your storage account name. Azure Tools obtains storage account credentials automatically by using the .publishsettings file. To specify your storage account credentials manually, choose the **Manually entered credentials** option, and then continue with this procedure. You can get your storage account name and primary key from the [Azure Management Portal](http://go.microsoft.com/fwlink/p/?LinkID=213885). If you don’t want to specify your storage account settings manually, choose the **OK** button to close the dialog box.
+1. In the **Account name** list, choose your storage account name. Azure Tools obtains storage account credentials automatically by using the .publishsettings file. To specify your storage account credentials manually, choose the **Manually entered credentials** option, and then continue with this procedure. You can get your storage account name and primary key from the [Azure Management Portal](https://manage.windowsazure.cn/). If you don’t want to specify your storage account settings manually, choose the **OK** button to close the dialog box.
 
 1. Choose the **Enter storage account** credentials link.
 
@@ -128,7 +128,7 @@ You must configure any role that accesses storage services to use the Azure stor
 
     >[AZURE.NOTE] Log into the Management Portal, and then choose the **Storage** button. The portal shows a list of storage accounts. If you choose an account, a page for it opens. You can copy the name of the storage account from this page. If you are using a previous version of the Management Portal, the name of your storage account appears in the **Storage Accounts** view of the Management Portal. To copy this name, highlight it in the **Properties** window of this view, and then choose the Ctrl-C keys. To paste the name into Visual Studio, choose the **Account name** text box, and then choose the Ctrl+V keys.
 
-1. In the **Account key** box, enter your primary key, or copy and paste it from the [Azure Management Portal](http://go.microsoft.com/fwlink/?LinkID=213885).
+1. In the **Account key** box, enter your primary key, or copy and paste it from the [Azure Management Portal](https://manage.windowsazure.cn/).
     To copy this key from the Management Portal:
 
     1. At the bottom of the page for the appropriate storage account, choose the **Manage Keys** button.

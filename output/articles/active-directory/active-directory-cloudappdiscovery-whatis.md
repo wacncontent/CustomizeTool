@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Finding unsanctioned cloud applications with Cloud App Discovery | Microsoft Azure"
+	pageTitle="Finding unsanctioned cloud applications with Cloud App Discovery | Windows Azure"
 	description="This topic describes what is the Cloud App Discvery is and why you would use it."
 	services="active-directory"
 	documentationCenter=""
@@ -9,12 +9,8 @@
 
 <tags
 	ms.service="active-directory"
-	ms.workload="identity"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="10/16/2015"
-	ms.author="markusvi"/>
+	wacn.date=""/>
 
 # Finding unsanctioned cloud applications with Cloud App Discovery
 
@@ -40,9 +36,9 @@ Cloud App Discovery is a feature of Azure Active Directory (AD) Premium that ena
 To get started with Cloud App Discovery, see [Getting Started With Cloud App Discovery](http://social.technet.microsoft.com/wiki/contents/articles/30962.getting-started-with-cloud-app-discovery.aspx)
 
 ## Related articles
-- [Cloud App Discovery Security and Privacy Considerations](active-directory-cloudappdiscovery-security-and-privacy-considerations.md)  
+- [Cloud App Discovery Security and Privacy Considerations](/documentation/articles/active-directory-cloudappdiscovery-security-and-privacy-considerations)  
 - [Cloud App Discovery Group Policy Deployment Guide](http://social.technet.microsoft.com/wiki/contents/articles/30965.cloud-app-discovery-group-policy-deployment-guide.aspx)
 - [Cloud App Discovery System Center Deployment Guide](http://social.technet.microsoft.com/wiki/contents/articles/30968.cloud-app-discovery-system-center-deployment-guide.aspx)
-- [Cloud App Discovery Registry Settings for Proxy Servers with Custom Ports](active-directory-cloudappdiscovery-registry-settings-for-proxy-services.md)
+- [Cloud App Discovery Registry Settings for Proxy Servers with Custom Ports](/documentation/articles/active-directory-cloudappdiscovery-registry-settings-for-proxy-services)
 - [Cloud App Discovery Agent Changelog ](http://social.technet.microsoft.com/wiki/contents/articles/24616.cloud-app-discovery-agent-changelog.aspx)
 - [Cloud App Discovery Frequently Asked Questions](http://social.technet.microsoft.com/wiki/contents/articles/24037.cloud-app-discovery-frequently-asked-questions.aspx)

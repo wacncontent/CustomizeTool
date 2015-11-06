@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Azure AD Connect design concepts | Microsoft Azure"
+   pageTitle="Azure AD Connect design concepts | Windows Azure"
    description="This topic details certain implementation design areas"
    services="active-directory"
    documentationCenter=""
@@ -8,13 +8,9 @@
    editor=""/>
 
 <tags
-   ms.service="active-directory"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="Identity"
-   ms.date="10/13/2015"
-   ms.author="andkjell"/>
+	ms.service="active-directory"
+	ms.date="10/13/2015"
+	wacn.date=""/>
 
 # Design concepts for Azure AD Connect
 The purpose of this topic is to describe areas which must be thought through during the implementation design of Azure AD Connect. This is a deep dive on certain areas and these concept are briefly described in other topics as well.
@@ -67,4 +63,4 @@ For this reason, the following restrictions apply to Azure AD Connect:
 - If the value for sourceAnchor is changed after the object has been exported to Azure AD, then Azure AD Connect sync will throw an error and will not allow any more changes on that object before the issue has been fixed and the sourceAnchor is changed back in the source directory.
 
 ## Next steps
-Learn more about [Integrating your on-premises identities with Azure Active Directory](active-directory-aadconnect.md).
+Learn more about [Integrating your on-premises identities with Azure Active Directory](/documentation/articles/active-directory-aadconnect).

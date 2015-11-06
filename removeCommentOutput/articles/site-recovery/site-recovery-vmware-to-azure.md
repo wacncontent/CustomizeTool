@@ -157,7 +157,7 @@ Note that:
 
 **Component** | **Requirements** | **Details**
 --- | --- | --- 
-**Azure account** | You'll need a [Windows Azure](http://azure.microsoft.com/) account. You can start with a [trial](/documentation/articles/free-trial).
+**Azure account** | You'll need a [Windows Azure](http://azure.microsoft.com/) account. You can start with a [trial](/pricing/1rmb-trial/).
 **Azure storage** | <p>You'll need an Azure storage account to store replicated data</p><p>Either the account should be a [Standard Geo-redundant Storage Account](/documentation/articles/storage-redundancy#geo-redundant-storage) or [Premium Storage Account](/documentation/articles/storage-premium-storage-preview-portal).</p><p>It must in the same region as the Azure Site Recovery service, and be associated with the same subscription.</p><p>To learn more read [Introduction to Windows Azure Storage](/documentation/articles/storage-introduction)</p>
 **Azure virtual network** | You'll need an Azure virtual network on which the configuration server and master target server will be deployed. It should be in the same subscription and region as the Azure Site Recovery vault. If you wish to replicate data over an ExpressRoute or VPN connection the Azure virtual network must be connected to your on-premises network over an ExpressRoute connection or a Site-to-Site VPN.
 **Azure resources** | Make sure you have enough Azure resources to deploy all components. Read more in [Azure Subscription Limits](/documentation/articles/azure-subscription-service-limits).
@@ -378,7 +378,7 @@ Note that the first four IP addresses in any subnet are reserved for internal Az
 
 8. If you're running Linux:
 	1. Ensure that you have installed the latest Linux Integration Services (LIS) installed before you install the Master target server software. You can find the latest version of LIS along with instructions on how to install [here](https://www.microsoft.com/download/details.aspx?id=46842). Restart the machine after the LIS install.
-	2. In **Prepare Target(Azure) Resources** click **Download and Install additional software (only for Linux Master Target Server)** to download the Linux master target server package. Copy the downloaded tar file to the virtual machine using an sftp client. Alternatively you can log in to the deployed linux master target server and use *wget http://go.microsoft.com/fwlink/?LinkID=529757&clcid=0x409* to download the the file.
+	2. In **Prepare Target(Azure) Resources** click **Download and Install additional software (only for Linux Master Target Server)** to download the Linux master target server package. Copy the downloaded tar file to the virtual machine using an sftp client. Alternatively you can log in to the deployed linux master target server and use *wget http://download.microsoft.com/download/7/E/D/7ED50614-1FE1-41F8-B4D2-25D73F623E9B/Microsoft-ASR_UA_8.4.0.0_RHEL6-64_GA_28Jul2015_release.tar.gz&clcid=0x409* to download the the file.
 	2. Log into the server using a Secure Shell client. Note that if you're connected to the Azure network over VPN use the internal IP address. Otherwise use the external IP address and the SSH public endpoint.
 	3. Extract the files from the gzipped installer by running: **tar –xvzf Microsoft-ASR_UA_8.4.0.0_RHEL6-64***
 	![Linux master target server](./media/site-recovery-vmware-to-azure/ASRVMWare_TSLinuxTar.png)
@@ -770,4 +770,4 @@ The information in Section A is regarding Third Party Code components from the p
 
 The information in Section B is regarding Third Party Code components that are being made available to you by Microsoft under the original licensing terms.
 
-The complete file may be found on the [Microsoft Download Center](http://go.microsoft.com/fwlink/?LinkId=529428). Microsoft reserves all rights not expressly granted herein, whether by implication, estoppel or otherwise.
+The complete file may be found on the [Microsoft Download Center](http://download.microsoft.com/download/2/5/E/25EB85E9-CDD5-46B5-97B7-A86733AFC525/Third-Party_Notices.txt). Microsoft reserves all rights not expressly granted herein, whether by implication, estoppel or otherwise.

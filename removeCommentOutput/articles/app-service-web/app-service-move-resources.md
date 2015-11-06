@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties
 	pageTitle="Move Web App Resources to another Resource Group"
 	description="Describes the scenarios where you can move Web Apps and Azure Websites from one Resource Group to another."

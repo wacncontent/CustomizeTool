@@ -8,13 +8,9 @@
    editor=""/>
 
 <tags
-   ms.service="active-directory"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="identity"
-   ms.date="09/21/2015"
-   ms.author="curtand;kenhoff"/>
+	ms.service="active-directory"
+	ms.date="09/21/2015"
+	wacn.date=""/>
 
 # Getting started with Azure AD Reporting
 
@@ -48,7 +44,7 @@ Azure Active Directory includes security, activity, and audit reports for your d
 
 - Directory audit report
 
-> [AZURE.TIP] For more documentation on Azure AD Reporting, check out [View your access and usage reports](active-directory-view-access-usage-reports.md).
+> [AZURE.TIP] For more documentation on Azure AD Reporting, check out [View your access and usage reports](/documentation/articles/active-directory-view-access-usage-reports).
 
 
 
@@ -71,7 +67,7 @@ You can find the most recent processed sign in by examining the help text at the
 
 ![Help text at the top of each report](./media/active-directory-reporting-getting-started/reportingWatermark.PNG)
 
-> [AZURE.TIP] For more documentation on Azure AD Reporting, check out [View your access and usage reports](active-directory-view-access-usage-reports.md).
+> [AZURE.TIP] For more documentation on Azure AD Reporting, check out [View your access and usage reports](/documentation/articles/active-directory-view-access-usage-reports).
 
 
 
@@ -80,7 +76,7 @@ You can find the most recent processed sign in by examining the help text at the
 
 ### Sign into the Azure Management Portal
 
-First, you'll need to sign into the [Azure Management Portal](https://manage.windowsazure.com)  as a global or compliance administrator. You must also be an Azure subscription service administrator or co-administrator, or be using the "Access to Azure AD" Azure subscription.
+First, you'll need to sign into the [Azure Management Portal](https://manage.windowsazure.cn)  as a global or compliance administrator. You must also be an Azure subscription service administrator or co-administrator, or be using the "Access to Azure AD" Azure subscription.
 
 ### Navigate to Reports
 
@@ -92,7 +88,7 @@ If this is your first time viewing the reports, you'll need to agree to a dialog
 
 ### Explore each report
 
-Navigate into each report to see the data being collected and the sign ins processed. You can find a [list of all the reports here](active-directory-reporting-what-it-is.md).
+Navigate into each report to see the data being collected and the sign ins processed. You can find a [list of all the reports here](/documentation/articles/active-directory-reporting-what-it-is).
 
 ![All reports](./media/active-directory-reporting-getting-started/reportsMain.png)
 
@@ -104,7 +100,7 @@ To download any report as a CSV, navigate to the report and click "Download" at 
 
 ![Download button](./media/active-directory-reporting-getting-started/downloadButton.png)
 
-> [AZURE.TIP] For more documentation on Azure AD Reporting, check out [View your access and usage reports](active-directory-view-access-usage-reports.md).
+> [AZURE.TIP] For more documentation on Azure AD Reporting, check out [View your access and usage reports](/documentation/articles/active-directory-view-access-usage-reports).
 
 
 
@@ -124,7 +120,7 @@ Enable or disable the "Email Notifications of Anomalous sign ins" section.
 
 ### Integrate with the Azure AD Reporting API
 
-See [Getting started with the Reporting API](active-directory-reporting-api-getting-started.md).
+See [Getting started with the Reporting API](/documentation/articles/active-directory-reporting-api-getting-started).
 
 ### Engage Multi-Factor Authentication on users
 
@@ -134,7 +130,7 @@ Click the "Enable MFA" button at the bottom of the screen.
 
 ![The Multi-Factor Authentication button at the bottom of the screen](./media/active-directory-reporting-getting-started/mfaButton.png)
 
-> [AZURE.TIP] For more documentation on Azure AD Reporting, check out [View your access and usage reports](active-directory-view-access-usage-reports.md).
+> [AZURE.TIP] For more documentation on Azure AD Reporting, check out [View your access and usage reports](/documentation/articles/active-directory-view-access-usage-reports).
 
 
 
@@ -144,14 +140,14 @@ Click the "Enable MFA" button at the bottom of the screen.
 
 ### Audit events
 
-Learn about what events are audited in the directory in [Azure Active Directory Reporting Audit Events](active-directory-reporting-audit-events.md).
+Learn about what events are audited in the directory in [Azure Active Directory Reporting Audit Events](/documentation/articles/active-directory-reporting-audit-events).
 
 ### API Integration
 
-See [Getting started with the Reporting API](active-directory-reporting-api-getting-started.md) and the [API reference documentation](https://msdn.microsoft.com/library/azure/mt126081.aspx).
+See [Getting started with the Reporting API](/documentation/articles/active-directory-reporting-api-getting-started) and the [API reference documentation](https://msdn.microsoft.com/zh-cn/library/azure/mt126081.aspx).
 
 ### Get in touch
 
 Email [aadreportinghelp@microsoft.com](mailto:aadreportinghelp@microsoft.com) for feedback, help, or any questions you might have!
 
-> [AZURE.TIP] For more documentation on Azure AD Reporting, check out [View your access and usage reports](active-directory-view-access-usage-reports.md).
+> [AZURE.TIP] For more documentation on Azure AD Reporting, check out [View your access and usage reports](/documentation/articles/active-directory-view-access-usage-reports).

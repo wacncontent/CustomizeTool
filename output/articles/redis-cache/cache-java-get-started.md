@@ -1,7 +1,5 @@
-<!-- not suitable for Mooncake -->
-
 <properties
-   pageTitle="How to use Azure Redis Cache with Java"
+   pageTitle="How to use Azure Redis Cache with Java | Windows Azure"
 	description="Get started with Azure Redis Cache using Java"
 	services="redis-cache"
 	documentationCenter=""
@@ -11,7 +9,7 @@
 
 <tags
 	ms.service="cache"
-	ms.date="08/25/2015"
+	ms.date="10/05/2015"
 	wacn.date=""/>
 
 # How to use Azure Redis Cache with Java
@@ -30,7 +28,7 @@ This tutorial uses Jedis, but you can use any Java client listed at [http://redi
 
 ## Create a Redis cache on Azure
 
-In the [Azure Management Portal Preview](http://go.microsoft.com/fwlink/?LinkId=398536), click **New**, **DATA SERVICE**, and select **Redis Cache**.
+In the [Azure preview portal](https://manage.windowsazure.cn/), click **New**, **DATA SERVICE**, and select **Redis Cache**.
 
   ![][1]
 
@@ -39,7 +37,7 @@ Enter a DNS hostname. It will have the form `<name>.redis.cache.chinacloudapi.cn
   ![][2]
 
 
-Once you create the cache, click on it in the portal to view the cache settings. Click the link under **Keys** and copy the primary key. You need this to authenticate requests.
+Once you create the cache, click on it in the preview portal to view the cache settings. Click the link under **Keys** and copy the primary key. You need this to authenticate requests.
 
   ![][4]
 
@@ -58,7 +56,7 @@ Click the link under **Ports**, and click **No** for "Allow access only via SSL"
 	import redis.clients.jedis.Jedis;
 	import redis.clients.jedis.JedisShardInfo;
 
-	/* Make sure your turn on non SSL port in Azure Redis using the Configuration section in the Azure Management Portal */
+	/* Make sure you turn on non-SSL port in Azure Redis using the Configuration section in the preview portal */
 	public class App
 	{
 	  public static void main( String[] args )

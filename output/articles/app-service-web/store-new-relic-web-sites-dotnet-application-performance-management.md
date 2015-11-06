@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties 
 	pageTitle=".NET web app in Azure Websites with New Relic application performance management" 
 	description="Learn how to use New Relic's performance monitoring for ASP.NET applications running on Azure Websites." 

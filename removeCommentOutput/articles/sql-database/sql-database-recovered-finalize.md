@@ -34,7 +34,7 @@ Verify the firewall rules at server-level and database-level, and make sure conn
 
 Verify if all the logins used by your application exist on the server which is hosting your recovered database. Re-create the missing logins and grant them appropriate permissions on the recovered database. For more information, see [Managing Databases and Logins in Azure SQL Database](https://msdn.microsoft.com/zh-cn/library/azure/ee336235.aspx).
 
-Verify if each database users in the recovered database is associated with a valid server login. Use ALTER USER statement to map user to valid server login. For more information, see [ALTER USER](http://go.microsoft.com/fwlink/?LinkId=397486). 
+Verify if each database users in the recovered database is associated with a valid server login. Use ALTER USER statement to map user to valid server login. For more information, see [ALTER USER](https://technet.microsoft.com/zh-cn/library/ms176060(v=sql.120).aspx). 
 
 
 ## Setup Telemetry Alerts

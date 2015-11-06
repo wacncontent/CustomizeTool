@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="Starting and stopping virtual machines with Azure Automation - PowerShell Workflow | Windows Azure"
-	description="<!-- deleted by customization Graphical --><!-- keep by customization: begin -->PowerShell<!-- keep by customization: end --> version of Azure Automation solution including runbooks to start and stop classic virtual machines."
+	description="Graphical version of Azure Automation solution including runbooks to start and stop classic virtual machines."
 	services="automation"
 	documentationCenter=""
 	authors="bwren"
@@ -20,17 +20,15 @@ This Azure Automation solution includes runbooks to start and stop classic virtu
 - Call the runbooks from another runbook as part of an overall solution. 
 - Use the runbooks as tutorials to learn runbook authoring concepts. 
 
-<!-- deleted by customization 
 > [AZURE.SELECTOR]
 - [Graphical](/documentation/articles/automation-solution-startstopvm-graphical)
 - [PowerShell Workflow](/documentation/articles/automation-solution-startstopvm-psworkflow)
 
 This is the PowerShell Workflow runbook version of this solution. It is also available using [graphical runbooks](/documentation/articles/automation-solutions-startstopvm-graphical).
--->
 
 ## Getting the solution
 
-This solution consists of two PowerShell Workflow runbooks that you can download from the following links.  <!-- deleted by customization  See the [graphical version](/documentation/articles/automation-solutions-startstopvm-graphical) of this solution for links to the graphical runbooks. -->
+This solution consists of two PowerShell Workflow runbooks that you can download from the following links.  See the [graphical version](/documentation/articles/automation-solutions-startstopvm-graphical) of this solution for links to the graphical runbooks.
 
 | Runbook | Link | Type | Description |
 |:---|:---|:---|:---|
@@ -38,9 +36,6 @@ This solution consists of two PowerShell Workflow runbooks that you can download
 | Stop-AzureVMs | [Stop Azure Classic VMs](https://gallery.technet.microsoft.com/Stop-Azure-Classic-VMs-7a4ae43e) | PowerShell Workflow | Stops all virtual machines in an automation account or all virtual machines with a particular service name.  |
 
 
-<!-- keep by customization: begin -->
-[AZURE.INCLUDE [automation-azurechinacloud-environment-parameter](../includes/automation-azurechinacloud-environment-parameter.md)]
-<!-- keep by customization: end -->
 ## Installing the solution
 
 ### 1. Install the runbooks

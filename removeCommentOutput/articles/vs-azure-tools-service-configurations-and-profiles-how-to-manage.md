@@ -95,7 +95,7 @@ When you run the wizard for the first time, a default profile is created. Visual
 
 1. In the **Target profile** list, click the profile that you just created. The Publish Wizard settings are filled in with the choices from the profile you selected.
 
-1. Click the **Previous** and **Next** buttons to display each page of the Publish Wizard, and then customize the settings for this profile. See [Publish Azure Application Wizard](http://go.microsoft.com/fwlink/p/?LinkID=623085) for information.
+1. Click the **Previous** and **Next** buttons to display each page of the Publish Wizard, and then customize the settings for this profile. See [Publish Azure Application Wizard](/documentation/articles/vs-azure-tools-publish-azure-application-wizard/) for information.
 
 1. After you finish customizing the settings, click **Next** to go back to the Settings page. The profile is saved when you publish the service by using these settings or if you click **Save** next to the list of profiles.
 
@@ -117,7 +117,7 @@ When you run the wizard for the first time, a default profile is created. Visual
 
 1. In the **Target profile** list, click the profile that you want to change.
 
-1. Click the **Previous** and **Next** buttons to display each page of the Publish Wizard, and then change the settings you want. See [Publish Azure Application Wizard](http://go.microsoft.com/fwlink/p/?LinkID=623085) for information.
+1. Click the **Previous** and **Next** buttons to display each page of the Publish Wizard, and then change the settings you want. See [Publish Azure Application Wizard](/documentation/articles/vs-azure-tools-publish-azure-application-wizard/) for information.
 
 1. After you finish changing the settings, click **Next** to go back to the **Settings** page.
 
@@ -125,4 +125,4 @@ When you run the wizard for the first time, a default profile is created. Visual
 
 ## Next steps
 
-To learn about configuring other parts of your Azure project from Visual Studio, see [Configuring an Azure Project](http://go.microsoft.com/fwlink/p/?LinkID=623075)
+To learn about configuring other parts of your Azure project from Visual Studio, see [Configuring an Azure Project](https://azure.microsoft.com/zh-cn/documentation/articles/vs-azure-tools-configuring-an-azure-project/)

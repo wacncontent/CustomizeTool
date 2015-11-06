@@ -9,24 +9,20 @@
 
 <tags
 	ms.service="active-directory"
-	ms.workload="identity"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="10/12/2015"
-	ms.author="rkarlin"/>
+	wacn.date=""/>
 
 # Enabling Azure AD Application Proxy
-> [AZURE.NOTE] Application Proxy is a feature that is available only if you upgraded to the Premium or Basic edition of Azure Active Directory. For more information, see [Azure Active Directory editions](active-directory-editions.md).
+> [AZURE.NOTE] Application Proxy is a feature that is available only if you upgraded to the Premium or Basic edition of Azure Active Directory. For more information, see [Azure Active Directory editions](/documentation/articles/active-directory-editions).
 
-Microsoft Azure AD Application Proxy lets you publish applications, such as SharePoint sites, Outlook Web Access and IIS-based apps, inside your private network and provides secure access to users outside your network. Employees can log into your apps from home, on their own devices and authenticate through this cloud-based proxy
+Windows Azure AD Application Proxy lets you publish applications, such as SharePoint sites, Outlook Web Access and IIS-based apps, inside your private network and provides secure access to users outside your network. Employees can log into your apps from home, on their own devices and authenticate through this cloud-based proxy
 
-This section walks you through enabling Microsoft Azure AD Application Proxy for your cloud directory in Azure AD, installing the Application Proxy Connector on your private network, registering the Connector with your Microsoft Azure AD tenant subscription.
+This section walks you through enabling Windows Azure AD Application Proxy for your cloud directory in Azure AD, installing the Application Proxy Connector on your private network, registering the Connector with your Windows Azure AD tenant subscription.
 
 ##Application Proxy prerequisites
 Before you can enable and use Application Proxy services, you need to have:
 
-- An Microsoft Azure administrator account. If you don’t’ have one, you can get one here.
+- An Windows Azure administrator account. If you don’t’ have one, you can get one here.
 - A server running Windows Server 2012 R2 or Windows 8.1 or higher on which you can install the Application Proxy Connector. The server must be able to send HTTPS requests to the Application Proxy services in the cloud, and it must have an HTTPS connection to the applications that you intend to publish. 
 - If a firewall is placed in the path, make sure the firewall is open to allow HTTPS (TCP) requests that originate from the Connector to the Application Proxy. The Connector uses these ports together with subdomains that are part of the high level domain: msappproxy.net. Make sure to open **all** the following ports to **outbound** traffic:
 
@@ -57,7 +53,7 @@ If your firewall enforces traffic according to originating users, open these por
 2. Follow the instructions in the wizard to install.
 3. During installation you will be prompted to register the Connector with your active Application Proxy account.
 <p>Provide your Azure AD global administrator credentials.
-- Make sure the admin who registers the Connector is in the same directory where you enabled the Application Proxy service, for example if the tenant domain is contoso.com, the admin should be admin@contoso.com or any other alias on that domain. And that you are a global administrator of the Azure AD tenant. Your global administrator tenant may be different from your Microsoft Azure credentials.
+- Make sure the admin who registers the Connector is in the same directory where you enabled the Application Proxy service, for example if the tenant domain is contoso.com, the admin should be admin@contoso.com or any other alias on that domain. And that you are a global administrator of the Azure AD tenant. Your global administrator tenant may be different from your Windows Azure credentials.
 - If IE Enhanced Security Configuration is set to On on the server where you are installing the Azure AD Connector, the registration screen might be blocked. If this happens, follow the instructions in the error message to allow access. Make sure that Internet Explorer Enhanced Security is off.
 - If Connector registration does not succeed, see Troubleshoot Application Proxy.
 
@@ -73,15 +69,15 @@ If you want to uninstall the Connector, after uninstalling the Connector service
 ## See also
 There's a lot more you can do with Application Proxy:
 
-- [Publish applications with Application Proxy](active-directory-application-proxy-publish.md)
-- [Publish applications using your own domain name](active-directory-application-proxy-custom-domains.md)
-- [Enable single-sign on](active-directory-application-proxy-sso-using-kcd.md)
-- [Enable conditional access](active-directory-application-proxy-conditional-access.md)
-- [Working with claims aware applications](active-directory-application-proxy-claims-aware-apps.md)
-- [Troubleshoot issues you're having with Application Proxy](active-directory-application-proxy-troubleshoot.md)
+- [Publish applications with Application Proxy](/documentation/articles/active-directory-application-proxy-publish)
+- [Publish applications using your own domain name](/documentation/articles/active-directory-application-proxy-custom-domains)
+- [Enable single-sign on](/documentation/articles/active-directory-application-proxy-sso-using-kcd)
+- [Enable conditional access](/documentation/articles/active-directory-application-proxy-conditional-access)
+- [Working with claims aware applications](/documentation/articles/active-directory-application-proxy-claims-aware-apps)
+- [Troubleshoot issues you're having with Application Proxy](/documentation/articles/active-directory-application-proxy-troubleshoot)
 
 ## Learn more about Application Proxy
-- [Take a look here at our online help](active-directory-application-proxy-enable.md)
+- [Take a look here at our online help](/documentation/articles/active-directory-application-proxy-enable)
 - [Check out the Application Proxy blog](http://blogs.technet.com/b/applicationproxyblog/)
 - [Watch our videos on Channel 9!](http://channel9.msdn.com/events/Ignite/2015/BRK3864)
 
@@ -89,4 +85,4 @@ There's a lot more you can do with Application Proxy:
 
 * [Sign up for Azure as an organization](..sign-up-organization.md)
 * [Azure Identity](..fundamentals-identity.md)
-* [Publish Applications with Application Proxy](active-directory-application-proxy-publish.md)
+* [Publish Applications with Application Proxy](/documentation/articles/active-directory-application-proxy-publish)

@@ -39,10 +39,8 @@ In this document, learn how to use C# with Hive and Pig.
 ##.NET on HDInsight
 
 The .NET common language runtime (CLR) and frameworks are installed by default on Windows-based HDInsight clusters. This allows you to use C# applications with Hive and Pig streaming (data is passed between Hive/Pig and the C# application via stdout/stdin).
-<!-- deleted by customization
 
 Currently there is no support for running .NET Framework applications on Linux-based HDInsight clusters.
--->
 
 ##.NET and streaming
 

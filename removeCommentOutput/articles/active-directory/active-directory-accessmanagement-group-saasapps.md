@@ -1,6 +1,6 @@
 
 <properties
-	pageTitle="Using a group to manage access to SaaS Applications| Microsoft Azure"
+	pageTitle="Using a group to manage access to SaaS Applications| Windows Azure"
 	description="How to use groups in Azure AD Premium or Basic to assign access to a SaaS applications that are integrated with Azure AD."
 	services="active-directory"
 	documentationCenter=""
@@ -10,12 +10,8 @@
 
 <tags
 	ms.service="active-directory"
-	ms.workload="infrastructure-services"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na" 
-	ms.topic="article"
 	ms.date="10/09/2015"
-	ms.author="femila"/>
+	wacn.date=""/>
 
 
 # Using a group to manage access to SaaS applications
@@ -43,8 +39,8 @@ This capability can be used with hundreds of applications that you can add from 
 
 Here are some topics that will provide some additional information on Azure Active Directory
 
-* [Managing access to resources with Azure Active Directory groups](active-directory-manage-groups.md)
+* [Managing access to resources with Azure Active Directory groups](/documentation/articles/active-directory-manage-groups)
 
-* [What is Azure Active Directory?](active-directory-whatis.md)
+* [What is Azure Active Directory?](/documentation/articles/active-directory-whatis)
 
-* [Integrating your on-premises identities with Azure Active Directory](active-directory-aadconnect.md)
+* [Integrating your on-premises identities with Azure Active Directory](/documentation/articles/active-directory-aadconnect)

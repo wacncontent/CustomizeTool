@@ -63,7 +63,7 @@ HDInsight clusters require a Azure Resource group and a Blob container on an Azu
 	For a full list of the storage account types, see [https://msdn.microsoft.com/zh-cn/library/azure/hh264518.aspx](https://msdn.microsoft.com/zh-cn/library/azure/hh264518.aspx).
 
 
-For information on creating an Azure Storage account by using the Azure Management Portal, see [Create, manage, or delete a storage account](/documentation/articles/storage-create-storage-account).
+For information on creating an Azure Storage account by using the Azure preview portal, see [Create, manage, or delete a storage account](/documentation/articles/storage-create-storage-account).
 
 If you have already had a Storage account but do not know the account name and account key, you can use the following commands to retrieve the information:
 
@@ -72,7 +72,7 @@ If you have already had a Storage account but do not know the account name and a
 	# List the keys for a Storage account
 	Get-AzureStorageAccountKey -ResourceGroupName <AzureResourceGroupName> -name $storageAccountName <AzureStorageAccountName>
 
-For details on getting the information by using the Management Portal, see the "View, copy, and regenerate storage access keys" section of [Create, manage, or delete a storage account](/documentation/articles/storage-create-storage-account).
+For details on getting the information by using the preview portal, see the "View, copy, and regenerate storage access keys" section of [Create, manage, or delete a storage account](/documentation/articles/storage-create-storage-account).
 
 **To create an Azure storage container**
 
@@ -149,7 +149,7 @@ In the sample, <i>hdiv2</i> is an HDInsight cluster name.
 
 >[AZURE.NOTE] By granting/revoking the access, you will reset the cluster user name and password.
 
-This can also be done via the Management Portal. See [Administer HDInsight by using the Azure Management Portal][hdinsight-admin-portal].
+This can also be done via the preview portal. See [Administer HDInsight by using the Azure preview portal][hdinsight-admin-portal].
 
 ##Scale clusters
 The cluster scaling feature allows you to change the number of worker nodes used by a cluster that is running in Azure HDInsight without having to re-create the cluster.
@@ -308,20 +308,13 @@ See the [Submit MapReduce jobs](#mapreduce) section in this article.
 
 ## See Also
 * [HDInsight cmdlet reference documentation][hdinsight-powershell-reference]
-
-
-* [Administer HDInsight by using the Azure Management Portal][hdinsight-admin-portal]
-
+* [Administer HDInsight by using the Azure preview portal][hdinsight-admin-portal]
 * [Administer HDInsight using a command-line interface][hdinsight-admin-cli]
 * [Provision HDInsight clusters][hdinsight-provision]
 * [Upload data to HDInsight][hdinsight-upload-data]
 * [Submit Hadoop jobs programmatically][hdinsight-submit-jobs]
 * [Get started with Azure HDInsight][hdinsight-get-started]
 
-
-
-[hdinsight-hive]: /documentation/articles/hdinsight-use-hive
-[hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
 
 [azure-purchase-options]: /pricing/overview/
 [azure-member-offers]: http://azure.microsoft.com/pricing/member-offers/

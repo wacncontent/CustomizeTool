@@ -9,20 +9,16 @@
 
 <tags
 	ms.service="active-directory"
-	ms.workload="identity"
-	ms.tgt_pltfrm="command-line-interface"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="08/14/2015"
-	ms.author="inhenk"/>
+	wacn.date=""/>
 
 # Managing Role-Based Access Control with the Azure Command-Line Interface (Azure CLI) #
 
 > [AZURE.SELECTOR]
-- [Windows PowerShell](role-based-access-control-powershell.md)
+- [Windows PowerShell](/documentation/articles/role-based-access-control-powershell)
 - [Azure CLI](/role-based-access-control-xplat-cli-install.md)
 
-Role-based access control (RBAC) in Azure Portal and Azure Resource Manager API allows you to manage access to your subscription and resources at a fine-grained level. With this feature, you can grant access for Active Directory users, groups, or service principals by assigning some roles to them at a particular scope.
+Role-based access control (RBAC) in Azure Management Portal and Azure Resource Manager API allows you to manage access to your subscription and resources at a fine-grained level. With this feature, you can grant access for Active Directory users, groups, or service principals by assigning some roles to them at a particular scope.
 
 In this tutorial, you'll learn how to use Azure CLI to manage role based access control. It walks you through the process of creating and checking role assignments.
 
@@ -32,8 +28,8 @@ In this tutorial, you'll learn how to use Azure CLI to manage role based access 
 
 Before you can use Azure CLI to manage RBAC, you must have the following:
 
-- Azure CLI version 0.8.8 or later. To install the latest version and associate it with your Azure subscription, see [Install and Configure the Azure CLI](../xplat-cli-install.md).
-- Please also read the following tutorials to get familiar with set up and using Azure Resource Manager in Azure CLI: [Using the Azure CLI with the Resource Manager](../xplat-cli-azure-resource-manager.md)
+- Azure CLI version 0.8.8 or later. To install the latest version and associate it with your Azure subscription, see [Install and Configure the Azure CLI](/documentation/articles/xplat-cli-install).
+- Please also read the following tutorials to get familiar with set up and using Azure Resource Manager in Azure CLI: [Using the Azure CLI with the Resource Manager](/documentation/articles/xplat-cli-azure-resource-manager)
 
 ## In this tutorial ##
 
@@ -49,7 +45,7 @@ Since RBAC only works with Azure Resource Manager, the first thing to do is to s
 
     azure config mode arm
 
-For more information, please refer to [Using the Azure CLI with the Resource Manager](../xplat-cli-azure-resource-manager.md)
+For more information, please refer to [Using the Azure CLI with the Resource Manager](/documentation/articles/xplat-cli-azure-resource-manager)
 
 To connect to your Azure subscriptions, type:
 
@@ -64,7 +60,7 @@ If you have multiple subscriptions and want to switch to another one, type:
     # Use the subscription name to select the one you want to work on.
     azure account set <subscription name>
 
-For more information, please refer to [Install and Configure the Azure CLI](../xplat-cli-install.md).
+For more information, please refer to [Install and Configure the Azure CLI](/documentation/articles/xplat-cli-install).
 
 ## <a id="check"></a>Check existing role assignments ##
 
@@ -143,10 +139,10 @@ Then when you try to run other cmdlets like `azure group create`, you will get a
 
 To learn more about managing role-based access control with Azure CLI and related topics:
 
-- [Role based access control in Azure](../role-based-access-control-configure.md)
-- [Install and Configure the Azure CLI](../xplat-cli-install.md)
-- [Using the Azure CLI with the Resource Manager](../xplat-cli-azure-resource-manager.md)
-- [Using Resource groups to manage your Azure resources](../azure-preview-portal-using-resource-groups.md): Learn how to create and manage resource groups in the Azure Management Portal.
+- [Role based access control in Azure](/documentation/articles/role-based-access-control-configure)
+- [Install and Configure the Azure CLI](/documentation/articles/xplat-cli-install)
+- [Using the Azure CLI with the Resource Manager](/documentation/articles/xplat-cli-azure-resource-manager)
+- [Using Resource groups to manage your Azure resources](/documentation/articles/azure-preview-portal-using-resource-groups): Learn how to create and manage resource groups in the Azure Management Portal.
 - [Azure blog](http://blogs.msdn.com/windowsazure): Learn about new features in Azure.
-- [Configure role based access control using Windows PowerShell](role-based-access-control-powershell.md)
-- [Troubleshooting role based access control](role-based-access-control-troubleshooting.md)
+- [Configure role based access control using Windows PowerShell](/documentation/articles/role-based-access-control-powershell)
+- [Troubleshooting role based access control](/documentation/articles/role-based-access-control-troubleshooting)

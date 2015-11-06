@@ -9,12 +9,8 @@
 
 <tags
 	ms.service="active-directory"
-	ms.workload="identity"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="09/21/2015"
-	ms.author="inhenk"/>
+	wacn.date=""/>
 
 # Azure AD Privileged Identity Management
 
@@ -43,7 +39,7 @@ Historically, you could assign a user to an admin role through the Azure Managem
 
 ## Enabling Privileged Identity Management for your directory
 
-You can start using Azure AD Privileged Identity Management by accessing the [Microsoft Azure portal](https://portal.azure.com/). For now, Azure AD Privileged Identity Management only appears in the Microsoft Azure portal. You must be a global administrator to enable Azure AD Privileged Identity Management for a directory.
+You can start using Azure AD Privileged Identity Management by accessing the [Windows Azure Management Portal](https://manage.windowsazure.cn/). For now, Azure AD Privileged Identity Management only appears in the Windows Azure Management Portal. You must be a global administrator to enable Azure AD Privileged Identity Management for a directory.
 
 ![][1]
 
@@ -95,7 +91,7 @@ Using Azure AD Privileged Identity Management you can also track changes in priv
 ![][6]
 
 ## Next steps
-[AZURE.INCLUDE [active-directory-privileged-identity-management-toc](../../includes/active-directory-privileged-identity-management-toc.md)]
+[AZURE.INCLUDE [active-directory-privileged-identity-management-toc](../includes/active-directory-privileged-identity-management-toc.md)]
 
 <!--Image references-->
 [1]: ./media/active-directory-privileged-identity-management-configure/Search_PIM.png

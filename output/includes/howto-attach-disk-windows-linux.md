@@ -31,7 +31,7 @@ Attaching an empty disk is the simpler way to add a data disk, because Azure cre
 
 ##<a id="attachexisting"></a>How to: Attach an existing disk
 
-Attaching an existing disk requires that you have a .vhd available in a storage account. Use the [Add-AzureVhd](http://go.microsoft.com/FWLink/p/?LinkID=391684) cmdlet to upload the .vhd file to the storage account. After you've created and uploaded the .vhd file, you can attach it to a virtual machine.
+Attaching an existing disk requires that you have a .vhd available in a storage account. Use the [Add-AzureVhd](https://msdn.microsoft.com/zh-cn/library/azure/dn495173.aspx) cmdlet to upload the .vhd file to the storage account. After you've created and uploaded the .vhd file, you can attach it to a virtual machine.
 
 1. Click **Virtual Machines**, and then select the appropriate virtual machine.
 

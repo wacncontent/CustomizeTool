@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Overview of Microsoft Passport and details about this new certification-based authentication.| Microsoft Azure" 
+	pageTitle="Overview of Microsoft Passport and details about this new certification-based authentication.| Windows Azure" 
 	description="A topic that explains how users can set up Azure AD Join during their first run experience." 
 	services="active-directory" 
 	documentationCenter="" 
@@ -7,21 +7,17 @@
 	manager="stevenpo" 
 	editor=""/>
 
-<tags 
-	ms.service="active-directory" 
-	ms.workload="identity" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="09/21/2015" 
-	ms.author="femila"/>
+<tags
+	ms.service="active-directory"
+	ms.date="09/21/2015"
+	wacn.date=""/>
 
 # Authenticating identities without passwords through Microsoft Passport
 
-The current methods of authentication with passwords alone are not sufficient to keep users safe. Users reuse and forget passwords. Passwords are breachable, phishable, prone to cracks, and guessable. They also get difficult to remember and prone to attacks like “Pass the Hash”. Pass the Hash is a hacking technique that allows an attacker to authenticate to a remote server/service by using the underlying NTLM and/or LanMan hash of a user's password, instead of requiring the associated plaintext password as is normally the case. For more information on Pass the Hash, see [Pass the Hash](https://technet.microsoft.com/en-us/dn785092.aspx).
+The current methods of authentication with passwords alone are not sufficient to keep users safe. Users reuse and forget passwords. Passwords are breachable, phishable, prone to cracks, and guessable. They also get difficult to remember and prone to attacks like “Pass the Hash”. Pass the Hash is a hacking technique that allows an attacker to authenticate to a remote server/service by using the underlying NTLM and/or LanMan hash of a user's password, instead of requiring the associated plaintext password as is normally the case. For more information on Pass the Hash, see [Pass the Hash](https://technet.microsoft.com/dn785092.aspx).
 
 ## What is Microsoft Passport
-Microsoft Passport is a new private/public key or certificate-based authentication approach for organizations and consumers that goes beyond passwords. This form of authentication relies on these key pair credentials that can replace passwords and be resistant to breaches, thefts and phishing Microsoft Passport lets users authenticate to a Microsoft account, an Active Directory account, a Microsoft Azure Active Directory (AD) account, or non-Microsoft service that supports Fast ID Online (FIDO) authentication. After an initial two-step verification during Microsoft Passport enrollment, a Microsoft Passport is set up on the user's device and the user sets a gesture, which can be Windows Hello or a PIN. The user provides the gesture to verify identity; Windows then uses Microsoft Passport to authenticate users and help them to access protected resources and services.
+Microsoft Passport is a new private/public key or certificate-based authentication approach for organizations and consumers that goes beyond passwords. This form of authentication relies on these key pair credentials that can replace passwords and be resistant to breaches, thefts and phishing Microsoft Passport lets users authenticate to a Microsoft account, an Active Directory account, a Windows Azure Active Directory (AD) account, or non-Microsoft service that supports Fast ID Online (FIDO) authentication. After an initial two-step verification during Microsoft Passport enrollment, a Microsoft Passport is set up on the user's device and the user sets a gesture, which can be Windows Hello or a PIN. The user provides the gesture to verify identity; Windows then uses Microsoft Passport to authenticate users and help them to access protected resources and services.
 
 The private key is made available solely through a “user gesture” like a PIN, biometrics, remote device like a smart card that the user used to sign in to the device and this information is linked to a certificate or an asymmetrical key pair. This private-key is hardware attested if device has a Trusted Platform Module (TPM) chip. The private key never leaves the device.
 
@@ -68,7 +64,7 @@ At the user level
 
 ## Additional information
 
-* [Extending cloud capabilities to Windows 10 devices through Azure Active Directory Join](active-directory-azureadjoin-overview.md)
-* [Set up Azure AD Join](active-directory-azureadjoin-setup.md)
-* [Manage identity verification using Microsoft Passport](https://technet.microsoft.com/library/mt219735(v=vs.85).aspx)
+* [Extending cloud capabilities to Windows 10 devices through Azure Active Directory Join](/documentation/articles/active-directory-azureadjoin-overview)
+* [Set up Azure AD Join](/documentation/articles/active-directory-azureadjoin-setup)
+* [Manage identity verification using Microsoft Passport](https://technet.microsoft.com/zh-cn/library/mt219735(v=vs.85).aspx)
 

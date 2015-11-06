@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties
    pageTitle="Create a virtual network using the Azure preview portal | Windows Azure"
    description="Learn how to create a virtual network using the Azure preview portal."

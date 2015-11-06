@@ -27,6 +27,7 @@ When using WebHCat (formerly known as Templeton,) to work with HDInsight, you ma
 
 * For **Windows** clusters: Use a script action to configure the value during cluster creation. For more information, see [Develop script actions](/documentation/articles/hdinsight-hadoop-script-actions).
 
+* For **Linux** clusters: Use Ambari (web or REST API) to modify the value. For more information, see [Manage HDInsight using Ambari](/documentation/articles/hdinsight-hadoop-manage-ambari)
 
 ###Default configuration
 

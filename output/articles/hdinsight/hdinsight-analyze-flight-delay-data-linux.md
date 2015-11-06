@@ -1,8 +1,6 @@
-<!-- not suitable for Mooncake -->
-
 <properties 
-	pageTitle="Analyze flight delay data with Hadoop in HDInsight | Windows Azure" 
-	description="Learn how to use one Windows PowerShell script to provision an HDInsight cluster, run a Hive job, run a Sqoop job, and delete the cluster." 
+	pageTitle="Analyze flight delay data with Hive on Linux-based HDInsight | Windows Azure" 
+	description="Learn how to use Hive to analyze flight data on Linux-based HDInsight, then export the data to SQL Database using Sqoop." 
 	services="hdinsight" 
 	documentationCenter="" 
 	authors="Blackmist" 
@@ -10,14 +8,14 @@
 	editor="cgronlun"
 	tags="azure-portal"/>
 
-<tags 
-	ms.service="hdinsight" 
-	ms.date="08/04/2015" 
+<tags
+	ms.service="hdinsight"
+	ms.date="10/09/2015"
 	wacn.date=""/>
 
 #Analyze flight delay data by using Hive in HDInsight
 
-Learn how to analyze flight delay data using Hive on Linux-based HDInsight (preview) then export the data to Azure SQL Database using using Sqoop.
+Learn how to analyze flight delay data using Hive on Linux-based HDInsight then export the data to Azure SQL Database using using Sqoop.
 
 > [AZURE.NOTE] While individual pieces of this document can be used with Windows-based HDInsight clusters (Python and Hive for example,) many steps are specific to Linux-based clusters. For steps that will work with a Windows-based cluster, see [Analyze flight delay data using Hive in HDInsight](/documentation/articles/hdinsight-analyze-flight-delay-data)
 
@@ -31,7 +29,7 @@ Before you begin this tutorial, you must have the following:
 
 - __Azure SQL Database__. You will use an Azure SQL database as a destination data store. If you do not have a SQL Database already, see [How to create and configure an Azure SQL Database to create one](/documentation/articles/sql-database-create-configure)
 
-- __Azure CLI__. If you have not installed the Azure CLI, see [Install and Configure the Azure CLI](/documentation/articles/xplat-cli) for more steps.
+- __Azure CLI__. If you have not installed the Azure CLI, see [Install and Configure the Azure CLI](/documentation/articles/xplat-cli-install) for more steps.
 
 
 ##Download the flight data
@@ -218,7 +216,7 @@ Use the following steps to create an Azure SQL Database. This will be used to ho
 5. At the `1>` prompt, enter the following lines:
 
         CREATE TABLE [dbo].[delays](
-		[origin_city_name] [nvarchar](/documentation/articles/50) NOT NULL,
+		[origin_city_name] [nvarchar](50) NOT NULL,
 		[weather_delay] float,
 		CONSTRAINT [PK_delays] PRIMARY KEY CLUSTERED   
 		([origin_city_name] ASC))

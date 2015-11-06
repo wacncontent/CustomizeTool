@@ -1,4 +1,4 @@
-In this section we will modify the model of our database by adding a new timestamp field named **CompleteDate**. This field will record the last time the todo item was completed. Entity Framework will update the database based on our model change using a default database initializer class derived from [DropCreateDatabaseIfModelChanges](http://go.microsoft.com/fwlink/?LinkId=394621). 
+In this section we will modify the model of our database by adding a new timestamp field named **CompleteDate**. This field will record the last time the todo item was completed. Entity Framework will update the database based on our model change using a default database initializer class derived from [DropCreateDatabaseIfModelChanges](https://msdn.microsoft.com/zh-cn/library/gg679604(v=vs.113).aspx). 
 
 1. In Solution Explorer for Visual Studio, expand the **App_Start** folder in the todolist service project. Open the WebApiConfig.cs file.
 

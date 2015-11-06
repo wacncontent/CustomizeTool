@@ -9,12 +9,8 @@
 
 <tags
 	ms.service="active-directory"
-	ms.workload="identity"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="07/27/2015"
-	ms.author="markusvi"/>
+	wacn.date=""/>
 
 
 # Attribute-based app provisioning with scoping filters
@@ -70,7 +66,7 @@ According to this scoping filter, users must satisfy the following criteria, in 
 3. They must be work in either San Francisco or Canada.
 
 
-[AZURE.INCLUDE [saas-toc](../../includes/active-directory-saas-toc.md)]
+[AZURE.INCLUDE [saas-toc](../includes/active-directory-saas-toc.md)]
 
 <!--Image references-->
 [1]: ./media/active-directory-saas-scoping-filters/ic782811.png

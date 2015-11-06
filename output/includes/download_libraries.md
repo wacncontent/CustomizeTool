@@ -53,7 +53,7 @@ If your project is already set up to use Maven for build, add the following depe
 	</dependency>
 
 
-Within the `<version>` element, replace the version numbers in this example with valid version numbers, which can be obtained from the [Azure Libraries Repository on Maven](http://go.microsoft.com/fwlink/?LinkID=286274).
+Within the `<version>` element, replace the version numbers in this example with valid version numbers, which can be obtained from the [Azure Libraries Repository on Maven](http://search.maven.org/#browse%7C1671162511).
 
 [license]: http://www.apache.org/licenses/LICENSE-2.0.html
 [zip-download]: http://go.microsoft.com/fwlink/?LinkId=690320

@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Manage Role Based Access Control (RBAC) with Azure PowerShell | Microsoft Azure"
+	pageTitle="Manage Role Based Access Control (RBAC) with Azure PowerShell | Windows Azure"
 	description="How to manage RBAC with Azure PowerShell including listing roles, assigning roles and deleting role assignments."
 	services="active-directory"
 	documentationCenter=""
@@ -9,18 +9,14 @@
 
 <tags
 	ms.service="active-directory"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.tgt_pltfrm="na"
-	ms.workload="identity"
 	ms.date="10/12/2015"
-	ms.author="inhenk"/>
+	wacn.date=""/>
 
 # Manage Role Based Access Control (RBAC) with Azure PowerShell
 <!-- Azure Selector -->
 > [AZURE.SELECTOR]
-- [PowerShell](role-based-access-control-manage-access-powershell.md)
-- [Azure CLI](role-based-access-control-manage-access-azure-cli.md)
+- [PowerShell](/documentation/articles/role-based-access-control-manage-access-powershell)
+- [Azure CLI](/documentation/articles/role-based-access-control-manage-access-azure-cli)
 
 ## List RBAC roles
 ### List all available roles
@@ -64,7 +60,7 @@ To list access assignments for the classic subscription administrator and co-adm
 
 ## Grant Access
 ### Search for object ids
-In order to use the following command sequences, you must find the object ids first.  It is assumed that you already know the subscription id that you are working with, otherwise see [Get-AzureSubscription](https://msdn.microsoft.com/library/dn495302.aspx) on MSDN.
+In order to use the following command sequences, you must find the object ids first.  It is assumed that you already know the subscription id that you are working with, otherwise see [Get-AzureSubscription](https://msdn.microsoft.com/zh-cn/library/dn495302.aspx) on MSDN.
 
 #### Find the object id for an Azure AD Group
 To get the object id for an Azure AD Group use:
@@ -111,4 +107,4 @@ To remove access for users, groups and applications use:
 ![](./media/role-based-access-control-manage-access-powershell/3-remove-azure-rm-role-assignment.png)
 
 ## RBAC topics
-[AZURE.INCLUDE [role-based-access-control-toc.md](../../includes/role-based-access-control-toc.md)]
+[AZURE.INCLUDE [role-based-access-control-toc.md](../includes/role-based-access-control-toc.md)]

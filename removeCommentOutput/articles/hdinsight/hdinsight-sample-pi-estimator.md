@@ -17,6 +17,7 @@
 
 HDInsight clusters come with a jar file with several MarReduce samples. This article shows you how to run the pi estimator sample using Azure PowerShell. the pi estimator sample estimates the value of the mathematical constant pi 
 
+> [AZURE.NOTE] The steps in this document require a Windows-based HDInsight cluster. For information on running this and other samples with Linux-based clusters, see [Run the Hadoop samples in HDInsight](/documentation/articles/hdinsight-hadoop-run-samples-linux)
 
 The program uses a statistical (quasi-Monte Carlo) method to estimate the value of pi. Points placed at random inside of a unit square also fall within a circle inscribed within that square with a probability equal to the area of the circle, pi/4. The value of pi can be estimated from the value of 4R, where R is the ratio of the number of points that are inside the circle to the total number of points that are within the square. The larger the sample of points used, the better the estimate is.
 
@@ -45,9 +46,6 @@ The other samples that are available to help you get up to speed in using HDInsi
 - **An Azure subscription**. See [Get Azure trial](/pricing/1rmb-trial/).
 - **an HDInsight cluster**. For instructions on the various ways in which such clusters can be created, see [Provision HDInsight Clusters](/documentation/articles/hdinsight-provision-clusters).
 - **A workstation with Azure PowerShell**. See [Install and use Azure PowerShell](/documentation/articles/install-configure-powershell).
-
-<a id="run-sample"></a>
-
 
 
 
@@ -84,9 +82,6 @@ The other samples that are available to help you get up to speed in using HDInsi
 
 	For comparison, the first 10 decimal places of pi are 3.1415926535.
 
-
-
-<a id="java-code"></a>
 
 ## The MapReduce Java source code
 

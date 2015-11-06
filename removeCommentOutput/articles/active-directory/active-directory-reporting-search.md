@@ -9,12 +9,8 @@
 
 <tags
 	ms.service="active-directory"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.tgt_pltfrm="na"
-	ms.workload="identity"
 	ms.date="09/29/2015"
-	ms.author="kenhoff"/>
+	wacn.date=""/>
 
 # Azure Active Directory Reporting Search
 
@@ -53,5 +49,5 @@ RMS device usage                                    | No
 
 ## Learn more
 
- - [Azure Active Directory Reports](active-directory-view-access-usage-reports.md)
- - [Azure Active Directory Reporting Audit Events](active-directory-reporting-audit-events.md)
+ - [Azure Active Directory Reports](/documentation/articles/active-directory-view-access-usage-reports)
+ - [Azure Active Directory Reporting Audit Events](/documentation/articles/active-directory-reporting-audit-events)

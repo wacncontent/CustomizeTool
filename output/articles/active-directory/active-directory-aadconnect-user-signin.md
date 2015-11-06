@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Azure AD Connect - User Sign In | Microsoft Azure"
+	pageTitle="Azure AD Connect - User Sign In | Windows Azure"
 	description="Azure AD Connect user sign in for custom settings."
 	services="active-directory"
 	documentationCenter=""
@@ -9,12 +9,8 @@
 
 <tags
 	ms.service="active-directory"
-	ms.workload="identity"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="10/13/2015"
-	ms.author="billmath"/>
+	wacn.date=""/>
 
 
 
@@ -29,7 +25,7 @@ Password synchronization can be used together with password write-back to enable
 
 <center>![Cloud](./media/active-directory-aadconnect-user-signin/passwordhash.png)</center>
 
-[More information about password synchronization](https://msdn.microsoft.com/library/azure/dn246918.aspx)
+[More information about password synchronization](https://msdn.microsoft.com/zh-cn/library/azure/dn246918.aspx)
 
 
 ### Federation using a new or existing AD FS in Windows Server 2012 R2 farm

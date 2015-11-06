@@ -27,6 +27,9 @@ Azure virtual network site-to-site connectivity uses a VPN gateway to provide a 
 
 For more information, see [Configure a VNet to VNet connection](/documentation/articles/virtual-networks-configure-vnet-to-vnet-connection). 
 
+To see it on video:
+
+> [AZURE.VIDEO configure-the-vpn-connectivity-between-two-azure-virtual-networks]
 
 This tutorial is a part of the [series][hdinsight-hbase-replication] on creating HBase geo-replication. 
 

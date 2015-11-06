@@ -31,12 +31,12 @@ The Azure Linux Agent is already pre-installed on the Azure Gallery images and a
 
 Distribution|Version|Drivers|Agent
 ---|---|---|---
-Canonical Ubuntu|Ubuntu 12.04, 14.04, 14.10 and 15.04|In Kernel|Package: In repo under "walinuxagent" <p><p>Source: [GitHub](http://go.microsoft.com/fwlink/p/?LinkID=250998)
-CentOS by OpenLogic |CentOS 6.3+, 7.0+| CentOS 6.3: [LIS Download](http://go.microsoft.com/fwlink/?LinkID=403033&clcid=0x409)<p>CentOS 6.4+: In Kernel|Package: In <a href="http://olcentgbl.trafficmanager.cn/openlogic/6/openlogic/x86_64/RPMS/">OpenLogic repo   under "WALinuxAgent"<p><p>Source: [GitHub](http://go.microsoft.com/fwlink/p/?LinkID=250998)
+Canonical Ubuntu|Ubuntu 12.04, 14.04, 14.10 and 15.04|In Kernel|Package: In repo under "walinuxagent" <p><p>Source: [GitHub](https://github.com/windows-azure/walinuxagent)
+CentOS by OpenLogic |CentOS 6.3+, 7.0+| CentOS 6.3: [LIS Download](http://go.microsoft.com/fwlink/?LinkID=403033&clcid=0x409)<p>CentOS 6.4+: In Kernel|Package: In <a href="http://olcentgbl.trafficmanager.cn/openlogic/6/openlogic/x86_64/RPMS/">OpenLogic repo   under "WALinuxAgent"<p><p>Source: [GitHub](https://github.com/windows-azure/walinuxagent)
 [CoreOS](https://coreos.com/docs/running-coreos/cloud-providers/azure/)|494.4.0+ |In Kernel|Source: [GitHub](https://github.com/coreos/coreos-overlay/tree/master/app-emulation/wa-linux-agent)
-Oracle Linux| 6.4+, 7.0+|In Kernel|Package: In repo under "WALinuxAgent"<p><p>Source: [GitHub](http://go.microsoft.com/fwlink/p/?LinkID=250998)
-SUSE Linux Enterprise |SLES 11 SP3+, SLES 12+ and  <p><p> SLES for SAP 11.3+ |In Kernel|Package: In [Cloud:Tools](https://build.opensuse.org/project/show/Cloud:Tools) repo under "WALinuxAgent"<p><p>Source: [GitHub](http://go.microsoft.com/fwlink/p/?LinkID=250998)
-openSUSE |openSUSE 13.1+|In Kernel|Package: In [Cloud:Tools](https://build.opensuse.org/project/show/Cloud:Tools) repo under "WALinuxAgent" <p><p>Source Code: [GitHub](http://go.microsoft.com/fwlink/p/?LinkID=250998)
+Oracle Linux| 6.4+, 7.0+|In Kernel|Package: In repo under "WALinuxAgent"<p><p>Source: [GitHub](https://github.com/windows-azure/walinuxagent)
+SUSE Linux Enterprise |SLES 11 SP3+, SLES 12+ and  <p><p> SLES for SAP 11.3+ |In Kernel|Package: In [Cloud:Tools](https://build.opensuse.org/project/show/Cloud:Tools) repo under "WALinuxAgent"<p><p>Source: [GitHub](https://github.com/windows-azure/walinuxagent)
+openSUSE |openSUSE 13.1+|In Kernel|Package: In [Cloud:Tools](https://build.opensuse.org/project/show/Cloud:Tools) repo under "WALinuxAgent" <p><p>Source Code: [GitHub](https://github.com/windows-azure/walinuxagent)
 
 ## Partners
 

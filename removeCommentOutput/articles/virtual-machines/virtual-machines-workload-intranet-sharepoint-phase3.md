@@ -222,7 +222,7 @@ To continue with the configuration of this workload, go to [Phase 4: Configure S
 
 [SharePoint farms hosted in Azure infrastructure services](/documentation/articles/virtual-machines-sharepoint-infrastructure-services)
 
-[SharePoint with SQL Server AlwaysOn Infographic](http://go.microsoft.com/fwlink/?LinkId=394788)
+[SharePoint with SQL Server AlwaysOn Infographic](https://azure.microsoft.com/zh-cn/documentation/infographics/sharepoint-sqlserver-alwayson/)
 
 [Windows Azure Architectures for SharePoint 2013](https://technet.microsoft.com/zh-cn/library/dn635309.aspx)
 

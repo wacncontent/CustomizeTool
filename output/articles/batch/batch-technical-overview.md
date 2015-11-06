@@ -139,8 +139,8 @@ After the account is created, you can find it in the portal to manage access key
 
 * [Get Started with the Azure Batch Library for .NET](/documentation/articles/batch-dotnet-get-started)
 * [Azure Batch development libraries and tools](/documentation/articles/batch-development-libraries-tools)
-* [Azure Batch REST API Reference](http://go.microsoft.com/fwlink/p/?LinkId=517803)
-* [Azure Batch Apps REST API Reference](http://go.microsoft.com/fwlink/p/?LinkId=517804)
+* [Azure Batch REST API Reference](https://msdn.microsoft.com/zh-cn/library/azure/dn820158.aspx)
+* [Azure Batch Apps REST API Reference](https://msdn.microsoft.com/zh-cn/library/azure/dn820126.aspx)
 
 [parallel]: ./media/batch-technical-overview/parallel.png
 [marketplace_portal]: ./media/batch-technical-overview/marketplace_batch.PNG

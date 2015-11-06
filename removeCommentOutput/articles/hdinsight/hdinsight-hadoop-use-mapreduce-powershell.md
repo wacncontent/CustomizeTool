@@ -23,7 +23,7 @@ This document provides an example of using Azure PowerShell to run a MapReduce j
 
 To complete the steps in this article, you will need the following:
 
-- **An Azure HDInsight (Hadoop on HDInsight) cluster (Windows-based )**
+- **An Azure HDInsight (Hadoop on HDInsight) cluster (Windows-based or Linux-based)**
 
 - **A workstation with Azure PowerShell**. See [Install and Configure Azure PowerShell](/documentation/articles/powershell-install-configure)
 

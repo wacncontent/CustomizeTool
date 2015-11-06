@@ -98,6 +98,13 @@ There are two methods of migrating an existing WordPress site to Azure Websites.
 
 ## Step-by-step instructions
 
+### Create a new WordPress site
+
+1. Use the [Azure Marketplace][cdbnstore] to create a MySQL database of the size you identified in the [Architecture and planning](#planning) section, in the region(s) that you will host your site.
+
+2. Follow the steps in [Create a WordPress web app in Azure Websites][createwordpress] to create a new WordPress web app. When creating the web app, select **Use an existing MySQL Database** and select the database created in step 1.
+
+If you are migrating an existing WordPress site, see [Migrate an existing WordPress site to Azure](#Migrate-an-existing-WordPress-site-to-Azure) after creating a new web app.
 
 ### Migrate an existing WordPress site to Azure
 
@@ -123,7 +130,7 @@ Use one of the following sections to migrate your site.
 
 6. Click **Submit**. You will be prompted that the import was successful.
 
-8. Once you have completed all these steps, restart your site from its web app blade in the [Azure Management Portal][mgmtportal].
+8. Once you have completed all these steps, restart your site from its web app blade in the [Azure preview portal][mgmtportal].
 
 After importing the site, you may need to perform the following steps to enable settings not contained in the import file.
 
@@ -150,7 +157,7 @@ If you were using this... | Do this...
 
 4. Create a new web app in the Azure Management Portal and publish the WordPress backup.
 
-	1. Create a new web app in the [Azure Management Portal][mgmtportal] with a database using **New** -> **Web + Mobile** -> **Azure Marketplace** -> **Web Apps** -> **Web app + SQL** (or **Web app + MySQL**) -> **Create**. Configure all the required settings to create an empty web app.
+	1. Create a new web app in the [Azure preview portal][mgmtportal] with a database using **New** -> **Web + Mobile** -> **Azure Marketplace** -> **Web Apps** -> **Web app + SQL** (or **Web app + MySQL**) -> **Create**. Configure all the required settings to create an empty web app.
 
 	2. In your WordPress backup, locate the **wp-config.php** file and open it in an editor. Replace the following entries with the information for your new MySQL database.
 
@@ -221,6 +228,11 @@ To do this... | Use this...
 
 * [Tips for WordPress on Azure](http://www.johnpapa.net/azurecleardbmysql/)
 
+>[AZURE.NOTE] If you want to get started with Azure Websites before signing up for an Azure account, go to [Try Azure Websites](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure Websites. No credit cards required; no commitments.
+
+## What's changed
+* For a guide to the change from Websites to Azure Websites see: [Azure Websites and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
+* For a guide to the change of the portal to the preview portal see: [Reference for navigating the preview portal](https://manage.windowsazure.cn/)
 
 [performance-diagram]: ./media/web-sites-php-enterprise-wordpress/performance-diagram.png
 [basic-diagram]: ./media/web-sites-php-enterprise-wordpress/basic-diagram.png
@@ -253,7 +265,7 @@ To do this... | Use this...
 [import]: http://wordpress.org/plugins/wordpress-importer/
 [wordpressbackup]: http://wordpress.org/plugins/wordpress-importer/
 [wordpressdbbackup]: http://codex.wordpress.org/Backing_Up_Your_Database
-
+[createwordpress]: /documentation/articles/web-sites-php-web-site-gallery
 [velvet]: https://wordpress.org/plugins/velvet-blues-update-urls/
 [mgmtportal]: https://manage.windowsazure.cn/
 [wordpressbackup]: http://codex.wordpress.org/WordPress_Backups

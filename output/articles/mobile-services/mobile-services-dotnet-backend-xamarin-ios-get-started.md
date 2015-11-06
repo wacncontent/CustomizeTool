@@ -30,7 +30,7 @@ A screenshot from the completed app is below:
 
 Completing this tutorial is a prerequisite for all other Mobile Services tutorials for Xamarin iOS apps.
 
->[AZURE.NOTE]To complete this tutorial, you need an Azure account. If you don't have an account, you can sign up for an Azure trial and get up to 10 free mobile services that you can keep using even after your trial ends. For details, see <a href="/pricing/1rmb-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fen-us%2Fdocumentation%2Farticles%2Fmobile-services-dotnet-backend-xamarin-ios-get-started" target="_blank">Azure Trial</a>.<br />This tutorial requires <a href="https://go.microsoft.com/fwLink/p/?LinkID=257546" target="_blank">Visual Studio Professional 2013</a>. A trial version is available.
+>[AZURE.NOTE]To complete this tutorial, you need an Azure account. If you don't have an account, you can sign up for an Azure trial and get up to 10 free mobile services that you can keep using even after your trial ends. For details, see <a href="/pricing/1rmb-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fen-us%2Fdocumentation%2Farticles%2Fmobile-services-dotnet-backend-xamarin-ios-get-started" target="_blank">Azure Trial</a>.<br />This tutorial requires <a href="https://www.visualstudio.com/downloads/download-visual-studio-vs" target="_blank">Visual Studio Professional 2013</a>. A trial version is available.
 
 ## Create a new mobile service
 
@@ -52,7 +52,7 @@ In this section you will download a new Xamarin iOS app and a service project fo
 
   	![][7]
 
-3. If you haven't already done so, download and install <a href="https://go.microsoft.com/fwLink/p/?LinkID=257546" target="_blank">Visual Studio Professional 2013</a> on your local computer or virtual machine.  
+3. If you haven't already done so, download and install <a href="https://www.visualstudio.com/downloads/download-visual-studio-vs" target="_blank">Visual Studio Professional 2013</a> on your local computer or virtual machine.  
 
 4. Download and install [Xcode] v4.4 or a later version and [Xamarin Studio]. You can also use Xamarin for Visual Studio.
 
@@ -127,7 +127,7 @@ Now that you have completed the quickstart, learn how to perform additional impo
 [Get started with offline data sync]: /documentation/articles/mobile-services-xamarin-ios-get-started-offline-data
 [Get started with authentication]: /documentation/articles/mobile-services-dotnet-backend-xamarin-ios-get-started-users
 [Get started with push notifications]: /documentation/articles/mobile-services-dotnet-backend-xamarin-ios-get-started-push
-[Visual Studio Professional 2013]: https://go.microsoft.com/fwLink/p/?LinkID=257546
+[Visual Studio Professional 2013]: https://www.visualstudio.com/downloads/download-visual-studio-vs
 [Mobile Services SDK]: http://go.microsoft.com/fwlink/?LinkId=257545
 [JavaScript and HTML]: /documentation/articles/mobile-services-win8-javascript
 [Management Portal]: https://manage.windowsazure.cn/

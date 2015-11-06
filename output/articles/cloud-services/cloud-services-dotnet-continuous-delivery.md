@@ -44,12 +44,12 @@ server, follow the instructions in the [Team Foundation Build Service][]
 documentation.
 
 1.  On the build server, install the [.NET Framework 4][], [.NET Framework 4.5][], or [.NET Framework 4.5.2][], which include MSBuild.
-2.  Install the [Azure Authoring Tools for .NET](http://go.microsoft.com/fwlink/?LinkId=623518) (substitute MicrosoftAzureAuthoringTools-x86.msi in the link instead of MicrosoftAzureAuthoringTools-x64.msi if your build server has a 32-bit OS/processor).
-3. Install the [Azure Libraries for .NET](http://go.microsoft.com/fwlink/?LinkId=623519) (substitute MicrosoftAzureLibsForNet-x86.msi in the link if needed).
+2.  Install the [Azure Authoring Tools for .NET](http://download.microsoft.com/download/0/F/E/0FE64840-9806-4D3C-9C11-84B743162618/MicrosoftAzureAuthoringTools-x64.msi) (substitute MicrosoftAzureAuthoringTools-x86.msi in the link instead of MicrosoftAzureAuthoringTools-x64.msi if your build server has a 32-bit OS/processor).
+3. Install the [Azure Libraries for .NET](http://download.microsoft.com/download/0/F/E/0FE64840-9806-4D3C-9C11-84B743162618/MicrosoftAzureLibsForNet-x64.msi) (substitute MicrosoftAzureLibsForNet-x86.msi in the link if needed).
 4.  Copy the Microsoft.WebApplication.targets file from a Visual Studio installation to the build server.
 
 	On a computer with Visual Studio installed, this file is located in the directory C:\\Program Files(x86)\\MSBuild\\Microsoft\\VisualStudio\\v14.0\\WebApplications (v12.0 for Visual Studio 2013). You should copy it to the same directory on the build server.
-5.  Install the [Azure Tools for Visual Studio](http://go.microsoft.com/fwlink/?LinkId=623520). Use MicrosoftAzureTools.VS140.exe to build Visual Studio 2015 projects, or MicrosoftAzureTools.VS120.exe to build Visual Studio 2013 projects.
+5.  Install the [Azure Tools for Visual Studio](http://download.microsoft.com/download/0/F/E/0FE64840-9806-4D3C-9C11-84B743162618/MicrosoftAzureTools.VS140.exe). Use MicrosoftAzureTools.VS140.exe to build Visual Studio 2015 projects, or MicrosoftAzureTools.VS120.exe to build Visual Studio 2013 projects.
 
 ## Step 2: Build a Package using MSBuild Commands
 

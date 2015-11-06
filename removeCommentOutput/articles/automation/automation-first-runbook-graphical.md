@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties
 	pageTitle="My first graphical runbook in Azure Automation"
 	description="Tutorial that walks you through the creation, testing, and publishing of a simple graphical runbook.  Several concepts are covered such as authenticating to Azure resources, input parameters, and conditional links."

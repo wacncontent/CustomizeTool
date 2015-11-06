@@ -24,7 +24,7 @@ Baidu cloud push is a Chinese cloud service that you can use to send push notifi
 
 This tutorial requires the following:
 
-+ Android SDK (we assume that you will use Eclipse), which you can download from the <a href="http://go.microsoft.com/fwlink/?LinkId=389797">Android site</a>
++ Android SDK (we assume that you will use Eclipse), which you can download from the <a href="http://developer.android.com/sdk/index.html">Android site</a>
 + [Mobile Services Android SDK]
 + [Baidu Push Android SDK]
 
@@ -494,7 +494,7 @@ To send a test notification you can use the debug tab of the portal. If you buil
 [33]: ./media/notification-hubs-baidu-get-started/BaiduPushConfig3.png
 
 <!-- URLs. -->
-[Mobile Services Android SDK]: https://go.microsoft.com/fwLink/?LinkID=280126&clcid=0x409
+[Mobile Services Android SDK]: https://zumo.blob.core.windows.net/sdk/azuresdk-android-2.0.3.zip
 [Baidu Push Android SDK]: http://developer.baidu.com/wiki/index.php?title=docs/cplat/push/sdk/clientsdk
 [Azure Management Portal]: https://manage.windowsazure.cn/
 [Baidu portal]: http://www.baidu.com/

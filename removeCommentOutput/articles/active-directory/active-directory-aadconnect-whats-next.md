@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Managing Azure AD Connect | Microsoft Azure"
+	pageTitle="Managing Azure AD Connect | Windows Azure"
 	description="Learn how to extend the default configuration and operational tasks for Azure AD Connect."
 	services="active-directory"
 	documentationCenter=""
@@ -9,12 +9,8 @@
 
 <tags
 	ms.service="active-directory"
-	ms.workload="identity"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="10/01/2015"
-	ms.author="billmath"/>
+	wacn.date=""/>
 
 # Managing Azure AD Connect
 The following are advanced operational topics that allow you to customize Azure Active Directory Connect to meet your organization's needs and requirements.  
@@ -25,7 +21,7 @@ Now that your users have been synchronized to the cloud, you will need to assign
 
 ### To assign an Azure AD Premium or Enterprise Mobility Suite License
 --------------------------------------------------------------------------------
-1. Sign-in to the Azure Portal as an Administrator.
+1. Sign-in to the Azure Management Portal as an Administrator.
 2. On the left, select **Active Directory**.
 3. On the Active Directory page, double-click on the directory that has the users you wish to enable.
 4. At the top of the directory page, select **Licenses**.
@@ -34,11 +30,11 @@ Now that your users have been synchronized to the cloud, you will need to assign
 
 
 ## Verifying the scheduled synchronization task
-If you want to check on the status of a synchronization you can do this by checking in the Azure portal.
+If you want to check on the status of a synchronization you can do this by checking in the Azure Management Portal.
 
 ### To verify the scheduled synchronization task
 --------------------------------------------------------------------------------
-1. Sign-in to the Azure Portal as an Administrator.
+1. Sign-in to the Azure Management Portal as an Administrator.
 2. On the left, select **Active Directory**.
 3. On the Active Directory page, double-click on the directory that has the users you wish to enable.
 4. At the top of the directory page, select **Directory Integration**.
@@ -67,4 +63,4 @@ Customize Synchronization options | Allows you to change the current configurati
 Enable Staging Mode |  This allows you to stage information that will later be synchronized but nothing will be exported to Azure AD or Active Directory.  This allows you to preview the synchronizations before they occur.
 
 ## Next steps
-Learn more about [Integrating your on-premises identities with Azure Active Directory](active-directory-aadconnect.md).
+Learn more about [Integrating your on-premises identities with Azure Active Directory](/documentation/articles/active-directory-aadconnect).

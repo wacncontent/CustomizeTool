@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Azure AD Android Getting Started | Microsoft Azure"
+	pageTitle="Azure AD Android Getting Started | Windows Azure"
 	description="How to build an Android application that integrates with Azure AD for sign in and calls Azure AD protected APIs using OAuth."
 	services="active-directory"
 	documentationCenter="android"
@@ -9,48 +9,44 @@
 
 <tags
 	ms.service="active-directory"
-	ms.workload="identity"
-	ms.tgt_pltfrm="mobile-android"
-	ms.devlang="java"
-	ms.topic="article"
 	ms.date="10/13/2015"
-	ms.author="brandwe"/>
+	wacn.date=""/>
 
 # Integrate Azure AD into an Android App
 
-[AZURE.INCLUDE [active-directory-devquickstarts-switcher](../../includes/active-directory-devquickstarts-switcher.md)]
+[AZURE.INCLUDE [active-directory-devquickstarts-switcher](../includes/active-directory-devquickstarts-switcher.md)]
 
-[AZURE.INCLUDE [active-directory-devguide](../../includes/active-directory-devguide.md)]
+[AZURE.INCLUDE [active-directory-devguide](../includes/active-directory-devguide.md)]
 
 If you're developing a desktop application, Azure AD makes it simple and straightforward for you to authenticate your users with their Active Directory accounts.  It also enables your application to securely consume any web API protected by Azure AD, such as the Office 365 APIs or the Azure API.
 
 For Android clients that need to access protected resources, Azure AD provides the Active Directory Authentication Library, or ADAL.  ADAL’s sole purpose in life is to make it easy for your app to get access tokens.  To demonstrate just how easy it is, here we’ll build an Android To-Do List application that:
 
--	Gets access tokens for calling a To-Do List API using the [OAuth 2.0 authentication protocol](https://msdn.microsoft.com/library/azure/dn645545.aspx).
+-	Gets access tokens for calling a To-Do List API using the [OAuth 2.0 authentication protocol](https://msdn.microsoft.com/zh-cn/library/azure/dn645545.aspx).
 -	Gets a user's To-Do List
 -	Signs users out.
 
-To get started, you'll need an Azure AD tenant in which you can create users and register an application.  If you don't already have a tenant, [learn how to get one](active-directory-howto-tenant.md).
+To get started, you'll need an Azure AD tenant in which you can create users and register an application.  If you don't already have a tenant, [learn how to get one](/documentation/articles/active-directory-howto-tenant).
 
 ## Step 1: Download and run the Node.js REST API TODO Sample Server
 
-This sample is written specifically to work against our existing sample for building a single tenant To-Do REST API for Microsoft Azure Active Directory. This is a pre-requisite for the Quick Start.
+This sample is written specifically to work against our existing sample for building a single tenant To-Do REST API for Windows Azure Active Directory. This is a pre-requisite for the Quick Start.
 
 For information on how to set this up, visit our existing samples here:
 
-* [Microsoft Azure Active Directory Sample REST API Service for Node.js](active-directory-devquickstarts-webapi-nodejs.md)
+* [Windows Azure Active Directory Sample REST API Service for Node.js](/documentation/articles/active-directory-devquickstarts-webapi-nodejs)
 
-## Step 2: Register your Web API with your Microsoft Azure AD Tenant
+## Step 2: Register your Web API with your Windows Azure AD Tenant
 
 **What am I doing?**
 
-*Microsoft Active Directory supports adding two types of applications. Web APIs that offer services to users and applications (either on the web or an applicaiton running on a device) that access those Web APIs. In this step you are registering the Web API you are running locally for testing this sample. Normally this Web API would be a REST service that is offering functionaltiy you want an app to access. Microsoft Azure Active Directory can protect any endpoint!*
+*Microsoft Active Directory supports adding two types of applications. Web APIs that offer services to users and applications (either on the web or an applicaiton running on a device) that access those Web APIs. In this step you are registering the Web API you are running locally for testing this sample. Normally this Web API would be a REST service that is offering functionaltiy you want an app to access. Windows Azure Active Directory can protect any endpoint!*
 
 *Here we are assuming you are registering the TODO REST API referenced above, but this works for any Web API you'd want Azure Active Directory to protect.*
 
-Steps to register a Web API with Microsoft Azure AD
+Steps to register a Web API with Windows Azure AD
 
-1. Sign in to the [Azure management portal](https://manage.windowsazure.com).
+1. Sign in to the [Azure management portal](https://manage.windowsazure.cn).
 2. Click on Active Directory in the left hand nav.
 3. Click the directory tenant where you wish to register the sample application.
 4. Click the Applications tab.
@@ -59,7 +55,7 @@ Steps to register a Web API with Microsoft Azure AD
 7. Enter a friendly name for the application, for example "TodoListService", select "Web Application and/or Web API", and click next.
 8. For the sign-on URL, enter the base URL for the sample, which is by default `https://localhost:8080`.
 9. For the App ID URI, enter `https://<your_tenant_name>/TodoListService`, replacing `<your_tenant_name>` with the name of your Azure AD tenant.  Click OK to complete the registration.
-10. While still in the Azure portal, click the Configure tab of your application.
+10. While still in the Azure Management Portal, click the Configure tab of your application.
 11. **Find the Client ID value and copy it aside**, you will need this later when configuring your application.
 
 ## Step 3: Register the sample Android Native Client application
@@ -68,7 +64,7 @@ Registering your web application is the first step. Next, you'll need to tell Az
 
 **What am I doing?**  
 
-*As stated above, Microsoft Azure Active Directory supports adding two types of applications. Web APIs that offer services to users and applications (either on the web or an applicaiton running on a device) that access those Web APIs. In this step you are registering the application in this sample. You must do that in order for this application to be able to request to access the Web API you just registered. Azure Active Directory will refuse to even allow your application to ask for sign-in unless it's registered! That's part of the security of the model.*
+*As stated above, Windows Azure Active Directory supports adding two types of applications. Web APIs that offer services to users and applications (either on the web or an applicaiton running on a device) that access those Web APIs. In this step you are registering the application in this sample. You must do that in order for this application to be able to request to access the Web API you just registered. Azure Active Directory will refuse to even allow your application to ask for sign-in unless it's registered! That's part of the security of the model.*
 
 *Here we are assuming you are registering this sample application referenced above, but this works for any app you are developing.*
 
@@ -76,7 +72,7 @@ Registering your web application is the first step. Next, you'll need to tell Az
 
 *As you might have guessed, you could build an app that accesses an external API that is registered in Azure Active Directory from another tenant. If you do that, your customers will be prompted to consent to the use of the API in the application. The nice part is, Active Directory Authentication Library for iOS takes care of this consent for you! As we get in to more advanced features, you'll see this is an important part of the work needed to access the suite of Microsoft APIs from Azure and Office as well as any other service provider. For now, because you registered both your Web API and application under the same tenant you won't see any prompts for consent. This is usually the case if you are developing an application just for your own company to use.*
 
-1. Sign in to the [Azure management portal](https://manage.windowsazure.com).
+1. Sign in to the [Azure management portal](https://manage.windowsazure.cn).
 2. Click on Active Directory in the left hand nav.
 3. Click the directory tenant where you wish to register the sample application.
 4. Click the Applications tab.
@@ -195,7 +191,7 @@ You can get the jar file from maven the repo and drop into the *libs* folder in 
 7. Create an instance of AuthenticationContext at your main Activity. The details of this call are beyond the scope of this README, but you can get a good start by looking at the [Android Native Client Sample](https://github.com/AzureADSamples/NativeClient-Android). Below is an example:
 
     ```Java
-    // Authority is in the form of https://login.windows.net/yourtenant.onmicrosoft.com
+    // Authority is in the form of https://login.chinacloudapi.cn/yourtenant.partner.onmschina.cn
     mContext = new AuthenticationContext(MainActivity.this, authority, true); // This will use SharedPreferences as            default cache
     ```
   * NOTE: mContext is a field in your activity
@@ -309,7 +305,7 @@ Broker component will be delivered with Microsoft Intune's Company portal app. A
 
 ADFS is not recognized as production STS, so you need to turn of instance discovery and pass false at AuthenticationContext constructor.
 
-Authority url needs STS instance and tenant name: https://login.windows.net/yourtenant.onmicrosoft.com
+Authority url needs STS instance and tenant name: https://login.chinacloudapi.cn/yourtenant.partner.onmschina.cn
 
 ### Querying cache items
 
@@ -452,5 +448,5 @@ Your application should overwrite them if localized strings are desired.
 ### NTLM dialog
 Adal version 1.1.0 supports NTLM dialog that is processed through onReceivedHttpAuthRequest event from WebViewClient. Dialog layout and strings can be customized.### Step 5: Download the iOS Native Client Sample code
 
-[AZURE.INCLUDE [active-directory-devquickstarts-additional-resources](../../includes/active-directory-devquickstarts-additional-resources.md)]
+[AZURE.INCLUDE [active-directory-devquickstarts-additional-resources](../includes/active-directory-devquickstarts-additional-resources.md)]
  

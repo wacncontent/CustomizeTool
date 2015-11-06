@@ -171,7 +171,7 @@ If you are migrating VHD from an on premise environment, you will need the compl
 
 Using AzCopy you can easily upload the VHD over the Internet. Depending on the size of the VHDs, this may take time. Remember to check the storage account ingress/egress limits when using this option. See [Azure Storage Scalability and Performance Targets](/documentation/articles/storage-scalability-targets) for details.
 
-1. Download and install AzCopy from here: [Latest version of AzCopy](http://aka.ms/downloadazcopy)
+1. Download and install AzCopy from here: [Latest version of AzCopy](http://az635501.vo.msecnd.net/azcopy-3-2-0/MicrosoftAzureStorageTools.msi)
 2. Open Azure PowerShell and go to the folder where AzCopy is installed.
 3. Use the following command to copy the VHD file from "Source" to "Destination".
 

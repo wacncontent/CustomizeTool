@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Set up a Windows 10 device with Azure AD from Settings| Microsoft Azure" 
+	pageTitle="Set up a Windows 10 device with Azure AD from Settings| Windows Azure" 
 	description="A topic that explains how users can join to Azure AD through the settings menu." 
 	services="active-directory" 
 	documentationCenter="" 
@@ -7,14 +7,10 @@
 	manager="stevenpo" 
 	editor=""/>
 
-<tags 
-	ms.service="active-directory" 
-	ms.workload="identity" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="09/21/2015" 
-	ms.author="femila"/>
+<tags
+	ms.service="active-directory"
+	ms.date="09/21/2015"
+	wacn.date=""/>
 
 # Set up a Windows 10 device with Azure AD from Settings
 If you are already using Windows 7 or 8, and your machine is upgraded to Windows 10, you can join to Azure AD through the Settings menu.
@@ -39,6 +35,6 @@ To join to Azure AD from the settings menu
 
 
 ## Additional Information
-* [Extending cloud capabilities to Windows 10 devices through Azure Active Directory Join](active-directory-azureadjoin-overview.md)
-* [Learn about usage scenarios and deployment considerations for Azure AD Join](active-directory-azureadjoin-deployment-aadjoindirect.md)
-* [Set up Azure AD Join](active-directory-azureadjoin-setup.md)
+* [Extending cloud capabilities to Windows 10 devices through Azure Active Directory Join](/documentation/articles/active-directory-azureadjoin-overview)
+* [Learn about usage scenarios and deployment considerations for Azure AD Join](/documentation/articles/active-directory-azureadjoin-deployment-aadjoindirect)
+* [Set up Azure AD Join](/documentation/articles/active-directory-azureadjoin-setup)

@@ -81,6 +81,6 @@ Now that you have completed the quickstart, learn how to work with the [Mobile S
 <!-- Images. -->
 
 <!-- URLs. -->
-[Visual Studio 2013 Express for Windows]: http://go.microsoft.com/fwlink/?LinkId=257546
+[Visual Studio 2013 Express for Windows]: https://www.visualstudio.com/downloads/download-visual-studio-vs
 [Mobile Services SDK]: http://go.microsoft.com/fwlink/?LinkId=257545
 [Management Portal]: https://manage.windowsazure.cn/

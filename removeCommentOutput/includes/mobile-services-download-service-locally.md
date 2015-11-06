@@ -1,4 +1,4 @@
-1. If you haven't already done so, download and install [Visual Studio Professional 2013](https://go.microsoft.com/fwLink/p/?LinkID=391934), or a later version.
+1. If you haven't already done so, download and install [Visual Studio Professional 2013](https://www.visualstudio.com/downloads/download-visual-studio-vs), or a later version.
  
 2. In the [Azure Management Portal](https://manage.windowsazure.cn/), click your new Mobile Service and in the quickstart page click the **Android** platform, then under **Get Started**, expand **Create a new Android app**. 
 

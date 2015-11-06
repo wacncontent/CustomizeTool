@@ -109,7 +109,6 @@ The following code example uses Media Services .NET SDK to perform the following
 		    return processor;
 		}
 
-<!-- deleted by customization
 
 ##Media Services learning paths
 
@@ -117,7 +116,6 @@ You can view AMS learning paths here:
 
 - [AMS Live Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/)
 - [AMS on Demand Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/)
--->
 
 ##See Also 
 

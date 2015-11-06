@@ -243,10 +243,8 @@ For other related articles, see
 
 - [Use Hive and HiveQL with Hadoop in HDInsight to analyze a sample Apache log4j file](/documentation/articles/hdinsight-use-hive)
 - [Analyze flight delay data by using Hive in HDInsight](/documentation/articles/hdinsight-analyze-flight-delay-data)
-<!-- deleted by customization
 - [Analyze Twitter data using Hive in HDInsight](/documentation/articles/hdinsight-analyze-twitter-data)
 - [Run a Hadoop job using DocumentDB and HDInsight](/documentation/articles/documentdb-run-hadoop-with-hdinsight)
--->
 
 [hdinsight-python]: /documentation/articles/hdinsight-python
 [image-hdi-hivejson-flatten]: ./media/hdinsight-using-json-in-hive/flatten.png

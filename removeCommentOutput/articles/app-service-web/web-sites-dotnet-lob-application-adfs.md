@@ -18,17 +18,6 @@ In this article, you will learn how to create an ASP.NET MVC line-of-business ap
 
 >[AZURE.NOTE] For an overview of the different enterprise authentication and authorization options for Azure Websites, see [Use Active Directory for authentication in Azure Websites](/documentation/articles/web-sites-authentication-authorization).
 
-
-- [What you will build](#bkmk_build)
-- [What you will need](#bkmk_need)
-- [Use sample application for LOB template](#bkmk_sample)
-- [Set up the sample application](#bkmk_setup)
-- [Deploy the sample application to Azure Websites](#bkmk_deploy)
-- [Configure relying party trusts in AD FS Management](#bkmk_rptrusts)
-- [Authorize users for specific controllers or actions](#bkmk_authorize)
-- [Connect to on-premises data](#bkmk_data)
-- [Further resources](#bkmk_resources)
-
 <a name="bkmk_build"></a>
 ## What you will build ##
 
@@ -47,7 +36,7 @@ You will build a basic ASP.NET application in Azure Websites with the following 
 
 You need the following to complete this tutorial:
 
-- An on-premises AD FS deployment 
+- An on-premises AD FS deployment (for an end-to-end walkthrough of the test lab that I use, see [Test Lab: Standalone STS with AD FS in Azure VM (for test only)](/documentation/articles/TODO))
 - Permissions to create relying party trusts in AD FS Management
 - Visual Studio 2013
 - [Azure SDK 2.5.1](https://www.microsoft.com/web/handlers/webpi.ashx/getinstaller/VWDOrVs2013AzurePack.appids) or later
@@ -345,6 +334,7 @@ Since you have included group memberships as role claims in your RP trust config
 
 A reason that you would want to implement your line-of-business application with AD FS instead of Azure Active Directory is compliance issues with keeping organization data off-premise. This may also mean that your web app in Azure must access on-premise databases, since you are not allowed to use [SQL Database](/home/features/sql-database/) as the data tier for your web apps.
 
+Azure Websites supports accessing on-premise databases with two approaches: [Hybrid Connections](/documentation/articles/integration-hybrid-connection-overview) and [Virtual Networks](/documentation/articles/web-sites-integrate-with-vnet). For more information, see [Using VNET integration and Hybrid connections with Azure Websites](http://azure.microsoft.com/blog/2014/10/30/using-vnet-or-hybrid-conn-with-websites/).
 
 <a name="bkmk_resources"></a>
 ## Further resources

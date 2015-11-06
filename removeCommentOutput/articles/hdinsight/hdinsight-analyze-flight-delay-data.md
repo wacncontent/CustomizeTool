@@ -16,6 +16,7 @@
 
 Hive provides a means of running Hadoop MapReduce jobs through an SQL-like scripting language called *[HiveQL][hadoop-hiveql]*, which can be applied towards summarizing, querying, and analyzing large volumes of data.
 
+> [AZURE.NOTE] The steps in this document require a Windows-based HDInsight cluster. For steps that work with a Linux-based cluster, see [Analyze flight delay data by using Hive in HDInsight (Linux)](/documentation/articles/hdinsight-analyze-flight-delay-data-linux).
 
 One of the major benefits of Azure HDInsight is the separation of data storage and compute. HDInsight uses Azure Blob storage for data storage. A common MapReduce process can be broken into 3 parts:
 
@@ -38,8 +39,7 @@ The main portion of the tutorial shows you how to use one Windows PowerShell scr
 
 In the appendixes, you can find the instructions for uploading flight delay data, creating/uploading a Hive query string, and preparing the Azure SQL database for the Sqoop job.
 
-
-<a id="prerequisite"></a>
+> [AZURE.NOTE] The steps in this document are specific to Windows-based HDInsight clusters. For steps that will work with a Linux-based cluster, see [Analyze flight delay data using Hive in HDInsight (Linux)](/documentation/articles/hdinsight-analyze-flight-delay-data-linux)
 
 ###Prerequisites
 

@@ -114,7 +114,7 @@ To set the Azure CDN integration to true:
 It could take up to 90 min for the Azure CDN integration to get enabled.  It takes up to two hours for the changes to be active across all the CDN POPs.
 
 
-CDN integration is enabled in all the Azure data centers: <!-- deleted by customization US West, --> China East, China North<!-- deleted by customization , West Europe, Japan West, Japan East, South East Asia and East Asia -->.
+CDN integration is enabled in all the Azure data centers: US West, China East, China North, West Europe, Japan West, Japan East, South East Asia and East Asia.
 
 Once it is enabled, the following configurations get disabled: **Custom Host Names** and **Access Control**.
 
@@ -130,7 +130,6 @@ Once it is enabled, the following configurations get disabled: **Custom Host Nam
 
 For more information see, [Announcing Azure Media Services integration with Azure CDN (Content Delivery Network)](http://azure.microsoft.com/blog/2015/03/17/announcing-azure-media-services-integration-with-azure-cdn-content-delivery-network/).
 
-<!-- deleted by customization
 
 ##Media Services learning paths
 
@@ -138,7 +137,6 @@ You can view AMS learning paths here:
 
 - [AMS Live Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/)
 - [AMS on Demand Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/)
--->
 
 
 [streaming-endpoint-enable-cdn]: ./media/media-services-manage-origins/media-services-origins-enable-cdn.png

@@ -50,7 +50,7 @@ Next, you will update the app to authenticate users before requesting resources 
 
 [AZURE.INCLUDE [mobile-services-windows-universal-dotnet-authenticate-app](../includes/mobile-services-windows-universal-dotnet-authenticate-app.md)] 
 
->[AZURE.NOTE]If you registered your Windows Store app package information with Mobile Services, you should call the <a href="http://go.microsoft.com/fwlink/p/?LinkId=311594" target="_blank">LoginAsync</a> method by supplying a value of **true** for the *useSingleSignOn* parameter. If you do not do this, your users will continue to be presented with a login prompt every time that the login method is called.
+>[AZURE.NOTE]If you registered your Windows Store app package information with Mobile Services, you should call the <a href="https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.mobileservices.singlesignonextensions.loginasync.aspx" target="_blank">LoginAsync</a> method by supplying a value of **true** for the *useSingleSignOn* parameter. If you do not do this, your users will continue to be presented with a login prompt every time that the login method is called.
 
 ##<a name="tokens"></a>Store the authorization tokens on the client
 

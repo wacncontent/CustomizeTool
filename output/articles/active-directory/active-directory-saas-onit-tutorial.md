@@ -1,4 +1,4 @@
-<properties pageTitle="Tutorial: Azure Active Directory integration with Onit | Microsoft Azure" description="Learn how to use Onit with Azure Active Directory to enable single sign-on, automated provisioning, and more!." services="active-directory" authors="MarkusVi"  documentationCenter="na" manager="stevenpo"/>
+<properties pageTitle="Tutorial: Azure Active Directory integration with Onit | Windows Azure" description="Learn how to use Onit with Azure Active Directory to enable single sign-on, automated provisioning, and more!." services="active-directory" authors="MarkusVi"  documentationCenter="na" manager="stevenpo"/>
 <tags ms.service="active-directory" ms.devlang="na" ms.topic="article" ms.tgt_pltfrm="na" ms.workload="identity" ms.date="08/01/2015" ms.author="markvi" />
 #Tutorial: Azure Active Directory integration with Onit
 >[AZURE.TIP]For feedback, click [here](http://go.microsoft.com/fwlink/?LinkId=530341).
@@ -9,7 +9,7 @@ The scenario outlined in this tutorial assumes that you already have the followi
 -   A valid Azure subscription
 -   An Onit single sign-on enabled subscription
   
-After completing this tutorial, the Azure AD users you have assigned to Onit will be able to single sign into the application at your Onit company site (service provider initiated sign on), or using the [Introduction to the Access Panel](https://msdn.microsoft.com/library/dn308586)
+After completing this tutorial, the Azure AD users you have assigned to Onit will be able to single sign into the application at your Onit company site (service provider initiated sign on), or using the [Introduction to the Access Panel](https://msdn.microsoft.com/zh-cn/library/dn308586)
   
 The scenario outlined in this tutorial consists of the following building blocks:
 
@@ -88,7 +88,7 @@ The following screenshot shows an example for this.
 
     ![Configure Single Sign-On](./media/active-directory-saas-onit-tutorial/IC791170.png "Configure Single Sign-On")
 
-6.  On the **How would you like users to sign on to Onit** page, select **Microsoft Azure AD Single Sign-On**, and then click **Next**.
+6.  On the **How would you like users to sign on to Onit** page, select **Windows Azure AD Single Sign-On**, and then click **Next**.
 
     ![Configure Single Sign-On](./media/active-directory-saas-onit-tutorial/IC791171.png "Configure Single Sign-On")
 
@@ -119,8 +119,8 @@ The following screenshot shows an example for this.
     ![Single Sign-On](./media/active-directory-saas-onit-tutorial/IC791177.png "Single Sign-On")
 
     1.  As **Authentication Strategy**, select **Single Sign On and Password**.
-    2.  In the Azure portal, on the **Configure single sign-on at Onit** dialog page, copy the **Remote Login URL** value, and then paste it into the **Idp Target URL** textbox.
-    3.  In the Azure portal, on the **Configure single sign-on at Onit** dialog page, copy the **Remote Logout URL** value, and then paste it into the **Idp logout URL** textbox.
+    2.  In the Azure Management Portal, on the **Configure single sign-on at Onit** dialog page, copy the **Remote Login URL** value, and then paste it into the **Idp Target URL** textbox.
+    3.  In the Azure Management Portal, on the **Configure single sign-on at Onit** dialog page, copy the **Remote Logout URL** value, and then paste it into the **Idp logout URL** textbox.
     4.  Copy the **Thumbprint** value from the exported certificate, and then paste it into the **Idp Cert Fingerprint (SHA1)** textbox.  
 
         >[AZURE.TIP] For more details, see [How to retrieve a certificate's thumbprint value](http://youtu.be/YKQF266SAxI)
@@ -173,4 +173,4 @@ To test your configuration, you need to grant the Azure AD users you want to all
 
     ![Yes](./media/active-directory-saas-onit-tutorial/IC767830.png "Yes")
   
-If you want to test your single sign-on settings, open the Access Panel. For more details about the Access Panel, see [Introduction to the Access Panel](https://msdn.microsoft.com/library/dn308586).
+If you want to test your single sign-on settings, open the Access Panel. For more details about the Access Panel, see [Introduction to the Access Panel](https://msdn.microsoft.com/zh-cn/library/dn308586).

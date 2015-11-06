@@ -78,7 +78,7 @@ Managing databases and logical servers from the Azure Management Portal or using
 
 ## Encryption
 
-Azure SQL Database can help protect your data by encrypting your data when it is "at rest," or stored in database files and backups, using [Transparent Data Encryption](http://go.microsoft.com/fwlink/?LinkId=526242). To encrypt your database, connect as a database owner and execute:
+Azure SQL Database can help protect your data by encrypting your data when it is "at rest," or stored in database files and backups, using [Transparent Data Encryption](https://msdn.microsoft.com/zh-cn/library/dn948096.aspx). To encrypt your database, connect as a database owner and execute:
 
 ```
 CREATE DATABASE ENCRYPTION KEY

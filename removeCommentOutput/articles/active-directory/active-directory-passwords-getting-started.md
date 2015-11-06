@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Getting Started: Azure AD Password Management | Microsoft Azure"
+	pageTitle="Getting Started: Azure AD Password Management | Windows Azure"
 	description="Enable users to reset their own passwords, discover pre-requisites for password reset, and enable Password Writeback to manage on-premises passwords in Active Directory."
 	services="active-directory"
 	documentationCenter=""
@@ -9,12 +9,8 @@
 
 <tags
 	ms.service="active-directory"
-	ms.workload="identity"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="09/18/2015" 
-	ms.author="asteen"/>
+	ms.date="09/18/2015"
+	wacn.date=""/>
 
 # Getting started with Password Management
 Enabling your users to manage their own cloud Azure Active Directory or on-premises Active Directory passwords takes just a few simple steps. After ensuring that you've met a few simple prerequisites, you'll have password change and reset enabled for your entire organization before you know it. This article will walk you through the following concepts:
@@ -45,9 +41,9 @@ This section walks you through enabling self-service password reset for your AAD
 Before you can enable and use self-service password reset, you must complete the following prerequisites:
 
 - Create an AAD tenant. For more information, see [Getting Started with Azure AD](https://azure.microsoft.com/trial/get-started-active-directory/)
-- Obtain an Azure subscription. For more information, see [What is an Azure AD tenant?](active-directory-administer.md#what-is-an-azure-ad-tenant).
-- Associate your AAD tenant with your Azure subscription. For more information, see [How Azure subscriptions are associated with Azure AD](https://msdn.microsoft.com/library/azure/dn629581.aspx).
-- Upgrade to Azure AD Premium or Basic. For more information, see [Azure Active Directory Editions](http://azure.microsoft.com/pricing/details/active-directory/).
+- Obtain an Azure subscription. For more information, see [What is an Azure AD tenant?](/documentation/articles/active-directory-administer#what-is-an-azure-ad-tenant).
+- Associate your AAD tenant with your Azure subscription. For more information, see [How Azure subscriptions are associated with Azure AD](https://msdn.microsoft.com/zh-cn/library/azure/dn629581.aspx).
+- Upgrade to Azure AD Premium or Basic. For more information, see [Azure Active Directory Editions](/home/features/identity/#price).
 
   >[AZURE.NOTE] To enable self-service password reset, you must upgrade to Azure AD Premium or Azure AD Basic. For more information, Azure Active Directory Editions. This information includes detailed instructions on how to sign up for Azure AD Premium or Basic, how to activate your license plan and activate your Azure AD access, and how to assign access to administrator and user accounts.
 
@@ -57,8 +53,8 @@ Before you can enable and use self-service password reset, you must complete the
 ### Step 1: Configure password reset policy
 To configure user password reset policy, complete the following steps:
 
-1.	Open a browser of your choice and go to the [Azure Management Portal](https://manage.windowsazure.com).
-2.	In the [Azure Management Portal](https://manage.windowsazure.com), find the **Active Directory extension** on the navigation bar on the left hand side.
+1.	Open a browser of your choice and go to the [Azure Management Portal](https://manage.windowsazure.cn).
+2.	In the [Azure Management Portal](https://manage.windowsazure.cn), find the **Active Directory extension** on the navigation bar on the left hand side.
 
     ![][001]
 
@@ -76,7 +72,7 @@ To configure user password reset policy, complete the following steps:
 
     ![][004]
 
-6.	To configure the user password reset policy, slide the **users enabled for password reset** toggle to the **yes** setting.  This reveals several more controls which enable you to configure how this feature works in your directory.  Feel free to customize password reset as you see fit.  If you’d like to learn more about what each of the password reset policy controls does, please see [Customize: Azure AD Password Management](active-directory-passwords-customize).
+6.	To configure the user password reset policy, slide the **users enabled for password reset** toggle to the **yes** setting.  This reveals several more controls which enable you to configure how this feature works in your directory.  Feel free to customize password reset as you see fit.  If you’d like to learn more about what each of the password reset policy controls does, please see [Customize: Azure AD Password Management](/documentation/articles/active-directory-passwords-customize).
 
     ![][005]
 
@@ -89,13 +85,13 @@ To configure user password reset policy, complete the following steps:
 ### Step 2: Add contact data for your test user
 You have several options on how to specify data for users in your organization to be used for password reset.
 
--	Edit users in the [Azure Management Portal](https://manage.windowsazure.com) or the [Office 365 Admin Portal](https://portal.microsoftonline.com)
+-	Edit users in the [Azure Management Portal](https://manage.windowsazure.cn) or the [Office 365 Admin Portal](https://portal.partner.microsoftonline.cn)
 -	Use AAD Connect to synchronize user properties into Azure AD from an on-premises Active Directory domain
 -	Use Windows PowerShell to edit user properties
 -	Allow users to register their own data by guiding them to the registration portal at [http://aka.ms/ssprsetup](http://aka.ms/ssprsetup)
 -	Require users to register for password reset when they sign in to the Access Panel at [http://myapps.microsoft.com](http://myapps.microsoft.com) by setting the **Require users to register when signing in to the access panel** SSPR configuration option to **Yes**.
 
-If you want to learn more about what data is used by password reset, as well as any formatting requirements for this data, please see [What data is used by password reset?](active-directory-passwords-learn-more.md#what-data-is-used-by-password-reset).
+If you want to learn more about what data is used by password reset, as well as any formatting requirements for this data, please see [What data is used by password reset?](/documentation/articles/active-directory-passwords-learn-more#what-data-is-used-by-password-reset).
 
 #### To add user contact data via the User Registration Portal
 1.	In order to use the password reset registration portal, you must provide the users in your organization with a link to this page ([http://aka.ms/ssprsetup](http://aka.ms/ssprsetup)) or turn on the option to require users to register automatically.  Once they click this link, they are asked to sign in with their organizational account.  After doing so, they see the following page:
@@ -118,7 +114,7 @@ If you want to learn more about what data is used by password reset, as well as 
 Now that you’ve configured a user reset policy and specified contact details for your user, this user can perform a self-service password reset.
 
 #### To perform a self-service password reset
-1.	If you go to a site like [**portal.microsoftonline.com**](http://portal.microsoftonline.com), you’ll see a login screen like the below.  Click the **Can’t access your account?** link to test the password reset UI.
+1.	If you go to a site like [**portal.microsoftonline.com**](http://portal.partner.microsoftonline.cn), you’ll see a login screen like the below.  Click the **Can’t access your account?** link to test the password reset UI.
 
     ![][011]
 
@@ -150,7 +146,7 @@ Now that you’ve configured a user reset policy and specified contact details f
 
     ![][018]
 
-9.	Once you’ve met the requirements of the organizational policy, you are allowed to choose a new password.  The password is validated based it meets AAD “strong” password requirements (see [Password policy in Azure AD](https://msdn.microsoft.com/library/azure/jj943764.aspx)), and a strength validator appears to indicate to the user whether the password entered meets that policy.
+9.	Once you’ve met the requirements of the organizational policy, you are allowed to choose a new password.  The password is validated based it meets AAD “strong” password requirements (see [Password policy in Azure AD](https://msdn.microsoft.com/zh-cn/library/azure/jj943764.aspx)), and a strength validator appears to indicate to the user whether the password entered meets that policy.
 
     ![][019]
 
@@ -174,9 +170,9 @@ This section walks you through configuring password reset to write passwords bac
 ### Writeback prerequisites
 Before you can enable and use the Password Writeback, you must make sure you complete the following prerequisites:
 
-- You have an Azure AD tenant with Azure AD Premium enabled.  For more information, see [Azure Active Directory Editions](active-directory-editions.md).
+- You have an Azure AD tenant with Azure AD Premium enabled.  For more information, see [Azure Active Directory Editions](/documentation/articles/active-directory-editions).
 - Password reset has been configured and enabled in your tenant.  For more information, see [Enable users to reset their Azure AD passwords](#enable-users-to-reset-their-azure-ad-passwords)
-- You have at least one administrator account and one test user account with an Azure AD Premium license that you can use to test this feature.  For more information, see [Azure Active Directory Editions](active-directory-editions.md).
+- You have at least one administrator account and one test user account with an Azure AD Premium license that you can use to test this feature.  For more information, see [Azure Active Directory Editions](/documentation/articles/active-directory-editions).
 
   > [AZURE.NOTE] Make sure that the administrator account that you use to enable Password Writeback is a cloud administrator account (created in Azure AD), not a federated account (created in on-premises AD and synchronized into Azure AD).
 
@@ -184,14 +180,14 @@ Before you can enable and use the Password Writeback, you must make sure you com
 
   > [AZURE.NOTE] If you are running an older version of Windows Server 2008 or 2008 R2, you can still use this feature, but will need to [download and install KB 2386717](https://support.microsoft.com/kb/2386717) before being able to enforce your local AD password policy in the cloud.
 
-- You have the Azure AD Connect tool installed and you have prepared your AD environment for synchronization to the cloud.  For more information, see [Use your on-premises identity infrastructure in the cloud](active-directory-aadconnect.md).
+- You have the Azure AD Connect tool installed and you have prepared your AD environment for synchronization to the cloud.  For more information, see [Use your on-premises identity infrastructure in the cloud](/documentation/articles/active-directory-aadconnect).
 - If you are using DirSync, you must make sure your organization’s firewall is configured to block outbound connection and unblock **TCP port 828 or 818** in order to enable and use Password Writeback.  If you are using Azure AD Sync or Azure AD Connect, this step is not necessary, as only **TCP 443** outbound (and in some cases **TCP 9350-9354**) need to be open.
 
   > [AZURE.NOTE] We highly recommend anyone using the Azure AD Sync or DirSync tools upgrades to the latest version of Azure AD Connect to ensure the best possible experience and new features as they are released.
 
 
 ### Step 1: Download the latest version of Azure AD Connect
-Password Writeback is available in releases of Azure AD Connect, or the Azure AD Sync tool with version number **1.0.0419.0911** or higher.  Password Writeback with automatic account unlock is available in releases of Azure AD Connect, or the Azure AD Sync tool with version number **1.0.0485.0222** or higher. If you are running an older version, please upgrade to at least this version before proceeding. [Click here to download the latest version of Azure AD Connect](active-directory-aadconnect.md#download-azure-ad-connect).
+Password Writeback is available in releases of Azure AD Connect, or the Azure AD Sync tool with version number **1.0.0419.0911** or higher.  Password Writeback with automatic account unlock is available in releases of Azure AD Connect, or the Azure AD Sync tool with version number **1.0.0485.0222** or higher. If you are running an older version, please upgrade to at least this version before proceeding. [Click here to download the latest version of Azure AD Connect](/documentation/articles/active-directory-aadconnect#download-azure-ad-connect).
 
 #### To check the version of Azure AD Sync
 1.	Navigate to **%ProgramFiles%\Azure Active Directory Sync\**.
@@ -204,7 +200,7 @@ Password Writeback is available in releases of Azure AD Connect, or the Azure AD
 
 If this version number is greater than or equal to **1.0.0419.0911**, or you are installing Azure AD Connect, you can skip to [Step 2: Enable Password Writeback in Azure AD Connect through the UI or powershell and verify](#step-2-enable-password-writeback-in-azure-ad-connect).
 
- > [AZURE.NOTE] If this is your first time installing the Azure AD Connect tool, it is recommended that you follow a few best practices to prepare your environment for directory synchronization.  Before you install the Azure AD Connect tool, you must activate directory synchronization in either the [Office 365 Admin Portal](https://portal.microsoftonline.com) or the [Azure Management Portal](https://manage.windowsazure.com).  For more information, see [Managing Azure AD Connect](active-directory-aadconnect-whats-next.md).
+ > [AZURE.NOTE] If this is your first time installing the Azure AD Connect tool, it is recommended that you follow a few best practices to prepare your environment for directory synchronization.  Before you install the Azure AD Connect tool, you must activate directory synchronization in either the [Office 365 Admin Portal](https://portal.partner.microsoftonline.cn) or the [Azure Management Portal](https://manage.windowsazure.cn).  For more information, see [Managing Azure AD Connect](/documentation/articles/active-directory-aadconnect-whats-next).
 
 
 ### Step 2: Enable Password Writeback in Azure AD Connect
@@ -219,7 +215,7 @@ Now that you have the Azure AD Connect tool downloaded, you are ready to enable 
 
 4.	Complete the wizard, the final page will summarize the changes and will include the Password Writeback configuration change.
 
-> [AZURE.NOTE] You can disable Password Writeback at any time by either re-running this wizard and deselecting the feature, or by setting the **Write Passwords Back to On-Premises Directory** setting to **No** in the **User Password Reset Policy** section of your directory’s **Configure** tab in the [Azure Management Portal](https://manage.windowsazure.com).  For more information about customizing your password reset experience, check out [Customize: Azure AD Password Management](active-directory-passwords-customize.md).
+> [AZURE.NOTE] You can disable Password Writeback at any time by either re-running this wizard and deselecting the feature, or by setting the **Write Passwords Back to On-Premises Directory** setting to **No** in the **User Password Reset Policy** section of your directory’s **Configure** tab in the [Azure Management Portal](https://manage.windowsazure.cn).  For more information about customizing your password reset experience, check out [Customize: Azure AD Password Management](/documentation/articles/active-directory-passwords-customize).
 
 #### To enable Password Writeback using Windows PowerShell
 1.	On your **Directory Sync computer**, open a new **elevated Windows PowerShell window**.
@@ -229,7 +225,7 @@ Now that you have the Azure AD Connect tool downloaded, you are ready to enable 
 5.	Enable Password Writeback by running the cmdlet: `Set-ADSyncAADPasswordResetConfiguration –Connector $aadConnectorName –Enable $true`
 
 > [AZURE.NOTE] If prompted for a credential, make sure that the administrator account that you specify for AzureADCredential is a **cloud administrator account (created in Azure AD)**, not a federated account (created in on-premises AD and synchronized into Azure AD.
-> [AZURE.NOTE] You can disable Password Writeback through PowerShell by repeating the same instructions above but passing `$false` in step or by setting the **Write Passwords Back to On-Premises Directory** setting to **No** in the **User Password Reset Policy section** of your directory’s **Configure** tab in the [Azure Management Portal](https://manage.windowsazure.com).
+> [AZURE.NOTE] You can disable Password Writeback through PowerShell by repeating the same instructions above but passing `$false` in step or by setting the **Write Passwords Back to On-Premises Directory** setting to **No** in the **User Password Reset Policy section** of your directory’s **Configure** tab in the [Azure Management Portal](https://manage.windowsazure.cn).
 
 #### Verify that the configuration was successful
 Once the configuration succeeds, you will see the message Password reset write-back is enabled in the Windows PowerShell window, or a success message in the configuration UI.
@@ -243,7 +239,7 @@ After you have enabled Password Writeback in the Azure AD Connect tool, you will
 
 1.	Once installation is complete, if you are blocking unknown outbound connections in your environment, you will also need to add the following rules to your firewall. Make sure you reboot your AAD Connect machine after making these changes:
    - Allow outbound connections over port 443 TCP
-   - Allow outbound connections to https://ssprsbprodncu-sb.accesscontrol.windows.net/
+   - Allow outbound connections to https://ssprsbprodncu-sb.accesscontrol.chinacloudapi.cn/
    - When using a proxy or having general connectivity issues, allow outbound connections over port 9350-9534 TCP
 
 ### Step 4: Set up the appropriate Active Directory permissions
@@ -302,15 +298,15 @@ Now that Password Writeback has been enabled, you can test that it works by rese
 **Additional Resources**
 
 
-* [What is Password Management](active-directory-passwords.md)
-* [How Password Management works](active-directory-passwords-how-it-works.md)
-* [Customize Password Management](active-directory-passwords-customize.md)
-* [Password Management Best Practices](active-directory-passwords-best-practices.md)
-* [How to get Operational Insights with Password Management Reports](active-directory-passwords-get-insights.md)
-* [Password Management FAQ](active-directory-passwords-faq.md)
-* [Troubleshoot Password Management](active-directory-passwords-troubleshoot.md)
-* [Learn More](active-directory-passwords-learn-more.md)
-* [Password Management on MSDN](https://msdn.microsoft.com/library/azure/dn510386.aspx)
+* [What is Password Management](/documentation/articles/active-directory-passwords)
+* [How Password Management works](/documentation/articles/active-directory-passwords-how-it-works)
+* [Customize Password Management](/documentation/articles/active-directory-passwords-customize)
+* [Password Management Best Practices](/documentation/articles/active-directory-passwords-best-practices)
+* [How to get Operational Insights with Password Management Reports](/documentation/articles/active-directory-passwords-get-insights)
+* [Password Management FAQ](/documentation/articles/active-directory-passwords-faq)
+* [Troubleshoot Password Management](/documentation/articles/active-directory-passwords-troubleshoot)
+* [Learn More](/documentation/articles/active-directory-passwords-learn-more)
+* [Password Management on MSDN](https://msdn.microsoft.com/zh-cn/library/azure/dn510386.aspx)
 
 
 

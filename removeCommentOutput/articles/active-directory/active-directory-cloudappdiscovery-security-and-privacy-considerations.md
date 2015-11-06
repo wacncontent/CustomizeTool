@@ -9,12 +9,8 @@
 
 <tags
 	ms.service="active-directory"
-	ms.workload="identity"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="09/03/2015"
-	ms.author="markusvi"/>
+	wacn.date=""/>
 
 # Cloud App Discovery Security and Privacy Considerations
 
@@ -30,10 +26,10 @@ This topic explains how data is collected, processed, and secured within Azure A
 
 ##Overview
 
-Cloud App Discovery is a feature of Azure AD and is hosted in Microsoft Azure. <br>
+Cloud App Discovery is a feature of Azure AD and is hosted in Windows Azure. <br>
 The Cloud App Discovery endpoint agent is used to collect application discovery data from IT managed machines. <br>
 The collected data is sent securely over an encrypted channel to the Azure AD Cloud App Discovery service. <br>
-The Cloud App Discovery data for an organization is then visible in the Azure portal. <br>
+The Cloud App Discovery data for an organization is then visible in the Azure Management Portal. <br>
 
 
 <center>![How Cloud App Discovery Works](./media/active-directory-cloudappdiscovery-security-and-privacy-considerations/cad01.png) </center> <br>
@@ -47,7 +43,7 @@ The following sections follow the flow of information and describe how it is sec
 
 In order to use Azure Active Directory’s Cloud App discovery feature to get insights into the applications used by employees in your organization, you need to first deploy the Azure AD Cloud App Discovery endpoint agent to machines in your organization.
 
-Administrators of the Azure Active Directory tenant (or their delegate) can download the agent installation package from the Azure portal. The agent can either be manually installed or installed across multiple machines in the organization using SCCM or Group Policy.
+Administrators of the Azure Active Directory tenant (or their delegate) can download the agent installation package from the Azure Management Portal. The agent can either be manually installed or installed across multiple machines in the organization using SCCM or Group Policy.
 
 For further instructions on deployment options, see [Cloud App Discovery Group Policy Deployment Guide](http://social.technet.microsoft.com/wiki/contents/articles/30965.cloud-app-discovery-group-policy-deployment-guide.aspx).
 <br>
@@ -55,7 +51,7 @@ For further instructions on deployment options, see [Cloud App Discovery Group P
 ### Data collected by the agent
 
 The information outlined in the list below is collected by the agent when a connection is made to a Web application. The information is only collected for those applications that the administrator has configured for discovery. <br>
-You can edit the list of cloud apps that the agent monitors through the Cloud App Discovery blade in the Microsoft [Azure portal](https://portal.azure.com), under **Settings**->**Data Collection**->**App Collection list**. For more details, see [Getting Started With Cloud App Discovery](http://social.technet.microsoft.com/wiki/contents/articles/30962.getting-started-with-cloud-app-discovery.aspx)
+You can edit the list of cloud apps that the agent monitors through the Cloud App Discovery blade in the Microsoft [Azure Management Portal](https://manage.windowsazure.cn), under **Settings**->**Data Collection**->**App Collection list**. For more details, see [Getting Started With Cloud App Discovery](http://social.technet.microsoft.com/wiki/contents/articles/30962.getting-started-with-cloud-app-discovery.aspx)
 <br>
 **Information Category**: User information <br>
 **Description**: <br>
@@ -145,7 +141,7 @@ The Cloud App Discovery endpoint agent only collects the information described i
 
 
 ### Intercepting data from encrypted connections (Deep inspection)
-As we mentioned earlier, administrators can configure the agent to monitor data from encrypted connections ('deep inspection'). TLS ([Transport Layer Security](https://msdn.microsoft.com/library/windows/desktop/aa380516%28v=vs.85%29.aspx)) is one of the most common protocols in use on the Internet today. By encrypting communication with TLS, a client can establish a secure and private communication channel with a web server; TLS provides essential protection for passing authentication credentials and prevent the disclosure of sensitive information.
+As we mentioned earlier, administrators can configure the agent to monitor data from encrypted connections ('deep inspection'). TLS ([Transport Layer Security](https://msdn.microsoft.com/zh-cn/library/windows/desktop/aa380516%28v=vs.85%29.aspx)) is one of the most common protocols in use on the Internet today. By encrypting communication with TLS, a client can establish a secure and private communication channel with a web server; TLS provides essential protection for passing authentication credentials and prevent the disclosure of sensitive information.
 
 While the end-to-end secure encrypted channel provided by TLS enables important security and privacy protection, the protocol is often abused for malicious or nefarious purposes. So much so, in fact, that TLS is often referred to as the “universal firewall-bypass protocol”. The root of the problem is that most firewalls are unable to inspect TLS communication because the application-layer data is encrypted with SSL. Knowing this, attackers frequently leverage TLS to deliver malicious payloads to a user confident that even the most intelligent application-layer firewalls are completely blind to TLS and must simply relay TLS communication between hosts. End users frequently leverage TLS to bypass access controls enforced by their corporate firewalls and proxy servers, using it to connect to public proxies and for tunneling non-TLS protocols through the firewall that might otherwise be blocked by policy.
 
@@ -186,9 +182,9 @@ The analyzed metadata drives the various reports in the portal.
 The unprocessed metadata and the analyzed metadata are stored for up to 180 days. In addition, customers can choose to capture the analyzed metadata in an Azure blob storage account of their choosing.
 This is useful for offline analysis of metadata as well as longer retention of the data.
 
-## Accessing the data using the Azure portal
+## Accessing the data using the Azure Management Portal
 
-In an effort to keep the metadata collected secure, by default only global administrators of the tenant have access to the Cloud App Discovery feature in the Azure portal. <br>
+In an effort to keep the metadata collected secure, by default only global administrators of the tenant have access to the Cloud App Discovery feature in the Azure Management Portal. <br>
 However, administrators can choose to delegate this access to other users or groups.
 
 
@@ -203,4 +199,4 @@ Any user accessing the data in the portal, must be licensed with an Azure AD Pre
 **Additional Resources**
 
 
-* [How can I discover unsanctioned cloud apps that are used within my organization](active-directory-cloudappdiscovery-whatis.md)
+* [How can I discover unsanctioned cloud apps that are used within my organization](/documentation/articles/active-directory-cloudappdiscovery-whatis)

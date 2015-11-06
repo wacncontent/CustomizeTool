@@ -8,13 +8,9 @@
    editor=""/>
 
 <tags
-   ms.service="na"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="identity"
-   ms.date="08/31/2015"
-   ms.author="inhenk"/>
+	ms.service="na"
+	ms.date="08/31/2015"
+	wacn.date=""/>
 
 # The Azure Privileged Identity Management Security Wizard
 
@@ -67,4 +63,4 @@ Click the **OK** button. When you are finished.
 After you have made changes, the wizard will no longer show up. However, you can access it again by clicking the Wizard button under Manage identities.
 
 ## Next steps
-[AZURE.INCLUDE [active-directory-privileged-identity-management-toc](../../includes/active-directory-privileged-identity-management-toc.md)]
+[AZURE.INCLUDE [active-directory-privileged-identity-management-toc](../includes/active-directory-privileged-identity-management-toc.md)]

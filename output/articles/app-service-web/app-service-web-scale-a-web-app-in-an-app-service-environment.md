@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties 
 	pageTitle="How to Scale a Web App in an Azure Websites Environment" 
 	description="Scaling a web app in an Azure Websites Environment" 

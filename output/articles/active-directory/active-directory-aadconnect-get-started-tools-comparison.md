@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Directory integration tools comparison | Microsoft Azure"
+	pageTitle="Directory integration tools comparison | Windows Azure"
 	description="This is page will provide you with comprehensive tables that compare the various directory integration tools."
 	services="active-directory"
 	documentationCenter=""
@@ -9,12 +9,8 @@
 
 <tags
 	ms.service="active-directory"
-	ms.workload="identity"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="10/13/2015"
-	ms.author="billmath"/>
+	wacn.date=""/>
 
 # Directory integration tools comparison
 
@@ -91,4 +87,4 @@ Allow removing attributes from flowing from AD to Azure AD | ● | ● |  |
 Allow advanced customization for attribute flows | ● | ● |  | ●  
 
 ## Next steps
-Learn more about [Integrating your on-premises identities with Azure Active Directory](active-directory-aadconnect.md).
+Learn more about [Integrating your on-premises identities with Azure Active Directory](/documentation/articles/active-directory-aadconnect).

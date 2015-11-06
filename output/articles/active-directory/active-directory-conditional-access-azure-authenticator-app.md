@@ -1,7 +1,7 @@
 
 <properties
-	pageTitle="Azure Authenticator for Android | Microsoft Azure"
-	description="Microsoft Azure Authenticator app can be used to sign-in to access work resources. The Azure Authenticator app notifies you of a pending two-factor verification request by displaying an alert to your mobile device."
+	pageTitle="Azure Authenticator for Android | Windows Azure"
+	description="Windows Azure Authenticator app can be used to sign-in to access work resources. The Azure Authenticator app notifies you of a pending two-factor verification request by displaying an alert to your mobile device."
 	services="active-directory"
 	documentationCenter=""
 	authors="femila"
@@ -10,16 +10,12 @@
 
 <tags
 	ms.service="active-directory"
-	ms.workload="identity"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="08/19/2015"
-	ms.author="femila"/>
+	wacn.date=""/>
 
 # Azure Authenticator for Android
 
-Your IT administrator may have recommended you to use the Microsoft Azure Authenticator to sign-in to access your work resources. This application provides these two sign-in options:
+Your IT administrator may have recommended you to use the Windows Azure Authenticator to sign-in to access your work resources. This application provides these two sign-in options:
 
 * Multi-Factor Authentication allows you to secure your work or school accounts with two-step verification. You sign-in using something you know (for example, your password) and protect the account even further with something you have (a security key from this app). The Azure Authenticator app notifies you of a pending two-factor verification request by displaying an alert to your mobile device. You need to simply view the request in the app and tap verify or cancel. Alternately, you may be prompted to enter the passcode displayed in the app.
 
@@ -89,7 +85,7 @@ After you have installed the Azure Authenticator app, you can also create a work
 
 1. Follow the guidance on Microsoft Support to report an incident with the Azure Authenticator app, obtain an incident number, and send log files against the assigned incident number as follows:
 2. From the pop up menu, click **Logging**.
-3. If you have an open incident with Microsoft Support, make note of the incident number (you'll need it for a later step). If you have not already created a support incident and would like assistance, follow the guidance at [Microsoft Support](https://support.microsoft.com/en-us/contactus) to open a new incident.
+3. If you have an open incident with Microsoft Support, make note of the incident number (you'll need it for a later step). If you have not already created a support incident and would like assistance, follow the guidance at [Microsoft Support](https://support.microsoft.com/contactus) to open a new incident.
 4. On the logging screen, click **Send Now**.
 5. Select the email provider you want to use.
 7. If you already have an open incident Microsoft Support, contact the Support Engineer assigned to your issue to find out how to send the log data and have it associated with your incident. The Support Engineer will provide you with information for the email address and subject line. If you do not already have a support incident, please follow the guidance at Microsoft Support to open a new incident.

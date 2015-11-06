@@ -36,7 +36,7 @@ This tutorial is built on the [GetStartedWithData app][Developer Code Samples si
 
 1. Download the GetStartedWithData sample app project from the [Developer Code Samples site]. 
 
-	>[AZURE.NOTE]To create a Windows Phone Silverlght 8.1 app, just change the target OS in the downloaded Windows Phone Silverlight 8 app project to Windows Phone 8.1. To create a Windows Phone Store app, download the [Windows Phone Store app version](http://go.microsoft.com/fwlink/p/?LinkId=397372) of the GetStartedWithData sample app project. 
+	>[AZURE.NOTE]To create a Windows Phone Silverlght 8.1 app, just change the target OS in the downloaded Windows Phone Silverlight 8 app project to Windows Phone 8.1. To create a Windows Phone Store app, download the [Windows Phone Store app version](https://code.msdn.microsoft.com:443/Get-Started-with-Data-in-fac27cfd) of the GetStartedWithData sample app project. 
 
 2. In Visual Studio, open the downloaded project and examine the MainPage.xaml.cs file.
 

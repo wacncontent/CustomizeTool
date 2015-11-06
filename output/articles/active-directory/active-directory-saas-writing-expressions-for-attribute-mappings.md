@@ -9,12 +9,8 @@
 
 <tags
 	ms.service="active-directory"
-	ms.workload="identity"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="07/27/2015"
-	ms.author="markusvi"/>
+	wacn.date=""/>
 
 
 # Writing Expressions for Attribute Mappings in Azure Active Directory
@@ -89,7 +85,7 @@ Takes a date string from one format and converts it into a different format.
 |Name| Required/ Repeating | Type | Notes |
 |--- | ---                 | ---  | ---   |
 | **source** | Required | String | Usually name of the attribute from the source object. |
-| **inputFormat** | Required | String | Expected format of the source value. For supported formats, see [http://msdn.microsoft.com/library/8kb3ddd4%28v=vs.110%29.aspx](http://msdn.microsoft.com/library/8kb3ddd4%28v=vs.110%29.aspx). |
+| **inputFormat** | Required | String | Expected format of the source value. For supported formats, see [http://msdn.microsoft.com/zh-cn/library/8kb3ddd4%28v=vs.110%29.aspx](http://msdn.microsoft.com/zh-cn/library/8kb3ddd4%28v=vs.110%29.aspx). |
 | **outputFormat** | Required | String | Format of the output date. |
 
 
@@ -329,4 +325,4 @@ If the state code doesn't match any of the predefined options, use default value
 - **OUTPUT**: "Australia/Brisbane"
 
 
-[AZURE.INCLUDE [saas-toc](../../includes/active-directory-saas-toc.md)]
+[AZURE.INCLUDE [saas-toc](../includes/active-directory-saas-toc.md)]

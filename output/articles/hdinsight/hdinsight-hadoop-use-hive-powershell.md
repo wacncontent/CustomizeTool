@@ -17,26 +17,18 @@
 
 [AZURE.INCLUDE [hive-selector](../includes/hdinsight-selector-use-hive.md)]
 
-<!-- deleted by customization
 This document provides an example of using Azure PowerShell in the Azure Resource Group mode to run Hive queries in a Hadoop on HDInsight cluster. For using Azure PowerShell in the Azure Service mode, see [Run Hive queries using PowerShell ASM mode](/documentation/articles/hdinsight-hadoop-use-hive-powershell-v1).
 
--->
 > [AZURE.NOTE] This document does not provide a detailed description of what the HiveQL statements that are used in the examples do. For information on the HiveQL that is used in this example, see [Use Hive with Hadoop on HDInsight](/documentation/articles/hdinsight-use-hive).
 
 
-<!-- keep by customization: begin -->
-<a id="prereq"></a>
-<!-- keep by customization: end -->
 **Prerequisites**
 
 To complete the steps in this article, you will need the following.
 
-- **An Azure HDInsight (Hadoop on HDInsight) cluster (Windows-based <!-- deleted by customization or Linux-based -->)**
+- **An Azure HDInsight (Hadoop on HDInsight) cluster (Windows-based or Linux-based)**
 - **A workstation with Azure PowerShell**. See [Install and use Azure PowerShell](/documentation/articles/install-configure-powershell).
 
-<!-- keep by customization: begin -->
-<a id="powershell"></a>
-<!-- keep by customization: end -->
 ##Run Hive queries using Azure PowerShell
 
 Azure PowerShell provides *cmdlets* that allow you to remotely run Hive queries on HDInsight. Internally, this is accomplished by using REST calls to [WebHCat](https://cwiki.apache.org/confluence/display/Hive/WebHCat) (formerly called Templeton) running on the HDInsight cluster.
@@ -132,9 +124,6 @@ The following steps demonstrate how to use these cmdlets to run a job in your HD
 	>
 	> For more information about **Here-Strings**, see <a href="http://technet.microsoft.com/zh-cn/library/ee692792.aspx" target="_blank">Using Windows PowerShell Here-Strings</a>.
 
-<!-- keep by customization: begin -->
-<a id="troubleshooting"></a>
-<!-- keep by customization: end -->
 ##Troubleshooting
 
 If no information is returned when the job completes, an error may have occurred during processing. To view error information for this job, add the following to the end of the **hivejob.ps1** file, save it, and then run it again.
@@ -145,16 +134,10 @@ If no information is returned when the job completes, an error may have occurred
 
 This returns the information that is written to STDERR on the server when you ran the job, and it may help determine why the job is failing.
 
-<!-- keep by customization: begin -->
-<a id="summary"></a>
-<!-- keep by customization: end -->
 ##Summary
 
 As you can see, Azure PowerShell provides an easy way to run Hive queries in an HDInsight cluster, monitor the job status, and retrieve the output.
 
-<!-- keep by customization: begin -->
-<a id="nextsteps"></a>
-<!-- keep by customization: end -->
 ##Next steps
 
 For general information about Hive in HDInsight:

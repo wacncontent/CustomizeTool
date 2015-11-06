@@ -33,10 +33,8 @@ You will learn:
 By following this tutorial, you will build a simple registration web app in PHP. The application will be hosted in a Web App. A screenshot of the completed application is below:
 
 ![Azure PHP Web Site][running-app]
-<!-- deleted by customization
 
 >[AZURE.NOTE] If you want to get started with Azure Websites before signing up for an account, go to [Try Azure Websites](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure Websites. No credit cards required, no commitments. 
--->
 
 
 ##Create a web app and set up FTP publishing
@@ -47,7 +45,6 @@ Follow these steps to create a web app and a MySQL database:
 2. Click the **+ New** icon on the bottom left of the portal.
 
 	![Create New Azure Web Site][new-website]
-<!-- deleted by customization
 
 3. Click **Web + Mobile**, then **Web app + MySQL**.
 
@@ -77,35 +74,6 @@ Follow these steps to create a web app and a MySQL database:
 
 	![Create publishing credentials][portal-ftp-username-password]
 
--->
-<!-- keep by customization: begin -->
-3. Click ** Website**, then **CUSTOM CREATE**.
-
-	![Custom Create a new  Website][custom-create]
-	
-	Enter a value for **URL**, select **Create a New MySQL Database** from the **DATABASE** dropdown,  and select the data center for your  Website in the **REGION** dropdown. Click the arrow at the bottom of the dialog.
-
-	![Fill in  Website details][ Website-details]
-
-4. Enter a value for the **NAME** of your database, select the data center for your database in the **REGION** dropdown, and check the box that indicates you agree with the legal terms. Click the checkmark at the bottom of the dialog.
-
-	![Create new MySQL database][new-mysql-db]
-
-	When the  Website has been created you will see the text **Creation of  Website ‘[SITENAME]’ completed successfully**. Now, you can enable FTP publishing.
-
-5. Click the name of the  Website displayed in the list of  Websites to open the  Website’s **QUICKSTART** dashboard.
-
-	![Open  Website dashboard][go-to-dashboard]
-
-
-6. At the bottom of the **QUICKSTART** page, click **Reset deployment credentials**. 
-
-	![Reset deployment credentials][reset-deployment-credentials]
-
-7. To enable FTP publishing, you must provide a user name and password. Make a note of the user name and password you create.
-
-	![Create publishing credentials][portal-git-username-password]
-<!-- keep by customization: end -->
 ##Build and test your app locally
 
 The Registration application is a simple PHP application that allows you to register for an event by providing your name and email address. Information about previous registrants is displayed in a table. Registration information is stored in a MySQL database. The app consists of two files:
@@ -301,18 +269,11 @@ Now you are ready to publish your app using FTP.
 After you have connected you will be able to upload and download files as needed. Be sure that you are uploading files to the root directory, which is `/site/wwwroot`.
 
 After uploading both `index.php` and `createtable.php`, browse to **http://[site name].chinacloudsites.cn/createtable.php** to create the MySQL table for the application, then browse to **http://[site name].chinacloudsites.cn/index.php** to begin using the application.
-<!-- deleted by customization
  
 ## Next steps
 
 For more information, see the [PHP Developer Center](/develop/php/).
 
--->
-<!-- keep by customization: begin -->
-[go-to-dashboard]: ./media/web-sites-php-web-site-mysql-deploy-use-ftp/go_to_dashboard.png
-[reset-deployment-credentials]: ./media/web-sites-php-web-site-mysql-deploy-use-ftp/reset-deployment-credentials.png
-[portal-git-username-password]: ./media/web-sites-php-web-site-mysql-deploy-use-ftp/git-deployment-credentials.png
-<!-- keep by customization: end -->
 [install-php]: http://www.php.net/manual/en/install.php
 [install-mysql]: http://dev.mysql.com/doc/refman/5.6/en/installing.html
 [pdo-mysql]: http://www.php.net/manual/en/ref.pdo-mysql.php

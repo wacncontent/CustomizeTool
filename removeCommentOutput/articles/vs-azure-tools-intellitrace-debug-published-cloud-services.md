@@ -17,7 +17,7 @@
 
 ##Overview
 
-With IntelliTrace, you can log extensive debugging information for a role instance when it runs in Azure. If you need to find the cause of a problem, you can use the IntelliTrace logs to step through your code from Visual Studio as if it were running in Azure. In effect, IntelliTrace records key code execution and environment data when your Azure application is running as a cloud service in Azure, and lets you replay the recorded data from Visual Studio. As an alternative, you can use remote debugging to attach directly to a cloud service that's running in Azure. See [Debugging Cloud Services](http://go.microsoft.com/fwlink/p/?LinkId=623041).
+With IntelliTrace, you can log extensive debugging information for a role instance when it runs in Azure. If you need to find the cause of a problem, you can use the IntelliTrace logs to step through your code from Visual Studio as if it were running in Azure. In effect, IntelliTrace records key code execution and environment data when your Azure application is running as a cloud service in Azure, and lets you replay the recorded data from Visual Studio. As an alternative, you can use remote debugging to attach directly to a cloud service that's running in Azure. See [Debugging Cloud Services](/documentation/articles/vs-azure-tools-debugging-cloud-services-overview/).
 
 >[AZURE.IMPORTANT] IntelliTrace is intended for debug scenarios only, and should not be used for a production deployment.
 
@@ -25,7 +25,7 @@ With IntelliTrace, you can log extensive debugging information for a role instan
 
 ## To configure an Azure application for IntelliTrace
 
-To enable IntelliTrace for an Azure application, you must create and publish the application from a Visual Studio Azure project. You must configure IntelliTrace for your Azure application before you publish it to Azure. If you publish your application without configuring IntelliTrace but then decide that you want to do that, you will have to publish the application again from Visual Studio. For more information, see [Publishing a Cloud Service using the Azure Tools](http://go.microsoft.com/fwlink/p/?LinkId=623012).
+To enable IntelliTrace for an Azure application, you must create and publish the application from a Visual Studio Azure project. You must configure IntelliTrace for your Azure application before you publish it to Azure. If you publish your application without configuring IntelliTrace but then decide that you want to do that, you will have to publish the application again from Visual Studio. For more information, see [Publishing a Cloud Service using the Azure Tools](https://msdn.microsoft.com/zh-cn/library/azure/ff683672.aspx).
 
 1. When you are ready to deploy your Azure application, verify that your project build targets are set to **Debug**.
 
@@ -39,7 +39,7 @@ To enable IntelliTrace for an Azure application, you must create and publish the
 
 1. To customize the basic IntelliTrace configuration, choose the **Settings** hyperlink.
 
-    The IntelliTrace Settings dialog appears, as shown in the following figure. You can specify which events to log, whether to collect call information, which modules and processes to collect logs for, and how much space to allocate to the recording. For more information about IntelliTrace, see [Debugging with IntelliTrace](http://go.microsoft.com/fwlink/?LinkId=214468).
+    The IntelliTrace Settings dialog appears, as shown in the following figure. You can specify which events to log, whether to collect call information, which modules and processes to collect logs for, and how much space to allocate to the recording. For more information about IntelliTrace, see [Debugging with IntelliTrace](https://msdn.microsoft.com/zh-cn/library/dd264915.aspx).
 
     ![VST_IntelliTraceSettings](./media/vs-azure-tools-intellitrace-debug-published-cloud-services/IC519063.png)
 

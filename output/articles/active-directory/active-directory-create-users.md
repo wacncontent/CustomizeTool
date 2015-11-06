@@ -9,12 +9,8 @@
 
 <tags
 	ms.service="active-directory"
-	ms.workload="identity"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="09/21/2015"
-	ms.author="curtand"/>
+	wacn.date=""/>
 
 # Create or edit users in Azure AD
 
@@ -29,13 +25,13 @@ You have to create an account for every user who will access a Microsoft cloud s
 	2. **User with an existing Microsoft account** – Indicates that you want to add an existing Microsoft account to your directory in order to collaborate on Azure resources with a co-administrator who accesses Azure with a Microsoft account.
 	3. **User in another Azure AD directory** – Indicates that you want to add a user account to your directory that is sourced from another Azure AD directory. You need to be a member of the other directory to select a user in it.
 4. Depending on the option you selected, type either a user name, or Microsoft account name that this user will sign in with.
-5. On the user **Profile** page, provide a user’s first and last name, a user friendly name, and a user role from the Roles drop-down menu. For more information about user and administrator roles, see [Assigning administrator roles in Azure AD](active-directory-assign-admin-roles.md). Specify whether to **Enable Multi-Factor Authentication**.
+5. On the user **Profile** page, provide a user’s first and last name, a user friendly name, and a user role from the Roles drop-down menu. For more information about user and administrator roles, see [Assigning administrator roles in Azure AD](/documentation/articles/active-directory-assign-admin-roles). Specify whether to **Enable Multi-Factor Authentication**.
 6. On the **Get temporary password** page, click **Create**.
 
 If your organization uses more than one domain, you should know about the following issues when you create a user account:
 
-- You can create user accounts with the same user principal name (UPN) across domains if you first create, for example, geoffgrisso@contoso.onmicrosoft.com followed by geoffgrisso@contoso.com.
-- You cannot create geoffgrisso@contoso.com followed by geoffgrisso@contoso.onmicrosoft.com.
+- You can create user accounts with the same user principal name (UPN) across domains if you first create, for example, geoffgrisso@contoso.partner.onmschina.cn followed by geoffgrisso@contoso.com.
+- You cannot create geoffgrisso@contoso.com followed by geoffgrisso@contoso.partner.onmschina.cn.
 
 ## Edit a user
 
@@ -86,8 +82,8 @@ Guests have a limited set of rights in the directory. These rights limit the abi
 
 ## Configure user access policies
 
-The **Configure** tab of a directory includes options to control access for external users. These options can be changed only in the UI (there is no Windows PowerShell or API method) in the full Azure portal by a directory global administrator.
-To open the **Configure** tab in the Azure portal, click **Active Directory**, and then click the name of the directory.
+The **Configure** tab of a directory includes options to control access for external users. These options can be changed only in the UI (there is no Windows PowerShell or API method) in the full Azure Management Portal by a directory global administrator.
+To open the **Configure** tab in the Azure Management Portal, click **Active Directory**, and then click the name of the directory.
 
 ![][1]
 
@@ -105,9 +101,9 @@ The ability for guests to see limited details of a user or group allows them to 
 
 ## What's next
 
-- [Administering Azure AD](active-directory-administer.md)
-- [Manage passwords in Azure AD](active-directory-manage-passwords.md)
-- [Manage groups in Azure AD](active-directory-manage-groups.md)
+- [Administering Azure AD](/documentation/articles/active-directory-administer)
+- [Manage passwords in Azure AD](/documentation/articles/active-directory-manage-passwords)
+- [Manage groups in Azure AD](/documentation/articles/active-directory-manage-groups)
 
 <!--Image references-->
 [1]: ./media/active-directory-create-users/RBACDirConfigTab.png

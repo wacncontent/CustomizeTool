@@ -22,6 +22,7 @@ Hadoop provides a streaming API for MapReduce that enables you to write map and 
 
 ![HDI.WordCountDiagram][image-hdi-wordcountdiagram]
 
+> [AZURE.NOTE] The steps in this article apply only to Windows-based Azure HDInsight clusters. For an example of streaming for Linux-based HDInsight, see [Develop Python streaming programs for HDInsight](/documentation/articles/hdinsight-hadoop-streaming-python).
 
 This tutorial shows you how to:
 
@@ -29,20 +30,14 @@ This tutorial shows you how to:
 - Run the same MapReduce job on Azure HDInsight
 - Retrieve the results of the MapReduce job
 
-
-<a name="prerequisites"></a>
-
 ##Prerequisites
 
 Before you begin this tutorial, you must have done the following:
 
 - Install the HDInsight Emulator. For instructions, see [Get started using HDInsight Emulator][hdinsight-get-started-emulator].
 - Install Azure PowerShell on the emulator computer. For instructions, see [Install and configure Azure PowerShell][powershell-install].
-- Obtain an Azure subscription. For instructions, see [Purchase Options][azure-purchase-options],  [Trial][azure-trial].
+- Obtain an Azure subscription. For instructions, see [Purchase Options][azure-purchase-options], [Member Offers][azure-member-offers], or [Trial][azure-trial].
 
-
-
-<a name="develop"></a>
 
 ##Develop a word-count Hadoop streaming program in C&#35;
 
@@ -156,9 +151,6 @@ The mapper and reducer executables are located at:
 - C:\Tutorials\WordCount\WordCountMapper\bin\Debug\WordCountMapper.exe
 - C:\Tutorials\WordCount\WordCountReducer\bin\Debug\WordCountReducer.exe
 
-
-
-<a name="test"></a>
 
 ##Test the program on the emulator
 
@@ -292,9 +284,6 @@ This tutorial uses the .txt files located in the %hadoop_home% directory.
 
 	You can append "|more" at the end of the command to get the page view.
 
-
-<a id="upload"></a>
-
 ##Upload data to Azure Blob storage
 Azure HDInsight uses Azure Blob storage as the default file system. You can configure an HDInsight cluster to use additional Blob storage for the data files. In this section, you will create an Azure Storage account and upload the data files to the Blob storage. The data files are the .txt files in the %hadoop_home%\share\doc\hadoop\common directory.
 
@@ -383,9 +372,6 @@ Azure HDInsight uses Azure Blob storage as the default file system. You can conf
 
 	You shall see both application files listed there.
 
-
-
-<a name="run"></a>
 
 ##Run the MapReduce job on Azure HDInsight
 
@@ -503,9 +489,6 @@ This section provides an Azure PowerShell script that performs all the tasks rel
 For an HDInsight .NET SDK sample on submitting Hadoop streaming jobs, see [Submit Hadoop jobs programmatically][hdinsight-submit-jobs].
 
 
-
-<a name="retrieve"></a>
-
 ##Retrieve the MapReduce job output
 This section shows you how to download and display the output. For information on displaying the results in Excel, see [Connect Excel to HDInsight with the Microsoft Hive ODBC Driver][hdinsight-ODBC] and [Connect Excel to HDInsight with Power Query][hdinsight-power-query].
 
@@ -531,9 +514,6 @@ This section shows you how to download and display the output. For information o
 		Get-AzureStorageBlobContent -Container $ContainerName -Blob $blobName -Context $storageContext -Force
 		cat "./$blobName" | findstr "there"
 
-<a id="nextsteps"></a>
-
-
 
 
 ##Next steps
@@ -549,7 +529,7 @@ In this tutorial, you have learned how to develop a Hadoop streaming MapReduce j
 - [Use Pig with HDInsight][hdinsight-use-pig]
 
 [azure-purchase-options]: /pricing/overview/
-
+[azure-member-offers]: http://azure.microsoft.com/pricing/member-offers/
 [azure-trial]: /pricing/1rmb-trial/
 
 [hdinsight-develop-mapreduce]: /documentation/articles/hdinsight-develop-deploy-java-mapreduce

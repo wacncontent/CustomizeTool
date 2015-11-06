@@ -33,7 +33,7 @@ After completing the steps in this document, you will have a basic topology that
 
 The following environment variables may be set when you install Java and the JDK. However, you should check that they exist and that they contain the correct values for your system.
 
-* **JAVA_HOME** - should point to the directory where the Java runtime environment (JRE) is installed. For example, <!-- deleted by customization in a Unix or Linux distribution, it should have a value similar to `/usr/lib/jvm/java-7-oracle`. --> In Windows, it would have a value similar to `c:\Program Files (x86)\Java\jre1.7`
+* **JAVA_HOME** - should point to the directory where the Java runtime environment (JRE) is installed. For example, in a Unix or Linux distribution, it should have a value similar to `/usr/lib/jvm/java-7-oracle`. In Windows, it would have a value similar to `c:\Program Files (x86)\Java\jre1.7`
 
 * **PATH** - should contain the following paths:
 
@@ -450,10 +450,8 @@ Trident is a high-level abstraction that is provided by Storm. It supports state
 Trident applications can be created by using Maven projects. You use the same basic steps as presented earlier in this article—only the code is different.
 
 For more information about Trident, see the <a href="http://storm.apache.org/documentation/Trident-API-Overview.html" target="_blank">Trident API Overview</a>.
-<!-- deleted by customization
 
 For an example of a Trident application, see [Twitter trending topics with Apache Storm on HDInsight](/documentation/articles/hdinsight-storm-twitter-trending).
--->
 
 ##Next Steps
 

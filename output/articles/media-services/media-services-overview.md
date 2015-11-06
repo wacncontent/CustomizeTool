@@ -35,13 +35,11 @@ You can view AMS learning paths here:
 
 - [AMS Live Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/)
 - [AMS on Demand Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/)
-<!-- deleted by customization
 
 ##Poster
 
 
 [Here](http://azure.microsoft.com/documentation/infographics/media-services/) you can view the Azure Media Services  poster that depicts AMS workflows, from media creation through consumption. 
--->
 
 ##Prerequisites
 

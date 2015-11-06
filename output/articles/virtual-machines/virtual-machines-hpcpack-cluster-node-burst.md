@@ -33,7 +33,7 @@ same as the one to “burst to Azure” to add cloud compute capacity to an
 on-premises HPC Pack cluster. For a tutorial, see [Set up a hybrid compute cluster with Microsoft HPC Pack](/documentation/articles/cloud-services-setup-hybrid-hpcpack-cluster). For
 detailed guidance and considerations for production deployments, see
 [Burst to Azure with Microsoft HPC
-Pack](http://go.microsoft.com/fwlink/p/?LinkID=200493).
+Pack](https://technet.microsoft.com/library/gg481749.aspx).
 
 If you want to use the A8 or A9 compute intensive instance size, see
 [About the A8, A9, A10, and A11 compute-intensive instances](/documentation/articles/virtual-machines-a8-a9-a10-a11-specs).

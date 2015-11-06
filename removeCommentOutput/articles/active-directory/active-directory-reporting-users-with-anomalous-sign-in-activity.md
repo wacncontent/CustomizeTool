@@ -9,12 +9,8 @@
 
 <tags
 	ms.service="active-directory"
-	ms.workload="identity"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="08/17/2015"
-	ms.author="saah;kenhoff"/>
+	wacn.date=""/>
 
 # Users with anomalous sign in activity
 This is an aggregate report that combines suspicious sign ins from the following reports:

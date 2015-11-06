@@ -56,11 +56,11 @@ If you have a connection string for your web application that uses a SQL Server 
 
 ### To use a SQL Database instance in your web role for your connection string
 
-1. To create an instance of SQL Database in the Azure Management Portal, follow the steps in the following article: [Create a SQL Database Server](http://go.microsoft.com/fwlink/?LinkId=225109).
+1. To create an instance of SQL Database in the Azure Management Portal, follow the steps in the following article: [Create a SQL Database Server](http://social.technet.microsoft.com/wiki/contents/articles/1884.getting-started-with-windows-azure-sql-database-using-the-windows-azure-management-portal.aspx).
 
     >[AZURE.NOTE] When you set up the firewall rules for your instance of SQL Database, you must select the **Allow other Azure services to access this server** check box.
 
-1. To create an instance of SQL Database to use for your connection string, follow the steps in the next section in the following article: [Create a SQL Database](http://go.microsoft.com/fwlink/?LinkId=225110).
+1. To create an instance of SQL Database to use for your connection string, follow the steps in the next section in the following article: [Create a SQL Database](http://social.technet.microsoft.com/wiki/contents/articles/1884.getting-started-with-windows-azure-sql-database-using-the-windows-azure-management-portal.aspx).
 
 1. To copy the ADO.NET connection string to use for your connection string, perform the following steps in the management portal for Azure.  
 
@@ -98,7 +98,7 @@ If you have a connection string for your web application that uses a SQL Server 
 
 ### To use an instance of SQL Database by using the Azure Management Portal
 
-1. In the [Azure Management Portal](http://go.microsoft.com/fwlink/?LinkID=213885), choose the SQL Databases node.
+1. In the [Azure Management Portal](https://manage.windowsazure.cn/), choose the SQL Databases node.
 
   - If the instance of SQL Database that you want to use appears, choose to open it.
 

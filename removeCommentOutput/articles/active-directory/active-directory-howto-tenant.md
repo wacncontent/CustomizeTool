@@ -1,5 +1,5 @@
 <properties
-	pageTitle="How to get an Azure AD tenant | Microsoft Azure"
+	pageTitle="How to get an Azure AD tenant | Windows Azure"
 	description="How to get an Azure Active Directory tenant for registering and building applications."
 	services="active-directory"
 	documentationCenter=""
@@ -9,16 +9,12 @@
 
 <tags
 	ms.service="active-directory"
-	ms.workload="identity"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="hero-article"
 	ms.date="09/28/2015"
-	ms.author="dastrock"/>
+	wacn.date=""/>
 
 # How to get an Azure Active Directory tenant
 
-In Azure Active Directory (Azure AD), a [tenant](https://msdn.microsoft.com/library/azure/jj573650.aspx#BKMK_WhatIsAnAzureADTenant) is representative of an organization.  It is a dedicated instance of the Azure AD service that an organization receives and owns when it signs up for a Microsoft cloud service such as Azure, Microsoft Intune, or Office 365.  Each Azure AD tenant is distinct and separate from other Azure AD tenants.  
+In Azure Active Directory (Azure AD), a [tenant](https://msdn.microsoft.com/zh-cn/library/azure/jj573650.aspx#BKMK_WhatIsAnAzureADTenant) is representative of an organization.  It is a dedicated instance of the Azure AD service that an organization receives and owns when it signs up for a Microsoft cloud service such as Azure, Microsoft Intune, or Office 365.  Each Azure AD tenant is distinct and separate from other Azure AD tenants.  
 
 A tenant houses the users in a company and the information about them - their passwords, user profile data, permissions, and so on.  It also contains groups, applications, and other information pertaining to an organization and its security.
 
@@ -32,14 +28,14 @@ So, how do you go about getting an Azure AD tenant?  The process might be a litt
 - [Have none of the above & want to start from scratch](#start-from-scratch)
 
 ## Use an existing Office 365 subscription
-If you have an existing Office 365 subscription but don't have an Azure subscription (and can't sign into the [Azure Management Portal](https://manage.windowsazure.com)), please follow [these instructions](https://technet.microsoft.com/library/dn832618.aspx) to gain access to your Azure AD tenant.
+If you have an existing Office 365 subscription but don't have an Azure subscription (and can't sign into the [Azure Management Portal](https://manage.windowsazure.cn)), please follow [these instructions](https://technet.microsoft.com/zh-cn/library/dn832618.aspx) to gain access to your Azure AD tenant.
 
 ## Use an MSA Azure subscription
-If you have previously signed up for an Azure subscription with your individual Microsoft Account, you already have a tenant!  In the [Azure Management Portal](https://manage.windowsazure.com), you should find a tenant named "Default Tenant" listed under "All Items" and "Active Directory."  You are free to use this tenant as you see fit - but you may want to create an Organizational administrator account.
+If you have previously signed up for an Azure subscription with your individual Microsoft Account, you already have a tenant!  In the [Azure Management Portal](https://manage.windowsazure.cn), you should find a tenant named "Default Tenant" listed under "All Items" and "Active Directory."  You are free to use this tenant as you see fit - but you may want to create an Organizational administrator account.
 
 To do so, follow these steps.  Alternatively, you may wish to create a new tenant and create an administrator in that tenant following a similar process.
 
-1.	Log into the [Azure Management Portal](https://manage.windowsazure.com) with your individual account
+1.	Log into the [Azure Management Portal](https://manage.windowsazure.cn) with your individual account
 2.	Navigate to the “Active Directory” section of the portal (found in the left nav bar)
 3.	Select the “Default Directory” entry in the list of available directories
 4.	Click on the Users link at the top of the page.  You will see a single user in the list with value “Microsoft account” in the Sourced From column
@@ -57,10 +53,10 @@ To do so, follow these steps.  Alternatively, you may wish to create a new tenan
 
 
 ## Use an organizational Azure subscription
-If you have previously signed up for an Azure subscription with your organizational account, you already have a tenant!  In the [Azure Management Portal](https://manage.windowsazure.com), you should find a tenant listed under "All Items" and "Active Directory."  You are free to use this tenant as you see fit.  You may also wish to create a new tenant using the "New" button in the bottom left hand corner of the portal.
+If you have previously signed up for an Azure subscription with your organizational account, you already have a tenant!  In the [Azure Management Portal](https://manage.windowsazure.cn), you should find a tenant listed under "All Items" and "Active Directory."  You are free to use this tenant as you see fit.  You may also wish to create a new tenant using the "New" button in the bottom left hand corner of the portal.
 
 
 ## Start from scratch
-If all of the above is gibberish to you, don't worry.  Simply visit [https://account.windowsazure.com/organization](https://account.windowsazure.com/organization) to sign up for Azure with a new organization.  Once you've completed the process, you will have your very own Azure AD tenant with the domain name you chose during sign up.  In the [Azure Management Portal](https://manage.windowsazure.com), you can find your tenant by navigating to "Active Directory" in the left hand nav.
+If all of the above is gibberish to you, don't worry.  Simply visit [https://account.windowsazure.cn/organization](https://account.windowsazure.cn/organization) to sign up for Azure with a new organization.  Once you've completed the process, you will have your very own Azure AD tenant with the domain name you chose during sign up.  In the [Azure Management Portal](https://manage.windowsazure.cn), you can find your tenant by navigating to "Active Directory" in the left hand nav.
 
 As part of the process of signing up for Azure, you will be required to provide credit card details.  You can proceed with confidence - you will not be charged for publishing applications in Azure AD or creating new tenants.

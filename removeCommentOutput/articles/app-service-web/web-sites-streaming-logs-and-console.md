@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties 
 	pageTitle="Streaming logs and console" 
 	description="Streaming logs and console overview" 

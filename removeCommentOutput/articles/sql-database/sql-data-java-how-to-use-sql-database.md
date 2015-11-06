@@ -181,8 +181,8 @@ The following code shows you how to create a table named **Person**.
 			    String sqlString = 
 					"CREATE TABLE Person (" + 
 			        	"[PersonID] [int] IDENTITY(1,1) NOT NULL," +
-			            "[LastName] [nvarchar](/documentation/articles/50) NOT NULL," + 
-			            "[FirstName] [nvarchar](/documentation/articles/50) NOT NULL)";
+			            "[LastName] [nvarchar](50) NOT NULL," + 
+			            "[FirstName] [nvarchar](50) NOT NULL)";
 			
 			    // Use the connection to create the SQL statement.
 			    statement = connection.createStatement();

@@ -7,14 +7,10 @@
 	manager="wpickett" 
 	editor="mollybos"/>
 
-<tags 
-	ms.service="active-directory" 
-	ms.workload="identity" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="PHP" 
-	ms.topic="article" 
-	ms.date="07/17/2015" 
-	ms.author="tomfitz"/>
+<tags
+	ms.service="active-directory"
+	ms.date="07/17/2015"
+	wacn.date=""/>
 
 # Web Single Sign-On with PHP and Azure Active Directory
 
@@ -118,7 +114,7 @@ This step shows you how to add support for federated login using Windows Identit
 
 3. In the new **federation.ini** file, enter the following information, supplying the values with the information you saved in Step 2 when creating your Service Principal:
 
-		federation.trustedissuers.issuer=https://accounts.accesscontrol.windows.net/v2/wsfederation
+		federation.trustedissuers.issuer=https://accounts.accesscontrol.chinacloudapi.cn/v2/wsfederation
 		federation.trustedissuers.thumbprint=qY+Drf20Zz+A4t2we3PebCopoCugO76My+JMVsqNBFc=
 		federation.trustedissuers.friendlyname=Fabrikam
 		federation.audienceuris=spn:7829c758-2bef-43df-a685-717089474505
@@ -182,7 +178,7 @@ This step shows you how to add support for federated login using Windows Identit
 		</body>
 		</html> 
 
-8. From the **Run** menu, click **Run**. You should automatically be redirected to the Office 365 Identity Provider page, where you can log in using your directory tenant credentials. For example, *john.doe@fabrikam.onmicrosoft.com*.
+8. From the **Run** menu, click **Run**. You should automatically be redirected to the Office 365 Identity Provider page, where you can log in using your directory tenant credentials. For example, *john.doe@fabrikam.partner.onmschina.cn*.
 
 ## Summary
 This tutorial has shown you how to create and configure a single tenant PHP application that uses the single sign-on capabilities of Azure Active Directory.
@@ -201,7 +197,7 @@ For more information, see the [PHP Developer Center](/develop/php/).
 [Developing Multi-Tenant Cloud Applications with Azure Active Directory]: http://g.microsoftonline.com/0AX00en/121
 [Windows Identity Foundation 3.5 SDK]: http://www.microsoft.com/download/details.aspx?id=4451
 [Windows Identity Foundation 1.0 Runtime]: http://www.microsoft.com/download/details.aspx?id=17331
-[Office 365 Powershell Commandlets]: http://msdn.microsoft.com/library/azure/jj151815.aspx
+[Office 365 Powershell Commandlets]: http://msdn.microsoft.com/zh-cn/library/azure/jj151815.aspx
 [ASP.NET MVC 3]: http://www.microsoft.com/download/details.aspx?id=4211
 [Eclipse PDT 3.0.x All In Ones]: http://www.eclipse.org/pdt/downloads/
 [PHP Sample Code for Azure Active Directory]: https://github.com/WindowsAzure/azure-sdk-for-php-samples/tree/master/WAAD.WebSSO.PHP 

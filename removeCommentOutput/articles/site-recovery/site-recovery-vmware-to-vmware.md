@@ -23,7 +23,7 @@ InMage Scout in Azure Site Recovery provides real-time replication between on-pr
 
 ## Prerequisites
 
-- **Azure account**—You'll need a [Windows Azure](http://azure.microsoft.com/) account. You can start with a [trial](/documentation/articles/free-trial).
+- **Azure account**—You'll need a [Windows Azure](http://azure.microsoft.com/) account. You can start with a [trial](/pricing/1rmb-trial/).
 
 
 ## Step 1: Create a vault

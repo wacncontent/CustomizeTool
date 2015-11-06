@@ -256,7 +256,7 @@ The Google Cloud Messaging Client available on the Xamarin Component Store simpl
 
 11. Add the following **createNotification** and **dialogNotify** methods to **PushHandlerService** for notifying users when a notification is received.
 
-	>[AZURE.NOTE] Notification design in Android version 5.0 and later represents a significant departure from that of previous versions. If you test this on Android 5.0 or later, the app will need to be running to receive the notification. For more information, see [Android Notifications](http://go.microsoft.com/fwlink/?LinkId=615880).
+	>[AZURE.NOTE] Notification design in Android version 5.0 and later represents a significant departure from that of previous versions. If you test this on Android 5.0 or later, the app will need to be running to receive the notification. For more information, see [Android Notifications](http://developer.android.com/design/patterns/notifications.html).
 
         void createNotification(string title, string desc)
         {
@@ -326,7 +326,7 @@ If you run this app in the emulator, make sure that you use an Android Virtual D
 
 > [AZURE.IMPORTANT] In order to receive push notifications, you must set up a Google account on your Android Virtual Device. (In the emulator, navigate to **Settings** and click **Add Account**.) Also, make sure that the emulator is connected to the Internet.
 
->[AZURE.NOTE] Notification design in Android version 5.0 and later represents a significant departure from that of previous versions. If you test this on Android 5.0 or later, the app will need to be running to receive the notification. For more information, see [Android Notifications](http://go.microsoft.com/fwlink/?LinkId=615880).
+>[AZURE.NOTE] Notification design in Android version 5.0 and later represents a significant departure from that of previous versions. If you test this on Android 5.0 or later, the app will need to be running to receive the notification. For more information, see [Android Notifications](http://developer.android.com/design/patterns/notifications.html).
 
 
 1. From **Tools**, click **Open Android Emulator Manager**, select your device, and then click **Edit**.
@@ -479,7 +479,7 @@ In this simple example, you broadcasted notifications to all your Android device
 [JavaScript and HTML]: /develop/mobile/tutorials/get-started-with-push-js
 
 [Azure Management Portal]: https://manage.windowsazure.cn/
-[wns object]: http://go.microsoft.com/fwlink/p/?LinkId=260591
+[wns object]: https://msdn.microsoft.com/zh-cn/library/azure/jj860484.aspx
 [Notification Hubs Guidance]: http://msdn.microsoft.com/zh-cn/library/jj927170.aspx
 [Notification Hubs How-To for Android]: http://msdn.microsoft.com/zh-cn/library/dn282661.aspx
 

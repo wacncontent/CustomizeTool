@@ -21,7 +21,7 @@ Windows Azure supports two types of queue mechanisms: **Azure Queues** and **Ser
 
 **Azure Queues**, which are part of the [Azure storage](/home/features/storage/) infrastructure, feature a simple REST-based Get/Put/Peek interface, providing reliable, persistent messaging within and between services.
 
-**Service Bus queues** are part of a broader [Azure messaging](/home/features/messaging/) infrastructure that supports queuing as well as publish/subscribe, Web service remoting, and integration patterns. For more information about Service Bus queues, topics/subscriptions, and relays, see [Overview of Service Bus Messaging Patterns](https://msdn.microsoft.com/zh-cn/library/hh410103.aspx).
+**Service Bus queues** are part of a broader [Azure messaging](/home/features/service-bus/) infrastructure that supports queuing as well as publish/subscribe, Web service remoting, and integration patterns. For more information about Service Bus queues, topics/subscriptions, and relays, see [Overview of Service Bus Messaging Patterns](https://msdn.microsoft.com/zh-cn/library/hh410103.aspx).
 
 While both queuing technologies exist concurrently, Azure Queues were introduced first, as a dedicated queue storage mechanism built on top of the Azure storage services. Service Bus queues are built on top of the broader "brokered messaging" infrastructure designed to integrate applications or application components that may span multiple communication protocols, data contracts, trust domains, and/or network environments.
 

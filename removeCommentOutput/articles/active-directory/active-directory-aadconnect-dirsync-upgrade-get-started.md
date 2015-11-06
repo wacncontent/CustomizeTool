@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Microsoft Azure AD Connect - Upgrade from Windows Azure AD sync tool (DirSync) | Microsoft Azure"
+   pageTitle="Windows Azure AD Connect - Upgrade from Windows Azure AD sync tool (DirSync) | Windows Azure"
    description="Learn how to upgrade from DirSync to Azure AD Connect.  This articles describes the steps for upgrading your current Windows Azure AD sync tool (DirSync) to Azure AD Connect."
    services="active-directory"
    documentationCenter=""
@@ -8,13 +8,9 @@
    editor="billmath"/>
 
 <tags
-   ms.service="active-directory"
-   ms.workload="identity"
-   ms.tgt_pltfrm="na"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.date="09/02/2015"
-   ms.author="shoatman"/>
+	ms.service="active-directory"
+	ms.date="09/02/2015"
+	wacn.date=""/>
 
 # Upgrading Windows Azure Active Directory sync (DirSync) to Azure Active Directory Connect
 
@@ -126,7 +122,7 @@ When you install Azure AD Connect on a new server it won't find DirSync and will
 1. Run the Azure AD Connect installer (MSI).
 2. When you see the "Welcome to Azure AD Connect" screen, exit the wizard by clicking the "X" in the top right corner of the window.
 3. Open a command prompt.
-4. From the install location of Azure AD Connect (Default: C:\Program Files\Microsoft Azure Active Directory Connect) execute the following command:
+4. From the install location of Azure AD Connect (Default: C:\Program Files\Windows Azure Active Directory Connect) execute the following command:
     * `AzureADConnect.exe /migrate`
 
 Azure AD Connect connects and presents you with the following UI:
@@ -200,8 +196,8 @@ The following is a list of prerequisites and supporting components that Azure AD
 
 **Additional Resources**
 
-* [Use your on-premises identity infrastructure in the cloud](active-directory-aadconnect.md)
-* [How Azure AD Connect works](active-directory-aadconnect-how-it-works.md)
-* [Whats Next with Azure AD Connect](active-directory-aadconnect-whats-next.md)
-* [Learn More](active-directory-aadconnect-learn-more.md)
-* [Azure AD Connect on MSDN](active-directory-aadconnect.md)
+* [Use your on-premises identity infrastructure in the cloud](/documentation/articles/active-directory-aadconnect)
+* [How Azure AD Connect works](/documentation/articles/active-directory-aadconnect-how-it-works)
+* [Whats Next with Azure AD Connect](/documentation/articles/active-directory-aadconnect-whats-next)
+* [Learn More](/documentation/articles/active-directory-aadconnect-learn-more)
+* [Azure AD Connect on MSDN](/documentation/articles/active-directory-aadconnect)

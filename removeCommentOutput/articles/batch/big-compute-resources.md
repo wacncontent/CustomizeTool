@@ -89,7 +89,7 @@ Azure offers a [range of sizes](/documentation/articles/virtual-machines-size-sp
 
 ## Architecture blueprints
 
-* [Large-scale computing - financial services](http://go.microsoft.com/fwlink/?LinkId=536378) (PDF) shows how to operationalize and orchestrate large-scale computation and data analysis in the cloud for risk management, reporting, and simulations.
+* [Large-scale computing - financial services](http://download.microsoft.com/download/C/B/9/CB975B6B-F7C6-47CB-B962-1FC7750B6112/MS_Arch_Financial_Svcs_SEC.pdf) (PDF) shows how to operationalize and orchestrate large-scale computation and data analysis in the cloud for risk management, reporting, and simulations.
 
 ## Samples and demos
 

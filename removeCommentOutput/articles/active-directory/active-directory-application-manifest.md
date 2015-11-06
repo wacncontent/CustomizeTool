@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Understanding the Azure Active Directory Application Manifest | Microsoft Azure"
+   pageTitle="Understanding the Azure Active Directory Application Manifest | Windows Azure"
    description="Provides additional details on the Azure AD application manifest, which accompanies each application configuration in an Azure AD tenant."
    services="active-directory"
    documentationCenter=""
@@ -8,13 +8,9 @@
    editor=""/>
 
 <tags
-   ms.service="active-directory"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="identity"
-   ms.date="09/03/2015"
-   ms.author="dkershaw;bryanla"/>
+	ms.service="active-directory"
+	ms.date="09/03/2015"
+	wacn.date=""/>
 
 # Understanding the Azure Active Directory application manifest
 
@@ -24,12 +20,12 @@ Applications that integrate with Azure Active Directory (AD) must be registered 
 
 There are actually multiple options available for updating the properties on an application's identity configuration, which vary in capabilities and degrees of difficulty, including the following:
 
-- The **[Azure portal's][AZURE-PORTAL] Web user interface** allows you to update the most common properties of an application. This is the quickest and least error prone way of updating your application's properties, but does not give you full access to all properties, like the next two methods.
-- For more advanced scenarios where you need to update properties that are not exposed in the Azure portal, you can modify the **application manifest**. This is the focus of this article and is discussed in more detail starting in the next section.
+- The **[Azure Management Portal's][AZURE-PORTAL] Web user interface** allows you to update the most common properties of an application. This is the quickest and least error prone way of updating your application's properties, but does not give you full access to all properties, like the next two methods.
+- For more advanced scenarios where you need to update properties that are not exposed in the Azure Management Portal, you can modify the **application manifest**. This is the focus of this article and is discussed in more detail starting in the next section.
 - It's also possible to **write an application that uses the [Graph API][GRAPH-API]** to update your application, which requires the most effort. This may be an attractive option though, if you are writing management software, or need to update application properties on a regular basis in an automated fashion.
 
 ## Using the application manifest to update an application's identity configuration
-Through the [Azure portal][AZURE-PORTAL], you can manage your application's identity configuration, by downloading and uploading a JSON file representation, which is called an application manifest. No actual file is stored in the directory - the application manifest is merely an HTTP GET operation on the Azure AD Graph API application entity, and the upload is an HTTP PATCH operation on the application entity.
+Through the [Azure Management Portal][AZURE-PORTAL], you can manage your application's identity configuration, by downloading and uploading a JSON file representation, which is called an application manifest. No actual file is stored in the directory - the application manifest is merely an HTTP GET operation on the Azure AD Graph API application entity, and the upload is an HTTP PATCH operation on the application entity.
 
 As a result, in order to understand the format and properties of the application manifest, you will need to reference the Graph API [Application entity][APPLICATION-ENTITY] documentation. Examples of updates that can be performed though application manifest upload
 include:
@@ -46,7 +42,7 @@ The application manifest also provides a good way to track the state of your app
 ### Step by step example
 Now lets walk through the steps required to update your application's identity configuration through the application manifest:
 
-1. Navigate to the [Azure portal][AZURE-PORTAL] and sign in with an account that has service administrator or co-administrator privileges.
+1. Navigate to the [Azure Management Portal][AZURE-PORTAL] and sign in with an account that has service administrator or co-administrator privileges.
 
 
 2. After you've authenticated, scroll down and select the Azure "Active Directory" extension in the left navigation panel (1), then click on the Azure AD tenant where your application is registered (2).
@@ -71,7 +67,7 @@ Now lets walk through the steps required to update your application's identity c
 	![Update the manifest JSON][UPDATE-MANIFEST]
 
 
-6. When you're finished updating the manifest, return to the Azure AD application page in the Azure portal again, click the "Manage Manifest" feature again (1), but this time select the "Upload Manifest" option (2). Similar to the download, you will be greeted again with a second dialog, prompting you for the location of the JSON file. Click "Browse for file ..." (3), then use the "Choose File to Upload" dialog to select the JSON file (4), and press "Open". Once the dialog goes away, select the "OK" check mark (5) and your manifest will be uploaded.  
+6. When you're finished updating the manifest, return to the Azure AD application page in the Azure Management Portal again, click the "Manage Manifest" feature again (1), but this time select the "Upload Manifest" option (2). Similar to the download, you will be greeted again with a second dialog, prompting you for the location of the JSON file. Click "Browse for file ..." (3), then use the "Choose File to Upload" dialog to select the JSON file (4), and press "Open". Once the dialog goes away, select the "OK" check mark (5) and your manifest will be uploaded.  
 
 	![Manage the manifest, upload option][MANAGE-MANIFEST-UPLOAD]
 
@@ -96,12 +92,12 @@ Please use the DISQUS comments section below to provide feedback and help us ref
 
 <!--article references -->
 [AAD-GROUPS-FOR-AUTHORIZATION]: http://www.dushyantgill.com/blog/2014/12/10/authorization-cloud-applications-using-ad-groups/
-[ADD-UPD-RMV-APP]: active-directory-integrating-applications.md
+[ADD-UPD-RMV-APP]: /documentation/articles/active-directory-integrating-applications
 [APPLICATION-ENTITY]: https://msdn.microsoft.com/Library/Azure/Ad/Graph/api/entity-and-complex-type-reference#ApplicationEntity
 [APPLICATION-ENTITY-OAUTH2-PERMISSION]: https://msdn.microsoft.com/Library/Azure/Ad/Graph/api/entity-and-complex-type-reference#OAuth2PermissionType
-[AZURE-PORTAL]: https://manage.windowsazure.com
-[GRAPH-API]: active-directory-graph-api.md
-[INTEGRATING-APPLICATIONS-AAD]: https://azure.microsoft.com/documentation/articles/active-directory-integrating-applications/
+[AZURE-PORTAL]: https://manage.windowsazure.cn
+[GRAPH-API]: /documentation/articles/active-directory-graph-api
+[INTEGRATING-APPLICATIONS-AAD]: /documentation/articles/active-directory-integrating-applications/
 [O365-PERM-DETAILS]: https://msdn.microsoft.com/office/office365/HowTo/application-manifest
 [O365-SERVICE-DAEMON-APPS]: https://msdn.microsoft.com/office/office365/howto/building-service-apps-in-office-365
 [RBAC-CLOUD-APPS-AZUREAD]: http://www.dushyantgill.com/blog/2014/12/10/roles-based-access-control-in-cloud-applications-using-azure-ad/

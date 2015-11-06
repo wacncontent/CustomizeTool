@@ -1,4 +1,4 @@
-<properties pageTitle="Tutorial: Azure Active Directory integration with Box | Microsoft Azure" description="Learn how to use Box with Azure Active Directory to enable single sign-on, automated provisioning, and more!." services="active-directory" authors="MarkusVi"  documentationCenter="na" manager="stevenpo"/>
+<properties pageTitle="Tutorial: Azure Active Directory integration with Box | Windows Azure" description="Learn how to use Box with Azure Active Directory to enable single sign-on, automated provisioning, and more!." services="active-directory" authors="MarkusVi"  documentationCenter="na" manager="stevenpo"/>
 <tags ms.service="active-directory" ms.devlang="na" ms.topic="article" ms.tgt_pltfrm="na" ms.workload="identity" ms.date="08/01/2015" ms.author="markvi" />
 
 
@@ -15,7 +15,7 @@ The scenario outlined in this tutorial assumes that you already have the followi
 -   A valid Azure subscription
 -   A test tenant in Box
   
-After completing this tutorial, the Azure AD users you have assigned to Box will be able to single sign into the application at your Box company site (service provider initiated sign on), or using the [Introduction to the Access Panel](active-directory-saas-access-panel-introduction.md)
+After completing this tutorial, the Azure AD users you have assigned to Box will be able to single sign into the application at your Box company site (service provider initiated sign on), or using the [Introduction to the Access Panel](/documentation/articles/active-directory-saas-access-panel-introduction)
   
 The scenario outlined in this tutorial consists of the following building blocks:
 
@@ -73,7 +73,7 @@ As part of this procedure, you are required to upload metadata to Box.com.
 
     ![Configure single sign-on](./media/active-directory-saas-box-tutorial/IC769538.png "Configure single sign-on")
 
-2.  On the **How would you like users to sign on to Box** page, select **Microsoft Azure AD Single Sign-On**, and then click **Next**.
+2.  On the **How would you like users to sign on to Box** page, select **Windows Azure AD Single Sign-On**, and then click **Next**.
 
     ![Configure single sign-on](./media/active-directory-saas-box-tutorial/IC769539.png "Configure single sign-on")
 
@@ -140,5 +140,5 @@ In your Box tenant, synchronized users are listed under **Managed Users** in the
 
 ## Additional Resources
 
-* [List of Tutorials on How to Integrate SaaS Apps with Azure Active Directory](active-directory-saas-tutorial-list.md)
-* [What is application access and single sign-on with Azure Active Directory?](active-directory-appssoaccess-whatis.md)
+* [List of Tutorials on How to Integrate SaaS Apps with Azure Active Directory](/documentation/articles/active-directory-saas-tutorial-list)
+* [What is application access and single sign-on with Azure Active Directory?](/documentation/articles/active-directory-appssoaccess-whatis)

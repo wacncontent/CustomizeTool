@@ -16,17 +16,17 @@
 
 You can use Visual Studio Online team projects to host a Git repository for your source code, and automatically build and deploy to Azure web apps or cloud services whenever you push a commit to the repository.
 
-You'll need Visual Studio 2013 and the Azure SDK installed. If you don't already have Visual Studio 2013, download it by choosing the **Get started for free** link at [www.visualstudio.com](http://www.visualstudio.com). Install the Azure SDK from [here](http://go.microsoft.com/fwlink/?LinkId=239540).
+You'll need Visual Studio 2013 and the Azure SDK installed. If you don't already have Visual Studio 2013, download it by choosing the **Get started for free** link at [www.visualstudio.com](http://www.visualstudio.com). Install the Azure SDK from [here](/downloads/).
 
 
 > [AZURE.NOTE] You need an Visual Studio online account to complete this tutorial:
-> You can [open a Visual Studio Online account for free](http://go.microsoft.com/fwlink/p/?LinkId=512979).
+> You can [open a Visual Studio Online account for free](https://www.visualstudio.com/get-started/setup/sign-up-for-visual-studio-online).
 
 To set up a cloud service to automatically build and deploy to Azure by using Visual Studio Online, follow these steps.
 
 ## Step 1: Create a Git repository
 
-1. If you don’t already have a Visual Studio Online account, you can get one  [here](http://go.microsoft.com/fwlink/?LinkId=397665). When you create your team project, choose Git as your source control system. Follow the instructions to connect Visual Studio to your team project.
+1. If you don’t already have a Visual Studio Online account, you can get one  [here](https://www.visualstudio.com/get-started/setup/connect-to-visual-studio-online). When you create your team project, choose Git as your source control system. Follow the instructions to connect Visual Studio to your team project.
 
 2. In **Team Explorer**, choose the **Clone this repository** link.
 
@@ -223,7 +223,7 @@ When you use Git, you usually make changes in a working branch and integrate int
 
 ## Next steps
 
-To learn more tips on using Git with Visual Studio Online, see [Develop and share your code in Git using Visual Studio](http://www.visualstudio.com/get-started/share-your-code-in-git-vs.aspx) and for information about using a Git repository that's not managed by Visual Studio Online to publish to Azure, see [Continuous deployment using GIT in Azure Websites](/documentation/articles/web-sites-publish-source-control). For more information on Visual Studio Online, see [Visual Studio Online](http://go.microsoft.com/fwlink/?LinkId=253861).
+To learn more tips on using Git with Visual Studio Online, see [Develop and share your code in Git using Visual Studio](http://www.visualstudio.com/get-started/share-your-code-in-git-vs.aspx) and for information about using a Git repository that's not managed by Visual Studio Online to publish to Azure, see [Continuous deployment using GIT in Azure Websites](/documentation/articles/web-sites-publish-source-control). For more information on Visual Studio Online, see [Visual Studio Online](https://www.visualstudio.com/).
 
 [0]: ./media/cloud-services-continuous-delivery-use-vso/tfs0.PNG
 [1]: ./media/cloud-services-continuous-delivery-use-vso-git/CreateTeamProjectInGit.PNG

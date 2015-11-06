@@ -17,7 +17,7 @@
 
 [AZURE.INCLUDE [selector](../includes/hdinsight-portal-management-selector.md)]
 
-Learn how to use the Azure CLI to manage Hadoop clusters in Azure HDInsight. The Azure CLI is implemented in Node.js. It can be used on any platform that supports Node.js.
+Learn how to use the Azure CLI to manage Hadoop clusters in Azure HDInsight. The Azure CLI is implemented in Node.js. It can be used on any platform that supports Node.js, including Windows, Mac, and Linux.
 
 The Azure CLI is open source. The source code is managed in GitHub at <a href= "https://github.com/azure/azure-xplat-cli">https://github.com/azure/azure-xplat-cli</a>.
 
@@ -51,7 +51,7 @@ After you have imported the publishsettings file, you can use the following comm
 > [AZURE.NOTE] The Storage account must be collocated with HDInsight in the data center.
 
 
-For information on creating an Azure Storage account by using the Azure Management Portal, see [Create, manage, or delete a Storage account][azure-create-storageaccount].
+For information on creating an Azure Storage account by using the Azure preview portal, see [Create, manage, or delete a Storage account][azure-create-storageaccount].
 
 If you already have a Storage account but do not know the account name and account key, you can use the following commands to retrieve the information:
 
@@ -62,7 +62,7 @@ If you already have a Storage account but do not know the account name and accou
 	-- Lists the keys for a Storage account
 	azure account storage keys list <StorageAccountName>
 
-For details on getting the information by using the Azure Management Portal, see the "View, copy, and regenerate storage access keys" section of [Create, manage, or delete a Storage account][azure-create-storageaccount].
+For details on getting the information by using the Azure preview portal, see the "View, copy, and regenerate storage access keys" section of [Create, manage, or delete a Storage account][azure-create-storageaccount].
 
 
 The **azure hdinsight cluster create** command creates the container if it doesn't exist. If you choose to create the container beforehand, you can use the following command:
@@ -137,7 +137,7 @@ To change the Hadoop cluster size by using Azure PowerShell, run the following c
 ##Next steps
 In this article, you have learned how to perform different HDInsight cluster administrative tasks. To learn more, see the following articles:
 
-* [Administer HDInsight by using the Azure Management Portal] [hdinsight-admin-portal]
+* [Administer HDInsight by using the Azure preview portal] [hdinsight-admin-portal]
 * [Administer HDInsight by using Azure PowerShell] [hdinsight-admin-powershell]
 * [Get started with Azure HDInsight] [hdinsight-get-started]
 * [How to use the Azure CLI] [azure-command-line-tools]

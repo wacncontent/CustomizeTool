@@ -15,9 +15,9 @@
 
 ## Overview
 
-To filter data in an Azure table that is displayed in the Visual Studio **Table Designer**, you construct a filter string and enter it into the filter field. The filter string syntax is defined by the WCF Data Services and is similar to a SQL WHERE clause, but is sent to the Table service via an HTTP request. The **Table Designer** handles the proper encoding for you, so to filter on a desired property value, you need only enter the property name, comparison operator, criteria value, and optionally, Boolean operator in the filter field. You do not need to include the $filter query option as you would if you were constructing a URL to query the table via the [Storage Services REST API Reference](http://go.microsoft.com/fwlink/p/?LinkId=400447).
+To filter data in an Azure table that is displayed in the Visual Studio **Table Designer**, you construct a filter string and enter it into the filter field. The filter string syntax is defined by the WCF Data Services and is similar to a SQL WHERE clause, but is sent to the Table service via an HTTP request. The **Table Designer** handles the proper encoding for you, so to filter on a desired property value, you need only enter the property name, comparison operator, criteria value, and optionally, Boolean operator in the filter field. You do not need to include the $filter query option as you would if you were constructing a URL to query the table via the [Storage Services REST API Reference](https://msdn.microsoft.com/zh-cn/library/dd179355.aspx).
 
-The WCF Data Services are based on the [Open Data Protocol](http://go.microsoft.com/fwlink/p/?LinkId=214805) (OData). For details on the filter system query option (**$filter**), see the [OData URI Conventions specification](http://go.microsoft.com/fwlink/p/?LinkId=214806).
+The WCF Data Services are based on the [Open Data Protocol](http://www.odata.org/) (OData). For details on the filter system query option (**$filter**), see the [OData URI Conventions specification](http://www.odata.org/documentation/odata-version-2-0/uri-conventions/).
 
 ## Comparison Operators
 
@@ -41,7 +41,7 @@ When constructing a filter string, the following rules are important:
 
 - All parts of the filter string are case-sensitive.
 
-- The constant value must be of the same data type as the property in order for the filter to return valid results. For more information about supported property types, see [Understanding the Table Service Data Model](http://go.microsoft.com/fwlink/p/?LinkId=400448).
+- The constant value must be of the same data type as the property in order for the filter to return valid results. For more information about supported property types, see [Understanding the Table Service Data Model](https://msdn.microsoft.com/zh-cn/library/dd179338.aspx).
 
 ## Filtering on String Properties
 
@@ -89,7 +89,7 @@ To return all entities where IsActive is false, you can use the not operator:
 
 ## Filtering on DateTime Properties
 
-To filter on a DateTime value, specify the **datetime** keyword, followed by the date/time constant in single quotation marks. The date/time constant must be in combined UTC format, as described in [Formatting DateTime Property Values](http://go.microsoft.com/fwlink/p/?LinkId=400449).
+To filter on a DateTime value, specify the **datetime** keyword, followed by the date/time constant in single quotation marks. The date/time constant must be in combined UTC format, as described in [Formatting DateTime Property Values](https://msdn.microsoft.com/zh-cn/library/azure/dd894027.aspx).
 
 The following example returns entities where the CustomerSince property is equal to July 10, 2008:
 

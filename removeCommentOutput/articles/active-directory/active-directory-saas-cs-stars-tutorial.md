@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Tutorial: Azure Active Directory integration with CS Stars | Microsoft Azure"
+	pageTitle="Tutorial: Azure Active Directory integration with CS Stars | Windows Azure"
 	description="Learn how to configure single sign-on between Azure Active Directory and CS Stars."
 	services="active-directory"
 	documentationCenter=""
@@ -9,12 +9,8 @@
 
 <tags
 	ms.service="active-directory"
-	ms.workload="identity"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="10/06/2015"
-	ms.author="markusvi"/>
+	wacn.date=""/>
 
 
 # Tutorial: Azure Active Directory integration with CS Stars
@@ -25,7 +21,7 @@ The objective of this tutorial is to show you how to integrate CS Stars with Azu
 - You can enable your users to automatically get signed-on to CS Stars (Single Sign-On) with their Azure AD accounts
 - You can manage your accounts in one central location - the Azure Active Directory Portal
 
-If you want to know more details about SaaS app integration with Azure AD, see [What is application access and single sign-on with Azure Active Directory](active-directory-appssoaccess-whatis.md).
+If you want to know more details about SaaS app integration with Azure AD, see [What is application access and single sign-on with Azure Active Directory](/documentation/articles/active-directory-appssoaccess-whatis).
 
 ## Prerequisites 
 
@@ -41,7 +37,7 @@ To configure Azure AD integration with CS Stars, you need the following items:
 To test the steps in this tutorial, you should follow these recommendations:
 
 - You should not use your production environment, unless this is necessary.
-- If you don't have an Azure AD trial environment, you can get a one-month trial [here](https://azure.microsoft.com/pricing/free-trial/). 
+- If you don't have an Azure AD trial environment, you can get a one-month trial [here](https://azure.microsoft.com/pricing/1rmb-trial/). 
 
  
 ## Scenario Description
@@ -130,7 +126,7 @@ The objective of this section is to enable Azure AD single sign-on in the Azure 
 
 
 ### Creating an Azure AD test user
-The objective of this section is to create a test user in the Azure portal called Britta Simon.<br>
+The objective of this section is to create a test user in the Azure Management Portal called Britta Simon.<br>
 In the Users list, select **Britta Simon**.
 <br><br>![Create Azure AD User][20]<br>
 
@@ -187,7 +183,7 @@ The objective of this section is to enabling Britta Simon to use Azure single si
 
 **To assign Britta Simon to CS Stars, perform the following steps:**
 
-1. On the Azure portal, to open the applications view, in the directory view, click **Applications** in the top menu.
+1. On the Azure Management Portal, to open the applications view, in the directory view, click **Applications** in the top menu.
 <br><br>![Assign User][201]<br>
 2. In the applications list, select **CS Stars**.
 <br><br>![Assign User][202]<br>
@@ -208,8 +204,8 @@ When you click the CS Stars tile in the Access Panel, you should get automatical
 
 ## Additional Resources
 
-* [List of Tutorials on How to Integrate SaaS Apps with Azure Active Directory](active-directory-saas-tutorial-list.md)
-* [What is application access and single sign-on with Azure Active Directory?](active-directory-appssoaccess-whatis.md)
+* [List of Tutorials on How to Integrate SaaS Apps with Azure Active Directory](/documentation/articles/active-directory-saas-tutorial-list)
+* [What is application access and single sign-on with Azure Active Directory?](/documentation/articles/active-directory-appssoaccess-whatis)
 
 <!--Image references-->
 [1]: ./media/active-directory-saas-cs-stars-tutorial/tutorial_general_01.png

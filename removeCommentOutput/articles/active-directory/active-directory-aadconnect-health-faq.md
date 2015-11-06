@@ -9,12 +9,8 @@
 
 <tags
 	ms.service="active-directory"
-	ms.workload="identity"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="10/15/2015"
-	ms.author="billmath"/>
+	wacn.date=""/>
 
 
 # Azure AD Connect Health Frequently Asked Questions (FAQ)
@@ -59,7 +55,7 @@ For example, on Windows Server 2008 R2 the installation of .Net 4.5 Framework re
 
 **Q: Does Azure AD Connect Health Services work through a pass-through http proxy?**
 
-Yes.  For on going operations, you can configure the Health Agent to forward outbound http requests using an HTTP Proxy. See [Configure Azure AD Connect Health Agents to use HTTP Proxy](active-directory-aadconnect-health-agent-install-adfs.md#configure-azure-ad-connect-health-agent-to-use-http-proxy) for more information.
+Yes.  For on going operations, you can configure the Health Agent to forward outbound http requests using an HTTP Proxy. See [Configure Azure AD Connect Health Agents to use HTTP Proxy](/documentation/articles/active-directory-aadconnect-health-agent-install-adfs#configure-azure-ad-connect-health-agent-to-use-http-proxy) for more information.
 
 If you need to configure a proxy during Agent registration, you need to modify your Internet Explorer Proxy settings. <br>
 Open Internet Explorer -> Settings -> Internet Options -> Connections -> LAN Settings.<br>
@@ -96,7 +92,7 @@ You will need to have TCP/UDP ports 80, 443 and 5671 open for the Azure AD Conne
 
 ## Related links
 
-* [Azure AD Connect Health](active-directory-aadconnect-health.md)
-* [Azure AD Connect Health Agent Installation for AD FS](active-directory-aadconnect-health-agent-install-adfs.md)
-* [Using Azure AD Connect Health with AD FS](active-directory-aadconnect-health-adfs.md)
-* [Azure AD Connect Health Operations](active-directory-aadconnect-health-operations.md)
+* [Azure AD Connect Health](/documentation/articles/active-directory-aadconnect-health)
+* [Azure AD Connect Health Agent Installation for AD FS](/documentation/articles/active-directory-aadconnect-health-agent-install-adfs)
+* [Using Azure AD Connect Health with AD FS](/documentation/articles/active-directory-aadconnect-health-adfs)
+* [Azure AD Connect Health Operations](/documentation/articles/active-directory-aadconnect-health-operations)

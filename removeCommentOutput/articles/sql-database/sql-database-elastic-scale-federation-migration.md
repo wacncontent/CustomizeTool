@@ -18,7 +18,7 @@ The Azure SQL Database Federations feature is being retired along with the Web/B
 
 If your application is not yet ready to work without Federations, then contact Microsoft Support using instructions mentioned [here](https://support.microsoft.com/kb/3087180).  
 
-This document provides the context, examples, and introduction to the Federations Migration Utility that illustrates how to successfully migrate a current Federations application seamlessly to the [Elastic database client library](http://go.microsoft.com/?linkid=9862592) APIs for sharding. The objective of the document is to walk you through the suggested steps to migrate a Federations application without any data movement.
+This document provides the context, examples, and introduction to the Federations Migration Utility that illustrates how to successfully migrate a current Federations application seamlessly to the [Elastic database client library](/documentation/articles/sql-database-elastic-scale-introduction/) APIs for sharding. The objective of the document is to walk you through the suggested steps to migrate a Federations application without any data movement.
 
 There are three major steps for migrating an existing Federations application to one that uses elastic database tools.
 
@@ -28,7 +28,7 @@ There are three major steps for migrating an existing Federations application to
     
 
 ### The migration sample tool
-To assist in this process, a [Federations Migration Utility](http://go.microsoft.com/?linkid=9862613) has been created. The utility accomplishes steps 1 and 3. 
+To assist in this process, a [Federations Migration Utility](https://code.msdn.microsoft.com:443/vstudio/Federations-Migration-ce61e9c1) has been created. The utility accomplishes steps 1 and 3. 
 
 ## Create a Shard Map Manager from a federation root
 The first step in migrating a Federations application is to clone the metadata of a federation root to the constructs of a shard map manager. 
@@ -37,7 +37,7 @@ The first step in migrating a Federations application is to clone the metadata o
  
 Start with an existing Federations application in a test environment.
  
-Use the **Federations Migration Utility** to clone the federation root metadata into the constructs of the elastic database client library's [Shard Map Manager](http://go.microsoft.com/?linkid=9862595). Analogous to a federation root, the Shard Map Manager database is a standalone database that contains the shard maps (i.e., federations), references to shards (i.e., federation members) and respective range mappings. 
+Use the **Federations Migration Utility** to clone the federation root metadata into the constructs of the elastic database client library's [Shard Map Manager](/documentation/articles/sql-database-elastic-scale-shard-map-management/). Analogous to a federation root, the Shard Map Manager database is a standalone database that contains the shard maps (i.e., federations), references to shards (i.e., federation members) and respective range mappings. 
 
 The cloning of the federation root to the Shard Map Manager is a copy and translation of metadata. No metadata is altered on the federation root. Note that the cloning of the federation root with the Federations Migration Utility is a point-in-time operation, and any changes to either the federation root or the shard maps will not be reflected in the other respective data store. If changes are made to the federation root during the testing of the new APIs, the Federations Migration Utility can be used to refresh the shard maps to represent the current state. 
 
@@ -82,7 +82,7 @@ With the Elastic database tools APIs, a connection to a particular shard is esta
         } 
     }
 
-The steps in this section are necessary but may not address all migration scenarios that arise. For more information, please see the [conceptual overview of elastic database tools](/documentation/articles/sql-database-elastic-scale-introduction) and the [API reference](http://go.microsoft.com/?linkid=9862604).
+The steps in this section are necessary but may not address all migration scenarios that arise. For more information, please see the [conceptual overview of elastic database tools](/documentation/articles/sql-database-elastic-scale-introduction) and the [API reference](https://msdn.microsoft.com/zh-cn/library/azure/dn765902.aspx).
 
 ## Switch out existing federation members 
 

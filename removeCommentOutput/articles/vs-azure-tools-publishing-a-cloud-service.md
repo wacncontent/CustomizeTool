@@ -15,7 +15,7 @@
 
 By using the Azure Tools for Microsoft Visual Studio, you can publish your Azure application directly from Visual Studio. Visual Studio supports integrated publishing to either the Staging or the Production environment of a cloud service.
 
-Before you can publish an Azure application, you must have an Azure subscription. You must also set up a cloud service and storage account to be used by your application. You can set these up at the [Azure Management Portal](http://go.microsoft.com/fwlink/?LinkID=213885).
+Before you can publish an Azure application, you must have an Azure subscription. You must also set up a cloud service and storage account to be used by your application. You can set these up at the [Azure Management Portal](https://manage.windowsazure.cn/).
 
 >[AZURE.IMPORTANT] When you publish, you can select the deployment environment for your cloud service. You must also select a storage account that is used to store the application package for deployment. After deployment, the application package is removed from the storage account. For more information about how to set up these services, see [Setting Up Services Required to Publish a Cloud Service](/documentation/articles/vs-azure-tools-setting-up-services-required-to-publish-a-cloud-service-from-visual-studio) from Visual Studio.
 
@@ -31,7 +31,7 @@ Use the following procedures to publish your Azure application and to update a w
 
 When you publish your Azure application, you can do one of the following tasks:
 
-- Create a service package: You can use this package and the service configuration file to publish your application to a deployment environment from the [Azure Management Portal](http://go.microsoft.com/fwlink/?LinkID=213885).
+- Create a service package: You can use this package and the service configuration file to publish your application to a deployment environment from the [Azure Management Portal](https://manage.windowsazure.cn/).
 
 - Publish your Azure project from Visual Studio: To publish your application directly to Azure, you use the Publish Wizard. For information, see [Publish Azure Application Wizard](/documentation/articles/vs-azure-tools-publish-azure-application-wizard).
 
@@ -53,7 +53,7 @@ When you publish your Azure application, you can do one of the following tasks:
 
       File Explorer shows the file location of the newly created package. You can copy this location so that you can use it from the Azure Management Portal.
 
-  1. To publish this package to a deployment environment, you must use this location as the Package location when you create a cloud service and deploy this package to an environment with the [Azure Management Portal](http://go.microsoft.com/fwlink/?LinkID=213885).
+  1. To publish this package to a deployment environment, you must use this location as the Package location when you create a cloud service and deploy this package to an environment with the [Azure Management Portal](https://manage.windowsazure.cn/).
 
 1. (Optional) To cancel the deployment process, on the shortcut menu for the line item in the activity log, choose **Cancel and remove**. This stops the deployment process and deletes the deployment environment from Azure.
 
@@ -117,7 +117,7 @@ The following procedure assumes that you are using the **Publish Azure Applicati
 
 1. Web Deploy uses an untrusted, self-signed certificate by default, which is not recommended for uploading sensitive data. If you need to secure this process for sensitive data, you can add a SSL certificate to be used for Web Deploy connections. This certificate needs to be a trusted certificate, which you obtain from a certificate authority (CA).
 
-    To make Web Deploy secure for each virtual machine for each of your web roles, you must upload the trusted certificate that you want to use for web deploy to the [Azure Management Portal](http://go.microsoft.com/fwlink/?LinkID=213885). This makes sure that the certificate is added to the virtual machine that is created for the web role when you publish your application.
+    To make Web Deploy secure for each virtual machine for each of your web roles, you must upload the trusted certificate that you want to use for web deploy to the [Azure Management Portal](https://manage.windowsazure.cn/). This makes sure that the certificate is added to the virtual machine that is created for the web role when you publish your application.
 
 1. To add a trusted SSL certificate to IIS to use for remote connections, follow these steps:
 
@@ -125,7 +125,7 @@ The following procedure assumes that you are using the **Publish Azure Applicati
 
       Your browser will prompt you to download an .RDP file.
 
-  1. To add an SSL certificate, open the management service in IIS Manager. In IIS Manager, enable SSL by opening the **Bindings** link in the **Action** pane. The **Add Site Binding** dialog box appears. Choose **Add**, and then choose HTTPS in the **Type** dropdown list. In the **SSL certificate** list, choose the SSL certificate that you had signed by a CA and that you uploaded to the Azure management portal. For more information, see [Configure Connection Settings for the Management Service](http://go.microsoft.com/fwlink/?LinkId=215824).
+  1. To add an SSL certificate, open the management service in IIS Manager. In IIS Manager, enable SSL by opening the **Bindings** link in the **Action** pane. The **Add Site Binding** dialog box appears. Choose **Add**, and then choose HTTPS in the **Type** dropdown list. In the **SSL certificate** list, choose the SSL certificate that you had signed by a CA and that you uploaded to the Azure management portal. For more information, see [Configure Connection Settings for the Management Service](https://technet.microsoft.com/zh-cn/library/cc770458(WS.10).aspx).
 
       >[AZURE.NOTE] If you add a trusted SSL certificate, the yellow warning triangle no longer appears in the **Publish Wizard**.
 

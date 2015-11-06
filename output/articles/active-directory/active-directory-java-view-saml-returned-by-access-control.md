@@ -8,13 +8,9 @@
     editor="jimbe" />
 
 <tags
-    ms.service="active-directory"
-    ms.workload="identity"
-    ms.tgt_pltfrm="na"
-    ms.devlang="Java"
-    ms.topic="article"
-    ms.date="10/12/2015" 
-    ms.author="robmcm" />
+	ms.service="active-directory"
+	ms.date="10/12/2015"
+	wacn.date=""/>
 
 # How to view SAML returned by the Azure Access Control Service
 
@@ -192,6 +188,6 @@ To further explore ACS's functionality and to experiment with more sophisticated
 [Run the application]: #run_application
 [Next steps]: #next_steps
 [Access Control Service 2.0]: http://go.microsoft.com/fwlink/?LinkID=212360
-[How to Authenticate Web Users with Azure Access Control Service Using Eclipse]: ../active-directory-java-authenticate-users-access-control-eclipse
+[How to Authenticate Web Users with Azure Access Control Service Using Eclipse]: /documentation/articles/active-directory-java-authenticate-users-access-control-eclipse
 [saml_output]: ./media/active-directory-java-view-saml-returned-by-access-control/SAML_Output.png
  

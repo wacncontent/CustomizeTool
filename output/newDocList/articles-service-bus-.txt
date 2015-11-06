@@ -1,4 +1,4 @@
-new docs: 58, word count: {word_count_TODO}
+new docs: 58, word count: 99373
 articles/service-bus/service-bus-amqp-apache.md
 articles/service-bus/service-bus-amqp-dotnet.md
 articles/service-bus/service-bus-amqp-java.md

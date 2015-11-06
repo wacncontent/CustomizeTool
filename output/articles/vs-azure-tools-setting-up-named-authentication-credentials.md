@@ -55,7 +55,7 @@ The following procedure assumes that the **New Subscription** dialog box is open
 
     1. Choose the Azure Management Portal link.
 
-         The [Azure Management Portal](http://go.microsoft.com/fwlink/?LinkID=213885) opens.
+         The [Azure Management Portal](https://manage.windowsazure.cn/) opens.
 
     1. Sign in to the Azure Management Portal by using your Microsoft account, and then choose the **Cloud Services** button.
 

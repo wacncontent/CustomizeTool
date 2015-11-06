@@ -1,5 +1,5 @@
 <properties
-	pageTitle="App Model v2.0 .NET Web App | Microsoft Azure"
+	pageTitle="App Model v2.0 .NET Web App | Windows Azure"
 	description="How to build a .NET MVC Web App that signs users in with both personal Microsoft Account and work or school accounts."
 	services="active-directory"
 	documentationCenter=".net"
@@ -9,19 +9,15 @@
 
 <tags
 	ms.service="active-directory"
-	ms.workload="identity"
-	ms.tgt_pltfrm="na"
-	ms.devlang="dotnet"
-	ms.topic="article"
 	ms.date="09/11/2015"
-	ms.author="dastrock"/>
+	wacn.date=""/>
 
 # App model v2.0 preview: Add sign-in to an .NET MVC web app
 
 With the v2.0 app model, you can quickly add authentication to your web apps with support for both personal Microsoft accounts and work or school accounts.  In ASP.NET web apps, you can accomplish this using Microsoft's OWIN middleware included in .NET Framework 4.5.
 
   > [AZURE.NOTE]
-    This information applies to the v2.0 app model public preview.  For instructions on how to integrate with the generally available Azure AD service, please refer to the [Azure Active Directory Developer Guide](active-directory-developers-guide.md).
+    This information applies to the v2.0 app model public preview.  For instructions on how to integrate with the generally available Azure AD service, please refer to the [Azure Active Directory Developer Guide](/documentation/articles/active-directory-developers-guide).
 
  Here we'll use OWIN to:
 -	Sign the user into the app using Azure AD and the v2.0 app model.
@@ -42,7 +38,7 @@ The code for this tutorial is maintained [on GitHub](https://github.com/AzureADQ
 The completed app is provided at the end of this tutorial as well.
 
 ## 1. Register an App
-Create a new app at [apps.dev.microsoft.com](https://apps.dev.microsoft.com), or follow these [detailed steps](active-directory-v2-app-registration.md).  Make sure to:
+Create a new app at [apps.dev.microsoft.com](https://apps.dev.microsoft.com), or follow these [detailed steps](/documentation/articles/active-directory-v2-app-registration).  Make sure to:
 
 - Copy down the **Application Id** assigned to your app, you'll need it soon.
 - Add the **Web** platform for your app.
@@ -89,7 +85,7 @@ public void ConfigureAuth(IAppBuilder app)
 							 new OpenIdConnectAuthenticationOptions
 							 {
 									 // The `Authority` represents the v2.0 endpoint - https://login.microsoftonline.com/common/v2.0
-									 // The `Scope` describes the permissions that your app will need.  See https://azure.microsoft.com/documentation/articles/active-directory-v2-scopes/
+									 // The `Scope` describes the permissions that your app will need.  See /documentation/articles/active-directory-v2-scopes/
 									 // In a real application you could use issuer validation for additional checks, like making sure the user's organization has signed up for your app, for instance.
 
 									 ClientId = clientId,
@@ -143,7 +139,7 @@ public void SignOut()
 }
 ```
 
--	Now, open `Views\Shared\_LoginPartial.cshtml`.  This is where you'll show the user your app's sign-in and sign-out links, and print out the user's name in a view.
+-	Now, open `Views\Shared_LoginPartial.cshtml`.  This is where you'll show the user your app's sign-in and sign-out links, and print out the user's name in a view.
 
 ```HTML
 @if (Request.IsAuthenticated)
@@ -171,7 +167,7 @@ else
 ```
 
 ## 4. Display user information
-When authenticating users with OpenID Connect, the v2.0 endpoint returns an id_token to the app that contains [claims](active-directory-v2-tokens.md#id_tokens), or assertions about the user.  You can use these claims to personalize your app:
+When authenticating users with OpenID Connect, the v2.0 endpoint returns an id_token to the app that contains [claims](/documentation/articles/active-directory-v2-tokens#id_tokens), or assertions about the user.  You can use these claims to personalize your app:
 
 - Open the `Controllers\HomeController.cs` file.  You can access the user's claims in your controllers via the `ClaimsPrincipal.Current` security principal object.
 
@@ -205,8 +201,8 @@ For reference, the completed sample (without your configuration values) [is prov
 
 You can now move onto more advanced topics.  You may want to try:
 
-[Secure a Web API with the v2.0 app model >>](active-directory-devquickstarts-webapi-dotnet.md)
+[Secure a Web API with the v2.0 app model >>](/documentation/articles/active-directory-devquickstarts-webapi-dotnet)
 
 For additional resources, check out:
-- [The App Model v2.0 Preview >>](active-directory-appmodel-v2-overview.md)
+- [The App Model v2.0 Preview >>](/documentation/articles/active-directory-appmodel-v2-overview)
 - [StackOverflow "azure-active-directory" tag >>](http://stackoverflow.com/questions/tagged/azure-active-directory)

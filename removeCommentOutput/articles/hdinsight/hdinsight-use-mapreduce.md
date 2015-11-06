@@ -52,6 +52,7 @@ For examples of using Hadoop streaming with HDInsight, see the following:
 
 * [Develop C# Hadoop streaming programs](/documentation/articles/hdinsight-hadoop-develop-deploy-streaming-jobs)
 
+* [Develop Python MapReduce jobs](/documentation/articles/hdinsight-hadoop-streaming-python)
 
 ##<a id="data"></a>About the sample data
 
@@ -151,9 +152,9 @@ HDInsight can run HiveQL jobs by using a variety of methods. Use the following t
 
 | **Use this**...                                                    | **...to do this**                                       | ...with this **cluster operating system** | ...from this **client operating system** |
 |:-------------------------------------------------------------------|:--------------------------------------------------------|:------------------------------------------|:-----------------------------------------|
-
-| [Curl](/documentation/articles/hdinsight-hadoop-use-mapreduce-curl)                     | Submit the job remotely by using **REST**               |  Windows                          |  Windows        |
-| [Windows PowerShell](/documentation/articles/hdinsight-hadoop-use-mapreduce-powershell) | Submit the job remotely by using **Windows PowerShell** |  Windows                          | Windows                                  |
+| [SSH](/documentation/articles/hdinsight-hadoop-use-mapreduce-ssh)                       | Use the Hadoop command through **SSH**                  | Linux                                     | Linux, Unix, Mac OS X, or Windows        |
+| [Curl](/documentation/articles/hdinsight-hadoop-use-mapreduce-curl)                     | Submit the job remotely by using **REST**               | Linux or Windows                          | Linux, Unix, Mac OS X, or Windows        |
+| [Windows PowerShell](/documentation/articles/hdinsight-hadoop-use-mapreduce-powershell) | Submit the job remotely by using **Windows PowerShell** | Linux or Windows                          | Windows                                  |
 | [Remote Desktop](/documentation/articles/hdinsight-hadoop-use-mapreduce-remote-desktop)    | Use the Hadoop command through **Remote Desktop**       | Windows                                   | Windows                                  |
 
 ##<a id="nextsteps"></a>Next steps
@@ -162,6 +163,11 @@ Although MapReduce provides powerful diagnostic abilities, it can be a bit chall
 
 * [Develop Java MapReduce programs for HDInsight](/documentation/articles/hdinsight-develop-deploy-java-mapreduce)
 
+* [Develop Python streaming MapReduce programs for HDInsight](/documentation/articles/hdinsight-hadoop-streaming-python)
+
+* [Develop C# Hadoop streaming MapReduce programs for HDInsight][hdinsight-develop-streaming]
+
+* [Develop Scalding MapReduce jobs with Apache Hadoop on HDInsight](/documentation/articles/hdinsight-hadoop-mapreduce-scalding)
 
 * [Use Hive with HDInsight][hdinsight-use-hive]
 

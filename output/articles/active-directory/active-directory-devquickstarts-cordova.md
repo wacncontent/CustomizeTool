@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Azure AD Cordova Getting Started | Microsoft Azure"
+	pageTitle="Azure AD Cordova Getting Started | Windows Azure"
 	description="How to build a Cordova application that integrates with Azure AD for sign in and calls Azure AD protected APIs using OAuth."
 	services="active-directory"
 	documentationCenter=""
@@ -9,18 +9,14 @@
 
 <tags
 	ms.service="active-directory"
-	ms.workload="identity"
-	ms.tgt_pltfrm="na"
-	ms.devlang="javascript"
-	ms.topic="article"
 	ms.date="10/13/2015"
-	ms.author="vittorib"/>
+	wacn.date=""/>
 
 # Integrate Azure AD with an Apache Cordova app
 
-[AZURE.INCLUDE [active-directory-devquickstarts-switcher](../../includes/active-directory-devquickstarts-switcher.md)]
+[AZURE.INCLUDE [active-directory-devquickstarts-switcher](../includes/active-directory-devquickstarts-switcher.md)]
 
-[AZURE.INCLUDE [active-directory-devguide](../../includes/active-directory-devguide.md)]
+[AZURE.INCLUDE [active-directory-devguide](../includes/active-directory-devguide.md)]
 
 Apache Cordova makes it possible for you to develop HTML5/JavaScript applications which can run on mobile devices as full-fledged native applications.
 With Azure AD, you can add enterprise grade authentication capabilities to your Cordova applications. Thanks to a Cordova plugin wrapping Azure AD's native SDKs on iOS, Android, Windows Store and Windows Phone, you can enhance your application to support sign on with your users' AD accounts, gain access to Office 365 and Azure API, and even protect calls to your own custom Web API.
@@ -47,7 +43,7 @@ To complete this tutorial you will need:
 
 If you have both already set up, please proceed directly to step 1.
 
-If you don't have an Azure AD tenant, you can find [instructions on how to get one here](active-directory-howto-tenant.md).
+If you don't have an Azure AD tenant, you can find [instructions on how to get one here](/documentation/articles/active-directory-howto-tenant).
 
 If you don't have Apache Cordova set up on your machine, please install the following:
 
@@ -134,14 +130,14 @@ The application you are developing in this tutorial will provide a bare-bone dir
 The very first thing you need to do is to introduce in your code the protocol values that are used by AAD for identifying your app and the resources you target. Those values will be used to construct the token requests later on. Insert the snippet below at the very top of the index.js file.
 
 ```javascript
-    var authority = "https://login.windows.net/common",
+    var authority = "https://login.chinacloudapi.cn/common",
     redirectUri = "http://MyDirectorySearcherApp",
-    resourceUri = "https://graph.windows.net",
+    resourceUri = "https://graph.chinacloudapi.cn",
     clientId = "a5d92493-ae5a-4a9f-bcbf-9f1d354067d3",
     graphApiVersion = "2013-11-08";
 ```
 
-The `redirectUri` and `clientId` values should match the values describing your app in AAD. You can find those from the Configure tab in the Azure portal, as described in step 1 earlier in this tutorial.
+The `redirectUri` and `clientId` values should match the values describing your app in AAD. You can find those from the Configure tab in the Azure Management Portal, as described in step 1 earlier in this tutorial.
 Note: if you opted for not registering a new app in your own tenant, you can simply paste the pre-configured values above as is - that will allow you to see the sample running, though you should always create your own entry for your apps meant for production.
 
 Next, we need to add the actual token request code. Insert the following snippet between the `search `and `renderdata `definitions.
@@ -232,7 +228,7 @@ The concrete steps for running the app vary by platform.
 
    `cordova run windows`
 
-   __Note__: During first run you may be asked to sign in for a developer license. See [Developer license](https://msdn.microsoft.com/library/windows/apps/hh974578.aspx) for more details.
+   __Note__: During first run you may be asked to sign in for a developer license. See [Developer license](https://msdn.microsoft.com/zh-cn/library/windows/apps/hh974578.aspx) for more details.
 
 
 ##### To build and run application on Windows Phone 8.1
@@ -266,6 +262,6 @@ Use `cordova run --help` to see additional build and run options.
 
 For reference, the completed sample (without your configuration values) is provided here.  You can now move on to more advanced (ok, and more interesting) scenarios.  You may want to try:
 
-[Secure a Node.js Web API with Azure AD >>](active-directory-devquickstarts-webapi-nodejs.md)
+[Secure a Node.js Web API with Azure AD >>](/documentation/articles/active-directory-devquickstarts-webapi-nodejs)
 
-[AZURE.INCLUDE [active-directory-devquickstarts-additional-resources](../../includes/active-directory-devquickstarts-additional-resources.md)]
+[AZURE.INCLUDE [active-directory-devquickstarts-additional-resources](../includes/active-directory-devquickstarts-additional-resources.md)]

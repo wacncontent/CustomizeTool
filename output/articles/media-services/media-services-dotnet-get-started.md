@@ -419,7 +419,6 @@ To test progressive download, paste a URL into a browser (for example, Internet 
 
 
 ##Next Steps
-<!-- deleted by customization
 
 ###Media Services learning paths
 
@@ -427,7 +426,6 @@ You can view AMS learning paths here:
 
 - [AMS Live Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/)
 - [AMS on Demand Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/)
--->
 
 ### Looking for something else?
 

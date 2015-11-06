@@ -1,4 +1,4 @@
-<properties pageTitle="Tutorial: Azure Active Directory Integration with Zscaler Beta | Microsoft Azure" description="Learn how to use Zscaler Beta with Azure Active Directory to enable single sign-on, automated provisioning, and more!." services="active-directory" authors="MarkusVi"  documentationCenter="na" manager="stevenpo"/>
+<properties pageTitle="Tutorial: Azure Active Directory Integration with Zscaler Beta | Windows Azure" description="Learn how to use Zscaler Beta with Azure Active Directory to enable single sign-on, automated provisioning, and more!." services="active-directory" authors="MarkusVi"  documentationCenter="na" manager="stevenpo"/>
 <tags ms.service="active-directory" ms.devlang="na" ms.topic="article" ms.tgt_pltfrm="na" ms.workload="identity" ms.date="08/01/2015" ms.author="markvi" />
 #Tutorial: Azure Active Directory Integration with Zscaler Beta
 >[AZURE.TIP]For feedback, click [here](http://go.microsoft.com/fwlink/?LinkId=614877).
@@ -9,7 +9,7 @@ The scenario outlined in this tutorial assumes that you already have the followi
 -   A valid Azure subscription
 -   A ZScaler Beta single sign-on enabled subscription
   
-After completing this tutorial, the Azure AD users you have assigned to ZScaler Beta will be able to single sign into the application at your ZScaler Beta company site (service provider initiated sign on), or using the [Introduction to the Access Panel](https://msdn.microsoft.com/library/dn308586)
+After completing this tutorial, the Azure AD users you have assigned to ZScaler Beta will be able to single sign into the application at your ZScaler Beta company site (service provider initiated sign on), or using the [Introduction to the Access Panel](https://msdn.microsoft.com/zh-cn/library/dn308586)
   
 The scenario outlined in this tutorial consists of the following building blocks:
 
@@ -65,7 +65,7 @@ If you are not familiar with this procedure, see [How to convert a binary certif
 
     ![Configure Single Sign-On](./media/active-directory-saas-zscaler-beta-tutorial/IC800225.png "Configure Single Sign-On")
 
-2.  On the **How would you like users to sign on to ZScaler Beta** page, select **Microsoft Azure AD Single Sign-On**, and then click **Next**.
+2.  On the **How would you like users to sign on to ZScaler Beta** page, select **Windows Azure AD Single Sign-On**, and then click **Next**.
 
     ![Configure Single Sign-On](./media/active-directory-saas-zscaler-beta-tutorial/IC800226.png "Configure Single Sign-On")
 
@@ -100,7 +100,7 @@ If you are not familiar with this procedure, see [How to convert a binary certif
 
     ![Single Sign-On](./media/active-directory-saas-zscaler-beta-tutorial/IC800209.png "Single Sign-On")
 
-    1.  In the Azure portal, on the **Configure single sign-on at ZScaler Beta** dialog page, copy the **Authentication Request URL** value, and then paste it into the **URL of the SAML Portal to which users are sent for authentication** textbox.
+    1.  In the Azure Management Portal, on the **Configure single sign-on at ZScaler Beta** dialog page, copy the **Authentication Request URL** value, and then paste it into the **URL of the SAML Portal to which users are sent for authentication** textbox.
     2.  In the **Attribute containing Login Name** textbox, type **NameID**.
     3.  To upload your downloaded certificate, click **Zscaler pem**.
     4.  Select **Enable SAML Auto-Provisioning**.
@@ -112,7 +112,7 @@ If you are not familiar with this procedure, see [How to convert a binary certif
     1.  Click **Save**.
     2.  Click **Activate Now**.
 
-11. In the Azure portal, on the **Configure single sign-on at ZScaler Beta** dialog page, select the single sign-on configuration confirmation, and then click **Complete**.
+11. In the Azure Management Portal, on the **Configure single sign-on at ZScaler Beta** dialog page, select the single sign-on configuration confirmation, and then click **Complete**.
 
     ![Configure Single Sign-On](./media/active-directory-saas-zscaler-beta-tutorial/IC800229.png "Configure Single Sign-On")
 
@@ -190,4 +190,4 @@ To test your configuration, you need to grant the Azure AD users you want to all
 
     ![Yes](./media/active-directory-saas-zscaler-beta-tutorial/IC767830.png "Yes")
   
-If you want to test your single sign-on settings, open the Access Panel. For more details about the Access Panel, see [Introduction to the Access Panel](https://msdn.microsoft.com/library/dn308586).
+If you want to test your single sign-on settings, open the Access Panel. For more details about the Access Panel, see [Introduction to the Access Panel](https://msdn.microsoft.com/zh-cn/library/dn308586).

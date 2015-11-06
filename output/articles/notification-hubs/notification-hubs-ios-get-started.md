@@ -520,7 +520,7 @@ For more general information about Notification Hubs, see [Notification Hubs Gui
 [Azure Management Portal]: https://manage.windowsazure.cn/
 [Notification Hubs Guidance]: http://msdn.microsoft.com/zh-cn/library/jj927170.aspx
 [Install Xcode]: https://go.microsoft.com/fwLink/p/?LinkID=266532
-[iOS Provisioning Portal]: http://go.microsoft.com/fwlink/p/?LinkId=272456
+[iOS Provisioning Portal]: https://idmsa.apple.com/IDMSWebAuth/login?&appIdKey=891bd3417a7776362562d2197f89480a8547b108fd934911bcbea0110d07f757&path=%2F%2Faccount%2Foverview.action
 
 [Get started with push notifications in Mobile Services]: /documentation/articles/mobile-services-javascript-backend-ios-get-started-push
 [Use Notification Hubs to push notifications to users]: /documentation/articles/notification-hubs-aspnet-backend-ios-notify-users

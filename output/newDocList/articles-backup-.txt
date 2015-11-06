@@ -1,4 +1,4 @@
-new docs: 22, word count: {word_count_TODO}
+new docs: 22, word count: 37434
 articles/backup/backup-azure-alternate-dpm-server.md
 articles/backup/backup-azure-backup-cloud-as-tape.md
 articles/backup/backup-azure-backup-faq.md

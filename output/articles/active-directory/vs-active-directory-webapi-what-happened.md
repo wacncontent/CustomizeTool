@@ -1,5 +1,5 @@
 <properties
-	pageTitle="What happened to my WebApi project (Visual Studio Azure Active Directory connected service) |Microsoft Azure "
+	pageTitle="What happened to my WebApi project (Visual Studio Azure Active Directory connected service) |Windows Azure "
 	description="Describes what happens to your MVC project WebApi you connect to Azure AD by using Visual Studio services="active-directory"
     services="active-directory"
 	documentationCenter=""
@@ -9,18 +9,14 @@
 
 <tags
 	ms.service="active-directory"
-	ms.workload="web"
-	ms.tgt_pltfrm="vs-what-happened"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="09/03/2015"
-	ms.author="patshea"/>
+	wacn.date=""/>
 
 # What happened to my WebApi project (Visual Studio Azure Active Directory connected service)
 
 > [AZURE.SELECTOR]
-> - [Getting Started](vs-active-directory-webapi-getting-started.md)
-> - [What Happened](vs-active-directory-webapi-what-happened.md)
+> - [Getting Started](/documentation/articles/vs-active-directory-webapi-getting-started)
+> - [What Happened](/documentation/articles/vs-active-directory-webapi-what-happened)
 
 ##References have been added
 
@@ -72,7 +68,7 @@ The following configuration entries have been added.
 
 An Azure AD Application was created in the directory that you selected in the wizard.
 
-[Learn more about Azure Active Directory](http://azure.microsoft.com/services/active-directory/)
+[Learn more about Azure Active Directory](/home/features/identity/)
 
 ##If I checked *disable Individual User Accounts authentication*, what additional changes were made to my project?
 NuGet package references were removed, and files were removed and backed up. Depending on the state of your project, you may have to manually remove additional references or files, or modify code as appropriate.
@@ -115,4 +111,4 @@ The following additional configuration entries have been added.
 ###Your Azure Active Directory App was updated
 Your Azure Active Directory App was updated to include the *Read directory data* permission and an additional key was created which was then used as the *ida:Password* in the `web.config` file.
 
-[Learn more about Azure Active Directory](http://azure.microsoft.com/services/active-directory/)
+[Learn more about Azure Active Directory](/home/features/identity/)

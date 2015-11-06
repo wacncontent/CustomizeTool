@@ -1,5 +1,5 @@
 <properties
-	pageTitle="App Model v2.0 Node.js Web App | Microsoft Azure"
+	pageTitle="App Model v2.0 Node.js Web App | Windows Azure"
 	description="How to build a Node JS web app that signs users in with both personal Microsoft Account and work or school accounts."
 	services="active-directory"
 	documentationCenter="nodejs"
@@ -9,18 +9,14 @@
 
 <tags
 	ms.service="active-directory"
-	ms.workload="identity"
-  ms.tgt_pltfrm="na"
-	ms.devlang="javascript"
-	ms.topic="article"
 	ms.date="09/11/2015"
-	ms.author="brandwe"/>
+	wacn.date=""/>
 
 # App Model v2.0 Preview: Add sign-in to a nodeJS Web App
 
 
   > [AZURE.NOTE]
-    This information applies to the v2.0 app model public preview.  For instructions on how to integrate with the generally available Azure AD service, please refer to the [Azure Active Directory Developer Guide](active-directory-developers-guide.md).
+    This information applies to the v2.0 app model public preview.  For instructions on how to integrate with the generally available Azure AD service, please refer to the [Azure Active Directory Developer Guide](/documentation/articles/active-directory-developers-guide).
 
 
 Here we'll use Passport to:
@@ -29,7 +25,7 @@ Here we'll use Passport to:
 - Display some information about the user.
 - Sign the user out of the app.
 
-**Passport** is authentication middleware for Node.js. Extremely flexible and modular, Passport can be unobtrusively dropped in to any Express-based or Resitify web application. A comprehensive set of strategies support authentication using a username and password, Facebook, Twitter, and more. We have developed a strategy for Microsoft Azure Active Directory. We will install this module and then add the Microsoft Azure Active Directory `passport-azure-ad` plug-in.
+**Passport** is authentication middleware for Node.js. Extremely flexible and modular, Passport can be unobtrusively dropped in to any Express-based or Resitify web application. A comprehensive set of strategies support authentication using a username and password, Facebook, Twitter, and more. We have developed a strategy for Windows Azure Active Directory. We will install this module and then add the Windows Azure Active Directory `passport-azure-ad` plug-in.
 
 In order to do this, you'll need to:
 
@@ -45,7 +41,7 @@ The code for this tutorial is maintained [on GitHub](https://github.com/AzureADQ
 The completed application is provided at the end of this tutorial as well.
 
 ## 1. Register an App
-Create a new app at [apps.dev.microsoft.com](https://apps.dev.microsoft.com), or follow these [detailed steps](active-directory-v2-app-registration.md).  Make sure to:
+Create a new app at [apps.dev.microsoft.com](https://apps.dev.microsoft.com), or follow these [detailed steps](/documentation/articles/active-directory-v2-app-registration).  Make sure to:
 
 - Copy down the **Application Id** assigned to your app, you'll need it soon.
 - Add the **Web** platform for your app.
@@ -419,8 +415,8 @@ For reference, the completed sample (without your configuration values) [is prov
 
 You can now move onto more advanced topics.  You may want to try:
 
-[Secure a Web API with the v2.0 app model in node.js >>](active-directory-v2-devquickstarts-webapi-nodejs.md)
+[Secure a Web API with the v2.0 app model in node.js >>](/documentation/articles/active-directory-v2-devquickstarts-webapi-nodejs)
 
 For additional resources, check out:
-- [The App Model v2.0 Preview >>](active-directory-appmodel-v2-overview.md)
+- [The App Model v2.0 Preview >>](/documentation/articles/active-directory-appmodel-v2-overview)
 - [StackOverflow "azure-active-directory" tag >>](http://stackoverflow.com/questions/tagged/azure-active-directory)

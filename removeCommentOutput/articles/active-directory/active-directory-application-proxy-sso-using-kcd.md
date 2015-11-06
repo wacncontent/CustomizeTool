@@ -9,12 +9,8 @@
 
 <tags
 	ms.service="active-directory"
-	ms.workload="identity"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="10/07/2015"
-	ms.author="rkarlin"/>
+	wacn.date=""/>
 
 
 
@@ -31,7 +27,7 @@ Azure AD Application Proxy enables you to provide a single-sign-on (SSO) experie
 ## SSO for on-prem IWA apps using KCD with Application Proxy
 You can enable Single Sign On (SSO) to your applications using Integrated Windows Authentication (IWA) by giving Application Proxy Connectors permission in Active Directory to impersonate users and send and receive tokens on their behalf.
 
-> [AZURE.IMPORTANT] Application Proxy is a feature that is available only if you upgraded to the Premium or Basic edition of Azure Active Directory. For more information, see [Azure Active Directory editions](active-directory-editions.md).
+> [AZURE.IMPORTANT] Application Proxy is a feature that is available only if you upgraded to the Premium or Basic edition of Azure Active Directory. For more information, see [Azure Active Directory editions](/documentation/articles/active-directory-editions).
 
 
 ### Network diagram
@@ -51,9 +47,9 @@ This diagram explains the flow when a user attempts to access an on-prem applica
 
 ### Prerequisites
 
-1. Make sure that your apps, such as your SharePoint Web apps, are set to use Integrated Windows Authentication. For more information see [Enable Support for Kerberos Authentication](https://technet.microsoft.com/library/dd759186.aspx), or for SharePoint see [Plan for Kerberos authentication in SharePoint 2013](https://technet.microsoft.com/library/ee806870.aspx).
+1. Make sure that your apps, such as your SharePoint Web apps, are set to use Integrated Windows Authentication. For more information see [Enable Support for Kerberos Authentication](https://technet.microsoft.com/zh-cn/library/dd759186.aspx), or for SharePoint see [Plan for Kerberos authentication in SharePoint 2013](https://technet.microsoft.com/zh-cn/library/ee806870.aspx).
 2. Create Service Principal Names for your applications.
-3. Make sure that the server running the Connector and the server running the app you are publishing are domain joined and part of the same domain. For more information on domain join, see [Join a Computer to a Domain](https://technet.microsoft.com/library/dd807102.aspx).
+3. Make sure that the server running the Connector and the server running the app you are publishing are domain joined and part of the same domain. For more information on domain join, see [Join a Computer to a Domain](https://technet.microsoft.com/zh-cn/library/dd807102.aspx).
 
 
 ### Active Directory configuration
@@ -74,7 +70,7 @@ The Active Directory configuration varies, depending on whether your Application
 
 #### Connector and published server in different domains
 
-1. For a list of prerequisites for working with KCD across domains, see [Kerberos Constrained Delegation across domains](https://technet.microsoft.com/library/hh831477.aspx).
+1. For a list of prerequisites for working with KCD across domains, see [Kerberos Constrained Delegation across domains](https://technet.microsoft.com/zh-cn/library/hh831477.aspx).
 2. In Windows 2012 R2, use the `principalsallowedtodelegateto` property on the Connector server to enable the Application Proxy to delegate for the Connector server, where the published server is `sharepointserviceaccount` and the delegating server is `connectormachineaccount`.
 
 		$connector= Get-ADComputer -Identity connectormachineaccount -server dc.connectordomain.com
@@ -87,9 +83,9 @@ The Active Directory configuration varies, depending on whether your Application
 >[AZURE.NOTE] `sharepointserviceaccount` can be the SPS machine account or a service account under which the SPS app pool is running.
 
 
-### Azure portal configuration
+### Azure Management Portal configuration
 
-1. Publish your application according to the instructions described in [Publish applications with Application Proxy](active-directory-application-proxy-publish.md). Make sure to select **Azure Active Directory** as the **Preauthentication Method**.
+1. Publish your application according to the instructions described in [Publish applications with Application Proxy](/documentation/articles/active-directory-application-proxy-publish). Make sure to select **Azure Active Directory** as the **Preauthentication Method**.
 2. After your application appears in the list of applications, select it and click **Configure**.
 3. Under **Properties**, set **Internal Authentication Method** to **Integrated Windows Authentication**.
 
@@ -160,7 +156,7 @@ NOTE: These settings also determine how users log in to Office365, Windows10 dev
 ![](./media/active-directory-application-proxy-sso-using-kcd/app_proxy_sso_diff_id_upn.png)
 
 ### Troubleshooting SSO for different identities
-If there is an error in the SSO process it will appear in the Connector machine event log as explained in [Troubleshooting](active-directory-application-proxy-troubleshoot.md).
+If there is an error in the SSO process it will appear in the Connector machine event log as explained in [Troubleshooting](/documentation/articles/active-directory-application-proxy-troubleshoot).
 But, in some cases, the request will be successfully sent to the backend application while this application will reply in various other HTTP responses. Troubleshooting these cases should start by examining event number 24029 on the Connector machine in the Application Proxy session event log. The user identity that was used for delegation will appear in the “user” field within the event details (“joe@contoso55.com” in the example below). To turn on session log, select **Show analytic and debug logs **in the event viewer view menu.
 
 
@@ -173,13 +169,13 @@ But, in some cases, the request will be successfully sent to the backend applica
 There's a lot more you can do with Application Proxy:
 
 
-- [Publish applications with Application Proxy](active-directory-application-proxy-publish.md)
-- [Publish applications using your own domain name](active-directory-application-proxy-custom-domains.md)
-- [Enable conditional access](active-directory-application-proxy-conditional-access.md)
-- [Working with claims aware applications](active-directory-application-proxy-claims-aware-apps.md)
-- [Troubleshoot issues you're having with Application Proxy](active-directory-application-proxy-troubleshoot.md)
+- [Publish applications with Application Proxy](/documentation/articles/active-directory-application-proxy-publish)
+- [Publish applications using your own domain name](/documentation/articles/active-directory-application-proxy-custom-domains)
+- [Enable conditional access](/documentation/articles/active-directory-application-proxy-conditional-access)
+- [Working with claims aware applications](/documentation/articles/active-directory-application-proxy-claims-aware-apps)
+- [Troubleshoot issues you're having with Application Proxy](/documentation/articles/active-directory-application-proxy-troubleshoot)
 
 ## Learn more about Application Proxy
-- [Take a look here at our online help](active-directory-application-proxy-enable.md)
+- [Take a look here at our online help](/documentation/articles/active-directory-application-proxy-enable)
 - [Check out the Application Proxy blog](http://blogs.technet.com/b/applicationproxyblog/)
 - [Watch our videos on Channel 9!](http://channel9.msdn.com/events/Ignite/2015/BRK3864)

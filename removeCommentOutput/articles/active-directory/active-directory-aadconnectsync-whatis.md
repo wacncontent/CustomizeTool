@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Azure AD Connect sync customization options | Microsoft Azure"
+	pageTitle="Azure AD Connect sync customization options | Windows Azure"
 	description="Explains how to customize Azure AD Connect sync."
 	services="active-directory"
 	documentationCenter=""
@@ -9,12 +9,8 @@
 
 <tags
 	ms.service="active-directory"
-	ms.workload="identity"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="10/13/2015"
-	ms.author="markusvi;andkjell"/>
+	wacn.date=""/>
 
 
 # Azure AD Connect sync: Customizing Synchronization options
@@ -29,23 +25,23 @@ The objective of this topic is to provide you with links to topics that are rela
 
 What do you want to do next?:
 
-- For an overview of the technical concepts, see [Technical Concepts](active-directory-aadconnectsync-technical-concepts.md).
-- For an overview of topologies and scenarios supported by Azure AD Connect sync, see [Topologies for Azure AD Connect](active-directory-aadconnect-topologies.md).
-- If you want to learn about how implement a filter, see [Configure Filtering](active-directory-aadconnectsync-configure-filtering.md).
-- If you want to know more about password synchronization, see [Implement password synchronization](active-directory-aadconnectsync-implement-password-synchronization.md).
-- If you want to know more about users and contacts in Azure AD Connect sync, see [Understanding Users and Contacts](active-directory-aadconnectsync-understanding-users-and-contacts.md).
-- If you want to change the default configuration, see [Best practices for changing the default configuration](active-directory-aadconnectsync-best-practices-changing-default-configuration.md)
-- If you want to know more about how to operate the sync server, see [Operational tasks and considerations](active-directory-aadconnectsync-operations.md)
-- If you want to explore the attributes that are synchronized to Azure AD, see [Attributes synchronized to Azure Active Directory](active-directory-aadconnectsync-attributes-synchronized.md)
-- If you want to learn more about declarative provisioning, see [Understanding Declarative Provisioning Expressions](active-directory-aadconnectsync-understanding-declarative-provisioning-expressions.md)
-- To explore the declarative provisioning functions, see [Functions Reference](active-directory-aadconnectsync-functions-reference.md)
+- For an overview of the technical concepts, see [Technical Concepts](/documentation/articles/active-directory-aadconnectsync-technical-concepts).
+- For an overview of topologies and scenarios supported by Azure AD Connect sync, see [Topologies for Azure AD Connect](/documentation/articles/active-directory-aadconnect-topologies).
+- If you want to learn about how implement a filter, see [Configure Filtering](/documentation/articles/active-directory-aadconnectsync-configure-filtering).
+- If you want to know more about password synchronization, see [Implement password synchronization](/documentation/articles/active-directory-aadconnectsync-implement-password-synchronization).
+- If you want to know more about users and contacts in Azure AD Connect sync, see [Understanding Users and Contacts](/documentation/articles/active-directory-aadconnectsync-understanding-users-and-contacts).
+- If you want to change the default configuration, see [Best practices for changing the default configuration](/documentation/articles/active-directory-aadconnectsync-best-practices-changing-default-configuration)
+- If you want to know more about how to operate the sync server, see [Operational tasks and considerations](/documentation/articles/active-directory-aadconnectsync-operations)
+- If you want to explore the attributes that are synchronized to Azure AD, see [Attributes synchronized to Azure Active Directory](/documentation/articles/active-directory-aadconnectsync-attributes-synchronized)
+- If you want to learn more about declarative provisioning, see [Understanding Declarative Provisioning Expressions](/documentation/articles/active-directory-aadconnectsync-understanding-declarative-provisioning-expressions)
+- To explore the declarative provisioning functions, see [Functions Reference](/documentation/articles/active-directory-aadconnectsync-functions-reference)
 
 
 
 
 ## Additional Resources
 
-* [Sign up for Azure as an organization](sign-up-organization.md)
+* [Sign up for Azure as an organization](/documentation/articles/sign-up-organization)
 
 
 <!--Image references-->

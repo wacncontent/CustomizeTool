@@ -1,4 +1,4 @@
-<properties pageTitle="Tutorial: Azure Active Directory integration with Central Desktop | Microsoft Azure" description="Learn how to use Central Desktop with Azure Active Directory to enable single sign-on, automated provisioning, and more!." services="active-directory" authors="MarkusVi"  documentationCenter="na" manager="stevenpo"/>
+<properties pageTitle="Tutorial: Azure Active Directory integration with Central Desktop | Windows Azure" description="Learn how to use Central Desktop with Azure Active Directory to enable single sign-on, automated provisioning, and more!." services="active-directory" authors="MarkusVi"  documentationCenter="na" manager="stevenpo"/>
 <tags ms.service="active-directory" ms.devlang="na" ms.topic="article" ms.tgt_pltfrm="na" ms.workload="identity" ms.date="08/01/2015" ms.author="markvi" />
 #Tutorial: Azure Active Directory integration with Central Desktop
 >[AZURE.TIP]For feedback, click [here](http://go.microsoft.com/fwlink/?LinkId=522411).
@@ -61,7 +61,7 @@ If you are not familiar with this procedure, see [How to convert a binary certif
 
     ![Configure single sign-on](./media/active-directory-saas-central-desktop-tutorial/IC749323.png "Configure single sign-on")
 
-2.  On the **How would you like users to sign on to Central Desktop** page, select **Microsoft Azure AD Single Sign-On**, and then click **Next**.
+2.  On the **How would you like users to sign on to Central Desktop** page, select **Windows Azure AD Single Sign-On**, and then click **Next**.
 
     ![Configure single sign-on](./media/active-directory-saas-central-desktop-tutorial/IC777628.png "Configure single sign-on")
 
@@ -152,4 +152,4 @@ To test your configuration, you need to grant the Azure AD users you want to all
 
     ![Yes](./media/active-directory-saas-central-desktop-tutorial/IC767830.png "Yes")
 
-If you want to test your single sign-on settings, open the Access Panel. For more details about the Access Panel, see [Introduction to the Access Panel](https://msdn.microsoft.com/library/dn308586).
+If you want to test your single sign-on settings, open the Access Panel. For more details about the Access Panel, see [Introduction to the Access Panel](https://msdn.microsoft.com/zh-cn/library/dn308586).

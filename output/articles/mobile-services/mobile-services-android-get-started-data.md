@@ -147,4 +147,4 @@ Once you have completed the data series, try these other Android tutorials:
 [Management Portal]: https://manage.windowsazure.cn/
 [Azure Mobile Services Android SDK]: http://aka.ms/Iajk6q
 [GitHub]:  http://go.microsoft.com/fwlink/p/?LinkID=282122
-[Android SDK]: https://go.microsoft.com/fwLink/p/?LinkID=280125
+[Android SDK]: http://developer.android.com/sdk/index.html

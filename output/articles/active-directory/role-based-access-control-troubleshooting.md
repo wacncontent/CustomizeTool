@@ -9,27 +9,23 @@
 
 <tags
 	ms.service="active-directory"
-	ms.workload="identity"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="10/06/2015"
-	ms.author="inhenk"/>
+	wacn.date=""/>
 
 # Role based access control troubleshooting
 
 ## Introduction
 
-[Role based access control](../role-based-access-control-configure.md) is a powerful feature that allows you to delegate fine-grained access to resources in Azure. This means you can feel confident granting a specific person the right to just exactly what they need. However, at times the resource model for Azure resources can be complicated and it can be difficult to understand exactly what you are granting permissions to.
+[Role based access control](/documentation/articles/role-based-access-control-configure) is a powerful feature that allows you to delegate fine-grained access to resources in Azure. This means you can feel confident granting a specific person the right to just exactly what they need. However, at times the resource model for Azure resources can be complicated and it can be difficult to understand exactly what you are granting permissions to.
 
-This document will let you know what to expect when using some of the roles in the Azure Portal. There are three common roles that are included that cover all resource types:
+This document will let you know what to expect when using some of the roles in the Azure Management Portal. There are three common roles that are included that cover all resource types:
 * Owner
 * Contributor
 * Reader
 
-Owners and contributors will have full access to the management experience, the difference being that a contributor can’t give access to other users or groups. Things get a little more interesting with the reader role, so that’s where we’ll spend some time. [See this article](../role-based-access-control-configure.md) for details on how exactly to grant access.
+Owners and contributors will have full access to the management experience, the difference being that a contributor can’t give access to other users or groups. Things get a little more interesting with the reader role, so that’s where we’ll spend some time. [See this article](/documentation/articles/role-based-access-control-configure) for details on how exactly to grant access.
 
-## App Service workloads
+## Azure Websites workloads
 
 ### Having read-access only
 

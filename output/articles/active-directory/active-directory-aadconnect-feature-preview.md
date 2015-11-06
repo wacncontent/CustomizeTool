@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Azure AD Connect features in preview | Microsoft Azure"
+   pageTitle="Azure AD Connect features in preview | Windows Azure"
    description="This topic describes in more detail features which are in preview in Azure AD Connect."
    services="active-directory"
    documentationCenter=""
@@ -8,13 +8,9 @@
    editor=""/>
 
 <tags
-   ms.service="active-directory"  
-   ms.workload="identity"
-   ms.tgt_pltfrm="na"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.date="10/13/2015"
-   ms.author="andkjell;billmath"/>
+	ms.service="active-directory"
+	ms.date="10/13/2015"
+	wacn.date=""/>
 
 # More details about features in preview
 This topic describes how to use features currently in preview.
@@ -56,6 +52,6 @@ These attributes will now be available through Graph:
 ![Sync Filtering](./media/active-directory-aadconnect-feature-preview/extension4.png)
 
 ## Next steps
-Continue your [Custom installation of Azure AD Connect](active-directory-aadconnect-get-started-custom.md).
+Continue your [Custom installation of Azure AD Connect](/documentation/articles/active-directory-aadconnect-get-started-custom).
 
-Learn more about [Integrating your on-premises identities with Azure Active Directory](active-directory-aadconnect.md).
+Learn more about [Integrating your on-premises identities with Azure Active Directory](/documentation/articles/active-directory-aadconnect).

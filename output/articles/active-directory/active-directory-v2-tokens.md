@@ -1,5 +1,5 @@
 <properties
-	pageTitle="App Model v2 Token reference | Microsoft Azure"
+	pageTitle="App Model v2 Token reference | Windows Azure"
 	description="The types of tokens and claims emitted by the v2.0 Endpoint"
 	services="active-directory"
 	documentationCenter=""
@@ -9,23 +9,19 @@
 
 <tags
 	ms.service="active-directory"
-	ms.workload="identity"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="08/12/2015"
-	ms.author="dastrock"/>
+	wacn.date=""/>
 
 # App model v2.0 preview: Token reference
 
-The v2.0 endpoint emits several types of security tokens in the processing of each [authentication flow](active-directory-v2-flows.md). This document describes the format, security characteristics, and contents of each type of token.
+The v2.0 endpoint emits several types of security tokens in the processing of each [authentication flow](/documentation/articles/active-directory-v2-flows). This document describes the format, security characteristics, and contents of each type of token.
 
 > [AZURE.NOTE]
-	This information applies to the v2.0 app model public preview.  For instructions on how to integrate with the generally available Azure AD service, please refer to the [Azure Active Directory Developer Guide](active-directory-developers-guide.md).
+	This information applies to the v2.0 app model public preview.  For instructions on how to integrate with the generally available Azure AD service, please refer to the [Azure Active Directory Developer Guide](/documentation/articles/active-directory-developers-guide).
 
 ## Types of Tokens
 
-The v2.0 endpoint supports the [OAuth 2.0 authorization protocol](active-directory-v2-protocols.md), which makes use of both access_tokens and refresh_tokens.  It also supports authentication and sign-in via [OpenID Connect](active-directory-v2-protocols.md#openid-connect-sign-in-flow), which introduces a third type of token, the id_token.  Each of these tokens is represented as a "bearer token".
+The v2.0 endpoint supports the [OAuth 2.0 authorization protocol](/documentation/articles/active-directory-v2-protocols), which makes use of both access_tokens and refresh_tokens.  It also supports authentication and sign-in via [OpenID Connect](/documentation/articles/active-directory-v2-protocols#openid-connect-sign-in-flow), which introduces a third type of token, the id_token.  Each of these tokens is represented as a "bearer token".
 
 A bearer token is a lightweight security token that grants the “bearer” access to a protected resource. In this sense, the “bearer” is any party that can present the token. Though a party must first authenticate with Azure AD to receive the bearer token, if the required steps are not taken to secure the token in transmission and storage, it can be intercepted and used by an unintended party. While some security tokens have a built-in mechanism for preventing unauthorized parties from using them, bearer tokens do not have this mechanism and must be transported in a secure channel such as transport layer security (HTTPS). If a bearer token is transmitted in the clear, a man-in the middle attack can be used by a malicious party to acquire the token and use it for an unauthorized access to a protected resource. The same security principles apply when storing or caching bearer tokens for later use. Always ensure that your app transmits and stores bearer tokens in a secure manner. For more security considerations on bearer tokens, see [RFC 6750 Section 5](http://tools.ietf.org/html/rfc6750).
 
@@ -33,7 +29,7 @@ Many of the tokens issued by the v2.0 endpoint are implemented as Json Web Token
 
 ## Id_Tokens
 
-Id_tokens are a form of sign-in security token that your app receives when performing authentication using [OpenID Connect](active-directory-v2-protocols.md#openid-connect-sign-in-flow).  They are represented as [JWTs](#types-of-tokens), and contain claims that you can use for signing the user into your app.  You can use the claims in an id_token as you see fit - commonly they are used for displaying account information or making access control decisions in an app.  The v2.0 endpoint only issues one type of id_token, which has a consistent set of claims regardless of the type of user that has signed in.  That is to say that the format and content of the id_tokens will be the same for both personal Microsoft Account users and work or school accounts.
+Id_tokens are a form of sign-in security token that your app receives when performing authentication using [OpenID Connect](/documentation/articles/active-directory-v2-protocols#openid-connect-sign-in-flow).  They are represented as [JWTs](#types-of-tokens), and contain claims that you can use for signing the user into your app.  You can use the claims in an id_token as you see fit - commonly they are used for displaying account information or making access control decisions in an app.  The v2.0 endpoint only issues one type of id_token, which has a consistent set of claims regardless of the type of user that has signed in.  That is to say that the format and content of the id_tokens will be the same for both personal Microsoft Account users and work or school accounts.
 
 Id_tokens are signed, but not encrypted at this time.  When your app receives an id_token, it must [validate the signature](#validating-tokens) to prove the token's authenticity and validate a few claims in the token to prove its validity.  The claims validated by an app vary depending on scenario requirements, but there are some [common claim validations](#validating-tokens) that your app must perform in every scenario.
 
@@ -96,7 +92,7 @@ Refresh tokens are security tokens which your app can use to acquire new access 
 
 Refresh tokens are multi-resource.  That is to say that a refresh token received during a token request for one resource can be redeemed for access tokens to a completely different resource.
 
-In order to receive a refresh  in a token response, your app must request & be granted the `offline_acesss` scope.   To learn more about the `offline_access` scope, refer to the [consent & scopes article here](active-directory-v2-scopes.md).
+In order to receive a refresh  in a token response, your app must request & be granted the `offline_acesss` scope.   To learn more about the `offline_access` scope, refer to the [consent & scopes article here](/documentation/articles/active-directory-v2-scopes).
 
 Refresh tokens are, and will always be, completely opaque to your app.  They are issued by the Azure AD v2.0 endpoint and can only be inspected & interpreted by the v2.0 endpoint.  They are long-lived, but your app should not be written to expect that a refresh token will last for any period of time.  Refresh tokens can be invalidated at any moment in time for a variety of reasons.  The only way for your app to know if a refresh token is valid is to attempt to redeem it by making a token request to the v2.0 endpoint.
 

@@ -1,4 +1,4 @@
-<properties pageTitle="Tutorial: Azure Active Directory Integration with Cisco Webex | Microsoft Azure" description="Learn how to use Cisco Webex with Azure Active Directory to enable single sign-on, automated provisioning, and more!." services="active-directory" authors="MarkusVi"  documentationCenter="na" manager="stevenpo"/>
+<properties pageTitle="Tutorial: Azure Active Directory Integration with Cisco Webex | Windows Azure" description="Learn how to use Cisco Webex with Azure Active Directory to enable single sign-on, automated provisioning, and more!." services="active-directory" authors="MarkusVi"  documentationCenter="na" manager="stevenpo"/>
 <tags ms.service="active-directory" ms.devlang="na" ms.topic="article" ms.tgt_pltfrm="na" ms.workload="identity" ms.date="08/01/2015" ms.author="markvi" />
 #Tutorial: Azure Active Directory Integration with Cisco Webex
 >[AZURE.TIP]For feedback, click [here](http://go.microsoft.com/fwlink/?LinkId=524907).
@@ -9,7 +9,7 @@ The scenario outlined in this tutorial assumes that you already have the followi
 -   A valid Azure subscription
 -   A Cisco Webex tenant
 
-After completing this tutorial, the Azure AD users you have assigned to Cisco Webex will be able to single sign into the application at your Cisco Webex company site (service provider initiated sign on), or using the [Introduction to the Access Panel](https://msdn.microsoft.com/library/dn308586)
+After completing this tutorial, the Azure AD users you have assigned to Cisco Webex will be able to single sign into the application at your Cisco Webex company site (service provider initiated sign on), or using the [Introduction to the Access Panel](https://msdn.microsoft.com/zh-cn/library/dn308586)
 
 The scenario outlined in this tutorial consists of the following building blocks:
 
@@ -62,7 +62,7 @@ If you are not familiar with this procedure, see [How to convert a binary certif
 
     ![Configure single sign-on](./media/active-directory-saas-cisco-webex-tutorial/IC777617.png "Configure single sign-on")
 
-2.  On the **How would you like users to sign on to Cisco Webex** page, select **Microsoft Azure AD Single Sign-On**, and then click **Next**.
+2.  On the **How would you like users to sign on to Cisco Webex** page, select **Windows Azure AD Single Sign-On**, and then click **Next**.
 
     ![Configure single sign-on](./media/active-directory-saas-cisco-webex-tutorial/IC777618.png "Configure single sign-on")
 
@@ -98,14 +98,14 @@ If you are not familiar with this procedure, see [How to convert a binary certif
 
     3.  Open your base-64 encoded certificate in notepad, and then copy the content of it.
     4.  Click **Import SAML Metadata**, and then paste your base-64 encoded certificate.
-    5.  In the Azure portal, on the **Configure single sign-on at Cisco Webex** dialog page, copy the **Issuer URL** value, and then paste it into the **Issuer for SAML (IdP ID)** textbox.
-    6.  In the Azure portal, on the **Configure single sign-on at Cisco Webex** dialog page, copy the **Remote Login URL** value, and then paste it into the **Customer SSO Service Login URL** textbox.
+    5.  In the Azure Management Portal, on the **Configure single sign-on at Cisco Webex** dialog page, copy the **Issuer URL** value, and then paste it into the **Issuer for SAML (IdP ID)** textbox.
+    6.  In the Azure Management Portal, on the **Configure single sign-on at Cisco Webex** dialog page, copy the **Remote Login URL** value, and then paste it into the **Customer SSO Service Login URL** textbox.
     7.  From the **NameID Format** list, select **Email address**.
     8.  In the **AuthnContextClassRef** textbox, type **urn:oasis:names:tc:SAML:2.0:ac:classes:Password**.
-    9.  In the Azure portal, on the **Configure single sign-on at Cisco Webex** dialog page, copy the **Remote Logout URL** value, and then paste it into the **Customer SSO Service Logout URL** textbox.
+    9.  In the Azure Management Portal, on the **Configure single sign-on at Cisco Webex** dialog page, copy the **Remote Logout URL** value, and then paste it into the **Customer SSO Service Logout URL** textbox.
     10. Click **Update**.
 
-9.  In the Azure portal, on the **Configure single sign-on at Cisco Webex** dialog page, select the single sign-on configuration confirmation, and then click **Complete**.
+9.  In the Azure Management Portal, on the **Configure single sign-on at Cisco Webex** dialog page, select the single sign-on configuration confirmation, and then click **Complete**.
 
     ![Configure single sign-on](./media/active-directory-saas-cisco-webex-tutorial/IC777624.png "Configure single sign-on")
 ##Configuring user provisioning
@@ -147,4 +147,4 @@ To test your configuration, you need to grant the Azure AD users you want to all
 
     ![Yes](./media/active-directory-saas-cisco-webex-tutorial/IC767830.png "Yes")
 
-If you want to test your single sign-on settings, open the Access Panel. For more details about the Access Panel, see [Introduction to the Access Panel](https://msdn.microsoft.com/library/dn308586).
+If you want to test your single sign-on settings, open the Access Panel. For more details about the Access Panel, see [Introduction to the Access Panel](https://msdn.microsoft.com/zh-cn/library/dn308586).

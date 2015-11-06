@@ -1,4 +1,4 @@
-<properties pageTitle="Tutorial: Azure Active Directory integration with Directions on Microsoft | Microsoft Azure" description="Learn how to use Directions on Microsoft with Azure Active Directory to enable single sign-on, automated provisioning, and more!." services="active-directory" authors="MarkusVi"  documentationCenter="na" manager="stevenpo"/>
+<properties pageTitle="Tutorial: Azure Active Directory integration with Directions on Microsoft | Windows Azure" description="Learn how to use Directions on Microsoft with Azure Active Directory to enable single sign-on, automated provisioning, and more!." services="active-directory" authors="MarkusVi"  documentationCenter="na" manager="stevenpo"/>
 <tags ms.service="active-directory" ms.devlang="na" ms.topic="article" ms.tgt_pltfrm="na" ms.workload="identity" ms.date="08/01/2015" ms.author="markvi" />
 #Tutorial: Azure Active Directory integration with Directions on Microsoft
 >[AZURE.TIP]For feedback, click [here](http://go.microsoft.com/fwlink/?LinkId=533728).
@@ -62,11 +62,11 @@ The objective of this section is to outline how to enable users to authenticate 
 
     ![Enable Single Sign-On](./media/active-directory-saas-directions-microsoft-tutorial/IC786879.png "Enable Single Sign-On")
 
-2.  On the **How would you like users to sign on to Directions on Microsoft** page, select **Microsoft Azure AD Single Sign-On**, and then click **Next**.
+2.  On the **How would you like users to sign on to Directions on Microsoft** page, select **Windows Azure AD Single Sign-On**, and then click **Next**.
 
-    ![Microsoft Azure AD Singel Sign-On](./media/active-directory-saas-directions-microsoft-tutorial/IC786880.png "Microsoft Azure AD Singel Sign-On")
+    ![Windows Azure AD Singel Sign-On](./media/active-directory-saas-directions-microsoft-tutorial/IC786880.png "Windows Azure AD Singel Sign-On")
 
-3.  On the **Configure App URL** page, in the Sign On URL textbox, type **https://www.directionsonmicrosoft.com/user/login**, and then click **Next**.
+3.  On the **Configure App URL** page, in the Sign On URL textbox, type **https://www.directionspartner.onmschina.cn/user/login**, and then click **Next**.
 
     ![Configure App URL](./media/active-directory-saas-directions-microsoft-tutorial/IC786881.png "Configure App URL")
 

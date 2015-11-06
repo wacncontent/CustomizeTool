@@ -18,12 +18,10 @@
 [AZURE.INCLUDE [sqoop-selector](../includes/hdinsight-selector-use-sqoop.md)]
 
 Learn how to use Azure PowerShell and the HDInsight .NET SDK from a workstation to run Sqoop to import and export between an HDInsight cluster and an Azure SQL database or SQL Server database.
-<!-- deleted by customization
 
 > [AZURE.NOTE] The steps in this article can be used with either a Windows-based or Linux-based HDInsight cluster; however, these steps will only work from a Windows client.
 >
 > If you are using a Linux, OS X, or Unix client and a Linux-based HDInsight server, see [Use Sqoop with Hadoop in HDInsight (SSH)](/documentation/articles/hdinsight-use-sqoop)
--->
 
 ##What is Sqoop?
 
@@ -61,7 +59,7 @@ Before you begin this tutorial, you must have the following:
 		<tr><td>Azure SQL database name</td><td>$sqlDatabaseName</td><td></td><td>The Azure SQL database to which Sqoop will export data to or import data from. </td></tr>
 		</table>
 	
-		> [AZURE.NOTE] By default an Azure SQL database allows connections from Azure services, such as Azure HDInsight. If this firewall setting is disabled, you must enabled it from the Azure <!-- deleted by customization preview portal --><!-- keep by customization: begin -->Management Portal<!-- keep by customization: end -->. For instruction about creating an Azure SQL database and configuring firewall rules, see [Create and Configure SQL Database][sqldatabase-create-configue].
+		> [AZURE.NOTE] By default an Azure SQL database allows connections from Azure services, such as Azure HDInsight. If this firewall setting is disabled, you must enabled it from the Azure preview portal. For instruction about creating an Azure SQL database and configuring firewall rules, see [Create and Configure SQL Database][sqldatabase-create-configue].
 	
 	* **SQL Server**: If your HDInsight cluster is on the same virtual network in Azure as SQL Server, you can use the steps in this article to import and export data to a SQL Server database.
 	
@@ -225,7 +223,7 @@ You will create two tables in the Azure SQL database or in SQL Server. These are
 		Write-Host "Done" -ForegroundColor Green
 
 5. Click **Run Script** or press **F5** to run the script.
-6. Use the [<!-- deleted by customization preview portal --><!-- keep by customization: begin -->Management Portal<!-- keep by customization: end -->][azure-management-portal] to examine the tables and clustered indexes.
+6. Use the [preview portal][azure-management-portal] to examine the tables and clustered indexes.
 
 **For SQL Server**
 
@@ -348,7 +346,7 @@ This is fine for other examples that use this data, but we must remove these exc
 		$destBlob.UploadFromStream($memStream)
 
 5. Click **Run Script** or press **F5** to run the script.  
-6. To examine the modified data file, you can use the <!-- deleted by customization preview portal --><!-- keep by customization: begin -->Management Portal<!-- keep by customization: end -->, an Azure Storage explorer tool, or Azure PowerShell.  [Get started with HDInsight][hdinsight-get-started] has a code sample for using Azure PowerShell to download a file and display the file content.
+6. To examine the modified data file, you can use the preview portal, an Azure Storage explorer tool, or Azure PowerShell.  [Get started with HDInsight][hdinsight-get-started] has a code sample for using Azure PowerShell to download a file and display the file content.
 
 
 ##Use PowerShell to run Sqoop export
@@ -413,7 +411,7 @@ In this section, you will use Azure PowerShell to run the Sqoop export command t
 	Notice that the field delimiter is **\0x20**, which is space. The delimiter is defined in the sample.log file Azure PowerShell script. To find out about **-m 1**, see [Sqoop User Guide][sqoop-user-guide-1.4.4].
 
 5. Click **Run Script** or press **F5** to run the script.  
-6. Use the [<!-- deleted by customization preview portal --><!-- keep by customization: begin -->Management Portal<!-- keep by customization: end -->][azure-management-portal] to examine the exported data.
+6. Use the [preview portal][azure-management-portal] to examine the exported data.
 
 **To export the hivesampletable Hive table**
 
@@ -464,7 +462,7 @@ In this section, you will use Azure PowerShell to run the Sqoop export command t
 		Get-AzureHDInsightJobOutput -Cluster $clusterName -JobId $sqoopJob.JobId -StandardOutput
 
 5. Click **Run Script** or press **F5** to run the script.
-6. Use the [<!-- deleted by customization preview portal --><!-- keep by customization: begin -->Management Portal<!-- keep by customization: end -->][azure-management-portal] to examine the exported data.
+6. Use the [preview portal][azure-management-portal] to examine the exported data.
 
 ##Use the HDInsight .NET SDK to run Sqoop export
 
@@ -578,7 +576,7 @@ In this section, you will import the log4j logs (that you exported to the Azure 
 		Get-AzureHDInsightJobOutput -Cluster $clusterName -JobId $sqoopJob.JobId -StandardOutput
 
 5. Click **Run Script** or press **F5** to run the script.
-6. To examine the modified data file, you can use the <!-- deleted by customization preview portal --><!-- keep by customization: begin -->Management Portal<!-- keep by customization: end -->, an Azure Storage explorer tool, or Azure PowerShell.  [Get started with HDInsight][hdinsight-get-started] has a code sample about using Azure PowerShell to download a file and display the file content.
+6. To examine the modified data file, you can use the preview portal, an Azure Storage explorer tool, or Azure PowerShell.  [Get started with HDInsight][hdinsight-get-started] has a code sample about using Azure PowerShell to download a file and display the file content.
 
 ##Next steps
 

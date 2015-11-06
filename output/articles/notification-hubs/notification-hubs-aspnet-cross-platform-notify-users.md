@@ -98,7 +98,7 @@ Now that you have completed this tutorial, find out more about Notification Hubs
 <!-- URLs. -->
 [Push to users ASP.NET]: /manage/services/notification-hubs/notify-users-aspnet
 [Push to users Mobile Services]: /manage/services/notification-hubs/notify-users/
-[Visual Studio 2012 Express for Windows 8]: http://go.microsoft.com/fwlink/?LinkId=257546
+[Visual Studio 2012 Express for Windows 8]: https://www.visualstudio.com/downloads/download-visual-studio-vs
 
 [Management Portal]: https://manage.windowsazure.cn/
 [Use Notification Hubs to send breaking news]: /documentation/articles/notification-hubs-windows-store-dotnet-send-breaking-news

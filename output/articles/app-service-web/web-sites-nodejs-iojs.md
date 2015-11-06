@@ -44,14 +44,12 @@ To configure Web Apps to use **iojs.exe** instead of a pre-installed Node versio
 In this article you learned how to use io.js with Azure Websites, using both provided deployment scripts as well as manual installation. 
 
 > [AZURE.NOTE] io.js is in heavy development and updated more frequently than Node.js. A number of Node.js modules might not work with io.js - please consult [io.js on GitHub] for troubleshooting.
-<!-- deleted by customization
 
 ## What's changed
 * For a guide to the change from Websites to Azure Websites see: [Azure Websites and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
 * For a guide to the change of the Management Portal to the new portal see: [Reference for navigating the preview portal](https://manage.windowsazure.cn/)
 
 >[AZURE.NOTE] If you want to get started with Azure Websites before signing up for an Azure account, go to [Try Azure Websites](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure Websites. No credit cards required; no commitments.
--->
 
 [io.js]: https://iojs.org
 [io.js distribution]: https://iojs.org/dist/

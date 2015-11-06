@@ -10,4 +10,4 @@
      
      > [AZURE.NOTE] Download the subscription file to a folder outside your source code directories (for example, in the Downloads folder), and then delete it once the import has completed. A malicious user who gains access to the subscription file can edit, create, and delete your Azure services.
 
-   For more information, see [How to Connect to Azure from Visual Studio](http://go.microsoft.com/fwlink/?LinkId=324796).
+   For more information, see [How to Connect to Azure from Visual Studio](https://msdn.microsoft.com/zh-cn/library/azure/hh531793.aspx).

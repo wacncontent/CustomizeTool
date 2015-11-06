@@ -190,7 +190,7 @@ To mount the file share from an on-premises client, you must first take these st
 
 ## Develop with File storage
 
-To work with File storage programmatically, you can use the storage client libraries for .NET and Java, or the Azure Storage REST API. The example in this section demonstrates how to work with a file share by using the [Azure .NET Storage Client Library](http://go.microsoft.com/fwlink/?LinkID=390731&clcid=0x409) from a simple console application running on the desktop.
+To work with File storage programmatically, you can use the storage client libraries for .NET and Java, or the Azure Storage REST API. The example in this section demonstrates how to work with a file share by using the [Azure .NET Storage Client Library](https://msdn.microsoft.com/zh-cn/library/wa_storage_30_reference_home.aspx&clcid=0x409) from a simple console application running on the desktop.
 
 ### Create the console application and obtain the assembly
 
@@ -536,7 +536,7 @@ See these links for more information about Azure File storage.
 
 ### Blog posts
 
-- [Azure File storage is now generally available](http://go.microsoft.com/fwlink/?LinkID=626728&clcid=0x409)
-- [Deep dive with Azure File storage](http://go.microsoft.com/fwlink/?LinkID=626729&clcid=0x409) 
+- [Azure File storage is now generally available](https://azure.microsoft.com/zh-cn/blog/)
+- [Deep dive with Azure File storage](/home/features/storage/) 
 - [Introducing Windows Azure File Service](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/12/introducing-microsoft-azure-file-service.aspx)
 - [Persisting connections to Windows Azure Files](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/27/persisting-connections-to-microsoft-azure-files.aspx)

@@ -27,7 +27,7 @@ You can find the Javadocs API reference for the Android client library [here](ht
 
 ##<a name="setup"></a>Setup and Prerequisites
 
-We assume that you have created a mobile service and a table. For more information see [Create a table](http://go.microsoft.com/fwlink/p/?LinkId=298592). In the code used in this topic, we assume the table is named *ToDoItem*, and that it has the following columns:
+We assume that you have created a mobile service and a table. For more information see [Create a table](https://msdn.microsoft.com/zh-cn/library/azure/jj193162.aspx). In the code used in this topic, we assume the table is named *ToDoItem*, and that it has the following columns:
 
 - id
 - text
@@ -41,7 +41,7 @@ The corresponding typed client side object is the following:
 		private Boolean complete;
 	}
 
-When dynamic schema is enabled, Azure Mobile Services automatically generates new columns based on the object in the insert or update request. For more information, see [Dynamic schema](http://go.microsoft.com/fwlink/p/?LinkId=296271).
+When dynamic schema is enabled, Azure Mobile Services automatically generates new columns based on the object in the insert or update request. For more information, see [Dynamic schema](https://msdn.microsoft.com/zh-cn/library/azure/jj193175.aspx).
 
 ##<a name="create-client"></a>How to: Create the Mobile Services client
 The following code creates the [MobileServiceClient](http://dl.windowsazure.cn/androiddocs/com/microsoft/windowsazure/mobileservices/MobileServiceClient.html) object that is used to access your mobile service. The code goes in the `onCreate` method of the Activity class specified in *AndroidManifest.xml* as a **MAIN** action and **LAUNCHER** category.
@@ -55,7 +55,7 @@ In the code above, replace `MobileServiceUrl` and `AppKey` with the mobile servi
 
 ##<a name="instantiating"></a>How to: Create a table reference
 
-The easiest way to query or modify data in the mobile service is by using the *typed programming model*, since Java is a strongly typed language (later on we will discuss the *untyped* model). This model provides seamless serialization and deserialization to JSON using the [gson](http://go.microsoft.com/fwlink/p/?LinkId=290801) library when sending data between the client and the mobile service: the developer doesn't have to do anything, the framework handles it all.
+The easiest way to query or modify data in the mobile service is by using the *typed programming model*, since Java is a strongly typed language (later on we will discuss the *untyped* model). This model provides seamless serialization and deserialization to JSON using the [gson](http://google-gson.googlecode.com/svn/trunk/gson/docs/javadocs/index.html) library when sending data between the client and the mobile service: the developer doesn't have to do anything, the framework handles it all.
 
 The first thing you do to query or modify data is to create a [MobileServiceTable](http://go.microsoft.com/fwlink/p/?LinkId=296835) object by calling the **getTable** method on the [**MobileServiceClient**](http://dl.windowsazure.cn/androiddocs/com/microsoft/windowsazure/mobileservices/MobileServiceClient.html).  We will look at two overloads of this method:
 
@@ -450,7 +450,7 @@ Once you have created an instance of the **MobileServiceJsonTable**, you can cal
 
 ### <a name="json_insert"></a>How to: Insert into an untyped table
 
-The following code shows how to do an insert. The first step is to create a [**JsonObject**](http://google-gson.googlecode.com/svn/trunk/gson/docs/javadocs/com/google/gson/JsonObject.html), which is part of the <a href=" http://go.microsoft.com/fwlink/p/?LinkId=290801" target="_blank">gson</a> library.
+The following code shows how to do an insert. The first step is to create a [**JsonObject**](http://google-gson.googlecode.com/svn/trunk/gson/docs/javadocs/com/google/gson/JsonObject.html), which is part of the <a href=" http://google-gson.googlecode.com/svn/trunk/gson/docs/javadocs/index.html" target="_blank">gson</a> library.
 
 		JsonObject item = new JsonObject();
 		item.addProperty("text", "Wake up");
@@ -654,7 +654,7 @@ A custom API enables you to define custom endpoints that expose server functiona
 
 ##<a name="authentication"></a>How to: Authenticate users
 
-Mobile Services supports authenticating and authorizing app users using a variety of external identity providers: Facebook, Google, Microsoft Account, Twitter, and Azure Active Directory. You can set permissions on tables to restrict access for specific operations to only authenticated users. You can also use the identity of authenticated users to implement authorization rules in your backend. For more information, see [Get started with authentication](http://go.microsoft.com/fwlink/p/?LinkId=296316).
+Mobile Services supports authenticating and authorizing app users using a variety of external identity providers: Facebook, Google, Microsoft Account, Twitter, and Azure Active Directory. You can set permissions on tables to restrict access for specific operations to only authenticated users. You can also use the identity of authenticated users to implement authorization rules in your backend. For more information, see [Get started with authentication](/documentation/articles/mobile-services-android-get-started-users/).
 
 Two authentication flows are supported: a *server* flow and a *client* flow. The server flow provides the simplest authentication experience, as it relies on the provider's web authentication interface. The client flow allows for deeper integration with device-specific capabilities such as single-sign-on as it relies on provider-specific device-specific SDKs.
 
@@ -675,7 +675,7 @@ Mobile Services supports the following existing identity providers that you can 
 
 You can set permissions on tables to restrict access for specific operations to only authenticated users. You can also use the ID of an authenticated user to modify requests.
 
-These first two tasks are done using the [Azure Management Portal](https://manage.windowsazure.cn/). For more information, see [Get started with authentication](http://go.microsoft.com/fwlink/p/?LinkId=296316).
+These first two tasks are done using the [Azure Management Portal](https://manage.windowsazure.cn/). For more information, see [Get started with authentication](/documentation/articles/mobile-services-android-get-started-users/).
 
 ### <a name="caching"></a>How to: Add authentication code to your app
 
@@ -835,7 +835,7 @@ Suppose that your Java client code uses standard Java-style names for the *ToDoI
 - mDuration
 
 
-You must serialize the client names into JSON names that match the column names of the *ToDoItem* table on the server. The following code, which makes use of the <a href=" http://go.microsoft.com/fwlink/p/?LinkId=290801" target="_blank">gson</a> library does this.
+You must serialize the client names into JSON names that match the column names of the *ToDoItem* table on the server. The following code, which makes use of the <a href=" http://google-gson.googlecode.com/svn/trunk/gson/docs/javadocs/index.html" target="_blank">gson</a> library does this.
 
 	@com.google.gson.annotations.SerializedName("text")
 	private String mText;
@@ -859,9 +859,9 @@ Mapping the client table name to a different mobile services table name is easy,
 
 ### <a name="conversions"></a>How to: Automate column name mappings
 
-Mapping column names for a narrow table with only a few columns isn't a big deal, as we saw in the prior section. But suppose our table has a lot of columns, say 20 or 30. It turns out that we can call the <a href=" http://go.microsoft.com/fwlink/p/?LinkId=290801" target="_blank">gson</a> API and specify a conversion strategy that will apply to every column, and avoid having to annotate every single column name.
+Mapping column names for a narrow table with only a few columns isn't a big deal, as we saw in the prior section. But suppose our table has a lot of columns, say 20 or 30. It turns out that we can call the <a href=" http://google-gson.googlecode.com/svn/trunk/gson/docs/javadocs/index.html" target="_blank">gson</a> API and specify a conversion strategy that will apply to every column, and avoid having to annotate every single column name.
 
-To do this we use the <a href=" http://go.microsoft.com/fwlink/p/?LinkId=290801" target="_blank">gson</a> library which the Android client library uses behind the scenes to serialize Java objects to JSON data, which is sent to Azure Mobile Services.
+To do this we use the <a href=" http://google-gson.googlecode.com/svn/trunk/gson/docs/javadocs/index.html" target="_blank">gson</a> library which the Android client library uses behind the scenes to serialize Java objects to JSON data, which is sent to Azure Mobile Services.
 
 The following code uses the *setFieldNamingStrategy()* method, in which we define a *FieldNamingStrategy()* method. This method says to delete the initial character (an "m"), and then lower-case the next character, for every field name. This code also enables pretty-printing of the output JSON.
 
@@ -885,7 +885,7 @@ This code must be executed prior to any method calls on the Mobile Services clie
 
 So far all of our serialization examples have involved primitive types such as integers and strings which easily serialize into JSON and into the mobile services table. Suppose we want to add a complex object to our client type, which doesn't automatically serialize to JSON and to the table. For example we might want to add an array of strings to the client object. It is now up to us to specify how to do the serialization, and how to store the array into the mobile services table.
 
-To see an example of how to do this, check out the blog post <a href="http://hashtagfail.com/post/44606137082/mobile-services-android-serialization-gson" target="_blank">Customizing serialization using the <a href=" http://go.microsoft.com/fwlink/p/?LinkId=290801" target="_blank">gson</a> library in the Mobile Services Android client</a>.
+To see an example of how to do this, check out the blog post <a href="http://hashtagfail.com/post/44606137082/mobile-services-android-serialization-gson" target="_blank">Customizing serialization using the <a href=" http://google-gson.googlecode.com/svn/trunk/gson/docs/javadocs/index.html" target="_blank">gson</a> library in the Mobile Services Android client</a>.
 
 This general method can be used whenever we have a complex object that is not automatically serializable into JSON and the mobile services table.
 

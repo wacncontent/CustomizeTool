@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Custom installation of Azure AD Connect | Microsoft Azure"
+	pageTitle="Custom installation of Azure AD Connect | Windows Azure"
 	description="This document details the custom installation options for Azure AD Connect."
 	services="active-directory"
 	documentationCenter=""
@@ -8,13 +8,9 @@
 	editor="curtand"/>
 
 <tags
-	ms.service="active-directory"  
-	ms.workload="identity"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
+	ms.service="active-directory"
 	ms.date="10/13/2015"
-	ms.author="billmath;andkjell"/>
+	wacn.date=""/>
 
 # Custom installation of Azure AD Connect
 
@@ -22,16 +18,16 @@
 The following documentation provides information on using the custom installation option for Azure AD Connect.  You can use this option if you have additional configuration options or need optional features that are not covered in the express installation.
 
 ## Related documentation
-If you did not read the documentation on [Integrating your on-premises identities with Azure Active Directory](active-directory-aadconnect.md), the following table provides links to related topics. The first three topics in bold are required before you start the installation.
+If you did not read the documentation on [Integrating your on-premises identities with Azure Active Directory](/documentation/articles/active-directory-aadconnect), the following table provides links to related topics. The first three topics in bold are required before you start the installation.
 
 | Topic |  |
 | --------- | --------- |
 | **Download Azure AD Connect** | [Download Azure AD Connect](http://go.microsoft.com/fwlink/?LinkId=615771) |
-| **Hardware and prerequisites** | [Azure AD Connect: Hardware and prerequisites](active-directory-aadconnect-prerequisites.md) |
-| **Accounts used for installation** | [Azure AD Connect accounts and permissions](active-directory-aadconnect-accounts-permissions.md) |
-| Install using Express settings | [Express installation of Azure AD Connect](active-directory-aadconnect-get-started-express.md) |
-| Upgrade from DirSync | [Upgrade from Azure AD sync tool (DirSync)](active-directory-aadconnect-dirsync-upgrade-get-started.md) |
-| After installation | [Verify the installation and assign licenses ](active-directory-aadconnect-whats-next.md) |
+| **Hardware and prerequisites** | [Azure AD Connect: Hardware and prerequisites](/documentation/articles/active-directory-aadconnect-prerequisites) |
+| **Accounts used for installation** | [Azure AD Connect accounts and permissions](/documentation/articles/active-directory-aadconnect-accounts-permissions) |
+| Install using Express settings | [Express installation of Azure AD Connect](/documentation/articles/active-directory-aadconnect-get-started-express) |
+| Upgrade from DirSync | [Upgrade from Azure AD sync tool (DirSync)](/documentation/articles/active-directory-aadconnect-dirsync-upgrade-get-started) |
+| After installation | [Verify the installation and assign licenses ](/documentation/articles/active-directory-aadconnect-whats-next) |
 
 
 
@@ -59,7 +55,7 @@ After installing the required components you will be asked to specify how the si
 
 Single Sign On option | Description
 ------------- | ------------- |
-Password Sync |Users will be able to sign into Microsoft cloud services, such as Office 365, Dynamics CRM, and Windows InTune, using the same password as they use when logging into their on-premises network.  The user's password is synchronized to Azure via a password hash and authentication occurs in the cloud. See [Password synchronization](active-directory-aadconnectsync-implement-password-synchronization.md) for more information.
+Password Sync |Users will be able to sign into Microsoft cloud services, such as Office 365, Dynamics CRM, and Windows InTune, using the same password as they use when logging into their on-premises network.  The user's password is synchronized to Azure via a password hash and authentication occurs in the cloud. See [Password synchronization](/documentation/articles/active-directory-aadconnectsync-implement-password-synchronization) for more information.
 Federation with AD FS|Users will be able to sign into Microsoft cloud services, such as Office 365, Dynamics CRM, and Windows InTune, using the same password as they use when logging into their on-premises network.  The users are redirected to their on-premises ad fs instance for signing in and authentication is done on-premises.
 Do not configure| Neither feature will be installed and configured.  Choose this option if you already have a 3rd party federation server or another existing solution in place.
 
@@ -75,7 +71,7 @@ This account is only used to create a service account in Azure AD and is not use
 ## Pages under the section Sync
 
 ### Connect your directories
-To connect to your Active Directory Domain Service, Azure AD Connect needs the credentials of an account with sufficient permissions.  This account can be a regular user account because it only needs the default read permissions.  However, depending on your scenario, you may need additional permissions.  For more information see [Azure AD Connect Accounts and permissions](active-directory-aadconnect-accounts-permissions.md#create-the-ad-ds-account)
+To connect to your Active Directory Domain Service, Azure AD Connect needs the credentials of an account with sufficient permissions.  This account can be a regular user account because it only needs the default read permissions.  However, depending on your scenario, you may need additional permissions.  For more information see [Azure AD Connect Accounts and permissions](/documentation/articles/active-directory-aadconnect-accounts-permissions#create-the-ad-ds-account)
 
 ![User Signin](./media/active-directory-aadconnect-get-started-custom/connectdir.png)
 
@@ -89,17 +85,17 @@ The Matching across forests feature allows you to define how users from your AD 
 
 Setting | Description
 ------------- | ------------- |
-[My users are only represented once across all forests](active-directory-aadconnect-topologies.md#multiple-forests-separate-topologies) | All users are created as individual objects in Azure AD.<br> The objects are not joined in the metaverse.
-[Mail attribute](active-directory-aadconnect-topologies.md#multiple-forests-full-mesh-with-optional-galsync) | This option joins users and contacts if the mail attribute has the same value in different forests. It is recommended to use this option when your contacts have been created using GALSync.
-[ObjectSID and msExchangeMasterAccountSID](active-directory-aadconnect-topologies.md#multiple-forests-account-resource-forest)|This option joins an enabled user in an account forest with a disabled user in an Exchange resource forest. This is also known as linked mailbox in Exchange.
+[My users are only represented once across all forests](/documentation/articles/active-directory-aadconnect-topologies#multiple-forests-separate-topologies) | All users are created as individual objects in Azure AD.<br> The objects are not joined in the metaverse.
+[Mail attribute](/documentation/articles/active-directory-aadconnect-topologies#multiple-forests-full-mesh-with-optional-galsync) | This option joins users and contacts if the mail attribute has the same value in different forests. It is recommended to use this option when your contacts have been created using GALSync.
+[ObjectSID and msExchangeMasterAccountSID](/documentation/articles/active-directory-aadconnect-topologies#multiple-forests-account-resource-forest)|This option joins an enabled user in an account forest with a disabled user in an Exchange resource forest. This is also known as linked mailbox in Exchange.
 sAMAccountName and MailNickName|This option joins on attributes where it is expected the login ID for the user can be found.
 My own attribute|This option allows you to select your own attribute.  **Limitation:** Make sure to pick an attribute which will already exist in the metaverse. If you pick a custom attribute the wizard will not be able to complete.
 
-- **Source Anchor** - The attribute sourceAnchor is an attribute which is immutable during the lifetime of a user object. It is the primary key linking the on-premises user with the user in Azure AD. Since the attribute cannot be changed, you must plan for a good attribute to use. A good candidate is objectGUID. This attribute will not change unless the user account is moved between forests/domains. In a multi-forest environment where you move accounts between forests, another attribute must be used, such as an attribute with the employeeID. Attributes to avoid are those which would change if a person marries or change assignments. You cannot use attributes with an @-sign, so email and userPrincipalName cannot be used. The attribute is also case sensitive so if you move an object between forests, make sure to preserve the upper/lower case. For binary attributes the value is base64-encoded, but for other attribute types it will remain in its un-encoded state. In federation scenarios and some Azure AD interfaces this attribute is also known as immutableID. More information about the source anchor can be found in the [design concepts](active-directory-aadconnect-design-concepts.md#sourceAnchor).
+- **Source Anchor** - The attribute sourceAnchor is an attribute which is immutable during the lifetime of a user object. It is the primary key linking the on-premises user with the user in Azure AD. Since the attribute cannot be changed, you must plan for a good attribute to use. A good candidate is objectGUID. This attribute will not change unless the user account is moved between forests/domains. In a multi-forest environment where you move accounts between forests, another attribute must be used, such as an attribute with the employeeID. Attributes to avoid are those which would change if a person marries or change assignments. You cannot use attributes with an @-sign, so email and userPrincipalName cannot be used. The attribute is also case sensitive so if you move an object between forests, make sure to preserve the upper/lower case. For binary attributes the value is base64-encoded, but for other attribute types it will remain in its un-encoded state. In federation scenarios and some Azure AD interfaces this attribute is also known as immutableID. More information about the source anchor can be found in the [design concepts](/documentation/articles/active-directory-aadconnect-design-concepts#sourceAnchor).
 
 - **UserPrincipalName** - The attribute userPrincipalName is the attribute users will use when they login to Azure AD and Office 365. The domains used, also known as the UPN-suffix, should be verified in Azure AD before the users are synchronized. It is strongly recommended to keep the default attribute userPrincipalName. If this attribute is non-routable and cannot be verified then it is possible to select another attribute, for example email, as the attribute holding the login ID.  This is known as **Alternate ID**.  The Alternate ID attribute value must follow the RFC822 standard.  An Alternate ID can be used with both password Single Sign-On (SSO) and federation SSO as the sign-in solution.
 
->[AZURE.WARNING] Using an Alternate ID is not compatible with all Office 365 workloads.  For more information, please refer to [Configuring Alternate Login ID](https://technet.microsoft.com/library/dn659436.aspx.).
+>[AZURE.WARNING] Using an Alternate ID is not compatible with all Office 365 workloads.  For more information, please refer to [Configuring Alternate Login ID](https://technet.microsoft.com/zh-cn/library/dn659436.aspx.).
 
 
 
@@ -121,13 +117,13 @@ This screen allows you to select the optional features for your specific scenari
 
 Optional Features      | Description
 -------------------    | ------------- |
-Exchange Hybrid Deployment |The Exchange Hybrid Deployment feature allows for the co-existence of Exchange mailboxes both on-premises and in Azure by synchronizing a specific set of [attributes](active-directory-aadconnectsync-attributes-synchronzied.md#exchange-hybrid-writeback) from Azure AD back into your on-premises directory.
+Exchange Hybrid Deployment |The Exchange Hybrid Deployment feature allows for the co-existence of Exchange mailboxes both on-premises and in Azure by synchronizing a specific set of [attributes](/documentation/articles/active-directory-aadconnectsync-attributes-synchronzied#exchange-hybrid-writeback) from Azure AD back into your on-premises directory.
 Azure AD app and attribute filtering|By enabling Azure AD app and attribute filtering, the set of synchronized attributes can be tailored to a specific set on a subsequent page of the wizard.  This opens two additional configuration pages in the wizard.  
-Password synchronization | You can enable this option if you selected federation as the sign-in solution. Password synchronization can then be used as a backup option. For additional information see [Password synchronization](active-directory-aadconnectsync-implement-password-synchronization.md).
-Password writeback|By enabling password writeback, password changes that originate with Azure AD will be written back to your on-premises directory. For additional information see [Getting started with password management](active-directory-passwords-getting-started.md).
-Group writeback |If you use the **Groups in Office 365** feature then you can have these groups in your on-premises Active Directory as a distribution group. This option is only available if you have Exchange present in your on-premises Active Directory. For additional information see [Group writeback](active-directory-aadconnect-feature-preview.md#group-writeback).
-Device writeback | Allows you to writeback device objects in Azure AD to your on-premises Active Directory for conditional access scenarios. For additional information see [Enabling device writeback in Azure AD Connect](active-directory-aadconnect-get-started-custom-device-writeback.md)
-Directory extension attribute sync|By enabling directory extensions attribute sync, additional attributes specified will be synced to Azure AD. For additional information see [Directory extensions](active-directory-aadconnect-feature-preview.md#directory-extensions).
+Password synchronization | You can enable this option if you selected federation as the sign-in solution. Password synchronization can then be used as a backup option. For additional information see [Password synchronization](/documentation/articles/active-directory-aadconnectsync-implement-password-synchronization).
+Password writeback|By enabling password writeback, password changes that originate with Azure AD will be written back to your on-premises directory. For additional information see [Getting started with password management](/documentation/articles/active-directory-passwords-getting-started).
+Group writeback |If you use the **Groups in Office 365** feature then you can have these groups in your on-premises Active Directory as a distribution group. This option is only available if you have Exchange present in your on-premises Active Directory. For additional information see [Group writeback](/documentation/articles/active-directory-aadconnect-feature-preview#group-writeback).
+Device writeback | Allows you to writeback device objects in Azure AD to your on-premises Active Directory for conditional access scenarios. For additional information see [Enabling device writeback in Azure AD Connect](/documentation/articles/active-directory-aadconnect-get-started-custom-device-writeback)
+Directory extension attribute sync|By enabling directory extensions attribute sync, additional attributes specified will be synced to Azure AD. For additional information see [Directory extensions](/documentation/articles/active-directory-aadconnect-feature-preview#directory-extensions).
 
 ### Azure AD app and attribute filtering
 If you want to limit which attributes to synchronize to Azure AD, then start by selecting which services you are using, If you configure this page, any new service has to be selected explicitly by re-running the installation wizard.
@@ -143,7 +139,7 @@ With directory extensions you can extend the schema in Azure AD with custom attr
 
 ![Sync Filtering](./media/active-directory-aadconnect-get-started-custom/extension2.png)
 
-For additional information see [Directory extensions](active-directory-aadconnect-feature-preview.md#directory-extensions).
+For additional information see [Directory extensions](/documentation/articles/active-directory-aadconnect-feature-preview#directory-extensions).
 
 ## Configuring federation with AD FS
 Configuring AD FS with Azure AD Connect is simple with just a few clicks. The following is required prior to setup.
@@ -230,7 +226,7 @@ With staging mode the process to setup a new sync server in parallel with an exi
 
 While in staging mode, it is possible to make required changes to the sync engine and review what is about to be exported. When the configuration looks good, run the installation wizard again and disable staging mode. This will enable data to be exported to Azure AD. Make sure to disable the other server at the same time so only one server is actively exporting.
 
- For additional information see [Staging mode](active-directory-aadconnectsync-operations.md#staging-mode).
+ For additional information see [Staging mode](/documentation/articles/active-directory-aadconnectsync-operations#staging-mode).
 
 ### Verify your federation configuration
 
@@ -247,6 +243,6 @@ In addition, perform the following verification steps:
 
 
 ## Next steps
-Now that you have Azure AD Connect installed you can [verify the installation and assign licenses](active-directory-aadconnect-whats-next.md).
+Now that you have Azure AD Connect installed you can [verify the installation and assign licenses](/documentation/articles/active-directory-aadconnect-whats-next).
 
-Learn more about [Integrating your on-premises identities with Azure Active Directory](active-directory-aadconnect.md).
+Learn more about [Integrating your on-premises identities with Azure Active Directory](/documentation/articles/active-directory-aadconnect).

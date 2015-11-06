@@ -8,13 +8,9 @@
                 editor=""/>
 
 <tags
-                ms.service="active-directory"
-                ms.workload="identity"
-                ms.tgt_pltfrm="na"
-                ms.devlang="na"
-                ms.topic="article"
-                ms.date="08/10/2015"
-                ms.author="markusvi"/>
+	ms.service="active-directory"
+	ms.date="08/10/2015"
+	wacn.date=""/>
 
 
 # What is Azure Active Directory?
@@ -73,7 +69,7 @@ Your organization can use Azure AD to improve employee productivity, streamline 
  - [Try it out!](https://azure.microsoft.com/trial/get-started-active-directory/) - you can sign up for a free 30 trial today and deploy your first cloud solution in under 5 minutes using this link
  - Read our “Getting started with Azure AD” for tips and tricks on getting an Azure AD tenant up and running fast
 -	If you are a developer:
- - Check out our [Developers Guide](active-directory-developers-guide.md) to Azure Active Directory 
+ - Check out our [Developers Guide](/documentation/articles/active-directory-developers-guide) to Azure Active Directory 
  - [Start a trial](https://azure.microsoft.com/trial/get-started-active-directory/) – sign up for a free 30 day trial today and get started integrating your app with Azure AD
 
 
@@ -83,24 +79,24 @@ Your organization can use Azure AD to improve employee productivity, streamline 
 We have a ton of great resources online to help you learn all about Azure AD. Here’s a list of great articles to get you started:
 
 
-- [Enabling your directory for hybrid management with Azure AD Connect](active-directory-aadconnect.md)
+- [Enabling your directory for hybrid management with Azure AD Connect](/documentation/articles/active-directory-aadconnect)
 
-- [Additional security for an ever connected world](multi-factor-authentication.md)
+- [Additional security for an ever connected world](/documentation/articles/multi-factor-authentication)
 
-- [Automate User Provisioning and Deprovisioning to SaaS Applications with Azure Active Directory](active-directory-saas-app-provisioning.md)
+- [Automate User Provisioning and Deprovisioning to SaaS Applications with Azure Active Directory](/documentation/articles/active-directory-saas-app-provisioning)
 
-- [Getting started with Azure AD Reporting](active-directory-reporting-getting-started.md)
+- [Getting started with Azure AD Reporting](/documentation/articles/active-directory-reporting-getting-started)
 
-- [Manage your passwords from anywhere](articles/active-directory-passwords.md)
+- [Manage your passwords from anywhere](/documentation/articles/active-directory-passwords)
 
-- [What is application access and single sign-on with Azure Active Directory?](active-directory-appssoaccess-whatis.md)
+- [What is application access and single sign-on with Azure Active Directory?](/documentation/articles/active-directory-appssoaccess-whatis)
 
-- [Automate User Provisioning and Deprovisioning to SaaS Applications with Azure Active Directory](active-directory-saas-app-provisioning.md)
+- [Automate User Provisioning and Deprovisioning to SaaS Applications with Azure Active Directory](/documentation/articles/active-directory-saas-app-provisioning)
 
-- [How to provide secure remote access to on-premises applications](active-directory-application-proxy-get-started.md)
+- [How to provide secure remote access to on-premises applications](/documentation/articles/active-directory-application-proxy-get-started)
 
-- [Managing access to resources with Azure Active Directory groups](active-directory-manage-groups.md)
+- [Managing access to resources with Azure Active Directory groups](/documentation/articles/active-directory-manage-groups)
 
-- [What is Microsoft Azure Active Directory licensing?](active-directory-licensing-what-is.md)
+- [What is Windows Azure Active Directory licensing?](/documentation/articles/active-directory-licensing-what-is)
 
-- [How can I discover unsanctioned cloud apps that are used within my organization](active-directory-cloudappdiscovery-whatis.md)
+- [How can I discover unsanctioned cloud apps that are used within my organization](/documentation/articles/active-directory-cloudappdiscovery-whatis)

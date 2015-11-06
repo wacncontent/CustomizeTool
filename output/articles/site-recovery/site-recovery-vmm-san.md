@@ -21,7 +21,7 @@ This walkthrough describes how to deploy Site Recovery to orchestrate and automa
 Business advantages include:
 
 - Provide an enterprise scalable replication solution automated by Site Recovery.
-- Takes advantage of SAN replication capabilities provided by enterprise storage partners across both fibre channel and iSCSI storage. See our [SAN storage partners](http://go.microsoft.com/fwlink/?LinkId=518669).
+- Takes advantage of SAN replication capabilities provided by enterprise storage partners across both fibre channel and iSCSI storage. See our [SAN storage partners](http://social.technet.microsoft.com/wiki/contents/articles/28317.deploying-azure-site-recovery-with-vmm-and-san-supported-storage-arrays.aspx).
 - Leverage your existing SAN infrastructure to protect mission-critical applications deployed in Hyper-V clusters.
 - Provide support for guest clusters.
 - Ensure replication consistency across different tiers of an application with synchronized replication for low RTO and RPO, and asynchronized replication for high flexibility, depending on storage array capabilities.  
@@ -32,7 +32,7 @@ Business advantages include:
 
 The article includes an overview and deployment prerequisites. It walks you through configuring and enable replication in VMM and the Site Recovery vault. You'll discover and classify SAN storage in VMM, provision LUNs, and allocate storage to Hyper-V clusters. It finishes up by testing failover to make sure everything's working as expected.
 
-If you run into problems post your questions on the [Azure Recovery Services Forum](http://go.microsoft.com/fwlink/?LinkId=313628).
+If you run into problems post your questions on the [Azure Recovery Services Forum](https://social.msdn.microsoft.com:443/forums/azure/zh-cn/home?forum=hypervrecovmgr).
 
 ## Overview
 This scenario protects your workloads by backing up Hyper-V virtual machines from one on-premises VMM site to another using SAN replication.
@@ -51,11 +51,11 @@ This scenario protects your workloads by backing up Hyper-V virtual machines fro
 
 ### Azure prerequisites
 
-- You'll need a [Windows Azure](http://azure.microsoft.com/) account. You can start with a [trial](http://aka.ms/try-azure). Get pricing information at [Azure Site Recovery Manager Pricing Details](http://go.microsoft.com/fwlink/?LinkId=378268).
+- You'll need a [Windows Azure](http://azure.microsoft.com/) account. You can start with a [trial](http://aka.ms/try-azure). Get pricing information at [Azure Site Recovery Manager Pricing Details](/home/features/site-recovery/#price).
 
 ### VMM prerequisites
 
-- You'll need at least one VMM server in each on-premises site, deployed as a physical or virtual standalone server, or as a virtual cluster, running on System Center 2012 R2 with [VMM update rollup 5.0](http://go.microsoft.com/fwlink/?LinkId=517707).
+- You'll need at least one VMM server in each on-premises site, deployed as a physical or virtual standalone server, or as a virtual cluster, running on System Center 2012 R2 with [VMM update rollup 5.0](https://support.microsoft.com/zh-cn/kb/3023195/).
 - You should have at least one cloud on the primary VMM server you want to protect, and one on the secondary VMM server. The primary cloud you want to protect must contain the following:
 	- One or more VMM host groups
 	- One or more Hyper-V clusters in each host group.
@@ -71,7 +71,7 @@ This scenario protects your workloads by backing up Hyper-V virtual machines fro
 	- You’ll need two SAN arrays set up, one in the primary site and one in the secondary.
 	- Network infrastructure should be set up between the arrays. Peering and replication should be configured. Replication licenses should be set up in accordance with the storage array requirements.
 	- Networking should be set up between the Hyper-V host servers and the storage array so that hosts can communicate with storage LUNs using ISCSI or Fibre Channel.
-	- See a list of [supported storage arrays](http://go.microsoft.com/fwlink/?LinkId=518669).
+	- See a list of [supported storage arrays](http://social.technet.microsoft.com/wiki/contents/articles/28317.deploying-azure-site-recovery-with-vmm-and-san-supported-storage-arrays.aspx).
 	- SMI-S Providers, provided by the storage array manufacturers should be installed and the SAN arrays should be managed by the Provider. Set up the Provider in accordance with their documentation.
 	- Ensure that the SMI-S provider for the array is on a server that the VMM server can access over the network by IP address or FQDN.
 	- Each SAN array should have one or more storage pools available to use in this deployment.The VMM server at the primary site will need to manage the primary array and the secondary VMM server will manage the secondary array.
@@ -101,11 +101,11 @@ To prepare your VMM infrastructure you need to:
 
 Site Recovery orchestrates protection for virtual machines located on Hyper-V host servers in VMM clouds. You'll need to ensure that those clouds are set up properly before you begin Site Recovery deployment. A couple of good sources include:
 
-- [What’s New in Private Cloud](http://go.microsoft.com/fwlink/?LinkId=324952)
-- [VMM 2012 and the clouds](http://go.microsoft.com/fwlink/?LinkId=324956) on Gunter Danzeisen's blog.
+- [What’s New in Private Cloud](https://channel9.msdn.com/Events/TechEd/NorthAmerica/2013/MDC-B357)
+- [VMM 2012 and the clouds](http://www.server-log.com/blog/2011/8/26/vmm-2012-and-the-clouds.html) on Gunter Danzeisen's blog.
 - [Configuring the VMM cloud fabric](https://msdn.microsoft.com/zh-cn/library/azure/dn883636.aspx#BKMK_Fabric)
-- [Creating a private cloud in VMM](http://go.microsoft.com/fwlink/?LinkId=324953)
-- [Walkthrough: Creating private clouds](http://go.microsoft.com/fwlink/?LinkId=324954) in Keith Mayer's blog.
+- [Creating a private cloud in VMM](https://technet.microsoft.com/zh-cn/library/jj860425.aspx)
+- [Walkthrough: Creating private clouds](http://blogs.technet.com/b/keithmayer/archive/2013/04/18/walkthrough-creating-private-clouds-with-system-center-2012-sp1-virtual-machine-manager-build-your-private-cloud-in-a-month.aspx) in Keith Mayer's blog.
 
 ### Integrate and classify SAN storage in VMM
 
@@ -135,13 +135,13 @@ Add an classify SANs in the VMM console:
 
 1. After SAN storage is integrated into VMM you create (provision) logical units (LUNs):
 
-	- [How to select a method for creating logical units in VMM](http://go.microsoft.com/fwlink/?LinkId=518490)
-	- [How to provision storage logical units in VMM](http://go.microsoft.com/fwlink/?LinkId=518491)
+	- [How to select a method for creating logical units in VMM](https://technet.microsoft.com/zh-cn/library/gg610624.aspx)
+	- [How to provision storage logical units in VMM](https://technet.microsoft.com/zh-cn/library/gg696973.aspx)
 
 2. Then allocate storage capacity to the Hyper-V host cluster so that VMM can deploy virtual machine data to the provisioned storage:
 
-	- Before allocating storage to the cluster you'll need to allocate it to the VMM host group on which the cluster resides. See [How to allocate storage logical units to a host group](http://go.microsoft.com/fwlink/?LinkId=518493) and [How to allocate storage pools to a host group](http://go.microsoft.com/fwlink/?LinkId=518492).</a>.
-	- Then allocate storage capacity to the cluster as described in [How to configure storage on a Hyper-V host cluster in VMM](http://go.microsoft.com/fwlink/?LinkId=513017).</a>.
+	- Before allocating storage to the cluster you'll need to allocate it to the VMM host group on which the cluster resides. See [How to allocate storage logical units to a host group](https://technet.microsoft.com/zh-cn/library/gg610686.aspx) and [How to allocate storage pools to a host group](https://technet.microsoft.com/zh-cn/library/gg610635.aspx).</a>.
+	- Then allocate storage capacity to the cluster as described in [How to configure storage on a Hyper-V host cluster in VMM](https://technet.microsoft.com/zh-cn/library/gg610692.aspx).</a>.
 
 ### Create replication groups
 
@@ -159,8 +159,8 @@ If you want to configure network mapping do the following:
 1. Read about [Network mapping](https://msdn.microsoft.com/zh-cn/library/azure/dn801052.aspx).
 2. Prepare VM networks in VMM:
 
-	- Learn about [setting up logical networks](http://go.microsoft.com/fwlink/?LinkId=386307).Set up logical networks—Read Configuring Logical Networking in VMM Overview.
-	- [Set up VM networks](http://go.microsoft.com/fwlink/?LinkId=386308).
+	- Learn about [setting up logical networks](https://technet.microsoft.com/zh-cn/library/jj721568.aspx).Set up logical networks—Read Configuring Logical Networking in VMM Overview.
+	- [Set up VM networks](https://technet.microsoft.com/zh-cn/library/jj721575.aspx).
 
 ## Step 2: Create a vault
 
@@ -175,7 +175,7 @@ If you want to configure network mapping do the following:
 
 4. In **Name**, enter a friendly name to identify the vault.
 
-5. In **Region**, select the geographic region for the vault. To check supported regions see Geographic Availability in [Azure Site Recovery Pricing Details](href="http://go.microsoft.com/fwlink/?LinkId=389880)
+5. In **Region**, select the geographic region for the vault. To check supported regions see Geographic Availability in [Azure Site Recovery Pricing Details](href="/home/features/site-recovery/#price)
 
 6. Click **Create vault**.
 
@@ -225,7 +225,7 @@ Check the status bar to confirm that the vault was successfully created. The vau
 		- *.backup.windowsazure.cn
 		- *.blob.core.chinacloudapi.cn
 		- *.store.core.chinacloudapi.cn
-	- Allow the IP addresses described in [Azure Datacenter IP Ranges](http://go.microsoft.com/fwlink/?LinkId=511094) and HTTPS (443) protocol. You would have to white-list IP ranges of the Azure region that you plan to use and that of China North.
+	- Allow the IP addresses described in [Azure Datacenter IP Ranges](https://msdn.microsoft.com/zh-cn/library/azure/dn175718.aspx) and HTTPS (443) protocol. You would have to white-list IP ranges of the Azure region that you plan to use and that of China North.
 
 	- If you use a custom proxy a VMM RunAs account (DRAProxyAccount) will be created automatically using the specified proxy credentials. Configure the proxy server so that this account can authenticate successfully. The VMM RunAs account settings can be modified in the VMM console. To do this, open the Settings workspace, expand Security, click Run As Accounts, and then modify the password for DRAProxyAccount. You’ll need to restart the VMM service so that this setting takes effect.
 
@@ -394,4 +394,4 @@ From the **Jobs** tab you view jobs, drill down into job details and errors, run
 
 From the **Dashboard** you can download the latest versions of Provider and Agent installation files, get configuration information for the vault, see the number of virtual machines that have protection managed by the vault, see recent jobs, manage the vault certificate, and resynchronize virtual machines.
 
-For more information about interacting with jobs and the dashboard, see [Operations and monitoring](http://go.microsoft.com/fwlink/?LinkId=398534).
+For more information about interacting with jobs and the dashboard, see [Operations and monitoring](/documentation/articles/site-recovery-manage-registration-and-protection/).

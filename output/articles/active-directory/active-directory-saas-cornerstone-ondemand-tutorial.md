@@ -1,4 +1,4 @@
-<properties pageTitle="Tutorial: Azure Active Directory integration with Cornerstone OnDemand | Microsoft Azure" description="Learn how to use Cornerstone OnDemand with Azure Active Directory to enable single sign-on, automated provisioning, and more!." services="active-directory" authors="MarkusVi"  documentationCenter="na" manager="stevenpo"/>
+<properties pageTitle="Tutorial: Azure Active Directory integration with Cornerstone OnDemand | Windows Azure" description="Learn how to use Cornerstone OnDemand with Azure Active Directory to enable single sign-on, automated provisioning, and more!." services="active-directory" authors="MarkusVi"  documentationCenter="na" manager="stevenpo"/>
 <tags ms.service="active-directory" ms.devlang="na" ms.topic="article" ms.tgt_pltfrm="na" ms.workload="identity" ms.date="08/01/2015" ms.author="markvi" />
 #Tutorial: Azure Active Directory integration with Cornerstone OnDemand
 >[AZURE.TIP]For feedback, click [here](http://go.microsoft.com/fwlink/?LinkId=526246).
@@ -9,7 +9,7 @@ The scenario outlined in this tutorial assumes that you already have the followi
 -   A valid Azure subscription
 -   A Cornerstone OnDemand tenant
 
-After completing this tutorial, the Azure AD users you have assigned to Cornerstone OnDemand will be able to single sign into the application at your Cornerstone OnDemand company site (service provider initiated sign on), or using the [Introduction to the Access Panel](https://msdn.microsoft.com/library/dn308586)
+After completing this tutorial, the Azure AD users you have assigned to Cornerstone OnDemand will be able to single sign into the application at your Cornerstone OnDemand company site (service provider initiated sign on), or using the [Introduction to the Access Panel](https://msdn.microsoft.com/zh-cn/library/dn308586)
 
 The scenario outlined in this tutorial consists of the following building blocks:
 
@@ -60,9 +60,9 @@ The objective of this section is to outline how to enable users to authenticate 
 
     ![Enable Single Sign-On](./media/active-directory-saas-cornerstone-ondemand-tutorial/IC781596.png "Enable Single Sign-On")
 
-2.  On the **How would you like users to sign on to Cornerstone OnDemand** page, select **Microsoft Azure AD Single Sign-On**, and then click **Next**.
+2.  On the **How would you like users to sign on to Cornerstone OnDemand** page, select **Windows Azure AD Single Sign-On**, and then click **Next**.
 
-    ![Microsoft Azure AD Single Sign-On](./media/active-directory-saas-cornerstone-ondemand-tutorial/IC781597.png "Microsoft Azure AD Single Sign-On")
+    ![Windows Azure AD Single Sign-On](./media/active-directory-saas-cornerstone-ondemand-tutorial/IC781597.png "Windows Azure AD Single Sign-On")
 
 3.  On the **Configure App URL** page, in the **Cornerstone OnDemand Sign In URL** textbox, type your URL using the following pattern "*http://company.csod.com*", and then click **Next**.
 
@@ -111,4 +111,4 @@ To test your configuration, you need to grant the Azure AD users you want to all
 
     ![Assign Users](./media/active-directory-saas-cornerstone-ondemand-tutorial/IC781601.png "Assign Users")
 
-If you want to test your single sign-on settings, open the Access Panel. For more details about the Access Panel, see [Introduction to the Access Panel](https://msdn.microsoft.com/library/dn308586).
+If you want to test your single sign-on settings, open the Access Panel. For more details about the Access Panel, see [Introduction to the Access Panel](https://msdn.microsoft.com/zh-cn/library/dn308586).

@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Azure Active Directory Audit Report Events | Microsoft Azure"
+   pageTitle="Azure Active Directory Audit Report Events | Windows Azure"
    description="Audited events that are available for viewing and downloading from your Azure Active Directory"
    services="active-directory"
    documentationCenter=""
@@ -8,21 +8,17 @@
    editor=""/>
 
 <tags
-   ms.service="active-directory"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="identity"
-   ms.date="09/21/2015"
-   ms.author="kenhoff"/>
+	ms.service="active-directory"
+	ms.date="09/21/2015"
+	wacn.date=""/>
 
 # Azure Active Directory Audit Report Events
-The Azure Active Directory Audit Report helps customers identify privileged actions that occurred in their Azure Active Directory. Privileged actions include elevation changes (for example, role creation or password resets), changing policy configurations (for example password policies), or changes to directory configuration (for example, changes to domain federation settings). The reports provide the audit record for the event name, the actor who performed the action, the target resource affected by the change, and the date and time (in UTC). Customers are able to retrieve the list of audit events for their Azure Active Directory via the [Azure Management Portal](https://manage.windowsazure.com/), as described in [View your access and usage reports](active-directory-view-access-usage-reports.md).
+The Azure Active Directory Audit Report helps customers identify privileged actions that occurred in their Azure Active Directory. Privileged actions include elevation changes (for example, role creation or password resets), changing policy configurations (for example password policies), or changes to directory configuration (for example, changes to domain federation settings). The reports provide the audit record for the event name, the actor who performed the action, the target resource affected by the change, and the date and time (in UTC). Customers are able to retrieve the list of audit events for their Azure Active Directory via the [Azure Management Portal](https://manage.windowsazure.cn/), as described in [View your access and usage reports](/documentation/articles/active-directory-view-access-usage-reports).
 
 ## Audit report retention
-Events in the Azure AD Audit report are retained for 180 days. For more information about retention on reports, see [Azure Active Directory Report Retention Policies](active-directory-reporting-retention.md).
+Events in the Azure AD Audit report are retained for 180 days. For more information about retention on reports, see [Azure Active Directory Report Retention Policies](/documentation/articles/active-directory-reporting-retention).
 
-For customers interested in storing their audit events for longer retention periods, the Reporting API can be used to regularly pull audit events into a separate data store. See [Getting Started with the Reporting API](active-directory-reporting-api-getting-started.md) for details.
+For customers interested in storing their audit events for longer retention periods, the Reporting API can be used to regularly pull audit events into a separate data store. See [Getting Started with the Reporting API](/documentation/articles/active-directory-reporting-api-getting-started) for details.
 
 ## Properties included with each audit event
 
@@ -77,7 +73,7 @@ Verify domain                        | Verified a domain on the directory.
 Verify email verified domain         | Verified a domain on the directory using email verification.
 Set DirSyncEnabled flag on company   | Set the property that enables a directory for Azure AD Sync.
 Set Password Policy                  | Set length and character constraints for user passwords.
-Set Company Information              | Updated the company-level information. See the [Get-MsolCompanyInformation](https://msdn.microsoft.com/library/azure/dn194126.aspx) PowerShell cmdlet for more details.
+Set Company Information              | Updated the company-level information. See the [Get-MsolCompanyInformation](https://msdn.microsoft.com/zh-cn/library/azure/dn194126.aspx) PowerShell cmdlet for more details.
 
 <!---
 
@@ -106,4 +102,4 @@ StrongAuthenticationRequirement | If Multi-Factor Authentication is enforced, en
 StrongAuthenticationUserDetails | The user’s phone number, alternative phone number and email address used for Multi-Factor Authentication and password reset verification.
 TelephoneNumber                 | The user's telephone number.
 
-Audit records are a required control for many compliance regulations. For customers using the Azure Active Directory Audit Report to meet their compliance regulations, it is recommended that the customer submit a copy of this help topic with the copy of the customer's exported audit report to help explain the report details. If the auditor would like to understand the compliance regulations that Azure currently meets, direct the auditor to the [Compliance page](http://azure.microsoft.com/support/trust-center/compliance/) of the Microsoft Azure Trust Center.
+Audit records are a required control for many compliance regulations. For customers using the Azure Active Directory Audit Report to meet their compliance regulations, it is recommended that the customer submit a copy of this help topic with the copy of the customer's exported audit report to help explain the report details. If the auditor would like to understand the compliance regulations that Azure currently meets, direct the auditor to the [Compliance page](http://azure.microsoft.com/support/trust-center/compliance/) of the Windows Azure Trust Center.

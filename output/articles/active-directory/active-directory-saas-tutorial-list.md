@@ -1,5 +1,5 @@
 <properties
-    pageTitle="List of Tutorials for SaaS App Integrations with Azure AD | Microsoft Azure"
+    pageTitle="List of Tutorials for SaaS App Integrations with Azure AD | Windows Azure"
     description="Tutorials on how to configure Azure Active Directory single sign-on for a variety of third-party SaaS applications."
     services="active-directory"
     documentationCenter=""
@@ -8,19 +8,15 @@
     editor=""/>
 
 <tags
-    ms.service="active-directory"
-    ms.devlang="na"
-    ms.topic="article"
-    ms.tgt_pltfrm="na"
-    ms.workload="identity"
-    ms.date="10/16/2015"
-    ms.author="markvi"/>
+	ms.service="active-directory"
+	ms.date="10/16/2015"
+	wacn.date=""/>
 
 #List of Tutorials on How to Integrate SaaS Apps with Azure Active Directory
 
 To help you integrate all of your cloud (SaaS) applications with Azure Active Directory, we have developed a collection of tutorials that show you each of the necessary configuration steps.
 
-For the comprehensive list of SaaS apps that have been pre-integrated into Azure AD, please see the [Active Directory Marketplace](https://azure.microsoft.com/en-us/marketplace/active-directory/).
+For the comprehensive list of SaaS apps that have been pre-integrated into Azure AD, please see the [Active Directory Marketplace](https://azure.microsoft.com/home/features/identity/).
 
 ##List of Tutorials
 
@@ -149,7 +145,7 @@ For the comprehensive list of SaaS apps that have been pre-integrated into Azure
 | ![logo](./media/active-directory-saas-tutorial-list/SaaSApp_Veracode.jpg)| [Veracode](https://go.microsoft.com/fwLink/?LinkID=530231&clcid=0x409)|
 | ![logo](./media/active-directory-saas-tutorial-list/SaaSApp_Wikispace.jpg)| [Wikispaces](https://go.microsoft.com/fwLink/?LinkID=403223&clcid=0x409)|
 | ![logo](./media/active-directory-saas-tutorial-list/SaaSApp_Work.jpg)| [Work.com](https://go.microsoft.com/fwLink/?LinkID=510259&clcid=0x409)|
-| ![logo](./media/active-directory-saas-tutorial-list/SaaSApp_Workday.jpg)| [Workday Inbound Synchronization](https://msdn.microsoft.com/library/azure/dn762434.aspx)|
+| ![logo](./media/active-directory-saas-tutorial-list/SaaSApp_Workday.jpg)| [Workday Inbound Synchronization](https://msdn.microsoft.com/zh-cn/library/azure/dn762434.aspx)|
 | ![logo](./media/active-directory-saas-tutorial-list/SaaSApp_Workday.jpg)| [Workday](https://go.microsoft.com/fwLink/?LinkID=286020&clcid=0x409)|
 | ![logo](./media/active-directory-saas-tutorial-list/SaaSApp_Workrite.jpg)| [Workrite](https://go.microsoft.com/fwLink/?LinkID=530242&clcid=0x409)|
 | ![logo](./media/active-directory-saas-tutorial-list/SaaSApp_xMattersOnDemand.jpg)| [xMatters OnDemand](https://go.microsoft.com/fwLink/?LinkID=403231&clcid=0x409)|
@@ -169,4 +165,4 @@ For the comprehensive list of SaaS apps that have been pre-integrated into Azure
 
 
 
-[AZURE.INCLUDE [saas-toc](../../includes/active-directory-saas-toc.md)]
+[AZURE.INCLUDE [saas-toc](../includes/active-directory-saas-toc.md)]

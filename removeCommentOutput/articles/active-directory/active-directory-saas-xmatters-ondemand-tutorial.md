@@ -1,4 +1,4 @@
-<properties pageTitle="Tutorial: Azure Active Directory Integration with xMatters OnDemand | Microsoft Azure" description="Learn how to use xMatters OnDemand with Azure Active Directory to enable single sign-on, automated provisioning, and more!." services="active-directory" authors="MarkusVi"  documentationCenter="na" manager="stevenpo"/>
+<properties pageTitle="Tutorial: Azure Active Directory Integration with xMatters OnDemand | Windows Azure" description="Learn how to use xMatters OnDemand with Azure Active Directory to enable single sign-on, automated provisioning, and more!." services="active-directory" authors="MarkusVi"  documentationCenter="na" manager="stevenpo"/>
 <tags ms.service="active-directory" ms.devlang="na" ms.topic="article" ms.tgt_pltfrm="na" ms.workload="identity" ms.date="08/01/2015" ms.author="markvi" />
 #Tutorial: Azure Active Directory Integration with xMatters OnDemand
 >[AZURE.TIP]For feedback, click [here](http://go.microsoft.com/fwlink/?LinkId=524330).
@@ -8,7 +8,7 @@ The objective of this tutorial is to show the integration of Azure and xMatters 
 -   A valid Azure subscription
 -   A xMatters OnDemand tenant
   
-After completing this tutorial, the Azure AD users you have assigned to xMatters OnDemand will be able to single sign into the application at your xMatters OnDemand company site (service provider initiated sign on), or using the [Introduction to the Access Panel](https://msdn.microsoft.com/library/dn308586)
+After completing this tutorial, the Azure AD users you have assigned to xMatters OnDemand will be able to single sign into the application at your xMatters OnDemand company site (service provider initiated sign on), or using the [Introduction to the Access Panel](https://msdn.microsoft.com/zh-cn/library/dn308586)
   
 The scenario outlined in this tutorial consists of the following building blocks:
 
@@ -61,7 +61,7 @@ The objective of this section is to outline how to enable users to authenticate 
 
     ![Configure single sign-on](./media/active-directory-saas-xmatters-ondemand-tutorial/IC776791.png "Configure single sign-on")
 
-2.  On the **How would you like users to sign on to XMatters OnDemand** page, select **Microsoft Azure AD Single Sign-On**, and then click **Next**.
+2.  On the **How would you like users to sign on to XMatters OnDemand** page, select **Windows Azure AD Single Sign-On**, and then click **Next**.
 
     ![Configure single sign-on](./media/active-directory-saas-xmatters-ondemand-tutorial/IC776792.png "Configure single sign-on")
 
@@ -86,9 +86,9 @@ The objective of this section is to outline how to enable users to authenticate 
     ![SAML configuration](./media/active-directory-saas-xmatters-ondemand-tutorial/IC776796.png "SAML configuration")
 
     1.  Select **Enable SAML**.
-    2.  In the Azure portal, on the **Configure single sign-on at XMatters OnDemand** dialog page, copy the **Identity Provider ID** value, and then paste it into the **Identity Provider ID** textbox.
-    3.  In the Azure portal, on the **Configure single sign-on at XMatters OnDemand** dialog page, copy the **Single Sign-On Service URL** value, and then paste it into the **Single Sign On URL** textbox.
-    4.  In the Azure portal, on the **Configure single sign-on at XMatters OnDemand** dialog page, copy the **Single Sign-Out Service URL** value, and then paste it into the **Single Logout URL** textbox.
+    2.  In the Azure Management Portal, on the **Configure single sign-on at XMatters OnDemand** dialog page, copy the **Identity Provider ID** value, and then paste it into the **Identity Provider ID** textbox.
+    3.  In the Azure Management Portal, on the **Configure single sign-on at XMatters OnDemand** dialog page, copy the **Single Sign-On Service URL** value, and then paste it into the **Single Sign On URL** textbox.
+    4.  In the Azure Management Portal, on the **Configure single sign-on at XMatters OnDemand** dialog page, copy the **Single Sign-Out Service URL** value, and then paste it into the **Single Logout URL** textbox.
     5.  On the Company Details page, at the top, click **Save Changes**.
         ![Company details](./media/active-directory-saas-xmatters-ondemand-tutorial/IC776797.png "Company details")
 
@@ -138,4 +138,4 @@ To test your configuration, you need to grant the Azure AD users you want to all
 
     ![Yes](./media/active-directory-saas-xmatters-ondemand-tutorial/IC767830.png "Yes")
   
-If you want to test your single sign-on settings, open the Access Panel. For more details about the Access Panel, see [Introduction to the Access Panel](https://msdn.microsoft.com/library/dn308586).
+If you want to test your single sign-on settings, open the Access Panel. For more details about the Access Panel, see [Introduction to the Access Panel](https://msdn.microsoft.com/zh-cn/library/dn308586).

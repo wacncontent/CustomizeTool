@@ -104,11 +104,7 @@ Follow these steps to create an Azure web app, enable Git publishing, and then e
 	>[AZURE.NOTE]
 	>The 'azure site set -w' command will work only with version 0.7.4 or higher of the Azure Command-Line Interface. You can also enable WebSocket support using the [Azure Management Portal](https://manage.windowsazure.cn).
 	>
-
-
-	>To enable WebSockets using the [Azure Management Portal](https://manage.windowsazure.cn), select the Configure page for your  Website, select 'ON' for the Web Sockets entry, and then click Save.
-	>	
-	>![websockets](./media/web-sites-nodejs-chat-app-socketio/websockets.png)
+	>To enable WebSockets using the Azure Management Portal, click the web app from the Web Apps blade, click **All settings** > **Application settings**. Under **Web Sockets**, click **On**. Then click **Save**.
 
 5. To view the web app on Azure, use the following command to launch your web browser and navigate to the hosted web app:
 
@@ -267,11 +263,17 @@ If client browsers keep falling back to long polling instead of using WebSockets
 
 	If your application uses an entry point other than **app.js**, you must replace all occurrences of **app.js** with the correct entry point. For example, replacing **app.js** with **server.js**.
 
+>[AZURE.NOTE] If you want to get started with Azure Websites before signing up for an Azure account, go to [Try Azure Websites](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure Websites. No credit cards required; no commitments.
 
 ##Next steps
 
 In this tutorial you learned how to create a chat application hosted in an Azure web app. You can also host this application as an Azure Cloud Service. For steps on how to accomplish this, see [Build a Node.js Chat Application with Socket.IO on an Azure Cloud Service][cloudservice].
 
+For more information, see also the [Node.js Developer Center](/develop/nodejs/).
+
+## What's changed
+* For a guide to the change from Websites to Azure Websites see: [Azure Websites and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
+* For a guide to the change of the Management Portal to the new portal see: [Reference for navigating the preview portal](https://manage.windowsazure.cn/)
 
 [socketio]: http://socket.io/
 [completed-app]: ./media/web-sites-nodejs-chat-app-socketio/websitesocketcomplete.png

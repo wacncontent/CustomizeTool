@@ -14,7 +14,7 @@
 
 # How to install and configure Azure PowerShell#
 
-<div class="dev-center-tutorial-selector sublanding"><a href="/manage/install-and-configure-windows-powershell/" title="PowerShell" class="current">PowerShell</a><a href="/documentation/articles/install-and-configure-cli/" title="Azure CLI">Azure  CLI</a></div>
+<div class="dev-center-tutorial-selector sublanding"><a href="/manage/install-and-configure-windows-powershell/" title="PowerShell" class="current">PowerShell</a><a href="/documentation/articles/xplat-cli-install/" title="Azure CLI">Azure  CLI</a></div>
 
 > [AZURE.NOTE] **Azure PowerShell 1.0 Preview** is now available on [PowerShell Gallery](http://www.powershellgallery.com/). There are many changes in this preview and we’d like to use it to gather feedback, which we’ll incorporate into Azure PowerShell 1.0. **This preview is not intended for mission critical applications**. If you are running such applications, please continue to use Azure PowerShell 0.9.8. If you would like to use 1.0 Preview, you can uninstall it at any point and go back to 0.9.8. For complete installation instructions, see this [blog post](https://azure.microsoft.com/blog/azps-1-0-pre/).
 
@@ -40,7 +40,7 @@ You can download and install the Azure PowerShell modules by running the [Micros
 > [AZURE.NOTE] If you just want to download the PowerShell installer, please visit https://github.com/Azure/azure-powershell/releases.
 Source code for the PowerShell cmdlets can be found at this repo as well
 
-For more information about the command-line tools available for Azure, see [Command-line tools]( http://go.microsoft.com/fwlink/?LinkId=320796).
+For more information about the command-line tools available for Azure, see [Command-line tools]( /downloads/).
 
 Installing the module also installs a customized console for Azure PowerShell. You can run the cmdlets from either the standard Windows PowerShell console or the Azure PowerShell console.
 
@@ -53,7 +53,7 @@ The method you use to open either console depends on the version of Windows you'
 <a id="Connect"></a>
 ## How to: Connect to your subscription
 
-Use of Azure requires a subscription. If you don't have a subscription, see [Get Started with Azure](http://go.microsoft.com/fwlink/p/?LinkId=320795).
+Use of Azure requires a subscription. If you don't have a subscription, see [Get Started with Azure](https://azure.microsoft.com/zh-cn/pricing/overview/).
 
 The cmdlets need your subscription so they can manage your services. There are two ways to provide your subscription information to Windows PowerShell. You can use a management certificate that contains the information or you can sign in to Azure using your Microsoft account or a work or school account. When you sign in, Azure Active Directory (Azure AD) authenticates the credentials and returns an access token that lets Azure PowerShell manage your account.
 
@@ -62,7 +62,7 @@ To help you choose the authentication method that's appropriate for your needs, 
 - Azure AD is the recommended authentication method since it makes it easier to manage access to a subscription. With the update in version 0.8.6, it enables an automation scenario with Azure AD authentication as well if a work or school account is used. It works with Azure Resource Manager API as well.
 - When you use the certificate method, the subscription information is available as long as the subscription and the certificate are valid. However, this method makes it harder to manage access to a shared subscription, such as when more than one person is authorized to access the account. Also, Azure Resource Manager API doesn't accept certificate authentication.
 
-For more information about authentication and subscription management in Azure, see [Manage Accounts, Subscriptions, and Administrative Roles](http://go.microsoft.com/fwlink/?LinkId=324796).
+For more information about authentication and subscription management in Azure, see [Manage Accounts, Subscriptions, and Administrative Roles](https://msdn.microsoft.com/zh-cn/library/azure/hh531793.aspx).
 
 ### Use the Azure AD method
 
@@ -245,8 +245,8 @@ These resources provide help for specific cmdlets:
 
 For help from the community, try these popular forums:
 
-- [Azure forum on MSDN]( http://go.microsoft.com/fwlink/p/?LinkId=320212)
-- [Stackoverflow](http://go.microsoft.com/fwlink/?LinkId=320213)
+- [Azure forum on MSDN]( https://social.msdn.microsoft.com:443/forums/azure/zh-cn/home?category=windowsazureplatform%2Cazuremarketplace%2Cwindowsazureplatformctp)
+- [Stackoverflow](http://stackoverflow.com/questions/tagged/azure)
 
 
 ## <a id="Resources"></a>Additional Resources ##
@@ -257,13 +257,13 @@ These are some of the resources available that you can use to learn to use Azure
 
 - To provide feedback about the cmdlets, report issues, or access the source code, see [Azure PowerShell code repository](https://github.com/WindowsAzure/azure-sdk-tools).
 
-- To learn about the Windows PowerShell command line and scripting environment, see the [TechNet Script Center](http://go.microsoft.com/fwlink/p/?LinkId=320211).
+- To learn about the Windows PowerShell command line and scripting environment, see the [TechNet Script Center](https://technet.microsoft.com/zh-cn/scriptcenter/dd742419).
 
-- For information about installing, learning, using, and customizing Windows PowerShell, see [Scripting with Windows PowerShell](http://go.microsoft.com/fwlink/p/?LinkId=320210).
+- For information about installing, learning, using, and customizing Windows PowerShell, see [Scripting with Windows PowerShell](https://technet.microsoft.com/zh-cn/library/bb978526.aspx).
 
-- For information about what scripts are and how to run them in Windows PowerShell, see [Running Scripts](http://go.microsoft.com/fwlink/p/?LinkId=320627). This article includes basic information about creating scripts and configuring your computer to run scripts.
+- For information about what scripts are and how to run them in Windows PowerShell, see [Running Scripts](https://technet.microsoft.com/zh-cn/library/bb613481.aspx). This article includes basic information about creating scripts and configuring your computer to run scripts.
 
-- For information about cmdlets for Azure AD, see [Manage Azure AD using Windows PowerShell](http://go.microsoft.com/fwlink/p/?LinkId=320628).
+- For information about cmdlets for Azure AD, see [Manage Azure AD using Windows PowerShell](https://technet.microsoft.com/zh-cn/library/jj151815.aspx).
 
 
 

@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Customize: Azure AD Password Management | Microsoft Azure" 
+	pageTitle="Customize: Azure AD Password Management | Windows Azure" 
 	description="How to customize Password Management look and feel, behavior, and notifications in Azure AD to meet your needs." 
 	services="active-directory" 
 	documentationCenter="" 
@@ -7,24 +7,20 @@
 	manager="kbrint" 
 	editor="billmath"/>
 
-<tags 
-	ms.service="active-directory" 
-	ms.workload="identity" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="06/08/2015" 
-	ms.author="asteen"/>
+<tags
+	ms.service="active-directory"
+	ms.date="06/08/2015"
+	wacn.date=""/>
 
 # Customizing Password Management to fit your organization's needs
-In order to give your users the best possible experience, we recommend that you explore and play with all of the Password Management configuration options available to you. In fact, you can start exploring this right away by going to the configuration tab of the **Active Directory extension** in the [Azure Management Portal](https://manage.windowsazure.com). This topic walks you through all of the different Password Management customizations you can make as an administrator from within **Configure** tab of your directory within the [Azure Management Portal](https://manage.windowsazure.com), including:
+In order to give your users the best possible experience, we recommend that you explore and play with all of the Password Management configuration options available to you. In fact, you can start exploring this right away by going to the configuration tab of the **Active Directory extension** in the [Azure Management Portal](https://manage.windowsazure.cn). This topic walks you through all of the different Password Management customizations you can make as an administrator from within **Configure** tab of your directory within the [Azure Management Portal](https://manage.windowsazure.cn), including:
 
 - [**Customizing Password Management Look and Feel**](#password-managment-look-and-feel)
 - [**Customizing User Password Management Behavior**](#password-management-behavior)
 - [**Customizing Password Management Notifications**](#password-management-notifications)
 
 ## Password managment look and feel
-The following table describes how each control affects the experience for users registering for password reset and resetting their passwords.  You can configure these options under the **Directory Properties** section of your directory’s **Configure** tab within the [Azure Management Portal](https://manage.windowsazure.com).
+The following table describes how each control affects the experience for users registering for password reset and resetting their passwords.  You can configure these options under the **Directory Properties** section of your directory’s **Configure** tab within the [Azure Management Portal](https://manage.windowsazure.cn).
 
 <table>
             <tbody><tr>
@@ -79,7 +75,7 @@ The following table describes how each control affects the experience for users 
                 <p>
                   
                 </p>
-                <p>You can learn more about the tenant branding and customization feature at <a href="https://technet.microsoft.com/library/dn532270.aspx">Add company branding to your Sign In and Access Panel pages</a>.</p>
+                <p>You can learn more about the tenant branding and customization feature at <a href="https://technet.microsoft.com/zh-cn/library/dn532270.aspx">Add company branding to your Sign In and Access Panel pages</a>.</p>
               </td>
               <td>
                 <p>
@@ -110,7 +106,7 @@ The following table describes how each control affects the experience for users 
           </tbody></table>
 
 ## Password Management behavior
-The following table describes how each control affects the experience for users registering for password reset and resetting their passwords.  You can configure these options under the **User Password Reset Policy** section of your directory’s **Configure** tab in the [Azure Management Portal](https://manage.windowsazure.com).
+The following table describes how each control affects the experience for users registering for password reset and resetting their passwords.  You can configure these options under the **User Password Reset Policy** section of your directory’s **Configure** tab in the [Azure Management Portal](https://manage.windowsazure.cn).
 
 > [AZURE.NOTE] The administrator account you are using must have an AAD Premium license assigned in order to see these policy controls.<br><br>These policy controls only apply to end users resetting their passwords, not administrators.  **Administrators have a default policy of alternate email and/or mobile phone that is specified for them by Microsoft which cannot be changed.**
 
@@ -271,7 +267,7 @@ The following table describes how each control affects the experience for users 
                   <li class="unordered">
 												Security Questions are stored privately and securely on a user object in the directory and can only be answered by users during registration.  For security purposes, there is currently no way for an administrator to edit or see these answers.<br><br></li>
                   <li class="unordered">
-                    <strong>Note: </strong>by default, only the cloud attributes Office Phone and Mobile Phone are synchronized to your cloud directory from your on-premises directory.  To learn more about which on-premises attributes are synced to the cloud, see <a href="https://msdn.microsoft.com/library/azure/dn764938.aspx">Attributes synchronized to Azure AD.</a><br><br></li>
+                    <strong>Note: </strong>by default, only the cloud attributes Office Phone and Mobile Phone are synchronized to your cloud directory from your on-premises directory.  To learn more about which on-premises attributes are synced to the cloud, see <a href="https://msdn.microsoft.com/zh-cn/library/azure/dn764938.aspx">Attributes synchronized to Azure AD.</a><br><br></li>
                 </ul>
                 <p>
                   <strong>Registration portal:</strong>
@@ -642,7 +638,7 @@ The following table describes how each control affects the experience for users 
           </tbody></table>
 
 ## Password Management notifications
-The following table describes how each control affects the experience for users and admins who receive password reset notifications.  You can configure these options under the **Notifications** section of your directory’s **Configure** tab in the [Azure Management Portal](https://manage.windowsazure.com).
+The following table describes how each control affects the experience for users and admins who receive password reset notifications.  You can configure these options under the **Notifications** section of your directory’s **Configure** tab in the [Azure Management Portal](https://manage.windowsazure.cn).
 
 <table>
             <tbody><tr>
@@ -721,12 +717,12 @@ The following table describes how each control affects the experience for users 
 **Additional Resources**
 
 
-* [What is Password Management](active-directory-passwords.md)
-* [How Password Management works](active-directory-passwords-how-it-works.md)
-* [Getting started with Password Mangement](active-directory-passwords-getting-started.md)
-* [Password Management Best Practices](active-directory-passwords-best-practices.md)
-* [How to get Operational Insights with Password Management Reports](active-directory-passwords-get-insights.md)
-* [Password Management FAQ](active-directory-passwords-faq.md)
-* [Troubleshoot Password Management](active-directory-passwords-troubleshoot.md)
-* [Learn More](active-directory-passwords-learn-more.md)
-* [Password Management on MSDN](https://msdn.microsoft.com/library/azure/dn510386.aspx) 
+* [What is Password Management](/documentation/articles/active-directory-passwords)
+* [How Password Management works](/documentation/articles/active-directory-passwords-how-it-works)
+* [Getting started with Password Mangement](/documentation/articles/active-directory-passwords-getting-started)
+* [Password Management Best Practices](/documentation/articles/active-directory-passwords-best-practices)
+* [How to get Operational Insights with Password Management Reports](/documentation/articles/active-directory-passwords-get-insights)
+* [Password Management FAQ](/documentation/articles/active-directory-passwords-faq)
+* [Troubleshoot Password Management](/documentation/articles/active-directory-passwords-troubleshoot)
+* [Learn More](/documentation/articles/active-directory-passwords-learn-more)
+* [Password Management on MSDN](https://msdn.microsoft.com/zh-cn/library/azure/dn510386.aspx) 

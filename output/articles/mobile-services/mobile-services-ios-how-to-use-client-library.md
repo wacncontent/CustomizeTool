@@ -18,7 +18,7 @@
 
 This guide teaches you to perform common scenarios using the Azure Mobile Services [iOS SDK]. If you are new to Mobile Services, first complete [Mobile Services Quick Start] to configure your account, create a table, and create a mobile service.
 
-> [AZURE.NOTE] This guide uses the latest [iOS Mobile Services SDK](https://go.microsoft.com/fwLink/?LinkID=266533&clcid=0x409). If your project uses an older version of the SDK, first upgrade the framework in Xcode.
+> [AZURE.NOTE] This guide uses the latest [iOS Mobile Services SDK](https://github.com/Azure/azure-mobile-services/blob/master/CHANGELOG.ios.md#sdk-downloads). If your project uses an older version of the SDK, first upgrade the framework in Xcode.
 
 [AZURE.INCLUDE [mobile-services-concepts](../includes/mobile-services-concepts.md)]
 
@@ -323,7 +323,7 @@ The file [`<WindowsAzureMobileServices/MSError.h>`](https://github.com/Azure/azu
 [Live Connect SDK]: http://go.microsoft.com/fwlink/p/?LinkId=301960
 [Permissions]: http://msdn.microsoft.com/zh-cn/library/azure/jj193161.aspx
 [Service-side Authorization]: /documentation/articles/mobile-services-javascript-backend-service-side-authorization
-[Dynamic Schema]: http://go.microsoft.com/fwlink/p/?LinkId=296271
+[Dynamic Schema]: https://msdn.microsoft.com/zh-cn/library/azure/jj193175.aspx
 [Create a table]: http://msdn.microsoft.com/zh-cn/library/azure/jj193162.aspx
 [NSDictionary object]: http://go.microsoft.com/fwlink/p/?LinkId=301965
 [ASCII control codes C0 and C1]: http://en.wikipedia.org/wiki/Data_link_escape_character#C1_set

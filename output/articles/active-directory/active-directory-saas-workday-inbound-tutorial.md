@@ -1,18 +1,14 @@
 <properties 
-  pageTitle="Tutorial: Configuring Workday for Inbound Synchronization | Microsoft Azure" 
+  pageTitle="Tutorial: Configuring Workday for Inbound Synchronization | Windows Azure" 
   description="Learn how to use Workday as source of identity data for Azure Active Directory." 
   services="active-directory" 
   authors="MarkusVi"  
   documentationCenter="na" 
   manager="msStevenPo"/>
-<tags 
-  ms.service="active-directory" 
-  ms.devlang="na" 
-  ms.topic="article" 
-  ms.tgt_pltfrm="na" 
-  ms.workload="identity" 
-  ms.date="08/01/2015" 
-  ms.author="markvi" />
+<tags
+	ms.service="active-directory"
+	ms.date="08/01/2015"
+	wacn.date=""/>
 
 
 #Tutorial: Configuring Workday for Inbound Synchronization
@@ -225,5 +221,5 @@ You can now go to the **Users** section and check whether your Workday user has 
 
 ## Additional Resources
 
-* [List of Tutorials on How to Integrate SaaS Apps with Azure Active Directory](active-directory-saas-tutorial-list.md)
-* [What is application access and single sign-on with Azure Active Directory?](active-directory-appssoaccess-whatis.md)
+* [List of Tutorials on How to Integrate SaaS Apps with Azure Active Directory](/documentation/articles/active-directory-saas-tutorial-list)
+* [What is application access and single sign-on with Azure Active Directory?](/documentation/articles/active-directory-appssoaccess-whatis)

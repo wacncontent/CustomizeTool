@@ -1,4 +1,4 @@
-<properties pageTitle="Tutorial: Azure Active Directory integration with TimeOffManager | Microsoft Azure" description="Learn how to use TimeOffManager with Azure Active Directory to enable single sign-on, automated provisioning, and more!." services="active-directory" authors="MarkusVi"  documentationCenter="na" manager="stevenpo"/>
+<properties pageTitle="Tutorial: Azure Active Directory integration with TimeOffManager | Windows Azure" description="Learn how to use TimeOffManager with Azure Active Directory to enable single sign-on, automated provisioning, and more!." services="active-directory" authors="MarkusVi"  documentationCenter="na" manager="stevenpo"/>
 <tags ms.service="active-directory" ms.devlang="na" ms.topic="article" ms.tgt_pltfrm="na" ms.workload="identity" ms.date="08/01/2015" ms.author="markvi" />
 #Tutorial: Azure Active Directory integration with TimeOffManager
 >[AZURE.TIP]For feedback, click [here](http://go.microsoft.com/fwlink/?LinkId=534748).
@@ -9,7 +9,7 @@ The scenario outlined in this tutorial assumes that you already have the followi
 -   A valid Azure subscription
 -   A TimeOffManager single sign-on enabled subscription
   
-After completing this tutorial, the Azure AD users you have assigned to TimeOffManager will be able to single sign into the application at your TimeOffManager company site (service provider initiated sign on), or using the [Introduction to the Access Panel](https://msdn.microsoft.com/library/dn308586)
+After completing this tutorial, the Azure AD users you have assigned to TimeOffManager will be able to single sign into the application at your TimeOffManager company site (service provider initiated sign on), or using the [Introduction to the Access Panel](https://msdn.microsoft.com/zh-cn/library/dn308586)
   
 The scenario outlined in this tutorial consists of the following building blocks:
 
@@ -64,11 +64,11 @@ If you are not familiar with this procedure, see [How to convert a binary certif
 
     ![Configure Single Sign-On](./media/active-directory-saas-timeoffmanager-tutorial/IC795912.png "Configure Single Sign-On")
 
-2.  On the **How would you like users to sign on to TimeOffManager** page, select **Microsoft Azure AD Single Sign-On**, and then click **Next**.
+2.  On the **How would you like users to sign on to TimeOffManager** page, select **Windows Azure AD Single Sign-On**, and then click **Next**.
 
     ![Configure Single Sign-On](./media/active-directory-saas-timeoffmanager-tutorial/IC795913.png "Configure Single Sign-On")
 
-3.  On the **Configure App URL** page, in the **TimeOffManager Reply URL** textbox, type your TimeOffManager AssertionConsumerService URL (e.g.: "*Example: https://www.timeoffmanager.com/cpanel/sso/consume.aspx?company\_id=IC34216*", and then click **Next**.
+3.  On the **Configure App URL** page, in the **TimeOffManager Reply URL** textbox, type your TimeOffManager AssertionConsumerService URL (e.g.: "*Example: https://www.timeoffmanager.com/cpanel/sso/consume.aspx?company_id=IC34216*", and then click **Next**.
 
     ![Configure App URL](./media/active-directory-saas-timeoffmanager-tutorial/IC795914.png "Configure App URL")
 
@@ -95,14 +95,14 @@ If you are not familiar with this procedure, see [How to convert a binary certif
         >[AZURE.TIP] For more details, see [How to convert a binary certificate into a text file](http://youtu.be/PlgrzUZ-Y1o)
 
     2.  Open your base-64 encoded certificate in notepad, copy the content of it into your clipboard, and then paste the entire Certificate into **X.509 Certificate** textbox.
-    3.  In the Azure portal, on the **Configure single sign-on at TimeOffManager** dialog page, copy the **Issuer URL** value, and then paste it into the **Idp Issuer** textbox.
-    4.  In the Azure portal, on the **Configure single sign-on at TimeOffManager** dialog page, copy the **Remote Login URL** value, and then paste it into the **IdP Endpoint URL** textbox.
+    3.  In the Azure Management Portal, on the **Configure single sign-on at TimeOffManager** dialog page, copy the **Issuer URL** value, and then paste it into the **Idp Issuer** textbox.
+    4.  In the Azure Management Portal, on the **Configure single sign-on at TimeOffManager** dialog page, copy the **Remote Login URL** value, and then paste it into the **IdP Endpoint URL** textbox.
     5.  As **Enforce SAML**, select **No**.
     6.  As **Auto-Create Users**, select **Yes**.
-    7.  In the Azure portal, on the **Configure single sign-on at TimeOffManager** dialog page, copy the **Remote Logout URL** value, and then paste it into the **Logout URL** textbox.
+    7.  In the Azure Management Portal, on the **Configure single sign-on at TimeOffManager** dialog page, copy the **Remote Logout URL** value, and then paste it into the **Logout URL** textbox.
     8.  Click **Save Changes**.
 
-8.  In the Azure portal, on the **Configure single sign-on at TimeOffManager** dialog page, select the single sign-on configuration confirmation, and then click **Complete**.
+8.  In the Azure Management Portal, on the **Configure single sign-on at TimeOffManager** dialog page, select the single sign-on configuration confirmation, and then click **Complete**.
 
     ![Configure Single Sign-On](./media/active-directory-saas-timeoffmanager-tutorial/IC795919.png "Configure Single Sign-On")
 
@@ -150,4 +150,4 @@ To test your configuration, you need to grant the Azure AD users you want to all
 
     ![Yes](./media/active-directory-saas-timeoffmanager-tutorial/IC767830.png "Yes")
   
-If you want to test your single sign-on settings, open the Access Panel. For more details about the Access Panel, see [Introduction to the Access Panel](https://msdn.microsoft.com/library/dn308586).
+If you want to test your single sign-on settings, open the Access Panel. For more details about the Access Panel, see [Introduction to the Access Panel](https://msdn.microsoft.com/zh-cn/library/dn308586).

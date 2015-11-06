@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties
 	pageTitle="Agile software development with Azure Websites"
 	description="Learn how to create high-scale complex applications with Azure Websites in a way that supports agile software development."
@@ -69,7 +67,7 @@ You will also use the typical branching strategy, with code moving from the dev 
 > + You can [open an Azure account for free](/pricing/1rmb-trial/?WT.mc_id=A261C142F) - You get credits you can use to try out paid Azure services, and even after they're used up you can keep the account and use free Azure services, such as Web Apps.
 > + You can [activate MSDN subscriber benefits](/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F) - Your MSDN subscription gives you credits every month that you can use for paid Azure services.
 >
-> If you want to get started with Azure Websites before signing up for an Azure account, go to [Try Azure Websites](http://go.microsoft.com/fwlink/?LinkId=523751), where you can immediately create a short-lived starter web app in Azure Websites. No credit cards required; no commitments.
+> If you want to get started with Azure Websites before signing up for an Azure account, go to [Try Azure Websites](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure Websites. No credit cards required; no commitments.
 
 ## Set up your production environment ##
 

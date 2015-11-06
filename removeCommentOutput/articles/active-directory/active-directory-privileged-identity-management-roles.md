@@ -8,13 +8,9 @@
    editor=""/>
 
 <tags
-   ms.service="na"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="identity"
-   ms.date="09/21/2015"
-   ms.author="inhenk"/>
+	ms.service="na"
+	ms.date="09/21/2015"
+	wacn.date=""/>
 
 # Azure Privileged Identity Management: Roles
 
@@ -30,7 +26,7 @@ Azure PIM uses the following roles as default administrator roles.
 - User Administrator
 - Password Administrator
 
-For more information about roles from Office 365, Exchange Online, Sharepoint Online and Skype for Business click here.[Assigning admin roles in Office 365](https://support.office.com/en-us/article/Assigning-admin-roles-in-Office-365-eac4d046-1afd-4f1a-85fc-8219c79e1504?ui=en-US&rs=en-US&ad=US)
+For more information about roles from Office 365, Exchange Online, Sharepoint Online and Skype for Business click here.[Assigning admin roles in Office 365](https://support.office.com/article/Assigning-admin-roles-in-Office-365-eac4d046-1afd-4f1a-85fc-8219c79e1504?ui=en-US&rs=en-US&ad=US)
 
 <!--**PLACEHOLDER: The above article may not be the one we want since PIM gets roles from places other that Office 365**-->
 
@@ -44,7 +40,7 @@ For more information about roles from Office 365, Exchange Online, Sharepoint On
 
 > [AZURE.NOTE] The license option will only show up if licenses actually exit for this subscription.
 
-1. With a global administrator account or a co-administrator account, log in to [http://manage.windowsazure.com] (http://manage.windowsazure.com).
+1. With a global administrator account or a co-administrator account, log in to [http://manage.windowsazure.cn] (http://manage.windowsazure.cn).
 2. Click on **All Items** in the main menu.
 3. Select the directory you want to work with and that has licenses associated with it.
 4. Click on **Licenses**. The list of available licenses will appear.
@@ -55,4 +51,4 @@ For more information about roles from Office 365, Exchange Online, Sharepoint On
 
 <!--Every topic should have next steps and links to the next logical set of content to keep the customer engaged-->
 ## Next steps
-[AZURE.INCLUDE [active-directory-privileged-identity-management-toc](../../includes/active-directory-privileged-identity-management-toc.md)]
+[AZURE.INCLUDE [active-directory-privileged-identity-management-toc](../includes/active-directory-privileged-identity-management-toc.md)]

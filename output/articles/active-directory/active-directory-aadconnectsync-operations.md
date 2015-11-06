@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Azure AD Connect sync: Operational tasks and considerations | Microsoft Azure"
+   pageTitle="Azure AD Connect sync: Operational tasks and considerations | Windows Azure"
    description="This topic describes operational tasks for Azure AD Connect sync and how to prepare for operating this component."
    services="active-directory"
    documentationCenter=""
@@ -8,13 +8,9 @@
    editor=""/>
 
 <tags
-   ms.service="active-directory"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="identity"
-   ms.date="10/13/2015"
-   ms.author="andkjell"/>
+	ms.service="active-directory"
+	ms.date="10/13/2015"
+	wacn.date=""/>
 
 # Azure AD Connect sync: Operational tasks and consideration
 The objective of this topic is to describe operation tasks for Azure AD Connect sync.
@@ -58,7 +54,7 @@ You have now staged export changes to Azure AD and on-premises AD (if you are us
 
 **Verify**
 
-1. Start a cmd prompt and go to `%Program Files%\Microsoft Azure AD Sync\bin`
+1. Start a cmd prompt and go to `%Program Files%\Windows Azure AD Sync\bin`
 2. Run: `csexport "Name of Connector" %temp%\export.xml /f:x`<BR/>
 The name of the Connector can be found in Synchronization Service. It will have a name similar to “contoso.com – AAD” for Azure AD.
 3. Run: `CSExportAnalyzer %temp%\export.xml > %temp%\export.csv`
@@ -112,6 +108,6 @@ A common and supported method is to run the sync engine in a virtual machine. In
 When not using the SQL Server Express which comes with Azure AD Connect, the high availability for SQL Server should also be considered. The only high availability solution supported is SQL clustering. Unsupported solutions include mirroring and Always On.
 
 ## Next steps
-Learn more about the [Azure AD Connect sync](active-directory-aadconnectsync-whatis.md) configuration.
+Learn more about the [Azure AD Connect sync](/documentation/articles/active-directory-aadconnectsync-whatis) configuration.
 
-Learn more about [Integrating your on-premises identities with Azure Active Directory](active-directory-aadconnect.md).
+Learn more about [Integrating your on-premises identities with Azure Active Directory](/documentation/articles/active-directory-aadconnect).

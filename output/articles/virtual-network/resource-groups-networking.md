@@ -30,9 +30,7 @@ Azure Resource Manager relies on different resource providers to provide access 
 	- Node.JS SDK
 	- Java SDK
 	- Azure CLI
-<!-- deleted by customization
 	- Preview Portal
--->
 	- ARM template language
 
 ## Network resources 
@@ -118,7 +116,7 @@ The template is primarily a JSON description of the resources and the instance v
 	    "parameters" : {
 	      "location": {
 	        "type": "String",
-	        "allowedValues": ["China East", "China North"<!-- deleted by customization , "West Europe", "East Asia", "South East Asia" -->],
+	        "allowedValues": ["China East", "China North", "West Europe", "East Asia", "South East Asia"],
 	        "metadata" : {
 	          "Description" : "Deployment location"
 	        }

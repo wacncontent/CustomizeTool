@@ -20,15 +20,6 @@ The Azure Active Directory tenant that you use can be an Azure-only directory, o
 
 >[AZURE.NOTE] For Azure Websites you can configure authentication against an Azure Active Directory tenant with a few clicks of a button. For more information, see [Use Active Directory for authentication in Azure Websites](/documentation/articles/web-sites-authentication-authorization).
 
-<!-- keep by customization: begin -->
-- [What you will build](#bkmk_build)
-- [What you will need](#bkmk_need)
-- [Use sample application for LOB template](#bkmk_sample)
-- [Run the sample application](#bkmk_run)
-- [Deploy the sample application to Azure Websites](#bkmk_deploy)
-- [Add LOB functionality to the sample application](#bkmk_crud)
-- [Further resources](#bkmk_resources)
-<!-- keep by customization: end -->
 <a name="bkmk_build"></a>
 ## What you will build ##
 
@@ -381,10 +372,8 @@ Now that you have configured the authorizations and line-of-business functionali
 - [Similarities between Active Directory and Azure Active Directory](http://technet.microsoft.com/zh-cn/library/dn518177.aspx)
 - [Directory Sync with Single Sign-On Scenario](http://technet.microsoft.com/zh-cn/library/dn441213.aspx)
 - [Azure Active Directory Supported Token and Claim Types](http://msdn.microsoft.com/zh-cn/library/azure/dn195587.aspx)
-<!-- deleted by customization
 
 [AZURE.INCLUDE [app-service-web-whats-changed](../includes/app-service-web-whats-changed.md)]
 
 [AZURE.INCLUDE [app-service-web-try-app-service](../includes/app-service-web-try-app-service.md)]
--->
  

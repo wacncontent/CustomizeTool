@@ -16,10 +16,8 @@
 # Azure Websites web app advanced config and extensions
 
 By using [XML Document Transformation](http://msdn.microsoft.com/zh-cn/library/dd465326.aspx) (XDT) declarations, you can transform the [ApplicationHost.config](http://www.iis.net/learn/get-started/planning-your-iis-architecture/introduction-to-applicationhostconfig) file in your web app in Azure Websites. You can also use XDT declarations to add private extensions to enable custom web app administration actions. This article includes a sample PHP Manager web app extension that enables management of PHP settings through a web interface.
-<!-- deleted by customization
 
 [AZURE.INCLUDE [app-service-web-to-api-and-mobile](../includes/app-service-web-to-api-and-mobile.md)]
--->
 
 ##<a id="transform"></a>Advanced configuration through ApplicationHost.config
 The Azure Websites platform provides flexibility and control for web app configuration. Although the standard IIS ApplicationHost.config configuration file is not available for direct editing in Azure Websites, the platform supports a declarative ApplicationHost.config transform model based on XML Document Transformation (XDT).
@@ -169,14 +167,12 @@ You should be able to see your web app extension at:
 Note that the URL looks just like the URL for your web app, except that it uses HTTPS and contains ".scm".
 
 It is possible to disable all private (not pre-installed) extensions for your web app during development and investigations by adding an app settings with the key `WEBSITE_PRIVATE_EXTENSIONS` and a value of `0`.
-<!-- deleted by customization
 
 >[AZURE.NOTE] If you want to get started with Azure Websites before signing up for an Azure account, go to [Try Azure Websites](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure Websites. No credit cards required; no commitments.
 
 ## What's changed
 * For a guide to the change from Websites to Azure Websites see: [Azure Websites and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
 * For a guide to the change of the Management Portal to the new portal see: [Reference for navigating the preview portal](https://manage.windowsazure.cn/)
--->
 
 <!-- IMAGES -->
 [TransformSitePHPUI]: ./media/web-sites-transform-extend/TransformSitePHPUI.png

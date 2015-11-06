@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Azure Active Directory Device Registration Overview| Microsoft Azure"
+	pageTitle="Azure Active Directory Device Registration Overview| Windows Azure"
 	description="is the foundation for device-based conditional access scenarios. When a device is registered, Azure Active Directory Device Registration provisions the device with an identity which is used to authenticate the device when the user signs in."
 	services="active-directory"
 	documentationCenter=""
@@ -9,12 +9,8 @@
 
 <tags
 	ms.service="active-directory"
-	ms.workload="identity"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="08/02/2015"
-	ms.author="femila"/>
+	wacn.date=""/>
 
 # Azure Active Directory Device Registration overview
 
@@ -32,7 +28,7 @@ Conditional Access for Office 365 applications with Microsoft Intune: : IT admin
 ##Setting up Azure Active Directory Device Registration
 
 The following settings are available for the Azure Active Directory Device Registration service:
-Enable Azure AD Device Registration in the Azure Portal.
+Enable Azure AD Device Registration in the Azure Management Portal.
 
 Windows Devices discover the service by looking for well-known DNS records. You must configure your company DNS so that Windows 7 and Windows 8.1 devices can discover and use the service.
 
@@ -42,7 +38,7 @@ You can view and enable/disable registered devices using the Administrator Porta
 The following section describes how to enable the Azure Active Directory Device Registration Service for your directory.
 To enable Azure Active Directory Device Registration Service
 -------------------------------------------------------------
-1. Log on to the Azure Portal as Administrator.
+1. Log on to the Azure Management Portal as Administrator.
 1. On the left pane, select **Active Directory**.
 1. On the **Directory** tab, select your directory.
 1. Select the **Configure** tab.
@@ -68,12 +64,12 @@ For example, if you use two UPN suffixes at your organization named @contoso.com
  
 | Entry                                     | Type  | Address                            |
 |-------------------------------------------|-------|------------------------------------|
-| enterpriseregistration.contoso.com        | CNAME | enterpriseregistration.windows.net |
-| enterpriseregistration.region.contoso.com | CNAME | enterpriseregistration.windows.net |
+| enterpriseregistration.contoso.com        | CNAME | enterpriseregistration.chinacloudapi.cn |
+| enterpriseregistration.region.contoso.com | CNAME | enterpriseregistration.chinacloudapi.cn |
 
 ## View and manage device objects in Azure Active Directory
 1. From the Azure Administrator portal, you can view, block, and unblock devices. A device that is blocked will no longer have access to applications that are configured to allow only registered devices.
-1. Log on to the Microsoft Azure Portal as Administrator.
+1. Log on to the Windows Azure Management Portal as Administrator.
 1. On the left pane, select **Active Directory**.
 1. Select your directory.
 1. Select the **Users** tab. Then select a user to view their devices

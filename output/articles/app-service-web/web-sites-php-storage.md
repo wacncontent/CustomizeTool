@@ -28,10 +28,8 @@ You will build a simple Tasklist web application in PHP. A screenshot of the com
 ![Azure PHP web app][ws-storage-app]
 
 [AZURE.INCLUDE [create-account-and-websites-note](../includes/create-account-and-websites-note.md)]
-<!-- deleted by customization
 
 >[AZURE.NOTE] If you want to get started with Azure Websites before signing up for an Azure account, go to [Try Azure Websites](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure Websites. No credit cards required; no commitments.
--->
 
 ##Installing the Azure client libraries
 
@@ -321,7 +319,6 @@ Deleting an item is accomplished with a single call to `deleteItem`. The passed 
 ## Create an Azure storage account
 
 To make your application store data into the cloud you need to first create a storage account in Azure and then pass the proper authentication information to the *Configuration* class.
-<!-- deleted by customization
 
 1. Login to the [Azure Management Portal][management-portal].
 
@@ -336,42 +333,11 @@ To make your application store data into the cloud you need to first create a st
 	![Select Manage Keys][storage-access-keys]
 
 7. Open **init.php** and replace `[YOUR_STORAGE_ACCOUNT_NAME]` and `[YOUR_STORAGE_ACCOUNT_KEY]` with the account name and key you took note of in the last step. Save the file.
--->
-<!-- keep by customization: begin -->
-1. Login to the [Azure Management Portal][management-portal].
-
-2. Click the **+ New** icon on the bottom left of the portal.
-
-	![Create New Azure  Website][new- Website]
-
-3. Click **Data Services**, **Storage**, then **Quick Create**.
-
-	![Custom Create a new  Website][storage-quick-create]
-	
-	Enter a value for **URL** and select the data center for your  Website in the **REGION** dropdown. Click the **Create Storage Account** button at the bottom of the dialog.
-
-	![Fill in  Website details][storage-quick-create-details]
-
-	When the storage account has been created you will see the text **Creation of Storage Account '[NAME]' completed successfully**.
-
-4. Ensure the **Storage** tab is selected and then select the storage account you just created from the list.
-
-5. Click on **Manage Access Keys** from the app bar on the bottom.
-
-	![Select Manage Keys][storage-manage-keys]
-
-6. Take note of the name of the storage account you created and of the primary key.
-
-	![Select Manage Keys][storage-access-keys]
-
-7. Open **init.php** and replace `[YOUR_STORAGE_ACCOUNT_NAME]` and `[YOUR_STORAGE_ACCOUNT_KEY]` with the account name and key you took note of in the last step. Save the file.
-<!-- keep by customization: end -->
 
 ## Create an Azure web app and set up Git publishing
 
 Follow these steps to create an Azure web app:
 
-<!-- deleted by customization
 1. Login to the [Azure Management Portal][management-portal].
 
 2. Create an empty web app with the instructions at [How to: Create a web app Using the Azure Management Portal](/documentation/articles/web-sites-create-deploy#createawebsiteportal). Be sure to create a new [App Service plan](/documentation/articles/azure-web-sites-web-hosting-plans-in-depth-overview) and select the resource group you created previously for the storage account.
@@ -392,46 +358,6 @@ Follow these steps to create an Azure web app:
 
 	![Git deployment instructions returned after creating a repository for the web app.][git-instructions]
 
--->
-<!-- keep by customization: begin -->
-1. Login to the [Azure Management Portal][management-portal].
-2. Click the **+ New** icon on the bottom left of the portal.
-
-	![Create New Azure  Website][new- Website]
-
-3. Click **Compute**, ** Website**, then **Quick Create**.
-
-	![Custom Create a new  Website][ Website-quick-create]
-	
-	Enter a value for **URL** and select the data center for your  Website in the **REGION** dropdown. Click the **Create New  Website** button at the bottom of the dialog.
-
-	![Fill in  Website details][ Website-quick-create-details]
-
-	When the  Website has been created you will see the text **Creation of  Website '[SITENAME]' completed successfully**. Now, you can enable Git publishing.
-
-5. Click the name of the  Website displayed in the list of  Websites to open the  Website's **QUICKSTART** dashboard.
-
-	![Open  Website dashboard][go-to-dashboard]
-
-
-6. At the bottom right of the Quickstart page, select **Set up a deployment from source control**.
-
-	![Set up Git publishing][setup-git-publishing]
-
-6. When asked "Where is your source code?" select **Local Git repository**, and then click the arrow.
-
-	![where is your source code][where-is-code]
-
-7. To enable Git publishing, you must provide a user name and password. Make a note of the user name and password you create. (If you have set up a Git repository before, this step will be skipped.)
-
-	![Create publishing credentials][credentials]
-
-	It will take a few seconds to set up your repository.
-
-8. Once the Git repository is ready, you will be presented with instructions on the Git commands to use in order to setup a local repository and then push the files to Azure.
-
-	![Git deployment instructions returned after creating a repository for the  Website.][git-instructions]
-<!-- keep by customization: end -->
 	Note the instructions, as these will be used in the next section to publish the application.
 
 ##Publish Your Application
@@ -474,7 +400,6 @@ To publish changes to application, follow these steps:
 	You will be prompted for the password you created earlier.
 
 3. Browse to **http://[your web app domain]/index.php** to see your changes. 
-<!-- deleted by customization
 
 ## What's changed
 * For a guide to the change from Websites to Azure Websites see: [Azure Websites and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
@@ -483,16 +408,6 @@ To publish changes to application, follow these steps:
 
 
 
--->
-<!-- keep by customization: begin -->
-[new- Website]: ./media/web-sites-php-storage/new_Website.jpg
-[website-quick-create]: ./media/web-sites-php-storage/createsite.png
-[website-quick-create-details]: ./media/web-sites-php-storage/sitedetails.png
-[storage-quick-create-details]: ./media/web-sites-php-storage/provideurl.png
-[storage-manage-keys]: ./media/web-sites-php-storage/accesskeys.png
-[go-to-dashboard]: ./media/web-sites-php-storage/selectsite.png
-[where-is-code]: ./media/web-sites-php-storage/where_is_code.png
-<!-- keep by customization: end -->
 [install-php]: http://www.php.net/manual/en/install.php
 [install-git]: http://git-scm.com/book/en/Getting-Started-Installing-Git
 [composer-phar]: http://getcomposer.org/composer.phar

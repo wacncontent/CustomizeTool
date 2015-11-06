@@ -22,15 +22,15 @@ This scenario guide describes how to deploy Site Recovery to orchestrate and aut
 
 The guide includes prerequisites for the scenario and shows you how to set up a Site Recovery vault, get the Azure Site Recovery Provider installed on the source VMM server, register the server in the vault, add an Azure storage account, install the Azure Recovery Services agent on Hyper-V host servers, configure protection settings for VMM clouds that will be applied to all protected virtual machines, and then enable protection for those virtual machines. Finish up by testing the failover to make sure everything's working as expected.
 
-If you run into problems setting up this scenario post your questions on the [Azure Recovery Services Forum](http://go.microsoft.com/fwlink/?LinkId=313628).
+If you run into problems setting up this scenario post your questions on the [Azure Recovery Services Forum](https://social.msdn.microsoft.com:443/forums/azure/zh-cn/home?forum=hypervrecovmgr).
 
 ## Before you start
 
 Make sure you have these prerequisites in place:
 ### Azure prerequisites
 
-- You'll need a [Windows Azure](http://azure.microsoft.com/) account. If you don't have one, start with a [trial](http://aka.ms/try-azure). In addition you can read about [Azure Site Recovery Manager pricing](http://go.microsoft.com/fwlink/?LinkId=378268).
-- You'll need an Azure storage account to store data replicated to Azure. The account needs geo-replication enabled. It should be in the same region as the Azure Site Recovery service, and be associated with the same subscription. To learn more about setting up Azure storage, see [Introduction to Windows Azure Storage](http://go.microsoft.com/fwlink/?LinkId=398704).
+- You'll need a [Windows Azure](http://azure.microsoft.com/) account. If you don't have one, start with a [trial](http://aka.ms/try-azure). In addition you can read about [Azure Site Recovery Manager pricing](/home/features/site-recovery/#price).
+- You'll need an Azure storage account to store data replicated to Azure. The account needs geo-replication enabled. It should be in the same region as the Azure Site Recovery service, and be associated with the same subscription. To learn more about setting up Azure storage, see [Introduction to Windows Azure Storage](https://azure.microsoft.com/zh-cn/documentation/articles/storage-introduction/).
 - You'll need to make sure that virtual machines you want to protect comply with Azure requirements. See [Virtual machine support](https://msdn.microsoft.com/zh-cn/library/azure/dn469078.aspx#BKMK_E2A) for details.
 
 ### VMM prerequisites
@@ -41,9 +41,9 @@ Make sure you have these prerequisites in place:
 	- One or more Hyper-V host servers or clusters in each host group .
 	- One or more virtual machines on the source Hyper-V server. The virtual machines should be generation 1.
 - Learn more about setting up VMM clouds:
-	- Read more about private VMM clouds in [What’s New in Private Cloud with System Center 2012 R2 VMM](http://go.microsoft.com/fwlink/?LinkId=324952) and in [VMM 2012 and the clouds](http://go.microsoft.com/fwlink/?LinkId=324956).
+	- Read more about private VMM clouds in [What’s New in Private Cloud with System Center 2012 R2 VMM](https://channel9.msdn.com/Events/TechEd/NorthAmerica/2013/MDC-B357) and in [VMM 2012 and the clouds](http://www.server-log.com/blog/2011/8/26/vmm-2012-and-the-clouds.html).
 	- Learn about [Configuring the VMM cloud fabric](https://msdn.microsoft.com/zh-cn/library/azure/dn469075.aspx#BKMK_Fabric)
-	- After your cloud fabric elements are in place learn about creating private clouds in  [Creating a private cloud in VMM](http://go.microsoft.com/fwlink/?LinkId=324953) and [Walkthrough: Creating private clouds with System Center 2012 SP1 VMM](http://go.microsoft.com/fwlink/?LinkId=324954).
+	- After your cloud fabric elements are in place learn about creating private clouds in  [Creating a private cloud in VMM](https://technet.microsoft.com/zh-cn/library/jj860425.aspx) and [Walkthrough: Creating private clouds with System Center 2012 SP1 VMM](http://blogs.technet.com/b/keithmayer/archive/2013/04/18/walkthrough-creating-private-clouds-with-system-center-2012-sp1-virtual-machine-manager-build-your-private-cloud-in-a-month.aspx).
 
 ### Hyper-V prerequisites
 
@@ -67,9 +67,9 @@ If you want to deploy network mapping you'll need the following:
 - The virtual machines you want to protect on the source VMM server should be connected to a VM network. That network should be linked to a logical network that is associated with the cloud.
 - An Azure network to which replicated virtual machines can connect after failover. You'll select this network at the time of failover. The network should be in the same region as your Azure Site Recovery subscription.
 - Learn more about network mapping:
-	- [Configuring logical networking in VMM](http://go.microsoft.com/fwlink/?LinkId=386307)
-	- [Configuring VM networks and gateways in VMM](http://go.microsoft.com/fwlink/?LinkId=386308)
-	- [Configure and monitor virtual networks in Azure](http://go.microsoft.com/fwlink/?LinkId=402555)
+	- [Configuring logical networking in VMM](https://technet.microsoft.com/zh-cn/library/jj721568.aspx)
+	- [Configuring VM networks and gateways in VMM](https://technet.microsoft.com/zh-cn/library/jj721575.aspx)
+	- [Configure and monitor virtual networks in Azure](/documentation/services/networking/)
 
 
 ## Step 1: Create a Site Recovery vault
@@ -139,7 +139,7 @@ Generate a registration key in the vault. After you download the Azure Site Reco
 		- *.backup.windowsazure.cn
 		- *.blob.core.chinacloudapi.cn
 		- *.store.core.chinacloudapi.cn
-	- Allow the IP addresses described in [Azure Datacenter IP Ranges](http://go.microsoft.com/fwlink/?LinkId=511094) and HTTPS (443) protocol. You would have to white-list IP ranges of the Azure region that you plan to use and that of China North.
+	- Allow the IP addresses described in [Azure Datacenter IP Ranges](https://msdn.microsoft.com/zh-cn/library/azure/dn175718.aspx) and HTTPS (443) protocol. You would have to white-list IP ranges of the Azure region that you plan to use and that of China North.
 
 	- If you use a custom proxy a VMM RunAs account (DRAProxyAccount) will be created automatically using the specified proxy credentials. Configure the proxy server so that this account can authenticate successfully. The VMM RunAs account settings can be modified in the VMM console. To do this, open the Settings workspace, expand Security, click Run As Accounts, and then modify the password for DRAProxyAccount. You’ll need to restart the VMM service so that this setting takes effect.
 
@@ -252,7 +252,7 @@ Note that if the target network has multiple subnets and one of those subnets ha
 
 After servers, clouds, and networks are configured correctly, you can enable protection for virtual machines in the cloud. Note the following:
 
-- Virtual machines must meet Azure requirements. Check these in <a href="http://go.microsoft.com/fwlink/?LinkId=402602">Prerequisites and support</a> in the Planning guide.
+- Virtual machines must meet Azure requirements. Check these in <a href="https://msdn.microsoft.com/zh-cn/library/dn469078.aspx">Prerequisites and support</a> in the Planning guide.
 - To enable protection the operating system and operating system disk properties must be set for the virtual machine. When you create a virtual machine in VMM using a virtual machine template you can set the property. You can also set these properties for existing virtual machines on the **General** and **Hardware Configuration** tabs of the virtual machine properties. If you don't set these properties in VMM you'll be able to configure them in the Azure Site Recovery portal.
 
 ![Create virtual machine](./media/site-recovery-vmm-to-azure/ASRE2AVMM_EnableNew.png)
@@ -347,12 +347,12 @@ To run a test failover do the following:
 
 <p>From the *Dashboard* you can download the latest versions of Provider and Agent installation files, get configuration information for the vault, see the number of virtual machines that have protection managed by the vault, see recent jobs, manage the vault certificate, and resynchronize virtual machines.</p>
 
-<p>For more information about interacting with jobs and the dashboard, see the <a href="http://go.microsoft.com/fwlink/?LinkId=398534">Operations and Monitoring Guide</a>.</p>
+<p>For more information about interacting with jobs and the dashboard, see the <a href="/documentation/articles/site-recovery-manage-registration-and-protection/">Operations and Monitoring Guide</a>.</p>
 
 ##<a id="next" name="next" href="#next"></a>Next steps
 <UL>
-<LI>To plan and deploy Azure Site Recovery in a full production environment, see <a href="http://go.microsoft.com/fwlink/?LinkId=321294">Planning Guide for Azure Site Recovery</a> and <a href="http://go.microsoft.com/fwlink/?LinkId=321295">Deployment Guide for Azure Site Recovery</a>.</LI>
+<LI>To plan and deploy Azure Site Recovery in a full production environment, see <a href="https://msdn.microsoft.com/zh-cn/library/azure/dn469074.aspx">Planning Guide for Azure Site Recovery</a> and <a href="https://msdn.microsoft.com/zh-cn/library/azure/dn168841.aspx">Deployment Guide for Azure Site Recovery</a>.</LI>
 
 
-<LI>For questions, visit the <a href="http://go.microsoft.com/fwlink/?LinkId=313628">Azure Recovery Services Forum</a>.</LI>
+<LI>For questions, visit the <a href="https://social.msdn.microsoft.com:443/forums/azure/zh-cn/home?forum=hypervrecovmgr">Azure Recovery Services Forum</a>.</LI>
 </UL>

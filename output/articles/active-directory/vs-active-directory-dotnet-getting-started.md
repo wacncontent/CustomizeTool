@@ -7,20 +7,16 @@
 	manager="douge" 
 	editor="tglee"/>
   
-<tags 
-	ms.service="active-directory" 
-	ms.workload="web" 
-	ms.tgt_pltfrm="vs-getting-started" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="09/03/2015" 
-	ms.author="patshea"/>
+<tags
+	ms.service="active-directory"
+	ms.date="09/03/2015"
+	wacn.date=""/>
 
 # Getting Started with Azure Active Directory and Visual Studio connected services (MVC Projects)
 
 > [AZURE.SELECTOR]
-> - [Getting Started](vs-active-directory-dotnet-getting-started.md)
-> - [What Happened](vs-active-directory-dotnet-what-happened.md)
+> - [Getting Started](/documentation/articles/vs-active-directory-dotnet-getting-started)
+> - [What Happened](/documentation/articles/vs-active-directory-dotnet-what-happened)
  
 ##Requiring authentication to access controllers 
 
@@ -75,4 +71,4 @@ To add a the SignIn/SignOut controls to your view, you can use the **_LoginParti
     &lt;/html&gt;
 </pre>
 
-[Learn more about Azure Active Directory](http://azure.microsoft.com/services/active-directory/) 
+[Learn more about Azure Active Directory](/home/features/identity/) 

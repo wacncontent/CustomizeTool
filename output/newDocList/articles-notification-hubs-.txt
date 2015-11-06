@@ -1,4 +1,4 @@
-new docs: 34, word count: {word_count_TODO}
+new docs: 34, word count: 59555
 articles/notification-hubs/notification-hubs-android-get-started.md
 articles/notification-hubs/notification-hubs-aspnet-backend-android-breaking-news.md
 articles/notification-hubs/notification-hubs-aspnet-backend-android-notify-users.md

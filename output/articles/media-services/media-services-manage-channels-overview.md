@@ -242,7 +242,6 @@ Choose **Portal**, **.NET**, **REST API** to see how to create and manage channe
 
 [AZURE.INCLUDE [media-services-selector-manage-channels](../includes/media-services-selector-manage-channels.md)]
 
-<!-- deleted by customization
 
 ##Media Services learning paths
 
@@ -250,7 +249,6 @@ You can view AMS learning paths here:
 
 - [AMS Live Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/)
 - [AMS on Demand Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/)
--->
 
 
 ##Related topics

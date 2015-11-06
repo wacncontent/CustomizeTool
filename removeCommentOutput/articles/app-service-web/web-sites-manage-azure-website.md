@@ -31,7 +31,7 @@ Azure Websites is offered in five tiers: Free, Shared, Basic, Standard, and Prem
 
 ### Configuration
 
-Use the [Azure Management Portal](https://manage.windowsazure.cn/) to set various configuration options. For details, see [Configure web apps in Azure Websites](/documentation/articles/web-sites-configure). Here is a quick checklist:
+Use the [Azure preview portal](https://manage.windowsazure.cn/) to set various configuration options. For details, see [Configure web apps in Azure Websites](/documentation/articles/web-sites-configure). Here is a quick checklist:
 
 - Select **runtime versions** for .NET, PHP, Java, or Python, if needed.
 - Enable **WebSockets** if your web app uses the WebSocket protocol. (This includes apps that use [ASP.NET SignalR](http://www.asp.net/signalr) or [socket.io](/documentation/articles/web-sites-nodejs-chat-app-socketio).)
@@ -55,8 +55,8 @@ While your web app is running, you want to make sure it is available, and that i
 
 ### Monitoring
 
-- Through the Azure Management Portal, you can [add performance metrics](/documentation/articles/web-sites-monitor) such as CPU usage and number of client requests.
-
+- Through the Azure preview portal, you can [add performance metrics](/documentation/articles/web-sites-monitor) such as CPU usage and number of client requests.
+- For deeper insight, use New Relic to monitor and manage performance. See [.NET web app in Azure Websites with New Relic application performance management](/documentation/articles/store-new-relic-web-sites-dotnet-application-performance-management).
 - [Scale your web app](/documentation/articles/web-sites-scale) in response to traffic. Depending on your tier, you can scale the number of VMs and/or the size of the VM instances. In the Standard and Premium tiers, you can also set up autoscaling, so your web app scales automatically, either on a fixed schedule, or in response to load.  
  
 ### Backups
@@ -81,7 +81,15 @@ If you have not enabled automatic backups, you can create a [manual backup](/doc
 
 Consider using [staged deployment](/documentation/articles/web-sites-staged-publishing). This option lets you publish updates to a staging deployment that runs side-by-side with your production deployment. 
 
+If you use Visual Studio Online, you can set up continuous deployment from source control:
 
+- [Using Team Foundation Version Control (TFVC)](/documentation/articles/cloud-services-continuous-delivery-use-vso) 
+- [Using Git](/documentation/articles/cloud-services-continuous-delivery-use-vso-git)
+ 
+[AZURE.INCLUDE [app-service-web-whats-changed](../includes/app-service-web-whats-changed.md)]
+
+[AZURE.INCLUDE [app-service-web-try-app-service](../includes/app-service-web-try-app-service.md)]
+ 
 <!-- Anchors. -->
 
 

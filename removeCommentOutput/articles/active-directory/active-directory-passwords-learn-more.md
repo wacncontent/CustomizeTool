@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Learn More: Azure AD Password Management | Microsoft Azure"
+	pageTitle="Learn More: Azure AD Password Management | Windows Azure"
 	description="Advanced topics on Azure AD Password Management, including how password writeback works, password writeback security, how the password reset portal works, and what data is used by password reset."
 	services="active-directory"
 	documentationCenter=""
@@ -9,12 +9,8 @@
 
 <tags
 	ms.service="active-directory"
-	ms.workload="identity"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="09/18/2015" 
-	ms.author="asteen"/>
+	ms.date="09/18/2015"
+	wacn.date=""/>
 
 # Learn more about Password Management
 If you have already deployed Password Management, or are just looking to learn more about the technical nitty gritty of how it works before deploying, this section will give you a good overview of the technical concepts behind the service. We'll cover the following:
@@ -27,7 +23,7 @@ If you have already deployed Password Management, or are just looking to learn m
   - [What data is used by password reset?](#what-data-is-used-by-password-reset)
 
 ## Password writeback overview
-Password writeback is an [Azure Active Directory Connect](active-directory-aadconnect) component that can be enabled and used by the current subscribers of Azure Active Directory Premium. For more information, see [Azure Active Directory Editions](active-directory-editions.md).
+Password writeback is an [Azure Active Directory Connect](/documentation/articles/active-directory-aadconnect) component that can be enabled and used by the current subscribers of Azure Active Directory Premium. For more information, see [Azure Active Directory Editions](/documentation/articles/active-directory-editions).
 
 Password writeback allows you to configure your cloud tenant to write passwords back to you on-premises Active Directory.  It obviates you from having to set up and manage a complicated on-premises self-service password reset solution, and it provides a convenient cloud-based way for your users to reset their on-premises passwords wherever they are.  Read on for some of the key features of password writeback:
 
@@ -35,10 +31,10 @@ Password writeback allows you to configure your cloud tenant to write passwords 
 - **Supports resetting passwords for users using AD FS or other federation technologies.**  With password writeback, as long as the federated user accounts are synchronized into your Azure AD tenant, they will be able to manage their on-premises AD passwords from the cloud.
 - **Supports resetting passwords for users using password hash sync.** When the password reset service detects that a synchronized user account is enabled for password hash sync, we reset both this account’s on-premises and cloud password simultaneously.
 - **Supports changing passwords from the access panel and Office 365.**  When federated or password sync’d users come to change their expired or non-expired passwords, we’ll write those passwords back to your local AD environment.
-- **Supports writing back passwords when an admin reset them from the** [**Azure Management Portal**](https://manage.windowsazure.com).  Whenever an admin resets a user’s password in the [Azure Management Portal](https://manage.windowsazure.com), if that user is federated or password sync’d, we’ll set the password the admin selects on your local AD, as well.  This is currently not supported in the Office Admin Portal.
+- **Supports writing back passwords when an admin reset them from the** [**Azure Management Portal**](https://manage.windowsazure.cn).  Whenever an admin resets a user’s password in the [Azure Management Portal](https://manage.windowsazure.cn), if that user is federated or password sync’d, we’ll set the password the admin selects on your local AD, as well.  This is currently not supported in the Office Admin Portal.
 - **Enforces your on-premises AD password policies.**  When a user resets his/her password, we make sure that it meets your on-premises AD policy before committing it to that directory.  This includes history, complexity, age, password filters, and any other password restrictions you have defined in your local AD.
 - **Doesn’t require any inbound firewall rules.**  Password writeback uses an Azure Service Bus relay as an underlying communication channel, meaning that you do not have to open any inbound ports on your firewall for this feature to work.
-- **Is not supported for user accounts that exist within protected groups in your on-premises Active Directory.** For more information about protected groups, see [Protected Accounts and Groups in Active Directory](https://technet.microsoft.com/library/dn535499.aspx).
+- **Is not supported for user accounts that exist within protected groups in your on-premises Active Directory.** For more information about protected groups, see [Protected Accounts and Groups in Active Directory](https://technet.microsoft.com/zh-cn/library/dn535499.aspx).
 
 ### How password writeback works
 Password writeback has three main components:
@@ -65,7 +61,7 @@ When a federated or password hash sync’d user comes to reset or change his or 
 10.	If the password set operation fails, we return the error to the user and let them try again.  The operation might fail because the service was down, because the password they selected did not meet organization policies, because we could not find the user in the local AD, or any number of reasons.  We have a specific message for many of these cases and tell the user what they can do to resolve the issue.
 
 ### Scenarios supported for password writeback
-The table below describes which scenarios are supported for which versions of our sync capabilities.  In general, it is highly recommended that you install the latest version of [Azure AD Connect](active-directory-aadconnect.md#download-azure-ad-connect) if you want to use password writeback.
+The table below describes which scenarios are supported for which versions of our sync capabilities.  In general, it is highly recommended that you install the latest version of [Azure AD Connect](/documentation/articles/active-directory-aadconnect#download-azure-ad-connect) if you want to use password writeback.
 
   ![][002]
 
@@ -95,7 +91,7 @@ When a user navigates to the password reset portal, a workflow is kicked off to 
        - If writeback is not deployed and the user’s password is managed on premises, then the user is asked to contact his or her administrator to reset his or her password.
 4.	If it is determined that the user is able to successfully reset his or her password, then the user is guided through the reset process.
 
-Learn more about how to deploy password writeback at [Getting Started: Azure AD Password Management](active-directory-passwords-getting-started.md).
+Learn more about how to deploy password writeback at [Getting Started: Azure AD Password Management](/documentation/articles/active-directory-passwords-getting-started).
 
 ### What data is used by password reset?
 The following table outlines where and how this data is used during password reset and is designed to help you decide which authentication options are appropriate for your organization. This table also shows any formatting requirements for cases where you are providing data on behalf of users from input paths that do not validate this data.
@@ -268,15 +264,15 @@ The following table outlines where and how this data is used during password res
 **Additional Resources**
 
 
-* [What is Password Management](active-directory-passwords.md)
-* [How Password Management works](active-directory-passwords-how-it-works.md)
-* [Getting started with Password Mangement](active-directory-passwords-getting-started.md)
-* [Customize Password Management](active-directory-passwords-customize.md)
-* [Password Management Best Practices](active-directory-passwords-best-practices.md)
-* [How to get Operational Insights with Password Management Reports](active-directory-passwords-get-insights.md)
-* [Password Management FAQ](active-directory-passwords-faq.md)
-* [Troubleshoot Password Management](active-directory-passwords-troubleshoot.md)
-* [Password Management on MSDN](https://msdn.microsoft.com/library/azure/dn510386.aspx)
+* [What is Password Management](/documentation/articles/active-directory-passwords)
+* [How Password Management works](/documentation/articles/active-directory-passwords-how-it-works)
+* [Getting started with Password Mangement](/documentation/articles/active-directory-passwords-getting-started)
+* [Customize Password Management](/documentation/articles/active-directory-passwords-customize)
+* [Password Management Best Practices](/documentation/articles/active-directory-passwords-best-practices)
+* [How to get Operational Insights with Password Management Reports](/documentation/articles/active-directory-passwords-get-insights)
+* [Password Management FAQ](/documentation/articles/active-directory-passwords-faq)
+* [Troubleshoot Password Management](/documentation/articles/active-directory-passwords-troubleshoot)
+* [Password Management on MSDN](https://msdn.microsoft.com/zh-cn/library/azure/dn510386.aspx)
 
 
 

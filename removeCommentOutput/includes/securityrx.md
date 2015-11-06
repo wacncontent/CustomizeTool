@@ -637,8 +637,8 @@ will be taken through the consent process.
 
 Refer to the following resources to solve this scenario:
 
--   [OAuth Web Client Example](http://go.microsoft.com/fwlink/?LinkId=219162)
--   [OAuth Rich Client Example](http://go.microsoft.com/fwlink/?LinkId=219163)
+-   [OAuth Web Client Example](https://code.msdn.microsoft.com:443/DataMarket-OAuth-Samples-4c4e7c3a)
+-   [OAuth Rich Client Example](https://code.msdn.microsoft.com:443/DataMarket-OAuth-Samples-d7546d06)
 
 ###Application Access Marketplace API
 
@@ -654,7 +654,7 @@ authentication implementation.
 
 Refer to the following resources to solve this scenario:
 
--   [Download the App Publishing Kit](http://go.microsoft.com/fwlink/?LinkId=221323)
+-   [Download the App Publishing Kit](http://download.microsoft.com/download/F/5/F/F5FD7C12-87FD-4A57-8D04-243AC6EF6C43/AppPublishingKitOct2011.zip)
 -   [Introduction to Azure Marketplace for Applications](https://datamarket.azure.com/)
 
 ##Security Knobs
@@ -777,8 +777,8 @@ application is hosted on Azure Virtual Machines.
 ##Resources
 
 -   [Identity Developer Training Kit](http://go.microsoft.com/fwlink/?LinkId=214555)
--   [MSDN-hosted Identity Developer Training Course](http://go.microsoft.com/fwlink/?LinkId=214561)
--   [A Guide to Claims-based Identity and Access Control](http://go.microsoft.com/fwlink/?LinkId=214562)
+-   [MSDN-hosted Identity Developer Training Course](https://msdn.microsoft.com/zh-cn/IdentityTrainingCourse)
+-   [A Guide to Claims-based Identity and Access Control](https://msdn.microsoft.com/zh-cn/library/ff423674.aspx)
 -   [Access Control Service](http://msdn.microsoft.com/zh-cn/library/azure/gg429786.aspx)
 -   [ACS How To's](http://msdn.microsoft.com/zh-cn/library/azure/gg185939.aspx)
 -   [Secure Azure Web Role ASP.NET Web Application Using Access Control Service v2.0](http://social.technet.microsoft.com/wiki/contents/articles/2590.aspx)

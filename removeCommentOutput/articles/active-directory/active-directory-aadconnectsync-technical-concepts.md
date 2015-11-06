@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Azure AD Connect Sync: Technical Concepts | Microsoft Azure"
+	pageTitle="Azure AD Connect Sync: Technical Concepts | Windows Azure"
 	description="Explains the technical concepts of Azure AD Connect Sync."
 	services="active-directory"
 	documentationCenter=""
@@ -9,12 +9,8 @@
 
 <tags
 	ms.service="active-directory"
-	ms.workload="identity"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="10/13/2015"
-	ms.author="markusvi"/>
+	wacn.date=""/>
 
 
 # Azure AD Connect Sync: Technical Concepts
@@ -102,8 +98,8 @@ Whenever a rule determines that a new connector space object needs to be created
 
 ## Additional Resources
 
-* [Azure AD Connect Sync: Customizing Synchronization options](active-directory-aadconnectsync-whatis.md)
-* [Integrating your on-premises identities with Azure Active Directory](active-directory-aadconnect.md)
+* [Azure AD Connect Sync: Customizing Synchronization options](/documentation/articles/active-directory-aadconnectsync-whatis)
+* [Integrating your on-premises identities with Azure Active Directory](/documentation/articles/active-directory-aadconnect)
 
 <!--Image references-->
 [1]: ./media/active-directory-aadsync-technical-concepts/ic750598.png

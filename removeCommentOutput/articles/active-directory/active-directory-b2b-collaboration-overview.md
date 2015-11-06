@@ -8,13 +8,9 @@
    editor=""/>
 
 <tags
-   ms.service="active-directory"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="identity"
-   ms.date="09/17/2015"
-   ms.author="curtand"/>
+	ms.service="active-directory"
+	ms.date="09/17/2015"
+	wacn.date=""/>
 
 # Azure Active Directory B2B collaboration
 
@@ -53,7 +49,7 @@ The CSV file follows the format below. Add all required commas even if you don't
 **Email:** Email address for invited user.<br/>
 **DisplayName:** Display name for invited user (typically, first and last name).<br/>
 **InviteAppID:**  The ID for the application to use for branding the email invite and acceptance pages.<br/>
-**InviteReplyURL:** URL to which to direct an invited user after invite acceptance. This should be a company-specific URL (such as [*contoso.my.salesforce.com*](http://contoso.my.salesforce.com/)). If this optional field is not specified, the inviting company's Access Panel URL is generated (this URL is of the form  `https://account.activedirectory.windowsazure.com/applications/default.aspx?tenantId=<TenantID>`).<br/>
+**InviteReplyURL:** URL to which to direct an invited user after invite acceptance. This should be a company-specific URL (such as [*contoso.my.salesforce.com*](http://contoso.my.salesforce.com/)). If this optional field is not specified, the inviting company's Access Panel URL is generated (this URL is of the form  `https://account.activedirectory.windowsazure.cn/applications/default.aspx?tenantId=<TenantID>`).<br/>
 **InviteAppResources:** AppIDs to which applications can assign users. AppIDs are retrievable by calling `Get-MsolServicePrincipal | fl DisplayName, AppPrincipalId`<br/>
 **InviteGroupResources:** ObjectIDs for groups to add user to. ObjectIDs are retrievable by calling `Get-MsolGroup | fl DisplayName, ObjectId`<br/>
 **InviteContactUsUrl:** "Contact Us" URL to include in email invitations in case the invited user wants to contact your organization.<br/>
@@ -63,7 +59,7 @@ Here is a sample CSV you can modify for your purposes. Save it to any file name
 
 ```
 Email,DisplayName,InviteAppID,InviteReplyUrl,InviteAppResources,InviteGroupResources,InviteContactUsUrl
-wharp@contoso.com,Walter Harp,cd3ed3de-93ee-400b-8b19-b61ef44a0f29,http://azure.microsoft.com/services/active-directory/,,,http://azure.microsoft.com/services/active-directory/
-jsmith@contoso.com,Jeff Smith,cd3ed3de-93ee-400b-8b19-b61ef44a0f29,http://azure.microsoft.com/services/active-directory/,,,http://azure.microsoft.com/services/active-directory/
-bsmith@contoso.com,Ben Smith,cd3ed3de-93ee-400b-8b19-b61ef44a0f29,http://azure.microsoft.com/services/active-directory/,,,http://azure.microsoft.com/services/active-directory/
+wharp@contoso.com,Walter Harp,cd3ed3de-93ee-400b-8b19-b61ef44a0f29,/home/features/identity/,,,/home/features/identity/
+jsmith@contoso.com,Jeff Smith,cd3ed3de-93ee-400b-8b19-b61ef44a0f29,/home/features/identity/,,,/home/features/identity/
+bsmith@contoso.com,Ben Smith,cd3ed3de-93ee-400b-8b19-b61ef44a0f29,/home/features/identity/,,,/home/features/identity/
 ```

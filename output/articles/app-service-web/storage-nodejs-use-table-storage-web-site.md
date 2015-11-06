@@ -34,10 +34,8 @@ By following this tutorial, you will build a simple web-based "to-do list" appli
 Here is the completed application:
 
 ![A web page displaying an empty tasklist][node-table-finished]
-<!-- deleted by customization
 
 >[AZURE.NOTE] If you want to get started with Azure Websites before signing up for an Azure account, go to [Try Azure Websites](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure Websites. No credit cards required; no commitments.
--->
 
 
 ## Prerequisites
@@ -54,7 +52,6 @@ Before following the instructions in this article, ensure that you have the foll
 ## Create a storage account
 
 Create an Azure storage account. The app will use this account to store the to-do items.
-<!-- deleted by customization
 
 1.  Log into the [Azure Management Portal](https://manage.windowsazure.cn).
 
@@ -68,26 +65,6 @@ Create an Azure storage account. The app will use this account to store the to-d
 
     ![Access key][portal-storage-access-keys]
 
--->
-<!-- keep by customization: begin -->
-1. Open your web browser and go to the [Azure Management Portal]. If prompted, login with your Azure subscription information.
-
-2. At the bottom of the portal, click **+ NEW** and then select **Storage Account**.
-
-	![+new][portal-new]
-
-	![storage account][portal-storage-account]
-
-3. Select **Quick Create**, and then enter the URL and Region/Affinity for this storage account. Since this is a tutorial and does not need to be replicated globally, uncheck **Enable Geo-Replication**. Finally, click "Create Storage Account".
-
-	![quick create][portal-quick-create-storage]
-
-	Make note of the URL you enter, as this will be referenced as the account name by later steps.
-
-4. Once the storage account has been created, click **Manage Keys** at the bottom of the page. This will display the primary and secondary access keys for this storage account. Copy and save the primary access key, then click the checkmark.
-
-	![access keys][portal-storage-access-keys]
-<!-- keep by customization: end -->
 
 ##Install modules and generate scaffolding
 
@@ -559,7 +536,6 @@ In this step, you will download a file containing information about your subscri
 		info:   site create command OK
 
 	> [AZURE.NOTE] If this is the first Azure Websites web app for your subscription, you will be instructed to use the Azure Management Portal to create the web app. For more information, see [Build and deploy a Node.js web app in Azure Websites].
-<!-- deleted by customization
 
 ### Set environment variables
 
@@ -586,45 +562,6 @@ Alternatively, you can set environment variables in the [Azure Management Portal
 
 1. Click **SAVE**.
 
--->
-<!-- keep by customization: begin -->
-### Switch to an environment variable
-
-Earlier we implemented code that looks for a environment variables or loads the value from the **config.json** file. In the following steps you will create key/value pairs in your website configuration that the application real access through an environment variable.
-
-1. From the Management Portal, click **Websites** and then select your website.
-
-	![Open website dashboard][go-to-dashboard]
-
-2. Click **CONFIGURE** and then find the **app settings** section of the page. 
-
-	![configure link][web-configure]
-
-3. In the **app settings** section, enter **STORAGE_NAME** in the **KEY** field, and the name of your storage account in the **VALUE** field. Click the checkmark to move to the next field. Repeat this process for the following keys and values:
-
-	* **STORAGE_KEY** - the access key for your storage account
-	
-	* **PARTITION_KEY** - 'mytasks'
-
-	* **TABLE_NAME** - 'tasks'
-
-	![app settings][app-settings]
-
-4. Finally, click the **SAVE** icon at the bottom of the page to commit this change to the run-time environment.
-
-	![app settings save][app-settings-save]
-
-5. From the command-line, change directories to the **tasklist** directory and enter the following command to remove the **config.json** file:
-
-		git rm config.json
-		git commit -m "Removing config file"
-
-6. Perform the following command to deploy the changes to Azure:
-
-		git push azure master
-
-Once the changes have been deployed to Azure, your web application should continue to work as it is now reading the connection string from the **app settings** entry. To verify this, change the value for the **STORAGE_KEY** entry in **app settings** to an invalid value. Once you have saved this value, the website should fail due to the invalid storage access key setting.
-<!-- keep by customization: end -->
 
 ### Publish the application
 
@@ -658,12 +595,10 @@ While the steps in this article describe using the Table Service to store inform
 ## Additional resources
 
 [Azure CLI]
-<!-- deleted by customization
 
 ## What's changed
 * For a guide to the change from Websites to Azure Websites see: [Azure Websites and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
 * For a guide to the change of the Azure Management Portal to the Azure preview portal see: [Reference for navigating the preview portal](https://manage.windowsazure.cn/)
--->
 
 [Build and deploy a Node.js web app in Azure Websites]: /documentation/articles/web-sites-nodejs-develop-deploy-mac
 [Continuous deployment using GIT in Azure Websites]: /documentation/articles/web-sites-publish-source-control

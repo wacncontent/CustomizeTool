@@ -40,7 +40,7 @@ Smartphones and tablets have the ability to "notify" users when an event has occ
 
 In Windows Store and Windows Phone applications, the notification can be in the form of a _toast_: a modeless window appears, with a sound, to signal a new notification. Other notification types are supports including _tile_, _raw_, and _badge_ notifications. For more information on the types of notifications supported on Windows devices see, [Tiles, Badges, and Notifications](http://msdn.microsoft.com/zh-cn/library/windows/apps/hh779725.aspx).
 
-On Apple iOS devices, the push similarly notifies the user with a dialog box, requesting the user to view or close the notification. Clicking **View** opens the application that is receiving the message. For more information on iOS Notifications see, [iOS Notifications](http://go.microsoft.com/fwlink/?LinkId=615245).
+On Apple iOS devices, the push similarly notifies the user with a dialog box, requesting the user to view or close the notification. Clicking **View** opens the application that is receiving the message. For more information on iOS Notifications see, [iOS Notifications](https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/MobileHIG/NotificationCenter.html).
 
 Push notifications help mobile devices display fresh information while remaining energy-efficient. Notifications can be sent by backend systems to mobile devices even when corresponding apps on a device are not active. Push notifications are a vital component for consumer apps, where they are used to increase app engagement and usage. Notifications are also useful to enterprises, when up-to-date information increases employee responsiveness to business events.
 

@@ -1,5 +1,5 @@
 <properties
-	pageTitle="FAQ: Azure AD Password Management | Microsoft Azure"
+	pageTitle="FAQ: Azure AD Password Management | Windows Azure"
 	description="Frequently asked questions (FAQ) about password management in Azure AD, including password reset, registration, reports, and writeback to on-premises Active Directory ."
 	services="active-directory"
 	documentationCenter=""
@@ -9,12 +9,8 @@
 
 <tags
 	ms.service="active-directory"
-	ms.workload="identity"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="09/18/2015" 
-	ms.author="asteen"/>
+	ms.date="09/18/2015"
+	wacn.date=""/>
 
 # Password Management Frequently Asked Questions
 The following are some frequently asked questions for all things related to password management.
@@ -35,7 +31,7 @@ This FAQ is split into the following sections:
 
  - **Q:  Can I define password reset data on behalf of my users?**
 
- > **A:** Yes, you can do so with DirSync or PowerShell, or through the [Azure Management Portal](https://manage.windowsazure.com) or Office Admin portal. Learn more about this feature on the blog post Improved Privacy for Azure AD MFA and Password Reset Phone Numbers and by reading Learn how data is used by password reset.
+ > **A:** Yes, you can do so with DirSync or PowerShell, or through the [Azure Management Portal](https://manage.windowsazure.cn) or Office Admin portal. Learn more about this feature on the blog post Improved Privacy for Azure AD MFA and Password Reset Phone Numbers and by reading Learn how data is used by password reset.
 
  - **Q:  Can I synchronize data for security questions from on premises?**
 
@@ -59,7 +55,7 @@ This FAQ is split into the following sections:
 
  - **Q:  When is a user considered registered?**
 
- > **A:** A user is considered registered when he or she has at least N pieces of authentication info defined, where N is the Number of Authentication Methods Required that you have set in the [Azure Management Portal](https://manage.windowsazure.com). To learn more, see Customizing User Password Reset Policy.
+ > **A:** A user is considered registered when he or she has at least N pieces of authentication info defined, where N is the Number of Authentication Methods Required that you have set in the [Azure Management Portal](https://manage.windowsazure.cn). To learn more, see Customizing User Password Reset Policy.
 
 
 ## Password reset
@@ -100,7 +96,7 @@ This FAQ is split into the following sections:
 
  - **Q:  How many questions can we configure for the Security Questions authentication option?**
 
- > **A:** You can configure up to 20 custom security questions in the [Azure Management Portal](https://manage.windowsazure.com).
+ > **A:** You can configure up to 20 custom security questions in the [Azure Management Portal](https://manage.windowsazure.cn).
 
  - **Q:  How long may security questions be?**
 
@@ -185,15 +181,15 @@ This FAQ is split into the following sections:
 **Additional Resources**
 
 
-* [What is Password Management](active-directory-passwords.md)
-* [How Password Management works](active-directory-passwords-how-it-works.md)
-* [Getting started with Password Mangement](active-directory-passwords-getting-started.md)
-* [Customize Password Management](active-directory-passwords-customize.md)
-* [Password Management Best Practices](active-directory-passwords-best-practices.md)
-* [How to get Operational Insights with Password Management Reports](active-directory-passwords-get-insights.md)
-* [Troubleshoot Password Management](active-directory-passwords-troubleshoot.md)
-* [Learn More](active-directory-passwords-learn-more.md)
-* [Password Management on MSDN](https://msdn.microsoft.com/library/azure/dn510386.aspx)
+* [What is Password Management](/documentation/articles/active-directory-passwords)
+* [How Password Management works](/documentation/articles/active-directory-passwords-how-it-works)
+* [Getting started with Password Mangement](/documentation/articles/active-directory-passwords-getting-started)
+* [Customize Password Management](/documentation/articles/active-directory-passwords-customize)
+* [Password Management Best Practices](/documentation/articles/active-directory-passwords-best-practices)
+* [How to get Operational Insights with Password Management Reports](/documentation/articles/active-directory-passwords-get-insights)
+* [Troubleshoot Password Management](/documentation/articles/active-directory-passwords-troubleshoot)
+* [Learn More](/documentation/articles/active-directory-passwords-learn-more)
+* [Password Management on MSDN](https://msdn.microsoft.com/zh-cn/library/azure/dn510386.aspx)
 
 
 [001]: ./media/active-directory-passwords-faq/001.jpg "Image_001.jpg"

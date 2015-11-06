@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Azure AD Connect sync - Implement password synchronization | Microsoft Azure"
+	pageTitle="Azure AD Connect sync - Implement password synchronization | Windows Azure"
 	description="Provides you with the information you need to understand how password synchronization works and how to enable it in your environment."
 	services="active-directory"
 	documentationCenter=""
@@ -9,12 +9,8 @@
 
 <tags
 	ms.service="active-directory"
-	ms.workload="identity"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="10/13/2015"
-	ms.author="markusvi;andkjell"/>
+	wacn.date=""/>
 
 
 # Azure AD Connect sync: Implement password synchronization
@@ -162,8 +158,8 @@ After running the Configuration Wizard, your tenant will no longer be synchroniz
 
 ## Additional Resources
 
-* [Azure AD Connect Sync: Customizing Synchronization options](active-directory-aadconnectsync-whatis.md)
-* [Integrating your on-premises identities with Azure Active Directory](active-directory-aadconnect.md)
+* [Azure AD Connect Sync: Customizing Synchronization options](/documentation/articles/active-directory-aadconnectsync-whatis)
+* [Integrating your on-premises identities with Azure Active Directory](/documentation/articles/active-directory-aadconnect)
 
 <!--Image references-->
 [1]: ./media/active-directory-aadsync-implement-password-synchronization/IC759788.png

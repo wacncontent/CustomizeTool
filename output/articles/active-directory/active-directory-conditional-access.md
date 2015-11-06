@@ -9,12 +9,8 @@
 
 <tags
 	ms.service="active-directory"
-	ms.devlang="na"
-	ms.topic="article"
-    ms.tgt_pltfrm="na"
-    ms.workload="identity" 
 	ms.date="08/19/2015"
-	ms.author="femila"/>
+	wacn.date=""/>
 
 
 # Managing Risk With Conditional Access
@@ -35,10 +31,10 @@ With the multiple conditional access capabilities offered through Azure Active D
 
 The following topics discuss each of the different mechanisms available for setting conditional access polices in your organization.
 
-- [Azure Active Directory Device Registration Overview](active-directory-conditional-access-device-registration-overview.md)
-- [Setting up On-premises Conditional Access using Azure Active Directory Device Registration](active-directory-conditional-access-on-premises-setup.md)
-- [Conditional Access Device Policies for Office 365 services](active-directory-conditional-access-device-policies.md)
-- [Azure Conditional Access Preview for SaaS Apps](active-directory-conditional-access-azuread-connected-apps.md)
+- [Azure Active Directory Device Registration Overview](/documentation/articles/active-directory-conditional-access-device-registration-overview)
+- [Setting up On-premises Conditional Access using Azure Active Directory Device Registration](/documentation/articles/active-directory-conditional-access-on-premises-setup)
+- [Conditional Access Device Policies for Office 365 services](/documentation/articles/active-directory-conditional-access-device-policies)
+- [Azure Conditional Access Preview for SaaS Apps](/documentation/articles/active-directory-conditional-access-azuread-connected-apps)
 
 
 <!--Image references-->

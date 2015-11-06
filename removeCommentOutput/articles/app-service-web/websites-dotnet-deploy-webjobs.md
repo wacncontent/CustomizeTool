@@ -132,7 +132,7 @@ For a scheduled WebJob (not for continuous WebJobs), Visual Studio creates an [A
  
 >[AZURE.NOTE]
 > 
-
+>* For information about command-line deployment, see [Enabling Command-line or Continuous Delivery of Azure WebJobs](/blog/2014/08/18/enabling-command-line-or-continuous-delivery-of-azure-webjobs/).
 >* If you configure a **Recurring Job** and set recurrence frequency to a number of minutes, the Azure Scheduler service is not free. Other frequencies (hours, days, and so forth) are free.
 >* If you deploy a WebJob and then decide you want to change the type of WebJob and redeploy, you'll need to delete the webjobs-publish-settings.json file. This will make Visual Studio show the publishing options again, so you can change the type of WebJob.
 >* If you deploy a WebJob and later change the run mode from continuous to non-continuous or vice versa, Visual Studio creates a new WebJob in Azure when you redeploy. If you change other scheduling settings but leave run mode the same or switch between Scheduled and On Demand, Visual Studio updates the existing job rather than create a new one.
@@ -186,9 +186,13 @@ To deploy a WebJobs project by itself, right-click the project in **Solution Exp
 	
 For an independent WebJob, the same **Publish Web** wizard that is used for web projects appears, but with fewer settings available to change.
 
+>[AZURE.NOTE] If you want to get started with Azure Websites before signing up for an Azure account, go to [Try Azure Websites](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure Websites. No credit cards required; no commitments.
 
 ## <a id="nextsteps"></a>Next Steps
 
 This article has explained how to deploy WebJobs by using Visual Studio. For information about how to deploy Azure WebJobs from Visual Studio and by using a continuous delivery process, see [Azure WebJobs - Recommended Resources - Deployment](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/azure-webjobs-recommended-resources#deploying).
 
+## What's changed
+* For a guide to the change from Websites to Azure Websites see: [Azure Websites and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
+* For a guide to the change of the Azure Management Portal to the Azure preview portal see: [Reference for navigating the preview portal](https://manage.windowsazure.cn/)
  

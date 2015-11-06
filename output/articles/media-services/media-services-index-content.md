@@ -336,7 +336,6 @@ No audio stream in input media.</td></tr>
 
 Currently, the English and Spanish languages are supported. For more information, see [Azure Media Indexer Spanish](http://azure.microsoft.com/blog/2015/04/13/azure-media-indexer-spanish-v1-2/).
 
-<!-- deleted by customization
 
 ##Media Services learning paths
 
@@ -344,7 +343,6 @@ You can view AMS learning paths here:
 
 - [AMS Live Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/)
 - [AMS on Demand Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/)
--->
 
 
 ##Related links

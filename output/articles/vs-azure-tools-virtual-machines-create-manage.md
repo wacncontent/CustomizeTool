@@ -17,7 +17,7 @@ You can create virtual machines in Azure by using Server Explorer in Visual Stud
 
 ## Create an Azure virtual machine in Server Explorer
 
-While you can create a virtual machine in the [Azure Management Portal](http://go.microsoft.com/fwlink/?LinkID=253103), you can also create a virtual machine in Azure by using commands in Server Explorer. Virtual machines can be used, for example, to provide a front end behind a common load-balanced public endpoint.
+While you can create a virtual machine in the [Azure Management Portal](https://manage.windowsazure.cn/), you can also create a virtual machine in Azure by using commands in Server Explorer. Virtual machines can be used, for example, to provide a front end behind a common load-balanced public endpoint.
 
 ### To create a new virtual machine
 
@@ -55,7 +55,7 @@ While you can create a virtual machine in the [Azure Management Portal](http://g
 
 1. On the **Virtual Machine Basic Settings** page, enter a machine name and then add the specifications for the virtual machine, including the size, and a user name and password. When you're done, click **Next**.
 
-    You’ll use the new name and password to log into the machine using remote desktop, so it’s a good idea to write them down in case you forget. After you create an Azure virtual machine in Visual Studio, you can change its size and other settings in the [Azure Management Portal](http://go.microsoft.com/fwlink/?LinkID=253103).
+    You’ll use the new name and password to log into the machine using remote desktop, so it’s a good idea to write them down in case you forget. After you create an Azure virtual machine in Visual Studio, you can change its size and other settings in the [Azure Management Portal](https://manage.windowsazure.cn/).
 
         >[AZURE.NOTE] If you choose larger sizes for the virtual machine, extra charges may apply. See [Virtual Machines Pricing Details](/home/features/virtual-machines/#price) for more information.
 
@@ -63,11 +63,11 @@ While you can create a virtual machine in the [Azure Management Portal](http://g
 
 1. If you want to specify a virtual network (which is optional), select it in the Virtual Network and Subnet dropdown list boxes.
 
-    Virtual machines that are members of an availability set are deployed to different fault domains. See [Azure Virtual Network](/home/features/networking/) for more information.
+    Virtual machines that are members of an availability set are deployed to different fault domains. See [Azure Virtual Network](https://azure.microsoft.com/zh-cn/services/virtual-network/) for more information.
 
 1. If you want your virtual machine to belong to an availability set (also optional), select the **Specify an availability set** check box and then choose an availability set in the dropdown list box. When you're done, choose the **Next** button.
 
-    Adding your virtual machine to an availability set helps your application stay available during network failures, local disk hardware failures, and any planned downtime. You need to use the [Azure Management Portal](http://go.microsoft.com/fwlink/?LinkID=253103) to create virtual networks, subnets, and availability sets. See [Manage the Availability of Virtual Machines](/documentation/articles/manage-availability-virtual-machines/) for more information.
+    Adding your virtual machine to an availability set helps your application stay available during network failures, local disk hardware failures, and any planned downtime. You need to use the [Azure Management Portal](https://manage.windowsazure.cn/) to create virtual networks, subnets, and availability sets. See [Manage the Availability of Virtual Machines](/documentation/articles/virtual-machines-manage-availability/) for more information.
 
 1. On the **Endpoints** page, specify the public endpoints that you want available to users of your virtual machine. For example, you might choose to enable HTTP (Port 80) in addition to the Remote Desktop and PowerShell endpoints, which are enabled by default. To add an endpoint, choose one in the **Port Name** dropdown list box and then choose the **Add** button. To remove an endpoint, choose the red **X** next to the name in the endpoints list.
 
@@ -157,7 +157,7 @@ As you configure your virtual machine and install software on it, it's a good id
 
 ### To delete a checkpoint
 
-1. Go to the [Azure Management Portal](http://go.microsoft.com/fwlink/?LinkID=253103).
+1. Go to the [Azure Management Portal](https://manage.windowsazure.cn/).
 
 1. On the virtual machine configuration page, choose the **Images** tab at the top of the page.
 

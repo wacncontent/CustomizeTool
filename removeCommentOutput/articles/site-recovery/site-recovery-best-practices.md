@@ -26,7 +26,7 @@ If you have any questions after reading this article post them on the [Azure Rec
 
 ## Preparing Azure
 
-- **Azure account**: You'll need an [Windows Azure](http://azure.microsoft.com/) account. If you don't have one, start with a [trial](/documentation/articles/free-trial).
+- **Azure account**: You'll need an [Windows Azure](http://azure.microsoft.com/) account. If you don't have one, start with a [trial](/pricing/1rmb-trial/).
 - Read about [pricing](/documentation/articles/site-recovery) for the Site Recovery 
 - **Azure storage**: If you deploy Site Recovery with replication to Azure you'll need an Azure storage account. You can set one up during deployment or prepare one before you start. The account should have geo-replication enabled. It should be in the same region as the Azure Site Recovery vault and be associated with the same subscription. Read [Introduction to Windows Azure Storage](/documentation/articles/storage-introduction). 
 

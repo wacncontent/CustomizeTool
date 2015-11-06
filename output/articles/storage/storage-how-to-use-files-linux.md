@@ -125,7 +125,7 @@ See these links for more information about Azure File storage.
 
 ### Blog posts
 
-- [Azure File storage is now generally available](http://go.microsoft.com/fwlink/?LinkID=626728&clcid=0x409)
-- [Deep dive with Azure File storage](http://go.microsoft.com/fwlink/?LinkID=626729&clcid=0x409) 
+- [Azure File storage is now generally available](https://azure.microsoft.com/zh-cn/blog/)
+- [Deep dive with Azure File storage](/home/features/storage/) 
 - [Introducing Windows Azure File Service](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/12/introducing-microsoft-azure-file-service.aspx)
 - [Persisting connections to Windows Azure Files](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/27/persisting-connections-to-microsoft-azure-files.aspx)

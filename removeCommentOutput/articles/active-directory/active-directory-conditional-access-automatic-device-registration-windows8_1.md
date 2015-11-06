@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Configure automatic device registration for Windows 8.1 domain joined devices| Microsoft Azure"
+	pageTitle="Configure automatic device registration for Windows 8.1 domain joined devices| Windows Azure"
 	description=" Steps to configure group policy for Windows 8.1 domain-joined devices to automatically register with Azure AD. "
 	services="active-directory"
 	documentationCenter=""
@@ -9,12 +9,8 @@
 
 <tags
 	ms.service="active-directory"
-	ms.workload="identity"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="08/12/2015"
-	ms.author="femila"/>
+	wacn.date=""/>
 
 # Configure automatic device registration for Windows 8.1 domain joined devices
 

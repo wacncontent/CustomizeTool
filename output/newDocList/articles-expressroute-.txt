@@ -1,4 +1,4 @@
-new docs: 16, word count: {word_count_TODO}
+new docs: 16, word count: 20317
 articles/expressroute/expressroute-circuit-peerings.md
 articles/expressroute/expressroute-config-samples-nat.md
 articles/expressroute/expressroute-config-samples-routing.md

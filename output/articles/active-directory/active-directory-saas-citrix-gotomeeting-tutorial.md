@@ -1,18 +1,15 @@
 <properties 
-    pageTitle="Tutorial: Azure Active Directory integration with Citrix GoToMeeting | Microsoft Azure" 
+    pageTitle="Tutorial: Azure Active Directory integration with Citrix GoToMeeting | Windows Azure" 
     description="Learn how to use Citrix GoToMeeting with Azure Active Directory to enable single sign-on, automated provisioning, and more!." 
     services="active-directory" 
     authors="MarkusVi"  
     documentationCenter="na" 
     manager="stevenpo"/>
 
-<tags 
-    ms.service="active-directory" 
-    ms.devlang="na" ms.topic="article" 
-    ms.tgt_pltfrm="na" 
-    ms.workload="identity" 
-    ms.date="10/01/2015" 
-    ms.author="markvi" />
+<tags
+	ms.service="active-directory"
+	ms.date="10/01/2015"
+	wacn.date=""/>
 
 #Tutorial: Azure Active Directory integration with Citrix GoToMeeting  
 Applies To: Azure
@@ -75,7 +72,7 @@ If you are not familiar with this procedure, see [How to convert a binary certif
 
     ![Enable single sign-on](./media/active-directory-saas-citrix-gotomeeting-tutorial/IC768997.png "Enable single sign-on")
 
-2.  On the **How would you like users to sign on to Citrix GoToMeeting** page, select **Microsoft Azure AD Single Sign-On**.
+2.  On the **How would you like users to sign on to Citrix GoToMeeting** page, select **Windows Azure AD Single Sign-On**.
 
     ![Configure single sign-on](./media/active-directory-saas-citrix-gotomeeting-tutorial/IC768998.png "Configure single sign-on")
 
@@ -92,11 +89,11 @@ If you are not familiar with this procedure, see [How to convert a binary certif
 
      6.1. Select **Manual**
 
-     6.2. In the Azure portal, on the **Configure single sign-on at Citrix GoToMeeting** dialog page, copy the **Sign-In Page URL** value, and then paste it into the **Sign-in page URL** textbox. 
+     6.2. In the Azure Management Portal, on the **Configure single sign-on at Citrix GoToMeeting** dialog page, copy the **Sign-In Page URL** value, and then paste it into the **Sign-in page URL** textbox. 
 
-     6.3. In the Azure portal, on the **Configure single sign-on at Citrix GoToMeeting** dialog page, copy the **Sign-Out Page URL** value, and then paste it into the **Sign-out page URL** textbox.
+     6.3. In the Azure Management Portal, on the **Configure single sign-on at Citrix GoToMeeting** dialog page, copy the **Sign-Out Page URL** value, and then paste it into the **Sign-out page URL** textbox.
 
-     6.4. In the Azure portal, on the **Configure single sign-on at Citrix GoToMeeting** dialog page, copy the **Entity ID** value, and then paste it into the **Identity Provider Entity ID** textbox.
+     6.4. In the Azure Management Portal, on the **Configure single sign-on at Citrix GoToMeeting** dialog page, copy the **Entity ID** value, and then paste it into the **Identity Provider Entity ID** textbox.
 
      6.5. To upload your downloaded certificate, click **Upload Certificate**.
 
@@ -164,4 +161,4 @@ A successfully completed user provisioning cycle is indicated by a related statu
 
 If you want to test your single sign-on settings, open the Access Panel.
 
-For more details about the Access Panel, see [Introduction to the Access Panel](https://msdn.microsoft.com/library/dn308586).
+For more details about the Access Panel, see [Introduction to the Access Panel](https://msdn.microsoft.com/zh-cn/library/dn308586).

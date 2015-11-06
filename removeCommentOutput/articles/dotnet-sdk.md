@@ -18,7 +18,7 @@
 
 The Azure SDK for .NET is a set of Visual Studio tools, command-line tools, runtime binaries, and client libraries that help you develop, test, and deploy apps that run in Azure. This article details what you get when you install the SDK. You can download the SDK from the [Azure Downloads page](/downloads/). 
 
-The Azure SDK for .NET also comprises [client libraries for consuming Azure services](http://go.microsoft.com/fwlink/?LinkId=510472). These libraries are installed separately using NuGet.
+The Azure SDK for .NET also comprises [client libraries for consuming Azure services](http://www.nuget.org/packages?q=windowsazureofficial). These libraries are installed separately using NuGet.
 
 ##<a id="included"></a>What's included in the Azure SDK for .NET
 
@@ -84,7 +84,7 @@ The [Azure Storage Emulator](http://msdn.microsoft.com/zh-cn/library/hh403989.as
 
 ###<a id="stgtools"></a>Windows Azure Storage Tools
 
-This installs [AzCopy](http://aka.ms/AzCopy), a command line tool you can use to transfer data into and out of an Azure Storage account.
+This installs [AzCopy](/documentation/articles/storage-use-azcopy/), a command line tool you can use to transfer data into and out of an Azure Storage account.
 
 ###<a id="libraries"></a>Windows Azure Libraries for .NET
 
@@ -109,13 +109,13 @@ Azure PowerShell enables you to [automate Azure environment creation and deploym
 
 There are a few things that you might want for Azure development that aren't included when you install the SDK. The most important of these are the following:
 
-* [Client libraries](http://go.microsoft.com/fwlink/?LinkId=510472). 
+* [Client libraries](http://www.nuget.org/packages?q=windowsazureofficial). 
 
-	The Azure SDK includes client libraries for consuming Azure services, but not all of them are installed when you install the SDK. If your application needs a client library that the SDK doesn't install, you can get it from [NuGet.org](http://go.microsoft.com/fwlink/?LinkId=510472). If your application uses a client library that the SDK does install, it's a good practice to update it with the current version at NuGet.org.
+	The Azure SDK includes client libraries for consuming Azure services, but not all of them are installed when you install the SDK. If your application needs a client library that the SDK doesn't install, you can get it from [NuGet.org](http://www.nuget.org/packages?q=windowsazureofficial). If your application uses a client library that the SDK does install, it's a good practice to update it with the current version at NuGet.org.
 
   	**Local copies of client libraries.** The Azure SDK for .NET copies to your computer the NuGet packages for some Azure client libraries, such as Storage, Service Bus, and Caching. These client libraries are automatically included in new cloud service projects, so the local NuGet packages enable Visual Studio to create projects even if you're not connected to the Internet. Client libraries are generally updated more frequently than new SDK versions are released, so the client libraries at NuGet.org are often more current than what you get with the SDK. 
 
-	**Project templates that include client libraries.** Only [Azure Cloud Service](/documentation/articles/cloud-services-dotnet-get-started) and [Azure Mobile Service](/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-leaderboard) project templates automatically include some client libraries. For other libraries or other templates, install the [client library NuGet packages](http://go.microsoft.com/fwlink/?LinkId=510472) that you need.
+	**Project templates that include client libraries.** Only [Azure Cloud Service](/documentation/articles/cloud-services-dotnet-get-started) and [Azure Mobile Service](/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-leaderboard) project templates automatically include some client libraries. For other libraries or other templates, install the [client library NuGet packages](http://www.nuget.org/packages?q=windowsazureofficial) that you need.
 
 * [Azure Mobile Service project templates](/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-leaderboard).
 
@@ -140,7 +140,7 @@ It's a good practice to install the SDK if you want to develop for Azure using t
 
 ###<a id="clientlib"></a>I want a client library. Do I have to install the Azure SDK for .NET to get it?
 
-The SDK installs client libraries only so you can create cloud service projects even if you're not connected to the Internet. Current client libraries are available in NuGet packages at [NuGet.org](http://go.microsoft.com/fwlink/?LinkId=510472). For more information, see [What's not included when you install the Azure SDK for .NET](#notincluded) earlier in this document.
+The SDK installs client libraries only so you can create cloud service projects even if you're not connected to the Internet. Current client libraries are available in NuGet packages at [NuGet.org](http://www.nuget.org/packages?q=windowsazureofficial). For more information, see [What's not included when you install the Azure SDK for .NET](#notincluded) earlier in this document.
 
 ###<a id="olderversions"></a>Where can I find older versions of the Azure SDK for .NET?
 

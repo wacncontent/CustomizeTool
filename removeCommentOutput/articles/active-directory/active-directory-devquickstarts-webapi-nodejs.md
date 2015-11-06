@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Azure AD NodeJS Getting Started | Microsoft Azure"
+	pageTitle="Azure AD NodeJS Getting Started | Windows Azure"
 	description="How to build a Node.js Web API that integrates with Azure AD for authentication."
 	services="active-directory"
 	documentationCenter="nodejs"
@@ -9,16 +9,12 @@
 
 <tags
 	ms.service="active-directory"
-	ms.workload="identity"
-	ms.tgt_pltfrm="na"
-	ms.devlang="javascript"
-	ms.topic="article"
 	ms.date="10/13/2015"
-	ms.author="brandwe"/>
+	wacn.date=""/>
 
 # Getting Started With WEB-API for Node
 
-[AZURE.INCLUDE [active-directory-devguide](../../includes/active-directory-devguide.md)]
+[AZURE.INCLUDE [active-directory-devguide](../includes/active-directory-devguide.md)]
 
 This walkthrough will give you  a quick and easy way to set up a REST API Service that is integrated with  Azure Active Directory for API protection using the OAuth2 protocol. The sample server included in the download are designed to run on any platform but target OSX and Linux.
 
@@ -39,7 +35,7 @@ This dependency chain structure results in a larger application footprint, but i
 
 ## Step 1: Register a Azure AD Tenant
 
-To use this sample you will need a Azure Active Directory Tenant. If you're not sure what a tenant is or how you would get one, see  [How to get an Azure AD tenant](active-directory-howto-tenant.md).
+To use this sample you will need a Azure Active Directory Tenant. If you're not sure what a tenant is or how you would get one, see  [How to get an Azure AD tenant](/documentation/articles/active-directory-howto-tenant).
 
 ## Step 2: Add A Web API to your tenant
 
@@ -54,7 +50,7 @@ To enable your app to authenticate users, you'll first need to register a new ap
 - Follow the prompts and create a new **Web Application and/or WebAPI**.
     - The **name** of the application will describe your application to end-users
     -	The **Sign-On URL** is the base URL of your app.  The skeleton’s default is `https://localhost:8888`.
-    - The **App ID URI** is a unique identifier for your application.  The convention is to use `https://<tenant-domain>/<app-name>`, e.g. `https://contoso.onmicrosoft.com/my-first-aad-app`
+    - The **App ID URI** is a unique identifier for your application.  The convention is to use `https://<tenant-domain>/<app-name>`, e.g. `https://contoso.partner.onmschina.cn/my-first-aad-app`
 - Once you’ve completed registration, AAD will assign your app a unique client identifier.  You’ll need this value in the next sections, so copy it from the Configure tab.
 
 ## Step 3: Download node.js for your platform
@@ -1155,7 +1151,7 @@ Try a basic GET:
 	$ curl -isS http://127.0.0.1:8888/tasks/
 	HTTP/1.1 302 Moved Temporarily
 	Connection: close
-	Location: https://login.windows.net/468a75f4-f9a7-4dc4-a527-4f4522734790/oauth2/authorize?response_type=code&redirect_uri=&client_id=123
+	Location: https://login.chinacloudapi.cn/468a75f4-f9a7-4dc4-a527-4f4522734790/oauth2/authorize?response_type=code&redirect_uri=&client_id=123
 	Content-Length: 0
 	Date: Tue, 04 Feb 2014 02:15:14 GMT
 
@@ -1176,7 +1172,7 @@ Simply clone down to your developer machine and configure as stated in the Walkt
 
 [ADAL for Android](https://github.com/MSOpenTech/azure-activedirectory-library-for-android)
 
-[ADAL for .Net](http://msdn.microsoft.com/library/windowsazure/jj573266.aspx)
+[ADAL for .Net](http://msdn.microsoft.com/zh-cn/library/azure/jj573266.aspx)
 
-[AZURE.INCLUDE [active-directory-devquickstarts-additional-resources](../../includes/active-directory-devquickstarts-additional-resources.md)]
+[AZURE.INCLUDE [active-directory-devquickstarts-additional-resources](../includes/active-directory-devquickstarts-additional-resources.md)]
  

@@ -29,17 +29,17 @@ AP0000
 
 If you use the default (in-process) session state mode for cloud applications, you can lose session state.
 
-Please share your ideas and feedback at [Azure Code Analysis feedback](http://go.microsoft.com/fwlink/?LinkId=403771).
+Please share your ideas and feedback at [Azure Code Analysis feedback](https://social.msdn.microsoft.com/Forums/zh-cn/home).
 
 ### Reason
 
 By default, the session state mode specified in the web.config file is in-process. Also, if no entry specified in the configuration file, the Session State mode defaults to in-process. The in-process mode stores session state in memory on the web server. When an instance is restarted or a new instance is used for load balancing or failover support, the session state stored in memory on the web server isn’t saved. This situation prevents the application from being scalable on the cloud.
 
-ASP.NET session state supports several different storage options for session state data: InProc, StateServer, SQLServer, Custom, and Off. It’s recommended that you use Custom mode to host data on an external Session State store, such as [Azure Session State provider for Redis](http://go.microsoft.com/fwlink/?LinkId=401521).
+ASP.NET session state supports several different storage options for session state data: InProc, StateServer, SQLServer, Custom, and Off. It’s recommended that you use Custom mode to host data on an external Session State store, such as [Azure Session State provider for Redis](http://blogs.msdn.com/b/webdev/archive/2014/05/12/announcing-asp-net-session-state-provider-for-redis-preview-release.aspx).
 
 ### Solution
 
-One recommended solution is to store session state on a managed cache service. Learn how to use [Azure Session State provider for Redis](http://go.microsoft.com/fwlink/?LinkId=401521) to store your session state. You can also store session state in other places to ensure your application is scalable on the cloud. To learn more about alternative solutions please read [Session State Modes](https://msdn.microsoft.com/zh-cn/library/ms178586).
+One recommended solution is to store session state on a managed cache service. Learn how to use [Azure Session State provider for Redis](http://blogs.msdn.com/b/webdev/archive/2014/05/12/announcing-asp-net-session-state-provider-for-redis-preview-release.aspx) to store your session state. You can also store session state in other places to ensure your application is scalable on the cloud. To learn more about alternative solutions please read [Session State Modes](https://msdn.microsoft.com/zh-cn/library/ms178586).
 
 ## Run method should not be async
 
@@ -51,7 +51,7 @@ AP1000
 
 Create asynchronous methods (such as [await](https://msdn.microsoft.com/zh-cn/library/hh156528.aspx)) outside of the [Run()](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.serviceruntime.roleentrypoint.run.aspx) method and then call the async methods from [Run()](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.serviceruntime.roleentrypoint.run.aspx). Declaring the [[Run()](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.serviceruntime.roleentrypoint.run.aspx)](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.serviceruntime.roleentrypoint.run.aspx) method as async causes the worker role to enter a restart loop.
 
-Please share your ideas and feedback at [Azure Code Analysis feedback](http://go.microsoft.com/fwlink/?LinkId=403771).
+Please share your ideas and feedback at [Azure Code Analysis feedback](https://social.msdn.microsoft.com/Forums/zh-cn/home).
 
 ### Reason
 
@@ -101,7 +101,7 @@ AP2000
 
 Use Shared Access Signature (SAS) for authentication. Access Control Service (ACS) is being deprecated for service bus authentication.
 
-Please share your ideas and feedback at [Azure Code Analysis feedback](http://go.microsoft.com/fwlink/?LinkId=403771).
+Please share your ideas and feedback at [Azure Code Analysis feedback](https://social.msdn.microsoft.com/Forums/zh-cn/home).
 
 ### Reason
 
@@ -135,7 +135,7 @@ AP2002
 
 To avoid going into a "receive loop," calling the **OnMessage** method is a better solution for receiving messages than calling the **Receive** method. However, if you must use the **Receive** method, and you specify a non-default server wait time, make sure the server wait time is more than one minute.
 
-Please share your ideas and feedback at [Azure Code Analysis feedback](http://go.microsoft.com/fwlink/?LinkId=403771).
+Please share your ideas and feedback at [Azure Code Analysis feedback](https://social.msdn.microsoft.com/Forums/zh-cn/home).
 
 ### Reason
 
@@ -243,7 +243,7 @@ AP2003
 
 Use asynchronous Service Bus methods to improve performance with brokered messaging.
 
-Please share your ideas and feedback at [Azure Code Analysis feedback](http://go.microsoft.com/fwlink/?LinkId=403771).
+Please share your ideas and feedback at [Azure Code Analysis feedback](https://social.msdn.microsoft.com/Forums/zh-cn/home).
 
 ### Reason
 
@@ -265,7 +265,7 @@ AP2004
 
 Partition Service Bus queues and topics for better performance with Service Bus messaging.
 
-Please share your ideas and feedback at [Azure Code Analysis feedback](http://go.microsoft.com/fwlink/?LinkId=403771).
+Please share your ideas and feedback at [Azure Code Analysis feedback](https://social.msdn.microsoft.com/Forums/zh-cn/home).
 
 ### Reason
 
@@ -295,7 +295,7 @@ AP3001
 
 You should avoid using SharedAccessStartTimeset to the current time to immediately start the Shared Access policy. You only need to set this property if you want to start the Shared Access policy at a later time.
 
-Please share your ideas and feedback at [Azure Code Analysis feedback](http://go.microsoft.com/fwlink/?LinkId=403771).
+Please share your ideas and feedback at [Azure Code Analysis feedback](https://social.msdn.microsoft.com/Forums/zh-cn/home).
 
 ### Reason
 
@@ -332,7 +332,7 @@ AP3002
 
 There can be as much as a five minute difference in clocks among datacenters at different locations due to a condition known as "clock skew." To prevent the SAS policy token from expiring earlier than planned, set the expiry time to be more than five minutes.
 
-Please share your ideas and feedback at [Azure Code Analysis feedback](http://go.microsoft.com/fwlink/?LinkId=403771).
+Please share your ideas and feedback at [Azure Code Analysis feedback](https://social.msdn.microsoft.com/Forums/zh-cn/home).
 
 ### Reason
 
@@ -387,7 +387,7 @@ AP4000
 
 Using the [ConfigurationManager](https://msdn.microsoft.com/zh-cn/library/system.configuration.configurationmanager(v=vs.110).aspx) class for projects such as Azure Website and Azure mobile services won't introduce runtime issues. As a best practice, however, it's a good idea to use Cloud[ConfigurationManager](https://msdn.microsoft.com/zh-cn/library/system.configuration.configurationmanager(v=vs.110).aspx) as a unified way of managing configurations for all Azure Cloud applications.
 
-Please share your ideas and feedback at [Azure Code Analysis feedback](http://go.microsoft.com/fwlink/?LinkId=403771).
+Please share your ideas and feedback at [Azure Code Analysis feedback](https://social.msdn.microsoft.com/Forums/zh-cn/home).
 
 ### Reason
 
@@ -429,7 +429,7 @@ AP4001
 
 If you use hard-coded connection strings and you need to update them later, you’ll have to make changes to your source code and recompile the application. However, if you store your connection strings in a configuration file, you can change them later by simply updating the configuration file.
 
-Please share your ideas and feedback at [Azure Code Analysis feedback](http://go.microsoft.com/fwlink/?LinkId=403771).
+Please share your ideas and feedback at [Azure Code Analysis feedback](https://social.msdn.microsoft.com/Forums/zh-cn/home).
 
 ### Reason
 
@@ -457,7 +457,7 @@ AP5000
 
 Instead of configuring diagnostics settings in your code such as by using the Microsoft.WindowsAzure.Diagnostics programming API, you should configure diagnostics settings in the diagnostics.wadcfg file. (Or, diagnostics.wadcfgx if you use Azure SDK 2.5). By doing this, you can change diagnostics settings without having to recompile your code.
 
-Please share your ideas and feedback at [Azure Code Analysis feedback](http://go.microsoft.com/fwlink/?LinkId=403771).
+Please share your ideas and feedback at [Azure Code Analysis feedback](https://social.msdn.microsoft.com/Forums/zh-cn/home).
 
 ### Reason
 
@@ -490,7 +490,7 @@ AP6000
 
 To save memory, avoid declaring DBContext objects as static.
 
-Please share your ideas and feedback at [Azure Code Analysis feedback](http://go.microsoft.com/fwlink/?LinkId=403771).
+Please share your ideas and feedback at [Azure Code Analysis feedback](https://social.msdn.microsoft.com/Forums/zh-cn/home).
 
 ### Reason
 

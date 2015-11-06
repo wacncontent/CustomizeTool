@@ -1,4 +1,4 @@
-new docs: 133, word count: {word_count_TODO}
+new docs: 133, word count: 333287
 articles/architecture-overview.md
 articles/azure-api-management-certs.md
 articles/azure-architectures-cpif-foundation-azure-search-tier.md
@@ -133,25 +133,7 @@ articles/xplat-cli-connect.md
 articles/xplat-cli-install.md
 articles/xplat-cli.md
 
-new includes: 272
-includes/active-directory-applications-guiding-developers-for-lob-applications-toc.md
-includes/active-directory-b2c-devquickstarts-graph-switcher.md
-includes/active-directory-b2c-devquickstarts-native-switcher.md
-includes/active-directory-b2c-devquickstarts-policy.md
-includes/active-directory-b2c-devquickstarts-tenant-name.md
-includes/active-directory-b2c-devquickstarts-v2-apps.md
-includes/active-directory-b2c-preview-note.md
-includes/active-directory-b2c-quickstart-table.md
-includes/active-directory-devguide.md
-includes/active-directory-devquickstarts-additional-resources.md
-includes/active-directory-devquickstarts-platforms-selector.md
-includes/active-directory-devquickstarts-switcher.md
-includes/active-directory-passwords-content-journey-selector.md
-includes/active-directory-privileged-identity-management-toc.md
-includes/active-directory-saas-toc.md
-includes/active-directory-service-limits-include.md
-includes/active-directory-sso-use-case-intro.md
-includes/active-directory-v2-quickstart-table.md
+new includes: 254
 includes/add-push-notifications-to-app.md
 includes/antares-iaas-signup-iaas.md
 includes/antares-iaas-signup.md

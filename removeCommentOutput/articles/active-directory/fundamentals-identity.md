@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Azure Identity | Microsoft Azure"
+	pageTitle="Azure Identity | Windows Azure"
 	description="Learn about using Active Directory in Azure."
 	services="active-directory"
 	documentationCenter=".net"
@@ -9,12 +9,8 @@
 
 <tags
 	ms.service="multiple"
-	ms.workload="multiple"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="09/22/2015"
-	ms.author="curtand"/>
+	wacn.date=""/>
 
 
 # The fundamentals of Azure identity management
@@ -23,4 +19,4 @@
 
 
 
-[AZURE.INCLUDE [identity](../../includes/identity.md)]
+[AZURE.INCLUDE [identity](../includes/identity.md)]

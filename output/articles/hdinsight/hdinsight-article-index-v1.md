@@ -1,6 +1,6 @@
 <properties
    pageTitle="HDInsight article index for Azure Management Portal | Windows Azure"
-   description="An index page with links to articles about HDInsight on the Azure Management Portal. Microsoft recommends the Azure <!-- deleted by customization preview portal --><!-- keep by customization: begin -->Management Portal<!-- keep by customization: end --> for new Hadoop clusters on HDInsight."
+   description="An index page with links to articles about HDInsight on the Azure Management Portal. Microsoft recommends the Azure preview portal for new Hadoop clusters on HDInsight."
    services="hdinsight"
    documentationCenter="na"
    authors="cjgronlund"
@@ -15,7 +15,6 @@
 # HDInsight article index for the Azure Management Portal
 
 Use this index page to find articles covering HDInsight on the [Azure Management Portal](https://manage.windowsazure.cn/). Azure HDInsight is a cloud distribution of open-source Hadoop and the Hortonworks Data Platform.
-<!-- deleted by customization
 
 
 > [AZURE.IMPORTANT]  This documentation index page is for customers who already have solutions deployed to the current Azure Management Portal.
@@ -28,17 +27,14 @@ Use this index page to find articles covering HDInsight on the [Azure Management
 > For an explanation of the advantages of the preview portal, see [DevOps just got a whole lot more awesome](https://manage.windowsazure.cn).
 >
 > HDInsight on the Azure Management Portal will not receive upgrades after July 2015 and is replaced by the Azure preview portal.
--->
 
 ## Get started
 
-If you're new to Hadoop on HDInsight, go to the [HDInsight documentation page](/documentation/services/hdinsight/) to get started with the Azure <!-- deleted by customization preview portal --><!-- keep by customization: begin -->Azure Management Portal<!-- keep by customization: end -->.
-<!-- deleted by customization
+If you're new to Hadoop on HDInsight, go to the [HDInsight documentation page](/documentation/services/hdinsight/) to get started with the Azure preview portal.
 
 ## Linux
 
 For a complete set of articles about using Linux and Linux clusters, go to the [HDInsight documentation page](/documentation/services/hdinsight/).
--->
 
 ## Hadoop: Batch query
 
@@ -67,10 +63,8 @@ For a complete set of articles about using Linux and Linux clusters, go to the [
 
 * [Configure HBase geo-replication](/documentation/articles/hdinsight-hbase-geo-replication)
 * [Use Maven to build Java applications that use HBase](/documentation/articles/hdinsight-hbase-build-java-maven)
-<!-- deleted by customization
 * [Analyze real-time Twitter sentiment on HBase](/documentation/articles/hdinsight-hbase-analyze-twitter-sentiment)
 
--->
 ## Apache Storm: Stream query
 
 * [Get started with the Storm Starter samples](/documentation/articles/hdinsight-apache-storm-tutorial-get-started)
@@ -80,7 +74,6 @@ For a complete set of articles about using Linux and Linux clusters, go to the [
 * [Process events from Azure Event Hubs with Storm](/documentation/articles/hdinsight-storm-develop-csharp-event-hub-topology)
 * [Use Power BI to visualize data from an Apache Storm topology](/documentation/articles/hdinsight-storm-power-bi-topology)
 * [Process vehicle sensor data from Azure Event Hubs using Apache Storm](/documentation/articles/hdinsight-storm-iot-eventhub-documentdb)
-<!-- deleted by customization 
 
 ## Apache Spark
 
@@ -91,19 +84,15 @@ For articles about using native Apache Spark clusters in the Azure preview porta
 * [Spark job server on HDInsight clusters](/documentation/articles/hdinsight-apache-spark-job-server)
 * [Provision Apache Spark and run interactive queries using Spark SQL](/documentation/articles/hdinsight-apache-spark-zeppelin-notebook-jupyter-spark-sql-v1)
 
--->
 
 ## Big data solutions
 
 * [Analyze sensor data using the Hive Query Console](/documentation/articles/hdinsight-hive-analyze-sensor-data)
 * [Analyze flight delay data by using Hive](/documentation/articles/hdinsight-analyze-flight-delay-data)
-<!-- deleted by customization
 * [Analyze stored Twitter data using Hive](/documentation/articles/hdinsight-analyze-twitter-data)
 * [Determine Twitter trending topics with Apache Storm](/documentation/articles/hdinsight-storm-twitter-trending)
--->
 * [Analyze sensor data with Apache Storm, Event Hub, and HBase](/documentation/articles/hdinsight-storm-sensor-data-analysis)
 
-<!-- deleted by customization 
 ## Machine learning in HDInsight
 
 * [Generate movie recommendations by using Apache Mahout with Hadoop](/documentation/articles/hdinsight-mahout)
@@ -111,11 +100,10 @@ For articles about using native Apache Spark clusters in the Azure preview porta
 * [Learning path: Advanced data processing](/documentation/articles/machine-learning-data-science-advanced-data-processing)
 * [Predict taxi tips with HDInsight and Machine Learning](/documentation/articles/machine-learning-data-science-process-hive-walkthrough)
 
--->
 ## Extensibility
 
 * [Extend HDInsight capabilities with Azure Virtual Network](/documentation/articles/hdinsight-extend-hadoop-virtual-network)
-<!-- deleted by customization * [Install and use Spark on Hadoop clusters](/documentation/articles/hdinsight-hadoop-spark-install) -->
+* [Install and use Spark on Hadoop clusters](/documentation/articles/hdinsight-hadoop-spark-install)
 * [Use Giraph on HDInsight clusters to process large-scale graphs](/documentation/articles/hdinsight-hadoop-giraph-install-v1)
 * [Install and use Solr on Hadoop clusters](/documentation/articles/hdinsight-hadoop-solr-install-v1)
 

@@ -56,7 +56,7 @@ In this section you will create a new Android app that is connected to your mobi
 
   	![](./media/mobile-services-android-get-started/mobile-quickstart-steps-android-AS.png)
 
-3. If you haven't already done so, download and install the [Android Developer Tools](https://go.microsoft.com/fwLink/p/?LinkID=280125) on your local computer or virtual machine.
+3. If you haven't already done so, download and install the [Android Developer Tools](http://developer.android.com/sdk/index.html) on your local computer or virtual machine.
 
 4. Click **Create TodoItem table** to create a table to store app data.
 

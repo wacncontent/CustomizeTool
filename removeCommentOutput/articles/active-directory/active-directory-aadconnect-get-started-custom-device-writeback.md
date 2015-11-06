@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Enabling device writeback in Azure AD Connect | Microsoft Azure"
+	pageTitle="Enabling device writeback in Azure AD Connect | Windows Azure"
 	description="This document details how to enable device writeback using Azure AD Connect"
 	services="active-directory"
 	documentationCenter=""
@@ -8,13 +8,9 @@
 	editor="curtand"/>
 
 <tags
-	ms.service="active-directory"  
-	ms.workload="identity"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
+	ms.service="active-directory"
 	ms.date="09/15/2015"
-	ms.author="billmath"/>
+	wacn.date=""/>
 
 # Enabling device writeback in Azure AD Connect
 
@@ -22,7 +18,7 @@ The following documentation provides information on how to enable the device wri
 
 Enable conditional access based on devices to ADFS (2012 R2 or higher) protected applications (relying party trusts).
 
-This provides additional security and assurance that access to applications is granted only to trusted devices. For more information on conditional access, see [Managing Risk with Conditional Access](active-directory-conditional-access.md) and [Setting up On-premises Conditional Access using Azure Active Directory Device Registration](https://msdn.microsoft.com/library/azure/dn788908.aspx).
+This provides additional security and assurance that access to applications is granted only to trusted devices. For more information on conditional access, see [Managing Risk with Conditional Access](/documentation/articles/active-directory-conditional-access) and [Setting up On-premises Conditional Access using Azure Active Directory Device Registration](https://msdn.microsoft.com/zh-cn/library/azure/dn788908.aspx).
 
 >[AZURE.Note] A subscription to Office 365 or Azure AD Premium is required when using devices registered in Azure Active Directory Device Registration service conditional access policies. This includes policies enforced by Active Directory Federation Services (AD FS) to on-premises resources.
 
@@ -37,7 +33,7 @@ Use the following steps to prepare for using device writeback.
 
 3.	With enterprise admin credentials, run the following commands and then exit PowerShell.
 
-	Import-Module ‘C:\Program Files\Microsoft Azure Active Directory Connect\AdPrep\AdSyncAdPrep.psm1’
+	Import-Module ‘C:\Program Files\Windows Azure Active Directory Connect\AdPrep\AdSyncAdPrep.psm1’
 
 	Initialize-ADSyncDeviceWriteback –DomainName <name> -AdConnectorAccount <account>
 
@@ -78,12 +74,12 @@ Use the following procedure to enable device writeback in Azure AD Connect.
 ![Device Writeback](./media/active-directory-aadconnect-get-started-custom-device-writeback/devicewriteback3.png)
 4.	On the writeback page, you will see the supplied domain as the default Device writeback forest.
 ![Custom Install](./media/active-directory-aadconnect-get-started-custom-device-writeback/devicewriteback4.png)
-5.	Complete the installation of the Wizard with no additional configuration changes. If needed, refer to [Custom installation of Azure AD Connect.](active-directory-aadconnect-get-started-custom.md)
+5.	Complete the installation of the Wizard with no additional configuration changes. If needed, refer to [Custom installation of Azure AD Connect.](/documentation/articles/active-directory-aadconnect-get-started-custom)
 
 
 
 ## Enable conditional access
-Detailed instructions to enable this scenario are available within [Setting up On-premises Conditional Access using Azure Active Directory Device Registration](https://msdn.microsoft.com/library/azure/dn788908.aspx).
+Detailed instructions to enable this scenario are available within [Setting up On-premises Conditional Access using Azure Active Directory Device Registration](https://msdn.microsoft.com/zh-cn/library/azure/dn788908.aspx).
 
 ## Verify Devices are synchronized to Active Directory
 Device writeback should now be working properly. Be aware that it can take up to 3 hours for device objects to be written-back to AD.  To verify that your devices are being synced properly, do the following after the sync rules complete:
@@ -96,8 +92,8 @@ Device writeback should now be working properly. Be aware that it can take up to
 ![Custom Install](./media/active-directory-aadconnect-get-started-custom-device-writeback/devicewriteback6.png)
 
 ## Additional Information
-- [Managing Risk With Conditional Access](active-directory-conditional-access.md)
-- [Setting up On-premises Conditional Access using Azure Active Directory Device Registration](https://msdn.microsoft.com/library/azure/dn788908.aspx)
+- [Managing Risk With Conditional Access](/documentation/articles/active-directory-conditional-access)
+- [Setting up On-premises Conditional Access using Azure Active Directory Device Registration](https://msdn.microsoft.com/zh-cn/library/azure/dn788908.aspx)
 
 ## Next steps
-Learn more about [Integrating your on-premises identities with Azure Active Directory](active-directory-aadconnect.md).
+Learn more about [Integrating your on-premises identities with Azure Active Directory](/documentation/articles/active-directory-aadconnect).

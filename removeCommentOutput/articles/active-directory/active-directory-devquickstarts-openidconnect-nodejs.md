@@ -9,12 +9,8 @@
 
 <tags
 	ms.service="active-directory"
-	ms.workload="identity"
-  ms.tgt_pltfrm="na"
-	ms.devlang="javascript"
-	ms.topic="article"
 	ms.date="10/13/2015"
-	ms.author="brandwe"/>
+	wacn.date=""/>
 
 # Web App Sign In & Sign Out with Azure AD
 
@@ -25,7 +21,7 @@ Here we'll use Passport to:
 - Display some information about the user.
 - Sign the user out of the app.
 
-**Passport** is authentication middleware for Node.js. Extremely flexible and modular, Passport can be unobtrusively dropped in to any Express-based or Resitify web application. A comprehensive set of strategies support authentication using a username and password, Facebook, Twitter, and more. We have developed a strategy for Microsoft Azure Active Directory. We will install this module and then add the Microsoft Azure Active Directory `passport-azure-ad` plug-in.
+**Passport** is authentication middleware for Node.js. Extremely flexible and modular, Passport can be unobtrusively dropped in to any Express-based or Resitify web application. A comprehensive set of strategies support authentication using a username and password, Facebook, Twitter, and more. We have developed a strategy for Windows Azure Active Directory. We will install this module and then add the Windows Azure Active Directory `passport-azure-ad` plug-in.
 
 In order to do this, you'll need to:
 
@@ -48,7 +44,7 @@ The completed application is provided at the end of this tutorial as well.
 - Follow the prompts and create a new **Web Application and/or WebAPI**.
     - The **name** of the application will describe your application to end-users
     -	The **Sign-On URL** is the base URL of your app.  The skeleton's default is `http://localhost:3000/auth/openid/return``.
-    - The **App ID URI** is a unique identifier for your application.  The convention is to use `https://<tenant-domain>/<app-name>`, e.g. `https://contoso.onmicrosoft.com/my-first-aad-app`
+    - The **App ID URI** is a unique identifier for your application.  The convention is to use `https://<tenant-domain>/<app-name>`, e.g. `https://contoso.partner.onmschina.cn/my-first-aad-app`
 - Once you've completed registration, AAD will assign your app a unique client identifier.  You'll need this value in the next sections, so copy it from the Configure tab.
 
 ## 2. Add pre-requisities to your directory
@@ -411,6 +407,6 @@ For reference, the completed sample (without your configuration values) [is prov
 
 You can now move onto more advanced topics.  You may want to try:
 
-[Secure a Web API with Azure AD >>](active-directory-devquickstarts-webapi-nodejs.md)
+[Secure a Web API with Azure AD >>](/documentation/articles/active-directory-devquickstarts-webapi-nodejs)
 
-[AZURE.INCLUDE [active-directory-devquickstarts-additional-resources](../../includes/active-directory-devquickstarts-additional-resources.md)]
+[AZURE.INCLUDE [active-directory-devquickstarts-additional-resources](../includes/active-directory-devquickstarts-additional-resources.md)]

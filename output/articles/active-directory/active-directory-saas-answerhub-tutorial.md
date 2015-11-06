@@ -1,4 +1,4 @@
-<properties pageTitle="Tutorial: Azure Active Directory integration with AnswerHub | Microsoft Azure" description="Learn how to use AnswerHub with Azure Active Directory to enable single sign-on, automated provisioning, and more!." services="active-directory" authors="MarkusVi"  documentationCenter="na" manager="stevenpo"/>
+<properties pageTitle="Tutorial: Azure Active Directory integration with AnswerHub | Windows Azure" description="Learn how to use AnswerHub with Azure Active Directory to enable single sign-on, automated provisioning, and more!." services="active-directory" authors="MarkusVi"  documentationCenter="na" manager="stevenpo"/>
 <tags ms.service="active-directory" ms.devlang="na" ms.topic="article" ms.tgt_pltfrm="na" ms.workload="identity" ms.date="08/01/2015" ms.author="markvi" />
 #Tutorial: Azure Active Directory integration with AnswerHub
 >[AZURE.TIP]For feedback, click [here](http://go.microsoft.com/fwlink/?LinkId=528077).
@@ -9,7 +9,7 @@ The scenario outlined in this tutorial assumes that you already have the followi
 -   A valid Azure subscription
 -   An AnswerHub single sign-on enabled subscription
 
-After completing this tutorial, the Azure AD users you have assigned to AnswerHub will be able to single sign into the application at your AnswerHub company site (service provider initiated sign on), or using the [Introduction to the Access Panel](https://msdn.microsoft.com/library/dn308586)
+After completing this tutorial, the Azure AD users you have assigned to AnswerHub will be able to single sign into the application at your AnswerHub company site (service provider initiated sign on), or using the [Introduction to the Access Panel](https://msdn.microsoft.com/zh-cn/library/dn308586)
 
 The scenario outlined in this tutorial consists of the following building blocks:
 
@@ -62,7 +62,7 @@ If you are not familiar with this procedure, see [How to convert a binary certif
 
     ![Configure single sign-on](./media/active-directory-saas-answerhub-tutorial/IC785168.png "Configure single sign-on")
 
-2.  On the **How would you like users to sign on to AnswerHub** page, select **Microsoft Azure AD Single Sign-On**, and then click **Next**.
+2.  On the **How would you like users to sign on to AnswerHub** page, select **Windows Azure AD Single Sign-On**, and then click **Next**.
 
     ![Configure single sign-on](./media/active-directory-saas-answerhub-tutorial/IC785169.png "Configure single sign-on")
 
@@ -88,9 +88,9 @@ If you are not familiar with this procedure, see [How to convert a binary certif
 
     ![SAML Setup](./media/active-directory-saas-answerhub-tutorial/IC785172.png "SAML Setup")
 
-    1.  In the Azure portal, on the **Configure single sign-on at AnswerHub** dialog page, copy the **Remote Login URL** value, and then paste it into the **IDP Login URL** textbox.
-    2.  In the Azure portal, on the **Configure single sign-on at AnswerHub** dialog page, copy the **Remote Logout URL** value, and then paste it into the **IDP Logout URL** textbox.
-    3.  In the Azure portal, on the **Configure single sign-on at AnswerHub** dialog page, copy the **Name Identifier Format** value, and then paste it into the **IDP Name Identifier Format** textbox.
+    1.  In the Azure Management Portal, on the **Configure single sign-on at AnswerHub** dialog page, copy the **Remote Login URL** value, and then paste it into the **IDP Login URL** textbox.
+    2.  In the Azure Management Portal, on the **Configure single sign-on at AnswerHub** dialog page, copy the **Remote Logout URL** value, and then paste it into the **IDP Logout URL** textbox.
+    3.  In the Azure Management Portal, on the **Configure single sign-on at AnswerHub** dialog page, copy the **Name Identifier Format** value, and then paste it into the **IDP Name Identifier Format** textbox.
     4.  Click **Keys and Certificates**.
 
 11. On the Keys and Certificates tab, perform the following steps:
@@ -146,4 +146,4 @@ To test your configuration, you need to grant the Azure AD users you want to all
 
     ![Yes](./media/active-directory-saas-answerhub-tutorial/IC767830.png "Yes")
 
-If you want to test your single sign-on settings, open the Access Panel. For more details about the Access Panel, see [Introduction to the Access Panel](https://msdn.microsoft.com/library/dn308586).
+If you want to test your single sign-on settings, open the Access Panel. For more details about the Access Panel, see [Introduction to the Access Panel](https://msdn.microsoft.com/zh-cn/library/dn308586).

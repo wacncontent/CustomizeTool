@@ -1,4 +1,4 @@
-new docs: 9, word count: {word_count_TODO}
+new docs: 9, word count: 8878
 articles/scheduler/scheduler-advanced-complexity.md
 articles/scheduler/scheduler-concepts-terms.md
 articles/scheduler/scheduler-get-started-portal.md

@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Azure AD terminology | Microsoft Azure"
+	pageTitle="Azure AD terminology | Windows Azure"
 	description="Terms and definitions related to Azure Active Directory."
 	services="active-directory"
 	documentationCenter=""
@@ -9,16 +9,12 @@
 
 <tags
 	ms.service="active-directory"
-	ms.workload="identity"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="09/21/2015"
-	ms.author="curtand"/>
+	wacn.date=""/>
 
 # Azure AD terminology
 
-Microsoft Azure Active Directory (Azure AD) has a unique set of terminology that relate to cloud, hybrid, and on-premises scenarios. The following table defines these terms to provide you with a basic understanding for how they are used.
+Windows Azure Active Directory (Azure AD) has a unique set of terminology that relate to cloud, hybrid, and on-premises scenarios. The following table defines these terms to provide you with a basic understanding for how they are used.
 
  Term  | Definition
 ------------- | -------------
@@ -39,6 +35,6 @@ User ID | A user ID is a unique identifier that a user provides on the Sign In p
 Work or school account | A user account assigned by an organization (work, school, non-profit) to one of their constituents (an employee, student, customer) that provides sign in access to one or more of the organization’s Microsoft cloud service subscriptions, such as Office 365 or Azure. These accounts are stored in an organization’s Azure AD directory, and are typically deleted when the user leaves the organization. Work or school accounts differ from Microsoft accounts in that they are created and managed by admins in the organization, not by the user.
 
 ## What's next
-- [Sign up for Azure as an organization](sign-up-organization.md)
-- [How Azure subscriptions are associated with Azure AD](active-directory-how-subscriptions-associated-directory.md)
-- [Azure AD service limits and restrictions](active-directory-service-limits-restrictions.md)
+- [Sign up for Azure as an organization](/documentation/articles/sign-up-organization)
+- [How Azure subscriptions are associated with Azure AD](/documentation/articles/active-directory-how-subscriptions-associated-directory)
+- [Azure AD service limits and restrictions](/documentation/articles/active-directory-service-limits-restrictions)

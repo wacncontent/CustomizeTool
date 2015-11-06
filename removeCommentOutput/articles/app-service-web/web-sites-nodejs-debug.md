@@ -42,7 +42,7 @@ If the **IISNode.yml** file did not already exist within your application, you m
 
 > [AZURE.NOTE] If your web app was created using the Azure Command-Line Tools or Azure PowerShell Cmdlets, a default **IISNode.yml** file is automatically created.
 
-To restart the web app, select the web app in the [Azure Management Portal](https://manage.windowsazure.cn), and then click **RESTART** button:
+To restart the web app, select the web app in the [Azure preview portal](https://manage.windowsazure.cn), and then click **RESTART** button:
 
 ![restart button][restart-button]
 
@@ -63,7 +63,7 @@ Once installed, the tools can be accessed using the 'azure' command. The command
 
 ###FTP
 
-To access the diagnostic information through FTP, visit the [Azure Management Portal](https://manage.windowsazure.cn), select your web app, and then select the **DASHBOARD**. In the **quick links** section, the **FTP DIAGNOSTIC LOGS** and **FTPS DIAGNOSTIC LOGS** links provide access to the logs using the FTP protocol.
+To access the diagnostic information through FTP, visit the [Azure preview portal](https://manage.windowsazure.cn), select your web app, and then select the **DASHBOARD**. In the **quick links** section, the **FTP DIAGNOSTIC LOGS** and **FTPS DIAGNOSTIC LOGS** links provide access to the logs using the FTP protocol.
 
 > [AZURE.NOTE] If you have not previously configured user name and password for FTP or deployment, you can do so from the **QuickStart** management page by selecting **Set up deployment credentials**.
 
@@ -102,11 +102,22 @@ This will return a stream of log events that are updated as they occur on the se
 
 In this article you learned how to enable and access diagnostics information for Azure. While this information is useful in understanding problems that occur with your application, it may point to a problem with a module you are using or that the version of Node.js used by Azure Websites is different than the one used in your deployment environment.
 
+For information in working with modules on Azure, see [Using Node.js Modules with Azure Applications].
 
+For information on specifying a Node.js version for your application, see [Specifying a Node.js version in an Azure application].
+
+For more information, see also the [Node.js Developer Center](/develop/nodejs/).
+
+## What's changed
+* For a guide to the change from Websites to Azure Websites see: [Azure Websites and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
+* For a guide to the change of the Management Portal to the new portal see: [Reference for navigating the preview portal](https://manage.windowsazure.cn/)
+
+>[AZURE.NOTE] If you want to get started with Azure Websites before signing up for an Azure account, go to [Try Azure Websites](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure Websites. No credit cards required; no commitments.
 
 [IISNode]: https://github.com/tjanczuk/iisnode
 [IISNode Readme]: https://github.com/tjanczuk/iisnode#readme
 [How to Use The Azure Command-Line Interface]: /documentation/articles/xplat-cli-install
-
+[Using Node.js Modules with Azure Applications]: /documentation/articles/nodejs-use-node-modules-azure-apps
+[Specifying a Node.js version in an Azure application]: /documentation/articles/nodejs-specify-node-version-azure-apps
 [restart-button]: ./media/web-sites-nodejs-debug/restartbutton.png
  

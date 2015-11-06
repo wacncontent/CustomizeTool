@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Troubleshooting the Access Panel Extension for Internet Explorer | Microsoft Azure"
+   pageTitle="Troubleshooting the Access Panel Extension for Internet Explorer | Windows Azure"
    description="How to use group policy to deploy the Internet Explorer add-on for the My Apps portal."
    services="active-directory"
    documentationCenter=""
@@ -8,13 +8,9 @@
    editor=""/>
 
 <tags
-   ms.service="active-directory"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="identity"
-   ms.date="09/28/2015"
-   ms.author="liviodlc"/>
+	ms.service="active-directory"
+	ms.date="09/28/2015"
+	wacn.date=""/>
 
 #Troubleshooting the Access Panel Extension for Internet Explorer
 
@@ -23,13 +19,13 @@ This article will help you troubleshoot the following problems:
 - You're unable to access your apps through the My Apps portal while using Internet Explorer.
 - You see the "Install Software" message even though you've already installed the software.
 
-If you are an admin, see also: [How to Deploy the Access Panel Extension for Internet Explorer using Group Policy](active-directory-saas-ie-group-policy.md)
+If you are an admin, see also: [How to Deploy the Access Panel Extension for Internet Explorer using Group Policy](/documentation/articles/active-directory-saas-ie-group-policy)
 
 ##Run the Diagnostic Tool
 
 You can diagnose installation problems with the Access Panel Extension by downloading and running the Access Panel diagnostic tool:
 
-1. [Click here to download the diagnostic tool.](https://account.activedirectory.windowsazure.com/applications/AccessPanelExtensionDiagnosticTool/AccessPanelExtensionDiagnosticTool.zip)
+1. [Click here to download the diagnostic tool.](https://account.activedirectory.windowsazure.cn/applications/AccessPanelExtensionDiagnosticTool/AccessPanelExtensionDiagnosticTool.zip)
 
 2. Open the file, and press **Extract all** button.
 
@@ -103,4 +99,4 @@ To uninstall the Access Panel extension from your computer:
 
 If you encounter issues uninstalling the extension, you can also remove it using the [Microsoft Fix It](https://go.microsoft.com/?linkid=9779673) tool.
 
-[AZURE.INCLUDE [saas-toc](../../includes/active-directory-saas-toc.md)]
+[AZURE.INCLUDE [saas-toc](../includes/active-directory-saas-toc.md)]

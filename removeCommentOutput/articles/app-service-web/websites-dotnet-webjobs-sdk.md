@@ -14,16 +14,6 @@
 
 # What is the Azure WebJobs SDK
 
-
-## Table of Contents
-
-- [Overview](#overview)
-- [Scenarios](#scenarios)
-- [Code samples](#code)
-- [Using the WebJobs SDK outside of WebJobs](#workerrole)
-- [Using the WebJobs SDK to invoke any function](#nostorage)
-- [Next steps](#nextsteps)
-
 ## <a id="overview"></a>Overview
 
 This article explains what the WebJobs SDK is, reviews some common scenarios it is useful for, and gives an overview of how you use it in your code.

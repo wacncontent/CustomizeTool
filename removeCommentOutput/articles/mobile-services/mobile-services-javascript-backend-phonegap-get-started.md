@@ -35,7 +35,7 @@ Completing this tutorial requires the following:
 
 + PhoneGap supports developing for multiple platforms. In addition to the PhoneGap tools themselves, you must install the tools for each platform you are targeting:
 
-	- Windows Phone: Install [Visual Studio 2012 Express for Windows Phone](https://go.microsoft.com/fwLink/p/?LinkID=268374)
+	- Windows Phone: Install [Visual Studio 2012 Express for Windows Phone](https://www.visualstudio.com/downloads/download-visual-studio-vs)
 	- iOS: Install [Xcode] (v4.4+ required)
 	- Android: Install the [Android Developer Tools][Android SDK]
 		<br/>(The Mobile Services SDK for Android supports apps for Android 2.2 or a later version. Android 4.2 or higher is required to run the quick start app.)
@@ -171,8 +171,8 @@ Now that you have completed the quickstart, learn how to perform additional impo
 
 <!-- URLs. -->
 [Add authentication to your app]: /documentation/articles/mobile-services-html-get-started-users
-[Android SDK]: https://go.microsoft.com/fwLink/p/?LinkID=280125
+[Android SDK]: http://developer.android.com/sdk/index.html
 [Management Portal]: https://manage.windowsazure.cn/
 [Xcode]: https://go.microsoft.com/fwLink/p/?LinkID=266532
-[Visual Studio 2012 Express for Windows Phone]: https://go.microsoft.com/fwLink/p/?LinkID=268374
+[Visual Studio 2012 Express for Windows Phone]: https://www.visualstudio.com/downloads/download-visual-studio-vs
  

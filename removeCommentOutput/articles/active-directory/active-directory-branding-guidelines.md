@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Branding Guidelines for Applications | Microsoft Azure"
+   pageTitle="Branding Guidelines for Applications | Windows Azure"
    description="A comprehensive guide to developer-oriented resources for Azure Active Directory"
    services="active-directory"
    documentationCenter="dev-center-name"
@@ -8,13 +8,9 @@
    editor=""/>
 
 <tags
-   ms.service="active-directory"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="identity"
-   ms.date="09/17/2015"
-   ms.author="mbaldwin"/>
+	ms.service="active-directory"
+	ms.date="09/17/2015"
+	wacn.date=""/>
 
 
 # Branding Guidelines for Applications
@@ -53,7 +49,7 @@ Your app may present separate paths for sign-up and sign-in and the following se
 
 ## Visual guidance for app acquisition
 
-Your “get the app” link must redirect the user to the Azure AD grant access (authorize) page, to allow an organization’s administrator to authorize your app to have access to their organization’s data that is hosted by Microsoft. Details on how to request access are discussed in the [Integrating Applications with Azure Active Directory](active-directory-integrating-applications.md) article.
+Your “get the app” link must redirect the user to the Azure AD grant access (authorize) page, to allow an organization’s administrator to authorize your app to have access to their organization’s data that is hosted by Microsoft. Details on how to request access are discussed in the [Integrating Applications with Azure Active Directory](/documentation/articles/active-directory-integrating-applications) article.
 
 After admins consent to your app, they can choose to add it to their users’ Office 365 app launcher experience (accessible from the waffle and from [https://portal.office.com/myapps](https://portal.office.com/myapps)). If you want to advertise this capability, you can use terms like “Add this app to your organization” and show a button like this:
 

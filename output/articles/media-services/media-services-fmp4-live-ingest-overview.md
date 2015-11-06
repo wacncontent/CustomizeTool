@@ -191,7 +191,6 @@ Below is a recommended implementation for redundant audio tracks:
 2. Use separate streams to send the two lowest video bitrates. Each of these streams SHOULD also contain a copy of each unique audio track.  For example, when multiple languages are supported, these streams SHOULD contain audio tracks for each language.
 3. Use separate server (encoder) instances to encode and send the redundant streams mentioned in (1) and (2). 
 
-<!-- deleted by customization
 
 ##Media Services learning paths
 
@@ -199,7 +198,6 @@ You can view AMS learning paths here:
 
 - [AMS Live Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/)
 - [AMS on Demand Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/)
--->
 
 
 

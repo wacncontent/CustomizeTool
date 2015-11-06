@@ -20,9 +20,9 @@ This topic shows you how to register your apps to be able to use Twitter to auth
 
 >[AZURE.NOTE] This tutorial is about [Azure Mobile Services](/home/features/mobile-services/), a solution to help you build scalable mobile applications for any platform. Mobile Services makes it easy to sync data, authenticate users, and send push notifications. This page supports the <a href="/documentation/articles/mobile-services-ios-get-started-users/">Get Started with Authentication</a> tutorial which shows how to log users into your app. If this is your first experience with Mobile Services, please complete the tutorial <a href="/documentation/articles/mobile-services-ios-get-started/">Get Started with Mobile Services</a>.
 
-To complete the procedure in this topic, you must have a Twitter account that has a verified email address. To create a new Twitter account, go to <a href="http://go.microsoft.com/fwlink/p/?LinkID=268287" target="_blank">twitter.com</a>.
+To complete the procedure in this topic, you must have a Twitter account that has a verified email address. To create a new Twitter account, go to <a href="https://twitter.com/" target="_blank">twitter.com</a>.
 
-1. Navigate to the <a href="http://go.microsoft.com/fwlink/p/?LinkId=268300" target="_blank">Twitter Developers</a> website, sign-in with your Twitter account credentials, and click **Create a new application**.
+1. Navigate to the <a href="https://apps.twitter.com/" target="_blank">Twitter Developers</a> website, sign-in with your Twitter account credentials, and click **Create a new application**.
 
    	![][1]
 
@@ -52,7 +52,7 @@ You are now ready to use a Twitter login for authentication in your app by provi
 
 <!-- URLs. -->
 
-[Twitter Developers]: http://go.microsoft.com/fwlink/p/?LinkId=268300
+[Twitter Developers]: https://apps.twitter.com/
 [Get started with authentication]: /develop/mobile/tutorials/get-started-with-users-dotnet/
 
 [Azure Management Portal]: https://manage.windowsazure.cn/

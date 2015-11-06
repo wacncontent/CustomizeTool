@@ -86,7 +86,7 @@ The following script demonstrates how to create, update and delete an Azure Redi
 To learn more about using Windows PowerShell with Azure, see the following resources:
 
 - [Azure Resource Manager Cmdlets](https://msdn.microsoft.com/zh-cn/library/azure/mt125356.aspx): Learn to use the cmdlets in the AzureResourceManager module.
-
+- [Using Resource groups to manage your Azure resources](/documentation/articles/resource-group-portal): Learn how to create and manage resource groups in the Azure preview portal.
 - [Azure blog](http://blogs.msdn.com/windowsazure): Learn about new features in Azure.
 - [Windows PowerShell blog](http://blogs.msdn.com/powershell): Learn about new features in Windows PowerShell.
 - ["Hey, Scripting Guy!" Blog](http://blogs.technet.com/b/heyscriptingguy/): Get real-world tips and tricks from the Windows PowerShell community.

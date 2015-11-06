@@ -1,4 +1,4 @@
-new docs: 11, word count: {word_count_TODO}
+new docs: 11, word count: 23223
 articles/batch/batch-api-basics.md
 articles/batch/batch-apps-dotnet-get-started.md
 articles/batch/batch-automatic-scaling.md

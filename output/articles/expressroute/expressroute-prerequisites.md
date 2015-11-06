@@ -55,7 +55,7 @@ Refer to [ExpressRoute NAT requirements](/documentation/articles/expressroute-na
 
 Review the following resources for more information about Office 365 requirements.
 
-- [Network planning and performance tuning for Office 365](http://aka.ms/tune)
+- [Network planning and performance tuning for Office 365](https://support.office.com/zh-cn/article/Network-planning-and-performance-tuning-for-Office-365-e5f1228c-da3c-4654-bf16-d163daee8848)
 - [Office 365 network traffic management](https://msft.spoppe.com/teams/cpub/teams/IW_Admin/modsquad/_layouts/15/WopiFrame.aspx?sourcedoc=%7b23f09224-0668-4476-8627-aaff30931439%7d&action=edit&source=https%3A%2F%2Fmsft%2Espoppe%2Ecom%2Fteams%2Fcpub%2Fteams%2FIW%5FAdmin%2Fmodsquad%2FSitePages%2FHome%2Easpx)
 - Refer to the [ExpressRoute Quality of Service (QoS) requirements](/documentation/articles/expressroute-qos) article for detailed guidance on QoS requirements and configurations. Check with your connectivity provider to see if they offer multiple classes of service for your VPN. 
 

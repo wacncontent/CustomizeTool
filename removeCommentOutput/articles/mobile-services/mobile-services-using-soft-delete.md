@@ -20,7 +20,7 @@ Tables created with either the JavaScript or .NET backend can optionally have so
 
 When querying records on a table with soft delete enabled, deleted rows are not returned in the query by default. In order to request these rows, you must pass a query parameter *__includeDeleted=true* in your [REST Query operaation](http://msdn.microsoft.com/zh-cn/library/azure/jj677199.aspx). In the .NET client SDK, you can also use the helper method `IMobileServiceTable.IncludeDeleted()`.
 
-Soft delete support for the .NET backend first released with version 1.0.402 of the Windows Azure Mobile Services .NET Backend. The latest NuGet packages are available here, [Windows Azure Mobile Services .NET Backend](http://go.microsoft.com/fwlink/?LinkId=513165).
+Soft delete support for the .NET backend first released with version 1.0.402 of the Windows Azure Mobile Services .NET Backend. The latest NuGet packages are available here, [Windows Azure Mobile Services .NET Backend](http://www.nuget.org/packages/WindowsAzure.MobileServices.Backend/).
 
 
 Some of the potential benefits of using soft delete:
@@ -36,13 +36,13 @@ However, soft deleted records take up space in the database, so you should consi
 
 ##Enabling soft delete for the .NET backend
 
-Soft delete support for the .NET backend first released with version 1.0.402 of the Windows Azure Mobile Services .NET Backend. The latest NuGet packages are available here, [Windows Azure Mobile Services .NET Backend](http://go.microsoft.com/fwlink/?LinkId=513165).
+Soft delete support for the .NET backend first released with version 1.0.402 of the Windows Azure Mobile Services .NET Backend. The latest NuGet packages are available here, [Windows Azure Mobile Services .NET Backend](http://www.nuget.org/packages/WindowsAzure.MobileServices.Backend/).
 
 The following steps guide you on how to enable soft delete for a .NET backend mobile service.
 
 1. Open your .NET backend mobile service project in Visual Studio.
 2. Right click the .NET backend project and click **Manage NuGet Packages**. 
-3. In the package manager dialog, click **Nuget.org** under updates and install version 1.0.402 or later of the [Windows Azure Mobile Services .NET Backend](http://go.microsoft.com/fwlink/?LinkId=513165) NuGet packages.
+3. In the package manager dialog, click **Nuget.org** under updates and install version 1.0.402 or later of the [Windows Azure Mobile Services .NET Backend](http://www.nuget.org/packages/WindowsAzure.MobileServices.Backend/) NuGet packages.
 3. In Solution Explorer for Visual Studio, expand the **Controllers** node under your .NET backend project and open your controller source for. For example, *TodoItemController.cs*.
 4. In the `Initialize()` method of your controller, pass the `enableSoftDelete: true` parameter to the EntityDomainManager constructor.
 

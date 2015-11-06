@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Azure AD Xamarin Getting Started | Microsoft Azure"
+	pageTitle="Azure AD Xamarin Getting Started | Windows Azure"
 	description="How to build a Xamarin application that integrates with Azure AD for sign in and calls Azure AD protected APIs using OAuth."
 	services="active-directory"
 	documentationCenter="xamarin"
@@ -9,19 +9,15 @@
 
 <tags
 	ms.service="active-directory"
-	ms.workload="identity"
-	ms.tgt_pltfrm="mobile-xamarin"
-	ms.devlang="dotnet"
-	ms.topic="article"
 	ms.date="10/13/2015"
-	ms.author="dastrock"/>
+	wacn.date=""/>
 
 
 # Integrate Azure AD into a Xamarin App
 
-[AZURE.INCLUDE [active-directory-devquickstarts-switcher](../../includes/active-directory-devquickstarts-switcher.md)]
+[AZURE.INCLUDE [active-directory-devquickstarts-switcher](../includes/active-directory-devquickstarts-switcher.md)]
 
-[AZURE.INCLUDE [active-directory-devguide](../../includes/active-directory-devguide.md)]
+[AZURE.INCLUDE [active-directory-devguide](../includes/active-directory-devguide.md)]
 
 Xamarin allows you to write applications in C# that can run on several different platforms, including mobile devices and pc's alike.  If you're building an app using Xamarin, Azure AD makes it simple and straightforward for you to authenticate your users with their Active Directory accounts.  It also enables your application to securely consume any web API protected by Azure AD, such as the Office 365 APIs or the Azure API.
 
@@ -38,13 +34,13 @@ To build the complete working application, you’ll need to:
 3. Install & Configure ADAL.
 5. Use ADAL to get tokens from Azure AD.
 
-To get started, [download a skeleton project](https://github.com/AzureADQuickStarts/NativeClient-MultiTarget-DotNet/archive/skeleton.zip) or [download the completed sample](https://github.com/AzureADQuickStarts/NativeClient-MultiTarget-DotNet/archive/complete.zip).  Each is a Visual Studio 2013 solution.  You'll also need an Azure AD tenant in which you can create users and register an application.  If you don't already have a tenant, [learn how to get one](active-directory-howto-tenant.md).
+To get started, [download a skeleton project](https://github.com/AzureADQuickStarts/NativeClient-MultiTarget-DotNet/archive/skeleton.zip) or [download the completed sample](https://github.com/AzureADQuickStarts/NativeClient-MultiTarget-DotNet/archive/complete.zip).  Each is a Visual Studio 2013 solution.  You'll also need an Azure AD tenant in which you can create users and register an application.  If you don't already have a tenant, [learn how to get one](/documentation/articles/active-directory-howto-tenant).
 
 ## *0. Set up your Xamarin Development Environment*
 There are several different ways you might want to set up Xamarin, depending on the specific platforms you wish to target.  Since this tutorial includes projects for iOS, Android, and Windows, we'll elect to use Visual Studio 2013 and the [Xamarin.iOS Build Host](http://developer.xamarin.com/guides/ios/getting_started/installation/windows/), which will require:
 - A windows machine to run Visual Studio & the Windows apps
 - An OSX machine (if you want to be able to run the iOS app)
-- A Xamarin Business subscription (a [free trial](http://developer.xamarin.com/guides/cross-platform/getting_started/beginning_a_xamarin_trial/) is sufficient)
+- A Xamarin Business subscription (a [trial](http://developer.xamarin.com/guides/cross-platform/getting_started/beginning_a_xamarin_trial/) is sufficient)
 - [Xamarin for Windows](https://xamarin.com/download), which includes Xamarin.iOS, Xamarin.Android, and the Visual Studio Integration (recommended for this sample).
 - [Xamarin for OS X](https://xamarin.com/download), which includes Xamarin.iOS (and the Xamarin.iOS Build Host), Xamarin.Android, Xamarin.Mac, and Xamarin Studio.
 
@@ -56,7 +52,7 @@ Once you've completed the necessary setup, open the solution in Visual Studio to
 ## *1. Register the Directory Searcher Application*
 To enable your app to get tokens, you’ll first need to register it in your Azure AD tenant and grant it permission to access the Azure AD Graph API:
 
--	Sign into the [Azure Management Portal](https://manage.windowsazure.com)
+-	Sign into the [Azure Management Portal](https://manage.windowsazure.cn)
 -	In the left hand nav, click on **Active Directory**
 -	Select a tenant in which to register the application.
 -	Click the **Applications** tab, and click **Add** in the bottom drawer.
@@ -96,8 +92,8 @@ PM> Install-Package Microsoft.IdentityModel.Clients.ActiveDirectory -ProjectName
 
 - You should notice that two library references are added to each project - the PCL portion of ADAL and a platform-specific portion.
 
--	In the DirectorySearcherLib project, open `DirectorySearcher.cs`.  Change the class member values to reflect the values you input into the Azure Portal.  Your code will reference these values whenever it uses ADAL.
-    -	The `tenant` is the domain of your Azure AD tenant, e.g. contoso.onmicrosoft.com
+-	In the DirectorySearcherLib project, open `DirectorySearcher.cs`.  Change the class member values to reflect the values you input into the Azure Management Portal.  Your code will reference these values whenever it uses ADAL.
+    -	The `tenant` is the domain of your Azure AD tenant, e.g. contoso.partner.onmschina.cn
     -	The `clientId` is the clientId of your application you copied from the portal.
     - The `returnUri` is the redirectUri you entered in the portal, e.g. `http://DirectorySearcher`.
 
@@ -203,8 +199,8 @@ ADAL makes it easy to incorporate common identity features into your application
 
 For reference, the completed sample (without your configuration values) is provided [here](https://github.com/AzureADQuickStarts/NativeClient-MultiTarget-DotNet/archive/complete.zip).  You can now move on to additional identity scenarios.  You may want to try:
 
-[Secure a .NET Web API with Azure AD >>](active-directory-devquickstarts-webapi-dotnet.md)
+[Secure a .NET Web API with Azure AD >>](/documentation/articles/active-directory-devquickstarts-webapi-dotnet)
 
-[AZURE.INCLUDE [active-directory-devquickstarts-additional-resources](../../includes/active-directory-devquickstarts-additional-resources.md)]
+[AZURE.INCLUDE [active-directory-devquickstarts-additional-resources](../includes/active-directory-devquickstarts-additional-resources.md)]
 
  

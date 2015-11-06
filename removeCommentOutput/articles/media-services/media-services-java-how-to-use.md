@@ -16,15 +16,9 @@
 
 [AZURE.INCLUDE [media-services-selector-get-started](../includes/media-services-selector-get-started.md)]
 
-
-<a id="setup-account"></a>
-
 ##Setting Up an Azure Account for Media Services
 
 To set up your Media Services account, use the Azure Management Portal. See the topic [How to Create a Media Services Account](/documentation/articles/media-services-create-account). After creating your account in the Management Portal, you are ready to set up your computer for Media Services development. 
-
-
-<a id="setup-dev"></a>
 
 ##Setting up for Media Services development
 
@@ -34,9 +28,6 @@ This section contains general prerequisites for Media Services development using
 
 -   A Media Services account in a new or existing Azure subscription. See the topic [How to Create a Media Services Account](/documentation/articles/media-services-create-account).
 -   The Azure Libraries for Java, which you can install from the [Azure Java Developer Center][].
-
-
-<a if="connect"></a>
 
 ##How to: Use Media Services with Java
 
@@ -256,6 +247,12 @@ Substitute your values for the `clientId` and `clientSecret` variables. The code
 	}
 
 
+##Media Services learning paths
+
+You can view AMS learning paths here:
+
+- [AMS Live Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/)
+- [AMS on Demand Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/)
 
 
 

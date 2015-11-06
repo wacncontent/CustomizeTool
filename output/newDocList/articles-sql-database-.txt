@@ -1,4 +1,4 @@
-new docs: 134, word count: {word_count_TODO}
+new docs: 134, word count: 167952
 articles/sql-database/automation-manage-sql-database.md
 articles/sql-database/data-management-azure-sql-database-and-sql-server-iaas.md
 articles/sql-database/fundamentals-data-management-business-analytics.md

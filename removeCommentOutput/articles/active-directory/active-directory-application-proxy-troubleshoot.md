@@ -9,21 +9,17 @@
 
 <tags
 	ms.service="active-directory"
-	ms.workload="identity"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="10/07/2015"
-	ms.author="rkarlin"/>
+	wacn.date=""/>
 
 
 
 # Troubleshoot Application Proxy
 
 
-> [AZURE.IMPORTANT] Application Proxy is a feature that is available only if you upgraded to the Premium or Basic edition of Azure Active Directory. For more information, see [Azure Active Directory editions](active-directory-editions.md).
+> [AZURE.IMPORTANT] Application Proxy is a feature that is available only if you upgraded to the Premium or Basic edition of Azure Active Directory. For more information, see [Azure Active Directory editions](/documentation/articles/active-directory-editions).
 
-If errors occur in accessing a published application or in publishing applications, check the following options to see if Microsoft Azure AD Application Proxy is working correctly:
+If errors occur in accessing a published application or in publishing applications, check the following options to see if Windows Azure AD Application Proxy is working correctly:
 
 - Open the Windows Services console and verify that the “Microsoft AAD Application Proxy Connector” service is enabled and running. You may also want to look at the Application Proxy service properties page, as shown in the following image:
 
@@ -51,9 +47,9 @@ If registration fails during the Connector wizard installation, you can view the
 | Error | Description | Resolution |
 | --- | --- | --- |
 | Connector registration failed: Make sure you enabled Application Proxy in the Azure Management Portal and that you entered your Active Directory user name and password correctly. Error: 'One or more errors occurred.' | You closed the registration window without performing login to Azure AD. | Run the Connector wizard again and register the Connector. |
-| Connector registration failed: Make sure you enabled Application Proxy in the Azure Management Portal and that you entered your Active Directory user name and password correctly. Error: 'AADSTS50001: Resource `https://proxy.cloudwebappproxy.net/registerapp` is disabled.' | Application Proxy is disabled.  | Make sure you enable Application Proxy in the Azure AD portal before trying to register the Connector. For more information on enabling Application Proxy, see [Enable Application Proxy services](active-directory-application-proxy-enable.md). |
-| Connector registration failed: Make sure you enabled Application Proxy in the Azure Management Portal and that you entered your Active Directory user name and password correctly. Error: 'One or more errors occurred.' | If the registration window opens and then immediately closes without allowing you to log in, you will probably get this error. This error occurs when there is some sort of networking error on your system. | Make sure that it is possible to connect from a browser to a public website and that the ports are open as specified in [Application Proxy prerequisites](active-directory-application-proxy-enable.md). |
-| Connector registration failed: Make sure your computer is connected to the Internet. Error: 'There was no endpoint listening at `https://connector.msappproxy.net:9090/register/RegisterConnector` that could accept the message. This is often caused by an incorrect address or SOAP action. See InnerException, if present, for more details.' | If you log in using your Azure AD username and password but then you receive this error, it may be that all ports above 8081 are blocked. | Make sure that the necessary ports are open. For more information see [Application Proxy prerequisites](active-directory-application-proxy-enable.md). |
+| Connector registration failed: Make sure you enabled Application Proxy in the Azure Management Portal and that you entered your Active Directory user name and password correctly. Error: 'AADSTS50001: Resource `https://proxy.cloudwebappproxy.net/registerapp` is disabled.' | Application Proxy is disabled.  | Make sure you enable Application Proxy in the Azure AD portal before trying to register the Connector. For more information on enabling Application Proxy, see [Enable Application Proxy services](/documentation/articles/active-directory-application-proxy-enable). |
+| Connector registration failed: Make sure you enabled Application Proxy in the Azure Management Portal and that you entered your Active Directory user name and password correctly. Error: 'One or more errors occurred.' | If the registration window opens and then immediately closes without allowing you to log in, you will probably get this error. This error occurs when there is some sort of networking error on your system. | Make sure that it is possible to connect from a browser to a public website and that the ports are open as specified in [Application Proxy prerequisites](/documentation/articles/active-directory-application-proxy-enable). |
+| Connector registration failed: Make sure your computer is connected to the Internet. Error: 'There was no endpoint listening at `https://connector.msappproxy.net:9090/register/RegisterConnector` that could accept the message. This is often caused by an incorrect address or SOAP action. See InnerException, if present, for more details.' | If you log in using your Azure AD username and password but then you receive this error, it may be that all ports above 8081 are blocked. | Make sure that the necessary ports are open. For more information see [Application Proxy prerequisites](/documentation/articles/active-directory-application-proxy-enable). |
 | Clear error is presented in the registration window. Cannot proceed – only to close the window | You entered the wrong username or password. | Try again. |
 | Connector registration failed: Make sure you enabled Application Proxy in the Azure Management Portal and that you entered your Active Directory user name and password correctly. Error: 'AADSTS50059: No tenant-identifying information found in either the request or implied by any provided credentials and search by service principle URI has failed. | You are trying to log in using a Microsoft Account and not a domain that is part of the organization ID of the directory you are trying to access. | Make sure that the admin is part of the same domain name as the tenant domain, for example, if the Azure AD domain is contoso.com, the admin should be admin@contoso.com. |
 | Failed to retrieve the current execution policy for running PowerShell scripts | If the Connector installation fails, check to make sure that PowerShell executionpolicy is not disabled. | Open the Group Policy Editor. Go to Computer Configuration > Administrative Templates > Windows Components > Windows PowerShell and double click on Turn on Script Execution. This can be set to either Not Configured or Enabled. If set to Enabled, make sure that under Options, the Execution Policy is set to either **Allow local scripts and remote signed scripts** or to **Allow all scripts**. |
@@ -84,14 +80,14 @@ If registration fails during the Connector wizard installation, you can view the
 There's a lot more you can do with Application Proxy:
 
 
-- [Publish applications with Application Proxy](active-directory-application-proxy-publish.md)
-- [Publish applications using your own domain name](active-directory-application-proxy-custom-domains.md)
-- [Enable single-sign on](active-directory-application-proxy-sso-using-kcd.md)
-- [Enable conditional access](active-directory-application-proxy-conditional-access.md)
-- [Working with claims aware applications](active-directory-application-proxy-claims-aware-apps.md)
+- [Publish applications with Application Proxy](/documentation/articles/active-directory-application-proxy-publish)
+- [Publish applications using your own domain name](/documentation/articles/active-directory-application-proxy-custom-domains)
+- [Enable single-sign on](/documentation/articles/active-directory-application-proxy-sso-using-kcd)
+- [Enable conditional access](/documentation/articles/active-directory-application-proxy-conditional-access)
+- [Working with claims aware applications](/documentation/articles/active-directory-application-proxy-claims-aware-apps)
 
 ## Learn more about Application Proxy
-- [Take a look here at our online help](active-directory-application-proxy-enable.md)
+- [Take a look here at our online help](/documentation/articles/active-directory-application-proxy-enable)
 - [Check out the Application Proxy blog](http://blogs.technet.com/b/applicationproxyblog/)
 - [Watch our videos on Channel 9!](http://channel9.msdn.com/events/Ignite/2015/BRK3864)
 

@@ -21,7 +21,7 @@ You can publish the app to a new Docker host hosted on Azure, or to an on-premis
 
 ## Create and publish a new Docker container
 
-In these procedures, you'll create a new ASP.NET 5 web application project, create container host, then build and run the web app project in the Docker container. To get started, download and install the [Visual Studio 2015 Tools for Docker](https://aka.ms/DockerToolsForVS).
+In these procedures, you'll create a new ASP.NET 5 web application project, create container host, then build and run the web app project in the Docker container. To get started, download and install the [Visual Studio 2015 Tools for Docker](https://visualstudiogallery.msdn.microsoft.com/0f5b2caa-ea00-41c8-b8a2-058c7da0b3e4).
 
 ### Add an ASP.NET 5 web application project
 

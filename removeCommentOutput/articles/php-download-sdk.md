@@ -120,7 +120,7 @@ For more information, see the [PHP Developer Center](/develop/php/).
 [nodejs-org]: http://nodejs.org/
 [install-node-linux]: https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager
 [download-wpi]: http://go.microsoft.com/fwlink/?LinkId=253447
-[mac-installer]: http://go.microsoft.com/fwlink/?LinkId=252249
+[mac-installer]: http://azuresdkscu.blob.core.windows.net/downloads04/azure-cli.0.9.10.dmg
 [blob-service]: http://go.microsoft.com/fwlink/?LinkId=252714
 [table-service]: http://go.microsoft.com/fwlink/?LinkId=252715
 [queue-service]: http://go.microsoft.com/fwlink/?LinkId=252716

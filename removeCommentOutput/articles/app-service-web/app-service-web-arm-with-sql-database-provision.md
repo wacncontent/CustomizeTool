@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties 
 	pageTitle="Provision a web app that uses a SQL Database" 
 	description="Use an Azure Resource Manager template to deploy a web app that includes a SQL Database." 

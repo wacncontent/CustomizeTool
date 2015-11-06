@@ -1,4 +1,4 @@
-<properties pageTitle="Tutorial: Azure Active Directory integration with Spring CM | Microsoft Azure" description="Learn how to use Spring CM with Azure Active Directory to enable single sign-on, automated provisioning, and more!." services="active-directory" authors="MarkusVi"  documentationCenter="na" manager="stevenpo"/>
+<properties pageTitle="Tutorial: Azure Active Directory integration with Spring CM | Windows Azure" description="Learn how to use Spring CM with Azure Active Directory to enable single sign-on, automated provisioning, and more!." services="active-directory" authors="MarkusVi"  documentationCenter="na" manager="stevenpo"/>
 <tags ms.service="active-directory" ms.devlang="na" ms.topic="article" ms.tgt_pltfrm="na" ms.workload="identity" ms.date="08/01/2015" ms.author="markvi" />
 #Tutorial: Azure Active Directory integration with Spring CM
 >[AZURE.TIP]For feedback, click [here](http://go.microsoft.com/fwlink/?LinkId=536554).
@@ -61,7 +61,7 @@ This section outlines how to enable users to authenticate to SpringCM with their
 
     ![Configure single Sign-On](./media/active-directory-saas-spring-cm-tutorial/IC797047.png "Configure single Sign-On")
 
-2.  On the **How would you like users to sign on to SpringCM** page, select **Microsoft Azure AD Single Sign-On**, and then click **Next**.
+2.  On the **How would you like users to sign on to SpringCM** page, select **Windows Azure AD Single Sign-On**, and then click **Next**.
 
     ![Configure single Sign-On](./media/active-directory-saas-spring-cm-tutorial/IC797048.png "Configure single Sign-On")
 
@@ -86,8 +86,8 @@ This section outlines how to enable users to authenticate to SpringCM with their
     ![Identity Provider Configuration](./media/active-directory-saas-spring-cm-tutorial/IC797052.png "Identity Provider Configuration")
 
     1.  To upload your downloaded Azure Active Directory certificate, click **Select Issuer Certificate** or **Change Issuer Certificate**.
-    2.  In the Microsoft Azure portal, on the **Configure single sign-on at SpringCM** page, copy the **Issuer URL** value, and then paste it into the **Issuer** textbox.
-    3.  In the Microsoft Azure portal, on the **Configure single sign-on at SpringCM** page, copy the **Singel Sign-On Service URL** value, and then paste it into the **Service Provider (SP) Initiated Endpoint** textbox.
+    2.  In the Windows Azure Management Portal, on the **Configure single sign-on at SpringCM** page, copy the **Issuer URL** value, and then paste it into the **Issuer** textbox.
+    3.  In the Windows Azure Management Portal, on the **Configure single sign-on at SpringCM** page, copy the **Singel Sign-On Service URL** value, and then paste it into the **Service Provider (SP) Initiated Endpoint** textbox.
     4.  As **SAML Enabled**, select **Enable**.
     5.  Click **Save**.
 
@@ -140,7 +140,7 @@ To test your configuration, you need to grant the Azure AD users you want to all
 
     ![Yes](./media/active-directory-saas-spring-cm-tutorial/IC767830.png "Yes")
   
-If you want to test your single sign-on settings, open the Access Panel. For more details about the Access Panel, see [Introduction to the Access Panel](https://msdn.microsoft.com/library/dn308586).
+If you want to test your single sign-on settings, open the Access Panel. For more details about the Access Panel, see [Introduction to the Access Panel](https://msdn.microsoft.com/zh-cn/library/dn308586).
 
 
 

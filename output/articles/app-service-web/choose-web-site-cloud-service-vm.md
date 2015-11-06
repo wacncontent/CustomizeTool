@@ -18,7 +18,7 @@
 
 Azure offers several ways to host web sites: [Azure Websites][], [Cloud Services][], and [Virtual Machines][]. This article helps you understand the options and make the right choice for your web application.
 
-Azure Websites is the best choice for most web apps. Deployment and management are integrated into the platform, sites can scale quickly to handle high traffic loads, and the built-in load balancing and traffic manager provide high availability. You can move existing sites to Azure Websites easily with an [online migration tool](https://www.migratetoazure.net/), <!-- deleted by customization use an open-source app from the Web Application Gallery, --> or create a new site using the framework and tools of your choice. The [WebJobs][] feature makes it easy to add background job processing to your Azure Websites web app.
+Azure Websites is the best choice for most web apps. Deployment and management are integrated into the platform, sites can scale quickly to handle high traffic loads, and the built-in load balancing and traffic manager provide high availability. You can move existing sites to Azure Websites easily with an [online migration tool](https://www.migratetoazure.net/), use an open-source app from the Web Application Gallery, or create a new site using the framework and tools of your choice. The [WebJobs][] feature makes it easy to add background job processing to your Azure Websites web app.
 
 If you need more control over the web server environment, such as the ability to remote into your server or configure server startup tasks, Azure Cloud Services is typically the best option.
 
@@ -28,13 +28,6 @@ The following diagram illustrates the relative degree of control versus ease of 
 
 ![ChoicesDiagram][ChoicesDiagram]
 
-<!-- keep by customization: begin -->
-## Table of contents
-
-- [Scenarios and recommendations](#scenarios)
-- [Feature comparison](#features)
-- [Next Steps](#nextsteps)
-<!-- keep by customization: end -->
 ##<a name="scenarios"></a>Scenarios and recommendations
 
 Here are some common application scenarios with recommendations as to which Azure web hosting option might be most appropriate for each.
@@ -53,7 +46,7 @@ Here are some common application scenarios with recommendations as to which Azur
 
 ### <a id="onprem"></a> I need a web front end with background processing and database backend to run business applications integrated with on premise assets.
 
-Azure Websites is a great solution for complex business applications. It lets you develop apps that scale automatically on a load balanced platform, are secured with Active Directory, and connect to your on-premises resources. It makes managing those apps easy through a world-class management portal and APIs, and allows you to gain insight into how customers are using them with app insight tools. The [Webjobs][] feature lets you run background processes and tasks as part of your web tier<!-- deleted by customization , while hybrid connectivity and [VNET features](/documentation/articles/fundamentals-introduction-to-azure#networking) make it easy to connect back to on-premises resources -->. Azure Websites provides three 9's SLA for web apps and enables you to:
+Azure Websites is a great solution for complex business applications. It lets you develop apps that scale automatically on a load balanced platform, are secured with Active Directory, and connect to your on-premises resources. It makes managing those apps easy through a world-class management portal and APIs, and allows you to gain insight into how customers are using them with app insight tools. The [Webjobs][] feature lets you run background processes and tasks as part of your web tier, while hybrid connectivity and [VNET features](/documentation/articles/fundamentals-introduction-to-azure#networking) make it easy to connect back to on-premises resources. Azure Websites provides three 9's SLA for web apps and enables you to:
 
 * Run your applications reliably on a self-healing, auto-patching cloud platform.
 * Scale automatically across a global network of datacenters.
@@ -82,12 +75,10 @@ Azure Websites makes it easy to avoid the infrastructure costs associated with m
 
 ### <a id="smallbusiness"></a>I'm a small business owner, and I need an inexpensive way to host my site but with future growth in mind.
 
-Azure Websites is a great solution for this scenario, because you can start using it for free and then add more capabilities when you need them. Each free web app comes with a domain provided by Azure (*your_company*.chinacloudsites.cn), and the platform includes integrated deployment and management tools <!-- deleted by customization as well as an application gallery that make it easy to get started -->. There are many other services and scaling options that allow the site to evolve with increased user demand. With Azure Websites, you can:
+Azure Websites is a great solution for this scenario, because you can start using it for free and then add more capabilities when you need them. Each free web app comes with a domain provided by Azure (*your_company*.chinacloudsites.cn), and the platform includes integrated deployment and management tools as well as an application gallery that make it easy to get started. There are many other services and scaling options that allow the site to evolve with increased user demand. With Azure Websites, you can:
 
 - Begin with the free tier and then scale up as needed.
-<!-- deleted by customization 
 - Use the Application Gallery to quickly set up popular web applications, such as WordPress.
--->
 - Add additional Azure services and features to your application as needed.
 - Secure your web app with HTTPS.
 
@@ -95,10 +86,10 @@ Azure Websites is a great solution for this scenario, because you can start usin
 
 For web developers and designers, Azure Websites integrates easily with a variety of frameworks and tools, includes deployment support for Git and FTP, and offers tight integration with tools and services such as Visual Studio and SQL Database. With Azure Websites, you can:
 
-- Use command-line tools for <!-- deleted by customization [automated tasks][scripting] --><!-- keep by customization: begin -->automated tasks<!-- keep by customization: end -->.
+- Use command-line tools for [automated tasks][scripting].
 - Work with popular languages such as [.Net][dotnet], [PHP][], [Node.js][nodejs], and [Python][].
 - Select three different scaling levels for scaling up to very high capacities.
-- Integrate with other Azure services, such as [SQL Database][sqldatabase], [Service Bus][servicebus] and [Storage][]<!-- deleted by customization , or partner offerings from the [Azure Store][azurestore], such as MySQL and MongoDB -->.
+- Integrate with other Azure services, such as [SQL Database][sqldatabase], [Service Bus][servicebus] and [Storage][], or partner offerings from the [Azure Store][azurestore], such as MySQL and MongoDB.
 - Integrate with tools such as Visual Studio, Git, WebMatrix, WebDeploy, TFS, and FTP.
 
 ### <a id="multitier"></a>I'm migrating my multi-tier application with a web front-end to the Cloud
@@ -122,13 +113,13 @@ If your open source framework is supported on Azure Websites, the languages and 
 
 - Use many popular open source languages, such as [.NET][dotnet], [PHP][], [Node.js][nodejs], and [Python][].
 - Set up WordPress, Drupal, Umbraco, DNN, and many other third-party web applications.
-- Migrate an existing application <!-- deleted by customization or create a new one from the Application Gallery -->.
+- Migrate an existing application or create a new one from the Application Gallery.
 
 If your open source framework is not supported on Azure Websites, you can run it on either of the other two Azure web hosting options. With Cloud Services, you use startup tasks to install and configure any required open source software that runs on Windows. With Virtual Machines, you install and configure the software on the machine image, which can be Windows or Linux-based.
 
 ### <a id="lob"></a>I have a line-of-business application that needs to connect to the corporate network
 
-If you want to create a line-of-business application, your website might require direct access to services or data on the corporate network. This is possible on Azure Websites, Cloud Services, and Virtual Machines using the [Azure Virtual Network service](/home/features/networking/). <!-- deleted by customization On Azure Websites you can use the [VNET integration feature](http://azure.microsoft.com/blog/2014/09/15/azure-websites-virtual-network-integration/), which allows your Azure applications to run as if they were on your corporate network. -->
+If you want to create a line-of-business application, your website might require direct access to services or data on the corporate network. This is possible on Azure Websites, Cloud Services, and Virtual Machines using the [Azure Virtual Network service](/home/features/networking/). On Azure Websites you can use the [VNET integration feature](http://azure.microsoft.com/blog/2014/09/15/azure-websites-virtual-network-integration/), which allows your Azure applications to run as if they were on your corporate network.
 
 ### <a id="mobile"></a>I want to host a REST API or web service for mobile clients
 
@@ -138,10 +129,8 @@ HTTP-based web services enable you to support a wide variety of clients, includi
 - Migrate existing services or create new ones.
 - Achieve SLA for availability with a single instance, or scale out to multiple dedicated machines.
 - Use the published site to provide REST APIs to any HTTP clients, including mobile clients.
-<!-- deleted by customization
 
 In addition, Azure Websites has a new preview feature for REST APIs:  API apps.  For more information about API apps, see [What are API apps](/documentation/articles/app-service-api-apps-why-best-platform).
--->
 
 ##<a name="features"></a>Feature Comparison
 
@@ -160,7 +149,7 @@ Deploy code with Web Deploy|X||X|Cloud Services supports the use of Web Deploy t
 WebMatrix support|X||X|
 Access to services like Service Bus, Storage, SQL Database|X|X|X|
 Host web or web services tier of a multi-tier architecture|X|X|X|
-Host middle tier of a multi-tier architecture|X|X|X|Azure Websites web apps can easily host a REST API middle tier, and the [WebJobs](/documentation/articles/websites-webjobs-resources/) feature can host background processing jobs. You can run WebJobs in a dedicated website to achieve independent scalability for the tier. <!-- deleted by customization The preview [API apps](/documentation/articles/app-service-api-apps-why-best-platform) feature provides even more features for hosting REST services. -->
+Host middle tier of a multi-tier architecture|X|X|X|Azure Websites web apps can easily host a REST API middle tier, and the [WebJobs](/documentation/articles/websites-webjobs-resources/) feature can host background processing jobs. You can run WebJobs in a dedicated website to achieve independent scalability for the tier. The preview [API apps](/documentation/articles/app-service-api-apps-why-best-platform) feature provides even more features for hosting REST services.
 Integrated MySQL-as-a-service support|X|X|X|Cloud Services can integrate MySQL-as-a-service through ClearDB's offerings, but not as part of the Management Portal workflow.
 Support for ASP.NET, classic ASP, Node.js, PHP, Python|X|X|X|
 Scale out to multiple instances without redeploy|X|X|X|Virtual Machines can scale out to multiple instances, but the services running on them must be written to handle this scale-out. You have to configure a load balancer to route requests across the machines, and create an Affinity Group to prevent simultaneous restarts of all instances due to maintenance or hardware failures.
@@ -185,9 +174,7 @@ Can listen to ETW events||X|X|
 
 For more information about the three web hosting options, see the following resources:
 
-<!-- deleted by customization
 * [Introducing Azure](/documentation/articles/fundamentals-introduction-to-azure)
--->
 * [Compute Hosting Options Provided by Azure](/documentation/articles/fundamentals-application-models)
 
 To get started with the option(s) you choose for your application, see the following resources:
@@ -197,16 +184,14 @@ To get started with the option(s) you choose for your application, see the follo
 * [Azure Virtual Machines](/documentation/services/virtual-machines/)
 
   [ChoicesDiagram]: ./media/choose-web-site-cloud-service-vm/Websites_CloudServices_VMs_3.png
-  <!-- deleted by customization [Azure Websites]: /home/features/web-site/ -->
+  [Azure Websites]: /home/features/web-site/
   [Cloud Services]: /documentation/services/cloud-services/
   [Virtual Machines]: /documentation/services/virtual-machines/
   [ClearDB]: http://www.cleardb.com/
   [WebJobs]: /documentation/articles/websites-webjobs-resources/
   [Configuring an SSL certificate for an Azure Website]: /documentation/articles/web-sites-configure-ssl-certificate/
-<!-- deleted by customization
   [azurestore]: http://azure.microsoft.com/gallery/store/
   [scripting]: http://azure.microsoft.com/documentation/scripts/?services=web-sites
--->
   [dotnet]: /develop/net/
   [nodejs]: /develop/nodejs/
   [PHP]: /develop/php/

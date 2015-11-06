@@ -9,12 +9,8 @@
 
 <tags
 	ms.service="active-directory"
-	ms.workload="identity"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="10/02/2015"
-	ms.author="markusvi"/>
+	wacn.date=""/>
 
 
 # Tutorial: Azure Active Directory integration with Questetra BPM Suite
@@ -25,7 +21,7 @@ The objective of this tutorial is to show you how to integrate Questetra BPM Sui
 - You can enable your users to automatically get signed-on to Questetra BPM Suite (Single Sign-On) with their Azure AD accounts
 - You can manage your accounts in one central location - the Azure Active Directory Portal
 
-If you want to know more details about SaaS app integration with Azure AD, see [What is application access and single sign-on with Azure Active Directory](active-directory-appssoaccess-whatis.md).
+If you want to know more details about SaaS app integration with Azure AD, see [What is application access and single sign-on with Azure Active Directory](/documentation/articles/active-directory-appssoaccess-whatis).
 
 ## Prerequisites 
 
@@ -41,7 +37,7 @@ To configure Azure AD integration with Questetra BPM Suite, you need the followi
 To test the steps in this tutorial, you should follow these recommendations:
 
 - You should not use your production environment, unless this is necessary.
-- If you don't have an Azure AD trial environment, you can get a one-month trial [here](https://azure.microsoft.com/pricing/free-trial/). 
+- If you don't have an Azure AD trial environment, you can get a one-month trial [here](https://azure.microsoft.com/pricing/1rmb-trial/). 
 
  
 ## Scenario Description
@@ -108,7 +104,7 @@ The objective of this section is to enable Azure AD single sign-on in the Azure 
 5. To open the **SingleSignOnSAML** page, click **SSO (SAML)**. <br><br> ![Azure AD Single Sign-On][11]
 
 
-6. In the Azure portal, on the **Configure App Settings** dialog page, perform the following steps: <br><br>![Configure App Settings][13]
+6. In the Azure Management Portal, on the **Configure App Settings** dialog page, perform the following steps: <br><br>![Configure App Settings][13]
  
     a. On you **Questetra BPM Suite** company site, in the SP Information section, copy the **ACS URL**, and then paste it into the **Sign On URL** textbox.
 
@@ -126,11 +122,11 @@ The objective of this section is to enable Azure AD single sign-on in the Azure 
 
     a. Select **Enable Single Sign-On**.
      
-    b. On the Azure portal, copy the **Issuer URL** value, and then paste it into the **Entity ID** textbox.
+    b. On the Azure Management Portal, copy the **Issuer URL** value, and then paste it into the **Entity ID** textbox.
 
-    c. On the Azure portal, copy the **Single Sign-On Service URL** value, and then paste it into the **Sign-in page URL** textbox.
+    c. On the Azure Management Portal, copy the **Single Sign-On Service URL** value, and then paste it into the **Sign-in page URL** textbox.
 
-    d. On the Azure portal, copy the **Single Sign-Out Service URL** value, and then paste it into the **Sign-out page URL** textbox.
+    d. On the Azure Management Portal, copy the **Single Sign-Out Service URL** value, and then paste it into the **Sign-out page URL** textbox.
 
     e. In the **NameID format** textbox, type **urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress**.
 
@@ -153,7 +149,7 @@ The objective of this section is to enable Azure AD single sign-on in the Azure 
 
 
 ### Creating an Azure AD test user
-The objective of this section is to create a test user in the Azure portal called Britta Simon.
+The objective of this section is to create a test user in the Azure Management Portal called Britta Simon.
 
 **To create a test user in Azure AD, perform the following steps:**
 
@@ -225,7 +221,7 @@ The objective of this section is to enabling Britta Simon to use Azure single si
 
 **To assign Britta Simon to Questetra BPM Suite, perform the following steps:**
 
-1. On the Azure portal, to open the applications view, in the directory view, click **Applications** in the top menu.<br><br>![What is Azure AD Connect][201]
+1. On the Azure Management Portal, to open the applications view, in the directory view, click **Applications** in the top menu.<br><br>![What is Azure AD Connect][201]
 2. In the applications list, select **Questetra BPM Suite**.
 <br><br>![What is Azure AD Connect][205]
 1. In the menu on the top, click **Users**.
@@ -245,8 +241,8 @@ When you click the Questetra BPM Suite tile in the Access Panel, you should get 
 
 ## Additional Resources
 
-* [List of Tutorials on How to Integrate SaaS Apps with Azure Active Directory](active-directory-saas-tutorial-list.md)
-* [What is application access and single sign-on with Azure Active Directory?](active-directory-appssoaccess-whatis.md)
+* [List of Tutorials on How to Integrate SaaS Apps with Azure Active Directory](/documentation/articles/active-directory-saas-tutorial-list)
+* [What is application access and single sign-on with Azure Active Directory?](/documentation/articles/active-directory-appssoaccess-whatis)
 
 <!--Image references-->
 [1]: ./media/active-directory-saas-questetra-bpm-suite/tutorial_general_01.png

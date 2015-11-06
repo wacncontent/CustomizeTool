@@ -9,12 +9,8 @@
 
 <tags
 	ms.service="active-directory"
-	ms.workload="identity"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="10/01/2015"
-	ms.author="rkarlin"/>
+	wacn.date=""/>
 
 # How to silently install the Azure AD Application Proxy Connector
 
@@ -59,7 +55,7 @@ This can be accomplished using either of the following methods:
 
 1. Create an offline token using the AuthenticationContext class, for example:
 
-        #region constants /// /// The AAD authentication endpoint uri /// static readonly Uri AadAuthenticationEndpoint = new Uri("https://login.windows.net/common/oauth2/token?api-version=1.0");
+        #region constants /// /// The AAD authentication endpoint uri /// static readonly Uri AadAuthenticationEndpoint = new Uri("https://login.chinacloudapi.cn/common/oauth2/token?api-version=1.0");
         /// <summary>
         /// The application ID of the connector in AAD
         /// </summary>
@@ -108,17 +104,17 @@ This can be accomplished using either of the following methods:
 There's a lot more you can do with Application Proxy:
 
 
-- [Publish applications using your own domain name](active-directory-application-proxy-custom-domains.md)
-- [Enable single-sign on](active-directory-application-proxy-sso-using-kcd.md)
-- [Working with claims aware applications](active-directory-application-proxy-claims-aware-apps.md)
-- [Enable conditional access](active-directory-application-proxy-conditional-access.md)
+- [Publish applications using your own domain name](/documentation/articles/active-directory-application-proxy-custom-domains)
+- [Enable single-sign on](/documentation/articles/active-directory-application-proxy-sso-using-kcd)
+- [Working with claims aware applications](/documentation/articles/active-directory-application-proxy-claims-aware-apps)
+- [Enable conditional access](/documentation/articles/active-directory-application-proxy-conditional-access)
 
 
 ### Learn more about Application Proxy
-- [Take a look here at our online help](active-directory-application-proxy-enable.md)
+- [Take a look here at our online help](/documentation/articles/active-directory-application-proxy-enable)
 - [Check out the Application Proxy blog](http://blogs.technet.com/b/applicationproxyblog/)
 - [Watch our videos on Channel 9!](http://channel9.msdn.com/events/Ignite/2015/BRK3864)
 
 ## Additional resources
-* [Sign up for Azure as an organization](../sign-up-organization.md)
-* [Azure Identity](../fundamentals-identity.md)
+* [Sign up for Azure as an organization](/documentation/articles/sign-up-organization)
+* [Azure Identity](/documentation/articles/fundamentals-identity)

@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Integrating Applications with Azure Active Directory | Microsoft Azure"
+   pageTitle="Integrating Applications with Azure Active Directory | Windows Azure"
    description="Details on how to add, update, or remove an application in Azure Active Directory (Azure AD)."
    services="active-directory"
    documentationCenter=""
@@ -7,23 +7,19 @@
    manager="mbaldwin"
    editor="mbaldwin" />
 <tags
-   ms.service="active-directory"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="identity"
-   ms.date="08/25/2015"
-   ms.author="mbaldwin" />
+	ms.service="active-directory"
+	ms.date="08/25/2015"
+	wacn.date=""/>
 
 # Integrating Applications with Azure Active Directory
 
-[AZURE.INCLUDE [active-directory-devguide](../../includes/active-directory-devguide.md)]
+[AZURE.INCLUDE [active-directory-devguide](../includes/active-directory-devguide.md)]
 
 Enterprise developers and software-as-a-service (SaaS) providers can develop commercial cloud services or line of business applications that can be integrated with Azure Active Directory (Azure AD) to provide secure sign in and authorization for their services. To integrate an application or service with Azure AD, a developer must first register the details about their application with Azure AD by using the Azure Management Portal.
 
 This article shows you how to add, update, or remove an application in Azure AD. You will learn about the different types of applications that can be integrated with Azure AD, how to configure your applications to access other resources such as web APIs, and more.
 
-To more information about app properties, see [Application Objects and Service Principal Objects](active-directory-application-objects.md); to learn the branding guidelines you should use when developing applications with Azure Active Directory, see [Branding Guidelines for Integrated Apps](active-directory-branding-guidelines.md); application manifests are explained in [Understanding the Azure Active Directory application manifest](active-directory-application-manifest.md).
+To more information about app properties, see [Application Objects and Service Principal Objects](/documentation/articles/active-directory-application-objects); to learn the branding guidelines you should use when developing applications with Azure Active Directory, see [Branding Guidelines for Integrated Apps](/documentation/articles/active-directory-branding-guidelines); application manifests are explained in [Understanding the Azure Active Directory application manifest](/documentation/articles/active-directory-application-manifest).
 
 ## Adding an Application
 
@@ -53,7 +49,7 @@ If you want to make your application available to other organizations, you will 
 
 ## Updating an Application
 
-Once your application has been registered with Azure AD, it may need to be updated to provide access to web APIs, be made available in other organizations, and more. This section describes how to configure your application further. For more information on the way authentication works in Azure AD, see [Authentication Scenarios for Azure AD](active-directory-authentication-scenarios.md).
+Once your application has been registered with Azure AD, it may need to be updated to provide access to web APIs, be made available in other organizations, and more. This section describes how to configure your application further. For more information on the way authentication works in Azure AD, see [Authentication Scenarios for Azure AD](/documentation/articles/active-directory-authentication-scenarios).
 
 ### Overview of the Consent Framework
 
@@ -61,7 +57,7 @@ Azure AD’s new consent framework makes it easy to develop web and native appli
 
 The consent framework is built on OAuth 2.0 and its various flows, such as authorization code grant and client credentials grant, using public or confidential clients. By using OAuth 2.0, Azure AD makes it possible to build many different types of client applications, such as on a phone, tablet, server, or a web application, and gain access to the required resources.
 
-For more detailed information about the consent framework, see [OAuth 2.0 in Azure AD](https://msdn.microsoft.com/library/azure/dn645545.aspx), [Authentication Scenarios for Azure AD](active-directory-authentication-scenarios.md), and Office 365’s topic [Authentication and Authorization using Common Consent Framework](https://msdn.microsoft.com/library/office/dn605895(v=office.15).aspx).
+For more detailed information about the consent framework, see [OAuth 2.0 in Azure AD](https://msdn.microsoft.com/zh-cn/library/azure/dn645545.aspx), [Authentication Scenarios for Azure AD](/documentation/articles/active-directory-authentication-scenarios), and Office 365’s topic [Authentication and Authorization using Common Consent Framework](https://msdn.microsoft.com/zh-cn/library/office/dn605895(v=office.15).aspx).
 
 #### Example of the consent experience
 
@@ -81,7 +77,7 @@ The following steps will show you how the consent experience works for both the 
 
     ![User consent experience](./media/active-directory-integrating-applications/userconsent.png)
 
-1. After the user grants consent, an authorization code is returned to your application, which can be redeemed to acquire an access token and refresh token. For more information about this flow, see the [Web Application to Web API section](active-directory-authentication-scenarios.md#web-application-to-web-api) section in [Authentication Scenarios for Azure AD](active-directory-authentication-scenarios.md).
+1. After the user grants consent, an authorization code is returned to your application, which can be redeemed to acquire an access token and refresh token. For more information about this flow, see the [Web Application to Web API section](/documentation/articles/active-directory-authentication-scenarios#web-application-to-web-api) section in [Authentication Scenarios for Azure AD](/documentation/articles/active-directory-authentication-scenarios).
 
 ### Accessing Web APIs in Other Applications
 
@@ -109,7 +105,7 @@ Using the consent framework described above, you can configure your application 
 
 ### Exposing Web APIs to Other Applications
 
-You can develop a web API and make it available to other organizations by exposing your permission scopes to other application developers. A correctly configured web API is made available just like the other Microsoft web APIs, including the Graph API and the Office 365 APIs. Your web API is made available by configuring an [application manifest](active-directory-application-manifest.md), which is a JSON file that represents your application’s identity configuration. You can expose your permission scopes by navigating to your application in the Azure Management Portal and clicking on the Application Manifest button on the command bar.  For more information, see [Understanding the Azure Active Directory application manifest](active-directory-application-manifest.md).
+You can develop a web API and make it available to other organizations by exposing your permission scopes to other application developers. A correctly configured web API is made available just like the other Microsoft web APIs, including the Graph API and the Office 365 APIs. Your web API is made available by configuring an [application manifest](/documentation/articles/active-directory-application-manifest), which is a JSON file that represents your application’s identity configuration. You can expose your permission scopes by navigating to your application in the Azure Management Portal and clicking on the Application Manifest button on the command bar.  For more information, see [Understanding the Azure Active Directory application manifest](/documentation/articles/active-directory-application-manifest).
 
 #### To expose a web API to other applications
 
@@ -192,7 +188,7 @@ It’s important to note the differences between a single tenant and multi-tenan
 
 If you are writing an application that you want to make available to your customers or partners outside of your organization, you will need to update the application definition in the Azure Management Portal.
 
->[AZURE.NOTE] When enabling external access, you must ensure that your application’s App ID URI belongs in a verified domain. Additionally, the Return URL must begin with https://. For more information, see [Application Objects and Service Principal Objects](active-directory-application-objects.md).
+>[AZURE.NOTE] When enabling external access, you must ensure that your application’s App ID URI belongs in a verified domain. Additionally, the Return URL must begin with https://. For more information, see [Application Objects and Service Principal Objects](/documentation/articles/active-directory-application-objects).
 
 ##### To enable access to your app for external users
 
@@ -218,7 +214,7 @@ Alternatively, your web application may also offer an experience that allows adm
 
 #### Enabling OAuth 2.0 Implicit Grant for Single Page Applications
 
-Single Page Application’s (SPAs) are typically structured with a JavaScript-heavy front end that runs in the browser, which calls the application’s web API back end to perform its business logic. For SPAs hosted in Azure AD, you use OAuth 2.0 Implicit Grant to authenticate the user with Azure AD and obtain a token that you can use to secure calls from the application's JavaScript client to its back end web API. After the user has granted consent, this same authentication protocol can be used to obtain tokens to secure calls between the client and other web API resources configured for the application. By default, OAuth 2.0 Implicit Grant is disabled for applications. You can enable OAuth 2.0 Implicit Grant for your application by setting the `oauth2AllowImplicitFlow`”` value in its [application manifest](active-directory-application-manifest.md), which is a JSON file that represents your application's identity configuration.
+Single Page Application’s (SPAs) are typically structured with a JavaScript-heavy front end that runs in the browser, which calls the application’s web API back end to perform its business logic. For SPAs hosted in Azure AD, you use OAuth 2.0 Implicit Grant to authenticate the user with Azure AD and obtain a token that you can use to secure calls from the application's JavaScript client to its back end web API. After the user has granted consent, this same authentication protocol can be used to obtain tokens to secure calls between the client and other web API resources configured for the application. By default, OAuth 2.0 Implicit Grant is disabled for applications. You can enable OAuth 2.0 Implicit Grant for your application by setting the `oauth2AllowImplicitFlow`”` value in its [application manifest](/documentation/articles/active-directory-application-manifest), which is a JSON file that represents your application's identity configuration.
 
 ##### To enable OAuth 2.0 Implicit Grant
 
@@ -243,15 +239,15 @@ This section describes the legacy consent experience prior to March 12, 2014. Th
 
 - Sign on users and read and write their organization’s directory data (as the application only)
 
-You can follow the steps in the [Developing Multi-Tenant Web Applications with Azure AD](https://msdn.microsoft.com/library/azure/dn151789.aspx) to grant access for new applications registered in Azure AD. It’s important to note that the new consent framework allows much more powerful applications, and also enables users to consent to these applications instead of just administrators.
+You can follow the steps in the [Developing Multi-Tenant Web Applications with Azure AD](https://msdn.microsoft.com/zh-cn/library/azure/dn151789.aspx) to grant access for new applications registered in Azure AD. It’s important to note that the new consent framework allows much more powerful applications, and also enables users to consent to these applications instead of just administrators.
 
 #### Building the Link that Grants Access for External Users (Legacy)
 
-In order for external users to sign up for your app using their organizational accounts, you’ll need to update your app to show a button that links to the page on Azure AD that enables them to grant access. Branding guidance for this sign up button is discussed in the [Branding Guidelines for Integrated Applications](active-directory-branding-guidelines.md) topic. After the user either grants or denies access, the Azure AD grant access page will redirect the browser back to your app with a response. For more information about application properties, see [Application Objects and Service Principles](active-directory-application-objects.md).
+In order for external users to sign up for your app using their organizational accounts, you’ll need to update your app to show a button that links to the page on Azure AD that enables them to grant access. Branding guidance for this sign up button is discussed in the [Branding Guidelines for Integrated Applications](/documentation/articles/active-directory-branding-guidelines) topic. After the user either grants or denies access, the Azure AD grant access page will redirect the browser back to your app with a response. For more information about application properties, see [Application Objects and Service Principles](/documentation/articles/active-directory-application-objects).
 
 The grant access page is created by Azure AD, and you can find a link to it in your app’s Configuration page in the Management Portal. To get to the Configuration page, click on the Applications link in the top menu of your Azure AD tenant, click the app you want to configure, then click on Configure from the top menu of the Quick Start page.
 
-The link for your application will look like this: `http://account.activedirectory.windowsazure.com/Consent.aspx?ClientID=058eb9b2-4f49-4850-9b78-469e3176e247&RequestedPermissions=DirectoryReaders&ConsentReturnURL=https%3A%2F%2Fadatum.com%2FExpenseReport.aspx%3FContextId%3D123456`. The following table describes the parts of the link:
+The link for your application will look like this: `http://account.activedirectory.windowsazure.cn/Consent.aspx?ClientID=058eb9b2-4f49-4850-9b78-469e3176e247&RequestedPermissions=DirectoryReaders&ConsentReturnURL=https%3A%2F%2Fadatum.com%2FExpenseReport.aspx%3FContextId%3D123456`. The following table describes the parts of the link:
 
 |Parameter|Description|
 |---|---|
@@ -298,7 +294,7 @@ During the lifetime of your app, you may need to change the keys that you use wh
 
 1. Under Keys, click on the drop down that says Select duration and pick 1 or 2 years, and then click Save in the command bar. This generates a new password key for your app. Copy this new password key. At this point both the existing and new key can be used by your app to obtain an access token from Azure AD.
 
-1. Go back to your app and update the configuration to start using the new password key. See [Using the Graph API to Query Azure AD](https://msdn.microsoft.com/library/azure/dn151791.aspx) for an example of where this update should happen.
+1. Go back to your app and update the configuration to start using the new password key. See [Using the Graph API to Query Azure AD](https://msdn.microsoft.com/zh-cn/library/azure/dn151791.aspx) for an example of where this update should happen.
 
 1. You should now roll this change out across your production environment – verifying it first on one service node, before rolling it out across the rest.
 
@@ -344,10 +340,10 @@ In order for a company administrator to remove an app’s access to their direct
 
 ## Next steps
 
-- See the [Branding Guidelines for Integrated Apps](active-directory-branding-guidelines.md)
+- See the [Branding Guidelines for Integrated Apps](/documentation/articles/active-directory-branding-guidelines)
 
-- Learn about [Application Objects and Service Principal Objects](active-directory-application-objects.md)
+- Learn about [Application Objects and Service Principal Objects](/documentation/articles/active-directory-application-objects)
 
-- Understand the [Azure Active Directory application manifest](active-directory-application-manifest.md)
+- Understand the [Azure Active Directory application manifest](/documentation/articles/active-directory-application-manifest)
 
 - Visit the [Active Directory developer's guide](active-directory-developer's guide.md)

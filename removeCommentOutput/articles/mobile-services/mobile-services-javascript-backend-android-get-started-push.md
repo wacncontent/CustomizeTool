@@ -116,7 +116,7 @@ Learn more about Mobile Services and Notification Hubs in the following topics:
 * [What are Notification Hubs?]
   <br/>Learn more about how Notification Hubs works to deliver notifications to your apps across all major client platforms.
 
-* [Debug Notification Hubs applications](http://go.microsoft.com/fwlink/p/?linkid=386630)
+* [Debug Notification Hubs applications](https://msdn.microsoft.com/zh-cn/library/dn530751.aspx)
   </br>Get guidance troubleshooting and debugging Notification Hubs solutions.
 
 * [How to use the Android client library for Mobile Services]
@@ -149,7 +149,7 @@ Learn more about Mobile Services and Notification Hubs in the following topics:
 [Set Up Google Play Services SDK]: http://go.microsoft.com/fwlink/?LinkId=389801
 [Azure Management Portal]: https://manage.windowsazure.cn/
 [How to use the Android client library for Mobile Services]: /documentation/articles/mobile-services-android-how-to-use-client-library
-[gcm object]: http://go.microsoft.com/fwlink/p/?LinkId=282645
+[gcm object]: https://msdn.microsoft.com/zh-cn/library/dn126137.aspx
 
 [Mobile Services server script reference]: http://go.microsoft.com/fwlink/?LinkId=262293
 [What are Notification Hubs?]: /documentation/articles/notification-hubs-overview

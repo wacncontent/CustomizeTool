@@ -50,7 +50,6 @@ The activities in the following table are used to access connections in a runboo
 2. In the **Connection Type** dropdown, select the type of connection you want to create.  The wizard will present the properties for that particular type.
 1. Complete the wizard and click the checkbox to save the new connection.
 
-<!-- deleted by customization
 
 ### To create a new connection with the Azure preview portal
 
@@ -59,7 +58,6 @@ The activities in the following table are used to access connections in a runboo
 1. Click **Add a connection** at the top of the blade.
 2. In the **Type** dropdown, select the type of connection you want to create.  The form will present the properties for that particular type.
 1. Complete the form and click **Create** to save the new connection.
--->
 
 
 
@@ -95,7 +93,6 @@ The following sample commands show how to use the Twilio connection in the previ
 	#Send text with connection properties.
 	Send-TwilioSMS -AccountSid $Con.AccountSid -AuthToken $Con.AuthToken $Con -From $NumFrom -To $NumTo -Body $Body
 
-<!-- deleted by customization
 ### Graphical runbook samples
 
 You add a **Get-AutomationConnection** activity to a graphical runbook by right-clicking on the connection in the Library pane of the graphical editor and selecting **Add to canvas**.
@@ -117,5 +114,4 @@ The image below shows the same example as above but uses the **SpecifyConnection
 ## Related articles
 
 - [Links in graphical authoring](/documentation/articles/automation-graphical-authoring-intro#links-and-workflow)
--->
  

@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Best practices for changing the default configuration | Microsoft Azure | Microsoft Azure"
+	pageTitle="Best practices for changing the default configuration | Windows Azure | Windows Azure"
 	description="Provides best practices for changing the default configuration of Azure AD Connect sync."
 	services="active-directory"
 	documentationCenter=""
@@ -9,12 +9,8 @@
 
 <tags
 	ms.service="active-directory"
-	ms.workload="identity"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="10/13/2015"
-	ms.author="markusvi;andkjell"/>
+	wacn.date=""/>
 
 
 # Azure AD Connect sync: Best practices for changing the default configuration
@@ -56,8 +52,8 @@ When you need to change the default configuration, do the following:
 
 
 ## Next steps
-Learn more about the [Azure AD Connect sync](active-directory-aadconnectsync-whatis.md) configuration.
+Learn more about the [Azure AD Connect sync](/documentation/articles/active-directory-aadconnectsync-whatis) configuration.
 
-Learn more about [Integrating your on-premises identities with Azure Active Directory](active-directory-aadconnect.md).
+Learn more about [Integrating your on-premises identities with Azure Active Directory](/documentation/articles/active-directory-aadconnect).
 
 <!--Image references-->

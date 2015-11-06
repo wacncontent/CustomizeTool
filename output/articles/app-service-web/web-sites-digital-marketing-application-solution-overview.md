@@ -14,7 +14,6 @@
 
 # Create a digital marketing campaign on Azure Websites
 [Azure Websites](/documentation/services/web-sites/) Web Apps is a great choice for digital marketing campaigns. Digital marketing campaigns are typically short-lived and are meant to drive short-term marketing goals. There are two main scenarios to consider. In the first scenario, a third-party marketing firm creates and manages the campaign for their customer for the duration of the promotion. A second scenario involves the marketing firm creating and then transferring ownership of the digital marketing campaign resources to their customer. The customer then runs and manages the digital marketing campaign on their own. is a good match for both scenarios. 
-<!-- deleted by customization
 
 >[AZURE.NOTE] If you want to get started with Azure Websites before signing up for an Azure account, go to [Try Azure Websites](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure Websites. No credit cards required; no commitments.
 
@@ -22,26 +21,16 @@ Below is an example of a global, multi-channel digital marketing campaign using 
 
 <object type="image/svg+xml" data="https://sidneyhcontent.blob.core.windows.net/documentation/digital-marketing-notitle.svg" width="100%" height="100%"></object>
 
--->
-<!-- keep by customization: begin -->
-The following areas are addressed in this guide:
-
-- [Deploy Existing Web Sites](#deployexisting)
-- [Integrate with Social Media](#socialmedia)
-- [Scale with User Demand](#scale)
-- [Integrate with Other Services](#integrate)
-- [Monitor the Campaign](#monitor)
-<!-- keep by customization: end -->
 > [AZURE.NOTE]
 > This guide presents some of the most common areas and tasks that are aligned with running a digital marketing campaign in Azure Websites. However, there are other common solutions that you can implement in Azure Websites. To review these solutions, see the other guides on [Global Web Presence](/documentation/articles/web-sites-global-web-presence-solution-overview) and [Business Applications](/documentation/articles/web-sites-business-application-solution-overview).
 
 ## Create from scratch or bring existing assets
 
-Quickly <!-- deleted by customization create new web apps from a popular CMS in the gallery or --> bring your existing web assets to Azure Websites from a variety of languages and frameworks.
+Quickly create new web apps from a popular CMS in the gallery or bring your existing web assets to Azure Websites from a variety of languages and frameworks.
 
-<!-- deleted by customization The Azure Marketplace provides templates from the popular website content management systems (CMS), such as [Orchard], [Umbraco], Drupal, and [WordPress]. --> You can create a web app using your favorite CMS flavor. You can choose from various database backends to meet your needs, including [Azure SQL Database] and [MySQL].
+The Azure Marketplace provides templates from the popular website content management systems (CMS), such as [Orchard], [Umbraco], Drupal, and [WordPress]. You can create a web app using your favorite CMS flavor. You can choose from various database backends to meet your needs, including [Azure SQL Database] and [MySQL].
 
-Your existing web assets can run on Web Apps, whether they are .NET, PHP, Java, Node.js, or Python. You can move them to Web Apps using your familiar [FTP] tools. If you frequently create digital marketing campaigns, it is possible that you have existing web assets in a source control management system. You can deploy to Web Apps directly from popular source control options, such as [Visual Studio]<!-- deleted by customization , [Visual Studio Online],--> and [Git] - local, GitHub, BitBucket, DropBox, Mercurial, etc..
+Your existing web assets can run on Web Apps, whether they are .NET, PHP, Java, Node.js, or Python. You can move them to Web Apps using your familiar [FTP] tools. If you frequently create digital marketing campaigns, it is possible that you have existing web assets in a source control management system. You can deploy to Web Apps directly from popular source control options, such as [Visual Studio], [Visual Studio Online], and [Git] - local, GitHub, BitBucket, DropBox, Mercurial, etc..
 
 ## Stay agile
 
@@ -79,7 +68,7 @@ Deliver your static content lightning fast to users globally by [integrating you
 
 Optimize your web app by scaling automatically with Autoscale, caching with Azure Redis Cache, running background tasks with WebJobs, and maintaining high availability with Azure Traffic Manager.
 
-The ability of Azure Websites to [scale up and out] is perfect for unpredictable workloads, which is the case with digital marketing campaigns. Scale out your web app manually through the <!-- deleted by customization [Azure preview portal](https://manage.windowsazure.cn/) --><!-- keep by customization: begin -->[Azure Management Portal](https://manage.windowsazure.cn/)<!-- keep by customization: end -->, programmatically through the [Service Management API] or [PowerShell scripting], or automatically through the Autoscale feature. In the **Standard** tier, Autoscale enables you to scale out a web app automatically based on CPU utilization. This feature helps you maximize agility and minimize cost at the same time by scaling out the web app only when needed based on user activity. For best practices, see [Troy Hunt]'s [10 things I learned about rapidly scaling web apps with Azure].
+The ability of Azure Websites to [scale up and out] is perfect for unpredictable workloads, which is the case with digital marketing campaigns. Scale out your web app manually through the [Azure preview portal](https://manage.windowsazure.cn/), programmatically through the [Service Management API] or [PowerShell scripting], or automatically through the Autoscale feature. In the **Standard** tier, Autoscale enables you to scale out a web app automatically based on CPU utilization. This feature helps you maximize agility and minimize cost at the same time by scaling out the web app only when needed based on user activity. For best practices, see [Troy Hunt]'s [10 things I learned about rapidly scaling web apps with Azure].
 
 Make your web app more responsive with the [Azure Redis Cache]. Use it to cache data from backend databases and other things such as the [ASP.NET session state] and [output cache].
 
@@ -88,10 +77,8 @@ Maintain high availability of your web app using [Azure Traffic Manager]. Using 
 ## Monitor and analyze
 
 Stay up-to-date on your web app's performance with Azure or third-party tools. Receive alerts on critical web app events. Gain user insight easily with Application Insight or with web log analytics from HDInsight. 
-<!-- deleted by customization 
 
 Get a [quick glance] of the web app's current performance metrics and resource quotas in the web app's blade in the [Azure preview portal](https://manage.windowsazure.cn/). For a 360° view of your application across availability, performance and usage, use [Azure Application Insights] to give you fast & powerful troubleshooting, diagnostics and usage insights. Or, use a third-party tool like [New Relic] to provide advanced monitoring data for your web apps.
--->
 
 In the **Standard** tier, monitor app responsiveness receive email notifications whenever your web app becomes unresponsive. For more information, see [How to: Receive Alert Notifications and Manage Alert Rules in Azure].
 
@@ -105,18 +92,14 @@ In the **Standard** tier, monitor app responsiveness receive email notifications
 
 [Azure Websites]: /home/features/web-site/
 
-<!-- deleted by customization
 [Orchard]: /documentation/articles/web-sites-dotnet-orchard-cms-gallery
 [Umbraco]: /documentation/articles/web-sites-gallery-umbraco
 [WordPress]: /documentation/articles/web-sites-php-web-site-gallery
--->
 [MySQL]: /documentation/articles/web-sites-php-mysql-deploy-use-git
 [Azure SQL Database]: /documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database
 [FTP]: /documentation/articles/web-sites-deploy#ftp
 [Visual Studio]: /documentation/articles/web-sites-dotnet-get-started
-<!-- deleted by customization
 [Visual Studio Online]: /documentation/articles/cloud-services-continuous-delivery-use-vso
--->
 [Git]: /documentation/articles/web-sites-publish-source-control
 [deploying to a staging slot]: /documentation/articles/web-sites-staged-publishing
 [continuously publish]:http://rickrainey.com/2014/01/21/continuous-deployment-github-with-azure-web-sites-and-staged-publishing/

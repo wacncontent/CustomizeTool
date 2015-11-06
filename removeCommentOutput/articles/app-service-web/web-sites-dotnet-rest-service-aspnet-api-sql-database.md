@@ -33,22 +33,6 @@ You'll build a simple contact list web application that is built on ASP.NET MVC 
 
 ![screenshot of web site][intro001]
 
-
-In this tutorial:
-
-* [Set up the development environment][setupdbenv]
-* [Set up the Azure environment][setupwindowsazureenv]
-* [Create an ASP.NET MVC 5 application][createapplication]
-* [Deploy the application to Azure][deployapp1]
-* [Add a database to the application][adddb]
-* [Add a Controller and a view for the data][addcontroller]
-* [Add a Web API Restful interface][addwebapi]
-* [Add XSRF Protection][]
-* [Publish the application update to Azure and SQL Database][deploy2]
-
-
-<a name="bkmk_setupdevenv"></a>
-
 <!-- the next line produces the "Set up the development environment" section as see at /documentation/articles/web-sites-dotnet-get-started/ -->
 [AZURE.INCLUDE [create-account-and-websites-note](../includes/create-account-and-websites-note.md)]
 
@@ -738,8 +722,7 @@ When you see that the item you enter is saved and appears on the contact manager
 
 The application is now running in the cloud, using SQL Database to store its data. After you finish testing the application in Azure, delete it. The application is public and doesn't have a mechanism to limit access.
 
-
-<h2><a name="nextsteps"></a>Next Steps</h2>
+>[AZURE.NOTE] If you want to get started with Azure Websites before signing up for an Azure account, go to [Try Azure Websites](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure Websites. No credit cards required; no commitments.
 
 ## Next Steps
 
@@ -757,6 +740,9 @@ This tutorial and the sample application was written by [Rick Anderson](http://b
 
 Please leave feedback on what you liked or what you would like to see improved, not only about the tutorial itself but also about the products that it demonstrates. Your feedback will help us prioritize improvements. We are especially interested in finding out how much interest there is in more automation for the process of configuring and deploying the membership database. 
 
+## What's changed
+* For a guide to the change from Websites to Azure Websites see: [Azure Websites and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
+* For a guide to the change of the Management Portal to the new portal see: [Reference for navigating the preview portal](https://manage.windowsazure.cn/)
 
 <!-- bookmarks -->
 [Add an OAuth Provider]: #addOauth

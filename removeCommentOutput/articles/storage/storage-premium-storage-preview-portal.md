@@ -186,7 +186,7 @@ If a disk is attached to a VM, certain API operations are not permitted on the p
 - The number of snapshots for a single blob is limited to 100. A snapshot can be taken every 10 minutes at most.
 - The maximum capacity for snapshots per Premium Storage account is 10 TB. Note that snapshot capacity refers to the total amount of data in snapshots only, and does not include data in the base blob.
 - To maintain geo-redundant copies of your snapshots, you can copy snapshots from a premium storage account to a geo-redundant standard storage account by using AzCopy or Copy Blob. For more information, see [How to use AzCopy with Windows Azure Storage](/documentation/articles/storage-use-azcopy) and [Copy Blob](http://msdn.microsoft.com/zh-cn/library/azure/dd894037.aspx).
-- For detailed information on performing REST operations against page blobs in Premium Storage accounts, see [Using Blob Service Operations with Azure Premium Storage](http://go.microsoft.com/fwlink/?LinkId=521969) in the MSDN library.
+- For detailed information on performing REST operations against page blobs in Premium Storage accounts, see [Using Blob Service Operations with Azure Premium Storage](https://msdn.microsoft.com/zh-cn/library/dn889922.aspx) in the MSDN library.
 
 ## Using Linux VMs with Premium Storage
 Please refer to important instructions below for configuring your Linux VMs on Premium Storage:
@@ -385,7 +385,7 @@ azure storage account create "premiumtestaccount" -l "west us" --type PLRS
 
 ## Next steps
 
-[Using Blob Service Operations with Azure Premium Storage](http://go.microsoft.com/fwlink/?LinkId=521969)
+[Using Blob Service Operations with Azure Premium Storage](https://msdn.microsoft.com/zh-cn/library/dn889922.aspx)
 
 [Create a Virtual Machine Running Windows](/documentation/articles/virtual-machines-windows-tutorial-azure-preview)
 

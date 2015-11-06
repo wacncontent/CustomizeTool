@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Managing access to resources with Azure Active Directory groups| Microsoft Azure" 
+	pageTitle="Managing access to resources with Azure Active Directory groups| Windows Azure" 
 	description="A topic that explains how to use groups for access management in Azure AD." 
 	services="active-directory" 
 	documentationCenter="" 
@@ -8,14 +8,10 @@
 	editor=""
 	tags="azure-classic-portal"/>
 
-<tags 
-	ms.service="active-directory" 
-	ms.workload="identity" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="08/14/2015" 
-	ms.author="femila"/>
+<tags
+	ms.service="active-directory"
+	ms.date="08/14/2015"
+	wacn.date=""/>
 
 
 # Managing access to resources with Azure Active Directory groups
@@ -23,7 +19,7 @@
 Azure Active Directory is a comprehensive identity and access management solution that provides a robust set of capabilities to manage access to on-premises and cloud applications and resources including Microsoft online services like Office 365 and a world of non-Microsoft SaaS applications.
 
 
-> [AZURE.NOTE] To use Azure Active Directory, you need an Azure account. If you don't have an account, you can [sign up for a free Azure account](http://azure.microsoft.com/pricing/free-trial/).
+> [AZURE.NOTE] To use Azure Active Directory, you need an Azure account. If you don't have an account, you can [sign up for a free Azure account](/pricing/1rmb-trial/).
 
 
 Within Azure Active Directory, one of the major features is the ability to manage access to resources. These resources can be part of the directory, as in the case of permissions to manage objects through roles in the directory, or resources that are external to the directory, such as SaaS applications, Azure services, and SharePoint sites or on premise resources.
@@ -64,34 +60,34 @@ The owner of a group can also make that group available for self service request
 Ready to get started? You should try out some of the basic tasks you can do with Azure AD groups. Use these capabilities to provide specialized access to different groups of people for different resources in your organization. A list of basic first steps are listed below.
 
 
-* [Creating a simple rule to configure dynamic memberships for a group](active-directory-accessmanagement-simplerulegroup.md)
+* [Creating a simple rule to configure dynamic memberships for a group](/documentation/articles/active-directory-accessmanagement-simplerulegroup)
 
-* [Using a group to manage access to SaaS applications](active-directory-accessmanagement-group-saasapps.md)
+* [Using a group to manage access to SaaS applications](/documentation/articles/active-directory-accessmanagement-group-saasapps)
 
-* [Making a group available for end user self-service](active-directory-accessmanagement-self-service-group-management.md)
+* [Making a group available for end user self-service](/documentation/articles/active-directory-accessmanagement-self-service-group-management)
 
-* [Syncing an on-premise group to  Azure using Azure AD Connect](active-directory-aadconnect.md)
+* [Syncing an on-premise group to  Azure using Azure AD Connect](/documentation/articles/active-directory-aadconnect)
 
-* [Managing Owners to a Group](active-directory-accessmanagement-managing-group-owners.md) 
+* [Managing Owners to a Group](/documentation/articles/active-directory-accessmanagement-managing-group-owners) 
 
 
 ## Next steps for access management
 Now that you have understood the basics of access management, here are some additional advanced capabilities available in Azure Active Directory for managing access to your applications and resources.
 
-* [Using a simple rule to create a group](active-directory-accessmanagement-simplerulegroup.md) 
+* [Using a simple rule to create a group](/documentation/articles/active-directory-accessmanagement-simplerulegroup) 
 
-* [Using Attributes to Create Advanced Rules](active-directory-accessmanagement-groups-with-advanced-rules.md)
+* [Using Attributes to Create Advanced Rules](/documentation/articles/active-directory-accessmanagement-groups-with-advanced-rules)
 
-* [Managing Security groups in Azure Active Directory](active-directory-accessmanagement-manage-groups.md)
+* [Managing Security groups in Azure Active Directory](/documentation/articles/active-directory-accessmanagement-manage-groups)
 
-* [Setting up Dedicated Groups in Azure Active Directory](active-directory-accessmanagement-dedicated-groups.md)
+* [Setting up Dedicated Groups in Azure Active Directory](/documentation/articles/active-directory-accessmanagement-dedicated-groups)
 
 
 ## Learn More
 Here are some topics that will provide some additional information on Azure Active Directory 
 
-* [What is Azure Active Directory?](active-directory-whatis.md)
+* [What is Azure Active Directory?](/documentation/articles/active-directory-whatis)
 
-* [Integrating your on-premises identities with Azure Active Directory](active-directory-aadconnect.md)
+* [Integrating your on-premises identities with Azure Active Directory](/documentation/articles/active-directory-aadconnect)
 
 * [Graph API Reference for Groups](https://msdn.microsoft.com/Library/Azure/Ad/Graph/api/groups-operations#GroupFunctions)

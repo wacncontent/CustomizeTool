@@ -1,5 +1,5 @@
 <properties
-	pageTitle="How to use Access Control (.NET) | Microsoft Azure"
+	pageTitle="How to use Access Control (.NET) | Windows Azure"
 	description="Learn how to use Access Control Service (ACS) in your Azure application to authenticate users when they try to gain access to a web app."
 	services="active-directory"
 	documentationCenter=".net"
@@ -9,12 +9,8 @@
 
 <tags
 	ms.service="active-directory"
-	ms.workload="identity"
-	ms.tgt_pltfrm="na"
-	ms.devlang="dotnet"
-	ms.topic="article"
-	ms.date="09/02/2015" 
-	ms.author="mbaldwin"/>
+	ms.date="09/02/2015"
+	wacn.date=""/>
 
 
 
@@ -103,7 +99,7 @@ addressing ACS resources within your application.
 
 	![][1]
 
-3.  To create a new Access Control namespace, click **New**. **App Services** and **Access Control** will be selected. Click **Quick Create**.
+3.  To create a new Access Control namespace, click **New**. **Azure Websites** and **Access Control** will be selected. Click **Quick Create**.
 
 	![][2]
 
@@ -127,7 +123,7 @@ In this step, you create a ASP.NET MVC application. In later steps, we'll integr
 
 1. In **Name**, type **MvcACS**, and then click **OK**.
 1. In the next dialog, select **Internet Application**, and then click **OK**.
-1. Edit the *Views\Shared\_LoginPartial.cshtml* file and replace the contents with the following code:
+1. Edit the *Views\Shared_LoginPartial.cshtml* file and replace the contents with the following code:
 
         @if (Request.IsAuthenticated)
         {
@@ -292,7 +288,7 @@ In this section we will modify the application to view the claims sent by ACS.  
 
 ![][666]
 
-For more information on using claims in your application, see the [Windows Identity Foundation library](http://msdn.microsoft.com/library/hh377151.aspx).
+For more information on using claims in your application, see the [Windows Identity Foundation library](http://msdn.microsoft.com/zh-cn/library/hh377151.aspx).
 
 ## View the App in the ACS Management Portal
 
@@ -378,7 +374,7 @@ To further explore ACS functionality and to experiment with more scenarios, see 
   [Create an Access Control Namespace]: #create-namespace
   [Integrate your Web Application with ACS]: #Identity-Access
   [Test the Integration with ACS]: #Test-ACS
-  [View the Application in the ACS Management Portal]: acs-portal
+  [View the Application in the ACS Management Portal]: /documentation/articles/acs-portal
   [Add an Identity Provider]: #add-IP
   [What's Next]: #whats-next
   [vcsb]: #bkmk_viewClaims

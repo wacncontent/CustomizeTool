@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties
    	pageTitle="Create Hadoop, HBase, or Storm clusters on Linux in HDInsight using cURL and the Azure REST API | Windows Azure"
    	description="Learn how to create Hadoop, HBase, or Storm clusters on Linux for HDInsight using cURL and the Azure REST API."
@@ -195,4 +193,4 @@ Now that you have successfully created an HDInsight cluster, use the following t
 
 * [Develop Java topologies for Storm on HDInsight](/documentation/articles/hdinsight-storm-develop-java-topology)
 * [Use Python components in Storm on HDInsight](/documentation/articles/hdinsight-storm-develop-python)
-* [Deploy and monitor topologies with Storm on HDInsight](/documentation/articles/hdinsight-storm-deploy-monitor-topology-linux)
+* [Deploy and monitor topologies with Storm on HDInsight](/documentation/articles/hdinsight-storm-deploy-monitor-topology)

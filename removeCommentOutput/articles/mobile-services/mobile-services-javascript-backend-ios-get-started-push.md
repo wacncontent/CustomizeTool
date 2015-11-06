@@ -97,9 +97,9 @@ This topic shows you how to add push notifications to the [quickstart project](/
 
 <!-- URLs.   -->
 [Install Xcode]: https://go.microsoft.com/fwLink/p/?LinkID=266532
-[iOS Provisioning Portal]: http://go.microsoft.com/fwlink/p/?LinkId=272456
+[iOS Provisioning Portal]: https://idmsa.apple.com/IDMSWebAuth/login?&appIdKey=891bd3417a7776362562d2197f89480a8547b108fd934911bcbea0110d07f757&path=%2F%2Faccount%2Foverview.action
 [Mobile Services iOS SDK]: https://go.microsoft.com/fwLink/p/?LinkID=266533
-[Apple Push Notification Service]: http://go.microsoft.com/fwlink/p/?LinkId=272584
+[Apple Push Notification Service]: https://developer.apple.com/library/ios/#documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/ApplePushService/ApplePushService.html
 [Get started with Mobile Services]: /documentation/articles/mobile-services-ios-get-started
 [Get started with authentication]: /documentation/articles/mobile-services-ios-get-started-users
 [Azure Management Portal]: https://manage.windowsazure.cn/

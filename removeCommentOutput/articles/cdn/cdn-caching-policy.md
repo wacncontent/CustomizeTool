@@ -30,7 +30,7 @@ You can use Azure Management portal or Azure Media Services APIs to configure ca
 
 1. To configure cache headers using management portal please refer to [How to Manage Streaming Endpoints](/documentation/articles/media-services-manage-origins) section Configuring the Streaming Endpoint.
 2. Azure Media Services REST API, [StreamingEndpoint](https://msdn.microsoft.com/zh-cn/library/azure/dn783468.aspx#StreamingEndpointCacheControl).
-3. Azure Media Services .NET SDK, [StreamingEndpointCacheControl Properties](http://go.microsoft.com/fwlink/?LinkId=615302).
+3. Azure Media Services .NET SDK, [StreamingEndpointCacheControl Properties](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.mediaservices.client.streamingendpointcachecontrol_properties(v=azure.10).aspx).
 
 ##Cache configuration precedence order
 

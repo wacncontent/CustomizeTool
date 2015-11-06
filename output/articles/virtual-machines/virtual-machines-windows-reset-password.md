@@ -36,7 +36,7 @@ To reset the name and password of the local administrator account in the [previe
 
 Before you begin, you'll need the following:
 
-- The Azure PowerShell module, version 0.8.5 or later. You can check the version of Azure PowerShell that you have installed with the **Get-Module azure | format-table version** command. For instructions and a link to the latest version, see [How to install and configure Azure PowerShell](http://go.microsoft.com/fwlink/p/?linkid=320552&clcid=0x409).
+- The Azure PowerShell module, version 0.8.5 or later. You can check the version of Azure PowerShell that you have installed with the **Get-Module azure | format-table version** command. For instructions and a link to the latest version, see [How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure/).
 - The new local administrator account password. You don't need this if you want to reset the Remote Desktop service configuration.
 - The VM Agent.
 
@@ -51,7 +51,7 @@ First, verify that the VM Agent is already installed. Add the cloud service name
 
 If you don't know the cloud service and virtual machine name, run **Get-AzureVM** to display that information for all the virtual machines in your current subscription.
 
-If the **write-host** command displays **True**, the VM Agent is installed. If it displays **False**, see the instructions and a link to the download in the [VM Agent and Extensions - Part 2](http://go.microsoft.com/fwlink/p/?linkid=403947&clcid=0x409) Azure blog post.
+If the **write-host** command displays **True**, the VM Agent is installed. If it displays **False**, see the instructions and a link to the download in the [VM Agent and Extensions - Part 2](https://azure.microsoft.com/zh-cn/blog/vm-agent-and-extensions-part-2/) Azure blog post.
 
 If you created the virtual machine with the Azure Management Portal, run the following additional command.
 

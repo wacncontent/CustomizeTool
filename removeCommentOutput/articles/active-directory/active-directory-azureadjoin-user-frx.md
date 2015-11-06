@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Set up a new device with Azure AD during Setup| Microsoft Azure" 
+	pageTitle="Set up a new device with Azure AD during Setup| Windows Azure" 
 	description="A topic that explains how users can set up Azure AD Join during their first run experience." 
 	services="active-directory" 
 	documentationCenter="" 
@@ -7,14 +7,10 @@
 	manager="stevenpo" 
 	editor=""/>
 
-<tags 
-	ms.service="active-directory" 
-	ms.workload="identity" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="08/02/2015" 
-	ms.author="femila"/>
+<tags
+	ms.service="active-directory"
+	ms.date="08/02/2015"
+	wacn.date=""/>
 
 # Set up a new device with Azure AD during Setup
 
@@ -47,8 +43,8 @@ To join a device to Azure AD
 > [AZURE.NOTE] Joining an on-premises Active Directory domain in the Windows out-of-box experience is not supported. Therefore, if you plan to join a PC to a domain you should select the link “Set up Windows with a local account instead”. You can then join the domain from PC Settings as you’ve done before.
 
 ## Additional Information
-* [Extending cloud capabilities to Windows 10 devices through Azure Active Directory Join](active-directory-azureadjoin-overview.md)
-* [Learn about usage scenarios for Azure AD Join](active-directory-azureadjoin-deployment-aadjoindirect.md)
-* [Set up Azure AD Join](active-directory-azureadjoin-setup.md)
+* [Extending cloud capabilities to Windows 10 devices through Azure Active Directory Join](/documentation/articles/active-directory-azureadjoin-overview)
+* [Learn about usage scenarios for Azure AD Join](/documentation/articles/active-directory-azureadjoin-deployment-aadjoindirect)
+* [Set up Azure AD Join](/documentation/articles/active-directory-azureadjoin-setup)
 
 

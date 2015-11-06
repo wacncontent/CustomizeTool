@@ -39,8 +39,8 @@ Now, execute following query on the Customers database to create the CustomerInf
 
 	CREATE TABLE [dbo].[CustomerInformation]( 
 		[CustomerID] [int] NOT NULL, 
-		[CustomerName] [varchar](/documentation/articles/50) NULL, 
-		[Company] [varchar](/documentation/articles/50) NULL 
+		[CustomerName] [varchar](50) NULL, 
+		[Company] [varchar](50) NULL 
 		CONSTRAINT [CustID] PRIMARY KEY CLUSTERED ([CustomerID] ASC) 
 	) 
 	INSERT INTO [dbo].[CustomerInformation] ([CustomerID], [CustomerName], [Company]) VALUES (1, 'Jack', 'ABC') 
@@ -78,8 +78,8 @@ Create an external table on the Orders database, which matches the definition of
 
 	CREATE EXTERNAL TABLE [dbo].[CustomerInformation] 
 	( [CustomerID] [int] NOT NULL, 
-	  [CustomerName] [varchar](/documentation/articles/50) NOT NULL, 
-	  [Company] [varchar](/documentation/articles/50) NOT NULL) 
+	  [CustomerName] [varchar](50) NOT NULL, 
+	  [Company] [varchar](50) NOT NULL) 
 	WITH 
 	( DATA_SOURCE = MyElasticDBQueryDataSrc) 
 

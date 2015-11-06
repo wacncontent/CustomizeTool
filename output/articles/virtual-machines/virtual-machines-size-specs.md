@@ -19,7 +19,7 @@
 
 This article describes the available sizes and options for the virtual machine-based compute resources you can use to run your apps and workloads.  It also provides deployment considerations to be aware of when you're planning to use these resources.
 
-Azure Virtual Machines and Cloud Services are two of several types of compute resources offered by Azure. For explanations, see [Compute hosting options provided by Azure](http://go.microsoft.com/fwlink/p/?LinkID=311926).
+Azure Virtual Machines and Cloud Services are two of several types of compute resources offered by Azure. For explanations, see [Compute hosting options provided by Azure](https://azure.microsoft.com/zh-cn/documentation/articles/fundamentals-application-models/).
 
 >[AZURE.NOTE] To see related Azure limits, see [Azure subscription and service limits, quotas, and constraints](/documentation/articles/azure-subscription-service-limits).
 
@@ -96,10 +96,10 @@ The following tables show the sizes and the capacities they provide.
 |A5\same|2|14 GB|<p>OS = 1023 GB</p><p>Temporary = 135 GB</p>|4|4X500|
 |A6\same|4|28 GB|<p>OS = 1023 GB</p><p>Temporary = 285 GB</p>|8|8x500|
 |A7\same|8|56 GB|<p>OS = 1023 GB</p><p>Temporary = 605 GB</p>|16|16x500|
-|A8\same|8|56 GB|<p><p>OS = 1023 GB</p><p>Temporary = 382 GB</p><blockquote><p>Note: For information and considerations about using this size, see <a href="http://go.microsoft.com/fwlink/p/?linkid=328042">About the A8, A9, A10, and A11 compute intensive instances</a>.</p></blockquote>|16|16x500|
-|A9\same|16|112 GB|<p><p>OS = 1023 GB</p><p>Temporary = 382 GB</p><blockquote><p>Note: For information and considerations about using this size, see <a href="http://go.microsoft.com/fwlink/p/?linkid=328042">About the A8, A9, A10, and A11 compute intensive instances</a>.</p></blockquote>|16|16x500|
-|A10\same|8|56 GB|<p><p>OS = 1023 GB</p><p>Temporary = 382 GB</p><blockquote><p>Note: For information and considerations about using this size, see <a href="http://go.microsoft.com/fwlink/p/?linkid=328042">About the A8, A9, A10, and A11 compute intensive instances</a>.</p></blockquote>|16|16x500|
-|A11\same|16|112 GB|<p><p>OS = 1023 GB</p><p>Temporary = 382 GB</p><blockquote><p>Note: For information and considerations about using this size, see <a href="http://go.microsoft.com/fwlink/p/?linkid=328042">About the A8, A9, A10, and A11 compute intensive instances</a>.</p></blockquote>|16|16x500|
+|A8\same|8|56 GB|<p><p>OS = 1023 GB</p><p>Temporary = 382 GB</p><blockquote><p>Note: For information and considerations about using this size, see <a href="/documentation/articles/virtual-machines-a8-a9-a10-a11-specs/">About the A8, A9, A10, and A11 compute intensive instances</a>.</p></blockquote>|16|16x500|
+|A9\same|16|112 GB|<p><p>OS = 1023 GB</p><p>Temporary = 382 GB</p><blockquote><p>Note: For information and considerations about using this size, see <a href="/documentation/articles/virtual-machines-a8-a9-a10-a11-specs/">About the A8, A9, A10, and A11 compute intensive instances</a>.</p></blockquote>|16|16x500|
+|A10\same|8|56 GB|<p><p>OS = 1023 GB</p><p>Temporary = 382 GB</p><blockquote><p>Note: For information and considerations about using this size, see <a href="/documentation/articles/virtual-machines-a8-a9-a10-a11-specs/">About the A8, A9, A10, and A11 compute intensive instances</a>.</p></blockquote>|16|16x500|
+|A11\same|16|112 GB|<p><p>OS = 1023 GB</p><p>Temporary = 382 GB</p><blockquote><p>Note: For information and considerations about using this size, see <a href="/documentation/articles/virtual-machines-a8-a9-a10-a11-specs/">About the A8, A9, A10, and A11 compute intensive instances</a>.</p></blockquote>|16|16x500|
 
 ### Standard tier: D-series
 

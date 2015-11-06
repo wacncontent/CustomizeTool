@@ -9,12 +9,8 @@
 
 <tags
 	ms.service="active-directory"
-	ms.workload="identity"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="08/24/2015"
-	ms.author="billmath"/>
+	wacn.date=""/>
 
 # Azure Active Directory Connect - Learn More
 
@@ -25,9 +21,9 @@ The following is a list of additional resources for using Azure AD Connect and i
 ## Documentation
 
 
-[Multi-forest Directory Sync with Single Sign-On Scenario](https://msdn.microsoft.com/library/azure/dn510976.aspx) - Integrate multiple directories with Azure AD.
+[Multi-forest Directory Sync with Single Sign-On Scenario](https://msdn.microsoft.com/zh-cn/library/azure/dn510976.aspx) - Integrate multiple directories with Azure AD.
 
-[Azure AD Connect Health](https://msdn.microsoft.com/library/azure/dn906722.aspx) - Monitor the health of your on-premises AD FS infrastructure.
+[Azure AD Connect Health](https://msdn.microsoft.com/zh-cn/library/azure/dn906722.aspx) - Monitor the health of your on-premises AD FS infrastructure.
 
 ## Videos
 

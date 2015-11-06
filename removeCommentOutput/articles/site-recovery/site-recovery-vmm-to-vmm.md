@@ -24,14 +24,14 @@ This scenario guide describes how to deploy Site Recovery to orchestrate and aut
 
 The guide includes prerequisites for the scenario and shows you how to set up a Site Recovery vault, get the Azure Site Recovery Provider installed on source and target VMM servers, register the servers in the vault, configure protection settings for VMM clouds that will be applied to all protected virtual machines, and then enable protection for those virtual machines. Finish up by testing the failover to make sure everything's working as expected.
 
-If you run into problems setting up this scenario post your questions on the [Azure Recovery Services Forum](http://go.microsoft.com/fwlink/?LinkId=313628).
+If you run into problems setting up this scenario post your questions on the [Azure Recovery Services Forum](https://social.msdn.microsoft.com:443/forums/azure/zh-cn/home?forum=hypervrecovmgr).
 
 
 ## Before you start
 Make sure you have these prerequisites in place:
 ### Azure prerequisites
 
-- You'll need a [Windows Azure](http://azure.microsoft.com/) account. If you don't have one, start with a [trial](http://aka.ms/try-azure). In addition you can read about [Azure Site Recovery Manager pricing](http://go.microsoft.com/fwlink/?LinkId=378268).
+- You'll need a [Windows Azure](http://azure.microsoft.com/) account. If you don't have one, start with a [trial](http://aka.ms/try-azure). In addition you can read about [Azure Site Recovery Manager pricing](/home/features/site-recovery/#price).
 - To understand how information and data are used, read the [Windows Azure Privacy Statement](http://go.microsoft.com/fwlink/?LinkId=324899) and additional <a href="#privacy">Privacy information for Site Recovery</a> at the bottom of this topic.
 
 ### VMM prerequisites
@@ -46,9 +46,9 @@ Make sure you have these prerequisites in place:
 	- One or more Hyper-V host servers in each host group .
 	- One or more virtual machines on the host server.
 - Learn more about setting up VMM clouds:
-	- Read more about private VMM clouds in [What’s New in Private Cloud with System Center 2012 R2 VMM](http://go.microsoft.com/fwlink/?LinkId=324952) and in [VMM 2012 and the clouds](http://go.microsoft.com/fwlink/?LinkId=324956).
+	- Read more about private VMM clouds in [What’s New in Private Cloud with System Center 2012 R2 VMM](https://channel9.msdn.com/Events/TechEd/NorthAmerica/2013/MDC-B357) and in [VMM 2012 and the clouds](http://www.server-log.com/blog/2011/8/26/vmm-2012-and-the-clouds.html).
 	- Learn about [Configuring the VMM cloud fabric](https://msdn.microsoft.com/zh-cn/library/azure/dn469075.aspx#BKMK_Fabric)
-	- After your cloud fabric elements are in place learn about creating private clouds in  [Creating a private cloud in VMM](http://go.microsoft.com/fwlink/?LinkId=324953) and [Walkthrough: Creating private clouds with System Center 2012 SP1 VMM](http://go.microsoft.com/fwlink/?LinkId=324954).
+	- After your cloud fabric elements are in place learn about creating private clouds in  [Creating a private cloud in VMM](https://technet.microsoft.com/zh-cn/library/jj860425.aspx) and [Walkthrough: Creating private clouds with System Center 2012 SP1 VMM](http://blogs.technet.com/b/keithmayer/archive/2013/04/18/walkthrough-creating-private-clouds-with-system-center-2012-sp1-virtual-machine-manager-build-your-private-cloud-in-a-month.aspx).
 
 ### Hyper-V prerequisites
 
@@ -69,12 +69,12 @@ Network mapping ensures that replica virtual machines are optimally placed on Hy
 
 Learn more about network mapping:
 
-- [Configuring logical networking in VMM](http://go.microsoft.com/fwlink/?LinkId=386307)
-- [Configuring VM networks and gateways in VMM](http://go.microsoft.com/fwlink/?LinkId=386308)
+- [Configuring logical networking in VMM](https://technet.microsoft.com/zh-cn/library/jj721568.aspx)
+- [Configuring VM networks and gateways in VMM](https://technet.microsoft.com/zh-cn/library/jj721575.aspx)
 
 ### Storage mapping prerequisites
 By default when you replicate a virtual machine on a source Hyper-V host server to a target Hyper-V host server, replicated data is stored in the default location that’s indicated for the target Hyper-V host in Hyper-V Manager. For more control over where replicated data is stored, you can configure storage mapping. To do this you'll need to set up storage classifications on the source and target VMM servers before you begin deployment.
-For instructions see [How to create storage classifications in VMM](http://go.microsoft.com/fwlink/?LinkId=400937).
+For instructions see [How to create storage classifications in VMM](https://technet.microsoft.com/zh-cn/library/gg610685.aspx).
 
 
 ## Step 1: Create a Site Recovery vault
@@ -88,7 +88,7 @@ For instructions see [How to create storage classifications in VMM](http://go.mi
 
 4. In **Name**, enter a friendly name to identify the vault.
 
-5. In **Region** select the geographic region for the vault. To check supported regions see Geographic Availability in [Azure Site Recovery Pricing Details](http://go.microsoft.com/fwlink/?LinkId=389880).
+5. In **Region** select the geographic region for the vault. To check supported regions see Geographic Availability in [Azure Site Recovery Pricing Details](/home/features/site-recovery/#price).
 
 6. Click **Create vault**.
 
@@ -142,7 +142,7 @@ Generate a registration key in the vault. After you download the Azure Site Reco
 		- *.backup.windowsazure.cn
 		- *.blob.core.chinacloudapi.cn
 		- *.store.core.chinacloudapi.cn
-	- Allow the IP addresses described in [Azure Datacenter IP Ranges](http://go.microsoft.com/fwlink/?LinkId=511094) and HTTPS (443) protocol. You would have to white-list IP ranges of the Azure region that you plan to use and that of China North.
+	- Allow the IP addresses described in [Azure Datacenter IP Ranges](https://msdn.microsoft.com/zh-cn/library/azure/dn175718.aspx) and HTTPS (443) protocol. You would have to white-list IP ranges of the Azure region that you plan to use and that of China North.
 
 	- If you use a custom proxy a VMM RunAs account (DRAProxyAccount) will be created automatically using the specified proxy credentials. Configure the proxy server so that this account can authenticate successfully. The VMM RunAs account settings can be modified in the VMM console. To do this, open the Settings workspace, expand Security, click Run As Accounts, and then modify the password for DRAProxyAccount. You’ll need to restart the VMM service so that this setting takes effect.
 
@@ -213,7 +213,7 @@ After VMM servers are registered, you can configure cloud protection settings. I
 11. In **Port**,modify the port number on which the source and target host computers listen for replication traffic. For example, you might modify the setting if you want to apply Quality of Service (QoS) network bandwidth throttling for replication traffic. Check that the port isn’t used by any other application and that it’s open in the firewall settings.
 12. In **Replication method**, specify how the initial replication of data from source to target locations will be handled, before regular replication starts.
 	- **Over network**—Copying data over the network can be time-consuming and resource-intensive. We recommend that you use this option if the cloud contains virtual machines with relatively small virtual hard disks, and if the primary site is connected to the secondary site over a connection with wide bandwidth. You can specify that the copy should start immediately, or select a time. If you use network replication, we recommend that you schedule it during off-peak hours.
-	- **Offline**—This method specifies that the initial replication will be performed using external media. It's useful if you want to avoid degradation in network performance, or for geographically remote locations. To use this method you specify the export location on the source cloud, and the import location on the target cloud. When you enable protection for a virtual machine, the virtual hard disk is copied to the specified export location. You send it to the target site, and copy it to the import location. The system copies the imported information to the replica virtual machines. For a complete list of offline replication prerequisites, see <a href="http://go.microsoft.com/fwlink/?LinkId=323469">Step 3: Configure protection settings for VMM clouds</a> in the Deployment Guide.
+	- **Offline**—This method specifies that the initial replication will be performed using external media. It's useful if you want to avoid degradation in network performance, or for geographically remote locations. To use this method you specify the export location on the source cloud, and the import location on the target cloud. When you enable protection for a virtual machine, the virtual hard disk is copied to the specified export location. You send it to the target site, and copy it to the import location. The system copies the imported information to the replica virtual machines. For a complete list of offline replication prerequisites, see <a href="/documentation/articles/site-recovery-vmm-to-vmm/">Step 3: Configure protection settings for VMM clouds</a> in the Deployment Guide.
 13. Select **Delete Replica Virtual Machine** to specify that the replica virtual machine should be deleted if you stop protecting the virtual machine by selecting the **Delete protection for the virtual machine** option on the Virtual Machines tab of the cloud properties. With this setting enabled, when you disable protection the virtual machine is removed from Azure Site Recovery, the Site Recovery settings for the virtual machine are removed in the VMM console, and the replica is deleted.
 	![Configure protection settings](./media/site-recovery-vmm-to-vmm/ASRE2EHVR_CloudSettingsRep.png)
 
@@ -254,7 +254,7 @@ You’ll need to do the following actions to prepare for initial replication off
 ## Step 6: Configure storage mapping
 By default when you replicate a virtual machine on a source Hyper-V host server to a target Hyper-V host server, replicated data is stored in the default location that’s indicated for the target Hyper-V host in Hyper-V Manager. For more control over where replicated data is stored, you can configure storage mappings as follows:
 
-- Define storage classifications on both the source and target VMM servers. For instructions, see [How to create storage classifications in VMM](http://go.microsoft.com/fwlink/?LinkId=400937). Classifications must be available to the Hyper-V host servers in source and target clouds. Classifications don’t need to have the same type of storage. For example you can map a source classification that contains SMB shares to a target classification that contains CSVs.
+- Define storage classifications on both the source and target VMM servers. For instructions, see [How to create storage classifications in VMM](https://technet.microsoft.com/zh-cn/library/gg610685.aspx). Classifications must be available to the Hyper-V host servers in source and target clouds. Classifications don’t need to have the same type of storage. For example you can map a source classification that contains SMB shares to a target classification that contains CSVs.
 - After classifications are in place you can create mappings.
 1. On the **Quick Start** page > **Map storage**.
 1. Click the **Storage** tab > **Map storage classifications**.

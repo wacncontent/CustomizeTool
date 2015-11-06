@@ -9,18 +9,14 @@
 
 <tags
 	ms.service="active-directory"
-	ms.workload="identity"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="10/19/2015"
-	ms.author="curtand"/>
+	wacn.date=""/>
 
 # Assigning administrator roles in Azure AD
 
-Depending on the size of your company, you may want to designate several administrators who serve different functions. These administrators will have access to various features in the Azure portal and, depending on their role, will be able to create or edit users, assign administrative roles to others, reset user passwords, manage user licenses, and manage domains, among other things.
+Depending on the size of your company, you may want to designate several administrators who serve different functions. These administrators will have access to various features in the Azure Management Portal and, depending on their role, will be able to create or edit users, assign administrative roles to others, reset user passwords, manage user licenses, and manage domains, among other things.
 
-It's  important to understand that a user who is assigned an admin role will have the same permissions across all of the cloud services that your organization has subscribed to, regardless of whether you assign the role in the Office 365 portal, or in the Azure portal, or by using the Azure AD module for Windows PowerShell.
+It's  important to understand that a user who is assigned an admin role will have the same permissions across all of the cloud services that your organization has subscribed to, regardless of whether you assign the role in the Office 365 portal, or in the Azure Management Portal, or by using the Azure AD module for Windows PowerShell.
 
 The following administrator roles are available:
 
@@ -81,6 +77,6 @@ The global administrator has access to all administrative features. By default, 
 
 ## What's next
 
-- [Manage users](../active-directory-manage-users.md)
-- [Manage passwords](active-directory-manage-passwords.md)
-- [Manage groups](active-directory-manage-groups.md)
+- [Manage users](/documentation/articles/active-directory-manage-users)
+- [Manage passwords](/documentation/articles/active-directory-manage-passwords)
+- [Manage groups](/documentation/articles/active-directory-manage-groups)

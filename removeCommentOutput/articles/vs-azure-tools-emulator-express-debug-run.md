@@ -44,7 +44,7 @@ Before you use Emulator Express, you should be aware of some limitations:
 
 - You can't access port numbers below 1000. For example, if you use an authentication provider that normally uses a port below 1000, you might need to change this value to a port number that's above 1000.
 
-- Any limitations that apply to the Azure Compute Emulator also apply to Emulator Express. For example, you can't have more than 50 role instances per deployment. See [Run an Azure Application in the Compute Emulator](http://go.microsoft.com/fwlink/p/?LinkId=623050)
+- Any limitations that apply to the Azure Compute Emulator also apply to Emulator Express. For example, you can't have more than 50 role instances per deployment. See [Run an Azure Application in the Compute Emulator](/documentation/articles/vs-azure-tools-performance-profiling-cloud-services/)
 
 ## Next steps
 

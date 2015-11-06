@@ -16,16 +16,10 @@
 
 [AZURE.INCLUDE [media-services-selector-get-started](../includes/media-services-selector-get-started.md)]
 
-<!-- keep by customization: begin -->
-<a id="setup-account"></a>
-<!-- keep by customization: end -->
 ##Setting Up an Azure Account for Media Services
 
 To set up your Media Services account, use the Azure Management Portal. See the topic [How to Create a Media Services Account](/documentation/articles/media-services-create-account). After creating your account in the Management Portal, you are ready to set up your computer for Media Services development. 
 
-<!-- keep by customization: begin -->
-<a id="setup-dev"></a>
-<!-- keep by customization: end -->
 ##Setting up for Media Services development
 
 This section contains general prerequisites for Media Services development using the Media Services SDK for Java.
@@ -35,9 +29,6 @@ This section contains general prerequisites for Media Services development using
 -   A Media Services account in a new or existing Azure subscription. See the topic [How to Create a Media Services Account](/documentation/articles/media-services-create-account).
 -   The Azure Libraries for Java, which you can install from the [Azure Java Developer Center][].
 
-<!-- keep by customization: begin -->
-<a if="connect"></a>
-<!-- keep by customization: end -->
 ##How to: Use Media Services with Java
 
 The following code shows how to create an asset, upload a media file to the asset, run a job with a task to transform the asset, and create a locator in order to stream your video.  
@@ -255,7 +246,6 @@ Substitute your values for the `clientId` and `clientSecret` variables. The code
 	
 	}
 
-<!-- deleted by customization
 
 ##Media Services learning paths
 
@@ -263,7 +253,6 @@ You can view AMS learning paths here:
 
 - [AMS Live Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/)
 - [AMS on Demand Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/)
--->
 
 
 

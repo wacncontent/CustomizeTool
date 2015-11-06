@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties 
    pageTitle="Graphical Authoring in Azure Automation"
    description="Graphical authoring allows you to create runbooks for Azure Automation without working with code.   This article provides an introduction to graphical authoring and all the details needed to start creating a graphical runbook."

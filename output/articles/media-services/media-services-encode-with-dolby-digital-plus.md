@@ -646,7 +646,6 @@ Each attribute is described below.
 
 **TruePeak** - This result contains the largest absolute true‐peak value in any channel since the metering was reset. Refer to ITU‐R BS.1770‐2 for a description of true peak. The values can range in -70 to 12.04 dBTP.
  
-<!-- deleted by customization
 
 ##Media Services learning paths
 
@@ -654,5 +653,4 @@ You can view AMS learning paths here:
 
 - [AMS Live Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/)
 - [AMS on Demand Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/)
--->
 

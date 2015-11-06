@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Troubleshooting: 'Active Directory' item is missing or not available | Microsoft Azure "
+   pageTitle="Troubleshooting: 'Active Directory' item is missing or not available | Windows Azure "
    description="What to do when Active Directory menu item doesn't appear in the Azure Management Portal."
    services="active-directory"
    documentationCenter="na"
@@ -8,13 +8,9 @@
    editor=""/>
 
 <tags
-   ms.service="active-directory"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="identity"
-   ms.date="08/24/2015"
-   ms.author="mbaldwin"/>
+	ms.service="active-directory"
+	ms.date="08/24/2015"
+	wacn.date=""/>
 
 # Troubleshooting: 'Active Directory' item is missing or not available
 
@@ -36,19 +32,19 @@ The Active Directory item appears in the left navigation menu when any of the fo
 
     OR
 
-* The Azure tenant has at least one Azure AD Access Control (ACS) namespace. For more information, see [Access Control Namespace](https://msdn.microsoft.com/library/azure/gg185908.aspx).
+* The Azure tenant has at least one Azure AD Access Control (ACS) namespace. For more information, see [Access Control Namespace](https://msdn.microsoft.com/zh-cn/library/azure/gg185908.aspx).
 
     OR
 
 * The Azure tenant has at least one Azure Multi-Factor Authentication provider. For more information, see [Administering Azure Multi-Factor Authentication Providers](multi-factor-authentication-get-started-cloud.md/creating-an-azure-multi-factor-auth-provider).
 
-To create an Access Control namespace or a Multi-Factor Authentication provider, click **+New** > **App Services** > **Active Directory**.
+To create an Access Control namespace or a Multi-Factor Authentication provider, click **+New** > **Azure Websites** > **Active Directory**.
 
-To get administrative rights to a directory, have an administrator assign an administrator role to your account. For details, see [Assigning administrator roles](active-directory-assign-admin-roles.md).
+To get administrative rights to a directory, have an administrator assign an administrator role to your account. For details, see [Assigning administrator roles](/documentation/articles/active-directory-assign-admin-roles).
 
 ## Active Directory is not available
 
-When you click **+New** > **App Services**, an **Active Directory** item appears. Specifically, the Active Directory item appears when any of the Active Directory features, such as Directory, Access Control, or Multi-Factor Auth Provider, are available to the current user.
+When you click **+New** > **Azure Websites**, an **Active Directory** item appears. Specifically, the Active Directory item appears when any of the Active Directory features, such as Directory, Access Control, or Multi-Factor Auth Provider, are available to the current user.
 
 However, while the page is loading, the item is dimmed and is marked **Not Available**. This is a temporary state. If you wait a few seconds, the item becomes available. If the delay is prolonged, refreshing the web page often resolves the problem.
 

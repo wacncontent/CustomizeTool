@@ -27,7 +27,7 @@ You can use the Connected Services dialog to connect to Azure AD in the followin
 
 ### Connect to Azure AD using the Connected Services dialog
 
-1. Make sure you have an Azure account. If you don't have an Azure account, you can sign up for a [trial](http://go.microsoft.com/fwlink/?LinkId=518146).
+1. Make sure you have an Azure account. If you don't have an Azure account, you can sign up for a [trial](/pricing/free-trial/).
 
 1. In Visual Studio, open the shortcut menu of the **References** node in your project and choose **Add Connected Services**.
 1. Select **Azure AD Authentication** and then choose **Configure**.
@@ -63,7 +63,7 @@ You can use the Connected Services dialog to connect to Azure AD in the followin
 
 ## How your project is modified
 
-When you run the wizard, Visual Studio adds Azure AD and associated references to your project. Configuration files and code files in your project are also modified to add support for Azure AD. The specific modifications that Visual Studio makes depend on the project type. For detailed information about how ASP.NET MVC projects are modified, see [What happened– MVC Projects](http://go.microsoft.com/fwlink/p/?LinkID=513809). For Web API projects, see [What happened – Web API Projects](http://go.microsoft.com/fwlink/p/?LinkId=513810).
+When you run the wizard, Visual Studio adds Azure AD and associated references to your project. Configuration files and code files in your project are also modified to add support for Azure AD. The specific modifications that Visual Studio makes depend on the project type. For detailed information about how ASP.NET MVC projects are modified, see [What happened– MVC Projects](/documentation/articles/vs-active-directory-dotnet-getting-started/). For Web API projects, see [What happened – Web API Projects](/documentation/articles/vs-active-directory-webapi-getting-started/).
 
 ##Next steps
 

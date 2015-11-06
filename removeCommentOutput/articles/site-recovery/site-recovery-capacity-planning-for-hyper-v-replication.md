@@ -218,11 +218,11 @@ More detailed guidance can be found on the [Capacity Planner for Hyper-V Replica
 ## Other resources
 The following resources can help you with capacity planning for Hyper-V replication:
 
-- [Update: Capacity Planner for Hyper-V Replica](http://go.microsoft.com/fwlink/?LinkId=510891)—Read this blog entry for an overview of this new tool.
+- [Update: Capacity Planner for Hyper-V Replica](http://blogs.technet.com/b/virtualization/archive/2014/01/21/update-capacity-planner-for-hyper-v-replica.aspx)—Read this blog entry for an overview of this new tool.
 
 - [Capacity Planner for Hyper-V Replica](http://go.microsoft.com/fwlink/?LinkId=510892)—Download the latest version of this tool.
 
-- [Guided Hands-On Lab](http://go.microsoft.com/fwlink/?LinkId=510893)—Get a great walkthrough of capacity planning with the tool on Keith Mayer’s TechNet blog.
+- [Guided Hands-On Lab](http://blogs.technet.com/b/keithmayer/archive/2014/02/27/guided-hands-on-lab-capacity-planner-for-windows-server-2012-hyper-v-replica.aspx)—Get a great walkthrough of capacity planning with the tool on Keith Mayer’s TechNet blog.
 
 - [Performance and Scaling Testing - On-Premises to On-Premises](https://msdn.microsoft.com/zh-cn/library/azure/dn760892.aspx)—Read the results of replication testing for an on-premises to on-premises deployment.
 

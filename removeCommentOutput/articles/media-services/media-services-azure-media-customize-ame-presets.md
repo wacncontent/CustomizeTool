@@ -503,6 +503,12 @@ To prevent the amplification of background noise, do the following:
 		// Launch the job. 
 		job.Submit();
 
+##Media Services learning paths
+
+You can view AMS learning paths here:
+
+- [AMS Live Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/)
+- [AMS on Demand Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/)
 
 
 ##See Also

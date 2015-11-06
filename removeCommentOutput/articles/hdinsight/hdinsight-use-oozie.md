@@ -19,7 +19,7 @@
 [AZURE.INCLUDE [oozie-selector](../includes/hdinsight-oozie-selector.md)]
 
 ##Overview
-Learn how to use Apache Oozie to define a workflow and run the workflow on HDInsight. To learn about the Oozie coordinator, see [Use time-based Hadoop Oozie Coordinator with HDInsight][hdinsight-oozie-coordinator-time]. 
+Learn how to use Apache Oozie to define a workflow and run the workflow on HDInsight. To learn about the Oozie coordinator, see [Use time-based Hadoop Oozie Coordinator with HDInsight][hdinsight-oozie-coordinator-time]. To learn Azure Data Factory, see [Use Pig and Hive with Data Factory][azure-data-factory-pig-hive].
 
 ##What is Oozie?
 
@@ -80,7 +80,7 @@ Before you begin this tutorial, you must have the following:
 	<tr><td>SQL database name</td><td>$sqlDatabaseName</td><td></td><td>Azure SQL database to which Sqoop will export data. </td></tr>
 	</table>
 
-	> [AZURE.NOTE] By default, an Azure SQL database allows connections from Azure services, such as Azure HDInsight. If this firewall setting is disabled, you must enabled it from the Azure Management Portal. For instructions about creating a  SQL database and configuring firewall rules, see [How to Create and Configure an Azure SQL Database][sqldatabase-create-configue].
+	> [AZURE.NOTE] By default, an Azure SQL database allows connections from Azure services, such as Azure HDInsight. If this firewall setting is disabled, you must enabled it from the Azure preview portal. For instructions about creating a  SQL database and configuring firewall rules, see [How to Create and Configure an Azure SQL Database][sqldatabase-create-configue].
 
 
 > [AZURE.NOTE] Filling in the values in the tables will be helpful for going through this tutorial.
@@ -518,7 +518,7 @@ Azure PowerShell currently doesn't provide any cmdlets for defining Oozie jobs. 
 **To check the job error log**
 
 To troubleshoot a workflow, the Oozie log file can be found at
-*C:\apps\dist\oozie-3.3.2.1.3.2.0-05\oozie-win-distro\logs\Oozie.log* or *C:\apps\dist\oozie-4.0.0.2.0.7.0-1528\oozie-win-distro\logs\Oozie.log* from the cluster head node. For information about RDP, see [Manage Hadoop clusters in HDInsight using the Azure Management Portal][hdinsight-admin-portal].
+*C:\apps\dist\oozie-3.3.2.1.3.2.0-05\oozie-win-distro\logs\Oozie.log* or *C:\apps\dist\oozie-4.0.0.2.0.7.0-1528\oozie-win-distro\logs\Oozie.log* from the cluster head node. For information about RDP, see [Manage Hadoop clusters in HDInsight using the Azure preview portal][hdinsight-admin-portal].
 
 **To re-run the tutorial**
 
@@ -576,6 +576,7 @@ In this tutorial, you learned how to define an Oozie workflow and how to run an 
 
 
 
+[azure-data-factory-pig-hive]: /documentation/articles/data-factory-pig-hive-activities
 [hdinsight-oozie-coordinator-time]: /documentation/articles/hdinsight-use-oozie-coordinator-time
 [hdinsight-versions]: /documentation/articles/hdinsight-component-versioning
 [hdinsight-storage]: /documentation/articles/hdinsight-use-blob-storage

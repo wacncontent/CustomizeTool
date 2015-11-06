@@ -33,11 +33,11 @@ You'll learn:
 
 >[AZURE.NOTE] This is a long tutorial. If you want a quick introduction to Azure Websites and Visual Studio web projects, see [Create an ASP.NET web app in Azure Websites](/documentation/articles/web-sites-dotnet-get-started). For troubleshooting info, see the [Troubleshooting](#troubleshooting) section.
 >
-
+>Or if you want to get started with Azure Websites before signing up for an Azure account, go to [Try Azure Websites](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure Websites. No credit cards required; no commitments.
 
 ## Prerequisites
 
-To complete this tutorial, you need a Windows Azure account. If you don't have an account, you can  [sign up for a trial](/pricing/1rmb-trial/?WT.mc_id=A261C142F).
+To complete this tutorial, you need a Windows Azure account. If you don't have an account, you can [activate your MSDN subscriber benefits](/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F) or [sign up for a trial](/pricing/1rmb-trial/?WT.mc_id=A261C142F).
 
 To set up your development environment, you must install [Visual Studio 2013 Update 4](http://go.microsoft.com/fwlink/?LinkId=390521) or higher, and the latest version of the [Azure SDK for .NET](http://go.microsoft.com/fwlink/?linkid=324322&clcid=0x409). This article was written for Visual Studio Update 4 and SDK 2.7.1. The same instructions work for Visual Studio 2015 with the latest [Azure SDK for .NET](http://go.microsoft.com/fwlink/?linkid=518003&clcid=0x409) installed, but some screens will look different from the illustrations.
 
@@ -164,9 +164,6 @@ To set up your development environment, you must install [Visual Studio 2013 Upd
 
 This is all you need to do for now to create the application that you'll deploy to Azure. 
 
-
-<a name="bkmk_deploytowindowsazure1"></a>
-
 ## Deploy the application to Azure
 
 1. In Visual Studio, right-click the project in **Solution Explorer** and select **Publish** from the context menu.
@@ -226,9 +223,6 @@ This is all you need to do for now to create the application that you'll deploy 
 	 Internet Explorer is a good choice when you're using SSL because it accepts the certificate and shows HTTPS content without a warning. Microsoft Edge and Google Chrome also accept the certificate. Firefox uses its own certificate store, so it displays a warning.
 
 	 ![FireFox Cert Warning](./media/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/ss30.PNG)
-
-
-<a name="bkmk_addadatabase"></a>
 
 ## Add a database to the application
 
@@ -390,11 +384,9 @@ The next task is to enable the [Code First Migrations](http://msdn.microsoft.com
 
 	![MVC view of data][rx2]
 
-
-<a name="addOauth"></a>
-
 ## Add an OAuth2 Provider
 
+>[AZURE.NOTE] For detailed instructions on how to use the Google and Facebook developer portal sites, this tutorial links to tutorials on the ASP.NET site. However, Google and Facebook change their sites more frequently than those tutorials are updated, and they are now out of date. If you have trouble following the directions, see the featured Disqus comment at the end of this tutorial for a list of what has changed. 
 
 [OAuth](http://oauth.net/ "http://oauth.net/") is an open protocol that allows secure authorization in a simple and standard method from web, mobile, and desktop applications. The ASP.NET MVC internet template uses OAuth to expose Facebook, Twitter, Google and Microsoft as authentication providers. Although this tutorial uses only Google as the authentication provider, you can easily modify the code to use any of these providers. The steps to implement other providers are very similar to the steps you see in this tutorial. To use Facebook as an authentication provider, see [MVC 5 App with Facebook, Twitter, LinkedIn and Google OAuth2 Sign-on ](http://www.asp.net/mvc/tutorials/mvc-5/create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on).
 
@@ -405,9 +397,6 @@ In addition to authentication, this tutorial uses roles to implement authorizati
 3. Run and test the app to verify that you can log on using Google authentication.
 
 2. If you want to create social login buttons with provider-specific icons, see [Pretty social login buttons for ASP.NET MVC 5](http://www.jerriepelser.com/blog/pretty-social-login-buttons-for-asp-net-mvc-5)
-
-
-<a name="mbrDB"></a>
 
 ## Using the Membership API
 
@@ -601,9 +590,6 @@ In this section you apply the [Authorize](http://msdn.microsoft.com/zh-cn/librar
 
 1. Verify you can make data changes.
 
-
-<a name="bkmk_deploytowindowsazure11"></a>
-
 ## Deploy the app to Azure
 
 1. In Visual Studio, right-click the project in **Solution Explorer** and select **Publish** from the context menu.
@@ -638,8 +624,7 @@ In this section you apply the [Authorize](http://msdn.microsoft.com/zh-cn/librar
 
 4. Right-click the web app and select **Stop**. 
 
-
-	Alternatively, from the [Azure Management Portal](https://manage.windowsazure.cn), you can go to the web app's blade, then click the **Stop** icon at the bottom of the page.
+	Alternatively, from the [Azure preview portal](https://manage.windowsazure.cn/), you can go to the web app's blade, then click the **Stop** icon at the top of the blade.
 
 	![stop web app portal](./media/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/stopweb.png)
 
@@ -741,9 +726,14 @@ You've created a basic ASP.NET MVC web application that authenticates users. For
 
 For a  more advanced tutorial about how to use the Entity Framework, see [Getting Started with EF and MVC](http://www.asp.net/mvc/tutorials/getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application).
 
+This tutorial was written by [Rick Anderson](http://blogs.msdn.com/b/rickandy/) (Twitter [@RickAndMSFT](https://twitter.com/RickAndMSFT)) with assistance from Tom Dykstra and Barry Dorrans (Twitter [@blowdart](https://twitter.com/blowdart)). 
 
 ***Please leave feedback*** on what you liked or what you would like to see improved, not only about the tutorial itself but also about the products that it demonstrates. Your feedback will help us prioritize improvements. You can also request and vote on new topics at [Show Me How With Code](http://aspnet.uservoice.com/forums/228522-show-me-how-with-code).
 
+## What's changed
+
+* For a guide to the change from Websites to Azure Websites see: [Azure Websites and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
+* For a guide to the change of the Azure Management Portal to the Azure preview portal see: [Reference for navigating the preview portal](https://manage.windowsazure.cn/)
 
 <!-- bookmarks -->
 [Add an OAuth Provider]: #addOauth

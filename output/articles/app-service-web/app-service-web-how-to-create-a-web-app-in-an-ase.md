@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties
 	pageTitle="How to Create a Web App in an Azure Websites Environment"
 	description="Creation flow for web apps and app service plans examined for an app service environment"

@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties
    pageTitle="Migrating from Orchestrator to Azure Automation | Windows Azure"
    description="Describes how to migrate runbooks and integration packs from System Center Orchestrator to Azure Automation."

@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Add your own domain name to Azure AD | Microsoft Azure"
+	pageTitle="Add your own domain name to Azure AD | Windows Azure"
 	description="A topic that explains how to add your own domain name to Azure AD and related info."
 	services="active-directory"
 	documentationCenter=""
@@ -9,16 +9,12 @@
 
 <tags
 	ms.service="active-directory"
-	ms.workload="identity"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="get-started-article"
 	ms.date="08/14/2015"
-	ms.author="curtand"/>
+	wacn.date=""/>
 
 # Add your own domain name to Azure AD
 
-When you sign up for a Microsoft cloud service, you are issued a domain name that has the following format: contoso.onmicrosoft.com. You can continue to use that initial domain name, or you can add your own custom domain name to the cloud service. This topic explains how to add your own domain name and related information.
+When you sign up for a Microsoft cloud service, you are issued a domain name that has the following format: contoso.partner.onmschina.cn. You can continue to use that initial domain name, or you can add your own custom domain name to the cloud service. This topic explains how to add your own domain name and related information.
 
 Office 365 users may be interested in these related topics:
 
@@ -26,13 +22,13 @@ Office 365 users may be interested in these related topics:
 - [Find your domain registrar or DNS hosting provider](https://support.office.com/article/Find-your-domain-registrar-or-DNS-hosting-provider-b5b633ba-1e56-4a98-8ff5-2acaac63a5c8/)
 - [Work with domain names in Office 365](https://support.office.com/article/Work-with-domain-names-in-Office-365-4f1bd681-337a-4bd3-a7b7-cf77b18d0870/)
 
-## About your onmicrosoft.com domain
+## About your partner.onmschina.cn domain
 
-You can use your onmicrosoft.com domain with other services. For example, you can use the domain with Exchange Online and Lync Online to create distribution lists and sign-in accounts so users can access SharePoint Online and site collections.
+You can use your partner.onmschina.cn domain with other services. For example, you can use the domain with Exchange Online and Lync Online to create distribution lists and sign-in accounts so users can access SharePoint Online and site collections.
 
-If you add your own domain names to your directory, you can continue to use your onmicrosoft.com domain.
+If you add your own domain names to your directory, you can continue to use your partner.onmschina.cn domain.
 
-After you choose the name to use with the cloud service during signup, such as contoso.onmicrosoft.com, you cannot change the name.
+After you choose the name to use with the cloud service during signup, such as contoso.partner.onmschina.cn, you cannot change the name.
 
 ## How can I add my own domain?
 
@@ -41,7 +37,7 @@ If your organization already has a custom domain name, as an administrator, you 
 You can add up to 900 domain names to your Azure AD tenant by using, either:
 
 - The Azure Management Portal, the Office 365 portal, or the Microsoft Intune portal.
-- The Azure Active Directory Module for Windows PowerShell. For more information about which cmdlet you can use for this, see [Manage domains in Azure AD](https://msdn.microsoft.com/library/azure/dn919677.aspx).
+- The Azure Active Directory Module for Windows PowerShell. For more information about which cmdlet you can use for this, see [Manage domains in Azure AD](https://msdn.microsoft.com/zh-cn/library/azure/dn919677.aspx).
 
 You must have already registered a domain name and have the sign-in credentials needed for your domain name registrar (for example, Go Daddy or Register.com).
 
@@ -71,7 +67,7 @@ If you plan to use single sign-on with the cloud service, we recommend that you 
         2. After you see the message that your domain has been successfully added to Azure AD, click the arrow to move to the next page and then follow the directions on that page to configure the domain you added for single sign-on.
 
 > [AZURE.NOTE]
-> After you add your domain name to Azure AD, you can change the default domain name for new email addresses. For more information, see [How can I change the primary domain name for users?](#how-can-i-change-the-primary-domain-name-for-users?) You can also edit the profile for an existing user account to update the email address (which is also your user ID) to use your custom domain name instead of the onmicrosoft.com domain.
+> After you add your domain name to Azure AD, you can change the default domain name for new email addresses. For more information, see [How can I change the primary domain name for users?](#how-can-i-change-the-primary-domain-name-for-users?) You can also edit the profile for an existing user account to update the email address (which is also your user ID) to use your custom domain name instead of the partner.onmschina.cn domain.
 
 ### Edit DNS records for your cloud services
 
@@ -168,10 +164,10 @@ After you add your domain name to Azure AD, you can change the domain name that 
 
 Before you remove a domain name, we recommend that you read the following information:
 
-- The original contoso.onmicrosoft.com domain name that was provided for your directory when you signed up cannot be removed.
+- The original contoso.partner.onmschina.cn domain name that was provided for your directory when you signed up cannot be removed.
 - Any top-level domain that has subdomains associated with it cannot be removed until the subdomains have been removed. For example, you can't remove adatum.com if you have corp.adatum.com or another subdomain that uses the top-level domain name. For more information, see this [Support article](https://support.microsoft.com/kb/2787792/).
-- Have you activated directory synchronization? If so, a domain was automatically added to your account that looks similar to this: contoso.mail.onmicrosoft.com. This domain name can't be removed.
-- Before you can remove a domain name, you must first remove the domain name from all user or email accounts associated with the domain. You can remove all of the accounts, or you can bulk edit user accounts to change their domain name information and email addresses. For more information, see [Create or edit users in Azure AD](active-directory-create-users.md).
+- Have you activated directory synchronization? If so, a domain was automatically added to your account that looks similar to this: contoso.mail.partner.onmschina.cn. This domain name can't be removed.
+- Before you can remove a domain name, you must first remove the domain name from all user or email accounts associated with the domain. You can remove all of the accounts, or you can bulk edit user accounts to change their domain name information and email addresses. For more information, see [Create or edit users in Azure AD](/documentation/articles/active-directory-create-users).
 - If you are hosting a SharePoint Online site on a domain name that is being used for a SharePoint Online site collection, you must delete the site collection before you can remove the domain name.
 
 To remove a domain name:
@@ -212,5 +208,5 @@ If you add your custom domain name to the cloud service after you have already a
 
 - [Azure AD Forum](https://social.msdn.microsoft.com/Forums/home?forum=WindowsAzureAD)
 - [Stackoverflow](http://stackoverflow.com/questions/tagged/azure)
-- [Sign up for Azure as an organization](sign-up-organization.md)
-- [Manage domains in Azure AD](https://msdn.microsoft.com/library/azure/dn919677.aspx)
+- [Sign up for Azure as an organization](/documentation/articles/sign-up-organization)
+- [Manage domains in Azure AD](https://msdn.microsoft.com/zh-cn/library/azure/dn919677.aspx)

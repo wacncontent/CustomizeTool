@@ -73,6 +73,6 @@ As the figure illustrates, the Cloud Services VMs run in a separate cloud servic
 ## Next steps
 
 * [Compare](/documentation/articles/choose-web-site-cloud-service-vm) Azure Websites, Cloud Services, and Virtual Machines
-* Learn more about [Azure Websites](/documentation/articles/app-service-web-overview)
+* Learn more about [Azure Websites](/home/features/web-site/)
 * Learn more about [Cloud Service](/home/features/cloud-services/)
 * Learn more about [Virtual Machines](https://msdn.microsoft.com/zh-cn/library/azure/jj156143.aspx) 

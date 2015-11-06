@@ -10,12 +10,8 @@
 
 <tags
 	ms.service="active-directory"
-	ms.workload="infrastructure-services"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="get-started-article"
 	ms.date="09/09/2015"
-	ms.author="markvi"/>
+	wacn.date=""/>
 
 # Administer your Azure AD directory
 
@@ -23,7 +19,7 @@
 
 In the physical workplace, the word tenant can be defined as a group or company that occupies a building. For instance, your organization may own office space in a building. This building may be on a street with several other organizations. Your organization would be considered a tenant of that building. This building is an asset of your organization and provides security and ensures that you can conduct business safely. It also is separated from the other businesses on your street. This ensures that your organization and the assets therein are isolated from other organizations.
 
-In the cloud-enabled workplace, a tenant can be defined as a client or organization that owns and manages a specific instance of that cloud service. With the identity platform provided by Microsoft Azure, a tenant is simply a dedicated instance of Azure Active Directory (Azure AD) that your organization receives and owns when it signs up for a Microsoft cloud service such as Azure or Office 365.
+In the cloud-enabled workplace, a tenant can be defined as a client or organization that owns and manages a specific instance of that cloud service. With the identity platform provided by Windows Azure, a tenant is simply a dedicated instance of Azure Active Directory (Azure AD) that your organization receives and owns when it signs up for a Microsoft cloud service such as Azure or Office 365.
 
 Each Azure AD directory is distinct and separate from other Azure AD directories. Just like a corporate office building is a secure asset specific to only your organization, an Azure AD directory was also designed to be a secure asset for use by only your organization. The Azure AD architecture isolates customer data and identity information from co-mingling. This means that users and administrators of one Azure AD directory cannot accidentally or maliciously access data in another directory.
 
@@ -49,11 +45,11 @@ The additional services fully leverage any existing user accounts, policies, set
 
 For example, if you originally signed up for a Microsoft Intune subscription and completed the steps necessary to further integrate your on-premises Active Directory with your Azure AD directory by deploying directory synchronization and/or single sign-on servers, you can sign up for another Microsoft cloud service such as Office 365 which can also leverage the same directory integration benefits you now use with Microsoft Intune.
 
-For more information about integrating your on-premises directory with Azure AD, see [Directory integration](active-directory-aadconnect.md).
+For more information about integrating your on-premises directory with Azure AD, see [Directory integration](/documentation/articles/active-directory-aadconnect).
 
 ### Associate an Azure AD directory with a new Azure subscription
 
-You can associate a new Azure subscription with the same directory that authenticates sign in for an existing Office 365 or Microsoft Intune subscription. Sign in to the Azure Management Portal using your work or school account. The Management Portal returns a message that it was unable to find any subscriptions for that account. Select **Sign Up For Azure**, and your directory will be available for administration within the portal. For more information, see [Manage the directory for your Office 365 subscription in Azure](active-directory-how-subscriptions-associated-directory.md#manage-the-directory-for-your-office-365-subscription-in-azure).
+You can associate a new Azure subscription with the same directory that authenticates sign in for an existing Office 365 or Microsoft Intune subscription. Sign in to the Azure Management Portal using your work or school account. The Management Portal returns a message that it was unable to find any subscriptions for that account. Select **Sign Up For Azure**, and your directory will be available for administration within the portal. For more information, see [Manage the directory for your Office 365 subscription in Azure](/documentation/articles/active-directory-how-subscriptions-associated-directory#manage-the-directory-for-your-office-365-subscription-in-azure).
 
 For a video about common usage questions for Azure AD, see [Azure Active Directory - Common Sign-up, sign-in and usage questions](http://channel9.msdn.com/Series/Windows-Azure-Active-Directory/WAADCommonSignupsigninquestions).
 
@@ -61,7 +57,7 @@ For a video about common usage questions for Azure AD, see [Azure Active Directo
 
 If you don’t yet have a subscription to a Microsoft cloud service, use one of the links below to sign up. The act of signing up for your first service will create an Azure AD directory automatically.
 
-- [Microsoft Azure](https://account.windowsazure.com/organization)
+- [Windows Azure](https://account.windowsazure.cn/organization)
 - [Office 365](http://products.office.com/business/compare-office-365-for-business-plans/)
 - [Microsoft Intune](https://account.manage.microsoft.com/Signup/MainSignUp.aspx?OfferId=40BE278A-DFD1-470a-9EF7-9F2596EA7FF9&ali=1)
 
@@ -73,11 +69,11 @@ Backfilling of directories was done in October 2013 as part of an overall improv
 
 There are no costs for using Azure AD. The directory is a free resource. There is an additional Azure Active Directory Premium tier that is licensed separately and provides additional features such as company branding and self-service password reset.
 
-To change the display name of your directory, click the directory in the portal and click **Configure**. As explained later in this topic, you can add a new directory or delete a directory that you no longer need. To associate your subscription with a different directory, click the **Settings** extension in the left navigation, and at the bottom of the **Subscriptions** page, click **Edit Directory**. You can also create a custom domain using a DNS name that you have registered instead of the default *.onmicrosoft.com domain, which may be preferable with a service such as SharePoint Online.
+To change the display name of your directory, click the directory in the portal and click **Configure**. As explained later in this topic, you can add a new directory or delete a directory that you no longer need. To associate your subscription with a different directory, click the **Settings** extension in the left navigation, and at the bottom of the **Subscriptions** page, click **Edit Directory**. You can also create a custom domain using a DNS name that you have registered instead of the default *.partner.onmschina.cn domain, which may be preferable with a service such as SharePoint Online.
 
 ## How can I manage directory data
 
-As an administrator of one or more Microsoft cloud service subscriptions, you can either use the Azure Management Portal, the Microsoft Intune account portal, or the Office 365 Admin Center to manage your organizations directory data. You can also download and run [Microsoft Azure Active Directory Module for Windows PowerShell](https://msdn.microsoft.com/library/azure/jj151815.aspx) cmdlets to help you manage data stored in Azure AD.
+As an administrator of one or more Microsoft cloud service subscriptions, you can either use the Azure Management Portal, the Microsoft Intune account portal, or the Office 365 Admin Center to manage your organizations directory data. You can also download and run [Windows Azure Active Directory Module for Windows PowerShell](https://msdn.microsoft.com/zh-cn/library/azure/jj151815.aspx) cmdlets to help you manage data stored in Azure AD.
 
 From either of these portals (or cmdlets), you can:
 
@@ -118,7 +114,7 @@ Also note that unlike other Azure resources, your directories are not child reso
 A global administrator can delete an Azure AD directory from the portal. When a directory is deleted, all resources contained in the directory are also deleted; so you should be sure you don’t need the directory before you delete it.
 
 > [AZURE.NOTE]
-> If the user is signed in with a work or school account, the user must not be attempting to delete his or her home directory. For example, if the user is signed in as joe@contoso.onmicrosoft.com, that user cannot delete the directory that has contoso.onmicrosoft.com as its default domain.
+> If the user is signed in with a work or school account, the user must not be attempting to delete his or her home directory. For example, if the user is signed in as joe@contoso.partner.onmschina.cn, that user cannot delete the directory that has contoso.partner.onmschina.cn as its default domain.
 
 ### Conditions that must be met to delete an Azure AD directory
 
@@ -128,10 +124,10 @@ The following conditions are checked:
 
 - The only user in the directory is the global administrator who will delete the directory. Any other users must be deleted before the directory can be deleted. If users are synchronized from on-premises, then sync will need to be turned off, and the users must be deleted in the cloud directory by using the Management Portal or the Azure module for Windows PowerShell. There is no requirement to delete groups or contacts, such as contacts added from the Office 365 Admin Center.
 - There can be no applications in the directory. Any applications must be deleted before the directory can be deleted.
-- There can be no subscriptions for any Microsoft Online Services such as Microsoft Azure, Office 365, or Azure AD Premium associated with the directory. For example, if a default directory was created for you in Azure, you cannot delete this directory if your Azure subscription still relies on this directory for authentication. Similarly, you cannot delete a directory if another user has associated a subscription with it. To associate your subscription with a different directory, sign in to the Azure Management Portal and click **Settings** in the left navigation. Then on the bottom of the **Subscriptions** page, click **Edit Directory**. For more information about Azure subscriptions, see [How Azure subscriptions are associated with Azure AD](active-directory-how-subscriptions-associated-directory.md).
+- There can be no subscriptions for any Microsoft Online Services such as Windows Azure, Office 365, or Azure AD Premium associated with the directory. For example, if a default directory was created for you in Azure, you cannot delete this directory if your Azure subscription still relies on this directory for authentication. Similarly, you cannot delete a directory if another user has associated a subscription with it. To associate your subscription with a different directory, sign in to the Azure Management Portal and click **Settings** in the left navigation. Then on the bottom of the **Subscriptions** page, click **Edit Directory**. For more information about Azure subscriptions, see [How Azure subscriptions are associated with Azure AD](/documentation/articles/active-directory-how-subscriptions-associated-directory).
 
     > [AZURE.NOTE]
-    > If the user is signed in with a work or school account, the user must not be attempting to delete his or her home directory. For example, if the user is signed in as joe@contoso.onmicrosoft.com, that user cannot delete the directory that has contoso.onmicrosoft.com as its default domain.
+    > If the user is signed in with a work or school account, the user must not be attempting to delete his or her home directory. For example, if the user is signed in as joe@contoso.partner.onmschina.cn, that user cannot delete the directory that has contoso.partner.onmschina.cn as its default domain.
 
 - No Multi-Factor Authentication providers can be linked to the directory.
 
@@ -141,9 +137,9 @@ The following conditions are checked:
 - [Azure AD Forum](https://social.msdn.microsoft.com/Forums/home?forum=WindowsAzureAD)
 - [Azure Multi-Factor Authentication Forum](https://social.msdn.microsoft.com/Forums/home?forum=windowsazureactiveauthentication)
 - [Stackoverflow](http://stackoverflow.com/questions/tagged/azure)
-- [Sign up for Azure as an organization](sign-up-organization.md)
-- [Manage Azure AD using Windows PowerShell](https://msdn.microsoft.com/library/azure/jj151815.aspx)
-- [Assigning administrator roles in Azure AD](active-directory-assign-admin-roles.md)
+- [Sign up for Azure as an organization](/documentation/articles/sign-up-organization)
+- [Manage Azure AD using Windows PowerShell](https://msdn.microsoft.com/zh-cn/library/azure/jj151815.aspx)
+- [Assigning administrator roles in Azure AD](/documentation/articles/active-directory-assign-admin-roles)
 
 <!--Image references-->
 [1]: ./media/active-directory-administer/aad_portals.png

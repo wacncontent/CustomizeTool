@@ -424,7 +424,6 @@ The example above produced the following output. You values will vary.
 	job with Id: nb:jid:UUID:526291de-f166-be47-b62a-11ffe6d4be54 reached expected 
 	State: Finished
 	
-<!-- deleted by customization
  
 ##Media Services learning paths
 
@@ -432,5 +431,4 @@ You can view AMS learning paths here:
 
 - [AMS Live Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/)
 - [AMS on Demand Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/)
--->
 

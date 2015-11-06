@@ -68,7 +68,7 @@ Next, register your app with Apple, enable push notifications, and upload this e
 
 To be able to send push notifications to an iOS app from Mobile Services, you must register your application with Apple and also register for push notifications.  
 
-1. If you have not already registered your app, navigate to the <a href="http://go.microsoft.com/fwlink/p/?LinkId=272456" target="_blank">iOS Provisioning Portal</a> at the Apple Developer Center, sign in with your Apple ID, click **Identifiers**, click **App IDs**, and finally click the **+** sign to register a new app.
+1. If you have not already registered your app, navigate to the <a href="https://idmsa.apple.com/IDMSWebAuth/login?&appIdKey=891bd3417a7776362562d2197f89480a8547b108fd934911bcbea0110d07f757&path=%2F%2Faccount%2Foverview.action" target="_blank">iOS Provisioning Portal</a> at the Apple Developer Center, sign in with your Apple ID, click **Identifiers**, click **App IDs**, and finally click the **+** sign to register a new app.
 
    	![][105]
 
@@ -140,7 +140,7 @@ To be able to send push notifications to an iOS app from Mobile Services, you mu
 
 ##<a name="profile"></a>Create a provisioning profile for the app
 
-1. Back in the <a href="http://go.microsoft.com/fwlink/p/?LinkId=272456" target="_blank">iOS Provisioning Portal</a>, select **Provisioning Profiles**, select **All**, and then click the **+** button to create a new profile. This displays the **Add iOS Provisioning Profile** wizard.
+1. Back in the <a href="https://idmsa.apple.com/IDMSWebAuth/login?&appIdKey=891bd3417a7776362562d2197f89480a8547b108fd934911bcbea0110d07f757&path=%2F%2Faccount%2Foverview.action" target="_blank">iOS Provisioning Portal</a>, select **Provisioning Profiles**, select **All**, and then click the **+** button to create a new profile. This displays the **Add iOS Provisioning Profile** wizard.
 
    	![][120]
 
@@ -464,13 +464,13 @@ In this simple example, you broadcasted notifications to all your iOS devices. I
 [Notification Hubs Guidance]: http://msdn.microsoft.com/zh-cn/library/jj927170.aspx
 [Notification Hubs How-To for iOS]: http://msdn.microsoft.com/zh-cn/library/jj927168.aspx
 [Install Xcode]: https://go.microsoft.com/fwLink/p/?LinkID=266532
-[iOS Provisioning Portal]: http://go.microsoft.com/fwlink/p/?LinkId=272456
+[iOS Provisioning Portal]: https://idmsa.apple.com/IDMSWebAuth/login?&appIdKey=891bd3417a7776362562d2197f89480a8547b108fd934911bcbea0110d07f757&path=%2F%2Faccount%2Foverview.action
 
 [Use Notification Hubs to push notifications to users]: /manage/services/notification-hubs/notify-users-aspnet
 [Use Notification Hubs to send breaking news]: /manage/services/notification-hubs/breaking-news-dotnet
 
 [Local and Push Notification Programming Guide]: http://developer.apple.com/library/mac/#documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/ApplePushService.html#//apple_ref/doc/uid/TP40008194-CH100-SW1
-[Apple Push Notification Service]: http://go.microsoft.com/fwlink/p/?LinkId=272584
+[Apple Push Notification Service]: https://developer.apple.com/library/ios/#documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/ApplePushService/ApplePushService.html
 
 [Azure Mobile Services Component]: http://components.xamarin.com/view/azure-mobile-services/
 [GitHub]: http://go.microsoft.com/fwlink/p/?LinkId=331329

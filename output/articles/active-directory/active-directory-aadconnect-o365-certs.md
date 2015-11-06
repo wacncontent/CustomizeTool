@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Certificate renewal guidance for Office 365 and Azure AD users. | Microsoft Azure"
+	pageTitle="Certificate renewal guidance for Office 365 and Azure AD users. | Windows Azure"
 	description="This article explains to Office 365 users how to resolve issues with emails that notify them about renewing a certificate."
 	services="active-directory"
 	documentationCenter=""
@@ -9,12 +9,8 @@
 
 <tags
 	ms.service="active-directory"
-	ms.workload="identity"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="10/13/2015"
-	ms.author="billmath"/>
+	wacn.date=""/>
 
 
 # Renewing Federation Certificates for Office 365 and Azure AD
@@ -26,7 +22,7 @@ If you received an email or a portal notification asking you to renew your certi
 If you are using AD FS 2.0 or later, Office 365 and Azure AD will automatically update your certificate before it expires.  You do not need to perform any manual steps or run a script as a scheduled task.  For this to work, both of the following default AD FS configuration settings must be in effect:
 
 - The AD FS property AutoCertificateRollover must be set to True, indicating that AD FS will automatically generate new token signing and token decryption certificates before the old ones expire.
-	- If the value is False, you are using custom certificate settings.  Go [here](https://msdn.microsoft.com/library/azure/JJ933264.aspx#BKMK_NotADFSCert)  for comprehensive guidance.
+	- If the value is False, you are using custom certificate settings.  Go [here](https://msdn.microsoft.com/zh-cn/library/azure/JJ933264.aspx#BKMK_NotADFSCert)  for comprehensive guidance.
 - Your federation metadata must be available to the public internet.
 
 	Here is how to check:
@@ -49,7 +45,7 @@ Example: https://fs.contos.com/federationmetadata/2007-06/federationmetadata.xml
 
 ## If your AutoCertificateRollover property is set to False
 
-If your AutoCertificateRollover property is set to False, you are using non-default AD FS certificate settings.  The most common reason for this is that your organization manages AD FS certificates enrolled from an organizational certificate authority.  In this case you need to renew and update your certificates yourself.  Use the guidance [here](https://msdn.microsoft.com/library/azure/JJ933264.aspx#BKMK_NotADFSCert).
+If your AutoCertificateRollover property is set to False, you are using non-default AD FS certificate settings.  The most common reason for this is that your organization manages AD FS certificates enrolled from an organizational certificate authority.  In this case you need to renew and update your certificates yourself.  Use the guidance [here](https://msdn.microsoft.com/zh-cn/library/azure/JJ933264.aspx#BKMK_NotADFSCert).
 
 ## If your metadata is not publicly accessible
 If your AutocertificateRollover setting is True but your federation metadata is not publicly available, use the procedure below to ensure your certificates are updated both on premises and in the cloud:
@@ -78,7 +74,7 @@ Two certificates should be listed now, one of which has a NotAfter date of appro
 
 ### Manually update Office 365 federation trust properties, follow these steps.
 
-1.	Open the Microsoft Azure Active Directory Module for Windows PowerShell.
+1.	Open the Windows Azure Active Directory Module for Windows PowerShell.
 2.	Run $cred=Get-Credential. When this cmdlet prompts you for credentials, type your cloud service administrator account credentials.
 3.	Run Connect-MsolService –Credential $cred. This cmdlet connects you to the cloud service. Creating a context that connects you to the cloud service is required before running any of the additional cmdlets installed by the tool.
 4.	If you are running these commands on a computer that is not the AD FS primary federation server, run Set-MSOLAdfscontext -Computer <AD FS primary server>, where <AD FS primary server> is the internal FQDN name of the primary AD FS server. This cmdlet creates a context that connects you to AD FS.

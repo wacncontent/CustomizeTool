@@ -1,5 +1,5 @@
 <properties
-	pageTitle="App Model v2.0 >Net Web API| Microsoft Azure"
+	pageTitle="App Model v2.0 >Net Web API| Windows Azure"
 	description="How to build a .NET MVC Web Api that accepts tokens from both personal Microsoft Account and work or school accounts."
 	services="active-directory"
 	documentationCenter=".net"
@@ -9,19 +9,15 @@
 
 <tags
 	ms.service="active-directory"
-	ms.workload="identity"
-	ms.tgt_pltfrm="na"
-	ms.devlang="dotnet"
-	ms.topic="article"
 	ms.date="09/11/2015"
-	ms.author="dastrock"/>
+	wacn.date=""/>
 
 # App model v2.0 preview: Secure an MVC web API
 
-With the v2.0 app model, you can protecet a Web API using [OAuth 2.0](active-directory-v2-protocols.md#oauth2-authorization-code-flow) access tokens, enabling users with both personal Microsoft account and work or school accounts to securely access your Web API.
+With the v2.0 app model, you can protecet a Web API using [OAuth 2.0](/documentation/articles/active-directory-v2-protocols#oauth2-authorization-code-flow) access tokens, enabling users with both personal Microsoft account and work or school accounts to securely access your Web API.
 
 > [AZURE.NOTE]
-This information applies to the v2.0 app model public preview.  For instructions on how to integrate with the generally available Azure AD service, please refer to the [Azure Active Directory Developer Guide](active-directory-developers-guide.md).
+This information applies to the v2.0 app model public preview.  For instructions on how to integrate with the generally available Azure AD service, please refer to the [Azure Active Directory Developer Guide](/documentation/articles/active-directory-developers-guide).
 
 In ASP.NET web APIs, you can accomplish this using Microsoft’s OWIN middleware included in .NET Framework 4.5.  Here we’ll use OWIN to build a "To Do List" MVC Web API that:
 - Allows clients to create and read tasks from a user's To-Do list.
@@ -42,7 +38,7 @@ The completed app is provided at the end of this tutorial as well.
 
 
 ## 1. Register an App
-Create a new app at [apps.dev.microsoft.com](https://apps.dev.microsoft.com), or follow these [detailed steps](active-directory-v2-app-registration.md).  Make sure to:
+Create a new app at [apps.dev.microsoft.com](https://apps.dev.microsoft.com), or follow these [detailed steps](/documentation/articles/active-directory-v2-app-registration).  Make sure to:
 
 - Copy down the **Application Id** assigned to your app, you'll need it soon.
 
@@ -158,8 +154,8 @@ For reference, the completed sample (without your configuration values) [is prov
 ## Next Steps
 You can now move onto additional topics.  You may want to try:
 
-[Calling a Web API from a Web App with the v2.0 app model >>](active-directory-devquickstarts-webapp-webapi-dotnet.md)
+[Calling a Web API from a Web App with the v2.0 app model >>](/documentation/articles/active-directory-devquickstarts-webapp-webapi-dotnet)
 
 For additional resources, check out:
-- [The App Model v2.0 Preview >>](active-directory-appmodel-v2-overview.md)
+- [The App Model v2.0 Preview >>](/documentation/articles/active-directory-appmodel-v2-overview)
 - [StackOverflow "azure-active-directory" tag >>](http://stackoverflow.com/questions/tagged/azure-active-directory)

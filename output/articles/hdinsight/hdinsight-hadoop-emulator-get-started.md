@@ -433,7 +433,6 @@ The HDInsight Emulator uses HDFS as the default file system. However, Azure HDIn
 Before you start with the instructions below, you must have created a storage account. For instructions, see [How To Create a Storage Account](/documentation/articles/storage-create-storage-account).
 
 **To create a container**
-<!-- deleted by customization
 
 1. Sign in to the [Azure Preview Portal](https://ms.portal.azure.com/).
 2. Click **NEW** on the left, click **DATA SERVICE**, and then click **Storage**.
@@ -447,17 +446,6 @@ Before you start with the instructions below, you must have created a storage ac
 
 	![Create a container](./media/hdinsight-hadoop-emulator-get-started/hdi.emulator.create.container.png)
 
--->
-<!-- keep by customization: begin -->
-1. Sign in to the [Azure Management Portal][azure-management-portal].
-2. Click **STORAGE** on the left. A list of storage accounts appears under your subscription.
-3. Click the storage account where you want to create the container from the list.
-4. Click **CONTAINERS** from the top of the page.
-5. Click **ADD** on the bottom of the page.
-6. Enter **NAME** and select **ACCESS**. You can use any of the three access levels. The default is **Private**.
-7. Click **OK** to save the changes. The new container is now listed on the portal.
-
-<!-- keep by customization: end -->
 Before you can access an Azure Storage account, you must add the account name and the account key to the configuration file.
 
 **To configure the connection to an Azure Storage account**

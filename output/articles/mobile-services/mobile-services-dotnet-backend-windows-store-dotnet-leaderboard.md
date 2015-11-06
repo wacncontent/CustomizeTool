@@ -33,7 +33,7 @@ In this tutorial you will:
 - Use Entity Framework (EF) to create foreign key relations and data transfer objects (DTOs).
 - Use ASP.NET Web API to define a custom API.
 
-This tutorial uses [Visual Studio 2013 latest update](http://go.microsoft.com/fwlink/p/?LinkID=390465). 
+This tutorial uses [Visual Studio 2013 latest update](https://www.visualstudio.com/zh-cn/downloads/download-visual-studio-vs). 
 
 
 ## About the sample app

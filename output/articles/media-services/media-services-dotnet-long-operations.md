@@ -183,7 +183,6 @@ The example also shows how the client might use this class.
 	Console.WriteLine(channelId);
  
 
-<!-- deleted by customization
 
 ##Media Services learning paths
 
@@ -191,4 +190,3 @@ You can view AMS learning paths here:
 
 - [AMS Live Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/)
 - [AMS on Demand Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/)
--->

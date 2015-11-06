@@ -192,6 +192,12 @@ Below is a recommended implementation for redundant audio tracks:
 3. Use separate server (encoder) instances to encode and send the redundant streams mentioned in (1) and (2). 
 
 
+##Media Services learning paths
+
+You can view AMS learning paths here:
+
+- [AMS Live Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/)
+- [AMS on Demand Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/)
 
 
 

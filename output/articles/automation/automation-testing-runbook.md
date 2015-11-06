@@ -16,9 +16,8 @@ When you test a runbook, the [Draft version](/documentation/articles/automation-
 
 Even though the draft version is being run, the runbook still executes the workflow normally and performs any actions against resources in the environment. For this reason, you should only test runbooks at non-production resources.
 
-The procedure to test each [type of runbook](/documentation/articles/automation-runbook-types) is the same<!-- deleted by customization , and there is no difference in testing between the textual editor and the graphical editor in the Azure preview portal -->.  
+The procedure to test each [type of runbook](/documentation/articles/automation-runbook-types) is the same, and there is no difference in testing between the textual editor and the graphical editor in the Azure preview portal.  
 
-<!-- deleted by customization
 
 ## To test a runbook in the Azure preview portal
 
@@ -31,7 +30,6 @@ You can work with any [runbook type](/documentation/articles/automation-runbook-
 5. Click the **Start** button to start the test.
 6. If the runbook is [PowerShell Workflow](/documentation/articles/automation-runbook-types#powershell-workflow-runbooks) or [Graphical](/documentation/articles/automation-runbook-types#graphical-runbooks), then you can stop or suspend it while it is being tested with the buttons underneath the Output Pane. When you suspend the runbook, it completes the current activity before being suspended. Once the runbook is suspended, you can stop it or restart it.
 7. Inspect the output from the runbook in the output pane.
--->
 
 
 
@@ -49,8 +47,6 @@ You can only work with [PowerShell Workflow runbooks](/documentation/articles/au
 ## Related articles
 
 - [Creating or importing a runbook in Azure Automation](/documentation/articles/automation-creating-importing-runbook)
-<!-- deleted by customization 
 - [Graphical runbooks in Azure Automation](/documentation/articles/automation-graphical-authoring-intro)
--->
 - [Editing textual runbooks in Azure Automation](/documentation/articles/automation-edit-textual-runbook)
 - [Runbook output and messages in Azure Automation](/documentation/articles/automation-runbook-output-and-messages)

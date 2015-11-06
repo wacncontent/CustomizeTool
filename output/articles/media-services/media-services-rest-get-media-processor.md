@@ -81,7 +81,6 @@ Response:
 	{"odata.metadata":"https://wamsbayclus001rest-hs.chinacloudapp.cn/api/$metadata#MediaProcessors","value":[{"Id":"nb:mpid:UUID:1b1da727-93ae-4e46-a8a1-268828765609","Description":"Azure Media Encoder","Name":"Azure Media Encoder","Sku":"","Vendor":"Microsoft","Version":"4.4"}]}
 
 
-<!-- deleted by customization
 
 ##Media Services learning paths
 
@@ -89,7 +88,6 @@ You can view AMS learning paths here:
 
 - [AMS Live Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/)
 - [AMS on Demand Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/)
--->
 
 
 ##Next Steps

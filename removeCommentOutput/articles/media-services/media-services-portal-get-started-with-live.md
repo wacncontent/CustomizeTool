@@ -189,6 +189,12 @@ If you are done streaming events and want to clean up the resources provisioned 
 
 ##Next Steps
 
+###Media Services learning paths
+
+You can view AMS learning paths here:
+
+- [AMS Live Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/)
+- [AMS on Demand Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/)
 
 ### Looking for something else?
 

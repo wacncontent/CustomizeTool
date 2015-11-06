@@ -56,7 +56,6 @@ Monitor job progress using **Azure Management Portal**, **.NET** or **REST API**
 [Quotas and Limitations](/documentation/articles/media-services-quotas-and-limitations) – Describes quotas used and limitations of the Media Services Encoder
  
 
-<!-- deleted by customization
 
 ##Media Services learning paths
 
@@ -64,5 +63,4 @@ You can view AMS learning paths here:
 
 - [AMS Live Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/)
 - [AMS on Demand Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/)
--->
 

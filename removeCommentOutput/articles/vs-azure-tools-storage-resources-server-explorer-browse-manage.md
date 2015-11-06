@@ -121,7 +121,7 @@ For example, if you enter the prefix `hello` in the filter text box and then cho
 
 - Choose the **Upload Blob** button when the container is open for viewing in the blob container view.
 
-    You can choose one or more files to upload, and you can upload files of any type. The **Azure Activity Log** shows the progress of the upload. For more information about how to work with blob data, see [How to use the Azure Blob Storage Service in .NET](http://go.microsoft.com/fwlink/p/?LinkId=267911).
+    You can choose one or more files to upload, and you can upload files of any type. The **Azure Activity Log** shows the progress of the upload. For more information about how to work with blob data, see [How to use the Azure Blob Storage Service in .NET](/documentation/articles/storage-dotnet-how-to-use-blobs/).
 
 ### To view logs transferred to blobs
 
@@ -157,7 +157,7 @@ The following image shows a queue that contains two messages.
 
 ![Viewing a Queue](./media/vs-azure-tools-storage-resources-server-explorer-browse-manage/IC651470.png)
 
-For more information about storage services queues, see [How to: Use the Queue Storage Service](http://go.microsoft.com/fwlink/?LinkID=264702). For information about the web service for storage services queues, see [Queue Service Concepts](http://go.microsoft.com/fwlink/?LinkId=264788). For information about how to send messages to a storage services queue by using Visual Studio, see [Sending Messages to a Storage Services Queue](https://msdn.microsoft.com/zh-cn/library/azure/jj649344.aspx).
+For more information about storage services queues, see [How to: Use the Queue Storage Service](/documentation/articles/storage-dotnet-how-to-use-queues/). For information about the web service for storage services queues, see [Queue Service Concepts](https://msdn.microsoft.com/zh-cn/library/azure/dd179353.aspx). For information about how to send messages to a storage services queue by using Visual Studio, see [Sending Messages to a Storage Services Queue](https://msdn.microsoft.com/zh-cn/library/azure/jj649344.aspx).
 
 >[AZURE.NOTE] Storage services queues are distinct from service bus queues. For more information about service bus queues, see Service Bus Queues, Topics, and Subscriptions.
 

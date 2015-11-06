@@ -88,7 +88,7 @@ This tutorial is based on the Mobile Services quickstart. Before you start this 
 
 	The **exports.get** function is used because the client will send a GET request to access the tile template.
 
-   	> [AZURE.NOTE] This custom API script uses the Node.js [wns module](http://go.microsoft.com/fwlink/p/?LinkId=306750), which is referenced by using the **require** function. This module is different from the [wns object](http://go.microsoft.com/fwlink/p/?LinkId=260591) returned by the [push object](http://msdn.microsoft.com/zh-cn/library/azure/jj554217.aspx), which is used to send push notifications from server scripts.
+   	> [AZURE.NOTE] This custom API script uses the Node.js [wns module](https://github.com/tjanczuk/wns), which is referenced by using the **require** function. This module is different from the [wns object](https://msdn.microsoft.com/zh-cn/library/azure/jj860484.aspx) returned by the [push object](http://msdn.microsoft.com/zh-cn/library/azure/jj554217.aspx), which is used to send push notifications from server scripts.
 
 Next, you will modify the quickstart app to start periodic notifications that update the live tile by requesting the new custom API.
 

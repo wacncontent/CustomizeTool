@@ -36,7 +36,7 @@ Make sure you have everything in place before you begin.
 
 ### Azure prerequisites
 
-- You'll need a [Windows Azure](http://azure.microsoft.com/) account. You can start with a [trial](/documentation/articles/free-trial).
+- You'll need a [Windows Azure](http://azure.microsoft.com/) account. You can start with a [trial](/pricing/1rmb-trial/).
 - You'll need an Azure storage account to store replicated data. The account needs geo-replication enabled. It should be in the same region as the Azure Site Recovery vault and be associated with the same subscription. To learn more read [Introduction to Windows Azure Storage](/documentation/articles/storage-introduction).
 - You'll need an Azure virtual network so that replicated virtual machines are connected to a network after failover.
 
@@ -147,7 +147,7 @@ Install the Provider and agent. If you're installing on a Hyper-V cluster, perfo
 		- *.blob.core.chinacloudapi.cn
 		- *.store.core.chinacloudapi.cn
 
-	- Allow the IP addresses described in [Azure Datacenter IP Ranges](http://go.microsoft.com/fwlink/?LinkId=511094) and HTTPS (443) protocol. You would have to white-list IP ranges of the Azure region that you plan to use and that of China North.
+	- Allow the IP addresses described in [Azure Datacenter IP Ranges](https://msdn.microsoft.com/zh-cn/library/azure/dn175718.aspx) and HTTPS (443) protocol. You would have to white-list IP ranges of the Azure region that you plan to use and that of China North.
 
 9. On the **Vault Settings** page, click **Browse** to select the key file. Specify the Azure Site Recovery subscription, the vault name, and the Hyper-V site to which the Hyper-V server belongs.
 

@@ -24,11 +24,11 @@ Azure Resource Manager simplifies the deployment and management of complex appli
 
 [Azure Resource Manager overview](/documentation/articles/resource-group-overview)
 
-[Azure Quickstart templates](http://go.microsoft.com/fwlink/p/?linkid=536445&clcid=0x409)
+[Azure Quickstart templates](https://azure.microsoft.com/zh-cn/documentation/templates/)
 
 [Application frameworks using templates](/documentation/articles/virtual-machines-app-frameworks)
 
-[Deploy and manage virtual machines using Azure Resource Manager templates and the Azure CLI](http://go.microsoft.com/fwlink/p/?linkid=534868&clcid=0x409)
+[Deploy and manage virtual machines using Azure Resource Manager templates and the Azure CLI](/documentation/articles/virtual-machines-deploy-rmtemplates-azure-cli/)
 
 [Deploy and manage virtual machines using Azure Resource Manager templates and PowerShell](/documentation/articles/virtual-machines-deploy-rmtemplates-powershell)
 
@@ -41,14 +41,14 @@ Azure Resource Manager simplifies the deployment and management of complex appli
 
 ## Networking
 
-[Network resource provider](http://go.microsoft.com/fwlink/p/?linkid=534943&clcid=0x409)
+[Network resource provider](/documentation/articles/resource-groups-networking/)
 
 
 ## Automate with Azure CLI
 
 [Using the Azure CLI for Mac, Linux, and Windows with Azure Resource Manager](/documentation/articles/xplat-cli-azure-resource-manager)
 
-[Deploy and manage virtual machines using Azure Resource Manager templates and the Azure CLI](http://go.microsoft.com/fwlink/p/?linkid=534868&clcid=0x409)
+[Deploy and manage virtual machines using Azure Resource Manager templates and the Azure CLI](/documentation/articles/virtual-machines-deploy-rmtemplates-azure-cli/)
 
 ## Automate with Azure PowerShell
 

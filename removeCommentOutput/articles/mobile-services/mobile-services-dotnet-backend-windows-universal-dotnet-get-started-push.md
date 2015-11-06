@@ -21,8 +21,8 @@ This topic shows you how to use Azure Mobile Services with a .NET backend to sen
 
 To complete this tutorial, you need the following:
 
-* An active [Microsoft Store account](http://go.microsoft.com/fwlink/p/?LinkId=280045).
-* <a href="https://go.microsoft.com/fwLink/p/?LinkID=391934" target="_blank">Visual Studio Community 2013</a>. 
+* An active [Microsoft Store account](https://dev.windows.com/zh-cn/programs/join).
+* <a href="https://www.visualstudio.com/downloads/download-visual-studio-vs" target="_blank">Visual Studio Community 2013</a>. 
 
 ##<a id="register"></a>Register your app for push notifications
 
@@ -83,7 +83,7 @@ Learn more about Mobile Services and Notification Hubs in the following topics:
 * [What are Notification Hubs?]
   <br/>Learn more about how Notification Hubs works to deliver notifications to your apps across all major client platforms.
 
-* [Debug Notification Hubs applications](http://go.microsoft.com/fwlink/p/?linkid=386630)
+* [Debug Notification Hubs applications](https://msdn.microsoft.com/zh-cn/library/dn530751.aspx)
   </br>Get guidance troubleshooting and debugging Notification Hubs solutions. 
 
 * [How to use a .NET client for Azure Mobile Services]

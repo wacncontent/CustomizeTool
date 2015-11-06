@@ -46,7 +46,7 @@ You can configure auditing for the following event categories:
 
 For each Event Category, Auditing of **Success** and **Failure** operations are configured separately.
 
-For further details about the activities and events audited, see the <a href="http://go.microsoft.com/fwlink/?LinkId=506733" target="_blank">Audit Log Format Reference (doc file download)</a>. 
+For further details about the activities and events audited, see the <a href="http://download.microsoft.com/download/D/8/D/D8D90BA1-977F-466B-A839-7823FF37FD02/03-Azure%20SQL%20DB%20Audit%20Logs%20Format%20Specification.docx" target="_blank">Audit Log Format Reference (doc file download)</a>. 
 
 Audit logs are stored in your Azure storage account. You can define an audit log retention period.
 
@@ -83,7 +83,7 @@ Before setting up audit auditing check if you are using a ["Downlevel Client"](/
 
 Audit logs are aggregated in a collection of Store Tables with a **SQLDBAuditLogs** prefix in the Azure storage account you chose during setup. You can view log files using a tool such as <a href="http://azurestorageexplorer.codeplex.com/" target="_blank">Azure Storage Explorer</a>.
 
-A preconfigured dashboard report template is available as a <a href="http://go.microsoft.com/fwlink/?LinkId=403540" target="_blank">downloadable Excel spreadsheet</a> to help you quickly analyze log data. To use the template on your audit logs, you need Excel 2013 or later and Power Query, which you can download <a href="http://www.microsoft.com/download/details.aspx?id=39379">here</a>. 
+A preconfigured dashboard report template is available as a <a href="http://download.microsoft.com/download/D/8/D/D8D90BA1-977F-466B-A839-7823FF37FD02/01-Azure%20SQL%20DB%20Audit%20Logs%20Report%20Template.xlsx" target="_blank">downloadable Excel spreadsheet</a> to help you quickly analyze log data. To use the template on your audit logs, you need Excel 2013 or later and Power Query, which you can download <a href="http://www.microsoft.com/download/details.aspx?id=39379">here</a>. 
 
 The template has fictional sample data in it, and you can set up Power Query to import your audit log directly from your Azure storage account. 
 

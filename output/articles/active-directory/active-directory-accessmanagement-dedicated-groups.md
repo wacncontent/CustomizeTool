@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Dedicated groups in Azure Active Directory | Microsoft Azure" 
+	pageTitle="Dedicated groups in Azure Active Directory | Windows Azure" 
 	description="Overview of dedicated groups in Azure AD and how they are created." 
 	services="active-directory" 
 	documentationCenter="" 
@@ -8,14 +8,10 @@
 	editor=""
 	tags="azure-classic-portal"/>
 
-<tags 
-	ms.service="active-directory" 
-	ms.workload="identity" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="10/09/2015" 
-	ms.author="femila"/>
+<tags
+	ms.service="active-directory"
+	ms.date="10/09/2015"
+	wacn.date=""/>
 
 # Dedicated groups in Azure Active Directory
 
@@ -27,6 +23,6 @@ The All Users dedicated group can be useful if you want to assign the same permi
 
 Here are some topics that will provide some additional information on Azure Active Directory 
 
-* [Managing access to resources with Azure Active Directory groups](active-directory-manage-groups.md)
-* [What is Azure Active Directory?](active-directory-whatis.md)
-* [Integrating your on-premises identities with Azure Active Directory](active-directory-aadconnect.md)
+* [Managing access to resources with Azure Active Directory groups](/documentation/articles/active-directory-manage-groups)
+* [What is Azure Active Directory?](/documentation/articles/active-directory-whatis)
+* [Integrating your on-premises identities with Azure Active Directory](/documentation/articles/active-directory-aadconnect)

@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Azure AD AngularJS Getting Started | Microsoft Azure"
+	pageTitle="Azure AD AngularJS Getting Started | Windows Azure"
 	description="How to build a Angular JS Single Page app that signs in users with both personal Microsoft accounts and work or school accounts."
 	services="active-directory"
 	documentationCenter=""
@@ -9,12 +9,8 @@
 
 <tags
 	ms.service="active-directory"
-	ms.workload="identity"
-	ms.tgt_pltfrm="na"
-	ms.devlang="javascript"
-	ms.topic="article"
 	ms.date="09/11/2015"
-	ms.author="dastrock"/>
+	wacn.date=""/>
 
 
 # App model v2.0 preview: Add sign-in to an AngularJS single page app
@@ -22,7 +18,7 @@
 The quick-start tutorial for AngularJS apps isn't quite ready... Check back soon & look for updates from @AzureAD on Twitter.
 
 > [AZURE.NOTE]
-	This information applies to the v2.0 app model public preview.  For instructions on how to integrate with the generally available Azure AD service, please refer to the [Azure Active Directory Developer Guide](active-directory-developers-guide.md).
+	This information applies to the v2.0 app model public preview.  For instructions on how to integrate with the generally available Azure AD service, please refer to the [Azure Active Directory Developer Guide](/documentation/articles/active-directory-developers-guide).
 
 <!-- TOOD:
 
@@ -89,7 +85,7 @@ angular.module('todoApp', ['ngRoute','AdalAngular'])
 adalProvider.init(
   {
       instance: 'https://login.microsoftonline.com/',
-      tenant: 'Enter your tenant name here e.g. contoso.onmicrosoft.com',
+      tenant: 'Enter your tenant name here e.g. contoso.partner.onmschina.cn',
       clientId: 'Enter your client ID here e.g. e9a5a8b6-8af7-4719-9821-0deef255f68e',
       extraQueryParameter: 'nux=1',
       //cacheLocation: 'localStorage', // enable this for IE, as sessionStorage does not work for localhost.
@@ -149,6 +145,6 @@ For reference, the completed sample (without your configuration values) is provi
 For additional resources, check out:
 - [AzureADSamples on GitHub >>](https://github.com/AzureAdSamples)
 - [CloudIdentity.com >>](https://cloudidentity.com)
-- Azure AD documentation on [Azure.com >>](http://azure.microsoft.com/documentation/services/active-directory/)
+- Azure AD documentation on [Azure.com >>](/documentation/services/identity/)
 
 -->

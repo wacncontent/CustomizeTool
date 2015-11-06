@@ -43,7 +43,7 @@ In the list you'll see a "[201-web-app-sql-database](https://github.com/Azure/az
 
   **Step 1:** View the contents of the [azuredeploy.json](https://github.com/Azure/azure-quickstart-templates/blob/master/201-web-app-sql-database/azuredeploy.json) file in the 201-web-app-sql-database folder. This is the Azure Resource Manager template file. In the view mode, click the "[Raw](https://github.com/Azure/azure-quickstart-templates/raw/master/201-web-app-sql-database/azuredeploy.json)" button. With your mouse, select the entire contents of this file and save it to your computer as a file named "TestApp1-Template.json." 
 
-In the template file you'll see a "resources" section, which defines the Azure resources created by this template. Among other resource types, this template creates [Azure Web App](/documentation/articles/app-service-web-overview) and [Azure SQL Database](/documentation/articles/sql-database-technical-overview) resources.
+In the template file you'll see a "resources" section, which defines the Azure resources created by this template. Among other resource types, this template creates [Azure Web App](/home/features/web-site/) and [Azure SQL Database](/documentation/articles/sql-database-technical-overview) resources.
 
 You'll also see a "parameters" section, which defines the parameters that each resource can be configured with. Some of the parameters specified in the template have "defaultValue" properties, while others do not. When deploying Azure resources with a template, you must provide values for all parameters that do not have defaultValue properties.  If you do not provide values for parameters with defaultValue properties, then the value specified for the defaultValue parameter in the template is used.
 

@@ -38,7 +38,7 @@ An Azure cloud service solution contains the following types of projects:
 
 - **Worker Role with Service Bus Queue** 
 
-    A service bus queue that provides message queuing functionality to communicate with the worker process. For more information, see [How to Use Service Bus Queues](http://go.microsoft.com/fwlink/?LinkId=260560).
+    A service bus queue that provides message queuing functionality to communicate with the worker process. For more information, see [How to Use Service Bus Queues](/documentation/articles/service-bus-dotnet-how-to-use-queues/).
 
 ## To create an Azure cloud service project in Visual Studio
 

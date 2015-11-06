@@ -7,14 +7,10 @@
 	manager="swadhwa" 
 	editor="lisatoft"/>
 
-<tags 
-	ms.service="active-directory" 
-	ms.workload="identity" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="07/23/2015" 
-	ms.author="markusvi"/>
+<tags
+	ms.service="active-directory"
+	ms.date="07/23/2015"
+	wacn.date=""/>
 
 # Cloud App Discovery Registry Settings for Proxy Services
 
@@ -61,6 +57,6 @@ The objective of this topic is to provide you with the steps you need to perform
 **Additional Resources**
 
 
-* [How can I discover unsanctioned cloud apps that are used within my organization](active-directory-cloudappdiscovery-whatis.md) 
+* [How can I discover unsanctioned cloud apps that are used within my organization](/documentation/articles/active-directory-cloudappdiscovery-whatis) 
 
 

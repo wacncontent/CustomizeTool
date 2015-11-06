@@ -14,16 +14,9 @@
 
 #<a name="howtomonitor"></a>Monitor Web Apps in Azure Websites
 
-[Azure Websites](/documentation/services/web-sites/) provide monitoring functionality for Standard  App Service plans via the Monitor management page. The Monitor management page provides performance statistics for a web app as described below.
+[Azure Websites](/documentation/services/web-sites/) provide monitoring functionality for Standard and Premium App Service plans via the Monitor management page. The Monitor management page provides performance statistics for a web app as described below.
 
-
-## Table of Contents ##
-- [How to: Add web site metrics](#websitemetrics)
-- [How to: Receive alerts from web site metrics](#howtoreceivealerts)
-- [How to: View usage quotas for a web site](#howtoviewusage)
-- [How to: Avoid exceeding your quotas](#resourceusage)
-- [How to: Configure diagnostics and download logs for a web site](#howtoconfigdiagnostics)
-- [How to: Monitor web endpoint status](#webendpointstatus)
+[AZURE.INCLUDE [app-service-web-to-api-and-mobile](../includes/app-service-web-to-api-and-mobile.md)]
 
 ##Metrics Retention Policy
 
@@ -68,7 +61,7 @@ To determine the extent that a web app is impacting resource usage quotas, follo
 	-	**File System Storage** - when this quota is reached, file system storage remains accessible for read operations, but all write operations, including those required for normal web app activity, are blocked. Write operations will resume when you reduce file usage or move the web app to an App Service plan with a higher quota.
 	-	**Linked Resources** - quotas for any linked resources of the web app, such as database or storage, are displayed here as well.
 
-	Some quotas can be applied per web hosting plan, while others can be applied per site. 
+	Some quotas can be applied per web hosting plan, while others can be applied per site. For detailed information on usage quotas for each Web hosting plan, see [Websites Limits](/documentation/articles/azure-subscription-service-limits#websiteslimits).
 
 ##<a name="resourceusage"></a> How to: Avoid exceeding your quotas
 
@@ -276,6 +269,17 @@ After you configure endpoint monitoring, you can drill down into the individual 
 
 	Azure will now actively monitor the endpoint and send an email alert when it takes more than 3 seconds to reply.
 
+For more on web app endpoint monitoring, see the following videos:
+
+- [Scott Guthrie introduces Azure Web Sites and sets up Endpoint Monitoring](/documentation/videos/websites-and-endpoint-monitoring-scottgu/)
+
+- [Keeping Azure Web Sites up plus Endpoint Monitoring - with Stefan Schackow](/documentation/videos/azure-web-sites-endpoint-monitoring-and-staying-up/)
+
+>[AZURE.NOTE] If you want to get started with Azure Websites before signing up for an Azure account, go to [Try Azure Websites](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure Websites. No credit cards required; no commitments.
+
+## What's changed
+* For a guide to the change from Websites to Azure Websites see: [Azure Websites and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
+* For a guide to the change of the Azure Management Portal to the Azure preview portal see: [Reference for navigating the preview portal](https://manage.windowsazure.cn/)
 
 [fzilla]:http://go.microsoft.com/fwlink/?LinkId=247914
 [vmsizes]:http://go.microsoft.com/fwlink/?LinkID=309169

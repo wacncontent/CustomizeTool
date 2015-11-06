@@ -46,7 +46,7 @@ Now that you have created the mobile service, download your personalized mobile 
 
 	![][1]  
 
-2. If you haven't already done so, download and install [Visual Studio Professional 2013](https://go.microsoft.com/fwLink/p/?LinkID=391934), or a later version.
+2. If you haven't already done so, download and install [Visual Studio Professional 2013](https://www.visualstudio.com/downloads/download-visual-studio-vs), or a later version.
 
 3. In Step 2, click **Download** under **Download and publish your service to the cloud**.
 
@@ -119,7 +119,7 @@ Now that you have completed the quickstart, learn how to perform additional impo
 [Get started (Eclipse)]: /documentation/articles/mobile-services-dotnet-backend-android-get-started-ec
 [Add push notifications to your app]: /documentation/articles/mobile-services-dotnet-backend-android-get-started-push
 [Add authentication to your app]: /documentation/articles/mobile-services-dotnet-backend-android-get-started-auth
-[Android SDK]: https://go.microsoft.com/fwLink/p/?LinkID=280125
+[Android SDK]: http://developer.android.com/sdk/index.html
 [Android Studio]: https://developer.android.com/sdk/index.html
 [Mobile Services Android SDK]: https://go.microsoft.com/fwLink/p/?LinkID=266533
 [Troubleshoot a Mobile Services .NET backend]: /documentation/articles/mobile-services-dotnet-backend-how-to-troubleshoot

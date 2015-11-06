@@ -215,7 +215,7 @@ For a complete list of commands for creating and managing virtual machines, use 
 <!-- LINKS -->
 [nodejs-org]: http://nodejs.org/
 [install-node-linux]: https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager
-[mac-installer]: http://go.microsoft.com/fwlink/?LinkId=252249
+[mac-installer]: http://azuresdkscu.blob.core.windows.net/downloads04/azure-cli.0.9.10.dmg
 [windows-installer]: http://go.microsoft.com/fwlink/?LinkID=275464
 [reference-docs]: http://go.microsoft.com/fwlink/?LinkId=252246
 [windowsazuredotcom]: http://azure.microsoft.com

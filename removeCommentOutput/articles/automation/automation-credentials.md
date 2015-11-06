@@ -50,7 +50,12 @@ The activities in the following table are used to access credentials in a runboo
 1. Complete the wizard and click the checkbox to save the new credential.
 
 
+### To create a new credential with the Azure preview portal
 
+1. From your automation account, click the **Assets** part to open the **Assets** blade.
+1. Click the **Credentials** part to open the **Credentials** blade.
+1. Click **Add a credential** at the top of the blade.
+1. Complete the form and click **Create** to save the new credential.
 
 
 ### To create a new PowerShell credential with Windows PowerShell
@@ -76,6 +81,20 @@ The following sample commands show how to use a PowerShell credential in a runbo
 	$password = $myCredential.GetNetworkCredential().Password
 
 
+### Graphical runbook sample
 
+You add a **Get-AutomationPSCredential** activity to a graphical runbook by right-clicking on the credential in the Library pane of the graphical editor and selecting **Add to canvas**.
+
+
+![Add credential to canvas](./media/automation-credentials/credential-add-canvas.png)
+
+The following image shows an example of using a credential in a graphical runbook.  In this case, it is being used to provide authentication for a runbook to Azure resources as described in [Configuring authentication to Azure resources](#automation-configuring.md).  The first activity retrieves the credential that has access to the Azure subscription.  The **Add-AzureAccount** activity then uses this credential to provide authentication for any activities that come after it.  A [pipeline link](/documentation/articles/automation-graphical-authoring-intro#links-and-workflow) is here since **Get-AutomationPSCredential** is expecting a single object.  
+
+![Add credential to canvas](./media/automation-credentials/get-credential.png)
+
+
+## Related articles
+
+- [Links in graphical authoring](/documentation/articles/automation-graphical-authoring-intro#links-and-workflow)
 
  

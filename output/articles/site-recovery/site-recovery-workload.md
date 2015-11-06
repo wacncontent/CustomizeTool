@@ -55,7 +55,7 @@ All the enterprise applications such as SharePoint, Dynamics AX and SAP depend o
 
 Using Azure Site Recovery, you can create a complete automated disaster recovery plan for your AD. In case you have an AD for multiple applications such as SharePoint and SAP in your primary site and you decide to failover the complete site, you can failover AD first using AD recovery plan and then failover the other applications using application specific recovery plans.
 
-Refer the linked document for detailed guidance about [deploying Azure Site Recovery for AD](http://aka.ms/asr-ad) 
+Refer the linked document for detailed guidance about [deploying Azure Site Recovery for AD](/documentation/articles/site-recovery-active-directory/) 
 
 ##SQL Server
 Microsoft SQL Server is the foundation for many enterprise-grade first party, third party and custom line of business applications that run inside a customer’s on-premises datacenter. Applications such as SharePoint, Dynamics, and SAP use SQL Server to provide data services. Azure Site Recovery and SQL Server HA/DR technologies are complementary and can be used to provide end to end protection for multi-tiered enterprise applications.
@@ -67,7 +67,7 @@ Azure Site Recovery offers following benefits for SQL Server environments:
 - Use Azure Site Recovery to scale up SQL Server during peak loads by “bursting” them into larger IaaS VM sizes in Azure.
 - Use Azure Site Recovery to create test copies of SQL Server in Azure or at a secondary site. Use this copy for analytics and data compliance checks without impacting the production environment.
 
-Refer the linked document for detailed guidance about [deploying Azure Site Recovery for SQL](http://aka.ms/asr-sql)
+Refer the linked document for detailed guidance about [deploying Azure Site Recovery for SQL](/documentation/articles/site-recovery-sql/)
 
 ##SharePoint
 SharePoint is a popular application that enables organizations to collaborate by providing intranet portals, document and file management, social networks, websites and enterprise search capabilities. It is also an application platform for easily deploying custom applications and workflows.
@@ -78,7 +78,7 @@ By using Azure Site Recovery for SharePoint you can:
 - Ease SharePoint application development and testing by creating a production-like copy on-demand for testing and debugging.
 - Simplify your path to the cloud by using ASR to migrate SharePoint deployments to Azure.
 
-Refer the linked document for detailed guidance about [deploying Azure Site Recovery for Sharepoint](http://aka.ms/asr-sharepoint)
+Refer the linked document for detailed guidance about [deploying Azure Site Recovery for Sharepoint](https://gallery.technet.microsoft.com/SharePoint-DR-Solution-f6b4aeae)
 
 
 ##Dynamics AX
@@ -88,14 +88,14 @@ Microsoft Dynamics AX is a leading enterprise resource planning (ERP) solution t
 - Simplify your path to the cloud by using ASR to migrate Dynamics Ax deployments to Azure.
 - Ease Dynamics application development and testing by creating a production-like copy on-demand for testing and debugging.
 
-Refer the linked document for detailed guidance about [deploying Azure Site Recovery for Dynamics AX](http://aka.ms/asr-dynamics)
+Refer the linked document for detailed guidance about [deploying Azure Site Recovery for Dynamics AX](https://gallery.technet.microsoft.com/Dynamics-AX-DR-Solution-b2a76281)
 
 ## RDS 
 Windows Server Remote Desktop Services (RDS) accelerates and extends desktop and application deployments to any device, improving remote worker efficiency, while helping to keep critical intellectual property secure and simplify regulatory compliance. Remote Desktop Services enables virtual desktop infrastructure (VDI), session-based desktops, and applications, allowing users to work anywhere. 
 
 With ASR, you can enable protection of managed or unmanaged pooled virtual desktops to a secondary site and remote applications and sessions to a secondary site or Azure.
 
-Refer the linked document for detailed guidance about [deploying Azure Site Recovery for RDS/VDI](http://aka.ms/asr-rds)
+Refer the linked document for detailed guidance about [deploying Azure Site Recovery for RDS/VDI](https://gallery.technet.microsoft.com/Remote-Desktop-DR-Solution-bdf6ddcb)
 
 
 ## Exchange
@@ -106,7 +106,7 @@ Microsoft Exchange natively supports enterprise class high availability and disa
 - Exchange DAGs are the recommended deployment option to enable best in class disaster recovery for Exchange deployments. ASR Recovery Plans can include DAGs to orchestrate DAG failovers across sites.
 - For small deployments, such as a single server or non-clustered servers, Azure Site Recovery can protect and failover individual servers to Azure or to a secondary site.
 
-Refer the linked document for detailed guidance about [deploying Azure Site Recovery for Exchange](http://aka.ms/asr-exchange)
+Refer the linked document for detailed guidance about [deploying Azure Site Recovery for Exchange](https://gallery.technet.microsoft.com/Exchange-DR-Solution-using-11a7dcb6)
 
 ## SAP
 

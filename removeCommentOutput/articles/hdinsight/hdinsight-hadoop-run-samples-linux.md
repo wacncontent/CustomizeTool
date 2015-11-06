@@ -1,17 +1,16 @@
-<!-- not suitable for Mooncake -->
-
 <properties
-	pageTitle="Run the Hadoop samples in HDInsight | Windows Azure"
+	pageTitle="Run the Hadoop samples in Linux-based HDInsight | Windows Azure"
 	description="Get started using MapReduce samples with Linux-based HDInsight. Use SSH to connect to the cluster, then use the Hadoop command to run sample jobs."
 	services="hdinsight"
 	documentationCenter=""
 	authors="Blackmist"
 	manager="paulettm"
-	editor="cgronlun"/>
+	editor="cgronlun"
+    tags="azure-portal"/>
 
 <tags
 	ms.service="hdinsight"
-	ms.date="06/25/2015"
+	ms.date="10/09/2015"
 	wacn.date=""/>
 
 
@@ -25,7 +24,7 @@ Linux-based HDInsight clusters provide a set of MapReduce samples that can be us
 
 ##Prerequisites
 
-- **An Azure subscription**: 
+- **An Azure subscription**: See [Get Azure trial](/pricing/1rmb-trial/)
 
 - **A Linux-based HDInsight cluster**: See [Get started using Hadoop with Hive in HDInsight on Linux](/documentation/articles/hdinsight-hadoop-linux-tutorial-get-started)
 

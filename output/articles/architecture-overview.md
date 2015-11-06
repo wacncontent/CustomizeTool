@@ -58,7 +58,7 @@ Microsoft just released a new architecture course supporting Microsoft certifica
 
 ##Microsoft architecture Blueprints
 
-Microsoft publishes a set of high level [architecture blueprints](http://aka.ms/azblueprints) showing how to build specific types of systems using Microsoft products. 
+Microsoft publishes a set of high level [architecture blueprints](https://msdn.microsoft.com/dn630664) showing how to build specific types of systems using Microsoft products. 
 
 Each blueprint includes a
 
@@ -74,11 +74,11 @@ The Blueprints use the [Cloud and Enterprise Symbol Set](#symbol-and-icon-sets).
 
 ##3D Blueprint Visio template
 
-The 3D versions of the [Microsoft Architecture Blueprints](http://aka.ms/azblueprints) were initially created in a non-Microsoft tool. A new Visio 2013 (and later) template shipped on Aug 5, 2015 as part of a [Microsoft Architecture certification course distributed on EDX.ORG](#microsoft-architecture-certification-course). 
+The 3D versions of the [Microsoft Architecture Blueprints](https://msdn.microsoft.com/dn630664) were initially created in a non-Microsoft tool. A new Visio 2013 (and later) template shipped on Aug 5, 2015 as part of a [Microsoft Architecture certification course distributed on EDX.ORG](#microsoft-architecture-certification-course). 
 
 The template is also available outside the course. 
 
-- [View the training video](http://aka.ms/3dBlueprintTemplateVideo) first so you know what it can do   
+- [View the training video](https://www.youtube.com/watch?v=Tag2HNAJh4Y&feature=youtu.be) first so you know what it can do   
 - Download the [Microsoft 3d Blueprint Visio Template](http://aka.ms/3DBlueprintTemplate)
 - Download the [Cloud and Enterprise Symbols](#symbol-and-icon-sets) to use with the 3D template
 
@@ -90,7 +90,7 @@ Email us at [CnESymbols@microsoft.com](mailto:CnESymbols@microsoft.com) for spec
 
 ##Drawing symbol and icon sets 
 
-[View the Visio and symbols training video](http://aka.ms/CnESymbolsVideo) and then [download the Cloud and Enterprise Symbol set](http://aka.ms/CnESymbols) to help create technical materials that describe Azure, Windows Server, SQL Server and more. You can use the symbols in architecture diagrams, training materials, presentations, datasheets, infographics, whitepapers and even 3rd party books if the book trains people to use Microsoft products. However, they are not meant for use in user interfaces.
+[View the Visio and symbols training video](https://www.youtube.com/watch?v=_EKbbo9HPS4&feature=youtu.be&t=2m41s) and then [download the Cloud and Enterprise Symbol set](http://aka.ms/CnESymbols) to help create technical materials that describe Azure, Windows Server, SQL Server and more. You can use the symbols in architecture diagrams, training materials, presentations, datasheets, infographics, whitepapers and even 3rd party books if the book trains people to use Microsoft products. However, they are not meant for use in user interfaces.
 
 The CnE symbols are in Visio and PNG formats. Additional instructions on how to use the PNGs in PowerPoint are included in the set. 
 

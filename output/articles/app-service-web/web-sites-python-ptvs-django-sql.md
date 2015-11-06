@@ -18,22 +18,12 @@
 
 # Django and SQL Database on Azure with Python Tools 2.2 for Visual Studio 
 
-In this tutorial, we'll use [Python Tools for Visual Studio] to create a simple polls web app using one of the PTVS sample templates. <!-- deleted by customization This tutorial is also available as a [video](https://www.youtube.com/watch?v=ZwcoGcIeHF4). -->
+In this tutorial, we'll use [Python Tools for Visual Studio] to create a simple polls web app using one of the PTVS sample templates. This tutorial is also available as a [video](https://www.youtube.com/watch?v=ZwcoGcIeHF4).
 
 We'll learn how to use a SQL database hosted on Azure, how to configure the web app to use a SQL database, and how to publish the web app to [Azure Websites](/documentation/services/web-sites/).
 
 See the [Python Developer Center] for more articles that cover development of Azure Websites with PTVS using Bottle, Flask and Django web frameworks, with MongoDB, Azure Table Storage, MySQL and SQL Database services. While this article focuses on Azure Websites, the steps are similar when developing [Azure Cloud Services].
 
-<!-- keep by customization: begin -->
-+ [Prerequisites](#prerequisites)
-+ [Create the Project](#create-the-project)
-+ [Create a SQL Database](#create-a-sql-database)
-+ [Configure the Project](#configure-the-project)
-+ [Publish to an Azure Website](#publish-to-an-azure-website)
-+ [Next steps](#next-steps)
-
-<a name="prerequisites"></a>
-<!-- keep by customization: end -->
 ## Prerequisites
 
  - Visual Studio 2013 or 2015
@@ -43,10 +33,8 @@ See the [Python Developer Center] for more articles that cover development of Az
  - [Python 2.7 32-bit]
 
 [AZURE.INCLUDE [create-account-and-websites-note](../includes/create-account-and-websites-note.md)]
-<!-- deleted by customization
 
 >[AZURE.NOTE] If you want to get started with Azure Websites before signing up for an Azure account, go to [Try Azure Websites](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure Websites. No credit cards required; no commitments.
--->
 
 ## Create the Project
 
@@ -205,12 +193,10 @@ Follow these links to learn more about Python Tools for Visual Studio, Django an
   - [Remote Debugging on Windows Azure]
 - [Django Documentation]
 - [SQL Database]
-<!-- deleted by customization
 
 ## What's changed
 * For a guide to the change from Websites to Azure Websites see: [Azure Websites and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
 * For a guide to the change of the Management Portal to the new portal see: [Reference for navigating the preview portal](https://manage.windowsazure.cn/)
--->
 
 
 <!--Link references-->

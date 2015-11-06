@@ -21,7 +21,7 @@ In this document, learn how to use Maven to create a basic word count MapReduce 
 ## Prerequisites
 
 - **An Azure subscription**. See [Get Azure trial](/pricing/1rmb-trial/).
-* **A Windows <!-- deleted by customization or Linux --> based Hadoop on HDInsight cluster**. See <!-- deleted by customization [Provision Linux-based Hadoop on HDInsight](/documentation/articles/hdinsight-provision-clusters) or --> [Provision Windows-based Hadoop on HDInsight](/documentation/articles/hdinsight-provision-clusters) for more information.
+* **A Windows or Linux based Hadoop on HDInsight cluster**. See [Provision Linux-based Hadoop on HDInsight](/documentation/articles/hdinsight-provision-clusters) or [Provision Windows-based Hadoop on HDInsight](/documentation/articles/hdinsight-provision-clusters) for more information.
 
 * **[Maven](http://maven.apache.org/)**
 
@@ -178,7 +178,6 @@ In this document, learn how to use Maven to create a basic word count MapReduce 
         mvn package
 
     Once this job completes, the package containing the WordCount application can be found at **target/scaldingwordcount-1.0-SNAPSHOT.jar**.
-<!-- deleted by customization
 
 ## Run the job on a Linux-based cluster
 
@@ -223,7 +222,6 @@ In this document, learn how to use Maven to create a basic word count MapReduce 
         wrote   34
         wrotefootnote   1
         wrought 7
--->
 
 ## Run the job on a Windows-based cluster
 

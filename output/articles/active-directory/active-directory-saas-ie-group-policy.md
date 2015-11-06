@@ -1,5 +1,5 @@
 <properties
-   pageTitle="How to Deploy the Access Panel Extension for Internet Explorer using Group Policy | Microsoft Azure"
+   pageTitle="How to Deploy the Access Panel Extension for Internet Explorer using Group Policy | Windows Azure"
    description="How to use group policy to deploy the Internet Explorer add-on for the My Apps portal."
    services="active-directory"
    documentationCenter=""
@@ -7,17 +7,13 @@
    manager="stevenpo"
    editor=""/>
 <tags
-   ms.service="active-directory"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="identity"
-   ms.date="09/28/2015"
-   ms.author="liviodlc"/>
+	ms.service="active-directory"
+	ms.date="09/28/2015"
+	wacn.date=""/>
 
 #How to Deploy the Access Panel Extension for Internet Explorer using Group Policy
 
-This tutorial shows how to use group policy to remotely install the Access Panel extension for Internet Explorer on your users' machines. This extension is required for Internet Explorer users who need to sign into apps that are configured using [password-based single sign-on](active-directory-appssoaccess-whatis.md#password-based-single-sign-on).
+This tutorial shows how to use group policy to remotely install the Access Panel extension for Internet Explorer on your users' machines. This extension is required for Internet Explorer users who need to sign into apps that are configured using [password-based single sign-on](/documentation/articles/active-directory-appssoaccess-whatis#password-based-single-sign-on).
 
 It is recommended that admins automate the deployment of this extension. Otherwise, users will have to download and install the extension themselves, which is prone to user error and requires administrator permissions. This tutorial covers one method of automating software deployments by using group policy. [Learn more about group policy.](https://technet.microsoft.com/windowsserver/bb310732.aspx)
 
@@ -25,8 +21,8 @@ The Access Panel extension is also available for [Chrome](https://go.microsoft.c
 
 ##Prerequisites
 
-- You have set up [Active Directory Domain Services](https://msdn.microsoft.com/library/aa362244%28v=vs.85%29.aspx), and you have joined your users' machines to your domain.
-- You must have the "Edit settings" permission in order to edit Group Policy Objects (GPOs). By default, members of the following security groups have this permission: Domain Administrators, Enterprise Administrators, and Group Policy Creator Owners. [Learn more.](https://technet.microsoft.com/library/cc781991%28v=ws.10%29.aspx)
+- You have set up [Active Directory Domain Services](https://msdn.microsoft.com/zh-cn/library/aa362244%28v=vs.85%29.aspx), and you have joined your users' machines to your domain.
+- You must have the "Edit settings" permission in order to edit Group Policy Objects (GPOs). By default, members of the following security groups have this permission: Domain Administrators, Enterprise Administrators, and Group Policy Creator Owners. [Learn more.](https://technet.microsoft.com/zh-cn/library/cc781991%28v=ws.10%29.aspx)
 
 ##Step 1: Create the Distribution Point
 
@@ -42,9 +38,9 @@ First, you must place the installer package on a network location that can be ac
 
 	![Open Files and Storage Services](./media/active-directory-saas-ie-group-policy/shares.png)
 
-4. Complete the **New Share Wizard** and set permissions to ensure that it can be accessed from your users' machines. [Learn more about shares.](https://technet.microsoft.com/library/cc753175.aspx)
+4. Complete the **New Share Wizard** and set permissions to ensure that it can be accessed from your users' machines. [Learn more about shares.](https://technet.microsoft.com/zh-cn/library/cc753175.aspx)
 
-5. Download the following Microsoft Windows Installer package (.msi file): [Access Panel Extension.msi](https://account.activedirectory.windowsazure.com/Applications/Installers/x64/Access Panel Extension.msi)
+5. Download the following Microsoft Windows Installer package (.msi file): [Access Panel Extension.msi](https://account.activedirectory.windowsazure.cn/Applications/Installers/x64/Access Panel Extension.msi)
 
 6. Copy the installer package to a desired location on the share.
 
@@ -78,7 +74,7 @@ First, you must place the installer package on a network location that can be ac
 
 ##Step 3: Assign the Installation Package
 
-1. Determine whether you would like to deploy the extension based on **Computer Configuration** or **User Configuration**. When using [computer configuration](https://technet.microsoft.com/library/cc736413%28v=ws.10%29.aspx), the extension will be installed on the computer regardless of which users log on to it. On the other hand, with [user configuration](https://technet.microsoft.com/library/cc781953%28v=ws.10%29.aspx), users will have the extension installed for them regardless of which computers they log on to.
+1. Determine whether you would like to deploy the extension based on **Computer Configuration** or **User Configuration**. When using [computer configuration](https://technet.microsoft.com/zh-cn/library/cc736413%28v=ws.10%29.aspx), the extension will be installed on the computer regardless of which users log on to it. On the other hand, with [user configuration](https://technet.microsoft.com/zh-cn/library/cc781953%28v=ws.10%29.aspx), users will have the extension installed for them regardless of which computers they log on to.
 
 2. In the left pane of the **Group Policy Management Editor** window, go to either of the following folder paths, depending on which type of configuration you chose:
 	- `Computer Configuration/Policies/Software Settings/`
@@ -98,7 +94,7 @@ First, you must place the installer package on a network location that can be ac
 
 	![Select Assigned, then click OK.](./media/active-directory-saas-ie-group-policy/deployment-method.png)
 
-The extension is now deployed to the OU that you selected. [Learn more about Group Policy Software Installation.](https://technet.microsoft.com/library/cc738858%28v=ws.10%29.aspx)
+The extension is now deployed to the OU that you selected. [Learn more about Group Policy Software Installation.](https://technet.microsoft.com/zh-cn/library/cc738858%28v=ws.10%29.aspx)
 
 ##Step 4: Auto-Enable the Extension for Internet Explorer 
 
@@ -127,7 +123,7 @@ In addition to running the installer, every extension for Internet Explorer must
 
 5. Click **OK** to apply your changes and close the **Add-on List** window.
 
-The extension should now be enabled for the machines in the selected OU. [Learn more about using group policy to enable or disable Internet Explorer add-ons.](https://technet.microsoft.com/library/dn454941.aspx)
+The extension should now be enabled for the machines in the selected OU. [Learn more about using group policy to enable or disable Internet Explorer add-ons.](https://technet.microsoft.com/zh-cn/library/dn454941.aspx)
 
 ##Step 5: Testing the Deployment
 
@@ -147,4 +143,4 @@ Follow the steps below to verify if the extension deployment was successful:
 
 	![Verify that the Access Panel Extension is installed and enabled.](./media/active-directory-saas-ie-group-policy/verify-install.png)
 
-[AZURE.INCLUDE [saas-toc](../../includes/active-directory-saas-toc.md)]
+[AZURE.INCLUDE [saas-toc](../includes/active-directory-saas-toc.md)]

@@ -233,14 +233,14 @@ Yes. ExpressRoute premium is supported cor ExpressRoute circuits connected throu
 
 1. Review the  [ExpressRoute prerequisites page](/documentation/articles/expressroute-prerequisites) page to make sure you meet the requirements.
 2. Review the list of service providers and locations at [ExpressRoute partners and locations](/documentation/articles/expressroute-locations) to ensure that your connectivity needs are met.
-3. Plan your capacity requirements by reviewing [Network planning and performance tuning for Office 365](http://aka.ms/tune/).
+3. Plan your capacity requirements by reviewing [Network planning and performance tuning for Office 365](https://support.office.com/zh-cn/article/Network-planning-and-performance-tuning-for-Office-365-e5f1228c-da3c-4654-bf16-d163daee8848).
 4. Follow the steps listed in the workflows below to setup connectivity.
 
 	- [Configure an ExpressRoute connection through a network service provider](/documentation/articles/expressroute-configuring-nsps)
 	- [Configure an ExpressRoute connection through an exchange provider](/documentation/articles/expressroute-configuring-exps)
 
 ### Can my existing ExpressRoute circuits support connectivity to Office 365 services?
-Yes. Your existing ExpressRoute circuit can be configured to support connectivity to Office 365 services. Ensure that you have sufficient capacity to connect to Office 365 services. [Network planning and performance tuning for Office 365](http://aka.ms/tune/) will help you plan your connectivity needs.
+Yes. Your existing ExpressRoute circuit can be configured to support connectivity to Office 365 services. Ensure that you have sufficient capacity to connect to Office 365 services. [Network planning and performance tuning for Office 365](https://support.office.com/zh-cn/article/Network-planning-and-performance-tuning-for-Office-365-e5f1228c-da3c-4654-bf16-d163daee8848) will help you plan your connectivity needs.
 
 The following tutorials will help you:
 

@@ -58,9 +58,9 @@ To create this example cloud-only virtual network, do the following
 
 	![][Image2]
 
-4. Click the next arrow on the lower right. For more information about the settings on this page, see the Virtual Network Details page section in [About Configuring a Virtual Network using the Management Portal](http://go.microsoft.com/fwlink/p/?linkid=248092&clcid=0x409).
+4. Click the next arrow on the lower right. For more information about the settings on this page, see the Virtual Network Details page section in [About Configuring a Virtual Network using the Management Portal](/documentation/articles/virtual-networks-settings/).
 
-5. On the **DNS Servers and VPN Connectivity** page, click the next arrow on the lower right. Azure will assign an Internet-based Azure DNS server to new virtual machines that are added to this virtual network, which will allow them to access Internet resources. For more information about the settings on this page, see the DNS Servers and VPN Connectivity page in [About Configuring a Virtual Network using the Management Portal](http://go.microsoft.com/fwlink/p/?linkid=248092&clcid=0x409).
+5. On the **DNS Servers and VPN Connectivity** page, click the next arrow on the lower right. Azure will assign an Internet-based Azure DNS server to new virtual machines that are added to this virtual network, which will allow them to access Internet resources. For more information about the settings on this page, see the DNS Servers and VPN Connectivity page in [About Configuring a Virtual Network using the Management Portal](/documentation/articles/virtual-networks-settings/).
 	
 6.	Just like a real network, the virtual network needs a range of IP addresses (known as an address space) to assign to virtual machines that you place within it. The virtual network also supports subnets, which need their own address spaces, derived from the virtual network address space. For this tutorial, we will create the BackEndSubnet and FrontEndSubnet. On the **Virtual Network Address Spaces** page, configure the following:
 
@@ -76,7 +76,7 @@ To create this example cloud-only virtual network, do the following
 - FrontEndSubnet: 10.0.2.0/24
 - BackEndSubnet: 10.0.1.0/24
 
- For more information about the settings on this page, see the Virtual Network Address Spaces page in [About Configuring a Virtual Network using the Management Portal](http://go.microsoft.com/fwlink/p/?linkid=248092&clcid=0x409).
+ For more information about the settings on this page, see the Virtual Network Address Spaces page in [About Configuring a Virtual Network using the Management Portal](/documentation/articles/virtual-networks-settings/).
 
 
 7. Click the checkmark in the lower right of the page and your virtual network will begin to create. When your virtual network has been created, you will see **Created** listed under Status on the **Networks** page in the Azure Management Portal.  
@@ -95,18 +95,18 @@ When you are ready to create a cloud-only virtual network that works for your sp
 
 If you are looking for design scenarios and advanced information about Virtual Network, see the [Azure Virtual Network Overview](/documentation/articles/virtual-networks-overview). 
 
-For additional Virtual Network configuration procedures and settings, see [Azure Virtual Network Configuration Tasks](http://go.microsoft.com/fwlink/p/?linkid=296652&clcid=0x409).
+For additional Virtual Network configuration procedures and settings, see [Azure Virtual Network Configuration Tasks](/documentation/services/networking/).
 
 
 ## See Also
 
--  [Azure Virtual Network FAQ](http://go.microsoft.com/fwlink/p/?LinkId=296650)
+-  [Azure Virtual Network FAQ](/documentation/articles/virtual-networks-faq/)
 
 -  [Azure Virtual Network Configuration Tasks](/documentation/services/networking/)
 
 -  [Configuring a Virtual Network Using Network Configuration Files](/documentation/articles/virtual-networks-using-network-configuration-file)
 
--  [Name Resoultion for VMs and Role Instances](http://go.microsoft.com/fwlink/?LinkId=248097)
+-  [Name Resoultion for VMs and Role Instances](/documentation/articles/virtual-networks-name-resolution-for-vms-and-role-instances/)
 
 
 [Image1]: ./media/create-virtual-network/createVNet_01_OpenVirtualNetworkWizard.png

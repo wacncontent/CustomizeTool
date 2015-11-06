@@ -1,6 +1,6 @@
 
 <properties
-	pageTitle="Using attributes to create advanced rules| Microsoft Azure"
+	pageTitle="Using attributes to create advanced rules| Windows Azure"
 	description="How-to's to create advanced rules for a group including supported expression rule operators and parameters."
 	services="active-directory"
 	documentationCenter=""
@@ -9,13 +9,9 @@
 	editor=""/>
 
 <tags
-	ms.service="active-directory" 
-	ms.workload="identity" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="10/09/2015" 
-	ms.author="femila"/>
+	ms.service="active-directory"
+	ms.date="10/09/2015"
+	wacn.date=""/>
 
 
 # Using attributes to create advanced rules
@@ -165,10 +161,10 @@ Direct Reports for *Direct Reports for {UserID_of_manager}*
 ## Additional Information
 Here are some topics that will provide some additional information on Azure Active Directory 
 
-* [Troubleshooting dynamic memberships for groups](active-directory-accessmanagement-troubleshooting.md)
+* [Troubleshooting dynamic memberships for groups](/documentation/articles/active-directory-accessmanagement-troubleshooting)
 
-* [Managing access to resources with Azure Active Directory groups](active-directory-manage-groups.md)
+* [Managing access to resources with Azure Active Directory groups](/documentation/articles/active-directory-manage-groups)
 
-* [What is Azure Active Directory?](active-directory-whatis.md)
+* [What is Azure Active Directory?](/documentation/articles/active-directory-whatis)
 
-* [Integrating your on-premises identities with Azure Active Directory](active-directory-aadconnect.md)
+* [Integrating your on-premises identities with Azure Active Directory](/documentation/articles/active-directory-aadconnect)

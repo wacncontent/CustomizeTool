@@ -44,7 +44,7 @@ To debug a cloud service from a remote machine, you must enable that functionali
 
 If you enable remote debugging for a cloud service, it doesn't exhibit degraded performance or incur additional charges. You shouldn't use remote debugging on a production service, because clients who use the service might be adversely affected.
 
->[AZURE.NOTE] When you publish a cloud service from Visual Studio, you can enable **IntelliTrace** for any roles in that service that target the .NET Framework 4 or the .NET Framework 4.5. By using **IntelliTrace**, you can examine events that occurred in a role instance in the past and reproduce the context from that time. See [Debugging a published cloud service with IntelliTrace and Visual Studio](http://go.microsoft.com/fwlink/?LinkID=623016) and [Using IntelliTrace](https://msdn.microsoft.com/zh-cn/library/dd264915.aspx).
+>[AZURE.NOTE] When you publish a cloud service from Visual Studio, you can enable **IntelliTrace** for any roles in that service that target the .NET Framework 4 or the .NET Framework 4.5. By using **IntelliTrace**, you can examine events that occurred in a role instance in the past and reproduce the context from that time. See [Debugging a published cloud service with IntelliTrace and Visual Studio](/documentation/articles/vs-azure-tools-intellitrace-debug-published-cloud-services/) and [Using IntelliTrace](https://msdn.microsoft.com/zh-cn/library/dd264915.aspx).
 
 ### To enable remote debugging for a cloud service
 
@@ -99,7 +99,7 @@ For Azure SDK 4.3, remote debugging has the following limitations.
 
 You can debug programs that run on Azure virtual machines by using Server Explorer in Visual Studio. When you enable remote debugging on an Azure virtual machine, Azure installs the remote debugging extension on the virtual machine. Then, you can attach to processes on the virtual machine and debug as you normally would.
 
->[AZURE.NOTE] Virtual machines created through the Azure resource manager stack can be remotely debugged by using Cloud Explorer in Visual Studio 2015. For more information, see [Managing Azure Resources with Cloud Explorer](http://go.microsoft.com/fwlink/?LinkId=623031).
+>[AZURE.NOTE] Virtual machines created through the Azure resource manager stack can be remotely debugged by using Cloud Explorer in Visual Studio 2015. For more information, see [Managing Azure Resources with Cloud Explorer](https://msdn.microsoft.com/zh-cn/library/azure/mt185741.aspx).
 
 ### To debug an Azure virtual machine
 
@@ -144,7 +144,7 @@ Visual Studio ASP.NET projects offer an option to create a handy virtual machine
 
     **Note:** You'll be asked to sign in to your Azure account if you're not already signed in.
 
-1. Select the various settings for the virtual machine and then click **OK**. See [Virtual Machines]( http://go.microsoft.com/fwlink/?LinkId=623033) for more information.
+1. Select the various settings for the virtual machine and then click **OK**. See [Virtual Machines]( https://msdn.microsoft.com/zh-cn/library/azure/jj156003.aspx) for more information.
 
     The name you enter for DNS name will be the name of the virtual machine. 
 
@@ -184,5 +184,5 @@ Visual Studio ASP.NET projects offer an option to create a handy virtual machine
 
 ## Next steps
 
-- Use **Intellitrace** to collect a log of calls and events from a release server. See [Debugging a Published Cloud Service with IntelliTrace and Visual Studio](http://go.microsoft.com/fwlink/?LinkID=623016).
-- Use **Azure Diagnostics** to log detailed information from code running within roles, whether the roles are running in the development environment or in Azure. See [Collecting logging data by using Azure Diagnostics](http://go.microsoft.com/fwlink/p/?LinkId=400450).
+- Use **Intellitrace** to collect a log of calls and events from a release server. See [Debugging a Published Cloud Service with IntelliTrace and Visual Studio](/documentation/articles/vs-azure-tools-intellitrace-debug-published-cloud-services/).
+- Use **Azure Diagnostics** to log detailed information from code running within roles, whether the roles are running in the development environment or in Azure. See [Collecting logging data by using Azure Diagnostics](https://msdn.microsoft.com/zh-cn/library/gg433048.aspx).

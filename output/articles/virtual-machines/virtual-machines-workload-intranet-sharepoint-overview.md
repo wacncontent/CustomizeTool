@@ -40,7 +40,7 @@ You deploy this configuration in the following phases:
 - [Phase 4: Configure SharePoint servers](/documentation/articles/virtual-machines-workload-intranet-sharepoint-phase4). Create and configure the four SharePoint virtual machines.
 - [Phase 5: Create the availability group and add the SharePoint databases](/documentation/articles/virtual-machines-workload-intranet-sharepoint-phase5). Prepare databases and create a SQL Server AlwaysOn availability group.
 
-This deployment of SharePoint with SQL Server AlwaysOn is designed to accompany the [SharePoint with SQL Server AlwaysOn infographic](http://go.microsoft.com/fwlink/?LinkId=394788) and incorporate the latest recommendations.
+This deployment of SharePoint with SQL Server AlwaysOn is designed to accompany the [SharePoint with SQL Server AlwaysOn infographic](https://azure.microsoft.com/zh-cn/documentation/infographics/sharepoint-sqlserver-alwayson/) and incorporate the latest recommendations.
 
 This configuration is a prescriptive, phase-by-phase guide for a predefined architecture to create a functional, highly available intranet SharePoint farm in Azure infrastructure services. For additional architectural guidance on implementing SharePoint 2013 in Azure, see [Windows Azure architectures for SharePoint 2013](https://technet.microsoft.com/zh-cn/library/dn635309.aspx).
 
@@ -63,7 +63,7 @@ To start the configuration of this workload, go to [Phase 1: Configure Azure](/d
 
 ## Additional resources
 
-[SharePoint with SQL Server AlwaysOn infographic](http://go.microsoft.com/fwlink/?LinkId=394788)
+[SharePoint with SQL Server AlwaysOn infographic](https://azure.microsoft.com/zh-cn/documentation/infographics/sharepoint-sqlserver-alwayson/)
 
 [Windows Azure architectures for SharePoint 2013](https://technet.microsoft.com/zh-cn/library/dn635309.aspx)
 

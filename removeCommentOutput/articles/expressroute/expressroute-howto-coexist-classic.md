@@ -159,7 +159,7 @@ This procedure will walk you through creating a VNet and create site-to-site and
 		OperationStatus      : Succeeded
 
 
-8. Configure your local VPN device to connect to the new gateway. Use the information that you retrieved in step 6 when configuring your VPN device. For more information about VPN device configuration, see [VPN Device Configuration](http://go.microsoft.com/fwlink/p/?linkid=615099).
+8. Configure your local VPN device to connect to the new gateway. Use the information that you retrieved in step 6 when configuring your VPN device. For more information about VPN device configuration, see [VPN Device Configuration](/documentation/articles/vpn-gateway-about-vpn-devices/).
 
 9. Link the site-to-site VPN gateway on Azure to the local gateway.
 

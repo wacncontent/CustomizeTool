@@ -25,6 +25,7 @@ A screenshot of the completed application is below:
 
 [AZURE.INCLUDE [create-account-and-websites-note](../includes/create-account-and-websites-note.md)]
 
+>[AZURE.NOTE] If you want to get started with Azure Websites before signing up for an Azure account, go to [Try Azure Websites](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure Websites. No credit cards required; no commitments.
 
 ## Sign into Azure
 
@@ -98,10 +99,9 @@ To learn more about the versions of Node.js that are provided with Azure and how
 
 If you encounter problems with your application after it has been deployed to Azure, see [How to debug a Node.js web app in Azure Websites](/documentation/articles/web-sites-nodejs-debug) for information on diagnosing the problem.
 
-
-[Azure Management Portal]: http://manage.windowsazure.cn
-[Publishing an Azure  Website using Git]: /documentation/articles/web-sites-publish-source-control
-[for free]: /zh-cn/pricing/free-trial
+## What's changed
+* For a guide to the change from Websites to Azure Websites see: [Azure Websites and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
+* For a guide to the change of the Management Portal to the new portal see: [Reference for navigating the preview portal](https://manage.windowsazure.cn/)
 
 [WebMatrix WebSite]: http://www.microsoft.com/click/services/Redirect2.ashx?CR_CC=200106398
 [WebMatrix for Azure]: http://go.microsoft.com/fwlink/?LinkID=253622&clcid=0x409

@@ -34,7 +34,7 @@ The article includes prerequisites for the scenario, and shows you how to set up
 
 Make sure you have these prerequisites in place:
 
-- You'll need a [Windows Azure](http://azure.microsoft.com/) account. You'll need a [Windows Azure](http://azure.microsoft.com/) account. You can start with a [trial](/documentation/articles/free-trial). In addition, you can read about [Azure Site Recovery Manager pricing](/home/features/site-recovery/#price).
+- You'll need a [Windows Azure](http://azure.microsoft.com/) account. You'll need a [Windows Azure](http://azure.microsoft.com/) account. You can start with a [trial](/pricing/1rmb-trial/). In addition, you can read about [Azure Site Recovery Manager pricing](/home/features/site-recovery/#price).
 - You'll need a VMM server in the primary and secondary sites running on System Center 2012 R2.
 - Each VMM server should have at least one cloud that contains:
 	- One or more VMM host groups.

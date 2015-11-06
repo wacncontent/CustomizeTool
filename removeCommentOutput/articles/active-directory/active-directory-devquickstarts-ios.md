@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Azure AD iOS Getting Started | Microsoft Azure"
+	pageTitle="Azure AD iOS Getting Started | Windows Azure"
 	description="How to build an iOS application that integrates with Azure AD for sign in and calls Azure AD protected APIs using OAuth."
 	services="active-directory"
 	documentationCenter="ios"
@@ -9,22 +9,18 @@
 
 <tags
 	ms.service="active-directory"
-	ms.workload="identity"
-	ms.tgt_pltfrm="mobile-ios"
-	ms.devlang="objective-c"
-	ms.topic="article"
 	ms.date="10/13/2015"
-	ms.author="brandwe"/>
+	wacn.date=""/>
 
 # Integrate Azure AD into an iOS App
 
-[AZURE.INCLUDE [active-directory-devquickstarts-switcher](../../includes/active-directory-devquickstarts-switcher.md)]
+[AZURE.INCLUDE [active-directory-devquickstarts-switcher](../includes/active-directory-devquickstarts-switcher.md)]
 
-[AZURE.INCLUDE [active-directory-devguide](../../includes/active-directory-devguide.md)]
+[AZURE.INCLUDE [active-directory-devguide](../includes/active-directory-devguide.md)]
 
 Azure AD provides the Active Directory Authentication Library, or ADAL, for iOS clients that need to access protected resources.  ADAL’s sole purpose in life is to make it easy for your app to get access tokens.  To demonstrate just how easy it is, here we’ll build a Objective C To-Do List application that:
 
--	Gets access tokens for calling the Azure AD Graph API using the [OAuth 2.0 authentication protocol](https://msdn.microsoft.com/library/azure/dn645545.aspx).
+-	Gets access tokens for calling the Azure AD Graph API using the [OAuth 2.0 authentication protocol](https://msdn.microsoft.com/zh-cn/library/azure/dn645545.aspx).
 -	Searches a directory for users with a given alias.
 
 To build the complete working application, you’ll need to:
@@ -33,7 +29,7 @@ To build the complete working application, you’ll need to:
 3. Install & Configure ADAL.
 5. Use ADAL to get tokens from Azure AD.
 
-To get started, [download the app skeleton](https://github.com/AzureADQuickStarts/NativeClient-iOS/archive/skeleton.zip) or [download the completed sample](https://github.com/AzureADQuickStarts/NativeClient-iOS/archive/complete.zip).  You'll also need an Azure AD tenant in which you can create users and register an application.  If you don't already have a tenant, [learn how to get one](active-directory-howto-tenant.md).
+To get started, [download the app skeleton](https://github.com/AzureADQuickStarts/NativeClient-iOS/archive/skeleton.zip) or [download the completed sample](https://github.com/AzureADQuickStarts/NativeClient-iOS/archive/complete.zip).  You'll also need an Azure AD tenant in which you can create users and register an application.  If you don't already have a tenant, [learn how to get one](/documentation/articles/active-directory-howto-tenant).
 
 ## *1. Determine what your Redirect URI will be for iOS*
 
@@ -88,8 +84,8 @@ $ pod install
 $ open QuickStart.xcworkspace
 ```
 
--	In the QuickStart project, open the plist file `settings.plist`.  Replace the values of the elements in the section to reflect the values you input into the Azure Portal.  Your code will reference these values whenever it uses ADAL.
-    -	The `tenant` is the domain of your Azure AD tenant, e.g. contoso.onmicrosoft.com
+-	In the QuickStart project, open the plist file `settings.plist`.  Replace the values of the elements in the section to reflect the values you input into the Azure Management Portal.  Your code will reference these values whenever it uses ADAL.
+    -	The `tenant` is the domain of your Azure AD tenant, e.g. contoso.partner.onmschina.cn
     -	The `clientId` is the clientId of your application you copied from the portal.
     -	The `redirectUri` is the redirect url you registered in the portal.
 
@@ -222,6 +218,6 @@ ADAL makes it easy to incorporate all of these common identity features into you
 
 For reference, the completed sample (without your configuration values) is provided [here](https://github.com/AzureADQuickStarts/NativeClient-iOS/archive/complete.zip).  You can now move on to additional scenarios.  You may want to try:
 
-[Secure a Node.JS Web API with Azure AD >>](../active-directory-devquickstarts-webapi-nodejst.md)
+[Secure a Node.JS Web API with Azure AD >>](/documentation/articles/active-directory-devquickstarts-webapi-nodejst)
 
-[AZURE.INCLUDE [active-directory-devquickstarts-additional-resources](../../includes/active-directory-devquickstarts-additional-resources.md)]
+[AZURE.INCLUDE [active-directory-devquickstarts-additional-resources](../includes/active-directory-devquickstarts-additional-resources.md)]

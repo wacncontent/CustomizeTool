@@ -19,6 +19,7 @@ Learn how to run a MapReduce program on Hadoop cluster in HDInsight using Azure 
 
 The program are installed on the clusters. The text file analyzed in this tutorial is the Project Gutenberg eBook edition of The Notebooks of Leonardo Da Vinci.
 
+> [AZURE.NOTE] The steps in this document require a Windows client. For steps on using the word count example from a Linux, OS X, or Unix client, with a Linux-based HDInsight cluster, see [Use MapReduce with Hadoop on HDInsight with SSH](/documentation/articles/hdinsight-hadoop-use-mapreduce-ssh) or [Use MapReduce with Hadoop on HDInsight using Curl](/documentation/articles/hdinsight-hadoop-use-mapreduce-curl).
 
 **Other related articles:**
 
@@ -33,9 +34,6 @@ The program are installed on the clusters. The text file analyzed in this tutori
 
 - **An HDInsight cluster**. For instructions about the various ways in which such clusters can be created, see [Get Started with Azure HDInsight][hdinsight-get-started] or [Provision HDInsight Clusters](/documentation/articles/hdinsight-provision-clusters).
 - **A workstation with Azure PowerShell**. See [Install and use Azure PowerShell](/documentation/articles/install-configure-powershell).
-
-
-<a id="run-sample"></a>
 
 ## Run the sample by using Azure PowerShell
 
@@ -121,9 +119,6 @@ The output from the WordCount script should appear in the command window:
 
 Note that the output files of a MapReduce job are immutable. So if you rerun this sample, you need to change the name of the output file.
 
-
-<a id="java-code"></a>
-
 ##Java source code
 
 	package org.apache.hadoop.examples;
@@ -193,9 +188,6 @@ Note that the output files of a MapReduce job are immutable. So if you rerun thi
     System.exit(job.waitForCompletion(true) ? 0 : 1);
   	}
   	}
-
-
-<a id="next-steps"></a>
 
 ## Next steps
 

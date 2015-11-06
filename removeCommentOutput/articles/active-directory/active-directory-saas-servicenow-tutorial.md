@@ -1,4 +1,4 @@
-<properties pageTitle="Tutorial: Azure Active Directory integration with ServiceNow | Microsoft Azure" description="Learn how to use ServiceNow with Azure Active Directory to enable single sign-on, automated provisioning, and more!." services="active-directory" authors="MarkusVi"  documentationCenter="na" manager="stevenpo"/>
+<properties pageTitle="Tutorial: Azure Active Directory integration with ServiceNow | Windows Azure" description="Learn how to use ServiceNow with Azure Active Directory to enable single sign-on, automated provisioning, and more!." services="active-directory" authors="MarkusVi"  documentationCenter="na" manager="stevenpo"/>
 <tags ms.service="active-directory" ms.devlang="na" ms.topic="article" ms.tgt_pltfrm="na" ms.workload="identity" ms.date="08/01/2015" ms.author="markvi" />
 #Tutorial: Azure Active Directory integration with ServiceNow
 >[AZURE.TIP]For feedback, click [here](http://go.microsoft.com/fwlink/?LinkId=521880).
@@ -9,7 +9,7 @@ The scenario outlined in this tutorial assumes that you already have the followi
 -   A valid Azure subscription
 -   A tenant in ServiceNow
   
-After completing this tutorial, the Azure AD users you have assigned to ServiceNow will be able to single sign into the application at your ServiceNow company site (service provider initiated sign on), or using the [Introduction to the Access Panel](active-directory-saas-access-panel-introduction.md)
+After completing this tutorial, the Azure AD users you have assigned to ServiceNow will be able to single sign into the application at your ServiceNow company site (service provider initiated sign on), or using the [Introduction to the Access Panel](/documentation/articles/active-directory-saas-access-panel-introduction)
   
 The scenario outlined in this tutorial consists of the following building blocks:
 
@@ -62,7 +62,7 @@ As part of this procedure, you are required to upload a base-64 encoded certific
 
     ![Configure single sign-on](./media/active-directory-saas-servicenow-tutorial/IC749323.png "Configure single sign-on")
 
-2.  On the **How would you like users to sign on to ServiceNow** page, select **Microsoft Azure AD Single Sign-On**, and then click **Next**.
+2.  On the **How would you like users to sign on to ServiceNow** page, select **Windows Azure AD Single Sign-On**, and then click **Next**.
 
     ![Configure single sign-on](./media/active-directory-saas-servicenow-tutorial/IC749324.png "Configure single sign-on")
 
@@ -82,20 +82,20 @@ As part of this procedure, you are required to upload a base-64 encoded certific
      6.1. As **Enable external authentication**, select **Yes**.
 
 
-     6.2. In **The Identity Provider URL which will issue the SAML2 security token with user info** textbox, type **https://sts.windows.net/<your tenant’s GUID>/**.
+     6.2. In **The Identity Provider URL which will issue the SAML2 security token with user info** textbox, type **https://sts.chinacloudapi.cn/<your tenant’s GUID>/**.
 
 
-     6.3. In **The base URL to the Identity Provider’s AuthnRequest service** textbox, type **https://login.windows.net/<your tenant’s GUID>/saml2**.
+     6.3. In **The base URL to the Identity Provider’s AuthnRequest service** textbox, type **https://login.chinacloudapi.cn/<your tenant’s GUID>/saml2**.
 
 
-     6.4. In **The base URL to the Identity Provider’s SingleLogoutRequest service** textbox, type **https://login.windows.net/<your tenant’s GUID>/saml2**.
+     6.4. In **The base URL to the Identity Provider’s SingleLogoutRequest service** textbox, type **https://login.chinacloudapi.cn/<your tenant’s GUID>/saml2**.
 
 
      6.5. In **The protocol binding for the Identity Provider’s SingleLogoutRequest service** textbox, type **urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect**.
 
      6.6. As **Sign LogoutRequest**, select **Yes**.
 
-     6.7. In the **When SAML 2.0 single sign-on fails because the session is not authenticated, or this is the first login, redirect to this URL** textbox, type **https://login.windows.net/<your tenant’s GUID>/saml2**.
+     6.7. In the **When SAML 2.0 single sign-on fails because the session is not authenticated, or this is the first login, redirect to this URL** textbox, type **https://login.chinacloudapi.cn/<your tenant’s GUID>/saml2**.
 
   
 
@@ -207,10 +207,10 @@ To test your configuration, you need to grant the Azure AD users you want to all
 
     ![Yes](./media/active-directory-saas-servicenow-tutorial/IC767830.png "Yes")
   
-If you want to test your single sign-on settings, open the Access Panel. For more details about the Access Panel, see [Introduction to the Access Panel](active-directory-saas-access-panel-introduction.md).
+If you want to test your single sign-on settings, open the Access Panel. For more details about the Access Panel, see [Introduction to the Access Panel](/documentation/articles/active-directory-saas-access-panel-introduction).
 
 
 ## Additional Resources
 
-* [List of Tutorials on How to Integrate SaaS Apps with Azure Active Directory](active-directory-saas-tutorial-list.md)
-* [What is application access and single sign-on with Azure Active Directory?](active-directory-appssoaccess-whatis.md)
+* [List of Tutorials on How to Integrate SaaS Apps with Azure Active Directory](/documentation/articles/active-directory-saas-tutorial-list)
+* [What is application access and single sign-on with Azure Active Directory?](/documentation/articles/active-directory-appssoaccess-whatis)

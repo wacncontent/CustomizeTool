@@ -18,6 +18,7 @@ Using the [Azure Management Portal](https://manage.windowsazure.cn), you can pro
 
 [AZURE.INCLUDE [hdinsight-azure-portal](../includes/hdinsight-azure-portal.md)]
 
+* [Manage Hadoop clusters in HDInsight by using the Azure preview portal](/documentation/articles/hdinsight-administer-use-management-portal-v1)
 
 ## Other tools for administering HDInsight
 There are also other tools available for administering HDInsight in addition to the Azure Management Portal.

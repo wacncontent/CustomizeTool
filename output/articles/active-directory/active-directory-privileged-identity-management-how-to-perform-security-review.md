@@ -8,18 +8,14 @@
    editor=""/>
 
 <tags
-   ms.service="na"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="identity"
-   ms.date="09/21/2015"
-   ms.author="inhenk"/>
+	ms.service="na"
+	ms.date="09/21/2015"
+	wacn.date=""/>
 
 # Azure Privileged Identity Management: How To Perform a Security Review
 
 ## Performing Security Review
-It is very easy to review privileged access once a [security review has been started](active-directory-privileged-identity-management-how-to-start-security-review.md).
+It is very easy to review privileged access once a [security review has been started](/documentation/articles/active-directory-privileged-identity-management-how-to-start-security-review).
 
 ## For Reviewers: Approving or Denying Access
 
@@ -58,4 +54,4 @@ You can export a review for use with Excel or other program that can use CSV fil
 
 <!--Every topic should have next steps and links to the next logical set of content to keep the customer engaged-->
 ## Next steps
-[AZURE.INCLUDE [active-directory-privileged-identity-management-toc](../../includes/active-directory-privileged-identity-management-toc.md)]
+[AZURE.INCLUDE [active-directory-privileged-identity-management-toc](../includes/active-directory-privileged-identity-management-toc.md)]

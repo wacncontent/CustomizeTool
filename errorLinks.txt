@@ -1,0 +1,96 @@
+url: http://go.microsoft.com/fwlink/?LinkId=%20524782
+error: HTTP Error 403: Forbidden
+url: https://portal.microsoftonline.com)
+error: <urlopen error [Errno 11001] getaddrinfo failed>
+url: http://products.office.com/business/compare-office-365-for-business-plans/
+error: HTTP Error 403: Forbidden
+url: https://github.com/AzureADQuickStarts/NativeClient-iOS/archive/skeleton.zip
+error: HTTP Error 404: Not Found
+url: https://contoso.com
+error: <urlopen error [Errno 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond>
+url: http://go.microsoft.com/fwlink/?LinkId=327881)
+error: HTTP Error 403: Forbidden
+url: https://technet.microsoft.com/library/dn659436.aspx.
+error: HTTP Error 500: Internal Server Error
+url: http://www.microsoft.com/en-us/download/details.aspx?id=47594
+error: HTTP Error 403: Forbidden
+url: https://github.com/AzureADQuickStarts/NativeClient-iOS/archive/complete.zip
+error: HTTP Error 404: Not Found
+url: http://docs.oasis-open.org/wss/oasis-wss-saml-token-profile-1.1#SAMLID
+error: HTTP Error 404: Not Found
+url: https://www.microsoft.com/download/details.aspx?id=40855
+error: HTTP Error 403: Forbidden
+url: https://www.microsoft.com/en-us/licensing/licensing-programs/enterprise.aspx
+error: HTTP Error 403: Forbidden
+url: http://<PROXYADDRESS>:<PROXYPORT>
+error: nonnumeric port: '<PROXYPORT>'
+url: https://apps.dev.microsoft.com)
+error: <urlopen error [Errno 11001] getaddrinfo failed>
+url: http://msdn2.microsoft.com/library/73ctwf33\(VS.90\).aspx
+error: HTTP Error 404: Not Found
+url: https://msdn.microsoft.com/library/azure/dn424880.aspx)
+error: HTTP Error 404: Not Found
+url: https://contoso.onmicrosoft.com/scratchservice
+error: <urlopen error [Errno 11001] getaddrinfo failed>
+url: https://cocoapods.org/?q=adal%20io
+error: HTTP Error 403: Forbidden
+url: http://aka.ms/ssprsetup)
+error: HTTP Error 403: Forbidden
+url: http://www.microsoft.com/en-us/server-cloud/products/microsoft-identity-manager/default.aspx
+error: HTTP Error 403: Forbidden
+url: https://account.citrixonline.com/organization/administration/)
+error: HTTP Error 404: Not Found
+url: http://contoso.my.salesforce.com/)
+error: HTTP Error 404: Not Found
+url: http://schemas.microsoft.com/ws/2008/06/identity/claims/groups
+error: HTTP Error 404: Not Found
+url: https://github.com/AzureADQuickStarts/SinglePageApp-AngularJS-NodeJS/archive/skeleton.zip
+error: HTTP Error 404: Not Found
+url: http://MyDirectorySearcherApp
+error: <urlopen error [Errno 11001] getaddrinfo failed>
+url: https://sts.windows.net/b9411234-09af-49c2-b0c3-653adc1f376e/
+error: HTTP Error 404: Not Found
+url: http://www.microsoft.com/downloads
+error: HTTP Error 403: Forbidden
+url: http://www.microsoft.com/account/default.aspx
+error: HTTP Error 403: Forbidden
+url: https://www.microsoft.com/en-us/licensing/licensing-programs/open-license.aspx
+error: HTTP Error 403: Forbidden
+url: http://go.microsoft.com/fwlink/?linkid=335773
+error: HTTP Error 403: Forbidden
+url: https://www.docusign.net/member/MemberLogin.aspx)
+error: HTTP Error 404: Not Found
+url: https://calebb.net
+error: hostname 'calebb.net' doesn't match either of '*.azurewebsites.net', '*.scm.azurewebsites.net', '*.azure-mobile.net', '*.scm.azure-mobile.net'
+url: https://localhost/phpSample
+error: <urlopen error [Errno 10061] No connection could be made because the target machine actively refused it>
+url: https://graph.windows.net/$TENANT_DOMAIN/reports/auditEvents?api-version=beta
+error: HTTP Error 403: Forbidden
+url: https://github/com/AzureADSamples/Daemon-DotNet
+error: <urlopen error [Errno 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond>
+url: http://products.office.com/
+error: HTTP Error 403: Forbidden
+url: http://www.microsoft.com/en-us/licensing/how-to-buy/how-to-buy.aspx
+error: HTTP Error 403: Forbidden
+url: https://www.microsoft.com/en-us/server-cloud/enterprise-mobility/overview.aspx
+error: HTTP Error 403: Forbidden
+url: https://msdn.microsoft.com/library/azure/jj943764.aspx)
+error: HTTP Error 404: Not Found
+url: https://manage.windowsazure.com)
+error: <urlopen error [Errno 11001] getaddrinfo failed>
+url: https://msdn.microsoft.com/library/windows/desktop/aa380516%28v=vs.85%29.aspx)
+error: HTTP Error 404: Not Found
+url: https://senbon-imadegawa-988.questetra.net/
+error: HTTP Error 503: Service Unavailable
+url: http://comcast.net/)
+error: HTTP Error 404: Not Found
+url: http://docs.oasis-open.org/wss/oasis-wss-saml-token-profile-1.1#SAMLV2.0
+error: HTTP Error 404: Not Found
+url: https://www.microsoft.com/download/details.aspx?id=40779
+error: HTTP Error 403: Forbidden
+url: https://graph.windows.net
+error: HTTP Error 403: Forbidden.
+url: https://proxy.cloudwebappproxy.net/registerapp
+error: HTTP Error 404: Not Found
+url: http://go.microsoft.com/fwlink/?LinkId=615771
+error: HTTP Error 403: Forbidden

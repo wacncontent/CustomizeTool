@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Azure Active Directory Authentication Libraries | Microsoft Azure"
+   pageTitle="Azure Active Directory Authentication Libraries | Windows Azure"
    description="The Azure AD Authentication Library (ADAL) allows client application developers to easily authenticate users to cloud or on-premises Active Directory (AD) and then obtain access tokens for securing API calls."
    services="active-directory"
    documentationCenter=""
@@ -7,13 +7,9 @@
    manager="mbaldwin"
    editor="mbaldwin" />
 <tags
-   ms.service="active-directory"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="identity"
-   ms.date="08/11/2015"
-   ms.author="mbaldwin" />
+	ms.service="active-directory"
+	ms.date="08/11/2015"
+	wacn.date=""/>
 
 # Azure Active Directory Authentication Libraries
 
@@ -57,8 +53,8 @@ In this scenario, a developer has an application running on a server that needs 
 
 ## See Also
 
-[The Azure Active Directory developer's guide](active-directory-developers-guide.md)
+[The Azure Active Directory developer's guide](/documentation/articles/active-directory-developers-guide)
 
-[Authentication scenarios for Azure Active directory](active-directory-authentication-scenarios.md)
+[Authentication scenarios for Azure Active directory](/documentation/articles/active-directory-authentication-scenarios)
 
-[Azure Active Directory code samples](active-directory-code-samples.md)
+[Azure Active Directory code samples](/documentation/articles/active-directory-code-samples)

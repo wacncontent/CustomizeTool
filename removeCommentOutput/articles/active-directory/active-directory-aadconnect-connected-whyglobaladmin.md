@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Why we require an Azure AD global administrator account for setting up Azure AD Connect | Microsoft Azure"
+	pageTitle="Why we require an Azure AD global administrator account for setting up Azure AD Connect | Windows Azure"
 	description="Custom settings description of why we require a global admin account."
 	services="active-directory"
 	documentationCenter=""
@@ -9,12 +9,8 @@
 
 <tags
 	ms.service="active-directory"
-	ms.workload="identity"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="10/13/2015"
-	ms.author="billmath"/>
+	wacn.date=""/>
 
 # Why we require an Azure AD global administrator account for setting up Azure AD Connect
 
@@ -30,5 +26,5 @@ For custom settings | We enable sync in your Azure AD directory and create the A
 **Additional Resources**
 
 
-* [More on Azure AD Connect accounts and permissions](active-directory-aadconnect-account-summary.md)
-* [Custom installation of Azure AD Connect](active-directory-aadconnect-get-started-custom.md)
+* [More on Azure AD Connect accounts and permissions](/documentation/articles/active-directory-aadconnect-account-summary)
+* [Custom installation of Azure AD Connect](/documentation/articles/active-directory-aadconnect-get-started-custom)

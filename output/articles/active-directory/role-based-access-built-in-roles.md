@@ -1,5 +1,5 @@
 <properties
-	pageTitle="RBAC: Built in Roles | Microsoft Azure"
+	pageTitle="RBAC: Built in Roles | Windows Azure"
 	description="This topic describes the built in roles for role-based access control (RBAC)."
 	services="active-directory"
 	documentationCenter=""
@@ -9,12 +9,8 @@
 
 <tags
 	ms.service="active-directory"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.tgt_pltfrm="na"
-	ms.workload="identity"
 	ms.date="10/12/2015"
-	ms.author="inhenk"/>
+	wacn.date=""/>
 
 #RBAC: Built in Roles
 
@@ -483,4 +479,4 @@ Can manage websites but not the web plans to which they are connected
 | Microsoft.Insights/components/* | Create and manage Insights components |
 
 ## RBAC Topics
-[AZURE.INCLUDE [role-based-access-control-toc.md](../../includes/role-based-access-control-toc.md)]
+[AZURE.INCLUDE [role-based-access-control-toc.md](../includes/role-based-access-control-toc.md)]

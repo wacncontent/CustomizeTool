@@ -29,7 +29,7 @@ We also released an open-sourced library based on the core data movement framewo
 
 ## Download and install AzCopy
 
-1. Download the [latest version of AzCopy](http://aka.ms/downloadazcopy), or the [latest preview version](http://aka.ms/downloadazcopypr).
+1. Download the [latest version of AzCopy](http://az635501.vo.msecnd.net/azcopy-3-2-0/MicrosoftAzureStorageTools.msi), or the [latest preview version](http://az635501.vo.msecnd.net/azcopy-4-2-0-preview/MicrosoftAzureStorageTools.msi).
 2. Run the installation. By default, the AzCopy installation creates a folder named `AzCopy` under `%ProgramFiles(x86)%\Microsoft SDKs\Azure\` (on a machine running 64-bit Windows) or `%ProgramFiles%\Microsoft SDKs\Azure\` (on a machine running 32-bit Windows). However, you can change the installation path from the setup wizard.
 3. If desired, you can add the AzCopy installation location to your system path.
 
@@ -969,7 +969,7 @@ For more information about Azure Storage and AzCopy, see the following resources
 - [DML: Introducing azure storage data movement library preview] (https://azure.microsoft.com/blog/introducing-azure-storage-data-movement-library-preview-2/)
 - [AzCopy: Introducing synchronous copy and customized content type] (http://blogs.msdn.com/b/windowsazurestorage/archive/2015/01/13/azcopy-introducing-synchronous-copy-and-customized-content-type.aspx)
 - [AzCopy: Announcing General Availability of AzCopy 3.0 plus preview release of AzCopy 4.0 with Table and File support](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/10/29/azcopy-announcing-general-availability-of-azcopy-3-0-plus-preview-release-of-azcopy-4-0-with-table-and-file-support.aspx)
-- [AzCopy: Optimized for Large-Scale Copy Scenarios](http://go.microsoft.com/fwlink/?LinkId=507682)
+- [AzCopy: Optimized for Large-Scale Copy Scenarios](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/08/08/azcopy-2-5-release.aspx)
 - [Introducing Windows Azure File Service](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/12/introducing-microsoft-azure-file-service.aspx)
 - [AzCopy: Support for read-access geo-redundant storage](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/04/07/azcopy-support-for-read-access-geo-redundant-account.aspx)
 - [AzCopy: Transfer data with re-startable mode and SAS token](http://blogs.msdn.com/b/windowsazurestorage/archive/2013/09/07/azcopy-transfer-data-with-re-startable-mode-and-sas-token.aspx)

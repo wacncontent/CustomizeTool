@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Troubleshooting: Azure AD Password Management | Microsoft Azure" 
+	pageTitle="Troubleshooting: Azure AD Password Management | Windows Azure" 
 	description="Common troubleshooting steps for Azure AD Password Management, including reset, change, writeback, registration, and what information to include when looking for help." 
 	services="active-directory" 
 	documentationCenter="" 
@@ -7,14 +7,10 @@
 	manager="kbrint" 
 	editor="billmath"/>
 
-<tags 
-	ms.service="active-directory" 
-	ms.workload="identity" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="06/08/2015" 
-	ms.author="asteen"/>
+<tags
+	ms.service="active-directory"
+	ms.date="06/08/2015"
+	wacn.date=""/>
 
 # How to troubleshoot Password Management
 If you are having issues with Password Management, we're here to help. Most problems you may run into can be solved with a few simple troubleshooting steps which you can read about below to  troubleshoot your deployment:
@@ -561,7 +557,7 @@ If you encounter an error when enabling, disabling, or using Password Writeback,
                 <li>
 										You then then change the AAD creds for the connector (using old sync UI) to  (note it’s the same tenant but different domain name). <br\><br\></li>
                 <li>
-										Now you try to enable/disable Password Writeback. The wizard will construct the name of the connector using the creds, as “abc.onmicrosoft.com – AAD” and pass to the Password Writeback cmdlet. This will fail because there is no connector created with this name.<br\><br\></li>
+										Now you try to enable/disable Password Writeback. The wizard will construct the name of the connector using the creds, as “abc.partner.onmschina.cn – AAD” and pass to the Password Writeback cmdlet. This will fail because there is no connector created with this name.<br\><br\></li>
               </ol>
               <p>This has been fixed in our latest builds. If you have an older build, the one workaround is to use the powershell cmdlet to enable/disable the feature. See “Step 2: Enable Password Writeback on your Directory Sync computer &amp; configure firewall rules” in <a href="../active-directory-passwords-getting-started#enable-users-to-reset-or-change-their-ad-passwords">How to enable/disable Password Writeback</a> for more information on how to do this.</p>
             </td>
@@ -1030,7 +1026,7 @@ A best practice when troubleshooting issues with Password Writeback is to inspec
               <p>PasswordResetService</p>
             </td>
             <td>
-              <p>This event indicates there was an error connecting to your tenant’s service bus instance. This could happen because you are blocking outbound connections in your on-premises environment. Check your firewall to ensure you allow connections over TCP 443 and to <a href="https://ssprsbprodncu-sb.accesscontrol.windows.net/">https://ssprsbprodncu-sb.accesscontrol.windows.net/</a>, and try again. If you are still having problems, try disabling and re-enabling Password Writeback.</p>
+              <p>This event indicates there was an error connecting to your tenant’s service bus instance. This could happen because you are blocking outbound connections in your on-premises environment. Check your firewall to ensure you allow connections over TCP 443 and to <a href="https://ssprsbprodncu-sb.accesscontrol.chinacloudapi.cn/">https://ssprsbprodncu-sb.accesscontrol.chinacloudapi.cn/</a>, and try again. If you are still having problems, try disabling and re-enabling Password Writeback.</p>
             </td>
           </tr>
           <tr>
@@ -1156,7 +1152,7 @@ A best practice when troubleshooting issues with Password Writeback is to inspec
               <p>PasswordResetService</p>
             </td>
             <td>
-              <p>This event indicates that the on-premises service could not properly communicate with the password reset web service to initiate the onboarding process. This may be because of a firewall rule or problem getting an auth token for your tenant. To fix this, ensure that you are not blocking outbound connections over TCP 443 and TCP 9350-9354 or to <a href="https://ssprsbprodncu-sb.accesscontrol.windows.net/">https://ssprsbprodncu-sb.accesscontrol.windows.net/</a>, and that the AAD admin account you are using to onboard is not federated. </p>
+              <p>This event indicates that the on-premises service could not properly communicate with the password reset web service to initiate the onboarding process. This may be because of a firewall rule or problem getting an auth token for your tenant. To fix this, ensure that you are not blocking outbound connections over TCP 443 and TCP 9350-9354 or to <a href="https://ssprsbprodncu-sb.accesscontrol.chinacloudapi.cn/">https://ssprsbprodncu-sb.accesscontrol.chinacloudapi.cn/</a>, and that the AAD admin account you are using to onboard is not federated. </p>
             </td>
           </tr>
           <tr>
@@ -1184,7 +1180,7 @@ A best practice when troubleshooting issues with Password Writeback is to inspec
               <p>PasswordResetService</p>
             </td>
             <td>
-              <p>This event indicates that the on-premises service could not properly communicate with the password reset web service to initiate the offboarding process. This may be because of a firewall rule or problem getting an authorization token for your tenant. To fix this, ensure that you are not blocking outbound connections over 443 or to <a href="https://ssprsbprodncu-sb.accesscontrol.windows.net/">https://ssprsbprodncu-sb.accesscontrol.windows.net/</a>, and that the AAD admin account you are using to offboard is not federated. </p>
+              <p>This event indicates that the on-premises service could not properly communicate with the password reset web service to initiate the offboarding process. This may be because of a firewall rule or problem getting an authorization token for your tenant. To fix this, ensure that you are not blocking outbound connections over 443 or to <a href="https://ssprsbprodncu-sb.accesscontrol.chinacloudapi.cn/">https://ssprsbprodncu-sb.accesscontrol.chinacloudapi.cn/</a>, and that the AAD admin account you are using to offboard is not federated. </p>
             </td>
           </tr>
           <tr>
@@ -1417,7 +1413,7 @@ Restarting the Azure AD Connect Sync Service can help to resolve connectivity is
 
  1.	As an administrator, click **Start** on the server running **Azure AD Connect**.
  2.	Type **“services.msc”** in the search box and press **Enter**.
- 3.	Look for the **Microsoft Azure AD Connect** entry.
+ 3.	Look for the **Windows Azure AD Connect** entry.
  4.	Right-click on the service entry, click **Restart**, and wait for the operation to complete.
 
     ![][002]
@@ -1451,7 +1447,7 @@ If disabling and re-enabling the Password Writeback feature does not resolve you
 Re-installing the Azure AD Connect package will resolve any configuration issues which may be affecting your ability to either connect to our cloud services or to manage passwords in your local AD environment. 
 We recommend, you perform this step only after attempting the first two steps described above.
 
- 1.	Download the latest version of Azure AD Connect [here](active-directory-aadconnect.md#download-azure-ad-connect).
+ 1.	Download the latest version of Azure AD Connect [here](/documentation/articles/active-directory-aadconnect#download-azure-ad-connect).
  2.	Since you have already installed Azure AD Connect, you will only need to perform an in-place upgrade to update your Azure AD Connect installation to the latest version.
  3.	Execute the downloaded package and follow the on-screen instructions to update your Azure AD Connect machine.  No additional manual steps are required unless you have customized the out of box sync rules, in which case you should **back these up before proceeding with upgrade and manually re-deploy them after you are finished**.
 
@@ -1459,7 +1455,7 @@ These steps will re-establish your connection with our cloud service and resolve
 
 If installing the latest version of the Azure AD Connect server does not resolve your issue, we recommend that you try disabling and re-enabling Password Writeback as a final step after installing the latest sync QFE. 
 
-If that does not resolve your issue, then we recommend that you take a look at [Troubleshoot Password Writeback](#troubleshoot-password-writeback) and the [Azure AD password Management FAQ](active-directory-passwords-faq.md) to see if your issue may be discussed there.
+If that does not resolve your issue, then we recommend that you take a look at [Troubleshoot Password Writeback](#troubleshoot-password-writeback) and the [Azure AD password Management FAQ](/documentation/articles/active-directory-passwords-faq) to see if your issue may be discussed there.
 
 
 <br/>
@@ -1469,15 +1465,15 @@ If that does not resolve your issue, then we recommend that you take a look at [
 **Additional Resources**
 
 
-* [What is Password Management](active-directory-passwords.md)
-* [How Password Management works](active-directory-passwords-how-it-works.md)
-* [Getting started with Password Mangement](active-directory-passwords-getting-started.md)
-* [Customize Password Management](active-directory-passwords-customize.md)
-* [Password Management Best Practices](active-directory-passwords-best-practices.md)
-* [How to get Operational Insights with Password Management Reports](active-directory-passwords-get-insights.md)
-* [Password Management FAQ](active-directory-passwords-faq.md)
-* [Learn More](active-directory-passwords-learn-more.md)
-* [Password Management on MSDN](https://msdn.microsoft.com/library/azure/dn510386.aspx)
+* [What is Password Management](/documentation/articles/active-directory-passwords)
+* [How Password Management works](/documentation/articles/active-directory-passwords-how-it-works)
+* [Getting started with Password Mangement](/documentation/articles/active-directory-passwords-getting-started)
+* [Customize Password Management](/documentation/articles/active-directory-passwords-customize)
+* [Password Management Best Practices](/documentation/articles/active-directory-passwords-best-practices)
+* [How to get Operational Insights with Password Management Reports](/documentation/articles/active-directory-passwords-get-insights)
+* [Password Management FAQ](/documentation/articles/active-directory-passwords-faq)
+* [Learn More](/documentation/articles/active-directory-passwords-learn-more)
+* [Password Management on MSDN](https://msdn.microsoft.com/zh-cn/library/azure/dn510386.aspx)
 
 
 

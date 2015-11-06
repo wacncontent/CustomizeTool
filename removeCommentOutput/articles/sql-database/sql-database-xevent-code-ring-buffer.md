@@ -57,7 +57,7 @@ This topic presents a Transact-SQL code sample that:
 - SQL Server Management Studio (ssms.exe), its August 2015 Preview or a later version. 
 You can download the latest ssms.exe from:
  - [A link in topic.](http://msdn.microsoft.com/zh-cn/library/mt238290.aspx)
- - [A direct link to the download.](http://go.microsoft.com/fwlink/?linkid=616025)
+ - [A direct link to the download.](http://download.microsoft.com/download/0/6/4/06471151-0668-485E-8CD0-D7D8297EE357/SSMS_BurnInstaller_June2015/SSMS-Web-Setup.exe)
  - Microsoft recommends that you update your ssms.exe periodically.
 
 

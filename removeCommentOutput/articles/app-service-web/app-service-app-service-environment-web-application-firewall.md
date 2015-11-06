@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties 
 	pageTitle="Configuring a Web Application Firewall (WAF) for Azure Websites Environment" 
 	description="Learn how to configure a web application firewall in front of your Azure Websites Environment." 
@@ -27,7 +25,7 @@ For this document we will configure our Azure Websites Environment behind multip
 ![Architecture][Architecture] 
 
 ## Configuring your Azure Websites Environment ##
-To configure an Azure Websites Environment refer to [our documentation](/documentation/articles/app-service-web-how-to-create-an-app-service-environment) on the subject. Once you have an Azure Websites Environment created, you can create [Web Apps](/documentation/articles/app-service-web-overview), [API Apps](/documentation/articles/app-service-api-apps-why-best-platform) and [Mobile Apps](/documentation/articles/app-service-mobile-value-prop-preview) in this environment that will all be protected behind the WAF we configure in the next section.
+To configure an Azure Websites Environment refer to [our documentation](/documentation/articles/app-service-web-how-to-create-an-app-service-environment) on the subject. Once you have an Azure Websites Environment created, you can create [Web Apps](/home/features/web-site/), [API Apps](/documentation/articles/app-service-api-apps-why-best-platform) and [Mobile Apps](/documentation/articles/app-service-mobile-value-prop-preview) in this environment that will all be protected behind the WAF we configure in the next section.
 
 ## Configuring your Barracuda WAF Cloud Service ##
 Barracuda has a [detailed article](https://techlib.barracuda.com/WAF/AzureDeploy) on deploying its WAF on a virtual machine in Azure. But because we want redundancy and not introduce a single point of failure, you want to deploy at least 2 WAF instance VMs into the same Cloud Service when following these instructions.

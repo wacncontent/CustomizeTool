@@ -9,19 +9,15 @@
 
 <tags
 	ms.service="active-directory"
-	ms.workload="infrastructure-services"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="get-started-article"
-	ms.date="08/11/2015" 
-	ms.author="MarkVi"/>
+	ms.date="08/11/2015"
+	wacn.date=""/>
 
 # Add company branding to your Sign In and Access Panel pages
 
 > [AZURE.NOTE]
 >
-- Company branding is a feature that is available only if you upgraded to the Premium or Basic edition of Azure Active Directory. For more information, see [Azure Active Directory editions](active-directory-editions.md).
-- Azure Active Directory Premium and Basic editions are available for customers in China using the worldwide instance of Azure Active Directory. Azure Active Directory Premium and Basic editions are not currently supported in the Microsoft Azure service operated by 21Vianet in China. For more information, contact us at the [Azure Active Directory Forum](http://feedback.azure.com/forums/169401-azure-active-directory).
+- Company branding is a feature that is available only if you upgraded to the Premium or Basic edition of Azure Active Directory. For more information, see [Azure Active Directory editions](/documentation/articles/active-directory-editions).
+- Azure Active Directory Premium and Basic editions are available for customers in China using the worldwide instance of Azure Active Directory. Azure Active Directory Premium and Basic editions are not currently supported in the Windows Azure service operated by 21Vianet in China. For more information, contact us at the [Azure Active Directory Forum](http://feedback.azure.com/forums/169401-azure-active-directory).
 
 Many companies want to apply a consistent look and feel across all the websites and services they manage so that their end users won’t be confused whenever they need to use those sites. Azure Active Directory provides this capability by allowing you to customize the appearance of the following end user-facing web pages so that they include your company logo and color schemes:
 
@@ -116,7 +112,7 @@ For example, if you configure a default Banner Logo but no Large Illustration, t
 
 To add company branding to your directory:
 
-1. Sign into the [Azure Management Portal](https://manage.windowsazure.com) as the administrator of the directory you wish to customize.
+1. Sign into the [Azure Management Portal](https://manage.windowsazure.cn) as the administrator of the directory you wish to customize.
 2. Select the directory you wish to customize.
 3. Select the **Configure** tab, and then select **Customize Branding**.
 4. Modify the elements you wish to customize. Note that all fields are optional.
@@ -126,14 +122,14 @@ It can take up to an hour for users to see any new change you made to the sign i
 
 To add language-specific company branding:
 
-1. In the [Azure Management Portal](https://manage.windowsazure.com), under the **Configure** tab, select **Customize Branding**.
+1. In the [Azure Management Portal](https://manage.windowsazure.cn), under the **Configure** tab, select **Customize Branding**.
 2. Select **Add branding for a specific language**, select the language you want to customize the logo for, and then click **Next**.
 3. Edit only the elements for which you wish to configure language-specific overrides. Note that all fields are optional. If a field is left blank, then the custom default value will be displayed instead (or the Microsoft default if a custom default is not configured).
 4. Click **Save**.
 
 To remove company branding from your directory
 
-1. In the [Azure Management Portal](https://manage.windowsazure.com), under the **Configure** tab, select **Customize Branding**.
+1. In the [Azure Management Portal](https://manage.windowsazure.cn), under the **Configure** tab, select **Customize Branding**.
 2. On the Customize Branding page, select **Edit Existing Branding Settings** and then go to the next page.
 3. Depending on which elements you want to remove, do one or more of the following:
 	1. For Banner Logo, click on the check box to **Remove uploaded logo**.
@@ -148,7 +144,7 @@ To remove company branding from your directory
 
 ## Testing and examples
 
-We recommend that you experiment with a test tenant before making changes in your production environment. The simplest way to verify if your branding has been applied is to open an InPrivate or Incognito browser session and then visit https://outlook.com/contoso.com, replacing contoso.com with the domain you’ve customized. Note that this also works with domains that look like contoso.onmicrosoft.com.
+We recommend that you experiment with a test tenant before making changes in your production environment. The simplest way to verify if your branding has been applied is to open an InPrivate or Incognito browser session and then visit https://outlook.com/contoso.com, replacing contoso.com with the domain you’ve customized. Note that this also works with domains that look like contoso.partner.onmschina.cn.
 
 To help you create effective customization sets, we have customized the following two fictitious sign in pages:
 
@@ -174,8 +170,8 @@ Sign In Page Background Color | The Sign In page background color is used in the
 
 ## What's next
 
-- [Getting started with Azure Active Directory Premium](active-directory-get-started-premium.md)
-- [View your access and usage reports](active-directory-view-access-usage-reports.md)
+- [Getting started with Azure Active Directory Premium](/documentation/articles/active-directory-get-started-premium)
+- [View your access and usage reports](/documentation/articles/active-directory-view-access-usage-reports)
 
 <!--Image references-->
 [1]: ./media/active-directory-add-company-branding/SignInPage_beforecustomization.png

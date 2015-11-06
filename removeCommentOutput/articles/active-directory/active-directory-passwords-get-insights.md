@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Get Insights: Azure AD Password Management Reports | Microsoft Azure"
+	pageTitle="Get Insights: Azure AD Password Management Reports | Windows Azure"
 	description="This article describes how to use reports to get insight into Password Management operations in your organization."
 	services="active-directory"
 	documentationCenter=""
@@ -9,12 +9,8 @@
 
 <tags
 	ms.service="active-directory"
-	ms.workload="identity"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="09/18/2015" 
-	ms.author="asteen"/>
+	ms.date="09/18/2015"
+	wacn.date=""/>
 
 # How to get operational insights with Password Management reports
 This section describes how you can use Azure Active Directory’s Password Management reports to view how users are using password reset and change in your organization.
@@ -25,7 +21,7 @@ This section describes how you can use Azure Active Directory’s Password Manag
 - [**View password reset activity in your organization**](#view-password-reset-activity)
 
 ## Overview of Password Management reports
-Once you deploy password reset, one of the most common next steps is to see how it is being used in your organization.  For example, you may want to get insight into how users are registering for password reset, or how many password resets have been done in the last few days.  Here are some of the common questions that you will be able to answer with the Password Management reports that exist in the [Azure Management Portal](https://manage.windowsazure.com) today:
+Once you deploy password reset, one of the most common next steps is to see how it is being used in your organization.  For example, you may want to get insight into how users are registering for password reset, or how many password resets have been done in the last few days.  Here are some of the common questions that you will be able to answer with the Password Management reports that exist in the [Azure Management Portal](https://manage.windowsazure.cn) today:
 
 - How many people have registered for password reset?
 - Who has registered for password reset?
@@ -40,7 +36,7 @@ Once you deploy password reset, one of the most common next steps is to see how 
 ## How to view Password Management reports
 To find the Password Management reports, follow the steps below:
 
-1.	Click on the **Active Directory** extension in the [Azure Management Portal](https://manage.windowsazure.com).
+1.	Click on the **Active Directory** extension in the [Azure Management Portal](https://manage.windowsazure.cn).
 2.	Select your directory from the list that appears in the portal.
 3.	Click on the **Reports** tab.
 4.	Look under the **Activity Logs** section.
@@ -147,15 +143,15 @@ User successfully reset password|Succeeded
 **Additional Resources**
 
 
-* [What is Password Management](active-directory-passwords.md)
-* [How Password Management works](active-directory-passwords-how-it-works.md)
-* [Getting started with Password Mangement](active-directory-passwords-getting-started.md)
-* [Customize Password Management](active-directory-passwords-customize.md)
-* [Password Management Best Practices](active-directory-passwords-best-practices.md)
-* [Password Management FAQ](active-directory-passwords-faq.md)
-* [Troubleshoot Password Management](active-directory-passwords-troubleshoot.md)
-* [Learn More](active-directory-passwords-learn-more.md)
-* [Password Management on MSDN](https://msdn.microsoft.com/library/azure/dn510386.aspx)
+* [What is Password Management](/documentation/articles/active-directory-passwords)
+* [How Password Management works](/documentation/articles/active-directory-passwords-how-it-works)
+* [Getting started with Password Mangement](/documentation/articles/active-directory-passwords-getting-started)
+* [Customize Password Management](/documentation/articles/active-directory-passwords-customize)
+* [Password Management Best Practices](/documentation/articles/active-directory-passwords-best-practices)
+* [Password Management FAQ](/documentation/articles/active-directory-passwords-faq)
+* [Troubleshoot Password Management](/documentation/articles/active-directory-passwords-troubleshoot)
+* [Learn More](/documentation/articles/active-directory-passwords-learn-more)
+* [Password Management on MSDN](https://msdn.microsoft.com/zh-cn/library/azure/dn510386.aspx)
 
 
 

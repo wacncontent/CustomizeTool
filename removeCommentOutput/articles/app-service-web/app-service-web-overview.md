@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties
 	pageTitle="Web Apps overview"
 	description="Learn more about Azure Websites"
@@ -50,13 +48,13 @@ To get started with Web Apps, follow the [Create an ASP.NET web app] [create] tu
 
 For more information on Azure Websites platform, see [Azure Websites][appservice].
 
->[AZURE.NOTE] If you want to get started with Azure Websites before signing up for an Azure account, go to [Try Azure Websites](http://go.microsoft.com/fwlink/?LinkId=523751), where you can immediately create a short-lived starter web app in Azure Websites. No credit cards required; no commitments.
+>[AZURE.NOTE] If you want to get started with Azure Websites before signing up for an Azure account, go to [Try Azure Websites](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure Websites. No credit cards required; no commitments.
 
 ## What's changed
 * For a guide to the change from Websites to Azure Websites see: [Azure Websites and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
 * For a guide to the change of the Management Portal to the new portal see: [Reference for navigating the preview portal](https://manage.windowsazure.cn/)
 
-[appservice]: /documentation/articles/app-service-value-prop-what-is
+[appservice]: /documentation/services/web-sites
 [create]: /documentation/articles/web-sites-dotnet-get-started
 [Webjobs]: /documentation/articles/websites-dotnet-webjobs-sdk-get-started
 [Slots]: /documentation/articles/web-sites-staged-publishing

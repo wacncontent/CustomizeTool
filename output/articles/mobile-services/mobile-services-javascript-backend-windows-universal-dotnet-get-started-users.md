@@ -48,7 +48,7 @@ In the next tutorial, [Service-side authorization of Mobile Services users](/doc
 
 ##See also
 
-+ [Enhanced users feature](http://go.microsoft.com/fwlink/p/?LinkId=506605)<br/>
++ [Enhanced users feature](http://blogs.msdn.com/b/carlosfigueira/archive/2013/12/16/enhanced-users-feature-in-azure-mobile-services.aspx)<br/>
 You can get additional user data maintained by the identity provider in your mobile service by by calling the **user.getIdentities()** function in server scripts. 
 
 + [Mobile Services .NET How-to Conceptual Reference]<br/>Learn more about how to use Mobile Services with a .NET client.

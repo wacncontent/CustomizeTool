@@ -120,7 +120,7 @@ The existing **TodoItemController** is updated so that the **PostTodoItem** meth
 
    	This POST method now generates a new SAS for the inserted item, which is valid for 5 minutes, and assigns the value of the generated SAS to the `sasQueryString` property of the returned item. The `imageUri` property is also set to the resource path of the new BLOB to enable image display during binding in the client UI.
 
-	>[AZURE.NOTE] This code creates an SAS for an individual BLOB. If you need to upload multiple blobs to a container using the same SAS, you can instead call the <a href="http://go.microsoft.com/fwlink/?LinkId=390455" target="_blank">generateSharedAccessSignature method</a> with an empty blob resource name, like this: 
+	>[AZURE.NOTE] This code creates an SAS for an individual BLOB. If you need to upload multiple blobs to a container using the same SAS, you can instead call the <a href="http://dl.windowsazure.cn/nodedocs/BlobService.html#generateSharedAccessSignature" target="_blank">generateSharedAccessSignature method</a> with an empty blob resource name, like this: 
 	<pre><code>blobService.generateSharedAccessSignature(containerName, '', sharedAccessPolicy);</code></pre>
 
 Next, you will update the quickstart app to add image upload functionality by using the SAS generated on insert.

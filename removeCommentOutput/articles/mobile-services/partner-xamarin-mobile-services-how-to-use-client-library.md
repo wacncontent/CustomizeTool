@@ -21,7 +21,7 @@ This guide shows you how to perform common scenarios using the Xamarin Component
 
 ## <a name="setup"></a>Setup and Prerequisites
 
-We assume that you have created a mobile service and a table. For more information see [Create a table](http://go.microsoft.com/fwlink/?LinkId=298592). In the code used in this topic, the table is named `TodoItem` and it will have the following columns: `id`, `Text`, and `Complete`.
+We assume that you have created a mobile service and a table. For more information see [Create a table](https://msdn.microsoft.com/zh-cn/library/azure/jj193162.aspx). In the code used in this topic, the table is named `TodoItem` and it will have the following columns: `id`, `Text`, and `Complete`.
 
 The corresponding typed client-side .NET type is the following:
 
@@ -37,7 +37,7 @@ The corresponding typed client-side .NET type is the following:
 		public bool Complete { get; set; }
 	}
 
-When dynamic schema is enabled, Azure Mobile Services automatically generates new columns based on the object in insert or update requests. For more information, see [Dynamic schema](http://go.microsoft.com/fwlink/?LinkId=296271).
+When dynamic schema is enabled, Azure Mobile Services automatically generates new columns based on the object in insert or update requests. For more information, see [Dynamic schema](https://msdn.microsoft.com/zh-cn/library/azure/jj193175.aspx).
 
 ## <a name="create-client"></a>How to: Create the Mobile Services client
 

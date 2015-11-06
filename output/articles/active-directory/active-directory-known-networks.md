@@ -7,14 +7,10 @@
 	manager="msStevenPo"  
 	editor=""/>
 
-<tags 
-	ms.service="active-directory" 
-	ms.workload="identity" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="09/03/2015" 
-	ms.author="markvi"/>
+<tags
+	ms.service="active-directory"
+	ms.date="09/03/2015"
+	wacn.date=""/>
 
 # Known Networks
 
@@ -34,7 +30,7 @@ To prevent these cases from generating misleading security reports, you should a
 
 ###To add your organization’s public IP address ranges, perform the following steps: 
 
-1.	Sign-on to the [Azure management portal](https://manage.windowsazure.com).
+1.	Sign-on to the [Azure management portal](https://manage.windowsazure.cn).
 
 2.	In the left pane, click **Active Directory**. <br><br>![How Cloud App Discovery Works](./media/active-directory-known-networks/known-netwoks-01.png)
 
@@ -52,8 +48,8 @@ To prevent these cases from generating misleading security reports, you should a
 **Additional Resources**
 
 
-* [View your access and usage reports](active-directory-view-access-usage-reports.md)
-* [Sign ins from IP addresses with suspicious activity](active-directory-reporting-sign-ins-from-ip-addresses-with-suspicious-activity.md)
-* [Sign ins from multiple geographies](active-directory-reporting-sign-ins-from-multiple-geographies.md)
+* [View your access and usage reports](/documentation/articles/active-directory-view-access-usage-reports)
+* [Sign ins from IP addresses with suspicious activity](/documentation/articles/active-directory-reporting-sign-ins-from-ip-addresses-with-suspicious-activity)
+* [Sign ins from multiple geographies](/documentation/articles/active-directory-reporting-sign-ins-from-multiple-geographies)
 
 

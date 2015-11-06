@@ -70,8 +70,8 @@ def handleOneLine(diff, i):
     if "<!-- deleted by customization" not in diff[i] and "<!-- keep by customization: begin -->" not in diff[i]:
         delta_str = diff[i+2]
     elif "<!-- deleted by customization" in diff[i] and "<!-- keep by customization: begin -->" in diff[i]:
-        dele = diff[i].index("<!-- deleted by customization")
-        keep = diff[i].index("<!-- keep by customization: begin -->")
+        dele = diff[i].find("<!-- deleted by customization")
+        keep = diff[i].find("<!-- keep by customization: begin -->")
         if dele < keep:
             delta_str = deleteCompare(diff[i+2], diff[i])
         else:
@@ -89,8 +89,8 @@ def handleOneLine2(diff, i):
     if "<!-- deleted by customization" not in diff[i] and "<!-- keep by customization: begin -->" not in diff[i]:
         delta_str = diff[i+1]
     elif "<!-- deleted by customization" in diff[i] and "<!-- keep by customization: begin -->" in diff[i]:
-        dele = diff[i].index("<!-- deleted by customization")
-        keep = diff[i].index("<!-- keep by customization: begin -->")
+        dele = diff[i].find("<!-- deleted by customization")
+        keep = diff[i].find("<!-- keep by customization: begin -->")
         if dele < keep:
             delta_str = deleteCompare(diff[i+1], diff[i])
         else:
@@ -105,8 +105,8 @@ def handleOneLine3(diff, i):
     if "<!-- deleted by customization" not in diff[i+1] and "<!-- keep by customization: begin -->" not in diff[i+1]:
         delta_str = diff[i]
     elif "<!-- deleted by customization" in diff[i+1] and "<!-- keep by customization: begin -->" in diff[i+1]:
-        dele = diff[i+1].index("<!-- deleted by customization")
-        keep = diff[i+1].index("<!-- keep by customization: begin -->")
+        dele = diff[i+1].find("<!-- deleted by customization")
+        keep = diff[i+1].find("<!-- keep by customization: begin -->")
         if dele < keep:
             delta_str = deleteCompare(diff[i], diff[i+1])
         else:
@@ -118,26 +118,25 @@ def handleOneLine3(diff, i):
     return delta_str
 
 def deleteCompare(new, old):
-    i = old.index("<!-- deleted by customization")
-    j = old[i:].index("-->")
+    i = old.find("<!-- deleted by customization")
+    j = old[i:].find("-->")
     deleted = old[i+30:i+j].strip()
-    try: 
-        k = new.index(deleted)
-    except Exception:
+    k = new.find(deleted)
+    if k == -1:
         print deleted, new
         return new
     old_part = old[i+j+3:]
     kept=old[i:i+j+3]
     if old_part[:37] == "<!-- keep by customization: begin -->":
-        end = old_part.index("<!-- keep by customization: end -->")
+        end = old_part.find("<!-- keep by customization: end -->")
         kept = kept+old_part[:end+35]
         old_part = old_part[end+35:]
     new_part = new[k+len(deleted):]
     if "<!-- deleted by customization" not in old_part and "<!-- keep by customization: begin -->" not in old_part:
         delta_str = new_part
     elif "<!-- deleted by customization" in old_part and "<!-- keep by customization: begin -->" in old_part:
-        dele = old_part.index("<!-- deleted by customization")
-        keep = old_part.index("<!-- keep by customization: begin -->")
+        dele = old_part.find("<!-- deleted by customization")
+        keep = old_part.find("<!-- keep by customization: begin -->")
         if dele < keep:
             delta_str = deleteCompare(new_part, old_part)
         else:
@@ -149,8 +148,8 @@ def deleteCompare(new, old):
     return new[:k]+kept+delta_str
 
 def keepCompare(new, old):
-    i = old.index("<!-- keep by customization: begin -->")
-    j = old.index("<!-- keep by customization: end -->")
+    i = old.find("<!-- keep by customization: begin -->")
+    j = old.find("<!-- keep by customization: end -->")
     kept = old.replace(old[i:j+35])
     temp = removeDeleteAndKeep(old.replace(keep, "\033"))
     diff = list(ndiff(temp, new))
@@ -165,8 +164,8 @@ def keepCompare(new, old):
     if "<!-- deleted by customization" not in old_part and "<!-- keep by customization: begin -->" not in old_part:
         delta_str = new_part
     elif "<!-- deleted by customization" in old_part and "<!-- keep by customization: begin -->" in old_part:
-        dele = old_part.index("<!-- deleted by customization")
-        keep = old_part.index("<!-- keep by customization: begin -->")
+        dele = old_part.find("<!-- deleted by customization")
+        keep = old_part.find("<!-- keep by customization: begin -->")
         if dele < keep:
             delta_str = deleteCompare(new_part, old_part)
         else:
@@ -178,14 +177,23 @@ def keepCompare(new, old):
     return new[:count+1]+kept+delta_str
 
 def removeDeleteAndKeep(old):
-    old = old.replace("<!-- keep by customization: begin -->", "").replace("<!-- keep by customization: end -->", "")
+    old = re.sub("\n[ \t\r\f\v]*\<\!\-\- keep by customization: (begin|end) \-\-\>[ \t\r\f\v]*\n", "\n", old)
+    old = re.sub("\<\!\-\- keep by customization: (begin|end) \-\-\>[ \t\r\f\v]*", "", old)
     while True:
-        try:
-            i = old.index("<!-- deleted by customization")
-            j = old[i:].index("-->")
-        except Exception:
+        i = old.find("<!-- deleted by customization")
+        if i == -1:
             return old
-        old = old.replace(old[i:i+j+3], "")
+        j = old[i:].find("-->")
+        deleted = old[i+4:i+j]
+        i_del = deleted.find("<!--")
+        while i_del != -1:
+            deleted = deleted[i_del+4:]
+            i_del = deleted.find("<!--")
+            j+=old[i+j+3:].find("-->")+3
+        if i > 0 and old[i-1] == '\n':
+            old = re.sub(re.escape(old[i:i+j+3])+"[ \t\r\f\v]*\n?", "", old)
+        else:
+            old = re.sub(re.escape(old[i:i+j+3])+"[ \t\r\f\v]*", "", old)
 
 def handleDeletion(diff, i):
     delta_i=1
@@ -218,3 +226,27 @@ def handleKeeping(diff, i):
     #for line in extra:
      #   delta_str+=line
     return [delta_str, delta_i]
+
+def createComment(globalText, mooncakeText):
+    differ = Differ()
+    diff = list(differ.compare(globalText, mooncakeText))
+    i = 0
+    result = ""
+    while i < len(diff):
+        if diff[i][0] == " ":
+            result += diff[i][2:]
+            i += 1
+        elif diff[i][0] == "-":
+            result += "<!-- deleted by customization\n"
+            while i < len(diff) and diff[i][0] == "-":
+                result += diff[i][2:]
+                i += 1
+            result += "-->\n"
+        elif diff[i][0] == "+":
+            result += "<!-- keep by customization: begin -->\n"
+            while i < len(diff) and diff[i][0] == "+":
+                result += diff[i][2:]
+                i += 1
+            result += "<!-- keep by customization: end -->\n"
+        else:
+            i += 1

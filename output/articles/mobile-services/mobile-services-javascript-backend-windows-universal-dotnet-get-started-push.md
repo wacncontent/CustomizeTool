@@ -29,8 +29,8 @@ This tutorial walks you through these basic steps to enable push notifications:
 
 To complete this tutorial, you need the following:
 
-* An active [Microsoft Store account](http://go.microsoft.com/fwlink/p/?LinkId=280045).
-* [Visual Studio 2013 Express for Windows](http://go.microsoft.com/fwlink/?LinkId=257546) with Update 3, or a later version
+* An active [Microsoft Store account](https://dev.windows.com/zh-cn/programs/join).
+* [Visual Studio 2013 Express for Windows](https://www.visualstudio.com/downloads/download-visual-studio-vs) with Update 3, or a later version
 
 ##<a id="register"></a>Register your app for push notifications
 
@@ -97,5 +97,5 @@ Learn more about Mobile Services and Notification Hubs in the following topics:
 [Send push notifications to authenticated users]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-push-notifications-app-users
 [What are Notification Hubs?]: /documentation/articles/notification-hubs-overview
 [How to use a .NET client for Azure Mobile Services]: /documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library
-[MobileServiceClient]: http://go.microsoft.com/fwlink/p/?LinkId=302030
+[MobileServiceClient]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.mobileservices.mobileserviceclient.aspx
  

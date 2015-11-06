@@ -25,7 +25,7 @@ You'll create a blank Kindle app that receives push notifications by using Amazo
 
 This tutorial requires the following:
 
-+ Get the Android SDK (we assume that you will use Eclipse) from the <a href="http://go.microsoft.com/fwlink/?LinkId=389797">Android site</a>.
++ Get the Android SDK (we assume that you will use Eclipse) from the <a href="http://developer.android.com/sdk/index.html">Android site</a>.
 + Follow the steps in <a href="https://developer.amazon.com/appsandservices/resources/development-tools/ide-tools/tech-docs/01-setting-up-your-development-environment">Setting Up Your Development Environment</a> to set up your development environment for Kindle.
 
 ##Add a new app to the developer portal

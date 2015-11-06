@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties 
 	pageTitle="Starting and stopping virtual machines - Graph | Windows Azure"
 	description="PowerShell Workflow version of Azure Automation solution including runbooks to start and stop classic virtual machines."

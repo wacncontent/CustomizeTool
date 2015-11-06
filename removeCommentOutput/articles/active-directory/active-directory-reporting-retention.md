@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Azure Active Directory Report Retention Policies | Microsoft Azure"
+	pageTitle="Azure Active Directory Report Retention Policies | Windows Azure"
 	description="Retention policies on report data in your Azure Active Directory"
 	services="active-directory"
 	documentationCenter=""
@@ -9,12 +9,8 @@
 
 <tags
 	ms.service="active-directory"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.tgt_pltfrm="na"
-	ms.workload="identity"
 	ms.date="10/02/2015"
-	ms.author="kenhoff"/>
+	wacn.date=""/>
 
 # Azure Active Directory Report Retention Policies
 Azure AD's reports retain data for a certain number of days, indicated here.

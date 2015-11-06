@@ -66,11 +66,11 @@ Congratulations – you have successfully built and run your first sharded appli
 
 ### Key pieces of the code sample
 
-1. **Managing Shards and Shard Maps**: The code illustrates how to work with shards, ranges, and mappings in file **ShardMapManagerSample.cs**. You can find more information about this topic here: [Shard Map Management](http://go.microsoft.com/?linkid=9862595).  
-2. **Data Dependent Routing**: Routing of transactions to the right shard is shown in **DataDependentRoutingSample.cs**. For more details, see [Data Dependent Routing](http://go.microsoft.com/?linkid=9862596). 
-3. **Querying over Multiple Shards**: Querying across shards is illustrated in the file **MultiShardQuerySample.cs**. For more details, see [Multi-Shard Querying](http://go.microsoft.com/?linkid=9862597).
+1. **Managing Shards and Shard Maps**: The code illustrates how to work with shards, ranges, and mappings in file **ShardMapManagerSample.cs**. You can find more information about this topic here: [Shard Map Management](/documentation/articles/sql-database-elastic-scale-shard-map-management/).  
+2. **Data Dependent Routing**: Routing of transactions to the right shard is shown in **DataDependentRoutingSample.cs**. For more details, see [Data Dependent Routing](/documentation/articles/sql-database-elastic-scale-data-dependent-routing/). 
+3. **Querying over Multiple Shards**: Querying across shards is illustrated in the file **MultiShardQuerySample.cs**. For more details, see [Multi-Shard Querying](/documentation/articles/sql-database-elastic-scale-multishard-querying/).
 4. **Adding empty shards**: The iterative adding of new empty shards is performed by the code in
-file **AddNewShardsSample.cs**. Details of this topic are covered here: [Shard Map Management](http://go.microsoft.com/?linkid=9862595).
+file **AddNewShardsSample.cs**. Details of this topic are covered here: [Shard Map Management](/documentation/articles/sql-database-elastic-scale-shard-map-management/).
 
 ### Other elastic scale operations
 

@@ -58,7 +58,7 @@ Microsoft provides the following utilities to work with Azure Blob storage:
 
 The Azure CLI is a cross-platform tool that allows you to manage Azure services. Use the following steps to upload data to Azure Blob storage:
 
-1. [Install and configure the Azure CLI ](/documentation/articles/xplat-cli-install).
+1. [Install and configure the Azure CLI for Mac, Linux and Windows](/documentation/articles/xplat-cli-install).
 
 2. Open a command prompt, bash, or other shell, and use the following to authenticate to your Azure subscription.
 
@@ -150,6 +150,7 @@ In order to use the Hadoop command, you must first connect to the headnode using
 
 * **Windows-based HDInsight**: [Connect using Remote Desktop](/documentation/articles/hdinsight-administer-use-management-portal-v1#connect-to-hdinsight-clusters-by-using-rdp)
 
+* **Linux-based HDInsight**: Connect using SSH ([the SSH command](/documentation/articles/hdinsight-hadoop-linux-use-ssh-unix#connect-to-a-linux-based-hdinsight-cluster) or [PuTTY](/documentation/articles/hdinsight-hadoop-linux-use-ssh-windows#connect-to-a-linux-based-hdinsight-cluster))
 
 Once connected, you can use the following syntax to upload a file to storage.
 
@@ -210,6 +211,13 @@ See [Mount Azure Blob Storage as Local Drive](http://blogs.msdn.com/b/bigdatasup
 
 ##Services
 
+###Azure Data Factory
+
+The Azure Data Factory service is a fully managed service for composing data storage, data processing, and data movement services into streamlined, scalable, and reliable data production pipelines.
+
+Azure Data Factory can be used to move data into Azure Blob storage, or to create data pipelines that directly use HDInsight features such as Hive and Pig.
+
+For more information, see the [Azure Data Factory documentation](/documentation/services/data-factory/).
 
 ###<a id="sqoop"></a>Apache Sqoop
 

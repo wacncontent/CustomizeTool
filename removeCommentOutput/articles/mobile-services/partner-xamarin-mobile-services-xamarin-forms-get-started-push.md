@@ -114,7 +114,7 @@ Next, you will register your app with Apple, enable push notifications, and uplo
 
 To be able to send push notifications to an iOS app from mobile services, you must register your application with Apple and register for push notifications.
 
-1. If you have not already registered your app, navigate to the <a href="http://go.microsoft.com/fwlink/p/?LinkId=272456" target="_blank">iOS Provisioning Portal</a> at the Apple Developer Center, log on with your Apple ID, click **Identifiers**, then click **App IDs**, and finally click on the **+** sign to create an app ID for your app.
+1. If you have not already registered your app, navigate to the <a href="https://idmsa.apple.com/IDMSWebAuth/login?&appIdKey=891bd3417a7776362562d2197f89480a8547b108fd934911bcbea0110d07f757&path=%2F%2Faccount%2Foverview.action" target="_blank">iOS Provisioning Portal</a> at the Apple Developer Center, log on with your Apple ID, click **Identifiers**, then click **App IDs**, and finally click on the **+** sign to create an app ID for your app.
 
     ![][102]
 
@@ -172,7 +172,7 @@ Later, you will use this certificate to generate a .p12 file and upload it to Mo
 
 ### <a name="profile"></a>Create a provisioning profile for the app
 
-1. Back in the <a href="http://go.microsoft.com/fwlink/p/?LinkId=272456" target="_blank">iOS Provisioning Portal</a>, select **Provisioning Profiles**, select **All**, and then click the **+** button to create a new profile. This launches the **Add iOS Provisiong Profile** Wizard.
+1. Back in the <a href="https://idmsa.apple.com/IDMSWebAuth/login?&appIdKey=891bd3417a7776362562d2197f89480a8547b108fd934911bcbea0110d07f757&path=%2F%2Faccount%2Foverview.action" target="_blank">iOS Provisioning Portal</a>, select **Provisioning Profiles**, select **All**, and then click the **+** button to create a new profile. This launches the **Add iOS Provisiong Profile** Wizard.
 
     ![][112]
 
@@ -824,9 +824,9 @@ Finally, you must update the script registered to the insert operation on the To
 
 [Xamarin.iOS Studio]: http://xamarin.com/platform
 [Install Xcode]: https://go.microsoft.com/fwLink/p/?LinkID=266532
-[iOS Provisioning Portal]: http://go.microsoft.com/fwlink/p/?LinkId=272456
+[iOS Provisioning Portal]: https://idmsa.apple.com/IDMSWebAuth/login?&appIdKey=891bd3417a7776362562d2197f89480a8547b108fd934911bcbea0110d07f757&path=%2F%2Faccount%2Foverview.action
 [Mobile Services iOS SDK]: https://go.microsoft.com/fwLink/p/?LinkID=266533
-[Apple Push Notification Service]: http://go.microsoft.com/fwlink/p/?LinkId=272584
+[Apple Push Notification Service]: https://developer.apple.com/library/ios/#documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/ApplePushService/ApplePushService.html
 [Get started with Mobile Services]: /documentation/articles/mobile-services-ios-get-started
 [Xamarin Device Provisioning]: http://developer.xamarin.com/guides/ios/getting_started/installation/device_provisioning/
 

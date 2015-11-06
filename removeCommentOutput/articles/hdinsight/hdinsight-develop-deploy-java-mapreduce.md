@@ -579,7 +579,7 @@ In this tutorial, you have learned how to develop a Java MapReduce job, how to t
 - [Connect Excel to HDInsight with the Microsoft Hive ODBC Driver][hdinsight-ODBC]
 
 [azure-purchase-options]: /pricing/overview/
-
+[azure-member-offers]: http://azure.microsoft.com/pricing/member-offers/
 [azure-trial]: /pricing/1rmb-trial/
 
 [hdinsight-use-sqoop]: /documentation/articles/hdinsight-use-sqoop

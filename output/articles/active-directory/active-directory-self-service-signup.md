@@ -1,5 +1,5 @@
 <properties
-	pageTitle="What is Self-Service Signup for Azure? | Microsoft Azure"
+	pageTitle="What is Self-Service Signup for Azure? | Windows Azure"
 	description="An overview self-service signup for Azure, how to manage the sign up process and how to ."
 	services="active-directory"
 	documentationCenter=""
@@ -9,12 +9,8 @@
 
 <tags
 	ms.service="active-directory"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.tgt_pltfrm="na"
-	ms.workload="identity"
 	ms.date="09/21/2015"
-	ms.author="stevenpo"/>
+	wacn.date=""/>
 
 
 # What is Self-Service Signup for Azure?
@@ -136,7 +132,7 @@ You have a few options for how to perform a domain validation (and do a takeover
 
 	A takeover is triggered by doing a domain addition.  If a tenant already exists for the domain, you'll have the option to perform an external takeover.
 
-	Sign in to the Azure portal using your credentials.  Navigate to your existing tenant and then to **Add domain**.
+	Sign in to the Azure Management Portal using your credentials.  Navigate to your existing tenant and then to **Add domain**.
 
 2.  Office 365
 
@@ -220,17 +216,17 @@ The following flowchart explains all the different combinations for these parame
 
 ![][1]
 
-For more information and examples of how to use these parameters, see [Set-MsolCompanySettings](https://msdn.microsoft.com/library/azure/dn194127.aspx).
+For more information and examples of how to use these parameters, see [Set-MsolCompanySettings](https://msdn.microsoft.com/zh-cn/library/azure/dn194127.aspx).
 
 ## See Also
 
--  [How to install and configure Azure PowerShell](../powershell-install-configure/)
+-  [How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure)
 
--  [Azure PowerShell](https://msdn.microsoft.com/library/azure/jj156055.aspx)
+-  [Azure PowerShell](https://msdn.microsoft.com/zh-cn/library/azure/jj156055.aspx)
 
--  [Azure Cmdlet Reference](https://msdn.microsoft.com/library/azure/jj554330.aspx)
+-  [Azure Cmdlet Reference](https://msdn.microsoft.com/zh-cn/library/azure/jj554330.aspx)
 
--  [Set-MsolCompanySettings](https://msdn.microsoft.com/library/azure/dn194127.aspx)
+-  [Set-MsolCompanySettings](https://msdn.microsoft.com/zh-cn/library/azure/dn194127.aspx)
 
 <!--Image references-->
 [1]: ./media/active-directory-self-service-signup/SelfServiceSignUpControls.png

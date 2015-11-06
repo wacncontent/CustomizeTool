@@ -1,5 +1,5 @@
  <properties
-   pageTitle="Supported Token and Claim Types | Microsoft Azure"
+   pageTitle="Supported Token and Claim Types | Windows Azure"
    description="A guide for understanding and evaluating the claims in the SAML 2.0 and JSON Web Tokens (JWT) tokens issued by Azure Active Directory (AAD)"
    documentationCenter="dev-center-name"
    authors="msmbaldwin"
@@ -8,13 +8,9 @@
    editor=""/>
 
 <tags
-   ms.service="active-directory"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="identity"
-   ms.date="09/17/2015"
-   ms.author="mbaldwin"/>
+	ms.service="active-directory"
+	ms.date="09/17/2015"
+	wacn.date=""/>
 
 # Supported Token and Claim Types
 
@@ -124,11 +120,11 @@ The Identity Provider claim records the identity provider that authenticated the
 In a SAML token, the identity provider appears in a claim in the identityprovider SAML Attribute element.
 
     <Attribute Name=” http://schemas.microsoft.com/identity/claims/identityprovider”>
-    <AttributeValue>https://sts.windows.net/cbb1a5ac-f33b-45fa-9bf5-f37db0fed422/<AttributeValue>
+    <AttributeValue>https://sts.chinacloudapi.cn/cbb1a5ac-f33b-45fa-9bf5-f37db0fed422/<AttributeValue>
 
 In a JWT token, the identity provider appears in an idp claim.
 
-    "idp":”https://sts.windows.net/cbb1a5ac-f33b-45fa-9bf5-f37db0fed422/”
+    "idp":”https://sts.chinacloudapi.cn/cbb1a5ac-f33b-45fa-9bf5-f37db0fed422/”
 
 ### IssuedAt
 
@@ -144,15 +140,15 @@ In a JWT token, the IssuedAt value appears in the iat claim. The value is expres
 ### Issuer
 
 The Issuer claim identifies the security token service (STS) that constructs and returns the token and the Azure AD directory tenant.
-In the tokens that Azure AD returns, the issuer is sts.windows.net. The GUID in the Issuer claim value is the tenant ID of the Azure AD directory. The tenant ID is an immutable and reliable identifier of the directory.
+In the tokens that Azure AD returns, the issuer is sts.chinacloudapi.cn. The GUID in the Issuer claim value is the tenant ID of the Azure AD directory. The tenant ID is an immutable and reliable identifier of the directory.
 
 In a SAML token, the Issuer claim appears in an Issuer element.
 
-    <Issuer>https://sts.windows.net/cbb1a5ac-f33b-45fa-9bf5-f37db0fed422/</Issuer>
+    <Issuer>https://sts.chinacloudapi.cn/cbb1a5ac-f33b-45fa-9bf5-f37db0fed422/</Issuer>
 
 In a JWT token, the Issuer appears in an iss claim.
 
-    "iss":”https://sts.windows.net/cbb1a5ac-f33b-45fa-9bf5-f37db0fed422/”
+    "iss":”https://sts.chinacloudapi.cn/cbb1a5ac-f33b-45fa-9bf5-f37db0fed422/”
 
 ### Last Name
 
@@ -282,12 +278,12 @@ This is a sample of a typical SAML token.
 	  </t:Lifetime>
 	  <wsp:AppliesTo xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy">
 		<EndpointReference xmlns="http://www.w3.org/2005/08/addressing">
-		  <Address>https://contoso.onmicrosoft.com/MyWebApp</Address>
+		  <Address>https://contoso.partner.onmschina.cn/MyWebApp</Address>
 		</EndpointReference>
 	  </wsp:AppliesTo>
 	  <t:RequestedSecurityToken>
 		<Assertion xmlns="urn:oasis:names:tc:SAML:2.0:assertion" ID="_3ef08993-846b-41de-99df-b7f3ff77671b" IssueInstant="2014-12-24T05:20:47.060Z" Version="2.0">
-		  <Issuer>https://sts.windows.net/b9411234-09af-49c2-b0c3-653adc1f376e/</Issuer>
+		  <Issuer>https://sts.chinacloudapi.cn/b9411234-09af-49c2-b0c3-653adc1f376e/</Issuer>
 		  <ds:Signature xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
 			<ds:SignedInfo>
 			  <ds:CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" />
@@ -314,7 +310,7 @@ This is a sample of a typical SAML token.
 		  </Subject>
 		  <Conditions NotBefore="2014-12-24T05:15:47.060Z" NotOnOrAfter="2014-12-24T06:15:47.060Z">
 			<AudienceRestriction>
-			  <Audience>https://contoso.onmicrosoft.com/MyWebApp</Audience>
+			  <Audience>https://contoso.partner.onmschina.cn/MyWebApp</Audience>
 			</AudienceRestriction>
 		  </Conditions>
 		  <AttributeStatement>
@@ -325,7 +321,7 @@ This is a sample of a typical SAML token.
 			  <AttributeValue>b9411234-09af-49c2-b0c3-653adc1f376e</AttributeValue>
 			</Attribute>
 			<Attribute Name="http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name">
-			  <AttributeValue>sample.admin@contoso.onmicrosoft.com</AttributeValue>
+			  <AttributeValue>sample.admin@contoso.partner.onmschina.cn</AttributeValue>
 			</Attribute>
 			<Attribute Name="http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname">
 			  <AttributeValue>Admin</AttributeValue>
@@ -349,7 +345,7 @@ This is a sample of a typical SAML token.
 			  <AttributeValue>edd41703-8652-4948-94a7-2d917bba7667</AttributeValue>
 			</Attribute>
 			<Attribute Name="http://schemas.microsoft.com/identity/claims/identityprovider">
-			  <AttributeValue>https://sts.windows.net/b9411234-09af-49c2-b0c3-653adc1f376e/</AttributeValue>
+			  <AttributeValue>https://sts.chinacloudapi.cn/b9411234-09af-49c2-b0c3-653adc1f376e/</AttributeValue>
 			</Attribute>
 		  </AttributeStatement>
 		  <AuthnStatement AuthnInstant="2014-12-23T18:51:11.000Z">
@@ -385,8 +381,8 @@ In addition to claims, the token includes a version number in **ver** and **appi
      x5t: "kriMPdmBvx68skT8-mPAB3BseeA"
     }.
     {
-     aud: "https://contoso.onmicrosoft.com/scratchservice",
-     iss: "https://sts.windows.net/b9411234-09af-49c2-b0c3-653adc1f376e/",
+     aud: "https://contoso.partner.onmschina.cn/scratchservice",
+     iss: "https://sts.chinacloudapi.cn/b9411234-09af-49c2-b0c3-653adc1f376e/",
      iat: 1416968588,
      nbf: 1416968588,
      exp: 1416972488,
@@ -399,8 +395,8 @@ In addition to claims, the token includes a version number in **ver** and **appi
       "Admin"
      ],
      oid: "6526e123-0ff9-4fec-ae64-a8d5a77cf287",
-     upn: "sample.user@contoso.onmicrosoft.com",
-     unique_name: "sample.user@contoso.onmicrosoft.com",
+     upn: "sample.user@contoso.partner.onmschina.cn",
+     unique_name: "sample.user@contoso.partner.onmschina.cn",
      sub: "yf8C5e_VRkR1egGxJSDt5_olDFay6L5ilBA81hZhQEI",
      family_name: "User",
      given_name: "Sample",
@@ -422,4 +418,4 @@ In addition to claims, the token includes a version number in **ver** and **appi
 
 ##See Also
 
-[Azure Active Directory Authentication Protocols](https://msdn.microsoft.com/library/azure/dn151124.aspx)
+[Azure Active Directory Authentication Protocols](https://msdn.microsoft.com/zh-cn/library/azure/dn151124.aspx)

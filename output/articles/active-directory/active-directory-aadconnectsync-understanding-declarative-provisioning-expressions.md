@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Azure AD Connect Sync: Understanding Declarative Provisioning Expressions | Microsoft Azure"
+	pageTitle="Azure AD Connect Sync: Understanding Declarative Provisioning Expressions | Windows Azure"
 	description="Explains the declarative provisioning expressions."
 	services="active-directory"
 	documentationCenter=""
@@ -9,12 +9,8 @@
 
 <tags
 	ms.service="active-directory"
-	ms.workload="identity"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="10/13/2015"
-	ms.author="markusvi"/>
+	wacn.date=""/>
 
 
 # Azure AD Connect Sync: Understanding Declarative Provisioning Expressions
@@ -23,7 +19,7 @@ The Azure Active Directory Connect Synchronization Service (Azure AD Connect Syn
 
 An essential part of declarative provisioning is the expression language used in attribute flows. The language used is a subset of Microsoft® Visual Basic® for Applications (VBA). This language is used in Microsoft Office and users with experience of VBScript will also recognize it. The Declarative Provisioning Expression Language is only using functions and is not a structured language; there are no methods or statements. Functions will instead be nested to express program flow.
 
-For more details, see [Welcome to the Visual Basic for Applications language reference for Office 2013](https://msdn.microsoft.com/library/gg264383(v=office.15).aspx).
+For more details, see [Welcome to the Visual Basic for Applications language reference for Office 2013](https://msdn.microsoft.com/zh-cn/library/gg264383(v=office.15).aspx).
 
 The attributes are strongly typed. A function which expects a single-value string attribute will not accept multi-valued or attributes of a different type. It is also case sensitive. Both function names and attribute names must have proper casing or an error will be thrown
 
@@ -127,12 +123,12 @@ An example of this can be found in the out-of-box Synchronization Rule In from A
 
 `proxyAddresses <- RemoveDuplicates(Trim(ImportedValues(“proxyAddresses”)))`
 
-For a complete list of functions, see [Azure AD Connect Sync: Functions Reference](active-directory-aadconnectsync-functions-reference.md)
+For a complete list of functions, see [Azure AD Connect Sync: Functions Reference](/documentation/articles/active-directory-aadconnectsync-functions-reference)
 
 
 ## Additional Resources
 
-* [Azure AD Connect Sync: Customizing Synchronization options](active-directory-aadconnectsync-whatis.md)
-* [Integrating your on-premises identities with Azure Active Directory](active-directory-aadconnect.md)
+* [Azure AD Connect Sync: Customizing Synchronization options](/documentation/articles/active-directory-aadconnectsync-whatis)
+* [Integrating your on-premises identities with Azure Active Directory](/documentation/articles/active-directory-aadconnect)
 
 <!--Image references-->

@@ -203,7 +203,7 @@ In this simple example, you broadcasted notifications to all your Windows Phone 
 
 
 <!-- URLs. -->
-[Visual Studio 2012 Express for Windows Phone]: https://go.microsoft.com/fwLink/p/?LinkID=268374
+[Visual Studio 2012 Express for Windows Phone]: https://www.visualstudio.com/downloads/download-visual-studio-vs
 [Azure Management Portal]: https://manage.windowsazure.cn/
 [Notification Hubs Guidance]: http://msdn.microsoft.com/zh-cn/library/jj927170.aspx
 [MPNS authenticated mode]: http://msdn.microsoft.com/zh-cn/library/windowsphone/develop/ff941099(v=vs.105).aspx

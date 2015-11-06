@@ -477,7 +477,7 @@ to learn about more complex storage tasks:
 <ul>
 <li>View the Table service reference documentation for complete details about available APIs:
   <ul>
-    <li><a href="http://go.microsoft.com/fwlink/?LinkID=390731&clcid=0x409">Storage Client Library for .NET reference</a>
+    <li><a href="https://msdn.microsoft.com/zh-cn/library/wa_storage_30_reference_home.aspx&clcid=0x409">Storage Client Library for .NET reference</a>
     </li>
     <li><a href="http://msdn.microsoft.com/zh-cn/library/azure/dd179355">REST API reference</a></li>
   </ul>
@@ -503,7 +503,7 @@ to learn about more complex storage tasks:
   [Blob9]: ./media/storage-dotnet-how-to-use-table-storage/blob9.png
 
   [Introducing Upsert and Query Projection blog post]: http://blogs.msdn.com/b/windowsazurestorage/archive/2011/09/15/windows-azure-tables-introducing-upsert-and-query-projection.aspx
-  [.NET Client Library reference]: http://go.microsoft.com/fwlink/?LinkID=390731&clcid=0x409
+  [.NET Client Library reference]: https://msdn.microsoft.com/zh-cn/library/wa_storage_30_reference_home.aspx&clcid=0x409
   [Storing and accessing data in Azure]: http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx
   [Azure Storage Team blog]: http://blogs.msdn.com/b/windowsazurestorage/
   [Configure Azure Storage connection strings]: http://msdn.microsoft.com/zh-cn/library/azure/ee758697.aspx

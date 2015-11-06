@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties
    pageTitle="Use DevOps environments effectively for your web app"
    description="Learn how to use deployment slots to setup and manage multiple development environments for your application"

@@ -35,4 +35,4 @@
 		  });
 		}
 
-   	This registers a new insert script, which uses the [gcm object](http://go.microsoft.com/fwlink/p/?LinkId=282645) to send a push notification to all registered devices after the insert succeeds. 
+   	This registers a new insert script, which uses the [gcm object](https://msdn.microsoft.com/zh-cn/library/dn126137.aspx) to send a push notification to all registered devices after the insert succeeds. 

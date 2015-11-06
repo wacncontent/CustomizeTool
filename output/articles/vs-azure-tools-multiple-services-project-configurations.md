@@ -55,7 +55,7 @@ By default, diagnostics is enabled for the Web role. The Azure cloud service pro
 
 ## Settings page
 
-On the **Settings** page, you can add configuration settings for your service. Configuration settings are name-value pairs. Code running in the role can read the values of your configuration settings at runtime using classes provided by the [Azure Managed Library](http://go.microsoft.com/fwlink?LinkID=171026). Specifically, the [GetConfigurationSettingValue](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.serviceruntime.roleenvironment.getconfigurationsettingvalue.aspx) method returns the value of a named configuration setting at runtime.
+On the **Settings** page, you can add configuration settings for your service. Configuration settings are name-value pairs. Code running in the role can read the values of your configuration settings at runtime using classes provided by the [Azure Managed Library](https://msdn.microsoft.com/zh-cn/library/azure/dn602775(v=azure.11).aspx). Specifically, the [GetConfigurationSettingValue](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.serviceruntime.roleenvironment.getconfigurationsettingvalue.aspx) method returns the value of a named configuration setting at runtime.
 
 ### Configuring a connection string to a storage account
 
@@ -87,7 +87,7 @@ You can use the **Local Storage** property page to reserve one or more local sto
 
 On the **Certificates** page, you can associate certificates with your role. The certificates that you add can be used to configure your HTTPS endpoints on the **Endpoints** property page.
 
-The **Certificates** property page adds information about your certificates to your service configuration. Note that your certificates are not packaged with your service; you must upload your certificates separately to Azure through the [Azure Management portal](http://go.microsoft.com/fwlink/?LinkID=213885).
+The **Certificates** property page adds information about your certificates to your service configuration. Note that your certificates are not packaged with your service; you must upload your certificates separately to Azure through the [Azure Management portal](https://manage.windowsazure.cn/).
 
 To associate a certificate with your role, provide a name for the certificate. You use this name to refer to the certificate when you configure an HTTPS endpoint on the **Endpoints** property page. Next, specify whether the certificate store is **Local Machine** or **Current User** and the name of the store. Finally, enter the certificate's thumbprint. If the certificate is in the Current User\Personal (My) store, you can enter the certificate's thumbprint by selecting the certificate from a populated list. If it resides in any other location, enter the thumbprint value by hand.
 

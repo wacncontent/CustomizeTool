@@ -1,6 +1,6 @@
 <properties
 
-	pageTitle="Managing security groups in Azure Active Directory | Microsoft Azure"
+	pageTitle="Managing security groups in Azure Active Directory | Windows Azure"
 	description="Covers how to sign up for Azure and first steps you can try with Azure AD."
 	services="active-directory"
 	documentationCenter=""
@@ -9,13 +9,9 @@
 	editor=""/>
 
 <tags
-	ms.service="active-directory" 
-	ms.workload="identity" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="07/13/2015" 
-	ms.author="femila"/>
+	ms.service="active-directory"
+	ms.date="07/13/2015"
+	wacn.date=""/>
 
 
 #Managing security groups in Azure Active Directory
@@ -62,8 +58,8 @@
 
 Here are some topics that will provide some additional information on Azure Active Directory 
 
-* [Managing access to resources with Azure Active Directory groups](active-directory-manage-groups.md)
+* [Managing access to resources with Azure Active Directory groups](/documentation/articles/active-directory-manage-groups)
 
-* [What is Azure Active Directory?](active-directory-whatis.md)
+* [What is Azure Active Directory?](/documentation/articles/active-directory-whatis)
 
-* [Integrating your on-premises identities with Azure Active Directory](active-directory-aadconnect.md)
+* [Integrating your on-premises identities with Azure Active Directory](/documentation/articles/active-directory-aadconnect)

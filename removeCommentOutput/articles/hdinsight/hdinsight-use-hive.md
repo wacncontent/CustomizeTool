@@ -111,11 +111,12 @@ HDInsight can run HiveQL jobs using a variety of methods. Use the following tabl
 
 | **Use this** if you want...                                                     | ...an **interactive** shell | ...**batch** processing | ...with this **cluster operating system** | ...from this **client operating system** |
 |:--------------------------------------------------------------------------------|:---------------------------:|:-----------------------:|:------------------------------------------|:-----------------------------------------|
-
-| [Curl](/documentation/articles/hdinsight-hadoop-use-hive-curl)                                       |           &nbsp;            |            ✔            |  Windows                          |  Windows        |
+| [Beeline command (from an SSH session)](/documentation/articles/hdinsight-hadoop-use-hive-beeline)                                         |              ✔              |            ✔            | Linux                                     | Linux, Unix, Mac OS X, or Windows        |
+| [Hive command (from an SSH session)](/documentation/articles/hdinsight-hadoop-use-hive-ssh)                                         |              ✔              |            ✔            | Linux                                     | Linux, Unix, Mac OS X, or Windows        |
+| [Curl](/documentation/articles/hdinsight-hadoop-use-hive-curl)                                       |           &nbsp;            |            ✔            | Linux or Windows                          | Linux, Unix, Mac OS X, or Windows        |
 | [Query console](/documentation/articles/hdinsight-hadoop-use-hive-query-console)                     |           &nbsp;            |            ✔            | Windows                                   | Browser-based                            |
-| [HDInsight tools for Visual Studio](/documentation/articles/hdinsight-hadoop-use-hive-visual-studio) |           &nbsp;            |            ✔            |  Windows                          | Windows                                  |
-| [Windows PowerShell](/documentation/articles/hdinsight-hadoop-use-hive-powershell)                   |           &nbsp;            |            ✔            |  Windows                          | Windows                                  |
+| [HDInsight tools for Visual Studio](/documentation/articles/hdinsight-hadoop-use-hive-visual-studio) |           &nbsp;            |            ✔            | Linux or Windows                          | Windows                                  |
+| [Windows PowerShell](/documentation/articles/hdinsight-hadoop-use-hive-powershell)                   |           &nbsp;            |            ✔            | Linux or Windows                          | Windows                                  |
 | [Remote Desktop](/documentation/articles/hdinsight-hadoop-use-hive-remote-desktop)                   |              ✔              |            ✔            | Windows                                   | Windows                                  |
 
 ## Running Hive jobs on Azure HDInsight using on-premises SQL Server Integration Services

@@ -16,16 +16,16 @@
 
 You can configure your Visual Studio Online team projects to automatically build and deploy to Azure web apps or cloud services.  (For information on how to set up a continuous build and deploy system using an *on-premises* Team Foundation Server, see [Continuous Delivery for Cloud Services in Azure](/documentation/articles/cloud-services-dotnet-continuous-delivery).)
 
-This tutorial assumes you have Visual Studio 2013 and the Azure SDK installed. If you don't already have Visual Studio 2013, download it by choosing the **Get started for free** link at [www.visualstudio.com](http://www.visualstudio.com). Install the Azure SDK from [here](http://go.microsoft.com/fwlink/?LinkId=239540).
+This tutorial assumes you have Visual Studio 2013 and the Azure SDK installed. If you don't already have Visual Studio 2013, download it by choosing the **Get started for free** link at [www.visualstudio.com](http://www.visualstudio.com). Install the Azure SDK from [here](/downloads/).
 
 > [AZURE.NOTE] You need an Visual Studio online account to complete this tutorial:
-> You can [open a Visual Studio Online account for free](http://go.microsoft.com/fwlink/p/?LinkId=512979).
+> You can [open a Visual Studio Online account for free](https://www.visualstudio.com/get-started/setup/sign-up-for-visual-studio-online).
 
 To set up a cloud service to automatically build and deploy to Azure by using Visual Studio Online, follow these steps.
 
 ## Step 1: Create a team project
 
-Follow the instructions [here](http://go.microsoft.com/fwlink/?LinkId=512980) to create your team project and link it to Visual Studio. This walkthrough assumes you are using Team Foundation Version Control (TFVC) as your source control solution. If you want to use Git for version control, see [the Git version of this walkthrough](http://go.microsoft.com/fwlink/p/?LinkId=397358).
+Follow the instructions [here](https://www.visualstudio.com/get-started/setup/connect-to-visual-studio-online) to create your team project and link it to Visual Studio. This walkthrough assumes you are using Team Foundation Version Control (TFVC) as your source control solution. If you want to use Git for version control, see [the Git version of this walkthrough](/documentation/articles/cloud-services-continuous-delivery-use-vso-git/).
 
 ## Step 2: Check in a project to source control
 
@@ -265,7 +265,7 @@ This step applies only to web apps, not cloud services. To put a quality gate on
 	![][50]
 
 ## Next steps
-For more about unit testing in Visual Studio Online, see [Run unit tests in your build](http://go.microsoft.com/fwlink/p/?LinkId=510474). If you're using Git, see [Share your code in Git](http://www.visualstudio.com/get-started/share-your-code-in-git-vs.aspx) and [Continuous deployment using GIT in Azure Websites](/documentation/articles/web-sites-publish-source-control).  For more information about Visual Studio Online, see [Visual Studio Online](http://go.microsoft.com/fwlink/?LinkId=253861).
+For more about unit testing in Visual Studio Online, see [Run unit tests in your build](https://msdn.microsoft.com/library/ms253138.aspx). If you're using Git, see [Share your code in Git](http://www.visualstudio.com/get-started/share-your-code-in-git-vs.aspx) and [Continuous deployment using GIT in Azure Websites](/documentation/articles/web-sites-publish-source-control).  For more information about Visual Studio Online, see [Visual Studio Online](https://www.visualstudio.com/).
 
 [0]: ./media/cloud-services-continuous-delivery-use-vso/tfs0.PNG
 [1]: ./media/cloud-services-continuous-delivery-use-vso/tfs1.png

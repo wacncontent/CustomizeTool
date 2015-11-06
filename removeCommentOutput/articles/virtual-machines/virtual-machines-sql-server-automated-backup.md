@@ -36,7 +36,7 @@ The following table describes the options that can be configured for Automated B
 
 ## Configure Automated Backup in the Portal
 
-You can use the [Azure Preview Portal](http://go.microsoft.com/fwlink/?LinkID=525040&clcid=0x409) to configure Automated Backup when you create a new SQL Server 2014 Virtual Machine. The following screenshot shows these options under **OPTIONAL CONFIGURATION** | **SQL AUTOMATED BACKUP**.
+You can use the [Azure Preview Portal](https://portal.azure.com/) to configure Automated Backup when you create a new SQL Server 2014 Virtual Machine. The following screenshot shows these options under **OPTIONAL CONFIGURATION** | **SQL AUTOMATED BACKUP**.
 
 ![SQL Automatic Backup configuration in Azure Management Portal](./media/virtual-machines-sql-server-automated-backup/IC778483.jpg)
 

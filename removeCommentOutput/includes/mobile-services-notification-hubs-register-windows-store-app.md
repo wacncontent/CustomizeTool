@@ -48,7 +48,7 @@
 
 12. Click the **Push** tab and enter the **Client secret** and **Package SID** values obtained from WNS, then click **Save**.
 
-	>[AZURE.NOTE]When you are completing this tutorial using an older mobile service, you might see a link at the bottom of the **Push** tab that says **Enable Enhanced Push**. Click this now to upgrade your mobile service to integrate with Notification Hubs. This change cannot be reverted. For details on how to enable enhanced push notifications in a production mobile service, see <a href="http://go.microsoft.com/fwlink/p/?LinkId=391951">this guidance</a>. 
+	>[AZURE.NOTE]When you are completing this tutorial using an older mobile service, you might see a link at the bottom of the **Push** tab that says **Enable Enhanced Push**. Click this now to upgrade your mobile service to integrate with Notification Hubs. This change cannot be reverted. For details on how to enable enhanced push notifications in a production mobile service, see <a href="https://msdn.microsoft.com/zh-cn/library/azure/dn635173.aspx">this guidance</a>. 
 
    	![](./media/mobile-services-notification-hubs-register-windows-store-app/mobile-push-tab.png)
 

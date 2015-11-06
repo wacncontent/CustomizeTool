@@ -9,19 +9,15 @@
 
 <tags
 	ms.service="active-directory"
-	ms.workload="identity"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="09/09/2015"
-	ms.author="rkarlin"/>
+	wacn.date=""/>
 
 # How to provide secure remote access to on-premises applications
 
 You want to provide access for remote users who have all kinds of devices – managed, unmanaged; tablets, smartphones and laptops. And providing secure access to a myriad of resources can be complex. In recent years, reverse proxies were a popular way to provide secure remote access, but they needed to be behind firewalls which were hard to secure and hard to make highly available.
 
 ## Secure remote access in the cloud
-In a modern cloud environment, we take remote access to the next level using Application Proxy in Microsoft Azure Active Directory. Application Proxy is a feature of Azure AD that is supplied as a service, meaning that it’s easy to deploy and use. It integrates with Azure Active Directory, the same identity platform that is used by Office 365.
+In a modern cloud environment, we take remote access to the next level using Application Proxy in Windows Azure Active Directory. Application Proxy is a feature of Azure AD that is supplied as a service, meaning that it’s easy to deploy and use. It integrates with Azure Active Directory, the same identity platform that is used by Office 365.
 
 ## What is Azure Active Directory Application Proxy?
 Application Proxy provides single-sign-on and secure remote access for web applications hosted on-premises, such as such as SharePoint sites and Outlook Web Access. Your on-premises web applications can now be accessed the same way as your SaaS apps in Azure Active Directory, without the need for a VPN or changing the network infrastructure. Application Proxy lets you publish applications. Employees can log into your apps from home, on their own devices and authenticate through this cloud-based proxy.
@@ -40,24 +36,24 @@ Make sure you have an Azure AD basic or premium subscription and an Azure AD dir
 ### Getting started enabling remote access to on-premises applications
 Setting up Application Proxy is accomplished in two steps:
 
-1. [Enable Application Proxy and configure the Connector](active-directory-application-proxy-enable.md)<br>
-2. [Publish applications](active-directory-application-proxy-publish.md) - use the quick and easy wizard to get your on-premises apps published and accessible remotely.
+1. [Enable Application Proxy and configure the Connector](/documentation/articles/active-directory-application-proxy-enable)<br>
+2. [Publish applications](/documentation/articles/active-directory-application-proxy-publish) - use the quick and easy wizard to get your on-premises apps published and accessible remotely.
 
 ## What's next?
 There's a lot more you can do with Application Proxy:
 
 
-- [Publish applications using your own domain name](active-directory-application-proxy-custom-domains.md)
-- [Enable single-sign on](active-directory-application-proxy-sso-using-kcd.md)
-- [Working with claims aware applications](active-directory-application-proxy-claims-aware-apps.md)
-- [Enable conditional access](active-directory-application-proxy-conditional-access.md)
+- [Publish applications using your own domain name](/documentation/articles/active-directory-application-proxy-custom-domains)
+- [Enable single-sign on](/documentation/articles/active-directory-application-proxy-sso-using-kcd)
+- [Working with claims aware applications](/documentation/articles/active-directory-application-proxy-claims-aware-apps)
+- [Enable conditional access](/documentation/articles/active-directory-application-proxy-conditional-access)
 
 
 ### Learn more about Application Proxy
-- [Take a look here at our online help](active-directory-application-proxy-enable.md)
+- [Take a look here at our online help](/documentation/articles/active-directory-application-proxy-enable)
 - [Check out the Application Proxy blog](http://blogs.technet.com/b/applicationproxyblog/)
 - [Watch our videos on Channel 9!](http://channel9.msdn.com/events/Ignite/2015/BRK3864)
 
 ## Additional resources
-* [Sign up for Azure as an organization](../sign-up-organization.md)
-* [Azure Identity](../fundamentals-identity.md)
+* [Sign up for Azure as an organization](/documentation/articles/sign-up-organization)
+* [Azure Identity](/documentation/articles/fundamentals-identity)

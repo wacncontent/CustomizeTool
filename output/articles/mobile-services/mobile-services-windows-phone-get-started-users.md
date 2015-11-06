@@ -26,7 +26,7 @@ This tutorial is also demonstrated by Nick Harris in the following video:
 
 This tutorial is based on the Mobile Services quickstart. You must also first complete the tutorial [Add Mobile Services to an existing app]. 
 
->[AZURE.NOTE]This tutorial demonstrates the authentication flow managed by Mobile Services using a variety of identity providers. This method is easy to configure and supports multiple providers. By using client-managed authentication, your app has access to additional user data maintained by the identity provider. You can get the same user data in your mobile service by by calling the **user.getIdentities()** function in server scripts. For more information, see [this post](http://go.microsoft.com/fwlink/p/?LinkId=506605).
+>[AZURE.NOTE]This tutorial demonstrates the authentication flow managed by Mobile Services using a variety of identity providers. This method is easy to configure and supports multiple providers. By using client-managed authentication, your app has access to additional user data maintained by the identity provider. You can get the same user data in your mobile service by by calling the **user.getIdentities()** function in server scripts. For more information, see [this post](http://blogs.msdn.com/b/carlosfigueira/archive/2013/12/16/enhanced-users-feature-in-azure-mobile-services.aspx).
 
 ##<a name="register"></a>Register your app for authentication and configure Mobile Services
 

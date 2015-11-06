@@ -53,7 +53,7 @@ Part of the setup has already been completed during failover.
 
 ## Install vContinuum on-premsies
 
-The vContinuum setup will be at available at [download location](http://go.microsoft.com/fwlink/?linkid=526305). In addition install the patch given here on the vContinuum - available at [download location](http://go.microsoft.com/fwlink/?LinkID=533813).
+The vContinuum setup will be at available at [download location](http://download.microsoft.com/download/2/6/3/263EE895-F104-42E6-8004-7236B6226A6B/Microsoft-ASR_vContinuum_MT_8.4.0.0_Windows_GA_28Jul2015_release.exe). In addition install the patch given here on the vContinuum - available at [download location](http://download.microsoft.com/download/2/6/3/263EE895-F104-42E6-8004-7236B6226A6B/Microsoft-ASR_vContinuum_MT_8.4.0.0_Windows_GA_28Jul2015_release.exe).
 
 1.  Launch the setup to begin installation of vContinuum. Click **Next**.
 ![](./media/site-recovery-failback-azure-to-vmware/image2.png)
@@ -245,7 +245,7 @@ after successful execution of the above script.
 
 ### Begin MT Installation
 
-[Download](http://go.microsoft.com/fwlink/?LinkID=529757) the Linux
+[Download](http://download.microsoft.com/download/7/E/D/7ED50614-1FE1-41F8-B4D2-25D73F623E9B/Microsoft-ASR_UA_8.4.0.0_RHEL6-64_GA_28Jul2015_release.tar.gz) the Linux
 Master Target Server installation file.
 
 Copy the downloaded Linux Master Target Server installer to the Linux

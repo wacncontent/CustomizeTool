@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties
 	pageTitle="How to use Azure Redis Cache with Python | Windows Azure"
 	description="Get started with Azure Redis Cache using Python"
@@ -11,7 +9,7 @@
 
 <tags
 	ms.service="cache"
-	ms.date="08/25/2015"
+	ms.date="10/05/2015"
 	wacn.date=""/>
 
 # How to use Azure Redis Cache with Python
@@ -26,7 +24,7 @@ Install [redis-py](https://github.com/andymccurdy/redis-py).
 
 ## Create a Redis cache on Azure
 
-In the [Azure Management Portal Preview](http://go.microsoft.com/fwlink/?LinkId=398536), click **New**, **DATA SERVICE**, and select **Redis Cache**.
+In the [Azure preview portal](https://manage.windowsazure.cn/), click **New**, **DATA SERVICE**, and select **Redis Cache**.
 
   ![][1]
 
@@ -34,7 +32,7 @@ Enter a DNS hostname. It will have the form `<name>.redis.cache.chinacloudapi.cn
 
   ![][2]
 
-Once you create the cache, click on it in the Azure Management Portal to view the cache settings. You will need:
+Once you create the cache, click on it in the preview portal to view the cache settings. You will need:
 
 - **Hostname.** You entered this name when you created the cache.
 - **Port.** Click the link under **Ports** to view the ports. Use the SSL port.

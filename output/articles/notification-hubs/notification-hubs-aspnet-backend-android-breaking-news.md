@@ -312,4 +312,4 @@ In this tutorial we learned how to broadcast breaking news by category. Consider
 [Live SDK for Windows]: http://go.microsoft.com/fwlink/p/?LinkId=262253
 
 [Azure Management Portal]: https://manage.windowsazure.cn/
-[wns object]: http://go.microsoft.com/fwlink/p/?LinkId=260591
+[wns object]: https://msdn.microsoft.com/zh-cn/library/azure/jj860484.aspx

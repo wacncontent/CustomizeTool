@@ -1,5 +1,5 @@
 <properties
-  pageTitle="Managing access to apps using Azure AD |  Microsoft Azure"
+  pageTitle="Managing access to apps using Azure AD |  Windows Azure"
   description="Describes how Azure Active Directory enables organizations to specify the apps to which each user has access."
   services="active-directory"
   documentationCenter=""
@@ -8,13 +8,9 @@
   editor=""/>
 
  <tags
-  ms.service="active-directory"
-  ms.workload="identity"
-  ms.tgt_pltfrm="na"
-  ms.devlang="na"
-  ms.topic="article"
-  ms.date="10/16/2015"
-  ms.author="stevenpo"/>
+	ms.service="active-directory"
+	ms.date="10/16/2015"
+	wacn.date=""/>
 
 
 # Managing access to apps
@@ -25,8 +21,8 @@ Ongoing access management, usage evaluation, and reporting continue to be a chal
 
  Azure AD supports extensive access management for configured applications, enabling organizations to easily achieve the right access policies ranging from automatic, attribute-based assignment (ABAC or RBAC scenarios) through delegation and including administrator management. With Azure AD you can easily achieve complex policies, combining multiple management models for a single application and can even re-use management rules across applications with the same audiences.
 
- - [Adding new applications](active-directory-sso-newly-acquired-saas-apps.md)
- - [Adding existing applications](active-directory-sso-integrate-existing-apps)
+ - [Adding new applications](/documentation/articles/active-directory-sso-newly-acquired-saas-apps)
+ - [Adding existing applications](/documentation/articles/active-directory-sso-integrate-existing-apps)
 
  Azure AD's application assignment focuses on two primary assignment modes:
 
@@ -50,7 +46,7 @@ With Azure AD, applications like Salesforce can be pre-configured for single sig
 
 In this case, all assigned users would be automatically provisioned to salesforce, as they are added to different groups their role assignment would be updated in salesforce. Users would be able to discover and access Salesforce through the Microsoft application access panel, Office web clients, or even by navigating to their organizational Salesforce login page. Administrators would be able to easily view usage and assignment status using Azure AD reporting.
 
- Administrators can employ [Azure AD conditional access](active-directory-conditional-access.md) to set access policies for specific roles. These policies can include whether access is permitted outside the corporate environment and even Multi-Factor Authentication or device requirements to achieve access in various cases.
+ Administrators can employ [Azure AD conditional access](/documentation/articles/active-directory-conditional-access) to set access policies for specific roles. These policies can include whether access is permitted outside the corporate environment and even Multi-Factor Authentication or device requirements to achieve access in various cases.
 
 ## How can I get started?
 
@@ -60,13 +56,13 @@ First, if you aren't already using Azure AD and you are an IT admin:
 
 Azure AD features that enable account sharing include:
 
-- [Group assignment](active-directory-accessmanagement-self-service-group-management.md)
+- [Group assignment](/documentation/articles/active-directory-accessmanagement-self-service-group-management)
 - Adding applications to Azure AD
 - Getting started with assignment
 - Application assignment FAQ
-- [App usage dashboard/reports](active-directory-passwords-get-insights.md)
+- [App usage dashboard/reports](/documentation/articles/active-directory-passwords-get-insights)
 
 ## Where can I learn more?
 
-- [Protecting apps with conditional access](active-directory-conditional-access.md)
-- [Self-service group management/SSAA](active-directory-accessmanagement-self-service-group-management.md)
+- [Protecting apps with conditional access](/documentation/articles/active-directory-conditional-access)
+- [Self-service group management/SSAA](/documentation/articles/active-directory-accessmanagement-self-service-group-management)

@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Tutorial: Azure Active Directory integration with DocuSign | Microsoft Azure"
+	pageTitle="Tutorial: Azure Active Directory integration with DocuSign | Windows Azure"
 	description="Learn how to configure single sign-on between Azure Active Directory and DocuSign."
 	services="active-directory"
 	documentationCenter=""
@@ -9,12 +9,8 @@
 
 <tags
 	ms.service="active-directory"
-	ms.workload="identity"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="10/06/2015"
-	ms.author="markvi"/>
+	wacn.date=""/>
 
 
 # Tutorial: Azure Active Directory integration with DocuSign
@@ -88,7 +84,7 @@ The objective of this section is to outline how to enable users to authenticate 
 1. In the Azure AD portal, on the **Docusign application integration** page, click **Configure single sign-on** to open the Configure Single Sign On dialog.
 <br><br>![Configuring single sign-on ][7]<br>
 
-2. On the **How would you like users to sign on to Docusign** page, select **Microsoft Azure AD Single Sign-On**, and then click Next.
+2. On the **How would you like users to sign on to Docusign** page, select **Windows Azure AD Single Sign-On**, and then click Next.
 <br><br>![Configuring single sign-on ][8]<br>
 
 3. On the **Configure App URL** page, in the **Docusign sign on URL** textbox, type the URL of your Docusign tenant, and then click **Next**. 
@@ -117,7 +113,7 @@ The URL has the following schema: *https://<yourcompanyname>.docusign.net/Member
 <br><br>![Configuring single sign-on ][13]<br>
 
 
-    a. In the Azure portal, on the **Configure single sign-on at Docusign** dialogue page, copy the Issuer URL** value, and then paste it into the **Identity Provider Endpoint URL** textbox.
+    a. In the Azure Management Portal, on the **Configure single sign-on at Docusign** dialogue page, copy the Issuer URL** value, and then paste it into the **Identity Provider Endpoint URL** textbox.
 
     > [AZURE.IMPORTANT] If this configuration option is unavailable, please contact your Docusign account manager or contact the SSO support team by email ([SSOSetup@docusign.com](mailto:SSOSetup@docusign.com)).
  
@@ -196,8 +192,8 @@ For more details about the Access Panel, see Introduction to the Access Panel.
 
 ## Additional Resources
 
-* [List of Tutorials on How to Integrate SaaS Apps with Azure Active Directory](active-directory-saas-tutorial-list.md)
-* [What is application access and single sign-on with Azure Active Directory?](active-directory-appssoaccess-whatis.md)
+* [List of Tutorials on How to Integrate SaaS Apps with Azure Active Directory](/documentation/articles/active-directory-saas-tutorial-list)
+* [What is application access and single sign-on with Azure Active Directory?](/documentation/articles/active-directory-appssoaccess-whatis)
 
 <!--Image references-->
 

@@ -9,12 +9,8 @@
 
 <tags
 	ms.service="active-directory"
-	ms.workload="identity"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="07/27/2015"
-	ms.author="markusvi"/>
+	wacn.date=""/>
 
 
 # Introduction to the Access Panel
@@ -37,9 +33,9 @@ The Access Panel allows users to edit some of their profile settings, including 
 
 - View account details, such as your User ID, alternate email, mobile and office phone numbers
 
-- View and launch cloud-based applications to which you have been granted access by the Azure AD administrator. For more information about the Access Panel from the end users’ perspective, see [Using the Access Panel](https://msdn.microsoft.com/library/azure/dn756411.aspx).
+- View and launch cloud-based applications to which you have been granted access by the Azure AD administrator. For more information about the Access Panel from the end users’ perspective, see [Using the Access Panel](https://msdn.microsoft.com/zh-cn/library/azure/dn756411.aspx).
 
-- Self-manage groups. More specifically, you can create and manage security groups and request security group memberships in Azure AD. For more information, see [Self-service group management for users in Azure AD](active-directory-accessmanagement-self-service-group-management.md) and [Manage your groups](active-directory-manage-groups.md). 
+- Self-manage groups. More specifically, you can create and manage security groups and request security group memberships in Azure AD. For more information, see [Self-service group management for users in Azure AD](/documentation/articles/active-directory-accessmanagement-self-service-group-management) and [Manage your groups](/documentation/articles/active-directory-manage-groups). 
 
 
 
@@ -75,7 +71,7 @@ If a user has a subscription for Azure or Office 365 and has been using the Azur
 If the organization has configured federation, then typing the username is sufficient.
 
 Once authenticated, users will be able to interact with the applications that have been integrated with the directory by the administrator. 
- To learn how to integrate applications with Azure AD, see [What is application access and single sign-on with Azure Active Directory?](active-directory-appssoaccess-whatis.md).
+ To learn how to integrate applications with Azure AD, see [What is application access and single sign-on with Azure Active Directory?](/documentation/articles/active-directory-appssoaccess-whatis).
  
 
 
@@ -135,7 +131,7 @@ If you are an Azure administrator and you are signed into the Azure Management P
 
 **To test as a different user account:**
 
-1. Click the user menu in the upper-right corner of the Azure portal or the Access Panel, and select “**Sign Out**”. This will sign you out of Azure AD.
+1. Click the user menu in the upper-right corner of the Azure Management Portal or the Access Panel, and select “**Sign Out**”. This will sign you out of Azure AD.
 
 2. Go to the Access Panel at **http://myapps.microsoft.com**.
 
@@ -182,7 +178,7 @@ When configuring single sign-on for an application, the Azure management portal 
 For example, if there is an application that is configured to authenticate users using Active Directory Federation Services 2.0, an administrator can use the “Existing Single Sign-On” option to create a link to it on the access panel. When users access the link, they are authenticated using Active Directory Federation Services 2.0, or whatever existing single sign-on solution is provided by the application.
 
 
-[AZURE.INCLUDE [saas-toc](../../includes/active-directory-saas-toc.md)]
+[AZURE.INCLUDE [saas-toc](../includes/active-directory-saas-toc.md)]
 
 <!--Image references-->
 [1]: ./media/active-directory-saas-access-panel-introduction/ic767166.png

@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Tutorial: Integrating Salesforce with Azure Active Directory | Microsoft Azure"
+   pageTitle="Tutorial: Integrating Salesforce with Azure Active Directory | Windows Azure"
    description="Learn how to use Salesforce with Azure Active Directory to enable single sign-on, automated provisioning, and more!"
    services="active-directory"
    documentationCenter=""
@@ -8,13 +8,9 @@
    editor=""/>
 
 <tags
-   ms.service="active-directory"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="identity"
-   ms.date="07/15/2015"
-   ms.author="liviodlc"/>
+	ms.service="active-directory"
+	ms.date="07/15/2015"
+	wacn.date=""/>
 
 #Tutorial: How to integrate Salesforce with Azure Active Directory
 
@@ -22,7 +18,7 @@ This tutorial will show you how to connect your Salesforce environment to your A
 
 ##Prerequisites
 
-1. To access Azure Active Directory through the [Azure Management Portal](https://manage.windowsazure.com), you must first have a valid Azure subscription.
+1. To access Azure Active Directory through the [Azure Management Portal](https://manage.windowsazure.cn), you must first have a valid Azure subscription.
 
 2. You must have a valid tenant in [Salesforce.com](https://www.salesforce.com/).
 
@@ -46,7 +42,7 @@ You may follow this tutorial using the videos below.
 
 ##Step 1: Add Salesforce to your directory
 
-1. In the [Azure Management Portal](https://manage.windowsazure.com), on the left navigation pane, click **Active Directory**.
+1. In the [Azure Management Portal](https://manage.windowsazure.cn), on the left navigation pane, click **Active Directory**.
 
 	![Select Active Directory from the left navigation pane.][0]
 
@@ -84,7 +80,7 @@ You may follow this tutorial using the videos below.
 
 	![Select Azure AD Single Sign-On][7]
 
-	> [AZURE.NOTE] To learn more about about the different single sign-on options, [click here](../active-directory-appssoaccess-whatis/#how-does-single-sign-on-with-azure-active-directory-work)
+	> [AZURE.NOTE] To learn more about about the different single sign-on options, [click here](/documentation/articles/active-directory-appssoaccess-whatis#how-does-single-sign-on-with-azure-active-directory-work)
 
 4. On the **Configure App Settings** page, fill out the **Sign On URL** by typing in your Salesforce domain URL using the following format:
  - Enterprise account: `https://<domain>.my.salesforce.com`
@@ -220,7 +216,7 @@ You may follow this tutorial using the videos below.
 
 4. To test your single sign-on settings, open the Access Panel at [https://myapps.microsoft.com](https://myapps.microsoft.com/), then sign into the test account, and click on **Salesforce**.
 
-[AZURE.INCLUDE [saas-toc](../../includes/active-directory-saas-toc.md)]
+[AZURE.INCLUDE [saas-toc](../includes/active-directory-saas-toc.md)]
 
 [0]: ./media/active-directory-saas-salesforce-tutorial/azure-active-directory.png
 [1]: ./media/active-directory-saas-salesforce-tutorial/applications-tab.png

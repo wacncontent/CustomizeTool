@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties 
 	pageTitle="Create Advanced Encoding Workflows with Workflow Designer" 
 	description="Learn about how to create advanced encoding workflows with Workflow Designer." 

@@ -117,13 +117,13 @@ For more information about universal Windows apps, see [Supporting multiple devi
 
 
 <!-- URLs. -->
-[Visual Studio 2013]: https://go.microsoft.com/fwLink/p/?LinkID=257546
+[Visual Studio 2013]: https://www.visualstudio.com/downloads/download-visual-studio-vs
 [Get started with data]: /documentation/articles/mobile-services-dotnet-backend-windows-universal-dotnet-get-started-data
 [Get started with data]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-data
 [Get started with offline data sync]: /documentation/articles/mobile-services-windows-store-dotnet-get-started-offline-data
 [Get started with authentication]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-users
 [Get started with push notifications]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-push
-[Visual Studio Professional 2013]: https://go.microsoft.com/fwLink/p/?LinkID=257546
+[Visual Studio Professional 2013]: https://www.visualstudio.com/downloads/download-visual-studio-vs
 [Mobile Services SDK]: http://go.microsoft.com/fwlink/?LinkId=257545
 [JavaScript and HTML]: /documentation/articles/mobile-services-win8-javascript
 [Management Portal]: https://manage.windowsazure.cn/

@@ -289,7 +289,7 @@ Now that you've learned the basics of Queue storage, follow these links
 to learn about more complex storage tasks.
 
 - View the Queue service reference documentation for complete details about available APIs:
-    - [Storage Client Library for .NET reference](http://go.microsoft.com/fwlink/?LinkID=390731&clcid=0x409)
+    - [Storage Client Library for .NET reference](https://msdn.microsoft.com/zh-cn/library/wa_storage_30_reference_home.aspx&clcid=0x409)
     - [REST API reference](http://msdn.microsoft.com/zh-cn/library/azure/dd179355)
 - Learn about more advanced tasks you can perform with Azure Storage at [Storing and Accessing Data in Azure](http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx)
 - Learn how to simplify the code you write to work with Azure Storage by using the [Azure WebJobs SDK](/documentation/articles/websites-dotnet-webjobs-sdk).
@@ -299,7 +299,7 @@ to learn about more complex storage tasks.
     - Use [SQL Database](/documentation/articles/sql-database-dotnet-how-to-use) to store relational data.
 
   [Download and install the Azure SDK for .NET]: /develop/net/
-  [.NET client library reference]: http://go.microsoft.com/fwlink/?LinkID=390731&clcid=0x409
+  [.NET client library reference]: https://msdn.microsoft.com/zh-cn/library/wa_storage_30_reference_home.aspx&clcid=0x409
   [Creating a Azure Project in Visual Studio]: http://msdn.microsoft.com/zh-cn/library/azure/ee405487.aspx
   [CloudStorageAccount]: http://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.cloudstorageaccount_methods.aspx
   [Storing and Accessing Data in Azure]: http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx

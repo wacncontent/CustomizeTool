@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties 
 	pageTitle="Securely Connecting to BackEnd Resources from an Azure Websites Environment" 
 	description="Learn about how to securely connect to backend resources from an Azure Websites Environment." 

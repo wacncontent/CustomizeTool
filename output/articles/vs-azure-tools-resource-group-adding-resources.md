@@ -49,7 +49,7 @@ If you need to add more resources to a resource group, you can do this in the JS
 
 ## See Also
 
-[Creating and Deploying Azure Resource Group Deployment Projects](http://go.microsoft.com/fwlink/p/?LinkID=623073)
+[Creating and Deploying Azure Resource Group Deployment Projects](/documentation/articles/vs-azure-tools-resource-groups-deployment-projects-create-deploy/)
 
 [Azure Resource Manager Cmdlets](https://msdn.microsoft.com/zh-cn/library/dn654592.aspx)
 

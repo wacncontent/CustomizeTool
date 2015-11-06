@@ -9,12 +9,8 @@
 
 <tags
 	ms.service="active-directory"
-	ms.workload="identity"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="10/15/2015"
-	ms.author="billmath"/>
+	wacn.date=""/>
 
 # Azure AD Connect Health Operations
 
@@ -43,7 +39,7 @@ When deleting a server, be aware of the following:
 
 - This action will STOP collecting any further data from that server. This server will be removed from the monitoring service. After this action, you will not be able to view new alerts, monitoring or usage analytics data for this server.
 - This action will NOT uninstall or remove the Health Agent from your server. If you have not uninstalled the Health Agent before performing this step, you may see error events on the server related to the Health Agent.
-- This action will NOT delete the data already collected from this server. That data will be deleted as per the Microsoft Azure Data Retention Policy.
+- This action will NOT delete the data already collected from this server. That data will be deleted as per the Windows Azure Data Retention Policy.
 - After performing this action, if you wish to start monitoring the same server again, you will need to uninstall and re-install the health agent on this server.
 
 
@@ -63,7 +59,7 @@ When deleting a service instance, be aware of the following:
 
 - This action will remove the current service instance from the monitoring service.
 - This action will NOT uninstall or remove the Health Agent from any of the servers that were monitored as part of this service instance. If you have not uninstalled the Health Agent before performing this step, you may see error events on the server(s) related to the Health Agent.
-- All data from this service instance will be deleted as per the Microsoft Azure Data Retention Policy.
+- All data from this service instance will be deleted as per the Windows Azure Data Retention Policy.
 - After performing this action, if you wish to start monitoring the service, please uninstall and re-install the health agent on all the servers that will be monitored. After performing this action, if you wish to start monitoring the same server again, you will need to uninstall and re-install the health agent on this server.
 
 
@@ -79,7 +75,7 @@ When deleting a service instance, be aware of the following:
 [//]: # (Start of RBAC section)
 ## Manage Access With Role Based Access Control
 ### Overview
-[Role Based Access Control](role-based-access-control-configure.md) for Azure AD Connect Health provides access Azure AD Connect Health service to users and/or groups outside of global administrators. This is achieved by assigning roles to the intended users and\or groups and provides a mechanism to limit the global administrators within your directory.
+[Role Based Access Control](/documentation/articles/role-based-access-control-configure) for Azure AD Connect Health provides access Azure AD Connect Health service to users and/or groups outside of global administrators. This is achieved by assigning roles to the intended users and\or groups and provides a mechanism to limit the global administrators within your directory.
 
 #### Roles
 Azure AD Connect Health supports the following built-in roles.
@@ -139,7 +135,7 @@ You can remove a user or a group added to Azure AD Connect Health Role Based Acc
 
 ## Related links
 
-* [Azure AD Connect Health](active-directory-aadconnect-health.md)
-* [Azure AD Connect Health Agent Installation for AD FS](active-directory-aadconnect-health-agent-install-adfs.md)
-* [Using Azure AD Connect Health with AD FS](active-directory-aadconnect-health-adfs.md)
-* [Azure AD Connect Health FAQ](active-directory-aadconnect-health-faq.md)
+* [Azure AD Connect Health](/documentation/articles/active-directory-aadconnect-health)
+* [Azure AD Connect Health Agent Installation for AD FS](/documentation/articles/active-directory-aadconnect-health-agent-install-adfs)
+* [Using Azure AD Connect Health with AD FS](/documentation/articles/active-directory-aadconnect-health-adfs)
+* [Azure AD Connect Health FAQ](/documentation/articles/active-directory-aadconnect-health-faq)

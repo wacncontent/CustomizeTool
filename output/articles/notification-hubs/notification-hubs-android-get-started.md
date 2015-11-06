@@ -34,7 +34,7 @@ The completed code for this tutorial can be found on GitHub [here](https://githu
 
 This tutorial requires the following:
 
-+ Android Studio, which you can download from <a href="http://go.microsoft.com/fwlink/?LinkId=389797">the Android site</a>.
++ Android Studio, which you can download from <a href="http://developer.android.com/sdk/index.html">the Android site</a>.
 + An active Azure account. If you don't have an account, you can create a trial account in just a couple of minutes. For details, see [Azure Trial](/pricing/1rmb-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fen-us%2Fdocumentation%2Farticles%2Fnotification-hubs-android-get-started%2F).
 
 
@@ -70,7 +70,7 @@ Completing this tutorial is a prerequisite for all other Notification Hubs tutor
 
 ###Add code
 
-1. Download the <a href="https://go.microsoft.com/fwLink/?LinkID=280126&clcid=0x409">Notification Hubs Android SDK</a>. Extract the .zip file and copy **notificationhubs\notification-hubs-0.3.jar** and **notifications\notifications-1.0.1.jar** to the **app\libs** directory of your project. You can do this by dragging the files directly into the **libs** folder in the Project View window of Android Studio. Refresh the **libs** folder.
+1. Download the <a href="https://zumo.blob.core.windows.net/sdk/azuresdk-android-2.0.3.zip">Notification Hubs Android SDK</a>. Extract the .zip file and copy **notificationhubs\notification-hubs-0.3.jar** and **notifications\notifications-1.0.1.jar** to the **app\libs** directory of your project. You can do this by dragging the files directly into the **libs** folder in the Project View window of Android Studio. Refresh the **libs** folder.
 
 
     > [AZURE.NOTE] The numbers at the end of the file name may change in subsequent SDK releases.
@@ -534,7 +534,7 @@ To learn more general information about Notification Hubs, see [Notification Hub
 
 <!-- URLs. -->
 [Get started with push notifications in Mobile Services]: /documentation/articles/mobile-services-javascript-backend-android-get-started-push
-[Mobile Services Android SDK]: https://go.microsoft.com/fwLink/?LinkID=280126&clcid=0x409
+[Mobile Services Android SDK]: https://zumo.blob.core.windows.net/sdk/azuresdk-android-2.0.3.zip
 [Referencing a library project]: http://go.microsoft.com/fwlink/?LinkId=389800
 [Azure Management Portal]: https://manage.windowsazure.cn/
 [Notification Hubs Guidance]: http://msdn.microsoft.com/zh-cn/library/jj927170.aspx

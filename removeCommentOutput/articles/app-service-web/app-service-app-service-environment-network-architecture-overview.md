@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties 
 	pageTitle="Network Architecture Overview of Azure Websites Environments" 
 	description="Architectural overview of network topology ofAzure Websites Environments." 

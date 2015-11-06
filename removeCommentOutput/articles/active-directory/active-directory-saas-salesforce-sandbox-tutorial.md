@@ -1,4 +1,4 @@
-<properties pageTitle="Tutorial: Azure Active Directory integration with Salesforce Sandbox | Microsoft Azure" description="Learn how to use Salesforce Sandbox with Azure Active Directory to enable single sign-on, automated provisioning, and more!." services="active-directory" authors="MarkusVi"  documentationCenter="na" manager="stevenpo"/>
+<properties pageTitle="Tutorial: Azure Active Directory integration with Salesforce Sandbox | Windows Azure" description="Learn how to use Salesforce Sandbox with Azure Active Directory to enable single sign-on, automated provisioning, and more!." services="active-directory" authors="MarkusVi"  documentationCenter="na" manager="stevenpo"/>
 <tags ms.service="active-directory" ms.devlang="na" ms.topic="article" ms.tgt_pltfrm="na" ms.workload="identity" ms.date="10/07/2015" ms.author="markvi" />
 #Tutorial: Azure Active Directory integration with Salesforce Sandbox
 >[AZURE.TIP]For feedback, click [here](http://go.microsoft.com/fwlink/?LinkId=521878).
@@ -60,7 +60,7 @@ The objective of this section is to outline how to enable users to authenticate 
 
     ![Configure single sign-on](./media/active-directory-saas-salesforce-sandbox-tutorial/IC749323.png "Configure single sign-on")
 
-2.  On the **How would you like users to sign on to Salesforce Sandbox** page, select **Microsoft Azure AD Single Sign-On**, and then click **Next**.
+2.  On the **How would you like users to sign on to Salesforce Sandbox** page, select **Windows Azure AD Single Sign-On**, and then click **Next**.
 
     ![Salesforce Sandbox](./media/active-directory-saas-salesforce-sandbox-tutorial/IC746479.png "Salesforce Sandbox")
 
@@ -95,14 +95,14 @@ The objective of this section is to outline how to enable users to authenticate 
 
     ![SAML Single Sign-On Settings](./media/active-directory-saas-salesforce-sandbox-tutorial/IC781027.png "SAML Single Sign-On Settings")
 
-    1.  In the Name textbox, type the name of the configuration (e.g.: *SPSSOWAAD\_Test*).
-    2.  In the Azure portal, on the **Configure single sign-on at Salesforce Sandbox** dialogue page, copy the **Issuer URL** value, and then paste it into the **Issuer** textbox.
+    1.  In the Name textbox, type the name of the configuration (e.g.: *SPSSOWAAD_Test*).
+    2.  In the Azure Management Portal, on the **Configure single sign-on at Salesforce Sandbox** dialogue page, copy the **Issuer URL** value, and then paste it into the **Issuer** textbox.
     3.  In the **Entity Id** textbox, type **https://test.salesforce.com** if this is the first Salesforce Sandbox instance that you are adding to your directory. If you have already added an instance of Salesforce Sandbox, then for the **Entity ID** type in the **Sign On URL**, which should be in this format: `http://company.my.salesforce.com`
     4.  Click **Browse** to upload the downloaded certificate.
     5.  As **SAML Identity Type**, select **Assertion contains the Federation ID from the User object**.
     6.  As **SAML Identity Location**, select **Identity is in the NameIdentifier element of the Subject statement**.
-    7.  In the Azure portal, on the **Configure single sign-on at Salesforce Sandbox** dialogue page, copy the **Remote Login URL** value, and then paste it into the **Identity Provider Login URL** textbox.
-    8.  In the Azure portal, on the **Configure single sign-on at Salesforce Sandbox** dialogue page, copy the **Remote Logout URL** value, and then paste it into the **Identity Provider Logout URL** textbox.
+    7.  In the Azure Management Portal, on the **Configure single sign-on at Salesforce Sandbox** dialogue page, copy the **Remote Login URL** value, and then paste it into the **Identity Provider Login URL** textbox.
+    8.  In the Azure Management Portal, on the **Configure single sign-on at Salesforce Sandbox** dialogue page, copy the **Remote Logout URL** value, and then paste it into the **Identity Provider Logout URL** textbox.
     9.  As **Service Provider Initiated Request Binding**, select **HTTP POST**.
     10. Click **Save**.
 
@@ -190,4 +190,4 @@ To test your configuration, you need to grant the Azure AD users you want to all
   
 You should now wait for 10 minutes and verify that the account has been synchronized to Salesforce Sandbox.
   
-If you want to test your single sign-on settings, open the Access Panel. For more details about the Access Panel, see [Introduction to the Access Panel](https://msdn.microsoft.com/library/dn308586).
+If you want to test your single sign-on settings, open the Access Panel. For more details about the Access Panel, see [Introduction to the Access Panel](https://msdn.microsoft.com/zh-cn/library/dn308586).

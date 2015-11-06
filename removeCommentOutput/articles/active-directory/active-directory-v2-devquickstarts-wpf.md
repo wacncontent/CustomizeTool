@@ -1,5 +1,5 @@
 <properties
-	pageTitle="App Model v2.0 .NET Native App | Microsoft Azure"
+	pageTitle="App Model v2.0 .NET Native App | Windows Azure"
 	description="How to build a .NET native app that signs users in with both personal Microsoft Account and work or school accounts."
 	services="active-directory"
 	documentationCenter=""
@@ -9,23 +9,19 @@
 
 <tags
 	ms.service="active-directory"
-	ms.workload="identity"
-  ms.tgt_pltfrm="na"
-	ms.devlang="dotnet"
-	ms.topic="article"
 	ms.date="09/11/2015"
-	ms.author="dastrock"/>
+	wacn.date=""/>
 
 # App model v2.0 preview: Add sign-in to a Windows Desktop app
 
 With the v2.0 app model, you can quickly add authentication to your desktop apps with support for both personal Microsoft accounts and work or school accounts.  It also enables your app to securely communicate with a backend web api, as well as a few of the [Office 365 Unified APIs](https://www.msdn.com/office/office365/howto/authenticate-Office-365-APIs-using-v2).
 
 > [AZURE.NOTE]
-	This information applies to the v2.0 app model public preview.  For instructions on how to integrate with the generally available Azure AD service, please refer to the [Azure Active Directory Developer Guide](active-directory-developers-guide.md).
+	This information applies to the v2.0 app model public preview.  For instructions on how to integrate with the generally available Azure AD service, please refer to the [Azure Active Directory Developer Guide](/documentation/articles/active-directory-developers-guide).
 
-For [.NET native apps that run on a device](active-directory-v2-flows.md#mobile-and-native-apps), Azure AD provides the Active Directory Authentication Library, or ADAL.  ADAL's sole purpose in life is to make it easy for your app to get tokens for calling web services.  To demonstrate just how easy it is, here we'll build a .NET WPF To-Do List app that:
+For [.NET native apps that run on a device](/documentation/articles/active-directory-v2-flows#mobile-and-native-apps), Azure AD provides the Active Directory Authentication Library, or ADAL.  ADAL's sole purpose in life is to make it easy for your app to get tokens for calling web services.  To demonstrate just how easy it is, here we'll build a .NET WPF To-Do List app that:
 
--	Signs the user in & gets access tokens using the [OAuth 2.0 authentication protocol](active-directory-v2-protocols.md#oauth2-authorization-code-flow).
+-	Signs the user in & gets access tokens using the [OAuth 2.0 authentication protocol](/documentation/articles/active-directory-v2-protocols#oauth2-authorization-code-flow).
 -	Securely calls a backend To-Do List web service, which is also secured by OAuth 2.0.
 -	Signs users out.
 
@@ -42,7 +38,7 @@ The code for this tutorial is maintained [on GitHub](https://github.com/AzureADQ
 The completed app is provided at the end of this tutorial as well.
 
 ## 1. Register an App
-Create a new app at [apps.dev.microsoft.com](https://apps.dev.microsoft.com), or follow these [detailed steps](active-directory-v2-app-registration.md).  Make sure to:
+Create a new app at [apps.dev.microsoft.com](https://apps.dev.microsoft.com), or follow these [detailed steps](/documentation/articles/active-directory-v2-app-registration).  Make sure to:
 
 - Copy down the **Application Id** assigned to your app, you'll need it soon.
 - Add the **Mobile** platform for your app.
@@ -249,8 +245,8 @@ For reference, the completed sample (without your configuration values) [is prov
 
 You can now move onto more advanced topics.  You may want to try:
 
-- [Securing the TodoListService Web API with the v2.0 app model >>](active-directory-v2-devquickstarts-dotnet-api.md)
+- [Securing the TodoListService Web API with the v2.0 app model >>](/documentation/articles/active-directory-v2-devquickstarts-dotnet-api)
 
 For additional resources, check out:
-- [The App Model v2.0 Preview >>](active-directory-appmodel-v2-overview.md)
+- [The App Model v2.0 Preview >>](/documentation/articles/active-directory-appmodel-v2-overview)
 - [StackOverflow "adal" tag >>](http://stackoverflow.com/questions/tagged/adal)

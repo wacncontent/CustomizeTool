@@ -553,6 +553,12 @@ The following functionality was new in the November release of the SDK.
 	Asynchronous support has been added to all methods.
 
 
+##Media Services learning paths
+
+You can view AMS learning paths here:
+
+- [AMS Live Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/)
+- [AMS on Demand Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/)
 
 <!-- Anchors. -->
 
@@ -570,7 +576,7 @@ The following functionality was new in the November release of the SDK.
 [Working with Azure Media Services Live Streaming]: http://msdn.microsoft.com/zh-cn/library/azure/dn783466.aspx
 [Using AES-128 Dynamic Encryption and Key Delivery Service]: http://msdn.microsoft.com/zh-cn/library/azure/dn783457.aspx
 [Using PlayReady Dynamic Encryption and License Delivery Service]: http://msdn.microsoft.com/zh-cn/library/azure/dn783467.aspx
-
+[Preview features]: http://azure.microsoft.com/services/preview/
 [Media Services PlayReady License Template Overview]: http://msdn.microsoft.com/zh-cn/library/azure/dn783459.aspx
 [Streaming Storage Encrypted Content]: http://msdn.microsoft.com/zh-cn/library/azure/dn783451.aspx
 [Azure Management Portal]: https://manage.windowsazure.cn

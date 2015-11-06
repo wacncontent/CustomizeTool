@@ -18,23 +18,8 @@
 The Backup and Restore feature in [Azure Websites](/documentation/services/web-sites/) lets you easily create web app backups manually or automatically. You can restore your web app to a previous state, or create a new web app based on one of your original app's backups. 
 
 For information on restoring an Azure web app from backup, see [Restore a web app](/documentation/articles/web-sites-restore).
-<!-- deleted by customization
 
 [AZURE.INCLUDE [app-service-web-to-api-and-mobile](../includes/app-service-web-to-api-and-mobile.md)] 
--->
-<!-- keep by customization: begin -->
-##In this article
-
-- [Automatic and Easy Backup (Video)](#video)
-- [What Gets Backed Up](#whatsbackedup)
-- [Requirements and Restrictions](#requirements)
-- [To Create a Manual Backup](#manualbackup)
-- [To Configure Automated Backups](#automatedbackups)
-- [How Backups Are Stored](#aboutbackups)
-- [Notes](#notes)
-- [Next Steps](#nextsteps)
-	- [More about storage accounts](#moreaboutstorage)
-<!-- keep by customization: end -->
 
 <a name="whatsbackedup"></a>
 ## What gets backed up 
@@ -51,20 +36,14 @@ This information is backed up to the Azure storage account and container that yo
 <a name="requirements"></a>
 ## Requirements and restrictions
 
-* The Backup and Restore feature requires the site to be in Standard mode. For more information about scaling your web app to use Standard mode, see [Scale a web app in Azure Websites](/documentation/articles/web-sites-scale). <!-- deleted by customization Note that Premium mode allows a greater number of daily backups to be performed over the Standard mode. -->
+* The Backup and Restore feature requires the site to be in Standard mode. For more information about scaling your web app to use Standard mode, see [Scale a web app in Azure Websites](/documentation/articles/web-sites-scale). Note that Premium mode allows a greater number of daily backups to be performed over the Standard mode.
 
-<!-- deleted by customization
 * The Backup and Restore feature requires an Azure storage account and container that must belong to the same subscription as the web app that you are going to back up. If you do not yet have a storage account, you can create one by clicking the **Storage Account** in the **Backups** blade of the [Azure preview portal](http://manage.windowsazure.cn), and then choosing the **Storage Account** and the **Container** from the **Destination** blade. For more information on Azure storage accounts, see the [links](#moreaboutstorage) at the end of this article.
 
--->
-<!-- keep by customization: begin -->
-* The Backup and Restore feature requires an Azure storage account and container that must belong to the same subscription as the web app that you are going to back up. If you do not yet have a storage account, you can create one by clicking the **Storage** button (grid icon) in the left pane of the Azure Management Portal, and then choosing **New** in the command bar at the bottom. For more information on Azure storage accounts, see the [links](#moreaboutstorage) at the end of this article.
-<!-- keep by customization: end -->
 * The Backup and Restore feature supports up to 10GB of website and database content. An error will be indicated in the Operation Logs if the backup feature cannot proceed because the payload exceeds this limit. 
 
 <a name="manualbackup"></a>
 ## Create a manual backup
-<!-- deleted by customization
 
 1. In the Azure Management Portal, choose your web app from the Web Apps blade. This will display the details of your web app in a new blade.
 2. Select **Settings** option. The **Settings** blade will be displayed allowing you to modify your web app.
@@ -91,35 +70,8 @@ This information is backed up to the Azure storage account and container that yo
 
 You can make a manual backup at any time.  
 
--->
-<!-- keep by customization: begin -->
-1. In the Azure Management Portal for your website, choose the **Backups** tab.
-	
-	![Backups page][ChooseBackupsPage]
-	
-2. Select the storage account to which you want to back up your website. The storage account must belong to the same subscription as the website that you are going to back up.
-	
-	![Choose storage account][ChooseStorageAccount]
-	
-3. In the **Included Databases** option, select the databases that are connected to your website (SQL Server or MySQL) that you want to back up. 
-	
-	![Choose databases to include][IncludedDatabases]
-
-	> [AZURE.NOTE] 	For a database to appear in this list, its connection string must exist in the **Connection Strings** section of the Configure tab in the portal.
-	
-4. In the command bar, click **Backup Now**.
-	
-	![BackUpNow button][BackUpNow]
-	
-	You will see a progress message during the backup process:
-	
-	![Backup progress message][BackupProgress]
-	
-You can make a manual backup at any time. During Preview, no more than 2 manual backups can be made in a 24-hour period (subject to change).  
-<!-- keep by customization: end -->
 <a name="automatedbackups"></a>
 ## Configure automated backups
-<!-- deleted by customization
 
 1. On the **Backups** blade, set **Scheduled Backup** to ON.
 	
@@ -145,51 +97,13 @@ You can make a manual backup at any time. During Preview, no more than 2 manual 
 	
 	![Save button][SaveIcon]
 
--->
-<!-- keep by customization: begin -->
-1. On the Backups page, set **Automated Backup** to ON.
-	
-	![Enable automated backups][SetAutomatedBackupOn]
-	
-2. Select the storage account to which you want to back up your website. The storage account must belong to the same subscription as the website that you are going to back up.
-	
-	![Choose storage account][ChooseStorageAccount]
-	
-3. In the **Frequency** box, specify how often you want automated backups to be made. (During Preview, the number of days is the only time unit available.)
-	
-	![Choose backup frequency][Frequency]
-	
-	The number of days must be between 1 and 90, inclusive (from once a day to once every 90 days).
-	
-4. Use the **Start Date** option to specify a date and time when you want the automated backups to begin. 
-	
-	![Choose start date][StartDate]
-	
-	Times are available in half-hour increments.
-	
-	![Choose start time][StartTime]
-	
-	> [AZURE.NOTE] Azure stores backup times in UTC format, but displays them in accordance with the system time on the computer that you are using to display the portal.
-	
-5. In the **Included Databases** section, select the databases that are connected to your website (SQL Server or MySQL) that you want to back up. For a database to appear in the list, its connection string must exist in the **Connection Strings** section of the Configure tab in the portal.
-	
-	![Choose databases to include][IncludedDatabases]
-	
-	> [AZURE.NOTE] If you choose to include one or more databases in the backup and have specified a Frequency of less than 7 days, you will be warned that frequent backups can increase your database costs.
-	
-6. In the command bar, click the **Save** button to save your configuration changes (or choose **Discard** if you decide not to save them).
-	
-	![Save button][SaveIcon]
-<!-- keep by customization: end -->
 <a name="notes"></a>
 ## Notes
 
 * Make sure that you set up the connection strings for each of your databases properly on the **Web app settings** blade within **Settings** of the web app so that the Backup and Restore feature can include your databases.
 * Although you can back up more than one web app to the same storage account, for ease of maintenance, consider creating a separate storage account for each web app.
-<!-- deleted by customization
 
 >[AZURE.NOTE] If you want to get started with Azure Websites before signing up for an Azure account, go to [Try Azure Websites](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure Websites. No credit cards required; no commitments.
--->
 
 <a name="partialbackups"></a>
 ## Backup just part of your web app
@@ -288,12 +202,10 @@ To get started with Azure, see [Windows Azure Trial](/pricing/1rmb-trial/).
 [How To Monitor a Storage Account](/documentation/articles/storage-monitor-storage-account)
 
 [Understanding Azure Storage Billing](http://blogs.msdn.com/b/windowsazurestorage/archive/2010/07/09/understanding-windows-azure-storage-billing-bandwidth-transactions-and-capacity.aspx)
-<!-- deleted by customization
 
 ## What's changed
 * For a guide to the change from Websites to Azure Websites see: [Azure Websites and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
 * For a guide to the change of the Management Portal to the new portal see: [Reference for navigating the preview portal](https://manage.windowsazure.cn/)
--->
 
 <!-- IMAGES -->
 [ChooseBackupsPage]: ./media/web-sites-backup/01ChooseBackupsPage.png

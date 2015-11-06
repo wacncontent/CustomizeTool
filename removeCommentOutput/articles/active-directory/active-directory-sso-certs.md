@@ -1,5 +1,5 @@
 <properties
-	pageTitle="How to Manage Federation Certificates in Azure AD | Microsoft Azure"
+	pageTitle="How to Manage Federation Certificates in Azure AD | Windows Azure"
 	description="Learn how to customize the expiration date for your federation certificates, and how to renew certificates that will soon expire."
 	services="active-directory"
 	documentationCenter=""
@@ -9,12 +9,8 @@
 
 <tags
 	ms.service="active-directory"
-	ms.workload="identity"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="09/29/2015"
-	ms.author="liviodlc"/>
+	wacn.date=""/>
 
 #Managing Certificates for Federated Single Sign-On in Azure Active Directory
 
@@ -76,4 +72,4 @@ The renewal steps shown below should ideally result in no significant downtime f
 
 	![Download then upload the certificate](./media/active-directory-sso-certs/renew-config-app.PNG)
 
-[AZURE.INCLUDE [saas-toc](../../includes/active-directory-saas-toc.md)]
+[AZURE.INCLUDE [saas-toc](../includes/active-directory-saas-toc.md)]

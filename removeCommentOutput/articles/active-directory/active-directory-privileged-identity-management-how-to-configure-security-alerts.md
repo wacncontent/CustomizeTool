@@ -8,13 +8,9 @@
    editor=""/>
 
 <tags
-   ms.service="na"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="identity"
-   ms.date="09/21/2015"
-   ms.author="inhenk"/>
+	ms.service="na"
+	ms.date="09/21/2015"
+	wacn.date=""/>
 
 # Azure Privileged Identity Management: How To Configure Security Alerts
 ## Security Alerts Overview
@@ -55,4 +51,4 @@ This alert has two settings that may trigger the alert.  The minimum number of G
 
 <!--Every topic should have next steps and links to the next logical set of content to keep the customer engaged-->
 ## Next steps
-[AZURE.INCLUDE [active-directory-privileged-identity-management-toc](../../includes/active-directory-privileged-identity-management-toc.md)]
+[AZURE.INCLUDE [active-directory-privileged-identity-management-toc](../includes/active-directory-privileged-identity-management-toc.md)]

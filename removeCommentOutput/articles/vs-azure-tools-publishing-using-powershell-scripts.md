@@ -19,7 +19,7 @@ Using these scripts, you can provision customized versions (also known as dev an
 
 ## What you need
 
-- Azure SDK 2.3 or later. See [Visual Studio Downloads](http://go.microsoft.com/fwlink/?LinkID=624384) for more information.
+- Azure SDK 2.3 or later. See [Visual Studio Downloads](https://www.visualstudio.com/zh-cn/downloads/download-visual-studio-vs.aspx) for more information.
 
     You do not need the Azure SDK to generate the scripts for web projects. This feature is for web projects, not web roles in cloud services.
 
@@ -29,7 +29,7 @@ Using these scripts, you can provision customized versions (also known as dev an
 
 ## Additional Tools
 
-Additional tools and resources for working with PowerShell in Visual Studio for Azure development are available. See [PowerShell Tools for Visual Studio](http://go.microsoft.com/fwlink/?LinkId=404012).
+Additional tools and resources for working with PowerShell in Visual Studio for Azure development are available. See [PowerShell Tools for Visual Studio](https://visualstudiogallery.msdn.microsoft.com:443/c9eb3ba8-0c59-4944-9a62-6eee37294597).
 
 ## Generating the publish scripts
 

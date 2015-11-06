@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Add and manage multiple Azure AD directories | Microsoft Azure"
+   pageTitle="Add and manage multiple Azure AD directories | Windows Azure"
    description="Instructions and best practices for adding and managing your Azure AD directories, explaining directories as a fully independent resources"
    services="active-directory"
    documentationCenter=""
@@ -8,13 +8,9 @@
    editor=""/>
 
 <tags
-   ms.service="active-directory"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="identity"
-   ms.date="09/21/2015"
-   ms.author="curtand"/>
+	ms.service="active-directory"
+	ms.date="09/21/2015"
+	wacn.date=""/>
 
 # Add and manage multiple Azure AD directories
 
@@ -43,4 +39,4 @@ To add an Azure AD directory in the Azure Management Portal, select the Active D
 
 > [AZURE.NOTE]   Unlike other Azure resources, your directories are not child resources of an Azure subscription. If you cancel or allow your Azure subscription to expire, you can still access your directory data using Azure PowerShell, the Azure Graph API, or other interfaces such as the Office 365 Admin Center. You can also associate another subscription with the directory.
 
-For a broad overview of Azure AD licensing issues and best practices, see [What is Azure Active Directory licensing?](active-directory-licensing-what-is.md).
+For a broad overview of Azure AD licensing issues and best practices, see [What is Azure Active Directory licensing?](/documentation/articles/active-directory-licensing-what-is).

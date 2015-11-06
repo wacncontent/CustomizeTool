@@ -9,12 +9,8 @@
 
 <tags
 	ms.service="active-directory"
-	ms.workload="identity"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="07/27/2015"
-	ms.author="markusvi"/>
+	wacn.date=""/>
 
 
 # Account Provisioning Notifications
@@ -43,7 +39,7 @@ If you have account provisioning notifications enabled, you will receive emails 
  However, to avoid an email overload, you will only receive one notification email per day for each SaaS application the notification email is enabled for.
 
 
-[AZURE.INCLUDE [saas-toc](../../includes/active-directory-saas-toc.md)]
+[AZURE.INCLUDE [saas-toc](../includes/active-directory-saas-toc.md)]
 
 <!--Image references-->
 [1]: ./media/active-directory-saas-account-provisioning-notifications/ic766307.png

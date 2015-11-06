@@ -382,9 +382,7 @@ In this tutorial you learned how to provision an HBase cluster. To learn more, s
 - [Configure HBase replication in HDInsight](/documentation/articles/hdinsight-hbase-geo-replication)
 - [Provision Hadoop clusters in HDInsight](/documentation/articles/hdinsight-provision-clusters)
 - [Get started using HBase with Hadoop in HDInsight](/documentation/articles/hdinsight-hbase-get-started)
-<!-- deleted by customization
 - [Analyze Twitter sentiment with HBase in HDInsight](/documentation/articles/hdinsight-hbase-twitter-sentiment)
--->
 - [Virtual Network Overview][vnet-overview]
 
 
@@ -393,9 +391,7 @@ In this tutorial you learned how to provision an HBase cluster. To learn more, s
 [3]: http://technet.microsoft.com/zh-cn/library/hh847889.aspx
 
 [hbase-get-started]: /documentation/articles/hdinsight-hbase-get-started
-<!-- deleted by customization 
 [hbase-twitter-sentiment]: /documentation/articles/hdinsight-hbase-twitter-sentiment
--->
 [vnet-overview]: /documentation/articles/virtual-networks-overview
 [vm-create]: /documentation/articles/virtual-machines-windows-tutorial
 [azure-portal]: https://management.windowsazure.cn

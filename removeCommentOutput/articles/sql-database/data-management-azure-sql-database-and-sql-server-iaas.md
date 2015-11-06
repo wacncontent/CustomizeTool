@@ -206,7 +206,7 @@ Choose **SQL Server in Azure VM**, if:
 
     [Provision a SQL Server virtual machine in Azure](/documentation/articles/virtual-machines-provision-sql-server)
 
-> [AZURE.NOTE] Do you want to try out SQL Server 2016 CTP2? Sign up for Windows Azure, and then go [here](http://aka.ms/sql2016vm "here") to create a Virtual Machine with SQL Server 2016 CTP2 already installed. 
+> [AZURE.NOTE] Do you want to try out SQL Server 2016 CTP2? Sign up for Windows Azure, and then go [here](https://azure.microsoft.com/zh-cn/marketplace/partners/microsoft/sqlserver2016ctp2evaluationwindowsserver2012r2/?wt.mc_id=sqL16_vm "here") to create a Virtual Machine with SQL Server 2016 CTP2 already installed. 
 
 
 ##<a name="ack"></a>Acknowledgements

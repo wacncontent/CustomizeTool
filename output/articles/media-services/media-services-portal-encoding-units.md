@@ -54,7 +54,6 @@ To change the reserved unit type and the number of encoding reserved units, do t
 For information about quotas and limitations and how to open a support ticket, see [Quotas and limitations](/documentation/articles/media-services-quotas-and-limitations).
 
 
-<!-- deleted by customization
 
 ##Media Services learning paths
 
@@ -62,7 +61,6 @@ You can view AMS learning paths here:
 
 - [AMS Live Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/)
 - [AMS on Demand Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/)
--->
 
 
  

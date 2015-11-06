@@ -255,6 +255,12 @@ If you are done streaming events and want to clean up the resources provisioned 
 - Currently, the max recommended duration of a live event is 8 hours. Please contact amslived at WindowsAzure.cn if you need to run a Channel for longer periods of time.
 - Make sure to have at least one streaming reserved unit on the streaming endpoint from which you want to stream content.
 
+##Media Services learning paths
+
+You can view AMS learning paths here:
+
+- [AMS Live Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/)
+- [AMS on Demand Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/)
 
 
 [standard0]: ./media/media-services-portal-creating-live-encoder-enabled-channel/media-services-create-channel-standard0.png

@@ -1,7 +1,5 @@
-<!-- not suitable for Mooncake -->
-
 <properties 
-	pageTitle="Use Apache Spark to build machine learning applications on HDInsight | Azure" 
+	pageTitle="Use Apache Spark to build machine learning applications on HDInsight | Windows Azure" 
 	description="Step-by-step instructions on how to use notebooks with Apache Spark to build machine learning applications" 
 	services="hdinsight" 
 	documentationCenter="" 
@@ -10,9 +8,9 @@
 	editor="cgronlun"
 	tags="azure-portal"/>
 
-<tags 
+<tags
 	ms.service="hdinsight"
-	ms.date="07/31/2015" 
+	ms.date="09/30/2015"
 	wacn.date=""/>
 
 
@@ -24,7 +22,7 @@ Learn how to build a machine learning application using an Apache Spark cluster 
 
 You must have the following:
 
-- An Azure subscription. See [Get Azure trial][azure-trial].
+- An Azure subscription. See [Get Azure trial](/pricing/1rmb-trial/).
 - An Apache Spark cluster. For instructions, see [Provision Apache Spark clusters in Azure HDInsight](/documentation/articles/hdinsight-apache-spark-provision-clusters). 
 
 ##<a name="data"></a>Show me the data
@@ -41,7 +39,13 @@ We use this data to predict whether a building will be hotter or colder based on
 
 ##<a name="app"></a>Write a machine learning application using Spark MLlib
 
-1. Launch the [Jupyter](https://jupyter.org) notebook. Select your Spark cluster on the Azure Management Portal, and from the portal task bar at the bottom, click **Jupyter Notebook**. When prompted, enter the admin credentials for the Spark cluster.
+1. From the [Azure Preview Portal](https://manage.windowsazure.cn/), from the startboard, click the tile for your Spark cluster (if you pinned it to the startboard). You can also navigate to your cluster under **Browse All** > **HDInsight Clusters**.   
+
+2. From the Spark cluster blade, click **Quick Links**, and then from the **Cluster Dashboard** blade, click **Jupyter Notebook**. If prompted, enter the admin credentials for the cluster.
+
+	> [AZURE.NOTE] You may also reach the Jupyter Notebook for your cluster by opening the following URL in your browser. Replace __CLUSTERNAME__ with the name of your cluster:
+	>
+	> `https://CLUSTERNAME.azurehdinsight.cn/jupyter`
 
 2. Create a new notebook. Click **New**, and then click **Python 2**.
 
@@ -228,7 +232,8 @@ Apache Spark clusters on HDInsight include Anaconda libraries. This also include
 [hdinsight-storage]: /documentation/articles/hdinsight-use-blob-storage
 [hdinsight-weblogs-sample]: /documentation/articles/hdinsight-hive-analyze-website-log
 [hdinsight-sensor-data-sample]: /documentation/articles/hdinsight-hive-analyze-sensor-data
-[azure-purchase-options]: http://www.windowsazure.cn/pricing/overview/
-[azure-trial]: http://www.windowsazure.cn/pricing/1rmb-trial/
+[azure-purchase-options]: /pricing/overview/
+[azure-member-offers]: http://azure.microsoft.com/pricing/member-offers/
+[azure-trial]: /pricing/1rmb-trial/
 [azure-management-portal]: https://manage.windowsazure.cn/
 [azure-create-storageaccount]: /documentation/articles/storage-create-storage-account

@@ -69,18 +69,6 @@ this topic:
 -   [Starter project download][StarterProject]
 -   [Completed project download][CompletedProject]
 
-
-<h2>Steps in this tutorial</h2>
-
-- [Deploy the starter project to a Windows Azure Website][]
-- [Bootstrap CSS Framework][]
-- [Override the Views, Layouts, and Partial Views][]
-- [Improve the Speakers List][]
-- [Improve the Tags List][]
-- [Improve the Dates List][]
-- [Improve the SessionsTable View][]
-- [Improve the SessionByCode View][]
-
 ##<a name="bkmk_DeployStarterProject"></a>Deploy the starter project to an Azure web app
 
 1.	Download the conference-listing application [starter project][StarterProject].
@@ -720,6 +708,9 @@ mobile-friendly Web applications. These include:
 -   [W3C Recommendation Mobile Web Application Best Practices][]
 -   [W3C Candidate Recommendation for media queries][]
 
+## What's changed
+* For a guide to the change from Websites to Azure Websites see: [Azure Websites and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
+* For a guide to the change of the Management Portal to the new portal see: [Reference for navigating the preview portal](https://manage.windowsazure.cn/)
 
 <!-- Internal Links -->
 [Deploy the starter project to an Azure web app]: #bkmk_DeployStarterProject

@@ -135,26 +135,63 @@ Now that you have created the web app and retrieved all the NuGet packages for t
 
 3. Close your browser. In the Command Window, press **Ctrl+C** to shut down the application or close the Command Window. 
 
+## Create a web app in the Azure preview portal
 
+The following steps will guide you through creating a web app in the Azure preview portal.
 
-## Create a web app in the Azure Management Portal
+1. Log in to the [Azure preview portal](https://manage.windowsazure.cn).
 
-The first step in creating your app is to create the web site via the Azure Management Portal.  To do this, you will need to login to the portal and click the NEW button in the bottom left corner. A window will appear. Click **Quick Create**, enter a URL, and select **Create Web Site**.
+2. Click **NEW** at the top left of the portal.
 
-![](./media/web-sites-python-create-deploy-django-app/django-ws-003.png)
+3. Click **Web Apps > Web App**.
 
-The site will be quickly set up.  Next, you will add support for publishing via Git.  This can be done by choosing **Set up deployment from source control**.
+	![Azure new web app](./media/web-sites-create-web-app-using-vscode/09-azure-newwebapp.png)
 
-![](./media/web-sites-python-create-deploy-django-app/django-ws-004.png)
+4. Enter a value for **Name**, such as **SampleWebAppDemo**. Note that this name needs to be unique, and the portal will enforce that when you attempt to enter the name. Therefore, if you select a enter a different value, you'll need to substitute that value for each occurrence of **SampleWebAppDemo** that you see in this tutorial. 
 
-From the **Set up deployment** dialog, scroll down and select the **Local Git** option. Click the right arrow to continue.
+5. Select an existing **App Service Plan** or create a new one. If you create a new plan, select the pricing tier, location, and other options. For more information on App Service plans, see the article, [App Service plans in-depth overview](/documentation/articles/azure-web-sites-web-hosting-plans-in-depth-overview).
 
-![](./media/web-sites-python-create-deploy-django-app/django-ws-005.png)
+	![Azure new web app blade](./media/web-sites-create-web-app-using-vscode/10-azure-newappblade.png)
 
-After setting up Git publishing, you will momentarily see a page informing you the repo is being created. When the repo is ready, you will be taken to the deployments tab. The deployments tab includes instructions on how to connect.  
+6. Click **Create**.
 
-![](./media/web-sites-python-create-deploy-django-app/django-ws-006.png)
+	![web app blade](./media/web-sites-create-web-app-using-vscode/11-azure-webappblade.png)
 
+## Enable Git publishing for the new web app
+
+Git is a distributed version control system that you can use to deploy your Azure Websites web app. You'll store the code you write for your web app in a local Git repository, and you'll deploy your code to Azure by pushing to a remote repository.   
+
+1. Log into the [Azure preview portal](https://manage.windowsazure.cn).
+
+2. Click **Browse**.
+
+3. Click **Web Apps** to view a list of the web apps associated with your Azure subscription.
+
+4. Select the web app you created in this tutorial.
+
+5. In the web app blade, scroll down to locate the **Deployment** section, and click **Set up continuous deployment**. 
+
+	![Azure web app host](./media/web-sites-create-web-app-using-vscode/14-azure-deployment.png)
+
+6. Click **Choose Source > Local Git Repository**.
+
+7. Click **OK**.
+
+	![Azure Local Git Respository](./media/web-sites-create-web-app-using-vscode/15-azure-localrepository.png)
+
+8. If you have not previously set up deployment credentials for publishing a web app or other Azure Websites app, set them up now:
+
+	* Click **Settings** > **Deployment credentials**. The **Set deployment credentials** blade will be displayed.
+
+	* Create a user name and password.  You'll need this password later when setting up Git.
+
+	* Click **Save**.
+
+9. In your web app's blade, click **Settings > Properties**. The URL of the remote Git repository that you'll deploy to is shown under **GIT URL**.
+
+10. Copy the **GIT URL** value for later use in the tutorial.
+
+	![Azure Git URL](./media/web-sites-create-web-app-using-vscode/17-azure-giturl.png)
 
 ## Publish your web app to Azure Websites
 
@@ -216,10 +253,8 @@ This can be done in two ways:
 * Open a browser and enter the name of your web app as follows.   
 
 		http://SampleWebAppDemo.chinacloudsites.cn
-
-
-* In the Azure Management Portal, locate the web app blade for your web app, and click **Browse** to view your app 
-
+ 
+* In the Azure preview portal, locate the web app blade for your web app, and click **Browse** to view your app 
 * in your default browser.
 
 ![Azure web app](./media/web-sites-create-web-app-using-vscode/21-azurewebapp.png)

@@ -19,12 +19,7 @@ One of the challenges of developing a web app is how to provide a safe and secur
 
 > [AZURE.NOTE] A full discussion of security considerations for web-based applications is beyond the scope of this document. As a starting point for further guidance on securing web applications, see the [Open Web Application Security Project (OWASP)]( https://www.owasp.org/index.php/Main_Page), specifically the [top 10 project.](https://www.owasp.org/index.php/Category:OWASP_Top_Ten_Project), which lists the current top 10 critical web application security flaws, as determined by OWASP members.
 
-
-###Table of contents
-
-* [Secure communications](#https)
-* [Secure development](#develop)
-* [Next steps](#next)
+[AZURE.INCLUDE [app-service-web-to-api-and-mobile](../includes/app-service-web-to-api-and-mobile.md)]
 
 ##<a name="https"></a> Secure communications
 
@@ -55,12 +50,25 @@ It's common practice to store connection strings, authentication credentials, an
 
 Azure Websites allows you to store configuration information as part of the Web Apps runtime environment as **app settings** and **connection strings**. The values are exposed to your application at runtime through *environment variables* for most programming languages. For .NET applications, these values are injected into your .NET configuration at runtime.
 
-**App settings** and **connection strings** are configurable using the [Azure Management Portal](http://manage.windowsazure.cn) or utilities such as PowerShell or the Azure CLI.
+**App settings** and **connection strings** are configurable using the [Azure preview portal](http://manage.windowsazure.cn) or utilities such as PowerShell or the Azure CLI.
 
 For more information on app settings and connection strings, see [Configuring web apps](/documentation/articles/web-sites-configure).
 
+### FTPS
 
+Azure provides secure FTP access access to the file system for your web app through **FTPS**. This allows you to securely access the application code on the web app as well as diagnostics logs. The FTPS link for your web app can be found with the following steps:
 
+1. Open the [Azure preview portal](http://manage.windowsazure.cn).
+2. Select **Browse All**.
+3. From the **Browse** blade, select **Web Apps**.
+4. From the **Web Apps** blade, Select the desired web app.
+5. From the web app's blade, select **All settings**.
+6. From the **Settings** blade, select **Properties**.
+7. The FTP and FTPS links are provided on the **Settings** blade. 
+
+For more information on FTPS, see [File Transfer Protocol](http://en.wikipedia.org/wiki/File_Transfer_Protocol).
+
+>[AZURE.NOTE] If you want to get started with Azure Websites before signing up for an Azure account, go to [Try Azure Websites](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure Websites. No credit cards required; no commitments.
 
 ## Next steps
 
@@ -70,4 +78,8 @@ For more information on **web.config** or **applicationhost.config** files in we
 
 For information on logging information for web apps, which may be useful in detecting attacks, see [Enable diagnostic logging](/documentation/articles/web-sites-enable-diagnostic-log).
 
+## What's changed
+* For a guide to the change from Websites to Azure Websites see: [Azure Websites and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
+
+* For a guide to the change of the Management Portal to the new portal see: [Reference for navigating the preview portal](https://manage.windowsazure.cn/)
  

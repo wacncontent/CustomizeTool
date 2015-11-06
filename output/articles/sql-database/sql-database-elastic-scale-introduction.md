@@ -25,7 +25,7 @@ The graphic below shows an architecture that includes the **Elastic Database fea
 
 ![Elastic Database tools][1]
 
-For a printable version of this graphic, go to [Elastic database overview download](http://aka.ms/axmybc).
+For a printable version of this graphic, go to [Elastic database overview download](http://download.microsoft.com/download/A/8/C/A8CF712D-8A55-4152-84C1-3E562DACADB3/microsoft-azure-sql-database-saas-development-with-elastic-database-sec.pdf).
 
 In this graphic, colors of the database represent schemas. Databases with the same color share the same schemas.
 

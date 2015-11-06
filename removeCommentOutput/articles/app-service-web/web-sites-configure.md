@@ -15,28 +15,19 @@
 
 # Configure web apps in Azure Websites #
 
+This topic explains how to configure a web app using the [Azure Management Portal](https://manage.windowsazure.cn/).
 
-In the Azure Management Portal, you can change the configuration options for websites and link to other Azure resources, such as a database.
+[AZURE.INCLUDE [app-service-web-to-api-and-mobile](../includes/app-service-web-to-api-and-mobile.md)] 
 
-## Table of Contents ##
-- [How to: Change configuration options for a web site](#howtochangeconfig)
-- [How to: Configure a web site to use a SQL database](#howtoconfigSQL)
-- [How to: Configure a web site to use a MySQL database](#howtoconfigMySQL)
-- [How to: Configure a custom domain name](#howtodomain)
-- [How to: Configure a web site to use SSL](#howtoconfigSSL)
-- [Next steps](#next)
+## Application settings
 
+1. In the [Azure Management Portal](https://manage.windowsazure.cn), open the blade for the web app.
+2. Click **Configure**.
+3. Click **Application Settings**.
 
-##<a name="howtochangeconfig"></a>How to: Change configuration options for a website
+![](./media/web-sites-configure/configure01.png)
 
-<!-- HOW TO: CHANGE CONFIGURATION OPTIONS FOR A WEBSITE -->
-
-To set configuration options for a website:
-
-1. In the [Management Portal](https://manage.windowsazure.cn/), open the Website's management pages.
-1. Click the <strong>Configure</strong> tab.
-
-The **Configure** tab has the following sections:
+The **Application settings** blade has settings grouped under several categories.
 
 ### General settings
 
@@ -59,6 +50,7 @@ For technical reasons, enabling Java for your app disables the .NET, PHP, and Py
 
 **Managed Pipeline Version**. Sets the IIS [pipeline mode](http://www.iis.net/learn/get-started/introduction-to-iis/introduction-to-iis-architecture#Application). Leave this set to Integrated (the default) unless you have a legacy app that requires an older version of IIS.
 
+**Auto Swap**. If you enable Auto Swap for a deployment slot, Azure Websites will automatically swap the web app into production when you push an update to that slot. For more information, see [Deploy to staging slots for web apps in Azure Websites](/documentation/articles/web-sites-staged-publishing).
 
 
 ### Debugging
@@ -109,29 +101,59 @@ Use this area to add custom script processors to handle requests for specific fi
 To configure virtual applications and directories, specify each virtual directory and its corresponding physical path relative to the website root. Optionally, you can select the **Application** checkbox to mark a virtual directory as an application.
 
 
+## Enabling diagnostic logs
+
+To enable diagnostic logs:
+
+1. In the blade for your web app, click **All settings**.
+2. Click **Diagnostic logs**. 
+
+Options for writing diagnostic logs from a web application that supports logging: 
+
+- **Application Logging**. Writes application logs to the file system. Logging lasts for a period of 12 hours. 
+
+**Level**. When application logging is enabled, this option specifies the amount of information that will be recorded (Error, Warning, Information, or Verbose).
+
+**Web server logging**. Logs are saved in the W3C extended log file format. 
+
+**Detailed error messages**. Saves detailed error messages .htm files. The files are saved under /LogFiles/DetailedErrors. 
+
+**Failed request tracing**. Logs failed requests to XML files. The files are saved under /LogFiles/W3SVC*xxx*, where xxx is a unique identifier. This folder contains an XSL file and one or more XML files. Make sure to download the XSL file, because it provides functionality for formatting and filtering the contents of the XML files.
+
+To view the log files, you must create FTP credentials, as follows:
+
+1. In the blade for your web app, click **All settings**.
+2. Click **Deployment credentials**.
+3. Enter a user name and password.
+4. Click **Save**.
+
+![](./media/web-sites-configure/configure03.png)
+
+
+The full FTP user name is “app\username” where *app* is the name of your web app. The username is listed in the web app blade, under **Essentials**.  
+
+![](./media/web-sites-configure/configure02.png)
+
 ## Other configuration tasks
 
 ### SSL 
 
 In Basic or Standard mode, you can upload SSL certificates for a custom domain. For more information, see [Enable HTTPS for a web app](/documentation/articles/web-sites-configure-ssl-certificate). 
 
-
-To view your uploaded certificates, click **Configure** > **SSL Bindings**.
+To view your uploaded certificates, click **Configure** > **Custom domains and SSL**.
 
 ### Domain names
 
 Add custom domain names for your web app. For more information, see [Configure a custom domain name for a web app in Azure Websites](/documentation/articles/web-sites-custom-domain-name).
 
-
-To view your domain names, click **Configure** > **Domain Names**.
+To view your domain names, click **Configure** > **Custom domains and SSL**.
 
 ### Deployments
 
 - Set up continuous deployment. See [Using Git to deploy Web Apps in Azure Websites](/documentation/articles/web-sites-publish-source-control)
 - Deployment slots. See [Deploy to Staging Environments for Web Apps in Azure Websites](/documentation/articles/web-sites-staged-publishing)
 
-
-To view your deployment slots, click **Configure** > **Deployment**.
+To view your deployment slots, click **Configure** > **Deployment slots**.
 
 
 ### Monitoring
@@ -140,6 +162,7 @@ In Basic or Standard mode, you can  test the availability of HTTP or HTTPS endpo
 
 For more information, see [How to: Monitor web endpoint status](/documentation/articles/web-sites-monitor/).
 
+>[AZURE.NOTE] If you want to get started with Azure Websites before signing up for an Azure account, go to [Try Azure Websites](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure Websites. No credit cards required; no commitments.
 
 ## Next steps
 
@@ -148,4 +171,7 @@ For more information, see [How to: Monitor web endpoint status](/documentation/a
 - [Scale a web app in Azure Websites](/documentation/articles/web-sites-scale)
 - [Monitoring basics for Web Apps in Azure Websites](/documentation/articles/web-sites-monitor)
 
+## What's changed
+* For a guide to the change from Websites to Azure Websites see: [Azure Websites and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
+* For a guide to the change of the Management Portal to the new portal see: [Reference for navigating the preview portal](https://manage.windowsazure.cn/)
  

@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties 
 	pageTitle="Geo Distributed Scale with Azure Websites Environments" 
 	description="Learn how to horizontally scale apps using geo-distribution with Traffic Manager and Azure Websites Environments." 

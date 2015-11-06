@@ -1,4 +1,4 @@
-new docs: 81, word count: {word_count_TODO}
+new docs: 81, word count: 193005
 articles/storage/automation-manage-storage.md
 articles/storage/azure-slave-plugin-for-hudson.md
 articles/storage/azure-slave-plugin-for-jenkins.md

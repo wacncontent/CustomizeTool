@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties 
 	pageTitle="Create an Orchard CMS web app from the Azure Marketplace" 
 	description="A tutorial that teaches you how to create a new web app in Azure. Also learn how to launch and manage your web app using the Azure Management Portal." 

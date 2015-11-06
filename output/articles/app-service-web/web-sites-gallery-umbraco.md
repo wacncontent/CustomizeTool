@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties 
 	pageTitle="Create an Umbraco web app from the Marketplace in Windows Azure" 
 	description="Create an Umbraco content management system and deploy to Azure Websites." 

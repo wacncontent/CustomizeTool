@@ -1,8 +1,6 @@
-<!-- not suitable for Mooncake -->
-
 <properties
-	pageTitle="Use R in HDInsight to customize clusters | Windows Azure"
-	description="Learn how to install and use R to customize Hadoop clusters."
+	pageTitle="Install R on Linux-based HDInsight | Windows Azure"
+	description="Learn how to install and use R to customize Linux-based Hadoop clusters."
 	services="hdinsight"
 	documentationCenter=""
 	authors="Blackmist"
@@ -11,7 +9,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="08/20/2015"
+	ms.date="10/09/2015"
 	wacn.date=""/>
 
 # Install and use R on HDInsight Hadoop clusters
@@ -98,7 +96,6 @@ After the cluster has finished provisioning, use the following steps to use R to
 		library(rmr2)
 		ints = to.dfs(1:100)
 		calc = mapreduce(input = ints, map = function(k, v) cbind(v, 2*v))
-
 
 	The first line calls the RHadoop library rmr2, which is used for MapReduce operations.
 

@@ -15,12 +15,10 @@
 
 
 # Hadoop tutorial: Get started with Hadoop and a Hive query in HDInsight on Windows
-<!-- deleted by customization
 
 > [AZURE.SELECTOR]
 - [Windows](/documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1)
 - [Linux](/documentation/articles/hdinsight-hadoop-linux-get-started)
--->
 
 To help you learn Hadoop on Windows and start using HDInsight, this tutorial shows you how to run a Hive query on unstructured data in a Hadoop cluster and then analyze the results in Microsoft Excel.
 
@@ -33,14 +31,12 @@ To help you learn Hadoop on Windows and start using HDInsight, this tutorial sho
 Assume you have a large unstructured data set and you want to run a Hive query on it to extract some meaningful information. That's exactly what we are going to do in this tutorial. Here's how we achieve this:
 
    !["Hadoop tutorial: Create an account; provision a Hadoop cluster; submit a Hive query; analyze data in Excel.][image-hdi-getstarted-flow]
-<!-- deleted by customization
 
 Watch a demo video of this tutorial to learn Hadoop on HDInsight:
 
 ![Video of a first Hadoop tutorial: Submit a Hive query on a Hadoop cluster, and analyze results in Excel.][img-hdi-getstarted-video]
 
 **[Watch the Hadoop tutorial for HDInsight on YouTube](https://www.youtube.com/watch?v=Y4aNjnoeaHA&list=PLDrz-Fkcb9WWdY-Yp6D4fTC1ll_3lU-QS)**
--->
 
 
 In conjunction with the general availability of Azure HDInsight, Microsoft also provides HDInsight Emulator for Azure, formerly known as *Microsoft HDInsight Developer Preview*. The Emulator targets developer scenarios and only supports single-node deployments. For information about using HDInsight Emulator, see [Get Started with the HDInsight Emulator][hdinsight-emulator].
@@ -76,7 +72,7 @@ This tutorial uses only the default blob and the default storage account.
 
 	![Azure Management Portal where you can use Quick Create to set up a new storage account.][image-hdi-storageaccount-quickcreate]
 
->[AZURE.NOTE]  Make sure you create the storage account in a location that is supported for the cluster. These are:  <!-- deleted by customization **East Asia**, **Southeast Asia**, **China North**, **West Europe**, **China East**, **China North**, --> **China North**, **China East**.
+>[AZURE.NOTE]  Make sure you create the storage account in a location that is supported for the cluster. These are:  **East Asia**, **Southeast Asia**, **China North**, **West Europe**, **China East**, **China North**, **China North**, **China East**.
 
 Select the new storage account from the list and click **MANAGE ACCESS KEYS** at the bottom of the page. Make a note of the **PRIMARY ACCESS KEY** (or the **SECONDARY ACCESS KEY**—either of the keys work).  You will need this later in the tutorial. For more information, see [How to Create a Storage Account][azure-create-storageaccount] .
 
@@ -133,9 +129,7 @@ Sample | What does it do?
 ------ | ---------------
 [Sensor data analysis][hdinsight-sensor-data-sample] | Learn how to use HDInsight to process historical data that is produced by heating, ventilation, and air conditioning (HVAC) systems to identify systems that are not able to reliably maintain a set temperature.
 [Website log analysis][hdinsight-weblogs-sample] | Learn how to use HDInsight to analyze website log files to get insight into the frequency of visits to the website in a day from external websites, and a summary of website errors that the users experience.
-<!-- deleted by customization
 [Twitter trend analysis](/documentation/articles/hdinsight-analyze-twitter-data) | Learn how to use HDInsight to analyze trends in Twitter.
--->
 
 
 

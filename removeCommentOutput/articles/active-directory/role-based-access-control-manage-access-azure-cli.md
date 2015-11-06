@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Manage Role Based Access Control (RBAC) with Azure CLI | Microsoft Azure"
+	pageTitle="Manage Role Based Access Control (RBAC) with Azure CLI | Windows Azure"
 	description="Learn how to manage role-based access (RBAC) with the Azure command line interface by listing roles and role actions, assigning roles to the subscription and application scopes."
 	services="active-directory"
 	documentationCenter=""
@@ -9,18 +9,14 @@
 
 <tags
 	ms.service="active-directory"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.tgt_pltfrm="na"
-	ms.workload="identity"
 	ms.date="10/12/2015"
-	ms.author="inhenk"/>
+	wacn.date=""/>
 
 # Manage Role Based Access Control (RBAC) with the Azure Command Line Interface (CLI)
 <!-- Azure Selector -->
 > [AZURE.SELECTOR]
-- [PowerShell](role-based-access-control-manage-access-powershell.md)
-- [Azure CLI](role-based-access-control-manage-access-azure-cli.md)
+- [PowerShell](/documentation/articles/role-based-access-control-manage-access-powershell)
+- [Azure CLI](/documentation/articles/role-based-access-control-manage-access-azure-cli)
 
 ## List RBAC roles
 ###	List all available roles
@@ -109,4 +105,4 @@ Then, it removes the role assignment from a group on the subscription.
 ![](./media/role-based-access-control-manage-access-azure-cli/3-azure-role-assignment-delete.png)
 
 ## RBAC Topics
-[AZURE.INCLUDE [role-based-access-control-toc.md](../../includes/role-based-access-control-toc.md)]
+[AZURE.INCLUDE [role-based-access-control-toc.md](../includes/role-based-access-control-toc.md)]

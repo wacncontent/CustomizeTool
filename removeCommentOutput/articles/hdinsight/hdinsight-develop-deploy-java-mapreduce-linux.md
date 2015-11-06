@@ -1,24 +1,23 @@
-<!-- not suitable for Mooncake -->
-
 <properties
-	pageTitle="Develop Java MapReduce programs for Hadoop | Windows Azure"
-	description="Learn how to develop Java MapReduce programs on HDInsight emulator, how to deploy them to HDInsight."
+	pageTitle="Develop Java MapReduce programs for Linux-based HDInsight | Windows Azure"
+	description="Learn how to develop Java MapReduce programs and deploy them to Linux-based HDInsight."
 	services="hdinsight"
 	editor="cgronlun"
 	manager="paulettm"
 	authors="Blackmist"
-	documentationCenter=""/>
+	documentationCenter=""
+	tags="azure-portal"/>
 
 <tags
 	ms.service="hdinsight"
-	ms.date="09/02/2015"
+	ms.date="10/09/2015"
 	wacn.date=""/>
 
-# Develop Java MapReduce programs for Hadoop in HDInsight
+# Develop Java MapReduce programs for Hadoop on HDInsight
 
 [AZURE.INCLUDE [pig-selector](../includes/hdinsight-maven-mapreduce-selector.md)]
 
-This documents walks you through using Apache Maven to create a MapReduce application, then deploy and run it on a Linux-based Hadoop on HDInsight cluster.
+This documents walks you through using Apache Maven to create a MapReduce application, then deploy and run it on a Linux-based Hadoop on HDInsight cluster. For information on using a Windows-based Hadoop on HDInsight cluster, see [Develop Java MapReduce programs for Hadoop on HDInsight (Windows)](/documentation/articles/hdinsight-develop-deploy-java-mapreduce)
 
 ##<a name="prerequisites"></a>Prerequisites
 
@@ -30,7 +29,7 @@ Before you begin this tutorial, you must have the following:
 
 - **An Azure subscription**: See [Get Azure trial](/documentation/articles/get-azure-free-trial-for-testing-hadoop-in-hdinsight).
 
-- **Azure CLI**: For more information, see [Install and configure Azure CLI](/documentation/articles/xplat-cli)
+- **Azure CLI**: For more information, see [Install and configure Azure CLI](/documentation/articles/xplat-cli-install)
 
 ##Configure environment variables
 
@@ -85,7 +84,7 @@ The following environment variables may be set when you install Java and the JDK
 		  <scope>provided</scope>
 		</dependency>
 
-	This tells Maven that the project requires the libraries (listed within <artifactId\>) with a specific version (listed within <version\>). At compile time, this will be downloaded from the default Maven repository. You can use the [Maven repository search](http://search.maven.org/#artifactdetails%7Corg.apache.hadoop%7Chadoop-mapreduce-examples%7C2.5.1%7Cjar) to view more.
+	This tells Maven that the project requires the libraries (listed within &lt;artifactId\>) with a specific version (listed within &lt;version\>). At compile time, this will be downloaded from the default Maven repository. You can use the [Maven repository search](http://search.maven.org/#artifactdetails%7Corg.apache.hadoop%7Chadoop-mapreduce-examples%7C2.5.1%7Cjar) to view more.
 
 	The `<scope>provided</scope>` tells Maven that these dependencies should not be packaged with the application, as they will be provided by the HDInsight cluster at run-time.
 
@@ -267,9 +266,11 @@ In this document, you have learned how to develop a Java MapReduce job. See the 
 - [Use Pig with HDInsight][hdinsight-use-pig]
 - [Use MapReduce with HDInsight](/documentation/articles/hdinsight-use-mapreduce)
 
-[azure-purchase-options]: http://www.windowsazure.cn/pricing/overview/
-[azure-trial]: http://www.windowsazure.cn/pricing/1rmb-trial/
+For more information, see also the [Java Developer Center](/develop/java/).
 
+[azure-purchase-options]: /pricing/overview/
+[azure-member-offers]: http://azure.microsoft.com/pricing/member-offers/
+[azure-trial]: /pricing/1rmb-trial/
 
 [hdinsight-use-sqoop]: /documentation/articles/hdinsight-use-sqoop
 [hdinsight-ODBC]: /documentation/articles/hdinsight-connect-excel-hive-ODBC-driver

@@ -7,14 +7,10 @@
 	manager="douge" 
 	editor="tglee"/>
   
-<tags 
-	ms.service="active-directory" 
-	ms.workload="web" 
-	ms.tgt_pltfrm="vs-getting-started" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="07/22/2015" 
-	ms.author="patshea"/>
+<tags
+	ms.service="active-directory"
+	ms.date="07/22/2015"
+	wacn.date=""/>
 
 # Error During Authentication Detection
 
@@ -94,5 +90,5 @@ To detect an old form of Organizational Account authentication, the wizard looks
 
 To change the authentication type, remove the incompatible authentication type and run the wizard again.
 
-For more information, see [Authentication Scenarios for Azure AD](active-directory-authentication-scenarios.md).
+For more information, see [Authentication Scenarios for Azure AD](/documentation/articles/active-directory-authentication-scenarios).
  

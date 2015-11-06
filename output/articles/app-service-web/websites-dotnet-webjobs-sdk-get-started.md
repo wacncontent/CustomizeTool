@@ -20,18 +20,6 @@ The sample application is an advertising bulletin board. Users can upload images
 
 ![Ad list](./media/websites-dotnet-webjobs-sdk-get-started/list.png)
 
-<!-- keep by customization: begin -->
-## Table of Contents
-
-- [Prerequisites](#prerequisites)
-- [What You'll Learn](#learn)
-- [Application architecture](#contosoads)
-- [Set up the development environment](#setupdevenv)
-- [Build, run, and deploy the application](#storage)
-- [Create the application from scratch](#create)
-- [Review the application code](#code)
-- [Next Steps](#next-steps)
-<!-- keep by customization: end -->
 ## <a id="prerequisites"></a>Prerequisites
 
 The tutorial assumes that you know how to work with [ASP.NET MVC 5](http://www.asp.net/mvc/tutorials/mvc-5/introduction/getting-started) projects in Visual Studio.

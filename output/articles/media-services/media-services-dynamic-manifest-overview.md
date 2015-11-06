@@ -197,7 +197,6 @@ For more information see [this](http://azure.microsoft.com/blog/azure-media-serv
 - You can use same filter name for local and global filters. Note that local filter have higher precedence and will override global filters.
 - If you update a filter, it can take up to 2 minutes for streaming endpoint to refresh the rules. If the content was served using some filters (and cached in proxies and CDN caches), updating these filters can result in player failures. It is recommend to clear the cache after updating the filter. If this option is not possible, consider using a different filter.
 
-<!-- deleted by customization
 
 ##Media Services learning paths
 
@@ -205,7 +204,6 @@ You can view AMS learning paths here:
 
 - [AMS Live Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/)
 - [AMS on Demand Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/)
--->
 
 
 ##See Also

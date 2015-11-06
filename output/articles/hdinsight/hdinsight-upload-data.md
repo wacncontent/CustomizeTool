@@ -58,7 +58,7 @@ Microsoft provides the following utilities to work with Azure Blob storage:
 
 The Azure CLI is a cross-platform tool that allows you to manage Azure services. Use the following steps to upload data to Azure Blob storage:
 
-1. [Install and configure the Azure CLI <!-- deleted by customization for Mac, Linux and Windows-->](/documentation/articles/xplat-cli-install).
+1. [Install and configure the Azure CLI for Mac, Linux and Windows](/documentation/articles/xplat-cli-install).
 
 2. Open a command prompt, bash, or other shell, and use the following to authenticate to your Azure subscription.
 
@@ -149,10 +149,8 @@ The Hadoop command line is only useful for storing data into blob storage when t
 In order to use the Hadoop command, you must first connect to the headnode using one of the following methods:
 
 * **Windows-based HDInsight**: [Connect using Remote Desktop](/documentation/articles/hdinsight-administer-use-management-portal-v1#connect-to-hdinsight-clusters-by-using-rdp)
-<!-- deleted by customization
 
 * **Linux-based HDInsight**: Connect using SSH ([the SSH command](/documentation/articles/hdinsight-hadoop-linux-use-ssh-unix#connect-to-a-linux-based-hdinsight-cluster) or [PuTTY](/documentation/articles/hdinsight-hadoop-linux-use-ssh-windows#connect-to-a-linux-based-hdinsight-cluster))
--->
 
 Once connected, you can use the following syntax to upload a file to storage.
 
@@ -212,7 +210,6 @@ Before using the tool, you must know your Azure storage account name and account
 See [Mount Azure Blob Storage as Local Drive](http://blogs.msdn.com/b/bigdatasupport/archive/2014/01/09/mount-azure-blob-storage-as-local-drive.aspx).
 
 ##Services
-<!-- deleted by customization
 
 ###Azure Data Factory
 
@@ -221,7 +218,6 @@ The Azure Data Factory service is a fully managed service for composing data sto
 Azure Data Factory can be used to move data into Azure Blob storage, or to create data pipelines that directly use HDInsight features such as Hive and Pig.
 
 For more information, see the [Azure Data Factory documentation](/documentation/services/data-factory/).
--->
 
 ###<a id="sqoop"></a>Apache Sqoop
 

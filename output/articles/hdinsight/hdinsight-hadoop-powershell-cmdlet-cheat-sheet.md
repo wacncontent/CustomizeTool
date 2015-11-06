@@ -25,9 +25,7 @@ Windows Azure HDInsight provides PowerShell cmdlets to perform Hadoop tasks on a
 
 ![HDInsight PowerShell Cmdlet cheat sheet for performing common Hadoop tasks](./media/hdinsight-hadoop-powershell-cmdlet-cheat-sheet/HDI.PowerShell.Cmdlet.CheatSheet.png)
 
-<!-- deleted by customization
 
 ## See also
 
 * [Learning path for HDInsight](http://azure.microsoft.com/documentation/learning-paths/hdinsight-self-guided-hadoop-training/)
--->

@@ -20,9 +20,9 @@ This topic shows you how to register your apps to be able to use Facebook to aut
 
 >[AZURE.NOTE] This tutorial is about [Azure Mobile Services], a solution to help you build scalable mobile applications for any platform. Mobile Services makes it easy to sync data, authenticate users, and send push notifications. This page supports the [Get Started with Authentication](/documentation/articles/mobile-services-ios-get-started-users) tutorial which shows how to log users into your app. If this is your first experience with Mobile Services, please complete the tutorial [Get Started with Mobile Services](/documentation/articles/mobile-services-ios-get-started).
 	
-To complete the procedure in this topic, you must have a Facebook account that has a verified email address and a mobile phone number. To create a new Facebook account, go to [facebook.com](http://go.microsoft.com/fwlink/p/?LinkId=268285).
+To complete the procedure in this topic, you must have a Facebook account that has a verified email address and a mobile phone number. To create a new Facebook account, go to [facebook.com](https://www.facebook.com/).
 
-1. Navigate to the [Facebook Developers](http://go.microsoft.com/fwlink/p/?LinkId=268285) website and sign-in with your Facebook account credentials.
+1. Navigate to the [Facebook Developers](https://www.facebook.com/) website and sign-in with your Facebook account credentials.
 
 2. (Optional) If you have not already registered, click **My Apps** then click **Register as a Developer**, accept the policy and follow the registration steps. 
 

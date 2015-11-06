@@ -1,6 +1,6 @@
 
 <properties
-	pageTitle="Next steps for access management using groups | Microsoft Azure"
+	pageTitle="Next steps for access management using groups | Windows Azure"
 	description="Advanced How-to's for managing security groups and how to use these groups to manage access to a resource."
 	services="active-directory"
 	documentationCenter=""
@@ -9,13 +9,9 @@
 	editor=""/>
 
 <tags
-	ms.service="active-directory" 
-	ms.workload="identity" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="10/09/2015" 
-	ms.author="femila"/>
+	ms.service="active-directory"
+	ms.date="10/09/2015"
+	wacn.date=""/>
 
 # Managing owners to a group
 
@@ -39,6 +35,6 @@
 
 Here are some topics that will provide some additional information on Azure Active Directory 
 
-* [Managing access to resources with Azure Active Directory groups](active-directory-manage-groups.md)
-* [What is Azure Active Directory?](active-directory-whatis.md)
-* [Integrating your on-premises identities with Azure Active Directory](active-directory-aadconnect.md)
+* [Managing access to resources with Azure Active Directory groups](/documentation/articles/active-directory-manage-groups)
+* [What is Azure Active Directory?](/documentation/articles/active-directory-whatis)
+* [Integrating your on-premises identities with Azure Active Directory](/documentation/articles/active-directory-aadconnect)

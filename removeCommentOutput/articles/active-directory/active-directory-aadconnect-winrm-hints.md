@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Azure AD Connect - Windows Remote Managed Hints | Microsoft Azure"
+	pageTitle="Azure AD Connect - Windows Remote Managed Hints | Windows Azure"
 	description="Azure AD Connect Windows Remote Managed hints for using with AD FS."
 	services="active-directory"
 	documentationCenter=""
@@ -9,12 +9,8 @@
 
 <tags
 	ms.service="active-directory"
-	ms.workload="identity"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="10/13/2015"
-	ms.author="billmath"/>
+	wacn.date=""/>
 
 # Azure AD Connect - Windows Remote Managed Hints
 
@@ -41,6 +37,6 @@ When using Azure AD Connect to deploy Active Directory Federation Services or th
 **Additional Resources**
 
 
-* [More on Azure AD Connect accounts and permissions](active-directory-aadconnect-account-summary.md)
-* [Custom installation of Azure AD Connect](active-directory-aadconnect-get-started-custom.md)
-* [Azure AD Connect on MSDN](active-directory-aadconnect.md)
+* [More on Azure AD Connect accounts and permissions](/documentation/articles/active-directory-aadconnect-account-summary)
+* [Custom installation of Azure AD Connect](/documentation/articles/active-directory-aadconnect-get-started-custom)
+* [Azure AD Connect on MSDN](/documentation/articles/active-directory-aadconnect)

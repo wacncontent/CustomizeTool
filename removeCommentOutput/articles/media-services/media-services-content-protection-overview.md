@@ -108,6 +108,12 @@ For more information, see [How to integrate Azure PlayReady License service with
 [Using castLabs to deliver DRM licenses to Azure Media Services](/documentation/articles/media-services-castlabs-integration)
 
 
+##Media Services learning paths
+
+You can view AMS learning paths here:
+
+- [AMS Live Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/)
+- [AMS on Demand Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/)
 
 ##Related Links
 

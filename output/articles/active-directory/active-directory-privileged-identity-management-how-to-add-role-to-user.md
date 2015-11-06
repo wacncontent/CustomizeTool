@@ -8,13 +8,9 @@
    editor=""/>
 
 <tags
-   ms.service="na"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="identity"
-   ms.date="08/31/2015"
-   ms.author="inhenk"/>
+	ms.service="na"
+	ms.date="08/31/2015"
+	wacn.date=""/>
 
 # Azure Privileged Identity Management: How To Add or Remove a User Role
 
@@ -45,4 +41,4 @@ Once you have navigated to the **Add managed users** blade...
 
 <!--Every topic should have next steps and links to the next logical set of content to keep the customer engaged-->
 ## Next steps
-[AZURE.INCLUDE [active-directory-privileged-identity-management-toc](../../includes/active-directory-privileged-identity-management-toc.md)]
+[AZURE.INCLUDE [active-directory-privileged-identity-management-toc](../includes/active-directory-privileged-identity-management-toc.md)]

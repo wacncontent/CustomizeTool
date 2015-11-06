@@ -8,23 +8,19 @@
    editor=""/>
 
 <tags
-   ms.service="na"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="identity"
-   ms.date="09/21/2015"
-   ms.author="inhenk"/>
+	ms.service="na"
+	ms.date="09/21/2015"
+	wacn.date=""/>
 
 # Azure Privileged Identity Management: How To Start a Security Review
 
 ## Starting a Security Review
-Eventually, you will be able to perform security reviews in other places in the Azure portal.  This document covers the steps for starting a security review within the **Privileged Identity Management (PIM)** interface.
+Eventually, you will be able to perform security reviews in other places in the Azure Management Portal.  This document covers the steps for starting a security review within the **Privileged Identity Management (PIM)** interface.
 
 Perhaps there are users that you don't recognize, or perhaps a user has changed jobs or projects and no longer require privileged access in their new position.  In order to reduce the risk associated with these "stale" role assignments, you and others administrators can review the roles that users have been given by starting a security review.
 
 ## Paths to Start a Security Review
-> [AZURE.NOTE] If you have not created a PIM dashboard in the Azure portal yet, see the steps in  [Getting Started with Azure Privileged Identity Management](active-directory-privileged-identity-management-getting-started.md)
+> [AZURE.NOTE] If you have not created a PIM dashboard in the Azure Management Portal yet, see the steps in  [Getting Started with Azure Privileged Identity Management](/documentation/articles/active-directory-privileged-identity-management-getting-started)
 
 From the Azure PIM Dashboard you can start a view by
 
@@ -53,12 +49,12 @@ When you click on the **Review** button, the **Start to review a role** and the 
 4. Click the OK button in the **Change defaults** blade. It will close.
 5. Click the  OK button in the **Start a review of a role** blade.  It will close. A notification will appear in the portal main menu, refresh the dashboard by clicking the **Refresh** button and the security review will appear in the **Security reviews** section.
 6. Notify the individuals in the role that they will need to add the extension and then review their own administrative access.  See next step.
-6. [Review administrative access](active-directory-privileged-identity-management-how-to-perform-security-review.md)
+6. [Review administrative access](/documentation/articles/active-directory-privileged-identity-management-how-to-perform-security-review)
 
 ### Review by Me
 
-If you selected the "Me" option as the reviewer, then proceed to the security review. For more information about completing the review see [Azure Privileged Identity Management: How To Perform a Security Review](active-directory-privileged-identity-management-how-to-perform-security-review.md)
+If you selected the "Me" option as the reviewer, then proceed to the security review. For more information about completing the review see [Azure Privileged Identity Management: How To Perform a Security Review](/documentation/articles/active-directory-privileged-identity-management-how-to-perform-security-review)
 
 <!--Every topic should have next steps and links to the next logical set of content to keep the customer engaged-->
 ## PIM Table of Contents
-[AZURE.INCLUDE [active-directory-privileged-identity-management-toc](../../includes/active-directory-privileged-identity-management-toc.md)]
+[AZURE.INCLUDE [active-directory-privileged-identity-management-toc](../includes/active-directory-privileged-identity-management-toc.md)]

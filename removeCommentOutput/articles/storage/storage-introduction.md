@@ -74,7 +74,7 @@ To learn how to create a standard storage account, see [Create, manage, or delet
 
 ### Premium Storage Accounts
 
-Azure Premium Storage currently supports Azure Virtual Machine disks only. For an in-depth overview of Azure Premium Storage, see [Premium Storage: High-Performance Storage for Azure Virtual Machine Workloads](http://go.microsoft.com/fwlink/?LinkId=521898).
+Azure Premium Storage currently supports Azure Virtual Machine disks only. For an in-depth overview of Azure Premium Storage, see [Premium Storage: High-Performance Storage for Azure Virtual Machine Workloads](/documentation/articles/storage-premium-storage-preview-portal/).
 
 [AZURE.INCLUDE [storage-versions-include](../includes/storage-versions-include.md)]
 
@@ -157,7 +157,7 @@ The [Storage Pricing Details](/home/features/storage/#price) page provides detai
 
 Azure Storage exposes storage resources via a [REST API](http://msdn.microsoft.com/zh-cn/library/azure/dd179355.aspx) that can be called by any language that can make HTTP/HTTPS requests. Additionally, Azure Storage offers programming libraries for several popular languages. These libraries simplify many aspects of working with Azure Storage by handling details such as synchronous and asynchronous invocation, batching of operations, exception management, automatic retries, operational behavior and so forth. Libraries are currently available for the following languages and platforms, with others in the pipeline:
 
-- [.NET](http://go.microsoft.com/fwlink/?LinkID=390731)
+- [.NET](https://msdn.microsoft.com/zh-cn/library/wa_storage_30_reference_home.aspx)
 - [Native code](http://msdn.microsoft.com/zh-cn/library/azure/dn495438.aspx)
 - [Java/Android](/develop/java/)
 - [Node.js](/develop/nodejs/)

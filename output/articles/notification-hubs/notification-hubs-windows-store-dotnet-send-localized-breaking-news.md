@@ -224,7 +224,7 @@ For more information on using templates, see [Notify users with Notification Hub
 [JavaScript and HTML]: /develop/mobile/tutorials/get-started-with-push-js
 
 [Azure Management Portal]: https://manage.windowsazure.cn/
-[wns object]: http://go.microsoft.com/fwlink/p/?LinkId=260591
+[wns object]: https://msdn.microsoft.com/zh-cn/library/azure/jj860484.aspx
 [Notification Hubs Guidance]: http://msdn.microsoft.com/zh-cn/library/jj927170.aspx
 [Notification Hubs How-To for iOS]: http://msdn.microsoft.com/zh-cn/library/jj927168.aspx
 [Notification Hubs How-To for Windows Store]: http://msdn.microsoft.com/zh-cn/library/jj927172.aspx

@@ -1,5 +1,5 @@
 <properties
-	pageTitle="App Model v2.0 Scopes, permissions, & consent | Microsoft Azure"
+	pageTitle="App Model v2.0 Scopes, permissions, & consent | Windows Azure"
 	description="A description of authorization in the Azure AD v2.0 app model, including scopes, permissions, and consent."
 	services="active-directory"
 	documentationCenter=""
@@ -9,27 +9,23 @@
 
 <tags
 	ms.service="active-directory"
-	ms.workload="identity"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="08/12/2015"
-	ms.author="dastrock"/>
+	wacn.date=""/>
 
 # App model v2.0 preview: Scopes, permissions, & consent
 
 Apps that integrate with Azure AD follow a particular authorization model that allows users to control how an app can access their data.  In app model v2.0, the implementation of this authorization model has been updated, changing how an app must interact with Azure AD.  This topic covers the basic concepts of this authorization model, including scopes, permissions, and consent.
 
 > [AZURE.NOTE]
-	This information applies to the v2.0 app model public preview.  For instructions on how to integrate with the generally available Azure AD service, please refer to the [Azure Active Directory Developer Guide](active-directory-developers-guide.md).
+	This information applies to the v2.0 app model public preview.  For instructions on how to integrate with the generally available Azure AD service, please refer to the [Azure Active Directory Developer Guide](/documentation/articles/active-directory-developers-guide).
 
 ## Scopes & Permissions
 
-App model v2.0 implements the [OAuth 2.0](active-directory-v2-protocols.md) authorization protocol, which is a method for allowing a 3rd party app to access web-hosted resources on behalf of a user.  Any web-hosted resource that integrates with Azure AD will have a resource identifier, or **App ID URI**.  For example, some of Microsoft's web-hosted resources include:
+App model v2.0 implements the [OAuth 2.0](/documentation/articles/active-directory-v2-protocols) authorization protocol, which is a method for allowing a 3rd party app to access web-hosted resources on behalf of a user.  Any web-hosted resource that integrates with Azure AD will have a resource identifier, or **App ID URI**.  For example, some of Microsoft's web-hosted resources include:
 
 - The Office 365 Unified Mail API: `https://outlook.office.com`
 - The Azure Resource Manager API: `https://management.azure.com`
-- The Azure AD Graph API: `https://graph.windows.net`
+- The Azure AD Graph API: `https://graph.chinacloudapi.cn`
 
 The same is true for any 3rd party resources that has integrated with Azure AD.  Any of these resources can also define a set of permissions that can be used to divide up the functionality of that resource into smaller chunks.  As an example, the Office 365 Unified Mail API has defined these basic permissions:
 
@@ -49,7 +45,7 @@ An app can request these permissions by specifying the scopes in requests to the
 
 ## Consent
 
-In an [OpenID Connect or OAuth 2.0](active-directory-v2-protocols.md) authorization request, an app can request the permissions it needs using the `scope` query parameter.  For example, when a user signs into an app, the app would send a request like the following (with line breaks for readability):
+In an [OpenID Connect or OAuth 2.0](/documentation/articles/active-directory-v2-protocols) authorization request, an app can request the permissions it needs using the `scope` query parameter.  For example, when a user signs into an app, the app would send a request like the following (with line breaks for readability):
 
 ```
 GET https://login.microsoftonline.com/common/oauth2/v2.0/authorize?
@@ -99,7 +95,7 @@ Content-Type: application/json
 
 The resulting access token can then be used in HTTP requests to the resource - it will reliably indicate to the resource that your app has the proper permission to perform a given task.  
 
-For more detail on the OAuth 2.0 protocol and how to acquire access tokens, see the [app model v2.0 protocol reference](active-directory-v2-protocols.md).
+For more detail on the OAuth 2.0 protocol and how to acquire access tokens, see the [app model v2.0 protocol reference](/documentation/articles/active-directory-v2-protocols).
 
 ## OpenId & Offline_Access
 
@@ -107,12 +103,12 @@ The app model v2.0 has two well defined scopes that do not apply to a particular
 
 #### OpenId
 
-If an app performs sign-in using [OpenID Connect](active-directory-v2-protocols.md#openid-connect-sign-in-flow), it must request the `openid` scope.  The `openid` scope will show up in the work account consent screen as the "Sign you in" permission, and in the personal Microsoft account consent screen as the "View your profile and connect to apps and services using your Microsoft account" permission.  This permission enables an app to access the OpenID Connect user info endpoint, and thus requires user approval.  The `openid` scope can also be used at the v2.0 token endpoint to acquire id_tokens, which can be used to secure HTTP calls between different components of an app.
+If an app performs sign-in using [OpenID Connect](/documentation/articles/active-directory-v2-protocols#openid-connect-sign-in-flow), it must request the `openid` scope.  The `openid` scope will show up in the work account consent screen as the "Sign you in" permission, and in the personal Microsoft account consent screen as the "View your profile and connect to apps and services using your Microsoft account" permission.  This permission enables an app to access the OpenID Connect user info endpoint, and thus requires user approval.  The `openid` scope can also be used at the v2.0 token endpoint to acquire id_tokens, which can be used to secure HTTP calls between different components of an app.
 
 #### Offline_Access
 
 The `offline_access` scope allows your app to access resources on behalf of the user for an extended period of time.  In the work account consent screen, this scope will appear as the "Access your data anytime" permission.  In the personal Microsoft account consent screen, it will appear as the "Access your info anytime" permission.  When a user approves the `offline_access` scope, your app will be enabled to receive refresh tokens from the v2.0 token endpoint.  Refresh tokens are long-lived and allow your app to acquire new access tokens as older ones expire.
 
-If your app does not request the `offline_access` scope, it will not receive refresh_tokens.  This means that when you redeem an authorization_code in the [OAuth 2.0 authorization code flow](active-directory-v2-protocols.md#oauth2-authorization-code-flow), you will only receive back an access_token from the `/token` endpoint.  That access_token will remain valid for a short period of time (typically one hour), but will eventually expire.  At that point in time, your app will need to redirect the user back to the `/authorize` endpoint to retrieve a new authorization_code.  During this redirect, the user may or may not need to enter their credentials again or re-consent to permissions, depending on the the type of app.
+If your app does not request the `offline_access` scope, it will not receive refresh_tokens.  This means that when you redeem an authorization_code in the [OAuth 2.0 authorization code flow](/documentation/articles/active-directory-v2-protocols#oauth2-authorization-code-flow), you will only receive back an access_token from the `/token` endpoint.  That access_token will remain valid for a short period of time (typically one hour), but will eventually expire.  At that point in time, your app will need to redirect the user back to the `/authorize` endpoint to retrieve a new authorization_code.  During this redirect, the user may or may not need to enter their credentials again or re-consent to permissions, depending on the the type of app.
 
-For more information on how to get and use refresh tokens, refer to the [app model v2.0 protocol reference](active-directory-v2-protocols.md).
+For more information on how to get and use refresh tokens, refer to the [app model v2.0 protocol reference](/documentation/articles/active-directory-v2-protocols).

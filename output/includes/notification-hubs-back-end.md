@@ -96,7 +96,7 @@ Skip steps 1-3 if you created a console app when you completed [Get started with
 [Use Notification Hubs to send notifications to users]: /documentation/articles/tutorial-notify-users-mobileservices
 [Get started with Mobile Services]: /develop/mobile/tutorials/get-started/#create-new-service
 [Azure Management Portal]: https://manage.windowsazure.cn/
-[wns object]: http://go.microsoft.com/fwlink/p/?LinkId=260591
+[wns object]: https://msdn.microsoft.com/zh-cn/library/azure/jj860484.aspx
 [Notification Hubs Guidance]: http://msdn.microsoft.com/zh-cn/library/jj927170.aspx
 [Notification Hubs How-To for Windows Store]: http://msdn.microsoft.com/zh-cn/library/jj927172.aspx
 [Notification Hubs REST interface]: http://msdn.microsoft.com/zh-cn/library/azure/dn223264.aspx

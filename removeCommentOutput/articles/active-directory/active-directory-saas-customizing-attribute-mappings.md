@@ -9,18 +9,14 @@
 
 <tags
 	ms.service="active-directory"
-	ms.workload="identity"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="07/27/2015"
-	ms.author="markusvi"/>
+	wacn.date=""/>
 
 
 # Customizing Attribute Mappings
 
 
-Microsoft Azure AD provides support for user provisioning to third-party SaaS applications such as Salesforce, Google Apps and others. If you have user provisioning for a third party SaaS application enabled, the Azure Management Portal controls its attribute values in form of a configuration called “attribute mapping”.
+Windows Azure AD provides support for user provisioning to third-party SaaS applications such as Salesforce, Google Apps and others. If you have user provisioning for a third party SaaS application enabled, the Azure Management Portal controls its attribute values in form of a configuration called “attribute mapping”.
 
 There is a preconfigured set of attribute mappings between Azure AD user objects and each SaaS app’s user objects. Some apps manage other types of objects, such as Groups or Contacts. <br> 
  You can customize the default attribute mappings according to your business needs. This means, you can change or delete existing attribute mappings or create new attribute mappings.
@@ -73,7 +69,7 @@ There are four different mapping types supported:
 
 
 - **Expression** - the target attribute is populated based on the result of a script-like expression. 
-For more details, see [Writing Expressions for Attribute Mappings in Azure Active Directory](active-directory-saas-writing-expressions-for-attribute-mappings.md).
+For more details, see [Writing Expressions for Attribute Mappings in Azure Active Directory](/documentation/articles/active-directory-saas-writing-expressions-for-attribute-mappings).
 
 
 - **None** - the target attribute is left unmodified. However, if the target attribute is ever empty, it will be populated with the Default value that you specify.
@@ -82,7 +78,7 @@ For more details, see [Writing Expressions for Attribute Mappings in Azure Activ
 
 In addition to these four basic attribute mapping types, custom attribute mappings support the concept of a **default** value assignment. The default value assignment ensures that a target attribute is populated with a value if there is neither a value in Azure AD nor on the target object.
 
-Microsoft Azure AD provides a very efficient implementation of a synchronization process. 
+Windows Azure AD provides a very efficient implementation of a synchronization process. 
  In an initialized environment, only objects requiring updates are processed during a synchronization cycle. 
  Updating attribute mappings has an impact on the performance of a synchronization cycle. 
  This is because an update to the attribute mapping configuration requires all managed objects to be reevaluated. 
@@ -90,7 +86,7 @@ Microsoft Azure AD provides a very efficient implementation of a synchronization
 
 
 
-[AZURE.INCLUDE [saas-toc](../../includes/active-directory-saas-toc.md)]
+[AZURE.INCLUDE [saas-toc](../includes/active-directory-saas-toc.md)]
 
 <!--Image references-->
 [1]: ./media/active-directory-saas-customizing-attribute-mappings/ic765497.png

@@ -8,32 +8,28 @@
    editor=""/>
 
 <tags
-   ms.service="active-directory"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="identity"
-   ms.date="07/17/2015"
-   ms.author="kenhoff;yossib"/>
+	ms.service="active-directory"
+	ms.date="07/17/2015"
+	wacn.date=""/>
 
 
 # Getting started with the Azure AD Reporting API
 
-Azure Active Directory provides a variety of activity, security and audit reports. This data can be consumed through the Azure portal, but can also be very useful in a many other applications, such as SIEM systems, audit, and business intelligence tools.
+Azure Active Directory provides a variety of activity, security and audit reports. This data can be consumed through the Azure Management Portal, but can also be very useful in a many other applications, such as SIEM systems, audit, and business intelligence tools.
 
 The Azure AD Reporting APIs provide programmatic access to these data through a set of REST-based APIs that can be called from a variety programming languages and tools.
 
 This article will walk you through the process of calling the Azure AD Reporting APIs using PowerShell. You can modify the sample PowerShell script to access data from any of the available reports in JSON, XML or text format, as your scenario requires.
 
-To use this sample, you will need an [Azure Active Directory](active-directory-whatis.md)
+To use this sample, you will need an [Azure Active Directory](/documentation/articles/active-directory-whatis)
 
 ## Creating an Azure AD application to access the API
 
-The Reporting API uses [OAuth](https://msdn.microsoft.com/library/azure/dn645545.aspx) to authorize access to the web APIs. To access information from your directory, you must create an application in your Active Directory, and grant it appropriate permissions to access the AAD data.
+The Reporting API uses [OAuth](https://msdn.microsoft.com/zh-cn/library/azure/dn645545.aspx) to authorize access to the web APIs. To access information from your directory, you must create an application in your Active Directory, and grant it appropriate permissions to access the AAD data.
 
 
 ### Create an application
-- Navigate to the [Azure Management Portal](https://manage.windowsazure.com/).
+- Navigate to the [Azure Management Portal](https://manage.windowsazure.cn/).
 - Navigate into your directory.
 - Navigate into applications.
 - On the bottom bar, click "Add".
@@ -56,7 +52,7 @@ The Reporting API uses [OAuth](https://msdn.microsoft.com/library/azure/dn645545
 
 ### Get your directory ID, client ID, and client secret
 
-The steps below will walk you through obtaining your application's client ID and client secret.  You will also need to know your tenant name, it can be either your *.onmicrosoft.com or a custom domain name.  Copy these into a separate place; you'll use them to modify the script.
+The steps below will walk you through obtaining your application's client ID and client secret.  You will also need to know your tenant name, it can be either your *.partner.onmschina.cn or a custom domain name.  Copy these into a separate place; you'll use them to modify the script.
 
 #### Application Client ID
 - Navigate to the Applications tab.
@@ -80,8 +76,8 @@ Edit one of the scripts below to work with your directory by replacing $ClientID
     # This script will require the Web Application and permissions setup in Azure Active Directory
     $ClientID      = "<<YOUR CLIENT ID HERE>>"                # Should be a ~35 character string insert your info here
     $ClientSecret  = "<<YOUR CLIENT SECRET HERE>>"          # Should be a ~44 character string insert your info here
-    $loginURL      = "https://login.windows.net"
-    $tenantdomain  = "<<YOUR TENANT NAME HERE>>"            # For example, contoso.onmicrosoft.com
+    $loginURL      = "https://login.chinacloudapi.cn"
+    $tenantdomain  = "<<YOUR TENANT NAME HERE>>"            # For example, contoso.partner.onmschina.cn
 
     # Get an Oauth 2 access token based on client id, secret and tenant domain
     $body          = @{grant_type="client_credentials";resource=$resource;client_id=$ClientID;client_secret=$ClientSecret}
@@ -93,7 +89,7 @@ Edit one of the scripts below to work with your directory by replacing $ClientID
         # Returns a list of all the available reports
         Write-host List of available reports
         Write-host =========================
-        $allReports = (Invoke-WebRequest -Headers $headerParams -Uri "https://graph.windows.net/$tenantdomain/reports?api-version=beta")
+        $allReports = (Invoke-WebRequest -Headers $headerParams -Uri "https://graph.chinacloudapi.cn/$tenantdomain/reports?api-version=beta")
         Write-host $allReports.Content
 
         Write-host
@@ -101,7 +97,7 @@ Edit one of the scripts below to work with your directory by replacing $ClientID
         Write-host ====================================================
         Write-host
         # Returns a JSON document for the "accountProvisioningEvents" report
-        $myReport = (Invoke-WebRequest -Headers $headerParams -Uri "https://graph.windows.net/$tenantdomain/reports/accountProvisioningEvents?api-version=beta")
+        $myReport = (Invoke-WebRequest -Headers $headerParams -Uri "https://graph.chinacloudapi.cn/$tenantdomain/reports/accountProvisioningEvents?api-version=beta")
         Write-host $myReport.Content
 
         Write-host
@@ -109,7 +105,7 @@ Edit one of the scripts below to work with your directory by replacing $ClientID
         Write-host ====================================================
         Write-host
         # Returns a JSON document for the "auditEvents" report
-        $myReport = (Invoke-WebRequest -Headers $headerParams -Uri "https://graph.windows.net/$tenantdomain/reports/auditEvents?api-version=beta&$filter=eventTime gt 2015-05-20")
+        $myReport = (Invoke-WebRequest -Headers $headerParams -Uri "https://graph.chinacloudapi.cn/$tenantdomain/reports/auditEvents?api-version=beta&$filter=eventTime gt 2015-05-20")
         Write-host $myReport.Content
 
         # Options for other output formats
@@ -137,15 +133,15 @@ Edit one of the scripts below to work with your directory by replacing $ClientID
 
     CLIENT_ID="<<YOUR CLIENT ID HERE>>"			# Should be a ~35 character string insert your info here
     CLIENT_SECRET="<<YOUR CLIENT SECRET HERE>>"	# Should be a ~44 character string insert your info here
-    LOGIN_URL="https://login.windows.net"
-    TENANT_DOMAIN="<<YOUR TENANT NAME HERE>>"	 # For example, contoso.onmicrosoft.com
+    LOGIN_URL="https://login.chinacloudapi.cn"
+    TENANT_DOMAIN="<<YOUR TENANT NAME HERE>>"	 # For example, contoso.partner.onmschina.cn
 
     TOKEN_INFO=$(curl -s --data-urlencode "grant_type=client_credentials" --data-urlencode "client_id=$CLIENT_ID" --data-urlencode "client_secret=$CLIENT_SECRET" "$LOGIN_URL/$TENANT_DOMAIN/oauth2/token?api-version=1.0")
 
     TOKEN_TYPE=$(echo $TOKEN_INFO | jq -r '.token_type')
     ACCESS_TOKEN=$(echo $TOKEN_INFO | jq -r '.access_token')
 
-    REPORT=$(curl -s --header "Authorization: $TOKEN_TYPE $ACCESS_TOKEN" https://graph.windows.net/$TENANT_DOMAIN/reports/auditEvents?api-version=beta)
+    REPORT=$(curl -s --header "Authorization: $TOKEN_TYPE $ACCESS_TOKEN" https://graph.chinacloudapi.cn/$TENANT_DOMAIN/reports/auditEvents?api-version=beta)
 
     echo $REPORT | jq -r '.value' | jq -r ".[]"
 
@@ -160,10 +156,10 @@ The script returns lists all the available reports, and returns output from the 
 ## Notes
 
 - There is no limit on the number of events returned by the Azure AD Reporting API (using OData pagination).
-	- For retention limits on reporting data, check out [Reporting Retention Policies](active-directory-reporting-retention.md).
+	- For retention limits on reporting data, check out [Reporting Retention Policies](/documentation/articles/active-directory-reporting-retention).
 
 
 ## Next Steps
-- Curious about what security, audit, and activity reports are available? Check out [Azure AD Security, Audit, and Activity Reports](active-directory-view-access-usage-reports.md)
-- See [Azure AD Audit Report Events](active-directory-reporting-audit-events.md) for more details on the Audit Report
-- See [Azure AD Reports and Events (Preview)](https://msdn.microsoft.com/library/azure/mt126081.aspx) for more details on the Graph API REST service
+- Curious about what security, audit, and activity reports are available? Check out [Azure AD Security, Audit, and Activity Reports](/documentation/articles/active-directory-view-access-usage-reports)
+- See [Azure AD Audit Report Events](/documentation/articles/active-directory-reporting-audit-events) for more details on the Audit Report
+- See [Azure AD Reports and Events (Preview)](https://msdn.microsoft.com/zh-cn/library/azure/mt126081.aspx) for more details on the Graph API REST service

@@ -1,4 +1,4 @@
-<properties pageTitle="Tutorial: Azure Active Directory integration with Work.com | Microsoft Azure" description="Learn how to use Work.com with Azure Active Directory to enable single sign-on, automated provisioning, and more!." services="active-directory" authors="MarkusVi"  documentationCenter="na" manager="stevenpo"/>
+<properties pageTitle="Tutorial: Azure Active Directory integration with Work.com | Windows Azure" description="Learn how to use Work.com with Azure Active Directory to enable single sign-on, automated provisioning, and more!." services="active-directory" authors="MarkusVi"  documentationCenter="na" manager="stevenpo"/>
 <tags ms.service="active-directory" ms.devlang="na" ms.topic="article" ms.tgt_pltfrm="na" ms.workload="identity" ms.date="08/01/2015" ms.author="markvi" />
 #Tutorial: Azure Active Directory integration with Work.com
   
@@ -10,7 +10,7 @@ The scenario outlined in this tutorial assumes that you already have the followi
 -   A valid Azure subscription
 -   A Work.com single sign-on enabled subscription
   
-After completing this tutorial, the AAD users to whom you have assign Work.com access will be able to single sign into the application at your Work.com company site (service provider initiated sign on), or using the [Introduction to the Access Panel](https://msdn.microsoft.com/library/dn308586).
+After completing this tutorial, the AAD users to whom you have assign Work.com access will be able to single sign into the application at your Work.com company site (service provider initiated sign on), or using the [Introduction to the Access Panel](https://msdn.microsoft.com/zh-cn/library/dn308586).
   
 The scenario outlined in this tutorial consists of the following building blocks:
 
@@ -76,13 +76,13 @@ As part of this procedure, you are required to upload a certificate to Work.com.
 
     ![Doman Deployed to User](./media/active-directory-saas-work-com-tutorial/IC784377.png "Doman Deployed to User")
 
-5.  In a different web browser window, log in to your Azure portal.
+5.  In a different web browser window, log in to your Azure Management Portal.
 
 6.  On the **Work.com **application integration page, click **Configure single sign-on** to open the **Configure Single Sign On ** dialog.
 
     ![Configure Single Sign-On](./media/active-directory-saas-work-com-tutorial/IC794109.png "Configure Single Sign-On")
 
-7.  On the **How would you like users to sign on to Work.com** page, select **Microsoft Azure AD Single Sign-On**, and then click **Next**.
+7.  On the **How would you like users to sign on to Work.com** page, select **Windows Azure AD Single Sign-On**, and then click **Next**.
 
     ![Configure Single Sign-On](./media/active-directory-saas-work-com-tutorial/IC794110.png "Configure Single Sign-On")
 
@@ -119,13 +119,13 @@ As part of this procedure, you are required to upload a certificate to Work.com.
 
         >[AZURE.NOTE] Providing a value for **Name** does automatically populate the **API Name** textbox.
 
-    2.  In the Azure portal, on the **Configure single sign-on at Work.com** dialog page, copy the **Issuer URL** value, and then paste it into the **Issuer** textbox.
+    2.  In the Azure Management Portal, on the **Configure single sign-on at Work.com** dialog page, copy the **Issuer URL** value, and then paste it into the **Issuer** textbox.
     3.  To upload the downloaded certificate, click **Browse**.
     4.  In the **Entity Id** textbox, type **https://salesforce-work.com**.
     5.  As **SAML Identity Type**, select **Assertion contains the Federation ID from the User object**.
     6.  As **SAML Identity Location**, select **Identity is in the NameIdentfier element of the Subject statement**.
-    7.  In the Azure portal, on the **Configure single sign-on at Work.com** dialog page, copy the **Remote Login URL** value, and then paste it into the **Identity Provider Login URL** textbox.
-    8.  In the Azure portal, on the **Configure single sign-on at Work.com** dialog page, copy the **Remote Logout URL** value, and then paste it into the **Identity Provider Logout URL** textbox.
+    7.  In the Azure Management Portal, on the **Configure single sign-on at Work.com** dialog page, copy the **Remote Login URL** value, and then paste it into the **Identity Provider Login URL** textbox.
+    8.  In the Azure Management Portal, on the **Configure single sign-on at Work.com** dialog page, copy the **Remote Logout URL** value, and then paste it into the **Identity Provider Logout URL** textbox.
     9.  As **Service Provider Initiated Request Binding**, select **HTTP Post**.
     10. Click **Save**.
 
@@ -196,4 +196,4 @@ To test your configuration, you need to grant the Azure AD users you want to all
   
 You should now wait for 10 minutes and verify that the account has been synchronized to Work.com.com.
   
-If you want to test your single sign-on settings, open the Access Panel. For more details about the Access Panel, see [Introduction to the Access Panel](https://msdn.microsoft.com/library/dn308586).
+If you want to test your single sign-on settings, open the Access Panel. For more details about the Access Panel, see [Introduction to the Access Panel](https://msdn.microsoft.com/zh-cn/library/dn308586).

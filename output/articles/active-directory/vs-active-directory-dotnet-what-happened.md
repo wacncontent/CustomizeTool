@@ -1,5 +1,5 @@
 <properties
-	pageTitle="What happened to my MVC project (Visual Studio Azure Active Directory connected service) | Microsoft Azure "
+	pageTitle="What happened to my MVC project (Visual Studio Azure Active Directory connected service) | Windows Azure "
 	description="Describes what happens to your MVC project when you connect to Azure AD by using Visual Studio connected services"
 	services="active-directory"
 	documentationCenter="na"
@@ -9,18 +9,14 @@
 
 <tags
 	ms.service="active-directory"
-	ms.workload="web"
-	ms.tgt_pltfrm="vs-what-happened"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="09/03/2015"
-	ms.author="patshea"/>
+	wacn.date=""/>
 
 # What happened to my MVC project (Visual Studio Azure Active Directory connected service)?
 
 > [AZURE.SELECTOR]
-> - [Getting Started](vs-active-directory-dotnet-getting-started.md)
-> - [What Happened](vs-active-directory-dotnet-what-happened.md)
+> - [Getting Started](/documentation/articles/vs-active-directory-dotnet-getting-started)
+> - [What Happened](/documentation/articles/vs-active-directory-dotnet-what-happened)
 
 
 
@@ -101,7 +97,7 @@ Each of following files was backed up before being replaced. Backup files are lo
 - **Startup.cs**
 - **App_Start\Startup.Auth.cs**
 - **Controllers\AccountController.cs**
-- **Views\Shared\_LoginPartial.cshtml**
+- **Views\Shared_LoginPartial.cshtml**
 
 ## If I checked *Read directory data*, what additional changes were made to my project?
 
@@ -169,4 +165,4 @@ The following configuration sections and connection string have been added.
 ###Your Azure Active Directory App was updated
 Your Azure Active Directory App was updated to include the *Read directory data* permission and an additional key was created which was then used as the *ida:ClientSecret* in the **web.config** file.
 
-[Learn more about Azure Active Directory](http://azure.microsoft.com/services/active-directory/)
+[Learn more about Azure Active Directory](/home/features/identity/)

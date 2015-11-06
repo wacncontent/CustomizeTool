@@ -1,4 +1,4 @@
-<properties pageTitle="Tutorial: Azure Active Directory integration with Igloo Software | Microsoft Azure" description="Learn how to use Igloo Software with Azure Active Directory to enable single sign-on, automated provisioning, and more!." services="active-directory" authors="MarkusVi"  documentationCenter="na" manager="stevenpo"/>
+<properties pageTitle="Tutorial: Azure Active Directory integration with Igloo Software | Windows Azure" description="Learn how to use Igloo Software with Azure Active Directory to enable single sign-on, automated provisioning, and more!." services="active-directory" authors="MarkusVi"  documentationCenter="na" manager="stevenpo"/>
 <tags ms.service="active-directory" ms.devlang="na" ms.topic="article" ms.tgt_pltfrm="na" ms.workload="identity" ms.date="08/01/2015" ms.author="markvi" />
 #Tutorial: Azure Active Directory integration with Igloo Software
 >[AZURE.TIP]For feedback, click [here](http://go.microsoft.com/fwlink/?LinkId=526509).
@@ -9,7 +9,7 @@ The scenario outlined in this tutorial assumes that you already have the followi
 -   A valid Azure subscription
 -   An [Igloo Software](http://www.igloosoftware.com/) Single sign on enabled subscription
   
-After completing this tutorial, the Azure AD users you have assigned to Igloo Software will be able to single sign into the application at your Igloo Software company site (service provider initiated sign on), or using the [Introduction to the Access Panel](https://msdn.microsoft.com/library/dn308586)
+After completing this tutorial, the Azure AD users you have assigned to Igloo Software will be able to single sign into the application at your Igloo Software company site (service provider initiated sign on), or using the [Introduction to the Access Panel](https://msdn.microsoft.com/zh-cn/library/dn308586)
   
 The scenario outlined in this tutorial consists of the following building blocks:
 
@@ -62,9 +62,9 @@ If you are not familiar with this procedure, see [How to convert a binary certif
 
     ![Configure Single Sign-On](./media/active-directory-saas-igloo-software-tutorial/IC783964.png "Configure Single Sign-On")
 
-2.  On the **How would you like users to sign on to Igloo Software** page, select **Microsoft Azure AD Single Sign-On**, and then click **Next**.
+2.  On the **How would you like users to sign on to Igloo Software** page, select **Windows Azure AD Single Sign-On**, and then click **Next**.
 
-    ![Microsoft Azure AD Single Sign-On](./media/active-directory-saas-igloo-software-tutorial/IC783965.png "Microsoft Azure AD Single Sign-On")
+    ![Windows Azure AD Single Sign-On](./media/active-directory-saas-igloo-software-tutorial/IC783965.png "Windows Azure AD Single Sign-On")
 
 3.  On the **Configure App URL** page, in the **Igloo Software Sign In URL** textbox, type your URL using the following pattern "*https://company.igloocommunities.com/?signin*", and then click **Next**.
 
@@ -93,8 +93,8 @@ If you are not familiar with this procedure, see [How to convert a binary certif
     ![General Configuration](./media/active-directory-saas-igloo-software-tutorial/IC783970.png "General Configuration")
 
     1.  In the **Connection Name** textbox, type a custom name for your configuration.
-    2.  In the Azure portal, on the **Configure single sign-on at Igloo Software** dialogue page, copy the **Remote Login URL** value, and then paste it into the **IdP Login URL** textbox.
-    3.  In the Azure portal, on the **Configure single sign-on at Igloo Software** dialogue page, copy the **Remote Logout URL** value, and then paste it into the **IdP Logout URL** textbox.
+    2.  In the Azure Management Portal, on the **Configure single sign-on at Igloo Software** dialogue page, copy the **Remote Login URL** value, and then paste it into the **IdP Login URL** textbox.
+    3.  In the Azure Management Portal, on the **Configure single sign-on at Igloo Software** dialogue page, copy the **Remote Logout URL** value, and then paste it into the **IdP Logout URL** textbox.
     4.  As **Logout Response and Request HTTP Type**, select **POST**.
     5.  Create a text file from the downloaded certificate.
         
@@ -144,4 +144,4 @@ To test your configuration, you need to grant the Azure AD users you want to all
 
     ![Yes](./media/active-directory-saas-igloo-software-tutorial/IC767830.png "Yes")
   
-If you want to test your single sign-on settings, open the Access Panel. For more details about the Access Panel, see [Introduction to the Access Panel](https://msdn.microsoft.com/library/dn308586).
+If you want to test your single sign-on settings, open the Access Panel. For more details about the Access Panel, see [Introduction to the Access Panel](https://msdn.microsoft.com/zh-cn/library/dn308586).

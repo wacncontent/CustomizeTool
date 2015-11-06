@@ -34,7 +34,7 @@ You can use the Connected Services dialog to connect to Azure Storage in the fol
 
 ## Connect to Azure Storage using the Connected Services dialog
 
-1. Make sure you have an Azure account. If you don't have an Azure account, you can sign up for a [trial](http://go.microsoft.com/fwlink/?LinkId=518146). Once you have an Azure account, you can create storage accounts, create mobile services, and configure Azure Active Directory.
+1. Make sure you have an Azure account. If you don't have an Azure account, you can sign up for a [trial](/pricing/free-trial/). Once you have an Azure account, you can create storage accounts, create mobile services, and configure Azure Active Directory.
 
 1. Open your project in Visual Studio, open the context menu for the **References** node in Solution Explorer, and then choose **Add Connected Service**.
 
@@ -72,9 +72,9 @@ You can use the Connected Services dialog to connect to Azure Storage in the fol
 
 When you finish the dialog, Visual Studio adds references and modifies certain configuration files. The specific changes depend on the project type. 
 
- - For ASP.NET projects, see [What happened – ASP.NET Projects](http://go.microsoft.com/fwlink/p/?LinkId=513126). 
- - For ASP.NET 5 projects, see [What happened – ASP.NET 5 Projects](http://go.microsoft.com/fwlink/p/?LinkId=513124). 
- - For cloud service projects (web roles and worker roles), see [What happened – Cloud Service projects](http://go.microsoft.com/fwlink/p/?LinkId=516965). 
+ - For ASP.NET projects, see [What happened – ASP.NET Projects](/documentation/articles/vs-storage-aspnet-getting-started-blobs/). 
+ - For ASP.NET 5 projects, see [What happened – ASP.NET 5 Projects](/documentation/articles/vs-storage-aspnet5-getting-started-blobs/). 
+ - For cloud service projects (web roles and worker roles), see [What happened – Cloud Service projects](https://azure.microsoft.com/zh-cn/documentation/articles/vs-storage-cloud-services-getting-started-blobs/). 
  - For WebJob projects, see [What
 happened - WebJob projects](/documentation/articles/vs-storage-webjobs-what-happened).
 

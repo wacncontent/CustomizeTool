@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties 
 	pageTitle="How To Control Inbound Traffic to an Azure Websites Environment" 
 	description="Learn about how to configure network security rules to control inbound traffic to an Azure Websites Environment." 

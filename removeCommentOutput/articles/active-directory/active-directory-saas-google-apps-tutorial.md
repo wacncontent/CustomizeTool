@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Tutorial: Integrating Google Apps with Azure Active Directory | Microsoft Azure"
+   pageTitle="Tutorial: Integrating Google Apps with Azure Active Directory | Windows Azure"
    description="Learn how to use Google Apps with Azure Active Directory to enable single sign-on, automated provisioning, and more!"
    services="active-directory"
    documentationCenter=""
@@ -8,13 +8,9 @@
    editor=""/>
 
 <tags
-   ms.service="active-directory"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="identity"
-   ms.date="07/15/2015"
-   ms.author="liviodlc"/>
+	ms.service="active-directory"
+	ms.date="07/15/2015"
+	wacn.date=""/>
 
 #Tutorial: How to integrate Google Apps with Azure Active Directory
 
@@ -22,13 +18,13 @@ This tutorial will show you how to connect your Google Apps environment to your 
 
 ##Prerequisites
 
-1. To access Azure Active Directory through the [Azure Management Portal](https://manage.windowsazure.com), you must first have a valid Azure subscription.
+1. To access Azure Active Directory through the [Azure Management Portal](https://manage.windowsazure.cn), you must first have a valid Azure subscription.
 
-2. You must have a valid tenant for [Google Apps for Work](https://www.google.com/work/apps/) or [Google Apps for Education](https://www.google.com/edu/products/productivity-tools/). You may use a free trial account for either service.
+2. You must have a valid tenant for [Google Apps for Work](https://www.google.com/work/apps/) or [Google Apps for Education](https://www.google.com/edu/products/productivity-tools/). You may use a trial account for either service.
 
 ##Step 1: Add Google Apps to your Directory
 
-1. In the [Azure Management Portal](https://manage.windowsazure.com), on the left navigation pane, click **Active Directory**.
+1. In the [Azure Management Portal](https://manage.windowsazure.cn), on the left navigation pane, click **Active Directory**.
 
 	![Select Active Directory from the left navigation pane.][0]
 
@@ -64,7 +60,7 @@ This tutorial will show you how to connect your Google Apps environment to your 
 
 	![Select Azure AD Single Sign-On][7]
 
-	> [AZURE.NOTE] To learn more about about the different single sign-on options, [click here](../active-directory-appssoaccess-whatis/#how-does-single-sign-on-with-azure-active-directory-work)
+	> [AZURE.NOTE] To learn more about about the different single sign-on options, [click here](/documentation/articles/active-directory-appssoaccess-whatis#how-does-single-sign-on-with-azure-active-directory-work)
 
 3. On the **Configure App Settings** page, for the **Sign On URL** field, type in your Google Apps tenant URL using the following format: `https://mail.google.com/a/<yourdomain>`
 
@@ -126,11 +122,11 @@ This tutorial will show you how to connect your Google Apps environment to your 
 
 	![Click API Reference.][16]
 
-	> [AZURE.IMPORTANT] For every user that you intend to provision to Google Apps, their username in Azure Active Directory *must* be tied to a custom domain. For example, usernames that look like bob@contoso.onmicrosoft.com will not be accepted by Google Apps, whereas bob@contoso.com will be accepted. You can change an existing user's domain by editing their properties in Azure AD. Instructions for how to set a custom domain for both Azure Active Directory and Google Apps are included below.
+	> [AZURE.IMPORTANT] For every user that you intend to provision to Google Apps, their username in Azure Active Directory *must* be tied to a custom domain. For example, usernames that look like bob@contoso.partner.onmschina.cn will not be accepted by Google Apps, whereas bob@contoso.com will be accepted. You can change an existing user's domain by editing their properties in Azure AD. Instructions for how to set a custom domain for both Azure Active Directory and Google Apps are included below.
 
 4. If you haven't added a custom domain name to your Azure Active Directory yet, then follow the steps below:
 
-	- In the [Azure Management Portal](https://manage.windowsazure.com), on the left navigation pane, click **Active Directory**. In the directory list, select your directory. 
+	- In the [Azure Management Portal](https://manage.windowsazure.cn), on the left navigation pane, click **Active Directory**. In the directory list, select your directory. 
 
 	- Click on **Domains** from the top-level menu, and then click on **Add a custom domain**.
 
@@ -212,7 +208,7 @@ This tutorial will show you how to connect your Google Apps environment to your 
 
 4. To test your single sign-on settings, open the Access Panel at [https://myapps.microsoft.com](https://myapps.microsoft.com/), then sign into the test account, and click on **Google Apps**.
 
-[AZURE.INCLUDE [saas-toc](../../includes/active-directory-saas-toc.md)]
+[AZURE.INCLUDE [saas-toc](../includes/active-directory-saas-toc.md)]
 
 [0]: ./media/active-directory-saas-google-apps-tutorial/azure-active-directory.png
 [1]: ./media/active-directory-saas-google-apps-tutorial/applications-tab.png

@@ -69,7 +69,7 @@ This consists of:
 - A SQL Server AlwaysOn Availability Groups configuration with two SQL servers and a majority node computer in a cluster.
 - An Azure Active Directory in the virtual network with two replica domain controllers.
 
-To see this configuration as an infographic, see [SharePoint with SQL Server AlwaysOn](http://go.microsoft.com/fwlink/?LinkId=394788).
+To see this configuration as an infographic, see [SharePoint with SQL Server AlwaysOn](https://azure.microsoft.com/zh-cn/documentation/infographics/sharepoint-sqlserver-alwayson/).
 
 ### Bill of materials
 
@@ -117,7 +117,7 @@ Once configured, you can expand this SharePoint farm with guidance from [Windows
 
 [Windows Azure architectures for SharePoint 2013](https://technet.microsoft.com/zh-cn/library/dn635309.aspx)
 
-[SharePoint with SQL Server AlwaysOn Infographic](http://go.microsoft.com/fwlink/?LinkId=394788)
+[SharePoint with SQL Server AlwaysOn Infographic](https://azure.microsoft.com/zh-cn/documentation/infographics/sharepoint-sqlserver-alwayson/)
 
 [SharePoint farms hosted in Azure infrastructure services](/documentation/articles/virtual-machines-sharepoint-infrastructure-services)
 

@@ -3,7 +3,7 @@
 Prerequisites:
 
 1. Windows 7, Windows 8, Windows Server 2008, or Windows Server 2012.
-2. Macintosh or Linux operting systems listed in the [What's New in the Azure Toolkit for Eclipse](http://go.microsoft.com/fwlink/?LinkId=690333) article.
+2. Macintosh or Linux operting systems listed in the [What's New in the Azure Toolkit for Eclipse](https://msdn.microsoft.com/zh-cn/library/azure/hh694270.aspx) article.
 2. Eclipse Indigo or later.
 
 Installation steps:

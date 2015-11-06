@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Topologies for Azure AD Connect | Microsoft Azure"
+   pageTitle="Topologies for Azure AD Connect | Windows Azure"
    description="This topic details supported and unsupported topologies for Azure AD Connect"
    services="active-directory"
    documentationCenter=""
@@ -8,13 +8,9 @@
    editor=""/>
 
 <tags
-   ms.service="active-directory"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="identity"
-   ms.date="10/13/2015"
-   ms.author="andkjell"/>
+	ms.service="active-directory"
+	ms.date="10/13/2015"
+	wacn.date=""/>
 
 # Topologies for Azure AD Connect
 
@@ -116,8 +112,8 @@ Some Office 365 workloads have certain restrictions to supported topologies. If 
 
 | Workload |  |
 | --------- | --------- |
-| Exchange Online |	If there is more than one Exchange organization on-premises (i.e. Exchange has been deployed to more than one forest) then you must use Exchange 2013 SP1 or later. Details can be found here: [Hybrid deployments with multiple Active Directory forests](https://technet.microsoft.com/en-us/library/jj873754.aspx) |
-| Skype for Business | When using multiple forests on-premises then only the account-resource forest topology is supported. Details for supported topologies can be found here: [Environmental requirements for Skype for Business Server 2015](https://technet.microsoft.com/en-us/library/dn933910.aspx) |
+| Exchange Online |	If there is more than one Exchange organization on-premises (i.e. Exchange has been deployed to more than one forest) then you must use Exchange 2013 SP1 or later. Details can be found here: [Hybrid deployments with multiple Active Directory forests](https://technet.microsoft.com/library/jj873754.aspx) |
+| Skype for Business | When using multiple forests on-premises then only the account-resource forest topology is supported. Details for supported topologies can be found here: [Environmental requirements for Skype for Business Server 2015](https://technet.microsoft.com/library/dn933910.aspx) |
 
 ## Staging server
 ![StagingServer](./media/active-directory-aadconnect-topologies/MultiForestStaging.png)
@@ -136,7 +132,7 @@ Before you plan to use multiple Azure AD directories these topics cover common s
 
 | Topic |  |
 | --------- | --------- |
-| Delegation using administrative units | [Administrative units management in Azure AD ](active-directory-administrative-units-management.md)
+| Delegation using administrative units | [Administrative units management in Azure AD ](/documentation/articles/active-directory-administrative-units-management)
 
 ![MultiForestMultiDirectory](./media/active-directory-aadconnect-topologies/MultiForestMultiDirectory.png)
 
@@ -172,8 +168,8 @@ It is supported to use FIM2010/MIM2016 on-premises to GALsync users between two 
 
 
 ## Next steps
-To learn how to install Azure AD Connect for these scenarios, see [Custom installation of Azure AD Connect](active-directory-aadconnect-get-started-custom.md).
+To learn how to install Azure AD Connect for these scenarios, see [Custom installation of Azure AD Connect](/documentation/articles/active-directory-aadconnect-get-started-custom).
 
-Learn more about the [Azure AD Connect sync](active-directory-aadconnectsync-whatis.md) configuration.
+Learn more about the [Azure AD Connect sync](/documentation/articles/active-directory-aadconnectsync-whatis) configuration.
 
-Learn more about [Integrating your on-premises identities with Azure Active Directory](active-directory-aadconnect.md).
+Learn more about [Integrating your on-premises identities with Azure Active Directory](/documentation/articles/active-directory-aadconnect).

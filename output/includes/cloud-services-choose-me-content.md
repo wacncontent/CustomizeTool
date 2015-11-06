@@ -1,7 +1,7 @@
 <a name="tellmecs"></a>
 ## Tell me about cloud services
 
-Cloud Services is an example of Platform-as-a-Service (PaaS). Like [Azure Websites](/documentation/articles/app-service-web-overview), this technology is designed to support applications that are scalable, reliable, and cheap to operate. Just like an [Azure Websites](/documentation/articles/app-service-web-overview) are hosted on VMs, so too are Cloud Services, however, you have more control over the VMs. You can install your own software on Cloud Service VMs and you can remote into them.
+Cloud Services is an example of Platform-as-a-Service (PaaS). Like [Azure Websites](/home/features/web-site/), this technology is designed to support applications that are scalable, reliable, and cheap to operate. Just like an [Azure Websites](/home/features/web-site/) are hosted on VMs, so too are Cloud Services, however, you have more control over the VMs. You can install your own software on Cloud Service VMs and you can remote into them.
 
 ![cs_diagram](./media/cloud-services-choose-me-content/diagram.png) 
 

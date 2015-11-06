@@ -23,9 +23,9 @@ Windows Azure Media Services enables you to deliver encrypted MPEG-DASH, Smooth 
 
 Media Services provides a service for delivering Microsoft PlayReady licenses. Media Services also provides APIs that let you configure the rights and restrictions that you want for the PlayReady DRM runtime to enforce when a user plays back protected content. When a user requests PlayReady protected content, the player application will request a license from the AMS license service. The AMS license service will issue a license to the player if it is authorized. A PlayReady license contains the decryption key that can be used by the client player to decrypt and stream the content.
 
->[AZURE.NOTE] Currently, Media Services does not provide a Widevine license server. You can use the following AMS partners to help you deliver Widevine licenses:  [EZDRM](http://ezdrm.com/), [castLabs](http://castlabs.com/company/partners/azure/).
+>[AZURE.NOTE] Currently, Media Services does not provide a Widevine license server. You can use the following AMS partners to help you deliver Widevine licenses: [Axinom](http://www.axinom.com/press/ibc-axinom-drm-6/), [EZDRM](http://ezdrm.com/), [castLabs](http://castlabs.com/company/partners/azure/).
 >
-> For more information, see: integration with  [castLabs](/documentation/articles/media-services-castlabs-integration).
+> For more information, see: integration with [Axinom](/documentation/articles/media-services-axinom-integration) and [castLabs](/documentation/articles/media-services-castlabs-integration).
 
 Media Services supports multiple ways of authorizing users who make key requests. The content key authorization policy could have one or more authorization restrictions: open or token restriction. The token restricted policy must be accompanied by a token issued by a Secure Token Service (STS). Media Services supports tokens in the [Simple Web Tokens](https://msdn.microsoft.com/zh-cn/library/gg185950.aspx#BKMK_2) (SWT) format and [JSON Web Token](https://msdn.microsoft.com/zh-cn/library/gg185950.aspx#BKMK_3) (JWT) format. For more information, see Configure the content key’s authorization policy.
 
@@ -48,9 +48,9 @@ The following are general steps that you would need to perform when protecting y
 	You could apply different policy to each protocol on the same asset. For example, you could apply PlayReady encryption to Smooth/DASH and AES Envelope to HLS. Any protocols that are not defined in a delivery policy (for example, you add a single policy that only specifies HLS as the protocol) will be blocked from streaming. The exception to this is if you have no asset delivery policy defined at all. Then, all protocols will be allowed in the clear.
 1. Create an OnDemand locator in order to get a streaming URL.
 
->[AZURE.NOTE] Currently, Media Services does not provide a Widevine license server. You can use the following AMS partners to help you deliver Widevine licenses:  [EZDRM](http://ezdrm.com/), [castLabs](http://castlabs.com/company/partners/azure/).
+>[AZURE.NOTE] Currently, Media Services does not provide a Widevine license server. You can use the following AMS partners to help you deliver Widevine licenses: [Axinom](http://www.axinom.com/press/ibc-axinom-drm-6/), [EZDRM](http://ezdrm.com/), [castLabs](http://castlabs.com/company/partners/azure/).
 >
-> For more information, see: integration with  [castLabs](/documentation/articles/media-services-castlabs-integration).
+> For more information, see: integration with [Axinom](/documentation/articles/media-services-axinom-integration) and [castLabs](/documentation/articles/media-services-castlabs-integration).
 
 You will find a complete .NET example at the end of the topic.
 
@@ -554,6 +554,12 @@ You can use the [AMS Player](http://amsplayer.azurewebsites.net/azuremediaplayer
 		}
 
 
+##Media Services learning paths
+
+You can view AMS learning paths here:
+
+- [AMS Live Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/)
+- [AMS on Demand Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/)
 
 ##See also
 

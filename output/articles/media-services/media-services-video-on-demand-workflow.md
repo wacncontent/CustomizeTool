@@ -88,14 +88,12 @@ For concepts related to delivering your content on demand, see [Media Services C
 players.md).
 
 
-<!-- deleted by customization
 ##Next steps: AMS learning paths
 
 You can view AMS learning paths here:
 
 - [AMS Live Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/)
 - [AMS on Demand Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/)
--->
 
 [vod-overview]: ./media/media-services-video-on-demand-workflow/media-services-video-on-demand.png
  

@@ -26,9 +26,9 @@ All subscribers can run server software on an Azure virtual machine. Additionall
 
 For server software, you can run recent versions of Windows Server, as well as a variety of Linux distributions, and host various server workloads and services on them. For support details, see:
 
-• For Windows VMs -- [Microsoft server software support for Azure Virtual Machines](http://go.microsoft.com/fwlink/p/?LinkId=393550)
+• For Windows VMs -- [Microsoft server software support for Azure Virtual Machines](https://support.microsoft.com/zh-cn/kb/2721672)
 
-• For Linux VMs -- [Linux on Azure-Endorsed Distributions](http://go.microsoft.com/fwlink/p/?LinkId=393551)
+• For Linux VMs -- [Linux on Azure-Endorsed Distributions](/documentation/articles/virtual-machines-linux-endorsed-distributions/)
 
 For Windows client images, certain versions of Windows 7 and Windows 8.1 are available to MSDN Azure benefit subscribers and MSDN Dev and Test Pay-As-You-Go subscribers, for development and test tasks. For details, including instructions and limitations, see [Windows Client images for MSDN subscribers](http://azure.microsoft.com/blog/2014/05/29/windows-client-images-on-azure/).
 
@@ -36,11 +36,11 @@ For Windows client images, certain versions of Windows 7 and Windows 8.1 are ava
 
 Each data disk can be up to 1 TB. The number of data disks you can use depends on the size of the virtual machine. For details, see [Sizes for Virtual Machines](/documentation/articles/virtual-machines-size-specs).
 
-An Azure storage account provides storage for the operating system disk and any data disks. Each disk is a .vhd file stored as a page blob. For pricing details, see [Storage Pricing Details](http://go.microsoft.com/fwlink/p/?LinkId=396819).
+An Azure storage account provides storage for the operating system disk and any data disks. Each disk is a .vhd file stored as a page blob. For pricing details, see [Storage Pricing Details](/home/features/storage/#price).
 
 ## Which virtual hard disk types can I use?
 
-Azure supports fixed, VHD-format virtual hard disks. If you want to use a VHDX-format disk in Azure, convert it by using Hyper-V Manager or the [convert-VHD](http://go.microsoft.com/fwlink/p/?LinkId=393656) cmdlet. After you do that, use [Add-AzureVHD](https://msdn.microsoft.com/zh-cn/library/azure/dn495173.aspx) cmdlet (in Service Management mode) to upload the VHD to a storage account in Azure so you can use it with virtual machines. The cmdlet converts a dynamic VHD to a fixed VHD, but doesn’t convert from VHDX to VHD.
+Azure supports fixed, VHD-format virtual hard disks. If you want to use a VHDX-format disk in Azure, convert it by using Hyper-V Manager or the [convert-VHD](https://technet.microsoft.com/zh-cn/library/hh848454.aspx) cmdlet. After you do that, use [Add-AzureVHD](https://msdn.microsoft.com/zh-cn/library/azure/dn495173.aspx) cmdlet (in Service Management mode) to upload the VHD to a storage account in Azure so you can use it with virtual machines. The cmdlet converts a dynamic VHD to a fixed VHD, but doesn’t convert from VHDX to VHD.
 
 - For Linux instructions, see [Creating and Uploading a Virtual Hard Disk that Contains the Linux Operating System](/documentation/articles/virtual-machines-linux-create-upload-vhd).
 
@@ -69,7 +69,7 @@ You need to establish a remote connection to log on to the virtual machine, usin
 - [How to Log on to a Virtual Machine Running Windows Server](/documentation/articles/virtual-machines-log-on-windows-server). A maximum of 2 concurrent connections are supported, unless the server is configured as a Remote Desktop Services session host.  
 - [How to Log on to a Virtual Machine Running Linux](/documentation/articles/virtual-machines-linux-how-to-log-on). By default, SSH allows a maximum of 10 concurrent connections. You can increase this number by editing the configuration file.
 
-If you’re having problems with Remote Desktop or SSH, install and use the [VMAccess](http://go.microsoft.com/fwlink/p/?LinkId=396856) extension to help fix the problem. For Windows VMs, additional options include:
+If you’re having problems with Remote Desktop or SSH, install and use the [VMAccess](https://msdn.microsoft.com/zh-cn/library/azure/dn606308.aspx) extension to help fix the problem. For Windows VMs, additional options include:
 
 - In the Azure Preview Portal, find the VM, then click **Reset Remote Access** from the Command bar.
 - Review [Troubleshoot Remote Desktop connections to a Windows-based Azure Virtual Machine](/documentation/articles/virtual-machines-troubleshoot-remote-desktop-connections).
@@ -90,7 +90,7 @@ On a Windows virtual machine, you can change the drive letter by moving the page
 The term upgrade generally means moving to a more recent release of your operating system, while staying on the same hardware. For Azure VMs, the process for moving to a more recent release differs for Linux and Windows:
 
 - For Linux VMs, use the package management tools and procedures appropriate for the distribution.
-- For a Windows virtual machine, use Windows Server Migration Tools. Don’t attempt to upgrade the guest OS while it resides on Azure. It isn’t supported because of the risk of losing access to a virtual machine. If problems occur during the upgrade, you could lose the ability to start a Remote Desktop session and wouldn’t be able to troubleshoot the problems. For general details about the tools and process, see [Migrate Roles and Features to Windows Server](http://go.microsoft.com/fwlink/p/?LinkId=396940). For details on upgrading to Windows Server 2012 R2, see [Upgrade Options for Windows Server 2012 R2](https://technet.microsoft.com/zh-cn/library/dn303416.aspx).
+- For a Windows virtual machine, use Windows Server Migration Tools. Don’t attempt to upgrade the guest OS while it resides on Azure. It isn’t supported because of the risk of losing access to a virtual machine. If problems occur during the upgrade, you could lose the ability to start a Remote Desktop session and wouldn’t be able to troubleshoot the problems. For general details about the tools and process, see [Migrate Roles and Features to Windows Server](https://technet.microsoft.com/zh-cn/library/jj134039.aspx). For details on upgrading to Windows Server 2012 R2, see [Upgrade Options for Windows Server 2012 R2](https://technet.microsoft.com/zh-cn/library/dn303416.aspx).
 
 ## What's the default user name and password on the virtual machine?
 
@@ -107,8 +107,8 @@ Additional details:
 
 Azure offers several options for anti-virus solutions, but it’s up to you to manage it. For example, you might need a separate subscription for antimalware software, and you’ll need to decide when to run scans and install updates. You can add anti-virus support with a VM extension for Microsoft Antimalware, Symantec Endpoint Protection, or TrendMicro Deep Security Agent when you create a Windows virtual machine, or at a later point. The Symantec and TrendMicro extensions let you use a free limited-time trial subscription or an existing enterprise subscription. Microsoft Antimalware is free of charge. For details, see:
 
-- [How to install and configure Symantec Endpoint Protection on an Azure VM](http://go.microsoft.com/fwlink/p/?LinkId=404207)
-- [How to install and configure Trend Micro Deep Security as a Service on an Azure VM](http://go.microsoft.com/fwlink/p/?LinkId=404206)
+- [How to install and configure Symantec Endpoint Protection on an Azure VM](https://azure.microsoft.com/zh-cn/documentation/articles/virtual-machines-install-symantec/)
+- [How to install and configure Trend Micro Deep Security as a Service on an Azure VM](/documentation/articles/virtual-machines-install-trend/)
 - [Deploying Antimalware Solutions on Azure Virtual Machines](http://azure.microsoft.com/blog/2014/05/13/deploying-antimalware-solutions-on-azure-virtual-machines/)
 
 ## What are my options for backup and recovery?

@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Integrating Azure Active Directory with applications getting started guide |  Microsoft Azure"
+   pageTitle="Integrating Azure Active Directory with applications getting started guide |  Windows Azure"
    description="This article is a getting started guide for integrating Azure Active Directory (AD) with on-premises applications, and cloud applications."
    services="active-directory"
    documentationCenter=""
@@ -8,13 +8,9 @@
    editor=""/>
 
    <tags
-      ms.service="active-directory"
-      ms.devlang="na"
-      ms.topic="article"
-      ms.tgt_pltfrm="na"
-      ms.workload="identity"
-      ms.date="10/16/2015"
-      ms.author="inhenk"/>
+	ms.service="active-directory"
+	ms.date="10/16/2015"
+	wacn.date=""/>
 
 # Integrating Azure Active Directory with applications getting started guide
 ## Overview
@@ -46,7 +42,7 @@ Before you jump in to integrating applications with Azure AD, it is important to
 - Will you need to clean up user/group databases before integrating?  (This is a pretty important question. Garbage in, garbage out.)
 
 ### Access management inventory
-- How do you currently manage user access to applications? Does that need to change?  Have you considered other ways to manage access, such as with [RBAC](role-based-access-control-configure.md) for example?
+- How do you currently manage user access to applications? Does that need to change?  Have you considered other ways to manage access, such as with [RBAC](/documentation/articles/role-based-access-control-configure) for example?
 - Who needs access to what?
 
 Maybe you don't have the answers to all of these questions up front but that's okay.  This guide can help you answer some of those questions and make some informed decisions.
@@ -57,33 +53,33 @@ Maybe you don't have the answers to all of these questions up front but that's o
 ## Application integration with Azure AD
 ### Finding unsanctioned cloud applications with Cloud App Discovery
 As mentioned above, there may be applications that haven't been managed by your organization until now.  As part of the inventory process, it is possible to find unsanctioned cloud applications. See
-[Finding unsanctioned cloud applications with Cloud App Discovery](active-directory-cloudappdiscovery-whatis.md).
+[Finding unsanctioned cloud applications with Cloud App Discovery](/documentation/articles/active-directory-cloudappdiscovery-whatis).
 
 ### Authentication Types
-Each of your applications may have different authentication requirements. With Azure AD, signing certificates can be used with applications that use SAML 2.0, WS-Federation, or OpenID Connect Protocols as well as Password Single Sign On. For more information about application authentication types for use with Azure AD see [Managing Certificates for Federated Single Sign-On in Azure Active Directory](active-directory-sso-certs.md) and [Password based single sign on](active-directory-appssoaccess-whatis.md).
+Each of your applications may have different authentication requirements. With Azure AD, signing certificates can be used with applications that use SAML 2.0, WS-Federation, or OpenID Connect Protocols as well as Password Single Sign On. For more information about application authentication types for use with Azure AD see [Managing Certificates for Federated Single Sign-On in Azure Active Directory](/documentation/articles/active-directory-sso-certs) and [Password based single sign on](/documentation/articles/active-directory-appssoaccess-whatis).
 
 ### Enabling SSO with Azure AD App Proxy
-With Microsoft Azure AD Application Proxy, you can provide access to applications located inside your private network securely, from anywhere and on any device. After you have installed an application proxy connector within your environment, it can be easily configured with Azure AD. See [Enabling SSO with Azure AD App Proxy](active-directory-appssoaccess-enable-hybrid-access.md) and [Publishing new applications with Azure AD App Proxy](active-directory-application-proxy-configure.md).
+With Windows Azure AD Application Proxy, you can provide access to applications located inside your private network securely, from anywhere and on any device. After you have installed an application proxy connector within your environment, it can be easily configured with Azure AD. See [Enabling SSO with Azure AD App Proxy](/documentation/articles/active-directory-appssoaccess-enable-hybrid-access) and [Publishing new applications with Azure AD App Proxy](/documentation/articles/active-directory-application-proxy-configure).
 
 ### Integrating applications with Azure AD
 The following articles discuss the different ways applications integrate with Azure AD, and provide some guidance.
 
-- [Determining which Active Directory to use](active-directory-administer.md)
-- [Integrating with existing applications](active-directory-sso-integrate-existing-apps.md)
-- [Publishing new applications with Azure AD App Proxy](active-directory-application-proxy-configure.md)
-- [Using applications in the Azure application gallery](active-directory-appssoaccess-whatis.md/#get-started-with-the-azure-ad-application-gallery.md)
-- [Integrating SaaS applications tutorials list](active-directory-saas-tutorial-list.md)
+- [Determining which Active Directory to use](/documentation/articles/active-directory-administer)
+- [Integrating with existing applications](/documentation/articles/active-directory-sso-integrate-existing-apps)
+- [Publishing new applications with Azure AD App Proxy](/documentation/articles/active-directory-application-proxy-configure)
+- [Using applications in the Azure application gallery](/documentation/articles/active-directory-appssoaccess-whatis#get-started-with-the-azure-ad-application-gallery.md)
+- [Integrating SaaS applications tutorials list](/documentation/articles/active-directory-saas-tutorial-list)
 
 ## Managing access to applications
-The following articles describe ways you can manage access to applications once they have been integrated with Azure AD using Azure AD Connectors and Azure AD in the Azure portal.
+The following articles describe ways you can manage access to applications once they have been integrated with Azure AD using Azure AD Connectors and Azure AD in the Azure Management Portal.
 
-- [Managing access to apps using Azure AD](active-directory-managing-access-to-apps.md)
-- [Automating with Azure AD Connectors](active-directory-saas-app-provisioning.md)
-- [Assigning users to an application](active-directory-applications-guiding-developers-assigning-users.md) with the Azure portal.
-- [Assigning groups to an application](active-directory-applications-guiding-developers-assigning-groups.md) with the Azure portal.
-- [Sharing accounts](active-directory-sharing-accounts.md)
+- [Managing access to apps using Azure AD](/documentation/articles/active-directory-managing-access-to-apps)
+- [Automating with Azure AD Connectors](/documentation/articles/active-directory-saas-app-provisioning)
+- [Assigning users to an application](/documentation/articles/active-directory-applications-guiding-developers-assigning-users) with the Azure Management Portal.
+- [Assigning groups to an application](/documentation/articles/active-directory-applications-guiding-developers-assigning-groups) with the Azure Management Portal.
+- [Sharing accounts](/documentation/articles/active-directory-sharing-accounts)
 
 ## Integrating custom applications
-If you are writing a new application and want to assist developers in leveraging the power Azure AD, see [Guiding developers](active-directory-applications-guiding-developers-for-lob-applications.md).
+If you are writing a new application and want to assist developers in leveraging the power Azure AD, see [Guiding developers](/documentation/articles/active-directory-applications-guiding-developers-for-lob-applications).
 
 If you want to add your custom application to the Azure Application Gallery, see [“Bring your own app” with Azure AD Self-Service SAML configuration](http://blogs.technet.com/b/ad/archive/2015/06/17/bring-your-own-app-with-azure-ad-self-service-saml-configuration-gt-now-in-preview.aspx).

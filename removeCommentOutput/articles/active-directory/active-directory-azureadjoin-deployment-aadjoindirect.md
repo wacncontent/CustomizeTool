@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Usage scenarios and deployment considerations for Azure AD Join| Microsoft Azure" 
+	pageTitle="Usage scenarios and deployment considerations for Azure AD Join| Windows Azure" 
 	description="Lists and explains the differnt deployment scenarios available for Azure AD Join." 
 	services="active-directory" 
 	documentationCenter="" 
@@ -7,21 +7,17 @@
 	manager="stevenpo" 
 	editor=""/>
 
-<tags 
-	ms.service="active-directory" 
-	ms.workload="identity" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="09/21/2015" 
-	ms.author="femila"/>
+<tags
+	ms.service="active-directory"
+	ms.date="09/21/2015"
+	wacn.date=""/>
 
 # Usage scenarios and deployment considerations for Azure AD Join 
 
 ## Usage scenarios for Azure AD Join
 Scenario 1: Businesses largely in the cloud
 --------------------------------------------------------
-Azure AD join can benefit you if you currently operate and manage identities for your business in the cloud or moving to the cloud soon. You can use an account that you have created in Azure AD to sign in to Windows 10. Through either [the first run experience (FRX) process]((active-directory-azureadjoin-user-frx.md)) or joining Azure AD through [the Settings experience](active-directory-azureadjoin-user-upgrade.md), your users can join their machines to Azure AD.  Your users now enjoy SSO access to their cloud resources like Office 365 either in the browser or in the Office applications. 
+Azure AD join can benefit you if you currently operate and manage identities for your business in the cloud or moving to the cloud soon. You can use an account that you have created in Azure AD to sign in to Windows 10. Through either [the first run experience (FRX) process]((active-directory-azureadjoin-user-frx.md)) or joining Azure AD through [the Settings experience](/documentation/articles/active-directory-azureadjoin-user-upgrade), your users can join their machines to Azure AD.  Your users now enjoy SSO access to their cloud resources like Office 365 either in the browser or in the Office applications. 
 
 Scenario 2: Educational institutions 
 ----------------------------------------------------------------------------------
@@ -53,12 +49,12 @@ Enterprises can provide cloud-only accounts to partner companies and organizatio
 *	Windows 10 (Professional and Enterprise SKUs)
 
 ### Administrator Tasks
-* [Set up device registration and MFA](active-directory-azureadjoin-setup.md)
+* [Set up device registration and MFA](/documentation/articles/active-directory-azureadjoin-setup)
 
 ### User Tasks
-* [Setting up a new Windows 10 device with Azure AD during Setup](active-directory-azureadjoin-user-frx.md)
-* [Set up a Windows 10 device with Azure AD from Settings](active-directory-azureadjoin-user-upgrade.md)
-* [Join a personal Windows 10 device to your organization](active-directory-azureadjoin-personal-device.md)
+* [Setting up a new Windows 10 device with Azure AD during Setup](/documentation/articles/active-directory-azureadjoin-user-frx)
+* [Set up a Windows 10 device with Azure AD from Settings](/documentation/articles/active-directory-azureadjoin-user-upgrade)
+* [Join a personal Windows 10 device to your organization](/documentation/articles/active-directory-azureadjoin-personal-device)
   
 
 
@@ -77,12 +73,12 @@ You can set up your users and employees to user their personal Windows devices t
 
 ### Administrator Tasks
 
-* [Set up device registration and MFA](active-directory-azureadjoin-setup.md)
+* [Set up device registration and MFA](/documentation/articles/active-directory-azureadjoin-setup)
 
 ### User Tasks
-* [Join a personal Windows 10 device to your organization](active-directory-azureadjoin-personal-device.md)
+* [Join a personal Windows 10 device to your organization](/documentation/articles/active-directory-azureadjoin-personal-device)
 
 
 ## Additional Information
-* [Extending cloud capabilities to Windows 10 devices through Azure Active Directory Join](active-directory-azureadjoin-overview.md)
-* [Set up Azure AD Join](active-directory-azureadjoin-setup.md)
+* [Extending cloud capabilities to Windows 10 devices through Azure Active Directory Join](/documentation/articles/active-directory-azureadjoin-overview)
+* [Set up Azure AD Join](/documentation/articles/active-directory-azureadjoin-setup)

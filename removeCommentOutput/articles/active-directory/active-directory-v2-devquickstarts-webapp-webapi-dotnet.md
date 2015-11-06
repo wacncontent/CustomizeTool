@@ -1,5 +1,5 @@
 <properties
-	pageTitle="App Model v2.0 .NET Web App | Microsoft Azure"
+	pageTitle="App Model v2.0 .NET Web App | Windows Azure"
 	description="How to build a .NET MVC Web App that calls web services using personal Microsoft accounts and work or school accounts for sign-in."
 	services="active-directory"
 	documentationCenter=".net"
@@ -9,17 +9,13 @@
 
 <tags
 	ms.service="active-directory"
-	ms.workload="identity"
-	ms.tgt_pltfrm="na"
-	ms.devlang="dotnet"
-	ms.topic="article"
 	ms.date="09/11/2015"
-	ms.author="dastrock"/>
+	wacn.date=""/>
 
 # App model v2.0 preview: Calling a web API from a .NET web app
 
 > [AZURE.NOTE]
-	This information applies to the v2.0 endpoint public preview.  For instructions on how to integrate with the generally available Azure AD service, please refer to the [Azure Active Directory Developer Guide](active-directory-developers-guide.md).
+	This information applies to the v2.0 endpoint public preview.  For instructions on how to integrate with the generally available Azure AD service, please refer to the [Azure Active Directory Developer Guide](/documentation/articles/active-directory-developers-guide).
 
 With the v2.0 app model, you can quickly add authentication to your web apps and web APIs with support for both personal Microsoft accounts and work or school accounts.  Here, we'll build an MVC web app that:
 
@@ -27,7 +23,7 @@ With the v2.0 app model, you can quickly add authentication to your web apps and
 - Gets OAuth 2.0 access tokens for a web API using ADAL.
 - Creates, Reads, and Deletes items on a user's "To-Do List", which is hosted on the web api and secured by OAuth 2.0.
 
-This tutorial will focus primarily on getting and using access tokens in a web app, described in full [here](active-directory-v2-flows.md#web-apps).  As prerequisites, you may want to first learn how to [add basic sign-in to a web app](active-directory-v2-devquickstarts-dotnet-web.md) or how to [properly secure a web API](active-directory-v2-devquickstarts-dotnet-api.md).
+This tutorial will focus primarily on getting and using access tokens in a web app, described in full [here](/documentation/articles/active-directory-v2-flows#web-apps).  As prerequisites, you may want to first learn how to [add basic sign-in to a web app](/documentation/articles/active-directory-v2-devquickstarts-dotnet-web) or how to [properly secure a web API](/documentation/articles/active-directory-v2-devquickstarts-dotnet-api).
 
 The basic steps to call the To-Do List Web API from the client are:
 
@@ -47,7 +43,7 @@ Alternatively, you can [download the completed app as a .zip](https://github.com
 ```git clone --branch complete https://github.com/AzureADQuickStarts/AppModelv2-WebApp-WebAPI-OpenIdConnect-DotNet.git```
 
 ## 1. Register an App
-Create a new app at [apps.dev.microsoft.com](https://apps.dev.microsoft.com), or follow these [detailed steps](active-directory-v2-app-registration.md).  Make sure to:
+Create a new app at [apps.dev.microsoft.com](https://apps.dev.microsoft.com), or follow these [detailed steps](/documentation/articles/active-directory-v2-app-registration).  Make sure to:
 
 - Copy down the **Application Id** assigned to your app, you'll need it soon.
 - Create an **App Secret** of the **Password** type, and copy down its value for later
@@ -56,7 +52,7 @@ Create a new app at [apps.dev.microsoft.com](https://apps.dev.microsoft.com), or
 
 
 ## 2. Sign the user in with OpenID Connect
-Here, we'll configure the OWIN middleware to use the [OpenID Connect authentication protocol](active-directory-v2-protocols.md#openid-connect-sign-in-flow).  OWIN will be used to issue sign-in and sign-out requests, manage the user's session, and get information about the user, amongst other things.
+Here, we'll configure the OWIN middleware to use the [OpenID Connect authentication protocol](/documentation/articles/active-directory-v2-protocols#openid-connect-sign-in-flow).  OWIN will be used to issue sign-in and sign-out requests, manage the user's session, and get information about the user, amongst other things.
 
 -	To begin, open the `web.config` file in the root of the `TodoList-WebApp` project, and enter your app's configuration values in the `<appSettings>` section.
     -	The `ida:ClientId` is the **Application Id** assigned to your app in the registration portal.
@@ -88,7 +84,7 @@ public void ConfigureAuth(IAppBuilder app)
         {
 
 					// The `Authority` represents the v2.0 endpoint - https://login.microsoftonline.com/common/v2.0
-					// The `Scope` describes the permissions that your app will need.  See https://azure.microsoft.com/documentation/articles/active-directory-v2-scopes/
+					// The `Scope` describes the permissions that your app will need.  See /documentation/articles/active-directory-v2-scopes/
 					// In a real application you could use issuer validation for additional checks, like making sure the user's organization has signed up for your app, for instance.
 
 					ClientId = clientId,
@@ -115,7 +111,7 @@ public void ConfigureAuth(IAppBuilder app)
 ```
 
 ## 3. Use ADAL to get an access token upon user sign-in
-In the `AuthorizationCodeReceived` notification, we want to use [OAuth 2.0 in tandem with OpenID Connect](active-directory-v2-protocols.md#openid-connect-with-oauth-code-flow) to redeem the authorization_code for an access token to the To-Do List Service.  ADAL can make this process easy for you:
+In the `AuthorizationCodeReceived` notification, we want to use [OAuth 2.0 in tandem with OpenID Connect](/documentation/articles/active-directory-v2-protocols#openid-connect-with-oauth-code-flow) to redeem the authorization_code for an access token to the To-Do List Service.  ADAL can make this process easy for you:
 
 - First, install the preview version of ADAL:
 
@@ -204,5 +200,5 @@ For reference, the completed sample (without your configuration values) [is prov
 ## Next Steps
 
 For additional resources, check out:
-- [The App Model v2.0 Preview >>](active-directory-appmodel-v2-overview.md)
+- [The App Model v2.0 Preview >>](/documentation/articles/active-directory-appmodel-v2-overview)
 - [StackOverflow "adal" tag >>](http://stackoverflow.com/questions/tagged/adal)

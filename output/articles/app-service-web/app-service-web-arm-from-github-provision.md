@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties 
 	pageTitle="Deploy a web app that is linked to a GitHub repository" 
 	description="Use an Azure Resource Manager template to deploy a web app that contains a project from a GitHub repository." 

@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Azure AD Connect sync: Prevent accidental deletes | Microsoft Azure"
+   pageTitle="Azure AD Connect sync: Prevent accidental deletes | Windows Azure"
    description="This topic describes the prevent accidental deletes (preventing accidental deletions) feature in Azure AD Connect."
    services="active-directory"
    documentationCenter=""
@@ -8,13 +8,9 @@
    editor=""/>
 
 <tags
-   ms.service="active-directory"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="identity"
-   ms.date="10/13/2015"
-   ms.author="andkjell"/>
+	ms.service="active-directory"
+	ms.date="10/13/2015"
+	wacn.date=""/>
 
 # Prevent accidental deletes
 This topic describes the prevent accidental deletes (preventing accidental deletions) feature in Azure AD Connect.
@@ -44,6 +40,6 @@ If all the deletes are desired, then do the following:
 3. To re-enable the protection run the PowerShell cmdlet: `Enable-ADSyncExportDeletionThreshold`
 
 ## Next steps
-Learn more about the [Azure AD Connect sync](active-directory-aadconnectsync-whatis.md) configuration.
+Learn more about the [Azure AD Connect sync](/documentation/articles/active-directory-aadconnectsync-whatis) configuration.
 
-Learn more about [Integrating your on-premises identities with Azure Active Directory](active-directory-aadconnect.md).
+Learn more about [Integrating your on-premises identities with Azure Active Directory](/documentation/articles/active-directory-aadconnect).

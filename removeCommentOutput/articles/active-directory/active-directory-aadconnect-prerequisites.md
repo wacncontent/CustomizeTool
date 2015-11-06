@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Prerequisites for Azure AD Connect | Microsoft Azure"
+   pageTitle="Prerequisites for Azure AD Connect | Windows Azure"
    description="Article description that will be displayed on landing pages and in most search results"
    services="active-directory"
    documentationCenter=""
@@ -8,13 +8,9 @@
    editor="curtand"/>
 
 <tags
-   ms.service="active-directory"
-   ms.workload="identity"
-   ms.tgt_pltfrm="na"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.date="10/13/2015"
-   ms.author="andkjell;billmath"/>
+	ms.service="active-directory"
+	ms.date="10/13/2015"
+	wacn.date=""/>
 
 # Prerequisites for Azure AD Connect
 This topic describes the pre-requisites and the hardware requirements for Azure AD Connect.
@@ -24,8 +20,8 @@ Before you install Azure AD Connect, there are a few things that you will need.
 
 **Azure AD**
 
-- An Azure subscription or an [Azure trial subscription](http://azure.microsoft.com/pricing/free-trial/) - This is only required for accessing the Azure portal and not for using Azure AD Connect.  If you are using PowerShell or Office 365 you do not need an Azure subscription to use Azure AD Connect. If you have an Office 365 license you can also use the Office 365 portal. With a paid Office 365 license you can also get into the Azure portal from the Office 365 portal.
-- Verify the domain you plan to use in Azure AD. For example if you plan to use contoso.com for your users then make sure this domain has been verified and you are not only using the contoso.onmicrosoft.com default domain.
+- An Azure subscription or an [Azure trial subscription](/pricing/1rmb-trial/) - This is only required for accessing the Azure Management Portal and not for using Azure AD Connect.  If you are using PowerShell or Office 365 you do not need an Azure subscription to use Azure AD Connect. If you have an Office 365 license you can also use the Office 365 portal. With a paid Office 365 license you can also get into the Azure Management Portal from the Office 365 portal.
+- Verify the domain you plan to use in Azure AD. For example if you plan to use contoso.com for your users then make sure this domain has been verified and you are not only using the contoso.partner.onmschina.cn default domain.
 - An Azure AD directory will by default allow 50k objects. When you verify the domain the limit will be increased to 300k objects. If you need even more objects in Azure AD you need to open a support case to have the limit increased even further. If you need more than 500k objects, you will need a license such as Office 365, Azure AD Basic, Azure AD Premium, or Enterprise Mobility Suite.
 
 **On-premises servers and environment**
@@ -41,7 +37,7 @@ Azure AD Connect supports all flavors of Microsoft SQL Server from SQL Server 20
 
 - An Azure AD Global Administrator account for the Azure AD directory you wish to integrate with.
 - An Enterprise Administrator account for your local Active Directory if you use express settings.
-- [Accounts is Active Directory](active-directory-aadconnect-accounts-permissions.md) if you use the custom settings installation path.
+- [Accounts is Active Directory](/documentation/articles/active-directory-aadconnect-accounts-permissions) if you use the custom settings installation path.
 
 **Connectivity**
 
@@ -60,7 +56,7 @@ Azure AD Connect supports all flavors of Microsoft SQL Server from SQL Server 20
 ```
 
 This text must be entered at the bottom of the file.  In this code, &lt;PROXYADRESS&gt; represents the actual proxy IP address or host name.
-- If your proxy limits which URLs which can be accessed then the URLs documented in [Office 365 URLs and IP address ranges ](https://support.office.com/en-us/article/Office-365-URLs-and-IP-address-ranges-8548a211-3fe7-47cb-abb1-355ea5aa88a2) must be opened in the proxy.
+- If your proxy limits which URLs which can be accessed then the URLs documented in [Office 365 URLs and IP address ranges ](https://support.office.com/article/Office-365-URLs-and-IP-address-ranges-8548a211-3fe7-47cb-abb1-355ea5aa88a2) must be opened in the proxy.
 
 **Other**
 
@@ -114,4 +110,4 @@ The minimum requirements for computers running AD FS or Web Application Servers 
 
 
 ## Next steps
-Learn more about [Integrating your on-premises identities with Azure Active Directory](active-directory-aadconnect.md).
+Learn more about [Integrating your on-premises identities with Azure Active Directory](/documentation/articles/active-directory-aadconnect).

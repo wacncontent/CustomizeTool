@@ -133,7 +133,7 @@ Perform the following procedure on the second SharePoint application server and 
 8.	The **Completing the SharePoint Products Configuration Wizard** page appears. Click **Next**.
 9.	On the **Configuration Successful** page, click **Finish**.
 
-When SharePoint creates the farm, it configures a set of server logins on the primary SQL Server virtual machine. SQL Server 2012 introduces the concept of users with passwords for contained databases. The database itself stores all the database metadata and user information, and a user who is defined in this database does not need to have a corresponding login. The information in this database is replicated by the availability group and is available after a failover. For more information, see [Contained databases](http://go.microsoft.com/fwlink/p/?LinkId=262794).
+When SharePoint creates the farm, it configures a set of server logins on the primary SQL Server virtual machine. SQL Server 2012 introduces the concept of users with passwords for contained databases. The database itself stores all the database metadata and user information, and a user who is defined in this database does not need to have a corresponding login. The information in this database is replicated by the availability group and is available after a failover. For more information, see [Contained databases](https://msdn.microsoft.com/zh-cn/library/ff929071(v=SQL.110).aspx).
 
 However, by default, SharePoint databases are not contained databases. Therefore, you will need to manually configure the secondary database server so that it has the same set of logins for SharePoint farm accounts as the primary database server. You can perform this synchronization from SQL Server Management Studio by connecting to both servers at the same time.
 
@@ -186,7 +186,7 @@ To continue with the configuration of this workload, go to [Phase 5: Create the 
 
 [SharePoint farms hosted in Azure infrastructure services](/documentation/articles/virtual-machines-sharepoint-infrastructure-services)
 
-[SharePoint with SQL Server AlwaysOn infographic](http://go.microsoft.com/fwlink/?LinkId=394788)
+[SharePoint with SQL Server AlwaysOn infographic](https://azure.microsoft.com/zh-cn/documentation/infographics/sharepoint-sqlserver-alwayson/)
 
 [Windows Azure architectures for SharePoint 2013](https://technet.microsoft.com/zh-cn/library/dn635309.aspx)
 

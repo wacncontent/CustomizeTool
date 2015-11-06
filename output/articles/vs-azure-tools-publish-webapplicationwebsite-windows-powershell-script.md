@@ -54,7 +54,7 @@ The name of the Azure subscription that you want to create the website in.
 
 ## WebDeployPackage
 
-The path to the web deployment package to publish to the website. You can create this package by using the Publish Web wizard in Visual Studio. For more information, see [Get started with Azure Cloud Services and ASP.NET](http://go.microsoft.com/fwlink/p/?LinkID=623089).
+The path to the web deployment package to publish to the website. You can create this package by using the Publish Web wizard in Visual Studio. For more information, see [Get started with Azure Cloud Services and ASP.NET](/documentation/articles/vs-azure-tools-publish-webapplicationwebsite-windows-powershell-script/).
 
 |Parameter|Default value|
 |---|---|

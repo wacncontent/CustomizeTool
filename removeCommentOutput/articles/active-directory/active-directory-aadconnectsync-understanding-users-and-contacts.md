@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Azure AD Connect Sync: Understanding Users and Contacts | Microsoft Azure"
+	pageTitle="Azure AD Connect Sync: Understanding Users and Contacts | Windows Azure"
 	description="Explains users and contacts in Azure AD Connect Sync."
 	services="active-directory"
 	documentationCenter=""
@@ -9,12 +9,8 @@
 
 <tags
 	ms.service="active-directory"
-	ms.workload="identity"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="10/13/2015"
-	ms.author="markusvi"/>
+	wacn.date=""/>
 
 
 # Azure AD Connect Sync: Understanding Users and Contacts
@@ -70,8 +66,8 @@ When an object has been exported to Azure AD then it is not allowed to change th
 
 ## Additional Resources
 
-* [Azure AD Connect Sync: Customizing Synchronization options](active-directory-aadconnectsync-whatis.md)
-* [Integrating your on-premises identities with Azure Active Directory](active-directory-aadconnect.md)
+* [Azure AD Connect Sync: Customizing Synchronization options](/documentation/articles/active-directory-aadconnectsync-whatis)
+* [Integrating your on-premises identities with Azure Active Directory](/documentation/articles/active-directory-aadconnect)
 
 
 <!--Image references-->

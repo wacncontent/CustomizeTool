@@ -31,7 +31,7 @@ The mobile service that you will create in this tutorial is a .NET backend mobil
 To complete this tutorial, you need the following:
 
 * An active Azure account. If you don't have an account, you can create a trial account in just a couple of minutes. For details, see [Azure Trial](/pricing/1rmb-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fdocumentation%2Farticles%2Fmobile-services-dotnet-backend-windows-universal-dotnet-get-started-data%2F).
-* <a href="https://go.microsoft.com/fwLink/p/?LinkID=391934" target="_blank">Visual Studio 2013</a> (Update 3 or a later version). 
+* <a href="https://www.visualstudio.com/downloads/download-visual-studio-vs" target="_blank">Visual Studio 2013</a> (Update 3 or a later version). 
 
 ##Download the GetStartedWithData project
 
@@ -49,7 +49,7 @@ To complete this tutorial, you need the following:
 	        "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
 		
 
-&nbsp;&nbsp;This code provides access to your new mobile service in your app by using an instance of the [MobileServiceClient](http://go.microsoft.com/fwlink/p/?LinkId=302030) class. The client is created by supplying the URI and the application key of the new mobile service. This static field is available to all pages in your app.
+&nbsp;&nbsp;This code provides access to your new mobile service in your app by using an instance of the [MobileServiceClient](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.mobileservices.mobileserviceclient.aspx) class. The client is created by supplying the URI and the application key of the new mobile service. This static field is available to all pages in your app.
 
 &nbsp;&nbsp;8. Right-click the Windows Phone app project, click **Add**, click **Connected Service...**, select the mobile service that you just created, and then click **OK**. The same code is added to the shared App.xaml.cs file, but this time within a Windows Phone app conditional compilation block.
 
@@ -113,7 +113,7 @@ This tutorial demonstrated the basics of enabling a universal Windows app projec
 [Azure Management Portal]: https://manage.windowsazure.cn/
 [Management Portal]: https://manage.windowsazure.cn/
 [Mobile Services SDK]: http://go.microsoft.com/fwlink/p/?LinkId=257545
-[Developer Code Samples site]:  http://go.microsoft.com/fwlink/p/?LinkID=510826
+[Developer Code Samples site]:  https://code.msdn.microsoft.com:443/Get-Started-with-Data-in-0e863e57
 [Mobile Services .NET How-to Conceptual Reference]: /documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library
-[MobileServiceClient class]: http://go.microsoft.com/fwlink/p/?LinkId=302030
+[MobileServiceClient class]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.mobileservices.mobileserviceclient.aspx
   

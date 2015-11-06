@@ -8,13 +8,9 @@
    editor=""/>
 
 <tags
-   ms.service="na"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="identity"
-   ms.date="09/21/2015"
-   ms.author="inhenk"/>
+	ms.service="na"
+	ms.date="09/21/2015"
+	wacn.date=""/>
 
 # Azure Privileged Identity Management: How To How To Require MFA
 It is highly recommended that you require multi-factor authentication for all of your administrators.
@@ -26,4 +22,4 @@ Additionally, you can change the MFA requirement by role by clicking on a role i
 
 <!--Every topic should have next steps and links to the next logical set of content to keep the customer engaged-->
 ## Next steps
-[AZURE.INCLUDE [active-directory-privileged-identity-management-toc](../../includes/active-directory-privileged-identity-management-toc.md)]
+[AZURE.INCLUDE [active-directory-privileged-identity-management-toc](../includes/active-directory-privileged-identity-management-toc.md)]

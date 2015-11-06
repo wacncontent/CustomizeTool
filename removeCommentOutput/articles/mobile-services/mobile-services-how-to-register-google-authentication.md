@@ -21,9 +21,9 @@ This topic shows you how to register your apps to be able to use Google to authe
 >[AZURE.NOTE] This tutorial is about [Azure Mobile Services](/home/features/mobile-services/), a solution to help you build scalable mobile applications for any platform. Mobile Services makes it easy to sync data, authenticate users, and send push notifications. This page supports the [Get Started with Authentication](/documentation/articles/mobile-services-ios-get-started-users) tutorial, which shows how to sign in users to your app. 
 <br/>If this is your first experience with Mobile Services, please complete the tutorial [Get Started with Mobile Services](/documentation/articles/mobile-services-ios-get-started).
 
-To complete the procedure in this topic, you must have a Google account that has a verified email address. To create a new Google account, go to <a href="http://go.microsoft.com/fwlink/p/?LinkId=268302" target="_blank">accounts.google.com</a>.
+To complete the procedure in this topic, you must have a Google account that has a verified email address. To create a new Google account, go to <a href="https://accounts.google.com/SignUp" target="_blank">accounts.google.com</a>.
 
-3. Navigate to the [Google apis](http://go.microsoft.com/fwlink/p/?LinkId=268303) website, sign-in with your Google account credentials, click **Create Project**, provide a **Project name**, then click **Create**.
+3. Navigate to the [Google apis](https://accounts.google.com/ServiceLogin?osid=1&passive=true&continue=https://console.developers.google.com/dcredirect/) website, sign-in with your Google account credentials, click **Create Project**, provide a **Project name**, then click **Create**.
 
 4. In the left navigation bar, click **API & Auth**, then under **Social APIs** click **Google+ API** > **Enable API**.
 
@@ -48,7 +48,7 @@ You are now ready to configure your mobile service to use Google sign-in for aut
 
 <!-- URLs. -->
 
-[Google apis]: http://go.microsoft.com/fwlink/p/?LinkId=268303
+[Google apis]: https://accounts.google.com/ServiceLogin?osid=1&passive=true&continue=https://console.developers.google.com/dcredirect/
 [Get started with authentication]: /develop/mobile/tutorials/get-started-with-users-dotnet/
 
 [Azure Management Portal]: https://manage.windowsazure.cn/

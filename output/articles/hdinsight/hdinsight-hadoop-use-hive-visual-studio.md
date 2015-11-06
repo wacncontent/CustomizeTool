@@ -25,7 +25,7 @@ In this article, you will learn how to submit Hive queries to an HDInsight clust
 
 To complete the steps in this article, you will need the following.
 
-* An Azure HDInsight (Hadoop on HDInsight) cluster (<!-- deleted by customization Linux or --> Windows-based)
+* An Azure HDInsight (Hadoop on HDInsight) cluster (Linux or Windows-based)
 
 * Visual Studio 2012 [Update 4](http://www.microsoft.com/download/details.aspx?id=39305), Visual Studio 2013 [Update 3](https://www.visualstudio.com/zh-cn/downloads/download-visual-studio-vs), or [Visual Studio Express 2013](http://www.microsoft.com/download/details.aspx?id=40769)
 
@@ -120,9 +120,6 @@ For more information about the HDInsight tools for Visual Studio:
 [hdinsight-submit-jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically
 [hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
 [hdinsight-get-started]: /documentation/articles/hdinsight-get-started
-<!-- keep by customization: begin -->
-[Powershell-install-configure]: /documentation/articles/install-configure-powershell
-<!-- keep by customization: end -->
 [powershell-here-strings]: http://technet.microsoft.com/zh-cn/library/ee692792.aspx
 
 [image-hdi-hive-powershell]: ./media/hdinsight-use-hive/HDI.HIVE.PowerShell.png

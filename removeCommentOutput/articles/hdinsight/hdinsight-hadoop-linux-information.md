@@ -1,19 +1,17 @@
-<!-- not suitable for Mooncake -->
-
 <properties
-   pageTitle="Tips for using Hadoop on Linux-based HDInsight | Azure"
+   pageTitle="Tips for using Hadoop on Linux-based HDInsight | Windows Azure"
    description="Get implementation tips for using Linux-based HDInsight (Hadoop) clusters on a familiar Linux environment running in the Azure cloud."
    services="hdinsight"
    documentationCenter=""
    authors="Blackmist"
    manager="paulettm"
    editor="cgronlun"
-	tags="azure-portal"/>
+   tags="azure-portal"/>
 
 <tags
-   ms.service="hdinsight"
-   ms.date="08/12/2015"
-   wacn.date=""/>
+	ms.service="hdinsight"
+	ms.date="10/09/2015"
+	wacn.date=""/>
 
 # Information about using HDInsight on Linux
 
@@ -22,7 +20,6 @@ Linux-based Azure HDInsight clusters provide Hadoop on a familiar Linux environm
 ## Domain names
 
 The fully qualified domain name (FQDN) to use when connecting to the cluster is **&lt;clustername>.azurehdinsight.cn** or (for SSH only) **&lt;clustername-ssh>.azurehdinsight.cn**.
-
 
 ## Remote access to services
 
@@ -39,7 +36,7 @@ The fully qualified domain name (FQDN) to use when connecting to the cluster is 
 * **Ambari (REST)** - https://&lt;clustername>.azurehdinsight.cn/ambari
 
 	> [AZURE.NOTE] Authenticate by using the cluster administrator user and password.
-	> 
+	>
 	> Authentication is plaintext - always use HTTPS to help ensure that the connection is secure.
 
 * **WebHCat (Templeton)** - https://&lt;clustername>.azurehdinsight.cn/templeton
@@ -48,9 +45,9 @@ The fully qualified domain name (FQDN) to use when connecting to the cluster is 
 	>
 	> Authentication is plaintext - always use HTTPS to help ensure that the connection is secure.
 
-* **SSH** - &lt;clustername>-ssh.azurehdinsight.cn on port 22on port 22 or 23. Port 22 is used to connect to headnode0, while 23 is used to connect to headnode1. For more information on the head nodes, see [Availability and reliability of Hadoop clusters in HDInsight](/documentation/articles/hdinsight-high-availability-linux).
+* **SSH** - &lt;clustername>-ssh.azurehdinsight.cn on port 22 or 23. Port 22 is used to connect to headnode0, while 23 is used to connect to headnode1. For more information on the head nodes, see [Availability and reliability of Hadoop clusters in HDInsight](/documentation/articles/hdinsight-high-availability).
 
-	> [AZURE.NOTE] You can only access the cluster head node through SSH from a client machine. Once connected, you can then access the worker nodes by using SSH from the head node.
+	> [AZURE.NOTE] You can only access the cluster head nodes through SSH from a client machine. Once connected, you can then access the worker nodes by using SSH from the head node.
 
 ## File locations
 
@@ -93,25 +90,37 @@ During cluster creation, you selected to either use an existing Azure Storage ac
 
         wasb://CONTAINTERNAME@STORAGEACCOUNTNAME.blob.core.chinacloudapi.cn
 
-> [AZURE.TIP] If you have installed [jq](http://stedolan.github.io/jq/), you can use the following to return just the `fs.defaultFS` entry:
->
-> `curl -u admin:PASSWORD -G "https://CLUSTERNAME.azurehdinsight.cn/api/v1/clusters/CLUSTERNAME/configurations/service_config_versions?service_name=HDFS&service_config_version=1" | jq '.items[].configurations[].properties["fs.defaultFS"] | select(. != null)'`
+	> [AZURE.TIP] If you have installed [jq](http://stedolan.github.io/jq/), you can use the following to return just the `fs.defaultFS` entry:
+	>
+	> `curl -u admin:PASSWORD -G "https://CLUSTERNAME.azurehdinsight.cn/api/v1/clusters/CLUSTERNAME/configurations/service_config_versions?service_name=HDFS&service_config_version=1" | jq '.items[].configurations[].properties["fs.defaultFS"] | select(. != null)'`
 
-**Azure Management Portal**
+3. To find the key used to authenticate to the storage account, or to find any secondary storage accounts associated with the cluster, use the following:
 
-1. In the [Azure Management Portal](https://manage.windowsazure.cn/), select your HDInsight cluster.
+		curl -u admin:PASSWORD -G "https://CLUSTERNAME.azurehdinsight.cn/api/v1/clusters/CLUSTERNAME/configurations/service_config_versions?service_name=HDFS&service_config_version=1"
 
-2. Select **Dashboard** at the top of the page.
+4. In the JSON data returned, find the entries that begin with `fs.azure.account.key`. The remainder of the entry name is the storage account name. For example, `fs.azure.account.key.mystorage.blob.core.chinacloudapi.cn`. The value stored in this entry is the key used to authenticate to the storage account.
 
-3. The Storage account(s) and container(s) are listed in the **linked resources** section of the page.
+	> [AZURE.TIP] If you have installed [jq](http://stedolan.github.io/jq/), you can use the following to return a list of the keys and values:
+	>
+	> `curl -u admin:PASSWORD -G "https://CLUSTERNAME.azurehdinsight.cn/api/v1/clusters/CLUSTERNAME/configurations/service_config_versions?service_name=HDFS&service_config_version=1" | jq '.items[].configurations[].properties as $in | $in | keys[] | select(. | contains("fs.azure.account.key.")) as $item | $item | ltrimstr("fs.azure.account.key.") | { storage_account: ., storage_account_key: $in[$item] }'`
 
-	![linked resources](./media/hdinsight-hadoop-linux-information/storageportal.png)
+You can also find the storage information using the Azure preview portal:
+
+1. In the [Azure Preview Portal](https://manage.windowsazure.cn/), select your HDInsight cluster.
+
+2. From the __Essentials__ section, select __All settings__.
+
+3. From __Settings__, select __Azure Storage Keys__.
+
+4. From __Azure Storage Keys__, select one of the storage accounts listed. This will display information about the storage account.
+
+5. Select the key icon. This will display keys for this storage account.
 
 ### How do I access Blob storage?
 
 Other than through the Hadoop command from the cluster, there are a variety of ways to access blobs:
 
-* [Azure CLI for Mac, Linux and Windows](/documentation/articles/xplat-cli): Command-Line interface commands for working with Azure. After installing, use the `azure storage` command for help on using storage, or `azure blob` for blob-specific commands.
+* [Azure CLI for Mac, Linux and Windows](/documentation/articles/xplat-cli-install): Command-Line interface commands for working with Azure. After installing, use the `azure storage` command for help on using storage, or `azure blob` for blob-specific commands.
 
 * [blobxfer.py](https://github.com/Azure/azure-batch-samples/tree/master/Python/Storage): A python script for working with blobs in Azure Storage.
 
@@ -171,6 +180,7 @@ The different cluster types are affected by scaling as follows:
 
 		2. From the list of services on the left of the page, select __Storm__. Then select __Storm UI__ from __Quick Links__.
 
+
 			![Storm UI entry in quick links](./media/hdinsight-hadoop-linux-information/ambari-storm.png)
 
 			This will display the Storm UI:
@@ -187,11 +197,12 @@ For specific information on scaling your HDInsight cluster, see:
 
 ## How do I install Hue (or other Hadoop component)?
 
-HDInsight is a managed service, which means that nodes in a cluster may be destroyed and reprovisioned automatically by Azure if a problem is detected. Because of this, it is not recommended to manually install components on the cluster nodes.
+HDInsight is a managed service, which means that nodes in a cluster may be destroyed and reprovisioned automatically by Azure if a problem is detected. Because of this, it is not recommended to manually install things directly on the cluster nodes. Instead, use [HDInsight Script Actions](/documentation/articles/hdinsight-hadoop-customize-cluster) when you need to install the following:
 
-Instead, use [HDInsight Script Actions](/documentation/articles/hdinsight-hadoop-customize-cluster).
+* A service or web site such as Spark or Hue.
+* A component that requires configuration changes on multiple nodes in the cluster. For example, a required environment variable, creating of a logging directory, or creation of a configuration file.
 
-Script Actions are Bash scripts that are ran during cluster provisioning, and can be used to install additional components on the cluster. Example scripts are provided for installing the following components:
+Script Actions are Bash scripts that are ran during cluster provisioning, and can be used to install and configure additional components on the cluster. Example scripts are provided for installing the following components:
 
 * [Hue](/documentation/articles/hdinsight-hadoop-hue-linux)
 * [Giraph](/documentation/articles/hdinsight-hadoop-giraph-install-linux)
@@ -201,9 +212,26 @@ Script Actions are Bash scripts that are ran during cluster provisioning, and ca
 
 For information on developing your own Script Actions, see [Script Action development with HDInsight](/documentation/articles/hdinsight-hadoop-script-actions-linux).
 
+###Jar files
+
+Some Hadoop technologies are provided in self-contained jar files that are contain functions used as part of a MapReduce job, or from inside Pig or Hive. While these can be installed using Script Actions, they often don't require any setup and can just be uploaded to the cluster after provisioning and used directly. If you want to makle sure the component survives reimaging of the cluster, you can store the jar file in WASB.
+
+For example, if you want to use the latest version of [DataFu](http://datafu.incubator.apache.org/), you can download a jar containing the project and upload it to the HDInsight cluster. Then follow the DataFu documentation on how to use it from Pig or Hive.
+
+> [AZURE.IMPORTANT] Some components that are standalone jar files are provided with HDInsight, but are not in the path. If you are looking for a specific component, you can use the follow to search for it on your cluster:
+>
+> ```find / -name *componentname*.jar 2>/dev/null```
+>
+> This will return the path of any matching jar files.
+
+If the cluster already provides a version of a component as a standalone jar file, but you want to use a different version, you can upload a new version of the component to the cluster and try using it in your jobs.
+
+> [AZURE.WARNING] Components provided with the HDInsight cluster are fully supported and Microsoft Support will help to isolate and resolve issues related to these components.
+>
+> Custom components receive commercially reasonable support to help you to further troubleshoot the issue. This might result in resolving the issue OR asking you to engage available channels for the open source technologies where deep expertise for that technology is found. For example, there are many community sites that can be used, like: [MSDN forum for HDInsight](https://social.msdn.microsoft.com/Forums/azure/zh-cn/home?forum=hdinsight), [http://stackoverflow.com](http://stackoverflow.com). Also Apache projects have project sites on [http://apache.org](http://apache.org), for example: [Hadoop](http://hadoop.apache.org/), [Spark](http://spark.apache.org/).
+
 ## Next steps
 
 * [Use Hive with HDInsight](/documentation/articles/hdinsight-use-hive)
 * [Use Pig with HDInsight](/documentation/articles/hdinsight-use-pig)
 * [Use MapReduce jobs with HDInsight](/documentation/articles/hdinsight-use-mapreduce)
-
