@@ -134,7 +134,7 @@ Once the deployment operation completes, your browser will open and display the 
 
 For more information, see the [Node.js Developer Center](/develop/nodejs/).
 
-  [Node.js Web Application]: /develop/nodejs/tutorials/getting-started/
+  [Node.js Web Application]: /documentation/articles/cloud-services-nodejs-develop-deploy-app
   [Express]: http://expressjs.com/
   [http://jade-lang.com]: http://jade-lang.com
 

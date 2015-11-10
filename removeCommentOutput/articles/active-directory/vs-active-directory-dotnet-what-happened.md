@@ -63,7 +63,7 @@ The following configuration entries have been added.
 
 	<appSettings>
 	    <add key="ida:ClientId" value="ClientId from the new Azure AD App" />
-	    <add key="ida:AADInstance" value="https://login.microsoftonline.com/" />
+	    <add key="ida:AADInstance" value="https://login.chinacloudapi.cn/" /> 
 	    <add key="ida:Domain" value="The selected Azure AD Domain" />
 	    <add key="ida:TenantId" value="The Id of your selected Azure AD Tenant" />
 	    <add key="ida:PostLogoutRedirectUri" value="Your project start page" />
@@ -97,7 +97,7 @@ Each of following files was backed up before being replaced. Backup files are lo
 - **Startup.cs**
 - **App_Start\Startup.Auth.cs**
 - **Controllers\AccountController.cs**
-- **Views\Shared_LoginPartial.cshtml**
+- **Views\Shared\_LoginPartial.cshtml**
 
 ## If I checked *Read directory data*, what additional changes were made to my project?
 

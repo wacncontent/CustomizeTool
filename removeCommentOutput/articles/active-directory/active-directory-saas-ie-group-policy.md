@@ -17,7 +17,7 @@ This tutorial shows how to use group policy to remotely install the Access Panel
 
 It is recommended that admins automate the deployment of this extension. Otherwise, users will have to download and install the extension themselves, which is prone to user error and requires administrator permissions. This tutorial covers one method of automating software deployments by using group policy. [Learn more about group policy.](https://technet.microsoft.com/windowsserver/bb310732.aspx)
 
-The Access Panel extension is also available for [Chrome](https://go.microsoft.com/fwLink/?LinkID=311859) and [Firefox](https://go.microsoft.com/fwLink/?LinkID=626998), neither of which require administrator permissions to install.
+The Access Panel extension is also available for [Chrome](https://chrome.google.com/webstore/detail/access-panel-extension/ggjhpefgjjfobnfoldnjipclpcfbgbhl) and [Firefox](https://addons.mozilla.org/zh-cn/firefox/addon/access-panel-extension/), neither of which require administrator permissions to install.
 
 ##Prerequisites
 

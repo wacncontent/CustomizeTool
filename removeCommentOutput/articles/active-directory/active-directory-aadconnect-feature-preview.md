@@ -38,7 +38,7 @@ This group will be represented as a distribution group in on-premises AD DS. You
 - Only forests with the Exchange schema are valid targets for groups. If no Exchange was detected, then group writeback will not be possible to enable.
 - The Group writeback feature does not currently handle security groups or distribution groups.
 
-More information about Office 365 Groups can be found [here](http://aka.ms/O365g).
+More information about Office 365 Groups can be found [here](https://support.office.com/zh-cn/Article/Find-help-about-Groups-in-Office-365-7a9b321f-b76a-4d53-b98b-a2b0b7946de1).
 
 ## Directory extensions
 Directory extensions allows you to extend the schema in Azure AD with your own attributes from on-premises Active Directory.

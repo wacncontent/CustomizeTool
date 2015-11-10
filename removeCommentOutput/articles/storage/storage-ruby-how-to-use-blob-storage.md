@@ -48,7 +48,7 @@ Using your favorite text editor, add the following to the top of the Ruby file w
 
 ## Setup an Azure Storage Connection
 
-The azure module will read the environment variables **AZURE_STORAGE_ACCOUNT** and **AZURE_STORAGE_ACCESS_KEY**
+The azure module will read the environment variables **AZURE\_STORAGE\_ACCOUNT** and **AZURE\_STORAGE\_ACCESS_KEY**
 for information required to connect to your Azure storage account. If these environment variables are not set, you must specify the account information before using **Azure::BlobService** with the following code:
 
 	Azure.config.storage_account_name = "<your azure storage account>"
@@ -66,7 +66,7 @@ To obtain these values:
 
 [AZURE.INCLUDE [storage-container-naming-rules-include](../includes/storage-container-naming-rules-include.md)]
 
-The **Azure::BlobService** object lets you work with containers and blobs. To create a container, use the **create_container()** method.
+The **Azure::BlobService** object lets you work with containers and blobs. To create a container, use the **create\_container()** method.
 
 The following code example creates a container or print out the error if there is any.
 
@@ -79,19 +79,19 @@ The following code example creates a container or print out the error if there i
 
 If you want to make the files in the container public, you can set the container's permissions.
 
-You can just modify the <strong>create\_container()</strong> call to pass the **:public_access_level** option:
+You can just modify the <strong>create\_container()</strong> call to pass the **:public\_access\_level** option:
 
 	container = azure_blob_service.create_container("test-container",
 	  :public_access_level => "<public access level>")
 
 
-Valid values for the **:public_access_level** option are:
+Valid values for the **:public\_access\_level** option are:
 
 * **blob:** Specifies full public read access for container and blob data. Clients can enumerate blobs within the container via anonymous request, but cannot enumerate containers within the storage account.
 
 * **container:** Specifies public read access for blobs. Blob data within this container can be read via anonymous request, but container data is not available. Clients cannot enumerate blobs within the container via anonymous request.
 
-Alternatively, you can modify the public access level of a container by using **set_container_acl()** method to specify the public access level.
+Alternatively, you can modify the public access level of a container by using **set\_container\_acl()** method to specify the public access level.
 
 The following code example changes the public access level to **container**:
 
@@ -99,7 +99,7 @@ The following code example changes the public access level to **container**:
 
 ## Upload a blob into a container
 
-To upload content to a blob, use the **create_block_blob()** method to create the blob, use a file or string as the content of the blob.
+To upload content to a blob, use the **create\_block\_blob()** method to create the blob, use a file or string as the content of the blob.
 
 The following code uploads the file **test.png** as a new blob named "image-blob" in the container.
 
@@ -111,7 +111,7 @@ The following code uploads the file **test.png** as a new blob named "image-blob
 ## List the blobs in a container
 
 To list the containers, use **list_containers()** method.
-To list the blobs within a container, use **list_blobs()** method.
+To list the blobs within a container, use **list\_blobs()** method.
 
 This outputs the urls of all the blobs in all the containers for the account.
 
@@ -125,15 +125,15 @@ This outputs the urls of all the blobs in all the containers for the account.
 
 ## Download blobs
 
-To download blobs, use the **get_blob()** method to retrieve the contents.
+To download blobs, use the **get\_blob()** method to retrieve the contents.
 
-The following code example demonstrates using **get_blob()** to download the contents of "image-blob" and write it to a local file.
+The following code example demonstrates using **get\_blob()** to download the contents of "image-blob" and write it to a local file.
 
 	blob, content = azure_blob_service.get_blob(container.name,"image-blob")
 	File.open("download.png","wb") {|f| f.write(content)}
 
 ## Delete a Blob
-Finally, to delete a blob, use the **delete_blob()** method. The following code example demonstrates how to delete a blob.
+Finally, to delete a blob, use the **delete\_blob()** method. The following code example demonstrates how to delete a blob.
 
 	azure_blob_service.delete_blob(container.name, "image-blob")
 

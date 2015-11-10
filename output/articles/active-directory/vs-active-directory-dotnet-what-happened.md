@@ -97,7 +97,7 @@ Each of following files was backed up before being replaced. Backup files are lo
 - **Startup.cs**
 - **App_Start\Startup.Auth.cs**
 - **Controllers\AccountController.cs**
-- **Views\Shared_LoginPartial.cshtml**
+- **Views\Shared\_LoginPartial.cshtml**
 
 ## If I checked *Read directory data*, what additional changes were made to my project?
 

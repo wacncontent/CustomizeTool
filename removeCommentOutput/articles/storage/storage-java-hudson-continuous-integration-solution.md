@@ -120,7 +120,7 @@ For instruction purposes, first we'll need to create a job that will create seve
 8. Click **Make new container public by default** for this example. (If you want to use a private container, you'll need to create a shared access signature to allow access. That is beyond the scope of this article. You can learn more about shared access signatures at [Creating a Shared Access Signature](http://go.microsoft.com/fwlink/?LinkId=279889).)
 9. [Optional] Click **Clean container before uploading** if you want the container to be cleared of contents before build artifacts are uploaded (leave it unchecked if you do not want to clean the contents of the container).
 10. For **List of Artifacts to upload**, enter **text/*.txt**.
-11. For **Common virtual path for uploaded artifacts**, enter **${BUILD_ID}/${BUILD_NUMBER}**.
+11. For **Common virtual path for uploaded artifacts**, enter **${BUILD\_ID}/${BUILD\_NUMBER}**.
 12. Click **Save** to save your settings.
 13. In the Hudson dashboard, click **Build Now** to run **MyJob**. Examine the console output for status. Status messages for Azure Storage will be included in the console output when the post-build action starts to upload build artifacts.
 14. Upon successful completion of the job, you can examine the build artifacts by opening the public blob.
@@ -164,7 +164,7 @@ The following provides an overview of the Blob service components.
 
     (The format above applies to the public Azure cloud. If you are using a different Azure cloud, use the endpoint within the Azure Management Portal to determine your URL endpoint.)
 
-    In the format above, `storageaccount` represents the name of your storage account, `container_name` represents the name of your container, and `blob_name` represents the name of your blob, respectively. Within the container name, you can have multiple paths, separated by a forward slash, **/**. The example container name in this tutorial was **MyJob**, and **${BUILD_ID}/${BUILD_NUMBER}** was used for the common virtual path, resulting in the blob having a URL of the following form:
+    In the format above, `storageaccount` represents the name of your storage account, `container_name` represents the name of your container, and `blob_name` represents the name of your blob, respectively. Within the container name, you can have multiple paths, separated by a forward slash, **/**. The example container name in this tutorial was **MyJob**, and **${BUILD\_ID}/${BUILD\_NUMBER}** was used for the common virtual path, resulting in the blob having a URL of the following form:
 
     `http://example.blob.core.chinacloudapi.cn/myjob/2014-05-01_11-56-22/1/hello.txt`
 

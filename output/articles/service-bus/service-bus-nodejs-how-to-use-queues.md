@@ -48,7 +48,7 @@ To use Azure Service Bus, download and use the Node.js Azure package. This packa
 		└── request@2.21.0 (json-stringify-safe@4.0.0, forever-agent@0.5.0, aws-sign@0.3.0, tunnel-agent@0.3.0, oauth-sign@0.3.0, qs@0.6.5, cookie-jar@0.3.0, node-uuid@1.4.0, http-signature@0.9.11, form-data@0.0.8, hawk@0.13.1)
 	```
 
-3. You can manually run the **ls** command to verify that a **node_modules** folder was created. Inside that folder find the **azure** package, which contains the libraries you need to access Service Bus queues.
+3. You can manually run the **ls** command to verify that a **node\_modules** folder was created. Inside that folder find the **azure** package, which contains the libraries you need to access Service Bus queues.
 
 ### Import the module
 
@@ -60,7 +60,7 @@ var azure = require('azure');
 
 ### Set up an Azure Service Bus connection
 
-The Azure module reads the environment variables AZURE_SERVICEBUS_NAMESPACE and AZURE_SERVICEBUS_ACCESS_KEY to obtain information required to connect to Service Bus. If these environment variables are not set, you must specify the account information when calling **createServiceBusService**.
+The Azure module reads the environment variables AZURE\_SERVICEBUS\_NAMESPACE and AZURE\_SERVICEBUS\_ACCESS\_KEY to obtain information required to connect to Service Bus. If these environment variables are not set, you must specify the account information when calling **createServiceBusService**.
 
 For an example of setting the environment variables in a configuration file for an Azure Cloud Service, see [Node.js Cloud Service with Storage][].
 

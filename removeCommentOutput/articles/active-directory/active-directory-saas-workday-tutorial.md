@@ -137,7 +137,7 @@ If you are not familiar with this procedure, see [How to convert a binary certif
      11.5.  In the **View x509 Public Key** section, perform the following steps: <br><br>
         ![View x509 Public Key](./media/active-directory-saas-workday-tutorial/IC782930.png "View x509 Public Key") <br>
 
-      1.  In the **Name** textbox, type a name for your certificate (e.g.: *PPE_SP*).
+      1.  In the **Name** textbox, type a name for your certificate (e.g.: *PPE\_SP*).
       2.  In the **Valid From** textbox, type the valid from attribute value of your certificate.
       3.  In the **Valid To** textbox, type the valid to attribute value of your certificate.
 		

@@ -171,9 +171,9 @@ In this tutorial you learned how to create a basic chat application hosted in an
 
 For more information, see also the [Node.js Developer Center](/develop/nodejs/).
 
-  [chatwebsite]: /develop/nodejs/tutorials/website-using-socketio/
+  [chat Website]: /documentation/articles/web-sites-nodejs-chat-app-socketio/
 
-  [Azure SLA]: http://azure.microsoft.com/support/sla/
+  [Azure SLA]: /support/legal/sla
   [Azure SDK for Node.js GitHub repository]: https://github.com/WindowsAzure/azure-sdk-for-node
   [completed-app]: ./media/cloud-services-nodejs-chat-app-socketio/socketio-10.png
   [Azure SDK for Node.js]: /develop/nodejs/

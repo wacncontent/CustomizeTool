@@ -98,7 +98,7 @@ Use your favorite text editor, add the following to the top of the Ruby file whe
 
 ## Setup an Azure Service Bus Connection
 
-The azure module will read the environment variables **AZURE_SERVICEBUS_NAMESPACE** and **AZURE_SERVICEBUS_ACCESS_KEY**
+The azure module will read the environment variables **AZURE\_SERVICEBUS\_NAMESPACE** and **AZURE\_SERVICEBUS\_ACCESS\_KEY**
 for information required to connect to your Azure service bus namespace. If these environment variables are not set, you must specify the namespace information before using **Azure::ServiceBusService** with the following code:
 
     Azure.config.sb_namespace = "<your azure service bus namespace>"
@@ -108,7 +108,7 @@ Set the service bus namespace value to the value you created rather than the ent
 
 ## How to Create a Topic
 
-The **Azure::ServiceBusService** object lets you work with topics. The following code creates an **Azure::ServiceBusService** object. To create a topic, use the **create_topic()** method. The following example creates a topic or print out the error if there is any.
+The **Azure::ServiceBusService** object lets you work with topics. The following code creates an **Azure::ServiceBusService** object. To create a topic, use the **create\_topic()** method. The following example creates a topic or print out the error if there is any.
 
 	azure_service_bus_service = Azure::ServiceBusService.new
 	begin
@@ -144,11 +144,11 @@ You can also setup filters that allow you to scope which messages sent to a topi
 
 The most flexible type of filter supported by subscriptions is the **Azure::ServiceBus::SqlFilter**, which implements a subset of SQL92. SQL filters operate on the properties of the messages that are published to the topic. For more details about the expressions that can be used with a SQL filter, review the [SqlFilter.SqlExpression](http://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.sqlfilter.sqlexpression.aspx) syntax.
 
-Filters can be added to a subscription by using the **create_rule()** method of the **Azure::ServiceBusService** object. This method allows you to add new filters to an existing subscription.
+Filters can be added to a subscription by using the **create\_rule()** method of the **Azure::ServiceBusService** object. This method allows you to add new filters to an existing subscription.
 
-Since the default filter is applied automatically to all new subscriptions, you must first remove the default filter or the **MatchAll** will override any other filters you may specify. You can remove the default rule by using the **delete_rule()** method of the **Azure::ServiceBusService** object.
+Since the default filter is applied automatically to all new subscriptions, you must first remove the default filter or the **MatchAll** will override any other filters you may specify. You can remove the default rule by using the **delete\_rule()** method of the **Azure::ServiceBusService** object.
 
-The examples below creates a subscription named "high-messages" with a **Azure::ServiceBus::SqlFilter** that only selects messages that have a custom **message_number** property greater than 3:
+The examples below creates a subscription named "high-messages" with a **Azure::ServiceBus::SqlFilter** that only selects messages that have a custom **message\_number** property greater than 3:
 
 	subscription = azure_service_bus_service.create_subscription("test-topic",
 	  "high-messages")
@@ -180,7 +180,7 @@ When a message is now sent to "test-topic", it will always be delivered to recei
 
 ## How to Send Messages to a Topic
 
-To send a message to a Service Bus topic, your application must use the **send_topic_message()** method of the **Azure::ServiceBusService** object. Messages sent to Service Bus Topics are **Azure::ServiceBus::BrokeredMessage** objects. **Azure::ServiceBus::BrokeredMessage** objects have a set of standard properties (such as **label** and **time_to_live**), a dictionary that is used to hold custom application specific properties, and a body of string data. An application can set the body of the message by passing a string value to the **send_topic_message()** method and any required standard properties will be populated by default values.
+To send a message to a Service Bus topic, your application must use the **send\_topic\_message()** method of the **Azure::ServiceBusService** object. Messages sent to Service Bus Topics are **Azure::ServiceBus::BrokeredMessage** objects. **Azure::ServiceBus::BrokeredMessage** objects have a set of standard properties (such as **label** and **time\_to\_live**), a dictionary that is used to hold custom application specific properties, and a body of string data. An application can set the body of the message by passing a string value to the **send\_topic\_message()** method and any required standard properties will be populated by default values.
 
 The following example demonstrates how to send five test messages to "test-topic". Note that the **message_number** custom property value of each message varies on the iteration of the loop (this will determine which subscription receive it):
 
@@ -194,13 +194,13 @@ Service Bus topics support a maximum message size of 256 MB (the header, which i
 
 ## How to Receive Messages from a Subscription
 
-Messages are received from a subscription using the **receive_subscription_message()** method on the **Azure::ServiceBusService** object. By default, messages are read(peak) and locked without deleting it from the subscription. You can read and delete the message from the subscription by setting the **peek_lock** option to **false**.
+Messages are received from a subscription using the **receive\_subscription\_message()** method on the **Azure::ServiceBusService** object. By default, messages are read(peak) and locked without deleting it from the subscription. You can read and delete the message from the subscription by setting the **peek\_lock** option to **false**.
 
-The default behavior makes the reading and deleting into a two stage operation, which makes it possible to support applications that cannot tolerate missing messages. When service bus receives a request, it finds the next message to be consumed, locks it to prevent other consumers receiving it, and then returns it to the application. After the application finishes processing the message (or stores it reliably for future processing), it completes the second stage of the receive process by calling **delete_subscription_message()** method and providing the message to be deleted as a parameter. The **delete_subscription_message()** method will mark the message as being consumed and remove it from the subscription.
+The default behavior makes the reading and deleting into a two stage operation, which makes it possible to support applications that cannot tolerate missing messages. When service bus receives a request, it finds the next message to be consumed, locks it to prevent other consumers receiving it, and then returns it to the application. After the application finishes processing the message (or stores it reliably for future processing), it completes the second stage of the receive process by calling **delete\_subscription\_message()** method and providing the message to be deleted as a parameter. The **delete\_subscription\_message()** method will mark the message as being consumed and remove it from the subscription.
 
-If the **:peek_lock** parameter is set to **false**, reading and deleting the message becomes the simplest model, and works best for scenarios in which an application can tolerate not processing a message in the event of a failure. To understand this, consider a scenario in which the consumer issues the receive request and then crashes before processing it. Because Service Bus will have marked the message as being consumed, then when the application restarts and begins consuming messages again, it will have missed the message that was consumed prior to the crash.
+If the **:peek\_lock** parameter is set to **false**, reading and deleting the message becomes the simplest model, and works best for scenarios in which an application can tolerate not processing a message in the event of a failure. To understand this, consider a scenario in which the consumer issues the receive request and then crashes before processing it. Because Service Bus will have marked the message as being consumed, then when the application restarts and begins consuming messages again, it will have missed the message that was consumed prior to the crash.
 
-The example below demonstrates how messages can be received and processed using **receive_subscription_message()**. The example first receives and deletes a message from the "low-messages" subscription by using **:peek_lock** set to **false**, then it receives another message from the "high-messages" and then deletes the message using **delete_subscription_message()**:
+The example below demonstrates how messages can be received and processed using **receive\_subscription\_message()**. The example first receives and deletes a message from the "low-messages" subscription by using **:peek\_lock** set to **false**, then it receives another message from the "high-messages" and then deletes the message using **delete\_subscription\_message()**:
 
     message = azure_service_bus_service.receive_subscription_message(
 	  "test-topic", "low-messages", { :peek_lock => false })
@@ -210,11 +210,11 @@ The example below demonstrates how messages can be received and processed using 
 
 ## How to Handle Application Crashes and Unreadable Messages
 
-Service bus provides functionality to help you gracefully recover from errors in your application or difficulties processing a message. If a receiver application is unable to process the message for some reason, then it can call the **unlock_subscription_message()** method on the **Azure::ServiceBusService** object. This will cause service bus to unlock the message within the subscription and make it available to be received again, either by the same consuming application or by another consuming application.
+Service bus provides functionality to help you gracefully recover from errors in your application or difficulties processing a message. If a receiver application is unable to process the message for some reason, then it can call the **unlock\_subscription\_message()** method on the **Azure::ServiceBusService** object. This will cause service bus to unlock the message within the subscription and make it available to be received again, either by the same consuming application or by another consuming application.
 
 There is also a timeout associated with a message locked within the subscription, and if the application fails to process the message before the lock timeout expires (e.g., if the application crashes), then service bus will unlock the message automatically and make it available to be received again.
 
-In the event that the application crashes after processing the message but before the **delete_subscription_message()** method is called, then the message will be redelivered to the application when it restarts. This is often called **At Least Once Processing**, that is, each message will be processed at least once but in certain situations the same message may be redelivered. If the scenario cannot tolerate duplicate processing, then application developers should add additional logic to their application to handle duplicate message delivery. This is often achieved using the **message_id** property of the message, which will remain constant across delivery attempts.
+In the event that the application crashes after processing the message but before the **delete\_subscription\_message()** method is called, then the message will be redelivered to the application when it restarts. This is often called **At Least Once Processing**, that is, each message will be processed at least once but in certain situations the same message may be redelivered. If the scenario cannot tolerate duplicate processing, then application developers should add additional logic to their application to handle duplicate message delivery. This is often achieved using the **message\_id** property of the message, which will remain constant across delivery attempts.
 
 ## How to Delete Topics and Subscriptions
 

@@ -75,7 +75,7 @@ We use the SimpleShortestPathsComputation example to demonstrate the basic <a hr
 
 	Upload the tiny_graph.txt file to the primary storage for your HDInsight cluster. For instructions on how to upload data, see [Upload data for Hadoop jobs in HDInsight](/documentation/articles/hdinsight-upload-data).
 
-	This data describes a relationship between objects in a directed graph, by using the format [source_id, source_value,[[dest_id], [edge_value],...]]. Each line represents a relationship between a **source_id** object and one or more **dest_id** objects. The **edge_value** (or weight) can be thought of as the strength or distance of the connection between **source_id** and **dest_id**.
+	This data describes a relationship between objects in a directed graph, by using the format [source\_id, source\_value,[[dest\_id], [edge\_value],...]]. Each line represents a relationship between a **source\_id** object and one or more **dest\_id** objects. The **edge\_value** (or weight) can be thought of as the strength or distance of the connection between **source_id** and **dest\_id**.
 
 	Drawn out, and using the value (or weight) as the distance between objects, the above data might look like this:
 

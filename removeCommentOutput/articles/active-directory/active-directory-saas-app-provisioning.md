@@ -86,16 +86,16 @@ For more information on how attributes are mapped between Azure AD and your SaaS
 
 Click on an app to see a tutorial on how to configure automated provisioning for it:
 
-- [Box](http://go.microsoft.com/fwlink/?LinkId=286016)
-- [Citrix GoToMeeting](http://go.microsoft.com/fwlink/?LinkId=309580)
-- [Concur](http://go.microsoft.com/fwlink/?LinkId=309575)
-- [Docusign](http://go.microsoft.com/fwlink/?LinkId=403254)
-- [Dropbox for Business](http://go.microsoft.com/fwlink/?LinkId=309581)
-- [Google Apps](http://go.microsoft.com/fwlink/?LinkId=309577)
+- [Box](https://msdn.microsoft.com/zh-cn/library/azure/dn308589.aspx)
+- [Citrix GoToMeeting](https://msdn.microsoft.com/zh-cn/library/azure/dn440168.aspx)
+- [Concur](/documentation/articles/active-directory-saas-concur-tutorial/)
+- [Docusign](/documentation/articles/active-directory-saas-docussign-tutorial/)
+- [Dropbox for Business](/documentation/articles/active-directory-saas-dropboxforbusiness-tutorial/)
+- [Google Apps](/documentation/articles/active-directory-saas-google-apps-tutorial/)
 - [Jive](http://go.microsoft.com/fwlink/?LinkId=309591)
-- [Salesforce](http://go.microsoft.com/fwlink/?LinkId=286017)
-- [Salesforce Sandbox](http://go.microsoft.com/fwlink/?LinkId=327869)
-- [ServiceNow](http://go.microsoft.com/fwlink/?LinkId=309587)
+- [Salesforce](/documentation/articles/active-directory-saas-salesforce-tutorial/)
+- [Salesforce Sandbox](https://msdn.microsoft.com/zh-cn/library/azure/dn798671.aspx)
+- [ServiceNow](/documentation/articles/active-directory-saas-servicenow-tutorial/)
 - [Workday](/documentation/articles/active-directory-saas-workday-inbound-tutorial/) (inbound provisioning)
 
 In order for an application to support automated user provisioning, it must first provide the necessary endpoints that allow for external programs to automate the creation, maintenance, and removal of users. Therefore, not all SaaS apps are compatible with this feature. For apps that do support this, the Azure AD engineering team will then be able to build a provisioning connector to those apps, and this work is prioritized by the needs of current and prospective customers.

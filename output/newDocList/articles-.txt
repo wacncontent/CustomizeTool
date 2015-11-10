@@ -1,4 +1,4 @@
-new docs: 133, word count: 333287
+new docs: 133, word count: 341869
 articles/architecture-overview.md
 articles/azure-api-management-certs.md
 articles/azure-architectures-cpif-foundation-azure-search-tier.md
@@ -133,7 +133,7 @@ articles/xplat-cli-connect.md
 articles/xplat-cli-install.md
 articles/xplat-cli.md
 
-new includes: 254
+new includes: 280
 includes/add-push-notifications-to-app.md
 includes/antares-iaas-signup-iaas.md
 includes/antares-iaas-signup.md
@@ -201,6 +201,7 @@ includes/application-model.md
 includes/arm-getting-setup-powershell.md
 includes/arm-understand-templates.md
 includes/azure-arm-classic-important-include.md
+includes/azure-backup-limits.md
 includes/azure-cli-prerequisites-include.md
 includes/azure-data-factory-limits.md
 includes/azure-documentdb-limits.md
@@ -212,6 +213,10 @@ includes/azure-resource-groups-limits.md
 includes/azure-search-limits.md
 includes/azure-subscription-limits-azure-resource-manager.md
 includes/azure-subscription-limits.md
+includes/backup-create-vault-wgif.md
+includes/backup-create-vault.md
+includes/backup-download-credentials.md
+includes/backup-install-agent.md
 includes/biztalk-services-service-limits.md
 includes/blitline-signup.md
 includes/cap-ingest-data-selector.md
@@ -322,6 +327,20 @@ includes/mobile-engagement-ios-send-push.md
 includes/mobile-engagement-ios-silent-push.md
 includes/mobile-engagement-windows-push-campaign.md
 includes/notification-hub-limits.md
+includes/notification-hubs-android-configure-push.md
+includes/notification-hubs-android-get-started.md
+includes/notification-hubs-android-studio-add-google-play-services.md
+includes/notification-hubs-aspnet-backend-notifyusers.md
+includes/notification-hubs-aspnet-backend-securepush.md
+includes/notification-hubs-back-end.md
+includes/notification-hubs-backend-how-to-selector.md
+includes/notification-hubs-enable-apple-push-notifications.md
+includes/notification-hubs-hero-slug.md
+includes/notification-hubs-localized-back-end.md
+includes/notification-hubs-selector-aspnet-backend-notify-users.md
+includes/notification-hubs-selector-breaking-news.md
+includes/notification-hubs-selector-get-started.md
+includes/notification-hubs-sending-notifications-from-the-portal.md
 includes/operational-insights-limits.md
 includes/powershell-preview-include.md
 includes/powershell-preview-inline-include.md
@@ -338,6 +357,8 @@ includes/securityrx.md
 includes/sendgrid-sign-up.md
 includes/service-management-pointer-to-resource-manager.md
 includes/sql-azure-management.md
+includes/storsimple-add-backup-policy.md
+includes/storsimple-add-modify-backup-schedule.md
 includes/storsimple-add-volume-container.md
 includes/storsimple-cable-8100-for-power.md
 includes/storsimple-cable-8600-for-power.md
@@ -348,10 +369,14 @@ includes/storsimple-configure-and-register-device-gov.md
 includes/storsimple-configure-and-register-device-u1.md
 includes/storsimple-configure-and-register-device.md
 includes/storsimple-configure-auto-update.md
+includes/storsimple-create-custom-backup-policy.md
+includes/storsimple-create-manual-backup-gov.md
+includes/storsimple-create-manual-backup.md
 includes/storsimple-create-new-service-gov.md
 includes/storsimple-create-new-service.md
 includes/storsimple-create-volume-container.md
 includes/storsimple-create-volume.md
+includes/storsimple-delete-backup-policy.md
 includes/storsimple-delete-volume-container.md
 includes/storsimple-enter-maintenance-mode.md
 includes/storsimple-exit-maintenance-mode.md
@@ -373,6 +398,7 @@ includes/storsimple-mount-initialize-format-volume.md
 includes/storsimple-sas-cable-8600.md
 includes/storsimple-sharepoint-adapter-configure-rbs.md
 includes/storsimple-sharepoint-adapter-garbage-collection.md
+includes/storsimple-take-backup.md
 includes/storsimple-upgrade-sharepoint-adapter.md
 includes/storsimple-use-putty.md
 includes/storsimple-version-selector-sva.md

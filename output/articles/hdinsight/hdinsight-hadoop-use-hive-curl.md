@@ -120,7 +120,7 @@ To complete the steps in this article, you will need the following:
 
 		azure storage blob download <container-name> <blob-name> <destination-file>
 
-	> [AZURE.NOTE] You must either specify the storage account name that contains the blob by using the `-a` and `-k` parameters, or set the **AZURE_STORAGE_ACCOUNT** and **AZURE_STORAGE_ACCESS_KEY** environment variables. See <a href="/documentation/articles/hdinsight-upload-data" target="_blank" for more information.
+	> [AZURE.NOTE] You must either specify the storage account name that contains the blob by using the `-a` and `-k` parameters, or set the **AZURE\_STORAGE\_ACCOUNT** and **AZURE\_STORAGE\_ACCESS\_KEY** environment variables. See <a href="/documentation/articles/hdinsight-upload-data" target="_blank" for more information.
 
 6. Use the following statements to create a new 'internal' table named **errorLogs**:
 

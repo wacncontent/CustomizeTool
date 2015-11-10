@@ -91,7 +91,7 @@ To download a file, use the following:
 
 	azure storage blob download <container-name> <blob-name> <destination-file>
 
-> [AZURE.NOTE] You must specify the storage account name that contains the blob by using the `-a` and `-k` parameters, or set the **AZURE_STORAGE_ACCOUNT** and **AZURE_STORAGE_ACCESS_KEY** environment variables. See [how to upload data to HDInsight](/documentation/articles/hdinsight-upload-data) for more information.
+> [AZURE.NOTE] You must specify the storage account name that contains the blob by using the `-a` and `-k` parameters, or set the **AZURE\_STORAGE\_ACCOUNT** and **AZURE\_STORAGE\_ACCESS\_KEY** environment variables. See [how to upload data to HDInsight](/documentation/articles/hdinsight-upload-data) for more information.
 
 ##<a id="summary"></a>Summary
 

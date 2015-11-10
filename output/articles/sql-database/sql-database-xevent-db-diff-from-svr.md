@@ -101,7 +101,7 @@ The extended events feature is supported by several [catalog views](http://msdn.
 | **sys.database_event_sessions** | Returns a row for each event session in the SQL Database database. |
 
 
-In Microsoft SQL Server, similar catalog views have names that include *.server_* instead of *.database_*. The name pattern is like **sys.server_event_%**.
+In Microsoft SQL Server, similar catalog views have names that include *.server\_* instead of *.database\_*. The name pattern is like **sys.server_event_%**.
 
 
 ## New dynamic management views [(DMVs)](http://msdn.microsoft.com/zh-cn/library/ms188754.aspx)
@@ -119,7 +119,7 @@ Azure SQL Database has [dynamic management views (DMVs)](http://msdn.microsoft.c
 | **sys.dm_xe_database_sessions** | Returns a row for each event session that is scoped to the current database. |
 
 
-In Microsoft SQL Server, similar catalog views are named without the *_database* portion of the name, such as:
+In Microsoft SQL Server, similar catalog views are named without the *\_database* portion of the name, such as:
 
 
 - **sys.dm_xe_sessions**, instead of name<br/>**sys.dm_xe_database_sessions**.
@@ -226,7 +226,7 @@ If you receive an error message that says a memory maximum was enforced, some co
 - Run fewer concurrent event sessions.
 
 
-- Through your **CREATE** and **ALTER** statements for event sessions, reduce the amount of memory you specify on the **MAX_MEMORY** clause.
+- Through your **CREATE** and **ALTER** statements for event sessions, reduce the amount of memory you specify on the **MAX\_MEMORY** clause.
 
 
 ### Network latency

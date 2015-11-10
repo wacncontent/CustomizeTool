@@ -134,8 +134,8 @@ The following conditions are checked:
 
 ## Additional Resources
 
-- [Azure AD Forum](https://social.msdn.microsoft.com/Forums/home?forum=WindowsAzureAD)
-- [Azure Multi-Factor Authentication Forum](https://social.msdn.microsoft.com/Forums/home?forum=windowsazureactiveauthentication)
+- [Azure AD Forum](https://social.msdn.microsoft.com/Forums/zh-cn/home)
+- [Azure Multi-Factor Authentication Forum](https://social.msdn.microsoft.com/Forums/zh-cn/home)
 - [Stackoverflow](http://stackoverflow.com/questions/tagged/azure)
 - [Sign up for Azure as an organization](/documentation/articles/sign-up-organization)
 - [Manage Azure AD using Windows PowerShell](https://msdn.microsoft.com/zh-cn/library/azure/jj151815.aspx)

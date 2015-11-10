@@ -139,5 +139,5 @@ Learn more about how to add applications to Azure AD and how to configure servic
 * IT Pros: [Learn how to publish an app using the Azure Active Directory Application Proxy](https://msdn.microsoft.com/zh-cn/library/azure/dn768219.aspx)
 
 <!--Image references-->
-[apps_service_principals_directory]:media/active-directory-how-applications-are-added/HowAppsAreAddedToAAD.jpg
-[app_settings]:media/active-directory-how-applications-are-added/IntegratedAppSettings.jpg
+[apps_service_principals_directory]: ./media/active-directory-how-applications-are-added/HowAppsAreAddedToAAD.jpg
+[app_settings]: ./media/active-directory-how-applications-are-added/IntegratedAppSettings.jpg

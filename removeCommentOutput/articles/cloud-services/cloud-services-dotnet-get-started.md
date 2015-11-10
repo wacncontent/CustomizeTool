@@ -466,7 +466,7 @@ To add files to a project or a folder, right-click the project or folder and cli
 
 3. In the ContosoAdsWeb project, add the following files from the downloaded project.
 	- *Global.asax.cs*.  
-	- In the *Views\Shared* folder: <em>_Layout.cshtml</em>.
+	- In the *Views\Shared* folder: <em>\_Layout.cshtml</em>.
 	- In the *Views\Home* folder: *Index.cshtml*.
 	- In the *Controllers* folder: *AdController.cs*.
 	- In the *Views\Ad* folder (create the folder first): five *.cshtml* files.
@@ -570,7 +570,7 @@ Similar code gets a reference to the *images* queue and creates a new queue. In 
 		var imagesQueue = queueClient.GetQueueReference("images");
 		imagesQueue.CreateIfNotExists();
 
-### ContosoAdsWeb - _Layout.cshtml
+### ContosoAdsWeb - \_Layout.cshtml
 
 The *_Layout.cshtml* file sets the app name in the header and footer, and creates an "Ads" menu entry.
 

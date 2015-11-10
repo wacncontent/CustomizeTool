@@ -1,7 +1,7 @@
 <properties pageTitle="Tutorial: Azure AD Integration with BlueJeans | Windows Azure" description="Learn how to use BlueJeans with Azure Active Directory to enable single sign-on, automated provisioning, and more!." services="active-directory" authors="MarkusVi"  documentationCenter="na" manager="stevenpo"/>
 <tags ms.service="active-directory" ms.devlang="na" ms.topic="article" ms.tgt_pltfrm="na" ms.workload="identity" ms.date="08/01/2015" ms.author="markvi" />
 #Tutorial: Azure AD Integration with BlueJeans
->[AZURE.TIP]For feedback, click [here](http://go.microsoft.com/fwlink/?LinkId=526791).
+>[AZURE.TIP]For feedback, click [here](https://social.msdn.microsoft.com/Forums/azure/zh-cn/8c51c471-5f54-444b-9c61-e91e75f7146e/tutorial-azure-ad-integration-with-bluejeans?forum=WindowsAzureAD).
 
 The objective of this tutorial is to show the integration of Azure and BlueJeans.  
 The scenario outlined in this tutorial assumes that you already have the following items:

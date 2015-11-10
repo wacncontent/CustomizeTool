@@ -78,7 +78,7 @@ To sign up for New Relic directly from the Azure Marketplace, follow these four 
 
 	![](./media/store-new-relic-web-sites-dotnet-application-performance-management/configure-new-relic-integration.png)
 
-	Once the save operation has completed, click **Configure** in the web app's blade, then click **Application settings**. You should see the **NEWRELIC_LICENSEKEY** setting added to the **App settings** section of the blade to support New Relic:
+	Once the save operation has completed, click **Configure** in the web app's blade, then click **Application settings**. You should see the **NEWRELIC\_LICENSEKEY** setting added to the **App settings** section of the blade to support New Relic:
 
 	>[AZURE.NOTE] It may take up to 30 seconds for the new app setting to take effect. To force the settings to take effect immediately, restart the web app.
 

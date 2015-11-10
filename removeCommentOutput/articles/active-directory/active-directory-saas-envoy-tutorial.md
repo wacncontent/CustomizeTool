@@ -1,7 +1,7 @@
 <properties pageTitle="Tutorial: Azure Active Directory integration with Envoy | Windows Azure" description="Learn how to use Envoy with Azure Active Directory to enable single sign-on, automated provisioning, and more!." services="active-directory" authors="MarkusVi"  documentationCenter="na" manager="stevenpo"/>
 <tags ms.service="active-directory" ms.devlang="na" ms.topic="article" ms.tgt_pltfrm="na" ms.workload="identity" ms.date="08/01/2015" ms.author="markvi" />
 #Tutorial: Azure Active Directory integration with Envoy
->[AZURE.TIP]For feedback, click [here](http://go.microsoft.com/fwlink/?LinkId=524324).
+>[AZURE.TIP]For feedback, click [here](https://social.msdn.microsoft.com/Forums/azure/zh-cn/4283c32a-2634-4df1-987d-db63a3de6548/tutorial-azure-ad-integration-with-envoy?forum=WindowsAzureAD).
   
 The objective of this tutorial is to show the integration of Azure and Envoy.  
 The scenario outlined in this tutorial assumes that you already have the following items:

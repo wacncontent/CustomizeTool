@@ -189,15 +189,15 @@ perl-Pod-Escapes-1.04-136.el6\_6.1.x86\_64.rpm
 
 perl-Pod-Simple-3.13-136.el6\_6.1.x86\_64.rpm
 
-perl-libs-5.10.1-136.el6\_6.1.x86_64.rpm
+perl-libs-5.10.1-136.el6\_6.1.x86\_64.rpm
 
-perl-version-0.77-136.el6_6.1.x86_64.rpm
+perl-version-0.77-136.el6\_6.1.x86\_64.rpm
 
-rsync-3.0.6-12.el6.x86_64.rpm
+rsync-3.0.6-12.el6.x86\_64.rpm
 
-snappy-1.1.0-1.el6.x86_64.rpm
+snappy-1.1.0-1.el6.x86\_64.rpm
 
-wget-1.12-5.el6_6.1.x86_64.rpm
+wget-1.12-5.el6\_6.1.x86\_64.rpm
 
 NOTE: If source machine uses Reiser or XFS filesystem for root or boot
 device, then following packages should be download and installed on
@@ -211,13 +211,13 @@ Linux Master Target prior to the protection.
 \# wget
 <http://elrepo.org/linux/elrepo/el6/x86_64/RPMS/reiserfs-utils-3.6.21-1.el6.elrepo.x86_64.rpm>
 
-\# rpm -ivh kmod-reiserfs-0.0-1.el6.elrepo.x86_64.rpm
-reiserfs-utils-3.6.21-1.el6.elrepo.x86_64.rpm
+\# rpm -ivh kmod-reiserfs-0.0-1.el6.elrepo.x86\_64.rpm
+reiserfs-utils-3.6.21-1.el6.elrepo.x86\_64.rpm
 
 \# wget
 <http://mirror.centos.org/centos/6.6/os/x86_64/Packages/xfsprogs-3.1.1-16.el6.x86_64.rpm>
 
-\# rpm -ivh xfsprogs-3.1.1-16.el6.x86_64.rpm
+\# rpm -ivh xfsprogs-3.1.1-16.el6.x86\_64.rpm
 
 #### Apply Custom Configuration Changes
 
@@ -271,7 +271,7 @@ endpoint created for ssh to login to the Linux Master Target Server.
 Extract the files from the gzipped Linux Master Target Server installer
 tar archive by executing
 
-*“tar –xvzf Microsoft-ASR_UA_8.2.0.0_RHEL6-64\*”* from the directory
+*“tar –xvzf Microsoft-ASR\_UA\_8.2.0.0\_RHEL6-64\*”* from the directory
 where you had copied the Linux Master Target Server installer to.
 
 ![](./media/site-recovery-failback-azure-to-vmware/image16.png)

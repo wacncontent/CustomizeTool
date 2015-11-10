@@ -92,9 +92,9 @@ The Azure CLI is a cross-platform tool that allows you to manage Azure services.
 
 > [AZURE.NOTE] If you will always be working with the same storage account, you can set the following environment variables instead of specifying the account and key for every command:
 >
-> * **AZURE_STORAGE_ACCOUNT**: The storage account name
+> * **AZURE\_STORAGE\_ACCOUNT**: The storage account name
 >
-> * **AZURE_STORAGE_ACCESS_KEY**: The storage account key
+> * **AZURE\_STORAGE\_ACCESS\_KEY**: The storage account key
 
 ###<a id="powershell"></a>Azure PowerShell
 

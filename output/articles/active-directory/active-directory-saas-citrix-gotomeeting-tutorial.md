@@ -14,7 +14,7 @@
 #Tutorial: Azure Active Directory integration with Citrix GoToMeeting  
 Applies To: Azure
 
->[AZURE.TIP]For feedback, click [here](http://go.microsoft.com/fwlink/?LinkId=522412).
+>[AZURE.TIP]For feedback, click [here](https://social.msdn.microsoft.com/Forums/azure/zh-cn/8d4839f0-adfc-4fcf-9005-7fb8fe0c7adb/tutorial-azure-ad-integration-with-citrix-gotomeeting?forum=WindowsAzureAD).
 
 The objective of this tutorial is to show the integration of Azure and Citrix GoToMeeting. The scenario outlined in this tutorial assumes that you already have the following items:
 

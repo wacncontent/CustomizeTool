@@ -18,7 +18,7 @@ The Web App dashboard displays.
 1. Click **Save** on the toolbar.  
 ![SaveWebApp][button-website-save]
 
-**Note:** Azure adds the **CUSTOMCONNSTR_** prefix to this variable, which is why the code above references **CUSTOMCONNSTR_MONGOLAB_URI.**
+**Note:** Azure adds the **CUSTOMCONNSTR\_** prefix to this variable, which is why the code above references **CUSTOMCONNSTR\_MONGOLAB_URI.**
 
 [entry-website]: ./media/howto-save-connectioninfo-mongolab/entry-website.png
 [focus-mongolab-websitedashboard-config]: ./media/howto-save-connectioninfo-mongolab/focus-mongolab-websitedashboard-config.png

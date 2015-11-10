@@ -20,13 +20,13 @@ This tutorial shows you how to use Microsoft HPC Pack 2012 R2 and Azure to set u
 
 This tutorial shows one approach, sometimes called cluster "burst to the cloud," to use scalable, on-demand compute resources in Azure to run compute intensive applications.
 
-This tutorial assumes no prior experience with compute clusters or HPC Pack. It is intended only to help you deploy a hybrid compute cluster quickly for demonstration purposes. For considerations and steps to deploy a hybrid HPC Pack cluster at greater scale in a production environment, see the [detailed guidance](https://technet.microsoft.com/library/gg481749.aspx). If you want to set up an HPC Pack cluster entirely in Azure, see [HPC cluster options with Microsoft HPC Pack in Azure](/documentation/articles/virtual-machines-hpcpack-cluster-options).
+This tutorial assumes no prior experience with compute clusters or HPC Pack. It is intended only to help you deploy a hybrid compute cluster quickly for demonstration purposes. For considerations and steps to deploy a hybrid HPC Pack cluster at greater scale in a production environment, see the [detailed guidance](https://technet.microsoft.com/zh-cn/library/gg481749.aspx). If you want to set up an HPC Pack cluster entirely in Azure, see [HPC cluster options with Microsoft HPC Pack in Azure](/documentation/articles/virtual-machines-hpcpack-cluster-options).
 
 >[AZURE.NOTE] Azure offers a [range of sizes](/documentation/articles/virtual-machines-size-specs) for your compute resources, suitable for different workloads. For example, the A8 and A9 instances combine high performance and access to a low latency, high throughput application network needed for certain HPC applications. See [About the A8, A9, A10, and A11 Compute Intensive Instances](/documentation/articles/virtual-machines-a8-a9-a10-a11-specs).
 
 ## Prerequisites
 
->[AZURE.NOTE]To complete this tutorial, you need an Azure account. If you don't have an account, you can create a trial account in just a couple of minutes. For details, see [Create an Azure account](/develop/php/tutorials/create-a-windows-azure-account/).
+>[AZURE.NOTE]To complete this tutorial, you need an Azure account. If you don't have an account, you can create a trial account in just a couple of minutes. For details, see [Create an Azure account](/pricing/1rmb-trial/).
 
 In addition, you need the following for this tutorial.
 
@@ -301,7 +301,7 @@ After you try out the cluster, you can use HPC Cluster Manager to stop the Azure
 ## Related resources
 
 * [HPC Pack 2012 R2 and HPC Pack 2012](https://technet.microsoft.com/zh-cn/library/jj899572.aspx)
-* [Burst to Azure with Microsoft HPC Pack](https://technet.microsoft.com/library/gg481749.aspx)
+* [Burst to Azure with Microsoft HPC Pack](https://technet.microsoft.com/zh-cn/library/gg481749.aspx)
 * [HPC cluster options with Microsoft HPC Pack in Azure](/documentation/articles/virtual-machines-hpcpack-cluster-options)
 * [Big Compute in Azure: Technical Resources for Batch and High Performance Computing (HPC)](/documentation/articles/big-compute-resources)
 

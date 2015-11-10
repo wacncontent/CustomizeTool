@@ -396,7 +396,7 @@ In the **WebRole1** project that you created in [Integrate an Azure CDN endpoint
 		...
     }
 
-The first `bundles.Add()` statement adds a script bundle at the virtual directory `~/bundles/jquery`. Then, open *Views\Shared_Layout.cshtml* to see how the script bundle tag is rendered. You should be able to find the following line of Razor code:
+The first `bundles.Add()` statement adds a script bundle at the virtual directory `~/bundles/jquery`. Then, open *Views\Shared\_Layout.cshtml* to see how the script bundle tag is rendered. You should be able to find the following line of Razor code:
 
     @Scripts.Render("~/bundles/jquery")
 

@@ -10,8 +10,6 @@
         "articles/traffic-manager/",
         "articles/virtual-network/",
         "articles/active-directory/",
-        "articles/application-gateway/",
-        "articles/backup/",
         "articles/batch/",
         "articles/cache/",
         "articles/cdn/",
@@ -19,7 +17,6 @@
         "articles/event-hubs/",
         "articles/expressroute/",
         "articles/mobile-services/",
-        "articles/notification-hubs/",
         "articles/scheduler/",
         "articles/service-bus/",
         "articles/site-recovery/",
@@ -31,7 +28,7 @@
     "output_folder": "output/",
     "compare": {
         "compare": false,
-        "path": "C:/Users/Administrator/Documents/GitHub/azure-content-mooncake-pr/"
+        "path": "addCommentOutput/"
     },
     "updateFileList": true,
     "includes_search_keys": {
@@ -61,10 +58,17 @@
         "articles/virtual-machines/": [ "virtual-machines", "vm" ],
         "articles/": [ "" ]
     },
-  "check_dates": false,
-  "815path": "C:/Users/Administrator/Documents/GitHub/815/",
+    "check_dates": false,
+    "815path": "C:/Users/Administrator/Documents/GitHub/815/",
     "removeComment": {
         "remove": true,
-        "path":  "removeCommentOutput/"
-    } 
+        "path": "removeCommentOutput/"
+    },
+    "updateLinks": false,
+    "addComment": {
+        "add": false,
+        "globalPath": "removeCommentOutput/",
+        "mooncakePath": "removeCommentMooncakeOutput/",
+        "outputPath": "addCommentOutput/"
+    }
 }

@@ -55,12 +55,12 @@ Entities that have the same **PartitionKey** are stored on the same node. **RowK
 belongs to.
 
 To add an entity to your table, pass a dictionary object
-to the **insert_entity** method.
+to the **insert\_entity** method.
 
 	task = {'PartitionKey': 'tasksSeattle', 'RowKey': '1', 'description' : 'Take out the trash', 'priority' : 200}
 	table_service.insert_entity('tasktable', task)
 
-You can also pass an instance of the **Entity** class to the **insert_entity** method.
+You can also pass an instance of the **Entity** class to the **insert\_entity** method.
 
 	task = Entity()
 	task.PartitionKey = 'tasksSeattle'
@@ -79,7 +79,7 @@ with an updated version.
 
 If the entity that is being updated does not exist, then the update
 operation will fail. If you want to store an entity
-regardless of whether it existed before, use **insert_or_replace_entity**.
+regardless of whether it existed before, use **insert\_or\_replace_entity**.
 In the following example, the first call will replace the existing entity. The second call will insert a new entity, since no entity with the specified **PartitionKey** and **RowKey** exists in the table.
 
 	task = {'description' : 'Take out the garbage again', 'priority' : 250}
@@ -92,9 +92,9 @@ In the following example, the first call will replace the existing entity. The s
 
 Sometimes it makes sense to submit multiple operations together in a
 batch to ensure atomic processing by the server. To accomplish that, you
-use the **begin_batch** method on **TableService** and then call the
+use the **begin\_batch** method on **TableService** and then call the
 series of operations as usual. When you do want to submit the
-batch, you call **commit_batch**. Note that all entities must be in the same partition in order to be changed as a batch. The example below adds two entities together in a batch.
+batch, you call **commit\_batch**. Note that all entities must be in the same partition in order to be changed as a batch. The example below adds two entities together in a batch.
 
 	task10 = {'PartitionKey': 'tasksSeattle', 'RowKey': '10', 'description' : 'Go grocery shopping', 'priority' : 400}
 	task11 = {'PartitionKey': 'tasksSeattle', 'RowKey': '11', 'description' : 'Clean the bathroom', 'priority' : 100}
@@ -105,7 +105,7 @@ batch, you call **commit_batch**. Note that all entities must be in the same par
 
 ## Query for an entity
 
-To query an entity in a table, use the **get_entity** method by
+To query an entity in a table, use the **get\_entity** method by
 passing **PartitionKey** and **RowKey**.
 
 	task = table_service.get_entity('tasktable', 'tasksSeattle', '1')

@@ -40,7 +40,7 @@ The process:
 
 Invitations to consumer email addresses (for example, gmail or [*comcast.net*](http://comcast.net/)) are not currently supported.
 
-For more on how B2B collaboration works, check out [this video](http://aka.ms/aadshowb2b).
+For more on how B2B collaboration works, check out [this video](https://channel9.msdn.com/Series/Azure-AD-Identity/AzureADB2B).
 
 ## CSV File Format
 

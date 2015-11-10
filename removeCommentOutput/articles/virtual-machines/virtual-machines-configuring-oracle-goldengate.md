@@ -131,10 +131,10 @@ And run:
 	      grant delete any table to ggate;
 	      grant drop any table to ggate;
 
-Next, locate the INIT\<DatabaseSID\>.ORA file in the %ORACLE_HOME%\\database folder on Site A and Site B and append the following database parameters to INITTEST.ora:
+Next, locate the INIT\<DatabaseSID\>.ORA file in the %ORACLE\_HOME%\\database folder on Site A and Site B and append the following database parameters to INITTEST.ora:
 
-	UNDO_MANAGEMENT=AUTO
-	UNDO_RETENTION=86400
+	UNDO\_MANAGEMENT=AUTO
+	UNDO\_RETENTION=86400
 
 For a full list of all Oracle GoldenGate GGSCI commands, see [Reference for Oracle GoldenGate for Windows](http://docs.oracle.com/goldengate/1212/gg-winux/GWURF/ggsci_commands.htm).
 

@@ -1,0 +1,50 @@
+<properties 
+	pageTitle="Ingest Telemetry and Application Events at Scale | Windows Azure" 
+	description="Learn how to ingest telemetry and application events at scale across your business solutions." 
+	services="event-hubs,service-bus" 
+	documentationCenter=".net" 
+	authors="sethmanheim" 
+	manager="timlt" 
+	editor=""/>
+
+<tags
+	ms.service="event-hubs"
+	ms.date="10/06/2015"
+	wacn.date=""/>
+
+# Ingest telemetry and application events at scale
+ 
+Modern applications create a large amount of information while they are running. Whether user actions in a mobile app or clickstreams on a website, this telemetry data is valuable for both long-term analytics and real-time health monitoring or decision support. Service Bus provides the tools you need to capture and process this information.
+
+
+## Explore
+- [Event Hubs](/documentation/articles/event-hubs-overview)
+<!-- deleted by customization
+- [Event Hubs pricing details](/home/features/event-hubs/#price)
+-->
+<!-- keep by customization: begin -->
+- [Event Hubs pricing details](http://www.windowsazure.cn/home/features/event-hubs/#price)
+<!-- keep by customization: end -->
+- [Event Hubs availability and support FAQ](/documentation/articles/event-hubs-availability-and-support-faq)
+- [Event sourcing pattern](http://msdn.microsoft.com/zh-cn/library/dn589792.aspx)
+ 
+## Build
+- [Event Hubs REST API reference](https://msdn.microsoft.com/zh-cn/library/azure/dn790674.aspx)
+<!-- deleted by customization
+- [Event Hubs code samples](https://code.msdn.microsoft.com/site/search?query=event%20hubs&f%5B0%5D.Value=event%20hubs&f%5B0%5D.Type=SearchText&ac=5)
+-->
+<!-- keep by customization: begin -->
+- [Event Hubs code samples](https://code.msdn.microsoft.com/windowsazure/site/search?query=event%20hubs&f%5B0%5D.Value=event%20hubs&f%5B0%5D.Type=SearchText&ac=5)
+<!-- keep by customization: end -->
+ 
+## Related services
+<!-- deleted by customization
+- [Service Bus](/home/features/service-bus/)
+- [Azure Storage](/home/features/storage/)
+- [HDInsight](/home/features/hdinsight/)
+-->
+<!-- keep by customization: begin -->
+- [Azure Storage](http://www.windowsazure.cn/documentation/services/storage/)
+- [HDInsight](http://www.windowsazure.cn/documentation/services/hdinsight/)
+<!-- keep by customization: end -->
+ 

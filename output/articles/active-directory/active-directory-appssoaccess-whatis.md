@@ -102,13 +102,13 @@ Ready to get started? To deploy single sign-on between Azure AD and SaaS applica
 
 ###Using the Azure AD application gallery
 
-The [Azure Active Directory Application Gallery](http://azure.microsoft.com/home/features/identity/all/) provides a listing of applications that are known to support a form of single sign-on with Azure Active Directory.
+The [Azure Active Directory Application Gallery](/home/features/identity/) provides a listing of applications that are known to support a form of single sign-on with Azure Active Directory.
 
 ![][1]
 
 Here are some tips for finding apps by what capabilities they support:
 
-*	Azure AD supports automatic provisioning and de-provisioning for all “Featured” apps in the [Azure Active Directory Application Gallery](http://azure.microsoft.com/home/features/identity/all/).
+*	Azure AD supports automatic provisioning and de-provisioning for all “Featured” apps in the [Azure Active Directory Application Gallery](/home/features/identity/).
 
 *	A list of federated applications that specifically support federated single sign-on using a protocol such as SAML, WS-Federation, or OpenID Connect can be found [here](http://social.technet.microsoft.com/wiki/contents/articles/20235.azure-active-directory-application-gallery-federated-saas-apps.aspx).
 

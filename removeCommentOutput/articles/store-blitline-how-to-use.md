@@ -82,7 +82,7 @@ You will get JSON back that looks something like this:
 
 
 This tells you that Blitline has recieved your request, it has put it in a processing queue, and when it has completed the image will be available at:
-**https://s3.amazonaws.com/dev.blitline/2011110722/YOUR_APP_ID/CK3f0xBF_2bV6wf7gEZE8w.jpg**
+**https://s3.amazonaws.com/dev.blitline/2011110722/YOUR\_APP\_ID/CK3f0xBF_2bV6wf7gEZE8w.jpg**
 
 ## How to save an image to your Azure Storage account
 

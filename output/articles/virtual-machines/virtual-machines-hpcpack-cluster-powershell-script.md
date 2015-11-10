@@ -413,7 +413,7 @@ will run on the head node after the head node is configured.
 
 * **“VNet doesn’t exist” error** - If you run the HPC Pack IaaS deployment script to deploy multiple
 clusters in Azure concurrently under one subscription, one or more
-deployments may fail with the error “VNet *VNet_Name* doesn't exist”.
+deployments may fail with the error “VNet *VNet\_Name* doesn't exist”.
 If this error occurs, re-run the script for the failed deployment.
 
 * **Problem accessing the Internet from the Azure virtual network** - If you create an HPC Pack cluster with a new domain controller by using

@@ -22,5 +22,12 @@
     "removeComment": {
         "remove": true,
         "path":  "removeCommentOutput/"
-    } 
+    } ,
+    "updateLinks": false,
+    "addComment": {
+        "add": true,
+        "globalPath": "",
+        "mooncakePath": "",
+        "outputPath": ""
+    }
 }

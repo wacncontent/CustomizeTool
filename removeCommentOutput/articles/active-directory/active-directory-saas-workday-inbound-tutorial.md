@@ -14,7 +14,7 @@
 #Tutorial: Configuring Workday for Inbound Synchronization
 
 
->[AZURE.TIP]For feedback, click [here](http://go.microsoft.com/fwlink/?LinkId=521880).
+>[AZURE.TIP]For feedback, click [here](https://social.msdn.microsoft.com/Forums/azure/zh-cn/890959cb-11a3-426c-8efd-1f00d620c6ee/tutorial-azure-ad-integration-with-servicenow?forum=WindowsAzureAD).
   
 The objective of this tutorial is to show you the steps you need to perform in Workday and Azure AD to import people from Workday to Azure AD. 
 

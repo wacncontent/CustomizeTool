@@ -22,7 +22,7 @@ Azure Active Directory (AD) is Microsoft's Identity as a Service (IDaaS) solutio
 > [AZURE.NOTE] Azure AD administration portal is a part of the Azure Management Portal. While using Azure AD does not require any Azure purchases, accessing this portal requires an active Azure subscription or an [Azure trial subscription](/pricing/1rmb-trial/).
 
 For a broad overview of Azure AD service capabilities, see [What is Azure AD](/documentation/articles/active-directory-whatis).
-[Learn more about Azure AD service levels](http://azure.microsoft.com/support/legal/sla/)
+[Learn more about Azure AD service levels](/support/legal/sla/)
 
 > [AZURE.NOTE]  Azure pay as you go subscriptions are different: while also represented in your directory, these subscriptions enable creation of Azure resources and map them to your payment method. In this case there are NO license counts associated with the subscription. Users' association with the subscription, the users' access to managing subscription resources, is achieved by granting them permissions to operate on Azure resources mapped to the subscription.
 

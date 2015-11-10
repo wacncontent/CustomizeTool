@@ -163,7 +163,7 @@ Now that you have provisioned an HDInsight cluster, the next step is to run a Hi
 
     ![Job Start Time listed in the Job History tab of the HDInsight cluster dashboard.][img-hdi-dashboard-query-select-result-output]
 
-    The page also shows the **Job Output** and the **Job Log**. You also have the option to download the output file (_stdout) and the log file \(_stderr).
+    The page also shows the **Job Output** and the **Job Log**. You also have the option to download the output file (\_stdout) and the log file \(_stderr).
 
 
 **To browse to the output file**

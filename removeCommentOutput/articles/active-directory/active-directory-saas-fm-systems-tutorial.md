@@ -1,7 +1,7 @@
 <properties pageTitle="Tutorial: Azure Active Directory integration with FM: Systems | Windows Azure" description="Learn how to use FM: Systems with Azure Active Directory to enable single sign-on, automated provisioning, and more!." services="active-directory" authors="MarkusVi"  documentationCenter="na" manager="stevenpo"/>
 <tags ms.service="active-directory" ms.devlang="na" ms.topic="article" ms.tgt_pltfrm="na" ms.workload="identity" ms.date="08/01/2015" ms.author="markvi" />
 #Tutorial: Azure Active Directory integration with FM: Systems
->[AZURE.TIP]For feedback, click [here](http://go.microsoft.com/fwlink/?LinkId=534787).
+>[AZURE.TIP]For feedback, click [here](https://social.msdn.microsoft.com/Forums/azure/zh-cn/66b57393-40dd-4c89-aeed-4eb1e7e15ce5/tutorial-azure-active-directory-integration-with-fmsystems?forum=WindowsAzureAD).
   
 The objective of this tutorial is to show the integration of Azure and FM:Systems.  
 The scenario outlined in this tutorial assumes that you already have the following items:

@@ -122,7 +122,7 @@ When you install Azure AD Connect on a new server it won't find DirSync and will
 1. Run the Azure AD Connect installer (MSI).
 2. When you see the "Welcome to Azure AD Connect" screen, exit the wizard by clicking the "X" in the top right corner of the window.
 3. Open a command prompt.
-4. From the install location of Azure AD Connect (Default: C:\Program Files\Windows Azure Active Directory Connect) execute the following command:
+4. From the install location of Azure AD Connect (Default: C:\Program Files\Microsoft Azure Active Directory Connect) execute the following command:
     * `AzureADConnect.exe /migrate`
 
 Azure AD Connect connects and presents you with the following UI:

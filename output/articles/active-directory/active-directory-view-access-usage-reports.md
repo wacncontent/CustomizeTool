@@ -243,7 +243,7 @@ If you suspect that a user account may be compromised or any kind of suspicious 
 
 - Contact the user to verify the activity
 - Reset the user's password
-- [Enable multi-factor authentication](http://go.microsoft.com/fwlink/?linkid=335774) for additional security
+- [Enable multi-factor authentication](https://msdn.microsoft.com/zh-cn/library/azure/7a9c56cf-72f1-4797-8e86-a9a2d9569ef6) for additional security
 
 ## View or download a report
 

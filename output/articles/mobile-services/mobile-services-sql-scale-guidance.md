@@ -265,7 +265,7 @@ To execute any of the queries below, past it into the window and select **Run**.
 
 #### Advanced Metrics
 
-The management portal makes certain metrics readily available if using the Basic, Standard, and Premium tiers. However if using the Web and Business tiers, only the Storage metric is available via the portal. Fortunately, it is easy to obtain these and other metrics using the **[sys.resource_stats](http://msdn.microsoft.com/zh-cn/library/dn269979.aspx)** management view, regardless of what tier you're using. Consider the following query:
+The management portal makes certain metrics readily available if using the Basic, Standard, and Premium tiers. However if using the Web and Business tiers, only the Storage metric is available via the portal. Fortunately, it is easy to obtain these and other metrics using the **[sys.resource\_stats](http://msdn.microsoft.com/zh-cn/library/dn269979.aspx)** management view, regardless of what tier you're using. Consider the following query:
 
     SELECT TOP 10 * 
     FROM sys.resource_stats 
@@ -273,13 +273,13 @@ The management portal makes certain metrics readily available if using the Basic
     ORDER BY start_time DESC
 
 > [AZURE.NOTE] 
-> Please execute this query on the **master** database on your server, the **sys.resource_stats** view is only present on that database.
+> Please execute this query on the **master** database on your server, the **sys.resource\_stats** view is only present on that database.
 
 The result will contain the following useful metrics: CPU (% of tier limit), Storage (megabytes), Physical Data Reads (% of tier limit), Log Writes (% of tier limit), Memory (% of tier limit), Worker Count, Session Count, etc. 
 
 #### SQL connectivity events
 
-The **[sys.event_log](http://msdn.microsoft.com/zh-cn/library/azure/jj819229.aspx)** view contains the details of connectivity-related events.
+The **[sys.event\_log](http://msdn.microsoft.com/zh-cn/library/azure/jj819229.aspx)** view contains the details of connectivity-related events.
 
     select * from sys.event_log 
     where database_name = 'todoitem_db'
@@ -287,7 +287,7 @@ The **[sys.event_log](http://msdn.microsoft.com/zh-cn/library/azure/jj819229.asp
     order by start_time desc
 
 > [AZURE.NOTE] 
-> Please execute this query on the **master** database on your server, the **sys.event_log** view is only present on that database.
+> Please execute this query on the **master** database on your server, the **sys.event\_log** view is only present on that database.
 
 <a name="AdvancedIndexing" />
 ### Advanced Indexing
@@ -301,7 +301,7 @@ A table or view can contain the following types of indexes:
 To provide a real-world analogy: consider a book or a technical manual. The contents of each page are a record, the page number is the clustered index, and the topic index in the back of the book is a nonclustered index. Each entry in the topic index points to the clustered index, the page number.
 
 > [AZURE.NOTE] 
-> By default, the JavaScript backend of Azure Mobile Services sets **_createdAt** as the clustered index. If you remove this column, or if you want a different clustered index, be sure to follow the [clustered index design guidelines](#ClusteredIndexes) below. In the .NET backend, the class `EntityData` defines `CreatedAt` as a clustered index using the annotation `[Index(IsClustered = true)]`.
+> By default, the JavaScript backend of Azure Mobile Services sets **\_createdAt** as the clustered index. If you remove this column, or if you want a different clustered index, be sure to follow the [clustered index design guidelines](#ClusteredIndexes) below. In the .NET backend, the class `EntityData` defines `CreatedAt` as a clustered index using the annotation `[Index(IsClustered = true)]`.
 
 <a name="ClusteredIndexes"></a>
 #### Clustered index design guidelines

@@ -326,7 +326,7 @@ In this section, you create the various pages that your application displays.
 7.  Click **Add**.
 
 8.  Now, change the displayed name of your application. In **Solution Explorer**, double-click the
-    **Views\Shared\_Layout.cshtml** file to open it in the Visual
+    **Views\Shared\\_Layout.cshtml** file to open it in the Visual
     Studio editor.
 
 9.  Replace all occurrences of **My ASP.NET Application** with

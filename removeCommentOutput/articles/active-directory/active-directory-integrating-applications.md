@@ -336,7 +336,7 @@ This section describes how to remove an application from your directory for both
 
 1. Click Yes in the confirmation message.
 
-In order for a company administrator to remove an app’s access to their directory (after having granted consent), the company administrator must have an Azure subscription to remove access through the Azure Management Portal. Alternatively, the company administrator can use the [Azure AD PowerShell Cmdlets](http://go.microsoft.com/fwlink/?LinkId=294151) to remove access.
+In order for a company administrator to remove an app’s access to their directory (after having granted consent), the company administrator must have an Azure subscription to remove access through the Azure Management Portal. Alternatively, the company administrator can use the [Azure AD PowerShell Cmdlets](https://msdn.microsoft.com/zh-cn/library/azure/jj151815.aspx) to remove access.
 
 ## Next steps
 

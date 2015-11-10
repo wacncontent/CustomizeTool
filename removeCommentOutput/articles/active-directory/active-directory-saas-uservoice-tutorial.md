@@ -1,7 +1,7 @@
 <properties pageTitle="Tutorial: Azure Active Directory Integration with UserVoice | Windows Azure" description="Learn how to use UserVoice with Azure Active Directory to enable single sign-on, automated provisioning, and more!." services="active-directory" authors="MarkusVi"  documentationCenter="na" manager="stevenpo"/>
 <tags ms.service="active-directory" ms.devlang="na" ms.topic="article" ms.tgt_pltfrm="na" ms.workload="identity" ms.date="08/01/2015" ms.author="markvi" />
 #Tutorial: Azure Active Directory Integration with UserVoice
->[AZURE.TIP]For feedback, click [here](http://go.microsoft.com/fwlink/?LinkId=524477).
+>[AZURE.TIP]For feedback, click [here](https://social.msdn.microsoft.com/Forums/azure/zh-cn/a8d19dd8-f63e-4b72-849b-cc574beb1e8a/tutorial-azure-ad-integration-with-uservoice?forum=WindowsAzureAD).
   
 The objective of this tutorial is to show the integration of Azure and UserVoice.  
 The scenario outlined in this tutorial assumes that you already have the following items:

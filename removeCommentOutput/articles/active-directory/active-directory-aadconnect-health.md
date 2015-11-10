@@ -97,7 +97,7 @@ The following table is a list of agent requirements that must be met before you 
 
 ## Download the Agent
 
-To get started using Azure AD Connect Health you can download the latest version of the agent here:  [Download Azure AD Connect Health Agent.](http://go.microsoft.com/fwlink/?LinkID=518973) Ensure that you’ve added the service from Marketplace before installing the agents.
+To get started using Azure AD Connect Health you can download the latest version of the agent here:  [Download Azure AD Connect Health Agent.](http://download.microsoft.com/download/9/F/5/9F53F124-C990-42D2-8A32-6D352A67762B/AdHealthAdfsAgentSetup.exe) Ensure that you’ve added the service from Marketplace before installing the agents.
 
 
 ## Related links

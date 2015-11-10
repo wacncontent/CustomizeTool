@@ -1,0 +1,211 @@
+<properties 
+   pageTitle="Overview of the Azure Event Hubs APIs | Windows Azure"
+   description="A summary of some of the key Event Hubs .NET client APIs."
+   services="event-hubs"
+   documentationCenter="na"
+   authors="sethmanheim"
+   manager="timlt"
+   editor="" />
+<tags
+	ms.service="event-hubs"
+	ms.date="10/14/2015"
+	wacn.date=""/>
+
+# Event Hubs API overview
+
+This article summarizes some of the key Event Hubs .NET client APIs. There are two categories: management and runtime APIs. Runtime APIs consist of all operations needed to send and receive a message. Management operations enable you to manage <!-- deleted by customization an --><!-- keep by customization: begin --> the <!-- keep by customization: end --> Event Hubs entity state by creating, updating, and deleting entities.
+
+Monitoring scenarios span both management and runtime. For detailed reference documentation on the .NET APIs, see the [.NET Class <!-- deleted by customization Library](https://msdn.microsoft.com/zh-cn/library/azure/mt419900.aspx) --><!-- keep by customization: begin --> Library](https://msdn.microsoft.com/zh-cn/library/jj933431.aspx) <!-- keep by customization: end --> and [EventProcessorHost <!-- deleted by customization API](https://msdn.microsoft.com/zh-cn/library/azure/mt445521.aspx) --><!-- keep by customization: begin --> API](https://msdn.microsoft.com/zh-cn/library/microsoft.servicebus.messaging.aspx) <!-- keep by customization: end --> references.
+
+## Management <!-- deleted by customization APIs --><!-- keep by customization: begin --> API <!-- keep by customization: end -->
+
+To perform the following management operations you must have **Manage** permissions on the Service Bus namespace:
+
+### Create
+
+```
+// Create the Event Hub
+EventHubDescription ehd = new EventHubDescription(eventHubName);
+ehd.PartitionCount = SampleManager.numPartitions;
+namespaceManager.CreateEventHubAsync(ehd).Wait();
+```
+
+### Update
+
+```
+EventHubDescription ehd = await namespaceManager.GetEventHubAsync(eventHubName);
+
+// Create a customer SAS rule with Manage permissions
+ehd.UserMetadata = "Some updated info";
+string ruleName = "myeventhubmanagerule";
+string ruleKey = SharedAccessAuthorizationRule.GenerateRandomKey();
+ehd.Authorization.Add(new SharedAccessAuthorizationRule(ruleName, ruleKey, new AccessRights[] {AccessRights.Manage, AccessRights.Listen, AccessRights.Send} )); 
+namespaceManager.UpdateEventHubAsync(ehd).Wait();
+```
+
+### Delete
+
+```
+<!-- deleted by customization
+namespaceManager.DeleteEventHubAsync("Event Hub name").Wait();
+-->
+<!-- keep by customization: begin -->
+namespaceManager.DeleteEventHubAsync("event hub name").Wait();
+<!-- keep by customization: end -->
+```
+
+## Runtime APIs
+
+### Create publisher
+
+```
+// EventHubClient model (uses implicit factory instance, so all links on same connection)
+<!-- deleted by customization
+EventHubClient eventHubClient = EventHubClient.Create("Event Hub name");
+-->
+<!-- keep by customization: begin -->
+EventHubClient eventHubClient = EventHubClient.Create("event hub name");
+<!-- keep by customization: end -->
+```
+
+### Publish message
+
+```
+// Create the device/temperature metric
+MetricEvent info = new MetricEvent() { DeviceId = random.Next(SampleManager.NumDevices), Temperature = random.Next(100) };
+EventData data = new EventData(new byte[10]); // Byte array
+EventData data = new EventData(Stream); // Stream 
+EventData data = new EventData(info, serializer) //Object and serializer 
+    {
+       PartitionKey = info.DeviceId.ToString()
+    };
+
+// Set user properties if needed
+data.Properties.Add("Type", "Telemetry_" + DateTime.Now.ToLongTimeString());
+
+// Send single message async
+await client.SendAsync(data);
+```
+
+### Create consumer
+
+```
+// Create the Event Hub client
+EventHubClient eventHubClient = EventHubClient.Create(EventHubName);
+
+// Get the default subscriber group
+EventHubSubscriberGroup defaultSubscriberGroup = eventHubClient.GetDefaultSubscriberGroup();
+
+// All messages
+EventHubReceiver consumer = await defaultConsumerGroup.CreateReceiverAsync(shardId: index);
+
+// From one day ago
+EventHubReceiver consumer = await defaultConsumerGroup.CreateReceiverAsync(shardId: index, startingDateTimeUtc:DateTime.Now.AddDays(-1));
+                        
+// From specific offset, -1 means oldest
+EventHubReceiver consumer = await defaultConsumerGroup.CreateReceiverAsync(shardId: index,startingOffset:-1); 
+```
+
+### Consume message
+
+```
+var message = await consumer.ReceiveAsync();
+
+// Provide a serializer
+var info = message.GetBody<Type>(Serializer)
+                                    
+// Get a byte[]
+var info = message.GetBytes(); 
+msg = UnicodeEncoding.UTF8.GetString(info);
+```
+
+## Event processor host APIs
+
+These APIs provide resiliency to worker processes that may become unavailable, <!-- deleted by customization by --><!-- keep by customization: begin --> but <!-- keep by customization: end --> distributing shards across available workers.
+
+```
+// Checkpointing is done within the SimpleEventProcessor and on a per-consumerGroup per-partition basis, workers resume from where they last left off.
+// Use the EventData.Offset value for checkpointing yourself, this value is unique per partition.
+string eventHubConnectionString = System.Configuration.ConfigurationManager.AppSettings["Microsoft.ServiceBus.ConnectionString"];
+string blobConnectionString = System.Configuration.ConfigurationManager.AppSettings["AzureStorageConnectionString"]; // Required for checkpoint/state
+
+EventHubDescription eventHubDescription = new EventHubDescription(EventHubName);
+EventProcessorHost host = new EventProcessorHost(WorkerName, EventHubName, defaultConsumerGroup.GroupName, eventHubConnectionString, blobConnectionString);
+            host.RegisterEventProcessorAsync<SimpleEventProcessor>();
+
+// To close
+host.UnregisterEventProcessorAsync().Wait();   
+```
+
+The <!-- deleted by customization [IEventProcessor](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.ieventprocessor.aspx) --><!-- keep by customization: begin --> [IEventProcessor](https://msdn.microsoft.com/zh-cn/library/microsoft.servicebus.messaging.ieventprocessor.aspx) <!-- keep by customization: end --> interface is defined as follows:
+
+```
+public class SimpleEventProcessor : IEventProcessor
+{
+    IDictionary<string, string> map;
+    PartitionContext partitionContext;
+
+    public SimpleEventProcessor()
+    {
+        this.map = new Dictionary<string, string>();
+    }
+
+    public Task OpenAsync(PartitionContext context)
+    {
+        this.partitionContext = context;
+
+        return Task.FromResult<object>(null);
+    }
+
+    public async Task ProcessEventsAsync(PartitionContext context, IEnumerable<EventData> messages)
+    {
+        foreach (EventData message in messages)
+        {
+            Process messages here
+        }
+        
+        // Checkpoint when appropriate
+        await context.CheckpointAsync();
+
+    }
+
+
+    public async Task CloseAsync(PartitionContext context, CloseReason reason)
+    {
+        if (reason == CloseReason.Shutdown)
+        {
+            await context.CheckpointAsync();
+        }
+    }
+}
+```
+
+## Next steps
+
+To learn more about Event Hubs scenarios, visit these links:
+
+<!-- deleted by customization
+- [What is Azure Event Hubs?](/documentation/articles/event-hubs-what-is-event-hubs)
+-->
+<!-- keep by customization: begin -->
+- [Event Hubs programming guide](/documentation/articles/event-hubs-programming-guide)
+<!-- keep by customization: end -->
+- [Event Hubs overview](/documentation/articles/event-hubs-overview)
+<!-- deleted by customization
+- [Event Hubs programming guide](/documentation/articles/event-hubs-programming-guide)
+- [Event Hubs code samples](http://code.msdn.microsoft.com/site/search?query=event hub&f[0].Value=event hubs&f[0].Type=SearchText&ac=5)
+-->
+<!-- keep by customization: begin -->
+- [Event Hubs Code Samples](http://code.msdn.microsoft.com/site/search?query=event hub&f[0].Value=event hub&f[0].Type=SearchText&ac=5)
+<!-- keep by customization: end -->
+
+The .NET API references are here:
+
+- [Service Bus and Event Hubs .NET API <!-- deleted by customization reference](https://msdn.microsoft.com/zh-cn/library/azure/mt419900.aspx) --><!-- keep by customization: begin --> reference](https://msdn.microsoft.com/zh-cn/library/jj933424.aspx) <!-- keep by customization: end -->
+<!-- deleted by customization
+- [Event processor host API reference](https://msdn.microsoft.com/zh-cn/library/azure/mt445521.aspx)
+-->
+<!-- keep by customization: begin -->
+- [Event processor host API reference](https://msdn.microsoft.com/zh-cn/library/microsoft.servicebus.messaging.eventprocessorhost.aspx)
+- 
+<!-- keep by customization: end -->

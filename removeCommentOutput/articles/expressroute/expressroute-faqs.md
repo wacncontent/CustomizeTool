@@ -42,7 +42,7 @@ Yes. ExpressRoute circuits are configured to support cases where you can burst u
 Yes. An ExpressRoute circuit, once setup will allow you to access services within a virtual network and other Azure services simultaneously. You will connect to virtual networks over the private peering path and other services over the public peering path.
 
 ### Does ExpressRoute offer a Service Level Agreement (SLA)?
-Please refer to the [ExpressRoute SLA page](http://azure.microsoft.com/support/legal/sla/) for more information.
+Please refer to the [ExpressRoute SLA page](/support/legal/sla/) for more information.
 
 ## Supported services
 Most Azure services are supported over ExpressRoute.

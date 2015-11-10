@@ -1,7 +1,7 @@
 <properties pageTitle="Tutorial: Azure Active Directory Integration with Mimecast Admin Console | Windows Azure" description="Learn how to use Mimecast Admin Console with Azure Active Directory to enable single sign-on, automated provisioning, and more!." services="active-directory" authors="MarkusVi"  documentationCenter="na" manager="stevenpo"/>
 <tags ms.service="active-directory" ms.devlang="na" ms.topic="article" ms.tgt_pltfrm="na" ms.workload="identity" ms.date="08/01/2015" ms.author="markvi" />
 #Tutorial: Azure Active Directory Integration with Mimecast Admin Console
->[AZURE.TIP]For feedback, click [here](http://go.microsoft.com/fwlink/?LinkId=529833).
+>[AZURE.TIP]For feedback, click [here](https://social.msdn.microsoft.com/Forums/azure/zh-cn/2710df64-4a78-4989-a08a-8a37884a22c5/tutorial-azure-active-directory-integration-with-mimecast-admin-console?forum=WindowsAzureAD).
   
 The objective of this tutorial is to show the integration of Azure and Mimecast Admin Console.  
 The scenario outlined in this tutorial assumes that you already have the following items:

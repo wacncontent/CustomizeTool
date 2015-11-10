@@ -121,7 +121,7 @@ These steps will allow the listed users and group access as per their assigned r
 - "Invite Users" feature is NOT supported within Azure AD Connect Health.
 
 #### Step 3: Share the blade location with users or groups
-1. After assigning permissions, a user can access Azure AD Connect Health by going to [http://aka.ms/aadconnecthealth](http://aka.ms/aadconnecthealth).
+1. After assigning permissions, a user can access Azure AD Connect Health by going to [https://manage.windowsazure.cn/](https://manage.windowsazure.cn/).
 2. Once on the blade, the user can pin the blade or different parts to the dashboard by simply clicking "Pin to dashboard"<br>
 [//]: # (RBAC_PinBlade)
 

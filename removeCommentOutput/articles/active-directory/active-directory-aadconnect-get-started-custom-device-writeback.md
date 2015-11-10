@@ -33,7 +33,7 @@ Use the following steps to prepare for using device writeback.
 
 3.	With enterprise admin credentials, run the following commands and then exit PowerShell.
 
-	Import-Module ‘C:\Program Files\Windows Azure Active Directory Connect\AdPrep\AdSyncAdPrep.psm1’
+	Import-Module ‘C:\Program Files\Microsoft Azure Active Directory Connect\AdPrep\AdSyncAdPrep.psm1’
 
 	Initialize-ADSyncDeviceWriteback –DomainName <name> -AdConnectorAccount <account>
 

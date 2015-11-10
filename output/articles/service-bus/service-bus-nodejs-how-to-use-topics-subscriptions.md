@@ -57,7 +57,7 @@ communicate with the Service Bus REST services.
 	```
 
 3.  You can manually run the **ls** command to verify that a
-    **node_modules** folder was created. Inside that folder find the
+    **node\_modules** folder was created. Inside that folder find the
     **azure** package, which contains the libraries you need to access
     Service Bus topics.
 
@@ -72,7 +72,7 @@ var azure = require('azure');
 
 ### Set up a Service Bus connection
 
-The Azure module reads the environment variables AZURE_SERVICEBUS_NAMESPACE and AZURE_SERVICEBUS_ACCESS_KEY for information required to connect to Service Bus. If these environment variables are not set, you must specify the account information when calling **createServiceBusService**.
+The Azure module reads the environment variables AZURE\_SERVICEBUS\_NAMESPACE and AZURE\_SERVICEBUS\_ACCESS\_KEY for information required to connect to Service Bus. If these environment variables are not set, you must specify the account information when calling **createServiceBusService**.
 
 For an example of setting the environment variables in a configuration file for an Azure Cloud Service, see [Node.js Cloud Service with Storage][].
 

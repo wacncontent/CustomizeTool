@@ -63,9 +63,9 @@ Use the following information if you plan on using SSH keys with your cluster. I
 
 	Look for the following files in the directory listing. These are common names for public SSH keys.
 
-	* id_dsa.pub
+	* id\_dsa.pub
 	* id\_ecdsa.pub
-	* id_ed25519.pub
+	* id\_ed25519.pub
 	* id\_rsa.pub
 
 2. If you do not want to use an existing file, or you have no existing SSH keys, use the following to generate a new file:
@@ -74,12 +74,12 @@ Use the following information if you plan on using SSH keys with your cluster. I
 
 	You will be prompted for the following information:
 
-	* The file location - The location defaults to ~/.ssh/id_rsa.
+	* The file location - The location defaults to ~/.ssh/id\_rsa.
 	* A passphrase - You will be prompted to re-enter this.
 
 		> [AZURE.NOTE] We strongly recommend that you use a secure passphrase for the key. However, if you forget the passphrase, there is no way to recover it.
 
-	After the command finishes, you will have two new files, the private key (for example, **id_rsa**) and the public key (for example, **id_rsa.pub**).
+	After the command finishes, you will have two new files, the private key (for example, **id\_rsa**) and the public key (for example, **id\_rsa.pub**).
 
 ##Create a Linux-based HDInsight cluster
 

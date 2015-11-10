@@ -43,7 +43,7 @@ You must have already registered a domain name and have the sign-in credentials 
 
 You can add multiple domains to your directory. However, you can't add the same domain to different directories. So, for example, If you add your domain to your directory, you can't create another Azure AD directory and add the same domain name to it.
 
-If you plan to use single sign-on with the cloud service, we recommend that you help prepare your Active Directory environment by running the Microsoft Deployment Readiness Tool. This tool inspects your Active Directory environment and provides a report that includes information about whether you are ready to set up single sign-on. If not, it lists the changes you need to make to prepare for single sign-on. For example, it inspects whether your users have UPNs and if those UPNs are in the correct format. To download the tool, see [Microsoft Deployment Readiness Tool](http://go.microsoft.com/fwlink/?linkid=235650).
+If you plan to use single sign-on with the cloud service, we recommend that you help prepare your Active Directory environment by running the Microsoft Deployment Readiness Tool. This tool inspects your Active Directory environment and provides a report that includes information about whether you are ready to set up single sign-on. If not, it lists the changes you need to make to prepare for single sign-on. For example, it inspects whether your users have UPNs and if those UPNs are in the correct format. To download the tool, see [Microsoft Deployment Readiness Tool](https://community.office365.com/zh-cn/f/183/p/2285/8155).
 
 > [AZURE.NOTE]
 > Using Office 365? Once you have set up your domain, you can start creating email addresses, Lync Online accounts, and distribution groups that use your custom domain name. You can also use your domain name for a public-facing website hosted on SharePoint Online.
@@ -206,7 +206,7 @@ If you add your custom domain name to the cloud service after you have already a
 
 ## What's next
 
-- [Azure AD Forum](https://social.msdn.microsoft.com/Forums/home?forum=WindowsAzureAD)
+- [Azure AD Forum](https://social.msdn.microsoft.com/Forums/zh-cn/home)
 - [Stackoverflow](http://stackoverflow.com/questions/tagged/azure)
 - [Sign up for Azure as an organization](/documentation/articles/sign-up-organization)
 - [Manage domains in Azure AD](https://msdn.microsoft.com/zh-cn/library/azure/dn919677.aspx)

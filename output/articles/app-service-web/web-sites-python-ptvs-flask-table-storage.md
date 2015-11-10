@@ -151,7 +151,7 @@ In this section, we'll configure environment variables for the Web Apps instance
 
   	<!-- ![Top Menu](./media/web-sites-python-ptvs-flask-table-storage/PollsCommonWebSiteTopMenu.png) -->
 
-1.  Scroll down to the **app settings** section and set the values for **REPOSITORY_NAME**, **STORAGE_NAME** and **STORAGE_KEY** as described in the section above.
+1.  Scroll down to the **app settings** section and set the values for **REPOSITORY\_NAME**, **STORAGE\_NAME** and **STORAGE\_KEY** as described in the section above.
 
   	<!-- ![App Settings](./media/web-sites-python-ptvs-flask-table-storage/PollsCommonWebSiteConfigureSettingsTableStorage.png) -->
 

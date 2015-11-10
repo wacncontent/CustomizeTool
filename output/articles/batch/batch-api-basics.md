@@ -258,15 +258,15 @@ You need a Batch account to use the Batch service and you use multiple resources
 
 Each task has a working directory under which it creates zero or more directories and files for storing the program that is run by a task, the data that is processed by a task, and the output of the processing performed by a task. These directories and files are then available for use by other tasks during the running of a job. All tasks, files, and directories on a Node are owned by a single user account.
 
-The Batch service exposes a portion of the file system on a Node as the root directory. The root directory of the Node is available to a task through the AZ_BATCH_NODE_ROOT_DIR environment variable. For more information about using environment variables, see Environment settings for tasks.
+The Batch service exposes a portion of the file system on a Node as the root directory. The root directory of the Node is available to a task through the AZ\_BATCH\_NODE\_ROOT\_DIR environment variable. For more information about using environment variables, see Environment settings for tasks.
 
 The root directory contains the following sub-directories:
 
-- **Tasks** – This location is where all of the files are stored that belong to tasks that run on the Node. For each task, the Batch service creates a working directory with the unique path in the form of %AZ_BATCH_TASK_ROOT_DIR%. This directory provides Read/Write access to the task. The task can create, read, update, and delete files under this directory, and this directory is retained based on the RetentionTime constraint specified for the task.
+- **Tasks** – This location is where all of the files are stored that belong to tasks that run on the Node. For each task, the Batch service creates a working directory with the unique path in the form of %AZ\_BATCH\_TASK\_ROOT\_DIR%. This directory provides Read/Write access to the task. The task can create, read, update, and delete files under this directory, and this directory is retained based on the RetentionTime constraint specified for the task.
 
-- **Shared** – This location is a shared directory for all of the tasks under the account. On the Node, the shared directory is at %AZ_BATCH_NODE_SHARED_DIR%. This directory provides Read/Write access to the task. The task can create, read, update, and delete files under this directory.
+- **Shared** – This location is a shared directory for all of the tasks under the account. On the Node, the shared directory is at %AZ\_BATCH\_NODE\_SHARED\_DIR%. This directory provides Read/Write access to the task. The task can create, read, update, and delete files under this directory.
 
-- **Start** – This location is used by a start task as its working directory. All of the files that are downloaded by the Batch service to launch the start task are also stored under this directory. On the Node, the start directory is at %AZ_BATCH_NODE_START_DIR%. The task can create, read, update, and delete files under this directory, and this directory can be used by start tasks to configure the operating system.
+- **Start** – This location is used by a start task as its working directory. All of the files that are downloaded by the Batch service to launch the start task are also stored under this directory. On the Node, the start directory is at %AZ\_BATCH\_NODE\_START\_DIR%. The task can create, read, update, and delete files under this directory, and this directory can be used by start tasks to configure the operating system.
 
 When a Node is removed from the pool, all of the files that are stored on the Node are removed.
 

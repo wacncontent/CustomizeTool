@@ -137,7 +137,7 @@ User's password is managed on-premises. You can enable Password Writeback to res
 We could not reach your on-premises password reset service. Check your sync machine's event log|Failed
 We encountered a problem while resetting the user's on-premises password. Check your sync machine's event log | Failed
 This user is not a member of the password reset users group. Add this user to that group to resolve this.|Failed
-Password reset has been disabled entirely for this tenant. See [here](http://aka.ms/ssprtroubleshoot) to resolve this. | Failed
+Password reset has been disabled entirely for this tenant. See [here](/documentation/articles/active-directory-passwords-getting-started/#enable-users-to-reset-their-azure-ad-passwords) to resolve this. | Failed
 User successfully reset password|Succeeded
 
 **Additional Resources**

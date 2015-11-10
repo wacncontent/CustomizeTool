@@ -45,7 +45,7 @@ The steps above download the Split-Merge files to the current directory. The fil
 
 3. Either create a new database or choose an existing database to serve as the status database for Split/Merge operations and retrieve the connection string of that database. 
 
-	**Important** At this time, the status database must use the Latin  collation (SQL_Latin1_General_CP1_CI_AS). For more information, see [Windows Collation Name (Transact-SQL)](https://msdn.microsoft.com/zh-cn/library/ms188046.aspx).
+	**Important** At this time, the status database must use the Latin  collation (SQL\_Latin1\_General\_CP1\_CI\_AS). For more information, see [Windows Collation Name (Transact-SQL)](https://msdn.microsoft.com/zh-cn/library/ms188046.aspx).
 
 	With Azure SQL DB, the connection string typically is of the form:
 

@@ -107,7 +107,7 @@ The following example shows you how you can create a virtual machine (VM) based 
 
 3.	Run the following command at the SQL Plus command prompt.
 
-		**select \* from GLOBAL_NAME;**
+		**select \* from GLOBAL\_NAME;**
 
 	The result should be the global name of the database that you created.
 
@@ -174,7 +174,7 @@ To allow your database to be reached remotely (for example, from a client comput
 ##Enabling Oracle Database Enterprise Manager remote access
 If you want to enable remote access to Oracle Database Enterprise Manager, open port 5500 in your firewall, and create a virtual machine endpoint for 5500 in the Azure Management Portal (using the steps shown earlier for opening port 1521 and creating an endpoint for 1521). Then, to run the Oracle Enterprise Manager from the remote computer, open a browser to the URL in the form of `http://<<unique_domain_name>>:5500/em`.
 
-> [AZURE.NOTE] You can determine the value for *\<\<unique_domain_name\>\>* within the [Azure Management Portal](https://ms.portal.azure.com/) by clicking **Virtual Machines** and then selecting the virtual machine that you are using to run Oracle Database).
+> [AZURE.NOTE] You can determine the value for *\<\<unique\_domain\_name\>\>* within the [Azure Management Portal](https://ms.portal.azure.com/) by clicking **Virtual Machines** and then selecting the virtual machine that you are using to run Oracle Database).
 
 ##Configuring Popular Options and Advanced Options Bundles
 If you chose the **Oracle Database with Popular Options** or the **Oracle Database with Advanced Options bundle**, the next step is to configure the add-on features in your Oracle installation. Refer to the Oracle documentation for instruction on setting these up on Windows, as configurations can vary widely based on your needs of each individual component.

@@ -16,9 +16,9 @@
 
 ##Overview
 
-Tables created with either the JavaScript or .NET backend can optionally have soft delete enabled. When using soft delete, a new column called *__deleted* of [SQL bit type] is added to the database. With soft delete enabled, a delete operation does not physically delete rows from the database, but rather sets the value of the deleted column to TRUE.
+Tables created with either the JavaScript or .NET backend can optionally have soft delete enabled. When using soft delete, a new column called *\__deleted* of [SQL bit type] is added to the database. With soft delete enabled, a delete operation does not physically delete rows from the database, but rather sets the value of the deleted column to TRUE.
 
-When querying records on a table with soft delete enabled, deleted rows are not returned in the query by default. In order to request these rows, you must pass a query parameter *__includeDeleted=true* in your [REST Query operaation](http://msdn.microsoft.com/zh-cn/library/azure/jj677199.aspx). In the .NET client SDK, you can also use the helper method `IMobileServiceTable.IncludeDeleted()`.
+When querying records on a table with soft delete enabled, deleted rows are not returned in the query by default. In order to request these rows, you must pass a query parameter *\__includeDeleted=true* in your [REST Query operaation](http://msdn.microsoft.com/zh-cn/library/azure/jj677199.aspx). In the .NET client SDK, you can also use the helper method `IMobileServiceTable.IncludeDeleted()`.
 
 Soft delete support for the .NET backend first released with version 1.0.402 of the Windows Azure Mobile Services .NET Backend. The latest NuGet packages are available here, [Windows Azure Mobile Services .NET Backend](http://www.nuget.org/packages/WindowsAzure.MobileServices.Backend/).
 
@@ -63,11 +63,11 @@ If you are creating a new table for your mobile service, you can enable soft del
 To enable soft delete on an existing table in the JavaScript backend:
 
 1. In the [Management Portal], click your mobile service. Then click the Data tab.
-2. On the data page, click to select the desired table. Then click the **Enable Soft Delete** button in the command bar. If the table already has soft delete enabled, this button will not appear but you will be able to see the *__deleted* column when clicking the **Browse** or **Columns** tab for the table.
+2. On the data page, click to select the desired table. Then click the **Enable Soft Delete** button in the command bar. If the table already has soft delete enabled, this button will not appear but you will be able to see the *\__deleted* column when clicking the **Browse** or **Columns** tab for the table.
 
     ![][0]
 
-    To disable soft delete for your table, click the **Columns** tab and then click the *__deleted* column and the **Delete** button.  
+    To disable soft delete for your table, click the **Columns** tab and then click the *\__deleted* column and the **Delete** button.  
 
     ![][1]
 

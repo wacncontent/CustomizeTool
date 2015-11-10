@@ -122,7 +122,7 @@ public void SignOut()
 }
 ```
 
--	Now, open `Views\Shared_LoginPartial.cshtml`.  This is where you'll show the user your app's sign-in and sign-out links, and print out the user's name in a view.
+-	Now, open `Views\Shared\_LoginPartial.cshtml`.  This is where you'll show the user your app's sign-in and sign-out links, and print out the user's name in a view.
 
 ```HTML
 @if (Request.IsAuthenticated)

@@ -349,7 +349,7 @@ This sample shows an application gateway that is up, running, and is ready to ta
                                       }
                                     ]
 	ResourceGroupName                 : appgw-rg
-	Location                          : westus
+	Location                          : chinanorth
 		Tag                               : {}
 	TagsTable                         : 
 	Name                              : appgwtest

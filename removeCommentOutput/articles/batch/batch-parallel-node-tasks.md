@@ -28,7 +28,7 @@ Enabling concurrent task execution on a pool's compute nodes allows for maximizi
 
 ## Example scenario
 
-To illustrate the benefits of parallel task execution, let's say that your task application has CPU and memory requirements such that a Standard_D1 node size is suitable, but in order to execute the job in the required time, 1000 such nodes are needed. Instead of using Standard_D1 nodes, you could employ Standard_D14 nodes with 16 cores and enable parallel task execution. In this case, *16 times fewer nodes* could therefore be used--instead of 1000 nodes, only 63 would be required. This will greatly improve job execution time and efficiency if large application files or reference data are required for each node.
+To illustrate the benefits of parallel task execution, let's say that your task application has CPU and memory requirements such that a Standard\_D1 node size is suitable, but in order to execute the job in the required time, 1000 such nodes are needed. Instead of using Standard\_D1 nodes, you could employ Standard\_D14 nodes with 16 cores and enable parallel task execution. In this case, *16 times fewer nodes* could therefore be used--instead of 1000 nodes, only 63 would be required. This will greatly improve job execution time and efficiency if large application files or reference data are required for each node.
 
 ## Enable parallel task execution
 
@@ -44,7 +44,7 @@ When the compute nodes within a pool are able to execute tasks concurrently, it 
 
 By using the [CloudPool.TaskSchedulingPolicy][task_schedule] property, you can specify that tasks should be assigned evenly across all nodes in the pool ("spreading"), or that as many tasks as possible should be assigned to each node before tasks are assigned to another node in the pool ("packing").
 
-As an example of how this feature is valuable, consider the pool of Standard_D14 nodes in the example above, configured with a [CloudPool.MaxTasksPerComputeNode][maxtasks_net] value of 16. If the [CloudPool.TaskSchedulingPolicy][task_schedule] is configured with a [ComputeNodeFillType][fill_type] of *Pack*, it would maximize usage of all 16 cores of each node and allow an [autoscaling pool](./batch-automatic-scaling.md) to prune unused nodes from the pool (nodes without any tasks assigned), thereby minimizing resource usage and saving money.
+As an example of how this feature is valuable, consider the pool of Standard\_D14 nodes in the example above, configured with a [CloudPool.MaxTasksPerComputeNode][maxtasks_net] value of 16. If the [CloudPool.TaskSchedulingPolicy][task_schedule] is configured with a [ComputeNodeFillType][fill_type] of *Pack*, it would maximize usage of all 16 cores of each node and allow an [autoscaling pool](./batch-automatic-scaling.md) to prune unused nodes from the pool (nodes without any tasks assigned), thereby minimizing resource usage and saving money.
 
 ## Batch .NET example
 

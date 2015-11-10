@@ -26,7 +26,7 @@ This tutorial will show you how to connect your Salesforce environment to your A
 > 
 > You can get around this limitation by using a [free developer account](https://developer.salesforce.com/signup) to complete this tutorial.
 
-If you are using a Salesforce Sandbox environment, please see the [Salesforce Sandbox integration tutorial](https://go.microsoft.com/fwLink/?LinkID=521879).
+If you are using a Salesforce Sandbox environment, please see the [Salesforce Sandbox integration tutorial](/documentation/articles/active-directory-saas-salesforce-sandbox-tutorial/).
 
 ##Video tutorials
 

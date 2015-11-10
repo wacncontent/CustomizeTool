@@ -1,7 +1,7 @@
 <properties pageTitle="Tutorial: Azure Active Directory Integration with SmarterU | Windows Azure" description="Learn how to use SmarterU with Azure Active Directory to enable single sign-on, automated provisioning, and more!." services="active-directory" authors="MarkusVi"  documentationCenter="na" manager="stevenpo"/>
 <tags ms.service="active-directory" ms.devlang="na" ms.topic="article" ms.tgt_pltfrm="na" ms.workload="identity" ms.date="08/01/2015" ms.author="markvi" />
 #Tutorial: Azure Active Directory Integration with SmarterU
->[AZURE.TIP]For feedback, click [here](http://go.microsoft.com/fwlink/?LinkId=524463).
+>[AZURE.TIP]For feedback, click [here](https://social.msdn.microsoft.com/Forums/azure/zh-cn/6ea6ae62-d390-47a4-b563-eff12e5fc132/tutorial-azure-ad-integration-with-smarteru?forum=WindowsAzureAD).
   
 The objective of this tutorial is to show the integration of Azure and SmarterU.  
 The scenario outlined in this tutorial assumes that you already have the following items:

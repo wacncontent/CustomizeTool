@@ -45,12 +45,12 @@ This sample shows how to write a single page application secured with Azure AD.
 
 | Language/Platform | Sample | Description
 | ----------------- | ------ | -----------
-| JavaScript, C#/.NET | [SinglePageApp-DotNet](https://github.com/AzureADSamples/SinglePageApp-DotNet) | Use ADAL for JavaScript and Azure AD to secure an AngularJS-based single page app implemented with an ASP.NET web API back end.
+| JavaScript, C#/.NET | [SinglePageApp-DotNet](https://github.com/Azure-Samples/active-directory-angularjs-singlepageapp) | Use ADAL for JavaScript and Azure AD to secure an AngularJS-based single page app implemented with an ASP.NET web API back end.
 
 
 ## Native Application to Web API
 
-These code samples show how to build native client applications that call web APIs that are secured by Azure AD. They use [Azure AD Authentication Library (ADAL)](http://go.microsoft.com/fwlink/?LinkID=258232) and [OAuth 2.0 in Azure AD](https://msdn.microsoft.com/zh-cn/library/azure/dn645545.aspx).
+These code samples show how to build native client applications that call web APIs that are secured by Azure AD. They use [Azure AD Authentication Library (ADAL)](https://msdn.microsoft.com/zh-cn/library/jj573266) and [OAuth 2.0 in Azure AD](https://msdn.microsoft.com/zh-cn/library/azure/dn645545.aspx).
 
 | Language/Platform | Sample | Description
 | ----------------- | ------ | -----------
@@ -83,7 +83,7 @@ These code samples show how use [OAuth 2.0 in Azure AD](https://msdn.microsoft.c
 
 ## Server or Daemon Application to Web API
 
-These code samples show how to build a daemon or server application that gets resources from a web API by using [Azure AD Authentication Library (ADAL)](http://go.microsoft.com/fwlink/?LinkID=258232) and [OAuth 2.0 in Azure AD](https://msdn.microsoft.com/zh-cn/library/azure/dn645545.aspx).
+These code samples show how to build a daemon or server application that gets resources from a web API by using [Azure AD Authentication Library (ADAL)](https://msdn.microsoft.com/zh-cn/library/jj573266) and [OAuth 2.0 in Azure AD](https://msdn.microsoft.com/zh-cn/library/azure/dn645545.aspx).
 
 | Language/Platform | Sample | Description
 | ----------------- | ------ | -----------
@@ -122,19 +122,19 @@ These walkthroughs use slightly older technology, but still might be of interest
 
 | Language/Platform | Sample | Description
 | ----------------- | ------ | -----------
-| C#/.NET | [Role-Based and ACL-Based Authorization in a Windows Azure AD Application](http://go.microsoft.com/fwlink/?LinkId=331694) | Perform role-based authorization (RBAC) and ACL-based authorization in an application that is integrated with Azure AD.
-| C#/.NET |  [AAL - Windows Store app to REST service - Authentication](http://go.microsoft.com/fwlink/?LinkId=330605) |  Use [Azure AD Authentication Library (ADAL)](http://go.microsoft.com/fwlink/?LinkID=258232) (formerly AAL) for Windows Store Beta to add user authentication capabilities to a Windows Store app.
-| C#/.NET | [ADAL - Native App to REST service - Authentication with AAD via Browser Dialog](http://go.microsoft.com/fwlink/?LinkId=259814) |  Use [Azure AD Authentication Library (ADAL)](http://go.microsoft.com/fwlink/?LinkID=258232) to add user authentication capabilities to a WPF client.
-| C#/.NET | [ADAL - Native App to REST service - Authentication with ACS via Browser Dialog](http://code.msdn.microsoft.com/AAL-Native-App-to-REST-de57f2cc) |  Use [Azure AD Authentication Library (ADAL)](http://go.microsoft.com/fwlink/?LinkID=258232) and [Access Control Service 2.0 (ACS)](http://msdn.microsoft.com/zh-cn/library/azure/hh147631.aspx) to add user authentication capabilities to a WPF client.
-| C#/.NET | [ADAL - Server to Server Authentication](http://go.microsoft.com/fwlink/?LinkId=259816) | Use [Azure AD Authentication Library (ADAL)](http://go.microsoft.com/fwlink/?LinkID=258232) to secure service calls from a server side process to an MVC4 Web API REST service.
+| C#/.NET | [Role-Based and ACL-Based Authorization in a Windows Azure AD Application](https://code.msdn.microsoft.com:443/Role-Based-and-ACL-Based-86ad71a1) | Perform role-based authorization (RBAC) and ACL-based authorization in an application that is integrated with Azure AD.
+| C#/.NET |  [AAL - Windows Store app to REST service - Authentication](https://code.msdn.microsoft.com:443/windowsapps/AAL-Windows-Store-app-to-2430e331) |  Use [Azure AD Authentication Library (ADAL)](https://msdn.microsoft.com/zh-cn/library/jj573266) (formerly AAL) for Windows Store Beta to add user authentication capabilities to a Windows Store app.
+| C#/.NET | [ADAL - Native App to REST service - Authentication with AAD via Browser Dialog](https://code.msdn.microsoft.com:443/AAL-Native-Application-to-fd648dcf) |  Use [Azure AD Authentication Library (ADAL)](https://msdn.microsoft.com/zh-cn/library/jj573266) to add user authentication capabilities to a WPF client.
+| C#/.NET | [ADAL - Native App to REST service - Authentication with ACS via Browser Dialog](http://code.msdn.microsoft.com/AAL-Native-App-to-REST-de57f2cc) |  Use [Azure AD Authentication Library (ADAL)](https://msdn.microsoft.com/zh-cn/library/jj573266) and [Access Control Service 2.0 (ACS)](http://msdn.microsoft.com/zh-cn/library/azure/hh147631.aspx) to add user authentication capabilities to a WPF client.
+| C#/.NET | [ADAL - Server to Server Authentication](https://code.msdn.microsoft.com:443/AAL-Server-to-Server-9aafccc1) | Use [Azure AD Authentication Library (ADAL)](https://msdn.microsoft.com/zh-cn/library/jj573266) to secure service calls from a server side process to an MVC4 Web API REST service.
 | C#/.NET | [Adding Sign-On to Your Web Application Using Azure AD](https://msdn.microsoft.com/zh-cn/library/azure/dn151790.aspx) | Configure a .NET application to perform web single sign-on against your Azure AD enterprise directory.
 | C#/.NET | [Developing Multi-Tenant Web Applications with Azure AD](https://msdn.microsoft.com/zh-cn/library/azure/dn151789.aspx) | Use Azure AD to add to the single sign-on and directory access capabilities of one .NET application to work across multiple organizations.
-JAVA | [Java Sample App for Azure AD Graph API](http://go.microsoft.com/fwlink/?LinkId=263969) | Use the Graph API to access directory data from Azure AD.
+JAVA | [Java Sample App for Azure AD Graph API](https://code.msdn.microsoft.com:443/Java-Sample-App-for-30d36d54) | Use the Graph API to access directory data from Azure AD.
 PHP | [PHP Sample App for Azure AD Graph API](http://code.msdn.microsoft.com/PHP-Sample-App-For-Windows-228c6ddb) | Use the Graph API to access directory data from Azure AD.
-| C#/.NET | [Sample App for Azure AD Graph API](http://go.microsoft.com/fwlink/?LinkID=262648) | Use the Graph API to access directory data from Azure AD.
-| C#/.NET | [Sample App for Azure AD Graph Differential Query](http://go.microsoft.com/fwlink/?LinkId=275398) | Use the differential query in the Graph API to get periodic changes to user objects in an Azure AD tenant.
-| C#/.NET | [Sample App for Integrating Multi-Tenant Cloud Application for Azure AD](http://go.microsoft.com/fwlink/?LinkId=275397) | Integrate a multi-tenant application into Azure AD.
-| C#/.NET | [Securing a Windows Store Application and REST Web Service Using Azure AD (Preview)](https://msdn.microsoft.com/zh-cn/library/azure/dn169448.aspx) | Create a simple web API resource and a Windows Store client application using Azure AD and the [Azure AD Authentication Library (ADAL)](http://go.microsoft.com/fwlink/?LinkID=258232).
+| C#/.NET | [Sample App for Azure AD Graph API](https://code.msdn.microsoft.com:443/Write-Sample-App-for-79e55502) | Use the Graph API to access directory data from Azure AD.
+| C#/.NET | [Sample App for Azure AD Graph Differential Query](https://code.msdn.microsoft.com:443/Sample-App-for-Windows-97eaec90) | Use the differential query in the Graph API to get periodic changes to user objects in an Azure AD tenant.
+| C#/.NET | [Sample App for Integrating Multi-Tenant Cloud Application for Azure AD](https://code.msdn.microsoft.com:443/Multi-Tenant-Cloud-8015b84b) | Integrate a multi-tenant application into Azure AD.
+| C#/.NET | [Securing a Windows Store Application and REST Web Service Using Azure AD (Preview)](https://msdn.microsoft.com/zh-cn/library/azure/dn169448.aspx) | Create a simple web API resource and a Windows Store client application using Azure AD and the [Azure AD Authentication Library (ADAL)](https://msdn.microsoft.com/zh-cn/library/jj573266).
 | C#/.NET| [Using the Graph API to Query Azure AD](https://msdn.microsoft.com/zh-cn/library/azure/dn151791.aspx) | Configure a Microsoft .NET application to use the Azure AD Graph API to access data from an Azure AD tenant directory.
 
 ## See also

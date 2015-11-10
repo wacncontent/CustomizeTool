@@ -70,7 +70,7 @@ This tutorial will show you how to connect your Google Apps environment to your 
 
 	![Download the certificate.][9]
 
-5. Open a new tab in your browser, and sign into the [Google Apps Admin Console](http://admin.google.com/) using your administrator account.
+5. Open a new tab in your browser, and sign into the [Google Apps Admin Console](https://accounts.google.com/ServiceLogin?service=CPanel&passive=1209600&cpbps=1&continue=https%3A%2F%2Fadmin.google.com%2FDashboard&followup=https%3A%2F%2Fadmin.google.com%2FDashboard&skipvpage=true) using your administrator account.
 
 6. Click **Security**. If you don't see the link, it may be hidden under the **More Controls** menu at the bottom of the screen.
 
@@ -110,7 +110,7 @@ This tutorial will show you how to connect your Google Apps environment to your 
 
 > [AZURE.NOTE] Another viable option for automating user provisioning to Google Apps is to use [Google Apps Directory Sync (GADS)](https://support.google.com/a/answer/106368?hl=en) which provisions your on-premises Active Directory identities to Google Apps. In contrast, the solution in this tutorial provisions your Azure Active Directory (cloud) users and mail-enabled groups to Google Apps.
 
-1. Sign into the [Google Apps Admin Console](http://admin.google.com/) using your administrator account, and click **Security**. If you don't see the link, it may be hidden under the **More Controls** menu at the bottom of the screen.
+1. Sign into the [Google Apps Admin Console](https://accounts.google.com/ServiceLogin?service=CPanel&passive=1209600&cpbps=1&continue=https%3A%2F%2Fadmin.google.com%2FDashboard&followup=https%3A%2F%2Fadmin.google.com%2FDashboard&skipvpage=true) using your administrator account, and click **Security**. If you don't see the link, it may be hidden under the **More Controls** menu at the bottom of the screen.
 
 	![Click Security.][10]
 
@@ -136,7 +136,7 @@ This tutorial will show you how to connect your Google Apps environment to your 
 
 		![Type in your domain name.][18]
 
-	- Click **Next** to go to the verification page. To verify that you own this domain, you must edit the domain's DNS records according to the values provided on this page. You may choose to verify using either **MX records** or **TXT records**, depending on what you select for the **Record Type** option. For more comprehensive instructions on how to verify domain name with Azure AD, see [Add your own domain name to Azure AD](https://go.microsoft.com/fwLink/?LinkID=278919&clcid=0x409).
+	- Click **Next** to go to the verification page. To verify that you own this domain, you must edit the domain's DNS records according to the values provided on this page. You may choose to verify using either **MX records** or **TXT records**, depending on what you select for the **Record Type** option. For more comprehensive instructions on how to verify domain name with Azure AD, see [Add your own domain name to Azure AD](/documentation/articles/active-directory-add-domain/).
 
 		![Verify your domain name.][19]
 
@@ -144,7 +144,7 @@ This tutorial will show you how to connect your Google Apps environment to your 
 
 5. Now that you have verified all of your domains with Azure AD, you must now verify them again with Google Apps. For each domain that isn't already registered with Google Apps, perform the following steps:
 
-	- In the [Google Apps Admin Console](http://admin.google.com/), click on **Domains**.
+	- In the [Google Apps Admin Console](https://accounts.google.com/ServiceLogin?service=CPanel&passive=1209600&cpbps=1&continue=https%3A%2F%2Fadmin.google.com%2FDashboard&followup=https%3A%2F%2Fadmin.google.com%2FDashboard&skipvpage=true), click on **Domains**.
 
 		![Click on Domains][20]
 
@@ -162,7 +162,7 @@ This tutorial will show you how to connect your Google Apps environment to your 
 
 	> [AZURE.WARNING] If you change the primary domain for your Google Apps tenant, and if you have already configured single sign-on with Azure AD, then you will have to repeat step #3 under [Step Two: Enable Single Sign-On](#step-two-enable-single-sign-on).
 
-6. In the [Google Apps Admin Console](http://admin.google.com/), click on **Admin Roles**.
+6. In the [Google Apps Admin Console](https://accounts.google.com/ServiceLogin?service=CPanel&passive=1209600&cpbps=1&continue=https%3A%2F%2Fadmin.google.com%2FDashboard&followup=https%3A%2F%2Fadmin.google.com%2FDashboard&skipvpage=true), click on **Admin Roles**.
 
 	![Click on Google Apps][26]
 

@@ -2,7 +2,7 @@
 <tags ms.service="active-directory" ms.devlang="na" ms.topic="article" ms.tgt_pltfrm="na" ms.workload="identity" ms.date="08/01/2015" ms.author="markvi" />
 #Tutorial: Azure Active Directory integration with Work.com
   
->[AZURE.TIP] For feedback, click [here](http://go.microsoft.com/fwlink/?LinkId=529836).
+>[AZURE.TIP] For feedback, click [here](https://social.msdn.microsoft.com/Forums/azure/zh-cn/c9a02e12-2103-45a0-89f4-591b20face9b/tutorial-azure-active-directory-integration-with-workcom?forum=WindowsAzureAD).
   
 The objective of this tutorial is to show the integration of Azure and Work.com.  
 The scenario outlined in this tutorial assumes that you already have the following items:

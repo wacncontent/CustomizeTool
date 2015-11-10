@@ -30,7 +30,7 @@ Lets get started.
 
 ## Allow Multisite
 
-You first need to enable Multisite through the `wp-config.php` file with the **WP_ALLOW_MULTISITE** constant. There are two methods to edit your web app files: the first is through FTP, and the second through Git. If you are unfamiliar with how to setup either of these methods, please refer to the following tutorials:
+You first need to enable Multisite through the `wp-config.php` file with the **WP\_ALLOW\_MULTISITE** constant. There are two methods to edit your web app files: the first is through FTP, and the second through Git. If you are unfamiliar with how to setup either of these methods, please refer to the following tutorials:
 
 * [PHP web site with MySQL and FTP][website-w-mysql-and-ftp-ftp-setup]
 

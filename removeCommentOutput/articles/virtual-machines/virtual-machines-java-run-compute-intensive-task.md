@@ -123,7 +123,7 @@ namespace.
 ## How to create a Java application that performs a compute-intensive task
 
 1. On your development machine (which does not have to be the virtual machine that you created), download the [Azure SDK for Java](/develop/java/).
-2. Create a Java console application using the example code at the end of this section. In this tutorial, we'll use **TSPSolver.java** as the Java file name. Modify the **your_service_bus_namespace**, **your_service_bus_owner**, and **your_service_bus_key** placeholders to use your service bus **namespace**, **Default Issuer** and **Default Key** values, respectively.
+2. Create a Java console application using the example code at the end of this section. In this tutorial, we'll use **TSPSolver.java** as the Java file name. Modify the **your\_service\_bus\_namespace**, **your\_service\_bus\_owner**, and **your\_service\_bus\_key** placeholders to use your service bus **namespace**, **Default Issuer** and **Default Key** values, respectively.
 3. After coding, export the application to a runnable Java archive (JAR), and package the required libraries into the generated JAR. In this tutorial, we'll use **TSPSolver.jar** as the generated JAR name.
 
 <p/>
@@ -313,7 +313,7 @@ namespace.
 
 ## How to create a Java application that monitors the progress of the compute-intensive task
 
-1. On your development machine, create a Java console application using the example code at the end of this section. In this tutorial, we'll use **TSPClient.java** as the Java file name. As shown earlier, modify the **your_service_bus_namespace**, **your_service_bus_owner**, and **your_service_bus_key** placeholders to use your service bus **namespace**, **Default Issuer** and **Default Key** values, respectively.
+1. On your development machine, create a Java console application using the example code at the end of this section. In this tutorial, we'll use **TSPClient.java** as the Java file name. As shown earlier, modify the **your\_service\_bus\_namespace**, **your\_service\_bus\_owner**, and **your\_service\_bus\_key** placeholders to use your service bus **namespace**, **Default Issuer** and **Default Key** values, respectively.
 2. Export the application to a runnable JAR, and package the required libraries into the generated JAR. In this tutorial, we'll use **TSPClient.jar** as the generated JAR name.
 
 <p/>

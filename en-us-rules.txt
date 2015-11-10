@@ -54,6 +54,7 @@ North Central US = China North
 South Central US = China East
 VNetUSWest = VNetChinsNorth
 'United Kingdom' = 'China'
+westus = chinanorth
 
 # Brand
 Microsoft Azure = Windows Azure
@@ -795,8 +796,8 @@ microsoft.com/library = microsoft.com/zh-cn/library
 # global site url
 ://portal.azure.com = ://manage.windowsazure.cn
 ://porta.azure.com = ://manage.windowsazure.cn
-://portal.microsoftonline.com = ://portal.partner.microsoftonline.cn
-://technet.microsoft.com/library/ = ://technet.microsoft.com/zh-cn/library/
+portal.microsoftonline.com = portal.partner.microsoftonline.cn
+login.microsoftonline.com = login.chinacloudapi.cn
 /overview/preview-portal/ = https://manage.windowsazure.cn
 
 
@@ -821,6 +822,25 @@ hdinsight-hive-analyze-web-site-log = hdinsight-hive-analyze-website-log
 free-trial-note2.md = free-trial-note.md
 hdinsight-hadoop-customize-cluster-linux = hdinsight-hadoop-customize-cluster
 hdinsight-apache-storm-tutorial-get-started-linux = hdinsight-apache-storm-tutorial-get-started
+
+http://www.microsoft.com/windowsazure/offers/ = /pricing/overview/
+http://azure.microsoft.com/support/legal/sla/ = /support/legal/sla/
+
+..\virtual-machines\virtual-machines-linux-use-ssh-key.md = /documentation/articles/virtual-machines-linux-use-ssh-key
+..\virtual-network\virtual-networks-reserved-public-ip.md = /documentation/articles/virtual-networks-reserved-public-ip.md
+
+http://azure.microsoft.com/support/sla/ = /support/legal/sla
+/develop/nodejs/tutorials/website-using-socketio/ = /documentation/articles/web-sites-nodejs-chat-app-socketio/
+/develop/nodejs/tutorials/getting-started/ = /documentation/articles/cloud-services-nodejs-develop-deploy-app
+/develop/php/tutorials/create-a-windows-azure-account/ = /pricing/1rmb-trial/
+http://azure.microsoft.com/support/forums/ = /support/forums/
+https://azure.microsoft.com/downloads /downloads
+/develop/mobile/tutorials/single-sign-on-windows-8-dotnet = /documentation/articles/mobile-services-windows-store-dotnet-single-sign-on
+/develop/mobile/tutorials/get-started-ios = /documentation/articles/mobile-services-ios-get-started
+/develop/mobile/tutorials/get-started-with-data-ios = /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-data-ios
+/develop/mobile/tutorials/get-started-with-users-ios = /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-users-ios
+/develop/mobile/tutorials/get-started-with-push-ios = /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-push-ios
+/develop/mobile/tutorials/authorize-users-in-scripts-ios = /documentation/articles/mobile-services-ios-authorize-users-in-scripts
 
 [REGEX]
 
@@ -877,8 +897,10 @@ hdinsight-apache-storm-tutorial-get-started-linux = hdinsight-apache-storm-tutor
 
 # href="hdinsight-use-mapreduce.md"
 # href="../hdinsight-hadoop-linux-use-ssh-unix/"
+# href="../active-directory-passwords-customize#password-management-behavior"
 href{equal}"([\w|\-]*)\.md" = href{equal}"/documentation/articles/\1"
 href{equal}"\.\./(?!includes/|media/|services/)([\w|\-]+/)?([\w|\-]+)(.md)?/?" = href{equal}"/documentation/articles/\2"
+href{equal}"\.\./(?!includes/|media/|services/)([\w|\-]+/)?([\w|\-]+)(.md)?/?#([\w|\-]+)" = href{equal}"/documentation/articles/\2#\4"
 
 /documentation/articles/# = #
 # ../services/xxxx = /home/features/xxxx
@@ -890,34 +912,19 @@ href{equal}"\.\./(?!includes/|media/|services/)([\w|\-]+/)?([\w|\-]+)(.md)?/?" =
 #![image text](media/xxx-xxx-xxx/xxx-xxx.xxx) = ![image text](./media/xxx-xxx-xxx/xxx-xxx.xxx)
 \!\[([^\[|^\]]*)\]\s*\(media/([\w|\-]+)/([^\(|^\)]*)\) = ![\1](./media/\2/\3)
 
-#![image text]: media/xxx-xxx-xxx/xxx-xxx.xxx = ![image text]: ./media/xxx-xxx-xxx/xxx-xxx.xxx
-\!\[([^\[|^\]]*)\]:\s*media/([\w|\-]+)/([^\(|^\)]*)\s*\n = ![\1]: ./media/\2/\3\n
+# [image text]: media/xxx-xxx-xxx/xxx-xxx.xxx = ![image text]: ./media/xxx-xxx-xxx/xxx-xxx.xxx
+# [apps_service_principals_directory]:media/active-directory-how-applications-are-added/HowAppsAreAddedToAAD.jpg
+# [app_settings]:media/active-directory-how-applications-are-added/IntegratedAppSettings.jpg
+\[([^\[|^\]]*)\]:\s*media/([\w|\-]+)/([^\(|^\)]*)\s*\n = [\1]: ./media/\2/\3\n
+\[([^\[|^\]]*)\]:\s*media/([\w|\-]+)/([^\(|^\)]*)\s* = [\1]: ./media/\2/\3
 
 # (..\virtual-network\media\virtual-networks-arm-asm-s2s\figure01.png) = (.\media\virtual-networks-arm-asm-s2s\figure01.png)
 \(\.\.[\\|/][\w|\-]+[\\|/]media[\\|/]([\w|\-]+)[\\|/]([^\(|^\)]+\.\w+)\) = (./media/\1/\2)
 
-#![image text]: ..\virtual-network\media\xxx-xxx-xxx\xxx-xxx.xxx = ![image text]: ./media/xxx-xxx-xxx/xxx-xxx.xxx
-\!\[([^\[|^\]]*)\]:\s*\.\.[\\|/][\w|\-]+[\\|/]media[\\|/]([\w|\-]+)[\\|/]([^\s]+\.\w+)\s*\n = ![\1]: ./media/\2/\3\n
+#[image text]: ..\virtual-network\media\xxx-xxx-xxx\xxx-xxx.xxx = ![image text]: ./media/xxx-xxx-xxx/xxx-xxx.xxx
+\[([^\[|^\]]*)\]:\s*\.\.[\\|/][\w|\-]+[\\|/]media[\\|/]([\w|\-]+)[\\|/]([^\s]+\.\w+)\s*\n = [\1]: ./media/\2/\3\n
+\[([^\[|^\]]*)\]:\s*\.\.[\\|/][\w|\-]+[\\|/]media[\\|/]([\w|\-]+)[\\|/]([^\s]+\.\w+)\s* = [\1]: ./media/\2/\3
 
-
-
-# Escape
-# ## 1\. = ## 1.
-([\#]+)([\s]*)([0-9]+)\\\. = \1\2\3.
-
-# **XXX\_XXX\_XXX\_XXX\_XXX** = **XXX_XXX_XXX_XXX_XXX**
-(\*+[^\*]*)\\_([^\*]*)\\_([^\*]*)\\_([^\*]*)\\_([^\*]*\*+) = \1_\2_\3_\4_\5
-
-# **XXX\_XXX\_XXX\_XXX** = **XXX_XXX_XXX_XXX**
-(\*+[^\*]*)\\_([^\*]*)\\_([^\*]*)\\_([^\*]*\*+) = \1_\2_\3_\4
-
-# **XXX\_XXX\_XXX** = **XXX_XXX_XXX**
-(\*+[^\*]*)\\_([^\*]*)\\_([^\*]*\*+) = \1_\2_\3
-
-# **XXX\_XXX** = **XXX_XXX**
-(\*+[^\*]*)\\_([^\*]*\*+) = \1_\2
-
-(\w)__init__\.py = \1\__init__.py
 
 # Landingpage
 (\.\.)?/documentation/services/app-service/(web/)? = /documentation/services/web-sites/
@@ -997,6 +1004,7 @@ http://azure.microsoft.com/pricing/1rmb-trial/ = /pricing/1rmb-trial/
 /zh-cn/library/windowsazure/ = /zh-cn/library/azure/
 /home/features/active-directory/ = /home/features/identity/
 /documentation/articles/app-service-value-prop-what-is = /documentation/services/web-sites
+/documentation/articles/app-service-choose-me = /documentation/services/web-sites
 /documentation/articles/app-service-web-overview = /home/features/web-site/
 /documentation/articles/Washington = Washington
 /documentation/articles/Redmond = Redmond
@@ -1021,3 +1029,8 @@ http://azure.microsoft.com/pricing/1rmb-trial/ = /pricing/1rmb-trial/
 /documentation/articles/10 = 10
 /documentation/articles/media-services-channels-overview = /documentation/articles/media-services-manage-channels-overview
 http://azure.microsoft.com/downloads/ = /downloads/
+Windows Azure Active Directory Connect = Microsoft Azure Active Directory Connect
+://technet.microsoft.com/library/ = ://technet.microsoft.com/zh-cn/library/
+http://azure.microsoft.com/home/features/identity/all/ = /home/features/identity/
+https://azure.microsoft.com/home/features = /home/features
+https://azure.microsoft.com/pricing/1rmb-trial/ = /pricing/1rmb-trial/

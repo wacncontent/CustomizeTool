@@ -1,7 +1,7 @@
 <properties pageTitle="Tutorial: Azure Active Directory Integration with Samanage | Windows Azure" description="Learn how to use Samanage with Azure Active Directory to enable single sign-on, automated provisioning, and more!." services="active-directory" authors="MarkusVi"  documentationCenter="na" manager="stevenpo"/>
 <tags ms.service="active-directory" ms.devlang="na" ms.topic="article" ms.tgt_pltfrm="na" ms.workload="identity" ms.date="08/01/2015" ms.author="markvi" />
 #Tutorial: Azure Active Directory Integration with Samanage
->[AZURE.TIP]For feedback, click [here](http://go.microsoft.com/fwlink/?LinkId=522516).
+>[AZURE.TIP]For feedback, click [here](https://social.msdn.microsoft.com/Forums/azure/zh-cn/71378a16-546c-4843-8e52-d799eea270d1/tutorial-azure-ad-integration-with-pagerduty?forum=WindowsAzureAD).
   
 The objective of this tutorial is to show the integration of Azure and Samanage.  
 The scenario outlined in this tutorial assumes that you already have the following items:

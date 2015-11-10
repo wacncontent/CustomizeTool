@@ -21,7 +21,7 @@
 
 This document will walk you through installing and configuring the Azure AD Connect Health Agent for AD FS on your servers.
 
->[AZURE.NOTE]Remember that before you see any data in your instance of Azure AD Connect Health, you will need to install the Azure AD Connect Health Agent on your targeted servers.  Be sure to complete the requirements [here](/documentation/articles/active-directory-aadconnect-health#requirements) prior to installing the agent.  You can download the agent [here](http://go.microsoft.com/fwlink/?LinkID=518973).
+>[AZURE.NOTE]Remember that before you see any data in your instance of Azure AD Connect Health, you will need to install the Azure AD Connect Health Agent on your targeted servers.  Be sure to complete the requirements [here](/documentation/articles/active-directory-aadconnect-health#requirements) prior to installing the agent.  You can download the agent [here](http://download.microsoft.com/download/9/F/5/9F53F124-C990-42D2-8A32-6D352A67762B/AdHealthAdfsAgentSetup.exe).
 
 
 ## Agent installation

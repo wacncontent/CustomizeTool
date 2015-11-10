@@ -133,7 +133,7 @@ A **BlobRestProxy** object lets you create a blob container with the **createCon
 		echo $code.": ".$error_message."<br />";
 	}
 
-Calling **setPublicAccess(PublicAccessType::CONTAINER_AND_BLOBS)** makes the container and blob data accessible via anonymous requests. Calling **setPublicAccess(PublicAccessType::BLOBS_ONLY)** makes only blob data accessible via anonymous requests. For more information about container ACLs, see [Set container ACL (REST API)][container-acl].
+Calling **setPublicAccess(PublicAccessType::CONTAINER\_AND\_BLOBS)** makes the container and blob data accessible via anonymous requests. Calling **setPublicAccess(PublicAccessType::BLOBS_ONLY)** makes only blob data accessible via anonymous requests. For more information about container ACLs, see [Set container ACL (REST API)][container-acl].
 
 For more information about Blob service error codes, see [Blob Service Error Codes][error-codes].
 
@@ -166,7 +166,7 @@ To upload a file as a blob, use the **BlobRestProxy->createBlockBlob** method. T
 		echo $code.": ".$error_message."<br />";
 	}
 
-Note that the previous sample uploads a blob as a stream. However, a blob can also be uploaded as a string using, for example, the [file_get_contents][file_get_contents] function. To do this using the previous sample, change `$content = fopen("c:\myfile.txt", "r");` to `$content = file_get_contents("c:\myfile.txt");`.
+Note that the previous sample uploads a blob as a stream. However, a blob can also be uploaded as a string using, for example, the [file\_get\_contents][file_get_contents] function. To do this using the previous sample, change `$content = fopen("c:\myfile.txt", "r");` to `$content = file_get_contents("c:\myfile.txt");`.
 
 ## List the blobs in a container
 
@@ -228,7 +228,7 @@ To download a blob, call the **BlobRestProxy->getBlob** method, then call the **
 		echo $code.": ".$error_message."<br />";
 	}
 
-Note that the example above gets a blob as a stream resource (the default behavior). However, you can use the [stream_get_contents][stream-get-contents] function to convert the returned stream to a string.
+Note that the example above gets a blob as a stream resource (the default behavior). However, you can use the [stream\_get\_contents][stream-get-contents] function to convert the returned stream to a string.
 
 ## Delete a blob
 

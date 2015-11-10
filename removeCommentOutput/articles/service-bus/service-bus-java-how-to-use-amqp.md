@@ -33,7 +33,7 @@ For information about where to download the latest version of the Apache Qpid JM
 
 You must add the following four JAR files from the Apache Qpid JMS AMQP 1.0 distribution archive to the Java CLASSPATH when building and running JMS applications with Service Bus:
 
-*    geronimo-jms_1.1_spec-1.0.jar
+*    geronimo-jms\_1.1\_spec-1.0.jar
 *    qpid-amqp-1-0-client-[version].jar
 *    qpid-amqp-1-0-client-jms-[version].jar
 *    qpid-amqp-1-0-common-[version].jar
@@ -97,7 +97,7 @@ or
 topic.[jndi_name] = [physical_name]
 ```
 
-Where **[jndi_name]** and **[physical_name]** have the following meanings:
+Where **[jndi\_name]** and **[physical\_name]** have the following meanings:
 
 - **[jndi_name]**: The logical name of the destination. This is the name that will be resolved in the Java application using the JNDI IntialContext.lookup() method.
 - **[physical_name]**: The name of the Service Bus entity to which the application sends or receives messages.

@@ -1,7 +1,7 @@
 <properties pageTitle="Tutorial: Azure ActiveDirectory integration with SuccessFactors | Windows Azure" description="Learn how to use SuccessFactors with Azure Active Directory to enable single sign-on, automated provisioning, and more!." services="active-directory" authors="MarkusVi"  documentationCenter="na" manager="stevenpo"/>
 <tags ms.service="active-directory" ms.devlang="na" ms.topic="article" ms.tgt_pltfrm="na" ms.workload="identity" ms.date="08/01/2015" ms.author="markvi" />
 #Tutorial: Azure ActiveDirectory integration with SuccessFactors
->[AZURE.TIP]For feedback, click [here](http://go.microsoft.com/fwlink/?LinkId=529792).
+>[AZURE.TIP]For feedback, click [here](https://social.msdn.microsoft.com/Forums/azure/zh-cn/957efd7b-a8b7-473f-b706-0a58c028b1ac/tutorial-azure-active-directory-integration-with-successfactors?forum=WindowsAzureAD).
   
 The objective of this tutorial is to show the integration of Azure and SuccessFactors in **SP initiated single sign-on mode**.  
 The scenario outlined in this tutorial assumes that you already have the following items:

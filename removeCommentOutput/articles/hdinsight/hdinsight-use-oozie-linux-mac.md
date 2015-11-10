@@ -701,7 +701,7 @@ In this tutorial, you learned how to define an Oozie workflow and how to run an 
 [powershell-about-profiles]: https://technet.microsoft.com/zh-cn/library/hh847857.aspx
 [powershell-install-configure]: /documentation/articles/powershell-install-configure
 [powershell-start]: http://technet.microsoft.com/zh-cn/library/hh847889.aspx
-[powershell-script]: https://technet.microsoft.com/library/ee176961.aspx
+[powershell-script]: https://technet.microsoft.com/zh-cn/library/ee176961.aspx
 
 [cindygross-hive-tables]: http://blogs.msdn.com/b/cindygross/archive/2013/02/06/hdinsight-hive-internal-and-external-tables-intro.aspx
 

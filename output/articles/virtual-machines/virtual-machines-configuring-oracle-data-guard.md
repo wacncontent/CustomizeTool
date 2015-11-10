@@ -78,7 +78,7 @@ Create a physical standby database
 >| **Oracle Release**   | Oracle11g Enterprise Release (11.2.0.4.0) | Oracle11g Enterprise Release (11.2.0.4.0) |
 >| **Machine Name**     | Machine1                                  | Machine2                                  |
 >| **Operating System** | Windows 2008 R2                           | Windows 2008 R2                           |
->| **Oracle SID**       | TEST                                      | TEST_STBY                                |
+>| **Oracle SID**       | TEST                                      | TEST\_STBY                                |
 >| **Memory**           | Min 2 GB                                  | Min 2 GB                                  |
 >| **Disk Space**       | Min 5 GB                                  | Min 5 GB                                  |
 
@@ -132,9 +132,9 @@ To be able to ship and apply archived logs from the Primary server to the Standb
 
 >[AZURE.IMPORTANT] When using Oracle Database 12c, there is a new user, **SYSDG**, which you can use to administer Oracle Data Guard. For more information, see [Changes in Oracle Database 12c Release](http://docs.oracle.com/cd/E16655_01/server.121/e10638/release_changes.htm).
 
-In addition, make sure that the ORACLE_HOME environment is already defined in Machine1. If not, define it as an environment variable using the Environment Variables dialog box. To access this dialog box, start the **System** utility by double-clicking the System icon in the **Control Panel**; then click the **Advanced** tab and choose **Environment Variables**. Click the **New** button under the **System Variables** to set the environment variables. After setting up the environment variables, close the existing Windows command prompt and open up a new one.
+In addition, make sure that the ORACLE\_HOME environment is already defined in Machine1. If not, define it as an environment variable using the Environment Variables dialog box. To access this dialog box, start the **System** utility by double-clicking the System icon in the **Control Panel**; then click the **Advanced** tab and choose **Environment Variables**. Click the **New** button under the **System Variables** to set the environment variables. After setting up the environment variables, close the existing Windows command prompt and open up a new one.
 
-Run the following statement to switch to the Oracle_Home directory, such as C:\\OracleDatabase\\product\\11.2.0\\dbhome_1\\database.
+Run the following statement to switch to the Oracle\_Home directory, such as C:\\OracleDatabase\\product\\11.2.0\\dbhome\_1\\database.
 
 	cd %ORACLE_HOME%\database
 
@@ -142,7 +142,7 @@ Then, create a password file using the password file creation utility, [ORAPWD](
 
 	ORAPWD FILE=PWDTEST.ora PASSWORD=password FORCE=y
 
-This command creates a password file, named as PWDTEST.ora, in the ORACLE_HOME\\database directory. You should copy this file to %ORACLE_HOME%\\database directory in Machine2 manually.
+This command creates a password file, named as PWDTEST.ora, in the ORACLE\_HOME\\database directory. You should copy this file to %ORACLE\_HOME%\\database directory in Machine2 manually.
 
 #### Configure a standby redo log
 
@@ -237,7 +237,7 @@ You can control the Data Guard environment using the parameters in the INIT.ORA 
 	SQL> create pfile from spfile;
 	File created.
 
-Next, you need to edit the pfile to add the standby parameters. To do this, open the INITTEST.ORA file in the location of %ORACLE_HOME%\\database. Next, append the following statements to the INITTEST.ora file. Note that the naming convention for your INIT.ORA file is INIT\<YourDatabaseName\>.ORA.
+Next, you need to edit the pfile to add the standby parameters. To do this, open the INITTEST.ORA file in the location of %ORACLE\_HOME%\\database. Next, append the following statements to the INITTEST.ora file. Note that the naming convention for your INIT.ORA file is INIT\<YourDatabaseName\>.ORA.
 
 	db_name='TEST'
 	db_unique_name='TEST'
@@ -287,7 +287,7 @@ Next, run startup nomount command as follows:
 
 Now, create a spfile:
 
-	SQL>create spfile frompfile='c:\OracleDatabase\product\11.2.0\dbhome_1\database\initTEST.ora';
+	SQL>create spfile frompfile='c:\OracleDatabase\product\11.2.0\dbhome\_1\database\initTEST.ora';
 
 	File created.
 
@@ -314,7 +314,7 @@ This section focuses on the steps that you must perform in Machine2 to prepare t
 
 First, you need to remote desktop to Machine2 via the Azure Management Portal.
 
-Then, on the Standby Server (Machine2), create all the necessary folders for the standby database, such as C:\\\<YourLocalFolder\>\\TEST. While following this tutorial, make sure that the folder structure matches the folder structure on Machine1 to keep all the necessary files, such as controlfile, datafiles, redologfiles, udump, bdump and cdump files. In addition, define the ORACLE_HOME and ORACLE_BASE environment variables in Machine2. If not, define them as an environment variable using the Environment Variables dialog box. To access this dialog box, start the **System** utility by double-clicking the System icon in the **Control Panel**; then click the **Advanced** tab and choose **Environment Variables**. Click the **New** button under the **System Variables** to set the environment variables. After setting up the environment variables, you need to close the existing Windows command prompt and open up a new one to see the changes.
+Then, on the Standby Server (Machine2), create all the necessary folders for the standby database, such as C:\\\<YourLocalFolder\>\\TEST. While following this tutorial, make sure that the folder structure matches the folder structure on Machine1 to keep all the necessary files, such as controlfile, datafiles, redologfiles, udump, bdump and cdump files. In addition, define the ORACLE\_HOME and ORACLE\_BASE environment variables in Machine2. If not, define them as an environment variable using the Environment Variables dialog box. To access this dialog box, start the **System** utility by double-clicking the System icon in the **Control Panel**; then click the **Advanced** tab and choose **Environment Variables**. Click the **New** button under the **System Variables** to set the environment variables. After setting up the environment variables, you need to close the existing Windows command prompt and open up a new one to see the changes.
 
 Next, follow these steps:
 
@@ -338,7 +338,7 @@ Next, follow these steps:
 
 ### 1. Prepare an initialization parameter file for standby database
 
-This section demonstrates how to prepare an initialization parameter file for the standby database. To do this, first copy the INITTEST.ORA file from Machine 1 to Machine2 manually. You should be able to see the INITTEST.ORA file in the %ORACLE_HOME%\\database folder in both machines. Then, modify the INITTEST.ora file in Machine2 to set it up for the standby role as specified below:
+This section demonstrates how to prepare an initialization parameter file for the standby database. To do this, first copy the INITTEST.ORA file from Machine 1 to Machine2 manually. You should be able to see the INITTEST.ORA file in the %ORACLE\_HOME%\\database folder in both machines. Then, modify the INITTEST.ora file in Machine2 to set it up for the standby role as specified below:
 
 	db_name='TEST'
 	db_unique_name='TEST_STBY'
@@ -364,16 +364,16 @@ The previous statement block includes two important setup items:
 
 Then, you need to start the standby instance. On the standby database server, enter the following command at a Windows command prompt to create an Oracle instance by creating a new Windows service:
 
-	oradim -NEW -SID TEST_STBY -STARTMODE MANUAL
+	oradim -NEW -SID TEST\_STBY -STARTMODE MANUAL
 
-Note that the **Oradim** command creates an Oracle instance but does not start it. You can find it in the C:\\OracleDatabase\\product\\11.2.0\\dbhome_1\\BIN directory.
+Note that the **Oradim** command creates an Oracle instance but does not start it. You can find it in the C:\\OracleDatabase\\product\\11.2.0\\dbhome\_1\\BIN directory.
 
 ##Configure the listener and tnsnames to support the database on primary and standby machines
 Before you create a standby database, you need to make sure that the primary and standby databases in your configuration can talk to each other. To do this, you need to configure both the listener and TNSNames either manually or by using the network configuration utility NETCA. This is a mandatory task when you use the Recovery Manager utility (RMAN).
 
 ### Configure listener.ora on both servers to hold entries for both databases
 
-Remote desktop to Machine1 and edit the listener.ora file as specified below. When you edit the listener.ora file, always make sure that the opening and closing parenthesis line up in the same column. You can find the listener.ora file in the following folder: c:\\OracleDatabase\\product\\11.2.0\\dbhome_1\\NETWORK\\ADMIN\\.
+Remote desktop to Machine1 and edit the listener.ora file as specified below. When you edit the listener.ora file, always make sure that the opening and closing parenthesis line up in the same column. You can find the listener.ora file in the following folder: c:\\OracleDatabase\\product\\11.2.0\\dbhome\_1\\NETWORK\\ADMIN\\.
 
 	# listener.ora Network Configuration File: C:\OracleDatabase\product\11.2.0\dbhome_1\network\admin\listener.ora
 
@@ -423,7 +423,7 @@ Next, remote desktop to Machine2 and edit the listener.ora file as follows:
 
 ### Configure tnsnames.ora on the primary and standby Virtual Machines to hold entries for both primary and standby databases
 
-Remote desktop to Machine1 and edit the tnsnames.ora file as specified below. You can find the tnsnames.ora file in the following folder: c:\\OracleDatabase\\product\\11.2.0\\dbhome_1\\NETWORK\\ADMIN\\.
+Remote desktop to Machine1 and edit the tnsnames.ora file as specified below. You can find the tnsnames.ora file in the following folder: c:\\OracleDatabase\\product\\11.2.0\\dbhome\_1\\NETWORK\\ADMIN\\.
 
 	TEST =
 	  (DESCRIPTION =

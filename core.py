@@ -8,7 +8,7 @@ import re
 import os
 import sys
 from fileListGen import genFileList
-from fileCompare import compareWithMooncake, removeDeleteAndKeep
+from fileCompare import compareWithMooncake, removeDeleteAndKeep, createComment
 from codecs import open
 from setting import setting
 from linkChecker import checkLinks, getOldLinks, findRedirect
@@ -67,7 +67,8 @@ class Core:
                     result = text.read()
                     # print(result)
             # Write result into Archive/mdFile
-            links.extend(checkLinks(result))
+            if setting["updateLinks"]:
+                links.extend(checkLinks(result))
             result = self.multiple_replace(pRuleDict, result)
             mdFile = mdFile[len(setting["path"])-1:]
             if setting["language"] == "zh-cn":
@@ -85,13 +86,28 @@ class Core:
                     removeCommentFile = open(setting["removeComment"]["path"]+mdFile, 'w', "utf8")
                 else:
                     removeCommentFile = open(setting["removeComment"]["path"]+mdFile, 'w')
-                removeCommentFile.write(removeDeleteAndKeep(result))
+                removeCommentResult = removeDeleteAndKeep(result)
+                removeCommentFile.write(removeCommentResult)
                 removeCommentFile.close()
-            checkRelativeLink(re.sub("\<\!\-\-[^\<|^\>]*\-\-\>", "", result))
+                checkRelativeLink(removeCommentResult)
             print('\033[1;33m '+ mdFile+'\033[0m \033 customize success, the result file is: \033[1;32m'+ mdFile+'.bak\033[0m\n')
-        newLinkSet = set(links)
-        oldLinkSet = set(getOldLinks())
-        findRedirect(list(newLinkSet-oldLinkSet))
+        if setting["updateLinks"]:
+            newLinkSet = set(links)
+            oldLinkSet = set(getOldLinks())
+            findRedirect(list(newLinkSet-oldLinkSet))
+
+def addComment(mdList):
+    for mdFile in mdList:
+        filename = mdFile[len(setting["path"]):]
+        print filename
+        global_file = open(setting["addComment"]["globalPath"]+filename, "r")
+        mooncake_file = open(setting["addComment"]["mooncakePath"]+filename, "r")
+        output_file = open(setting["addComment"]["outputPath"]+filename, "w")
+        result = createComment(global_file.read(), mooncake_file.read())
+        output_file.write(result)
+        global_file.close()
+        mooncake_file.close()
+        output_file.close()
 
 if __name__ == "__main__":
     if setting["updateFileList"] == True:
@@ -102,9 +118,11 @@ if __name__ == "__main__":
     try:
         ruleDict = rule.getRules()
         mdList = md.getMdList()
-
         core.customize(mdList, ruleDict)
         countAll()
+        if setting["addComment"]["add"]:
+            addComment(mdList)
     except IOError as e:
         print(e)
         sys.exit()
+

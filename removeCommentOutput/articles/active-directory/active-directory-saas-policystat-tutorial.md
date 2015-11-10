@@ -1,7 +1,7 @@
 <properties pageTitle="Tutorial: Azure Active Directory Integration with PolicyStat | Windows Azure" description="Learn how to use PolicyStat with Azure Active Directory to enable single sign-on, automated provisioning, and more!." services="active-directory" authors="MarkusVi"  documentationCenter="na" manager="stevenpo"/>
 <tags ms.service="active-directory" ms.devlang="na" ms.topic="article" ms.tgt_pltfrm="na" ms.workload="identity" ms.date="08/01/2015" ms.author="markvi" />
 #Tutorial: Azure Active Directory Integration with PolicyStat
->[AZURE.TIP]For feedback, click [here](http://go.microsoft.com/fwlink/?LinkId=616313).
+>[AZURE.TIP]For feedback, click [here](https://social.msdn.microsoft.com/Forums/azure/zh-cn/67a76118-9523-463b-80a0-8f3343455f52/tutorial-azure-active-directory-integration-with-policystat?forum=WindowsAzureAD).
   
 The objective of this tutorial is to show the integration of Azure and PolicyStat.  
 The scenario outlined in this tutorial assumes that you already have the following items:

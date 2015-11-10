@@ -1,0 +1,98 @@
+<properties 
+   pageTitle="Add Azure Storage by using Connected Services in Visual Studio | Windows Azure"
+   description="Add Azure Storage to your app by using the Visual Studio Add Connected Services dialog box"
+   services="visual-studio-online"
+   documentationCenter="na"
+   authors="patshea123"
+   manager="douge"
+   editor="tlee" />
+<tags
+	ms.service="visual-studio-online"
+	ms.date="08/12/2015"
+	wacn.date=""/>
+
+# Adding Azure storage by using Visual Studio Connected Services
+
+## Overview
+
+With Visual Studio 2015, you can connect any C# cloud service, .NET backend mobile service, ASP.NET website or service, ASP.NET 5 service, or Azure WebJob service to Azure Storage by using the **Add Connected Services** dialog. The connected service functionality adds all the needed references and connection code, and modifies your configuration files appropriately. The dialog also takes you to documentation that tells you what the next steps are to start blob storage, queues, and tables.
+
+## Supported Project Types
+
+You can use the Connected Services dialog to connect to Azure Storage in the following project types.
+
+- ASP.NET Web Projects
+
+- ASP.NET 5 Projects
+
+- .NET Cloud Service Web Role and Worker Role Projects
+
+- .NET Mobile Services Projects
+
+- Azure WebJob Projects
+
+
+## Connect to Azure Storage using the Connected Services dialog
+
+1. Make sure you have an Azure account. If you don't have an Azure account, you can sign up for a <!-- deleted by customization [trial](/pricing/free-trial/). Once --><!-- keep by customization: begin --> [trial](/pricing/free-trial/).Once <!-- keep by customization: end --> you have an Azure account, you can create storage accounts, create mobile services, and configure Azure Active Directory.
+
+1. Open your project in Visual Studio, open the context menu for the **References** node in Solution Explorer, and then choose **Add Connected Service**.
+
+    ![Adding a connected service](./media/vs-azure-tools-connected-services-storage/IC796702.png)
+
+1. In the **Add Connected Service** dialog box, choose **Azure Storage**, and then choose the **Configure** <!-- deleted by customization button. You --><!-- keep by customization: begin --> button.You <!-- keep by customization: end --> may be prompted to log into Azure if you haven't already done so.
+
+    ![Add Connected Service dialog box - Storage](./media/vs-azure-tools-connected-services-storage/IC796703.png)
+
+1. In the **Azure Storage** dialog box, choose an existing storage account and then click **Add**.
+
+    If you need to create a new storage account, go to the next step. Otherwise, skip to step 6.
+
+    ![Azure Storage dialog box](./media/vs-azure-tools-connected-services-storage/IC796704.png)
+
+1. To create a new storage account: 
+
+    1. Choose the **Create a New Storage Account** button at the bottom of the Azure Storage dialog box.
+
+    1. Fill out the **Create Storage Account** dialog box and then choose the **Create** button.
+    
+        ![Azure Storage dialog box](./media/vs-azure-tools-connected-services-storage/create-storage-account.png)
+
+        When you're back in the **Azure Storage** dialog box, the new storage appears in the list.
+
+    1. Select the new storage in the list and click **Add**.
+
+1. The  storage connected service appears under the Service References node of your WebJob project.
+
+    ![Azure storage in web jobs project](./media/vs-azure-tools-connected-services-storage/IC796705.png)
+
+1. Review the Getting Started page that appears and find out how your project was modified. A Getting Started page appears in your browser whenever you add a connected service. You can review the suggested next steps and code examples, or switch to the What Happened page to see what references were added to your project, and how your code and configuration files were modified.
+
+## How your project is modified
+
+When you finish the dialog, Visual Studio adds references and modifies certain configuration files. The specific changes depend on the project type. 
+
+ - For ASP.NET projects, see [What happened – ASP.NET Projects](/documentation/articles/vs-storage-aspnet-getting-started-blobs/). 
+ - For ASP.NET 5 projects, see [What happened – ASP.NET 5 Projects](/documentation/articles/vs-storage-aspnet5-getting-started-blobs/). 
+ - For cloud service projects (web roles and worker roles), see [What happened – Cloud Service projects](https://azure.microsoft.com/zh-cn/documentation/articles/vs-storage-cloud-services-getting-started-blobs/). 
+<!-- deleted by customization
+ - For WebJob projects, see [What
+happened - WebJob projects](/documentation/articles/vs-storage-webjobs-what-happened).
+-->
+<!-- keep by customization: begin -->
+ - For WebJob projects, see [What happened - WebJob projects](/documentation/articles/vs-storage-webjobs-what-happened).
+<!-- keep by customization: end -->
+
+## Next steps
+
+1. Using the Getting Started code samples as a guide, create the type of storage that you want, and then start writing code to access your storage account!
+
+1. Ask questions and get help
+     - [MSDN Forum: Azure Storage](https://social.msdn.microsoft.com/forums/azure/home?forum=windowsazuredata)
+
+     - [Azure Storage Team Blog](http://blogs.msdn.com/b/windowsazurestorage/)
+
+     - [Storage at azure.microsoft.com](/home/features/storage)
+
+     - [Storage Documentation at azure.microsoft.com](/documentation/services/storage/)
+

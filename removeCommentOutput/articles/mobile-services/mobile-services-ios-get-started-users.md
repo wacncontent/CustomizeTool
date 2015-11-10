@@ -71,11 +71,11 @@ Next, learn [how to use the user ID value to filter returned data](/documentatio
 [Submit an app page]: http://go.microsoft.com/fwlink/p/?LinkID=266582
 [My Applications]: http://go.microsoft.com/fwlink/p/?LinkId=262039
 [Live SDK for Windows]: http://go.microsoft.com/fwlink/p/?LinkId=262253
-[Single sign-on for Windows Store apps by using Live Connect]: /develop/mobile/tutorials/single-sign-on-windows-8-dotnet
-[Mobile Services Quick Start tutorial]: /develop/mobile/tutorials/get-started-ios
-[Get started with data]: /develop/mobile/tutorials/get-started-with-data-ios
-[Get started with authentication]: /develop/mobile/tutorials/get-started-with-users-ios
-[Get started with push notifications]: /develop/mobile/tutorials/get-started-with-push-ios
-[Authorize users with scripts]: /develop/mobile/tutorials/authorize-users-in-scripts-ios
+[Single sign-on for Windows Store apps by using Live Connect]: /documentation/articles/mobile-services-windows-store-dotnet-single-sign-on
+[Mobile Services Quick Start tutorial]: /documentation/articles/mobile-services-ios-get-started
+[Get started with data]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-data-ios
+[Get started with authentication]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-users-ios
+[Get started with push notifications]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-push-ios
+[Authorize users with scripts]: /documentation/articles/mobile-services-ios-authorize-users-in-scripts
 
 [Azure Management Portal]: https://manage.windowsazure.cn/

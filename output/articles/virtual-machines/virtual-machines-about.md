@@ -44,6 +44,6 @@ If you're just starting to learn about Azure virtual machines, be sure to also c
 
 
 <!--links-->
-[Azure Websites]: /documentation/articles/app-service-choose-me
+[Azure Websites]: /documentation/services/web-sites
 [Virtual Machines]: #tellmevm
 [Cloud Services]: /documentation/articles/cloud-services-choose-me
