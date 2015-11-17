@@ -14,16 +14,9 @@
 
 # Integrate Azure AD into an iOS App
 
-<!-- deleted by customization
 [AZURE.INCLUDE [active-directory-devquickstarts-switcher](../includes/active-directory-devquickstarts-switcher.md)]
 
 [AZURE.INCLUDE [active-directory-devguide](../includes/active-directory-devguide.md)]
--->
-<!-- keep by customization: begin -->
-[AZURE.INCLUDE [active-directory-devquickstarts-switcher](../includes/active-directory-devquickstarts-switcher)]
-
-[AZURE.INCLUDE [active-directory-devguide](../includes/active-directory-devguide)]
-<!-- keep by customization: end -->
 
 Azure AD provides the Active Directory Authentication Library, or ADAL, for iOS clients that need to access protected resources.  ADAL’s sole purpose in life is to make it easy for your app to get access tokens.  To demonstrate just how easy it is, here we’ll build a Objective C To-Do List application that:
 
@@ -227,9 +220,4 @@ For reference, the completed sample (without your configuration values) is provi
 
 [Secure a Node.JS Web API with Azure AD >>](/documentation/articles/active-directory-devquickstarts-webapi-nodejst)
 
-<!-- deleted by customization
 [AZURE.INCLUDE [active-directory-devquickstarts-additional-resources](../includes/active-directory-devquickstarts-additional-resources.md)]
--->
-<!-- keep by customization: begin -->
-[AZURE.INCLUDE [active-directory-devquickstarts-additional-resources](../includes/active-directory-devquickstarts-additional-resources)]
-<!-- keep by customization: end -->

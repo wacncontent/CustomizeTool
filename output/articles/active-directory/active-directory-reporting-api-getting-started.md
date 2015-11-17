@@ -69,7 +69,7 @@ The steps below will walk you through obtaining your application's client ID and
 
 
 ## Modify the script
-Edit one of the scripts below to work with your directory by replacing $ClientID, $ClientSecret and $tenantdomain with the correct values from ‚ÄúDelegating Access in Azure AD‚Äù.
+Edit one of the scripts below to work with your directory by replacing $ClientID, $ClientSecret and $tenantdomain with the correct values from <!-- deleted by customization ‚ÄúDelegating --><!-- keep by customization: begin --> °∞Delegating <!-- keep by customization: end --> Access in Azure <!-- deleted by customization AD‚Äù --><!-- keep by customization: begin --> AD°± <!-- keep by customization: end -->.
 
 ### PowerShell Script
 

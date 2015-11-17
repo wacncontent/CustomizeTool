@@ -33,10 +33,15 @@ Before you begin this HBase tutorial, you must have the following:
 
 [AZURE.INCLUDE [provisioningnote](../includes/hdinsight-provisioning.md)]
 
-**To provision an HBase cluster by using the Azure preview portal**
+**To provision an HBase cluster by using the Azure <!-- deleted by customization preview portal** --><!-- keep by customization: begin --> Management Portal** <!-- keep by customization: end -->
 
 
+<!-- deleted by customization
 1. Sign in to the [Azure Preview portal][azure-portal].
+-->
+<!-- keep by customization: begin -->
+1. Sign in to the [Azure Management Portal][azure-portal].
+<!-- keep by customization: end -->
 2. Click **New** in the upper left corner, and then click **Data + Analytics**, **HDInsight**.
 3. Enter the following values:
 
@@ -294,7 +299,7 @@ HBase is an Apache, open-source, NoSQL database built on Hadoop that provides ra
 [hdinsight-versions]: /documentation/articles/hdinsight-component-versioning
 [hbase-twitter-sentiment]: /documentation/articles/hdinsight-hbase-analyze-twitter-sentiment
 [azure-purchase-options]: /pricing/overview/
-[azure-member-offers]: http://azure.microsoft.com/pricing/member-offers/
+[azure-member-offers]: /pricing/member-offers/
 [azure-trial]: /pricing/1rmb-trial/
 [azure-portal]: https://manage.windowsazure.cn/
 [azure-create-storageaccount]: /documentation/articles/storage-create-storage-account/

@@ -18,7 +18,7 @@ The connection path is summarized by the following diagram:
 
 In order to access SQL Server from the internet, the virtual machine must have an endpoint to listen for incoming TCP communication. This Azure configuration step, directs incoming TCP port traffic to a TCP port that is accessible to the virtual machine.
 
->[AZURE.NOTE] If you are connecting within the same cloud service or virtual network, you do not have to create a publically accessible endpoint. In that case, you could continue to the next step. For more information, see [Connection Scenarios](/documentation/articles/virtual-machines-sql-server-connectivity#connection-scenarios).
+>[AZURE.NOTE] If you are connecting within the same cloud service or virtual network, you do not have to create a publically accessible endpoint. In that case, you could continue to the next step. For more information, see <!-- deleted by customization [Connection Scenarios](/documentation/articles/virtual-machines-sql-server-connectivity#connection-scenarios) --><!-- keep by customization: begin --> [Connectivity Considerations for SQL Server in Azure Virtual Machines](https://msdn.microsoft.com/zh-cn/library/azure/dn133152.aspx) <!-- keep by customization: end -->.
 
 1. On the Azure Management Portal, click on **VIRTUAL MACHINES**.
 	

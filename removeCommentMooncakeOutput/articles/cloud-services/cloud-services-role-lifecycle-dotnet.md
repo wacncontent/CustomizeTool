@@ -6,10 +6,10 @@ documentationCenter=".net"
 authors="Thraka" 
 manager="timlt" 
 editor=""/>
-<tags 
-ms.service="cloud-services" 
-ms.date="09/08/2015" 
-wacn.date=""/>
+<tags
+	ms.service="cloud-services"
+	ms.date="09/08/2015"
+	wacn.date=""/>
 
 # Customize the Lifecycle of a Web or Worker role in .NET
 
@@ -71,7 +71,7 @@ Overriding the **Run** method is not required; the default implementation starts
 
 ### Implementing the ASP.NET lifecycle methods for a web role
 
-You can use the ASP.NET lifecycle methods, in addition to those provided by the **RoleEntryPoint** class, to manage initialization and shutdown sequences for a web role. This may be useful for compatibility purposes if you are porting an existing ASP.NET application to Azure. The ASP.NET lifecycle methods are called from within the **RoleEntryPoint** methods. The **Application_Start** method is called after the **RoleEntryPoint.OnStart** method finishes. The **Application_End** method is called before the **RoleEntryPoint.OnStop** method is called.
+You can use the ASP.NET lifecycle methods, in addition to those provided by the **RoleEntryPoint** class, to manage initialization and shutdown sequences for a web role. This may be useful for compatibility purposes if you are porting an existing ASP.NET application to Azure. The ASP.NET lifecycle methods are called from within the **RoleEntryPoint** methods. The **Application\_Start** method is called after the **RoleEntryPoint.OnStart** method finishes. The **Application\_End** method is called before the **RoleEntryPoint.OnStop** method is called.
 
 ## Next steps
 Learn how to [create a cloud service package](/documentation/articles/cloud-services-model-and-package).

@@ -151,7 +151,7 @@ In this article, you have learned how to perform different HDInsight cluster adm
 [azure-command-line-tools]: /documentation/articles/xplat-cli-install
 [azure-create-storageaccount]: /documentation/articles/storage-create-storage-account
 [azure-purchase-options]: /pricing/overview/
-[azure-member-offers]: http://azure.microsoft.com/pricing/member-offers/
+[azure-member-offers]: /pricing/member-offers/
 [azure-trial]: /pricing/1rmb-trial/
 
 

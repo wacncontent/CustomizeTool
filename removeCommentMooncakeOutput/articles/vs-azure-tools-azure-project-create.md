@@ -6,10 +6,10 @@
    authors="kempb"
    manager="douge"
    editor="tlee" />
-<tags 
-   ms.service="multiple"
-   ms.date="08/24/2015"
-   wacn.date="" />
+<tags
+	ms.service="multiple"
+	ms.date="08/24/2015"
+	wacn.date=""/>
 
 # Creating an Azure Project with Visual Studio
 

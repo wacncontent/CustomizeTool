@@ -18,7 +18,7 @@
 
 Windows Azure Media Services enables you to deliver MPEG-DASH protected with Widevine DRM, which is encrypted per the Common Encryption (CENC) specification.
 
->[AZURE.NOTE] Currently, Media Services does not provide a Widevine license server. You can use the following AMS partners to help you deliver Widevine licenses: [Axinom](http://www.axinom.com/press/ibc-axinom-drm-6/), [EZDRM](http://ezdrm.com/), [castLabs](http://castlabs.com/company/partners/azure/)
+>[AZURE.NOTE] Currently, Media Services does not provide a Widevine license server. You can use the following AMS partners to help you deliver Widevine licenses: <!-- deleted by customization [Axinom](http://www.axinom.com/press/ibc-axinom-drm-6/), --> [EZDRM](http://ezdrm.com/), [castLabs](http://castlabs.com/company/partners/azure/)
 
 ##castLabs
 

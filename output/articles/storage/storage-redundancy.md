@@ -8,18 +8,14 @@
   manager="adinah" 
   editor=""/>
 
-<tags 
-  ms.service="storage" 
-  ms.workload="storage" 
-  ms.tgt_pltfrm="na" 
-  ms.devlang="na" 
-  ms.topic="article" 
-  ms.date="10/07/2015" 
-  ms.author="tamram"/>
+<tags
+	ms.service="storage"
+	ms.date="10/07/2015"
+	wacn.date=""/>
 
 # Azure Storage replication
 
-The data in your Windows Azure storage account is always replicated to ensure durability and high availability, meeting the [Azure Storage SLA](http://azure.microsoft.com/support/legal/sla/) even in the face of transient hardware failures.
+The data in your Windows Azure storage account is always replicated to ensure durability and high availability, meeting the [Azure Storage SLA](/support/legal/sla/) even in the face of transient hardware failures.
 
 When you create a storage account, you must select one of the following replication options:  
 
@@ -74,21 +70,23 @@ When you create a storage account, you select the primary region for the account
 | ---------------   |----------------
 |China North   |China East
 |China East   |China North
+<!-- deleted by customization
 |China East            |China North
 |China North            |China East
 |China East 2          |China North
 |China North         |China East 2
 |China North       |West Europe
 |West Europe        |China North
-|South East Asia    |East Asia
-|East Asia          |South East Asia
+|South China East    |China East
+|China East          |South China East
 |East China         |North China
 |North China        |East China
-|Japan East         |Japan West
-|Japan West         |Japan East
+|Japan East         |China East
+|China East         |Japan East
 |Brazil South       |China East
 |Australia East     |Australia Southeast
 |Australia Southeast|Australia East  
+-->
 
 
 ## Read-access geo-redundant storage

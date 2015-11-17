@@ -60,7 +60,7 @@ images on Azure Blob Storage, you can have several benefits:
 **Security:** Your Docker images do not leave Azure datacenters, so they do
   not cross the public Internet as they would if you were using Docker Hub.
   
-**Performance:** Your Docker images are stored <!-- keep by customization: begin --> are stored <!-- keep by customization: end --> within the same
+**Performance:** Your Docker images are stored within the same
 datacenter or region as your applications. This means the images will be
 pulled faster and more reliably compared to Docker Hub.
 

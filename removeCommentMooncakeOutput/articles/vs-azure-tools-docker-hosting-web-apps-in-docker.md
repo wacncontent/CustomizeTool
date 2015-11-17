@@ -7,9 +7,9 @@
    manager="douge"
    editor="tglee" />
 <tags
-   ms.service="multiple"
-   ms.date="08/20/2015"
-   wacn.date="" />
+	ms.service="multiple"
+	ms.date="08/20/2015"
+	wacn.date=""/>
 
 # Hosting Web Apps in Docker
 

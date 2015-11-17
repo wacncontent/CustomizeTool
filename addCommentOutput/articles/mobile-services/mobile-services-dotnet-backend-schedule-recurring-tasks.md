@@ -14,17 +14,9 @@
 
 # Schedule recurring jobs in Mobile Services 
 
-<!-- deleted by customization
 > [AZURE.SELECTOR]
 - [.NET backend](/documentation/articles/mobile-services-dotnet-backend-schedule-recurring-tasks)
 - [Javascript backend](/documentation/articles/mobile-services-schedule-recurring-tasks)
--->
-<!-- keep by customization: begin -->
-> [AZURE.SELECTOR-LIST (Platform | Backend)]
-- [(Any | .NET)](/documentation/articles/mobile-services-dotnet-backend-schedule-recurring-tasks)
-- [(Any | Javascript)](/documentation/articles/mobile-services-schedule-recurring-tasks)
-
-<!-- keep by customization: end -->
  
 This topic shows you how to use the job scheduler functionality in the Management Portal to define server script code that is executed based on a schedule that you define. In this case, the script periodically check with a remote service, in this case Twitter, and stores the results in a new table. Some other periodic tasks that can be scheduled include:
 
@@ -250,6 +242,7 @@ The job must be registered in the **Scheduler** tab so that Mobile Services can 
 3. Republish the mobile service project to Azure. 
 
 4. In the [Azure Management Portal], click Mobile Services, and then click your app.
+
 2. Click the **Scheduler** tab, then click **+Create**. 
 
     >[AZURE.NOTE]When you run your mobile service in <em>Free</em> tier, you are only able to run one scheduled job at a time. In paid tiers, you can run up to ten scheduled jobs at a time.

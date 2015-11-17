@@ -9,9 +9,10 @@
 	tags="azure-resource-manager"/>
 
 <tags
-	ms.service="Batch"
+	ms.service="batch"
 	ms.date="10/12/2015"
 	wacn.date=""/>
+
 # Query the Azure Batch service efficiently
 
 In this article you will learn how to reduce the number of items and amount of data returned when using the [Batch .NET][api_net] API  to query the Batch service for lists of jobs, tasks, compute nodes, and more.

@@ -24,29 +24,19 @@ Dynamic demand is a reality for today's applications. From seasonal and variable
 - [Customer stories](https://customers.microsoft.com/Pages/Home.aspx)
  
 ## Build
-<!-- deleted by customization
 
 - [How to use Service Bus queues](/documentation/articles/service-bus-dotnet-how-to-use-queues) 
--->
-<!-- keep by customization: begin -->
-- [How to use Service Bus Queues](/documentation/articles/service-bus-dotnet-how-to-use-queues/) 
-<!-- keep by customization: end -->
 - [Deadlettering in Service Bus Brokered Messaging (October 21 2011 blog post)](http://geekswithblogs.net/asmith/articles/147398.aspx) 
 - [Best practices for insulating Service Bus applications against Service Bus outages and disasters](/documentation/articles/service-bus-outages-disasters)
 - [Brokered Messaging: Request Response sample](https://code.msdn.microsoft.com/Brokered-Messaging-Request-0ce8fcaf) 
 - [Multi-Tier application with Azure Service Bus](/documentation/articles/service-bus-dotnet-multi-tier-app-using-service-bus-queues)
  
 ## Popular
+
 - [Azure Queues and Azure Service Bus Queues - compared and contrasted](/documentation/articles/service-bus-azure-and-service-bus-queues-compared-contrasted)
 - [Service Bus REST API Reference](http://msdn.microsoft.com/zh-cn/library/azure/hh780717.aspx)
 
 ## Related services
-<!-- deleted by customization
 
 - [Cloud Services](/home/features/cloud-services/) 
  
--->
-<!-- keep by customization: begin -->
-- [Cloud Services](/home/features/cloud-services/) 
-
-<!-- keep by customization: end -->

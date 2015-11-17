@@ -8,9 +8,9 @@
    editor=""/>
 
 <tags
-   ms.service="active-directory"
-   ms.date="09/21/2015"
-   wacn.date=""/>
+	ms.service="active-directory"
+	ms.date="09/21/2015"
+	wacn.date=""/>
 
 #Manage the directory for your Office 365 subscription in Azure
 

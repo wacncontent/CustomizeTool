@@ -9,9 +9,9 @@
   tags="azure-service-management,azure-resource-manager" />
 
 <tags
-  ms.service="virtual-machines"
-  ms.date="06/17/2015" 
-  wacn.date="" />
+	ms.service="virtual-machines"
+	ms.date="06/17/2015"
+	wacn.date=""/>
 
 # Deploying Your Own Private Docker Registry on Azure
 
@@ -54,7 +54,7 @@ images on Azure Blob Storage, you can have several benefits:
 **Security:** Your Docker images do not leave Azure datacenters, so they do
   not cross the public Internet as they would if you were using Docker Hub.
   
-**Performance:** Your Docker images are stored are stored within the same
+**Performance:** Your Docker images are stored within the same
 datacenter or region as your applications. This means the images will be
 pulled faster and more reliably compared to Docker Hub.
 

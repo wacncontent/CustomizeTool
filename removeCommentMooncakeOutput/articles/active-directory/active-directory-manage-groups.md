@@ -8,10 +8,10 @@
 	editor=""
 	tags="azure-classic-portal"/>
 
-<tags 
-	ms.service="active-directory" 
-	ms.date="08/14/2015" 
-	wacn.date="" />
+<tags
+	ms.service="active-directory"
+	ms.date="08/14/2015"
+	wacn.date=""/>
 
 
 # Managing access to resources with Azure Active Directory groups

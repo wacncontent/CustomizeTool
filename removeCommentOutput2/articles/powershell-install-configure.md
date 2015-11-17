@@ -16,7 +16,7 @@
 
 <div class="dev-center-tutorial-selector sublanding"><a href="/documentation/articles/install-and-configure-windows-powershell/" title="PowerShell" class="current">PowerShell</a><a href="/documentation/articles/xplat-cli-install/" title="Azure CLI">Azure  CLI</a></div>
 
-> [AZURE.NOTE] **Azure PowerShell 1.0 Preview** is now available on [PowerShell Gallery](http://www.powershellgallery.com/). There are many changes in this preview and we'd like to use it to gather feedback, which we'll incorporate into Azure PowerShell 1.0. **This preview is not intended for mission critical applications**. If you are running such applications, please continue to use Azure PowerShell 0.9.8. If you would like to use 1.0 Preview, you can uninstall it at any point and go back to 0.9.8. For complete installation instructions, see this [blog post](https://azure.microsoft.com/blog/azps-1-0-pre/).
+> [AZURE.NOTE] **Azure PowerShell 1.0 Preview** is now available on [PowerShell Gallery](http://www.powershellgallery.com/). There are many changes in this preview and we’d like to use it to gather feedback, which we’ll incorporate into Azure PowerShell 1.0. **This preview is not intended for mission critical applications**. If you are running such applications, please continue to use Azure PowerShell 0.9.8. If you would like to use 1.0 Preview, you can uninstall it at any point and go back to 0.9.8. For complete installation instructions, see this [blog post](https://azure.microsoft.com/blog/azps-1-0-pre/).
 
 You can use Windows PowerShell to perform a variety of tasks in Azure, either interactively at a command prompt or automatically through scripts. Azure PowerShell is a module that provides cmdlets to manage Azure through Windows PowerShell. You can use the cmdlets to create, test, deploy, and manage solutions and services delivered through the Azure platform. In most cases, you can use the cmdlets to perform the same tasks that you can perform through the Azure Management Portal. For example, you can create and configure cloud services, virtual machines, virtual networks, and web apps.
 
@@ -40,7 +40,7 @@ You can download and install the Azure PowerShell modules by running the [Micros
 > [AZURE.NOTE] If you just want to download the PowerShell installer, please visit https://github.com/Azure/azure-powershell/releases.
 Source code for the PowerShell cmdlets can be found at this repo as well
 
-For more information about the command-line tools available for Azure, see [Command-line tools](/downloads/).
+For more information about the command-line tools available for Azure, see [Command-line tools]( /downloads/).
 
 Installing the module also installs a customized console for Azure PowerShell. You can run the cmdlets from either the standard Windows PowerShell console or the Azure PowerShell console.
 
@@ -53,7 +53,7 @@ The method you use to open either console depends on the version of Windows you'
 <a id="Connect"></a>
 ## How to: Connect to your subscription
 
-Use of Azure requires a subscription. If you don't have a subscription, see [Get Started with Azure](/pricing/overview).
+Use of Azure requires a subscription. If you don't have a subscription, see [Get Started with Azure](/pricing/overview/).
 
 The cmdlets need your subscription so they can manage your services. There are two ways to provide your subscription information to Windows PowerShell. You can use a management certificate that contains the information or you can sign in to Azure using your Microsoft account or a work or school account. When you sign in, Azure Active Directory (Azure AD) authenticates the credentials and returns an access token that lets Azure PowerShell manage your account.
 
@@ -103,7 +103,7 @@ For more information about authentication and subscription management in Azure, 
 
 The Azure module includes cmdlets that help you download and import the certificate.
 
-> [AZURE.NOTE] The cmdlets in the AzureResourceManager module require the Azure AD method (Add-AzureAccount). These cmdlets do not support publish settings files. For more information about the cmdlets in the AzureResourceManager module, see [Azure Resource Manager Cmdlets](https://msdn.microsoft.com/zh-cn/library/azure/dn708504.aspx).
+> [AZURE.NOTE] The cmdlets in the AzureResourceManager module require the Azure AD method (Add-AzureAccount). These cmdlets do not support publish settings files. For more information about the cmdlets in the AzureResourceManager module, see [Azure Resource Manager Cmdlets](https://msdn.microsoft.com/zh-cn/library/azure/mt125356.aspx).
 
 
 - The **Get-AzurePublishSettingsFile** cmdlet opens a web page on the
@@ -116,7 +116,7 @@ download the subscription information. The information is contained in a .publis
 downloaded using <b>Get-AzurePublishSettingsFile</b> after you import those
 settings. Because the management certificate includes security credentials, it
 should not be accessed by unauthorized users. If you need information
-about your subscriptions, you can get it from the [Azure Management Portal](http://manage.windowsazure.cn/).
+about your subscriptions, you can get it from the [Azure Management Portal](http://manage.windowsazure.cn/) or the [Microsoft Online Services Customer Portal](http://go.microsoft.com/fwlink/p/?LinkId=324875).
 
 1. Sign in to the [Azure Management Portal](http://manage.windowsazure.cn) using the credentials for your Azure account.
 
@@ -245,7 +245,7 @@ These resources provide help for specific cmdlets:
 
 For help from the community, try these popular forums:
 
-- [Azure forum on MSDN](https://social.msdn.microsoft.com/Forums/azure/zh-CN/home?forum=windowsazurezhchs)
+- [Azure forum on MSDN]( https://social.msdn.microsoft.com:443/forums/azure/zh-cn/home?category=windowsazureplatform%2Cazuremarketplace%2Cwindowsazureplatformctp)
 - [Stackoverflow](http://stackoverflow.com/questions/tagged/azure)
 
 
@@ -257,7 +257,7 @@ These are some of the resources available that you can use to learn to use Azure
 
 - To provide feedback about the cmdlets, report issues, or access the source code, see [Azure PowerShell code repository](https://github.com/WindowsAzure/azure-sdk-tools).
 
-- To learn about the Windows PowerShell command line and scripting environment, see the [TechNet Script Center](https://technet.microsoft.com/zh-cn/scriptcenter/powershell.aspx).
+- To learn about the Windows PowerShell command line and scripting environment, see the [TechNet Script Center](https://technet.microsoft.com/zh-cn/scriptcenter/dd742419).
 
 - For information about installing, learning, using, and customizing Windows PowerShell, see [Scripting with Windows PowerShell](https://technet.microsoft.com/zh-cn/library/bb978526.aspx).
 

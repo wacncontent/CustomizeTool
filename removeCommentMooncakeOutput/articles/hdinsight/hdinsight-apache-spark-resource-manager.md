@@ -1,7 +1,7 @@
 <!-- not suitable for Mooncake -->
 
 <properties 
-	pageTitle="Use Resource Manager to allocate resources to the Apache Spark cluster in HDInsight| Azure" 
+	pageTitle="Use Resource Manager to allocate resources to the Apache Spark cluster in HDInsight| Windows Azure" 
 	description="Learn how to use the Resource Manager for Spark clusters on HDInsight for better performance." 
 	services="hdinsight" 
 	documentationCenter="" 
@@ -10,9 +10,9 @@
 	editor="cgronlun"
 	tags="azure-portal"/>
 
-<tags 
-	ms.service="hdinsight" 
-	ms.date="07/31/2015" 
+<tags
+	ms.service="hdinsight"
+	ms.date="07/31/2015"
 	wacn.date=""/>
 
 
@@ -22,9 +22,11 @@ Resource manager is a component of the Spark cluster dashboard that enables you 
 
 ## <a name="launchrm"></a>How do I launch the Resource Manager?
 
-1. Select your Spark cluster on the Azure Management Portal, and from the portal task bar at the bottom, click **Spark Dashboard**.
+1. From the [Azure Preview Portal](https://manage.windowsazure.cn/), from the startboard, click the tile for your Spark cluster (if you pinned it to the startboard). You can also navigate to your cluster under **Browse All** > **HDInsight Clusters**. 
+ 
+2. From the Spark cluster blade, click **Dashboard**. When prompted, enter the admin credentials for the Spark cluster.
 
-2. From the top pane in the dashboard, click the **Resource Manager** tab.  
+	![Launch Resource Manager](./media/hdinsight-apache-spark-resource-manager/HDI.Cluster.Launch.Dashboard.png "Start Resource Manager")   
 
 ##<a name="scenariosrm"></a>How do I fix these issues using the Resource Manager?
 
@@ -70,7 +72,10 @@ Specify thrift server core Count and thrift Server executor memory as 0. With no
 [hdinsight-versions]: /documentation/articles/hdinsight-component-versioning
 [hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
 [hdinsight-storage]: /documentation/articles/hdinsight-use-blob-storage
-[azure-purchase-options]: http://www.windowsazure.cn/pricing/overview/
-[azure-trial]: http://www.windowsazure.cn/pricing/1rmb-trial/
+
+
+[azure-purchase-options]: /pricing/overview/
+[azure-member-offers]: /pricing/member-offers/
+[azure-trial]: /pricing/1rmb-trial/
 [azure-management-portal]: https://manage.windowsazure.cn/
 [azure-create-storageaccount]: /documentation/articles/storage-create-storage-account

@@ -13,7 +13,7 @@
 	wacn.date=""/>
 
 # Enabling Azure AD Application Proxy
-> [AZURE.NOTE] Application Proxy is a feature that is available only if you upgraded to the Premium or Basic edition of Azure Active Directory. For more information, see [Azure Active Directory <!-- deleted by customization editions](/documentation/articles/active-directory-editions) --><!-- keep by customization: begin --> editions](https://msdn.microsoft.com/zh-cn/library/azure/dn532272.aspx) <!-- keep by customization: end -->.
+> [AZURE.NOTE] Application Proxy is a feature that is available only if you upgraded to the Premium or Basic edition of Azure Active Directory. For more information, see [Azure Active Directory editions](/documentation/articles/active-directory-editions).
 
 Windows Azure AD Application Proxy lets you publish applications, such as SharePoint sites, Outlook Web Access and IIS-based apps, inside your private network and provides secure access to users outside your network. Employees can log into your apps from home, on their own devices and authenticate through this cloud-based proxy
 
@@ -45,12 +45,7 @@ If your firewall enforces traffic according to originating users, open these por
 2. Go to Active Directory and select the directory in which you want to enable Application Proxy.
 3. Click Configure, scroll down to Application Proxy and toggle Enable Application Proxy Services for this Directory to Enabled.
 
-<!-- deleted by customization
 	![Enable Application Proxy](./media/active-directory-application-proxy-enable/app_proxy_enable.png) <p>
--->
-<!-- keep by customization: begin -->
-	![Enable Application Proxy](http://i.imgur.com/87woFzq.png) <p>
-<!-- keep by customization: end -->
 4. Click Download now at the bottom of the screen. This will take you to the download page. Read and accept the license terms and click Download to save the Windows Installer file (.exe) for the Application Proxy Connector. 
 
 ##Step 2: Install and register the Connector
@@ -63,12 +58,7 @@ If your firewall enforces traffic according to originating users, open these por
 - If Connector registration does not succeed, see Troubleshoot Application Proxy.
 
 4. When the installation completes, two new services are added to your server, as shown below. These are the Connector service, which enables connectivity, and an automated update service, which periodically checks for new versions of the Connector and updates the Connector as needed. Click Finish in the installation window to complete installation
-<!-- deleted by customization
 	![Application Proxy Connector Service!](./media/active-directory-application-proxy-enable/app_proxy_services.png) <p>
--->
-<!-- keep by customization: begin -->
-	![Application Proxy Connector Service](http://i.imgur.com/zsVJKOz.png) <p>
-<!-- keep by customization: end -->
 5. You are now ready to Publish applications with Application Proxy.
 
 If you want to uninstall the Connector, after uninstalling the Connector service and the Updater service, make sure to restart your computer to fully remove the service.
@@ -76,7 +66,6 @@ If you want to uninstall the Connector, after uninstalling the Connector service
 
 
 
-<!-- deleted by customization
 ## See also
 There's a lot more you can do with Application Proxy:
 
@@ -92,14 +81,8 @@ There's a lot more you can do with Application Proxy:
 - [Check out the Application Proxy blog](http://blogs.technet.com/b/applicationproxyblog/)
 - [Watch our videos on Channel 9!](http://channel9.msdn.com/events/Ignite/2015/BRK3864)
 
--->
 ## Additional resources
 
-* [Sign up for Azure as an <!-- deleted by customization organization](..sign-up-organization.md) --><!-- keep by customization: begin --> organization](/documentation/articles/sign-up-organization) <!-- keep by customization: end -->
-<!-- deleted by customization
-* [Azure Identity](..fundamentals-identity.md)
-* [Publish Applications with Application Proxy](/documentation/articles/active-directory-application-proxy-publish)
--->
-<!-- keep by customization: begin -->
+* [Sign up for Azure as an organization](/documentation/articles/sign-up-organization)
 * [Azure Identity](/documentation/articles/fundamentals-identity)
-<!-- keep by customization: end -->
+* [Publish Applications with Application Proxy](/documentation/articles/active-directory-application-proxy-publish)

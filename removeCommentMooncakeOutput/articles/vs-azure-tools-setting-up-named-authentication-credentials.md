@@ -7,9 +7,9 @@
    manager="douge"
    editor="tglee" />
 <tags
-   ms.service="multiple"
-   ms.date="09/02/2015"
-   wacn.date="" />
+	ms.service="multiple"
+	ms.date="09/02/2015"
+	wacn.date=""/>
 
 # Setting Up Named Authentication Credentials
 

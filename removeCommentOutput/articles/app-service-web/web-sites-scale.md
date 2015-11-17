@@ -160,7 +160,9 @@ Depending on the web app's mode, the following developer-oriented features are a
 	
 	[Azure Websites Pricing Details](/home/features/web-site/#price)
 	
-	[Azure Websites Pricing Details - SSL Connections](/home/features/web-site/#price//blogs.msdn.com/b/windowsazure/archive/2014/02/10/best-practices-windows-azure-websites-waws.aspx).
+	[Azure Websites Pricing Details - SSL Connections](/home/features/web-site/#price)
+
+- For information on Azure Websites best practices, including building a scalable and resilient architecture, see [Best Practices: Azure Websites](http://blogs.msdn.com/b/windowsazure/archive/2014/02/10/best-practices-windows-azure-websites-waws.aspx).
 
 - Videos on scaling Web Apps:
 	

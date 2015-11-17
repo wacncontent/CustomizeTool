@@ -24,11 +24,21 @@ from Node.js applications. The scenarios covered include **sending notifications
 
 Azure Notification Hubs provide an easy-to-use, multiplatform, scalable infrastructure for sending push notifications to mobile devices. For more information, see [Azure Notification Hubs](http://msdn.microsoft.com/zh-cn/library/azure/jj927170.aspx).
 
+<!-- deleted by customization
 ##Create a Node.js Application
+-->
+<!-- keep by customization: begin -->
+##<a id="create"></a> Create a Node.js Application
+<!-- keep by customization: end -->
 
 Create a blank Node.js application. For instructions creating a Node.js application, see [Create and deploy a Node.js application to Azure Web Site][nodejswebsite], [Node.js Cloud Service][Node.js Cloud Service] (using Windows PowerShell), or [Web Site with WebMatrix].
 
+<!-- deleted by customization
 ##Configure Your Application to Use Notification Hub
+-->
+<!-- keep by customization: begin -->
+##<a id="config"></a> Configure Your Application to Use Notification Hub
+<!-- keep by customization: end -->
 
 To use Azure Notification Hub, you need to download and use the
 Node.js azure package. This includes a set of convenience libraries that
@@ -54,7 +64,7 @@ communicate with the REST services.
 		|-- request@2.16.6 (forever-agent@0.2.0, aws-sign@0.2.0, tunnel-agent@0.2.0, oauth-sign@0.2.0, json-stringify-safe@3.0.0, cookie-jar@0.2.0, node-uuid@1.4.0, qs@0.5.5, hawk@0.10.2, form-data@0.0.7)
 
 3.  You can manually run the **ls** or **dir** command to verify that a
-    **node_modules** folder was created. Inside that folder find the
+    **node\_modules** folder was created. Inside that folder find the
     **azure** package, which contains the libraries you need to access
     Notification Hub.
 
@@ -86,7 +96,12 @@ The connection **connectionstring** value can be obtained from the Azure Managem
 
 </div>
 
+<!-- deleted by customization
 ##How to send notifications
+-->
+<!-- keep by customization: begin -->
+##<a id="send"></a> How to send notifications
+<!-- keep by customization: end -->
 
 The **NotificationHubService** object exposes the following object instances for sending notifications to specific devices and applications:
 
@@ -182,7 +197,12 @@ The following code uses the **WnsService** instance exposed by the **Notificatio
 	  }
 	});
 
+<!-- deleted by customization
 ## Next Steps
+-->
+<!-- keep by customization: begin -->
+##<a id="next"></a> Next Steps
+<!-- keep by customization: end -->
 
 Now that you've learned the basics of using Notification Hub, follow these
 links to learn more.

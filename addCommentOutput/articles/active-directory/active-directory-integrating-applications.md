@@ -13,12 +13,7 @@
 
 # Integrating Applications with Azure Active Directory
 
-<!-- deleted by customization
 [AZURE.INCLUDE [active-directory-devguide](../includes/active-directory-devguide.md)]
--->
-<!-- keep by customization: begin -->
-[AZURE.INCLUDE [active-directory-devguide](../includes/active-directory-devguide)]
-<!-- keep by customization: end -->
 
 Enterprise developers and software-as-a-service (SaaS) providers can develop commercial cloud services or line of business applications that can be integrated with Azure Active Directory (Azure AD) to provide secure sign in and authorization for their services. To integrate an application or service with Azure AD, a developer must first register the details about their application with Azure AD by using the Azure Management Portal.
 
@@ -126,7 +121,7 @@ You can develop a web API and make it available to other organizations by exposi
 
 		"oauth2Permissions": [
 		{
-			"adminConsentDescription": "Allow the application full access to the Todo List service on behalf of the signed-in user",
+			"adminConsentDescription": "Allow the application full access to the Todo List service on behalf of the signed-in 	user",
 			"adminConsentDisplayName": "Have full access to the Todo List service",
 			"id": "b69ee3c9-c40d-4f2a-ac80-961cd1534e40",
 			"isEnabled": true,

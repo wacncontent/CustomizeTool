@@ -12,6 +12,7 @@
 	ms.date="08/25/2015"
 	wacn.date=""/>
 #Manage virtual machine extensions
+
 Describes how to find, add, modify, or remove VM Extensions with either Windows or Linux Virtual Machines on Azure.
 <!-- deleted by customization
 
@@ -28,6 +29,7 @@ Azure VM Extensions implement behaviors or features that either help other progr
 The most common tasks are:
 
 1.  Finding Available Extensions
+
 2.  Updating Loaded Extensions
 
 3.  Adding Extensions
@@ -56,6 +58,7 @@ You can use the following cmdlets to obtain information about available extensio
 
      For example, the following code example shows how to list the
     information for the **IaaSDiagnostics** extension using PowerShell.
+
         PS C:\PowerShell> Get-AzureVMAvailableExtension -ExtensionName IaaSDiagnostics
         VERBOSE: 5:09:01 PM - Begin Operation: Get-AzureVMAvailableExtension
         VERBOSE: 5:09:06 PM - Completed Operation: Get-AzureVMAvailableExtension

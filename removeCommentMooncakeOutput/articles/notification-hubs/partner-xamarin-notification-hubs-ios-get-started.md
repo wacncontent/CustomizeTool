@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="notification-hubs"
-	ms.date="07/28/2015"
+	ms.date="10/19/2015"
 	wacn.date=""/>
 
 # Get started with Notification Hubs
@@ -66,66 +66,66 @@ Next, register your app with Apple, enable push notifications, and upload this e
 
 ##<a name="register"></a>Register your app for push notifications
 
-To be able to send push notifications to an iOS app from mobile services, you must register your application with Apple and also register for push notifications.  
+To be able to send push notifications to an iOS app from Mobile Services, you must register your application with Apple and also register for push notifications.  
 
 1. If you have not already registered your app, navigate to the <a href="https://idmsa.apple.com/IDMSWebAuth/login?&appIdKey=891bd3417a7776362562d2197f89480a8547b108fd934911bcbea0110d07f757&path=%2F%2Faccount%2Foverview.action" target="_blank">iOS Provisioning Portal</a> at the Apple Developer Center, sign in with your Apple ID, click **Identifiers**, click **App IDs**, and finally click the **+** sign to register a new app.
 
-   	![][105] 
+   	![][105]
 
-2. Type a name for your app in **Description** and a value for **Bundle Identifier**, check the **Push Notifications** option in the **Azure Websites** section, and then click **Continue**.
+2. Type a name for your app in **Description** and a value for **Bundle Identifier**, check the **Push Notifications** option in the **App Services** section, and then click **Continue**.
 
    	![][106]
 
-   	![][107] 
+   	![][107]
 
    	![][108]
-   
+
 
 	This generates your app ID and requests that you submit the information. Click **Submit**.
-   
-   	![][109] 
-   
+
+   	![][109]
+
 	Once you click **Submit**, you will see the **Registration complete** screen, as shown below. Click **Done**.
-   
+
    	![][110]
 
 	> [AZURE.NOTE] If you choose to supply a **Bundle Identifier** value other than **MobileServices.Quickstart**, you must also update the bundle identifier value in your Xcode project.
 
-3. Locate the app ID that you just created, and click on its row. 
+3. Locate the app ID that you just created, and click its row.
 
    	![][111]
-   
-	Clicking on the app ID will display details about the app and the app ID:
-   
-   	![][112] 
-   
+
+	Clicking the app ID will display details about the app and the app ID:
+
+   	![][112]
+
    	![][113]
 
 4. Click **Edit**, and then scroll to the bottom of the screen and click **Create Certificate...** under the section **Development Push SSL Certificate**.
 
-   	![][114] 
+   	![][114]
 
-	This displays the "Add iOS Certificate" assistant.
-   
-   	![][115] 
+	This displays the Add iOS Certificate assistant.
 
-	> [AZURE.NOTE] This tutorial uses a development certificate. The same process is used when registering a production certificate. Just make sure that you set the same certificate type when you upload the certificate to Mobile Services.
+   	![][115]
 
-5. Click **Choose File**, browse to the location in which you saved the CSR file that you created in the first task, and then click **Generate**. 
+	> [AZURE.NOTE] This tutorial uses a development certificate. The same process is used for registering a production certificate. Just make sure that you set the same certificate type when you upload the certificate to Mobile Services.
+
+5. Click **Choose File**, browse to the location in which you saved the CSR file that you created in the first task, and then click **Generate**.
 
   	![][116]
-  
+
 6. After the certificate is created by the portal, click **Download**, and then click **Done**.
- 
+
   	![][118]
 
   	![][119]  
-  
-   	This downloads the signing certificate and saves it to your computer in your **Downloads** folder. 
 
-  	![][9] 
+   	This downloads the signing certificate and saves it to your computer in your **Downloads** folder.
 
-    > [AZURE.NOTE] By default, the downloaded file a development certificate is named **aps_development.cer**.
+  	![][9]
+
+    > [AZURE.NOTE] By default, the downloaded file for a development certificate is named **aps_development.cer**.
 
 7. Double-click the downloaded push certificate **aps_development.cer**.
 
@@ -133,14 +133,14 @@ To be able to send push notifications to an iOS app from mobile services, you mu
 
    	![][10]
 
-	> [WACN.NOTE]
+	> [AZURE.NOTE]
 	> The name in your certificate might be different, but it will be prefixed with <strong>Apple Development iOS Push Notification Services:</strong>.
 
-	Later, you will use this certificate to generate a .p12 file and upload it to your notification hub to enable push notifications through APNS.
+	Later, you will use this certificate to generate a .p12 file and upload it to your notification hub to enable push notifications through APNs.
 
 ##<a name="profile"></a>Create a provisioning profile for the app
 
-1. Back in the <a href="https://idmsa.apple.com/IDMSWebAuth/login?&appIdKey=891bd3417a7776362562d2197f89480a8547b108fd934911bcbea0110d07f757&path=%2F%2Faccount%2Foverview.action" target="_blank">iOS Provisioning Portal</a>, select **Provisioning Profiles**, select **All**, and then click the **+** button to create a new profile. This displays the **Add iOS Provisioning Profile** Wizard.
+1. Back in the <a href="https://idmsa.apple.com/IDMSWebAuth/login?&appIdKey=891bd3417a7776362562d2197f89480a8547b108fd934911bcbea0110d07f757&path=%2F%2Faccount%2Foverview.action" target="_blank">iOS Provisioning Portal</a>, select **Provisioning Profiles**, select **All**, and then click the **+** button to create a new profile. This displays the **Add iOS Provisioning Profile** wizard.
 
    	![][120]
 
@@ -148,29 +148,29 @@ To be able to send push notifications to an iOS app from mobile services, you mu
 
    	![][121]
 
-3. Next, select the app ID for the Mobile Services Quickstart app from the **App ID** drop-down list, and click **Continue**.
+3. Select the app ID for the Mobile Services Quickstart app from the **App ID** drop-down list, and click **Continue**.
 
    	![][122]
 
-4. In the **Select certificates** screen, select the certificate you created earlier, and click **Continue**.
-  
+4. In the **Select certificates** screen, select the certificate that you created earlier, and click **Continue**.
+
    	![][123]
 
-5. Next, select the **Devices** to use for testing, and click **Continue**.
+5. Select the devices to use for testing, and click **Continue**.
 
    	![][124]
 
 6. Finally, choose a name for the profile in **Profile Name**, click **Generate**, and click **Done**.
 
    	![][125]
-   
+
    	![][126]
-	
+
   	This creates a new provisioning profile.
 
-7. In Xcode, open the Organizer, select the Devices view, select **Provisioning Profiles** in the **Library** section in the left pane, and import the provisioning profile you just created.
+7. In Xcode, open the Organizer, select the Devices view, select **Provisioning Profiles** in the **Library** section in the left pane, and import the provisioning profile that you just created.
 
-8. On the left, select your device, and again import the provisioning profile. 
+8. On the left, select your device, and again import the provisioning profile.
 
 9. In Keychain Access, right-click the new certificate, click **Export**, type a name for your certificate, select the **.p12** format, and then click **Save**.
 
@@ -180,15 +180,15 @@ To be able to send push notifications to an iOS app from mobile services, you mu
 
 This ensures that the Xcode project uses the new profile for code signing. Next, you must upload the certificate to your notification hub.
 
-##<a name="configure-hub"></a>Configure your Notification Hub
+##<a name="configure-hub"></a>Configure your notification hub
 
 1. Sign in to the [Azure Management Portal], and click **+NEW** at the bottom of the screen.
 
-2. Click **Azure Websites**, click **Service Bus**, click **Notification Hub**, and then click **Quick Create**.
+2. Click **App Services**, click **Service Bus**, click **Notification Hub**, and then click **Quick Create**.
 
    	![][27]
 
-3. Type a name for your notification hub, select your desired region, and then click **Create a new Notification Hub**.
+3. Type a name for your notification hub, select your desired region, and then click **Create a New Notification Hub**.
 
    	![][28]
 
@@ -200,7 +200,7 @@ This ensures that the Xcode project uses the new profile for code signing. Next,
 
    	![][210]
 
-6. Select the **Configure** tab at the top, and then click **Upload** for the Apple notification settings. Then select the **.p12** certificate you exported earlier, and the password for the certificate. Make sure to select whether you want to use the **Production** (if you want to send push notifications to users that purchased your app from the store) or the **Sandbox** (during development) push service.
+6. Select the **Configure** tab at the top, and then click **Upload** for the Apple notification settings. Then select the **.p12** certificate that you exported earlier, along with the password for the certificate. Make sure to select whether you want to use the **Production** (if you want to send push notifications to users who purchased your app from the store) or the **Sandbox** (during development) push service.
 
    	![][211]
 
@@ -212,22 +212,13 @@ Your notification hub is now configured to work with APNs, and you have the conn
 
 ##<a name="connecting-app"></a>Connect your app to the notification hub
 
-### Download the WindowsAzure.Messaging library
-
-This assembly provides an easy way to register with Azure Notification Hubs. It can be downloaded using the instructions below or found in the [sample download][GitHub].
-
-1. Download the source for [WindowsAzure.Messaging] from GitHub.
-
-2. Compile the project and find the output assembly **WindowsAzure.Messaging.dll** - this will be required when setting up your Xamarin.iOS application below.
-
-
 ### Create a new project
 
 1. In Xamarin Studio, create a new iOS project and select the **Unified API** > **Single View Application** template.
 
    	![][31]
 
-2. First add a reference to the Azure Messaging component. In the Solution view, right click on the **Components** folder for your project and choose **Get More Components**. Search for the **Azure Messaging** component and add the component to your project.
+2. Add a reference to the Azure Messaging component. In the Solution view, right-click the **Components** folder for your project and choose **Get More Components**. Search for the **Azure Messaging** component and add the component to your project.
 
 3. In **AppDelegate.cs**, add the following using statement:
 
@@ -239,12 +230,12 @@ This assembly provides an easy way to register with Azure Notification Hubs. It 
 
 5. Create a **Constants.cs** class with the following variables:
 
-        // Azure app specific connection string and hub path
+        // Azure app-specific connection string and hub path
         public const string ConnectionString = "<Azure connection string>";
         public const string NotificationHubPath = "<Azure hub path>";
 
 
-6. In **AppDelegate.cs** update the **FinishedLaunching()** to match the following:
+6. In **AppDelegate.cs**, update **FinishedLaunching()** to match the following:
 
         public override bool FinishedLaunching(UIApplication application, NSDictionary launchOptions)
         {
@@ -297,10 +288,10 @@ This assembly provides an easy way to register with Azure Notification Hubs. It 
 
                 //Extract the alert text
                 // NOTE: If you're using the simple alert by just specifying
-                // "  aps:{alert:"alert msg here"}  " this will work fine.
+                // "  aps:{alert:"alert msg here"}  ", this will work fine.
                 // But if you're using a complex alert with Localization keys, etc.,
                 // your "alert" object from the aps dictionary will be another NSDictionary.
-                // Basically the json gets dumped right into a NSDictionary,
+                // Basically the JSON gets dumped right into a NSDictionary,
                 // so keep that in mind.
                 if (aps.ContainsKey(new NSString("alert")))
                     alert = (aps [new NSString("alert")] as NSString).ToString();
@@ -319,30 +310,30 @@ This assembly provides an easy way to register with Azure Notification Hubs. It 
             }
         }
 
-    > [AZURE.NOTE] You can choose to override **FailedToRegisterForRemoteNotifications()** to handle situations including no network connection, etc.
+    > [AZURE.NOTE] You can choose to override **FailedToRegisterForRemoteNotifications()** to handle situations such as no network connection.
 
 
 10. Run the app on your device.
 
-##<a name="send"></a>Send notification from your back-end
+##<a name="send"></a>Send notifications from your backend
 
-You can send notifications using Notification Hubs from any back-end using our <a href="http://msdn.microsoft.com/zh-cn/library/azure/dn223264.aspx">REST interface</a>. In this tutorial we will send notifications with a .NET console app, and with a Mobile Service using a node script.
+You can send notifications by using Notification Hubs from any backend via our <a href="http://msdn.microsoft.com/zh-cn/library/azure/dn223264.aspx">REST interface</a>. In this tutorial, we will send notifications by using a .NET console app and by using a mobile service through a node script.
 
-To send notifications using a .NET app:
+To send notifications by using a .NET app:
 
-1. Create a new Visual C# console application: 
+1. Create a new Visual C# console application:
 
    	![][213]
 
 2. Add a reference to the Azure Service Bus SDK by using the <a href="http://nuget.org/packages/WindowsAzure.ServiceBus/">WindowsAzure.ServiceBus NuGet package</a>. In the Visual Studio main menu, click **Tools**, click **Library Package Manager**, and then click **Package Manager Console**. Then, in the console window, type the following and press Enter:
 
-        Install-Package WindowsAzure.ServiceBus and press Enter.
+        Install-Package WindowsAzure.ServiceBus
 
 2. Open the Program.cs file and add the following using statement:
 
         using Microsoft.ServiceBus.Notifications;
 
-3. In your `Program` class add the following method:
+3. In your `Program` class, add the following method:
 
         private static async void SendNotificationAsync()
         {
@@ -351,12 +342,12 @@ To send notifications using a .NET app:
             await hub.SendAppleNativeNotificationAsync(alert);
         }
 
-4. Then add the following line in your `Main` method:
+4. Add the following lines in your `Main` method:
 
          SendNotificationAsync();
 		 Console.ReadLine();
 
-5. Press the F5 key to run the app. You should receive an alert on your device. If you are using Wi-fi, make sure your connection is working.
+5. Press the F5 key to run the app. You should receive an alert on your device. If you are using Wi-Fi, make sure that your connection is working.
 
 You can find all the possible payloads in the Apple [Local and Push Notification Programming Guide].
 
@@ -468,14 +459,14 @@ In this simple example, you broadcasted notifications to all your iOS devices. I
 [My Applications]: http://go.microsoft.com/fwlink/p/?LinkId=262039
 [Live SDK for Windows]: http://go.microsoft.com/fwlink/p/?LinkId=262253
 
-[Get started with Mobile Services]: /develop/mobile/tutorials/get-started-xamarin-ios
+[Get started with Mobile Services]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-xamarin-ios
 [Azure Management Portal]: https://manage.windowsazure.cn/
 [Notification Hubs Guidance]: http://msdn.microsoft.com/zh-cn/library/jj927170.aspx
 [Notification Hubs How-To for iOS]: http://msdn.microsoft.com/zh-cn/library/jj927168.aspx
 [Install Xcode]: https://go.microsoft.com/fwLink/p/?LinkID=266532
 [iOS Provisioning Portal]: https://idmsa.apple.com/IDMSWebAuth/login?&appIdKey=891bd3417a7776362562d2197f89480a8547b108fd934911bcbea0110d07f757&path=%2F%2Faccount%2Foverview.action
 
-[Use Notification Hubs to push notifications to users]: /manage/services/notification-hubs/notify-users-aspnet
+[Use Notification Hubs to push notifications to users]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-push-notifications-app-users-aspnet
 [Use Notification Hubs to send breaking news]: /manage/services/notification-hubs/breaking-news-dotnet
 
 [Local and Push Notification Programming Guide]: http://developer.apple.com/library/mac/#documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/ApplePushService.html#//apple_ref/doc/uid/TP40008194-CH100-SW1

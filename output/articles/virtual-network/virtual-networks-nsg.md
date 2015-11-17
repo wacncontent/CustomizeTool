@@ -15,7 +15,7 @@
 
 You can use an NSG to control traffic to one or more virtual machine (VM) instances in your virtual network. An NSG contains access control rules that allow or deny traffic based on traffic direction, protocol, source address and port, and destination address and port. The rules of an NSG can be changed at any time, and changes are applied to all associated instances. 
 
->[AZURE.WARNING] NSGs can only be used in regional VNets. If you are trying to secure endpoints in a deployment without a VNet, or that uses a VNet associated with an affinity group, please see [What is an endpoint Access Control List (ACL)?](./virtual-networks-acl.md). You can also [migrate your VNet to a regional VNet](./virtual-networks-migrate-to-regional-vnet.md).
+>[AZURE.WARNING] NSGs can only be used in regional VNets. If you are trying to secure endpoints in a deployment without a VNet, or that uses a VNet associated with an affinity group, please see [What is an endpoint Access Control List (ACL)?](/documentation/articles/virtual-networks-acl). You can also [migrate your VNet to a regional VNet](/documentation/articles/virtual-networks-migrate-to-regional-vnet).
 
 ![NSGs](./media/virtual-network-nsg-overview/figure1.png)
 

@@ -8,9 +8,9 @@
    editor=""/>
 
 <tags
-   ms.service="azure-resource-manager"
-   ms.date="09/09/2015"
-   wacn.date=""/>
+	ms.service="azure-resource-manager"
+	ms.date="10/02/2015"
+	wacn.date=""/>
 
 # Azure Resource Manager overview
 

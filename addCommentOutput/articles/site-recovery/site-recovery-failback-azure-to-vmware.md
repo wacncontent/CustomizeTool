@@ -85,6 +85,7 @@ The vContinuum setup will be at available at [download location](http://download
 7.  Once you see that installation completes, you can launch the vContinuum to see it working.
     ![](./media/site-recovery-failback-azure-to-vmware/image8.png)
 
+
 ## Install PS server on Azure
 
 A Process Server needs to be installed on Azure so that the VMs in Azure can send the data back to on-premises MT. You need to deploy the PS on Azure in the same network as the Configuration Server.
@@ -102,7 +103,7 @@ A job to deploy the process server will be triggered.
 
 ![](./media/site-recovery-failback-azure-to-vmware/image11.png)
 
-Once the <!-- deleted by customization process --><!-- keep by customization: begin --> Process <!-- keep by customization: end --> server is deployed on Azure you can log into the server
+Once the process server is deployed on Azure you can log into the server
 using the credentials you specified. Use the same steps you used during
 forward direction of protection to register the PS.
 
@@ -193,15 +194,15 @@ perl-Pod-Escapes-1.04-136.el6\_6.1.x86\_64.rpm
 
 perl-Pod-Simple-3.13-136.el6\_6.1.x86\_64.rpm
 
-perl-libs-5.10.1-136.el6\_6.1.x86_64.rpm
+perl-libs-5.10.1-136.el6\_6.1.x86\_64.rpm
 
-perl-version-0.77-136.el6_6.1.x86_64.rpm
+perl-version-0.77-136.el6\_6.1.x86\_64.rpm
 
-rsync-3.0.6-12.el6.x86_64.rpm
+rsync-3.0.6-12.el6.x86\_64.rpm
 
-snappy-1.1.0-1.el6.x86_64.rpm
+snappy-1.1.0-1.el6.x86\_64.rpm
 
-wget-1.12-5.el6_6.1.x86_64.rpm
+wget-1.12-5.el6\_6.1.x86\_64.rpm
 
 NOTE: If source machine uses Reiser or XFS filesystem for root or boot
 device, then following packages should be download and installed on
@@ -215,13 +216,13 @@ Linux Master Target prior to the protection.
 \# wget
 <http://elrepo.org/linux/elrepo/el6/x86_64/RPMS/reiserfs-utils-3.6.21-1.el6.elrepo.x86_64.rpm>
 
-\# rpm -ivh kmod-reiserfs-0.0-1.el6.elrepo.x86_64.rpm
-reiserfs-utils-3.6.21-1.el6.elrepo.x86_64.rpm
+\# rpm -ivh kmod-reiserfs-0.0-1.el6.elrepo.x86\_64.rpm
+reiserfs-utils-3.6.21-1.el6.elrepo.x86\_64.rpm
 
 \# wget
 <http://mirror.centos.org/centos/6.6/os/x86_64/Packages/xfsprogs-3.1.1-16.el6.x86_64.rpm>
 
-\# rpm -ivh xfsprogs-3.1.1-16.el6.x86_64.rpm
+\# rpm -ivh xfsprogs-3.1.1-16.el6.x86\_64.rpm
 
 #### Apply Custom Configuration Changes
 
@@ -275,7 +276,7 @@ endpoint created for ssh to login to the Linux Master Target Server.
 Extract the files from the gzipped Linux Master Target Server installer
 tar archive by executing
 
-*“tar –xvzf Microsoft-ASR_UA_8.2.0.0_RHEL6-64\*”* from the directory
+*“tar –xvzf Microsoft-ASR\_UA\_8.2.0.0\_RHEL6-64\*”* from the directory
 where you had copied the Linux Master Target Server installer to.
 
 ![](./media/site-recovery-failback-azure-to-vmware/image16.png)
@@ -385,11 +386,11 @@ virtual machine.
 
 ![](./media/site-recovery-failback-azure-to-vmware/image8.png)
 
-<!-- deleted by customization 2 --><!-- keep by customization: begin --> 1 <!-- keep by customization: end -->.  In the **Choose Application** setting, select **P2V**
+2.  In the **Choose Application** setting, select **P2V**
 
-<!-- deleted by customization 3 --><!-- keep by customization: begin --> 2 <!-- keep by customization: end -->.  Click on the **New Protection** option to begin
+3.  Click on the **New Protection** option to begin
 
-<!-- deleted by customization 4 --><!-- keep by customization: begin --> 3 <!-- keep by customization: end -->.  In the new window that opens you will begin protecting the virtual
+4.  In the new window that opens you will begin protecting the virtual
     machines back to on-premises.
 
     a.  Select the **OS type** according to the VMs you want to failback
@@ -511,7 +512,7 @@ NAT Configuration|Discussed in detail below
 The other options in the Advanced settings can be left as default.
 Make sure you apply the folder name settings to all the servers.
 
-<!-- deleted by customization 2 --><!-- keep by customization: begin --> 1 <!-- keep by customization: end -->.  Next move to the final stage of the Protection. Here you need to run
+2.  Next move to the final stage of the Protection. Here you need to run
     a Readiness Check to ensure that the virtual machines are ready to
     be protected back to on-premises.
 
@@ -531,7 +532,7 @@ Make sure you apply the folder name settings to all the servers.
     below.
 
 
-<!-- deleted by customization 3 --><!-- keep by customization: begin --> 1 <!-- keep by customization: end -->.  The Protection will now begin.
+3.  The Protection will now begin.
 
     a.  You can see the progress of the protection on the vContinuum
 
@@ -562,17 +563,17 @@ are very similar to the ASR Recovery plans.
 
 ![](./media/site-recovery-failback-azure-to-vmware/image37.png)
 
-<!-- deleted by customization 3 --><!-- keep by customization: begin --> 1 <!-- keep by customization: end -->.  You can see the list of all the Plans that have been used to protect the virtual machines. These are the same plans you can use to recover.
+3.  You can see the list of all the Plans that have been used to protect the virtual machines. These are the same plans you can use to recover.
 
-<!-- deleted by customization 4 --><!-- keep by customization: begin --> 2 <!-- keep by customization: end -->.  Select the Protection Plan and select all the VMs you want to recover within it.
+4.  Select the Protection Plan and select all the VMs you want to recover within it.
 
     a.  On selecting each VM you can see more details about the source
         VM, target ESX server where the VM will be recovered to and the
         source VM disk
 
-<!-- deleted by customization 5 --><!-- keep by customization: begin --> 3 <!-- keep by customization: end -->.  Click Next to begin the **Recover** Wizard
+5.  Click Next to begin the **Recover** Wizard
 
-<!-- deleted by customization 6 --><!-- keep by customization: begin --> 4 <!-- keep by customization: end -->.  Select the Virtual Machines you want to recover
+6.  Select the Virtual Machines you want to recover
 
     a.  See the list of all the virtual machines that you can recover
 
@@ -586,14 +587,14 @@ are very similar to the ASR Recovery plans.
     chosen for all the virtual machines.
 
 
-<!-- deleted by customization 7 --><!-- keep by customization: begin --> 1 <!-- keep by customization: end -->.  Run the **Readiness Check.** This will inform if the right
+7.  Run the **Readiness Check.** This will inform if the right
     parameters are configured to enable the latest tag recovery of the
     virtual machine. Click Next if all the checks are successful else
     look at the log and resolve the errors.
 
 ![](./media/site-recovery-failback-azure-to-vmware/image39.png)
 
-<!-- deleted by customization 8 --><!-- keep by customization: begin --> 2 <!-- keep by customization: end -->.  In the VM Configuration step of the wizard, ensure that the recovery
+8.  In the VM Configuration step of the wizard, ensure that the recovery
     settings are correctly set. In case the VM settings are different
     from the one you require, you can choose to change them. Since we
     have already completed this action during the protection, you may
@@ -601,7 +602,7 @@ are very similar to the ASR Recovery plans.
 
 ![](./media/site-recovery-failback-azure-to-vmware/image40.png)
 
-<!-- deleted by customization 9 --><!-- keep by customization: begin --> 1 <!-- keep by customization: end -->.  Finally review the list of virtual machines that will be recovered.
+9.  Finally review the list of virtual machines that will be recovered.
 
     a.  Specify a recovery order to the virtual machines.
 
@@ -612,7 +613,7 @@ IAAS and look at the hostname of the virtual machine.
 
 ![](./media/site-recovery-failback-azure-to-vmware/image41.png)
 
-<!-- deleted by customization 10 --><!-- keep by customization: begin --> 1 <!-- keep by customization: end -->.  Give the **recovery plan name** and select **Recover later** in
+10.  Give the **recovery plan name** and select **Recover later** in
     **Recovery options.**
 
     a.  In case you want to recover right away you can choose to
@@ -624,12 +625,12 @@ IAAS and look at the hostname of the virtual machine.
     c.  Finally click on **Recover** button to either save the plan or
         to trigger the recovery based on your **Recovery options**.
 
-<!-- deleted by customization 11 --><!-- keep by customization: begin --> 2 <!-- keep by customization: end -->.  You can see the Recovery Status and see if it the plan is
+11.  You can see the Recovery Status and see if it the plan is
     successfully saved.
 
 ![](./media/site-recovery-failback-azure-to-vmware/image42.png)
 
-<!-- deleted by customization 12 --><!-- keep by customization: begin --> 1 <!-- keep by customization: end -->.  If you have chosen to recover later, you will be informed that the
+12.  If you have chosen to recover later, you will be informed that the
     plan is created and you can recover later.
 
 ![](./media/site-recovery-failback-azure-to-vmware/image43.png)
@@ -662,19 +663,19 @@ start the plan that is saved.
 
 ![](./media/site-recovery-failback-azure-to-vmware/image45.png)
 
-<!-- deleted by customization 3 --><!-- keep by customization: begin --> 1 <!-- keep by customization: end -->.  Select the **Recovery** node and select the plan that you want to
+3.  Select the **Recovery** node and select the plan that you want to
     recover.
 
     a.  It will inform you that the plan has not yet started.
 
-<!-- deleted by customization 4 --><!-- keep by customization: begin --> 2 <!-- keep by customization: end -->.  Click **Start** to begin the recovery.
+4.  Click **Start** to begin the recovery.
 
-<!-- deleted by customization 5 --><!-- keep by customization: begin --> 3 <!-- keep by customization: end -->.  You can monitor the recovery of the virtual machines
+5.  You can monitor the recovery of the virtual machines
 
 
 ![](./media/site-recovery-failback-azure-to-vmware/image46.png)
 
-<!-- deleted by customization 6 --><!-- keep by customization: begin --> 4 <!-- keep by customization: end -->. Once the VMs have been powered ON, you can connect to the virtual
+6. Once the VMs have been powered ON, you can connect to the virtual
     machines on your vCenter.
 
 ## Re-protect to Azure after failback
@@ -705,3 +706,4 @@ protection
     be continuously protected.
 
 
+ 

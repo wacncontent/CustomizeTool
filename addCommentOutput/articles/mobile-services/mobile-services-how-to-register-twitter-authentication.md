@@ -28,7 +28,7 @@ To complete the procedure in this topic, you must have a Twitter account that ha
 
 2. Type the **Name**, **Description**, and **Website** values for your app, then type the URL of your mobile service appended with the path _/login/twitter_ in **Callback URL**.
 
-	>[AZURE.NOTE]For a .NET backend mobile service published to Azure by using Visual Studio, the redirect URL is the URL of your mobile service appended with the path _signin-twitter_ <!-- deleted by customization. In this example, our --><!-- keep by customization: begin --> your <!-- keep by customization: end --> mobile service <!-- deleted by customization would have the Callback URL ```https://todolist.azure-mobile.cn/signin-twitter``` --><!-- keep by customization: begin --> as a .NET service, such as <code>https://todolist.azure-mobile.cn/signin-twitter</code> <!-- keep by customization: end -->.
+	>[AZURE.NOTE]For a .NET backend mobile service published to Azure by using Visual Studio, the redirect URL is the URL of your mobile service appended with the path _signin-twitter_. In this example, our mobile service would have the Callback URL ```https://todolist.azure-mobile.cn/signin-twitter```.
 
    	![][2]
 
@@ -40,7 +40,7 @@ To complete the procedure in this topic, you must have a Twitter account that ha
 
     > [AZURE.NOTE] The consumer secret is an important security credential. Do not share this secret with anyone or distribute it with your app.
 
-7. Click the **Settings** tab, scroll down and make sure the **Allow this application to be used to sign in with Twitter** <!-- deleted by customization checkbox is checked -->, then click **Update <!-- deleted by customization Settings** --><!-- keep by customization: begin --> this Twitter application's settings** <!-- keep by customization: end -->.
+7. Click the **Settings** tab, scroll down and make sure the **Allow this application to be used to sign in with Twitter** checkbox is checked, then click **Update Settings**.
 
 You are now ready to use a Twitter login for authentication in your app by providing the consumer key and consumer secret values to Mobile Services.
 
@@ -53,14 +53,7 @@ You are now ready to use a Twitter login for authentication in your app by provi
 <!-- URLs. -->
 
 [Twitter Developers]: https://apps.twitter.com/
-<!-- deleted by customization
-[Get started with authentication]: /develop/mobile/tutorials/get-started-with-users-dotnet/
+[Get started with authentication]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-users-dotnet/
 
 [Azure Management Portal]: https://manage.windowsazure.cn/
--->
-<!-- keep by customization: begin -->
-[Get started with authentication]: /documentation/articles/mobile-services-javascript-backend-windows-universal-dotnet-get-started-users/
-
-[Azure Management Portal]: https://manage.windowsazure.cn
-<!-- keep by customization: end -->
  

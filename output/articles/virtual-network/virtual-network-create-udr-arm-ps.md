@@ -36,9 +36,9 @@ To create the route table and route needed for the front end subnet based on the
 		    -AddressPrefix 192.168.2.0/24 -NextHopType VirtualAppliance `
 		    -NextHopIpAddress 192.168.0.4
 
-4. Create a route table named **UDR-FrontEnd** in the **westus** region that contains the route created above.
+4. Create a route table named **UDR-FrontEnd** in the **chinanorth** region that contains the route created above.
 
-		$routeTable = New-AzureRMRouteTable -ResourceGroupName TestRG -Location westus `
+		$routeTable = New-AzureRMRouteTable -ResourceGroupName TestRG -Location chinanorth `
 		    -Name UDR-FrontEnd -Route $route
 
 5. Create a variable that contains the VNet where the subnet is. In our scenario, the VNet is named **TestVNet**.
@@ -54,7 +54,7 @@ To create the route table and route needed for the front end subnet based on the
 
 		Name              : TestVNet
 		ResourceGroupName : TestRG
-		Location          : westus
+		Location          : chinanorth
 		Id                : /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/TestRG/providers/Microsoft.Network/virtualNetworks/TestVNet
 		Etag              : W/"7df26c0e-652f-4754-bc4e-733fef7d5b2b"
 		ProvisioningState : Succeeded
@@ -109,7 +109,7 @@ To create the route table and route needed for the back end subnet based on the 
 
 4. Create a route table named **UDR-BackEnd** in the **uswest** region that contains the route created above.
 
-		$routeTable = New-AzureRMRouteTable -ResourceGroupName TestRG -Location westus `
+		$routeTable = New-AzureRMRouteTable -ResourceGroupName TestRG -Location chinanorth `
 		    -Name UDR-BackEnd -Route $route
 
 5. Associate the route table created above to the **BackEnd** subnet.
@@ -121,7 +121,7 @@ To create the route table and route needed for the back end subnet based on the 
 
 		Name              : TestVNet
 		ResourceGroupName : TestRG
-		Location          : westus
+		Location          : chinanorth
 		Id                : /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/TestRG/providers/Microsoft.Network/virtualNetworks/TestVNet
 		Etag              : W/"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
 		ProvisioningState : Succeeded
@@ -180,7 +180,7 @@ To enable IP forwarding in the NIC used by **FW1**, follow the steps below.
 
 		Name                 : NICFW1
 		ResourceGroupName    : TestRG
-		Location             : westus
+		Location             : chinanorth
 		Id                   : /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/TestRG/providers/Microsoft.Network/networkInterfaces/NICFW1
 		Etag                 : W/"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
 		ProvisioningState    : Succeeded

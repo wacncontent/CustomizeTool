@@ -1,5 +1,8 @@
 <properties pageTitle="Tutorial: Azure Active Directory integration with InsideView | Windows Azure" description="Learn how to use InsideView with Azure Active Directory to enable single sign-on, automated provisioning, and more!." services="active-directory" authors="MarkusVi"  documentationCenter="na" manager="stevenpo"/>
-<tags ms.service="active-directory" ms.devlang="na" ms.topic="article" ms.tgt_pltfrm="na" ms.workload="identity" ms.date="08/01/2015" ms.author="markvi" />
+<tags
+	ms.service="active-directory"
+	ms.date="08/01/2015"
+	wacn.date=""/>
 #Tutorial: Azure Active Directory integration with InsideView
 <!-- deleted by customization
 >[AZURE.TIP]For feedback, click [here](https://social.msdn.microsoft.com/Forums/azure/zh-cn/89ba31ee-d502-41fa-969c-20d287b293f4/tutorial-azure-active-directory-integration-with-insideview?forum=WindowsAzureAD).

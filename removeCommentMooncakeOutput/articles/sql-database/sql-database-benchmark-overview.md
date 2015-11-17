@@ -11,7 +11,7 @@
 <tags
 	ms.service="sql-database"
 	ms.date="10/15/2015"
-	wacn.date="" />
+	wacn.date=""/>
 
 # Azure SQL Database benchmark overview
 

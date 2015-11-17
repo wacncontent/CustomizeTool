@@ -66,13 +66,8 @@ One of the key features of the .NET backend is the ability to debug the service 
     ![Configure symbol loading][SymbolLoading]
 
 3. Select the **Symbols** node on the left and add a reference to the (SymbolSource)[http://symbolsource.org] server using the URI [http://srv.symbolsource.org/pdb/Public](http://srv.symbolsource.org/pdb/Public). Symbols for the Mobile Services .NET backend are made available there with every new release.
-<!-- deleted by customization
+
     ![Configure symbol server][SymbolServer]
--->
-<!-- keep by customization: begin -->
- 
-    ![Configure symbol server][SymbolServer]
-<!-- keep by customization: end -->
 
 4. Set a breakpoint in the piece of code you would like to debug. For example set a breakpoint in the **GetAllTodoItems()** method of the **TodoItemController** that comes with the Mobile Services project template in Visual Studio.
 5. Debug the service locally by pressing **F5**. The first load may be slow as Visual Studio is downloading symbols for the Mobile Services .NET backend.
@@ -86,7 +81,7 @@ One of the key features of the .NET backend is the ability to debug the service 
 
     ![Publish debug][PublishDebug]
 
-10. Once the service has published successfully, open **Server Explorer** and expand the <!-- deleted by customization **Azure** --><!-- keep by customization: begin --> **Windows Azure** <!-- keep by customization: end --> and **Mobile Services** nodes. Sign in if necessary.
+10. Once the service has published successfully, open **Server Explorer** and expand the **Azure** and **Mobile Services** nodes. Sign in if necessary.
 11. Right click the mobile service you just published to and select **Attach Debugger**.
 
     ![Attach debugger][AttachDebugger]
@@ -135,7 +130,7 @@ This problem is easy to correct: simply revert to a supported version of the req
 <a name="EFMigrations"></a>
 ## Troubleshooting Entity Framework Migrations
 
-When using the Mobile Services .NET backend with a SQL Database, Entity Framework (EF) is used as the data access technology that enables you to query the database and persist objects into it. One important aspect that EF handles on behalf of the developer is how the database columns (also known as *schema*) change as the model classes specified in code change. This process is known as [Code First <!-- deleted by customization Migrations](http://msdn.microsoft.com/data/jj591621) --><!-- keep by customization: begin --> Migrations](http://msdn.microsoft.com/zh-cn/data/jj591621) <!-- keep by customization: end -->.
+When using the Mobile Services .NET backend with a SQL Database, Entity Framework (EF) is used as the data access technology that enables you to query the database and persist objects into it. One important aspect that EF handles on behalf of the developer is how the database columns (also known as *schema*) change as the model classes specified in code change. This process is known as [Code First Migrations](http://msdn.microsoft.com/data/jj591621).
 
 Migrations can be complex and require that the database state be kept in sync with the EF model in order to succeed. For instructions on how to handle migrations with you mobile service and errors that can arise, see [How to make data model changes to a .NET backend mobile service](/documentation/articles/mobile-services-dotnet-backend-how-to-use-code-first-migrations).
 

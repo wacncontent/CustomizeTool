@@ -31,7 +31,7 @@ You will create an application using the Django web framework (see alternate ver
 - Python 2.7 or 3.4
 - setuptools, pip, virtualenv (Python 2.7 only)
 - Git
-- [Python Tools for Visual Studio][](/documentation/articles/PTVS) - Note: this is optional
+- [Python Tools for Visual Studio][] (PTVS) - Note: this is optional
 
 **Note**: TFS publishing is currently not supported for Python projects.
 
@@ -497,6 +497,7 @@ For more information, see the [Python Developer Center](/develop/python/).
 [Django and SQL Database on Azure with Python Tools for Visual Studio]: /documentation/articles/web-sites-python-ptvs-django-sql
 [SQL Database]: /documentation/articles/web-sites-python-ptvs-django-sql
 [MySQL]: /documentation/articles/web-sites-python-ptvs-django-mysql
+
 <!--External Link references-->
 [Azure SDK for Python 2.7]: http://go.microsoft.com/fwlink/?linkid=254281
 [Azure SDK for Python 3.4]: http://go.microsoft.com/fwlink/?linkid=516990

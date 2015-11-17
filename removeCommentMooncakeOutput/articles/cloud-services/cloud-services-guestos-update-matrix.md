@@ -8,9 +8,9 @@
    editor=""/>
 
 <tags
-   ms.service="cloud-services"
-   ms.date="10/15/2015"
-   wacn.date=""/>
+	ms.service="cloud-services"
+	ms.date="10/15/2015"
+	wacn.date=""/>
 
 # Azure Guest OS Releases and SDK Compatibility Matrix
 Provides you with up-to-date information about the latest Azure Guest OS releases for Cloud Services. This information will help you plan your upgrade path before a a Guest OS is disabled.
@@ -336,7 +336,7 @@ Because of the partial rollout of the last two releases, people on auto update o
 [MS14-046]: https://technet.microsoft.com/zh-cn/library/security/ms14-046.aspx
 [retire policy sdk]: https://msdn.microsoft.com/zh-cn/library/dn479282.aspx
 [server and gos]: https://msdn.microsoft.com/zh-cn/library/dn775043.aspx
-[azuresupport]: http://azure.microsoft.com/support/options/
+[azuresupport]: /support/contact/
 [net install pkg]: http://www.microsoft.com/download/details.aspx?id=42643
 [msrc]: http://www.microsoft.com/security/msrc/default.aspx
 [update guest os portal]: https://msdn.microsoft.com/zh-cn/library/gg433101.aspx

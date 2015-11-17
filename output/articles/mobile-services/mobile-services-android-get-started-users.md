@@ -95,11 +95,11 @@ In the next tutorial, [Authorize users with scripts], you will take the user ID 
 [Submit an app page]: http://go.microsoft.com/fwlink/p/?LinkID=266582
 [My Applications]: http://go.microsoft.com/fwlink/p/?LinkId=262039
 [Live SDK for Windows]: http://go.microsoft.com/fwlink/p/?LinkId=262253
-[Single sign-on for Windows Store apps by using Live Connect]: /develop/mobile/tutorials/single-sign-on-windows-8-dotnet
-[Get started with Mobile Services]: /develop/mobile/tutorials/get-started-android
-[Add Mobile Services to an existing app]: /develop/mobile/tutorials/get-started-with-data-android
-[Get started with authentication]: /develop/mobile/tutorials/get-started-with-users-android
-[Get started with push notifications]: /develop/mobile/tutorials/get-started-with-push-android
+[Single sign-on for Windows Store apps by using Live Connect]: /documentation/articles/mobile-services-windows-store-dotnet-single-sign-on
+[Get started with Mobile Services]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-android
+[Add Mobile Services to an existing app]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-data-android
+[Get started with authentication]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-users-android
+[Get started with push notifications]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-push-android
 [Authorize users with scripts]: /develop/mobile/tutorials/authorize-users-in-scripts-android
 
 [Azure Management Portal]: https://manage.windowsazure.cn/

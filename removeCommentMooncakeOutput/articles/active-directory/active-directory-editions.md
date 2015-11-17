@@ -1,16 +1,16 @@
-<properties 
-	pageTitle="Azure Active Directory Editions" 
-	description="A topic that explains choices for free and paid editions of Azure Active Directory." 
-	services="active-directory" 
-	documentationCenter="" 
+<properties
+	pageTitle="Azure Active Directory editions | Windows Azure"
+	description="A topic that explains choices for free and paid editions of Azure Active Directory."
+	services="active-directory"
+	documentationCenter=""
 	authors="MarkusVi"
 	manager="stevenpo"
-	editor="LisaToft"/>
+	editor=""/>
 
-<tags 
-	ms.service="active-directory" 
+<tags
+	ms.service="active-directory"
 	ms.date="10/17/2015"
-	wacn.date="" />
+	wacn.date=""/>
 
 # Azure Active Directory editions
 
@@ -24,7 +24,7 @@ To enhance your Azure Active Directory, you can add paid capabilities using the 
 Office 365 subscriptions include additional Azure Active Directory features described in the comparison table below. 
 
 
-> [AZURE.NOTE] For the pricing options of these editions, see [Azure Active Directory Pricing](https://azure.microsoft.com/home/features/identity/#price). <br>Azure Active Directory Premium and Azure Active Directory Basic are not currently supported in China. Please contact us at the Azure Active Directory Forum for more information
+> [AZURE.NOTE] For the pricing options of these editions, see [Azure Active Directory Pricing](/home/features/identity/#price). <br>Azure Active Directory Premium and Azure Active Directory Basic are not currently supported in China. Please contact us at the Azure Active Directory Forum for more information
 
 
 - **Azure Active Directory Basic** - Designed for task workers with cloud-first needs, this edition provides cloud centric application access and self-service identity management solutions. With the Basic edition of Azure Active Directory, you get productivity enhancing and cost reducing features like group-based access management, self-service password reset for cloud applications, and Azure Active Directory Application Proxy (to publish on-premises web applications using Azure Active Directory), all backed by an enterprise-level SLA of 99.9 percent uptime.

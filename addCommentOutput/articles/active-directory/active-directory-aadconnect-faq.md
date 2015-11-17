@@ -32,18 +32,13 @@ Use the guidance that is outlined in the article here to resolve to [here](/docu
 
 **Q: How can I get help with Azure AD Connect?**
 
-<!-- deleted by customization
 [Search the Microsoft Knowledge Base (KB)](https://www.microsoft.com/Search/result.aspx?q=azure%20active%20directory%20connect&form=mssupport)
--->
-<!-- keep by customization: begin -->
-[Search the Microsoft Knowledge Base (KB)](https://www.microsoft.com/zh-cn/Search/result.aspx?q=azure%20active%20directory%20connect&form=mssupport)
-<!-- keep by customization: end -->
 
 - Search the Microsoft Knowledge Base (KB) for technical solutions to common break-fix issues about Support for Azure AD Connect.
 
 [Windows Azure Active Directory Forums](https://social.msdn.microsoft.com/Forums/azure/zh-cn/home?forum=WindowsAzureAD)
 
-- You can search and browse for technical questions and answers from the community or ask your own question by clicking <!-- deleted by customization [here](https://social.msdn.microsoft.com/Forums/azure/newthread?category=windowsazureplatform&forum=WindowsAzureAD&prof=required) --><!-- keep by customization: begin --> [here](https://social.msdn.microsoft.com/Forums/azure/zh-cn/newthread?category=windowsazureplatform&forum=WindowsAzureAD&prof=required).) <!-- keep by customization: end -->.
+- You can search and browse for technical questions and answers from the community or ask your own question by clicking [here](https://social.msdn.microsoft.com/Forums/azure/newthread?category=windowsazureplatform&forum=WindowsAzureAD&prof=required).
 
 
 [Azure AD Connect customer support](https://manage.windowsazure.cn/?getsupport=true)
@@ -54,5 +49,7 @@ Use the guidance that is outlined in the article here to resolve to [here](/docu
 **Q:What do I do if I receive an email that asking me to renew my Office 365 certificate**
 
 Use the guidance that is outlined in the article here to resolve to [here](/documentation/articles/active-directory-aadconnect-o365-certs) renew the certificate.
+
+
 
 <!-- keep by customization: end -->

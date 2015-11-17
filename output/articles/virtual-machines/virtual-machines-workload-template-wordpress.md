@@ -14,8 +14,10 @@
 	wacn.date=""/>
 
 # Deploy a WordPress server on Ubuntu with an Azure Resource Manager template
+<!-- deleted by customization
 
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] classic deployment model. You can't create this resource with the classic deployment model.
+-->
 
 Use the instructions in this article to deploy a WordPress server running on Ubuntu using a Resource Manager template. This template creates a single virtual machine in a new virtual network.
 
@@ -41,7 +43,12 @@ Depending on the template, it can take some time for Azure to build the workload
 
 ## Azure PowerShell
 
+<!-- deleted by customization
 [AZURE.INCLUDE [powershell-preview](../includes/powershell-preview-inline-include.md)]
+-->
+<!-- keep by customization: begin -->
+Before you begin, make sure you have the right version of Azure PowerShell installed, you have logged in, and you have switched to the new Resource Manager mode. For the details, click [here](/documentation/articles/virtual-machines-deploy-rmtemplates-powershell/#setting-up-powershell-for-resource-manager-templates).
+<!-- keep by customization: end -->
 
 Fill in an Azure deployment name, a new Resource Group name, and an Azure datacenter location in the following set of commands. Remove everything within the quotes, including the < and > characters.
 
@@ -81,7 +88,7 @@ Next, use the following command and specify the name of your new resource group 
 
 Here is an example.
 
-	azure group create wordpress eastus2
+	azure group create wordpress chinaeast2
 	azure group deployment create --template-uri https://raw.githubusercontent.com/azure/azure-quickstart-templates/master/wordpress-single-vm-ubuntu/azuredeploy.json wordpress wpdevtest
 
 When you run the **azure group deployment create** command, you will be prompted to supply the values for a series of parameters. When you have specified all the parameter values, Azure creates and configures the virtual machines.

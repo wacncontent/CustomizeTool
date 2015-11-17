@@ -7,9 +7,9 @@
 	manager="mkjain" 
 	editor=""/>
 
-<tags 
-	ms.service="site-recovery" 
-	ms.date="09/01/2015" 
+<tags
+	ms.service="site-recovery"
+	ms.date="09/01/2015"
 	wacn.date=""/>
 
 
@@ -39,7 +39,7 @@ Once you protect a virtual machine from portal or on-premises, an ASR job named 
 ![Troubleshoot on-premises Hyper-V issues](./media/site-recovery-understanding-site-to-azure-protection/image02.png)
 
 ### Finalize Protection
-A [Hyper-V VM snapshot](https://technet.microsoft.com/zh-cn/library/dd560637.aspx) is taken when Initial Replication is triggered. Virtual hard disks are processed one by one till all the disks are uploaded to Azure. This normally takes a while to complete based on the disk size and the bandwidth. Refer [How to manage on-premises to Azure protection network bandwidth usage](https://support.microsoft.com/zh-cn/kb/3056159) for optimizing your network usage. Once initial replication completes *Finalize protection on the virtual machine* job configures the network and post-replication settings. While Initial Replication is in-progress all the changes to the disks gets tracked as mentioned in Delta Replication section below. Additional disk storage will be consumed for the snapshot and HRL files while Initial Replication is in-progress. On completion of an Initial Replication, Hyper-V VM snapshot will be deleted which results in merging data changes post Initial Replication to the parent disk.
+A [Hyper-V VM snapshot](https://technet.microsoft.com/zh-cn/library/dd560637.aspx) is taken when Initial Replication is triggered. Virtual hard disks are processed one by one till all the disks are uploaded to Azure. This normally takes a while to complete based on the disk size and the bandwidth. Refer [How to manage on-premises to Azure protection network bandwidth usage](https://support.microsoft.com/kb/3056159) for optimizing your network usage. Once initial replication completes *Finalize protection on the virtual machine* job configures the network and post-replication settings. While Initial Replication is in-progress all the changes to the disks gets tracked as mentioned in Delta Replication section below. Additional disk storage will be consumed for the snapshot and HRL files while Initial Replication is in-progress. On completion of an Initial Replication, Hyper-V VM snapshot will be deleted which results in merging data changes post Initial Replication to the parent disk.
 
 ![Troubleshoot on-premises Hyper-V issues](./media/site-recovery-understanding-site-to-azure-protection/image03.png)
 

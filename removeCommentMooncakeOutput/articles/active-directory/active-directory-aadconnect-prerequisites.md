@@ -8,9 +8,9 @@
    editor="curtand"/>
 
 <tags
-   ms.service="active-directory"
-   ms.date="10/13/2015"
-   wacn.date=""/>
+	ms.service="active-directory"
+	ms.date="10/13/2015"
+	wacn.date=""/>
 
 # Prerequisites for Azure AD Connect
 This topic describes the pre-requisites and the hardware requirements for Azure AD Connect.

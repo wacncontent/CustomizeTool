@@ -1,8 +1,2 @@
-<!-- deleted by customization
 > [AZURE.NOTE]
-> To complete this tutorial, you need an Azure account. You can <a href="http://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/" target="_blank">activate your MSDN subscriber benefits</a> or <a href="/pricing/1rmb-trial/" target="_blank">sign up for a trial</a>.
--->
-<!-- keep by customization: begin -->
-> [WACOM.NOTE]
-> To complete this tutorial, you need an Azure account. You can <a href="/zh-cn/pricing/1rmb-trial" target="_blank">sign up for a trial</a>.
-<!-- keep by customization: end -->
+> To complete this tutorial, you need an Azure account. You can <a <!-- deleted by customization href="http://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/" target="_blank">activate your MSDN subscriber benefits</a> or <a href="/pricing/1rmb-trial/" --><!-- keep by customization: begin --> href="/zh-cn/pricing/1rmb-trial" <!-- keep by customization: end --> target="_blank">sign up for a trial</a>.

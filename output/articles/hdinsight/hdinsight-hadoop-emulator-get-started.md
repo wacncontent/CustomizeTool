@@ -77,7 +77,7 @@ The installation should have also installed several local services. The followin
 
 ![Hadoop ecosystem services listed in the emulator window.][image-hdi-emulator-services]
 
-The services related to the HDInsight Emulator are not started by default. To start the services, from the Hadoop command line, run **start\_local\_hdp_services.cmd** under C:\hdp (default location). To automatically start the services after the computer restarts, run **set-onebox-autostart.cmd**.  
+The services related to the HDInsight Emulator are not started by default. To start the services, from the Hadoop command line, run <!-- deleted by customization **start\_local\_hdp_services.cmd** --><!-- keep by customization: begin --> **start_local_hdp_services.cmd** <!-- keep by customization: end --> under C:\hdp (default location). To automatically start the services after the computer restarts, run **set-onebox-autostart.cmd**.
 
 For known issues with installing and running the HDInsight Emulator, see the [HDInsight Emulator Release Notes](/documentation/articles/hdinsight-emulator-release-notes). The installation log is located at **C:\HadoopFeaturePackSetup\HadoopFeaturePackSetupTools\gettingStarted.winpkg.install.log**.
 
@@ -433,8 +433,9 @@ The HDInsight Emulator uses HDFS as the default file system. However, Azure HDIn
 Before you start with the instructions below, you must have created a storage account. For instructions, see [How To Create a Storage Account](/documentation/articles/storage-create-storage-account).
 
 **To create a container**
+<!-- deleted by customization
 
-1. Sign in to the [Azure Preview Portal](https://ms.portal.azure.com/).
+1. Sign in to the [Azure Preview Portal](https://manage.windowsazure.cn/).
 2. Click **NEW** on the left, click **DATA SERVICE**, and then click **Storage**.
 3. In the Storage Account blade, configure the properties as shown in the screen capture below.
 	
@@ -445,6 +446,16 @@ Before you start with the instructions below, you must have created a storage ac
 5. Enter the name of the container and then click **Select**.
 
 	![Create a container](./media/hdinsight-hadoop-emulator-get-started/hdi.emulator.create.container.png)
+-->
+<!-- keep by customization: begin -->
+1. Sign in to the [Azure Management Portal][azure-management-portal].
+2. Click **STORAGE** on the left. A list of storage accounts appears under your subscription.
+3. Click the storage account where you want to create the container from the list.
+4. Click **CONTAINERS** from the top of the page.
+5. Click **ADD** on the bottom of the page.
+6. Enter **NAME** and select **ACCESS**. You can use any of the three access levels. The default is **Private**.
+7. Click **OK** to save the changes. The new container is now listed on the portal.
+<!-- keep by customization: end -->
 
 Before you can access an Azure Storage account, you must add the account name and the account key to the configuration file.
 
@@ -517,15 +528,19 @@ In this MapReduce tutorial, you installed the HDInsight Emulator - a Hadoop sand
 [netstat-url]: http://technet.microsoft.com/zh-cn/library/ff961504.aspx
 
 [hdinsight-develop-mapreduce]: /documentation/articles/hdinsight-develop-deploy-java-mapreduce
+
 [hdinsight-emulator-install]: http://www.microsoft.com/web/gallery/install.aspx?appid=HDINSIGHT
 [hdinsight-emulator-release-notes]: /documentation/articles/hdinsight-emulator-release-notes
+
 [hdinsight-storage]: /documentation/articles/hdinsight-use-blob-storage
 [hdinsight-submit-jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically
 [hdinsight-powershell-reference]: https://msdn.microsoft.com/zh-cn/library/dn858087.aspx
 [hdinsight-get-started]: /documentation/articles/hdinsight-get-started
 [hdinsight-develop-deploy-streaming]: /documentation/articles/hdinsight-hadoop-develop-deploy-streaming-jobs
 [hdinsight-versions]: /documentation/articles/hdinsight-component-versioning
+
 [Powershell-install-configure]: /documentation/articles/install-configure-powershell
+
 [hadoop-commands-manual]: http://hadoop.apache.org/docs/r1.1.1/commands_manual.html
 
 [image-hdi-emulator-services]: ./media/hdinsight-hadoop-emulator-get-started/HDI.Emulator.Services.png

@@ -28,13 +28,13 @@ In order to complete this tutorial you will need the following:
 
 + A Java development environment configured to run [Maven](http://maven.apache.org/). For this tutorial, we will assume [Eclipse](https://www.eclipse.org/).
 
-+ An active Azure account. <br/>If you don't have an account, you can create a trial account in just a couple of minutes. For details, see <a <!-- deleted by customization href="/pricing/1rmb-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fen-us%2Fdevelop%2Fmobile%2Ftutorials%2Fget-started%2F" --><!-- keep by customization: begin --> href="http://www.windowsazure.cn/zh-cn/pricing/1rmb-trial/" <!-- keep by customization: end --> target="_blank">Azure Trial</a>.
++ An active Azure account. <br/>If you don't have an account, you can create a trial account in just a couple of minutes. For details, see <a href="/pricing/1rmb-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fen-us%2Fdevelop%2Fmobile%2Ftutorials%2Fget-started%2F" target="_blank">Azure Trial</a>.
 
 ## Create an Event Hub
 
 1. Log on to the [Azure management portal], and click **NEW** at the bottom of the screen.
 
-2. Click **Azure Websites**, then **Service Bus**, then **Event Hub**, and then **Quick Create**.
+2. Click **App Services**, then **Service Bus**, then **Event Hub**, and then **Quick Create**.
 
    	![][1]
 
@@ -101,7 +101,7 @@ The following resources are available for developing applications integrating Ev
 [Event Hubs Overview]: http://msdn.microsoft.com/zh-cn/library/azure/dn836025.aspx
 
 [Apache Storm]: https://storm.incubator.apache.org
-[HDInsight Storm Overview]: <!-- deleted by customization /documentation/articles/hdinsight-storm-overview/ --><!-- keep by customization: begin --> /documentation/articles/hdinsight-storm-overview <!-- keep by customization: end -->
-[Analyzing sensor data with Storm and HDInsight]: <!-- deleted by customization /documentation/articles/hdinsight-storm-sensor-data-analysis/ --><!-- keep by customization: begin --> /documentation/articles/hdinsight-storm-sensor-data-analysis <!-- keep by customization: end -->
-[Develop streaming data processing applications with SCP.NET and C# on Storm and HDInsight]: <!-- deleted by customization /documentation/articles/hdinsight-hadoop-storm-scpdotnet-csharp-develop-streaming-data-processing-application/ --><!-- keep by customization: begin --> /documentation/articles/hdinsight-hadoop-storm-scpdotnet-csharp-develop-streaming-data-processing-application <!-- keep by customization: end -->
+[HDInsight Storm Overview]: /documentation/articles/hdinsight-storm-overview/
+[Analyzing sensor data with Storm and HDInsight]: /documentation/articles/hdinsight-storm-sensor-data-analysis/
+[Develop streaming data processing applications with SCP.NET and C# on Storm and HDInsight]: /documentation/articles/hdinsight-hadoop-storm-scpdotnet-csharp-develop-streaming-data-processing-application/
  

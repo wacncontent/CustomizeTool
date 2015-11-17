@@ -20,9 +20,9 @@ When you deploy a Cloud Service application package to Azure, you can obtain inf
 
 ## Contact Azure Customer Support
 
-If you need more help at any point in this article, you can contact the Azure experts on [the MSDN Azure and the Stack Overflow <!-- deleted by customization forums](http://azure.microsoft.com/support/forums/) --><!-- keep by customization: begin --> forums](/support/forums/) <!-- keep by customization: end -->.
+If you need more help at any point in this article, you can contact the Azure experts on [the MSDN Azure and the Stack Overflow forums](/support/forums/).
 
-Alternatively, you can also file an Azure support incident. Go to the [Azure Support <!-- deleted by customization site](http://azure.microsoft.com/support/options/) --><!-- keep by customization: begin --> site](/support/options/) <!-- keep by customization: end --> and click on **Get Support**. For information about using Azure Support, read the [Windows Azure Support FAQ](/support/faq/).
+Alternatively, you can also file an Azure support incident. Go to the [Azure Support site](/support/contact/) and click on **Get Support**. For information about using Azure Support, read the [Windows Azure Support FAQ](/support/faq/).
 
 
 

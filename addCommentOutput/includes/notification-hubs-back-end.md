@@ -113,7 +113,7 @@ Skip steps 1-3 if you created a console app when you completed [Get started with
 <!-- URLs. -->
 [get-started]: <!-- deleted by customization /documentation/articles/notification-hubs-windows-store-dotnet-get-started --><!-- keep by customization: begin --> /documentation/articles/notification-hubs-windows-store-dotnet-get-started/ <!-- keep by customization: end -->
 [Use Notification Hubs to send notifications to users]: /documentation/articles/tutorial-notify-users-mobileservices
-[Get started with Mobile Services]: /develop/mobile/tutorials/get-started/#create-new-service
+[Get started with Mobile Services]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started/#create-new-service
 [Azure Management Portal]: https://manage.windowsazure.cn/
 [wns object]: https://msdn.microsoft.com/zh-cn/library/azure/jj860484.aspx
 [Notification Hubs Guidance]: http://msdn.microsoft.com/zh-cn/library/jj927170.aspx

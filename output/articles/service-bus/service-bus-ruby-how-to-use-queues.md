@@ -173,5 +173,5 @@ Now that you've learned the basics of Service Bus queues, follow these links to 
 -   Overview of [queues, topics, and subscriptions](/documentation/articles/service-bus-queues-topics-subscriptions)
 -   Visit the [Azure SDK for Ruby](https://github.com/WindowsAzure/azure-sdk-for-ruby) repository on GitHub
 
-For a comparision between the Azure Service Bus Queues discussed in this article and Azure Queues discussed in the [How to use the Azure Queue Service](/develop/ruby/how-to-guides/queue-service/) article, see [Azure Queues and Azure Service Bus Queues - Compared and Contrasted](/documentation/articles/service-bus-azure-and-service-bus-queues-compared-contrasted)
+For a comparision between the Azure Service Bus Queues discussed in this article and Azure Queues discussed in the [How to use the Azure Queue Service](/documentation/articles/storage-ruby-how-to-use-queue-storage/) article, see [Azure Queues and Azure Service Bus Queues - Compared and Contrasted](/documentation/articles/service-bus-azure-and-service-bus-queues-compared-contrasted)
  

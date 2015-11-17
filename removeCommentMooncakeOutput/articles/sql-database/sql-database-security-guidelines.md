@@ -9,9 +9,9 @@
    tags=""/>
 
 <tags
-   ms.service="sql-database"
-   ms.date="08/20/2015"
-   wacn.date=""/>
+	ms.service="sql-database"
+	ms.date="08/20/2015"
+	wacn.date=""/>
 
 # Azure SQL Database security guidelines and limitations
 

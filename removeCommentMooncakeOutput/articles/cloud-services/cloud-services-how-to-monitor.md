@@ -7,9 +7,9 @@
 	manager="jwhit" 
 	editor=""/>
 
-<tags 
-	ms.service="cloud-services" 
-	ms.date="08/04/2015" 
+<tags
+	ms.service="cloud-services"
+	ms.date="08/04/2015"
 	wacn.date=""/>
 
 
@@ -56,7 +56,6 @@ Ensure that the diagnostics connection string is present in the Role configurati
 
 	![Visual Studio Settings](./media/cloud-services-how-to-monitor/CloudServices_Monitor_VisualStudioDiagnosticsConnectionString.png)
 
-
 ###To change the monitoring level to verbose or minimal###
 
 1. In the [Management Portal](https://manage.windowsazure.cn/), open the **Configure** page for the cloud service deployment.
@@ -71,7 +70,7 @@ The raw performance counter data and aggregated monitoring data are stored in th
 
 ##How to: Receive alerts for cloud service metrics##
 
-You can receive alerts based on your cloud service monitoring metrics. On the **Management Services** page of the Azure Management Portal, you can create a rule to trigger an alert when the metric you choose reaches a value that you specify. You can also choose to have email sent when the alert is triggered. For more information, see [How to: Receive Alert Notifications and Manage Alert Rules in Azure](/documentation/articles/insights-receive-alert-notification).
+You can receive alerts based on your cloud service monitoring metrics. On the **Management Services** page of the Azure Management Portal, you can create a rule to trigger an alert when the metric you choose reaches a value that you specify. You can also choose to have email sent when the alert is triggered. For more information, see [How to: Receive Alert Notifications and Manage Alert Rules in Azure](https://msdn.microsoft.com/zh-cn/library/azure/dn306638.aspx).
 
 ##How to: Add metrics to the metrics table##
 

@@ -21,36 +21,23 @@ Windows Azure SQL Database uses firewall rules to allow connections to your serv
 
 <!-- deleted by customization
 > [AZURE.IMPORTANT] To allow applications from Azure to connect to your database server, Azure connections must be enabled. For more information about firewall rules and enabling connections from Azure, see [Azure SQL Database Firewall](/documentation/articles/sql-database-firewall-configure). You may have to open some additional TCP ports if you are making connections inside the Azure cloud boundary. For more information, see the **V12 of SQL Database: Outside vs inside** section of [Ports beyond 1433 for ADO.NET 4.5 and SQL Database V12](/documentation/articles/sql-database-develop-direct-route-ports-adonet-v12)
+-->
+<!-- keep by customization: begin -->
+> [AZURE.IMPORTANT]  To allow applications from Azure to connect to your database server, Azure connections must be enabled. For more information about firewall rules and enabling connections from Azure, see [Azure SQL Database Firewall](/documentation/articles/sql-database-firewall-configure). 
+<!-- keep by customization: end -->
 
 
 ## Server-level firewall rules
--->
-<!-- keep by customization: begin -->
-**Important**  To allow applications from Azure to connect to your database server, Azure connections must be enabled. For more information about firewall rules and enabling connections from Azure, see [Azure SQL Database Firewall](/documentation/articles/sql-database-firewall-configure). 
-
-
-## Server-Level Firewall Rules
-<!-- keep by customization: end -->
 
 Server-level firewall rules can be created and managed through the Windows Azure Management Portal, Transact-SQL, Azure PowerShell, or REST API.
 
-<!-- deleted by customization
 ### Manage server-level firewall rules through the New Azure Management Portal
--->
-<!-- keep by customization: begin -->
-### Manage Server-Level Firewall Rules through the New Azure Management Portal
-<!-- keep by customization: end -->
 
 
 [AZURE.INCLUDE [sql-database-include-ip-address-22-v12portal](../includes/sql-database-include-ip-address-22-v12portal.md)]
 
 
-<!-- deleted by customization
 ## Manage server-level firewall rules through Management Portal 
--->
-<!-- keep by customization: begin -->
-## Manage Server-Level Firewall Rules through Management Portal 
-<!-- keep by customization: end -->
 
 1. From the Management Portal, click **SQL Databases**. All databases and their corresponding servers are listed here.
 2. Click **Servers** at the top of the page.
@@ -63,12 +50,7 @@ Server-level firewall rules can be created and managed through the Windows Azure
 	*  To delete an existing rule, hover over the rule until the X appears at the end of the row. Click X to remove the rule.
 5. Click **Save** at the bottom of the page to save the changes.
 
-<!-- deleted by customization
 ## Manage server-level firewall rules through Transact-SQL
--->
-<!-- keep by customization: begin -->
-## Manage Server-Level Firewall Rules through Transact-SQL
-<!-- keep by customization: end -->
 
 1. Launch a query window through the Management Portal or through SQL Server Management Studio.
 2. Verify you are connected to the master database.
@@ -86,12 +68,7 @@ Server-level firewall rules can be created and managed through the Windows Azure
  
 		EXECUTE sp_delete_firewall_rule @name = N'ContosoFirewallRule'
  
-<!-- deleted by customization
 ## Manage server-level firewall rules through Azure PowerShell
--->
-<!-- keep by customization: begin -->
-## Manage Server-Level Firewall Rules through Azure PowerShell
-<!-- keep by customization: end -->
 1. Launch Azure PowerShell.
 2. Server-level firewall rules can be created, updated, and deleted using Azure PowerShell. 
 
@@ -107,12 +84,7 @@ Server-level firewall rules can be created and managed through the Windows Azure
 
 		Remove-AzureSqlDatabaseServerFirewallRule –RuleName ContosoFirewallRule –ServerName Contoso
  
-<!-- deleted by customization
 ## Manage server-level firewall rules through REST API
--->
-<!-- keep by customization: begin -->
-## Manage Server-Level Firewall Rules through REST API
-<!-- keep by customization: end -->
 1. Managing firewall rules through REST API must be authenticated. For information, see Authenticating Service Management Requests.
 2. Server-level rules can be created, updated, or deleted using REST API
 
@@ -133,12 +105,7 @@ Server-level firewall rules can be created and managed through the Windows Azure
 	 
 		https://management.core.chinacloudapi.cn:8443/{subscriptionId}/services/sqlservers/servers/Contoso/firewallrules/ContosoFirewallRule
  
-<!-- deleted by customization
 ## Database-level firewall rules
--->
-<!-- keep by customization: begin -->
-## Database-Level Firewall Rules
-<!-- keep by customization: end -->
 
 1. After creating a server-level firewall for your IP address, launch a query window through the Management Portal or through SQL Server Management Studio.
 2. Connect to the database for which you want to create a database-level firewall rule.

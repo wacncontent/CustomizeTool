@@ -16,10 +16,12 @@
 
 # Get started: Provision Apache Spark on Azure HDInsight and run interactive queries using Spark SQL
 
+<!-- deleted by customization
 [AZURE.INCLUDE [hdinsight-azure-preview-portal](../includes/hdinsight-azure-preview-portal.md)]
 
 * [Provision Apache Spark on HDInsight and run interactive queries using Spark SQL](/documentation/articles/hdinsight-apache-spark-zeppelin-notebook-jupyter-spark-sql-v1)
 
+-->
 Learn how to provision an Apache Spark cluster in HDInsight using the Quick Create option and then use the web-based [Zeppelin](https://zeppelin.incubator.apache.org) and [Jupyter](https://jupyter.org) notebooks to run Spark SQL interactive queries on the Spark cluster.
 
 
@@ -27,19 +29,25 @@ Learn how to provision an Apache Spark cluster in HDInsight using the Quick Crea
 
 **Prerequisites:**
 
-Before you begin this tutorial, you must have an Azure subscription. See [Get Azure trial](/pricing/1rmb-trial/).
+Before you begin this tutorial, you must have an Azure subscription. See [Get Azure <!-- deleted by customization trial](/pricing/1rmb-trial/) --><!-- keep by customization: begin --> trial][azure-trial] <!-- keep by customization: end -->.
 
 
+<!-- deleted by customization
 ## <a name="provision"></a>Provision an HDInsight Spark cluster
+-->
+<!-- keep by customization: begin -->
+##<a name="provision"></a>Provision an HDInsight Spark cluster
+<!-- keep by customization: end -->
 
 In this section, you provision an HDInsight version 3.2 cluster, which is based on Spark version 1.3.1. For information about HDInsight versions and their SLAs, see [HDInsight component versioning](/documentation/articles/hdinsight-component-versioning).
 
->[AZURE.NOTE] The steps in this article create an Apache Spark cluster in HDInsight by using basic configuration settings. For information about other cluster configuration settings (such as using additional storage, an Azure virtual network, or a metastore for Hive), see [Provision HDInsight clusters using custom options](/documentation/articles/hdinsight-apache-spark-provision-clusters).
+>[AZURE.NOTE] The steps in this article create <!-- deleted by customization an --> Apache Spark cluster in HDInsight by using basic configuration settings. For information about other cluster configuration settings (such as using additional storage, an Azure virtual network, or a metastore for Hive), see [Provision HDInsight clusters using custom options](/documentation/articles/hdinsight-apache-spark-provision-clusters).
 
 
 **To provision a Spark cluster**
 
-1. Sign in to the [Azure preview portal](https://ms.portal.azure.com/).
+<!-- deleted by customization
+1. Sign in to the [Azure preview portal](https://manage.windowsazure.cn/).
 
 2. Click **NEW**, click **Data + Analytics**, and then click **HDInsight**.
 
@@ -95,11 +103,23 @@ In this section, you provision an HDInsight version 3.2 cluster, which is based 
 
 
 ## <a name="zeppelin"></a>Run interactive Spark SQL queries using a Zeppelin notebook
+-->
+<!-- keep by customization: begin -->
+1. Sign in to the [Azure Management Portal][azure-management-portal]. 
+
+2. Click **NEW** in the lower-left corner and then enter the values as shown in the image.
+
+	![Create a Spark cluster in HDInsight](./media/hdinsight-apache-spark-zeppelin-notebook-jupyter-spark-sql/HDI.QuickCreateCluster.png "Create a Spark cluster in HDInsight")
+
+
+##<a name="zeppelin"></a>Run interactive Spark SQL queries using a Zeppelin notebook
+<!-- keep by customization: end -->
 
 After you have provisioned a cluster, you can use a web-based Zeppelin notebook to run Spark SQL interactive queries against the Spark HDInsight cluster. In this section, we will use a sample data file (hvac.csv) available by default on the cluster to run some interactive Spark SQL queries.
 
 >[AZURE.NOTE] The notebook you create by following the instructions below is also available by default on the cluster. After you have launched Zeppelin, you will find this notebook by the name **Zeppelin HVAC tutorial**.
 
+<!-- deleted by customization
 1. From the [Azure Preview Portal](https://manage.windowsazure.cn/), from the startboard, click the tile for your Spark cluster (if you pinned it to the startboard). You can also navigate to your cluster under **Browse All** > **HDInsight Clusters**.   
 
 2. From the Spark cluster blade, click **Quick Links**, and then from the **Cluster Dashboard** blade, click **Zeppelin Notebook**. If prompted, enter the admin credentials for the cluster.
@@ -107,6 +127,10 @@ After you have provisioned a cluster, you can use a web-based Zeppelin notebook 
 	> [AZURE.NOTE] You may also reach the Zeppelin Notebook for your cluster by opening the following URL in your browser. Replace __CLUSTERNAME__ with the name of your cluster:
 	>
 	> `https://CLUSTERNAME.azurehdinsight.cn/zeppelin`
+-->
+<!-- keep by customization: begin -->
+1. Launch the Zeppelin notebook. Select your newly-created Spark cluster on the Azure Management Portal, and from the portal task bar at the bottom, click **Zeppelin Notebook**. When prompted, enter the admin credentials for the cluster. Follow the instructions on the page that opens up to launch the notebook.
+<!-- keep by customization: end -->
 
 2. Create a new notebook. From the header pane, click **Notebook**, and then click **Create New Note**.
 
@@ -114,7 +138,7 @@ After you have provisioned a cluster, you can use a web-based Zeppelin notebook 
 
 	On the same page, under the **Notebook** heading, you should see a new notebook with the name starting with **Note XXXXXXXXX**. Click the new notebook.
 
-3. On the webpage for the new notebook, click the heading, and change the name of the notebook if you want to. Press ENTER to save the name change. Also, make sure the notebook header shows a **Connected** status in the top-right corner.
+3. On the <!-- deleted by customization webpage --><!-- keep by customization: begin --> web page <!-- keep by customization: end --> for the new notebook, click the heading, and change the name of the notebook if you want to. Press ENTER to save the name change. Also, make sure the notebook header shows a **Connected** status in the top-right corner.
 
 	![Zeppelin notebook status](./media/hdinsight-apache-spark-zeppelin-notebook-jupyter-spark-sql/HDI.Spark.NewNote.Connected.png "Zeppelin notebook status")
 
@@ -179,12 +203,13 @@ After you have provisioned a cluster, you can use a web-based Zeppelin notebook 
 
 	![Restart the Zeppelin intepreter](./media/hdinsight-apache-spark-zeppelin-notebook-jupyter-spark-sql/HDI.Spark.Zeppelin.Restart.Interpreter.png "Restart the Zeppelin intepreter")
 
-## <a name="jupyter"></a>Run Spark SQL queries using a Jupyter notebook
+<!-- deleted by customization ## <a --><!-- keep by customization: begin --> ##<a <!-- keep by customization: end --> name="jupyter"></a>Run Spark SQL queries using a Jupyter notebook
 
 In this section, you use a Jupyter notebook to run Spark SQL queries against a Spark cluster.
 
 >[AZURE.NOTE] The notebook you create by following the instructions below is also available by default on the cluster. After you have launched Jupyter, you will find this notebook by the name **HVACTutorial.ipynb**.
 
+<!-- deleted by customization
 1. From the [Azure Preview Portal](https://manage.windowsazure.cn/), from the startboard, click the tile for your Spark cluster (if you pinned it to the startboard). You can also navigate to your cluster under **Browse All** > **HDInsight Clusters**.   
 
 2. From the Spark cluster blade, click **Quick Links**, and then from the **Cluster Dashboard** blade, click **Jupyter Notebook**. If prompted, enter the admin credentials for the cluster.
@@ -193,6 +218,10 @@ In this section, you use a Jupyter notebook to run Spark SQL queries against a S
 	>
 	> `https://CLUSTERNAME.azurehdinsight.cn/jupyter`
 
+-->
+<!-- keep by customization: begin -->
+1. Launch the Jupyter notebook. Select your Spark cluster on the Azure Management Portal, and from the portal task bar at the bottom, click **Jupyter Notebook**. When prompted, enter the admin credentials for the Spark cluster.
+<!-- keep by customization: end -->
 2. Create a new notebook. Click **New**, and then click **Python2**.
 
 	![Create a new Jupyter notebook](./media/hdinsight-apache-spark-zeppelin-notebook-jupyter-spark-sql/HDI.Spark.Note.Jupyter.CreateNotebook.png "Create a new Jupyter notebook")
@@ -267,7 +296,12 @@ In this section, you use a Jupyter notebook to run Spark SQL queries against a S
 	![Restart the Jupyter Kernel](./media/hdinsight-apache-spark-zeppelin-notebook-jupyter-spark-sql/HDI.Spark.Jupyter.Restart.Kernel.png "Restart the Jupyter Kernel")
 
 
+<!-- deleted by customization
 ## <a name="seealso"></a>See also
+-->
+<!-- keep by customization: begin -->
+##<a name="seealso"></a>See also
+<!-- keep by customization: end -->
 
 
 * [Overview: Apache Spark on Azure HDInsight](/documentation/articles/hdinsight-apache-spark-overview)
@@ -281,8 +315,15 @@ In this section, you use a Jupyter notebook to run Spark SQL queries against a S
 [hdinsight-versions]: /documentation/articles/hdinsight-component-versioning
 [hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
 [hdinsight-storage]: /documentation/articles/hdinsight-use-blob-storage
+<!-- deleted by customization
+
 [azure-purchase-options]: /pricing/overview/
-[azure-member-offers]: http://azure.microsoft.com/pricing/member-offers/
+[azure-member-offers]: /pricing/member-offers/
 [azure-trial]: /pricing/1rmb-trial/
+-->
+<!-- keep by customization: begin -->
+[azure-purchase-options]: http://www.windowsazure.cn/pricing/overview/
+[azure-trial]: http://www.windowsazure.cn/pricing/1rmb-trial/
+<!-- keep by customization: end -->
 [azure-management-portal]: https://manage.windowsazure.cn/
 [azure-create-storageaccount]: /documentation/articles/storage-create-storage-account

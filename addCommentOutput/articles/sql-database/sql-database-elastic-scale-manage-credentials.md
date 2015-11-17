@@ -32,7 +32,7 @@ The [Elastic Database client library](http://www.nuget.org/packages/Microsoft.Az
 
      Do not use User ID values in the form of "username@server" -- instead just use "username".  This is because credentials must work against both the Shard Map Manager database and individual shards, which may be on different servers.
      
-* **User <!-- deleted by customization credentials --><!-- keep by customization: begin --> Credentials <!-- keep by customization: end --> for <!-- deleted by customization shard map manager access** --><!-- keep by customization: begin --> Shard Map Manager Access** <!-- keep by customization: end -->:  When instantiating the <!-- deleted by customization shard map manager --><!-- keep by customization: begin --> Shard Map Manager <!-- keep by customization: end --> in an application that is not going to administer shard maps, use credentials that have read-only permissions on the global shard map. The information retrieved from the global shard map under these credentials are used for [data-dependent routing](/documentation/articles/sql-database-elastic-scale-data-dependent-routing) and to populate the shard map cache on the client. The credentials are provided through the same call pattern to **GetSqlShardMapManager** as shown above:
+* **User credentials for shard map manager access**:  When instantiating the shard map manager in an application that is not going to administer shard maps, use credentials that have read-only permissions on the global shard map. The information retrieved from the global shard map under these credentials are used for [data-dependent routing](/documentation/articles/sql-database-elastic-scale-data-dependent-routing) and to populate the shard map cache on the client. The credentials are provided through the same call pattern to **GetSqlShardMapManager** as shown above: 
  
         // Obtain shard map manager. 
         ShardMapManager shardMapManager = ShardMapManagerFactory.GetSqlShardMapManager( 
@@ -54,3 +54,4 @@ The [Elastic Database client library](http://www.nuget.org/packages/Microsoft.Az
     As with the Admin credentials, do not use User ID values in the form of "username@server" -- instead just use "username".  Also note that the connection string does not contain a server name and database name. That is because the **OpenConnectionForKey** call will automatically direct the connection to the correct shard based on the key. Hence, the database name and server name must not be provided. 
 
 [AZURE.INCLUDE [elastic-scale-include](../includes/elastic-scale-include.md)]
+ 

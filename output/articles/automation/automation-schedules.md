@@ -39,6 +39,7 @@ The cmdlets in the following table are used to create and manage variables with 
 1. Click **Add Schedule**.
 1. Complete the wizard and click the checkbox to save the new variable.
 
+<!-- deleted by customization
 ### To create a new schedule with the Azure preview portal
 
 1. From your automation account, click the **Assets** part to open the **Assets** blade.
@@ -46,6 +47,7 @@ The cmdlets in the following table are used to create and manage variables with 
 1. Click **Add a Schedule** at the top of the blade.
 1. Complete the form and click **Create** to save the new schedule.
 
+-->
 ### To create a new schedule with Windows PowerShell
 
 The [New-AzureAutomationSchedule](http://msdn.microsoft.com/zh-cn/library/dn690271.aspx) cmdlet creates a new schedule and sets the value for an existing schedule.  The following sample Windows PowerShell commands create a new schedule called My Daily Schedule that starts on tomorrow at noon and fires every day one year:

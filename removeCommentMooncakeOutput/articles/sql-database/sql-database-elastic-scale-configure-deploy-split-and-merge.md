@@ -10,7 +10,7 @@
 <tags
 	ms.service="sql-database"
 	ms.date="08/14/2015"
-	wacn.date="" />
+	wacn.date=""/>
 
 # Elastic database Split-Merge tool tutorial
 
@@ -45,7 +45,7 @@ The steps above download the Split-Merge files to the current directory. The fil
 
 3. Either create a new database or choose an existing database to serve as the status database for Split/Merge operations and retrieve the connection string of that database. 
 
-	**Important** At this time, the status database must use the Latin  collation (SQL_Latin1_General_CP1_CI_AS). For more information, see [Windows Collation Name (Transact-SQL)](https://msdn.microsoft.com/zh-cn/library/ms188046.aspx).
+	**Important** At this time, the status database must use the Latin  collation (SQL\_Latin1\_General\_CP1\_CI\_AS). For more information, see [Windows Collation Name (Transact-SQL)](https://msdn.microsoft.com/zh-cn/library/ms188046.aspx).
 
 	With Azure SQL DB, the connection string typically is of the form:
 
@@ -100,12 +100,12 @@ Go to the [Azure Management Portal](https://manage.windowsazure.cn).
 ### Update the service configuration file
 
 Paste the certificate thumbprint copied above into the thumbprint/value attribute of these settings.
-For the web role:
+For the worker role:
 
     <Setting name="DataEncryptionPrimaryCertificateThumbprint" value="" />
     <Certificate name="DataEncryptionPrimary" thumbprint="" thumbprintAlgorithm="sha1" />
 
-For the worker role:
+For the web role:
 
     <Setting name="AdditionalTrustedRootCertificationAuthorities" value="" />
     <Setting name="AllowedClientCertificateThumbprints" value="" />
@@ -146,7 +146,7 @@ If your worker role fails to come online, but your web role succeeds, it is most
         "Server=myservername.database.chinacloudapi.cn; Database=mydatabasename;User ID=myuserID; Password=mypassword; Encrypt=True; Connection Timeout=30" .
 
 * Ensure that the server name does not begin with **https://**.
-* Ensure that your Azure SQL DB server allows Windows Azure Services to connect to it. To do this, open https://manage.windowsazure.cn, click “SQL Databases” on the left, click “Servers” at the top, and select your server. Click **Configure** at the top and ensure that the **Windows Azure Services** setting is set to “Yes”. (See the Prerequisites section at the top of this article).
+* Ensure that your Azure SQL DB server allows Azure Services to connect to it. To do this, open https://manage.windowsazure.cn, click “SQL Databases” on the left, click “Servers” at the top, and select your server. Click **Configure** at the top and ensure that the **Azure Services** setting is set to “Yes”. (See the Prerequisites section at the top of this article).
 
 ## Testing your Split-Merge service deployment
 

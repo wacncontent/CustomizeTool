@@ -15,6 +15,7 @@
 
 # Buy and Configure a custom domain name in Azure Websites
 
+<!-- deleted by customization
 > [AZURE.SELECTOR]
 - [Buy Domain for Web Apps](/documentation/articles/custom-dns-web-site-buydomains-web-app)
 - [Web Apps with External Domains](/documentation/articles/web-sites-custom-domain-name)
@@ -23,6 +24,15 @@
 
 
 
+-->
+<!-- keep by customization: begin -->
+<div class="dev-center-tutorial-selector sublanding">
+  <a href="/documentation/articles/custom-dns-web-site-buydomains-web-app" title="Web Apps" class="current">Buy Domain for Web Apps</a>
+  <a href="/documentation/articles/web-sites-custom-domain-name" title="Web Apps">Web Apps with External Domains</a>
+  <a href="/documentation/articles/web-sites-traffic-manager-custom-domain-name/" title="Web Apps with Traffic Manager">Web Apps with Traffic Manager</a>
+
+</div>
+<!-- keep by customization: end -->
 
 [AZURE.INCLUDE [websites-cloud-services-css-guided-walkthrough](../includes/websites-cloud-services-css-guided-walkthrough.md)]
 

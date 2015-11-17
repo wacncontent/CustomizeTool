@@ -1,20 +1,22 @@
 <properties 
    pageTitle="Introduction to Application Gateway | Windows Azure"
-   description="This page provides an overview of the Application Gateway service for Layer 7 load balancing, including gateway sizes, HTTP load balancing, cookie based session affinity, and SSL offload."
+   description="This page provides an overview of the Application Gateway service for layer 7 load balancing, including gateway sizes, HTTP load balancing, cookie based session affinity, and SSL offload."
    documentationCenter="na"
    services="application-gateway"
    authors="joaoma"
    manager="jdial"
    editor="tysonn"/>
-<tags 
-   ms.service="application-gateway" 
-   ms.date="08/23/2015"
-   wacn.date=""/>
+<tags
+	ms.service="application-gateway"
+	ms.date="08/23/2015"
+	wacn.date=""/>
 
-# Application Gateway technical overview 
+# What is Application Gateway?
 
 
-Windows Azure Application Gateway is provides an Azure-managed HTTP load balancing solution based on layer 7 load balancing. Application load balancing  enables IT administrators and developers to create routing rules for network traffic based on HTTP.  The application gateway service is highly available and metered. For the SLA and Pricing, please refer to the [SLA](/support/legal/sla) and [Pricing](/home/features/application-gateway/#price) pages.
+Windows Azure Application Gateway provides an Azure-managed HTTP load balancing solution based on layer 7 load balancing. 
+
+Application load balancing  enables IT administrators and developers to create routing rules for network traffic based on HTTP.  The application gateway service is highly available and metered. For the SLA and Pricing, please refer to the [SLA](/support/legal/sla/) and [Pricing](/home/features/application-gateway/#price) pages.
 
 Application Gateway currently supports layer 7 application delivery for the following:
 
@@ -30,7 +32,9 @@ Azure provides layer 4 load balancing via Azure load balancer working at the tra
 
 The Application Gateway will route the HTTP traffic based on its configuration whether it's a virtual machine, cloud service, web app or an external IP address.
 
-The diagram below explains how traffic flows for Application Gateway: 
+The diagram below explains how traffic flows for Application Gateway:
+
+ 
 ![Application Gateway2](./media/application-gateway-introduction/appgateway2.png)
 
 HTTP layer 7 load balancing is useful for:

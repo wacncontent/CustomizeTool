@@ -27,22 +27,12 @@ This topic explains how data is collected, processed, and secured within Azure A
 ##Overview
 
 Cloud App Discovery is a feature of Azure AD and is hosted in Windows Azure. <br>
-<!-- deleted by customization
 The Cloud App Discovery endpoint agent is used to collect application discovery data from IT managed machines. <br>
--->
-<!-- keep by customization: begin -->
-Cloud App Discovery endpoint agents are used to collect application discovery data from IT managed machines. <br> 
-<!-- keep by customization: end -->
 The collected data is sent securely over an encrypted channel to the Azure AD Cloud App Discovery service. <br>
-The Cloud App Discovery data for an organization is then visible in the Azure Management Portal. <!-- deleted by customization <br> -->
+The Cloud App Discovery data for an organization is then visible in the Azure Management Portal. <br>
 
 
-<!-- deleted by customization
 <center>![How Cloud App Discovery Works](./media/active-directory-cloudappdiscovery-security-and-privacy-considerations/cad01.png) </center> <br>
--->
-<!-- keep by customization: begin -->
-<center>![How Cloud App Discovery Works](./media/active-directory-cloudappdiscovery-security-and-privacy-considerations/cad01.png)</center>
-<!-- keep by customization: end -->
 
 
 The following sections follow the flow of information and describe how it is secured as it moves from your organization to the Cloud App Discovery service and ultimately to the Cloud App Discovery portal.
@@ -51,28 +41,18 @@ The following sections follow the flow of information and describe how it is sec
 
 ## Collecting data from your organization
 
-In order to use Azure Active Directory’s Cloud App discovery feature to get insights into the applications used by employees in your organization, you need to first deploy <!-- deleted by customization the --> Azure AD Cloud App Discovery endpoint <!-- deleted by customization agent --><!-- keep by customization: begin --> agents <!-- keep by customization: end --> to machines in your organization.
+In order to use Azure Active Directory’s Cloud App discovery feature to get insights into the applications used by employees in your organization, you need to first deploy the Azure AD Cloud App Discovery endpoint agent to machines in your organization.
 
-Administrators of the Azure Active Directory tenant (or their delegate) can download the agent installation package from the Azure Management Portal. The <!-- deleted by customization agent --><!-- keep by customization: begin --> agents <!-- keep by customization: end --> can either be manually installed or installed across multiple machines in the organization using SCCM or Group Policy.
+Administrators of the Azure Active Directory tenant (or their delegate) can download the agent installation package from the Azure Management Portal. The agent can either be manually installed or installed across multiple machines in the organization using SCCM or Group Policy.
 
 For further instructions on deployment options, see [Cloud App Discovery Group Policy Deployment Guide](http://social.technet.microsoft.com/wiki/contents/articles/30965.cloud-app-discovery-group-policy-deployment-guide.aspx).
-<!-- deleted by customization <br> -->
+<br>
 
 ### Data collected by the agent
 
-The information outlined in the list below is collected by the agent when <!-- deleted by customization a connection is --><!-- keep by customization: begin --> connections are <!-- keep by customization: end --> made to <!-- deleted by customization a --> Web <!-- deleted by customization application --><!-- keep by customization: begin --> applications <!-- keep by customization: end -->. The information is only collected for those applications that the administrator has configured for <!-- keep by customization: begin --> application <!-- keep by customization: end --> discovery. <br>
-<!-- deleted by customization
+The information outlined in the list below is collected by the agent when a connection is made to a Web application. The information is only collected for those applications that the administrator has configured for discovery. <br>
 You can edit the list of cloud apps that the agent monitors through the Cloud App Discovery blade in the Microsoft [Azure Management Portal](https://manage.windowsazure.cn), under **Settings**->**Data Collection**->**App Collection list**. For more details, see [Getting Started With Cloud App Discovery](http://social.technet.microsoft.com/wiki/contents/articles/30962.getting-started-with-cloud-app-discovery.aspx)
 <br>
--->
-<!-- keep by customization: begin -->
-The list of applications that you choose to collect metadata for is configurable in the portal, under the Settings tab.
-
-
-
-> [AZURE.NOTE] For more details, see [Getting Started With Cloud App Discovery](http://social.technet.microsoft.com/wiki/contents/articles/30962.getting-started-with-cloud-app-discovery.aspx)
- 
-<!-- keep by customization: end -->
 **Information Category**: User information <br>
 **Description**: <br>
 The Windows user name of the process that made a request to the target Web application (e.g.: DOMAIN\username) as well as the Windows Security Identifier (SID) of the user.
@@ -80,7 +60,7 @@ The Windows user name of the process that made a request to the target Web appli
 
 **Information Category**: Process information <br>
 **Description**: <br>
-The name of the process that made the request to the target <!-- deleted by customization Web --><!-- keep by customization: begin --> web <!-- keep by customization: end --> application (e.g.: “iexplore.exe”)
+The name of the process that made the request to the target Web application (e.g.: “iexplore.exe”)
 
 **Information Category**: Machine information <br>
 **Description**: <br>
@@ -123,19 +103,17 @@ The following HTTP information:
 
 > [AZURE.NOTE] The HTTP information above is collected for all non-encrypted connections.
  For TLS connections, this information is only captured when the ‘Deep Inspection’ setting is turned on in the portal. The setting is ‘ON’ by default.
-For more details, see <!-- deleted by customization below, and --> [Getting Started With Cloud App Discovery](http://social.technet.microsoft.com/wiki/contents/articles/30962.getting-started-with-cloud-app-discovery.aspx)
-<!-- deleted by customization
+For more details, see below, and [Getting Started With Cloud App Discovery](http://social.technet.microsoft.com/wiki/contents/articles/30962.getting-started-with-cloud-app-discovery.aspx)
 
 
 <br><br>
--->
 ### How the agent works
 
 The agent installation includes two components:
 
 - A user-mode component
 
-- A kernel-mode driver component (Windows <!-- deleted by customization Filtering --><!-- keep by customization: begin --> Filter <!-- keep by customization: end --> Platform driver)
+- A kernel-mode driver component (Windows Filtering Platform driver)
 
 
 
@@ -143,23 +121,10 @@ When the agent is first installed it stores a machine-specific trusted certifica
 The agent periodically retrieves policy configuration from the Cloud App Discovery service over this secure connection. <br>
 The policy includes information about which cloud applications to monitor and whether auto-updating should be enabled, among other things.
 
-<!-- deleted by customization
 As Web traffic is sent and received on the machine from Internet Explorer and Chrome, the Cloud App Discovery agent analyzes the traffic and extracts the relevant metadata (see the **Data collected by the agent** section above). <br>
--->
-<!-- keep by customization: begin -->
-As Web traffic is sent and received on the machine, Cloud App Discovery analyzes the traffic and extracts the relevant metadata (see the table above). <br>
-<!-- keep by customization: end -->
 Every minute, the agent uploads the collected metadata to the Cloud App Discovery service over an encrypted channel.
 
-<!-- deleted by customization
 The driver component intercepts the encrypted traffic and inserts itself into the encrypted stream. More details in the **Intercepting data from encrypted connections (Deep inspection)** section below.
--->
-<!-- keep by customization: begin -->
-For encrypted connections, an additional step is performed in an effort to improve the accuracy of the collected data.<br>
-This is known as deep inspection. <br>
-The driver component intercepts the encrypted traffic and inserts itself into the encrypted stream. 
-It does this by creating a self-signed root certificate on the machine causing the client application to trust the Cloud App Discovery agent. This self-signed root certificate is marked non-exportable and is ACL’d to administrators. It is intended to never leave the machine on which it was created.
-<!-- keep by customization: end -->
 
 
 ### Respecting user privacy
@@ -168,7 +133,6 @@ Our goal is to provide administrators the tools to set the balance between detai
 
 - **Data Collection**: Administrators can choose to specify which applications or application categories they want to get discovery data on.
 
-<!-- deleted by customization
 - **Deep Inspection**: Administrators can chose to specify if the agent collects HTTP traffic for SSL/TLS connections (aka **'Deep Inspection'**). More on this in the next section.
 
 - **Consent Options**: Administrators can use the Cloud App Discovery portal to choose whether to notify users of the data collection by the agent, and whether to require user consent before the agent starts collecting user data.
@@ -198,21 +162,6 @@ There are a few cases where TLS interception may impact the end user experience:
 - If users click the lock icon in the browser address bar browser to inspect the site information, they will not see a chain ending in the certificate authority used to sign the website certificate, but instead a certificate chain ending with the Windows trusted certificate store.
 
 To reduce the occurrences of these issues, we keep track of cloud services and client applications known to use extended validation or public key pinning and instruct the Endpoint Agent to avoid intercepting impacted connections. Even in these cases, however, you will still receive reports of the use of these cloud apps and the volume of data being transferred, but since they are not deep inspected, no details about how the apps were used will be available.
--->
-<!-- keep by customization: begin -->
-
-- **Deep Inspection**: Administrators can chose to specify if the agent collects HTTP traffic for SSL/TLS connections. 
-
-
-
-The Cloud App Discovery endpoint agent only collects the information described in the table above.
-
-
-
-> [AZURE.NOTE] For more details, see [Getting Started With Cloud App Discovery](http://social.technet.microsoft.com/wiki/contents/articles/30962.getting-started-with-cloud-app-discovery.aspx)
- 
-
-<!-- keep by customization: end -->
 
 
 ## Sending data to Cloud App Discovery
@@ -241,15 +190,8 @@ However, administrators can choose to delegate this access to other users or gro
 
 
 > [AZURE.NOTE] For more details, see [Getting Started With Cloud App Discovery](http://social.technet.microsoft.com/wiki/contents/articles/30962.getting-started-with-cloud-app-discovery.aspx)
-<!-- deleted by customization
 
-<!-- deleted by customization <br> -->
--->
-<!-- keep by customization: begin -->
- 
-
-<!-- deleted by customization <br> -->
-<!-- keep by customization: end -->
+<br>
 Any user accessing the data in the portal, must be licensed with an Azure AD Premium license.
 
 

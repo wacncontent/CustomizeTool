@@ -1,5 +1,8 @@
 <properties pageTitle="Tutorial: Azure Active Directory integration with SimpleNexus | Windows Azure" description="Learn how to use SimpleNexus with Azure Active Directory to enable single sign-on, automated provisioning, and more!." services="active-directory" authors="MarkusVi"  documentationCenter="na" manager="stevenpo"/>
-<tags ms.service="active-directory" ms.devlang="na" ms.topic="article" ms.tgt_pltfrm="na" ms.workload="identity" ms.date="08/01/2015" ms.author="markvi" />
+<tags
+	ms.service="active-directory"
+	ms.date="08/01/2015"
+	wacn.date=""/>
 #Tutorial: Azure Active Directory integration with SimpleNexus
 >[AZURE.TIP]For feedback, click [here](https://social.msdn.microsoft.com/Forums/azure/zh-cn/08903982-2434-4877-9388-fa2ff55933d7/tutorial-azure-active-directory-integration-with-simplenexus?forum=WindowsAzureAD).
   

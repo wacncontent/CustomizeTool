@@ -14,15 +14,15 @@
 #Create an Oracle WebLogic Server 12c and Oracle Database 12c virtual machine in Azure
 
 This article shows how to create a virtual machine based on a Microsoft-provided Oracle WebLogic Server 12c and Oracle Database 12c image running on Windows Server 2012 in Azure.
-
 <!-- deleted by customization
+
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] classic deployment model.
 
-
 -->
+
 ##To create an Oracle WebLogic Server 12c and Oracle Database 12c virtual machine in Azure
 
-1. Sign in to the [Azure Management <!-- deleted by customization Portal](https://ms.portal.azure.com/) --><!-- keep by customization: begin --> Portal](https://manage.windowsazure.cn) <!-- keep by customization: end -->.
+1. Sign in to the [Azure Management Portal](https://manage.windowsazure.cn/).
 
 2.	Click the **Marketplace**, click **Compute**, and then type **Oracle** into the search box.
 

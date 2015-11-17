@@ -11,7 +11,7 @@
 <tags
 	ms.service="multiple"
 	ms.date="10/07/2015"
-	wacn.date="" />
+	wacn.date=""/>
 
 # Using the Azure CLI for Mac, Linux, and Windows with Azure Resource Manager
 
@@ -31,7 +31,7 @@ In addition to command-specific optional parameters documented here, there are t
 
 ## Imperative and declarative approaches
 
-As with the [Azure Service Management mode](/documentation/articles/virtual-machines-command-line-tools), the **arm** mode of the Azure CLI gives you commands that create resources imperatively on the command line. For example, if you type `azure group create <groupname> <location>` you are asking Azure to create a resource group, and with `azure group deployment create <resourcegroup> <deploymentname>` you are instructing Azure to create a deployment of any number of items and place them in a group. Because each type of resource has imperative commands, you can chain them together to create fairly complex deployments.
+As with the [Azure Service Management mode](/documentation/articles/virtual-machines-command-line-tools), the Resource Manager mode of the Azure CLI gives you commands that create resources imperatively on the command line. For example, if you type `azure group create <groupname> <location>` you are asking Azure to create a resource group, and with `azure group deployment create <resourcegroup> <deploymentname>` you are instructing Azure to create a deployment of any number of items and place them in a group. Because each type of resource has imperative commands, you can chain them together to create fairly complex deployments.
 
 However, using resource group _templates_ that describe a resource group is a declarative approach that is far more powerful, allowing you to automate complex deployments of (almost) any number of resources for (almost) any purpose. When using templates, the only imperative command is to deploy one. For a general overview of templates, resources, and resource groups, see [Azure Resource Group Overview](/documentation/articles/resource-groups-overview).  
 
@@ -1319,7 +1319,7 @@ Lists all public IP resources within a resource group.
 	data:    mypubip5         chinanorth    Dynamic                   4             "domain name".chinanorth.chinacloudapp.cn
 	data:    myPublicIP       chinaeast    Dynamic                   4             "domain name".chinaeast.chinacloudapp.cn
 	data:    mytestpublicip   chinaeast    Dynamic                   4             "domain name".chinaeast.chinacloudapp.cn
-	data:    mytestpublicip1  chinaeast   Static (Static IP address) 4             xplatclitest.chinaeast.chinacloudapp.cn
+	data:    mytestpublicip1  chinaeast   Static (Static IP address) 4             xplatclitest.chinaeast.chinacloudapp.cn 
 
 Parameter options:
 

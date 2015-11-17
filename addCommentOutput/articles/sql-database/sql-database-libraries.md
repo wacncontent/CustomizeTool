@@ -35,12 +35,12 @@ The following table displays libraries that are released by Microsoft. The **Lib
 
 | Platform | Oper Sys | Libraries<br/>for Download | Version<br/>of Driver | Description<br/>of Driver | More<br/>Info |
 | :--- | :--- | :--- | :--- | :--- | :-- |
-| .NET | Cross-platform (.NET) | [ADO.NET, System .Data <!-- deleted by customization .SqlClient](http://www.microsoft.com/download/details.aspx?id=30653) --><!-- keep by customization: begin --> .SqlClient](http://www.microsoft.com/zh-cn/download/details.aspx?id=30653) <!-- keep by customization: end --> | 4.5+ | SQL Server Provider for .NET Framework | . |
-| PHP | Windows | [PHP for SQL <!-- deleted by customization Server](http://www.microsoft.com/download/details.aspx?id=20098) --><!-- keep by customization: begin --> Server](http://www.microsoft.com/zh-cn/download/details.aspx?id=20098) <!-- keep by customization: end --> | 2.0+ | PHP Driver for SQL Server | [Link](http://msdn.microsoft.com/zh-cn/library/dn865013.aspx) |
-| Java | Windows | [JDBC for SQL <!-- deleted by customization Server](https://www.microsoft.com/download/details.aspx?id=11774) --><!-- keep by customization: begin --> Server](https://www.microsoft.com/zh-cn/download/details.aspx?id=11774) <!-- keep by customization: end --> | 2.0+ |  Type 4 JDBC driver that provides database connectivity through the standard JDBC API | [Link](http://msdn.microsoft.com/zh-cn/library/dn425070.aspx) |
-| ODBC | Windows | [ODBC for SQL <!-- deleted by customization Server](http://www.microsoft.com/download/details.aspx?id=36434) --><!-- keep by customization: begin --> Server](http://www.microsoft.com/zh-cn/download/details.aspx?id=36434) <!-- keep by customization: end --> | 11.0+ | Microsoft ODBC Driver for SQL Server | [Link](http://msdn.microsoft.com/zh-cn/library/jj730308.aspx) |
-| ODBC | Suse Linux | [ODBC for SQL <!-- deleted by customization Server](http://www.microsoft.com/download/details.aspx?id=34687) --><!-- keep by customization: begin --> Server](http://www.microsoft.com/zh-cn/download/details.aspx?id=34687) <!-- keep by customization: end --> | 11.0+ | Microsoft ODBC Driver for SQL Server | . |
-| ODBC | Redhat Linux | [ODBC for SQL <!-- deleted by customization Server](http://www.microsoft.com/download/details.aspx?id=34687) --><!-- keep by customization: begin --> Server](http://www.microsoft.com/zh-cn/download/details.aspx?id=34687) <!-- keep by customization: end --> | 11.0+ | Microsoft ODBC Driver for SQL Server | . |
+| .NET | Cross-platform (.NET) | [ADO.NET, System .Data .SqlClient](http://www.microsoft.com/download/details.aspx?id=30653) | 4.5+ | SQL Server Provider for .NET Framework | . |
+| PHP | Windows | [PHP for SQL Server](http://www.microsoft.com/download/details.aspx?id=20098) | 2.0+ | PHP Driver for SQL Server | [Link](http://msdn.microsoft.com/zh-cn/library/dn865013.aspx) |
+| Java | Windows | [JDBC for SQL Server](https://www.microsoft.com/download/details.aspx?id=11774) | 2.0+ |  Type 4 JDBC driver that provides database connectivity through the standard JDBC API | [Link](http://msdn.microsoft.com/zh-cn/library/dn425070.aspx) |
+| ODBC | Windows | [ODBC for SQL Server](http://www.microsoft.com/download/details.aspx?id=36434) | 11.0+ | Microsoft ODBC Driver for SQL Server | [Link](http://msdn.microsoft.com/zh-cn/library/jj730308.aspx) |
+| ODBC | Suse Linux | [ODBC for SQL Server](http://www.microsoft.com/download/details.aspx?id=34687) | 11.0+ | Microsoft ODBC Driver for SQL Server | . |
+| ODBC | Redhat Linux | [ODBC for SQL Server](http://www.microsoft.com/download/details.aspx?id=34687) | 11.0+ | Microsoft ODBC Driver for SQL Server | . |
 
 
 ### OLEDB for DB2 and SQL Server, for DRDA design
@@ -53,7 +53,7 @@ For more information, see:
 
 
 - [Microsoft OLE DB Provider for DB2 Version 5.0](http://msdn.microsoft.com/zh-cn/library/dn745875.aspx)
-- [Microsoft OLEDB Provider for DB2 v4.0 for Microsoft SQL Server <!-- deleted by customization 2012](http://www.microsoft.com/download/details.aspx?id=29100) --><!-- keep by customization: begin --> 2012](http://www.microsoft.com/zh-cn/download/details.aspx?id=29100) <!-- keep by customization: end -->
+- [Microsoft OLEDB Provider for DB2 v4.0 for Microsoft SQL Server 2012](http://www.microsoft.com/download/details.aspx?id=29100)
 
 
 ## Third party libraries
@@ -78,3 +78,4 @@ The following table displays libraries that are released by third parties such a
 <!--
 https://en.wikipedia.org/wiki/Draft:Microsoft_SQL_Server_Libraries/Drivers
 -->
+ 

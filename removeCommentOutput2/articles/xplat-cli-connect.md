@@ -19,6 +19,7 @@ The Azure CLI is a set of open-source, cross-platform commands for working with 
 
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-include.md)] This article covers creating and managing resources with the Resource Manager deployment model or the classic deployment model.
 
+
 There are two ways to connect to your subscription from the Azure CLI:
 
 * **Log in to Azure using a work or school account** - This uses Azure Active Directory to authenticate the credentials. Starting with CLI version 0.9.9, the CLI supports organizational accounts enabled for multi-factor authentication. After logging in you can use either Resource Manager or classic (Service Management) commands.
@@ -124,7 +125,7 @@ This changes the default subscription to Azure-sub-2.
 
 If you wish to use a non-default subscription with the Azure CLI, but don't want to change the current default, you can use the `--subscription` option for the command and provide the name of the subscription you wish to use for the operation.
 
-Once you are connected to your Azure subscription, you can start using the Azure CLI commands. For more information, see [How to use the Azure CLI](/documentation/articles/xplat-cli).
+Once you are connected to your Azure subscription, you can start using the Azure CLI commands. For more information, see [How to use the Azure CLI](/documentation/articles/xplat-cli-install).
 
 ## Storage of CLI settings
 
@@ -142,15 +143,16 @@ Whether you log in with a work or school account or import publish settings, you
 
 * To learn more about the Azure CLI, download source code, report problems, or contribute to the project, visit the [GitHub repository for the Azure CLI](https://github.com/azure/azure-xplat-cli).
 
-* If you encounter problems using the Azure CLI, or Azure, visit the [Azure Forums](https://social.msdn.microsoft.com/Forums/zh-cn/home).
+* If you encounter problems using the Azure CLI, or Azure, visit the [Azure Forums](http://social.msdn.microsoft.com/Forums/zh-cn/home?forum=windowsazurezhchshome).
 
 
 
 
 
 [authandsub]: http://msdn.microsoft.com/zh-cn/library/azure/hh531793.aspx#BKMK_AccountVCert
-[free-trial]: http://www.windowsazure.cn/pricing/1rmb-trial/
+[free-trial]: /pricing/1rmb-trial/
 [portal]: https://manage.windowsazure.cn
-[signuporg]: /documentation/articles/sign-up-organization 
+[signuporg]: /documentation/articles/sign-up-organization/
 [cliasm]: /documentation/articles/virtual-machines-command-line-tools
 [cliarm]: /documentation/articles/xplat-cli-azure-resource-manager
+

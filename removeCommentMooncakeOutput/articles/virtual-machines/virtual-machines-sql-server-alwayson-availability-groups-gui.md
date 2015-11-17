@@ -1,21 +1,27 @@
-<properties 
-	pageTitle="Configure AlwaysOn Availability Groups in Azure (GUI)"
-	description="Create an AlwaysOn Availability Group in Azure Virtual Machines. This tutorial primarily uses the user interface and tools rather than scripting."
+<properties
+	pageTitle="Configure AlwaysOn Availability Groups (GUI) | Windows Azure"
+	description="Create an AlwaysOn Availability Group with Azure Virtual Machines. This tutorial primarily uses the user interface and tools rather than scripting."
 	services="virtual-machines"
 	documentationCenter="na"
 	authors="rothja"
 	manager="jeffreyg"
-	editor="monicar" />
+	editor="monicar"
+	tags="azure-service-management" />
 <tags
 	ms.service="virtual-machines"
 	ms.date="08/12/2015"
 	wacn.date=""/>
 
-# Configure AlwaysOn Availability Groups in Azure (GUI)
+# Configure AlwaysOn Availability Groups in Azure VM (GUI)
 
+> [AZURE.SELECTOR]
+- [Portal](/documentation/articles/virtual-machines-sql-server-alwayson-availability-groups-gui)
+- [PowerShell](/documentation/articles/virtual-machines-sql-server-alwayson-availability-groups-powershell)
+
+<br/>
 This end-to-end tutorial shows you how to implement Availability Groups using SQL Server AlwaysOn running on Azure virtual machines.
 
->[AZURE.NOTE] In the Azure Management Portal, there is a new gallery setup for AlwaysOn Availability Groups with a Listener. This configures everything you need for AlwaysOn Availability Groups automatically. For more information, see [SQL Server AlwaysOn Offering in Windows Azure Management Portal Gallery](http://blogs.technet.com/b/dataplatforminsider/archive/2014/08/25/sql-server-alwayson-offering-in-microsoft-azure-portal-gallery.aspx). To use PowerShell, see the tutorial of the same scenario at [Tutorial: AlwaysOn Availability Groups in Azure (PowerShell)](https://msdn.microsoft.com/zh-cn/library/azure/jj870963.aspx).
+>[AZURE.NOTE] In the Azure Management Portal, there is a new gallery setup for AlwaysOn Availability Groups with a Listener. This configures everything you need for AlwaysOn Availability Groups automatically. For more information, see [SQL Server AlwaysOn Offering in Windows Azure Management Portal Gallery](http://blogs.technet.com/b/dataplatforminsider/archive/2014/08/25/sql-server-alwayson-offering-in-microsoft-azure-portal-gallery.aspx). To use PowerShell, see the tutorial of the same scenario at [Configure AlwaysOn Availability Groups in Azure with PowerShell](/documentation/articles/virtual-machines-sql-server-alwayson-availability-groups-powershell).
 
 At the end of the tutorial, your SQL Server AlwaysOn solution in Azure will consist of the following elements:
 
@@ -368,11 +374,11 @@ These actions can be performed in any order. Nevertheless, the steps below will 
 1. Right-click the **NT AUTHORITY\System** login, and click **Properties**.
 
 1. In the **Securables** page, for the local server, select **Grant** for the following permissions and click **OK**.
-	
+
 	- Alter any availability group
-	
+
 	- Connect SQL
-	
+
 	- View server state
 
 1. Next, add **CORP\Install** as a **sysadmin** role to the default SQL Server instance. In **Object Explorer**, right-click **Logins** and click **New Login**.

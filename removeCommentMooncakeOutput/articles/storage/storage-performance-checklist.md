@@ -1,15 +1,15 @@
 <properties
-	pageTitle="Windows Azure Storage Performance and Scalability Checklist"
+	pageTitle="Azure Storage performance and scalability checklist | Windows Azure"
 	description="A checklist of proven practices for use with Azure Storage in developing performant applications."
 	services="storage"
 	documentationCenter=""
 	authors="tamram"
-	manager="adinah"
+	manager="carolz"
 	editor=""/>
 
 <tags
 	ms.service="storage"
-	ms.date="06/18/2015" 
+	ms.date="09/03/2015"
 	wacn.date=""/>
 
 # Windows Azure Storage Performance and Scalability Checklist
@@ -89,11 +89,7 @@ Each of the Azure Storage services has scalability targets for capacity (GB), tr
 -	[Queue messages per second](#subheading39)  
 
 ####<a name="sub1bandwidth"></a>Bandwidth Scalability Target for All Services
-<!--
-At the time of writing, the bandwidth targets in the China for a geo-redundant storage (GRS) account are 10 gigabits per second (Gbps) for ingress (data sent to the storage account) and 20 Gbps for egress (data sent from the storage account). For a locally redundant storage (LRS) account, the limits are higher – 20 Gbps for ingress and 30 Gbps for egress.  
--->
-International bandwidth limits may be lower and can be found on our [scalability targets page](http://msdn.microsoft.com/zh-cn/library/azure/dn249410.aspx).  
-For more information on the storage redundancy options, see the links in [Useful Resources](#sub1useful) below.  
+At the time of writing, the bandwidth targets in the US for a geo-redundant storage (GRS) account are 10 gigabits per second (Gbps) for ingress (data sent to the storage account) and 20 Gbps for egress (data sent from the storage account). For a locally redundant storage (LRS) account, the limits are higher – 20 Gbps for ingress and 30 Gbps for egress.  International bandwidth limits may be lower and can be found on our [scalability targets page](http://msdn.microsoft.com/zh-cn/library/azure/dn249410.aspx).  For more information on the storage redundancy options, see the links in [Useful Resources](#sub1useful) below.  
 
 ####What to do when approaching a scalability target
 If your application is approaching the scalability targets for a single storage account, consider adopting one of the following approaches:  
@@ -105,9 +101,9 @@ If your application is approaching the scalability targets for a single storage 
 
 ####Useful Resources
 The following links provide additional detail on scalability targets:
--	You can view the current scalability targets on the page [Azure Storage Scalability and Performance Targets on MSDN](http://msdn.microsoft.com/zh-cn/library/azure/dn249410.aspx).
--	You can learn more about storage redundancy options in the blog post [Windows Azure Storage Redundancy Options and Read Access Geo Redundant Storage](http://blogs.msdn.com/b/windowsazurestorage/archive/2013/12/11/introducing-read-access-geo-replicated-storage-ra-grs-for-windows-azure-storage.aspx)– see the next section for more details.
--	For current information about pricing for Azure services, see [Azure pricing at-a-glance](/pricing/overview/).  
+-	See [Azure Storage Scalability and Performance Targets](/documentation/articles/storage-scalability-targets) for information about scalability targets.
+-	See [Azure Storage replication](/documentation/articles/storage-redundancy) and the blog post [Azure Storage Redundancy Options and Read Access Geo Redundant Storage](http://blogs.msdn.com/b/windowsazurestorage/archive/2013/12/11/introducing-read-access-geo-replicated-storage-ra-grs-for-windows-azure-storage.aspx) for information about storage redundancy options.
+-	For current information about pricing for Azure services, see [Azure pricing](/pricing/overview/).  
 
 ###Networking
 While the API calls matter, often the physical network constraints of the application have a significant impact on performance. The following describe some of limitations users may encounter.  
@@ -120,7 +116,7 @@ For bandwidth, the problem is often the capabilities of the client. For example,
 As with any network usage, be aware that network conditions resulting in errors and packet loss will slow effective throughput.  Using WireShark or NetMon may help in diagnosing this issue.  
 
 #####Useful Resources
-For more information about virtual machine sizes and allocated bandwidth, see [Best Practices for the Design of Large-Scale Services on Azure Cloud Services](http://msdn.microsoft.com/zh-cn/library/dn197896.aspx) on MSDN.  
+For more information about virtual machine sizes and allocated bandwidth, see [Sizes for virtual machines](/documentation/articles/virtual-machines-size-specs).  
 
 ####<a name="subheading4"></a>Location
 In any distributed environment, placing the client near to the server delivers in the best performance. For accessing Azure Storage with the lowest latency, the best location for your client is within the same Azure region. For example, if you have an Azure Web Site that uses Azure Storage, you should locate them both within a single region (for example, US West or Asia Southeast). This reduces the latency and the cost — at the time of writing, bandwidth usage within a single region is free.  
@@ -130,7 +126,7 @@ If your client applications are not hosted within Azure (such as mobile device a
 ###<a name="subheading5"></a>Content Distribution
 Sometimes, an application needs to serve the same content to many users (e.g. a product demo video used in the home page of a website), located in either the same or multiple regions. In this scenario, you should use a Content Delivery Network (CDN) such as Azure CDN, and the CDN would use Azure storage as the origin of the data. Unlike an Azure Storage account that exists in a single region and that cannot deliver content with low latency to other regions, Azure CDN uses servers in multiple data centers around the world. Additionally, a CDN can typically supports much higher egress limits than a single storage account.  
 
-For more information about Azure CDN, see [Azure CDN](/home/features/caching/).  
+For more information about Azure CDN, see [Azure CDN](/home/features/cdn/).  
 
 ###<a name="subheading6"></a>Using SAS and CORS
 When you need to authorize code such as JavaScript in a user’s web browser or a mobile phone app to access data in Azure Storage, one approach is to use an application in web role as a proxy: the user’s device authenticates with the web role, which in turn authenticates with the storage service. In this way, you can avoid exposing your storage account keys on insecure devices. However, this places a big overhead on the web role because all the data transferred between the user’s device and the storage service must pass through the web role. You can avoid using a web role as a proxy for the storage service by using Shared Access Signatures (SAS), sometimes in conjunction with Cross-Origin Resource Sharing headers (CORS). Using SAS, you can allow your user’s device to make requests directly to a storage service by means of a limited access token. For example, if a user wants to upload a photo to your application, your web role can generate and send to the user’s device a SAS token that grants permission to write to a specific blob or container for the next 30 minutes (after which the SAS token expires).
@@ -142,7 +138,7 @@ Both of these technologies can help you avoid unnecessary load (and bottlenecks)
 ####Useful Resources
 For more information about SAS, see [Shared Access Signatures, Part 1: Understanding the SAS Model](/documentation/articles/storage-dotnet-shared-access-signature-part-1).  
 
-For more information about CORS, see [Cross-Origin Resource Sharing (CORS) Support for the Azure Storage Services on MSDN](http://msdn.microsoft.com/zh-cn/library/azure/dn535601.aspx).  
+For more information about CORS, see [Cross-Origin Resource Sharing (CORS) Support for the Azure Storage Services](http://msdn.microsoft.com/zh-cn/library/azure/dn535601.aspx).  
 
 ###Caching
 ####<a name="subheading7"></a>Getting Data
@@ -152,7 +148,7 @@ In some cases, you may decide that your application can assume that the blob rem
 
 Configuration, lookup, and other data that are always used by the application are great candidates for caching.  
 
-For an example of how to get a blob’s properties to discover the last modified date using .NET, see [Set and Retrieve Properties and Metadata](http://msdn.microsoft.com/zh-cn/library/hh225342.aspx) on MSDN. For more information about conditional downloads, see [Conditionally Refresh a Local Copy of a Blob](http://msdn.microsoft.com/zh-cn/library/azure/dd179371.aspx) on MSDN.  
+For an example of how to get a blob’s properties to discover the last modified date using .NET, see [Set and Retrieve Properties and Metadata](/documentation/articles/storage-properties-metadata). For more information about conditional downloads, see [Conditionally Refresh a Local Copy of a Blob](http://msdn.microsoft.com/zh-cn/library/azure/dd179371.aspx).  
 
 ####<a name="subheading8"></a>Uploading Data in Batches
 In some application scenarios, you can aggregate data locally, and then periodically upload it in a batch instead of uploading each piece of data immediately. For example, a web application might keep a log file of activities: the application could either upload details of every activity as it happens as a table entity (which requires many storage operations), or it could save activity details to a local log file, and then periodically upload all activity details as a delimited file to a blob. If each log entry is 1KB in size, you can upload thousands in a single “Put Blob” transaction (you can upload a blob of up to 64MB in size in a single transaction). Of course, if the local machine crashes prior to the upload, you will potentially lose some log data: the application developer must design for the possibility of client device or upload failures.  If the activity data needs to be downloaded for timespans (not just single activity), then blobs are recommended over tables.
@@ -169,25 +165,25 @@ You must set the connection limit before opening any connections.
 
 For other programming languages, see that language’s documentation to determine how to set the connection limit.  
 
-For additional information, see the post [Web Services: Concurrent Connections](http://blogs.msdn.com/b/darrenj/archive/2005/03/07/386655.aspx) on MSDN.  
+For additional information, see the blog post [Web Services: Concurrent Connections](http://blogs.msdn.com/b/darrenj/archive/2005/03/07/386655.aspx).  
 
 ####<a name="subheading10"></a>Increase ThreadPool Min Threads if using synchronous code with Async Tasks
 This code will increase the thread pool min threads:  
 
 	ThreadPool.SetMinThreads(100,100); //(Determine the right number for your application)  
 
-For more information, see [ThreadPool.SetMinThreads Method](http://msdn.microsoft.com/zh-cn/library/system.threading.threadpool.setminthreads(v=vs.110).aspx) on MSDN.  
+For more information, see [ThreadPool.SetMinThreads Method](http://msdn.microsoft.com/zh-cn/library/system.threading.threadpool.setminthreads(v=vs.110).aspx).  
 
 ####<a name="subheading11"></a>Take advantage of .NET 4.5 Garbage Collection
 Use .NET 4.5 or later for the client application to take advantage of performance improvements in server garbage collection.
 
-For more information, see the article [An Overview of Performance Improvements in .NET 4.5](http://msdn.microsoft.com/zh-cn/magazine/hh882452.aspx) on MSDN.  
+For more information, see the article [An Overview of Performance Improvements in .NET 4.5](http://msdn.microsoft.com/magazine/hh882452.aspx).  
 
 ###<a name="subheading12"></a>Unbounded Parallelism
 While parallelism can be great for performance, be careful about using unbounded parallelism (no limit on the number of threads and/or parallel requests) to upload or download data, using multiple workers to access multiple partitions (containers, queues, or table partitions) in the same storage account or to access multiple items in the same partition. If the parallelism is unbounded, your application can exceed the client device’s capabilities or the storage account’s scalability targets resulting in longer latencies and throttling.  
 
 ###<a name="subheading13"></a>Storage Client Libraries and Tools
-Always use the latest Microsoft provided client libraries and tools. At the time of writing, there are RTM libraries available for .NET, Windows Phone, Windows Runtime, and Java, as well as preview libraries in other languages like node.js and C++. In addition, Microsoft has released PowerShell cmdlets and Azure CLI commands for working with Azure Storage. Microsoft actively develops these tools with performance in mind, keeps them up to date with the latest service versions, and ensures they handle many of the proven performance practices internally.  
+Always use the latest Microsoft provided client libraries and tools. At the time of writing, there are client libraries available for .NET, Windows Phone, Windows Runtime, Java, and C++, as well as preview libraries for other languages. In addition, Microsoft has released PowerShell cmdlets and Azure CLI commands for working with Azure Storage. Microsoft actively develops these tools with performance in mind, keeps them up to date with the latest service versions, and ensures they handle many of the proven performance practices internally.  
 
 ###Retries
 ####<a name="subheading14"></a>Throttling/ServerBusy
@@ -199,7 +195,7 @@ Note that connectivity errors can be retried immediately, because they are not t
 The client libraries are aware of which errors are retry-able and which are not. However, if you are writing your own code against the storage REST API, remember there are some errors that you should not retry: for example, a 400 (Bad Request) response indicates that the client application sent a request that could not be processed because it was not in an expected form. Resending this request will result the same response every time, so there is no point in retrying it. If you are writing your own code against the storage REST API, be aware of what the error codes mean and the proper way to retry (or not) for each of them.  
 
 ####Useful Resources
-For more information about storage error codes, see [Status and Error Codes](http://msdn.microsoft.com/zh-cn/library/azure/dd179382.aspx) on the Windows Azure  Website.  
+For more information about storage error codes, see [Status and Error Codes](http://msdn.microsoft.com/zh-cn/library/azure/dd179382.aspx) on the Windows Azure web site.  
 
 ##Blobs
 In addition to the proven practices for [All Services](#allservices) described previously, the following proven practices apply specifically to the blob service.  
@@ -208,7 +204,7 @@ In addition to the proven practices for [All Services](#allservices) described p
 ####<a name="subheading16"></a>Bandwidth and operations per Blob
 You can read or write to a single blob at up to a maximum of 60 MB/second (this is approximately 480 Mbps which exceeds the capabilities of many client side networks (including the physical NIC on the client device). In addition, a single blob supports up to 500 requests per second. If you have multiple clients that need to read the same blob and you might exceed these limits, you should consider using a CDN for distributing the blob.  
 
-For more information about target throughput for blobs, see [Azure Storage Scalability and Performance Targets](http://msdn.microsoft.com/zh-cn/library/azure/dn249410.aspx) on MSDN.  
+For more information about target throughput for blobs, see [Azure Storage Scalability and Performance Targets](/documentation/articles/storage-scalability-targets).  
 
 ###Copying and Moving Blobs
 ####<a name="subheading17"></a>Copy Blob
@@ -218,18 +214,18 @@ One consideration, however, is that, when copying between storage accounts, ther
 
 Note that copies within the same storage account itself are generally completed quickly.  
 
-For more information, see [Copy Blob on MSDN](http://msdn.microsoft.com/zh-cn/library/dd894037.aspx).  
+For more information, see [Copy Blob](http://msdn.microsoft.com/zh-cn/library/azure/dd894037.aspx).  
 
 ####<a name="subheading18"></a>Use AzCopy
 The Azure Storage team has released a command line tool “AzCopy” that is meant to help with bulk transferring many blobs to, from, and across storage accounts.  This tool is optimized for this scenario, and can achieve high transfer rates.  Its use is encouraged for bulk upload, download, and copy scenarios.  You can learn more about it and download it [here](/documentation/articles/storage-use-azcopy).  
 
 ####<a name="subheading19"></a>Azure Import/Export Service
-For very large volumes of data (more than 1TB), the Azure Storage offers the Import/Export service, which allows for uploading and downloading from blob storage by shipping hard drives.  You can put your data on a hard drive and send it to Microsoft for upload, or send a blank hard drive to Microsoft to download data.  You can read more about it [here](/documentation/articles/storage-import-export-service/).  This can be much more efficient than uploading/downloading this volume of data over the network.  
+For very large volumes of data (more than 1TB), the Azure Storage offers the Import/Export service, which allows for uploading and downloading from blob storage by shipping hard drives.  You can put your data on a hard drive and send it to Microsoft for upload, or send a blank hard drive to Microsoft to download data.  You can read more about it [here](/documentation/articles/storage-import-export-service).  This can be much more efficient than uploading/downloading this volume of data over the network.  
 
 ###<a name="subheading20"></a>Use metadata
-The blob service supports head requests, which can include metadata about the blob. For example, if your application needed the EXIF data out of a photo, it could retrieve the photo and extract it. To save bandwidth and improve performance, your application could store the EXIF data in the blob’s metadata when the application uploaded the photo: you can then retrieve the EXIF data in metadata using only a HEAD request, saving significant bandwidth and the processing time needed to extract the EXIF data each time the blob is read. This would be useful in scenarios where you only need the metadata, and not the full content of a blob.  Note that only 8KB of metadata can be stored per blob (the service will not accept a request to store more than that), so if the data does not fit in that size, you may not be able to use this approach.  
+The blob service supports head requests, which can include metadata about the blob. For example, if your application needed the EXIF data out of a photo, it could retrieve the photo and extract it. To save bandwidth and improve performance, your application could store the EXIF data in the blob’s metadata when the application uploaded the photo: you can then retrieve the EXIF data in metadata using only a HEAD request, saving significant bandwidth and the processing time needed to extract the EXIF data each time the blob is read. This would be useful in scenarios where you only need the metadata, and not the full content of a blob.  Note that only 8 KB of metadata can be stored per blob (the service will not accept a request to store more than that), so if the data does not fit in that size, you may not be able to use this approach.  
 
-For an example of how to get a blob’s metadata using .NET, see [Set and Retrieve Properties and Metadata](http://msdn.microsoft.com/zh-cn/library/hh225342.aspx) on MSDN.  
+For an example of how to get a blob’s metadata using .NET, see [Set and Retrieve Properties and Metadata](/documentation/articles/storage-properties-metadata).  
 
 ###Uploading Fast
 To upload blobs fast, the first question to answer is: are you uploading one blob or many?  Use the below guidance to determine the correct method to use depending on your scenario.  
@@ -243,12 +239,12 @@ To upload a single large blob quickly, your client application should upload its
 -	C++: Use the blob_request_options::set_parallelism_factor method.
 
 ####<a name="subheading22"></a>Uploading many blobs quickly
-To upload many blobs quickly, upload blobs in parallel. This is faster than uploading single blobs at a time with parallel block uploads because it spreads the upload across multiple partitions of the storage service. A single blob only supports a throughput of 60 MB/second (approximately 480 Mbps). At the time of writing, a GRS account supports up to 20 Gbps ingress which is far more than the throughput supported by an individual blob.  [AzCopy](#subheading18) performs uploads in parallel by default, and is recommended for this scenario.  
+To upload many blobs quickly, upload blobs in parallel. This is faster than uploading single blobs at a time with parallel block uploads because it spreads the upload across multiple partitions of the storage service. A single blob only supports a throughput of 60 MB/second (approximately 480 Mbps). At the time of writing, a US based LRS account supports up to 20 Gbps ingress which is far more than the throughput supported by an individual blob.  [AzCopy](#subheading18) performs uploads in parallel by default, and is recommended for this scenario.  
 
 ###<a name="subheading23"></a>Choosing the correct type of blob
 Azure Storage supports two types of blob: *page* blobs and *block* blobs. For a given usage scenario, your choice of blob type will affect the performance and scalability of your solution. Block blobs are appropriate when you want to upload large amounts of data efficiently: for example, a client application may need to upload photos or video to blob storage. Page blobs are appropriate if the application needs to perform random writes on the data: for example, Azure VHDs are stored as page blobs.  
 
-For more information, see [Understanding Block Blobs and Page Blobs](http://msdn.microsoft.com/zh-cn/library/azure/ee691964.aspx) on MSDN.  
+For more information, see [Understanding Block Blobs and Page Blobs](http://msdn.microsoft.com/zh-cn/library/azure/ee691964.aspx).  
 
 ##Tables
 In addition to the proven practices for [All Services](#allservices) described previously, the following proven practices apply specifically to the table service.  
@@ -268,7 +264,7 @@ This section lists several quick configuration settings that you can use to make
 ####<a name="subheading25"></a>Use JSON
 Beginning with storage service version 2013-08-15, the table service supports using JSON instead of the XML-based AtomPub format for transferring table data. This can reduce payload sizes by as much as 75% and can significantly improve the performance of your application.
 
-For more information, see the post [Windows Azure Tables: Introducing JSON](http://blogs.msdn.com/b/windowsazurestorage/archive/2013/12/05/windows-azure-tables-introducing-json.aspx) and [Payload Format for Table Service Operations](http://msdn.microsoft.com/zh-cn/library/azure/dn535600.aspx) on MSDN. 
+For more information, see the post [Windows Azure Tables: Introducing JSON](http://blogs.msdn.com/b/windowsazurestorage/archive/2013/12/05/windows-azure-tables-introducing-json.aspx) and [Payload Format for Table Service Operations](http://msdn.microsoft.com/zh-cn/library/azure/dn535600.aspx).
 
 ####<a name="subheading26"></a>Nagle Off
 Nagle’s algorithm is widely implemented across TCP/IP networks as a means to improve network performance. However, it is not optimal in all circumstances (such as highly interactive environments). For Azure Storage, Nagle’s algorithm has a negative impact on the performance of requests to the table and queue services, and you should disable it if possible.  
@@ -356,7 +352,7 @@ Sometimes structured data feels like it should go in tables, but ranges of entit
 ###<a name=subheading39"></a>Scalability Limits
 A single queue can process approximately 2,000 messages (1KB each) per second (each AddMessage, GetMessage, and DeleteMessage count as a message here). If this is insufficient for your application, you should use multiple queues and spread the messages across them.  
 
-You can view the current scalability targets on the page [Azure Storage Scalability and Performance Targets](http://msdn.microsoft.com/zh-cn/library/azure/dn249410.aspx) on MSDN.  
+View current scalability targets at [Azure Storage Scalability and Performance Targets](/documentation/articles/storage-scalability-targets).  
 
 ###<a name=subheading40"></a>Nagle Off
 See the section on table configuration that discusses the Nagle algorithm — the Nagle algorithm is generally bad for the performance of queue requests, and you should disable it.  

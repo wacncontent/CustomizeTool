@@ -24,7 +24,7 @@ Start working with the Azure Batch .NET Library by creating a console applicatio
 
 	- **Batch account** - See the **Batch Account** section of [Azure Batch technical overview](/documentation/articles/batch-technical-overview).
 
-	- **Storage account** - See the **Create a storage account** section of [About Azure <!-- deleted by customization storage accounts](/documentation/articles/storage-create-storage-account) --><!-- keep by customization: begin --> Storage Accounts](/documentation/articles/storage-create-storage-account) <!-- keep by customization: end -->. In this tutorial, you create a container in this account named **testcon1**.
+	- **Storage account** - See the **Create a storage account** section of [About Azure storage accounts](/documentation/articles/storage-create-storage-account). In this tutorial, you create a container in this account named **testcon1**.
 
 - A Visual Studio console application project:
 
@@ -46,12 +46,7 @@ To support the application, a container is created in Azure Storage, the text fi
 
 ### Set up the storage connection string
 
-<!-- deleted by customization
 1. Open the App.config file for the GettingStarted project, and then add the *&lt;appSettings&gt;* element to *&lt;configuration&gt;*.
--->
-<!-- keep by customization: begin -->
-1. Open the App.config file for the GettingStarted project, and then add the &lt;appSettings&gt; element to &lt;configuration&gt;.
-<!-- keep by customization: end -->
 
 		<?xml version="1.0" encoding="utf-8" ?>
 		<configuration>
@@ -64,7 +59,7 @@ To support the application, a container is created in Azure Storage, the text fi
 
 	- **[account-name]** - The name of the storage account that you previously created.
 
-	- **[account-key]** - The primary key of the storage account. You can find the primary key on the Storage page in the Azure Management Portal <!-- deleted by customization. -->
+	- **[account-key]** - The primary key of the storage account. You can find the primary key on the Storage page in the Azure Management Portal.
 
 2. Save the App.config file.
 
@@ -102,26 +97,19 @@ To learn more about Azure Storage connection strings, see [Configure Azure Stora
 			Console.ReadLine();
 		}
 
-<!-- deleted by customization 4 --><!-- keep by customization: begin --> 3 <!-- keep by customization: end -->. Add this code to Main that calls the method that you just added:
+4. Add this code to Main that calls the method that you just added:
 
 		CreateStorage();
 
-<!-- deleted by customization
 5. Save the Program.cs file.
 
 	> [AZURE.NOTE] In a production environment, it is recommended that you use a [shared access signature](https://msdn.microsoft.com/zh-cn/library/azure/ee395415.aspx).
--->
-<!-- keep by customization: begin -->
-4. Save the Program.cs file.
-
-	> [AZURE.NOTE] In a production environment, it is recommended that you use a shared access signature.
-<!-- keep by customization: end -->
 
 To learn more about Blob storage, see [How to use Blob storage from .NET](/documentation/articles/storage-dotnet-how-to-use-blobs)
 
 ### Create the processing program
 
-1. In <!-- deleted by customization **Solution Explorer** --><!-- keep by customization: begin --> Solution Explorer <!-- keep by customization: end -->, create a new console application project named **ProcessTaskData**.
+1. In **Solution Explorer**, create a new console application project named **ProcessTaskData**.
 
 2. After you create the project in Visual Studio, right-click the project in **Solution Explorer** and choose **Manage NuGet Packages**. Search online for **WindowsAzure.Storage** and then click **Install** to install the Azure Storage package and dependencies.
 
@@ -155,21 +143,21 @@ To learn more about Blob storage, see [How to use Blob storage from .NET](/docum
 
 ### Create the data files
 
-1. In the GettingStarted project, create a new text file named <!-- deleted by customization **taskdata1.txt** --><!-- keep by customization: begin --> **taskdata1** <!-- keep by customization: end -->, copy the following text to it, and then save the file.
+1. In the GettingStarted project, create a new text file named **taskdata1.txt**, copy the following text to it, and then save the file.
 
 	You can use Azure Virtual Machines to provision on-demand, scalable compute infrastructure when you need flexible resources for your business needs. From the gallery, you can create virtual machines that run Windows, Linux, and enterprise applications such as SharePoint and SQL Server. Or, you can capture and use your own images to create customized virtual machines.
 
-2. Create a new text file named <!-- deleted by customization **taskdata2.txt** --><!-- keep by customization: begin --> **taskdata2** <!-- keep by customization: end -->, copy the following text to it, and then save the file.
+2. Create a new text file named **taskdata2.txt**, copy the following text to it, and then save the file.
 
 	Quickly deploy and manage powerful applications and services with Azure Cloud Services. Simply upload your application and Azure handles the deployment details - from provisioning and load balancing to health monitoring for continuous availability. Your application is backed by an industry leading 99.95% monthly SLA. You just focus on the application and not the infrastructure.
 
-3. Create a new text file named <!-- deleted by customization **taskdata3.txt** --><!-- keep by customization: begin --> **taskdata3** <!-- keep by customization: end -->, copy the following text to it, and then save the file.
+3. Create a new text file named **taskdata3.txt**, copy the following text to it, and then save the file.
 
 	Azure Web Sites provide a scalable, reliable, and easy-to-use environment for hosting web applications. Select from a range of frameworks and templates to create a web site in seconds. Use any tool or OS to develop your site with .NET, PHP, Node.js or Python. Choose from a variety of source control options including TFS, GitHub, and BitBucket to set up continuous integration and develop as a team. Expand your site functionality over time by leveraging additional Azure managed services like storage, CDN, and SQL Database.
 
 ### Upload the files to the Storage container
 
-1. Open the Program.cs file of the <!-- deleted by customization **GettingStarted** --><!-- keep by customization: begin --> GettingStarted <!-- keep by customization: end --> project, and then add this method that uploads the files:
+1. Open the Program.cs file of the **GettingStarted** project, and then add this method that uploads the files:
 
 		static void CreateFiles()
 		{
@@ -213,7 +201,7 @@ A pool of compute nodes is the first set of resources that you must create when 
 
 2. Add this code to Main that sets up the credentials for making calls to the Azure Batch service:
 
-			BatchSharedKeyCredentials cred = new <!-- deleted by customization BatchSharedKeyCredentials("[account-url]" --><!-- keep by customization: begin --> BatchSharedKeyCredentials("https://[account-name].[region].batch.azure.com" <!-- keep by customization: end -->, "[account-name]", "[account-key]");
+			BatchSharedKeyCredentials cred = new BatchSharedKeyCredentials("[account-url]", "[account-name]", "[account-key]");
 			BatchClient client = BatchClient.Open(cred);
 
 	Replace the bracketed values with those associated with your Batch account, each of which can be found in the [Azure Preview portal](https://manage.windowsazure.cn). To locate these values, log in to the [Azure Preview portal](https://manage.windowsazure.cn) and:
@@ -292,7 +280,7 @@ Create a job that is used to manage tasks that run in the pool. All tasks must b
 				Console.WriteLine("Job id: " + job.Id);
 				Console.WriteLine("   Job status: " + job.State);
 			}
-			Console.WriteLine("Press Enter to continue.") <!-- deleted by customization; -->
+			Console.WriteLine("Press Enter to continue.");
 			Console.ReadLine();
 		}
 
@@ -312,12 +300,7 @@ After the job is created, tasks can be added to it. Each task runs on a compute 
 		{
 			CloudJob job = client.JobOperations.GetJob("testjob1");
 			ResourceFile programFile = new ResourceFile(
-<!-- deleted by customization
 				"https://[account-name].blob.core.chinacloudapi.cn/testcon1/ProcessTaskData.exe",
--->
-<!-- keep by customization: begin -->
-				"https://[account-name].blob.azure.com/[]/ProcessTaskData.exe",
-<!-- keep by customization: end -->
 				"ProcessTaskData.exe");
       	  ResourceFile assemblyFile = new ResourceFile(
 				"https://[account-name].blob.core.chinacloudapi.cn/testcon1/Microsoft.WindowsAzure.Storage.dll",
@@ -347,7 +330,7 @@ After the job is created, tasks can be added to it. Each task runs on a compute 
 			{
 				Console.WriteLine("Task " + task.Id + " says:\n" + task.GetNodeFile(Constants.StandardOutFileName).ReadAsString());
 			}
-			Console.WriteLine("Press Enter to continue.") <!-- deleted by customization; -->
+			Console.WriteLine("Press Enter to continue.");
 			Console.ReadLine();
 		}
 
@@ -381,7 +364,7 @@ After the job is created, tasks can be added to it. Each task runs on a compute 
 
 ## Step 5: Delete the resources
 
-Because you are charged for resources in Azure, <!-- deleted by customization it's --><!-- keep by customization: begin --> it is <!-- keep by customization: end --> always a good idea to delete resources if you no longer need them.
+Because you are charged for resources in Azure, it's always a good idea to delete resources if you no longer need them.
 
 ### Delete the tasks
 
@@ -502,12 +485,7 @@ Because you are charged for resources in Azure, <!-- deleted by customization it
 
 8. At this point you can go into the Azure Management Portal to look at the resources that were created. To delete the resources, press Enter until the program finishes.
 
-<!-- deleted by customization
 ## Next steps
--->
-<!-- keep by customization: begin -->
-## Next Steps
-<!-- keep by customization: end -->
 
 1. Now that you've learned the basics of running tasks, you can learn about how to automatically scale compute nodes when the demand for your application changes. To do this, see [Automatically scale Compute Nodes in an Azure Batch Pool](/documentation/articles/batch-automatic-scaling)
 

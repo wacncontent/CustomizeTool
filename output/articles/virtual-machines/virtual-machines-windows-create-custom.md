@@ -15,9 +15,11 @@
 	wacn.date=""/>
 
 #Create a custom virtual machine running Windows in Azure
+<!-- deleted by customization
 
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
 
+-->
 
 A *custom* virtual machine simply means a virtual machine you create using the **From Gallery** option because it gives you more configuration choices than the **Quick Create** option. These choices include:
 

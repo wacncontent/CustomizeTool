@@ -93,12 +93,17 @@ Here is the output of the SELECT statement:
 
 Hive provides three different mechanisms to run queries on JSON documents:
 
-- use the GET_JSON_OBJECT UDF (User Defined Function)
+- use the <!-- deleted by customization GET\_JSON\_OBJECT --><!-- keep by customization: begin --> GET_JSON_OBJECT <!-- keep by customization: end --> UDF (User Defined Function)
 - use the JSON_TUPLE UDF
 - use custom SerDe
 - write you own UDF using Python or other languages. See [this article][hdinsight-python] on running your own Python code with Hive. 
 
+<!-- deleted by customization
+### Use the GET\_JSON_OBJECT UDF
+-->
+<!-- keep by customization: begin -->
 ### Use the GET_JSON_OBJECT UDF
+<!-- keep by customization: end -->
 Hive provides a built-in UDF called [get json object](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+UDF#LanguageManualUDF-get_json_object) which can perform JSON querying during run time. This method takes two arguments – the table name and method name which has the flattened JSON document and the JSON field that needs to be parsed. Let’s look at an example to see how this UDF works.
 
 Get the first name and last name for each student
@@ -115,7 +120,7 @@ Here is the output when running this query in console window.
 There are a few limitations of the get-json_object UDF. 
 
 - Because each field in the query requires re-parsing the query, it affects the performance.
-- GET_JSON_OBJECT() returns the string representation of an array. To convert this to a Hive array, you will have to use regular expressions to replace the square brackets ‘[‘ and ‘]’ and then also call split to get the array.
+- <!-- deleted by customization GET\_JSON_OBJECT() --><!-- keep by customization: begin --> GET_JSON_OBJECT() <!-- keep by customization: end --> returns the string representation of an array. To convert this to a Hive array, you will have to use regular expressions to replace the square brackets ‘[‘ and ‘]’ and then also call split to get the array.
 
 
 This is why the Hive wiki recommends using json_tuple.  
@@ -133,7 +138,7 @@ The output of this script in the Hive console:
 
 ![json_tuple UDF][image-hdi-hivejson-jsontuple]
 
-JSON_TUPLE uses the [lateral view](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+LateralView) syntax in Hive which allows json_tuple to create a virtual table by applying the UDT function to each row of the original table.  Complex JSONs become too unwieldy because of the repeated use of LATERAL VIEW. Furthermore, JSON_TUPLE cannot handle nested JSONs.
+<!-- deleted by customization JSON\_TUPLE --><!-- keep by customization: begin --> JSON_TUPLE <!-- keep by customization: end --> uses the [lateral view](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+LateralView) syntax in Hive which allows <!-- deleted by customization json\_tuple --><!-- keep by customization: begin --> json_tuple <!-- keep by customization: end --> to create a virtual table by applying the UDT function to each row of the original table.  Complex JSONs become too unwieldy because of the repeated use of LATERAL VIEW. Furthermore, JSON_TUPLE cannot handle nested JSONs.
 
 
 ###Use custom SerDe

@@ -1,8 +1,6 @@
 <properties
-	title="Getting started with elastic database jobs"
 	pageTitle="Getting started with elastic database jobs"
 	description="how to use elastic database jobs"
-	metaKeywords="azure sql database elastic jobs"
 	services="sql-database"
 	documentationCenter=""  
 	manager="jeffreyg"

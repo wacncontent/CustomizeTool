@@ -7,9 +7,9 @@ authors="cristy"
 manager="timlt"
 editor=""/>
 <tags
-ms.service="cloud-services"
-ms.date="06/11/2015"
-wacn.date=""/>
+	ms.service="cloud-services"
+	ms.date="06/11/2015"
+	wacn.date=""/>
 
 # Configure Local Storage Resources
 

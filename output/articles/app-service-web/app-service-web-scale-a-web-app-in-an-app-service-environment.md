@@ -79,5 +79,10 @@ For more information about the Azure Websites platform, see [Azure Websites][Azu
 [CreateWebappinASE]: /documentation/articles/app-service-web-how-to-create-a-web-app-in-an-ase/
 [Appserviceplans]: /documentation/articles/azure-web-sites-web-hosting-plans-in-depth-overview/
 [AppServicePricing]: /home/features/app-service/#price 
+<!-- deleted by customization
 [AzureAppService]: /documentation/articles/app-service-value-prop-what-is/
+-->
+<!-- keep by customization: begin -->
+[AzureAppService]: /documentation/services/web-sites/
+<!-- keep by customization: end -->
  

@@ -7,9 +7,9 @@
 	manager="timlt" 
 	editor="tysonn"/>
 
-<tags 
-	ms.service="service-bus" 
-	ms.date="10/08/2015" 
+<tags
+	ms.service="service-bus"
+	ms.date="10/08/2015"
 	wacn.date=""/>
 
 # How to use AMQP 1.0 with the Service Bus .NET API
@@ -32,7 +32,7 @@ AMQP 1.0 support is available in Service Bus SDK version 2.1 or later. You can d
 
 By default, the Service Bus .NET client library communicates with the Service Bus service using a dedicated SOAP-based protocol. To use AMQP 1.0 instead of the default protocol requires explicit configuration on the Service Bus connection string as described in the next section. Other than this change, application code remains basically unchanged when using AMQP 1.0.
 
-In the current release, there are a few API features that are not supported when using AMQP. These unsupported features are listed later in the section [Unsupported features and restrictions](#unsupported-features-and-restrictions). Some of the advanced configuration settings also have a different meaning when using AMQP. None of these settings are used in this article, but more details are available in the [Service Bus AMQP overview](/documentation/articles/service-bus-amqp-dotnet/#unsupported-features-restrictions-and-behavioral-differences).
+In the current release, there are a few API features that are not supported when using AMQP. These unsupported features are listed later in the section [Unsupported features and restrictions](#unsupported-features-and-restrictions). Some of the advanced configuration settings also have a different meaning when using AMQP. None of these settings are used in this article, but more details are available in the [Service Bus AMQP overview](/documentation/articles/service-bus-amqp-dotnet#unsupported-features-restrictions-and-behavioral-differences).
 
 ### Configure via App.config
 
@@ -318,4 +318,3 @@ Now that you've read an overview of Service Bus and AMQP with .NET, see the foll
 * [How to use the Java Message Service (JMS) API with Service Bus & AMQP 1.0](/documentation/articles/service-bus-java-how-to-use-jms-api-amqp)
 * [How to Use Service Bus Queues](/documentation/articles/service-bus-dotnet-how-to-use-queues)
  
-

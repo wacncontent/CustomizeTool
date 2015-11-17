@@ -49,7 +49,12 @@ Part of the setup has already been completed during failover.
 
 -   The lines with arrows go over the internet.
 
+<!-- deleted by customization
 ![](./media/site-recovery-failback-azure-to-vmware/vconports.png)
+-->
+<!-- keep by customization: begin -->
+![](./media/site-recovery-failback-azure-to-vmware/image1.png)
+<!-- keep by customization: end -->
 
 ## Install vContinuum on-premsies
 

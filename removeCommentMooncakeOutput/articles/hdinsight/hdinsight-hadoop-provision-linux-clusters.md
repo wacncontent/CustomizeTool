@@ -439,7 +439,7 @@ The following procedures are needed to provision an HDInsight cluster by using A
 
 You can use either the Windows PowerShell console or the Windows PowerShell Integrated Scripting Environment (ISE) to run the scripts.
  
-HDInsight uses an Azure Blob storage container as the default file system. An Azure Storage account and storage container are required before you can create an HDInsight cluster. The Storage account must be located in the same data center as the HDInsight cluster. Currently, only the **Southeast Asia**, **China North**, **China East**, and **China East** regions can host HDInsight Linux clusters.
+HDInsight uses an Azure Blob storage container as the default file system. An Azure Storage account and storage container are required before you can create an HDInsight cluster. The Storage account must be located in the same data center as the HDInsight cluster. Currently, only the **China North**, **China North**, **China East**, and **China East** regions can host HDInsight Linux clusters.
 
 **To connect to your Azure account**
 

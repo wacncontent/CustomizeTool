@@ -6,11 +6,10 @@
 	authors="squillace"
 	manager="timlt"
 	editor="tysonn"
-	tags="azure-resource-management"/>
+	tags="azure-resource-manager"/>
 
 <tags
 	ms.service="virtual-machines"
-	
 	ms.date="07/13/2015"
 	wacn.date=""/>
 

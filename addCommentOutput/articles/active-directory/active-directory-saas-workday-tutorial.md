@@ -1,5 +1,8 @@
 <properties pageTitle="Tutorial: Azure Active Directory integration with Workday | Windows Azure" description="Learn how to use Workday with Azure Active Directory to enable single sign-on, automated provisioning, and more!." services="active-directory" authors="MarkusVi"  documentationCenter="na" manager="stevenpo"/>
-<tags ms.service="active-directory" ms.devlang="na" ms.topic="article" ms.tgt_pltfrm="na" ms.workload="identity" ms.date="08/01/2015" ms.author="markvi" />
+<tags
+	ms.service="active-directory"
+	ms.date="08/01/2015"
+	wacn.date=""/>
 #Tutorial: Azure Active Directory integration with Workday
 >[AZURE.TIP]For feedback, click [here](http://go.microsoft.com/fwlink/?LinkId=330042).
   
@@ -137,7 +140,7 @@ If you are not familiar with this procedure, see [How to convert a binary certif
      11.5.  In the **View x509 Public Key** section, perform the following steps: <br><br>
         ![View x509 Public Key](./media/active-directory-saas-workday-tutorial/IC782930.png "View x509 Public Key") <br>
 
-      1.  In the **Name** textbox, type a name for your certificate (e.g.: *PPE_SP*).
+      1.  In the **Name** textbox, type a name for your certificate (e.g.: <!-- deleted by customization *PPE\_SP*) --><!-- keep by customization: begin --> *PPE_SP*) <!-- keep by customization: end -->.
       2.  In the **Valid From** textbox, type the valid from attribute value of your certificate.
       3.  In the **Valid To** textbox, type the valid to attribute value of your certificate.
 		

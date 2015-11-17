@@ -10,17 +10,14 @@
 <tags
 	ms.service="active-directory"
 	ms.date="09/03/2015"
-	wacn.date=""/><!-- keep by customization: begin -->
-	
-# What happened to my project?
-<!-- keep by customization: end -->
+	wacn.date=""/>
+
 # What happened to my MVC project (Visual Studio Azure Active Directory connected service)?
 
 > [AZURE.SELECTOR]
 > - [Getting Started](/documentation/articles/vs-active-directory-dotnet-getting-started)
 > - [What Happened](/documentation/articles/vs-active-directory-dotnet-what-happened)
 
-<!-- deleted by customization
 
 
 ## References have been added
@@ -48,39 +45,8 @@
 - **System.IdentityModel**
 - **System.IdentityModel.Tokens.Jwt**
 - **System.Runtime.Serialization**
--->
-<!-- keep by customization: begin -->
-###<span id="whathappened">What happened to my project?</span>
- 
-References have been added.
-
-#####NuGet package references
-
-- `Microsoft.IdentityModel.Protocol.Extensions`
-- `Microsoft.Owin`
-- `Microsoft.Owin.Host.SystemWeb`
-- `Microsoft.Owin.Security`
-- `Microsoft.Owin.Security.Cookies`
-- `Microsoft.Owin.Security.OpenIdConnect`
-- `Owin`
-- `System.IdentityModel.Tokens.Jwt`
-
-#####.NET references
-
-- `Microsoft.IdentityModel.Protocol.Extensions`
-- `Microsoft.Owin`
-- `Microsoft.Owin.Host.SystemWeb`
-- `Microsoft.Owin.Security`
-- `Microsoft.Owin.Security.Cookies`
-- `Microsoft.Owin.Security.OpenIdConnect`
-- `Owin`
-- `System.IdentityModel`
-- `System.IdentityModel.Tokens.Jwt`
-- `System.Runtime.Serialization`
-<!-- keep by customization: end -->
 
 ## Code has been added
-<!-- deleted by customization
 
 ### Code files were added to your project
 
@@ -96,43 +62,14 @@ The following configuration entries have been added.
 
 
 	<appSettings>
--->
-<!-- keep by customization: begin -->
-#####Code files were added to your project 
-
-An authentication startup class, `App_Start/Startup.Auth.cs` was added to your project containing startup logic for Azure AD authentication. Also, a controller class, Controllers/AccountController.cs was added which contains `SignIn()` and `SignOut()` methods. Finally, a partial view, `Views/Shared/_LoginPartial.cshtml` was added containing an action link for SignIn/SignOut. 
-
-#####Startup code was added to your project
- 
-If you already had a Startup class in your project, the **Configuration** method was updated to include a call to `ConfigureAuth(app)`. Otherwise, a Startup class was added to your project. 
-
-#####Your app.config or web.config has new configuration values 
-
-The following configuration entries have been added. 
-	<pre>
-	`<appSettings>
-<!-- keep by customization: end -->
 	    <add key="ida:ClientId" value="ClientId from the new Azure AD App" />
-<!-- deleted by customization
-	    <add key="ida:AADInstance" value="https://login.microsoftonline.com/" />
--->
-<!-- keep by customization: begin -->
-	    <add key="ida:AADInstance" value="https://login.chinacloudapi.cn/" /> 
-<!-- keep by customization: end -->
+	    <add key="ida:AADInstance" value="https://login.chinacloudapi.cn/" />
 	    <add key="ida:Domain" value="The selected Azure AD Domain" />
 	    <add key="ida:TenantId" value="The Id of your selected Azure AD Tenant" />
-<!-- deleted by customization
 	    <add key="ida:PostLogoutRedirectUri" value="Your project start page" />
-	<!-- deleted by customization </appSettings> --><!-- keep by customization: begin --> </appSettings>` <!-- keep by customization: end --><!-- keep by customization: begin --> </pre> <!-- keep by customization: end -->
+	</appSettings>
 
 ### An Azure Active Directory (AD) App was created
--->
-<!-- keep by customization: begin -->
-	    <add key="Ida:PostLogoutRedirectURI" value="Your project start page" /> 
-	<!-- deleted by customization </appSettings> --><!-- keep by customization: begin --> </appSettings>` <!-- keep by customization: end --><!-- keep by customization: begin --> </pre> <!-- keep by customization: end -->
-
-#####An Azure Active Directory (AD) App was created 
-<!-- keep by customization: end -->
 An Azure AD Application was created in the directory that you selected in the wizard.
 
 ##If I checked *disable Individual User Accounts authentication*, what additional changes were made to my project?
@@ -160,8 +97,10 @@ Each of following files was backed up before being replaced. Backup files are lo
 - **Startup.cs**
 - **App_Start\Startup.Auth.cs**
 - **Controllers\AccountController.cs**
-- **Views\Shared_LoginPartial.cshtml**
+- **Views\Shared\_LoginPartial.cshtml**
+
 ## If I checked *Read directory data*, what additional changes were made to my project?
+
 Additional references have been added.
 
 ###Additional NuGet package references
@@ -203,13 +142,8 @@ The following additional configuration entries have been added.
 	</appSettings>
 
 The following configuration sections and connection string have been added.
-<!-- deleted by customization
-	<!-- deleted by customization <configSections> --><!-- keep by customization: begin --> `<configSections> <!-- keep by customization: end -->
--->
-<!-- keep by customization: begin -->
-	<pre>
-	<!-- deleted by customization <configSections> --><!-- keep by customization: begin --> `<configSections> <!-- keep by customization: end -->
-<!-- keep by customization: end -->
+
+	<configSections>
 	    <!-- For more information on Entity Framework configuration, visit http://go.microsoft.com/fwlink/?LinkID=237468 -->
 	    <section name="entityFramework" type="System.Data.Entity.Internal.ConfigFile.EntityFrameworkSection, EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" requirePermission="false" />
 	</configSections>
@@ -225,16 +159,10 @@ The following configuration sections and connection string have been added.
 	    <providers>
 	      <provider invariantName="System.Data.SqlClient" type="System.Data.Entity.SqlServer.SqlProviderServices, EntityFramework.SqlServer" />
 	    </providers>
-	<!-- deleted by customization </entityFramework> --><!-- keep by customization: begin --> </entityFramework>`</pre> <!-- keep by customization: end -->
+	</entityFramework>
 
 
 ###Your Azure Active Directory App was updated
 Your Azure Active Directory App was updated to include the *Read directory data* permission and an additional key was created which was then used as the *ida:ClientSecret* in the **web.config** file.
 
-<!-- deleted by customization
 [Learn more about Azure Active Directory](/home/features/identity/)
--->
-<!-- keep by customization: begin -->
-[Learn more about Azure Active Directory](http://www.windowsazure.cn/home/features/identity/)
- 
-<!-- keep by customization: end -->

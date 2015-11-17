@@ -35,6 +35,7 @@ For this tutorial we will use the database that was created with your mobile ser
             {
                 [Key]
                 public int CustomerId { get; set; }
+
                 public string Name { get; set; }
 
                 public virtual ICollection<Order> Orders { get; set; }
@@ -43,6 +44,7 @@ For this tutorial we will use the database that was created with your mobile ser
         }
 
 3. Create an **Order.cs** file inside the **Models** folder and use the following implementation:
+
         using System.ComponentModel.DataAnnotations;
 
         namespace ShoppingService.Models
@@ -59,6 +61,7 @@ For this tutorial we will use the database that was created with your mobile ser
                 public bool Completed { get; set; }
 
                 public int CustomerId { get; set; }
+
                 public virtual Customer Customer { get; set; }
 
             }
@@ -137,6 +140,7 @@ The data model you would like to use with your mobile service may be arbitrarily
     The **Customer** relationship property has been replaced with the **Customer** name and a **MobileCustomerId** property that can be used to manually model the relationship on the client. For now you can ignore the **CustomerId** property, it is only used later on.
 
 3. You might notice that with the addition of the system properties on the **EntityData** base class, our DTOs now have more properties than the model types. Clearly we need a place to store these properties, so we will add a few extra columns to the original database. While this does change the database, it will not break existing applications since the changes are purely additive (adding new columns to the schema). To do that, add the following statements to the top of **Customer.cs** and **Order.cs**:
+
         using System.ComponentModel.DataAnnotations.Schema;
         using Microsoft.WindowsAzure.Mobile.Service.Tables;
         using System.ComponentModel.DataAnnotations;
@@ -166,6 +170,7 @@ The data model you would like to use with your mobile service may be arbitrarily
         public byte[] Version { get; set; }
 
 4. The system properties just added have some built-in behaviors (for example automatic update of created/updated at) that happen transparently with database operations. To enable these behaviors, we need to make a change to **ExistingContext.cs**. At the top of the file, add the following:
+
         using System.Data.Entity.ModelConfiguration.Conventions;
         using Microsoft.WindowsAzure.Mobile.Service.Tables;
         using System.Linq;
@@ -309,6 +314,7 @@ The next step is to implement a [**MappedEntityDomainManager**](http://msdn.micr
                 {
                     return (T)(object)GetKey(mobileCustomerId, this.context.Customers, this.Request);
                 }
+
                 public override SingleResult<MobileCustomer> Lookup(string mobileCustomerId)
                 {
                     int customerId = GetKey<int>(mobileCustomerId);
@@ -595,6 +601,7 @@ Please note that both controller implementations make exclusive use of the DTOs 
             public DateTimeOffset? UpdatedAt { get; set; }
 
             public bool Deleted { get; set; }
+
             [Version]
             public string Version { get; set; }
 
@@ -602,10 +609,4 @@ Please note that both controller implementations make exclusive use of the DTOs 
 
     }
 
-<!-- deleted by customization
 As a next step, you can now build out the client app to access the service.
-
--->
-<!-- keep by customization: begin -->
-As a next step, you can now build out the client app to access the service. For more information, see [Add Mobile Services to an existing app](/documentation/articles/mobile-services-dotnet-backend-windows-universal-dotnet-get-started-data#update-the-app-to-use-the-mobile-service).
-<!-- keep by customization: end -->

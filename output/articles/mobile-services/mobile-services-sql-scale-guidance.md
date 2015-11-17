@@ -451,7 +451,12 @@ To analyze the query plan in the **SQL Database Management Portal**, use the hig
 
 [Azure Management Portal]: http://manage.windowsazure.cn
 
+<!-- deleted by customization
 [Azure SQL Database Documentation]: /documentation/services/sql-database/
+-->
+<!-- keep by customization: begin -->
+[Azure SQL Database Documentation]: /documentation/services/sql-databases/
+<!-- keep by customization: end -->
 [Managing SQL Database using SQL Server Management Studio]: http://go.microsoft.com/fwlink/p/?linkid=309723&clcid=0x409
 [Monitoring SQL Database Using Dynamic Management Views]: http://go.microsoft.com/fwlink/p/?linkid=309725&clcid=0x409
 [Azure SQL Database performance and scaling]: http://go.microsoft.com/fwlink/p/?linkid=397217&clcid=0x409

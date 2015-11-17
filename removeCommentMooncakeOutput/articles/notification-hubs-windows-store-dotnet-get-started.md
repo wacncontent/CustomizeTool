@@ -78,7 +78,7 @@ To send push notifications to Windows Store apps from Mobile Services, you must 
 
 1. Log on to the [Azure Management Portal], and click **NEW** at the bottom of the screen.
 
-2. Click on **Azure Websites**, then **Service Bus**, then **Notification Hub**, then **Quick Create**.
+2. Click on **App Services**, then **Service Bus**, then **Notification Hub**, then **Quick Create**.
 
    	![][7]
 
@@ -258,19 +258,19 @@ In this simple example you sent broadcast notifications to all your Windows devi
 [Submit an app page]: http://go.microsoft.com/fwlink/p/?LinkID=266582
 [My Applications]: http://go.microsoft.com/fwlink/p/?LinkId=262039
 [Live SDK for Windows]: https://msdn.microsoft.com/zh-cn/onedrive/dn632140
-[Get started with Mobile Services]: /develop/mobile/tutorials/get-started/#create-new-service
-[Get started with data]: /develop/mobile/tutorials/get-started-with-data-dotnet
-[Get started with authentication]: /develop/mobile/tutorials/get-started-with-users-dotnet
-[Get started with push notifications]: /develop/mobile/tutorials/get-started-with-push-dotnet
+[Get started with Mobile Services]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started/#create-new-service
+[Get started with data]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-data-dotnet
+[Get started with authentication]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-users-dotnet
+[Get started with push notifications]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-push-dotnet
 [Push notifications to app users]: /develop/mobile/tutorials/push-notifications-to-users-dotnet
 [Authorize users with scripts]: /develop/mobile/tutorials/authorize-users-in-scripts-dotnet
-[JavaScript and HTML]: /develop/mobile/tutorials/get-started-with-push-js
+[JavaScript and HTML]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-push-js
 
 [Azure Management Portal]: https://manage.windowsazure.cn/
 [wns object]: https://msdn.microsoft.com/zh-cn/library/azure/jj860484.aspx
 [Notification Hubs Guidance]: http://msdn.microsoft.com/zh-cn/library/jj927170.aspx
 
-[Use Notification Hubs to push notifications to users]: /manage/services/notification-hubs/notify-users-aspnet
+[Use Notification Hubs to push notifications to users]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-push-notifications-app-users-aspnet
 [Use Notification Hubs to send breaking news]: /manage/services/notification-hubs/breaking-news-dotnet
 
 [toast catalog]: http://msdn.microsoft.com/zh-cn/library/windows/apps/hh761494.aspx

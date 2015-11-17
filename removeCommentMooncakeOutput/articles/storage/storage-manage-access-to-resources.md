@@ -7,9 +7,9 @@
 	manager="jdial" 
 	editor=""/>
 
-<tags 
-	ms.service="storage" 
-	ms.date="09/28/2015" 
+<tags
+	ms.service="storage"
+	ms.date="09/28/2015"
 	wacn.date=""/>
 
 # Manage Access to Azure Storage Resources

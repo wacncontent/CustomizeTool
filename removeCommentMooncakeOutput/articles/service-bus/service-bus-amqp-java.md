@@ -6,10 +6,10 @@
    authors="sethmanheim"
    manager="timlt"
    editor="tysonn" /> 
-<tags 
-   ms.service="service-bus"
-   ms.date="10/07/2015"
-   wacn.date="" />
+<tags
+	ms.service="service-bus"
+	ms.date="10/07/2015"
+	wacn.date=""/>
 
 # Using Service Bus from Java with AMQP 1.0
 
@@ -61,11 +61,11 @@ The entry used to define a **ConnectionFactory** in the Qpid Properties File JND
 connectionfactory.[jndi_name] = [ConnectionURL]
 ```
 
-Where `[jndi_name]` and `[ConnectionURL]` have the following meanings:
+Where `[jndi\_name]` and `[ConnectionURL]` have the following meanings:
 
 | Name            | Meaning                                                                                                                                    |   |   |   |   |
 |-----------------|--------------------------------------------------------------------------------------------------------------------------------------------|---|---|---|---|
-| `[jndi_name]`    | The logical name of the connection factory. This name is resolved in the Java application by using the JNDI `IntialContext.lookup()` method. |   |   |   |   |
+| `[jndi\_name]`    | The logical name of the connection factory. This name is resolved in the Java application by using the JNDI `IntialContext.lookup()` method. |   |   |   |   |
 | `[ConnectionURL]` | A URL that provides the JMS library with the information required to the AMQP broker.                                                      |   |   |   |   |
 
 The format of the connection URL is as follows:
@@ -106,11 +106,11 @@ queue.[jndi_name] = [physical_name]
 topic.[jndi_name] = [physical_name]
 ```
 
-Where `[jndi_name]` and `[physical_name]` have the following meanings:
+Where `[jndi\_name]` and `[physical\_name]` have the following meanings:
 
 | Name              | Meaning                                                                                                                                  |
 |-------------------|------------------------------------------------------------------------------------------------------------------------------------------|
-| `[jndi_name]`    | The logical name of the destination. This is name is resolved in the Java application by using the JNDI `IntialContext.lookup()` method. |
+| `[jndi\_name]`    | The logical name of the destination. This is name is resolved in the Java application by using the JNDI `IntialContext.lookup()` method. |
 | `[physical\name]` | The name of the Service Bus entity to which the application sends or receives messages.                                                  |
 
 Note the following:
@@ -118,7 +118,7 @@ Note the following:
 - The `[physical\name]` value can be a Service Bus queue or topic.
 - When receiving from a Service Bus topic subscription, the physical name specified in JNDI should be the name of the topic. The subscription name is provided when the durable subscription is created in the JMS application code.
 - It is also possible to treat a Service Bus topic subscription as a JMS Queue. There are several advantages to this approach: the same receiver code can be used for queues and topic subscriptions, and all the address information (the topic and subscription names) is externalized in the properties file.
-- To treat a Service Bus topic subscription as a JMS Queue, the entry in properties file should be of the form: `queue.[jndi_name] = [topic_name]/Subscriptions/[subscription_name]`.|
+- To treat a Service Bus topic subscription as a JMS Queue, the entry in properties file should be of the form: `queue.[jndi\_name] = [topic\_name]/Subscriptions/[subscription\_name]`.|
 
 To define a logical JMS destination named "TOPIC" that maps to a Service Bus topic named "topic1," the entry in the properties file would be as follows:
 
@@ -174,7 +174,7 @@ The JMS specification defines how the exception contract of the API methods and 
 
 -   Register an **ExceptionListener** with the JMS connection using **connection.setExceptionListener**. This enables a client to be notified of a problem asynchronously. This notification is particularly important for connections that only consume messages, as they would have no other way to learn that their connection has failed. The **ExceptionListener** is called if there is a problem with the underlying AMQP connection, session, or link. In this situation, the application program should recreate the **JMS Connection**, **Session**, **MessageProducer** and **MessageConsumer** objects from scratch.
 
--   To verify that a message has been successfully sent from a **MessageProducer** to a Service Bus entity, ensure that the application has been configured with the **qpid.sync_publish** system property set. You can do this by starting the program with the **-Dqpid.sync_publish=true** Java VM option set on the command line when starting the application. Setting this option configures the library to not return from the send call until confirmation has been received that the message has been accepted by Service Bus. If a problem occurs during the send operation, a **JMSException** is raised. There are two possible causes: 
+-   To verify that a message has been successfully sent from a **MessageProducer** to a Service Bus entity, ensure that the application has been configured with the **qpid.sync\_publish** system property set. You can do this by starting the program with the **-Dqpid.sync\_publish=true** Java VM option set on the command line when starting the application. Setting this option configures the library to not return from the send call until confirmation has been received that the message has been accepted by Service Bus. If a problem occurs during the send operation, a **JMSException** is raised. There are two possible causes: 
 	1. If the problem is due to Service Bus rejecting the particular message being sent, then a **MessageRejectedException** exception will be raised. This error is either transitory, or due to some problem with the message. The recommended course of action is to make several attempts to retry the operation with some back-off logic. If the problem persists, then the message should be abandoned with an error logged locally. There is no need to recreate the **JMS Connection**, **Session**, or **MessageProducer** objects in this situation. 
 	2. If the problem is due to Service Bus closing the AMQP Link, then an **InvalidDestinationException** exception will be raised. This can be due to a transient problem, or due to the message entity being deleted. In either case, the **JMS Connection**, **Session**, and **MessageProducer** objects should be recreated. If the error condition was transient, then this operation will eventually be successful. If the entity has been deleted, the failure will be permanent.
 

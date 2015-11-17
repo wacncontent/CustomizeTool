@@ -7,9 +7,9 @@
 	manager="dwrede" 
 	editor=""/>
 
-<tags 
-	ms.service="mobile-services" 
-	ms.date="06/15/2015" 
+<tags
+	ms.service="mobile-services"
+	ms.date="09/24/2015"
 	wacn.date=""/>
 
 # Register your apps to use an Azure Active Directory Account login
@@ -18,8 +18,7 @@
 
 ##Overview
 
-
-This topic shows you how to register your apps to be able to use Azure Active Directory as an authentication provider for Azure Mobile Services. 
+This topic shows you how to register your apps to be able to use Azure Active Directory as an authentication provider for your mobile service. 
 
 ##Registering your app
 
@@ -28,7 +27,6 @@ This topic shows you how to register your apps to be able to use Azure Active Di
 1. Log on to the [Azure Management Portal], navigate to your mobile service, click the **Identity** tab, then scroll down to the **Azure active directory** identity provider section and copy the **App URL** shown there.
 
     ![Mobile service app URL for AAD](./media/mobile-services-how-to-register-active-directory-authentication/mobile-services-copy-app-url-waad-auth.png)
-
 
 2. Navigate to **Active Directory** in the management portal, click your directory then **Domains** and make a note of your directory's default domain.
 
@@ -52,10 +50,7 @@ This topic shows you how to register your apps to be able to use Azure Active Di
 
 8.  In the **Allowed Tenants** list, type the domain of the directory in which you registered the application (such as `contoso.partner.onmschina.cn`), then click **Save**.    
 
-
 You are now ready to use an Azure Active Directory for authentication in your app. 
-
-
 
 <!-- Anchors. -->
 
@@ -65,3 +60,4 @@ You are now ready to use an Azure Active Directory for authentication in your ap
 <!-- URLs. -->
 [Azure Management Portal]: https://manage.windowsazure.cn/
 
+ 

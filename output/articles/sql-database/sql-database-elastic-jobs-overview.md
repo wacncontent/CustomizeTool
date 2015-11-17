@@ -76,7 +76,12 @@ There are multiple types of job tasks that carry out execution of jobs:
 At any point during job execution, the PowerShell API can be used to view the current state of job execution. All times returned by the PowerShell APIs are represented in UTC. If desired, a cancellation request can be initiated to stop a job. 
 
 ## Next steps
+<!-- deleted by customization
 [Install the components](/documentation/articles/sql-database-elastic-jobs-service-installation), then [create and add a log in to each database in the group of databases](/documentation/articles/sql-database-elastic-jobs-add-logins-to-dbs). To further understand job creation and management, see [creating and managing elastic database jobs](/documentation/articles/sql-database-elastic-jobs-create-and-manage).
+-->
+<!-- keep by customization: begin -->
+[Install the components](/documentation/articles/sql-database-elastic-jobs-service-installation), then [create and add a log in to each database in the pool](/documentation/articles/sql-database-elastic-jobs-add-logins-to-dbs).
+<!-- keep by customization: end -->
 
 [AZURE.INCLUDE [elastic-scale-include](../includes/elastic-scale-include.md)]
 

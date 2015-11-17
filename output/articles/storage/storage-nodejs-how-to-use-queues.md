@@ -334,6 +334,8 @@ to learn about more complex storage tasks.
   [Create and deploy a Node.js application to an Azure Web Site]: /documentation/articles/web-sites-nodejs-develop-deploy-mac
   [Node.js Cloud Service with Storage]: /documentation/articles/storage-nodejs-use-table-storage-cloud-service-app
   [Node.js Web Application with Storage]: /documentation/articles/storage-nodejs-use-table-storage-web-site
+
+  
   [Queue1]: ./media/storage-nodejs-how-to-use-queues/queue1.png
   [plus-new]: ./media/storage-nodejs-how-to-use-queues/plus-new.png
   [quick-create-storage]: ./media/storage-nodejs-how-to-use-queues/quick-storage.png
@@ -344,3 +346,4 @@ to learn about more complex storage tasks.
   [Storing and Accessing Data in Azure]: http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx
   [Azure Storage Team Blog]: http://blogs.msdn.com/b/windowsazurestorage/
  [Web Site with WebMatrix]: /documentation/articles/web-sites-nodejs-use-webmatrix
+ 

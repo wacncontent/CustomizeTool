@@ -255,7 +255,7 @@ exports.creds = {
 mongoose_auth_local: 'mongodb://localhost/tasklist', // Your mongo auth uri goes here
 issuer: 'https://sts.chinacloudapi.cn/**<your application id>**/',
 audience: '<your redirect URI>',
-identityMetadata: 'https://login.microsoftonline.com/common/.well-known/openid-configuration' // For using Microsoft you should never need to change this.
+identityMetadata: 'https://login.chinacloudapi.cn/common/.well-known/openid-configuration' // For using Microsoft you should never need to change this.
 };
 
 ```

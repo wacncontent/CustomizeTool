@@ -31,9 +31,14 @@ To complete the steps in this article, you will need the following.
 * A modern web browser
 
 ##<a id="run"></a> Run Hive queries using the Query Console
+<!-- deleted by customization
 
 1. Open a web browser and navigate to __https://CLUSTERNAME.azurehdinsight.cn__, where __CLUSTERNAME__ is the name of your HDInsight cluster. If prompted, enter the user name and password that you used when you created the cluster.
 
+-->
+<!-- keep by customization: begin -->
+1. Open the <a href="https://manage.windowsazure.cn" target="_blank">Azure Management Portal</a> and select your HDInsight cluster. From the bottom of the page, select **Query Console**. When prompted, enter the username and password that you used when you created the cluster.
+<!-- keep by customization: end -->
 
 2. From the links at the top of the page, select **Hive Editor**. This displays a form that can be used to enter the HiveQL statements that you want to run in the HDInsight cluster.
 
@@ -85,10 +90,11 @@ For information about other ways you can work with Hadoop on HDInsight:
 * [Use MapReduce with Hadoop on HDInsight](/documentation/articles/hdinsight-use-mapreduce)
 
 [1]: /documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started
+
 [hdinsight-sdk-documentation]: http://msdnstage.redmond.corp.microsoft.com/zh-cn/library/dn479185.aspx
 
 [azure-purchase-options]: /pricing/overview/
-[azure-member-offers]: http://azure.microsoft.com/pricing/member-offers/
+[azure-member-offers]: /pricing/member-offers/
 [azure-trial]: /pricing/1rmb-trial/
 
 [apache-tez]: http://tez.apache.org
@@ -100,11 +106,16 @@ For information about other ways you can work with Hadoop on HDInsight:
 
 [hdinsight-use-oozie]: /documentation/articles/hdinsight-use-oozie
 [hdinsight-analyze-flight-data]: /documentation/articles/hdinsight-analyze-flight-delay-data
+
+
+
 [hdinsight-storage]: /documentation/articles/hdinsight-use-blob-storage
+
 [hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters
 [hdinsight-submit-jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically
 [hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
 [hdinsight-get-started]: /documentation/articles/hdinsight-get-started
+
 [Powershell-install-configure]: /documentation/articles/install-configure-powershell
 [powershell-here-strings]: http://technet.microsoft.com/zh-cn/library/ee692792.aspx
 

@@ -12,7 +12,7 @@
 	ms.date="10/08/2015"
 	wacn.date=""/>
 
-# Get started with Mobile Services <!-- deleted by customization for Android  (JavaScript backend) -->
+# Get started with Mobile Services for Android  (JavaScript backend)
 
 [AZURE.INCLUDE [mobile-services-selector-get-started](../includes/mobile-services-selector-get-started.md)]
 
@@ -20,35 +20,24 @@
 &nbsp;
 
 [AZURE.INCLUDE [mobile-services-hero-slug](../includes/mobile-services-hero-slug.md)]
+-->
 
-This<!-- keep by customization: begin --> <p>This <!-- keep by customization: end --> tutorial shows you how to add a cloud-based backend service to an Android app using Azure Mobile Services. In this tutorial, you will create both a new mobile service and a simple **To<!-- keep by customization: begin --> <em>To <!-- keep by customization: end --> do list**<!-- keep by customization: begin --> list</em> <!-- keep by customization: end --> app that stores app data in the new mobile service.<!-- keep by customization: begin --> service.</p> <!-- keep by customization: end -->
+This tutorial shows you how to add a cloud-based backend service to an Android app using Azure Mobile Services. In this tutorial, you will create both a new mobile service and a simple **To do list** app that stores app data in the new mobile service.
+<!-- deleted by customization
 
 > [AZURE.VIDEO mobile-get-started-android]
+-->
 
 A screenshot from the completed app is below:
 ![](./media/mobile-services-android-get-started/mobile-quickstart-completed-android.png)
--->
-<!-- keep by customization: begin -->
-<div class="dev-onpage-video-clear clearfix">
-<div class="dev-onpage-left-content">
-
-
-<!-- keep by customization: begin --> <p>This <!-- keep by customization: end --> tutorial shows you how to add a cloud-based backend service to an Android app using Azure Mobile Services. In this tutorial, you will create both a new mobile service and a simple <!-- keep by customization: begin --> <em>To <!-- keep by customization: end --> do <!-- keep by customization: begin --> list</em> <!-- keep by customization: end --> app that stores app data in the new mobile <!-- keep by customization: begin --> service.</p> <!-- keep by customization: end -->
-<p>A screenshot from the completed app is below:</p>
-</div>
-<div class="dev-onpage-video-wrapper"><a href="http://channel9.msdn.com/Series/Windows-Azure-Mobile-Services/Android-Support-in-Windows-Azure-Mobile-Services" target="_blank" class="label">watch the tutorial</a> <a style="background-image: url('/media/devcenter/mobile/videos/mobile-get-started-android-180x120.png') !important;" href="http://channel9.msdn.com/Series/Windows-Azure-Mobile-Services/Android-Support-in-Windows-Azure-Mobile-Services" target="_blank" class="dev-onpage-video"><span class="icon">Play Video</span></a><span class="time">7:26</span></div>
-</div>
-
-![](./media/mobile-services-android-get-started/mobile-quickstart-completed-android.png)
-<!-- keep by customization: end -->
 
 ## Prerequisites
 
-Completing this tutorial requires the [Android Developer <!-- deleted by customization Tools](https://developer.android.com/sdk/index.html)) --><!-- keep by customization: begin --> Tools][Android Studio] <!-- keep by customization: end -->, which includes the Android Studio integrated development environment, and the latest Android platform. Android 4.2 or a later version is required.
+Completing this tutorial requires the [Android Developer Tools](https://developer.android.com/sdk/index.html)), which includes the Android Studio integrated development environment, and the latest Android platform. Android 4.2 or a later version is required.
 
 The downloaded quickstart project contains the Azure Mobile Services SDK for Android.
 
-> [AZURE.IMPORTANT] To complete this tutorial, you need an Azure account. If you don't have an account, you can create a trial account in just a couple of minutes. For details, see [Azure <!-- deleted by customization Trial](/pricing/1rmb-trial/?WT.mc_id=AE564AB28) --><!-- keep by customization: begin --> Trial](/pricing/1rmb-trial/) <!-- keep by customization: end -->.
+> [AZURE.IMPORTANT] To complete this tutorial, you need an Azure account. If you don't have an account, you can create a trial account in just a couple of minutes. For details, see [Azure Trial](/pricing/1rmb-trial/?WT.mc_id=AE564AB28).
 
 
 ## Create a new mobile service
@@ -71,7 +60,7 @@ In this section you will create a new Android app that is connected to your mobi
 
   	![](./media/mobile-services-android-get-started/mobile-quickstart-steps-android-AS.png)
 
-3. If you haven't already done so, download and install the [Android Developer <!-- deleted by customization Tools](http://developer.android.com/sdk/index.html) --><!-- keep by customization: begin --> Tools][Android SDK] <!-- keep by customization: end --> on your local computer or virtual machine.
+3. If you haven't already done so, download and install the [Android Developer Tools](http://developer.android.com/sdk/index.html) on your local computer or virtual machine.
 
 4. Click **Create TodoItem table** to create a table to store app data.
 
@@ -116,7 +105,6 @@ Now that you have completed the quickstart, learn how to perform additional impo
 <!-- deleted by customization
 [AZURE.INCLUDE [app-service-disqus-feedback-slug](../includes/app-service-disqus-feedback-slug.md)]
 
-
 -->
 <!-- keep by customization: begin -->
 
@@ -137,15 +125,10 @@ Now that you have completed the quickstart, learn how to perform additional impo
 [12]: ./media/mobile-services-android-get-started/mobile-data-browse.png
 [14]: ./media/mobile-services-android-get-started/mobile-services-import-android-workspace.png
 [15]: ./media/mobile-services-android-get-started/mobile-services-import-android-project.png
+<!-- keep by customization: end -->
 
-<!-- keep by customization: end -->
 <!-- URLs. -->
-<!-- deleted by customization
 [Get started (Eclipse)]: /documentation/articles/mobile-services-android-get-started-ec
--->
-<!-- keep by customization: begin -->
-[Get started (Eclipse)]: /documentation/articles/mobile-services-android-get-started-EC
-<!-- keep by customization: end -->
 [Get started with data]: /documentation/articles/mobile-services-android-get-started-data
 [Get started with authentication]: /documentation/articles/mobile-services-android-get-started-users
 [Get started with push notifications]: /documentation/articles/mobile-services-javascript-backend-android-get-started-push

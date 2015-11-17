@@ -55,7 +55,7 @@ When a computer attempts to connect to your database server from the Internet, t
 
 When an application from Azure attempts to connect to your database server, the firewall verifies that Azure connections are allowed. A firewall setting with starting and ending address equal to 0.0.0.0 indicates these connections are allowed. If the connection attempt is not allowed, the request does not reach the Azure SQL Database server.
 
-You can enable connections from Azure in the [Management <!-- deleted by customization Portal](https://manage.windowsazure.cn/) --><!-- keep by customization: begin --> Portal](https://manage.windowsazure.cn) <!-- keep by customization: end --> in two ways:
+You can enable connections from Azure in the [Management Portal](https://manage.windowsazure.cn/) in two ways:
 
 - Select the checkbox **Allow Windows Azure Services to Access the Server** when creating a new server.
 
@@ -63,7 +63,7 @@ You can enable connections from Azure in the [Management <!-- deleted by customi
 
 ## Creating the first server-level firewall rule
 
-The first server-level firewall setting can be created using the [Management <!-- deleted by customization Portal](https://manage.windowsazure.cn/) --><!-- keep by customization: begin --> Portal](https://manage.windowsazure.cn) <!-- keep by customization: end --> or programmatically using the REST API or Azure PowerShell. Subsequent server-level firewall rules can be created and managed using these methods, as well as through Transact-SQL. For more information on server-level firewall rules, see [How to: Configure Firewall Settings (Azure SQL Database)](/documentation/articles/sql-database-configure-firewall-settings).
+The first server-level firewall setting can be created using the [Management Portal](https://manage.windowsazure.cn/) or programmatically using the REST API or Azure PowerShell. Subsequent server-level firewall rules can be created and managed using these methods, as well as through Transact-SQL. For more information on server-level firewall rules, see [How to: Configure Firewall Settings (Azure SQL Database)](/documentation/articles/sql-database-configure-firewall-settings).
 
 ## Creating database-level firewall rules
 
@@ -78,11 +78,11 @@ In addition to the Azure Management Portal, firewall rules can be managed progra
 
 | Catalog View or Stored Procedure                                                           | Level     | Description                                          |
 |--------------------------------------------------------------------------------------------|-----------|------------------------------------------------------|
-| <!-- deleted by customization [sys.firewall_rules](https://msdn.microsoft.com/zh-cn/library/dn269980.aspx) --><!-- keep by customization: begin --> [sys.firewall\\_rules](https://msdn.microsoft.com/zh-cn/library/dn269980.aspx) <!-- keep by customization: end -->                   | Server    | Displays the current server-level firewall rules     |
-| <!-- deleted by customization [sp_set_firewall_rule](https://msdn.microsoft.com/zh-cn/library/dn270017.aspx) --><!-- keep by customization: begin --> [sp\\_set\\_firewall\\_rule](https://msdn.microsoft.com/zh-cn/library/dn270017.aspx) <!-- keep by customization: end -->             | Server    | Creates or updates server-level firewall rules       |
-| <!-- deleted by customization [sp_delete_firewall_rule](https://msdn.microsoft.com/zh-cn/library/dn270024.aspx) --><!-- keep by customization: begin --> [sp\\_delete\\_firewall\\_rule](https://msdn.microsoft.com/zh-cn/library/dn270024.aspx) <!-- keep by customization: end -->          | Server    | Removes server-level firewall rules                  |
-| <!-- deleted by customization [sys.database_firewall_rules](https://msdn.microsoft.com/zh-cn/library/dn269982.aspx) --><!-- keep by customization: begin --> [sys.database\\_firewall\\_rules](https://msdn.microsoft.com/zh-cn/library/dn269982.aspx) <!-- keep by customization: end -->        | Database  | Displays the current database-level firewall rules   |
-| <!-- deleted by customization [sp_set_database_firewall_rule](https://msdn.microsoft.com/zh-cn/library/dn270010.aspx) --><!-- keep by customization: begin --> [sp_set\\_database_firewall_rule](https://msdn.microsoft.com/zh-cn/library/dn270010.aspx) <!-- keep by customization: end -->    | Database  | Creates or updates the database-level firewall rules |
+| [sys.firewall_rules](https://msdn.microsoft.com/zh-cn/library/dn269980.aspx)                   | Server    | Displays the current server-level firewall rules     |
+| [sp_set_firewall_rule](https://msdn.microsoft.com/zh-cn/library/dn270017.aspx)             | Server    | Creates or updates server-level firewall rules       |
+| [sp_delete_firewall_rule](https://msdn.microsoft.com/zh-cn/library/dn270024.aspx)          | Server    | Removes server-level firewall rules                  |
+| [sys.database_firewall_rules](https://msdn.microsoft.com/zh-cn/library/dn269982.aspx)        | Database  | Displays the current database-level firewall rules   |
+| [sp_set_database_firewall_rule](https://msdn.microsoft.com/zh-cn/library/dn270010.aspx)    | Database  | Creates or updates the database-level firewall rules |
 | [sp_delete_database_firewall_rule](https://msdn.microsoft.com/zh-cn/library/dn270030.aspx) | Databases | Removes database-level firewall rules                |
 
 ### REST API

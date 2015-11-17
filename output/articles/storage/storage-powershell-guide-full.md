@@ -28,7 +28,7 @@ The first section in this guide provides a quick glance at Azure Storage and Pow
 
 This section shows you how to access Azure Storage via PowerShell in 5 minutes.
 
-**New to Azure:** Get a Windows Azure subscription and a Microsoft account associated with that subscription. For information on Azure purchase options, see [Trial](/pricing/1rmb-trial/), [Purchase Options](/pricing/overview/), and [Member Offers](http://azure.microsoft.com/pricing/member-offers/) (for members of MSDN, Microsoft Partner Network, and BizSpark, and other Microsoft programs).
+**New to Azure:** Get a Windows Azure subscription and a Microsoft account associated with that subscription. For information on Azure purchase options, see [Trial](/pricing/1rmb-trial/), [Purchase Options](/pricing/overview/), and [Member Offers](/pricing/member-offers/) (for members of MSDN, Microsoft Partner Network, and BizSpark, and other Microsoft programs).
 
 See [Manage Accounts, Subscriptions, and Administrative Roles](https://msdn.microsoft.com/zh-cn/library/azure/hh531793.aspx) for more information about Azure subscriptions.
 
@@ -103,13 +103,15 @@ See [Manage Accounts, Subscriptions, and Administrative Roles](https://msdn.micr
        		Get-AzureSubscription | Format-Table SubscriptionName, IsDefault, IsCurrent, CurrentStorageAccountName
 
 
-		b. Currently, Azure supports two portals: the [Azure Management Portal](https://manage.windowsazure.cn/) and the [Azure Preview Portal](https://manage.windowsazure.cn/). If you sign in to the current [Azure Management Portal](https://manage.windowsazure.cn/), scroll down and click **Settings** on the left side of the portal. Click **Subscriptions**. Copy the name of subscription that you want to use while running the scripts given in this guide. See the following screenshot as an example.
+		b. Currently, Azure supports <!-- deleted by customization two portals --><!-- keep by customization: begin --> one portal in China <!-- keep by customization: end -->: the [Azure Management <!-- deleted by customization Portal](https://manage.windowsazure.cn/) and the [Azure Preview --> Portal](https://manage.windowsazure.cn/). If you sign in to the current [Azure Management Portal](https://manage.windowsazure.cn/), scroll down and click **Settings** on the left side of the portal. Click **Subscriptions**. Copy the name of subscription that you want to use while running the scripts given in this guide. See the following screenshot as an example.
 
 		![Azure Management Portal][Image1]
+<!-- deleted by customization
 
 		c. If you sign in to the [Azure Preview Portal](https://manage.windowsazure.cn/), in the Hub menu on the left, click **BROWSE**. Then, click **Everything**, click **Subscriptions**. Copy the name of subscription that you want to use while running the scripts in this guide. See the following screenshot as an example.
 
 		![Azure Preview Portal][Image2]
+-->
 
 
 	- **$StorageAccountName:** Use the given name in the script or enter a new name for your storage account. **Important:** The name of the storage account must be unique in Azure. It must be lowercase, too!
@@ -651,7 +653,7 @@ Use the Remove-AzureStorageTableStoredAccessPolicy cmdlet to delete a stored acc
 
 
 ## How to use Azure Storage for U.S. government and Azure China
-An Azure environment is an independent deployment of Windows Azure, such as [Azure Government for U.S. government](http://azure.microsoft.com/features/gov/), [AzureCloud for global Azure](https://manage.windowsazure.cn), and [AzureChinaCloud for Azure operated by 21Vianet in China](http://www.windowsazure.cn/). You can deploy new Azure environments for U.S government and Azure China.
+An Azure environment is an independent deployment of Windows Azure, such as [Azure Government for U.S. government](http://azure.microsoft.com/features/gov/), [AzureCloud for global Azure](https://manage.windowsazure.com), and [AzureChinaCloud for Azure operated by 21Vianet in China](http://www.windowsazure.cn/). You can deploy new Azure environments for U.S government and Azure China.
 
 To use Azure Storage with AzureChinaCloud, you need to create a storage context that is associated with AzureChinaCloud. Follow these steps to get you started:
 

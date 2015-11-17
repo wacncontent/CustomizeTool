@@ -7,10 +7,10 @@
     authors="sidneyh" 
     editor=""/>
 
-<tags 
-    ms.service="sql-database" 
-    ms.date="07/24/2015" 
-    wacn.date=""/>
+<tags
+	ms.service="sql-database"
+	ms.date="07/24/2015"
+	wacn.date=""/>
 
 # Elastic Database tools glossary
 The following terms are defined for the Elastic Database tools, a feature of Azure SQL Database. The tools include the client library, the split-merge tool, elastic pools, and queries.

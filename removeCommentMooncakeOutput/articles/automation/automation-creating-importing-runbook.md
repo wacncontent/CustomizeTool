@@ -23,13 +23,13 @@ You can create a new runbook in Azure Automation using one of the Azure Manageme
 
 You can only work with [PowerShell Workflow runbooks](/documentation/articles/automation-runbook-types#powershell-workflow-runbooks) in the Azure Management Portal.
 
-1. In the Azure Management Portal, click, **New**, **Azure Websites**, **Automation**, **Runbook**, **Quick Create**.
+1. In the Azure Management Portal, click, **New**, **App Services**, **Automation**, **Runbook**, **Quick Create**.
 2. Enter the required information, and then click **Create**. The runbook name must start with a letter and can have letters, numbers, underscores, and dashes.
 3. If you want to edit the runbook now, then click **Edit Runbook**. Otherwise, click **OK**.
 4. Your new runbook will appear on the **Runbooks** tab.
 ### To create a new Azure Automation runbook with the Azure Management Portal
 
-1. In the Azure Management Portal, click, **New**, **Azure Websites**, **Automation**, **Runbook**, **Quick Create**.
+1. In the Azure Management Portal, click, **New**, **App Services**, **Automation**, **Runbook**, **Quick Create**.
 2. Enter the required information, and then click **Create**. The runbook name must start with a letter and can have letters, numbers, underscores, and dashes.
 3. If you want to edit the runbook now, then click **Edit Runbook**. Otherwise, click **OK**.
 4. Your new runbook will appear on the **Runbooks** tab.

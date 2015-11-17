@@ -35,12 +35,7 @@ Here's what you need before you start:
 
 ## Deployment steps
 
-<!-- deleted by customization
 1. [Create a vault](/documentation/articles/site-recovery-vmware-to-azure#step-1-create-a-vault)
--->
-<!-- keep by customization: begin -->
-1. [Create a vault](/documentation/articles/site-recovery-vmware-to-azure/#step-1-create-a-vault)
-<!-- keep by customization: end -->
 2. [Deploy a configuration server](/documentation/articles/site-recovery-vmware-to-azure#step-2-deploy-a-configuration-server) as an Azure VM.
 3. [Deploy the master target server](/documentation/articles/site-recovery-vmware-to-azure#step-2-deploy-a-configuration-server) as an Azure VM.
 4. [Deploy a process server](/documentation/articles/site-recovery-vmware-to-azure#step-4-deploy-the-on-premises-process-server). Note that:
@@ -70,6 +65,6 @@ Here's what you need before you start:
 		
 ## Next steps
 
-Post any comments or questions in the [Site Recovery <!-- deleted by customization forum](https://social.msdn.microsoft.com/forums/azure/home?forum=hypervrecovmgr) --><!-- keep by customization: begin --> forum](https://social.msdn.microsoft.com/forums/zh-cn/home?forum=hypervrecovmgr) <!-- keep by customization: end -->
+Post any comments or questions in the [Site Recovery forum](https://social.msdn.microsoft.com/forums/azure/home?forum=hypervrecovmgr)
 
 

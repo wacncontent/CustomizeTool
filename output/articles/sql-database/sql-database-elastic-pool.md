@@ -19,9 +19,11 @@ If you are a SaaS developer with tens, hundreds, or even thousands of databases,
 
 A common SaaS application pattern is for each database to have a different customer, each with varying and unpredictable resource consumption (CPU/IO/Memory summarized with DTU). With these peaks and valleys of demand for each database, it can be difficult to predict and therefore provision resources. You're faced with two options; either over-provision database resources based on peak usage--and overpay. Or under-provision to save cost--at the expense of performance and customer satisfaction during peaks. 
 
+<!-- deleted by customization
 Microsoft created elastic database pools specifically to help you solve this problem.
 
 > [AZURE.VIDEO elastic-databases-helps-saas-developers-tame-explosive-growth]
+-->
 
 
 Elastic database pools provide a solution for customers who need to ensure that their databases get the performance resources they need, when they need it, while also providing a simple resource allocation mechanism and a predictable budget. The on-demand performance scaling of individual databases within an elastic database pool is possible because each database within a pool uses eDTUs from a shared set associated with the pool. This allows databases under heavy load to consume more to meet demand, while databases under light load consume less, and databases under no load don’t consume any eDTUs. By provisioning resources for the pool rather than for single databases you not only simplify the management of multiple databases, you also have a predictable budget for an otherwise unpredictable workload. 

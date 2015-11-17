@@ -7,9 +7,9 @@
    manager="douge"
    editor="tlee" />
 <tags
-   ms.service="storage"
-   ms.date="08/24/2015"
-   wacn.date="" />
+	ms.service="storage"
+	ms.date="08/24/2015"
+	wacn.date=""/>
 
 # Browsing and Managing Storage Resources with Server Explorer
 
@@ -272,7 +272,7 @@ There are two ways to add storage accounts by using Server Explorer. You can cre
 
     - The name you want to use for the new storage account.
 
-    - The region or affinity group (such as China North or East Asia).
+    - The region or affinity group (such as China North or China East).
 
     - The type of replication you want to use for the storage account, such as Geo-Redundant.
 

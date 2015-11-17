@@ -26,7 +26,7 @@ Basic, Standard, and Premium service tiers all have an uptime SLA of 99.99% and 
 | **Standard** | The go-to option for most cloud applications, supporting multiple concurrent queries. Examples include workgroup or web applications. |
 | **Premium** | Designed for high transactional volume, supporting a large number of concurrent users and requiring the highest level of business continuity capabilities. Examples are databases supporting mission critical applications. |
 
->[AZURE.NOTE] Web and Business editions are being retired. Find out how to [upgrade Web and Business editions](/documentation/articles/sql-database-upgrade-new-service-tiers). Please read the [Sunset FAQ](/home/features/sql-database/#priceweb-business/) if you plan to continue using Web and Business Editions.
+>[AZURE.NOTE] Web and Business editions are being retired. Find out how to [upgrade Web and Business editions](/documentation/articles/sql-database-upgrade-new-service-tiers). <!-- deleted by customization Please read the [Sunset FAQ](/home/features/sql-database/#priceweb-business/) if you plan to continue using Web and Business Editions. -->
 
 ### Service tiers for single databases
 For single databases there are multiple performance levels within each service tier, you have the flexibility to choose the level that best meets your workload’s demands. If you need to scale up or down, you can easily change the tiers of your database in the Azure Management Portal, with zero-downtime for your application. See [Changing Database Service Tiers and Performance Levels](/documentation/articles/sql-database-scale-up) for details.

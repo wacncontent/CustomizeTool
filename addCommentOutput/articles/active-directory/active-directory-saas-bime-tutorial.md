@@ -1,5 +1,8 @@
 <properties pageTitle="Tutorial: Azure Active Directory Integration with Bime | Windows Azure" description="Learn how to use Bime with Azure Active Directory to enable single sign-on, automated provisioning, and more!." services="active-directory" authors="MarkusVi"  documentationCenter="na" manager="stevenpo"/>
-<tags ms.service="active-directory" ms.devlang="na" ms.topic="article" ms.tgt_pltfrm="na" ms.workload="identity" ms.date="08/01/2015" ms.author="markvi" />
+<tags
+	ms.service="active-directory"
+	ms.date="08/01/2015"
+	wacn.date=""/>
 #Tutorial: Azure Active Directory Integration with Bime
 <!-- deleted by customization
 >[AZURE.TIP]For feedback, click [here](https://social.msdn.microsoft.com/Forums/azure/zh-cn/e04c85ce-1e4c-423d-a3c3-8b99119ea64e/tutorial-azure-ad-integration-with-bime?forum=WindowsAzureAD).

@@ -1,16 +1,16 @@
-<properties 
-	pageTitle="How does Azure AD work?" 
-	description="Azure AD creates an identity landscape that is yours in the cloud. It can be connected to your on-premises identity system or used independently." 
-	services="active-directory" 
-	documentationCenter="" 
-	authors="curtand" 
+<properties
+	pageTitle="How does Azure AD work?"
+	description="Azure AD creates an identity landscape that is yours in the cloud. It can be connected to your on-premises identity system or used independently."
+	services="active-directory"
+	documentationCenter=""
+	authors="curtand"
 	manager="stevenpo"
 	editor=""/>
 
-<tags 
-	ms.service="active-directory" 
+<tags
+	ms.service="active-directory"
 	ms.date="09/21/2015"
-	wacn.date="09/21/2015"/>
+	wacn.date=""/>
 
 
 
@@ -24,9 +24,10 @@
 [Next steps](/documentation/articles/active-directory-next-steps)<br>
 [Learn more](/documentation/articles/active-directory-learn-map)
 
-Azure AD creates an identity landscape that is yours in the cloud. It can be connected to your on-premises identity system or used independently. 
 
-You can think of an account in Azure AD as your driver's license for the cloud: it's your unique ID for accessing services online. In that sense, Azure AD works like your own private registrar in the cloud for those driver's licenses.  It enables identities to be used anywhere in the cloud, and improves mobility for users who access resources on-premises. 
+Azure AD creates an identity landscape that is yours in the cloud. It can be connected to your on-premises identity system or used independently.
+
+You can think of an account in Azure AD as your driver's license for the cloud: it's your unique ID for accessing services online. In that sense, Azure AD works like your own private registrar in the cloud for those driver's licenses.  It enables identities to be used anywhere in the cloud, and improves mobility for users who access resources on-premises.
 
 > [AZURE.NOTE] To use Azure Active Directory, you need an Azure account. If you don't have an account, you can [sign up for a free Azure account](/pricing/1rmb-trial/).
 
@@ -38,7 +39,7 @@ Azure AD simplifies authentication for developers by providing identity as a ser
 
 
 ## How does Azure AD extend my on-premises directory?
-Azure AD supports several of the most widely used authentication and authorization protocols. [Learn more about Azure Active Directory authentication protocols](/documentation/articles/active-directory-authentication-scenarios). 
+Azure AD supports several of the most widely used authentication and authorization protocols. [Learn more about Azure Active Directory authentication protocols](/documentation/articles/active-directory-authentication-scenarios).
 
 ## How does Azure help me manage identities?
 Want to understand more about how to manage Azure AD? How to get a directory? How to delete a directory? How to manage directory data? Learn more about administering Azure AD directory. [Learn more about how to administer Azure AD](/documentation/articles/active-directory-administer).
@@ -47,4 +48,3 @@ Want to understand more about how to manage Azure AD? How to get a directory? Ho
 
 * [Sign up for Azure as an organization](/documentation/articles/sign-up-organization)
 * [Azure Identity](/documentation/articles/fundamentals-identity)
-

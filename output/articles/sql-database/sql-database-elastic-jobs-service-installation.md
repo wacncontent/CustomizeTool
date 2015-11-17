@@ -18,7 +18,7 @@
 If you have already installed **Elastic Database jobs** through the Portal from an existing **Elastic Database pool**, the latest Powershell preview includes scripts to upgrade your existing installation. It is highly recommended to upgrade your installation to the latest **Elastic Database jobs** components in order to take advantage of new functionality exposed via the PowerShell APIs.
 
 ## Prerequisites
-* An Azure subscription. For a trial, see [Free trial](/pricing/1rmb-trial/).
+* An Azure subscription. For a trial, see [trial](/pricing/1rmb-trial/).
 * Azure PowerShell version >= 0.8.16. Install the latest version (0.9.5) through the [Web Platform Installer](http://go.microsoft.com/fwlink/p/?linkid=320376). For detailed information, see [How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure).
 * [NuGet Command-line Utility](https://nuget.org/nuget.exe) is used to install the Elastic Database jobs package. For more information, see http://docs.nuget.org/docs/start-here/installing-nuget.
 
@@ -62,7 +62,7 @@ The parameters provided on this sample invocation can be modified for your desir
 
 <tr>
 	<td>ResourceGroupName</td>
-	<td>Provides the Azure resource group name created to contain the newly created Azure components. This parameter defaults to “__ElasticDatabaseJob”. It is not recommended to change this value.</td>
+	<td>Provides the Azure resource group name created to contain the newly created Azure components. This parameter defaults to <!-- deleted by customization “__ElasticDatabaseJob” --><!-- keep by customization: begin --> �__ElasticDatabaseJob� <!-- keep by customization: end -->. It is not recommended to change this value.</td>
 	</tr>
 
 </tr>
@@ -74,7 +74,7 @@ The parameters provided on this sample invocation can be modified for your desir
 
 <tr>
 	<td>ServiceWorkerCount</td>
-	<td>Provides the number of service workers to install. This parameter defaults to 1. A higher number of workers can be used to scale out the service and to provide high availability. It is recommended to use “2” for deployments that require high availability of the service.</td>
+	<td>Provides the number of service workers to install. This parameter defaults to 1. A higher number of workers can be used to scale out the service and to provide high availability. It is recommended to use <!-- deleted by customization “2” --><!-- keep by customization: begin --> �2� <!-- keep by customization: end --> for deployments that require high availability of the service.</td>
 	</tr>
 
 </tr>
@@ -124,7 +124,7 @@ To update the VM size of an installation, run the following script with paramete
 
   <tr>
 	<td>ResourceGroupName</td>
-	<td>Identifies the Azure resource group name used when the Elastic Database job components were initially installed. This parameter defaults to “__ElasticDatabaseJob”. Since it is not recommended to change this value, you shouldn't have to specify this parameter.</td>
+	<td>Identifies the Azure resource group name used when the Elastic Database job components were initially installed. This parameter defaults to <!-- deleted by customization “__ElasticDatabaseJob” --><!-- keep by customization: begin --> �__ElasticDatabaseJob� <!-- keep by customization: end -->. Since it is not recommended to change this value, you shouldn't have to specify this parameter.</td>
 	</tr>
 </tr>
 
@@ -132,7 +132,7 @@ To update the VM size of an installation, run the following script with paramete
 
   <tr>
 	<td>ServiceWorkerCount</td>
-	<td>Provides the number of service workers to install.  This parameter defaults to 1.  A higher number of workers can be used to scale out the service and to provide high availability.  It is recommended to use “2” for deployments that require high availability of the service.</td>
+	<td>Provides the number of service workers to install.  This parameter defaults to 1.  A higher number of workers can be used to scale out the service and to provide high availability.  It is recommended to use <!-- deleted by customization “2” --><!-- keep by customization: begin --> �2� <!-- keep by customization: end --> for deployments that require high availability of the service.</td>
 </tr>
 
 </tr>
@@ -151,7 +151,7 @@ Once you have [created an Elastic Database pool](/documentation/articles/sql-dat
 
 **Estimated time to complete:** 10 minutes.
 
-1. From the dashboard view of the elastic database pool via the [Azure preview portal](https://ms.portal.azure.com/#) , click **Create job**.
+1. From the dashboard view of the elastic database pool via the [Azure preview portal](https://manage.windowsazure.cn/#) , click **Create job**.
 2. If you are creating a job for the first time, you must install **Elastic Database jobs** by clicking **PREVIEW TERMS**. 
 3. Accept the terms by clicking the checkbox.
 4. In the "Install services" view, click **JOB CREDENTIALS**.

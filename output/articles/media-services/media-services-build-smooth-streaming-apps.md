@@ -964,6 +964,7 @@ A Smooth Streaming presentation can contain multiple video files encoded with di
 You have completed lesson 4.  In this lesson, you add the functionality to choose tracks.
 
 
+<!-- deleted by customization
 ##Media Services learning paths
 
 You can view AMS learning paths here:
@@ -971,6 +972,7 @@ You can view AMS learning paths here:
 - [AMS Live Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/)
 - [AMS on Demand Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/)
 
+-->
 
 
 ##Other Resources:

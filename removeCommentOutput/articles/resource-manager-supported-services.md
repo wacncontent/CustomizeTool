@@ -156,16 +156,16 @@ The following example shows how to get the supported regions for web sites using
 The output will be similar to:
 
     Brazil South
-    East Asia
+    China East
     China East
     Japan East
-    Japan West
+    China East
     China North
     China North
     China East
     West Europe
     China North
-    Southeast Asia
+    China North
     China North
     China East 2
 
@@ -183,8 +183,8 @@ Which returns:
 
     {
       "name": "Microsoft.Web/sites",
-      "location": "Brazil South,East Asia,China East,Japan East,Japan West,China North,
-            China North,China East,West Europe,China North,Southeast Asia,China North,China East 2"
+      "location": "Brazil South,China East,China East,Japan East,China East,China North,
+            China North,China East,West Europe,China North,China North,China North,China East 2"
     }
 
 ## Supported API versions
@@ -227,4 +227,4 @@ You can open the file and find the **apiVersions** element
 ## Next steps
 
 - To learn about creating Resource Manager templates, see [Authoring Azure Resource Manager templates](/documentation/articles/resource-group-authoring-templates).
-- To learn about deploying resources, see [Deploy an application with Azure Resource Manager template](./azure-portal/resource-group-template-deploy.md).
+- To learn about deploying resources, see [Deploy an application with Azure Resource Manager template](/documentation/articles/resource-group-template-deploy).

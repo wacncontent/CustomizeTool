@@ -6,10 +6,10 @@
  authors="krisragh" 
  manager="dwrede" 
  editor=""/>
-<tags 
- ms.service="scheduler" 
- ms.date="08/04/2015" 
- wacn.date=""/>
+<tags
+	ms.service="scheduler"
+	ms.date="08/04/2015"
+	wacn.date=""/>
  
  
 # Scheduler High-Availability and Reliability
@@ -22,7 +22,7 @@ As a core Azure platform service, Azure Scheduler is highly available and featur
 
 Not only is the Azure Scheduler front-end available for management requests, but your own job is also geo-replicated. When there’s an outage in one region, Azure Scheduler fails over and ensures that the job is run from another data center in the paired geographic region.
 
-For example, if you’ve created a job in China East, Azure Scheduler automatically replicates that job in China North. When there’s a failure in China East, Azure Scheduler ensures that the job is run from China North. [The list of paired Azure regions is available here](https://msdn.microsoft.com/zh-CN/library/azure/dn758204.aspx).
+For example, if you’ve created a job in China East, Azure Scheduler automatically replicates that job in China North. When there’s a failure in China East, Azure Scheduler ensures that the job is run from China North. [The list of paired Azure regions is available here](https://msdn.microsoft.com/zh-cn/library/azure/dn758204.aspx).
 
 ![][1]
 
@@ -44,7 +44,7 @@ To learn how to configure a retry policy, refer to [retryPolicy](/documentation/
 
 If the target endpoint for your Azure Scheduler job remains unreachable, Azure Scheduler falls back to the alternate error-handling endpoint after following its retry policy. If an alternate error-handling endpoint is configured, Azure Scheduler invokes it. With an alternate endpoint, your own jobs are highly available in the face of failure.
 
-As an example, in the diagram below, Azure Scheduler follows its retry policy to hit a New York web service. After the retries fail, it checks if there's an alternate. It then goes ahead and starts making requests to the alternate with the same retry policy.
+As an example, in the diagram below, Azure Scheduler follows its retry policy to hit a Beijing web service. After the retries fail, it checks if there's an alternate. It then goes ahead and starts making requests to the alternate with the same retry policy.
 
 ![][2]
 
@@ -64,7 +64,7 @@ To learn how to configure an alternate endpoint, refer to [errorAction](/documen
  
  [How to Build Complex Schedules and Advanced Recurrence with Azure Scheduler](/documentation/articles/scheduler-advanced-complexity)
  
- [Scheduler REST API Reference](https://msdn.microsoft.com/zh-CN/library/dn528946)   
+ [Scheduler REST API Reference](https://msdn.microsoft.com/zh-cn/library/dn528946)   
  
  [Scheduler PowerShell Cmdlets Reference](/documentation/articles/scheduler-powershell-reference)
  
@@ -77,3 +77,4 @@ To learn how to configure an alternate endpoint, refer to [errorAction](/documen
 
 [2]: ./media/scheduler-high-availability-reliability/scheduler-high-availability-reliability-image2.png
 
+ 

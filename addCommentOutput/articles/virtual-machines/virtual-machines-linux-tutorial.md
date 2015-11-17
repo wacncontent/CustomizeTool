@@ -21,7 +21,7 @@
 
 Creating an Azure virtual machine (VM) that runs Linux is easy to do from the command line or from the portal. This tutorial shows you how to use the Azure Command-Line Interface for Mac, Linux, and Windows (the Azure CLI) to create quickly an Ubuntu Server VM running in Azure, connect to it using **ssh**, and creating and mounting a new disk. (This topic uses an Ubuntu Server VM, but you can also create Linux VMs using [your own images as templates](/documentation/articles/virtual-machines-linux-create-upload-vhd).)
 
-<!-- deleted by customization [AZURE.INCLUDE [free-trial-note](../includes/free-trial-note.md)] --><!-- keep by customization: begin --><!--[AZURE.INCLUDE [free-trial-note](../includes/free-trial-note.md)]--><!-- keep by customization: end -->
+[AZURE.INCLUDE [free-trial-note](../includes/free-trial-note.md)]
 <!-- deleted by customization
 
 ## Video walkthrough
@@ -35,29 +35,24 @@ Here's a walkthrough of this tutorial.
 
 The first step is to [install the Azure CLI](/documentation/articles/xplat-cli-install).
 
-Good. Now make sure you're in the <!-- deleted by customization Resource Manager --><!-- keep by customization: begin --> resource management <!-- keep by customization: end --> mode by typing `azure config mode arm`.
+Good. Now make sure you're in the Resource Manager mode by typing `azure config mode arm`.
 
-Even better. Now <!-- deleted by customization [log --><!-- keep by customization: begin --> log <!-- keep by customization: end --> in with your work or school <!-- deleted by customization id](/documentation/articles/xplat-cli-connect#use-the-log-in-method) --><!-- keep by customization: begin --> id <!-- keep by customization: end --> by typing `azure login` and following the prompts.
+Even better. Now [log in with your work or school id](/documentation/articles/xplat-cli-connect#use-the-log-in-method) by typing `azure login` and following the prompts.
 
 > [AZURE.NOTE] If you receive an error logging in, you may need to [create a work or school id from your personal Microsoft account](/documentation/articles/resource-group-create-work-id-from-personal).
 
 ## Create your Azure VM
 
-Type `azure group create <my-group-name> <!-- deleted by customization westus` --><!-- keep by customization: begin --> chinanorth` <!-- keep by customization: end --> replacing _&lt;my-group-name&gt;_ with a group name that's unique to you (you can use a different region if you want). You should see something like the following:
+Type `azure group create <my-group-name> chinanorth` replacing _&lt;my-group-name&gt;_ with a group name that's unique to you (you can use a different region if you want). You should see something like the following:
 
-<!-- deleted by customization
-	azure group create myuniquegroupname westus
--->
-<!-- keep by customization: begin -->
 	azure group create myuniquegroupname chinanorth
-<!-- keep by customization: end -->
 	info:    Executing command group create
 	+ Getting resource group myuniquegroupname
 	+ Creating resource group myuniquegroupname
 	info:    Created resource group myuniquegroupname
 	data:    Id:                  /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/myuniquegroupname
 	data:    Name:                myuniquegroupname
-	data:    Location:            <!-- deleted by customization westus --><!-- keep by customization: begin --> chinanorth <!-- keep by customization: end -->
+	data:    Location:            chinanorth
 	data:    Provisioning State:  Succeeded
 	data:    Tags:
 	data:
@@ -69,12 +64,7 @@ Now create your VM by typing `azure vm quick-create`, and you'll receive prompts
 	info:    Executing command vm quick-create
 	Resource group name: myuniquegroupname
 	Virtual machine name: myuniquevmname
-<!-- deleted by customization
-	Location name: westus
--->
-<!-- keep by customization: begin -->
 	Location name: chinanorth
-<!-- keep by customization: end -->
 	Operating system Type [Windows, Linux]: /documentation/articles/Linux
 	ImageURN (format: "publisherName:offer:skus:version"): canonical:ubuntuserver:14.04.2-LTS:latest
 	User name: ops
@@ -84,13 +74,8 @@ Now create your VM by typing `azure vm quick-create`, and you'll receive prompts
 	info:    Using the VM Size "Standard_D1"
 	info:    The [OS, Data] Disk or image configuration requires storage account
 	+ Retrieving storage accounts
-	info:    Could not find any storage accounts in the region <!-- deleted by customization "westus" --><!-- keep by customization: begin --> "chinanorth" <!-- keep by customization: end -->, trying to create new one
-<!-- deleted by customization
-	+ Creating storage account "cli3c0464f24f1bf4f014323" in "westus"
--->
-<!-- keep by customization: begin -->
+	info:    Could not find any storage accounts in the region "chinanorth", trying to create new one
 	+ Creating storage account "cli3c0464f24f1bf4f014323" in "chinanorth"
-<!-- keep by customization: end -->
 	+ Looking up the storage account cli3c0464f24f1bf4f014323
 	+ Looking up the NIC "myuni-westu-1432328437727-nic"
 	info:    An nic with given name "myuni-westu-1432328437727-nic" not found, creating a new one
@@ -113,8 +98,8 @@ Now create your VM by typing `azure vm quick-create`, and you'll receive prompts
 	data:    Id                              :/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/myuniquegroupname/providers/Microsoft.Compute/virtualMachines/myuniquevmname
 	data:    ProvisioningState               :Succeeded
 	data:    Name                            :myuniquevmname
-	data:    Location                        <!-- deleted by customization :westus --><!-- keep by customization: begin --> :chinanorth <!-- keep by customization: end -->
-	data:    FQDN                            <!-- deleted by customization :myuni-westu-1432328437727-pip.westus.cloudapp.azure.com --><!-- keep by customization: begin --> :myuni-westu-1432328437727-pip.chinanorth.cloudapp.azure.com <!-- keep by customization: end -->
+	data:    Location                        :chinanorth
+	data:    FQDN                            :myuni-westu-1432328437727-pip.chinanorth.chinacloudapp.cn
 	data:    Type                            :Microsoft.Compute/virtualMachines
 	data:
 	data:    Hardware Profile:
@@ -149,11 +134,11 @@ Now create your VM by typing `azure vm quick-create`, and you'll receive prompts
 	data:          MAC Address               :00-0D-3A-31-55-31
 	data:          Provisioning State        :Succeeded
 	data:          Name                      :myuni-westu-1432328437727-nic
-	data:          Location                  <!-- deleted by customization :westus --><!-- keep by customization: begin --> :chinanorth <!-- keep by customization: end -->
+	data:          Location                  :chinanorth
 	data:            Private IP alloc-method :Dynamic
 	data:            Private IP address      :10.0.1.4
 	data:            Public IP address       :191.239.51.1
-	data:            FQDN                    <!-- deleted by customization :myuni-westu-1432328437727-pip.westus.cloudapp.azure.com --><!-- keep by customization: begin --> :myuni-westu-1432328437727-pip.chinanorth.cloudapp.azure.com <!-- keep by customization: end -->
+	data:            FQDN                    :myuni-westu-1432328437727-pip.chinanorth.chinacloudapp.cn
 	info:    vm quick-create command OK
 
 Your VM is up and running and waiting for you to connect.
@@ -164,23 +149,12 @@ With Linux VMs, you typically connect using **ssh**. This topic connects to a VM
 
 If you're not familiar with connecting with **ssh**, the command takes the form `ssh <username>@<publicdnsaddress> -p <the ssh port>`. In this case, we use the username and password from the previous step and port 22, which is the default **ssh** port.
 
-<!-- deleted by customization
-	ssh ops@myuni-westu-1432328437727-pip.westus.cloudapp.azure.com -p 22
-	The authenticity of host 'myuni-westu-1432328437727-pip.westus.cloudapp.azure.com (191.239.51.1)' can't be established.
--->
-<!-- keep by customization: begin -->
-	ssh ops@myuni-westu-1432328437727-pip.chinanorth.cloudapp.azure.com -p 22
-	The authenticity of host 'myuni-westu-1432328437727-pip.chinanorth.cloudapp.azure.com (191.239.51.1)' can't be established.
-<!-- keep by customization: end -->
+	ssh ops@myuni-westu-1432328437727-pip.chinanorth.chinacloudapp.cn -p 22
+	The authenticity of host 'myuni-westu-1432328437727-pip.chinanorth.chinacloudapp.cn (191.239.51.1)' can't be established.
 	ECDSA key fingerprint is bx:xx:xx:xx:xx:xx:xx:xx:xx:x:x:x:x:x:x:xx.
 	Are you sure you want to continue connecting (yes/no)? yes
-	Warning: Permanently added <!-- deleted by customization 'myuni-westu-1432328437727-pip.westus.cloudapp.azure.com,191.239.51.1' --><!-- keep by customization: begin --> 'myuni-westu-1432328437727-pip.chinanorth.cloudapp.azure.com,191.239.51.1' <!-- keep by customization: end --> (ECDSA) to the list of known hosts.
-<!-- deleted by customization
-	ops@myuni-westu-1432328437727-pip.westus.cloudapp.azure.com's password:
--->
-<!-- keep by customization: begin -->
-	ops@myuni-westu-1432328437727-pip.chinanorth.cloudapp.azure.com's password:
-<!-- keep by customization: end -->
+	Warning: Permanently added 'myuni-westu-1432328437727-pip.chinanorth.chinacloudapp.cn,191.239.51.1' (ECDSA) to the list of known hosts.
+	ops@myuni-westu-1432328437727-pip.chinanorth.chinacloudapp.cn's password:
 	Welcome to Ubuntu 14.04.2 LTS (GNU/Linux 3.16.0-37-generic x86_64)
 
 	 * Documentation:  https://help.ubuntu.com/

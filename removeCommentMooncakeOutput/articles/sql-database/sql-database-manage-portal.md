@@ -8,8 +8,8 @@
 	editor=""/>
 
 <tags
-	ms.service="sql-database" 
-	ms.date="09/11/2015" 
+	ms.service="sql-database"
+	ms.date="09/11/2015"
 	wacn.date=""/>
 
 
@@ -68,8 +68,8 @@ Azure SQL databases can be configured to asynchronously replicate committed tran
 * [SQL Database](/documentation/articles/sql-database-technical-overview)   
 * [Monitoring SQL Database using Dynamic Management Views][]   
 * [Transact-SQL Reference (SQL Database)][]
-
-
+  
+  [Azure Management Portal Tour]: https://go.microsoft.com/fwlink/?LinkID=522341
   [Management Portal]: https://manage.windowsazure.cn
   [Azure part monitoring]: /documentation/articles/documentdb-monitor-accounts
   [AzureDb management overview]: http://azure.microsoft.com/blog/2014/12/22/client-tooling-updates-for-azure-sql-database/
@@ -78,5 +78,8 @@ Azure SQL databases can be configured to asynchronously replicate committed tran
   [Managing Azure SQL Database using SQL Server Management Studio]: /documentation/articles/sql-database-manage-azure-ssms
   [Monitoring SQL Database using Dynamic Management Views]: http://msdn.microsoft.com/zh-cn/library/azure/ff394114.aspx
   [Transact-SQL Reference (SQL Database)]: http://msdn.microsoft.com/zh-cn/library/bb510741(v=sql.120).aspx
-  [AzureDb Auditing]: /documentation/articles/sql-database-auditing-get-started
+  [AzureDb Auditing]: /documentation/articles/sql-database-auditing-get-started/
   [AzureDb datamasking]: /documentation/articles/sql-database-dynamic-data-masking-get-started/
+
+ 
+ 

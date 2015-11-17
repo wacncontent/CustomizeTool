@@ -16,10 +16,12 @@
 
 # Equivalent Resource Manager and Service Management commands for VM tasks with the Azure CLI for Mac, Linux, and Windows
 This article shows equivalent Windows Azure command-line interface (Azure CLI) commands to create and manage Azure VMs in Azure Service Management and Azure Resource Manager. Use this as a handy guide to migrate scripts from one command mode to the other.
+<!-- deleted by customization
 
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-both-include.md)]
 
 
+-->
 
 * If you haven't already installed the Azure CLI and connected to your subscription, see [Install the Azure CLI](/documentation/articles/xplat-cli-install) and [Connect to an Azure subscription from the Azure CLI](/documentation/articles/xplat-cli-connect). When you want to use the Resource Manager mode commands, be sure to connect with the login method.
 

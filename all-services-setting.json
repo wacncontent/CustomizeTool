@@ -1,4 +1,5 @@
 {
+    "customize": true,
     "path": "C:/Users/Administrator/Documents/GitHub/azure-content-pr/",
     "language": "en-us",
     "folders": [
@@ -10,8 +11,6 @@
         "articles/traffic-manager/",
         "articles/virtual-network/",
         "articles/active-directory/",
-        "articles/application-gateway/",
-        "articles/backup/",
         "articles/batch/",
         "articles/cache/",
         "articles/cdn/",
@@ -19,21 +18,23 @@
         "articles/event-hubs/",
         "articles/expressroute/",
         "articles/mobile-services/",
-        "articles/notification-hubs/",
         "articles/scheduler/",
         "articles/service-bus/",
         "articles/site-recovery/",
         "articles/sql-database/",
         "articles/storage/",
         "articles/virtual-machines/",
+        "articles/application-gateway/",
+        "articles/backup/",
+        "articles/notification-hubs/",
         "articles/"
     ],
     "output_folder": "output/",
     "compare": {
-        "compare": false,
-        "path": "C:/Users/Administrator/Documents/GitHub/azure-content-mooncake-pr/"
+        "compare": true,
+        "path": "addCommentOutput/"
     },
-    "updateFileList": true,
+    "updateFileList": false,
     "includes_search_keys": {
         "articles/app-service-web/": [ "web" ],
         "articles/automation/": [ "automation" ],
@@ -59,19 +60,26 @@
         "articles/sql-database/": [ "sql-database" ],
         "articles/storage/": [ "storage" ],
         "articles/virtual-machines/": [ "virtual-machines", "vm" ],
+        "articles/application-gateway/": [ "application-gateway" ],
         "articles/": [ "" ]
     },
-  "check_dates": false,
-  "815path": "C:/Users/Administrator/Documents/GitHub/815/",
+    "check_dates": false,
+    "815path": "C:/Users/Administrator/Documents/GitHub/815/",
     "removeComment": {
         "remove": true,
-        "path":  "removeCommentOutput/"
+        "path": "removeCommentOutput2/"
     },
     "updateLinks": false,
     "addComment": {
-        "add": true,
-        "globalPath": "",
-        "mooncakePath": "",
-        "outputPath": ""
-    } 
+        "add": false,
+        "globalPath": "removeCommentOutput/",
+        "mooncakePath": "removeCommentMooncakeOutput/",
+        "outputPath": "addCommentOutput/"
+    },
+    "wordCount": false,
+    "getDeletionAndReplacement": {
+        "get": true,
+        "input": "addCommentOutput/",
+        "path": "deletionAndReplacementOutput/"
+    }
 }

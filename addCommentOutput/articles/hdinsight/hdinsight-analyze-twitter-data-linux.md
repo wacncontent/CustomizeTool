@@ -15,7 +15,7 @@
 
 # Analyze Twitter data using Hive in HDInsight
 
-In this document, you will get tweets by using a Twitter streaming API and then use Apache Hive on a Linux-based HDInsight <!-- keep by customization: begin --> (preview) <!-- keep by customization: end --> cluster to process the JSON formatted data. The result will be a list of Twitter users who sent the most tweets that contained a certain word.
+In this document, you will get tweets by using a Twitter streaming API and then use Apache Hive on a Linux-based HDInsight cluster to process the JSON formatted data. The result will be a list of Twitter users who sent the most tweets that contained a certain word.
 
 > [AZURE.NOTE] While individual pieces of this document can be used with Windows-based HDInsight clusters (Python and Hive for example,) many steps are based on using a Linux-based HDInsight cluster. For steps specific to a Windows-based cluster, see [Analyze Twitter data using Hive in HDInsight](/documentation/articles/hdinsight-analyze-twitter-data).
 
@@ -33,7 +33,7 @@ Before you begin this tutorial, you must have the following:
 
 - __Python__ and [pip](https://pypi.python.org/pypi/pip)
 
-- The __Azure CLI__. For more information, see [Install and configure the Azure <!-- deleted by customization CLI](/documentation/articles/xplat-cli-install) --><!-- keep by customization: begin --> CLI](/documentation/articles/xplat-cli) <!-- keep by customization: end -->
+- The __Azure CLI__. For more information, see [Install and configure the Azure CLI](/documentation/articles/xplat-cli-install)
 
 ##Get a Twitter feed
 

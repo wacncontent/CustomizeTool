@@ -7,9 +7,15 @@ Follow these steps to create a new mobile service.
 
 	This displays the **Create a Mobile Service** dialog.
 
+<!-- deleted by customization
 2.	In the **Create a Mobile Service** page, select **Create a free 20 MB SQL Database**, select **.NET** runtime, then type a subdomain name for the new mobile service in the **URL** textbox. Click the right arrow button to go to the next page.
 	
 	![](./media/mobile-services-dotnet-backend-create-new-service/mobile-create-page1.png)
+-->
+<!-- keep by customization: begin -->
+
+	![](./media/mobile-services-dotnet-backend-create-new-service/mobile-create-page1.png)
+<!-- keep by customization: end -->
 
 	This displays the **Specify database settings** page.
 

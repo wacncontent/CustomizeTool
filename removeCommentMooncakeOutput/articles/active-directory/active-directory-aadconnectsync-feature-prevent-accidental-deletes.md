@@ -4,12 +4,12 @@
    services="active-directory"
    documentationCenter=""
    authors="AndKjell"
-   manager="msStevenPo"
+   manager="StevenPo"
    editor=""/>
 
 <tags
 	ms.service="active-directory"
-	ms.date="09/09/2015"
+	ms.date="10/13/2015"
 	wacn.date=""/>
 
 # Prevent accidental deletes
@@ -40,5 +40,6 @@ If all the deletes are desired, then do the following:
 3. To re-enable the protection run the PowerShell cmdlet: `Enable-ADSyncExportDeletionThreshold`
 
 ## Next steps
+Learn more about the [Azure AD Connect sync](/documentation/articles/active-directory-aadconnectsync-whatis) configuration.
 
-To learn more on the configuration for Azure AD Connect sync, see [Azure AD Connect sync](/documentation/articles/active-directory-aadconnectsync-whatis).
+Learn more about [Integrating your on-premises identities with Azure Active Directory](/documentation/articles/active-directory-aadconnect).

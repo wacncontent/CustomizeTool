@@ -46,7 +46,7 @@ To create an NSG named named *NSG-FrontEnd* based on the scenario above, follow 
 
 5. Add the rules created above to a new NSG named **NSG-FrontEnd**.
 
-		$nsg = New-AzureRMNetworkSecurityGroup -ResourceGroupName TestRG -Location westus -Name "NSG-FrontEnd" `
+		$nsg = New-AzureRMNetworkSecurityGroup -ResourceGroupName TestRG -Location chinanorth -Name "NSG-FrontEnd" `
 			-SecurityRules $rule1,$rule2
 
 6. Check the rules created in the NSG.
@@ -146,7 +146,7 @@ To create an NSG named named *NSG-BackEnd* based on the scenario above, follow t
 
 5. Add the rules created above to a new NSG named **NSG-BackEnd**.
 
-		$nsg = New-AzureRMNetworkSecurityGroup -ResourceGroupName TestRG -Location westus `-Name "NSG-BackEnd" `
+		$nsg = New-AzureRMNetworkSecurityGroup -ResourceGroupName TestRG -Location chinanorth `-Name "NSG-BackEnd" `
 			-SecurityRules $rule1,$rule2
 
 6. Associate the NSG created above to the *BackEnd* subnet.

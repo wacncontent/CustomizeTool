@@ -103,7 +103,7 @@ If your application is approaching the scalability targets for a single storage 
 The following links provide additional detail on scalability targets:
 -	See [Azure Storage Scalability and Performance Targets](/documentation/articles/storage-scalability-targets) for information about scalability targets.
 -	See [Azure Storage replication](/documentation/articles/storage-redundancy) and the blog post [Azure Storage Redundancy Options and Read Access Geo Redundant Storage](http://blogs.msdn.com/b/windowsazurestorage/archive/2013/12/11/introducing-read-access-geo-replicated-storage-ra-grs-for-windows-azure-storage.aspx) for information about storage redundancy options.
--	For current information about pricing for Azure services, see [Azure pricing](http://azure.microsoft.com/pricing/overview/).  
+-	For current information about pricing for Azure services, see [Azure pricing](/pricing/overview/).  
 
 ###Networking
 While the API calls matter, often the physical network constraints of the application have a significant impact on performance. The following describe some of limitations users may encounter.  

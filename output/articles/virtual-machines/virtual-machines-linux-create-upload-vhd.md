@@ -15,18 +15,24 @@
 
 # Creating and Uploading a Virtual Hard Disk that Contains the Linux Operating System
 
+<!-- deleted by customization
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
 
 
+-->
 This article shows you how to create and upload a virtual hard disk (VHD) so you can use it as your own image to create virtual machines in Azure. You'll learn how to prepare the operating system so you can use it to create multiple virtual machines based on that image. Note that this article refers to virtual machines created using the classic deployment model.
 
 [AZURE.INCLUDE [free-trial-note](../includes/free-trial-note.md)]
+<!-- keep by customization: begin -->
+
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-include.md)] This article covers uploading a VHD with the Service Manager.
+<!-- keep by customization: end -->
 
 A virtual machine in Azure runs the operating system that's based on the image you choose when you create the virtual machine. Your images are stored in VHD format, in .vhd files in a storage account. For details, see [About Disks and Images in Azure](https://msdn.microsoft.com/zh-cn/library/azure/jj672979.aspx).
 
 When you create the virtual machine, you can customize some of the operating system settings so they're appropriate for the application you want to run. For instructions, see [How to Create a Custom Virtual Machine](/documentation/articles/virtual-machines-create-custom).
 
-**Important**: The Azure platform SLA applies to virtual machines running the Linux OS only when one of the endorsed distributions is used with the configuration details as specified under 'Supported Versions' in [Linux on Azure-Endorsed Distributions](virtual-machines-../linux-endorsed-distributions.md). All Linux distributions in the Azure image gallery are endorsed distributions with the required configuration.
+**Important**: The Azure platform SLA applies to virtual machines running the Linux OS only when one of the endorsed distributions is used with the configuration details as specified under 'Supported Versions' in [Linux on Azure-Endorsed Distributions](/documentation/articles/virtual-machines-linux-endorsed-distributions). All Linux distributions in the Azure image gallery are endorsed distributions with the required configuration.
 
 
 ##Prerequisites##

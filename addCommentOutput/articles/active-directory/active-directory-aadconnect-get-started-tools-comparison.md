@@ -20,6 +20,7 @@ Over the years the directory integration tools have grown and evolved.  This doc
 >
 >Currently Dirsync is still supported, however at some point in the future it will be deprecated. Once it is deprecated, it will only be supported for a period of time.  After this period of time support for Dirsync will end.
 
+
 Use the following key for each of the tables.
 
 ●  = Available Now</br>

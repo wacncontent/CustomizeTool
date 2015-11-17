@@ -39,7 +39,7 @@ Completing this tutorial is a prerequisite for all other Notification Hubs tutor
 
 1. Sign in to the [Azure Management Portal], and then click **+NEW** at the bottom of the screen.
 
-2. Click **Azure Websites**, click **Service Bus**, click **Notification Hub**, and then click **Quick Create**.
+2. Click **App Services**, click **Service Bus**, click **Notification Hub**, and then click **Quick Create**.
 
    	![][7]
 

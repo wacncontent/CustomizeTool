@@ -14,9 +14,11 @@
 	wacn.date=""/>
 
 # Base Configuration test environment with Azure Resource Manager
+<!-- deleted by customization
 
 
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] [classic deployment model](/documentation/articles/virtual-machines-base-configuration-test-environment).
+-->
 
 This article provides you with step-by-step instructions to create the Base Configuration test environment in a Windows Azure Virtual Network, using virtual machines created in Resource Manager. 
 
@@ -47,15 +49,24 @@ There are four phases to setting up the Corpnet subnet of the Windows Server 201
 3.	Configure APP1.
 4.	Configure CLIENT1.
 
-If you do not already have an Azure account, you can sign up for a trial at [Try Azure](/pricing/1rmb-trial/). If you have an MSDN Subscription, see [Azure benefit for MSDN subscribers](http://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/).
+If you do not already have an Azure account, you can sign up for a trial at [Try Azure](/pricing/1rmb-trial/). If you have an MSDN Subscription, see [Azure benefit for MSDN subscribers](/pricing/member-offers/msdn-benefits-details/).
 
-> [AZURE.NOTE] Virtual machines in Azure incur an ongoing monetary cost when they are running. This cost is billed against your trial, MSDN subscription, or paid subscription. For more information about the costs of running Azure virtual machines, see [Virtual Machines Pricing Details](/home/features/virtual-machines/#price) and [Azure Pricing Calculator](http://azure.microsoft.com/pricing/calculator/). To keep costs down, see [Minimizing the costs of test environment virtual machines in Azure](#costs).
+> [AZURE.NOTE] Virtual machines in Azure incur an ongoing monetary cost when they are running. This cost is billed against your trial, MSDN subscription, or paid subscription. For more information about the costs of running Azure virtual machines, see [Virtual Machines Pricing Details](/home/features/virtual-machines/#price) and [Azure Pricing Calculator](/pricing/calculator/). To keep costs down, see [Minimizing the costs of test environment virtual machines in Azure](#costs).
 
+<!-- keep by customization: begin -->
+[AZURE.INCLUDE [resource-manager-pointer-to-service-management](../includes/resource-manager-pointer-to-service-management.md)]
+
+- [Base Configuration test environment](/documentation/articles/virtual-machines-base-configuration-test-environment)
+
+
+<!-- keep by customization: end -->
 ## Phase 1: Create the virtual network
 
 First, if needed, use the instructions in [How to install and configure Azure PowerShell](/documentation/articles/install-configure-powershell) to install Azure PowerShell on your local computer. Open an Azure PowerShell prompt.
+<!-- deleted by customization
 
 > [AZURE.NOTE] This article contains commands for versions of Azure PowerShell up to *but not including* versions 1.0.0 and later. You can check your version of Azure PowerShell with the **Get-Module azure | format-table version** command. The Azure PowerShell command blocks in this article are in the process of being tested and updated to support the new cmdlets in Azure PowerShell versions 1.0.0 and later. Thank you for your patience.
+-->
 
 Next, select the correct Azure subscription with these commands. Replace everything within the quotes, including the < and > characters, with the correct name.
 

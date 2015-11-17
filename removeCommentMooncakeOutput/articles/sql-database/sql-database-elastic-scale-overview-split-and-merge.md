@@ -6,10 +6,10 @@
     manager="jeffreyg" 
     authors="sidneyh"/>
 
-<tags 
-    ms.service="sql-database" 
-    ms.date="07/29/2015" 
-    wacn.date="" />
+<tags
+	ms.service="sql-database"
+	ms.date="07/29/2015"
+	wacn.date=""/>
 
 # Scaling using the Elastic Database split-merge tool
 
@@ -227,7 +227,7 @@ In addition, a uniqueness property with the sharding key as the leading column w
 
 ## References 
 
-* [Split-Merge tutorial](/documentation/articles/sql-database-elastic-scale-configure-deploy-split-and-merge)
+* [split-merge tutorial](/documentation/articles/sql-database-elastic-scale-configure-deploy-split-and-merge)
 
 * [Elastic Scale Security Considerations](/documentation/articles/sql-database-elastic-scale-split-merge-security-configuration)  
 

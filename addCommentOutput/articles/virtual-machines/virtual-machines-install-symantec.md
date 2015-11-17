@@ -84,17 +84,9 @@ To verify that the Symantec security extension has been installed and is up-to-d
 
 [Portal]: http://manage.windowsazure.cn
 
-[Create]: <!-- deleted by customization /documentation/articles/virtual-machines-windows-tutorial-classic-portal --><!-- keep by customization: begin --> /documentation/articles/virtual-machines-windows-tutorial <!-- keep by customization: end -->
+[Create]: /documentation/articles/virtual-machines-windows-tutorial-classic-portal
 [PS]: /documentation/articles/powershell-install-configure
 [Agent]: https://azure.microsoft.com/zh-cn/blog/vm-agent-and-extensions-part-2/
 
 [Logon]: /documentation/articles/virtual-machines-log-on-windows-server
-<!-- deleted by customization
 [Ext]: http://go.microsoft.com/fwlink/p/?linkid=390493
-
--->
-<!-- keep by customization: begin -->
-
-[Ext]: https://msdn.microsoft.com/zh-cn/library/dn606311.aspx
-
-<!-- keep by customization: end -->

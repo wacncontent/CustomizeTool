@@ -2,12 +2,14 @@
 To back up files and data from your Windows Server or System Center Data Protection Manager (SCDPM) to Azure or when backing up IaaS VMs to Azure, you must create a backup vault in the geographic region where you want to store the data.
 
 This article will walk you through the creation of the vault you will use to store backups.
+<!-- deleted by customization
 
 ## Video walkthrough
 
 Here's a quick video of the process.
 
 [AZURE.VIDEO azure-backup-vault-creation]
+-->
 
 The following steps will walk you through the creation of the vault used to store backups.
 

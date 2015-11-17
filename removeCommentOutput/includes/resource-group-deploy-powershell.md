@@ -25,7 +25,7 @@
    A summary of the new resource group is returned.
 
         ResourceGroupName : ExampleResourceGroup
-        Location          : westus
+        Location          : chinanorth
         ProvisioningState : Succeeded
         Tags              :
         Permissions       :

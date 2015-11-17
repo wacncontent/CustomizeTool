@@ -8,9 +8,9 @@
 	editor=""/>
 
 
-<tags 
-	ms.service="sql-database" 
-	ms.date="10/15/2015" 
+<tags
+	ms.service="sql-database"
+	ms.date="10/15/2015"
 	wacn.date=""/>
 
 
@@ -43,7 +43,7 @@ Your program must distinguish between transient errors versus persistent errors.
 The list of error numbers that are categorized as transient faults is available at:
 
 
-- [Error messages for SQL Database client programs](/documentation/articles/sql-database-develop-error-messages/#bkmk_connection_errors)
+- [Error messages for SQL Database client programs](/documentation/articles/sql-database-develop-error-messages#bkmk_connection_errors)
  - See the top section about *Transient Errors, Connection-Loss Errors*.
 
 

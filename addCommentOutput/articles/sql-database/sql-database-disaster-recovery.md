@@ -37,7 +37,7 @@ In the event of an outage on the primary database, you can failover to a seconda
 
 
 ###Azure Management Portal
-1. Log in to the [Azure Management <!-- deleted by customization Portal](https://portal.Azure.com) --><!-- keep by customization: begin --> Portal](https://manage.windowsazure.cn) <!-- keep by customization: end -->
+1. Log in to the [Azure Management Portal](https://manage.windowsazure.cn)
 2. On the left side of the screen select **BROWSE** and then select **SQL Databases**
 3. Navigate to your database and select it. 
 4. At the bottom of your database blade select the **Geo Replication map**.
@@ -47,7 +47,7 @@ After the continuous copy relationship is terminated, you can configure your rec
 ###PowerShell
 Use PowerShell to programmatically perform database recovery.
 
-To terminate the relationship from the secondary database, use the <!-- deleted by customization [Stop-AzureSqlDatabaseCopy](https://msdn.microsoft.com/zh-cn/library/dn720223) --><!-- keep by customization: begin --> [Stop-AzureSqlDatabaseCopy](https://msdn.microsoft.com/zh-CN/library/dn720223) <!-- keep by customization: end --> cmdlet.
+To terminate the relationship from the secondary database, use the [Stop-AzureSqlDatabaseCopy](https://msdn.microsoft.com/zh-cn/library/dn720223) cmdlet.
 		
 		$myDbCopy = Get-AzureSqlDatabaseCopy -ServerName "SecondaryServerName" -DatabaseName "SecondaryDatabaseName"
 		$myDbCopy | Stop-AzureSqlDatabaseCopy -ServerName "SecondaryServerName" -ForcedTermination
@@ -56,8 +56,8 @@ After the continuous copy relationship is terminated, you can configure your rec
 ###REST API 
 Use REST to programmatically perform database recovery.
 
-1. Get the database continuous copy using the [Get Database <!-- deleted by customization Copy](https://msdn.microsoft.com/zh-cn/library/azure/dn509570.aspx) --><!-- keep by customization: begin --> Copy](https://msdn.microsoft.com/zh-CN/library/azure/dn509570.aspx) <!-- keep by customization: end --> operation.
-2. Stop the database continuous copy using the [Stop Database <!-- deleted by customization Copy](https://msdn.microsoft.com/zh-cn/library/azure/dn509573.aspx) --><!-- keep by customization: begin --> Copy](https://msdn.microsoft.com/zh-CN/library/azure/dn509573.aspx) <!-- keep by customization: end --> operation.
+1. Get the database continuous copy using the [Get Database Copy](https://msdn.microsoft.com/zh-cn/library/azure/dn509570.aspx) operation.
+2. Stop the database continuous copy using the [Stop Database Copy](https://msdn.microsoft.com/zh-cn/library/azure/dn509573.aspx) operation.
 Use the secondary server name and database name in the Stop Database Copy request URI
 
  After the continuous copy relationship is terminated, you can configure your recovered database to be used by following the [Finalize a Recovered Database](/documentation/articles/sql-database-recovered-finalize) guide.
@@ -70,7 +70,7 @@ In the event of an outage of a database, you can recover your database from its 
 
 -->
 ###Azure Management Portal
-1. Log in to the [Azure Management <!-- deleted by customization Portal](https://portal.Azure.com) --><!-- keep by customization: begin --> Portal](https://manage.windowsazure.cn) <!-- keep by customization: end -->
+1. Log in to the [Azure Management Portal](https://manage.windowsazure.cn)
 2. On the left side of the screen select **NEW**, then select **Data and Storage**, and then select **SQL Database**
 2. Select **BACKUP** as the source  and then select the geo redundant backup you want to recover from.
 3. Specify the rest of the database properties and then click **Create**.
@@ -80,12 +80,7 @@ After the database is recovered you can configure it to be used by following the
 ###PowerShell 
 Use PowerShell to programmatically perform database recovery.
 
-<!-- deleted by customization
-To start a Geo-Restore request, use the [start-AzureSqlDatabaseRecovery](https://msdn.microsoft.com/zh-cn/library/azure/dn720224.aspx) cmdlet. For a detailed walk through, please see our [how-to video](http://azure.microsoft.com/documentation/videos/restore-a-sql-database-using-geo-restore-with-microsoft-azure-powershell/).
--->
-<!-- keep by customization: begin -->
-To start a Geo-Restore request, use the [start-AzureSqlDatabaseRecovery](https://msdn.microsoft.com/zh-CN/library/azure/dn720224.aspx) cmdlet.
-<!-- keep by customization: end -->
+To start a Geo-Restore request, use the [start-AzureSqlDatabaseRecovery](https://msdn.microsoft.com/zh-cn/library/azure/dn720224.aspx) cmdlet. <!-- deleted by customization For a detailed walk through, please see our [how-to video](http://azure.microsoft.com/documentation/videos/restore-a-sql-database-using-geo-restore-with-microsoft-azure-powershell/). -->
 
 		$Database = Get-AzureSqlRecoverableDatabase -ServerName "ServerName" –DatabaseName “DatabaseToBeRecovered"
 		$RecoveryRequest = Start-AzureSqlDatabaseRecovery -SourceDatabase $Database –TargetDatabaseName “NewDatabaseName” –TargetServerName “TargetServerName”
@@ -96,12 +91,13 @@ After the database is recovered you can configure it to be used by following the
 
 Use REST to programmatically perform database recovery.
 
-1.	Get your list of recoverable databases using the [List Recoverable <!-- deleted by customization Databases](http://msdn.microsoft.com/zh-cn/library/azure/dn800984.aspx) --><!-- keep by customization: begin --> Databases](https://msdn.microsoft.com/zh-CN/library/azure/dn800984.aspx) <!-- keep by customization: end --> operation.
+1.	Get your list of recoverable databases using the [List Recoverable Databases](http://msdn.microsoft.com/zh-cn/library/azure/dn800984.aspx) operation.
 	
-2.	Get the database you want to recover using the [Get Recoverable <!-- deleted by customization Database](http://msdn.microsoft.com/zh-cn/library/azure/dn800985.aspx) --><!-- keep by customization: begin --> Database](https://msdn.microsoft.com/zh-CN/library/azure/dn800985.aspx) <!-- keep by customization: end --> operation.
+2.	Get the database you want to recover using the [Get Recoverable Database](http://msdn.microsoft.com/zh-cn/library/azure/dn800985.aspx) operation.
 	
-3.	Create the recovery request using the [Create Database Recovery <!-- deleted by customization Request](http://msdn.microsoft.com/zh-cn/library/azure/dn800986.aspx) --><!-- keep by customization: begin --> Request](https://msdn.microsoft.com/zh-CN/library/azure/dn800986.aspx) <!-- keep by customization: end --> operation.
+3.	Create the recovery request using the [Create Database Recovery Request](http://msdn.microsoft.com/zh-cn/library/azure/dn800986.aspx) operation.
 	
-4.	Track the status of the recovery using the [Database Operation <!-- deleted by customization Status](http://msdn.microsoft.com/zh-cn/library/azure/dn720371.aspx) --><!-- keep by customization: begin --> Status](https://msdn.microsoft.com/zh-CN/library/azure/dn720371.aspx) <!-- keep by customization: end --> operation.
+4.	Track the status of the recovery using the [Database Operation Status](http://msdn.microsoft.com/zh-cn/library/azure/dn720371.aspx) operation.
 
 After the database is recovered you can configure it to be used by following the [Finalize a Recovered Database](/documentation/articles/sql-database-recovered-finalize) guide.
+ 

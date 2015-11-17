@@ -22,8 +22,14 @@ As shown in Figure 1, the cloud service is accessed using a VIP, while the indiv
 
 When you create a cloud service in Azure, corresponding DNS A records are created automatically to allow access to the service through a fully qualified domain name (FQDN) instead of using the actual VIP. The same process happens for ILPIP, allowing access to the VM or role instance by FQDN instead of the ILPIP. For instance, if you create a cloud service named *contosoadservice*, and you configure a web role named *contosoweb* with two instances, Azure will register the following A records for the instances:
 
+<!-- deleted by customization
+- contosoweb\_IN_0.contosoadservice.chinacloudapp.cn
+- contosoweb\_IN_1.contosoadservice.chinacloudapp.cn 
+-->
+<!-- keep by customization: begin -->
 - contosoweb_IN_0.contosoadservice.chinacloudapp.cn
 - contosoweb_IN_1.contosoadservice.chinacloudapp.cn 
+<!-- keep by customization: end -->
 
 >[AZURE.NOTE] You can assign only one ILPIP for each VM or role instance. You can use up to 5 ILPIP's per subscription. At this time, ILPIP is not supported for multi-NIC VMs.
 

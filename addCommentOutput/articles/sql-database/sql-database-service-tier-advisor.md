@@ -14,10 +14,9 @@
 
 # SQL Database pricing tier recommendations
 
-<!-- deleted by customization
  Pricing tier recommendations are provided that recommend the service tier and performance level that is best suited for running an existing Azure SQL database’s workload.
 
-> [AZURE.NOTE] Pricing tier recommendations are only available for Web and Business databases and elastic database pools --<!-- keep by customization: begin -->, <!-- keep by customization: end --> and only available in the [Azure Preview Portal](https://manage.windowsazure.cn/).
+> [AZURE.NOTE] Pricing tier recommendations are only available for Web and Business databases and elastic database pools -- and only available in the [Azure Preview Portal](https://manage.windowsazure.cn/).
 
 
 Get pricing tier recommendations during the following tasks:
@@ -29,17 +28,11 @@ Get pricing tier recommendations during the following tasks:
 
 
 
--->
-<!-- keep by customization: begin -->
- When changing pricing tiers in the Azure Management Portal, pricing tier recommendations are provided that recommend the tier that is best suited for running an existing Azure SQL Database’s workload.
-
-> [AZURE.NOTE] Pricing tier recommendations are only available for Web and Business databases <!-- keep by customization: begin -->, <!-- keep by customization: end --> and only available in the [Azure Management Portal](https://manage.windowsazure.cn).
-<!-- keep by customization: end -->
 
 
 ## Overview
 
-<!-- deleted by customization The SQL Database service --><!-- keep by customization: begin --> Azure <!-- keep by customization: end --> analyzes current performance and feature requirements by assessing historical resource usage for a SQL <!-- deleted by customization database --><!-- keep by customization: begin --> Database <!-- keep by customization: end -->. In addition, the minimum acceptable service tier is determined based on the size of the database, and enabled [business <!-- deleted by customization continuity](/documentation/articles/sql-database-business-continuity) --><!-- keep by customization: begin --> continuity](https://msdn.microsoft.com/zh-cn/library/azure/hh852669.aspx) <!-- keep by customization: end --> features.
+The SQL Database service analyzes current performance and feature requirements by assessing historical resource usage for a SQL database. In addition, the minimum acceptable service tier is determined based on the size of the database, and enabled [business continuity](/documentation/articles/sql-database-business-continuity) features. 
 
 This information is analyzed and the service tier and performance level that is best suited for running the database’s typical workload and maintaining it's current feature set is recommended.
 
@@ -59,22 +52,13 @@ Based on your database's usage, there are currently 2 categories of recommendati
 
 ## Getting pricing tier recommendations
 
-Get pricing tier recommendations by selecting an existing Web or Business database and clicking on the **Pricing tier** tile. <!-- deleted by customization (Pricing tier recommendations are also available when you [Upgrade Azure SQL server to V12](/documentation/articles/sql-database-v12-upgrade).) -->
+Get pricing tier recommendations by selecting an existing Web or Business database and clicking on the **Pricing tier** tile. (Pricing tier recommendations are also available when you [Upgrade Azure SQL server to V12](/documentation/articles/sql-database-v12-upgrade).)
 
-1. Sign in to the [Azure <!-- deleted by customization Preview --><!-- keep by customization: begin --> Management <!-- keep by customization: end --> Portal](https://manage.windowsazure.cn/).
-<!-- deleted by customization
+1. Sign in to the [Azure Preview Portal](https://manage.windowsazure.cn/).
 2. Click **BROWSE** > **SQL databases**.
 4. In the **SQL databases** blade, click the database that you want to see a recommendation for:
 
     ![Select database][1]
--->
-<!-- keep by customization: begin -->
-2. Click **BROWSE** in the left menu.
-3. Click **SQL databases** in the **Browse** blade.
-4. In the **SQL databases** blade, click the database that you want the service to analyze.
-
-    ![Select database][1]
-<!-- keep by customization: end -->
 
 5. On the database blade, select the **Pricing tier** tile.
 

@@ -2,7 +2,7 @@
 
 1. Log on to the [Azure Management Portal](https://manage.windowsazure.cn/), and then click **+NEW** at the bottom of the screen.
 
-2. Click on **Azure Websites**, then **Service Bus**, then **Notification Hub**, then **Quick Create**.
+2. Click on **App Services**, then **Service Bus**, then **Notification Hub**, then **Quick Create**.
 
 3. Type a name for your notification hub, select your desired region, and then click **Create a new Notification Hub**.
 

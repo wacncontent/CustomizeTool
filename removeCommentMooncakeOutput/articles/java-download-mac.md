@@ -7,9 +7,9 @@
 	manager="wpickett" 
 	editor="jimbe"/>
 
-<tags 
-	ms.service="multiple" 
-	ms.date="10/12/2015" 
+<tags
+	ms.service="multiple"
+	ms.date="10/12/2015"
 	wacn.date=""/>
 
 #Download the Azure SDK for Java

@@ -84,7 +84,7 @@ Create an external table that matches the Customers table on the shards by execu
 
 	CREATE EXTERNAL TABLE [dbo].[Customers]
 	( [CustomerId] [int] NOT NULL,
-	  [Name] [nvarchar](/documentation/articles/256) NOT NULL,
+	  [Name] [nvarchar](256) NOT NULL,
 	  [RegionId] [int] NOT NULL)
 	WITH
 	( DATA_SOURCE = MyElasticDBQueryDataSrc,

@@ -18,13 +18,7 @@
 
 ##Overview
 
-<!-- deleted by customization
-This topic shows you how to register your apps to be able to use Azure Active Directory as an authentication provider for your mobile service.
--->
-<!-- keep by customization: begin -->
-
-This topic shows you how to register your apps to be able to use Azure Active Directory as an authentication provider for Azure Mobile Services.
-<!-- keep by customization: end -->
+This topic shows you how to register your apps to be able to use Azure Active Directory as an authentication provider for your mobile service. 
 
 ##Registering your app
 
@@ -66,3 +60,4 @@ You are now ready to use an Azure Active Directory for authentication in your ap
 <!-- URLs. -->
 [Azure Management Portal]: https://manage.windowsazure.cn/
 
+ 

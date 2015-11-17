@@ -71,7 +71,7 @@ specific named vault. Therefore, a further best practice is to not comingle corp
             },
             "location": {
                 "type": "string",
-                "allowedValues": ["China North", "China East"],
+                "allowedValues": ["China East", "China North"],
                 "metadata": {
                     "description": "Location of the Vault"
                 }
@@ -188,13 +188,13 @@ Group (NSG) to do this as part of an ARM template deployment.
 A network security group is a top-level object that is associated with your subscription. An NSG contains access control rules that allow or deny traffic to 
 VM instances. The rules of an NSG can be changed at any time, and changes are applied to all associated instances. To use an NSG, you must have a virtual network 
 that is associated with a region (location). NSGs are not compatible with virtual networks that are associated with an affinity group. If you don’t have a 
-regional virtual network and you want to control traffic to your endpoints, please see [About Network Access Control Lists (ACLs)](https://msdn.microsoft.com/zh-cn/library/azure/dn376541.aspx).
+regional virtual network and you want to control traffic to your endpoints, please see [About Network Access Control Lists (ACLs)](/documentation/articles/virtual-networks-acl).
 
 You can associate an NSG with a VM, or to a subnet within a virtual network. When associated with a VM, the NSG applies to all the traffic that is sent and 
 received by the VM instance. When applied to a subnet within your virtual network, it applies to all the traffic that is sent and received by all the VM instances 
 in the subnet. A VM or subnet can be associated with only 1 NSG, but each NSG can contain up to 200 rules. You can have 100 NSGs per subscription.
 
->[AZURE.NOTE]  Endpoint-based ACLs and network security groups are not supported on the same VM instance. If you want to use an NSG and have an endpoint ACL already in place, first remove the endpoint ACL. For information about how to do this, see [Managing Access Control Lists (ACLs) for Endpoints by using PowerShell](https://msdn.microsoft.com/zh-cn/library/azure/dn376543.aspx).
+>[AZURE.NOTE]  Endpoint-based ACLs and network security groups are not supported on the same VM instance. If you want to use an NSG and have an endpoint ACL already in place, first remove the endpoint ACL. For information about how to do this, see [Managing Access Control Lists (ACLs) for Endpoints by using PowerShell](/documentation/articles/virtual-networks-acl-powershell).
 
 ### How network security groups work
 
@@ -374,7 +374,7 @@ In the scenarios above, you will have to create a route table and add user defin
 be associated to one or more subnets. And each subnet can only be associated to a single route table. All VMs and cloud services in a subnet use the route table 
 associated to that subnet.
 
-Subnets rely on default routes until a route table is associated to the subnet. Once an association exists, routing is done based on [Longest Prefix Match (LPM)](https://en.wikipedia.org/wiki/%E6%9C%80%E9%95%BF%E5%89%8D%E7%BC%80%E5%8C%B9%E9%85%8D) 
+Subnets rely on default routes until a route table is associated to the subnet. Once an association exists, routing is done based on [Longest Prefix Match (LPM)](https://en.wikipedia.org/wiki/Longest_prefix_match) 
 among both user defined routes and default routes. If there is more than one route with the same LPM match then a route is selected based on its origin in the following 
 order:
 

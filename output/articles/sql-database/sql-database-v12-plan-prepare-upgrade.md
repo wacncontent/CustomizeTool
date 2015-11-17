@@ -20,7 +20,12 @@
 This topic describes the planning and preparations you must perform to upgrade your Azure SQL databases from version V11 to V12.
 
 
+<!-- deleted by customization
 A new [Azure preview portal](http://manage.windowsazure.cn/) is available to support your upgrade to V12.
+-->
+<!-- keep by customization: begin -->
+A new [Windows Azure Management Portal](http://manage.windowsazure.cn/) is available to support your upgrade to V12.
+<!-- keep by customization: end -->
 
 
 The following table lists other Help topics for V12.
@@ -87,7 +92,7 @@ The Web and Business service pricing tier is not supported on V12.
 If your V11 Azure SQL database is a Web or Business database, the upgrade process offers to switch your database to a supported tier. The upgrade recommends a tier that fits the workload history of your database. However, you can choose any supported tier you like.
 
 
-You can reduce the steps necessary during upgrade by switching your V11 database away from the Web-and-Business tier before you start the upgrade. You can do this by using the new [Azure preview portal](http://manage.windowsazure.cn/).
+You can reduce the steps necessary during upgrade by switching your V11 database away from the Web-and-Business tier before you start the upgrade. You can do this by using the new <!-- deleted by customization [Azure preview portal](http://manage.windowsazure.cn/) --><!-- keep by customization: begin --> [Windows Azure Management Portal](http://manage.windowsazure.cn/) <!-- keep by customization: end -->.
 
 
 If you are unsure which service tier to switch to, the S2 level of the Standard tier might be a sensible initial choice. Any lesser tier will have fewer resources than the Web and Business tier had.
@@ -181,7 +186,7 @@ The V11 database remains available for data access during the upgrade to V12. Ye
 ### Export and import *after* upgrade to V12
 
 
-You can export or import a V12 database by using the [Azure preview portal](http://manage.windowsazure.cn/). Or you can export or import by using any of the following tools:
+You can export or import a V12 database by using the <!-- deleted by customization [Azure preview portal](http://manage.windowsazure.cn/) --><!-- keep by customization: begin --> [Windows Azure Management Portal](http://manage.windowsazure.cn/) <!-- keep by customization: end -->. Or you can export or import by using any of the following tools:
 
 
 - SQL Server Management Studio (SSMS)

@@ -79,10 +79,4 @@ Delete a row in the database. The parameter item is the TodoItem object to be de
 	await todoTable.DeleteAsync(item);
 
 
-<!-- deleted by customization
 [Learn more about mobile services](/documentation/services/mobile-services/)
-
--->
-<!-- keep by customization: begin -->
-[Learn more about mobile services](/home/features/mobile-services) 
-<!-- keep by customization: end -->

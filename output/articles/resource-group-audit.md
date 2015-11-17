@@ -148,6 +148,6 @@ You can select any operation for more details about it.
 
 ## Next steps
 
-- To learn about setting security policies, see [Managing access to resources](./azure-portal/resource-group-rbac.md).
+- To learn about setting security policies, see [Managing access to resources](/documentation/articles/resource-group-rbac).
 - To learn about granting access to a service principal, see [Authenticating a service principal with Azure Resource Manager](/documentation/articles/resource-group-authenticate-service-principal).
 - To learn how to actions on a resource for all users, see [Lock resources with Azure Resource Manager](/documentation/articles/resource-group-lock-resources).

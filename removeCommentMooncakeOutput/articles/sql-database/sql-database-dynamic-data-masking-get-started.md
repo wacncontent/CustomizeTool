@@ -8,9 +8,9 @@
    editor="v-romcal"/>
 
 <tags
-   ms.service="sql-database"
-   ms.date="07/30/2015"
-   wacn.date=""/>
+	ms.service="sql-database"
+	ms.date="07/30/2015"
+	wacn.date=""/>
 
 # Get started with SQL Database Dynamic Data Masking (Azure Preview portal)
 
@@ -60,7 +60,7 @@ If you are using a ["Downlevel Client"](/documentation/articles/sql-database-aud
 
 ## Set up dynamic data masking for your database using the Azure Preview portal
 
-1. Launch the Azure Management Portal at [http://manage.windowsazure.cn](http://manage.windowsazure.cn).
+1. Launch the Azure Management Portal at [https://manage.windowsazure.cn](https://manage.windowsazure.cn).
 	 
 2. Navigate to the configuration blade of the database that includes the sensitive data you want to mask.
 	

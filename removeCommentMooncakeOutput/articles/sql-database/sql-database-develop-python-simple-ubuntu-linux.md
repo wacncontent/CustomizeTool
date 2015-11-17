@@ -8,9 +8,9 @@
 	editor="genemi"/>
 
 
-<tags 
-	ms.service="sql-database" 
-	ms.date="07/20/2015" 
+<tags
+	ms.service="sql-database"
+	ms.date="07/20/2015"
 	wacn.date=""/>
 
 
@@ -43,7 +43,7 @@ Open your terminal and navigate to a directory where you plan on creating your p
 ### Create a database and retrieve your connection string
 
 
-See the [getting started page](/documentation/articles/sql-database-get-started) to learn how to create a sample database and get your connection string. It is important you follow the guide to create an **AdventureWorks database template**. The samples shown below only work with the **AdventureWorks schema**.
+See the [getting started page](/documentation/articles/sql-database-get-started) to learn how to create a sample database and get your connection string. It is important you follow the guide to create an **AdventureWorks database template**. The samples shown below only work with the **AdventureWorks schema**. 
 
 
 ## Connect to your SQL Database
@@ -72,7 +72,7 @@ The [cursor.execute](http://pymssql.org/en/latest/ref/pymssql.html#pymssql.Curso
 
 ## Insert a row, pass parameters, and retrieve the generated primary key
 
-In SQL Database the [IDENTITY](https://msdn.microsoft.com/zh-cn/library/ms186775.aspx) property and the [SEQUENECE](https://msdn.microsoft.com/zh-cn/library/ff878058.aspx) object can be used to auto-generate [primary key](https://msdn.microsoft.com/zh-cn/library/ms179610.aspx) values.
+In SQL Database the [IDENTITY](https://msdn.microsoft.com/zh-cn/library/ms186775.aspx) property and the [SEQUENCE](https://msdn.microsoft.com/zh-cn/library/ff878058.aspx) object can be used to auto-generate [primary key](https://msdn.microsoft.com/zh-cn/library/ms179610.aspx) values. 
 
 
 	import pymssql

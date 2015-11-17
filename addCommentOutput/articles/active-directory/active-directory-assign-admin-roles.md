@@ -34,56 +34,31 @@ The following administrator roles are available:
 
 Can do | Cannot do
 ------------- | -------------
-<!-- deleted by customization
 <p>View company and user information</p><p>Manage Office support tickets</p><p>Perform billing and purchasing operations for Office products</p> | <p>Reset user passwords</p><p>Create and manage user views</p><p>Create, edit, and delete users and groups, and manage user licenses</p><p>Manage domains</p><p>Manage company information</p><p>Delegate administrative roles to others</p><p>Use directory synchronization</p>
--->
-<!-- keep by customization: begin -->
-View company and user information<br>Manage Office support tickets<br>Perform billing and purchasing operations for Office products | Reset user passwords<br>Create and manage user views<br>Create, edit, and delete users and groups, and manage user licenses<br>Manage domains<br>Manage company information<br>Delegate administrative roles to others<br>Use directory synchronization
-<!-- keep by customization: end -->
 
 ### Global administrator
 
 Can do | Cannot do
-<!-- deleted by customization ------------- --><!-- keep by customization: begin --> ------------ <!-- keep by customization: end --> | -------------
-<!-- deleted by customization
+------------- | -------------
 <p>View company and user information</p><p>Manage Office support tickets</p><p>Perform billing and purchasing operations for Office products</p> <p>Reset user passwords</p><p>Create and manage user views</p><p>Create, edit, and delete users and groups, and manage user licenses</p><p>Manage domains</p><p>Manage company information</p><p>Delegate administrative roles to others</p><p>Use directory synchronization</p><p>Enable or disable multi-factor authentication</p> | N/A
--->
-<!-- keep by customization: begin -->
-View company and user information<br>Manage Office support tickets<br>Perform billing and purchasing operations for Office products <br>Reset user passwords<br> Create and manage user views<br>Create, edit, and delete users and groups, and manage user licenses<br> Manage domains <br>Manage company information<br>Delegate administrative roles to others<br>Use directory synchronization | N/A
-<!-- keep by customization: end -->
 
 ### Password administrator
 
 Can do | Cannot do
 ------------- | -------------
-<!-- deleted by customization
 <p>View company and user information</p><p>Manage Office support tickets</p><p>Reset user passwords</p> | <p>Perform billing and purchasing operations for Office products</p><p>Create and manage user views</p><p>Create, edit, and delete users and groups, and manage user licenses</p><p>Manage domains</p><p>Manage company information</p><p>Delegate administrative roles to others</p><p>Use directory synchronization</p>
--->
-<!-- keep by customization: begin -->
-View company and user information<br>Manage Office support tickets<br>Reset user passwords | Perform billing and purchasing operations for Office products<br>Create and manage user views<br>Create, edit, and delete users and groups, and manage user licenses<br>Manage domains<br>Manage company information<br>Delegate administrative roles to others<br>Use directory synchronization
-<!-- keep by customization: end -->
 
 ### Service administrator
 
 Can do | Cannot do
 ------------- | -------------
-<!-- deleted by customization
 <p>View company and user information</p><p>Manage Office support tickets</p> | <p>Reset user passwords</p><p>Perform billing and purchasing operations for Office products</p><p>Create and manage user views</p><p>Create, edit, and delete users and groups, and manage user licenses</p><p>Manage domains</p><p>Manage company information</p><p>Delegate administrative roles to others</p><p>Use directory synchronization</p>
--->
-<!-- keep by customization: begin -->
-View company and user information<br>Manage Office support tickets | Reset user passwords<br>Perform billing and purchasing operations for Office products<br>Create and manage user views<br>Create, edit, and delete users and groups, and manage user licenses<br>Manage domains<br>Manage company information<br>Delegate administrative roles to others<br>Use directory synchronization
-<!-- keep by customization: end -->
 
 ### User administrator
 
 Can do | Cannot do
 ------------- | -------------
-<!-- deleted by customization
 <p>View company and user information</p><p>Manage Office support tickets</p><p>Reset user passwords, with limitations. He or she cannot reset passwords for billing, global, and service administrators.</p><p>Create and manage user views</p><p>Create, edit, and delete users and groups, and manage user licenses, with limitations. He or she cannot delete a global administrator or create other administrators.</p> | <p>Perform billing and purchasing operations for Office products</p><p>Manage domains</p><p>Manage company information</p><p>Delegate administrative roles to others</p><p>Use directory synchronization</p><p>Enable or disable multi-factor authentication</p>
--->
-<!-- keep by customization: begin -->
-View company and user information<br>Manage Office support ticketsReset user passwords, with limitations.<br> He or she cannot reset passwords for billing, global, and service administrators.<br>Create and manage user views<br>Create, edit, and delete users and groups, and manage user licenses, with limitations.<br> He or she cannot delete a global administrator or create other administrators. | Perform billing and purchasing operations for Office products<br>Manage domains<br>Manage company information<br>Delegate administrative roles to others<br>Use directory synchronization
-<!-- keep by customization: end -->
 
 ## Details about the global administrator role
 

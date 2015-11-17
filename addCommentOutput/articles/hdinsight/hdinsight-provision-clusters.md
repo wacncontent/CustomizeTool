@@ -272,7 +272,7 @@ You can refer to the [basic configuration options], and the [advanced configurat
 HDInsight clusters use an Azure Blob storage container as the default file system. An Azure Storage account located on the same data center is required before you can create an HDInsight cluster. For more information, see [Use Azure Blob Storage with HDInsight](/documentation/articles/hdinsight-use-blob-storage). For details on creating an Azure Storage account, see [How to Create a Storage Account](/documentation/articles/storage-create-storage-account).
 
 
-> [AZURE.NOTE] Currently, only the **East Asia**, **Southeast Asia**, **China North**, **West Europe**, **China East**, **China North**, **China North**, and **China East** regions can host HDInsight clusters.
+> [AZURE.NOTE] Currently, only the **China East**, **China North**, **China North**, **West Europe**, **China East**, **China North**, **China North**, and **China East** regions can host HDInsight clusters.
 <!-- keep by customization: end -->
 **To create an HDInsight cluster**
 <!-- deleted by customization

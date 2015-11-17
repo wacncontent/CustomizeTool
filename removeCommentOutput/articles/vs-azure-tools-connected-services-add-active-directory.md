@@ -6,10 +6,14 @@
    authors="patshea123"
    manager="douge"
    editor="tlee" />
-<tags
-	ms.service="visual-studio-online""
-	ms.date="08/12/2015"
-	wacn.date=""/>
+<tags 
+   ms.service="visual-studio-online""
+   ms.devlang="multiple"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="visual-studio-online"
+   ms.date="08/12/2015"
+   ms.author="patshea" />
 
 # Adding an Azure Active Directory by using Connected Services in Visual Studio 
 

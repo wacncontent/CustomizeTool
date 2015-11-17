@@ -58,7 +58,7 @@ This **OpenConnection** function is called near the top in all of the functions 
 
 ## Execute a query and retrieve the result set
 
-The <!-- deleted by customization [sqlsrv_query()](http://php.net/manual/en/function.sqlsrv-query.php) --><!-- keep by customization: begin --> [sqlsrv_query()](http://php.net/manual/zh/function.sqlsrv-query.php) <!-- keep by customization: end --> function can be used to retrieve a result set from a query against SQL Database. This function essentially accepts any query and the connection object and returns a result set which can be iterated over with the use of <!-- deleted by customization [sqlsrv_fetch_array()](http://php.net/manual/en/function.sqlsrv-fetch-array.php) --><!-- keep by customization: begin --> [sqlsrv_fetch_array()](http://php.net/manual/zh/function.sqlsrv-fetch-array.php) <!-- keep by customization: end -->.
+The [sqlsrv_query()](http://php.net/manual/en/function.sqlsrv-query.php) function can be used to retrieve a result set from a query against SQL Database. This function essentially accepts any query and the connection object and returns a result set which can be iterated over with the use of [sqlsrv_fetch_array()](http://php.net/manual/en/function.sqlsrv-fetch-array.php).
 
 	function ReadData()
 	{
@@ -172,6 +172,6 @@ This code example demonstrates the use of transactions in which you:
 ## Further reading
 
 
-For more information regarding PHP installation and usage, see [Accessing SQL Server Databases with <!-- deleted by customization PHP](http://technet.microsoft.com/zh-cn/library/cc793139.aspx) --><!-- keep by customization: begin --> PHP](https://technet.microsoft.com/zh-CN/library/cc793139.aspx) <!-- keep by customization: end -->.
+For more information regarding PHP installation and usage, see [Accessing SQL Server Databases with PHP](http://technet.microsoft.com/zh-cn/library/cc793139.aspx).
 
  

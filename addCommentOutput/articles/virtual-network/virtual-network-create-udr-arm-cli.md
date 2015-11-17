@@ -44,13 +44,13 @@ To create the route table and route needed for the front end subnet based on the
 		routeTables/UDR-FrontEnd
 		data:    Name                            : UDR-FrontEnd
 		data:    Type                            : Microsoft.Network/routeTables
-		data:    Location                        : westus
+		data:    Location                        : chinanorth
 		data:    Provisioning state              : Succeeded
 		info:    network route-table create command OK
 
 	Parameters:
 	- **-g (or --resource-group)**. Name of the resource group where the NSG will be created. For our scenario, *TestRG*.
-	- **-l (or --location)**. Azure region where the new NSG will be created. For our scenario, *westus*.
+	- **-l (or --location)**. Azure region where the new NSG will be created. For our scenario, *chinanorth*.
 	- **-n (or --name)**. Name for the new NSG. For our scenario, *NSG-FrontEnd*.
 
 4. Run the **`azure network route-table route create`** command to create a route in the route table created above to send all traffic destined to the back end subnet (192.168.2.0/24) to the **FW1** VM (192.168.0.4).
@@ -114,7 +114,7 @@ To create the route table and route needed for the back end subnet based on the 
 
 1. Run the **`azure network route-table create`** command to create a route table for the back end subnet.
 
-		azure network route-table create -g TestRG -n UDR-BackEnd -l westus
+		azure network route-table create -g TestRG -n UDR-BackEnd -l chinanorth
 
 4. Run the **`azure network route-table route create`** command to create a route in the route table created above to send all traffic destined to the front end subnet (192.168.1.0/24) to the **FW1** VM (192.168.0.4).
 
@@ -139,7 +139,7 @@ To enable IP forwarding in the NIC used by **FW1**, follow the steps below.
 		networkInterfaces/NICFW1
 		data:    Name                            : NICFW1
 		data:    Type                            : Microsoft.Network/networkInterfaces
-		data:    Location                        : westus
+		data:    Location                        : chinanorth
 		data:    Provisioning state              : Succeeded
 		data:    MAC address                     : 00-0D-3A-30-95-B3
 		data:    Enable IP forwarding            : false
@@ -172,7 +172,7 @@ To enable IP forwarding in the NIC used by **FW1**, follow the steps below.
 		networkInterfaces/NICFW1
 		data:    Name                            : NICFW1
 		data:    Type                            : Microsoft.Network/networkInterfaces
-		data:    Location                        : westus
+		data:    Location                        : chinanorth
 		data:    Provisioning state              : Succeeded
 		data:    MAC address                     : 00-0D-3A-30-95-B3
 		data:    Enable IP forwarding            : true

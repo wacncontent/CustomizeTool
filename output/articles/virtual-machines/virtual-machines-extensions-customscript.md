@@ -21,7 +21,7 @@ Virtual machine (VM) extensions are built by Microsoft and trusted third-party p
 [Azure VM extensions and features](/documentation/articles/virtual-machines-extensions-features).
 
 Link:
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] [Resource Manager model](virtual-machines-extensions-customscript%20-with%20template.md).
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] [Resource Manager model](/documentation/articles/virtual-machines-extensions-customscript%20-with%20template).
 
 
 ## Custom Script extension overview
@@ -30,7 +30,7 @@ Custom Script extension for Windows allows you to run PowerShell scripts on a re
 
 ### Prerequistes for running Custom Script Extension
 
-1. Install Azure PowerShell cmdlets version 0.8.0 or later from <a href="http://azure.microsoft.com/downloads" target="_blank">here</a>.
+1. Install Azure PowerShell cmdlets version 0.8.0 or later from <a <!-- deleted by customization href="http://azure.microsoft.com/downloads" --><!-- keep by customization: begin --> href="/downloads" <!-- keep by customization: end --> target="_blank">here</a>.
 2. If the scripts are run on an existing VM, make sure VM Agent is enabled on the VM, if not follow this <a href="https://msdn.microsoft.com/zh-cn/library/azure/dn832621.aspx" target="_blank">article</a> to install one.
 3. Upload the scripts that you want to run on the VM to Azure Storage. The scripts can come from a single container or multiple storage containers.
 4. The script should be authored in such a way that the entry script, which is started by the extension, starts other scripts.
@@ -84,7 +84,7 @@ Custom Script Extension can be uninstalled from the VM using the following comma
 
 ### Using Custom Script extension with templates
 
-To learn about using Custom Script extension with templates, see the documentation [here](virtual-machines-extensions-customscript -with template.md).
+To learn about using Custom Script extension with templates, see the documentation [here](/documentation/articles/virtual-machines-extensions-customscript%20-with%20template).
 
 <!--Image references-->
 [5]: ./media/virtual-machines-extensions-customscript/addcse.png

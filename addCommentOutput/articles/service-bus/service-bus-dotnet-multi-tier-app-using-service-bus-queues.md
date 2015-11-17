@@ -39,12 +39,7 @@ The following screen shot shows the completed application.
 
 > [AZURE.NOTE] Azure also provides storage queue functionality. For more information about Azure storage queues and Service Bus queues, see [Azure Queues and Azure Service Bus Queues - Compared and Contrasted][sbqueuecomparison].  
 
-<!-- deleted by customization
 ## Scenario overview: inter-role communication
--->
-<!-- keep by customization: begin -->
-## Scenario overview: Inter-role communication
-<!-- keep by customization: end -->
 
 To submit an order for processing, the front end UI component, running
 in the web role, must interact with the middle tier logic running in
@@ -112,16 +107,16 @@ Before you can begin developing your Azure application, download the tools and s
 
 	![][32]
 
-<!-- deleted by customization 4 --><!-- keep by customization: begin --> 3 <!-- keep by customization: end -->. When prompted to run or save the installation file, click
+4. 	When prompted to run or save the installation file, click
     **Run**.
 
     ![][3]
 
-<!-- deleted by customization 5 --><!-- keep by customization: begin --> 4 <!-- keep by customization: end -->.  In the Web Platform Installer, click **Install** and proceed with the installation.
+5.  In the Web Platform Installer, click **Install** and proceed with the installation.
 
     ![][33]
 
-<!-- deleted by customization 6 --><!-- keep by customization: begin --> 5 <!-- keep by customization: end -->.  Once the installation is complete, you have everything
+6.  Once the installation is complete, you have everything
     necessary to start developing the app. The SDK includes tools that enable you
     to develop Azure applications in Visual Studio. If you
     do not have Visual Studio installed, it also installs the free
@@ -331,7 +326,7 @@ In this section, you create the various pages that your application displays.
 7.  Click **Add**.
 
 8.  Now, change the displayed name of your application. In **Solution Explorer**, double-click the
-    **Views\Shared\_Layout.cshtml** file to open it in the Visual
+    **Views\Shared\\_Layout.cshtml** file to open it in the Visual
     Studio editor.
 
 9.  Replace all occurrences of **My ASP.NET Application** with
@@ -615,7 +610,7 @@ To implement the application you create in this tutorial as a standard web proje
 
 3. You can test the front-end and back-end separately, or you can run both simultaneously in separate Visual Studio instances.
 
-To learn how to deploy the front end to an Azure website, see [Create an ASP.NET web app in Azure <!-- deleted by customization Websites](/documentation/articles/web-sites-dotnet-get-started) --><!-- keep by customization: begin --> Websites](/documentation/articles/app-service-web/web-sites-dotnet-get-started) <!-- keep by customization: end -->. To learn how to deploy the back end to an Azure cloud service, see [.NET Multi-Tier Application Using Storage Tables, Queues, and Blobs][mutitierstorage].
+To learn how to deploy the front end to an Azure website, see [Create an ASP.NET web app in Azure Websites](/documentation/articles/web-sites-dotnet-get-started). To learn how to deploy the back end to an Azure cloud service, see [.NET Multi-Tier Application Using Storage Tables, Queues, and Blobs][mutitierstorage].
 
 
   [0]: ./media/service-bus-dotnet-multi-tier-app-using-service-bus-queues/getting-started-multi-tier-01.png
@@ -662,20 +657,10 @@ To learn how to deploy the front end to an Azure website, see [Create an ASP.NET
   [30]: ./media/service-bus-dotnet-multi-tier-app-using-service-bus-queues/sb-queues-09.png
   [31]: ./media/service-bus-dotnet-multi-tier-app-using-service-bus-queues/sb-queues-06.png
   [32]: ./media/service-bus-dotnet-multi-tier-app-using-service-bus-queues/getting-started-41.png
-<!-- deleted by customization
   [33]: ./media/service-bus-dotnet-multi-tier-app-using-service-bus-queues/getting-started-42-webpi.png
--->
-<!-- keep by customization: begin -->
-  [33]: ./media/service-bus-dotnet-multi-tier-app-using-service-bus-queues/getting-started-4-2-WebPI.png
-<!-- keep by customization: end -->
   [35]: ./media/service-bus-dotnet-multi-tier-app-using-service-bus-queues/multi-web-45.png
   [sbmsdn]: http://msdn.microsoft.com/zh-cn/library/azure/ee732537.aspx  
-<!-- deleted by customization
   [sbwacom]: /documentation/services/service-bus/  
--->
-<!-- keep by customization: begin -->
-  [sbwacom]: /home/features/identity/
-<!-- keep by customization: end -->
   [sbwacomqhowto]: /documentation/articles/service-bus-dotnet-how-to-use-queues
   [mutitierstorage]: https://code.msdn.microsoft.com/Windows-Azure-Multi-Tier-eadceb36
   [executionmodels]: /documentation/articles/fundamentals-application-models

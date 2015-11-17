@@ -13,6 +13,16 @@
 	wacn.date=""/>
 
 # Azure Active Directory Connect - Learn More
+<!-- keep by customization: begin -->
+
+<div>
+<a href="/documentation/articles/active-directory-aadconnect/">What is It</a>
+<a href="/documentation/articles/active-directory-aadconnect-how-it-works/">How it Works</a>
+<a href="/documentation/articles/active-directory-aadconnect-get-started/">Getting Started</a>
+<a href="/documentation/articles/active-directory-aadconnect-whats-next/">Whats Next</a>
+<a href="/documentation/articles/active-directory-aadconnect-learn-more/">Learn More</a>
+</div>
+<!-- keep by customization: end -->
 
 The following is a list of additional resources for using Azure AD Connect and integrating your on-premises directories with Azure AD.
 
@@ -20,11 +30,15 @@ The following is a list of additional resources for using Azure AD Connect and i
 
 ## Documentation
 
+<!-- keep by customization: begin -->
+[DirSync with Single Sign-on](https://msdn.microsoft.com/zh-cn/library/azure/dn441213.aspx) - Federate your on-premises Active Directory environment with Azure AD using AD FS to provide single sign-on.
+<!-- keep by customization: end -->
 
 [Multi-forest Directory Sync with Single Sign-On Scenario](https://msdn.microsoft.com/zh-cn/library/azure/dn510976.aspx) - Integrate multiple directories with Azure AD.
 
 [Azure AD Connect Health](https://msdn.microsoft.com/zh-cn/library/azure/dn906722.aspx) - Monitor the health of your on-premises AD FS infrastructure.
 
+<!-- deleted by customization
 ## Videos
 
 Ignite 2015 presentation on extending your on-premises directories to the cloud.
@@ -37,3 +51,17 @@ Ignite 2015 presentation on extending your on-premises directories to the cloud.
 Watch this video to learn how easy it is to extend your on-premises Active Directory to the cloud by using the express settings of Azure Active Directory Connect.
 
 [AZURE.VIDEO azure-active-directory-connect-express-settings]
+-->
+<!-- keep by customization: begin -->
+
+**Additional Resources**
+
+* [Use your on-premises identity infrastructure in the cloud](/documentation/articles/active-directory-aadconnect)
+* [How Azure AD Connect works](/documentation/articles/active-directory-aadconnect-how-it-works)
+* [Getting started with Azure AD Connect](/documentation/articles/active-directory-aadconnect-get-started)
+* [Whats Next with Azure AD Connect](/documentation/articles/active-directory-aadconnect-whats-next)
+* [Azure AD Connect on MSDN](https://msdn.microsoft.com/zh-cn/library/azure/dn832695.aspx)
+
+
+<!-- keep by customization: end -->
+

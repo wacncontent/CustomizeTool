@@ -86,10 +86,4 @@ Delete a row in a data table. Call the [done]() method on the returned [Promise]
 
 
 
-<!-- deleted by customization
 [Learn more about mobile services](/documentation/services/mobile-services/) 
-
--->
-<!-- keep by customization: begin -->
-[Learn more about mobile services](/documentation/services/mobile-services) 
-<!-- keep by customization: end -->

@@ -15,6 +15,7 @@
 
 # Load balancing for Azure infrastructure services#
 
+
 There are two levels of load balancing available for Azure infrastructure services:
 
 - **DNS Level**:  Load balancing for traffic to different cloud services located in different data centers, to different Azure websites located in different data centers, or to external endpoints. This is done with Azure Traffic Manager and the Round Robin load balancing method.

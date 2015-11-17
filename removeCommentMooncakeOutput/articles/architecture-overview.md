@@ -7,9 +7,9 @@
 	manager="jwhit" 
 	editor="mattshel"/>
 
-<tags 
-	ms.service="multiple" 
-	ms.date="10/16/2015" 
+<tags
+	ms.service="multiple"
+	ms.date="10/16/2015"
 	wacn.date=""/>
 
 #Application Architecture on Windows Azure

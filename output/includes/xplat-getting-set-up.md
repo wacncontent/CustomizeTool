@@ -5,6 +5,7 @@
 	ms.date="04/13/2015"
 	wacn.date=""/>
 
+<!-- deleted by customization
 ## Using Azure CLI
 
 The following steps help you use Azure CLI easily with the most recent version and the proper subscription. If you need to install Azure CLI and connect it to your account first, see the [Azure Command-Line Interface (Azure CLI)](/documentation/articles/xplat-cli-install).
@@ -12,9 +13,20 @@ The following steps help you use Azure CLI easily with the most recent version a
 ### Step 1: Update Azure CLI version
 
 To use Azure CLI for imperative commands with service management mode, you should have a recent version if possible. To verify your version, type `azure --version`. You should see something like:
+-->
+<!-- keep by customization: begin -->
+## Using the xplat-cli
+
+The following steps help you use the xplat-cli easily with the most recent version and the proper subscription. If you need to install the xplat-cli and connect it to your account first, see the [Azure Command-Line Interface (xplat-cli)](/documentation/articles/xplat-cli).
+
+## Step 1: Update the xplat-cli version
+
+To use the xplat-cli for imperative commands and ARM templates, you should have a recent version if possible. To verify your version, type `azure --version`. You should see something like:
+<!-- keep by customization: end -->
 
     $ azure --version
     0.8.17 (node: 0.10.25)
+<!-- deleted by customization
 
 If you want to update your version of Azure CLI, see [Azure CLI](https://github.com/Azure/azure-xplat-cli).
 
@@ -28,4 +40,24 @@ Once you have connected your Azure CLI with the account you want to use, you may
     info:    Changes saved
     info:    account set command OK
 
-> [AZURE.NOTE] If you don't already have an Azure account but you do have a subscription to MSDN subscription, you can get free Azure credits by activating your [MSDN subscriber benefits here](http://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/) -- or you can use the free account. Either will work for Azure access.
+> [AZURE.NOTE] If you don't already have an Azure account but you do have a subscription to MSDN subscription, you can get free Azure credits by activating your [MSDN subscriber benefits here](/pricing/member-offers/msdn-benefits-details/) -- or you can use the free account. Either will work for Azure access.
+-->
+<!-- keep by customization: begin -->
+    
+If you want to update your version of the xplat-cli, see [xplat-cli](https://github.com/Azure/azure-xplat-cli).
+
+## Step 2: Set the Azure account and subscription
+
+Once you have connected your xplat-cli with the account you want to use, you may have more than one subscription. If you do, you need to select the subscription you want to use by typing
+
+    azure set <subscription id or name> true
+    
+where _subscription id or name_ is either the subscription id or the subscription name that you would like to work with in the current session.
+
+
+Before you can use the xplat-cli with Resource Manager templates and deploy Azure resources and workloads using resource groups, you will need an account with Azure (of course). If you do not have an account, you can get a [free Azure trial here](/pricing/1rmb-trial/).
+
+If you don't already have an Azure account but you do have a subscription to MSDN subscription, you can get free Azure credits by activating your [MSDN subscriber benefits here](/pricing/member-offers/msdn-benefits-details/) -- or you can use the free account. Either will work for Azure access. 
+
+<!-- keep by customization: end -->
+

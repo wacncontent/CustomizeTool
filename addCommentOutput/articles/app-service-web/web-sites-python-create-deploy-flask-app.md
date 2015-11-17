@@ -45,7 +45,7 @@ You will create an application using the Flask web framework (see alternate vers
 - Python 2.7 or 3.4
 - setuptools, pip, virtualenv (Python 2.7 only)
 - Git
-- [Python Tools for Visual <!-- deleted by customization Studio][](/documentation/articles/PTVS) --><!-- keep by customization: begin --> Studio][] <!-- keep by customization: end --> - Note: this is optional
+- [Python Tools for Visual Studio][] (PTVS) - Note: this is optional
 
 **Note**: TFS publishing is currently not supported for Python projects.
 
@@ -427,6 +427,7 @@ For more information, see also the [Python Developer Center](/develop/python/).
 <!--Link references-->
 [Flask and MongoDB on Azure with Python Tools for Visual Studio]: https://github.com/microsoft/ptvs/wiki/Flask-and-MongoDB-on-Azure
 [Flask and Azure Table Storage on Azure with Python Tools for Visual Studio]: /documentation/articles/web-sites-python-ptvs-flask-table-storage
+
 <!--External Link references-->
 [Azure SDK for Python 2.7]: http://go.microsoft.com/fwlink/?linkid=254281
 [Azure SDK for Python 3.4]: http://go.microsoft.com/fwlink/?linkid=516990

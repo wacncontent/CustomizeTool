@@ -27,7 +27,7 @@ This article describes how to deploy Site Recovery to replicate virtual machines
 
 The article summarizes the deployment prerequisites, helps you to configure replication settings, and enable protection for virtual machines. It finishes up by testing failover to make sure everything's working as expected.
 
-If you run into problems post your questions on the [Azure Recovery Services <!-- deleted by customization Forum](https://social.msdn.microsoft.com/forums/azure/home?forum=hypervrecovmgr) --><!-- keep by customization: begin --> Forum](https://social.msdn.microsoft.com/Forums/zh-CN/home?forum=hypervrecovmgr) <!-- keep by customization: end -->.
+If you run into problems post your questions on the [Azure Recovery Services Forum](https://social.msdn.microsoft.com/forums/azure/home?forum=hypervrecovmgr).
 
 
 ## Before you start
@@ -45,7 +45,7 @@ Make sure you have everything in place before you begin.
 - In the source on-premises site you'll need at least one server running Windows Server 2012 R2 with the Hyper-V role.
 - The Hyper-V server should contain one or more virtual machines.
 - Hyper-V servers should be connected to the Internet, either directly or via a proxy.
-- Hyper-V servers should have fixes mentioned in <!-- deleted by customization [KB2961977](https://support.microsoft.com/kb/2961977 --><!-- keep by customization: begin --> [KB2961977](https://support.microsoft.com/zh-cn/kb/2961977 <!-- keep by customization: end --> "KB2961977") installed.
+- Hyper-V servers should have fixes mentioned in [KB2961977](https://support.microsoft.com/kb/2961977 "KB2961977") installed.
 
 ### Virtual machine prerequisites
 
@@ -57,13 +57,12 @@ As part of Azure Site Recovery deployment you’ll install the Azure Site Recove
 
 - You should run the latest versions of the Provider and agent.
 - All Hyper-V servers in a vault should have the same versions.
-- The Provider will need to connect to Azure Site Recovery over the Internet. You can select to do this without a proxy, using proxy settings currently configured on the VMM server, or using custom proxy settings that you configure during Provider installation. To use an existing proxy server ensure that the URLs for connecting to Azure are allowed through the firewall <!-- keep by customization: begin -->: <!-- keep by customization: end -->
+- The Provider will need to connect to Azure Site Recovery over the Internet. You can select to do this without a proxy, using proxy settings currently configured on the VMM server, or using custom proxy settings that you configure during Provider installation. To use an existing proxy server ensure that the URLs for connecting to Azure are allowed through the firewall
 	- *.hypervrecoverymanager.windowsazure.cn
 	- *.accesscontrol.chinacloudapi.cn
 	- *.backup.windowsazure.cn		
 	- *.blob.core.chinacloudapi.cn
 	- *.store.core.chinacloudapi.cn
-<!-- deleted by customization
  
 - To use a custom proxy set up the proxy server before installing the Provider. During Provider setup you’ll need to specify the proxy server address and port, and credentials that can be used for access. Note that HTTPS based proxy is not supported.
 
@@ -72,16 +71,6 @@ The picture below shows the different communication channels and ports used by A
 ![B2A Topology](./media/site-recovery-hyper-v-site-to-azure/B2ATopology.png)
 
 
--->
-<!-- keep by customization: begin -->
-- To use a custom proxy set up the proxy server before installing the Provider. During Provider setup you’ll need to specify the proxy server address and port, and credentials that can be used for access. Note that HTTPS based proxy is not supported.
-
-The picture below shows the different communication channels and ports used by Azure Site Recovery for orchestration and replication
-
-![B2A Topology](./media/site-recovery-hyper-v-site-to-azure/B2ATopology.png)
-
- 
-<!-- keep by customization: end -->
 ## Step 1: Create a vault
 
 1. Sign in to the [Management Portal](https://manage.windowsazure.cn).
@@ -94,7 +83,7 @@ The picture below shows the different communication channels and ports used by A
 
 4. In **Name**, enter a friendly name to identify the vault.
 
-5. In **Region**, select the geographic region for the vault. To check supported regions see Geographic Availability in [Azure Site Recovery Pricing <!-- deleted by customization Details](/documentation/articles/site-recovery) --><!-- keep by customization: begin --> Details](/home/features/site-recovery/#price) <!-- keep by customization: end -->.
+5. In **Region**, select the geographic region for the vault. To check supported regions see Geographic Availability in [Azure Site Recovery Pricing Details](/home/features/site-recovery/#price).
 
 6. Click **Create vault**.
 
@@ -158,7 +147,7 @@ Install the Provider and agent. If you're installing on a Hyper-V cluster, perfo
 		- *.blob.core.chinacloudapi.cn
 		- *.store.core.chinacloudapi.cn
 
-	- Allow the IP addresses described in [Azure Datacenter IP Ranges](https://msdn.microsoft.com/zh-cn/library/azure/dn175718.aspx) and HTTPS (443) protocol. You would have to white-list IP ranges of the Azure region that you plan to use and that of China <!-- deleted by customization North --><!-- keep by customization: begin --> East <!-- keep by customization: end -->.
+	- Allow the IP addresses described in [Azure Datacenter IP Ranges](https://msdn.microsoft.com/zh-cn/library/azure/dn175718.aspx) and HTTPS (443) protocol. You would have to white-list IP ranges of the Azure region that you plan to use and that of China North.
 
 9. On the **Vault Settings** page, click **Browse** to select the key file. Specify the Azure Site Recovery subscription, the vault name, and the Hyper-V site to which the Hyper-V server belongs.
 
@@ -179,28 +168,18 @@ Install the Provider and agent. If you're installing on a Hyper-V cluster, perfo
 	>2. Extract the Provider installer by executing the below commands from a command prompt with **Administrator** privileges
 	>
 	    	C:\Windows\System32> CD C:\ASR
-<!-- deleted by customization
 	    	C:\ASR> AzureSiteRecoveryProvider.exe /x:. /q
--->
-<!-- keep by customization: begin -->
-	    C:\ASR>AzureSiteRecoveryProvider.exe /x:. /q
-<!-- keep by customization: end -->
 	>4. Install the provider by executing the following command
 	>
 			C:\ASR> setupdr.exe /i
 	>5. Register the provider by running the following command
 	>
-<!-- deleted by customization
 	    	CD C:\Program Files\Windows Azure Site Recovery Provider\
 	    	C:\Program Files\Windows Azure Site Recovery Provider\> DRConfigurator.exe /r  /Friendlyname <friendly name of the server> /Credentials <path of the credentials file>
 
--->
-<!-- keep by customization: begin -->
-	    	CD C:\Program Files\Azure Site Recovery Provider\
-	    	C:\Program Files\Azure Site Recovery Provider\> DRConfigurator.exe /r  /Friendlyname <friendly name of the server> /Credentials <path of the credentials file>
-<!-- keep by customization: end -->
 
 	>----------
+          
 	>####Command line Install Parameter List####
 	>- **/Credentials** : Mandatory parameter that specifies the location in which the registration key file is located  
 	> - **/FriendlyName** : Mandatory parameter for the name of the Hyper-V host server that appears in the Azure Site Recovery portal.
@@ -209,7 +188,7 @@ Install the Provider and agent. If you're installing on a Hyper-V cluster, perfo
 	> - **/proxyUsername** : Optional parameter that specifies the Proxy user name (if proxy requires authentication).
 	> - **/proxyPassword** :Optional parameter that specifies the Password for authenticating with the proxy server (if proxy requires authentication).
 
-<!-- deleted by customization >[AZURE.TIP]You --><!-- keep by customization: begin --> >[AZURE.NOTE]You <!-- keep by customization: end --> can configure each of the individual Hyper-V host to use different network bandwidth settings to replicate virtual machines to Azure. Learn more about [How to Manage on-premises to Azure protection network bandwidth <!-- deleted by customization usage](https://support.microsoft.com/kb/3056159) --><!-- keep by customization: begin --> usage](https://support.microsoft.com/zh-cn/kb/3056159) <!-- keep by customization: end -->
+>[AZURE.TIP]You can configure each of the individual Hyper-V host to use different network bandwidth settings to replicate virtual machines to Azure. Learn more about [How to Manage on-premises to Azure protection network bandwidth usage](https://support.microsoft.com/kb/3056159)  
 
 
 ## Step 4: Create Azure resources
@@ -237,6 +216,7 @@ Protection groups are logical groupings of virtual machines that you want to pro
 
 
 ## Step 6: Enable virtual machine protection
+
 
 Add virtual machines to a protection group to enable protection for them.
 

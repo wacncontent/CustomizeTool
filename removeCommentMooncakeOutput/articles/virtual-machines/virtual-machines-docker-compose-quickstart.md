@@ -1,26 +1,27 @@
 <properties
-   pageTitle="Get Started with Docker and Compose on an Azure virtual machine"
-   description="Quick introduction to working with Compose and Docker on Azure"
+   pageTitle="Docker and Compose on a virtual machine | Windows Azure"
+   description="Quick introduction to working with Compose and Docker on Azure virtual machines."
    services="virtual-machines"
    documentationCenter=""
    authors="dlepow"
    manager="timlt"
-   editor=""/>
+   editor=""
+   tags="azure-resource-manager,azure-service-management"/>
 
 <tags
-   ms.service="virtual-machines"
-   ms.date="08/07/2015"
-   wacn.date=""/>
+	ms.service="virtual-machines"
+	ms.date="08/07/2015"
+	wacn.date=""/>
 
 # Get Started with Docker and Compose on an Azure virtual machine
 
 This article shows you how to get started using Docker and [Compose](http://github.com/docker/compose) to define and run a complex application on a Linux virtual machine in Azure. With Compose (the successor to *Fig*), you use a simple text file to define an application consisting of multiple Docker containers. Then you spin up your application in a single command which does everything to get it running on the VM. As an example, this article shows you how to quickly set up a WordPress blog with a backend MariaDB SQL database, but you can also use Compose to set up more complex applications.
 
-If you're new to Docker and containers, see the [Docker high level whiteboard](/documentation/videos/docker-high-level-whiteboard/).
+If you're new to Docker and containers, see the [Docker high level whiteboard](http://azure.microsoft.com/documentation/videos/docker-high-level-whiteboard/).
 
 ## Step 1: Set up a Linux VM as a Docker host
 
-You can use a variety of Azure procedures and available images in the Azure Markeplace to create a Linux VM and set it up as a Docker host. For example, see [Using the Docker VM Extension from the Azure Command-Line Interface](/documentation/articles/virtual-machines-docker-with-xplat-cli) for a quick procedure to create an Ubuntu VM with the Docker VM extension. When you use the Docker VM extension, your VM is automatically set up as a Docker host. The example in that article shows you how to use the the [Azure command-line interface for Mac, Linux, and Windows](/documentation/articles/xplat-cli) (the Azure CLI) in Service Management mode to create the VM.
+You can use a variety of Azure procedures and available images in the Azure Markeplace to create a Linux VM and set it up as a Docker host. For example, see [Using the Docker VM Extension from the Azure Command-Line Interface](/documentation/articles/virtual-machines-docker-with-xplat-cli-install) for a quick procedure to create an Ubuntu VM with the Docker VM extension. When you use the Docker VM extension, your VM is automatically set up as a Docker host. The example in that article shows you how to use the the [Azure command-line interface for Mac, Linux, and Windows](/documentation/articles/xplat-cli-install) (the Azure CLI) in Service Management mode to create the VM.
 
 ## Step 2: Install Compose
 
@@ -113,7 +114,7 @@ You should now see the WordPress start screen, where you can complete the instal
 ## Next steps
 
 * Check out the [Compose CLI reference](http://docs.docker.com/compose/cli/) and [user guide](http://docs.docker.com/compose/) for more examples of building and deploying multi-container apps.
-* Use an Azure Resource Manager template, either your own or one contributed from the [community](/documentation/templates/), to deploy an Azure VM with Docker and an application set up with Compose. For example, the [Deploy a WordPress blog with Docker](/documentation/templates/docker-wordpress-mysql/) template uses Docker and Compose to quickly deploy WordPress with a MySQL backend on an Ubuntu VM.
+* Use an Azure Resource Manager template, either your own or one contributed from the [community](http://azure.microsoft.com/documentation/templates/), to deploy an Azure VM with Docker and an application set up with Compose. For example, the [Deploy a WordPress blog with Docker](https://azure.microsoft.com/documentation/templates/docker-wordpress-mysql/) template uses Docker and Compose to quickly deploy WordPress with a MySQL backend on an Ubuntu VM.
 * Try integrating Docker Compose with a [Docker Swarm](/documentation/articles/virtual-machines-docker-swarm) cluster. See
 [Docker Compose/Swarm integration](https://github.com/docker/compose/blob/master/SWARM.md) for scenarios.
 

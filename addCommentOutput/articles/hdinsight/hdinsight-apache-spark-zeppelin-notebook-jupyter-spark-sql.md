@@ -47,7 +47,7 @@ In this section, you provision an HDInsight version 3.2 cluster, which is based 
 **To provision a Spark cluster**
 
 <!-- deleted by customization
-1. Sign in to the [Azure preview portal](https://ms.portal.azure.com/).
+1. Sign in to the [Azure preview portal](https://manage.windowsazure.cn/).
 
 2. Click **NEW**, click **Data + Analytics**, and then click **HDInsight**.
 
@@ -308,8 +308,9 @@ In this section, you use a Jupyter notebook to run Spark SQL queries against a S
 [hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
 [hdinsight-storage]: /documentation/articles/hdinsight-use-blob-storage
 <!-- deleted by customization
+
 [azure-purchase-options]: /pricing/overview/
-[azure-member-offers]: http://azure.microsoft.com/pricing/member-offers/
+[azure-member-offers]: /pricing/member-offers/
 [azure-trial]: /pricing/1rmb-trial/
 -->
 <!-- keep by customization: begin -->

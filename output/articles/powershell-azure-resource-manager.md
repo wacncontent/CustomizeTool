@@ -29,7 +29,9 @@ To complete this tutorial, you need:
 - An Azure account
   + You can [open an Azure account for free](/pricing/1rmb-trial/?WT.mc_id=A261C142F): You get credits you can use to try out paid Azure services, and even after they're used up you can keep the account and use free Azure services, such as Websites. Your credit card will never be charged, unless you explicitly change your settings and ask to be charged.
   
+<!-- deleted by customization
   + You can [activate MSDN subscriber benefits](/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F): Your MSDN subscription gives you credits every month that you can use for paid Azure services.
+-->
 - Azure PowerShell
 
 [AZURE.INCLUDE [powershell-preview-inline-include](../includes/powershell-preview-inline-include.md)]
@@ -116,7 +118,7 @@ You can get more details about a provider by specifying that namespace:
 
     ProviderNamespace RegistrationState ResourceTypes                                 Locations
     ----------------- ----------------- -------------                                 ---------
-    Microsoft.Sql     Registered        {operations}                                  {China East 2, China East, Cent...
+    Microsoft.Sql     Registered        {operations}                                  {China <!-- deleted by customization East 2 --><!-- keep by customization: begin --> North <!-- keep by customization: end -->, China East<!-- deleted by customization, Cent... -->
     Microsoft.Sql     Registered        {locations}                                   {China East 2, China East, Cent...
     Microsoft.Sql     Registered        {locations/capabilities}                      {China East 2, China East, Cent...
     ...
@@ -127,38 +129,46 @@ To limit your output to the supported locations for a specific type of of resour
     
 The output will be similar to:
 
+<!-- deleted by customization
     Brazil South
-    East Asia
+    China East
     China East
     Japan East
-    Japan West
+-->
+    China East
+<!-- deleted by customization
     China North
     China North
     China East
     West Europe
     China North
-    Southeast Asia
+    China North
     China North
     China East 2
+-->
 
 The locations you see might be slightly different than the previous results. The results could be different because an administrator in your organization has created a policy that limits which regions can be used in your subscription or there may be restrictions related to tax policies in your home country.
 
 Let's run the same command for the database:
 
     PS C:\> ((Get-AzureRmResourceProvider -ProviderNamespace Microsoft.Sql).ResourceTypes | Where-Object ResourceTypeName -eq servers).Locations
+<!-- deleted by customization
     China East 2
+-->
+    China East
+<!-- deleted by customization
+    China North
+    China North
+    China North
+    China East
     China East
     China North
-    China North
-    China North
     China East
-    East Asia
-    Southeast Asia
-    Japan West
     Japan East
     China North
     West Europe
     Brazil South
+-->
 
 It looks like these resources are available in many regions. For this topic, we will use **China North**, but you can specify any of the supported regions.
 
@@ -175,7 +185,7 @@ the location.
     PS C:\> New-AzureRmResourceGroup -Name TestRG1 -Location "China North"
     
     ResourceGroupName : TestRG1
-    Location          : westus
+    Location          : chinanorth
     ProvisioningState : Succeeded
     Tags              :
     Permissions       :
@@ -395,7 +405,7 @@ After creating a resource group, you can use the cmdlets in the Resource Manager
 		PS C:>Get-AzureRmResourceGroup
 
 		ResourceGroupName : TestRG
-		Location          : westus
+		Location          : chinanorth
 		ProvisioningState : Succeeded
 		Tags              :
 		ResourceId        : /subscriptions/{guid}/resourceGroups/TestRG
@@ -412,7 +422,7 @@ After creating a resource group, you can use the cmdlets in the Resource Manager
                 ResourceType      : Microsoft.Sql/servers
                 Kind              : v12.0
                 ResourceGroupName : TestRG1
-                Location          : westus
+                Location          : chinanorth
                 SubscriptionId    : {guid}
                 
                 ...
@@ -446,8 +456,8 @@ You can move existing resources to a new resource group. For examples, see [Move
 
 ## Next Steps
 
-- To learn about creating Resource Manager templates, see [Authoring Azure Resource Manager Templates](./resource-group-authoring-templates.md).
-- To learn about deploying templates, see [Deploy an application with Azure Resource Manager Template](./resource-group-template-deploy.md).
+- To learn about creating Resource Manager templates, see [Authoring Azure Resource Manager Templates](/documentation/articles/resource-group-authoring-templates).
+- To learn about deploying templates, see [Deploy an application with Azure Resource Manager Template](/documentation/articles/resource-group-template-deploy).
 - For a detailed example of deploying a project, see [Deploy microservices predictably in Azure](/documentation/articles/app-service-deploy-complex-application-predictably).
-- To learn about troubleshooting a deployment that failed, see [Troubleshooting resource group deployments in Azure](./virtual-machines/resource-group-deploy-debug.md).
+- To learn about troubleshooting a deployment that failed, see [Troubleshooting resource group deployments in Azure](/documentation/articles/resource-group-deploy-debug).
 

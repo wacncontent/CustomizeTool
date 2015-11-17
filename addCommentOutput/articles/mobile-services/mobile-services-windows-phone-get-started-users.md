@@ -35,7 +35,7 @@ This tutorial walks you through these basic steps to enable authentication in yo
 
 This tutorial is based on the Mobile Services quickstart. You must also first complete the tutorial [Add Mobile Services to an existing app]. 
 
->[AZURE.NOTE]This tutorial demonstrates the authentication flow managed by Mobile Services using a variety of identity providers. This method is easy to configure and supports multiple providers <!-- keep by customization: begin -->. To instead use Live Connect with client-managed authentication and provide a single sign-on experience in your Windows Phone app, see the topic [Single sign-on for Windows Phone apps by using Live Connect] <!-- keep by customization: end -->. By using client-managed authentication, your app has access to additional user data maintained by the identity provider. You can get the same user data in your mobile service by by calling the **user.getIdentities()** function in server scripts. For more information, see [this post](http://blogs.msdn.com/b/carlosfigueira/archive/2013/12/16/enhanced-users-feature-in-azure-mobile-services.aspx).
+>[AZURE.NOTE]This tutorial demonstrates the authentication flow managed by Mobile Services using a variety of identity providers. This method is easy to configure and supports multiple providers. By using client-managed authentication, your app has access to additional user data maintained by the identity provider. You can get the same user data in your mobile service by by calling the **user.getIdentities()** function in server scripts. For more information, see [this post](http://blogs.msdn.com/b/carlosfigueira/archive/2013/12/16/enhanced-users-feature-in-azure-mobile-services.aspx).
 
 ##<a name="register"></a>Register your app for authentication and configure Mobile Services
 
@@ -79,14 +79,7 @@ In the next tutorial, [Service-side authorization of Mobile Services users](/doc
 
 <!-- URLs. -->
 [Submit an app page]: http://go.microsoft.com/fwlink/p/?LinkID=266582
-<!-- deleted by customization
 [Add Mobile Services to an existing app]: /documentation/articles/mobile-services-windows-phone-get-started-data
--->
-<!-- keep by customization: begin -->
-[Get started with Mobile Services]: /documentation/articles/mobile-services-windows-phone-get-started
-<!-- keep by customization: end -->
 [Authorize users with scripts]: /documentation/articles/mobile-services-windows-phone-authorize-users-in-scripts
 [Azure Management Portal]: https://manage.windowsazure.cn/
-<!-- keep by customization: begin -->
-[Single sign-on for Windows Phone apps by using Live Connect]: /documentation/articles/mobile-services-windows-phone-single-sign-on
-<!-- keep by customization: end -->
+ 

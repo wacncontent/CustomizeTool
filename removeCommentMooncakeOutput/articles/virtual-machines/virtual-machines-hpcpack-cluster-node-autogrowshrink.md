@@ -10,7 +10,7 @@
 <tags
 	ms.service="virtual-machines"
 	ms.date="09/28/2015"
-	wacn.date="" />
+	wacn.date=""/>
 
 # Automatically scale Azure compute resources up and down in an HPC Pack cluster according to the cluster workload
 

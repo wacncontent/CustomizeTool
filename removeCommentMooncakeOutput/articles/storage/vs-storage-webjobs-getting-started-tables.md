@@ -7,17 +7,16 @@
 	manager="douge"
 	editor="tglee"/>
 
-<tags 
-	ms.service="storage" 
-
+<tags
+	ms.service="storage"
 	ms.date="09/03/2015"
 	wacn.date=""/>
 
 # Getting Started with Azure Storage (Azure WebJob Projects)
 
 > [AZURE.SELECTOR]
-> - [Getting Started](/documentation/articles/vs-storage-webjobs-getting-started-tables)
-> - [What Happened](/documentation/articles/vs-storage-webjobs-what-happened)
+> - [Getting started](/documentation/articles/vs-storage-webjobs-getting-started-tables)
+> - [What happened](/documentation/articles/vs-storage-webjobs-what-happened)
 > - [Blobs](/documentation/articles/vs-storage-webjobs-getting-started-blobs)
 > - [Queues](/documentation/articles/vs-storage-webjobs-getting-started-queues)
 > - [Tables](/documentation/articles/vs-storage-webjobs-getting-started-tables)
@@ -31,14 +30,13 @@ This article provides C# code samples that show show how to use the Azure WebJob
 The Azure Table storage service enables you to store large amounts of structured data. The service is a NoSQL datastore that accepts authenticated calls from inside and outside the Azure cloud. Azure tables are ideal for storing structured, non-relational data.  See [How to use Table Storage from .NET](/documentation/articles/storage-dotnet-how-to-use-tables#create-a-table "How to use Table Storage from .NET") for more information.
 
 
-		
-Some of the code snippets show the `Table` attribute used in functions that are [called manually](/documentation/articles/vs-storage-webjobs-getting-started-blobs#manual), that is, not by using one of the trigger attributes. 
+Some of the code snippets show the **Table** attribute used in functions that are [called manually](/documentation/articles/vs-storage-webjobs-getting-started-blobs#manual), that is, not by using one of the trigger attributes.
 
-##How to add entities to a table
+## How to add entities to a table
 
-To add entities to a table, use the `Table` attribute with an `ICollector<T>` or `IAsyncCollector<T>` parameter where `T` specifies the schema of the entities you want to add. The attribute constructor takes a string parameter that specifies the name of the table. 
+To add entities to a table, use the **Table** attribute with an **ICollector<T>** or **IAsyncCollector<T>** parameter where **T** specifies the schema of the entities you want to add. The attribute constructor takes a string parameter that specifies the name of the table.
 
-The following code sample adds `Person` entities to a table named *Ingress*.
+The following code sample adds **Person** entities to a table named *Ingress*.
 
 		[NoAutomaticTrigger]
 		public static void IngressDemo(
@@ -47,15 +45,15 @@ The following code sample adds `Person` entities to a table named *Ingress*.
 		    for (int i = 0; i < 100000; i++)
 		    {
 		        tableBinding.Add(
-		            new Person() { 
-		                PartitionKey = "Test", 
-		                RowKey = i.ToString(), 
+		            new Person() {
+		                PartitionKey = "Test",
+		                RowKey = i.ToString(),
 		                Name = "Name" }
 		            );
 		    }
 		}
 
-Typically the type you use with `ICollector` derives from `TableEntity` or implements `ITableEntity`, but it doesn't have to. Either of the following `Person` classes work with the code shown in the preceding `Ingress` method.
+Typically the type you use with **ICollector** derives from **TableEntity** or implements **ITableEntity**, but it doesn't have to. Either of the following **Person** classes work with the code shown in the preceding **Ingress** method.
 
 		public class Person : TableEntity
 		{
@@ -69,15 +67,15 @@ Typically the type you use with `ICollector` derives from `TableEntity` or imple
 		    public string Name { get; set; }
 		}
 
-If you want to work directly with the Azure storage API, you can add a `CloudStorageAccount` parameter to the method signature.
+If you want to work directly with the Azure storage API, you can add a **CloudStorageAccount** parameter to the method signature.
 
-##Real-time monitoring
+## Real-time monitoring
 
 Because data ingress functions often process large volumes of data, the WebJobs SDK dashboard provides real-time monitoring data. The **Invocation Log** section tells you if the function is still running.
 
 ![Ingress function running](./media/vs-storage-webjobs-getting-started-tables/ingressrunning.png)
 
-The **Invocation Details** page reports the function's progress (number of entities written) while it's running and gives you an opportunity to abort it. 
+The **Invocation Details** page reports the function's progress (number of entities written) while it's running and gives you an opportunity to abort it.
 
 ![Ingress function running](./media/vs-storage-webjobs-getting-started-tables/ingressprogress.png)
 
@@ -85,12 +83,12 @@ When the function finishes, the **Invocation Details** page reports the number o
 
 ![Ingress function finished](./media/vs-storage-webjobs-getting-started-tables/ingresssuccess.png)
 
-##How to read multiple entities from a table
+## How to read multiple entities from a table
 
-To read a table, use the `Table` attribute with an `IQueryable<T>` parameter where type `T` derives from `TableEntity` or implements `ITableEntity`.
+To read a table, use the **Table** attribute with an **IQueryable<T>** parameter where type **T** derives from **TableEntity** or implements **ITableEntity**.
 
-The following code sample reads and logs all rows from the `Ingress` table:
- 
+The following code sample reads and logs all rows from the **Ingress** table:
+
 		public static void ReadTable(
 		    [Table("Ingress")] IQueryable<Person> tableBinding,
 		    TextWriter logger)
@@ -98,16 +96,16 @@ The following code sample reads and logs all rows from the `Ingress` table:
 		    var query = from p in tableBinding select p;
 		    foreach (Person person in query)
 		    {
-		        logger.WriteLine("PK:{0}, RK:{1}, Name:{2}", 
+		        logger.WriteLine("PK:{0}, RK:{1}, Name:{2}",
 		            person.PartitionKey, person.RowKey, person.Name);
 		    }
 		}
 
-###How to read a single entity from a table
+### How to read a single entity from a table
 
-There is a `Table` attribute constructor with two additional parameters that let you specify the partition key and row key when you want to bind to a single table entity.
+There is a **Table** attribute constructor with two additional parameters that let you specify the partition key and row key when you want to bind to a single table entity.
 
-The following code sample reads a table row for a `Person` entity based on partition key and row key values received in a queue message:  
+The following code sample reads a table row for a **Person** entity based on partition key and row key values received in a queue message:  
 
 		public static void ReadTableEntity(
 		    [QueueTrigger("inputqueue")] Person personInQueue,
@@ -127,14 +125,14 @@ The following code sample reads a table row for a `Person` entity based on parti
 		}
 
 
-The `Person` class in this example does not have to implement `ITableEntity`.
+The **Person** class in this example does not have to implement **ITableEntity**.
 
-##How to use the .NET Storage API directly to work with a table
+## How to use the .NET Storage API directly to work with a table
 
-You can also use the `Table` attribute with a `CloudTable` object for more flexibility in working with a table.
+You can also use the **Table** attribute with a **CloudTable** object for more flexibility in working with a table.
 
-The following code sample uses a `CloudTable` object to add a single entity to the *Ingress* table. 
- 
+The following code sample uses a **CloudTable** object to add a single entity to the *Ingress* table.
+
 		public static void UseStorageAPI(
 		    [Table("Ingress")] CloudTable tableBinding,
 		    TextWriter logger)
@@ -149,15 +147,14 @@ The following code sample uses a `CloudTable` object to add a single entity to t
 		    tableBinding.Execute(insertOperation);
 		}
 
-For more information about how to use the `CloudTable` object, see [How to use Table Storage from .NET](/documentation/articles/storage-dotnet-how-to-use-tables). 
+For more information about how to use the **CloudTable** object, see [How to use Table Storage from .NET](/documentation/articles/storage-dotnet-how-to-use-tables).
 
-##Related topics covered by the queues how-to article
+## Related topics covered by the queues how-to article
 
-For information about how to handle table processing triggered by a queue message, or for WebJobs SDK scenarios not specific to table processing, see [How to use Azure queue storage with the WebJobs SDK](/documentation/articles/vs-storage-webjobs-getting-started-queues). 
+For information about how to handle table processing triggered by a queue message, or for WebJobs SDK scenarios not specific to table processing, see [How to use Azure queue storage with the WebJobs SDK](/documentation/articles/vs-storage-webjobs-getting-started-queues).
 
 
 
-##Next steps
+## Next steps
 
-This article has provided code samples that show how to handle common scenarios for working with Azure tables. For more information about how to use Azure WebJobs and the WebJobs SDK, see [Azure WebJobs Recommended Resources](http://www.windowsazure.cn/documentation/articles/websites-webjobs-resources/).
- 
+This article has provided code samples that show how to handle common scenarios for working with Azure tables. For more information about how to use Azure WebJobs and the WebJobs SDK, see [Azure WebJobs Recommended Resources](/documentation/articles/websites-webjobs-resources/).

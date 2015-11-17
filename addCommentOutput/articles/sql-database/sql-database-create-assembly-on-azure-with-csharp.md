@@ -31,7 +31,7 @@ This topic provides a C# code sample you can use to issue a [CREATE ASSEMBLY](ht
 To understand this topic, you must have already partially know the following:
 
 
-- [CLR Table-Valued <!-- deleted by customization Functions](http://msdn.microsoft.com/zh-cn/library/ms131103.aspx)<br/>Explains --><!-- keep by customization: begin --> Functions](https://msdn.microsoft.com/zh-cn/library/ms131103.aspx)<br/>Explains <!-- keep by customization: end --> how the CREATE ASSEMBLY Transact-SQL statement works with other statements for the on-premises Microsoft SQL Server.
+- [CLR Table-Valued Functions](http://msdn.microsoft.com/zh-cn/library/ms131103.aspx)<br/>Explains how the CREATE ASSEMBLY Transact-SQL statement works with other statements for the on-premises Microsoft SQL Server.
 
 
 ## A. Overall Technique
@@ -326,3 +326,4 @@ The preceding Transact-SQL code block ends with a SELECT statement that calls th
 
 <!-- EndOfFile -->
 
+ 

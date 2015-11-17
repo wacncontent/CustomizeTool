@@ -30,7 +30,7 @@ To configure your connection string in the Azure service configuration:
 4.  Click the **...** button at the right end of the **Setting1** entry.
     The **Storage Account Connection String** dialog will open.
 
-5.  Choose whether you want to target the storage emulator (Microsoft
+5.  Choose whether you want to target the storage emulator <!-- deleted by customization (Microsoft --><!-- keep by customization: begin --> (Windows <!-- keep by customization: end -->
     Azure storage simulated on your local machine) or a storage
     account in the cloud. The code in this guide works with either
     option. 
@@ -74,4 +74,10 @@ You are now ready to perform the how-to tasks in this guide.
 [connection-string4]: ./media/storage-configure-connection-string-include/connection-string4.png
 [connection-string5]: ./media/storage-configure-connection-string-include/connection-string5.png
 
+<!-- deleted by customization
 [Configuring Connection Strings]: http://msdn.microsoft.com/zh-cn/library/azure/ee758697.aspx
+-->
+<!-- keep by customization: begin -->
+[Configuring Connection Strings]: /documentation/articles/storage-configure-connection-string
+<!-- keep by customization: end -->
+

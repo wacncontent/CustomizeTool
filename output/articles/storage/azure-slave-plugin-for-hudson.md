@@ -57,8 +57,14 @@ Once you have your subscription profile, follow these steps to configure the Azu
 2. Click **Configure System**.
 3. Scroll down the page to find the **Cloud** section.
 4. Click **Add new cloud > Windows Azure**.
+<!-- deleted by customization
 
 	![add new cloud](./media/azure-slave-plugin-for-hudson/hudson-setup-addcloud.png)
+-->
+<!-- keep by customization: begin -->
+
+	![add new cloud](./media/azure-slave-plugin-for-hudson/hudson-setup-addcloud.png)
+<!-- keep by customization: end -->
 
 	This will show the fields where you need to enter your subscription details.
 
@@ -79,8 +85,14 @@ A virtual machine template defines the parameters the plugin will use to create 
 2. Click on **Configure System**.
 3. Scroll down the page to find the **Cloud** section.
 4. Within the **Cloud** section, find **Add Azure Virtual Machine Template** and click the **Add** button.
+<!-- deleted by customization
 
 	![add vm template](./media/azure-slave-plugin-for-hudson/hudson-setup-addnewvmtemplate.png)
+-->
+<!-- keep by customization: begin -->
+
+	![add vm template](./media/azure-slave-plugin-for-hudson/hudson-setup-addnewvmtemplate.png)
+<!-- keep by customization: end -->
 
 5. Specify a cloud service name in the **Name** field. If the name you specify refers to an existing cloud service, the VM will be provisioned in that service. Otherwise, Azure will create a new one. 
 6. In the **Description** field, enter text that describes the template you are creating. This information is only for documentary purposes and is not used in provisioning a VM.

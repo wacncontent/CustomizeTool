@@ -17,11 +17,11 @@
 
 <!-- deleted by customization
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-both-include.md)]
-
 -->
 <!-- keep by customization: begin -->
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-include.md)] This article covers creating resources with the Resource Manager deployment model or the classic deployment model.
 <!-- keep by customization: end -->
+
 
 Set up your first or next dev/test or production SharePoint farm in Windows Azure infrastructure services, where you can take advantage of ease of configuration and the ability to quickly expand the farm to include new capacity or optimization of key functionality.
 
@@ -33,7 +33,7 @@ For virtual machines created using the classic deployment model, use the [ShareP
 
 The automatically created environment consists of three servers for a domain controller, a SQL server, and the SharePoint server in a cloud-only Azure virtual network.
 
-To create a similar configuration with the Resource Manager deployment model, use a template. See [Deploy a three-server SharePoint <!-- deleted by customization farm](/documentation/articles/virtual-machines-workload-template-sharepoint#deploy-a-three-server-sharepoint-farm) --><!-- keep by customization: begin --> farm](/documentation/articles/virtual-machines-workload-template-sharepoint/#deploy-a-three-server-sharepoint-farm) <!-- keep by customization: end -->.
+To create a similar configuration with the Resource Manager deployment model, use a template. See [Deploy a three-server SharePoint farm](/documentation/articles/virtual-machines-workload-template-sharepoint#deploy-a-three-server-sharepoint-farm).
 
 ## High-availability SharePoint dev/test farm
 
@@ -41,7 +41,7 @@ For classic virtual machines, use the [SharePoint Server Farm](/documentation/ar
 
 The automatically created environment consists of nine servers in a cloud-only Azure virtual network: two for domain controllers, three for a SQL server cluster, two application-tier SharePoint servers, and two web-tier SharePoint servers.
 
-To create a similar configuration with Resource Manager virtual machines, use a template. See [Deploy a nine-server SharePoint <!-- deleted by customization farm](/documentation/articles/virtual-machines-workload-template-sharepoint#deploy-a-nine-server-sharepoint-farm) --><!-- keep by customization: begin --> farm](/documentation/articles/virtual-machines-workload-template-sharepoint/#deploy-a-nine-server-sharepoint-farm) <!-- keep by customization: end -->.
+To create a similar configuration with Resource Manager virtual machines, use a template. See [Deploy a nine-server SharePoint farm](/documentation/articles/virtual-machines-workload-template-sharepoint#deploy-a-nine-server-sharepoint-farm).
 
 ## Hybrid cloud dev/test farm
 

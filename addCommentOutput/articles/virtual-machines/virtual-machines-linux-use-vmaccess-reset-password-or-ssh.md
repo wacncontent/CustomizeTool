@@ -14,17 +14,17 @@
 	wacn.date=""/>
 
 # How to Reset a Password or SSH for Linux Virtual Machines #
-
 <!-- deleted by customization
+
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
 
-
 -->
+
 If you can't connect to a Linux virtual machine because of a forgotten password, an incorrect Secure Shell (SSH) key, or a problem with the SSH configuration, use the Azure Preview Portal or the  VMAccessForLinux extension to reset the password or SSH key or fix the SSH configuration. Note that this article applies to the virtual machines created using the **Classic** deployment model.
 
 ## Azure Preview Portal
 
-To reset the SSH configuration in the [Azure Preview <!-- deleted by customization Portal](https://manage.windowsazure.cn) --><!-- keep by customization: begin --> Portal](manage.windowsazure.cn) <!-- keep by customization: end -->, click **Browse** > **Virtual machines** > *your Linux virtual machine* > **Reset Remote Access**. Here is an example.
+To reset the SSH configuration in the [Azure Preview Portal](https://manage.windowsazure.cn), click **Browse** > **Virtual machines** > *your Linux virtual machine* > **Reset Remote Access**. Here is an example.
 
 ![](./media/virtual-machines-linux-use-vmaccess-reset-password-or-ssh/Portal-RDP-Reset-Linux.png)
 
@@ -38,7 +38,7 @@ To reset the name and password of the user account with sudo privileges or the S
 You will need the following:
 
 - Windows Azure Linux Agent version 2.0.5 or later. Most Linux images in the Virtual Machine gallery include version 2.0.5. To find out which version is installed, run **waagent -version**. To update the agent, follow the instructions in the [Azure Linux Agent User Guide].
-- Azure Command-Line Interface (CLI). For details on setting up the Azure CLI, see [Install and Configure the Azure Command-Line <!-- deleted by customization Interface](/documentation/articles/xplat-cli-install) --><!-- keep by customization: begin --> Interface](/documentation/articles/xplat-cli) <!-- keep by customization: end -->.
+- Azure Command-Line Interface (CLI). For details on setting up the Azure CLI, see [Install and Configure the Azure Command-Line Interface](/documentation/articles/xplat-cli-install).
 - Azure PowerShell. You'll use commands in the Set-AzureVMExtension cmdlet to automatically load and configure the VMAccessForLinux extension. For details on setting up Azure PowerShell, see [How to install and configure Azure PowerShell].
 - A new password or set of SSH keys, if you want to reset either one. You don't need these if you want to reset the SSH configuration.
 

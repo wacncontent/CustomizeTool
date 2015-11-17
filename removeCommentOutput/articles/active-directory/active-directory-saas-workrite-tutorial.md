@@ -37,7 +37,7 @@ To configure Azure AD integration with Workrite, you need the following items:
 To test the steps in this tutorial, you should follow these recommendations:
 
 - You should not use your production environment, unless this is necessary.
-- If you don't have an Azure AD trial environment, you can get a one-month trial [here](https://azure.microsoft.com/pricing/1rmb-trial/). 
+- If you don't have an Azure AD trial environment, you can get a one-month trial [here](/pricing/1rmb-trial/). 
 
  
 ## Scenario Description

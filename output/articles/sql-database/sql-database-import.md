@@ -96,7 +96,12 @@ Clicking **Create** submits an import database request to the service. Depending
 
 ## Additional resources
 
+<!-- deleted by customization
 - [SQL Database documentation](/documentation/services/sql-database/)
+-->
+<!-- keep by customization: begin -->
+- [SQL Database documentation](/documentation/services/sql-databases/)
+<!-- keep by customization: end -->
 
 
 <!--Image references-->

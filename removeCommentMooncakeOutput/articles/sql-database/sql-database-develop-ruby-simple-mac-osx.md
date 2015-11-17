@@ -8,8 +8,10 @@
 	editor=""/>
 
 
-<tags 
-	ms.service="sql-database" ms.date="07/20/2015" wacn.date=""/>
+<tags
+	ms.service="sql-database"
+	ms.date="07/20/2015"
+	wacn.date=""/>
 
 
 # Connect to SQL Database by using Ruby on Mac OS X (Yosemite)

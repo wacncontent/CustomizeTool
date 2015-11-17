@@ -32,7 +32,9 @@ Media Services supports the following on demand encoders that are described in t
 
 - **Media Encoder Standard**
 - **Azure Media Encoder** 
+<!-- deleted by customization
 - **Media Encoder Premium Workflow**
+-->
 
 This article gives a brief overview of on demand media encoders and provides links to articles that give more detailed information. The topic also provides comparison of the encoders.
 
@@ -141,10 +143,17 @@ Media Processor Name|Applicable Pricing|Notes
 ---|---|---
 **Media Encoder Standard** |ENCODER|Encoding Tasks will be charged according to the size of the output Asset, in GBytes, at the rate specified [here][1], under the ENCODER column.
 **Azure Media Encoder** |ENCODER|Encoding Tasks will be charged according to the size of the output Asset, in GBytes, at the rate specified [here][1], under the ENCODER column.
+<!-- deleted by customization
 **Media Encoder Premium Workflow** |PREMIUM ENCODER|Encoding Tasks will be charged according to the size of the output Asset, in GBytes, at the rate specified [here][1], under the PREMIUM ENCODER column.
 
 
 This section compares the encoding capabilities of **Media Encoder Standard**, **Azure Media Encoder**, and **Media Encoder Premium Workflow**.
+-->
+<!-- keep by customization: begin -->
+
+
+This section compares the encoding capabilities of **Media Encoder Standard**, **Azure Media Encoder** <!-- deleted by customization, and **Media Encoder Premium Workflow** -->.
+<!-- keep by customization: end -->
 
 
 ###Input Container/File Formats

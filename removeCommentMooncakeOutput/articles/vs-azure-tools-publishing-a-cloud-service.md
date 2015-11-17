@@ -7,9 +7,9 @@
    manager="douge"
    editor="tglee" />
 <tags
-   ms.service="multiple"
-   ms.date="09/04/2015"
-   wacn.date="" />
+	ms.service="multiple"
+	ms.date="09/04/2015"
+	wacn.date=""/>
 
 # Publishing a Cloud Service using the Azure Tools
 

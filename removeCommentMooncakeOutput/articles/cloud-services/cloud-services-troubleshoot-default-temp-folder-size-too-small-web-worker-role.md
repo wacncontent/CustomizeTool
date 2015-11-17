@@ -7,10 +7,10 @@
    manager="msmets"
    editor=""
    tags="top-support-issue"/>
-<tags 
-   ms.service="cloud-services"
-   ms.date="10/14/2015"
-   wacn.date="" />
+<tags
+	ms.service="cloud-services"
+	ms.date="10/14/2015"
+	wacn.date=""/>
 
 # Default TEMP folder size is too small on a Cloud Service Web/Worker role
 
@@ -22,7 +22,7 @@ The default temporary directory of a cloud service worker or web role has a maxi
 
 If you need more help at any point in this article, you can contact the Azure experts on [the MSDN Azure and the Stack Overflow forums](/support/forums/).
 
-Alternatively, you can also file an Azure support incident. Go to the [Azure Support site](/support/options/) and click on **Get Support**. For information about using Azure Support, read the [Windows Azure Support FAQ](/support/faq/).
+Alternatively, you can also file an Azure support incident. Go to the [Azure Support site](/support/contact/) and click on **Get Support**. For information about using Azure Support, read the [Windows Azure Support FAQ](/support/faq/).
 
 
 ## Why do I run out of space?

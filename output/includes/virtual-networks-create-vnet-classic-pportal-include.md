@@ -1,3 +1,7 @@
+<!-- keep by customization: begin -->
+<!-- not suitable for Mooncake -->
+
+<!-- keep by customization: end -->
 ## How to create a classic VNet in the Azure preview portal
 
 To create a classic VNet based on the scenario above, follow the steps below.

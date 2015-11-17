@@ -33,10 +33,4 @@ Under `services\mobileServices\settings`, a new JavaScript (.js) file with a **M
 	        "<insert your key>"
 	    );
 
-<!-- deleted by customization
 [Learn more about mobile services](/documentation/services/mobile-services/) 
-
--->
-<!-- keep by customization: begin -->
-[Learn more about mobile services](/home/features/mobile-services) 
-<!-- keep by customization: end -->

@@ -733,6 +733,7 @@ This property converts all properties to lower case during serialization.
 [ASCII control codes C0 and C1]: http://en.wikipedia.org/wiki/Data_link_escape_character#C1_set
 [CLI to manage Mobile Services tables]: /documentation/articles/virtual-machines-command-line-tools#Commands_to_manage_mobile_services
 [Optimistic Concurrency Tutorial]: /documentation/articles/mobile-services-windows-store-dotnet-handle-database-conflicts
+
 [IncludeTotalCount]: http://msdn.microsoft.com/zh-cn/library/azure/dn250560.aspx
 [Skip]: http://msdn.microsoft.com/zh-cn/library/azure/dn250573.aspx
 [Take]: http://msdn.microsoft.com/zh-cn/library/azure/dn250574.aspx

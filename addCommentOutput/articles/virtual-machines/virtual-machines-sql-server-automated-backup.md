@@ -38,7 +38,7 @@ The following table describes the options that can be configured for Automated B
 
 ## Configure Automated Backup in the Portal
 
-You can use the [Azure Preview Portal](https://portal.azure.com/) to configure Automated Backup when you create a new SQL Server 2014 Virtual Machine. The following screenshot shows these options under **OPTIONAL CONFIGURATION** | **SQL AUTOMATED BACKUP**.
+You can use the [Azure Preview <!-- deleted by customization Portal](https://portal.azure.com/) --><!-- keep by customization: begin --> Portal](https://manage.windowsazure.cn/) <!-- keep by customization: end --> to configure Automated Backup when you create a new SQL Server 2014 Virtual Machine. The following screenshot shows these options under **OPTIONAL CONFIGURATION** | **SQL AUTOMATED BACKUP**.
 
 ![SQL Automatic Backup configuration in Azure Management Portal](./media/virtual-machines-sql-server-automated-backup/IC778483.jpg)
 
@@ -56,6 +56,7 @@ In the following PowerShell example, Automated Backup is configured for an exist
     $storageaccountkey = (Get-AzureStorageKey -StorageAccountName $storageaccount).Primary
     $storagecontext = New-AzureStorageContext -StorageAccountName $storageaccount -StorageAccountKey $storageaccountkey
     $autobackupconfig = New-AzureVMSqlServerAutoBackupConfig -StorageContext $storagecontext -Enable -RetentionPeriod 10
+
     Get-AzureVM -ServiceName <vmservicename> -Name <vmname> | Set-AzureVMSqlServerExtension -AutoBackupSettings $autobackupconfig | Update-AzureVM
 
 It could take several minutes to install and configure the SQL Server IaaS Agent.
@@ -68,6 +69,7 @@ To enable encryption, modify the previous script to pass the EnableEncryption pa
     $password = "P@ssw0rd"
     $encryptionpassword = $password | ConvertTo-SecureString -AsPlainText -Force  
     $autobackupconfig = New-AzureVMSqlServerAutoBackupConfig -StorageContext $storagecontext -Enable -RetentionPeriod 10 -EnableEncryption -CertificatePassword $encryptionpassword
+
     Get-AzureVM -ServiceName <vmservicename> -Name <vmname> | Set-AzureVMSqlServerExtension -AutoBackupSettings $autobackupconfig | Update-AzureVM
 
 To disable automatic backup, run the same script without the **-Enable** parameter to the **New-AzureVMSqlServerAutoBackupConfig**. As with installation, it can take several minutes to disable Automated Backup.

@@ -1,5 +1,8 @@
 <properties pageTitle="Tutorial: Azure Active Directory integration with Salesforce Sandbox | Windows Azure" description="Learn how to use Salesforce Sandbox with Azure Active Directory to enable single sign-on, automated provisioning, and more!." services="active-directory" authors="MarkusVi"  documentationCenter="na" manager="stevenpo"/>
-<tags ms.service="active-directory" ms.devlang="na" ms.topic="article" ms.tgt_pltfrm="na" ms.workload="identity" ms.date="10/07/2015" ms.author="markvi" />
+<tags
+	ms.service="active-directory"
+	ms.date="10/07/2015"
+	wacn.date=""/>
 #Tutorial: Azure Active Directory integration with Salesforce Sandbox
 >[AZURE.TIP]For feedback, click [here](https://social.msdn.microsoft.com/Forums/azure/zh-cn/7eb2d595-9d13-4311-935e-83204599629b/tutorial-azure-ad-integration-with-salesforce-sandbox?forum=WindowsAzureAD).
   

@@ -36,6 +36,7 @@ For information on how to configure the [Telestream Wirecast](http://www.telestr
 For information on how to configure the [Tricaster](http://newtek.com/products/tricaster-40.html) encoder to send a single bitrate live stream to an AMS Channel, see [Configuring Tricaster](/documentation/articles/media-services-configure-tricaster-live-encoder).
 
 
+<!-- deleted by customization
 ##Media Services learning paths
 
 You can view AMS learning paths here:
@@ -43,6 +44,7 @@ You can view AMS learning paths here:
 - [AMS Live Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/)
 - [AMS on Demand Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/)
 
+-->
 ## See also
 
 [Working with Channels that are Enabled to Perform Live Encoding with Azure Media Services](/documentation/articles/media-services-manage-live-encoder-enabled-channels).

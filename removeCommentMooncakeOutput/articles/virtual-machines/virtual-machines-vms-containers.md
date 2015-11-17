@@ -9,10 +9,10 @@
 />
 	
 
-<tags 
-	ms.service="virtual-machines" 
-	ms.date="07/02/2015" 
-	wacn.date="" />
+<tags
+	ms.service="virtual-machines"
+	ms.date="07/02/2015"
+	wacn.date=""/>
 
 <!--The next line, with one pound sign at the beginning, is the page title--> 
 # Virtual Machines and Containers in Azure
@@ -21,7 +21,7 @@ Azure offers you great cloud solutions, built on virtual machines&mdash;based on
 
 **But that's old news.** The *new* news is that Azure offers you even more Docker goodness:
 
-- [Many](/documentation/articles/virtual-machines-docker-with-xplat-cli) [different](/documentation/articles/virtual-machines-docker-with-portal) [ways](/documentation/articles/virtual-machines-docker-ubuntu-quickstart) to [create Docker hosts](https://github.com/Azure/azure-quickstart-templates/tree/master/docker-simple-on-ubuntu) for containers to suit your situation
+- [Many](/documentation/articles/virtual-machines-docker-with-xplat-cli-install) [different](/documentation/articles/virtual-machines-docker-with-portal) [ways](/documentation/articles/virtual-machines-docker-ubuntu-quickstart) to [create Docker hosts](https://github.com/Azure/azure-quickstart-templates/tree/master/docker-simple-on-ubuntu) for containers to suit your situation
 - [Azure Resource Manager](/documentation/articles/resource-group-overview) and [resource group templates](/documentation/articles/resource-group-authoring-templates) to simplify deploying and updating complex distributed applications
 - integration with a large array of both proprietary and open-source configuration management tools
 
@@ -31,7 +31,7 @@ This article not only discusses these concepts at a high level, it also contains
 
 ## The difference between virtual machines and containers
 
-Virtual machines run inside an isolated hardware virtualization environment provided by a [hypervisor](http://en.wikipedia.org/wiki/Hypervisor). In Azure, the [Virtual Machines](http://www.windowsazure.cn/home/features/virtual-machines/) service handles all that for you: You just create Virtual Machines by choosing the operating system and configuring it to run the way you want&mdash;or by uploading your own custom VM image. Virtual Machines are a time-tested, "battle-hardened" technology, and there are many tools available to manage operating systems and to configure the applications you install and run. Anything running in a virtual machine is hidden from the host operating system and, from the point of view of an application or user running inside a virtual machine, the virtual machine appears to be an autonomous physical computer.
+Virtual machines run inside an isolated hardware virtualization environment provided by a [hypervisor](http://en.wikipedia.org/wiki/Hypervisor). In Azure, the [Virtual Machines](/home/features/virtual-machines/) service handles all that for you: You just create Virtual Machines by choosing the operating system and configuring it to run the way you want&mdash;or by uploading your own custom VM image. Virtual Machines are a time-tested, "battle-hardened" technology, and there are many tools available to manage operating systems and to configure the applications you install and run. Anything running in a virtual machine is hidden from the host operating system and, from the point of view of an application or user running inside a virtual machine, the virtual machine appears to be an autonomous physical computer.
 
 [Linux containers](http://en.wikipedia.org/wiki/LXC)&mdash;which includes those created and hosted using docker tools, and there are other approaches&mdash;do not require or use a hypervisor to provide isolation. Instead, the container host uses the process and file system isolation features of the Linux kernel to expose to the container (and its application) only certain kernel features and its own isolated file system (at a minimum). From the point of view of an application running inside a container, the container appears to be a unique operating system instance. A contained application cannot see processes or any other resources outside of its container. 
 
@@ -55,7 +55,7 @@ That said, remember containers execute on a container host&mdash;an operating sy
 
 ## What are containers good for?
 
-They're great for many things, but they encourage&mdash;as do [Azure Cloud Services](http://www.windowsazure.cn/home/features/cloud-services/) and [Azure Service Fabric](/documentation/articles/service-fabric-overview)&mdash;the creation of single-service, [microservice]-oriented distributed applications, in which application design is based on more small, composable parts rather than on larger, more strongly coupled components. 
+They're great for many things, but they encourage&mdash;as do [Azure Cloud Services](/home/features/cloud-services/) and [Azure Service Fabric](/documentation/articles/service-fabric-overview)&mdash;the creation of single-service, [microservice]-oriented distributed applications, in which application design is based on more small, composable parts rather than on larger, more strongly coupled components. 
 
 This is especially true in public cloud environments like Azure, in which you rent VMs when and where you want them. Not only do you get isolation and rapid deployment and orchestration tools, but you can make more efficient application infrastructure decisions. 
 
@@ -67,7 +67,7 @@ In addition, there are many scenarios that do not lend themselves to a microserv
 
 ### Container benefits for developers
 
-In general, it's easy to see that container technology is a step forward, but there are more specific benefits as well. Let's take the example of Docker containers. This topic will not dive deeply into Docker right now (read [What is Docker?](https://www.docker.com/whatisdocker/) for that story, or [wikipedia](http://en.wikipedia.org/wiki/Docker_%28software%29)), but Docker and its ecosystem offer tremendous benefits to both developers and IT professionals.
+In general, it's easy to see that container technology is a step forward, but there are more specific benefits as well. Let's take the example of Docker containers. This topic will not dive deeply into Docker right now (read [What is Docker?](https://www.docker.com/whatisdocker/) for that story, or [wikipedia](http://wikipedia.org/wiki/Docker_%28software%29)), but Docker and its ecosystem offer tremendous benefits to both developers and IT professionals.
 
 Developers take to Docker containers quickly, because above all it makes using Linux containers easy:
 
@@ -113,13 +113,13 @@ The following table describes at a very high level the kind of feature differenc
 
 At this point, any architect, developer, or IT operations specialist might be thinking, "I can automate ALL of this; this really IS Data-Center-As-A-Service!". 
 
-You're right, it can be, and there are any number of systems, many of which you may already use, that can either manage groups of Azure VMs and inject custom code using scripts, often with the [CustomScriptingExtension for Windows](https://msdn.microsoft.com/zh-cn/library/azure/dn781373.aspx) or the [CustomScriptingExtension for Linux](http://azure.microsoft.com/blog/2014/08/20/automate-linux-vm-customization-tasks-using-customscript-extension/). You can&mdash;and perhaps already have&mdash;automated your Azure deployments using PowerShell or Azure CLI scripts [like this](/documentation/articles/virtual-machines-create-multi-vm-deployment-xplat-cli). 
+You're right, it can be, and there are any number of systems, many of which you may already use, that can either manage groups of Azure VMs and inject custom code using scripts, often with the [CustomScriptingExtension for Windows](https://msdn.microsoft.com/zh-cn/library/azure/dn781373.aspx) or the [CustomScriptingExtension for Linux](http://azure.microsoft.com/blog/2014/08/20/automate-linux-vm-customization-tasks-using-customscript-extension/). You can&mdash;and perhaps already have&mdash;automated your Azure deployments using PowerShell or Azure CLI scripts [like this](/documentation/articles/virtual-machines-create-multi-vm-deployment-xplat-cli-install). 
 
 These abilities are often then migrated to tools like [Puppet](https://puppetlabs.com/) and [Chef](https://www.chef.io/) to automate the creation of and configuration for VMs at scale. (There are links to using these tools with Azure [here](#tools-for-working-with-containers).) 
 
 ### Azure resource group templates
 
-More recently, Azure released the [Azure resource management](/documentation/articles/virtual-machines-azurerm-versus-azuresm) REST API, and updated PowerShell and Azure CLI tools to use it easily. You can deploy, modify, or redeploy entire application topologies using [Azure Resource Manager templates](https://msdn.microsoft.com/zh-cn/library/azure/dn835138.aspx) with the Azure resource management API using:
+More recently, Azure released the [Azure resource management](/documentation/articles/virtual-machines-azurerm-versus-azuresm) REST API, and updated PowerShell and Azure CLI tools to use it easily. You can deploy, modify, or redeploy entire application topologies using [Azure Resource Manager templates](/documentation/articles/resource-group-authoring-templates) with the Azure resource management API using:
 
 - the [Azure preview portal using templates](https://github.com/Azure/azure-quickstart-templates)&mdash;hint, use the "DeployToAzure" button
 - the [Azure CLI](/documentation/articles/virtual-machines-deploy-rmtemplates-azure-cli)
@@ -178,7 +178,7 @@ Docker on Windows Azure:
 
 - [Docker VM Extension for Linux on Azure](/documentation/articles/virtual-machines-docker-vm-extension)
 - [Azure Docker VM Extension User Guide](https://github.com/Azure/azure-docker-extension/blob/master/README.md)
-- [Using the Docker VM Extension from the Azure Command-line Interface (Azure CLI)](/documentation/articles/virtual-machines-docker-with-xplat-cli)
+- [Using the Docker VM Extension from the Azure Command-line Interface (Azure CLI)](/documentation/articles/virtual-machines-docker-with-xplat-cli-install)
 - [Using the Docker VM Extension from the Azure Preview Portal](/documentation/articles/virtual-machines-docker-with-portal)
 - [Getting Started Quickly with Docker in the Azure Marketplace](/documentation/articles/virtual-machines-docker-ubuntu-quickstart)
 - [How to use docker-machine on Azure](/documentation/articles/virtual-machines-docker-machine)
@@ -216,8 +216,7 @@ Configuration, cluster management, and container orchestration:
 	- [Chef and Virtual Machines](/documentation/articles/virtual-machines-windows-install-chef-client)
 	- [Video: What is Chef and How does it Work?](https://msopentech.com/blog/2014/03/31/using-chef-to-manage-azure-resources/)
 
--	[Azure Automation](http://www.windowsazure.cn/home/features/automation/)
-	
+-	[Azure Automation](/home/features/automation/)
 	
 -	Powershell DSC for Linux
     - [Blog: How to do Powershell DSC for Linux](http://blogs.technet.com/b/privatecloud/archive/2014/05/19/powershell-dsc-for-linux-step-by-step.aspx)
@@ -231,6 +230,3 @@ Check out [Docker](https://www.docker.com) and [Windows Server Containers](https
 [microservices]: http://martinfowler.com/articles/microservices.html
 [microservice]: http://martinfowler.com/articles/microservices.html
 <!--Image references-->
-
-
-

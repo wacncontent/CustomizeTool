@@ -13,9 +13,11 @@ tags="azure-service-management"/>
 	wacn.date=""/>
 
 #Miscellaneous considerations for Oracle virtual machine images
+<!-- deleted by customization
 
 
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
+-->
 
 
 This article covers considerations for Oracle virtual machines in Azure, which are based on Oracle software images provided by Microsoft, with Windows Server as the operating system.  

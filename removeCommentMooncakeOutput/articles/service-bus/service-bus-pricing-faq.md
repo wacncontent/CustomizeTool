@@ -6,17 +6,16 @@
    authors="sethmanheim"
    manager="timlt"
    editor="tysonn" />
-<tags 
-   ms.service="service-bus"
-
-   ms.date="09/09/2015"
-   wacn.date="" />
+<tags
+	ms.service="service-bus"
+	ms.date="09/09/2015"
+	wacn.date=""/>
 
 # Service Bus Pricing FAQ
 
 This section answers some frequently-asked questions about the Service Bus pricing structure. You can also visit the [Azure Support FAQ](http://go.microsoft.com/fwlink/?LinkID=185083) for general Windows Azure pricing information. For complete information about Service Bus pricing, see [Service Bus pricing details](/home/features/service-bus/#price).
 
->[AZURE.NOTE] The pricing structure for Event Hubs is described in the [Event Hubs availability and support FAQ](/home/features/service-bus/#priceevent-hubs-availability-and-support-faq) topic, with more information in the [Event Hubs pricing](/home/features/event-hubs/#price) topic.
+>[AZURE.NOTE] The pricing structure for Event Hubs is described in the [Event Hubs availability and support FAQ](/documentation/articles/event-hubs-availability-and-support-faq) topic, with more information in the [Event Hubs pricing](/home/features/event-hubs/#price) topic.
 
 - [How do you charge for Service Bus?](#how-do-you-charge-for-service-bus)
 - [What usage of Service Bus is subject to data transfer? What is not?](#what-usage-of-service-bus-is-subject-to-data-transfer-what-is-not)

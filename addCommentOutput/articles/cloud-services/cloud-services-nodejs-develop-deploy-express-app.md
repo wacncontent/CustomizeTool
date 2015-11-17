@@ -42,12 +42,7 @@ Perform the following steps to create a new cloud service project named 'express
 
 		PS C:\node> New-AzureServiceProject expressapp
 		PS C:\Node\expressapp> Add-AzureNodeWebRole
-<!-- deleted by customization
 		PS C:\Node\expressapp> Set-AzureServiceProjectRole WebRole1 Node 0.10.21
--->
-<!-- keep by customization: begin -->
-		PS C:\Node\expressapp> Set-AzureServiceProjectRole WebRole1 node 0.10.21
-<!-- keep by customization: end -->
 
 	> [AZURE.NOTE] By default, **Add-AzureNodeWebRole** uses an older version of Node.js. The **Set-AzureServiceProjectRole** statement above instructs Azure to use v0.10.21 of Node.  Note the parameters are case-sensitive.  You can verify the correct version of Node.js has been selected by checking the **engines** property in **WebRole1\package.json**.
 
@@ -70,20 +65,20 @@ Perform the following steps to create a new cloud service project named 'express
 	![The output of the express command](./media/cloud-services-nodejs-develop-deploy-express-app/node23.png)
 
 
-<!-- deleted by customization 5 --><!-- keep by customization: begin --> 3 <!-- keep by customization: end -->.  To install additional dependencies defined in the package.json file,
+5.  To install additional dependencies defined in the package.json file,
     enter the following command:
 
         PS C:\node\expressapp\WebRole1> npm install
 
 	![The output of the npm install command](./media/cloud-services-nodejs-develop-deploy-express-app/node26.png)
 
-<!-- deleted by customization 6 --><!-- keep by customization: begin --> 4 <!-- keep by customization: end -->.  Use the following command to copy the **bin/www** file to **server.js**. This is so the cloud service can find the entry point for this application.
+6.  Use the following command to copy the **bin/www** file to **server.js**. This is so the cloud service can find the entry point for this application.
 
 		PS C:\node\expressapp\WebRole1> copy bin/www server.js
 
 	After this command completes, you should have a **server.js** file in the WebRole1 directory.
 
-<!-- deleted by customization 7 --><!-- keep by customization: begin --> 5 <!-- keep by customization: end -->.  Modify the **server.js** to remove one of the '.' characters from the following line.
+7.  Modify the **server.js** to remove one of the '.' characters from the following line.
 
 		var app = require('../app');
 
@@ -93,7 +88,7 @@ Perform the following steps to create a new cloud service project named 'express
 
 	This change is required since we moved the file (formerly **bin/www**,) to the same directory as the app file being required. After making this change, save the **server.js** file.
 
-<!-- deleted by customization 8 --><!-- keep by customization: begin --> 6 <!-- keep by customization: end -->.  Use the following command to run the application in the <!-- keep by customization: begin --> Windows <!-- keep by customization: end --> Azure emulator:
+8.  Use the following command to run the application in the Azure emulator:
 
         PS C:\node\expressapp\WebRole1> Start-AzureEmulator -launch
 
@@ -139,7 +134,8 @@ Once the deployment operation completes, your browser will open and display the 
 
 For more information, see the [Node.js Developer Center](/develop/nodejs/).
 
-  [Node.js Web Application]: <!-- deleted by customization /develop/nodejs/tutorials/getting-started/ --><!-- keep by customization: begin --> /develop/nodejs/ <!-- keep by customization: end -->
+  [Node.js Web Application]: /documentation/articles/cloud-services-nodejs-develop-deploy-app
   [Express]: http://expressjs.com/
   [http://jade-lang.com]: http://jade-lang.com
 
+ 

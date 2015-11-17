@@ -31,7 +31,7 @@ If you run into problems setting up this scenario post your questions on the [Az
 Make sure you have these prerequisites in place:
 ### Azure prerequisites
 
-- You'll need a [Windows Azure](http://azure.microsoft.com/) account. If you don't have one, start with a [trial](http://aka.ms/try-azure). In addition you can read about [Azure Site Recovery Manager pricing](/home/features/site-recovery/#price).
+- You'll need a [Windows Azure](http://azure.microsoft.com/) account. If you don't have one, start with a [trial](/price/1rmb-trial). In addition you can read about [Azure Site Recovery Manager pricing](/home/features/site-recovery/#price).
 - To understand how information and data are used, read the [Windows Azure Privacy Statement](http://go.microsoft.com/fwlink/?LinkId=324899) and additional <a href="#privacy">Privacy information for Site Recovery</a> at the bottom of this topic.
 
 ### VMM prerequisites

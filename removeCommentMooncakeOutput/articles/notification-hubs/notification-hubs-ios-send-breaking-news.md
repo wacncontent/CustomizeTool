@@ -9,13 +9,12 @@
 
 <tags
 	ms.service="notification-hubs"
-
-	ms.date="06/16/2015"
+	ms.date="09/24/2015"
 	wacn.date=""/>
 
 # Use Notification Hubs to send breaking news
 
-[AZURE.INCLUDE [notification-hubs-selector-breaking-news](../includes/notification-hubs-selector-breaking-news)]
+[AZURE.INCLUDE [notification-hubs-selector-breaking-news](../includes/notification-hubs-selector-breaking-news.md)]
 
 
 ##Overview
@@ -61,7 +60,7 @@ The first step is to add the UI elements to your existing storyboard that enable
 
 		@property NSData* deviceToken;
 
-		- (void)storeCategoriesAndSubscribeWithCategories:(NSArray*)categories 
+		- (void)storeCategoriesAndSubscribeWithCategories:(NSArray*)categories
 					completion:(void (^)(NSError* error))completion;
 
 		- (NSSet*)retrieveCategories;
@@ -94,8 +93,8 @@ The first step is to add the UI elements to your existing storyboard that enable
 
 		- (void)subscribeWithCategories:(NSSet *)categories completion:(void (^)(NSError *))completion
 		{
-		    SBNotificationHub* hub = [[SBNotificationHub alloc] 
-										initWithConnectionString:@"<connection string with listen access>" 
+		    SBNotificationHub* hub = [[SBNotificationHub alloc]
+										initWithConnectionString:@"<connection string with listen access>"
 										notificationHubPath:@"<hub name>"];
 
 		    [hub registerNativeWithDeviceToken:self.deviceToken tags:categories completion: completion];
@@ -145,7 +144,7 @@ The first step is to add the UI elements to your existing storyboard that enable
 
 		-(void)MessageBox:(NSString *)title message:(NSString *)messageText
 		{
-			UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:messageText delegate:self 
+			UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:messageText delegate:self
 				cancelButtonTitle:@"OK" otherButtonTitles: nil];
 			[alert show];
 		}
@@ -213,23 +212,23 @@ Normally notifications would be sent by a backend service but, for this tutorial
 		{
 		    NSURLSession* session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration
 									 defaultSessionConfiguration] delegate:nil delegateQueue:nil];
-		    
+
 		    NSString *json;
-		    
+
 		    // Construct the messages REST endpoint
 		    NSURL* url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@/messages/%@", HubEndpoint,
 		                                       HUBNAME, API_VERSION]];
-		    
+
 		    // Generated the token to be used in the authorization header.
 		    NSString* authorizationToken = [self generateSasToken:[url absoluteString]];
-		    
+
 		    //Create the request to add the APNS notification message to the hub
 		    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
 		    [request setHTTPMethod:@"POST"];
-		    
+
 		    // Add the category as a tag
 		    [request setValue:categoryTag forHTTPHeaderField:@"ServiceBusNotification-Tags"];
-		
+
 		    // Windows Notification format of the notification message
 		    if ([pns isEqualToString:@"wns"])
 		    {
@@ -241,17 +240,17 @@ Normally notifications would be sent by a backend service but, for this tutorial
 		                                           "</visual>"
 		                                           "</toast>",
 		                categoryTag, self.notificationMessage.text];
-		        
+
 		        // Signify windows notification format
 		        [request setValue:@"windows" forHTTPHeaderField:@"ServiceBusNotification-Format"];
-		        
+
 		        // XML Content-Type
 		        [request setValue:@"application/xml" forHTTPHeaderField:@"Content-Type"];
-		        
+
 		        // Set X-WNS-TYPE header
 		        [request setValue:@"wns/toast" forHTTPHeaderField:@"X-WNS-Type"];
 		    }
-		    
+
 		    // Google Cloud Messaging Notification format of the notification message
 		    if ([pns isEqualToString:@"gcm"])
 		    {
@@ -263,7 +262,7 @@ Normally notifications would be sent by a backend service but, for this tutorial
 				// JSON Content-Type
 				[request setValue:@"application/json;charset=utf-8" forHTTPHeaderField:@"Content-Type"];
 		    }
-		    
+
 		    // Apple Notification format of the notification message
 		    if ([pns isEqualToString:@"apns"])
 		    {
@@ -275,13 +274,13 @@ Normally notifications would be sent by a backend service but, for this tutorial
 				// JSON Content-Type
 				[request setValue:@"application/json;charset=utf-8" forHTTPHeaderField:@"Content-Type"];
 		    }
-		    
+
 		    //Authenticate the notification message POST request with the SaS token
 		    [request setValue:authorizationToken forHTTPHeaderField:@"Authorization"];
-		    
+
 		    //Add the notification message body
 		    [request setHTTPBody:[json dataUsingEncoding:NSUTF8StringEncoding]];
-		    
+
 		    // Send the REST request
 		    NSURLSessionDataTask* dataTask = [session dataTaskWithRequest:request
 		               completionHandler:^(NSData *data, NSURLResponse *response, NSError *error)
@@ -300,7 +299,7 @@ Normally notifications would be sent by a backend service but, for this tutorial
 		               }];
 		    [dataTask resume];
 		}
-		
+
 
 
 2. In ViewController.m update the **Send Notification** action as shown in the code that follows. So that it will send the notifications using each tag individually and send to multiple platforms.
@@ -310,10 +309,10 @@ Normally notifications would be sent by a backend service but, for this tutorial
 		- (IBAction)SendNotificationMessage:(id)sender
 		{
 		    self.sendResults.text = @"";
-		    
-		    NSArray* categories = [NSArray arrayWithObjects: @"World", @"Politics", @"Business", 
+
+		    NSArray* categories = [NSArray arrayWithObjects: @"World", @"Politics", @"Business",
 									@"Technology", @"Science", @"Sports", nil];
-		
+
 		    // Lets send the message as breaking news for each category to WNS, GCM, and APNS
 		    for(NSString* category in categories)
 		    {
@@ -373,12 +372,10 @@ In this tutorial we learned how to broadcast breaking news by category. Consider
 
 <!-- URLs. -->
 [How To: Service Bus Notification Hubs (iOS Apps)]: http://msdn.microsoft.com/zh-cn/library/jj927168.aspx
-[Use Notification Hubs to broadcast localized breaking news]: /manage/services/notification-hubs/breaking-news-localized-dotnet/
-[Mobile Service]: /develop/mobile/tutorials/get-started
-[Notify users with Notification Hubs]: /manage/services/notification-hubs/notify-users/
-
+[Use Notification Hubs to broadcast localized breaking news]: /documentation/articles/notification-hubs-windows-store-dotnet-send-localized-breaking-news
+[Mobile Service]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started
+[Notify users with Notification Hubs]: /documentation/articles/notification-hubs-aspnet-backend-ios-notify-users
 [Azure Management Portal]: https://manage.windowsazure.cn/
-[Notification Hubs Guidance]: http://msdn.microsoft.com/zh-cn/library/jj927170.aspx
+[Notification Hubs Guidance]: http://msdn.microsoft.com/zh-cn/library/dn530749.aspx
 [Notification Hubs How-To for iOS]: http://msdn.microsoft.com/zh-cn/library/jj927168.aspx
 [get-started]: /manage/services/notification-hubs/get-started-notification-hubs-ios/
-

@@ -7,10 +7,9 @@
 	manager="timlt" 
 	editor=""/>
 
-<tags 
-	ms.service="service-bus" 
-
-	ms.date="07/25/2015" 
+<tags
+	ms.service="service-bus"
+	ms.date="07/25/2015"
 	wacn.date=""/>
 
 # Azure Service Bus

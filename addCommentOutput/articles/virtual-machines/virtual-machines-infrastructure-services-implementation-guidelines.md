@@ -50,10 +50,11 @@ Affixes can refer to different aspects that describe the particular resources. T
 Aspect | Examples | Notes
 --- | --- | ---
 Environment | dev, stg, prod | Depending on the purpose and name of each environment.
-Location | usw (China North), use (China <!-- deleted by customization East 2) --><!-- keep by customization: begin --> East) <!-- keep by customization: end --> | Depending on the region of the datacenter or the region of the organization.
+Location | usw (China North), use (China East 2) | Depending on the region of the datacenter or the region of the organization.
 Azure component, service, or product | Rg for resource group, Svc for cloud service, VNet for virtual network | Depending on the product for which the resource provides support.
 Role | sql, ora, sp, iis | Depending on the role of the virtual machine.
 Instance | 01, 02, 03, etc. | For resources that have more than one instance. For example, load balanced web servers in a cloud service.
+
 When establishing your naming conventions, make sure that they clearly state which affixes to use for each type of resource, and in which position (prefix vs suffix).
 
 ### Dates
@@ -74,12 +75,7 @@ You should define each type of resource in the naming convention, which should h
 - Cloud services
 - Virtual machines
 - Endpoints
-<!-- deleted by customization
 - Network security groups
--->
-<!-- keep by customization: begin -->
-- Network Security Groups
-<!-- keep by customization: end -->
 - Roles
 
 To ensure that the name provides enough information to determine to which resource it refers, you should use descriptive names.
@@ -90,7 +86,7 @@ When administrators create a virtual machine, Windows Azure requires them to pro
 
 In case a virtual machine is created from a .vhd image file that already contains an operating system, the virtual machine name in Azure can differ from the virtual machine’s operating system computer name. This situation can add a degree of difficulty to virtual machine management, which we therefore do not recommend. Assign the Azure virtual machine resource the same name as the computer name that you assign to the operating system of that virtual machine.
 
-We recommend that the Azure <!-- deleted by customization virtual machine --><!-- keep by customization: begin --> Virtual Machine <!-- keep by customization: end --> name be the same as the underlying <!-- deleted by customization operating system --><!-- keep by customization: begin --> OS <!-- keep by customization: end --> computer name. Because of this, follow the NetBIOS naming rules as described in [Microsoft NetBIOS <!-- deleted by customization computer naming conventions](https://support.microsoft.com/kb/188997/) --><!-- keep by customization: begin --> Computer Naming Conventions](https://support.microsoft.com/zh-CN/kb/188997) <!-- keep by customization: end -->.
+We recommend that the Azure virtual machine name be the same as the underlying operating system computer name. Because of this, follow the NetBIOS naming rules as described in [Microsoft NetBIOS computer naming conventions](https://support.microsoft.com/kb/188997/).
 
 ### Storage account names
 
@@ -375,10 +371,10 @@ Contoso determined that they needed two storage accounts:
 
 Because the virtual network does not need ongoing connectivity to the Contoso on-premises network, Contoso decided on a cloud-only virtual network.
 
-They created a cloud-only virtual network with the following settings using the Azure <!-- deleted by customization preview portal --><!-- keep by customization: begin --> Preview Portal <!-- keep by customization: end -->:
+They created a cloud-only virtual network with the following settings using the Azure preview portal:
 
 - Name: AZFAE-USE-VN01
-- Location: China East <!-- deleted by customization 2 -->
+- Location: China East 2
 - Virtual network address space: 10.0.0.0/8
 - First subnet:
 	- Name: FrontEnd
@@ -428,25 +424,13 @@ This configuration incorporates:
 
 ## Additional resources
 
-<!-- deleted by customization
 [Windows Azure subscription and service limits, quotas, and constraints](/documentation/articles/azure-subscription-service-limits#storage-limits)
--->
-<!-- keep by customization: begin -->
-[Windows Azure Subscription and Service Limits, Quotas, and Constraints](/documentation/articles/azure-subscription-service-limits#storage-limits)
-<!-- keep by customization: end -->
 
 [Sizes for virtual machines](/documentation/articles/virtual-machines-size-specs)
 
-<!-- deleted by customization
 [Azure storage scalability and performance targets](/documentation/articles/storage-scalability-targets)
 
 [Cloud Platform integration framework (Azure architecture patterns)](/documentation/articles/azure-architectures-cpif-overview)
--->
-<!-- keep by customization: begin -->
-[Azure Storage Scalability and Performance Targets](/documentation/articles/storage-scalability-targets)
-
-[Cloud Platform Integration Framework (Azure Architecture Patterns)](/documentation/articles/azure-architectures-cpif-overview)
-<!-- keep by customization: end -->
 
 [Datacenter extension reference architecture diagram](https://gallery.technet.microsoft.com/Datacenter-extension-687b1d84)
 

@@ -22,7 +22,7 @@ This article is only relevant to apps that are configured to use **Azure AD Sing
 
 ##How to Customize the Expiration Date for your Federation Certificate
 
-By default, certificates are set to expire after two years. You can choose a different expiration date for your certificate by following the steps below. The included screenshots use <!-- deleted by customization Salesforce --><!-- keep by customization: begin --> ServiceNow <!-- keep by customization: end --> for the sake of example, but these steps can apply to any federated SaaS app.
+By default, certificates are set to expire after two years. You can choose a different expiration date for your certificate by following the steps below. The included screenshots use Salesforce for the sake of example, but these steps can apply to any federated SaaS app.
 
 1. In Azure Active Directory, on the Quick Start page for your application, click on **Configure single sign-on**.
 
@@ -72,13 +72,4 @@ The renewal steps shown below should ideally result in no significant downtime f
 
 	![Download then upload the certificate](./media/active-directory-sso-certs/renew-config-app.PNG)
 
-<!-- deleted by customization
 [AZURE.INCLUDE [saas-toc](../includes/active-directory-saas-toc.md)]
-
--->
-<!-- keep by customization: begin -->
-##See Also
-
-[Application Access and Single Sign-On in Azure AD](/documentation/articles/active-directory-appssoaccess-whatis)
-
-<!-- keep by customization: end -->

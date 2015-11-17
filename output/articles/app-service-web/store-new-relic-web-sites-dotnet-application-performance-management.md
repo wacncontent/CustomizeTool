@@ -177,6 +177,7 @@ browsers to load your webpages, where they come from, and what browsers they use
 
 
 [vswebsite]: /documentation/articles/web-sites-dotnet-get-started
+
 [wmnugetbutton]: ./media/store-new-relic-web-sites-dotnet-application-performce-management/nrwmnugetbutton.png
 [wmnugetgallery]: ./media/store-new-relic-web-sites-dotnet-application-performce-management/nrwmnugetgallery.png
 

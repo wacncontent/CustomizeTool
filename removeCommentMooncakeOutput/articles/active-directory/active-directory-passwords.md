@@ -1,15 +1,15 @@
-<properties 
+<properties
 	pageTitle="What is it: Azure AD Password Management | Windows Azure"
-	description="Description of password management capabilities in Azure AD, including password reset, change, password management reporting, and writeback to your local on-premises Active Directory." 
-	services="active-directory" 
-	documentationCenter="" 
-	authors="asteen" 
-	manager="kbrint" 
+	description="Description of password management capabilities in Azure AD, including password reset, change, password management reporting, and writeback to your local on-premises Active Directory."
+	services="active-directory"
+	documentationCenter=""
+	authors="asteen"
+	manager="kbrint"
 	editor="billmath"/>
 
-<tags 
-	ms.service="active-directory"  
-	ms.date="09/18/2015" 
+<tags
+	ms.service="active-directory"
+	ms.date="09/18/2015"
 	wacn.date=""/>
 
 # Manage your passwords from anywhere
@@ -18,7 +18,7 @@ Self-service has long been a key goal for IT departments across the world as a c
 **Azure AD Password Management** is a set of capabilities that allow your users to manage any password from any device, at any time, from any location, while remaining in compliance with the security policies you define.
 
 ## Overview
-You can get started with a pilot of Azure AD Password Management in under five minutes, and can have it deployed to your entire organization in hours.  Below are some helpful resources to get you going with the service: 
+You can get started with a pilot of Azure AD Password Management in under five minutes, and can have it deployed to your entire organization in hours.  Below are some helpful resources to get you going with the service:
 
 * [**How it works**](/documentation/articles/active-directory-passwords-how-it-works) - learn about the six different components of the service and what each does
 * [**Getting started**](/documentation/articles/active-directory-passwords-getting-started) - learn how to allow you users to reset and change their cloud or on-premises passwords
@@ -36,7 +36,7 @@ Here are some of the things you can do with Azure AD's password management capab
 - **Self-service password change** allows end users or administrators to change their expired or non-expired passwords without calling an administrator or helpdesk for support.
 - **Self-service password reset** allows end users or administrators to reset their passwords automatically without calling an administrator or helpdesk for support. Self-service password reset requires Azure AD Premium or Basic. For more information, see Azure Active Directory Editions.
 - **Administrator-initiated password reset** allows an administrator to reset an end user’s or another administrator’s password from within the [Azure Management Portal](https://manage.windowsazure.cn).
-- **Password management activity reports** give administrators insights into password reset and registration activity occurring in their organization. 
+- **Password management activity reports** give administrators insights into password reset and registration activity occurring in their organization.
 - **Password Writeback** allows management of on-premises passwords from the cloud so all of the above scenarios can be performed by, or on the behalf of, federated or password synchronized users. Password Writeback requires Azure AD Premium. For more information, see Getting started with Azure AD Premium.
 
 ## Why use Azure AD Password Management?
@@ -75,4 +75,4 @@ Here are some of the reasons you should use Azure AD's password management capab
 * [Password Management FAQ](/documentation/articles/active-directory-passwords-faq)
 * [Troubleshoot Password Management](/documentation/articles/active-directory-passwords-troubleshoot)
 * [Learn More](/documentation/articles/active-directory-passwords-learn-more)
-* [Password Management on MSDN](https://msdn.microsoft.com/zh-cn/library/azure/dn510386.aspx) 
+* [Password Management on MSDN](https://msdn.microsoft.com/zh-cn/library/azure/dn510386.aspx)

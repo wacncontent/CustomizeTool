@@ -32,7 +32,7 @@ Follow the steps specified in the relevant section depending on your scenario.
 ## Migrating VMs from outside Azure to Azure Premium Storage
 
 ### Prerequisites
-- You will need an Azure subscription. If you don’t have one, you can create a one month [trial](/pricing/1rmb-trial/) subscription or visit [Azure Pricing](http://azure.microsoft.com/pricing/) for more options.
+- You will need an Azure subscription. If you don’t have one, you can create a one month [trial](/pricing/1rmb-trial/) subscription or visit [Azure Pricing](/pricing/) for more options.
 - To execute PowerShell cmdlets you will need the Windows Azure PowerShell module. See [Windows Azure Downloads](/downloads/) to download the module.
 - When you plan to use Azure VMs running on Premium Storage, you need to use the DS-series or GS-series VMs. You can use both Standard and Premium Storage disks with DS-series VMs. Premium storage disks will be available with more VM types in the future. For more information on all available Azure VM disk types and sizes, see [Virtual Machine and Cloud Service Sizes for Azure](http://msdn.microsoft.com/zh-cn/library/azure/dn197896.aspx).
 
@@ -53,7 +53,7 @@ There are three types of disks that can be used with your VM and each has specif
 
 #### Storage Account Scalability Targets
 
-Premium Storage accounts have following scalability targets in addition to the [Azure Storage Scalability and Performance Targets](http://msdn.microsoft.com/zh-cn/library/azure/dn249410.aspx). If your application requirements exceed the scalability targets of a single storage account, build your application to use multiple storage accounts, and partition your data across those storage accounts.
+Premium Storage accounts have following scalability targets in addition to the [Azure Storage Scalability and Performance <!-- deleted by customization Targets](http://msdn.microsoft.com/zh-cn/library/azure/dn249410.aspx) --><!-- keep by customization: begin --> Targets](/documentation/articles/storage-scalability-targets) <!-- keep by customization: end -->. If your application requirements exceed the scalability targets of a single storage account, build your application to use multiple storage accounts, and partition your data across those storage accounts.
 
 |Total Account Capacity|Total Bandwidth for a Locally Redundant Storage Account|
 |:--|:---|
@@ -365,7 +365,7 @@ If you have multiple VMs to migrate, automation through PowerShell scripts will 
 
     .Example (Save this script as Migrate-AzureVM.ps1)
 
-    .\Migrate-AzureVM.ps1 -SourceServiceName CurrentServiceName -SourceVMName CurrentVMName –DestStorageAccount newpremiumstorageaccount -DestServiceName NewServiceName -DestVMName NewDSVMName -DestVMSize "Standard_DS2" –Location “Southeast Asia”
+    .\Migrate-AzureVM.ps1 -SourceServiceName CurrentServiceName -SourceVMName CurrentVMName –DestStorageAccount newpremiumstorageaccount -DestServiceName NewServiceName -DestVMName NewDSVMName -DestVMSize "Standard_DS2" –Location “China North”
 
     .Link
     To find more information about how to set up Azure PowerShell, refer to the following links.

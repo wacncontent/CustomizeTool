@@ -60,7 +60,7 @@ At an authenticated (Add-AzureAccount) PowerShell command line:  (can take a few
     New-AzureResourceGroup –Name MY-AUTOMATION-RG –Location MY-RG-LOCATION-IN-QUOTES
     New-AzureAutomationAccount –ResourceGroupName MY-AUTOMATION-RG –Location MY-RG-LOCATION-IN-QUOTES –Name MY-AUTOMATION-ACCOUNT 
 
-You can put your automation account into any of the following regions (aka location):  Japan East, China East 2, West Europe, Southeast Asia, China East.
+You can put your automation account into any of the following regions (aka location):  <!-- deleted by customization  Japan East, China East 2, West Europe, --> China North, China East.
 
 ## Step 2: VM extension tweaks to the ARM template
 
@@ -181,5 +181,10 @@ Full source for this usage example is in [this Visual Studio project](https://gi
 ##Related Articles##
 
 - [Azure Automation DSC Overview](/documentation/articles/automation-dsc-overview)
+<!-- deleted by customization
+- [Azure Automation DSC cmdlets](https://msdn.microsoft.com/zh-cn/library/mt244122.aspx)
+-->
+<!-- keep by customization: begin -->
 - [Azure Automation DSC cmdlets] (https://msdn.microsoft.com/zh-cn/library/mt244122.aspx)
+<!-- keep by customization: end -->
 - [Onboarding machines for management by Azure Automation DSC](/documentation/articles/automation-dsc-onboarding)

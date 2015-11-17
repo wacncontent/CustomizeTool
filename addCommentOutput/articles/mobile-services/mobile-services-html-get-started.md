@@ -16,11 +16,9 @@
 # <a name="getting-started"> </a>Get started with Mobile Services
 
 [AZURE.INCLUDE [mobile-services-selector-get-started](../includes/mobile-services-selector-get-started.md)]
-<!-- deleted by customization
 &nbsp;
 
 [AZURE.INCLUDE [mobile-services-hero-slug](../includes/mobile-services-hero-slug.md)]
--->
 
 ##Overview 
 
@@ -43,6 +41,7 @@ The following are required to complete this tutorial:
 	+  **On Windows**: IIS Express. IIS Express is installed by the [Microsoft Web Platform Installer].
 	+  **On MacOS X**: Python, which should already be installed.
 	+  **On Linux**: Python. You must install the [latest version of Python].
+
 	You can use any web server to host the app, but these are the web servers that are supported by the downloaded scripts.  
 
 + A web browser that supports HTML5.
@@ -60,6 +59,7 @@ Once you have created your mobile service, you can follow an easy quickstart in 
 In this section you will create a new HTML app that is connected to your mobile service.
 
 1.  In the Management Portal, click **Mobile Services**, and then click the mobile service that you just created.
+
 
 2. In the quickstart tab, click **Windows** under **Choose platform** and expand **Create a new HTML app**.
 
@@ -116,7 +116,6 @@ The final stage of this tutorial is to host and run your new app on your local c
 ## <a name="next-steps"> </a>Next Steps
 Now that you have completed the quickstart, learn how to perform additional important tasks in Mobile Services:
 
-<!-- deleted by customization
 * **[Add authentication to your app]**  
   Learn how to authenticate users of your app with an identity provider.
 
@@ -125,20 +124,6 @@ Now that you have completed the quickstart, learn how to perform additional impo
 
 
 [AZURE.INCLUDE [app-service-disqus-feedback-slug](../includes/app-service-disqus-feedback-slug.md)]
--->
-<!-- keep by customization: begin -->
-* **[Get started with data]**
-  <br/>Learn more about storing and querying data using Mobile Services.
-  
-* **[Call a custom API from an HTML application]**
-  <br/>Connect your HTML application with a custom API hosted on Mobile Services.
-
-* **[Get started with authentication]**
-  <br/>Learn how to authenticate users of your app with an identity provider.
-
-* **[Mobile Services HTML/JavaScript How-to Conceptual Reference]**
-  <br/>Learn more about how to use Mobile Services with HTML/JavaScript 
-<!-- keep by customization: end -->
 
 <!-- Anchors. -->
 [Getting started with Mobile Services]:#getting-started
@@ -159,17 +144,11 @@ Now that you have completed the quickstart, learn how to perform additional impo
 
 
 <!-- URLs. -->
-<!-- deleted by customization
 [Add authentication to your app]: /documentation/articles/mobile-services-html-get-started-users
--->
-<!-- keep by customization: begin -->
-[Get started with data]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-data-html
-[Get started with authentication]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-users-html
-[Call a custom API from an HTML application]: /documentation/articles/mobile-services-html-call-custom-api
 
-<!-- keep by customization: end -->
 [Management Portal]: https://manage.windowsazure.cn/
 [Microsoft Web Platform Installer]:  http://go.microsoft.com/fwlink/p/?LinkId=286333
 [latest version of Python]: http://go.microsoft.com/fwlink/p/?LinkId=286342
 [Mobile Services HTML/JavaScript How-to Conceptual Reference]: /documentation/articles/mobile-services-html-how-to-use-client-library
 [Cross-origin resource sharing]: http://msdn.microsoft.com/zh-cn/library/azure/dn155871.aspx
+ 

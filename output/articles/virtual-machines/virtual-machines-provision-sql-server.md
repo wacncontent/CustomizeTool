@@ -22,8 +22,13 @@
 
 ## Overview
 
+<!-- deleted by customization
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
 . 
+-->
+<!-- keep by customization: begin -->
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-include.md)] This article covers creating a resource with the classic deployment model. 
+<!-- keep by customization: end -->
 
 The Azure virtual machine gallery includes several images that contain Microsoft SQL Server. You can select one of the virtual machine images from the gallery and with a few clicks you can provision the virtual machine to your Azure environment.
 
@@ -33,8 +38,10 @@ In this tutorial, you will:
 * [Open the virtual machine using Remote Desktop and complete setup](#RemoteDesktop)
 * [Complete configuration steps to connect to the virtual machine using SQL Server Management Studio on another computer](#SSMS)
 * [Next steps](#Optional)
+<!-- deleted by customization
 
 >[AZURE.NOTE] This article describes how to provision a SQL Server VM with the existing Azure Management Portal. However, it is also possible to create and manage SQL Server VMs in the [new Portal](https://manage.windowsazure.cn). There are some advantages to the new portal, such as defaulting to the use of Premium Storage, and other options, such as Automated Patching, Automated Backup, and AlwaysOn configurations. Future content will cover step-by-step instructions.
+-->
 
 ##<a id="Provision">Provision a SQL Server virtual machine from the gallery</a>
 
@@ -51,7 +58,7 @@ For the most up-to-date information on the supported SQL Server images on Azure,
 >[AZURE.NOTE] If you have a virtual machine created by using the platform image SQL Server Evaluation edition, you cannot upgrade it to a per-minute paid edition image in the gallery. You can choose one of the following two options:
 >
 > - You can create a new virtual machine by using the per-minute paid SQL Server edition from the gallery and migrate your database files to this new virtual machine by following the steps at [Migrating a Database to SQL Server on an Azure VM](/documentation/articles/virtual-machines-migrate-onpremises-database)
-> - Or, you can upgrade an existing instance of SQL Server Evaluation edition to a different edition of SQL Server under the [License Mobility through Software Assurance on Azure](http://azure.microsoft.com/pricing/license-mobility/) agreement by following the steps at [Upgrade to a Different Edition of SQL Server](https://msdn.microsoft.com/zh-cn/library/cc707783.aspx). For information on how to purchase the licensed copy of SQL Server, see [How to Buy SQL Server](http://www.microsoft.com/sqlserver/get-sql-server/how-to-buy.aspx).
+> - Or, you can upgrade an existing instance of SQL Server Evaluation edition to a different edition of SQL Server under the [License Mobility through Software Assurance on Azure](/pricing/license-mobility/) agreement by following the steps at [Upgrade to a Different Edition of SQL Server](https://msdn.microsoft.com/zh-cn/library/cc707783.aspx). For information on how to purchase the licensed copy of SQL Server, see [How to Buy SQL Server](http://www.microsoft.com/sqlserver/get-sql-server/how-to-buy.aspx).
 
 4. On the first **Virtual Machine Configuration** page, provide the following information:
 	- A **VERSION RELEASE DATE**. If multiple images are available, select the latest.
@@ -65,8 +72,19 @@ For the most up-to-date information on the supported SQL Server images on Azure,
 
 	>[AZURE.NOTE] The size of the virtual machine is specified during provisioning:
  	>
+<!-- deleted by customization
 	> - For production workloads, we recommend using Premium Storage with the following minimum recommended sizes: **DS3** for SQL Server Enterprise edition and **DS2** for SQL Server Standard edition. For more information, see [Performance Best Practices for SQL Server in Azure Virtual Machines](/documentation/articles/virtual-machines-sql-server-performance-best-practices).
 	> - The selected size limits the number of data disks you can configure. For most up-to-date information on available virtual machine sizes and the number of data disks that you can attach to a virtual machine, see [Virtual Machine Sizes for Azure](/documentation/articles/virtual-machines-size-specs).
+-->
+<!-- keep by customization: begin -->
+	> - A2 is the smallest size recommended for production workloads. 
+    > - The minimum recommended size for a virtual machine is A3 when using SQL Server Enterprise Edition.
+    > - Select A3 or higher when using SQL Server Enterprise Edition.
+   	> - Select A4 or higher when using SQL Server 2012 or 2014 Enterprise Optimized for Transactional Workloads images.  
+   	> - Select A7 or higher when using SQL Server 2012 or 2014 Enterprise Optimized for Data Warehousing Workloads images. 
+   	> - For the best performance use DS2 or DS3 with Premium Storage. For more information, see [Performance Best Practices for SQL Server in Azure Virtual Machines](/documentation/articles/virtual-machines-sql-server-performance-best-practices).
+	> - The size selected  limits the number of data disks you can configure. For most up-to-date information on available virtual machine sizes and the number of data disks that you can attach to a virtual machine, see [Virtual Machine Sizes for Azure](/documentation/articles/virtual-machines-size-specs).
+<!-- keep by customization: end -->
 
 5. After entering your VM configuration details, click the next arrow on the bottom right to continue.
 

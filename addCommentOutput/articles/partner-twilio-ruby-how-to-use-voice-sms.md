@@ -189,9 +189,4 @@ Now that you've learned the basics of the Twilio service, follow these links to 
 [twilio_support]: http://www.twilio.com/help/contact
 [twilio_quickstarts]: http://www.twilio.com/docs/quickstart
 [sinatra]: http://www.sinatrarb.com/
-<!-- deleted by customization
 [azure_vm_setup]: /develop/ruby/tutorials/web-app-with-linux-vm/
--->
-<!-- keep by customization: begin -->
-[azure_vm_setup]: http://www.windowsazure.cn/develop/ruby/tutorials/web-app-with-linux-vm/
-<!-- keep by customization: end -->

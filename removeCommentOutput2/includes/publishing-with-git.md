@@ -22,7 +22,7 @@ The task includes the following steps:
 
 The steps required to install Git vary between operating systems. See [Installing Git] for operating system specific distributions and installation guidance.
 
-> [AZURE.NOTE] On some operating systems, both a command-line and GUI version of Git arewill available. The instructions provided in this article use the command-line version.
+> [AZURE.NOTE] On some operating systems, both a command-line and GUI version of Git will are available. The instructions provided in this article use the command-line version.
 
 ## <a id="Step2"></a>Step 2: Create a local repository
 
@@ -217,7 +217,7 @@ The steps for pushing your Visual Studio solution to an Azure Website is the sam
 
 -	In your Visual Studio solution, [enable NuGet Package Restore](http://docs.nuget.org/docs/workflows/using-nuget-without-committing-packages) to make Visual Studio automatically restore missing packages.
 
-Once you have set up your repository as described, and configured your Azure forWebsite continuous publishing from one of the online Git repositories, you can develop your ASP.NET application locally in Visual Studio and continuously deploy your code simply by pushing your changes to your online Git repository.
+Once you have set up your repository as described, and configured your Azure Website for continuous publishing from one of the online Git repositories, you can develop your ASP.NET application locally in Visual Studio and continuously deploy your code simply by pushing your changes to your online Git repository.
 
 <h4>How continuous deployment works</h4>
 Continuous deployment works by providing the **DEPLOYMENT TRIGGER URL** found in the **deployments** section of your site's **Configure** tab.
@@ -248,7 +248,7 @@ After answering **Yes** to the confirmation message, you can return to **quick g
 
 ## <a id="Step8"></a>Troubleshooting
 
-The following are errors or problems commonly encountered when using Git to publish to an Azure:website 
+The following are errors or problems commonly encountered when using Git to publish to an Azure website:
 
 ****
 
@@ -338,4 +338,4 @@ The following are errors or problems commonly encountered when using Git to publ
 [Create a Repo (BitBucket)]: https://confluence.atlassian.com/display/BITBUCKET/Create+an+Account+and+a+Git+Repo
 [Quick Start - Mercurial]: http://mercurial.selenic.com/wiki/QuickStart
 [Using Dropbox to Share Git Repositories]: https://gist.github.com/trey/2722927
-[Continuous delivery to Azure using Visual Studio Online]: /documentation/articles/cloud-services-continuous-delivery-use-vso
+[Continuous delivery to Azure using Visual Studio Online]: /documentation/articles/cloud-services-continuous-delivery-use-vso/ 

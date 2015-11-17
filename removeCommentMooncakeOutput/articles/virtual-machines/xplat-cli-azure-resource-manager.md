@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Using the Windows Azure CLI for Mac, Linux, and Windows with Azure Resource Management | Windows Azure"
+	pageTitle="CLI for Mac, Linux, and Windows | Windows Azure"
 	description="Using the Windows Azure CLI for Mac, Linux, and Windows with Azure Resource Manager."
 	editor="tysonn"
 	manager="timlt"
@@ -16,7 +16,8 @@
 
 > [AZURE.SELECTOR]
 - [Azure PowerShell](/documentation/articles/powershell-azure-resource-manager)
-- [Azure CLI](/documentation/articles/xplat-cli-azure-resource-manager)
+
+<br>
 
 
 This article describes how to create, manage, and delete Azure resources and VMs using the Azure CLI for Mac, Linux, and Windows using the Azure Resource Manager mode.  
@@ -340,5 +341,5 @@ To view logged information on operations performed on a group, use the `azure gr
 [signuporg]: /documentation/articles/sign-up-organization/
 [adtenant]: http://technet.microsoft.com/zh-cn/library/jj573650#createAzureTenant
 [portal]: https://manage.windowsazure.cn/
-[clisetup]: /documentation/articles/xplat-cli
+[clisetup]: /documentation/articles/xplat-cli-install
 [psrm]: http://go.microsoft.com/fwlink/?LinkId=394760

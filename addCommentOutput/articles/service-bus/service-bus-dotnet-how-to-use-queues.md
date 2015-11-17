@@ -51,7 +51,7 @@ In both cases, you can retrieve your connection string using the [CloudConfigura
 
 ### Configure your connection string when using Cloud Services
 
-The service configuration mechanism is unique to Azure Cloud Services projects and enables you to dynamically change configuration settings from the Azure <!-- deleted by customization Management Portal --><!-- keep by customization: begin --> management portal <!-- keep by customization: end --> without redeploying your application. For example, add a `Setting` label to your service definition (.csdef) file, as shown in the next example.
+The service configuration mechanism is unique to Azure Cloud Services projects and enables you to dynamically change configuration settings from the Azure Management Portal without redeploying your application. For example, add a `Setting` label to your service definition (.csdef) file, as shown in the next example.
 
 ```
 <ServiceDefinition name="Azure1">
@@ -79,7 +79,7 @@ You then specify values in the service configuration (.cscfg) file, as shown in 
 </ServiceConfiguration>
 ```
 
-Use the Shared Access Signature (SAS) key name and key values retrieved from the Azure <!-- deleted by customization Management Portal --><!-- keep by customization: begin --> management portal <!-- keep by customization: end --> as described in the previous section.
+Use the Shared Access Signature (SAS) key name and key values retrieved from the Azure Management Portal as described in the previous section.
 
 ### Configure your connection string when using websites or Azure Virtual Machines
 
@@ -94,14 +94,9 @@ When using websites or Virtual Machines, it is recommended that you use the .NET
 </configuration>
 ```
 
-Use the SAS name and key values that you retrieved from the Azure <!-- deleted by customization Management Portal --><!-- keep by customization: begin --> management portal <!-- keep by customization: end -->, as described in the previous section.
+Use the SAS name and key values that you retrieved from the Azure Management Portal, as described in the previous section.
 
-<!-- deleted by customization
 ## Create a queue
--->
-<!-- keep by customization: begin -->
-## How to create a queue
-<!-- keep by customization: end -->
 
 You can perform management operations for Service Bus queues using the [NamespaceManager][] class. This class provides methods to create, enumerate, and delete queues.
 

@@ -182,7 +182,12 @@ In this section, we'll configure environment variables for the Web Apps instance
 
   	<!-- ![Top Menu](./media/web-sites-python-ptvs-flask-table-storage/PollsCommonWebSiteTopMenu.png) -->
 
+<!-- deleted by customization
+1.  Scroll down to the **app settings** section and set the values for **REPOSITORY\_NAME**, **STORAGE\_NAME** and **STORAGE\_KEY** as described in the section above.
+-->
+<!-- keep by customization: begin -->
 1.  Scroll down to the **app settings** section and set the values for **REPOSITORY_NAME**, **STORAGE_NAME** and **STORAGE_KEY** as described in the section above.
+<!-- keep by customization: end -->
 
   	<!-- ![App Settings](./media/web-sites-python-ptvs-flask-table-storage/PollsCommonWebSiteConfigureSettingsTableStorage.png) -->
 
@@ -220,6 +225,7 @@ Follow these links to learn more about Python Tools for Visual Studio, Flask and
 [Azure Cloud Services]: /documentation/articles/cloud-services-python-ptvs
 [documentation]: /documentation/articles/storage-python-how-to-use-table-storage
 [How to Use the Table Storage Service from Python]: /documentation/articles/storage-python-how-to-use-table-storage
+
 <!--External Link references-->
 [Azure Management Portal]: https://manage.windowsazure.cn
 [Azure SDK for .NET]: /downloads/

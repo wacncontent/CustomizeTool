@@ -7,9 +7,9 @@
 	manager="dwrede" 
 	editor=""/>
 
-<tags 
-	ms.service="mobile-services" 
-	ms.date="07/22/2015" 
+<tags
+	ms.service="mobile-services"
+	ms.date="07/22/2015"
 	wacn.date=""/>
 
 
@@ -102,3 +102,4 @@ Learn more about Mobile Services and Notification Hubs in the following topics:
 
 [How to use a .NET client for Azure Mobile Services]: /documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library
 [MobileServiceClient]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.mobileservices.mobileserviceclient.aspx
+ 

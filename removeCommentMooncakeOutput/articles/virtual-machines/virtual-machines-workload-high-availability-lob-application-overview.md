@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Deploy a High-Availability Line of Business Application in Azure" 
-	description="You can deploy a web-based, high-availability, line of business application with SQL Server AlwaysOn Availability Groups in Azure in five phases." 
+	pageTitle="Deploy a line of business application | Windows Azure" 
+	description="Deploy a web-based, highly-available, line of business application with SQL Server AlwaysOn Availability Groups in Azure in five phases." 
 	documentationCenter=""
 	services="virtual-machines" 
 	authors="JoeDavies-MSFT" 
@@ -8,9 +8,9 @@
 	editor=""
 	tags="azure-resource-manager"/>
 
-<tags 
-	ms.service="virtual-machines" 
-	ms.date="08/11/2015" 
+<tags
+	ms.service="virtual-machines"
+	ms.date="08/11/2015"
 	wacn.date=""/>
 
 # Deploy a high-availability line of business application in Azure

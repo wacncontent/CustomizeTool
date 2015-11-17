@@ -19,7 +19,7 @@ Once you have initialized your Java web app in [Azure Websites][] as documented 
 The navigation path to the **webapps** folder differs based on how you set up your Web Apps instance.
 <!-- deleted by customization
 
-- If you set up your web app by using the Azure Marketplace, the path to the **webapps** folder is in the form **d:\home\site\wwwroot\bin\application_server\webapps**, where **application_server** is the name of the application server in effect for your Web Apps instance. 
+- If you set up your web app by using the Azure Marketplace, the path to the **webapps** folder is in the form **d:\home\site\wwwroot\bin\application\_server\webapps**, where **application\_server** is the name of the application server in effect for your Web Apps instance. 
 -->
 - If you set up your web app by using the Azure configuration UI, the path to the **webapps** folder is in the form **d:\home\site\wwwroot\webapps**. 
 

@@ -80,11 +80,11 @@ Here is an example of you might see:
 	PS C:\> $locName="China North"
 	PS C:\> $rgName="TestRG"
 	PS C:\> New-AzureRmResourceGroup -Name $rgName -Location $locName
-	VERBOSE: 12:45:15 PM - Created resource group 'TestRG' in location 'westus'
+	VERBOSE: 12:45:15 PM - Created resource group 'TestRG' in location 'chinanorth'
 
 
 	ResourceGroupName : TestRG
-	Location          : westus
+	Location          : chinanorth
 	ProvisioningState : Succeeded
 	Tags              :
 	Permissions       :

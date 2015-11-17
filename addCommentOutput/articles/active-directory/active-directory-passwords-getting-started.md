@@ -43,14 +43,16 @@ Before you can enable and use self-service password reset, you must complete the
 - Create an AAD tenant. <!-- deleted by customization For more information, see [Getting Started with Azure AD](https://azure.microsoft.com/trial/get-started-active-directory/) -->
 - Obtain an Azure subscription. For more information, see [What is an Azure AD tenant?](/documentation/articles/active-directory-administer#what-is-an-azure-ad-tenant).
 - Associate your AAD tenant with your Azure subscription. For more information, see [How Azure subscriptions are associated with Azure AD](https://msdn.microsoft.com/zh-cn/library/azure/dn629581.aspx).
-- Upgrade to Azure AD Premium or Basic. For more information, see [Azure Active Directory <!-- deleted by customization Editions](/home/features/identity/#price) --><!-- keep by customization: begin --> Editions](http://www.windowsazure.cn/home/features/identity/#price) <!-- keep by customization: end -->.
+- Upgrade to Azure AD Premium or Basic. For more information, see [Azure Active Directory Editions](/home/features/identity/#price).
 
   >[AZURE.NOTE] To enable self-service password reset, you must upgrade to Azure AD Premium or Azure AD Basic. For more information, Azure Active Directory Editions. This information includes detailed instructions on how to sign up for Azure AD Premium or Basic, how to activate your license plan and activate your Azure AD access, and how to assign access to administrator and user accounts.
+
 - Create at least one administrator account and one user account in your AAD directory.
 - Assign an AAD Premium or Basic license to the administrator and user account that you created.
 
 ### Step 1: Configure password reset policy
 To configure user password reset policy, complete the following steps:
+
 1.	Open a browser of your choice and go to the [Azure Management Portal](https://manage.windowsazure.cn).
 2.	In the [Azure Management Portal](https://manage.windowsazure.cn), find the **Active Directory extension** on the navigation bar on the left hand side.
 
@@ -112,7 +114,7 @@ If you want to learn more about what data is used by password reset, as well as 
 Now that you’ve configured a user reset policy and specified contact details for your user, this user can perform a self-service password reset.
 
 #### To perform a self-service password reset
-1.	If you go to a site like <!-- deleted by customization [**portal.microsoftonline.com**](http://portal.partner.microsoftonline.cn) --><!-- keep by customization: begin --> [**portal.partner.microsoftonline.cn**](https://portal.partner.microsoftonline.cn) <!-- keep by customization: end -->, you’ll see a login screen like the below.  Click the **Can’t access your account?** link to test the password reset UI.
+1.	If you go to a site like <!-- deleted by customization [**portal.partner.microsoftonline.cn**](http://portal.partner.microsoftonline.cn) --><!-- keep by customization: begin --> [**portal.partner.microsoftonline.cn**](https://portal.partner.microsoftonline.cn) <!-- keep by customization: end -->, you’ll see a login screen like the below.  Click the **Can’t access your account?** link to test the password reset UI.
 
     ![][011]
 
@@ -173,13 +175,16 @@ Before you can enable and use the Password Writeback, you must make sure you com
 - You have at least one administrator account and one test user account with an Azure AD Premium license that you can use to test this feature.  For more information, see [Azure Active Directory Editions](/documentation/articles/active-directory-editions).
 
   > [AZURE.NOTE] Make sure that the administrator account that you use to enable Password Writeback is a cloud administrator account (created in Azure AD), not a federated account (created in on-premises AD and synchronized into Azure AD).
+
 - You have a single or multi-forest AD on-premises deployment running Windows Server 2008, Windows Server 2008 R2, Windows Server 2012, or Windows Server 2012 R2 with the latest service packs installed.
 
   > [AZURE.NOTE] If you are running an older version of Windows Server 2008 or 2008 R2, you can still use this feature, but will need to [download and install KB 2386717](https://support.microsoft.com/kb/2386717) before being able to enforce your local AD password policy in the cloud.
+
 - You have the Azure AD Connect tool installed and you have prepared your AD environment for synchronization to the cloud.  For more information, see [Use your on-premises identity infrastructure in the cloud](/documentation/articles/active-directory-aadconnect).
 - If you are using DirSync, you must make sure your organization’s firewall is configured to block outbound connection and unblock **TCP port 828 or 818** in order to enable and use Password Writeback.  If you are using Azure AD Sync or Azure AD Connect, this step is not necessary, as only **TCP 443** outbound (and in some cases **TCP 9350-9354**) need to be open.
 
   > [AZURE.NOTE] We highly recommend anyone using the Azure AD Sync or DirSync tools upgrades to the latest version of Azure AD Connect to ensure the best possible experience and new features as they are released.
+
 
 ### Step 1: Download the latest version of Azure AD Connect
 Password Writeback is available in releases of Azure AD Connect, or the Azure AD Sync tool with version number **1.0.0419.0911** or higher.  Password Writeback with automatic account unlock is available in releases of Azure AD Connect, or the Azure AD Sync tool with version number **1.0.0485.0222** or higher. If you are running an older version, please upgrade to at least this version before proceeding. [Click here to download the latest version of Azure AD Connect](/documentation/articles/active-directory-aadconnect#download-azure-ad-connect).
@@ -270,6 +275,7 @@ Setting these permissions will allow the MA service account for each forest to m
 
 ### Step 5: Reset your AD password as a user
 Now that Password Writeback has been enabled, you can test that it works by resetting the password of a user whose account has been synchronized into your cloud tenant.
+
 #### To verify Password Writeback is working properly
 1.	Navigate to [https://passwordreset.microsoftonline.com](https://passwordreset.microsoftonline.com) or go to any organizational ID login screen and click the **Can’t access your account?** link.
 

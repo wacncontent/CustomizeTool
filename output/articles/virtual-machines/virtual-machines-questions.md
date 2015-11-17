@@ -14,9 +14,11 @@
 	wacn.date=""/>
 
 # Frequently asked question about Azure Virtual Machines created with the classic deployment model
+<!-- deleted by customization
 
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
 
+-->
 
 This article addresses some common questions users ask about Azure virtual machines created with the classic deployment model, based on input from the Azure VM Support team, as well as from forums, newsgroups, and comments in other articles. For basic information, start with [About Virtual Machines](/documentation/articles/virtual-machines-about).
 
@@ -107,7 +109,7 @@ Additional details:
 
 Azure offers several options for anti-virus solutions, but it’s up to you to manage it. For example, you might need a separate subscription for antimalware software, and you’ll need to decide when to run scans and install updates. You can add anti-virus support with a VM extension for Microsoft Antimalware, Symantec Endpoint Protection, or TrendMicro Deep Security Agent when you create a Windows virtual machine, or at a later point. The Symantec and TrendMicro extensions let you use a free limited-time trial subscription or an existing enterprise subscription. Microsoft Antimalware is free of charge. For details, see:
 
-- [How to install and configure Symantec Endpoint Protection on an Azure VM](https://azure.microsoft.com/zh-cn/documentation/articles/virtual-machines-install-symantec/)
+- [How to install and configure Symantec Endpoint Protection on an Azure <!-- deleted by customization VM](https://azure.microsoft.com/zh-cn/documentation/articles/virtual-machines-install-symantec/) --><!-- keep by customization: begin --> VM](/documentation/articles/virtual-machines-install-symantec) <!-- keep by customization: end -->
 - [How to install and configure Trend Micro Deep Security as a Service on an Azure VM](/documentation/articles/virtual-machines-install-trend/)
 - [Deploying Antimalware Solutions on Azure Virtual Machines](http://azure.microsoft.com/blog/2014/05/13/deploying-antimalware-solutions-on-azure-virtual-machines/)
 

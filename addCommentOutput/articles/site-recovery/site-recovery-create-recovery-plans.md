@@ -20,7 +20,7 @@ The Site Recovery service contributes to a robust business continuity and disast
 
 The article provides information about creating and customizing recovery plans. 
 
-If you have any questions after reading this article post them on the [Azure Recovery Services <!-- deleted by customization Forum](https://social.msdn.microsoft.com/forums/azure/home?forum=hypervrecovmgr) --><!-- keep by customization: begin --> Forum](https://social.msdn.microsoft.com/Forums/zh-CN/home?forum=hypervrecovmgr) <!-- keep by customization: end -->.
+If you have any questions after reading this article post them on the [Azure Recovery Services Forum](https://social.msdn.microsoft.com/forums/azure/home?forum=hypervrecovmgr).
 
 ## Overview
 
@@ -118,3 +118,6 @@ You can extend your recovery plan by running an Azure automation runbook as part
 ## Run a failover
 
 You can run different types of failovers recovery plan, including a test failover to check your environment, and a planned or unplanned failover. Read more about failover and get instructions for running different types of failovers [here](/documentation/articles/site-recovery-failover) about failover.
+
+
+ 

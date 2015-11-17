@@ -9,8 +9,8 @@
 	editor=""/>
 
 <tags
-	ms.service="active-directory" 
-	ms.date="10/09/2015" 
+	ms.service="active-directory"
+	ms.date="10/09/2015"
 	wacn.date=""/>
 
 # Managing owners to a group
@@ -36,7 +36,5 @@
 Here are some topics that will provide some additional information on Azure Active Directory 
 
 * [Managing access to resources with Azure Active Directory groups](/documentation/articles/active-directory-manage-groups)
-
 * [What is Azure Active Directory?](/documentation/articles/active-directory-whatis)
-
 * [Integrating your on-premises identities with Azure Active Directory](/documentation/articles/active-directory-aadconnect)

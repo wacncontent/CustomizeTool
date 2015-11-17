@@ -15,7 +15,7 @@
 
 ## Configure Scheduler using the Azure Management Portal to quickly and easily create jobs
 
-To complete this tutorial, you need an Azure account that has the Azure Scheduler feature enabled. If you don't have an account, you can create a trial account in just a couple of minutes. For details, refer to [Azure Trial](https://azure.microsoft.com/pricing/1rmb-trial/).
+To complete this tutorial, you need an Azure account that has the Azure Scheduler feature enabled. If you don't have an account, you can create a trial account in just a couple of minutes. For details, refer to [Azure Trial](/pricing/1rmb-trial/).
 
 ## Get started
 
@@ -29,7 +29,7 @@ The first time you open the Azure Management Portal, you are automatically place
 
 1.  Sign in to the [Azure Management Portal](https://manage.windowsazure.cn/).  
 
-2.  Click **Azure Websites** > **Create New** > **Scheduler**, and then click **Custom Create**. <br /><br /> ![][2]
+2.  Click **App Services** > **Create New** > **Scheduler**, and then click **Custom Create**. <br /><br /> ![][2]
 
 3.  In **Job Collection**, select the name of the existing job collection under the **Job Collection** drop-down. If you don’t have an existing job collection you’d like to add the job to, select **Create New** and enter a name to identify your new job collection.<br /><br /> ![][3]
 

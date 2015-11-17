@@ -9,15 +9,15 @@
    tags="azure-resource-manager,azure-service-management"/>
 
 <tags
-   ms.service="virtual-machines"
-   ms.date="04/29/2015"
-   wacn.date=""/>
+	ms.service="virtual-machines"
+	ms.date="04/29/2015"
+	wacn.date=""/>
 
-# Azure Compute, Network & Storage Providers under the Azure Resource Manager
+# Azure Compute, Network, and Storage Providers under the Azure Resource Manager
 
 The inclusion of Compute, Network & Storage capabilities with the Azure Resource Manager will fundamentally simplify the deployment and management of complex applications running on IaaS. Many applications require a combination of resources, including a Virtual Network, Storage Account, Virtual Machine, and a Network Interface. The Azure Resource Manager offers the ability to construct a JSON template to deploy and manage all these resources together as a single application.
 
-## Advantages of integrating Compute, Network & Storage under the Azure Resource Manager
+## Advantages of integrating Compute, Network, and Storage under the Azure Resource Manager
 
 The Azure Resource Manager offers the ability to easily leverage pre-built application templates or construct an application template to deploy and manage compute, network, and storage resources on Azure. In this section, we’ll walk through the advantages of deploying resources through the Azure Resource Manager.
 
@@ -29,14 +29,14 @@ The Azure Resource Manager offers the ability to easily leverage pre-built appli
 -	Simplified Upgrade/Update story by modifying the original template and then redeploying it
 
 
-## Advancements of the Compute, Network & Storage APIs under Azure Resource Manager
+## Advancements of the Compute, Network, and Storage APIs under Azure Resource Manager
 
 In addition to the advantages mentioned above, there are some significant performance advancements in the APIs released.
 
 -	Enabling massive and parallel deployment of Virtual Machines
 -	Support for 3 Fault Domains in Availability Sets
 -	Improved Custom Script extension that allows specification of scripts from any publicly accessible custom URL
-- Integration of Virtual Machines with the Azure Key Vault for highly secure storage and private deployment of secrets from [FIPS-validated](https://en.wikipedia.org/wiki/FIPS_140-2) [Hardware Security Modules](https://en.wikipedia.org/wiki/Hardware_security_module)
+- Integration of Virtual Machines with the Azure Key Vault for highly secure storage and private deployment of secrets from [FIPS-validated](http://wikipedia.org/wiki/FIPS_140-2) [Hardware Security Modules](http://wikipedia.org/wiki/Hardware_security_module)
 -	Provides the basic building blocks of networking through APIs to enable customers to construct complicated applications that include Network Interfaces, Load Balancers, and Virtual Networks
 -	Network Interfaces as a new object allows complicated network configuration to be sustained and reused for Virtual Machines
 -	Load Balancers as a first-class resource enables IP Address assignments
@@ -56,7 +56,7 @@ In this section, we will walk through some of the most important conceptual diff
 |Reserved IP Address|	You can reserve an IP Address in Azure and associate it with a Cloud Service to ensure that the IP Address is sticky.	| Public IP Address can be created in “Static” mode and it offers the same capability as a “Reserved IP Address”. Static Public IPs can only be assigned to a Load balancer right now. |
 |Public IP Address (PIP) per VM	| Public IP Addresses can also associated to a VM directly. | Public IP address is a resource exposed by the Microsoft.Network provider. Public IP Address can be Static (Reserved) or Dynamic. However, only dynamic Public IPs can be assigned to a Network Interface to get a Public IP per VM right now. |
 |Endpoints| Input Endpoints needed to be configured on a Virtual Machine to be open up connectivity for certain ports. One of the common modes of connecting to virtual machines done by setting up input endpoints. | Inbound NAT Rules can be configured on Load Balancers to achieve the same capability of enabling endpoints on specific ports for connecting to the VMs. |
-|DNS Name| A cloud service would get an implicit globally unique DNS Name. For example: `mycoffeeshop.chinacloudapp.cn`. | DNS Names are optional parameters that can be specified on a Public IP Address resource. The FQDN will be in the following format - `<domainlabel>.<region>.cloudapp.azure.com`. |
+|DNS Name| A cloud service would get an implicit globally unique DNS Name. For example: `mycoffeeshop.chinacloudapp.cn`. | DNS Names are optional parameters that can be specified on a Public IP Address resource. The FQDN will be in the following format - `<domainlabel>.<region>.chinacloudapp.cn`. |
 |Network Interfaces	| Primary and Secondary Network Interface and its properties were defined as network configuration of a Virtual machine. | Network Interface is a resource exposed by Microsoft.Network Provider. The lifecycle of the Network Interface is not tied to a Virtual Machine. |
 
 ## Getting Started with Azure Templates for Virtual Machines
@@ -104,4 +104,4 @@ All the automation and scripts that you’ve built will continue to work for the
 **Can the Virtual Networks created using the new Azure Resource Manager APIs be connected to my Express Route circuit?**
 
 This is not supported at the moment. You cannot connect the Virtual Networks created using the new Azure Resource Manager APIs with an Express Route Circuit. This will be supported in the future.
- 
+

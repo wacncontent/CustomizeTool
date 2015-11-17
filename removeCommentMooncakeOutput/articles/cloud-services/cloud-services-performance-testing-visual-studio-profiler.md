@@ -9,9 +9,9 @@
 	tags="" 
 	/>
 
-<tags 
-	ms.service="cloud-services" 
-	ms.date="09/14/2015" 
+<tags
+	ms.service="cloud-services"
+	ms.date="09/14/2015"
 	wacn.date=""/>
 
 # Testing the Performance of a Cloud Service Locally in the Azure Compute Emulator Using the Visual Studio Profiler
@@ -191,3 +191,4 @@ Instrumenting Azure binaries in the emulator is not supported in the Visual Stud
 [15]: ./media/cloud-services-performance-testing-visual-studio-profiler/ProfilingLocally013.png
 [16]: ./media/cloud-services-performance-testing-visual-studio-profiler/ProfilingLocally012.png
 [17]: ./media/cloud-services-performance-testing-visual-studio-profiler/ProfilingLocally08.png
+ 

@@ -17,13 +17,18 @@
 
 This article shows you how to create and upload a virtual hard disk (VHD) that contains the FreeBSD operating system so you can use it as your own image to create a virtual machine (VM) in Azure.
 
+<!-- deleted by customization
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
+-->
+<!-- keep by customization: begin -->
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-include.md)] This article covers creating a resource with the classic deployment model.
+<!-- keep by customization: end -->
 
 
 ##Prerequisites##
 This article assumes that you have the following items:
 
-- **An Azure subscription** - If you don't have one, you can create an account in just a couple of minutes. If you have an MSDN subscription, see [Azure Benefit for MSDN Subscribers](http://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/). Otherwise, see [create a trial account](/pricing/1rmb-trial/).  
+- **An Azure subscription** - If you don't have one, you can create an account in just a couple of minutes. If you have an MSDN subscription, see [Azure Benefit for MSDN Subscribers](/pricing/member-offers/msdn-benefits-details/). Otherwise, see [create a trial account](/pricing/1rmb-trial/).  
 
 - **Azure PowerShell tools** - You have the Windows Azure PowerShell module installed and configured to use your subscription. To download the module, see [Azure Downloads](/downloads/). A tutorial to install and configure the module is available here. You'll use the [Azure Downloads](/downloads/) cmdlet to upload the VHD.
 

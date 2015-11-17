@@ -111,12 +111,17 @@ HDInsight can run HiveQL jobs using a variety of methods. Use the following tabl
 
 | **Use this** if you want...                                                     | ...an **interactive** shell | ...**batch** processing | ...with this **cluster operating system** | ...from this **client operating system** |
 |:--------------------------------------------------------------------------------|:---------------------------:|:-----------------------:|:------------------------------------------|:-----------------------------------------|
+<!-- deleted by customization
 | [Beeline command (from an SSH session)](/documentation/articles/hdinsight-hadoop-use-hive-beeline)                                         |              ✔              |            ✔            | Linux                                     | Linux, Unix, Mac OS X, or Windows        |
 | [Hive command (from an SSH session)](/documentation/articles/hdinsight-hadoop-use-hive-ssh)                                         |              ✔              |            ✔            | Linux                                     | Linux, Unix, Mac OS X, or Windows        |
 | [Curl](/documentation/articles/hdinsight-hadoop-use-hive-curl)                                       |           &nbsp;            |            ✔            | Linux or Windows                          | Linux, Unix, Mac OS X, or Windows        |
+-->
+<!-- keep by customization: begin -->
+| [Curl](/documentation/articles/hdinsight-hadoop-use-hive-curl)                                       |           &nbsp;            |            ✔            | Windows                          | Windows        |
+<!-- keep by customization: end -->
 | [Query console](/documentation/articles/hdinsight-hadoop-use-hive-query-console)                     |           &nbsp;            |            ✔            | Windows                                   | Browser-based                            |
-| [HDInsight tools for Visual Studio](/documentation/articles/hdinsight-hadoop-use-hive-visual-studio) |           &nbsp;            |            ✔            | Linux or Windows                          | Windows                                  |
-| [Windows PowerShell](/documentation/articles/hdinsight-hadoop-use-hive-powershell)                   |           &nbsp;            |            ✔            | Linux or Windows                          | Windows                                  |
+| [HDInsight tools for Visual Studio](/documentation/articles/hdinsight-hadoop-use-hive-visual-studio) |           &nbsp;            |            ✔            | <!-- deleted by customization Linux or --> Windows                          | Windows                                  |
+| [Windows PowerShell](/documentation/articles/hdinsight-hadoop-use-hive-powershell)                   |           &nbsp;            |            ✔            | <!-- deleted by customization Linux or --> Windows                          | Windows                                  |
 | [Remote Desktop](/documentation/articles/hdinsight-hadoop-use-hive-remote-desktop)                   |              ✔              |            ✔            | Windows                                   | Windows                                  |
 
 ## Running Hive jobs on Azure HDInsight using on-premises SQL Server Integration Services
@@ -143,10 +148,11 @@ Now that you've learned what Hive is and how to use it with Hadoop in HDInsight,
 [check]: ./media/hdinsight-use-hive/hdi.checkmark.png
 
 [1]: /documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started
+
 [hdinsight-sdk-documentation]: http://msdnstage.redmond.corp.microsoft.com/zh-cn/library/dn479185.aspx
 
 [azure-purchase-options]: /pricing/overview/
-[azure-member-offers]: http://azure.microsoft.com/pricing/member-offers/
+[azure-member-offers]: /pricing/member-offers/
 [azure-trial]: /pricing/1rmb-trial/
 
 [apache-tez]: http://tez.apache.org
@@ -162,11 +168,15 @@ Now that you've learned what Hive is and how to use it with Hadoop in HDInsight,
 [hdinsight-use-oozie]: /documentation/articles/hdinsight-use-oozie
 [hdinsight-analyze-flight-data]: /documentation/articles/hdinsight-analyze-flight-delay-data
 [hdinsight-use-mapreduce]: /documentation/articles/hdinsight-use-mapreduce
+
+
 [hdinsight-storage]: /documentation/articles/hdinsight-use-blob-storage
+
 [hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters
 [hdinsight-submit-jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically
 [hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
 [hdinsight-get-started]: /documentation/articles/hdinsight-get-started
+
 [Powershell-install-configure]: /documentation/articles/install-configure-powershell
 [powershell-here-strings]: http://technet.microsoft.com/zh-cn/library/ee692792.aspx
 

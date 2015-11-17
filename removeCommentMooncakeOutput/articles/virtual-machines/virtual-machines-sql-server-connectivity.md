@@ -1,15 +1,16 @@
 <properties 
-   pageTitle="Connect to a SQL Server Virtual Machine on Azure"
-   description="This topic describes how to connect to SQL Server running on a Virtual Machine in Azure. The scenarios differ depending on the networking configuration and the location of the client."
+   pageTitle="Connect to a SQL Server Virtual Machine | Windows Azure"
+   description="This topic uses resources created with the classic deployment model, and describes how to connect to SQL Server running on a Virtual Machine in Azure. The scenarios differ depending on the networking configuration and the location of the client."
    services="virtual-machines"
    documentationCenter="na"
    authors="rothja"
    manager="jeffreyg"
-   editor="monicar" />
-<tags 
-   ms.service="virtual-machines"
-   ms.date="08/18/2015"
-   wacn.date="" />
+   editor="monicar"    
+   tags="azure-service-management"/>
+<tags
+	ms.service="virtual-machines"
+	ms.date="08/18/2015"
+	wacn.date=""/>
 
 # Connect to a SQL Server Virtual Machine on Azure
 
@@ -49,11 +50,11 @@ First, follow the [steps in this article to configure connectivity](#steps-for-c
 
 Although this enables connectivity for clients over the internet, this does not imply that anyone can connect to your SQL Server. Outside clients have to the correct username and password. For additional security, don't use the well-known port 1433 for the public virtual machine endpoint. And if possible, consider adding an ACL on your endpoint to restrict traffic only to the clients you permit. For instructions on using ACLs with endpoints, see [Manage the ACL on an endpoint](/documentation/articles/virtual-machines-set-up-endpoints#manage-the-acl-on-an-endpoint). 
 
->[AZURE.NOTE] It is important to note that when you use this technique to communicate with SQL Server, all data returned is considered outgoing traffic from the datacenter. It is subject to normal [pricing on outbound data transfers](/home/features/data-transfers). This is true even if you use this technique from another machine or cloud service within the same Azure datacenter, because traffic still goes through Azure's public load balancer.
+>[AZURE.NOTE] It is important to note that when you use this technique to communicate with SQL Server, all data returned is considered outgoing traffic from the datacenter. It is subject to normal [pricing on outbound data transfers](/home/features/data-transfers/#price). This is true even if you use this technique from another machine or cloud service within the same Azure datacenter, because traffic still goes through Azure's public load balancer.
 
 ### Connect to SQL Server in the same virtual network
 
-[Virtual Network](/#pricedocumentation/articles/virtual-networks-overview) enables additional scenarios. You can connect VMs in the same virtual network, even if those VMs exist in different cloud services. And with a [site-to-site VPN](/documentation/articles/vpn-gateway-site-to-site-create), you can create a hybrid architecture that connects VMs with on-premises networks and machines.
+[Virtual Network](/documentation/articles/virtual-networks-overview) enables additional scenarios. You can connect VMs in the same virtual network, even if those VMs exist in different cloud services. And with a [site-to-site VPN](/documentation/articles/vpn-gateway-site-to-site-create), you can create a hybrid architecture that connects VMs with on-premises networks and machines.
 
 Virtual networks also enables you to join your Azure VMs to a domain. This is the only way to use Windows Authentication to SQL Server. The other connection scenarios require SQL Authentication with user names and passwords.
 
@@ -75,6 +76,6 @@ To see provisioning instructions along with these connectivity steps, see [Provi
 
 If you are also planning to use AlwaysOn Availability Groups for high availability and disaster recovery, you should consider implementing a listener. Database clients connect to the listener rather than directly to one of the SQL Server instances. The listener routes clients to the primary replica in the availability group. For more information, see [Configure an ILB listener for AlwaysOn Availability Groups in Azure](/documentation/articles/virtual-machines-sql-server-configure-ilb-alwayson-availability-group-listener).
 
-It is important to review all of the security best practices for SQL Server running on an Azure virtual machine. For more information, see [Security Considerations for SQL Server in Azure Virtual Machines](https://msdn.microsoft.com/zh-cn/library/azure/dn133147.aspx).
+It is important to review all of the security best practices for SQL Server running on an Azure virtual machine. For more information, see [Security Considerations for SQL Server in Azure Virtual Machines](/documentation/articles/virtual-machines-sql-server-security-considerations).
 
-For other topics related to running SQL Server in Azure VMs, see [SQL Server on Azure Virtual Machines](/documentation/articles/virtual-machines-sql-server-infrastructure-services).
+For other topics related to running SQL Server in Azure VMs, see [SQL Server on Azure Virtual Machines](/documentation/articles/virtual-machines-sql-server-infrastructure-services). 

@@ -8,9 +8,9 @@
    editor=""/>
 
 <tags
-   ms.service="cloud-services"
-   ms.date="08/18/2015"
-   wacn.date=""/>
+	ms.service="cloud-services"
+	ms.date="08/18/2015"
+	wacn.date=""/>
 
 # Azure Guest OS supportability and retirement policy
 The information on this page relates to the Azure Guest operating system ([Guest OS](https://msdn.microsoft.com/zh-cn/library/azure/ff729422.aspx)) for Cloud Services worker and web roles (PaaS). It does not apply to Virtual Machines (IaaS). 

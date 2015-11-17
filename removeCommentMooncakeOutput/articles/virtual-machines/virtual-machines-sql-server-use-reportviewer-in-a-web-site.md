@@ -7,10 +7,10 @@
 	manager="jeffreyg"
 	editor="monicar" 
 	tags="azure-service-management" />
-<tags 
+<tags
 	ms.service="virtual-machines"
 	ms.date="08/19/2015"
-	wacn.date="" />
+	wacn.date=""/>
 
 # Use ReportViewer in a Web Site Hosted in Azure
 

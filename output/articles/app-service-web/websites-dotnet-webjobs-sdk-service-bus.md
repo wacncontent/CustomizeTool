@@ -28,6 +28,16 @@ The code snippets only show functions, not the code that creates the `JobHost` o
 		    host.RunAndBlock();
 		}
 		
+<!-- keep by customization: begin -->
+## Table of contents
+
+-   [Prerequisites](#prerequisites)
+-   [How to trigger a function when a queue message is received](#trigger)
+-   [How to create queue messages](#create)
+-   [How to work with Service Bus topics](#topics)
+-   [Related topics covered by the storage queues article](#queues)
+-   [Next steps](#nextsteps)
+<!-- keep by customization: end -->
 ## <a id="prerequisites"></a> Prerequisites
 
 To work with Service Bus you have to install the [Microsoft.Azure.WebJobs.ServiceBus](https://www.nuget.org/packages/Microsoft.Azure.WebJobs.ServiceBus/) NuGet package in addition to the other WebJobs SDK packages. 

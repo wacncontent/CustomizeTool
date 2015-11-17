@@ -13,15 +13,12 @@
 	ms.date="07/14/2015"
 	wacn.date=""/>
 
-<!-- deleted by customization
 #About Azure virtual machines 
+<!-- deleted by customization
 
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-both-include.md)]
 
 -->
-<!-- keep by customization: begin -->
-#About Azure Virtual Machines
-<!-- keep by customization: end -->
 
 Azure Virtual Machines is one of several types of on-demand, scalable computing resources that Azure offers. Typically, you'll choose a virtual machine instead of another option if you need more control over the computing environment than the other choices offer.
 
@@ -49,6 +46,6 @@ If you're just starting to learn about Azure virtual machines, be sure to also c
 
 
 <!--links-->
-[Azure Websites]: /documentation/articles/app-service-choose-me
+[Azure Websites]: /documentation/services/web-sites
 [Virtual Machines]: #tellmevm
 [Cloud Services]: /documentation/articles/cloud-services-choose-me

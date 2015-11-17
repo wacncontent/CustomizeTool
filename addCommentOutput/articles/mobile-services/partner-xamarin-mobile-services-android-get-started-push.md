@@ -57,20 +57,15 @@ You can test the app by directly attaching an Android phone with a USB cable, or
 
 You have successfully completed this tutorial.
 
-<!-- deleted by customization
 ## <a name="next-steps"></a>Next steps
--->
-<!-- keep by customization: begin -->
-## <a name="next-steps"> </a>Next steps
-<!-- keep by customization: end -->
 
 Learn more about Mobile Services and Notification Hubs in the following topics:
-<!-- keep by customization: begin -->
 
+<!-- keep by customization: begin -->
 * [Add Mobile Services to an existing app]
   <br/>Learn more about storing and querying data using mobile services.
-<!-- keep by customization: end -->
 
+<!-- keep by customization: end -->
 * [Get started with authentication](/documentation/articles/mobile-services-android-get-started-users)
   <br/>Learn how to authenticate users of your app with different account types using mobile services.
 
@@ -90,7 +85,6 @@ Learn more about Mobile Services and Notification Hubs in the following topics:
 [Get started with Mobile Services]: /documentation/articles/mobile-services-ios-get-started
 <!-- keep by customization: begin -->
 [Add Mobile Services to an existing app]: /documentation/articles/mobile-services-android-get-started-data
-
 <!-- keep by customization: end -->
 [Google Cloud Messaging Client Component]: http://components.xamarin.com/view/GCMClient/
 [Xamarin.Android]: http://xamarin.com/download/

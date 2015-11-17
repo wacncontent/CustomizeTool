@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Create a custom virtual machine from Azure Management Portal"
-	description="Learn how to create a custom virtual machine in Azure."
+	pageTitle="Create a custom virtual machine | Windows Azure"
+	description="Learn how to create a custom virtual machine from the Azure Management Portal using the classic deployment model."
 	services="virtual-machines"
 	documentationCenter=""
 	authors="cynthn"
@@ -14,6 +14,7 @@
 	wacn.date=""/>
 
 #How to create a custom virtual machine
+
 
 A *custom* virtual machine simply means a virtual machine that you create using the **From Gallery** option because it gives you more configuration choices than the **Quick Create** option. These choices include:
 

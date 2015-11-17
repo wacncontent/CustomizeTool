@@ -15,17 +15,11 @@
 # <a name="getting-started"> </a>Get started with Mobile Services
 
 [AZURE.INCLUDE [mobile-services-selector-get-started](../includes/mobile-services-selector-get-started.md)]
-<!-- deleted by customization
 &nbsp;
 
 [AZURE.INCLUDE [mobile-services-hero-slug](../includes/mobile-services-hero-slug.md)]
 
 This tutorial shows you how to add a cloud-based backend service to a Xamarin.iOS app using Azure Mobile Services. In this tutorial, you will create both a new mobile service and a simple *To do list* app that stores app data in the new mobile service.
--->
-<!-- keep by customization: begin -->
-
-This tutorial shows you how to add a cloud-based backend service to a Xamarin.iOS app using Azure Mobile Services. In this tutorial, you will create both a new mobile service and a simple <em>To do list</em> app that stores app data in the new mobile service.
-<!-- keep by customization: end -->
 
 If you prefer to watch a video, the clip below follows the same steps as this tutorial.
 
@@ -39,7 +33,7 @@ A screenshot from the completed app is below:
 
 Completing this tutorial requires XCode and [Xamarin Studio] for OS X or the Xamarin Visual Studio plug-in for Visual Studio on Windows. The sample will run on iOS 5.0 and newer.
 
-> [AZURE.IMPORTANT] To complete this tutorial, you need an Azure account. If you don't have an account, you can sign up for an Azure trial and get up to 10 free mobile services that you can keep using even after your trial ends. For details, see [Azure <!-- deleted by customization Trial](/pricing/1rmb-trial/) --><!-- keep by customization: begin --> Trial](/pricing/1rmb-trial) <!-- keep by customization: end -->.
+> [AZURE.IMPORTANT] To complete this tutorial, you need an Azure account. If you don't have an account, you can sign up for an Azure trial and get up to 10 free mobile services that you can keep using even after your trial ends. For details, see [Azure Trial](/pricing/1rmb-trial/).
 
 ## <a name="create-new-service"> </a>Create a new mobile service
 
@@ -101,7 +95,6 @@ The final stage of this tutorial is to build and run your new app.
 ## Next Steps
 Now that you have completed the quickstart, learn how to perform additional important tasks in Mobile Services:
 
-<!-- deleted by customization
 * [Get started with offline data sync]  
   Learn how the quickstart uses offline data sync to make the app responsive and robust.
 
@@ -116,20 +109,6 @@ Now that you have completed the quickstart, learn how to perform additional impo
   
 
 [AZURE.INCLUDE [app-service-disqus-feedback-slug](../includes/app-service-disqus-feedback-slug.md)]
--->
-<!-- keep by customization: begin -->
-* [Get started with data]
-	<br/>Learn how to add a new table to a mobile service, then read and write against that table.
-
-* [Get started with offline data sync]
-  <br/>Learn how the quickstart uses offline data sync to make the app responsive and robust.
-
-* [Get started with authentication]
-  <br/>Learn how to authenticate users of your app with an identity provider.
-
-* [Get started with push notifications]
-  <br/>Learn how to send a very basic push notification to your app.
-<!-- keep by customization: end -->
 
 <!-- Anchors. -->
 [Getting started with Mobile Services]:#getting-started
@@ -149,18 +128,10 @@ Now that you have completed the quickstart, learn how to perform additional impo
 
 
 <!-- URLs. -->
-<!-- deleted by customization
 [Get started with offline data sync]: /documentation/articles/mobile-services-xamarin-ios-get-started-offline-data
 [Get started with authentication]: /documentation/articles/partner-xamarin-mobile-services-ios-get-started-users
 [Get started with push notifications]: /documentation/articles/partner-xamarin-mobile-services-ios-get-started-push
--->
-<!-- keep by customization: begin -->
-[Get started with data]: /develop/mobile/tutorials/get-started-with-data-xamarin-ios
-[Get started with offline data sync]: /develop/mobile/tutorials/mobile-services-xamarin-ios-get-started-offline-data
-[Get started with authentication]: /develop/mobile/tutorials/get-started-with-users-xamarin-ios
-[Get started with push notifications]: /develop/mobile/tutorials/get-started-with-push-xamarin-ios
 
-<!-- keep by customization: end -->
 [Xamarin Studio]: http://xamarin.com/download
 [Mobile Services iOS SDK]: https://go.microsoft.com/fwLink/p/?LinkID=266533
 

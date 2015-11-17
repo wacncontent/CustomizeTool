@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.date="07/01/2015"
+	ms.date="10/01/2015"
 	wacn.date=""/>
 
 # Add Authentication to Existing App
@@ -78,3 +78,4 @@ Next, learn [how to use the user ID value to filter returned data](/documentatio
 [Get started with push notifications]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-push-ios
 [Authorize users with scripts]: /documentation/articles/mobile-services-ios-authorize-users-in-scripts
 
+[Azure Management Portal]: https://manage.windowsazure.cn/

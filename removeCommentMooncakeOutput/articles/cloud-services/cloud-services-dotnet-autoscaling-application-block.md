@@ -372,7 +372,7 @@ the **service model**:
     six.
 
 -   Both reactive rules use an **operand** named
-    **WebRoleA_CPU_Avg_5m** that calculates the average CPU usage
+    **WebRoleA\_CPU\_Avg\_5m** that calculates the average CPU usage
     over the last five minutes for an Azure role named
     **AutoscalingApplicationRole.** This role is defined in the
     **service model**.

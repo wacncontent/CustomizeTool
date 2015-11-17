@@ -6,11 +6,10 @@
    authors="sethmanheim"
    manager="timlt"
    editor="tysonn" />
-<tags 
-   ms.service="service-bus"
-
-   ms.date="09/16/2015"
-   wacn.date="" />
+<tags
+	ms.service="service-bus"
+	ms.date="09/16/2015"
+	wacn.date=""/>
 
 # Create applications that use Service Bus topics and subscriptions
 

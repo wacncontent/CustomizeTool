@@ -12,7 +12,7 @@
 	ms.date="08/31/2015"
 	wacn.date=""/>
 
-# How to use Queue <!-- deleted by customization storage --><!-- keep by customization: begin --> Storage <!-- keep by customization: end --> from Java
+# How to use Queue storage from Java
 
 [AZURE.INCLUDE [storage-selector-queue-include](../includes/storage-selector-queue-include.md)]
 
@@ -375,19 +375,14 @@ To delete a queue and all the messages contained in it, call the **deleteIfExist
 
 Now that you've learned the basics of queue storage, follow these links to learn about more complex storage tasks.
 
-- [Azure Storage SDK for <!-- deleted by customization Java][] --><!-- keep by customization: begin --> Java] <!-- keep by customization: end -->
-- [Azure Storage Client SDK <!-- deleted by customization Reference][] --><!-- keep by customization: begin --> Reference] <!-- keep by customization: end -->
-- [Azure Storage REST <!-- deleted by customization API][] --><!-- keep by customization: begin --> API] <!-- keep by customization: end -->
-- [Azure Storage Team <!-- deleted by customization Blog][] --><!-- keep by customization: begin --> Blog] <!-- keep by customization: end -->
+- [Azure Storage SDK for Java][]
+- [Azure Storage Client SDK Reference][]
+- [Azure Storage REST API][]
+- [Azure Storage Team Blog][]
 
-<!-- deleted by customization
-[Azure SDK for Java]: http://go.microsoft.com/fwlink/?LinkID=525671
--->
-<!-- keep by customization: begin -->
 [Azure SDK for Java]: /develop/java/
-<!-- keep by customization: end -->
 [Azure Storage SDK for Java]: https://github.com/azure/azure-storage-java
 [Azure Storage SDK for Android]: https://github.com/azure/azure-storage-android
-[Azure Storage Client SDK Reference]: http://dl.windowsazure.cn/storage/javadoc/
+[Azure Storage Client SDK Reference]: http://dl.windowsazure.com/storage/javadoc/
 [Azure Storage REST API]: http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx
 [Azure Storage Team Blog]: http://blogs.msdn.com/b/windowsazurestorage/

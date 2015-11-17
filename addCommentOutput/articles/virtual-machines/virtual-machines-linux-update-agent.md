@@ -14,16 +14,9 @@
 	wacn.date=""/>
 
 
-<!-- deleted by customization
 # How to update the Azure Linux Agent on a VM to the latest version from GitHub
 
 To update your [Azure Linux agent](https://github.com/Azure/WALinuxAgent) on a Linux VM in Azure, you must already have:
--->
-<!-- keep by customization: begin -->
-# How to update Azure Linux Agent to the latest version from Github
-
-To update your [Azure Linux agent](https://github.com/Azure/WALinuxAgent) , you must already have:
-<!-- keep by customization: end -->
 
 1. a running Linux vm in Azure
 2. You are connected to that Linux VM using SSH
@@ -38,6 +31,7 @@ To update your [Azure Linux agent](https://github.com/Azure/WALinuxAgent) , you 
 Azure-endorsed Linux distros have put the Azure Linux Agent package in their repositories, so please check and install the latest version from that Distro repository first if possible.  
 
 For Ubuntu, just type:
+
     #sudo apt-get install walinuxagent
 
 and on CentOS, type:
@@ -60,7 +54,7 @@ Install wget (there are some distros that don't install it by default such as Re
 
 ## Download latest version
 
-Open [the release of Azure Linux Agent in <!-- deleted by customization GitHub](https://github.com/Azure/WALinuxAgent/releases) --><!-- keep by customization: begin --> Github](https://github.com/Azure/WALinuxAgent/releases) <!-- keep by customization: end --> in a web page, and find out the latest version number. (You can locate your current version by typing `#waagent --version`.)
+Open [the release of Azure Linux Agent in GitHub](https://github.com/Azure/WALinuxAgent/releases) in a web page, and find out the latest version number. (You can locate your current version by typing `#waagent --version`.)
 
 ###For the version 2.0.x, type:
 
@@ -71,6 +65,7 @@ Open [the release of Azure Linux Agent in <!-- deleted by customization GitHub](
     #wget https://raw.githubusercontent.com/Azure/WALinuxAgent/WALinuxAgent-2.0.14/waagent  
 
 ###For the version 2.1.x or later, type:
+
     #wget https://github.com/Azure/WALinuxAgent/archive/WALinuxAgent-[version].zip
     #unzip WALinuxAgent-[version].zip
     #cd WALinuxAgent-[version]
@@ -90,12 +85,15 @@ Open [the release of Azure Linux Agent in <!-- deleted by customization GitHub](
     #chmod +x waagent
 
  Copy new executable to /usr/sbin/
+
   For most of Linux, use
+
       #sudo cp waagent /usr/sbin
 
   For CoreOS, use:
 
     #sudo cp waagent /usr/share/oem/bin/
+
 ###For the version 2.1.x, use:
 
 You may need install the package `setuptools` first, see [here](https://pypi.python.org/pypi/setuptools). Then run below:
@@ -117,6 +115,7 @@ For CoreOS, use:
     #sudo systemctl restart waagent
 
 ## Confirm the Azure Linux agent version
+
     #waagent -version
 
 For CoreOS, above command may not work.

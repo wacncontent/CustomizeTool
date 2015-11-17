@@ -1,15 +1,15 @@
-<properties 
-	pageTitle="Authenticate your app with Active Directory Authentication Library Single Sign-On (iOS) | Mobile Dev Center" 
-	description="Learn how to authentication users for single sign-on with ADAL in your iOS application." 
-	documentationCenter="ios" 
-	authors="mattchenderson" 
-	manager="dwrede" 
-	editor="" 
+<properties
+	pageTitle="Authenticate your app with Active Directory Authentication Library Single Sign-On (iOS) | Windows Azure"
+	description="Learn how to authentication users for single sign-on with ADAL in your iOS application."
+	documentationCenter="ios"
+	authors="mattchenderson"
+	manager="dwrede"
+	editor=""
 	services="mobile-services"/>
 
-<tags 
-	ms.service="mobile-services" 
-	ms.date="08/18/2015" 
+<tags
+	ms.service="mobile-services"
+	ms.date="08/18/2015"
 	wacn.date=""/>
 
 # Authenticate your app with Active Directory Authentication Library Single Sign-On

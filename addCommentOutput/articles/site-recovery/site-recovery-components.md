@@ -111,6 +111,7 @@ The Provider runs on your VMM servers, Hyper-V host servers if you don't have a 
 	-  .backup.windowsazure.cn
 	-  *.blob.core.chinacloudapi.cn
 	-  *.store.core.chinacloudapi.cn
+
 - If you have IP address-based rules on your firewall make sure they allow communication from the configuration server to IP addresses described in [Azure Datacenter IP ranges](https://www.microsoft.com/download/details.aspx?id=41653) and for HTTPS (443). You'll need to whitelist IP address ranges of the Azure region you plan to use and for China North.
 - If you're deploying Site Recovery with VMM and you use a custom proxy, a VMM RunAs account (DRAProxyAccount) will be created automatically using the proxy credentials you specify in the custom proxy settings in the Site Recovery portal. You'll need to set up the proxy server so that this account can authenticate successfully.
 - If you're using a proxy traffic sent from the provider installed on a Hyper-V host server to the proxy must be sent over HTTP.

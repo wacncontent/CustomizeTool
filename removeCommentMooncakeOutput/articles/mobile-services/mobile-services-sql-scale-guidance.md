@@ -7,9 +7,9 @@
 	manager="dwrede" 
 	editor="mollybos"/>
 
-<tags 
-	ms.service="mobile-services" 
-	ms.date="08/08/2015" 
+<tags
+	ms.service="mobile-services"
+	ms.date="08/08/2015"
 	wacn.date=""/>
 
 # Scale mobile services backed by Azure SQL Database
@@ -184,9 +184,9 @@ Here are some guidelines to consider when querying the database:
 
 - **Always execute join operations in the database.** Frequently you will need to combine records from two or more tables where the records being combined share a common field (also known as a *join*). This operation can be inefficient if performed incorrectly since it may involve pulling down all the entities from both tables and then iterating through all of them. This kind of operation is best left to the database itself, but it is sometimes easy to mistakenly perform it on the client or in the mobile service code.
     - Don't perform joins in your app code
-    - Don't perform joins in your mobile service code. When using the JavaScript backend, be aware that the [table object](http://msdn.microsoft.com/zh-cn/library/azure/jj554210.aspx) does not handle joins. Be sure to use the [mssql object](http://msdn.microsoft.com/zh-cn/library/azure/jj554212.aspx) directly to ensure the join happens in the database. For more information, see [Join relational tables](/documentation/articles/mobile-services-how-to-use-server-scripts/#joins). If using the .NET backend and querying via LINQ, joins are automatically handled at the database level by Entity Framework.
+    - Don't perform joins in your mobile service code. When using the JavaScript backend, be aware that the [table object](http://msdn.microsoft.com/zh-cn/library/azure/jj554210.aspx) does not handle joins. Be sure to use the [mssql object](http://msdn.microsoft.com/zh-cn/library/azure/jj554212.aspx) directly to ensure the join happens in the database. For more information, see [Join relational tables](/documentation/articles/mobile-services-how-to-use-server-scripts#joins). If using the .NET backend and querying via LINQ, joins are automatically handled at the database level by Entity Framework.
 - **Implement paging.** Querying the database can sometimes result in a large number of records being returned to the client. To minimize the size and latency of operations, consider implementing paging.
-    - By default your mobile service will limit any incoming queries to a page size of 50, and you can manually request up to 1,000 records. For more information, see "Return data in pages" for [Windows Store](/documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library/#paging), [iOS](/documentation/articles/mobile-services-ios-how-to-use-client-library/#paging), [Android](/documentation/articles/mobile-services-android-how-to-use-client-library/#paging), [HTML/JavaScript](/documentation/articles/mobile-services-html-how-to-use-client-library/#paging), and [Xamarin](/documentation/articles/partner-xamarin-mobile-services-how-to-use-client-library/#paging).
+    - By default your mobile service will limit any incoming queries to a page size of 50, and you can manually request up to 1,000 records. For more information, see "Return data in pages" for [Windows Store](/documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library#paging), [iOS](/documentation/articles/mobile-services-ios-how-to-use-client-library#paging), [Android](/documentation/articles/mobile-services-android-how-to-use-client-library#paging), [HTML/JavaScript](/documentation/articles/mobile-services-html-how-to-use-client-library#paging), and [Xamarin](/documentation/articles/partner-xamarin-mobile-services-how-to-use-client-library#paging).
     - There is no default page size for queries made from your mobile service code. If your app does not implement paging, or as a defensive measure, consider applying default limits to your queries. In the JavaScript backend, use the **take** operator on the [query object](http://msdn.microsoft.com/zh-cn/library/azure/jj613353.aspx). If using the .NET backend, consider using the [Take method](http://msdn.microsoft.com/zh-cn/library/vstudio/bb503062(v=vs.110).aspx) as part of your LINQ query.  
 
 For more information on improving query design, including how to analyze query plans, see [Advanced Query Design](#AdvancedQuery) at the bottom of this document.
@@ -222,7 +222,7 @@ The following steps walk you through obtaining the connection information for th
 6. Make a note of the server address in the **Connect to your database** section, for example: *mcml4otbb9.database.chinacloudapi.cn*.
 
 #### SQL Server Management Studio
-1. Navigate to [SQL Server Editions - Express](http://www.microsoft.com/zh-cn/server-cloud/products/sql-server-editions/sql-server-express.aspx)
+1. Navigate to [SQL Server Editions - Express](http://www.microsoft.com/server-cloud/products/sql-server-editions/sql-server-express.aspx)
 2. Find the **SQL Server Management Studio** section and select the **Download** button underneath.
 3. Complete the setup steps until you can successfully run the application:
 
@@ -265,7 +265,7 @@ To execute any of the queries below, past it into the window and select **Run**.
 
 #### Advanced Metrics
 
-The management portal makes certain metrics readily available if using the Basic, Standard, and Premium tiers. However if using the Web and Business tiers, only the Storage metric is available via the portal. Fortunately, it is easy to obtain these and other metrics using the **[sys.resource_stats](http://msdn.microsoft.com/zh-cn/library/dn269979.aspx)** management view, regardless of what tier you're using. Consider the following query:
+The management portal makes certain metrics readily available if using the Basic, Standard, and Premium tiers. However if using the Web and Business tiers, only the Storage metric is available via the portal. Fortunately, it is easy to obtain these and other metrics using the **[sys.resource\_stats](http://msdn.microsoft.com/zh-cn/library/dn269979.aspx)** management view, regardless of what tier you're using. Consider the following query:
 
     SELECT TOP 10 * 
     FROM sys.resource_stats 
@@ -273,13 +273,13 @@ The management portal makes certain metrics readily available if using the Basic
     ORDER BY start_time DESC
 
 > [AZURE.NOTE] 
-> Please execute this query on the **master** database on your server, the **sys.resource_stats** view is only present on that database.
+> Please execute this query on the **master** database on your server, the **sys.resource\_stats** view is only present on that database.
 
 The result will contain the following useful metrics: CPU (% of tier limit), Storage (megabytes), Physical Data Reads (% of tier limit), Log Writes (% of tier limit), Memory (% of tier limit), Worker Count, Session Count, etc. 
 
 #### SQL connectivity events
 
-The **[sys.event_log](http://msdn.microsoft.com/zh-cn/library/azure/jj819229.aspx)** view contains the details of connectivity-related events.
+The **[sys.event\_log](http://msdn.microsoft.com/zh-cn/library/azure/jj819229.aspx)** view contains the details of connectivity-related events.
 
     select * from sys.event_log 
     where database_name = 'todoitem_db'
@@ -287,7 +287,7 @@ The **[sys.event_log](http://msdn.microsoft.com/zh-cn/library/azure/jj819229.asp
     order by start_time desc
 
 > [AZURE.NOTE] 
-> Please execute this query on the **master** database on your server, the **sys.event_log** view is only present on that database.
+> Please execute this query on the **master** database on your server, the **sys.event\_log** view is only present on that database.
 
 <a name="AdvancedIndexing" />
 ### Advanced Indexing
@@ -301,7 +301,7 @@ A table or view can contain the following types of indexes:
 To provide a real-world analogy: consider a book or a technical manual. The contents of each page are a record, the page number is the clustered index, and the topic index in the back of the book is a nonclustered index. Each entry in the topic index points to the clustered index, the page number.
 
 > [AZURE.NOTE] 
-> By default, the JavaScript backend of Azure Mobile Services sets **_createdAt** as the clustered index. If you remove this column, or if you want a different clustered index, be sure to follow the [clustered index design guidelines](#ClusteredIndexes) below. In the .NET backend, the class `EntityData` defines `CreatedAt` as a clustered index using the annotation `[Index(IsClustered = true)]`.
+> By default, the JavaScript backend of Azure Mobile Services sets **\_createdAt** as the clustered index. If you remove this column, or if you want a different clustered index, be sure to follow the [clustered index design guidelines](#ClusteredIndexes) below. In the .NET backend, the class `EntityData` defines `CreatedAt` as a clustered index using the annotation `[Index(IsClustered = true)]`.
 
 <a name="ClusteredIndexes"></a>
 #### Clustered index design guidelines
@@ -451,7 +451,7 @@ To analyze the query plan in the **SQL Database Management Portal**, use the hig
 
 [Azure Management Portal]: http://manage.windowsazure.cn
 
-[Azure SQL Database Documentation]: /documentation/services/sql-database/
+[Azure SQL Database Documentation]: /documentation/services/sql-databases/
 [Managing SQL Database using SQL Server Management Studio]: http://go.microsoft.com/fwlink/p/?linkid=309723&clcid=0x409
 [Monitoring SQL Database Using Dynamic Management Views]: http://go.microsoft.com/fwlink/p/?linkid=309725&clcid=0x409
 [Azure SQL Database performance and scaling]: http://go.microsoft.com/fwlink/p/?linkid=397217&clcid=0x409
@@ -472,9 +472,10 @@ To analyze the query plan in the **SQL Database Management Portal**, use the hig
 [sys-missing-index-stats]: http://technet.microsoft.com/zh-cn/library/ms345421.aspx
 
 <!-- EF -->
-[Performance Considerations for Entity Framework 5]: http://msdn.microsoft.com/zh-cn/data/hh949853
-[Code First Data Annotations]: http://msdn.microsoft.com/zh-cn/data/jj591583.aspx
-[Index Annotations in Entity Framework]:http://msdn.microsoft.com/zh-cn/data/jj591583.aspx#Index
+[Performance Considerations for Entity Framework 5]: http://msdn.microsoft.com/data/hh949853
+[Code First Data Annotations]: http://msdn.microsoft.com/data/jj591583.aspx
+[Index Annotations in Entity Framework]:http://msdn.microsoft.com/data/jj591583.aspx#Index
 
 <!-- BLOG LINKS -->
 [How much does that key cost?]: http://www.sqlskills.com/blogs/kimberly/how-much-does-that-key-cost-plus-sp_helpindex9/
+ 

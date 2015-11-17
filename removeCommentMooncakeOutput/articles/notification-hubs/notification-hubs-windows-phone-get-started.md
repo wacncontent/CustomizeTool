@@ -11,6 +11,7 @@
 	ms.service="notification-hubs"
 	ms.date="09/08/2015"
 	wacn.date=""/>
+
 # Get started with Notification Hubs for Windows Phone
 
 [AZURE.INCLUDE [notification-hubs-selector-get-started](../includes/notification-hubs-selector-get-started.md)]
@@ -38,7 +39,7 @@ Completing this tutorial is a prerequisite for all other Notification Hubs tutor
 
 1. Sign in to the [Azure Management Portal], and then click **+NEW** at the bottom of the screen.
 
-2. Click **Azure Websites**, click **Service Bus**, click **Notification Hub**, and then click **Quick Create**.
+2. Click **App Services**, click **Service Bus**, click **Notification Hub**, and then click **Quick Create**.
 
    	![][7]
 
@@ -64,7 +65,7 @@ Completing this tutorial is a prerequisite for all other Notification Hubs tutor
 
 You now have the connection strings that are required to register your Windows Phone 8 app and send notifications.
 
-> [AZURE.NOTE] This tutorial uses MPNS in unauthenticated mode. MPNS unauthenticated mode comes with restrictions on notifications that you can send to each channel. Notification Hubs supports [MPNS authenticated mode](http://msdn.microsoft.com/zh-cn/library/windowsphone/develop/ff941099(v=vs.105).aspx). <!--Refer to [Notification Hubs How-To for Windows Phone 8] for more information on how to use MPNS authenticated mode.-->
+> [AZURE.NOTE] This tutorial uses MPNS in unauthenticated mode. MPNS unauthenticated mode comes with restrictions on notifications that you can send to each channel. Notification Hubs supports [MPNS authenticated mode](http://msdn.microsoft.com/zh-cn/library/windowsphone/develop/ff941099.aspx) by allowing you to upload your certificate.
 
 ##Connecting your app to the notification hub
 
@@ -203,13 +204,11 @@ In this simple example, you broadcasted notifications to all your Windows Phone 
 
 <!-- URLs. -->
 [Visual Studio 2012 Express for Windows Phone]: https://www.visualstudio.com/downloads/download-visual-studio-vs
-[Get started with Mobile Services]: /develop/mobile/tutorials/get-started/#create-new-service
-
 [Azure Management Portal]: https://manage.windowsazure.cn/
 [Notification Hubs Guidance]: http://msdn.microsoft.com/zh-cn/library/jj927170.aspx
-[Notification Hubs How-To for Windows Phone 8]: tbd!!!
 [MPNS authenticated mode]: http://msdn.microsoft.com/zh-cn/library/windowsphone/develop/ff941099(v=vs.105).aspx
-[Use Notification Hubs to push notifications to users]: /manage/services/notification-hubs/notify-users-aspnet
-[Use Notification Hubs to send breaking news]: /manage/services/notification-hubs/breaking-news-dotnet
+[Use Notification Hubs to push notifications to users]: /documentation/articles/notification-hubs-aspnet-backend-windows-dotnet-notify-users
+[Use Notification Hubs to send breaking news]: /documentation/articles/notification-hubs-windows-phone-send-breaking-news
 [toast catalog]: http://msdn.microsoft.com/zh-cn/library/windowsphone/develop/jj662938(v=vs.105).aspx
 [tile catalog]: http://msdn.microsoft.com/zh-cn/library/windowsphone/develop/hh202948(v=vs.105).aspx
+[Notification Hub - WP Silverlight tutorial]: https://github.com/Azure/azure-notificationhubs-samples/tree/master/PushToSLPhoneApp

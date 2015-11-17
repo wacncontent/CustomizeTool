@@ -6,11 +6,10 @@
    authors="sethmanheim"
    manager="timlt"
    editor="tysonn" />
-<tags 
-   ms.service="service-bus"
-
-   ms.date="09/10/2015"
-   wacn.date="" />
+<tags
+	ms.service="service-bus"
+	ms.date="09/10/2015"
+	wacn.date=""/>
 
 # Service Bus pricing and billing
 
@@ -118,7 +117,7 @@ Relays are available only in Standard tier namespaces. Otherwise, pricing and co
 
 ### How is the Relay Hours meter calculated?
 
-See [this topic](/documentation/articles/service-bus-pricing-faq/#How-is-the-Relay-Hours-meter-calculated?).
+See [this topic](/documentation/articles/service-bus-pricing-faq#How-is-the-Relay-Hours-meter-calculated?).
 
 ### What are brokered connections and how do I get charged for them?
 
@@ -132,9 +131,9 @@ Service Bus charges for the peak number of concurrent brokered connections that 
 
 For example:
 
-3. Each of 10,000 devices connect via a single AMQP connection, and receive commands from a Service Bus topic. The devices send telemetry events to an Event Hub. If all devices connect for 12 hours each day, the following connection charges apply (in addition to any other Service Bus topic charges): 10,000 connections * 12 hours * 31 days / 744 = 5,000 brokered connections. After the monthly allowance of 1,000 brokered connections, you would be charged for 4,000 brokered connections, at the rate of $0.03 per brokered connection, for a total of $120.
+1. Each of 10,000 devices connect via a single AMQP connection, and receive commands from a Service Bus topic. The devices send telemetry events to an Event Hub. If all devices connect for 12 hours each day, the following connection charges apply (in addition to any other Service Bus topic charges): 10,000 connections * 12 hours * 31 days / 744 = 5,000 brokered connections. After the monthly allowance of 1,000 brokered connections, you would be charged for 4,000 brokered connections, at the rate of $0.03 per brokered connection, for a total of $120.
 
-4. 10,000 devices receive messages from a Service Bus queue via HTTP, specifying a non-zero timeout. If all devices connect for 12 hours every day, you will see the following connection charges (in addition to any other Service Bus charges): 10,000 HTTP Receive connections * 12 hours per day * 31 days / 744 hours = 5,000 brokered connections.
+2. 10,000 devices receive messages from a Service Bus queue via HTTP, specifying a non-zero timeout. If all devices connect for 12 hours every day, you will see the following connection charges (in addition to any other Service Bus charges): 10,000 HTTP Receive connections * 12 hours per day * 31 days / 744 hours = 5,000 brokered connections.
 
 ### Do brokered connection charges apply to queues and topics/subscriptions?
 

@@ -53,11 +53,16 @@ A sample script to install Solr on an HDInsight cluster is available from a read
 
 3. At the bottom of the **Script Actions**, use the **Select** button to save the configuration. Finally, use the **Select** button at the bottom of the **Optional Configuration** blade to save the optional configuration information.
 
-4. Continue provisioning the cluster as described in [Provision Linux-based HDInsight clusters](/documentation/articles/hdinsight-provision-linux-clusters#portal).
+4. Continue <!-- deleted by customization provisioning --><!-- keep by customization: begin --> provisining <!-- keep by customization: end --> the cluster as described in [Provision Linux-based HDInsight clusters](/documentation/articles/hdinsight-provision-linux-clusters#portal).
 
 ## <a name="usesolr"></a>How do I use Solr in HDInsight?
 
+<!-- deleted by customization
 ### Indexing data
+-->
+<!-- keep by customization: begin -->
+###Indexing data
+<!-- keep by customization: end -->
 
 You must start with indexing Solr with some data files. You can then use Solr to run search queries on the indexed data. Use the following steps to add some example data to Solr, and then query it:
 
@@ -148,9 +153,16 @@ You must start with indexing Solr with some data files. You can then use Solr to
 			    ]
 			  }
 
+<!-- deleted by customization
 ### Using the Solr dashboard
 
 The Solr dashboard is a web UI that allows you to work with Solr through your web browser. The Solr dashboard is not exposed directly on the Internet from your HDInsight cluster, but must be accessed using an SSH tunnel. For more information on using an SSH tunnel, see [Use SSH Tunneling to access Ambari web UI, ResourceManager, JobHistory, NameNode, Oozie, and other web UI's](/documentation/articles/hdinsight-linux-ambari-ssh-tunnel)
+-->
+<!-- keep by customization: begin -->
+###Using the Solr dashboard
+
+The Solr dashbaord is a web UI that allows you to work with Solr through your web browser. The Solr dashboard is not exposed directly on the Internet from your HDInsight cluster, but must be accessed using an SSH tunnel. For more information on using an SSH tunnel, see [Use SSH Tunneling to access Ambari web UI, ResourceManager, JobHistory, NameNode, Oozie, and other web UI's](/documentation/articles/hdinsight-linux-ambari-ssh-tunnel)
+<!-- keep by customization: end -->
 
 Once you have established an SSH tunnel, use the following steps to use the Solr dashboard:
 
@@ -224,7 +236,12 @@ Once you have established an SSH tunnel, use the following steps to use the Solr
 			    ]
 			  }
 
+<!-- deleted by customization
 ### Starting and stopping Solr
+-->
+<!-- keep by customization: begin -->
+###Starting and stopping Solr
+<!-- keep by customization: end -->
 
 If you need to manually stop or start Solar, use the following commands:
 
@@ -232,7 +249,13 @@ If you need to manually stop or start Solar, use the following commands:
 
 	sudo start solr
 
+<!-- deleted by customization
 ## Backup indexed data
+-->
+<!-- keep by customization: begin -->
+
+##Backup indexed data
+<!-- keep by customization: end -->
 
 As a good practice, you should back up the indexed data from the Solr cluster nodes onto Azure Blob storage. Perform the following steps to do so:
 
@@ -270,7 +293,7 @@ As a good practice, you should back up the indexed data from the Solr cluster no
 For more information on working with Solr backup and restores, see [Making and restoring backups of SolrCores](https://cwiki.apache.org/confluence/display/solr/Making+and+Restoring+Backups+of+SolrCores).
 
 
-## See also
+## See <!-- deleted by customization also --><!-- keep by customization: begin --> also## <!-- keep by customization: end -->
 
 - [Install and use Hue on HDInsight clusters](/documentation/articles/hdinsight-hadoop-hue-linux). Hue is a web UI that makes it easy to create, run and save Pig and Hive jobs, as well as browse the default storage for your HDInsight cluster.
 

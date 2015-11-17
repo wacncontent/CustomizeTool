@@ -1,4 +1,4 @@
-new docs: 30, word count: 75543
+new docs: 30, word count: {word_count_TODO}
 articles/site-recovery/site-recovery-active-directory.md
 articles/site-recovery/site-recovery-best-practices.md
 articles/site-recovery/site-recovery-capacity-planning-for-hyper-v-replication.md

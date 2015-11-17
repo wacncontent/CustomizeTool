@@ -17,8 +17,10 @@
 > [AZURE.SELECTOR]
 > - [Getting Started](/documentation/articles/vs-storage-aspnet-getting-started-queues)
 > - [What Happened](/documentation/articles/vs-storage-aspnet-what-happened)
+<!-- deleted by customization
 
 > [AZURE.SELECTOR]
+-->
 > - [Blobs](/documentation/articles/vs-storage-aspnet-getting-started-blobs)
 > - [Queues](/documentation/articles/vs-storage-aspnet-getting-started-queues)
 > - [Tables](/documentation/articles/vs-storage-aspnet-getting-started-tables)

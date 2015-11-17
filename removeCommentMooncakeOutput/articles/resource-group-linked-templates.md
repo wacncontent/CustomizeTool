@@ -8,9 +8,9 @@
    editor=""/>
 
 <tags
-   ms.service="azure-resource-manager"
-   ms.date="09/04/2015"
-   wacn.date=""/>
+	ms.service="azure-resource-manager"
+	ms.date="09/04/2015"
+	wacn.date=""/>
 
 # Using linked templates with Azure Resource Manager
 
@@ -110,5 +110,5 @@ If you need to pass a value from linked template to the main template, you can c
 [Sharing State in Azure Resource Manager Templates](/documentation/articles/best-practices-resource-manager-state).
 
 ## Next steps
-- [Authoring templates](./resource-group-authoring-templates.md)
+- [Authoring templates](/documentation/articles/resource-group-authoring-templates)
 - [Deploying templates](/documentation/articles/resource-group-template-deploy)

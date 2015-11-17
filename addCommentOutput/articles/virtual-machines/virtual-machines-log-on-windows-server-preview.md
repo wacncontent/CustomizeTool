@@ -26,7 +26,7 @@ You'll use the **Connect** button in the Azure preview portal to start a Remote 
 
 ## Connect to the virtual machine
 
-1. If you haven't already done so, sign in to the [Azure preview <!-- deleted by customization portal](https://manage.windowsazure.cn/) --><!-- keep by customization: begin --> portal](https://manage.windowsazure.cn) <!-- keep by customization: end -->.
+1. If you haven't already done so, sign in to the [Azure preview portal](https://manage.windowsazure.cn/).
 
 2.	On the Hub menu, click **Browse**.  
 

@@ -1,14 +1,14 @@
-<properties 
-	pageTitle="Connect your directories with Azure AD Connect" 
-	description="Custom settings description of Azure AD Connect connected directories." 
-	services="active-directory" 
-	documentationCenter="" 
-	authors="billmath" 
-	manager="stevenpo" 
+<properties
+	pageTitle="Connect your directories with Azure AD Connect | Windows Azure"
+	description="Custom settings description of Azure AD Connect connected directories."
+	services="active-directory"
+	documentationCenter=""
+	authors="billmath"
+	manager="stevenpo"
 	editor="curtand"/>
 
-<tags 
-	ms.service="active-directory"  
+<tags
+	ms.service="active-directory"
 	ms.date="10/13/2015"
 	wacn.date=""/>
 
@@ -18,7 +18,7 @@
 
 For Custom Settings, an enterprise administrator account is not required to connect to your Active Directory forests.  The wizard will accept a domain or local user account.  However, the account is used as the local AD Connector account, that is, it is the account that reads and writes the directory information for synchronization.
 
-This means you will need to assign additional permissions to enable the following scenarios: 
+This means you will need to assign additional permissions to enable the following scenarios:
 
 Scenario  |Permission
 ------------- | ------------- |
@@ -40,4 +40,3 @@ Single Sign-On and AD FS| Domain admin permissions in the domain in which your f
 * [Permissions for password writeback](https://msdn.microsoft.com/zh-cn/library/azure/dn757602.aspx#pwriteback)
 * [Custom installation of Azure AD Connect](/documentation/articles/active-directory-aadconnect-get-started-custom)
 * [Azure AD Connect on MSDN](/documentation/articles/active-directory-aadconnect)
- 

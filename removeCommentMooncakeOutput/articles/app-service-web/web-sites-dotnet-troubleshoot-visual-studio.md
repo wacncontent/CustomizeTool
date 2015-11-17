@@ -69,7 +69,7 @@ Visual Studio provides access to a subset of the web app management functions an
 
 	For more information about connecting to Azure resources from Visual Studio, see [Manage Accounts, Subscriptions, and Administrative Roles](https://msdn.microsoft.com/zh-cn/library/azure/hh531793.aspx).
 
-2. In **Server Explorer**, expand **Azure** and expand **Azure Websites**.
+2. In **Server Explorer**, expand **Azure** and expand **App Services**.
 
 3. Expand the resource group that includes the web app that you created in [Getting started with Azure and ASP.NET][GetStarted], and then right-click the web app node and click **View Settings**.
 
@@ -103,7 +103,7 @@ You typically deploy a web project with the `customErrors` flag in the Web.confi
 
 Frequently the easiest way to find the cause of the error is to enable detailed error messages, which the first of the preceding screenshots explains how to do. That requires a change in the deployed Web.config file. You could edit the *Web.config* file in the project and redeploy the project, or create a [Web.config transform](http://www.asp.net/mvc/tutorials/deployment/visual-studio-web-deployment/web-config-transformations) and deploy a debug build, but there's a quicker way: in **Solution Explorer** you can directly view and edit files in the remote web app by using the *remote view* feature.
 
-1. In **Server Explorer**, expand **Azure**, expand **Azure Websites**, expand the resource group that your web app is located in, and then expand the node for your web app.
+1. In **Server Explorer**, expand **Azure**, expand **App Services**, expand the resource group that your web app is located in, and then expand the node for your web app.
 
 	You see nodes that give you access to the web app's content files and log files.
 
@@ -769,3 +769,4 @@ If you want to debug an Azure Cloud Service rather than a web app, see [Debuggin
 
 [GetStarted]: /documentation/articles/web-sites-dotnet-get-started
 [GetStartedWJ]: /documentation/articles/websites-dotnet-webjobs-sdk
+ 

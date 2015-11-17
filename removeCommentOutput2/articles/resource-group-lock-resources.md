@@ -14,12 +14,12 @@
 
 # Lock resources with Azure Resource Manager
 
-As an administrator, there are scenarios where you will want to place a lock on a resource or resource group to prevent other users in your organization from committing write actions or accidentally deleting a critical resource.
+As an administrator, there are scenarios where you will want to place a lock on a subscription, resource group or resource  to prevent other users in your organization from committing write actions or accidentally deleting a critical resource. 
 
-Azure Resource Manager provides the ability to restrict operations on resources through resource management locks. Resource locks are policies which enforce a lock level at a particular scope. The lock level identifies the type of enforcement for the policy, which presently has two values - **CanNotDelete** and **ReadOnly**. The scope is expressed as a URI and can be either a resource or a resource group.
+Azure Resource Manager provides the ability to restrict operations on resources through resource management locks. Locks are policies which enforce a lock level at a particular scope. The scope can be a subscription, resource group or resource. The lock level identifies the type of enforcement for the policy, which presently has two values – **CanNotDelete** and **ReadOnly**. **CanNotDelete** means authorized users can still read and modify resources, but they can't delete any of the restricted resources. **ReadOnly** means authorized users can only read from the resource, but they can't modify or delete any of the restricted resources.
 
-Locks are different from assigning user permissions to perform certain actions. To learn about setting permissions for users and roles, see
-[Role-based access control in the preview portal](/documentation/articles/role-based-access-control-configure) and [Managing and Auditing Access to Resources](/documentation/articles/resource-group-rbac). 
+Locks are different from using role-based access control to assign user permissions to perform certain actions. To learn about setting permissions for users and roles, see 
+[Role-based access control in the preview portal](/documentation/articles/role-based-access-control-configure) and [Managing and Auditing Access to Resources](/documentation/articles/resource-group-rbac). Unlinke role-based access control, you use management locks to apply a restriction across all users and roles, and you typically apply the locks for only limited duration.
 
 ## Common scenarios
 
@@ -27,13 +27,23 @@ One common scenario is when you have a resource group with some resources that a
 time and then turned off. In this scenario, you will want to enable the shut down of the VMs but it is imperative 
 that a storage account not be deleted. In this scenario, you would use a resource lock with a lock level of **CanNotDelete** on the storage account.
 
-In another scenario, your business may have periods where you don't want updates going into production. The **ReadOnly** lock level stops creation or updates. If you're a retail company, you may not want to allow updates during holiday shopping periods.  If you're a financial services company, you may have constraints related to deployments during
+In another scenario, your business may have periods where you don't want updates going into production. The **ReadOnly** lock level stops creation or updates. If you’re a retail company, you may not want to allow updates during holiday shopping periods.  If you’re a financial services company, you may have constraints related to deployments during
 certain market hours. A resource lock can provide a policy to lock the resources as appropriate. This could be applied to just certain resources or to the entirety of the resource group.
+
+## Who can create or delete locks in your organization
+
+To create or delete management locks, you must have access to **Microsoft.Authorization/\*** or **Microsoft.Authorization/locks/\*** actions. Of the built-in roles, only **Owner** and **User Access Administrator** are granted those actions. For more information about assigning access control, see [Managing access to resources](/documentation/articles/resource-group-rbac).
+
+## Lock inheritance
+
+When you apply a lock at a parent scope, all child resources inherit the same lock.
+
+If you apply more than one lock to a resource, the most restrictive lock takes precedence. For example, if you apply **ReadOnly** at the parent level (such as the resource group) and **CanNotDelete** on a resource within that group, the more restrictive lock (ReadOnly) from the parent takes precedence.
 
 ## Creating a lock in a template
 
 The example below shows a template that creates a lock on a storage account. The storage account on which to apply the lock is provided as a parameter, and that is used 
-in conjunction with the concat() function.  The result is the resource name appended with 'Microsoft.Authorization' and then a name of the lock, in this case **myLock**.
+in conjunction with the concat() function.  The result is the resource name appended with ‘Microsoft.Authorization’ and then a name of the lock, in this case **myLock**.
 
 The type provided is specific to the resource type. For storage, this type is "Microsoft.Storage/storageaccounts/providers/locks".
 
@@ -66,7 +76,7 @@ retrieve information about existing locks.
 
 To create a lock, run:
 
-    PUT https://management.azure.com/{scope}/providers/Microsoft.Authorization/locks/{lock-name}?api-version={api-version}
+    PUT https://manage.windowsazure.cn/{scope}/providers/Microsoft.Authorization/locks/{lock-name}?api-version={api-version}
 
 The scope could be a subscription, resource group or resource. The lock-name is whatever you want to call the lock. For api-version, use **2015-01-01**.
 
@@ -85,11 +95,13 @@ For examples, see [REST API for management locks](https://msdn.microsoft.com/zh-
 
 ## Creating a lock with Azure PowerShell
 
-You can lock deployed resources with Azure PowerShell by using the **New-AzureResourceLock** as shown below. Through PowerShell, you can only set the **LockLevel** to **CanNotDelete**.
+[AZURE.INCLUDE [powershell-preview-inline-include](../includes/powershell-preview-inline-include.md)]
 
-    PS C:\> New-AzureResourceLock -LockLevel CanNotDelete -LockName LockSite -ResourceName examplesite -ResourceType Microsoft.Web/sites -ResourceGroupName ExampleGroup
+You can lock deployed resources with Azure PowerShell by using the **New-AzureRmResourceLock** as shown below. Through PowerShell, you can only set the **LockLevel** to **CanNotDelete**.
 
-PowerShell provides other commands for working locks, such as **Set-AzureResourceLock** to update a lock and **Remove-AzureResourceLock** to delete a lock.
+    PS C:\> New-AzureRmResourceLock -LockLevel CanNotDelete -LockName LockSite -ResourceName examplesite -ResourceType Microsoft.Web/sites
+
+Azure PowerShell provides other commands for working locks, such as **Set-AzureRmResourceLock** to update a lock and **Remove-AzureRmResourceLock** to delete a lock.
 
 ## Next steps
 

@@ -1,5 +1,8 @@
 <properties pageTitle="Tutorial: Azure Active Directory Integration with Cisco Webex | Windows Azure" description="Learn how to use Cisco Webex with Azure Active Directory to enable single sign-on, automated provisioning, and more!." services="active-directory" authors="MarkusVi"  documentationCenter="na" manager="stevenpo"/>
-<tags ms.service="active-directory" ms.devlang="na" ms.topic="article" ms.tgt_pltfrm="na" ms.workload="identity" ms.date="08/01/2015" ms.author="markvi" />
+<tags
+	ms.service="active-directory"
+	ms.date="08/01/2015"
+	wacn.date=""/>
 #Tutorial: Azure Active Directory Integration with Cisco Webex
 <!-- deleted by customization
 >[AZURE.TIP]For feedback, click [here](https://social.msdn.microsoft.com/Forums/azure/zh-cn/d6cb1396-8b44-4a2f-abf3-cfea8e395382/tutorial-azure-ad-integration-with-cisco-webex?forum=WindowsAzureAD).

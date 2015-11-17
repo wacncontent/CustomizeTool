@@ -13,17 +13,17 @@
 	ms.date="10/19/2015"
 	wacn.date=""/>
 
-# Customize HDInsight clusters using Script Action (Linux)
+# Customize HDInsight clusters using Script Action <!-- deleted by customization (Linux) -->
 
-HDInsight provides a configuration option called **Script Action** that invokes custom scripts, which define the customization to be performed on the cluster during the creation process. These scripts can be used to install additional software on a cluster, or to change the configuration of applications on a cluster.
+HDInsight provides a configuration option called **Script Action** that invokes custom scripts, which define the customization to be performed on the cluster during the <!-- deleted by customization creation --><!-- keep by customization: begin --> provision <!-- keep by customization: end --> process. These scripts can be used to install additional software on a cluster, or to change the configuration of applications on a cluster.
 
 > [AZURE.NOTE] The information in this article is specific to Linux-based HDInsight clusters. For a version of this article that is specific to Windows-based clusters, see [Customize HDInsight clusters using Script Action (Windows)](/documentation/articles/hdinsight-hadoop-customize-cluster)
 
-## Script Action in the cluster creation process
+## Script Action in the cluster <!-- deleted by customization creation --><!-- keep by customization: begin --> provision <!-- keep by customization: end --> process
 
-Script Action is only used while a clusters is in the process of being created. The following diagram illustrates when Script Action is executed during the creation process:
+Script Action is only used while a clusters is in the process of being created. The following diagram illustrates when Script Action is executed during the <!-- deleted by customization creation --><!-- keep by customization: begin --> provision <!-- keep by customization: end --> process:
 
-![HDInsight cluster customization and stages during cluster creation][img-hdi-cluster-states]
+![HDInsight cluster customization and stages during cluster <!-- deleted by customization creation][img-hdi-cluster-states] --><!-- keep by customization: begin --> provisioning][img-hdi-cluster-states] <!-- keep by customization: end -->
 
 The script is ran while HDInsight is being configured. At this stage, the script is run in parallel on all the specified nodes in the cluster, and is ran with root privileges on the nodes.
 
@@ -31,28 +31,40 @@ The script is ran while HDInsight is being configured. At this stage, the script
 
 Each cluster can accept multiple script actions that are invoked in the order in which they are specified. A script can be ran on the head nodes, the worker nodes, or both.
 
+<!-- deleted by customization
 > [AZURE.IMPORTANT] Script actions must complete within 15 minutes, or they will timeout. During node provisioning, the script is ran concurrently with other setup and configuration processes. Competition for resources such as CPU time or network bandwidth may cause the script to take longer to finish than it does in your development environment.
 > 
 > To minimize the time it takes to run the script, avoid tasks such as downloading and compiling applications from source. Instead, pre-compile the application and store the binary in Azure Blob storage so that it can quickly be downloaded to the cluster.
 
+-->
+<!-- keep by customization: begin -->
+> [AZURE.IMPORTANT] Script actions must complete within 15 minutes, or they will timeout.
+<!-- keep by customization: end -->
 
 ## Example Script Action scripts
 
-Script Action scripts can be used from the Azure Preview Portal, Azure PowerShell, or the HDInsight .NET SDK. This article shows how to use Script Action from the portal. To learn how to use PowerShell and .NET SDK to use Script Action, look at the samples listed in the table below.
+Script Action scripts can be used from the Azure <!-- deleted by customization Preview --><!-- keep by customization: begin --> Management <!-- keep by customization: end --> Portal, Azure PowerShell, or the HDInsight .NET SDK. This article shows how to use Script Action from the portal. To learn how to use PowerShell and .NET SDK to use Script Action, look at the samples listed in the table below.
 
 HDInsight provides several scripts to install the following components on HDInsight clusters:
 
 Name | Script
 ----- | -----
 **Install Hue** | https://hdiconfigactions.blob.core.windows.net/linuxhueconfigactionv01/install-hue-uber-v01.sh. See [Install and use Hue on HDInsight clusters](/documentation/articles/hdinsight-hadoop-hue-linux).
-**Install Spark** | https://hdiconfigactions.blob.core.windows.net/linuxsparkconfigactionv02/spark-installer-v02.sh. See [Install and use Spark on HDInsight clusters](/documentation/articles/hdinsight-hadoop-spark-install-linux).
+**Install Spark** | <!-- deleted by customization https://hdiconfigactions.blob.core.windows.net/linuxsparkconfigactionv02/spark-installer-v02.sh --><!-- keep by customization: begin --> https://hdiconfigactions.blob.core.windows.net/linuxsparkconfigactionv01/spark-installer-v01.sh <!-- keep by customization: end -->. See [Install and use Spark on HDInsight clusters](/documentation/articles/hdinsight-hadoop-spark-install-linux).
 **Install R** | https://hdiconfigactions.blob.core.windows.net/linuxrconfigactionv01/r-installer-v01.sh. See [Install and use R on HDInsight clusters](/documentation/articles/hdinsight-hadoop-r-scripts-linux).
 **Install Solr** | https://hdiconfigactions.blob.core.windows.net/linuxsolrconfigactionv01/solr-installer-v01.sh. See [Install and use Solr on HDInsight clusters](/documentation/articles/hdinsight-hadoop-solr-install-linux).
 **Install Giraph** | https://hdiconfigactions.blob.core.windows.net/linuxgiraphconfigactionv01/giraph-installer-v01.sh. See [Install and use Giraph on HDInsight clusters](/documentation/articles/hdinsight-hadoop-giraph-install-linux).
 
+<!-- deleted by customization
 ## Use a Script Action from the Azure Preview portal
 
 1. Start creating a cluster as described at [Create Hadoop clusters in HDInsight](/documentation/articles/hdinsight-provision-clusters#portal).
+-->
+<!-- keep by customization: begin -->
+##Use a Script Action from the Azure Management Portal
+
+1. Start provisioning a cluster as described at [Provisioning a cluster using custom options](/documentation/articles/hdinsight-provision-clusters#portal).
+<!-- keep by customization: end -->
 
 2. Under __Optional Configuration__, for the **Script Actions** blade, click **add script action** to provide details about the script action, as shown below:
 
@@ -67,11 +79,11 @@ Name | Script
 
 	Press ENTER to add more than one script action to install multiple components on the cluster.
 
-3. Click **Select** to save the script action configuration and continue with cluster creation.
+3. Click **Select** to save the script action configuration and continue with cluster <!-- deleted by customization creation --><!-- keep by customization: begin --> provisioning <!-- keep by customization: end -->.
 
-## Use a Script Action from Azure Resource Manager templates
+<!-- deleted by customization ## Use --><!-- keep by customization: begin --> ##Use <!-- keep by customization: end --> a Script Action from Azure Resource Manager templates
 
-In this section, we use Azure Resource Manager (ARM) templates to create an HDInsight cluster and also use a script action to install custom components (R, in this example) on the cluster. This section provides a sample ARM template to create a cluster using script action.
+In this section, we use Azure Resource Manager (ARM) templates to <!-- deleted by customization create --><!-- keep by customization: begin --> provision <!-- keep by customization: end --> an HDInsight cluster and also use a script action to install custom components (R, in this example) on the cluster. This section provides a sample ARM template to <!-- deleted by customization create --><!-- keep by customization: begin --> provision <!-- keep by customization: end --> a cluster using script action.
 
 ### Before you begin
 
@@ -79,7 +91,12 @@ In this section, we use Azure Resource Manager (ARM) templates to create an HDIn
 * For instructions on how to create ARM templates, see [Authoring Azure Resource Manager templates](/documentation/articles/resource-group-authoring-templates).
 * If you have not previously used Azure PowerShell with Resource Manager, see [Using Azure PowerShell with Azure Resource Manager](/documentation/articles/powershell-azure-resource-manager).
 
+<!-- deleted by customization
 ### Create clusters using script action
+-->
+<!-- keep by customization: begin -->
+### Provision cluster using script action
+<!-- keep by customization: end -->
 
 1. Copy the following template to a location on your computer. This template installs R on headnode as well as worker nodes in the cluster. You can also verify if the JSON template is valid. Paste your template content into [JSONLint](http://jsonlint.com/), an online JSON validator tool.
 
@@ -258,7 +275,7 @@ In this section, we use Azure Resource Manager (ARM) templates to create an HDIn
 		New-AzureResourceGroup -Name myresourcegroup -Location "China North"
 
 		ResourceGroupName : myresourcegroup
-		Location          : westus
+		Location          : chinanorth
 		ProvisioningState : Succeeded
 		Tags              :
 		Permissions       :
@@ -293,9 +310,16 @@ In this section, we use Azure Resource Manager (ARM) templates to create an HDIn
 
 		Get-AzureResourceGroupLog -ResourceGroup myresourcegroup -Status Failed -DetailedOutput
 
+<!-- deleted by customization
 ## Use a Script Action from Azure PowerShell
 
 In this section, we use the **<a href = "http://msdn.microsoft.com/zh-cn/library/dn858088.aspx" target="_blank">Add-AzureHDInsightScriptAction</a>** cmdlet to invoke scripts by using Script Action to customize a cluster. Before proceeding, make sure you have installed and configured Azure PowerShell. For information about configuring a workstation to run HDInsight PowerShell cmdlets, see [Install and configure Azure PowerShell](/documentation/articles/powershell-install-configure).
+-->
+<!-- keep by customization: begin -->
+##Use a Script Action from Azure PowerShell
+
+In this section, we use the **<a href = "http://msdn.microsoft.com/zh-cn/library/dn858088.aspx" target="_blank">Add-AzureHDInsightScriptAction</a>** cmdlet to invoke scripts by using Script Action to customize a cluster. Before proceeding, make sure you have installed and configured Azure PowerShell. For information about configuring a workstation to run HDInsight Powershell cmdlets, see [Install and configure Azure PowerShell](/documentation/articles/powershell-install-configure).
+<!-- keep by customization: end -->
 
 Perform the following steps:
 
@@ -336,16 +360,17 @@ Perform the following steps:
 	| Parameters | Parameters required by the script. |
 	| Uri | Specifies the URI to the script that is executed. |
 
-4. Finally, create the cluster:
+4. Finally, <!-- deleted by customization create --><!-- keep by customization: begin --> provision <!-- keep by customization: end --> the cluster:
 
 		New-AzureHDInsightCluster -Config $config -Name $clusterName -Location $location -Version $version
 
 When prompted, enter the credentials for the cluster. It can take several minutes before the cluster is created.
 
-## Use a Script Action from the HDInsight .NET SDK
+<!-- deleted by customization ## Use --><!-- keep by customization: begin --> ##Use <!-- keep by customization: end --> a Script Action from the HDInsight .NET SDK
 
 The HDInsight .NET SDK provides client libraries that makes it easier to work with HDInsight from a .NET application. The following steps demonstrate how to use a script to customize a cluster from the HDInsight .NET SDK.
 
+<!-- deleted by customization
 > [AZURE.IMPORTANT] You must first create a self-signed certificate, install it on your workstation, and then upload it to your Azure subscription. For instructions, see [Create a self-signed certificate](/documentation/articles/hdinsight-administer-use-management-portal-v1/#cert).
 
 
@@ -404,7 +429,74 @@ The HDInsight .NET SDK provides client libraries that makes it easier to work wi
 			---- END SSH2 PUBLIC KEY ----"; //replace the public key with your own
 
         private static void Main(string[] args)
+-->
+<!-- keep by customization: begin -->
+
+> [AZURE.IMPORTANT] You must first create a self-signed certificate, install it on your workstation, and then upload it to your Azure subscription. For instructions, see [Create a self-signed certificate](/documentation/articles/hdinsight-administer-use-management-portal-v1#cert).
+
+
+###Create a Visual Studio project
+
+1. Open Visual Studio 2013 or 2015.
+
+2. From the **File** menu, click **New**, and then click **Project**.
+
+3. From **New Project**, type or select the following values:
+
+	| Property | Value |
+	| -------- | ----- |
+	| Category | Templates/Visual C#/Windows |
+	| Template | Console Application |
+	| Name | ScriptActionCluster |
+
+4. Click **OK** to create the project.
+
+5. From the **Tools** menu, click **Nuget Package Manager**, and then click **Package Manager Console**.
+
+6. Run the following command in the console to install the package.
+
+		Install-Package Microsoft.WindowsAzure.Management.HDInsight
+
+	This command adds the .NET libraries and references to them from the current Visual Studio project.
+
+7. From **Solution Explorer**, double-click **Program.cs** to open it.
+
+8. Add the following **using** statements to the top of the file:
+
+		using System.Security.Cryptography.X509Certificates;
+		using Microsoft.WindowsAzure.Management.HDInsight;
+		using Microsoft.WindowsAzure.Management.HDInsight.ClusterProvisioning;
+		using Microsoft.WindowsAzure.Management.HDInsight.Framework.Logging;
+
+9. In the **Main()** function, paste the following code, and provide values for the variables :
+
+        var clusterName = args[0];
+
+        // PROVIDE VALUES FOR THE VARIABLES
+        string thumbprint = "<CertificateThumbprint>";  
+        string subscriptionId = "<AzureSubscriptionID>";
+        string location = "<MicrosoftDataCenterLocation>";
+        string storageaccountname = "<AzureStorageAccountName>.blob.core.chinacloudapi.cn";
+        string storageaccountkey = "<AzureStorageAccountKey>";
+        string username = "<HDInsightUsername>";
+        string password = "<HDInsightUserPassword>";
+        int clustersize = <NumberOfNodesInTheCluster>;
+
+        // PROVIDE THE CERTIFICATE THUMBPRINT TO RETRIEVE THE CERTIFICATE FROM THE CERTIFICATE STORE
+        X509Store store = new X509Store();
+        store.Open(OpenFlags.ReadOnly);
+        X509Certificate2 cert = store.Certificates.Cast<X509Certificate2>().First(item => item.Thumbprint == thumbprint);
+
+        // CREATE AN HDINSIGHT CLIENT OBJECT
+        HDInsightCertificateCredential creds = new HDInsightCertificateCredential(new Guid(subscriptionId), cert);
+        var client = HDInsightClient.Connect(creds);
+		client.IgnoreSslErrors = true;
+
+        // PROVIDE THE CLUSTER INFORMATION
+		var clusterInfo = new ClusterCreateParameters()
+<!-- keep by customization: end -->
         {
+<!-- deleted by customization
             var tokenCreds = GetTokenCloudCredentials();
             var subCloudCredentials = GetSubscriptionCloudCredentials(tokenCreds, SubscriptionId);
 
@@ -470,6 +562,43 @@ The HDInsight .NET SDK provides client libraries that makes it easier to work wi
 
 7. Press **F5** to run the application. A console window should open and display the status of the application. You will also be prompted to enter your Azure account credentials. It can take several minutes to create an HDInsight cluster.
 
+-->
+<!-- keep by customization: begin -->
+            Name = clusterName,
+            Location = location,
+            DefaultStorageAccountName = storageaccountname,
+            DefaultStorageAccountKey = storageaccountkey,
+            DefaultStorageContainer = clusterName,
+            UserName = username,
+            Password = password,
+            ClusterSizeInNodes = clustersize,
+            Version = "3.1"
+        } <!-- keep by customization: begin -->; <!-- keep by customization: end -->
+
+10. Append the following code to the **Main()** function. This code invokes a Script Action; in this example, the script to install R on the cluster:
+
+		// ADD THE SCRIPT ACTION TO INSTALL R
+
+        clusterInfo.ConfigActions.Add(new ScriptAction(
+            "Install R",
+            new ClusterNodeType[] { ClusterNodeType.HeadNode, ClusterNodeType.DataNode },
+            new Uri("https://hdiconfigactions.blob.core.windows.net/linuxrconfigactionv01/r-installer-v01.sh"), null
+            ));
+
+11. Finally, create the cluster:
+
+		client.CreateCluster(clusterInfo);
+
+11. Save changes to the application and build the solution.
+
+###Run the application
+
+Open the Azure PowerShell console, navigate to the location where you saved the project, navigate to the \bin\debug directory within the project, and then run the following command:
+
+	.\ScriptActionCluster <cluster-name>
+
+Provide a cluster name and press ENTER to provision a cluster.
+<!-- keep by customization: end -->
 
 ## Support for open-source software used on HDInsight clusters
 
@@ -481,9 +610,21 @@ There are two types of open-source components that are available in the HDInsigh
 
 - **Custom components** - You, as a user of the cluster, can install or use in your workload any component available in the community or created by you.
 
-> [AZURE.WARNING] Components provided with the HDInsight cluster are fully supported and Microsoft Support will help to isolate and resolve issues related to these components.
+<!-- deleted by customization > [AZURE.WARNING] Components provided with the HDInsight cluster --><!-- keep by customization: begin --> Built-in components <!-- keep by customization: end --> are fully supported <!-- keep by customization: begin -->, <!-- keep by customization: end -->  and Microsoft Support will help to isolate and resolve issues related to these components.
+<!-- deleted by customization
 >
 > Custom components receive commercially reasonable support to help you to further troubleshoot the issue. This might result in resolving the issue OR asking you to engage available channels for the open source technologies where deep expertise for that technology is found. For example, there are many community sites that can be used, like: [MSDN forum for HDInsight](https://social.msdn.microsoft.com/Forums/azure/zh-cn/home?forum=hdinsight), [http://stackoverflow.com](http://stackoverflow.com). Also Apache projects have project sites on [http://apache.org](http://apache.org), for example: [Hadoop](http://hadoop.apache.org/), [Spark](http://spark.apache.org/).
+-->
+<!-- keep by customization: begin -->
+
+Custom components receive commercially reasonable support to help you to further troubleshoot the issue. This might result in resolving the issue or asking you to engage available channels for the open-source technologies where deep expertise for that technology is found. For example, there are many community sites that can be used, like:
+
+* [MSDN forum for HDInsight](https://social.msdn.microsoft.com/Forums/azure/home?forum=hdinsight)
+
+* [Stack Overflow](https://stackoverflow.com)
+
+Also, Apache projects have project sites on [Apache.org](https://apache.org); for example, [Hadoop](http://hadoop.apache.org/) and [Spark](http://spark.apache.org/).
+<!-- keep by customization: end -->
 
 The HDInsight service provides several ways to use custom components. Regardless of how a component is used or installed on the cluster, the same level of support applies. Below is a list of the most common ways that custom components can be used on HDInsight clusters:
 
@@ -493,9 +634,16 @@ The HDInsight service provides several ways to use custom components. Regardless
 
 3. Samples - For popular custom components, Microsoft and others may provide samples of how these components can be used on the HDInsight clusters. These samples are provided without support.
 
+<!-- deleted by customization
 ## Troubleshooting
 
 You can use Ambari web UI to view information logged by scripts during cluster creation.
+-->
+<!-- keep by customization: begin -->
+##Troubleshooting
+
+You can use Ambari web UI to view information logged by scripts during cluster provisioning.
+<!-- keep by customization: end -->
 
 1. In your browser, navigate to https://CLUSTERNAME.azurehdinsight.cn. Replace CLUSTERNAME with the name of your HDInsight cluster.
 
@@ -523,4 +671,9 @@ See the following for information and examples on creating and using scripts to 
 
 
 
+<!-- deleted by customization
 [img-hdi-cluster-states]: ./media/hdinsight-hadoop-customize-cluster/HDI-Cluster-state.png "Stages during cluster creation"
+-->
+<!-- keep by customization: begin -->
+[img-hdi-cluster-states]: ./media/hdinsight-hadoop-customize-cluster/HDI-Cluster-state.png "Stages during cluster provisioning"
+<!-- keep by customization: end -->

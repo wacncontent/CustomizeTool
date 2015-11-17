@@ -1,15 +1,15 @@
 <properties 
-	pageTitle="Azure Active Directory Connect - Learn More" 
-	description="Learn more about Azure AD Connect." 
-	services="active-directory" 
-	documentationCenter="" 
-	authors="billmath" 
+	pageTitle="Azure Active Directory Connect - Learn More"
+	description="Learn more about Azure AD Connect."
+	services="active-directory"
+	documentationCenter=""
+	authors="billmath"
 	manager="stevenpo"
 	editor="curtand"/>
 
-<tags 
-	ms.service="active-directory" 
-	ms.date="08/24/2015" 
+<tags
+	ms.service="active-directory"
+	ms.date="08/24/2015"
 	wacn.date=""/>
 
 # Azure Active Directory Connect - Learn More
@@ -42,3 +42,4 @@ The following is a list of additional resources for using Azure AD Connect and i
 * [Getting started with Azure AD Connect](/documentation/articles/active-directory-aadconnect-get-started)
 * [Whats Next with Azure AD Connect](/documentation/articles/active-directory-aadconnect-whats-next)
 * [Azure AD Connect on MSDN](https://msdn.microsoft.com/zh-cn/library/azure/dn832695.aspx)
+

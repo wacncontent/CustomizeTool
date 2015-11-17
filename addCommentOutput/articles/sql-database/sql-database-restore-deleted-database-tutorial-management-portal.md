@@ -20,9 +20,9 @@
 
 ## Overview
 
-This tutorial shows you how to restore a deleted Azure SQL database in the [Azure Management <!-- deleted by customization Portal](http://manage.windowsazure.cn) --><!-- keep by customization: begin --> Portal](http://manage.windowsazure.cn/) <!-- keep by customization: end -->. You can restore a database that was deleted during its retention period to the point it was deleted. The retention period is determined by the service tier of the database.
+This tutorial shows you how to restore a deleted Azure SQL database in the [Azure Management Portal](http://manage.windowsazure.cn). You can restore a database that was deleted during its retention period to the point it was deleted. The retention period is determined by the service tier of the database.
 
-Restoring a deleted Azure SQL database creates a new database. The service automatically selects the service tier based on the backup used at the restore point. Make sure you have available quota on the logical server to create another database. If you'd like to request an increased quota, contact [Azure <!-- deleted by customization Support](http://azure.microsoft.com/support/options/) --><!-- keep by customization: begin --> Support](/support/contact/) <!-- keep by customization: end -->.
+Restoring a deleted Azure SQL database creates a new database. The service automatically selects the service tier based on the backup used at the restore point. Make sure you have available quota on the logical server to create another database. If you'd like to request an increased quota, contact [Azure Support](/support/contact/).
 
 ## Restrictions and Security
 
@@ -43,11 +43,8 @@ Restoring a deleted Azure SQL database creates a new database. The service autom
 
 <!-- deleted by customization
 > [AZURE.VIDEO restore-a-deleted-sql-database]
--->
-<!-- keep by customization: begin -->
-<!--<iframe src="http://channel9.msdn.com/Blogs/Windows-Azure/Restore-a-Deleted-SQL-Database/player" width="960" height="540" allowFullScreen frameBorder="0"></iframe>-->
-<!-- keep by customization: end -->
 
+-->
 1. Sign in to the [Azure Management Portal](http://manage.windowsazure.cn) using your Microsoft account.
 
 2. In the left navigation, click **SQL DATABASES**.

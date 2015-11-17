@@ -1,3 +1,7 @@
+<!-- keep by customization: begin -->
+<!-- not suitable for Mooncake -->
+
+<!-- keep by customization: end -->
 > [AZURE.SELECTOR]
 - [Overview](/documentation/articles/hdinsight-provision-clusters)
 - [Azure preview portal](/documentation/articles/hdinsight-hadoop-create-linux-clusters-portal)

@@ -7,11 +7,10 @@
 	manager="sendgrid" 
 	editor="mollybos"/>
 
-<tags 
-	ms.service="multiple" 
-	ms.date="10/30/2014" 
+<tags
+	ms.service="multiple"
+	ms.date="10/30/2014"
 	wacn.date=""/>
-
 # How to Send Email Using SendGrid from Java
 
 This guide demonstrates how to perform common programming tasks with the
@@ -19,7 +18,7 @@ SendGrid email service on Azure. The samples are written in
 Java. The scenarios covered include **constructing email**, **sending
 email**, **adding attachments**, **using filters**, and **updating
 properties**. For more information on SendGrid and sending email, see
-the [Next steps][] section.
+the [Next steps](#next-steps) section.
 
 ## Table of Contents
 

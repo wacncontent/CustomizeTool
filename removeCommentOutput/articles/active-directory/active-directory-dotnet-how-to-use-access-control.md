@@ -99,7 +99,7 @@ addressing ACS resources within your application.
 
 	![][1]
 
-3.  To create a new Access Control namespace, click **New**. **Azure Websites** and **Access Control** will be selected. Click **Quick Create**.
+3.  To create a new Access Control namespace, click **New**. **App Services** and **Access Control** will be selected. Click **Quick Create**.
 
 	![][2]
 

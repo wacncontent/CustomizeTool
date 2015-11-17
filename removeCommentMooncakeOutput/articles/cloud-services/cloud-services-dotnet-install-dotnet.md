@@ -8,9 +8,9 @@
    editor=""/>
 
 <tags
-   ms.service="cloud-services"
-   ms.date="08/03/2015"
-   wacn.date=""/>
+	ms.service="cloud-services"
+	ms.date="08/03/2015"
+	wacn.date=""/>
 
 # Install .NET on a Cloud Service Role 
 
@@ -20,8 +20,8 @@ The  process of installing .NET on your web and worker roles involves including 
 
 ## Add the .NET installer to your project
 1. Download the the web installer for the .NET framework you want to install
-        - [.NET 4.5.2 Web Installer](https://www.microsoft.com/zh-CN/download/details.aspx?id=42643)
-	- [.NET 4.6 Web Installer](https://www.microsoft.com/zh-CN/download/details.aspx?id=48130)
+	- [.NET 4.5.2 Web Installer](http://go.microsoft.com/fwlink/p/?LinkId=397703)
+	- [.NET 4.6 Web Installer](http://go.microsoft.com/fwlink/?LinkId=528259)
 2. For a Web Role
   1. In **Solution Explorer**, under In **Roles** in the cloud service project right click on your role and select **Add>New Folder**. Create a folder named *bin*
   2. Right click on the **bin** folder and select **Add>Existing Item**. Select the .NET installer and add it to the bin folder.
@@ -82,7 +82,7 @@ Startup tasks allow you to perform operations before a role starts. Installing t
 	set timehour=%time:~0,2%
 	set timestamp=%date:~-4,4%%date:~-10,2%%date:~-7,2%-%timehour: =0%%time:~3,2%
 	set startuptasklog=%PathToInstallLogs%startuptasklog-%timestamp%.txt
-	set netfxinstallerlog = %PathToInstallLogs%NetFXInstallerLog-%timestamp%
+	set netfxinstallerlog=%PathToInstallLogs%NetFXInstallerLog-%timestamp%
 	echo Logfile generated at: %startuptasklog% >> %startuptasklog%
 	
 	REM ***** Check if .NET is installed *****
@@ -136,3 +136,4 @@ When you deploy your service the startup tasks will run and install the .NET fra
 [1]: ./media/cloud-services-dotnet-install-dotnet/rolecontentwithinstallerfiles.png
 [2]: ./media/cloud-services-dotnet-install-dotnet/rolecontentwithallfiles.png
 
+ 

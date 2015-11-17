@@ -8,9 +8,9 @@
    editor=""/>
 
 <tags
-   ms.service="sql-database"
-   ms.date="10/12/2015"
-   wacn.date=""/>
+	ms.service="sql-database"
+	ms.date="10/12/2015"
+	wacn.date=""/>
 
 # Migrating a SQL Server database to Azure SQL Database
 
@@ -57,7 +57,7 @@ If database incompatibilities are detected, you will need to fix these incompati
  	 > [AZURE.IMPORTANT] Download the [latest](https://msdn.microsoft.com/zh-cn/library/mt238290.aspx) version of SQL Server Management Studio. It is recommended that you always use the latest version of Management Studio.
 
 2. Open Management Studio and connect to your source database in Object Explorer.
-3. Right-click the source database in the Object Explorer, point to **Tasks**, and click **Export Data-Tier Application¡­**
+3. Right-click the source database in the Object Explorer, point to **Tasks**, and click **Export Data-Tier Application…** 
 
 	![Export a data-tier application from the Tasks menu](./media/sql-database-cloud-migrate/TestForCompatibilityUsingSSMS01.png)
 
@@ -96,7 +96,7 @@ The Deploy Database to Windows Azure Database wizard in SQL Server Management St
 	 > [AZURE.IMPORTANT] Download the [latest](https://msdn.microsoft.com/zh-cn/library/mt238290.aspx) version of SQL Server Management Studio. It is recommended that you always use the latest version of Management Studio.
 
 2. Open Management Studio and connect to your source database in Object Explorer.
-3. Right-click the source database in the Object Explorer, point to **Tasks**, and click **Deploy Database to Windows Azure SQL Database¡­**
+3. Right-click the source database in the Object Explorer, point to **Tasks**, and click **Deploy Database to Windows Azure SQL Database…** 
 
 	![Deploy to Azure from Tasks menu](./media/sql-database-cloud-migrate/MigrateUsingDeploymentWizard01.png)
 
@@ -135,7 +135,7 @@ Use the steps below to use Management Studio to export a migrating a [compatible
 
 	![Export a data-tier application from the Tasks menu](./media/sql-database-cloud-migrate/MigrateUsingBACPAC01.png)
 
-3. Right-click the source database in the Object Explorer, point to **Tasks**, and click **Export Data-Tier Application¡­**
+3. Right-click the source database in the Object Explorer, point to **Tasks**, and click **Export Data-Tier Application…** 
 
 	![Export a data-tier application from the Tasks menu](./media/sql-database-cloud-migrate/TestForCompatibilityUsingSSMS01.png)
 

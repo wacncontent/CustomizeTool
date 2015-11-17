@@ -14,9 +14,9 @@
 
 # How to install and configure Azure PowerShell#
 
-<div class="dev-center-tutorial-selector sublanding"><a href="/manage/install-and-configure-windows-powershell/" title="PowerShell" class="current">PowerShell</a><a href="/documentation/articles/xplat-cli-install/" title="Azure CLI">Azure  CLI</a></div>
+<div class="dev-center-tutorial-selector sublanding"><a href="/documentation/articles/install-and-configure-windows-powershell/" title="PowerShell" class="current">PowerShell</a><a href="/documentation/articles/xplat-cli-install/" title="Azure CLI">Azure  CLI</a></div>
 
-> [AZURE.NOTE] **Azure PowerShell 1.0 Preview** is now available on [PowerShell Gallery](http://www.powershellgallery.com/). There are many changes in this preview and we’d like to use it to gather feedback, which we’ll incorporate into Azure PowerShell 1.0. **This preview is not intended for mission critical applications**. If you are running such applications, please continue to use Azure PowerShell 0.9.8. If you would like to use 1.0 Preview, you can uninstall it at any point and go back to 0.9.8. For complete installation instructions, see this [blog post](https://azure.microsoft.com/blog/azps-1-0-pre/).
+> [AZURE.NOTE] **Azure PowerShell 1.0 Preview** is now available on [PowerShell Gallery](http://www.powershellgallery.com/). There are many changes in this preview and <!-- deleted by customization we’d --><!-- keep by customization: begin --> we�d <!-- keep by customization: end --> like to use it to gather feedback, which <!-- deleted by customization we’ll --><!-- keep by customization: begin --> we�ll <!-- keep by customization: end --> incorporate into Azure PowerShell 1.0. **This preview is not intended for mission critical applications**. If you are running such applications, please continue to use Azure PowerShell 0.9.8. If you would like to use 1.0 Preview, you can uninstall it at any point and go back to 0.9.8. For complete installation instructions, see this [blog post](https://azure.microsoft.com/blog/azps-1-0-pre/).
 
 You can use Windows PowerShell to perform a variety of tasks in Azure, either interactively at a command prompt or automatically through scripts. Azure PowerShell is a module that provides cmdlets to manage Azure through Windows PowerShell. You can use the cmdlets to create, test, deploy, and manage solutions and services delivered through the Azure platform. In most cases, you can use the cmdlets to perform the same tasks that you can perform through the Azure Management Portal. For example, you can create and configure cloud services, virtual machines, virtual networks, and web apps.
 
@@ -53,7 +53,7 @@ The method you use to open either console depends on the version of Windows you'
 <a id="Connect"></a>
 ## How to: Connect to your subscription
 
-Use of Azure requires a subscription. If you don't have a subscription, see [Get Started with Azure](https://azure.microsoft.com/zh-cn/pricing/overview/).
+Use of Azure requires a subscription. If you don't have a subscription, see [Get Started with <!-- deleted by customization Azure](https://azure.microsoft.com/zh-cn/pricing/overview/) --><!-- keep by customization: begin --> Azure](/pricing/overview/) <!-- keep by customization: end -->.
 
 The cmdlets need your subscription so they can manage your services. There are two ways to provide your subscription information to Windows PowerShell. You can use a management certificate that contains the information or you can sign in to Azure using your Microsoft account or a work or school account. When you sign in, Azure Active Directory (Azure AD) authenticates the credentials and returns an access token that lets Azure PowerShell manage your account.
 

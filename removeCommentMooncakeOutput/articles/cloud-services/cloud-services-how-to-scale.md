@@ -7,8 +7,8 @@
 	manager="timlt" 
 	editor=""/>
 
-<tags 
-	ms.service="cloud-services" 
+<tags
+	ms.service="cloud-services"
 	ms.date="09/08/2015"
 	wacn.date=""/>
 
@@ -17,7 +17,6 @@
 
 
 # How to Autoscale an Application
-
 
 On the Scale page of the Azure Management Portal, you can manually scale your application or you can set parameters to automatically scale it. You can scale applications that are running Web Roles, Worker Roles, or Virtual Machines. To scale an application that is running instances of Web Roles or Worker Roles, you add or remove role instances to accommodate the work load.
 
@@ -200,7 +199,7 @@ You can schedule automatic scaling of your application by configuring schedules 
 2. Click **Scale**.
 3. On the Scale page, click **set up schedule times**.
 
-	![Schedule scaling][scale_schedule]
+    ![Schedule scaling][scale_schedule]
 
 4. Select the type of scaling schedule that you want to set up.
 

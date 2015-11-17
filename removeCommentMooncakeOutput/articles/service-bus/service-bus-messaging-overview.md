@@ -9,7 +9,6 @@
 
 <tags
 	ms.service="service-bus"
-
 	ms.date="09/04/2015"
 	wacn.date=""/>
 
@@ -50,5 +49,5 @@ To learn more about Service Bus messaging, see the following topics.
 - [Service Bus fundamentals](/documentation/articles/service-bus-fundamentals-hybrid-solutions)
 - [Service Bus architecture](/documentation/articles/service-bus-architecture)
 - [How to use Service Bus Queues](/documentation/articles/service-bus-dotnet-how-to-use-queues)
-
 - [How to use Service Bus Topics](/documentation/articles/service-bus-dotnet-how-to-use-topics-subscriptions)
+ 

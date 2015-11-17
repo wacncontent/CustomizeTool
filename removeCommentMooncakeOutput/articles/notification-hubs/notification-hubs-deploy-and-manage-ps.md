@@ -5,11 +5,11 @@
 	documentationCenter="" 
 	authors="wesmc7777" 
 	manager="dwrede" 
-	editor=""/>
+	editor="" />
 
-<tags 
-	ms.service="notification-hubs" 
-	ms.date="06/18/2015" 
+<tags
+	ms.service="notification-hubs"
+	ms.date="09/24/2015"
 	wacn.date=""/>
 
 # Deploy and Manage Notification Hubs using PowerShell
@@ -55,23 +55,23 @@ Here's how these steps are implemented in a PowerShell script:
 
 ``` powershell
 
-	try
-	{
-    	# WARNING: Make sure to reference the latest version of Microsoft.ServiceBus.dll
-    	Write-Output "Adding the [Microsoft.ServiceBus.dll] assembly to the script..."
-    	$scriptPath = Split-Path (Get-Variable MyInvocation -Scope 0).Value.MyCommand.Path
-    	$packagesFolder = (Split-Path $scriptPath -Parent) + "\packages"
-    	$assembly = Get-ChildItem $packagesFolder -Include "Microsoft.ServiceBus.dll" -Recurse
-    	Add-Type -Path $assembly.FullName
+try
+{
+    # WARNING: Make sure to reference the latest version of Microsoft.ServiceBus.dll
+    Write-Output "Adding the [Microsoft.ServiceBus.dll] assembly to the script..."
+    $scriptPath = Split-Path (Get-Variable MyInvocation -Scope 0).Value.MyCommand.Path
+    $packagesFolder = (Split-Path $scriptPath -Parent) + "\packages"
+    $assembly = Get-ChildItem $packagesFolder -Include "Microsoft.ServiceBus.dll" -Recurse
+    Add-Type -Path $assembly.FullName
 
-    	Write-Output "The [Microsoft.ServiceBus.dll] assembly has been successfully added to the script."
-	}
+    Write-Output "The [Microsoft.ServiceBus.dll] assembly has been successfully added to the script."
+}
 
-	catch [System.Exception]
-	{
-    	Write-Error("Could not add the Microsoft.ServiceBus.dll assembly to the script. Make sure you build the solution before running the provisioning script.")
-	}
-
+catch [System.Exception]
+{
+    Write-Error("Could not add the Microsoft.ServiceBus.dll assembly to the script. Make sure you build the solution before running the provisioning script.")
+}
+```
 
 ## Create the NamespaceManager class
 
@@ -107,20 +107,19 @@ These variables are used to connect to your Service Bus namespace and create a n
 
 ``` powershell
 
-		$Namespace = "<Enter your namespace>
-		$Path  = "<Enter a name for your notification hub>"
-		$WnsPackageSid = "<your package sid>"
-		$WnsSecretkey = "<enter your secret key>"
+$Namespace = "<Enter your namespace>
+$Path  = "<Enter a name for your notification hub>"
+$WnsPackageSid = "<your package sid>"
+$WnsSecretkey = "<enter your secret key>"
 
-		$WnsCredential = New-Object -TypeName Microsoft.ServiceBus.Notifications.WnsCredential -ArgumentList $WnsPackageSid,$WnsSecretkey
+$WnsCredential = New-Object -TypeName Microsoft.ServiceBus.Notifications.WnsCredential -ArgumentList $WnsPackageSid,$WnsSecretkey
 
 # Query the namespace
 $CurrentNamespace = Get-AzureSBNamespace -Name $Namespace
 
-# Check if the namespace already exists  
-
-	if ($CurrentNamespace)
-	{
+# Check if the namespace already exists
+if ($CurrentNamespace)
+{
     Write-Output "The namespace [$Namespace] in the [$($CurrentNamespace.Region)] region was found."
 
     # Create the NamespaceManager object used to create a new notification hub
@@ -142,12 +141,12 @@ $CurrentNamespace = Get-AzureSBNamespace -Name $Namespace
         $NamespaceManager.CreateNotificationHub($NHDescription);
         Write-Output "The [$Path] notification hub was created in the [$Namespace] namespace."
     }
-	}
-	else
-	{
-	Write-Host "The [$Namespace] namespace does not exist."
-	}
-	
+}
+else
+{
+    Write-Host "The [$Namespace] namespace does not exist."
+}
+```
 
 
 
@@ -162,8 +161,8 @@ Some ready-made scripts are also available for download:
 - [Service Bus PowerShell Scripts](https://code.msdn.microsoft.com/windowsazure/Service-Bus-PowerShell-a46b7059)
  
 
-[Purchase Options]: http://www.windowsazure.cn/pricing/overview/
-[Member Offers]: http://azure.microsoft.com/pricing/member-offers/
+[Purchase Options]: /pricing/overview/
+[Member Offers]: /pricing/member-offers/
 [Trial]: /pricing/1rmb-trial/
 [Install and configure Azure PowerShell]: /documentation/articles/install-configure-powershell
 [.NET API for Service Bus]: https://msdn.microsoft.com/zh-cn/library/microsoft.servicebus.aspx

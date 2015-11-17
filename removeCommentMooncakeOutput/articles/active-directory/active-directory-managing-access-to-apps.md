@@ -8,9 +8,9 @@
   editor=""/>
 
  <tags
-  ms.service="active-directory"
-  ms.date="10/16/2015"
-  wacn.date=""/>
+	ms.service="active-directory"
+	ms.date="10/16/2015"
+	wacn.date=""/>
 
 
 # Managing access to apps

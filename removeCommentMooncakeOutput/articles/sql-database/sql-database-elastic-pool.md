@@ -7,9 +7,9 @@
 	manager="jeffreyg" 
 	editor=""/>
 
-<tags 
+<tags
 	ms.service="sql-database"
-	ms.date="10/08/2015" 
+	ms.date="10/08/2015"
 	wacn.date=""/>
 
 
@@ -18,7 +18,6 @@
 If you are a SaaS developer with tens, hundreds, or even thousands of databases, an elastic database pool simplifies the process of creating, maintaining, and managing performance across these databases within a budget that you control. You can [create an elastic database pool](/documentation/articles/sql-database-elastic-pool-portal) in minutes using the Windows Azure Management Portal, PowerShell, or C#.
 
 A common SaaS application pattern is for each database to have a different customer, each with varying and unpredictable resource consumption (CPU/IO/Memory summarized with DTU). With these peaks and valleys of demand for each database, it can be difficult to predict and therefore provision resources. You're faced with two options; either over-provision database resources based on peak usage--and overpay. Or under-provision to save cost--at the expense of performance and customer satisfaction during peaks. 
-
 
 
 

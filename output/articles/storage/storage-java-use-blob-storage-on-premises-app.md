@@ -425,11 +425,16 @@ Follow these links to learn more about more complex storage tasks.
 - [Azure Storage REST API][]
 - [Azure Storage Team Blog][]
 
-  [Download the Azure SDK for Java]: http://go.microsoft.com/fwlink/?LinkID=525671
+  [Download the Azure SDK for Java]: /develop/java/
   [How to Create a Storage Account]: /documentation/articles/storage-create-storage-account#create-a-storage-account
+<!-- deleted by customization
   [How to Manage Storage Accounts]: storage-create-storage-account.md#view-copy-and-regenerate-storage-access-keys
+-->
+<!-- keep by customization: begin -->
+  [How to Manage Storage Accounts]: /documentation/articles/storage-create-storage-account#view-copy-and-regenerate-storage-access-keys
+<!-- keep by customization: end -->
   [How to Use the Blob Storage Service from Java]: /documentation/articles/storage-java-how-to-use-blob-storage
   [Azure Storage SDK for Java]: https://github.com/azure/azure-storage-java
-  [Azure Storage Client SDK Reference]: http://dl.windowsazure.cn/storage/javadoc/
+  [Azure Storage Client SDK Reference]: http://dl.windowsazure.com/storage/javadoc/
   [Azure Storage REST API]: http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx
   [Azure Storage Team Blog]: http://blogs.msdn.com/b/windowsazurestorage/

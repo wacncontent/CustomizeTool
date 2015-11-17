@@ -1011,10 +1011,10 @@ To avoid overloading your log, you should remove or disable calls to console.log
 [Schedule jobs]: http://msdn.microsoft.com/zh-cn/library/azure/jj860528.aspx
 [Validate and modify data in Mobile Services by using server scripts]: /develop/mobile/tutorials/validate-modify-and-augment-data-dotnet/
 [Commands to manage Azure Mobile Services]: /documentation/articles/virtual-machines-command-line-tools#Mobile_Scripts
-[Windows Store Push]: /develop/mobile/tutorials/get-started-with-push-dotnet/
-[Windows Phone Push]: /develop/mobile/tutorials/get-started-with-push-wp8/
-[iOS Push]: /develop/mobile/tutorials/get-started-with-push-ios/
-[Android Push]: /develop/mobile/tutorials/get-started-with-push-android/
+[Windows Store Push]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-push-dotnet/
+[Windows Phone Push]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-push-wp8/
+[iOS Push]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-push-ios/
+[Android Push]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-push-android/
 [Azure SDK for Node.js]: http://go.microsoft.com/fwlink/p/?LinkId=275539
 [Send HTTP request]: http://msdn.microsoft.com/zh-cn/library/azure/jj631641.aspx
 [Send email from Mobile Services with SendGrid]: /develop/mobile/tutorials/send-email-with-sendgrid/

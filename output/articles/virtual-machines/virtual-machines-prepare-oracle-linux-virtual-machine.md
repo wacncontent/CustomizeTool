@@ -13,9 +13,11 @@ tags="azure-service-management,azure-resource-manager"
 	wacn.date=""/>
 
 #Prepare an Oracle Linux virtual machine for Azure
+<!-- deleted by customization
 
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-both-include.md)]
 
+-->
 
 -   [Prepare an Oracle Linux 6.4+ virtual machine for Azure](/documentation/articles/virtual-machines-linux-create-upload-vhd-oracle)
 

@@ -7,9 +7,9 @@
    manager="jeffreyg" 
    editor="monicar"/>
 
-<tags   ms.service="sql-database"
-   ms.date="07/14/2015"
-   wacn.date=""/>
+<tags	ms.service="sql-database"
+	ms.date="07/14/2015"
+	wacn.date=""/>
 
 #Design for business continuity
 
@@ -63,33 +63,34 @@ You can enable Geo-Replicatiom using Azure Management Portal or by calling REST 
 7. Click **Create** to complete the configuration
 
 > [AZURE.NOTE] The DR paired region on the Geo-Replication blade will be marked as *recommended*. If you use a Premium tier database you can choose a different region. If you are using a Standard database you cannot change it. The Premium database will  have a choice of the secondary type (*Readable* or *Non-readable*). Standard database can only select a *Non-readable* secondary.
- 
+
+
 ###PowerShell
 
-Use the [Start-AzureSqlDatabaseCopy](https://msdn.microsoft.com/zh-CN/library/dn720220.aspx) PowerShell cmdlet to automate Geo-Replication configuration.
+Use the [Start-AzureSqlDatabaseCopy](https://msdn.microsoft.com/zh-cn/library/dn720220.aspx) PowerShell cmdlet to automate Geo-Replication configuration.
 
 To create Geo-Replication with a non-readable secondary for a Premium or Standard database:
 		
 		Start-AzureSqlDatabaseCopy -ServerName "SecondaryServerName" -DatabaseName "SecondaryDatabaseName" -PartnerServer "PartnerServerName" –ContinuousCopy -OfflineSecondary
 To create Geo-Replication with a readable secondary for a Premium database:
 
-		Start-AzureSqlDatabaseCopy -ServerName "SecondaryServerName" -DatabaseName "SecondaryDatabaseName" -PartnerServer "PartnerServerName" –ContinuousCopy
+		Start-AzureSqlDatabaseCopy -ServerName "SecondaryServerName" -DatabaseName "SecondaryDatabaseName" -PartnerServer "PartnerServerName" –ContinuousCopy 
 		 
-This command is asynchronous. After it returns use the [Get-AzureSqlDatabaseCopy](https://msdn.microsoft.com/zh-CN/library/dn720235.aspx) cmdlet to check the status of this operation. The ReplicationState field of the returned object will have the value CATCH_UP when the operation is completed.
+This command is asynchronous. After it returns use the [Get-AzureSqlDatabaseCopy](https://msdn.microsoft.com/zh-cn/library/dn720235.aspx) cmdlet to check the status of this operation. The ReplicationState field of the returned object will have the value CATCH_UP when the operation is completed.
 
 		Get-AzureSqlDatabaseCopy -ServerName "PrimaryServerName" -DatabaseName "PrimaryDatabaseName" -PartnerServer "SecondaryServerName"
 
 
 ###REST API 
 
-Use [Start Database Copy](https://msdn.microsoft.com/zh-CN/library/azure/dn509576.aspx) API to programmatically create a Geo-Replication configuration.
+Use [Start Database Copy](https://msdn.microsoft.com/zh-cn/library/azure/dn509576.aspx) API to programmatically create a Geo-Replication configuration.
 
-This API is asynchronous. After it returns use the [Get Database Copy](https://msdn.microsoft.com/zh-CN/library/azure/dn509570.aspx) API check the status of this operation. The ReplicationState field of the response body will have the value CATCH_UP when the operation is completed.
+This API is asynchronous. After it returns use the [Get Database Copy](https://msdn.microsoft.com/zh-cn/library/azure/dn509570.aspx) API check the status of this operation. The ReplicationState field of the response body will have the value CATCH_UP when the operation is completed.
 
 
 ##How to choose the failover configuration 
 
-When designing your application for business continuity you should consider several configuration options. The choice will depend on the application deployment topology and what parts of your applications are most vulnerable to an outage. Please refer to [Designing Cloud Solutions for Disaster Recovery Using Active Geo-Replication](https://msdn.microsoft.com/zh-CN/library/azure/dn741328.aspx) for guidance.
+When designing your application for business continuity you should consider several configuration options. The choice will depend on the application deployment topology and what parts of your applications are most vulnerable to an outage. Please refer to [Designing Cloud Solutions for Disaster Recovery Using Active Geo-Replication](https://msdn.microsoft.com/zh-cn/library/azure/dn741328.aspx) for guidance.
 
 
  

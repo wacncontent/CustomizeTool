@@ -20,13 +20,13 @@ When using Azure AD Connect to deploy Active Directory Federation Services or th
 - If the target server is domain joined, ensure that Windows Remote Managed is enabled
 	* In an elevated PSH command window, use command “Enable-PSRemoting –force”
 
-- If the target server is a <!-- deleted by customization non-domain --><!-- keep by customization: begin --> non domain <!-- keep by customization: end --> joined WAP machine, there are a couple of additional requirements
+- If the target server is a non-domain joined WAP machine, there are a couple of additional requirements
 	- On the target machine (WAP machine):”
 
 - Ensure the winrm (Windows Remote Management / WS-Management) service is running via the Services snap-in
 
 - In an elevated PSH command window, use command “Enable-PSRemoting –force”
-	- On the machine on which the wizard is running (if the target machine is <!-- deleted by customization non-domain --><!-- keep by customization: begin --> non domain <!-- keep by customization: end --> joined or untrusted domain):
+	- On the machine on which the wizard is running (if the target machine is non-domain joined or untrusted domain):
 
 - In an elevated PSH command window, use the command “Set-Item WSMan:\localhost\Client\TrustedHosts –Value <DMZServerFQDN> -Force –Concatenate”
 	- In Server Manager:

@@ -20,7 +20,7 @@ This article walks you through the steps to create an ExpressRoute circuit using
 
 ## Configuration prerequisites
 
-- You will need the latest version of the Azure PowerShell modules. You can download the latest PowerShell module from the PowerShell section of the [Azure Downloads page](http://azure.microsoft.com/downloads). Follow the instructions on the [How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure) page for step-by-step guidance on how to configure your computer to use the Azure PowerShell modules. 
+- You will need the latest version of the Azure PowerShell modules. You can download the latest PowerShell module from the PowerShell section of the [Azure Downloads <!-- deleted by customization page](http://azure.microsoft.com/downloads) --><!-- keep by customization: begin --> page](/downloads) <!-- keep by customization: end -->. Follow the instructions on the [How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure) page for step-by-step guidance on how to configure your computer to use the Azure PowerShell modules.
 - Make sure that you have reviewed the [Prerequisites](/documentation/articles/expressroute-prerequisites) page and the [Workflows](/documentation/articles/expressroute-workflows) page before you begin configuration.
 
 ## Create and provision an ExpressRoute circuit
@@ -34,7 +34,7 @@ This article walks you through the steps to create an ExpressRoute circuit using
 
 2. **Get the list of providers, locations, and bandwidths supported.**
 
-	Before creating an ExpressRoute circuit, you will need the list of connectivity providers, supported locations, and bandwidth options. The PowerShell cmdlet *Get-AzureDedicatedCircuitServiceProvider* returns this information, which youâ€™ll use in later steps.
+	Before creating an ExpressRoute circuit, you will need the list of connectivity providers, supported locations, and bandwidth options. The PowerShell cmdlet *Get-AzureDedicatedCircuitServiceProvider* returns this information, which <!-- deleted by customization youâ€™ll --><!-- keep by customization: begin --> you’ll <!-- keep by customization: end --> use in later steps.
 
 		PS C:\> Get-AzureDedicatedCircuitServiceProvider
 
@@ -50,8 +50,8 @@ This article walks you through the steps to create an ExpressRoute circuit using
 		Colt Ethernet        Amsterdam,London               200Mbps:200, 500Mbps:500, 1Gbps:1000, 10Gbps:10000                                                                                                                                                           
 		Colt IPVPN           Amsterdam,London               10Mbps:10, 50Mbps:50, 100Mbps:100, 500Mbps:500, 1Gbps:1000                                                                                                                                                   
 		Comcast              Washington DC,Silicon Valley   200Mbps:200, 500Mbps:500, 1Gbps:1000, 10Gbps:10000                                                                                                                                                           
-		Equinix              Amsterdam,Atlanta,Chicago,Dall 200Mbps:200, 500Mbps:500, 1Gbps:1000, 10Gbps:10000                                                                                                                                                           
-		                     as,New York,Seattle,Silicon                                                                                                                                                                                                                 
+		Equinix              Amsterdam,Atlanta,Shanghai,Dall 200Mbps:200, 500Mbps:500, 1Gbps:1000, 10Gbps:10000                                                                                                                                                           
+		                     as,Beijing,Seattle,Silicon                                                                                                                                                                                                                 
 		                     Valley,Washington                                                                                                                                                                                                                           
 		                     DC,London,Hong Kong,Singapore,                                                                                                                                                                                                              
 		                     Sydney,Tokyo,Sao Paulo,Los                                                                                                                                                                                                                  
@@ -60,12 +60,17 @@ This article walks you through the steps to create an ExpressRoute circuit using
 		InterCloud           Washington                     200Mbps:200, 500Mbps:500, 1Gbps:1000, 10Gbps:10000                                                                                                                                                           
 		                     DC,London,Singapore,Amsterdam                                                                                                                                                                                                               
 		Internet Solutions   London,Amsterdam               10Mbps:10, 50Mbps:50, 100Mbps:100, 500Mbps:500, 1Gbps:1000                                                                                                                                                   
+<!-- deleted by customization
 		â€“ Cloud Connect                                                                                                                                                                                                                                                  
+-->
+<!-- keep by customization: begin -->
+		– Cloud Connect                                                                                                                                                                                                                                                  
+<!-- keep by customization: end -->
 		Interxion            Amsterdam                      200Mbps:200, 500Mbps:500, 1Gbps:1000, 10Gbps:10000                                                                                                                                                           
-		Level 3              London,Chicago,Dallas,Seattle, 200Mbps:200, 500Mbps:500, 1Gbps:1000, 10Gbps:10000                                                                                                                                                           
+		Level 3              London,Shanghai,Dallas,Seattle, 200Mbps:200, 500Mbps:500, 1Gbps:1000, 10Gbps:10000                                                                                                                                                           
 		Communications -     Silicon Valley,Washington DC                                                                                                                                                                                                                
 		Exchange                                                                                                                                                                                                                                                         
-		Level 3              London,Chicago,Dallas,Seattle, 10Mbps:10, 50Mbps:50, 100Mbps:100, 500Mbps:500, 1Gbps:1000                                                                                                                                                   
+		Level 3              London,Shanghai,Dallas,Seattle, 10Mbps:10, 50Mbps:50, 100Mbps:100, 500Mbps:500, 1Gbps:1000                                                                                                                                                   
 		Communications -     Silicon Valley,Washington DC                                                                                                                                                                                                                
 		IPVPN                                                                                                                                                                                                                                                            
 		Megaport             Melbourne,Sydney               200Mbps:200, 500Mbps:500, 1Gbps:1000, 10Gbps:10000                                                                                                                                                           

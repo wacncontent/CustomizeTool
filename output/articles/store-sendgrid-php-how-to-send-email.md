@@ -16,7 +16,22 @@
 This guide demonstrates how to perform common programming tasks with the SendGrid email service on Azure. The samples are written in PHP.
 The scenarios covered include **constructing email**, **sending email**, and **adding attachments**. For more information on SendGrid and sending email, see the [Next Steps](#next-steps) section.
 
+<!-- deleted by customization
 ## What is the SendGrid Email Service?
+-->
+<!-- keep by customization: begin -->
+## Table of Contents
+
+-   [What is the SendGrid Email Service][]
+-   [Create a SendGrid Account][]
+-   [Using SendGrid from your PHP Application][]
+-   [How To: Send an Email][]
+-   [How To: Add an Attachment][]
+-   [How to: Use Filters to Enable Footers, Tracking, and Analytics][]
+-   [Next Steps][]
+
+## <a name="bkmk_WhatIsSendGrid"> </a>What is the SendGrid Email Service?
+<!-- keep by customization: end -->
 
 SendGrid is a [cloud-based email service] that provides reliable
 [transactional email delivery], scalability, and real-time analytics along with flexible APIs
@@ -34,18 +49,33 @@ include:
 
 For more information, see [https://sendgrid.com][].
 
+<!-- deleted by customization
 ## Create a SendGrid Account
+-->
+<!-- keep by customization: begin -->
+## <a name="bkmk_CreateSendGrid"> </a>Create a SendGrid Account
+<!-- keep by customization: end -->
 
 [AZURE.INCLUDE [sendgrid-sign-up](../includes/sendgrid-sign-up.md)]
 
+<!-- deleted by customization
 ## Using SendGrid from your PHP Application
+-->
+<!-- keep by customization: begin -->
+## <a name="bkmk_UsingSendGridfromPHP"> </a>Using SendGrid from your PHP Application
+<!-- keep by customization: end -->
 
 Using SendGrid in an Azure PHP application requires no special
 configuration or coding. Because SendGrid is a service, it can be
 accessed in exactly the same way from a cloud application as it can from
 an on-premises application.
 
+<!-- deleted by customization
 ## How to: Send an Email
+-->
+<!-- keep by customization: begin -->
+## <a name="bkmk_HowToSendEmail"> </a>How to: Send an Email
+<!-- keep by customization: end -->
 
 You can send email using either SMTP or the Web API provided by
 SendGrid.
@@ -169,7 +199,12 @@ SendGrid's Web API is very similar to a REST API, though it is
 not truly a RESTful API since, in most calls, both GET and POST verbs
 can be used interchangeably.
 
+<!-- deleted by customization
 ## How to: Add an Attachment
+-->
+<!-- keep by customization: begin -->
+## <a name="bkmk_HowToAddAttachment"> </a>How to: Add an Attachment
+<!-- keep by customization: end -->
 
 ### SMTP API
 
@@ -303,7 +338,7 @@ Example:
      // print everything out
      print_r($response);
 
-## How to: Use Filters to Enable Footers, Tracking, and Analytics
+## <!-- deleted by customization How --><!-- keep by customization: begin --> <a name="bkmk_HowToUseFilters"> </a>How <!-- keep by customization: end --> to: Use Filters to Enable Footers, Tracking, and Analytics
 
 SendGrid provides additional email functionality through the use of
 'filters'. These are settings that can be added to an email message to
@@ -414,7 +449,12 @@ Example:
 
      print_r($response);
 
+<!-- deleted by customization
 ## Next Steps
+-->
+<!-- keep by customization: begin -->
+## <a name="bkmk_NextSteps"> </a>Next Steps
+<!-- keep by customization: end -->
 
 Now that you've learned the basics of the SendGrid Email service, follow
 these links to learn more.
@@ -425,7 +465,16 @@ these links to learn more.
 
 For more information, see also the [PHP Developer Center](/develop/php/).
 
-
+<!-- keep by customization: begin -->
+  [Next Steps]: #bkmk_NextSteps
+  [What is the SendGrid Email Service]: #bkmk_WhatIsSendGrid
+  [Create a SendGrid Account]: #bkmk_CreateSendGrid
+  [Using SendGrid from your PHP Application]: #bkmk_UsingSendGridfromPHP
+  [How To: Send an Email]: #bkmk_HowToSendEmail
+  [How To: Add an Attachment]: #bkmk_HowToAddAttachment
+  [How to: Use Filters to Enable Footers, Tracking, and Analytics]: #bkmk_HowToUseFilters
+  [How to: Use Additional SendGrid Services]: #bkmk_HowToUseAdditionalSvcs
+<!-- keep by customization: end -->
   [https://sendgrid.com]: https://sendgrid.com
   [https://sendgrid.com/transactional-email/pricing]: https://sendgrid.com/transactional-email/pricing
   [special offer]: https://www.sendgrid.com/windowsazure.html

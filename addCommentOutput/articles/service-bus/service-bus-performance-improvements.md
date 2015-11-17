@@ -285,3 +285,4 @@ To learn more about optimizing Service Bus performance, see [Partitioning Messag
   [ForcePersistence]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.brokeredmessage.forcepersistence.aspx
   [EnablePartitioning]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.queuedescription.enablepartitioning.aspx
   [Partitioning Messaging Entities]: /documentation/articles/service-bus-partitioning
+  

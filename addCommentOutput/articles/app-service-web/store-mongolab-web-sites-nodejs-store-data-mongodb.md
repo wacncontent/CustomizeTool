@@ -504,7 +504,7 @@ Congratulations! You've just launched a Node.js application backed by a MongoLab
 * For a guide to the change from Websites to Azure Websites see: [Azure Websites and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
 * For a guide to the change of the Management Portal to the new portal see: [Reference for navigating the preview portal](https://manage.windowsazure.cn/)
 
->[AZURE.NOTE] If you want to get started with Azure Websites before signing up for an Azure account, go to [Try Azure Websites](http://go.microsoft.com/fwlink/?LinkId=523751), where you can immediately create a short-lived starter web app in Azure Websites. No credit cards required; no commitments.
+>[AZURE.NOTE] If you want to get started with Azure Websites before signing up for an Azure account, go to [Try Azure <!-- deleted by customization Websites](http://go.microsoft.com/fwlink/?LinkId=523751) --><!-- keep by customization: begin --> Websites](https://tryappservice.azure.com/) <!-- keep by customization: end -->, where you can immediately create a short-lived starter web app in Azure Websites. No credit cards required; no commitments.
 
 
 [screen-mongolab-websitedashboard]: ./media/store-mongolab-web-sites-nodejs-store-data-mongodb/screen-mongolab-websitedashboard.png
@@ -524,7 +524,12 @@ Congratulations! You've just launched a Node.js application backed by a MongoLab
 [Git]: http://git-scm.com
 [Express]: http://expressjs.com
 [Mongoose]: http://mongoosejs.com
+<!-- deleted by customization
 [for free]: /pricing/free-trial
+-->
+<!-- keep by customization: begin -->
+[for free]: /pricing/1rmb-trial
+<!-- keep by customization: end -->
 [Git remote]: http://git-scm.com/docs/git-remote
 [azure-sdk-for-node]: https://github.com/WindowsAzure/azure-sdk-for-node
 [iisnode.yml]: https://github.com/WindowsAzure/iisnode/blob/master/src/samples/configuration/iisnode.yml

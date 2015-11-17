@@ -22,7 +22,7 @@
 
 This guide shows you how to restore an Azure SQL database using Point in Time Restore with REST API. Links to more detailed operations are provided.
 
-Point in Time Restore creates a new database. The service automatically selects the service tier based on the backup used at the restore point. Make sure you have available quota on the logical server to create another database. If you'd like to request an increased quota, contact [Azure <!-- deleted by customization Support](http://azure.microsoft.com/support/options/) --><!-- keep by customization: begin --> Support](/support/contact/) <!-- keep by customization: end -->.
+Point in Time Restore creates a new database. The service automatically selects the service tier based on the backup used at the restore point. Make sure you have available quota on the logical server to create another database. If you'd like to request an increased quota, contact [Azure Support](/support/contact/).
 
 ## Restrictions and Security
 
@@ -47,3 +47,4 @@ For more information, see the following:
 [Azure SQL Database Point in Time Restore (blog)](http://azure.microsoft.com/blog/2014/10/01/azure-sql-database-point-in-time-restore/)
 
 [Service Management REST API Reference](https://msdn.microsoft.com/zh-cn/library/azure/ee460799.aspx)
+ 

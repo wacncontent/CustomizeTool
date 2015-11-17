@@ -8,10 +8,9 @@
    editor=""/>
 
 <tags
-   ms.service="service-bus"
-
-   ms.date="08/14/2015"
-   wacn.date=""/>
+	ms.service="service-bus"
+	ms.date="08/14/2015"
+	wacn.date=""/>
 
 # Use PowerShell to manage Service Bus and Event Hubs resources
 
@@ -81,26 +80,26 @@ This part of the script does the following:
 3. If the namespace is not found, it creates the namespace and then retrieves the newly created namespace.
 
 	``` powershell
-		
-		$Namespace = "MyServiceBusNS"
-		$Location = "China East"
-		
-		# Query to see if the namespace currently exists
-		$CurrentNamespace = Get-AzureSBNamespace -Name $Namespace
 
-		# Check if the namespace already exists or needs to be created
-		if ($CurrentNamespace)
-		{
-		    Write-Output "The namespace [$Namespace] already exists in the [$($CurrentNamespace.Region)] region."
-		}
-		else
-		{
-		    Write-Host "The [$Namespace] namespace does not exist."
-		    Write-Output "Creating the [$Namespace] namespace in the [$Location] region..."
-		    New-AzureSBNamespace -Name $Namespace -Location $Location -CreateACSNamespace false -NamespaceType Messaging
-		    $CurrentNamespace = Get-AzureSBNamespace -Name $Namespace
-		    Write-Host "The [$Namespace] namespace in the [$Location] region has been successfully created."
-		}
+	$Namespace = "MyServiceBusNS"
+	$Location = "China North"
+
+	# Query to see if the namespace currently exists
+	$CurrentNamespace = Get-AzureSBNamespace -Name $Namespace
+
+	# Check if the namespace already exists or needs to be created
+	if ($CurrentNamespace)
+	{
+	    Write-Output "The namespace [$Namespace] already exists in the [$($CurrentNamespace.Region)] region."
+	}
+	else
+	{
+	    Write-Host "The [$Namespace] namespace does not exist."
+	    Write-Output "Creating the [$Namespace] namespace in the [$Location] region..."
+	    New-AzureSBNamespace -Name $Namespace -Location $Location -CreateACSNamespace false -NamespaceType Messaging
+	    $CurrentNamespace = Get-AzureSBNamespace -Name $Namespace
+	    Write-Host "The [$Namespace] namespace in the [$Location] region has been successfully created."
+	}
 	```
 To provision other Service Bus entities, create an instance of the `NamespaceManager` object from the SDK. You can use the [Get-AzureSBAuthorizationRule] cmdlet to retrieve an authorization rule that's used to provide a connection string. This example stores a reference to the `NamespaceManager` instance in the `$NamespaceManager` variable. The script later uses `$NamespaceManager` to provision other entities.
 
@@ -264,7 +263,7 @@ Some ready-made script are also available for download:
 <!--Anchors-->
 
 [Purchase Options]: /pricing/overview/
-[Member Offers]: http://azure.microsoft.com/zh-cn/pricing/member-offers/
+[Member Offers]: /pricing/member-offers/
 [Trial]: /pricing/1rmb-trial/
 [Service Bus NuGet package]: http://www.nuget.org/packages/WindowsAzure.ServiceBus/
 [Get-AzureSBNamespace]: https://msdn.microsoft.com/zh-cn/library/azure/dn495122.aspx

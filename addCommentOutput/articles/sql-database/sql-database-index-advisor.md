@@ -18,12 +18,12 @@ The Azure SQL Database Index Advisor recommends new indexes for your existing SQ
 
 The SQL Database service assesses index performance by analyzing historical resource usage for a SQL Database and the indexes that are best suited for running the database’s typical workload are recommended.
 
-Index advisor makes index management easier by providing recommendations on which indexes to create. For V12 servers, Index advisor can also create and validate indexes with just a few clicks in the [Azure <!-- deleted by customization Preview --><!-- keep by customization: begin --> Management <!-- keep by customization: end --> Portal](https://manage.windowsazure.cn/). After the index is created, the SQL Database service analyzes performance of the database workload and provides details of the impact of the new index. If the analysis determines that a recommended index has a negative impact on performance, then the index is reverted automatically.
+Index advisor makes index management easier by providing recommendations on which indexes to create. For V12 servers, Index advisor can also create and validate indexes with just a few clicks in the [Azure Preview Portal](https://manage.windowsazure.cn/). After the index is created, the SQL Database service analyzes performance of the database workload and provides details of the impact of the new index. If the analysis determines that a recommended index has a negative impact on performance, then the index is reverted automatically.
 
 Index advisor allows you to spend less time tuning your database performance.
 
 
-> [AZURE.NOTE] Index Advisor is currently in preview and is only available in the [Azure <!-- deleted by customization Preview --><!-- keep by customization: begin --> Management <!-- keep by customization: end --> Portal](https://manage.windowsazure.cn/).
+> [AZURE.NOTE] Index Advisor is currently in preview and is only available in the [Azure Preview Portal](https://manage.windowsazure.cn/).
 
 
 ## Preview considerations
@@ -35,7 +35,7 @@ The index advisor is currently in preview and has the following limitations:
 
 ## Prerequisites
 
-To view and create index recommendations, you need the correct [role-based access <!-- deleted by customization control](/documentation/articles/role-based-access-control-configure) --><!-- keep by customization: begin --> control](/documentation/artciles/role-based-access-control-configure) <!-- keep by customization: end --> permissions in Azure.
+To view and create index recommendations, you need the correct [role-based access control](/documentation/articles/role-based-access-control-configure) permissions in Azure. 
 
 - **Reader**, **SQL DB Contributor** permissions are required to view recommendations.
 - **Owner**, **SQL DB Contributor** permissions are required to execute any actions; create or drop indexes and cancel index creation.
@@ -53,11 +53,11 @@ Index Advisor is easy to use. To simplify index management for your database fol
 
 ## Review Recommended Indexes
 
-Index advisor provides a list of index recommendations on the database blade in the [Azure <!-- deleted by customization Preview --><!-- keep by customization: begin --> Management <!-- keep by customization: end --> Portal](https://manage.windowsazure.cn/). The top selected recommendations are shown for each table in the selected database where creating a new index may provide performance gains.
+Index advisor provides a list of index recommendations on the database blade in the [Azure Preview Portal](https://manage.windowsazure.cn/). The top selected recommendations are shown for each table in the selected database where creating a new index may provide performance gains.
 
 ### To review currently available index recommendations:
 
-1. Sign in to the [Azure <!-- deleted by customization Preview --><!-- keep by customization: begin --> Management <!-- keep by customization: end --> Portal](https://manage.windowsazure.cn/).
+1. Sign in to the [Azure Preview Portal](https://manage.windowsazure.cn/).
 2. Click **BROWSE** in the left menu.
 3. Click **SQL databases** in the **Browse** blade.
 4. On the **SQL databases** blade, click the database that you want to review recommended indexes for.

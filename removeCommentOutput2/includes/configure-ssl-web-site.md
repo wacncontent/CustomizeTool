@@ -401,12 +401,14 @@ Enabling HTTPS for a custom domain is only available for the **Standard** mode o
 	![standard mode selected][standard]
 
 5. Click **Save**. When prompted, click **Yes**.
+
 	> [AZURE.NOTE] If you receive a "Configuring scale for web app '&lt;app name&gt;' failed" error you can use the details button to get more information. You may receive a "Not enough available standard instance servers to satisfy this request." error. If you receive this error, please contact [Azure support](/support/options/).
 
 
 ##<a name="bkmk_configuressl"></a>Configure SSL
 
 Before performing the steps in this section, you must have associated a custom domain name with your web app. For more information, see [Configuring a custom domain name for a web app][customdomain].
+
 1.	In your browser, open the [Azure Management Portal][portal].
 
 2. In the **Websites** tab, click the name of your site and then select the **CONFIGURE** tab.

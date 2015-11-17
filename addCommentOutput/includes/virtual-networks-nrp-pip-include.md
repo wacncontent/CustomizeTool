@@ -13,7 +13,7 @@ Public IP addresses have a child object named **dnsSettings** containing the fol
 |Property|Description|Sample values|
 |---|---|---|
 |**domainNameLabel**|Host named used for name resolution.|www, ftp, vm1|
-|**fqdn**|Fully qualified name for the public IP.|www.westus.cloudapp.azure.com|
+|**fqdn**|Fully qualified name for the public IP.|www.chinanorth.chinacloudapp.cn|
 |**reverseFqdn**|Fully qualified domain name that resolves to the IP address and is registered in DNS as a PTR record.|www.contoso.com.|
 
 Sample public IP address in JSON format:
@@ -28,7 +28,7 @@ Sample public IP address in JSON format:
 		  "ipAddress": "104.42.233.77",
 	      "dnsSettings": {
 	         "domainNameLabel": "mylabel",
-			 "fqdn": "mylabel.westus.cloudapp.azure.com",
+			 "fqdn": "mylabel.chinanorth.chinacloudapp.cn",
 	         "reverseFqdn": "contoso.com."
 	      }
 	   }

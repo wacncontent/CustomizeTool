@@ -76,7 +76,7 @@ retrieve information about existing locks.
 
 To create a lock, run:
 
-    PUT https://management.azure.com/{scope}/providers/Microsoft.Authorization/locks/{lock-name}?api-version={api-version}
+    PUT https://manage.windowsazure.cn/{scope}/providers/Microsoft.Authorization/locks/{lock-name}?api-version={api-version}
 
 The scope could be a subscription, resource group or resource. The lock-name is whatever you want to call the lock. For api-version, use **2015-01-01**.
 

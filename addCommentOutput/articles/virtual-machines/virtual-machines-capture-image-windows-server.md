@@ -17,15 +17,15 @@
 
 <!-- deleted by customization
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
-
 -->
 <!-- keep by customization: begin -->
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-include.md)] This article covers creating resources with the classic deployment model.
 <!-- keep by customization: end -->
 
+
 This article shows you how to capture an Azure virtual machine running Windows so you can use it as an image to create other virtual machines. This image includes the operating system disk and any data disks that are attached to the virtual machine. It doesn't include networking configurations, so you'll need to configure those when you create the other virtual machines that use the template.
 
-Azure stores the image under **My Images**. This is the same place where any images you've uploaded are stored. For details about images, see [About <!-- keep by customization: begin --> virtual machine <!-- keep by customization: end --> images <!-- deleted by customization for virtual machines](/documentation/articles/virtual-machines-images) --><!-- keep by customization: begin --> in Azure] [] <!-- keep by customization: end -->.
+Azure stores the image under **My Images**. This is the same place where any images you've uploaded are stored. For details about images, see [About images for virtual machines](/documentation/articles/virtual-machines-images).
 
 ##Before you begin##
 
@@ -34,7 +34,7 @@ These steps assume that you've already created an Azure virtual machine and conf
 - [Create a custom virtual machine running Windows] []
 - [How to attach a data disk to a virtual machine] []
 
-> [AZURE.WARNING] This process deletes the original virtual machine after it's captured, and is not intended as a way to back up a virtual machine. One possible way to do that is Azure Backup, which is available as a preview in certain regions. For details, see [Back up Azure virtual <!-- deleted by customization machines](/documentation/articles/backup-azure-vms) --><!-- keep by customization: begin --> machines](/documentation/articles/backup/backup-azure-vms) <!-- keep by customization: end -->. Other solutions are available from certified partners. To find out <!-- deleted by customization whatâ€™s --><!-- keep by customization: begin --> what’s <!-- keep by customization: end --> currently available, search the Azure Marketplace.
+> [AZURE.WARNING] This process deletes the original virtual machine after it's captured, and is not intended as a way to back up a virtual machine. One possible way to do that is Azure Backup, which is available as a preview in certain regions. For details, see [Back up Azure virtual machines](/documentation/articles/backup-azure-vms). Other solutions are available from certified partners. To find out <!-- deleted by customization whatâ€™s --><!-- keep by customization: begin --> what’s <!-- keep by customization: end --> currently available, search the Azure Marketplace.
 
 ##Capture the virtual machine##
 
@@ -78,12 +78,7 @@ The image is ready to be used to create virtual machines. To do this, you'll cre
 [Create a custom virtual machine running Windows]: /documentation/articles/virtual-machines-windows-create-custom
 [How to Attach a Data Disk to a Virtual Machine]: /documentation/articles/storage-windows-attach-disk
 [How to sign in to a virtual machine running Windows Server]: /documentation/articles/virtual-machines-log-on-windows-server
-<!-- deleted by customization
 [How to Use Sysprep: An Introduction]: http://technet.microsoft.com/zh-cn/library/bb457073.aspx
--->
-<!-- keep by customization: begin -->
-[How to Use Sysprep: An Introduction]:http://technet.microsoft.com/zh-cn/library/bb457073.aspx
-<!-- keep by customization: end -->
 [Run Sysprep.exe]: ./media/virtual-machines-capture-image-windows-server/SysprepCommand.png
 [Enter Sysprep.exe options]: ./media/virtual-machines-capture-image-windows-server/SysprepGeneral.png
 [The virtual machine is stopped]: ./media/virtual-machines-capture-image-windows-server/SysprepStopped.png

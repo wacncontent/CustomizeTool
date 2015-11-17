@@ -56,7 +56,7 @@ With group-based license assignment, any user missing a usage location will inhe
 
 ##Getting started with Azure AD licensing
 
-Getting started with Azure AD is easy; you can always create your directory as a part of signing up to a free Azure trial. [Learn more about signing up as an organization](/documentation/articles/sign-up-organization). The following can help you make sure that your directory is best aligned with other Microsoft services you may be consuming or are planning to consume, and your goals in obtaining the service.
+Getting started with Azure AD is easy; you can always create your directory as a part of signing up to an Azure trial. [Learn more about signing up as an organization](/documentation/articles/sign-up-organization). The following can help you make sure that your directory is best aligned with other Microsoft services you may be consuming or are planning to consume, and your goals in obtaining the service.
 
 Here are a couple of best practices:
 - If you are already using any of Microsoft's organizational services, you already have an Azure AD directory. In this case, you should continue to use the same directory for other services, so that core identity management, including provisioning and hybrid SSO, can be utilized across the services. Your users will have a single logon experience and will benefit from richer capabilities across the services. As a result, if you decide to buy an Azure AD paid service for your workforce, we recommend that you use the same directory to do this.

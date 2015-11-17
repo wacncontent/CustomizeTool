@@ -13,7 +13,7 @@
 	wacn.date=""/>
 
 
-# Azure AD Connect <!-- deleted by customization sync --><!-- keep by customization: begin --> Sync <!-- keep by customization: end -->: Best practices for changing the default configuration
+# Azure AD Connect sync: Best practices for changing the default configuration
 
 The purpose of this topic is to describe supported and unsupported changes to Azure AD Connect sync.
 
@@ -51,26 +51,9 @@ When you need to change the default configuration, do the following:
 
 
 
-<!-- deleted by customization
 ## Next steps
 Learn more about the [Azure AD Connect sync](/documentation/articles/active-directory-aadconnectsync-whatis) configuration.
 
 Learn more about [Integrating your on-premises identities with Azure Active Directory](/documentation/articles/active-directory-aadconnect).
 
--->
-<!-- keep by customization: begin -->
-**Other important notes:**
-
-- If you have attribute based filtering and password synchronization configured, make sure that only objects that are synchronized to Azure AD are in the scope of password synchronization. 
-
-
-
-
-
-## Additional Resources
-
-* [Azure AD Connect Sync: Customizing Synchronization options](/documentation/articles/active-directory-aadconnectsync-whatis)
-* [Integrating your on-premises identities with Azure Active Directory](/documentation/articles/active-directory-aadconnect)
- 
-<!-- keep by customization: end -->
 <!--Image references-->

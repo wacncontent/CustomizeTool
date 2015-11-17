@@ -27,7 +27,7 @@ With this flexibility, Azure Scheduler lets you support a wide variety of busine
 -	Image processing – e.g. every weekday, during off-peak hours, use cloud computing to compress images uploaded that day
 
 
-In this article, we walk through example jobs that you can create with Azure Scheduler. We provide the JSON data that describes each schedule. If you use the [Scheduler REST <!-- deleted by customization API](https://msdn.microsoft.com/zh-cn/library/azure/dn528946.aspx) --><!-- keep by customization: begin --> API](https://msdn.microsoft.com/zh-CN/library/azure/dn528946.aspx) <!-- keep by customization: end -->, you can use this same JSON for [creating an Azure Scheduler <!-- deleted by customization job](https://msdn.microsoft.com/zh-cn/library/azure/dn528937.aspx) --><!-- keep by customization: begin --> job](https://msdn.microsoft.com/zh-CN/library/azure/dn528937.aspx) <!-- keep by customization: end -->.
+In this article, we walk through example jobs that you can create with Azure Scheduler. We provide the JSON data that describes each schedule. If you use the [Scheduler REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn528946.aspx), you can use this same JSON for [creating an Azure Scheduler job](https://msdn.microsoft.com/zh-cn/library/azure/dn528937.aspx).
 
 ## Supported Scenarios
 
@@ -48,7 +48,7 @@ Date-Time references in Azure Scheduler jobs follow the [ISO-8601 specification]
 
 ## How To: Use JSON and REST API for Creating Schedules
 
-To create a simple schedule using the JSON examples in this article and the Azure Scheduler REST API, [first create a cloud <!-- deleted by customization service](https://msdn.microsoft.com/zh-cn/library/azure/dn528943.aspx) --><!-- keep by customization: begin --> service](https://msdn.microsoft.com/zh-CN/library/azure/dn528943.aspx) <!-- keep by customization: end -->, [then create a job <!-- deleted by customization collection](https://msdn.microsoft.com/zh-cn/library/azure/dn528940.aspx) --><!-- keep by customization: begin --> collection](https://msdn.microsoft.com/zh-CN/library/azure/dn528940.aspx) <!-- keep by customization: end -->, and [finally create a <!-- deleted by customization job](https://msdn.microsoft.com/zh-cn/library/azure/dn528937.aspx) --><!-- keep by customization: begin --> job](https://msdn.microsoft.com/zh-CN/library/azure/dn528937.aspx) <!-- keep by customization: end -->. When you create a job, you can specify scheduling and recurrence using JSON like the one excerpted below:
+To create a simple schedule using the JSON examples in this article and the Azure Scheduler REST API, [first create a cloud service](https://msdn.microsoft.com/zh-cn/library/azure/dn528943.aspx), [then create a job collection](https://msdn.microsoft.com/zh-cn/library/azure/dn528940.aspx), and [finally create a job](https://msdn.microsoft.com/zh-cn/library/azure/dn528937.aspx). When you create a job, you can specify scheduling and recurrence using JSON like the one excerpted below:
 
 	{
 	    "startTime": "2012-08-04T00:00Z", // optional

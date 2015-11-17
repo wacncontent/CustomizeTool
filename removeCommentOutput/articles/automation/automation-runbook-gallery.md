@@ -28,7 +28,7 @@ You can only import directly from the Runbook Gallery using the Azure Management
 
 ### To import a runbook from the Runbook Gallery with the Azure Management Portal
 
-1. In the Azure Management portal, click, **New**, **Azure Websites**, **Automation**, **Runbook**, **From Gallery**.
+1. In the Azure Management portal, click, **New**, **App Services**, **Automation**, **Runbook**, **From Gallery**.
 2. Select a category to view related runbooks, and select a runbook to view its details. When you select the runbook you want, click the right arrow button.<br>
 ![Runbook gallery](./media/automation-runbook-gallery/runbook-gallery.png)
 3. Review the contents of the runbook and note any requirements in the description. Click the right arrow button when you’re done.

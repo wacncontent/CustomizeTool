@@ -16,9 +16,9 @@
 # Azure Site Recovery: Frequently asked questions
 ## About this article
 
-This article includes frequently asked questions about Azure Site Recovery. For an introduction to Site Recovery and related deployment scenarios, read the [Site Recovery <!-- deleted by customization Overview](/documentation/articles/site-recovery-overview) --><!-- keep by customization: begin --> Overview](/documentation/articles/hyper-v-recovery-manager-overview) <!-- keep by customization: end -->.
+This article includes frequently asked questions about Azure Site Recovery. For an introduction to Site Recovery and related deployment scenarios, read the [Site Recovery Overview](/documentation/articles/site-recovery-overview).
 
-If you have other questions after reading this article, you can post them on the [Azure Recovery Services <!-- deleted by customization Forum](https://social.msdn.microsoft.com/Forums/azure/home?forum=hypervrecovmgr) --><!-- keep by customization: begin --> Forum](https://social.msdn.microsoft.com/Forums/zh-CN/home?forum=hypervrecovmgr) <!-- keep by customization: end -->.
+If you have other questions after reading this article, you can post them on the [Azure Recovery Services Forum](https://social.msdn.microsoft.com/Forums/azure/home?forum=hypervrecovmgr).
 
 
 ## General
@@ -35,8 +35,8 @@ ASR is ISO 27001:2005-certified, and is in the process of completing its HIPAA, 
 Yes. When you create a Site Recovery vault in a region of your choice, we ensure that all metadata that we need to enable and orchestrate your disaster recovery setup remains within that region's geographic boundary.
 
 ### Is there an SDK that I can use to automate the ASR workflow?
+
 Yes. ASR workflows can be automated using Rest API, PowerShell, or Azure SDK. You can find more details in the blog post titled [Introducing PowerShell support for Azure Site Recovery](http://azure.microsoft.com/blog/2014/11/05/introducing-powershell-support-for-azure-site-recovery/).
-<!-- deleted by customization
 
 ### Does ASR encrypt the replication 
 Between on-premises to Azure & between on-premises replication supports encryption in transit for *Hyper-V & VMM protection scenarios*. *Hyper-V & VMM protection* to Azure supports encryption at rest as well. Refer [this article](https://azure.microsoft.com/blog/2014/09/02/azure-site-recovery-privacy-security-part1/) for more information.
@@ -70,7 +70,6 @@ This isn't supported. Send us your feedback through [Azure Site Recovery Feedbac
 
     	Set-OBMachineSetting -WorkDay $mon, $tue -StartWorkHour "9:00:00" -EndWorkHour "18:00:00" -WorkHourBandwidth (512*1024) -NonWorkHourBandwidth (2048*1024)
 
--->
 
 ## Version support
 
@@ -87,7 +86,7 @@ You can't configure Hyper-V runing on a client operating system to replicate vir
 
 ### Does ASR support generation 2 machines?
 
-<!-- deleted by customization Yes, --> ASR <!-- keep by customization: begin --> currently <!-- keep by customization: end --> supports replication of generation 2 virtual machines on Hyper-V to Azure. ASR converts from generation 2 to generation 1 during failover. At failback the machine is converted back to generation 1. [Read <!-- deleted by customization more](http://azure.microsoft.com/blog/2015/04/28/disaster-recovery-to-azure-enhanced-and-were-listening/) for further information --><!-- keep by customization: begin --> more](http://azure.microsoft.com/updates/azure-site-recovery-supports-gen-2-vm-protection-in-west-us-north-europe-and-japan-west/) about current support <!-- keep by customization: end -->.
+Yes, ASR supports replication of generation 2 virtual machines on Hyper-V to Azure. ASR converts from generation 2 to generation 1 during failover. At failback the machine is converted back to generation 1. [Read more](http://azure.microsoft.com/blog/2015/04/28/disaster-recovery-to-azure-enhanced-and-were-listening/) for further information. 
 
 
 ## Deploy between service provider sites 
@@ -158,13 +157,11 @@ The most current list of supported guest operating systems is available in the a
 ### Can I replicate a virtual machine that's been replicated to a secondary site into Azure? 
 
 No, this type of chained replication isn't supported
-<!-- deleted by customization
 
 ### Do I need certificates to configure protection between two VMM datacenters?
 
 No. While configuring protection between VMM clouds in ASR specify the authentication type. Select HTTPS unless you have a working Kerberos environment configured. Azure Site Recovery will automatically configure certificates for HTTPS authentication. No manual configuration is required. If you do select Kerberos, a Kerberos ticket will be used for mutual authentication of the host servers. By default, port 8083 (for Kerberos) and 8084 (for certificates) will be opened in the Windows Firewall on the Hyper-V host servers. Note that this setting is only relevant for Hyper-V host servers running on Windows Server 2012 R2.
 
--->
 
 
 ## Deploy between two VMM datacenters with SAN
@@ -179,7 +176,6 @@ Yes. We need the SAN array to be brought under management by VMM using an array-
 We support single VMM HA deployments based on the array type, though the recommended configuration is to use separate VMM servers to manage the sites.
 
 
-<!-- deleted by customization
 ### What are the supported storage arrays?
 
 NetApp, EMC and HP have enabled support for Azure Site Recovery SAN replication with updates to their SMI-S providers. For more details see below links.
@@ -189,7 +185,6 @@ NetApp, EMC and HP have enabled support for Azure Site Recovery SAN replication 
 - [HP 3PAR](http://h20195.www2.hp.com/V2/GetDocument.aspx?docname=4AA5-7068ENW&cc=us&lc=en)
 
 
--->
 ### What if I'm not sure about my storage admin?
 We work with existing replication set up by your storage administrator, which means that the storage administrator does not need to make any changes on their arrays. However, organizations that want to automate their storage management through SCVMM can also provision storage using ASR and VMM.
 
@@ -201,7 +196,6 @@ When using (SAN) array-based replication to enable replication and protection be
 
 
 Your arrays also need to be discovered by SCVMM using an updated SMI-S provider that is made available by your respective storage vendors.
-<!-- deleted by customization
 
 ## Deploy between VMware and Azure
 
@@ -211,7 +205,6 @@ You cannot clone a protected VM. You can protect a cloned VMware VM to Azure as 
 ### Can I clone Process Server VM?
 No, you should not clone Process Server.  When Process Server is deployed, it creates its own unique ID. If cloned, the two Process Servers will have the same GUID that will impact the existing replication. 
 
--->
 
 ## Deploy between physical servers and Azure
 
@@ -257,3 +250,5 @@ To start deploying ASR:
 - [Set up protection between two on-premises VMM sites](/documentation/articles/site-recovery-vmm-to-vmm) 
 - [Set up protection between two on-premises VMM sites with SAN](/documentation/articles/site-recovery-vmm-san) 
 - [Set up protection with a single VMM server](/documentation/articles/site-recovery-single-vmm) 
+
+ 

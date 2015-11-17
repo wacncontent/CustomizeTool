@@ -40,12 +40,6 @@ If all the deletes are desired, then do the following:
 3. To re-enable the protection run the PowerShell cmdlet: `Enable-ADSyncExportDeletionThreshold`
 
 ## Next steps
-<!-- deleted by customization
 Learn more about the [Azure AD Connect sync](/documentation/articles/active-directory-aadconnectsync-whatis) configuration.
 
 Learn more about [Integrating your on-premises identities with Azure Active Directory](/documentation/articles/active-directory-aadconnect).
--->
-<!-- keep by customization: begin -->
-
-To learn more on the configuration for Azure AD Connect sync, see [Azure AD Connect sync](/documentation/articles/active-directory-aadconnectsync-whatis).
-<!-- keep by customization: end -->

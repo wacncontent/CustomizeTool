@@ -216,7 +216,7 @@ Because you can create VMs on demand, then remove them (and stop paying) when th
 
 To make this really useful, though, your users ought to be able to treat these applications as if they were running in your own datacenter. This is exactly what Azure Virtual Network allows. Using a VPN gateway device, an administrator can set up a virtual private network (VPN) between your local network and your VMs that are deployed to a virtual network in Azure. Because you assign your own IP v4 addresses to the cloud VMs, they appear to be on your own network. Users in your organization can access the applications those VMs contain as if they were running locally.
 
-For more information about planning and creating a virtual network that works for you, see [Virtual <!-- deleted by customization Network](/documentation/articles/virtual-networks-overview) --><!-- keep by customization: begin --> Network](http://msdn.microsoft.com/zh-cn/library/azure/jj156007.aspx) <!-- keep by customization: end -->.
+For more information about planning and creating a virtual network that works for you, see [Virtual Network](/documentation/articles/virtual-networks-overview).
 
 ### Express Route
 
@@ -413,11 +413,11 @@ Every enterprise needs to backup and restore data. You can use Azure to backup a
 
 ### Site Recovery
  
-Azure Site Recovery (formerly Hyper-V Recovery Manager) can help you protect important applications by coordinating the replication and recovery <!-- keep by customization: begin --> of Hyper-V images <!-- keep by customization: end --> across sites. <!-- deleted by customization Site Recovery  provides capability to protect applications based on Hyper-v, VMWare or SAN --><!-- keep by customization: begin --> You can back up <!-- keep by customization: end --> to your own secondary site, <!-- deleted by customization to --> a hoster’s site, or <!-- deleted by customization to --><!-- keep by customization: begin --> use <!-- keep by customization: end --> Azure and avoid the expense and complexity of building and managing your own secondary location. Azure encrypts data and communications and you have the option enable encryption for data at-rest too.
+Azure Site Recovery (formerly Hyper-V Recovery Manager) can help you protect important applications by coordinating the replication and recovery across sites. Site Recovery  provides capability to protect applications based on Hyper-v, VMWare or SAN to your own secondary site, to a hoster’s site, or to Azure and avoid the expense and complexity of building and managing your own secondary location. Azure encrypts data and communications and you have the option enable encryption for data at-rest too. 
 
 It monitors the health of your services continuously and helps automate the orderly recovery of services in the event of a site outage at the primary datacenter. Virtual machines can be brought up in an orchestrated fashion to help restore service quickly, even for complex multi-tier workloads.
 
-Site Recovery works with existing technologies such as Hyper-V Replica, System Center, and SQL Server AlwaysOn. <!-- deleted by customization Check out [Azure Site Recovery overview](/documentation/articles/site-recovery-overview) for more details. -->
+Site Recovery works with existing technologies such as Hyper-V Replica, System Center, and SQL Server AlwaysOn. Check out [Azure Site Recovery overview](/documentation/articles/site-recovery-overview) for more details.
 
 ### Azure Backup
 ![Azure Backup](./media/fundamentals-introduction-to-azure/AzureBackupIntroNew.png)  

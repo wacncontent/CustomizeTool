@@ -7,9 +7,10 @@
     authors="sidneyh"/>
 
 <tags
-    ms.service="sql-database"
-    ms.date="10/15/2015"
-    wacn.date="" />
+	ms.service="sql-database"
+	ms.date="10/15/2015"
+	wacn.date=""/>
+
 # Azure SQL Database elastic database query overview (preview)
 
 The elastic database query feature (in preview) enables you to run a Transact-SQL query that spans multiple databases in Azure SQL Database (SQLDB). It allows you to perform cross-database queries to access remote tables, and to connect Microsoft and third party tools (Excel, PowerBI, Tableau, etc.) to query across data tiers with multiple databases. Using this feature, you can scale out queries to large data tiers in SQL Database and visualize the results in business intelligence (BI) reports.

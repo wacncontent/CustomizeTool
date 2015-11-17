@@ -16,24 +16,14 @@
 # Set up protection between on-premises VMware sites
 
 
-<!-- deleted by customization
 ## Overview
--->
-<!-- keep by customization: begin -->
-##Overview
-<!-- keep by customization: end -->
 
 InMage Scout in Azure Site Recovery provides real-time replication between on-premises VMware sites. InMage Scout is included in Azure Site Recovery service subscriptions.
 
 
 ## Prerequisites
 
-<!-- deleted by customization
-- **Azure account**—You'll need a [Windows Azure](http://azure.microsoft.com/) account. You can start with a [trial](/pricing/1rmb-trial/).
--->
-<!-- keep by customization: begin -->
-- **Azure account**—You'll need a [Windows Azure](http://www.windowsazure.cn/) account. You can start with a [trial](/pricing/1rmb-trial).
-<!-- keep by customization: end -->
+- **Azure account**—You'll need a [Windows <!-- deleted by customization Azure](http://azure.microsoft.com/) --><!-- keep by customization: begin --> Azure](http://www.windowsazure.cn/) <!-- keep by customization: end --> account. You can start with a [trial](/pricing/1rmb-trial/).
 
 
 ## Step 1: Create a vault
@@ -42,14 +32,9 @@ InMage Scout in Azure Site Recovery provides real-time replication between on-pr
 2. Click **Data Services** > **Recovery Services** > **Site Recovery Vault**.
 3. Click **Create New** > **Quick Create**.
 4. In **Name** enter a friendly name to identify the vault.
-5. In **Region** select the geographic region for the vault. To check supported regions see Geographic Availability in [Azure Site Recovery Pricing <!-- deleted by customization Details](/documentation/articles/site-recovery) --><!-- keep by customization: begin --> Details](/home/features/site-recovery/#price) <!-- keep by customization: end -->.
+5. In **Region** select the geographic region for the vault. To check supported regions see Geographic Availability in [Azure Site Recovery Pricing Details](/home/features/site-recovery/#price).
 
-<!-- deleted by customization
 Check the status bar to confirm that the vault was successfully created. The vault will be listed as **Active** on the main Recovery Services page.
--->
-<!-- keep by customization: begin -->
-<P>Check the status bar to confirm that the vault was successfully created. The vault will be listed as <b>Active</b> on the main Recovery Services page.</P>
-<!-- keep by customization: end -->
 
 ## Step 2: Configure the vault and download InMage Scout components
 
@@ -126,10 +111,4 @@ This latest update includes bug fixes and new features:
 	
 ## Next steps
 
-<!-- deleted by customization
 Post any questions on the [Azure Recovery Services Forum](https://social.msdn.microsoft.com/forums/azure/home?forum=hypervrecovmgr).< 
-
--->
-<!-- keep by customization: begin -->
-Post any questions on the [Azure Recovery Services Forum](https://social.msdn.microsoft.com/forums/zh-cn/home?forum=hypervrecovmgr).
-<!-- keep by customization: end -->

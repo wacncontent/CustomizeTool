@@ -13,10 +13,10 @@
 	wacn.date=""/>
 
 
-# Azure AD Connect <!-- deleted by customization sync --><!-- keep by customization: begin --> Sync <!-- keep by customization: end -->: Attributes synchronized to Azure Active Directory
+# Azure AD Connect sync: Attributes synchronized to Azure Active Directory
 
-This topic lists the attributes that are synchronized by Azure AD Connect <!-- deleted by customization sync.<br> --><!-- keep by customization: begin --> Sync.<br> <!-- keep by customization: end -->
-The attributes are grouped by the related Azure AD <!-- deleted by customization app --><!-- keep by customization: begin --> apps <!-- keep by customization: end -->.
+This topic lists the attributes that are synchronized by Azure AD Connect sync.<br>
+The attributes are grouped by the related Azure AD app.
 
 
 ## Office 365 ProPlus
@@ -68,12 +68,7 @@ The attributes are grouped by the related Azure AD <!-- deleted by customization
 | facsimiletelephonenumber| X| X|  |  |
 | givenName| X| X|  |  |
 | homePhone| X| X|  |  |
-<!-- deleted by customization
 | info| X| X| X| This attribute is currently not consumed for groups.|
--->
-<!-- keep by customization: begin -->
-| info| X| X| X|  |
-<!-- keep by customization: end -->
 | Initials| X| X|  |  |
 | l| X| X|  |  |
 | legacyExchangeDN| X| X| X|  |
@@ -99,20 +94,11 @@ The attributes are grouped by the related Azure AD <!-- deleted by customization
 | msExchELCExpirySuspensionStart| X|  |  |  |
 | msExchELCMailboxFlags| X|  |  |  |
 | msExchEnableModeration| X|  | X|  |
-<!-- deleted by customization
 | msExchExtensionCustomAttribute1| X| X| X| This attribute is currently not consumed by Exchange Online. |
 | msExchExtensionCustomAttribute2| X| X| X| This attribute is currently not consumed by Exchange Online. |
 | msExchExtensionCustomAttribute3| X| X| X| This attribute is currently not consumed by Exchange Online. |
 | msExchExtensionCustomAttribute4| X| X| X| This attribute is currently not consumed by Exchange Online. |
 | msExchExtensionCustomAttribute5| X| X| X| This attribute is currently not consumed by Exchange Online. |
--->
-<!-- keep by customization: begin -->
-| msExchExtensionCustomAttribute1| X| X| X|  |
-| msExchExtensionCustomAttribute2| X| X| X|  |
-| msExchExtensionCustomAttribute3| X| X| X|  |
-| msExchExtensionCustomAttribute4| X| X| X|  |
-| msExchExtensionCustomAttribute5| X| X| X|  |
-<!-- keep by customization: end -->
 | msExchHideFromAddressLists| X| X| X|  |
 | msExchImmutableID| X|  |  |  |
 | msExchLitigationHoldDate| X| X| X|  |
@@ -169,6 +155,7 @@ The attributes are grouped by the related Azure AD <!-- deleted by customization
 | userPrincipalName| X|  |  | UPN is the login ID for the user. Most often the same as [mail] value.|
 | userSMIMECertificates| X| X|  |  |
 | wWWHomePage| X| X|  |  |
+
 
 
 ## SharePoint Online
@@ -419,17 +406,7 @@ These attributes are written back from Azure AD to on-premises Active Directory 
 - When using an Alternate ID, the on-premises attribute userPrincipalName will be synchronized with the Azure AD attribute onPremisesUserPrincipalName. The Alternate ID attribute, e.g. mail, will be synchronized with the Azure AD attribute userPrincipalName.
 
 
-<!-- deleted by customization
 ## Next steps
 Learn more about the [Azure AD Connect sync](/documentation/articles/active-directory-aadconnectsync-whatis) configuration.
 
 Learn more about [Integrating your on-premises identities with Azure Active Directory](/documentation/articles/active-directory-aadconnect).
--->
-<!-- keep by customization: begin -->
-## Additional Resources
-
-* [Azure AD Connect Sync: Customizing Synchronization options](/documentation/articles/active-directory-aadconnectsync-whatis)
-* [Integrating your on-premises identities with Azure Active Directory](/documentation/articles/active-directory-aadconnect)
- 
-<!--Image references-->
-<!-- keep by customization: end -->

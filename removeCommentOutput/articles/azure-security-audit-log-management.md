@@ -579,7 +579,7 @@ To view the **Operation Logs**, open the [Azure Management Portal](https://manag
 ## Additional resources
 The following resources provide general information about Windows Azure and related Microsoft services:
 
-- [Windows Azure Trust Center](http://azure.microsoft.com/support/trust-center/)
+- [Windows Azure Trust Center](/support/trust-center/)
 
     Information on how security and privacy are embedded into the development of Azure and how Azure meets a broad set of international and industry-specific compliance standards
 

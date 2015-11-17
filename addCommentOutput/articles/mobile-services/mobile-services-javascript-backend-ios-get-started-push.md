@@ -18,7 +18,7 @@
 
 This topic shows you how to add push notifications to the [quickstart project](/documentation/articles/mobile-services-ios-get-started), so that your mobile service sends a push notification each time a record is inserted. You must complete [Get Started with Mobile Services] first.
 
-> [AZURE.NOTE] The [iOS simulator does not support push <!-- deleted by customization notifications](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/iOS_Simulator_Guide/TestingontheiOSSimulator.html) --><!-- keep by customization: begin --> notifications](https://developer.apple.com/zh-cn/library/ios/documentation/IDEs/Conceptual/iOS_Simulator_Guide/TestingontheiOSSimulator.html) <!-- keep by customization: end -->, so you must use a physical iOS device. You'll also need to sign up for a paid [Apple Developer Program membership](https://developer.apple.com/programs/ios/).
+> [AZURE.NOTE] The [iOS simulator does not support push notifications](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/iOS_Simulator_Guide/TestingontheiOSSimulator.html), so you must use a physical iOS device. You'll also need to sign up for a paid [Apple Developer Program membership](https://developer.apple.com/programs/ios/).
 
 [AZURE.INCLUDE [Enable Apple Push Notifications](../includes/enable-apple-push-notifications.md)]
 
@@ -101,19 +101,11 @@ This topic shows you how to add push notifications to the [quickstart project](/
 [Mobile Services iOS SDK]: https://go.microsoft.com/fwLink/p/?LinkID=266533
 [Apple Push Notification Service]: https://developer.apple.com/library/ios/#documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/ApplePushService/ApplePushService.html
 [Get started with Mobile Services]: /documentation/articles/mobile-services-ios-get-started
-<!-- keep by customization: begin -->
-[Get started with data]: /documentation/articles/mobile-services-ios-get-started-data
-<!-- keep by customization: end -->
 [Get started with authentication]: /documentation/articles/mobile-services-ios-get-started-users
 [Azure Management Portal]: https://manage.windowsazure.cn/
 [apns object]: http://go.microsoft.com/fwlink/p/?LinkId=272333
 
-<!-- deleted by customization
 [Mobile Services server script reference]: http://go.microsoft.com/fwlink/?LinkId=262293
--->
-<!-- keep by customization: begin -->
-[Mobile Services server script reference]: /documentation/articles/mobile-services-how-to-use-server-scripts/
-<!-- keep by customization: end -->
 
 [Send push notifications to authenticated users]: /documentation/articles/mobile-services-javascript-backend-ios-push-notifications-app-users
 [What are Notification Hubs?]: /documentation/articles/notification-hubs-overview

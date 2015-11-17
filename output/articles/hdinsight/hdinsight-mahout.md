@@ -18,8 +18,10 @@
 [AZURE.INCLUDE [mahout-selector](../includes/hdinsight-selector-mahout.md)]
 
 Learn how to use the [Apache Mahout](http://mahout.apache.org) machine learning library with Azure HDInsight to generate movie recommendations.
+<!-- deleted by customization
 
 > [AZURE.NOTE] The steps in this document require a Windows client and a Windows-based HDInsight cluster. For information on using Mahout from a Linux, OS X, or Unix client, with a Linux-based HDInsight cluster, see [Generate movie recommendations by using Apache Mahout with Linux-based Hadoop in HDInsight](/documentation/articles/hdinsight-hadoop-mahout-linux-mac)
+-->
 
 
 ##<a name="learn"></a>What you will learn

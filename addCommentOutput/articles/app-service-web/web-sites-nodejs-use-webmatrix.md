@@ -110,7 +110,7 @@ If you encounter problems with your application after it has been deployed to Az
 <!-- keep by customization: begin -->
 [Azure Management Portal]: http://manage.windowsazure.cn
 [Publishing an Azure  Website using Git]: /documentation/articles/web-sites-publish-source-control
-[for free]: /zh-cn/pricing/free-trial
+[for free]: /zh-cn/pricing/1rmb-trial
 <!-- keep by customization: end -->
 [WebMatrix WebSite]: http://www.microsoft.com/click/services/Redirect2.ashx?CR_CC=200106398
 [WebMatrix for Azure]: http://go.microsoft.com/fwlink/?LinkID=253622&clcid=0x409

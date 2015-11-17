@@ -7,9 +7,9 @@
 	manager="wpickett" 
 	editor=""/>
 
-<tags 
-	ms.service="azure-resource-manager" 
-	ms.date="10/16/2015" 
+<tags
+	ms.service="azure-resource-manager"
+	ms.date="10/16/2015"
 	wacn.date=""/>
 
 # Using Azure PowerShell with Azure Resource Manager
@@ -27,7 +27,7 @@ In this tutorial, you learn how to use Azure PowerShell with Azure Resource Mana
 To complete this tutorial, you need:
 
 - An Azure account
-  + You can [open an Azure account for free](/pricing/1rmb-trial/): You get credits you can use to try out paid Azure services, and even after they're used up you can keep the account and use free Azure services, such as Websites. Your credit card will never be charged, unless you explicitly change your settings and ask to be charged.
+  + You can [open an Azure account for free](/pricing/1rmb-trial/?WT.mc_id=A261C142F): You get credits you can use to try out paid Azure services, and even after they're used up you can keep the account and use free Azure services, such as Websites. Your credit card will never be charged, unless you explicitly change your settings and ask to be charged.
   
 - Azure PowerShell
 
@@ -149,10 +149,10 @@ To create a resource group, use the **New-AzureRmResourceGroup** cmdlet.
 The command uses the **Name** parameter to specify a name for the resource group and the **Location** parameter to specify its location. Based on what we discovered in the previous section, we will use "China North" for 
 the location.
 
-    PS C:\> New-AzureRmResourceGroup -Name TestRG1 -Location "China East"
+    PS C:\> New-AzureRmResourceGroup -Name TestRG1 -Location "China North"
     
     ResourceGroupName : TestRG1
-    Location          : China East
+    Location          : chinanorth
     ProvisioningState : Succeeded
     Tags              :
     Permissions       :
@@ -372,7 +372,7 @@ After creating a resource group, you can use the cmdlets in the Resource Manager
 		PS C:>Get-AzureRmResourceGroup
 
 		ResourceGroupName : TestRG
-		Location          : China East
+		Location          : chinanorth
 		ProvisioningState : Succeeded
 		Tags              :
 		ResourceId        : /subscriptions/{guid}/resourceGroups/TestRG
@@ -389,7 +389,7 @@ After creating a resource group, you can use the cmdlets in the Resource Manager
                 ResourceType      : Microsoft.Sql/servers
                 Kind              : v12.0
                 ResourceGroupName : TestRG1
-                Location          : China East
+                Location          : chinanorth
                 SubscriptionId    : {guid}
                 
                 ...
@@ -425,6 +425,6 @@ You can move existing resources to a new resource group. For examples, see [Move
 
 - To learn about creating Resource Manager templates, see [Authoring Azure Resource Manager Templates](/documentation/articles/resource-group-authoring-templates).
 - To learn about deploying templates, see [Deploy an application with Azure Resource Manager Template](/documentation/articles/resource-group-template-deploy).
-- For a detailed example of deploying a project, see [Deploy microservices predictably in Azure](/documentation/articles/app-service-web/app-service-deploy-complex-application-predictably).
-- To learn about troubleshooting a deployment that failed, see [Troubleshooting resource group deployments in Azure](/documentation/articles/virtual-machines/resource-group-deploy-debug).
+- For a detailed example of deploying a project, see [Deploy microservices predictably in Azure](/documentation/articles/app-service-deploy-complex-application-predictably).
+- To learn about troubleshooting a deployment that failed, see [Troubleshooting resource group deployments in Azure](/documentation/articles/resource-group-deploy-debug).
 

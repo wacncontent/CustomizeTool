@@ -17,8 +17,13 @@
 
 The Azure CLI is a set of open-source, cross-platform commands for working with the Azure platform. This article describes how to connect to your Azure subscription from the Azure CLI to use all of the CLI commands. If you haven't already installed the CLI, see [Install the Azure CLI](/documentation/articles/xplat-cli-install).
 
+<!-- deleted by customization
 
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-both-include.md)]
+-->
+<!-- keep by customization: begin -->
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-include.md)] This article covers creating and managing resources with the Resource Manager deployment model or the classic deployment model.
+<!-- keep by customization: end -->
 
 
 There are two ways to connect to your subscription from the Azure CLI:
@@ -156,3 +161,4 @@ Whether you log in with a work or school account or import publish settings, you
 [signuporg]: /documentation/articles/sign-up-organization/
 [cliasm]: /documentation/articles/virtual-machines-command-line-tools
 [cliarm]: /documentation/articles/xplat-cli-azure-resource-manager
+

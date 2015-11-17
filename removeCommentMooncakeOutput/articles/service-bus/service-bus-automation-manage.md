@@ -9,13 +9,12 @@
 
 <tags
 	ms.service="service-bus"
-
 	ms.date="08/28/2015"
 	wacn.date=""/>
 
 
 
-#Managing Azure Service Bus using Azure Automation
+# Managing Azure Service Bus using Azure Automation
 
 This guide will introduce you to the Azure Automation service, and how it can be used to simplify management of Azure Service Bus.
 
@@ -27,11 +26,9 @@ Azure Automation provides a highly-reliable, highly-available workflow execution
 
 Reduce operational overhead and free up IT and DevOps staff to focus on work that adds business value by moving your cloud management tasks to be run automatically by Azure Automation.
 
-
 ## How can Azure Automation help manage Azure Service Bus?
 
 You can manage Service Bus with Azure Automation by using the [Service Bus REST API](https://msdn.microsoft.com/zh-cn/library/azure/hh780717.aspx). Within Azure Automation you can write PowerShell workflow scripts to perform many of your Service Bus tasks using the REST API. You can also pair these REST API calls in Azure Automation with the cmdlets for other Azure services, to automate complex tasks across Azure services and 3rd party systems.
-
 
 ## Next Steps
 

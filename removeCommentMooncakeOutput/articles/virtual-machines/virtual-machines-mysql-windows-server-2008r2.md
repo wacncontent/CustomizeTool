@@ -1,9 +1,9 @@
 <properties
-	pageTitle="Create a virtual machine running MySQL in Azure"
-	description="Create an Azure virtual machine running Windows Server 2012 R2, and then install and configure the MySQL database on it."
+	pageTitle="Create a VM running MySQL | Windows Azure"
+	description="Create an Azure virtual machine created with the classic deployment model running Windows Server 2012 R2, and then install and configure the MySQL database on it."
 	services="virtual-machines"
 	documentationCenter=""
-	authors="KBDAzure"
+	authors="cynthn"
 	manager="timlt"
 	editor="tysonn"
 	tags="azure-service-management"/>
@@ -14,7 +14,7 @@
 	wacn.date=""/>
 
 
-# Install MySQL on a virtual machine running Windows Server 2012 R2 in Azure
+# Install MySQL on a virtual machine created with the classic deployment model running Windows Server 2012 R2
 
 
 [MySQL](http://www.mysql.com) is a popular open source, SQL database. Using the [Azure Management Portal](http://manage.windowsazure.cn), you can create a virtual machine running Windows Server 2012 R2 from the Image Gallery. You can then install and configure it as a MySQL Server.
@@ -102,7 +102,7 @@ To configure an endpoint for the MySQL Server service:
 
 To add a Windows Firewall rule that allows MySQL traffic from the Internet, run the following command at an administrator-level Windows PowerShell command prompt on the MySQL server computer.
 
-	New-NetFirewallRule -DisplayName "MySQL56" -Direction Inbound �Protocol TCP �LocalPort 3306 -Action Allow -Profile Public
+	New-NetFirewallRule -DisplayName "MySQL56" -Direction Inbound –Protocol TCP –LocalPort 3306 -Action Allow -Profile Public
 
 To test your remote connection to the MySQL Server service running on the Azure virtual machine, you must first determine the DNS name corresponding to the cloud service that contains the virtual machine running MySQL Server.
 

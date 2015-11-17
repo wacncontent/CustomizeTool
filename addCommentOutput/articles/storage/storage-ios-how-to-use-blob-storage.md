@@ -72,7 +72,7 @@ When using Shared Key authentication, you will create a "connection string." The
 
 - The **DefaultEndpointsProtocol** - you can choose http or https. However, using https is highly recommended.
 - The **Account Name** - the name of your Storage account
-- The **Account Key** - If using the [Management Portal](manage.windowsazure.cn), you can find this by clicking *Manage Access Keys*. <!-- keep by customization: begin --><!-- <!-- keep by customization: end --> If you're using the [Preview Portal](portal.azure.com), you can click the Key icon to find this <!-- deleted by customization information. --><!-- keep by customization: begin --> information.--><!-- keep by customization: end -->
+- The **Account Key** - If using the [Management Portal](manage.windowsazure.cn), you can find this by clicking *Manage Access Keys*. <!-- deleted by customization If you're using the [Preview Portal](portal.azure.com), you can click the Key icon to find this information. -->
 
 Here is how it will look in your application:
 
@@ -135,7 +135,7 @@ Every blob in Azure Storage must reside in a container. The following example sh
         }];
     }
 
-You can confirm that this works by looking at the <!-- deleted by customization [Portal](portal.azure.com) --><!-- keep by customization: begin --> [Management Portal](http://manage.windowsazure.cn) <!-- keep by customization: end --> or any [Storage explorer](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/03/11/windows-azure-storage-explorers-2014.aspx) and verifying that *newcontainer* is in the list of containers for your Storage account.
+You can confirm that this works by looking at the [Management Portal](http://manage.windowsazure.cn) or any [Storage explorer](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/03/11/windows-azure-storage-explorers-2014.aspx) and verifying that *newcontainer* is in the list of containers for your Storage account.
 
 ## Set Container Permissions
 A container's permissions are configured for **Private** access by default. However, containers provide a few different options for container access:
@@ -200,7 +200,7 @@ The following example shows how to upload a block blob from an NSString. If a bl
          }];
      }
 
-You can confirm that this works by looking at the <!-- deleted by customization [Portal](portal.azure.com) --><!-- keep by customization: begin --> [Management Portal](http://manage.windowsazure.cn) <!-- keep by customization: end --> or any [Storage explorer](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/03/11/windows-azure-storage-explorers-2014.aspx) and verifying that the container, *containerpublic*, contains the blob, *sampleblob*. In this sample, we used a public container so you can also verify that this worked by going to the blobs URI:
+You can confirm that this works by looking at the [Management Portal](http://manage.windowsazure.cn) or any [Storage explorer](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/03/11/windows-azure-storage-explorers-2014.aspx) and verifying that the container, *containerpublic*, contains the blob, *sampleblob*. In this sample, we used a public container so you can also verify that this worked by going to the blobs URI:
 
     https://nameofyourstorageaccount.blob.core.chinacloudapi.cn/containerpublic/sampleblob
 
@@ -350,8 +350,8 @@ Now that you've learned the basics of Blob storage, follow these links to learn 
 - [Azure Storage REST API]
 - [Azure Storage Team Blog]
 
-If you have questions regarding this library feel free to post to our [MSDN Azure <!-- deleted by customization forum](http://social.msdn.microsoft.com/Forums/zh-cn/home?forum=windowsazurezhchsen-US/home?forum=windowsazuredata) --><!-- keep by customization: begin --> forum](https://social.msdn.microsoft.com/forums/azure/zh-cn/home?forum=windowsazuredata) <!-- keep by customization: end --> or [Stack Overflow](http://stackoverflow.com/questions/tagged/windows-azure-storage+or+windows-azure-storage+or+azure-storage-blobs+or+azure-storage-tables+or+azure-table-storage+or+windows-azure-queues+or+azure-storage-queues+or+azure-storage-emulator+or+azure-storage-files).
-If you have feature suggestions for Azure Storage please post to [Azure Storage <!-- deleted by customization Feedback](http://feedback.azure.com/forums/217298-storage) --><!-- keep by customization: begin --> Feedback](/product-feedback) <!-- keep by customization: end -->.
+If you have questions regarding this library feel free to post to our [MSDN Azure forum](http://social.msdn.microsoft.com/Forums/zh-cn/home?forum=windowsazurezhchsen-US/home?forum=windowsazuredata) or [Stack Overflow](http://stackoverflow.com/questions/tagged/windows-azure-storage+or+windows-azure-storage+or+azure-storage-blobs+or+azure-storage-tables+or+azure-table-storage+or+windows-azure-queues+or+azure-storage-queues+or+azure-storage-emulator+or+azure-storage-files).
+If you have feature suggestions for Azure Storage please post to [Azure Storage Feedback](/product-feedback).
 
 [Azure Storage iOS Library]: https://github.com/azure/azure-storage-ios
 [Azure Storage REST API]: http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx

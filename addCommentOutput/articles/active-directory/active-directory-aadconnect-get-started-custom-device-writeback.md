@@ -33,7 +33,7 @@ Use the following steps to prepare for using device writeback.
 
 3.	With enterprise admin credentials, run the following commands and then exit PowerShell.
 
-	Import-Module ‘C:\Program Files\Windows Azure Active Directory Connect\AdPrep\AdSyncAdPrep.psm1’
+	Import-Module ‘C:\Program Files\Microsoft Azure Active Directory Connect\AdPrep\AdSyncAdPrep.psm1’
 
 	Initialize-ADSyncDeviceWriteback –DomainName <name> -AdConnectorAccount <account>
 
@@ -83,6 +83,7 @@ Detailed instructions to enable this scenario are available within [Setting up O
 
 ## Verify Devices are synchronized to Active Directory
 Device writeback should now be working properly. Be aware that it can take up to 3 hours for device objects to be written-back to AD.  To verify that your devices are being synced properly, do the following after the sync rules complete:
+
 1.	Launch Active Directory Administrative Center.
 2.	Expand RegisteredDevices, within the Domain that is being federated.
 ![Custom Install](./media/active-directory-aadconnect-get-started-custom-device-writeback/devicewriteback5.png)

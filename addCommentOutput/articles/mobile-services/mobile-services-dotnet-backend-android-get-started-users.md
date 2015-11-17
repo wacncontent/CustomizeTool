@@ -17,6 +17,7 @@
 [AZURE.INCLUDE [mobile-services-selector-get-started-users](../includes/mobile-services-selector-get-started-users.md)]
 
 ## Summary
+
 This topic shows you how to authenticate users in Azure Mobile Services from your app. In this tutorial, you add authentication to the quickstart project using an identity provider that is supported by Mobile Services. After being successfully authenticated and authorized by Mobile Services, the user ID value is displayed.
 
 This tutorial walks you through the basic steps to enable authentication in your app.
@@ -71,12 +72,10 @@ In the next tutorial, [Service-side authorization of Mobile Services users][Auth
 
 <!-- URLs. -->
 [Get started with Mobile Services]: /documentation/articles/mobile-services-dotnet-backend-android-get-started
-<!-- keep by customization: begin -->
-[Get started with data]: /documentation/articles/mobile-services-dotnet-backend-android-get-started-data
-<!-- keep by customization: end -->
 [Get started with authentication]: /documentation/articles/mobile-services-dotnet-backend-android-get-started-users
 [Get started with push notifications]: /documentation/articles/mobile-services-dotnet-backend-android-get-started-push
 [Authorize users with scripts]: /documentation/articles/mobile-services-dotnet-backend-android-authorize-users-in-scripts
+
 [Azure Management Portal]: https://manage.windowsazure.cn/
-[Mobile Services .NET How-to Conceptual Reference]: <!-- deleted by customization /develop/mobile/how-to-guides/work-with-net-client-library --><!-- keep by customization: begin --> /documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library <!-- keep by customization: end -->
+[Mobile Services .NET How-to Conceptual Reference]: /develop/mobile/how-to-guides/work-with-net-client-library
 [Register your Windows Store app package for Microsoft authentication]: /documentation/articles/mobile-services-how-to-register-store-app-package-microsoft-authentication

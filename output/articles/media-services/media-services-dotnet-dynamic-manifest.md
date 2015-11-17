@@ -131,6 +131,7 @@ The following examples show how to add filters to your streaming URLs.
 
 
 
+<!-- deleted by customization
 ##Media Services learning paths
 
 You can view AMS learning paths here:
@@ -138,6 +139,7 @@ You can view AMS learning paths here:
 - [AMS Live Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/)
 - [AMS on Demand Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/)
 
+-->
 ##See Also 
 
 [Dynamic manifests overview](/documentation/articles/media-services-dynamic-manifest-overview)

@@ -88,10 +88,4 @@ Delete a row in a data table using the **del** method. Call the **done** method 
         items.splice(items.indexOf(todoItem), 1);
     });
 
-<!-- deleted by customization
 [Learn more about mobile services](/documentation/services/mobile-services/)
-
--->
-<!-- keep by customization: begin -->
-[Learn more about mobile services](/home/features/mobile-services) 
-<!-- keep by customization: end -->

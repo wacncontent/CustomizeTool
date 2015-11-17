@@ -14,6 +14,7 @@
 
 # What are the next steps I can take using Azure AD?
 
+
 ### Other articles on this topic
 [What is Azure AD?](/documentation/articles/active-directory-whatis)<br>
 [How does it work?](/documentation/articles/active-directory-works)<br>
@@ -25,7 +26,7 @@
 Managing user accounts is more than just creating or deleting users and assigning permissions. You can generate reports on access and usage, set password policies, enable password self-service rest, set up multifactor authentication and more. [Learn more about managing users](/documentation/articles/active-directory-create-users).
 
 ## Sync and manage passwords
-Sync user passwords so that your users can sign into Microsoft cloud services (such as Office 365, Dynamics CRM, and <!-- deleted by customization Microsoft Intune) --><!-- keep by customization: begin --> Windows InTune) <!-- keep by customization: end --> using the same password that they use to sign in to your on-premises network. [Learn more about managing passwords](/documentation/articles/active-directory-manage-passwords).
+Sync user passwords so that your users can sign into Microsoft cloud services (such as Office 365, Dynamics CRM, and Microsoft Intune) using the same password that they use to sign in to your on-premises network. [Learn more about managing passwords](/documentation/articles/active-directory-manage-passwords).
 
 ## Manage groups in Azure AD
 Use groups to assign a common set of permissions and rights to many accounts at once, instead of to each account individually. You can also sync groups from your local on-premises Windows Server Active Directory. Learn more about managing groups in Azure Active Directory. [Learn more about managing groups](/documentation/articles/active-directory-manage-groups).
@@ -38,3 +39,4 @@ Azure AD Device Registration provisions devices with an identity that is used to
 
 * [Sign up for Azure as an organization](/documentation/articles/sign-up-organization)
 * [Azure Identity](/documentation/articles/fundamentals-identity)
+ 

@@ -91,7 +91,7 @@ If your account is in the US, you can now do this easily in the Windows Azure Ac
 
 -   **Can the offer be changed during a transfer?**
 
-    The offer must remain the same. To change your offer, you must [contact Support](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade).
+    The offer must remain the same. To change your offer, you must [contact Support](https://manage.windowsazure.cn/#blade/Microsoft_Azure_Support/HelpAndSupportBlade).
 
 -   **Can I transfer a subscription to a user account in another
     country?**
@@ -100,7 +100,7 @@ If your account is in the US, you can now do this easily in the Windows Azure Ac
 
 -   **Can the recipient use a different payment mechanism?**
 
-    Yes, and in fact you can use this mechanism to change the payment method on your subscription from invoice to credit card. Just transfer to another account you own, and enter your credit card while receiving the subscription. There are limitations here: now the subscription billing history is split across two accounts. But the advantage is that you can do this without having to [contact Support](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade).
+    Yes, and in fact you can use this mechanism to change the payment method on your subscription from invoice to credit card. Just transfer to another account you own, and enter your credit card while receiving the subscription. There are limitations here: now the subscription billing history is split across two accounts. But the advantage is that you can do this without having to [contact Support](https://manage.windowsazure.cn/#blade/Microsoft_Azure_Support/HelpAndSupportBlade).
 
 ## Next steps after accepting ownership of a subscription
 

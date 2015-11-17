@@ -117,9 +117,6 @@ It returns something like this:
 	Outputs           :
 
 
-
-
-
 ## <a id="customvm"></a>TASK: Create a virtual machine with a specialized disk
 
 This task uses a template from the template gallery. To learn more about the template, see [Create a VM from a specialized VHD disk](https://www.windowsazure.cn/documentation/templates/201-vm-from-specialized-vhd/).
@@ -144,6 +141,7 @@ You're prompted to supply the values of parameters in the **parameters** section
 	...
 
 > [AZURE.NOTE] The example shown above uses a vhd file that exists in the saacct storage account. The name of the disk was provided as a parameter to the template.
+
 ## <a id="multivm"></a>TASK: Create a multiple virtual machines in a virtual network with an external load balancer
 
 This task uses a template from the template gallery. To learn more about the template, see [Create a VM from a specialized VHD disk](https://www.windowsazure.cn/documentation/templates/201-2-vms-loadbalancer-lbrules/).
@@ -166,7 +164,6 @@ You're prompted to supply the values of parameters in the **parameters** section
 	backendPort: 80
 	vmNamePrefix: WEBFARM
 	...
-
 
 
 ## <a id="removerg"></a>TASK: Remove a resource group
@@ -203,7 +200,7 @@ It returns something like this:
 	Id                       : /subscriptions/{subscription-id}/resourceGroups/BuildRG/providers/Microso
 	                           ft.Compute/virtualMachines/MyWindowsVM
 	InstanceView             : null
-	Location                 : westus
+	Location                 : chinanorth
 	Name                     : MyWindowsVM
 	NetworkProfile           : {
 	                             "NetworkInterfaces": [
@@ -246,7 +243,7 @@ It returns something like this:
 	                               "Name": "osdisk",
 	                               "SourceImage": null,
 	                               "VirtualHardDisk": {
-	                                 "Uri": "http://buildsaacct.blob.core.chinacloudapi.cn/vhds/osdiskforwindowssimple.vhd"
+	                                 "Uri": "http://saacct.blob.core.chinacloudapi.cn/vhds/osdiskforwindowssimple.vhd"
 	                               }
 	                             },
 	                             "SourceImage": null
@@ -344,4 +341,4 @@ It returns something like this:
 
 [Azure Resource Manager overview](/documentation/articles/resource-group-overview)
 
-[Virtual machines documentation](http://www.windowsazure.cn/documentation/services/virtual-machines/)
+[Virtual machines documentation](/documentation/services/virtual-machines/)

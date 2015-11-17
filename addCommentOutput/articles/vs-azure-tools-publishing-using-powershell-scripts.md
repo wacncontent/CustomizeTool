@@ -267,7 +267,7 @@ To automate building your project, add code that calls MSBuild to `New-WebDeploy
         $projectName = (Get-Item $ProjectFile).BaseName
           
         #Construct the path to web deploy zip package
-        $DeployPackageDir =  '.\MSBuildOutputPath_PublishedWebsites\{0}_Package\{0}.zip' -f $projectName
+        $DeployPackageDir =  '.\MSBuildOutputPath\_PublishedWebsites\{0}_Package\{0}.zip' -f $projectName
           
           
         #Get the full path for the web deploy zip package. This is required for MSDeploy to work

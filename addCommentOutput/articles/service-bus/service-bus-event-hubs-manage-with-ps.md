@@ -80,14 +80,10 @@ This part of the script does the following:
 3. If the namespace is not found, it creates the namespace and then retrieves the newly created namespace.
 
 	``` powershell
+
 	$Namespace = "MyServiceBusNS"
-<!-- deleted by customization
 	$Location = "China North"
--->
-<!-- keep by customization: begin -->
-		$Location = "China East"
-		
-<!-- keep by customization: end -->
+
 	# Query to see if the namespace currently exists
 	$CurrentNamespace = Get-AzureSBNamespace -Name $Namespace
 
@@ -267,12 +263,7 @@ Some ready-made script are also available for download:
 <!--Anchors-->
 
 [Purchase Options]: /pricing/overview/
-<!-- deleted by customization
-[Member Offers]: http://azure.microsoft.com/pricing/member-offers/
--->
-<!-- keep by customization: begin -->
-[Member Offers]: http://azure.microsoft.com/zh-cn/pricing/member-offers/
-<!-- keep by customization: end -->
+[Member Offers]: /pricing/member-offers/
 [Trial]: /pricing/1rmb-trial/
 [Service Bus NuGet package]: http://www.nuget.org/packages/WindowsAzure.ServiceBus/
 [Get-AzureSBNamespace]: https://msdn.microsoft.com/zh-cn/library/azure/dn495122.aspx

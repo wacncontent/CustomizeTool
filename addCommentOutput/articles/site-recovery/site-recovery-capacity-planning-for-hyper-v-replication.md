@@ -119,11 +119,11 @@ If you have already prepared a standalone Hyper-V host a recovery server, then y
 
 	h. Open firewall ports on all recovery Hyper-V hosts:
           Port 443 (Certificate auth):
-             Get-ClusterNode | ForEach-Object {Invoke-command -computername \$_.name -scriptblock {Enable-Netfirewallrule -displayname "Hyper-V Replica HTTPS Listener (TCP-In)"}}
+             Get-ClusterNode | ForEach-Object {Invoke-command -computername \$\_.name -scriptblock {Enable-Netfirewallrule -displayname "Hyper-V Replica HTTPS Listener (TCP-In)"}}
 
 
           Port 80 (Kerberos auth):
-              Get-ClusterNode | ForEach-Object {Invoke-command -computername \$_.name -scriptblock {Enable-Netfirewallrule -displayname "Hyper-V Replica HTTP Listener (TCP-In)"}}
+              Get-ClusterNode | ForEach-Object {Invoke-command -computername \$\_.name -scriptblock {Enable-Netfirewallrule -displayname "Hyper-V Replica HTTP Listener (TCP-In)"}}
 
 
 ## Step 3: Run the capacity planner tool
@@ -155,7 +155,6 @@ If you have already prepared a standalone Hyper-V host a recovery server, then y
 
   Specify the **Replica site** details, and then click **Next**.
 
-<!-- deleted by customization
 i. For a standalone host, enter the server name or FQDN
 
 ii. If your Primary host is part of a cluster, you can enter FQDN of one of the following:
@@ -170,38 +169,13 @@ c. Any node of the cluster
 
 7. Skip the tests involving **Extended Replica site**. They are not supported by ASR.
 8. Select the virtual machines to profile. The tool connects to the cluster or standalone servers specified in **Primary Site Details**, and enumerates the virtual machines that are running. Select the virtual machines and virtual disks for which you want metrics to be collected.
--->
-<!-- keep by customization: begin -->
-
-i.For a standalone host, enter the server name or FQDN
-
-ii.If your Primary host is part of a cluster, you can enter FQDN of one of the following:
-
-a.	The Hyper-V Replica Broker Client Access Point (CAP)
-
-b.	The cluster name
-
-c.	Any node of the cluster  
-![](./media/site-recovery-capacity-planning-for-hyper-v-replication/image4.png)
-
-7.Skip the tests involving **Extended Replica site**. They are not supported by ASR.
-
-8.Select the virtual machines to profile. The tool connects to the cluster or standalone servers specified in **Primary Site Details**, and enumerates the virtual machines that are running. Select the virtual machines and virtual disks for which you want metrics to be collected.
-<!-- keep by customization: end -->
 
 The following virtual machines will not be enumerated or shown:
 
-<!-- deleted by customization - Virtual --><!-- keep by customization: begin --> -	Virtual <!-- keep by customization: end --> machines that have already been enabled for replication
-<!-- deleted by customization
+- Virtual machines that have already been enabled for replication
 - Virtual machines that are not running
 
 9. Enter **Network information** (this is applicable only to on-premises site to on-premises site replication and when replica site details are provided).
--->
-<!-- keep by customization: begin -->
--	Virtual machines that are not running  
-
-9.Enter **Network information** (this is applicable only to on-premises site to on-premises site replication and when replica site details are provided).
-<!-- keep by customization: end -->
 
 Specify the requested network information, and then click **Next**.
 
@@ -210,11 +184,11 @@ Specify the requested network information, and then click **Next**.
 
    ![](./media/site-recovery-capacity-planning-for-hyper-v-replication/image5.png)
 
-<!-- deleted by customization 10. On --><!-- keep by customization: begin --> 10.On <!-- keep by customization: end --> the next set of screens, click **Next** to start the tool.
+10. On the next set of screens, click **Next** to start the tool.
 
 ![](./media/site-recovery-capacity-planning-for-hyper-v-replication/image6.png)
 
-<!-- deleted by customization 11. When --><!-- keep by customization: begin --> 11.When <!-- keep by customization: end --> the tool is done running, click **View Report** to review the output.
+11. When the tool is done running, click **View Report** to review the output.
 
     Default report location:
 

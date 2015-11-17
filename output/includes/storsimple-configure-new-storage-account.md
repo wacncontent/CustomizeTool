@@ -1,6 +1,24 @@
+<!-- deleted by customization
 <!--author=SharS last changed: 9/17/15-->
 
 #### To add a new storage account in StorSimple Release version (GA)
+-->
+<!-- keep by customization: begin -->
+<properties 
+   pageTitle="Optional: Configure a new storage account for the service"
+   description="Explains how to configure a storage account for th StorSimple service."
+   services="storsimple"
+   documentationCenter="NA"
+   authors="SharS"
+   manager="adinah"
+   editor="tysonn" />
+<tags
+	ms.service="storsimple"
+	ms.date="04/01/2015"
+	wacn.date=""/>
+
+### To configure a new storage account
+<!-- keep by customization: end -->
 
 1. On the StorSimple Manager service landing page, select your service and double-click it. This will take you to the **Quick Start** page. Select the **Configure** page.
 

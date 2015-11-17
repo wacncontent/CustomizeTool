@@ -46,7 +46,7 @@ A [Hyper-V VM snapshot](https://technet.microsoft.com/zh-cn/library/dd560637.asp
 ### Delta Replication
 Hyper-V Replica Replication Tracker, which is part of the Hyper-V Replica Replication Engine, tracks the changes to a virtual hard disk as Hyper-V Replication Logs (*.hrl). HRL files will be located in the same directory as of the associated disks. Each disk configured for replication will have an associated HRL file. This log(s) is (are) sent to the customer's storage account after initial replication is complete. When a log is in transit to the Azure, the changes in the primary are tracked in another log file in the same directory.
 
-VM replication health during Initial Replication or Delta Replication can be monitored in the VM view as mentioned under [Monitor replication health for virtual machine](./site-recovery-monitoring-and-troubleshooting.md#monitor-replication-health-for-virtual-machine).  
+VM replication health during Initial Replication or Delta Replication can be monitored in the VM view as mentioned under [Monitor replication health for virtual machine](/documentation/articles/site-recovery-monitoring-and-troubleshooting#monitor-replication-health-for-virtual-machine).  
 
 ### Re-synchronization 
 A virtual machine is marked for re-synchronization when both Delta Replication fails and Full Initial Replication is costly in terms of network bandwidth or the time it would take to complete a Full Initial Replication. For example when HRL file-size piles up to 50% of the total disk size then the virtual machine is marked for re-synchronization. Re-synchronization minimizes the amount of data sent over the network by computing check-sums of the Source and Target virtual machine disks and sending only the differential. 
@@ -72,6 +72,6 @@ There is built-in retry logic when replication errors occur. This can be classif
 
 ## Other references
 
-- [Monitor and troubleshoot protection for VMware, VMM, Hyper-V and Physical sites](./site-recovery-monitoring-and-troubleshooting.md)
-- [Reaching out for Microsoft Support](./site-recovery-monitoring-and-troubleshooting.md#reaching-out-for-microsoft-support)
-- [Common ASR errors and their resolutions](./site-recovery-monitoring-and-troubleshooting.md#common-asr-errors-and-their-resolutions)
+- [Monitor and troubleshoot protection for VMware, VMM, Hyper-V and Physical sites](/documentation/articles/site-recovery-monitoring-and-troubleshooting)
+- [Reaching out for Microsoft Support](/documentation/articles/site-recovery-monitoring-and-troubleshooting#reaching-out-for-microsoft-support)
+- [Common ASR errors and their resolutions](/documentation/articles/site-recovery-monitoring-and-troubleshooting#common-asr-errors-and-their-resolutions)

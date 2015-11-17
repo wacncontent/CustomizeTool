@@ -6,10 +6,10 @@
    authors="sethmanheim"
    manager="timlt"
    editor="" />
-<tags 
-   ms.service="service-bus"
-   ms.date="10/14/2015"
-   wacn.date="" />
+<tags
+	ms.service="service-bus"
+	ms.date="10/14/2015"
+	wacn.date=""/>
 
 # Service Bus REST tutorial
 
@@ -23,9 +23,9 @@ The first step is to create a service namespace, and to obtain a Shared Access S
 
 ### To create a service namespace and obtain a SAS key
 
-1. To create a namespace in the Azure management portal, follow the steps in [How To: Create or Modify a Service Bus Service Namespace](https://msdn.microsoft.com/zh-cn/library/hh690931.aspx).
+1. To create a namespace in the Azure Management Portal, follow the steps in [How To: Create or Modify a Service Bus Service Namespace](https://msdn.microsoft.com/zh-cn/library/hh690931.aspx).
 
-2. In the main window of the Azure management portal, click the name of the service namespace you created in the previous step.
+2. In the main window of the Azure Management Portal, click the name of the service namespace you created in the previous step.
 
 3. Click **Configure** to view the shared access policies for the namespace.
 
@@ -133,19 +133,19 @@ using System.ServiceModel;
 using System.ServiceModel.Channels;
 using System.ServiceModel.Web;
 using System.IO;
-	
+
 namespace Microsoft.ServiceBus.Samples
 {
-	
+
     [ServiceContract(Name = "IImageContract", Namespace = "http://samples.microsoft.com/ServiceModel/Relay/")]
     public interface IImageContract
     {
         [OperationContract, WebGet]
         Stream GetImage();
     }
-	
+
     public interface IImageChannel : IImageContract, IClientChannel { }
-	
+
     class Program
     {
         static void Main(string[] args)
@@ -163,7 +163,7 @@ As with the previous steps, there is very little difference between implementing
 
 ### To implement a REST-style Service Bus contract
 
-1. Create a new class named **ImageService** directly after the definition of the **IImageContract** interface. The **ImageService** class implements the **IImageContract** interface. 
+1. Create a new class named **ImageService** directly after the definition of the **IImageContract** interface. The **ImageService** class implements the **IImageContract** interface.
 
 	```
 	class ImageService : IImageContract
@@ -186,7 +186,7 @@ As with the previous steps, there is very little difference between implementing
 3. Add a .jpg image to your project.  
 
 	This is a picture that the service displays in the receiving browser. Right-click your project, then click **Add**. Then click **Existing Item**. Use the **Add Existing Item** dialog box to browse to an appropriate .jpg, and then click **Add**.
-    
+
 	When adding the file, make sure that **All Files** is selected in the drop-down list next to the **File name:** field. The rest of this tutorial assumes that the name of the image is "image.jpg". If you have a different file, you will have to rename the image, or change your code to compensate.
 
 4. To make sure that the running service can find the image file, in **Solution Explorer** right-click the image file. In the **Properties** pane, set **Copy to Output Directory** to **Copy if newer**.
@@ -206,9 +206,9 @@ As with the previous steps, there is very little difference between implementing
 	class ImageService : IImageContract
 	{
 		const string imageFileName = "image.jpg";
-  
+
 		Image bitmap;
-  
+
 		public ImageService()
 		{
 			this.bitmap = Image.FromFile(imageFileName);
@@ -223,14 +223,14 @@ As with the previous steps, there is very little difference between implementing
 	{
 		MemoryStream stream = new MemoryStream();
 		this.bitmap.Save(stream, ImageFormat.Jpeg);
-  
+
 		stream.Position = 0;
 		WebOperationContext.Current.OutgoingResponse.ContentType = "image/jpeg";
-  
+
 		return stream;
 	}
 	```
-  
+
 	This implementation uses **MemoryStream** to retrieve the image and prepare it for streaming to the browser. It starts the stream position at zero, declares the stream content as a jpeg, and streams the information.
 
 8. From the **Build** menu, click **Build Solution**.
@@ -246,9 +246,9 @@ As with the previous steps, there is very little difference between implementing
 	<configuration>
 	</configuration>
 	```
-  
+
 	The configuration file resembles a WCF configuration file, and includes the service name, endpoint (that is, the location Service Bus exposes for clients and hosts to communicate with each other), and binding (the type of protocol that is used to communicate). The main difference here is that the configured service endpoint refers to a [WebHttpRelayBinding](https://msdn.microsoft.com/zh-cn/library/microsoft.servicebus.webhttprelaybinding.aspx) binding, which is not part of the .NET Framework. For more information about how to configure a Service Bus application, see [Configuring a WCF Service to Register with Service Bus](https://msdn.microsoft.com/zh-cn/library/ee173579.aspx).
-  
+
 
 3. Add a `<system.serviceModel>` XML element to the App.config file. This is a WCF element that defines one or more services. Here, it is used to define the service name and endpoint.
 
@@ -256,9 +256,9 @@ As with the previous steps, there is very little difference between implementing
 	<?xml version="1.0" encoding="utf-8" ?>
 	<configuration>
 		<system.serviceModel>
-      
+
 		</system.serviceModel>
-    
+
 	</configuration>
 	```
 
@@ -274,7 +274,7 @@ As with the previous steps, there is very little difference between implementing
 		</webHttpRelayBinding>
 	</bindings>
 	```
-  
+
 	This step defines a Service Bus [WebHttpRelayBinding](https://msdn.microsoft.com/zh-cn/library/microsoft.servicebus.webhttprelaybinding.aspx) binding with **relayClientAuthenticationType** set to **None**. This setting indicates that an endpoint using this binding does not require a client credential.
 
 5. After the `<bindings>` element, add a `<services>` element. Similar to the bindings, you can define multiple services in a single configuration file. However, for this tutorial, you define only one.
@@ -293,11 +293,11 @@ As with the previous steps, there is very little difference between implementing
 		</service>
 	</services>
 	```
-  
+
 	This step configures a service that uses the previously defined default **webHttpRelayBinding**. It also uses the default **sbTokenProvider**, which is defined in the next step.
 
-6. After the `<services>` element, create a `<behaviors>` element with the following content, replacing "SAS_KEY" with the *Shared Access Signature* (SAS) key you obtained from the Azure management portal in Step 1.
-  
+6. After the `<services>` element, create a `<behaviors>` element with the following content, replacing "SAS_KEY" with the *Shared Access Signature* (SAS) key you obtained from the Azure Management Portal in Step 1.
+
 	```
 	<behaviors>
 		<endpointBehaviors>
@@ -316,7 +316,7 @@ As with the previous steps, there is very little difference between implementing
 			</serviceBehaviors>
 	</behaviors>
 	```
-  
+
 7. From the **Build** menu, click **Build Solution** to build the entire solution.
 
 ### Example
@@ -339,7 +339,7 @@ using Microsoft.ServiceBus.Web;
 
 namespace Microsoft.ServiceBus.Samples
 {
-    
+
 
     [ServiceContract(Name = "ImageContract", Namespace = "http://samples.microsoft.com/ServiceModel/Relay/")]
     public interface IImageContract
@@ -371,7 +371,7 @@ namespace Microsoft.ServiceBus.Samples
             WebOperationContext.Current.OutgoingResponse.ContentType = "image/jpeg";
 
             return stream;
-        }    
+        }
     }
 
     class Program
@@ -506,7 +506,7 @@ using Microsoft.ServiceBus.Web;
 
 namespace Microsoft.ServiceBus.Samples
 {
-    
+
     [ServiceContract(Name = "ImageContract", Namespace = "http://samples.microsoft.com/ServiceModel/Relay/")]
     public interface IImageContract
     {
@@ -537,7 +537,7 @@ namespace Microsoft.ServiceBus.Samples
             WebOperationContext.Current.OutgoingResponse.ContentType = "image/jpeg";
 
             return stream;
-        }    
+        }
     }
 
     class Program
@@ -574,6 +574,6 @@ After building the solution, do the following to run the application:
 
 Now that you've built an application that uses the Service Bus relay service, see the following articles to learn more about relayed messaging:
 
-- [Azure Service Bus Architectural Overview](/documentation/articles/fundamentals-service-bus-hybrid-solutions/#relays)
+- [Azure Service Bus architectural overview](/documentation/articles/service-bus-fundamentals-hybrid-solutions#relays)
 
 - [How to Use the Service Bus Relay Service](/documentation/articles/service-bus-dotnet-how-to-use-relay)

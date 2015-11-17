@@ -27,7 +27,7 @@ In this tutorial, you learn how to use Azure PowerShell with Azure Resource Mana
 To complete this tutorial, you need:
 
 - An Azure account
-  + You can [open an Azure account for <!-- deleted by customization free](/pricing/1rmb-trial/?WT.mc_id=A261C142F) --><!-- keep by customization: begin --> free](/pricing/1rmb-trial/) <!-- keep by customization: end -->: You get credits you can use to try out paid Azure services, and even after they're used up you can keep the account and use free Azure services, such as Websites. Your credit card will never be charged, unless you explicitly change your settings and ask to be charged.
+  + You can [open an Azure account for free](/pricing/1rmb-trial/?WT.mc_id=A261C142F): You get credits you can use to try out paid Azure services, and even after they're used up you can keep the account and use free Azure services, such as Websites. Your credit card will never be charged, unless you explicitly change your settings and ask to be charged.
   
 <!-- deleted by customization
   + You can [activate MSDN subscriber benefits](/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F): Your MSDN subscription gives you credits every month that you can use for paid Azure services.
@@ -131,44 +131,39 @@ The output will be similar to:
 
 <!-- deleted by customization
     Brazil South
-    East Asia
+    China East
     China East
     Japan East
-    Japan West
-    China North
-    China North
-    China East
-    West Europe
-    China North
-    Southeast Asia
-    China North
-    China East 2
-
-The locations you see might be slightly different than the previous results. The results could be different because an administrator in your organization has created a policy that limits which regions can be used in your subscription or there may be restrictions related to tax policies in your home country.
-
-Let's run the same command for the database:
-
-    PS C:\> ((Get-AzureRmResourceProvider -ProviderNamespace Microsoft.Sql).ResourceTypes | Where-Object ResourceTypeName -eq servers).Locations
-    China East 2
 -->
     China East
-    China North
-<!-- keep by customization: begin -->
-
-The locations you see might be slightly different than the previous results. The results could be different because an administrator in your organization has created a policy that limits which regions can be used in your subscription or there may be restrictions related to tax policies in your home country.
-
-Let's run the same command for the database:
-
-    PS C:\> ((Get-AzureRmResourceProvider -ProviderNamespace Microsoft.Sql).ResourceTypes | Where-Object ResourceTypeName -eq servers).Locations
-    China East
-<!-- keep by customization: end -->
     China North
 <!-- deleted by customization
     China North
     China East
-    East Asia
-    Southeast Asia
-    Japan West
+    West Europe
+    China North
+    China North
+    China North
+    China East 2
+-->
+
+The locations you see might be slightly different than the previous results. The results could be different because an administrator in your organization has created a policy that limits which regions can be used in your subscription or there may be restrictions related to tax policies in your home country.
+
+Let's run the same command for the database:
+
+    PS C:\> ((Get-AzureRmResourceProvider -ProviderNamespace Microsoft.Sql).ResourceTypes | Where-Object ResourceTypeName -eq servers).Locations
+<!-- deleted by customization
+    China East 2
+-->
+    China East
+    China North
+<!-- deleted by customization
+    China North
+    China North
+    China East
+    China East
+    China North
+    China East
     Japan East
     China North
     West Europe
@@ -187,10 +182,10 @@ To create a resource group, use the **New-AzureRmResourceGroup** cmdlet.
 The command uses the **Name** parameter to specify a name for the resource group and the **Location** parameter to specify its location. Based on what we discovered in the previous section, we will use "China North" for 
 the location.
 
-    PS C:\> New-AzureRmResourceGroup -Name TestRG1 -Location "China <!-- deleted by customization North" --><!-- keep by customization: begin --> East" <!-- keep by customization: end -->
+    PS C:\> New-AzureRmResourceGroup -Name TestRG1 -Location "China North"
     
     ResourceGroupName : TestRG1
-    Location          : <!-- deleted by customization westus --><!-- keep by customization: begin --> China East <!-- keep by customization: end -->
+    Location          : chinanorth
     ProvisioningState : Succeeded
     Tags              :
     Permissions       :
@@ -410,7 +405,7 @@ After creating a resource group, you can use the cmdlets in the Resource Manager
 		PS C:>Get-AzureRmResourceGroup
 
 		ResourceGroupName : TestRG
-		Location          : <!-- deleted by customization westus --><!-- keep by customization: begin --> China East <!-- keep by customization: end -->
+		Location          : chinanorth
 		ProvisioningState : Succeeded
 		Tags              :
 		ResourceId        : /subscriptions/{guid}/resourceGroups/TestRG
@@ -427,7 +422,7 @@ After creating a resource group, you can use the cmdlets in the Resource Manager
                 ResourceType      : Microsoft.Sql/servers
                 Kind              : v12.0
                 ResourceGroupName : TestRG1
-                Location          : <!-- deleted by customization westus --><!-- keep by customization: begin --> China East <!-- keep by customization: end -->
+                Location          : chinanorth
                 SubscriptionId    : {guid}
                 
                 ...
@@ -461,8 +456,8 @@ You can move existing resources to a new resource group. For examples, see [Move
 
 ## Next Steps
 
-- To learn about creating Resource Manager templates, see [Authoring Azure Resource Manager <!-- deleted by customization Templates](./resource-group-authoring-templates.md) --><!-- keep by customization: begin --> Templates](/documentation/articles/resource-group-authoring-templates) <!-- keep by customization: end -->.
-- To learn about deploying templates, see [Deploy an application with Azure Resource Manager <!-- deleted by customization Template](./resource-group-template-deploy.md) --><!-- keep by customization: begin --> Template](/documentation/articles/resource-group-template-deploy) <!-- keep by customization: end -->.
-- For a detailed example of deploying a project, see [Deploy microservices predictably in <!-- deleted by customization Azure](/documentation/articles/app-service-deploy-complex-application-predictably) --><!-- keep by customization: begin --> Azure](/documentation/articles/app-service-web/app-service-deploy-complex-application-predictably) <!-- keep by customization: end -->.
-- To learn about troubleshooting a deployment that failed, see [Troubleshooting resource group deployments in <!-- deleted by customization Azure](./virtual-machines/resource-group-deploy-debug.md) --><!-- keep by customization: begin --> Azure](/documentation/articles/virtual-machines/resource-group-deploy-debug) <!-- keep by customization: end -->.
+- To learn about creating Resource Manager templates, see [Authoring Azure Resource Manager Templates](/documentation/articles/resource-group-authoring-templates).
+- To learn about deploying templates, see [Deploy an application with Azure Resource Manager Template](/documentation/articles/resource-group-template-deploy).
+- For a detailed example of deploying a project, see [Deploy microservices predictably in Azure](/documentation/articles/app-service-deploy-complex-application-predictably).
+- To learn about troubleshooting a deployment that failed, see [Troubleshooting resource group deployments in Azure](/documentation/articles/resource-group-deploy-debug).
 

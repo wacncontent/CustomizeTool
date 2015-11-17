@@ -85,7 +85,7 @@ The following example shows how to use several of the functions when constructin
     }
 
 For now, you know enough about expressions and functions to understand the sections of the template. For more detailed information about all of the template functions, including parameters and the format of returned values, 
-see [Azure Resource Manager template functions](./resource-group-template-functions.md). 
+see [Azure Resource Manager template functions](/documentation/articles/resource-group-template-functions). 
 
 
 ## Parameters
@@ -100,11 +100,13 @@ You define parameters with the following structure:
        "<parameterName>" : {
          "type" : "<type-of-parameter-value>",
          "defaultValue": "<optional-default-value-of-parameter>",
-         "allowedValues": [ "<optional-array-of-allowed-values>" ],
+         "allowedValues": [ "<optional-array-of-allowed-values>" ]<!-- deleted by customization, -->
+<!-- deleted by customization
          "minValue": <optional-minimum-value-for-int-parameters>,
          "maxValue": <optional-maximum-value-for-int-parameters>,
          "minLength": <optional-minimum-length-for-string-secureString-array-parameters>,
          "maxLength": <optional-maximum-length-for-string-secureString-array-parameters>
+-->
        }
     }
 
@@ -114,10 +116,12 @@ You define parameters with the following structure:
 | type           |   Yes    | Type of the parameter value. See the list below of allowed types.
 | defaultValue   |   No     | Default value for the parameter, if no value is provided for the parameter.
 | allowedValues  |   No     | Array of allowed values for the parameter to make sure that the right value is provided.
+<!-- deleted by customization
 | minValue       |   No     | The minimum value for int type parameters, this value is inclusive.
 | maxValue       |   No     | The maximum value for int type parameters, this value is inclusive.
 | minLength      |   No     | The minimum length for string, secureString and array type parameters, this value is inclusive.
 | maxLength      |   No     | The maximum length for string, secureString and array type parameters, this value is inclusive.
+-->
 
 The allowed types and values are:
 
@@ -135,13 +139,17 @@ The following example shows how to define parameters:
 
     "parameters": {
        "siteName": {
-          "type": "string",
+          "type": "string"<!-- deleted by customization, -->
+<!-- deleted by customization
           "minLength": 2,
           "maxLength": 60
+-->
        },
        "siteLocation": {
-          "type": "string",
+          "type": "string"<!-- deleted by customization, -->
+<!-- deleted by customization
           "minLength": 2
+-->
        },
        "hostingPlanName": {
           "type": "string"
@@ -156,6 +164,7 @@ The following example shows how to define parameters:
             "Premium"
           ],
           "defaultValue": "Free"
+<!-- deleted by customization
        },
        "instancesCount": {
           "type": "int",
@@ -164,6 +173,7 @@ The following example shows how to define parameters:
        "numberOfWorkers": {
           "type": "int",
           "minValue": 1
+-->
        }
     }
 
@@ -287,7 +297,7 @@ The following example shows a **Microsoft.Web/serverfarms** resource and a **Mic
                   "type": "Extensions",
                   "name": "MSDeploy",
                   "properties": {
-                    "packageUri": "https://auxmktplceprod.blob.core.chinacloudapi.cn/packages/StarterSite-modified.zip",
+                    "packageUri": "https://auxmktplceprod.blob.core.windows.net/packages/StarterSite-modified.zip",
                     "dbType": "None",
                     "connectionString": "",
                     "setParameters": {
@@ -401,7 +411,7 @@ The following template deploys a web app and provisions it with code from a .zip
                  "[resourceId('Microsoft.Web/sites', parameters('siteName'))]"
                ],
                "properties": {
-                 "packageUri": "https://auxmktplceprod.blob.core.chinacloudapi.cn/packages/StarterSite-modified.zip",
+                 "packageUri": "https://auxmktplceprod.blob.core.windows.net/packages/StarterSite-modified.zip",
                  "dbType": "None",
                  "connectionString": "",
                  "setParameters": {

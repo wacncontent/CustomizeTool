@@ -1,5 +1,8 @@
 <properties pageTitle="Tutorial: Azure Active Directory integration with FreshService | Windows Azure" description="Learn how to use FreshService with Azure Active Directory to enable single sign-on, automated provisioning, and more!." services="active-directory" authors="MarkusVi"  documentationCenter="na" manager="stevenpo"/>
-<tags ms.service="active-directory" ms.devlang="na" ms.topic="article" ms.tgt_pltfrm="na" ms.workload="identity" ms.date="08/01/2015" ms.author="markvi" />
+<tags
+	ms.service="active-directory"
+	ms.date="08/01/2015"
+	wacn.date=""/>
 #Tutorial: Azure Active Directory integration with FreshService
 <!-- deleted by customization
 >[AZURE.TIP]For feedback, click [here](https://social.msdn.microsoft.com/Forums/azure/zh-cn/0648ecd3-2f0c-4cb3-b945-20e0e6b50fab/tutorial-azure-active-directory-integration-with-freshservice?forum=WindowsAzureAD).

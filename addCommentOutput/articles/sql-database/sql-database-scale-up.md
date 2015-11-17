@@ -23,7 +23,7 @@
 
 This article shows how to change the service tier and performance level of your SQL database with the [Azure preview portal](https://manage.windowsazure.cn). 
 
-Use the information in [Upgrade SQL Database Web/Business Databases to New Service Tiers](/documentation/articles/sql-database-upgrade-new-service-tiers) and [Azure SQL Database Service Tiers and Performance <!-- deleted by customization Levels](/documentation/articles/sql-database-service-tiers) --><!-- keep by customization: begin --> Levels](https://msdn.microsoft.com/zh-cn/library/azure/dn741336.aspx) <!-- keep by customization: end --> to determine the appropriate service tier and performance level for your Azure SQL Database.
+Use the information in [Upgrade SQL Database Web/Business Databases to New Service Tiers](/documentation/articles/sql-database-upgrade-new-service-tiers) and [Azure SQL Database Service Tiers and Performance Levels](/documentation/articles/sql-database-service-tiers) to determine the appropriate service tier and performance level for your Azure SQL Database.
 
 > [AZURE.IMPORTANT] Changing the service tier and performance level of a SQL database is an online operation. This means your database will remain online and available during the entire operation with no downtime.
 

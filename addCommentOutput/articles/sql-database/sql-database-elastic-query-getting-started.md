@@ -24,7 +24,7 @@ Download and run the [Getting started with Elastic Database tools sample](/docum
 
 Here you will create a shard map manager along with several shards, followed by insertion of data into the shards. If you happen to already have shards setup with sharded data in them, you can skip the following steps and move to the next section.
 
-1. Build and run the **Getting started with Elastic Database tools** sample application. Follow the steps until step 7 in the section [Download and run the sample <!-- deleted by customization app](/documentation/articles/sql-database-elastic-scale-get-started#Getting-started-with-elastic-database-tools) --><!-- keep by customization: begin --> app](/documentation/articles/sql-database-elastic-scale-get-started/#Getting-started-with-elastic-database-tools) <!-- keep by customization: end -->. At the end of Step 7, you will see the following command prompt:
+1. Build and run the **Getting started with Elastic Database tools** sample application. Follow the steps until step 7 in the section [Download and run the sample app](/documentation/articles/sql-database-elastic-scale-get-started#Getting-started-with-elastic-database-tools). At the end of Step 7, you will see the following command prompt:
 
 	![command prompt][1]
 
@@ -62,7 +62,7 @@ These are used to connect to the shard map manager and the shards:
 		WITH IDENTITY = '<username>',
 		SECRET = '<password>';
 
-	"username" and "password" should be the same as login information used in step 6 of [Download and run the sample <!-- deleted by customization app](/documentation/articles/sql-database-elastic-scale-get-started#Getting-started-with-elastic-database-tools) --><!-- keep by customization: begin --> app](/documentation/articles/sql-database-elastic-scale-get-started/#Getting-started-with-elastic-database-tools) <!-- keep by customization: end --> in [Getting started with elastic database tools](/documentation/articles/sql-database-elastic-scale-get-started).
+	"username" and "password" should be the same as login information used in step 6 of [Download and run the sample app](/documentation/articles/sql-database-elastic-scale-get-started#Getting-started-with-elastic-database-tools) in [Getting started with elastic database tools](/documentation/articles/sql-database-elastic-scale-get-started).
 
 ### External data sources
 
@@ -84,7 +84,7 @@ Create an external table that matches the Customers table on the shards by execu
 
 	CREATE EXTERNAL TABLE [dbo].[Customers]
 	( [CustomerId] [int] NOT NULL,
-	  [Name] [nvarchar](/documentation/articles/256) NOT NULL,
+	  [Name] [nvarchar](256) NOT NULL,
 	  [RegionId] [int] NOT NULL)
 	WITH
 	( DATA_SOURCE = MyElasticDBQueryDataSrc,
@@ -125,7 +125,7 @@ You can now use Excel’s powerful data visualization functions. You can use the
 ### Cost
 There is no additional charge for using the Elastic Database Query feature. However, at this time this feature is available only on premium databases as an end point, but the shards can be of any service tier.
 
-For pricing information see [SQL Database Pricing <!-- deleted by customization Details](/home/features/sql-database/#price) --><!-- keep by customization: begin --> Details](http://www.windowsazure.cn/home/features/sql-database/#price) <!-- keep by customization: end -->.
+For pricing information see [SQL Database Pricing Details](/home/features/sql-database/#price).
 
 
 [AZURE.INCLUDE [elastic-scale-include](../includes/elastic-scale-include.md)]

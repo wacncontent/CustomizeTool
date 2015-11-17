@@ -7,9 +7,9 @@
     authors="sidneyh"/>
 
 <tags
-    ms.service="sql-database"
-    ms.date="10/19/2015"
-    wacn.date="" />
+	ms.service="sql-database"
+	ms.date="10/19/2015"
+	wacn.date=""/>
 
 # Elastic database query for vertical partitioning
 

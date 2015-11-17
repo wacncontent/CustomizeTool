@@ -8,9 +8,9 @@
    editor=""/>
 
 <tags
-   ms.service="azure-resource-manager"
-   ms.date="10/14/2015"
-   wacn.date=""/>
+	ms.service="azure-resource-manager"
+	ms.date="10/14/2015"
+	wacn.date=""/>
 
 # Authenticating a service principal with Azure Resource Manager
 
@@ -18,7 +18,7 @@ This topic shows you how to permit a service principal (such as an automated pro
 
 It shows how to authenticate with either a user name and password or a certificate.
 
-You can use either Azure PowerShell or Azure CLI for Mac, Linux and Windows. If you do not have Azure PowerShell installed, see [How to install and configure Azure PowerShell](./powershell-install-configure.md). If you do not have Azure CLI installed, see [Install and Configure the Azure CLI](/documentation/articles/xplat-cli-install).
+You can use either Azure PowerShell or Azure CLI for Mac, Linux and Windows. If you do not have Azure PowerShell installed, see [How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure). If you do not have Azure CLI installed, see [Install and Configure the Azure CLI](/documentation/articles/xplat-cli-install).
 
 ## Concepts
 1. Azure Active Directory (AAD) - an identity and access management service for the cloud. For more information, see [What is Azure active Directory](/documentation/articles/active-directory-whatis)
@@ -76,7 +76,7 @@ In this section, you will perform the steps to create a service principal for an
 
 3. Grant the service principal permissions on your subscription. In this sample you will grant the service principal the permission to Read all resources in the subscription. For the **ServicePrincipalName** parameter, provie either the **ApplicationId** or the **IdentifierUris** that you used when creating the application. For more information on role-based access control, see [Managing and Auditing Access to Resources](/documentation/articles/resource-group-rbac)
 
-        PS C:\> New-AzureRoleAssignment -RoleDefinitionName Reader -ServicePrincipalName $azureAdApplication.ApplicationId
+        PS C:\> New-AzureRmRoleAssignment -RoleDefinitionName Reader -ServicePrincipalName $azureAdApplication.ApplicationId
 
 4. Retrieve the subscription in which the role assignment was created. This subscription will be used later to get the **TenantId** of the tenant that the service principal's role assignment resides in.
 

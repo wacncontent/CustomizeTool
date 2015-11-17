@@ -183,7 +183,7 @@ steps:
     **Note:** Copying the files to a public share makes it easier to
     manually deploy the packages from your development computer.
 
-7.  Test the success of your build step by checking in a change to your
+5.  Test the success of your build step by checking in a change to your
     project, or queue up a new build. To queue up a new build, in the
     Team Explorer, right-click **All Build Definitions,** and then
     choose **Queue New Build**.
@@ -221,15 +221,15 @@ Template workflow activities in Visual Studio TFS Team Build.
 
     This will display information about your subscription. Verify that everything is correct.
 
-5.  Save the script template provided at the [end of this article][] to
+4.  Save the script template provided at the [end of this article][] to
     your scripts folder as
     c:\\scripts\\WindowsAzure\\**PublishCloudService.ps1**.
 
-6.  Review the parameters section of the script. Add or modify any
+5.  Review the parameters section of the script. Add or modify any
     default values. These values can always be overridden by passing in
     explicit parameters.
 
-7.  Ensure there are valid cloud service and storage accounts created
+6.  Ensure there are valid cloud service and storage accounts created
     in your subscription that can be targeted by the publish script. The
     storage account (blob storage) will be used to upload and
     temporarily store the deployment package and config file while the
@@ -240,7 +240,7 @@ Template workflow activities in Visual Studio TFS Team Build.
         will be used as a prefix in a fully qualified domain name and
         hence it must be unique.
 
-            New-AzureService -ServiceName "mytestcloudservice" -Location "China East" -Label "mytestcloudservice"
+            New-AzureService -ServiceName "mytestcloudservice" -Location "China North" -Label "mytestcloudservice"
 
     -   To create a new storage account, you can call this script or use
         the Azure Management Portal. The storage account name
@@ -248,9 +248,9 @@ Template workflow activities in Visual Studio TFS Team Build.
         hence it must be unique. You can try using the same name as the
         cloud service.
 
-            New-AzureStorageAccount -ServiceName "mytestcloudservice" -Location "China East" -Label "mytestcloudservice"
+            New-AzureStorageAccount -ServiceName "mytestcloudservice" -Location "China North" -Label "mytestcloudservice"
 
-8.  Call the script directly from Azure PowerShell, or wire up this
+7.  Call the script directly from Azure PowerShell, or wire up this
     script to your host build automation to occur after the package
     build.
 
@@ -345,15 +345,15 @@ piped into the standard build output.
 	the project and check it in. Give the build process template a new name, such as
 	AzureBuildProcessTemplate.
 
-4.  Return to the **Process** tab, and use **Show Details** to show a list of available
+3.  Return to the **Process** tab, and use **Show Details** to show a list of available
 	build process templates. Choose the **New...** button, and navigate to the project you
 	just added and checked in. Locate the template you just created and choose **OK**.
 
-5.  Open the selected Process Template for editing. You can open
+4.  Open the selected Process Template for editing. You can open
     directly in the Workflow designer or in the XML editor to work with
     the XAML.
 
-6.  Add the following list of new arguments as separate line items in
+5.  Add the following list of new arguments as separate line items in
     the arguments tab of the workflow designer. All arguments should
     have direction=In and type=String. These will be used to flow
     parameters from the build definition into the workflow, which then
@@ -406,7 +406,7 @@ piped into the standard build output.
 
           <this:Process.MSBuildArguments>
 
-7.  Add a new sequence at the end of Run On Agent:
+6.  Add a new sequence at the end of Run On Agent:
 
     1.  Start by adding an If Statement activity to check for a valid
         script file. Set the condition to this value:
@@ -523,12 +523,12 @@ piped into the standard build output.
 	    </Sequence>
 
 
-8.  Save the build process template workflow and Check In this file.
+7.  Save the build process template workflow and Check In this file.
 
-9.  Edit the build definition (close it if it is already open), and select
+8.  Edit the build definition (close it if it is already open), and select
 	the **New** button if you do not yet see the new template in the list of Process Templates.
 
-10.  Set the parameter property values in the Misc section as follows:
+9.  Set the parameter property values in the Misc section as follows:
 
     1.  CloudConfigLocation ='c:\\drops\\app.publish\\ServiceConfiguration.Cloud.cscfg'
         *This value is derived from:
@@ -554,9 +554,9 @@ piped into the standard build output.
 
     ![][6]
 
-11. Save the changes to the Build Definition.
+10. Save the changes to the Build Definition.
 
-12. Queue a Build to execute both the package build and publish. If you
+11. Queue a Build to execute both the package build and publish. If you
     have a trigger set to Continuous Integration, you will execute this
     behavior on every check-in.
 
@@ -766,7 +766,7 @@ Write-Output "$(Get-Date -f $timeStampFormat) - Azure Cloud Service deploy scrip
 
 ## Next steps
 
-To enable remote debugging when using continuous delivery, see [these instructions](/documentation/articles/cloud-services-virtual-machines-dotnet-continuous-delivery-remote-debugging). 
+To enable remote debugging when using continuous delivery, see [Enable remote debugging when using continuous delivery to publish to Azure](/documentation/articles/cloud-services-virtual-machines-dotnet-continuous-delivery-remote-debugging).
 
   [Continuous Delivery to Azure by Using Visual Studio Online]: /documentation/articles/cloud-services-continuous-delivery-use-vso
   [Team Foundation Build Service]: http://go.microsoft.com/fwlink/p/?LinkId=239963
@@ -781,7 +781,7 @@ To enable remote debugging when using continuous delivery, see [these instructio
   [Azure PowerShell cmdlets]: http://go.microsoft.com/fwlink/?LinkId=256262
   [the .publishsettings file]: https://manage.windowsazure.cn/download/publishprofile.aspx?wa=wsignin1.0
   [end of this article]: #script
-  
+
   [3]: ./media/cloud-services-dotnet-continuous-delivery/common-task-tfs-03.png
   [4]: ./media/cloud-services-dotnet-continuous-delivery/common-task-tfs-04.png
   [5]: ./media/cloud-services-dotnet-continuous-delivery/common-task-tfs-05.png

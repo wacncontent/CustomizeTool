@@ -7,10 +7,9 @@
 	manager="timlt" 
 	editor=""/>
 
-<tags 
-	ms.service="service-bus" 
-
-	ms.date="07/21/2015" 
+<tags
+	ms.service="service-bus"
+	ms.date="07/21/2015"
 	wacn.date=""/>
 
 

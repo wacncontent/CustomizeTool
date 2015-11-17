@@ -34,7 +34,7 @@ The article includes prerequisites for the scenario, and shows you how to set up
 
 Make sure you have these prerequisites in place:
 
-- You'll need a [Windows Azure](http://azure.microsoft.com/) account. You'll need a [Windows Azure](http://azure.microsoft.com/) account. You can start with a [trial](/pricing/1rmb-trial/). In addition, you can read about [Azure Site Recovery Manager pricing](/home/features/site-recovery/#price).
+- You'll need a [Windows <!-- deleted by customization Azure](http://azure.microsoft.com/) --><!-- keep by customization: begin --> Azure](http://www.windowsazure.cn/) <!-- keep by customization: end --> account. You'll need a [Windows <!-- deleted by customization Azure](http://azure.microsoft.com/) --><!-- keep by customization: begin --> Azure](http://www.windowsazure.cn/) <!-- keep by customization: end --> account. You can start with a [trial](/pricing/1rmb-trial/). In addition, you can read about [Azure Site Recovery Manager pricing](/home/features/site-recovery/#price).
 - You'll need a VMM server in the primary and secondary sites running on System Center 2012 R2.
 - Each VMM server should have at least one cloud that contains:
 	- One or more VMM host groups.
@@ -60,11 +60,21 @@ Make sure you have these prerequisites in place:
 
 3. Now run this command to add your Azure account to the PowerShell session. The cmdlet prompts you for login credentials for your account.
 
+<!-- deleted by customization
     `Add-AzureAccount` 
+-->
+<!-- keep by customization: begin -->
+    `Add-AzureAccount -Environment AzureChinaCloud` 
+<!-- keep by customization: end -->
 
 	Note that if you're a CSP partner working on behalf of a tenant you'll need to specify the customer as a tenant when you add the Azure account: 
 
+<!-- deleted by customization
     `Add-AzureAccount-Tenant "customer"`
+-->
+<!-- keep by customization: begin -->
+    `Add-AzureAccount -Environment AzureChinaCloud -Tenant "customer"`
+<!-- keep by customization: end -->
 
 5. An account can have several subscriptions so you'll need to associate the subscription you want to use with the account.
 

@@ -9,9 +9,9 @@
    tags=""/>
 
 <tags
-   ms.service="sql-database"
-   ms.date="09/15/2015"
-   wacn.date=""/>
+	ms.service="sql-database"
+	ms.date="09/15/2015"
+	wacn.date=""/>
 
 # Monitoring Azure SQL Database using dynamic management views
 

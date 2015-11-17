@@ -14,12 +14,7 @@
 
 # How to: add Elastic Database client library references to a Visual Studio project 
 
-<!-- deleted by customization
 ### Prerequisites: 
--->
-<!-- keep by customization: begin -->
-###Prerequisites: 
-<!-- keep by customization: end -->
 
 - Install [NuGet Visual Studio Extension Gallery](http://docs.nuget.org/docs/start-here/installing-nuget) for Visual Studio 
 

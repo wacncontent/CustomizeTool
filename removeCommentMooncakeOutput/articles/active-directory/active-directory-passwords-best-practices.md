@@ -1,15 +1,15 @@
-<properties 
-	pageTitle="Best Practices: Azure AD Password Management | Windows Azure" 
-	description="Deployment and usage best practices, sample end-user documentation, and training guides for Password Management in Azure Active Directory." 
-	services="active-directory" 
-	documentationCenter="" 
-	authors="asteen" 
-	manager="kbrint" 
+<properties
+	pageTitle="Best Practices: Azure AD Password Management | Windows Azure"
+	description="Deployment and usage best practices, sample end-user documentation, and training guides for Password Management in Azure Active Directory."
+	services="active-directory"
+	documentationCenter=""
+	authors="asteen"
+	manager="kbrint"
 	editor="billmath"/>
 
-<tags 
-	ms.service="active-directory"  
-	ms.date="09/18/2015" 
+<tags
+	ms.service="active-directory"
+	ms.date="09/18/2015"
 	wacn.date=""/>
 
 # Deploying Password Management and training users to use it
@@ -94,12 +94,12 @@ You can upload the authentication data via the [Azure Management Portal](https:/
 1.	Navigate to your directory in the **Active Directory extension** in the [Azure Management Portal](https://manage.windowsazure.cn).
 2.	Click on the **Users** tab.
 3.	Select the user you are interested in from the list.
-4.	On the first tab, you will find **Alternate Email**, which can be used as a property to enable password reset. 
+4.	On the first tab, you will find **Alternate Email**, which can be used as a property to enable password reset.
 
     ![][005]
 
 5.	Click on the **Work Info** tab.
-6.	On this page, you will find **Office Phone**, **Mobile Phone**, **Authentication Phone**, and **Authentication Email**.  These properties can also be set to allow a user to reset his or her password. 
+6.	On this page, you will find **Office Phone**, **Mobile Phone**, **Authentication Phone**, and **Authentication Email**.  These properties can also be set to allow a user to reset his or her password.
 
     ![][006]
 
@@ -134,4 +134,3 @@ We are working on sample training materials that you can use to get your IT orga
 [004]: ./media/active-directory-passwords-best-practices/004.jpg "Image_004.jpg"
 [005]: ./media/active-directory-passwords-best-practices/005.jpg "Image_005.jpg"
 [006]: ./media/active-directory-passwords-best-practices/006.jpg "Image_006.jpg"
- 

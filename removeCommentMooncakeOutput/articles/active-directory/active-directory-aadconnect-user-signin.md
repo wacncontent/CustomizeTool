@@ -1,14 +1,14 @@
-<properties 
-	pageTitle="Azure AD Connect - User Sign In" 
-	description="Azure AD Connect user sign in for custom settings." 
-	services="active-directory" 
-	documentationCenter="" 
-	authors="billmath" 
-	manager="stevenpo" 
+<properties
+	pageTitle="Azure AD Connect - User Sign In | Windows Azure"
+	description="Azure AD Connect user sign in for custom settings."
+	services="active-directory"
+	documentationCenter=""
+	authors="billmath"
+	manager="stevenpo"
 	editor="curtand"/>
 
-<tags 
-	ms.service="active-directory"  
+<tags
+	ms.service="active-directory"
 	ms.date="10/13/2015"
 	wacn.date=""/>
 
@@ -60,4 +60,3 @@ Some organizations, however, have particular reasons for using a federated sign 
 	- On-premises multi-factor authentication using a third party provider or smart cards (learn about third party MFA providers for AD FS in Windows Server 2012 R2)
 	- Active Directory integration features such as soft account lockout or AD password and work hours policy
 	- Conditional access to both on-premises and cloud resources using device registration, Azure AD join, or Intune MDM policies
- 

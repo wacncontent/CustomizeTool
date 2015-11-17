@@ -119,7 +119,7 @@ Create additional Virtual Machines, which will be managed by the administration 
 
 9. Still in the WebLogic Server Administration console, click **Activate Changes.**
 
-10. On the admin Virtual Machine, create an environment variable named **SERVER_HOME** with its value set to **C:\\Oracle\\Middleware\\Oracle_Home\\wlserver.** You can create an environment variable using the following steps:  
+10. On the admin Virtual Machine, create an environment variable named **SERVER\_HOME** with its value set to **C:\\Oracle\\Middleware\\Oracle\_Home\\wlserver.** You can create an environment variable using the following steps:  
 
 	1. Click **Windows Start**, type **Control Panel,** click the **Control Panel** icon, click **System and Security,** click **System,** and then click **Advanced system settings.**
 
@@ -127,13 +127,13 @@ Create additional Virtual Machines, which will be managed by the administration 
 
 	3. Under the **System variables** section, click **New** to create the variable.
 
-	4. In the **New system variable** dialog, enter **SERVER_HOME** for the name of the variable, and enter **C:\\Oracle\\Middleware\\Oracle_Home\\wlserver** for the value.
+	4. In the **New system variable** dialog, enter **SERVER\_HOME** for the name of the variable, and enter **C:\\Oracle\\Middleware\\Oracle\_Home\\wlserver** for the value.
 
 	5. Click **OK** to save the new environment variable and close the **New system variable** dialog.
 
 	6. Close the other dialog boxes that were opened by the control panel.
 
-11. Open a new command prompt (so that the **SERVER_HOME** environment variable is in effect).
+11. Open a new command prompt (so that the **SERVER\_HOME** environment variable is in effect).
 
 	>[AZURE.NOTE] Some of the remaining steps require the use of a command prompt after you are logged on to your Virtual Machines. To enable easily understanding which machine you are logged on to, after you open the command prompt, run **title %COMPUTERNAME%.** 
 	>
@@ -141,7 +141,7 @@ Create additional Virtual Machines, which will be managed by the administration 
 
 12. Run the following command: 
 
-		%SERVER_HOME%\\common\\bin\\pack.cmd -managed=true -domain=C:\\Oracle\\Middleware\\Oracle_Home\\user_projects\\domains\\base_domain -template=c:\\mytestdomain.jar -template_name="mytestdomain" 
+		%SERVER\_HOME%\\common\\bin\\pack.cmd -managed=true -domain=C:\\Oracle\\Middleware\\Oracle\_Home\\user\_projects\\domains\\base\_domain -template=c:\\mytestdomain.jar -template\_name="mytestdomain" 
 
 	This command creates a jar named **c:\\mytestdomain.jar.** You will later copy this jar to the managed Virtual Machines in your cluster.
 
@@ -165,7 +165,7 @@ Create additional Virtual Machines, which will be managed by the administration 
 
 	1. Log in to the Virtual Machine.
 
-	2. Create an environment variable named **SERVER_HOME** with its value set to **C:\\Oracle\\Middleware\\Oracle_Home\\wlserver.** 
+	2. Create an environment variable named **SERVER\_HOME** with its value set to **C:\\Oracle\\Middleware\\Oracle\_Home\\wlserver.** 
 
 	3. Copy c:\\mytestdomain.jar from the administration Virtual Machine to c:\\mytestdomain.jar on the managed Virtual Machine.
 
@@ -173,9 +173,9 @@ Create additional Virtual Machines, which will be managed by the administration 
 
 	5. Run the following command:
 
-			%SERVER_HOME%\\common\\bin\\unpack.cmd -domain=C:\\Oracle\\Middleware\\Oracle_Home\\user_projects\\domains\\base_domain -template=c:\\mytestdomain.jar
+			%SERVER\_HOME%\\common\\bin\\unpack.cmd -domain=C:\\Oracle\\Middleware\\Oracle\_Home\\user\_projects\\domains\\base\_domain -template=c:\\mytestdomain.jar
 
-	6. Change the command prompt current directory to **C:\\Oracle\\Middleware\\Oracle_Home\\user_projects\\domains\\base_domain\\bin.**
+	6. Change the command prompt current directory to **C:\\Oracle\\Middleware\\Oracle\_Home\\user\_projects\\domains\\base\_domain\\bin.**
 
 	7. Run start\<\<*MACHINENAME*>>.cmd, where \<\<*MACHINENAME*>> is the name of the managed computer. For example, **startMYVM2-MANAGED.**
 

@@ -22,7 +22,7 @@ This rest of this topic covers the full set of password management capabilities 
 - **Self-service password** reset allows end users or administrators to reset their passwords automatically without calling an administrator or helpdesk for support. Self-service password reset requires Azure AD Premium or Basic. For more information, see [Azure Active Directory editions](/documentation/articles/active-directory-editions).
 - **Administrator-initiated password reset** allows an administrator to reset an end user’s or another administrator’s password from within the Azure Management Portal.
 - **Password management activity reports** give administrators insights into password reset and registration activity occurring in their organization.
-- **Password writeback** allows management of on-premises passwords from the cloud so all of the above scenarios can be performed by, or on the behalf of, federated or password synchronized users. Password writeback requires Azure AD Premium. <!-- deleted by customization For --><!-- keep by customization: begin --><!--For <!-- keep by customization: end --> more information, see [Getting started with Azure Active Directory <!-- deleted by customization Premium](/documentation/articles/active-directory-get-started-premium). --><!-- keep by customization: begin --> Premium](/documentation/articles/active-directory-get-started-premium).--><!-- keep by customization: end -->
+- **Password writeback** allows management of on-premises passwords from the cloud so all of the above scenarios can be performed by, or on the behalf of, federated or password synchronized users. Password writeback requires Azure AD Premium. <!-- deleted by customization For more information, see [Getting started with Azure Active Directory Premium](/documentation/articles/active-directory-get-started-premium). -->
 
 > [AZURE.NOTE]
 > Azure AD Premium is available for Chinese customers using the world wide instance of Azure AD. Azure AD Premium is not currently supported in the Windows Azure service operated by 21Vianet in China. For more information, contact us at the [Azure Active Directory Forum](http://feedback.azure.com/forums/169401-azure-active-directory).
@@ -37,6 +37,7 @@ Use the following links to jump to the documentation you are most interested in:
 - [Password writeback: how to configure Azure AD to manage on-premises passwords](/documentation/articles/active-directory-passwords-getting-started#enable-users-to-reset-or-change-their-ad-passwords)
 - [Troubleshooting Azure AD password management](/documentation/articles/active-directory-passwords-troubleshoot)
 - [FAQ for Azure AD password management](/documentation/articles/active-directory-passwords-faq)
+
 
 ## What's next
 

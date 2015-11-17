@@ -33,8 +33,10 @@ To troubleshoot client applications using Windows Azure Storage, you can use a c
 - **The Azure Management Portal**. You can configure metrics and logging for your storage account in the portal. You can also view charts and graphs that show how your application is performing over time, and configure alerts in the portal to notify you if your application performs differently than expected for a specified metric. 
 	
 	This tutorial shows how to monitor your storage account using the [Azure Management Portal](https://manage.windowsazure.cn/). See [How to monitor a storage account](/documentation/articles/storage-monitor-storage-account) for information about configuring monitoring in the portal.
+<!-- deleted by customization
 
 	You can also use the [Azure Preview Portal](https://manage.windowsazure.cn/) for the latest experience, but note that it is still a preview release. 
+-->
 
 - **AzCopy**. Server logs for Azure Storage are stored as blobs, so you can use AzCopy to copy the log blobs to a local directory for analysis using Microsoft Message Analyzer. See [How to use AzCopy with Windows Azure Storage](/documentation/articles/storage-use-azcopy) for more information about AzCopy.
 

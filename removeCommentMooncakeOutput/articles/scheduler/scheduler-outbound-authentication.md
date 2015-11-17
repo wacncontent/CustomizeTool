@@ -6,10 +6,10 @@
  authors="krisragh" 
  manager="dwrede" 
  editor=""/>
-<tags 
- ms.service="scheduler" 
- ms.date="08/04/2015" 
- wacn.date=""/>
+<tags
+	ms.service="scheduler"
+	ms.date="08/04/2015"
+	wacn.date=""/>
  
 # Scheduler Outbound Authentication
 
@@ -100,7 +100,7 @@ Once this request is sent, the response is as follows:
 	  "id": "testScheduler",
 	  "action": {
 		"request": {
-		  "uri": "https://management.core.chinacloudapi.cn\/7e2dffb5-45b5-475a-91be-d3d9973c82d5\/cloudservices\/CS-NorthCentralUS-scheduler\/resources\/scheduler\/~\/JobCollections\/testScheduler\/jobs\/test",
+		  "uri": "https:\/\/management.core.chinacloudapi.cn\/7e2dffb5-45b5-475a-91be-d3d9973c82d5\/cloudservices\/CS-NorthCentralUS-scheduler\/resources\/scheduler\/~\/JobCollections\/testScheduler\/jobs\/test",
 		  "method": "GET",
 		  "headers": {
 			"x-ms-version": "2013-03-01"
@@ -197,7 +197,7 @@ Once this request is sent, the response is as follows:
 	  "id": "testScheduler",
 	  "action": {
 		"request": {
-		  "uri": "https://management.core.chinacloudapi.cn/7e2dffb5-45b5-475a-91be-d3d9973c82d5/cloudservices/CS-NorthCentralUS-scheduler/resources/scheduler/~/JobCollections/testScheduler/jobs/test",
+		  "uri": "https:\/\/management.core.chinacloudapi.cn\/7e2dffb5-45b5-475a-91be-d3d9973c82d5\/cloudservices\/CS-NorthCentralUS-scheduler\/resources\/scheduler\/~\/JobCollections\/testScheduler\/jobs\/test",
 		  "method": "GET",
 		  "headers": {
 			"x-ms-version": "2013-03-01"
@@ -300,7 +300,7 @@ Once this request is sent, the response is as follows:
 	  "id": "testScheduler",
 	  "action": {
 		"request": {
-		  "uri": "https://management.core.chinacloudapi.cn/7e2dffb5-45b5-475a-91be-d3d9973c82d5/cloudservices/CS-NorthCentralUS-scheduler/resources/scheduler/~/JobCollections/testScheduler/jobs/test",
+		  "uri": "https:\/\/management.core.chinacloudapi.cn\/7e2dffb5-45b5-475a-91be-d3d9973c82d5\/cloudservices\/CS-NorthCentralUS-scheduler\/resources\/scheduler\/~\/JobCollections\/testScheduler\/jobs\/test",
 		  "method": "GET",
 		  "headers": {
 			"x-ms-version": "2013-03-01"
@@ -328,8 +328,9 @@ Once this request is sent, the response is as follows:
 	}
 
 ## See Also
-
+ 
  [What is Scheduler?](/documentation/articles/scheduler-intro)
+ 
  [Scheduler Concepts, Terminology, and Entity Hierarchy](/documentation/articles/scheduler-concepts-terms)
  
  [Get Started Using Scheduler in the Management Portal](/documentation/articles/scheduler-get-started-portal)
@@ -338,11 +339,11 @@ Once this request is sent, the response is as follows:
  
  [How to Build Complex Schedules and Advanced Recurrence with Azure Scheduler](/documentation/articles/scheduler-advanced-complexity)
  
- [Scheduler REST API Reference](https://msdn.microsoft.com/zh-CN/library/dn528946)   
+ [Scheduler REST API Reference](https://msdn.microsoft.com/zh-cn/library/dn528946)   
+ 
+ [Scheduler PowerShell Cmdlets Reference](/documentation/articles/scheduler-powershell-reference)
  
  [Scheduler High-Availability and Reliability](/documentation/articles/scheduler-high-availability-reliability)
- 
- [Scheduler Limits, Defaults, and Error Codes](/documentation/articles/scheduler-limits-defaults-errors)
  
  [Scheduler Limits, Defaults, and Error Codes](/documentation/articles/scheduler-limits-defaults-errors)
  

@@ -16,12 +16,14 @@
 # Submit Hadoop jobs in HDInsight
 
 Learn how to use Azure PowerShell to submit MapReduce and Hive jobs, and how to use the HDInsight .NET SDK to submit MapReduce, Hadoop streaming, and Hive jobs.
+<!-- deleted by customization
 
 > [AZURE.NOTE] The steps in this article must be performed from a Windows client. For information on using a Linux, OS X, or Unix client to work with MapReduce, Hive, or Pig on HDInsight, see the following articles and select either the **SSH** or **Curl** links within each:
 >
 > - [Use Hive with HDInsight](/documentation/articles/hdinsight-use-hive)
 > - [Use Pig with HDInsight](/documentation/articles/hdinsight-use-pig)
 > - [Use MapReduce with HDInsight](/documentation/articles/hdinsight-use-mapreduce)
+-->
 
 ##Prerequisites
 
@@ -374,8 +376,10 @@ For the details about creating a .NET application for submitting MapReduce jobs,
 
 For more information about developing and deploying Hadoop streaming jobs, see [Develop C# Hadoop streaming programs for HDInsight][hdinsight-develop-streaming-jobs].
 
+<!-- deleted by customization
 The following procedure only works on HDInsight clusters on Windows. C# streaming is not supported on Linux clusters yet. However you can use .NET program to submit stream job written in other programming languages that are supported by Linux clusters. For example Python.  For an Python streaming example, see [Develop Python streaming programs for HDInsight](/documentation/articles/hdinsight-hadoop-streaming-python).
 
+-->
 **To Submit the wordcount MapReduce job**
 
 1. From the Visual Studio Package Manager Console, run the following Nuget command to import the package.
@@ -572,9 +576,11 @@ In this article, you have learned several ways to create an HDInsight cluster. T
 [hdinsight-storage]: /documentation/articles/hdinsight-use-blob-storage
 [hdinsight-admin-powershell]: /documentation/articles/hdinsight-administer-use-powershell
 [hdinsight-develop-streaming-jobs]: /documentation/articles/hdinsight-hadoop-develop-deploy-streaming-jobs
+
 [hdinsight-powershell-reference]: https://msdn.microsoft.com/zh-cn/library/dn858087.aspx
 
 [powershell-install-configure]: /documentation/articles/install-configure-powershell
+
 [image-hdi-gettingstarted-runmrjob]: ./media/hdinsight-submit-hadoop-jobs-programmatically/HDI.GettingStarted.RunMRJob.png
 [image-hdi-gettingstarted-mrjoboutput]: ./media/hdinsight-submit-hadoop-jobs-programmatically/HDI.GettingStarted.MRJobOutput.png
 

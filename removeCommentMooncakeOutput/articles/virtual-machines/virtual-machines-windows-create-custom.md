@@ -1,9 +1,9 @@
 <properties
-	pageTitle="Create a custom virtual machine running Windows in Azure"
+	pageTitle="Create a custom virtual machine running Windows | Windows Azure"
 	description="Learn to create a custom virtual machine running Windows in Azure."
 	services="virtual-machines"
 	documentationCenter=""
-	authors="KBDAzure"
+	authors="cynthn"
 	manager="timlt"
 	editor=""
 	tags="azure-service-management"/>

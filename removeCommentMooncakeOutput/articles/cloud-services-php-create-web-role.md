@@ -169,7 +169,7 @@ To configure a worker role to use a PHP runtime that you provide, follow these s
 
 ## Run your application in the compute and storage emulators
 
-The Azure emulators provide a local environment in which you can test your Azure application before you deploy it to the cloud. There are some differences between the emulators and the Azure environment. To understand this better, see [Use the Azure storage emulator for development and testing](/documentation/articles//storage-use-emulator).
+The Azure emulators provide a local environment in which you can test your Azure application before you deploy it to the cloud. There are some differences between the emulators and the Azure environment. To understand this better, see [Use the Azure storage emulator for development and testing](/documentation/articles/storage-use-emulator).
 
 Note that you must have PHP installed locally to use the compute emulator. The compute emulator will use your local PHP installation to run your application.
 
@@ -203,6 +203,6 @@ For more information, see the [PHP Developer Center](/develop/php/).
 [service definition (.csdef)]: http://msdn.microsoft.com/zh-cn/library/azure/ee758711.aspx
 [service configuration (.cscfg)]: http://msdn.microsoft.com/zh-cn/library/azure/ee758710.aspx
 [iis.net]: http://www.iis.net/
-[sql native client]: http://msdn.microsoft.com/zh-cn/sqlserver/aa937733.aspx
+[sql native client]: http://msdn.microsoft.com/sqlserver/aa937733.aspx
 [sqlsrv drivers]: http://php.net/sqlsrv
 [sqlncli.msi x64 installer]: http://go.microsoft.com/fwlink/?LinkID=239648

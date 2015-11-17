@@ -40,7 +40,12 @@ This topic explains how the implementation of extended events in Azure SQL Datab
 This topic assumes you already have some knowledge of:
 
 
+<!-- deleted by customization
+- [Azure SQL Database service](/documentation/services/sql-databases/).
+-->
+<!-- keep by customization: begin -->
 - [Azure SQL Database service](/home/features/sql-database/).
+<!-- keep by customization: end -->
 
 
 - [Extended events](http://msdn.microsoft.com/zh-cn/library/bb630282.aspx) in Microsoft SQL Server.
@@ -101,7 +106,7 @@ The extended events feature is supported by several [catalog views](http://msdn.
 | **sys.database_event_sessions** | Returns a row for each event session in the SQL Database database. |
 
 
-In Microsoft SQL Server, similar catalog views have names that include *.server_* instead of *.database_*. The name pattern is like **sys.server_event_%**.
+In Microsoft SQL Server, similar catalog views have names that include <!-- deleted by customization *.server\_* --><!-- keep by customization: begin --> *.server_* <!-- keep by customization: end --> instead of <!-- deleted by customization *.database\_* --><!-- keep by customization: begin --> *.database_* <!-- keep by customization: end -->. The name pattern is like **sys.server_event_%**.
 
 
 ## New dynamic management views [(DMVs)](http://msdn.microsoft.com/zh-cn/library/ms188754.aspx)
@@ -119,7 +124,7 @@ Azure SQL Database has [dynamic management views (DMVs)](http://msdn.microsoft.c
 | **sys.dm_xe_database_sessions** | Returns a row for each event session that is scoped to the current database. |
 
 
-In Microsoft SQL Server, similar catalog views are named without the *_database* portion of the name, such as:
+In Microsoft SQL Server, similar catalog views are named without the <!-- deleted by customization *\_database* --><!-- keep by customization: begin --> *_database* <!-- keep by customization: end --> portion of the name, such as:
 
 
 - **sys.dm_xe_sessions**, instead of name<br/>**sys.dm_xe_database_sessions**.
@@ -226,7 +231,7 @@ If you receive an error message that says a memory maximum was enforced, some co
 - Run fewer concurrent event sessions.
 
 
-- Through your **CREATE** and **ALTER** statements for event sessions, reduce the amount of memory you specify on the **MAX_MEMORY** clause.
+- Through your **CREATE** and **ALTER** statements for event sessions, reduce the amount of memory you specify on the <!-- deleted by customization **MAX\_MEMORY** --><!-- keep by customization: begin --> **MAX_MEMORY** <!-- keep by customization: end --> clause.
 
 
 ### Network latency

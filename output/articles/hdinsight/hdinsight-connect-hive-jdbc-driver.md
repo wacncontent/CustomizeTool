@@ -23,7 +23,7 @@ In this document, you will learn how to use JDBC from a Java application to remo
 
 To complete the steps in this article, you will need the following:
 
-* A Hadoop on HDInsight cluster. Either Linux-based or Windows-based clusters will work.
+* A Hadoop on HDInsight cluster. <!-- deleted by customization Either Linux-based or --> Windows-based clusters will work.
 
 * The [Java Developer Kit (JDK) version 7](https://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html) or higher.
 

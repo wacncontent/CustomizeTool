@@ -154,7 +154,7 @@ Name | Value | Description
 ---- | ----- | -----------
 location	| String from a constrained list of Azure regions	| The location where the resources will be deployed.
 storageAccountNamePrefix	| String	| Unique DNS name for the Storage Account where the VM's disks will be placed
-domainName	| String	| Domain name of the publicly accessible jumpbox VM in the format: **{domainName}.{location}.cloudapp.com** For example: **mydomainname.westus.cloudapp.azure.com**
+domainName	| String	| Domain name of the publicly accessible jumpbox VM in the format: **{domainName}.{location}.cloudapp.com** For example: **mydomainname.chinanorth.chinacloudapp.cn**
 adminUsername	| String	| Username for the VMs
 adminPassword	| String	| Password for the VMs
 tshirtSize	| String from a constrained list of offered t-shirt sizes	| The named scale unit size to provision. For example, "Small", "Medium", "Large"

@@ -36,13 +36,8 @@ This tutorial assumes minimal prior experience with SQL Server and Azure SQL Dat
 
 
 ## Step 2: Add a Client Agent
-<!-- deleted by customization
 This step is required only if you are going to have an on-premises SQL Server database included in your sync group. 
 Skip to Step 4 if your sync group has only SQL Database instances.
--->
-<!-- keep by customization: begin -->
-This step is required only if you are going to have an on-premises SQL Server database included in your sync group. You can skip to Step 4: Create a sync group if your sync group has only SQL Database instances.
-<!-- keep by customization: end -->
 
 <a id="InstallRequiredSoftware"></a>
 ### Step 2a: Install the required software
@@ -50,15 +45,15 @@ Be sure that you have the following installed on the computer you install the Cl
 
 - **.NET Framework 4.0**
 
- You can install .NET Framework 4.0 from <!-- deleted by customization [here](http://go.microsoft.com/fwlink/?linkid=205836) --><!-- keep by customization: begin --> [here](http://www.microsoft.com/zh-cn/download/details.aspx?id=17851) <!-- keep by customization: end -->.
+ You can install .NET Framework 4.0 from [here](http://go.microsoft.com/fwlink/?linkid=205836).
 
 - **Microsoft SQL Server 2008 R2 SP1 System CLR Types (x86)**
 
- You can install the Microsoft SQL Server 2008 R2 SP1 System CLR Types (x86) from <!-- deleted by customization [here](http://www.microsoft.com/download/en/details.aspx?id=26728) --><!-- keep by customization: begin --> [here](http://www.microsoft.com/zh-cn/download/details.aspx?id=26728) <!-- keep by customization: end -->
+ You can install the Microsoft SQL Server 2008 R2 SP1 System CLR Types (x86) from [here](http://www.microsoft.com/download/en/details.aspx?id=26728)
 
 - **Microsoft SQL Server 2008 R2 SP1 Shared Management Objects (x86)**
 
- You can install the Microsoft SQL Server 2008 R2 SP1 Shared Management Objects (x86) from <!-- deleted by customization [here](http://www.microsoft.com/download/en/details.aspx?id=26728) --><!-- keep by customization: begin --> [here](http://www.microsoft.com/zh-cn/download/details.aspx?id=26728) <!-- keep by customization: end -->
+ You can install the Microsoft SQL Server 2008 R2 SP1 Shared Management Objects (x86) from [here](http://www.microsoft.com/download/en/details.aspx?id=26728)
 
 
 
@@ -199,12 +194,7 @@ Congratulations. You have created a sync group that includes both a SQL Database
 ## Next Steps
 For additional information on SQL Database and SQL Data Sync see:
 
-<!-- deleted by customization
 * [Download SQL Data Sync technical documentation](http://download.microsoft.com/download/4/E/3/4E394315-A4CB-4C59-9696-B25215A19CEF/SQL_Data_Sync_Preview.pdf)
--->
-<!-- keep by customization: begin -->
-* [SQL Data Sync content on MSDN Library](https://msdn.microsoft.com/zh-cn/library/azure/hh456371.aspx)
-<!-- keep by customization: end -->
 * [SQL Database Overview](/documentation/articles/sql-database-technical-overview)
 * [Database Lifecycle Management](https://msdn.microsoft.com/zh-cn/library/jj907294.aspx)
  

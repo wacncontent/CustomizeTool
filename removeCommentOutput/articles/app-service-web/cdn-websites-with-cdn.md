@@ -77,7 +77,7 @@ In this section, you will deploy the default ASP.NET MVC application template in
 	You will see your published web app in the browser when publishing is complete. 
 
 1. To create a CDN endpoint, log into the [Azure Management Portal](https://manage.windowsazure.cn/). 
-2. Click **New** > **Azure Websites** > **CDN** > **Quick Create**. Select **http://*&lt;sitename>*.chinacloudsites.cn/** and click **Create**.
+2. Click **New** > **App Services** > **CDN** > **Quick Create**. Select **http://*&lt;sitename>*.chinacloudsites.cn/** and click **Create**.
 
 	![](./media/cdn-websites-with-cdn/7-create-cdn.png)
 

@@ -97,9 +97,9 @@ The Azure CLI is a cross-platform tool that allows you to manage Azure services.
 
 > [AZURE.NOTE] If you will always be working with the same storage account, you can set the following environment variables instead of specifying the account and key for every command:
 >
-> * **AZURE_STORAGE_ACCOUNT**: The storage account name
+> * <!-- deleted by customization **AZURE\_STORAGE\_ACCOUNT** --><!-- keep by customization: begin --> **AZURE_STORAGE_ACCOUNT** <!-- keep by customization: end -->: The storage account name
 >
-> * **AZURE_STORAGE_ACCESS_KEY**: The storage account key
+> * <!-- deleted by customization **AZURE\_STORAGE\_ACCESS\_KEY** --><!-- keep by customization: begin --> **AZURE_STORAGE_ACCESS_KEY** <!-- keep by customization: end -->: The storage account key
 
 ###<a id="powershell"></a>Azure PowerShell
 
@@ -217,8 +217,8 @@ Before using the tool, you must know your Azure storage account name and account
 See [Mount Azure Blob Storage as Local Drive](http://blogs.msdn.com/b/bigdatasupport/archive/2014/01/09/mount-azure-blob-storage-as-local-drive.aspx).
 
 ##Services
-<!-- deleted by customization
 
+<!-- deleted by customization
 ###Azure Data Factory
 
 The Azure Data Factory service is a fully managed service for composing data storage, data processing, and data movement services into streamlined, scalable, and reliable data production pipelines.
@@ -226,8 +226,8 @@ The Azure Data Factory service is a fully managed service for composing data sto
 Azure Data Factory can be used to move data into Azure Blob storage, or to create data pipelines that directly use HDInsight features such as Hive and Pig.
 
 For more information, see the [Azure Data Factory documentation](/documentation/services/data-factory/).
--->
 
+-->
 ###<a id="sqoop"></a>Apache Sqoop
 
 Sqoop is a tool designed to transfer data between Hadoop and relational databases. You can use it to import data from a relational database management system (RDBMS), such as SQL Server, MySQL, or Oracle into the Hadoop distributed file system (HDFS), transform the data in Hadoop with MapReduce or Hive, and then export the data back into an RDBMS.

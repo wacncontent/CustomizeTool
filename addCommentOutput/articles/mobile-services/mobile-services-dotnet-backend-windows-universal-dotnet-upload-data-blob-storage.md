@@ -62,6 +62,7 @@ Now that you have been able to securely upload images by integrating your mobile
 
 <!-- URLs. -->
 [Get started with Mobile Services]: /documentation/articles/mobile-services-windows-store-dotnet-get-started
-[Azure Management Portal]: <!-- deleted by customization https://manage.windowsazure.cn/ --><!-- keep by customization: begin --> https://manage.windowsazure.cn <!-- keep by customization: end -->
+[Azure Management Portal]: https://manage.windowsazure.cn/
 [How To Create a Storage Account]: /documentation/articles/storage-create-storage-account
 [Azure Storage Client library for Store apps]: http://go.microsoft.com/fwlink/p/?LinkId=276866 
+ 

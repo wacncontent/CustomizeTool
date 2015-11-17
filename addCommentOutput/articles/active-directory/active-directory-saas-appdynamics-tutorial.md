@@ -1,5 +1,8 @@
 <properties pageTitle="Tutorial: Azure Active Directory integration with AppDynamics | Windows Azure" description="Learn how to use AppDynamics with Azure Active Directory to enable single sign-on, automated provisioning, and more!." services="active-directory" authors="MarkusVi"  documentationCenter="na" manager="stevenpo"/>
-<tags ms.service="active-directory" ms.devlang="na" ms.topic="article" ms.tgt_pltfrm="na" ms.workload="identity" ms.date="08/01/2015" ms.author="markvi" />
+<tags
+	ms.service="active-directory"
+	ms.date="08/01/2015"
+	wacn.date=""/>
 #Tutorial: Azure Active Directory integration with AppDynamics
 <!-- deleted by customization
 >[AZURE.TIP]For feedback, click [here](https://social.msdn.microsoft.com/Forums/azure/zh-cn/1c6b95ae-7227-4e4d-872a-df5c27b7ee05/tutorial-azure-active-directory-integration-with-appdynamics?forum=WindowsAzureAD).

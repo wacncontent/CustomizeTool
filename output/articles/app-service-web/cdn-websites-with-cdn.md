@@ -39,9 +39,11 @@ This tutorial has the following prerequisites:
 
 > [AZURE.NOTE] You need an Azure account to complete this tutorial:
 > + You can [open an Azure account for free](/pricing/1rmb-trial/?WT.mc_id=A261C142F) - You get credits you can use to try out paid Azure services, and even after they're used up you can keep the account and use free Azure services, such as Web Apps.
+<!-- deleted by customization
 > + You can [activate MSDN subscriber benefits](/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F) - Your MSDN subscription gives you credits every month that you can use for paid Azure services.
 >
 > If you want to get started with Azure Websites before signing up for an Azure account, go to [Try Azure Websites](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure Websites. No credit cards required; no commitments.
+-->
 
 ## Deploy a web app to Azure with an integrated CDN endpoint ##
 
@@ -77,7 +79,7 @@ In this section, you will deploy the default ASP.NET MVC application template in
 	You will see your published web app in the browser when publishing is complete. 
 
 1. To create a CDN endpoint, log into the [Azure Management Portal](https://manage.windowsazure.cn/). 
-2. Click **New** > **Azure Websites** > **CDN** > **Quick Create**. Select **http://*&lt;sitename>*.chinacloudsites.cn/** and click **Create**.
+2. Click **New** > **App Services** > **CDN** > **Quick Create**. Select **http://*&lt;sitename>*.chinacloudsites.cn/** and click **Create**.
 
 	![](./media/cdn-websites-with-cdn/7-create-cdn.png)
 
@@ -550,6 +552,7 @@ The [Bundle](http://msdn.microsoft.com/zh-cn/library/system.web.optimization.bun
 
 7. Refresh your browser window for the Azure web app. You should now see that the all scripts and stylesheets are properly loaded.
 
+<!-- deleted by customization
 ## More Information 
 - [Overview of the Azure Content Delivery Network (CDN)](/documentation/articles/cdn-overview)
 - [Serve Content from Azure CDN in Your Web Application](/documentation/articles/cdn-serve-content-from-cdn-in-your-web-application)
@@ -560,5 +563,6 @@ The [Bundle](http://msdn.microsoft.com/zh-cn/library/system.web.optimization.bun
 ## What's changed
 * For a guide to the change from Websites to Azure Websites see: [Azure Websites and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
 * For a guide to the change of the Management Portal to the new portal see: [Reference for navigating the preview portal](https://manage.windowsazure.cn/)
+-->
  
 

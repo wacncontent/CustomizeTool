@@ -101,7 +101,12 @@ To create a new application and register it in the correct active directory do t
 
 The domain name is required for your code. An easy way to identify the proper domain name is to:
 
+<!-- deleted by customization
 1. Go to the [Azure preview portal](https://manage.windowsazure.cn).
+-->
+<!-- keep by customization: begin -->
+1. Go to the [Azure Management Portal](https://manage.windowsazure.cn).
+<!-- keep by customization: end -->
 2. Hover over your name in the upper right corner and note the Domain that appears in the pop-up window.
 
     ![Identify domain name][3]
@@ -131,7 +136,7 @@ The client application must retrieve the application access token for the curren
                 + "domain.partner.onmschina.cn" /* Tenant ID or AAD domain */);
 
         AuthenticationResult token = authContext.AcquireToken
-            ("https://management.azure.com/"/* the Azure Resource Management endpoint */, 
+            ("https://manage.windowsazure.cn/"/* the Azure Resource Management endpoint */, 
                 "aa00a0a0-a0a0-0000-0a00-a0a00000a0aa" /* application client ID from AAD*/, 
         new Uri("urn:ietf:wg:oauth:2.0:oob") /* redirect URI */, 
         PromptBehavior.Auto /* with Auto user will not be prompted if an unexpired token is cached */);
@@ -446,7 +451,7 @@ To delete a resource group:
                 + "domain.partner.onmschina.cn" /* Tenant ID or AAD domain */);
 
             AuthenticationResult token = authContext.AcquireToken
-                ("https://management.azure.com/"/* the Azure Resource Management endpoint */, 
+                ("https://manage.windowsazure.cn/"/* the Azure Resource Management endpoint */, 
                 "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX" /* application client ID from AAD*/, 
                 new Uri("urn:ietf:wg:oauth:2.0:oob") /* redirect URI */, 
                 PromptBehavior.Auto /* with Auto user will not be prompted if an unexpired token is cached */);
@@ -461,7 +466,7 @@ To delete a resource group:
                 + "YOU.partner.onmschina.cn" /* Tenant ID or AAD domain */);
 
             AuthenticationResult token = authContext.AcquireToken(
-                "https://management.azure.com/"/* the Azure Resource Management endpoint */,
+                "https://manage.windowsazure.cn/"/* the Azure Resource Management endpoint */,
                 "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX" /* application client ID from AAD*/,
                 userCredential);
 
@@ -777,7 +782,12 @@ To delete a resource group:
 
 ## Additional Resources
 
+<!-- deleted by customization
 [SQL Database](/documentation/services/sql-database/)
+-->
+<!-- keep by customization: begin -->
+[SQL Database](/documentation/services/sql-databases/)
+<!-- keep by customization: end -->
 
 [Azure Resource Management APIs](https://msdn.microsoft.com/zh-cn/library/azure/dn948464.aspx)
 

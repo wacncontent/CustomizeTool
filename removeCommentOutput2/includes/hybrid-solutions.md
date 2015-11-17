@@ -21,7 +21,7 @@ Service Bus is a multi-tenant cloud service, which means that the service is sha
 Within a namespace, you can use one or more instances of three different communication mechanisms, each of which connects applications in a different way. The choices are:
 
 - *Queues*, which allow one-directional communication. Each queue acts as an intermediary (sometimes called a *broker*) that stores sent messages until they are received. 
-- *Topics*, which provide one-directional communication using *subscriptions*. Like a queue, a topic acts as a broker, but eachit allows subscription to see only messages that match specific criteria.
+- *Topics*, which provide one-directional communication using *subscriptions* . Like a queue, a topic acts as a broker, but it allows each subscription to see only messages that match specific criteria.
 - *Relays*, which provide bi-directional communication. Unlike queues and topics, a relay doesn't store in-flight messages-it's not a broker. Instead, it just passes them on to the destination application.
 
 When you create a queue, topic, or relay, you give it a name. Combined with whatever you called your namespace, this name creates a unique identifier for the object. Applications can provide this name to Service Bus, then use that queue, topic, or relay to communicate with one another.
@@ -39,7 +39,7 @@ Suppose you decide to connect two applications using a Service Bus queue. [Figur
  
 **Figure 2: Service Bus queues provide one-way asynchronous queuing.**
 
-The process is simple: A sender sends a message to a Service Bus queue, and a receiver picks up that message at some later time. A queue can have just a single receiver, as [Figure 2](#Fig2) shows, or multiple applications can read from the same queue. In the latter situation, each message is readtypically by just one receiver-queues don't provide a multi-cast service.
+The process is simple: A sender sends a message to a Service Bus queue, and a receiver picks up that message at some later time. A queue can have just a single receiver, as [Figure 2](#Fig2) shows, or multiple applications can read from the same queue. In the latter situation, each message is typically read by just one receiver-queues don't provide a multi-cast service.
 
 Each message has two parts: a set of properties, each a key/value pair, and a binary message body. How they're used depends on what an application is trying to do. For example, an application sending a message about a recent sale might include the properties *Seller="Ava"* and *Amount=10000*. The message body might contain a scanned image of the sale's signed contract or, if there isn't one, just remain empty.
 
@@ -68,7 +68,7 @@ A topic is similar in many ways to a queue. Senders submit messages to a topic i
 
 - Subscriber 1 receives only messages that contain the property *Seller="Ava"*.
 - Subscriber 2 receives messages that contain the property *Seller="Ruby"* and/or contain an *Amount* property whose value is greater than 100,000. Perhaps Ruby is the sales manager, and so she wants to see both her own sales and all big sales regardless of who makes them.
-- Subscriber 3 has set its filter to *True*, which means that it receives all messages. This application might be responsible for maintaining an audit trail and, for example, so it needs to see everything.
+- Subscriber 3 has set its filter to *True*, which means that it receives all messages. This application might be responsible for maintaining an audit trail, for example, and so it needs to see everything.
 
 As with queues, subscribers to a topic can read messages using either ReceiveAndDelete or PeekLock. Unlike queues, however, a single message sent to a topic can be received by multiple subscribers. This approach, commonly called *publish and subscribe*, is useful whenever multiple applications might be interested in the same messages. By defining the right filter, each subscriber can tap into just the part of the message stream that it needs to see.
 
@@ -83,7 +83,7 @@ Both queues and topics provide one-way asynchronous communication through a brok
 
 The obvious question to ask about relays is this: Why would I use one? Even if I don't need queues, why make applications communicate via a cloud service rather than just interact directly? The answer is that talking directly can be harder than you might think.
 
-Suppose you want to connect two on-premises applications, both running inside corporate datacenters. Each of these applications sits behind a firewall, and each datacenter probably uses network address translation (NAT). The firewall blocks incoming data on all but a few ports, and NAT implies that the machine each application is running on doesn'tprobably have a fixed IP address. Without some extra help, connecting these applications over the public Internet is problematic.
+Suppose you want to connect two on-premises applications, both running inside corporate datacenters. Each of these applications sits behind a firewall, and each datacenter probably uses network address translation (NAT). The firewall blocks incoming data on all but a few ports, and NAT implies that the machine each application is running on probably doesn't have a fixed IP address. Without some extra help, connecting these applications over the public Internet is problematic.
 
 A Service Bus relay provides this help. To communicate bi-directionally through a relay, each application establishes an outbound TCP connection with Service Bus, then keeps it open. All communication between the two applications will travel over these connections. Because each connection was established from inside the datacenter, the firewall will allow incoming traffic to each application"data sent through the relay"without opening new ports. This approach also gets around the NAT problem, because each application has a consistent endpoint throughout the communication. By exchanging data through the relay, the applications can avoid the problems that would otherwise make communication difficult.
 
@@ -91,7 +91,7 @@ To use Service Bus relays, applications rely on Windows Communication Foundation
 
 Unlike queues and topics, applications don't explicitly create relays. Instead, when an application that wishes to receive messages establishes a TCP connection with Service Bus, a relay is created automatically. When the connection is dropped, the relay is deleted. To let an application find the relay created by a specific listener, Service Bus provides a registry that allows locating a specific relay by name.
 
-Relays are the right solution when you need direct communication. Think about an airline reservation system running in an on-premises datacenter that, for example, must be accessed from check-in kiosks, mobile devices, and other computers. Applications running on all of these systems could rely on Service Bus relays in the cloud to communicate, wherever they might be running.
+Relays are the right solution when you need direct communication. Think about an airline reservation system running in an on-premises datacenter, for example, that must be accessed from check-in kiosks, mobile devices, and other computers. Applications running on all of these systems could rely on Service Bus relays in the cloud to communicate, wherever they might be running.
 
 Connecting applications has always been part of building complete solutions, and it's hard to see this problem ever going away. By providing cloud-based technologies for doing this through queues, topics, and relays, Service Bus aims at making this essential function easier and more broadly available.
 

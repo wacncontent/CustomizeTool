@@ -1,11 +1,12 @@
 <properties
-	pageTitle="Capture an image of a virtual machine running Linux using the CLI"
+	pageTitle="Capture an image of a virtual machine running Linux using the CLI | Windows Azure"
 	description="Learn how to capture an image of an Azure virtual machine (VM) running Linux."
 	services="virtual-machines"
 	documentationCenter=""
-	authors="karthmut"
+	authors="madhana"
 	manager="timlt"
-	editor="tysonn"/>
+	editor="tysonn"
+    tags="azure-service-management"/>
 
 <tags
 	ms.service="virtual-machines"
@@ -147,12 +148,9 @@ Here is a sample walkthrough of capturing a virtual machine including terminal o
 Visit the [Azure CLI documentation page][] for more details and additional commands.
 
 
-[Azure CLI documentation page]: /documentation/articles/virtual-machines-command-line-tools/
-
-[How to Log on to a Virtual Machine Running Linux]: /documentation/articles/virtual-machines-linux-how-to-log-on/
-
+[Azure CLI documentation page]: /documentation/articles/virtual-machines-command-line-tools
+[How to Log on to a Virtual Machine Running Linux]: /documentation/articles/virtual-machines-linux-how-to-log-on
 [About Virtual Machine Images in Azure]: http://msdn.microsoft.com/zh-cn/library/azure/dn790290.aspx
 
-[How to Create a Custom Virtual Machine]: /documentation/articles/virtual-machines-create-custom/
-
-[How to Attach a Data Disk to a Virtual Machine]: /documentation/articles/storage-windows-attach-disk/
+[How to Create a Custom Virtual Machine]: /documentation/articles/virtual-machines-create-custom
+[How to Attach a Data Disk to a Virtual Machine]: /documentation/articles/storage-windows-attach-disk

@@ -349,7 +349,7 @@ This sample shows an application gateway that is up, running, and is ready to ta
                                       }
                                     ]
 	ResourceGroupName                 : appgw-rg
-	Location                          : westus
+	Location                          : chinanorth
 		Tag                               : {}
 	TagsTable                         : 
 	Name                              : appgwtest
@@ -407,6 +407,8 @@ If you want to configure an application gateway to use with ILB, see [Create an 
 
 If you want more information about load balancing options in general, see:
 
+<!-- deleted by customization
 - [Azure Load Balancer](/documentation/services/load-balancer/)
+-->
 - [Azure Traffic Manager](/documentation/services/traffic-manager/)
 

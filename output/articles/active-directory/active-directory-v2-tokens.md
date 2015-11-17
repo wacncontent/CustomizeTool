@@ -57,7 +57,7 @@ V-DIguXSzLVKnnflfSLyvhinsjLKCnu9L3oXHxw
 | Name | Claim | Example Value | Description |
 | ----------------------- | ------------------------------- | ------------ | --------------------------------- |
 | Audience | `aud` | `49210253-0ba1-4a9a-a424-616999fab620` | Identifies the intended recipient of the token.  In id_tokens, the audience is your app's Application Id, as assigned to your app in the app registration portal.  Your app should validate this value and reject the token if it does not match. |
-| Issuer | `iss` | `https://login.microsoftonline.com/b9410318-09af-49c2-b0c3-653adc1f376e/v2.0/` | Identifies the security token service (STS) that constructs and returns the token, as well as the Azure AD tenant in which the user was authenticated.  Your app should validate the issuer claim to ensure that the token came from the v2.0 endpoint.  It can also use the guid portion of the claim to restrict the set of tenants that are allowed to sign into the app. |
+| Issuer | `iss` | <!-- deleted by customization `https://login.chinacloudapi.cn/b9410318-09af-49c2-b0c3-653adc1f376e/v2.0/` --><!-- keep by customization: begin --> `https://login.microsoftonline.com/b9410318-09af-49c2-b0c3-653adc1f376e/v2.0/` <!-- keep by customization: end --> | Identifies the security token service (STS) that constructs and returns the token, as well as the Azure AD tenant in which the user was authenticated.  Your app should validate the issuer claim to ensure that the token came from the v2.0 endpoint.  It can also use the guid portion of the claim to restrict the set of tenants that are allowed to sign into the app. |
 | Issued At | `iat` | `1438535543` | The time at which the token was issued, represented in epoch time. |
 | Expiration Time | `exp` | `1438539443` | The time at which the token becomes invalid, represented in epoch time.  Your app should use this claim to verify the validity of the token lifetime.  |
 | Version | `ver` | `2.0` | The version of the id_token, as defined by Azure AD.  For app model v2.0, The value will be `2.0`. |
@@ -124,11 +124,21 @@ At any given point in time, the v2.0 endpoint may sign an id_token using any one
 
 You can acquire the signing key data necessary to validate the signature by using the OpenID Connect metadata document located at:
 
+<!-- deleted by customization
+`https://login.chinacloudapi.cn/common/v2.0/.well-known/openid-configuration`
+-->
+<!-- keep by customization: begin -->
 `https://login.microsoftonline.com/common/v2.0/.well-known/openid-configuration`
+<!-- keep by customization: end -->
 
 This metadata document is a JSON object containing several useful pieces of information, such as the location of the various endpoints required for performing OpenID Connect authentication.  It also includes a `jwks_uri`, which gives the location of the set of public keys used to sign tokens.  That location is provided below, but it is best to fetch that location dynamically by using the metadata document and parsing out the `jwks_uri`:
 
+<!-- deleted by customization
+`https://login.chinacloudapi.cn/common/discovery/v2.0/keys`
+-->
+<!-- keep by customization: begin -->
 `https://login.microsoftonline.com/common/discovery/v2.0/keys`
+<!-- keep by customization: end -->
 
 The JSON document located at this url contains all of the public key information in use at that particular moment in time.  Your app can use the `kid` or `x5t` claims in the JWT header to select which public key in this document has been used to sign a particular token.  It can then perform signature validation using the correct public key and the indicated algorithm.
 

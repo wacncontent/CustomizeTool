@@ -13,15 +13,10 @@
 	wacn.date=""/>
 
 
-<!-- deleted by customization
 # Azure Batch technical overview
--->
-<!-- keep by customization: begin -->
-#Azure Batch technical overview
-<!-- keep by customization: end -->
 Azure Batch helps you run large-scale parallel and high performance computing (HPC) applications efficiently in the cloud. It's a platform service that provides job scheduling and autoscaling of a managed collection of virtual machines (VMs) to run the jobs. By using the Batch service, you can configure batch workloads to run in Azure on demand or on a schedule, and not worry about the complexity of configuring and managing an HPC cluster, VMs, or a job scheduler.
 
-<!-- deleted by customization >[AZURE.NOTE] To --><!-- keep by customization: begin --> >[AZURE.NOTE]To <!-- keep by customization: end --> use Batch, you need an Azure account. If you don't have an account, you can create a trial account in just a couple of minutes. For details, see [Create an Azure <!-- deleted by customization account](/develop/php/tutorials/create-a-windows-azure-account/) --><!-- keep by customization: begin --> account](/documentation/articles/php-create-account) <!-- keep by customization: end -->.
+>[AZURE.NOTE] To use Batch, you need an Azure account. If you don't have an account, you can create a trial account in just a couple of minutes. For details, see [Create an Azure account](/pricing/1rmb-trial/).
 
 
 ## Use cases
@@ -30,7 +25,7 @@ Batch uses the elasticity and scale of the cloud to help you with *batch process
 
 Batch computing is a common pattern for organizations that process, transform, and analyze large amounts of data, either on a schedule or on-demand. It includes end-of-cycle processing such as a bank’s daily risk reporting or a payroll that must be done on schedule. It also includes large-scale business, science, and engineering applications that typically need the tools and resources of a compute cluster or grid. Applications include traditional HPC applications such as fluid dynamics simulations as well as specialized workloads in fields ranging from digital content creation to financial services to life sciences research.
 
-Batch works well with intrinsically parallel (sometimes called "embarrassingly parallel") applications or workloads, which lend themselves to running as parallel tasks on multiple computers, such as the compute VMs managed by the Batch service. <!-- keep by customization: begin --> See Figure 1. <!-- keep by customization: end -->
+Batch works well with intrinsically parallel (sometimes called "embarrassingly parallel") applications or workloads, which lend themselves to running as parallel tasks on multiple computers, such as the compute VMs managed by the Batch service.
 
 ![Parallel tasks][parallel]
 
@@ -50,13 +45,13 @@ You can also use Batch to perform parallel calculations with a reduce step at th
 
 ## Developer scenarios
 
-Batch supports different developer scenarios to help you configure and run your large-scale parallel workloads with the Batch service. These scenarios <!-- deleted by customization use --><!-- keep by customization: begin --> leverage <!-- keep by customization: end --> APIs to create and manage pools of VMs (compute nodes) and schedule the jobs and tasks that run on them. See [API basics for Azure Batch](/documentation/articles/batch-api-basics) for more about the Batch concepts.
+Batch supports different developer scenarios to help you configure and run your large-scale parallel workloads with the Batch service. These scenarios use APIs to create and manage pools of VMs (compute nodes) and schedule the jobs and tasks that run on them. See [API basics for Azure Batch](/documentation/articles/batch-api-basics) for more about the Batch concepts.
 
 Typical Batch developer scenarios are in the following sections.
 
 ### Scale out a parallel workload
 
-Use the Batch API to scale out intrinsically parallel work such as image rendering on a pool of up to thousands of compute cores. Instead of <!-- deleted by customization setting --><!-- keep by customization: begin --> having to set <!-- keep by customization: end --> up a compute cluster or write code to queue and schedule your jobs and move the necessary input and output data, you automate the scheduling of large compute jobs and scale a pool of compute VMs up and down to run them. You can write client apps or front-ends to run jobs and tasks on demand, on a schedule, or as part of a larger workflow managed by <!-- deleted by customization tools --><!-- keep by customization: begin --> tools<!-- <!-- keep by customization: end --> such as [Azure Data <!-- deleted by customization Factory](/documentation/services/data-factory/) --><!-- keep by customization: begin --> Factory](/documentation/services/data-factory/)--><!-- keep by customization: end -->.
+Use the Batch API to scale out intrinsically parallel work such as image rendering on a pool of up to thousands of compute cores. Instead of setting up a compute cluster or write code to queue and schedule your jobs and move the necessary input and output data, you automate the scheduling of large compute jobs and scale a pool of compute VMs up and down to run them. You can write client apps or front-ends to run jobs and tasks on demand, on a schedule, or as part of a larger workflow managed by tools such as [Azure Data Factory](/documentation/services/data-factory/).
 
 Figure 2 shows a simplified workflow to submit an application to a Batch pool where it's distributed for processing.
 
@@ -74,9 +69,9 @@ Figure 2 shows a simplified workflow to submit an application to a Batch pool wh
 
 ### Cloud-enable a compute-intensive app
 
-You can use the Preview Batch Apps API to wrap an existing application so <!-- deleted by customization that --> it runs as a service on a pool of compute nodes that Batch manages in the background. The application might be one that runs today on client workstations or a compute cluster. You can develop the service to let users offload peak work to the cloud, or run their work entirely in the cloud. The Batch Apps framework handles the movement of input and output files, the splitting of jobs into tasks, job and task processing, and data persistence.
+You can use the Preview Batch Apps API to wrap an existing application so that it runs as a service on a pool of compute nodes that Batch manages in the background. The application might be one that runs today on client workstations or a compute cluster. You can develop the service to let users offload peak work to the cloud, or run their work entirely in the cloud. The Batch Apps framework handles the movement of input and output files, the splitting of jobs into tasks, job and task processing, and data persistence.
 
->[AZURE.IMPORTANT] Azure <!-- keep by customization: begin --> will <!-- keep by customization: end --> only <!-- deleted by customization offers --><!-- keep by customization: begin --> offer <!-- keep by customization: end --> the Batch Apps API in Preview form. You should only develop with it for test or proof-of-concept projects. Key Batch Apps capabilities <!-- deleted by customization are --><!-- keep by customization: begin --> will be <!-- keep by customization: end --> integrated into the Batch API in future service releases.
+>[AZURE.IMPORTANT] Azure only offers the Batch Apps API in Preview form. You should only develop with it for test or proof-of-concept projects. Key Batch Apps capabilities are integrated into the Batch API in future service releases.
 
 Figure 3 shows a basic workflow to publish an application by using the Batch Apps API and then allow a user to submit jobs to the application.
 
@@ -84,12 +79,12 @@ Figure 3 shows a basic workflow to publish an application by using the Batch App
 
 **Figure 3. Workflow to publish and run an application with Batch Apps**
 
-1.	Prepare an **application image** - a zip file of your existing application executablesand any support files they need. These might be the same executables you run in a traditional server farm or cluster.
-2.	Create a zip file of the **cloud assembly** that <!-- deleted by customization invokes --><!-- keep by customization: begin --> will invoke <!-- keep by customization: end --> and <!-- deleted by customization dispatches --><!-- keep by customization: begin --> dispatch <!-- keep by customization: end --> your workloads to the Batch service. This contains two components:
+1.	Prepare an **application image** - a zip file of your existing application executables and any support files they need. These might be the same executables you run in a traditional server farm or cluster.
+2.	Create a zip file of the **cloud assembly** that invokes and dispatches your workloads to the Batch service. This contains two components:
 
-	a. **Job splitter** <!-- deleted by customization - --><!-- keep by customization: begin --> – <!-- keep by customization: end --> Breaks a job down into tasks that can be processed independently. For example, in an animation scenario, the job splitter would take a movie rendering job and divide it into individual frames.
+	a. **Job splitter** - Breaks a job down into tasks that can be processed independently. For example, in an animation scenario, the job splitter would take a movie rendering job and divide it into individual frames.
 
-	b. **Task processor** <!-- deleted by customization - --><!-- keep by customization: begin --> – <!-- keep by customization: end --> Invokes the application executable for a given task. For example, in an animation scenario, the task processor would invoke a rendering program to render the single frame specified by the task.
+	b. **Task processor** - Invokes the application executable for a given task. For example, in an animation scenario, the task processor would invoke a rendering program to render the single frame specified by the task.
 
 3.	Use the Batch Apps API or developer tools to upload the zip files prepared in the previous two steps to an Azure storage account. These files must be in the storage account so that the Batch service can access them. This is typically done once per application, by a service administrator.
 4.	Provide a way to submit jobs to the enabled application service in Azure. This might be a plugin in your application UI, a web portal, or an unattended service as part of your backend system.
@@ -111,12 +106,7 @@ You can create a Batch account and manage access keys for the account in the Azu
 
 To create a Batch account in the portal:
 
-<!-- deleted by customization
 1. Sign in to the [Azure Preview portal](https://manage.windowsazure.cn).
--->
-<!-- keep by customization: begin -->
-1. Sign in to the [Azure Management Portal](https://manage.windowsazure.cn).
-<!-- keep by customization: end -->
 
 2. Click **New** > **Compute** > **Marketplace** > **Everything**, and then enter *Batch* in the search box.
 
@@ -128,7 +118,7 @@ To create a Batch account in the portal:
 
 	a. In **Account Name**, enter a unique name to use in the Batch account URL.
 
-	<!-- deleted by customization >[AZURE.NOTE] The --><!-- keep by customization: begin --> >[AZURE.NOTE]The <!-- keep by customization: end --> Batch account name must be unique to Azure, contain between 3 and 24 characters, and use lowercase letters and numbers only.
+	>[AZURE.NOTE] The Batch account name must be unique to Azure, contain between 3 and 24 characters, and use lowercase letters and numbers only.
 
 	b. Click **Resource group** to select an existing resource group for the account, or create a new one.
 

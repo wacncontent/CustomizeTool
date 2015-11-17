@@ -39,7 +39,15 @@ def compareWithMooncake(relativePath, text):
         if diff[i][0] == " ":
             result+=diff[i][2:]
         elif diff[i][0] == "+":
-            if i+1<len(diff) and diff[i+1][0] == "-":
+            if diff[i][1:] == " ":
+                if i+1<len(diff) and diff[i+1][0] == "-" and diff[i+1][1:].strip() == "":
+                    result+="\n"
+                i+=1
+                continue
+            elif i+1<len(diff) and diff[i+1].strip() == "- <!-- keep by customization: begin -->":
+                i+=1
+                continue
+            elif i+1<len(diff) and diff[i+1][0] == "-":
                 result+=handleOneLine3(diff, i)[2:]
                 i+=1
             else:
@@ -158,8 +166,8 @@ def keepCompare(new, old):
     kept = old[i:j+35]
     temp = removeDeleteAndKeep(old.replace(kept, " \033 "))
     differ = Differ()
-    oldList = temp.split(" ")
-    newList = new.split(" ")
+    oldList = handlePunctuation(filter(lambda a: a != "", temp.split(" ")))
+    newList = handlePunctuation(new.split(" "))
     diff = list(ndiff(oldList, newList))
     count = 0
     for c in diff:
@@ -168,7 +176,7 @@ def keepCompare(new, old):
         elif c[0] == ' ' or c[0] == '+':
             count+=1
     old_part = old[j+35:]
-    new_part = " "+" ".join(newList[count+1:])
+    new_part = " "+" ".join(newList[count:])
     if "<!-- deleted by customization" not in old_part and "<!-- keep by customization: begin -->" not in old_part:
         delta_str = new_part
     elif "<!-- deleted by customization" in old_part and "<!-- keep by customization: begin -->" in old_part:
@@ -182,7 +190,12 @@ def keepCompare(new, old):
         delta_str = deleteCompare(new_part, old_part)
     else:
         delta_str = keepCompare(new_part, old_part)
-    return leadingblank+" ".join(newList[:count+1])+kept+delta_str
+    if count == 0:
+        result = leadingblank+kept+" "+delta_str
+    else:
+        result = leadingblank+" ".join(newList[:count])+" "+kept+" "+delta_str
+    result = result.replace(" \b", "")
+    return result
 
 def removeDeleteAndKeep(old):
     old = re.sub("\n[ \t\r\f\v]*\<\!\-\- keep by customization: (begin|end) \-\-\>[ \t\r\f\v]*\n", "\n", old)
@@ -305,7 +318,9 @@ def handlePunctuation(words):
     for word in words:
         word = word.strip()
         if word[len(word)-1:len(word)] == "." or word[len(word)-1:len(word)] == "?" or word[len(word)-1:len(word)] == "," or word[len(word)-1:len(word)] == ":" or word[len(word)-1:len(word)] == ";":
-            result.extend([word[:len(word)-1], "\b"+word[len(word)-1]])
+            if word[:len(word)-1] != "":
+                result.append(word[:len(word)-1])
+            result.append("\b"+word[len(word)-1])
         else:
             result.append(word)
     return result
@@ -487,3 +502,47 @@ def removeDeletes(line):
     result = re.sub("\<\!\-\- deleted by customization [^<]* \-\-\>","",line)
     result = re.sub(r"\<\!\-\- keep by customization: begin \-\-\> ([^<]*) \<\!\-\- keep by customization: end \-\-\>",r"\1",result)
     return result
+
+def getDeletionAndReplacement(result):
+    replacement = []
+    deletion = []
+    while True:
+        i = result.find("<!-- deleted by customization")
+        if i == -1:
+            return deletion, replacement
+        j = result[i:].find("-->")
+        deleted = result[i+4:i+j]
+        i_del = deleted.find("<!--")
+        i_c = i + 4
+        while i_del != -1:
+            j+=result[i+j+3:].find("-->")+3
+            i_c += i_del + 4
+            deleted = result[i_c:i+j]
+            i_del = deleted.find("<!--")
+        deleted = result[i+29:i+j].strip()
+        if result[i+j+3:].strip()[:37] == "<!-- keep by customization: begin -->":
+            begin = result[i+j+3:].find("<!-- keep by customization: begin -->") + 37 + i+j+3
+            end = result[i+j+3:].find("<!-- keep by customization: end -->")+i+j+3
+            replace = result[begin:end].strip()
+            d = {"deleted":deleted, "replace":replace}
+            replacement.append(d)
+            result = result[end+35:]
+        else:
+            deletion.append(deleted)
+            result = result[i+j+3:]
+    return deletion, replacement
+
+def outputDeletionAndReplacement(deletion, replacement, mdFile):
+    file = open(setting["getDeletionAndReplacement"]["path"]+mdFile,"w")
+    if len(deletion) > 0:
+        file.write("deletion:\n\n")
+    for deleted in deletion:
+        deleted = "\t\t"+"\n\t\t".join(deleted.split("\n"))
+        file.write("deleted:\n\n"+deleted+"\n\nreason: ()\n\n")
+    if len(replacement) > 0:
+        file.write("replacement:\n\n")
+    for replace in replacement:
+        deleted = "\t\t"+"\n\t\t".join(replace["deleted"].split("\n"))
+        replaced = "\t\t"+"\n\t\t".join(replace["replace"].split("\n"))
+        file.write("deleted:\n\n"+deleted+"\n\nreplaced by:\n\n"+replaced+"\n\nreason: ()\n\n")
+    file.close()

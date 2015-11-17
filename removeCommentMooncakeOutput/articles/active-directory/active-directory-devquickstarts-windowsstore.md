@@ -9,15 +9,15 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="07/17/2015"
+	ms.date="10/13/2015"
 	wacn.date=""/>
 
 
 # Integrate Azure AD with a Windows Store App
 
-[AZURE.INCLUDE [active-directory-devquickstarts-switcher](../includes/active-directory-devquickstarts-switcher)]
+[AZURE.INCLUDE [active-directory-devquickstarts-switcher](../includes/active-directory-devquickstarts-switcher.md)]
 
-[AZURE.INCLUDE [active-directory-devguide](../includes/active-directory-devguide)]
+[AZURE.INCLUDE [active-directory-devguide](../includes/active-directory-devguide.md)]
 
 If you're developing an app for the Windows Store, Azure AD makes it simple and straightforward for you to authenticate your users with their Active Directory accounts.  It also enables your application to securely consume any web API protected by Azure AD, such as the Office 365 APIs or the Azure API.
 
@@ -48,21 +48,17 @@ To enable your app to get tokens, you’ll first need to register it in your Azu
 -	Once you’ve completed registration, AAD will assign your app a unique client identifier.  You’ll need this value in the next sections, so copy it from the **Configure** tab.
 - Also in **Configure** tab, locate the "Permissions to Other Applications" section.  For the "Azure Active Directory" application, add the **Access Your Organization's Directory** permission under **Delegated Permissions**.  This will enable your application to query the Graph API for users.
 
-## *2. Install & Configure ADAL*  
-
-Now that you have an application in Azure AD, you can install ADAL and write your identity-related code.  In order for ADAL to be able to communicate with Azure AD, you need to provide it with some information about your app registration.  
-
+## *2. Install & Configure ADAL*
+Now that you have an application in Azure AD, you can install ADAL and write your identity-related code.  In order for ADAL to be able to communicate with Azure AD, you need to provide it with some information about your app registration.
 -	Begin by adding ADAL to the DirectorySearcher project using the Package Manager Console.
 
 ```
 PM> Install-Package Microsoft.IdentityModel.Clients.ActiveDirectory
 ```
 
--	In the DirectorySearcher project, open `MainPage.xaml.cs`.  Replace the values in the `Config Values` region to reflect the values you input into the Azure Management Portal.  Your code will reference these values whenever it uses ADAL.  
-
+-	In the DirectorySearcher project, open `MainPage.xaml.cs`.  Replace the values in the `Config Values` region to reflect the values you input into the Azure Management Portal.  Your code will reference these values whenever it uses ADAL.
     -	The `tenant` is the domain of your Azure AD tenant, e.g. contoso.partner.onmschina.cn
-    -	The `clientId` is the clientId of your application you copied from the portal.  
-
+    -	The `clientId` is the clientId of your application you copied from the portal.
 -	You now need to discover the callback uri for your Windows Phone app.  Set a breakpoint on this line in the `MainPage` method:
 
 ```
@@ -76,8 +72,7 @@ ms-app://s-1-15-2-1352796503-54529114-405753024-3540103335-3203256200-511895534-
 
 - Back on the **Configure** tab of your application in the Azure Management Portal, replace the value of the **RedirectUri** with this value.  
 
-## *3.	Use ADAL to Get Tokens from AAD*  
-
+## *3.	Use ADAL to Get Tokens from AAD*
 The basic principle behind ADAL is that whenever your app needs an access token, it simply calls `authContext.AcquireToken(…)`, and ADAL does the rest.  
 
 -	The first step is to initialize your app’s `AuthenticationContext` - ADAL’s primary class.  This is where you pass ADAL the coordinates it needs to communicate with Azure AD and tell it how to cache tokens.
@@ -146,5 +141,5 @@ For reference, the completed sample (without your configuration values) is provi
 
 [Secure a .NET Web API with Azure AD >>](/documentation/articles/active-directory-devquickstarts-webapi-dotnet)
 
-[AZURE.INCLUDE [active-directory-devquickstarts-additional-resources](../includes/active-directory-devquickstarts-additional-resources)]
+[AZURE.INCLUDE [active-directory-devquickstarts-additional-resources](../includes/active-directory-devquickstarts-additional-resources.md)]
  

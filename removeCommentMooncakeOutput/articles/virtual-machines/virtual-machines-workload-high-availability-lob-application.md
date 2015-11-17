@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Azure Infrastructure Services Workload: High-Availability Line of Business Application" 
-	description="Learn about the value of an web-based, line of business application deployed in Azure, how to set up a dev/test environment, and how to deploy a high-availability production configuration." 
+	pageTitle="Line of business application in Azure | Windows Azure" 
+	description="Learn the value of a line of business application in Azure, set up a test environment, and deploy a high-availability configuration." 
 	services="virtual-machines" 
 	documentationCenter="" 
 	authors="JoeDavies-MSFT" 
@@ -8,9 +8,9 @@
 	editor=""
 	tags="azure-resource-manager"/>
 
-<tags 
-	ms.service="virtual-machines" 
-	ms.date="08/11/2015" 
+<tags
+	ms.service="virtual-machines"
+	ms.date="08/11/2015"
 	wacn.date=""/>
 
 # Azure Infrastructure Services Workload: High-availability line of business application
@@ -33,7 +33,7 @@ A cross-premises virtual network is connected to an on-premises network with a s
 
 ![](./media/virtual-machines-workload-high-availability-LOB-application/CreateLOBAppHybridCloud_3.png)
  
-You can create this dev/test environment for free with your [MSDN subscription](http://azure.microsoft.com/pricing/member-offers/msdn-benefits/) or an [Azure Trial Subscription](/pricing/1rmb-trial/).
+You can create this dev/test environment for free with your [MSDN subscription](/pricing/member-offers/msdn-benefits/) or an [Azure Trial Subscription](/pricing/1rmb-trial/).
 
 Your next step is to create a high-availability line of business application in Azure.
 

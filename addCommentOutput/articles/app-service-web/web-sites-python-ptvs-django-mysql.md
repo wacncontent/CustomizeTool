@@ -123,14 +123,15 @@ You can create a database with a free plan by following these steps.
 
 1.  Once the MySQL database is created, click **Properties** in the database blade.
 2.  Use the copy button to put the value of **CONNECTION STRING** on the clipboard.
-
 -->
 <!-- keep by customization: begin -->
 1.  At the bottom of the navigation pane. 
+
 1.  Click **DATA SERVICE**, then **MYSQL DATABASE ON AZURE**, then **QUICK CREATE**.
 
 1.  Filled in with name, version, and so on, then click **CREATE**.
 <!-- keep by customization: end -->
+
 ## Configure the Project
 
 In this section, we'll configure our web app to use the MySQL database we just created. We'll also install additional Python packages required to use MySQL databases with Django. Then we'll run the web app locally.
@@ -219,6 +220,7 @@ For more information, see the [Python Developer Center](/develop/python/).
 <!--Link references-->
 [Python Developer Center]: /develop/python/
 [Azure Cloud Services]: /documentation/articles/cloud-services-python-ptvs
+
 <!--External Link references-->
 [Azure Management Portal]: https://manage.windowsazure.cn
 [Python Tools for Visual Studio]: http://aka.ms/ptvs

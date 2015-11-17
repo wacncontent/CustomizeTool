@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Get started with Azure Batch PowerShell cmdlets | Windows Azure"
+   pageTitle="Get started with Azure Batch PowerShell | Windows Azure"
    description="Get a quick introduction to the Azure PowerShell cmdlets you can use to manage the Azure Batch service"
    services="batch"
    documentationCenter=""
@@ -8,9 +8,9 @@
    editor=""/>
 
 <tags
-   ms.service="batch"
-   ms.date="10/13/2015"
-   wacn.date=""/>
+	ms.service="batch"
+	ms.date="10/13/2015"
+	wacn.date=""/>
 
 # Get started with Azure Batch PowerShell cmdlets
 This article is a quick introduction to the Azure PowerShell cmdlets you can use to manage your Batch accounts and get information about your Batch jobs, tasks, and other details.
@@ -55,7 +55,9 @@ New-AzureRmBatchAccount –AccountName <account_name> –Location "China North" 
 
 ```
 $Account = Get-AzureBatchAccountKeys –AccountName <accountname>
+
 $Account.PrimaryAccountKey
+
 $Account.SecondaryAccountKey
 ```
 
@@ -105,6 +107,7 @@ You can supply an OData filter using the **Filter** parameter to find only the o
 
 ```
 $filter = "startswith(id,'myPool')"
+
 Get-AzureBatchPool -Filter $filter -BatchContext $context
 ```
 

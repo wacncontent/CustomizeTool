@@ -84,7 +84,12 @@ angular.module('todoApp', ['ngRoute','AdalAngular'])
 ```js
 adalProvider.init(
   {
+<!-- deleted by customization
+      instance: 'https://login.chinacloudapi.cn/',
+-->
+<!-- keep by customization: begin -->
       instance: 'https://login.microsoftonline.com/',
+<!-- keep by customization: end -->
       tenant: 'Enter your tenant name here e.g. contoso.partner.onmschina.cn',
       clientId: 'Enter your client ID here e.g. e9a5a8b6-8af7-4719-9821-0deef255f68e',
       extraQueryParameter: 'nux=1',

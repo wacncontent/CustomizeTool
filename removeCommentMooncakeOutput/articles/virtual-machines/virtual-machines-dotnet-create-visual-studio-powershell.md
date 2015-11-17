@@ -10,7 +10,7 @@
 <tags
 	ms.service="virtual-machines"
 	ms.date="10/19/2015"
-        wacn.date=""/>
+	wacn.date=""/>
 
 # Creating a virtual machine for a web application with Visual Studio
 

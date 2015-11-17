@@ -27,7 +27,7 @@
 
 	This filters the items so that completed items are not returned by the query.
 
-3. In the **MainPage** class, add the following method:
+<!-- deleted by customization 3 --><!-- keep by customization: begin --> 4 <!-- keep by customization: end -->. In the **MainPage** class, add the following method:
 
 		private async void ButtonCompleteAll_Click(object sender, RoutedEventArgs e)
 		{

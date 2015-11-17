@@ -7,9 +7,9 @@
 	manager="jwhit" 
 	editor=""/>
 
-<tags 
-	ms.service="site-recovery" 
-	ms.date="10/07/2015" 
+<tags
+	ms.service="site-recovery"
+	ms.date="10/07/2015"
 	wacn.date=""/>
 
 # Manage registration and protection
@@ -181,7 +181,6 @@ If you selected **Stop managing the virtual machine**, manually clean up setting
 	    $replicationService = Get-WmiObject -Namespace "root\virtualization\v2"  -Query "Select * From Msvm_ReplicationService"  -computername $hostName
 	    $replicationService.RemoveReplicationRelationship($vm.__PATH)
 
-
 ### Clean up protection settings manually (between Hyper-V sites and Azure)
 
 1. On the source Hyper-V host server, to remove replication for the virtual machine use this script. Replace SQLVM1 with the name of your virtual machine.
@@ -223,4 +222,6 @@ If you want to stop protecting a VMware virtual machine or a physical server you
 
 
 
- 
+
+
+

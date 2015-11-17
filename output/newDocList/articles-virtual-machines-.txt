@@ -1,4 +1,4 @@
-new docs: 210, word count: 334653
+new docs: 210, word count: {word_count_TODO}
 articles/virtual-machines/arm-template-deployment.md
 articles/virtual-machines/automation-manage-virtual-machines.md
 articles/virtual-machines/azure-cli-arm-commands.md

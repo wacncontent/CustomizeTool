@@ -28,16 +28,11 @@ HTML file that displays the image in your browser.
 - The JAR for the Azure Libraries for Java, and any applicable
     dependency JARs, are installed and are in the build path used by
     your Java compiler. For information about installing the Azure Libraries for Java, see [Download the
-<!-- deleted by customization
     Azure SDK for Java][].
--->
-<!-- keep by customization: begin -->
-    Azure SDK for Java].
-<!-- keep by customization: end -->
 - An Azure storage account has been set up. The account name
     and account key for the storage account will be used by the code
     in this article. See [How to Create a Storage Account] for information about creating a storage account,
-    and [How to Manage Storage <!-- deleted by customization Accounts][] --><!-- keep by customization: begin --> Accounts] <!-- keep by customization: end --> for information about retrieving the
+    and [How to Manage Storage Accounts][] for information about retrieving the
     account key.
 - You have created a local image file named stored at the path
     c:\\myimages\\image1.jpg. Alternatively, modify the
@@ -68,8 +63,8 @@ Declare a class named **StorageSample**, and include the open bracket,
 Within the **StorageSample** class, declare a string variable that will
 contain the default endpoint protocol, your storage account name, and
 your storage access key, as specified in your Azure storage
-account. Replace the placeholder values **your_account_name** and
-**your_account_key** with your own account name and account key,
+account. Replace the placeholder values **your\_account\_name** and
+**your\_account\_key** with your own account name and account key,
 respectively.
 
     public static final String storageConnectionString =
@@ -258,8 +253,8 @@ Close **MakeHTMLPage** by inserting a close bracket: **}**
 Close **StorageSample** by inserting a close bracket: **}**
 
 The following is the complete code for this example. Remember to modify
-the placeholder values **your_account_name** and
-**your_account_key** to use your account name and account key,
+the placeholder values **your\_account\_name** and
+**your\_account\_key** to use your account name and account key,
 respectively.
 
     import com.microsoft.azure.storage.*;
@@ -425,12 +420,12 @@ use the blob storage service from Java].
 
 Follow these links to learn more about more complex storage tasks.
 
-- [Azure Storage SDK for <!-- deleted by customization Java][] --><!-- keep by customization: begin --> Java] <!-- keep by customization: end -->
-- [Azure Storage Client SDK <!-- deleted by customization Reference][] --><!-- keep by customization: begin --> Reference] <!-- keep by customization: end -->
-- [Azure Storage REST <!-- deleted by customization API][] --><!-- keep by customization: begin --> API] <!-- keep by customization: end -->
-- [Azure Storage Team <!-- deleted by customization Blog][] --><!-- keep by customization: begin --> Blog] <!-- keep by customization: end -->
+- [Azure Storage SDK for Java][]
+- [Azure Storage Client SDK Reference][]
+- [Azure Storage REST API][]
+- [Azure Storage Team Blog][]
 
-  [Download the Azure SDK for Java]: <!-- deleted by customization http://go.microsoft.com/fwlink/?LinkID=525671 --><!-- keep by customization: begin --> /develop/java/ <!-- keep by customization: end -->
+  [Download the Azure SDK for Java]: /develop/java/
   [How to Create a Storage Account]: /documentation/articles/storage-create-storage-account#create-a-storage-account
 <!-- deleted by customization
   [How to Manage Storage Accounts]: storage-create-storage-account.md#view-copy-and-regenerate-storage-access-keys
@@ -440,6 +435,6 @@ Follow these links to learn more about more complex storage tasks.
 <!-- keep by customization: end -->
   [How to Use the Blob Storage Service from Java]: /documentation/articles/storage-java-how-to-use-blob-storage
   [Azure Storage SDK for Java]: https://github.com/azure/azure-storage-java
-  [Azure Storage Client SDK Reference]: http://dl.windowsazure.cn/storage/javadoc/
+  [Azure Storage Client SDK Reference]: http://dl.windowsazure.com/storage/javadoc/
   [Azure Storage REST API]: http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx
   [Azure Storage Team Blog]: http://blogs.msdn.com/b/windowsazurestorage/

@@ -56,38 +56,38 @@ Network mapping can be configured between VM networks on two VMM servers, or on 
 
 If networks have been set up correctly in VMM, when you select a target VM network during network mapping, the VMM source clouds that use the source VM network will be displayed, along with the available target VM networks on the target clouds that are used for protection.
 
-Here’s an example to illustrate this mechanism. Let’s take an organization with two locations in New York and Chicago.
+Here’s an example to illustrate this mechanism. Let’s take an organization with two locations in Beijing and Shanghai.
 
 **Location** | **VMM server** | **VM networks** | **Mapped to**
 ---|---|---|---
-New York | VMM-NewYork| VMNetwork1-NewYork | Mapped to VMNetwork1-Chicago
- |  | VMNetwork2-NewYork | Not mapped
-Chicago | VMM-Chicago| VMNetwork1-Chicago | Mapped to VMNetwork1-NewYork
- | | VMNetwork1-Chicago | Not mapped
+Beijing | VMM-Beijing| VMNetwork1-Beijing | Mapped to VMNetwork1-Shanghai
+ |  | VMNetwork2-Beijing | Not mapped
+Shanghai | VMM-Shanghai| VMNetwork1-Shanghai | Mapped to VMNetwork1-Beijing
+ | | VMNetwork1-Shanghai | Not mapped
 
 With this example:
 
-- When a replica virtual machine is created for any virtual machine that is connected to VMNetwork1-NewYork, it will be connected to VMNetwork1-Chicago.
-- When a replica virtual machine is created for VMNetwork2-NewYork or VMNetwork2-Chicago, it will not be connected to any network.
+- When a replica virtual machine is created for any virtual machine that is connected to VMNetwork1-Beijing, it will be connected to VMNetwork1-Shanghai.
+- When a replica virtual machine is created for VMNetwork2-Beijing or VMNetwork2-Shanghai, it will not be connected to any network.
 
 Here's how VMM clouds are set up in our example organization, and the logical networks associated with the clouds.
 
 ### Cloud protection settings
 
-**Protected cloud** | **Protecting cloud** | **Logical network (New York)**  
+**Protected cloud** | **Protecting cloud** | **Logical network (Beijing)**  
 ---|---|---
 GoldCloud1 | GoldCloud2 |
 SilverCloud1| SilverCloud2 |
-GoldCloud2 | <p>NA</p><p></p> | <p>LogicalNetwork1-NewYork</p><p>LogicalNetwork1-Chicago</p>
-SilverCloud2 | <p>NA</p><p></p> | <p>LogicalNetwork1-NewYork</p><p>LogicalNetwork1-Chicago</p>
+GoldCloud2 | <p>NA</p><p></p> | <p>LogicalNetwork1-Beijing</p><p>LogicalNetwork1-Shanghai</p>
+SilverCloud2 | <p>NA</p><p></p> | <p>LogicalNetwork1-Beijing</p><p>LogicalNetwork1-Shanghai</p>
 
 ### Logical and VM network settings
 
 **Location** | **Logical network** | **Associated VM network**
 ---|---|---
-New York | LogicalNetwork1-NewYork | VMNetwork1-NewYork
-Chicago | LogicalNetwork1-Chicago | VMNetwork1-Chicago
- | LogicalNetwork2Chicago | VMNetwork2-Chicago
+Beijing | LogicalNetwork1-Beijing | VMNetwork1-Beijing
+Shanghai | LogicalNetwork1-Shanghai | VMNetwork1-Shanghai
+ | LogicalNetwork2Shanghai | VMNetwork2-Shanghai
 
 ### Target networks
 
@@ -95,9 +95,9 @@ Based on these settings, when you select the target VM network, the following ta
 
 **Select** | **Protected cloud** | **Protecting cloud** | **Target network available**
 ---|---|---|---
-VMNetwork1-Chicago | SilverCloud1 | SilverCloud2 | Available
+VMNetwork1-Shanghai | SilverCloud1 | SilverCloud2 | Available
  | GoldCloud1 | GoldCloud2 | Available
-VMNetwork2-Chicago | SilverCloud1 | SilverCloud2 | Not available
+VMNetwork2-Shanghai | SilverCloud1 | SilverCloud2 | Not available
  | GoldCloud1 | GoldCloud2 | Available
 
 
@@ -109,22 +109,29 @@ If the target network has multiple subnets and one of those subnets has the same
 
 ### Failback
 
-To see what happens in the case of failback (reverse replication), let’s assume that VMNetwork1-NewYork is mapped to VMNetwork1-Chicago, with the following settings.
+To see what happens in the case of failback (reverse replication), let’s assume that VMNetwork1-Beijing is mapped to VMNetwork1-Shanghai, with the following settings.
 
 
 **Virtual machine** | **Connected to VM network**
 ---|---
 VM1 | VMNetwork1-Network
-VM2 (replica of VM1) | VMNetwork1-Chicago
+VM2 (replica of VM1) | VMNetwork1-Shanghai
 
 With these settings, let's review what happens in a couple of possible scenarios.
 
 **Scenario** | **Outcome**
 ---|---
-No change in the network properties of VM-2 after failover. | VM-1 remains connected to the source network.
+No change in the network properties of VM-2 after failover<!-- deleted by customization. --> | VM-1 remains connected to the source network.
+<!-- deleted by customization
 Network properties of VM-2 are changed after failover and is disconnected. | VM-1 is disconnected.
-Network properties of VM-2 are changed after failover and is connected to VMNetwork2-Chicago. | If VMNetwork2-Chicago isn’t mapped, VM-1 will be disconnected.
-Network mapping of VMNetwork1-Chicago is changed. | VM-1 will be connected to the network now mapped to VMNetwork1-Chicago.
+Network properties of VM-2 are changed after failover and is connected to VMNetwork2-Shanghai. | If VMNetwork2-Shanghai isn’t mapped, VM-1 will be disconnected.
+Network mapping of VMNetwork1-Shanghai is changed. | VM-1 will be connected to the network now mapped to VMNetwork1-Shanghai.
+-->
+<!-- keep by customization: begin -->
+Network properties of VM-2 are changed after failover and is disconnected | VM-1 is disconnected
+Network properties of VM-2 are changed after failover and is connected to VMNetwork2-Shanghai <!-- deleted by customization. -->| If VMNetwork2-Shanghai isn’t mapped, VM-1 will be disconnected <!-- deleted by customization. -->
+Network mapping of VMNetwork1-Shanghai is changed | VM-1 will be connected to the network now mapped to VMNetwork1-Shanghai
+<!-- keep by customization: end -->
 
 
 ## Next steps

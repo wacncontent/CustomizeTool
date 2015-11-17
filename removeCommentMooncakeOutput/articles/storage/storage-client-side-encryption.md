@@ -1,15 +1,15 @@
 <properties 
 	pageTitle="Client-Side Encryption with .NET for Windows Azure Storage | Windows Azure" 
-	description="The Azure Storage Client Library for .NET offers support for client-side encryption and integration with Azure Key Vault. Client-side encryption offers maximum security for your Azure Storage applications, as your access keys are never available to the service. Client-side encryption is available for blobs, queues, and tables." 
+	description="The Azure Storage Client Library for .NET supports client-side encryption and integration with Azure Key Vault for maximum security for your Azure Storage applications." 
 	services="storage" 
 	documentationCenter=".net" 
 	authors="tamram" 
 	manager="carolz" 
 	editor=""/>
 
-<tags 
-	ms.service="storage" 
-	ms.date="10/07/2015" 
+<tags
+	ms.service="storage"
+	ms.date="10/07/2015"
 	wacn.date=""/>
 
 
@@ -19,7 +19,8 @@
 
 ## Overview
 
-The [Azure Storage Client Library for .NET](https://www.nuget.org/packages/WindowsAzure.Storage) supports encrypting data within client applications before uploading to Azure Storage, and decrypting data while downloading to the client. The library also supports integration with Azure [Key Vault](/documentation/services/key-vault) for storage account key management.
+The [Azure Storage Client Library for .NET](https://www.nuget.org/packages/WindowsAzure.Storage) supports encrypting data within client applications before uploading to Azure Storage, and decrypting data while downloading to the client. The library also supports integration with [Azure Key Vault](/home/features/key-vault/) for storage account key management.
+
 For client-side encryption with Java, see [Client-Side Encryption with Java for Windows Azure Storage](/documentation/articles/storage-client-side-encryption-java).
 
 ## Encryption and decryption via the envelope technique

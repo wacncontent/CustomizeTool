@@ -21,13 +21,20 @@ In this document, you will learn how to use Curl to run Hive queries on a Hadoop
 
 Curl is used to demonstrate how you can interact with HDInsight by using raw HTTP requests to run, monitor, and retrieve the results of Hive queries. This works by using the WebHCat REST API (formerly known as Templeton) provided by your HDInsight cluster.
 
+<!-- deleted by customization
 > [AZURE.NOTE] If you are already familiar with using Linux-based Hadoop servers, but are new to HDInsight, see [What you need to know about Hadoop on Linux-based HDInsight](/documentation/articles/hdinsight-hadoop-linux-information).
 
+-->
 ##<a id="prereq"></a>Prerequisites
 
 To complete the steps in this article, you will need the following:
 
+<!-- deleted by customization
 * A Hadoop on HDInsight cluster (Linux or Windows-based)
+-->
+<!-- keep by customization: begin -->
+* A Hadoop on HDInsight cluster ( Windows-based)
+<!-- keep by customization: end -->
 
 * [Curl](http://curl.haxx.se/)
 
@@ -112,7 +119,7 @@ To complete the steps in this article, you will need the following:
 
 4. Once the state of the job has changed to **SUCCEEDED**, you can retrieve the results of the job from Azure Blob storage. The `statusdir` parameter passed with the query contains the location of the output file; in this case, **wasb:///example/curl**. This address stores the output of the job in the **example/curl** directory on the default storage container used by your HDInsight cluster.
 
-    You can list and download these files by using the [Azure CLI for Mac, Linux and Windows](/documentation/articles/xplat-cli-install). For example, to list files in **example/curl**, use the following command:
+    You can list and download these files by using the [Azure CLI <!-- deleted by customization for Mac, Linux and Windows](/documentation/articles/xplat-cli-install) --><!-- keep by customization: begin --> ](/documentation/articles/xplat-cli-install) <!-- keep by customization: end -->. For example, to list files in **example/curl**, use the following command:
 
 		azure storage blob list <container-name> example/curl
 
@@ -120,7 +127,7 @@ To complete the steps in this article, you will need the following:
 
 		azure storage blob download <container-name> <blob-name> <destination-file>
 
-	> [AZURE.NOTE] You must either specify the storage account name that contains the blob by using the `-a` and `-k` parameters, or set the **AZURE\_STORAGE\_ACCOUNT** and **AZURE\_STORAGE\_ACCESS\_KEY** environment variables. See <a href="/documentation/articles/hdinsight-upload-data" target="_blank" for more information.
+	> [AZURE.NOTE] You must either specify the storage account name that contains the blob by using the `-a` and `-k` parameters, or set the <!-- deleted by customization **AZURE\_STORAGE\_ACCOUNT** --><!-- keep by customization: begin --> **AZURE_STORAGE_ACCOUNT** <!-- keep by customization: end --> and <!-- deleted by customization **AZURE\_STORAGE\_ACCESS\_KEY** --><!-- keep by customization: begin --> **AZURE_STORAGE_ACCESS_KEY** <!-- keep by customization: end --> environment variables. See <a href="/documentation/articles/hdinsight-upload-data" target="_blank" for more information.
 
 6. Use the following statements to create a new 'internal' table named **errorLogs**:
 
@@ -136,7 +143,7 @@ To complete the steps in this article, you will need the following:
     * **INSERT OVERWRITE ... SELECT** - Selects rows from the **log4jLogs** table that contain **[ERROR]**, then inserts the data into the **errorLogs** table.
     * **SELECT** - Selects all rows from the new **errorLogs** table.
 
-7. Use the job ID returned to check the status of the job. Once it has succeeded, use Azure CLI for Mac, Linux and Windows as described previously to download and view the results. The output should contain three lines, all of which contain **[ERROR]**.
+7. Use the job ID returned to check the status of the job. Once it has succeeded, use Azure CLI for <!-- deleted by customization Mac, Linux and --> Windows as described previously to download and view the results. The output should contain three lines, all of which contain **[ERROR]**.
 
 
 ##<a id="summary"></a>Summary
@@ -161,7 +168,7 @@ For information on other ways you can work with Hadoop on HDInsight:
 [hdinsight-sdk-documentation]: http://msdnstage.redmond.corp.microsoft.com/zh-cn/library/dn479185.aspx
 
 [azure-purchase-options]: /pricing/overview/
-[azure-member-offers]: http://azure.microsoft.com/pricing/member-offers/
+[azure-member-offers]: /pricing/member-offers/
 [azure-trial]: /pricing/1rmb-trial/
 
 [apache-tez]: http://tez.apache.org
@@ -173,11 +180,16 @@ For information on other ways you can work with Hadoop on HDInsight:
 
 [hdinsight-use-oozie]: /documentation/articles/hdinsight-use-oozie
 [hdinsight-analyze-flight-data]: /documentation/articles/hdinsight-analyze-flight-delay-data
+
+
+
 [hdinsight-storage]: /documentation/articles/hdinsight-use-blob-storage
+
 [hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters
 [hdinsight-submit-jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically
 [hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
 [hdinsight-get-started]: /documentation/articles/hdinsight-get-started
+
 [Powershell-install-configure]: /documentation/articles/install-configure-powershell
 [powershell-here-strings]: http://technet.microsoft.com/zh-cn/library/ee692792.aspx
 

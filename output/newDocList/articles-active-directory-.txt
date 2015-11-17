@@ -1,4 +1,4 @@
-new docs: 369, word count: 393124
+new docs: 369, word count: {word_count_TODO}
 articles/active-directory/active-directory-aadconnect-account-summary.md
 articles/active-directory/active-directory-aadconnect-accounts-permissions.md
 articles/active-directory/active-directory-aadconnect-connected-directories.md

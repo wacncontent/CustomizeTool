@@ -609,12 +609,14 @@ This command creates a new cloud service
 	info:    Executing command service create
 	+ Getting locations
 	help:    Location:
-	  1) East Asia
-	  2) Southeast Asia
+	  1) China East
+	  2) China North
+<!-- deleted by customization
 	  3) China North
 	  4) West Europe
 	  5) China East
 	  6) China North
+-->
 	  : 6
 	+ Creating cloud service
 	data:    Cloud service name newservicemsopentech
@@ -845,11 +847,15 @@ This command lists your web app locations.
 	+ Getting locations
 	data:    Name
 	data:    ----------------
+<!-- deleted by customization
 	data:    West Europe
+-->
+	data:    China North
+<!-- deleted by customization
 	data:    China North
 	data:    China North
-	data:    China North
-	data:    East Asia
+	data:    China East
+-->
 	data:    China East
 	info:    site location list command OK
 
@@ -1162,7 +1168,9 @@ This command lists geographic locations supported by Mobile Services.
 	~$ azure mobile locations
 	info:    Executing command mobile locations
 	info:    China East (default)
+<!-- deleted by customization
 	info:    China North
+-->
 	info:    China North
 
 **mobile create [options] [servicename] [sqlAdminUsername] [sqlAdminPassword]**
@@ -1822,14 +1830,18 @@ Display a list of all available namespace locations.
 	+ Getting locations
 	data:    Name              Code
 	data:    ----------------  ----------------
-	data:    East Asia         East Asia
+<!-- deleted by customization
+	data:    China East         China East
 	data:    West Europe       West Europe
+-->
 	data:    China North      China North
 	data:    China East           China East
-	data:    Southeast Asia    Southeast Asia
+<!-- deleted by customization
+	data:    China North    China North
 	data:    China North  China North
 	data:    China North           China North
 	data:    China East  China East
+-->
 	info:    sb namespace location list command OK
 
 **sb namespace show &lt;name>**

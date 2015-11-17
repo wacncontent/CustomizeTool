@@ -7,9 +7,9 @@
    manager="jeffreyg" 
    editor="monicar"/>
 
-<tags   ms.service="sql-database"
-   ms.date="07/14/2015"
-   wacn.date=""/>
+<tags	ms.service="sql-database"
+	ms.date="07/14/2015"
+	wacn.date=""/>
 
 # Recover an Azure SQL Database from an outage
 
@@ -46,7 +46,7 @@ After the continuous copy relationship is terminated, you can configure your rec
 ###PowerShell
 Use PowerShell to programmatically perform database recovery.
 
-To terminate the relationship from the secondary database, use the [Stop-AzureSqlDatabaseCopy](https://msdn.microsoft.com/zh-CN/library/dn720223) cmdlet.
+To terminate the relationship from the secondary database, use the [Stop-AzureSqlDatabaseCopy](https://msdn.microsoft.com/zh-cn/library/dn720223) cmdlet.
 		
 		$myDbCopy = Get-AzureSqlDatabaseCopy -ServerName "SecondaryServerName" -DatabaseName "SecondaryDatabaseName"
 		$myDbCopy | Stop-AzureSqlDatabaseCopy -ServerName "SecondaryServerName" -ForcedTermination
@@ -55,8 +55,8 @@ After the continuous copy relationship is terminated, you can configure your rec
 ###REST API 
 Use REST to programmatically perform database recovery.
 
-1. Get the database continuous copy using the [Get Database Copy](https://msdn.microsoft.com/zh-CN/library/azure/dn509570.aspx) operation.
-2. Stop the database continuous copy using the [Stop Database Copy](https://msdn.microsoft.com/zh-CN/library/azure/dn509573.aspx) operation.
+1. Get the database continuous copy using the [Get Database Copy](https://msdn.microsoft.com/zh-cn/library/azure/dn509570.aspx) operation.
+2. Stop the database continuous copy using the [Stop Database Copy](https://msdn.microsoft.com/zh-cn/library/azure/dn509573.aspx) operation.
 Use the secondary server name and database name in the Stop Database Copy request URI
 
  After the continuous copy relationship is terminated, you can configure your recovered database to be used by following the [Finalize a Recovered Database](/documentation/articles/sql-database-recovered-finalize) guide.
@@ -75,7 +75,7 @@ After the database is recovered you can configure it to be used by following the
 ###PowerShell 
 Use PowerShell to programmatically perform database recovery.
 
-To start a Geo-Restore request, use the [start-AzureSqlDatabaseRecovery](https://msdn.microsoft.com/zh-CN/library/azure/dn720224.aspx) cmdlet.
+To start a Geo-Restore request, use the [start-AzureSqlDatabaseRecovery](https://msdn.microsoft.com/zh-cn/library/azure/dn720224.aspx) cmdlet. 
 
 		$Database = Get-AzureSqlRecoverableDatabase -ServerName "ServerName" –DatabaseName “DatabaseToBeRecovered"
 		$RecoveryRequest = Start-AzureSqlDatabaseRecovery -SourceDatabase $Database –TargetDatabaseName “NewDatabaseName” –TargetServerName “TargetServerName”
@@ -86,12 +86,13 @@ After the database is recovered you can configure it to be used by following the
 
 Use REST to programmatically perform database recovery.
 
-1.	Get your list of recoverable databases using the [List Recoverable Databases](https://msdn.microsoft.com/zh-CN/library/azure/dn800984.aspx) operation.
+1.	Get your list of recoverable databases using the [List Recoverable Databases](http://msdn.microsoft.com/zh-cn/library/azure/dn800984.aspx) operation.
 	
-2.	Get the database you want to recover using the [Get Recoverable Database](https://msdn.microsoft.com/zh-CN/library/azure/dn800985.aspx) operation.
+2.	Get the database you want to recover using the [Get Recoverable Database](http://msdn.microsoft.com/zh-cn/library/azure/dn800985.aspx) operation.
 	
-3.	Create the recovery request using the [Create Database Recovery Request](https://msdn.microsoft.com/zh-CN/library/azure/dn800986.aspx) operation.
+3.	Create the recovery request using the [Create Database Recovery Request](http://msdn.microsoft.com/zh-cn/library/azure/dn800986.aspx) operation.
 	
-4.	Track the status of the recovery using the [Database Operation Status](https://msdn.microsoft.com/zh-CN/library/azure/dn720371.aspx) operation.
+4.	Track the status of the recovery using the [Database Operation Status](http://msdn.microsoft.com/zh-cn/library/azure/dn720371.aspx) operation.
 
 After the database is recovered you can configure it to be used by following the [Finalize a Recovered Database](/documentation/articles/sql-database-recovered-finalize) guide.
+ 

@@ -8,8 +8,9 @@
    editor=""/>
 
    <tags
-      ms.service="active-directory"
-      ms.date="10/16/2015"/>
+	ms.service="active-directory"
+	ms.date="10/16/2015"
+	wacn.date=""/>
 
 # Integrating Azure Active Directory with applications getting started guide
 ## Overview

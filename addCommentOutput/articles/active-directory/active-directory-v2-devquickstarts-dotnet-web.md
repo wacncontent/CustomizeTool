@@ -84,7 +84,7 @@ public void ConfigureAuth(IAppBuilder app)
 					 app.UseOpenIdConnectAuthentication(
 							 new OpenIdConnectAuthenticationOptions
 							 {
-									 // The `Authority` represents the v2.0 endpoint - https://login.microsoftonline.com/common/v2.0
+									 // The `Authority` represents the v2.0 endpoint - <!-- deleted by customization https://login.chinacloudapi.cn/common/v2.0 --><!-- keep by customization: begin --> https://login.microsoftonline.com/common/v2.0 <!-- keep by customization: end -->
 									 // The `Scope` describes the permissions that your app will need.  See /documentation/articles/active-directory-v2-scopes/
 									 // In a real application you could use issuer validation for additional checks, like making sure the user's organization has signed up for your app, for instance.
 
@@ -139,7 +139,7 @@ public void SignOut()
 }
 ```
 
--	Now, open `Views\Shared_LoginPartial.cshtml`.  This is where you'll show the user your app's sign-in and sign-out links, and print out the user's name in a view.
+-	Now, open <!-- deleted by customization `Views\Shared\_LoginPartial.cshtml` --><!-- keep by customization: begin --> `Views\Shared_LoginPartial.cshtml` <!-- keep by customization: end -->.  This is where you'll show the user your app's sign-in and sign-out links, and print out the user's name in a view.
 
 ```HTML
 @if (Request.IsAuthenticated)

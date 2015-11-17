@@ -23,6 +23,21 @@ This tutorial describes options for authoring and configuring a basic Web Server
 It describes additional features of Git deployment, such as virtual environment and package installation using requirements.txt.
 
 
+<!-- keep by customization: begin -->
++ [Bottle, Django or Flask?](#bottle-django-flask)
++ [Website Creation on Portal](#website-creation-on-portal)
++ [Git Publishing](#git-publishing)
++ [Application Overview](#application-overview)
++ [WSGI Handler](#wsgi-handler)
++ [Virtual Environment](#next-steps)
++ [Package Management](#next-steps)
++ [Python Version](#next-steps)
++ [Virtual Environment Proxy](#virtual-environment-proxy)
++ [Customize Git deployment](#customize-git-deployment)
++ [Troubleshooting - Deployment](#troubleshooting-deployment)
++ [Troubleshooting - Package Installation](#troubleshooting-package-installation)
++ [Troubleshooting - Virtual Environment](#troubleshooting-virtual-environment)
+<!-- keep by customization: end -->
 ## Bottle, Django or Flask?
 
 The Azure Marketplace contains templates for the Bottle, Django and Flask frameworks. If you are developing your first web app in Azure Websites, or you are not familiar with Git, we recommend that you follow one of these tutorials, which include step-by-step instructions for building a working application from the gallery using Git deployment from Windows or Mac:
@@ -32,12 +47,20 @@ The Azure Marketplace contains templates for the Bottle, Django and Flask framew
 - [Creating web apps with Flask](/documentation/articles/web-sites-python-create-deploy-flask-app)
 
 
-## Web app creation on Azure Preview Portal
+## Web app creation on Azure <!-- deleted by customization Preview --><!-- keep by customization: begin --> Management <!-- keep by customization: end --> Portal
 
-This tutorial assumes an existing Azure subscription and access to the Azure Preview Portal.
+This tutorial assumes an existing Azure subscription and access to the Azure <!-- deleted by customization Preview --><!-- keep by customization: begin --> Management <!-- keep by customization: end --> Portal.
 
+<!-- deleted by customization
 If you do not have an existing web app, you can create one from the [Azure Preview Portal](https://manage.windowsazure.cn).  Click the NEW button in the bottom left corner, then click **Web + Mobile** > **Web app**.
 
+-->
+<!-- keep by customization: begin -->
+If you do not have an existing web app, you can create one from the [Azure Management Portal](https://manage.windowsazure.cn).  Click the NEW button in the bottom left corner. A window will appear. Click COMPUTE, WEB SITE, then QUICK CREATE.
+
+![](./media/web-sites-python-configure/configure-python-create-Website.png)
+<a name="git-publishing"></a>
+<!-- keep by customization: end -->
 ## Git Publishing
 
 Configure Git publishing for your newly created web app by following the instructions at [Continuous deployment using GIT in Azure Websites](/documentation/articles/web-sites-publish-source-control). This tutorial uses Git to create, manage, and publish our Python web app to Azure Websites.
@@ -366,6 +389,7 @@ Contents of `ptvs_virtualenv_proxy.py`:
 
 [AZURE.INCLUDE [web-sites-python-troubleshooting-virtual-environment](../includes/web-sites-python-troubleshooting-virtual-environment.md)]
 
+<!-- deleted by customization
 ## Next steps
 
 For more information, see the [Python Developer Center](/develop/python/).
@@ -376,6 +400,7 @@ For more information, see the [Python Developer Center](/develop/python/).
 * For a guide to the change from Websites to Azure Websites see: [Azure Websites and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
 * For a guide to the change of the Management Portal to the new portal see: [Reference for navigating the preview portal](https://manage.windowsazure.cn/)
 
+-->
 
 
 

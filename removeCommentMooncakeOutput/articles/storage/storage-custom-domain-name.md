@@ -7,9 +7,9 @@
 	manager="adinah" 
 	editor=""/>
 
-<tags 
-	ms.service="storage" 
-	ms.date="06/18/2015" 
+<tags
+	ms.service="storage"
+	ms.date="09/03/2015"
 	wacn.date=""/>
 
 

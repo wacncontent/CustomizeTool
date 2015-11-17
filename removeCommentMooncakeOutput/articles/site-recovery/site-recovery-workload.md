@@ -7,9 +7,9 @@
 	manager="abhiag" 
 	editor=""/>
 
-<tags 
-	ms.service="site-recovery" 
-	ms.date="09/21/2015" 
+<tags
+	ms.service="site-recovery"
+	ms.date="09/21/2015"
 	wacn.date=""/>
 
 # Site Recovery Workload Guidance

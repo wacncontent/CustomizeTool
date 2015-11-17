@@ -3,16 +3,16 @@
 	description="How to manage concurrency for the Blob, Queue, Table, and File services" 
 	services="storage" 
 	documentationCenter="" 
-	authors="tamram" 
-	manager="adinah" 
+	authors="jasonnewyork" 
+	manager="tadb" 
 	editor=""/>
 
-<tags 
-	ms.service="storage" 
-	ms.date="09/03/2015" 
+<tags
+	ms.service="storage"
+	ms.date="09/03/2015"
 	wacn.date=""/>
 
-#Managing Concurrency in Windows Azure Storage
+# Managing Concurrency in Windows Azure Storage
 
 ## Overview 
 
@@ -78,7 +78,7 @@ The following C# snippet (using the Client Storage Library 4.2.0) shows a simple
 	        throw;
 	}  
 
-The Storage Service also includes support for additional conditional headers such as **If-Modified-Since**, **If-Unmodified-Since** and **If-None-Match** as well as combinations thereof. For more information see [Specifying Conditional Headers for Blob Service Operations](http://msdn.microsoft.com/zh-cn/library/dd179371.aspx) on MSDN.  
+The Storage Service also includes support for additional conditional headers such as **If-Modified-Since**, **If-Unmodified-Since** and **If-None-Match** as well as combinations thereof. For more information see [Specifying Conditional Headers for Blob Service Operations](http://msdn.microsoft.com/zh-cn/library/azure/dd179371.aspx) on MSDN.  
 
 The following table summarizes the container operations that accept conditional headers such as **If-Match** in the request and that return an ETag value in the response.  
 
@@ -275,7 +275,7 @@ For the complete sample application referenced in this blog:
 For more information on Azure Storage see:  
 
 - [Windows Azure Storage Home Page](/home/features/storage/)
-- [Introduction to Azure Storage](//documentation/articles/storage-introduction)
+- [Introduction to Azure Storage](/documentation/articles/storage-introduction)
 - Storage Getting Started for [Blob](/documentation/articles/storage-dotnet-how-to-use-blobs), [Table](/documentation/articles/storage-dotnet-how-to-use-tables) and [Queues](/documentation/articles/storage-dotnet-how-to-use-queues)
 - Storage Architecture – [Windows Azure Storage : A Highly Available Cloud Storage Service with Strong Consistency](http://blogs.msdn.com/b/windowsazurestorage/archive/2011/11/20/windows-azure-storage-a-highly-available-cloud-storage-service-with-strong-consistency.aspx)
 

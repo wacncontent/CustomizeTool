@@ -7,9 +7,9 @@
 	manager="wpickett" 
 	editor=""/>
 
-<tags 
-	ms.service="multiple" 
-	ms.date="08/31/2015" 
+<tags
+	ms.service="multiple"
+	ms.date="08/31/2015"
 	wacn.date=""/>
 # How to Send Email Using SendGrid from Node.js
 

@@ -164,3 +164,5 @@ The code sample in this section applies parameters to an SQL INSERT statement. T
 		});		
 		connection.execSql(request);
 	}
+
+ 

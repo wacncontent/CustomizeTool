@@ -16,11 +16,11 @@
 
 ## Overview
 
-You can monitor your storage account from the Azure Management <!-- deleted by customization Portal --><!-- keep by customization: begin --> portal <!-- keep by customization: end -->. When you configure your storage account for monitoring through the portal, Azure Storage uses [Storage Analytics](http://msdn.microsoft.com/zh-cn/library/azure/hh343270.aspx) to track metrics for your account and log request data.
+You can monitor your storage account from the Azure Management Portal. When you configure your storage account for monitoring through the portal, Azure Storage uses [Storage Analytics](http://msdn.microsoft.com/zh-cn/library/azure/hh343270.aspx) to track metrics for your account and log request data.
 
 > [AZURE.NOTE] Additional costs are associated with examining monitoring data in the Azure Management Portal. For more information, see <a href="http://msdn.microsoft.com/zh-cn/library/azure/hh360997.aspx">Storage Analytics and Billing</a>. <br />
 
-> Azure File storage currently supports Storage Analytics metrics, but does not yet support logging. You can enable metrics for Azure File storage via the [Azure <!-- deleted by customization preview portal](https://ms.portal.azure.com) --><!-- keep by customization: begin --> Management portal](https://manage.windowsazure.cn) <!-- keep by customization: end -->.
+> Azure File storage currently supports Storage Analytics metrics, but does not yet support logging. You can enable metrics for Azure File storage via the [Azure preview portal](https://manage.windowsazure.cn).
 
 > For an in-depth guide on using Storage Analytics and other tools to identify, diagnose, and troubleshoot Azure Storage-related issues, see [Monitor, diagnose, and troubleshoot Windows Azure Storage](/documentation/articles/storage-monitoring-diagnosing-troubleshooting).
 

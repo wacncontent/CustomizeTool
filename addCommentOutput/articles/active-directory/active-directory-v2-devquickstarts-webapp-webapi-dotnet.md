@@ -83,7 +83,7 @@ public void ConfigureAuth(IAppBuilder app)
         new OpenIdConnectAuthenticationOptions
         {
 
-					// The `Authority` represents the v2.0 endpoint - https://login.microsoftonline.com/common/v2.0
+					// The `Authority` represents the v2.0 endpoint - <!-- deleted by customization https://login.chinacloudapi.cn/common/v2.0 --><!-- keep by customization: begin --> https://login.microsoftonline.com/common/v2.0 <!-- keep by customization: end -->
 					// The `Scope` describes the permissions that your app will need.  See /documentation/articles/active-directory-v2-scopes/
 					// In a real application you could use issuer validation for additional checks, like making sure the user's organization has signed up for your app, for instance.
 

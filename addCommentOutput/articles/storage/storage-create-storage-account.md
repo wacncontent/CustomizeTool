@@ -13,12 +13,7 @@
 	wacn.date=""/>
 
 
-<!-- deleted by customization
 # About Azure storage accounts
--->
-<!-- keep by customization: begin -->
-# About Azure Storage Accounts
-<!-- keep by customization: end -->
 
 ## Overview
 
@@ -29,15 +24,13 @@ There are two types of storage accounts:
 
 - A standard storage account includes Blob, Table, Queue, and File storage. 
 - A premium storage account currently supports Azure virtual machine disks only. See [Premium Storage: High-performance storage for Azure virtual machine workloads](/documentation/articles/storage-premium-storage-preview-portal) for an in-depth overview of Premium Storage.
-
 -->
 <!-- keep by customization: begin -->
 There is one types of storage accounts in China:
 
 - A standard storage account includes Blob, Table, and Queue storage. File storage is available by request via the [Azure Management Portal](/zh-cn/).
-<!--
-- A premium storage account currently supports Azure Virtual Machine disks only. Azure Premium Storage is available by request via the [Azure Management Portal](/zh-cn/). See [Premium Storage: High-Performance Storage for Azure Virtual Machine Workloads](/documentation/articles/storage-premium-storage-preview-portal/) for an in-depth overview of Premium Storage.
 <!-- keep by customization: end -->
+
 ## Storage account billing
 
 You are billed for Azure Storage usage based on your storage account. Storage costs are based on four factors: storage capacity, replication scheme, storage transactions, and data egress.
@@ -45,22 +38,17 @@ You are billed for Azure Storage usage based on your storage account. Storage co
 - Storage capacity refers to how much of your storage account allotment you are using to store data. The cost of simply storing your data is determined by how much data you are storing, and how it is replicated.
 - Replication determines how many copies of your data are maintained at once, and in what locations.
 - Transactions refer to all read and write operations to Azure Storage.
-- Data egress refers to data transferred out of an Azure region. When the data in your storage account is accessed by an application that is not running in the same region, whether that application is a cloud service or some other type of application, then you are charged for data egress. (For Azure services, you can take steps to group your data and services in the same <!-- deleted by customization datacenters --><!-- keep by customization: begin --> data centers <!-- keep by customization: end --> to reduce or eliminate data egress charges.)
+- Data egress refers to data transferred out of an Azure region. When the data in your storage account is accessed by an application that is not running in the same region, whether that application is a cloud service or some other type of application, then you are charged for data egress. (For Azure services, you can take steps to group your data and services in the same datacenters to reduce or eliminate data egress charges.)  
 
-The <!-- deleted by customization [Azure pricing](/home/features/#storage) --><!-- keep by customization: begin --> [Storage Pricing Details](/home/features/#storage) <!-- keep by customization: end --> page provides detailed pricing information for storage capacity, replication, and transactions. The [Data <!-- deleted by customization transfers pricing details](http:/#price/azure.microsoft.com/home/features/data-transfers/#price) --><!-- keep by customization: begin --> Transfers Pricing Details](/#pricepricing/details/data-transfers/) <!-- keep by customization: end --> page provides detailed pricing information for data egress.
+The [Azure <!-- deleted by customization pricing](/home/features//#price) --><!-- keep by customization: begin --> pricing](/home/features/#storage) <!-- keep by customization: end --> page provides detailed pricing information for storage capacity, replication, and transactions. The [Data transfers pricing <!-- deleted by customization details](/home/features/data-transfers/#price) --><!-- keep by customization: begin --> details](http:/#price/azure.microsoft.com/home/features/data-transfers/#price) <!-- keep by customization: end --> page provides detailed pricing information for data egress.
 
-<!-- deleted by customization
 For details about storage account capacity and performance targets, see [Azure Storage scalability and performance targets](http://msdn.microsoft.com/zh-cn/library/azure/dn249410.aspx).
--->
-<!-- keep by customization: begin -->
-For details about storage account capacity and performance targets, see [Azure Storage Scalability and Performance Targets](http://msdn.microsoft.com/zh-cn/library/azure/dn249410.aspx).
-<!-- keep by customization: end -->
 
 > [AZURE.NOTE] When you create an Azure virtual machine, a storage account is created for you automatically in the deployment location if you do not already have a storage account in that location. So it's not necessary to follow the steps below to create a storage account for your virtual machine disks. The storage account name will be based on the virtual machine name. See the [Azure Virtual Machines documentation](/documentation/services/virtual-machines/) for more details.
 
 ## Create a storage account
 
-1. Sign in to the <!-- deleted by customization [Azure Management --><!-- keep by customization: begin --> [Management <!-- keep by customization: end --> Portal](https://manage.windowsazure.cn).
+1. Sign in to the [Azure Management Portal](https://manage.windowsazure.cn).
 
 2. Click **Create New**, click **Storage**, and then click **Quick Create**.
 
@@ -74,7 +62,7 @@ For details about storage account capacity and performance targets, see [Azure S
 
 	See [Storage account endpoints](#storage-account-endpoints) below for details about how the storage account name will be used to address your objects in Azure Storage.
 
-4. In **Location/Affinity Group**, select a location for your storage account that is close to you or to your customers. If data in your storage account will be accessed from another Azure service, such as an Azure virtual machine or cloud service, you may want to select an affinity group from the list to group your storage account in the same <!-- deleted by customization datacenter --><!-- keep by customization: begin --> data center <!-- keep by customization: end --> with other Azure services that you are using to improve performance and lower costs.
+4. In **Location/Affinity Group**, select a location for your storage account that is close to you or to your customers. If data in your storage account will be accessed from another Azure service, such as an Azure virtual machine or cloud service, you may want to select an affinity group from the list to group your storage account in the same datacenter with other Azure services that you are using to improve performance and lower costs.
 
 	Note that you must select an affinity group when your storage account is created. You cannot move an existing account to an affinity group. For more information on affinity groups, see [Service colocation with an affinity group](#service-co-location-with-an-affinity-group) below.
 
@@ -85,7 +73,7 @@ For details about storage account capacity and performance targets, see [Azure S
 
 5. If you have more than one Azure subscription, then the **Subscription** field is displayed. In **Subscription**, enter the Azure subscription that you want to use the storage account with.
 
-6. In **Replication**, select the desired level of replication for your storage account. The recommended replication option is <!-- deleted by customization geo-redundant --><!-- keep by customization: begin --> Geo-Redundant <!-- keep by customization: end --> replication, which provides maximum durability for your data. For more details on Azure Storage replication options, see [Azure Storage <!-- deleted by customization replication](/documentation/articles/storage-redundancy) --><!-- keep by customization: begin --> Replication](/documentation/articles/storage-redundancy) <!-- keep by customization: end -->.
+6. In **Replication**, select the desired level of replication for your storage account. The recommended replication option is geo-redundant replication, which provides maximum durability for your data. For more details on Azure Storage replication options, see [Azure Storage replication](/documentation/articles/storage-redundancy).
 
 6. Click **Create Storage Account**.
 
@@ -96,7 +84,7 @@ For details about storage account capacity and performance targets, see [Azure S
 
 ### Storage account endpoints
 
-Every object that you store in Azure Storage has a unique URL address <!-- deleted by customization. The --><!-- keep by customization: begin -->; the <!-- keep by customization: end --> storage account name forms the subdomain of that address. The combination of subdomain and domain name, which is specific to each service, forms an *endpoint* for your storage account.
+Every object that you store in Azure Storage has a unique URL address. The storage account name forms the subdomain of that address. The combination of subdomain and domain name, which is specific to each service, forms an *endpoint* for your storage account.
 
 For example, if your storage account is named *mystorageaccount*, then the default endpoints for your storage account are:
 
@@ -108,17 +96,17 @@ For example, if your storage account is named *mystorageaccount*, then the defau
 
 - File service: http://*mystorageaccount*.file.core.chinacloudapi.cn
 
-You can see the endpoints for your storage account on the storage <!-- deleted by customization dashboard --><!-- keep by customization: begin --> Dashboard <!-- keep by customization: end --> in the Azure Management Portal once the account has been created.
+You can see the endpoints for your storage account on the storage dashboard in the Azure Management Portal once the account has been created.
 
 The URL for accessing an object in a storage account is built by appending the object's location in the storage account to the endpoint. For example, a blob address might have this format: http://*mystorageaccount*.blob.core.chinacloudapi.cn/*mycontainer*/*myblob*.
 
-You can also configure a custom domain name to use with your storage account. See [Configure a custom domain name for blob data in <!-- deleted by customization an Azure --><!-- keep by customization: begin --> a <!-- keep by customization: end --> storage account](/documentation/articles/storage-custom-domain-name) for details.
+You can also configure a custom domain name to use with your storage account. See [Configure a custom domain name for blob data in an Azure storage account](/documentation/articles/storage-custom-domain-name) for details.
 
 ### Service colocation with an affinity group
 
-An *affinity group* is a geographic grouping of your Azure services and VMs with your Azure storage account. An affinity group can improve service performance by locating computer workloads in the same <!-- deleted by customization datacenter --><!-- keep by customization: begin --> data center <!-- keep by customization: end --> or near the target user audience. Also, no billing charges are incurred for egress when data in a storage account is accessed from another service that is part of the same affinity group.
+An *affinity group* is a geographic grouping of your Azure services and VMs with your Azure storage account. An affinity group can improve service performance by locating computer workloads in the same datacenter or near the target user audience. Also, no billing charges are incurred for egress when data in a storage account is accessed from another service that is part of the same affinity group.
 
-> [AZURE.NOTE]  To create an affinity group, open the <b>Settings</b> area of the <!-- deleted by customization Azure --> Management Portal, click <b>Affinity Groups</b>, and then click either <b>Add an affinity group</b> or the <b>Add</b> button. You can also create and manage affinity groups by using the Azure Service Management API. See <a href="http://msdn.microsoft.com/zh-cn/library/azure/ee460798.aspx">Operations on <!-- deleted by customization affinity groups</a> --><!-- keep by customization: begin --> Affinity Groups</a> <!-- keep by customization: end --> for more information.
+> [AZURE.NOTE]  To create an affinity group, open the <b>Settings</b> area of the Azure Management Portal, click <b>Affinity Groups</b>, and then click either <b>Add an affinity group</b> or the <b>Add</b> button. You can also create and manage affinity groups by using the Azure Service Management API. See <a href="http://msdn.microsoft.com/zh-cn/library/azure/ee460798.aspx">Operations on affinity groups</a> for more information.
 
 ## View, copy, and regenerate storage access keys
 
@@ -126,13 +114,13 @@ When you create a storage account, Azure generates two 512-bit storage access ke
 
 > [AZURE.NOTE] We recommend that you avoid sharing your storage access keys with anyone else. To permit access to storage resources without giving out your access keys, you can use a *shared access signature*. A shared access signature provides access to a resource in your account for an interval that you define and with the permissions that you specify. See the [shared access signature tutorial](/documentation/articles/storage-dotnet-shared-access-signature-part-1) for more information.
 
-In the <!-- deleted by customization [Azure Management --><!-- keep by customization: begin --> [Management <!-- keep by customization: end --> Portal](http://manage.windowsazure.cn), use **Manage Keys** on the dashboard or the **Storage** page to view, copy, and regenerate the storage access keys that are used to access the Blob, Table, and Queue services.
+In the [Azure Management Portal](http://manage.windowsazure.cn), use **Manage Keys** on the dashboard or the **Storage** page to view, copy, and regenerate the storage access keys that are used to access the Blob, Table, and Queue services.
 
 ### Copy a storage access key  
 
-You can use **Manage Keys** to copy a storage access key to use in a connection string. The connection string requires the storage account name and a key to use in authentication. For information about configuring connection strings to access Azure storage services, see [Configuring <!-- deleted by customization Azure connection strings](http://msdn.microsoft.com/zh-cn/library/azure/ee758697.aspx) --><!-- keep by customization: begin --> Connection Strings](http://msdn.microsoft.com/zh-cn/library/ee758697.aspx) <!-- keep by customization: end -->.
+You can use **Manage Keys** to copy a storage access key to use in a connection string. The connection string requires the storage account name and a key to use in authentication. For information about configuring connection strings to access Azure storage services, see [Configuring Azure connection strings](http://msdn.microsoft.com/zh-cn/library/azure/ee758697.aspx).
 
-1. In the <!-- deleted by customization [Azure Management --><!-- keep by customization: begin --> [Management <!-- keep by customization: end --> Portal](http://manage.windowsazure.cn), click **Storage**, and then click the name of the storage account to open the dashboard.
+1. In the [Azure Management Portal](http://manage.windowsazure.cn), click **Storage**, and then click the name of the storage account to open the dashboard.
 
 2. Click **Manage Keys**.
 
@@ -150,13 +138,13 @@ You should change the access keys to your storage account periodically to help k
 
 **Virtual machines** - If your storage account contains any virtual machines that are running, you will have to redeploy all virtual machines after you regenerate the access keys. To avoid redeployment, shut down the virtual machines before you regenerate the access keys.
 
-**Media services** - If you have media services that are dependent on your storage account, you must <!-- deleted by customization resync --><!-- keep by customization: begin --> re-sync <!-- keep by customization: end --> the access keys with your media service after you regenerate the keys.
+**Media services** - If you have media services that are dependent on your storage account, you must resync the access keys with your media service after you regenerate the keys.
 
 **Applications** - If you have web applications or cloud services that use the storage account, you will lose the connections if you regenerate keys, unless you roll your keys. Here is the process:
 
 1. Update the connection strings in your application code to reference the secondary access key of the storage account.
 
-2. Regenerate the primary access key for your storage account. In the <!-- deleted by customization [Azure Management --><!-- keep by customization: begin --> [Management <!-- keep by customization: end --> Portal](http://manage.windowsazure.cn), from the dashboard or the **Configure** page, click **Manage Keys**. Click **Regenerate** under the primary access key, and then click **Yes** to confirm that you want to generate a new key.
+2. Regenerate the primary access key for your storage account. In the [Azure Management Portal](http://manage.windowsazure.cn), from the dashboard or the **Configure** page, click **Manage Keys**. Click **Regenerate** under the primary access key, and then click **Yes** to confirm that you want to generate a new key.
 
 3. Update the connection strings in your code to reference the new primary access key.
 
@@ -166,11 +154,11 @@ You should change the access keys to your storage account periodically to help k
 
 To remove a storage account that you are no longer using, use **Delete** on the dashboard or the **Configure** page. **Delete** deletes the entire storage account, including all of the blobs, tables, and queues in the account.
 
-> [AZURE.WARNING] It's not possible to restore a deleted storage account <!-- deleted by customization or --><!-- keep by customization: begin --> nor <!-- keep by customization: end --> retrieve any of the content that it contained before deletion. Be sure to back up anything you want to save before you delete the account. This also holds true for any resources in the <!-- deleted by customization accountâ€”once --><!-- keep by customization: begin --> account - once <!-- keep by customization: end --> you delete a blob, table, queue, or file, it is permanently deleted.
+> [AZURE.WARNING] It's not possible to restore a deleted storage account or retrieve any of the content that it contained before deletion. Be sure to back up anything you want to save before you delete the account. This also holds true for any resources in the <!-- deleted by customization accountâ€”once --><!-- keep by customization: begin --> account¡ªonce <!-- keep by customization: end --> you delete a blob, table, queue, or file, it is permanently deleted.
 >
 > If your storage account contains VHD files for an Azure virtual machine, then you must delete any images and disks that are using those VHD files before you can delete the storage account. First, stop the virtual machine if it is running, and then delete it. To delete disks, navigate to the **Disks** tab and delete any disks there. To delete images, navigate to the **Images** tab and delete any images that are stored in the account.
 
-1. In the <!-- deleted by customization [Azure Management --><!-- keep by customization: begin --> [Management <!-- keep by customization: end --> Portal](http://manage.windowsazure.cn), click **Storage**.
+1. In the [Azure Management Portal](http://manage.windowsazure.cn), click **Storage**.
 
 2. Click anywhere in the storage account entry except the name, and then click **Delete**.
 
@@ -182,6 +170,6 @@ To remove a storage account that you are no longer using, use **Delete** on the 
 
 ## Next steps
 
-- To learn more about Azure Storage, see the Azure Storage documentation on <!-- deleted by customization [Azure.com](/documentation/services/storage/) --><!-- keep by customization: begin --> [windowsazure.cn](/documentation/services/storage/) <!-- keep by customization: end --> and on [MSDN](http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx).
+- To learn more about Azure Storage, see the Azure Storage documentation on [Azure.com](/documentation/services/storage/) and on [MSDN](http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx).
 
 - Visit the [Azure Storage Team Blog](http://blogs.msdn.com/b/windowsazurestorage/).

@@ -491,6 +491,7 @@ The following example converts the user-provided parameter value to upper case.
     }
 
 
+<!-- deleted by customization
 ## uniqueString
 
 **uniqueString (stringForCreatingUniqueString, ...)**
@@ -526,6 +527,7 @@ The following example shows how to create a unique name for a storage account ba
         ...
 
 
+-->
 ## variables
 
 **variables (variableName)**

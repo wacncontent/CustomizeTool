@@ -26,36 +26,24 @@ This topic explains the self-service signup process (sometimes known as viral si
 
 ## Terms and Definitions
 
-+ **Self-service sign up**: This is the method by which a user signs up for a cloud service and has an identity automatically created for them in Azure Active Directory <!-- deleted by customization (AD) --> based on their email domain.
++ **Self-service sign up**: This is the method by which a user signs up for a cloud service and has an identity automatically created for them in Azure Active Directory (AD) based on their email domain.
 + **Unmanaged Azure tenant**: This is the directory where that identity is created. An unmanaged tenant is a directory that has no global administrator.
 + **Email-verified user**: This is a type of user account in Azure AD. A user who has an identity created automatically after signing up for a self-service offer is known as an email-verified user. An email-verified user is a regular member of a directory tagged with creationmethod=EmailVerified.
 
-<!-- deleted by customization
 ## User experience
--->
-<!-- keep by customization: begin -->
-## Customer experience
-
-### User experience
-<!-- keep by customization: end -->
 
 For example, let's say a user whose email is Dan@BellowsCollege.com receives sensitive files via email. The files have been protected by Azure Rights Management (Azure RMS). But Dan's organization, Bellows College, has not signed up for Azure RMS, nor has it deployed Active Directory RMS. In this case, Dan can sign up for a free subscription to RMS for individuals in order to read the protected files.
 
 If Dan is the first user with an email address from BellowsCollege.com to sign up for this self-service offering, then an unmanaged tenant will be created for BellowsCollege.com in Azure AD. If other users from the BellowsCollege.com domain sign up for this offering or a similar self-service offering, they will also have email-verified user accounts created in the same unmanaged tenant in Azure.
 
-<!-- deleted by customization ## --><!-- keep by customization: begin --> ### <!-- keep by customization: end --> Admin experience
+## Admin experience
 
 An admin who owns the DNS domain name of an unmanaged Azure tenant can take over or merge the tenant after proving ownership. The next sections explain the admin experience in more detail, but here's a summary:
 
 - When you take over an unmanaged Azure tenant, you simply become the global administrator of the unmanaged tenant. This is sometimes called an internal takeover.
 - When you merge an unmanaged Azure tenant, you add the DNS domain name of the unmanaged tenant to your managed Azure tenant and a mapping of users-to-resources is created so users can continue to access services without interruption. This is sometimes called an external takeover.
 
-<!-- deleted by customization
 ## What gets created in Azure Active Directory?
--->
-<!-- keep by customization: begin -->
-### What gets created in the Windows Azure Directory?
-<!-- keep by customization: end -->
 
 #### Tenant
 
@@ -109,10 +97,13 @@ Let's say an IT administrator from Bellows College discovers that users from the
 In an external takeover, you already have a managed tenant and you want all users and groups from an unmanaged tenant to join that managed tenant, rather than own two separate tenants.
 
 As an admin of a managed tenant, you add a domain, and that domain happens to have an unmanaged tenant associated with it.
+
 For example, let's say you are an IT administrator and you already have a managed tenant for Contoso.com, a domain name that is registered to your organization. You discover that users from your organization have performed self-service sign up for an offering by using email domain name user@contoso.co.uk, which is another domain name that your organization owns. Those users currently have accounts in an unmanaged tenant for contoso.co.uk.
 
 You don't want to manage two separate tenants, so you merge the unmanaged tenant for contoso.co.uk into your existing IT managed tenant for contoso.com.
+
 External takeover follows the same DNS validation process as internal takeover.  Difference being: users and services are remapped to the IT managed tenant.
+
 #### What's the impact of performing an external takeover?
 
 With an external takeover, a mapping of users-to-resources is created so users can continue to access services without interruption. Many applications, including RMS for individuals, handle the mapping of users-to-resources well, and users can continue to access those services without change. If an application does not handle the mapping of users-to-resources effectively, external takeover may be explicitly blocked to prevent users from a poor experience.
@@ -166,6 +157,7 @@ For example:
 		import-module MSOnline
 		$msolcred = get-credential
 		connect-msolservice -credential $msolcred
+
 2. Get a list of domains:
 
 	Get-MsolDomain

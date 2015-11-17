@@ -18,7 +18,7 @@ This topic shows you how to permit a service principal (such as an automated pro
 
 It shows how to authenticate with either a user name and password or a certificate.
 
-You can use either Azure PowerShell or Azure CLI for Mac, Linux and Windows. If you do not have Azure PowerShell installed, see [How to install and configure Azure PowerShell](./powershell-install-configure.md). If you do not have Azure CLI installed, see [Install and Configure the Azure CLI](/documentation/articles/xplat-cli-install).
+You can use either Azure PowerShell or Azure CLI for Mac, Linux and Windows. If you do not have Azure PowerShell installed, see [How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure). If you do not have Azure CLI installed, see [Install and Configure the Azure CLI](/documentation/articles/xplat-cli-install).
 
 ## Concepts
 1. Azure Active Directory (AAD) - an identity and access management service for the cloud. For more information, see [What is Azure active Directory](/documentation/articles/active-directory-whatis)
@@ -289,7 +289,7 @@ You will start by creating a service principal. To do this we must use create an
 ## Next Steps
   
 - For an overivew of role-based access control, see [Managing and Auditing Access to Resources](/documentation/articles/resource-group-rbac)  
-- To learn about using the portal with service principals, see [Create a new Azure Service Principal using the Azure Management Portal](./resource-group-create-service-principal-portal.md)  
+- To learn about using the portal with service principals, see [Create a new Azure Service Principal using the Azure Management Portal](/documentation/articles/resource-group-create-service-principal-portal)  
 - For guidance on implementing security with Azure Resource Manager, see [Security considerations for Azure Resource Manager](/documentation/articles/best-practices-resource-manager-security)
 
 

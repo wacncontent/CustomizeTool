@@ -1,21 +1,20 @@
-<properties 
+<properties
 	pageTitle="Azure AD terminology | Windows Azure"
-	description="Terms and definitions related to Azure AD." 
-	services="active-directory" 
-	documentationCenter="" 
+	description="Terms and definitions related to Azure Active Directory."
+	services="active-directory"
+	documentationCenter=""
 	authors="curtand"
-	writer="Justinha" 
 	manager="stevenpo"
 	editor=""/>
 
-<tags 
-	ms.service="active-directory" 
+<tags
+	ms.service="active-directory"
 	ms.date="09/21/2015"
 	wacn.date=""/>
 
 # Azure AD terminology
 
-Windows Azure Active Directory (Azure AD) has a unique set of terminology that relate to cloud, hybrid and on-premises scenarios. The following table defines these terms to provide you with a basic understanding for how they are used.
+Windows Azure Active Directory (Azure AD) has a unique set of terminology that relate to cloud, hybrid, and on-premises scenarios. The following table defines these terms to provide you with a basic understanding for how they are used.
 
  Term  | Definition
 ------------- | -------------
@@ -33,11 +32,9 @@ Microsoft Online Services Sign-In Assistant | The Sign In Assistant is an applic
 Multi-factor authentication (also known as two-factor authentication or 2FA) | Multi-factor authentication adds a critical second layer of security to user sign-ins and transactions. When you enable multi-factor authentication for a user account in Azure AD, that user must then use their phone, in addition to their standard password credentials as their additional security verification method each time they need to sign in and use any of the Microsoft cloud services that your organization subscribes to.
 Single sign on | Used to provide users with a more seamless authentication experience as they access Microsoft cloud services while logged on to the corporate network. In order to set up single sign-on, organizations need to deploy a security token service on premises. Once single sign-on has been set up, users can use their Active Directory corporate credentials (user name and password) to access the services in the cloud and their existing on-premises resources.
 User ID | A user ID is a unique identifier that a user provides on the Sign In page to access the Microsoft cloud services that your organization has subscribed to.
-Work or school account | A user account assigned by an organization (work, school, non-profit) to one of their constituents (an employee, student, customer) that provides sign in access to one or more of the organization’s Microsoft cloud service subscriptions, such as Office 365 or Azure. These accounts are stored in an organization’s Azure AD directory, and are typically deleted when the user leaves the organization. Work or school accounts differ from Microsoft accounts in that they are created and managed by admins in the organization, not by the user. 
+Work or school account | A user account assigned by an organization (work, school, non-profit) to one of their constituents (an employee, student, customer) that provides sign in access to one or more of the organization’s Microsoft cloud service subscriptions, such as Office 365 or Azure. These accounts are stored in an organization’s Azure AD directory, and are typically deleted when the user leaves the organization. Work or school accounts differ from Microsoft accounts in that they are created and managed by admins in the organization, not by the user.
 
 ## What's next
 - [Sign up for Azure as an organization](/documentation/articles/sign-up-organization)
 - [How Azure subscriptions are associated with Azure AD](/documentation/articles/active-directory-how-subscriptions-associated-directory)
 - [Azure AD service limits and restrictions](/documentation/articles/active-directory-service-limits-restrictions)
-
-

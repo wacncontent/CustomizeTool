@@ -43,7 +43,7 @@ Azure Service Management API, see the [Create Storage Account](http://msdn.micro
 
     ![Create Storage Account][create-new-storage-account]
 
-4. In the **URL** field, type a subdomain name. This entry can contain from 3-24 lowercase letters and numbers.
+<!-- deleted by customization 4 --><!-- keep by customization: begin --> 3 <!-- keep by customization: end -->. In the **URL** field, type a subdomain name. This entry can contain from 3-24 lowercase letters and numbers.
 
     This value becomes the host name within the URI that is used to
     address Blob, Queue, or Table resources for the subscription. To
@@ -59,7 +59,7 @@ Azure Service Management API, see the [Create Storage Account](http://msdn.micro
 
 	This value is also used as the name of this storage account in the portal, or when accessing this account programmatically.
 
-5.  From the **Region/Affinity Group** drop-down list, select a region or affinity group for the storage account. Select an affinity group instead of a region if you want your storage services to be in the same data center with other Windows Azure services that you are using. This can improve performance, and no charges are incurred for egress.  
+<!-- deleted by customization 5 --><!-- keep by customization: begin --> 4 <!-- keep by customization: end -->.  From the **Region/Affinity Group** drop-down list, select a region or affinity group for the storage account. Select an affinity group instead of a region if you want your storage services to be in the same data center with other Windows Azure services that you are using. This can improve performance, and no charges are incurred for egress.
 
     **Note:** To create an affinity group, open the **Settings** area of the Management Portal, click **Affinity Groups**, and then click either **Add an affinity group** or **Add**. You can also create and manage affinity groups using the Windows Azure Service Management API. For more information, see [Operations on Affinity Groups].
 
@@ -80,7 +80,7 @@ when the cached content time-to-live period expires.
 
 1. In the [Azure Management Portal], in the navigation pane, click **CDN**.
 
-2. On the ribbon, click **New**. In the **New** dialog, select **Azure Websites**, then **CDN**, then **Quick Create**.
+2. On the ribbon, click **New**. In the **New** dialog, select **App Services**, then **CDN**, then **Quick Create**.
 
 3. In the **Origin Domain** dropdown, select the storage account you created in the previous section from the list of your available storage accounts. 
 
@@ -123,7 +123,7 @@ expires, the CDN will check to see whether the CDN endpoint is still
 valid and the object still anonymously accessible. If it is not, then
 the object will no longer be cached.
 
-The ability to immediately purge content is currently not supported on Azure Management Portal. Please contact [Azure support](http://azure.microsoft.com/support/options/)  if you need to immediately purge content. 
+The ability to immediately purge content is currently not supported on Azure Management Portal. Please contact [Azure support](/support/contact/)  if you need to immediately purge content. 
 
 ## Additional resources
 
@@ -140,6 +140,8 @@ The ability to immediately purge content is currently not supported on Azure Man
 [Overview of the Azure CDN]: /documentation/articles/cdn-overview
 [How to: Manage Storage Accounts for an Azure Subscription]: https://msdn.microsoft.com/zh-cn/library/azure/hh531793.aspx
 [How to Map CDN Content to a Custom Domain]: /documentation/articles/cdn-map-content-to-custom-domain
+
+
 [create-new-storage-account]: ./media/cdn-create-a-storage-account-with-cdn/CDN_CreateNewStorageAcct.png
 
  

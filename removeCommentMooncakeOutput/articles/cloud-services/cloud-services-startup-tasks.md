@@ -6,11 +6,10 @@ documentationCenter=""
 authors="Thraka" 
 manager="timlt" 
 editor=""/>
-<tags 
-ms.service="cloud-services" 
-
-ms.date="09/08/2015" 
-wacn.date=""/>
+<tags
+	ms.service="cloud-services"
+	ms.date="09/08/2015"
+	wacn.date=""/>
 
 
 
@@ -157,7 +156,7 @@ Learn how to perform some [common startup tasks](/documentation/articles/cloud-s
 [Package](/documentation/articles/cloud-services-model-and-package) your Cloud Service.  
 
 
-[ServiceDefinition.csdef]: /documentation/articles/cloud-services-model-and-package/#csdef
+[ServiceDefinition.csdef]: /documentation/articles/cloud-services-model-and-package#csdef
 [Task]: https://msdn.microsoft.com/zh-cn/library/azure/gg557552.aspx#Task
 [Startup]: https://msdn.microsoft.com/zh-cn/library/azure/gg557552.aspx#Startup
 [Runtime]: https://msdn.microsoft.com/zh-cn/library/azure/gg557552.aspx#Runtime

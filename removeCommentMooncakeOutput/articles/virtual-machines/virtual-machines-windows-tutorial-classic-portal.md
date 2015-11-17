@@ -3,7 +3,7 @@
 	description="Create a Windows virtual machine in the Azure Management Portal."
 	services="virtual-machines"
 	documentationCenter=""
-	authors="KBDAzure"
+	authors="cynthn"
 	manager="timlt"
 	editor=""
 	tags="azure-service-management"/>
@@ -25,6 +25,7 @@ This tutorial shows you how easy it is to create an Azure virtual machine (VM) i
 
 You can also create VMs using [your own images](/documentation/articles/virtual-machines-create-upload-vhd-windows-server). To learn about this and other methods, see [Different ways to create a Windows virtual machine](/documentation/articles/virtual-machines-windows-choices-create-vm).
 
+[AZURE.INCLUDE [free-trial-note](../includes/free-trial-note.md)]
 
 ## <a id="createvirtualmachine"> </a>How to create the virtual machine
 

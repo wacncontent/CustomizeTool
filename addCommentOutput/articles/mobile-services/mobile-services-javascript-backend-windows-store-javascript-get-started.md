@@ -15,25 +15,15 @@
 # Get started with Mobile Services
 
 [AZURE.INCLUDE [mobile-services-selector-get-started](../includes/mobile-services-selector-get-started.md)]
-<!-- deleted by customization
 &nbsp;
 
 [AZURE.INCLUDE [mobile-services-hero-slug](../includes/mobile-services-hero-slug.md)]
 
 This tutorial shows you how to add a cloud-based backend service to a Windows Store JavaScript app using Azure Mobile Services. In this tutorial, you will create both a new mobile service and a simple *To do list* app that stores app data in the new mobile service. The mobile service that you will create uses JavaScript for server-side business logic. 
--->
-<!-- keep by customization: begin -->
-
-This tutorial shows you how to add a cloud-based backend service to a Windows Store JavaScript app using Azure Mobile Services.
-
-In this tutorial, you will create both a new mobile service and a simple *To do list* app that stores app data in the new mobile service. The mobile service that you will create uses JavaScript for server-side business logic. To create a mobile service that lets you write your server-side business logic in the supported .NET languages using Visual Studio, see the [.NET backend version of this topic](/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started).
-
-[WACOM.INCLUDE [mobile-services-windows-universal-get-started](../includes/mobile-services-windows-universal-get-started.md)]
-<!-- keep by customization: end -->
 
 To complete this tutorial, you need the following:
 
-* An active Azure account. If you don't have an account, you can create a trial account in just a couple of minutes. For details, see [Azure <!-- deleted by customization Trial](/pricing/1rmb-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fdocumentation%2Farticles%2Fmobile-services-javascript-backend-windows-store-javascript-get-started%2F) --><!-- keep by customization: begin --> Trial](http://www.windowsazure.cn/zh-cn/pricing/1rmb-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fwww.windowsazure.cn%2Fzh-cn%2Fdocumentation%2Farticles%2Fmobile-services-javascript-backend-windows-store-javascript-get-started%2F) <!-- keep by customization: end -->.
+* An active Azure account. If you don't have an account, you can create a trial account in just a couple of minutes. For details, see [Azure Trial](/pricing/1rmb-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fdocumentation%2Farticles%2Fmobile-services-javascript-backend-windows-store-javascript-get-started%2F).
 * [Visual Studio 2013 Express for Windows]
 
 ## Create a new mobile service
@@ -46,16 +36,8 @@ Once you have created your mobile service, you can follow an easy quickstart in 
 
 1.  In the Management Portal, click **Mobile Services**, and then click the mobile service that you just created.
 
-<!-- deleted by customization
 
 2. In the quickstart tab, click **Windows** under **Choose platform** and expand **Create a new Windows Store app**.
--->
-<!-- keep by customization: begin -->
-   
-2. In the quickstart tab, click **Windows** under **Choose platform** and expand **Create a new Windows Store app**.
-
-   	![](./media/mobile-services-javascript-backend-windows-store-javascript-get-started/mobile-portal-quickstart.png)
-<!-- keep by customization: end -->
 
 3. If you haven't already done so, download and install [Visual Studio 2013][Visual Studio 2013 Express for Windows] on your local computer or virtual machine.
 
@@ -79,18 +61,16 @@ The final stage of this tutorial is to build and run your new app.
 
 4. (Optional) Run the app again, and notice that data saved from the previous step is loaded from the mobile service after the app starts.
  
-<!-- deleted by customization 4 --><!-- keep by customization: begin --> 5 <!-- keep by customization: end -->. Back in the Management Portal, click the **Data** tab and then click the **TodoItems** table.
+4. Back in the Management Portal, click the **Data** tab and then click the **TodoItems** table.
 
    	This lets you browse the data inserted by the app into the table.
 
-<!-- deleted by customization >[AZURE.NOTE] You --><!-- keep by customization: begin --> >[AZURE.NOTE]You <!-- keep by customization: end --> can review the code that accesses your mobile service to query and insert data, which is found in the default.js file.
-<!-- deleted by customization
+>[AZURE.NOTE] You can review the code that accesses your mobile service to query and insert data, which is found in the default.js file.
 
 ## Next Steps
 Now that you have completed the quickstart, learn how to work with the [Mobile Services client for HTML/JavaScript](/documentation/articles/mobile-services-html-how-to-use-client-library). 
 
 [AZURE.INCLUDE [app-service-disqus-feedback-slug](../includes/app-service-disqus-feedback-slug.md)]
--->
 
 <!-- Anchors. -->
 [Getting started with Mobile Services]:#getting-started
@@ -101,11 +81,6 @@ Now that you have completed the quickstart, learn how to work with the [Mobile S
 <!-- Images. -->
 
 <!-- URLs. -->
-<!-- keep by customization: begin -->
-[Get started with data]: /documentation/articles/mobile-services-javascript-backend-windows-universal-javascript-get-started-data
-[Get started with authentication]: /documentation/articles/mobile-services-windows-store-javascript-get-started-users
-[Get started with push notifications]: /documentation/articles/mobile-services-javascript-backend-windows-store-javascript-get-started-push
-<!-- keep by customization: end -->
 [Visual Studio 2013 Express for Windows]: https://www.visualstudio.com/downloads/download-visual-studio-vs
 [Mobile Services SDK]: http://go.microsoft.com/fwlink/?LinkId=257545
 [Management Portal]: https://manage.windowsazure.cn/

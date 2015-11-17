@@ -17,7 +17,12 @@
 
 A "LAMP" stack is a group of open source software that is typically installed together to enable a server to host dynamic websites and web applications. This term is actually an acronym that represents the Linux operating system with the Apache web server. The site data is stored in a MySQL database, and dynamic content is processed by PHP.  
 
+<!-- deleted by customization
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-both-include.md)]
+-->
+<!-- keep by customization: begin -->
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-include.md)] This article covers creating a resource with the Resource Manager deployment model or the classic deployment model.
+<!-- keep by customization: end -->
 
 
 In this guide, we'll get a LAMP stack installed on a Linux image and deploy it on Windows Azure.  
@@ -28,7 +33,12 @@ You will learn:
 -	How to prepare the virtual machine for the LAMP stack.
 -	How to install software that is needed by your LAMP server on the virtual machine.
 
-It is assumed that the reader already has an Azure subscription.  If not you can sign up for a trial at [http://azure.microsoft.com](http://azure.microsoft.com). If you have an MSDN subscription, see [Windows Azure Special Pricing: MSDN, MPN, and Bizspark Benefits](http://azure.microsoft.com/pricing/member-offers/msdn-benefits/?c=14-39). To learn more about Azure, see [What is Azure?](http://azure.microsoft.com/overview/what-is-azure/)
+<!-- deleted by customization
+It is assumed that the reader already has an Azure subscription.  If not you can sign up for a trial at [http://azure.microsoft.com](http://azure.microsoft.com). If you have an MSDN subscription, see [Windows Azure Special Pricing: MSDN, MPN, and Bizspark Benefits](/pricing/member-offers/msdn-benefits/?c=14-39). To learn more about Azure, see [What is Azure?](http://azure.microsoft.com/overview/what-is-azure/)
+-->
+<!-- keep by customization: begin -->
+It is assumed that the reader already has an Azure subscription.  If not you can sign up for a trial at [http://www.windowsazure.cn/](/pricing/1rmb-trial/). 
+<!-- keep by customization: end -->
 
 In addition to this topic, if you already have a virtual machine and are just looking for the basics of installing a  LAMP stack on different Linux distributions, refer to [Install the LAMP Stack on a Linux virtual machine in Azure](/documentation/articles/virtual-machines-linux-install-lamp-stack).
 
@@ -263,7 +273,8 @@ Answer “y” to download software packages. Then answer “y” to Importing G
 	warning: rpmts_HdrFromFdno: Header V3 DSA signature: NOKEY, key ID e8562897
 	updates/gpgkey                                                                                                                                                                       | 1.5 kB     00:00
 	Importing GPG key 0xE8562897 "CentOS-5 Key (CentOS 5 Official Signing Key) <centos-5-key@centos.org>" from /etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-5
-	Is this ok [y/N]: /documentation/articles/y
+	Is this ok [y/N]: y
+
 ###Debian, Ubuntu base
 This has been tested on Ubuntu 14.04.  
 

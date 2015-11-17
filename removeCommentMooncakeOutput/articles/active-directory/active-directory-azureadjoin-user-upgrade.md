@@ -7,9 +7,9 @@
 	manager="stevenpo" 
 	editor=""/>
 
-<tags 
-	ms.service="active-directory" 
-	ms.date="08/02/2015" 
+<tags
+	ms.service="active-directory"
+	ms.date="09/21/2015"
 	wacn.date=""/>
 
 # Set up a Windows 10 device with Azure AD from Settings
@@ -35,6 +35,6 @@ To join to Azure AD from the settings menu
 
 
 ## Additional Information
-* [Extending cloud capabilities to Windows 10 devices through Azure Active Directory Join](/documentation/articles/active-directory-azureadjoin-user-upgrade)
+* [Extending cloud capabilities to Windows 10 devices through Azure Active Directory Join](/documentation/articles/active-directory-azureadjoin-overview)
 * [Learn about usage scenarios and deployment considerations for Azure AD Join](/documentation/articles/active-directory-azureadjoin-deployment-aadjoindirect)
 * [Set up Azure AD Join](/documentation/articles/active-directory-azureadjoin-setup)

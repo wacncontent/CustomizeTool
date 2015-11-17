@@ -9,16 +9,19 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.date="07/28/2015"
+	ms.date="10/07/2015"
 	wacn.date=""/>
 
 # <a name="getting-started"> </a>Get started with Mobile Services
 
 [AZURE.INCLUDE [mobile-services-selector-get-started](../includes/mobile-services-selector-get-started.md)]
+&nbsp;
+
+>[AZURE.TIP] If you are new to mobile development using Windows Azure, [get started with Azure Mobile Apps](/documentation/articles/app-service-mobile-dotnet-backend-ios-get-started-preview) instead of Azure Mobile Services; this gives you [additional advantages](/documentation/articles/app-service-mobile-value-prop-migration-from-mobile-services-preview).
 
 This tutorial shows you how to add a cloud-based backend service to an iOS app using Azure Mobile Services. In this tutorial, you will create both a new mobile service and a simple _To do list_ app that stores app data in the new mobile service. The mobile service uses .NET and Visual Studio for server-side business logic. To create a mobile service with server-side business logic in JavaScript, see the [JavaScript backend version] of this topic.
 
-> [AZURE.NOTE] To complete this tutorial, you need an Azure account. If you don't have an account, you can sign up for an Azure trial and get [free mobile services that you can keep using even after your trial ends](/home/features/mobile-services/#price).  For details, see [Azure Trial](/pricing/1rmb-trial/).
+> [AZURE.NOTE] To complete this tutorial, you need an Azure account. If you don't have an account, you can sign up for an Azure trial and get [free mobile services that you can keep using even after your trial ends](/home/features/mobile-services/#price).  For details, see [Azure Trial](/pricing/1rmb-trial/?WT.mc_id=AE564AB28&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fdocumentation%2Farticles%2Fmobile-services-dotnet-backend-ios-get-started%2F).
 
 ## <a name="create-new-service"> </a>Create a new mobile service
 
@@ -54,9 +57,6 @@ This shows how to run your new client app against the mobile service running in 
 
 Learn how to perform additional important tasks in Mobile Services:
 
-* [Add mobile services to an existing app]
-  <br/>Learn more about storing and querying data using Mobile Services.
-
 * [Get started with offline data sync]
   <br/>Learn how to use offline data sync to make your app responsive and robust.
 
@@ -68,6 +68,8 @@ Learn how to perform additional important tasks in Mobile Services:
 
 * [Troubleshoot Mobile Services .NET backend]
   <br/> Learn how to diagnose and fix issues that can arise with a Mobile Services .NET backend.
+
+[AZURE.INCLUDE [app-service-disqus-feedback-slug](../includes/app-service-disqus-feedback-slug.md)]
 
 <!-- Anchors. -->
 [Getting started with Mobile Services]:#getting-started
@@ -89,7 +91,6 @@ Learn how to perform additional important tasks in Mobile Services:
 
 
 <!-- URLs. -->
-[Add mobile services to an existing app]: /documentation/articles/mobile-services-dotnet-backend-ios-get-started-data
 [Get started with offline data sync]: /documentation/articles/mobile-services-ios-get-started-offline-data
 [Add authentication to an existing app]: /documentation/articles/mobile-services-dotnet-backend-ios-get-started-users
 [Add push notifications to an existing app]: /documentation/articles/mobile-services-dotnet-backend-ios-get-started-push

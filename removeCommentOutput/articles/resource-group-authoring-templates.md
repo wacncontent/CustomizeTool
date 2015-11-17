@@ -85,7 +85,7 @@ The following example shows how to use several of the functions when constructin
     }
 
 For now, you know enough about expressions and functions to understand the sections of the template. For more detailed information about all of the template functions, including parameters and the format of returned values, 
-see [Azure Resource Manager template functions](./resource-group-template-functions.md). 
+see [Azure Resource Manager template functions](/documentation/articles/resource-group-template-functions). 
 
 
 ## Parameters
@@ -287,7 +287,7 @@ The following example shows a **Microsoft.Web/serverfarms** resource and a **Mic
                   "type": "Extensions",
                   "name": "MSDeploy",
                   "properties": {
-                    "packageUri": "https://auxmktplceprod.blob.core.chinacloudapi.cn/packages/StarterSite-modified.zip",
+                    "packageUri": "https://auxmktplceprod.blob.core.windows.net/packages/StarterSite-modified.zip",
                     "dbType": "None",
                     "connectionString": "",
                     "setParameters": {
@@ -401,7 +401,7 @@ The following template deploys a web app and provisions it with code from a .zip
                  "[resourceId('Microsoft.Web/sites', parameters('siteName'))]"
                ],
                "properties": {
-                 "packageUri": "https://auxmktplceprod.blob.core.chinacloudapi.cn/packages/StarterSite-modified.zip",
+                 "packageUri": "https://auxmktplceprod.blob.core.windows.net/packages/StarterSite-modified.zip",
                  "dbType": "None",
                  "connectionString": "",
                  "setParameters": {

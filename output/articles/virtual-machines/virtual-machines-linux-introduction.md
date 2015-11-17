@@ -14,6 +14,10 @@
 	wacn.date=""/>
 
 #Introduction to Linux on Azure
+<!-- keep by customization: begin -->
+
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-include.md)]
+<!-- keep by customization: end -->
 
 This topic provides an overview of some aspects of using Linux virtual machines in the Azure cloud. Deploying a Linux virtual machine is a straightforward process using an image from the gallery.
 

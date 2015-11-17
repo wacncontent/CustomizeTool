@@ -25,7 +25,7 @@
 
 		# rcmysql stop
 
-	5. Warning! After installation, the MySQL root password is empty by default. It's recommended that you run **mysql_secure_installation**, a script that helps secure MySQL. When running **mysql_secure_installation**, you towill be prompted change the MySQL root password, remove anonymous user accounts, disable remote root logins, remove test databases, and reload the privileges table. It is recommended that you answer yes to all of these options and change the root password.Run the following command to execute the script: 
+	5. Warning! After installation, the MySQL root password is empty by default. It's recommended that you run **mysql\_secure\_installation**, a script that helps secure MySQL. When running **mysql\_secure\_installation**, you will be prompted to change the MySQL root password, remove anonymous user accounts, disable remote root logins, remove test databases, and reload the privileges table. It is recommended that you answer yes to all of these options and change the root password. Run the following command to execute the script: 
 
 		$ mysql_secure_installation
 
@@ -72,7 +72,7 @@
 
 		mysql -u mysqluser -p -h <yourservicename>.chinacloudapp.cn
 
-	For example, using the virual machine we created in this tutorial, the command:would be 
+	For example, using the virual machine we created in this tutorial, the command would be:
 
 		mysql -u mysqluser -p -h testlinuxvm.chinacloudapp.cn
 

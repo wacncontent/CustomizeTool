@@ -42,6 +42,7 @@ After you find the name of the disk, you're ready to detach the disk:
 The disk remains in storage but is no longer attached to a virtual machine.
 
 
+
 [attachdisk]:/manage/windows/how-to-guides/attach-a-disk/
 
 [About disks and images]:http://go.microsoft.com/fwlink/p/?LinkId=263439

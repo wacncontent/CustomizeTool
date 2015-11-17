@@ -7,10 +7,9 @@
 	manager="carolz" 
 	editor=""/>
 
-<tags 
-	ms.service="storage" 
-
-	ms.date="09/03/2015" 
+<tags
+	ms.service="storage"
+	ms.date="09/03/2015"
 	wacn.date=""/>
 
 # How to use Blob Storage from Xamarin (Preview)

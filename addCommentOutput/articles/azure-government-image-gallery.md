@@ -89,27 +89,15 @@ The below resources should provide more information on deploying from the image 
 
 ###Other Resources: 
 
-<!-- deleted by customization
 - [Deploying a Windows Virtual Machine](/documentation/articles/virtual-machines-windows-tutorial)
 
 - [Deploying a Linux Virtual Machine](/documentation/articles/virtual-machines-linux-tutorial)
--->
-<!-- keep by customization: begin -->
-- [Deploying a Windows Virtual Machine](/documentation/articles/virtual-machines/virtual-machines-windows-tutorial)
-
-- [Deploying a Linux Virtual Machine](/documentation/articles/virtual-machines/virtual-machines-linux-tutorial)
-<!-- keep by customization: end -->
 
 - [Virtual Machine FAQ](http://msdn.microsoft.com/zh-cn/library/azure/dn683781.aspx)
 
 - [Create and upload your own VHD](/documentation/articles/virtual-machines-create-upload-vhd-windows-server)
 
-<!-- deleted by customization
 - [Capture Linux VM Image](/documentation/articles/virtual-machines-linux-capture-image)
--->
-<!-- keep by customization: begin -->
-- [Capture Linux VM Image](/documentation/articles/virtual-machines/virtual-machines-linux-capture-image)
-<!-- keep by customization: end -->
 
 <!--- **<A href="/azure-government-service-description">Azure Government Service Descriptions</a>**-->
 
@@ -122,6 +110,6 @@ The below resources should provide more information on deploying from the image 
 [2]: ./media/azure-government-overview/azure-gov-overview.jpg
 
 <!--Link references-->
-[Link 1 to another <!-- deleted by customization azure.microsoft.com --><!-- keep by customization: begin --> www.windowsazure.cn <!-- keep by customization: end --> documentation topic]: /documentation/articles/virtual-machines-windows-tutorial
-[Link 2 to another <!-- deleted by customization azure.microsoft.com --><!-- keep by customization: begin --> www.windowsazure.cn <!-- keep by customization: end --> documentation topic]: /documentation/articles/web-sites-custom-domain-name
-[Link 3 to another <!-- deleted by customization azure.microsoft.com --><!-- keep by customization: begin --> www.windowsazure.cn <!-- keep by customization: end --> documentation topic]: /documentation/articles/storage-whatis-account
+[Link 1 to another azure.microsoft.com documentation topic]: /documentation/articles/virtual-machines-windows-tutorial
+[Link 2 to another azure.microsoft.com documentation topic]: /documentation/articles/web-sites-custom-domain-name
+[Link 3 to another azure.microsoft.com documentation topic]: /documentation/articles/storage-whatis-account

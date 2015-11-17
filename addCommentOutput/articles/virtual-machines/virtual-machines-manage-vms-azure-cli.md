@@ -13,21 +13,16 @@
 	ms.date="10/07/2015"
 	wacn.date=""/>
 
-# Manage your <!-- deleted by customization Resource Manager virtual machines by --><!-- keep by customization: begin --> Virtual Machines <!-- keep by customization: end --> using the Azure CLI for Mac, Linux, and Windows
-
+# Manage your Resource Manager virtual machines by using the Azure CLI for Mac, Linux, and Windows
 <!-- deleted by customization
 
+
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] [Resource Manager deployment model](/documentation/articles/virtual-machines-how-to-automate-azure-resource-manager).
+-->
 
 Many tasks you do each day to manage your VMs can by automated by using the Azure Command-Line Interface (CLI) for Mac, Linux, and Windows. This article gives you example commands for simpler tasks, and links to articles that show the commands for more complex tasks.
 
 >[AZURE.NOTE] If you haven't installed the Azure CLI yet, you can get instructions [here](/documentation/articles/xplat-cli-install) and learn how to connect to your subscription [here](/documentation/articles/xplat-cli-connect). You also need to configure the CLI in Azure Resource Manager (arm) mode.
--->
-<!-- keep by customization: begin -->
-Many tasks you do each day to manage your VMs can by automated by using the Azure CLI. This article gives you example commands for simpler tasks, and links to articles that show the commands for more complex tasks.
-
->[AZURE.NOTE] If you haven't installed and configured the Azure CLI yet, you can get instructions [here](/documentation/articles/xplat-cli-install). If you want a quickstart for the same tasks in PowerShell, see [Manage your VMs using Azure PowerShell](/documentation/articles/virtual-machines-manage-vms-powershell).
-<!-- keep by customization: end -->
 
 ## How to Use the Example Commands
 You'll need to replace some of the text in the commands with text that's appropriate for your environment. The < and > symbols indicate text you need to replace. When you replace the text, remove the symbols but leave the quote marks in place.
@@ -88,21 +83,8 @@ Of course, if you already have those values you can find the proper switches to 
 
 ## Next steps
 
-<!-- deleted by customization
 * For more examples of Azure CLI usage with the Azure Resource Manager mode, see [Using the Windows Azure CLI for Mac, Linux, and Windows with Azure Resource Management](/documentation/articles/xplat-cli-azure-resource-manager).
 
+<!-- deleted by customization
 * To learn more about Azure resources and their concepts, see [Azure Resource Manager Overview](/documentation/articles/resource-group-overview).
-
 -->
-<!-- keep by customization: begin -->
-For far more examples of Azure CLI usage with the **arm** mode, see [Using the Windows Azure CLI for Mac, Linux, and Windows with Azure Resource Management](/documentation/articles/xplat-cli-resource-manager). To learn more about Azure resources and their concepts, see [Azure Resource Manager Overview](/documentation/articles/resource-group-overview).
-
-
-
-
-
-
-
-
-
-<!-- keep by customization: end -->

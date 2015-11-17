@@ -22,7 +22,7 @@ the subscription or as a tenant.
 This topic shows you how to create a new service principal using the Azure Management Portal. Currently, you must use the Windows Azure Management Portal to create a new service principal. This ability will be added to the Azure preview portal in a later release.
 
 ## Concepts
-1. Azure Active Directory (AAD) - an identity and access management service build for the cloud. For more details see: [What is Azure active <!-- deleted by customization Directory](./active-directory-whatis/) --><!-- keep by customization: begin --> Directory](/documentation/articles/active-directory-whatis) <!-- keep by customization: end -->
+1. Azure Active Directory (AAD) - an identity and access management service build for the cloud. For more details see: [What is Azure active Directory](/documentation/articles/active-directory-whatis)
 2. Service Principal - an instance of an application in a directory.
 3. AD Application - a directory record in AAD that identifies an application to AAD. For more details see [Basics of Authentication in Azure AD](https://msdn.microsoft.com/zh-cn/library/azure/874839d9-6de6-43aa-9a5c-613b0c93247e#BKMK_Auth).
 
@@ -95,7 +95,7 @@ Your application is now ready and the service principal created on your tenant. 
 ## Next Steps
 
 - To learn about specifying security policies, see [Managing and Auditing Access to Resources](/documentation/articles/resource-group-rbac)  
-- For the steps to permit a service principal to access resources, see [Authenticating a Service Principal with Azure Resource <!-- deleted by customization Manager](./resource-group-authenticate-service-principal.md) --><!-- keep by customization: begin --> Manager](/documentation/articles/resource-group-authenticate-service-principal) <!-- keep by customization: end -->
+- For the steps to permit a service principal to access resources, see [Authenticating a Service Principal with Azure Resource Manager](/documentation/articles/resource-group-authenticate-service-principal)  
 - For an overview of role-based access control, see [Role-based access control in the Windows Azure Management Portal](/documentation/articles/role-based-access-control-configure)
 - For guidance on implementing security with Azure Resource Manager, see [Security considerations for Azure Resource Manager](/documentation/articles/best-practices-resource-manager-security)
 

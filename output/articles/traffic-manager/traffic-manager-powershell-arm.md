@@ -28,7 +28,7 @@ Azure Traffic Manager is configured using a collection of settings called a Traf
 
 In ARM, each Traffic Manager profile is represented by an ARM resource, of type ‘TrafficManagerProfiles’, managed by the ‘Microsoft.Network’ resource provider.  At the REST API level, the URI for each profile is as follows:
 
-	https://management.azure.com/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.Network/trafficManagerProfiles/{profile-name}?api-version={api-version}
+	https://manage.windowsazure.cn/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.Network/trafficManagerProfiles/{profile-name}?api-version={api-version}
 
 ## Comparison with the Azure Traffic Manager Service Management API
 

@@ -93,7 +93,7 @@ You'll build a WordPress blog that uses a default template. The following illust
 -->
 <!-- keep by customization: begin -->
 <div class="dev-callout"><strong>Note</strong>
-<p>To complete this tutorial, you need an Azure account. You can create a trial account in just a couple of minutes. For details, see <a href="/develop/php/tutorials/create-a-windows-azure-account/" target="_blank">Create an Azure account</a>.</p>
+<p>To complete this tutorial, you need an Azure account. You can create a trial account in just a couple of minutes. For details, see <a href="/pricing/1rmb-trial/" target="_blank">Create an Azure account</a>.</p>
 </div>
 <br />
 

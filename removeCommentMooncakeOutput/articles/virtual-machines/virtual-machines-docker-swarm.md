@@ -9,9 +9,9 @@
    editor="tysonn"/>
 
 <tags
-   ms.service="virtual-machines"
-   ms.date="09/22/2015"
-   wacn.date=""/>
+	ms.service="virtual-machines"
+	ms.date="09/22/2015"
+	wacn.date=""/>
 
 # How to use docker with swarm
 
@@ -133,4 +133,3 @@ Go run things on your swarm. To look for inspiration, see [https://github.com/do
 <!-- links -->
 
 [docker-machine-azure]: /documentation/articles/virtual-machines-docker-machine
- 

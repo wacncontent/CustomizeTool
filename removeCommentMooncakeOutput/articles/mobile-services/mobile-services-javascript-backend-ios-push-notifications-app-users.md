@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.date="07/01/2015"
+	ms.date="10/01/2015"
 	wacn.date=""/>
 
 # Send Push Notifications to Authenticated Users
@@ -30,19 +30,19 @@ Replace the `insert` function with the following code, then click **Save**. This
 
 ```
 // Get the ID of the logged-in user.
-var userId = user.userId; 
+var userId = user.userId;
 
-        function insert(item, user, request) {
-            request.execute();
-            setTimeout(function() {
+function insert(item, user, request) {
+    request.execute();
+    setTimeout(function() {
         push.apns.send(userId, {
-                    alert: "Alert: " + item.text,
-                    payload: {
-                        "Hey, a new item arrived: '" + item.text + "'"
-                    }
-                });
-            }, 2500);
-        }
+            alert: "Alert: " + item.text,
+            payload: {
+                "Hey, a new item arrived: '" + item.text + "'"
+            }
+        });
+    }, 2500);
+}
 ```
 
 ##<a name="update-app"></a>Update App to Login Before Registration
@@ -68,4 +68,3 @@ var userId = user.userId;
 
 [Azure Management Portal]: https://manage.windowsazure.cn/
 [Mobile Services .NET How-to Conceptual Reference]: /documentation/articles/mobile-services-ios-how-to-use-client-library
-

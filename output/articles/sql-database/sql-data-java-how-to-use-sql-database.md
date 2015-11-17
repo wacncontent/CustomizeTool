@@ -32,7 +32,7 @@ For additional resources for SQL Database, see the [Next steps][] section.
 The following are prerequisites if you intend to use SQL Database with Java.
 
 * A Java Developer Kit (JDK), v 1.6 or later.
-* An Azure subscription, which can be acquired from <http://www.microsoft.com/windowsazure/offers/>.
+* An Azure subscription, which can be acquired from </pricing/overview/>.
 * If you are using Eclipse, you'll need Eclipse IDE for Java EE Developers, Indigo or later. This can be downloaded from <http://www.eclipse.org/downloads/>. You will also need the Azure Toolkit for Eclipse. During installation of this plugin, ensure that Microsoft JDBC Driver 4.0 for SQL Server is included. For more information, see [Installing the Azure Toolkit for Eclipse](http://msdn.microsoft.com/zh-cn/library/azure/hh690946.aspx).
 * If you are not using Eclipse, you will need the Microsoft JDBC Driver 4.0 for SQL Server, which you can download from <http://www.microsoft.com/download/details.aspx?id=11774>.
 

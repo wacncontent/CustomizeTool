@@ -24,7 +24,7 @@ The steps above download the Split-Merge files to the current directory. The fil
 
 ## Prerequisites
 
-1. Create an Azure SQL DB database that will be used as the Split-Merge status database. Go to the [Azure Management <!-- deleted by customization Portal](https://ms.portal.azure.com) --><!-- keep by customization: begin --> Portal](https://manage.windowsazure.cn) <!-- keep by customization: end -->. Create a new **SQL Database**. Fill in the database name and create a new user and password. Be sure to record the name and password for later use.
+1. Create an Azure SQL DB database that will be used as the Split-Merge status database. Go to the [Azure Management Portal](https://manage.windowsazure.cn). Create a new **SQL Database**. Fill in the database name and create a new user and password. Be sure to record the name and password for later use.
 
 2. Ensure that your Azure SQL DB server allows Azure Services to connect to it. In the portal, in the **Firewall Settings**, ensure that the **Allow access to Azure Services** setting is set to **On**. Click the "save" icon.
 
@@ -52,7 +52,7 @@ The steps above download the Split-Merge files to the current directory. The fil
 
 3. Either create a new database or choose an existing database to serve as the status database for Split/Merge operations and retrieve the connection string of that database. 
 
-	**Important** At this time, the status database must use the Latin  collation (SQL_Latin1_General_CP1_CI_AS). For more information, see [Windows Collation Name (Transact-SQL)](https://msdn.microsoft.com/zh-cn/library/ms188046.aspx).
+	**Important** At this time, the status database must use the Latin  collation (SQL\_Latin1\_General\_CP1\_CI\_AS). For more information, see [Windows Collation Name (Transact-SQL)](https://msdn.microsoft.com/zh-cn/library/ms188046.aspx).
 
 	With Azure SQL DB, the connection string typically is of the form:
 
@@ -112,22 +112,12 @@ Go to the [Azure Management Portal](https://manage.windowsazure.cn).
 ### Update the service configuration file
 
 Paste the certificate thumbprint copied above into the thumbprint/value attribute of these settings.
-<!-- deleted by customization
 For the worker role:
--->
-<!-- keep by customization: begin -->
-For the web role:
-<!-- keep by customization: end -->
 
     <Setting name="DataEncryptionPrimaryCertificateThumbprint" value="" />
     <Certificate name="DataEncryptionPrimary" thumbprint="" thumbprintAlgorithm="sha1" />
 
-<!-- deleted by customization
 For the web role:
--->
-<!-- keep by customization: begin -->
-For the worker role:
-<!-- keep by customization: end -->
 
     <Setting name="AdditionalTrustedRootCertificationAuthorities" value="" />
     <Setting name="AllowedClientCertificateThumbprints" value="" />
@@ -168,7 +158,7 @@ If your worker role fails to come online, but your web role succeeds, it is most
         "Server=myservername.database.chinacloudapi.cn; Database=mydatabasename;User ID=myuserID; Password=mypassword; Encrypt=True; Connection Timeout=30" .
 
 * Ensure that the server name does not begin with **https://**.
-* Ensure that your Azure SQL DB server allows <!-- keep by customization: begin --> Windows <!-- keep by customization: end --> Azure Services to connect to it. To do this, open https://manage.windowsazure.cn, click “SQL Databases” on the left, click “Servers” at the top, and select your server. Click **Configure** at the top and ensure that the <!-- deleted by customization **Azure --><!-- keep by customization: begin --> **Windows Azure <!-- keep by customization: end --> Services** setting is set to “Yes”. (See the Prerequisites section at the top of this article).
+* Ensure that your Azure SQL DB server allows Azure Services to connect to it. To do this, open https://manage.windowsazure.cn, click “SQL Databases” on the left, click “Servers” at the top, and select your server. Click **Configure** at the top and ensure that the **Azure Services** setting is set to “Yes”. (See the Prerequisites section at the top of this article).
 
 ## Testing your Split-Merge service deployment
 

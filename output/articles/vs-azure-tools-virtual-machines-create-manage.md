@@ -59,11 +59,11 @@ While you can create a virtual machine in the [Azure Management Portal](https://
 
         >[AZURE.NOTE] If you choose larger sizes for the virtual machine, extra charges may apply. See [Virtual Machines Pricing Details](/home/features/virtual-machines/#price) for more information.
 
-1. Virtual machines created in Visual Studio require a cloud service. On the **Cloud Service Settings** page, select a cloud service for the virtual machine, or click **<Create New…>** in the dropdown list if you don’t already have a cloud service or want to use a new one. A storage account is also required, so choose a storage account (or create a new storage account) in the **Storage account** dropdown list box. See [Introduction to Windows Azure Storage](./storage/storage-introduction/) for more information.
+1. Virtual machines created in Visual Studio require a cloud service. On the **Cloud Service Settings** page, select a cloud service for the virtual machine, or click **<Create New…>** in the dropdown list if you don’t already have a cloud service or want to use a new one. A storage account is also required, so choose a storage account (or create a new storage account) in the **Storage account** dropdown list box. See [Introduction to Windows Azure Storage](/documentation/articles/storage-introduction) for more information.
 
 1. If you want to specify a virtual network (which is optional), select it in the Virtual Network and Subnet dropdown list boxes.
 
-    Virtual machines that are members of an availability set are deployed to different fault domains. See [Azure Virtual Network](https://azure.microsoft.com/zh-cn/services/virtual-network/) for more information.
+    Virtual machines that are members of an availability set are deployed to different fault domains. See [Azure Virtual <!-- deleted by customization Network](https://azure.microsoft.com/zh-cn/services/virtual-network/) --><!-- keep by customization: begin --> Network](https://azure.microsoft.com/zh-cn/services/networking/) <!-- keep by customization: end --> for more information.
 
 1. If you want your virtual machine to belong to an availability set (also optional), select the **Specify an availability set** check box and then choose an availability set in the dropdown list box. When you're done, choose the **Next** button.
 

@@ -116,8 +116,8 @@ For information about using the preview portal, see [Using the Azure Preview Por
 
 ## Next steps
 
-- To learn about creating templates, see [Authoring templates](/documentation/articles/resource-group-authoring-templates) 
+- To learn about creating templates, see [Authoring templates](/documentation/articles/resource-group-authoring-templates)
 - To deploy the template you created, see [Deploying templates](/documentation/articles/resource-group-template-deploy)
-- To understand the functions you can use in a template, see [Template functions](/documentation/articles/resource-group-template-functions) 
+- To understand the functions you can use in a template, see [Template functions](/documentation/articles/resource-group-template-functions)
 - For guidance on designing your templates, see [Best practices for designing Azure Resource Manager templates](/documentation/articles/best-practices-resource-manager-design-templates)
 

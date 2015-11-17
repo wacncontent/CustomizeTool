@@ -7,9 +7,9 @@
 	manager="jeffreyg" 
 	editor=""/>
 
-<tags 
+<tags
 	ms.service="sql-database"
-	ms.date="09/01/2015" 
+	ms.date="09/01/2015"
 	wacn.date=""/>
  
 # SQL Database -  Downlevel clients support for auditing and Dynamic Data Masking 

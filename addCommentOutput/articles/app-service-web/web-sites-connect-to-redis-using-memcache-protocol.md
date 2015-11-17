@@ -44,10 +44,17 @@ In order to configure Memcache shim, you must create three app settings. This ca
 
 <!-- deleted by customization
 ### Add REDIS_HOST app setting
+
+The first app setting you need to create is the **REDIS\_HOST** app setting. This setting sets the destination to which the shim forwards the cache information. The value required for the REDIS_HOST app setting can be retrieved from the **Properties** blade of your Redis Cache instance.
+
+![Azure Redis Cache Host Name](./media/web-sites-connect-to-redis-using-memcache-protocol/2-azure-redis-cache-hostname.png)
+
+Set the key of the app setting to **REDIS\_HOST** and the value of the app setting to the **hostname** of the Redis Cache instance.
+
+![Web App AppSetting REDIS_HOST](./media/web-sites-connect-to-redis-using-memcache-protocol/3-azure-website-appsettings-redis-host.png)
 -->
 <!-- keep by customization: begin -->
 ### Add REDIS_HOST App Setting
-<!-- keep by customization: end -->
 
 The first app setting you need to create is the **REDIS_HOST** app setting. This setting sets the destination to which the shim forwards the cache information. The value required for the REDIS_HOST app setting can be retrieved from the **Properties** blade of your Redis Cache instance.
 
@@ -56,20 +63,21 @@ The first app setting you need to create is the **REDIS_HOST** app setting. This
 Set the key of the app setting to **REDIS_HOST** and the value of the app setting to the **hostname** of the Redis Cache instance.
 
 ![Web App AppSetting REDIS_HOST](./media/web-sites-connect-to-redis-using-memcache-protocol/3-azure-website-appsettings-redis-host.png)
+<!-- keep by customization: end -->
 
 ### Add REDIS_KEY app setting
 
-The second app setting you need to create is the **REDIS_KEY** app setting. This setting provides the authentication token required to securely access the Redis Cache instance. <!-- deleted by customization You can retrieve the --><!-- keep by customization: begin --> The <!-- keep by customization: end --> value required for the REDIS_KEY app setting <!-- keep by customization: begin --> can be retrieved <!-- keep by customization: end --> from the **Access keys** blade of the Redis Cache instance.
+The second app setting you need to create is the <!-- deleted by customization **REDIS\_KEY** --><!-- keep by customization: begin --> **REDIS_KEY** <!-- keep by customization: end --> app setting. This setting provides the authentication token required to securely access the Redis Cache instance. <!-- deleted by customization You can retrieve the --><!-- keep by customization: begin --> The <!-- keep by customization: end --> value required for the REDIS_KEY app setting <!-- keep by customization: begin --> can be retrieved <!-- keep by customization: end --> from the **Access keys** blade of the Redis Cache instance.
 
 ![Azure Redis Cache Primary Key](./media/web-sites-connect-to-redis-using-memcache-protocol/4-azure-redis-cache-primarykey.png)
 
-Set the key of the app setting to **REDIS_KEY** and the value of the app setting to the **Primary Key** of the Redis Cache instance.
+Set the key of the app setting to <!-- deleted by customization **REDIS\_KEY** --><!-- keep by customization: begin --> **REDIS_KEY** <!-- keep by customization: end --> and the value of the app setting to the **Primary Key** of the Redis Cache instance.
 
 ![Azure Website AppSetting REDIS_KEY](./media/web-sites-connect-to-redis-using-memcache-protocol/5-azure-website-appsettings-redis-primarykey.png)
 
 ### Add MEMCACHESHIM_REDIS_ENABLE app setting
 
-The last app setting is used to enable the Memcache Shim in Web Apps, which <!-- deleted by customization uses --><!-- keep by customization: begin --> will use <!-- keep by customization: end --> the REDIS_HOST and REDIS_KEY to connect to the Azure Redis Cache and forward the cache calls. Set the key of the app setting to **MEMCACHESHIM_REDIS_ENABLE** and the value to **true**.
+The last app setting is used to enable the Memcache Shim in Web Apps, which <!-- deleted by customization uses --><!-- keep by customization: begin --> will use <!-- keep by customization: end --> the REDIS_HOST and REDIS_KEY to connect to the Azure Redis Cache and forward the cache calls. Set the key of the app setting to <!-- deleted by customization **MEMCACHESHIM\_REDIS\_ENABLE** --><!-- keep by customization: begin --> **MEMCACHESHIM_REDIS_ENABLE** <!-- keep by customization: end --> and the value to **true**.
 
 ![Web App AppSetting MEMCACHESHIM_REDIS_ENABLE](./media/web-sites-connect-to-redis-using-memcache-protocol/6-azure-website-appsettings-enable-shim.png)
 
@@ -96,7 +104,7 @@ Download the Non-Thread Safe (NTS) x86 link for the version of PHP enabled in We
 
 ### Enable the php_memcache extension
 
-After <!-- deleted by customization you download --><!-- keep by customization: begin --> downloading <!-- keep by customization: end --> the file, unzip and upload the **php_memcache.dll** into the **d:\\home\\site\\wwwroot\\bin\\ext\\** directory. After the php_memcache.dll <!-- deleted by customization is --><!-- keep by customization: begin --> has been <!-- keep by customization: end --> uploaded into the web app, <!-- deleted by customization you need to enable --> the extension <!-- keep by customization: begin --> needs to be enabled <!-- keep by customization: end --> to the PHP Runtime. To enable the Memcache extension in the Azure Management Portal, open the **Application Settings** blade for the web app, then add a new app setting with the key of **PHP_EXTENSIONS** and the value **bin\\ext\\php_memcache.dll**.
+After <!-- deleted by customization you download --><!-- keep by customization: begin --> downloading <!-- keep by customization: end --> the file, unzip and upload the <!-- deleted by customization **php\_memcache.dll** --><!-- keep by customization: begin --> **php_memcache.dll** <!-- keep by customization: end --> into the **d:\\home\\site\\wwwroot\\bin\\ext\\** directory. After the php_memcache.dll <!-- deleted by customization is --><!-- keep by customization: begin --> has been <!-- keep by customization: end --> uploaded into the web app, <!-- deleted by customization you need to enable --> the extension <!-- keep by customization: begin --> needs to be enabled <!-- keep by customization: end --> to the PHP Runtime. To enable the Memcache extension in the Azure Management Portal, open the **Application Settings** blade for the web app, then add a new app setting with the key of <!-- deleted by customization **PHP\_EXTENSIONS** --><!-- keep by customization: begin --> **PHP_EXTENSIONS** <!-- keep by customization: end --> and the value **bin\\ext\\php_memcache.dll**.
 
 
 > <!-- deleted by customization [AZURE.NOTE] --> If the web app needs to load multiple PHP extensions, the value of PHP_EXTENSIONS should be a comma delimited list of relative paths to DLL files.

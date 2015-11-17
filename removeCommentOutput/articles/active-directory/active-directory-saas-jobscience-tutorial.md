@@ -1,5 +1,8 @@
 <properties pageTitle="Tutorial: Azure Active Directory integration with Jobscience | Windows Azure" description="Learn how to use Jobscience with Azure Active Directory to enable single sign-on, automated provisioning, and more!." services="active-directory" authors="MarkusVi"  documentationCenter="na" manager="stevenpo"/>
-<tags ms.service="active-directory" ms.devlang="na" ms.topic="article" ms.tgt_pltfrm="na" ms.workload="identity" ms.date="08/01/2015" ms.author="markvi" />
+<tags
+	ms.service="active-directory"
+	ms.date="08/01/2015"
+	wacn.date=""/>
 #Tutorial: Azure Active Directory integration with Jobscience
 >[AZURE.TIP]For feedback, click [here](https://social.msdn.microsoft.com/Forums/azure/zh-cn/154da41e-01ee-499d-bb91-c5924c3b3c38/tutorial-azure-active-directory-integration-with-jobscience?forum=WindowsAzureAD).
   

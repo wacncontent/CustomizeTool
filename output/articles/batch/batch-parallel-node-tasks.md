@@ -44,7 +44,7 @@ When the compute nodes within a pool are able to execute tasks concurrently, it 
 
 By using the [CloudPool.TaskSchedulingPolicy][task_schedule] property, you can specify that tasks should be assigned evenly across all nodes in the pool ("spreading"), or that as many tasks as possible should be assigned to each node before tasks are assigned to another node in the pool ("packing").
 
-As an example of how this feature is valuable, consider the pool of Standard\_D14 nodes in the example above, configured with a [CloudPool.MaxTasksPerComputeNode][maxtasks_net] value of 16. If the [CloudPool.TaskSchedulingPolicy][task_schedule] is configured with a [ComputeNodeFillType][fill_type] of *Pack*, it would maximize usage of all 16 cores of each node and allow an [autoscaling pool](./batch-automatic-scaling.md) to prune unused nodes from the pool (nodes without any tasks assigned), thereby minimizing resource usage and saving money.
+As an example of how this feature is valuable, consider the pool of Standard\_D14 nodes in the example above, configured with a [CloudPool.MaxTasksPerComputeNode][maxtasks_net] value of 16. If the [CloudPool.TaskSchedulingPolicy][task_schedule] is configured with a [ComputeNodeFillType][fill_type] of *Pack*, it would maximize usage of all 16 cores of each node and allow an [autoscaling pool](/documentation/articles/batch-automatic-scaling) to prune unused nodes from the pool (nodes without any tasks assigned), thereby minimizing resource usage and saving money.
 
 ## Batch .NET example
 

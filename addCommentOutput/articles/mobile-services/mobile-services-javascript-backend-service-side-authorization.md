@@ -12,22 +12,11 @@
 	ms.date="08/25/2015"
 	wacn.date=""/>
 
-<!-- deleted by customization
 # Service-side authorization of users in Mobile Services
--->
-<!-- keep by customization: begin -->
-# Service-side Authorization of Users in Mobile Services
-<!-- keep by customization: end -->
 
 > [AZURE.SELECTOR-LIST (Platform | Backend)]
-<!-- deleted by customization
-- [(Any | .NET)](mobile-services-dotnet-backend-service-side-authorization.md)
-- [(Any | Javascript)](mobile-services-javascript-backend-service-side-authorization.md)
--->
-<!-- keep by customization: begin -->
 - [(Any | .NET)](/documentation/articles/mobile-services-dotnet-backend-service-side-authorization)
 - [(Any | Javascript)](/documentation/articles/mobile-services-javascript-backend-service-side-authorization)
-<!-- keep by customization: end -->
 
 This topic shows you how to use server-side scripts to authorize users. In this tutorial, you register scripts with Azure Mobile Services, filter queries based on user IDs, and give users access to only their own data. Filtering a user's query results by the user ID is the most basic form of authorization. Depending on your specific scenario, you might also want to create Users or Roles tables to track more detailed user authorization information, such as which endpoints a given user is permitted to access.
 
@@ -70,18 +59,14 @@ This tutorial is based on the Mobile Services Quick Start and builds on the [Add
 <!-- URLs. -->
 
 [Windows Push Notifications & Live Connect]: http://go.microsoft.com/fwlink/p/?LinkID=257677
-<!-- deleted by customization
-[Mobile Services server script reference]: http://go.microsoft.com/fwlink/p/?LinkId=262293
--->
-<!-- keep by customization: begin -->
 [Mobile Services server script reference]: /documentation/articles/mobile-services-how-to-use-server-scripts
-<!-- keep by customization: end -->
 [My Apps dashboard]: http://go.microsoft.com/fwlink/p/?LinkId=262039
 <!-- deleted by customization
-[Add Authentication to Existing Mobile Services App]: /develop/mobile/tutorials/get-started-with-users-ios
+[Add Authentication to Existing Mobile Services App]: /documentation/articles/mobile-services-ios-get-started-users
 -->
 <!-- keep by customization: begin -->
-[Add Authentication to Existing Mobile Services App]:/documentation/articles/ mobile-services-ios-get-started-users
+[Add Authentication to Existing Mobile Services App]:/documentation/articles/mobile-services-ios-get-started-users
 <!-- keep by customization: end -->
 
 [Azure Management Portal]: https://manage.windowsazure.cn/
+ 

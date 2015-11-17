@@ -66,6 +66,6 @@ Get all available VM sizes | Not available | `azure vm sizes [options]`
 
 ## Next steps
 
-* For more about using the Azure CLI to work with Resource Manager resources, see [Using the Azure Command-Line Interface with the Resource Manager](/documentation/articles/xplat-cli-azure-resource-manager) and [Managing Role-Based Access Control with the Azure Command-Line <!-- deleted by customization Interface](/documentation/articles/role-based-access-control-xplat-cli-install) --><!-- keep by customization: begin --> Interface](/documentation/articles//role-based-access-control-xplat-cli) <!-- keep by customization: end -->.
+* For more about using the Azure CLI to work with Resource Manager resources, see [Using the Azure Command-Line Interface with the Resource Manager](/documentation/articles/xplat-cli-azure-resource-manager) and [Managing Role-Based Access Control with the Azure Command-Line Interface](/documentation/articles/role-based-access-control-xplat-cli-install).
 * For additional examples of the CLI commands, see [Using the Azure Command-Line Interface with Azure Service Management](/documentation/articles/virtual-machines-command-line-tools) and
 [Using the Azure CLI with Azure Resource Manager](/documentation/articles/azure-cli-arm-commands).

@@ -6,10 +6,10 @@
    authors="sethmanheim"
    manager="timlt"
    editor="tysonn" /> 
-<tags 
-   ms.service="service-bus"
-   ms.date="10/15/2015"
-   wacn.date="" />
+<tags
+	ms.service="service-bus"
+	ms.date="10/15/2015"
+	wacn.date=""/>
 
 # Using Service Bus from .NET with AMQP 1.0
 

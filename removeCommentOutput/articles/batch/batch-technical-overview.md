@@ -16,7 +16,7 @@
 # Azure Batch technical overview
 Azure Batch helps you run large-scale parallel and high performance computing (HPC) applications efficiently in the cloud. It's a platform service that provides job scheduling and autoscaling of a managed collection of virtual machines (VMs) to run the jobs. By using the Batch service, you can configure batch workloads to run in Azure on demand or on a schedule, and not worry about the complexity of configuring and managing an HPC cluster, VMs, or a job scheduler.
 
->[AZURE.NOTE] To use Batch, you need an Azure account. If you don't have an account, you can create a trial account in just a couple of minutes. For details, see [Create an Azure account](/develop/php/tutorials/create-a-windows-azure-account/).
+>[AZURE.NOTE] To use Batch, you need an Azure account. If you don't have an account, you can create a trial account in just a couple of minutes. For details, see [Create an Azure account](/pricing/1rmb-trial/).
 
 
 ## Use cases

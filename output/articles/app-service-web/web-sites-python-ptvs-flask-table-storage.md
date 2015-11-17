@@ -26,6 +26,18 @@ We'll learn how to create an Azure Storage account, how to configure the web app
 
 See the [Python Developer Center] for more articles that cover development of Azure Websites with PTVS using Bottle, Flask and Django web frameworks, with MongoDB, Azure Table Storage, MySQL and SQL Database services. While this article focuses on Azure Websites, the steps are similar when developing [Azure Cloud Services].
 
+<!-- keep by customization: begin -->
++ [Prerequisites](#prerequisites)
++ [Create the Project](#create-the-project)
++ [Create an Azure Storage Account](#create-an-azure-storage-account)
++ [Configure the Project](#configure-the-project)
++ [Explore the Azure Table Storage](#explore-the-azure-table-storage)
++ [Publish to an Azure Website](#publish-to-an-azure-website)
++ [Configure the Azure Website](#configure-the-azure-website)
++ [Next steps](#next-steps)
+
+<a name="prerequisites"></a>
+<!-- keep by customization: end -->
 ## Prerequisites
 
  - Visual Studio 2013 or 2015
@@ -36,8 +48,10 @@ See the [Python Developer Center] for more articles that cover development of Az
 
 [AZURE.INCLUDE [create-account-and-websites-note](../includes/create-account-and-websites-note.md)]
 
+<!-- deleted by customization
 >[AZURE.NOTE] If you want to get started with Azure Websites before signing up for an Azure account, go to [Try Azure Websites](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure Websites. No credit cards required; no commitments.
 
+-->
 ## Create the Project
 
 In this section, we'll create a Visual Studio project using a sample template. We'll create a virtual environment and install required packages. Then we'll run the application locally using the default in-memory repository.
@@ -82,6 +96,13 @@ To use storage operations, you need an Azure storage account. You can create a s
 
 In this section, we'll configure our application to use the storage account we just created. We'll see how to obtain connection settings from the Azure Management Portal. Then we'll run the application locally.
 
+<!-- keep by customization: begin -->
+1.  In [Azure Management Portal][], click on the storage account created in the previous section.
+
+1.  Click on **MANAGE ACCESS KEYS**.
+
+  	![Manage Access Keys Dialog](./media/web-sites-python-ptvs-flask-table-storage/PollsCommonAzureTableStorageManageKeys.png)
+<!-- keep by customization: end -->
 1.  In Visual Studio, right-click on your project node in Solution Explorer and select **Properties**. Click on the **Debug** tab.
 
   	![Project Debug Settings](./media/web-sites-python-ptvs-flask-table-storage/PollsFlaskAzureTableStorageProjectDebugSettings.png)
@@ -118,6 +139,9 @@ It's easy to view and edit storage tables using Server Explorer in Visual Studio
 
   	<!-- ![Table Query Results](./media/web-sites-python-ptvs-flask-table-storage/PollsCommonServerExplorerTable.png) -->
 
+<!-- keep by customization: begin -->
+<a name="publish-to-an-azure-website"></a>
+<!-- keep by customization: end -->
 ## Publish the web app to Azure Websites
 
 The Azure .NET SDK provides an easy way to deploy your web app to Azure Websites.
@@ -144,14 +168,26 @@ The Azure .NET SDK provides an easy way to deploy your web app to Azure Websites
 ## Configure the Web Apps instance
 
 In this section, we'll configure environment variables for the Web Apps instance.
+<!-- deleted by customization
 
 1.  In [Azure Management Portal], open the web app's blade by clicking **Browse** > **Web Apps** > your web app name.
 
 1.  In your web app's blade, click **Configure**, then click **Application Settings**.
+-->
+<!-- keep by customization: begin -->
+1.  In [Azure Management Portal], open the web app's blade by clicking **Web Apps** > your web app name.
+
+1.  In your web app's blade, click **Configure** <!-- deleted by customization, then click **Application Settings** -->.
+<!-- keep by customization: end -->
 
   	<!-- ![Top Menu](./media/web-sites-python-ptvs-flask-table-storage/PollsCommonWebSiteTopMenu.png) -->
 
+<!-- deleted by customization
 1.  Scroll down to the **app settings** section and set the values for **REPOSITORY\_NAME**, **STORAGE\_NAME** and **STORAGE\_KEY** as described in the section above.
+-->
+<!-- keep by customization: begin -->
+1.  Scroll down to the **app settings** section and set the values for **REPOSITORY_NAME**, **STORAGE_NAME** and **STORAGE_KEY** as described in the section above.
+<!-- keep by customization: end -->
 
   	<!-- ![App Settings](./media/web-sites-python-ptvs-flask-table-storage/PollsCommonWebSiteConfigureSettingsTableStorage.png) -->
 
@@ -177,10 +213,12 @@ Follow these links to learn more about Python Tools for Visual Studio, Flask and
 - [Azure Storage]
 - [Azure SDK for Python]
 - [How to Use the Table Storage Service from Python]
+<!-- deleted by customization
 
 ## What's changed
 * For a guide to the change from Websites to Azure Websites see: [Azure Websites and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
 * For a guide to the change of the Management Portal to the new portal see: [Reference for navigating the portal](https://manage.windowsazure.cn/)
+-->
 
 
 <!--Link references-->
@@ -188,6 +226,7 @@ Follow these links to learn more about Python Tools for Visual Studio, Flask and
 [Azure Cloud Services]: /documentation/articles/cloud-services-python-ptvs
 [documentation]: /documentation/articles/storage-python-how-to-use-table-storage
 [How to Use the Table Storage Service from Python]: /documentation/articles/storage-python-how-to-use-table-storage
+
 <!--External Link references-->
 [Azure Management Portal]: https://manage.windowsazure.cn
 [Azure SDK for .NET]: /downloads/

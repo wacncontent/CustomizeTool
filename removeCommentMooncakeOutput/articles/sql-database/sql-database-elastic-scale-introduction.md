@@ -8,9 +8,9 @@
     editor=""/>
 
 <tags
-    ms.service="sql-database"
-    ms.date="08/27/2015"
-    wacn.date=""/>
+	ms.service="sql-database"
+	ms.date="08/27/2015"
+	wacn.date=""/>
 
 # Elastic Database features overview
 
@@ -57,7 +57,7 @@ Vertical scaling refers to increasing or decreasing the performance level of an 
 
 Most cloud-scale database applications will use a combination of these two strategies. For example, a Software as a Service application may use horizontal scaling to provision new end-customers and vertical scaling to allow each end-customer’s database to grow or shrink resources as needed by the workload.
 
-* Horizontal scaling is managed using the [Elastic Database client library](/documentation/articles/sql-database-elastic-client-overview).
+* Horizontal scaling is managed using the [Elastic Database client library](/documentation/articles/sql-database-elastic-database-client-library).
 
 * Vertical scaling is accomplished using Azure PowerShell cmdlets to change the service tier, or by placing databases in an Elastic Database pool.
 

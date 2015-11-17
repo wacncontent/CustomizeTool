@@ -110,5 +110,5 @@ If you need to pass a value from linked template to the main template, you can c
 [Sharing State in Azure Resource Manager Templates](/documentation/articles/best-practices-resource-manager-state).
 
 ## Next steps
-- [Authoring templates](./resource-group-authoring-templates.md)
+- [Authoring templates](/documentation/articles/resource-group-authoring-templates)
 - [Deploying templates](/documentation/articles/resource-group-template-deploy)

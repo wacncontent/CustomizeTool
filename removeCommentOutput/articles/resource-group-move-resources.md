@@ -83,7 +83,7 @@ To move to a new subscription, include a value for the **DestinationSubscription
 
 To move existing resources to another resource group or subscription, run:
 
-    POST https://management.azure.com/subscriptions/{source-subscription-id}/resourcegroups/{source-resource-group-name}/moveResources?api-version={api-version} 
+    POST https://manage.windowsazure.cn/subscriptions/{source-subscription-id}/resourcegroups/{source-resource-group-name}/moveResources?api-version={api-version} 
 
 Replace **{source-subscription-id}** and **{source-resource-group-name}** with the subscription and resource group that currently contain the resources you wish to move. Use **2015-01-01** for {api-version}.
 
@@ -99,7 +99,7 @@ In the request, include a JSON object that defines the target resource group and
     }
 
 ## Next steps
-- [Using Azure PowerShell with Resource Manager](./powershell-azure-resource-manager.md)
-- [Using the Azure CLI with Resource Manager](./virtual-machines/xplat-cli-azure-resource-manager.md)
+- [Using Azure PowerShell with Resource Manager](/documentation/articles/powershell-azure-resource-manager)
+- [Using the Azure CLI with Resource Manager](/documentation/articles/xplat-cli-azure-resource-manager)
 - [Using the Azure Management Portal to manage resources](/documentation/articles/resource-group-portal)
-- [Using tags to organize your resources](./resource-group-using-tags.md)
+- [Using tags to organize your resources](/documentation/articles/resource-group-using-tags)

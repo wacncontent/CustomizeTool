@@ -14,9 +14,11 @@
 	wacn.date=""/>
 
 # Deploy Azure Resources Using the Compute, Network, and Storage .NET Libraries
+<!-- deleted by customization
 
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] classic deployment model.
 
+-->
 
 This tutorial shows you how to use some of the available clients in the Compute, Storage, and Network .NET libraries to create and delete resources in Windows Azure. It also shows you how to authenticate the requests to Azure Resource Manager by using Azure Active Directory.
 
@@ -100,7 +102,7 @@ Now that the Azure Active Directory application is created and the authenticatio
         {
           ClientCredential cc = new ClientCredential("{application-id}", "{password}");
             var context = new AuthenticationContext("https://login.chinacloudapi.cn/{tenant-id}");
-            var result = context.AcquireToken("https://management.azure.com/", cc);
+            var result = context.AcquireToken("https://manage.windowsazure.cn/", cc);
 
           if (result == null)
           {

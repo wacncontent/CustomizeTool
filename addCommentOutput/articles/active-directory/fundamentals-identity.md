@@ -19,9 +19,4 @@
 
 
 
-<!-- deleted by customization
 [AZURE.INCLUDE [identity](../includes/identity.md)]
--->
-<!-- keep by customization: begin -->
-[WACOM.INCLUDE [identity](../includes/identity)]
-<!-- keep by customization: end -->

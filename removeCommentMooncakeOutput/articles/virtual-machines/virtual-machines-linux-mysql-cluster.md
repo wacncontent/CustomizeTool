@@ -1,11 +1,12 @@
 <properties
-	pageTitle="Using load-balanced sets to clusterize MySQL on Linux"
-	description="An article that illustrates patterns to setup a load-balanced, high availability Linux cluster on Azure using MySQL as an example"
+	pageTitle="Clusterize MySQL with load-balanced sets | Windows Azure"
+	description="Setup a load-balanced, high availability Linux MySQL cluster created with the classic deployment model on Azure"
 	services="virtual-machines"
 	documentationCenter=""
 	authors="bureado"
 	manager="timlt"
-	editor=""/>
+	editor=""
+	tags="azure-service-management"/>
 
 <tags
 	ms.service="virtual-machines"

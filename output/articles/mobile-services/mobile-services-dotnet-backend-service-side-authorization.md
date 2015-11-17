@@ -15,8 +15,8 @@
 # Service-side authorization of users in Mobile Services
 
 > [AZURE.SELECTOR-LIST (Platform | Backend)]
-- [(Any | .NET)](mobile-services-dotnet-backend-service-side-authorization.md)
-- [(Any | Javascript)](mobile-services-javascript-backend-service-side-authorization.md)
+- [(Any | .NET)](/documentation/articles/mobile-services-dotnet-backend-service-side-authorization)
+- [(Any | Javascript)](/documentation/articles/mobile-services-javascript-backend-service-side-authorization)
 
 This topic shows you how to use server-side logic to authorize users.  In this tutorial, you modify table controllers, filter queries based on user IDs, and give users access to only their own data. Filtering a user's query results by the user ID is the most basic form of authorization. Depending on your specific scenario, you might also want to create Users or Roles tables to track more detailed user authorization information, such as which endpoints a given user is permitted to access.
 

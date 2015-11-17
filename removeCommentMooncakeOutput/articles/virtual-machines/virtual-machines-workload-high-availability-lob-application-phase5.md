@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Line of Business Application Workload Phase 5: Create the availability group and add the application databases" 
-	description="In this final phase of deploying a high-availability line of business application, you create an availability group and add your application databases to it." 
+	pageTitle="Line of business application Phase 5 | Windows Azure" 
+	description="Create an availability group and add your application databases to it in Phase 5 of the line of business application in Azure." 
 	documentationCenter=""
 	services="virtual-machines" 
 	authors="JoeDavies-MSFT" 
@@ -8,9 +8,9 @@
 	editor=""
 	tags="azure-resource-manager"/>
 
-<tags 
-	ms.service="virtual-machines" 
-	ms.date="08/11/2015" 
+<tags
+	ms.service="virtual-machines"
+	ms.date="08/11/2015"
 	wacn.date=""/>
 
 # Line of Business Application Workload Phase 5: Create the availability group and add the application databases

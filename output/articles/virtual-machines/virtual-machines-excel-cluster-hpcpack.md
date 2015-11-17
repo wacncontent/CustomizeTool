@@ -81,7 +81,7 @@ Use an Azure quickstart template to quickly and easily deploy an HPC Pack cluste
 
      ![Connect to the head node][connect]
 
-    b. Use standard procedures to use Certificate Manager to export the head node certificate (located under Cert:\LocalMachine\My) without the private key. In this example, export *CN = hpc01.eastus.cloudapp.azure.com*.
+    b. Use standard procedures to use Certificate Manager to export the head node certificate (located under Cert:\LocalMachine\My) without the private key. In this example, export *CN = hpc01.chinaeast.chinacloudapp.cn*.
 
     ![Export the certificate][cert]
 
@@ -246,7 +246,7 @@ or download and install the [HPC Pack 2012 R2 Update 2 client utilities](https:/
 
     ```
     'Private Const HPC_ClusterScheduler = "HEADNODE_NAME"
-    Private Const HPC_ClusterScheduler = "hpc01.eastus.cloudapp.azure.com"
+    Private Const HPC_ClusterScheduler = "hpc01.chinaeast.chinacloudapp.cn"
 
     'Private Const HPC_NetworkShare = "\\PATH\TO\SHARE\DIRECTORY"
     Private Const HPC_DependFiles = "D:\Excel\Upload\ConvertiblePricing_Complete.xlsb=ConvertiblePricing_Complete.xlsb"
@@ -269,7 +269,7 @@ or download and install the [HPC Pack 2012 R2 Update 2 client utilities](https:/
 
 To run Excel UDFs, follow the preceding steps 1 – 3 to set up the client computer. For Excel UDFs, you don't need to have the Excel application installed on compute nodes, so you could choose a normal compute node image in Step 1 instead of the compute node image with Excel.
 
->[AZURE.NOTE] There is a 34 character limit in the Excel 2010 and 2013 cluster connector dialog box. If the full cluster name is longer, e.g. hpcexcelhn01.southeastasia.cloudapp.azure.com, it won't fit in the dialog box. The workaround is to apply the Update 2 QFE KB3085833 (download [here](http://www.microsoft.com/download/details.aspx?id=48725)) for SOA Session API on the client machine, then set a machine wide variable e.g. *CCP_IAASHN* with the value of the long cluster name and input *%CCP_IAASHN%* in the dialog box as the cluster head node name.
+>[AZURE.NOTE] There is a 34 character limit in the Excel 2010 and 2013 cluster connector dialog box. If the full cluster name is longer, e.g. hpcexcelhn01.southeastasia.chinacloudapp.cn, it won't fit in the dialog box. The workaround is to apply the Update 2 QFE KB3085833 (download [here](http://www.microsoft.com/download/details.aspx?id=48725)) for SOA Session API on the client machine, then set a machine wide variable e.g. *CCP_IAASHN* with the value of the long cluster name and input *%CCP_IAASHN%* in the dialog box as the cluster head node name.
 
 After the cluster is successfully deployed, continue with the following steps to run a sample built-in Excel UDF. For customized Excel UDFs, see these [resources](http://social.technet.microsoft.com/wiki/contents/articles/1198.windows-hpc-and-microsoft-excel-resources-for-building-cluster-ready-workbooks.aspx) to build the XLLs and deploy them on the IaaS cluster.
 
@@ -309,7 +309,7 @@ To use Http binding with an Azure storage queue, make a few changes to the sampl
 // Before
 const string headnode = "[headnode]";
 // After e.g.
-const string headnode = "hpc01.eastus.cloudapp.azure.com";
+const string headnode = "hpc01.chinaeast.chinacloudapp.cn";
 or
 const string headnode = "hpc01.chinacloudapp.cn";
 ```

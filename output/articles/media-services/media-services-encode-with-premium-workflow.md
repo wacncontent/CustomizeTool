@@ -12,7 +12,7 @@
 	ms.date="10/15/2015"
 	wacn.date=""/>
 
-#Advanced encoding with Media Encoder Premium Workflow
+#Advanced encoding with Media Encoder Premium Workflow <!-- keep by customization: begin --> (public preview) <!-- keep by customization: end -->  
 
 **Note** Media Encoder Premium Workflow media processor discussed in this topic is not available in China. 
 
@@ -264,6 +264,7 @@ The following is a complete example. For information on how to set up with Media
 ##Known issues
 
 If your input video does not contain closed captioning, the output Asset will still contain an empty TTML file. 
+<!-- deleted by customization
 
 
 ##Media Services learning paths
@@ -273,3 +274,4 @@ You can view AMS learning paths here:
 - [AMS Live Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/)
 - [AMS on Demand Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/)
 
+-->

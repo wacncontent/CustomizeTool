@@ -11,19 +11,20 @@ tags="azure-service-management,azure-resource-manager"
 	ms.service="virtual-machines"
 	ms.date="06/22/2015"
 	wacn.date=""/>
+
 #Prepare an Oracle Linux virtual machine for Azure
 <!-- deleted by customization
 
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-both-include.md)]
 
-
 -->
+
 -   [Prepare an Oracle Linux 6.4+ virtual machine for Azure](/documentation/articles/virtual-machines-linux-create-upload-vhd-oracle)
 
--   [Prepare an Oracle Linux 7.0+ <!-- deleted by customization virtual machine --><!-- keep by customization: begin --> Virtual Machine <!-- keep by customization: end --> for Azure](/documentation/articles/virtual-machines-linux-create-upload-vhd-oracle)
+-   [Prepare an Oracle Linux 7.0+ virtual machine for Azure](/documentation/articles/virtual-machines-linux-create-upload-vhd-oracle)
 
 ##Prerequisites
-This article assumes that you have already installed an Oracle Linux operating system to a virtual hard disk. Multiple tools exist to create .vhd files, for example a virtualization solution such as Hyper-V. For instructions, see [Install Hyper-V and create a <!-- deleted by customization virtual --><!-- keep by customization: begin --> vRirtual <!-- keep by customization: end --> machine](http://technet.microsoft.com/zh-cn/library/hh846766.aspx).
+This article assumes that you have already installed an Oracle Linux operating system to a virtual hard disk. Multiple tools exist to create .vhd files, for example a virtualization solution such as Hyper-V. For instructions, see [Install Hyper-V and create a virtual machine](http://technet.microsoft.com/zh-cn/library/hh846766.aspx).
 
 **Oracle Linux installation notes**
 
@@ -180,9 +181,9 @@ Preparing an Oracle Linux 7 virtual machine for Azure is very similar to the pro
 		# sudo yum clean all
 		# sudo yum -y update
 
-9.  Modify the kernel boot line in your grub configuration to include additional kernel parameters for Azure. To do this, open "/etc/default/grub" in a text editor and edit the GRUB_CMDLINE_LINUX parameter, for example:
+9.  Modify the kernel boot line in your grub configuration to include additional kernel parameters for Azure. To do this, open "/etc/default/grub" in a text editor and edit the GRUB\_CMDLINE\_LINUX parameter, for example:
 
-		GRUB_CMDLINE_LINUX="rootdelay=300 console=ttyS0 earlyprintk=ttyS0"
+		GRUB\_CMDLINE\_LINUX="rootdelay=300 console=ttyS0 earlyprintk=ttyS0"
 
 	This will also ensure all console messages are sent to the first serial port, which can assist Azure support with debugging issues. In addition to the above, we recommend that you *remove* the following parameters:
 

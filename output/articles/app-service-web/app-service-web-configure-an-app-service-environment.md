@@ -126,5 +126,10 @@ For more information about the Azure Websites platform, see [Azure Websites](/do
 [ControlInbound]: /documentation/articles/app-service-app-service-environment-control-inbound-traffic/
 [virtualnetwork]: /documentation/articles/virtual-networks-faq/
 [AppServicePricing]: /home/features/app-service/#price 
+<!-- deleted by customization
 [AzureAppService]: /documentation/articles/app-service-value-prop-what-is/
+-->
+<!-- keep by customization: begin -->
+[AzureAppService]: /documentation/services/web-sites/
+<!-- keep by customization: end -->
  

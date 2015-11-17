@@ -14,7 +14,7 @@
 
 # How to install and configure Azure PowerShell#
 
-<div class="dev-center-tutorial-selector sublanding"><a href="/manage/install-and-configure-windows-powershell/" title="PowerShell" class="current">PowerShell</a><a href="/documentation/articles/xplat-cli-install/" title="Azure CLI">Azure  CLI</a></div>
+<div class="dev-center-tutorial-selector sublanding"><a href="/documentation/articles/install-and-configure-windows-powershell/" title="PowerShell" class="current">PowerShell</a><a href="/documentation/articles/xplat-cli-install/" title="Azure CLI">Azure  CLI</a></div>
 
 > [AZURE.NOTE] **Azure PowerShell 1.0 Preview** is now available on [PowerShell Gallery](http://www.powershellgallery.com/). There are many changes in this preview and we’d like to use it to gather feedback, which we’ll incorporate into Azure PowerShell 1.0. **This preview is not intended for mission critical applications**. If you are running such applications, please continue to use Azure PowerShell 0.9.8. If you would like to use 1.0 Preview, you can uninstall it at any point and go back to 0.9.8. For complete installation instructions, see this [blog post](https://azure.microsoft.com/blog/azps-1-0-pre/).
 

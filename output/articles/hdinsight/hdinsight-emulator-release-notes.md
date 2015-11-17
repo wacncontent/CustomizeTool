@@ -276,3 +276,5 @@
 
 
 [hdinsight-hadoop-emulator-get-started]: /documentation/articles/hdinsight-get-started-emulator
+
+ 

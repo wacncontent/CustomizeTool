@@ -131,9 +131,11 @@ Cirrus Logic Jr YUV 411 format|Cirrus Logic Jr YUV 411 format with less than 8 b
 Indeo-produced YVU9 format|Indeo-produced YVU9 format with additional information about differences from the last frame. 9.5 bits per pixel but reported as 9.
 
 
+<!-- deleted by customization
 ##Media Services learning paths
 
 You can view AMS learning paths here:
 
 - [AMS Live Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/)
 - [AMS on Demand Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/)
+-->

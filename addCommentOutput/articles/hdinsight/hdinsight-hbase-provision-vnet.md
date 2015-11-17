@@ -462,7 +462,7 @@ In this tutorial you learned how to provision an HBase cluster. To learn more, s
 [azure-portal]: https://manage.windowsazure.cn
 [azure-create-storageaccount]: /documentation/articles/storage-create-storage-account
 [azure-purchase-options]: /pricing/overview/
-[azure-member-offers]: http://azure.microsoft.com/pricing/member-offers/
+[azure-member-offers]: /pricing/member-offers/
 [azure-trial]: /pricing/1rmb-trial/
 
 [hdinsight-admin-powershell]: /documentation/articles/hdinsight-administer-use-powershell

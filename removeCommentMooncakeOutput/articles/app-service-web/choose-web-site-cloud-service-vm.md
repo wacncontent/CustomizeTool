@@ -195,6 +195,6 @@ To get started with the option(s) you choose for your application, see the follo
   [PHP]: /develop/php/
   [Python]: /develop/python/
   [servicebus]: /documentation/services/service-bus/
-  [sqldatabase]: /documentation/services/sql-database/
+  [sqldatabase]: /documentation/services/sql-databases/
   [Storage]: /documentation/services/storage/
  

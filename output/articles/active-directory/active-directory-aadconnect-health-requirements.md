@@ -50,13 +50,13 @@ During installation and runtime, the agent requires connectivity to the Azure AD
 - https://*.table.core.chinacloudapi.cn/
 - https://policykeyservice.dc.ad.msft.net/
 - https://login.chinacloudapi.cn
-- https://login.microsoftonline.com
+- https://login.chinacloudapi.cn
 - https://secure.aadcdn.microsoftonline-p.com 
 
 ## Allow the following websites if IE Enhanced Security is enabled
 The following websites need to be allowed if IE Enhanced Security is enabled on the server that is going to have the agent installed.
 
-- https://login.microsoftonline.com 
+- https://login.chinacloudapi.cn 
 - https://secure.aadcdn.microsoftonline-p.com
 - https://login.chinacloudapi.cn
 - The federation server for your organization trusted by Azure Active Directory For example: https://sts.contoso.com 

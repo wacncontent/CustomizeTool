@@ -28,7 +28,7 @@ Sample route table in JSON format:
 	    "id": "/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/TestRG/providers/Microsoft.Network/routeTables/UDR-BackEnd",
 	    "etag": "W/\"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx\"",
 	    "type": "Microsoft.Network/routeTables",
-	    "location": "westus",
+	    "location": "chinanorth",
 	    "properties": {
 	        "provisioningState": "Succeeded",
 	        "routes": [

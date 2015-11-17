@@ -4,7 +4,7 @@
 	services="storage"
 	documentationCenter=".net"
 	authors="tamram"
-	manager="adinah"
+	manager="carmonm"
 	editor=""/>
 
 <tags
@@ -36,14 +36,14 @@ use the Azure Storage Client Library for .NET. The scenarios covered include
 
 [AZURE.INCLUDE [storage-dotnet-obtain-assembly](../includes/storage-dotnet-obtain-assembly.md)]
 
-###Namespace declarations
+### Namespace declarations
 Add the following namespace declarations to the top of any C\# file
 in which you wish to programmatically access Azure Storage:
 
     using Microsoft.WindowsAzure;
     using Microsoft.WindowsAzure.Storage;
     using Microsoft.WindowsAzure.Storage.Auth;
-	using Microsoft.WindowsAzure.Storage.Blob;
+    using Microsoft.WindowsAzure.Storage.Blob;
 
 Make sure you reference the `Microsoft.WindowsAzure.Storage.dll` assembly.
 
@@ -69,7 +69,7 @@ This example shows how to create a container if it does not already exist:
     // Create the blob client.
     CloudBlobClient blobClient = storageAccount.CreateCloudBlobClient();
 
-    // Retrieve a reference to a container. 
+    // Retrieve a reference to a container.
     CloudBlobContainer container = blobClient.GetContainerReference("mycontainer");
 
     // Create the container if it doesn't already exist.

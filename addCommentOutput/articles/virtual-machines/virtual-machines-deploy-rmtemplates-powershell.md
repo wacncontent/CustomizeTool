@@ -146,8 +146,8 @@ You're prompted to supply the values of parameters in the **parameters** section
 	...
 
 > [AZURE.NOTE] The example shown above uses a vhd file that exists in the saacct storage account. The name of the disk was provided as a parameter to the template.
-<!-- deleted by customization
 
+<!-- deleted by customization
 If you would like to see a video of this task being done, take a look at this:
 
 [AZURE.VIDEO create-a-custom-virtual-machine-image-in-azure-resource-manager-with-powershell]
@@ -216,7 +216,7 @@ It returns something like this:
 	Id                       : /subscriptions/{subscription-id}/resourceGroups/BuildRG/providers/Microso
 	                           ft.Compute/virtualMachines/MyWindowsVM
 	InstanceView             : null
-	Location                 : westus
+	Location                 : chinanorth
 	Name                     : MyWindowsVM
 	NetworkProfile           : {
 	                             "NetworkInterfaces": [
@@ -259,12 +259,7 @@ It returns something like this:
 	                               "Name": "osdisk",
 	                               "SourceImage": null,
 	                               "VirtualHardDisk": {
-<!-- deleted by customization
 	                                 "Uri": "http://saacct.blob.core.chinacloudapi.cn/vhds/osdiskforwindowssimple.vhd"
--->
-<!-- keep by customization: begin -->
-	                                 "Uri": "http://buildsaacct.blob.core.chinacloudapi.cn/vhds/osdiskforwindowssimple.vhd"
-<!-- keep by customization: end -->
 	                               }
 	                             },
 	                             "SourceImage": null
@@ -396,9 +391,4 @@ If you would like to see a video of this task being done, take a look at this:
 
 [Azure Resource Manager overview](/documentation/articles/resource-group-overview)
 
-<!-- deleted by customization
 [Virtual machines documentation](/documentation/services/virtual-machines/)
--->
-<!-- keep by customization: begin -->
-[Virtual machines documentation](http://www.windowsazure.cn/documentation/services/virtual-machines/)
-<!-- keep by customization: end -->

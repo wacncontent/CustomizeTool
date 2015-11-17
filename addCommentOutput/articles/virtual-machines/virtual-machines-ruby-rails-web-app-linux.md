@@ -22,12 +22,12 @@
 This tutorial shows how to host a Ruby on Rails website on Azure using a Linux virtual machine.  
 
 This tutorial was validated using Ubuntu Server 14.04 LTS. If you use a different Linux distribution, you might need to modify the steps to install Rails.
-
 <!-- deleted by customization
+
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
 
-
 -->
+
 ## Create an Azure VM
 
 Start by creating an Azure VM with a Linux image.
@@ -53,6 +53,7 @@ After the VM is provisioned, you can get the SSH endpoint by running the followi
 ## Install Ruby on Rails
 
 1. Use SSH to connect to the VM.
+
 2. From the SSH session, use the following commands to install Ruby on the VM:
 
 		sudo apt-get update -y

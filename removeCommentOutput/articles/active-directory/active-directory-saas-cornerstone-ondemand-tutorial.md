@@ -1,5 +1,8 @@
 <properties pageTitle="Tutorial: Azure Active Directory integration with Cornerstone OnDemand | Windows Azure" description="Learn how to use Cornerstone OnDemand with Azure Active Directory to enable single sign-on, automated provisioning, and more!." services="active-directory" authors="MarkusVi"  documentationCenter="na" manager="stevenpo"/>
-<tags ms.service="active-directory" ms.devlang="na" ms.topic="article" ms.tgt_pltfrm="na" ms.workload="identity" ms.date="08/01/2015" ms.author="markvi" />
+<tags
+	ms.service="active-directory"
+	ms.date="08/01/2015"
+	wacn.date=""/>
 #Tutorial: Azure Active Directory integration with Cornerstone OnDemand
 >[AZURE.TIP]For feedback, click [here](https://social.msdn.microsoft.com/Forums/azure/zh-cn/f07fbbd2-d770-44c8-9816-39e6890db33a/tutorial-azure-ad-integration-with-cornerstone-ondemand?forum=WindowsAzureAD).
 

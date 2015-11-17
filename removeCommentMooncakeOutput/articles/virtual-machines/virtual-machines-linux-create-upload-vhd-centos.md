@@ -6,11 +6,11 @@
 	authors="szarkos"
 	manager="timlt"
 	editor="tysonn"
-	tags="azure-resource-manager,azure-service-management"/>
+		tags="azure-resource-manager,azure-service-management"/>
 
 <tags
 	ms.service="virtual-machines"
-	ms.date="05/15/2015"
+	ms.date="10/05/2015"
 	wacn.date=""/>
 
 # Prepare a CentOS-Based Virtual Machine for Azure
@@ -22,7 +22,7 @@
 
 ##Prerequisites##
 
-This article assumes that you have already installed a CentOS (or similar derivative) Linux operating system to a virtual hard disk. Multiple tools exist to create .vhd files, for example a virtualization solution such as Hyper-V. For instructions, see [Install the Hyper-V Role and Configure a Virtual Machine](http://technet.microsoft.com/zh-cn/library/hh846766.aspx). 
+This article assumes that you have already installed a CentOS (or similar derivative) Linux operating system to a virtual hard disk. Multiple tools exist to create .vhd files, for example a virtualization solution such as Hyper-V. For instructions, see [Install the Hyper-V Role and Configure a Virtual Machine](http://technet.microsoft.com/zh-cn/library/hh846766.aspx).
 
 
 **CentOS Installation Notes**
@@ -81,7 +81,7 @@ This article assumes that you have already installed a CentOS (or similar deriva
 
 	**Important: The step is only valid for CentOS 6.3 and earlier.**  In CentOS 6.4+ the Linux Integration Services are *already available in the kernel*.
 
-	a) Obtain the .iso file that contains the drivers for the Linux Integration Services from the [Microsoft Download Center](http://www.microsoft.com/zh-CN/download/details.aspx?id=41554).
+	a) Obtain the .iso file that contains the drivers for the Linux Integration Services from the [Microsoft Download Center](http://www.microsoft.com/download/details.aspx?id=41554).
 
 	b) In Hyper-V Manager, in the **Actions** pane, click **Settings**.
 
@@ -116,27 +116,27 @@ This article assumes that you have already installed a CentOS (or similar deriva
 		baseurl=http://olcentgbl.trafficmanager.cn/openlogic/$releasever/openlogic/$basearch/
 		enabled=1
 		gpgcheck=0
-		
+
 		[base]
 		name=CentOS-$releasever - Base
 		baseurl=http://olcentgbl.trafficmanager.cn/centos/$releasever/os/$basearch/
 		gpgcheck=1
 		gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6
-		
+
 		#released updates
 		[updates]
 		name=CentOS-$releasever - Updates
 		baseurl=http://olcentgbl.trafficmanager.cn/centos/$releasever/updates/$basearch/
 		gpgcheck=1
 		gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6
-		
+
 		#additional packages that may be useful
 		[extras]
 		name=CentOS-$releasever - Extras
 		baseurl=http://olcentgbl.trafficmanager.cn/centos/$releasever/extras/$basearch/
 		gpgcheck=1
 		gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6
-		
+
 		#additional packages that extend functionality of existing packages
 		[centosplus]
 		name=CentOS-$releasever - Plus
@@ -144,7 +144,7 @@ This article assumes that you have already installed a CentOS (or similar deriva
 		gpgcheck=1
 		enabled=0
 		gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6
-		
+
 		#contrib - packages by Centos Users
 		[contrib]
 		name=CentOS-$releasever - Contrib
@@ -274,27 +274,27 @@ Preparing a CentOS 7 virtual machine for Azure is very similar to CentOS 6, howe
 		baseurl=http://olcentgbl.trafficmanager.cn/openlogic/$releasever/openlogic/$basearch/
 		enabled=1
 		gpgcheck=0
-		
+
 		[base]
 		name=CentOS-$releasever - Base
 		baseurl=http://olcentgbl.trafficmanager.cn/centos/$releasever/os/$basearch/
 		gpgcheck=1
 		gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
-		
+
 		#released updates
 		[updates]
 		name=CentOS-$releasever - Updates
 		baseurl=http://olcentgbl.trafficmanager.cn/centos/$releasever/updates/$basearch/
 		gpgcheck=1
 		gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
-		
+
 		#additional packages that may be useful
 		[extras]
 		name=CentOS-$releasever - Extras
 		baseurl=http://olcentgbl.trafficmanager.cn/centos/$releasever/extras/$basearch/
 		gpgcheck=1
 		gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
-		
+
 		#additional packages that extend functionality of existing packages
 		[centosplus]
 		name=CentOS-$releasever - Plus
@@ -302,7 +302,7 @@ Preparing a CentOS 7 virtual machine for Azure is very similar to CentOS 6, howe
 		gpgcheck=1
 		enabled=0
 		gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
-		
+
 		#contrib - packages by Centos Users
 		[contrib]
 		name=CentOS-$releasever - Contrib
@@ -359,6 +359,3 @@ Preparing a CentOS 7 virtual machine for Azure is very similar to CentOS 6, howe
 		# logout
 
 16. Click **Action -> Shut Down** in Hyper-V Manager. Your Linux VHD is now ready to be uploaded to Azure.
-
-
- 

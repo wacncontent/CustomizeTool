@@ -110,7 +110,7 @@ When you provision a cluster, you create the Azure compute resources that contai
 
 Use the following steps to create a new cluster:
 
-1. Sign in to the [Azure Preview Portal](https://ms.portal.azure.com/).
+1. Sign in to the [Azure Preview Portal](https://manage.windowsazure.cn/).
 2. Click **NEW**, Click **Data Analytics**, and then click **HDInsight**.
 
     ![Creating a new cluster in the Azure Preview Portal](./media/hdinsight-hadoop-linux-tutorial-get-started/HDI.CreateCluster.1.png "Creating a new cluster in the Azure Preview Portal")
@@ -401,8 +401,8 @@ In this Linux tutorial, you have learned how to provision a Hadoop cluster on Li
 	* URLs for services hosted on the cluster, such as Ambari and WebHCat
 	* The location of Hadoop files and examples on the local file system
 	* The use of Azure Storage (WASB) instead of HDFS as the default data store
-<!-- keep by customization: begin -->
 
+<!-- keep by customization: begin -->
 - For more information on Hive, or to learn about Pig and MapReduce, see the following:
 
 	- [Use MapReduce with HDInsight][hdinsight-use-mapreduce]
@@ -412,8 +412,8 @@ In this Linux tutorial, you have learned how to provision a Hadoop cluster on Li
 - For more information on how to work with the Azure Storage used by your HDInsight cluster, see the following:
 - [Use Azure Blob storage with HDInsight](/documentation/articles/hdinsight-use-blob-storage)
 - [Upload data to HDInsight][hdinsight-upload-data]
-<!-- keep by customization: end -->
 
+<!-- keep by customization: end -->
 
 [1]: /documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started
 [hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters

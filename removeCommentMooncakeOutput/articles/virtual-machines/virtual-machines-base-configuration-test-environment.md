@@ -11,7 +11,7 @@
 <tags
 	ms.service="virtual-machines"
 	ms.date="10/05/2015"
-        wacn.date=""/>
+	wacn.date=""/>
 
 # Base Configuration test environment
 
@@ -47,7 +47,7 @@ There are four phases to setting up the Corpnet subnet of the Windows Server 201
 3.	Configure APP1.
 4.	Configure CLIENT1.
 
-If you do not already have an Azure account, you can sign up for a trial at [Try Azure](/pricing/1rmb-trial/). If you have an MSDN Subscription, see [Azure benefit for MSDN subscribers](/pricing/member-offers/msdn-benefits-details/).
+If you do not already have an Azure account, you can sign up for a trial at [Free one-month trial](/pricing/1rmb-trial/). If you have an MSDN Subscription, see [Azure benefit for MSDN subscribers](/pricing/member-offers/msdn-benefits-details/).
 
 > [AZURE.NOTE] Virtual machines in Azure incur an ongoing monetary cost when they are running. This cost is billed against your trial, MSDN subscription, or paid subscription. For more information about the costs of running Azure virtual machines, see [Virtual Machines Pricing Details](/home/features/virtual-machines/#price) and [Azure Pricing Calculator](/pricing/calculator/). To keep costs down, see [Minimizing the costs of test environment virtual machines in Azure](#costs).
 
@@ -246,7 +246,7 @@ This is your final configuration.
 
 ![](./media/virtual-machines-base-configuration-test-environment/BC_TLG04.png)
 
-Your base configuration in Azure is now ready for application development and testing or for additional test environments, such as the [simulated hybrid cloud environment](/documentation/articles/virtual-networks-setup-simulated-hybrid-cloud-environment-testing). 
+Your base configuration in Azure is now ready for application development and testing or for additional test environments, such as the [simulated hybrid cloud environment](/documentation/articles/virtual-networks-setup-simulated-hybrid-cloud-environment-testing).
 
 ## Additional resources
 

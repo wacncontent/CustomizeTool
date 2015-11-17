@@ -4,12 +4,12 @@
 	services="active-directory"
 	documentationCenter=""
 	authors="rkarlin"
-	manager="terrylan"
+	manager="msStevenPo"
 	editor=""/>
 
 <tags
 	ms.service="active-directory"
-	ms.date="07/07/2015"
+	ms.date="09/09/2015"
 	wacn.date=""/>
 
 # How to provide secure remote access to on-premises applications
@@ -43,14 +43,14 @@ Setting up Application Proxy is accomplished in two steps:
 There's a lot more you can do with Application Proxy:
 
 
-- [Publish applications using your own domain name](https://msdn.microsoft.com/zh-cn/library/azure/mt210927.aspx)
-- [Enable single-sign on](https://msdn.microsoft.com/zh-cn/library/azure/dn879065.aspx)
-- [Working with claims aware applications](https://msdn.microsoft.com/zh-cn/library/azure/mt210926.aspx)
-- [Enable conditional access](https://msdn.microsoft.com/zh-cn/library/azure/dn931796.aspx)
+- [Publish applications using your own domain name](/documentation/articles/active-directory-application-proxy-custom-domains)
+- [Enable single-sign on](/documentation/articles/active-directory-application-proxy-sso-using-kcd)
+- [Working with claims aware applications](/documentation/articles/active-directory-application-proxy-claims-aware-apps)
+- [Enable conditional access](/documentation/articles/active-directory-application-proxy-conditional-access)
 
 
 ### Learn more about Application Proxy
-- [Take a look here at our online help](https://msdn.microsoft.com/zh-cn/library/azure/dn768219.aspx)
+- [Take a look here at our online help](/documentation/articles/active-directory-application-proxy-enable)
 - [Check out the Application Proxy blog](http://blogs.technet.com/b/applicationproxyblog/)
 - [Watch our videos on Channel 9!](http://channel9.msdn.com/events/Ignite/2015/BRK3864)
 

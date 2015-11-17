@@ -197,6 +197,7 @@ For more information, see the [Python Developer Center](/develop/python/).
 <!--Link references-->
 [Python Developer Center]: /develop/python/
 [Azure Cloud Services]: /documentation/articles/cloud-services-python-ptvs
+
 <!--External Link references-->
 [Azure Management Portal]: https://manage.windowsazure.cn
 [Python Tools for Visual Studio]: http://aka.ms/ptvs

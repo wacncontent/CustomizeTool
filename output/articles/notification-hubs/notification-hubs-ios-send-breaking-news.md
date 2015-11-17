@@ -372,8 +372,8 @@ In this tutorial we learned how to broadcast breaking news by category. Consider
 
 <!-- URLs. -->
 [How To: Service Bus Notification Hubs (iOS Apps)]: http://msdn.microsoft.com/zh-cn/library/jj927168.aspx
-[Use Notification Hubs to broadcast localized breaking news]: /manage/services/notification-hubs/breaking-news-localized-dotnet/
-[Mobile Service]: /develop/mobile/tutorials/get-started
+[Use Notification Hubs to broadcast localized breaking news]: /documentation/articles/notification-hubs-windows-store-dotnet-send-localized-breaking-news
+[Mobile Service]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started
 [Notify users with Notification Hubs]: /documentation/articles/notification-hubs-aspnet-backend-ios-notify-users
 [Azure Management Portal]: https://manage.windowsazure.cn/
 [Notification Hubs Guidance]: http://msdn.microsoft.com/zh-cn/library/dn530749.aspx

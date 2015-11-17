@@ -63,7 +63,7 @@ The following configuration entries have been added.
 
 	<appSettings>
 	    <add key="ida:ClientId" value="ClientId from the new Azure AD App" />
-	    <add key="ida:AADInstance" value="https://login.chinacloudapi.cn/" /> 
+	    <add key="ida:AADInstance" value="https://login.chinacloudapi.cn/" />
 	    <add key="ida:Domain" value="The selected Azure AD Domain" />
 	    <add key="ida:TenantId" value="The Id of your selected Azure AD Tenant" />
 	    <add key="ida:PostLogoutRedirectUri" value="Your project start page" />

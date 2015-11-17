@@ -62,8 +62,6 @@ Once you have your subscription profile, follow these steps to configure the Azu
 -->
 <!-- keep by customization: begin -->
 
-
-
 	![add new cloud](./media/azure-slave-plugin-for-hudson/hudson-setup-addcloud.png)
 <!-- keep by customization: end -->
 
@@ -90,8 +88,6 @@ A virtual machine template defines the parameters the plugin will use to create 
 	![add vm template](./media/azure-slave-plugin-for-hudson/hudson-setup-addnewvmtemplate.png)
 -->
 <!-- keep by customization: begin -->
-
-
 
 	![add vm template](./media/azure-slave-plugin-for-hudson/hudson-setup-addnewvmtemplate.png)
 <!-- keep by customization: end -->

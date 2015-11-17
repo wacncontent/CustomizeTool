@@ -21,7 +21,7 @@
 
 -->
 <!-- keep by customization: begin -->
-#How to change the drive letter of the Windows temporary disk
+#Change the drive letter of the Windows temporary disk
 <!-- keep by customization: end -->
 
 If you need to use the D drive to store data, follow these instructions to use a different drive for the temporary disk. Never use the temporary disk to store data that you need to keep.
@@ -45,16 +45,11 @@ If you want to use an existing data disk on the D drive, make sure you've also u
 
 2. Move pagefile.sys from the D drive to another drive.
 
-3. Restartthe virtual machine.
+3. Restart the virtual machine.
 
-4. Log <!-- deleted by customization on --><!-- keep by customization: begin --> in <!-- keep by customization: end --> again and change the drive letter from D to E.
+4. Log on again and change the drive letter from D to E.
 
-<!-- deleted by customization
 5. From the [Azure Management Portal](http://manage.windowsazure.cn), attach an existing data disk or an empty data disk.
--->
-<!-- keep by customization: begin -->
-5.	From the [Azure  Portal](http://manage.windowsazure.cn), attach an existing data disk or an empty data disk.
-<!-- keep by customization: end -->
 
 6.	Log on to the virtual machine again, initialize the disk, and assign D as the drive letter for the disk you just attached.
 
@@ -62,16 +57,11 @@ If you want to use an existing data disk on the D drive, make sure you've also u
 
 8.	Move pagefile.sys from the other drive to the E drive.
 
-<!-- deleted by customization
 9.	Restart the virtual machine.
 
 
 
 ## Additional resources
--->
-<!-- keep by customization: begin -->
-##Additional resources
-<!-- keep by customization: end -->
 [How to log on to a virtual machine running Windows Server][Logon]
 
 [How to detach a data disk from a Windows virtual machine][Detach]

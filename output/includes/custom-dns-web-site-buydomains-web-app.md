@@ -1,3 +1,7 @@
+<!-- keep by customization: begin -->
+<!-- not suitable for Mooncake -->
+
+<!-- keep by customization: end -->
 If you want a domain, you can buy domains on [Azure Management Portal](https://manage.windowsazure.cn) directly. Use the following steps to buy domain names and assign to your web app.
 
 1. In your browser, open the [Azure Management Portal](https://manage.windowsazure.cn).
@@ -24,10 +28,10 @@ If you want a domain, you can buy domains on [Azure Management Portal](https://m
 
   ![](./media/custom-dns-web-site/dncmntask-cname-buydomains-5.png)
 
-7. If you successfully ordered a domain, you can manage the domain and assign to your web app. Click the **"..."** at the right side of your domain. Then you can **Cancel purchase** or **Manage domain**. Click **Manage domain**, then we can bind **subdomain** to our web app on **Manage domain** blade.
+7. If you successfully ordered a domain, you can manage the domain and assign to your web app. Click the **"..."** at the right side of your domain. Then you can <!-- deleted by customization **Cancel purchase** --><!-- keep by customization: begin --> **Delete**, **Cancel** <!-- keep by customization: end --> or **Manage <!-- deleted by customization domain** --><!-- keep by customization: begin --> Hostnames** <!-- keep by customization: end -->. Click **Manage <!-- deleted by customization domain** --><!-- keep by customization: begin --> Hostnames** <!-- keep by customization: end -->, then we can bind **subdomain** to our web app on <!-- deleted by customization **Manage domain** --><!-- keep by customization: begin --> **Hostname bindings** <!-- keep by customization: end --> blade.
 
 	![](./media/custom-dns-web-site/dncmntask-cname-buydomains-6.png)
 
-	Once configuration has completed, the custom domain name will be listed in the **Hostname bindings** section of your web app.
+	Once configuration has completed, the custom domain name will be listed in the <!-- deleted by customization **Hostname bindings** --><!-- keep by customization: begin --> **Hostnames Assign to Site** <!-- keep by customization: end --> section of your web app.
 
 At this point, you should be able to enter the custom domain name in your browser and see that it successfully takes you to your web app.

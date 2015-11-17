@@ -29,8 +29,8 @@ If you run into problems setting up this scenario post your questions on the [Az
 Make sure you have these prerequisites in place:
 ### Azure prerequisites
 
-- You'll need a [Windows Azure](http://azure.microsoft.com/) account. If you don't have one, start with a [trial](http://aka.ms/try-azure). In addition you can read about [Azure Site Recovery Manager pricing](/home/features/site-recovery/#price).
-- You'll need an Azure storage account to store data replicated to Azure. The account needs geo-replication enabled. It should be in the same region as the Azure Site Recovery service, and be associated with the same subscription. To learn more about setting up Azure storage, see [Introduction to Windows Azure Storage](https://azure.microsoft.com/zh-cn/documentation/articles/storage-introduction/).
+- You'll need a [Windows Azure](http://azure.microsoft.com/) account. If you don't have one, start with a [trial](/price/1rmb-trial). In addition you can read about [Azure Site Recovery Manager pricing](/home/features/site-recovery/#price).
+- You'll need an Azure storage account to store data replicated to Azure. The account needs geo-replication enabled. It should be in the same region as the Azure Site Recovery service, and be associated with the same subscription. To learn more about setting up Azure storage, see [Introduction to Windows Azure <!-- deleted by customization Storage](https://azure.microsoft.com/zh-cn/documentation/articles/storage-introduction/) --><!-- keep by customization: begin --> Storage](/documentation/articles/storage-introduction/) <!-- keep by customization: end -->.
 - You'll need to make sure that virtual machines you want to protect comply with Azure requirements. See [Virtual machine support](https://msdn.microsoft.com/zh-cn/library/azure/dn469078.aspx#BKMK_E2A) for details.
 
 ### VMM prerequisites
@@ -85,7 +85,7 @@ If you want to deploy network mapping you'll need the following:
 
 4. In *Name*, enter a friendly name to identify the vault.
 
-5. In *Region*, select the geographic region for the vault. Available geographic regions include East Asia, West Europe, China North, China East, China North, Southeast Asia.
+5. In *Region*, select the geographic region for the vault. Available geographic regions include China East, <!-- deleted by customization West Europe, China North, China East, China North, --> China North.
 6. Click *Create vault*.
 
 	![New Vault](./media/site-recovery-vmm-to-azure/ASRE2AVMM_HvVault.png)

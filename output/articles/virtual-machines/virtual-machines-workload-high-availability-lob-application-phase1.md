@@ -14,10 +14,12 @@
 	wacn.date=""/>
 
 # Line of Business Application Workload Phase 1: Configure Azure
+<!-- deleted by customization
  
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] classic deployment model.
 
  
+-->
 In this phase of deploying an intranet-only, high-availability line of business application in Azure infrastructure services, you build out the Azure networking and storage infrastructure. You must complete this phase before moving on to [Phase 2](/documentation/articles/virtual-machines-workload-high-availability-LOB-application-phase2). See [Deploy a High-Availability Line of Business Application in Azure](/documentation/articles/virtual-machines-workload-high-availability-LOB-application-overview) for all of the phases.
 
 Azure must be provisioned with these basic network components:
@@ -41,7 +43,7 @@ Item | Configuration element | Description | Value
 5. | VNet address space | The address space (defined in a single private address prefix) for the virtual network. Work with your IT department to determine this address space. | __________________
 6. | The first DNS server for the virtual network | The fourth possible IP address for the address space of the second subnet of the virtual network (see Table S). Work with your IT department to determine this address. | __________________
 7. | The second DNS server for the virtual network | The fifth possible IP address for the address space of the second subnet of the virtual network (see Table S). Work with your IT department to determine this address. | __________________
-8. | IPsec shared key | A 32-character random, alphanumeric string that will be used to authenticate both sides of the site-to-site VPN connection. Work with your IT or security department to determine this key value.  Alternately, see [Create a random string for an IPsec preshared key](http://social.technet.microsoft.com/wiki/contents/articles/32330.create-a-random-string-for-an-ipsec-preshared-key.aspx).| __________________
+8. | IPsec shared key | A <!-- deleted by customization 32-character --><!-- keep by customization: begin --> 128-character <!-- keep by customization: end --> random, alphanumeric string that will be used to authenticate both sides of the site-to-site VPN connection. Work with your IT or security department to determine this key value.  <!-- deleted by customization  Alternately, see [Create a random string for an IPsec preshared key](http://social.technet.microsoft.com/wiki/contents/articles/32330.create-a-random-string-for-an-ipsec-preshared-key.aspx).| --><!-- keep by customization: begin --> | <!-- keep by customization: end --> __________________
 
 
 **Table V: Cross-premises virtual network configuration**
@@ -83,9 +85,18 @@ Item | Local network address space
 
 **Table L: Address prefixes for the local network**
 
+<!-- deleted by customization
 > [AZURE.NOTE] This article contains commands for versions of Azure PowerShell from 0.9.5 and up *but not including* versions 1.0.0 and later. You can check your version of Azure PowerShell with the **Get-Module azure | format-table version** command. The Azure PowerShell command blocks in this article are in the process of being tested and updated to support the new cmdlets in Azure PowerShell versions 1.0.0 and later. Thank you for your patience.
 
 Open an Azure PowerShell prompt.
+-->
+<!-- keep by customization: begin -->
+Next, you need to have Azure PowerShell version 0.9.5 or later installed. To check your version of Azure PowerShell, run this command.
+
+	Get-Module azure | format-table version
+
+If you need to install the latest version of Azure PowerShell, use **Control Panel-Programs and Features** to remove the current version. Then, use the instructions in [How to install and configure Azure PowerShell](/documentation/articles/install-configure-powershell) to install Azure PowerShell on your local computer. Open an Azure PowerShell prompt.
+<!-- keep by customization: end -->
 
 First, select the correct Azure subscription with these commands. Replace everything within the quotes, including the < and > characters, with the correct names.
 

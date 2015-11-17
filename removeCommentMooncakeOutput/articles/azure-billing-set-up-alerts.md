@@ -7,9 +7,9 @@
 	manager="msmbaldwin" 
 	editor=""/>
 
-<tags 
-	ms.service="multiple" 
-	ms.date="06/01/2015" 
+<tags
+	ms.service="multiple"
+	ms.date="06/01/2015"
 	wacn.date=""/>
 
 # Set up billing alerts for your Windows Azure subscriptions

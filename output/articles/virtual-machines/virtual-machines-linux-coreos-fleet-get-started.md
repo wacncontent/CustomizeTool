@@ -14,9 +14,11 @@
 	wacn.date=""/>
 
 # Get Started with Fleet on CoreOS on Azure
+<!-- deleted by customization
 
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
 
+-->
 
 This article gives you two quick examples of using [fleet](https://github.com/coreos/fleet) and [Docker](https://www.docker.com/) to run applications on a cluster of [CoreOS] virtual machines.
 
@@ -151,8 +153,10 @@ fleetctl --tunnel coreos-cluster.chinacloudapp.cn:22 unload apache@{1,2,3}.servi
 
 * You can try doing more with your three-node CoreOS cluster on Azure. Explore how to create more complex clusters and use Docker and create more interesting applications by reading [Tim Park's CoreOS Tutorial], [Patrick Chanezon's CoreOS Tutorial], [Docker] documentation, and the [CoreOS Overview].
 
+<!-- deleted by customization
 * To get started with Fleet and CoreOS in Azure Resource Manager, try this [quickstart template](https://azure.microsoft.com/documentation/templates/coreos-with-fleet-multivm/).
 
+-->
 * See [Linux and Open-Source Computing on Azure] for more on using open-source environments on Linux VMs in Azure.
 
 <!--Link references-->

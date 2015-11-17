@@ -42,5 +42,6 @@ In this tutorial, you require users to authenticate first, register with the not
 <!-- URLs. -->
 [Get started with authentication]: /documentation/articles/mobile-services-dotnet-backend-ios-get-started-users
 [Get started with push notifications]: /documentation/articles/mobile-services-dotnet-backend-ios-get-started-push
+
 [Azure Management Portal]: https://manage.windowsazure.cn/
 [Mobile Services .NET How-to Conceptual Reference]: /develop/mobile/how-to-guides/work-with-net-client-library

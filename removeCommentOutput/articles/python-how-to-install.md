@@ -45,7 +45,7 @@ Unless you have a specific need, we recommend the first two options, as describe
 
 ## Installation on Windows, Linux and MacOS (client libraries only)
 
-If you already have Python installed, you can use pip to install a bundle of all the client libraries in your existing Python 2.7 or Python 3.3+ environment. This will download the packages from the [Python Package Index][](/documentation/articles/PyPI).
+If you already have Python installed, you can use pip to install a bundle of all the client libraries in your existing Python 2.7 or Python 3.3+ environment. This will download the packages from the [Python Package Index][] (PyPI).
 
 Note that you may need to use the `sudo` command on Linux and MacOS ie. `sudo pip install azure`.
 
@@ -120,12 +120,12 @@ and then rerun WebPI.
 
 ## Getting More Packages
 
-The [Python Package Index][](/documentation/articles/PyPI) has a rich selection of Python libraries.  If you chose to install a Distro, you'll already have most of the interesting bits for a variety of scenarios from web development to Technical Computing.
+The [Python Package Index][] (PyPI) has a rich selection of Python libraries.  If you chose to install a Distro, you'll already have most of the interesting bits for a variety of scenarios from web development to Technical Computing.
 
 
 ## Python Tools for Visual Studio
 
-[Python Tools for Visual Studio][](/documentation/articles/PTVS) is a free/OSS plugin from Microsoft which turns VS into a full-fledged Python IDE:
+[Python Tools for Visual Studio][] (PTVS) is a free/OSS plugin from Microsoft which turns VS into a full-fledged Python IDE:
 
 ![how-to-install-python-ptvs](./media/python-how-to-install/how-to-install-python-ptvs.png)
 

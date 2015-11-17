@@ -105,12 +105,7 @@ The following steps show the Windows Phone 8.1 and Windows Store 8.1 clients run
 
 
 
-<!-- deleted by customization
 ##Review of the code for handling sync conflicts
--->
-<!-- keep by customization: begin -->
-## Review of the code for handling sync conflicts
-<!-- keep by customization: end -->
 
 In order to use the offline features for Mobile Services, you must include the version column in both your local database and your data transfer object. This is accomplished by updating the `TodoItem` class the following member:
 
@@ -156,16 +151,11 @@ When a push is canceled, `PushAsync` will throw a `MobileServicePushFailedExcept
 
 <!-- URLs -->
 [Handling conflicts code sample]: http://go.microsoft.com/fwlink/?LinkId=394787
-[Get started with Mobile Services]: <!-- deleted by customization /documentation/articles/mobile-services-windows-store-get-started --><!-- keep by customization: begin --> /documentation/articles/mobile-services-windows-store-get-started/ <!-- keep by customization: end -->
+[Get started with Mobile Services]: /documentation/articles/mobile-services-windows-store-get-started
 [Get started with offline data]: /documentation/articles/mobile-services-windows-store-dotnet-get-started-offline-data
 [SQLite for Windows 8.1]: http://go.microsoft.com/fwlink/?LinkId=394776
 [Azure Management Portal]: https://manage.windowsazure.cn/
-<!-- deleted by customization
 [Handling Database Conflicts]: /documentation/articles/mobile-services-windows-store-dotnet-handle-database-conflicts#test-app
 [Mobile Services Samples GitHub Repository]: http://go.microsoft.com/fwlink/?LinkId=512865
--->
-<!-- keep by customization: begin -->
-[Handling Database Conflicts]: /documentation/articles/mobile-services-windows-store-dotnet-handle-database-conflicts/#test-app
-[Mobile Services Samples Github Repository]: http://go.microsoft.com/fwlink/?LinkId=512865
-<!-- keep by customization: end -->
 [Todo Offline Mobile Services sample]: http://go.microsoft.com/fwlink/?LinkId=512866
+ 

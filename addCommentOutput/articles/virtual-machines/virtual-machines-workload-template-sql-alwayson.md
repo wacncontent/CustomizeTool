@@ -14,9 +14,10 @@
 	wacn.date=""/>
 
 # Deploy SQL Server AlwaysOn with an Azure Resource Manager template
-
 <!-- deleted by customization
+
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] classic deployment model. You can't create this resource with the classic deployment model.
+-->
 
 Use the instructions in this article to deploy SQL Server AlwaysOn using an Azure Resource Manager template. This template creates five virtual machines in a new virtual network on two different subnets.
 
@@ -29,20 +30,6 @@ You can run the template with the Azure preview portal, Azure PowerShell, or the
 To deploy this workload using an Azure Resource Manager template and the Azure preview portal, click [here](https://manage.windowsazure.cn/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2Fsql-server-2014-alwayson-dsc%2Fazuredeploy.json).
 
 ![](./media/virtual-machines-workload-template-sql-alwayson/azure-portal-template.png)
--->
-<!-- keep by customization: begin -->
-Use the instructions in this section to deploy SQL Server AlwaysOn using a Resource Manager template. This template creates five virtual machines in a new virtual network on two different subnets.
-
-![](./media/virtual-machines-workload-template-sql-alwayson/five-server-sqlao.png)
-
-You can run the template with the Azure Preview portal, Azure PowerShell, or the Azure CLI.
-
-## Azure Preview portal
-
-To deploy this workload using a Resource Manager template and the Azure Preview portal, click [here](https://manage.windowsazure.cn/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2Fsql-server-2014-alwayson-dsc%2Fazuredeploy.json).
-
-![](./media/virtual-machines-workload-template-sql-alwayson/azure-portal-template.png)
-<!-- keep by customization: end -->
 
 1.	For the **Template** pane, click **Save**.
 2.	Click **Parameters**. On the **Parameters** pane, enter new values, select from allowed values, or accept default values, and then click **OK**.
@@ -69,14 +56,8 @@ Fill in an Azure deployment name, a new Resource Group name, and an Azure datace
 	$RGName="<resource group name>"
 	$locName="<Azure location, such as China North>"
 	$templateURI="https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/sql-server-2014-alwayson-dsc/azuredeploy.json"
-<!-- deleted by customization
 	New-AzureRmResourceGroup -Name $RGName -Location $locName
 	New-AzureRmResourceGroupDeployment -Name $deployName -ResourceGroupName $RGName -TemplateUri $templateURI
--->
-<!-- keep by customization: begin -->
-	New-AzureResourceGroup -Name $RGName -Location $locName
-	New-AzureResourceGroupDeployment -Name $deployName -ResourceGroupName $RGName -TemplateUri $templateURI
-<!-- keep by customization: end -->
 
 Here is an example.
 
@@ -84,24 +65,18 @@ Here is an example.
 	$RGName="TestRG"
 	$locname="China North"
 	$templateURI="https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/sql-server-2014-alwayson-dsc/azuredeploy.json"
-<!-- deleted by customization
 	New-AzureRmResourceGroup -Name $RGName -Location $locName
 	New-AzureRmResourceGroupDeployment -Name $deployName -ResourceGroupName $RGName -TemplateUri $templateURI
--->
-<!-- keep by customization: begin -->
-	New-AzureResourceGroup -Name $RGName -Location $locName
-	New-AzureResourceGroupDeployment -Name $deployName -ResourceGroupName $RGName -TemplateUri $templateURI
-<!-- keep by customization: end -->
 
 Next, run your command block in the Azure PowerShell prompt.
 
-When you run the <!-- deleted by customization **New-AzureRmResourceGroupDeployment** --><!-- keep by customization: begin --> **New-AzureResourceGroupDeployment** <!-- keep by customization: end --> command, you will be prompted to supply the values for a series of parameters. When you have specified all the parameter values, <!-- deleted by customization **New-AzureRmResourceGroupDeployment** --><!-- keep by customization: begin --> **New-AzureResourceGroupDeployment** <!-- keep by customization: end --> creates and configures the virtual machines.
+When you run the **New-AzureRmResourceGroupDeployment** command, you will be prompted to supply the values for a series of parameters. When you have specified all the parameter values, **New-AzureRmResourceGroupDeployment** creates and configures the virtual machines.
 
 When the template execution is complete, you have a new five-server SQL Server AlwaysOn configuration in your new resource group.
 
 ## Azure CLI
 
-Before you begin, make sure you have the right version of Azure CLI installed, you have logged in, and you have switched to the new Resource Manager mode. For the details, click <!-- deleted by customization [here](/documentation/articles/virtual-machines-deploy-rmtemplates-azure-cli#getting-ready) --><!-- keep by customization: begin --> [here](/documentation/articles/virtual-machines-deploy-rmtemplates-azure-cli/#getting-ready) <!-- keep by customization: end -->.
+Before you begin, make sure you have the right version of Azure CLI installed, you have logged in, and you have switched to the new Resource Manager mode. For the details, click [here](/documentation/articles/virtual-machines-deploy-rmtemplates-azure-cli#getting-ready).
 
 First, you create a new resource group. Use the following command and specify the name of the group and the Azure data center location into which you want to deploy.
 
@@ -113,7 +88,7 @@ Next, use the following command and specify the name of your new resource group 
 
 Here is an example.
 
-	azure group create sqlao eastus2
+	azure group create sqlao chinaeast2
 	azure group deployment create --template-uri https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/sql-server-2014-alwayson-dsc/azuredeploy.json sqlao sqldevtest
 
 When you run the **azure group deployment create** command, you will be prompted to supply the values for a series of parameters. When you have specified all the parameter values, Azure creates and configures the virtual machines.
@@ -125,22 +100,12 @@ When the template execution is complete, you have a new five-server SQL Server A
 
 [Deploy and manage virtual machines using Azure Resource Manager templates and Azure PowerShell](/documentation/articles/virtual-machines-deploy-rmtemplates-powershell)
 
-[Azure Compute, Network and Storage <!-- deleted by customization providers --><!-- keep by customization: begin --> Providers <!-- keep by customization: end --> under Azure Resource Manager](/documentation/articles/virtual-machines-azurerm-versus-azuresm)
+[Azure Compute, Network and Storage providers under Azure Resource Manager](/documentation/articles/virtual-machines-azurerm-versus-azuresm)
 
-<!-- deleted by customization
 [Azure Resource Manager overview](/documentation/articles/resource-group-overview)
--->
-<!-- keep by customization: begin -->
-[Azure Resource Manager Overview](/documentation/articles/resource-group-overview)
-<!-- keep by customization: end -->
 
 [Deploy and manage Virtual Machines using Azure Resource Manager templates and the Azure CLI](/documentation/articles/virtual-machines-deploy-rmtemplates-azure-cli)
 
-<!-- deleted by customization
 [Virtual machines documentation](/documentation/services/virtual-machines/)
--->
-<!-- keep by customization: begin -->
-[Virtual machines documentation](http://www.windowsazure.cn/documentation/services/virtual-machines/
-<!-- keep by customization: end -->
 
 [How to install and configure Azure PowerShell](/documentation/articles/install-configure-powershell)

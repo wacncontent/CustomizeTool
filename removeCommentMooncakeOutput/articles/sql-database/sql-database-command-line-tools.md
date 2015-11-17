@@ -7,9 +7,9 @@
 	manager="jeffreyg" 
 	editor="monicar"/>
 
-<tags 
-	ms.service="sql-database" 
-	ms.date="10/08/2015" 
+<tags
+	ms.service="sql-database"
+	ms.date="10/08/2015"
 	wacn.date=""/>
 
 # Manage Azure SQL Database with PowerShell

@@ -11,6 +11,7 @@
 	ms.service="storage"
 	ms.date="09/03/2015"
 	wacn.date=""/>
+
 # What happened to my WebJob project (Visual Studio Azure Storage connected service)?
 
 > [AZURE.SELECTOR]
@@ -18,12 +19,11 @@
 > - [What Happened](/documentation/articles/vs-storage-webjobs-what-happened)
 
 
-<!-- deleted by customization ## --><!-- keep by customization: begin --> ##### <!-- keep by customization: end --> References Added
+## References Added
 
 The Azure Storage NuGet package was added to or updated in your Visual Studio project.  
 This package adds the following .NET references:
 
-<!-- deleted by customization
 - **Microsoft.Data.Edm**
 - **Microsoft.Data.OData**
 - **Microsoft.Data.Services.Client**
@@ -32,19 +32,8 @@ This package adds the following .NET references:
 - **Newtonsoft.Json**
 - **System.Data**
 - **System.Spatial**
--->
-<!-- keep by customization: begin -->
-- `Microsoft.Data.Edm`
-- `Microsoft.Data.OData`
-- `Microsoft.Data.Services.Client`
-- `Microsoft.WindowsAzure.ConfigurationManager`
-- `Microsoft.WindowsAzure.Storage`
-- `Newtonsoft.Json`
-- `System.Data`
-- `System.Spatial`
-<!-- keep by customization: end -->
 
 ## Connection string for Azure Storage added
 In the App.config file of your project, the **AzureWebJobsStorage** and **AzureWebJobsDashboard** entries were updated with the selected storage account's connection string and key.
 
-For more information, see [Azure WebJobs Recommended <!-- deleted by customization Resources](/documentation/articles/websites-webjobs-resources/) --><!-- keep by customization: begin --> Resources](http://www.windowsazure.cn/documentation/articles/websites-webjobs-resources/) <!-- keep by customization: end -->.
+For more information, see [Azure WebJobs Recommended Resources](/documentation/articles/websites-webjobs-resources/).

@@ -105,7 +105,7 @@ public void ConfigureAuth(IAppBuilder app)
 
 		app.UseOAuthBearerAuthentication(new OAuthBearerAuthenticationOptions
 		{
-				AccessTokenFormat = new Microsoft.Owin.Security.Jwt.JwtFormat(tvps, new OpenIdConnectCachingSecurityTokenProvider("https://login.microsoftonline.com/common/v2.0/.well-known/openid-configuration")),
+				AccessTokenFormat = new Microsoft.Owin.Security.Jwt.JwtFormat(tvps, new OpenIdConnectCachingSecurityTokenProvider("https://login.chinacloudapi.cn/common/v2.0/.well-known/openid-configuration")),
 		});
 }
 ```

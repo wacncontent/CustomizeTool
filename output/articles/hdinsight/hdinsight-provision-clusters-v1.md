@@ -43,9 +43,16 @@ Before you begin the instructions in this article, you must have the following:
  
 - **Operating system**
 
+<!-- deleted by customization
 	You can provision HDInsight clusters on one of the following two operating systems:
+-->
+<!-- keep by customization: begin -->
+	You can provision HDInsight clusters on one of the following operating system: 
+<!-- keep by customization: end -->
 	- **HDInsight on Windows (Windows Server 2012 R2 Datacenter)**:
+<!-- deleted by customization
 	- **HDInsight on Linux (Ubuntu 12.04 LTS for Linux) (Preview)**: HDInsight provides the option of configuring Linux clusters on Azure. Configure a Linux cluster if you are familiar with Linux or Unix, migrating from an existing Linux-based Hadoop solution, or want easy integration with Hadoop ecosystem components built for Linux. For more information, see [Get started with Hadoop on Linux in HDInsight](/documentation/articles/hdinsight-hadoop-linux-get-started). 
+-->
 
 
 - **HDInsight version**
@@ -59,9 +66,15 @@ Before you begin the instructions in this article, you must have the following:
 	- Hadoop clusters: for query and analysis workloads
 	- HBase clusters:  for NoSQL workloads
 	- Storm clusters: for real time event processing workloads
+<!-- deleted by customization
 	- Spark clusters (preview): for in-memory processing, interactive queries, stream, and machines learning workloads.
 
 	![HDInsight clusters](./media/hdinsight-provision-clusters-v1/hdinsight.clusters.png)
+-->
+<!-- keep by customization: begin -->
+
+	![HDInsight clusters](./media/hdinsight-provision-clusters-v1/hdinsight.clusters.png)
+<!-- keep by customization: end -->
  
 	> [AZURE.NOTE] *Azure HDInsight cluster* is also called *Hadoop clusters in HDInsight*, or *HDInsight cluster*. Sometimes, it is used interchangeably with *Hadoop cluster*. They all refer to the Hadoop clusters hosted in the Windows Azure environment. 	   
 
@@ -89,6 +102,7 @@ Before you begin the instructions in this article, you must have the following:
 	- Zookeeper nodes (3 nodes)
 	
 
+<!-- deleted by customization
 	![HDInsight Hadoop cluster roles](./media/hdinsight-provision-clusters-v1/HDInsight.Spark.roles.png)
 
 	Spark clusters for HDInsight are deployed with three roles:
@@ -96,6 +110,7 @@ Before you begin the instructions in this article, you must have the following:
 	- Worker node (at least 1 node)
 	- Zookeeper nodes (3 nodes) (Free for A1 Zookeepers)
 
+-->
 	Customers are billed for the usage of those nodes for the duration of the cluster’s life. Billing starts once a cluster is created and stops when the cluster is deleted (clusters can’t be de-allocated or put on hold). The cluster size affects the cluster price. For learning purposes, it is recommended to use 1 data node. For more information about HDInsight pricing, see [HDInsight pricing](/home/features/hdinsight/#price).
 
 
@@ -122,7 +137,9 @@ Before you begin the instructions in this article, you must have the following:
 
 	- HTTP user. The default user name is admin using the basic configuration on the Azure Management Portal.
 	- RDP user (Windows clusters): It is used to connect to the cluster using RDP. When you create the account, you must set an expiration date that is within 90 days from today. 
+<!-- deleted by customization
 	- SSH User (Linux clusters): Is used to connect to the cluster using SSH. You can create additional SSH user accounts after the cluster is created by following the steps in [Use SSH with Linux-based Hadoop on HDInsight from Linux, Unix, or OS X](/documentation/articles/hdinsight-hadoop-linux-use-ssh-unix).
+-->
   
  
 
@@ -447,33 +464,63 @@ While provisioning a cluster, you can use the other configuration options such a
 
 > [AZURE.NOTE] As of 8/29/2014, Azure CLI cannot be used to associate a cluster with an Azure virtual network.
 
-Another option for provisioning an HDInsight cluster is the Azure CLI. Azure CLI is implemented in Node.js. It can be used on any platform that supports Node.js, including Windows, Mac and Linux. You can install the CLI from the following locations:
+Another option for provisioning an HDInsight cluster is the Azure CLI. Azure CLI is implemented in Node.js. It can be used on any platform that supports Node.js<!-- deleted by customization, including Windows, Mac and Linux -->. You can install the CLI from the following locations:
 
 - **Node.js SDK** - <a href="https://www.npmjs.com/package/azure-mgmt-hdinsight" target="_blank">https://www.npmjs.com/package/azure-mgmt-hdinsight</a>
 - **Azure CLI** - <a href="https://github.com/azure/azure-xplat-cli/archive/hdinsight-February-18-2015.tar.gz" target="_blank">https://github.com/azure/azure-xplat-cli/archive/hdinsight-February-18-2015.tar.gz</a>  
 
-For a general guide on how to use Azure CLI, see [Azure CLI for Mac, Linux and Windows](/documentation/articles/xplat-cli-install).
+For a general guide on how to use Azure CLI, see [Azure CLI <!-- deleted by customization for Mac, Linux and Windows](/documentation/articles/xplat-cli-install) --><!-- keep by customization: begin --> ](/documentation/articles/xplat-cli-install) <!-- keep by customization: end -->.
 
-Instructions below guide you on how to install Azure CLI on Linux and Windows, and then how to use the command line to provision a cluster.
+Instructions below guide you on how to install Azure CLI on <!-- deleted by customization Linux and --> Windows, and then how to use the command line to provision a cluster.
+<!-- deleted by customization
 
 - [Set up the Azure CLI for Linux](#clilin)
+-->
 - [Set up the Azure CLI for Windows](#cliwin)
 - [Provision HDInsight clusters by using the Azure CLI](#cliprovision)
 
+<!-- deleted by customization
 #### <a id="clilin"></a>Set up Azure CLI for Linux
 
 Perform the following procedures to set up your Linux computer to use the Azure Command-Line Interface (Azure CLI):
 
 - Install Azure CLI by using Node.js Package Manager (NPM)
 - Connect to your Azure subscription
+-->
+<!-- keep by customization: begin -->
+
+#### <a id="cliwin"></a>Set up Azure CLI for Windows
+
+Perform the following procedures to set up your Windows-based computer to use Azure CLI:
+
+- Install Azure CLI (by using NPM or Windows Installer)
+- Download and import Azure account publish settings
+
+
+Azure CLI can be installed via NPM or Windows Installer. Microsoft recommends that you install by using only one of the two options.
+<!-- keep by customization: end -->
 
 **To install Azure CLI by using NPM**
 
+<!-- deleted by customization
 1.	Open a terminal window on your Linux computer and run the following command:
 
 		sudo npm install -g https://github.com/azure/azure-xplat-cli/archive/hdinsight-February-18-2015.tar.gz
 
 2.	Run the following command to verify the installation:
+-->
+<!-- keep by customization: begin -->
+1.	Browse to **www.nodejs.org**.
+2.	Click **INSTALL** and follow the instructions, using the default settings.
+3.	Open **Command Prompt** (or *Azure Command Prompt*, or *Developer Command Prompt for VS2012*) from your workstation.
+4.	Run the following command in the command prompt window:
+
+		 npm install -g https://github.com/azure/azure-xplat-cli/archive/hdinsight-February-18-2015.tar.gz
+
+	> [AZURE.NOTE] If you get an error saying the NPM command is not found, verify that the following paths are in the PATH environment variable: <i>C:\Program Files (x86)\nodejs;C:\Users\[username]\AppData\Roaming\npm</i> or <i>C:\Program Files\nodejs;C:\Users\[username]\AppData\Roaming\npm</i>
+
+5.	Run the following command to verify the installation:
+<!-- keep by customization: end -->
 
 		azure hdinsight -h
 
@@ -484,6 +531,7 @@ Perform the following procedures to set up your Linux computer to use the Azure 
 		azure hdinsight cluster -h
 		azure hdinsight cluster create -h
 
+<!-- deleted by customization
 **To connect to your Azure subscription**
 
 Before using Azure CLI, you must configure connectivity between your workstation and Azure. Your Azure subscription information is used by Azure CLI to connect to your account. This information can be obtained from Azure in a publish settings file. The publish settings file can then be imported as a persistent local config setting that Azure CLI will use for subsequent operations. You need to import your publish settings only once.
@@ -538,6 +586,7 @@ Azure CLI can be installed via NPM or Windows Installer. Microsoft recommends th
 		azure hdinsight cluster -h
 		azure hdinsight cluster create -h
 
+-->
 **To install Azure CLI by using Windows Installer**
 
 1.	Browse to **/downloads/**.
@@ -579,7 +628,7 @@ HDInsight uses an Azure Blob storage container as the default file system. An Az
 
 		azure storage account create [options] <StorageAccountName>
 
-	When prompted for a location, select a location where an HDInsight cluster can be provisioned. The storage must be in the same location as the HDInsight cluster. Currently, only the **East Asia**, **Southeast Asia**, **China North**, **West Europe**, **China East**, **China North**, **China North**, and **China East** regions can host HDInsight clusters.  
+	When prompted for a location, select a location where an HDInsight cluster can be provisioned. The storage must be in the same location as the HDInsight cluster. Currently, only the **China <!-- deleted by customization East**, **China North**, **China North**, **West Europe**, **China East**, **China North**, **China --> North**, and **China East** regions can host HDInsight clusters.
 
 For information on creating an Azure Storage account by using the Azure Management Portal, see [Create, manage, or delete a storage account](/documentation/articles/storage-create-storage-account).
 

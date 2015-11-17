@@ -8,9 +8,9 @@
    editor="v-romcal"/>
 
 <tags
-   ms.service="sql-database"
-   ms.date="07/24/2015"
-   wacn.date=""/>
+	ms.service="sql-database"
+	ms.date="07/24/2015"
+	wacn.date=""/>
 
 # Restore an Azure SQL database using Point in Time Restore with REST API
 
@@ -47,3 +47,4 @@ For more information, see the following:
 [Azure SQL Database Point in Time Restore (blog)](http://azure.microsoft.com/blog/2014/10/01/azure-sql-database-point-in-time-restore/)
 
 [Service Management REST API Reference](https://msdn.microsoft.com/zh-cn/library/azure/ee460799.aspx)
+ 

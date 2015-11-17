@@ -156,16 +156,31 @@ The following example shows how to get the supported regions for web sites using
 The output will be similar to:
 
     Brazil South
+<!-- deleted by customization
+    China East
+-->
+<!-- keep by customization: begin -->
     East Asia
+<!-- keep by customization: end -->
     China East
     Japan East
+<!-- deleted by customization
+    China East
+-->
+<!-- keep by customization: begin -->
     Japan West
+<!-- keep by customization: end -->
     China North
     China North
     China East
     West Europe
     China North
+<!-- deleted by customization
+    China North
+-->
+<!-- keep by customization: begin -->
     Southeast Asia
+<!-- keep by customization: end -->
     China North
     China East 2
 
@@ -183,8 +198,14 @@ Which returns:
 
     {
       "name": "Microsoft.Web/sites",
+<!-- deleted by customization
+      "location": "Brazil South,China East,China East,Japan East,China East,China North,
+            China North,China East,West Europe,China North,China North,China North,China East 2"
+-->
+<!-- keep by customization: begin -->
       "location": "Brazil South,East Asia,China East,Japan East,Japan West,China North,
             China North,China East,West Europe,China North,Southeast Asia,China North,China East 2"
+<!-- keep by customization: end -->
     }
 
 ## Supported API versions
@@ -227,4 +248,4 @@ You can open the file and find the **apiVersions** element
 ## Next steps
 
 - To learn about creating Resource Manager templates, see [Authoring Azure Resource Manager templates](/documentation/articles/resource-group-authoring-templates).
-- To learn about deploying resources, see [Deploy an application with Azure Resource Manager template](./azure-portal/resource-group-template-deploy.md).
+- To learn about deploying resources, see [Deploy an application with Azure Resource Manager <!-- deleted by customization template](/documentation/articles/resource-group-template-deploy) --><!-- keep by customization: begin --> template](./azure-portal/resource-group-template-deploy.md) <!-- keep by customization: end -->.

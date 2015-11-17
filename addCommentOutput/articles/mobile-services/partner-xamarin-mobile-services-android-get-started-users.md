@@ -81,6 +81,7 @@ Next, you will update the app to authenticate users before requesting resources 
 
         private async Task CreateTable()
         {
+
             await InitLocalStoreAsync();
 
             // Get the Mobile Service Table instance to use

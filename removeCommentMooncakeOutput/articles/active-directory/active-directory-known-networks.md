@@ -7,9 +7,9 @@
 	manager="msStevenPo"  
 	editor=""/>
 
-<tags 
-	ms.service="active-directory" 
-	ms.date="09/03/2015" 
+<tags
+	ms.service="active-directory"
+	ms.date="09/03/2015"
 	wacn.date=""/>
 
 # Known Networks

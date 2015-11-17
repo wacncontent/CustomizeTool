@@ -31,8 +31,8 @@ If you run into problems setting up this scenario, post your questions on the [A
 Make sure you have these prerequisites in place:
 ### Azure prerequisites
 
-- You'll need a [Windows Azure](http://azure.microsoft.com/) account. If you don't have one, start with a [trial](http://aka.ms/try-azure). In addition, you can read about [Azure Site Recovery Manager pricing](/home/features/site-recovery/#price).
-- You'll need an Azure storage account to store data replicated to Azure. The account needs geo-replication enabled. It should be in the same region as the Azure Site Recovery service, and be associated with the same subscription. To learn more about setting up Azure storage, see [Introduction to Windows Azure Storage](https://azure.microsoft.com/zh-cn/documentation/articles/storage-introduction/).
+- You'll need a [Windows <!-- deleted by customization Azure](http://azure.microsoft.com/) --><!-- keep by customization: begin --> Azure](http://www.windowsazure.cn) <!-- keep by customization: end --> account. If you don't have one, start with a [trial](/price/1rmb-trial). In addition, you can read about [Azure Site Recovery Manager pricing](/home/features/site-recovery/#price).
+- You'll need an Azure storage account to store data replicated to Azure. The account needs geo-replication enabled. It should be in the same region as the Azure Site Recovery service, and be associated with the same subscription. To learn more about setting up Azure storage, see [Introduction to Windows Azure <!-- deleted by customization Storage](https://azure.microsoft.com/zh-cn/documentation/articles/storage-introduction/) --><!-- keep by customization: begin --> Storage](/documentation/articles/storage-introduction/) <!-- keep by customization: end -->.
 - You'll need to make sure that virtual machines you want to protect comply with Azure requirements. See [Virtual machine support](https://msdn.microsoft.com/zh-cn/library/azure/dn469078.aspx#BKMK_E2A) for details.
 
 ### VMM prerequisites
@@ -99,7 +99,7 @@ In PowerShell, replace the elements within the "< >" with your specific informat
 ```
 
 	$VaultName = "<testvault123>"
-	$VaultGeo  = "<Southeast Asia>"
+	$VaultGeo  = "<China North>"
 	$OutputPathForSettingsFile = "<c:\>"
 
 ```
@@ -120,7 +120,7 @@ Generate a registration key in the vault. After you download the Azure Site Reco
 	```
 	
 		$VaultName = "<testvault123>"
-		$VaultGeo  = "<Southeast Asia>"
+		$VaultGeo  = "<China North>"
 		$OutputPathForSettingsFile = "<c:\>"
 	
 		$VaultSetingsFile = Get-AzureSiteRecoveryVaultSettingsFile -Location $VaultGeo -Name $VaultName -Path $OutputPathForSettingsFile;
@@ -194,7 +194,7 @@ If you don't have an Azure storage account, create a geo-replication enabled acc
 ```
 
 $StorageAccountName = "teststorageacc1"
-$StorageAccountGeo  = "Southeast Asia"
+$StorageAccountGeo  = "China North"
 
 New-AzureStorageAccount -StorageAccountName $StorageAccountName -Label $StorageAccountName -Location $StorageAccountGeo;
 

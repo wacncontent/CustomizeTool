@@ -1,33 +1,40 @@
 {
-  "path": "C:/Users/Administrator/Documents/GitHub/azure-content-pr/",
-  "language": "en-us",
-  "folders": [ "articles/app-service-web/", "articles/automation/", "articles/hdinsight/", "articles/media-services/", "articles/redis-cache/", "articles/traffic-manager/", "articles/virtual-network/" ],
-  "output_folder": "output/",
-  "compare": {
-    "compare": true,
-    "path": "C:/Users/Administrator/Documents/GitHub/azure-content-mooncake-pr/"
-  },
-  "updateFileList": true,
-  "includes_search_keys": {
-    "articles/app-service-web/": [ "web" ],
-    "articles/automation/": [ "automation" ],
-    "articles/hdinsight/": [ "hdinsight" ],
-    "articles/media-services/": [ "media" ],
-    "articles/redis-cache/": [ "cache" ],
-    "articles/traffic-manager/": [ "traffic" ],
-    "articles/virtual-network/": [ "virtual-network", "vnet" ]
-  },
-  "check_dates": false,
-  "815path": "C:/Users/Administrator/Documents/GitHub/815/",
+    "customize": true,
+    "path": "C:/Users/Administrator/Documents/GitHub/azure-content-pr/",
+    "language": "en-us",
+    "folders": [ "articles/app-service-web/", "articles/automation/", "articles/hdinsight/", "articles/media-services/", "articles/redis-cache/", "articles/traffic-manager/", "articles/virtual-network/" ],
+    "output_folder": "output/",
+    "compare": {
+        "compare": true,
+        "path": "C:/Users/Administrator/Documents/GitHub/azure-content-mooncake-pr/"
+    },
+    "updateFileList": true,
+    "includes_search_keys": {
+        "articles/app-service-web/": [ "web" ],
+        "articles/automation/": [ "automation" ],
+        "articles/hdinsight/": [ "hdinsight" ],
+        "articles/media-services/": [ "media" ],
+        "articles/redis-cache/": [ "cache" ],
+        "articles/traffic-manager/": [ "traffic" ],
+        "articles/virtual-network/": [ "virtual-network", "vnet" ]
+    },
+    "check_dates": false,
+    "815path": "C:/Users/Administrator/Documents/GitHub/815/",
     "removeComment": {
         "remove": true,
-        "path":  "removeCommentOutput/"
-    } ,
+        "path": "removeCommentOutput/"
+    },
     "updateLinks": false,
     "addComment": {
         "add": true,
         "globalPath": "",
         "mooncakePath": "",
         "outputPath": ""
+    },
+    "wordCount": false,
+    "getDeletionAndReplacement": {
+        "get": true,
+        "input": "addCommentOutput/",
+        "path": "deletionAndReplacementOutput/"
     }
 }

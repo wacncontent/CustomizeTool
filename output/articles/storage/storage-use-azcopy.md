@@ -160,7 +160,7 @@ Parameters for AzCopy are described in the table below. You can also type one of
     <td><b>/Snapshot</b></td>
     <td>Indicates whether to transfer snapshots. This option is only valid when the source is a blob. 
         <br />
-        The transferred blob snapshots are renamed in this format: [blob-name](/documentation/articles/snapshot-time)[extension]. 
+        The transferred blob snapshots are renamed in this format: <!-- deleted by customization [blob-name] (snapshot-time)[extension] --><!-- keep by customization: begin --> [blob-name](/documentation/articles/snapshot-time)[extension] <!-- keep by customization: end -->.
         <br />
         By default, snapshots are not copied.</td>
     <td>Y</td>

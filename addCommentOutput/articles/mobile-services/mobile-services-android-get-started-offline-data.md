@@ -43,7 +43,9 @@ To push and pull changes between the device and Azure Mobile Services, you use a
 2. Add the following **import** statements to *ToDoActivity.java*:
 
 		import java.util.Map;
+
 		import android.widget.Toast;
+
 		import com.microsoft.windowsazure.mobileservices.table.query.Query;
 		import com.microsoft.windowsazure.mobileservices.table.sync.MobileServiceSyncContext;
 		import com.microsoft.windowsazure.mobileservices.table.sync.MobileServiceSyncTable;
@@ -102,6 +104,7 @@ To push and pull changes between the device and Azure Mobile Services, you use a
 		public void syncAsync(){
 			if (isNetworkAvailable()) {
 				new AsyncTask<Void, Void, Void>() {
+
 					@Override
 					protected Void doInBackground(Void... params) {
 						try {
@@ -126,6 +129,7 @@ To push and pull changes between the device and Azure Mobile Services, you use a
 			syncAsync();
 
 	This causes the device on startup to sync with the Azure table. Otherwise you would display the last offline contents of the local store.
+
 
 
 9. Update the code in the `refreshItemsFromTable` method to use this query (first line of code inside the `try` block):
@@ -206,8 +210,9 @@ One thing which is important to point out: if there are pending changes in the l
 <!-- keep by customization: begin -->
 [Get started with data]: /documentation/articles/mobile-services-android-get-started-data
 <!-- keep by customization: end -->
-[Handling Conflicts with Offline Support for Mobile Services]:/documentation/articles/mobile-services-android-handling-conflicts-offline-data
+[Handling Conflicts with Offline Support for Mobile Services]: /documentation/articles/mobile-services-android-handling-conflicts-offline-data
 [Soft Delete]: /documentation/articles/mobile-services-using-soft-delete
+
 [Cloud Cover: Offline Sync in Azure Mobile Services]: http://channel9.msdn.com/Shows/Cloud+Cover/Episode-155-Offline-Storage-with-Donna-Malayeri
 [Azure Friday: Offline-enabled apps in Azure Mobile Services]: http://azure.microsoft.com/documentation/videos/azure-mobile-services-offline-enabled-apps-with-donna-malayeri/
 

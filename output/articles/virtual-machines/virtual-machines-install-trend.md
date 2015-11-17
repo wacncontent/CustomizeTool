@@ -62,15 +62,20 @@ If the VM Agent is installed, run these commands.
 
 	$Agent = Get-AzureVMAvailableExtension TrendMicro.DeepSecurity -ExtensionName TrendMicroDSA
 
-	Set-AzureVMExtension -Publisher TrendMicro.DeepSecurity –Version $Agent.Version -ExtensionName TrendMicroDSA -VM $vm | Update-AzureVM
+	Set-AzureVMExtension -Publisher TrendMicro.DeepSecurity <!-- deleted by customization –Version --><!-- keep by customization: begin --> �Version <!-- keep by customization: end --> $Agent.Version -ExtensionName TrendMicroDSA -VM $vm | Update-AzureVM
 
 ## Next steps
 
 It takes a few minutes for the agent to start running when it is installed. After that, you'll need to activate Deep Security on the virtual machine so it can be managed by a Deep Security Manager. See the following for additional instructions:
 
 - Trend's article about this solution, [Instant-On Cloud Security for Windows Azure](http://www.trendmicro.com/us/business/saas/deep-security-as-a-service/microsoft-azure-security/index.html?cm_mmc=VURL:www.trendmicro.com-_-VURL-_-%2Fazure%2Findex.html-_-1-1#how-it-works)
-- A [sample Windows PowerShell script](https://dsahandler.blob.core.windows.net/dsaas/ds-config.ps1) to configure the virtual machine
+- A [sample Windows PowerShell <!-- deleted by customization script](https://dsahandler.blob.core.windows.net/dsaas/ds-config.ps1) --><!-- keep by customization: begin --> script](https://dsahandler.blob.core.chinacloudapi.cn/dsaas/ds-config.ps1) <!-- keep by customization: end --> to configure the virtual machine
+<!-- deleted by customization
 - [Instructions](https://dsahandler.blob.core.windows.net/dsaas/ds-config-README.txt)  for the sample
+-->
+<!-- keep by customization: begin -->
+- [Instructions](https://dsahandler.blob.core.chinacloudapi.cn/dsaas/ds-config-README.txt)  for the sample
+<!-- keep by customization: end -->
 
 ## Additional resources
 

@@ -8,9 +8,9 @@
 	editor="" />
 
 
-<tags 
-	ms.service="sql-database" 
-	ms.date="10/16/2015" 
+<tags
+	ms.service="sql-database"
+	ms.date="10/16/2015"
 	wacn.date=""/>
 
 

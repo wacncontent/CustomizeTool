@@ -50,7 +50,7 @@ In this tutorial you will learn:
 
 ##  Prerequisites
 
--  A Microsoft account with at least one valid, active Azure subscription.  If you do not already have an Azure subscription, you can sign up for a trial at [Try Azure](/pricing/1rmb-trial/). <!-- deleted by customization If you have an MSDN Subscription, see [Windows Azure Special Pricing: MSDN, MPN, and Bizspark Benefits](http://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/). -->
+-  A Microsoft account with at least one valid, active Azure subscription.  If you do not already have an Azure subscription, you can sign up for a trial at [Try Azure](/pricing/1rmb-trial/). <!-- deleted by customization If you have an MSDN Subscription, see [Windows Azure Special Pricing: MSDN, MPN, and Bizspark Benefits](/pricing/member-offers/msdn-benefits-details/). -->
 
 If you are using this tutorial to configure a working cross-premises virtual network that is customized for your organization, you need the following:
 

@@ -3,11 +3,11 @@
 
 2. Right-click the **Components** folder, click  **Get More Components...**, search for the **Google Cloud Messaging Client** component and add it to the project. 
 
-1. Open the ToDoActivity.cs project file and add the following using statement to the class:
+<!-- deleted by customization 1 --><!-- keep by customization: begin --> 3 <!-- keep by customization: end -->. Open the ToDoActivity.cs project file and add the following using statement to the class:
 
 		using Gcm.Client;
 
-2. In the **ToDoActivity** class, add the following new code: 
+<!-- deleted by customization 2 --><!-- keep by customization: begin --> 4 <!-- keep by customization: end -->. In the **ToDoActivity** class, add the following new code:
 
         // Create a new instance field for this activity.
         static ToDoActivity instance = new ToDoActivity();
@@ -31,11 +31,11 @@
 
 	This enables you to access the Mobile Services client instance from the service process.
 
-3. Change the existing Mobile Services client declaration to public, as follows:
+<!-- deleted by customization 3 --><!-- keep by customization: begin --> 5 <!-- keep by customization: end -->. Change the existing Mobile Services client declaration to public, as follows:
 
 		public MobileServiceClient client { get; private set; }
 
-4.	Add the following code to the **OnCreate** method, after the **MobileServiceClient** is created:
+<!-- deleted by customization 4.	Add --><!-- keep by customization: begin --> 6.	Add <!-- keep by customization: end --> the following code to the **OnCreate** method, after the **MobileServiceClient** is created:
 
         // Set the current instance of TodoActivity.
         instance = this;

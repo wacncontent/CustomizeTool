@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Azure Infrastructure Services Workload: Intranet SharePoint farm"
-	description="Learn about the value of an intranet SharePoint farm deployed in Azure, how to set up a dev/test environment, and how to deploy a high-availability production configuration."
+	pageTitle="SharePoint Server 2013 farm in Azure | Windows Azure"
+	description="Learn the value of a SharePoint Server 2013 farm in Azure, set up a test environment, and deploy a high-availability configuration."
 	services="virtual-machines"
 	documentationCenter=""
 	authors="JoeDavies-MSFT"
@@ -43,13 +43,13 @@ You can create an [Azure Trial Subscription](/pricing/1rmb-trial/).
 A cloud-only virtual network is not connected to an on-premises network. If you just want to quickly create a basic or high-availability SharePoint farm, see [SharePoint Server Farm](/documentation/articles/virtual-machines-sharepoint-farm-azure-preview). The following example shows the basic SharePoint farm configuration.
 
 ![](./media/virtual-machines-workload-intranet-sharepoint-farm/SPFarm_Basic.png)
- 
+
 ### Cross-premises virtual network
 
 A cross-premises virtual network is connected to an on-premises network with a site-to-site VPN or ExpressRoute connection. If you want to create a dev/test environment that mimics the final configuration and experiment with accessing the SharePoint server and performing remote administration over a VPN connection, see [Set up a SharePoint intranet farm in a hybrid cloud for testing](/documentation/articles/virtual-networks-setup-sharepoint-hybrid-cloud-testing).
 
 ![](./media/virtual-machines-workload-intranet-sharepoint-farm/CreateSPFarmHybridCloud.png)
- 
+
 Your next step is to create a high-availability intranet SharePoint farm in Azure.
 
 ## Deploy an intranet SharePoint farm hosted in Azure
@@ -64,9 +64,7 @@ This consists of:
 - A SQL Server AlwaysOn Availability Groups configuration with two SQL servers and a majority node computer in a cluster.
 - An Azure Active Directory in the virtual network with two replica domain controllers.
 
-<!--
-	To see this configuration as an infographic, see [SharePoint with SQL Server AlwaysOn](http://azure.microsoft.com/documentation/infographics/sharepoint-sqlserver-alwayson/).
--->
+To see this configuration as an infographic, see [SharePoint with SQL Server AlwaysOn](https://azure.microsoft.com/zh-cn/documentation/infographics/sharepoint-sqlserver-alwayson/).
 
 ### Bill of materials
 
@@ -110,7 +108,7 @@ Once configured, you can expand this SharePoint farm with guidance from [Windows
 
 [Deploying SharePoint with SQL Server AlwaysOn Availability Groups in Azure](/documentation/articles/virtual-machines-workload-deploy-spsqlao-overview)
 
-[Set up a SharePoint intranet farm in a hybrid cloud for testing](./documentation/articles/virtual-networks-setup-sharepoint-hybrid-cloud-testing)
+[Set up a SharePoint intranet farm in a hybrid cloud for testing](/documentation/articles/virtual-networks-setup-sharepoint-hybrid-cloud-testing)
 
 [Windows Azure architectures for SharePoint 2013](https://technet.microsoft.com/zh-cn/library/dn635309.aspx)
 

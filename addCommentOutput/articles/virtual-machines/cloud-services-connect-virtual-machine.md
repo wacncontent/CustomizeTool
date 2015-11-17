@@ -14,14 +14,11 @@
 	wacn.date=""/>
 
 
+# Connect virtual machines <!-- deleted by customization created with the classic deployment model --> with a virtual network or cloud service
 <!-- deleted by customization
-# Connect virtual machines created with the classic deployment model with a virtual network or cloud service
 
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
 
 -->
-<!-- keep by customization: begin -->
-# How to connect virtual machines with a virtual network or cloud service
-<!-- keep by customization: end -->
 
 [AZURE.INCLUDE [howto-connect-vm-cloud-service](../includes/howto-connect-vm-cloud-service.md)]

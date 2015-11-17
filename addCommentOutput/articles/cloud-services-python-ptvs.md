@@ -22,7 +22,7 @@ This article provides an overview of using Python web and worker roles using [Py
 ## Prerequisites
 
  - Visual Studio 2013 or 2015
- - [Python Tools 2.2 for Visual Studio][](/documentation/articles/PTVS)
+ - [Python Tools 2.2 for Visual Studio][] (PTVS)
  - [Azure SDK Tools for VS 2013][] or [Azure SDK Tools for VS 2015][]
  - [Python 2.7 32-bit][] or [Python 3.4 32-bit][]
 
@@ -112,17 +112,15 @@ For more details about using Azure services from your web and worker roles, such
 
 <!--Link references-->
 
-<!-- deleted by customization
-[What is a Cloud Service?]: /manage/services/cloud-services/what-is-a-cloud-service/
+[What is a Cloud Service?]: /documentation/articles/fundamentals-application-models/
 [execution model-web sites]: /documentation/articles/fundamentals-application-models#WebSites
+<!-- deleted by customization
 [execution model-vms]: fundamentals-application-models.md#VMachine
 [execution model-cloud services]: fundamentals-application-models.md#CloudServices
 -->
 <!-- keep by customization: begin -->
-[What is a Cloud Service?]: /documentation/articles/cloud-services-what-is
-[execution model-web sites]: /documentation/articles/fundamentals-application-models/#WebSites
-[execution model-vms]: /documentation/articles/fundamentals-application-models/#VMachine
-[execution model-cloud services]: /documentation/articles/fundamentals-application-models/#CloudServices
+[execution model-vms]: /documentation/articles/fundamentals-application-models#VMachine
+[execution model-cloud services]: /documentation/articles/fundamentals-application-models#CloudServices
 <!-- keep by customization: end -->
 [Python Developer Center]: /develop/python/
 
@@ -131,6 +129,8 @@ For more details about using Azure services from your web and worker roles, such
 [Table Service]: /documentation/articles/storage-python-how-to-use-table-storage
 [Service Bus Queues]: /documentation/articles/service-bus-python-how-to-use-queues
 [Service Bus Topics]: /documentation/articles/service-bus-python-how-to-use-topics-subscriptions
+
+
 <!--External Link references-->
 
 <!-- deleted by customization
@@ -138,20 +138,18 @@ For more details about using Azure services from your web and worker roles, such
 [Python Tools for Visual Studio Documentation]: http://aka.ms/ptvsdocs
 [Cloud Service Projects]: http://go.microsoft.com/fwlink/?LinkId=624028
 [Python Tools 2.2 for Visual Studio]: http://go.microsoft.com/fwlink/?LinkID=624025
--->
-<!-- keep by customization: begin -->
-[Python Tools for Visual Studio]: http://pytools.codeplex.com
-[Python Tools for Visual Studio Documentation]: http://pytools.codeplex.com/documentation
-[Cloud Service Projects]: http://pytools.codeplex.com/wikipage?title=Features%20Cloud%20Project
-
-[Python Tools 2.1 for Visual Studio]: http://go.microsoft.com/fwlink/?LinkId=517189
-<!-- keep by customization: end -->
 [Azure SDK Tools for VS 2013]: http://go.microsoft.com/fwlink/?LinkId=323510
-<!-- deleted by customization
 [Azure SDK Tools for VS 2015]: http://go.microsoft.com/fwlink/?LinkId=518003
--->
-<!-- keep by customization: begin -->
-[Azure SDK Tools for VS 2012]: http://go.microsoft.com/fwlink/?LinkId=323511
-<!-- keep by customization: end -->
 [Python 2.7 32-bit]: http://go.microsoft.com/fwlink/?LinkId=517190
 [Python 3.4 32-bit]: http://go.microsoft.com/fwlink/?LinkId=517191
+-->
+<!-- keep by customization: begin -->
+[Python Tools for Visual Studio]: /documentation/articles/http://aka.ms/ptvs
+[Python Tools for Visual Studio Documentation]: /documentation/articles/http://aka.ms/ptvsdocs
+[Cloud Service Projects]: /documentation/articles/http://go.microsoft.com/fwlink/?LinkId=624028
+[Python Tools 2.2 for Visual Studio]: /documentation/articles/http://go.microsoft.com/fwlink/?LinkID=624025
+[Azure SDK Tools for VS 2013]: /documentation/articles/http://go.microsoft.com/fwlink/?LinkId=323510
+[Azure SDK Tools for VS 2015]: /documentation/articles/http://go.microsoft.com/fwlink/?LinkId=518003
+[Python 2.7 32-bit]: /documentation/articles/http://go.microsoft.com/fwlink/?LinkId=517190
+[Python 3.4 32-bit]: /documentation/articles/http://go.microsoft.com/fwlink/?LinkId=517191
+<!-- keep by customization: end -->

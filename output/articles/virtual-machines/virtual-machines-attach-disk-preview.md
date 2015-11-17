@@ -15,7 +15,12 @@
 
 # How to attach a data disk in the Azure preview portal
 
+<!-- deleted by customization
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] [classic deployment model](/documentation/articles/storage-windows-attach-disk).
+-->
+<!-- keep by customization: begin -->
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-include.md)] This article covers creating a resource with the Resource Manager deployment model. You can also create a resource with the [classic deployment model](/documentation/articles/storage-windows-attach-disk).
+<!-- keep by customization: end -->
 
 This article shows you how to attach both new and existing disks to a virtual machine through the Azure preview portal. Before you do this, review these tips:
 

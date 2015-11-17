@@ -8,9 +8,9 @@
 	editor="tysonn"
 	tags="azure-service-management,azure-resource-manager" />
 
-<tags 
-	ms.service="virtual-machines" 
-	ms.date="05/15/2015" 
+<tags
+	ms.service="virtual-machines"
+	ms.date="10/05/2015"
 	wacn.date=""/>
 
 # Prepare an Oracle Linux Virtual Machine for Azure
@@ -224,3 +224,4 @@ Preparing an Oracle Linux 7 virtual machine for Azure is very similar to Oracle 
 15. Click **Action -> Shut Down** in Hyper-V Manager. Your Linux VHD is now ready to be uploaded to Azure.
 
 
+ 

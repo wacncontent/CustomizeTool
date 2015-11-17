@@ -6,11 +6,10 @@
    authors="sethmanheim"
    manager="timlt"
    editor="tysonn" /> 
-<tags 
-   ms.service="service-bus"
-
-   ms.date="09/18/2015"
-   wacn.date="" />
+<tags
+	ms.service="service-bus"
+	ms.date="09/18/2015"
+	wacn.date=""/>
 
 # Paired Namespace implementation details and cost implications
 
@@ -30,7 +29,7 @@ At a high level, the feature works as follows: when the primary entity is health
 
 3.  [BrokeredMessage][] objects are routed to the chosen backlog queue.
 
-4.  If a send operation to the chosen backlog queue fails, that queue is pulled from the rotation and a new queue is selected. All senders on the [MessagingFactory][] instance learn of the failure.
+1.  If a send operation to the chosen backlog queue fails, that queue is pulled from the rotation and a new queue is selected. All senders on the [MessagingFactory][] instance learn of the failure.
 
 The following figures depict the sequence. First, the sender sends messages.
 

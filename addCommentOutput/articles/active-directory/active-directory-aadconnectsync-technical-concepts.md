@@ -20,7 +20,6 @@ The following sections introduce the concepts for metadirectory synchronization.
 Building upon MIIS, ILM, and FIM, the Azure Active Directory Sync Services provides the next platform for connecting to data sources, synchronizing data between data sources, as well as the provisioning and deprovisioning of identities.
 
 ![Technical Concepts][1]
-<!-- deleted by customization
 
 
 
@@ -33,21 +32,6 @@ The following sections provide more details about the following aspects of the F
 - Provisioning
 
 
--->
-<!-- keep by customization: begin -->
- 
-
-
-The following sections provide more details about the following aspects of the FIM Synchronization Service: 
-
-- Connector 
-- Attribute flow 
-- Connector space 
-- Metaverse 
-- Provisioning 
-
- 
-<!-- keep by customization: end -->
 
 
 
@@ -66,12 +50,14 @@ Imports and exports only occur when scheduled, allowing for further insulation f
 
 
 
+
 ## Attribute flow
 
 The metaverse is the consolidated view of all joined identities from neighboring connector spaces.In the figure above, attribute flow is depicted by lines with arrowheads for both inbound and outbound flow.Attribute flow is the process of copying or transforming data from one system to another and all attribute flows (inbound or outbound).
 
 Attribute flow occurs between the connector space and the metaverse bi-directionally when synchronization (full or delta) operations are scheduled to run.
 Attribute flow only occurs when these synchronizations are run. Attribute flows are defined in Synchronization Rules. These can be inbound (ISR in the picture above) or outbound (OSR in the picture above).
+
 
 ## Connector space
 
@@ -80,6 +66,7 @@ This allows the sync service to operate locally without the need to contact the 
 
 When the data source and the connector have the ability to provide a list of changes (a delta import), then the operational efficiency increases dramatically as only changes since the last polling cycle are exchanged. The connector space insulates the connected data source from changes propagating automatically by requiring that the connector schedule imports and exports.
 This added insurance grants you peace of mind while testing, previewing, or confirming the next update.
+
 
 
 
@@ -99,6 +86,7 @@ Once the link is established, this evaluation does not reoccur and normal attrib
 
 
 
+
 ## Provisioning
 
 When an authoritative source projects a new object into the metaverse a new connector space object can be created in another Connector representing a downstream connected data source. <br>
@@ -112,5 +100,6 @@ Whenever a rule determines that a new connector space object needs to be created
 
 * [Azure AD Connect Sync: Customizing Synchronization options](/documentation/articles/active-directory-aadconnectsync-whatis)
 * [Integrating your on-premises identities with Azure Active Directory](/documentation/articles/active-directory-aadconnect)
+
 <!--Image references-->
 [1]: ./media/active-directory-aadsync-technical-concepts/ic750598.png

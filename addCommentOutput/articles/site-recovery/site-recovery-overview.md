@@ -68,3 +68,4 @@ Storage mapping|Not applicable|Maps storage classifications on source VMM server
 ## Next steps
 
 After you're finished this overview [read the best practices](/documentation/articles/site-recovery-best-practices) to help you get started with deployment planning. 
+ 

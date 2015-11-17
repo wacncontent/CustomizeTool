@@ -17,8 +17,13 @@
 
 This topic describes [CoreOS] and shows how to create a cluster of three CoreOS virtual machines on Azure as a quick start to understanding this operating system. It uses the very basic elements of CoreOS deployments and examples from [CoreOS with Azure], [Tim Park's CoreOS Tutorial], and [Patrick Chanezon's CoreOS Tutorial] to demonstrate the absolute minimum requirements to both understand the basic structure of a CoreOS deployment and get a cluster of three virtual machines running successfully.
 
+<!-- deleted by customization
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] [Resource Manager deployment model](https://azure.microsoft.com/documentation/templates/coreos-with-fleet-multivm/).
 
+-->
+<!-- keep by customization: begin -->
+>[AZURE.NOTE] This article shows you how to use the Azure command-line interface with Service Management commands to create the CoreOS VMs. To get started with CoreOS in Azure Resource Manager, try this [quickstart template](https://azure.microsoft.com/documentation/templates/coreos-with-fleet-multivm/).
+<!-- keep by customization: end -->
 
 ## <a id='intro'>CoreOS, clusters, and Linux containers</a>
 
@@ -107,7 +112,7 @@ coreos:
 3. Create a cloud service for your basic cluster by typing
 `azure service create <cloud-service-name>` where <*cloud-service-name*> is the name for your CoreOS cloud service. This sample uses the name **`coreos-cluster`**; you will need to reuse the name that you choose to create your CoreOS VM instances inside the cloud service.
 
-	One note: If you observe your work so far in the [preview portal](https://manage.windowsazure.cn), you'll find your cloud service name is both a resource group and domain, as the following image shows:
+	One note: If you observe your work so far in the <!-- deleted by customization [preview portal](https://manage.windowsazure.cn) --><!-- keep by customization: begin --> [portal](https://manage.windowsazure.cn) <!-- keep by customization: end -->, you'll find your <!-- deleted by customization cloud service --><!-- keep by customization: begin --> Cloud Service <!-- keep by customization: end --> name is both a resource group and domain, as the following image shows:
 
 	![][CloudServiceInNewPortal]
 

@@ -1,7 +1,5 @@
 <properties
-	urlDisplayName="How to connect to an Azure SQL database using SSMS"
 	pageTitle="How to connect to an Azure SQL database using SSMS | Windows Azure"
-	metaKeywords=""
 	description="Learn how to connect to an Azure SQL database using SSMS."
 	metaCanonical=""
 	services="sql-database"
@@ -13,7 +11,7 @@
 <tags
 	ms.service="sql-database"
 	ms.date="10/09/2015"
-	wacn.date="" />
+	wacn.date=""/>
 
 # Connect with SQL Server Management Studio
 

@@ -148,7 +148,7 @@ Next, you will enable New Relic monitoring of your mobile service in the [Manage
 [New Relic page in the Azure Store]: /gallery/store/new-relic/new-relic/
 [Applications Overview]: https://docs.newrelic.com/docs/applications-dashboards/applications-overview
 [Get started with Mobile Services]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started/
-[Get started with data]: /develop/mobile/tutorials/get-started-with-data-dotnet
+[Get started with data]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-data-dotnet
 [New Relic Mobile]: http://newrelic.com/mobile-monitoring
 
  

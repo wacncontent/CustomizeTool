@@ -767,7 +767,6 @@ When you are writing server scripts that use [insert], [update], [read] or [dele
 
 When you use the [tables object] or the [mssql object], or just let your table scripts execute, the deserialized JavaScript objects are inserted into your SQL database. In that process, object properties are mapped to T-SQL types:
 
-<!-- deleted by customization
 JavaScript property|T-SQL type
 ---|---
 Number|Float(53)
@@ -778,41 +777,6 @@ Buffer|Not supported
 Object|Not supported
 Array|Not supported
 Stream|Not supported
--->
-<!-- keep by customization: begin -->
-<table border="1">
-<tr>
-<td>JavaScript property</td>
-<td>T-SQL type</td>
-</tr><tr>
-<td>Number</td>
-<td>Float(53)</td>
-</tr><tr>
-<td>Boolean</td>
-<td>Bit</td>
-</tr><tr>
-<td>Date</td>
-<td>DateTimeOffset(3)</td>
-</tr>
-<tr>
-<td>String</td>
-<td>Nvarchar(max)</td>
-</tr>
-<tr>
-<td>Buffer</td>
-<td>Not supported</td>
-</tr><tr>
-<td>Object</td>
-<td>Not supported</td>
-</tr><tr>
-<td>Array</td>
-<td>Not supported</td>
-</tr><tr>
-<td>Stream</td>
-<td>Not supported</td>
-</tr>
-</table> 
-<!-- keep by customization: end -->
 
 ###<a name="TSQL"></a>Using Transact-SQL to access tables
 
@@ -1018,7 +982,7 @@ To avoid overloading your log, you should remove or disable calls to console.log
 
 <!-- URLs. -->
 [Mobile Services server script reference]: http://msdn.microsoft.com/zh-cn/library/azure/jj554226.aspx
-[Schedule backend jobs in Mobile Services]: <!-- deleted by customization /develop/mobile/tutorials/schedule-backend-tasks/ --><!-- keep by customization: begin --> /documentation/articles/mobile-services-schedule-recurring-tasks/ <!-- keep by customization: end -->
+[Schedule backend jobs in Mobile Services]: /develop/mobile/tutorials/schedule-backend-tasks/
 [request object]: http://msdn.microsoft.com/zh-cn/library/azure/jj554218.aspx
 [response object]: http://msdn.microsoft.com/zh-cn/library/azure/dn303373.aspx
 [User object]: http://msdn.microsoft.com/zh-cn/library/azure/jj554220.aspx
@@ -1045,30 +1009,16 @@ To avoid overloading your log, you should remove or disable calls to console.log
 [Modify the response]: http://msdn.microsoft.com/zh-cn/library/azure/jj631631.aspx
 [Management Portal]: https://manage.windowsazure.cn/
 [Schedule jobs]: http://msdn.microsoft.com/zh-cn/library/azure/jj860528.aspx
-[Validate and modify data in Mobile Services by using server scripts]: <!-- deleted by customization /develop/mobile/tutorials/validate-modify-and-augment-data-dotnet/ --><!-- keep by customization: begin --> /documentation/articles/mobile-services-windows-store-dotnet-validate-modify-data-server-scripts/ <!-- keep by customization: end -->
-[Commands to manage Azure Mobile Services]: <!-- deleted by customization /documentation/articles/virtual-machines-command-line-tools#Mobile_Scripts --><!-- keep by customization: begin --> /documentation/articles/command-line-tools/#Commands_to_manage_mobile_services/#Mobile_Scripts <!-- keep by customization: end -->
-<!-- deleted by customization
-[Windows Store Push]: /develop/mobile/tutorials/get-started-with-push-dotnet/
-[Windows Phone Push]: /develop/mobile/tutorials/get-started-with-push-wp8/
-[iOS Push]: /develop/mobile/tutorials/get-started-with-push-ios/
-[Android Push]: /develop/mobile/tutorials/get-started-with-push-android/
--->
-<!-- keep by customization: begin -->
-[Windows Store Push]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-push/
+[Validate and modify data in Mobile Services by using server scripts]: /develop/mobile/tutorials/validate-modify-and-augment-data-dotnet/
+[Commands to manage Azure Mobile Services]: /documentation/articles/virtual-machines-command-line-tools#Mobile_Scripts
+[Windows Store Push]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-push-dotnet/
 [Windows Phone Push]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-push-wp8/
 [iOS Push]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-push-ios/
 [Android Push]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-push-android/
-<!-- keep by customization: end -->
 [Azure SDK for Node.js]: http://go.microsoft.com/fwlink/p/?LinkId=275539
 [Send HTTP request]: http://msdn.microsoft.com/zh-cn/library/azure/jj631641.aspx
-<!-- deleted by customization
 [Send email from Mobile Services with SendGrid]: /develop/mobile/tutorials/send-email-with-sendgrid/
 [Get started with authentication]: http://go.microsoft.com/fwlink/p/?LinkId=287177
--->
-<!-- keep by customization: begin -->
-[Send email from Mobile Services with SendGrid]: /documentation/articles/store-sendgrid-mobile-services-send-email-scripts/
-[Get started with authentication]: /documentation/articles/mobile-services-windows-store-dotnet-get-started-users
-<!-- keep by customization: end -->
 [crypto API]: http://go.microsoft.com/fwlink/p/?LinkId=288802
 [path API]: http://go.microsoft.com/fwlink/p/?LinkId=288803
 [querystring API]: http://go.microsoft.com/fwlink/p/?LinkId=288804
@@ -1076,13 +1026,14 @@ To avoid overloading your log, you should remove or disable calls to console.log
 [util API]: http://go.microsoft.com/fwlink/p/?LinkId=288806
 [zlib API]: http://go.microsoft.com/fwlink/p/?LinkId=288807
 [Custom API]: http://msdn.microsoft.com/zh-cn/library/azure/dn280974.aspx
-[Call a custom API from the client]: <!-- deleted by customization /develop/mobile/tutorials/call-custom-api-dotnet/#define-custom-api --><!-- keep by customization: begin --> /documentation/articles/mobile-services-windows-store-dotnet-call-custom-api/#define-custom-api <!-- keep by customization: end -->
+[Call a custom API from the client]: /develop/mobile/tutorials/call-custom-api-dotnet/#define-custom-api
 [express.js library]: http://go.microsoft.com/fwlink/p/?LinkId=309046
-[Define a custom API that supports periodic notifications]: <!-- deleted by customization /develop/mobile/tutorials/create-pull-notifications-dotnet/ --><!-- keep by customization: begin --> /documentation/articles/mobile-services-windows-store-dotnet-create-pull-notifications/ <!-- keep by customization: end -->
+[Define a custom API that supports periodic notifications]: /develop/mobile/tutorials/create-pull-notifications-dotnet/
 [express object in express.js]: http://expressjs.com/api.html#express
-[Store server scripts in source control]: <!-- deleted by customization /develop/mobile/tutorials/store-scripts-in-source-control/ --><!-- keep by customization: begin --> /documentation/articles/mobile-services-store-scripts-source-control/ <!-- keep by customization: end -->
-[Leverage shared code and Node.js modules in your server scripts]: <!-- deleted by customization /develop/mobile/tutorials/store-scripts-in-source-control/#use-npm --><!-- keep by customization: begin --> /documentation/articles/mobile-services-store-scripts-source-control/#use-npm <!-- keep by customization: end -->
+[Store server scripts in source control]: /develop/mobile/tutorials/store-scripts-in-source-control/
+[Leverage shared code and Node.js modules in your server scripts]: /develop/mobile/tutorials/store-scripts-in-source-control/#use-npm
 [service object]: http://msdn.microsoft.com/zh-cn/library/azure/dn303371.aspx
 [App settings]: http://msdn.microsoft.com/zh-cn/library/dn529070.aspx
 [config module]: http://msdn.microsoft.com/zh-cn/library/dn508125.aspx
 [Support for package.json in Azure Mobile Services]: http://go.microsoft.com/fwlink/p/?LinkId=391036
+ 

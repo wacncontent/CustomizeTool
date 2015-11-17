@@ -30,6 +30,8 @@ If you did not read the documentation on [Integrating your on-premises identitie
 | After installation | [Verify the installation and assign licenses ](/documentation/articles/active-directory-aadconnect-whats-next) |
 
 
+
+
 ## Install required components
 
 When you install the synchronization services, you can leave the optional configuration section unchecked and Azure AD Connect will set everything up automatically.  This includes setting up a SQL Server 2012 Express instance and creating the appropriate groups and assigning them permissions.  If you wish to change the defaults you can use the table below to understand the optional configuration options that are available.
@@ -61,7 +63,7 @@ Do not configure| Neither feature will be installed and configured.  Choose this
 
 ## Connect to Azure AD
 On the Connect to Azure AD screen, enter a global admin account and password. Make sure this account does not have multi-factor authentication enabled.  This will cause it to fail authentication.
-<!-- deleted by customization This --><!-- keep by customization: begin --> Be aware that this <!-- keep by customization: end --> account is only used to create a service account in Azure AD and is not used after the wizard has completed.
+This account is only used to create a service account in Azure AD and is not used after the wizard has completed.
 
 ![User Signin](./media/active-directory-aadconnect-get-started-custom/connectaad.png)
 
@@ -139,14 +141,7 @@ With directory extensions you can extend the schema in Azure AD with custom attr
 
 For additional information see [Directory extensions](/documentation/articles/active-directory-aadconnect-feature-preview#directory-extensions).
 
-<!-- deleted by customization
 ## Configuring federation with AD FS
--->
-<!-- keep by customization: begin -->
-
-
-## Configuring Federation with AD FS
-<!-- keep by customization: end -->
 Configuring AD FS with Azure AD Connect is simple with just a few clicks. The following is required prior to setup.
 
 - A Windows Server 2012 R2 server for the federation server with remote management enabled
@@ -154,7 +149,7 @@ Configuring AD FS with Azure AD Connect is simple with just a few clicks. The fo
 - An SSL certificate for the federation service name you intend to use (e.g. adfs.contoso.com)
 
 ### Create a new AD FS farm or use an existing AD FS farm
-You can use an <!-- deleted by customization existing --><!-- keep by customization: begin --> exiting <!-- keep by customization: end --> AD FS farm or you can choose to create a new AD FS farm. If you choose to create a new one, you will be required to provide the SSL certificate. If the SSL certificate is protected by a password, you will be prompted to provide the password.
+You can use an existing AD FS farm or you can choose to create a new AD FS farm. If you choose to create a new one, you will be required to provide the SSL certificate. If the SSL certificate is protected by a password, you will be prompted to provide the password.
 
 ![AD FS Farm](./media/active-directory-aadconnect-get-started-custom/adfs1.png)
 
@@ -170,6 +165,7 @@ Here you will enter the specific servers that you want to install AD FS on. You 
 ![AD FS Servers](./media/active-directory-aadconnect-get-started-custom/adfs2.png)
 
 
+
 ### Specify the Web Application Proxy servers
 Here you will enter the specific servers that you want as your Web Application proxy servers. The web application proxy server is deployed in your DMZ (extranet facing) and supports authentication requests from the extranet. You can add one or more servers based on your capacity planning needs. We recommend installing a single Web Application proxy server for test and pilot deployments and deploying additional servers by opening up Azure AD Connect and deploying Web Application Proxy to additional servers. We typically recommend having an equivalent number of proxy servers to satisfy authentication from the intranet.
 
@@ -181,7 +177,6 @@ Here you will enter the specific servers that you want as your Web Application p
 
 
 ![Web App](./media/active-directory-aadconnect-get-started-custom/adfs3.png)
-<!-- deleted by customization
 
 
 You will be prompted to enter credentials so that the web application server can establish a secure connection to the AD FS server. These credentials need to be a local administrator on the AD FS server.
@@ -189,16 +184,6 @@ You will be prompted to enter credentials so that the web application server can
 ![Proxy](./media/active-directory-aadconnect-get-started-custom/adfs4.png)
 
 
--->
-<!-- keep by customization: begin -->
- 
-
-You will be prompted to enter credentials so that the web application server can establish a secure connection to the AD FS server. These credentials need to be a local administrator on the AD FS server. 
-
-![Proxy](./media/active-directory-aadconnect-get-started-custom/adfs4.png)
- 
- 
-<!-- keep by customization: end -->
 ### Specify the service account for the AD FS service
 The AD FS service requires a domain service account to authenticate users and lookup user information in Active Directory. It can support 2 types of service accounts:
 
@@ -206,35 +191,23 @@ The AD FS service requires a domain service account to authenticate users and lo
 - **Domain User Account** - This type of account will require you to provide a password and regularly update the password when the password changes. Use this only when you do not have Windows Server 2012 domain controllers in the domain that AD FS servers will belong to.
 
 Azure AD Connect will auto create the group managed service account if you are logged in as a domain administrator.
-<!-- deleted by customization
+
 ![AD FS Service Account](./media/active-directory-aadconnect-get-started-custom/adfs5.png)
--->
-<!-- keep by customization: begin -->
- 
-![AD FS Service Account](./media/active-directory-aadconnect-get-started-custom/adfs5.png)
- 
-<!-- keep by customization: end -->
+
 
 ### Select the Azure AD domain that you wish to federate
 This configuration is used to setup the federation relationship between AD FS and Azure AD. It configures AD FS to issue security tokens to Azure AD and configures Azure AD to trust the tokens from this specific AD FS instance. This page will only allow you to configure a single domain in the first time experience. You can configure additional domains at any time by opening up Azure AD Connect again and performing this task.
 
-<!-- deleted by customization
+
 ![Azure AD Domain](./media/active-directory-aadconnect-get-started-custom/adfs6.png)
 
 
--->
-<!-- keep by customization: begin -->
- 
-![Azure AD Domain](./media/active-directory-aadconnect-get-started-custom/adfs6.png)
- 
- 
-<!-- keep by customization: end -->
 ### Perform additional tasks to complete the federation configuration
 The following additional tasks will need to be completed to finish the federation configuration.
 
 - Set up DNS records for the AD FS federation service name (e.g. adfs.contoso.com) for both the intranet (your internal DNS server) and the extranet (public DNS through your domain registrar). For the intranet DNS record ensure that you use A records and not CNAME records. This is required for windows authentication to work correctly from your domain joined machine.
 - If you are deploying more than one AD FS server or Web Application Proxy server, ensure that you have configured your load balancer and that the DNS records for the AD FS federation service name (e.g. adfs.contoso.com) point to the load balancer.
-- For windows integrated authentication to work for browser applications using Internet Explorer in your intranet, ensure that the AD FS federation service name (e.g. adfs.contoso.com) is added to the intranet zone in IE. This can be controlled via group policy and deployed to all <!-- deleted by customization your --><!-- keep by customization: begin --> you <!-- keep by customization: end --> domain joined computers.
+- For windows integrated authentication to work for browser applications using Internet Explorer in your intranet, ensure that the AD FS federation service name (e.g. adfs.contoso.com) is added to the intranet zone in IE. This can be controlled via group policy and deployed to all your domain joined computers.
 
 
 ### Optional configuration on your AD FS service
@@ -260,6 +233,8 @@ While in staging mode, it is possible to make required changes to the sync engin
 Azure AD Connect will verify the DNS settings for you when you click on the Verify button.
 
 ![Complete](./media/active-directory-aadconnect-get-started-custom/adfs7.png)
+
+
 In addition, perform the following verification steps:
 
 - Validate browser login from a domain joined machine from Internet Explorer from the intranet: Connect to https://myapps.microsoft.com and verify the login with your logged in account.

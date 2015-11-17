@@ -1,4 +1,4 @@
-new docs: 99, word count: 151183
+new docs: 99, word count: {word_count_TODO}
 articles/mobile-services/mobile-services-android-get-started-data.md
 articles/mobile-services/mobile-services-android-get-started-offline-data.md
 articles/mobile-services/mobile-services-android-get-started-users.md

@@ -224,6 +224,11 @@ To get started with the option(s) you choose for your application, see the follo
   [PHP]: /develop/php/
   [Python]: /develop/python/
   [servicebus]: /documentation/services/service-bus/
+<!-- deleted by customization
   [sqldatabase]: /documentation/services/sql-database/
+-->
+<!-- keep by customization: begin -->
+  [sqldatabase]: /documentation/services/sql-databases/
+<!-- keep by customization: end -->
   [Storage]: /documentation/services/storage/
  

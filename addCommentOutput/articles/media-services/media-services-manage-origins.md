@@ -115,7 +115,7 @@ It could take up to 90 min for the Azure CDN integration to get enabled.  It tak
 
 
 <!-- deleted by customization
-CDN integration is enabled in all the Azure data centers: US West, China East, China North, West Europe, Japan West, Japan East, South East Asia and East Asia.
+CDN integration is enabled in all the Azure data centers: US West, China East, China North, West Europe, China East, Japan East, South China East and China East.
 -->
 <!-- keep by customization: begin -->
 CDN integration is enabled in all the Azure data centers: China East, China North.

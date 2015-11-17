@@ -9,9 +9,9 @@
    tags="azure-resource-manager,azure-service-management"/>
 
 <tags
-   ms.service="virtual-network"
-   ms.date="08/14/2015"
-   wacn.date=""/>
+	ms.service="virtual-network"
+	ms.date="08/14/2015"
+	wacn.date=""/>
 
 # Azure Deployment Models
 
@@ -60,6 +60,6 @@ You can create and configure Azure resources from Windows, OS X, or Linux comput
 
 ## Next steps
 
-- Learn more about [Resource Manager](/resource-group-overview.md).
-- Understand how to [design templates](/best-practices-resource-manager-design-templates/md).
+- Learn more about [Resource Manager](/documentation/articles/resource-group-overview).
+- Understand how to [design templates](/documentation/articles/best-practices-resource-manager-design-templates).
 - Use [best practices](/documentation/articles/best-practices-resource-manager-examples)

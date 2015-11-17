@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Capture an image of a virtual machine running Linux | Windows Azure"
-	description="Learn how to capture an image of an Azure virtual machine (VM) running Linux using the classic deployment model and Azure CLI."
+	pageTitle="Capture an image of a Linux VM | Windows Azure"
+	description="Learn how to capture an image of a Linux-based Azure virtual machine (VM) created with the classic deployment model."
 	services="virtual-machines"
 	documentationCenter=""
 	authors="dsk-2015"
@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.date="07/16/2015"
+	ms.date="10/14/2015"
 	wacn.date=""/>
 
 
@@ -88,7 +88,7 @@ The image is ready to be used as a template to create virtual machines. You can 
 
 [Management Portal]: http://manage.windowsazure.cn
 [How to Log on to a Virtual Machine Running Linux]: /documentation/articles/virtual-machines-linux-how-to-log-on
-[About Virtual Machine Images in Azure]: http://msdn.microsoft.com/zh-cn/library/azure/dn790290.aspx
-[How to Create a Custom Virtual Machine]: /documentation/articles/virtual-machines-create-custom
+[About Virtual Machine Images in Azure]: /documentation/articles/virtual-machines-images
+[How to Create a Custom Virtual Machine]: /documentation/articles/virtual-machines-linux-create-custom
 [How to Attach a Data Disk to a Virtual Machine]: /documentation/articles/storage-windows-attach-disk
 [How to Create a Virtual Machine Running Linux]: /documentation/articles/virtual-machines-linux-tutorial

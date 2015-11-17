@@ -15,7 +15,7 @@
 
 The Service Bus samples demonstrate key features in Service Bus (cloud service) and Service Bus for Windows Server. This article categorizes and describes the samples available, with links to each.
 
->[AZURE.NOTE] Service Bus samples are not installed with the SDK. To obtain the samples, visit the [Azure SDK samples <!-- deleted by customization page](https://code.msdn.microsoft.com) --><!-- keep by customization: begin --> page](https://code.msdn.microsoft.com/windowsazure) <!-- keep by customization: end -->.
+>[AZURE.NOTE] Service Bus samples are not installed with the SDK. To obtain the samples, visit the [Azure SDK samples page](https://code.msdn.microsoft.com).
 
 ## Service Bus brokered messaging
 
@@ -27,13 +27,13 @@ Note that the brokered messaging samples require a connection string to access y
 
 1. Log on to the [Azure Management Portal](http://manage.windowsazure.cn).
 
-<!-- deleted by customization 1 --><!-- keep by customization: begin --> 2 <!-- keep by customization: end -->. In the left-hand column, click **Service Bus**.
+1. In the left-hand column, click **Service Bus**.
 
-<!-- deleted by customization 1 --><!-- keep by customization: begin --> 3 <!-- keep by customization: end -->. Click the name of your service namespace in the list.
+1. Click the name of your service namespace in the list.
 
-<!-- deleted by customization 1 --><!-- keep by customization: begin --> 4 <!-- keep by customization: end -->. Click **Connection Information**. In the **Access connection information** dialog, copy the connection string to your clipboard.
+1. Click **Connection Information**. In the **Access connection information** dialog, copy the connection string to your clipboard.
 
-<!-- deleted by customization 1 --><!-- keep by customization: begin --> 5 <!-- keep by customization: end -->. Paste the connection string into the App.config file for the sample.
+1. Paste the connection string into the App.config file for the sample.
 
 ### To obtain a connection string for Service Bus for Windows Server
 
@@ -53,7 +53,7 @@ These samples describe basic messaging and relay functionality.
 |---|---|---|---|
 |[Getting Started: Messaging with Queues](http://code.msdn.microsoft.com/Getting-Started-Brokered-aa7a0ac3)|Demonstrates how to use Windows Azure Service Bus to send and receive messages from a queue.|1.8|Windows Azure Service Bus; Service Bus for Windows Server|
 |[Getting Started: Messaging With Topics](http://code.msdn.microsoft.com/Getting-Started-Brokered-614d42e5)|Demonstrates how to use Windows Azure Service Bus to send and receive messages from a topic with multiple subscriptions.|1.8|Windows Azure Service Bus; Service Bus for Windows Server|
-|[Getting Started with Event <!-- deleted by customization Hubs](http://code.msdn.microsoft.com/Service-Bus-Event-Hub-286fd097)|Demonstrates --><!-- keep by customization: begin --> Hubs](http://code.msdn.microsoft.com/windowsazure/Service-Bus-Event-Hub-286fd097)|Demonstrates <!-- keep by customization: end --> the basic capabilities of Event Hubs, such as creating an Event Hub, sending events to an Event Hub, consuming events using the Event Processor.|2.4|Windows Azure Service Bus|
+|[Getting Started with Event Hubs](http://code.msdn.microsoft.com/Service-Bus-Event-Hub-286fd097)|Demonstrates the basic capabilities of Event Hubs, such as creating an Event Hub, sending events to an Event Hub, consuming events using the Event Processor.|2.4|Windows Azure Service Bus|
 
 ### Exploring features
 
@@ -61,9 +61,9 @@ The following samples demonstrate various features of Service Bus.
 
 |Sample Name|Description|Minimum SDK Version|Availability|
 |---|---|---|---|
-|[HTTP Token <!-- deleted by customization Providers](http://code.msdn.microsoft.com/Service-Bus-HTTP-Token-38f2cfc5)|Demonstrates --><!-- keep by customization: begin --> Providers](http://code.msdn.microsoft.com/windowsazure/Service-Bus-HTTP-Token-38f2cfc5)|Demonstrates <!-- keep by customization: end --> the different ways of authenticating an HTTP/REST client with Service Bus.|2.1|Windows Azure Service Bus; Service Bus for Windows Server|
-|[Service Bus HTTP <!-- deleted by customization Client](http://code.msdn.microsoft.com/Service-Bus-HTTP-client-fe7da74a)|Demonstrates --><!-- keep by customization: begin --> Client](http://code.msdn.microsoft.com/windowsazure/Service-Bus-HTTP-client-fe7da74a)|Demonstrates <!-- keep by customization: end --> how to send messages to and receive messages from Service Bus via HTTP/REST.|2.3|Windows Azure Service Bus; Service Bus for Windows Server|
-|[Service Bus <!-- deleted by customization Autoforwarding](http://code.msdn.microsoft.com/Service-Bus-Autoforwarding-b9df470b)|Demonstrates --><!-- keep by customization: begin --> Autoforwarding](http://code.msdn.microsoft.com/windowsazure/Service-Bus-Autoforwarding-b9df470b)|Demonstrates <!-- keep by customization: end --> how to automatically forward messages from a queue, subscription, or deadletter queue into another queue or topic. It also demonstrates how to send a message into a queue or topic via a transfer queue.|2.3|Windows Azure Service Bus; Service Bus for Windows Server|
+|[HTTP Token Providers](http://code.msdn.microsoft.com/Service-Bus-HTTP-Token-38f2cfc5)|Demonstrates the different ways of authenticating an HTTP/REST client with Service Bus.|2.1|Windows Azure Service Bus; Service Bus for Windows Server|
+|[Service Bus HTTP Client](http://code.msdn.microsoft.com/Service-Bus-HTTP-client-fe7da74a)|Demonstrates how to send messages to and receive messages from Service Bus via HTTP/REST.|2.3|Windows Azure Service Bus; Service Bus for Windows Server|
+|[Service Bus Autoforwarding](http://code.msdn.microsoft.com/Service-Bus-Autoforwarding-b9df470b)|Demonstrates how to automatically forward messages from a queue, subscription, or deadletter queue into another queue or topic. It also demonstrates how to send a message into a queue or topic via a transfer queue.|2.3|Windows Azure Service Bus; Service Bus for Windows Server|
 |[Brokered Messaging: WCF Channel Session Sample](http://code.msdn.microsoft.com/Brokered-Messaging-WCF-0a526451)|Demonstrates how to use Windows Azure Service Bus using Windows Communication Foundation (WCF) channels. The sample shows the use of WCF channels to send and receive messages via a Service Bus queue. The sample shows both session and non-session communication over the Service Bus.|1.8|Windows Azure Service Bus; Service Bus for Windows Server|
 |[Brokered Messaging: Transactions](http://code.msdn.microsoft.com/Brokered-Messaging-8cd41d1e)|Demonstrates how to use the Windows Azure Service Bus messaging features within a transaction scope in order to ensure batches of messaging operations are committed atomically.|1.8|Windows Azure Service Bus; Service Bus for Windows Server|
 |[Brokered Messaging: Management Operations Using REST](http://code.msdn.microsoft.com/Brokered-Messaging-569cff88)|Demonstrates how to perform management operations on Service Bus using REST.|1.8|Windows Azure Service Bus; Service Bus for Windows Server|

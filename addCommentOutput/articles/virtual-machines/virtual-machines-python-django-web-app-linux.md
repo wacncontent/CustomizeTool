@@ -12,36 +12,21 @@
 	ms.service="virtual-machines"
 	ms.date="05/20/2015"
 	wacn.date=""/>
-<!-- deleted by customization
+	
 # Django Hello World web application on a Linux VM
--->
-<!-- keep by customization: begin -->
-
-
-
-
-
-# Django Hello World Web Application (mac-linux)
-<!-- keep by customization: end -->
 
 > [AZURE.SELECTOR]
-<!-- deleted by customization
 - [Windows](/documentation/articles/virtual-machines-python-django-web-app-windows-server)
 - [Mac/Linux](/documentation/articles/virtual-machines-python-django-web-app-linux)
 
 <br>
+<!-- deleted by customization
 
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
 
 
-This tutorial describes how to host a Django-based website on Microsoft 
 -->
-<!-- keep by customization: begin -->
-- [Windows](/documentation/articles/web-app-with-django)
-- [Mac/Linux](/documentation/articles/django-hello-world-(maclinux))
-
-This tutorial describes how to host a Django-based  Website on Windows 
-<!-- keep by customization: end -->
+This tutorial describes how to host a Django-based website on Microsoft 
 Azure using a Linux virtual machine. This tutorial assumes you have no prior experience using Azure. Upon completing this guide, you will have a Django-based application up and running in the cloud.
 
 You will learn how to:
@@ -150,10 +135,4 @@ The Ubuntu Linux VM already comes with Python 2.7 pre-installed, but it doesn't 
 When you're done with this tutorial, shutdown and/or remove your newly created Azure virtual machine to free up resources for other tutorials and avoid incurring Azure usage charges.
 
 
-<!-- deleted by customization
-[portal-vm]: /manage/linux/tutorials/virtual-machine-from-gallery/
- 
--->
-<!-- keep by customization: begin -->
 [portal-vm]: /documentation/articles/virtual-machines-linux-tutorial/
-<!-- keep by customization: end -->

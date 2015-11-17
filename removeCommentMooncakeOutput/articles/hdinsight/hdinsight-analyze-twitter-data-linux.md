@@ -1,8 +1,8 @@
 <!-- not suitable for Mooncake -->
 
 <properties
-	pageTitle="Analyze Twitter data with Hadoop in HDInsight | Windows Azure"
-	description="Learn how to use Hive to analyze Twitter data on Hadoop in HDInsight to find the usage frequency of a particular word."
+	pageTitle="Analyze Twitter data with Apache Hive on HDInsight | Windows Azure"
+	description="Learn how to use Python to store Tweets that contain specific keywords, then use Hive and Hadoop on HDInsight to transform the raw TWitter data into a searchable Hive table."
 	services="hdinsight"
 	documentationCenter=""
 	authors="Blackmist"
@@ -12,12 +12,12 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="08/05/2015"
+	ms.date="10/19/2015"
 	wacn.date=""/>
 
 # Analyze Twitter data using Hive in HDInsight
 
-In this document, you will get tweets by using a Twitter streaming API and then use Apache Hive on a Linux-based HDInsight (preview) cluster to process the JSON formatted data. The result will be a list of Twitter users who sent the most tweets that contained a certain word.
+In this document, you will get tweets by using a Twitter streaming API and then use Apache Hive on a Linux-based HDInsight cluster to process the JSON formatted data. The result will be a list of Twitter users who sent the most tweets that contained a certain word.
 
 > [AZURE.NOTE] While individual pieces of this document can be used with Windows-based HDInsight clusters (Python and Hive for example,) many steps are based on using a Linux-based HDInsight cluster. For steps specific to a Windows-based cluster, see [Analyze Twitter data using Hive in HDInsight](/documentation/articles/hdinsight-analyze-twitter-data).
 
@@ -35,7 +35,7 @@ Before you begin this tutorial, you must have the following:
 
 - __Python__ and [pip](https://pypi.python.org/pypi/pip)
 
-- The __Azure CLI__. For more information, see [Install and configure the Azure CLI](/documentation/articles/xplat-cli)
+- The __Azure CLI__. For more information, see [Install and configure the Azure CLI](/documentation/articles/xplat-cli-install)
 
 ##Get a Twitter feed
 

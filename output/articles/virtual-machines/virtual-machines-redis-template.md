@@ -14,9 +14,11 @@
 	wacn.date=""/>
 
 # Redis cluster with a Resource Manager template
+<!-- deleted by customization
 
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] classic deployment model.
 
+-->
 
 Redis is an open-source key-value cache and store, where keys can contain data structures such as strings, hashes, lists, sets and sorted sets. Redis supports a set of atomic operations on these data types.  With the release of Redis version 3.0, Redis Cluster is now available in the latest stable version of Redis.  Redis Cluster is a distributed implementation of Redis where data is automatically sharded across multiple Redis nodes, with the ability to continue operations when a subset of nodes is experiencing failures.
 
@@ -286,7 +288,7 @@ During the deployment, you will see something like this:
 	PS C:\> New-AzureResourceGroup –Name $RGName –Location $locName
 
 	ResourceGroupName : TestRG
-	Location          : westus
+	Location          : chinanorth
 	ProvisioningState : Succeeded
 	Tags              :
 	Permissions       :

@@ -6,6 +6,7 @@ If you have not already added your web app as a Traffic Manager endpoint, you mu
 
 > [AZURE.NOTE] If your web app is not listed when adding an endpoint, verify that it is configured for **Standard** App Service plan mode. You must use **Standard** mode for your web app in order to work with Traffic Manager.
 
+<!-- deleted by customization
 1. In your browser, open the [Azure Management Portal](https://manage.windowsazure.cn).
 
 2. In the **Web Apps** tab, click the name of your web app, select **Settings**, and then select **Custom domains and SSL**
@@ -25,3 +26,4 @@ If you have not already added your web app as a Traffic Manager endpoint, you mu
 	Once configuration has completed, the custom domain name will be listed in the **domain names** section of your web app.
 
 At this point, you should be able to enter the Traffic Manager domain name (contoso.trafficmanager.cn) name in your browser and see that it successfully takes you to your web app.
+-->

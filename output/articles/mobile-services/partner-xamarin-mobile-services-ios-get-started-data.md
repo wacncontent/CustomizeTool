@@ -225,10 +225,10 @@ Once you have completed the data series, try these other iOS tutorials:
 <!-- URLs. TODO:: update download link, github link, and completed example project with new Xamarin.iOs projects -->
 [Validate and modify data with scripts]: /develop/mobile/tutorials/validate-modify-and-augment-data-xamarin-ios
 [Refine queries with paging]: /develop/mobile/tutorials/add-paging-to-data-xamarin-ios
-[Get started with Mobile Services]: /develop/mobile/tutorials/get-started-xamarin-ios
-[Get started with data]: /develop/mobile/tutorials/get-started-with-data-xamarin-ios
-[Get started with authentication]: /develop/mobile/tutorials/get-started-with-users-xamarin-ios
-[Get started with push notifications]: /develop/mobile/tutorials/get-started-with-push-xamarin-ios
+[Get started with Mobile Services]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-xamarin-ios
+[Get started with data]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-data-xamarin-ios
+[Get started with authentication]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-users-xamarin-ios
+[Get started with push notifications]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-push-xamarin-ios
 
 [Azure Management Portal]: https://manage.windowsazure.cn/
 [Management Portal]: https://manage.windowsazure.cn/

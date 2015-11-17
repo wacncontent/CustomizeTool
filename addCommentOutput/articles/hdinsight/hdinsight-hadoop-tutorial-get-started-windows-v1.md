@@ -76,7 +76,7 @@ This tutorial uses only the default blob and the default storage account.
 
 	![Azure Management Portal where you can use Quick Create to set up a new storage account.][image-hdi-storageaccount-quickcreate]
 
->[AZURE.NOTE]  Make sure you create the storage account in a location that is supported for the cluster. These are:  <!-- deleted by customization **East Asia**, **Southeast Asia**, **China North**, **West Europe**, **China East**, **China North**, --> **China North**, **China East**.
+>[AZURE.NOTE]  Make sure you create the storage account in a location that is supported for the cluster. These are:  **China <!-- deleted by customization East**, **China North**, **China North**, **West Europe**, **China East**, **China North**, **China --> North**, **China East**.
 
 Select the new storage account from the list and click **MANAGE ACCESS KEYS** at the bottom of the page. Make a note of the **PRIMARY ACCESS KEY** (or the **SECONDARY ACCESS KEY**—either of the keys work).  You will need this later in the tutorial. For more information, see [How to Create a Storage Account][azure-create-storageaccount] .
 
@@ -169,7 +169,7 @@ Now that you have provisioned an HDInsight cluster, the next step is to run a Hi
 
     ![Job Start Time listed in the Job History tab of the HDInsight cluster dashboard.][img-hdi-dashboard-query-select-result-output]
 
-    The page also shows the **Job Output** and the **Job Log**. You also have the option to download the output file (_stdout) and the log file \(_stderr).
+    The page also shows the **Job Output** and the **Job Log**. You also have the option to download the output file <!-- deleted by customization (\_stdout) --><!-- keep by customization: begin --> (_stdout) <!-- keep by customization: end --> and the log file \(_stderr).
 
 
 **To browse to the output file**
@@ -243,7 +243,7 @@ In this Hadoop tutorial, you learned how to provision a Hadoop cluster on Window
 [hdinsight-weblogs-sample]: /documentation/articles/hdinsight-hive-analyze-website-log
 [hdinsight-sensor-data-sample]: /documentation/articles/hdinsight-hive-analyze-sensor-data
 [azure-purchase-options]: /pricing/overview/
-[azure-member-offers]: http://azure.microsoft.com/pricing/member-offers/
+[azure-member-offers]: /pricing/member-offers/
 [azure-trial]: /pricing/1rmb-trial/
 [azure-management-portal]: https://manage.windowsazure.cn/
 [azure-create-storageaccount]: /documentation/articles/storage-create-storage-account

@@ -87,7 +87,9 @@ Applications that you add yourself include:
 ## How are apps added to my Azure AD instance?
 There are many ways an app can be added to Azure AD:
 
+<!-- deleted by customization
 * Add an app from the [Azure Active Directory App Gallery](http://azure.microsoft.com/updates/azure-active-directory-over-1000-apps/)
+-->
 * Sign up/into a 3rd Party App integrated with Azure Active Directory (For example: [Smartsheet](https://app.smartsheet.com/b/home) or [DocuSign](https://www.docusign.net/member/MemberLogin.aspx))
     * During sign up/in users are asked to give permission to the app to access their profile and other permissions.  The first person to give consent causes a service principal representing the app to be added to the directory.
 * Sign up/into Microsoft online services like [Office 365](http://products.office.com/)
@@ -139,5 +141,5 @@ Learn more about how to add applications to Azure AD and how to configure servic
 * IT Pros: [Learn how to publish an app using the Azure Active Directory Application Proxy](https://msdn.microsoft.com/zh-cn/library/azure/dn768219.aspx)
 
 <!--Image references-->
-[apps_service_principals_directory]:media/active-directory-how-applications-are-added/HowAppsAreAddedToAAD.jpg
-[app_settings]:media/active-directory-how-applications-are-added/IntegratedAppSettings.jpg
+[apps_service_principals_directory]: ./media/active-directory-how-applications-are-added/HowAppsAreAddedToAAD.jpg
+[app_settings]: ./media/active-directory-how-applications-are-added/IntegratedAppSettings.jpg

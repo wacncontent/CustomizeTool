@@ -1,15 +1,15 @@
 <properties
-	pageTitle="Creating recovery plans"
-	description="Azure Site Recovery coordinates the replication, failover and recovery of virtual machines located on on-premises servers to Azure or a secondary datacenter."
-	services="site-recovery"
-	documentationCenter=""
-	authors="rayne-wiselman"
-	manager="jwhit"
+	pageTitle="Creating recovery plans" 
+	description="Azure Site Recovery coordinates the replication, failover and recovery of virtual machines located on on-premises servers to Azure or a secondary datacenter." 
+	services="site-recovery" 
+	documentationCenter="" 
+	authors="rayne-wiselman" 
+	manager="jwhit" 
 	editor=""/>
 
 <tags
 	ms.service="site-recovery"
-	ms.date="10/07/2015" 
+	ms.date="10/07/2015"
 	wacn.date=""/>
 
 # Creating recovery plans
@@ -18,9 +18,9 @@ The Site Recovery service contributes to a robust business continuity and disast
 
 ## About this article
 
-The article provides information about creating and customizing recovery plans.
+The article provides information about creating and customizing recovery plans. 
 
-If you have any questions after reading this article post them on the [Azure Recovery Services Forum](https://social.msdn.microsoft.com/Forums/zh-CN/home?forum=hypervrecovmgr).
+If you have any questions after reading this article post them on the [Azure Recovery Services Forum](https://social.msdn.microsoft.com/forums/azure/home?forum=hypervrecovmgr).
 
 ## Overview
 
@@ -47,7 +47,7 @@ Create a recovery plan as follows:
 1. On the Recovery Plans tab, click Create Recovery Plan.
 Specify a name for the recovery plan, and a source and target. The source server must have virtual machines that are enabled for failover and recovery.
 
-	- If you're replicating from VMM to VMM select VMM in **Source Type**, and the source and target VMM servers. Click **Hyper-V** to see clouds that are configured to use Hyper-V Replica.
+	- If you're replicating from VMM to VMM select VMM in **Source Type**, and the source and target VMM servers. Click **Hyper-V** to see clouds that are configured to use Hyper-V Replica. 
 	- If you're replicating from VMM to VMM using SAN select VMM in **Source Type**, and the source and target VMM servers. Click **SAN** to see clouds that are configured for SAN replication.
 	- If you're replicating from VMM to Azure select VMM in **Source Type**.  Select the source VMM server and **Azure** as the target.
 	- If you're replicating from a Hyper-V site select Hyper-V site in Source Type. Select the site as the source and **Azure **as the target.
@@ -118,3 +118,6 @@ You can extend your recovery plan by running an Azure automation runbook as part
 ## Run a failover
 
 You can run different types of failovers recovery plan, including a test failover to check your environment, and a planned or unplanned failover. Read more about failover and get instructions for running different types of failovers [here](/documentation/articles/site-recovery-failover) about failover.
+
+
+ 

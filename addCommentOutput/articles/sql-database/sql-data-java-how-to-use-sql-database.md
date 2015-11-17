@@ -14,7 +14,7 @@
 
 # How to Use Azure SQL Database in Java
 
-The following steps show you how to use Azure SQL Database with Java. Command line examples are shown for simplicity, but highly similar steps would be appropriate for web applications, either hosted on-premise, within Azure, or in other environments. This guide covers creating a server and creating a database from the [Azure Management <!-- deleted by customization Portal](https://windows.azure.com) --><!-- keep by customization: begin --> Portal](https://manage.windowsazure.cn) <!-- keep by customization: end -->.
+The following steps show you how to use Azure SQL Database with Java. Command line examples are shown for simplicity, but highly similar steps would be appropriate for web applications, either hosted on-premise, within Azure, or in other environments. This guide covers creating a server and creating a database from the [Azure Management Portal](https://windows.azure.com).
 
 ## What is Azure SQL Database
 
@@ -27,26 +27,16 @@ Because Azure SQL Database is built on SQL Server technologies, accessing SQL Da
 
 For additional resources for SQL Database, see the [Next steps][] section.
 
-<!-- deleted by customization
 ## Prerequisites
--->
-<!-- keep by customization: begin -->
-<h2><a id="prerequisites"></a>Prerequisites</h2>
-<!-- keep by customization: end -->
 
 The following are prerequisites if you intend to use SQL Database with Java.
 
 * A Java Developer Kit (JDK), v 1.6 or later.
-* An Azure subscription, which can be acquired from <!-- deleted by customization <http://www.microsoft.com/windowsazure/offers/> --><!-- keep by customization: begin --> <http://www.windowsazure.cn/zh-cn/pricing/overview/> <!-- keep by customization: end -->.
-* If you are using Eclipse, you'll need Eclipse IDE for Java EE Developers, Indigo or later. This can be downloaded from <http://www.eclipse.org/downloads/>. You will also need the Azure <!-- deleted by customization Toolkit --><!-- keep by customization: begin --> Plugin <!-- keep by customization: end --> for Eclipse <!-- keep by customization: begin --> with Java (by Microsoft Open Technologies) <!-- keep by customization: end -->. During installation of this plugin, ensure that Microsoft JDBC Driver 4.0 for SQL Server is included. For more information, see [Installing the Azure <!-- deleted by customization Toolkit --><!-- keep by customization: begin --> Plugin <!-- keep by customization: end --> for <!-- deleted by customization Eclipse](http://msdn.microsoft.com/zh-cn/library/azure/hh690946.aspx) --><!-- keep by customization: begin --> Eclipse with Java (by Microsoft Open Technologies)](http://msdn.microsoft.com/zh-cn/library/azure/hh690946.aspx) <!-- keep by customization: end -->.
-* If you are not using Eclipse, you will need the Microsoft JDBC Driver 4.0 for SQL Server, which you can download from <!-- deleted by customization <http://www.microsoft.com/download/details.aspx?id=11774> --><!-- keep by customization: begin --> <http://www.microsoft.com/zh-cn/download/details.aspx?id=11774> <!-- keep by customization: end -->.
+* An Azure subscription, which can be acquired from </pricing/overview/>.
+* If you are using Eclipse, you'll need Eclipse IDE for Java EE Developers, Indigo or later. This can be downloaded from <http://www.eclipse.org/downloads/>. You will also need the Azure Toolkit for Eclipse. During installation of this plugin, ensure that Microsoft JDBC Driver 4.0 for SQL Server is included. For more information, see [Installing the Azure Toolkit for Eclipse](http://msdn.microsoft.com/zh-cn/library/azure/hh690946.aspx).
+* If you are not using Eclipse, you will need the Microsoft JDBC Driver 4.0 for SQL Server, which you can download from <http://www.microsoft.com/download/details.aspx?id=11774>.
 
-<!-- deleted by customization
 ## Creating an Azure SQL Database
--->
-<!-- keep by customization: begin -->
-<h2><a id="create_db"></a>Creating an Azure SQL Database</h2>
-<!-- keep by customization: end -->
 
 Before using Azure SQL Database in Java code, you will need to create an Azure SQL Database server.
 
@@ -71,12 +61,7 @@ Before using Azure SQL Database in Java code, you will need to create an Azure S
 
 8. Click the completion button.
 
-<!-- deleted by customization
 ## Determining the SQL Database connection string
--->
-<!-- keep by customization: begin -->
-<h2><a id="determine_connection_string"></a>Determining the SQL Database connection string</h2>
-<!-- keep by customization: end -->
 
 1. Login to the [Azure Management Portal](https://manage.windowsazure.cn).
 2. Click **SQL Databases**.
@@ -95,23 +80,13 @@ Before using Azure SQL Database in Java code, you will need to create an Azure S
     	"user=MySQLAdmin@*your_server*" + ";" +  
     	"password=*your_password*" + ";" +  
         "encrypt=true" + ";" +
-<!-- deleted by customization
         "hostNameInCertificate=*.int.mscds.com" + ";" +  
--->
-<!-- keep by customization: begin -->
-        "hostNameInCertificate=*.database.chinacloudapi.cn" + ";" +
-<!-- keep by customization: end -->
         "loginTimeout=30";
 
 We'll actually use this string later in this guide, for now you know the steps to determine the connection string. Also, depending on your application needs, you may not need to use the **encrypt** and **hostNameInCertificate** settings, and you may need to modify the **loginTimeout** setting.
 
-<!-- deleted by customization
 ## To allow access to a range of IP addresses
 
--->
-<!-- keep by customization: begin -->
-<h2><a id="specify_allowed_ips"></a>To allow access to a range of IP addresses</h2>
-<!-- keep by customization: end -->
 1. Login to the [Management Portal](https://manage.windowsazure.cn).
 2. Click **SQL Databases**.
 3. Click **Servers**.
@@ -124,12 +99,7 @@ We'll actually use this string later in this guide, for now you know the steps t
 
 8. Click the completion button. The IP addresses that you specify will now be allowed access to your database server.
 
-<!-- deleted by customization
 ## To use Azure SQL Database in Java
--->
-<!-- keep by customization: begin -->
-<h2><a id="use_sql_azure_in_java"></a>To use Azure SQL Database in Java</h2>
-<!-- keep by customization: end -->
 
 1. Create a Java project. For purposes of this tutorial, call it **HelloSQLAzure**.
 2. Add a Java class file named **HelloSQLAzure.java** to the project.
@@ -160,12 +130,7 @@ We'll actually use this string later in this guide, for now you know the steps t
 
 You're now ready to add in code that will communicate with your SQL Database server.
 
-<!-- deleted by customization
 ## Communicating with Azure SQL Database from your code
--->
-<!-- keep by customization: begin -->
-<h2><a id="communicate_from_code"></a>Communicating with Azure SQL Database from your code</h2>
-<!-- keep by customization: end -->
 
 The remainder of this topic shows examples that do the following:
 
@@ -176,12 +141,7 @@ The remainder of this topic shows examples that do the following:
 
 The following sections are intended to be read (sampled) in order. The first snippet is a complete sample; the others would rely on part of the framework in the complete sample, such as the **import** statements, **class** and **main** declarations, error handling and resource closing.
 
-<!-- deleted by customization
 ## To create a table
--->
-<!-- keep by customization: begin -->
-<h2><a id="to_create_table"></a>To create a table</h2>
-<!-- keep by customization: end -->
 
 The following code shows you how to create a table named **Person**.
 
@@ -266,12 +226,7 @@ The following code shows you how to create a table named **Person**.
 	}
 	
 
-<!-- deleted by customization
 ## To create an index on a table
--->
-<!-- keep by customization: begin -->
-<h2><a id="to_create_index"></a>To create an index on a table</h2>
-<!-- keep by customization: end -->
 
 The following code shows you how to create an index named **index1** on the **Person** table, using the **PersonID** column.
 
@@ -317,12 +272,7 @@ The following code shows you how to create an index named **index1** on the **Pe
 
 
 
-<!-- deleted by customization
 ## To insert rows
--->
-<!-- keep by customization: begin -->
-<h2><a id="to_insert_rows"></a>To insert rows</h2>
-<!-- keep by customization: end -->
 
 The following code shows you how to add rows to the **Person** table.
 
@@ -374,12 +324,7 @@ The following code shows you how to add rows to the **Person** table.
 	// Exception handling and resource closing not shown...
 
  
-<!-- deleted by customization
 ## To retrieve rows
--->
-<!-- keep by customization: begin -->
-<h2><a id="to_retrieve_rows"></a>To retrieve rows</h2>
-<!-- keep by customization: end -->
 
 The following code shows you how to retrieve rows from the **Person** table.
 
@@ -439,12 +384,7 @@ The following code shows you how to retrieve rows from the **Person** table.
 	String sqlString = "SELECT * FROM Person";
 
  
-<!-- deleted by customization
 ## To retrieve rows using a WHERE clause
--->
-<!-- keep by customization: begin -->
-<h2><a id="to_retrieve_rows_using_where"></a>To retrieve rows using a WHERE clause</h2>
-<!-- keep by customization: end -->
 
 To retrieve rows using a clause, use the code as shown above, except change the SQL statement to include a clause. The following SQL statement includes a clause for rows whose **FirstName** value equals **Jim**.
 
@@ -453,12 +393,7 @@ To retrieve rows using a clause, use the code as shown above, except change the 
 	
 WHERE clauses can also be used when retrieving counts, updating rows, or deleting rows.
 
-<!-- deleted by customization
 ## To retrieve a count of rows
--->
-<!-- keep by customization: begin -->
-<h2><a id="to_retrieve_row_count"></a>To retrieve a count of rows</h2>
-<!-- keep by customization: end -->
 
 The following code shows you how to retrieve a count of rows from the **Person** table.
  
@@ -509,12 +444,7 @@ The following code shows you how to retrieve a count of rows from the **Person**
 	}
 	// Exception handling and resource closing not shown...
 
-<!-- deleted by customization
 ## To update rows
--->
-<!-- keep by customization: begin -->
-<h2><a id="to_update_rows"></a>To update rows</h2>
-<!-- keep by customization: end -->
 
 The following code shows you how to update rows. In this example, the **LastName** value is changed to **Kim** for any rows where the **FirstName** value is **Jim**.
 
@@ -559,12 +489,7 @@ The following code shows you how to update rows. In this example, the **LastName
 
  
 
-<!-- deleted by customization
 ## To delete rows
--->
-<!-- keep by customization: begin -->
-<h2><a id="to_delete_rows"></a>To delete rows</h2>
-<!-- keep by customization: end -->
 
 The following code shows you how to delete rows. In this example, any rows where the **FirstName** value is **Jim** are deleted.
 
@@ -610,12 +535,7 @@ The following code shows you how to delete rows. In this example, any rows where
 	// Exception handling and resource closing not shown...
 	
  
-<!-- deleted by customization
 ## To check whether a table exists
--->
-<!-- keep by customization: begin -->
-<h2><a id="to_check_table_existence"></a>To check whether a table exists</h2>
-<!-- keep by customization: end -->
 
 The following code shows you how to determine whether a table exists.
 
@@ -670,12 +590,7 @@ The following code shows you how to determine whether a table exists.
 	}
 	// Exception handling and resource closing not shown...
 
-<!-- deleted by customization
 ## To drop an index
--->
-<!-- keep by customization: begin -->
-<h2><a id="to_drop_index"></a>To drop an index</h2>
-<!-- keep by customization: end -->
 
 The following code shows you how to drop an index named **index1** on the **Person** table.
 
@@ -721,12 +636,7 @@ The following code shows you how to drop an index named **index1** on the **Pers
 	// Exception handling and resource closing not shown...
 
  
-<!-- deleted by customization
 ## To drop a table
--->
-<!-- keep by customization: begin -->
-<h2><a id="to_drop_table"></a>To drop a table</h2>
-<!-- keep by customization: end -->
 
 The following code shows you how to drop a table named **Person**.
 
@@ -769,12 +679,7 @@ The following code shows you how to drop a table named **Person**.
 	}
 	// Exception handling and resource closing not shown...
 
-<!-- deleted by customization
 ## Using SQL Database in Java within an Azure Deployment
--->
-<!-- keep by customization: begin -->
-<h2><a id="using_in_azure"></a>Using SQL Database in Java within an Azure Deployment</h2>
-<!-- keep by customization: end -->
 
 To use SQL Database in Java within an Azure deployment, in addition to having Microsoft JDBC Driver 4.0 for SQL Server as a library in your class path as shown above, you'll need to package it with your deployment.
 
@@ -786,24 +691,17 @@ To use SQL Database in Java within an Azure deployment, in addition to having Mi
 3. In the **New Assembly Directive** dialog, click **Java Build Path Entries** and then click **Next**.
 4. Select **Microsoft JDBC Driver 4.0 SQL Server** and then click **Finish**.
 5. Click **OK** to close the **Properties** dialog.
-6. Export your project's WAR file to your approot folder, and rebuild your Azure project, per the steps documented at [Creating a Hello World Application Using the Azure <!-- deleted by customization Toolkit --><!-- keep by customization: begin --> Plugin <!-- keep by customization: end --> for <!-- deleted by customization Eclipse](http://msdn.microsoft.com/zh-cn/library/azure/hh690944.aspx) --><!-- keep by customization: begin --> Eclipse with Java (by Microsoft Open Technologies)](http://msdn.microsoft.com/zh-cn/library/azure/hh690944.aspx) <!-- keep by customization: end -->. That topic also describes how to run your application in the compute emulator, and in Azure.
+6. Export your project's WAR file to your approot folder, and rebuild your Azure project, per the steps documented at [Creating a Hello World Application Using the Azure Toolkit for Eclipse](http://msdn.microsoft.com/zh-cn/library/azure/hh690944.aspx). That topic also describes how to run your application in the compute emulator, and in Azure.
 
 **Packaging the Microsoft JDBC Driver 4.0 SQL Server if you are not using Eclipse**
 
 * Ensure the Microsoft JDBC Driver 4.0 SQL Server library is included within the same Azure role as your Java application, and added to the class path of your application.
 
-<!-- deleted by customization
 ## Next steps
--->
-<!-- keep by customization: begin -->
-<h2><a id="nextsteps"></a>Next steps</h2>
-<!-- keep by customization: end -->
 
 To learn more about Microsoft JDBC Driver for SQL Server, see [Overview of the JDBC Driver](http://msdn.microsoft.com/zh-cn/library/ms378749.aspx). To learn more about SQL Database, see [SQL Database Overview](http://msdn.microsoft.com/zh-cn/library/azure/ee336241.aspx).
-<!-- deleted by customization
 
 For more information, see also the [Java Developer Center](/develop/java/).
--->
 
 [Concepts]:#concepts
 [Prerequisites]:#prerequisites
@@ -831,3 +729,4 @@ For more information, see also the [Java Developer Center](/develop/java/).
 [create_server_settings]: ./media/sql-data-java-how-to-use-sql-database/WA_CustomCreate_2.png
 [get_jdbc_connection_string]: ./media/sql-data-java-how-to-use-sql-database/WA_SQL_JDBC_ConnectionString.png
 [allowed_ips_dialog]: ./media/sql-data-java-how-to-use-sql-database/WA_Allowed_IPs.png
+ 

@@ -58,6 +58,7 @@ After you have completed both tutorials, you can prevent unauthenticated users f
 <!-- URLs. -->
 [Get started with authentication]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-users
 [Get started with push notifications]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-push
+
 [Azure Management Portal]: https://manage.windowsazure.cn/
 
  

@@ -84,7 +84,7 @@ You can also provide additional explanation to help end-users recognize whether 
 
 ## Navigation Do’s and Don’ts
 
-**DO** provide a way for users to sign out and switch to another user account. While most people have a single personal account from Microsoft/Facebook/Google/Twitter, people are often associated with more than one organization. Support for multiple signed-in users is coming soon.
+**DO** provide a way for users to sign out and switch to another user account. While most people have a single personal account from <!-- deleted by customization Microsoft/Facebook/Google/Twitter --><!-- keep by customization: begin --> Microsoft <!-- keep by customization: end -->, people are often associated with more than one organization. Support for multiple signed-in users is coming soon.
 
 ## Supporting both Azure AD and Microsoft Accounts in Your App
 

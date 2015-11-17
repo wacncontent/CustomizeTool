@@ -6,20 +6,32 @@
    authors="joaoma"
    manager="jdial"
    editor="tysonn"/>
-<tags 
-   ms.service="application-gateway"
-   ms.date="08/07/2015"
-   wacn.date=""/>
+<tags
+	ms.service="application-gateway"
+	ms.date="09/21/2015"
+	wacn.date=""/>
 
 
 # Create, start, or delete an Application Gateway using Azure Resource Manager
 
-> [AZURE.SELECTOR]
-- [Azure classic steps](/documentation/articles/application-gateway-create-gateway)
-- [Resource Manager Powershell steps](/documentation/articles/application-gateway-create-gateway-arm)
+Application Gateway is load balancer layer 7. It provides failover, performance routing HTTP requests between different servers, whether they are on the cloud or on premise. Application gateway has the following application delivery features: HTTP load balancing, Cookie based session affinity, SSL offload. 
 
-In this release, you can create an Application Gateway by using PowerShell or REST API calls. Portal and CLI support will be provided in an upcoming release.
+
+> [AZURE.SELECTOR]
+- [Azure Classic Powershell steps](/documentation/articles/application-gateway-create-gateway)
+- [Azure Resource Manager Powershell steps](/documentation/articles/application-gateway-create-gateway-arm)
+- [Azure Resource Manager template steps](/documentation/articles/application-gateway-create-gateway-arm-template)
+
+
+<BR>
+
+
 This article walks you through the steps to create and configure, start, and delete an application gateway.
+
+
+>[AZURE.IMPORTANT] Before you work with Azure resources, it's important to understand that Azure currently has two deployment models: Resource Manager, and classic. Make sure you understand [deployment models and tools](/documentation/articles/azure-classic-rm) before working with any Azure resource. You can view the documentation for different tools by clicking the tabs at the top of this article.This document will cover creating an Application Gateway using Azure Resource Manager. To use the classic version, go to [create an Application Gateway classic deployment using PowerShell](/documentation/articles/application-gateway-create-gateway).
+
+
 
 ## Before you begin
 
@@ -395,6 +407,5 @@ If you want to configure an application gateway to use with ILB, see [Create an 
 
 If you want more information about load balancing options in general, see:
 
-<!--- [Azure Load Balancer](/documentation/services/load-balancer/)-->
 - [Azure Traffic Manager](/documentation/services/traffic-manager/)
 

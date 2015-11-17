@@ -31,7 +31,7 @@ Sample NSG in JSON format:
 	    "id": "/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/TestRG/providers/Microsoft.Network/networkSecurityGroups/NSG-BackEnd",
 	    "etag": "W/\"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx\"",
 	    "type": "Microsoft.Network/networkSecurityGroups",
-	    "location": "westus",
+	    "location": "chinanorth",
 	    "tags": {
 	        "displayName": "NSG - Front End"
 	    },
@@ -68,7 +68,7 @@ Sample NSG in JSON format:
 	}
 
 ### Default security rules
-Default security rules have the same properties available in security rules. They exist to provide basic connectivity between resources that have NSGs applied to them. Make sure you know which [default security rules](./virtual-networks-nsg.md#Default-Rules) exist. 
+Default security rules have the same properties available in security rules. They exist to provide basic connectivity between resources that have NSGs applied to them. Make sure you know which [default security rules](/documentation/articles/virtual-networks-nsg#Default-Rules) exist. 
 
 ### Additional resources
 

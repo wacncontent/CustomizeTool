@@ -20,7 +20,7 @@ This topic shows you how to use Azure Notification Hubs to send push notificatio
 
 One of the key benefits of using Chrome App notifications is that the notifications show up within the context of the Google Chrome browser. You don't need to have the Chrome App running or open in the browser (though the Chrome browser itself must be running). You also get a consolidated view of all your notifications in the Chrome Notifications window.
 
->[AZURE.NOTE] This is not a generic in-browser push notification and is specific to Chrome Apps—see [Chrome Apps Overview] for details. Chrome Apps were previously known as "Packaged Apps" and are different from simpler "Hosted Apps". See [Installable Web Apps] for the difference. Chrome Apps can also run on mobile (Android and iOS) via Apache Cordova. See [Chrome Apps on Mobile] to learn more.
+>[AZURE.NOTE] This is not a generic in-browser push notification and is specific to Chrome <!-- deleted by customization Apps—see --><!-- keep by customization: begin --> Apps�see <!-- keep by customization: end --> [Chrome Apps Overview] for details. Chrome Apps were previously known as "Packaged Apps" and are different from simpler "Hosted Apps". See [Installable Web Apps] for the difference. Chrome Apps can also run on mobile (Android and iOS) via Apache Cordova. See [Chrome Apps on Mobile] to learn more.
 
 In this tutorial, we will create a Chrome app that receives push notifications by using Google Cloud Messaging (GCM). When you complete the tutorial, you will be able to broadcast push notifications to all the Chrome users who have installed this Chrome App.
 
@@ -64,7 +64,7 @@ Be sure to follow along with the tutorials in the "Next steps" section to see ho
 
 1. Sign in to the [Azure Management Portal], and then click **+ NEW** at the bottom left of the screen.
 
-2. Click **Azure Websites** > **Service Bus** > **Notification Hub** > **Quick Create**. Type a name for your notification hub, select your desired region, and then click **Create a new Notification Hub**.
+2. Click **App Services** > **Service Bus** > **Notification Hub** > **Quick Create**. Type a name for your notification hub, select your desired region, and then click **Create a new Notification Hub**.
 
    	![][6]
 

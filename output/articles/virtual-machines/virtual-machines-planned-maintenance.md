@@ -44,7 +44,7 @@ For more information about configuring your virtual machines for high availabili
 
 By contrast, a single-instance configuration is used for standalone virtual machines that are not placed in an availability set. These virtual machines do not qualify for the service level agreement (SLA), which requires that two or more virtual machines are deployed under the same availability set.
 
-For more information about SLAs, refer to the "Cloud Services, Virtual Machines and Virtual Network" section of [Service Level Agreements](http://azure.microsoft.com/support/legal/sla/).
+For more information about SLAs, refer to the "Cloud Services, Virtual Machines and Virtual Network" section of [Service Level Agreements](/support/legal/sla/).
 
 
 ## Multi-instance configuration updates
@@ -92,15 +92,17 @@ Please refer to the following table for information regarding current region pai
 Region 1 | Region 2
 :----- | ------:
 China North | China East
+<!-- deleted by customization
 China East | China North
 China East 2 | China North
 China North | West Europe
-South East Asia | East Asia
+South China East | China East
 East China | North China
-Japan East | Japan West
+Japan East | China East
 Brazil South | China East
 Australia Southeast | Australia East
 US Gov Iowa | US Gov Virginia
+-->
 
 For example, during a planned maintenance, Azure will not roll out an update to China North if China East is under maintenance at the same time. However, other regions such as China North can be under maintenance at the same time as China East.
 

@@ -46,7 +46,7 @@ To complete the tasks in this guide, you should understand the following terms a
 
 **Client** - A browser that is attempting to gain access to your web application.
 
-**Relying party (RP) application** - Your web app. An RP application is a <!-- deleted by customization website --><!-- keep by customization: begin -->  Website <!-- keep by customization: end --> or service that outsources authentication to one external authority. In identity jargon, we say that the RP trusts that authority. This guide explains how to configure your application to trust ACS.
+**Relying party (RP) application** - Your web app. An RP application is a website or service that outsources authentication to one external authority. In identity jargon, we say that the RP trusts that authority. This guide explains how to configure your application to trust ACS.
 
 **Token** - A user gains access to an RP application by presenting a valid token that was issued by an authority that the RP application trusts. A collection of security data that is issued when a client is authenticated. It contains a set of claims, which are attributes of the authenticated user, such as a user's name or age, or an identifier for a user role. A token is digitally signed so its issuer can be identified and its content cannot be changed.
 
@@ -93,12 +93,13 @@ To complete the tasks in this guide, you will need the following:
 To use Active Directory Access Control in Azure, create an Access Control namespace. The namespace provides a unique scope for
 addressing ACS resources within your application.
 
-1.  Log into the [Azure Management Portal][] <!-- deleted by customization (https://manage.WindowsAzure.com) --><!-- keep by customization: begin --> (https://manage.WindowsAzure.cn) <!-- keep by customization: end -->.
+1.  Log into the [Azure Management Portal][] (https://manage.WindowsAzure.com).
+
 2.  Click **Active Directory**.  
 
 	![][1]
 
-3.  To create a new Access Control namespace, click **New**. **Azure Websites** and **Access Control** will be selected. Click **Quick Create**.
+3.  To create a new Access Control namespace, click **New**. **App Services** and **Access Control** will be selected. Click **Quick Create**.
 
 	![][2]
 
@@ -122,7 +123,7 @@ In this step, you create a ASP.NET MVC application. In later steps, we'll integr
 
 1. In **Name**, type **MvcACS**, and then click **OK**.
 1. In the next dialog, select **Internet Application**, and then click **OK**.
-1. Edit the *Views\Shared_LoginPartial.cshtml* file and replace the contents with the following code:
+1. Edit the *Views\Shared\_LoginPartial.cshtml* file and replace the contents with the following code:
 
         @if (Request.IsAuthenticated)
         {
@@ -297,7 +298,7 @@ When you select the Use Azure Access Control option and then run your applicatio
 
 You can review and change these configuration settings in the ACS Management Portal. Use the following steps to review the changes in the portal.
 
-1.	Log into the Windows [Azure Management <!-- deleted by customization Portal](http://manage.WindowsAzure.com) --><!-- keep by customization: begin --> Portal](http://manage.windowsazure.cn) <!-- keep by customization: end -->.
+1.	Log into the Windows [Azure Management Portal](http://manage.WindowsAzure.com).
 
 2.	Click **Active Directory**.
 
@@ -357,6 +358,7 @@ After the user selects an identity provider, the browser goes to the identity pr
 ## What's Next
 
 You have created a web application that is integrated with ACS. But, this is just the beginning! You can expand on this scenario.
+
 For example, you can add more identity providers for this RP or allow users registered in enterprise directories, such as Active Directory Domain Services, to log on to the web application.
 
 You can also add rules to your namespace that determine which claims are sent to an application for processing in the application business logic.
@@ -378,19 +380,9 @@ To further explore ACS functionality and to experiment with more scenarios, see 
   [vcsb]: #bkmk_viewClaims
   [vpp]: #bkmk_VP
 
-<!-- deleted by customization
   [Access Control Service 2.0]: http://go.microsoft.com/fwlink/?LinkID=212360
--->
-<!-- keep by customization: begin -->
-  [Access Control Service 2.0]: http://msdn.microsoft.com/zh-cn/library/hh147631.aspx
-<!-- keep by customization: end -->
   [Identity and Access Tool]: http://go.microsoft.com/fwlink/?LinkID=245849
-<!-- deleted by customization
   [Azure Management Portal]: http://manage.WindowsAzure.com
--->
-<!-- keep by customization: begin -->
-  [Azure Management Portal]: http://manage.windowsazure.cn
-<!-- keep by customization: end -->
 
   [0]: ./media/active-directory-dotnet-how-to-use-access-control/acs-01.png
   [1]: ./media/active-directory-dotnet-how-to-use-access-control/acsCreateNamespace.png

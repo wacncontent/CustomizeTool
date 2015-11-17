@@ -47,9 +47,9 @@ There are four phases to setting up the Corpnet subnet of the Windows Server 201
 3.	Configure APP1.
 4.	Configure CLIENT1.
 
-If you do not already have an Azure account, you can sign up for a trial at <!-- deleted by customization [Free one-month trial](/pricing/1rmb-trial/) --><!-- keep by customization: begin --> [Try Azure](/pricing/1rmb-trial/) <!-- keep by customization: end -->. If you have an MSDN Subscription, see [Azure benefit for MSDN <!-- deleted by customization subscribers](http://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/) --><!-- keep by customization: begin --> subscribers](/pricing/member-offers/msdn-benefits-details/) <!-- keep by customization: end -->.
+If you do not already have an Azure account, you can sign up for a trial at [Free one-month trial](/pricing/1rmb-trial/). If you have an MSDN Subscription, see [Azure benefit for MSDN subscribers](/pricing/member-offers/msdn-benefits-details/).
 
-> [AZURE.NOTE] Virtual machines in Azure incur an ongoing monetary cost when they are running. This cost is billed against your trial, MSDN subscription, or paid subscription. For more information about the costs of running Azure virtual machines, see [Virtual Machines Pricing Details](/home/features/virtual-machines/#price) and [Azure Pricing <!-- deleted by customization Calculator](http://azure.microsoft.com/pricing/calculator/) --><!-- keep by customization: begin --> Calculator](/pricing/calculator/) <!-- keep by customization: end -->. To keep costs down, see [Minimizing the costs of test environment virtual machines in Azure](#costs).
+> [AZURE.NOTE] Virtual machines in Azure incur an ongoing monetary cost when they are running. This cost is billed against your trial, MSDN subscription, or paid subscription. For more information about the costs of running Azure virtual machines, see [Virtual Machines Pricing Details](/home/features/virtual-machines/#price) and [Azure Pricing Calculator](/pricing/calculator/). To keep costs down, see [Minimizing the costs of test environment virtual machines in Azure](#costs).
 
 ## Phase 1: Create the virtual network
 

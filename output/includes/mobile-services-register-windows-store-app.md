@@ -23,19 +23,19 @@
 
 6. (Optional) For a universal Windows app, repeat steps 4 and 5 for the Windows Phone Store project. 
 
-6. Back in the Windows Dev Center page for your new app, click **Services**. 
+<!-- deleted by customization 6 --><!-- keep by customization: begin --> 7 <!-- keep by customization: end -->. Back in the Windows Dev Center page for your new app, click **Services**.
 
    	![](./media/mobile-services-register-windows-store-app/mobile-services-win8-edit-app.png) 
 
-7. In the Services page, click **Live Services site** under **Azure Mobile Services**.
+<!-- deleted by customization 7 --><!-- keep by customization: begin --> 8 <!-- keep by customization: end -->. In the Services page, click **Live Services site** under **Azure Mobile Services**.
 
 	![](./media/mobile-services-register-windows-store-app/mobile-services-win8-edit2-app.png) 
 
-8. Click **API Settings**, select enable **Mobile or desktop client app**, supply the mobile service URL as the **Target domain**, supply a value of `https://<mobile_service>.azure-mobile.cn/login/microsoftaccount/` in **Redirect URL**, then click **Save**.
+<!-- deleted by customization 8 --><!-- keep by customization: begin --> 9 <!-- keep by customization: end -->. Click **API Settings**, select enable **Mobile or desktop client app**, supply the mobile service URL as the **Target domain**, supply a value of `https://<mobile_service>.azure-mobile.cn/login/microsoftaccount/` in **Redirect URL**, then click **Save**.
 
 	![](./media/mobile-services-register-windows-store-app/mobile-services-win8-app-push-auth-2.png)
 
-9. In **App settings**, make a note of the values of **Client ID**, **Client secret**, and **Package security identifier (SID)**. 
+<!-- deleted by customization 9 --><!-- keep by customization: begin --> 10 <!-- keep by customization: end -->. In **App settings**, make a note of the values of **Client ID**, **Client secret**, and **Package security identifier (SID)**.
 
    	![](./media/mobile-services-register-windows-store-app/mobile-services-win8-app-push-auth.png)
 
@@ -47,7 +47,7 @@
 
    	![](./media/mobile-services-register-windows-store-app/mobile-push-tab.png)
 
-13. Click the **Identity** tab. Notice the **Client Secret** and **Package SID** values are already set from the previous step. Enter the **Client ID** you previously made note of, and then click **Save**.
+<!-- deleted by customization 13 --><!-- keep by customization: begin --> 12 <!-- keep by customization: end -->. Click the **Identity** tab. Notice the **Client Secret** and **Package SID** values are already set from the previous step. Enter the **Client ID** you previously made note of, and then click **Save**.
 
    	![](./media/mobile-services-register-windows-store-app/mobile-services-identity-tab.png)
  
@@ -59,6 +59,6 @@ You are now ready to use a Microsoft account for authentication in your app.
  
 
 <!-- URLs. -->
-[Get started with Mobile Services]: /develop/mobile/tutorials/get-started/#create-new-service
+[Get started with Mobile Services]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started/#create-new-service
 [Submit an app page]: http://go.microsoft.com/fwlink/p/?LinkID=266582
 [Azure Management Portal]: https://manage.windowsazure.cn/

@@ -60,12 +60,6 @@ You can create and configure Azure resources from Windows, OS X, or Linux comput
 
 ## Next steps
 
-- Learn more about [Resource Manager](/resource-group-overview.md).
-<!-- deleted by customization
-- Understand how to [design templates](/best-practices-resource-manager-design-templates.md).
-- Use [best practices](/best-practices-resource-manager-examples.md)
--->
-<!-- keep by customization: begin -->
-- Understand how to [design templates](/best-practices-resource-manager-design-templates/md).
+- Learn more about [Resource Manager](/documentation/articles/resource-group-overview).
+- Understand how to [design templates](/documentation/articles/best-practices-resource-manager-design-templates).
 - Use [best practices](/documentation/articles/best-practices-resource-manager-examples)
-<!-- keep by customization: end -->

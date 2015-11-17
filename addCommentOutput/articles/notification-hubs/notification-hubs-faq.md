@@ -116,7 +116,7 @@ Note that successful notifications only mean that the notifications have been de
 It also provides the capability to export the telemetry programmatically (in Standard Tier). See this sample for details - [NH - Metrics sample]
 
 [Notification Hubs Pricing]: /home/features/notification-hubs/#price
-[Notification Hubs SLA]: http://azure.microsoft.com/support/legal/sla/
+[Notification Hubs SLA]: /support/legal/sla/
 [CaseStudy - Sochi]: https://customers.microsoft.com/Pages/CustomerStory.aspx?recid=7942
 [CaseStudy - Skanska]: https://customers.microsoft.com/Pages/CustomerStory.aspx?recid=5847
 [CaseStudy - Seattle Times]: https://customers.microsoft.com/Pages/CustomerStory.aspx?recid=8354

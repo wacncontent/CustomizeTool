@@ -10,7 +10,7 @@
 <tags
 	ms.service="storage"
 	ms.date="08/04/2015"
-	wacn.date="tamram"/>
+	wacn.date=""/>
 
 # How to use Queue storage from .NET
 

@@ -268,7 +268,7 @@ The following example shows a **Microsoft.Web/serverfarms** resource and a **Mic
                   "type": "Extensions",
                   "name": "MSDeploy",
                   "properties": {
-                    "packageUri": "https://auxmktplceprod.blob.core.chinacloudapi.cn/packages/StarterSite-modified.zip",
+                    "packageUri": "https://auxmktplceprod.blob.core.windows.net/packages/StarterSite-modified.zip",
                     "dbType": "None",
                     "connectionString": "",
                     "setParameters": {
@@ -313,11 +313,11 @@ The following example shows a value that is returned in the Outputs section.
 ## More advanced scenarios.
 This topic provides an introductory look at the template. However, your scenario may require more advanced tasks.
 
-You may need to merge two templates together or use a child template within a parent template. For more information, see [Using linked templates with Azure Resource Manager](/documentation/articles/resource-group-advanced-template/#nested-template).
+You may need to merge two templates together or use a child template within a parent template. For more information, see [Using linked templates with Azure Resource Manager](/documentation/articles/resource-group-linked-templates).
 
 To iterate a specified number of times when creating a type of resource, see [Create multiple instances of resources in Azure Resource Manager](/documentation/articles/resource-group-create-multiple).
 
-You may need to use resources that exist within a different resource group. This is common when working with storage accounts or virtual networks that are shared across multiple resource groups. For more information, see the [resourceId function](/documentation/articles/resource-group-template-functions/#resourceid).
+You may need to use resources that exist within a different resource group. This is common when working with storage accounts or virtual networks that are shared across multiple resource groups. For more information, see the [resourceId function](/documentation/articles/resource-group-template-functions#resourceid).
 
 ## Complete template
 The following template deploys a web app and provisions it with code from a .zip file. 
@@ -382,7 +382,7 @@ The following template deploys a web app and provisions it with code from a .zip
                  "[resourceId('Microsoft.Web/sites', parameters('siteName'))]"
                ],
                "properties": {
-                 "packageUri": "https://auxmktplceprod.blob.core.chinacloudapi.cn/packages/StarterSite-modified.zip",
+                 "packageUri": "https://auxmktplceprod.blob.core.windows.net/packages/StarterSite-modified.zip",
                  "dbType": "None",
                  "connectionString": "",
                  "setParameters": {
@@ -403,6 +403,6 @@ The following template deploys a web app and provisions it with code from a .zip
 
 ## Next Steps
 - For details about the functions you can use from within a template, see [Azure Resource Manager Template Functions](/documentation/articles/resource-group-template-functions)
-- To see how to deploy the template you have created, see [Deploy an application with Azure Resource Manager Template](/documentation/articles/azure-portal/resource-group-template-deploy) 
+- To see how to deploy the template you have created, see [Deploy an application with Azure Resource Manager Template](/documentation/articles/resource-group-template-deploy)
 - For an in-depth example of deploying an application, see [Provision and deploy microservices predictably in Azure](/documentation/articles/app-service-deploy-complex-application-predictably)
 - To see the available schemas, see [Azure Resource Manager Schemas](https://github.com/Azure/azure-resource-manager-schemas)

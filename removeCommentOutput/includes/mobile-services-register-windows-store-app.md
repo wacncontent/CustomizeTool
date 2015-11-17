@@ -59,6 +59,6 @@ You are now ready to use a Microsoft account for authentication in your app.
  
 
 <!-- URLs. -->
-[Get started with Mobile Services]: /develop/mobile/tutorials/get-started/#create-new-service
+[Get started with Mobile Services]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started/#create-new-service
 [Submit an app page]: http://go.microsoft.com/fwlink/p/?LinkID=266582
 [Azure Management Portal]: https://manage.windowsazure.cn/

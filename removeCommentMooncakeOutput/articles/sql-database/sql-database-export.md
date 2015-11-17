@@ -1,6 +1,6 @@
 <properties
 	pageTitle="Create and export a BACPAC of an Azure SQL database"
-	description="Create and export a BACPAC of an Azure SQL database into Azure Storage"
+	description="Create and export a BACPAC of an Azure SQL database"
 	services="sql-database"
 	documentationCenter=""
 	authors="stevestein"
@@ -9,11 +9,11 @@
 
 <tags
 	ms.service="sql-database"
-	ms.date="09/05/2015"
+	ms.date="10/13/2015"
 	wacn.date=""/>
 
 
-# Create and export a BACPAC of a SQL database
+# Create and export a BACPAC of an Azure SQL database
 
 **Single database**
 
@@ -21,7 +21,7 @@
 - [Azure Preview Portal](/documentation/articles/sql-database-export)
 - [PowerShell](/documentation/articles/sql-database-export-powershell)
 
-This article shows how to manually export a BACPAC of your SQL database with the [Azure preview portal](https://manage.windowsazure.cn).
+This article provides directions for exporting a BACPAC of your Azure SQL database with the [Azure preview portal](https://manage.windowsazure.cn).
 
 A BACPAC is a .bacpac file that contains a database schema and data. For details, see Backup Package (.bacpac) in [Data-tier Applications](https://msdn.microsoft.com/zh-cn/library/ee210546.aspx).
 
@@ -41,7 +41,7 @@ To complete this article you need the following:
 
 Open the SQL Database blade for the database you want to export as a .bacpac file:
 
-1.	Go to the [Azure Preview Portal](https//:portal.azure.com).
+1.	Go to the [Azure Preview Portal](https://manage.windowsazure.cn).
 2.	Click **BROWSE ALL**.
 3.	Click **SQL databases**.
 2.	Click the database you want to export as a BACPAC.
@@ -88,7 +88,7 @@ Clicking **Create** creates an export database request and submits it to the ser
 
 - [Business Continuity Overview](/documentation/articles/sql-database-business-continuity)
 - [Disaster Recovery Drills](/documentation/articles/sql-database-disaster-recovery-drills)
-- [SQL Database documentation](/documentation/services/sql-database/)
+- [SQL Database documentation](/documentation/services/sql-databases/)
 
 
 <!--Image references-->

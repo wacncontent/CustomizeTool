@@ -5,7 +5,7 @@ You can subscribe to an Azure-hosted, fully-managed MongoDB database in the Azur
 ![New][button-new]
 1. Select **Store**.  
 ![Store][button-store]
-1. Select MongoLab. You can find us in the **Azure Websites** category, as well as under **All**.  
+1. Select MongoLab. You can find us in the **App Services** category, as well as under **All**.  
 ![MongoLab][entry-mongolab]
 1. Click **Next**.  
 ![Next][button-next]  

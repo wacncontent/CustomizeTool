@@ -17,11 +17,11 @@
 
 <!-- deleted by customization
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] classic deployment model.
-
 -->
 <!-- keep by customization: begin -->
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-include.md)] This article covers creating a FQDN with the Resource Manager deployment model.
 <!-- keep by customization: end -->
+
 
 When you create a virtual machine in the [Azure preview portal](https://manage.windowsazure.cn) using the **Resource Manager** deployment model, the portal creates a public IP resource for the virtual machine. You can use this IP address to remotely access the virtual machine. However, the portal does not create a [fully qualified domain name](https://en.wikipedia.org/wiki/Fully_qualified_domain_name) or FQDN, by default. Since it would be easier to remember and use an FQDN instead of an IP address, this article demonstrates how you can add one to your virtual machine.
 
@@ -53,4 +53,4 @@ The article assumes that you have logged in to your subscription in the portal, 
 
     ![FQDN is created](./media/virtual-machines-create-fqdn-on-portal/fqdnCreated.PNG)
 
-    You can now connect remotely to the virtual machine using this DNS name. For example, use `SSH adminuser@testdnslabel.eastus.cloudapp.azure.com`, when connecting to a Linux virtual machine which has the fully qualified domain name of `testdnslabel.eastus.cloudapp.azure.com` and user name of `adminuser`.
+    You can now connect remotely to the virtual machine using this DNS name. For example, use `SSH adminuser@testdnslabel.chinaeast.chinacloudapp.cn`, when connecting to a Linux virtual machine which has the fully qualified domain name of `testdnslabel.chinaeast.chinacloudapp.cn` and user name of `adminuser`.

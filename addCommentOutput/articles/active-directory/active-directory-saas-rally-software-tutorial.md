@@ -1,5 +1,8 @@
 <properties pageTitle="Tutorial: Azure Active Directory Integration with Rally Software | Windows Azure" description="Learn how to use Rally Software with Azure Active Directory to enable single sign-on, automated provisioning, and more!." services="active-directory" authors="MarkusVi"  documentationCenter="na" manager="stevenpo"/>
-<tags ms.service="active-directory" ms.devlang="na" ms.topic="article" ms.tgt_pltfrm="na" ms.workload="identity" ms.date="08/01/2015" ms.author="markvi" />
+<tags
+	ms.service="active-directory"
+	ms.date="08/01/2015"
+	wacn.date=""/>
 #Tutorial: Azure Active Directory Integration with Rally Software
 <!-- deleted by customization
 >[AZURE.TIP]For feedback, click [here](https://social.msdn.microsoft.com/Forums/azure/zh-cn/a1d0a1b5-7e7b-48b5-a9d2-b95c4686350a/tutorial-azure-ad-integration-with-rally-software?forum=WindowsAzureAD).

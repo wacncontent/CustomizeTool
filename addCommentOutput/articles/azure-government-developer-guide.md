@@ -38,7 +38,7 @@ Microsoft provides a number of tools to create and deploy cloud applications to 
 
 When creating and deploying applications to the Azure Government Services, as opposed to the Global Service, developers need to know the key differences of the two services.  Specifically around setting up and configuring their programming environment, configuring endpoints, writing applications, and deploying them as services to Azure Government.
 
-The information in this document summarizes those differences and supplements the information available on the [Azure Government](http://www.azure.com/gov "Azure Government") site and the [Windows Azure Technical Library](http://msdn.microsoft.com/cloud-app-development-msdn "MSDN") on MSDN. Official information may also be available in many other locations such as the [Windows Azure Trust <!-- deleted by customization Center](http://azure.microsoft.com/support/trust-center/ --><!-- keep by customization: begin --> Center](http://www.windowsazure.cn/support/trust-center/ <!-- keep by customization: end --> "Windows Azure Trust Center"), [Azure Documentation <!-- deleted by customization Center](http://azure.microsoft.com/documentation/) --><!-- keep by customization: begin --> Center](http://www.windowsazure.cn/documentation/) <!-- keep by customization: end --> and in [Azure <!-- deleted by customization Blogs](http://azure.microsoft.com/blog/ --><!-- keep by customization: begin --> Blogs](http://www.windowsazure.cn/blog/ <!-- keep by customization: end --> "Azure Blogs").
+The information in this document summarizes those differences and supplements the information available on the [Azure Government](http://www.windowsazure.cn/gov "Azure Government") site and the [Windows Azure Technical Library](http://msdn.microsoft.com/cloud-app-development-msdn "MSDN") on MSDN. Official information may also be available in many other locations such as the [Windows Azure Trust Center](/support/trust-center/ "Windows Azure Trust Center"), [Azure Documentation Center](http://azure.microsoft.com/documentation/) and in [Azure Blogs](http://azure.microsoft.com/blog/ "Azure Blogs"). 
 
 This content is intended for partners and developers who are deploying to Windows Azure Government.
 
@@ -61,22 +61,15 @@ Azure Government currently has the following services available in both US GOV I
 - Active Directory
 - Scheduler
 - Virtual Networking
-<!-- deleted by customization
 - SQL Database
 
-Other services are available, and more services will be added on a continuous basis.  For the most current list of services, please see the [regions page](http://azure.microsoft.com/regions/#services) which will highlight each available region and their services.
--->
-<!-- keep by customization: begin -->
-- SQL 数据库
-
-Other services are available, and more services will be added on a continuous basis.  For the most current list of services, please see the [regions page](http://www.windowsazure.cn/regions/#services) which will highlight each available region and their services.
-<!-- keep by customization: end -->
+Other services are available, and more services will be added on a continuous basis.  For the most current list of services, please see the [regions page](http://azure.microsoft.com/regions/#services) which will highlight each available region and their services.  
 
 Currently, US GOV Iowa and US GOV Virginia are the data centers supporting Azure Government.  Please refer to the regions page above for current data centers and services available.
 
 ## <a name="Endpoint"></a>Endpoint Mapping
 
-Use the following table to guide you when mapping public Windows Azure and SQL <!-- deleted by customization Database --><!-- keep by customization: begin --> 数据库 <!-- keep by customization: end --> endpoints to Azure Government specific endpoints.
+Use the following table to guide you when mapping public Windows Azure and SQL Database endpoints to Azure Government specific endpoints.
 
 
 Service Type|Azure Public|Azure Government
@@ -90,15 +83,10 @@ Blob Storage|*.blob.core.chinacloudapi.cn|	*.blob.core.usgovcloudapi.net
 Queue Storage|*.queue.core.chinacloudapi.cn|*.queue.core.usgovcloudapi.net
 Table Storage|*.table.core.chinacloudapi.cn|*.table.core.usgovcloudapi.net
 Service Management|management.core.chinacloudapi.cn|management.core.usgovcloudapi.net
-<!-- deleted by customization
 SQL Database|*.database.chinacloudapi.cn|*.database.usgovcloudapi.net
--->
-<!-- keep by customization: begin -->
-SQL 数据库|*.database.chinacloudapi.cn|*.database.usgovcloudapi.net
-<!-- keep by customization: end -->
 
 ## <a name="next"></a>Next steps
-If you are interested in learning more and about Azure Government and how your organization can qualify to access, please go to <A href="http://azure.com/gov">http://www.azure.com/gov</a>
+If you are interested in learning more and about Azure Government and how your organization can qualify to access, please go to <A href="http://azure.com/gov">http://www.windowsazure.cn/gov</a>
 
 <!--Anchors-->
 
@@ -110,6 +98,6 @@ If you are interested in learning more and about Azure Government and how your o
 
 
 <!--Link references-->
-[Link 1 to another <!-- deleted by customization azure.microsoft.com --><!-- keep by customization: begin --> www.windowsazure.cn <!-- keep by customization: end --> documentation topic]: /documentation/articles/virtual-machines-windows-tutorial
-[Link 2 to another <!-- deleted by customization azure.microsoft.com --><!-- keep by customization: begin --> www.windowsazure.cn <!-- keep by customization: end --> documentation topic]: /documentation/articles/web-sites-custom-domain-name
-[Link 3 to another <!-- deleted by customization azure.microsoft.com --><!-- keep by customization: begin --> www.windowsazure.cn <!-- keep by customization: end --> documentation topic]: /documentation/articles/storage-whatis-account
+[Link 1 to another azure.microsoft.com documentation topic]: /documentation/articles/virtual-machines-windows-tutorial
+[Link 2 to another azure.microsoft.com documentation topic]: /documentation/articles/web-sites-custom-domain-name
+[Link 3 to another azure.microsoft.com documentation topic]: /documentation/articles/storage-whatis-account

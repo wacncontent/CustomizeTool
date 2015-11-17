@@ -44,3 +44,13 @@ Use the guidance that is outlined in the article here to resolve to [here](/docu
 [Azure AD Connect customer support](https://manage.windowsazure.cn/?getsupport=true)
 
 - Use this link to get support through the Azure Management Portal.
+
+<!-- keep by customization: begin -->
+**Q:What do I do if I receive an email that asking me to renew my Office 365 certificate**
+
+Use the guidance that is outlined in the article here to resolve to [here](/documentation/articles/active-directory-aadconnect-o365-certs) renew the certificate.
+
+
+
+<!-- keep by customization: end -->
+

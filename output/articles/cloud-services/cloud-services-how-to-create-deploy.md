@@ -122,7 +122,7 @@ Three cloud service features require special configurations before you export a 
 
 5. If the cloud service will include any roles with only one instance, select the **Deploy even if one or more roles contain a single instance** check box to enable the deployment to proceed.
 
-    Azure can only guarantee 99.95 percent access to the cloud service during maintenance and service updates if every role has at least two instances. If needed, you can add additional role instances on the **Scale** page after you deploy the cloud service. For more information, see [Service Level Agreements](http://azure.microsoft.com/support/legal/sla/).
+    Azure can only guarantee 99.95 percent access to the cloud service during maintenance and service updates if every role has at least two instances. If needed, you can add additional role instances on the **Scale** page after you deploy the cloud service. For more information, see [Service Level Agreements](/support/legal/sla/).
 
 6. Click **OK** (checkmark) to begin the cloud service deployment.
 

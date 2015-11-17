@@ -7,12 +7,12 @@
 	manager="timlt" 
 	editor=""/>
 
-<tags 
-	ms.service="service-bus" 
-	ms.date="10/08/2015" 
+<tags
+	ms.service="service-bus"
+	ms.date="10/08/2015"
 	wacn.date=""/>
 
-# How to Use Service Bus topics and subscriptions
+# How to use Service Bus topics and subscriptions
 
 [AZURE.INCLUDE [service-bus-selector-topics](../includes/service-bus-selector-topics.md)]
 
@@ -45,7 +45,7 @@ You can obtain the values for the SAS key name and value from the [Azure Managem
 bus_service.create_topic('mytopic')
 ```
 
-**create_topic** also supports additional options, which enable you to override default topic settings such as message time to live or maximum topic size. The following example sets the maximum topic size to 5 GB, and a time to live (TTL) value of 1 minute:
+**create\_topic** also supports additional options, which enable you to override default topic settings such as message time to live or maximum topic size. The following example sets the maximum topic size to 5 GB, and a time to live (TTL) value of 1 minute:
 
 ```
 topic_options = Topic()
@@ -76,9 +76,9 @@ You can also define filters that enable you to specify which messages sent to a 
 
 The most flexible type of filter supported by subscriptions is a **SqlFilter**, which implements a subset of SQL92. SQL filters operate on the properties of the messages that are published to the topic. For more information about the expressions that can be used with a SQL filter, see the [SqlFilter.SqlExpression][] syntax.
 
-You can add filters to a subscription by using the **create_rule** method of the **ServiceBusService** object. This method allows you to add new filters to an existing subscription.
+You can add filters to a subscription by using the **create\_rule** method of the **ServiceBusService** object. This method allows you to add new filters to an existing subscription.
 
-> [AZURE.NOTE] Because the default filter is applied automatically to all new subscriptions, you must first remove the default filter or the **MatchAll** will override any other filters you may specify. You can remove the default rule by using the **delete_rule** method of the **ServiceBusService** object.
+> [AZURE.NOTE] Because the default filter is applied automatically to all new subscriptions, you must first remove the default filter or the **MatchAll** will override any other filters you may specify. You can remove the default rule by using the **delete\_rule** method of the **ServiceBusService** object.
 
 The following example creates a subscription named `HighMessages` with a **SqlFilter** that only selects messages that have a custom **messagenumber** property greater than 3:
 
@@ -110,7 +110,7 @@ Now, when a message is sent to `mytopic` it is always delivered to receivers sub
 
 ## Send messages to a topic
 
-To send a message to a Service Bus topic, your application must use the **send_topic_message** method of the **ServiceBusService** object.
+To send a message to a Service Bus topic, your application must use the **send\_topic\_message** method of the **ServiceBusService** object.
 
 The following example demonstrates how to send five test messages to `mytopic`. Note that the **messagenumber** property value of each message varies on the iteration of the loop (this determines which subscriptions receive it):
 
@@ -124,18 +124,18 @@ Service Bus topics support a maximum message size of 256 MB (the header, which i
 
 ## Receive messages from a subscription
 
-Messages are received from a subscription using the **receive_subscription_message** method on the **ServiceBusService** object:
+Messages are received from a subscription using the **receive\_subscription\_message** method on the **ServiceBusService** object:
 
 ```
 msg = bus_service.receive_subscription_message('mytopic', 'LowMessages', peek_lock=False)
 print(msg.body)
 ```
 
-Messages are deleted from the subscription as they are read when the parameter **peek_lock** is set to **False**. You can read (peek) and lock the message without deleting it from the queue by setting the parameter **peek_lock** to **True**.
+Messages are deleted from the subscription as they are read when the parameter **peek\_lock** is set to **False**. You can read (peek) and lock the message without deleting it from the queue by setting the parameter **peek\_lock** to **True**.
 
 The behavior of reading and deleting the message as part of the receive operation is the simplest model, and works best for scenarios in which an application can tolerate not processing a message in the event of a failure. To understand this, consider a scenario in which the consumer issues the receive request and then crashes before processing it. Because Service Bus will have marked the message as being consumed, then when the application restarts and begins consuming messages again, it will have missed the message that was consumed prior to the crash.
 
-If the **peek_lock** parameter is set to **True**, the receive becomes a two stage operation, which makes it possible to support applications that cannot tolerate missing messages. When Service Bus receives a request, it finds the next message to be consumed, locks it to prevent other consumers receiving it, and then returns it to the application. After the application finishes processing the message (or stores it reliably for future processing), it completes the second stage of the receive process by calling **delete** method on the **Message** object. The **delete** method marks the message as being consumed and removes it from the subscription.
+If the **peek\_lock** parameter is set to **True**, the receive becomes a two stage operation, which makes it possible to support applications that cannot tolerate missing messages. When Service Bus receives a request, it finds the next message to be consumed, locks it to prevent other consumers receiving it, and then returns it to the application. After the application finishes processing the message (or stores it reliably for future processing), it completes the second stage of the receive process by calling **delete** method on the **Message** object. The **delete** method marks the message as being consumed and removes it from the subscription.
 
 ```
 msg = bus_service.receive_subscription_message('mytopic', 'LowMessages', peek_lock=True)
@@ -154,7 +154,7 @@ In the event that the application crashes after processing the message but befor
 
 ## Delete topics and subscriptions
 
-Topics and subscriptions are persistent, and must be explicitly deleted either through the Azure management portal or programmatically. The following example shows how to delete the topic named `mytopic`:
+Topics and subscriptions are persistent, and must be explicitly deleted either through the Azure Management Portal or programmatically. The following example shows how to delete the topic named `mytopic`:
 
 ```
 bus_service.delete_topic('mytopic')
@@ -175,6 +175,6 @@ Now that you've learned the basics of Service Bus topics, follow these links to 
 
 [Azure Management Portal]: http://manage.windowsazure.cn
 [Python Azure package]: https://pypi.python.org/pypi/azure  
-[Queues, Topics, and Subscriptions]: /documentation/articles/service-bus-queues-topics-subscriptions
+[Queues, topics, and subscriptions]: /documentation/articles/service-bus-queues-topics-subscriptions
 [SqlFilter.SqlExpression]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.sqlfilter.sqlexpression.aspx
-[Azure Queues and Service Bus queues]: /documentation/articles/service-bus-azure-and-service-bus-queues-compared-contrasted/#capacity-and-quotas 
+[Azure Queues and Service Bus queues]: /documentation/articles/service-bus-azure-and-service-bus-queues-compared-contrasted#capacity-and-quotas 

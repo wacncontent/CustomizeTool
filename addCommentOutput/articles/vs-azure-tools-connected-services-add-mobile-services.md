@@ -30,7 +30,7 @@ You can use the Connected Services dialog to connect to Azure Mobile Services in
 
 ## Connect to Azure Mobile Services using the Add Connected Services dialog
 
-1. Make sure you have an Azure account. If you don't have an Azure account, you can sign up for a [trial](/pricing/free-trial/).
+1. Make sure you have an Azure account. If you don't have an Azure account, you can sign up for a <!-- deleted by customization [trial](/pricing/free-trial/) --><!-- keep by customization: begin --> [trial](/pricing/1rmb-trial/) <!-- keep by customization: end -->.
 
 1. Open the **Add Connected Services** dialog box.
  - For .NET apps, open your project in Visual Studio, open the context menu for the **References** node in Solution Explorer, and then choose **Add Connected Service**
@@ -39,11 +39,11 @@ You can use the Connected Services dialog to connect to Azure Mobile Services in
 
  - For Apache Cordova app projects, open your project in Visual Studio, open the context menu for the project node in Solution Explorer, and then choose **Add Connected Service**.
 
-1. In the **Add Connected <!-- deleted by customization Service** dialog --><!-- keep by customization: begin --> Service **dialog <!-- keep by customization: end --> box, choose **Azure Mobile Services**, and then choose the **Configure** <!-- deleted by customization button. You --><!-- keep by customization: begin --> button.You <!-- keep by customization: end --> may be prompted to log into Azure if you haven't already done so.
+1. In the **Add Connected Service** dialog box, choose **Azure Mobile Services**, and then choose the **Configure** button. You may be prompted to log into Azure if you haven't already done so.
 
     ![Adding an Azure Mobile Service](./media/vs-azure-tools-connected-services-add-mobile-services/IC797636.png)
 
-1. In the <!-- deleted by customization **Azure --><!-- keep by customization: begin --> Azure <!-- keep by customization: end --> Mobile <!-- deleted by customization Services** --><!-- keep by customization: begin --> Services <!-- keep by customization: end --> dialog box, choose an existing mobile service if you have <!-- deleted by customization one. If --><!-- keep by customization: begin --> one.If <!-- keep by customization: end --> you need to create a new Azure mobile service, follow the procedure below to do so. Otherwise, skip to the next step.
+1. In the **Azure Mobile Services** dialog box, choose an existing mobile service if you have one. If you need to create a new Azure mobile service, follow the procedure below to do so. Otherwise, skip to the next step.
 
     To create a new mobile service account:
     1. choose the **Create Service **link at the bottom of the dialog box.
@@ -56,14 +56,14 @@ You can use the Connected Services dialog to connect to Azure Mobile Services in
   
         ![Creating a mobile service](./media/vs-azure-tools-connected-services-add-mobile-services/IC797638.png)
 
-        A JavaScript backend service is simple and <!-- deleted by customization powerful. If --><!-- keep by customization: begin --> powerful.If <!-- keep by customization: end --> you create a JavaScript backend mobile service, the server-side JavaScript code is stored in the cloud, but you can edit server scripts by using Server Explorer, or the Azure management portal.
+        A JavaScript backend service is simple and powerful. If you create a JavaScript backend mobile service, the server-side JavaScript code is stored in the cloud, but you can edit server scripts by using Server Explorer, or the Azure management portal. 
 
         A .NET backend mobile service gives you the full power and flexibility of Web API and Entity Framework. If you create a .NET backend mobile service, a project is created for you and added to your solution. 
 
     1. Choose the **Region** where you want the mobile service, and then enter a user name and password for the server.
  
     1. After you've entered all the required information, choose the **Create** button to create the mobile service.
-    2. The new mobile service should appear in the service list on the **Azure Mobile Services** dialog <!-- deleted by customization box. Choose --><!-- keep by customization: begin --> box.Choose <!-- keep by customization: end --> the new mobile service in the list and then choose the **Add** button to add the service to your project.
+    2. The new mobile service should appear in the service list on the **Azure Mobile Services** dialog box. Choose the new mobile service in the list and then choose the **Add** button to add the service to your project.
     
 
 1. Review the getting started page that appears and find out how your project was modified. A Getting Started page appears in your browser whenever you add a connected service. You can review the suggested next steps and code examples, or switch to the What Happened page to see what references were added to your project, and how your code and configuration files were modified.
@@ -72,7 +72,7 @@ You can use the Connected Services dialog to connect to Azure Mobile Services in
 
 ## How your project is modified
 
-How Visual Studio modifies your project depends on the project type. For C# client apps, see [What happend – C# projects](https://azure.microsoft.com/zh-cn/documentation/articles/vs-mobile-services-dotnet-getting-started/). For JavaScript client apps, see [What happened – JavaScript projects](/documentation/articles/vs-mobile-services-javascript-getting-started/). For Cordova apps, see [What happend – Cordova projects](https://azure.microsoft.com/zh-cn/documentation/articles/vs-mobile-services-cordova-getting-started/).
+How Visual Studio modifies your project depends on the project type. For C# client apps, see [What happend – C# <!-- deleted by customization projects](https://azure.microsoft.com/zh-cn/documentation/articles/vs-mobile-services-dotnet-getting-started/) --><!-- keep by customization: begin --> projects](/documentation/articles/vs-mobile-services-dotnet-getting-started/) <!-- keep by customization: end -->. For JavaScript client apps, see [What happened – JavaScript projects](/documentation/articles/vs-mobile-services-javascript-getting-started/). For Cordova apps, see [What happend – Cordova <!-- deleted by customization projects](https://azure.microsoft.com/zh-cn/documentation/articles/vs-mobile-services-cordova-getting-started/) --><!-- keep by customization: begin --> projects](/documentation/articles/vs-mobile-services-cordova-getting-started/) <!-- keep by customization: end -->.
 
 
 ##Next steps

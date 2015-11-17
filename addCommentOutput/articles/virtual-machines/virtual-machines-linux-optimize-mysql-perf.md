@@ -16,19 +16,16 @@
 #Optimizing MySQL Performance on Azure Linux VMs
 
 There are many factors that impact MySQL performance on Azure, both in virtual hardware selection and software configuration. This article focuses on optimizing performance through storage, system, and database configurations.
-
 <!-- deleted by customization
+
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
 
+-->
 
 ##Utilizing RAID on an Azure virtual machine
--->
-<!-- keep by customization: begin -->
-##Utilizing RAID on an Azure virtual machine 
-<!-- keep by customization: end -->
 Storage is the key factor that impacts database performance in cloud environments.  Compared to a single disk, RAID can provide faster access via concurrency.  Refer to [Standard RAID Levels](http://en.wikipedia.org/wiki/Standard_RAID_levels) for more detail.   
 
-Disk I/O throughput and I/O response time in Azure can be significantly improved through RAID. Our lab tests show disk I/O throughput can be doubled and I/O response time can be reduced by half on average when the number of RAID disks is doubled (from 2 to 4, 4 to 8, etc.). See [Appendix <!-- deleted by customization A](#AppendixA) --><!-- keep by customization: begin --> A](/documentation/articles/AppendixA) <!-- keep by customization: end --> for details.
+Disk I/O throughput and I/O response time in Azure can be significantly improved through RAID. Our lab tests show disk I/O throughput can be doubled and I/O response time can be reduced by half on average when the number of RAID disks is doubled (from 2 to 4, 4 to 8, etc.). See [Appendix A](#AppendixA) for details.  
 
 In addition to disk I/O, MySQL performance improves when you increase the RAID level.  See [Appendix B](#AppendixB) for details.  
 
@@ -37,8 +34,9 @@ You may also want to consider the chunk size. In general when you have a larger 
 Please note that there are limits on how many disks you can add for different virtual machine types. These limits are detailed in [Virtual Machine and Cloud Service Sizes for Azure](http://msdn.microsoft.com/zh-cn/library/azure/dn197896.aspx). You will need 4 attached data disks to follow the RAID example in this article, although you could choose to set up RAID with fewer disks.  
 
 This article assumes you have already created a Linux virtual machine and have MYSQL installed and configured. For more information on getting started please refer to How to install MySQL on Azure.  
+
 ###Setting up RAID on Azure
-The following steps show how to create RAID on Azure using the <!-- keep by customization: begin --> Windows <!-- keep by customization: end --> Azure Management Portal. You can also set up RAID using Windows PowerShell scripts.
+The following steps show how to create RAID on Azure using the Azure Management Portal. You can also set up RAID using Windows PowerShell scripts.
 In this example we will configure RAID 0 with 4 disks.  
 
 ####Step 1: Add a Data Disk to your Virtual Machine  
@@ -51,18 +49,15 @@ On the page for the virtual machine, click **Dashboard**.
 
 ![][2]
 
+
 In the task bar, click **Attach**.
-<!-- deleted by customization
+
 ![][3]
--->
-<!-- keep by customization: begin -->
- 
-![][3]
-<!-- keep by customization: end -->
 
 And then click **Attach empty disk**.  
 
 ![][4]
+
 For data disks, the **Host Cache Preference** should be set to **None**.  
 
 This will add one empty disk into your virtual machine. Repeat this step three more times so that you have 4 data disks for RAID.  
@@ -74,12 +69,7 @@ You can see the added drives in the virtual machine by looking at the kernel mes
 ####Step 2: Create RAID with the additional disks
 Follow this article for detailed RAID setup steps:  
 
-<!-- deleted by customization
 [Configure software RAID on Linux](/documentation/articles/virtual-machines-linux-configure-RAID)
--->
-<!-- keep by customization: begin -->
-[/documentation/articles/virtual-machines-linux-configure-RAID/](/documentation/articles/virtual-machines-linux-configure-RAID/)
-<!-- keep by customization: end -->
 
 >[AZURE.NOTE] If you are using the XFS file system, follow the steps below after you have created RAID.
 
@@ -163,6 +153,7 @@ For the Redhat distribution family, you only need the following command:
 
 ##Configure system file operations settings
 One best practice is to disable the atime logging feature on the file system. Atime is the last file access time. Whenever a file is accessed, the file system records the timestamp in the log. However, this information is rarely used. You can disable it if you don't need it, which will reduce overall disk access time.  
+
 To disable atime logging, you need to modify the file system configuration file /etc/ fstab and add the **noatime** option.  
 
 For example, edit  the vim /etc/fstab file, adding the noatime as shown below.  
@@ -182,6 +173,7 @@ Test the modified result. Note that when you modify the test file, the access ti
 Before example:		
 
 ![][5]
+
 After example:
 
 ![][6]
@@ -229,6 +221,7 @@ The following configuration items are the main factors that affect MySQL perform
 -	**innodb_flush_log_at_trx_commit**: Default value is 1, with the scope set to 0~2. The default value is the most suitable option for standalone MySQL DB. The setting of 2 enables the most data integrity and is suitable for Master in MySQL cluster. The setting of 0 allows data loss, which can affect reliability, in some cases with better performance, and is suitable for Slave in MySQL cluster.
 -	**Innodb_log_buffer_size**: The log buffer allows transactions to run without having to flush the log to disk before the transactions commit. However, if there is large binary object or text field, the cache will be consumed very quickly and frequent disk I/O will be triggered. It is better increase the buffer size if Innodb_log_waits state variable is not 0.
 -	**query_cache_size**:  The best option is to disable it from the outset. Set query_cache_size to 0 (this is now the default setting in MySQL 5.6) and use other methods to speed up queries .  
+
 See [Appendix D](#AppendixD) for comparing performance after the optimization.
 
 
@@ -247,17 +240,11 @@ Please note that by default this is not enabled. Turning on the slow query log m
 	service  mysql  restart
 
 ###Step 3: Check whether the setting is taking effect using the “show” command
-<!-- deleted by customization
+
 ![][7]   
+
 ![][8]
--->
-<!-- keep by customization: begin -->
- 
-![][7]   
-   
-![][8]
- 
-<!-- keep by customization: end -->
+
 In this example, you can see that the slow query feature has been turned on. You can then use the **mysqldumpslow** tool to determine performance bottlenecks and optimize performance, such as adding indexes.
 
 
@@ -273,6 +260,7 @@ The following are sample performance test data produced on targeted lab environm
 
 
 ![][9]
+
 **Test commands:**  
 
 	fio -filename=/path/test -iodepth=64 -ioengine=libaio -direct=1 -rw=randwrite -bs=4k -size=5G -numjobs=64 -runtime=30 -group_reporting -name=test-randwrite
@@ -283,15 +271,9 @@ The following are sample performance test data produced on targeted lab environm
 **MySQL Performance (Throughput) Comparison with Different RAID Levels**   
 (XFS file system)
 
-<!-- deleted by customization
+
 ![][10]  
 ![][11]
--->
-<!-- keep by customization: begin -->
- 
-![][10]  
-![][11]
-<!-- keep by customization: end -->
 
 **Test commands:**
 
@@ -308,13 +290,8 @@ The following are sample performance test data produced on targeted lab environm
 **Disk Performance (IOPS) Comparison for Different Chunk Sizes**  
 (XFS file system)
 
-<!-- deleted by customization
+
 ![][13]
--->
-<!-- keep by customization: begin -->
- 
-![][13]
-<!-- keep by customization: end -->
 
 **Test commands:**  
 
@@ -328,13 +305,8 @@ Note the file size used for this testing is 30GB and 1GB respectively, with RAID
 **MySQL Performance (Throughput) Comparison Before and After Optimization**  
 (XFS File System)
 
-<!-- deleted by customization
+
 ![][14]
--->
-<!-- keep by customization: begin -->
-  
-![][14]
-<!-- keep by customization: end -->
 
 **Test commands:**
 

@@ -20,15 +20,15 @@ This is a guide to technical resources to help you run your large-scale parallel
 Learn about Big Compute options in Azure, and choose the right approach for your workload and business need.
 
 * [Batch and HPC solutions](/documentation/articles/batch-hpc-solutions)
-
 <!-- deleted by customization
-* [Video: Big Compute in the cloud with Azure and HPC](http://azure.microsoft.com/documentation/videos/teched-europe-2014-big-compute-in-the-cloud-with-high-performance-computing-on-azure/)
 
+* [Video: Big Compute in the cloud with Azure and HPC](http://azure.microsoft.com/documentation/videos/teched-europe-2014-big-compute-in-the-cloud-with-high-performance-computing-on-azure/)
 -->
+
 
 ## Azure Batch
 
-<!-- deleted by customization [Batch](/home/features/batch/) --><!-- keep by customization: begin --> [Batch](/documentation/services/batch/) <!-- keep by customization: end --> is a platform service that makes it easy to cloud-enable your applications and run jobs without setting up and managing a cluster and job scheduler. Use the SDK to integrate client applications with Azure Batch through a variety of languages, stage data to Azure, and build job execution pipelines.
+[Batch](/home/features/batch/) is a platform service that makes it easy to cloud-enable your applications and run jobs without setting up and managing a cluster and job scheduler. Use the SDK to integrate client applications with Azure Batch through a variety of languages, stage data to Azure, and build job execution pipelines.
 
 * [Documentation](/documentation/services/batch/)
 
@@ -50,7 +50,7 @@ Deploy or extend your existing Windows or Linux HPC cluster to Azure to run your
 
 HPC Pack is Microsoft's free HPC solution built on Windows Azure and Windows Server technologies <!-- deleted by customization, capable of running Windows and Linux HPC workloads -->.
 
-* [Download HPC Pack 2012 R2 Update <!-- deleted by customization 2](https://www.microsoft.com/download/details.aspx?id=47755) --><!-- keep by customization: begin --> 2](https://www.microsoft.com/zh-cn/download/details.aspx?id=47755) <!-- keep by customization: end -->
+* [Download HPC Pack 2012 R2 Update 2](https://www.microsoft.com/download/details.aspx?id=47755)
 
 * [Documentation](https://technet.microsoft.com/zh-cn/library/jj899572.aspx)
 

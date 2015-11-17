@@ -13,15 +13,9 @@
 	ms.date="10/13/2015"
 	wacn.date=""/>
 
-<!-- deleted by customization
 # Create Windows virtual machines with Powershell and the classic deployment model 
--->
-<!-- keep by customization: begin -->
-# Use Azure PowerShell to create and preconfigure Windows-based Virtual Machines
-<!-- keep by customization: end -->
 
 > [AZURE.SELECTOR]
-<!-- deleted by customization
 - [Portal - Windows](/documentation/articles/virtual-machines-windows-tutorial-classic-portal)
 - [Powershell - Windows](/documentation/articles/virtual-machines-ps-create-preconfigure-windows-vms)
 - [PowerShell - Linux](/documentation/articles/virtual-machines-ps-create-preconfigure-linux-vms)
@@ -29,21 +23,16 @@
 <br>
 
 
+<!-- deleted by customization
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] [Resource Manager model](/documentation/articles/virtual-machines-ps-create-preconfigure-windows-resource-manager-vms).
 
--->
-<!-- keep by customization: begin -->
-- [Azure preview portal](/documentation/articles/virtual-machines-windows-tutorial)
-- [Azure Management Portal](/documentation/articles/virtual-machines-windows-tutorial-classic-portal)
-- [PowerShell: Resource Manager deployment](/documentation/articles/virtual-machines-deploy-rmtemplates-powershell)
-- [PowerShell: Classic deployment](/documentation/articles/virtual-machines-ps-create-preconfigure-windows-vms)
-<!-- keep by customization: end -->
 
+-->
 These steps show you how to customize a set of Azure PowerShell commands that create and preconfigure a Windows-based Azure virtual machine by using a building block approach. You can use this process to quickly create a command set for a new Windows-based virtual machine and expand an existing deployment or to create multiple command sets that quickly build out a custom dev/test or IT pro environment.
 
 These steps follow a fill-in-the-blanks approach for creating Azure PowerShell command sets. This approach can be useful if you are new to PowerShell or you just want to know what values to specify for successful configuration. Advanced PowerShell users can take the commands and substitute their own values for the variables (the lines beginning with "$").
 
-For the companion topic to configure Linux-based virtual machines, see [Use Azure PowerShell to create and preconfigure Linux-based Virtual <!-- deleted by customization Machines](/documentation/articles/virtual-machines-ps-create-preconfigure-linux-vms) --><!-- keep by customization: begin --> Machines](/documentation/articles/virtual-machines-ps-create-preconfigure-windows-resource-manager-vms) <!-- keep by customization: end -->.
+For the companion topic to configure Linux-based virtual machines, see [Use Azure PowerShell to create and preconfigure Linux-based Virtual Machines](/documentation/articles/virtual-machines-ps-create-preconfigure-linux-vms).
 
 <!-- keep by customization: begin -->
 [AZURE.INCLUDE [service-management-pointer-to-resource-manager](../includes/service-management-pointer-to-resource-manager.md)]
@@ -138,7 +127,7 @@ Optionally, to add the Windows computer to an existing Active Directory domain, 
 	$domacctdomain="<domain of the account that has permission to add the machine to the domain>"
 	$vm1 | Add-AzureProvisioningConfig -AdminUsername $cred1.GetNetworkCredential().Username -Password $cred1.GetNetworkCredential().Password -WindowsDomain -Domain $domacctdomain -DomainUserName $cred2.GetNetworkCredential().Username -DomainPassword $cred2.GetNetworkCredential().Password -JoinDomain $domaindns
 
-For additional pre-configuration options for Windows-based virtual machines, see the syntax for the **Windows** and **WindowsDomain** parameter sets in <!-- deleted by customization [Add-AzureProvisioningConfig](https://msdn.microsoft.com/zh-cn/library/azure/dn495299.aspx) --><!-- keep by customization: begin --> [Add-AzureProvisioningConfig](https://msdn.microsoft.com/zh-CN/library/azure/dn495299.aspx) <!-- keep by customization: end -->.
+For additional pre-configuration options for Windows-based virtual machines, see the syntax for the **Windows** and **WindowsDomain** parameter sets in [Add-AzureProvisioningConfig](https://msdn.microsoft.com/zh-cn/library/azure/dn495299.aspx).
 
 Optionally, assign the virtual machine a specific IP address, known as a static DIP.
 
@@ -282,16 +271,9 @@ Here is the corresponding Azure PowerShell command set to create this virtual ma
 
 [Virtual machines documentation](/documentation/services/virtual-machines/)
 
-<!-- deleted by customization
 [Azure virtual machines FAQ](http://msdn.microsoft.com/zh-cn/library/azure/dn683781.aspx)
 
 [Overview of Azure Virtual Machines](http://msdn.microsoft.com/zh-cn/library/azure/jj156143.aspx)
--->
-<!-- keep by customization: begin -->
-[Azure virtual machines FAQ](https://msdn.microsoft.com/zh-CN/library/azure/dn683781.aspx)
-
-[Overview of Azure Virtual Machines](https://msdn.microsoft.com/zh-CN/library/azure/jj156143.aspx)
-<!-- keep by customization: end -->
 
 [How to install and configure Azure PowerShell](/documentation/articles/install-configure-powershell)
 

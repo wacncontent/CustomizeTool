@@ -346,4 +346,4 @@ In order for a company administrator to remove an app’s access to their direct
 
 - Understand the [Azure Active Directory application manifest](/documentation/articles/active-directory-application-manifest)
 
-- Visit the [Active Directory developer's guide](active-directory-developer's guide.md)
+- Visit the [Active Directory developer's guide](active-directory-developer's <!-- deleted by customization guide.md) --><!-- keep by customization: begin --> guide) <!-- keep by customization: end -->

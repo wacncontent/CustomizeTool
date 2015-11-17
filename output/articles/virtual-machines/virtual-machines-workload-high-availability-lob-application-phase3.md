@@ -15,14 +15,24 @@
 
 # Line of Business Application Workload Phase 3: Configure SQL Server infrastructure
 
+<!-- deleted by customization
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] classic deployment model.
 
 
 In this phase of deploying a high-availability line of business application in Azure infrastructure services, you configure the two computers running SQL Server and the cluster majority node computer, and then combine them into a Windows Server cluster. 
+-->
+<!-- keep by customization: begin -->
+In this phase of deploying a a high-availability line of business application in Azure infrastructure services, you configure the two computers running SQL Server and the cluster majority node computer, and then combine them into a Windows Server cluster. 
+<!-- keep by customization: end -->
 
 You must complete this phase before moving on to [Phase 4](/documentation/articles/virtual-machines-workload-high-availability-LOB-application-phase4). See [Deploy a High-Availability Line of Business Application in Azure](/documentation/articles/virtual-machines-workload-high-availability-LOB-application-overview) for all of the phases.
 
+<!-- deleted by customization
 > [AZURE.NOTE] These instructions use a SQL Server image in the Azure image gallery and you are charged ongoing costs for the use of the SQL Server license. It is also possible to create virtual machines in Azure and install your own SQL Server licenses, but you must have Software Assurance and License Mobility to use your SQL Server license on a virtual machine, including an Azure virtual machine. For more information about installing SQL Server on a virtual machine, see [Installation for SQL Server](https://msdn.microsoft.com/zh-cn/library/bb500469.aspx).
+-->
+<!-- keep by customization: begin -->
+> [AZURE.NOTE] These instructions use a SQL Server image in the Azure image gallery and you are charged ongoing costs for the use of the SQL Server license. It is also possible to create virtual machines in Azure and install your own SQL Server licenses, but those instructions are not included here.
+<!-- keep by customization: end -->
 
 ## Create the SQL Server cluster virtual machines in Azure
 
@@ -37,8 +47,10 @@ Use the following block of PowerShell commands to create the virtual machines fo
 - Table A, for your availability sets
 
 Recall that you defined Table M in [Phase 2](/documentation/articles/virtual-machines-workload-high-availability-LOB-application-phase2) and Tables V, S, ST, and A in [Phase 1](/documentation/articles/virtual-machines-workload-high-availability-LOB-application-phase1).
+<!-- deleted by customization
 
 > [AZURE.NOTE] This article contains commands for versions of Azure PowerShell up to *but not including* versions 1.0.0 and later. You can check your version of Azure PowerShell with the **Get-Module azure | format-table version** command. The Azure PowerShell command blocks in this article are in the process of being tested and updated to support the new cmdlets in Azure PowerShell versions 1.0.0 and later. Thank you for your patience.
+-->
 
 When you have supplied all the proper values, run the resulting block at the Azure PowerShell prompt.
 
@@ -112,8 +124,10 @@ When you have supplied all the proper values, run the resulting block at the Azu
 	$osDiskUri=$storageAcc.PrimaryEndpoints.Blob.ToString() + "vhds/" + $vmName + "-OSDisk.vhd"
 	$vm=Set-AzureVMOSDisk -VM $vm -Name "OSDisk" -VhdUri $osDiskUri -CreateOption fromImage
 	New-AzureVM -ResourceGroupName $rgName -Location $locName -VM $vm
+<!-- deleted by customization
 
 > [AZURE.NOTE] Because these virtual machines are for an intranet application, they are not assigned a public IP address or a DNS domain name label and exposed to the Internet. However, this also means that you cannot connect to them from the Azure Preview portal. The **Connect** button will be unavailable when you view the properties of the virtual machine. Use the Remote Desktop Connection accessory or another Remote Desktop tool to connect to the virtual machine using its private IP address or intranet DNS name.
+-->
 
 ## Configure the computers running SQL Server
 

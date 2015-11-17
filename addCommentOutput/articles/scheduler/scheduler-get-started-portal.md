@@ -11,45 +11,25 @@
 	ms.date="08/18/2015"
 	wacn.date=""/>
 
-<!-- deleted by customization
 # Get started using Azure Scheduler in the Azure Management Portal
 
 ## Configure Scheduler using the Azure Management Portal to quickly and easily create jobs
 
-To complete this tutorial, you need an Azure account that has the Azure Scheduler feature enabled. If you don't have an account, you can create a trial account in just a couple of minutes. For details, refer to [Azure Trial](https://azure.microsoft.com/pricing/1rmb-trial/).
+To complete this tutorial, you need an Azure account that has the Azure Scheduler feature enabled. If you don't have an account, you can create a trial account in just a couple of minutes. For details, refer to [Azure Trial](/pricing/1rmb-trial/).
 
 ## Get started
 
-It's easy to create jobs and job collections on Azure Scheduler using the Azure Management Portal. This tutorial walks you through the creation of the job collection you will use to store jobs, the creation of a job in a job collection, and an overview of the job monitoring and management tasks available through the  portal. You need prior experience with Azure to use this tutorial.
--->
-<!-- keep by customization: begin -->
-# Get Started Using Scheduler in the Management Portal
-
-## Configure Azure Scheduler using Azure Management Portal to Quickly and Easily Create Jobs
-
-To complete this tutorial, you need an Azure account that has the Azure Scheduler feature enabled. If you don't have an account, you can create a trial account in just a couple of minutes. For details, refer to [Azure Trial](/pricing/1rmb-trial/).
-
-## Getting Started
-
-It's easy to create jobs and job collections on Azure Scheduler using the Azure Management Portal. This tutorial will walk you through the creation of the job collection you will use to store jobs, the creation of a job in a job collection, and an overview of the job monitoring and management tasks available through the management portal. You need prior experience with Azure to use this tutorial.
-<!-- keep by customization: end -->
+It's easy to create jobs and job collections on Azure Scheduler using the Azure Management Portal. This tutorial walks you through the creation of the job collection you will use to store jobs, the creation of a job in a job collection, and an overview of the job monitoring and management tasks available through the portal. You need prior experience with Azure to use this tutorial.
 
 The first time you open the Azure Management Portal, you are automatically placed at the **ALL ITEMS** tab. The columns in the **ALL ITEMS** tab can be sorted. To view your Scheduler jobs and job collections, click the **SCHEDULER** tab.
 
 ![][1]
 
-<!-- deleted by customization
 ## Create a job collection and a job
 
-1.  Sign in to the [Azure Management Portal](https://manage.windowsazure.cn/).
--->
-<!-- keep by customization: begin -->
-## Create a Job Collection and a Job
+1.  Sign in to the [Azure Management Portal](https://manage.windowsazure.cn/).  
 
-1.  Sign in to the [Management Portal](https://manage.windowsazure.cn/).
-<!-- keep by customization: end -->
-
-2.  Click **Azure Websites** > **Create New** > **Scheduler**, and then click **Custom Create**. <br /><br /> ![][2]
+2.  Click **App Services** > **Create New** > **Scheduler**, and then click **Custom Create**. <br /><br /> ![][2]
 
 3.  In **Job Collection**, select the name of the existing job collection under the **Job Collection** drop-down. If you don’t have an existing job collection you’d like to add the job to, select **Create New** and enter a name to identify your new job collection.<br /><br /> ![][3]
 
@@ -57,7 +37,7 @@ The first time you open the Azure Management Portal, you are automatically place
 
 5.  Click the arrow key to create the job collection and move to the next stage – creating a job.
 
-6.  Let’s create a job that simply hits http://www.microsoft.com/ with a GET request. In the <!-- deleted by customization **Job action** --><!-- keep by customization: begin --> Job Action <!-- keep by customization: end --> screen, define the following values for the requested form fields:
+6.  Let’s create a job that simply hits http://www.microsoft.com/ with a GET request. In the **Job action** screen, define the following values for the requested form fields:  
 
     1.  **Name:** ` getmicrosoft`  
 
@@ -112,16 +92,10 @@ When you click your job collection name, the **Dashboard** tab is displayed. The
 
 ![][9]
 
-<!-- deleted by customization
 #### Job usage overview and execution usage overview
--->
-<!-- keep by customization: begin -->
-#### Job Usage Overview and Execution Usage Overview
-<!-- keep by customization: end -->
 
 A table and series of charts that shows a fixed list of metrics. These metrics provide real-time values regarding the health of your job collection including:
 
-<!-- deleted by customization
 1.  Current jobs  
 
 2.  Completed jobs  
@@ -135,22 +109,6 @@ A table and series of charts that shows a fixed list of metrics. These metrics p
 6.  Job executions  
 
 #### Quick glance
--->
-<!-- keep by customization: begin -->
-1.  Current Jobs  
-
-2.  Completed Jobs  
-
-3.  Faulted Jobs  
-
-4.  Enabled Jobs  
-
-5.  Disabled Jobs  
-
-6.  Job Executions  
-
-#### Quick Glance
-<!-- keep by customization: end -->
 
 A table that shows a fixed list of status and settings metrics. These metrics provide real-time values regarding the status and settings associated with your job collection including:
 
@@ -178,20 +136,11 @@ This displays whether you are on the **Free** or **Standard** plan.
 
 Azure Scheduler implements quotas based on several conditions. This section lists the quota thresholds and allows you to change them. By default, there is one set of quotas configured. The limits of these quota settings are constrained by your plan, and changing the Plan may impact pricing.. Quotas can be changed to scale your Scheduler. Options include:
 
-<!-- deleted by customization
 1.  Max jobs  
 
 2.  Max frequency  
 
 3.  Max interval  
--->
-<!-- keep by customization: begin -->
-1.  Max Jobs  
-
-2.  Max Frequency  
-
-3.  Max Interval  
-<!-- keep by customization: end -->
 
 ### History
 
@@ -199,21 +148,11 @@ The **History** tab displays the following information for the selected job:
 
 ![][11]
 
-<!-- deleted by customization
 #### History table
--->
-<!-- keep by customization: begin -->
-#### History Table
-<!-- keep by customization: end -->
 
 A table that displays selected metrics for every job execution in the system for the selected job. These metrics provide real-time values regarding the health of your Scheduler.
 
-<!-- deleted by customization
 #### Available metrics
--->
-<!-- keep by customization: begin -->
-#### Available Metrics
-<!-- keep by customization: end -->
 
 The following performance counters/metrics are available:
 
@@ -221,12 +160,7 @@ The following performance counters/metrics are available:
 
 2.  Details  
 
-<!-- deleted by customization
 3.  Retry attempt  
--->
-<!-- keep by customization: begin -->
-3.  Retry Attempt  
-<!-- keep by customization: end -->
 
 4.  Number of executions (1st, 2nd, 3rd, etc.)  
 
@@ -242,44 +176,23 @@ The jobs tab displays the following information to monitor the execution history
 
 ![][13]
 
-<!-- deleted by customization
 #### Jobs table
--->
-<!-- keep by customization: begin -->
-#### Jobs Table
-<!-- keep by customization: end -->
 
 A table that displays selected metrics for every job in the system. These metrics provide real-time values regarding the health of your Scheduler.
 
-<!-- deleted by customization
 #### Disable, enable, or delete job
 
 Clicking on a job name gives you the option to enable, disable, or delete the job. Deleted jobs may not be recoverable.
 
 #### Available metrics
--->
-<!-- keep by customization: begin -->
-#### Disable, Enable, or Delete Job
-
-Clicking on a Job name gives you the option to Enable, Disable, or Delete the job. Deleted jobs may not be recoverable.
-
-#### Available Metrics
-<!-- keep by customization: end -->
 
 The following counters and metrics are available:
 
 1.  Name  
 
-<!-- deleted by customization
 2.  Last run  
 
 3.  Next run  
--->
-<!-- keep by customization: begin -->
-2.  Last Run  
-
-3.  Next Run  
-<!-- keep by customization: end -->
 
 4.  Status  
 
@@ -291,16 +204,9 @@ The following counters and metrics are available:
 
 8.  Executions  
 
-<!-- deleted by customization
 9.  Action type  
 
 ### Configure a job
--->
-<!-- keep by customization: begin -->
-9.  Action Type  
-
-### Configure a Job
-<!-- keep by customization: end -->
 
 Clicking on a job in the **Jobs** screen allows you to configure that job. This lets you configure additional advanced settings beyond what’s available in the quick-create wizard. To configure a job, click the right arrow next to the job’s name in the **Jobs** screen.
 
@@ -314,16 +220,10 @@ The job config page appears as shown below for storage queue jobs. For storage q
 
 Finally, for all action types, you may change the schedule itself and its recurrence behavior. You may change the start date and time, recurrence schedule, and the end date and time (if the job is recurring.) After making any changes, you may save changes by clicking **Save** or discard changes by clicking **Discard**.
 
-<!-- deleted by customization
 ## See also
--->
-<!-- keep by customization: begin -->
-## See Also
-<!-- keep by customization: end -->
 
  [What is Scheduler?](/documentation/articles/scheduler-intro)
 
-<!-- deleted by customization
  [Scheduler concepts, terminology, and entity hierarchy](/documentation/articles/scheduler-concepts-terms)
 
  [Plans and billing in Azure Scheduler](/documentation/articles/scheduler-plans-billing)
@@ -339,24 +239,6 @@ Finally, for all action types, you may change the schedule itself and its recurr
  [Scheduler limits, lefaults, and error codes](/documentation/articles/scheduler-limits-defaults-errors)
 
  [Scheduler outbound authentication](/documentation/articles/scheduler-outbound-authentication)
--->
-<!-- keep by customization: begin -->
- [Scheduler Concepts, Terminology, and Entity Hierarchy](/documentation/articles/scheduler-concepts-terms)
-
- [Plans and Billing in Azure Scheduler](/documentation/articles/scheduler-plans-billing)
-
- [How to Build Complex Schedules and Advanced Recurrence with Azure Scheduler](/documentation/articles/scheduler-advanced-complexity)
-
- [Scheduler REST API Reference](https://msdn.microsoft.com/zh-CN/library/dn528946)   
-
- [Scheduler PowerShell Cmdlets Reference](/documentation/articles/scheduler-powershell-reference)
-
- [Scheduler High-Availability and Reliability](/documentation/articles/scheduler-high-availability-reliability)
-
- [Scheduler Limits, Defaults, and Error Codes](/documentation/articles/scheduler-limits-defaults-errors)
-
- [Scheduler Outbound Authentication](/documentation/articles/scheduler-outbound-authentication)
-<!-- keep by customization: end -->
 
 
 

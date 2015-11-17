@@ -15,10 +15,26 @@
 
 # Using load-balanced sets to clusterize MySQL on Linux
 
+<!-- deleted by customization
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
 
 
 The purpose of this article is to explore and illustrate the different approaches available to deploy highly available Linux-based services on Windows Azure, exploring MySQL Server high availability as a primer. A video illustrating this approach is available on [Channel 9](http://channel9.msdn.com/Blogs/Open/Load-balancing-highly-available-Linux-services-on-Windows-Azure-OpenLDAP-and-MySQL).
+-->
+<!-- keep by customization: begin -->
+* [Getting ready](#getting-ready)
+* [Setting up the cluster](#setting-up-the-cluster)
+* [Setting up MySQL](#setting-up-mysql)
+* [Setting up Corosync](#setting-up-corosync)
+* [Setting up Pacemaker](#setting-up-pacemaker)
+* [Testing](#testing)
+* [STONITH](#stonith)
+* [Limitations](#limitations)
+
+## Introduction
+
+The purpose of this article is to explore and illustrate the different approaches available to deploy highly available Linux-based services on Windows Azure, exploring MySQL Server high availability as a primer. 
+<!-- keep by customization: end -->
 
 We outline a shared-nothing two-node single-master MySQL high availability solution based on DRBD, Corosync and Pacemaker. Only one node is running MySQL at a time. Reading and writing from the DRBD resource is also limited to only one node at a time.
 

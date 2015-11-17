@@ -36,11 +36,13 @@ The corresponding typed client-side .NET type is the following:
 		[JsonProperty(PropertyName = "complete")]
 		public bool Complete { get; set; }
 	}
+
 When dynamic schema is enabled, Azure Mobile Services automatically generates new columns based on the object in insert or update requests. For more information, see [Dynamic schema](https://msdn.microsoft.com/zh-cn/library/azure/jj193175.aspx).
 
 ## <a name="create-client"></a>How to: Create the Mobile Services client
 
 The following code creates the `MobileServiceClient` object that is used to access your mobile service.
+
 	MobileServiceClient client = new MobileServiceClient(
 		"AppUrl",
 		"AppKey"
@@ -56,22 +58,17 @@ All of the code that accesses or modifies data in the Mobile Services table call
 		client.GetTable<TodoItem>();
 
 This is the typed serialization model; see discussion of <a href="#untyped">the untyped serialization model</a> below.
+
 ## <a name="querying"></a>How to: Query data from a mobile service
 
 This section describes how to issue queries to the mobile service. Subsections describe different aspects such as sorting, filtering, and paging.
+
 ### <a name="filtering"></a>How to: Filter returned data
 
 The following code illustrates how to filter data by including a `Where` clause in a query. It returns all items from `todoTable` whose `Complete` property is equal to `false`. The `Where` function applies a row filtering predicate to the query against the table.
-<!-- deleted by customization
 
 
 	// This query filters out completed TodoItems and
--->
-<!-- keep by customization: begin -->
-	
-
-	// This query filters out completed TodoItems and 
-<!-- keep by customization: end -->
 	// items without a timestamp.
 	List<TodoItem> items = await todoTable
 	   .Where(todoItem => todoItem.Complete == false)
@@ -81,9 +78,11 @@ You can view the URI of the request sent to the mobile service by using message 
 
 	GET /tables/todoitem?$filter=(complete+eq+false) HTTP/1.1
 This request would normally be translated roughly into the following SQL query on the server side:
+
 	SELECT *
 	FROM TodoItem
 	WHERE ISNULL(complete, 0) = 0
+
 The function which is passed to the `Where` method can have an arbitrary number of conditions. For example, the line below:
 
 	// This query filters out completed TodoItems where Text isn't null
@@ -93,6 +92,7 @@ The function which is passed to the `Where` method can have an arbitrary number 
 	   .ToListAsync();
 
 Would be roughly translated (for the same request shown before) as
+
 	SELECT *
 	FROM TodoItem
 	WHERE ISNULL(complete, 0) = 0
@@ -145,6 +145,7 @@ The following revised query skips the first three results and returns the next t
 					.Skip(3)
 					.Take(3);
 	List<TodoItem> items = await query.ToListAsync();
+
 You can also use the [IncludeTotalCount](http://msdn.microsoft.com/zh-cn/library/azure/jj730933.aspx) method to ensure that the query will get the total count for <i>all</i> the records that would have been returned, ignoring any take paging/limit clause specified:
 
 	query = query.IncludeTotalCount();
@@ -159,10 +160,12 @@ You can specify which set of properties to include in the results by adding a `S
 	MobileServiceTableQuery<TodoItem> query = todoTable
 					.Select(todoItem => todoItem.Text);
 	List<string> items = await query.ToListAsync();
+
 	// Select multiple fields -- both Complete and Text info
 	MobileServiceTableQuery<TodoItem> query = todoTable
 					.Select(todoItem => string.Format("{0} -- {1}", todoItem.Text.PadRight(30), todoItem.Complete ? "Now complete!" : "Incomplete!"));
 	List<string> items = await query.ToListAsync();
+
 All the functions described so far are additive, so we can just keep calling them and we'll each time affect more of the query. One more example:
 
 	MobileServiceTableQuery<TodoItem> query = todoTable
@@ -171,6 +174,7 @@ All the functions described so far are additive, so we can just keep calling the
 					.Skip(3).
 					.Take(3);
 	List<string> items = await query.ToListAsync();
+
 ### <a name="lookingup"></a>How to: Look up data by ID
 
 The `LookupAsync` function can be used to look up objects from the database with a particular ID.
@@ -211,7 +215,10 @@ To insert untyped data, you may take advantage of Json.NET like so. Note that wh
 	jo.Add("Text", "Hello World");
 	jo.Add("Complete", false);
 	var inserted = await table.UpdateAsync(jo);
+
 If you attempt to update an item without the "Id" field already set, there is no way for the service to tell which instance to update, so you will get back a `MobileServiceInvalidOperationException` from the service. Similarly, if you attempt to update an untyped item without the "Id" field already set, you will again get back a `MobileServiceInvalidOperationException` from the service.
+
+
 ## <a name="deleting"></a>How to: Delete data in a mobile service
 
 The following code illustrates how to delete an existing instance. The instance is identified by the "Id" field set on the `todoItem`.
@@ -223,7 +230,9 @@ To delete untyped data, you may take advantage of Json.NET like so. Note that wh
 	JObject jo = new JObject();
 	jo.Add("Id", 52);
 	await table.DeleteAsync(jo);
+
 If you attempt to delete an item without the "Id" field already set, there is no way for the service to tell which instance to delete, so you will get back a `MobileServiceInvalidOperationException` from the service. Similarly, if you attempt to delete an untyped item without the "Id" field already set, you will again get back a `MobileServiceInvalidOperationException` from the service.
+
 
 
 ## <a name="authentication"></a>How to: Authenticate users
@@ -276,6 +285,7 @@ In the most simplified form, you can use the client flow as shown in this snippe
 	// Replace access_token_value with actual value of your access token obtained
 	// using the Facebook or Google SDK.
 	token.Add("access_token", "access_token_value");
+
 	private MobileServiceUser user;
 	private async System.Threading.Tasks.Task Authenticate()
 	{
@@ -329,6 +339,7 @@ In some cases, the call to the login method can be avoided after the first time 
 		// Replace access_token_value with actual value of your access token
 		token.Add("access_token", "access_token_value");
 	}
+
 	 // Log out
 	client.Logout();
 	accountStore.Delete(account, "Facebook");
@@ -433,24 +444,24 @@ Now that you have completed this how-to conceptual reference topic, learn how to
 [Caching the authentication token]: #caching
 
 <!-- URLs. -->
-[Get started with Mobile Services iOS]: /develop/mobile/tutorials/get-started-xamarin-ios
-[Get started with Mobile Services Android]: /develop/mobile/tutorials/get-started-xamarin-android
+[Get started with Mobile Services iOS]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-xamarin-ios
+[Get started with Mobile Services Android]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-xamarin-android
 [Xamarin download]: http://xamarin.com/download/
 [Mobile Services SDK]: http://go.microsoft.com/fwlink/?LinkId=257545
-[Xamarin.iOS quickstart tutorial]: /develop/mobile/tutorials/get-started-xamarin-ios/
-[Xamarin.Android quickstart tutorial]: /develop/mobile/tutorials/get-started-xamarin-android/
-[Xamarin.iOS data tutorial]: /develop/mobile/tutorials/get-started-with-data-xamarin-ios/
-[Xamarin.Android data tutorial]: /develop/mobile/tutorials/get-started-with-data-xamarin-android/
-[Xamarin.iOS authentication]: /develop/mobile/tutorials/get-started-with-users-xamarin-ios/
-[Xamarin.Android authentication]: /develop/mobile/tutorials/get-started-with-users-xamarin-android/
+[Xamarin.iOS quickstart tutorial]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-xamarin-ios/
+[Xamarin.Android quickstart tutorial]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-xamarin-android/
+[Xamarin.iOS data tutorial]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-data-xamarin-ios/
+[Xamarin.Android data tutorial]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-data-xamarin-android/
+[Xamarin.iOS authentication]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-users-xamarin-ios/
+[Xamarin.Android authentication]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-users-xamarin-android/
 [Mobile Services SDK]: http://go.microsoft.com/fwlink/?LinkId=257545
 [Xamarin.Auth component]: https://components.xamarin.com/view/xamarin.auth
 
 [Mobile Services SDK]: http://nuget.org/packages/WindowsAzure.MobileServices/
-[Get started with data iOS]: /develop/mobile/tutorials/get-started-with-data-xamarin-ios
-[Get started with data Android]: /develop/mobile/tutorials/get-started-with-data-xamarin-android
-[Get started with authentication iOS]: /develop/mobile/tutorials/get-started-with-users-xamarin-ios
-[Get started with authentication Android]: /develop/mobile/tutorials/get-started-with-users-xamarin-android
+[Get started with data iOS]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-data-xamarin-ios
+[Get started with data Android]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-data-xamarin-android
+[Get started with authentication iOS]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-users-xamarin-ios
+[Get started with authentication Android]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-users-xamarin-android
 [Validate and modify data with scripts ios]: /develop/mobile/tutorials/validate-modify-and-augment-data-xamarin-ios
 [Validate and modify data with scripts android]: /develop/mobile/tutorials/validate-modify-and-augment-data-xamarin-android
 [Refine queries with paging iOS]: /develop/mobile/tutorials/add-paging-to-data-xamarin-ios

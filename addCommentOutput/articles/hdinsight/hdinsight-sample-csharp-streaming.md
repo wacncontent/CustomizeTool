@@ -16,12 +16,15 @@
 # The C# streaming word count MapReduce sample in Hadoop on HDInsight
 
 Hadoop provides a streaming API to MapReduce, which enables you to write map and reduce functions in languages other than Java. This tutorial shows how to write MapReduce programs in C# by using the Hadoop Streaming interface and how to run the programs in Azure HDInsight by using Azure PowerShell cmdlets.
+
 <!-- deleted by customization
-
 > [AZURE.NOTE] The steps in this tutorial apply only to Windows-based HDInsight clusters. For an example of streaming for Linux-based HDInsight clusters, see [Develop Python streaming programs for HDInsight](/documentation/articles/hdinsight-hadoop-streaming-python).
--->
 
+In the example, the mapper and the reducer are executables that read the input from [stdin][stdin-stdout-stderr] (line-by-line) and emit the output to [stdout][stdin-stdout-stderr]. The program counts all of the words in the text.
+-->
+<!-- keep by customization: begin -->
 In the example, the mapper and the reducer are executables that read the input from [stdin][stdin-stdout-stderr](line-by-line) and emit the output to [stdout][stdin-stdout-stderr]. The program counts all of the words in the text.
+<!-- keep by customization: end -->
 
 When an executable is specified for **mappers**, each mapper task launches the executable as a separate process when the mapper is initialized. As the mapper task runs, it converts its input into lines, and feeds the lines to the [stdin][stdin-stdout-stderr] of the process.
 

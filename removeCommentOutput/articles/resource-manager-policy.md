@@ -215,7 +215,7 @@ You can create a policy with the [REST API for Policy Definitions](https://msdn.
 
 To create a new policy, run:
 
-    PUT https://management.azure.com/subscriptions/{subscription-id}/providers/Microsoft.authorization/policydefinitions/{policyDefinitionName}?api-version={api-version}
+    PUT https://manage.windowsazure.cn/subscriptions/{subscription-id}/providers/Microsoft.authorization/policydefinitions/{policyDefinitionName}?api-version={api-version}
 
 With a request body similar to the following:
 
@@ -274,7 +274,7 @@ The REST API enables you to create and delete policy assignments, and get inform
 
 To create a new policy assignment, run:
 
-    PUT https://management.azure.com /subscriptions/{subscription-id}/providers/Microsoft.authorization/policyassignments/{policyAssignmentName}?api-version={api-version}
+    PUT https://manage.windowsazure.cn /subscriptions/{subscription-id}/providers/Microsoft.authorization/policyassignments/{policyAssignmentName}?api-version={api-version}
 
 The {policy-assignment} is the name of the policy assignment. For
 api-version use *2015-10-01-preview*. 

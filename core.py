@@ -8,7 +8,7 @@ import re
 import os
 import sys
 from fileListGen import genFileList
-from fileCompare import compareWithMooncake, removeDeleteAndKeep, createComment
+from fileCompare import compareWithMooncake, removeDeleteAndKeep, createComment, getDeletionAndReplacement, outputDeletionAndReplacement
 from codecs import open
 from setting import setting
 from linkChecker import checkLinks, getOldLinks, findRedirect
@@ -71,6 +71,7 @@ class Core:
                 links.extend(checkLinks(result))
             result = self.multiple_replace(pRuleDict, result)
             mdFile = mdFile[len(setting["path"])-1:]
+            print mdFile
             if setting["language"] == "zh-cn":
                 if setting["compare"]["compare"]:
                     result = compareWithMooncake(mdFile, result)
@@ -109,6 +110,18 @@ def addComment(mdList):
         mooncake_file.close()
         output_file.close()
 
+def getDAR(mdList):
+    for mdFile in mdList:
+        filename = mdFile[len(setting["path"]):]
+        print "processing file: " + filename
+        file = open(setting["getDeletionAndReplacement"]["input"]+filename, "r")
+        result = file.read()
+        file.close()
+        deletion, replacement = getDeletionAndReplacement(result)
+        if len(deletion) > 0 or len(replacement) > 0:
+            outputDeletionAndReplacement(deletion, replacement, filename)
+
+
 if __name__ == "__main__":
     if setting["updateFileList"] == True:
         genFileList("modified.txt")
@@ -116,12 +129,16 @@ if __name__ == "__main__":
     rule = ruleReader.RuleReader()
     md = mdReader.MdReader()
     try:
-        ruleDict = rule.getRules()
         mdList = md.getMdList()
-        core.customize(mdList, ruleDict)
-        countAll()
+        if setting["customize"]:
+            ruleDict = rule.getRules()
+            core.customize(mdList, ruleDict)
+        if setting["wordCount"]:
+            countAll()
         if setting["addComment"]["add"]:
             addComment(mdList)
+        if setting["getDeletionAndReplacement"]["get"]:
+            getDAR(mdList)
     except IOError as e:
         print(e)
         sys.exit()

@@ -1,0 +1,187 @@
+deletion:
+
+deleted:
+
+		- **HDInsight on Linux (Ubuntu 12.04 LTS for Linux) (Preview)**: HDInsight provides the option of configuring Linux clusters on Azure. Configure a Linux cluster if you are familiar with Linux or Unix, migrating from an existing Linux-based Hadoop solution, or want easy integration with Hadoop ecosystem components built for Linux. For more information, see [Get started with Hadoop on Linux in HDInsight](/documentation/articles/hdinsight-hadoop-linux-get-started).
+
+reason: ()
+
+deleted:
+
+		![HDInsight Hadoop cluster roles](./media/hdinsight-provision-clusters-v1/HDInsight.Spark.roles.png)
+		
+			Spark clusters for HDInsight are deployed with three roles:
+			- Head node (2 nodes)
+			- Worker node (at least 1 node)
+			- Zookeeper nodes (3 nodes) (Free for A1 Zookeepers)
+
+reason: ()
+
+deleted:
+
+		- SSH User (Linux clusters): Is used to connect to the cluster using SSH. You can create additional SSH user accounts after the cluster is created by following the steps in [Use SSH with Linux-based Hadoop on HDInsight from Linux, Unix, or OS X](/documentation/articles/hdinsight-hadoop-linux-use-ssh-unix).
+
+reason: ()
+
+deleted:
+
+		, including Windows, Mac and Linux
+
+reason: ()
+
+deleted:
+
+		Linux and
+
+reason: ()
+
+deleted:
+
+		- [Set up the Azure CLI for Linux](#clilin)
+
+reason: ()
+
+deleted:
+
+		**To connect to your Azure subscription**
+		
+		Before using Azure CLI, you must configure connectivity between your workstation and Azure. Your Azure subscription information is used by Azure CLI to connect to your account. This information can be obtained from Azure in a publish settings file. The publish settings file can then be imported as a persistent local config setting that Azure CLI will use for subsequent operations. You need to import your publish settings only once.
+		
+		> [AZURE.NOTE] The publish settings file contains sensitive information. Microsoft recommends that you delete the file or take additional steps to encrypt the user folder that contains the file. On Windows, modify the folder properties or use BitLocker Drive Encryption.
+		
+		
+		1.	Open a terminal window.
+		2.	Run the following command to log in to your Azure subscription:
+		
+				azure account download
+		
+			![HDI.Linux.CLIAccountDownloadImport](./media/hdinsight-provision-clusters/HDI.Linux.CLIAccountDownloadImport.png)
+		
+			The command launches the webpage to download the publish settings file from. If the webpage does not open, click the link in the terminal window to open the browser page and log in to the portal.
+		
+		3.	Download the publish settings file to the computer.
+		5.	From the command prompt window, run the following command to import the publish settings file:
+		
+				azure account import <path/to/the/file>
+		
+		
+		#### <a id="cliwin"></a>Set up Azure CLI for Windows
+		
+		Perform the following procedures to set up your Windows-based computer to use Azure CLI:
+		
+		- Install Azure CLI (by using NPM or Windows Installer)
+		- Download and import Azure account publish settings
+		
+		
+		Azure CLI can be installed via NPM or Windows Installer. Microsoft recommends that you install by using only one of the two options.
+		
+		**To install Azure CLI by using NPM**
+		
+		1.	Browse to **www.nodejs.org**.
+		2.	Click **INSTALL** and follow the instructions, using the default settings.
+		3.	Open **Command Prompt** (or *Azure Command Prompt*, or *Developer Command Prompt for VS2012*) from your workstation.
+		4.	Run the following command in the command prompt window:
+		
+				npm install -g https://github.com/azure/azure-xplat-cli/archive/hdinsight-February-18-2015.tar.gz
+		
+			> [AZURE.NOTE] If you get an error saying the NPM command is not found, verify that the following paths are in the PATH environment variable: <i>C:\Program Files (x86)\nodejs;C:\Users\[username]\AppData\Roaming\npm</i> or <i>C:\Program Files\nodejs;C:\Users\[username]\AppData\Roaming\npm</i>
+		
+		5.	Run the following command to verify the installation:
+		
+				azure hdinsight -h
+		
+			You can use the *-h* switch at different levels to display the help information. For example:
+		
+				azure -h
+				azure hdinsight -h
+				azure hdinsight cluster -h
+				azure hdinsight cluster create -h
+
+reason: ()
+
+deleted:
+
+		East**, **China North**, **China North**, **West Europe**, **China East**, **China North**, **China
+
+reason: ()
+
+replacement:
+
+deleted:
+
+		You can provision HDInsight clusters on one of the following two operating systems:
+
+replaced by:
+
+		You can provision HDInsight clusters on one of the following operating system:
+
+reason: ()
+
+deleted:
+
+		- Spark clusters (preview): for in-memory processing, interactive queries, stream, and machines learning workloads.
+		
+			![HDInsight clusters](./media/hdinsight-provision-clusters-v1/hdinsight.clusters.png)
+
+replaced by:
+
+		![HDInsight clusters](./media/hdinsight-provision-clusters-v1/hdinsight.clusters.png)
+
+reason: ()
+
+deleted:
+
+		for Mac, Linux and Windows](/documentation/articles/xplat-cli-install)
+
+replaced by:
+
+		](/documentation/articles/xplat-cli-install)
+
+reason: ()
+
+deleted:
+
+		#### <a id="clilin"></a>Set up Azure CLI for Linux
+		
+		Perform the following procedures to set up your Linux computer to use the Azure Command-Line Interface (Azure CLI):
+		
+		- Install Azure CLI by using Node.js Package Manager (NPM)
+		- Connect to your Azure subscription
+
+replaced by:
+
+		#### <a id="cliwin"></a>Set up Azure CLI for Windows
+		
+		Perform the following procedures to set up your Windows-based computer to use Azure CLI:
+		
+		- Install Azure CLI (by using NPM or Windows Installer)
+		- Download and import Azure account publish settings
+		
+		
+		Azure CLI can be installed via NPM or Windows Installer. Microsoft recommends that you install by using only one of the two options.
+
+reason: ()
+
+deleted:
+
+		1.	Open a terminal window on your Linux computer and run the following command:
+		
+				sudo npm install -g https://github.com/azure/azure-xplat-cli/archive/hdinsight-February-18-2015.tar.gz
+		
+		2.	Run the following command to verify the installation:
+
+replaced by:
+
+		1.	Browse to **www.nodejs.org**.
+		2.	Click **INSTALL** and follow the instructions, using the default settings.
+		3.	Open **Command Prompt** (or *Azure Command Prompt*, or *Developer Command Prompt for VS2012*) from your workstation.
+		4.	Run the following command in the command prompt window:
+		
+				 npm install -g https://github.com/azure/azure-xplat-cli/archive/hdinsight-February-18-2015.tar.gz
+		
+			> [AZURE.NOTE] If you get an error saying the NPM command is not found, verify that the following paths are in the PATH environment variable: <i>C:\Program Files (x86)\nodejs;C:\Users\[username]\AppData\Roaming\npm</i> or <i>C:\Program Files\nodejs;C:\Users\[username]\AppData\Roaming\npm</i>
+		
+		5.	Run the following command to verify the installation:
+
+reason: ()
+

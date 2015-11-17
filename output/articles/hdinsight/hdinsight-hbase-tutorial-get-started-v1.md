@@ -160,6 +160,7 @@ HBase in HDInsight ships with a Web UI for monitoring clusters. Using the Web UI
 To open the Web UI, you must RDP into the cluster, and then click the HMaster Info Web UI shortcut on your desktop, or use the following URL in a web browser:
 
 	http://zookeeper[0-2]: master-status
+
 In a high availability cluster, you will find a link to the current active HBase master node that is hosting the Web UI.
 
 
@@ -333,8 +334,10 @@ HBase is an Apache, open-source, NoSQL database built on Hadoop that provides ra
 - [Provision HBase clusters on Azure Virtual Network][hdinsight-hbase-provision-vnet]:
 With virtual network integration, HBase clusters can be deployed to the same virtual network as your applications so that applications can communicate with HBase directly.
 - [Configure HBase replication in HDInsight](/documentation/articles/hdinsight-hbase-geo-replication): Learn how to configure HBase replication across two Azure datacenters.
+<!-- deleted by customization
 - [Analyze Twitter sentiment with HBase in HDInsight][hbase-twitter-sentiment]:
 Learn how to do real-time [sentiment analysis](http://en.wikipedia.org/wiki/Sentiment_analysis) of big data by using HBase in a Hadoop cluster in HDInsight.
+-->
 
 [hdinsight-manage-portal]: /documentation/articles/hdinsight-administer-use-management-portal-v1
 [hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
@@ -349,9 +352,11 @@ Learn how to do real-time [sentiment analysis](http://en.wikipedia.org/wiki/Sent
 [hdinsight-hbase-overview]: /documentation/articles/hdinsight-hbase-overview
 [hdinsight-hbase-provision-vnet]: /documentation/articles/hdinsight-hbase-provision-vnet
 [hdinsight-versions]: /documentation/articles/hdinsight-component-versioning
+<!-- deleted by customization
 [hbase-twitter-sentiment]: /documentation/articles/hdinsight-hbase-analyze-twitter-sentiment
+-->
 [azure-purchase-options]: /pricing/overview/
-[azure-member-offers]: http://azure.microsoft.com/pricing/member-offers/
+[azure-member-offers]: /pricing/member-offers/
 [azure-trial]: /pricing/1rmb-trial/
 [azure-management-portal]: https://manage.windowsazure.cn/
 [azure-create-storageaccount]: /documentation/articles/storage-create-storage-account/

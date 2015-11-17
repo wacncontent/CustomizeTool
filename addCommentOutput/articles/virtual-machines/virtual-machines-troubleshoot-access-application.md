@@ -12,13 +12,14 @@
 	ms.service="virtual-machines"
 	ms.date="10/05/2015"
 	wacn.date=""/>
-# Troubleshoot Access to an Application Running on an Azure Virtual Machine
 
+# Troubleshoot Access to an Application Running on an Azure Virtual Machine
 <!-- deleted by customization
+
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-both-include.md)]
 
-
 -->
+
 If you can't access an application running on an Azure virtual machine, this article describes a methodical approach for isolating the source of the problem and correcting it.
 
 > [AZURE.NOTE]  For help in connecting to an Azure virtual machine, see [Troubleshoot Remote Desktop connections to a Windows-based Azure Virtual Machine](/documentation/articles/virtual-machines-troubleshoot-remote-desktop-connections) or [Troubleshoot Secure Shell (SSH) connections to a Linux-based Azure virtual machine](/documentation/articles/virtual-machines-troubleshoot-ssh-connections).
@@ -26,9 +27,10 @@ If you can't access an application running on an Azure virtual machine, this art
 There are four main areas to troubleshoot the access of an application that is running on an Azure virtual machine.
 
 ![](./media/virtual-machines-troubleshoot-access-application/tshoot_app_access1.png)
+
 1.	The application running on the Azure virtual machine.
 2.	The Azure virtual machine.
-3.	Azure endpoints for the cloud service that contains the virtual machine (for virtual machines created <!-- deleted by customization using the --><!-- keep by customization: begin --> in <!-- keep by customization: end --> Service <!-- deleted by customization Management API) --><!-- keep by customization: begin --> Management) <!-- keep by customization: end -->, inbound NAT rules (for virtual machines created in Resource Manager), and Network Security Groups.
+3.	Azure endpoints for the cloud service that contains the virtual machine (for virtual machines created using the Service Management API), inbound NAT rules (for virtual machines created in Resource Manager), and Network Security Groups.
 4.	Your Internet edge device.
 
 For client computers that are accessing the application over a site-to-site VPN or ExpressRoute connection, the main areas that can cause problems are the application and the Azure virtual machine.
@@ -37,13 +39,8 @@ To determine the source of the problem and its correction, follow these steps.
 ## Step 1: Can you access the application from the target virtual machine?
 
 Try to access the application with the appropriate client program from the virtual machine on which the application is running, Use the local host name, the local IP address, or the loopback address (127.0.0.1).
-<!-- deleted by customization
+
 ![](./media/virtual-machines-troubleshoot-access-application/tshoot_app_access2.png)
--->
-<!-- keep by customization: begin -->
- 
-![](./media/virtual-machines-troubleshoot-access-application/tshoot_app_access2.png)
-<!-- keep by customization: end -->
 
 For example, if the application is a web server, run a browser on the virtual machine and try to access a web page hosted on the virtual machine.
 
@@ -58,14 +55,9 @@ On both Windows and Linux-based virtual machines, use the **netstat -a** command
 
 ## <a id="step2"></a>Step 2: Can you access the application from another virtual machine in the same virtual network?
 
-Try to access the application from a different virtual machine in the same virtual network as the virtual machine on which the application is running using the virtual machine's host name or its Azure-assigned public, private, or provider IP address. For virtual machines created <!-- deleted by customization using the --><!-- keep by customization: begin --> in <!-- keep by customization: end --> Service Management <!-- deleted by customization API -->, do not use the public IP address of the cloud service.
-<!-- deleted by customization
+Try to access the application from a different virtual machine in the same virtual network as the virtual machine on which the application is running using the virtual machine's host name or its Azure-assigned public, private, or provider IP address. For virtual machines created using the Service Management API, do not use the public IP address of the cloud service.
+
 ![](./media/virtual-machines-troubleshoot-access-application/tshoot_app_access3.png)
--->
-<!-- keep by customization: begin -->
- 
-![](./media/virtual-machines-troubleshoot-access-application/tshoot_app_access3.png)
-<!-- keep by customization: end -->
 
 For example, if the application is a web server, try to access a web page from a browser on a different virtual machine in the same virtual network.
 
@@ -85,12 +77,13 @@ On a Windows-based virtual machine, use Windows Firewall with Advanced Security 
 Try to access the application from a computer outside the virtual network as the virtual machine on which the application is running, but is not on the same network as your original client computer.
 
 ![](./media/virtual-machines-troubleshoot-access-application/tshoot_app_access4.png)
+
 For example, if the application is a web server, try to access the web page from a browser running on a computer that is not in the virtual network.
 
 If you cannot access the application, verify the following:
 
-- For virtual machines created <!-- deleted by customization using the --><!-- keep by customization: begin --> in <!-- keep by customization: end --> Service Management <!-- deleted by customization API -->, that the endpoint configuration for the virtual machine is allowing the incoming traffic, especially the protocol (TCP or UDP) and the public and private port numbers. For more information, see [How to Set Up Endpoints to a Virtual <!-- deleted by customization Machine]( virtual-machines-set-up-endpoints.md) --><!-- keep by customization: begin --> Machine](/documentation/articles/virtual-machines-set-up-endpoints) <!-- keep by customization: end -->.
-- For virtual machines created <!-- deleted by customization using the --><!-- keep by customization: begin --> in <!-- keep by customization: end --> Service Management <!-- deleted by customization API -->, that access control lists (ACLs) on the endpoint are not preventing incoming traffic from the Internet. For more information, see [How to Set Up Endpoints to a Virtual Machine]( <!-- deleted by customization virtual-machines-set-up-endpoints.md) --><!-- keep by customization: begin --> /documentation/articles/virtual-machines-set-up-endpoints) <!-- keep by customization: end -->.
+- For virtual machines created using the Service Management API, that the endpoint configuration for the virtual machine is allowing the incoming traffic, especially the protocol (TCP or UDP) and the public and private port numbers. For more information, see [How to Set Up Endpoints to a Virtual Machine]( virtual-machines-set-up-endpoints.md).
+- For virtual machines created using the Service Management API, that access control lists (ACLs) on the endpoint are not preventing incoming traffic from the Internet. For more information, see [How to Set Up Endpoints to a Virtual Machine]( virtual-machines-set-up-endpoints.md).
 - For virtual machines created in Resource Manager, that the inbound NAT rule configuration for the virtual machine is allowing the incoming traffic, especially the protocol (TCP or UDP) and the public and private port numbers.
 - That Network Security Groups are allowing the inbound request and outbound response traffic. For more information, see [What is a Network Security Group (NSG)?](/documentation/articles/virtual-networks-nsg).
 
@@ -110,8 +103,8 @@ If you can access the application, ensure that your Internet edge device is allo
 
 If you have run through steps 1 through 3 in this article and need additional help to correct the problem, you can:
 
-- Get help from Azure experts across the world. Submit your issue to either the MSDN Azure or <!-- deleted by customization Stack Overflow --><!-- keep by customization: begin --> CSDN <!-- keep by customization: end --> forums. See [Windows Azure <!-- deleted by customization Forums](http://azure.microsoft.com/support/forums/) --><!-- keep by customization: begin --> Forums](http://www.windowsazure.cn/support/forums/) <!-- keep by customization: end --> for more information.
-- File an Azure support incident. Go to the [Azure Support <!-- deleted by customization site](http://azure.microsoft.com/support/options/) --><!-- keep by customization: begin --> site](http://www.windowsazure.cn/support/contact/) <!-- keep by customization: end --> and click **Get support** under **Technical and billing support**.
+- Get help from Azure experts across the world. Submit your issue to either the MSDN Azure or Stack Overflow forums. See [Windows Azure Forums](/support/forums/) for more information.
+- File an Azure support incident. Go to the [Azure Support site](/support/contact/) and click **Get support** under **Technical and billing support**.
 
 ## Additional resources
 

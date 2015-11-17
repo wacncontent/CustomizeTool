@@ -52,4 +52,4 @@
             }
         }
 
-	> [AZURE.TIP] With default permissions, anyone with the app key may call the custom API. However, the application key is not considered a secure credential because it may not be distributed or stored securely. Consider restricting access to only authenticated users for additional security.
+	> <!-- deleted by customization [AZURE.TIP] --><!-- keep by customization: begin --> [AZURE.NOTE] <!-- keep by customization: end --> With default permissions, anyone with the app key may call the custom API. However, the application key is not considered a secure credential because it may not be distributed or stored securely. Consider restricting access to only authenticated users for additional security.

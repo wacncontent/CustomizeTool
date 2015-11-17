@@ -7,9 +7,9 @@
 	manager="douge"
 	editor=""/>
 
-<tags 
-	ms.service="mobile-services" 
-	ms.date="09/17/2015" 
+<tags
+	ms.service="mobile-services"
+	ms.date="09/17/2015"
 	wacn.date=""/>
 
 # Getting Started with Mobile Services (.NET Projects)
@@ -43,22 +43,22 @@ The following code creates a reference to a table (`todoTable`) that contains da
 
 This code works if your table has permissions set to **Anybody with an Application Key**. If you change the permissions to secure your mobile service, you'll need to add user authentication support. See [Get Started with Authentication](/documentation/articles/mobile-services-dotnet-backend-windows-universal-dotnet-get-started-users).
 
-#####Add a table item 
+#####Add a table item
 
 Insert a new item into a data table.
 
 	TodoItem todoItem = new TodoItem() { Text = "My first to do item", Complete = false };
 	await todoTable.InsertAsync(todoItem);
 
-#####Read or query a table 
+#####Read or query a table
 
 The following code queries a table for all items. Note that it returns only the first page of data, which by default is 50 items. You can pass the page size you want, since it's an optional parameter.
 
     List<TodoItem> items;
     try
     {
-        // Query that returns all items.   
-        items = await todoTable.ToListAsync();             
+        // Query that returns all items.
+        items = await todoTable.ToListAsync();
     }
     catch (MobileServiceInvalidOperationException e)
     {
@@ -79,4 +79,4 @@ Delete a row in the database. The parameter item is the TodoItem object to be de
 	await todoTable.DeleteAsync(item);
 
 
-[Learn more about mobile services](/home/features/mobile-services) 
+[Learn more about mobile services](/documentation/services/mobile-services/)

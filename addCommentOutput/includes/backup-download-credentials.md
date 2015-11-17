@@ -12,7 +12,7 @@ The vault credential is used only during the registration workflow. It is the us
 
 The vault credential file is downloaded through a secure channel from the Azure Management Portal. The Azure Backup service is unaware of the private key of the certificate and the private key is not persisted in the portal or the service. Use the following steps to download the vault credential file to a local machine.
 
-1.  Sign in to the [Management <!-- deleted by customization Portal](https://manage.windowsazure.cn/) --><!-- keep by customization: begin --> Portal](https://manage.windowsazure.cn) <!-- keep by customization: end -->
+1.  Sign in to the [Management Portal](https://manage.windowsazure.cn/)
 2.  Click on **Recovery Services** in the left navigation pane and select the backup vault which you have created. Click on the cloud icon to get to the Quick Start view of the backup vault.
 
     ![Quick view](./media/backup-download-credentials/quickview.png)

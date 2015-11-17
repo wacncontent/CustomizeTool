@@ -14,7 +14,7 @@
 
 # Azure AD terminology
 
-Windows Azure Active Directory (Azure AD) has a unique set of terminology that relate to cloud, hybrid <!-- deleted by customization, --> and on-premises scenarios. The following table defines these terms to provide you with a basic understanding for how they are used.
+Windows Azure Active Directory (Azure AD) has a unique set of terminology that relate to cloud, hybrid, and on-premises scenarios. The following table defines these terms to provide you with a basic understanding for how they are used.
 
  Term  | Definition
 ------------- | -------------

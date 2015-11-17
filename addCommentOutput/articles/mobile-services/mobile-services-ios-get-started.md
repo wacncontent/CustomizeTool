@@ -16,16 +16,14 @@
 
 [AZURE.INCLUDE [mobile-services-selector-get-started](../includes/mobile-services-selector-get-started.md)]
 
-<!-- deleted by customization
 [AZURE.INCLUDE [mobile-services-hero-slug](../includes/mobile-services-hero-slug.md)]
 
 
--->
 This tutorial shows you how to add a cloud-based backend service to an iOS app using Azure Mobile Services.
 
 In this tutorial, you will create both a new mobile service and a simple _To do list_ app that stores app data in the new mobile service. The mobile service that you will create uses JavaScript for server-side business logic. To create a mobile service with server-side business logic in .NET, see the [.NET backend version] of this topic.
 
-> [AZURE.NOTE] To complete this tutorial, you need an Azure account. If you don't have an account, you can sign up for an Azure trial and get [free mobile services that you can keep using even after your trial ends](/home/features/mobile-services/#price). For details, see [Azure <!-- deleted by customization Trial](/pricing/1rmb-trial/?WT.mc_id=AE564AB28&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fen-us%2Fdevelop%2Fmobile%2Ftutorials%2Fget-started-ios%2F%20) --><!-- keep by customization: begin --> Trial](/pricing/1rmb-trial target="_blank") <!-- keep by customization: end -->.
+> [AZURE.NOTE] To complete this tutorial, you need an Azure account. If you don't have an account, you can sign up for an Azure trial and get [free mobile services that you can keep using even after your trial ends](/home/features/mobile-services/#price). For details, see [Azure Trial](/pricing/1rmb-trial/?WT.mc_id=AE564AB28&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fen-us%2Fdevelop%2Fmobile%2Ftutorials%2Fget-started-ios%2F%20).
 
 ## <a name="create-new-service"> </a>Create a new mobile service
 
@@ -35,7 +33,7 @@ In this tutorial, you will create both a new mobile service and a simple _To do 
 
 You can follow an easy Quick Start in the Management Portal to create a new app connected to your mobile service:
 
-1.In the Management Portal, click **Mobile Services**, and then click the mobile service that you just created.
+1. In the Management Portal, click **Mobile Services**, and then click the mobile service that you just created.
 
 2. In the Quick Start tab, click **iOS** under **Choose a platform** and expand **Create a new iOS app**. This displays the steps to create an iOS app connected to your mobile service.
 
@@ -48,16 +46,11 @@ You can follow an easy Quick Start in the Management Portal to create a new app 
 [AZURE.INCLUDE [mobile-services-ios-run-app](../includes/mobile-services-ios-run-app.md)]
 
 <ol start="4">
-<li><p>Back in the Management Portal, click the <!-- deleted by customization **DATA** --><!-- keep by customization: begin --> <strong>DATA</strong> <!-- keep by customization: end --> tab and then click the <!-- deleted by customization **TodoItem** --><!-- keep by customization: begin --> <strong>TodoItem</strong> <!-- keep by customization: end --> table. This lets you browse the data inserted by the app into the table.<p></li></ol></p>
+<li><p>Back in the Management Portal, click the **DATA** tab and then click the **TodoItem** table. This lets you browse the data inserted by the app into the table.<p></li></ol></p>
 
 ## <a name="next-steps"> </a>Next Steps
 Learn how to perform additional important tasks in Mobile Services:
 
-<!-- keep by customization: begin -->
-* [Add mobile services to an existing app]
-  <br/>Learn more about storing and querying data using Mobile Services.
-
-<!-- keep by customization: end -->
 * [Get started with offline data sync]
 	<br/>Learn how to use offline data sync to make your app responsive and robust.
 
@@ -66,10 +59,8 @@ Learn how to perform additional important tasks in Mobile Services:
 
 * [Add push notifications to an existing app]
 	<br/>Learn how to send a very basic push notification to your app.
-<!-- deleted by customization
 
 [AZURE.INCLUDE [app-service-disqus-feedback-slug](../includes/app-service-disqus-feedback-slug.md)]
--->
 
 
 <!-- Anchors. -->
@@ -89,12 +80,11 @@ Learn how to perform additional important tasks in Mobile Services:
 
 
 <!-- URLs. -->
-<!-- keep by customization: begin -->
-[Add mobile services to an existing app]: /documentation/articles/mobile-services-dotnet-backend-ios-get-started-data
-<!-- keep by customization: end -->
 [Get started with offline data sync]: /documentation/articles/mobile-services-ios-get-started-offline-data
 [Add authentication to an existing app]: /documentation/articles/mobile-services-dotnet-backend-ios-get-started-users
 [Add push notifications to an existing app]: /documentation/articles/mobile-services-dotnet-backend-ios-get-started-push
+
+
 [Mobile Services iOS SDK]: https://go.microsoft.com/fwLink/p/?LinkID=266533
 [Management Portal]: https://manage.windowsazure.cn/
 [XCode]: https://go.microsoft.com/fwLink/p/?LinkID=266532

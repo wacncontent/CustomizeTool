@@ -1,4 +1,4 @@
-new docs: 13, word count: 14643
+new docs: 13, word count: {word_count_TODO}
 articles/event-hubs/event-hubs-api-overview.md
 articles/event-hubs/event-hubs-authentication-and-security-model-overview.md
 articles/event-hubs/event-hubs-availability-and-support-faq.md

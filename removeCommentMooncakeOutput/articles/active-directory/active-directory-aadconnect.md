@@ -1,17 +1,16 @@
-<properties 
-	pageTitle="Integrating your on-premises identities with Azure Active Directory. | Windows Azure" 
-	description="This is the Azure AD Connect that describes what it is and why you would use it." 
-	services="active-directory" 
-	documentationCenter="" 
+<properties
+	pageTitle="Integrating your on-premises identities with Azure Active Directory. | Windows Azure"
+	description="This is the Azure AD Connect that describes what it is and why you would use it."
+	services="active-directory"
+	documentationCenter=""
 	authors="andkjell"
-	manager="stevenpo" 
+	manager="stevenpo"
 	editor="curtand"/>
 
-<tags 
-	ms.service="active-directory" 
+<tags
+	ms.service="active-directory"
 	ms.date="10/13/2015"
 	wacn.date=""/>
-
 
 # Integrating your on-premises identities with Azure Active Directory
 Azure AD Connect is the tool to integrate your on-premises identity system such as Windows Server Active Directory with Azure Active Directory and connect your users to Office 365, Azure and 1000’s of SaaS applications. This topic provides a comprehensive guide to prepare and deploy the necessary components for your end users to access cloud services with the same identity that they use today to access existing company apps.
@@ -129,7 +128,6 @@ The configuration model in sync is called [declarative provisioning](/documentat
 | Frequently Asked Questions | [Azure AD Connect FAQ](/documentation/articles/active-directory-aadconnect-faq) |
 
 
-
 **Additional Resources**
 
 
@@ -149,3 +147,5 @@ Ignite 2015 presentation on extending your on-premises directories to the cloud.
 
 
  
+
+

@@ -14,12 +14,7 @@
 
 
 
-<!-- deleted by customization
 # Managing Azure Service Bus using Azure Automation
--->
-<!-- keep by customization: begin -->
-#Managing Azure Service Bus using Azure Automation
-<!-- keep by customization: end -->
 
 This guide will introduce you to the Azure Automation service, and how it can be used to simplify management of Azure Service Bus.
 

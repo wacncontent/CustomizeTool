@@ -14,9 +14,11 @@
 	wacn.date=""/>
 
 # Deploying SharePoint with SQL Server AlwaysOn Availability Groups in Azure
+<!-- deleted by customization
 
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
 
+-->
 
 This topic contains links to the step-by-step instructions for deploying an intranet-only SharePoint 2013 farm with SQL Server AlwaysOn Availability Groups with the classic deployment model. The farm contains these computers:
 

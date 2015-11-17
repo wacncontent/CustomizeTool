@@ -19,10 +19,17 @@
 
 An Azure storage account gives you access to the Azure Blob, Queue, Table, and File services in Azure Storage. Your storage account provides the unique namespace for your Azure Storage data objects. By default, the data in your account is available only to you, the account owner.
 
+<!-- deleted by customization
 There are two types of storage accounts:
 
 - A standard storage account includes Blob, Table, Queue, and File storage. 
 - A premium storage account currently supports Azure virtual machine disks only. See [Premium Storage: High-performance storage for Azure virtual machine workloads](/documentation/articles/storage-premium-storage-preview-portal) for an in-depth overview of Premium Storage.
+-->
+<!-- keep by customization: begin -->
+There is one types of storage accounts in China:
+
+- A standard storage account includes Blob, Table, and Queue storage. File storage is available by request via the [Azure Management Portal](/zh-cn/).
+<!-- keep by customization: end -->
 
 ## Storage account billing
 
@@ -33,7 +40,7 @@ You are billed for Azure Storage usage based on your storage account. Storage co
 - Transactions refer to all read and write operations to Azure Storage.
 - Data egress refers to data transferred out of an Azure region. When the data in your storage account is accessed by an application that is not running in the same region, whether that application is a cloud service or some other type of application, then you are charged for data egress. (For Azure services, you can take steps to group your data and services in the same datacenters to reduce or eliminate data egress charges.)  
 
-The [Azure pricing](/home/features/#storage) page provides detailed pricing information for storage capacity, replication, and transactions. The [Data transfers pricing details](http:/#price/azure.microsoft.com/home/features/data-transfers/#price) page provides detailed pricing information for data egress.
+The [Azure <!-- deleted by customization pricing](/home/features//#price) --><!-- keep by customization: begin --> pricing](/home/features/#storage) <!-- keep by customization: end --> page provides detailed pricing information for storage capacity, replication, and transactions. The [Data transfers pricing <!-- deleted by customization details](/home/features/data-transfers/#price) --><!-- keep by customization: begin --> details](http:/#price/azure.microsoft.com/home/features/data-transfers/#price) <!-- keep by customization: end --> page provides detailed pricing information for data egress.
 
 For details about storage account capacity and performance targets, see [Azure Storage scalability and performance targets](http://msdn.microsoft.com/zh-cn/library/azure/dn249410.aspx).
 
@@ -147,7 +154,7 @@ You should change the access keys to your storage account periodically to help k
 
 To remove a storage account that you are no longer using, use **Delete** on the dashboard or the **Configure** page. **Delete** deletes the entire storage account, including all of the blobs, tables, and queues in the account.
 
-> [AZURE.WARNING] It's not possible to restore a deleted storage account or retrieve any of the content that it contained before deletion. Be sure to back up anything you want to save before you delete the account. This also holds true for any resources in the accountâ€”once you delete a blob, table, queue, or file, it is permanently deleted.
+> [AZURE.WARNING] It's not possible to restore a deleted storage account or retrieve any of the content that it contained before deletion. Be sure to back up anything you want to save before you delete the account. This also holds true for any resources in the <!-- deleted by customization accountâ€”once --><!-- keep by customization: begin --> account¡ªonce <!-- keep by customization: end --> you delete a blob, table, queue, or file, it is permanently deleted.
 >
 > If your storage account contains VHD files for an Azure virtual machine, then you must delete any images and disks that are using those VHD files before you can delete the storage account. First, stop the virtual machine if it is running, and then delete it. To delete disks, navigate to the **Disks** tab and delete any disks there. To delete images, navigate to the **Images** tab and delete any images that are stored in the account.
 

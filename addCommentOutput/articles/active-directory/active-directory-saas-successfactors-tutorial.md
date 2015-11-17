@@ -1,5 +1,8 @@
 <properties pageTitle="Tutorial: Azure ActiveDirectory integration with SuccessFactors | Windows Azure" description="Learn how to use SuccessFactors with Azure Active Directory to enable single sign-on, automated provisioning, and more!." services="active-directory" authors="MarkusVi"  documentationCenter="na" manager="stevenpo"/>
-<tags ms.service="active-directory" ms.devlang="na" ms.topic="article" ms.tgt_pltfrm="na" ms.workload="identity" ms.date="08/01/2015" ms.author="markvi" />
+<tags
+	ms.service="active-directory"
+	ms.date="08/01/2015"
+	wacn.date=""/>
 #Tutorial: Azure ActiveDirectory integration with SuccessFactors
 <!-- deleted by customization
 >[AZURE.TIP]For feedback, click [here](https://social.msdn.microsoft.com/Forums/azure/zh-cn/957efd7b-a8b7-473f-b706-0a58c028b1ac/tutorial-azure-active-directory-integration-with-successfactors?forum=WindowsAzureAD).

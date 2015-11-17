@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.date="07/01/2015"
+	ms.date="10/01/2015"
 	wacn.date=""/>
 
 # Send Push Notifications to Authenticated Users
@@ -44,4 +44,4 @@ In this tutorial, you require users to authenticate first, register with the not
 [Get started with push notifications]: /documentation/articles/mobile-services-dotnet-backend-ios-get-started-push
 
 [Azure Management Portal]: https://manage.windowsazure.cn/
-[Mobile Services .NET How-to Conceptual Reference]: /documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library
+[Mobile Services .NET How-to Conceptual Reference]: /develop/mobile/how-to-guides/work-with-net-client-library

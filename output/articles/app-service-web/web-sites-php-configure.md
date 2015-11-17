@@ -14,11 +14,22 @@
 
 #Configure PHP in Azure Websites
 
+<!-- keep by customization: begin -->
+##Table of Contents
+
+* [What is Azure  Websites?](#WhatIs)
+* [How to: Change the default PHP configuration](#ChangeBuiltInPHP)
+* [How to: Enable extensions in the built-in PHP runtime](#EnableExtDefaultPHP)
+* [How to: Use a custom PHP runtime](#UseCustomPHP)
+* [Next steps](#NextSteps)
+<!-- keep by customization: end -->
 ## Introduction
 
 This guide will show you how to configure the built-in PHP runtime for Web Apps in [Azure Websites](/documentation/services/web-sites/), provide a custom PHP runtime, and enable extensions. To use Azure Websites, sign up for the [trial]. To get the most from this guide, you should first create a PHP web app in Azure Websites.
+<!-- deleted by customization
 
 [AZURE.INCLUDE [app-service-web-to-api-and-mobile](../includes/app-service-web-to-api-and-mobile.md)]
+-->
 
 ## How to: Change the built-in PHP version
 By default, PHP 5.4 is installed and immediately available for use when you create an Azure Websites web app. The best way to see the available release revision, its default configuration, and the enabled extensions is to deploy a script that calls the [phpinfo()] function.
@@ -26,6 +37,7 @@ By default, PHP 5.4 is installed and immediately available for use when you crea
 PHP 5.5 and PHP 5.6 versions are also available, but not enabled by default. To update the PHP version, follow one of these methods:
 
 ### Azure Management Portal
+<!-- deleted by customization
 
 1. Browse to your web app in the [Azure Management Portal](https://manage.windowsazure.cn/) and click on the **Settings** button.
 
@@ -62,6 +74,20 @@ To use the Azure Command-Line Interface, you must have **Node.js** installed on 
 4. You can confirm these settings by typing `azure site show [site-name]` then press enter.
 
 	![Verifying the PHP version with Azure Command-Line Interface][GETPHPVERCLI]
+-->
+<!-- keep by customization: begin -->
+1. Browse to your  Website's dashboard in the Azure Management Portal, click on **Configure**.
+
+	![Configure tab on  Websites dashboard][configure]
+
+1. Click PHP 5.5.
+
+	![Select PHP version][select-php-version]
+
+1. Click **Save** at the bottom of the page.
+
+	![Save configuration settings][save-button]
+<!-- keep by customization: end -->
 
 ## How to: Change the built-in PHP configurations
 
@@ -113,6 +139,7 @@ As noted in the previous section, the best way to see the default PHP version, i
 1. Add a `bin` directory to the root directory.
 2. Put `.dll` extension files in the `bin` directory (for example, `php_mongo.dll`). Make sure that the extensions are compatible with default version of PHP (which is, as of this writing, PHP 5.4) and are VC9 and non-thread-safe (nts) compatible.
 3. Deploy your web app.
+<!-- deleted by customization
 4. Browse to your web app in the Azure Management Portal and click on the **Settings** button.
 
 	![Web App Settings][settings-button]
@@ -126,6 +153,20 @@ As noted in the previous section, the best way to see the default PHP version, i
 
 	![Save configuration settings][save-button]
 
+-->
+<!-- keep by customization: begin -->
+1. Navigate to your site's dashboard in the Azure Management Portal, and click on **Configure**.
+
+	![Configure tab on  Websites dashboard][configure]
+
+1. In the **app settings** section, create a key **PHP_EXTENSIONS** and a value **bin\your-ext-file**. To enable multiple extensions, incude a comma-separated list of `.dll` files.
+
+	![Enable extension in app settings][app-settings]
+
+1. Click **Save** at the bottom of the page.
+
+	![Save configuration settings][save-button]
+<!-- keep by customization: end -->
 Zend extensions are also supported by using a **PHP_ZENDEXTENSIONS** key. To enable multiple extensions, include a comma-separated list of `.dll` files for the app setting value.
 
 
@@ -137,6 +178,7 @@ Instead of the default PHP runtime, Azure Websites can use a PHP runtime that yo
 3. Optionally, add extensions to your PHP runtime and enable them in the `php.ini` file.
 4. Add a `bin` directory to your root directory, and put the directory that contains your PHP runtime in it (for example, `bin\php`).
 5. Deploy your web app.
+<!-- deleted by customization
 4. Browse to your web app in the Azure Management Portal and click on the **Settings** button.
 
 	![Web App Settings][settings-button]
@@ -159,7 +201,29 @@ For more information, see the [PHP Developer Center](/develop/php/).
 * For a guide to the change from Websites to Azure Websites see: [Azure Websites and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
 * For a guide to the change of the Management Portal to the new portal see: [Reference for navigating the preview portal](https://manage.windowsazure.cn/)
 
-[trial]: https://azure.microsoft.com/pricing/1rmb-trial/
+-->
+<!-- keep by customization: begin -->
+1. Navigate to your site's dashboard in the Azure Management Portal, and click on **Configure**.
+
+	![Configure tab on  Websites dashboard][configure]
+
+1. In the **handler mappings** section, add `*.php` to EXTENSION and add the path to the `php-cgi.exe` executable. If your put your PHP runtime in the `bin` directory in the root of you application, the path will be `D:\home\site\wwwroot\bin\php\php-cgi.exe`.
+
+	![Specify handler in hander mappings][handler-mappings]
+
+1. Click **Save** at the bottom of the page.
+
+	![Save configuration settings][save-button]
+
+[PHP Developer Center Tutorials]: /develop/php/
+[How to Configure  Websites]: /documentation/articles/web-sites-configure
+[configure]: ./media/web-sites-php-configure/configure.png
+[app-settings]: ./media/web-sites-php-configure/app-settings.png
+[handler-mappings]: ./media/web-sites-php-configure/handler-mappings.png
+[Configure, monitor, and scale your  Websites in Azure]: /zh-cn/documentation/services/web-sites
+[Download the Azure SDK for PHP]: /zh-cn/downloads/?sdk=php
+<!-- keep by customization: end -->
+[trial]: /pricing/1rmb-trial/
 [phpinfo()]: http://php.net/manual/en/function.phpinfo.php
 [select-php-version]: ./media/web-sites-php-configure/select-php-version.png
 [List of php.ini directives]: http://www.php.net/manual/en/ini.list.php

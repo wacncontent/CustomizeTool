@@ -7,9 +7,9 @@
    manager="douge"
    editor="tlee" />
 <tags
-   ms.service="storage"
-   ms.date="08/24/2015"
-   wacn.date="" />
+	ms.service="storage"
+	ms.date="08/24/2015"
+	wacn.date=""/>
 
 # Constructing Filter Strings for the Table Designer
 

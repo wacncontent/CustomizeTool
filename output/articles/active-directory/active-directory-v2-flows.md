@@ -28,8 +28,14 @@ Every app that uses the v2.0 app model will need to be registered at [apps.dev.m
 Once registered, the app communicates with Azure AD my sending requests to the v2.0 endpoint:
 
 ```
+<!-- deleted by customization
+https://login.chinacloudapi.cn/common/oauth2/v2.0/authorize
+https://login.chinacloudapi.cn/common/oauth2/v2.0/token
+-->
+<!-- keep by customization: begin -->
 https://login.microsoftonline.com/common/oauth2/v2.0/authorize
 https://login.microsoftonline.com/common/oauth2/v2.0/token
+<!-- keep by customization: end -->
 ```
 
 Every app's interaction with the v2.0 endpoint will follow a similar high level pattern:

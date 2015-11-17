@@ -14,16 +14,13 @@
 	wacn.date=""/>
 
 # Deploying SharePoint with SQL Server AlwaysOn Availability Groups in Azure
-
 <!-- deleted by customization
+
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
 
+-->
 
 This topic contains links to the step-by-step instructions for deploying an intranet-only SharePoint 2013 farm with SQL Server AlwaysOn Availability Groups with the classic deployment model. The farm contains these computers:
--->
-<!-- keep by customization: begin -->
-This topic contains links to the step-by-step instructions for deploying an intranet-only SharePoint 2013 farm with SQL Server AlwaysOn Availability Groups with Azure Service Management. The farm contains these computers:
-<!-- keep by customization: end -->
 
 - Two SharePoint web servers
 - Two SharePoint application servers
@@ -59,10 +56,8 @@ To build a dev/test environment or a proof-of-concept of this configuration, see
 
 For additional information about SharePoint with SQL Server AlwaysOn Availability Groups, see [Configure SQL Server 2012 AlwaysOn Availability Groups for SharePoint 2013](https://technet.microsoft.com/zh-cn/library/jj715261.aspx).
 
-<!-- deleted by customization
 > [AZURE.NOTE] Microsoft has released the SharePoint Server 2016 IT Preview. To make this preview easy to install and test, you can use an Azure virtual machine gallery image with SharePoint Server 2016 IT Preview and its prerequisites pre-installed. For more information, see [Test the SharePoint Server 2016 IT Preview in Azure](http://azure.microsoft.com/blog/test-sharepoint-server-2016-it-preview-4/).
 
--->
 ## Next step
 
 To start the configuration of this workload, go to [Phase 1: Configure Azure](/documentation/articles/virtual-machines-workload-intranet-sharepoint-phase1).

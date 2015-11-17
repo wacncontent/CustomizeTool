@@ -12,12 +12,7 @@
 	ms.date="09/03/2015"
 	wacn.date=""/>
 
-<!-- deleted by customization
 # Role Based Access Control in Mobile Services using JavaScript and the Azure Active Directory
--->
-<!-- keep by customization: begin -->
-# Role Based Access Control in Mobile Services and Azure Active Directory
-<!-- keep by customization: end -->
 
 [AZURE.INCLUDE [mobile-services-selector-rbac](../includes/mobile-services-selector-rbac.md)]
 
@@ -39,14 +34,11 @@ This tutorial requires the following:
 
 
 
+
 ##Generate a key for the Integrated Application
 
 
 During the [Add Authentication to your app] tutorial, you created a registration for the integrated application when you completed the [Register to use an Azure Active Directory Login] step. In this section you generate a key to be used when reading directory information with that integrated application's client ID.
-<!-- keep by customization: begin -->
-
-If you went through the [Accessing Azure Active Directory Graph Information] tutorial, you have already completed this step and can skip this section.
-<!-- keep by customization: end -->
 
 [AZURE.INCLUDE [mobile-services-generate-aad-app-registration-access-key](../includes/mobile-services-generate-aad-app-registration-access-key.md)]
 
@@ -64,7 +56,7 @@ In this section you will create a new custom authorization attribute that can be
 
 1. In Visual Studio, right click mobile service .NET backend project and click **Manage NuGet Packages**.
 
-2. In the NuGet Package Manager dialog, enter **ADAL** in the search criteria to find and install the **Active Directory Authentication Library** for your mobile service. This tutorial was most recently tested with the <!-- deleted by customization 3.3.205061641-alpha --><!-- keep by customization: begin --> 3.0.110281957-alpha <!-- keep by customization: end --> (Prerelease) version of the ADAL package.
+2. In the NuGet Package Manager dialog, enter **ADAL** in the search criteria to find and install the **Active Directory Authentication Library** for your mobile service. This tutorial was most recently tested with the 3.3.205061641-alpha (Prerelease) version of the ADAL package.
 
 3. In Visual Studio, right click your mobile service project and click **Add** then **New Folder**. Name the new folder **Utilities**.
 
@@ -103,15 +95,18 @@ In this section you will create a new custom authorization attribute that can be
             private bool isInitialized;
             private bool isHosted;
 	        private ApiServices services = null;
+
 	        // Constants used with ADAL and the Graph REST API for AAD
 	        private const string AadInstance = "https://login.chinacloudapi.cn/{0}";
 	        private const string GraphResourceId = "https://graph.chinacloudapi.cn/";
 	        private const string APIVersion = "?api-version=2013-04-05";
+
 	        // App settings pulled from the Mobile Service
 	        private string tenantdomain;
 	        private string clientid;
 	        private string clientkey;
 	        private Dictionary<int, string> groupIds = new Dictionary<int, string>();
+
 	        private string token = null;
 
             public AuthorizeAadRole(AadRoles role)
@@ -157,6 +152,7 @@ In this section you will create a new custom authorization attribute that can be
         private void InitGroupIds()
         {
             string groupId;
+
             if (services == null)
                 return;
 
@@ -191,6 +187,7 @@ In this section you will create a new custom authorization attribute that can be
             ClientCredential clientCred = new ClientCredential(clientid, clientkey);
             string authority = String.Format(CultureInfo.InvariantCulture, AadInstance, tenantdomain);
             AuthenticationContext authContext = new AuthenticationContext(authority);
+
             AuthenticationResult result = await authContext.AcquireTokenAsync(GraphResourceId, clientCred);
             if (result != null)
                 token = result.AccessToken;
@@ -298,16 +295,11 @@ In this section you will create a new custom authorization attribute that can be
                             if (clientAadCredentials != null)
                             {
                                 isAuthorized = CheckMembership(clientAadCredentials.ObjectId);
-<!-- deleted by customization
                             }
--->
                         }
                     }
                 }
             }
-<!-- keep by customization: begin -->
-            }
-<!-- keep by customization: end -->
             catch (Exception e)
             {
                 services.Log.Error(e.Message);
@@ -391,7 +383,4 @@ In this section you will create a new custom authorization attribute that can be
 [Register to use an Azure Active Directory Login]: /documentation/articles/mobile-services-how-to-register-active-directory-authentication
 [Graph REST API]: http://msdn.microsoft.com/zh-cn/library/azure/hh974478.aspx
 [IsMemberOf]: http://msdn.microsoft.com/zh-cn/library/azure/dn151601.aspx
-<!-- keep by customization: begin -->
-[Accessing Azure Active Directory Graph Information]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-aad-graph-info
-<!-- keep by customization: end -->
 [ADAL for .NET]: https://msdn.microsoft.com/zh-cn/library/azure/jj573266.aspx

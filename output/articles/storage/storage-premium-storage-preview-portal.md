@@ -33,7 +33,7 @@ The following is a list of important things to consider before or when using Pre
 
 - To use Premium Storage, you need to have a Premium Storage account. To learn how to create a Premium Storage account, see [Creating and using Premium Storage Account for Disks](#create-and-use-a-premium-storage-account-for-a-virtual-machine-data-disk).
 
-- Premium Storage is currently available in the [Windows Azure Preview Portal](https://manage.windowsazure.cn/) and accessible via the following SDK libraries: [Storage REST API](http://msdn.microsoft.com//library/azure/dd179355.aspx) version 2014-02-14 or later; [Service Management REST API](http://msdn.microsoft.com/zh-cn/library/azure/ee460799.aspx) version 2014-10-01 or later; and [Azure PowerShell](/documentation/articles/install-configure-powershell) version 0.8.10 or later.
+- Premium Storage is currently available in the [Windows Azure <!-- deleted by customization Preview Portal](https://manage.windowsazure.cn/) --><!-- keep by customization: begin --> Management Portal](https://manage.windowsazure.cn) <!-- keep by customization: end --> and accessible via the following SDK libraries: [Storage REST <!-- deleted by customization API](http://msdn.microsoft.com//library/azure/dd179355.aspx) --><!-- keep by customization: begin --> API](http://msdn.microsoft.com/zh-cn/library/azure/dd179355.aspx) <!-- keep by customization: end --> version 2014-02-14 or later; [Service Management REST API](http://msdn.microsoft.com/zh-cn/library/azure/ee460799.aspx) version 2014-10-01 or later; and [Azure PowerShell](/documentation/articles/install-configure-powershell) version 0.8.10 or later.
 
 - For a list of regions that currently support Premium Storage, see [Azure Services by Region](http://azure.microsoft.com/regions/#services).
 
@@ -197,7 +197,9 @@ Please refer to important instructions below for configuring your Linux VMs on P
 	- If you use **XFS**, disable barriers using the mount option “nobarrier” (For enabling barriers, use the option “barrier”)
 
 - For Premium Storage disks with cache setting “ReadWrite”, barriers should be enabled for durability of writes.
+<!-- deleted by customization
 - For the volume labels to persist after VM reboot, you must update /etc/fstab with the UUID references to the disks. Also refer to [How to Attach a Data Disk to a Linux Virtual Machine.](/documentation/articles/virtual-machines-linux-how-to-attach-disk)
+-->
 
 Following are the Linux Distributions that we validated with Premium Storage. We recommend that you upgrade your VMs to at least one of these versions (or later) for better performance and stability with Premium Storage. Also, some of the versions require the latest LIS (Linux Integration Services v4.0 for Windows Azure). Please follow the link provided below for download and installation. We will continue to add more images to the list as we complete additional validations. Please note, our validations showed that performance varies for these images, and it also depends on workload characteristics and settings on the images. Different images are tuned for different kinds of workload.
 <table border="1" cellspacing="0" cellpadding="5" style="border: 1px solid #000000;">

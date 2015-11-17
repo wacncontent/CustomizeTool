@@ -18,7 +18,7 @@ SendGrid email service on Azure. The samples are written in
 Java. The scenarios covered include **constructing email**, **sending
 email**, **adding attachments**, **using filters**, and **updating
 properties**. For more information on SendGrid and sending email, see
-the [Next steps][] section.
+the [Next steps](#next-steps) section.
 
 ## Table of Contents
 

@@ -8,8 +8,8 @@
 	manager="stevenpo" 
 	editor="LisaToft"/>
 
-<tags 
-	ms.service="active-directory" 
+<tags
+	ms.service="active-directory"
 	ms.date="08/14/2015"
 	wacn.date=""/>
 
@@ -26,7 +26,7 @@ To start using Azure Active Directory Premium features today, follow the steps b
 
 ## Step 1: Sign up for Active Directory Premium
 
-To sign up, see the [Volume Licensing](http://www.microsoft.com/licensing/how-to-buy/how-to-buy.aspx) web site. 
+To sign up, see the [Volume Licensing](http://www.microsoft.com/licensing/how-to-buy/how-to-buy.aspx) web site.
 
 ## Step 2: Activate your license plan
 
@@ -94,7 +94,7 @@ Some license plans are subsets or supersets of other license plans. In most case
 
 ## License requirements
 
-When you assign a license to a user, you can specify a primary usage location in the properties of their account as shown below. If a usage location is not specified, the tenant’s location is automatically assigned to the user. 
+When you assign a license to a user, you can specify a primary usage location in the properties of their account as shown below. If a usage location is not specified, the tenant’s location is automatically assigned to the user.
 
 ![][12]
 
@@ -118,5 +118,3 @@ The availability of services and features for a Microsoft cloud service varies b
 [10]: ./media/active-directory-get-started-premium/contosolicenseplan.png
 [11]: ./media/active-directory-get-started-premium/Assignlicensespicker.png
 [12]: ./media/active-directory-get-started-premium/Usagelocation.png
-
-

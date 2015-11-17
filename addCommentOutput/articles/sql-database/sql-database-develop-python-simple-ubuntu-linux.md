@@ -72,7 +72,7 @@ The [cursor.execute](http://pymssql.org/en/latest/ref/pymssql.html#pymssql.Curso
 
 ## Insert a row, pass parameters, and retrieve the generated primary key
 
-In SQL Database the [IDENTITY](https://msdn.microsoft.com/zh-cn/library/ms186775.aspx) property and the <!-- deleted by customization [SEQUENCE](https://msdn.microsoft.com/zh-cn/library/ff878058.aspx) --><!-- keep by customization: begin --> [SEQUENECE](https://msdn.microsoft.com/zh-cn/library/ff878058.aspx) <!-- keep by customization: end --> object can be used to auto-generate [primary key](https://msdn.microsoft.com/zh-cn/library/ms179610.aspx) values.
+In SQL Database the [IDENTITY](https://msdn.microsoft.com/zh-cn/library/ms186775.aspx) property and the [SEQUENCE](https://msdn.microsoft.com/zh-cn/library/ff878058.aspx) object can be used to auto-generate [primary key](https://msdn.microsoft.com/zh-cn/library/ms179610.aspx) values. 
 
 
 	import pymssql

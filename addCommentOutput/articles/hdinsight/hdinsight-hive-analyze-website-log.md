@@ -36,7 +36,7 @@ In this sample, you will use an HDInsight cluster to analyze website log files t
 ##To run the sample
 <!-- deleted by customization
 
-1. From the [Azure Preview Portal](https://ms.portal.azure.com/), from the Startboard (if you pinned the cluster there), click the cluster tile on which you want to run the sample.
+1. From the [Azure Preview Portal](https://manage.windowsazure.cn/), from the Startboard (if you pinned the cluster there), click the cluster tile on which you want to run the sample.
 
 2. From the cluster blade, under **Quick Links**, click **Cluster Dashboard**, and then from the **Cluster Dashboard** blade, click **HDInsight Cluster Dashboard**. Alternatively, you can directly open the dashboard by using the following URL:
 
@@ -59,6 +59,7 @@ Try the following sample: [Analyzing sensor data using Hive with HDInsight](/doc
 [hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters
 <!-- deleted by customization
 [hdinsight-sensor-data-sample]: /documentation/articles/hdinsight-use-hive-sensor-data-analysis
+
 -->
 [img-hdi-weblogs-sample]: ./media/hdinsight-hive-analyze-website-log/hdinsight-weblogs-sample.png
  

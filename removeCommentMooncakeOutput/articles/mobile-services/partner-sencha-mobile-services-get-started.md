@@ -9,16 +9,19 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.date="08/18/2015"
+	ms.date="10/09/2015"
 	wacn.date=""/>
 
 # <a name="getting-started"> </a>Get started with Mobile Services and Sencha Touch
 
 [AZURE.INCLUDE [mobile-services-selector-get-started](../includes/mobile-services-selector-get-started.md)]
+&nbsp;
+
+[AZURE.INCLUDE [mobile-services-hero-slug](../includes/mobile-services-hero-slug.md)]
 
 ##Overview
 
-This tutorial shows you how to leverage Azure Mobile Services in your Sencha Touch application. You will create a simple To Do List app using Sencha Touch that utilizes a mobile service you define through the Management Portal. This tutorial is intended for intermediate to advanced web application developers who have a good understanding of JavaScript and who are familiar with the Sencha Touch framework.
+This tutorial shows you how to leverage Azure Mobile Services in your Sencha Touch application. You will create a simple *To Do List* app using Sencha Touch that utilizes a mobile service you define through the Management Portal. This tutorial is intended for intermediate to advanced web application developers who have a good understanding of JavaScript and who are familiar with the Sencha Touch framework.
 
 If you prefer to watch a video, this clip follows the same steps as this tutorial. In the video, Arthur Kay  explains how to build a Sencha Touch application using an Azure Mobile Services backend.
 
@@ -61,11 +64,11 @@ a new database table for use in your mobile service.
 	> [AZURE.NOTE] Do NOT download the HTML app from the management portal. Instead, we will manually create a Sencha Touch application in the section below.
 
 
-4. Take note of the **appKey** and **appUrl** in the Management Portal. You will use them in other sections of this tutorial.
+1. Take note of the **appKey** and **appUrl** in the Management Portal. You will use them in other sections of this tutorial.
 
     ![app key](./media/partner-sencha-mobile-services-get-started/mobile-app-key-portal.png)
 
-5. In the **Configure** tab, verify that `localhost` is already listed in the **Allow requests from host names** list under **Cross-Origin Resource Sharing (CORS)**. If it's not, type `localhost` in the **Host name** field and then click **Save**.
+1. In the **Configure** tab, verify that `localhost` is already listed in the **Allow requests from host names** list under **Cross-Origin Resource Sharing (CORS)**. If it's not, type `localhost` in the **Host name** field and then click **Save**.
 
     ![Setup CORS for localhost](./media/partner-sencha-mobile-services-get-started/mobile-services-set-cors-localhost.png)
 
@@ -85,13 +88,13 @@ The extension for Azure is installed either manually or as a Sencha Package. The
 
 ###Manual installation
 
-In most Touch applications, if you wish to add an external library of classes, you simply download the package, unpack it in your application directory and configure the Touch loader with the location of the library. 
+In most Touch applications, if you wish to add an external library of classes, you simply download the package, unpack it in your application directory and configure the Touch loader with the location of the library.
 
 You can manually add the Azure extensions to your application using the following steps:
 
 1. Download the Azure extensions package from [here](https://market.sencha.com/extensions/sencha-touch-extensions-for-windows-azure). (You may use your Sencha Forums ID to access this area.)
 
-2. Copy the Azure extensions package from the download directory to where you would ultimately want it to reside and unpack it : 
+2. Copy the Azure extensions package from the download directory to where you would ultimately want it to reside and unpack it :
 
         $ cd /path/to/application
 	    $ mv /download-location/azure.zip .
@@ -118,7 +121,7 @@ To download and install the Azure extensions package from the Sencha Packages re
     	        "touch-azure"
         	]
     	}
-    
+
 2. Rebuild your application using **sencha cmd** to fetch and install the package:
 
 	    $ sencha app build
@@ -129,12 +132,12 @@ Whichever command you run, Sencha Cmd will download and expand the package to yo
 
 ##Include and configure Azure
 
-**Filename**: app.js 
+**Filename**: app.js
 
 Now that the Azure extension has been downloaded and installed in your application directory, the next step is to tell your application where to find the source files, and to require those files:
 
 1. Configure the Sencha Loader with the location of the source code:
- 
+
         Ext.Loader.setConfig({
        	    enabled : true,
            	paths   : {
@@ -240,7 +243,7 @@ The Azure proxy will automatically set all HTTP headers with the appropriate CRU
 	});
 
 
-###Store your ToDo items 
+###Store your ToDo items
 
 **Filename**: app/store/TodoItems.js
 
@@ -270,7 +273,7 @@ We also have some additional configuration options for the store such as specify
 
 **Filename**: app/view/DataItem.js
 
-Now that we have defined the structure of each ToDo item, and created a store to place all the records in, we should think about how we wish to display this information to the user of the app. We normally display information to the user through the use of **Views**. A view can be one of any number of Touch components, individually or combined with others. 
+Now that we have defined the structure of each ToDo item, and created a store to place all the records in, we should think about how we wish to display this information to the user of the app. We normally display information to the user through the use of **Views**. A view can be one of any number of Touch components, individually or combined with others.
 
 The view below is comprised of a ListItem which defines how each record will be displayed along with some buttons which will accommodate actions to delete each item.
 
@@ -348,7 +351,7 @@ The view below is comprised of a ListItem which defines how each record will be 
 
 **Filename**: app/view/Main.js
 
-Now that we have defined the layout of an individual ToDo list item (above) we want to wrap a full user interface around that list which defines the actual list of items, an application title, and a button to add a new task. 
+Now that we have defined the layout of an individual ToDo list item (above) we want to wrap a full user interface around that list which defines the actual list of items, an application title, and a button to add a new task.
 
 	Ext.define('Basic.view.Main', {
     	extend : 'Ext.dataview.List',
@@ -465,8 +468,8 @@ The final step in our application is to respond to button presses (delete, save,
             	failure: function (rec, operation) {
                 	Ext.Msg.alert(
                     	'Error',
-                    	Ext.util.Format.format('There was an error deleting this task.<br/><br/>	Status Code: {0}<br/>Status Text: {1}', 
-                    	operation.error.status, 
+                    	Ext.util.Format.format('There was an error deleting this task.<br/><br/>	Status Code: {0}<br/>Status Text: {1}',
+                    	operation.error.status,
                     	operation.error.statusText)
                 	);
             	}
@@ -490,8 +493,8 @@ The final step in our application is to respond to button presses (delete, save,
 	                    rec.reject(true);
     	                Ext.Msg.alert(
         	                'Error',
-            	            Ext.util.Format.format('There was an error updating this task.<br/><br/>Status Code: {0}<br/>Status Text: {1}', 
-            	            operation.error.status, 
+            	            Ext.util.Format.format('There was an error updating this task.<br/><br/>Status Code: {0}<br/>Status Text: {1}',
+            	            operation.error.status,
             	            operation.error.statusText)
 	                    );
     	            }
@@ -515,8 +518,8 @@ The final step in our application is to respond to button presses (delete, save,
                             	rec.reject();
                             	Ext.Msg.alert(
                                 	'Error',
-                                	Ext.util.Format.format('There was an error updating this task.<br/><br/>Status Code: {0}<br/>Status Text: {1}', 
-                                	operation.error.status, 
+                                	Ext.util.Format.format('There was an error updating this task.<br/><br/>Status Code: {0}<br/>Status Text: {1}',
+                                	operation.error.status,
                                 	operation.error.statusText)
                             	);
                         	}
@@ -558,8 +561,8 @@ The final step in our application is to respond to button presses (delete, save,
                 	failure: function (rec, operation) {
                     	Ext.Msg.alert(
                         	'Error',
-                        	Ext.util.Format.format('There was an error creating this task.<br/><br/>Status Code: {0}<br/>Status Text: {1}', 
-                        	operation.error.status, 
+                        	Ext.util.Format.format('There was an error creating this task.<br/><br/>Status Code: {0}<br/>Status Text: {1}',
+                        	operation.error.status,
                         	operation.error.statusText)
                     	);
                 	}
@@ -698,13 +701,16 @@ Then, dive into more information about the Sencha Touch Extensions for Azure:
 
   * [Download Sencha Touch](http://pages.sencha.com/touch-for-azure.html)
   * [Sencha Touch Extensions for Azure](https://market.sencha.com/extensions/sencha-touch-extensions-for-windows-azure)
- 
+
 
 ##Summary
 
 The example outlined here is provided in the Sencha Touch Extension for Azure package and is located in the examples directory as the Basic Data example. There are a few more examples which are provided which demonstrated other functionality of this extension along with detailed comments and explanations.
 
 For more information about getting started with Sencha Touch please visit the full set of [guides](http://docs.sencha.com/touch/#!/guide)
+
+
+[AZURE.INCLUDE [app-service-disqus-feedback-slug](../includes/app-service-disqus-feedback-slug.md)]
 
 <!-- images -->
 [0]: ./media/partner-sencha-mobile-services-get-started/finished-app.png

@@ -49,7 +49,7 @@ service configuration (.cscfg) files.
 
 	![enable-azureserviceprojectremotedesktop][enable-rdp]
 
-<!-- deleted by customization 3 --><!-- keep by customization: begin --> 5 <!-- keep by customization: end -->.  Enter the following PowerShell cmdlet to publish the changes:
+3.  Enter the following PowerShell cmdlet to publish the changes:
 
     	Publish-AzureServiceProject
 
@@ -68,16 +68,16 @@ the role instance.
 
     ![The instances page][3]
 
-<!-- deleted by customization 2 --><!-- keep by customization: begin --> 3 <!-- keep by customization: end -->.  When you click **Connect**, the web browser prompts you to save an
+2.  When you click **Connect**, the web browser prompts you to save an
     .rdp file. Open this file. (For example, if you're using Internet Explorer, click **Open**.)
 
     ![prompt to open or save the .rdp file][4]
 
-<!-- deleted by customization 3 --><!-- keep by customization: begin --> 4 <!-- keep by customization: end -->.  When the file is opened, the following security prompt appears:
+3.  When the file is opened, the following security prompt appears:
 
     ![Windows security prompt][5]
 
-<!-- deleted by customization 4 --><!-- keep by customization: begin --> 5 <!-- keep by customization: end -->.  Click **Connect**, and a security prompt will appear for entering
+4.  Click **Connect**, and a security prompt will appear for entering
     credentials to access the instance. Enter the password you created
     in [Step 1][Step 1: Configure the service for Remote Desktop access using Azure PowerShell], and then click **OK**.
 
@@ -121,3 +121,4 @@ instances in the cloud, disable remote desktop access using [Azure PowerShell].
   
   [Remotely Accessing Role Instances in Azure]: http://msdn.microsoft.com/zh-cn/library/azure/hh124107.aspx
   [Using Remote Desktop with Azure Roles]: http://msdn.microsoft.com/zh-cn/library/azure/gg443832.aspx
+ 

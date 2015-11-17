@@ -15,16 +15,9 @@
 
 # Securing AngularJS Single Page Apps with Azure AD
 
-<!-- deleted by customization
 [AZURE.INCLUDE [active-directory-devquickstarts-switcher](../includes/active-directory-devquickstarts-switcher.md)]
 
 [AZURE.INCLUDE [active-directory-devguide](../includes/active-directory-devguide.md)]
--->
-<!-- keep by customization: begin -->
-[AZURE.INCLUDE [active-directory-devquickstarts-switcher](../includes/active-directory-devquickstarts-switcher)]
-
-[AZURE.INCLUDE [active-directory-devguide](../includes/active-directory-devguide)]
-<!-- keep by customization: end -->
 
 Azure AD makes it simple and straightforward for you to add sign in, sign out, and secure OAuth API calls to your single page apps.  It enables your app to authenticate users with their Active Directory accounts and consume any web API protected by Azure AD, such as the Office 365 APIs or the Azure API.
 
@@ -35,7 +28,7 @@ For javascript applications running in a browser, Azure AD provides the Active D
 - Securely calls the app's To Do List API using Bearer tokens from AAD.
 - Signs the user out of the app.
 
-To build the complete working application, <!-- deleted by customization you'll --><!-- keep by customization: begin --> you will <!-- keep by customization: end --> need to:
+To build the complete working application, you'll need to:
 
 2. Register your application with Azure AD.
 3. Install ADAL & Configure the SPA.
@@ -94,7 +87,7 @@ angular.module('todoApp', ['ngRoute','AdalAngular'])
 ```js
 adalProvider.init(
   {
-      instance: 'https://login.microsoftonline.com/',
+      instance: 'https://login.chinacloudapi.cn/',
       tenant: 'Enter your tenant name here e.g. contoso.partner.onmschina.cn',
       clientId: 'Enter your client ID here e.g. e9a5a8b6-8af7-4719-9821-0deef255f68e',
       extraQueryParameter: 'nux=1',
@@ -152,9 +145,4 @@ For reference, the completed sample (without your configuration values) is provi
 
 [Call a CORS Web API from a SPA >>](https://github.com/AzureAdSamples/SinglePageApp-WebAPI-AngularJS-DotNet)
 
-<!-- deleted by customization
 [AZURE.INCLUDE [active-directory-devquickstarts-additional-resources](../includes/active-directory-devquickstarts-additional-resources.md)]
--->
-<!-- keep by customization: begin -->
-[AZURE.INCLUDE [active-directory-devquickstarts-additional-resources](../includes/active-directory-devquickstarts-additional-resources)]
-<!-- keep by customization: end -->

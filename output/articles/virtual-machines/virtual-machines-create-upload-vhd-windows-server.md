@@ -14,9 +14,11 @@
 	wacn.date=""/>
 
 # Create and upload a Windows Server VHD to Azure
+<!-- deleted by customization
 
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
 
+-->
 
 This article shows you how to upload a virtual hard disk (VHD) with an operating system so you can use it as an image to create virtual machines based on that image. For more details about disks and VHDs in Windows Azure, see [About Disks and VHDs for Virtual Machines](/documentation/articles/virtual-machines-disks-vhds).
 

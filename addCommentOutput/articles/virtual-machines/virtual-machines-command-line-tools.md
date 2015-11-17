@@ -15,12 +15,7 @@
 
 # Using the Azure CLI for Mac, Linux, and Windows with Azure Service Management
 
-<!-- deleted by customization
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-include.md)] This article covers creating and managing a resource with CLI commands in the classic deployment model. You can also create and manage a resource with CLI commands in the [Resource Manager deployment model](/documentation/articles/azure-cli-arm-commands).
--->
-<!-- keep by customization: begin -->
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-include.md)] This article covers creating a resource with the classic deployment model. You can also create a resource with the [Resource Manager deployment model](/documentation/articles/virtual-machines-deploy-rmtemplates-azure-cli).
-<!-- keep by customization: end -->
 
 This article describes how to use the Azure CLI in the Service Management mode (asm mode) to create, manage, and delete services on the command line of Mac, Linux, and Windows computers. You can perform many of the same tasks using the various libraries of the Azure SDKs, with Azure PowerShell, and using the Azure Management Portal. Using Azure services with the Service Management mode is conceptually similar to creating and managing individual Azure concepts and services like Websites, Virtual Machines, Virtual Networks, Storage, and so on.  
 
@@ -64,9 +59,9 @@ This command imports a publishsettings file or certificate so that it can be use
 
 	~$ azure account import publishsettings.publishsettings
 	info:   Importing publish settings file publishsettings.publishsettings
-	info:   Found subscription: 3-Month <!-- keep by customization: begin --> 1-RMB <!-- keep by customization: end --> Trial
+	info:   Found subscription: 3-Month Trial
 	info:   Found subscription: Pay-As-You-Go
-	info:   Setting default subscription to: 3-Month <!-- keep by customization: begin --> 1-RMB <!-- keep by customization: end --> Trial
+	info:   Setting default subscription to: 3-Month Trial
 	warn:   The 'publishsettings.publishsettings' file contains sensitive information.
 	warn:   Remember to delete it now that it has been imported.
 	info:   Account publish settings imported successfully
@@ -174,14 +169,8 @@ Show account environment details
 	~$ azure account env show
 	info:    Executing command account env show
 	Environment name: AzureCloud
-<!-- deleted by customization
 	data:    Environment publishingProfile  http://go.microsoft.com/fwlink/?LinkId=2544
 	data:    Environment portal  http://go.microsoft.com/fwlink/?LinkId=2544
--->
-<!-- keep by customization: begin -->
-	data:    Environment publishingProfile  <!--http://go.microsoft.com/fwlink/?LinkId=2544--><!--??????cannot be found -->
-	data:    Environment portal  <!--http://go.microsoft.com/fwlink/?LinkId=2544--><!--??????cannot be found -->
-<!-- keep by customization: end -->
 	info:    account env show command OK
 
 **account env add [options] [environment]**
@@ -230,7 +219,7 @@ The following optional parameters are supported for this command:
 **-s** The subscription <br />
 **-o, --community** The specified image is a community image <br />
 **-w** The virtual network name <br/>
-**-l, --location** specifies the location (for example, <!-- deleted by customization "China North") --><!-- keep by customization: begin --> "North <!-- keep by customization: end --><!-- keep by customization: begin --> Central China") <!-- keep by customization: end -->. <br />
+**-l, --location** specifies the location (for example, "China North"). <br />
 **-a, --affinity-group** specifies the affinity group.<br />
 **-w, --virtual-network-name** Specify the virtual network on which to add the new virtual machine. Virtual networks can be set up and managed from the Azure Management Portal.<br />
 **-b, --subnet-names** Specifies the subnet names to assign the virtual machine.
@@ -268,7 +257,7 @@ This command lists all available Azure account locations.
 	info:   Executing command vm location list
 	data:   Name                   Display Name
 	data:   ---------------------  ------------
-	data:   Azure Preview  <!-- deleted by customization China --> North <!-- keep by customization: begin --> US <!-- keep by customization: end -->
+	data:   Azure Preview  China North
 	info:   account location list command OK
 
 **vm show [options] &lt;name>**
@@ -471,7 +460,7 @@ This command shows the details of a virtual machine image.
 	data:       Label: 'Windows Server 2008 R2 SP1, Nov 2011',
 	data:       Name: 'MSFT__Windows-Server-2008-R2-SP1.11-29-2011',
 	data:       Description: 'Microsoft Windows Server 2008 R2 SP1',
-	data:       @: { xmlns: <!-- deleted by customization 'http://schemas.microsoft.com/windowsazure' --><!-- keep by customization: begin --> 'http://schemas.microsoft.cn/windowsazure' <!-- keep by customization: end -->, xmlns:i: 'http://www.w3.org/2001/XMLSchema-instance' },
+	data:       @: { xmlns: 'http://schemas.microsoft.com/windowsazure', xmlns:i: 'http://www.w3.org/2001/XMLSchema-instance' },
 	data:       Category: 'Microsoft',
 	data:       OS: 'Windows',
 	data:       Eula: 'http://www.microsoft.com',
@@ -620,12 +609,14 @@ This command creates a new cloud service
 	info:    Executing command service create
 	+ Getting locations
 	help:    Location:
-	  1) East Asia
-	  2) Southeast Asia
+	  1) China East
+	  2) China North
+<!-- deleted by customization
 	  3) China North
 	  4) West Europe
 	  5) China East
 	  6) China North
+-->
 	  : 6
 	+ Creating cloud service
 	data:    Cloud service name newservicemsopentech
@@ -856,22 +847,16 @@ This command lists your web app locations.
 	+ Getting locations
 	data:    Name
 	data:    ----------------
+<!-- deleted by customization
 	data:    West Europe
-	data:    China North
-<!-- deleted by customization
-	data:    China North
 -->
-<!-- keep by customization: begin -->
-	data:    North Central China
-<!-- keep by customization: end -->
 	data:    China North
-	data:    East Asia
 <!-- deleted by customization
+	data:    China North
+	data:    China North
 	data:    China East
 -->
-<!-- keep by customization: begin -->
-	data:    ChinaEast
-<!-- keep by customization: end -->
+	data:    China East
 	info:    site location list command OK
 
 ###Commands to manage your web app application settings
@@ -1183,7 +1168,9 @@ This command lists geographic locations supported by Mobile Services.
 	~$ azure mobile locations
 	info:    Executing command mobile locations
 	info:    China East (default)
+<!-- deleted by customization
 	info:    China North
+-->
 	info:    China North
 
 **mobile create [options] [servicename] [sqlAdminUsername] [sqlAdminPassword]**
@@ -1843,14 +1830,18 @@ Display a list of all available namespace locations.
 	+ Getting locations
 	data:    Name              Code
 	data:    ----------------  ----------------
-	data:    East Asia         East Asia
+<!-- deleted by customization
+	data:    China East         China East
 	data:    West Europe       West Europe
+-->
 	data:    China North      China North
 	data:    China East           China East
-	data:    Southeast Asia    Southeast Asia
+<!-- deleted by customization
+	data:    China North    China North
 	data:    China North  China North
 	data:    China North           China North
 	data:    China East  China East
+-->
 	info:    sb namespace location list command OK
 
 **sb namespace show &lt;name>**

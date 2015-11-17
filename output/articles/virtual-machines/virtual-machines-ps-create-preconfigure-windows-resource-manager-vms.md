@@ -15,11 +15,19 @@
 
 # Create and configure a Windows Virtual Machine with Resource Manager and Azure PowerShell
 
+<!-- deleted by customization
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] [classic deployment model](/documentation/articles/virtual-machines-ps-create-preconfigure-windows-vms).
 
+-->
 These steps show you how to construct a set of Azure PowerShell commands to create and configure an Azure virtual machine. You can use this building block process to quickly create a command set for a new Windows-based virtual machine and expand an existing deployment. You can also use it to create multiple command sets that quickly build out a custom dev/test or IT pro environment.
 
 These steps follow a fill-in-the-blanks approach for creating Azure PowerShell command sets. This approach can be useful if you are new to PowerShell or you just want to know what values to specify for successful configuration. If you are an advanced PowerShell user, you can take the commands and substitute your own values for the variables (the lines beginning with "$")
+<!-- keep by customization: begin -->
+
+[AZURE.INCLUDE [resource-manager-pointer-to-service-management](../includes/resource-manager-pointer-to-service-management.md)]
+
+- [Use Azure PowerShell to create and preconfigure Windows-based Virtual Machines](/documentation/articles/virtual-machines-ps-create-preconfigure-windows-vms)
+<!-- keep by customization: end -->
 
 ## Step 1: Install Azure PowerShell
 
@@ -107,7 +115,7 @@ VMs created with the Resource Manager deployment model can use a public domain n
 To test whether a chosen domain name label is globally unique, use these commands.
 
 	$domName="<domain name label to test>"
-	$loc="<short name of an Azure location, for example, for China North, the short name is westus>"
+	$loc="<short name of an Azure location, for example, for China North, the short name is chinanorth>"
 	Test-AzureRmDnsAvailability -DomainQualifiedName $domName -Location $loc
 
 If DNSNameAvailability is "True", your proposed name is globally unique.

@@ -7,9 +7,9 @@
 	manager="douge" 
 	editor=""/>
 
-<tags 
-	ms.service="mobile-services" 
-	ms.date="09/17/2015" 
+<tags
+	ms.service="mobile-services"
+	ms.date="09/17/2015"
 	wacn.date=""/>
 
 # What happened to my Visual Studio .NET project after adding Azure Mobile Services by using Connected Services?
@@ -37,4 +37,4 @@ In your App.xaml.cs file, a **MobileServiceClient** object was created with the 
 If a .NET mobile service is created in the Connected Service Provider, then a mobile services project is created and added to the solution.
 
 
-[Learn more about mobile services](/home/features/mobile-services/) 
+[Learn more about mobile services](/documentation/services/mobile-services/) 

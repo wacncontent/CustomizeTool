@@ -261,6 +261,7 @@ To synchronize the local store with the server, you used `MSSyncTable.pullWithQu
 [Get started with Mobile Services]: /documentation/articles/mobile-services-ios-get-started
 [Handling Conflicts with Offline Support for Mobile Services]: /documentation/articles/mobile-services-ios-handling-conflicts-offline-data
 [Soft Delete]: /documentation/articles/mobile-services-using-soft-delete
+
 [Cloud Cover: Offline Sync in Azure Mobile Services]: http://channel9.msdn.com/Shows/Cloud+Cover/Episode-155-Offline-Storage-with-Donna-Malayeri
 [Azure Friday: Offline-enabled apps in Azure Mobile Services]: http://azure.microsoft.com/documentation/videos/azure-mobile-services-offline-enabled-apps-with-donna-malayeri/
 

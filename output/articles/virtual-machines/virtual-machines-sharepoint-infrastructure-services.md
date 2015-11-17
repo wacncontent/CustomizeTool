@@ -15,7 +15,12 @@
 
 # SharePoint farms hosted in Azure infrastructure services
 
+<!-- deleted by customization
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-both-include.md)]
+-->
+<!-- keep by customization: begin -->
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-include.md)] This article covers creating resources with the Resource Manager deployment model or the classic deployment model.
+<!-- keep by customization: end -->
 
 
 Set up your first or next dev/test or production SharePoint farm in Windows Azure infrastructure services, where you can take advantage of ease of configuration and the ability to quickly expand the farm to include new capacity or optimization of key functionality.

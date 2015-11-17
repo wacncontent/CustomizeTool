@@ -6,7 +6,12 @@ By default, all requests to mobile service resources are restricted to clients t
 
 		using Microsoft.WindowsAzure.Mobile.Service.Security;
 
+<!-- deleted by customization
 2. Apply the following _AuthorizeLevel_ attribute to the **TodoItemController** class. 
+-->
+<!-- keep by customization: begin -->
+2. Apply the following AuthorizeLevel attribute to the **TodoItemController** class:
+<!-- keep by customization: end -->
 
 		[AuthorizeLevel(AuthorizationLevel.User)]
 
@@ -22,4 +27,9 @@ By default, all requests to mobile service resources are restricted to clients t
 
 	This is the password that you use (with no username) to test the API help pages when you run the service locally.  This string value is not used by the live site in Azure, and you do not need to use the actual application key; any valid string value will work.
  
+<!-- deleted by customization
 4. Republish your project.
+-->
+<!-- keep by customization: begin -->
+5. Republish your project.
+<!-- keep by customization: end -->

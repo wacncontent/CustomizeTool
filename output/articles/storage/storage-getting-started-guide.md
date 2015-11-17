@@ -60,7 +60,7 @@ Next, run the sample application in the Azure Storage Emulator:
 
 To run against Azure Storage in the cloud, you'll need an Azure subscription and a storage account, if you don't have one already: 
 
-- To get an Azure subscription, see [Trial](/pricing/1rmb-trial/), [Purchase Options](/pricing/overview/), and [Member Offers](http://azure.microsoft.com/pricing/member-offers/) (for members of MSDN, Microsoft Partner Network, and BizSpark, and other Microsoft programs).
+- To get an Azure subscription, see [Trial](/pricing/1rmb-trial/), [Purchase Options](/pricing/overview/), and [Member Offers](/pricing/member-offers/) (for members of MSDN, Microsoft Partner Network, and BizSpark, and other Microsoft programs).
 - To create a storage account in Azure, see [How to create, manage, or delete a storage account](/documentation/articles/storage-create-storage-account).
 
 Once you have an account, you can create a simple Azure Storage application using one of the Azure QuickStarts sample projects in Visual Studio. This tutorial focuses on **Azure Blob Storage**, **Azure Table Storage**, and **Azure Queue Storage** sample projects:

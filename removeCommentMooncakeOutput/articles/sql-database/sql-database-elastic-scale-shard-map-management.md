@@ -7,9 +7,9 @@
 	authors="sidneyh" 
 	editor=""/>
 
-<tags 
-	ms.service="sql-database" 
-	ms.date="07/24/2015" 
+<tags
+	ms.service="sql-database"
+	ms.date="07/24/2015"
 	wacn.date=""/>
 
 # Shard map management
@@ -195,7 +195,7 @@ The code is written in a way that the entire method can be safely rerun in case 
             } 
         } 
  
-As an alternative you can use PowerShell scripts to achieve the same result.     
+As an alternative you can use PowerShell scripts to achieve the same result. 
 
 Once shard maps have been populated, data access applications can be created or adapted to work with the maps. Populating or manipulating the maps need not occur again until **map layout** needs to change.  
 
@@ -205,7 +205,7 @@ Most use of the shard map manager will come from the applications that require d
 
 Note that these applications (using **ShardMapManager** opened with read-only credentials) will be unable to make changes to the maps or mappings.  For those needs, create administrative-specific applications or PowerShell scripts that supply higher-privileged credentials as discussed earlier.   
 
-For more details, see [Data Dependent Routing](/documentation/articles/sql-database-elastic-scale-data-dependent-routing). 
+For more details, see [Data dependent routing](/documentation/articles/sql-database-elastic-scale-data-dependent-routing). 
 
 ## Modifying a shard map 
 
@@ -246,3 +246,4 @@ If the new range of key values is not already part of an existing mapping and no
 For scenarios that require data movement, however, the split-merge tool is needed to orchestrate the data movement between shards in combination with the necessary shard map updates. For details on using the split-merge yool, see [Overview of split-merge](/documentation/articles/sql-database-elastic-scale-overview-split-and-merge) 
 
 [AZURE.INCLUDE [elastic-scale-include](../includes/elastic-scale-include.md)]
+ 

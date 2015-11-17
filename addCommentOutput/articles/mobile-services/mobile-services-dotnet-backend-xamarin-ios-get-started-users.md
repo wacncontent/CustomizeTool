@@ -38,6 +38,7 @@ This tutorial is based on the Mobile Services quickstart. You must also first co
 
 <ol start="6">
 <li><p>In Visual Studio or Xamarin Studio, run the client project on a device or simulator. Verify that an unhandled exception with a status code of 401 (Unauthorized) is raised after the app starts.</p>
+
    	<p>This happens because the app attempts to access Mobile Services as an unauthenticated user, but the <em>TodoItem</em> table now requires authentication.</p></li>
 </ol>
 
@@ -102,6 +103,7 @@ In this section, you will modify the app to display a login screen before displa
 			}
 		}
 		// rest of RefreshAsync method
+
 5. Press the **Run** button to build the project and start the app in the iPhone simulator. Verify that the app displays no data.
 
 	Perform the refresh gesture by pulling down the list of items, which will cause the login screen to appear. Once you have successfully entered valid credentials, the app will display the list of todo items and you can make updates to the data.
@@ -110,6 +112,7 @@ In this section, you will modify the app to display a login screen before displa
 
 In the next tutorial, [Service-side authorization of Mobile Services users][Authorize users with scripts], you will take the user ID value provided by Mobile Services based on an authenticated user and use it to filter the data returned by Mobile Services.
  -->
+
 <!-- Anchors. -->
 [Register your app for authentication and configure Mobile Services]: #register
 [Restrict table permissions to authenticated users]: #permissions
@@ -126,4 +129,5 @@ In the next tutorial, [Service-side authorization of Mobile Services users][Auth
 [Get started with push notifications]: /documentation/articles/mobile-services-dotnet-backend-xamarin-ios-get-started-push
 [Authorize users with scripts]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-authorize-users-in-scripts
 [JavaScript and HTML]: /documentation/articles/mobile-services-dotnet-backend-windows-store-javascript-get-started-users
+
 [Azure Management Portal]: https://manage.windowsazure.cn/

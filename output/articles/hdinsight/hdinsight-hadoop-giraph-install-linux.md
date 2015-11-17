@@ -38,11 +38,16 @@ This script performs the following actions:
 
 ## <a name="install"></a>Install Giraph using Script Actions
 
-A sample script to install Giraph on an HDInsight cluster is available from a read-only Azure storage blob at [https://hdiconfigactions.blob.core.windows.net/linuxgiraphconfigactionv01/giraph-installer-v01.sh](https://hdiconfigactions.blob.core.windows.net/linuxgiraphconfigactionv01/giraph-installer-v01.sh). This section provides instructions on how to use the sample script while creating the cluster by using the Azure Management Portal.
+A sample script to install Giraph on an HDInsight cluster is available from a read-only Azure storage blob at [https://hdiconfigactions.blob.core.windows.net/linuxgiraphconfigactionv01/giraph-installer-v01.sh](https://hdiconfigactions.blob.core.windows.net/linuxgiraphconfigactionv01/giraph-installer-v01.sh). This section provides instructions on how to use the sample script while <!-- deleted by customization creating --><!-- keep by customization: begin --> provisioning <!-- keep by customization: end --> the cluster by using the Azure Management Portal.
 
 > [AZURE.NOTE] You can also use Azure PowerShell or the HDInsight .NET SDK to create a cluster using this script. For more information on using these methods, see [Customize HDInsight clusters with Script Actions](/documentation/articles/hdinsight-hadoop-customize-cluster).
 
+<!-- deleted by customization
 1. Start creating a cluster by using the steps in [Create Linux-based HDInsight clusters](/documentation/articles/hdinsight-provision-linux-clusters#portal), but do not complete creation.
+-->
+<!-- keep by customization: begin -->
+1. Start provisioning a cluster by using the steps in [Provision Linux-based HDInsight clusters](/documentation/articles/hdinsight-provision-linux-clusters#portal), but do not complete provisioning.
+<!-- keep by customization: end -->
 
 2. On the **Optional Configuration** blade, select **Script Actions**, and provide the information below:
 
@@ -55,11 +60,16 @@ A sample script to install Giraph on an HDInsight cluster is available from a re
 
 3. At the bottom of the **Script Actions**, use the **Select** button to save the configuration. Finally, use the **Select** button at the bottom of the **Optional Configuration** blade to save the optional configuration information.
 
+<!-- deleted by customization
 4. Continue creating the cluster as described in [Create Linux-based HDInsight clusters](/documentation/articles/hdinsight-provision-linux-clusters#portal).
+-->
+<!-- keep by customization: begin -->
+4. Continue provisioning the cluster as described in [Provision Linux-based HDInsight clusters](/documentation/articles/hdinsight-provision-linux-clusters#portal).
+<!-- keep by customization: end -->
 
 ## <a name="usegiraph"></a>How do I use Giraph in HDInsight?
 
-Once the cluster has finished creating, use the following steps to run the SimpleShortestPathsComputation example included with Giraph. This implements the basic <a href = "http://people.apache.org/~edwardyoon/documents/pregel.pdf">Pregel</a> implementation for finding the shortest path between objects in a graph.
+Once the cluster has finished <!-- deleted by customization creating --><!-- keep by customization: begin --> provisioning <!-- keep by customization: end -->, use the following steps to run the SimpleShortestPathsComputation example included with Giraph. This implements the basic <a href = "http://people.apache.org/~edwardyoon/documents/pregel.pdf">Pregel</a> implementation for finding the shortest path between objects in a graph.
 
 1. Connect to the HDInsight cluster using SSH:
 
@@ -83,7 +93,12 @@ Once the cluster has finished creating, use the following steps to run the Simpl
 		[3,0,[[0,3],[1,1],[4,4]]]
 		[4,0,[[3,4],[2,4]]]
 
+<!-- deleted by customization
 	This data describes a relationship between objects in a directed graph, by using the format [source\_id, source\_value,[[dest\_id], [edge\_value],...]]. Each line represents a relationship between a **source\_id** object and one or more **dest\_id** objects. The **edge\_value** (or weight) can be thought of as the strength or distance of the connection between **source_id** and **dest\_id**.
+-->
+<!-- keep by customization: begin -->
+	This data describes a relationship between objects in a directed graph, by using the format [source_id, source_value,[[dest_id], [edge_value],...]]. Each line represents a relationship between a **source_id** object and one or more **dest_id** objects. The **edge_value** (or weight) can be thought of as the strength or distance of the connection between **source_id** and **dest_id**.
+<!-- keep by customization: end -->
 
 	Drawn out, and using the value (or weight) as the distance between objects, the above data might look like this:
 

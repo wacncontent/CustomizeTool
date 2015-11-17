@@ -160,7 +160,7 @@ its look and feel. This is the responsive web design that is built into
 Bootstrap.
 
 To see how the Web app would look without Bootstrap, open
-*App_Start\\BundleConfig.cs* and comment out the lines that contain
+*App\_Start\\BundleConfig.cs* and comment out the lines that contain
 *bootstrap.js* and *bootstrap.css*. The following code shows the last
 two statements of the `RegisterBundles` method after the change:
 
@@ -207,14 +207,8 @@ file and add *.Mobile* to the file name. For example, to create a mobile
 
 In this section, you'll create a mobile-specific layout file.
 
-<!-- deleted by customization
-To start, copy *Views\\Shared\\_Layout.cshtml* to
-*Views\\Shared\\_Layout.Mobile.cshtml*. Open *_Layout.Mobile.cshtml*
--->
-<!-- keep by customization: begin -->
-To start, copy *Views\\Shared\_Layout.cshtml* to
-*Views\\Shared\_Layout.Mobile.cshtml*. Open *_Layout.Mobile.cshtml*
-<!-- keep by customization: end -->
+To start, copy *Views\\Shared\\\_Layout.cshtml* to
+*Views\\Shared\\\_Layout.Mobile.cshtml*. Open *\_Layout.Mobile.cshtml*
 and change the title from **MVC5 Application** to **MVC5 Application
 (Mobile)**.
 
@@ -236,12 +230,12 @@ Copy the *Views\\Home\\AllTags.cshtml* file to
 
 Browse to the tags page using a desktop browser and using mobile browser
 emulator. The mobile browser emulator shows the two changes you made
-(the title from *_Layout.Mobile.cshtml* and the title from
+(the title from *\_Layout.Mobile.cshtml* and the title from
 *AllTags.Mobile.cshtml*).
 
 ![][AllTagsMobile_LayoutMobile]
 
-In contrast, the desktop display has not changed (with titles from from *_Layout.cshtml* and 
+In contrast, the desktop display has not changed (with titles from from *\_Layout.cshtml* and 
 *AllTags.cshtml*).
 
 ![][AllTagsMobile_LayoutMobileDesktop]
@@ -284,14 +278,8 @@ Alternatively, you can just manually add the following line to the
     using System.Web.WebPages;
 
 Save the changes. Copy the
-<!-- deleted by customization
-*Views\\Shared\\_Layout.Mobile.cshtml* file to
-*Views\\Shared\\_Layout.iPhone.cshtml*. Open the new file
--->
-<!-- keep by customization: begin -->
-*Views\\Shared\_Layout.Mobile.cshtml* file to
-*Views\\Shared\_Layout.iPhone.cshtml*. Open the new file
-<!-- keep by customization: end -->
+*Views\\Shared\\\_Layout.Mobile.cshtml* file to
+*Views\\Shared\\\_Layout.iPhone.cshtml*. Open the new file
 and then change the title from `MVC5 Application (Mobile)` to
 `MVC5 Application (iPhone)`.
 
@@ -316,14 +304,14 @@ emulator in Internet Explorer 11 F12 developer tools with the custom user agent 
 In the mobile browser, select the **Speakers** link. Because there's not
 a mobile view (*AllSpeakers.Mobile.cshtml*), the default speakers view
 (*AllSpeakers.cshtml*) is rendered using the mobile layout view
-(*_Layout.Mobile.cshtml*). As shown below, the title **MVC5 Application
-(Mobile)** is defined in *_Layout.Mobile.cshtml*.
+(*\_Layout.Mobile.cshtml*). As shown below, the title **MVC5 Application
+(Mobile)** is defined in *\_Layout.Mobile.cshtml*.
 
 ![][AllSpeakers_LayoutMobile]
 
 You can globally disable a default (non-mobile) view from rendering
 inside a mobile layout by setting `RequireConsistentDisplayMode` to
-`true` in the <!-- deleted by customization *Views\\_ViewStart.cshtml* --><!-- keep by customization: begin --> *Views\_ViewStart.cshtml* <!-- keep by customization: end --> file, like this:
+`true` in the *Views\\\_ViewStart.cshtml* file, like this:
 
     @{
         Layout = "~/Views/Shared/_Layout.cshtml";
@@ -331,7 +319,7 @@ inside a mobile layout by setting `RequireConsistentDisplayMode` to
     }
 
 When `RequireConsistentDisplayMode` is set to `true`, the mobile layout
-(*_Layout.Mobile.cshtml*) is used only for mobile views (i.e. when the
+(*\_Layout.Mobile.cshtml*) is used only for mobile views (i.e. when the
 view file is of the form ***ViewName**.Mobile.cshtml*). You might want
 to set `RequireConsistentDisplayMode` to `true` if your mobile layout
 doesn't work well with your non-mobile views. The screenshot below shows
@@ -466,7 +454,7 @@ the file and paste the following code into it:
     });
 
 You also need to include filter.js in your registered bundles. Open
-*App_Start\\BundleConfig.cs* and change the first bundles. Change the
+*App\_Start\\BundleConfig.cs* and change the first bundles. Change the
 first `bundles.Add` statement (for the **jquery** bundle) to include
 *Scripts\\filter.js*, as follows:
 
@@ -474,7 +462,7 @@ first `bundles.Add` statement (for the **jquery** bundle) to include
                 "~/Scripts/jquery-{version}.js",
                 "~/Scripts/filter.js"));
 
-The **jquery** bundle is already rendered by the default *_Layout*
+The **jquery** bundle is already rendered by the default *\_Layout*
 view. Later, you can utilize the same JavaScript code to apply the
 filter functionality to other list views.
 

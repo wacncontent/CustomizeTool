@@ -199,19 +199,20 @@ A reference for the template expression language is in [Notification Hubs How-To
 <!-- URLs. -->
 [How To: Service Bus Notification Hubs (iOS Apps)]: http://msdn.microsoft.com/zh-cn/library/jj927168.aspx
 [Use Notification Hubs to send breaking news]: /manage/services/notification-hubs/breaking-news-ios
-[Mobile Service]: /develop/mobile/tutorials/get-started
-[Notify users with Notification Hubs: ASP.NET]: /manage/services/notification-hubs/notify-users-aspnet
-[Notify users with Notification Hubs: Mobile Services]: /manage/services/notification-hubs/notify-users
+[Mobile Service]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started
+[Notify users with Notification Hubs: ASP.NET]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-push-notifications-app-users-aspnet
+[Notify users with Notification Hubs: Mobile Services]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-push-notifications-app-users
 [Submit an app page]: http://go.microsoft.com/fwlink/p/?LinkID=266582
 [My Applications]: http://go.microsoft.com/fwlink/p/?LinkId=262039
 [Live SDK for Windows]: http://go.microsoft.com/fwlink/p/?LinkId=262253
-[Get started with Mobile Services]: /develop/mobile/tutorials/get-started/#create-new-service
-[Get started with data]: /develop/mobile/tutorials/get-started-with-data-ios
-[Get started with authentication]: /develop/mobile/tutorials/get-started-with-users-ios
-[Get started with push notifications]: /develop/mobile/tutorials/get-started-with-push-ios
+[Get started with Mobile Services]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started/#create-new-service
+[Get started with data]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-data-ios
+[Get started with authentication]: /documentation/articles/mobile-services-ios-get-started-users
+[Get started with push notifications]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-push-ios
 [Push notifications to app users]: /develop/mobile/tutorials/push-notifications-to-users-ios
-[Authorize users with scripts]: /develop/mobile/tutorials/authorize-users-in-scripts-ios
+[Authorize users with scripts]: /documentation/articles/mobile-services-ios-authorize-users-in-scripts
 [JavaScript and HTML]: /documentation/articles/get-started-with-push-js
+
 [Azure Management Portal]: https://manage.windowsazure.cn/
 [Windows Developer Preview registration steps for Mobile Services]: /documentation/articles/mobile-services-windows-developer-preview-registration
 [wns object]: https://msdn.microsoft.com/zh-cn/library/azure/jj860484.aspx

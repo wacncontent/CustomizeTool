@@ -1,5 +1,8 @@
 <properties pageTitle="Tutorial: Azure Active Directory integration with Syncplicity | Windows Azure" description="Learn how to use Syncplicity with Azure Active Directory to enable single sign-on, automated provisioning, and more!." services="active-directory" authors="MarkusVi"  documentationCenter="na" manager="stevenpo"/>
-<tags ms.service="active-directory" ms.devlang="na" ms.topic="article" ms.tgt_pltfrm="na" ms.workload="identity" ms.date="08/01/2015" ms.author="markvi" />
+<tags
+	ms.service="active-directory"
+	ms.date="08/01/2015"
+	wacn.date=""/>
 #Tutorial: Azure Active Directory integration with Syncplicity
 <!-- deleted by customization
 >[AZURE.TIP]For feedback, click [here](https://social.msdn.microsoft.com/Forums/azure/zh-cn/734af3ec-5da9-4398-86c9-14830b1877ba/tutorial-azure-ad-integration-with-syncplicity?forum=WindowsAzureAD).

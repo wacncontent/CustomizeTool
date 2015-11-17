@@ -7,9 +7,9 @@
 	editor="" 
 	services="mobile-services"/>
 
-<tags 
-	ms.service="mobile-services" 
-	ms.date="06/09/2015" 
+<tags
+	ms.service="mobile-services"
+	ms.date="09/28/2015"
 	wacn.date=""/>
 
 # Get started with custom authentication
@@ -17,7 +17,7 @@
 ## Overview
 This topic shows you how to authenticate users in the Azure Mobile Services .NET backend by issuing your own Mobile Services authentication token. In this tutorial, you add authentication to the quickstart project using a custom username and password for your app.
 
->[AZURE.NOTE] This tutorial demonstrates an advanced method of authenticating your Mobile Services with custom credentials. Many apps will be best suited to instead use the built-in social identity providers, allowing users to log in via Microsoft Account, and Azure Active Directory. If this is your first experience with authentication in Mobile Services, please see the [Add authentication to your app] tutorial.
+>[AZURE.NOTE] This tutorial demonstrates an advanced method of authenticating your Mobile Services with custom credentials. Many apps will be best suited to instead use the built-in social identity providers, allowing users to log in via Facebook, Twitter, Google, Microsoft Account, and Azure Active Directory. If this is your first experience with authentication in Mobile Services, please see the [Add authentication to your app] tutorial.
 
 This tutorial is based on the Mobile Services quickstart. You must also first complete the tutorial [Get started with Mobile Services]. 
 
@@ -35,12 +35,12 @@ Because you are using custom authentication and not relying on another identity 
 
 3. Replace the class definition with the following code:
 
-            public class Account : EntityData
-            {
-                public string Username { get; set; }
-                public byte[] Salt { get; set; }
-                public byte[] SaltedAndHashedPassword { get; set; }
-            }
+	    public class Account : EntityData
+	    {
+	        public string Username { get; set; }
+	        public byte[] Salt { get; set; }
+	        public byte[] SaltedAndHashedPassword { get; set; }
+	    }
     
     This represents a row in a new Account table, which contains the username, that user's salt, and the securly stored password.
 
@@ -114,45 +114,45 @@ At this point, you have everything you need to begin creating user accounts. In 
  
 4. Replace the class definition with the following code:
 
-        [AuthorizeLevel(AuthorizationLevel.Anonymous)]
-        public class CustomRegistrationController : ApiController
-        {
-            public ApiServices Services { get; set; }
-
-            // POST api/CustomRegistration
-            public HttpResponseMessage Post(RegistrationRequest registrationRequest)
-            {
-                if (!Regex.IsMatch(registrationRequest.username, "^[a-zA-Z0-9]{4,}$"))
-                {
-                    return this.Request.CreateResponse(HttpStatusCode.BadRequest, "Invalid username (at least 4 chars, alphanumeric only)");
-                }
-                else if (registrationRequest.password.Length < 8)
-                {
-                    return this.Request.CreateResponse(HttpStatusCode.BadRequest, "Invalid password (at least 8 chars required)");
-                }
-
-                todoContext context = new todoContext();
-                Account account = context.Accounts.Where(a => a.Username == registrationRequest.username).SingleOrDefault();
-                if (account != null)
-                {
+	    [AuthorizeLevel(AuthorizationLevel.Anonymous)]
+	    public class CustomRegistrationController : ApiController
+	    {
+	        public ApiServices Services { get; set; }
+	
+	        // POST api/CustomRegistration
+	        public HttpResponseMessage Post(RegistrationRequest registrationRequest)
+	        {
+	            if (!Regex.IsMatch(registrationRequest.username, "^[a-zA-Z0-9]{4,}$"))
+	            {
+	                return this.Request.CreateResponse(HttpStatusCode.BadRequest, "Invalid username (at least 4 chars, alphanumeric only)");
+	            }
+	            else if (registrationRequest.password.Length < 8)
+	            {
+	                return this.Request.CreateResponse(HttpStatusCode.BadRequest, "Invalid password (at least 8 chars required)");
+	            }
+	
+	            todoContext context = new todoContext();
+	            Account account = context.Accounts.Where(a => a.Username == registrationRequest.username).SingleOrDefault();
+	            if (account != null)
+	            {
 	                return this.Request.CreateResponse(HttpStatusCode.BadRequest, "That username already exists.");
-                }
-                else
-                {
-                    byte[] salt = CustomLoginProviderUtils.generateSalt();
-                    Account newAccount = new Account
-                    {
-                        Id = Guid.NewGuid().ToString(),
-                        Username = registrationRequest.username,
-                        Salt = salt,
-                        SaltedAndHashedPassword = CustomLoginProviderUtils.hash(registrationRequest.password, salt)
-                    };
-                    context.Accounts.Add(newAccount);
-                    context.SaveChanges();
-                    return this.Request.CreateResponse(HttpStatusCode.Created);
-                }
-            }
-        }   
+	            }
+	            else
+	            {
+	                byte[] salt = CustomLoginProviderUtils.generateSalt();
+	                Account newAccount = new Account
+	                {
+	                    Id = Guid.NewGuid().ToString(),
+	                    Username = registrationRequest.username,
+	                    Salt = salt,
+	                    SaltedAndHashedPassword = CustomLoginProviderUtils.hash(registrationRequest.password, salt)
+	                };
+	                context.Accounts.Add(newAccount);
+	                context.SaveChanges();
+	                return this.Request.CreateResponse(HttpStatusCode.Created);
+	            }
+	        }
+	    }   
 
     Remember to replace the *todoContext* variable with the name of your project's **DbContext**. Note that this controller uses the following attribute to allow all traffic to this endpoint:
 
@@ -214,9 +214,10 @@ If you use the visual studio 2013, you maybe need to install the `WindowsAzure.M
             return;
         }
 
-	This method is a no-op here since **CustomLoginProvider** is not integrating with the authentication pipeline.
+	This method is not implemented because **CustomLoginProvider** is not integrating with the authentication pipeline.
 
 4. Add the following implementation of the abstract method `ParseCredentials` to **CustomLoginProvider**. 
+
         public override ProviderCredentials ParseCredentials(JObject serialized)
         {
             if (serialized == null)
@@ -248,9 +249,12 @@ If you use the visual studio 2013, you maybe need to install the `WindowsAzure.M
         }
 
 	This method translates a [ClaimsIdentity] into a [ProviderCredentials] object that is used in the authentication token issuance phase. You will again want to capture any additional claims in this method.
+	
 6. Open the WebApiConfig.cs project file in the App_Start folder and the following line of code after the **ConfigOptions** is created:
 		
 		options.LoginProviders.Add(typeof(CustomLoginProvider));
+
+	
 
 ## Create the sign-in endpoint
 
@@ -285,28 +289,28 @@ Next, you create an endpoint for your users to sign-in. The username and passwor
 		using <my_project_namespace>.Models;
 
 3. Replace the **CustomLoginController** class definition with following code:
-
-        [AuthorizeLevel(AuthorizationLevel.Anonymous)]
-        public class CustomLoginController : ApiController
-        {
-            public ApiServices Services { get; set; }
-            public IServiceTokenHandler handler { get; set; }
-
-            // POST api/CustomLogin
-            public HttpResponseMessage Post(LoginRequest loginRequest)
-            {
-                todoContext context = new todoContext();
+ 
+	    [AuthorizeLevel(AuthorizationLevel.Anonymous)]
+	    public class CustomLoginController : ApiController
+	    {
+	        public ApiServices Services { get; set; }
+	        public IServiceTokenHandler handler { get; set; }
+	
+	        // POST api/CustomLogin
+	        public HttpResponseMessage Post(LoginRequest loginRequest)
+	        {
+	            todoContext context = new todoContext();
 	            Account account = context.Accounts
 	                .Where(a => a.Username == loginRequest.username).SingleOrDefault();
-                if (account != null)
-                {
+	            if (account != null)
+	            {
 	                byte[] incoming = CustomLoginProviderUtils
 	                    .hash(loginRequest.password, account.Salt);
-
-                    if (CustomLoginProviderUtils.slowEquals(incoming, account.SaltedAndHashedPassword))
-                    {
-                        ClaimsIdentity claimsIdentity = new ClaimsIdentity();
-                        claimsIdentity.AddClaim(new Claim(ClaimTypes.NameIdentifier, loginRequest.username));
+	
+	                if (CustomLoginProviderUtils.slowEquals(incoming, account.SaltedAndHashedPassword))
+	                {
+	                    ClaimsIdentity claimsIdentity = new ClaimsIdentity();
+	                    claimsIdentity.AddClaim(new Claim(ClaimTypes.NameIdentifier, loginRequest.username));
 	                    LoginResult loginResult = new CustomLoginProvider(handler)
 	                        .CreateLoginResult(claimsIdentity, Services.Settings.MasterKey);
 	                    var customLoginResult = new CustomLoginResult()
@@ -315,12 +319,12 @@ Next, you create an endpoint for your users to sign-in. The username and passwor
 	                        MobileServiceAuthenticationToken = loginResult.AuthenticationToken
 	                    };
 	                    return this.Request.CreateResponse(HttpStatusCode.OK, customLoginResult);
-                    }
-                }
+	                }
+	            }
 	            return this.Request.CreateResponse(HttpStatusCode.Unauthorized,
 	                "Invalid username or password");
-            }
-        }
+	        }
+	    }
 
        Remember to replace the *todoContext* variable with the name of your project's **DbContext**. Note that this controller uses the following attribute to allow all traffic to this endpoint:
 
@@ -385,7 +389,7 @@ This section describes the steps needed to access the custom authentication endp
 
 	You only need to call the **CustomRegistration** endpoint once to create an account for a given user, as long as you keep the user login information in the Accounts table. For examples of how to call a custom API on the various supported client platforms, see the article [Custom API in Azure Mobile Services – client SDKs](http://blogs.msdn.com/b/carlosfigueira/archive/2013/06/19/custom-api-in-azure-mobile-services-client-sdks.aspx).
 	 
-	> [AZURE.IMPORTANT] Because this user provisioning step occurs only once, you should consider creating the user account in some out-of-band fashion. For a public registration endpoint, you should also consider implementing an SMS-based or email-based verification process, or some other safeguard to prevent the generation of fruadulent accounts. You can use Twilio to send SMS messages from Mobile services. For more information, see [How to: Send an SMS message](/documentation/articles/partner-twilio-mobile-services-how-to-use-voice-sms#howto_send_sms). You can also use SendGrid to send emails from Mobile Services. For more inforation, see [Send email from Mobile Services with SendGrid](/documentation/articles/store-sendgrid-mobile-services-send-email-scripts). 
+	> [AZURE.IMPORTANT] Because this user provisioning step occurs only once, you should consider creating the user account in some out-of-band fashion. For a public registration endpoint, you should also consider implementing an SMS-based or email-based verification process, or some other safeguard to prevent the generation of fruadulent accounts. You can use Twilio to send SMS messages from Mobile services. You can also use SendGrid to send emails from Mobile Services. For more inforation on using SendGrid, see [Send email from Mobile Services with SendGrid](/documentation/articles/store-sendgrid-mobile-services-send-email-scripts). 
 	
 3. Use the appropriate **invokeApi** method again, this time to call the **CustomLogin** endpoint, passing the runtime-supplied username and password in the message body. 
 
@@ -410,6 +414,7 @@ This completes this tutorial.
 <!-- URLs. -->
 [Add authentication to your app]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-users
 [Get started with Mobile Services]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started
+
 [ClaimsIdentity]: https://msdn.microsoft.com/zh-cn/library/system.security.claims.claimsidentity(v=vs.110).aspx
 [ProviderCredentials]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.mobile.service.security.providercredentials.aspx
  

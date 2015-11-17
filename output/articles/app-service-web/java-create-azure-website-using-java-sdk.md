@@ -30,7 +30,7 @@ This walkthrough shows you how to create an Azure SDK for Java application that 
 
 ### Software Installations
 
-The AzureWebDemo application code in this article was written using Azure Java SDK 0.7.0, which you can install using the [Web Platform Installer][](/documentation/articles/WebPI). In addition, make sure to use the latest version of the [Azure Toolkit for Eclipse][]. After you install the SDK, update the dependencies in your Eclipse project by running **Update Index** in **Maven Repositories**, then re-add the latest version of each package in the **Dependencies** window. You can verify the version of your installed software in Eclipse by clicking **Help > Installation Details**; you should have at least the following versions:
+The AzureWebDemo application code in this article was written using Azure Java SDK 0.7.0, which you can install using the [Web Platform Installer][] (WebPI). In addition, make sure to use the latest version of the [Azure Toolkit for Eclipse][]. After you install the SDK, update the dependencies in your Eclipse project by running **Update Index** in **Maven Repositories**, then re-add the latest version of each package in the **Dependencies** window. You can verify the version of your installed software in Eclipse by clicking **Help > Installation Details**; you should have at least the following versions:
 
 - Package for Windows Azure Libraries for Java 0.7.0.20150309
 - Eclipse IDE for Java EE Developers 4.4.2.20150219
@@ -236,8 +236,10 @@ where:
 - `<certificate-password>` is the password you specified when you created your JKS certificate.
 - `webAppName` can be any name you choose; this procedure uses the name `WebDemoWebApp`. The full domain name is the `webAppName` with the `domainName` appended, so in this case the full domain is `webdemowebapp.chinacloudsites.cn`.
 - `domainName` should be specified as shown above.
+<!-- deleted by customization
 - `webSpaceName` should be one of the values defined in the [WebSpaceNames][] class.
 - `appServicePlanName` should be specified as shown above.
+-->
 
 > **Note:** Each time you run this application, you need to change the value 
 > of `webAppName` and `appServicePlanName` (or delete the web app on the Azure 
@@ -457,6 +459,7 @@ Make sure you have run the **AzureWebDemo** application to create a web app. You
 #### Get FTP connection information
 
 To use FTP to deploy application files to the newly created web app, you need to obtain connection information. There are two ways to obtain connection information. One way is to visit the web app's **Dashboard** page; the other way is to download the web app's publish profile. The publish profile is an XML file that provides information such as FTP host name and logon credentials for your web apps in Azure Websites. You can use this username and password to deploy to any web app in all subscriptions associated with the Azure account, not only this one.
+<!-- deleted by customization
 
 To obtain FTP connection information from the web app's blade in the [Azure Management Portal][]:
 
@@ -467,6 +470,18 @@ To obtain FTP connection information from the web app's blade in the [Azure Mana
 To obtain FTP connection information from the publish profile:
 
 1. In the web app's blade, click **Get publish profile**. This will download a .publishsettings file to your local drive.
+-->
+<!-- keep by customization: begin -->
+To obtain FTP connection information from the website's **Dashboard** page:
+
+1. Under **Quick Glance**, find and copy the **FTP host name**. This is a URI similar to `ftp://cnws-prod-sha-001.ftp.chinacloudsites.chinacloudapi.cn`.
+
+2. Under **Quick Glance**, find and copy **Deployment / FTP user**. This will have the form *WebsiteName\DeploymentUsername*; for example `WebDemoWebsite\deployer77`.
+
+To obtain FTP connection information from the website's publish profile:
+
+1. In the website's **Dashboard**, under **Quick Glance**, click **Download the publish profile**. This will download a .publishsettings file to your local drive.
+<!-- keep by customization: end -->
 
 2. Open the .publishsettings file in an XML editor or text editor and find the `<publishProfile>` element containing `publishMethod="FTP"`. It should look like the following:
 
@@ -584,10 +599,12 @@ Another tool you can use to publish the application is FileZilla, a popular thir
 #### Clean up Azure resources
 
 This procedure creates an Azure Websites web app. You will be billed for the resource as long as it exists. Unless you plan to continue using the web app for testing or development, you should consider stopping or deleting it. A web app that has been stopped will still incur a small charge, but you can restart it at any time. Deleting a web app erases all data you have uploaded to it.
+<!-- deleted by customization
 
 [AZURE.INCLUDE [app-service-web-whats-changed](../includes/app-service-web-whats-changed.md)]
 
 [AZURE.INCLUDE [app-service-web-try-app-service](../includes/app-service-web-try-app-service.md)]
+-->
 
   [1]: ./media/java-create-azure-website-using-java-sdk/eclipse-maven-repositories-rebuild-index.png
   [2]: ./media/java-create-azure-website-using-java-sdk/eclipse-new-java-class.png
@@ -608,6 +625,6 @@ This procedure creates an Azure Websites web app. You will be billed for the res
 [What is an Azure AD directory]: http://technet.microsoft.com/zh-cn/library/jj573650.aspx
 [Create and Upload a Management Certificate for Azure]: http://msdn.microsoft.com/zh-cn/library/azure/gg551722.aspx
 [Key and Certificate Management Tool (keytool)]: http://docs.oracle.com/javase/6/docs/technotes/tools/windows/keytool.html
-[WebSiteManagementClient]: http://dl.windowsazure.cn/javadoc/com/microsoft/windowsazure/management/websites/WebSiteManagementClient.html
-[WebSpaceNames]: http://dl.windowsazure.cn/javadoc/com/microsoft/windowsazure/management/websites/models/WebSpaceNames.html
+[WebSiteManagementClient]: http://dl.windowsazure.com/javadoc/com/microsoft/windowsazure/management/websites/WebSiteManagementClient.html
+[WebSpaceNames]: http://dl.windowsazure.com/javadoc/com/microsoft/windowsazure/management/websites/models/WebSpaceNames.html
 [Azure Management Portal]: https://manage.windowsazure.cn

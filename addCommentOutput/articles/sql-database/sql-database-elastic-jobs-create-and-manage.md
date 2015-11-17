@@ -23,7 +23,7 @@
 
 ## Prerequisites
 
-* An Azure subscription. For a trial, see <!-- deleted by customization [Free one-month trial](/pricing/1rmb-trial/) --><!-- keep by customization: begin --> [trial](/pricing/1rmb-trial/) <!-- keep by customization: end -->.
+* An Azure subscription. For a trial, see [Free one-month trial](/pricing/1rmb-trial/).
 * An elastic database pool. See [About Elastic database pools](/documentation/articles/sql-database-elastic-pool)
 * Installation of elastic database job service components. See [Installing the elastic database job service](/documentation/articles/sql-database-elastic-jobs-service-installation).
 

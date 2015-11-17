@@ -27,6 +27,6 @@
  
 	![](./media/mobile-services-dotnet-backend-test-local-service-api-documentation/service-try-this-out-get-todoitems.png)
 
-	This sends a GET request to the local mobile service to return all rows in the TodoItem table. Because the table is seeded by the initializer, two TodoItem objects are returned in the body of the response message. For more information about initializers, see [How to make data model changes to a .NET backend mobile <!-- deleted by customization service](/documentation/articles/mobile-services-dotnet-backend-how-to-use-code-first-migrations) --><!-- keep by customization: begin --> service](./documentation/articles/mobile-services-dotnet-backend-how-to-use-code-first-migrations/) <!-- keep by customization: end -->.
+	This sends a GET request to the local mobile service to return all rows in the TodoItem table. Because the table is seeded by the initializer, two TodoItem objects are returned in the body of the response message. For more information about initializers, see [How to make data model changes to a .NET backend mobile service](/documentation/articles/mobile-services-dotnet-backend-how-to-use-code-first-migrations).
 
 	![](./media/mobile-services-dotnet-backend-test-local-service-api-documentation/service-try-this-out-get-response.png)

@@ -22,7 +22,7 @@ The retirement of OS Family 1 was first announced on June 1, 2013.
 
 **November 3, 2014** Extended support for Guest OS Family 1 ended and it is fully retired. All services still on Family 1 will be impacted. We may stop those services at any time. There is no guarantee your services will continue to run unless you manually upgrade them yourself.
 
-If you have additional questions, please visit the [Cloud Services Forums](http://social.msdn.microsoft.com/Forums/home?forum=windowsazuredevelopment&filter=alltypes&sort=lastpostdesc) or [contact Azure support](http://azure.microsoft.com/support/options/).
+If you have additional questions, please visit the [Cloud Services Forums](http://social.msdn.microsoft.com/Forums/home?forum=windowsazuredevelopment&filter=alltypes&sort=lastpostdesc) or [contact Azure support](/support/contact/).
 
 
 
@@ -61,19 +61,14 @@ We recommend you migrate your Cloud Service roles to one of the supported Guest 
 
 **Guest OS family 3.x** - Windows Server 2012
 
-<!-- deleted by customization 1 --><!-- keep by customization: begin --> 3 <!-- keep by customization: end -->. Ensure that your application is using SDK 1.8 or later with .NET framework 4.0 or 4.5.
-<!-- deleted by customization
-2. Set the osFamily attribute to â€œ3â€ in the ServiceConfiguration.cscfg file, and redeploy your cloud service.
--->
-<!-- keep by customization: begin -->
-4. Set the osFamily attribute to “3” in the ServiceConfiguration.cscfg file, and redeploy your cloud service.
-<!-- keep by customization: end -->
+1. Ensure that your application is using SDK 1.8 or later with .NET framework 4.0 or 4.5. 
+2. Set the osFamily attribute to <!-- deleted by customization â€œ3â€ --><!-- keep by customization: begin --> “3” <!-- keep by customization: end --> in the ServiceConfiguration.cscfg file, and redeploy your cloud service.
 
 
 **Guest OS family 2.x** - Windows Server 2008 R2
 
-<!-- deleted by customization 1 --><!-- keep by customization: begin --> 5 <!-- keep by customization: end -->. Ensure that your application is using SDK 1.3 and above with .NET framework 3.5 or 4.0.
-<!-- deleted by customization 2 --><!-- keep by customization: begin --> 6 <!-- keep by customization: end -->. Set the osFamily attribute to "2" in the ServiceConfiguration.cscfg file, and redeploy your cloud service.
+1. Ensure that your application is using SDK 1.3 and above with .NET framework 3.5 or 4.0. 
+2. Set the osFamily attribute to "2" in the ServiceConfiguration.cscfg file, and redeploy your cloud service.
 
 
 ## Extended Support for Guest OS Family 1 ended Nov 3, 2014

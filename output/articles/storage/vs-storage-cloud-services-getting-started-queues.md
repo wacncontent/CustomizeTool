@@ -17,8 +17,10 @@
 > [AZURE.SELECTOR]
 > - [Getting started](/documentation/articles/vs-storage-cloud-services-getting-started-queues)
 > - [What happened](/documentation/articles/vs-storage-cloud-services-what-happened)
+<!-- deleted by customization
 
 > [AZURE.SELECTOR]
+-->
 > - [Blobs](/documentation/articles/vs-storage-cloud-services-getting-started-blobs)
 > - [Queues](/documentation/articles/vs-storage-cloud-services-getting-started-queues)
 > - [Tables](/documentation/articles/vs-storage-cloud-services-getting-started-tables)

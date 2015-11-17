@@ -22,15 +22,15 @@
 
 This guide shows you how to restore a deleted Azure SQL database with REST API. Links to more detailed operations are provided.
 
-Restoring a deleted Azure SQL database creates a new database. The service automatically selects the service tier based on the backup used at the restore point. Make sure you have available quota on the logical server to create another database. If you'd like to request an increased quota, contact [Azure <!-- deleted by customization Support](http://azure.microsoft.com/support/options/) --><!-- keep by customization: begin --> Support](/support/contact/) <!-- keep by customization: end -->.
+Restoring a deleted Azure SQL database creates a new database. The service automatically selects the service tier based on the backup used at the restore point. Make sure you have available quota on the logical server to create another database. If you'd like to request an increased quota, contact [Azure Support](/support/contact/).
 
 ## Restrictions and Security
 
-See [Restore a deleted Azure SQL database in the Azure Management <!-- deleted by customization Portal](/documentation/articles/sql-database-restore-deleted-database-tutorial-management-portal) --><!-- keep by customization: begin --> Portal](/documentation/articles/sql-database-restore-deleted-database-tutorial-management-portal/) <!-- keep by customization: end -->.
+See [Restore a deleted Azure SQL database in the Azure Management Portal](/documentation/articles/sql-database-restore-deleted-database-tutorial-management-portal).
 
 ## How to: Restore a deleted Azure SQL database using REST API
 
-1.	List all of your restorable deleted databases by using the [List Restorable Dropped <!-- deleted by customization Databases](http://msdn.microsoft.com/zh-cn/library/azure/dn509562.aspx) --><!-- keep by customization: begin --> Databases](https://msdn.microsoft.com/zh-cn/library/azure/dn509562.aspx) <!-- keep by customization: end --> operation.
+1.	List all of your restorable deleted databases by using the [List Restorable Dropped Databases](http://msdn.microsoft.com/zh-cn/library/azure/dn509562.aspx) operation.
 	
 2.	Get the details for the deleted database you want to restore by using the [Get Restorable Dropped Database](http://msdn.microsoft.com/zh-cn/library/azure/dn509574.aspx) operation.
 

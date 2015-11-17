@@ -27,12 +27,10 @@ In the event of a user error or unintended data modification, Point In Time Rest
 
 Basic databases have 7 days of retention, Standard databases have 14 days of retention, and Premium databases have 35 days of retention. To learn more about database retention please read our [business continuity overview](/documentation/articles/sql-database-business-continuity).
 
-<!-- deleted by customization
 > [AZURE.NOTE] Restoring a database creates a new database. It is important to make sure the server you are restoring to has enough DTU capacity for the new database. You can request an increase of this quota by [contacting support](http://azure.microsoft.com/blog/azure-limits-quotas-increase-requests/).
 
--->
 ###Azure Management Portal
-1. Log in to the [Azure Management <!-- deleted by customization Portal](https://portal.Azure.com) --><!-- keep by customization: begin --> Portal](https://manage.windowsazure.cn) <!-- keep by customization: end -->
+1. Log in to the [Azure Management Portal](https://manage.windowsazure.cn)
 2. On the left side of the screen select **BROWSE** and then select **SQL Databases**.
 3. Navigate to your database and select it.
 4. At the top of your database's blade, select **Restore**.
@@ -43,14 +41,9 @@ After the restore has completed, you can configure your recovered database to be
 ###PowerShell
 Use PowerShell to programmatically perform database restore.
 
-<!-- deleted by customization
 > [AZURE.IMPORTANT] This article contains commands for versions of Azure PowerShell up to *but not including* versions 1.0 and later. You can check your version of Azure PowerShell with the **Get-Module azure | format-table version** command.
 
 To restore a database with Point In Time Restore, use the [Start-AzureSqlDatabaseRestore](https://msdn.microsoft.com/zh-cn/library/dn720218.aspx?f=255&MSPPError=-2147217396) cmdlet. For a detailed walk through, please see our [how-to video](http://azure.microsoft.com/documentation/videos/restore-a-sql-database-using-point-in-time-restore-with-microsoft-azure-powershell/).
--->
-<!-- keep by customization: begin -->
-To restore a database with Point In Time Restore, use the [Start-AzureSqlDatabaseRestore](https://msdn.microsoft.com/zh-cn/library/dn720218.aspx?f=255&MSPPError=-2147217396) cmdlet.<!-- For a detailed walk through, please see our [how-to video](http://azure.microsoft.com/documentation/videos/restore-a-sql-database-using-point-in-time-restore-with-microsoft-azure-powershell/).-->
-<!-- keep by customization: end -->
 
 		$Database = Get-AzureSqlDatabase -ServerName "YourServerName" –DatabaseName “YourDatabaseName”
 		$RestoreRequest = Start-AzureSqlDatabaseRestore -SourceDatabase $Database –TargetDatabaseName “NewDatabaseName” –PointInTime “2015-01-01 06:00:00”
@@ -61,11 +54,11 @@ After the restore has completed, you can configure your recovered database to be
 ###REST API 
 Use REST to programmatically perform database restore.
 
-1. Get the database you want to restore using the [Get <!-- deleted by customization Database](http://msdn.microsoft.com/zh-cn/library/azure/dn505708.aspx) --><!-- keep by customization: begin --> Database](https://msdn.microsoft.com/zh-CN/library/azure/dn505708.aspx) <!-- keep by customization: end --> operation.
+1. Get the database you want to restore using the [Get Database](http://msdn.microsoft.com/zh-cn/library/azure/dn505708.aspx) operation.
 
-2.	Create the restore request using the [Create Database Restore <!-- deleted by customization Request](http://msdn.microsoft.com/zh-cn/library/azure/dn509571.aspx) --><!-- keep by customization: begin --> Request](https://msdn.microsoft.com/zh-CN/library/azure/dn509571.aspx) <!-- keep by customization: end --> operation.
+2.	Create the restore request using the [Create Database Restore Request](http://msdn.microsoft.com/zh-cn/library/azure/dn509571.aspx) operation.
 	
-3.	Track the restore request using the [Database Operation <!-- deleted by customization Status](http://msdn.microsoft.com/zh-cn/library/azure/dn720371.aspx) --><!-- keep by customization: begin --> Status](https://msdn.microsoft.com/zh-CN/library/azure/dn720371.aspx) <!-- keep by customization: end --> operation.
+3.	Track the restore request using the [Database Operation Status](http://msdn.microsoft.com/zh-cn/library/azure/dn720371.aspx) operation.
 
 After the restore has completed, you can configure your recovered database to be used by following the [Finalize a Recovered Database](/documentation/articles/sql-database-recovered-finalize) guide.
 
@@ -74,12 +67,10 @@ In the event a database is deleted, Azure SQL Database allows you to restore the
 
 The retention period of a deleted database is determined by the service tier of the database while it existed or the number of days where the database exists, whichever is less. To learn more about database retention read our [business continuity overview](/documentation/articles/sql-database-business-continuity).
 
-<!-- deleted by customization
 > [AZURE.NOTE] Restoring a database creates a new database. It is important to make sure the server you are restoring to has enough DTU capacity for the new database. You can request an increase of this quota by [contacting support](http://azure.microsoft.com/blog/azure-limits-quotas-increase-requests/).
 
--->
 ###Azure Management Portal
-1. Log in to the [Azure Management <!-- deleted by customization Portal](https://portal.Azure.com) --><!-- keep by customization: begin --> Portal](https://manage.windowsazure.cn) <!-- keep by customization: end -->
+1. Log in to the [Azure Management Portal](https://manage.windowsazure.cn)
 2. On the left side of the screen select **BROWSE** and then select **SQL Servers**.
 3. Navigate to your sever and select it.
 4. Under **Operations** on you server's blade, select **Deleted Databases**.
@@ -92,7 +83,7 @@ After the restore has completed, you can configure your recovered database to be
 ###PowerShell
 Use PowerShell to programmatically perform database restore.
 
-To restore a deleted database, use the [Start-AzureSqlDatabaseRestore](https://msdn.microsoft.com/zh-cn/library/dn720218.aspx?f=255&MSPPError=-2147217396) cmdlet. <!-- deleted by customization  --><!-- keep by customization: begin --><!-- <!-- keep by customization: end --> For a detailed walk through, please see our [how-to <!-- deleted by customization video](http://azure.microsoft.com/documentation/videos/restore-a-deleted-sql-database-with-microsoft-azure-powershell/). --><!-- keep by customization: begin --> video](http://azure.microsoft.com/documentation/videos/restore-a-deleted-sql-database-with-microsoft-azure-powershell/).--><!-- keep by customization: end -->
+To restore a deleted database, use the [Start-AzureSqlDatabaseRestore](https://msdn.microsoft.com/zh-cn/library/dn720218.aspx?f=255&MSPPError=-2147217396) cmdlet.  For a detailed walk through, please see our [how-to video](http://azure.microsoft.com/documentation/videos/restore-a-deleted-sql-database-with-microsoft-azure-powershell/).
 
 1. Find the deleted database and its deletion date from the list of deleted databases.
 		
@@ -109,13 +100,13 @@ After the restore has completed, you can configure your recovered database to be
 ###REST API 
 Use REST to programmatically perform database restore.
 
-1.	List all of your restorable deleted databases by using the [List Restorable Dropped <!-- deleted by customization Databases](http://msdn.microsoft.com/zh-cn/library/azure/dn509562.aspx) --><!-- keep by customization: begin --> Databases](https://msdn.microsoft.com/zh-CN/library/azure/dn509562.aspx) <!-- keep by customization: end --> operation.
+1.	List all of your restorable deleted databases by using the [List Restorable Dropped Databases](http://msdn.microsoft.com/zh-cn/library/azure/dn509562.aspx) operation.
 	
-2.	Get the details for the deleted database you want to restore by using the [Get Restorable Dropped <!-- deleted by customization Database](http://msdn.microsoft.com/zh-cn/library/azure/dn509574.aspx) --><!-- keep by customization: begin --> Database](https://msdn.microsoft.com/zh-CN/library/azure/dn509574.aspx) <!-- keep by customization: end --> operation.
+2.	Get the details for the deleted database you want to restore by using the [Get Restorable Dropped Database](http://msdn.microsoft.com/zh-cn/library/azure/dn509574.aspx) operation.
 
-3.	Begin your restore by using the [Create Database Restore <!-- deleted by customization Request](http://msdn.microsoft.com/zh-cn/library/azure/dn509571.aspx) --><!-- keep by customization: begin --> Request](https://msdn.microsoft.com/zh-CN/library/azure/dn509571.aspx) <!-- keep by customization: end --> operation.
+3.	Begin your restore by using the [Create Database Restore Request](http://msdn.microsoft.com/zh-cn/library/azure/dn509571.aspx) operation.
 	
-4.	Track the status of your restore by using the [Database Operation <!-- deleted by customization Status](http://msdn.microsoft.com/zh-cn/library/azure/dn720371.aspx) --><!-- keep by customization: begin --> Status](https://msdn.microsoft.com/zh-CN/library/azure/dn720371.aspx) <!-- keep by customization: end --> operation.
+4.	Track the status of your restore by using the [Database Operation Status](http://msdn.microsoft.com/zh-cn/library/azure/dn720371.aspx) operation.
 
 After the restore has completed, you can configure your recovered database to be used by following the [Finalize a Recovered Database](/documentation/articles/sql-database-recovered-finalize) guide.
  

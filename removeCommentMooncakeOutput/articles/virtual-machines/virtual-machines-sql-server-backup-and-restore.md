@@ -1,18 +1,20 @@
-<properties 
-	pageTitle="Backup and Restore for SQL Server in Azure Virtual Machines"
+<properties
+	pageTitle="Backup and Restore for SQL Server | Windows Azure"
 	description="Describes backup and restore considerations for SQL Server databases running on Azure Virtual Machines."
 	services="virtual-machines"
 	documentationCenter="na"
 	authors="rothja"
 	manager="jeffreyg"
-	editor="monicar" />
+	editor="monicar"
+	tags="azure-service-management" />
 
-<tags 
+<tags
 	ms.service="virtual-machines"
 	ms.date="08/05/2015"
-	wacn.dater="" />
+	wacn.date=""/>
 
 # Backup and Restore for SQL Server in Azure Virtual Machines
+
 
 ## Overview
 

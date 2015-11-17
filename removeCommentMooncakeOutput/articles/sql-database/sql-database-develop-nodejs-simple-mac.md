@@ -8,8 +8,10 @@
 	editor=""/>
 
 
-<tags 
-	ms.service="sql-database" ms.date="07/20/2015" wacn.date=""/>
+<tags
+	ms.service="sql-database"
+	ms.date="07/20/2015"
+	wacn.date=""/>
 
 
 # Connect to SQL Database by using Node.js with Tedious on Mac OS X
@@ -45,7 +47,7 @@ After your machine is configured with **node** and **npm**, navigate to a direct
 ### Create an AdventureWorks database
 
 
-The code sample in this topic expects an **AdventureWorks** test database. If you do not already have one, see [Get started with SQL Database](/documenttation/articles/sql-database-get-started). It is important that you follow the guide to create an **AdventureWorks database template**. The examples shown below work only with the **AdventureWorks schema**. 
+The code sample in this topic expects an **AdventureWorks** test database. If you do not already have one, see [Get started with SQL Database](/documentation/articles/sql-database-get-started). It is important that you follow the guide to create an **AdventureWorks database template**. The examples shown below work only with the **AdventureWorks schema**. 
 
 
 ## Connect to your SQL Database

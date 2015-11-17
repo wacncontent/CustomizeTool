@@ -406,7 +406,7 @@ The application should now be ready for deployment.
 
 	Capistrano will connect to the VM using SSH, and then create the directory (~/apps) that the application will be deployed to. If this is the first deployment, the capistrano-postgresql gem will also create a role and database in PostgreSQL on the server. It will also create a database.yml configuration file that Rails will used to connect to the database.
 
-	> [WACOM.NOTE] If you receive an error of **Error reading response length from authentication socket** when deploying, you may need to start the SSH agent on your development environment using the `ssh-agent` command. For example, adding `eval $(ssh-agent)` to your ~/.bash_profile file.
+	> [WACOM.NOTE] If you receive an error of **Error reading response length from authentication socket** when deploying, you may need to start the SSH agent on your development environment using the `ssh-agent` command. For example, adding `eval $(ssh-agent)` to your ~/.bash\_profile file.
 	> 
 	> You may also need to add the SSH key to the agent cache using the `ssh-add` command.
 

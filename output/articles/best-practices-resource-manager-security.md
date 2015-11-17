@@ -71,7 +71,12 @@ specific named vault. Therefore, a further best practice is to not comingle corp
             },
             "location": {
                 "type": "string",
-                "allowedValues": ["China East", "China North", "West Europe", "East Asia", "South East Asia"],
+<!-- deleted by customization
+                "allowedValues": ["China East", "China North", "West Europe", "China East", "South China East"],
+-->
+<!-- keep by customization: begin -->
+                "allowedValues": ["China East", "China North"],
+<!-- keep by customization: end -->
                 "metadata": {
                     "description": "Location of the Vault"
                 }

@@ -22,15 +22,17 @@ Windows Azure Automation provides a way for users to automate the manual, long-r
 ## Tutorial
 This tutorial walks you through creating an automation account, importing a sample "Hello World" runbook into Azure Automation, executing that runbook, and then viewing its output.
 
-To complete this tutorial, you will need an Azure subscription. If you don't have one yet, you can [activate your MSDN subscriber benefits](/documentation/articles/msdn-benefits-details) or [sign up for a trial](/pricing/1rmb-trial/)</a>.
+To complete this tutorial, you will need an Azure subscription. If you don't have one yet, you can <!-- deleted by customization [activate your MSDN subscriber benefits](/documentation/articles/msdn-benefits-details) or --> [sign up for a <!-- deleted by customization trial](/documentation/articles/1rmb-trial)</a> --><!-- keep by customization: begin --> trial](/pricing/1rmb-trial/)</a> <!-- keep by customization: end -->.
 
 [AZURE.INCLUDE [automation-note-authentication](../includes/automation-note-authentication.md)]
+<!-- deleted by customization
 
 ## Video walkthrough
 
 Here's a walkthrough of this tutorial.
 
 [AZURE.VIDEO get-started-with-azure-automation]
+-->
 
 ## <a name="automationaccount"></a>Create an automation account
 
@@ -45,6 +47,7 @@ An automation account is a container for your Azure Automation resources. It pro
 3.	On the **Add a New Automation Account** page, enter a name and pick a region for the account. The region specifies where the Automation resources in the account will be stored. This will not affect the functionality of your account, but your runbooks may execute faster if your account region is near where your other Azure resources are stored. When you're ready, click the check mark.
 
 	![Add New Account](./media/automation-create-runbook-from-samples/automation_02_addnewautoacct.png)
+<!-- deleted by customization
 
 ## <a name="importrunbook"></a>Import runbook from Runbook Gallery
 
@@ -73,6 +76,7 @@ The [Runbook Gallery](/documentation/articles/automation-runbook-gallery/) inclu
 8.	Review the runbook details, and then click the check mark button.
 
 	![Runbook Details](./media/automation-create-runbook-from-samples/automation_08_RunbookDetails.png)
+-->
 
 ## <a name="publishrunbook"></a>Publish runbook
 

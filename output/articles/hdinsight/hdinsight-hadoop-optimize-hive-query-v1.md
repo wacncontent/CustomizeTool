@@ -205,7 +205,9 @@ In this article, you have learned several common Hive query optimization methods
 
 - [Use Apache Hive in HDInsight](/documentation/articles/hdinsight-use-hive)
 - [Analyze flight delay data by using Hive in HDInsight](/documentation/articles/hdinsight-analyze-flight-delay-data)
+<!-- deleted by customization
 - [Analyze Twitter data using Hive in HDInsight](/documentation/articles/hdinsight-analyze-twitter-data)
+-->
 - [Analyze sensor data using the Hive Query Console on Hadoop in HDInsight](/documentation/articles/hdinsight-hive-analyze-sensor-data)
 - [Use Hive with HDInsight to analyze logs from websites](/documentation/articles/hdinsight-hive-analyze-website-log)
 

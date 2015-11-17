@@ -1,15 +1,16 @@
 <properties 
-   pageTitle="High Availability and Disaster Recovery for SQL Server in Azure Virtual Machines"
-   description="Discusses the various types of HADR strategies for SQL Server running in Azure Virtual Machines."
+   pageTitle="High Availability and Disaster Recovery for SQL Server | Windows Azure"
+   description="This tutorial uses resources created with the classic deployment model, and discusses the various types of HADR strategies for SQL Server running in Azure Virtual Machines."
    services="virtual-machines"
    documentationCenter="na"
    authors="rothja"
    manager="jeffreyg"
-   editor="monicar" />
-<tags 
-   ms.service="virtual-machines"
-   ms.date="08/17/2015"
-   wacn.date="" />
+   editor="monicar" 
+   tags="azure-service-management"/>
+<tags
+	ms.service="virtual-machines"
+	ms.date="08/17/2015"
+	wacn.date=""/>
 
 # High Availability and Disaster Recovery for SQL Server in Azure Virtual Machines
 
@@ -130,7 +131,7 @@ Geo-replication in Azure disks does not support the data file and log file of th
 
 If you need to create an Azure virtual machine with SQL Server, see [Provisioning a SQL Server Virtual Machine on Azure](/documentation/articles/virtual-machines-provision-sql-server).
 
-To get the best performance from SQL Server running on an Azure VM, see the guidance in [Performance Best Practices for SQL Server in Azure Virtual Machines](https://msdn.microsoft.com/zh-cn/library/azure/dn133149.aspx).
+To get the best performance from SQL Server running on an Azure VM, see the guidance in [Performance Best Practices for SQL Server in Azure Virtual Machines](/documentation/articles/virtual-machines-sql-server-performance-best-practices).
 
 For other topics related to running SQL Server in Azure VMs, see [SQL Server on Azure Virtual Machines](/documentation/articles/virtual-machines-sql-server-infrastructure-services).
 

@@ -7,9 +7,9 @@
 	manager="adinah" 
 	editor=""/>
 
-<tags 
-	ms.service="storage" 
-	ms.date="09/04/2015" 
+<tags
+	ms.service="storage"
+	ms.date="09/04/2015"
 	wacn.date=""/>
 
 # Enabling Storage metrics and viewing metrics data
@@ -186,3 +186,4 @@ The capacity used by the metrics tables is also billable: you can use the follow
 
 ## Next-steps:
 [Enabling Storage logging and accessing log data](https://msdn.microsoft.com/zh-cn/library/dn782840.aspx)
+ 

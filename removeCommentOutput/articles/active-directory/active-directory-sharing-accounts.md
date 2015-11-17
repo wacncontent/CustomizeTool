@@ -56,7 +56,7 @@ Azure AD features that enable account sharing include:
 ## Sharing an account
 To use Azure AD to share an account you will need to:
 
-- Add an application [app gallery](https://azure.microsoft.com/home/features/identity/) or [custom application](http://blogs.technet.com/b/ad/archive/2015/06/17/bring-your-own-app-with-azure-ad-self-service-saml-configuration-gt-now-in-preview.aspx)
+- Add an application [app gallery](/home/features/identity/) or [custom application](http://blogs.technet.com/b/ad/archive/2015/06/17/bring-your-own-app-with-azure-ad-self-service-saml-configuration-gt-now-in-preview.aspx)
 - Configure the application for password Single Sign-On (SSO)
 - Use [group based assignment](/documentation/articles/active-directory-accessmanagement-group-saasapps) and select the option to enter a shared credential
 - Optional: in some applications, such as Facebook, Twitter, or LinkedIn, you can enable the option for [Azure AD automated password roll-over](http://blogs.technet.com/b/ad/archive/2015/02/20/azure-ad-automated-password-roll-over-for-facebook-twitter-and-linkedin-now-in-preview.aspx)

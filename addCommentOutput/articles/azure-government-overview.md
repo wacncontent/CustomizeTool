@@ -23,7 +23,7 @@ Azure Government is a government-community cloud (GCC) designed to support strat
 
 In addition, Azure Government is designed to meet the higher level security and compliance needs for sensitive, dedicated, U.S. Public Sector workloads found in regulations such as United States Federal Risk and Authorization Management Program (FedRAMP), Department of Defense Enterprise Cloud Service Broker (ECSB), Criminal Justice Information Services (CJIS) Security Policy and Health Insurance Portability and Accountability Act (HIPAA).     
 
-Below is a summary view of the Azure Government Cloud infrastructure, fabric, services and frameworks that are available to help government organizations build hybrid cloud solutions to meet their goals.  As some services below are only available in preview, please see the [regions <!-- deleted by customization page](http://azure.microsoft.com/regions/#services) --><!-- keep by customization: begin --> page](http://www.windowsazure.cn/regions/#services) <!-- keep by customization: end --> as the most up to date services that are generally available are listed.
+Below is a summary view of the Azure Government Cloud infrastructure, fabric, services and frameworks that are available to help government organizations build hybrid cloud solutions to meet their goals.  As some services below are only available in preview, please see the [regions page](http://azure.microsoft.com/regions/#services) as the most up to date services that are generally available are listed.
 
 ![][2]
 
@@ -64,19 +64,14 @@ Azure Government currently has the following services available in both US GOV I
 - Active Directory
 - Scheduler
 - Virtual Networking
-<!-- deleted by customization
 - SQL Database
--->
-<!-- keep by customization: begin -->
-- SQL 数据库
-<!-- keep by customization: end -->
 - Azure Files
 - Media Services
 - Traffic Manager
 - Service Bus
 - StorSimple
 
-Other services are available, and more services will be added on a continuous basis.  For the most current list of services, please see the [regions <!-- deleted by customization page](http://azure.microsoft.com/regions/#services) --><!-- keep by customization: begin --> page](http://www.windowsazure.cn/regions/#services) <!-- keep by customization: end --> which will highlight each available region and their services.
+Other services are available, and more services will be added on a continuous basis.  For the most current list of services, please see the [regions page](http://azure.microsoft.com/regions/#services) which will highlight each available region and their services.  
 
 Currently, US GOV Iowa and US GOV Virginia are the data centers supporting Azure Government.  Please refer to the regions page above for current data centers and services available.
 
@@ -101,6 +96,6 @@ If you are interested in learning more and about Azure Government please leverag
 [2]: ./media/azure-government-overview/azure-gov-overview.jpg
 
 <!--Link references-->
-[Link 1 to another <!-- deleted by customization azure.microsoft.com --><!-- keep by customization: begin --> www.windowsazure.cn <!-- keep by customization: end --> documentation topic]: /documentation/articles/virtual-machines-windows-tutorial
-[Link 2 to another <!-- deleted by customization azure.microsoft.com --><!-- keep by customization: begin --> www.windowsazure.cn <!-- keep by customization: end --> documentation topic]: /documentation/articles/web-sites-custom-domain-name
-[Link 3 to another <!-- deleted by customization azure.microsoft.com --><!-- keep by customization: begin --> www.windowsazure.cn <!-- keep by customization: end --> documentation topic]: /documentation/articles/storage-whatis-account
+[Link 1 to another azure.microsoft.com documentation topic]: /documentation/articles/virtual-machines-windows-tutorial
+[Link 2 to another azure.microsoft.com documentation topic]: /documentation/articles/web-sites-custom-domain-name
+[Link 3 to another azure.microsoft.com documentation topic]: /documentation/articles/storage-whatis-account

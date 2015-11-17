@@ -7,23 +7,23 @@
 	manager="jwhit" 
 	editor=""/>
 
-<tags 
-	ms.service="site-recovery" 
-	ms.date="08/05/2015" 
+<tags
+	ms.service="site-recovery"
+	ms.date="10/07/2015"
 	wacn.date=""/>
 
 
 # Set up protection between on-premises VMware sites
 
 
-##Overview
+## Overview
 
 InMage Scout in Azure Site Recovery provides real-time replication between on-premises VMware sites. InMage Scout is included in Azure Site Recovery service subscriptions.
 
 
 ## Prerequisites
 
-- **Azure account**—You'll need a [Windows Azure](http://www.windowsazure.cn/) account. You can start with a [trial](/pricing/1rmb-trial).
+- **Azure account**—You'll need a [Windows Azure](http://www.windowsazure.cn/) account. You can start with a [trial](/pricing/1rmb-trial/).
 
 
 ## Step 1: Create a vault
@@ -34,7 +34,7 @@ InMage Scout in Azure Site Recovery provides real-time replication between on-pr
 4. In **Name** enter a friendly name to identify the vault.
 5. In **Region** select the geographic region for the vault. To check supported regions see Geographic Availability in [Azure Site Recovery Pricing Details](/home/features/site-recovery/#price).
 
-<P>Check the status bar to confirm that the vault was successfully created. The vault will be listed as <b>Active</b> on the main Recovery Services page.</P>
+Check the status bar to confirm that the vault was successfully created. The vault will be listed as **Active** on the main Recovery Services page.
 
 ## Step 2: Configure the vault and download InMage Scout components
 
@@ -111,4 +111,4 @@ This latest update includes bug fixes and new features:
 	
 ## Next steps
 
-Post any questions on the [Azure Recovery Services Forum](https://social.msdn.microsoft.com/forums/zh-cn/home?forum=hypervrecovmgr).
+Post any questions on the [Azure Recovery Services Forum](https://social.msdn.microsoft.com/forums/azure/home?forum=hypervrecovmgr).< 

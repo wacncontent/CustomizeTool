@@ -7,9 +7,9 @@
 	authors="sidneyh" 
 	editor=""/>
 
-<tags 
-	ms.service="sql-database" 
-	ms.date="07/24/2015" 
+<tags
+	ms.service="sql-database"
+	ms.date="07/24/2015"
 	wacn.date=""/>
 
 #Get started with Elastic Database tools
@@ -110,3 +110,4 @@ For more information about the elastic database tools, see:
 [2]: ./media/sql-database-elastic-scale-get-started/click-online.png
 [3]: ./media/sql-database-elastic-scale-get-started/click-CSharp.png
 [4]: ./media/sql-database-elastic-scale-get-started/output2.png
+ 

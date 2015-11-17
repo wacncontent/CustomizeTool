@@ -1,15 +1,15 @@
-<properties 
-	pageTitle="Build a service using an existing SQL database with the Mobile Services .NET backend | Windows Azure" 
-	description="Learn how to use an existing cloud or on-premises SQL database with your .NET based mobile service" 
-	services="mobile-services" 
-	documentationCenter="" 
-	authors="ggailey777" 
-	manager="dwrede" 
+<properties
+	pageTitle="Build a service using an existing SQL database with the Mobile Services .NET backend | Windows Azure"
+	description="Learn how to use an existing cloud or on-premises SQL database with your .NET based mobile service"
+	services="mobile-services"
+	documentationCenter=""
+	authors="ggailey777"
+	manager="dwrede"
 	editor="mollybos"/>
 
-<tags 
-	ms.service="mobile-services" 
-	ms.date="05/20/2015" 
+<tags
+	ms.service="mobile-services"
+	ms.date="08/01/2015"
 	wacn.date=""/>
 
 
@@ -35,7 +35,7 @@ For this tutorial we will use the database that was created with your mobile ser
             {
                 [Key]
                 public int CustomerId { get; set; }
-                
+
                 public string Name { get; set; }
 
                 public virtual ICollection<Order> Orders { get; set; }
@@ -44,7 +44,7 @@ For this tutorial we will use the database that was created with your mobile ser
         }
 
 3. Create an **Order.cs** file inside the **Models** folder and use the following implementation:
-    
+
         using System.ComponentModel.DataAnnotations;
 
         namespace ShoppingService.Models
@@ -61,7 +61,7 @@ For this tutorial we will use the database that was created with your mobile ser
                 public bool Completed { get; set; }
 
                 public int CustomerId { get; set; }
-              
+
                 public virtual Customer Customer { get; set; }
 
             }
@@ -89,7 +89,7 @@ For this tutorial we will use the database that was created with your mobile ser
             }
         }
 
-The structure above approximates an existing Entity Framework model that you may already be using for an existing application. Please note that the model is not aware of Mobile Services in any way at this stage. 
+The structure above approximates an existing Entity Framework model that you may already be using for an existing application. Please note that the model is not aware of Mobile Services in any way at this stage.
 
 <a name="DTOs"></a>
 ## Creating data transfer objects (DTOs) for your mobile service
@@ -137,10 +137,10 @@ The data model you would like to use with your mobile service may be arbitrarily
             }
         }
 
-    The **Customer** relationship property has been replaced with the **Customer** name and a **MobileCustomerId** property that can be used to manually model the relationship on the client. For now you can ignore the **CustomerId** property, it is only used later on. 
+    The **Customer** relationship property has been replaced with the **Customer** name and a **MobileCustomerId** property that can be used to manually model the relationship on the client. For now you can ignore the **CustomerId** property, it is only used later on.
 
 3. You might notice that with the addition of the system properties on the **EntityData** base class, our DTOs now have more properties than the model types. Clearly we need a place to store these properties, so we will add a few extra columns to the original database. While this does change the database, it will not break existing applications since the changes are purely additive (adding new columns to the schema). To do that, add the following statements to the top of **Customer.cs** and **Order.cs**:
-    
+
         using System.ComponentModel.DataAnnotations.Schema;
         using Microsoft.WindowsAzure.Mobile.Service.Tables;
         using System.ComponentModel.DataAnnotations;
@@ -170,7 +170,7 @@ The data model you would like to use with your mobile service may be arbitrarily
         public byte[] Version { get; set; }
 
 4. The system properties just added have some built-in behaviors (for example automatic update of created/updated at) that happen transparently with database operations. To enable these behaviors, we need to make a change to **ExistingContext.cs**. At the top of the file, add the following:
-    
+
         using System.Data.Entity.ModelConfiguration.Conventions;
         using Microsoft.WindowsAzure.Mobile.Service.Tables;
         using System.Linq;
@@ -184,7 +184,7 @@ The data model you would like to use with your mobile service may be arbitrarily
                     "ServiceTableColumn", (property, attributes) => attributes.Single().ColumnType.ToString()));
 
             base.OnModelCreating(modelBuilder);
-        } 
+        }
 
 5. Let's populate the database with some example data. Open the file **WebApiConfig.cs**. Create a new [**IDatabaseInitializer**](http://msdn.microsoft.com/zh-cn/library/gg696323.aspx) and configure it in the **Register** method as shown below.
 
@@ -223,11 +223,11 @@ The data model you would like to use with your mobile service may be arbitrarily
 
                     List<Customer> customers = new List<Customer>
                     {
-                        new Customer { CustomerId = 1, Name = "John", Orders = new Collection<Order> { 
+                        new Customer { CustomerId = 1, Name = "John", Orders = new Collection<Order> {
                             orders[0]}, Id = Guid.NewGuid().ToString()},
-                        new Customer { CustomerId = 2, Name = "Paul", Orders = new Collection<Order> { 
+                        new Customer { CustomerId = 2, Name = "Paul", Orders = new Collection<Order> {
                             orders[1]}, Id = Guid.NewGuid().ToString()},
-                        new Customer { CustomerId = 3, Name = "Ringo", Orders = new Collection<Order> { 
+                        new Customer { CustomerId = 3, Name = "Ringo", Orders = new Collection<Order> {
                             orders[2]}, Id = Guid.NewGuid().ToString()},
                     };
 
@@ -251,7 +251,7 @@ We now have the model types **Customer** and **Order** and the DTOs **MobileCust
         using AutoMapper;
         using ShoppingService.DataObjects;
 
-2. To define the mapping, add the following to the **Register** method of the **WebApiConfig** class. 
+2. To define the mapping, add the following to the **Register** method of the **WebApiConfig** class.
 
         Mapper.Initialize(cfg =>
         {
@@ -314,7 +314,7 @@ The next step is to implement a [**MappedEntityDomainManager**](http://msdn.micr
                 {
                     return (T)(object)GetKey(mobileCustomerId, this.context.Customers, this.Request);
                 }
-                
+
                 public override SingleResult<MobileCustomer> Lookup(string mobileCustomerId)
                 {
                     int customerId = GetKey<int>(mobileCustomerId);
@@ -360,7 +360,7 @@ The next step is to implement a [**MappedEntityDomainManager**](http://msdn.micr
             }
         }
 
-    An important part of this class is the **GetKey** method where we indicate how to locate the ID property of the object in the original data model. 
+    An important part of this class is the **GetKey** method where we indicate how to locate the ID property of the object in the original data model.
 
 2. Add a **MobileOrderDomainManager.cs** to the **Models** folder of your project:
 
@@ -525,7 +525,7 @@ We are now ready to create controllers to expose our DTOs to our clients.
             }
         }
 
-    You will note the use of the AuthorizeLevel attribute to restrict public access to the Insert/Update/Delete operations on the controller. For the purposes of this scenario, the list of Customers will be read-only, but we will allow the creation of new Orders and associating them with existing customers. 
+    You will note the use of the AuthorizeLevel attribute to restrict public access to the Insert/Update/Delete operations on the controller. For the purposes of this scenario, the list of Customers will be read-only, but we will allow the creation of new Orders and associating them with existing customers.
 
 2. In the **Controllers** folder, add the file **MobileOrderController.cs**:
 
@@ -581,7 +581,7 @@ We are now ready to create controllers to expose our DTOs to our clients.
 
 3. You are now ready to run your service. Press **F5** and use the test client built into the help page to modify the data.
 
-Please note that both controller implementations make exclusive use of the DTOs **MobileCustomer** and **MobileOrder** and are agnostic of the underlying model. These DTOs are readily serialized to JSON and can be used to exchange data with the  Mobile Services client SDK on all platforms. For example, if building a Windows Store app, the corresponding client-side type would look as shown below. The type would be analogous on other client platforms. 
+Please note that both controller implementations make exclusive use of the DTOs **MobileCustomer** and **MobileOrder** and are agnostic of the underlying model. These DTOs are readily serialized to JSON and can be used to exchange data with the  Mobile Services client SDK on all platforms. For example, if building a Windows Store app, the corresponding client-side type would look as shown below. The type would be analogous on other client platforms.
 
     using Microsoft.WindowsAzure.MobileServices;
     using System;
@@ -601,7 +601,7 @@ Please note that both controller implementations make exclusive use of the DTOs 
             public DateTimeOffset? UpdatedAt { get; set; }
 
             public bool Deleted { get; set; }
-            
+
             [Version]
             public string Version { get; set; }
 
@@ -609,4 +609,4 @@ Please note that both controller implementations make exclusive use of the DTOs 
 
     }
 
-As a next step, you can now build out the client app to access the service. For more information, see [Add Mobile Services to an existing app](/documentation/articles/mobile-services-dotnet-backend-windows-universal-dotnet-get-started-data#update-the-app-to-use-the-mobile-service).
+As a next step, you can now build out the client app to access the service.

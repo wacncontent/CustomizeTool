@@ -45,9 +45,9 @@ The fully qualified domain name (FQDN) to use when connecting to the cluster is 
 	>
 	> Authentication is plaintext - always use HTTPS to help ensure that the connection is secure.
 
-* **SSH** - &lt;clustername>-ssh.azurehdinsight.cn on port 22 or 23. Port 22 is used to connect to headnode0, while 23 is used to connect to headnode1. For more information on the head nodes, see [Availability and reliability of Hadoop clusters in HDInsight](/documentation/articles/hdinsight-high-availability).
+* **SSH** - &lt;clustername>-ssh.azurehdinsight.cn on <!-- keep by customization: begin --> port 22on <!-- keep by customization: end -->  port 22 or 23. Port 22 is used to connect to headnode0, while 23 is used to connect to headnode1. For more information on the head nodes, see [Availability and reliability of Hadoop clusters in HDInsight](/documentation/articles/hdinsight-high-availability).
 
-	> [AZURE.NOTE] You can only access the cluster head nodes through SSH from a client machine. Once connected, you can then access the worker nodes by using SSH from the head node.
+	> [AZURE.NOTE] You can only access the cluster head <!-- deleted by customization nodes --><!-- keep by customization: begin --> node <!-- keep by customization: end --> through SSH from a client machine. Once connected, you can then access the worker nodes by using SSH from the head node.
 
 ## File locations
 
@@ -94,6 +94,7 @@ During cluster creation, you selected to either use an existing Azure Storage ac
 	>
 	> `curl -u admin:PASSWORD -G "https://CLUSTERNAME.azurehdinsight.cn/api/v1/clusters/CLUSTERNAME/configurations/service_config_versions?service_name=HDFS&service_config_version=1" | jq '.items[].configurations[].properties["fs.defaultFS"] | select(. != null)'`
 
+<!-- deleted by customization
 3. To find the key used to authenticate to the storage account, or to find any secondary storage accounts associated with the cluster, use the following:
 
 		curl -u admin:PASSWORD -G "https://CLUSTERNAME.azurehdinsight.cn/api/v1/clusters/CLUSTERNAME/configurations/service_config_versions?service_name=HDFS&service_config_version=1"
@@ -115,12 +116,24 @@ You can also find the storage information using the Azure preview portal:
 4. From __Azure Storage Keys__, select one of the storage accounts listed. This will display information about the storage account.
 
 5. Select the key icon. This will display keys for this storage account.
+-->
+<!-- keep by customization: begin -->
+**Azure Management Portal**
+
+1. In the [Azure Management Portal](https://manage.windowsazure.cn/), select your HDInsight cluster.
+
+2. Select **Dashboard** at the top of the page.
+
+3. The Storage account(s) and container(s) are listed in the **linked resources** section of the page.
+
+	![linked resources](./media/hdinsight-hadoop-linux-information/storageportal.png)
+<!-- keep by customization: end -->
 
 ### How do I access Blob storage?
 
 Other than through the Hadoop command from the cluster, there are a variety of ways to access blobs:
 
-* [Azure CLI for Mac, Linux and Windows](/documentation/articles/xplat-cli-install): Command-Line interface commands for working with Azure. After installing, use the `azure storage` command for help on using storage, or `azure blob` for blob-specific commands.
+* [Azure CLI for Mac, Linux and <!-- deleted by customization Windows](/documentation/articles/xplat-cli-install) --><!-- keep by customization: begin --> Windows](/documentation/articles/xplat-cli) <!-- keep by customization: end -->: Command-Line interface commands for working with Azure. After installing, use the `azure storage` command for help on using storage, or `azure blob` for blob-specific commands.
 
 * [blobxfer.py](https://github.com/Azure/azure-batch-samples/tree/master/Python/Storage): A python script for working with blobs in Azure Storage.
 
@@ -180,8 +193,13 @@ The different cluster types are affected by scaling as follows:
 
 		2. From the list of services on the left of the page, select __Storm__. Then select __Storm UI__ from __Quick Links__.
 
+<!-- deleted by customization
 
 			![Storm UI entry in quick links](./media/hdinsight-hadoop-linux-information/ambari-storm.png)
+-->
+<!-- keep by customization: begin -->
+			![Storm UI entry in quick links](./media/hdinsight-hadoop-linux-information/ambari-storm.png)
+<!-- keep by customization: end -->
 
 			This will display the Storm UI:
 
@@ -197,12 +215,19 @@ For specific information on scaling your HDInsight cluster, see:
 
 ## How do I install Hue (or other Hadoop component)?
 
-HDInsight is a managed service, which means that nodes in a cluster may be destroyed and reprovisioned automatically by Azure if a problem is detected. Because of this, it is not recommended to manually install things directly on the cluster nodes. Instead, use [HDInsight Script Actions](/documentation/articles/hdinsight-hadoop-customize-cluster) when you need to install the following:
+HDInsight is a managed service, which means that nodes in a cluster may be destroyed and reprovisioned automatically by Azure if a problem is detected. Because of this, it is not recommended to manually install <!-- deleted by customization things directly --><!-- keep by customization: begin --> components <!-- keep by customization: end --> on the cluster nodes. <!-- deleted by customization Instead, use [HDInsight Script Actions](/documentation/articles/hdinsight-hadoop-customize-cluster) when you need to install the following: -->
 
+<!-- deleted by customization
 * A service or web site such as Spark or Hue.
 * A component that requires configuration changes on multiple nodes in the cluster. For example, a required environment variable, creating of a logging directory, or creation of a configuration file.
 
 Script Actions are Bash scripts that are ran during cluster provisioning, and can be used to install and configure additional components on the cluster. Example scripts are provided for installing the following components:
+-->
+<!-- keep by customization: begin -->
+Instead, use [HDInsight Script Actions](/documentation/articles/hdinsight-hadoop-customize-cluster).
+
+Script Actions are Bash scripts that are ran during cluster provisioning, and can be used to install  additional components on the cluster. Example scripts are provided for installing the following components:
+<!-- keep by customization: end -->
 
 * [Hue](/documentation/articles/hdinsight-hadoop-hue-linux)
 * [Giraph](/documentation/articles/hdinsight-hadoop-giraph-install-linux)
@@ -212,6 +237,7 @@ Script Actions are Bash scripts that are ran during cluster provisioning, and ca
 
 For information on developing your own Script Actions, see [Script Action development with HDInsight](/documentation/articles/hdinsight-hadoop-script-actions-linux).
 
+<!-- deleted by customization
 ###Jar files
 
 Some Hadoop technologies are provided in self-contained jar files that are contain functions used as part of a MapReduce job, or from inside Pig or Hive. While these can be installed using Script Actions, they often don't require any setup and can just be uploaded to the cluster after provisioning and used directly. If you want to makle sure the component survives reimaging of the cluster, you can store the jar file in WASB.
@@ -230,6 +256,7 @@ If the cluster already provides a version of a component as a standalone jar fil
 >
 > Custom components receive commercially reasonable support to help you to further troubleshoot the issue. This might result in resolving the issue OR asking you to engage available channels for the open source technologies where deep expertise for that technology is found. For example, there are many community sites that can be used, like: [MSDN forum for HDInsight](https://social.msdn.microsoft.com/Forums/azure/zh-cn/home?forum=hdinsight), [http://stackoverflow.com](http://stackoverflow.com). Also Apache projects have project sites on [http://apache.org](http://apache.org), for example: [Hadoop](http://hadoop.apache.org/), [Spark](http://spark.apache.org/).
 
+-->
 ## Next steps
 
 * [Use Hive with HDInsight](/documentation/articles/hdinsight-use-hive)

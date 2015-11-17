@@ -62,11 +62,11 @@ Tags exist directly on resources and resource groups, so to see what tags are al
     Resources         :
                     Name                             Type                                  Location
                     ===============================  ====================================  ==============
-                    CPUHigh ExamplePlan              microsoft.insights/alertrules         eastus
-                    ForbiddenRequests tag-demo-site  microsoft.insights/alertrules         eastus
-                    LongHttpQueue ExamplePlan        microsoft.insights/alertrules         eastus
-                    ServerErrors tag-demo-site       microsoft.insights/alertrules         eastus
-                    ExamplePlan-tag-demo             microsoft.insights/autoscalesettings  eastus
+                    CPUHigh ExamplePlan              microsoft.insights/alertrules         chinaeast
+                    ForbiddenRequests tag-demo-site  microsoft.insights/alertrules         chinaeast
+                    LongHttpQueue ExamplePlan        microsoft.insights/alertrules         chinaeast
+                    ServerErrors tag-demo-site       microsoft.insights/alertrules         chinaeast
+                    ExamplePlan-tag-demo             microsoft.insights/autoscalesettings  chinaeast
                     tag-demo-site                    microsoft.insights/components         centralus
                     ExamplePlan                      Microsoft.Web/serverFarms             southcentralus
                     tag-demo-site                    Microsoft.Web/sites                   southcentralus
@@ -154,6 +154,6 @@ When you download the usage CSV for services that support tags with billing, the
 
 ## Next Steps
 
-- For an introduction to using Azure PowerShell when deploying resources, see [Using Azure PowerShell with Azure Resource Manager](./powershell-azure-resource-manager.md).
-- For an introduction to using Azure CLI when deploying resources, see [Using the Azure CLI for Mac, Linux, and Windows with Azure Resource Management](./xplat-cli-azure-resource-manager.md).
-- For an introduction to using the preview portal, see [Using the Azure preview portal to manage your Azure resources](./resource-group-portal.md)  
+- For an introduction to using Azure PowerShell when deploying resources, see [Using Azure PowerShell with Azure Resource Manager](/documentation/articles/powershell-azure-resource-manager).
+- For an introduction to using Azure CLI when deploying resources, see [Using the Azure CLI for Mac, Linux, and Windows with Azure Resource Management](/documentation/articles/xplat-cli-azure-resource-manager).
+- For an introduction to using the preview portal, see [Using the Azure preview portal to manage your Azure resources](/documentation/articles/resource-group-portal)  

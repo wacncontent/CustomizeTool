@@ -15,8 +15,8 @@
 # Service-side authorization of users in Mobile Services
 
 > [AZURE.SELECTOR-LIST (Platform | Backend)]
-- [(Any | .NET)](mobile-services-dotnet-backend-service-side-authorization.md)
-- [(Any | Javascript)](mobile-services-javascript-backend-service-side-authorization.md)
+- [(Any | .NET)](/documentation/articles/mobile-services-dotnet-backend-service-side-authorization)
+- [(Any | Javascript)](/documentation/articles/mobile-services-javascript-backend-service-side-authorization)
 
 This topic shows you how to use server-side scripts to authorize users. In this tutorial, you register scripts with Azure Mobile Services, filter queries based on user IDs, and give users access to only their own data. Filtering a user's query results by the user ID is the most basic form of authorization. Depending on your specific scenario, you might also want to create Users or Roles tables to track more detailed user authorization information, such as which endpoints a given user is permitted to access.
 
@@ -59,9 +59,14 @@ This tutorial is based on the Mobile Services Quick Start and builds on the [Add
 <!-- URLs. -->
 
 [Windows Push Notifications & Live Connect]: http://go.microsoft.com/fwlink/p/?LinkID=257677
-[Mobile Services server script reference]: http://go.microsoft.com/fwlink/p/?LinkId=262293
+[Mobile Services server script reference]: /documentation/articles/mobile-services-how-to-use-server-scripts
 [My Apps dashboard]: http://go.microsoft.com/fwlink/p/?LinkId=262039
-[Add Authentication to Existing Mobile Services App]: /develop/mobile/tutorials/get-started-with-users-ios
+<!-- deleted by customization
+[Add Authentication to Existing Mobile Services App]: /documentation/articles/mobile-services-ios-get-started-users
+-->
+<!-- keep by customization: begin -->
+[Add Authentication to Existing Mobile Services App]:/documentation/articles/mobile-services-ios-get-started-users
+<!-- keep by customization: end -->
 
 [Azure Management Portal]: https://manage.windowsazure.cn/
  

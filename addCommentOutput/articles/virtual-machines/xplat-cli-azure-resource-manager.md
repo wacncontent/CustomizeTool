@@ -16,15 +16,12 @@
 
 > [AZURE.SELECTOR]
 - [Azure PowerShell](/documentation/articles/powershell-azure-resource-manager)
-<!-- deleted by customization
 
 <br>
+<!-- deleted by customization
 
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] classic deployment model.
 -->
-<!-- keep by customization: begin -->
-- [Azure CLI](/documentation/articles/xplat-cli-azure-resource-manager)
-<!-- keep by customization: end -->
 
 
 This article describes how to create, manage, and delete Azure resources and VMs using the Azure CLI for Mac, Linux, and Windows using the Azure Resource Manager mode.  
@@ -98,23 +95,13 @@ This is the basic approach to configure and create a virtual machine as per your
 
 You will need to create a public IP so you can SSH into your new virtual machine for any meaningful work. Creating a public IP is straightforward. The command needs a resource group, a name for your public IP resource, and a location, in that order.
 
-<!-- deleted by customization
-	azure network public-ip create "testrg" "testip" "westus"
--->
-<!-- keep by customization: begin -->
 	azure network public-ip create "testrg" "testip" "chinanorth"
-<!-- keep by customization: end -->
 
 #### Creating a Network Interface Card resource
 
 The Network Interface Card or NIC needs a subnet and a virtual network to be created first. Create a virtual network in a particular location and resource group by using the **network vnet create** command.
 
-<!-- deleted by customization
-	azure network vnet create "testrg" "testvnet" "westus"
--->
-<!-- keep by customization: begin -->
 	azure network vnet create "testrg" "testvnet" "chinanorth"
-<!-- keep by customization: end -->
 
 You can then create a subnet in this virtual network by using the **network vnet subnet create** command.
 
@@ -122,7 +109,7 @@ You can then create a subnet in this virtual network by using the **network vnet
 
 You should be able to create a NIC using these resources with the **network nic create** command.
 
-	azure network nic create "testrg" "testnic" <!-- deleted by customization "westus" --><!-- keep by customization: begin --> "chinanorth" <!-- keep by customization: end --> -k "testsubnet" -m "testvnet" -p "testip"
+	azure network nic create "testrg" "testnic" "chinanorth" -k "testsubnet" -m "testvnet" -p "testip"
 
 >[AZURE.NOTE] Although optional, it is very important to pass the public IP name as a parameter to the **network nic create** command as this binds the NIC to this IP, which will be later used to SSH into the virtual machine created using this NIC.
 
@@ -132,32 +119,22 @@ For more imformation on the **network** commands, see command-line help or [Usin
 
 Currently, you can only find an operating system based on the publisher of the image. In other words, you must run the following command to find a list of OS image publishers in your desired location.
 
-<!-- deleted by customization
-	azure vm image list-publishers "westus"
--->
-<!-- keep by customization: begin -->
 	azure vm image list-publishers "chinanorth"
-<!-- keep by customization: end -->
 
 Then choose a publisher from the list, and find the list of images by that publisher by running the following command.
 
-<!-- deleted by customization
-	azure vm image list "westus" "CoreOS"
--->
-<!-- keep by customization: begin -->
 	azure vm image list "chinanorth" "CoreOS"
-<!-- keep by customization: end -->
 
 Finally, choose an OS image from the list that looks something like the following example.
 
 	info:    Executing command **vm image list**
 	warn:    The parameters --offer and --sku if specified will be ignored
-	+ Getting virtual machine image offers (Publisher: "Canonical" Location: <!-- deleted by customization "westus") --><!-- keep by customization: begin --> "chinanorth") <!-- keep by customization: end -->
+	+ Getting virtual machine image offers (Publisher: "Canonical" Location: "chinanorth")
 	data:    Publisher  Offer        Sku          Version          Location  Urn
 
 	data:    ---------  -----------  -----------  ---------------  --------- ----------------------------------------
-	data:    CoreOS     CoreOS       Alpha        475.1.0          <!-- deleted by customization westus --><!-- keep by customization: begin --> chinanorth <!-- keep by customization: end -->    CoreOS:CoreOS:Alpha:475.1.0
-	data:    CoreOS     CoreOS       Alpha        490.0.0          <!-- deleted by customization westus --><!-- keep by customization: begin --> chinanorth <!-- keep by customization: end -->    CoreOS:CoreOS:Alpha:490.0.0
+	data:    CoreOS     CoreOS       Alpha        475.1.0          chinanorth    CoreOS:CoreOS:Alpha:475.1.0
+	data:    CoreOS     CoreOS       Alpha        490.0.0          chinanorth    CoreOS:CoreOS:Alpha:490.0.0
 
 Save the URN name of the image you want to load on your virtual machine. You'll use it later in the article.
 
@@ -165,19 +142,14 @@ Save the URN name of the image you want to load on your virtual machine. You'll 
 
 You are now ready to create a virtual machine by running the **vm create** command and passing the required information. It's optional to pass the public IP at this stage, since the NIC already has this information. Your command may look something like the following example, where _testvm_ is the name of the virtual machine created in the _testrg_ resource group.
 
-	azure-cli@0.8.0:/# azure vm create "testrg" "testvm" <!-- deleted by customization "westus" --><!-- keep by customization: begin --> "chinanorth" <!-- keep by customization: end --> "Linux" -Q "CoreOS:CoreOS:Alpha:660.0.0" -u "azureuser" -p "Pass1234!" -N "testnic"
+	azure-cli@0.8.0:/# azure vm create "testrg" "testvm" "chinanorth" "Linux" -Q "CoreOS:CoreOS:Alpha:660.0.0" -u "azureuser" -p "Pass1234!" -N "testnic"
 	info:    Executing command vm create
 	+ Looking up the VM "testvm"
 	info:    Using the VM Size "Standard_A1"
 	info:    The [OS, Data] Disk or image configuration requires storage account
 	+ Retrieving storage accounts
-	info:    Could not find any storage accounts in the region <!-- deleted by customization "westus" --><!-- keep by customization: begin --> "chinanorth" <!-- keep by customization: end -->, trying to create new one
-<!-- deleted by customization
-	+ Creating storage account "cli02f696bbfda6d83414300" in "westus"
--->
-<!-- keep by customization: begin -->
+	info:    Could not find any storage accounts in the region "chinanorth", trying to create new one
 	+ Creating storage account "cli02f696bbfda6d83414300" in "chinanorth"
-<!-- keep by customization: end -->
 	+ Looking up the storage account cli02f696bbfda6d83414300
 	+ Looking up the NIC "testnic"
 	+ Creating VM "testvm"
@@ -201,12 +173,7 @@ The new **vm quick-create** shortcut cuts out most of the steps of the imperativ
 	info:  Executing command vm quick-create
 	Resource group name: CLIRG
 	Virtual machine name: myqvm
-<!-- deleted by customization
-	Location name: westus
--->
-<!-- keep by customization: begin -->
 	Location name: chinanorth
-<!-- keep by customization: end -->
 	Operating system Type [Windows, Linux]: /documentation/articles/Linux
 	ImageURN (format: "publisherName:offer:skus:version"): CoreOS:CoreOS:Alpha:660.0.0
 	User name: azureuser
@@ -378,5 +345,5 @@ To view logged information on operations performed on a group, use the `azure gr
 [signuporg]: /documentation/articles/sign-up-organization/
 [adtenant]: http://technet.microsoft.com/zh-cn/library/jj573650#createAzureTenant
 [portal]: https://manage.windowsazure.cn/
-[clisetup]: <!-- deleted by customization /documentation/articles/xplat-cli-install --><!-- keep by customization: begin --> /documentation/articles/xplat-cli <!-- keep by customization: end -->
+[clisetup]: /documentation/articles/xplat-cli-install
 [psrm]: http://go.microsoft.com/fwlink/?LinkId=394760

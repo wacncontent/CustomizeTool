@@ -342,7 +342,7 @@ Once you're finished with an environment, you'll want to delete it so you don't 
   
   **Method 2:** PowerShell
 
-  If you are using Azure PowerShell 1.0 Preview, the command to delete the resource group is **Remove-AzureRmResourceGroup** as shown below. If you are using a version of Azure PowerShell prior to 1.0 Preview, the command is **Remove-AzureResourceGroup**. From a PowerShell prompt, type the following:    
+  <!-- deleted by customization If you are using Azure PowerShell 1.0 Preview, the command to delete the resource group is **Remove-AzureRmResourceGroup** as shown below. If you are using a version of Azure PowerShell prior to 1.0 Preview, the command is **Remove-AzureResourceGroup**. --> From a PowerShell prompt, type the following:
 
 	Remove-AzureRmResourceGroup -Name TestApp1-Development
 

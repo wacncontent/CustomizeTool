@@ -93,7 +93,7 @@ You can use Visual Studio to [enable a remote desktop connection](https://msdn.m
 The steps below describe the changes needed to the service model files to enable remote desktop. Visual Studio will automatically makes these changes when publishing.
 
 ### Set up the connection in the service model 
-Use the **Imports** element to import the **RemoteAccess** module and the **RemoteForwarder** module to the <!-- deleted by customization [ServiceDefinition.csdef](/documentation/articles/cloud-services-model-and-package#csdef) --><!-- keep by customization: begin --> [ServiceDefinition.csdef](/documentation/articles/cloud-services-model-and-package/#csdef) <!-- keep by customization: end --> file.
+Use the **Imports** element to import the **RemoteAccess** module and the **RemoteForwarder** module to the [ServiceDefinition.csdef](/documentation/articles/cloud-services-model-and-package#csdef) file.
 
 The service definition file should be similar to the following example with the `<Imports>` element added.
 
@@ -118,7 +118,7 @@ The service definition file should be similar to the following example with the 
     </WebRole>
 </ServiceDefinition>
 ```
-The <!-- deleted by customization [ServiceConfiguration.cscfg](/documentation/articles/cloud-services-model-and-package#cscfg) --><!-- keep by customization: begin --> [ServiceConfiguration.cscfg](/documentation/articles/cloud-services-model-and-package/#cscfg) <!-- keep by customization: end --> file should be similar to the following example, note the `<ConfigurationSettings>` and `<Certificates>` elements. The Certificate specified must be [uploaded to the cloud <!-- deleted by customization service](/documentation/articles/cloud-services-how-to-create-deploy#how-to-upload-a-certificate-for-a-cloud-service) --><!-- keep by customization: begin --> service](/documentation/articles/cloud-services-how-to-create-deploy/#how-to-upload-a-certificate-for-a-cloud-service) <!-- keep by customization: end -->.
+The [ServiceConfiguration.cscfg](/documentation/articles/cloud-services-model-and-package#cscfg) file should be similar to the following example, note the `<ConfigurationSettings>` and `<Certificates>` elements. The Certificate specified must be [uploaded to the cloud service](/documentation/articles/cloud-services-how-to-create-deploy#how-to-upload-a-certificate-for-a-cloud-service).
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>

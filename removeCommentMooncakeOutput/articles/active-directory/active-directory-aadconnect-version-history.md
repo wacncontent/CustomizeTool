@@ -8,9 +8,9 @@
    editor=""/>
 
 <tags
-   ms.service="active-directory"
-   ms.date="10/13/2015"
-   wacn.date=""/>
+	ms.service="active-directory"
+	ms.date="10/13/2015"
+	wacn.date=""/>
 
 # Azure AD Connect: Version Release History
 

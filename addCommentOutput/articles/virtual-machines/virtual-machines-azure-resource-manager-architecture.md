@@ -17,12 +17,12 @@
 
 <!-- deleted by customization
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] classic deployment model.
-
-
 -->
 <!-- keep by customization: begin -->
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-include.md)]
 <!-- keep by customization: end -->
+
+
 
 This article provides an overview of both the Service Management and Resource Manager architectures for creating infrastructure-based applications and workloads.
 

@@ -7,9 +7,9 @@
    manager="douge"
    editor="tglee" />
 <tags
-   ms.service="multiple"
-   ms.date="08/13/2015"
-   wacn.date="" />
+	ms.service="multiple"
+	ms.date="09/30/2015"
+	wacn.date=""/>
 
 # Accessing Azure Virtual Machines from Server Explorer
 
@@ -47,4 +47,4 @@ If you have virtual machines hosted by Azure, you can access them in Server Expl
 
 ## Next steps
 
-To learn more about using Azure roles in Visual Studio, see [Using Remote Desktop with Azure Roles](http://go.microsoft.com/fwlink/p/?LinkID=623091).
+To learn more about using Azure roles in Visual Studio, see [Using Remote Desktop with Azure Roles](/documentation/articles/vs-azure-tools-remote-desktop-roles).

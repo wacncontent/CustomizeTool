@@ -20,9 +20,9 @@
 
 ## Overview
 
-This tutorial shows you how to restore an Azure SQL database using Point in Time Restore in the [Azure Management <!-- deleted by customization Portal](http://manage.windowsazure.cn) --><!-- keep by customization: begin --> Portal](http://manage.windowsazure.cn/) <!-- keep by customization: end -->. Azure SQL Database has built-in backups to support self-service Point in Time Restore for Basic, Standard, and Premium service tiers.
+This tutorial shows you how to restore an Azure SQL database using Point in Time Restore in the [Azure Management Portal](http://manage.windowsazure.cn). Azure SQL Database has built-in backups to support self-service Point in Time Restore for Basic, Standard, and Premium service tiers.
 
-Point in Time Restore creates a new database. The service automatically selects the service tier based on the backup used at the restore point. Make sure you have available quota on the logical server to create another database. If you'd like to request an increased quota, contact [Azure <!-- deleted by customization Support](http://azure.microsoft.com/support/options/) --><!-- keep by customization: begin --> Support](/support/contact/) <!-- keep by customization: end -->.
+Point in Time Restore creates a new database. The service automatically selects the service tier based on the backup used at the restore point. Make sure you have available quota on the logical server to create another database. If you'd like to request an increased quota, contact [Azure Support](/support/contact/).
 
 ## Restrictions and Security
 
@@ -44,11 +44,8 @@ Point in Time Restore creates a new database. The service automatically selects 
 
 <!-- deleted by customization
 > [AZURE.VIDEO restore-a-sql-database-using-point-in-time-restore]
--->
-<!-- keep by customization: begin -->
-<!--<iframe src="http://channel9.msdn.com/Blogs/Windows-Azure/Restore-a-SQL-Database-Using-Point-in-Time-Restore/player" width="960" height="540" allowFullScreen frameBorder="0"></iframe>-->
-<!-- keep by customization: end -->
 
+-->
 1. Sign in to the [Azure Management Portal](http://manage.windowsazure.cn) using your Microsoft account.
 
 2. In the left navigation, click **SQL DATABASES**.

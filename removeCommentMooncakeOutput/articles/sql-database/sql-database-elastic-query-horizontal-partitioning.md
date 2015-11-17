@@ -7,9 +7,9 @@
     authors="sidneyh"/>
 
 <tags
-    ms.service="sql-database"
-    ms.date="10/15/2015"
-    wacn.date="" />
+	ms.service="sql-database"
+	ms.date="10/15/2015"
+	wacn.date=""/>
 
 # Elastic queries for horizontal partitioning
 
@@ -112,11 +112,11 @@ Using an external data source as outlined in the previous section, the syntax to
       [ OBJECT_NAME = N'nonescaped_object_name',] 
       DISTRIBUTION = SHARDED(<sharding_column_name>) | REPLICATED |ROUND_ROBIN
 
-The DATA_SOURCE clause defines the external data source (a shard map in the case of horizontal partitioning) that is used for the external table.  
+The DATA\_SOURCE clause defines the external data source (a shard map in the case of horizontal partitioning) that is used for the external table.  
 
-The SCHEMA_NAME and OBJECT_NAME clauses provide the ability to map the external table definition to a table in a different schema on the shard, or a to a table with a different name, respectively. If omitted, the schema of the remote object is assumed to be “dbo” and its name is assumed to be identical to the external table name being defined.  
+The SCHEMA\_NAME and OBJECT_NAME clauses provide the ability to map the external table definition to a table in a different schema on the shard, or a to a table with a different name, respectively. If omitted, the schema of the remote object is assumed to be “dbo” and its name is assumed to be identical to the external table name being defined.  
 
-The SCHEMA_NAME and OBJECT_NAME clauses are particularly useful if the name of your remote table is already taken in the database where you want to create the external table. An example for this problem is when you want to define an external table to get an aggregate view of catalog views or DMVs on your scaled out data tier. Since catalog views and DMVs already exist locally, you cannot use their names for the external table definition. Instead, use a different name and use the catalog view’s or the DMV’s name in the SCHEMA_NAME and/or OBJECT_NAME clauses. (See the example below.) 
+The SCHEMA\_NAME and OBJECT\_NAME clauses are particularly useful if the name of your remote table is already taken in the database where you want to create the external table. An example for this problem is when you want to define an external table to get an aggregate view of catalog views or DMVs on your scaled out data tier. Since catalog views and DMVs already exist locally, you cannot use their names for the external table definition. Instead, use a different name and use the catalog view’s or the DMV’s name in the SCHEMA_NAME and/or OBJECT_NAME clauses. (See the example below.) 
 
 The DISTRIBUTION clause specifies the data distribution used for this table:  
 
@@ -124,7 +124,7 @@ The DISTRIBUTION clause specifies the data distribution used for this table:
 
 * REPLICATED means that identical copies of the table are present on each database in your shard map. Azure SQL DB does not maintain the copies of the table. It is your responsibility to ensure that the replica are identical across the databases. 
 
-* ROUND_ROBIN means that the table is distributed using horizontal partitioning. However, an application dependent distribution has been used.  
+* ROUND\_ROBIN means that the table is distributed using horizontal partitioning. However, an application dependent distribution has been used.  
 
 The query processor utilizes the information provided in the DISTRIBUTION clause to build the most efficient query plans.
 
@@ -199,7 +199,7 @@ Elastic query also introduces a stored procedure that provides direct access to 
 *  Parameter declaration (nvarchar) - optional: String with data type definitions for the parameters used in the Query parameter (like sp_executesql). 
 *  Parameter value list - optional: Comma-separated list of parameter values (like sp_executesql)  
 
-sp_execute_fanout uses the shard map information provided in the invocation parameters to execute the given T-SQL statement on all shards registered with the shard map. Any results are merged using UNION ALL semantics. The result also includes the additional ‘virtual’ column with the shard name. 
+sp\_execute\_fanout uses the shard map information provided in the invocation parameters to execute the given T-SQL statement on all shards registered with the shard map. Any results are merged using UNION ALL semantics. The result also includes the additional ‘virtual’ column with the shard name. 
 
 Note that the same credentials are used to connect to the shard map database and to the shards. 
 

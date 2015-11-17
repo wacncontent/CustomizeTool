@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.date="07/01/2015"
+	ms.date="10/01/2015"
 	wacn.date=""/>
 
 # Get Started with Offline Data Sync in Mobile Services
@@ -26,7 +26,7 @@ Offline sync has several advantages:
 * Syncs data across multiple devices
 * Detects conflicts when same record is modified by two devices
 
-> [AZURE.NOTE] To complete this tutorial, you need an Azure account. If you don't have an account, you can sign up for an Azure trial and get [free mobile services that you can keep using even after your trial ends](/home/features/mobile-services/#price). For details, see [Azure Trial](/pricing/1rmb-trial/ target="_blank").
+> [AZURE.NOTE] To complete this tutorial, you need an Azure account. If you don't have an account, you can sign up for an Azure trial and get [free mobile services that you can keep using even after your trial ends](/home/features/mobile-services/#price). For details, see [Azure Trial](/pricing/1rmb-trial/?WT.mc_id=AE564AB28 target="_blank").
 
 This tutorial is based on the [Mobile Services Quick Start tutorial], which you must complete first. Let's first review the code related to offline sync already in the Quick Start.
 
@@ -59,13 +59,13 @@ In this example, the push operation is not strictly necessary. If there are chan
 
 ```
       -(void)syncData:(QSCompletionBlock)completion
-        {
+      {
           // push all changes in the sync context, then pull new data
           [self.client.syncContext pushWithCompletion:^(NSError *error) {
               [self logErrorIfNotNil:error];
               [self pullData:completion];
           }];
-        }
+      }
 
 ```
 
@@ -75,7 +75,7 @@ The second parameter to `pullWithQuery` is a query ID for _incremental sync_. In
 
 ```
       -(void)pullData:(QSCompletionBlock)completion
-        {
+      {
           MSQuery *query = [self.syncTable query];
 
           // Pulls data from the remote server into the local table.
@@ -87,9 +87,9 @@ The second parameter to `pullWithQuery` is a query ID for _incremental sync_. In
               // Let the caller know that we have finished
               if (completion != nil) {
                   dispatch_async(dispatch_get_main_queue(), completion);
-        }
+              }
           }];
-        }
+      }
 ```
 
 
@@ -151,7 +151,7 @@ When using the Core Data offline store, you need to define particular tables and
 
     #### TodoItem
 
-    | Attribute     |  Type   | Note                                                   | 
+    | Attribute     |  Type   | Note                                                   |
     |-------------- |  ------ | -------------------------------------------------------|
     | id (required) | String  | primary key in remote store (required)                 |
     | complete      | Boolean | todo item field                                        |
@@ -181,14 +181,14 @@ In this section, you modify the app so that it does not sync on app start, or wh
 ```
         if (completion != nil) {
             dispatch_async(dispatch_get_main_queue(), completion);
-                }
+        }
 ```
 
 ## <a name="test-app"></a>Test App
 
 In this section, you will turn of Wi-Fi in the simulator to create an offline scenario. When you add data items, they will be held in the local Core Data store, but not synced to the mobile service.
 
-1. Turn off Wi-Fi in the iOS simulator. This simulates an offlien scenario.
+1. Turn off the internet connection on your Mac. Turning off WiFi in just iOS simulator may not have an effect, since the simulator may still use the host Mac's internet connection, so turn off internet for the computer itself. This simulates an offline scenario.
 
 2. Add some todo items or complete some items. Quit the simulator (or forcibly close the app) and restart. Verify that your changes have been persisted. Notice that the data items are still displayed because they are held in the local Core Data store.
 
@@ -259,11 +259,10 @@ To synchronize the local store with the server, you used `MSSyncTable.pullWithQu
 
 
 [Get started with Mobile Services]: /documentation/articles/mobile-services-ios-get-started
-[Get started with data]: /documentation/articles/mobile-services-ios-get-started-data
-[Handling Conflicts with Offline Support for Mobile Services]:  /documentation/articles/mobile-services-ios-handling-conflicts-offline-data
+[Handling Conflicts with Offline Support for Mobile Services]: /documentation/articles/mobile-services-ios-handling-conflicts-offline-data
 [Soft Delete]: /documentation/articles/mobile-services-using-soft-delete
 
-
+[Cloud Cover: Offline Sync in Azure Mobile Services]: http://channel9.msdn.com/Shows/Cloud+Cover/Episode-155-Offline-Storage-with-Donna-Malayeri
+[Azure Friday: Offline-enabled apps in Azure Mobile Services]: http://azure.microsoft.com/documentation/videos/azure-mobile-services-offline-enabled-apps-with-donna-malayeri/
 
 [Mobile Services Quick Start tutorial]: /documentation/articles/mobile-services-ios-get-started
- 

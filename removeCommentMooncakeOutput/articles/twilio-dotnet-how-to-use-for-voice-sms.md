@@ -7,9 +7,9 @@
 	manager="twilio" 
 	editor=""/>
 
-<tags 
-	ms.service="multiple" 
-	ms.date="04/24/2015" 
+<tags
+	ms.service="multiple"
+	ms.date="04/24/2015"
 	wacn.date=""/>
 
 

@@ -3,19 +3,19 @@ This tutorial is built on the [GetStartedWithMobileServices app](https://code.ms
 
 1. Download the JavaScript version of the GetStartedWithMobileServices sample app from the [Developer Code Samples site]. 
 
-3. In Visual Studio 2013, open the downloaded project, expand the js folder in Solution Explorer, and examine the default.js file.
+<!-- deleted by customization 3 --><!-- keep by customization: begin --> 2 <!-- keep by customization: end -->. In Visual Studio 2013, open the downloaded project, expand the js folder in Solution Explorer, and examine the default.js file.
 
    	Notice that added **TodoItem** objects are stored in an in-memory `WinJS.Binding.List`.
 
-4. Press the **F5** key to rebuild the project and start the app.
+<!-- deleted by customization 4 --><!-- keep by customization: begin --> 3 <!-- keep by customization: end -->. Press the **F5** key to rebuild the project and start the app.
 
-5. In the app, type some text in **Insert a TodoItem**, then click **Save**.
+<!-- deleted by customization 5 --><!-- keep by customization: begin --> 4 <!-- keep by customization: end -->. In the app, type some text in **Insert a TodoItem**, then click **Save**.
 
    	![](./media/mobile-services-windows-universal-dotnet-download-project/mobile-quickstart-startup.png) 
 
    	Notice that the saved text is displayed.
 
-6. Right-click the Windows Phone 8.1 project, click **Set as Start-up Project**, then press **F5** to start the Windows Phone Store app.  
+<!-- deleted by customization 6 --><!-- keep by customization: begin --> 5 <!-- keep by customization: end -->. Right-click the Windows Phone 8.1 project, click **Set as Start-up Project**, then press **F5** to start the Windows Phone Store app.
 
 	![](./media/mobile-services-windows-universal-dotnet-download-project/mobile-quickstart-startup-wp8.png)
 

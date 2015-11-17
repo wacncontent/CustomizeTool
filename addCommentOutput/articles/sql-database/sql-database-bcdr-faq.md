@@ -38,9 +38,9 @@ No.
 
 ## 6.	How do I find out the available restore point available for my database?
 
-For recovery from user error – The current time is the latest restore point available. To find out the oldest available restore point, use [Get <!-- deleted by customization Database](https://msdn.microsoft.com/zh-cn/library/dn505708.aspx) --><!-- keep by customization: begin --> Database](https://msdn.microsoft.com/zh-CN/library/dn505708.aspx) <!-- keep by customization: end --> (*RecoveryPeriodStartDate*) to get the oldest restore point (non Geo-replicated restore point).
+For recovery from user error – The current time is the latest restore point available. To find out the oldest available restore point, use [Get Database](https://msdn.microsoft.com/zh-cn/library/dn505708.aspx) (*RecoveryPeriodStartDate*) to get the oldest restore point (non Geo-replicated restore point).
 
-For recovery from outage - Use the [Get Recoverable <!-- deleted by customization Database](https://msdn.microsoft.com/zh-cn/library/dn800985.aspx) --><!-- keep by customization: begin --> Database](https://msdn.microsoft.com/zh-CN/library/dn800985.aspx) <!-- keep by customization: end --> (*LastAvailableBackupDate*) to get the latest Geo-replicated restore point.
+For recovery from outage - Use the [Get Recoverable Database](https://msdn.microsoft.com/zh-cn/library/dn800985.aspx) (*LastAvailableBackupDate*) to get the latest Geo-replicated restore point.
 
 ## 7.	How could I bulk restore databases under my server?
 
@@ -54,8 +54,9 @@ For active geo-replication, all the secondaries database is readable (up to 4 se
 
 ## 9.	What is the replication delay when using standard geo-replication or active geo-replication?
 
-Geo-Replication uses continuous copy. Hence, use the <!-- deleted by customization [sys.dm_continuous_copy_status](https://msdn.microsoft.com/zh-cn/library/azure/dn741329.aspx) --><!-- keep by customization: begin --> [sys.dm_continuous_copy_status](https://msdn.microsoft.com/zh-CN/library/azure/dn741329.aspx) <!-- keep by customization: end --> dynamic management view (DMVs) to get the last replication time and other information.
+Geo-Replication uses continuous copy. Hence, use the [sys.dm_continuous_copy_status](https://msdn.microsoft.com/zh-cn/library/azure/dn741329.aspx) dynamic management view (DMVs) to get the last replication time and other information.
 
 
 
 
+ 

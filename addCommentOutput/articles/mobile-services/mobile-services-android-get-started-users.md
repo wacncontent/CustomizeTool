@@ -12,30 +12,15 @@
 	ms.date="10/05/2015"
 	wacn.date=""/>
 
-# Add authentication to your Mobile Services Android app <!-- deleted by customization (JavaScript backend) -->
+# Add authentication to your Mobile Services Android app (JavaScript backend)
 
 [AZURE.INCLUDE [mobile-services-selector-get-started-users](../includes/mobile-services-selector-get-started-users.md)]
 
 ## Summary
 
-<!-- deleted by customization
 This topic shows you how to authenticate users in Azure Mobile Services from your app. In this tutorial, you add authentication to the quickstart project using an identity provider that is supported by Mobile Services. After being successfully authenticated and authorized by Mobile Services, the user ID value is displayed.
 
 > [AZURE.VIDEO android-getting-started-with-authentication-in-windows-azure-mobile-services]
--->
-<!-- keep by customization: begin -->
-<div class="dev-onpage-video-clear clearfix">
-<div class="dev-onpage-left-content">
-
-
-
-<p>This topic shows you how to authenticate users in Azure Mobile Services from your app. In this tutorial, you add authentication to the quickstart project using an identity provider that is supported by Mobile Services. After being successfully authenticated and authorized by Mobile Services, the user ID value is displayed.</p>
-
-</div>
-
-<div class="dev-onpage-video-wrapper"><a href="http://channel9.msdn.com/Series/Windows-Azure-Mobile-Services/Android-Getting-Started-with-Authentication-in-Windows-Azure-Mobile-Services" target="_blank" class="label">watch the tutorial</a> <a style="background-image: url('/media/devcenter/mobile/videos/mobile-android-get-started-authentication-180x120.png') !important;" href="http://channel9.msdn.com/Series/Windows-Azure-Mobile-Services/Android-Getting-Started-with-Authentication-in-Windows-Azure-Mobile-Services" target="_blank" class="dev-onpage-video"><span class="icon">Play Video</span></a><span class="time">10:42</span></div>
-</div> 
-<!-- keep by customization: end -->
 
 This tutorial walks you through the basic steps to enable authentication in your app.
 
@@ -94,6 +79,12 @@ In the next tutorial, [Authorize users with scripts], you will take the user ID 
 [4]: ./media/mobile-services-android-get-started-users/mobile-services-selection.png
 [5]: ./media/mobile-services-android-get-started-users/mobile-service-uri.png
 
+
+
+
+
+
+
 [13]: ./media/mobile-services-android-get-started-users/mobile-identity-tab.png
 [14]: ./media/mobile-services-android-get-started-users/mobile-portal-data-tables.png
 [15]: ./media/mobile-services-android-get-started-users/mobile-portal-change-table-perms.png
@@ -104,22 +95,11 @@ In the next tutorial, [Authorize users with scripts], you will take the user ID 
 [Submit an app page]: http://go.microsoft.com/fwlink/p/?LinkID=266582
 [My Applications]: http://go.microsoft.com/fwlink/p/?LinkId=262039
 [Live SDK for Windows]: http://go.microsoft.com/fwlink/p/?LinkId=262253
-<!-- deleted by customization
-[Single sign-on for Windows Store apps by using Live Connect]: /develop/mobile/tutorials/single-sign-on-windows-8-dotnet
-[Get started with Mobile Services]: /develop/mobile/tutorials/get-started-android
-[Add Mobile Services to an existing app]: /develop/mobile/tutorials/get-started-with-data-android
-[Get started with authentication]: /develop/mobile/tutorials/get-started-with-users-android
-[Get started with push notifications]: /develop/mobile/tutorials/get-started-with-push-android
-[Authorize users with scripts]: /develop/mobile/tutorials/authorize-users-in-scripts-android
--->
-<!-- keep by customization: begin -->
 [Single sign-on for Windows Store apps by using Live Connect]: /documentation/articles/mobile-services-windows-store-dotnet-single-sign-on
-[Get started with Mobile Services]: /documentation/articles/mobile-services-android-get-started
-[Add Mobile Services to an existing app]: /documentation/articles/mobile-services-android-get-started-data
-[Get started with authentication]: /documentation/articles/mobile-services-android-get-started-users
-
-[Get started with push notifications]: /documentation/articles/mobile-services-javascript-backend-android-get-started-push
-[Authorize users with scripts]: /documentation/articles/mobile-services-javascript-backend-service-side-authorization/
-<!-- keep by customization: end -->
+[Get started with Mobile Services]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-android
+[Add Mobile Services to an existing app]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-data-android
+[Get started with authentication]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-users-android
+[Get started with push notifications]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-push-android
+[Authorize users with scripts]: /develop/mobile/tutorials/authorize-users-in-scripts-android
 
 [Azure Management Portal]: https://manage.windowsazure.cn/

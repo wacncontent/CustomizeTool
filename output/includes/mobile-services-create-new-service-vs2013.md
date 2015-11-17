@@ -13,11 +13,11 @@ The following steps create a new mobile service in Azure and add code to your pr
 
 	When your subscription already has one or more existing mobile services, the service names are displayed. 
 
-5. Back in the **Create Mobile Service** dialog, select your **Subscription**, the **JavaScript** backend  in **Runtime** and a **Region** for your mobile service, then type a **Name** for your mobile service.
+<!-- deleted by customization 5 --><!-- keep by customization: begin --> 4 <!-- keep by customization: end -->. Back in the **Create Mobile Service** dialog, select your **Subscription**, the **JavaScript** backend  in **Runtime** and a **Region** for your mobile service, then type a **Name** for your mobile service.
 
 	>[AZURE.NOTE]Mobile service names must be unique. A red X is displayed next to **Name** when the name you supplied is not available. 
 
-6. In **Database**, select **&lt;Create a free SQL Database&gt;**, supply the **Server user name**, **Server password**, and **Server password confirmation** then click **Create**.
+<!-- deleted by customization 6 --><!-- keep by customization: begin --> 5 <!-- keep by customization: end -->. In **Database**, select **&lt;Create a free SQL Database&gt;**, supply the **Server user name**, **Server password**, and **Server password confirmation** then click **Create**.
 
   	![create new mobile service in VS 2013](./media/mobile-services-create-new-service-vs2013/mobile-create-service-from-vs2013-2.png)
 
@@ -25,6 +25,6 @@ The following steps create a new mobile service in Azure and add code to your pr
 	> [AZURE.NOTE]
 	> As part of this tutorial, you create a new free SQL Database instance and server. You can reuse this new database and administer it as you would any other SQL Database instance. You can only have one free database instance. If you already have a database in the same region as the new mobile service, you can instead choose the existing database. When you choose an existing database, make sure that you supply correct login credentials. If you supply incorrect login credentials, the mobile service is created in an unhealthy state.
 
-7. After the mobile service is created, select the newly created mobile service from the list in Service Manager and click **OK**.
+<!-- deleted by customization 7 --><!-- keep by customization: begin --> 6 <!-- keep by customization: end -->. After the mobile service is created, select the newly created mobile service from the list in Service Manager and click **OK**.
 
 	After the wizard completes, the required NuGet packages are installed, a reference to the Mobile Services client library is added to the project, and your project source code is updated.

@@ -15,17 +15,11 @@
 # Get started with Mobile Services
 
 [AZURE.INCLUDE [mobile-services-selector-get-started](../includes/mobile-services-selector-get-started.md)]
-<!-- deleted by customization
 &nbsp;
 
 [AZURE.INCLUDE [mobile-services-hero-slug](../includes/mobile-services-hero-slug.md)]
 
 This tutorial shows you how to add a cloud-based backend service to an app using Azure Mobile Services. In this tutorial, you will create both a new mobile service and a simple _To do list_ app that stores app data in the new mobile service.
--->
-<!-- keep by customization: begin -->
-
-This tutorial shows you how to add a cloud-based backend service to an app using Azure Mobile Services. In this tutorial, you will create both a new mobile service and a simple _To do list_ app that stores app data in the new mobile service. 
-<!-- keep by customization: end -->
 
 A screenshot from the completed app is below:
 
@@ -83,41 +77,32 @@ The final stage of this tutorial is to build and run your new app.
 	+ **Windows Phone 8**
 
 		1. Windows Phone 8: Open the .sln file in the **platforms\wp8** folder in Visual Studio 2012 Express for Windows Phone.
+
 		2. Press the **F5** key to rebuild the project and start the app.
-<!-- deleted by customization
+
 	  	![][2]
--->
-<!-- keep by customization: begin -->
-	
-	  	![][2]
-<!-- keep by customization: end -->
 
 	+ **iOS**
 
 		1. Open the project in the **platforms/ios** folder in Xcode.
+
 		2. Press the **Run** button to build the project and start the app in the iPhone emulator, which is the default for this project.
-<!-- deleted by customization
+
 	  	![][3]
--->
-<!-- keep by customization: begin -->
-	
-	  	![][3]
-<!-- keep by customization: end -->
 
 	+ **Android**
 
 		1. In Eclipse, click **File** then **Import**, expand **Android**, click **Existing Android Code into Workspace**, and then click **Next.**
+
 		2. Click **Browse**, browse to the location of the expanded project files, click **OK**, make sure that the TodoActivity project is checked, then click **Finish**. <p>This imports the project files into the current workspace.</p>
+
 		3. From the **Run** menu, click **Run** to start the project in the Android emulator.
-<!-- deleted by customization
+
 			![][4]
--->
-<!-- keep by customization: begin -->
-		
-			![][4]
-	
-<!-- keep by customization: end -->
+
 		>[AZURE.NOTE]To be able to run the project in the Android emulator, you must define a least one Android Virtual Device (AVD). Use the AVD Manager to create and manage these devices.
+
+
 3. After launching the app in one of the mobile emulators above, type some text into the textbox and then click **Add**.
 
 	This sends a POST request to the new mobile service hosted in Azure. Data from the request is inserted into the **TodoItem** table. Items stored in the table are returned by the mobile service, and the data is displayed in the list.
@@ -132,13 +117,14 @@ The final stage of this tutorial is to build and run your new app.
 
 	![](./media/mobile-services-javascript-backend-phonegap-get-started/mobile-data-browse.png)
 
+
 ## Make app updates and rebuild projects for each platform
 
 1. Make changes to code files in the ´www´ directory, which in this case is ´todolist/www´.
 
 2. Verify that all of the target platform tools are accessible in the system path.
 
-<!-- deleted by customization 2 --><!-- keep by customization: begin --> 3 <!-- keep by customization: end -->. Open a command prompt in the root project directory, and run one of the following platform-specific commands:
+2. Open a command prompt in the root project directory, and run one of the following platform-specific commands:
 
 	+ **Windows Phone**
 
@@ -147,6 +133,7 @@ The final stage of this tutorial is to build and run your new app.
     		phonegap local build wp8
 
 	+ **iOS**
+
 		Open terminal and run the following command:
 
     		phonegap local build ios
@@ -164,24 +151,16 @@ The final stage of this tutorial is to build and run your new app.
 ## Next Steps
 Now that you have completed the quickstart, learn how to perform additional important tasks in Mobile Services:
 
-<!-- deleted by customization
 * **[Add authentication to your app]**  
-  Learn<!-- keep by customization: begin --> <br/>Learn <!-- keep by customization: end --> how to authenticate users of your app with an identity provider.
+  Learn how to authenticate users of your app with an identity provider.  
+
 * **[Add push notifications to your app](https://msdn.microsoft.com/magazine/dn879353.aspx)**  
-  Learn<!-- keep by customization: begin --> <br/>Learn <!-- keep by customization: end --> how to register for and send push notifications to your app.
+  Learn how to register for and send push notifications to your app.
 
 * **[Mobile Services HTML/JavaScript How-to Conceptual Reference](/documentation/articles/mobile-services-html-how-to-use-client-library)**  
   Learn more about how to use the JavaScript client library to access data, call custom APIs, and perform authentication.
 
 [AZURE.INCLUDE [app-service-disqus-feedback-slug](../includes/app-service-disqus-feedback-slug.md)]
--->
-<!-- keep by customization: begin -->
-* [Add authentication to your app]
-  <!-- keep by customization: begin --> <br/>Learn <!-- keep by customization: end --> how to authenticate users of your app with an identity provider.
-  
-* [Add push notifications to your app](https://msdn.microsoft.com/magazine/dn879353.aspx)
-  <!-- keep by customization: begin --> <br/>Learn <!-- keep by customization: end --> how to register for and send push notifications to your app.
-<!-- keep by customization: end -->
 
 <!-- Images. -->
 [0]: ./media/mobile-services-javascript-backend-phonegap-get-started/portal-screenshot1.png
@@ -191,11 +170,9 @@ Now that you have completed the quickstart, learn how to perform additional impo
 [4]: ./media/mobile-services-javascript-backend-phonegap-get-started/mobile-portal-quickstart-android.png
 
 <!-- URLs. -->
-<!-- keep by customization: begin -->
-[Add Mobile Services to an existing app]: /documentation/articles/mobile-services-html-get-started-data
-<!-- keep by customization: end -->
 [Add authentication to your app]: /documentation/articles/mobile-services-html-get-started-users
 [Android SDK]: http://developer.android.com/sdk/index.html
 [Management Portal]: https://manage.windowsazure.cn/
 [Xcode]: https://go.microsoft.com/fwLink/p/?LinkID=266532
 [Visual Studio 2012 Express for Windows Phone]: https://www.visualstudio.com/downloads/download-visual-studio-vs
+ 

@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="08/25/2015"
+	ms.date="10/13/2015"
 	wacn.date=""/>
 
 # Web App Sign In & Sign Out with Azure AD

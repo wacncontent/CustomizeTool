@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Quickstart for the Azure AD Graph API | Windows Aure"
+   pageTitle="Quickstart for the Azure AD Graph API | Microsoft Aure"
    description="The Azure Active Directory Graph API provides programmatic access to Azure AD through OData REST API endpoints. Applications can use the Graph API to perform create, read, update, and delete (CRUD) operations on directory data and objects."
    services="active-directory"
    documentationCenter="n/a"
@@ -10,10 +10,9 @@
 
 
    <tags
-      ms.service="active-directory"
-
-      ms.date="08/24/2015"
-      wacn.date=""/>
+	ms.service="active-directory"
+	ms.date="08/24/2015"
+	wacn.date=""/>
 
 # Quickstart for the Azure AD Graph API
 

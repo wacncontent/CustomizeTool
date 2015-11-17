@@ -91,20 +91,24 @@ To list the locations that are available for hosting services, use the **list\_l
 
 When you create a cloud service or storage service you will need to provide a valid location. The **list\_locations** method will always return an up-to-date list of the currently available locations. As of this writing, the available locations are:
 
+<!-- deleted by customization
 - West Europe
 - China North
-- Southeast Asia
-- East Asia
 - China North
+-->
+- China East
+- China North
+<!-- deleted by customization
 - China North
 - China East
 - China North
 - China East
 - Japan East
-- Japan West
+- China East
 - Brazil South
 - Australia East
 - Australia Southeast
+-->
 
 ## <a name="CreateCloudService"> </a>How to: Create a cloud service
 

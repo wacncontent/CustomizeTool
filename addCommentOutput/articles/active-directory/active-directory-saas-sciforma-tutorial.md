@@ -1,5 +1,8 @@
 <properties pageTitle="Tutorial: Azure AD integration with Sciforma | Windows Azure" description="Learn how to use Sciforma with Azure Active Directory to enable single sign-on, automated provisioning, and more!." services="active-directory" authors="MarkusVi"  documentationCenter="na" manager="stevenpo"/>
-<tags ms.service="active-directory" ms.devlang="na" ms.topic="article" ms.tgt_pltfrm="na" ms.workload="identity" ms.date="08/01/2015" ms.author="markvi" />
+<tags
+	ms.service="active-directory"
+	ms.date="08/01/2015"
+	wacn.date=""/>
 #Tutorial: Azure AD integration with Sciforma
 <!-- deleted by customization
 >[AZURE.TIP]For feedback, click [here](https://social.msdn.microsoft.com/Forums/azure/zh-cn/93b5a023-970a-4d6d-89e1-a7aa4480acbb/tutorial-azure-ad-integration-with-sciforma?forum=WindowsAzureAD).

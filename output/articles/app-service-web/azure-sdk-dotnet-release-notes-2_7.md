@@ -83,7 +83,9 @@ Cloud explorer supports the following:
 - Integrated Properties panel which shows developer-focused properties commonly needed during dev/test 
 - Quick switching of the account to use when enumerating resources (use Settings command on toolbar) 
 - Filtering of subscriptions to use when enumerating resources (use Settings command on toolbar) 
+<!-- deleted by customization
 - Deep links to the Azure Preview Portal for management of resources and resource groups 
+-->
  
  
 ###Azure Resource Manager Tools 
@@ -96,6 +98,7 @@ If you’re using an Azure Resource Group project from a previous version of the
 ###Storage Explorer Tools 
 
 - Support for viewing Append Blobs. More info in [this blog post](http://blogs.msdn.com/b/windowsazurestorage/archive/2015/04/13/introducing-azure-storage-append-blob.aspx). 
+<!-- deleted by customization
 - Support for viewing Premium Storage accounts through Server Explorer. Server Explorer will only display page blobs for premium storage accounts as they are the only supported type for premium storage accounts.
 
 ###Azure Data Factory Tools for Visual Studio 
@@ -109,6 +112,7 @@ Introducing **Azure Data Factory Tools** for Visual Studio. Below are the enable
 - **JSON editing with schema validation and rich intellisense**: Efficiently configure and edit JSON documents of Data Factory entities with rich intellisense and schema validation 
 - **Multi-Environment publishing**: Publish authored pipelines to dev, test or Prod environment by creating separate config files for each environment.
 - **Pig, Hive and .Net based Data Processing Support**: Support for Pig and Hive Scripts in Data Factory project. Support for referencing C# Project for managing .Net Activity.
+-->
 
 ##Azure SDK for .NET 2.7.1
 

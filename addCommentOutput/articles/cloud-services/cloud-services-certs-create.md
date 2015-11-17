@@ -12,12 +12,7 @@
 	ms.date="10/09/2015"
 	wacn.date=""/>
 
-<!-- deleted by customization
 # Certificates overview for Azure Cloud Services
--->
-<!-- keep by customization: begin -->
-# Certificates Overview for Azure Cloud Services
-<!-- keep by customization: end -->
 Certificates are used in Azure for cloud services ([service certificates](#what-are-service-certificates)) and for authenticating with the management API ([management certificates](#what-are-management-certificates)). This topic gives a general overview of both certificate types, how to [create](#create) them, and how to [deploy](#deploy) them to Azure.
 
 Certificates used in Azure are x.509 v3 certificates and can be signed by another trusted certificate or they can be self-signed. A self-signed certificate is signed by its own creator, and because of this, are not trusted by default. Most browsers can ignore this. Self-signed certificates should only be used by yourself when developing and testing your cloud services. 
@@ -68,10 +63,10 @@ This utility is installed with Visual Studio 2013/2015. It is a console utility 
 There are many pages on the internet that cover how to do this with IIS. [Here](https://www.sslshopper.com/article-how-to-create-a-self-signed-certificate-in-iis-7.html) is a great one I found that I think explains it well. 
 
 ### Java
-You can use Java to [create a <!-- deleted by customization certificate](/documentation/articles/java-create-azure-website-using-java-sdk#create-a-certificate) --><!-- keep by customization: begin --> certificate](/documentation/articles/java-create-azure-website-using-java-sdk/#create-a-certificate) <!-- keep by customization: end -->.
+You can use Java to [create a certificate](/documentation/articles/java-create-azure-website-using-java-sdk#create-a-certificate).
 
 ### Linux
-<!-- deleted by customization [This](..\virtual-machines\virtual-machines-linux-use-ssh-key.md) --><!-- keep by customization: begin --> [This](/documentation/articles/virtual-machines-linux-use-ssh-key) <!-- keep by customization: end --> article describes how to create certificates with SSH.
+[This](/documentation/articles/virtual-machines-linux-use-ssh-key) article describes how to create certificates with SSH.
 
 ## Next steps
 

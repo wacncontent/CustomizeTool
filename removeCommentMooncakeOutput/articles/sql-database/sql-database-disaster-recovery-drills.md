@@ -8,9 +8,9 @@
    editor="monicar"/>
 
 <tags
-   ms.service="sql-database"
-   ms.date="07/15/2015"
-   wacn.date=""/>
+	ms.service="sql-database"
+	ms.date="07/15/2015"
+	wacn.date=""/>
 
 #Performing Disaster Recovery Drill
 
@@ -76,4 +76,3 @@ The disaster recovery drill will be conducted by using a parallel target server 
 ####Validation
 
 - Complete the drill by verifying the application integrity post recovery (i.e. connection strings, logins, basic functionality testing or other validations part of standard application signoffs procedures).
-

@@ -22,7 +22,7 @@ You may also know the classic deployment model as the Service Management model.
 
 This topic describes the differences between the two models, and some of the issues you may encounter when transitioning from the classic model to Resource Manager. 
 It provides an overview of the models but does not cover in detail the differences in individual services. For more details about transitioning Compute, Storage, and 
-Networking resources, see [Azure Compute, Network & Storage Providers under the Azure Resource Manager](./virtual-machines/virtual-machines-azurerm-versus-azuresm.md).
+Networking resources, see [Azure Compute, Network & Storage Providers under the Azure Resource Manager](/documentation/articles/virtual-machines-azurerm-versus-azuresm).
 
 Many resources operate without issue in both the classic model and Resource Manager. These resources fully support Resource Manager even if created in 
 the classic model. You can transition to Resource Manager without any concerns or extra effort.
@@ -139,9 +139,9 @@ that contains Virtual Machines that were created with Resource Manager and class
     Resources :
      Name                 Type                                          Location
      ================     ============================================  ========
-     ExampleClassicVM     Microsoft.ClassicCompute/domainNames          eastus
-     ExampleClassicVM     Microsoft.ClassicCompute/virtualMachines      eastus
-     ExampleResourceVM    Microsoft.Compute/virtualMachines             eastus
+     ExampleClassicVM     Microsoft.ClassicCompute/domainNames          chinaeast
+     ExampleClassicVM     Microsoft.ClassicCompute/virtualMachines      chinaeast
+     ExampleResourceVM    Microsoft.Compute/virtualMachines             chinaeast
     ...
 
 However, if you run the Get-AzureVM command, you will only get Virtual Machines that were created with Resource Manager.
@@ -164,12 +164,12 @@ There are some important considerations when working Virtual Machines.
 - Virtual machines deployed with the Resource Manager deployment model must be included in a virtual network.
 - Virtual machines deployed with the classic deployment model don't have to be included in a virtual network.
 
-For a list of equivalent Azure CLI commands when transitioning from classic deployment to Resource Manager, see [Equivalent Resource Manager and Service Management commands for VM operations](./virtual-machines/xplat-cli-azure-manage-vm-asm-arm.md).
+For a list of equivalent Azure CLI commands when transitioning from classic deployment to Resource Manager, see [Equivalent Resource Manager and Service Management commands for VM operations](/documentation/articles/xplat-cli-azure-manage-vm-asm-arm).
 
 For more details about transitioning Compute, Storage, and 
-Networking resources, see [Azure Compute, Network & Storage Providers under the Azure Resource Manager](./virtual-machines/virtual-machines-azurerm-versus-azuresm.md).
+Networking resources, see [Azure Compute, Network & Storage Providers under the Azure Resource Manager](/documentation/articles/virtual-machines-azurerm-versus-azuresm).
 
-To learn about connecting virtual networks from different deployment models, see [Connecting classic VNets to new VNets](./networking/virtual-networks-arm-asm-s2s.md).
+To learn about connecting virtual networks from different deployment models, see [Connecting classic VNets to new VNets](/documentation/articles/virtual-networks-arm-asm-s2s).
 
 ## Next steps
 

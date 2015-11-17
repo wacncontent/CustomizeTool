@@ -15,10 +15,8 @@
 # Analyze Twitter data using Hive in HDInsight
 
 Social websites are one of the major driving forces for big-data adoption. Public APIs provided by sites like Twitter are a useful source of data for analyzing and understanding popular trends. In this tutorial, you will get tweets by using a Twitter streaming API, and then use Apache Hive on Azure HDInsight to get a list of Twitter users who sent the most tweets that contained a certain word.
-<!-- deleted by customization
 
 > [AZURE.NOTE] The steps in this document require a Windows-based HDInsight cluster. For steps specific to a Linux-based cluster, see [Analyze Twitter data using Hive in HDInsight (Linux)](/documentation/articles/hdinsight-analyze-twitter-data-linux).
--->
 
 
 

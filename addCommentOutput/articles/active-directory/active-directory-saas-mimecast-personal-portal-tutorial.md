@@ -1,5 +1,8 @@
 <properties pageTitle="Tutorial: Azure Active Directory Integration with Mimecast Personal Portal | Windows Azure" description="Learn how to use Mimecast Personal Portal with Azure Active Directory to enable single sign-on, automated provisioning, and more!." services="active-directory" authors="MarkusVi"  documentationCenter="na" manager="stevenpo"/>
-<tags ms.service="active-directory" ms.devlang="na" ms.topic="article" ms.tgt_pltfrm="na" ms.workload="identity" ms.date="08/01/2015" ms.author="markvi" />
+<tags
+	ms.service="active-directory"
+	ms.date="08/01/2015"
+	wacn.date=""/>
 #Tutorial: Azure Active Directory Integration with Mimecast Personal Portal
 <!-- deleted by customization
 >[AZURE.TIP]For feedback, click [here](https://social.msdn.microsoft.com/Forums/azure/zh-cn/1b634e8a-a379-4fa3-bf5c-3039e22a05e5/tutorial-azure-active-directory-integration-with-mimecast-personal-portal?forum=WindowsAzureAD).

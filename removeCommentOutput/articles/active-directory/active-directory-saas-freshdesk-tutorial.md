@@ -1,5 +1,8 @@
 <properties pageTitle="Tutorial: Azure Active Directory Integration with Freshdesk | Windows Azure" description="Learn how to use Freshdesk with Azure Active Directory to enable single sign-on, automated provisioning, and more!." services="active-directory" authors="MarkusVi"  documentationCenter="na" manager="stevenpo"/>
-<tags ms.service="active-directory" ms.devlang="na" ms.topic="article" ms.tgt_pltfrm="na" ms.workload="identity" ms.date="08/01/2015" ms.author="markvi" />
+<tags
+	ms.service="active-directory"
+	ms.date="08/01/2015"
+	wacn.date=""/>
 #Tutorial: Azure Active Directory Integration with Freshdesk
 >[AZURE.TIP]For feedback, click [here](https://social.msdn.microsoft.com/Forums/azure/zh-cn/1a007040-017b-42b0-9c98-1a69010aee9e/tutorial-azure-ad-integration-with-freshdesk?forum=WindowsAzureAD).
   

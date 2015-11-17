@@ -7,9 +7,9 @@
    manager="douge"
    editor="tglee" />
 <tags
-   ms.service="multiple"
-   ms.date="09/08/2015"
-   wacn.date="" />
+	ms.service="multiple"
+	ms.date="09/08/2015"
+	wacn.date=""/>
 
 # Optimizing Your Azure Code
 

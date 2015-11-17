@@ -13,9 +13,11 @@
 	wacn.date=""/>
 
 # DataStax on Ubuntu with a Resource Manager template
+<!-- deleted by customization
 
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] classic deployment model.
 
+-->
 
 DataStax is a recognized industry leader in developing and delivering solutions based on Apache Cassandra--the commercially supported, enterprise-ready NoSQL distributed database technology that is widely acknowledged as agile, always on, and predictably scalable to any size. DataStax offers both the Enterprise (DSE) and Community (DSC) flavors. It also provides capabilities like in-memory computing, enterprise-level security, fast and powerful integrated analytics, and enterprise search.
 
@@ -27,7 +29,7 @@ Newly deployed clusters based on this template will have the topology described 
 
 Using parameters, you can define the number of nodes that will be deployed in the new Apache Cassandra cluster. An instance of the DataStax Operations Center service will be also deployed in a stand-alone VM within the same virtual network, giving you the ability to monitor the status of the cluster and all individual nodes, add/remove nodes, and perform all administrative tasks related to that cluster.
 
-Once the deployment is complete, you can access the DataStax Operations Center VM instance by using the configured DNS address. The OpsCenter VM has SSH port 22 enabled, as well as port 8443 for HTTPS. The DNS address for the operations center will include *dnsName* and *region* entered as parameters, resulting in the format `{dnsName}.{region}.cloudapp.azure.com`. If you created a deployment with the *dnsName* parameter set to "datastax” in the "China North” region, you could access the DataStax Operations Center VM for the deployment at `https://datastax.westus.cloudapp.azure.com:8443`.
+Once the deployment is complete, you can access the DataStax Operations Center VM instance by using the configured DNS address. The OpsCenter VM has SSH port 22 enabled, as well as port 8443 for HTTPS. The DNS address for the operations center will include *dnsName* and *region* entered as parameters, resulting in the format `{dnsName}.{region}.chinacloudapp.cn`. If you created a deployment with the *dnsName* parameter set to "datastax” in the "China North” region, you could access the DataStax Operations Center VM for the deployment at `https://datastax.chinanorth.chinacloudapp.cn:8443`.
 
 > [AZURE.NOTE] The certificate used in the deployment is a self-signed certificate that will create a browser warning. You can follow the process on the [DataStax](http://www.datastax.com/) website for replacing the certificate with your own SSL certificate.
 

@@ -49,7 +49,7 @@ You are now ready to configure your mobile service to use Google sign-in for aut
 <!-- URLs. -->
 
 [Google apis]: https://accounts.google.com/ServiceLogin?osid=1&passive=true&continue=https://console.developers.google.com/dcredirect/
-[Get started with authentication]: /develop/mobile/tutorials/get-started-with-users-dotnet/
+[Get started with authentication]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-users-dotnet/
 
 [Azure Management Portal]: https://manage.windowsazure.cn/
  

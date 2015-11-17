@@ -22,7 +22,7 @@
 
 This tutorial shows you how to restore an Azure SQL database using Point in Time Restore in the [Azure Management Portal](http://manage.windowsazure.cn). Azure SQL Database has built-in backups to support self-service Point in Time Restore for Basic, Standard, and Premium service tiers.
 
-Point in Time Restore creates a new database. The service automatically selects the service tier based on the backup used at the restore point. Make sure you have available quota on the logical server to create another database. If you'd like to request an increased quota, contact [Azure Support](http://azure.microsoft.com/support/options/).
+Point in Time Restore creates a new database. The service automatically selects the service tier based on the backup used at the restore point. Make sure you have available quota on the logical server to create another database. If you'd like to request an increased quota, contact [Azure Support](/support/contact/).
 
 ## Restrictions and Security
 
@@ -42,8 +42,10 @@ Point in Time Restore creates a new database. The service automatically selects 
 
 ## How to: Restore an Azure SQL database using Point in Time Restore in the Azure Management Portal
 
+<!-- deleted by customization
 > [AZURE.VIDEO restore-a-sql-database-using-point-in-time-restore]
 
+-->
 1. Sign in to the [Azure Management Portal](http://manage.windowsazure.cn) using your Microsoft account.
 
 2. In the left navigation, click **SQL DATABASES**.

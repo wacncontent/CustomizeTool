@@ -16,8 +16,13 @@
 
 #Using Remote Desktop to connect to a Windows Azure Linux VM
 
+<!-- deleted by customization
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
 
+-->
+<!-- keep by customization: begin -->
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-include.md)] This article covers managing a resource with the classic deployment model.
+<!-- keep by customization: end -->
 
 ##Overview
 

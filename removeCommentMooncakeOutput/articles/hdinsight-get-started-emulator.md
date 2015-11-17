@@ -71,7 +71,7 @@ The installation should have also installed several local services. The followin
 
 ![HDI.Emulator.Services][image-hdi-emulator-services]
 
-The services related to the HDInsight Emulator are not started by default. To start the services, from the Hadoop command line, run **start_local_hdp_services.cmd** under <system drive\>\hdp. To automatically start the services after the computer restarts, run **set-onebox-autostart.cmd**.  
+The services related to the HDInsight Emulator are not started by default. To start the services, from the Hadoop command line, run **start\_local\_hdp_services.cmd** under <system drive\>\hdp. To automatically start the services after the computer restarts, run **set-onebox-autostart.cmd**.  
 
 For known issues with installing and running the HDInsight Emulator, see the [HDInsight Emulator Release Notes](/documentation/articles/hdinsight-emulator-release-notes). The installation log is located at **C:\HadoopFeaturePackSetup\HadoopFeaturePackSetupTools\gettingStarted.winpkg.install.log**.
 

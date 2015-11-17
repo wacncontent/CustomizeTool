@@ -23,14 +23,16 @@ You can host [SQL Server on Azure Virtual Machines](/home/features/virtual-machi
 
 >[AZURE.NOTE] Running SQL Server on an Azure VM is one option for storing relational data in Azure. You can also use the Azure SQL Database service. For more information, see [Understanding Azure SQL Database and SQL Server in Azure VMs](/documentation/articles/data-management-azure-sql-database-and-sql-server-iaas).
 
-To create a SQL Server virtual machine in Azure, you must first obtain an Azure Platform subscription. You can purchase an Azure subscription at [Purchase Options](/pricing/overview/). To try it free, visit [Azure trial](https://azure.microsoft.com/pricing/1rmb-trial/). 
+To create a SQL Server virtual machine in Azure, you must first obtain an Azure Platform subscription. You can purchase an Azure subscription at [Purchase Options](/pricing/overview/). To try it free, visit [Azure trial](/pricing/1rmb-trial/). 
 
 ### Deploy a SQL Server instance on a single VM
 
 After signing up for a subscription, the easiest way to deploy a SQL Server virtual machine in Azure is to [provision a SQL Server machine gallery image in the Azure Management Portal](/documentation/articles/virtual-machines-provision-sql-server). Those images include licensing of SQL Server in the pricing for the VM.
 
+<!-- deleted by customization
 >[AZURE.NOTE] Use the [new Portal](https://manage.windowsazure.cn) to provision and manage SQL Server Virtual Machines. It defaults to using Premium Storage and offers Automated Patching, Automated Backup, and AlwaysOn configurations.
 
+-->
 The following table provides a matrix of available SQL Server images in the virtual machine gallery.
 
 |SQL Server version|Operating system|SQL Server edition|
@@ -43,14 +45,21 @@ The following table provides a matrix of available SQL Server images in the virt
 |SQL Server 2014 SP1|Windows Server 2012 R2|Enterprise, Standard, Web|
 |SQL Server 2016 CTP|Windows Server 2012 R2|Evaluation|
 
->[AZURE.NOTE] The virtual machines gallery images for data warehousing and transactional workloads (not shown above) are deprecated and will be removed from the gallery soon. Please use the standard images in the previous table and optimize performance for your specific workload.
+>[AZURE.NOTE] The virtual machines gallery images for data warehousing and transactional workloads (not shown above) are deprecated and will be removed from the gallery soon. Please use the standard images in the previous table and optimize performance for your specific workload <!-- keep by customization: begin --> by following the recommendations in [Performance best practices for SQL Server in Azure Virtual Machines](/documentation/articles/virtual-machines-sql-server-performance-best-practices) <!-- keep by customization: end --> .
 
-In addition to these preconfigured images, you can also [create an Azure virtual machine](/documentation/articles/virtual-machines-windows-tutorial) without SQL Server pre-installed. You can install any instance of SQL Server for which you have a license. You migrate your license to Azure for running SQL Server in an Azure Virtual Machine using [License Mobility through Software Assurance on Azure](http://azure.microsoft.com/pricing/license-mobility/). In this scenario, you only pay for Azure compute and storage [costs](/home/features/virtual-machines) associated with the virtual machine.
+In addition to these preconfigured images, you can also [create an Azure virtual machine](/documentation/articles/virtual-machines-windows-tutorial) without SQL Server pre-installed. You can install any instance of SQL Server for which you have a license. You migrate your license to Azure for running SQL Server in an Azure Virtual Machine using [License Mobility through Software Assurance on Azure](/pricing/license-mobility/). In this scenario, you only pay for Azure compute and storage [costs](/home/features/virtual-machines/#price) associated with the virtual machine.
 
-In order to determine the best virtual machine configuration settings for your SQL Server image, review the [Performance best practices for SQL Server in Azure Virtual Machines](/#pricedocumentation/articles/virtual-machines-sql-server-performance-best-practices). For production workloads, **DS3** is the minimum recommended virtual machine size for SQL Server Enterprise edition, and **DS2** is the minimum recommended virtual machine size for Standard edition.
+<!-- deleted by customization
+In order to determine the best virtual machine configuration settings for your SQL Server image, review the [Performance best practices for SQL Server in Azure Virtual Machines](/documentation/articles/virtual-machines-sql-server-performance-best-practices). For production workloads, **DS3** is the minimum recommended virtual machine size for SQL Server Enterprise edition, and **DS2** is the minimum recommended virtual machine size for Standard edition.
 
 In addition to reviewing performance best practices, other initial tasks include the following:
 
+-->
+<!-- keep by customization: begin -->
+During these early stages of provisioning and configuring, common tasks include:
+
+- [Review performance best practices for SQL Server in Azure VMs](/documentation/articles/virtual-machines-sql-server-performance-best-practices)
+<!-- keep by customization: end -->
 - [Review security best practices for SQL Server in Azure VMs](/documentation/articles/virtual-machines-sql-server-security-considerations)
 - [Set up connectivity](/documentation/articles/virtual-machines-sql-server-connectivity)
 

@@ -22,23 +22,17 @@
 - [C#](/documentation/articles/sql-database-get-started-csharp)
 - [PowerShell](/documentation/articles/sql-database-get-started-powershell)
 
-This article shows you how to create a sample SQL database in just a few minutes using the Azure <!-- deleted by customization preview portal --><!-- keep by customization: begin --> Management Portal <!-- keep by customization: end -->. You'll learn how to:
+This article shows you how to create a sample SQL database in just a few minutes using the Azure preview portal. You'll learn how to:
 
 - Create a server to host the database you create, and then set up a firewall rule for it
 - Create a database from an AdventureWorks sample, which has data that you can play with
 
 You'll need an Azure account and subscription before you start. If you don't have one, sign up for a [trial](/pricing/1rmb-trial/).
 
-<!-- deleted by customization
 > [AZURE.NOTE] This how-to covers setting up a database using Microsoft's relational database service in the cloud, Azure SQL Database. Another option is to run SQL Server on an Azure Virtual Machine. See [Understanding Azure SQL Database and SQL Server in Azure VMs](/documentation/articles/data-management-azure-sql-database-and-sql-server-iaas) for a quick comparison, or you can see [Provision a SQL server virtual machine](/documentation/articles/virtual-machines-provision-sql-server) to get started with a virtual machine.
 
 ## Step 1: sign in and start SQL database set up
 1. Sign in to the [Azure preview portal](http://manage.windowsazure.cn/).
--->
-<!-- keep by customization: begin -->
-## Step 1: Sign in and start SQL database set up
-1. Sign in to the [Azure Management Portal](http://manage.windowsazure.cn/).
-<!-- keep by customization: end -->
 2. Click **New** > **DATA SERVICE** > **SQL Database**.
 
 	![Create a new SQL database](./media/sql-database-get-started/create-db.png)
@@ -47,12 +41,7 @@ You'll need an Azure account and subscription before you start. If you don't hav
 
 	![Database and server settings for SQL database](./media/sql-database-get-started/get-started-dbandserversettings.png)
 
-<!-- deleted by customization
 ## Step 2: choose server settings
--->
-<!-- keep by customization: begin -->
-## Step 2: Choose server settings
-<!-- keep by customization: end -->
 A SQL database in Azure lives on a database server. A server can host multiple databases. As you set up a database, you can also create and set up the server that will host it, or you can use one that was created earlier. We'll set up a new one.
 
 1. Type a **Name** for your database (we use **AdventureWorks**). We'll come back to cover other database settings later.
@@ -73,12 +62,7 @@ A SQL database in Azure lives on a database server. A server can host multiple d
 
 The database and server aren't created yet. This happens after the next step, where you choose to create the database from the AdventureWorks sample and confirm settings.
 
-<!-- deleted by customization
 ## Step 3: set up and create the database
--->
-<!-- keep by customization: begin -->
-## Step 4: Set up and create the database
-<!-- keep by customization: end -->
 1. In the **SQL Database** blade, click **Select source** and then click **Sample**. 
 
 	![Create a database from a sample](./media/sql-database-get-started/new-sample-db.png)
@@ -93,12 +77,7 @@ You jump back to the Azure Startboard, where a tile shows progress until the dat
 	
 Congratulations! You now have a database running in the cloud. You're almost finished. There's one key step left. You need to create a rule on the database server so you can connect to the database.
 
-<!-- deleted by customization
 ## Step 4: configure the firewall
--->
-<!-- keep by customization: begin -->
-## Step 5: Configure the firewall
-<!-- keep by customization: end -->
 
 You need to set up a firewall rule on the server that allows connections from your client computer's IP address so you can work with the database. This not only helps make sure you can connect, it's a great way to see the area where you can get other details about your SQL servers in Azure. 
 
@@ -120,7 +99,7 @@ You need to set up a firewall rule on the server that allows connections from yo
 
 	![Add the IP address](./media/sql-database-get-started/firewall_config_new_rule.png)
 
-	>[AZURE.IMPORTANT] <!-- deleted by customization Your Client --><!-- keep by customization: begin --> You're <!-- keep by customization: end --> IP address is likely to change from time to time, and you may not be able to access your server until you create a new firewall rule. You can check your IP address using [Bing](http://www.bing.com/search?q=my%20ip%20address), and then add a single IP address or a range of IP addresses. See [How to configure firewall settings](/documentation/articles/sql-database-configure-firewall-settings) for details.
+	>[AZURE.IMPORTANT] Your Client IP address is likely to change from time to time, and you may not be able to access your server until you create a new firewall rule. You can check your IP address using [Bing](http://www.bing.com/search?q=my%20ip%20address), and then add a single IP address or a range of IP addresses. See [How to configure firewall settings](/documentation/articles/sql-database-configure-firewall-settings) for details.
 
 ## Next steps
 Now that you have a database with some sample data, you're ready to explore using your favorite tools.

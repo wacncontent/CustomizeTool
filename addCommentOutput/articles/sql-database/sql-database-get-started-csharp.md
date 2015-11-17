@@ -136,7 +136,7 @@ The client application must retrieve the application access token for the curren
             ("https://login.chinacloudapi.cn/" + domainName /* Tenant ID or AAD domain */);
 
         AuthenticationResult token = authContext.AcquireToken
-            ("https://management.azure.com/"/* the Azure Resource Management endpoint */,
+            ("https://manage.windowsazure.cn/"/* the Azure Resource Management endpoint */,
                 clientId,
         new Uri(clientAppUri) /* redirect URI */,
         PromptBehavior.Auto /* with Auto user will not be prompted if an unexpired token is cached */);
@@ -275,7 +275,7 @@ The following command will create a new Basic database if a database with the sa
 
         private static string resourcegroupName = "rg1";
 
-        private static string dataCenterLocation = "Japan West";
+        private static string dataCenterLocation = "China East";
 
         private static string databaseName = "newDatabaseName";
         private static string databaseEdition = "Standard";
@@ -294,7 +294,7 @@ The following command will create a new Basic database if a database with the sa
 
         private static string domainName = "microsoft.partner.onmschina.cn";
 
-        private static string serverLocation = "Japan West";
+        private static string serverLocation = "China East";
 
         #endregion
 
@@ -395,7 +395,7 @@ The following command will create a new Basic database if a database with the sa
                 ("https://login.chinacloudapi.cn/" + domainName /* Tenant ID or AAD domain */);
 
             AuthenticationResult token = authContext.AcquireToken
-                ("https://management.azure.com/"/* the Azure Resource Management endpoint */,
+                ("https://manage.windowsazure.cn/"/* the Azure Resource Management endpoint */,
                     clientId,
             new Uri(clientAppUri) /* redirect URI */,
             PromptBehavior.Auto /* with Auto user will not be prompted if an unexpired token is cached */);
@@ -413,7 +413,12 @@ The following command will create a new Basic database if a database with the sa
 
 ## Additional Resources
 
+<!-- deleted by customization
 - [SQL Database](/documentation/services/sql-database/)
+-->
+<!-- keep by customization: begin -->
+- [SQL Database](/documentation/services/sql-databases/)
+<!-- keep by customization: end -->
 
 
 

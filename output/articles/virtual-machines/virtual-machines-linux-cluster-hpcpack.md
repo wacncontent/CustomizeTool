@@ -15,9 +15,11 @@
 # Get started with Linux compute nodes in an HPC Pack cluster in Azure
 
 This article shows you how to use an Azure PowerShell script to set up a Microsoft HPC Pack cluster in Azure which contains a head node running Windows Server and several compute nodes running a CentOS Linux distribution. We also show several ways to move data files to the Linux compute nodes. You can use this cluster to run Linux HPC workloads in Azure.
+<!-- deleted by customization
 
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
 
+-->
 
 At a high level the following diagram shows the HPC Pack cluster you'll create.
 
@@ -290,11 +292,18 @@ The HPC Pack **clusrun** tool can be used to execute commands on Linux nodes eit
 
 ## Next steps
 
+<!-- deleted by customization
 * Try running a Linux workload on the cluster. For an example, see [Run NAMD with Microsoft HPC Pack on Linux compute nodes in Azure](/documentation/articles/virtual-machines-linux-cluster-hpcpack-namd).
+-->
+<!-- keep by customization: begin -->
+* Use **clusrun** to install your Linux application on the Linux compute nodes and submit a job to the HPC Pack cluster.
+<!-- keep by customization: end -->
 
 * Try scaling up the cluster to a larger number of nodes, or deploy size [A8 or A9](/documentation/articles/virtual-machines-a8-a9-a10-a11-specs) compute nodes to run MPI workloads.
 
+<!-- deleted by customization
 * Try an [Azure quickstart template](https://azure.microsoft.com/documentation/templates/create-hpc-cluster-linux-cn/) with Azure Resource Manager to speed up deployments of HPC Pack with a larger number of  Linux compute nodes.
+-->
 
 <!--Image references-->
 [scenario]: ./media/virtual-machines-linux-cluster-hpcpack/scenario.png

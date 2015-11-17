@@ -9,9 +9,9 @@
    tags=""/>
 
 <tags
-   ms.service="best-practice"
-   ms.date="04/09/2015"
-   wacn.date=""/>
+	ms.service="best-practice"
+	ms.date="04/09/2015"
+	wacn.date=""/>
 
 # NuGet Packages
 

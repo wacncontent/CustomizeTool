@@ -39,7 +39,12 @@ The procedures in this topic will show you how to:
 
 ##<a name="subheading1"></a>Register a custom domain for an Azure CDN endpoint
 
+<!-- deleted by customization
 1.	Log into the [Azure Management Portal](http://manage.windowsazure.cn/).
+-->
+<!-- keep by customization: begin -->
+1.	Log into the [Azure Management Portal](http://manage.windowsazure.cn).
+<!-- keep by customization: end -->
 2.	In the navigation pane, click **CDN**.
 3.	From the list view, click the name of the CDN endpoint with which you want to associate the subdomain, to navigate to the detail page for that endpoint.
 4.	On the ribbon, click **Manage Domains** to display the **Manage custom domains** dialog box. In the text of the dialog box, you'll see the host name, derived from your CDN endpoint, to use in creating a new CNAME record. The format of the host name address will appear as **az#####.vo.msecnd.net** (where **az#####** is the identifier for your CDN endpoint). You can copy this host name to use in creating the CNAME record.  
@@ -84,7 +89,9 @@ First, ensure that you have public content that is cached at the endpoint. For e
 ##See Also
 
 
-[How to Enable the Content Delivery Network (CDN)  for Azure](./cdn-create-new-endpoint.md
+[How to Enable the Content Delivery Network (CDN)  for <!-- deleted by customization Azure](./cdn-create-new-endpoint.md --><!-- keep by customization: begin --> Azure](/documentation/articles/cdn-create-new-endpoint) <!-- keep by customization: end -->
+<!-- deleted by customization
 )  
+-->
 
  

@@ -56,7 +56,7 @@ However, if you’d rather have your users register their own data, we also prov
 For more information, see [Getting Started: Azure AD Password Management](/documentation/articles/active-directory-passwords-getting-started) and [Best Practices: Azure AD Password Management](/documentation/articles/active-directory-passwords-best-practices).
 
 ##User Password Reset Portal
-Once you have enabled self-service password reset, set up your organization’s self-service password reset policy, and ensured that your users have the appropriate contact data in the directory, users in your organization will be able to reset their own passwords automatically from any web page which uses a Work or School account for sign in (such as [portal.microsoftonline.com](https://portal.partner.microsoftonline.cn)). On pages such as these, users will see a **Can’t access your account?** link.
+Once you have enabled self-service password reset, set up your organization’s self-service password reset policy, and ensured that your users have the appropriate contact data in the directory, users in your organization will be able to reset their own passwords automatically from any web page which uses a Work or School account for sign in (such as [portal.partner.microsoftonline.cn](https://portal.partner.microsoftonline.cn)). On pages such as these, users will see a **Can’t access your account?** link.
 
   ![][002]
 

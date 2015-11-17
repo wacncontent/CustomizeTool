@@ -1,15 +1,15 @@
 <properties
-	pageTitle="Azure AD Connect Sync: Understanding Declarative Provisioning Expressions"
+	pageTitle="Azure AD Connect Sync: Understanding Declarative Provisioning Expressions | Windows Azure"
 	description="Explains the declarative provisioning expressions."
 	services="active-directory"
 	documentationCenter=""
 	authors="markusvi"
-	manager="swadhwa"
+	manager="stevenpo"
 	editor=""/>
 
 <tags
 	ms.service="active-directory"
-	ms.date="07/27/2015"
+	ms.date="10/13/2015"
 	wacn.date=""/>
 
 
@@ -50,7 +50,7 @@ The following operators can be used:
 
 
 
-Operators are evaluated left to right. 2*(5+3) is not the same as 2*5+3.<br> 
+Operators are evaluated left to right. 2*(5+3) is not the same as 2*5+3.<br>
 The brackets ( ) are used to change the evaluation order.
 
 
@@ -63,10 +63,10 @@ A parameter is defined either by a Connector or by an administrator using PowerS
 
 The Active Directory Connector provided the following parameters for inbound Synchronization Rules:
 
- 
+
 | Domain.Netbios | Domain.FQDN | Domain.LDAP |
 | Forest.Netbios | Forest.FQDN | Forest.LDAP |
- 
+
 
 The system provides the following parameter:
 
@@ -130,5 +130,5 @@ For a complete list of functions, see [Azure AD Connect Sync: Functions Referenc
 
 * [Azure AD Connect Sync: Customizing Synchronization options](/documentation/articles/active-directory-aadconnectsync-whatis)
 * [Integrating your on-premises identities with Azure Active Directory](/documentation/articles/active-directory-aadconnect)
- 
+
 <!--Image references-->

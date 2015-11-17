@@ -10,7 +10,7 @@
 <tags
 	ms.service="cloud-services"
 	ms.date="09/22/2015"
-	wacn.date="s"/>
+	wacn.date=""/>
 
 
 
@@ -52,7 +52,7 @@ Three cloud service features require special configurations before you export a 
 
 - If you want to configure verbose monitoring for your cloud service, enable Azure Diagnostics for the cloud service. *Minimal monitoring* (the default monitoring level) uses performance counters gathered from the host operating systems for role instances (virtual machines). "Verbose monitoring* gathers additional metrics based on performance data within the role instances to enable closer analysis of issues that occur during application processing. To find out how to enable Azure Diagnostics, see [Enabling Diagnostics in Azure](/documentation/articles/cloud-services-dotnet-diagnostics).
 
-- To create a cloud service with deployments of web roles or worker roles, you must create the service package. For more information about the files related to the package, see [Set Up a Cloud Service for Azure](http://msdn.microsoft.com/zh-cn/library/hh124108.aspx). To create the package file, see [Package a Windows Azure Application](http://msdn.microsoft.com/zh-cn/library/hh403979.aspx). If you are using Visual Studio to develop your application, see [Publishing a Cloud Service using the Azure Tools](http://msdn.microsoft.com/zh-cn/library/ff683672.aspx).
+- To create a cloud service with deployments of web roles or worker roles, you must create the service package. For more information about the files related to the package, see [Set Up a Cloud Service for Azure](http://msdn.microsoft.com/zh-cn/library/hh124108.aspx). To create the package file, see [Package an Azure Application](http://msdn.microsoft.com/zh-cn/library/hh403979.aspx). If you are using Visual Studio to develop your application, see [Publishing a Cloud Service using the Azure Tools](http://msdn.microsoft.com/zh-cn/library/ff683672.aspx).
 
 ## Before you begin
 
@@ -116,15 +116,15 @@ Three cloud service features require special configurations before you export a 
 
 3. In **Deployment label**, enter a name for the new deployment - for example, MyCloudServicev4.
 
-4. In **Package**, use **Browse** to select the service package file (.cspkg) to use.
+3. In **Package**, use **Browse** to select the service package file (.cspkg) to use.
 
-5. In **Configuration**, use **Browse** to select the service configure file (.cscfg) to use.
+4. In **Configuration**, use **Browse** to select the service configure file (.cscfg) to use.
 
-6. If the cloud service will include any roles with only one instance, select the **Deploy even if one or more roles contain a single instance** check box to enable the deployment to proceed.
+5. If the cloud service will include any roles with only one instance, select the **Deploy even if one or more roles contain a single instance** check box to enable the deployment to proceed.
 
- Azure can only guarantee 99.95 percent access to the cloud service during maintenance and service updates if every role has at least two instances. If needed, you can add additional role instances on the **Scale** page after you deploy the cloud service. For more information, see [Service Level Agreements](/support/legal/sla/).
+    Azure can only guarantee 99.95 percent access to the cloud service during maintenance and service updates if every role has at least two instances. If needed, you can add additional role instances on the **Scale** page after you deploy the cloud service. For more information, see [Service Level Agreements](/support/legal/sla/).
 
-7. Click **OK** (checkmark) to begin the cloud service deployment.
+6. Click **OK** (checkmark) to begin the cloud service deployment.
 
 	![CloudServices_UploadaPackage](./media/cloud-services-how-to-create-deploy/CloudServices_UploadaPackage.png)
 

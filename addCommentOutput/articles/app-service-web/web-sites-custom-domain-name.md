@@ -170,5 +170,5 @@ For more information please see: [Get started with Azure DNS](/documentation/art
 [Enable the domain name on your web app]: #enable-the-domain-name-on-your-web-app
 
 <!-- Images -->
-[subdomain]: media/web-sites-custom-domain-name/azurewebsites-subdomain.png
+[subdomain]: ./media/web-sites-custom-domain-name/azurewebsites-subdomain.png
  

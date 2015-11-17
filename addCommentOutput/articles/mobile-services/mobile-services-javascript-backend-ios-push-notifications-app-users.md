@@ -39,18 +39,10 @@ function insert(item, user, request) {
             alert: "Alert: " + item.text,
             payload: {
                 "Hey, a new item arrived: '" + item.text + "'"
-<!-- deleted by customization
             }
         });
     }, 2500);
 }
--->
-<!-- keep by customization: begin -->
-                    }
-            });
-            }, 2500);
-        }
-<!-- keep by customization: end -->
 ```
 
 ##<a name="update-app"></a>Update App to Login Before Registration
@@ -73,5 +65,6 @@ function insert(item, user, request) {
 <!-- URLs. -->
 [Get started with authentication]: /documentation/articles/mobile-services-ios-get-started-users
 [Get started with push notifications]: /documentation/articles/mobile-services-javascript-backend-ios-get-started-push
+
 [Azure Management Portal]: https://manage.windowsazure.cn/
 [Mobile Services .NET How-to Conceptual Reference]: /documentation/articles/mobile-services-ios-how-to-use-client-library

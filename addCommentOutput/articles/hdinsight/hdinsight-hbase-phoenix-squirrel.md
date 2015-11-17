@@ -296,6 +296,7 @@ Learn how to do real-time [sentiment analysis](http://en.wikipedia.org/wiki/Sent
 [hdinsight-hbase-overview]: /documentation/articles/hdinsight-hbase-overview
 <!-- deleted by customization
 [hbase-twitter-sentiment]: /documentation/articles/hdinsight-hbase-analyze-twitter-sentiment
+
 -->
 [hdinsight-hbase-phoenix-sqlline]: ./media/hdinsight-hbase-phoenix-squirrel/hdinsight-hbase-phoenix-sqlline.png
 [img-certificate]: ./media/hdinsight-hbase-phoenix-squirrel/hdinsight-hbase-vpn-certificate.png

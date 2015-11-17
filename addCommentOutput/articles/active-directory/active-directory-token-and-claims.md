@@ -417,12 +417,5 @@ In addition to claims, the token includes a version number in **ver** and **appi
     }.
 
 ##See Also
-<!-- deleted by customization
 
 [Azure Active Directory Authentication Protocols](https://msdn.microsoft.com/zh-cn/library/azure/dn151124.aspx)
--->
-<!-- keep by customization: begin -->
-### Concepts
-
-[Azure Active Directory Authentication Protocols](/documentation/articles/active-directory-authentication-protocols)
-<!-- keep by customization: end -->

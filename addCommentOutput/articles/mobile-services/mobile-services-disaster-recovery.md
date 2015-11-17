@@ -39,6 +39,7 @@ These circumstances indicate a problem that might require a recovery operation:
 ## <a name="recover"></a>Recover from a disaster
 
 When a problem occurs, use the Service Dashboard to get guidance and updates.
+
 If you're prompted by the Service Dashboard, execute the following steps to restore your mobile service to a running state in an alternate Azure region. If you created a secondary service in advance, its capacity will be used to restore the primary service. Because the URL and application key of the primary service is unchanged after recovery, you don't have to update any apps that refer to it.
 
 To recover your mobile service after an outage:
@@ -77,7 +78,7 @@ To recover your mobile service after an outage:
 	+ In the Azure Management Portal, on the **"Configure"** tab of your mobile service, choose "Change database" and then select the newly recovered database.
 
 7. Your mobile service is now hosted in a different physical location. You'll need to update your publishing and/or git credentials to allow for updating your running site.
-	+ If you are using a **.NET backend**, set up your publishing profile again, as described in [Publish your mobile <!-- deleted by customization service](/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started#publish-your-mobile-service) --><!-- keep by customization: begin --> service](/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started/#publish-your-mobile-service) <!-- keep by customization: end -->. This will update your publishing details to point to the new service location.
+	+ If you are using a **.NET backend**, set up your publishing profile again, as described in [Publish your mobile service](/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started#publish-your-mobile-service). This will update your publishing details to point to the new service location.
 	+ If you are using a **Javascript backend** and managing your service with the Portal, you don't need to take any extra action.
 	+ If you are using a **Javascript backend** and managing your service with node, update your git remote to point to the new repository. To do this, you remove the .git file path from your git remote:
 
@@ -99,22 +100,9 @@ Now you should be in a state where your mobile service has been recovered to a n
 [SQL Database business continuity guidance]: http://msdn.microsoft.com/zh-cn/library/azure/hh852669.aspx
 [Team Foundation Service]: http://tfs.visualstudio.com/
 
-<!-- deleted by customization
 [source control feature]: /develop/mobile/tutorials/store-scripts-in-source-control/
 [using the Azure CLI]: /develop/mobile/tutorials/command-line-administration/
--->
-<!-- keep by customization: begin -->
-[source control feature]: /documentation/articles/mobile-services-store-scripts-source-control
-[using the Azure CLI]: /documentation/articles/mobile-services-manage-command-line-interface
-<!-- keep by customization: end -->
 [Azure Management Portal]: http://manage.windowsazure.cn/
-<!-- deleted by customization
 [Azure Service Dashboard]: http://azure.microsoft.com/support/service-dashboard/
 [Automate mobile services with the Azure CLI]: /develop/mobile/tutorials/command-line-administration/
  
--->
-<!-- keep by customization: begin -->
-[Azure Service Dashboard]: /zh-cn/support/service-dashboard/
-[Automate mobile services with the Azure CLI]: /documentation/articles/mobile-services-manage-command-line-interface
-
-<!-- keep by customization: end -->

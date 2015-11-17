@@ -180,4 +180,4 @@ Enable protection for VMs in the VMM clouds:
 
 ## Next steps
 
-For questions and comments on this scenario visit the [Site Recovery forum](https://social.msdn.microsoft.com/forums/zh-cn/home?forum=hypervrecovmgr/)
+For questions and comments on this scenario visit the [Site Recovery forum](https://social.msdn.microsoft.com/forums/azure/home?forum=hypervrecovmgr/)

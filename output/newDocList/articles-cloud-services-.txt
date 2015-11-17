@@ -1,4 +1,4 @@
-new docs: 54, word count: 75862
+new docs: 54, word count: {word_count_TODO}
 articles/cloud-services/automation-manage-cloud-services.md
 articles/cloud-services/azure-preview-portal-keyboard-shortcuts.md
 articles/cloud-services/cloud-services-certs-create.md

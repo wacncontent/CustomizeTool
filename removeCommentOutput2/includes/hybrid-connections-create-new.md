@@ -1,7 +1,7 @@
 
 1. On the on-premises machine, log on to the [Azure Management Portal](http://manager.windowsazure.cn) (this is the Management Portal).
 
-2. At the bottom of the navigation pane, select **+NEW** > **Azure Websites** > **BizTalk Service** > **Custom Create**.
+2. At the bottom of the navigation pane, select **+NEW** > **App Services** > **BizTalk Service** > **Custom Create**.
 
 3. Provide a **BizTalk Service Name** and select an **Edition**. 
 

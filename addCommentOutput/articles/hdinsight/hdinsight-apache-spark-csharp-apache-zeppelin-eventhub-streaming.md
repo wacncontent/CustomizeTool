@@ -13,16 +13,15 @@
 	ms.date="09/30/2015"
 	wacn.date=""/>
 
+
 # Spark Streaming: Process events from Azure Event Hubs with Apache Spark on HDInsight
 
 Spark Streaming extends the core Spark API to build scalable, high-throughput, fault-tolerant stream processing applications. Data can be ingested from many sources. In this article we use Event Hubs to ingest data. Event Hubs is a highly scalable ingestion system that can intake millions of events per second. 
 
 In this tutorial, you will learn how to create an Azure Event Hub, how to ingest messages into an Event Hub using a console application in C#, and to retrieve them in parallel using a Zeppelin notebook configured for Apache Spark in HDInsight.
-<!-- deleted by customization
 
-> [AZURE.NOTE] To follow the instructions in this article, you will have to use both versions of the Azure Management Portal. To create an Event Hub you will use the [Azure Management Portal](https://manage.windowsazure.cn). To work with the HDInsight Spark cluster, you will use the [Azure Preview Portal](https://ms.portal.azure.com/).  
+> [AZURE.NOTE] To follow the instructions in this article, you will have to use both versions of the Azure Management Portal. To create an Event Hub you will use the [Azure Management Portal](https://manage.windowsazure.cn). To work with the HDInsight Spark cluster, you will use the [Azure Preview Portal](https://manage.windowsazure.cn/).  
 
--->
 **Prerequisites:**
 
 You must have the following:
@@ -30,7 +29,7 @@ You must have the following:
 - An Azure subscription. See [Get Azure trial](/pricing/1rmb-trial/).
 - An Apache Spark cluster. For instructions, see [Provision Apache Spark clusters in Azure HDInsight](/documentation/articles/hdinsight-apache-spark-provision-clusters).
 - An [Azure Event Hub](/documentation/articles/service-bus-event-hubs-csharp-ephcs-getstarted).
-- A workstation with Microsoft Visual Studio 2013. For instructions, see [Install Visual <!-- deleted by customization Studio](https://msdn.microsoft.com/zh-cn/library/e2h7fzkw.aspx) --><!-- keep by customization: begin --> Studio](http://msdn.microsoft.com/zh-cn/library/e2h7fzkw.aspx) <!-- keep by customization: end -->.
+- A workstation with Microsoft Visual Studio 2013. For instructions, see [Install Visual Studio](https://msdn.microsoft.com/zh-cn/library/e2h7fzkw.aspx).
 
 ##<a name="createeventhub"></a>Create Azure Event Hub
 
@@ -73,7 +72,6 @@ You must have the following:
 
 In this section, you create a [Zeppelin](https://zeppelin.incubator.apache.org) notebook to receive messages from the Event Hub into the Spark cluster in HDInsight.
 
-<!-- deleted by customization
 ### Allocating resources to Zeppelin for streaming application
 
 You must make the following considerations while creating a streaming application using Zeppelin:
@@ -97,10 +95,6 @@ For instructions on how to allocate resources in a Spark cluster, see [Manage re
 	> [AZURE.NOTE] You may also reach the Zeppelin Notebook for your cluster by opening the following URL in your browser. Replace __CLUSTERNAME__ with the name of your cluster:
 	>
 	> `https://CLUSTERNAME.azurehdinsight.cn/zeppelin`
--->
-<!-- keep by customization: begin -->
-1. Launch the Zeppelin notebook. Select your Spark cluster on the Azure Management Portal, and from the portal task bar at the bottom, click **Zeppelin Notebook**. When prompted, enter the admin credentials for the Spark cluster. Follow the instructions on the page that opens up to launch the notebook.
-<!-- keep by customization: end -->
 
 2. Create a new notebook. From the header pane, click **Notebook**, and from the drop-down, click **Create New Note**.
 
@@ -113,10 +107,8 @@ For instructions on how to allocate resources in a Spark cluster, see [Manage re
 	![Zeppelin notebook status](./media/hdinsight-apache-spark-csharp-apache-zeppelin-eventhub-streaming/HDI.Spark.NewNote.Connected.png "Zeppelin notebook status")
 
 4. In the empty paragraph that is created by default in the new notebook, paste the following snippet and replace the placeholders to use your event hub configuration. In this snippet, you receive the stream from Event Hub and register the stream into a temporary table, called **mytemptable**. In the next section, we will start the sender application. You can then read the data directly from the table.
-<!-- deleted by customization
 
 	> [AZURE.NOTE] In the snippet below, **eventhubs.checkpoint.dir** must be set to a directory in your default storage container. If the directory does not exist, the streamig application creates it. You can either specify the full path to the directory like "**wasb://container@storageaccount.blob.core.chinacloudapi.cn/mycheckpointdir/**" or just the relative path to the directory, such as "**/mycheckpointdir**".
--->
 
 		import org.apache.spark.streaming.{Seconds, StreamingContext}
 		import org.apache.spark.streaming.eventhubs.EventHubsUtils
@@ -191,14 +183,9 @@ Instructions on how to perform these steps and a sample streaming application ca
 [hdinsight-versions]: /documentation/articles/hdinsight-component-versioning
 [hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
 [hdinsight-storage]: /documentation/articles/hdinsight-use-blob-storage
-<!-- deleted by customization
+
 [azure-purchase-options]: /pricing/overview/
-[azure-member-offers]: http://azure.microsoft.com/pricing/member-offers/
+[azure-member-offers]: /pricing/member-offers/
 [azure-trial]: /pricing/1rmb-trial/
--->
-<!-- keep by customization: begin -->
-[azure-purchase-options]: http://www.windowsazure.cn/pricing/overview/
-[azure-trial]: http://www.windowsazure.cn/pricing/1rmb-trial/
-<!-- keep by customization: end -->
 [azure-management-portal]: https://manage.windowsazure.cn/
 [azure-create-storageaccount]: /documentation/articles/storage-create-storage-account

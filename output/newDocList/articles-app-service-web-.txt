@@ -1,4 +1,4 @@
-new docs: 115, word count: 207183
+new docs: 115, word count: {word_count_TODO}
 articles/app-service-web/app-service-agile-software-development.md
 articles/app-service-web/app-service-app-service-environment-control-inbound-traffic.md
 articles/app-service-web/app-service-app-service-environment-geo-distributed-scale.md
@@ -115,7 +115,7 @@ articles/app-service-web/websites-dotnet-webjobs-sdk.md
 articles/app-service-web/websites-learning-map.md
 articles/app-service-web/websites-webjobs-resources.md
 
-new includes: 34
+new includes: 35
 includes/active-directory-b2c-devquickstarts-web-switcher.md
 includes/app-service-api-pub-web-create.md
 includes/app-service-api-pub-web-deploy.md
@@ -150,3 +150,4 @@ includes/web-sites-python-troubleshooting-virtual-environment.md
 includes/website-from-gallery.md
 includes/websites-cloud-services-css-guided-walkthrough.md
 includes/websites-custom-domain-selector.md
+includes/publishing-with-git.md

@@ -45,7 +45,7 @@ This tutorial has the following prerequisites:
 -	Visual Studio 2013 with [Azure SDK](https://www.microsoft.com/web/handlers/webpi.ashx/getinstaller/VWDOrVs2013AzurePack.appids)
 
 > [AZURE.NOTE] You need an Azure account to complete this tutorial:
-> + You can [open an Azure account for free](/pricing/1rmb-trial/) - You get credits you can use to try out paid Azure services, and even after they're used up you can keep the account and use free Azure services, such as Websites.
+> + You can [open an Azure <!-- deleted by customization account for free](/pricing/1rmb-trial/) --><!-- keep by customization: begin --> account](/pricing/1rmb-trial/) <!-- keep by customization: end --> - You get credits you can use to try out paid Azure services, and even after they're used up you can keep the account and use free Azure services, such as Websites.
 > + You can [activate MSDN subscriber benefits](/pricing/member-offers/msdn-benefits-details/) - Your MSDN subscription gives you credits every month that you can use for paid Azure services.
 
 <a name="deploy"></a>
@@ -91,7 +91,7 @@ In this section, you will deploy the default ASP.NET MVC application template in
 	When the **Windows Azure Activity Log** shows that publishing status is **Completed**, you will create a CDN endpoint that's integrated with this cloud service. 
 
 1. To create a CDN endpoint, log into your [Azure management portal](http://manage.windowsazure.cn/). 
-2. Click **New** > **Azure Websites** > **CDN** > **Quick Create**. Select **http://*&lt;servicename>*.chinacloudapp.cn/cdn/** and click **Create**.
+2. Click **New** > **App Services** > **CDN** > **Quick Create**. Select **http://*&lt;servicename>*.chinacloudapp.cn/cdn/** and click **Create**.
 
 	![](./media/cdn-cloud-service-with-cdn/cdn-cs-10-createcdn.png)
 
@@ -103,17 +103,17 @@ In this section, you will deploy the default ASP.NET MVC application template in
 
 	![](./media/cdn-cloud-service-with-cdn/cdn-cs-11-disablequerya.png)
 
-3. Click **Enable Query String** to enable query strings in the CDN cache. Once you enable this, the same link accessed with different query strings will be cached as separate entries.
+<!-- deleted by customization 3 --><!-- keep by customization: begin --> 4 <!-- keep by customization: end -->. Click **Enable Query String** to enable query strings in the CDN cache. Once you enable this, the same link accessed with different query strings will be cached as separate entries.
 
 	![](./media/cdn-cloud-service-with-cdn/cdn-cs-12-disablequeryb.png)
 
 	>[AZURE.NOTE] While enabling the query string is not necessary for this tutorial section, you want to do this as early as possible for convenience since any change here is going to take time to propagate to all the CDN nodes, and you don't want any non-query-string-enabled content to clog up the CDN cache (updating CDN content will be discussed later).
 
-3. Ping your CDN endpoint to make sure that it's propagated to the CDN nodes. You may need to wait up to an hour before it will respond to pings.
+<!-- deleted by customization 3 --><!-- keep by customization: begin --> 5 <!-- keep by customization: end -->. Ping your CDN endpoint to make sure that it's propagated to the CDN nodes. You may need to wait up to an hour before it will respond to pings.
 
 	![](./media/cdn-cloud-service-with-cdn/cdn-cs-13-testcdn.png)
 
-2. Back in Visual Studio 2013, open **Web.config** in your **WebRole1** project and add the following code into the `<system.webServer>` tag:  
+<!-- deleted by customization 2 --><!-- keep by customization: begin --> 6 <!-- keep by customization: end -->. Back in Visual Studio 2013, open **Web.config** in your **WebRole1** project and add the following code into the `<system.webServer>` tag:
 
 		<system.webServer>
 		  <rewrite>
@@ -127,11 +127,11 @@ In this section, you will deploy the default ASP.NET MVC application template in
 		  ...
 		</system.webServer>
 
-4. Publish the cloud service again. Right-click the cloud service project and select **Publish**.
+<!-- deleted by customization 4 --><!-- keep by customization: begin --> 7 <!-- keep by customization: end -->. Publish the cloud service again. Right-click the cloud service project and select **Publish**.
 
 	![](./media/cdn-cloud-service-with-cdn/cdn-cs-4-publish-a.png)
 
-1. When the publishing status is **Completed**, open a browser window and navigate to **http://*&lt;cdnName>*.vo.msecnd.net/Content/bootstrap.css**. In my setup, this URL is:
+<!-- deleted by customization 1 --><!-- keep by customization: begin --> 8 <!-- keep by customization: end -->. When the publishing status is **Completed**, open a browser window and navigate to **http://*&lt;cdnName>*.vo.msecnd.net/Content/bootstrap.css**. In my setup, this URL is:
 
 		http://az632148.vo.msecnd.net/Content/bootstrap.css
 
@@ -461,9 +461,9 @@ Follow the steps below to integration ASP.NET bundling and minification with you
 	
 		Any other strategy to streamline generating a unique string for the life of a deployment will work here.
 
-3. Republish the cloud service and access the home page.
+<!-- deleted by customization 3 --><!-- keep by customization: begin --> 2 <!-- keep by customization: end -->. Republish the cloud service and access the home page.
  
-4. View the HTML code for the page. You should be able to see the CDN URL rendered, with a unique version string every time you republish changes to your cloud service. For example:  
+<!-- deleted by customization 4 --><!-- keep by customization: begin --> 3 <!-- keep by customization: end -->. View the HTML code for the page. You should be able to see the CDN URL rendered, with a unique version string every time you republish changes to your cloud service. For example:
 
 		...
 		
@@ -479,9 +479,9 @@ Follow the steps below to integration ASP.NET bundling and minification with you
 		
 		...
 
-5. In Visual Studio, debug the cloud service in Visual Studio by typing `F5`., 
+<!-- deleted by customization 5 --><!-- keep by customization: begin --> 4 <!-- keep by customization: end -->. In Visual Studio, debug the cloud service in Visual Studio by typing `F5`.,
 
-6. View the HTML code for the page. You will still see each script file individually rendered so that you can have a consistent debug experience in Visual Studio.  
+<!-- deleted by customization 6 --><!-- keep by customization: begin --> 5 <!-- keep by customization: end -->. View the HTML code for the page. You will still see each script file individually rendered so that you can have a consistent debug experience in Visual Studio.
 
 		...
 		
@@ -553,9 +553,9 @@ The [Bundle](http://msdn.microsoft.com/zh-cn/library/system.web.optimization.bun
 
 2. To use the workaround for CSS, create a new .cs file in your Web role project's *App_Start* folder called *StyleBundleExtensions.cs*, and replace its content with the [code from GitHub](https://github.com/EmberConsultingGroup/StyleBundleFallback/blob/master/Website/App_Start/StyleBundleExtensions.cs). 
 
-4. In *App_Start\StyleFundleExtensions.cs*, rename the namespace to your Web role's name (e.g. **WebRole1**). 
+<!-- deleted by customization 4 --><!-- keep by customization: begin --> 3 <!-- keep by customization: end -->. In *App_Start\StyleFundleExtensions.cs*, rename the namespace to your Web role's name (e.g. **WebRole1**).
 
-3. Go back to `App_Start\BundleConfig.cs` and modify the last `bundles.Add` statement with the following highlighted code:  
+<!-- deleted by customization 3 --><!-- keep by customization: begin --> 4 <!-- keep by customization: end -->. Go back to `App_Start\BundleConfig.cs` and modify the last `bundles.Add` statement with the following highlighted code:
 
 		bundles.Add(new StyleBundle("~/Content/css", string.Format(cdnUrl, "Content/css"))
 		    <mark>.IncludeFallback("~/Content/css", "sr-only", "width", "1px")</mark>
@@ -565,9 +565,9 @@ The [Bundle](http://msdn.microsoft.com/zh-cn/library/system.web.optimization.bun
 
 	This new extension method uses the same idea to inject script in the HTML to check the DOM for the a matching class name, rule name, and rule value defined in the CSS bundle, and falls back to the origin Web server if it fails to find the match.
 
-4. Publish the cloud service again and access the home page. 
+<!-- deleted by customization 4 --><!-- keep by customization: begin --> 5 <!-- keep by customization: end -->. Publish the cloud service again and access the home page.
 
-5. View the HTML code for the page. You should find injected scripts similar to the following:    
+<!-- deleted by customization 5 --><!-- keep by customization: begin --> 6 <!-- keep by customization: end -->. View the HTML code for the page. You should find injected scripts similar to the following:
 
 		...
 		

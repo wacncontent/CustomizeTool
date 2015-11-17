@@ -145,6 +145,7 @@ Now that you have completed the quickstart, learn how to perform additional impo
 
 <!-- URLs. -->
 [Add authentication to your app]: /documentation/articles/mobile-services-html-get-started-users
+
 [Management Portal]: https://manage.windowsazure.cn/
 [Microsoft Web Platform Installer]:  http://go.microsoft.com/fwlink/p/?LinkId=286333
 [latest version of Python]: http://go.microsoft.com/fwlink/p/?LinkId=286342

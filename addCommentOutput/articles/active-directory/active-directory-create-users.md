@@ -36,6 +36,7 @@ If your organization uses more than one domain, you should know about the follow
 ## Edit a user
 
 If the user that you are trying to edit is synchronized with your on-premises Active Directory service, an error message appears, and you will be unable to edit the user using this procedure. To edit the user, use your local Active Directory management tools.
+
 To edit a user in the Azure Management Portal:
 
 1. Click **Active Directory**, and then click on the name of your organization’s directory.

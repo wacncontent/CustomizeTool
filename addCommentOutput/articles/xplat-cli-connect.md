@@ -20,11 +20,11 @@ The Azure CLI is a set of open-source, cross-platform commands for working with 
 <!-- deleted by customization
 
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-both-include.md)]
-
 -->
 <!-- keep by customization: begin -->
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-include.md)] This article covers creating and managing resources with the Resource Manager deployment model or the classic deployment model.
 <!-- keep by customization: end -->
+
 
 There are two ways to connect to your subscription from the Azure CLI:
 
@@ -131,7 +131,7 @@ This changes the default subscription to Azure-sub-2.
 
 If you wish to use a non-default subscription with the Azure CLI, but don't want to change the current default, you can use the `--subscription` option for the command and provide the name of the subscription you wish to use for the operation.
 
-Once you are connected to your Azure subscription, you can start using the Azure CLI commands. For more information, see [How to use the Azure <!-- deleted by customization CLI](/documentation/articles/xplat-cli-install) --><!-- keep by customization: begin --> CLI](/documentation/articles/xplat-cli) <!-- keep by customization: end -->.
+Once you are connected to your Azure subscription, you can start using the Azure CLI commands. For more information, see [How to use the Azure CLI](/documentation/articles/xplat-cli-install).
 
 ## Storage of CLI settings
 
@@ -149,20 +149,15 @@ Whether you log in with a work or school account or import publish settings, you
 
 * To learn more about the Azure CLI, download source code, report problems, or contribute to the project, visit the [GitHub repository for the Azure CLI](https://github.com/azure/azure-xplat-cli).
 
-* If you encounter problems using the Azure CLI, or Azure, visit the [Azure <!-- deleted by customization Forums](http://social.msdn.microsoft.com/Forums/zh-cn/home?forum=windowsazurezhchshome) --><!-- keep by customization: begin --> Forums](https://social.msdn.microsoft.com/Forums/zh-cn/home) <!-- keep by customization: end -->.
+* If you encounter problems using the Azure CLI, or Azure, visit the [Azure Forums](http://social.msdn.microsoft.com/Forums/zh-cn/home?forum=windowsazurezhchshome).
 
 
 
 
 
 [authandsub]: http://msdn.microsoft.com/zh-cn/library/azure/hh531793.aspx#BKMK_AccountVCert
-<!-- deleted by customization
 [free-trial]: /pricing/1rmb-trial/
--->
-<!-- keep by customization: begin -->
-[free-trial]: http://www.windowsazure.cn/pricing/1rmb-trial/
-<!-- keep by customization: end -->
 [portal]: https://manage.windowsazure.cn
-[signuporg]: <!-- deleted by customization /documentation/articles/sign-up-organization/ --><!-- keep by customization: begin --> /documentation/articles/sign-up-organization <!-- keep by customization: end -->
+[signuporg]: /documentation/articles/sign-up-organization/
 [cliasm]: /documentation/articles/virtual-machines-command-line-tools
 [cliarm]: /documentation/articles/xplat-cli-azure-resource-manager

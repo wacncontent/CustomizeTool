@@ -434,7 +434,7 @@ Before performing the steps in this section, you must have associated a custom d
 7.	In the **certificates** section, click **Upload**
 8.	Using the **Upload a certificate** dialog, select the .pfx certificate file created earlier using the IIS Manager or OpenSSL. Specify the password, if any, that was used to secure the .pfx file. Finally, click the **Save** to upload the certificate.
 	![ssl upload][ssluploadcert]
-9. In the **ssl bindings** section of the **SSL Settings** tab, use the dropdowns to select the domain name to secure with SSL, and the certificate to use. You may also select whether to use [Server Name Indication][sni](SNI) or IP based SSL.
+9. In the **ssl bindings** section of the **SSL Settings** tab, use the dropdowns to select the domain name to secure with SSL, and the certificate to use. You may also select whether to use [Server Name Indication][sni] (SNI) or IP based SSL.
 
 	![ssl bindings][sslbindings]
 -->
@@ -460,7 +460,7 @@ Before performing the steps in this section, you must have associated a custom d
 	
 	* IP based SSL associates a certificate with a domain name by mapping the dedicated public IP address of the server to the domain name. This requires each domain name (contoso.com, fabricam.com, etc.) associated with your service to have a dedicated IP address. This is the traditional method of associating SSL certificates with a web server.
 
-	* SNI based SSL is an extension to SSL and [Transport Layer Security][tls](TLS) that allows multiple domains to share the same IP address, with separate security certificates for each domain. Most modern browsers (including Internet Explorer, Chrome, Firefox and Opera) support SNI, however older browsers may not support SNI. For more information on SNI, see the [Server Name Indication][sni] article on Wikipedia.
+	* SNI based SSL is an extension to SSL and [Transport Layer <!-- deleted by customization Security][tls] (TLS) --><!-- keep by customization: begin --> Security][tls](TLS) <!-- keep by customization: end --> that allows multiple domains to share the same IP address, with separate security certificates for each domain. Most modern browsers (including Internet Explorer, Chrome, Firefox and Opera) support SNI, however older browsers may not support SNI. For more information on SNI, see the [Server Name Indication][sni] article on Wikipedia.
 
 <!-- deleted by customization 10 --><!-- keep by customization: begin --> 6 <!-- keep by customization: end -->. Click **Save** to save the changes and enable SSL.
 > [AZURE.NOTE] If you selected **IP based SSL** and your custom domain is configured using an A record, you must perform the following additional steps:

@@ -37,7 +37,7 @@ In the event of an outage on the primary database, you can failover to a seconda
 
 
 ###Azure Management Portal
-1. Log in to the [Azure Management Portal](https://portal.Azure.com)
+1. Log in to the [Azure Management Portal](https://manage.windowsazure.cn)
 2. On the left side of the screen select **BROWSE** and then select **SQL Databases**
 3. Navigate to your database and select it. 
 4. At the bottom of your database blade select the **Geo Replication map**.
@@ -65,10 +65,12 @@ Use the secondary server name and database name in the Stop Database Copy reques
 
 In the event of an outage of a database, you can recover your database from its latest geo redundant backup using Geo-Restore. 
 
+<!-- deleted by customization
 > [AZURE.NOTE] Recovering a database creates a new database. It is important to make sure the server you are recovering to has enough DTU capacity for the new database. You can request an increase of this quota by [contacting support](http://azure.microsoft.com/blog/azure-limits-quotas-increase-requests/).
 
+-->
 ###Azure Management Portal
-1. Log in to the [Azure Management Portal](https://portal.Azure.com)
+1. Log in to the [Azure Management Portal](https://manage.windowsazure.cn)
 2. On the left side of the screen select **NEW**, then select **Data and Storage**, and then select **SQL Database**
 2. Select **BACKUP** as the source  and then select the geo redundant backup you want to recover from.
 3. Specify the rest of the database properties and then click **Create**.
@@ -78,7 +80,7 @@ After the database is recovered you can configure it to be used by following the
 ###PowerShell 
 Use PowerShell to programmatically perform database recovery.
 
-To start a Geo-Restore request, use the [start-AzureSqlDatabaseRecovery](https://msdn.microsoft.com/zh-cn/library/azure/dn720224.aspx) cmdlet. For a detailed walk through, please see our [how-to video](http://azure.microsoft.com/documentation/videos/restore-a-sql-database-using-geo-restore-with-microsoft-azure-powershell/).
+To start a Geo-Restore request, use the [start-AzureSqlDatabaseRecovery](https://msdn.microsoft.com/zh-cn/library/azure/dn720224.aspx) cmdlet. <!-- deleted by customization For a detailed walk through, please see our [how-to video](http://azure.microsoft.com/documentation/videos/restore-a-sql-database-using-geo-restore-with-microsoft-azure-powershell/). -->
 
 		$Database = Get-AzureSqlRecoverableDatabase -ServerName "ServerName" –DatabaseName “DatabaseToBeRecovered"
 		$RecoveryRequest = Start-AzureSqlDatabaseRecovery -SourceDatabase $Database –TargetDatabaseName “NewDatabaseName” –TargetServerName “TargetServerName”

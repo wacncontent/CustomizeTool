@@ -57,14 +57,8 @@ Fill in an Azure deployment name, a new Resource Group name, and an Azure datace
 	$RGName="<resource group name>"
 	$locName="<Azure location, such as China North>"
 	$templateURI="https://raw.githubusercontent.com/azure/azure-quickstart-templates/master/active-directory-new-domain-ha-2-dc/azuredeploy.json"
-<!-- deleted by customization
 	New-AzureRmResourceGroup -Name $RGName -Location $locName
 	New-AzureRmResourceGroupDeployment -Name $deployName -ResourceGroupName $RGName -TemplateUri $templateURI
--->
-<!-- keep by customization: begin -->
-	New-AzureResourceGroup -Name $RGName -Location $locName
-	New-AzureResourceGroupDeployment -Name $deployName -ResourceGroupName $RGName -TemplateUri $templateURI
-<!-- keep by customization: end -->
 
 Here is an example.
 
@@ -72,24 +66,18 @@ Here is an example.
 	$RGName="TestRG"
 	$locname="China North"
 	$templateURI="https://raw.githubusercontent.com/azure/azure-quickstart-templates/master/active-directory-new-domain-ha-2-dc/azuredeploy.json"
-<!-- deleted by customization
 	New-AzureRmResourceGroup -Name $RGName -Location $locName
 	New-AzureRmResourceGroupDeployment -Name $deployName -ResourceGroupName $RGName -TemplateUri $templateURI
--->
-<!-- keep by customization: begin -->
-	New-AzureResourceGroup -Name $RGName -Location $locName
-	New-AzureResourceGroupDeployment -Name $deployName -ResourceGroupName $RGName -TemplateUri $templateURI
-<!-- keep by customization: end -->
 
 Next, run your command block in the Azure PowerShell prompt.
 
-When you run the <!-- deleted by customization **New-AzureRmResourceGroupDeployment** --><!-- keep by customization: begin --> **New-AzureResourceGroupDeployment** <!-- keep by customization: end --> command, you will be prompted to supply the values for a series of parameters. When you have specified all the parameter values, <!-- deleted by customization **New-AzureRmResourceGroupDeployment** --><!-- keep by customization: begin --> **New-AzureResourceGroupDeployment** <!-- keep by customization: end --> creates and configures the virtual machines.
+When you run the **New-AzureRmResourceGroupDeployment** command, you will be prompted to supply the values for a series of parameters. When you have specified all the parameter values, **New-AzureRmResourceGroupDeployment** creates and configures the virtual machines.
 
 When the template execution is complete, you have a new two-server Active Directory domain configuration in your new resource group.
 
 ## Azure CLI
 
-Before you begin, make sure you have the right version of Azure CLI installed, you have logged in, and you have switched to the new Resource Manager mode. For the details, click <!-- deleted by customization [here](/documentation/articles/virtual-machines-deploy-rmtemplates-azure-cli#getting-ready) --><!-- keep by customization: begin --> [here](/documentation/articles/virtual-machines-deploy-rmtemplates-azure-cli/#getting-ready) <!-- keep by customization: end -->.
+Before you begin, make sure you have the right version of Azure CLI installed, you have logged in, and you have switched to the new Resource Manager mode. For the details, click [here](/documentation/articles/virtual-machines-deploy-rmtemplates-azure-cli#getting-ready).
 
 First, you create a new resource group. Use the following command and specify the name of the group and the Azure data center location into which you want to deploy.
 
@@ -101,7 +89,7 @@ Next, use the following command and specify the name of your new resource group 
 
 Here is an example.
 
-	azure group create adtestbed eastus2
+	azure group create adtestbed chinaeast2
 	azure group deployment create --template-uri https://raw.githubusercontent.com/azure/azure-quickstart-templates/master/active-directory-new-domain-ha-2-dc/azuredeploy.json adtestbed wldevtest
 
 When you run the **azure group deployment create** command, you will be prompted to supply the values for a series of parameters. When you have specified all the parameter values, Azure creates and configures the virtual machines.
@@ -119,13 +107,6 @@ When the template execution is complete, you have a new, two-server Active Direc
 
 [Deploy and manage virtual machines using Azure Resource Manager templates and the Azure CLI](/documentation/articles/virtual-machines-deploy-rmtemplates-azure-cli)
 
-<!-- deleted by customization
 [Virtual machines documentation](/documentation/services/virtual-machines/)
 
 [How to install and configure Azure PowerShell](/documentation/articles/install-configure-powershell)
--->
-<!-- keep by customization: begin -->
-[Virtual machines documentation](http://www.windowsazure.cn/documentation/services/virtual-machines/)
-
-[How to install and configure Azure PowerShell/documentation/articles/install-configure-powershell)
-<!-- keep by customization: end -->

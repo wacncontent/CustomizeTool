@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Get started with SQL database auditing | Azure" 
+	pageTitle="Get started with SQL database auditing | Windows Azure" 
 	description="Get started with SQL database auditing" 
 	services="sql-database" 
 	documentationCenter="" 
@@ -7,9 +7,9 @@
 	manager="jeffreyg" 
 	editor=""/>
 
-<tags 
-	ms.service="sql-database" 
-	ms.date="10/08/2015" 
+<tags
+	ms.service="sql-database"
+	ms.date="10/08/2015"
 	wacn.date=""/>
  
 # Get started with SQL database auditing 
@@ -83,7 +83,7 @@ Before setting up audit auditing check if you are using a ["Downlevel Client"](/
 
 Audit logs are aggregated in a collection of Store Tables with a **SQLDBAuditLogs** prefix in the Azure storage account you chose during setup. You can view log files using a tool such as <a href="http://azurestorageexplorer.codeplex.com/" target="_blank">Azure Storage Explorer</a>.
 
-A preconfigured dashboard report template is available as a <a href="http://download.microsoft.com/download/D/8/D/D8D90BA1-977F-466B-A839-7823FF37FD02/01-Azure%20SQL%20DB%20Audit%20Logs%20Report%20Template.xlsx" target="_blank">downloadable Excel spreadsheet</a> to help you quickly analyze log data. To use the template on your audit logs, you need Excel 2013 or later and Power Query, which you can download <a href="http://www.microsoft.com/zh-CN/download/details.aspx?id=39379">here</a>. 
+A preconfigured dashboard report template is available as a <a href="http://download.microsoft.com/download/D/8/D/D8D90BA1-977F-466B-A839-7823FF37FD02/01-Azure%20SQL%20DB%20Audit%20Logs%20Report%20Template.xlsx" target="_blank">downloadable Excel spreadsheet</a> to help you quickly analyze log data. To use the template on your audit logs, you need Excel 2013 or later and Power Query, which you can download <a href="http://www.microsoft.com/download/details.aspx?id=39379">here</a>. 
 
 The template has fictional sample data in it, and you can set up Power Query to import your audit log directly from your Azure storage account. 
 
@@ -94,7 +94,7 @@ For more detailed instructions on working with the report template, read the <a 
 
 ##<a id="subheading-4"></a>Set up auditing for your database using the Classic Azure Management Portal
 
-1. Launch the <a href= "https://manage.windowsazure.cn/" target="_bank">Classic Azure Management Portal</a> at https://manage.windowsazure.cn/. 
+1. Launch the <a href= "https://manage.windowsazure.cn/" target="_bank">Classic Azure Management Portal</a> at https://manage.windowsazure.cn/.
  
 2.   Click the SQL Database / SQL Server you want to audit, and then click the **AUDITING & SECURITY** tab. 
 

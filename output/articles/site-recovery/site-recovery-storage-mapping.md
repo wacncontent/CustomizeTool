@@ -53,14 +53,14 @@ You map between storage classifications on source and target VMM servers, or on 
 
 ## Example
 
-If classifications are configured correctly in VMM when you select the source and target VMM server during storage mapping, the source and target classifications will be displayed. Here’s an example of storage files shares and classifications for an organization with two locations in New York and Chicago.
+If classifications are configured correctly in VMM when you select the source and target VMM server during storage mapping, the source and target classifications will be displayed. Here’s an example of storage files shares and classifications for an organization with two locations in Beijing and Shanghai.
 
 **Location** | **VMM server** | **File share (source)** | **Classification (source)** | **Mapped to** | **File share (target)**
 ---|---|--- |---|---|---
-New York | VMM_Source| SourceShare1 | GOLD | GOLD_TARGET | TargetShare1
+Beijing | VMM_Source| SourceShare1 | GOLD | GOLD_TARGET | TargetShare1
  |  | SourceShare2 | SILVER | SILVER_TARGET | TargetShare2
  | | SourceShare3 | BRONZE | BRONZE_TARGET | TargetShare3
-Chicago | VMM_Target |  | GOLD_TARGET | Not mapped |
+Shanghai | VMM_Target |  | GOLD_TARGET | Not mapped |
 | | | SILVER_TARGET | Not mapped |
  | | | BRONZE_TARGET | Not mapped
 
@@ -84,9 +84,9 @@ The following table show how storage classification and cluster shared volumes a
 
 **Location** | **Classification** | **Associated storage**
 ---|---|---
-New York | GOLD | <p>C:\ClusterStorage\SourceVolume1</p><p>\\FileServer\SourceShare1</p>
+Beijing | GOLD | <p>C:\ClusterStorage\SourceVolume1</p><p>\\FileServer\SourceShare1</p>
  | SILVER | <p>C:\ClusterStorage\SourceVolume2</p><p>\\FileServer\SourceShare2</p>
-Chicago | GOLD_TARGET | <p>C:\ClusterStorage\TargetVolume1</p><p>\\FileServer\TargetShare1</p>
+Shanghai | GOLD_TARGET | <p>C:\ClusterStorage\TargetVolume1</p><p>\\FileServer\TargetShare1</p>
  | SILVER_TARGET| <p>C:\ClusterStorage\TargetVolume2</p><p>\\FileServer\TargetShare2</p>
 
 This table summarizes the behavior when you enable protection for virtual machines (VM1 - VM5) in this example environment.

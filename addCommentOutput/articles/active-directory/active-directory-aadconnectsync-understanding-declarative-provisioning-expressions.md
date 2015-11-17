@@ -63,8 +63,10 @@ A parameter is defined either by a Connector or by an administrator using PowerS
 
 The Active Directory Connector provided the following parameters for inbound Synchronization Rules:
 
+
 | Domain.Netbios | Domain.FQDN | Domain.LDAP |
 | Forest.Netbios | Forest.FQDN | Forest.LDAP |
+
 
 The system provides the following parameter:
 
@@ -128,4 +130,5 @@ For a complete list of functions, see [Azure AD Connect Sync: Functions Referenc
 
 * [Azure AD Connect Sync: Customizing Synchronization options](/documentation/articles/active-directory-aadconnectsync-whatis)
 * [Integrating your on-premises identities with Azure Active Directory](/documentation/articles/active-directory-aadconnect)
+
 <!--Image references-->

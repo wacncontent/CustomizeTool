@@ -14,8 +14,10 @@
 	wacn.date=""/>
 
 # The three-server SharePoint farm Resource Manager template
+<!-- deleted by customization
 
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] classic deployment model. You can't create this resource with the classic deployment model.
+-->
 
 This topic steps you through the structure of the azuredeploy.json template file for the three-server SharePoint farm. You can see the contents of this template in your browser from [here](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/sharepoint-three-vm/azuredeploy.json).
 
@@ -38,9 +40,11 @@ The **"parameters"** section specifies parameters that are used to input data in
 		"allowedValues": [
 			"China North",
 			"China East",
+<!-- deleted by customization
 			"West Europe",
-			"East Asia",
-			"Southeast Asia"
+			"China East",
+			"China North"
+-->
 		],
 		"metadata": {
 			"Description": "The region to deploy the resources into"

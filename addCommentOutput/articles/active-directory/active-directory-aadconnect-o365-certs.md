@@ -24,6 +24,7 @@ If you are using AD FS 2.0 or later, Office 365 and Azure AD will automatically 
 - The AD FS property AutoCertificateRollover must be set to True, indicating that AD FS will automatically generate new token signing and token decryption certificates before the old ones expire.
 	- If the value is False, you are using custom certificate settings.  Go [here](https://msdn.microsoft.com/zh-cn/library/azure/JJ933264.aspx#BKMK_NotADFSCert)  for comprehensive guidance.
 - Your federation metadata must be available to the public internet.
+
 	Here is how to check:
 
 	- Verify that your AD FS installation is using automatic certificate rollover by executing the following command in a PowerShell command window on your primary federation server:
@@ -60,6 +61,7 @@ If your AutocertificateRollover setting is True but your federation metadata is 
 
 
 - Look at the command output at any certificates listed.  If AD FS has generated a new certificate, you should see two certificates in the output:  One for which the IsPrimary value is True and the NotAfter date is within 5 days, and one for which IsPrimary is False and NotAfter is about a year in the future.
+
 - If you only see one certificate, and the NotAfter date is within 5 days, you need to generate a new certificate by executing the following steps.
 
 - To generate a new certificate, execute the following command at a PowerShell command prompt: `PS C:\>Update-ADFSCertificate –CertificateType token-signing`.

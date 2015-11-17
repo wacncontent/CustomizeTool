@@ -7,9 +7,9 @@
 	manager="jwhit" 
 	editor=""/>
 
-<tags 
-	ms.service="site-recovery" 
-	ms.date="08/10/2015" 
+<tags
+	ms.service="site-recovery"
+	ms.date="08/10/2015"
 	wacn.date=""/>
 
 #  Network infrastructure considerations for Site Recovery

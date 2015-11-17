@@ -6,12 +6,12 @@
    authors="kundanap"
    manager="timlt"
    editor=""
-   tags="azure-resource-manager"/>
+   tags="top-support-issue,azure-resource-manager"/>
 
 <tags
-   ms.service="virtual-machines"
-   ms.date="09/01/2015"
-   wacn.date=""/>
+	ms.service="virtual-machines"
+	ms.date="09/01/2015"
+	wacn.date=""/>
 
 # Troubleshooting Azure VM Extension failures.
 

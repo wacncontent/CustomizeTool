@@ -38,7 +38,7 @@ After you create an endpoint, you can use an access control list (ACL) to define
 
 ##Create an endpoint
 
-1.	If you have not already done so, sign in to the [portal](http://manage.windowsazure.cn/).
+1.	If you haven't already done so, sign in to the [portal](http://manage.windowsazure.cn/).
 2.	Click **Virtual Machines**, and then click the name of the virtual machine that you want to configure.
 3.	Click **Endpoints**. The **Endpoints** page lists all the current endpoints for the virtual machine.
 
@@ -84,7 +84,7 @@ If the virtual machine is in an Azure virtual network, we recommend network secu
 
 You can use rules to allow only traffic from specific computers corresponding to your computers on the Internet or to deny traffic from specific, known address ranges.
 
-The rules are evaluated in order starting with the first rule and ending with the last rule. This means that rules should be ordered from least restrictive to most restrictive. For examples and more information, see [What is a Network Access Control List?](/documentation/articles/virtual-networks-acl/).
+The rules are evaluated in order starting with the first rule and ending with the last rule. This means that rules should be ordered from least restrictive to most restrictive. For examples and more information, see [What is a Network Access Control List?](/documentation/articles/virtual-networks-acl).
 
 To use an Azure PowerShell cmdlet to set this up, see [Managing access control lists (ACLs) for endpoints by using PowerShell](/documentation/articles/virtual-networks-acl-powershell).
 

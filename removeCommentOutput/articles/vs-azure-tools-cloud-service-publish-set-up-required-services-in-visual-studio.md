@@ -73,7 +73,7 @@ A storage account provides access to the Blob, Queue, and Table services. You ca
 1. Select or enter the following information for the new storage account in the **Create Storage Account** dialog box.
     - The Azure subscription to which you want to add the storage account.
     - The name you want to use for the new storage account.
-    - The region or affinity group (such as China North or East Asia).
+    - The region or affinity group (such as China North or China East).
     - The type of replication you want to use for the storage account, such as Geo-Redundant.
 
 1. When you’re done, choose **Create**.The new storage account appears in the **Storage** list in **Server Explorer**.

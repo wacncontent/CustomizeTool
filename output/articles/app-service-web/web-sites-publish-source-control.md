@@ -14,7 +14,9 @@
 
 # Continuous deployment using GIT in Azure Websites
 
+<!-- deleted by customization
 [AZURE.INCLUDE [app-service-web-to-api-and-mobile](../includes/app-service-web-to-api-and-mobile.md)]
 
+-->
 [AZURE.INCLUDE [publishing-with-git](../includes/publishing-with-git.md)]
  

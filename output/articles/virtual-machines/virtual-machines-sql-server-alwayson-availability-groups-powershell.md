@@ -19,9 +19,11 @@
 - [PowerShell](/documentation/articles/virtual-machines-sql-server-alwayson-availability-groups-powershell)
 
 <br/>
+<!-- deleted by customization
 
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
 
+-->
 
 Azure virtual machines (VMs) can help database administrators to implement lower the cost of a high availability SQL Server system. This tutorial shows you how to implement an availability group using SQL Server AlwaysOn end-to-end inside an Azure environment. At the end of the tutorial, your SQL Server AlwaysOn solution in Azure will consist of the following elements:
 
@@ -41,7 +43,7 @@ This tutorial is intended to show you the steps required to set up the described
 
 - You already have an Azure account with the virtual machine subscription.
 
-- You have installed the [Azure PowerShell cmdlets](..\powershell-install-configure.md).
+- You have installed the [Azure PowerShell cmdlets](/documentation/articles/powershell-install-configure).
 
 - You already know how to provision a SQL Server VM from the virtual machine gallery using the GUI. For more information, see [Provisioning a SQL Server Virtual Machine on Azure](/documentation/articles/virtual-machines-provision-sql-server)
 

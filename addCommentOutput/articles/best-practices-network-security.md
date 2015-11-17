@@ -32,7 +32,7 @@ Examples for adding VNet to VNet connections, high availability, and service cha
 Microsoft has taken a leadership position supporting compliance initiatives required by enterprise customers. The following are some of the compliance certifications for Azure:
 ![Azure Compliance Badges][1]
 
-More details can be found at: [http://azure.microsoft.com/support/trust-center/compliance/](http://azure.microsoft.com/support/trust-center/compliance/)
+More details can be found at: [/support/trust-center/compliance/](/support/trust-center/compliance/)
 
 Microsoft has a comprehensive approach to protect cloud infrastructure needed to run hyper-scale global services. Microsoft cloud infrastructure includes hardware, software, networks, administrative and operations staff, as well as the physical data centers.
 
@@ -465,28 +465,12 @@ will be available soon and linked from this page.
 ## References
 ### Helpful Websites and Documentation
 - Access Azure with ARM: 
-<!-- deleted by customization
-- Accessing Azure with PowerShell: [/documentation/articles/powershell-install-configure/](./powershell-install-configure.md)
--->
-<!-- keep by customization: begin -->
 - Accessing Azure with PowerShell: [/documentation/articles/powershell-install-configure/](/documentation/articles/powershell-install-configure)
-<!-- keep by customization: end -->
 - Virtual Networking Documentation: [/documentation/services/networking/](/documentation/services/networking/)
-<!-- deleted by customization
-- Network Security Group Documentation: [/documentation/articles/virtual-networks-nsg/](./networking/virtual-networks-nsg.md)
-- User Defined Routing Documentation: [/documentation/articles/virtual-networks-udr-overview/](./networking/virtual-networks-udr-overview.md)
--->
-<!-- keep by customization: begin -->
-- Network Security Group Documentation: [/documentation/articles/virtual-networks-nsg/](/documentation/articles/networking/virtual-networks-nsg)
-- User Defined Routing Documentation: [/documentation/articles/virtual-networks-udr-overview/](/documentation/articles/networking/virtual-networks-udr-overview)
-<!-- keep by customization: end -->
+- Network Security Group Documentation: [/documentation/articles/virtual-networks-nsg/](/documentation/articles/virtual-networks-nsg)
+- User Defined Routing Documentation: [/documentation/articles/virtual-networks-udr-overview/](/documentation/articles/virtual-networks-udr-overview)
 - Azure Virtual Gateways: [/documentation/services/vpn-gateway/](/documentation/services/vpn-gateway/)
-<!-- deleted by customization
-- Site-to-Site VPNs: [/documentation/articles/vpn-gateway-site-to-site-create/](./networking/vpn-gateway-site-to-site-create.md)
--->
-<!-- keep by customization: begin -->
 - Site-to-Site VPNs: [/documentation/articles/vpn-gateway-site-to-site-create/](/documentation/articles/vpn-gateway-site-to-site-create)
-<!-- keep by customization: end -->
 - ExpressRoute Documentation (be sure to check out the “Getting Started” and “How To” sections): [/documentation/services/expressroute/](/documentation/services/expressroute/)
 
 <!--Image References-->
@@ -510,12 +494,11 @@ will be available soon and linked from this page.
 [17]: ./media/best-practices-network-security/example6designexpressroute.png "DMZ with Azure Gateway Using an ExpressRoute Connection"
 
 <!--Link References-->
-[Example1]: ./networking/virtual-networks-dmz-nsg-asm.md
-[Example2]: ./networking/virtual-networks-dmz-nsg-fw-asm.md
-[Example3]: ./networking/virtual-networks-dmz-nsg-fw-udr-asm.md
-[Example4]: ./networking/virtual-networks-hybrid-s2s-nva-asm.md
-[Example5]: ./networking/virtual-networks-hybrid-s2s-agw-asm.md
-[Example6]: ./networking/virtual-networks-hybrid-expressroute-asm.md
-[Example7]: ./networking/virtual-networks-vnet2vnet-direct-asm.md
-[Example8]: ./networking/virtual-networks-vnet2vnet-transit-asm.md
-
+[Example1]: /documentation/articles/virtual-networks-dmz-nsg-asm
+[Example2]: /documentation/articles/virtual-networks-dmz-nsg-fw-asm
+[Example3]: /documentation/articles/virtual-networks-dmz-nsg-fw-udr-asm
+[Example4]: /documentation/articles/virtual-networks-hybrid-s2s-nva-asm
+[Example5]: /documentation/articles/virtual-networks-hybrid-s2s-agw-asm
+[Example6]: /documentation/articles/virtual-networks-hybrid-expressroute-asm
+[Example7]: /documentation/articles/virtual-networks-vnet2vnet-direct-asm
+[Example8]: /documentation/articles/virtual-networks-vnet2vnet-transit-asm

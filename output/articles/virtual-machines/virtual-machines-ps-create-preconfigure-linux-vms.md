@@ -20,10 +20,12 @@
 - [PowerShell](/documentation/articles/virtual-machines-ps-create-preconfigure-linux-vms)
 
 <br>
+<!-- deleted by customization
 
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
  
 
+-->
 These steps show you how to use a set of Azure PowerShell commands to create and preconfigure a Linux virtual machine using the classic management model. You can use this process to quickly create a command set for a new Linux-based virtual machine and expand an existing deployment or to create multiple command sets that quickly build out a custom dev/test or IT pro environment.
 
 These steps follow a fill-in-the-blanks approach for creating Azure PowerShell command sets. This approach can be useful if you are new to Azure PowerShell or you just want to know what values to specify for successful configuration. Advanced Azure PowerShell users can take the commands and substitute their own values for the variables (the lines beginning with "$").

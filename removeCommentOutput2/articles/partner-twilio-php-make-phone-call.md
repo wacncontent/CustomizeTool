@@ -104,7 +104,7 @@ The next step is to deploy your application to Azure Websites. The following art
 ## Next steps
 This code was provided to show you basic functionality using Twilio in PHP on Azure. Before deploying to Azure in production, you may want to add more error handling or other features. For example:
 
-* Instead of using a web form, you could use Azure storage blobs or SQL 数据库 to store phone numbers and call text. For information about using Azure storage blobs in PHP, see [Using Azure Storage with PHP Applications][howto_blob_storage_php]. For information about using SQL 数据库 in PHP, see [Using SQL 数据库 with PHP Applications][howto_sql_azure_php].
+* Instead of using a web form, you could use Azure storage blobs or SQL Database to store phone numbers and call text. For information about using Azure storage blobs in PHP, see [Using Azure Storage with PHP Applications][howto_blob_storage_php]. For information about using SQL Database in PHP, see [Using SQL Database with PHP Applications][howto_sql_azure_php].
 * The **makecall.php** code uses Twilio-provided URL ([http://twimlets.com/message][twimlet_message_url]) to provide a Twilio Markup Language (TwiML) response that informs Twilio how to proceed with the call. For example, the TwiML that is returned can contain a `<Say>` verb that results in text being spoken to the call recipient. Instead of using the Twilio-provided URL, you could build your own service to respond to Twilio's request; for more information, see [How to Use Twilio for Voice and SMS Capabilities in PHP][howto_twilio_voice_sms_php]. More information about TwiML can be found at [http://www.twilio.com/docs/api/twiml][twiml], and more information about `<Say>` and other Twilio verbs can be found at [http://www.twilio.com/docs/api/twiml/say][twilio_say].
 * Read the Twilio security guidelines at [https://www.twilio.com/docs/security][twilio_docs_security].
 
@@ -125,8 +125,8 @@ For additional information about Twilio, see [https://www.twilio.com/docs][twili
 [twilio_api_service]: http://api.twilio.com
 [build_php_azure_app]: http://azurephp.interoperabilitybridges.com/articles/build-and-deploy-a-windows-azure-php-application
 [howto_twilio_voice_sms_php]: /documentation/articles/partner-twilio-php-how-to-use-voice-sms
-[howto_blob_storage_php]: http://www.windowsazure.cn/documentation/articles/storage-php-how-to-use-blobs/
-[howto_sql_azure_php]: http://www.windowsazure.cn/documentation/articles/sql-database-php-how-to-use/
+[howto_blob_storage_php]: /documentation/articles/storage-php-how-to-use-blobs/
+[howto_sql_azure_php]: /documentation/articles/sql-database-php-how-to-use/
 [twilio_call_properties]: https://www.twilio.com/docs/api/rest/call#instance-properties
 [twilio_docs_security]: http://www.twilio.com/docs/security
 [twilio_docs]: http://www.twilio.com/docs
@@ -134,7 +134,7 @@ For additional information about Twilio, see [https://www.twilio.com/docs][twili
 [ssl_validation]: http://readthedocs.org/docs/twilio-php/en/latest/usage/rest.html
 [twilio_php]: ./media/partner-twilio-php-make-phone-call/WA_TwilioPHPCallForm.jpg
 [twilio_php_response]: ./media/partner-twilio-php-make-phone-call/WA_TwilioPHPMakeCall.jpg
-[website-git]: https://www.windowsazure.cn/develop/php/tutorials/website-w-mysql-and-git/
-[website-ftp]: https://www.windowsazure.cn/develop/php/tutorials/website-w-mysql-and-ftp/
-[website-webmatrix]: https://www.windowsazure.cn/develop/php/tutorials/website-w-mysql-and-webmatrix/
+[website-git]: /develop/php/tutorials/website-w-mysql-and-git/
+[website-ftp]: /develop/php/tutorials/website-w-mysql-and-ftp/
+[website-webmatrix]: /develop/php/tutorials/website-w-mysql-and-webmatrix/
 [twilio_php_github]: https://github.com/twilio/twilio-php

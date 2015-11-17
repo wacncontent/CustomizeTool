@@ -300,7 +300,7 @@ Once your Linux-based HDInsight cluster has been created, use the following step
     ]
         ```
     
-    * __virtualenv_root__: Set this to "/virtualenv"
+    * __virtualenv\_root__: Set this to "/virtualenv"
     
     This configures the project for your HDInsight cluster, including the `/virtualenv` directory that was created during provisioning by the script action.
 

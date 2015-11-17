@@ -17,4 +17,5 @@ After the records for your domain name have propagated, you must associate them 
 6. Click the check mark in the lower right corner to save the domain name configuration.
 
 	Once configuration has completed, the custom domain name will be listed in the **domain names** section of the **Configure** page of your web app.
+
 At this point, you should be able to enter the custom domain name in your browser and see that it successfully takes you to your web app.

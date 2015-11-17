@@ -44,7 +44,17 @@ Pin the most important tags to your Startboard for quick access and you're ready
 
 ## Tagging with PowerShell
 
+<!-- deleted by customization
 [AZURE.INCLUDE [powershell-preview-inline-include](../includes/powershell-preview-inline-include.md)]
+-->
+<!-- keep by customization: begin -->
+If you have not previously used Azure PowerShell with Resource Manager, see [Using Azure PowerShell with Azure Resource Manager](/documentation/articles/powershell-azure-resource-manager).
+For the purposes of this article, we'll assume you've already added an account and selected a subscription with the resources you want to tag.
+
+Tagging is only available for resources and resource groups available from [Resource Manager](http://msdn.microsoft.com/zh-cn/library/azure/dn790568.aspx), so the next thing we need to do is switch to use Resource Manager.
+
+    Switch-AzureMode AzureResourceManager
+<!-- keep by customization: end -->
 
 Tags exist directly on resources and resource groups, so to see what tags are already applied, we can simply get a resource or resource group with **Get-AzureRmResource** or **Get-AzureRmResourceGroup**. Let's start with a resource group.
 
@@ -62,12 +72,12 @@ Tags exist directly on resources and resource groups, so to see what tags are al
     Resources         :
                     Name                             Type                                  Location
                     ===============================  ====================================  ==============
-                    CPUHigh ExamplePlan              microsoft.insights/alertrules         eastus
-                    ForbiddenRequests tag-demo-site  microsoft.insights/alertrules         eastus
-                    LongHttpQueue ExamplePlan        microsoft.insights/alertrules         eastus
-                    ServerErrors tag-demo-site       microsoft.insights/alertrules         eastus
-                    ExamplePlan-tag-demo             microsoft.insights/autoscalesettings  eastus
-                    tag-demo-site                    microsoft.insights/components         centralus
+                    CPUHigh ExamplePlan              microsoft.insights/alertrules         chinaeast
+                    ForbiddenRequests tag-demo-site  microsoft.insights/alertrules         chinaeast
+                    LongHttpQueue ExamplePlan        microsoft.insights/alertrules         chinaeast
+                    ServerErrors tag-demo-site       microsoft.insights/alertrules         chinaeast
+                    ExamplePlan-tag-demo             microsoft.insights/autoscalesettings  chinaeast
+tag-demo-site                    microsoft.insights/components         centralus
                     ExamplePlan                      Microsoft.Web/serverFarms             southcentralus
                     tag-demo-site                    Microsoft.Web/sites                   southcentralus
 
@@ -104,6 +114,7 @@ Tags are updated as a whole, so if you are adding one tag to a resource that's a
 
 To remove one or more tags, simply save the array without the ones you want to remove.
 
+<!-- deleted by customization
 The process is the same for resources, except you'll use the **Get-AzureRmResource** and **Set-AzureRmResource** cmdlets. 
 
 To get resource groups with a specific tag, use **Find-AzureRmResourceGroup** cmdlet with the **-Tag** parameter.
@@ -113,6 +124,10 @@ To get resource groups with a specific tag, use **Find-AzureRmResourceGroup** cm
     tag-demo
 
 For Azure PowerShell versions earlier than 1.0 Preview use the following commands to get resources with a specific tag.
+-->
+<!-- keep by customization: begin -->
+The process is the same for resources, except you'll use the `Get-AzureResource` and `Set-AzureResource` cmdlets. To get resources or resource groups with a specific tag, use `Get-AzureResource` or `Get-AzureResourceGroup` cmdlet with the `-Tag` parameter.
+<!-- keep by customization: end -->
 
     PS C:\> Get-AzureResourceGroup -Tag @{ Name="env"; Value="demo" } | %{ $_.ResourceGroupName }
     rbacdemo-group
@@ -154,6 +169,6 @@ When you download the usage CSV for services that support tags with billing, the
 
 ## Next Steps
 
-- For an introduction to using Azure PowerShell when deploying resources, see [Using Azure PowerShell with Azure Resource Manager](./powershell-azure-resource-manager.md).
-- For an introduction to using Azure CLI when deploying resources, see [Using the Azure CLI for Mac, Linux, and Windows with Azure Resource Management](./xplat-cli-azure-resource-manager.md).
-- For an introduction to using the preview portal, see [Using the Azure preview portal to manage your Azure resources](./resource-group-portal.md)  
+- For an introduction to using Azure PowerShell when deploying resources, see [Using Azure PowerShell with Azure Resource Manager](/documentation/articles/powershell-azure-resource-manager).
+- For an introduction to using Azure CLI when deploying resources, see [Using the Azure CLI for Mac, Linux, and Windows with Azure Resource Management](/documentation/articles/xplat-cli-azure-resource-manager).
+- For an introduction to using the preview portal, see [Using the Azure preview portal to manage your Azure resources](/documentation/articles/resource-group-portal)  

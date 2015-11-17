@@ -30,15 +30,15 @@ As the following procedure describes, you must install software and tools on the
 
 1. Install the .NET Framework 4 or later, which includes MSBuild.
 
-1. Install the [Azure Authoring Tools](https://azure.microsoft.com/zh-cn/downloads/archive-net-downloads/) (look for MicrosoftAzureAuthoringTools-x64.msi or MicrosoftAzureAuthoringTools-x86.msi.
+1. Install the [Azure Authoring Tools](https://azure.microsoft.com/zh-cn/downloads/) (look for MicrosoftAzureAuthoringTools-x64.msi or MicrosoftAzureAuthoringTools-x86.msi.
 
-1. Install the [Azure Libraries for .NET](https://azure.microsoft.com/zh-cn/downloads/archive-net-downloads/) (look for MicrosoftAzureLibsForNet-x64.msi or MicrosoftAzureLibs-x86.msi.
+1. Install the [Azure Libraries for.NET](https://azure.microsoft.com/zh-cn/downloads/) (look for MicrosoftAzureLibsForNet-x64.msi or MicrosoftAzureLibs-x86.msi.
 
 1. Copy the Microsoft.WebApplication.targets file from a Visual Studio installation on another computer.
 
     The file is located in the directory C:\Program Files (x86)\MSBuild\Microsoft\Visual Studio\v12.0\WebApplications (v11.0 for Visual Studio 2012), and you should copy it to the same directory on the build server.
 
-1. Install the [Azure Tools for Visual Studio](https://azure.microsoft.com/zh-cn/downloads/archive-net-downloads/).
+1. Install the [Azure Tools for Visual Studio](https://azure.microsoft.com/zh-cn/downloads/).
 
     Look for WindowsAzureTools.vs120.exe to build Visual Studio 2013 projects.
 

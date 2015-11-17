@@ -1,15 +1,16 @@
-<properties 
-	pageTitle="Ruby on Rails Web App on Azure using Linux VM" 
-	description="Host a Ruby on Rails-based website on Azure using a Linux virtual machine." 
-	services="virtual-machines" 
-	documentationCenter="ruby" 
-	authors="MikeWasson" 
-	manager="wpickett" 
-	editor=""/>
+<properties
+	pageTitle="Host a Ruby on Rails website on a Linux VM | Windows Azure"
+	description="Set up and host a Ruby on Rails-based website on Azure using a Linux virtual machine."
+	services="virtual-machines"
+	documentationCenter="ruby"
+	authors="MikeWasson"
+	manager="wpickett"
+	editor=""
+	tags="azure-service-management"/>
 
-<tags 
-	ms.service="virtual-machines" 
-	ms.date="06/09/2015" 
+<tags
+	ms.service="virtual-machines"
+	ms.date="06/09/2015"
 	wacn.date=""/>
 
 
@@ -24,7 +25,7 @@ This tutorial was validated using Ubuntu Server 14.04 LTS. If you use a differen
 
 ## Create an Azure VM
 
-Start by creating an Azure VM with a Linux image. 
+Start by creating an Azure VM with a Linux image.
 
 To create the VM, you can use the Azure Management Portal or the Azure Command-Line Interface (CLI).
 
@@ -46,8 +47,8 @@ After the VM is provisioned, you can get the SSH endpoint by running the followi
 
 ## Install Ruby on Rails
 
-1. Use SSH to connect to the VM. 
-	
+1. Use SSH to connect to the VM.
+
 2. From the SSH session, use the following commands to install Ruby on the VM:
 
 		sudo apt-get update -y
@@ -76,7 +77,7 @@ While still logged in via SSH, run the following commands:
 
 The [new](http://guides.rubyonrails.org/command_line.html#rails-new) command creates a new Rails app. The [server](http://guides.rubyonrails.org/command_line.html#rails-server) command starts the WEBrick web server that comes with Rails. (For production use, you would probably want to use a different server, such as Unicorn or Passenger.)
 
-You should see output similar to the following. 
+You should see output similar to the following.
 
 	=> Booting WEBrick
 	=> Rails 4.2.1 application starting in development on http://0.0.0.0:3000
@@ -140,7 +141,6 @@ To use Azure services from your Ruby application, see:
 
 <!-- WA.com links -->
 [blobs]: /documentation/articles/storage-ruby-how-to-use-blob-storage
-
 [cdn-howto]: /develop/ruby/app-services/
 
 [management-portal]: https://manage.windowsazure.cn/
@@ -148,8 +148,6 @@ To use Azure services from your Ruby application, see:
 [tables]: /develop/ruby/how-to-guides/table-service/
 
 [vm-instructions]: /documentation/articles/virtual-machines-linux-tutorial
-
-
 <!-- External Links -->
 [rails-guides]: http://guides.rubyonrails.org/
 
@@ -166,4 +164,3 @@ To use Azure services from your Ruby application, see:
 [new-endpoint]: ./media/virtual-machines-ruby-rails-web-app-linux/newendpoint.png
 
 [new-endpoint1]: ./media/virtual-machines-ruby-rails-web-app-linux/newendpoint1.png
- 

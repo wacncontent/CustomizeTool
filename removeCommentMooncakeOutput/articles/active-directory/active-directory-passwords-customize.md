@@ -7,9 +7,9 @@
 	manager="kbrint" 
 	editor="billmath"/>
 
-<tags 
-	ms.service="active-directory"  
-	ms.date="06/08/2015" 
+<tags
+	ms.service="active-directory"
+	ms.date="06/08/2015"
 	wacn.date=""/>
 
 # Customizing Password Management to fit your organization's needs

@@ -1,3 +1,7 @@
+<!-- keep by customization: begin -->
+<!-- not suitable for Mooncake -->
+
+<!-- keep by customization: end -->
 ## How to create a VNet in the Azure preview portal
 
 To create a VNet based on the scenario above by using the Azure preview portal, follow the steps below.

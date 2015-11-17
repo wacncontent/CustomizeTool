@@ -47,7 +47,7 @@ After your machine is configured with **node** and **npm**, navigate to a direct
 ### Create an AdventureWorks database
 
 
-The code sample in this topic expects an **AdventureWorks** test database. If you do not already have one, see [Get started with SQL <!-- deleted by customization Database](/documentation/articles/sql-database-get-started) --><!-- keep by customization: begin --> Database](/documenttation/articles/sql-database-get-started) <!-- keep by customization: end -->. It is important that you follow the guide to create an **AdventureWorks database template**. The examples shown below work only with the **AdventureWorks schema**.
+The code sample in this topic expects an **AdventureWorks** test database. If you do not already have one, see [Get started with SQL Database](/documentation/articles/sql-database-get-started). It is important that you follow the guide to create an **AdventureWorks database template**. The examples shown below work only with the **AdventureWorks schema**. 
 
 
 ## Connect to your SQL Database

@@ -13,10 +13,12 @@
 	wacn.date=""/>
 
 # Automated Backup for SQL Server in Azure Virtual Machines
+<!-- deleted by customization
 
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
 
 
+-->
 
 Automated Backup automatically configures [Managed Backup to Windows Azure](https://msdn.microsoft.com/zh-cn/library/dn449496.aspx) for all existing and new databases on an Azure VM running SQL Server 2014 Standard or Enterprise. This enables you to configure regular database backups that utilize durable Azure blob storage.
 
@@ -36,7 +38,7 @@ The following table describes the options that can be configured for Automated B
 
 ## Configure Automated Backup in the Portal
 
-You can use the [Azure Preview Portal](https://portal.azure.com/) to configure Automated Backup when you create a new SQL Server 2014 Virtual Machine. The following screenshot shows these options under **OPTIONAL CONFIGURATION** | **SQL AUTOMATED BACKUP**.
+You can use the [Azure Preview <!-- deleted by customization Portal](https://portal.azure.com/) --><!-- keep by customization: begin --> Portal](https://manage.windowsazure.cn/) <!-- keep by customization: end --> to configure Automated Backup when you create a new SQL Server 2014 Virtual Machine. The following screenshot shows these options under **OPTIONAL CONFIGURATION** | **SQL AUTOMATED BACKUP**.
 
 ![SQL Automatic Backup configuration in Azure Management Portal](./media/virtual-machines-sql-server-automated-backup/IC778483.jpg)
 

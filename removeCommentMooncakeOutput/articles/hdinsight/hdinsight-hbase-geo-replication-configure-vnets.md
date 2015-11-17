@@ -244,7 +244,7 @@ In this tutorial you have learned how to configure a VPN connection between two 
 [hdinsight-hbase-geo-replication-dns]: /documentation/articles/hdinsight-hbase-geo-replication-configure-DNS
 [hdinsight-hbase-geo-replication]: /documentation/articles/hdinsight-hbase-geo-replication
 [azure-purchase-options]: /pricing/overview/
-[azure-member-offers]: http://azure.microsoft.com/pricing/member-offers/
+[azure-member-offers]: /pricing/member-offers/
 [azure-trial]: /pricing/1rmb-trial/
 [azure-portal]: https://manage.windowsazure.cn
 

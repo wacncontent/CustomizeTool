@@ -6,4 +6,4 @@
 | Broadcast Tag Size | 10K | 10K | Unlimited |
 | # of tags (broadcast groups) | 3K | 3K unless broadcasted to less than 5 devices | Unlimited |
 
-For additional details on these limits and for information on pricing, see [Notification Hubs Pricing](/home/features/notification-hubs/#price). 
+For additional details on these limits and for information on pricing, see [Notification Hubs <!-- deleted by customization Pricing](/home/features/notification-hubs/#price) --><!-- keep by customization: begin --> Pricing](http://www.windowsazure.cn/home/features/notification-hubs/#price) <!-- keep by customization: end -->.

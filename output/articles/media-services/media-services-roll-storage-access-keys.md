@@ -140,6 +140,7 @@ After 30 minutes you can recreate your OnDemand locators so they take dependency
 
 Use the same procedure as described in [step 3](/documentation/articles/media-services-roll-storage-access-keys#step-3-update-locators).
 
+<!-- deleted by customization
  
 ##Media Services learning paths
 
@@ -147,6 +148,7 @@ You can view AMS learning paths here:
 
 - [AMS Live Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/)
 - [AMS on Demand Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/)
+-->
 
 
 ###Acknowledgments 

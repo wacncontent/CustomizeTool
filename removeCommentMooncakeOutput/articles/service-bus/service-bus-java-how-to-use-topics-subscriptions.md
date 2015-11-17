@@ -12,7 +12,6 @@
 	ms.date="10/07/2015"
 	wacn.date=""/>
 
-
 # How to use Service Bus topics and subscriptions
 
 [AZURE.INCLUDE [service-bus-selector-topics](../includes/service-bus-selector-topics.md)]
@@ -101,7 +100,7 @@ subscription named "AllMessages" and uses the default **MatchAll**
 filter.
 
     SubscriptionInfo subInfo = new SubscriptionInfo("AllMessages");
-    CreateSubscriptionResult result = 
+    CreateSubscriptionResult result =
         service.createSubscription("TestTopic", subInfo);
 
 ### Create subscriptions with filters
@@ -121,11 +120,11 @@ The following example creates a subscription named `HighMessages` with a
 
     // Create a "HighMessages" filtered subscription  
 	SubscriptionInfo subInfo = new SubscriptionInfo("HighMessages");
-    CreateSubscriptionResult result = 
+    CreateSubscriptionResult result =
 		service.createSubscription("TestTopic", subInfo);
 	RuleInfo ruleInfo = new RuleInfo("myRuleGT3");
 	ruleInfo = ruleInfo.withSqlExpressionFilter("MessageNumber > 3");
-	CreateRuleResult ruleResult = 
+	CreateRuleResult ruleResult =
 		service.createRule("TestTopic", "HighMessages", ruleInfo);
     // Delete the default rule, otherwise the new rule won't be invoked.
     service.deleteRule("TestTopic", "HighMessages", "$Default");
@@ -134,11 +133,11 @@ Similarly, the following example creates a subscription named `LowMessages` with
 
     // Create a "LowMessages" filtered subscription
 	SubscriptionInfo subInfo = new SubscriptionInfo("LowMessages");
-	CreateSubscriptionResult result = 
+	CreateSubscriptionResult result =
 		service.createSubscription("TestTopic", subInfo);
     RuleInfo ruleInfo = new RuleInfo("myRuleLE3");
 	ruleInfo = ruleInfo.withSqlExpressionFilter("MessageNumber <= 3");
-	CreateRuleResult ruleResult = 
+	CreateRuleResult ruleResult =
 		service.createRule("TestTopic", "LowMessages", ruleInfo);
     // Delete the default rule, otherwise the new rule won't be invoked.
     service.deleteRule("TestTopic", "LowMessages", "$Default");
@@ -316,7 +315,7 @@ with the topic. Subscriptions can also be deleted independently.
 
 ## Next Steps
 
-Now that you've learned the basics of Service Bus queues, see [Service Bus Queues, Topics, and Subscriptions][] for more information.
+Now that you've learned the basics of Service Bus queues, see [Service Bus queues, topics, and subscriptions][] for more information.
 
   [Azure SDK for Java]: /develop/java/
   [Azure Toolkit for Eclipse]: https://msdn.microsoft.com/zh-cn/library/azure/hh694271.aspx

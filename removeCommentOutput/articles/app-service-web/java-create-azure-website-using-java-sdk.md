@@ -30,7 +30,7 @@ This walkthrough shows you how to create an Azure SDK for Java application that 
 
 ### Software Installations
 
-The AzureWebDemo application code in this article was written using Azure Java SDK 0.7.0, which you can install using the [Web Platform Installer][](/documentation/articles/WebPI). In addition, make sure to use the latest version of the [Azure Toolkit for Eclipse][]. After you install the SDK, update the dependencies in your Eclipse project by running **Update Index** in **Maven Repositories**, then re-add the latest version of each package in the **Dependencies** window. You can verify the version of your installed software in Eclipse by clicking **Help > Installation Details**; you should have at least the following versions:
+The AzureWebDemo application code in this article was written using Azure Java SDK 0.7.0, which you can install using the [Web Platform Installer][] (WebPI). In addition, make sure to use the latest version of the [Azure Toolkit for Eclipse][]. After you install the SDK, update the dependencies in your Eclipse project by running **Update Index** in **Maven Repositories**, then re-add the latest version of each package in the **Dependencies** window. You can verify the version of your installed software in Eclipse by clicking **Help > Installation Details**; you should have at least the following versions:
 
 - Package for Windows Azure Libraries for Java 0.7.0.20150309
 - Eclipse IDE for Java EE Developers 4.4.2.20150219
@@ -608,6 +608,6 @@ This procedure creates an Azure Websites web app. You will be billed for the res
 [What is an Azure AD directory]: http://technet.microsoft.com/zh-cn/library/jj573650.aspx
 [Create and Upload a Management Certificate for Azure]: http://msdn.microsoft.com/zh-cn/library/azure/gg551722.aspx
 [Key and Certificate Management Tool (keytool)]: http://docs.oracle.com/javase/6/docs/technotes/tools/windows/keytool.html
-[WebSiteManagementClient]: http://dl.windowsazure.cn/javadoc/com/microsoft/windowsazure/management/websites/WebSiteManagementClient.html
-[WebSpaceNames]: http://dl.windowsazure.cn/javadoc/com/microsoft/windowsazure/management/websites/models/WebSpaceNames.html
+[WebSiteManagementClient]: http://dl.windowsazure.com/javadoc/com/microsoft/windowsazure/management/websites/WebSiteManagementClient.html
+[WebSpaceNames]: http://dl.windowsazure.com/javadoc/com/microsoft/windowsazure/management/websites/models/WebSpaceNames.html
 [Azure Management Portal]: https://manage.windowsazure.cn

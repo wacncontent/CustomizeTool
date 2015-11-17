@@ -64,7 +64,7 @@ But the important point here is that Azure subscription admins and Azure AD dire
 
 A person can be in both roles but this isn’t required. A user can be assigned to the directory global administrator role but not be assigned as Service administrator or co-administrator of an Azure subscription. Without being an administrator of the subscription, this user cannot sign in to the Management Portal. But the user could perform directory administration tasks using other tools such as Azure AD PowerShell or Office 365 Admin Center.
 
-<!-- deleted by customization ## --><!-- keep by customization: begin --> ### <!-- keep by customization: end --> Why can't I manage the directory with my current user account?
+## Why can't I manage the directory with my current user account?
 
 Sometimes a user may try to sign in to the Management Portal using a work or school account prior to signing up for an Azure subscription. In this case, the user will receive a message that there is no subscription for that account. The message will include a link to start a trial subscription.
 
@@ -89,7 +89,7 @@ You have user accounts with the same name, one in Azure AD and the other in the 
 
 ## Manage the directory for your Office 365 subscription in Azure
 
-Let's say you signed up for Office 365 before you sign up for Azure. Now you want to manage the directory for the Office 365 subscription in the Management Portal. <!-- deleted by customization There are --><!-- keep by customization: begin --> There's <!-- keep by customization: end --> two ways to do this, depending on whether you have signed up for Azure or you have not.
+Let's say you signed up for Office 365 before you sign up for Azure. Now you want to manage the directory for the Office 365 subscription in the Management Portal. There are two ways to do this, depending on whether you have signed up for Azure or you have not.
 
 ### I do not have a subscription for Azure
 

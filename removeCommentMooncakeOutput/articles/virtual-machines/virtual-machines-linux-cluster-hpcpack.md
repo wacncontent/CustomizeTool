@@ -1,6 +1,6 @@
 <properties
- pageTitle="Use Linux compute VMs in an HPC Pack cluster | Windows Azure"
- description="Learn how to script the deployment of an HPC Pack cluster in Azure containing a head node running Windows Server with Linux compute nodes."
+ pageTitle="Linux compute VMs in an HPC Pack cluster | Windows Azure"
+ description="How to script the deployment of an HPC Pack cluster in Azure containing a head node running Windows Server with Linux compute nodes."
  services="virtual-machines"
  documentationCenter=""
  authors="dlepow"
@@ -9,12 +9,12 @@
  tags="azure-service-management"/>
 <tags
 	ms.service="virtual-machines"
- 	ms.date="09/01/2015"
+	ms.date="09/01/2015"
 	wacn.date=""/>
 
 # Get started with Linux compute nodes in an HPC Pack cluster in Azure
 
-This article shows you how to use an Azure PowerShell script to set up a Windows HPC Pack cluster in Azure which contains a head node running Windows Server and several compute nodes running a CentOS Linux distribution. We also show several ways to move data files to the Linux compute nodes. You can use this cluster to run Linux HPC workloads in Azure.
+This article shows you how to use an Azure PowerShell script to set up a Microsoft HPC Pack cluster in Azure which contains a head node running Windows Server and several compute nodes running a CentOS Linux distribution. We also show several ways to move data files to the Linux compute nodes. You can use this cluster to run Linux HPC workloads in Azure.
 
 At a high level the following diagram shows the HPC Pack cluster you'll create.
 
@@ -22,7 +22,7 @@ At a high level the following diagram shows the HPC Pack cluster you'll create.
 
 ## Deploy an HPC Pack cluster with Linux compute nodes
 
-You'll use the Windows HPC Pack IaaS deployment script (**New-HpcIaaSCluster.ps1**) to automate the cluster deployment in Azure infrastructure services (IaaS). This Azure PowerShell script uses an HPC Pack VM image in the Azure Marketplace for fast deployment and provides a comprehensive set of configuration parameters to make the deployment easy and flexible. You can use the script to deploy the Azure virtual network, storage accounts, cloud services, domain controller, optional separate SQL Server database server, cluster head node, compute nodes, broker nodes, Azure PaaS (“burst”) nodes, and Linux compute nodes (Linux support introduced in [HPC Pack 2012 R2 Update 2](https://technet.microsoft.com/zh-cn/library/mt269417.aspx)).
+You'll use the Microsoft HPC Pack IaaS deployment script (**New-HpcIaaSCluster.ps1**) to automate the cluster deployment in Azure infrastructure services (IaaS). This Azure PowerShell script uses an HPC Pack VM image in the Azure Marketplace for fast deployment and provides a comprehensive set of configuration parameters to make the deployment easy and flexible. The script deploys the Azure virtual network, storage accounts, cloud services, domain controller, optional separate SQL Server database server, cluster head node, compute nodes, broker nodes, Azure PaaS (“burst”) nodes, and Linux compute nodes (Linux support introduced in [HPC Pack 2012 R2 Update 2](https://technet.microsoft.com/zh-cn/library/mt269417.aspx)).
 
 For an overview of HPC Pack cluster deployment options, see the [Getting Started Guide for HPC Pack 2012 R2 and HPC Pack 2012](https://technet.microsoft.com/zh-cn/library/jj884144.aspx).
 
@@ -32,14 +32,14 @@ For an overview of HPC Pack cluster deployment options, see the [Getting Started
 
 * **Azure PowerShell** - [Install and configure Azure PowerShell](/documentation/articles/powershell-install-configure) (version 0.8.10 or later) on your client computer.
 
-* **HPC Pack IaaS deployment script** - Download and unpack the latest version of the script from the [Microsoft Download Center](https://www.microsoft.com/zh-cn/download/details.aspx?id=44949). You can check the version of the script by running `New-HPCIaaSCluster.ps1 –Version`. This article is based on version 4.4.0 or later of the script.
+* **HPC Pack IaaS deployment script** - Download and unpack the latest version of the script from the [Microsoft Download Center](https://www.microsoft.com/download/details.aspx?id=44949). You can check the version of the script by running `New-HPCIaaSCluster.ps1 –Version`. This article is based on version 4.4.0 or later of the script.
 
 * **Azure subscription** - You can use a subscription in either the Azure Global or Azure China service. If you don't have an account, you can create a trial account in just a couple of minutes. For details, see [Azure Trial](/pricing/1rmb-trial/).
 
 * **Cores quota** - You might need to increase the quota of cores, especially if you choose to deploy several cluster nodes with multicore VM sizes. For the example in this article, you will need at least 24 cores. To increase a quota, [open an online customer support request](http://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/) at no charge.
 
 ### Create the configuration file
-The HPC Pack IaaS deployment script uses an XML configuration file as input which describes the infrastructure of the HPC cluster. To deploy a small cluster consisting of a head node and 2 Linux compute nodes, substitute values for your environment into the following sample configuration file. For more information about the configuration file, see the Manual.rtf file in the script folder or the [script documentation](https://msdn.microsoft.com/zh-cn/library/azure/dn864734.aspx).
+The HPC Pack IaaS deployment script uses an XML configuration file as input which describes the infrastructure of the HPC cluster. To deploy a small cluster consisting of a head node and 2 Linux compute nodes, substitute values for your environment into the following sample configuration file. For more information about the configuration file, see the Manual.rtf file in the script folder and [Create an HPC cluster with the HPC Pack IaaS deployment script](/documentation/articles/virtual-machines-hpcpack-cluster-powershell-script).
 
 ```
 <?xml version="1.0" encoding="utf-8" ?>
@@ -115,7 +115,6 @@ Here are brief descriptions of the elements in the configuration file.
     Find the one you need and replace the **ImageName** value in the configuration file.
 
 * Linux images that support RDMA connectivity for size A8 and A9 VMs are available. If you specify an image with Linux RDMA drivers installed and enabled, the HPC Pack IaaS deployment script will deploy them. For example, specify the image name `b4590d9e3ed742e4a1d46e5424aa335e__suse-sles-12-hpc-v20150708` for the current SUSE Linux Enterprise Server 12 – Optimized for High Performance Compute image in the Marketplace.
-
 
 * To enable Linux RDMA on the Linux VMs created from supported images to run MPI jobs, install and configure a specific MPI library on the Linux nodes after cluster deployment according to your application needs. For more information about how to use RDMA in Linux nodes on Azure, see [Set up a Linux RDMA cluster to run MPI applications](/documentation/articles/virtual-machines-linux-cluster-rdma).
 
@@ -216,12 +215,12 @@ Alternatively, you can mount a shared folder of the head node on Linux nodes. Th
 ```
 PS > clusrun /nodegroup:LinuxNodes mkdir -p /openfoam
 
-PS > clusrun /nodegroup:LinuxNodes mount -t cifs //CentOS7RDMA-HN/OpenFOAM /openfoam -o vers=2.1`,username=<username>,password='<password>’,dir_mode=0777`,file_mode=0777
+PS > clusrun /nodegroup:LinuxNodes mount -t cifs //CentOS7RDMA-HN/OpenFOAM /openfoam -o vers=2.1`,username=<username>`,password='<password>'`,dir_mode=0777`,file_mode=0777
 ```
 
-The first command creates a folder named /openfoam on all nodes in LinuxNodes group. The second command mounts the shared folder //CentOS7RDMA-HN/OpenFOAM onto the folder with dir and file mode bits set to 777. The username and password in the command should be the username and password of a user on the head node.
+The first command creates a folder named /openfoam on all nodes in LinuxNodes group. The second command mounts the shared folder //CentOS7RDMA-HN/OpenFOAM onto the folder with dir and file mode bits set to 777. The username and password in the command should be the username and password of a cluster user on the head node.
 
->[AZURE.NOTE]The “\`” symbol in the second command is an escape symbol for PowerShell. “\`,” means the “,” (a comma) is a part of the command.
+>[AZURE.NOTE]The “\`” symbol in the second command is an escape symbol for PowerShell. “\`,” means the “,” (comma character) is a part of the command.
 
 
 ### NFS server
@@ -266,27 +265,25 @@ To submit jobs via the REST API, refer to [Creating and Submitting Jobs by Using
 
 The HPC Pack **clusrun** tool can be used to execute commands on Linux nodes either through a Command window or HPC Cluster Manager. Following are some examples.
 
-* Show current user names of all nodes in cluster
+* Show current user names on all nodes in the cluster
 
     ```
-> clusrun whoami
-```
+    > clusrun whoami
+    ```
 
-* Install the **gdb** debugger tool ith **yum** on all nodes in the linuxnodes group and then restart them after 10 minutes
+* Install the **gdb** debugger tool ith **yum** on all nodes in the linuxnodes group and then restart the nodes after 10 minutes
 
     ```
-> clusrun /nodegroup:linuxnodes yum install gdb –y; shutdown –r 10
-```
+    > clusrun /nodegroup:linuxnodes yum install gdb –y; shutdown –r 10
+    ```
 
-* Create a shell script displaying 1 to 10 per second on nodes in cluster, run it and show outputs from each node immediately.
+* Create a shell script displaying each number 1 through 10 for one second on each node in the cluster, run it, and show output from the nodes immediately.
 
     ```
-> clusrun /interleaved echo \"for i in {1..10}; do echo \\\"\$i\\\"; sleep 1; done\" ^> script.sh; chmod +x script.sh; ./script.sh```
+    > clusrun /interleaved echo \"for i in {1..10}; do echo \\\"\$i\\\"; sleep 1; done\" ^> script.sh; chmod +x script.sh; ./script.sh
+    ```
 
->[AZURE.NOTE] You  nmight need to use certain escape characters in clusrun commands. Use ^ in a Command window and \` in PowerShell to transform special characters. For example, in PowerShell, the comma and semicolon characters have to be transformed by \`, and \`, respectively. These characters don't require transformation in a Command window.
-
-
-
+>[AZURE.NOTE] You might need to use certain escape characters in **clusrun** commands. As shown in this example, use ^ in a Command window to escape the ">" symbol.
 
 ## Next steps
 

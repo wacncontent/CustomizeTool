@@ -8,9 +8,9 @@
    editor=""/>
 
    <tags
-      ms.service="active-directory"
-      ms.date="10/16/2015"
-      wacn.date=""/>
+	ms.service="active-directory"
+	ms.date="10/16/2015"
+	wacn.date=""/>
 
 # Managing Applications with Azure Active Directory (AD)
 
@@ -50,7 +50,7 @@ So, what generally prevents organizations from adopting integrated IAM solutions
 
 ## Azure Active Directory (AD) integrated with applications
 
-Azure Active Directory (AD) is Microsoft’s comprehensive Identity as a Service (IDaaS) solution enabling IAM as a cloud service and providing built in access management, single-sign on (SSO), and reporting [pre-integrated with thousands of applications](https://azure.microsoft.com/home/features/identity/), including Salesforce, Google Apps, Box, Concur, and lots more. With Azure AD applications you publish for your partners and customers (business or consumer) will have the same identity and access management capabilities freeing you to focus on you main business.
+Azure Active Directory (AD) is Microsoft’s comprehensive Identity as a Service (IDaaS) solution enabling IAM as a cloud service and providing built in access management, single-sign on (SSO), and reporting [pre-integrated with thousands of applications](/home/features/identity/), including Salesforce, Google Apps, Box, Concur, and lots more. With Azure AD applications you publish for your partners and customers (business or consumer) will have the same identity and access management capabilities freeing you to focus on you main business.
 
 The value of Azure AD goes beyond “just” cloud applications. You can also use it with on-premises applications by providing secure remote access, avoiding the need for VPNs or other traditional remote access management system.
 

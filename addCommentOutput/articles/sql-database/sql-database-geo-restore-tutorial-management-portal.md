@@ -20,7 +20,7 @@
 
 ## Overview
 
-This tutorial shows you how to recover an Azure SQL database using Geo-Restore in the [Azure Management <!-- deleted by customization Portal](http://manage.windowsazure.cn) --><!-- keep by customization: begin --> Portal](http://manage.windowsazure.cn/) <!-- keep by customization: end -->. Geo-Restore is the core disaster recovery protection included for all Basic, Standard, and Premium Azure SQL Databases service tiers.
+This tutorial shows you how to recover an Azure SQL database using Geo-Restore in the [Azure Management Portal](http://manage.windowsazure.cn). Geo-Restore is the core disaster recovery protection included for all Basic, Standard, and Premium Azure SQL Databases service tiers.
 
 ## Restrictions and Security
 
@@ -39,13 +39,10 @@ This tutorial shows you how to recover an Azure SQL database using Geo-Restore i
 	* Web and Business Editions will be retired September 2015. For more information, see [Web and Business Edition Sunset FAQ](http://msdn.microsoft.com/zh-cn/library/azure/dn741330.aspx).
 
 ## How to: Recover an Azure SQL database using Geo-Restore in the Azure Management Portal
-
 <!-- deleted by customization
+
 > [AZURE.VIDEO restore-a-sql-database-using-geo-restore]
 -->
-<!-- keep by customization: begin -->
-<!--<iframe src="http://channel9.msdn.com/Blogs/Windows-Azure/Restore-a-SQL-Database-Using-Geo-Restore/player" width="960" height="540" allowFullScreen frameBorder="0"></iframe>-->
-<!-- keep by customization: end -->
 
 1. Sign in to the [Azure Management Portal](http://manage.windowsazure.cn) using your Microsoft account and select **SQL Databases**.
 

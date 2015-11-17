@@ -1,5 +1,8 @@
 <properties pageTitle="Tutorial: Azure Active Directory integration with SAP HANA Cloud Platform | Windows Azure" description="Learn how to use SAP HANA Cloud Platform with Azure Active Directory to enable single sign-on, automated provisioning, and more!." services="active-directory" authors="MarkusVi"  documentationCenter="na" manager="stevenpo"/>
-<tags ms.service="active-directory" ms.devlang="na" ms.topic="article" ms.tgt_pltfrm="na" ms.workload="identity" ms.date="08/01/2015" ms.author="markvi" />
+<tags
+	ms.service="active-directory"
+	ms.date="08/01/2015"
+	wacn.date=""/>
 #Tutorial: Azure Active Directory integration with SAP HANA Cloud Platform
 >[AZURE.TIP]For feedback, click [here](https://social.msdn.microsoft.com/Forums/azure/zh-cn/1a025697-bdf3-4211-870e-910b8510cbdb/tutorial-azure-active-directory-integration-with-sap-hana-cloud-platform?forum=WindowsAzureAD).
   

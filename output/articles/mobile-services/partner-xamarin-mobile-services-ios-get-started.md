@@ -131,6 +131,7 @@ Now that you have completed the quickstart, learn how to perform additional impo
 [Get started with offline data sync]: /documentation/articles/mobile-services-xamarin-ios-get-started-offline-data
 [Get started with authentication]: /documentation/articles/partner-xamarin-mobile-services-ios-get-started-users
 [Get started with push notifications]: /documentation/articles/partner-xamarin-mobile-services-ios-get-started-push
+
 [Xamarin Studio]: http://xamarin.com/download
 [Mobile Services iOS SDK]: https://go.microsoft.com/fwLink/p/?LinkID=266533
 

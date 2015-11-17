@@ -8,9 +8,9 @@
     editor=""/>
 
 <tags
-    ms.service="sql-database"
-    ms.date="07/29/2015"
-    wacn.date=""/>
+	ms.service="sql-database"
+	ms.date="07/29/2015"
+	wacn.date=""/>
 
 # Elastic Database client library overview
 

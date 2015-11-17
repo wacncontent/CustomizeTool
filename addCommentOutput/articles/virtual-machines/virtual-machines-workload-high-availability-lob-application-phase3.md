@@ -31,7 +31,7 @@ You must complete this phase before moving on to [Phase 4](/documentation/articl
 > [AZURE.NOTE] These instructions use a SQL Server image in the Azure image gallery and you are charged ongoing costs for the use of the SQL Server license. It is also possible to create virtual machines in Azure and install your own SQL Server licenses, but you must have Software Assurance and License Mobility to use your SQL Server license on a virtual machine, including an Azure virtual machine. For more information about installing SQL Server on a virtual machine, see [Installation for SQL Server](https://msdn.microsoft.com/zh-cn/library/bb500469.aspx).
 -->
 <!-- keep by customization: begin -->
-> [AZURE.NOTE] These instructions use a SQL Server image in the Azure image gallery and are charged ongoing costs for the use of the SQL Server license. It is also possible to create virtual machines in Azure and install your own SQL Server licenses, but those instructions are not included here.
+> [AZURE.NOTE] These instructions use a SQL Server image in the Azure image gallery and you are charged ongoing costs for the use of the SQL Server license. It is also possible to create virtual machines in Azure and install your own SQL Server licenses, but those instructions are not included here.
 <!-- keep by customization: end -->
 
 ## Create the SQL Server cluster virtual machines in Azure
@@ -124,14 +124,14 @@ When you have supplied all the proper values, run the resulting block at the Azu
 	$osDiskUri=$storageAcc.PrimaryEndpoints.Blob.ToString() + "vhds/" + $vmName + "-OSDisk.vhd"
 	$vm=Set-AzureVMOSDisk -VM $vm -Name "OSDisk" -VhdUri $osDiskUri -CreateOption fromImage
 	New-AzureVM -ResourceGroupName $rgName -Location $locName -VM $vm
-
 <!-- deleted by customization
-> [AZURE.NOTE] Because these virtual machines are for an intranet application, they are not assigned a public IP address or a DNS domain name label and exposed to the Internet. However, this also means that you cannot connect to them from the Azure Preview portal. The **Connect** button will be unavailable when you view the properties of the virtual machine. Use the Remote Desktop Connection accessory or another Remote Desktop tool to connect to the virtual machine using its private IP address or intranet DNS name.
 
+> [AZURE.NOTE] Because these virtual machines are for an intranet application, they are not assigned a public IP address or a DNS domain name label and exposed to the Internet. However, this also means that you cannot connect to them from the Azure Preview portal. The **Connect** button will be unavailable when you view the properties of the virtual machine. Use the Remote Desktop Connection accessory or another Remote Desktop tool to connect to the virtual machine using its private IP address or intranet DNS name.
 -->
+
 ## Configure the computers running SQL Server
 
-For each virtual machine running SQL Server, use the remote desktop client of your choice and create a remote desktop connection <!-- keep by customization: begin --> to the first domain controller virtual machine <!-- keep by customization: end -->. Use its intranet DNS or computer name and the credentials of the local administrator account.
+For each virtual machine running SQL Server, use the remote desktop client of your choice and create a remote desktop connection. Use its intranet DNS or computer name and the credentials of the local administrator account.
 
 For each virtual machine running SQL Server, join them to the appropriate AD DS domain with these commands at the Windows PowerShell prompt.
 
@@ -194,7 +194,7 @@ The SQL Server service requires a port that clients use to access the database s
 
 For each of the SQL Server virtual machines, sign out as the local administrator. 
 
-For information about optimizing SQL Server performance in Azure, see [Performance Best Practices for SQL Server in Azure Virtual <!-- deleted by customization Machines](/documentation/articles/virtual-machines-sql-server-performance-best-practices) --><!-- keep by customization: begin --> Machines](https://msdn.microsoft.com/zh-cn/library/azure/dn133149.aspx) <!-- keep by customization: end -->. You can also disable Geo Redundant Storage (GRS) for the line of business application storage account and use storage spaces to optimize IOPs.
+For information about optimizing SQL Server performance in Azure, see [Performance Best Practices for SQL Server in Azure Virtual Machines](/documentation/articles/virtual-machines-sql-server-performance-best-practices). You can also disable Geo Redundant Storage (GRS) for the line of business application storage account and use storage spaces to optimize IOPs.
 
 ## Configure the cluster majority node server
 

@@ -188,6 +188,7 @@ Follow these links to learn more about Python Tools for Visual Studio, Flask and
 [Azure Cloud Services]: /documentation/articles/cloud-services-python-ptvs
 [documentation]: /documentation/articles/storage-python-how-to-use-table-storage
 [How to Use the Table Storage Service from Python]: /documentation/articles/storage-python-how-to-use-table-storage
+
 <!--External Link references-->
 [Azure Management Portal]: https://manage.windowsazure.cn
 [Azure SDK for .NET]: /downloads/

@@ -297,6 +297,7 @@ The following example calls UploadFile function and specifies storage encryption
 	var asset = UploadFile(@"C:\VideoFiles\BigBuckBunny.mp4", AssetCreationOptions.StorageEncrypted);
 
 
+<!-- deleted by customization
 ##Media Services learning paths
 
 You can view AMS learning paths here:
@@ -304,9 +305,11 @@ You can view AMS learning paths here:
 - [AMS Live Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/)
 - [AMS on Demand Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/)
 
+-->
 
 
 ##Next Steps
 Now that you have uploaded an asset to Media Services, go to the [How to Get a Media Processor][] topic.
 
 [How to Get a Media Processor]: /documentation/articles/media-services-get-media-processor
+ 

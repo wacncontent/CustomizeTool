@@ -16,12 +16,11 @@
 # <a name="getting-started"></a>Get started with Mobile Services
 
 [AZURE.INCLUDE [mobile-services-selector-get-started](../includes/mobile-services-selector-get-started.md)]
-<!-- deleted by customization
 &nbsp;
 
 [AZURE.INCLUDE [mobile-services-hero-slug](../includes/mobile-services-hero-slug.md)]
 
-This<!-- keep by customization: begin --> <p>This <!-- keep by customization: end --> tutorial shows you how to add a cloud-based backend service to a Xamarin.Android app using Azure Mobile Services. In this tutorial, you will create both a new mobile service and a simple *To<!-- keep by customization: begin --> <em>To <!-- keep by customization: end --> do list*<!-- keep by customization: begin --> list</em> <!-- keep by customization: end --> app that stores app data in the new mobile service.<!-- keep by customization: begin --> service.</p> <!-- keep by customization: end -->
+This tutorial shows you how to add a cloud-based backend service to a Xamarin.Android app using Azure Mobile Services. In this tutorial, you will create both a new mobile service and a simple *To do list* app that stores app data in the new mobile service.
 
 If you prefer to watch a video, the clip below follows the same steps as this tutorial.
 
@@ -32,25 +31,12 @@ Video: "Getting Started with Xamarin and Azure Mobile Services" with Craig Dunn,
 A screenshot from the completed app is below:
 
 ![][0]
--->
-<!-- keep by customization: begin -->
-
-<div class="dev-onpage-video-clear clearfix">
-<div class="dev-onpage-left-content">
-<!-- keep by customization: begin --> <p>This <!-- keep by customization: end --> tutorial shows you how to add a cloud-based backend service to a Xamarin.Android app using Azure Mobile Services. In this tutorial, you will create both a new mobile service and a simple <!-- keep by customization: begin --> <em>To <!-- keep by customization: end --> do <!-- keep by customization: begin --> list</em> <!-- keep by customization: end --> app that stores app data in the new mobile <!-- keep by customization: begin --> service.</p> <!-- keep by customization: end -->
-<p>A screenshot from the completed app is below:</p>
-</div>
-<div class="dev-onpage-video-wrapper"><a href="http://channel9.msdn.com/Series/Windows-Azure-Mobile-Services/Getting-Started-with-Xamarin-and-Windows-Azure-Mobile-Services" target="_blank" class="label">watch the tutorial</a> <a style="background-image: url('/media/devcenter/mobile/videos/get-started-xamarin-180x120.png') !important;" href="http://channel9.msdn.com/Series/Windows-Azure-Mobile-Services/Getting-Started-with-Xamarin-and-Windows-Azure-Mobile-Services" target="_blank" class="dev-onpage-video"><span class="icon">Play Video</span></a> <span class="time">10:05</span></div>
-</div>
-
-![][0]
-<!-- keep by customization: end -->
 
 Completing this tutorial requires [Xamarin.Android], which installs Xamarin Studio and a Visual Studio plug-in (on Windows) as well as the latest Android platform. Android 4.2 SDK or a later version is required. 
 
 The downloaded quickstart project contains the Azure Mobile services component for Xamarin.Android. While this project targets Android 4.2 or a later version, the Mobile Services SDK requires only Android 2.2 or a later version.
 
-> [AZURE.IMPORTANT] To complete this tutorial, you need an Azure account. If you don't have an account, you can sign up for an Azure trial and get up to 10 free mobile services that you can keep using even after your trial ends. For details, see [Azure <!-- deleted by customization Trial](/pricing/1rmb-trial/?WT.mc_id=A9C9624B5) --><!-- keep by customization: begin --> Trial](/pricing/1rmb-trial target="_blank) <!-- keep by customization: end -->.
+> [AZURE.IMPORTANT] To complete this tutorial, you need an Azure account. If you don't have an account, you can sign up for an Azure trial and get up to 10 free mobile services that you can keep using even after your trial ends. For details, see [Azure Trial](/pricing/1rmb-trial/?WT.mc_id=A9C9624B5).
 
 ## <a name="create-new-service"> </a>Create a new mobile service
 
@@ -86,12 +72,6 @@ The final stage of this tutorial is to build and run your new app.
 
 2. In Xamarin Studio or Visual Studio, click **File** then **Open**, navigate to the uncompressed sample files, and select **XamarinTodoQuickStart.Android.sln** to open it.
 
-<!-- keep by customization: begin -->
- 	![][8]
-
-	![][9]
-
-<!-- keep by customization: end -->
 3. Press the **Run** button to build the project and start the app. You will be asked to select an emulator or a connected USB device. 
 
 	> [AZURE.NOTE] To be able to run the project in the Android emulator, you must define a least one Android Virtual Device (AVD). Use the AVD Manager to create and manage these devices.
@@ -105,7 +85,7 @@ The final stage of this tutorial is to build and run your new app.
 	> [AZURE.NOTE] 
    	> You can review the code that accesses your mobile service to query and insert data, which is found in the ToDoActivity.cs C# file.
 
-<!-- deleted by customization 6 --><!-- keep by customization: begin --> 5 <!-- keep by customization: end -->. Back in the Management Portal, click the **Data** tab and then click the **TodoItems** table.
+6. Back in the Management Portal, click the **Data** tab and then click the **TodoItems** table.
 
 	![][11]
 
@@ -117,20 +97,18 @@ The final stage of this tutorial is to build and run your new app.
 Now that you have completed the quickstart, learn how to perform additional important tasks in Mobile Services: 
 
 * [Get started with offline data sync]  
-  <!-- deleted by customization Learn --><!-- keep by customization: begin --> <br/>Learn <!-- keep by customization: end --> how the quickstart uses offline data sync to make the app responsive and robust.
+  Learn how the quickstart uses offline data sync to make the app responsive and robust.
 
 * [Get started with authentication]  
-  <!-- deleted by customization Learn --><!-- keep by customization: begin --> <br/>Learn <!-- keep by customization: end --> how to authenticate users of your app with an identity provider.
+  Learn how to authenticate users of your app with an identity provider.
 
 * [Get started with push notifications]   
-  <!-- deleted by customization Learn --><!-- keep by customization: begin --> <br/>Learn <!-- keep by customization: end --> how to send a very basic push notification to your app.
-<!-- deleted by customization
+  Learn how to send a very basic push notification to your app.
 
 * [How to use the Xamarin Component client for Azure Mobile Services](/documentation/articles/partner-xamarin-mobile-services-how-to-use-client-library)  
    Learn how to query the mobile service, work with data, and access custom APIs. 
 
 [AZURE.INCLUDE [app-service-disqus-feedback-slug](../includes/app-service-disqus-feedback-slug.md)]
--->
 
 <!-- Anchors. -->
 [Getting started with Mobile Services]:#getting-started
@@ -155,27 +133,12 @@ Now that you have completed the quickstart, learn how to perform additional impo
 
 
 <!-- URLs. -->
-<!-- deleted by customization
-[Get started with data]: /develop/mobile/tutorials/get-started-with-data-xamarin-android
--->
-<!-- keep by customization: begin -->
-[Get started with data]: /documentation/articles/partner-xamarin-mobile-services-android-get-started-data
-<!-- keep by customization: end -->
+[Get started with data]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-data-xamarin-android
 [Get started with offline data sync]: /documentation/articles/mobile-services-xamarin-android-get-started-offline-data
-<!-- deleted by customization
-[Get started with authentication]: /develop/mobile/tutorials/get-started-with-users-xamarin-android
-[Get started with push notifications]: /develop/mobile/tutorials/get-started-with-push-xamarin-android
--->
-<!-- keep by customization: begin -->
-[Get started with authentication]: /documentation/articles/partner-xamarin-mobile-services-android-get-started-users
-[Get started with push notifications]: /documentation/articles/partner-xamarin-mobile-services-android-get-started-push
-<!-- keep by customization: end -->
+[Get started with authentication]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-users-xamarin-android
+[Get started with push notifications]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-push-xamarin-android
 [Xamarin.Android]: http://xamarin.com/download
 [Mobile Services Android SDK]: https://go.microsoft.com/fwLink/p/?LinkID=266533
-<!-- deleted by customization
 [Azure]: http://azure.microsoft.com/
--->
-<!-- keep by customization: begin -->
-[WindowsAzure.com]: http://azure.microsoft.com/
-<!-- keep by customization: end -->
 [Management Portal]: https://manage.windowsazure.cn/
+ 

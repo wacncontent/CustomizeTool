@@ -804,5 +804,5 @@ application is hosted on Azure Virtual Machines.
 [19]:./media/SecurityRX/19_UsersAccessMyDatasets.gif
 [20]:./media/SecurityRX/20_ApplicationAccessMarketplaceAPI.gif
 
-[Web SSO Design]: http://technet.microsoft.com/library/dd807033(WS.10).aspx
-[Federated Web SSO Design]: http://technet.microsoft.com/library/dd807050(WS.10).aspx
+[Web SSO Design]: http://technet.microsoft.com/zh-cn/library/dd807033(WS.10).aspx
+[Federated Web SSO Design]: http://technet.microsoft.com/zh-cn/library/dd807050(WS.10).aspx

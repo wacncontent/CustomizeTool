@@ -39,6 +39,7 @@ The final stage of this tutorial is to build and run your new app.
 
    	![](./media/mobile-services-android-get-started/mobile-data-browse.png)
 
+
 <!-- Images. -->
 [0]: ./media/mobile-services-android-get-started/mobile-quickstart-completed-android.png
 [6]: ./media/mobile-services-android-get-started/mobile-portal-quickstart-android.png

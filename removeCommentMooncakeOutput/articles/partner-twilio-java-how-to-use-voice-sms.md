@@ -7,9 +7,9 @@
 	manager="twilio" 
 	editor="mollybos"/>
 
-<tags 
-	ms.service="multiple" 
-	ms.date="11/25/2014" 
+<tags
+	ms.service="multiple"
+	ms.date="11/25/2014"
 	wacn.date=""/>
 
 # How to Use Twilio for Voice and SMS Capabilities in Java

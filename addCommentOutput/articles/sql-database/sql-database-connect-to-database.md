@@ -19,7 +19,7 @@ Use the following steps to connect and query your SQL database using SQL Server 
 ## Prerequisites
 
 * SQL Server Management Studio (SSMS) - To download the latest version of SSMS, see [Download SQL Server Management Studio](https://msdn.microsoft.com/zh-cn/library/mt238290.aspx).
-* <!-- deleted by customization The --><!-- keep by customization: begin --> An SQL Database <!-- keep by customization: end --> AdventureWorks sample database as described in [Getting Started with Windows Azure SQL Database](/documentation/articles/sql-database-get-started).
+* The AdventureWorks sample database as described in [Getting Started with Windows Azure SQL Database](/documentation/articles/sql-database-get-started).
 
 
 ## Get your fully qualified Azure SQL server name
@@ -36,12 +36,7 @@ To connect to your database you need the full name  of the server (***servername
 
 
 
-<!-- deleted by customization
 ## Connect to your SQL database
--->
-<!-- keep by customization: begin -->
-## Connect to your SQL Database
-<!-- keep by customization: end -->
 
 1. Open SSMS.
 2. Click **Connect** > **Database Engine...**
@@ -57,7 +52,7 @@ To connect to your database you need the full name  of the server (***servername
 
 
 ### If the connection fails
-Make sure that the firewall of the logical server you have created allows connections from your local computer. For more information, see [How to: Configure Firewall Settings on SQL <!-- deleted by customization Database](/documentation/articles/sql-database-configure-firewall-settings) --><!-- keep by customization: begin --> Database](https://msdn.microsoft.com/zh-cn/library/azure/jj553530.aspx) <!-- keep by customization: end -->.
+Make sure that the firewall of the logical server you have created allows connections from your local computer. For more information, see [How to: Configure Firewall Settings on SQL Database](/documentation/articles/sql-database-configure-firewall-settings).
 
 ## Run sample queries
 

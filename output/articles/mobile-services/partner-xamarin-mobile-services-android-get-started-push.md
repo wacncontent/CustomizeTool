@@ -24,7 +24,7 @@ This tutorial requires the following:
 + An active Google account.
 + [Google Cloud Messaging Client Component]. You will add this component during the tutorial.
 
-You should already have the [Xamarin.Android] and the [Azure Mobile Services Component] installed in your project from when you completed either [Get started with Mobile Services].
+You should already have the [Xamarin.Android] and the [Azure Mobile Services Component] installed in your project from when you completed either [Get started with Mobile Services] <!-- keep by customization: begin --> or [Add Mobile Services to an existing app] <!-- keep by customization: end --> .
 
 ##<a id="register"></a>Enable Google Cloud Messaging
 
@@ -61,6 +61,11 @@ You have successfully completed this tutorial.
 
 Learn more about Mobile Services and Notification Hubs in the following topics:
 
+<!-- keep by customization: begin -->
+* [Add Mobile Services to an existing app]
+  <br/>Learn more about storing and querying data using mobile services.
+
+<!-- keep by customization: end -->
 * [Get started with authentication](/documentation/articles/mobile-services-android-get-started-users)
   <br/>Learn how to authenticate users of your app with different account types using mobile services.
 
@@ -78,6 +83,9 @@ Learn more about Mobile Services and Notification Hubs in the following topics:
 
 <!-- URLs. -->
 [Get started with Mobile Services]: /documentation/articles/mobile-services-ios-get-started
+<!-- keep by customization: begin -->
+[Add Mobile Services to an existing app]: /documentation/articles/mobile-services-android-get-started-data
+<!-- keep by customization: end -->
 [Google Cloud Messaging Client Component]: http://components.xamarin.com/view/GCMClient/
 [Xamarin.Android]: http://xamarin.com/download/
 [Azure Mobile Services Component]: http://components.xamarin.com/view/azure-mobile-services/

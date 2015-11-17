@@ -47,5 +47,5 @@ The following shows the versions of multi-factor authentication that are availab
 
 * [Sign up for Azure as an organization](/manage/services/identity/organizational-account/)
 * [Azure Identity](/manage/windows/fundamentals/identity/)
-* [Azure Multi-Factor Authentication Library](http://technet.microsoft.com/library/dn249471.aspx)
+* [Azure Multi-Factor Authentication Library](http://technet.microsoft.com/zh-cn/library/dn249471.aspx)
 

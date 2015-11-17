@@ -551,17 +551,13 @@ Now that you've learned the basics of table storage, follow these links to learn
 - [Azure Storage Team Blog][]
 
 For more information, see also the [Java Developer Center](/develop/java/).
-<!-- deleted by customization
 
 
-[Azure SDK for Java]: http://go.microsoft.com/fwlink/?LinkID=525671
--->
-<!-- keep by customization: begin -->
 [Azure SDK for Java]: /develop/java/
-<!-- keep by customization: end -->
 [Azure Storage SDK for Java]: https://github.com/azure/azure-storage-java
 [Azure Storage SDK for Android]: https://github.com/azure/azure-storage-android
-[Azure Storage Client SDK Reference]: http://dl.windowsazure.cn/storage/javadoc/
+[Azure Storage Client SDK Reference]: http://dl.windowsazure.com/storage/javadoc/
 [Azure Storage REST API]: http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx
 [Azure Storage Team Blog]: http://blogs.msdn.com/b/windowsazurestorage/
 [blog post]: http://blogs.msdn.com/b/windowsazurestorage/archive/2011/09/15/windows-azure-tables-introducing-upsert-and-query-projection.aspx
+ 

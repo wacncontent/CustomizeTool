@@ -218,8 +218,8 @@ Only certain types of sign in events will appear in the User Activity report.
 | ----------------------								| ---------		|
 | Sign ins to the [Access Panel](http://myapps.microsoft.com/)				| Yes			|
 | Sign ins to the [Azure Management Portal](https://manage.windowsazure.cn/)		| Yes			|
-| Sign ins to the [Windows Azure Management <!-- deleted by customization Portal](http://manage.windowsazure.cn/)			| --><!-- keep by customization: begin --> Portal](https://manage.windowsazure.cn/)			| <!-- keep by customization: end --> Yes			|
-| Sign ins to the [Office 365 <!-- deleted by customization portal](http://portal.office.com/)			| --><!-- keep by customization: begin --> portal](https://login.partner.microsoftonline.cn)			| <!-- keep by customization: end --> Yes			|
+| Sign ins to the [Windows Azure Management Portal](http://manage.windowsazure.cn/)			| Yes			|
+| Sign ins to the [Office 365 portal](http://portal.office.com/)			| Yes			|
 | Sign ins to a native application, like Outlook (see exception below)			| Yes			|
 | Sign ins to a federated/provisioned app through the Access Panel, like Salesforce	| Yes			|
 | Sign ins to a password-based app through the Access Panel, like Twitter		| Yes			|
@@ -243,18 +243,15 @@ If you suspect that a user account may be compromised or any kind of suspicious 
 
 - Contact the user to verify the activity
 - Reset the user's password
-<!-- deleted by customization
 - [Enable multi-factor authentication](https://msdn.microsoft.com/zh-cn/library/azure/7a9c56cf-72f1-4797-8e86-a9a2d9569ef6) for additional security
--->
-<!-- keep by customization: begin -->
-- [Enable multi-factor authentication](https://msdn.microsoft.com/zh-cn/library/azure/7a9c56cf-72f1-4797-8e86-a9a2d9569ef6#enableuser) for additional security
-<!-- keep by customization: end -->
 
 ## View or download a report
 
 1. In the Azure Management Portal, click **Active Directory**, click the name of your organization’s directory, and then click **Reports**.
 2. On the Reports page, click the report you want to view and/or download.
+
     > [AZURE.NOTE] If this is the first time you have used the reporting feature of Azure Active Directory, you will see a message to Opt In. If you agree, click the check mark icon to continue.
+
 3. Click the drop-down menu next to Interval, and then select one of the following time ranges that should be used when generating this report:
     - Last 24 hours
     - Last 7 days
@@ -275,5 +272,5 @@ For more information about Azure AD's reporting notifications, check out [Azure 
 
 ## What's next
 
-<!-- deleted by customization - --><!-- keep by customization: begin --><!--- <!-- keep by customization: end --> [Getting started with Azure Active Directory <!-- deleted by customization Premium](/documentation/articles/active-directory-get-started-premium) --><!-- keep by customization: begin --> Premium](/documentation/articles/active-directory-get-started-premium)--><!-- keep by customization: end -->
+- [Getting started with Azure Active Directory Premium](/documentation/articles/active-directory-get-started-premium)
 - [Add company branding to your Sign In and Access Panel pages](/documentation/articles/active-directory-add-company-branding)

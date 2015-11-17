@@ -202,7 +202,7 @@ You can also scale your Media Services account by adding storage accounts to it.
 
 ##Support
 
-[Azure Support](http://azure.microsoft.com/support/options/) provides support options for Azure, including Media Services.
+[Azure Support](/support/contact/) provides support options for Azure, including Media Services.
 
 ##Patterns & practices guidance
 
@@ -219,7 +219,7 @@ You can also scale your Media Services account by adding storage accounts to it.
 - For Content Protection, we guarantee that we will successfully fulfill key requests at least 99.9% of the time.
 - For Indexer, we will successfully service Indexer Task requests processed with an Encoding Reserved Unit 99.9% of the time.
 
-	For more information, see [Windows Azure SLA](http://azure.microsoft.com/support/legal/sla/).
+	For more information, see [Windows Azure SLA](/support/legal/sla/).
 
 <!-- Images -->
 [overview]: ./media/media-services-overview/media-services-overview.png

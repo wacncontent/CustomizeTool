@@ -49,7 +49,7 @@ To do so, follow these steps.  Alternatively, you may wish to create a new tenan
     - Optional: Enable Multi-Factor Authentication
     - Lastly, click on the green “CREATE” button to finalize user creation (and display the temporary password).
 7.	When you have completed the Add User Form, and receive the temporary password for the new administrative user, be sure to record this password as you will need to login with this new user in order to change the password. You can also send the password directly to the user, using an alternative e-mail.
-8.	To change the temporary password, log into https://login.microsoftonline.com with this new user account and change the password when requested.
+8.	To change the temporary password, log into https://login.chinacloudapi.cn with this new user account and change the password when requested.
 
 
 ## Use an organizational Azure subscription

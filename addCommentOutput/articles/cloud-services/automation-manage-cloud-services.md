@@ -37,3 +37,4 @@ Azure cloud services can be managed in Azure Automation by using the PowerShell 
 Now that you've learned the basics of Azure Automation and how it can be used to manage Azure cloud services, follow these links to learn more about Azure Automation.
 
 See the Azure Automation [Getting Started Tutorial](/documentation/articles/automation-create-runbook-from-samples)
+ 

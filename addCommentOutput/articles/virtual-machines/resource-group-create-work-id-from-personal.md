@@ -34,7 +34,7 @@ The steps are simple. You need to locate your signed on identity in the Azure Ma
 
 ## Locate your default directory in the Azure Management Portal
 
-Start by logging <!-- deleted by customization in to --><!-- keep by customization: begin --> into <!-- keep by customization: end --> the [Azure Management Portal](https://manage.windowsazure.cn) with your personal Microsoft account identity. After you are logged in, scroll down the blue panel on the left side and click **ACTIVE DIRECTORY**.
+Start by logging in to the [Azure Management Portal](https://manage.windowsazure.cn) with your personal Microsoft account identity. After you are logged in, scroll down the blue panel on the left side and click **ACTIVE DIRECTORY**.
 
 ![Azure Active Directory](./media/resource-group-create-work-id-from-personal/azureactivedirectorywidget.png)
 
@@ -54,13 +54,13 @@ Here you should be able to see that when the Azure account was created, Azure Ac
 
 ## Creating a new user in the default domain
 
-Click **USERS** and look for your single personal account. You should see in the **SOURCED FROM** column that it is a **Microsoft account**. We want to create a user in your default <!-- deleted by customization .partner.onmschina.cn --><!-- keep by customization: begin -->  partner.onmschina.cn <!-- keep by customization: end --> Azure Active Directory domain.
+Click **USERS** and look for your single personal account. You should see in the **SOURCED FROM** column that it is a **Microsoft account**. We want to create a user in your default .partner.onmschina.cn Azure Active Directory domain.
 
 ![](./media/resource-group-create-work-id-from-personal/defaultdirectoryuserslisting.png)
 
 We're going to follow [these instructions](https://technet.microsoft.com/zh-cn/library/hh967632.aspx#BKMK_1) in the next few steps, but use a specific example.
 
-At the bottom of the page, click **+ADD USER**. In the page that appears, type the new user name, and make the **Type of User** a **New user in your organization**. In this example, the new user name is `ahmet`. Select the default domain that you discovered previously as the domain for <!-- deleted by customization ahmet's --><!-- keep by customization: begin --> `ahmet`'s <!-- keep by customization: end --> email address. Click the next arrow when finished.
+At the bottom of the page, click **+ADD USER**. In the page that appears, type the new user name, and make the **Type of User** a **New user in your organization**. In this example, the new user name is `ahmet`. Select the default domain that you discovered previously as the domain for ahmet's email address. Click the next arrow when finished.
 
 ![](./media/resource-group-create-work-id-from-personal/addingauserwithdirectorydropdown.png)
 
@@ -133,14 +133,14 @@ You can now use your new Azure Active Directory identity to use [Azure resource 
     + Listing resource groups
     info:    No matched resource groups were found
     info:    group list command OK
-    ralph@local:~$ azure group create newgroup westus
+    ralph@local:~$ azure group create newgroup chinanorth
     info:    Executing command group create
     + Getting resource group newgroup
     + Creating resource group newgroup
     info:    Created resource group newgroup
     data:    Id:                  /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/newgroup
     data:    Name:                newgroup
-    data:    Location:            <!-- deleted by customization westus --><!-- keep by customization: begin --> chinanorth <!-- keep by customization: end -->
+    data:    Location:            chinanorth
     data:    Provisioning State:  Succeeded
     data:    Tags:
     data:

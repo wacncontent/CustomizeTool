@@ -14,7 +14,6 @@
 
 # Create a WordPress web app in Azure Websites
 
-<!-- deleted by customization
 This tutorial shows how to find an application in the Azure Marketplace and install it in an Azure Websites web app. The tutorial uses a WordPress blog site as an example, but the process is similar for many other Marketplace applications.
 
 When you're done with the tutorial you'll have your own WordPress blog site up and running in the cloud.
@@ -32,7 +31,7 @@ The Azure Marketplace makes available a wide range of popular web apps developed
 > [AZURE.NOTE]
 > To complete this tutorial, you need a Windows Azure account. If you don't have an account, you can [activate your MSDN subscriber benefits](/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F) or [sign up for a trial](/pricing/1rmb-trial/?WT.mc_id=A261C142F).
 >
-> If you want to get started with Azure Websites before you sign up for an Azure account, go to [Try Azure Websites](https://tryappservice.azure.com/). There, you can immediately create a short-lived starter web app in Azure Websitesâ€”no credit card required, and no commitments.
+> If you want to get started with Azure Websites before you sign up for an Azure account, go to [Try Azure Websites](https://tryappservice.azure.com/). There, you can immediately create a short-lived starter web app in Azure <!-- deleted by customization Websitesâ€”no --><!-- keep by customization: begin --> Websites¡ªno <!-- keep by customization: end --> credit card required, and no commitments.
 
 ## Select WordPress and configure for Azure Websites
 
@@ -121,14 +120,3 @@ For more information about how to work with Azure Websites, see the links on the
 [5]: ./media/web-sites-php-web-site-gallery/startmarketplace.png
 [7]: ./media/web-sites-php-web-site-gallery/search-web-app.png
 [browse]: ./media/web-sites-php-web-site-gallery/browse-web.png
-
--->
-<!-- keep by customization: begin -->
-[AZURE.INCLUDE [website-from-gallery](../includes/website-from-gallery.md)]
-
-##<a name="nextsteps"></a>Next Steps
-You've seen how to create and deploy a web app from the gallery. To learn more about how to create, configure, deploy, and scale Azure web apps, check out these resources:
-
-- [Create a PHP-MySQL Azure web app and deploy using Git](/documentation/articles/web-sites-php-mysql-deploy-use-git)
-
-<!-- keep by customization: end -->

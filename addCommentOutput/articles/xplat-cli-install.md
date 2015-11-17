@@ -27,7 +27,7 @@ This article describes how to install the Azure Command-Line Interface (Azure CL
 
 The Azure CLI is written in JavaScript, and requires [Node.js](https://nodejs.org). It is implemented using the [Azure SDK for Node](https://github.com/azure/azure-sdk-for-node), and released under an Apache 2.0 license. The project repository is located at [https://github.com/azure/azure-xplat-cli](https://github.com/azure/azure-xplat-cli).
 
-> [AZURE.NOTE] If you've already installed the Azure CLI, connect it with your Azure resources. For more, see [How to connect to your Azure <!-- deleted by customization Subscription](/documentation/articles/xplat-cli-connect#configure) --><!-- keep by customization: begin --> Subscription](/documentation/articles/xplat-cli-connect/#configure) <!-- keep by customization: end -->.
+> [AZURE.NOTE] If you've already installed the Azure CLI, connect it with your Azure resources. For more, see [How to connect to your Azure Subscription](/documentation/articles/xplat-cli-connect#configure).
 
 <a id="install"></a>
 ## How to install the Azure CLI
@@ -46,7 +46,12 @@ The following installer packages are available:
 
 * [Windows installer][windows-installer]
 
+<!-- deleted by customization
 * [OS X installer](http://azuresdkscu.blob.core.windows.net/downloads04/azure-cli.0.9.10.dmg)
+-->
+<!-- keep by customization: begin -->
+* [OS X installer](http://azuresdkscu.blob.core.chinacloudapi.cn/downloads04/azure-cli.0.9.10.dmg)
+<!-- keep by customization: end -->
 
 * [Linux installer][linux-installer]
 
@@ -59,7 +64,7 @@ If Node.js is already installed on your system, use the following command to ins
 
 > [AZURE.NOTE] On Linux distributions, you may need to use `sudo` to successfully run the __npm__ command.
 
-### <!-- deleted by customization Install --><!-- keep by customization: begin --> Installing <!-- keep by customization: end --> node.js and npm on Linux distributions that use [dpkg](http://en.wikipedia.org/wiki/Dpkg) package management
+### Install node.js and npm on Linux distributions that use [dpkg](http://en.wikipedia.org/wiki/Dpkg) package management
 The most common of these distributions use either the [advanced packaging tool (apt)](http://en.wikipedia.org/wiki/Advanced_Packaging_Tool) or other tools based on the `.deb` package format. Some examples are Ubuntu and Debian.
 
 Most of the more recent of these distributions require installing **nodejs-legacy** in order to get a properly configured **npm** tool to install the Azure CLI. The following code shows the commands that install **npm** properly on Ubuntu 14.04.
@@ -77,7 +82,7 @@ Some of the older distributions, such as Ubuntu 12.04, require installing the cu
 	sudo apt-get install -y nodejs
 	sudo npm install -g azure-cli
 
-### <!-- deleted by customization Install --><!-- keep by customization: begin --> Installing <!-- keep by customization: end --> node.js and npm on Linux distributions that use [rpm](http://en.wikipedia.org/wiki/RPM_Package_Manager) package management
+### Install node.js and npm on Linux distributions that use [rpm](http://en.wikipedia.org/wiki/RPM_Package_Manager) package management
 
 Installing node.js on RPM-based distributions requires enabling the EPEL repository. The following code shows the best practices for installation on CentOS 7. (Note that in the first line below, the '-' (hyphen) is important!)
 
@@ -119,7 +124,7 @@ At the end of the installation, you should see something similar to the followin
 	|-- kuduscript@0.1.2 (commander@1.1.1, streamline@0.4.11)
 	|-- azure@0.7.13 (dateformat@1.0.2-1.2.3, envconf@0.0.4, mpns@2.0.1, mime@1.2.10, validator@1.4.0, xml2js@0.2.8, wns@0.5.3, request@2.25.0)
 
->[AZURE.NOTE] For Linux systems, you can also install the Azure CLI by building it from the <!-- deleted by customization [source](http://azuresdkscu.blob.core.windows.net/downloads04/azure-cli.0.9.10.tar.gz) --><!-- keep by customization: begin --> [source](http://azuresdkscu.blob.core.windows.net/downloads04/azure-cli.0.9.10.tar.gz&clcid=0x409) <!-- keep by customization: end -->. For more information on building from source, see the INSTALL file included in the archive.
+>[AZURE.NOTE] For Linux systems, you can also install the Azure CLI by building it from the <!-- deleted by customization [source](http://azuresdkscu.blob.core.windows.net/downloads04/azure-cli.0.9.10.tar.gz) --><!-- keep by customization: begin --> [source](http://azuresdkscu.blob.core.chinacloudapi.cn/downloads04/azure-cli.0.9.10.tar.gz) <!-- keep by customization: end -->. For more information on building from source, see the INSTALL file included in the archive.
 
 ## Using a Docker container
 
@@ -148,12 +153,22 @@ Now you are ready! Next you can [connect to your Azure subscription from the Azu
 
 * To learn more about the Azure CLI, download source code, report problems, or contribute to the project, visit the [GitHub repository for the Azure CLI](https://github.com/azure/azure-xplat-cli).
 
-* If you encounter problems using the Azure CLI, or Azure, visit the [Azure <!-- deleted by customization Forums](http://social.msdn.microsoft.com/Forums/zh-cn/home?forum=windowsazurezhchshome) --><!-- keep by customization: begin --> Forums](https://social.msdn.microsoft.com/Forums/zh-cn/home) <!-- keep by customization: end -->.
+* If you encounter problems using the Azure CLI, or Azure, visit the [Azure Forums](http://social.msdn.microsoft.com/Forums/zh-cn/home?forum=windowsazurezhchshome).
 
 
 
+<!-- deleted by customization
 [mac-installer]: http://azuresdkscu.blob.core.windows.net/downloads04/azure-cli.0.9.10.dmg
+-->
+<!-- keep by customization: begin -->
+[mac-installer]: http://azuresdkscu.blob.core.chinacloudapi.cn/downloads04/azure-cli.0.9.10.dmg
+<!-- keep by customization: end -->
 [windows-installer]: http://go.microsoft.com/?linkid=9828653&clcid=0x409
+<!-- deleted by customization
 [linux-installer]: http://azuresdkscu.blob.core.windows.net/downloads04/azure-cli.0.9.10.tar.gz
+-->
+<!-- keep by customization: begin -->
+[linux-installer]: http://azuresdkscu.blob.core.chinacloudapi.cn/downloads04/azure-cli.0.9.10.tar.gz
+<!-- keep by customization: end -->
 [cliasm]: /documentation/articles/virtual-machines-command-line-tools
 [cliarm]: /documentation/articles/xplat-cli-azure-resource-manager

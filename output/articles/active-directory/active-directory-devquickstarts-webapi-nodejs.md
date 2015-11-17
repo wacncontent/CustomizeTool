@@ -261,8 +261,8 @@ Create a `config.js` file in our favorite editor and add the following informati
 // Don't commit this file to your public repos
     exports.creds = {
     mongoose_auth_local: 'mongodb://localhost/tasklist', // Your mongo auth uri goes here
-    openid_configuration: 'https://login.microsoftonline.com/common/.well-known/openid-configuration', // For using Microsoft you should never need to change this.
-    openid_keys: 'https://login.microsoftonline.com/common/discovery/keys', // For using Microsoft you should never need to change this. If absent will attempt to get from openid_configuration
+    openid_configuration: 'https://login.chinacloudapi.cn/common/.well-known/openid-configuration', // For using Microsoft you should never need to change this.
+    openid_keys: 'https://login.chinacloudapi.cn/common/discovery/keys', // For using Microsoft you should never need to change this. If absent will attempt to get from openid_configuration
 }
 
 ```

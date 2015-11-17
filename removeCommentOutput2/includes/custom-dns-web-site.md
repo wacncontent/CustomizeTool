@@ -106,7 +106,7 @@ To create a CNAME record, you must add a new entry in the DNS table for your cus
 
 	* Login to the [Azure Management Portal][portal], select your website, select **Dashboard**, and then find the **Site URL** entry in the **quick glance** section.
 
-	* Install and configure [Azure Powershell](/manage/install-and-configure-windows-powershell/), and then use the following command:
+	* Install and configure [Azure Powershell](/documentation/articles/install-and-configure-windows-powershell/), and then use the following command:
 
 			get-azurewebsite yoursitename | select hostnames
 
@@ -302,6 +302,7 @@ Once configuration has completed, the custom domain name will be listed in the *
 [trafficmanager]: /documentation/articles/web-sites-traffic-manager
 [addendpoint]: /documentation/articles/traffic-manager-endpoints
 [createprofile]: /documentation/articles/traffic-manager-manage-profiles
+
 <!-- images -->
 
 [setcname1]: ../media/dncmntask-cname-5.png

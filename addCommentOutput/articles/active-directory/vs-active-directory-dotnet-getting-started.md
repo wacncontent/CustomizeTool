@@ -18,11 +18,11 @@
 > - [Getting Started](/documentation/articles/vs-active-directory-dotnet-getting-started)
 > - [What Happened](/documentation/articles/vs-active-directory-dotnet-what-happened)
  
-<!-- deleted by customization ##Requiring --><!-- keep by customization: begin --> #####Requiring <!-- keep by customization: end --> authentication to access controllers
+##Requiring authentication to access controllers 
 
 All controllers in your project were adorned with the **Authorize** attribute. This attribute will require the user to be authenticated before accessing these controllers. To allow the controller to be accessed anonymously, remove this attribute from the controller. If you want to set the permissions at a more granular level, apply the attribute to each method that requires authorization instead of applying it to the controller class.
  
-<!-- deleted by customization ##Adding --><!-- keep by customization: begin --> #####Adding <!-- keep by customization: end --> SignIn / SignOut Controls
+##Adding SignIn / SignOut Controls 
 
 To add a the SignIn/SignOut controls to your view, you can use the **_LoginPartial.cshtml** partial view to add the functionality to one of your views. Here is an example of the functionality added to the standard **_Layout.cshtml** view. (Note the last element in the div with class navbar-collapse):
 
@@ -69,14 +69,6 @@ To add a the SignIn/SignOut controls to your view, you can use the **_LoginParti
         @RenderSection("scripts", required: false) 
     &lt;/body&gt; 
     &lt;/html&gt;
-<!-- deleted by customization
 </pre>
 
 [Learn more about Azure Active Directory](/home/features/identity/) 
-
--->
-<!-- keep by customization: begin -->
-</PRE>
-
-[Learn more about Azure Active Directory](http://www.windowsazure.cn/home/features/identity/) 
-<!-- keep by customization: end -->

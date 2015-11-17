@@ -35,8 +35,14 @@ Every app that uses the v2.0 app model will need to be registered at [apps.dev.m
 Once registered, the  app communicates with Azure AD my sending requests to the v2.0 endpoint:
 
 ```
+<!-- deleted by customization
+https://login.chinacloudapi.cn/common/oauth2/v2.0/authorize
+https://login.chinacloudapi.cn/common/oauth2/v2.0/token
+-->
+<!-- keep by customization: begin -->
 https://login.microsoftonline.com/common/oauth2/v2.0/authorize
 https://login.microsoftonline.com/common/oauth2/v2.0/token
+<!-- keep by customization: end -->
 ```
 
 In nearly all OAuth & OpenID Connect flows, there are four parties involved in the exchange:
@@ -58,7 +64,12 @@ Here is the entire flow for a native  app; each request is detailed in the secti
 The authorization code flow begins with the client directing the user to the `/authorize` endpoint.  In this request, the client indicates the permissions it needs to acquire from the user:
 
 ```
+<!-- deleted by customization
+GET https://login.chinacloudapi.cn/common/oauth2/v2.0/authorize?
+-->
+<!-- keep by customization: begin -->
 GET https://login.microsoftonline.com/common/oauth2/v2.0/authorize?
+<!-- keep by customization: end -->
 client_id=2d4d11a2-f814-46a7-890a-274a72a7309e		// Your registered Application Id
 &response_type=code
 &redirect_uri=http%3A%2F%2Flocalhost%2Fmyapp%2F 	  // Your registered Redirect Uri, url encoded
@@ -116,7 +127,12 @@ Now that you've acquired an authorization_code and have been granted permission 
 
 ```
 POST common/v2.0/oauth2/token HTTP/1.1
+<!-- deleted by customization
+Host: https://login.chinacloudapi.cn
+-->
+<!-- keep by customization: begin -->
 Host: https://login.microsoftonline.com
+<!-- keep by customization: end -->
 Content-Type: application/json
 
 {
@@ -187,7 +203,12 @@ Access_tokens are short lived, and you must refresh them after they expire to co
 
 ```
 POST common/v2.0/oauth2/token HTTP/1.1
+<!-- deleted by customization
+Host: https://login.chinacloudapi.cn
+-->
+<!-- keep by customization: begin -->
 Host: https://login.microsoftonline.com
+<!-- keep by customization: end -->
 Content-Type: application/json
 
 {
@@ -263,7 +284,12 @@ When your web  app needs to authenticate the user, it can direct the user to the
 - The request must include the `nonce` parameter
 
 ```
+<!-- deleted by customization
+GET https://login.chinacloudapi.cn/common/oauth2/v2.0/authorize?
+-->
+<!-- keep by customization: begin -->
 GET https://login.microsoftonline.com/common/oauth2/v2.0/authorize?
+<!-- keep by customization: end -->
 client_id=2d4d11a2-f814-46a7-890a-274a72a7309e		// Your registered Application Id
 &response_type=id_token
 &redirect_uri=http%3A%2F%2Flocalhost%2Fmyapp%2F 	  // Your registered Redirect Uri, url encoded
@@ -322,11 +348,21 @@ Just receiving an id_token is not sufficient to authenticate the user; you must 
 
 The v2.0 app model has an OpenID Connect metadata endpoint, which allows an app to fetch information about the v2.0 app model at runtime.  This information includes endpoints, token contents, and token signing keys.  The metadata endpoint contains a JSON document located at:
 
+<!-- deleted by customization
+`https://login.chinacloudapi.cn/common/v2.0/.well-known/openid-configuration`
+-->
+<!-- keep by customization: begin -->
 `https://login.microsoftonline.com/common/v2.0/.well-known/openid-configuration`
+<!-- keep by customization: end -->
 
 One of the properties of this configuration document is the `jwks_uri`, whose value for the v2.0 app model will be:
 
+<!-- deleted by customization
+`https://login.chinacloudapi.cn/common/discovery/v2.0/keys`.
+-->
+<!-- keep by customization: begin -->
 `https://login.microsoftonline.com/common/discovery/v2.0/keys`.
+<!-- keep by customization: end -->
 
 You can use the RSA256 public keys located at this endpoint to validate the signature of the id_token.  There are multiple keys listed at this endpoint at any given point in time, each identified by a `kid`.  The header of the id_token also contains a `kid` claim, which indicates which of these keys was used to sign the id_token.  
 
@@ -362,7 +398,12 @@ When you wish to sign the user out of the  app, it is not sufficient to clear yo
 You can simply redirect the user to the `end_session_endpoint` listed in the OpenID Connect metadata document:
 
 ```
+<!-- deleted by customization
+GET https://login.chinacloudapi.cn/common/oauth2/v2.0/logout?
+-->
+<!-- keep by customization: begin -->
 GET https://login.microsoftonline.com/common/oauth2/v2.0/logout?
+<!-- keep by customization: end -->
 post_logout_redirect_uri=http%3A%2F%2Flocalhost%2Fmyapp%2F
 ```
 
@@ -383,7 +424,12 @@ This flow only slightly differs from the above sections, in how you send the sig
 When your web  app needs to authenticate the user & get the permissions it needs to access resources, it can direct the user to the `/authorize` endpoint.  In this case, your app must ask for both an `id_token` and a `code` in the response:
 
 ```
+<!-- deleted by customization
+GET https://login.chinacloudapi.cn/common/oauth2/v2.0/authorize?
+-->
+<!-- keep by customization: begin -->
 GET https://login.microsoftonline.com/common/oauth2/v2.0/authorize?
+<!-- keep by customization: end -->
 client_id=2d4d11a2-f814-46a7-890a-274a72a7309e		// Your registered Application Id
 &response_type=id_token+code
 &redirect_uri=http%3A%2F%2Flocalhost%2Fmyapp%2F 	  // Your registered Redirect Uri, url encoded

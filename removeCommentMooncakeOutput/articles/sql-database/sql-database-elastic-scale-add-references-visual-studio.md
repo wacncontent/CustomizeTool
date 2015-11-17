@@ -7,14 +7,14 @@
 	authors="sidneyh" 
 	editor=""/>
 
-<tags 
-	ms.service="sql-database" 
-	ms.date="07/24/2015" 
+<tags
+	ms.service="sql-database"
+	ms.date="07/24/2015"
 	wacn.date=""/>
 
 # How to: add Elastic Database client library references to a Visual Studio project 
 
-###Prerequisites: 
+### Prerequisites: 
 
 - Install [NuGet Visual Studio Extension Gallery](http://docs.nuget.org/docs/start-here/installing-nuget) for Visual Studio 
 

@@ -71,7 +71,7 @@ When you create a solution from the Marketplace, the solution automatically incl
 
 Finally, the template becomes part of the source code for your app. You can check it in to your source code repository and update it as your app evolves. You can edit the template through Visual Studio.
 
-For more information about defining the template, see [Authoring Azure Resource Manager Templates](./resource-group-authoring-templates.md).
+For more information about defining the template, see [Authoring Azure Resource Manager Templates](/documentation/articles/resource-group-authoring-templates).
 
 For template schemas, see [Azure Resource Manager Schemas](https://github.com/Azure/azure-resource-manager-schemas).
 
@@ -87,7 +87,7 @@ Resource Manager provides a tagging feature that enables you to categorize resou
 
 Resources do not need to reside in the same resource group to share a tag. You can create your own tag taxonomy to ensure that all users in your organization use common tags rather than users inadvertently applying slightly different tags (such as "dept" instead of "department").
 
-For more information about tags, see [Using tags to organize your Azure resources](./resource-group-using-tags.md).
+For more information about tags, see [Using tags to organize your Azure resources](/documentation/articles/resource-group-using-tags).
 
 ## Access control
 
@@ -107,9 +107,9 @@ For best practices, see [Security considerations for Azure Resource Manager](/do
 
 Resource Manager provides completely compatible operations through Azure PowerShell, Azure CLI for Mac, Linux, and Windows, the Azure preview portal, or REST API. You can use the interface that works best for you, and move quickly between the interfaces without confusion. The portal even displays notification for actions taken outside of the portal.
 
-For information about PowerShell, see [Using Azure PowerShell with Resource Manager](./powershell-azure-resource-manager.md) and [Azure Resource Manager Cmdlets](https://msdn.microsoft.com/zh-cn/library/azure/dn757692.aspx).
+For information about PowerShell, see [Using Azure PowerShell with Resource Manager](/documentation/articles/powershell-azure-resource-manager) and [Azure Resource Manager Cmdlets](https://msdn.microsoft.com/zh-cn/library/azure/dn757692.aspx).
 
-For information about Azure CLI, see [Using the Azure CLI for Mac, Linux, and Windows with Azure Resource Management](./virtual-machines/xplat-cli-azure-resource-manager.md).
+For information about Azure CLI, see [Using the Azure CLI for Mac, Linux, and Windows with Azure Resource Management](/documentation/articles/xplat-cli-azure-resource-manager).
 
 For information about the REST API, see [Azure Resource Manager REST API Reference](https://msdn.microsoft.com/zh-cn/library/azure/dn790568.aspx).
 
@@ -118,9 +118,9 @@ For information about using the preview portal, see [Using the Azure Preview Por
 
 ## Next steps
 
-- To learn about creating templates, see [Authoring templates](./resource-group-authoring-templates.md)
+- To learn about creating templates, see [Authoring templates](/documentation/articles/resource-group-authoring-templates)
 - To deploy the template you created, see [Deploying templates](/documentation/articles/resource-group-template-deploy)
-- To understand the functions you can use in a template, see [Template functions](./resource-group-template-functions.md)
+- To understand the functions you can use in a template, see [Template functions](/documentation/articles/resource-group-template-functions)
 - For guidance on designing your templates, see [Best practices for designing Azure Resource Manager templates](/documentation/articles/best-practices-resource-manager-design-templates)
 
 Here's a video demonstration of this overview:

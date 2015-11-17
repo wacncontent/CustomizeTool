@@ -316,7 +316,7 @@ The file [`<WindowsAzureMobileServices/MSError.h>`](https://github.com/Azure/azu
 [Mobile Services Quick Start]: /documentation/articles/mobile-services-ios-get-started
 [Get started with Mobile Services]: /documentation/articles/mobile-services-ios-get-started
 [Mobile Services SDK]: https://go.microsoft.com/fwLink/p/?LinkID=266533
-[Authentication]: /develop/mobile/tutorials/get-started-with-users-ios
+[Authentication]: /documentation/articles/mobile-services-ios-get-started-users
 [iOS SDK]: https://developer.apple.com/xcode
 
 [Handling Expired Tokens]: http://go.microsoft.com/fwlink/p/?LinkId=301955
@@ -328,4 +328,4 @@ The file [`<WindowsAzureMobileServices/MSError.h>`](https://github.com/Azure/azu
 [NSDictionary object]: http://go.microsoft.com/fwlink/p/?LinkId=301965
 [ASCII control codes C0 and C1]: http://en.wikipedia.org/wiki/Data_link_escape_character#C1_set
 [CLI to manage Mobile Services tables]: /documentation/articles/virtual-machines-command-line-tools#Mobile_Tables
-[Conflict-Handler]: mobile-services-ios-handling-conflicts-offline-data.md#add-conflict-handling
+[Conflict-Handler]: /documentation/articles/mobile-services-ios-handling-conflicts-offline-data#add-conflict-handling

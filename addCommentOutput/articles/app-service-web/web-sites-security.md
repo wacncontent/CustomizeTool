@@ -83,7 +83,7 @@ For more information on FTPS, see [File Transfer Protocol](http://en.wikipedia.o
 
 ## Next steps
 
-For more information on the security of the Azure platform, information on reporting a **security incident or abuse**, or to inform Microsoft that you will be performing **penetration testing** of your site, see the security section of the [Windows Azure Trust Center](http://azure.microsoft.com/support/trust-center/security/).
+For more information on the security of the Azure platform, information on reporting a **security incident or abuse**, or to inform Microsoft that you will be performing **penetration testing** of your site, see the security section of the [Windows Azure Trust Center](/support/trust-center/security/).
 
 For more information on **web.config** or **applicationhost.config** files in web apps, see [Configuration options unlocked in Azure Websites web apps](http://azure.microsoft.com/blog/2014/01/28/more-to-explore-configuration-options-unlocked-in-windows-azure-web-sites/).
 

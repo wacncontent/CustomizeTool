@@ -91,16 +91,19 @@ In the **Standard** tier, monitor app responsiveness receive email notifications
 [Visual Studio]: /documentation/articles/web-sites-dotnet-get-started
 [Visual Studio Online]: /documentation/articles/cloud-services-continuous-delivery-use-vso
 [Git]: /documentation/articles/web-sites-publish-source-control
+
 [HTTPS]: /documentation/articles/web-sites-configure-ssl-certificate
 [Azure Websites Pricing Details]: /home/features/web-site#price
 [Authenticate users]: /documentation/articles/web-sites-authentication-authorization
 [Easy Auth]:/blog/2014/11/13/azure-websites-authentication-authorization/
 [Authorize users]: /documentation/articles/web-sites-authentication-authorization
+
 [Azure Trust Center]:/support/trust-center/
 [MySQL]: /documentation/articles/web-sites-php-mysql-deploy-use-git
 [Azure SQL Database]: /documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database
 [hybrid connection]: /documentation/articles/web-sites-hybrid-connection-get-started
 [Azure Virtual Network]: /documentation/articles/web-sites-integrate-with-vnet
+
 [scale up and out]: /documentation/articles/web-sites-scale
 [Azure Management Portal]:http://manage.windowsazure.cn/
 [Service Management API]:http://msdn.microsoft.com/zh-cn/library/azure/ee460799.aspx

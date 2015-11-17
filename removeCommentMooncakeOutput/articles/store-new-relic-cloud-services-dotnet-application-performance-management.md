@@ -7,9 +7,9 @@
 	manager="carolz" 
 	editor=""/>
 
-<tags 
-	ms.service="cloud-services" 
-	ms.date="03/16/2015" 
+<tags
+	ms.service="cloud-services"
+	ms.date="03/16/2015"
 	wacn.date=""/>
 
 

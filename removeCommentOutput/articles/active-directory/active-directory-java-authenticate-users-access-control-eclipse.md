@@ -131,7 +131,7 @@ addressing ACS resources from within your application.
 
 1. Log into the [Azure Management Portal][].
 2. Click **Active Directory**. 
-3. To create a new Access Control namespace, click **New**, click **Azure Websites**, click **Access Control**, and then click **Quick Create**. 
+3. To create a new Access Control namespace, click **New**, click **App Services**, click **Access Control**, and then click **Quick Create**. 
 4. Enter a name for the namespace. Azure verifies that the name is unique.
 5. Select the region in which the namespace is used. For the best performance, use the region in which you are deploying your application.
 6. If you have more than one subscription, select the subscription that you want to use for the ACS namespace.

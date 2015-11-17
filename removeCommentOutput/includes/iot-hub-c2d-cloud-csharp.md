@@ -96,6 +96,7 @@ In this section, you will modify the **SendCloudToDevice** app to request feedba
 [Azure IoT - Service SDK NuGet package]: https://www.nuget.org/packages/Microsoft.Azure.Devices/
 [Transient Fault Handling]: https://msdn.microsoft.com/zh-cn/library/hh680901(v=pandp.50).aspx
 [Get started with IoT Hub]: /documentation/articles/iot-hub-csharp-csharp-getstarted
+
 <!-- Images -->
 [20]: ./media/iot-hub-c2d-cloud-csharp/create-identity-csharp1.png
 [21]: ./media/iot-hub-c2d-cloud-csharp/sendc2d1.png

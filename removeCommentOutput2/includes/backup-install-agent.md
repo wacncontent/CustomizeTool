@@ -2,7 +2,7 @@
 
 After creating the Azure Backup vault, an agent should be installed on each of your on-premises servers (Windows Server, Windows client or Data Protection Manager server) that enables back up of data and applications to Azure.
 
-1. Sign in to the [Management Portal](https://manage.windowsazure.cn) 
+1. Sign in to the [Management Portal](https://manage.windowsazure.cn/)
 
 2. Click **Recovery Services**, then select the backup vault that you want to register with a server. The Quick Start page for that backup vault appears.
 

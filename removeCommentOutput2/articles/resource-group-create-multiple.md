@@ -112,6 +112,6 @@ Use the following template:
 Of course, you set the copy count to a value other than the length of the array. For example, you could create an array with many values, and then pass in a parameter value that specifies how many of the array elements to deploy. In that case, you set the copy count as shown in the first example. 
 
 ## Next steps
-- If you want to learn about the sections of a template, see [Authoring Azure Resource Manager Templates](./resource-group-authoring-templates.md).
-- For all of the functions you can use in a template, see [Azure Resource Manager Template Functions](./resource-group-template-functions.md).
+- If you want to learn about the sections of a template, see [Authoring Azure Resource Manager Templates](/documentation/articles/resource-group-authoring-templates).
+- For all of the functions you can use in a template, see [Azure Resource Manager Template Functions](/documentation/articles/resource-group-template-functions).
 - To learn how to deploy your template, see [Deploy an application with Azure Resource Manager Template](/documentation/articles/resource-group-template-deploy).

@@ -1,6 +1,6 @@
 1. Log on to the Azure Management Portal, and then click **+NEW** at the bottom of the screen.
 
-2. Click on **Azure Websites**, then **Mobile Engagement**, and then **Create**.
+2. Click on <!-- deleted by customization **App Services** --><!-- keep by customization: begin --> **Azure Websites** <!-- keep by customization: end -->, then **Mobile Engagement**, and then **Create**.
 
    	![](./media/mobile-engagement-create-app-in-portal/create-mobile-engagement-app.png)
 

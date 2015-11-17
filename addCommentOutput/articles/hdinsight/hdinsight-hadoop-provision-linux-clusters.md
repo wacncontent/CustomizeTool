@@ -169,7 +169,7 @@ You can select the size of compute resources used by the cluster. For example, i
 
 When using the Azure preview portal to configure the cluster, the Node size is exposed through the __Node Pricing Tier__ blade, and will also display the cost associated with the different node sizes. 
 
-> [AZURE.IMPORTANT] Billing starts once a cluster is created, and only stops when the cluster is deleted. For more information on pricing, see [HDInsight pricing details](https://azure.microsoft.com/home/features/hdinsight/#price).
+> [AZURE.IMPORTANT] Billing starts once a cluster is created, and only stops when the cluster is deleted. For more information on pricing, see [HDInsight pricing details](/home/features/hdinsight/#price).
 
 ##<a id="optionalconfiguration"></a>Optional configuration
 
@@ -660,7 +660,7 @@ The following procedures are needed to provision an HDInsight cluster by using A
 
 You can use either the Windows PowerShell console or the Windows PowerShell Integrated Scripting Environment (ISE) to run the scripts.
  
-HDInsight uses an Azure Blob storage container as the default file system. An Azure Storage account and storage container are required before you can create an HDInsight cluster. The Storage account must be located in the same data center as the HDInsight cluster. Currently, only the **Southeast Asia**, **China North**, **China East**, and **China East** regions can host HDInsight Linux clusters.
+HDInsight uses an Azure Blob storage container as the default file system. An Azure Storage account and storage container are required before you can create an HDInsight cluster. The Storage account must be located in the same data center as the HDInsight cluster. Currently, only the **China North**, **China North**, **China East**, and **China East** regions can host HDInsight Linux clusters.
 
 **To connect to your Azure account**
 
@@ -961,7 +961,7 @@ In this article, you have learned several ways to provision an HDInsight Hadoop 
 [azure-create-storageaccount]: /documentation/articles/storage-create-storage-account
 [azure-purchase-options]: /pricing/overview/
 <!-- deleted by customization
-[azure-member-offers]: http://azure.microsoft.com/pricing/member-offers/
+[azure-member-offers]: /pricing/member-offers/
 -->
 [azure-trial]: /pricing/1rmb-trial/
 <!-- deleted by customization

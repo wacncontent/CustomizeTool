@@ -18,7 +18,7 @@ This topic shows you how to permit a service principal (such as an automated pro
 
 It shows how to authenticate with either a user name and password or a certificate.
 
-You can use either Azure PowerShell or Azure CLI for Mac, Linux and Windows. If you do not have Azure PowerShell installed, see [How to install and configure Azure PowerShell](./powershell-install-configure.md). If you do not have Azure CLI installed, see [Install and Configure the Azure CLI](/documentation/articles/xplat-cli-install).
+You can use either Azure PowerShell or Azure CLI for Mac, Linux and Windows. If you do not have Azure PowerShell installed, see [How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure). If you do not have Azure CLI installed, see [Install and Configure the Azure CLI](/documentation/articles/xplat-cli-install).
 
 ## Concepts
 1. Azure Active Directory (AAD) - an identity and access management service for the cloud. For more information, see [What is Azure active Directory](/documentation/articles/active-directory-whatis)
@@ -76,12 +76,7 @@ In this section, you will perform the steps to create a service principal for an
 
 3. Grant the service principal permissions on your subscription. In this sample you will grant the service principal the permission to Read all resources in the subscription. For the **ServicePrincipalName** parameter, provie either the **ApplicationId** or the **IdentifierUris** that you used when creating the application. For more information on role-based access control, see [Managing and Auditing Access to Resources](/documentation/articles/resource-group-rbac)
 
-<!-- deleted by customization
         PS C:\> New-AzureRmRoleAssignment -RoleDefinitionName Reader -ServicePrincipalName $azureAdApplication.ApplicationId
--->
-<!-- keep by customization: begin -->
-        PS C:\> New-AzureRoleAssignment -RoleDefinitionName Reader -ServicePrincipalName $azureAdApplication.ApplicationId
-<!-- keep by customization: end -->
 
 4. Retrieve the subscription in which the role assignment was created. This subscription will be used later to get the **TenantId** of the tenant that the service principal's role assignment resides in.
 
@@ -294,7 +289,7 @@ You will start by creating a service principal. To do this we must use create an
 ## Next Steps
   
 - For an overivew of role-based access control, see [Managing and Auditing Access to Resources](/documentation/articles/resource-group-rbac)  
-- To learn about using the portal with service principals, see [Create a new Azure Service Principal using the Azure Management <!-- deleted by customization Portal](./resource-group-create-service-principal-portal.md) --><!-- keep by customization: begin --> Portal](/documentation/articles/resource-group-create-service-principal-portal) <!-- keep by customization: end -->
+- To learn about using the portal with service principals, see [Create a new Azure Service Principal using the Azure Management Portal](/documentation/articles/resource-group-create-service-principal-portal)  
 - For guidance on implementing security with Azure Resource Manager, see [Security considerations for Azure Resource Manager](/documentation/articles/best-practices-resource-manager-security)
 
 

@@ -8,9 +8,9 @@
    editor=""/>
 
 <tags
-   ms.service="azure-resource-manager"
-   ms.date="09/18/2015"
-   wacn.date=""/>
+	ms.service="azure-resource-manager"
+	ms.date="09/18/2015"
+	wacn.date=""/>
 
 # Create a new Azure Service Principal using the Azure Management Portal
 

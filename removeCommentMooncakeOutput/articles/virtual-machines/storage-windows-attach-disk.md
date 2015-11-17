@@ -10,17 +10,14 @@
 
 <tags
 	ms.service="virtual-machines"
-
 	ms.date="07/16/2015"
 	wacn.date=""/>
 
-# How to attach a data disk to a Windows virtual machine
+# Attach a data disk to a Windows virtual machine
 
 You can attach empty disks and disks with data. In both cases, the disks are actually .vhd files that reside in an Azure storage account. Also in both cases, after you attach the disk, you'll need to initialize it so it's ready for use.
 
-> [AZURE.NOTE] It's a best practice to use one or more separate disks to store a virtual machine's data. When you create an Azure virtual machine, it has a disk for the operating system mapped to drive C and a temporary disk mapped to drive D. **Do not use drive D to store data.** As the name implies, drive D provides temporary storage only. It offers no redundancy or backup because it doesn't reside in Azure Storage.
-
-
+It's a best practice to use one or more separate disks to store a virtual machine's data. When you create an Azure virtual machine, it has a disk for the operating system mapped to drive C and a temporary disk mapped to drive D. **Do not use drive D to store data.** As the name implies, drive D provides temporary storage only. It offers no redundancy or backup because it doesn't reside in Azure Storage.
 
 
 [AZURE.INCLUDE [howto-attach-disk-windows-linux](../includes/howto-attach-disk-windows-linux.md)]

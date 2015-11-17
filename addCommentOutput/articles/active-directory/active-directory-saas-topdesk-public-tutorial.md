@@ -1,5 +1,8 @@
 <properties pageTitle="Tutorial: Azure Directory integration with TOPdesk - Public | Windows Azure" description="Learn how to use TOPdesk - Public with Azure Active Directory to enable single sign-on, automated provisioning, and more!." services="active-directory" authors="MarkusVi"  documentationCenter="na" manager="stevenpo"/>
-<tags ms.service="active-directory" ms.devlang="na" ms.topic="article" ms.tgt_pltfrm="na" ms.workload="identity" ms.date="08/01/2015" ms.author="markvi" />
+<tags
+	ms.service="active-directory"
+	ms.date="08/01/2015"
+	wacn.date=""/>
 #Tutorial: Azure Directory integration with TOPdesk - Public
 
 >[AZURE.TIP]For feedback, click [here](http://go.microsoft.com/fwlink/?LinkId=529788).

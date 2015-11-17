@@ -7,9 +7,9 @@
    manager="mbaldwin"
    editor="mbaldwin" />
 <tags
-   ms.service="active-directory"
-   ms.date="08/11/2015"
-   wacn.date="" />
+	ms.service="active-directory"
+	ms.date="08/11/2015"
+	wacn.date=""/>
 
 # Azure Active Directory Authentication Libraries
 

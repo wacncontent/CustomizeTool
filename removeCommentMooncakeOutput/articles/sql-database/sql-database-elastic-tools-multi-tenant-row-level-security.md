@@ -7,10 +7,10 @@
 	manager="jeffreyg" 
 	authors="tmullaney"/>
 
-<tags 
-	ms.service="sql-database" 
-	ms.date="08/19/2015" 
-	wacn.date="" />
+<tags
+	ms.service="sql-database"
+	ms.date="08/19/2015"
+	wacn.date=""/>
 
 # Multi-tenant applications with elastic database tools and row-level security 
 
@@ -54,7 +54,7 @@ After connecting to a shard database using the elastic database client libraryâ€
 
 ### Entity Framework
 
-For applications using Entity Framework, the easiest approach is to set CONTEXT_INFO within the ElasticScaleContext override described in [Data Dependent Routing using EF DbContext](/documentation/articles/sql-database-elastic-scale-use-entity-framework-applications-visual-studio/#data-dependent-routing-using-ef-dbcontext). Before returning the connection brokered through data dependent routing, simply create and execute a SqlCommand that sets CONTEXT_INFO to the shardingKey (TenantId) specified for that connection. This way, you only need to write code once to set CONTEXT_INFO. 
+For applications using Entity Framework, the easiest approach is to set CONTEXT_INFO within the ElasticScaleContext override described in [Data Dependent Routing using EF DbContext](/documentation/articles/sql-database-elastic-scale-use-entity-framework-applications-visual-studio#data-dependent-routing-using-ef-dbcontext). Before returning the connection brokered through data dependent routing, simply create and execute a SqlCommand that sets CONTEXT_INFO to the shardingKey (TenantId) specified for that connection. This way, you only need to write code once to set CONTEXT_INFO. 
 
 ```
 // ElasticScaleContext.cs 

@@ -100,7 +100,7 @@ Run the **Set-AzureRMSqlDatabase** cmdlet and set the **-RequestedServiceObjecti
     $SubscriptionId = "4cac86b0-1e56-bbbb-aaaa-000000000000"
     
     $ResourceGroupName = "resourceGroupName"
-    $Location = "Japan West"
+    $Location = "China East"
     
     $ServerName = "serverName"
     $DatabaseName = "databaseName"
@@ -127,5 +127,10 @@ Run the **Set-AzureRMSqlDatabase** cmdlet and set the **-RequestedServiceObjecti
 ## Additional resources
 
 - [Business Continuity Overview](/documentation/articles/sql-database-business-continuity)
+<!-- deleted by customization
 - [SQL Database documentation](/documentation/services/sql-database/)
+-->
+<!-- keep by customization: begin -->
+- [SQL Database documentation](/documentation/services/sql-databases/)
+<!-- keep by customization: end -->
 - [Azure SQL Database Cmdlets](https://msdn.microsoft.com/zh-cn/library/azure/mt163521.aspx)

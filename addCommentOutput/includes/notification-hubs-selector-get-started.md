@@ -1,11 +1,10 @@
-<!-- deleted by customization > [AZURE.SELECTOR] -->
+> [AZURE.SELECTOR]
 <!-- deleted by customization
 - [Windows Runtime 8.1 universal](/documentation/articles/notification-hubs-windows-store-dotnet-get-started)
 - [Windows Phone Silverlight 8.x](/documentation/articles/notification-hubs-windows-phone-get-started)
 -->
 <!-- keep by customization: begin -->
-- [Windows Universal](/documentation/articles/notification-hubs-windows-store-dotnet-get-started)
-- [Windows Phone](/documentation/articles/notification-hubs-windows-phone-get-started)
+- [Windows Phone Silverlight 8.x](/documentation/articles/notification-hubs/notification-hubs-windows-phone-get-started)
 <!-- keep by customization: end -->
 - [iOS](/documentation/articles/notification-hubs-ios-get-started)
 - [Android](/documentation/articles/notification-hubs-android-get-started)

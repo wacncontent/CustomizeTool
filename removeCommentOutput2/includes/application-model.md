@@ -501,7 +501,7 @@ file:
     versions become available. However, you can opt out of automatic
     updates by selecting a specific guest OS version. For example,
     setting the osVersion attribute to a value of
-    "WA-GUEST-OS-2.8_201109-01" causes all your role instances to get
+    "WA-GUEST-OS-2.8\_201109-01" causes all your role instances to get
     what is described on this web page:
     [http://msdn.microsoft.com/zh-cn/library/hh560567.aspx][]. For more
     information about guest OS versions, see [Managing Upgrades to the
@@ -584,7 +584,7 @@ article.<a id="Ref" name="Ref"></a>
   [3]: ./media/application-model/application-model-6.jpg
   [4]: ./media/application-model/application-model-7.jpg
   
-  [Azure Pricing]: http://azure.microsoft.com/pricing/calculator/
+  [Azure Pricing]: /pricing/calculator/
   [Managing Certificates in Azure]: http://msdn.microsoft.com/zh-cn/library/azure/gg981929.aspx
   [http://msdn.microsoft.com/zh-cn/library/azure/ee758710.aspx]: http://msdn.microsoft.com/zh-cn/library/azure/ee758710.aspx
   [http://msdn.microsoft.com/zh-cn/library/hh560567.aspx]: http://msdn.microsoft.com/zh-cn/library/hh560567.aspx

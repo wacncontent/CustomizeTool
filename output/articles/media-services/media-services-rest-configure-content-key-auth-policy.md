@@ -464,6 +464,7 @@ Add AuthorizationPolicy to the ContentKey as shown [here](#AddAuthorizationPolic
 
 
 
+<!-- deleted by customization
 ##Media Services learning paths
 
 You can view AMS learning paths here:
@@ -471,6 +472,7 @@ You can view AMS learning paths here:
 - [AMS Live Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/)
 - [AMS on Demand Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/)
 
+-->
 
 ##Next Steps
 Now that you have configured content key's authorization policy, go to the [How to configure asset delivery policy](/documentation/articles/media-services-rest-configure-asset-delivery-policy) topic.

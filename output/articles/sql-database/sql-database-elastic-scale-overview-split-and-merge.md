@@ -19,9 +19,15 @@ The split-merge tool manages scale-in and scale-out; you can add or remove datab
 
 ## What's new in split-merge
 
+<!-- deleted by customization
 The 1.1.0 release of the split-merge tool provides the ability to automatically clean up metadata from completed request. A configuration option controls how long this metadata is retained before it gets removed. 
 
 The 1.0.0 release of the split-merge tool provides the following improvements: 
+-->
+<!-- keep by customization: begin -->
+The most recent releases of the split-merge tool provides the following improvements: 
+
+<!-- keep by customization: end -->
 * .Net APIs are included to interface with split-merge – the web role is now optional 
 * Date and time types are now supported for sharding keys 
 * List shard maps are now supported. 

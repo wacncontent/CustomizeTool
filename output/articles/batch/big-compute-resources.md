@@ -20,8 +20,10 @@ This is a guide to technical resources to help you run your large-scale parallel
 Learn about Big Compute options in Azure, and choose the right approach for your workload and business need.
 
 * [Batch and HPC solutions](/documentation/articles/batch-hpc-solutions)
+<!-- deleted by customization
 
 * [Video: Big Compute in the cloud with Azure and HPC](http://azure.microsoft.com/documentation/videos/teched-europe-2014-big-compute-in-the-cloud-with-high-performance-computing-on-azure/)
+-->
 
 
 ## Azure Batch
@@ -36,15 +38,17 @@ Learn about Big Compute options in Azure, and choose the right approach for your
 
 * [Batch forum](https://social.msdn.microsoft.com/Forums/home?forum=azurebatch)
 
+<!-- deleted by customization
 * [Batch videos](https://azure.microsoft.com/documentation/videos/index/?services=batch)
 
+-->
 ## HPC cluster solutions
 
 Deploy or extend your existing Windows or Linux HPC cluster to Azure to run your compute intensive workloads.  
 
 ### Microsoft HPC Pack
 
-HPC Pack is Microsoft's free HPC solution built on Windows Azure and Windows Server technologies, capable of running Windows and Linux HPC workloads.  
+HPC Pack is Microsoft's free HPC solution built on Windows Azure and Windows Server technologies<!-- deleted by customization, capable of running Windows and Linux HPC workloads -->.
 
 * [Download HPC Pack 2012 R2 Update 2](https://www.microsoft.com/download/details.aspx?id=47755)
 

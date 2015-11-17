@@ -59,7 +59,7 @@ A10 and A11 instances have a single, 10-Gbps Ethernet network adapter that conne
 
 ## Considerations for the Azure subscription
 
-* **Azure account** – If you want to deploy more than a small number of compute-intensive instances, consider a pay-as-you-go subscription or other purchase options. You can also use your MSDN subscription. See [Azure benefit for MSDN subscribers](http://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/). If you're using an [Azure trial](/pricing/1rmb-trial/), you can use only a limited number of Azure compute cores.
+* **Azure account** – If you want to deploy more than a small number of compute-intensive instances, consider a pay-as-you-go subscription or other purchase options. You can also use your MSDN subscription. See [Azure benefit for MSDN subscribers](/pricing/member-offers/msdn-benefits-details/). If you're using an [Azure trial](/pricing/1rmb-trial/), you can use only a limited number of Azure compute cores.
 
 * **Cores quota** – You might need to increase the cores quota in your Azure subscription from the default of 20 cores, which is not enough for many scenarios with 8-core or 16-core instances. For initial tests, you might consider requesting a quota increase to 100 cores. To do this, open a free support ticket as shown in [Understanding Azure limits and increases](http://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/).
 

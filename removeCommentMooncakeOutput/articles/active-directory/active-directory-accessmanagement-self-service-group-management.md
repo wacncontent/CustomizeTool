@@ -1,16 +1,15 @@
-
-<properties 
-	pageTitle="Setting up Azure AD for self service application access management| Windows Azure" 
+<properties
+	pageTitle="Setting up Azure AD for self service application access management| Windows Azure"
 	description="overview of Self-service group management that enables users to create and manage security groups in Windows Azure Active Directory (AD) and offers users the possibility to request security group memberships"
-	services="active-directory" 
-	documentationCenter="" 
-        authors="femila"
+	services="active-directory"
+	documentationCenter=""
+    authors="femila"
 	manager="stevenpo" 
 	editor=""
 	tags="azure-classic-portal"/>
 
-<tags 
-	ms.service="active-directory" 
+<tags
+	ms.service="active-directory"
 	ms.date="10/09/2015"
 	wacn.date=""/>
 
@@ -38,7 +37,7 @@ You can also use the Users who can use self-service for security groups switch t
 
 You can also use the Group that can use self-service for security groups field (set by default to ‘SSGMSecurityGroupsUsers’ to specify your own custom name for a group that will hold all the users with the ability to use self-service and create new security groups in your directory.
 
-Here are some topics that will provide some additional information on Azure Active Directory 
+Here are some topics that will provide some additional information on Azure Active Directory
 
 * [Managing access to resources with Azure Active Directory groups](/documentation/articles/active-directory-manage-groups)
 

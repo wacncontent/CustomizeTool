@@ -6,10 +6,10 @@
  authors="krisragh" 
  manager="dwrede" 
  editor=""/>
-<tags 
- ms.service="scheduler" 
- ms.date="08/04/2015" 
- wacn.date=""/>
+<tags
+	ms.service="scheduler"
+	ms.date="08/04/2015"
+	wacn.date=""/>
  
 # Scheduler PowerShell Cmdlets Reference
 
@@ -49,4 +49,4 @@ The following table describes and links to the reference page of each of the maj
  
  [Scheduler Outbound Authentication](/documentation/articles/scheduler-outbound-authentication)
 
- 
+  

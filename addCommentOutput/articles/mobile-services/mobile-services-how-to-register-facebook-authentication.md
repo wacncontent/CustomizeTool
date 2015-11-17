@@ -18,11 +18,11 @@
 
 This topic shows you how to register your apps to be able to use Facebook to authenticate with Azure Mobile Services. 
 
->[AZURE.NOTE] This tutorial is about [Azure Mobile Services], a solution to help you build scalable mobile applications for any platform. Mobile Services makes it easy to sync data, authenticate users, and send push notifications. This page supports the <!-- deleted by customization [Get --><!-- keep by customization: begin --> <a href="/documentation/articles/mobile-services-ios-get-started-users/">Get <!-- keep by customization: end --> Started with <!-- deleted by customization Authentication](/documentation/articles/mobile-services-ios-get-started-users) --><!-- keep by customization: begin --> Authentication</a> <!-- keep by customization: end --> tutorial which shows how to log users into your app. If this is your first experience with Mobile Services, please complete the tutorial <!-- deleted by customization [Get --><!-- keep by customization: begin --> <a href="/documentation/articles/mobile-services-ios-get-started/">Get <!-- keep by customization: end --> Started with Mobile <!-- deleted by customization Services](/documentation/articles/mobile-services-ios-get-started) --><!-- keep by customization: begin --> Services</a> <!-- keep by customization: end -->.
+>[AZURE.NOTE] This tutorial is about [Azure Mobile Services], a solution to help you build scalable mobile applications for any platform. Mobile Services makes it easy to sync data, authenticate users, and send push notifications. This page supports the [Get Started with Authentication](/documentation/articles/mobile-services-ios-get-started-users) tutorial which shows how to log users into your app. If this is your first experience with Mobile Services, please complete the tutorial [Get Started with Mobile Services](/documentation/articles/mobile-services-ios-get-started).
 	
-To complete the procedure in this topic, you must have a Facebook account that has a verified email address and a mobile phone number. To create a new Facebook account, go to <!-- deleted by customization [facebook.com](https://www.facebook.com/) --><!-- keep by customization: begin --> <a href="https://www.facebook.com/" target="_blank">facebook.com</a> <!-- keep by customization: end -->.
+To complete the procedure in this topic, you must have a Facebook account that has a verified email address and a mobile phone number. To create a new Facebook account, go to [facebook.com](https://www.facebook.com/).
 
-1. Navigate to the <!-- deleted by customization [Facebook Developers](https://www.facebook.com/) --><!-- keep by customization: begin --> <a href="http://go.microsoft.com/fwlink/p/?LinkId=268286" target="_blank">Facebook Developers</a> <!-- keep by customization: end --> website and sign-in with your Facebook account credentials.
+1. Navigate to the [Facebook Developers](https://www.facebook.com/) website and sign-in with your Facebook account credentials.
 
 2. (Optional) If you have not already registered, click **My Apps** then click **Register as a Developer**, accept the policy and follow the registration steps. 
 
@@ -67,17 +67,7 @@ You are now ready to use a Facebook login for authentication in your app by prov
 
 <!-- URLs. -->
 [Facebook Developers]: http://go.microsoft.com/fwlink/p/?LinkId=268286
-<!-- deleted by customization
-[Get started with authentication]: /develop/mobile/tutorials/get-started-with-users-dotnet/
--->
-<!-- keep by customization: begin -->
-[Get started with authentication]: /documentation/articles/mobile-services-windows-store-dotnet-get-started-users/
-<!-- keep by customization: end -->
+[Get started with authentication]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-users-dotnet/
 [Azure Management Portal]: https://manage.windowsazure.cn/
-<!-- deleted by customization
 [Azure Mobile Services]: http://azure.microsoft.com/services/mobile-services/
  
--->
-<!-- keep by customization: begin -->
-[Azure Mobile Services]: /documentation/services/mobile-services/
-<!-- keep by customization: end -->

@@ -1,15 +1,15 @@
-<properties 
-	pageTitle="Get started with authentication (Xamarin.Android) - Mobile Services" 
-	description="Learn how to use authentication in your Azure Mobile Services app for Xamarin.Android." 
-	services="mobile-services" 
-	documentationCenter="xamarin" 
-	manager="dwrede" 
-	authors="lindydonna" 
+<properties
+	pageTitle="Get started with authentication (Xamarin.Android) - Mobile Services"
+	description="Learn how to use authentication in your Azure Mobile Services app for Xamarin.Android."
+	services="mobile-services"
+	documentationCenter="xamarin"
+	manager="dwrede"
+	authors="lindydonna"
 	editor=""/>
 
-<tags 
-	ms.service="mobile-services" 
-	ms.date="08/18/2015" 
+<tags
+	ms.service="mobile-services"
+	ms.date="08/18/2015"
 	wacn.date=""/>
 
 # Add authentication to your Mobile Services app
@@ -24,23 +24,23 @@ This tutorial walks you through these basic steps to enable authentication in yo
 2. [Restrict table permissions to authenticated users]
 3. [Add authentication to the app]
 
-This tutorial is based on the Mobile Services quickstart. You must also first complete the tutorial [Get started with Mobile Services]. 
+This tutorial is based on the Mobile Services quickstart. You must also first complete the tutorial [Get started with Mobile Services].
 
-Completing this tutorial requires Xamarin.Android and Android SDK 4.2 or a later version. 
+Completing this tutorial requires Xamarin.Android and Android SDK 4.2 or a later version.
 
 ##<a name="register"></a>Register your app for authentication and configure Mobile Services
 
-[AZURE.INCLUDE [mobile-services-register-authentication](../includes/mobile-services-register-authentication.md)] 
+[AZURE.INCLUDE [mobile-services-register-authentication](../includes/mobile-services-register-authentication.md)]
 
 ##<a name="permissions"></a>Restrict permissions to authenticated users
 
 
-[AZURE.INCLUDE [mobile-services-restrict-permissions-javascript-backend](../includes/mobile-services-restrict-permissions-javascript-backend.md)] 
+[AZURE.INCLUDE [mobile-services-restrict-permissions-javascript-backend](../includes/mobile-services-restrict-permissions-javascript-backend.md)]
 
 
-3. In Eclipse, open the project that you created when you completed the tutorial [Get started with Mobile Services]. 
+3. In Eclipse, open the project that you created when you completed the tutorial [Get started with Mobile Services].
 
-4. From the **Run** menu, then click **Run** to start the app; verify that an unhandled exception with a status code of 401 (Unauthorized) is raised after the app starts. 
+4. From the **Run** menu, then click **Run** to start the app; verify that an unhandled exception with a status code of 401 (Unauthorized) is raised after the app starts.
 
 	 This happens because the app attempts to access Mobile Services as an unauthenticated user, but the _TodoItem_ table now requires authentication.
 
@@ -52,20 +52,20 @@ Next, you will update the app to authenticate users before requesting resources 
 
 		private MobileServiceUser user;
 
-2. Add the following method to the **ToDoActivity** class: 
+2. Add the following method to the **ToDoActivity** class:
 
-	        private async Task Authenticate()
-	        {
-	            try
-	            {
-	                user = await client.LoginAsync(this, MobileServiceAuthenticationProvider.MicrosoftAccount);
-	                CreateAndShowDialog(string.Format("you are now logged in - {0}", user.UserId), "Logged in!");
-	            }
-	            catch (Exception ex)
-	            {
-	                CreateAndShowDialog(ex, "Authentication failed");
-	            }
-	        }
+        private async Task Authenticate()
+        {
+            try
+            {
+                user = await client.LoginAsync(this, MobileServiceAuthenticationProvider.MicrosoftAccount);
+                CreateAndShowDialog(string.Format("you are now logged in - {0}", user.UserId), "Logged in!");
+            }
+            catch (Exception ex)
+            {
+                CreateAndShowDialog(ex, "Authentication failed");
+            }
+        }
 
     This creates a new method to handle the authentication process. The user is authenticated by using a Microsoft Account login. A dialog is displayed which displays the ID of the authenticated user. You cannot proceed without a positive authentication.
 
@@ -79,31 +79,31 @@ Next, you will update the app to authenticate users before requesting resources 
 
 4. Move the remaining code after `await Authenticate();` in the **OnCreate** method to a new **CreateTable** method, which looks like this:
 
-	        private async Task CreateTable()
-	        {
-            
+        private async Task CreateTable()
+        {
+
             await InitLocalStoreAsync();
 
-	            // Get the Mobile Service Table instance to use
+            // Get the Mobile Service Table instance to use
             toDoTable = client.GetTable<ToDoItem>();
 
             textNewToDo = FindViewById<EditText>(Resource.Id.textNewToDo);
 
-	            // Create an adapter to bind the items with the view
+            // Create an adapter to bind the items with the view
             adapter = new ToDoItemAdapter(this, Resource.Layout.Row_List_To_Do);
             var listViewTodo = FindViewById<ListView>(Resource.Id.listViewToDo);
-	            listViewTodo.Adapter = adapter;
+            listViewTodo.Adapter = adapter;
 
-	            // Load the items from the Mobile Service
-	            await RefreshItemsFromTableAsync();
-	        }
+            // Load the items from the Mobile Service
+            await RefreshItemsFromTableAsync();
+        }
 
 5. Then call the new **CreateTable** method in **OnCreate** after the **Authenticate** call added in step 2:
 
 		await CreateTable();
 
 
-6. From the **Run** menu, then click **Run** to start the app and sign in with your chosen identity provider. 
+6. From the **Run** menu, then click **Run** to start the app and sign in with your chosen identity provider.
 
    	When you are successfully logged-in, the app should run without errors, and you should be able to query Mobile Services and make updates to data.
 
@@ -112,7 +112,7 @@ Download the [completed example project]. Be sure to update the **applicationURL
 
 ## <a name="next-steps"></a>Next steps
 
-In the next tutorial, [Authorize users with scripts], you will take the user ID value provided by Mobile Services based on an authenticated user and use it to filter the data returned by Mobile Services. 
+In the next tutorial, [Authorize users with scripts], you will take the user ID value provided by Mobile Services based on an authenticated user and use it to filter the data returned by Mobile Services.
 
 <!-- Anchors. -->
 [Register your app for authentication and configure Mobile Services]: #register
@@ -130,7 +130,5 @@ In the next tutorial, [Authorize users with scripts], you will take the user ID 
 
 <!-- URLs. -->
 [Authorize users with scripts]: /documentation/articles/mobile-services-javascript-backend-service-side-authorization
-
 [Azure Management Portal]: https://manage.windowsazure.cn/
-
 [completed example project]: http://go.microsoft.com/fwlink/p/?LinkId=331328

@@ -299,7 +299,7 @@ HBase is an Apache, open-source, NoSQL database built on Hadoop that provides ra
 [hdinsight-versions]: /documentation/articles/hdinsight-component-versioning
 [hbase-twitter-sentiment]: /documentation/articles/hdinsight-hbase-analyze-twitter-sentiment
 [azure-purchase-options]: /pricing/overview/
-[azure-member-offers]: http://azure.microsoft.com/pricing/member-offers/
+[azure-member-offers]: /pricing/member-offers/
 [azure-trial]: /pricing/1rmb-trial/
 [azure-portal]: <!-- deleted by customization https://manage.windowsazure.cn/ --><!-- keep by customization: begin --> https://manage.windowsazure.cn <!-- keep by customization: end -->
 [azure-create-storageaccount]: <!-- deleted by customization /documentation/articles/storage-create-storage-account/ --><!-- keep by customization: begin --> /documentation/articles/storage-create-storage-account <!-- keep by customization: end -->

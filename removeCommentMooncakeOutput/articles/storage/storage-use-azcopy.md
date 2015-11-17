@@ -7,9 +7,9 @@
 	manager="adinah" 
 	editor="cgronlun"/>
 
-<tags 
-	ms.service="storage" 
-	ms.date="06/22/2015" 
+<tags
+	ms.service="storage"
+	ms.date="09/03/2015"
 	wacn.date=""/>
 
 # Getting Started with the AzCopy Command-Line Utility
@@ -23,6 +23,9 @@ AzCopy is a command-line utility designed for high-performance uploading, downlo
 > This guide also covers using AzCopy 4.2.0, which is a preview release of AzCopy. Throughout this guide, functions provided only in the preview release are designated as *preview*.
 > 
 > Note that for AzCopy 4.x, command-line options and functionality may change in future releases.
+
+
+We also released an open-sourced library based on the core data movement framework that powers AzCopy, please find more details at [Introducing Azure Storage Data Movement Library Preview] (https://azure.microsoft.com/blog/introducing-azure-storage-data-movement-library-preview-2/)
 
 ## Download and install AzCopy
 
@@ -157,7 +160,7 @@ Parameters for AzCopy are described in the table below. You can also type one of
     <td><b>/Snapshot</b></td>
     <td>Indicates whether to transfer snapshots. This option is only valid when the source is a blob. 
         <br />
-        The transferred blob snapshots are renamed in this format: [blob-name](/documentation/articles/snapshot-time)[extension]. 
+        The transferred blob snapshots are renamed in this format: [blob-name](/documentation/articles/snapshot-time)[extension].
         <br />
         By default, snapshots are not copied.</td>
     <td>Y</td>
@@ -228,14 +231,14 @@ Parameters for AzCopy are described in the table below. You can also type one of
   </tr>
   <tr>
     <td><b>/XN</b></td>
-    <td>Excludes a newer source resource. The resource will not be copied if the source is newer than destination.</td>
+    <td>Excludes a newer source resource. The resource will not be copied if the last modified time of the source is the same or newer than destination.</td>
     <td>Y</td>
     <td>Y<br /> (preview only)</td>
     <td>N</td>
   </tr>
   <tr>
     <td><b>/XO</b></td>
-    <td>Excludes an older source resource. The resource will not be copied if the source resource is older than destination.</td>
+    <td>Excludes an older source resource. The resource will not be copied if the last modified time of the source is the same or older than destination.</td>
     <td>Y</td>
     <td>Y<br /> (preview only)</td>
     <td>N</td>
@@ -734,11 +737,11 @@ Note that if you specify a relative path following option `/V`, such as `/V:test
 
 Specify the `/MT` option to compare the last-modified time of the source blob and the destination file.
 
-**Exclude blobs that are newer than the destination file**
+**Exclude blobs whose last modified time is the same or newer than the destination file**
 
 	AzCopy /Source:https://myaccount.blob.core.chinacloudapi.cn/mycontainer /Dest:C:\myfolder /SourceKey:key /MT /XN
 
-**Exclude blobs that are older than the destination file**
+**Exclude blobs whose last modified time is the same or older than the destination file**
 
 	AzCopy /Source:https://myaccount.blob.core.chinacloudapi.cn/mycontainer /Dest:C:\myfolder /SourceKey:key /MT /XO
 
@@ -856,7 +859,7 @@ AzCopy by default exports Table entites to JSON files, user can specify option `
 	AzCopy /Source:https://myaccount.table.core.chinacloudapi.cn/myTable/ /Dest:C:\myfolder\ /SourceKey:key /PayloadFormat:CSV
 
 When specifying the CSV payload format, besides the data files with `.csv` extension that will be found in the place specified by the parameter `/Dest`, AzCopy will generate scheme file with file extension `.schema.csv` for each data file.
-Note that AzCopy does not include the support for �importing� CSV data file, you can use JSON format to export and import table data.
+Note that AzCopy does not include the support for “importing” CSV data file, you can use JSON format to export and import table data.
 
 ### Export entities to an Azure blob
 
@@ -868,7 +871,7 @@ AzCopy will generate a JSON data file into the local folder or blob container wi
 
 The generated JSON data file follows the payload format for minimal metadata. For details on this payload format, see [Payload Format for Table Service Operations](http://msdn.microsoft.com/zh-cn/library/azure/dn535600.aspx).
 
-Note that when exporting Storage Table Entities to Storage Blob, AzCopy will export the Table entities to local temporary data files firstly and then upload them to Blob, these temporary data files are put into the journal file folder with the default path �<code>%LocalAppData%\Microsoft\Azure\AzCopy</code>�, you can specify option /Z:[journal-file-folder] to change the journal file folder location and thus change the temporary data files location. The temporary data files� size is decided by your table entities� size and the size you specified with the option /SplitSize, although the temporary data file in local disk will be deleted instantly once it has been uploaded to the Blob, please make sure you have enough local disk space to store these temporary data files before they are deleted, 
+Note that when exporting Storage Table Entities to Storage Blob, AzCopy will export the Table entities to local temporary data files firstly and then upload them to Blob, these temporary data files are put into the journal file folder with the default path “<code>%LocalAppData%\Microsoft\Azure\AzCopy</code>”, you can specify option /Z:[journal-file-folder] to change the journal file folder location and thus change the temporary data files location. The temporary data files’ size is decided by your table entities’ size and the size you specified with the option /SplitSize, although the temporary data file in local disk will be deleted instantly once it has been uploaded to the Blob, please make sure you have enough local disk space to store these temporary data files before they are deleted, 
 
 ### Split the export files
 
@@ -923,31 +926,33 @@ You can create an app.config file `AzCopy.exe.config` with property `AzureStorag
 	  </appSettings>
 	</configuration>
 
-For property �AzureStorageUseV1MD5�
-� True - The default value, AzCopy will use .NET MD5 implementation.
-� False � AzCopy will use FIPS compliant MD5 algorithm.
+For property “AzureStorageUseV1MD5”
+• True - The default value, AzCopy will use .NET MD5 implementation.
+• False – AzCopy will use FIPS compliant MD5 algorithm.
 
 Note that FIPS compliant algorithms is disabled by default on your Windows machine, you can type secpol.msc in your Run window and check this switch at Security Setting->Local Policy->Security Options->System cryptography: Use FIPS compliant algorithms for encryption, hashing and signing.
 
 ## AzCopy versions
 
-| Version | What's New                                                                                      				|
-|---------|-----------------------------------------------------------------------------------------------------------------|
-| **V4.2.0**  | **Current preview version. Includes all the functionality from V3.2.0. Also supports File Storage Share SAS, File Storage asynchronous copying, exporting Table entities to CSV and specifying manifest name when exporting Table entities**
-| **V3.2.0**  | **Current release version. Supports Append Blob and FIPS compliant MD5 Setting**
-| V4.1.0  | Includes all the functionality from V3.1.0. Supports synchronously copying blobs and files and specifying content type for destination blobs and files
-| V3.1.0  | Supports synchronously copying blobs and specifying content type for destination blobs.
-| V4.0.0  | Includes all the functionality from V3.0.0. Also supports copying files to or from Azure File storage, and copying entities to or from Azure Table storage.
-| V3.0.0  | Modifies AzCopy command-line syntax to require parameter names, and redesigns the command-line help. This version only supports copying to and from Azure Blob storage.	
-| V2.5.1  | Optimizes performance when using options /xo and /xn. Fixes bugs related to special characters in source file names and journal file corruption after user input the wrong command-line syntax.	
-| V2.5.0  | Optimizes performance for large-scale copy scenarios, and introduces several important usability improvements.
-| V2.4.1  | Supports specifying the destination folder in the installation wizard.                     			
-| V2.4.0  | Supports uploading and downloading files for Azure File storage.
-| V2.3.0  | Supports read-access geo-redundant storage accounts.|
-| V2.2.2  | Upgraded to use Azure storage client library version 3.0.3.
-| V2.2.1  | Fixed performance issue when copying large amount files within same storage account.
-| V2.2    | Supports setting the virtual directory delimiter for blob names. Supports specifying the journal file path.|
-| V2.1    | Provides more than 20 options to support blob upload, download, and copy operations in an efficient way.|
+> [AZURE.NOTE] We recommand you install the latest version of AzCopy to get new features and better performance.
+
+| Version | What's New                                                                                      				| Referenced .NET Client Library Version | Target Storage REST API Version |
+|---------|-----------------------------------------------------------------------------------------------------------------|--------|----------|
+| [**V4.2.0**](http://xdmrelease.blob.core.chinacloudapi.cn/azcopy-4-2-0-preview/MicrosoftAzureStorageTools.msi)  | **Current preview version. Includes all the functionality from V3.2.0. Also supports File Storage Share SAS, File Storage asynchronous copying, exporting Table entities to CSV and specifying manifest name when exporting Table entities** | **V5.0.0** | **2015-02-21**
+| [**V3.2.0**](http://xdmrelease.blob.core.chinacloudapi.cn/azcopy-3-2-0/MicrosoftAzureStorageTools.msi)  | **Current release version. Supports Append Blob and FIPS compliant MD5 Setting** | **V5.0.0** | **2015-02-21**
+| [V4.1.0](http://xdmrelease.blob.core.chinacloudapi.cn/azcopy-4-1-0-preview/MicrosoftAzureStorageTools.msi)  | Includes all the functionality from V3.1.0. Supports synchronously copying blobs and files and specifying content type for destination blobs and files | V4.3.0 | 2014-02-14
+| [V3.1.0](http://xdmrelease.blob.core.chinacloudapi.cn/azcopy-3-1-0/MicrosoftAzureStorageTools.msi)  | Supports synchronously copying blobs and specifying content type for destination blobs.| V4.3.0 | 2014-02-14
+| [V4.0.0](http://xdmrelease.blob.core.chinacloudapi.cn/azcopy-4-0-0-preview/MicrosoftAzureStorageTools.msi)  | Includes all the functionality from V3.0.0. Also supports copying files to or from Azure File storage, and copying entities to or from Azure Table storage.| V4.2.1 | 2014-02-14
+| [V3.0.0](http://xdmrelease.blob.core.chinacloudapi.cn/azcopy-3-0-0/MicrosoftAzureStorageTools.msi)  | Modifies AzCopy command-line syntax to require parameter names, and redesigns the command-line help. This version only supports copying to and from Azure Blob storage.| V4.2.1 | 2014-02-14
+| V2.5.1  | Optimizes performance when using options /xo and /xn. Fixes bugs related to special characters in source file names and journal file corruption after user input the wrong command-line syntax.| V4.1.0 | 2014-02-14
+| V2.5.0  | Optimizes performance for large-scale copy scenarios, and introduces several important usability improvements.| V4.1.0 | 2014-02-14
+| V2.4.1  | Supports specifying the destination folder in the installation wizard.| V4.0.0 | 2014-02-14
+| V2.4.0  | Supports uploading and downloading files for Azure File storage.| V4.0.0 | 2014-02-14
+| V2.3.0  | Supports read-access geo-redundant storage accounts.| V3.0.3 | 2013-08-15
+| V2.2.2  | Upgraded to use Azure storage client library version 3.0.3.| V3.0.3 | 2013-08-15
+| V2.2.1  | Fixed performance issue when copying large amount files within same storage account.| V2.1.0 |
+| V2.2    | Supports setting the virtual directory delimiter for blob names. Supports specifying the journal file path.| V2.1.0 |
+| V2.1    | Provides more than 20 options to support blob upload, download, and copy operations in an efficient way.| V2.0.5 |
 
 
 ## Next steps
@@ -961,6 +966,7 @@ For more information about Azure Storage and AzCopy, see the following resources
 - [Create an SMB file share in Azure with File storage](/documentation/articles/storage-dotnet-how-to-use-files)
 
 ### Azure Storage blog posts:
+- [DML: Introducing azure storage data movement library preview] (https://azure.microsoft.com/blog/introducing-azure-storage-data-movement-library-preview-2/)
 - [AzCopy: Introducing synchronous copy and customized content type] (http://blogs.msdn.com/b/windowsazurestorage/archive/2015/01/13/azcopy-introducing-synchronous-copy-and-customized-content-type.aspx)
 - [AzCopy: Announcing General Availability of AzCopy 3.0 plus preview release of AzCopy 4.0 with Table and File support](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/10/29/azcopy-announcing-general-availability-of-azcopy-3-0-plus-preview-release-of-azcopy-4-0-with-table-and-file-support.aspx)
 - [AzCopy: Optimized for Large-Scale Copy Scenarios](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/08/08/azcopy-2-5-release.aspx)
@@ -969,5 +975,3 @@ For more information about Azure Storage and AzCopy, see the following resources
 - [AzCopy: Transfer data with re-startable mode and SAS token](http://blogs.msdn.com/b/windowsazurestorage/archive/2013/09/07/azcopy-transfer-data-with-re-startable-mode-and-sas-token.aspx)
 - [AzCopy: Using cross-account Copy Blob](http://blogs.msdn.com/b/windowsazurestorage/archive/2013/04/01/azcopy-using-cross-account-copy-blob.aspx)
 - [AzCopy: Uploading/downloading files for Azure Blobs](http://blogs.msdn.com/b/windowsazurestorage/archive/2012/12/03/azcopy-uploading-downloading-files-for-windows-azure-blobs.aspx)
-
- 

@@ -4,7 +4,7 @@
 
     ![](./media/mobile-services-download-service-locally/download-service-project.png)
 
-4. Under **Download and publish your service to the cloud**, click **Download**.
+<!-- deleted by customization 4 --><!-- keep by customization: begin --> 3 <!-- keep by customization: end -->. Under **Download and publish your service to the cloud**, click **Download**.
 
 	This downloads the Visual Studio project that implements your mobile service. Save the compressed project file to your local computer, and make a note of where you saved it.
 

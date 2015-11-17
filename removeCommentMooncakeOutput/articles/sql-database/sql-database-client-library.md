@@ -8,9 +8,9 @@
    editor=""/>
 
 <tags
-   ms.service="sql-database"
-   ms.date="08/25/2015"
-   wacn.date=""/>
+	ms.service="sql-database"
+	ms.date="08/25/2015"
+	wacn.date=""/>
 
 # Create and manage SQL Database with C&#x23;
 
@@ -101,7 +101,7 @@ To create a new application and register it in the correct active directory do t
 
 The domain name is required for your code. An easy way to identify the proper domain name is to:
 
-1. Go to the [Azure Management Portal](http://manage.windowsazure.cn).
+1. Go to the [Azure Management Portal](https://manage.windowsazure.cn).
 2. Hover over your name in the upper right corner and note the Domain that appears in the pop-up window.
 
     ![Identify domain name][3]
@@ -332,7 +332,7 @@ To create a new pool on a server:
 
 ## Move an existing database into an elastic database pool
 
-*After creating a pool you can also use Transact-SQL for moving existing databases in and out of a pool. For details see, [Elastic database pool reference - Transact-SQL](/documentation/articles/sql-database-elastic-pool-reference/#Transact-SQL).*
+*After creating a pool you can also use Transact-SQL for moving existing databases in and out of a pool. For details see, [Elastic database pool reference - Transact-SQL](/documentation/articles/sql-database-elastic-pool-reference#Transact-SQL).*
 
 To move an existing database into a pool:
 
@@ -364,7 +364,7 @@ To move an existing database into a pool:
 
 ## Create a new database in an elastic database pool
 
-*After creating a pool you can also use Transact-SQL for creating new elastic databases in the pool. For details see, [Elastic database pool reference - Transact-SQL](/documentation/articles/sql-database-elastic-pool-reference/#Transact-SQL).*
+*After creating a pool you can also use Transact-SQL for creating new elastic databases in the pool. For details see, [Elastic database pool reference - Transact-SQL](/documentation/articles/sql-database-elastic-pool-reference#Transact-SQL).*
 
 To create a new database directly in a pool:
 

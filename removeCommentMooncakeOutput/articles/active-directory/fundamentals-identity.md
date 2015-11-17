@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Azure Identity"
+	pageTitle="Azure Identity | Windows Azure"
 	description="Learn about using Active Directory in Azure."
 	services="active-directory"
 	documentationCenter=".net"
@@ -9,7 +9,6 @@
 
 <tags
 	ms.service="multiple"
-
 	ms.date="09/22/2015"
 	wacn.date=""/>
 
@@ -20,4 +19,4 @@
 
 
 
-[WACOM.INCLUDE [identity](../includes/identity)]
+[AZURE.INCLUDE [identity](../includes/identity.md)]

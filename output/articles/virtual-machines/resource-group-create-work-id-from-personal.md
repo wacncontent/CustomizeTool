@@ -17,8 +17,13 @@
 
 If you created a personal Azure account or have a personal MSDN subscription and created the Azure account to take advantage of the MSDN Azure credits -- you used a *Microsoft account* identity to create it. Many great features of Azure -- [resource group templates](/documentation/articles/resource-group-overview) is one example -- require a work or school account (an identity managed by Azure Active Directory) to work.
 
+<!-- deleted by customization
 
 > [AZURE.NOTE] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model). This article covers using both models, but Microsoft recommends that most new deployments use the Resource Manager model.
+-->
+<!-- keep by customization: begin -->
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-include.md)] This article covers creating an AAD identity that will be needed for both the Resource Manager deployment model and the classic deployment model.
+<!-- keep by customization: end -->
 
 
 Fortunately, one of the best things about your personal Azure account is that it comes with a default Azure Active Directory domain that you can use to create a new work or school account that you can use with Azure features that require it.
@@ -128,14 +133,14 @@ You can now use your new Azure Active Directory identity to use [Azure resource 
     + Listing resource groups
     info:    No matched resource groups were found
     info:    group list command OK
-    ralph@local:~$ azure group create newgroup westus
+    ralph@local:~$ azure group create newgroup chinanorth
     info:    Executing command group create
     + Getting resource group newgroup
     + Creating resource group newgroup
     info:    Created resource group newgroup
     data:    Id:                  /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/newgroup
     data:    Name:                newgroup
-    data:    Location:            westus
+    data:    Location:            chinanorth
     data:    Provisioning State:  Succeeded
     data:    Tags:
     data:

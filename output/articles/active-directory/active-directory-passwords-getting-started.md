@@ -40,7 +40,7 @@ This section walks you through enabling self-service password reset for your AAD
 ###  Prerequisites
 Before you can enable and use self-service password reset, you must complete the following prerequisites:
 
-- Create an AAD tenant. For more information, see [Getting Started with Azure AD](https://azure.microsoft.com/trial/get-started-active-directory/)
+- Create an AAD tenant. <!-- deleted by customization For more information, see [Getting Started with Azure AD](https://azure.microsoft.com/trial/get-started-active-directory/) -->
 - Obtain an Azure subscription. For more information, see [What is an Azure AD tenant?](/documentation/articles/active-directory-administer#what-is-an-azure-ad-tenant).
 - Associate your AAD tenant with your Azure subscription. For more information, see [How Azure subscriptions are associated with Azure AD](https://msdn.microsoft.com/zh-cn/library/azure/dn629581.aspx).
 - Upgrade to Azure AD Premium or Basic. For more information, see [Azure Active Directory Editions](/home/features/identity/#price).
@@ -114,7 +114,7 @@ If you want to learn more about what data is used by password reset, as well as 
 Now that you’ve configured a user reset policy and specified contact details for your user, this user can perform a self-service password reset.
 
 #### To perform a self-service password reset
-1.	If you go to a site like [**portal.microsoftonline.com**](http://portal.partner.microsoftonline.cn), you’ll see a login screen like the below.  Click the **Can’t access your account?** link to test the password reset UI.
+1.	If you go to a site like <!-- deleted by customization [**portal.partner.microsoftonline.cn**](http://portal.partner.microsoftonline.cn) --><!-- keep by customization: begin --> [**portal.partner.microsoftonline.cn**](https://portal.partner.microsoftonline.cn) <!-- keep by customization: end -->, you’ll see a login screen like the below.  Click the **Can’t access your account?** link to test the password reset UI.
 
     ![][011]
 

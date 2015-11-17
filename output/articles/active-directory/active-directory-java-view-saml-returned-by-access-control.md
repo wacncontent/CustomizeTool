@@ -23,11 +23,16 @@ For more information on ACS, see the [Next steps](#next_steps) section.
 > [AZURE.NOTE]
 > The Azure Access Services Control Filter is a community technology preview. As pre-release software, it is not formally supported by Microsoft.
 
+<!-- deleted by customization
 ## Prerequisites
+-->
+<!-- keep by customization: begin -->
+## <a name="pre"></a>Prerequisites
+<!-- keep by customization: end -->
 
 To complete the tasks in this guide, complete the sample at [How to Authenticate Web Users with Azure Access Control Service Using Eclipse][] and use it as the starting point for this tutorial.
 
-## Add the JspWriter library to your build path and deployment assembly
+## <!-- deleted by customization Add --><!-- keep by customization: begin --> <a name="add_library"></a>Add <!-- keep by customization: end --> the JspWriter library to your build path and deployment assembly
 
 Add the library that contains the **javax.servlet.jsp.JspWriter** class to your build path and deployment assembly. If you are using Tomcat, the library is **jsp-api.jar**, which is located in the Apache **lib** folder.
 
@@ -39,7 +44,12 @@ Add the library that contains the **javax.servlet.jsp.JspWriter** class to your 
 6. Select the appropriate library and click **Finish**.
 7. Click **OK** to close the **Properties for MyACSHelloWorld** dialog.
 
+<!-- deleted by customization
 ## Modify the JSP file to display SAML
+-->
+<!-- keep by customization: begin -->
+## <a name="modify_jsp"></a>Modify the JSP file to display SAML
+<!-- keep by customization: end -->
 
 Modify **index.jsp** to use the following code.
 
@@ -173,12 +183,22 @@ Modify **index.jsp** to use the following code.
 	</body>
 	</html>
 
+<!-- deleted by customization
 ## Run the application
+-->
+<!-- keep by customization: begin -->
+## <a name="run_application"></a>Run the application
+<!-- keep by customization: end -->
 
 1. Run your application in the computer emulator or deploy to Azure, using the steps documented at [How to Authenticate Web Users with Azure Access Control Service Using Eclipse][].
 2. Launch a browser and open your web application. After you log on to your application, you'll see SAML information, including the security assertion provided by the identity provider.
 
+<!-- deleted by customization
 ## Next steps
+-->
+<!-- keep by customization: begin -->
+## <a name="next_steps"></a>Next steps
+<!-- keep by customization: end -->
 
 To further explore ACS's functionality and to experiment with more sophisticated scenarios, see [Access Control Service 2.0][].
 

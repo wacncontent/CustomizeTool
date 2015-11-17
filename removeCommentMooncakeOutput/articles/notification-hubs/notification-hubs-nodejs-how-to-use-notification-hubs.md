@@ -9,19 +9,11 @@
 
 <tags
 	ms.service="notification-hubs"
-	ms.date="06/16/2015"
+	ms.date="09/24/2015"
 	wacn.date=""/>
-	
-	
-	
-	
-	
-# How to use Notification Hubs from Node.js
 
-> [AZURE.SELECTOR]
-- [Java](/documentation/articles/notification-hubs-java-backend-how-to)
-- [PHP](/documentation/articles/notification-hubs-php-backend-how-to)
-- [Python](/documentation/articles/notification-hubs-python-backend-how-to)
+# How to use Notification Hubs from Node.js
+[AZURE.INCLUDE [notification-hubs-backend-how-to-selector](../includes/notification-hubs-backend-how-to-selector.md)]
 
 ##Overview
 
@@ -29,8 +21,6 @@ This guide will show you how to use Notification Hubs
 from Node.js applications. The scenarios covered include **sending notifications to Android, iOS, Windows Phone and Windows Store applications**. For more information on notification hubs, see the [Next Steps](#next) section.
 
 ##What are Notification Hubs?
-
-
 
 Azure Notification Hubs provide an easy-to-use, multiplatform, scalable infrastructure for sending push notifications to mobile devices. For more information, see [Azure Notification Hubs](http://msdn.microsoft.com/zh-cn/library/azure/jj927170.aspx).
 
@@ -64,7 +54,7 @@ communicate with the REST services.
 		|-- request@2.16.6 (forever-agent@0.2.0, aws-sign@0.2.0, tunnel-agent@0.2.0, oauth-sign@0.2.0, json-stringify-safe@3.0.0, cookie-jar@0.2.0, node-uuid@1.4.0, qs@0.5.5, hawk@0.10.2, form-data@0.0.7)
 
 3.  You can manually run the **ls** or **dir** command to verify that a
-    **node_modules** folder was created. Inside that folder find the
+    **node\_modules** folder was created. Inside that folder find the
     **azure** package, which contains the libraries you need to access
     Notification Hub.
 
@@ -224,8 +214,8 @@ links to learn more.
   [SqlFilter.SqlExpression]: http://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.sqlfilter.sqlexpression.aspx
   [Azure Service Bus Notification Hubs]: http://msdn.microsoft.com/zh-cn/library/azure/jj927170.aspx
   [SqlFilter]: http://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.sqlfilter.aspx
-  [ Website with WebMatrix]: /develop/nodejs/tutorials/web-site-with-webmatrix/
-  [Node.js Cloud Service]: /documentation/articles/cloud-services-nodejs-develop-deploy-app/
+  [Web Site with WebMatrix]: /develop/nodejs/tutorials/web-site-with-webmatrix/
+  [Node.js Cloud Service]: /documentation/articles/cloud-services-nodejs-develop-deploy-app
 [Previous Management Portal]: .media/notification-hubs-nodejs-how-to-use-notification-hubs/previous-portal.png
   [nodejswebsite]: /develop/nodejs/tutorials/create-a-website-(mac)/
   [Node.js Cloud Service with Storage]: /develop/nodejs/tutorials/web-app-with-storage/

@@ -6,10 +6,10 @@
    authors="sethmanheim"
    manager="timlt"
    editor="" />
-<tags 
-   ms.service="service-bus"
-   ms.date="10/14/2015"
-   wacn.date=""/>
+<tags
+	ms.service="service-bus"
+	ms.date="10/14/2015"
+	wacn.date=""/>
 
 # Service Bus quotas
 

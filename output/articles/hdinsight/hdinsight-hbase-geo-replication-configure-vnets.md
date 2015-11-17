@@ -26,10 +26,12 @@ Azure virtual network site-to-site connectivity uses a VPN gateway to provide a 
 - Cross subscription, inter-organization communication in Azure
 
 For more information, see [Configure a VNet to VNet connection](/documentation/articles/virtual-networks-configure-vnet-to-vnet-connection). 
+<!-- deleted by customization
 
 To see it on video:
 
 > [AZURE.VIDEO configure-the-vpn-connectivity-between-two-azure-virtual-networks]
+-->
 
 This tutorial is a part of the [series][hdinsight-hbase-replication] on creating HBase geo-replication. 
 
@@ -247,14 +249,21 @@ In this tutorial you have learned how to configure a VPN connection between two 
 
 [hdinsight-hbase-geo-replication-dns]: /documentation/articles/hdinsight-hbase-geo-replication-configure-DNS
 [hdinsight-hbase-geo-replication]: /documentation/articles/hdinsight-hbase-geo-replication
+
+
 [azure-purchase-options]: /pricing/overview/
-[azure-member-offers]: http://azure.microsoft.com/pricing/member-offers/
+[azure-member-offers]: /pricing/member-offers/
 [azure-trial]: /pricing/1rmb-trial/
 [azure-portal]: https://manage.windowsazure.cn
 
 [powershell-install]: /documentation/articles/install-configure-powershell
+
+
+
 [hdinsight-hbase-replication]: /documentation/articles/hdinsight-hbase-geo-replication
 [hdinsight-hbase-dns]: /documentation/articles/hdinsight-hbase-geo-replication-configure-DNS
+
+
 [img-vnet-diagram]: ./media/hdinsight-hbase-geo-replication-configure-VNets/HDInsight.HBase.VPN.diagram.png
 [img-vnet-lnet-diagram]: ./media/hdinsight-hbase-geo-replication-configure-VNets/HDInsight.HBase.VPN.LNet.diagram.png
 [img-vpn-status]: ./media/hdinsight-hbase-geo-replication-configure-VNets/HDInsight.HBase.VPN.status.png 

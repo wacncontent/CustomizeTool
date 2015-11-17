@@ -7,10 +7,10 @@
     manager="jhubbard" 
     authors="sidneyh"/>
 
-<tags 
-    ms.service="sql-database" 
-    ms.date="07/07/2015" 
-    wacn.date="" />
+<tags
+	ms.service="sql-database"
+	ms.date="07/07/2015"
+	wacn.date=""/>
 
 # Split-Merge security configuration  
 
@@ -25,18 +25,18 @@ Certificates are configured in two ways.
 
 ## To obtain certificates
 
-Certificates can be obtained from public Certificate Authorities (CAs) or from the [Windows Certificate Service](https://msdn.microsoft.com/zh-CN/library/windows/desktop/aa376539.aspx). These are the preferred methods to obtain certificates.
+Certificates can be obtained from public Certificate Authorities (CAs) or from the [Windows Certificate Service](http://msdn.microsoft.com/zh-cn/library/windows/desktop/aa376539.aspx). These are the preferred methods to obtain certificates.
 
 If those options are not available, you can generate **self-signed certificates**.
  
 ## Tools to generate certificates
 
-* [makecert.exe](https://msdn.microsoft.com/zh-CN/library/bfsktky3.aspx)
-* [pvk2pfx.exe](https://msdn.microsoft.com/zh-CN/library/windows/hardware/ff550672.aspx)
+* [makecert.exe](http://msdn.microsoft.com/zh-cn/library/bfsktky3.aspx)
+* [pvk2pfx.exe](http://msdn.microsoft.com/zh-cn/library/windows/hardware/ff550672.aspx)
 
 ### To run the tools
 
-* From a Developer Command Prompt for Visual Studios, see [Visual Studio Command Prompt](https://msdn.microsoft.com/zh-CN/library/ms229859.aspx) 
+* From a Developer Command Prompt for Visual Studios, see [Visual Studio Command Prompt](http://msdn.microsoft.com/zh-cn/library/ms229859.aspx) 
 
     If installed, go to:
 
@@ -470,13 +470,13 @@ In the Certificate Import Wizard:
 
 In the [Azure Management Portal](http://manage.windowsazure.cn/)
 
-1. Select Cloud Services
-2. Select the cloud service
-3. Click Certificates on the top menu
-4. Click Upload in the bottom bar
-5. Select the certificate file
-6. If it is a .PFX file, enter the password for the private key
-7. Once completed, copy the certificate thumbprint from the new entry in the list
+1. Select **Cloud Services**.
+2. Select the cloud service.
+3. On the top menu, click **Certificates**.
+4. On the bottom bar, click **Upload**.
+5. Select the certificate file.
+6. If it is a .PFX file, enter the password for the private key.
+7. Once completed, copy the certificate thumbprint from the new entry in the list.
 
 ## Other security considerations
  

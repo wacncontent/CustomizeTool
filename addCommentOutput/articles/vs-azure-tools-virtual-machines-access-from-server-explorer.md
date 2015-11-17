@@ -47,4 +47,4 @@ If you have virtual machines hosted by Azure, you can access them in Server Expl
 
 ## Next steps
 
-To learn more about using Azure roles in Visual Studio, see [Using Remote Desktop with Azure <!-- deleted by customization Roles](/documentation/articles/vs-azure-tools-remote-desktop-roles) --><!-- keep by customization: begin --> Roles](http://go.microsoft.com/fwlink/p/?LinkID=623091) <!-- keep by customization: end -->.
+To learn more about using Azure roles in Visual Studio, see [Using Remote Desktop with Azure Roles](/documentation/articles/vs-azure-tools-remote-desktop-roles).

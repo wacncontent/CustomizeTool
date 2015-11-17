@@ -13,13 +13,8 @@
 	wacn.date=""/>
 
 
-<!-- deleted by customization
 # Import a BACPAC file to create a new Azure SQL database
 
--->
-<!-- keep by customization: begin -->
-# Import a BACPAC to a SQL Database
-<!-- keep by customization: end -->
 
 **Single database**
 
@@ -27,16 +22,11 @@
 - [Azure Preview Portal](/documentation/articles/sql-database-import)
 - [PowerShell](/documentation/articles/sql-database-import-powershell)
 
-<!-- deleted by customization
 This article provides directions for creating a new Azure SQL database from a BACPAC file using the [Azure preview portal](https://manage.windowsazure.cn).
--->
-<!-- keep by customization: begin -->
-This article shows you how to create a SQL Database by importing a BACPAC with the [Azure preview portal](https://manage.windowsazure.cn).
-<!-- keep by customization: end -->
 
 A BACPAC is a .bacpac file that contains a database schema and data. For details, see Backup Package (.bacpac) in [Data-tier Applications](https://msdn.microsoft.com/zh-cn/library/ee210546.aspx).
 
-The database is created from a BACPAC imported from an Azure storage blob container. If you don't have a .bacpac file in Azure storage you can create one by following the steps in [Create and export a BACPAC of an Azure SQL <!-- deleted by customization Database](/documentation/articles/sql-database-export) --><!-- keep by customization: begin --> Database](/documentation/articles/sql-database-backup) <!-- keep by customization: end -->.
+The database is created from a BACPAC imported from an Azure storage blob container. If you don't have a .bacpac file in Azure storage you can create one by following the steps in [Create and export a BACPAC of an Azure SQL Database](/documentation/articles/sql-database-export).
 
 
 > [AZURE.NOTE] Azure SQL Database automatically creates and maintains backups for every user database that you can restore. For details, see [Business Continuity Overview](/documentation/articles/sql-database-business-continuity).
@@ -106,7 +96,12 @@ Clicking **Create** submits an import database request to the service. Depending
 
 ## Additional resources
 
+<!-- deleted by customization
 - [SQL Database documentation](/documentation/services/sql-database/)
+-->
+<!-- keep by customization: begin -->
+- [SQL Database documentation](/documentation/services/sql-databases/)
+<!-- keep by customization: end -->
 
 
 <!--Image references-->

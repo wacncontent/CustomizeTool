@@ -6,10 +6,14 @@
    authors="patshea123"
    manager="douge"
    editor="tlee" />
-<tags
-	ms.service="visual-studio-online""
-	ms.date="08/12/2015"
-	wacn.date=""/>
+<tags 
+   ms.service="visual-studio-online""
+   ms.devlang="multiple"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="visual-studio-online"
+   ms.date="08/12/2015"
+   ms.author="patshea" />
 
 # Adding an Azure Active Directory by using Connected Services in Visual Studio 
 
@@ -27,7 +31,7 @@ You can use the Connected Services dialog to connect to Azure AD in the followin
 
 ### Connect to Azure AD using the Connected Services dialog
 
-1. Make sure you have an Azure account. If you don't have an Azure account, you can sign up for a [trial](/pricing/free-trial/).
+1. Make sure you have an Azure account. If you don't have an Azure account, you can sign up for a <!-- deleted by customization [trial](/pricing/free-trial/) --><!-- keep by customization: begin --> [trial](/pricing/1rmb-trial/) <!-- keep by customization: end -->.
 
 1. In Visual Studio, open the shortcut menu of the **References** node in your project and choose **Add Connected Services**.
 1. Select **Azure AD Authentication** and then choose **Configure**.

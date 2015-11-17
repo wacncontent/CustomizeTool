@@ -38,9 +38,10 @@ Completing this tutorial requires [Xamarin.iOS], XCode 6.0 and iOS 7.0 or later 
 [AZURE.INCLUDE [mobile-services-restrict-permissions-javascript-backend](../includes/mobile-services-restrict-permissions-javascript-backend.md)]
 
 
-<!-- deleted by customization 3 --><!-- keep by customization: begin --> 1 <!-- keep by customization: end -->. In Xcode, open the project that you created when you completed the tutorial [Get started with Mobile Services].
+3. In Xcode, open the project that you created when you completed the tutorial [Get started with Mobile Services].
 
-<!-- deleted by customization 4 --><!-- keep by customization: begin --> 2 <!-- keep by customization: end -->. Press the **Run** button to build the project and start the app in the iPhone emulator; verify that an unhandled exception with a status code of 401 (Unauthorized) is raised after the app starts.
+4. Press the **Run** button to build the project and start the app in the iPhone emulator; verify that an unhandled exception with a status code of 401 (Unauthorized) is raised after the app starts.
+
    	This happens because the app attempts to access Mobile Services as an unauthenticated user, but the _TodoItem_ table now requires authentication.
 
 Next, you will update the app to authenticate users before requesting resources from the mobile service.
@@ -76,6 +77,7 @@ Next, you will update the app to authenticate users before requesting resources 
             // Create an MSTable instance to allow us to work with the ToDoItem table
             todoTable = client.GetSyncTable<ToDoItem>();
         }
+
 4. Create a new asynchronous public method named **LoginAndGetData** defined as:
 
         public async Task LoginAndGetData(MonoTouch.UIKit.UIViewController view)
@@ -100,9 +102,11 @@ Next, you will update the app to authenticate users before requesting resources 
                 // TODO:: show error
                 return;
             }
+
             RefreshAsync();
         }
 6. Remove the original call to **RefreshAsync** from **TodoListViewController.ViewDidLoad**.
+
 7. Press the **Run** button to build the project, start the app in the iPhone emulator, then log-on with your chosen identity provider.
 
    	When you are successfully logged-in, the app should run without errors, and you should be able to query Mobile Services and make updates to data.
@@ -132,9 +136,9 @@ In the next tutorial, [Authorize users with scripts], you will take the user ID 
 [My Applications]: http://go.microsoft.com/fwlink/p/?LinkId=262039
 [Live SDK for Windows]: http://go.microsoft.com/fwlink/p/?LinkId=262253
 
-[Get started with Mobile Services]: /develop/mobile/tutorials/get-started-xamarin-ios
-[Get started with data]: /develop/mobile/tutorials/get-started-with-data-xamarin-ios
-[Get started with authentication]: /develop/mobile/tutorials/get-started-with-users-xamarin-ios
+[Get started with Mobile Services]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-xamarin-ios
+[Get started with data]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-data-xamarin-ios
+[Get started with authentication]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-users-xamarin-ios
 [Get started with push notifications]: /develop/mobile/tutorials/-get-started-with-push-xamarin-ios
 [Authorize users with scripts]: /develop/mobile/tutorials/authorize-users-in-scripts-xamarin-ios
 

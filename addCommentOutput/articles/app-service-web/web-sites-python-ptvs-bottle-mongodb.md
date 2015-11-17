@@ -45,7 +45,7 @@ See the [Python Developer Center] for more articles that cover development of Az
 
 [AZURE.INCLUDE [create-account-and-websites-note](../includes/create-account-and-websites-note.md)]
 
->[AZURE.NOTE] If you want to get started with Azure Websites before signing up for an Azure account, go to [Try Azure Websites](http://go.microsoft.com/fwlink/?LinkId=523751), where you can immediately create a short-lived starter web app in Azure Websites. No credit cards required; no commitments.
+>[AZURE.NOTE] If you want to get started with Azure Websites before signing up for an Azure account, go to [Try Azure <!-- deleted by customization Websites](http://go.microsoft.com/fwlink/?LinkId=523751) --><!-- keep by customization: begin --> Websites](https://tryappservice.azure.com/) <!-- keep by customization: end -->, where you can immediately create a short-lived starter web app in Azure Websites. No credit cards required; no commitments.
 
 ## Create the Project
 

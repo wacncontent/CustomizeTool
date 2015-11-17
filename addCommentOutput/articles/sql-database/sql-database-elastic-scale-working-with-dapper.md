@@ -74,15 +74,15 @@ This code example (from the accompanying sample) illustrates the approach where 
                         );
     }
 
-The call to the [OpenConnectionForKey](http://msdn.microsoft.com/zh-cn/library/azure/dn807226.aspx) API replaces the default creation and opening of a SQL Client connection. The [OpenConnectionForKey](http://msdn.microsoft.com/zh-cn/library/azure/dn807226.aspx) call takes the arguments that are required for data dependent routing <!-- keep by customization: begin --> through Elastic Scale <!-- keep by customization: end -->:
+The call to the [OpenConnectionForKey](http://msdn.microsoft.com/zh-cn/library/azure/dn807226.aspx) API replaces the default creation and opening of a SQL Client connection. The [OpenConnectionForKey](http://msdn.microsoft.com/zh-cn/library/azure/dn807226.aspx) call takes the arguments that are required for data dependent routing: 
 
 -    The shard map to access the data dependent routing interfaces
 -    The sharding key to identify the shardlet
 -    The credentials (user name and password) to connect to the shard
 
-The shard map object creates a connection to the shard that holds the shardlet for the given sharding key. The <!-- deleted by customization elastic --><!-- keep by customization: begin --> Elastic <!-- keep by customization: end --><!-- deleted by customization database client --><!-- keep by customization: begin --> Scale <!-- keep by customization: end --> APIs also tag the connection to implement its consistency guarantees. Since the call to [OpenConnectionForKey](http://msdn.microsoft.com/zh-cn/library/azure/dn807226.aspx) returns a regular SQL Client connection object, the subsequent call to the **Execute** extension method from Dapper follows the standard Dapper practice.
+The shard map object creates a connection to the shard that holds the shardlet for the given sharding key. The elastic database client APIs also tag the connection to implement its consistency guarantees. Since the call to [OpenConnectionForKey](http://msdn.microsoft.com/zh-cn/library/azure/dn807226.aspx) returns a regular SQL Client connection object, the subsequent call to the **Execute** extension method from Dapper follows the standard Dapper practice.
 
-Queries work very much the same way – you first open the connection using [OpenConnectionForKey](http://msdn.microsoft.com/zh-cn/library/azure/dn807226.aspx) from the <!-- deleted by customization client --><!-- keep by customization: begin --> Elastic Scale <!-- keep by customization: end --> API. Then you use the regular Dapper extension methods to map the results of your SQL query into .NET objects:
+Queries work very much the same way – you first open the connection using [OpenConnectionForKey](http://msdn.microsoft.com/zh-cn/library/azure/dn807226.aspx) from the client API. Then you use the regular Dapper extension methods to map the results of your SQL query into .NET objects:
 
     using (SqlConnection sqlconn = shardingLayer.ShardMap.OpenConnectionForKey(
                     key: tenantId1, 

@@ -1,23 +1,22 @@
 <properties 
-	pageTitle="Schedule recurring jobs in Azure Mobile Services" 
-	description="Use the Azure Mobile Services Scheduler to schedule jobs for your mobile app." 
+	pageTitle="Schedule backend tasks in a .NET backend mobile service | Windows Azure"
+	description="Use the scheduler in Azure Mobile Services to define .NET backend jobs that run on a schedule."
 	services="mobile-services" 
 	documentationCenter="" 
 	authors="ggailey777" 
 	manager="dwrede" 
 	editor=""/>
 
-<tags 
-	ms.service="mobile-services" 
-	ms.date="07/21/2015" 
+<tags
+	ms.service="mobile-services"
+	ms.date="09/14/2015"
 	wacn.date=""/>
 
 # Schedule recurring jobs in Mobile Services 
 
-> [AZURE.SELECTOR-LIST (Platform | Backend)]
-- [(Any | .NET)](/documentation/articles/mobile-services-dotnet-backend-schedule-recurring-tasks)
-- [(Any | Javascript)](/documentation/articles/mobile-services-schedule-recurring-tasks)
-
+> [AZURE.SELECTOR]
+- [.NET backend](/documentation/articles/mobile-services-dotnet-backend-schedule-recurring-tasks)
+- [Javascript backend](/documentation/articles/mobile-services-schedule-recurring-tasks)
  
 This topic shows you how to use the job scheduler functionality in the Management Portal to define server script code that is executed based on a schedule that you define. In this case, the script periodically check with a remote service, in this case Twitter, and stores the results in a new table. Some other periodic tasks that can be scheduled include:
 
@@ -41,7 +40,6 @@ This tutorial walks you through how to use the job scheduler to create a schedul
 	<add key="TWITTER_ACCESS_TOKEN_SECRET" value="**your_access_token_secret**" />
 
 The mobile service uses these stored settings when it runs on the local computer, which lets you test the scheduled job before you publish it. When running in Azure, the mobile service instead uses values set in the portal and ignores these project settings. 
-
 
 ##<a name="install-linq2twitter"></a>Download and install the LINQ to Twitter library
 
@@ -124,7 +122,7 @@ Next, you create the scheduled job that accesses Twitter and stores tweet data i
 		        private string accessTokenSecret;
 		
 		        protected override void Initialize(ScheduledJobDescriptor scheduledJobDescriptor, 
-			                CancellationToken cancellationToken)
+					CancellationToken cancellationToken)
 		        {
 		            base.Initialize(scheduledJobDescriptor, cancellationToken);
 		
@@ -241,10 +239,10 @@ Schedule jobs can be tested locally before being published to Azure and register
 
 The job must be registered in the **Scheduler** tab so that Mobile Services can run it on the schedule that you define.
 
-3. Republish the mobile service project to Azure.
+3. Republish the mobile service project to Azure. 
 
 4. In the [Azure Management Portal], click Mobile Services, and then click your app.
- 
+
 2. Click the **Scheduler** tab, then click **+Create**. 
 
     >[AZURE.NOTE]When you run your mobile service in <em>Free</em> tier, you are only able to run one scheduled job at a time. In paid tiers, you can run up to ten scheduled jobs at a time.
@@ -296,4 +294,4 @@ Congratulations, you have successfully created a new scheduled job in your mobil
 [Register your apps for Twitter login with Mobile Services]: /documentation/articles/mobile-services-how-to-register-twitter-authentication
 [Twitter Developers]: https://apps.twitter.com/
 [App settings]: http://msdn.microsoft.com/zh-cn/library/azure/b6bb7d2d-35ae-47eb-a03f-6ee393e170f7
-[LINQ to Twitter CodePlex project]: http://linqtotwitter.codeplex.com/
+[LINQ to Twitter CodePlex project]: http://linqtotwitter.codeplex.com/ 

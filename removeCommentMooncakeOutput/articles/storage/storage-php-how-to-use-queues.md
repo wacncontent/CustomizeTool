@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="storage"
-	ms.date="07/29/2015"
+	ms.date="09/23/2015"
 	wacn.date=""/>
 
 # How to use Queue storage from PHP
@@ -374,6 +374,8 @@ Now that you've learned the basics of Azure Queue storage, follow these links to
 
 - See the MSDN reference [Azure Storage](http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx).
 - Visit the [Azure Storage Team blog](http://blogs.msdn.com/b/windowsazurestorage/).
+
+For more information, see also the [PHP Developer Center](/develop/php/).
 
 [download]: /documentation/articles/php-download-sdk
 [require_once]: http://www.php.net/manual/en/function.require-once.php

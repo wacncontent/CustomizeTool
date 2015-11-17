@@ -223,6 +223,7 @@ This tutorial uses an [HDInsight Storm] installation, which comes with the Event
 [Event Hubs Overview]: /documentation/articles/event-hubs-overview
 [HDInsight Storm]: /documentation/articles/hdinsight-storm-overview
 [HDInsight sensor analysis tutorial]: /documentation/articles/hdinsight-storm-sensor-data-analysis
+
 <!-- Images -->
 
 [12]: ./media/service-bus-event-hubs-getstarted/create-storm1.png

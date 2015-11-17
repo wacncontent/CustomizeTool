@@ -38,14 +38,14 @@ The user account that is specified during virtual machine instance deployment on
 
 You can optionally obtain a root shell using **sudo -s**.
 
-- See [Using root privileges on Linux virtual machines in <!-- deleted by customization Azure](/documentation/articles/virtual-machines-linux-use-root-privileges) --><!-- keep by customization: begin --> Azure](/zh-cn/documentation/articlesvirtual-machines-linux-use-root-privileges/) <!-- keep by customization: end -->
+- See [Using root privileges on Linux virtual machines in Azure](/documentation/articles/virtual-machines-linux-use-root-privileges)
 
 
 ## Firewall Configuration
 
 Azure provides an inbound packet filter that restricts connectivity to ports specified in the Management Portal. By default, the only allowed port is SSH. You may open up access to additional ports on your Linux virtual machine by configuring endpoints in the Management Portal:
 
- - See: [How to Set Up Endpoints to a Virtual <!-- deleted by customization Machine](/documentation/articles/virtual-machines-set-up-endpoints) --><!-- keep by customization: begin --> Machine](/documentation/articles/virtual-machines-set-up-endpoints/) <!-- keep by customization: end -->
+ - See: [How to Set Up Endpoints to a Virtual Machine](/documentation/articles/virtual-machines-set-up-endpoints)
 
 The Linux images in the Azure Gallery do not enable the *iptables* firewall by default. If desired, the firewall may be configured to provide additional filtering.
 
@@ -60,12 +60,7 @@ If hostname changes are desired after a virtual machine has been deployed, pleas
 
 The Azure Linux Agent includes functionality to automatically detect this name change and appropriately configure the virtual machine to persist this change and publish this change to the platform DNS servers.
 
-<!-- deleted by customization
  - [Azure Linux Agent User Guide](/documentation/articles/virtual-machines-linux-agent-user-guide)
--->
-<!-- keep by customization: begin -->
- - [Azure Linux Agent User Guide](/documentation/articles/virtual-machines-linux-agent-user-guide/)
-<!-- keep by customization: end -->
 
 ### Cloud-Init
 **Ubuntu** and **CoreOS** images utilize cloud-init pn Azure, which provides additional capabilities for bootstrapping a virtual machine.
@@ -86,7 +81,7 @@ Azure provides the ability to capture the state of an existing virtual machine i
 
 3. Click *Capture* in the Management Portal or use the Powershell or CLI tools to capture the virtual machine as an image.
 
- - See: [How to Capture a Linux Virtual Machine to Use as a <!-- deleted by customization Template](/documentation/articles/virtual-machines-linux-capture-image) --><!-- keep by customization: begin --> Template](/documentation/articles/virtual-machines-linux-capture-image/) <!-- keep by customization: end -->
+ - See: [How to Capture a Linux Virtual Machine to Use as a Template](/documentation/articles/virtual-machines-linux-capture-image)
 
 
 ## Attaching Disks
@@ -98,6 +93,6 @@ On Linux, the resource disk is typically managed by the Azure Linux Agent and au
 
 	>[AZURE.NOTE] Note that the resource disk is a **temporary** disk, and might be deleted and reformatted when the VM is rebooted.
 
-On Linux the data disk might be named by the kernel as `/dev/sdc`, and users will need to partition, format and mount that resource. This is covered step-by-step in the tutorial: [How to Attach a Data Disk to a Virtual <!-- deleted by customization Machine](/documentation/articles/virtual-machines-linux-how-to-attach-disk) --><!-- keep by customization: begin --> Machine](/documentation/articles/virtual-machines-linux-how-to-attach-disk/) <!-- keep by customization: end -->.
+On Linux the data disk might be named by the kernel as `/dev/sdc`, and users will need to partition, format and mount that resource. This is covered step-by-step in the tutorial: [How to Attach a Data Disk to a Virtual Machine](/documentation/articles/virtual-machines-linux-how-to-attach-disk).
 
- - **See also:** [Configure Software RAID on <!-- deleted by customization Linux](/documentation/articles/virtual-machines-linux-configure-raid) --><!-- keep by customization: begin --> Linux](/documentation/articles/virtual-machines-linux-configure-raid/) <!-- keep by customization: end -->
+ - **See also:** [Configure Software RAID on Linux](/documentation/articles/virtual-machines-linux-configure-raid)

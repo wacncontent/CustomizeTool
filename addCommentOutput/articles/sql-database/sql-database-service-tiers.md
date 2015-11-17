@@ -12,15 +12,10 @@
 	ms.date="10/13/2015"
 	wacn.date=""/>
 
-<!-- deleted by customization
 # SQL Database service tiers
--->
-<!-- keep by customization: begin -->
-# Service Tiers
-<!-- keep by customization: end -->
 
 ## Overview
-[Azure SQL Database](/documentation/articles/sql-database-technical-overview) provides multiple service tiers to handle different types of workloads. You have the option of <!-- deleted by customization [creating --><!-- keep by customization: begin --> creating <!-- keep by customization: end --> a single <!-- deleted by customization database](/documentation/articles/sql-database-get-started) --><!-- keep by customization: begin --> database <!-- keep by customization: end --> with defined characteristics and pricing. Or you can <!-- deleted by customization manage --><!-- keep by customization: begin --> create <!-- keep by customization: end --> multiple databases <!-- deleted by customization by [creating --><!-- keep by customization: begin --> in <!-- keep by customization: end --> an elastic database <!-- deleted by customization pool](/documentation/articles/sql-database-elastic-pool-portal) --><!-- keep by customization: begin --> pool <!-- keep by customization: end -->. In both cases, the tiers include **Basic**, **Standard**, and **Premium**. But the characteristics of these tiers vary based on whether you are creating an individual database or a database within an elastic database pool. This article provides an overview of service tiers in both contexts.
+[Azure SQL Database](/documentation/articles/sql-database-technical-overview) provides multiple service tiers to handle different types of workloads. You have the option of [creating a single database](/documentation/articles/sql-database-get-started) with defined characteristics and pricing. Or you can manage multiple databases by [creating an elastic database pool](/documentation/articles/sql-database-elastic-pool-portal). In both cases, the tiers include **Basic**, **Standard**, and **Premium**. But the characteristics of these tiers vary based on whether you are creating an individual database or a database within an elastic database pool. This article provides an overview of service tiers in both contexts.
 
 ## Service tiers
 Basic, Standard, and Premium service tiers all have an uptime SLA of 99.99% and offer predictable performance, flexible business continuity options, security features, and hourly billing. The following table provides examples of the tiers best suited for different application workloads.
@@ -31,7 +26,7 @@ Basic, Standard, and Premium service tiers all have an uptime SLA of 99.99% and 
 | **Standard** | The go-to option for most cloud applications, supporting multiple concurrent queries. Examples include workgroup or web applications. |
 | **Premium** | Designed for high transactional volume, supporting a large number of concurrent users and requiring the highest level of business continuity capabilities. Examples are databases supporting mission critical applications. |
 
->[AZURE.NOTE] Web and Business editions are being retired. Find out how to [upgrade Web and Business <!-- deleted by customization editions](/documentation/articles/sql-database-upgrade-new-service-tiers). --><!-- keep by customization: begin --> editions](/documentation/articles/sql-database-upgrade-new-service-tiers).<!-- <!-- keep by customization: end --> Please read the [Sunset FAQ](/home/features/sql-database/#priceweb-business/) if you plan to continue using Web and Business <!-- deleted by customization Editions. --><!-- keep by customization: begin --> Editions.--><!-- keep by customization: end -->
+>[AZURE.NOTE] Web and Business editions are being retired. Find out how to [upgrade Web and Business editions](/documentation/articles/sql-database-upgrade-new-service-tiers). <!-- deleted by customization Please read the [Sunset FAQ](/home/features/sql-database/#priceweb-business/) if you plan to continue using Web and Business Editions. -->
 
 ### Service tiers for single databases
 For single databases there are multiple performance levels within each service tier, you have the flexibility to choose the level that best meets your workload’s demands. If you need to scale up or down, you can easily change the tiers of your database in the Azure Management Portal, with zero-downtime for your application. See [Changing Database Service Tiers and Performance Levels](/documentation/articles/sql-database-scale-up) for details.
@@ -62,7 +57,7 @@ Monitoring the performance of a SQL Database starts with monitoring the resource
 
 2.	Dynamic Management Views in the user database, and in the master database of the server that contains the user database.
 
-In the [Azure Preview <!-- deleted by customization portal](https://manage.windowsazure.cn/) --><!-- keep by customization: begin --> portal](https://manage.windowsazure.cn) <!-- keep by customization: end -->, you can monitor a single database’s utilization by selecting your database and clicking the **Monitoring** chart. This brings up a **Metric** window that you can change by clicking the **Edit chart** button. Add the following metrics:
+In the [Azure Preview portal](https://manage.windowsazure.cn/), you can monitor a single database’s utilization by selecting your database and clicking the **Monitoring** chart. This brings up a **Metric** window that you can change by clicking the **Edit chart** button. Add the following metrics:
 
 - CPU Percentage
 - DTU Percentage
@@ -81,10 +76,10 @@ The performance metrics can also help you determine if you are able to downgrade
 
 The same metrics that are exposed in the portal are also available through system views: [sys.resource_stats](https://msdn.microsoft.com/zh-cn/library/dn269979.aspx) in the logical master database of your server, and [sys.dm_db_resource_stats](https://msdn.microsoft.com/zh-cn/library/dn800981.aspx) in the user database (**sys.dm_db_resource_stats** is created in each Basic, Standard, and Premium user database. Web and Business edition databases return an empty result set). Use **sys.resource_stats** if you need to monitor less granular data across a longer period of time. Use **sys.dm_db_resource_stats** if you need to monitor more granular data within a smaller timeframe. For more information, see [Azure SQL Database Performance Guidance](https://msdn.microsoft.com/zh-cn/library/azure/dn369873.aspx).
 
-For elastic database pools, you can monitor individual databases in the pool with the techniques described in this section. But you can also monitor the pool as a whole. For information, see [Monitor and manage an elastic database <!-- deleted by customization pool](/documentation/articles/sql-database-elastic-pool-portal#monitor-and-manage-an-elastic-database-pool) --><!-- keep by customization: begin --> pool](/documentation/articles/sql-database-elastic-pool-portal/#monitor-and-manage-an-elastic-database-pool) <!-- keep by customization: end -->.
+For elastic database pools, you can monitor individual databases in the pool with the techniques described in this section. But you can also monitor the pool as a whole. For information, see [Monitor and manage an elastic database pool](/documentation/articles/sql-database-elastic-pool-portal#monitor-and-manage-an-elastic-database-pool).
 
 ## Next steps
-Find out more about the pricing for these tiers on [SQL Database <!-- deleted by customization Pricing](/home/features/sql-database/#price) --><!-- keep by customization: begin --> Pricing](/home/features/sql-database/#price/) <!-- keep by customization: end -->.
+Find out more about the pricing for these tiers on [SQL Database Pricing](/home/features/sql-database/#price).
 
 If you are interested in managing multiple databases as a group, consider [elastic database pools](/documentation/articles/sql-database-elastic-pool-guidance) along with the associated [price and performance considerations for elastic database pools](/documentation/articles/sql-database-elastic-pool-guidance).
 

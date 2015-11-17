@@ -8,9 +8,9 @@
    editor=""/>
 
 <tags
-   ms.service="billing"
-   ms.date="08/10/2015"
-   wacn.date=""/>
+	ms.service="billing"
+	ms.date="08/10/2015"
+	wacn.date=""/>
 
 # Cloud Cruiser and Windows Azure Billing API Integration
 
@@ -180,7 +180,7 @@ The next step is to pull the information from the Usage API into Cloud Cruiser. 
         "meterCategory": "Virtual Machines",
         "meterSubCategory": "Standard_D1 VM (Non-Windows)",
         "unit": "Hours",
-        "instanceData": "{\"Microsoft.Resources\":{\"resourceUri\":\"/subscriptions/bb678b04-0e48-4b44-XXXX-XXXXXXXX/resourceGroups/DEMOUSAGEAPI/providers/Microsoft.Compute/virtualMachines/MyDockerVM\",\"location\":\"eastus\",\"tags\":{\"Department\":\"Sales\",\"Project\":\"Demo Usage API\",\"Environment\":\"Test\",\"Owner\":\"RSE\"},\"additionalInfo\":{\"ImageType\":\"Canonical\",\"ServiceType\":\"Standard_D1\"}}}",
+        "instanceData": "{\"Microsoft.Resources\":{\"resourceUri\":\"/subscriptions/bb678b04-0e48-4b44-XXXX-XXXXXXXX/resourceGroups/DEMOUSAGEAPI/providers/Microsoft.Compute/virtualMachines/MyDockerVM\",\"location\":\"chinaeast\",\"tags\":{\"Department\":\"Sales\",\"Project\":\"Demo Usage API\",\"Environment\":\"Test\",\"Owner\":\"RSE\"},\"additionalInfo\":{\"ImageType\":\"Canonical\",\"ServiceType\":\"Standard_D1\"}}}",
         "meterId": "e60caf26-9ba0-413d-a422-6141f58081d6",
         "infoFields": {},
         "quantity": 8

@@ -7,9 +7,9 @@
 	manager="twilio" 
 	editor=""/>
 
-<tags 
-	ms.service="multiple" 
-	ms.date="11/25/2014" 
+<tags
+	ms.service="multiple"
+	ms.date="11/25/2014"
 	wacn.date=""/>
 
 
@@ -189,4 +189,4 @@ Now that you've learned the basics of the Twilio service, follow these links to 
 [twilio_support]: http://www.twilio.com/help/contact
 [twilio_quickstarts]: http://www.twilio.com/docs/quickstart
 [sinatra]: http://www.sinatrarb.com/
-[azure_vm_setup]: http://www.windowsazure.cn/develop/ruby/tutorials/web-app-with-linux-vm/
+[azure_vm_setup]: /develop/ruby/tutorials/web-app-with-linux-vm/

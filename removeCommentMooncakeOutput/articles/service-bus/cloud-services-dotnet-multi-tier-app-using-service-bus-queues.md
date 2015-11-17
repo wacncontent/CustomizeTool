@@ -335,7 +335,7 @@ displays.
 
 8.  Now, you will change the displayed name of your application. In the
     **Solution Explorer**, double-click the
-    **Views\Shared\_Layout.cshtml** file to open it in the Visual
+    **Views\Shared\\_Layout.cshtml** file to open it in the Visual
     Studio editor.
 
 9.  Replace all occurrences of **My ASP.NET MVC Application** with

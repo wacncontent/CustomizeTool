@@ -19,14 +19,14 @@
 - [Azure Preview Portal](/documentation/articles/cloud-services-custom-domain-name-portal)
 
 
-When you create a Cloud Service, Azure assigns it to a subdomain of chinacloudapp.cn. For example, if your Cloud Service is named "contoso", your users will be able to access your application on a URL like http://&lt;*contoso*>.chinacloudapp.cn. Azure also assigns a virtual IP address.
+When you create a Cloud Service, Azure assigns it to a subdomain of chinacloudapp.cn. For example, if your Cloud Service is named "contoso", your users will be able to access your application on a URL like http://contoso.chinacloudapp.cn. Azure also assigns a virtual IP address.
 
 However, you can also expose your application on your own domain name, such as contoso.com. This article explains how to reserve or configure a custom domain name for Cloud Service web roles.
 
 Do you already undestand what CNAME and A records are? [Jump past the explaination](#add-a-cname-record-for-your-custom-domain).
 
 > [AZURE.NOTE]
-> Get going faster--use the NEW Azure [guided walkthrough](https://support.microsoft.com/zh-cn/kb/2990804)!  It makes associating a custom domain name AND securing communication (SSL) with Azure Cloud Services or Azure Websites a snap.
+> Get going faster--use the NEW Azure [guided walkthrough](http://support.microsoft.com/kb/2990804)!  It makes associating a custom domain name AND securing communication (SSL) with Azure Cloud Services or Azure Websites a snap.
 
 <p/>
 
@@ -148,6 +148,9 @@ This example demonstrates creating an A record for the root domain. If you wish 
 * [General configuration of your cloud service](/documentation/articles/cloud-services-how-to-configure).
 * Learn how to [deploy a cloud service](/documentation/articles/cloud-services-how-to-create-deploy).
 * Configure [ssl certificates](/documentation/articles/cloud-services-configure-ssl-certificate).
+
+
+
 
 [Expose Your Application on a Custom Domain]: #access-app
 [Add a CNAME Record for Your Custom Domain]: #add-cname

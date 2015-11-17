@@ -25,6 +25,6 @@ Azure provides different hosting models for running applications. Each one provi
 ## Next steps
 Learn more about [Virtual Machines](https://msdn.microsoft.com/zh-cn/library/azure/jj156143.aspx)
 
-[Azure Websites]: /documentation/articles/app-service-choose-me
+[Azure Websites]: /documentation/services/web-sites
 [Virtual Machines]: #tellmevm
 [Cloud Services]: /documentation/articles/cloud-services-choose-me

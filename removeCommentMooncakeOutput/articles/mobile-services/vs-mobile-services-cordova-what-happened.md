@@ -7,9 +7,9 @@
 	manager="douge" 
 	editor=""/>
 
-<tags 
-	ms.service="mobile-services" 
-	ms.date="09/17/2015" 
+<tags
+	ms.service="mobile-services"
+	ms.date="09/17/2015"
 	wacn.date=""/>
 
 # What happened to my Azure Cordova project after adding Azure Mobile Services by using Visual Studio Connected Services?
@@ -33,4 +33,4 @@ Under `services\mobileServices\settings`, a new JavaScript (.js) file with a **M
 	        "<insert your key>"
 	    );
 
-[Learn more about mobile services](/home/features/mobile-services) 
+[Learn more about mobile services](/documentation/services/mobile-services/) 

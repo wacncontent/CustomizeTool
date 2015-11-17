@@ -85,7 +85,12 @@ Open the SQL Database blade for the database you want to scale up or down:
 ## Additional resources
 
 - [Business Continuity Overview](/documentation/articles/sql-database-business-continuity)
+<!-- deleted by customization
 - [SQL Database documentation](/documentation/services/sql-database/)
+-->
+<!-- keep by customization: begin -->
+- [SQL Database documentation](/documentation/services/sql-databases/)
+<!-- keep by customization: end -->
 
 
 <!--Image references-->

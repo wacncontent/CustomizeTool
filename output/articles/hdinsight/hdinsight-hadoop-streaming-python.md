@@ -17,9 +17,14 @@
 
 Hadoop provides a streaming API for MapReduce that enables you to write map and reduce functions in languages other than Java. In this article, you will learn how to use Python to perform MapReduce operations.
 
+<!-- deleted by customization
 > [AZURE.NOTE] While the Python code in this document can be used with a Windows-based HDInsight cluster, the steps in this document are specific to Linux-based clusters.
 
 This article is based on information and examples published by Michael Noll at [http://www.michael-noll.com/tutorials/writing-an-hadoop-mapreduce-program-in-python/](Writing an Hadoop MapReduce Program in Python).
+-->
+<!-- keep by customization: begin -->
+> [AZURE.NOTE] This article is based on information and examples published by Michael Noll at [http://www.michael-noll.com/tutorials/writing-an-hadoop-mapreduce-program-in-python/](http://www.michael-noll.com/tutorials/writing-an-hadoop-mapreduce-program-in-python/).
+<!-- keep by customization: end -->
 
 ##Prerequisites
 
@@ -140,7 +145,7 @@ From the client, in the same directory as **mapper.py** and **reducer.py**, use 
 
 This copies the files from the local system to the head node.
 
-> [AZURE.NOTE] If you used a password to secure your SSH account, you will be prompted for the password. If you used an SSH key, you may have to use the `-i` parameter and the path to the private key, for example, `scp -i /path/to/private/key mapper.py reducer.py username@clustername-ssh.azurehdinsight.cn:`.
+> [AZURE<!-- deleted by customization. -->NOTE] If you used a password to secure your SSH account, you will be prompted for the password. If you used an SSH key, you may have to use the `-i` parameter and the path to the private key, for example, `scp -i /path/to/private/key mapper.py reducer.py username@clustername-ssh.azurehdinsight.cn:`.
 
 ##Run MapReduce
 
@@ -152,7 +157,7 @@ This copies the files from the local system to the head node.
 
 2. Use the following command to start the MapReduce job.
 
-		hadoop jar /usr/hdp/current/hadoop-mapreduce-client/hadoop-streaming.jar -files mapper.py,reducer.py -mapper mapper.py -reducer reducer.py -input wasb:///example/data/gutenberg/davinci.txt -output wasb:///example/wordcountout
+		hadoop jar /usr/hdp/current/hadoop-mapreduce-client/hadoop-streaming.jar -files mapper.py,reducer.py -mapper mapper.py -reducer reducer.py -input <!-- deleted by customization wasb:///example/data/gutenberg/davinci.txt --><!-- keep by customization: begin --> wasb:///example/data/davinci.txt <!-- keep by customization: end --> -output wasb:///example/wordcountout
 
 	This command has the following parts:
 

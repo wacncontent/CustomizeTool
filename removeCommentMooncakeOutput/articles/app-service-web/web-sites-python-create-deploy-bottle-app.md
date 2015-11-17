@@ -38,7 +38,7 @@ You will create a web app using the Bottle web framework (see alternate versions
 - Python 2.7 or 3.4
 - setuptools, pip, virtualenv (Python 2.7 only)
 - Git
-- [Python Tools 2.2 for Visual Studio][](/documentation/articles/PTVS) - Note: this is optional
+- [Python Tools 2.2 for Visual Studio][](PTVS) - Note: this is optional
 
 **Note**: TFS publishing is currently not supported for Python projects.
 
@@ -381,6 +381,7 @@ For information on using Azure Table Storage and MongoDB:
 <!--Link references-->
 [Bottle and MongoDB on Azure with Python Tools for Visual Studio]: /documentation/articles/web-sites-python-ptvs-bottle-table-storage
 [Bottle and Azure Table Storage on Azure with Python Tools for Visual Studio]: /documentation/articles/web-sites-python-ptvs-bottle-table-storage
+
 <!--External Link references-->
 [Azure SDK for Python 2.7]: http://go.microsoft.com/fwlink/?linkid=254281
 [Azure SDK for Python 3.4]: http://go.microsoft.com/fwlink/?linkid=516990

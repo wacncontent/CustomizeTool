@@ -116,7 +116,12 @@ For more information about the Azure Websites platform, see [Azure Websites][Azu
 [AzureDownloads]: /downloads/ 
 [DownloadCenterAddressRanges]: http://www.microsoft.com/download/details.aspx?id=41653  
 [NetworkSecurityGroups]: /documentation/articles/virtual-networks-nsg/
+<!-- deleted by customization
 [AzureAppService]: /documentation/articles/app-service-value-prop-what-is/
+-->
+<!-- keep by customization: begin -->
+[AzureAppService]: /documentation/services/web-sites/
+<!-- keep by customization: end -->
 [IntroToAppServiceEnvironment]:  /documentation/articles/app-service-app-service-environment-intro/
  
 

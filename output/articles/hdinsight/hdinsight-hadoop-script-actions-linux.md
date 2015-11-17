@@ -32,14 +32,18 @@ When you develop a custom script for an HDInsight cluster, there are several bes
 
 - [Target the Hadoop version](#bPS1)
 - [Provide stable links to script resources](#bPS2)
+<!-- deleted by customization
 - [Use pre-compiled resources](#bPS4)
+-->
 - [Ensure that the cluster customization script is idempotent](#bPS3)
 - [Ensure high availability of the cluster architecture](#bPS5)
 - [Configure the custom components to use Azure Blob storage](#bPS6)
 - [Write information to STDOUT and STDERR](#bPS7)
 - [Save files as ASCII with LF line endings](#bps8)
+<!-- deleted by customization
 
 > [AZURE.IMPORTANT] Script actions must complete within 15 minutes, or they will timeout. During node provisioning, the script is ran concurrently with other setup and configuration processes. Competition for resources such as CPU time or network bandwidth may cause the script to take longer to finish than it does in your development environment.
+-->
 
 ### <a name="bPS1"></a>Target the Hadoop version
 
@@ -54,10 +58,12 @@ The best practice is to download and archive everything in an Azure Storage acco
 > [AZURE.IMPORTANT] The storage account used must be the default storage account for the cluster or a public, read-only container on any other storage account.
 
 For example, the samples provided by Microsoft are stored in the [https://hdiconfigactions.blob.core.windows.net/](https://hdiconfigactions.blob.core.windows.net/) storage account, which is a public, read-only container maintained by the HDInsight team.
+<!-- deleted by customization
 
 ### <a name="bPS4"></a>Use pre-compiled resources
 
 To minimize the time it takes to run the script, avoid operations that compile resources from source code. Instead, pre-compile the resources and store the binary version in Azure Blob storage so that it can quickly be downloaded to the cluster from your script.
+-->
 
 ### <a name="bPS3"></a>Ensure that the cluster customization script is idempotent
 

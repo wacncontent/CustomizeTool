@@ -30,9 +30,9 @@ To use Azure Service Bus, download and use the Node.js Azure package. This packa
 
 ### Use Node Package Manager (NPM) to obtain the package
 
-1.Use the **Windows PowerShell for Node.js** command window to navigate to the **c:\\node\\sbqueues\\WebRole1** folder in which you created your sample application.
+1. Use the **Windows PowerShell for Node.js** command window to navigate to the **c:\\node\\sbqueues\\WebRole1** folder in which you created your sample application.
 
-2.Type **npm install azure** in the command window, which should result in output similar to the following:
+2. Type **npm install azure** in the command window, which should result in output similar to the following:
 
 	```
 	azure@0.7.5 node_modules\azure
@@ -48,7 +48,7 @@ To use Azure Service Bus, download and use the Node.js Azure package. This packa
 		└── request@2.21.0 (json-stringify-safe@4.0.0, forever-agent@0.5.0, aws-sign@0.3.0, tunnel-agent@0.3.0, oauth-sign@0.3.0, qs@0.6.5, cookie-jar@0.3.0, node-uuid@1.4.0, http-signature@0.9.11, form-data@0.0.8, hawk@0.13.1)
 	```
 
-3.You can manually run the **ls** command to verify that a **node_modules** folder was created. Inside that folder find the **azure** package, which contains the libraries you need to access Service Bus queues.
+3. You can manually run the **ls** command to verify that a **node\_modules** folder was created. Inside that folder find the **azure** package, which contains the libraries you need to access Service Bus queues.
 
 ### Import the module
 
@@ -58,18 +58,13 @@ Using Notepad or another text editor, add the following to the top of the **serv
 var azure = require('azure');
 ```
 
-<!-- deleted by customization
 ### Set up an Azure Service Bus connection
--->
-<!-- keep by customization: begin -->
-### Setup an Azure Service Bus Connection
-<!-- keep by customization: end -->
 
-The Azure module reads the environment variables AZURE_SERVICEBUS_NAMESPACE and AZURE_SERVICEBUS_ACCESS_KEY to obtain information required to connect to Service Bus. If these environment variables are not set, you must specify the account information when calling **createServiceBusService**.
+The Azure module reads the environment variables AZURE\_SERVICEBUS\_NAMESPACE and AZURE\_SERVICEBUS\_ACCESS\_KEY to obtain information required to connect to Service Bus. If these environment variables are not set, you must specify the account information when calling **createServiceBusService**.
 
 For an example of setting the environment variables in a configuration file for an Azure Cloud Service, see [Node.js Cloud Service with Storage][].
 
-For an example of setting the environment variables in the <!-- deleted by customization Azure Management Portal --><!-- keep by customization: begin --> management portal <!-- keep by customization: end --> for an AzureWebsite, see [Node.js Web Application with <!-- deleted by customization Storage][]. --><!-- keep by customization: begin --> Storage] <!-- keep by customization: end -->
+For an example of setting the environment variables in the Azure Management Portal for an Azure Website, see [Node.js Web Application with Storage][].
 
 ## Create a queue
 
@@ -104,12 +99,7 @@ serviceBusService.createQueueIfNotExists('myqueue', queueOptions, function(error
 });
 ```
 
-<!-- deleted by customization
 ### Filters
--->
-<!-- keep by customization: begin -->
-###Filters
-<!-- keep by customization: end -->
 
 Optional filtering operations can be applied to operations performed using **ServiceBusService**. Filtering operations can include logging, automatically retrying, etc. Filters are objects that implement a method with the signature:
 
@@ -202,21 +192,9 @@ To learn more, see the following resources.
   [Azure Management Portal]: http://manage.windowsazure.cn
   
   [Node.js Cloud Service]: /documentation/articles/cloud-services-nodejs-develop-deploy-app
-<!-- deleted by customization
   [Queues, topics, and subscriptions]: /documentation/articles/service-bus-queues-topics-subscriptions
   [Create and deploy a Node.js application to an Azure Website]: /documentation/articles/web-sites-nodejs-develop-deploy-mac
--->
-<!-- keep by customization: begin -->
-  [Queues, Topics, and Subscriptions]: /documentation/articles/service-bus-queues-topics-subscriptions
-  [Create and deploy a Node.js application to an Azure Website]: /documentation/articles//web-sites-nodejs-develop-deploy-mac
-<!-- keep by customization: end -->
   [Node.js Cloud Service with Storage]: /documentation/articles/storage-nodejs-use-table-storage-cloud-service-app
-<!-- deleted by customization
   [Node.js Web Application with Storage]: /documentation/articles/storage-nodejs-how-to-use-table-storage
   [Azure Queues and Service Bus queues]: /documentation/articles/service-bus-azure-and-service-bus-queues-compared-contrasted#capacity-and-quotas
  
--->
-<!-- keep by customization: begin -->
-  [Node.js Web Application with Storage]:/documentation/articles/storage-nodejs-how-to-use-table-storage
-  [Azure Queues and Service Bus queues]: /documentation/articles/service-bus-azure-and-service-bus-queues-compared-contrasted/#capacity-and-quotas
-<!-- keep by customization: end -->

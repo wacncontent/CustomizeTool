@@ -1176,7 +1176,7 @@ These compatibility issues are resolved in the latest versions of the HDInsight 
 
 * **HDInsight available in new regions**:  We expanded HDInsight geographical presence to three regions. HDInsight customers can create clusters in these regions:
 <!-- deleted by customization
-	* East Asia
+	* China East
 -->
 	* China North
 	* China East

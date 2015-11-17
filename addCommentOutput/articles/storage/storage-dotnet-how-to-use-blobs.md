@@ -36,12 +36,7 @@ use the Azure Storage Client Library for .NET. The scenarios covered include
 
 [AZURE.INCLUDE [storage-dotnet-obtain-assembly](../includes/storage-dotnet-obtain-assembly.md)]
 
-<!-- deleted by customization
 ### Namespace declarations
--->
-<!-- keep by customization: begin -->
-###Namespace declarations
-<!-- keep by customization: end -->
 Add the following namespace declarations to the top of any C\# file
 in which you wish to programmatically access Azure Storage:
 

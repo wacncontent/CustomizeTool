@@ -134,11 +134,11 @@ Expected output:
 3. If needed, create a new resource group using `New-AzureResourceGroup` cmdlet.In the example below, you will create a new resource group called AppgatewayRG in China East location:
 
 		PS C:\> New-AzureResourceGroup -Name AppgatewayRG -Location "China East"
-		VERBOSE: 5:38:49 PM - Created resource group 'AppgatewayRG' in location 'eastus'
+		VERBOSE: 5:38:49 PM - Created resource group 'AppgatewayRG' in location 'chinaeast'
 
 
 		ResourceGroupName : AppgatewayRG
-		Location          : eastus
+		Location          : chinaeast
 		ProvisioningState : Succeeded
 		Tags              :
 		Permissions       :
@@ -190,7 +190,7 @@ Here is the expected output for the command above:
 
 3. If necessary, run the **azure group create** to create a new resource group, as shown below. Notice the output of the command. The list shown after the output explains the parameters used. For more information about resource groups, visit [Azure Resource Manager Overview](/documentation/articles/resource-group-overview).
 
-		azure group create -n appgatewayRG -l eastus
+		azure group create -n appgatewayRG -l chinaeast
 
 **-n (or --name)**. Name for the new resource group. For our scenario, *appgatewayRG*.
 

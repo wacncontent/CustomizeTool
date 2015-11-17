@@ -1,6 +1,6 @@
 <properties 
-    pageTitle="Import a BACPAC to an Azure SQL Database using PowerShell" 
-    description="Import a BACPAC to an Azure SQL Database using PowerShell" 
+    pageTitle="Import a BACPAC file to create a new Azure SQL database using PowerShell" 
+    description="Import a BACPAC file to create a new Azure SQL database using PowerShell" 
     services="sql-database" 
     documentationCenter="" 
     authors="stevestein" 
@@ -8,11 +8,11 @@
     editor=""/>
 
 <tags
-    ms.service="sql-database"
-    ms.date="09/05/2015"
-    wacn.date=""/>
+	ms.service="sql-database"
+	ms.date="10/13/2015"
+	wacn.date=""/>
 
-# Import a BACPAC to a SQL Database using PowerShell
+# Import a BACPAC file to create a new Azure SQL database using PowerShell
 
 **Single database**
 
@@ -21,11 +21,11 @@
 - [PowerShell](/documentation/articles/sql-database-import-powershell)
 
 
-This article shows you how to create a SQL database by importing a BACPAC with PowerShell.
+This article provides directions for creating an Azure SQL database by importing a BACPAC with PowerShell.
 
 A BACPAC is a .bacpac file that contains a database schema and data. For details, see Backup Package (.bacpac) in [Data-tier Applications](https://msdn.microsoft.com/zh-cn/library/ee210546.aspx).
 
-The database is created from a BACPAC imported from an Azure storage blob container. If you don't have a .bacpac file in Azure storage you can create one by following the steps in [Create and export a BACPAC of an Azure SQL Database](/documentation/articles/sql-database-backup).
+The database is created from a BACPAC imported from an Azure storage blob container. If you don't have a .bacpac file in Azure storage you can create one by following the steps in [Create and export a BACPAC of an Azure SQL Database](/documentation/articles/sql-database-export-powershell).
 
 > [AZURE.NOTE] Azure SQL Database automatically creates and maintains backups for every user database that you can restore. For details, see [Business Continuity Overview](/documentation/articles/sql-database-business-continuity).
 
@@ -34,7 +34,9 @@ To import a SQL database you need the following:
 
 - An Azure subscription. If you need an Azure subscription simply click **FREE TRIAL** at the top of this page, and then come back to finish this article.
 - A .bacpac file (BACPAC) of the database you want to restore. The BACPAC needs to be in an [Azure Storage account (classic)](/documentation/articles/storage-create-storage-account) blob container.
-- Azure PowerShell. You can download and install the Azure PowerShell modules by running the [Microsoft Web Platform Installer](http://go.microsoft.com/fwlink/p/?linkid=320376&clcid=0x409). For detailed information, see [How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure).
+
+
+> [AZURE.IMPORTANT] This article contains commands for versions of Azure PowerShell up to *but not including* versions 1.0 and later. You can check your version of Azure PowerShell with the **Get-Module azure | format-table version** command.
 
 
 
@@ -92,7 +94,7 @@ Running the **Get-Credential** cmdlet opens a window asking for your username an
 
 This command submits an import database request to the service. Depending on the size of your database the import operation may take some time to complete.
 
-    $exportRequest = Start-AzureSqlDatabaseExport -SqlConnectionContext $SqlCtx -StorageContainer $Container -DatabaseName $DatabaseName -BlobName $BlobName
+    $importRequest = Start-AzureSqlDatabaseImport -SqlConnectionContext $SqlCtx -StorageContainer $Container -DatabaseName $DatabaseName -BlobName $BlobName
     
 
 ## Monitor the progress of the operation
@@ -128,7 +130,7 @@ Running this command will prompt you for a password. Enter the admin login and p
     $StorageCtx = New-AzureStorageContext -StorageAccountName $StorageName -StorageAccountKey $StorageKey
     $Container = Get-AzureStorageContainer -Name $ContainerName -Context $StorageCtx
     
-    $ImportRequest = Start-AzureSqlDatabaseExport -SqlConnectionContext $SqlCtx -StorageContainer $Container -DatabaseName $DatabaseName -BlobName $BlobName
+    $ImportRequest = Start-AzureSqlDatabaseImport -SqlConnectionContext $SqlCtx -StorageContainer $Container -DatabaseName $DatabaseName -BlobName $BlobName
     
     Get-AzureSqlDatabaseImportExportStatus -RequestId $ImportRequest.RequestGuid -ServerName $ServerName -Username $credential.UserName
     
@@ -144,4 +146,4 @@ Running this command will prompt you for a password. Enter the admin login and p
 
 - [Business Continuity Overview](/documentation/articles/sql-database-business-continuity)
 - [Disaster Recovery Drills](/documentation/articles/sql-database-disaster-recovery-drills)
-- [SQL Database documentation](/documentation/services/sql-database/)
+- [SQL Database documentation](/documentation/services/sql-databases/)

@@ -3,7 +3,7 @@
 	description="Learn how to create an Azure virtual machine running Windows, using the Azure Marketplace in the Azure preview portal"
 	services="virtual-machines"
 	documentationCenter=""
-	authors="KBDAzure"
+	authors="cynthn"
 	manager="timlt"
 	editor=""
 	tags="azure-resource-manager"/>

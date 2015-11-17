@@ -16,7 +16,7 @@
 # Azure Site Recovery network mapping
 
 
-Azure Site Recovery contributes to your business continuity and disaster recovery (BCDR) strategy by orchestrating replication, failover and recovery of virtual machines and physical servers. Read about possible deployment scenarios in the [Site Recovery Overview](/documentation/articles/site-recovery-overview).
+Azure Site Recovery contributes to your business continuity and disaster recovery (BCDR) strategy by orchestrating replication, failover, and recovery of virtual machines and physical servers. Read about possible deployment scenarios in the [Site Recovery overview](/documentation/articles/site-recovery-overview).
 
 
 ## About this article
@@ -24,7 +24,7 @@ Azure Site Recovery contributes to your business continuity and disaster recover
 Network mapping is an important element when you deploy VMM and Site Recovery. It optimally places replicated virtual machines on target Hyper-V host servers, and ensures your replicated virtual machines are connected to appropriate networks after failover. This article describes network mapping and provides a couple of examples to help you understand how network mapping works.
 
 
-Post any questions on the [Azure Recovery Services Forum](https://social.msdn.microsoft.com/Forums/zh-CN/home?forum=hypervrecovmgr).
+Post any questions on the [Azure Recovery Services Forum](https://social.msdn.microsoft.com/forums/azure/home?forum=hypervrecovmgr).
 
 ## Overview
 
@@ -123,10 +123,10 @@ With these settings, let's review what happens in a couple of possible scenarios
 ---|---
 No change in the network properties of VM-2 after failover | VM-1 remains connected to the source network.
 Network properties of VM-2 are changed after failover and is disconnected | VM-1 is disconnected
-Network properties of VM-2 are changed after failover and is connected to VMNetwork2-Shanghai | If VMNetwork2-Shanghai isn’t mapped, VM-1 will be disconnected
+Network properties of VM-2 are changed after failover and is connected to VMNetwork2-Shanghai  | If VMNetwork2-Shanghai isn’t mapped, VM-1 will be disconnected 
 Network mapping of VMNetwork1-Shanghai is changed | VM-1 will be connected to the network now mapped to VMNetwork1-Shanghai
 
 
 ## Next steps
 
-Now that you have a better understanding of network mapping start reading the [best practices](/documentation/articles/site-recovery-best-practices) to prepare for deployment.
+Now that you have a better understanding of network mapping, start reading the [best practices](/documentation/articles/site-recovery-best-practices) to prepare for deployment.

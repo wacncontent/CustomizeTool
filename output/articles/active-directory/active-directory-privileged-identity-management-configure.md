@@ -39,7 +39,7 @@ Historically, you could assign a user to an admin role through the Azure Managem
 
 ## Enabling Privileged Identity Management for your directory
 
-You can start using Azure AD Privileged Identity Management by accessing the [Windows Azure Management Portal](https://manage.windowsazure.cn/). For now, Azure AD Privileged Identity Management only appears in the Windows Azure Management Portal. You must be a global administrator to enable Azure AD Privileged Identity Management for a directory.
+You can start using Azure AD Privileged Identity Management by accessing the [Windows Azure Management Portal](https://manage.windowsazure.cn/)<!-- deleted by customization. For now, Azure AD Privileged Identity Management only appears in the Windows Azure Management Portal -->. You must be a global administrator to enable Azure AD Privileged Identity Management for a directory.
 
 ![][1]
 

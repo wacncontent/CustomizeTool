@@ -63,7 +63,7 @@ When you provision a cluster, you provision Azure compute resources that contain
 **To provision a Hadoop cluster**
 <!-- deleted by customization
 
-1. Sign in to the [Azure Preview Portal](https://ms.portal.azure.com/).
+1. Sign in to the [Azure Preview Portal](https://manage.windowsazure.cn/).
 2. Click **NEW**, Click **Data Analytics**, and then click **HDInsight**.
 
     ![Creating a new cluster in the Azure Preview Portal](./media/hdinsight-hadoop-tutorial-get-started-windows/HDI.CreateCluster.1.png "Creating a new cluster in the Azure Preview Portal")
@@ -183,7 +183,7 @@ Now that you have provisioned an HDInsight cluster, the next step is to run a Hi
 **To run a Hive job from the cluster dashboard**
 <!-- deleted by customization
 
-1. Sign in to the [Azure Preview Portal](https://ms.portal.azure.com/).
+1. Sign in to the [Azure Preview Portal](https://manage.windowsazure.cn/).
 2. Click **BROWSE ALL** and then click **HDInsight Clusters** to see a list of clusters, including the cluster you just created in the previous section.
 3. Click the name of the cluster that you want to use to run the Hive job, and then click **Dashboard** at the top of the blade.
 4. A webpage opens in a different browser tab. Enter the Hadoop user account and password. The default user name is **admin**; the password is what you entered while provisioning the cluster. 
@@ -215,7 +215,7 @@ Now that you have provisioned an HDInsight cluster, the next step is to run a Hi
 
     ![Job Start Time listed in the Job History tab of the HDInsight cluster dashboard.][img-hdi-dashboard-query-select-result-output]
 
-    The page also shows the **Job Output** and the **Job Log**. You also have the option to download the output file (_stdout) and the log file \(_stderr).
+    The page also shows the **Job Output** and the **Job Log**. You also have the option to download the output file <!-- deleted by customization (\_stdout) --><!-- keep by customization: begin --> (_stdout) <!-- keep by customization: end --> and the log file \(_stderr).
 
 
 **To browse to the output file**
@@ -289,9 +289,9 @@ In this Hadoop tutorial, you learned how to provision a Hadoop cluster on Window
 [hdinsight-weblogs-sample]: /documentation/articles/hdinsight-hive-analyze-website-log
 [hdinsight-sensor-data-sample]: /documentation/articles/hdinsight-hive-analyze-sensor-data
 [azure-purchase-options]: /pricing/overview/
-[azure-member-offers]: http://azure.microsoft.com/pricing/member-offers/
+[azure-member-offers]: /pricing/member-offers/
 [azure-trial]: /pricing/1rmb-trial/
-[azure-management-portal]: https://ms.portal.azure.com/
+[azure-management-portal]: https://manage.windowsazure.cn/
 [azure-create-storageaccount]: /documentation/articles/storage-create-storage-account
 [apache-hadoop]: http://hadoop.apache.org/
 [apache-hive]: https://cwiki.apache.org/confluence/display/Hive/Home%3bjsessionid=AF5B37E667D7DBA633313BB2280C9072

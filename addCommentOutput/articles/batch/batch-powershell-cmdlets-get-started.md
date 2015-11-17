@@ -55,7 +55,9 @@ New-AzureRmBatchAccount –AccountName <account_name> –Location "China North" 
 
 ```
 $Account = Get-AzureBatchAccountKeys –AccountName <accountname>
+
 $Account.PrimaryAccountKey
+
 $Account.SecondaryAccountKey
 ```
 
@@ -105,6 +107,7 @@ You can supply an OData filter using the **Filter** parameter to find only the o
 
 ```
 $filter = "startswith(id,'myPool')"
+
 Get-AzureBatchPool -Filter $filter -BatchContext $context
 ```
 

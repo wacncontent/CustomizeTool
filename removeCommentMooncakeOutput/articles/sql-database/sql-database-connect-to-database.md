@@ -1,19 +1,16 @@
 <properties
-	urlDisplayName="How to connect to an Azure SQL database using SQL Server Management Studio (SSMS)"
-	pageTitle="How to connect to an Azure SQL database using SSMS | Windows Azure"
-	metaKeywords=""
-	description="Learn how to connect to an Azure SQL database using SSMS."
-	metaCanonical=""
-	services="sql-database"
-	documentationCenter=""
-	title="How to connect to an Azure SQL database using SSMS"
-	authors="sidneyh" solutions=""
-	manager="jhubbard" editor="" />
-
+   pageTitle="How to connect to an Azure SQL database using SSMS | Windows Azure"
+   description="Learn how to connect to an Azure SQL database using SSMS."
+   services="sql-database"
+   documentationCenter=""
+   authors="sidneyh"
+   manager="jhubbard"
+   editor=""
+   tags=""/>
 <tags
 	ms.service="sql-database"
 	ms.date="09/14/2015"
-	wacn.date="" />
+	wacn.date=""/>
 
 # Connect with SQL Server Management Studio (SSMS)
 
@@ -22,7 +19,7 @@ Use the following steps to connect and query your SQL database using SQL Server 
 ## Prerequisites
 
 * SQL Server Management Studio (SSMS) - To download the latest version of SSMS, see [Download SQL Server Management Studio](https://msdn.microsoft.com/zh-cn/library/mt238290.aspx).
-* An SQL Database AdventureWorks sample database as described in [Getting Started with Windows Azure SQL Database](/documentation/articles/sql-database-get-started).
+* The AdventureWorks sample database as described in [Getting Started with Windows Azure SQL Database](/documentation/articles/sql-database-get-started).
 
 
 ## Get your fully qualified Azure SQL server name
@@ -39,7 +36,7 @@ To connect to your database you need the full name  of the server (***servername
 
 
 
-## Connect to your SQL Database
+## Connect to your SQL database
 
 1. Open SSMS.
 2. Click **Connect** > **Database Engine...**
@@ -55,7 +52,7 @@ To connect to your database you need the full name  of the server (***servername
 
 
 ### If the connection fails
-Make sure that the firewall of the logical server you have created allows connections from your local computer. For more information, see [How to: Configure Firewall Settings on SQL Database](https://msdn.microsoft.com/zh-cn/library/azure/jj553530.aspx).
+Make sure that the firewall of the logical server you have created allows connections from your local computer. For more information, see [How to: Configure Firewall Settings on SQL Database](/documentation/articles/sql-database-configure-firewall-settings).
 
 ## Run sample queries
 

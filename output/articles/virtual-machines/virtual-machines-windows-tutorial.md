@@ -26,6 +26,7 @@ You can also create virtual machines using your own images, with Resource Manage
 
 This tutorial uses the Resource Manager deployment model to create the virtual machine. This is recommended instead of the classic deployment model, which is based on Service Management APIs. For details about Resource Manager, see [Azure Resource Manager Overview](/documentation/articles/resource-group-overview). To learn about the benefits of using Resource Manager for virtual machines, see [Azure Compute, Network & Storage Providers under Azure Resource Manager](/documentation/articles/virtual-machines-azurerm-versus-azuresm).
 
+<!-- deleted by customization
 [AZURE.INCLUDE [free-trial-note](../includes/free-trial-note.md)]
 
 ## Video walkthrough
@@ -34,9 +35,15 @@ Here's a walkthrough of this tutorial.
 
 [AZURE.VIDEO create-a-virtual-machine-running-windows-in-the-azure-preview-portal]
 
+-->
 ## Select the image
 
+<!-- deleted by customization
 1. Sign in to the [preview portal](https://manage.windowsazure.cn).
+-->
+<!-- keep by customization: begin -->
+1. Sign in to the [portal](https://manage.windowsazure.cn).
+<!-- keep by customization: end -->
 
 2. On the Hub menu, click **New** > **Compute** > **Windows Server 2012 R2 Datacenter**.
 
@@ -80,7 +87,7 @@ After you create the virtual machine, you'll want to log on to it so you can man
 
 >[AZURE.NOTE] For requirements and troubleshooting tips, see [Connect to an Azure virtual machine with RDP or SSH](https://msdn.microsoft.com/zh-cn/library/azure/dn535788.aspx).
 
-1. If you haven't already done so, sign in to the [preview portal](https://manage.windowsazure.cn).
+1. If you haven't already done so, sign in to the <!-- deleted by customization [preview portal](https://manage.windowsazure.cn) --><!-- keep by customization: begin --> [portal](https://manage.windowsazure.cn) <!-- keep by customization: end -->.
 
 2. Click your virtual machine on the Startboard. If you need to find it, click **Browse All** > **Recent** or **Browse All** > **Virtual machines**. Then, select your virtual machine from the list.
 
@@ -101,4 +108,4 @@ After you create the virtual machine, you'll want to log on to it so you can man
 ## Next steps
 
 * Use Azure PowerShell and the Azure CLI to [find and select virtual machine images](/documentation/articles/resource-groups-vm-searching).
-* Automate virtual machine and workload deployment and management using [Azure Resource Manager](/documentation/articles/virtual-machines-how-to-automate-azure-resource-manager) and [Azure Resource Manager templates](http://azure.microsoft.com/documentation/templates/).
+* Automate virtual machine and workload deployment and management using [Azure Resource Manager](/documentation/articles/virtual-machines-how-to-automate-azure-resource-manager) <!-- deleted by customization and [Azure Resource Manager templates](http://azure.microsoft.com/documentation/templates/) -->.

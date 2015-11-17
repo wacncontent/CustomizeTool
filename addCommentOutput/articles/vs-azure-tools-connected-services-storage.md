@@ -34,13 +34,13 @@ You can use the Connected Services dialog to connect to Azure Storage in the fol
 
 ## Connect to Azure Storage using the Connected Services dialog
 
-1. Make sure you have an Azure account. If you don't have an Azure account, you can sign up for a <!-- deleted by customization [trial](/pricing/free-trial/). Once --><!-- keep by customization: begin --> [trial](/pricing/free-trial/).Once <!-- keep by customization: end --> you have an Azure account, you can create storage accounts, create mobile services, and configure Azure Active Directory.
+1. Make sure you have an Azure account. If you don't have an Azure account, you can sign up for a <!-- deleted by customization [trial](/pricing/free-trial/) --><!-- keep by customization: begin --> [trial](/pricing/1rmb-trial/) <!-- keep by customization: end -->. Once you have an Azure account, you can create storage accounts, create mobile services, and configure Azure Active Directory.
 
 1. Open your project in Visual Studio, open the context menu for the **References** node in Solution Explorer, and then choose **Add Connected Service**.
 
     ![Adding a connected service](./media/vs-azure-tools-connected-services-storage/IC796702.png)
 
-1. In the **Add Connected Service** dialog box, choose **Azure Storage**, and then choose the **Configure** <!-- deleted by customization button. You --><!-- keep by customization: begin --> button.You <!-- keep by customization: end --> may be prompted to log into Azure if you haven't already done so.
+1. In the **Add Connected Service** dialog box, choose **Azure Storage**, and then choose the **Configure** button. You may be prompted to log into Azure if you haven't already done so.
 
     ![Add Connected Service dialog box - Storage](./media/vs-azure-tools-connected-services-storage/IC796703.png)
 
@@ -74,14 +74,9 @@ When you finish the dialog, Visual Studio adds references and modifies certain c
 
  - For ASP.NET projects, see [What happened – ASP.NET Projects](/documentation/articles/vs-storage-aspnet-getting-started-blobs/). 
  - For ASP.NET 5 projects, see [What happened – ASP.NET 5 Projects](/documentation/articles/vs-storage-aspnet5-getting-started-blobs/). 
- - For cloud service projects (web roles and worker roles), see [What happened – Cloud Service projects](https://azure.microsoft.com/zh-cn/documentation/articles/vs-storage-cloud-services-getting-started-blobs/). 
-<!-- deleted by customization
+ - For cloud service projects (web roles and worker roles), see [What happened – Cloud Service <!-- deleted by customization projects](https://azure.microsoft.com/zh-cn/documentation/articles/vs-storage-cloud-services-getting-started-blobs/) --><!-- keep by customization: begin --> projects](/documentation/articles/vs-storage-cloud-services-getting-started-blobs/) <!-- keep by customization: end -->.
  - For WebJob projects, see [What
 happened - WebJob projects](/documentation/articles/vs-storage-webjobs-what-happened).
--->
-<!-- keep by customization: begin -->
- - For WebJob projects, see [What happened - WebJob projects](/documentation/articles/vs-storage-webjobs-what-happened).
-<!-- keep by customization: end -->
 
 ## Next steps
 

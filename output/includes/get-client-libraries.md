@@ -1,4 +1,9 @@
+<!-- deleted by customization
 ### Install via Composer
+-->
+<!-- keep by customization: begin -->
+###Install via Composer
+<!-- keep by customization: end -->
 
 1. [Install Git][install-git]. Note that on Windows, you must also add the Git executable to your PATH environment variable. 
 
@@ -29,7 +34,12 @@
 	php composer.phar install
 	```
 
+<!-- deleted by customization
 ### Install manually
+-->
+<!-- keep by customization: begin -->
+###Install manually
+<!-- keep by customization: end -->
 
 To download and install the PHP Client Libraries for Azure manually, follow these steps:
 

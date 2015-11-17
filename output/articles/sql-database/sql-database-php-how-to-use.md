@@ -74,7 +74,7 @@ In the PHP section of the resulting window, make note of the values for **SERVER
 
 ##<a id="Connect"></a>How to: Connect to a SQL Database instance
 
-The following examples show how to use the **SQLSRV** and **PDO_SQLSRV** extensions to connect to a SQL Database called `testdb`. For information about the **SQLSRV** and **PDO_SQLSRV** APIs, see the [Microsoft Drivers for PHP for SQL Server documentation][driver-docs]. You will need information obtained from the section above. Replace `SERVER_ID` with your 10-digit server ID (which is the fist 10 characters from the SERVER value obtained in the section above), and assign the correct values (your user name and password) to the `$user` and `$pwd` variables.
+The following examples show how to use the **SQLSRV** and **PDO_SQLSRV** extensions to connect to a SQL Database called `testdb`. For information about the **SQLSRV** and **PDO\_SQLSRV** APIs, see the [Microsoft Drivers for PHP for SQL Server documentation][driver-docs]. You will need information obtained from the section above. Replace `SERVER_ID` with your 10-digit server ID (which is the fist 10 characters from the SERVER value obtained in the section above), and assign the correct values (your user name and password) to the `$user` and `$pwd` variables.
 
 #####SQLSRV
 
@@ -106,7 +106,7 @@ The following examples show how to use the **SQLSRV** and **PDO_SQLSRV** extensi
 
 
 ##<a id="NextSteps"></a>Next steps
-As mentioned earlier, using SQL Database is very similar to using SQL Server. Once you have established a connection to a SQL Database (as shown above), you can then use the **SQLSRV** or **PDO_SQLSRV** APIs for inserting, retrieving, updating, and deleting data.  There are, however, some differences between SQL Database and SQL Server that could affect your application. For more information, see [Guidelines and Limitations (SQL Database)][limitations].
+As mentioned earlier, using SQL Database is very similar to using SQL Server. Once you have established a connection to a SQL Database (as shown above), you can then use the **SQLSRV** or **PDO\_SQLSRV** APIs for inserting, retrieving, updating, and deleting data.  There are, however, some differences between SQL Database and SQL Server that could affect your application. For more information, see [Guidelines and Limitations (SQL Database)][limitations].
 
 A sample that shows how to use SQL Database with PHP on Azure is available at <https://github.com/WindowsAzure/azure-sdk-for-php-samples/tree/master/tasklist-sqlazure>.
 

@@ -17,7 +17,7 @@
 
 The current version of the Azure Management Portal only accepts SSH public keys that are encapsulated in an X509 certificate. Follow the steps below to generate and use SSH keys with Azure.
 
-## Generate <!-- keep by customization: begin --> Windows <!-- keep by customization: end --> Azure Compatible Keys in Linux ##
+## Generate Azure Compatible Keys in Linux ##
 
 1. Install the `openssl` utility if needed:
 
@@ -50,16 +50,16 @@ The current version of the Azure Management Portal only accepts SSH public keys 
 
 
 ## Generate a Key from an Existing OpenSSH Compatible Key
-The previous example describes how to create a new key for use with <!-- keep by customization: begin --> Windows <!-- keep by customization: end --> Azure. In some cases you may already have an existing OpenSSH compatible public & private key pair and wish to use the same keys with <!-- keep by customization: begin --> Windows <!-- keep by customization: end --> Azure.
+The previous example describes how to create a new key for use with Azure. In some cases you may already have an existing OpenSSH compatible public & private key pair and wish to use the same keys with Azure.
 
-OpenSSH private keys are directly readable by the `openssl` utility. The following command will take an existing SSH private key (id_rsa in the example below) and create the `.pem` public key that is needed for <!-- keep by customization: begin --> Windows <!-- keep by customization: end --> Azure:
+OpenSSH private keys are directly readable by the `openssl` utility. The following command will take an existing SSH private key (id_rsa in the example below) and create the `.pem` public key that is needed for Azure:
 
 	# openssl req -x509 -key ~/.ssh/id_rsa -nodes -days 365 -newkey rsa:2048 -out myCert.pem
 
-The **myCert.pem** file is the public key that may then be used to provision a Linux virtual machine on <!-- keep by customization: begin --> Windows <!-- keep by customization: end --> Azure. During provisioning the `.pem` file will be translated into an `openssh` compatible public key and placed in `~/.ssh/authorized_keys`.
+The **myCert.pem** file is the public key that may then be used to provision a Linux virtual machine on Azure. During provisioning the `.pem` file will be translated into an `openssh` compatible public key and placed in `~/.ssh/authorized_keys`.
 
 
-## Connect to an <!-- keep by customization: begin --> Windows <!-- keep by customization: end --> Azure Virtual Machine from Linux
+## Connect to an Azure Virtual Machine from Linux
 
 1. In some cases the SSH endpoint for a Linux virtual machine may be configured for a port other then the default port 22. You can find the correct port number on the Dashboard for the VM in the Management Portal (under "SSH Details").
 
@@ -80,12 +80,7 @@ There are a number of utilities that include a `openssl` for Windows. A few exam
 3.	Change to the `bin` directory by typing in `cd bin`
 
 
-<!-- deleted by customization
 ### Use GitHub for Windows ###
--->
-<!-- keep by customization: begin -->
-###Use GitHub for Windows###
-<!-- keep by customization: end -->
 
 1.	Download and install GitHub for Windows from the following location: [http://windows.github.com/](http://windows.github.com/)
 2.	Run Git Shell from the Start Menu > All Programs > GitHub, Inc
@@ -176,3 +171,4 @@ There are a number of utilities that include a `openssl` for Windows. A few exam
 	![linuxputtyprivatekey](./media/virtual-machines-linux-use-ssh-key/linuxputtyprivatekey.png)
 
 5.	Click **Open** to connect to your virtual machine
+ 

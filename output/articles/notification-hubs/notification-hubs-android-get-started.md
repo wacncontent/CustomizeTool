@@ -473,9 +473,9 @@ You can test receiving notifications in your app by sending notifications in the
 
 ####Emulator testing
 
-If you want to test on an emulator, make sure that your emulator image supports the Google API level that you choose for your app. If your image doesn't support the Google APIs, you will end up with the **SERVICE_NOT_AVAILABLE** exception.
+If you want to test on an emulator, make sure that your emulator image supports the Google API level that you choose for your app. If your image doesn't support the Google APIs, you will end up with the <!-- deleted by customization **SERVICE\_NOT\_AVAILABLE** --><!-- keep by customization: begin --> **SERVICE_NOT_AVAILABLE** <!-- keep by customization: end --> exception.
 
-Also make sure that you have added your Google account to your running emulator under **Settings** > **Accounts**. Otherwise, your attempts to register with GCM may result in the **AUTHENTICATION_FAILED** exception.
+Also make sure that you have added your Google account to your running emulator under **Settings** > **Accounts**. Otherwise, your attempts to register with GCM may result in the <!-- deleted by customization **AUTHENTICATION\_FAILED** --><!-- keep by customization: begin --> **AUTHENTICATION_FAILED** <!-- keep by customization: end --> exception.
 
 ####Testing the app
 

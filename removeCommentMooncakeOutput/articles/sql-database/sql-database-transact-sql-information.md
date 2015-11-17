@@ -9,9 +9,9 @@
    tags=""/>
 
 <tags
-   ms.service="sql-database"
-   ms.date="08/07/2015"
-   wacn.date=""/>
+	ms.service="sql-database"
+	ms.date="08/07/2015"
+	wacn.date=""/>
 
 # Azure SQL Database Transact-SQL information
 

@@ -57,7 +57,7 @@ You can use Premium Storage for Disks in one of two ways:
 
 Azure uses the storage account as a container for your operating system (OS) and data disks. In other words, if you create an Azure DS-series or GS-series VM and select an Azure Premium Storage account, your operating system and data disks are stored in that storage account.
 
-To leverage the benefits of Premium Storage, create a Premium Storage account using an account type of *Premium_LRS* first. To do this, you can use the [Windows Azure Preview <!-- deleted by customization Portal](https://manage.windowsazure.cn/) --><!-- keep by customization: begin --> Portal](https://manage.windowsazure.cn) <!-- keep by customization: end -->, [Azure PowerShell](/documentation/articles/install-configure-powershell), or the [Service Management REST API](http://msdn.microsoft.com/zh-cn/library/azure/ee460799.aspx). For step-by-step instructions, see [Creating and using Premium Storage Account for Disks](#create-and-use-a-premium-storage-account-for-a-virtual-machine-data-disk).
+To leverage the benefits of Premium Storage, create a Premium Storage account using an account type of *Premium_LRS* first. To do this, you can use the [Windows Azure Preview Portal](https://manage.windowsazure.cn/), [Azure PowerShell](/documentation/articles/install-configure-powershell), or the [Service Management REST API](http://msdn.microsoft.com/zh-cn/library/azure/ee460799.aspx). For step-by-step instructions, see [Creating and using Premium Storage Account for Disks](#create-and-use-a-premium-storage-account-for-a-virtual-machine-data-disk).
 
 ### Important notes:
 
@@ -75,7 +75,7 @@ To leverage the benefits of Premium Storage, create a Premium Storage account us
 - With Premium Storage, you can provision a DS-series VM and attach several persistent data disks to a VM. If needed, you can stripe across the disks to increase the capacity and performance of the volume. If you stripe Premium Storage data disks using [Storage Spaces](http://technet.microsoft.com/zh-cn/library/hh831739.aspx), you should configure it with one column for each disk that is used. Otherwise, overall performance of the striped volume may be lower than expected due to uneven distribution of traffic across the disks. By default, the Server Manager user interface (UI) allows you to setup columns up to 8 disks. But if you have more than 8 disks, you need to use PowerShell to create the volume and also specify the number of columns manually. Otherwise, the Server Manager UI continues to use 8 columns even though you have more disks. For example, if you have 32 disks in a single stripe set, you should specify 32 columns. You can use the *NumberOfColumns* parameter of the [New-VirtualDisk](http://technet.microsoft.com/zh-cn/library/hh848643.aspx) PowerShell cmdlet to specify the number of columns used by the virtual disk. For more information, see [Storage Spaces Overview](http://technet.microsoft.com/zh-cn/library/jj822938.aspx) and [Storage Spaces Frequently Asked Questions](http://social.technet.microsoft.com/wiki/contents/articles/11382.storage-spaces-frequently-asked-questions-faq.aspx).
 - Avoid adding DS-series VMs to an existing cloud service that includes non-DS-series VMs. A possible workaround is to migrate your existing VHDs to a new cloud service running only DS-series VMs.  If you want to retain the same virtual IP address (VIP) for the new cloud service that hosts your DS-series VMs, use the [Reserved IP Addresses](/documentation/articles/virtual-networks-configure-vnet-to-vnet-connection) feature. GS-series VMs can be added to an existing cloud service running only G-series VMs.
 - The DS-series of Azure virtual machines can be configured to use an operating system (OS) disk hosted either on a Standard Storage account or on a Premium Storage account. If you use the OS disk only for booting, you may consider using a Standard Storage based OS disk. This provides cost benefits and similar performance results similar to the Premium Storage after booting up. If you perform any additional tasks on the OS disk other than booting, use Premium Storage as it provides better performance results. For example, if your application reads/writes from/to the OS disk, using Premium Storage based OS disk provides better performance for your VM.
-- You can use [Azure Command-Line Interface (Azure <!-- deleted by customization CLI)](/documentation/articles/xplat-cli-install) --><!-- keep by customization: begin --> CLI)](/documentation/articles/xplat-cli) <!-- keep by customization: end --> with Premium Storage. To change the cache policy on one of your disks using Azure CLI, run the following command:
+- You can use [Azure Command-Line Interface (Azure CLI)](/documentation/articles/xplat-cli-install) with Premium Storage. To change the cache policy on one of your disks using Azure CLI, run the following command:
 
 	`$ azure vm disk attach -h ReadOnly <VM-Name> <Disk-Name>`
 
@@ -245,7 +245,7 @@ Following are the Linux Distributions that we validated with Premium Storage. We
 </tr>
 <tr>
 	<td rowspan="2"><strong>CentOS</strong></td>
-	<td>6.5, 6.6, <!-- deleted by customization 6.7, --> 7.0</td>
+	<td>6.5, 6.6, 6.7, 7.0</td>
 	<td></td>
 	<td>
 		<a href="http://go.microsoft.com/fwlink/?LinkID=403033&clcid=0x409"> LIS 4.0 Required </a> </br>
@@ -280,57 +280,48 @@ Following are the Linux Distributions that we validated with Premium Storage. We
 
 Customers running OpenLogic CentOS VMs should run the following command to install the latest drivers:
 
-<!-- deleted by customization
 	sudo rpm -e hypervkvpd  ## (may return error if not installed, that's OK)
--->
 	sudo yum install microsoft-hyper-v
 
 A reboot will then be required to activate the new drivers.
+
+
+
 ## Pricing and Billing when using Premium Storage
 When using Premium Storage, the following billing considerations apply:
 
 - Billing for a Premium Storage disk depends on the provisioned size of the disk. Azure maps the disk size (rounded up) to the nearest Premium Storage Disk option as specified in the table given in the [Scalability and Performance Targets when using Premium Storage](#scalability-and-performance-targets-when-using-premium-storage) section. Billing for any provisioned disk is prorated hourly using the monthly price for the Premium Storage offer. For example, if you provisioned a P10 disk and deleted it after 20 hours, you are billed for the P10 offering prorated to 20 hours. This is regardless of the amount of actual data written to the disk or the IOPS/throughput used.
 - Snapshots on Premium Storage are billed for the additional capacity used by the snapshots. For information on snapshots, see [Creating a Snapshot of a Blob](http://msdn.microsoft.com/zh-cn/library/azure/hh488361.aspx).
-- [Outbound data <!-- deleted by customization transfers](/home/features/data-transfers/#price) --><!-- keep by customization: begin --> transfers](http://www.windowsazure.cn/home/features/data-transfer/#price) <!-- keep by customization: end --> (data going out of Azure data centers) incur billing for bandwidth usage.
+- [Outbound data transfers](/home/features/data-transfers/#price) (data going out of Azure data centers) incur billing for bandwidth usage.
 
 For detailed information on pricing for Premium Storage,  DS-series VMs and GS-series VMs, see:
 
-<!-- deleted by customization
 - [Azure Storage Pricing](/home/features/storage/#price)
 - [Virtual Machines Pricing](/home/features/virtual-machines/#price)
--->
-<!-- keep by customization: begin -->
-- [Azure Storage Pricing](http://www.windowsazure.cn/home/features/storage/#price)
-- [Virtual Machines Pricing](http://www.windowsazure.cn/home/features/virtual-machines/)
-<!-- keep by customization: end -->
 
 ## Create and use a Premium Storage account for a virtual machine data disk
+
 This section demonstrates how to create a Premium Storage account using the Azure Preview Portal, Azure PowerShell, and the Azure Command-Line Interface (Azure CLI). In addition, it demonstrates a sample use case for premium storage accounts: creating a virtual machine and attaching a data disk to a virtual machine when using Premium Storage.
 
 ### Create an Azure virtual machine using Premium Storage via the Azure Preview Portal
 
 This section shows how to create a Premium Storage account using the Azure Preview Portal.
 
-1.	Sign in to the [Azure Preview <!-- deleted by customization Portal](https://manage.windowsazure.cn/) --><!-- keep by customization: begin --> Portal](https://manage.windowsazure.cn) <!-- keep by customization: end -->. Check out the <!-- deleted by customization [Trial](/pricing/1rmb-trial/) --><!-- keep by customization: begin --> [Trial](http://www.windowsazure.cn/pricing/1rmb-trial/) <!-- keep by customization: end --> offer if you do not have a subscription yet.
+1.	Sign in to the [Azure Preview Portal](https://manage.windowsazure.cn/). Check out the [Trial](/pricing/1rmb-trial/) offer if you do not have a subscription yet.
 
 
     > [AZURE.NOTE] If you log in to the Azure Management Portal, click your user account name at the top right corner of the portal. Then, click **Switch to new portal**.
+
 
 2.	On the Hub menu, click **New**.
 
 3.	Under **New**, click **Everything**. Select **Storage, cache, +backup**. From there, click **Storage** and then click **Create**.
 
 4.	On the Storage Account blade, type a name for your storage account. Click **Pricing Tier**. On the **Recommended pricing tiers** blade, click **Browse All Pricing Tiers**. On the **Choose your pricing tier** blade, choose **Premium Locally Redundant**. Click **Select**. Note that the **Storage account** blade shows **Standard-GRS** as the **Pricing Tier** by default. After you click **Select**, the **Pricing Tier** is shown as **Premium-LRS**.
-<!-- deleted by customization
+
 	![Pricing Tier][Image1]
 
--->
-<!-- keep by customization: begin -->
-	
-	![Pricing Tier][Image1]
 
-	
-<!-- keep by customization: end -->
 5.	On the **Storage Account** blade, keep the default values for **Resource Group**, **Subscription**, **Location**, and **Diagnostics**. Click **Create**.
 
 For a complete walk-through inside an Azure environment, see [Create a Virtual Machine Running Windows in the Azure Preview Portal](/documentation/articles/virtual-machines-windows-tutorial-azure-preview).
@@ -369,7 +360,7 @@ This PowerShell example shows how to create a new Premium Storage account and at
 
 ### Create an Azure virtual machine using Premium Storage via the Azure Command-Line Interface
 
-The [Azure Commnand-Line <!-- deleted by customization Interface](/documentation/articles/xplat-cli-install)(Azure --><!-- keep by customization: begin --> Interface](/documentation/articles/xplat-cli)(Azure <!-- keep by customization: end --> CLI) provides a provides a set of open source, cross-platform commands for working with the Azure Platform. The following examples show how to use Azure CLI (version 0.8.14 and later) to create a premium storage account, a new virtual machine, and attach a new data disk from a Premium Storage account.
+The [Azure Commnand-Line Interface](/documentation/articles/xplat-cli-install)(Azure CLI) provides a provides a set of open source, cross-platform commands for working with the Azure Platform. The following examples show how to use Azure CLI (version 0.8.14 and later) to create a premium storage account, a new virtual machine, and attach a new data disk from a Premium Storage account.
 
 #### Create a premium storage account
 
@@ -398,22 +389,13 @@ azure storage account create "premiumtestaccount" -l "west us" --type PLRS
 
 [Using Blob Service Operations with Azure Premium Storage](https://msdn.microsoft.com/zh-cn/library/dn889922.aspx)
 
-<!-- deleted by customization
 [Create a Virtual Machine Running Windows](/documentation/articles/virtual-machines-windows-tutorial-azure-preview)
--->
-<!-- keep by customization: begin -->
-[Create a Virtual Machine Running Windows](http://www.windowsazure.cn/documentation/articles/virtual-machines-windows-tutorial-azure-preview/)
-<!-- keep by customization: end -->
 
 [Virtual Machine and Cloud Service Sizes for Azure](http://msdn.microsoft.com/zh-cn/library/azure/dn197896.aspx)
 
-<!-- deleted by customization
 [Storage Documentation](/documentation/services/storage/)
--->
-<!-- keep by customization: begin -->
-[Storage Documentation](http://www.windowsazure.cn/documentation/services/storage/)
-<!-- keep by customization: end -->
 
 [MSDN Reference](http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx)
 
 [Image1]: ./media/storage-premium-storage-preview-portal/Azure_pricing_tier.png
+ 

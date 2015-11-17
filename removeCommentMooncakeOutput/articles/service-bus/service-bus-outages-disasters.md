@@ -6,11 +6,10 @@
    authors="sethmanheim"
    manager="timlt"
    editor="tysonn" /> 
-<tags 
-   ms.service="service-bus"
-
-   ms.date="09/18/2015"
-   wacn.date="" />
+<tags
+	ms.service="service-bus"
+	ms.date="09/18/2015"
+	wacn.date=""/>
 
 # Best Practices for insulating applications against Service Bus outages and disasters
 

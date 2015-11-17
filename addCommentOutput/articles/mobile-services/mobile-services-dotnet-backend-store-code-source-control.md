@@ -10,8 +10,7 @@
 <tags
 	ms.service="mobile-services"
 	ms.date="09/15/2015"
-	wacn.date=""/><!-- deleted by customization
- 
+	wacn.date=""/> 
 
 # Store your mobile service project code in source control
 
@@ -21,21 +20,7 @@
 
 This topic shows you how to use the source control provided by Azure Mobile Services to store your .NET backend service project. Your project can be published by simply uploading from your local Git repository to your production mobile service.
 
-To complete this tutorial, you must have already created a mobile service by completing either the [Get started with Mobile Services]  tutorial.
--->
-<!-- keep by customization: begin -->
-
-
-# Store project code in source control
-
-> [AZURE.SELECTOR-LIST (Platform | Backend)]
-- [(Any | .NET)](/documentation/articles/mobile-services-dotnet-backend-store-code-source-control)
-- [(Any | Javascript)](/documentation/articles/mobile-services-store-scripts-source-control)
-
-This topic shows you how to use the source control provided by Azure Mobile Services to store your .NET backend service project. Your project can be published by simply uploading from your local Git repository to your production mobile service. 
-
-To complete this tutorial, you must have already created a mobile service by completing either the [Get started with Mobile Services] or the [Add Mobile Services to an existing app] tutorial.
-<!-- keep by customization: end -->
+To complete this tutorial, you must have already created a mobile service by completing either the [Get started with Mobile Services] tutorial.
 
 ##<a name="enable-source-control"></a>Enable source control in your mobile service
 
@@ -78,9 +63,11 @@ Now that you have created your local repository, you can publish your .NET backe
 2. Remove any NuGet package folders, leaving the packages.config file.
 
 	Mobile Services will automatically restore your NuGet packages based on the packages.confign file. You can also define a .gitignore file to prevent the package directories from being added.
+
 3. In the Git command prompt, type the following command to start tracking the new script file:
 
 		$ git add .
+
 4. Type the following command to commit changes:
 
 		$ git commit -m "adding the .NET backend service project"
@@ -88,6 +75,7 @@ Now that you have created your local repository, you can publish your .NET backe
 5. Type the following command to upload the changes to the remote repository, and supply your credentials:
 
 		$ git push origin master
+
 	You should see a series of commands that indicates that the project is deployed to Mobile Services, packages are added, and the service is restarted.
 
 6. Browse to the URL of your .NET backend mobile service, and you should see the following:
@@ -105,11 +93,5 @@ Now, your mobile service project is maintained in source control, and you can pu
 [Source control]: http://msdn.microsoft.com/zh-cn/library/azure/c25aaede-c1f0-4004-8b78-113708761643
 [Installing Git]: http://git-scm.com/book/en/Getting-Started-Installing-Git
 [Get started with Mobile Services]: /documentation/articles/mobile-services-dotnet-backend-ios-get-started
-<!-- keep by customization: begin -->
-[Add Mobile Services to an existing app]: /documentation/articles/mobile-services-dotnet-backend-ios-get-started-data
-<!-- keep by customization: end -->
 [Azure Management Portal]: https://manage.windowsazure.cn/
-<!-- keep by customization: begin -->
-[Call a custom API from the client]: /documentation/articles/mobile-services-dotnet-backend-ios-call-custom-api
-<!-- keep by customization: end -->
 [How to make data model changes to a .NET backend mobile service]: /documentation/articles/mobile-services-dotnet-backend-how-to-use-code-first-migrations

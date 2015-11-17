@@ -26,7 +26,7 @@ Cloud Explorer is installed as part of the Visual Studio Tools for Azure SDK 2.7
 - Visual Studio 2015 RTM.
 
 - The Visual Studio Tools for Azure SDK. 
-- You must also have an Azure account and be logged into it to view Azure resources in Cloud Explorer. If you don't have one, you can create an account in just a couple of minutes. If you have an MSDN subscription, see [Azure Benefit for MSDN Subscribers](http://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/). Otherwise, see [create a trial account](/pricing/1rmb-trial/).
+- You must also have an Azure account and be logged into it to view Azure resources in Cloud Explorer. If you don't have one, you can create an account in just a couple of minutes. If you have an MSDN subscription, see [Azure Benefit for MSDN Subscribers](/pricing/member-offers/msdn-benefits-details/). Otherwise, see [create a trial account](/pricing/1rmb-trial/).
 
 - If Cloud Explorer isn't visible, you can view it by choosing **View**, **Other Windows,** **Cloud Explorer** on the menu bar.
 

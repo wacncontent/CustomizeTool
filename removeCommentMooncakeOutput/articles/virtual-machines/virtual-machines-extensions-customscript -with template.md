@@ -9,9 +9,9 @@
    tags="azure-resource-manager"/>
 
 <tags
-   ms.service="virtual-machines"
-   ms.date="07/01/2015"
-   wacn.date=""/>
+	ms.service="virtual-machines"
+	ms.date="07/01/2015"
+	wacn.date=""/>
 
 # Using Custom Script extension With Azure Resource Manager templates
 

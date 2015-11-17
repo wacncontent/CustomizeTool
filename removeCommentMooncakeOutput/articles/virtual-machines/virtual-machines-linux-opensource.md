@@ -1,11 +1,12 @@
 <properties
-	pageTitle="Linux and Open-Source Computing on Azure"
-	description="This topic contains a list of Linux and Open-Source Computing on Azure, including basic Linux usage, some fundamental concepts about running or uploading Linux images on Azure, and other content about specific technologies and optimizations."
+	pageTitle="Linux and Open-Source Computing on Azure | Windows Azure"
+	description="Lists Linux and Open-Source Computing articles on Azure, including basic Linux usage, some fundamental concepts about running or uploading Linux images on Azure, and other content about specific technologies and optimizations."
 	services="virtual-machines"
 	documentationCenter=""
 	authors="squillace"
 	manager="timlt"
-	editor="tysonn"/>
+	editor="tysonn"
+	tags="azure-resource-manager,azure-service-management"/>
 
 <tags
 	ms.service="virtual-machines"
@@ -80,10 +81,10 @@ CoreOS is a small, optimized distro for pure compute scale with a high degree of
 
 11. [How to: Use CoreOS on Azure](/documentation/articles/virtual-machines-linux-coreos-how-to)
 12. [How to: Get Started with Fleet and Docker on CoreOS on Azure](/documentation/articles/virtual-machines-linux-coreos-fleet-get-started)
-12. [Blog: TechEd Europe -- Windows Docker Client and Linux Containers](http://azure.microsoft.com/blog/2014/10/28/new-docker-coreos-topics-linux-on-azure/)
-13. [Blog: Azure's getting bigger, faster, and more open](http://azure.microsoft.com/blog/2014/10/20/azures-getting-bigger-faster-and-more-open/)
-14. [GitHub: Quickstart for Deploying CoreOS on Azure](https://github.com/timfpark/coreos-azure)
-15. [GitHub: Deploying Java app with Spring Boot, MongoDB, and CoreOS](https://github.com/chanezon/azure-linux/tree/master/coreos/cloud-init)
+13. [Blog: TechEd Europe -- Windows Docker Client and Linux Containers](http://azure.microsoft.com/blog/2014/10/28/new-docker-coreos-topics-linux-on-azure/)
+14. [Blog: Azure's getting bigger, faster, and more open](http://azure.microsoft.com/blog/2014/10/20/azures-getting-bigger-faster-and-more-open/)
+15. [GitHub: Quickstart for Deploying CoreOS on Azure](https://github.com/timfpark/coreos-azure)
+16. [GitHub: Deploying Java app with Spring Boot, MongoDB, and CoreOS](https://github.com/chanezon/azure-linux/tree/master/coreos/cloud-init)
 
 #### [Oracle Linux](http://azure.microsoft.com/marketplace/?term=Oracle+Linux)
   2. [Prepare an Oracle Linux Virtual Machine for Azure](/documentation/articles/virtual-machines-linux-create-upload-vhd-oracle)
@@ -98,7 +99,7 @@ CoreOS is a small, optimized distro for pure compute scale with a high degree of
 
 ## The basics
 
-1. [The basics: Azure Command-Line Interface (Azure CLI)](/documentation/articles/xplat-cli)
+1. [The basics: Azure Command-Line Interface (Azure CLI)](/documentation/articles/xplat-cli-install)
 4. [The basics: Certificate Use and Management](http://msdn.microsoft.com/zh-cn/library/azure/gg981929.aspx)
 5. [The basics: Selecting Linux Usernames](/documentation/articles/virtual-machines-linux-usernames)
 6. [The basics: Log on to a Linux VM Using the Azure Management Portal](/documentation/articles/virtual-machines-linux-how-to-log-on)
@@ -114,11 +115,11 @@ CoreOS is a small, optimized distro for pure compute scale with a high degree of
 16. [The basics: Azure VM Extensions and Features](http://msdn.microsoft.com/zh-cn/library/azure/dn606311.aspx)
 17. [The basics: Injecting Custom Data into a VM to use with Cloud-init](/documentation/articles/virtual-machines-how-to-inject-custom-data)
 18. [Blogging the basics: Building Highly Available Linux on Azure in 12 Steps](http://blogs.technet.com/b/keithmayer/archive/2014/10/03/quick-start-guide-building-highly-available-linux-servers-in-the-cloud-on-microsoft-azure.aspx)
-19. [Blogging the basics: Automate Provisioning Linux on Azure with xplat, node.js, jhawk](http://blogs.technet.com/b/keithmayer/archive/2014/11/24/step-by-step-automated-provisioning-for-linux-in-the-cloud-with-microsoft-azure-xplat-cli-json-and-node-js-part-1.aspx)
+19. [Blogging the basics: Automate Provisioning Linux on Azure with Azure CLI, node.js, jhawk](http://blogs.technet.com/b/keithmayer/archive/2014/11/24/step-by-step-automated-provisioning-for-linux-in-the-cloud-with-microsoft-azure-xplat-cli-json-and-node-js-part-1.aspx)
 19. [Create a multi-VM deployment using the Azure CLI](/documentation/articles/virtual-machines-create-multi-vm-deployment-xplat-cli)
 20. [The basics: The Azure Docker VM Extension](/documentation/articles/virtual-machines-docker-vm-extension)
 23. [Azure Service Management REST API](https://msdn.microsoft.com/zh-cn/library/azure/ee460799.aspx) reference
-24. [GlusterFS on Azure](http://dastouri.chinacloudsites.cn/gluster-on-azure-part-1/)
+24. [GlusterFS on Azure](http://dastouri.azurewebsites.net/gluster-on-azure-part-1/)
 
 ## Community images and repositories
 3. [MSOpenTech VM Depot](https://vmdepot.msopentech.com/List/Index) &mdash; for community provided virtual machine images.
@@ -130,7 +131,7 @@ CoreOS is a small, optimized distro for pure compute scale with a high degree of
 
 1. [Images](https://vmdepot.msopentech.com/List/Index?sort=Featured&search=java)
 2. [How to: Use Service Bus from Java with AMQP 1.0](http://msdn.microsoft.com/zh-cn/library/azure/jj841073.aspx)
-3. [How to: Set up Tomcat7 on Linux Using the Azure Management Portal](/documentation/articles/virtual-machines-linux-setup-tomcat7-linux/)
+3. [How to: Set up Tomcat7 on Linux Using the Azure Management Portal](/documentation/articles/virtual-machines-linux-setup-tomcat7-linux)
 4. [Video: Azure Java SDK for Service Management](http://channel9.msdn.com/Shows/Cloud+Cover/Episode-157-The-Java-SDK-for-Azure-Management-with-Brady-Gaster)
 5. [Blog: Getting Started with Azure Management Libraries for Java](http://azure.microsoft.com/blog/2014/09/15/getting-started-with-the-azure-java-management-libraries/)
 5. [GitHub repo: Azure Toolkit for Eclipse with Java](https://github.com/MSOpenTech/WindowsAzureToolkitForEclipseWithJava)
@@ -143,7 +144,7 @@ CoreOS is a small, optimized distro for pure compute scale with a high degree of
 1. [Scala: Running Play Framework Applications in Azure Cloud Services](http://msopentech.com/blog/2014/09/25/tutorial-running-play-framework-applications-microsoft-azure-cloud-services-2/)
 
 ### SDK types, installations, upgrades
-4. [Azure Service Management SDK: Java](http://dl.windowsazure.cn/javadoc/)
+4. [Azure Service Management SDK: Java](http://dl.windowsazure.com/javadoc/)
 5. [Azure Service Management SDK: Go](https://github.com/MSOpenTech/azure-sdk-for-go)
 5. [Azure Service Management SDK: Ruby](https://github.com/MSOpenTech/azure-sdk-for-ruby)
     - [How to: Install Ruby on Rails](/documentation/articles/virtual-machines-ruby-rails-web-app-linux)
@@ -194,7 +195,7 @@ This section contains information about several different storage approaches and
 2. Hadoop/Cloudera  
 	- [Blog: Installing Hadoop on Azure Linux VMs](http://blogs.msdn.com/b/benjguin/archive/2013/04/05/how-to-install-hadoop-on-windows-azure-linux-virtual-machines.aspx)
 	- [How to: Get Started with Hadoop and Hive using HDInsight](/documentation/articles/hdinsight-get-started)  
-3. [Azure HDInsight](/documentation/services/hdinsight/) -- a fully managed Hadoop service on Azure.
+3. [Azure HDInsight](/home/features/hdinsight/) -- a fully managed Hadoop service on Azure.
 
 ### Relational database
 2. MySQL
@@ -233,7 +234,7 @@ This section starts with a blog entry containing a series of videos on [Video: A
 
 1. Docker
 	- [Docker VM Extension for Linux on Azure](/documentation/articles/virtual-machines-docker-vm-extension)
-	- [Using the Docker VM Extension from the Azure Cross-Platform Command-line Interface (Azure CLI)](/documentation/articles/virtual-machines-docker-with-xplat-cli)
+	- [Using the Docker VM Extension from the Azure Command-line Interface (Azure CLI)](/documentation/articles/virtual-machines-docker-with-xplat-cli)
 	- [Using the Docker VM Extension from the Azure Preview Portal](/documentation/articles/virtual-machines-docker-with-portal)
 	- [Getting Started Quickly with Docker in the Azure Marketplace](/documentation/articles/virtual-machines-docker-ubuntu-quickstart)
 	- [How to use docker-machine on Azure](/documentation/articles/virtual-machines-docker-machine)
@@ -276,6 +277,6 @@ This section starts with a blog entry containing a series of videos on [Video: A
 [Devops, Management, and Optimization]: #devops
 [Support, Troubleshooting, and "It Just Doesn't Work"]: #supportdebug
 
-<!--Link references--In actual articles, you only need a single period before the slash.>
+<!--Link references--In actual articles, you only need a single period before the slash. -->
 [How to use docker-machine on Azure]: /documentation/articles/virtual-machines-docker-machine
 [How to use docker with swarm on Azure]: /documentation/articles/virtual-machines-docker-swarm

@@ -1,7 +1,15 @@
 <properties pageTitle="Tutorial: Azure Active Directory integration with TimeOffManager | Windows Azure" description="Learn how to use TimeOffManager with Azure Active Directory to enable single sign-on, automated provisioning, and more!." services="active-directory" authors="MarkusVi"  documentationCenter="na" manager="stevenpo"/>
-<tags ms.service="active-directory" ms.devlang="na" ms.topic="article" ms.tgt_pltfrm="na" ms.workload="identity" ms.date="08/01/2015" ms.author="markvi" />
+<tags
+	ms.service="active-directory"
+	ms.date="08/01/2015"
+	wacn.date=""/>
 #Tutorial: Azure Active Directory integration with TimeOffManager
+<!-- deleted by customization
 >[AZURE.TIP]For feedback, click [here](https://social.msdn.microsoft.com/Forums/azure/zh-cn/3988c38f-0aba-46bb-88d7-1a851d5ac01c/tutorial-azure-active-directory-integration-with-timeoffmanager?forum=WindowsAzureAD).
+-->
+<!-- keep by customization: begin -->
+>[AZURE.TIP]For feedback, click [here](http://go.microsoft.com/fwlink/?LinkId=534748).
+<!-- keep by customization: end -->
   
 The objective of this tutorial is to show the integration of Azure and TimeOffManager.  
 The scenario outlined in this tutorial assumes that you already have the following items:
@@ -68,7 +76,7 @@ If you are not familiar with this procedure, see [How to convert a binary certif
 
     ![Configure Single Sign-On](./media/active-directory-saas-timeoffmanager-tutorial/IC795913.png "Configure Single Sign-On")
 
-3.  On the **Configure App URL** page, in the **TimeOffManager Reply URL** textbox, type your TimeOffManager AssertionConsumerService URL (e.g.: "*Example: https://www.timeoffmanager.com/cpanel/sso/consume.aspx?company\_id=IC34216*", and then click **Next**.
+3.  On the **Configure App URL** page, in the **TimeOffManager Reply URL** textbox, type your TimeOffManager AssertionConsumerService URL (e.g.: "*Example: <!-- deleted by customization https://www.timeoffmanager.com/cpanel/sso/consume.aspx?company\_id=IC34216*" --><!-- keep by customization: begin --> https://www.timeoffmanager.com/cpanel/sso/consume.aspx?company_id=IC34216*" <!-- keep by customization: end -->, and then click **Next**.
 
     ![Configure App URL](./media/active-directory-saas-timeoffmanager-tutorial/IC795914.png "Configure App URL")
 

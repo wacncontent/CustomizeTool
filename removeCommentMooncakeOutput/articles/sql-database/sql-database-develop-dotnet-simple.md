@@ -8,9 +8,9 @@
 	editor=""/>
 
 
-<tags 
-	ms.service="sql-database" 
-	ms.date="07/16/2015" 
+<tags
+	ms.service="sql-database"
+	ms.date="07/16/2015"
 	wacn.date=""/>
 
 
@@ -32,8 +32,8 @@ See the [getting started page](/documentation/articles/sql-database-get-started)
 
 ## Connect to your SQL Database
 
-The [System.Data.SqlClient.SqlConnection class](https://msdn.microsoft.com/zh-CN/library/system.data.sqlclient.sqlconnection.aspx) is used to connect to SQL Database.  
-
+The [System.Data.SqlClient.SqlConnection class](https://msdn.microsoft.com/zh-cn/library/system.data.sqlclient.sqlconnection.aspx) is used to connect to SQL Database.  
+	
 ```
 using System.Data.SqlClient;
 
@@ -51,8 +51,8 @@ class Sample
 
 ## Execute a query and retrieve the result set 
 
-The [System.Data.SqlClient.SqlCommand](https://msdn.microsoft.com/zh-CN/library/system.data.sqlclient.sqlcommand.aspx) and [SqlDataReader](https://msdn.microsoft.com/zh-CN/library/system.data.sqlclient.sqldatareader.aspx) classes can be used to retrieve a result set from a query against SQL Database. Note that System.Data.SqlClient also supports retrieving data into an offline [System.Data.DataSet](https://msdn.microsoft.com/zh-CN/library/system.data.dataset.aspx).   
-
+The [System.Data.SqlClient.SqlCommand](https://msdn.microsoft.com/zh-cn/library/system.data.sqlclient.sqlcommand.aspx) and [SqlDataReader](https://msdn.microsoft.com/zh-cn/library/system.data.sqlclient.sqldatareader.aspx) classes can be used to retrieve a result set from a query against SQL Database. Note that System.Data.SqlClient also supports retrieving data into an offline [System.Data.DataSet](https://msdn.microsoft.com/zh-cn/library/system.data.dataset.aspx).   
+	
 ```
 using System;
 using System.Data.SqlClient;
@@ -89,13 +89,12 @@ class Sample
 
 ```
 
-
 ## Inserting a row, passing parameters, and retrieving the generated primary key value 
 
-In SQL Database the [IDENTITY](https://msdn.microsoft.com/zh-CN/library/ms186775.aspx) property and the [SEQUENECE](https://msdn.microsoft.com/zh-CN/library/ff878058.aspx) object can be used to auto-generate [primary key](https://msdn.microsoft.com/zh-CN/library/ms179610.aspx) values. In this example you will see how to execute an [insert-statement](https://msdn.microsoft.com/zh-CN/library/ms174335.aspx), safely pass parameters which protects from [SQL injection](https://msdn.microsoft.com/magazine/cc163917.aspx), and retrieve the auto-generated primary key value.  
+In SQL Database the [IDENTITY](https://msdn.microsoft.com/zh-cn/library/ms186775.aspx) property and the [SEQUENECE](https://msdn.microsoft.com/zh-cn/library/ff878058.aspx) object can be used to auto-generate [primary key](https://msdn.microsoft.com/zh-cn/library/ms179610.aspx) values. In this example you will see how to execute an [insert-statement](https://msdn.microsoft.com/zh-cn/library/ms174335.aspx), safely pass parameters which protects from [SQL injection](https://msdn.microsoft.com/magazine/cc163917.aspx), and retrieve the auto-generated primary key value.  
 
-The [ExecuteScalar](https://msdn.microsoft.com/zh-CN/library/system.data.sqlclient.sqlcommand.executescalar.aspx) method in the [System.Data.SqlClient.SqlCommand](https://msdn.microsoft.com/zh-CN/library/system.data.sqlclient.sqlcommand.aspx) class can be used to execute a statement and retrieve the first column and row returned by this statement. The [OUTPUT](https://msdn.microsoft.com/zh-CN/library/ms177564.aspx) clause of the INSERT statement can be used to return the inserted values as a result set to the calling application. Note that OUTPUT is also supported by the [UPDATE](https://msdn.microsoft.com/zh-CN/library/ms177523.aspx), [DELETE](https://msdn.microsoft.com/zh-CN/library/ms189835.aspx) and [MERGE](https://msdn.microsoft.com/zh-CN/library/bb510625.aspx) statements. If more than one row is inserted you should use the [ExecuteReader](https://msdn.microsoft.com/zh-CN/library/system.data.sqlclient.sqlcommand.executereader.aspx) method to retrieve the inserted values for all rows.
-
+The [ExecuteScalar](https://msdn.microsoft.com/zh-cn/library/system.data.sqlclient.sqlcommand.executescalar.aspx) method in the [System.Data.SqlClient.SqlCommand](https://msdn.microsoft.com/zh-cn/library/system.data.sqlclient.sqlcommand.aspx) class can be used to execute a statement and retrieve the first column and row returned by this statement. The [OUTPUT](https://msdn.microsoft.com/zh-cn/library/ms177564.aspx) clause of the INSERT statement can be used to return the inserted values as a result set to the calling application. Note that OUTPUT is also supported by the [UPDATE](https://msdn.microsoft.com/zh-cn/library/ms177523.aspx), [DELETE](https://msdn.microsoft.com/zh-cn/library/ms189835.aspx) and [MERGE](https://msdn.microsoft.com/zh-cn/library/bb510625.aspx) statements. If more than one row is inserted you should use the [ExecuteReader](https://msdn.microsoft.com/zh-cn/library/system.data.sqlclient.sqlcommand.executereader.aspx) method to retrieve the inserted values for all rows.
+	
 ```
 class Sample
 {

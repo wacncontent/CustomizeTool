@@ -14,7 +14,7 @@
 
 # How to get an Azure Active Directory tenant
 
-In Azure Active Directory (Azure AD), a [tenant](https://msdn.microsoft.com/zh-cn/library/azure/jj573650.aspx#BKMK_WhatIsAnAzureADTenant) is representative of an organization.  It is a dedicated instance of the Azure AD service that an organization receives and owns when it signs up for a Microsoft cloud service such as Azure, <!-- deleted by customization Microsoft Intune --><!-- keep by customization: begin --> InTune <!-- keep by customization: end -->, or Office 365.  Each Azure AD tenant is distinct and separate from other Azure AD tenants.
+In Azure Active Directory (Azure AD), a [tenant](https://msdn.microsoft.com/zh-cn/library/azure/jj573650.aspx#BKMK_WhatIsAnAzureADTenant) is representative of an organization.  It is a dedicated instance of the Azure AD service that an organization receives and owns when it signs up for a Microsoft cloud service such as Azure, Microsoft Intune, or Office 365.  Each Azure AD tenant is distinct and separate from other Azure AD tenants.  
 
 A tenant houses the users in a company and the information about them - their passwords, user profile data, permissions, and so on.  It also contains groups, applications, and other information pertaining to an organization and its security.
 
@@ -49,7 +49,7 @@ To do so, follow these steps.  Alternatively, you may wish to create a new tenan
     - Optional: Enable Multi-Factor Authentication
     - Lastly, click on the green “CREATE” button to finalize user creation (and display the temporary password).
 7.	When you have completed the Add User Form, and receive the temporary password for the new administrative user, be sure to record this password as you will need to login with this new user in order to change the password. You can also send the password directly to the user, using an alternative e-mail.
-8.	To change the temporary password, log into https://login.microsoftonline.com with this new user account and change the password when requested.
+8.	To change the temporary password, log into https://login.chinacloudapi.cn with this new user account and change the password when requested.
 
 
 ## Use an organizational Azure subscription

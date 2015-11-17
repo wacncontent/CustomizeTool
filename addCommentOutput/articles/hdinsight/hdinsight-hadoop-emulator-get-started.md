@@ -77,7 +77,7 @@ The installation should have also installed several local services. The followin
 
 ![Hadoop ecosystem services listed in the emulator window.][image-hdi-emulator-services]
 
-The services related to the HDInsight Emulator are not started by default. To start the services, from the Hadoop command line, run **start_local_hdp_services.cmd** under C:\hdp (default location). To automatically start the services after the computer restarts, run **set-onebox-autostart.cmd**.  
+The services related to the HDInsight Emulator are not started by default. To start the services, from the Hadoop command line, run <!-- deleted by customization **start\_local\_hdp_services.cmd** --><!-- keep by customization: begin --> **start_local_hdp_services.cmd** <!-- keep by customization: end --> under C:\hdp (default location). To automatically start the services after the computer restarts, run **set-onebox-autostart.cmd**.
 
 For known issues with installing and running the HDInsight Emulator, see the [HDInsight Emulator Release Notes](/documentation/articles/hdinsight-emulator-release-notes). The installation log is located at **C:\HadoopFeaturePackSetup\HadoopFeaturePackSetupTools\gettingStarted.winpkg.install.log**.
 
@@ -435,7 +435,7 @@ Before you start with the instructions below, you must have created a storage ac
 **To create a container**
 <!-- deleted by customization
 
-1. Sign in to the [Azure Preview Portal](https://ms.portal.azure.com/).
+1. Sign in to the [Azure Preview Portal](https://manage.windowsazure.cn/).
 2. Click **NEW** on the left, click **DATA SERVICE**, and then click **Storage**.
 3. In the Storage Account blade, configure the properties as shown in the screen capture below.
 	

@@ -21,7 +21,7 @@ In order to use [EventProcessorHost], you must have an Azure Storage account. Yo
 
 You will also need a Service Bus queue to enable reliable processing of interactive messages. You can create a queue programmatically with a 1 hour deduplication window, as explained in [How to use Service Bus Queues][Service Bus Queue], or use the [Azure Management Portal], following these steps:
 
-1. Click **NEW** in the bottom left corner, then **Azure Websites**, then **Service Bus**, then **Queue**, then **Custom**, select the name **d2ctutorial**, then select a deduplication window of 1 hour.
+1. Click **NEW** in the bottom left corner, then <!-- deleted by customization **App Services** --><!-- keep by customization: begin --> **Azure Websites** <!-- keep by customization: end -->, then **Service Bus**, then **Queue**, then **Custom**, select the name **d2ctutorial**, then select a deduplication window of 1 hour.
 
     ![][30]
 

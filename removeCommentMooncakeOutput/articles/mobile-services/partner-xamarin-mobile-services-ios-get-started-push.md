@@ -39,16 +39,16 @@ First you must generate the Certificate Signing Request (CSR) file, which is use
 
 2. Click **Keychain Access**, expand **Certificate Assistant**, then click **Request a Certificate from a Certificate Authority...**.
 
-  	![][5]
+    ![][5]
 
 3. Enter your **User Email Address**, type in a **Common Name** value, make sure that **Saved to disk** is selected, and then click **Continue**.
 
-  	![][6]
+    ![][6]
 
 4. Type a name for the Certificate Signing Request (CSR) file in **Save As**, select the location in **Where**, then click **Save**.
 
-  	![][7]
-  
+    ![][7]
+
     Remember the location you chose.
 
 Next, you will register your app with Apple, enable push notifications, and upload this exported CSR to create a push certificate.
@@ -59,85 +59,85 @@ To be able to send push notifications to an iOS app from mobile services, you mu
 
 1. If you have not already registered your app, navigate to the <a href="https://idmsa.apple.com/IDMSWebAuth/login?&appIdKey=891bd3417a7776362562d2197f89480a8547b108fd934911bcbea0110d07f757&path=%2F%2Faccount%2Foverview.action" target="_blank">iOS Provisioning Portal</a> at the Apple Developer Center, log on with your Apple ID, click **Identifiers**, then click **App IDs**, and finally click on the **+** sign to create an app ID for your app.
 
-   	![][102] 
+    ![][102]
 
 2. Type a name for your app in **Description**, enter and remember the unique **Bundle Identifier**, check the "Push Notifications" option in the "Azure Websites" section, and then click **Continue**. This example uses the ID **MobileServices.Quickstart** but you may not reuse this same ID, as app IDs must be unique across all users. As such, it is recommended that you append your full name or initials after the app name.
 
-   	![][103]
-   
+    ![][103]
+
     This generates your app ID and requests you to **Submit** the information. Click **Submit**.
-   
-   	![][104] 
-   
-   	Once you click **Submit**, you will see the **Registration complete** screen, as shown below. Click **Done**.
-   
-   	![][105]
 
-3. Locate the app ID that you just created, and click on its row. 
+    ![][104]
 
-   	![][106]
-   
-   	Clicking on the app ID will display details on the app and app ID. Click the **Settings** button.
-   
-   	![][107] 
-   
+    Once you click **Submit**, you will see the **Registration complete** screen, as shown below. Click **Done**.
+
+    ![][105]
+
+3. Locate the app ID that you just created, and click on its row.
+
+    ![][106]
+
+    Clicking on the app ID will display details on the app and app ID. Click the **Settings** button.
+
+    ![][107]
+
 4. Scroll to the bottom of the screen, and click the **Create Certificate...** button under the section **Development Push SSL Certificate**.
 
-   	![][108] 
+    ![][108]
 
-   	This displays the "Add iOS Certificate" assistant.
-   
+    This displays the "Add iOS Certificate" assistant.
+
     Note: This tutorial uses a development certificate. The same process is used when registering a production certificate. Just make sure that you set the same certificate type when you upload the certificate to Mobile Services.
 
 5. Click **Choose File**, browse to the location where you saved the CSR file earlier, then click **Generate**.
 
-  	![][110]
-  
+    ![][110]
+
 6. After the certificate is created by the portal, click the **Download** button, and click **Done**.
- 
-  	![][111]  
 
-   	This downloads the signing certificate and saves it to your computer in your Downloads folder. 
+    ![][111]  
 
-  	![][9] 
+    This downloads the signing certificate and saves it to your computer in your Downloads folder.
+
+    ![][9]
 
     Note: By default, the downloaded file a development certificate is named <strong>aps_development.cer</strong>.
 
 7. Double-click the downloaded push certificate **aps_development.cer**.
 
-   	This installs the new certificate in the Keychain, as shown below:
+    This installs the new certificate in the Keychain, as shown below:
 
-   	![][10]
+    ![][10]
 
     Note: The name in your certificate might be different, but it will be prefixed with <strong>Apple Development iOS Push Notification Services:</strong>.
 
 Later, you will use this certificate to generate a .p12 file and upload it to Mobile Services to enable authentication with APNS.
 
 ## <a name="profile"></a>Create a provisioning profile for the app
- 
+
 1. Back in the <a href="https://idmsa.apple.com/IDMSWebAuth/login?&appIdKey=891bd3417a7776362562d2197f89480a8547b108fd934911bcbea0110d07f757&path=%2F%2Faccount%2Foverview.action" target="_blank">iOS Provisioning Portal</a>, select **Provisioning Profiles**, select **All**, and then click the **+** button to create a new profile. This launches the **Add iOS Provisiong Profile** Wizard.
 
-   	![][112]
+    ![][112]
 
 2. Select **iOS App Development** under **Development** as the provisiong profile type, and click **Continue**.
 
 3. Next, select the app ID for the Mobile Services Quickstart app from the **App ID** drop-down list, and click **Continue**.
 
-   	![][113]
+    ![][113]
 
 4. In the **Select certificates** screen, select the certificate created earlier, and click **Continue**.
 
-   	![][114]
+    ![][114]
 
 5. Next, select the **Devices** to use for testing, and click **Continue**.
-  
-   	![][115]
+
+    ![][115]
 
 6. Finally, pick a name for the profile in **Profile Name**, click **Generate**, and click **Done**.
 
-   	![][116]
+    ![][116]
 
-  	This creates a new provisioning profile.
+    This creates a new provisioning profile.
 
     ![][117]
 
@@ -147,23 +147,23 @@ After you have registered your app with APNS and configured your project, you mu
 
 1. In Keychain Access, right-click the new certificate, click **Export**, name your file, select the **.p12** format, then click **Save**.
 
-   	![][28]
+    ![][28]
 
-  	Make a note of the file name and location of the exported certificate.
+    Make a note of the file name and location of the exported certificate.
 
 2. Log on to the [Azure Management Portal], click **Mobile Services**, and then click your app.
 
-   	![][18]
+    ![][18]
 
 3. Click the **Push** tab and click **Upload** under **apple push notification settings**.
 
-   	![][19]
+    ![][19]
 
-   	This displays the Upload Certificate dialog.
+    This displays the Upload Certificate dialog.
 
 4. Click **File**, select the exported certificate .p12 file, enter the **Password**, make sure that the correct **Mode** is selected, click the check icon, then click **Save**.
 
-   	![][20] 
+    ![][20]
 
 Your mobile service is now configured to work with APNS.
 
@@ -260,34 +260,34 @@ Your mobile service is now configured to work with APNS.
 
 8. In **TodoListViewController**, modify the **OnAdd** action to get the device token stored in **AppDelegeate**, and store it into the **TodoItem** being added.
 
-      string deviceToken = ((AppDelegate)UIApplication.SharedApplication.Delegate).DeviceToken;
+        string deviceToken = ((AppDelegate)UIApplication.SharedApplication.Delegate).DeviceToken;
 
-			var newItem = new TodoItem() 
-			{
-				Text = itemText.Text, 
-				Complete = false,
-                DeviceToken = deviceToken
-			};
+        var newItem = new TodoItem()
+        {
+            Text = itemText.Text,
+            Complete = false,
+            DeviceToken = deviceToken
+        };
 
 Your app is now updated to support push notifications.
 
 ## <a name="update-scripts"></a>Update the registered insert script in the Management Portal
 
-1. In the Management Portal, click the **Data** tab and then click the **TodoItem** table. 
+1. In the Management Portal, click the **Data** tab and then click the **TodoItem** table.
 
-   	![][21]
+    ![][21]
 
 2. In **todoitem**, click the **Script** tab and select **Insert**.
-   
-  	![][22]
 
-   	This displays the function that is invoked when an insert occurs in the **TodoItem** table.
+    ![][22]
+
+    This displays the function that is invoked when an insert occurs in the **TodoItem** table.
 
 3. Replace the insert function with the following code, and then click **Save**:
 
         function insert(item, user, request) {
             request.execute();
-            // Set timeout to delay the notification, to provide time for the 
+            // Set timeout to delay the notification, to provide time for the
             // app to be closed on the device to demonstrate toast notifications
             setTimeout(function() {
                 push.apns.send("uniqueTag", {
@@ -299,7 +299,7 @@ Your app is now updated to support push notifications.
             }, 2500);
         }
 
-   	This registers a new insert script, which uses the [apns object] to send a push notification (the inserted text) to the device provided in the insert request. 
+    This registers a new insert script, which uses the [apns object] to send a push notification (the inserted text) to the device provided in the insert request.
 
    >[AZURE.NOTE] This script delays sending the notification to give you time to close the app to receive a toast notification.
 
@@ -307,21 +307,21 @@ Your app is now updated to support push notifications.
 
 1. Press the **Run** button to build the project and start the app in an iOS capable device, then click **OK** to accept push notifications
 
-  	![][23]
+    ![][23]
 
    >[AZURE.NOTE] You must explicitly accept push notifications from your app. This request only occurs the first time that the app runs.
 
 2. In the app, type meaningful text, such as _A new Mobile Services task_ and then click the plus (**+**) icon.
 
-  	![][24]
+    ![][24]
 
 3. Verify that a notification is received, then click **OK** to dismiss the notification.
 
-  	![][25]
+    ![][25]
 
 4. Repeat step 2 and immediately close the app, then verify that the following toast is shown.
 
-  	![][26]
+    ![][26]
 
 You have successfully completed this tutorial.
 
@@ -386,6 +386,7 @@ You have successfully completed this tutorial.
 [Get started with Mobile Services]: /documentation/articles/mobile-services-ios-get-started
 
 [Xamarin Device Provisioning]: http://developer.xamarin.com/guides/ios/getting_started/installation/device_provisioning/
+
 
 [Azure Management Portal]: https://manage.windowsazure.cn/
 [apns object]: http://go.microsoft.com/fwlink/p/?LinkId=272333

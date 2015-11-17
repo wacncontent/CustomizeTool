@@ -1,5 +1,8 @@
 <properties pageTitle="Tutorial: Azure Active Directory integration with ScreenSteps | Windows Azure" description="Learn how to use ScreenSteps with Azure Active Directory to enable single sign-on, automated provisioning, and more!." services="active-directory" authors="MarkusVi"  documentationCenter="na" manager="stevenpo"/>
-<tags ms.service="active-directory" ms.devlang="na" ms.topic="article" ms.tgt_pltfrm="na" ms.workload="identity" ms.date="08/01/2015" ms.author="markvi" />
+<tags
+	ms.service="active-directory"
+	ms.date="08/01/2015"
+	wacn.date=""/>
 #Tutorial: Azure Active Directory integration with ScreenSteps
 >[AZURE.TIP]For feedback, click [here](https://msdn.microsoft.com/zh-cn/library/azure/dn893477.aspx).
   

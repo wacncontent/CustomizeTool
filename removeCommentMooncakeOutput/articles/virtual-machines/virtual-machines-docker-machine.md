@@ -9,9 +9,9 @@
    tags="azure-service-management"/>
 
 <tags
-   ms.service="virtual-machines"
-   ms.date="09/22/2015"
-   wacn.date=""/>
+	ms.service="virtual-machines"
+	ms.date="09/22/2015"
+	wacn.date=""/>
 
 # How to use docker-machine with Azure
 
@@ -209,4 +209,3 @@ Go to the [Docker user guide](https://docs.docker.com/userguide/) and create som
 [Link 1 to another azure.microsoft.com documentation topic]: /documentation/articles/virtual-machines-windows-tutorial
 [Link 2 to another azure.microsoft.com documentation topic]: /documentation/articles/web-sites-custom-domain-name
 [Link 3 to another azure.microsoft.com documentation topic]: /documentation/articles/storage-whatis-account
- 

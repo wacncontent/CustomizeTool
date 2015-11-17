@@ -17,7 +17,7 @@
 
 ## Overview
 
-Azure Site Recovery contributes to your business continuity and disaster recovery (BCDR) strategy by orchestrating replication, failover and recovery of virtual machines in a number of deployment scenarios. For a full list of deployment scenarios see  [Azure Site Recovery <!-- deleted by customization overview](/documentation/articles/site-recovery-overview) --><!-- keep by customization: begin --> overview](/documentation/articles/hyper-v-recovery-manager-overview) <!-- keep by customization: end -->.
+Azure Site Recovery contributes to your business continuity and disaster recovery (BCDR) strategy by orchestrating replication, failover and recovery of virtual machines in a number of deployment scenarios. For a full list of deployment scenarios see  [Azure Site Recovery overview](/documentation/articles/site-recovery-overview).
 
 If you only have a single VMM server in your infrastructure you can deploy Site Recovery to replicate virtual machines in VMM clouds to Azure, or you can replicate between clouds on a single VMM server. We recommend that you only do this if you're unable to deploy two VMM servers (one in each site) since failover and recovery isn't seamless in this deployment. For recovery you'll need to manually fail over the VMM server from outside the Azure Site Recovery console (using Hyper-V Replica in the Hyper-V Manager console).
 
@@ -46,7 +46,7 @@ To make VMM highly available it can be deployed as a virtual machine in a Window
 	- One or more Hyper-V host servers in each host group
 	- One or more Hyper-V virtual machines on each host server
 
-If you run into problems setting up this scenario post your questions on the [Azure Recovery Services <!-- deleted by customization Forum](https://social.msdn.microsoft.com/Forums/azure/home?forum=hypervrecovmgr) --><!-- keep by customization: begin --> Forum](https://social.msdn.microsoft.com/Forums/zh-CN/home?forum=hypervrecovmgr) <!-- keep by customization: end -->.
+If you run into problems setting up this scenario post your questions on the [Azure Recovery Services Forum](https://social.msdn.microsoft.com/Forums/azure/home?forum=hypervrecovmgr).
 
 
 
@@ -92,3 +92,6 @@ In the event of a disaster workloads can be recovered using the following steps:
 1. Manually fail over the replica VMM virtual machine to the recovery site from the Hyper-V Manager console.
 2. After the VMM virtual machine has been recovered, you can log into the Hyper-V Recovery Manager console from the portal and do an unplanned failover of the virtual machines from the primary to the recovery site.
 3.  After the unplanned failover finishes users can access all the resources at the primary site.
+
+
+ 

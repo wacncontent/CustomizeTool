@@ -1,5 +1,8 @@
 <properties pageTitle="Tutorial: Azure Active Directory integration with TOPdesk - Secure | Windows Azure" description="Learn how to use TOPdesk - Secure with Azure Active Directory to enable single sign-on, automated provisioning, and more!." services="active-directory" authors="MarkusVi"  documentationCenter="na" manager="stevenpo"/>
-<tags ms.service="active-directory" ms.devlang="na" ms.topic="article" ms.tgt_pltfrm="na" ms.workload="identity" ms.date="08/01/2015" ms.author="markvi" />
+<tags
+	ms.service="active-directory"
+	ms.date="08/01/2015"
+	wacn.date=""/>
 #Tutorial: Azure Active Directory integration with TOPdesk - Secure
 >[AZURE.TIP]For feedback, click [here](https://social.msdn.microsoft.com/Forums/azure/zh-cn/f4243506-c664-44e5-9f2e-ab8068568104/tutorial-azure-active-directory-integration-with-topdesk-secure?forum=WindowsAzureAD).
   

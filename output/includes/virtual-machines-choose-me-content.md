@@ -19,7 +19,9 @@ Like other virtual machines, a VM in Azure has an operating system, storage and 
 -	Windows Server 
 -	Linux servers such as Suse, Ubuntu and CentOS
 -	SQL Server
+<!-- deleted by customization
 -	BizTalk Server 
+-->
 -	SharePoint Server
 
 Virtual machines use virtual hard disks (VHDs) to store their operating system (OS) and data. VHDs are also used for the images you can choose from to install an OS. The following figure shows this, as well as two of the tools for creating and managing your VMs.
@@ -34,7 +36,7 @@ VMs can be managed using a browser-based portal, command-line tools with support
 Along with the OS, other configuration choices you have with VMs include:
 
 - The size, which determines factors such as how many disks you can attach and the processing power. Azure offers a wide variety of sizes to support many types of uses. For details, see [Sizes for Virtual Machines](/documentation/articles/virtual-machines-size-specs).  
-- The Azure region where your new VM will be hosted, such as in the US, Europe, or Asia. 
+- The Azure region where your new VM will be hosted, such as in the <!-- deleted by customization US, Europe, --><!-- keep by customization: begin --> China East <!-- keep by customization: end --> or <!-- deleted by customization Asia --><!-- keep by customization: begin --> China North <!-- keep by customization: end -->.
 - VM extensions, which give your virtual machine additional capabilities, such as running anti-virus or using the Desired State Configuration feature of Windows PowerShell.
 
 Other benefits to consider for VMs include:

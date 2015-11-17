@@ -8,9 +8,9 @@
 	editor="genemi"/>
 
 
-<tags 
-	ms.service="sql-database" 
-	ms.date="09/28/2015" 
+<tags
+	ms.service="sql-database"
+	ms.date="09/28/2015"
 	wacn.date=""/>
 
 
@@ -26,7 +26,7 @@ This topic presents a Java code sample that you can use to connect to Azure SQL 
 ## Requirements
 
 
-- [Microsoft JDBC Driver for SQL Server - SQL JDBC 4](http://www.microsoft.com/zh-CN/download/details.aspx?id=11774).
+- [Microsoft JDBC Driver for SQL Server - SQL JDBC 4](http://www.microsoft.com/download/details.aspx?displaylang=en&id=11774).
 - Any operating system platform that runs [Java Development Kit 1.8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html).
 - An existing database on SQL Azure. See the [Get Started topic](/documentation/articles/sql-database-get-started) to learn how to create a sample database and retrieve your connection string.
 
@@ -82,7 +82,7 @@ Here next is the bulk of the Java code sample. The sample includes the `main` fu
 	
 		public static void main(String[] args) {
 			String connectionString =
-				"jdbc:sqlserver://your_server.database.chinacloudapi.cn:1433;"
+				"jdbc:sqlserver://your_server.database.chinacloudapi.cn:1433;" 
 				+ "database=your_database;"
 				+ "user=your_user@your_server;"
 				+ "password={your_password};"

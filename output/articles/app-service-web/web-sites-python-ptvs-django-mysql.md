@@ -28,6 +28,16 @@ We'll learn how to use a MySQL service hosted on Azure, how to configure the web
 
 See the [Python Developer Center] for more articles that cover development of Azure Websites with PTVS using Bottle, Flask and Django web frameworks, with MongoDB, Azure Table Storage, MySQL and SQL Database services. While this article focuses on Azure Websites, the steps are similar when developing [Azure Cloud Services].
 
+<!-- keep by customization: begin -->
++ [Prerequisites](#prerequisites)
++ [Create the Project](#create-the-project)
++ [Create a MySQL Database](#create-a-mysql-database)
++ [Configure the Project](#configure-the-project)
++ [Publish to an Azure Website](#publish-to-an-azure-website)
++ [Next steps](#next-steps)
+
+<a name="prerequisites"></a>
+<!-- keep by customization: end -->
 ## Prerequisites
 
  - Visual Studio 2013 or 2015
@@ -37,8 +47,10 @@ See the [Python Developer Center] for more articles that cover development of Az
  - [Python 2.7 32-bit]
 
 [AZURE.INCLUDE [create-account-and-websites-note](../includes/create-account-and-websites-note.md)]
+<!-- deleted by customization
 
 >[AZURE.NOTE] If you want to get started with Azure Websites before signing up for an Azure account, go to [Try Azure Websites](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure Websites. No credit cards required; no commitments.
+-->
 
 ## Create the Project
 
@@ -96,6 +108,7 @@ You can create a database with a free plan by following these steps.
 
 1.  Log into the [Azure Management Portal].
 
+<!-- deleted by customization
 1.  At the bottom of the navigation pane, click **NEW**. Then, click **DATA SERVICE** > **Azure Marketplace**. 
 
   	<!-- ![New Button](./media/web-sites-python-ptvs-django-mysql/PollsCommonAzurePlusNew.png)-->
@@ -110,6 +123,14 @@ You can create a database with a free plan by following these steps.
 
 1.  Once the MySQL database is created, click **Properties** in the database blade.
 2.  Use the copy button to put the value of **CONNECTION STRING** on the clipboard.
+-->
+<!-- keep by customization: begin -->
+1.  At the bottom of the navigation pane. 
+
+1.  Click **DATA SERVICE**, then **MYSQL DATABASE ON AZURE**, then **QUICK CREATE**.
+
+1.  Filled in with name, version, and so on, then click **CREATE**.
+<!-- keep by customization: end -->
 
 ## Configure the Project
 
@@ -187,16 +208,19 @@ Follow these links to learn more about Python Tools for Visual Studio, Django an
 - [Django Documentation]
 - [MySQL]
 
+<!-- deleted by customization
 For more information, see the [Python Developer Center](/develop/python/).
 
 ## What's changed
 * For a guide to the change from Websites to Azure Websites see: [Azure Websites and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
 * For a guide to the change of the Management Portal to the new portal see: [Reference for navigating the preview portal](https://manage.windowsazure.cn/)
 
+-->
 
 <!--Link references-->
 [Python Developer Center]: /develop/python/
 [Azure Cloud Services]: /documentation/articles/cloud-services-python-ptvs
+
 <!--External Link references-->
 [Azure Management Portal]: https://manage.windowsazure.cn
 [Python Tools for Visual Studio]: http://aka.ms/ptvs

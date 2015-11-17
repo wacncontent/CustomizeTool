@@ -8,9 +8,9 @@
    editor=""/>
 
 <tags
-   ms.service="cloud-services"
-   ms.date="03/25/2015"
-   wa.date=""/>
+	ms.service="cloud-services"
+	ms.date="03/25/2015"
+	wacn.date=""/>
 
 # Multi-Site Data Tier (Azure Architecture Patterns)
 

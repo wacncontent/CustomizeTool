@@ -203,6 +203,7 @@ Some considerations apply:
 - Make sure the video has been published.
 - The **MEDIA SERVICES CONTENT PLAYER** plays from the default streaming endpoint. If you want to play from a non-default streaming endpoint, use another player. For example, [Azure Media Services Player](http://amsplayer.azurewebsites.net/azuremediaplayer.html).
  
+<!-- deleted by customization
 
 ##Media Services learning paths
 
@@ -213,6 +214,12 @@ You can view AMS learning paths here:
 
 
 ![AMSPlayer][AMSPlayer]
+-->
+<!-- keep by customization: begin -->
+
+
+![AMSPlayer][AMSPlayer]
+<!-- keep by customization: end -->
 
 <!-- Images -->
 [portaloverview]: ./media/media-services-manage-content/media-services-content-page.png

@@ -106,6 +106,7 @@ These articles provide a foundation reference for REST and authentication librar
 
 - [Supported token and claim types](/documentation/articles/active-directory-token-and-claims): You can use this guide to understand and evaluate the claims in the SAML 2.0 and JSON Web Tokens (JWT) tokens.
 
+<!-- deleted by customization
 ## Videos
 
 ### Build 2015
@@ -123,6 +124,7 @@ These overview presentations on developing apps by using Azure Active Directory 
 - [Azure Identity 102](http://azure.microsoft.com/documentation/videos/azure-identity-creating-active-directory/)
 - [Azure Identity 103](http://azure.microsoft.com/documentation/videos/azure-identity-application-to-authenticate/)
 
+-->
 ## Social
 
 - [Active Directory Team blog](http://blogs.technet.com/b/ad/): The latest developments in the world of Azure Active Directory.

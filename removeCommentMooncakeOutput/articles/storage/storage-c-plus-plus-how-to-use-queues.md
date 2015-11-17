@@ -7,10 +7,10 @@
     manager="adinah" 
     editor=""/>
 
-<tags 
-    ms.service="storage" 
-	ms.date="09/23/2015" 
-    wacn.date=""/>
+<tags
+	ms.service="storage"
+	ms.date="09/23/2015"
+	wacn.date=""/>
 
 # How to use Queue Storage from C++  
 
@@ -49,7 +49,7 @@ An Azure storage client uses a storage connection string to store endpoints and 
 	// Define the connection-string with your values.
 	const utility::string_t storage_connection_string(U("DefaultEndpointsProtocol=https;AccountName=your_storage_account;AccountKey=your_storage_account_key"));
 
-To test your application in your local Windows computer, you can use the Windows Azure [storage emulator](https://msdn.microsoft.com/zh-CN/library/azure/hh403989.aspx)  that is installed with the [Azure SDK](/downloads/). The storage emulator is a utility that simulates the Blob, Queue, and Table services available in Azure on your local development machine. The following example shows how you can declare a static field to hold the connection string to your local storage emulator:  
+To test your application in your local Windows computer, you can use the Windows Azure [storage emulator](https://msdn.microsoft.com/zh-cn/library/azure/hh403989.aspx)  that is installed with the [Azure SDK](/downloads/). The storage emulator is a utility that simulates the Blob, Queue, and Table services available in Azure on your local development machine. The following example shows how you can declare a static field to hold the connection string to your local storage emulator:  
 
 	// Define the connection-string with Azure Storage Emulator.
 	const utility::string_t storage_connection_string(U("UseDevelopmentStorage=true;"));  

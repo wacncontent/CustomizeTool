@@ -137,3 +137,6 @@ Perform the refresh gesture in the app instances by dragging from the top. Now y
 [Getting Started Offline iOS Sample]: https://github.com/Azure/mobile-services-samples/tree/master/TodoOffline/iOS/blog20140611
 [Get Started with Offline Data]: /documentation/articles/mobile-services-ios-get-started-offline-data
 [Get started with Mobile Services]: /documentation/articles/mobile-services-ios-get-started
+<!-- keep by customization: begin -->
+[Get started with data]: /documentation/articles/mobile-services-ios-get-started-data
+<!-- keep by customization: end -->

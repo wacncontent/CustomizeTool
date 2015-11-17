@@ -7,16 +7,10 @@
 	manager="jason@blitline.com" 
 	editor="jason@blitline.com"/>
 
-<tags 
-	ms.service="multiple" 
-	ms.date="12/09/2014" 
+<tags
+	ms.service="multiple"
+	ms.date="12/09/2014"
 	wacn.date=""/>
-
-
-
-
-
-
 # How to use Blitline with Azure and Azure Storage
 
 This guide will explain how to access Blitline services and how to submit jobs to Blitline.
@@ -97,7 +91,7 @@ You will get JSON back that looks something like this:
 
 
 This tells you that Blitline has recieved your request, it has put it in a processing queue, and when it has completed the image will be available at:
-**https://s3.amazonaws.com/dev.blitline/2011110722/YOUR_APP_ID/CK3f0xBF_2bV6wf7gEZE8w.jpg**
+**https://s3.amazonaws.com/dev.blitline/2011110722/YOUR\_APP\_ID/CK3f0xBF_2bV6wf7gEZE8w.jpg**
 
 ## <a id="saveazure"></a>How to save an image to your Azure Storage account
 
@@ -123,13 +117,13 @@ Here is an example:
 
 By filling in the CAPITALIZED values with your own, you can submit this JSON to http://api.blitline.com/job and the "src" image will be processed with a blur filter and then pushed to you Azure destination.
 
-<h3>Please note:</h3>
+###Please note:
 
 The SAS must contain the entire SAS url, including the filename of the destination file.
 
 Example:
 
-    http://blitline.blob.core.chinacloudapi.cn/sample/image.jpg?sr=b&sv=2012-02-12&st=2013-04-12T03%3A18%3A30Z&se=2013-04-12T04%3A18%3A30Z&sp=w&sig=Bte2hkkbwTT2sqlkkKLop2asByrE0sIfeesOwj7jNA5o%3D
+    http://blitline.blob.core.windows.net/sample/image.jpg?sr=b&sv=2012-02-12&st=2013-04-12T03%3A18%3A30Z&se=2013-04-12T04%3A18%3A30Z&sp=w&sig=Bte2hkkbwTT2sqlkkKLop2asByrE0sIfeesOwj7jNA5o%3D
 
 
 You can also read the latest edition of Blitline's Azure Storage docs [here](http://www.blitline.com/docs/azure_storage).

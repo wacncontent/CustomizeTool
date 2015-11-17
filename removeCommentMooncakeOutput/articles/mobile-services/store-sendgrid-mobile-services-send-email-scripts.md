@@ -7,9 +7,9 @@
 	manager="sendgrid" 
 	editor=""/>
 
-<tags 
-	ms.service="mobile-services" 
-	ms.date="07/31/2015" 
+<tags
+	ms.service="mobile-services"
+	ms.date="07/31/2015"
 	wacn.date=""/>
 
 
@@ -126,10 +126,10 @@ these links to learn more about SendGrid.
 [4]: ./media/store-sendgrid-mobile-services-send-email-scripts/mobile-receive-email.png
 
 <!-- URLs. -->
-[Get started with Mobile Services]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started/
+[Get started with Mobile Services]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started
 [sign up page]: https://sendgrid.com/windowsazure.html
 [Multiple User Credentials page]: https://sendgrid.com/credentials
-[Azure Management Portal]: https://manage.windowsazure.cn
+[Azure Management Portal]: https://manage.windowsazure.cn/
 [cloud-based email service]: https://sendgrid.com/email-solutions
 [transactional email delivery]: https://sendgrid.com/transactional-email
 

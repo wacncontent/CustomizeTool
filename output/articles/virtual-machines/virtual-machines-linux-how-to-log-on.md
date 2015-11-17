@@ -17,8 +17,10 @@
 
 
 #How to Log on to a Virtual Machine Running Linux #
+<!-- deleted by customization
 
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] [Resource Manager deployment model](/documentation/articles/virtual-machines-linux-tutorial-portal-rm).
+-->
 
 For a virtual machine running a Linux operating system, you use a Secure Shell (SSH) client to log on.
 

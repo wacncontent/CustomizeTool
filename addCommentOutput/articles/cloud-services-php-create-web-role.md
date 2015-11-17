@@ -22,7 +22,7 @@ This guide will show you how to create PHP web or worker roles in a Windows deve
 
 Azure provides three compute models for running applications: Azure Websites, Azure Virtual Machines, and Azure Cloud Services. All three models support PHP. Cloud Services, which includes web and worker roles, provides *platform as a service (PaaS)*. Within a cloud service, a web role provides a dedicated Internet Information Services (IIS) web server to host front-end web applications. A worker role can run asynchronous, long-running or perpetual tasks independent of user interaction or input.
 
-For more information about these options, see [Compute hosting options provided by <!-- deleted by customization Azure](./cloud-services/fundamentals-application-models.md) --><!-- keep by customization: begin --> Azure](/documentation/articles/fundamentals-application-models) <!-- keep by customization: end -->.
+For more information about these options, see [Compute hosting options provided by Azure](/documentation/articles/fundamentals-application-models).
 
 ## Download the Azure SDK for PHP
 
@@ -169,7 +169,7 @@ To configure a worker role to use a PHP runtime that you provide, follow these s
 
 ## Run your application in the compute and storage emulators
 
-The Azure emulators provide a local environment in which you can test your Azure application before you deploy it to the cloud. There are some differences between the emulators and the Azure environment. To understand this better, see [Use the Azure storage emulator for development and <!-- deleted by customization testing](./storage/storage-use-emulator.md) --><!-- keep by customization: begin --> testing](/documentation/articles//storage-use-emulator) <!-- keep by customization: end -->.
+The Azure emulators provide a local environment in which you can test your Azure application before you deploy it to the cloud. There are some differences between the emulators and the Azure environment. To understand this better, see [Use the Azure storage emulator for development and testing](/documentation/articles/storage-use-emulator).
 
 Note that you must have PHP installed locally to use the compute emulator. The compute emulator will use your local PHP installation to run your application.
 
@@ -203,11 +203,6 @@ For more information, see the [PHP Developer Center](/develop/php/).
 [service definition (.csdef)]: http://msdn.microsoft.com/zh-cn/library/azure/ee758711.aspx
 [service configuration (.cscfg)]: http://msdn.microsoft.com/zh-cn/library/azure/ee758710.aspx
 [iis.net]: http://www.iis.net/
-<!-- deleted by customization
 [sql native client]: http://msdn.microsoft.com/sqlserver/aa937733.aspx
--->
-<!-- keep by customization: begin -->
-[sql native client]: http://msdn.microsoft.com/zh-cn/sqlserver/aa937733.aspx
-<!-- keep by customization: end -->
 [sqlsrv drivers]: http://php.net/sqlsrv
 [sqlncli.msi x64 installer]: http://go.microsoft.com/fwlink/?LinkID=239648

@@ -261,7 +261,12 @@ If you are writing a script that relies on the exit status, please verify that t
 
 
 
+<!-- deleted by customization
 [mac-installer]: http://azuresdkscu.blob.core.windows.net/downloads04/azure-cli.0.9.10.dmg
+-->
+<!-- keep by customization: begin -->
+[mac-installer]: http://azuresdkscu.blob.core.chinacloudapi.cn/downloads04/azure-cli.0.9.10.dmg
+<!-- keep by customization: end -->
 [windows-installer]: http://go.microsoft.com/?linkid=9828653&clcid=0x409
 [authandsub]: http://msdn.microsoft.com/zh-cn/library/azure/hh531793.aspx#BKMK_AccountVCert
 

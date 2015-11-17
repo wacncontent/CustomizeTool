@@ -24,7 +24,7 @@ To enhance your Azure Active Directory, you can add paid capabilities using the 
 Office 365 subscriptions include additional Azure Active Directory features described in the comparison table below. 
 
 
-> [AZURE.NOTE] For the pricing options of these editions, see [Azure Active Directory Pricing](/home/features/identity/#price). <br>Azure Active Directory Premium and Azure Active Directory Basic are not currently supported in China. Please contact us at the Azure Active Directory Forum for more information
+> [AZURE.NOTE] For the pricing options of these editions, see [Azure Active Directory Pricing](/home/features/active-directory/#price). <br>Azure Active Directory Premium and Azure Active Directory Basic are not currently supported in China. Please contact us at the Azure Active Directory Forum for more information
 
 
 - **Azure Active Directory Basic** - Designed for task workers with cloud-first needs, this edition provides cloud centric application access and self-service identity management solutions. With the Basic edition of Azure Active Directory, you get productivity enhancing and cost reducing features like group-based access management, self-service password reset for cloud applications, and Azure Active Directory Application Proxy (to publish on-premises web applications using Azure Active Directory), all backed by an enterprise-level SLA of 99.9 percent uptime.

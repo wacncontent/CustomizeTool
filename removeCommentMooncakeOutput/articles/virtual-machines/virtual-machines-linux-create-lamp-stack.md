@@ -19,6 +19,7 @@ A "LAMP" stack is a group of open source software that is typically installed to
 
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-include.md)] This article covers creating a resource with the Resource Manager deployment model or the classic deployment model.
 
+
 In this guide, we'll get a LAMP stack installed on a Linux image and deploy it on Windows Azure.  
 
 You will learn:  
@@ -51,11 +52,11 @@ Follow these steps to generate the SSH Authentication Key.
 -	Click **Save private key** and save it in a file named **privateKey.ppk**.
 
 ###Step 2: Create the image in the Azure Management Portal.
-In the [Azure Management Portal](https://manage.windowsazure.cn/), click **New** in the task bar and create an image by following these instructions, choosing the Linux image based on your needs. This example uses the Ubuntu 14.04 image. 
+In the [Azure Management Portal](https://manage.windowsazure.cn/), click **New** in the task bar and create an image by following these instructions, choosing the Linux image based on your needs. This example uses the Ubuntu 14.04 image.
 
 ![][3]
 
-For **Host Name**, specify the name for the URL that you an Internet clients will use to access this virtual machine. Define the last part of the DNS name, for example LAMPDemo, and Azure will generate the URL as Lampdemo.chinacloudapp.cn.   
+For **Host Name**, specify the name for the URL that you an Internet clients will use to access this virtual machine. Define the last part of the DNS name, for example LAMPDemo, and Azure will generate the URL as Lampdemo.chinacloudapp.cn.
 
 For **User Name**, pick a name that you will later use to login to the virtual machine.
 
@@ -262,7 +263,8 @@ Answer “y” to download software packages. Then answer “y” to Importing G
 	warning: rpmts_HdrFromFdno: Header V3 DSA signature: NOKEY, key ID e8562897
 	updates/gpgkey                                                                                                                                                                       | 1.5 kB     00:00
 	Importing GPG key 0xE8562897 "CentOS-5 Key (CentOS 5 Official Signing Key) <centos-5-key@centos.org>" from /etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-5
-	Is this ok [y/N]: /documentation/articles/y
+	Is this ok [y/N]: y
+
 ###Debian, Ubuntu base
 This has been tested on Ubuntu 14.04.  
 
@@ -466,4 +468,3 @@ When you restart the Apache server using one of the following commands:
 [16]: ./media/virtual-machines-linux-create-lamp-stack/virtual-machines-linux-create-lamp-stack-16.png
 [17]: ./media/virtual-machines-linux-create-lamp-stack/virtual-machines-linux-create-lamp-stack-17.png
 [18]: ./media/virtual-machines-linux-create-lamp-stack/virtual-machines-linux-create-lamp-stack-18.jpg
- 

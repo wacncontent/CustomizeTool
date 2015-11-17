@@ -17,7 +17,7 @@
 
 This article shows you how to use Azure Resource Manager templates and the Azure CLI to do the following common tasks for deploying and managing Azure virtual machines. For more templates you can use, see [Azure Quickstart templates](http://azure.microsoft.com/documentation/templates/) and [Application frameworks using templates](/documentation/articles/virtual-machines-app-frameworks).
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-include.md)] This article covers deploying and managing a VM using templates in the Resource Manager deployment model. You can't use templates in the classic deployment model.
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] classic deployment model. You can't use templates in the classic deployment model.
 
 
 - [Quick-create a virtual machine in Azure](#quick-create-a-vm-in-azure)
@@ -43,7 +43,7 @@ Type `azure --version` to see whether you have already installed version 0.9.0 o
 	azure --version
     0.9.0 (node: 0.10.25)
 
-If your version is not 0.9.0 or later, you'll need to either [install the Azure CLI](/documentation/articles/xplat-cli-install) or update using either one of the native installers or through **npm** by typing `npm update -g azure-cli`.
+If your version is not 0.9.0 or later, you need to either [install the Azure CLI](/documentation/articles/xplat-cli-install) or update by using one of the native installers or through **npm** by typing `npm update -g azure-cli`.
 
 You can also run Azure CLI as a Docker container by using the following [Docker image](https://registry.hub.docker.com/u/microsoft/azure-cli/). From a Docker host, run the following command:
 
@@ -51,11 +51,11 @@ You can also run Azure CLI as a Docker container by using the following [Docker 
 
 ### Set your Azure account and subscription
 
-You can sign up for a [trial](/pricing/1rmb-trial/).
+If you don't already have an Azure subscription, you can sign up for a [trial](/pricing/1rmb-trial/).
 
 You need to have a work or school account to use Azure resource management templates. If you have one, you can type `azure login` and enter your user name and password, and you should successfully log in.
 
-> [AZURE.NOTE] If you don't have one, you'll see an error message indicating that you need a different type of account. To create one from your current Azure account, see [Creating a Work or School identity in Azure Active Directory](/documentation/articles/resource-group-create-work-id-from-personal).
+> [AZURE.NOTE] If you don't have one, you'll see an error message indicating that you need a different type of account. To create one from your current Azure account, see [Creating a work or school identity in Azure Active Directory](/documentation/articles/resource-group-create-work-id-from-personal).
 
 Your account may have more than one subscription. You can list your subscriptions by typing `azure account list`, which might look something like this:
 
@@ -97,7 +97,7 @@ You can then manage the overall life cycle of the group's resources by using Azu
 - Audit operations.
 - Tag resources with additional metadata for better tracking.
 
-You can learn lots more about Azure resource groups and what they can do for you in the [Azure Resource Manager overview](/documentation/articles/resource-groups-overview). If you're interested in authoring templates, see [Authoring Azure Resource Manager Templates](/documentation/articles/resource-group-authoring-templates). 
+You can learn lots more about Azure resource groups and what they can do for you in the [Azure Resource Manager overview](/documentation/articles/resource-group-overview). If you're interested in authoring templates, see [Authoring Azure Resource Manager templates](/documentation/articles/resource-group-authoring-templates).
 
 ## <a id="quick-create-a-vm-in-azure"></a>Task: Quick-create a VM in Azure
 
@@ -105,14 +105,14 @@ Sometimes you know what image you need, and you need a VM from that image right 
 
 First, create your resource group.
 
-    azure group create coreos-quick westus
+    azure group create coreos-quick chinanorth
     info:    Executing command group create
     + Getting resource group coreos-quick
     + Creating resource group coreos-quick
     info:    Created resource group coreos-quick
     data:    Id:                  /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/coreos-quick
     data:    Name:                coreos-quick
-    data:    Location:            westus
+    data:    Location:            chinanorth
     data:    Provisioning State:  Succeeded
     data:    Tags:
     data:
@@ -149,8 +149,8 @@ Just create your VM by entering the `azure vm quick-create` command and being re
     info:    Executing command vm quick-create
     Resource group name: coreos-quick
     Virtual machine name: coreos
-    Location name: westus
-    Operating system Type [Windows, Linux]: /documentation/articles/linux
+    Location name: chinanorth
+    Operating system Type [Windows, Linux]: linux
     ImageURN (format: "publisherName:offer:skus:version"): coreos:coreos:stable:latest
     User name: ops
     Password: *********
@@ -159,32 +159,32 @@ Just create your VM by entering the `azure vm quick-create` command and being re
     info:    Using the VM Size "Standard_A1"
     info:    The [OS, Data] Disk or image configuration requires storage account
     + Retrieving storage accounts
-    info:    Could not find any storage accounts in the region "westus", trying to create new one
-    + Creating storage account "cli9fd3fce49e9a9b3d14302" in "chinaeast"
+    info:    Could not find any storage accounts in the region "chinanorths", trying to create new one
+    + Creating storage account "cli9fd3fce49e9a9b3d14302" in "chinanorth"
     + Looking up the storage account cli9fd3fce49e9a9b3d14302
-    + Looking up the NIC "coreo-westu-1430261891570-nic"
-    info:    An nic with given name "coreo-westu-1430261891570-nic" not found, creating a new one
-    + Looking up the virtual network "coreo-chinaeast-1430261891570-vnet"              
+    + Looking up the NIC "coreo-chinanorth-1430261891570-nic"
+    info:    An nic with given name "coreo-chinanorth-1430261891570-nic" not found, creating a new one
+    + Looking up the virtual network "coreo-chinanorth-1430261891570-vnet"
     info:    Preparing to create new virtual network and subnet
-    / Creating a new virtual network "coreo-chinaeast-1430261891570-vnet" [address prefix: "10.0.0.0/16"] with subnet "coreo-westu-1430261891570-sne+" [address prefix: "10.0.1.0/24"]
-    + Looking up the virtual network "coreo-chinaeast-1430261891570-vnet"              
-    + Looking up the subnet "coreo-chinaeast-1430261891570-snet" under the virtual network "coreo-westu-1430261891570-vnet"
+    / Creating a new virtual network "coreo-chinanorth-1430261891570-vnet" [address prefix: "10.0.0.0/16"] with subnet "coreo-chinanorth-1430261891570-sne+" [address prefix: "10.0.1.0/24"]
+    + Looking up the virtual network "coreo-chinanorth-1430261891570-vnet"
+    + Looking up the subnet "coreo-chinanorth-1430261891570-snet" under the virtual network "coreo-chinanorth-1430261891570-vnet"
     info:    Found public ip parameters, trying to setup PublicIP profile
-    + Looking up the public ip "coreo-chinaeast-1430261891570-pip"                     
-    info:    PublicIP with given name "coreo-westu-1430261891570-pip" not found, creating a new one
-    + Creating public ip "coreo-chinaeast-1430261891570-pip"                           
-    + Looking up the public ip "coreo-chinaeast-1430261891570-pip"                     
-    + Creating NIC "coreo-westu-1430261891570-nic"                                 
-    + Looking up the NIC "coreo-chinaeast-1430261891570-nic"                           
-    + Creating VM "coreos"                                                         
-    + Looking up the VM "coreos"                                                   
-    + Looking up the NIC "coreo-chinaeast-1430261891570-nic"                           
-    + Looking up the public ip "coreo-chinaeast-1430261891570-pip"                     
+    + Looking up the public ip "coreo-chinanorth-1430261891570-pip"
+    info:    PublicIP with given name "coreo-chinanorth-1430261891570-pip" not found, creating a new one
+    + Creating public ip "coreo-chinanorth-1430261891570-pip"
+    + Looking up the public ip "coreo-chinanorth-1430261891570-pip"
+    + Creating NIC "coreo-chinanorth-1430261891570-nic"
+    + Looking up the NIC "coreo-chinanorth-1430261891570-nic"
+    + Creating VM "coreos"
+    + Looking up the VM "coreos"
+    + Looking up the NIC "coreo-chinanorth-1430261891570-nic"
+    + Looking up the public ip "coreo-chinanorth-1430261891570-pip"
     data:    Id                              :/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/coreos-quick/providers/Microsoft.Compute/virtualMachines/coreos
     data:    ProvisioningState               :Succeeded
     data:    Name                            :coreos
-    data:    Location                        :westus
-    data:    FQDN                            :coreo-westu-1430261891570-pip.westus.cloudapp.azure.com
+    data:    Location                        :chinanorth
+    data:    FQDN                            :coreo-chinanorth-1430261891570-pip.chinanorth.chinacloudapp.cn
     data:    Type                            :Microsoft.Compute/virtualMachines
     data:
     data:    Hardware Profile:
@@ -204,7 +204,7 @@ Just create your VM by entering the `azure vm quick-create` command and being re
     data:        CreateOption                :FromImage
     data:        Vhd:
     data:          Uri                       :https://cli9fd3fce49e9a9b3d14302.blob.core.chinacloudapi.cn/vhds/cli9fd3fce49e9a9b3d-os-1430261892283.vhd
-    data:    
+    data:
     data:    OS Profile:
     data:      Computer Name                 :coreos
     data:      User Name                     :ops
@@ -214,16 +214,16 @@ Just create your VM by entering the `azure vm quick-create` command and being re
     data:    Network Profile:
     data:      Network Interfaces:
     data:        Network Interface #1:
-    data:          Id                        :/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/coreos-quick/providers/Microsoft.Network/networkInterfaces/coreo-westu-1430261891570-nic
+    data:          Id                        :/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/coreos-quick/providers/Microsoft.Network/networkInterfaces/coreo-chinanorth-1430261891570-nic
     data:          Primary                   :true
     data:          MAC Address               :00-0D-3A-30-72-E3
     data:          Provisioning State        :Succeeded
-    data:          Name                      :coreo-westu-1430261891570-nic
-    data:          Location                  :westus
+    data:          Name                      :coreo-chinanorth-1430261891570-nic
+    data:          Location                  :chinanorth
     data:            Private IP alloc-method :Dynamic
     data:            Private IP address      :10.0.1.4
     data:            Public IP address       :104.40.24.124
-    data:            FQDN                    :coreo-westu-1430261891570-pip.westus.cloudapp.azure.com
+    data:            FQDN                    :coreo-chinanorth-1430261891570-pip.chinanorth.chinacloudapp.cn
     info:    vm quick-create command OK
 
 And away you go with your new VM.
@@ -432,14 +432,14 @@ Once you have your parameter values ready, you must create a resource group for 
 
 To create the resource group, type `azure group create <group name> <location>` with the name of the group you want and the datacenter location into which you want to deploy. This happens quickly:
 
-    azure group create myResourceGroup westus
+    azure group create myResourceGroup chinanorth
     info:    Executing command group create
     + Getting resource group myResourceGroup
     + Creating resource group myResourceGroup
     info:    Created resource group myResourceGroup
     data:    Id:                  /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/myResourceGroup
     data:    Name:                myResourceGroup
-    data:    Location:            westus
+    data:    Location:            chinanorth
     data:    Provisioning State:  Succeeded
     data:    Tags:
     data:
@@ -696,14 +696,14 @@ For a Linux-based virtual machine, see [Creating and uploading a virtual hard di
 
 Now you're ready to create a new virtual machine based on the .vhd. Create a group to deploy into, by using `azure group create <location>`:
 
-    azure group create myResourceGroupUser eastus
+    azure group create myResourceGroupUser chinaeast
     info:    Executing command group create
     + Getting resource group myResourceGroupUser
     + Creating resource group myResourceGroupUser
     info:    Created resource group myResourceGroupUser
     data:    Id:                  /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/myResourceGroupUser
     data:    Name:                myResourceGroupUser
-    data:    Location:            eastus
+    data:    Location:            chinaeast
     data:    Provisioning State:  Succeeded
     data:    Tags:
     data:
@@ -749,7 +749,7 @@ Output looks something like the following:
     data:    adminPassword                  SecureString  undefined
     data:    osType                         String        linux
     data:    subscriptionId                 String        xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
-    data:    location                       String        China North                             
+    data:    location                       String        China North
     data:    vmSize                         String        Standard_A2
     data:    publicIPAddressName            String        myPublicIP
     data:    vmName                         String        myVM
@@ -1107,14 +1107,14 @@ Here are the contents of the JSON file for the template. If you want the most re
 Create a resource group for the template by using `azure group create <location>`. Then, create a deployment into that resource group by using `azure group deployment create` and passing the resource group, passing a deployment name, and answering the prompts for parameters in the template that did not have default values.
 
 
-    azure group create lbgroup westus
+    azure group create lbgroup chinanorth
     info:    Executing command group create
     + Getting resource group lbgroup
     + Creating resource group lbgroup
     info:    Created resource group lbgroup
     data:    Id:                  /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/lbgroup
     data:    Name:                lbgroup
-    data:    Location:            westus
+    data:    Location:            chinanorth
     data:    Provisioning State:  Succeeded
     data:    Tags:
     data:
@@ -1129,7 +1129,7 @@ Now use the `azure group deployment create` command and the `--template-uri` opt
     > newdeployment
     info:    Executing command group deployment create
     info:    Supply values for the following parameters
-    location: westus
+    location: chinanorth
     newStorageAccountName: storagename
     adminUsername: ops
     adminPassword: password
@@ -1151,7 +1151,7 @@ Now use the `azure group deployment create` command and the `--template-uri` opt
     data:    ContentVersion     : 1.0.0.0
     data:    Name                   Type          Value
     data:    ---------------------  ------------  ----------------------
-    data:    location               String        westus
+    data:    location               String        chinanorth
     data:    newStorageAccountName  String        storagename
     data:    adminUsername          String        ops
     data:    adminPassword          SecureString  undefined
@@ -1205,8 +1205,8 @@ You can see information about specific VMs in your resource group by using the `
     + Getting virtual machines
     data:    Name   ProvisioningState  Location  Size
     data:    -----  -----------------  --------  -----------
-    data:    myVM0  Succeeded          westus    Standard_A1
-    data:    myVM1  Failed             westus    Standard_A1
+    data:    myVM0  Succeeded          chinanorth    Standard_A1
+    data:    myVM1  Failed             chinanorth    Standard_A1
 
 And then, looking up myVM1:
 
@@ -1217,7 +1217,7 @@ And then, looking up myVM1:
     data:    Id                              :/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/zoo/providers/Microsoft.Compute/virtualMachines/myVM1
     data:    ProvisioningState               :Failed
     data:    Name                            :myVM1
-    data:    Location                        :westus
+    data:    Location                        :chinanorth
     data:    Type                            :Microsoft.Compute/virtualMachines
     data:
     data:    Hardware Profile:
@@ -1252,7 +1252,7 @@ And then, looking up myVM1:
     data:          Primary                   :false
     data:          Provisioning State        :Succeeded
     data:          Name                      :nic1
-    data:          Location                  :westus
+    data:          Location                  :chinanorth
     data:            Private IP alloc-method :Dynamic
     data:            Private IP address      :10.0.0.5
     data:
@@ -1265,7 +1265,7 @@ And then, looking up myVM1:
 
 ## <a id="log-on-to-a-linux-based-virtual-machine"></a>Task: Log on to a Linux-based virtual machine
 
-Typically Linux machines are connected to through SSH. For more information, see [How to Use SSH with Linux on Azure](/documentation/articles/virtual-machines-linux-use-ssh-key).
+Typically Linux machines are connected to through SSH. For more information, see [How to use SSH with Linux on Azure](/documentation/articles/virtual-machines-linux-use-ssh-key).
 
 ## <a id="stop-a-virtual-machine"></a>Task: Stop a VM
 
@@ -1300,12 +1300,4 @@ Then you'll need to mount the disk, as you normally would in Linux (or in Window
 
 For far more examples of Azure CLI usage with the **arm** mode, see [Using the Azure CLI for Mac, Linux, and Windows with Azure Resource Manager](/documentation/articles/xplat-cli-azure-resource-manager). To learn more about Azure resources and their concepts, see [Azure Resource Manager overview](/documentation/articles/resource-group-overview).
 
-For more templates you can use, see [Azure Quickstart Templates](http://azure.microsoft.com/documentation/templates/) and [Application frameworks using templates](/documentation/articles/virtual-machines-app-frameworks).
-
-
-
-
-
-
-
-
+For more templates you can use, see [Azure Quickstart templates](http://azure.microsoft.com/documentation/templates/) and [Application frameworks using templates](/documentation/articles/virtual-machines-app-frameworks).

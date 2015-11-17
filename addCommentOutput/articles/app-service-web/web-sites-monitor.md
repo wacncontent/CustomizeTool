@@ -275,7 +275,7 @@ After you configure endpoint monitoring, you can drill down into the individual 
 9.	In the service bar at the far left, click **Management Services**.
 10.	Click **Add Rule** at the bottom.
 11.	In **Service Type**, select **Web App**, then select the web app for which you configured endpoint monitoring earlier. Click **Next**.
-12.	In **Metric**, you can now select additional metrics for the endpoint you configured. For example: **Response Time (homepage/US: IL-Chicago)**. Select the Response Time metric and type 3 in **Threshold Value** to specify a 3-second threshold.
+12.	In **Metric**, you can now select additional metrics for the endpoint you configured. For example: **Response Time (homepage/US: IL-Shanghai)**. Select the Response Time metric and type 3 in **Threshold Value** to specify a 3-second threshold.
 13.	Select **Send an email to the service administrator and co-administrators**. Click **Complete**.
 
 	Azure will now actively monitor the endpoint and send an email alert when it takes more than 3 seconds to reply.

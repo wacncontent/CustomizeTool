@@ -55,9 +55,11 @@ You can enable Geo-Replicatiom using Azure Management Portal or by calling REST 
 
 ###Azure Management Portal
 
+<!-- deleted by customization
 [AZURE.VIDEO sql-database-enable-geo-replication-in-azure-portal]
 
-1. Log in to the [Azure Management Portal](https://portal.Azure.com)
+-->
+1. Log in to the [Azure Management Portal](https://manage.windowsazure.cn)
 2. On the left side of the screen select **BROWSE** and then select **SQL Databases**
 3. Navigate to your database blade, select the **Geo Replication map** and click **Configure Geo-Replication**.
 4. Navigate to Geo-Replication blade. Select the target region. 
@@ -74,10 +76,10 @@ Use the [Start-AzureSqlDatabaseCopy](https://msdn.microsoft.com/zh-cn/library/dn
 
 To create Geo-Replication with a non-readable secondary for a Premium or Standard database:
 		
-		Start-AzureSqlDatabaseCopy -ServerName "SecondaryServerName" -DatabaseName "SecondaryDatabaseName" -PartnerServer "PartnerServerName" –ContinuousCopy -OfflineSecondary
+		Start-AzureSqlDatabaseCopy -ServerName "SecondaryServerName" -DatabaseName "SecondaryDatabaseName" -PartnerServer "PartnerServerName" <!-- deleted by customization –ContinuousCopy --><!-- keep by customization: begin --> �ContinuousCopy <!-- keep by customization: end --> -OfflineSecondary
 To create Geo-Replication with a readable secondary for a Premium database:
 
-		Start-AzureSqlDatabaseCopy -ServerName "SecondaryServerName" -DatabaseName "SecondaryDatabaseName" -PartnerServer "PartnerServerName" –ContinuousCopy
+		Start-AzureSqlDatabaseCopy -ServerName "SecondaryServerName" -DatabaseName "SecondaryDatabaseName" -PartnerServer "PartnerServerName" <!-- deleted by customization –ContinuousCopy --><!-- keep by customization: begin --> �ContinuousCopy <!-- keep by customization: end -->
 		 
 This command is asynchronous. After it returns use the [Get-AzureSqlDatabaseCopy](https://msdn.microsoft.com/zh-cn/library/dn720235.aspx) cmdlet to check the status of this operation. The ReplicationState field of the returned object will have the value CATCH_UP when the operation is completed.
 

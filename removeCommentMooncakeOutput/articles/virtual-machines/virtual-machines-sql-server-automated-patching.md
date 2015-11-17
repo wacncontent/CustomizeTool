@@ -1,15 +1,16 @@
-<properties 
-   pageTitle="Automated Patching for SQL Server in Azure Virtual Machines"
+<properties
+   pageTitle="Automated SQL Server Patching in VMs | Windows Azure"
    description="Explains the Automated Patching feature for SQL Server Virtual Machines running in Azure."
    services="virtual-machines"
    documentationCenter="na"
    authors="rothja"
    manager="jeffreyg"
-   editor="monicar" />
-<tags 
-   ms.service="virtual-machines"
-   ms.date="08/05/2015"
-   wacn.date="" />
+   editor="monicar"
+   tags="azure-resource-manager" />
+<tags
+	ms.service="virtual-machines"
+	ms.date="08/05/2015"
+	wacn.date=""/>
 
 # Automated Patching for SQL Server in Azure Virtual Machines
 
@@ -19,7 +20,7 @@ Automated Patching establishes a maintenance window for an Azure Virtual Machine
 
 ## Configure Automated Patching in the Portal
 
-You can use the [Azure Preview Portal](https://portal.azure.com/) to configure Automated Patching when you create a new SQL Server Virtual Machine. The following screenshot shows these options under **OPTIONAL CONFIGURATION** | **SQL AUTOMATED PATCHING**.
+You can use the [Azure Preview Portal](https://manage.windowsazure.cn/) to configure Automated Patching when you create a new SQL Server Virtual Machine. The following screenshot shows these options under **OPTIONAL CONFIGURATION** | **SQL AUTOMATED PATCHING**.
 
 ![SQL Automatic Patching in Azure Management Portal](./media/virtual-machines-sql-server-automated-patching/IC778484.jpg)
 
@@ -36,7 +37,7 @@ You can also use PowerShell to configure Automated Patching.
 In the following example, PowerShell is used to configure Automated Patching on an existing SQL Server VM. The **New-AzureVMSqlServerAutoPatchingConfig** command configures a new maintenance window for automatic updates.
 
     $aps = New-AzureVMSqlServerAutoPatchingConfig -Enable -DayOfWeek "Thursday" -MaintenanceWindowStartingHour 11 -MaintenanceWindowDuration 120  -PatchCategory "Important"
-    
+
     Get-AzureVM -ServiceName <vmservicename> -Name <vmname> | Set-AzureVMSqlServerExtension -AutoPatchingSettings $aps | Update-AzureVM
 
 Based on this example, the following table describes the practical effect on the target Azure VM:

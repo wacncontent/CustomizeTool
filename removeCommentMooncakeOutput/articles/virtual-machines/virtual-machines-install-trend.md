@@ -29,7 +29,7 @@ If you have existing subscription from Trend Micro for an on-premises solution, 
 
 The [Azure Management Portal](http://manage.windowsazure.cn) lets you install the VM Agent and the Trend Micro security extension when you use the **From Gallery** option to create the virtual machine. Using this approach is an easy way to add protection from Trend Micro if you're creating a single virtual machine.
 
-This **From Gallery** option opens a wizard that helps you set up the virtual machine. You use the last page of the wizard to install the VM Agent and Trend Micro security extension. For general instructions, see [Create a virtual machine running Windows Server](/documentation/articles/virtual-machines-windows-tutorial). When you get to the last page of the wizard, do the following:
+This **From Gallery** option opens a wizard that helps you set up the virtual machine. You use the last page of the wizard to install the VM Agent and Trend Micro security extension. For general instructions, see [Create a virtual machine running Windows in the Azure Management Portal](/documentation/articles/virtual-machines-windows-tutorial-classic-portal). When you get to the last page of the wizard, do the following:
 
 1.	Under **VM Agent**, check **Install VM Agent**.
 
@@ -43,7 +43,7 @@ This **From Gallery** option opens a wizard that helps you set up the virtual ma
 
 To do this, you'll need the following:
 
-- The Azure PowerShell module, version 0.8.2 or newer, installed on your local computer. You can check the version of Azure PowerShell that you have installed by using the **Get-Module azure | format-table version** command. For instructions and a link to the latest version, see [How to Install and Configure Azure PowerShell](/documentation/articles/install-configure-powershell).
+- The Azure PowerShell module, version 0.8.2 or newer, installed on your local computer. You can check the version of Azure PowerShell that you have installed by using the **Get-Module azure | format-table version** command. For instructions and a link to the latest version, see [How to install and configure Azure PowerShell](/documentation/articles/install-configure-powershell).
 
 - The VM Agent installed on the target virtual machine.
 
@@ -68,9 +68,9 @@ If the VM Agent is installed, run these commands.
 
 It takes a few minutes for the agent to start running when it is installed. After that, you'll need to activate Deep Security on the virtual machine so it can be managed by a Deep Security Manager. See the following for additional instructions:
 
-- Trend's article about this solution, [Instant-On Cloud Security for Windows Azure](http://www.trendmicro.com/us/business/saas/deep-security-as-a-service/microsoft-azure-security/index.html?cm_mmc=VURL:www.trendmicro.com-_-VURL-_-%2Fazure%2Findex.html-_-1-1#how-it-works).
-- A [sample Windows PowerShell script](https://dsahandler.blob.core.windows.net/dsaas/ds-config.ps1) to configure the virtual machine
-- [Instructions](https://dsahandler.blob.core.windows.net/dsaas/ds-config-README.txt)  for the sample
+- Trend's article about this solution, [Instant-On Cloud Security for Windows Azure](http://www.trendmicro.com/us/business/saas/deep-security-as-a-service/microsoft-azure-security/index.html?cm_mmc=VURL:www.trendmicro.com-_-VURL-_-%2Fazure%2Findex.html-_-1-1#how-it-works)
+- A [sample Windows PowerShell script](https://dsahandler.blob.core.chinacloudapi.cn/dsaas/ds-config.ps1) to configure the virtual machine
+- [Instructions](https://dsahandler.blob.core.chinacloudapi.cn/dsaas/ds-config-README.txt)  for the sample
 
 ## Additional resources
 
@@ -80,5 +80,5 @@ It takes a few minutes for the agent to start running when it is installed. Afte
 
 
 <!--Link references-->
-[How to log on to a virtual machine running Windows Server]: /documentation/articles/virtual-machines-log-on-windows-server/
-[Manage Extensions]: http://msdn.microsoft.com/zh-cn/library/dn606311.aspx
+[How to log on to a virtual machine running Windows Server]: /documentation/articles/virtual-machines-log-on-windows-server
+[Azure VM Extensions and features]: http://go.microsoft.com/fwlink/p/?linkid=390493&clcid=0x409

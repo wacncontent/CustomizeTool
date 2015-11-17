@@ -178,9 +178,4 @@ For more information about Azure Storage and Client Library for C++, see the fol
 -	[How to use Queue Storage from C++](/documentation/articles/storage-c-plus-plus-how-to-use-queues)
 -	[Azure Storage Client Library for C++ API documentation.](http://azure.github.io/azure-storage-cpp/)
 -	[Azure Storage Team Blog](http://blogs.msdn.com/b/windowsazurestorage/)
-<!-- deleted by customization
 -	[Azure Storage Documentation](/documentation/services/storage/)
--->
-<!-- keep by customization: begin -->
--	[Azure Storage Documentation](http://www.windowsazure.cn/documentation/services/storage/)
-<!-- keep by customization: end -->

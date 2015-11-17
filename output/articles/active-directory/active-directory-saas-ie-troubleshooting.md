@@ -97,6 +97,6 @@ To uninstall the Access Panel extension from your computer:
 
 4. You can then try to install the extension again to see if the problem has been resolved.
 
-If you encounter issues uninstalling the extension, you can also remove it using the [Microsoft Fix It](http://diagnostics.support.microsoft.com/diagprov/provision/MicrosoftFixit.ProgramInstallUninstall.Run.exe?_tenant=mats&diagid=ProgramInstallUninstall&_ext=.exe) tool.
+If you encounter issues uninstalling the extension, you can also remove it using the [Microsoft Fix <!-- deleted by customization It](http://diagnostics.support.microsoft.com/diagprov/provision/MicrosoftFixit.ProgramInstallUninstall.Run.exe?_tenant=mats&diagid=ProgramInstallUninstall&_ext=.exe) --><!-- keep by customization: begin --> It](https://go.microsoft.com/?linkid=9779673) <!-- keep by customization: end --> tool.
 
 [AZURE.INCLUDE [saas-toc](../includes/active-directory-saas-toc.md)]

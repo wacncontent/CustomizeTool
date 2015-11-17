@@ -20,10 +20,12 @@ This article describes the actions you must perform to initially start using Azu
 When you start Azure Automation for the first time, you must create at least one Automation account. Automation accounts allow you to isolate your Automation resources (runbooks, assets) from the Automation resources contained in other Automation accounts. You can use Automation accounts to separate Automation resources into separate logical environments. For example, you might use one account for development and another for production.
 
 The Automation resources for each Automation account are associated with a single Azure region, but Automation accounts can manage Azure services in any region. The main reason to create Automation accounts in different regions would be if you have policies that require data and resources to be isolated to a specific region.
+<!-- deleted by customization
 
 >[AZURE.NOTE] Automation accounts, and the resources they contain, that are created with the Azure preview portal cannot be accessed in the Azure Management Portal. If you want to manage these accounts or their resources with Windows PowerShell, you must use the Azure Resource Manager modules. 
 >
 >Automation accounts created with the Azure Management Portal can be managed by either portal and either set of cmdlets. Once the account is created, it makes no difference how you create and manage resources within the account. If you are planning to continue to use the Azure Management Portal, then you should use it instead of the Azure preview portal to create any Automation accounts.
+-->
 
 
 An Automation account may be suspended if there is an issue with your Azure account, such as an overdue payment. In this case, you can’t access the account, any running jobs will be suspended, and all schedules will be disabled. You will be able to view the account, but you won’t be able to see any resources in it. Once you correct the issue and the Automation account is enabled, you will have to enable your schedules and restart any runbooks that were suspended.

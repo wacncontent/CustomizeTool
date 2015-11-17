@@ -81,6 +81,7 @@ When protecting your content with **PlayReady**, one of the things you need to s
 You can click the **import policy xml** button and provide a different XML which conforms to the  XML Schema defined [here](https://msdn.microsoft.com/zh-cn/library/azure/dn783459.aspx).
 
 
+<!-- deleted by customization
 ##Media Services learning paths
 
 You can view AMS learning paths here:
@@ -88,6 +89,7 @@ You can view AMS learning paths here:
 - [AMS Live Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/)
 - [AMS on Demand Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/)
 
+-->
 
 ##Next Steps
 Now that you have configured content key's authorization policy, go to the [How to: Use the Azure Management Portal to enable encryption](/documentation/articles/media-services-manage-content#encrypt) topic.

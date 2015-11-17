@@ -135,6 +135,7 @@ Now that you have created the web app and retrieved all the NuGet packages for t
 
 3. Close your browser. In the Command Window, press **Ctrl+C** to shut down the application or close the Command Window. 
 
+<!-- deleted by customization
 ## Create a web app in the Azure preview portal
 
 The following steps will guide you through creating a web app in the Azure preview portal.
@@ -192,6 +193,26 @@ Git is a distributed version control system that you can use to deploy your Azur
 10. Copy the **GIT URL** value for later use in the tutorial.
 
 	![Azure Git URL](./media/web-sites-create-web-app-using-vscode/17-azure-giturl.png)
+-->
+<!-- keep by customization: begin -->
+## Create a web app in the Azure Management Portal
+
+The first step in creating your app is to create the web site via the Azure Management Portal.  To do this, you will need to login to the portal and click the NEW button in the bottom left corner. A window will appear. Click **Quick Create**, enter a URL, and select **Create Web Site**.
+
+![](./media/web-sites-python-create-deploy-django-app/django-ws-003.png)
+
+The site will be quickly set up.  Next, you will add support for publishing via Git.  This can be done by choosing **Set up deployment from source control**.
+
+![](./media/web-sites-python-create-deploy-django-app/django-ws-004.png)
+
+From the **Set up deployment** dialog, scroll down and select the **Local Git** option. Click the right arrow to continue.
+
+![](./media/web-sites-python-create-deploy-django-app/django-ws-005.png)
+
+After setting up Git publishing, you will momentarily see a page informing you the repo is being created. When the repo is ready, you will be taken to the deployments tab. The deployments tab includes instructions on how to connect.  
+
+![](./media/web-sites-python-create-deploy-django-app/django-ws-006.png)
+<!-- keep by customization: end -->
 
 ## Publish your web app to Azure Websites
 
@@ -253,8 +274,13 @@ This can be done in two ways:
 * Open a browser and enter the name of your web app as follows.   
 
 		http://SampleWebAppDemo.chinacloudsites.cn
+<!-- deleted by customization
  
 * In the Azure preview portal, locate the web app blade for your web app, and click **Browse** to view your app 
+-->
+<!-- keep by customization: begin -->
+* In the Azure Management Portal, locate the web app blade for your web app, and click **Browse** to view your app 
+<!-- keep by customization: end -->
 * in your default browser.
 
 ![Azure web app](./media/web-sites-create-web-app-using-vscode/21-azurewebapp.png)

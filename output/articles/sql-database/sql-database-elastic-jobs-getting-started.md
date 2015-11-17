@@ -25,13 +25,13 @@ Download and run the [Getting started with Elastic Database tools sample](/docum
 
 Here you will create a shard map manager along with several shards, followed by insertion of data into the shards. If you happen to already have shards setup with sharded data in them, you can skip the following steps and move to the next section.
 
-1. Build and run the **Getting started with Elastic Database tools** sample application. Follow the steps until step 7 in the section [Download and run the sample app](/documentation/articles/sql-database-elastic-scale-get-started#Getting-started-with-elastic-database-tools). At the end of Step 7, you will see the following command prompt:
+1. Build and run the **Getting started with Elastic Database tools** sample application. Follow the steps until step 7 in the section [Download and run the sample <!-- deleted by customization app](/documentation/articles/sql-database-elastic-scale-get-started#Getting-started-with-elastic-database-tools) --><!-- keep by customization: begin --> app](/documentation/articles/sql-database-elastic-scale-get-started/#Getting-started-with-elastic-database-tools) <!-- keep by customization: end -->. At the end of Step 7, you will see the following command prompt:
 
 	![command prompt][1]
 
 2.  In the command window, type "1" and press **Enter**. This creates the shard map manager, and adds two shards to the server. Then type "3" and press **Enter**; repeat the action four times. This inserts sample data rows in your shards.
 
-3.  The [Azure preview portal](https://manage.windowsazure.cn) should show three new databases in your v12 server:
+3.  The [Azure <!-- deleted by customization preview portal](https://manage.windowsazure.cn) --><!-- keep by customization: begin --> Management Portal](https://manage.windowsazure.cn) <!-- keep by customization: end --> should show three new databases in your v12 server:
 
 	![Visual Studio confirmation][2]
 
@@ -46,7 +46,12 @@ Now here we would usually create a shard map target, using the **New-AzureSqlJob
 	New-AzureSqlJobTarget -CustomCollectionName $customCollectionName 
 	$ResourceGroupName = "ddove_samples"
 	$ServerName = "samples"
+<!-- deleted by customization
 	$dbsinserver = Get-AzureRMSqlDatabase -ResourceGroupName $ResourceGroupName -ServerName $ServerName 
+-->
+<!-- keep by customization: begin -->
+	$dbsinserver = Get-AzureSqlDatabase -ResourceGroupName $ResourceGroupName -ServerName $ServerName 
+<!-- keep by customization: end -->
 	$dbsinserver | %{
     $currentdb = $_.DatabaseName 
     $ErrorActionPreference = "Stop"

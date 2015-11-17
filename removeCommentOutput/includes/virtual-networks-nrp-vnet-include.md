@@ -33,7 +33,7 @@ Sample VNet in JSON format:
 	    "id": "/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/TestRG/providers/Microsoft.Network/virtualNetworks/TestVNet",
 	    "etag": "W/\"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx\"",
 	    "type": "Microsoft.Network/virtualNetworks",
-	    "location": "westus",
+	    "location": "chinanorth",
 	    "tags": {
 	        "displayName": "VNet"
 	    },

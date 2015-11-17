@@ -25,7 +25,7 @@ Offline sync has several potential uses:
 * Allow end-users to create and modify data even when there is no network access, supporting scenarios with little or no connectivity
 * Sync data across multiple devices and detect conflicts when the same record is modified by two devices
 
->[AZURE.NOTE] To complete this tutorial, you need a Azure account. If you don't have an account, you can sign up for an Azure trial and get up to 10 free mobile services that you can keep using even after your trial ends. For details, see <a <!-- deleted by customization href="/pricing/1rmb-trial/?WT.mc_id=AE564AB28" --><!-- keep by customization: begin --> href="http://www.windowsazure.cn/pricing/1rmb-trial <!-- keep by customization: end --> target="_blank">Azure Trial</a>.
+>[AZURE.NOTE] To complete this tutorial, you need a Azure account. If you don't have an account, you can sign up for an Azure trial and get up to 10 free mobile services that you can keep using even after your trial ends. For details, see <a href="/pricing/1rmb-trial/?WT.mc_id=AE564AB28" target="_blank">Azure Trial</a>.
 >
 > If this is your first experience with Mobile Services, you should first complete [Get started with Mobile Services].
 
@@ -156,21 +156,14 @@ In this section you will reconnect the app to the mobile service. This simulates
 
 
 <!-- URLs. -->
-[Handling conflicts with offline support for Mobile Services]: <!-- deleted by customization /documentation/articles/mobile-services-windows-store-dotnet-handling-conflicts-offline-data --><!-- keep by customization: begin --> /documentation/articles/mobile-services-xamarin-android-handling-conflicts-offline-data/ <!-- keep by customization: end -->
-<!-- deleted by customization
+[Handling conflicts with offline support for Mobile Services]: /documentation/articles/mobile-services-windows-store-dotnet-handling-conflicts-offline-data
 [Get started with Mobile Services]: /documentation/articles/mobile-services-android-get-started
 [How to use the Xamarin Component client for Azure Mobile Services]: /documentation/articles/partner-xamarin-mobile-services-how-to-use-client-library
 [Soft Delete]: /documentation/articles/mobile-services-using-soft-delete
--->
-<!-- keep by customization: begin -->
-[Get started with data]: /documentation/articles/partner-xamarin-mobile-services-android-get-started-data/
-[Get started with Mobile Services]: /documentation/articles/partner-xamarin-mobile-services-android-get-started/
-[How to use the Xamarin Component client for Azure Mobile Services]: /documentation/articles/partner-xamarin-mobile-services-how-to-use-client-library/
-[Soft Delete]: /documentation/articles/mobile-services-using-soft-delete/
 
-<!-- keep by customization: end -->
 [Mobile Services SDK Nuget]: http://www.nuget.org/packages/WindowsAzure.MobileServices/1.3.0
 [SQLite store nuget]: http://www.nuget.org/packages/WindowsAzure.MobileServices.SQLiteStore/1.0.0
 [Xamarin Studio]: http://xamarin.com/download
 [Xamarin extension]: http://xamarin.com/visual-studio
 [NuGet Addin for Xamarin]: https://github.com/mrward/monodevelop-nuget-addin
+ 

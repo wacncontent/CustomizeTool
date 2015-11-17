@@ -107,7 +107,7 @@ detail in the file Manual.rtf in the deployment script folder. For example files
 The following configuration file deploys an HPC Pack cluster in an existing domain forest. The cluster has 1 head node with local databases and 12 compute nodes with the BGInfo VM extension applied.
 Automatic installation of Windows updates is disabled for all the VMs in
 the domain forest. All the cloud services are created directly in the
-East Asia location. The compute nodes are created in 3 cloud services
+<!-- deleted by customization China --> East <!-- keep by customization: begin --> Asia <!-- keep by customization: end -->  location. The compute nodes are created in 3 cloud services
 and 3 storage accounts (i.e., MyHPCCN-0001 to MyHPCCN-0005 in
 MyHPCCNService01 and mycnstorage01; MyHPCCN-0006 to MyHPCCN0010 in
 MyHPCCNService02 and mycnstorage02; and MyHPCCN-0011 to MyHPCCN-0012 in
@@ -122,7 +122,12 @@ and shrink service is enabled with default grow and shrink intervals.
     <SubscriptionName>Subscription-1</SubscriptionName>
     <StorageAccount>mystorageaccount</StorageAccount>
   </Subscription>
+<!-- deleted by customization
+  <Location>China East</Location>  
+-->
+<!-- keep by customization: begin -->
   <Location>East Asia</Location>  
+<!-- keep by customization: end -->
   <VNet>
     <VNetName>MyVNet</VNetName>
     <SubnetName>Subnet-1</SubnetName>
@@ -194,7 +199,12 @@ Scheduler REST API and HPC web portal are enabled on the head node.
     <StorageAccount>mystorageaccount</StorageAccount>
   </Subscription>
   <AffinityGroup>MyAffinityGroup</AffinityGroup>
+<!-- deleted by customization
+  <Location>China East</Location>  
+-->
+<!-- keep by customization: begin -->
   <Location>East Asia</Location>  
+<!-- keep by customization: end -->
   <VNet>
     <VNetName>MyVNet</VNetName>
     <SubnetName>Subnet-1</SubnetName>
@@ -241,7 +251,7 @@ Scheduler REST API and HPC web portal are enabled on the head node.
 The following configuration file creates a new domain forest
 and Deployments an HPC Pack cluster which has 1 head node with local
 databases and 20 Linux compute nodes. All the cloud services are created
-directly in the East Asia location. The Linux compute nodes are created
+directly in the <!-- deleted by customization China --> East <!-- keep by customization: begin --> Asia <!-- keep by customization: end -->  location. The Linux compute nodes are created
 in 4 cloud services and 4 storage accounts (i.e. MyLnxCN-0001 to
 MyHPCCN-0005 in MyLnxCNService01 and mylnxstorage01, MyLnxCN-0006 to
 MyLnxCN-0010 in MyLnxCNService02 and mylnxstorage02, MyLnxCN-0011 to
@@ -256,7 +266,12 @@ are created from an OpenLogic CentOS version 7.0 Linux image.
     <SubscriptionName>Subscription-1</SubscriptionName>
     <StorageAccount>mystorageaccount</StorageAccount>
   </Subscription>
+<!-- deleted by customization
+  <Location>China East</Location>  
+-->
+<!-- keep by customization: begin -->
   <Location>East Asia</Location>  
+<!-- keep by customization: end -->
   <VNet>
     <VNetName>MyVNet</VNetName>
     <SubnetName>Subnet-1</SubnetName>
@@ -300,7 +315,7 @@ are created from an OpenLogic CentOS version 7.0 Linux image.
 The following configuration file deploys an HPC Pack cluster
 which has a head node with local databases and 5 compute nodes running
 the Windows Server 2008 R2 operating system. All the cloud services are
-created directly in the East Asia location. The head node acts as domain
+created directly in the <!-- deleted by customization China --> East <!-- keep by customization: begin --> Asia <!-- keep by customization: end -->  location. The head node acts as domain
 controller of the domain forest.
 
 ```
@@ -310,7 +325,12 @@ controller of the domain forest.
     <SubscriptionId>08701940-C02E-452F-B0B1-39D50119F267</SubscriptionId>
     <StorageAccount>mystorageaccount</StorageAccount>
   </Subscription>
+<!-- deleted by customization
+  <Location>China East</Location>  
+-->
+<!-- keep by customization: begin -->
   <Location>East Asia</Location>  
+<!-- keep by customization: end -->
   <VNet>
     <VNetName>MyVNet</VNetName>
     <SubnetName>Subnet-1</SubnetName>
@@ -353,7 +373,12 @@ will run on the head node after the head node is configured.
     <StorageAccount>mystorageaccount</StorageAccount>
   </Subscription>
   <AffinityGroup>MyAffinityGroup</AffinityGroup>
+<!-- deleted by customization
+  <Location>China East</Location>  
+-->
+<!-- keep by customization: begin -->
   <Location>East Asia</Location>  
+<!-- keep by customization: end -->
   <VNet>
     <VNetName>MyVNet</VNetName>
     <SubnetName>Subnet-1</SubnetName>
@@ -413,7 +438,7 @@ will run on the head node after the head node is configured.
 
 * **“VNet doesn’t exist” error** - If you run the HPC Pack IaaS deployment script to deploy multiple
 clusters in Azure concurrently under one subscription, one or more
-deployments may fail with the error “VNet *VNet\_Name* doesn't exist”.
+deployments may fail with the error “VNet <!-- deleted by customization *VNet\_Name* --><!-- keep by customization: begin --> *VNet_Name* <!-- keep by customization: end --> doesn't exist”.
 If this error occurs, re-run the script for the failed deployment.
 
 * **Problem accessing the Internet from the Azure virtual network** - If you create an HPC Pack cluster with a new domain controller by using

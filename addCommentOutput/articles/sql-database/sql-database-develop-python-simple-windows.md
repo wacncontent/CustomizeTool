@@ -36,17 +36,12 @@ Install [pymssql](http://www.lfd.uci.edu/~gohlke/pythonlibs/#pymssql).
 
 Make sure you choose the correct whl file.
 
-For example : If you are using Python 2.7 on a 64 bit machine choose : <!-- deleted by customization pymssql‑2.1.1‑cp27‑none‑win_amd64.whl --><!-- keep by customization: begin --> pymssql-2.1.1-cp27-none-win_amd64.whl <!-- keep by customization: end -->.
+For example : If you are using Python 2.7 on a 64 bit machine choose : pymssql‑2.1.1‑cp27‑none‑win_amd64.whl.
 Once you download the .whl file place it in the the C:/Python27 folder.
 
 Now install the pymssql driver using pip from command line. cd into C:/Python27 and run the following
 	
-<!-- deleted by customization
 	pip install pymssql‑2.1.1‑cp27‑none‑win_amd64.whl
--->
-<!-- keep by customization: begin -->
-	pip install pymssql-2.1.1-cp27-none-win_amd64.whl
-<!-- keep by customization: end -->
 
 Instructions to enable the use pip can be found [here](http://stackoverflow.com/questions/4750806/how-to-install-pip-on-windows)
 
@@ -54,7 +49,7 @@ Instructions to enable the use pip can be found [here](http://stackoverflow.com/
 ## Create a database and retrieve your connection string
 
 
-See the [Getting Started <!-- deleted by customization Topic](/documentation/articles/sql-database-get-started) --><!-- keep by customization: begin --> topic](/documentation/articles/sql-database-get-started) <!-- keep by customization: end --> to learn how to create a sample database and retrieve your connection string. It is important you follow the guide to create an **AdventureWorks database template**. The samples shown below only work with the **AdventureWorks schema**.
+See the [Getting Started Topic](/documentation/articles/sql-database-get-started) to learn how to create a sample database and retrieve your connection string. It is important you follow the guide to create an **AdventureWorks database template**. The samples shown below only work with the **AdventureWorks schema**. 
 
 
 ## Connect to your SQL Database
@@ -116,10 +111,9 @@ This code example demonstrates the use of transactions in which you:
 	cursor.execute("INSERT SalesLT.Product (Name, ProductNumber, StandardCost, ListPrice, SellStartDate) OUTPUT INSERTED.ProductID VALUES ('SQL Server Express New', 'SQLEXPRESS New', 0, 0, CURRENT_TIMESTAMP)")
 	cnxn.rollback()
 
-<!-- deleted by customization ## Next steps -->
-
 <!-- deleted by customization
+## Next steps
+
 For more information, see the [Python Developer Center](/develop/python/).
-
-
 -->
+

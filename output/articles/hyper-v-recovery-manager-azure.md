@@ -1,7 +1,10 @@
 <properties urlDisplayName="configure-Azure-Site-Recovery" pageTitle="Getting Started with Azure Site Recovery: On-Premises to Azure Protection with Hyper-V Replication" metaKeywords="Azure Site Recovery, VMM, clouds, disaster recovery" description="Azure Site Recovery coordinates the replication, failover and recovery of Hyper-V virtual machines located in on-premises VMM clouds to Azure." metaCanonical="" umbracoNaviHide="0" disqusComments="1" title="Getting Started with Azure Site Recovery: On-Premises VMM Site to Azure protection with Hyper-V Replication
 " editor="jimbe" manager="jwhit" authors="raynew" />
 
-<tags ms.service="site-recovery" ms.workload="backup-recovery" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="11/19/2014" ms.author="raynew" />
+<tags
+	ms.service="site-recovery"
+	ms.date="11/19/2014"
+	wacn.date=""/>
 
 
 # Getting Started with Azure Site Recovery: On-Premises VMM Site to Azure protection with Hyper-V Replication
@@ -70,7 +73,7 @@ After verifying the prerequisites, do the following:
 
 4. In <b>Name</b>, enter a friendly name to identify the vault.
 
-5. In <b>Region</b>, select the geographic region for the vault. Available geographic regions include East Asia, West Europe, China North, China East, China North, Southeast Asia.
+5. In <b>Region</b>, select the geographic region for the vault. Available geographic regions include China East, West Europe, China North, China East, China North, China North.
 6. Click <b>Create vault</b>. 
 
 	![New Vault](./media/hyper-v-recovery-manager-configure-vault/SR_HvVault.png)

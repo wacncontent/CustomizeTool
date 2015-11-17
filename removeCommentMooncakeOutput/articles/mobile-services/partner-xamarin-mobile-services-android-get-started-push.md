@@ -7,9 +7,9 @@
 	services="mobile-services" 
 	editor=""/>
 
-<tags 
-	ms.service="mobile-services" 
-	ms.date="09/16/2015" 
+<tags
+	ms.service="mobile-services"
+	ms.date="09/16/2015"
 	wacn.date=""/>
 
 # Add push notifications to your Mobile Services app
@@ -57,7 +57,7 @@ You can test the app by directly attaching an Android phone with a USB cable, or
 
 You have successfully completed this tutorial.
 
-## <a name="next-steps"> </a>Next steps
+## <a name="next-steps"></a>Next steps
 
 Learn more about Mobile Services and Notification Hubs in the following topics:
 
@@ -82,7 +82,6 @@ Learn more about Mobile Services and Notification Hubs in the following topics:
 <!-- URLs. -->
 [Get started with Mobile Services]: /documentation/articles/mobile-services-ios-get-started
 [Add Mobile Services to an existing app]: /documentation/articles/mobile-services-android-get-started-data
-
 [Google Cloud Messaging Client Component]: http://components.xamarin.com/view/GCMClient/
 [Xamarin.Android]: http://xamarin.com/download/
 [Azure Mobile Services Component]: http://components.xamarin.com/view/azure-mobile-services/

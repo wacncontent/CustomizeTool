@@ -99,9 +99,8 @@ As the diagram shows, SQL Data Sync can synchronize data across different locati
 
 Synchronization can be bi-directional, and you determine exactly what data is synchronized and how frequently it's done. (Synchronization between databases isn't atomic, however - there's always at least some delay.) And however it's used, setting up synchronization with SQL Data Sync is entirely configuration-driven; there's no code to write.
 
-<!-- keep by customization: begin -->
-<div style="display:none">
-<!-- keep by customization: end -->
+
+<!-- deleted by customization
 ### <a name="datarpt"></a>SQL Data Reporting using Virtual Machines
 
 Once a database contains data, somebody will probably want to create reports using that data. Azure can run SQL Server Reporting Services (SSRS) in Azure Virtual Machines, which is functionally equivalent to running SQL Server Reporting Services on-premises. Then you can use SSRS to run reports on data stored in an Azure SQL Database.  [Figure 5](#Fig5) shows how the process works.
@@ -117,10 +116,9 @@ Next, a user of the application accesses the report (step 3). The application pa
 Embedding a report in an application, the scenario shown here, isn't the only option. It's also possible to view reports in Report Manager on the VM, SharePoint on the VM, or in other ways. Reports can also be combined, with one report containing a link to another.
 
 SSRS on an Azure VM gives you full functionality as a reporting solution in the cloud. Reports can use any data source supported by SSRS. Applications and reports can include embedded code or assemblies to support custom behaviors. Report execution and rendering are fast because report server content and engine run together on the same virtual server.
-<!-- keep by customization: begin -->
-</div>
-<!-- keep by customization: end -->
 
+
+-->
 
 ## <a name="tblstor"></a>Table Storage
 

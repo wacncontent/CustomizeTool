@@ -15,13 +15,22 @@
 
 This topic describes how to review and update the configuration for your Azure Redis Cache instances, and covers the default Redis server configuration for Azure Redis Cache instances.
 
+<!-- deleted by customization
 >[AZURE.NOTE] The Azure Redis Cache Premium tier is currently in preview. During the preview period, premium features can only be configured during the cache creation process. For more information on using premium cache features, see [How to configure persistence for a Premium Azure Redis Cache](/documentation/articles/cache-how-to-premium-persistence), [How to configure clustering for a Premium Azure Redis Cache](/documentation/articles/cache-how-to-premium-clustering), and [How to configure Virtual Network support for a Premium Azure Redis Cache](/documentation/articles/cache-how-to-premium-vnet).
 
+-->
 ## Configure Redis cache settings
 
+<!-- deleted by customization
 Caches can be accessed in the [Azure preview portal](https://manage.windowsazure.cn) using the **Browse** blade.
 
 ![Azure Redis Cache Browse Blade](./media/cache-configure/IC796920.png)
+-->
+<!-- keep by customization: begin -->
+Caches can be accessed in the [Windows Azure Management Portal](http://manage.windowsazure.cn/) using the **Browse** blade.
+
+![Azure Redis Cache Browse Blade](./media/cache-configure/IC796920.png)
+<!-- keep by customization: end -->
 
 Click **Redis Caches** to view your caches.
 
@@ -86,7 +95,7 @@ For more information about maxmemory policies, see [Eviction policies](http://re
 
 The **maxmemory-reserved** setting configures the amount of memory in MB that is reserved for non-cache operations such as replication during failover. It can also be used when you have a high fragmentation ratio. Setting this value allows you to have a more consistent Redis server experience when your load varies. This value should be set higher for workloads which are write heavy. When memory is reserved for such operations it is unavailable for storage of cached data.
 
->[AZURE.IMPORTANT] The **maxmemory-reserved** setting is only available for Standard and Premium caches.
+>[AZURE.IMPORTANT] The **maxmemory-reserved** setting is only available for Standard <!-- deleted by customization and Premium --> caches.
 
 ## Keyspace notifications (advanced settings)
 
@@ -94,7 +103,7 @@ Click **Advanced settings** to configure Redis keyspace notifications. Keyspace 
 
 ![Redis Cache Advanced Settings](./media/cache-configure/IC808319.png)
 
->[AZURE.IMPORTANT] Keyspace notifications and the **notify-keyspace-events** setting are only available for Standard and Premium caches.
+>[AZURE.IMPORTANT] Keyspace notifications and the **notify-keyspace-events** setting are only available for Standard <!-- deleted by customization and Premium --> caches.
 
 For more information, see [Redis Keyspace Notifications](http://redis.io/topics/notifications). For sample code, see the [KeySpaceNotifications.cs](https://github.com/rustd/RedisSamples/blob/master/HelloWorld/KeySpaceNotifications.cs) file in the [Hello world](https://github.com/rustd/RedisSamples/tree/master/HelloWorld) sample.
 
@@ -102,7 +111,7 @@ For more information, see [Redis Keyspace Notifications](http://redis.io/topics/
 
 ![Redis Cache Users and Tags](./media/cache-configure/IC808320.png)
 
-The **Users** section provides support for role-based access control (RBAC) in the preview portal to help organizations meet their access management requirements simply and precisely. For more information, see [Role-based access control in the Azure preview portal](/documentation/articles/role-based-access-control-configure/).
+The **Users** section provides support for role-based access control (RBAC) in the <!-- deleted by customization preview --> portal to help organizations meet their access management requirements simply and precisely. For more information, see [Role-based access control in the <!-- keep by customization: begin --> Windows <!-- keep by customization: end -->  Azure preview <!-- deleted by customization portal](/documentation/articles/role-based-access-control-configure/) --><!-- keep by customization: begin --> portal](/documentation/articles/role-based-access-control-configure) <!-- keep by customization: end -->.
 
 The **Tags** section helps you organize your resources. For more information, see [Using tags to organize your Azure resources](/documentation/articles/resource-group-using-tags).
 
@@ -114,13 +123,13 @@ New Azure Redis Cache instances are configured with the following default Redis 
 >
 >`StackExchange.Redis.RedisServerException: ERR unknown command 'CONFIG'`
 >  
->Any values that are configurable, such as **max-memory-policy**, are configurable through the preview portal.
+>Any values that are configurable, such as **max-memory-policy**, are configurable through the <!-- deleted by customization preview --> portal.
 
 |Setting|Default value|Description|
 |---|---|---|
 |databases|16|The default database is DB 0, you can select a different one on a per-connection basis using connection.GetDataBase(dbid) where dbid is a number between 0 and 15.|
 |maxclients|Depends on the pricing tier<sup>1</sup>|This is the maximum number of connected clients allowed at the same time. Once the limit is reached Redis will close all the new connections sending an error 'max number of clients reached'.|
-|maxmemory-policy|volatile-lru|Maxmemory policy is the setting for how Redis will select what to remove when maxmemory (the size of the cache offering you selected when you created the cache) is reached. With Azure Redis Cache the default setting is volatile-lru, which removes the keys with an expire set using an LRU algorithm. This setting can be configured in the preview portal. For more information, see [Maxmemory-policy and maxmemory-reserved](#maxmemory-policy-and-maxmemory-reserved).|
+|maxmemory-policy|volatile-lru|Maxmemory policy is the setting for how Redis will select what to remove when maxmemory (the size of the cache offering you selected when you created the cache) is reached. With Azure Redis Cache the default setting is volatile-lru, which removes the keys with an expire set using an LRU algorithm. This setting can be configured in the <!-- deleted by customization preview --> portal. For more information, see [Maxmemory-policy and maxmemory-reserved](#maxmemory-policy-and-maxmemory-reserved).|
 |maxmemory-samples|3|LRU and minimal TTL algorithms are not precise algorithms but approximated algorithms (in order to save memory), so you can select as well the sample size to check. For instance for default Redis will check three keys and pick the one that was used less recently.|
 |lua-time-limit|5,000|Max execution time of a Lua script in milliseconds. If the maximum execution time is reached Redis will log that a script is still in execution after the maximum allowed time and will start to reply to queries with an error.|
 |lua-event-limit|500|This is the max size of script event queue.|
@@ -128,23 +137,30 @@ New Azure Redis Cache instances are configured with the following default Redis 
 
 <sup>1</sup>`maxclients` is different for each Azure Redis Cache pricing tier.
 
+<!-- deleted by customization
 -	Basic and Standard caches
 	-	C0 (250 MB) cache - up to 256 connections
+-->
+<!-- keep by customization: begin -->
+-	C0 (250 MB) cache - up to 256 connections
+<!-- keep by customization: end -->
 	-	C1 (1 GB) cache - up to 1,000 connections
 	-	C2 (2.5 GB) cache - up to 2,000 connections
 	-	C3 (6 GB) cache - up to 5,000 connections
 	-	C4 (13 GB) cache - up to 10,000 connections
 	-	C5 (26 GB) cache - up to 15,000 connections
 	-	C6 (53 GB) cache - up to 20,000 connections
+<!-- deleted by customization
 -	Premium caches
 	-	P1 (6 GB - 60 GB) - up to 7,500 connections
 	-	P2 (13 GB - 130 GB) - up to 15,000 connections
 	-	P3 (26 GB - 260 GB) - up to 30,000 connections
 	-	P4 (53 GB - 530 GB) - up to 40,000 connections
+-->
 
 ## Redis commands not supported in Azure Redis Cache
 
->[AZURE.IMPORTANT] Because configuration and management of Azure Redis Cache instances is done using the preview portal the following commands are disabled. If you try to invoke them you will receive an error message similar to `"(error) ERR unknown command"`.
+>[AZURE.IMPORTANT] Because configuration and management of Azure Redis Cache instances is done using the <!-- deleted by customization preview portal --><!-- keep by customization: begin --> Azure Management Portal <!-- keep by customization: end --> the following commands are disabled. If you try to invoke them you will receive an error message similar to `"(error) ERR unknown command"`.
 >
 >-	BGREWRITEAOF
 >-	BGSAVE
@@ -159,6 +175,7 @@ For more information about Redis commands, see [http://redis.io/commands](http:/
 
 ## Redis console
 
+<!-- deleted by customization
 You can securely issue commands to your Azure Redis Cache instances using the **Redis Console**, which is available for Standard and Premium caches.
 
 >[AZURE.IMPORTANT] The Redis Console does not work with VNET or clustering. 
@@ -169,6 +186,14 @@ You can securely issue commands to your Azure Redis Cache instances using the **
 To access the Redis Console, click **Console** from the **Redis Cache** blade.
 
 ![Redis console](./media/cache-configure/redis-console-menu.png)
+-->
+<!-- keep by customization: begin -->
+You can securely issue commands to your Azure Redis Cache instances using the **Redis Console**, which is available for Standard caches. To access the Redis Console, click **Console** from the **Redis Cache** blade.
+
+![Redis console](./media/cache-configure/redis-console-menu.png)
+
+>[AZURE.IMPORTANT] The Redis Console is only available for Standard caches.
+<!-- keep by customization: end -->
 
 To issue commands against your cache instance, simply type in the desired command into the console.
 

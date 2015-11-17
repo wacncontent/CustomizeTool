@@ -21,15 +21,17 @@ This document provides an example of using the .NET SDK for Hadoop to submit Pig
 
 The HDInsight .NET SDK provides .NET client libraries that makes it easier to work with HDInsight clusters from .NET. Pig allows you to create MapReduce operations by modeling a series of data transformations. You will learn how to use a basic C# application to submit a Pig job to an HDInsight cluster.
 
+<!-- deleted by customization
 [AZURE.INCLUDE [azure-portal](../includes/hdinsight-azure-portal.md)]
 
+-->
 * [Run Pig jobs using the .NET SDK for Hadoop in HDInsight](/documentation/articles/hdinsight-hadoop-use-pig-dotnet-sdk-v1)
 
 ##<a id="prereq"></a>Prerequisites
 
 To complete the steps in this article, you will need the following.
 
-* An Azure HDInsight (Hadoop on HDInsight) cluster (either Windows or Linux-based)
+* An Azure HDInsight (Hadoop on HDInsight) cluster <!-- deleted by customization (either Windows or Linux-based) -->
 
 * Visual Studio 2012 or 2013 or 2015
 
@@ -44,6 +46,7 @@ For instructions on how to do this, see [Create a self-signed certificate](/docu
 ##<a id="subscriptionid"></a>Find your subscription ID
 
 Each Azure subscription is identified by a GUID value, known as the subscription ID. Use the following steps to find this value.
+<!-- deleted by customization
 
 1. Visit the [Azure preview portal][preview-portal].
 
@@ -51,6 +54,14 @@ Each Azure subscription is identified by a GUID value, known as the subscription
 
 3. In the information presented on the __Subscriptions__ blade, find the subscription you wish to use and note the value in the **Subscription ID** column.
 
+-->
+<!-- keep by customization: begin -->
+1. Visit the <a href="https://manage.windowsazure.cn/" target="_blank">Azure Management Console</a>.
+
+2. From the bar on the left of the portal, select **Settings**.
+
+3. In the information presented on the right of the page, find the subscription you wish to use and note the value in the **Subscription ID** column.
+<!-- keep by customization: end -->
 Save the subscription ID, as it will be used later.
 
 ##<a id="create"></a>Create the application

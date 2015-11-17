@@ -152,3 +152,4 @@ Now you are ready! Next you can [connect to your Azure subscription from the Azu
 [linux-installer]: http://azuresdkscu.blob.core.windows.net/downloads04/azure-cli.0.9.10.tar.gz
 [cliasm]: /documentation/articles/virtual-machines-command-line-tools
 [cliarm]: /documentation/articles/xplat-cli-azure-resource-manager
+

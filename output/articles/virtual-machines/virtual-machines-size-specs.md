@@ -19,7 +19,7 @@
 
 This article describes the available sizes and options for the virtual machine-based compute resources you can use to run your apps and workloads.  It also provides deployment considerations to be aware of when you're planning to use these resources.
 
-Azure Virtual Machines and Cloud Services are two of several types of compute resources offered by Azure. For explanations, see [Compute hosting options provided by Azure](https://azure.microsoft.com/zh-cn/documentation/articles/fundamentals-application-models/).
+Azure Virtual Machines and Cloud Services are two of several types of compute resources offered by Azure. For explanations, see [Compute hosting options provided by <!-- deleted by customization Azure](https://azure.microsoft.com/zh-cn/documentation/articles/fundamentals-application-models/) --><!-- keep by customization: begin --> Azure](/documentation/articles/fundamentals-application-models/) <!-- keep by customization: end -->.
 
 >[AZURE.NOTE] To see related Azure limits, see [Azure subscription and service limits, quotas, and constraints](/documentation/articles/azure-subscription-service-limits).
 
@@ -29,13 +29,15 @@ Virtual machines are available in two tiers: basic and standard. Both types offe
 
 *   D-series VMs are designed to run applications that demand higher compute power and temporary disk performance. D-series VMs provide faster processors, a higher memory-to-core ratio, and a solid-state drive (SSD) for the temporary disk. For details, see the announcement on the Azure blog, [New D-Series Virtual Machine Sizes](http://azure.microsoft.com/blog/2014/09/22/new-d-series-virtual-machine-sizes/).
 
+<!-- deleted by customization
 *   Dv2-series, a follow-on to the original D-series, features a more powerful CPU. The Dv2-series CPU is about 35% faster than the D-series CPU. It is based on the latest generation 2.4 GHz Intel Xeon® E5-2673 v3 (Haswell) processor, and with the Intel Turbo Boost Technology 2.0, can go up to 3.2 GHz. The Dv2-series has the same memory and disk configurations as the D-series.
 
     Dv2-series regional availability will be based on this schedule:
         Oct'15: China East 2, US Central, US North Central, US West
         Nov'15: China East, Europe North, Europe West
-        Jan'16: US South Central, APAC East, APAC Southeast, Japan East, Japan West,
+        Jan'16: US South Central, APAC East, APAC Southeast, Japan East, China East,
                 Australia East, Australia Southeast, Brazil South
+-->
 
 
 *   G-series VMs offer the biggest size and best performance and run on hosts that have Intel Xeon E5 V3 family processors.
@@ -56,7 +58,9 @@ The following considerations might help you decide on a size:
 
 *   The A8/A10 and A9/A11 virtual machine sizes have the same capacities. The A8 and A9 virtual machine instances include an additional network adapter that is connected to a remote direct memory access (RDMA) network for fast communication between virtual machines. The A8 and A9 instances are designed for high-performance computing applications that require constant and low-latency communication between nodes during execution, for example, applications that use the Message Passing Interface (MPI). The A10 and A11 virtual machine instances do not include the additional network adapter. A10 and A11 instances are designed for high-performance computing applications that do not require constant and low-latency communication between nodes, also known as parametric or embarrassingly parallel applications.
 
+<!-- deleted by customization
 *   Dv2-series and D-series are ideal for applications that demand faster CPUs, better local disk performance, or have higher memory demands.  They offer a powerful combination for many enterprise-grade applications.
+-->
 
 ## General limits
 

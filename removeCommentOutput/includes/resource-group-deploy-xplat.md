@@ -33,7 +33,7 @@
         info:    Created resource group ExampleResourceGroup
         data:    Id:                  /subscriptions/####/resourceGroups/ExampleResourceGroup
         data:    Name:                ExampleResourceGroup
-        data:    Location:            westus
+        data:    Location:            chinanorth
         data:    Provisioning State:  Succeeded
         data:    Tags:
         data:

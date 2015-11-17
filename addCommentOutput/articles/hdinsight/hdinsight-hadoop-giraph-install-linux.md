@@ -93,7 +93,12 @@ Once the cluster has finished <!-- deleted by customization creating --><!-- kee
 		[3,0,[[0,3],[1,1],[4,4]]]
 		[4,0,[[3,4],[2,4]]]
 
+<!-- deleted by customization
+	This data describes a relationship between objects in a directed graph, by using the format [source\_id, source\_value,[[dest\_id], [edge\_value],...]]. Each line represents a relationship between a **source\_id** object and one or more **dest\_id** objects. The **edge\_value** (or weight) can be thought of as the strength or distance of the connection between **source_id** and **dest\_id**.
+-->
+<!-- keep by customization: begin -->
 	This data describes a relationship between objects in a directed graph, by using the format [source_id, source_value,[[dest_id], [edge_value],...]]. Each line represents a relationship between a **source_id** object and one or more **dest_id** objects. The **edge_value** (or weight) can be thought of as the strength or distance of the connection between **source_id** and **dest_id**.
+<!-- keep by customization: end -->
 
 	Drawn out, and using the value (or weight) as the distance between objects, the above data might look like this:
 

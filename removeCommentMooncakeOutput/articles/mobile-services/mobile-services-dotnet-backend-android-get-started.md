@@ -1,38 +1,38 @@
 
-<properties 
-	pageTitle="Get Started with Azure Mobile Services for Android apps" 
-	description="Follow this tutorial to get started using Azure Mobile Services for Android development." 
-	services="mobile-services" 
-	documentationCenter="android" 
-	authors="RickSaling" 
-	manager="dwrede" 
+<properties
+	pageTitle="Get Started with Azure Mobile Services for Android apps"
+	description="Follow this tutorial to get started using Azure Mobile Services for Android development."
+	services="mobile-services"
+	documentationCenter="android"
+	authors="RickSaling"
+	manager="dwrede"
 	editor=""/>
 
-<tags 
-	ms.service="mobile-services" 
-	ms.date="08/18/2015" 
+<tags
+	ms.service="mobile-services"
+	ms.date="10/07/2015"
 	wacn.date=""/>
 
 
 # <a name="getting-started"> </a>Get started with Mobile Services
 
 [AZURE.INCLUDE [mobile-services-selector-get-started](../includes/mobile-services-selector-get-started.md)]
+&nbsp;
+
+[AZURE.INCLUDE [mobile-services-hero-slug](../includes/mobile-services-hero-slug.md)]
 
 This tutorial shows you how to add a cloud-based backend service to an Android app using Azure Mobile Services. In this tutorial, you will create both a new mobile service and a simple _To do list_ app that stores app data in the new mobile service. The mobile service that you will create uses the supported .NET languages using Visual Studio for server-side business logic and to manage the mobile service. To create a mobile service that lets you write your server-side business logic in JavaScript, see the [JavaScript backend version](/documentation/articles/mobile-services-android-get-started) of this topic.
 
 A screenshot from the completed app is below:
 
-![][0]
+![](./media/mobile-services-dotnet-backend-android-get-started/mobile-quickstart-completed-android.png)
 
 Completing this tutorial requires the [Android Developer Tools][Android Studio], which includes the Android Studio integrated development environment, and the latest Android platform. Android 4.2 or a later version is required.  
 
-The downloaded quickstart project contains the Mobile Services SDK for Android. 
+The downloaded quickstart project contains the Mobile Services SDK for Android.
 
-> [AZURE.IMPORTANT] To complete this tutorial, you need an Azure account. If you don't have an account, you can sign up for an Azure trial and get up to 10 mobile services that you can keep using even after your trial ends. For details, see [Azure Trial](/pricing/1rmb-trial/).
+> [AZURE.IMPORTANT] To complete this tutorial, you need an Azure account. If you don't have an account, you can sign up for an Azure trial and get up to 10 free mobile services that you can keep using even after your trial ends. For details, see [Azure Trial](/pricing/1rmb-trial/?WT.mc_id=AE564AB28).
 
-<!-- -->
-
-> [AZURE.NOTE] If you would like to see the Eclipse version of this tutorial, go to : [Get started (Eclipse)].
 
 ## <a name="create-new-service"> </a>Create a new mobile service
 
@@ -66,13 +66,13 @@ In this section you will create a new Android app that is connected to your mobi
 
 1. In the [Management Portal], click **Mobile Services**, and then click the mobile service that you just created.
 
-2. In the quickstart tab, click **Android** under **Choose platform** and expand **Create a new Android app**. 
- 
+2. In the quickstart tab, click **Android** under **Choose platform** and expand **Create a new Android app**.
+
 	![][2]  
 
 3. If you haven't already done so, download and install the [Android Developer Tools][Android SDK] on your local computer or virtual machine.
 
-4. Under **Download and run your app**, click **Download**. 
+4. Under **Download and run your app**, click **Download**.
 
   	This downloads the project for the sample _To do list_ application that is connected to your mobile service. Save the compressed project file to your local computer, and make a note of where you save it.
 
@@ -81,16 +81,16 @@ In this section you will create a new Android app that is connected to your mobi
 [AZURE.INCLUDE [mobile-services-run-your-app](../includes/mobile-services-android-get-started.md)]
 
 ## <a name="next-steps"> </a>Next Steps
-Now that you have completed the quickstart, learn how to perform additional important tasks in Mobile Services: 
+Now that you have completed the quickstart, learn how to perform additional important tasks in Mobile Services:
 
-* [Get started with authentication]
-  <br/>Learn how to authenticate users of your app with an identity provider.
-
-* [Get started with push notifications] 
+* [Add push notifications to your app]
   <br/>Learn how to send a very basic push notification to your app.
 
+* [Add authentication to your app]
+  <br/>Learn how to restrict access to your backend data to specific registered users of your app.
+
 * [Troubleshoot a Mobile Services .NET backend]
-  <br/> Learn how to diagnose and fix issues that can arise with a Mobile Services .NET backend. 
+  <br/> Learn how to diagnose and fix issues that can arise with a Mobile Services .NET backend.
 
 <!-- Anchors. -->
 [Getting started with Mobile Services]:#getting-started
@@ -98,8 +98,7 @@ Now that you have completed the quickstart, learn how to perform additional impo
 [Define the mobile service instance]:#define-mobile-service-instance
 [Next Steps]:#next-steps
 
-<!-- Images. -->  
-
+<!-- Images. -->
 [0]: ./media/mobile-services-dotnet-backend-android-get-started/mobile-quickstart-completed-android.png
 [1]: ./media/mobile-services-dotnet-backend-android-get-started/mobile-quickstart-steps-vs-AS.png
 [2]: ./media/mobile-services-dotnet-backend-android-get-started/mobile-quickstart-steps-android-AS.png
@@ -117,10 +116,9 @@ Now that you have completed the quickstart, learn how to perform additional impo
 [15]: ./media/mobile-services-dotnet-backend-android-get-started/mobile-services-import-android-project.png
 
 <!-- URLs. -->
-[Get started (Eclipse)]: /documentation/articles/mobile-services-dotnet-backend-android-get-started-EC
-[Get started with data]: /documentation/articles/mobile-services-dotnet-backend-android-get-started-data
-[Get started with authentication]: /documentation/articles/mobile-services-dotnet-backend-android-get-started-users
-[Get started with push notifications]: /documentation/articles/mobile-services-dotnet-backend-android-get-started-push
+[Get started (Eclipse)]: /documentation/articles/mobile-services-dotnet-backend-android-get-started-ec
+[Add push notifications to your app]: /documentation/articles/mobile-services-dotnet-backend-android-get-started-push
+[Add authentication to your app]: /documentation/articles/mobile-services-dotnet-backend-android-get-started-auth
 [Android SDK]: http://developer.android.com/sdk/index.html
 [Android Studio]: https://developer.android.com/sdk/index.html
 [Mobile Services Android SDK]: https://go.microsoft.com/fwLink/p/?LinkID=266533

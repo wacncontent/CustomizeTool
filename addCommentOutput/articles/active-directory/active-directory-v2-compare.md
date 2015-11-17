@@ -61,7 +61,12 @@ In the Azure AD generally available service, an app can behave as a **resource**
 All of this holds true for the v2.0 app model.  An app can still behave as resource, define scopes, and be identified by a URI.  Client apps can still request access to those scopes.  However, the way in which a client requests those permissions has changed.  In the past, an OAuth 2.0 authorize request to Azure AD might have looked like:
 
 ```
+<!-- deleted by customization
+GET https://login.chinacloudapi.cn/common/oauth2/authorize?
+-->
+<!-- keep by customization: begin -->
 GET https://login.microsoftonline.com/common/oauth2/authorize?
+<!-- keep by customization: end -->
 client_id=2d4d11a2-f814-46a7-890a-274a72a7309e
 &resource=https%3A%2F%2Fgraph.chinacloudapi.cn%2F
 ...
@@ -70,7 +75,12 @@ client_id=2d4d11a2-f814-46a7-890a-274a72a7309e
 where the **resource** parameter indicated which resource the client app is requesting authorization for.  Azure AD computed the permissions required by the app based on static configuration in the Azure Management Portal, and issued tokens accordingly.  Now, the same OAuth 2.0 authorize request looks like:
 
 ```
+<!-- deleted by customization
+GET https://login.chinacloudapi.cn/common/v2.0/oauth2/authorize?
+-->
+<!-- keep by customization: begin -->
 GET https://login.microsoftonline.com/common/v2.0/oauth2/authorize?
+<!-- keep by customization: end -->
 client_id=2d4d11a2-f814-46a7-890a-274a72a7309e
 &scope=https%3A%2F%2Fgraph.chinacloudapi.cn%2Fdirectory.read%20https%3A%2F%2Fgraph.chinacloudapi.cn%2Fdirectory.write
 ...
@@ -92,7 +102,12 @@ The permissions an app required were configured **statically**.  While this allo
 In the v2.0 app model, you can specify the permissions your app needs **dynamically**, at runtime, during regular usage of your app.  To do so, you can specify the scopes your app needs at any given point in time by including them in the `scope` parameter of an authorization request:
 
 ```
+<!-- deleted by customization
+GET https://login.chinacloudapi.cn/common/v2.0/oauth2/authorize?
+-->
+<!-- keep by customization: begin -->
 GET https://login.microsoftonline.com/common/v2.0/oauth2/authorize?
+<!-- keep by customization: end -->
 client_id=2d4d11a2-f814-46a7-890a-274a72a7309e
 &scope=https%3A%2F%2Fgraph.chinacloudapi.cn%2Fdirectory.read%20https%3A%2F%2Fgraph.chinacloudapi.cn%2Fdirectory.write
 ...

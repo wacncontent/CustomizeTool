@@ -28,7 +28,7 @@ In order to use [EventProcessorHost], you must have an [Azure Storage account]:
 
     ![][13]
 
-	This downloads, installs, and adds a reference to the [Azure Service Bus Event Hub - EventProcessorHost NuGet package](https://www.nuget.org/packages/Microsoft.Azure.ServiceBus.EventProcessorHost), with all its dependencies.
+	This downloads, installs, and adds a reference to the <!-- deleted by customization [Azure --><!-- keep by customization: begin --> <a href="https://www.nuget.org/packages/Microsoft.Azure.ServiceBus.EventProcessorHost">Azure <!-- keep by customization: end --> Service Bus Event Hub - EventProcessorHost NuGet <!-- deleted by customization package](https://www.nuget.org/packages/Microsoft.Azure.ServiceBus.EventProcessorHost) --><!-- keep by customization: begin --> package</a> <!-- keep by customization: end -->, with all its dependencies.
 
 7. Right-click the **Receiver** project, click **Add**, and then click **Class**. Name the new class **SimpleEventProcessor**, and then click **OK** to create the class.
 

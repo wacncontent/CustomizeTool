@@ -38,7 +38,7 @@ This tutorial has the following prerequisites:
 
 > [AZURE.NOTE] You need an Azure account to complete this tutorial:
 > + You can [open an Azure account for free](/pricing/1rmb-trial/?WT.mc_id=A261C142F) - You get credits you can use to try out paid Azure services, and even after they're used up you can keep the account and use free Azure services, such as Web App.
-> + You can [activate MSDN subscriber benefits](http://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F) - Your MSDN subscription gives you credits every month that you can use for paid Azure services.
+> + You can [activate MSDN subscriber benefits](/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F) - Your MSDN subscription gives you credits every month that you can use for paid Azure services.
 
 ## Deploy an Azure web app with an integrated CDN endpoint ##
 
@@ -72,7 +72,7 @@ In this section, you will deploy the default ASP.NET MVC application template in
 	You will see your published web app in the browser when publishing is complete. 
 
 1. To create a CDN endpoint, log into your [Azure management portal](http://manage.windowsazure.cn/). 
-2. Click **New** > **Azure Websites** > **CDN** > **Quick Create**. Select **http://*&lt;sitename>*.chinacloudsites.cn/** and click **Create**.
+2. Click **New** > **App Services** > **CDN** > **Quick Create**. Select **http://*&lt;sitename>*.chinacloudsites.cn/** and click **Create**.
 
 	![](./media/app-service-with-cdn/7-create-cdn.png)
 

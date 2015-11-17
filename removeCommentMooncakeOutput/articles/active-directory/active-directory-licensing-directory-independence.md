@@ -8,9 +8,9 @@
    editor=""/>
 
 <tags
-   ms.service="active-directory"
-   ms.date="09/21/2015"
-   wacn.date=""/>
+	ms.service="active-directory"
+	ms.date="09/21/2015"
+	wacn.date=""/>
 
 # Add and manage multiple Azure AD directories
 

@@ -122,6 +122,7 @@ Note: not all of the above output formats are supported for delivery via streami
 ##Known issues
 
 If your input video does not contain closed captioning, the output Asset will still contain an empty TTML file. 
+<!-- deleted by customization
 
 
 ##Media Services learning paths
@@ -131,3 +132,4 @@ You can view AMS learning paths here:
 - [AMS Live Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/)
 - [AMS on Demand Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/)
 
+-->

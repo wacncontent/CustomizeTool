@@ -8,9 +8,9 @@
    editor=""/>
 
 <tags
-   ms.service="billing"
-   ms.date="06/14/2015"
-   wacn.date=""/>
+	ms.service="billing"
+	ms.date="06/14/2015"
+	wacn.date=""/>
 
 # Windows Azure Usage and RateCard APIs Enable Cloudyn to Provide ITFM for Customers 
 
@@ -27,7 +27,7 @@ Consuming these APIs provides key information on customers’ usage and costs, a
 ## Integrating Cloudyn with the RateCard and Usage APIs
 The RateCard API requires several input parameters -- like region info, currency and locale -- but the most important one is OfferDurableID, which specifies the type of Azure offering the customer is using (Pay-as-you-Go, legacy 6 and 12-month commitment plans, MSDN offers, MPN offers, promotional offers and others). The OfferDurableID can be found in the [Azure Usage and Billing portal](https://account.windowsazure.cn/Subscriptions), under the "Offer ID" for the given subscription. 
 
-Upon registration for [Cloudyn for Azure](https://www.cloudyn.com/microsoft-azure/) services, customers can add their OfferDurableID code, which allows Cloudyn to pull their relevant pricing information through the RateCard API.  Information on the different types of offers can be found one the [Windows Azure Offer Details](http://www.windowsazure.cn/en-gb/support/legal/offer-details/) page.
+Upon registration for [Cloudyn for Azure](https://www.cloudyn.com/microsoft-azure/) services, customers can add their OfferDurableID code, which allows Cloudyn to pull their relevant pricing information through the RateCard API.  Information on the different types of offers can be found one the [Windows Azure Offer Details](/support/legal/offer-details/) page.
 
 ![Cloudyn ITFM Engine Overview][2]
 

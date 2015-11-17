@@ -41,6 +41,7 @@ Choose .NET or the REST API to programmatically connect to Azure Media Services.
 [AZURE.INCLUDE [media-services-selector-connect](../includes/media-services-selector-connect.md)]
 
 
+<!-- deleted by customization
 ##Next steps: AMS learning paths
 
 You can view AMS learning paths here:
@@ -48,3 +49,4 @@ You can view AMS learning paths here:
 - [AMS Live Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/)
 - [AMS on Demand Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/)
 
+-->

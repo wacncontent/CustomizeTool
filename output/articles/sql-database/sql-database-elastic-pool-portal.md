@@ -31,7 +31,7 @@ This article shows you how to create an elastic database pool, which simplifies 
 Create an elastic database pool by adding a new pool to a server. You can add multiple pools to a server, but only one (1) server can be associated with each pool. Additionally, all or some of the databases on a server can be added to a pool.
 
 
-In the [Azure preview portal](https://ms.portal.azure.com/) click **SQL servers**, click server that hosts the databases you want to add to the pool, and then click **Add pool**.
+In the [Azure preview portal](https://manage.windowsazure.cn/) click **SQL servers**, click server that hosts the databases you want to add to the pool, and then click **Add pool**.
 
 ![Add pool to a server](./media/sql-database-elastic-pool-portal/elastic-pool-add-pool.png)
 

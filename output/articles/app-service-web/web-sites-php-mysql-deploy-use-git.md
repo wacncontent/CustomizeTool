@@ -46,6 +46,7 @@ This tutorial assumes you have [PHP][install-php], the MySQL Command-Line Tool (
 Follow these steps to create a web app and a MySQL database:
 
 1. Login to the [Azure Management Portal][management-portal].
+<!-- deleted by customization
 2. Click the **New** icon.
 
 3. Click **Web + Mobile**, then **Azure Marketplace**. 
@@ -80,6 +81,45 @@ Follow these steps to create a web app and a MySQL database:
 	![Create publishing credentials][credentials]
 
 
+-->
+<!-- keep by customization: begin -->
+2. Click the **New** icon on the bottom left of the portal.
+
+	![Create New Azure  Website][new- Website]
+
+3. Click ** Website**, then **Custom Create**.
+
+	![Custom Create a new  Website][custom-create]
+	
+	Enter a value for **URL**, select **Create a New MySQL Database** from the **Database** dropdown,  and select the data center for your  Website in the **Region** dropdown. Click the arrow at the bottom of the dialog.
+
+	![Fill in  Website details][ Website-details]
+
+4. Enter a value for the **Name** of your database, select the data center for your database in the **Region** dropdown, and check the box that indicates you agree with the legal terms. Click the checkmark at the bottom of the dialog.
+
+	![Create new MySQL database][new-mysql-db]
+
+	When the  Website has been created you will see the text **Creation of  Website "[SITENAME]" completed successfully**. Now, you can enable Git publishing.
+
+6. Click the name of the  Website displayed in the list of  Websites to open the  Website's **QuickStart** dashboard.
+
+	![Open  Website dashboard][go-to-dashboard]
+
+
+7. At the bottom of the **QuickStart** page, click **Set up Git publishing**. 
+
+	![Set up Git publishing][setup-git-publishing]
+
+8. To enable Git publishing, you must provide a user name and password. Make a note of the user name and password you create. (If you have set up a Git repository before, this step will be skipped.)
+
+	![Create publishing credentials][credentials]
+
+	It will take a few seconds to set up your repository.
+
+9. When your repository is ready, you will see instructions for pushing your application files to the repository. Make note of these instructions - they will be needed later.
+
+	![Git instructions][git-instructions]
+<!-- keep by customization: end -->
 ##Get remote MySQL connection information
 
 To connect to the MySQL database that is running in Web Apps, your will need the connection information. To get MySQL connection information, follow these steps:
@@ -96,6 +136,13 @@ To connect to the MySQL database that is running in Web Apps, your will need the
 
     ![Note properties][note-properties]
 
+<!-- keep by customization: begin -->
+1. From your  Website's dashboard, click the **View connection strings** link on the right side of the page:
+
+	![Get database connection information][connection-string-info]
+	
+2. Make note of the values for `Database`, `Data Source`, `User Id`, and `Password`.
+<!-- keep by customization: end -->
 ##Build and test your app locally
 
 Now that you have created a web app, you can develop your application locally, then deploy it after testing.
@@ -255,6 +302,7 @@ To publish changes to your app, follow these steps:
 3. Browse to **http://[site name].chinacloudsites.cn/index.php** to see your app and any changes you may have made:
 
 	![Azure PHP web site][running-app]
+<!-- deleted by customization
 
 >[AZURE.NOTE] If you want to get started with Azure Websites before signing up for an Azure account, go to [Try Azure Websites](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure Websites. No credit cards required; no commitments.
 
@@ -266,6 +314,10 @@ For more information, see the [PHP Developer Center](/develop/php/).
 * For a guide to the change from Websites to Azure Websites see: [Azure Websites and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
 * For a guide to the change of the Management Portal to the new portal see: [Reference for navigating the preview portal](https://manage.windowsazure.cn/)
 
+-->
+<!-- keep by customization: begin -->
+[go-to-dashboard]: ./media/web-sites-php-mysql-deploy-use-git/go_to_dashboard.png
+<!-- keep by customization: end -->
 [install-php]: http://www.php.net/manual/en/install.php
 [install-SQLExpress]: http://www.microsoft.com/download/details.aspx?id=29062
 [install-Drivers]: http://www.microsoft.com/download/details.aspx?id=20098

@@ -1,5 +1,5 @@
-<properties 
-   pageTitle="Azure Active Directory Authentication Protocols"
+<properties
+   pageTitle="Azure Active Directory Authentication Protocols | Windows Azure"
    description="An overview of the authentication protocols supported by Azure Active Directory (AD)"
    documentationCenter="dev-center-name"
    authors="msmbaldwin"
@@ -8,9 +8,9 @@
    editor=""/>
 
 <tags
-   ms.service="active-directory"
-   ms.date="09/17/2015"
-   wacn.date=""/>
+	ms.service="active-directory"
+	ms.date="09/17/2015"
+	wacn.date=""/>
 
 # Azure Active Directory Authentication Protocols
 
@@ -43,7 +43,7 @@ Azure Active Directory (Azure AD) supports several of the most widely used authe
 
 
 
-## See Also 
+## See Also
 
 [Azure Active Directory Developer's Guide](/documentation/articles/active-directory-developers-guide)
 

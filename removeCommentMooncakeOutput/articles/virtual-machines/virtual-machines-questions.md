@@ -1,22 +1,21 @@
 <properties
-	pageTitle="Frequently asked questions for Azure Virtual Machines"
-	description="Provides answers to some of the most common questions about Azure virtual machines"
+	pageTitle="Frequently asked questions for VMs | Windows Azure"
+	description="Provides answers to some of the common questions about Azure virtual machines created with the classic deployment model."
 	services="virtual-machines"
 	documentationCenter=""
-	authors="KBDAzure"
+	authors="cynthn"
 	manager="timlt"
 	editor=""
 	tags="azure-service-management"/>
 
 <tags
 	ms.service="virtual-machines"
-
 	ms.date="07/17/2015"
 	wacn.date=""/>
 
-# Azure Virtual Machines FAQ
+# Frequently asked question about Azure Virtual Machines created with the classic deployment model
 
-This article addresses some common questions users ask about Azure virtual machines, based on input from the Azure VM Support team, as well as from forums, newsgroups, and comments in other articles. For basic information, start with [About Virtual Machines](/documentation/articles/virtual-machines-about).
+This article addresses some common questions users ask about Azure virtual machines created with the classic deployment model, based on input from the Azure VM Support team, as well as from forums, newsgroups, and comments in other articles. For basic information, start with [About Virtual Machines](/documentation/articles/virtual-machines-about).
 
 ## What can I run on an Azure VM?
 
@@ -26,7 +25,7 @@ For server software, you can run recent versions of Windows Server, as well as a
 
 • For Windows VMs -- [Microsoft server software support for Azure Virtual Machines](https://support.microsoft.com/zh-cn/kb/2721672)
 
-• For Linux VMs -- [Linux on Azure-Endorsed Distributions](http://www.windowsazure.cn/documentation/articles/virtual-machines-linux-endorsed-distributions/)
+• For Linux VMs -- [Linux on Azure-Endorsed Distributions](/documentation/articles/virtual-machines-linux-endorsed-distributions/)
 
 For Windows client images, certain versions of Windows 7 and Windows 8.1 are available to MSDN Azure benefit subscribers and MSDN Dev and Test Pay-As-You-Go subscribers, for development and test tasks. For details, including instructions and limitations, see [Windows Client images for MSDN subscribers](http://azure.microsoft.com/blog/2014/05/29/windows-client-images-on-azure/).
 
@@ -34,11 +33,11 @@ For Windows client images, certain versions of Windows 7 and Windows 8.1 are ava
 
 Each data disk can be up to 1 TB. The number of data disks you can use depends on the size of the virtual machine. For details, see [Sizes for Virtual Machines](/documentation/articles/virtual-machines-size-specs).
 
-An Azure storage account provides storage for the operating system disk and any data disks. Each disk is a .vhd file stored as a page blob. For pricing details, see [Storage Pricing Details](http://www.windowsazure.cn/home/features/storage/#price).
+An Azure storage account provides storage for the operating system disk and any data disks. Each disk is a .vhd file stored as a page blob. For pricing details, see [Storage Pricing Details](/home/features/storage/#price).
 
 ## Which virtual hard disk types can I use?
 
-Azure supports fixed, VHD-format virtual hard disks. If you want to use a VHDX-format disk in Azure, convert it by using Hyper-V Manager or the [convert-VHD](https://technet.microsoft.com/zh-cn/library/hh848454.aspx?f=255&MSPPError=-2147217396) cmdlet. After you do that, use [Add-AzureVHD](https://msdn.microsoft.com/zh-cn/library/azure/dn495173.aspx) cmdlet (in Service Management mode) to upload the VHD to a storage account in Azure so you can use it with virtual machines. The cmdlet converts a dynamic VHD to a fixed VHD, but doesn’t convert from VHDX to VHD.
+Azure supports fixed, VHD-format virtual hard disks. If you want to use a VHDX-format disk in Azure, convert it by using Hyper-V Manager or the [convert-VHD](https://technet.microsoft.com/zh-cn/library/hh848454.aspx) cmdlet. After you do that, use [Add-AzureVHD](https://msdn.microsoft.com/zh-cn/library/azure/dn495173.aspx) cmdlet (in Service Management mode) to upload the VHD to a storage account in Azure so you can use it with virtual machines. The cmdlet converts a dynamic VHD to a fixed VHD, but doesn’t convert from VHDX to VHD.
 
 - For Linux instructions, see [Creating and Uploading a Virtual Hard Disk that Contains the Linux Operating System](/documentation/articles/virtual-machines-linux-create-upload-vhd).
 
@@ -56,7 +55,7 @@ In many ways they’re similar to “Generation 1” Hyper-V VMs, but they’re 
 
 ## Can these virtual machines use my existing, on-premises networking infrastructure?
 
-For virtual machines created in Service Management, you can use Azure Virtual Network to extend your existing infrastructure. The approach is like setting up a branch office. You can provision and manage virtual private networks (VPNs) in Azure as well as securely connect these to on-premises IT infrastructure. For details, see [Virtual Network Overview](https://msdn.microsoft.com/zh-cn/library/jj156007.aspx).
+For virtual machines created in Service Management, you can use Azure Virtual Network to extend your existing infrastructure. The approach is like setting up a branch office. You can provision and manage virtual private networks (VPNs) in Azure as well as securely connect these to on-premises IT infrastructure. For details, see [Virtual Network Overview](/documentation/articles/virtual-networks-overview).
 
 You’ll need to specify the network that you want the virtual machine to belong to when you create the virtual machine. This means, for example, that you can’t join an existing virtual machine to a virtual network. However, you can work around this by detaching the virtual hard disk (VHD) from the existing virtual machine, and then use it to create a new virtual machine with the networking configuration you want.
 
@@ -106,7 +105,7 @@ Additional details:
 Azure offers several options for anti-virus solutions, but it’s up to you to manage it. For example, you might need a separate subscription for antimalware software, and you’ll need to decide when to run scans and install updates. You can add anti-virus support with a VM extension for Microsoft Antimalware, Symantec Endpoint Protection, or TrendMicro Deep Security Agent when you create a Windows virtual machine, or at a later point. The Symantec and TrendMicro extensions let you use a free limited-time trial subscription or an existing enterprise subscription. Microsoft Antimalware is free of charge. For details, see:
 
 - [How to install and configure Symantec Endpoint Protection on an Azure VM](/documentation/articles/virtual-machines-install-symantec)
-- [How to install and configure Trend Micro Deep Security as a Service on an Azure VM](/documentation/articles/virtual-machines-install-trend)
+- [How to install and configure Trend Micro Deep Security as a Service on an Azure VM](/documentation/articles/virtual-machines-install-trend/)
 - [Deploying Antimalware Solutions on Azure Virtual Machines](http://azure.microsoft.com/blog/2014/05/13/deploying-antimalware-solutions-on-azure-virtual-machines/)
 
 ## What are my options for backup and recovery?
@@ -125,11 +124,11 @@ You are charged when the VM status is Running or Stopped, but you are not charge
 - Use the Stop-AzureVM cmdlet, available in the Azure PowerShell module.
 - Use the Shutdown Role operation in the Service Management REST API and specify StoppedDeallocated for the PostShutdownAction element.
 
-For more details, see [Virtual Machines Pricing](http://www.windowsazure.cn/home/features/virtual-machines/#price).
+For more details, see [Virtual Machines Pricing](/home/features/virtual-machines/#price).
 
 ## Will Azure reboot my VM for maintenance?
 
-Generally, you can start, stop, or restart your VM whenever you need to. (For details, see [About starting, stopping, and restarting an Azure VM](https://msdn.microsoft.com/zh-cn/library/azure/dn763934.aspx)). Azure sometimes restarts your VM as part of regular, planned maintenance updates in the Azure datacenters. Unplanned maintenance events can occur when Azure detects a serious hardware problem that affects your VM. For unplanned events, Azure automatically migrates the VM to a healthy host and restarts the VM.
+Generally, you can start, stop, or restart your VM whenever you need to. Azure sometimes restarts your VM as part of regular, planned maintenance updates in the Azure datacenters. Unplanned maintenance events can occur when Azure detects a serious hardware problem that affects your VM. For unplanned events, Azure automatically migrates the VM to a healthy host and restarts the VM.
 
 For any standalone VM (meaning the VM isn’t part of an availability set), Azure notifies the subscription’s Service Administrator by email at least one week before planned maintenance because the VMs could be restarted during the update. Applications running on the VMs could experience downtime.
 

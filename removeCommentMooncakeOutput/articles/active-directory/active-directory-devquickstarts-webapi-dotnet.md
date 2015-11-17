@@ -9,13 +9,13 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="07/17/2015"
+	ms.date="10/13/2015"
 	wacn.date=""/>
 
 
 # Protect a Web API using Bearer tokens from Azure AD
 
-[AZURE.INCLUDE [active-directory-devguide](../includes/active-directory-devguide)]
+[AZURE.INCLUDE [active-directory-devguide](../includes/active-directory-devguide.md)]
 
 If you’re building an application that provides access to protected resources you will need to know how to protect those resources from unwarranted access.
 Azure AD makes it simple and straightforward to protect a web API using OAuth Bearer 2.0 Access Tokens with only a few lines of code.
@@ -137,4 +137,4 @@ For reference, the completed sample (without your configuration values) is provi
 
 [Build a .NET Native Client with Azure AD >>](/documentation/articles/active-directory-devquickstarts-native-dotnet)
 
-[AZURE.INCLUDE [active-directory-devquickstarts-additional-resources](../includes/active-directory-devquickstarts-additional-resources)]
+[AZURE.INCLUDE [active-directory-devquickstarts-additional-resources](../includes/active-directory-devquickstarts-additional-resources.md)]

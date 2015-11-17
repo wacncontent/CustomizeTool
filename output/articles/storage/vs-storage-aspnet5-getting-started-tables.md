@@ -17,8 +17,10 @@
 > [AZURE.SELECTOR]
 > - [Getting Started](/documentation/articles/vs-storage-aspnet5-getting-started-tables)
 > - [What Happened](/documentation/articles/vs-storage-aspnet5-what-happened)
+<!-- deleted by customization
 
 > [AZURE.SELECTOR]
+-->
 > - [Blobs](/documentation/articles/vs-storage-aspnet5-getting-started-blobs)
 > - [Queues](/documentation/articles/vs-storage-aspnet5-getting-started-queues)
 > - [Tables](/documentation/articles/vs-storage-aspnet5-getting-started-tables)
@@ -206,3 +208,13 @@ You can delete an entity after you find it. The following code looks for a custo
 ## Next steps
 
 [AZURE.INCLUDE [vs-storage-dotnet-blobs-next-steps](../includes/vs-storage-dotnet-blobs-next-steps.md)]
+
+<!-- keep by customization: begin -->
+
+[Learn more about Azure Storage](http://www.windowsazure.cn/documentation/services/storage/)
+See also [Browsing Storage Resources in Server Explorer](http://msdn.microsoft.com/zh-cn/library/azure/ff683677.aspx) and [ASP.NET 5](http://www.asp.net/vnext).
+ 
+
+
+<!-- keep by customization: end -->
+

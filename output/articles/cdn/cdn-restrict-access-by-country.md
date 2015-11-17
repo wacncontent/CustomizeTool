@@ -18,7 +18,7 @@ When a user requests your content, by default, the content is served regardless 
 
 >[AZURE.NOTE]Once the configuration is set up, it will apply to all CDN endpoints in your subscription.
 
-For information about considerations that apply to configuring this type of restrictions, see the [Considerations](/documentation/articles/cdn-restrict-access-by-country#considerations) section at the end of the topic.  
+For information about considerations that apply to configuring this type of restrictions, see the <!-- deleted by customization [Considerations](/documentation/articles/cdn-restrict-access-by-country#considerations) --><!-- keep by customization: begin --> [Considerations](/documentation/articles/cdn-restrict-access-by-country/#considerations) <!-- keep by customization: end --> section at the end of the topic.
 
 ![Country filtering](./media/cdn-filtering/cdn-country-filtering.png)
 

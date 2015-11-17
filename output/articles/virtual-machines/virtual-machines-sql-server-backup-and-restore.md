@@ -14,8 +14,10 @@
 	wacn.date=""/>
 
 # Backup and Restore for SQL Server in Azure Virtual Machines
+<!-- deleted by customization
 
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
+-->
 
 
 ## Overview

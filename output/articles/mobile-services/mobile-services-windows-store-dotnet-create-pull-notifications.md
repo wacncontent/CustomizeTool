@@ -149,12 +149,20 @@ Now that you have created a periodic notification, consider finding out more abo
 
 <!-- URLs. -->
 [Windows Push Notifications & Live Connect]: http://go.microsoft.com/fwlink/?LinkID=257677
+<!-- deleted by customization
 [Mobile Services server script reference]: http://go.microsoft.com/fwlink/?LinkId=262293
+-->
+<!-- keep by customization: begin -->
+[Mobile Services server script reference]: /documentation/articles/mobile-services-how-to-use-server-scripts/
+<!-- keep by customization: end -->
 [My Apps dashboard]: http://go.microsoft.com/fwlink/?LinkId=262039
 [Get started with Mobile Services]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started
 [Add Mobile Services to an existing app]: /documentation/articles/mobile-services-windows-store-dotnet-get-started
 [Get started with push notifications]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-push
+
 [Azure Management Portal]: https://manage.windowsazure.cn/
 [Periodic notifications]: http://msdn.microsoft.com/zh-cn/library/windows/apps/jj150587.aspx
 
 [Mobile Services .NET How-to Conceptual Reference]: /documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library
+
+ 

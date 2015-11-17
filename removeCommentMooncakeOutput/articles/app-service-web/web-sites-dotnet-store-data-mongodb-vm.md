@@ -323,7 +323,7 @@ Open the *Controllers\HomeController.cs* file in **Solution Explorer** and repla
 	}
 
 ## Set up the styles ##
-To change the title at the top of the page, open the *Views\Shared_Layout.cshtml* file in **Solution Explorer** and replace "Application name" in the navbar header with "My Task List Application" so that it looks like this:
+To change the title at the top of the page, open the *Views\Shared\\_Layout.cshtml* file in **Solution Explorer** and replace "Application name" in the navbar header with "My Task List Application" so that it looks like this:
 
  	@Html.ActionLink("My Task List Application", "Index", "Home", null, new { @class = "navbar-brand" })
 

@@ -8,10 +8,10 @@
 	editor="monicar" 
 	tags="azure-service-management" />
 	
-<tags 
+<tags
 	ms.service="virtual-machines"
 	ms.date="09/01/2015"
-	wacn.date="" />
+	wacn.date=""/>
 
 # Performance best practices for SQL Server in Azure Virtual Machines
 

@@ -6,10 +6,10 @@ documentationCenter=""
 authors="Thraka" 
 manager="timlt" 
 editor=""/>
-<tags 
-ms.service="cloud-services" 
-ms.date="08/18/2015" 
-wacn.date=""/>
+<tags
+	ms.service="cloud-services"
+	ms.date="08/18/2015"
+	wacn.date=""/>
 
 # Enable communication for role instances in azure
 

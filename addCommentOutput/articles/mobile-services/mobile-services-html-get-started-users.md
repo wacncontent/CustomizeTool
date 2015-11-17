@@ -49,7 +49,7 @@ Next, you will update the app to allow authentication before requesting resource
 
 ##<a name="add-authentication"></a>Add authentication to the app
 
->[AZURE.NOTE]Because the login is performed in a popup, you should invoke the <!-- deleted by customization **login** --><!-- keep by customization: begin --> <strong>login</strong> <!-- keep by customization: end --> method from a button's click event. Otherwise, many browsers will suppress the login window.
+>[AZURE.NOTE]Because the login is performed in a popup, you should invoke the **login** method from a button's click event. Otherwise, many browsers will suppress the login window.
 
 1. Open the project file index.html, locate the H1 element and under it add the following code snippet:
 
@@ -107,7 +107,7 @@ Next, you will update the app to allow authentication before requesting resource
 
 	   When you are successfully logged-in, the app should run without errors, and you should be able to query Mobile Services and make updates to data.
 
-	>[AZURE.NOTE]When you use Internet Explorer, you may receive the error after login: <code>Cannot reach window opener. It may be on a different Internet Explorer zone</code>. This occurs because the pop-up runs in a different security zone (internet) from localhost (intranet). This only affects apps during development using localhost. As a workaround, open the <!-- deleted by customization **Security** --><!-- keep by customization: begin --> <strong>Security</strong> <!-- keep by customization: end --> tab of <!-- deleted by customization **Internet Options** --><!-- keep by customization: begin --> <strong>Internet Options</strong> <!-- keep by customization: end -->, click <!-- deleted by customization **Local Intranet** --><!-- keep by customization: begin --> <strong>Local Intranet</strong> <!-- keep by customization: end -->, click <!-- deleted by customization **Sites** --><!-- keep by customization: begin --> <strong>Sites</strong> <!-- keep by customization: end -->, and disable <!-- deleted by customization **Automatically --><!-- keep by customization: begin --> <strong>Automatically <!-- keep by customization: end --> detect intranet <!-- deleted by customization network** --><!-- keep by customization: begin --> network</strong> <!-- keep by customization: end -->. Remember to change this setting back when you are done testing.
+	>[AZURE.NOTE]When you use Internet Explorer, you may receive the error after login: <code>Cannot reach window opener. It may be on a different Internet Explorer zone</code>. This occurs because the pop-up runs in a different security zone (internet) from localhost (intranet). This only affects apps during development using localhost. As a workaround, open the **Security** tab of **Internet Options**, click **Local Intranet**, click **Sites**, and disable **Automatically detect intranet network**. Remember to change this setting back when you are done testing.
 
 ## <a name="next-steps"> </a>Next steps
 
@@ -133,5 +133,7 @@ In the next tutorial, [Authorize users with scripts], you will take the user ID 
 [Get started with data]: /documentation/articles/mobile-services-html-get-started-data
 <!-- keep by customization: end -->
 [Authorize users with scripts]: /documentation/articles/mobile-services-javascript-backend-service-side-authorization
+
 [Azure Management Portal]: https://manage.windowsazure.cn/
 [Mobile Services HTML/JavaScript How-to Conceptual Reference]: /documentation/articles/mobile-services-html-how-to-use-client-library
+ 

@@ -219,6 +219,7 @@ Some considerations apply:
 ![AMSPlayer][AMSPlayer]
 
 
+<!-- deleted by customization
 
 ##Next Steps
 
@@ -236,6 +237,7 @@ If this topic didn't contain what you were expecting, is missing something, or i
 ### Additional resources
 - <a href="http://channel9.msdn.com/Shows/Azure-Friday/Azure-Media-Services-101-Get-your-video-online-now-">Azure Media Services 101 - Get your video online now!</a>
 - <a href="http://channel9.msdn.com/Shows/Azure-Friday/Azure-Media-Services-102-Dynamic-Packaging-and-Mobile-Devices">Azure Media Services 102 - Dynamic Packaging and Mobile Devices</a>
+-->
 
 
 <!-- Anchors. -->

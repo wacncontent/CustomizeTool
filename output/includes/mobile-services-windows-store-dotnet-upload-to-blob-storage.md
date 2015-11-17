@@ -6,7 +6,7 @@
  
    	This makes sure that your app can use a camera attached to the computer. Users will be requested to allow camera access the first time that the app is run.
 
-1. Open the MainPage.xaml file and replace the **StackPanel** element directly after the first **Task** element with the following code:
+<!-- deleted by customization 1 --><!-- keep by customization: begin --> 2 <!-- keep by customization: end -->. Open the MainPage.xaml file and replace the **StackPanel** element directly after the first **Task** element with the following code:
 
         <StackPanel Orientation="Horizontal" Margin="72,0,0,0">
             <TextBox Name="TextInput" Margin="5" MaxHeight="40" MinWidth="300"></TextBox>
@@ -16,7 +16,7 @@
                     Click="ButtonSave_Click"/>
         </StackPanel>
 
-2. Replace the **StackPanel** element in the **DataTemplate** with the following code:
+<!-- deleted by customization 2 --><!-- keep by customization: begin --> 3 <!-- keep by customization: end -->. Replace the **StackPanel** element in the **DataTemplate** with the following code:
 
         <StackPanel Orientation="Vertical">
             <CheckBox Name="CheckBoxComplete" IsChecked="{Binding Complete, Mode=TwoWay}" 
@@ -28,7 +28,7 @@
 
    	This adds an image to the **ItemTemplate** and sets its binding source as the URI of the uploaded image in the Blob Storage service.
 
-3. Open the MainPage.xaml.cs project file and add the following **using** statements:
+<!-- deleted by customization 3 --><!-- keep by customization: begin --> 4 <!-- keep by customization: end -->. Open the MainPage.xaml.cs project file and add the following **using** statements:
 	
 		using Windows.Media.Capture;
 		using Windows.Storage;
@@ -36,7 +36,7 @@
 		using Microsoft.WindowsAzure.Storage.Auth;
 		using Microsoft.WindowsAzure.Storage.Blob;
     
-4. In the TodoItem class, add the following properties:
+<!-- deleted by customization 4 --><!-- keep by customization: begin --> 5 <!-- keep by customization: end -->. In the TodoItem class, add the following properties:
 
         [JsonProperty(PropertyName = "containerName")]
         public string ContainerName { get; set; }
@@ -50,9 +50,9 @@
         [JsonProperty(PropertyName = "imageUri")]
         public string ImageUri { get; set; } 
 
-   	>[AZURE.NOTE]To add new properties to the TodoItem object in a JavaScript backend mobile service, you must have Dynamic Schema enabled in your mobile service. When Dynamic Schema is enabled, new columns are automatically added to the TodoItem table that map to these new properties. For a .NET backend mobile service, see the topic [How to make data model changes to a .NET backend mobile service](/documentation/articles/mobile-services-dotnet-backend-how-to-use-code-first-migrations).
+   	>[AZURE.NOTE]To add new properties to the TodoItem object in a JavaScript backend mobile service, you must have Dynamic Schema enabled in your mobile service. When Dynamic Schema is enabled, new columns are automatically added to the TodoItem table that map to these new properties. For a .NET backend mobile service, see the topic [How to make data model changes to a .NET backend mobile <!-- deleted by customization service](/documentation/articles/mobile-services-dotnet-backend-how-to-use-code-first-migrations) --><!-- keep by customization: begin --> service](/documentation/articles/mobile-services/mobile-services-dotnet-backend-how-to-use-code-first-migrations.md) <!-- keep by customization: end -->.
 
-5. In the MainPage class, add the following code:
+<!-- deleted by customization 5 --><!-- keep by customization: begin --> 6 <!-- keep by customization: end -->. In the MainPage class, add the following code:
 
         // Use a StorageFile to hold the captured image for upload.
         StorageFile media = null;
@@ -67,7 +67,7 @@
 
   	This code displays the camera UI to capture an image, and saves the image to a storage file.
 
-6. Replace the existing `InsertTodoItem` method with the following code:
+<!-- deleted by customization 6 --><!-- keep by customization: begin --> 7 <!-- keep by customization: end -->. Replace the existing `InsertTodoItem` method with the following code:
  
         private async void InsertTodoItem(TodoItem todoItem)
         {

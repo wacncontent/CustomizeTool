@@ -7,9 +7,9 @@
 	authors="sidneyh" 
 	editor=""/>
 
-<tags 
-	ms.service="sql-database" 
-	ms.date="07/24/2015" 
+<tags
+	ms.service="sql-database"
+	ms.date="07/24/2015"
 	wacn.date=""/>
 
 # Adding a shard using Elastic Database tools
@@ -72,3 +72,4 @@ A database named “sample_shard_2” and all necessary schema objects inside of
 
 
 [AZURE.INCLUDE [elastic-scale-include](../includes/elastic-scale-include.md)]
+ 

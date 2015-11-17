@@ -52,12 +52,10 @@ In the next tutorial, [Service-side authorization of Mobile Services users], you
 <!-- URLs. -->
 [Service-side authorization of Mobile Services users]: /documentation/articles/mobile-services-dotnet-backend-service-side-authorization
 [Mobile Services Quick Start tutorial]: /documentation/articles/mobile-services-dotnet-backend-ios-get-started
-<!-- keep by customization: begin -->
-[Get started with data]: /documentation/articles/mobile-services-dotnet-backend-ios-get-started-data
-<!-- keep by customization: end -->
 [Get started with authentication]: /documentation/articles/mobile-services-dotnet-backend-ios-get-started-users
 [Get started with push notifications]: /documentation/articles/mobile-services-dotnet-backend-ios-get-started-push
 [Authorize users with scripts]: /documentation/articles/mobile-services-dotnet-backend-ios-authorize-users-in-scripts
+
 [Azure Management Portal]: https://manage.windowsazure.cn/
-[Mobile Services .NET How-to Conceptual Reference]: <!-- deleted by customization /develop/mobile/how-to-guides/work-with-net-client-library --><!-- keep by customization: begin --> /documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library <!-- keep by customization: end -->
+[Mobile Services .NET How-to Conceptual Reference]: /develop/mobile/how-to-guides/work-with-net-client-library
 [Register your Windows Store app package for Microsoft authentication]: /documentation/articles/mobile-services-how-to-register-store-app-package-microsoft-authentication

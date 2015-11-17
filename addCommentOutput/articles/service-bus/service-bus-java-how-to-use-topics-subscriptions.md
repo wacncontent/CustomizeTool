@@ -315,12 +315,7 @@ with the topic. Subscriptions can also be deleted independently.
 
 ## Next Steps
 
-<!-- deleted by customization
 Now that you've learned the basics of Service Bus queues, see [Service Bus queues, topics, and subscriptions][] for more information.
--->
-<!-- keep by customization: begin -->
-Now that you've learned the basics of Service Bus queues, see [Service Bus Queues, Topics, and Subscriptions][] for more information.
-<!-- keep by customization: end -->
 
   [Azure SDK for Java]: /develop/java/
   [Azure Toolkit for Eclipse]: https://msdn.microsoft.com/zh-cn/library/azure/hh694271.aspx

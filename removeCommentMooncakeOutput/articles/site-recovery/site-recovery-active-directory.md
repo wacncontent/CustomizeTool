@@ -7,10 +7,9 @@
 	manager="abhiag" 
 	editor=""/>
 
-<tags 
-	ms.service="site-recovery" 
-
-	ms.date="10/12/2015" 
+<tags
+	ms.service="site-recovery"
+	ms.date="10/12/2015"
 	wacn.date=""/>
 
 #Automated DR solution for Active Directory and DNS using ASR

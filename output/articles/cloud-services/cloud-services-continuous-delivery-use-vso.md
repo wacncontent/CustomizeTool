@@ -265,7 +265,7 @@ This step applies only to web apps, not cloud services. To put a quality gate on
 	![][50]
 
 ## Next steps
-For more about unit testing in Visual Studio Online, see [Run unit tests in your build](https://msdn.microsoft.com/library/ms253138.aspx). If you're using Git, see [Share your code in Git](http://www.visualstudio.com/get-started/share-your-code-in-git-vs.aspx) and [Continuous deployment using GIT in Azure Websites](/documentation/articles/web-sites-publish-source-control).  For more information about Visual Studio Online, see [Visual Studio Online](https://www.visualstudio.com/).
+For more about unit testing in Visual Studio Online, see [Run unit tests in your <!-- deleted by customization build](https://msdn.microsoft.com/library/ms253138.aspx) --><!-- keep by customization: begin --> build](https://msdn.microsoft.com/zh-cn/library/ms253138.aspx) <!-- keep by customization: end -->. If you're using Git, see [Share your code in Git](http://www.visualstudio.com/get-started/share-your-code-in-git-vs.aspx) and [Continuous deployment using GIT in Azure Websites](/documentation/articles/web-sites-publish-source-control).  For more information about Visual Studio Online, see [Visual Studio Online](https://www.visualstudio.com/).
 
 [0]: ./media/cloud-services-continuous-delivery-use-vso/tfs0.PNG
 [1]: ./media/cloud-services-continuous-delivery-use-vso/tfs1.png

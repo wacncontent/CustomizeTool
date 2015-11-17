@@ -29,7 +29,7 @@ This topic steps you through the creation of a cross-premises virtual network by
 
 These tables are typically filled out in a topic that describes the configuration of an IT workload in Azure and includes a cross-premises virtual network. See [Phase 1: Configure Azure](/documentation/articles/virtual-machines-workload-intranet-sharepoint-phase1) for an example.
 
-The following procedure references the information in these tables to guide you through the virtual network configuration process. If you have not already specified the settings in these tables in another topic, but you still want to configure a cross-premises virtual network, see [Configure a <!-- deleted by customization cross-premises site-to-site --><!-- keep by customization: begin --> Cross-Premises Site-to-Site <!-- keep by customization: end --> connection to an Azure <!-- deleted by customization virtual network](/documentation/articles/vpn-gateway-site-to-site-create) --><!-- keep by customization: begin --> Virtual Network](https://msdn.microsoft.com/zh-CN/library/dn133795.aspx) <!-- keep by customization: end -->.
+The following procedure references the information in these tables to guide you through the virtual network configuration process. If you have not already specified the settings in these tables in another topic, but you still want to configure a cross-premises virtual network, see [Configure a cross-premises site-to-site connection to an Azure virtual network](/documentation/articles/vpn-gateway-site-to-site-create).
 
 > [AZURE.NOTE] This procedure steps you through creating a virtual network that uses a site-to-site VPN connection. For information about using Azure ExpressRoute for your site-to-site connection, see [ExpressRoute technical overview](/documentation/articles/expressroute-introduction).
 
@@ -62,15 +62,8 @@ The following procedure references the information in these tables to guide you 
 
 ## Additional resources
 
-<!-- deleted by customization
 [Virtual network overview](/documentation/articles/virtual-networks-overview)
 
 [Virtual network configuration tasks](/documentation/services/virtual-machines/)
--->
-<!-- keep by customization: begin -->
-[Virtual Network Overview](https://msdn.microsoft.com/zh-CN/library/jj156007.aspx)
-
-[Virtual Network Configuration Tasks](https://msdn.microsoft.com/zh-CN/library/jj156206.aspx)
-<!-- keep by customization: end -->
 
 [Configure a cross-premises site-to-site connection to an Azure virtual network](/documentation/articles/vpn-gateway-site-to-site-create)

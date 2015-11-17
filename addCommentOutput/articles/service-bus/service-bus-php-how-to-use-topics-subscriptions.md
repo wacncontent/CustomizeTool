@@ -11,6 +11,8 @@
 	ms.service="service-bus"
 	ms.date="10/06/2015"
 	wacn.date=""/>
+
+
 # How to use Service Bus topics and subscriptions
 
 [AZURE.INCLUDE [service-bus-selector-topics](../includes/service-bus-selector-topics.md)]
@@ -57,7 +59,7 @@ To instantiate an Azure Service Bus client you must first have a valid connectio
 Endpoint=[yourEndpoint];SharedSecretIssuer=[Default Issuer];SharedSecretValue=[Default Key]
 ```
 
-Where <!-- deleted by customization `Endpoint` --><!-- keep by customization: begin --> **Endpoint** <!-- keep by customization: end --> is typically of the format `https://[yourNamespace].servicebus.chinacloudapi.cn`.
+Where `Endpoint` is typically of the format `https://[yourNamespace].servicebus.chinacloudapi.cn`.
 
 To create any Azure service client you must use the **ServicesBuilder** class. You can:
 
@@ -327,9 +329,9 @@ $serviceBusRestProxy->deleteSubscription("mytopic", "mysubscription");
 
 ## Next steps
 
-Now that you've learned the basics of Service Bus queues, see [Queues, <!-- deleted by customization topics --><!-- keep by customization: begin --> Topics <!-- keep by customization: end -->, and <!-- deleted by customization subscriptions][] --><!-- keep by customization: begin --> Subscriptions][] <!-- keep by customization: end --> for more information.
+Now that you've learned the basics of Service Bus queues, see [Queues, topics, and subscriptions][] for more information.
 
 [Queues, topics, and subscriptions]: /documentation/articles/service-bus-queues-topics-subscriptions
 [sqlfilter]: http://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.sqlfilter.sqlexpression.aspx
 [require-once]: http://php.net/require_once
-[Azure Queues and Service Bus queues]: <!-- deleted by customization /documentation/articles/service-bus-azure-and-service-bus-queues-compared-contrasted#capacity-and-quotas --><!-- keep by customization: begin --> /documentation/articles/service-bus-azure-and-service-bus-queues-compared-contrasted/#capacity-and-quotas <!-- keep by customization: end -->
+[Azure Queues and Service Bus queues]: /documentation/articles/service-bus-azure-and-service-bus-queues-compared-contrasted#capacity-and-quotas

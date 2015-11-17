@@ -48,19 +48,12 @@ For now, the services that support moving to both a new resource group and subsc
 
 The services that support moving to a new resource group but not a new subscription are:
 
-<!-- deleted by customization
 - Virtual Machines (classic)
--->
-<!-- keep by customization: begin -->
-- Compute (classic)
-<!-- keep by customization: end -->
 - Storage (classic)
 
 The services that currently do not support moving a resource are:
 
-<!-- deleted by customization
 - Virtual Machines
--->
 - Virtual Networks
 
 When working with web apps, you cannot move only an App Service plan. To move web apps, your options are:
@@ -70,29 +63,19 @@ When working with web apps, you cannot move only an App Service plan. To move we
 
 ## Using PowerShell to move resources
 
-<!-- deleted by customization
 [AZURE.INCLUDE [powershell-preview-inline-include](../includes/powershell-preview-inline-include.md)]
 
 To move existing resources to another resource group or subscription, use the **Move-AzureRmResource** command.
--->
-<!-- keep by customization: begin -->
-To move existing resources to another resource group or subscription, use the **Move-AzureResource** command.
-<!-- keep by customization: end -->
 
 The first example shows how to move one resource to a new resource group.
 
-<!-- deleted by customization
     PS C:\> Move-AzureRmResource -DestinationResourceGroupName TestRG -ResourceId /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/OtherExample/providers/Microsoft.ClassicStorage/storageAccounts/examplestorage
--->
-<!-- keep by customization: begin -->
-    PS C:\> Move-AzureResource -DestinationResourceGroupName TestRG -ResourceId /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/OtherExample/providers/Microsoft.ClassicStorage/storageAccounts/examplestorage
-<!-- keep by customization: end -->
 
 The second example shows how to move multiple resources to a new resource group.
 
-    PS C:\> $webapp = <!-- deleted by customization Get-AzureRmResource --><!-- keep by customization: begin --> Get-AzureResource <!-- keep by customization: end --> -ResourceGroupName OldRG -ResourceName ExampleSite -ResourceType Microsoft.Web/sites
-    PS C:\> $plan = <!-- deleted by customization Get-AzureRmResource --><!-- keep by customization: begin --> Get-AzureResource <!-- keep by customization: end --> -ResourceGroupName OldRG -ResourceName ExamplePlan -ResourceType Microsoft.Web/serverFarms
-    PS C:\> <!-- deleted by customization Move-AzureRmResource --><!-- keep by customization: begin --> Move-AzureResource <!-- keep by customization: end --> -DestinationResourceGroupName NewRG -ResourceId ($webapp.ResourceId, $plan.ResourceId)
+    PS C:\> $webapp = Get-AzureRmResource -ResourceGroupName OldRG -ResourceName ExampleSite -ResourceType Microsoft.Web/sites
+    PS C:\> $plan = Get-AzureRmResource -ResourceGroupName OldRG -ResourceName ExamplePlan -ResourceType Microsoft.Web/serverFarms
+    PS C:\> Move-AzureRmResource -DestinationResourceGroupName NewRG -ResourceId ($webapp.ResourceId, $plan.ResourceId)
 
 To move to a new subscription, include a value for the **DestinationSubscriptionId** parameter.
 
@@ -100,7 +83,7 @@ To move to a new subscription, include a value for the **DestinationSubscription
 
 To move existing resources to another resource group or subscription, run:
 
-    POST https://management.azure.com/subscriptions/{source-subscription-id}/resourcegroups/{source-resource-group-name}/moveResources?api-version={api-version} 
+    POST https://manage.windowsazure.cn/subscriptions/{source-subscription-id}/resourcegroups/{source-resource-group-name}/moveResources?api-version={api-version} 
 
 Replace **{source-subscription-id}** and **{source-resource-group-name}** with the subscription and resource group that currently contain the resources you wish to move. Use **2015-01-01** for {api-version}.
 
@@ -116,18 +99,7 @@ In the request, include a JSON object that defines the target resource group and
     }
 
 ## Next steps
-<!-- deleted by customization
-- [Using Azure PowerShell with Resource Manager](./powershell-azure-resource-manager.md)
-- [Using the Azure CLI with Resource Manager](./virtual-machines/xplat-cli-azure-resource-manager.md)
--->
-<!-- keep by customization: begin -->
 - [Using Azure PowerShell with Resource Manager](/documentation/articles/powershell-azure-resource-manager)
 - [Using the Azure CLI with Resource Manager](/documentation/articles/xplat-cli-azure-resource-manager)
-<!-- keep by customization: end -->
 - [Using the Azure Management Portal to manage resources](/documentation/articles/resource-group-portal)
-<!-- deleted by customization
-- [Using tags to organize your resources](./resource-group-using-tags.md)
--->
-<!-- keep by customization: begin -->
 - [Using tags to organize your resources](/documentation/articles/resource-group-using-tags)
-<!-- keep by customization: end -->

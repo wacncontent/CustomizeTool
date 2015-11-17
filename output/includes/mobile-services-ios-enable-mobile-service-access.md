@@ -88,8 +88,13 @@ self.items = [results mutableCopy];
 
 * Locate the **addItem** method, and replace its body with the following code. This code sends an insert request to the mobile service.
 
+<!-- deleted by customization
 ```
 // Insert the item into the TodoItem table and add to the items array on completion
+-->
+<!-- keep by customization: begin -->
+        // Insert the item into the TodoItem table and add to the items array on completion
+<!-- keep by customization: end -->
 [self.table insert:item completion:^(NSDictionary *result, NSError *error) {
     NSUInteger index = [items count];
     [(NSMutableArray *)items insertObject:item atIndex:index];

@@ -25,9 +25,9 @@ Learn how to use Apache Spark in Azure HDInsight to do the following:
 
 You must have the following:
 
-- An Azure subscription. See [Get Azure trial](/pricing/1rmb-trial/).
+- An Azure subscription. See [Get Azure <!-- deleted by customization trial](/pricing/1rmb-trial/) --><!-- keep by customization: begin --> trial][azure-trial] <!-- keep by customization: end -->.
 - An Apache Spark cluster. For instructions, see [Provision Apache Spark clusters in Azure HDInsight](/documentation/articles/hdinsight-apache-spark-provision-clusters).
-- A computer with Microsoft Spark ODBC driver installed (required for Spark on HDInsight to work with Tableau). You can install the driver from [here](http://go.microsoft.com/fwlink/?LinkId=616229).
+- A computer with Microsoft Spark ODBC driver installed <!-- deleted by customization (required for Spark on HDInsight to work with Tableau) -->. You can install the driver from [here](http://go.microsoft.com/fwlink/?LinkId=616229).
 - BI tools such as [Power BI](http://www.powerbi.com/) or [Tableau Desktop](http://www.tableau.com/products/desktop). You can get a free preview subscription of Power BI from [http://www.powerbi.com/](http://www.powerbi.com/).
 
 ##<a name="hivetable"></a>Save raw data as a Hive table
@@ -36,6 +36,7 @@ In this section, we use the [Jupyter](https://jupyter.org) notebook associated w
 
 Once your data is saved as a Hive table, in the next section we will connect to the Hive table using BI tools such as Power BI and Tableau.
 
+<!-- deleted by customization
 1. From the [Azure Preview Portal](https://manage.windowsazure.cn/), from the startboard, click the tile for your Spark cluster (if you pinned it to the startboard). You can also navigate to your cluster under **Browse All** > **HDInsight Clusters**.   
 
 2. From the Spark cluster blade, click **Quick Links**, and then from the **Cluster Dashboard** blade, click **Jupyter Notebook**. If prompted, enter the admin credentials for the cluster.
@@ -43,6 +44,10 @@ Once your data is saved as a Hive table, in the next section we will connect to 
 	> [AZURE.NOTE] You may also reach the Jupyter Notebook for your cluster by opening the following URL in your browser. Replace __CLUSTERNAME__ with the name of your cluster:
 	>
 	> `https://CLUSTERNAME.azurehdinsight.cn/jupyter`
+-->
+<!-- keep by customization: begin -->
+1. Launch the Jupyter notebook. Select your Spark cluster on the Azure Management Portal, and from the portal task bar at the bottom, click **Jupyter Notebook**. When prompted, enter the admin credentials for the Spark cluster.
+<!-- keep by customization: end -->
 
 2. Create a new notebook. Click **New**, and then click **Python 2**.
 
@@ -200,8 +205,16 @@ Once you have saved the data as a Hive table, you can use Power BI to connect to
 [hdinsight-versions]: /documentation/articles/hdinsight-component-versioning
 [hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
 [hdinsight-storage]: /documentation/articles/hdinsight-use-blob-storage
+<!-- deleted by customization
+
+
 [azure-purchase-options]: /pricing/overview/
-[azure-member-offers]: http://azure.microsoft.com/pricing/member-offers/
+[azure-member-offers]: /pricing/member-offers/
 [azure-trial]: /pricing/1rmb-trial/
+-->
+<!-- keep by customization: begin -->
+[azure-purchase-options]: http://www.windowsazure.cn/pricing/overview/
+[azure-trial]: http://www.windowsazure.cn/pricing/1rmb-trial/
+<!-- keep by customization: end -->
 [azure-management-portal]: https://manage.windowsazure.cn/
 [azure-create-storageaccount]: /documentation/articles/storage-create-storage-account

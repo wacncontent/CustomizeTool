@@ -4,7 +4,7 @@ Cores per [subscription](http://msdn.microsoft.com/zh-cn/library/azure/hh531793.
 [Co-administrators](http://msdn.microsoft.com/zh-cn/library/azure/gg456328.aspx) per subscription|Unlimited|Unlimited
 [Storage accounts](/documentation/articles/storage-create-storage-account) per subscription|100|100<sup>2</sup>
 [Resource Groups](/documentation/articles/resource-group-overview) per subscription|800|800
-Resource Manager API Reads|32000 per hour|32000 per hour
+Resource Manager API Reads|15000 per hour|15000 per hour
 Resource Manager API Writes|1200 per hour|1200 per hour
 Resource Manager API request size|4194304 bytes|4194304 bytes
 [Cloud services](/documentation/articles/cloud-services-what-is) per subscription|Deprecated<sup>3</sup>|Deprecated<sup>3</sup>

@@ -14,9 +14,11 @@
 	wacn.date=""/>
 
 # Azure Infrastructure Services Workload: Intranet SharePoint farm
+<!-- deleted by customization
 
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
 
+-->
 
 Set up your first or next SharePoint farm in Windows Azure and take advantage of ease of configuration and the ability to quickly expand the farm to include new capacity or optimization of key functionality. Many SharePoint farms grow from a standard, highly-available, three-tier configuration to a farm with possibly a dozen or more servers optimized for performance or separate roles, such as distributed caching or search.
 
@@ -32,8 +34,10 @@ Hosting an intranet SharePoint farm in Azure infrastructure services is an examp
 
 Your next step is to set up a dev/test intranet SharePoint farm hosted in Azure.
 
+<!-- deleted by customization
 > [AZURE.NOTE] Microsoft has released the SharePoint Server 2016 IT Preview. To make this preview easy to install and test, you can use an Azure virtual machine gallery image with SharePoint Server 2016 IT Preview and its prerequisites pre-installed. For more information, see [Test the SharePoint Server 2016 IT Preview in Azure](http://azure.microsoft.com/blog/test-sharepoint-server-2016-it-preview-4/).
 
+-->
 ## Create a dev/test intranet SharePoint farm hosted in Azure
 
 You have two choices for creating a dev/test environment for a SharePoint farm hosted in Azure:
@@ -41,7 +45,12 @@ You have two choices for creating a dev/test environment for a SharePoint farm h
 - Cloud-only virtual network
 - Cross-premises virtual network
 
-You can create these dev/test environments for free with your [MSDN subscription](http://azure.microsoft.com/pricing/member-offers/msdn-benefits/) or an [Azure Trial Subscription](/pricing/1rmb-trial/).
+<!-- deleted by customization
+You can create these dev/test environments for free with your [MSDN subscription](/pricing/member-offers/msdn-benefits/) or an [Azure Trial Subscription](/pricing/1rmb-trial/).
+-->
+<!-- keep by customization: begin -->
+You can create an [Azure Trial Subscription](/pricing/1rmb-trial/).
+<!-- keep by customization: end -->
 
 ### Cloud-only virtual network
 

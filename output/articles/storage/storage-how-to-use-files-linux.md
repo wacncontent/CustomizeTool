@@ -7,13 +7,10 @@
         manager="jahogg"
         editor="" />
 
-<tags ms.service="storage"
-      ms.workload="storage"
-      ms.tgt_pltfrm="na"
-      ms.devlang="na"
-      ms.topic="article"
-      ms.date="10/06/2015"
-      ms.author="jutang;tamram" />
+<tags
+	ms.service="storage"
+	ms.date="10/06/2015"
+	wacn.date=""/>
 
 
 # How to use Azure File Storage with Linux 
@@ -22,7 +19,7 @@
 
 Azure File Storage offers file shares in the cloud using the standard SMB protocol. File storage is now generally available and supports both SMB 3.0 and SMB 2.1.
 
-You can create Azure file shares using the Azure preview portal, the Azure Storage PowerShell cmdlets, the Azure Storage client libraries, or the Azure Storage REST API. Additionally, because file shares are SMB shares, you can access them via standard and familiar file system APIs.
+You can create Azure file shares using the Azure <!-- deleted by customization preview --><!-- keep by customization: begin --> Management <!-- keep by customization: end --> portal, the Azure Storage PowerShell cmdlets, the Azure Storage client libraries, or the Azure Storage REST API. Additionally, because file shares are SMB shares, you can access them via standard and familiar file system APIs.
 
 Applications running in Azure can easily mount file shares from Azure virtual machines. And with the latest release of File storage, you can also mount a file share from an on-premises application that supports SMB 3.0.
 
@@ -85,7 +82,7 @@ If you use Open SUSE 13.2, you can mount the file as below:
 
 ## Manage the file share ##
 
-The [Azure preview portal](https://manage.windowsazure.cn/) now provides a user interface for managing Azure File Storage. You can perform the following actions from your web browser:
+The [Azure <!-- deleted by customization preview --><!-- keep by customization: begin --> Management <!-- keep by customization: end --> portal](https://manage.windowsazure.cn/) now provides a user interface for managing Azure File Storage. You can perform the following actions from your web browser:
 
 - Upload and download files to and from your file share.
 - Monitor the actual usage of each file share.
@@ -125,7 +122,7 @@ See these links for more information about Azure File storage.
 
 ### Blog posts
 
-- [Azure File storage is now generally available](https://azure.microsoft.com/zh-cn/blog/)
+- [Azure File storage is now generally <!-- deleted by customization available](https://azure.microsoft.com/zh-cn/blog/) --><!-- keep by customization: begin --> available](/blog/) <!-- keep by customization: end -->
 - [Deep dive with Azure File storage](/home/features/storage/) 
 - [Introducing Windows Azure File Service](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/12/introducing-microsoft-azure-file-service.aspx)
 - [Persisting connections to Windows Azure Files](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/27/persisting-connections-to-microsoft-azure-files.aspx)

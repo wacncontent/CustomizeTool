@@ -14,7 +14,7 @@
 # How to Use the SendGrid Email Service from PHP
 
 This guide demonstrates how to perform common programming tasks with the SendGrid email service on Azure. The samples are written in PHP.
-The scenarios covered include **constructing email**, **sending email**, and **adding attachments**. For more information on SendGrid and sending email, see the [Next Steps][] section.
+The scenarios covered include **constructing email**, **sending email**, and **adding attachments**. For more information on SendGrid and sending email, see the [Next Steps](#next-steps) section.
 
 ## Table of Contents
 
@@ -67,11 +67,11 @@ component-based library for sending emails from PHP applications. You
 can download the *Swift Mailer* library from
 [http://swiftmailer.org/download][] v5.3.0 (use [Composer] to install Swift Mailer). Sending email with the library
 involves creating instances of the
-<span class="auto-style2">Swift_SmtpTransport</span>,
-<span class="auto-style2">Swift_Mailer</span>, and
-<span class="auto-style2">Swift_Message</span> classes, setting the
+<span class="auto-style2">Swift\_SmtpTransport</span>,
+<span class="auto-style2">Swift\_Mailer</span>, and
+<span class="auto-style2">Swift\_Message</span> classes, setting the
 appropriate properties, and calling the
-<span class="auto-style2">Swift_Mailer::send</span> method.
+<span class="auto-style2">Swift\_Mailer::send</span> method.
 
     <?php
      include_once "vendor/autoload.php";
@@ -254,9 +254,9 @@ The additional line of code is as follows:
      $message->attach(Swift_Attachment::fromPath("path\to\file")->setFileName('file_name'));
 
 This line of code calls the attach method on the
-<span class="auto-style2">Swift_Message</span> object and uses static
+<span class="auto-style2">Swift\_Message</span> object and uses static
 method <span class="auto-style2">fromPath</span> on the
-<span class="auto-style2">Swift_Attachment</span> class to get and
+<span class="auto-style2">Swift\_Attachment</span> class to get and
 attach a file to a message.
 
 ### Web API
@@ -432,6 +432,8 @@ these links to learn more.
 -   SendGrid documentation: <https://sendgrid.com/docs>
 -   SendGrid PHP library: <https://github.com/sendgrid/sendgrid-php>
 -   SendGrid special offer for Azure customers: <https://sendgrid.com/windowsazure.html>
+
+For more information, see also the [PHP Developer Center](/develop/php/).
 
   [Next Steps]: #bkmk_NextSteps
   [What is the SendGrid Email Service]: #bkmk_WhatIsSendGrid

@@ -7,9 +7,9 @@
 	manager="dwrede" 
 	editor=""/>
 
-<tags 
-	ms.service="mobile-services" 
-	ms.date="08/08/2015" 
+<tags
+	ms.service="mobile-services"
+	ms.date="08/08/2015"
 	wacn.date=""/>
 
 # Define a custom API that supports periodic notifications
@@ -160,3 +160,4 @@ Now that you have created a periodic notification, consider finding out more abo
 
 [Mobile Services .NET How-to Conceptual Reference]: /documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library
 
+ 

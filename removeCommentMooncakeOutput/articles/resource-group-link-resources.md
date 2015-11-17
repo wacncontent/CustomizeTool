@@ -7,9 +7,9 @@
 	manager="wpickett" 
 	editor=""/>
 
-<tags 
-	ms.service="azure-resource-manager" 
-	ms.date="07/16/2015" 
+<tags
+	ms.service="azure-resource-manager"
+	ms.date="07/16/2015"
 	wacn.date=""/>
 
 # Linking resources in Azure Resource Manager
@@ -127,7 +127,7 @@ with a set of unidirection relationships to a website, a notification hub, and S
 
 To define a link between deployed resources, run:
 
-    PUT https://management.azure.com/subscriptions/{subscription-id}/resourceGroups/{resource-group}/providers/{provider-namespace}/{resource-type}/{resource-name}/providers/Microsoft.Resources/links/{link-name}?api-version={api-version}
+    PUT https://manage.windowsazure.cn/subscriptions/{subscription-id}/resourceGroups/{resource-group}/providers/{provider-namespace}/{resource-type}/{resource-name}/providers/Microsoft.Resources/links/{link-name}?api-version={api-version}
 
 Replace {subscription-id} with your subscription id. Replace {resource-group}, {provider-namespace, {resource-type}, and {resource-name} with the values that 
 identify the first resource in the link. Replace {link-name} with the name of the link to create. Use 2015-01-01 for the api-version.

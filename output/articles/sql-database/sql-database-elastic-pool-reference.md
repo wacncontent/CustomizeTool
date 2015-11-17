@@ -29,7 +29,7 @@ An elastic database pool is a collection of elastic database throughput units (e
 
 
 - Elastic database pools are only available in Azure SQL Database V12 servers.   
-- Creating and managing elastic database pools is supported using the [preview portal](https://manage.windowsazure.cn), PowerShell, and a .NET Client Library (wrapper for REST APIs) for Azure Resource Manager only; the [portal](https://manage.windowsazure.cn/) and service management commands are not supported.
+- Creating and managing elastic database pools is supported using the <!-- deleted by customization [preview portal](https://manage.windowsazure.cn) --><!-- keep by customization: begin --> [portal](https://manage.windowsazure.cn) <!-- keep by customization: end -->, PowerShell, and a .NET Client Library (wrapper for REST APIs) for Azure Resource Manager only; the [portal](https://manage.windowsazure.cn/) and service management commands are not supported.
 - Additionally, creating new elastic databases, and moving existing databases in and out of elastic database pools is supported using Transact-SQL.
 
 
@@ -72,7 +72,7 @@ The following articles will help you get started using elastic databases and ela
 An elastic database pool is an Azure Resource Manager resource of type “ElasticPool” in the Windows Azure SQL Database.
 
 - **namespace**: Microsoft.Sql/ElasticPool
-- **management-endpoint** for REST API calls (Resource Manager): https://management.azure.com
+- **management-endpoint** for REST API calls (Resource Manager): <!-- deleted by customization https://manage.windowsazure.cn --><!-- keep by customization: begin --> https://management.windowsazure.cn <!-- keep by customization: end -->
 
 
 

@@ -50,7 +50,7 @@ For technical reasons, enabling Java for your app disables the .NET, PHP, and Py
 
 **Managed Pipeline Version**. Sets the IIS [pipeline mode](http://www.iis.net/learn/get-started/introduction-to-iis/introduction-to-iis-architecture#Application). Leave this set to Integrated (the default) unless you have a legacy app that requires an older version of IIS.
 
-**Auto Swap**. If you enable Auto Swap for a deployment slot, Azure Websites will automatically swap the web app into production when you push an update to that slot. For more information, see [Deploy to staging slots for web apps in Azure Websites](/documentation/articles/web-sites-staged-publishing).
+**Auto Swap**. If you enable Auto Swap for a deployment slot, Azure Websites will automatically swap the web app into production when you push an update to that slot. For more information, see [Deploy to staging slots for web apps in Azure Websites] (web-sites-staged-publishing.md).
 
 
 ### Debugging

@@ -20,10 +20,12 @@
 - [Mac/Linux](/documentation/articles/virtual-machines-python-django-web-app-linux)
 
 <br>
+<!-- deleted by customization
 
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
 
 
+-->
 This tutorial describes how to host a Django-based website on Microsoft 
 Azure using a Linux virtual machine. This tutorial assumes you have no prior experience using Azure. Upon completing this guide, you will have a Django-based application up and running in the cloud.
 
@@ -133,5 +135,5 @@ The Ubuntu Linux VM already comes with Python 2.7 pre-installed, but it doesn't 
 When you're done with this tutorial, shutdown and/or remove your newly created Azure virtual machine to free up resources for other tutorials and avoid incurring Azure usage charges.
 
 
-[portal-vm]: /manage/linux/tutorials/virtual-machine-from-gallery/
+[portal-vm]: /documentation/articles/virtual-machines-linux-tutorial/
  

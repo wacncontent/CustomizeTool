@@ -8,9 +8,9 @@
 	documentationCenter=""
 	manager="timlt"/>
 
-<tags 
-	ms.service="multiple" 
-	ms.date="09/08/2015" 
+<tags
+	ms.service="multiple"
+	ms.date="09/08/2015"
 	wacn.date=""/>
 
 
@@ -47,7 +47,7 @@ Azure also offers other compute hosting models for more specialized purposes, su
 
 All three of the general purpose Azure compute hosting models let you build scalable, reliable applications in the cloud. Given this essential similarity, which one should you use?
 
-Azure Websites is the best choice for most web apps. Deployment and management are integrated into the platform, sites can scale quickly to handle high traffic loads, and the built-in load balancing and traffic manager provide high availability. You can move existing sites to Azure Websites easily with an [online migration tool](https://www.migratetoazure.net/), use an open-source app from the Web Application Gallery, or create a new site using the framework and tools of your choice. The [WebJobs](/documentation/articles/websites-webjobs-resources) feature makes it easy to add background job processing to your app, or even run a compute workload that isn't a web app at all. 
+Azure Websites is the best choice for most web apps. Deployment and management are integrated into the platform, sites can scale quickly to handle high traffic loads, and the built-in load balancing and traffic manager provide high availability. You can move existing sites to Azure Websites easily with an [online migration tool](https://www.migratetoazure.net/), use an open-source app from the Web Application Gallery, or create a new site using the framework and tools of your choice. The [WebJobs](/documentation/articles/websites-webjobs-resources/) feature makes it easy to add background job processing to your app, or even run a compute workload that isn't a web app at all. 
 
 If you need more control over the web server environment, such as the ability to remote into your server or configure server startup tasks, Azure Cloud Services is typically the best option.
 

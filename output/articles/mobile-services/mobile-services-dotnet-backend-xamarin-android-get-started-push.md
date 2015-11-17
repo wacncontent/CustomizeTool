@@ -65,6 +65,8 @@ You can test the app by directly attaching an Android phone with a USB cable, or
 
 <!-- URLs. -->
 [Get started with Mobile Services]: /documentation/articles/mobile-services-dotnet-backend-xamarin-android-get-started
+
+
 [Google Cloud Messaging Client Component]: http://components.xamarin.com/view/GCMClient/
 [Xamarin.Android]: http://xamarin.com/download/
 [Azure Mobile Services Component]: http://components.xamarin.com/view/azure-mobile-services/

@@ -7,10 +7,10 @@
                 manager="swadhwa"
                 editor=""/>
 
-<tags 
-	ms.service="active-directory" 
-        ms.date="08/10/2015"
-	wacn.date="" />
+<tags
+	ms.service="active-directory"
+	ms.date="08/10/2015"
+	wacn.date=""/>
 
 
 # What is Azure Active Directory?

@@ -29,7 +29,7 @@ This tutorial uses [node_redis](https://github.com/mranney/node_redis), but you 
 
 ## Create a Redis cache on Azure
 
-In the [Azure preview portal](https://manage.windowsazure.cn/), click **New**, **DATA SERVICE**, and select **Redis Cache**.
+In the [Azure <!-- deleted by customization preview portal](https://manage.windowsazure.cn/) --><!-- keep by customization: begin --> Management Portal Preview](https://manage.windowsazure.cn/) <!-- keep by customization: end -->, click **New**, **DATA SERVICE**, and select **Redis Cache**.
 
   ![][1]
 
@@ -38,7 +38,7 @@ Enter a DNS hostname. It will have the form `<name>.redis.cache.chinacloudapi.cn
   ![][2]
 
 
-Once you create the cache, click on it in the preview portal to view the cache settings. Click the link under **Keys** and copy the primary key. You need this to authenticate requests.
+Once you create the cache, click on it in the <!-- deleted by customization preview portal --><!-- keep by customization: begin --> Azure Management Portal <!-- keep by customization: end --> to view the cache settings. Click the link under **Keys** and copy the primary key. You need this to authenticate requests.
 
   ![][4]
 

@@ -12,7 +12,7 @@ can best protect your cloud applications.
 An application's security is a function of its surface. The more surface
 that the application exposes the greater the security concerns. For
 example, an application that runs as an unattended batch process exposes
-less, from a security perspective, than a publicly available website.
+less, from a security perspective, than a <!-- deleted by customization publicly --><!-- keep by customization: begin --> publically <!-- keep by customization: end --> available website.
 
 When you move to the cloud you gain a certain peace of mind about
 infrastructure and networking since these are managed in data centers
@@ -532,8 +532,13 @@ Refer to the following resources to solve this scenario
 -   [Shared Access Signatures Are Easy These Days](http://blog.smarx.com/posts/shared-access-signatures-are-easy-these-days)
 
 
+<!-- deleted by customization
 ## Azure SQL Database Identity and Access Scenarios
 
+-->
+<!-- keep by customization: begin -->
+##Azure SQL Database Identity and Access Scenarios
+<!-- keep by customization: end -->
 
 SQL Database only supports SQL Server Authentication. Windows
 Authentication (integrated security) is not supported. Users must
@@ -541,6 +546,7 @@ provide credentials (login and password) every time they connect to a
 SQL Database. Pay special attention when managing your username and
 password to avoid information disclosure.
 
+<!-- deleted by customization
 
 ![][15]
 
@@ -555,12 +561,30 @@ Or refer to one of its many child topics, some of which are:
 - [How to: Connect to SQL Database Using sqlcmd](http://msdn.microsoft.com/zh-cn/library/azure/ee336280.aspx)
 - [Code sample: Retry logic for connecting to Azure SQL Database with ADO.NET](http://msdn.microsoft.com/zh-cn/library/azure/ee336243.aspx)
 - [How to: Connect to SQL Database Using PHP](http://msdn.microsoft.com/zh-cn/library/azure/ff394110.aspx)
+-->
+<!-- keep by customization: begin -->
+![][15]
+
+Refer to the following resources to solve this scenario:
+
+-   [Security Guidelines and Limitations (SQL Database)](http://msdn.microsoft.com/zh-cn/library/azure/ff394108.aspx#authentication)
+-   [How to: Connect to SQL Database Using sqlcmd](http://msdn.microsoft.com/zh-cn/library/azure/ee336280.aspx)
+-   [How to: Connect to SQL Database Using ADO.NET](http://msdn.microsoft.com/zh-cn/library/azure/ee336243.aspx)
+-   [How to: Connect to SQL Database Through ASP.NET](http://msdn.microsoft.com/zh-cn/library/azure/ee621781.aspx)
+-   [How to: Connect to SQL Database Through WCF Data Services](http://msdn.microsoft.com/zh-cn/library/azure/ee621789.aspx)
+-  [ How to: Connect to SQL Database Using PHP](http://msdn.microsoft.com/zh-cn/library/azure/ff394110.aspx)
+<!-- keep by customization: end -->
 - [How to: Connect to SQL Database Using JDBC](http://msdn.microsoft.com/zh-cn/library/azure/gg715284.aspx)
+<!-- deleted by customization
 
 
 Or refer to:<br/>
 [Azure SQL Database Security Guidelines and Limitations](http://msdn.microsoft.com/zh-cn/library/azure/ff394108.aspx#authentication)
 
+-->
+<!-- keep by customization: begin -->
+-   [How to: Connect to SQL Database Using the ADO.NET Entity Framework](http://msdn.microsoft.com/zh-cn/library/azure/ff951633.aspx)
+<!-- keep by customization: end -->
 
 ##Azure Service Bus Identity and Access Scenarios
 

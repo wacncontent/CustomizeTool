@@ -62,6 +62,7 @@ The workflow activities in the following table are used to access Automation var
 1. Click **Add Variable**.
 1. Complete the wizard and click the checkbox to save the new variable.
 
+<!-- deleted by customization
 
 ### To create a new variable with the Azure preview portal
 
@@ -69,6 +70,7 @@ The workflow activities in the following table are used to access Automation var
 1. Click the **Variables** part to open the **Variables** blade.
 1. Click **Add a variable** at the top of the blade.
 1. Complete the form and click **Create** to save the new variable.
+-->
 
 
 ### To create a new variable with Windows PowerShell
@@ -148,6 +150,7 @@ In the following code, the collection is retrieved from the variable and used to
 	   }
 	}
 
+<!-- deleted by customization
 ### Graphical runbook samples
 
 In a graphical runbook, you add the **Get-AutomationVariable** or **Set-AutomationVariable** by right-clicking on the variable in the Library pane of the graphical editor and selecting the activity you want.
@@ -182,4 +185,5 @@ The following image shows how to filter the objects that are stored to a variabl
 ## Related articles
 
 - [Links in graphical authoring](/documentation/articles/automation-graphical-authoring-intro#links-and-workflow)
+-->
  

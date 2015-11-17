@@ -1,14 +1,14 @@
-<properties 
-	pageTitle="View your access and usage reports" 
+<properties
+	pageTitle="View your access and usage reports | Windows Azure"
 	description="Explains how to view access and usage reports to gain insight into the integrity and security of your organization’s directory."
-	services="active-directory" 
-	documentationCenter="" 
+	services="active-directory"
+	documentationCenter=""
 	authors="kenhoff"
 	manager="stevenpo"
-	editor="LisaToft"/>
+	editor=""/>
 
-<tags 
-	ms.service="active-directory" 
+<tags
+	ms.service="active-directory"
 	ms.date="09/21/2015"
 	wacn.date=""/>
 
@@ -18,8 +18,8 @@ You can use Azure Active Directory's access and usage reports to gain visibility
 
 In the Azure Management Portal, reports are categorized in the following ways:
 
-- Anomaly reports – Contain sign in events that we found to be anomalous. Our goal is to make you aware of such activity and enable you to be able to make a determination about whether an event is suspicious. 
-- Integrated Application reports – Provides insights into how cloud applications are being used in your organization. Azure Active Directory offers integration with thousands of cloud applications. 
+- Anomaly reports – Contain sign in events that we found to be anomalous. Our goal is to make you aware of such activity and enable you to be able to make a determination about whether an event is suspicious.
+- Integrated Application reports – Provides insights into how cloud applications are being used in your organization. Azure Active Directory offers integration with thousands of cloud applications.
 - Error reports – Indicate errors that may occur when provisioning accounts to external applications.
 - User-specific reports – Display device/sign in activity data for a specific user.
 - Activity logs – Contain a record of all audited events within the last 24 hours, last 7 days, or last 30 days, as well as group activity changes, and password reset and registration activity.
@@ -218,8 +218,8 @@ Only certain types of sign in events will appear in the User Activity report.
 | ----------------------								| ---------		|
 | Sign ins to the [Access Panel](http://myapps.microsoft.com/)				| Yes			|
 | Sign ins to the [Azure Management Portal](https://manage.windowsazure.cn/)		| Yes			|
-| Sign ins to the [Windows Azure Management Portal](https://manage.windowsazure.cn/)			| Yes			|
-| Sign ins to the [Office 365 portal](https://login.partner.microsoftonline.cn)			| Yes			|
+| Sign ins to the [Windows Azure Management Portal](http://manage.windowsazure.cn/)			| Yes			|
+| Sign ins to the [Office 365 portal](http://portal.office.com/)			| Yes			|
 | Sign ins to a native application, like Outlook (see exception below)			| Yes			|
 | Sign ins to a federated/provisioned app through the Access Panel, like Salesforce	| Yes			|
 | Sign ins to a password-based app through the Access Panel, like Twitter		| Yes			|
@@ -243,13 +243,15 @@ If you suspect that a user account may be compromised or any kind of suspicious 
 
 - Contact the user to verify the activity
 - Reset the user's password
-- [Enable multi-factor authentication](https://msdn.microsoft.com/zh-cn/library/azure/7a9c56cf-72f1-4797-8e86-a9a2d9569ef6#enableuser) for additional security
+- [Enable multi-factor authentication](https://msdn.microsoft.com/zh-cn/library/azure/7a9c56cf-72f1-4797-8e86-a9a2d9569ef6) for additional security
 
 ## View or download a report
 
 1. In the Azure Management Portal, click **Active Directory**, click the name of your organization’s directory, and then click **Reports**.
 2. On the Reports page, click the report you want to view and/or download.
+
     > [AZURE.NOTE] If this is the first time you have used the reporting feature of Azure Active Directory, you will see a message to Opt In. If you agree, click the check mark icon to continue.
+
 3. Click the drop-down menu next to Interval, and then select one of the following time ranges that should be used when generating this report:
     - Last 24 hours
     - Last 7 days
@@ -270,5 +272,5 @@ For more information about Azure AD's reporting notifications, check out [Azure 
 
 ## What's next
 
-<!--- [Getting started with Azure Active Directory Premium](/documentation/articles/active-directory-get-started-premium)-->
+- [Getting started with Azure Active Directory Premium](/documentation/articles/active-directory-get-started-premium)
 - [Add company branding to your Sign In and Access Panel pages](/documentation/articles/active-directory-add-company-branding)

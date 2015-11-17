@@ -23,15 +23,22 @@
 <br>
 
 
+<!-- deleted by customization
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] [Resource Manager model](/documentation/articles/virtual-machines-ps-create-preconfigure-windows-resource-manager-vms).
 
 
+-->
 These steps show you how to customize a set of Azure PowerShell commands that create and preconfigure a Windows-based Azure virtual machine by using a building block approach. You can use this process to quickly create a command set for a new Windows-based virtual machine and expand an existing deployment or to create multiple command sets that quickly build out a custom dev/test or IT pro environment.
 
 These steps follow a fill-in-the-blanks approach for creating Azure PowerShell command sets. This approach can be useful if you are new to PowerShell or you just want to know what values to specify for successful configuration. Advanced PowerShell users can take the commands and substitute their own values for the variables (the lines beginning with "$").
 
 For the companion topic to configure Linux-based virtual machines, see [Use Azure PowerShell to create and preconfigure Linux-based Virtual Machines](/documentation/articles/virtual-machines-ps-create-preconfigure-linux-vms).
 
+<!-- keep by customization: begin -->
+[AZURE.INCLUDE [service-management-pointer-to-resource-manager](../includes/service-management-pointer-to-resource-manager.md)]
+
+- [Create and preconfigure a Windows Virtual Machine with Resource Manager and Azure PowerShell](/documentation/articles/virtual-machines-ps-create-preconfigure-windows-resource-manager-vms)
+<!-- keep by customization: end -->
 
 ## Step 1: Install Azure PowerShell
 
@@ -50,7 +57,16 @@ You can get the correct subscription name from the SubscriptionName property of 
 
 ## Step 3: Determine the ImageFamily
 
+<!-- deleted by customization
 Next, you need to determine the ImageFamily or Label value for the specific image corresponding to the Azure virtual machine you want to create. You can get the list of available ImageFamily values with this command.
+-->
+<!-- keep by customization: begin -->
+Next, you need to determine the ImageFamily or Label value for the specific image corresponding to the Azure virtual machine you want to create. Here are some examples from the Gallery in the Azure Management Portal.
+
+![](./media/virtual-machines-ps-create-preconfigure-windows-vms/PSPreconfigWindowsVMs_1.png)
+
+You can get the list of available ImageFamily values with this command.
+<!-- keep by customization: end -->
 
 	Get-AzureVMImage | select ImageFamily -Unique
 
@@ -260,6 +276,13 @@ Here is the corresponding Azure PowerShell command set to create this virtual ma
 [Overview of Azure Virtual Machines](http://msdn.microsoft.com/zh-cn/library/azure/jj156143.aspx)
 
 [How to install and configure Azure PowerShell](/documentation/articles/install-configure-powershell)
+
+<!-- keep by customization: begin -->
+[Use Azure PowerShell to create and preconfigure Linux-based Virtual Machines](/documentation/articles/virtual-machines-ps-create-preconfigure-linux-vms)
+
+[Create and preconfigure a Windows Virtual Machine with Resource Manager and Azure PowerShell](/documentation/articles/virtual-machines-ps-create-preconfigure-windows-resource-manager-vms)
+
+<!-- keep by customization: end -->
 
 
 

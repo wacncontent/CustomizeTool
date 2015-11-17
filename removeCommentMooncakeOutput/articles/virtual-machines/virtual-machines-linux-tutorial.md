@@ -1,12 +1,12 @@
 <properties
-	pageTitle="Create a virtual machine running Linux in Azure"
-	description="Learn to create Azure virtual machine (VM) running Linux by using an image from Azure."
+	pageTitle="Create a virtual machine running Linux | Windows Azure"
+	description="Learn to create Azure virtual machine (VM) running Linux by using an image from Azure and the Azure Command-Line Interface."
 	services="virtual-machines"
 	documentationCenter=""
 	authors="squillace"
 	manager="timlt"
 	editor="tysonn"
-	tags="azure-resource-management" />
+	tags="azure-resource-manager" />
 
 <tags
 	ms.service="virtual-machines"
@@ -21,15 +21,15 @@
 
 Creating an Azure virtual machine (VM) that runs Linux is easy to do from the command line or from the portal. This tutorial shows you how to use the Azure Command-Line Interface for Mac, Linux, and Windows (the Azure CLI) to create quickly an Ubuntu Server VM running in Azure, connect to it using **ssh**, and creating and mounting a new disk. (This topic uses an Ubuntu Server VM, but you can also create Linux VMs using [your own images as templates](/documentation/articles/virtual-machines-linux-create-upload-vhd).)
 
-<!--[AZURE.INCLUDE [free-trial-note](../includes/free-trial-note.md)]-->
+[AZURE.INCLUDE [free-trial-note](../includes/free-trial-note.md)]
 
 ## Install the Azure CLI
 
 The first step is to [install the Azure CLI](/documentation/articles/xplat-cli-install).
 
-Good. Now make sure you're in the resource management mode by typing `azure config mode arm`.
+Good. Now make sure you're in the Resource Manager mode by typing `azure config mode arm`.
 
-Even better. Now log in with your work or school id by typing `azure login` and following the prompts.
+Even better. Now [log in with your work or school id](/documentation/articles/xplat-cli-connect#use-the-log-in-method) by typing `azure login` and following the prompts.
 
 > [AZURE.NOTE] If you receive an error logging in, you may need to [create a work or school id from your personal Microsoft account](/documentation/articles/resource-group-create-work-id-from-personal).
 
@@ -91,7 +91,7 @@ Now create your VM by typing `azure vm quick-create`, and you'll receive prompts
 	data:    ProvisioningState               :Succeeded
 	data:    Name                            :myuniquevmname
 	data:    Location                        :chinanorth
-	data:    FQDN                            :myuni-westu-1432328437727-pip.chinanorth.cloudapp.azure.com
+	data:    FQDN                            :myuni-westu-1432328437727-pip.chinanorth.chinacloudapp.cn
 	data:    Type                            :Microsoft.Compute/virtualMachines
 	data:
 	data:    Hardware Profile:
@@ -130,7 +130,7 @@ Now create your VM by typing `azure vm quick-create`, and you'll receive prompts
 	data:            Private IP alloc-method :Dynamic
 	data:            Private IP address      :10.0.1.4
 	data:            Public IP address       :191.239.51.1
-	data:            FQDN                    :myuni-westu-1432328437727-pip.chinanorth.cloudapp.azure.com
+	data:            FQDN                    :myuni-westu-1432328437727-pip.chinanorth.chinacloudapp.cn
 	info:    vm quick-create command OK
 
 Your VM is up and running and waiting for you to connect.
@@ -141,12 +141,12 @@ With Linux VMs, you typically connect using **ssh**. This topic connects to a VM
 
 If you're not familiar with connecting with **ssh**, the command takes the form `ssh <username>@<publicdnsaddress> -p <the ssh port>`. In this case, we use the username and password from the previous step and port 22, which is the default **ssh** port.
 
-	ssh ops@myuni-westu-1432328437727-pip.chinanorth.cloudapp.azure.com -p 22
-	The authenticity of host 'myuni-westu-1432328437727-pip.chinanorth.cloudapp.azure.com (191.239.51.1)' can't be established.
+	ssh ops@myuni-westu-1432328437727-pip.chinanorth.chinacloudapp.cn -p 22
+	The authenticity of host 'myuni-westu-1432328437727-pip.chinanorth.chinacloudapp.cn (191.239.51.1)' can't be established.
 	ECDSA key fingerprint is bx:xx:xx:xx:xx:xx:xx:xx:xx:x:x:x:x:x:x:xx.
 	Are you sure you want to continue connecting (yes/no)? yes
-	Warning: Permanently added 'myuni-westu-1432328437727-pip.chinanorth.cloudapp.azure.com,191.239.51.1' (ECDSA) to the list of known hosts.
-	ops@myuni-westu-1432328437727-pip.chinanorth.cloudapp.azure.com's password:
+	Warning: Permanently added 'myuni-westu-1432328437727-pip.chinanorth.chinacloudapp.cn,191.239.51.1' (ECDSA) to the list of known hosts.
+	ops@myuni-westu-1432328437727-pip.chinanorth.chinacloudapp.cn's password:
 	Welcome to Ubuntu 14.04.2 LTS (GNU/Linux 3.16.0-37-generic x86_64)
 
 	 * Documentation:  https://help.ubuntu.com/

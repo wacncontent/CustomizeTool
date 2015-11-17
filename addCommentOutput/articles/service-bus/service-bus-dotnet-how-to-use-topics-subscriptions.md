@@ -54,15 +54,10 @@ In both cases, you can retrieve your connection string using the `CloudConfigura
 
 ### Configure your connection string when using Cloud Services
 
-The service configuration mechanism is unique to Azure Cloud Services projects and enables you to dynamically change configuration settings from the Azure <!-- deleted by customization Management Portal --><!-- keep by customization: begin --> management portal <!-- keep by customization: end --> without redeploying your application. For example, add a `Setting` label to your service definition (***.csdef**) file, as shown in the next example.
+The service configuration mechanism is unique to Azure Cloud Services projects and enables you to dynamically change configuration settings from the Azure Management Portal without redeploying your application. For example, add a `Setting` label to your service definition (***.csdef**) file, as shown in the next example.
 
 ```
-<!-- deleted by customization
 <ServiceDefinition name="Azure1">
--->
-<!-- keep by customization: begin -->
-<ServiceDefinition name="WindowsAzure1">
-<!-- keep by customization: end -->
 ...
     <WebRole name="MyRole" vmsize="Small">
         <ConfigurationSettings>
@@ -76,12 +71,7 @@ The service configuration mechanism is unique to Azure Cloud Services projects a
 You then specify values in the service configuration (.cscfg) file.
 
 ```
-<!-- deleted by customization
 <ServiceConfiguration serviceName="Azure1">
--->
-<!-- keep by customization: begin -->
-<ServiceConfiguration serviceName="WindowsAzure1">
-<!-- keep by customization: end -->
 ...
     <Role name="MyRole">
         <ConfigurationSettings>
@@ -108,7 +98,7 @@ When using websites or Virtual Machines, it is recommended that you use the .NET
 </configuration>
 ```
 
-Use the SAS name and key values that you retrieved from the <!-- deleted by customization Azure Management Portal --><!-- keep by customization: begin --> management portal <!-- keep by customization: end -->, as described in the previous section.
+Use the SAS name and key values that you retrieved from the Azure Management Portal, as described in the previous section.
 
 ## Create a topic
 
@@ -217,7 +207,7 @@ Now when a message is sent to `TestTopic`, it is always delivered to receivers s
 
 ## Send messages to a topic
 
-To send a message to a Service Bus topic, your application creates a <!-- deleted by customization [TopicClient](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.topicclient.aspx) --><!-- keep by customization: begin --> [`TopicClient`](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.topicclient.aspx) <!-- keep by customization: end --> object using the connection string.
+To send a message to a Service Bus topic, your application creates a [TopicClient](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.topicclient.aspx) object using the connection string.
 
 The following code demonstrates how to create a [TopicClient](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.topicclient.aspx) object for the **TestTopic** topic created earlier using the [`CreateFromConnectionString`](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.topicclient.createfromconnectionstring.aspx) API call.
 

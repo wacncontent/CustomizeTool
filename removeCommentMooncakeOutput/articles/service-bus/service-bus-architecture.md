@@ -6,11 +6,10 @@
    authors="sethmanheim"
    manager="timlt"
    editor="tysonn" />
-<tags 
-   ms.service="service-bus"
-
-   ms.date="07/24/2015"
-   wacn.date="" />
+<tags
+	ms.service="service-bus"
+	ms.date="07/24/2015"
+	wacn.date=""/>
 
 # Service Bus Architecture
 

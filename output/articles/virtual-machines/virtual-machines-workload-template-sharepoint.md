@@ -14,8 +14,10 @@
 	wacn.date=""/>
 
 # Deploy SharePoint farms with Azure Resource Manager templates
+<!-- deleted by customization
 
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] classic deployment model. You can't create this resource with the classic deployment model.
+-->
 
 Use the instructions in this article to deploy a new three-server or nine-server SharePoint Server 2013 farm using Resource Manager templates.
 
@@ -43,8 +45,10 @@ To deploy this workload using a Resource Manager template and the Azure preview 
 Depending on the template, it can take some time for Azure to build the workload. When complete, you have a new three-server SharePoint farm in your existing or new resource group.
 
 ### Azure PowerShell
+<!-- deleted by customization
 
 > [AZURE.NOTE] This article contains commands for versions of Azure PowerShell up to *but not including* versions 1.0.0 and later. You can check your version of Azure PowerShell with the **Get-Module azure | format-table version** command. The Azure PowerShell command blocks in this article are in the process of being tested and updated to support the new cmdlets in Azure PowerShell versions 1.0.0 and later. Thank you for your patience.
+-->
 
 Before you begin, make sure you have the right version of Azure PowerShell installed, you have logged in, and you have switched to the new Resource Manager mode. For the details, click [here](/documentation/articles/virtual-machines-deploy-rmtemplates-powershell#setting-up-powershell-for-resource-manager-templates).
 
@@ -86,7 +90,7 @@ Next, use the following command and specify the name of your new resource group 
 
 Here is an example.
 
-	azure group create sp3serverfarm eastus2
+	azure group create sp3serverfarm chinaeast2
 	azure group deployment create --template-uri https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/sharepoint-three-vm/azuredeploy.json sp3serverfarm spdevtest
 
 When you run the **azure group deployment create** command, you will be prompted to supply the values for a series of parameters. When you have specified all the parameter values, Azure creates and configures the virtual machines.
@@ -156,7 +160,7 @@ Next, use the following command and specify the name of your new resource group 
 
 Here is an example.
 
-	azure group create sphaserverfarm eastus2
+	azure group create sphaserverfarm chinaeast2
 	azure group deployment create --template-uri https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/sharepoint-server-farm-ha/azuredeploy.json sphaserverfarm spdevtest
 
 When you run the **azure group deployment create** command, you will be prompted to supply the values for a series of parameters. When you have specified all the parameter values, Azure creates and configures the virtual machines.
@@ -166,8 +170,10 @@ When the template execution is complete, you now have a new nine-server SharePoi
 
 ## Additional resources
 
+<!-- deleted by customization
 [SharePoint farms hosted in Azure infrastructure services](/documentation/articles/virtual-machines-sharepoint-infrastructure-services)
 
+-->
 [Deploy and manage virtual machines using Azure Resource Manager templates and Azure PowerShell](/documentation/articles/virtual-machines-deploy-rmtemplates-powershell)
 
 [Azure Compute, Network and Storage providers under Azure Resource Manager](/documentation/articles/virtual-machines-azurerm-versus-azuresm)

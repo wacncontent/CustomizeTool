@@ -560,5 +560,5 @@ If you wish to install a sample application for this, and other DMZ Examples, on
 
 <!--Link References-->
 [HOME]: /documentation/articles/best-practices-network-security
-[SampleApp]: ./virtual-networks-sample-app.md
-[Example1]: ./virtual-networks-dmz-nsg-asm.md
+[SampleApp]: /documentation/articles/virtual-networks-sample-app
+[Example1]: /documentation/articles/virtual-networks-dmz-nsg-asm

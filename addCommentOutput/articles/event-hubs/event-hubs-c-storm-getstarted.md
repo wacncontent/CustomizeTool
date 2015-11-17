@@ -20,7 +20,7 @@
 
 Event Hubs is a highly scalable ingestion system that can intake millions of events per second, enabling an application to process and analyze the massive amounts of data produced by your connected devices and applications. Once collected into Event Hubs, you can transform and store data using any real-time analytics provider or storage cluster.
 
-For more information, please see [Event Hubs <!-- deleted by customization overview] --><!-- keep by customization: begin --> Overview] <!-- keep by customization: end -->.
+For more information, please see [Event Hubs overview].
 
 In this tutorial, you will learn how to ingest messages into an Event Hub using a console application in C, and to retrieve them in parallel using Apache Storm.
 
@@ -30,13 +30,13 @@ In order to complete this tutorial you will need the following:
 
 + A Java development environment configured to run [Maven](http://maven.apache.org/). For this tutorial, we will assume [Eclipse](https://www.eclipse.org/).
 
-+ An active Azure account. If you don't have an account, you can create a trial account in just a couple of minutes. For details, see [Azure <!-- deleted by customization Trial](https://azure.microsoft.com/pricing/1rmb-trial/) --><!-- keep by customization: begin --> Trial](http://www.windowsazure.cn/zh-cn/pricing/1rmb-trial/) <!-- keep by customization: end -->.
++ An active Azure account. If you don't have an account, you can create a trial account in just a couple of minutes. For details, see [Azure Trial](/pricing/1rmb-trial/).
 
 ## Create an Event Hub
 
-1. Log on to the [Azure <!-- deleted by customization Management Portal] --><!-- keep by customization: begin --> management portal] <!-- keep by customization: end -->, and click **NEW** at the bottom of the screen.
+1. Log on to the [Azure Management Portal], and click **NEW** at the bottom of the screen.
 
-2. Click **Azure Websites**, then **Service Bus**, then **Event Hub**, and then **Quick Create**.
+2. Click **App Services**, then **Service Bus**, then **Event Hub**, and then **Quick Create**.
 
 	![][1]
 
@@ -76,7 +76,7 @@ Now you are ready to run the applications.
 
 	![][23]
 
-> [AZURE.NOTE] In this tutorial only, use Storm in local mode for development purposes. Refer to the [HDInsight Storm <!-- deleted by customization overview] --><!-- keep by customization: begin --> Overview] <!-- keep by customization: end --> and the official [Apache Storm] documentation for more information of Storm deployments and patterns.
+> [AZURE.NOTE] In this tutorial only, use Storm in local mode for development purposes. Refer to the [HDInsight Storm overview] and the official [Apache Storm] documentation for more information of Storm deployments and patterns.
 
 ## Next steps
 
@@ -99,19 +99,10 @@ The following resources are available for developing applications integrating Ev
 <!-- Links -->
 [Azure Management Portal]: https://manage.windowsazure.cn/
 [Event Processor Host]: https://www.nuget.org/packages/Microsoft.Azure.ServiceBus.EventProcessorHost
-<!-- deleted by customization
 [Event Hubs overview]: /documentation/articles/event-hubs-overview
--->
-<!-- keep by customization: begin -->
-[Event Hubs Overview]: /documentation/articles/event-hubs-overview
 
-<!-- keep by customization: end -->
 [Apache Storm]: https://storm.incubator.apache.org
-<!-- deleted by customization
 [HDInsight Storm overview]: /documentation/articles/hdinsight-storm-overview
--->
-<!-- keep by customization: begin -->
-[HDInsight Storm Overview]: /documentation/articles/hdinsight-storm-overview
-<!-- keep by customization: end -->
 [Analyzing sensor data with Storm and HDInsight]: /documentation/articles/hdinsight-storm-sensor-data-analysis
 [Develop streaming data processing applications with SCP.NET and C# on Storm and HDInsight]: /documentation/articles/hdinsight-storm-develop-csharp-visual-studio-topology
+ 

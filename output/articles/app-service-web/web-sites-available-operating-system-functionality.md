@@ -16,6 +16,21 @@
 
 This article describes the common baseline operating system functionality that is available to all applications running on [Azure Websites](/documentation/services/web-sites/) Web Apps. This functionality includes file, network, and registry access, and diagnostics logs and events. 
 
+<!-- keep by customization: begin -->
+##Table of Contents
+
+* [App Service plan tiers](#tiers)
+* [Development Frameworks](#developmentframeworks)
+* [File Access](#FileAccess)
+	* [Local drives](#LocalDrives)
+	* [Network drives (aka UNC shares)](#NetworkDrives)
+	* [File across multiple instances](#multipleinstances)
+	* [Types of file access granted to a web application](#TypesOfFileAccess)
+* [Network Access](#NetworkAccess)
+* [Code Execution, Processes and Memory](#Code)
+* [Diagnostics Logs and Events](#Diagnostics)
+* [Registry Access](#RegistryAccess)
+<!-- keep by customization: end -->
 <a id="tiers"></a>
 ## App Service plan tiers
 
@@ -100,9 +115,11 @@ Areas of diagnostics logging and tracing that aren't available to web applicatio
 Applications have read-only access to much (though not all) of the registry of the virtual machine they are running on. In practice, this means registry keys that allow read-only access to the local Users group are accessible by web applications. One area of the registry that is currently not supported for either read or write access is the HKEY\_CURRENT\_USER hive.
 
 Write-access to the registry is blocked, including access to any per-user registry keys. From an application perspective, write access to the registry should never be relied upon in a cloud environment since applications can (and do) get migrated across different virtual machines. The only persistent writeable storage that can be depended on by a web application is the per-app content directory structure stored on the Web Apps UNC shares. 
+<!-- deleted by customization
 
 >[AZURE.NOTE] If you want to get started with Azure Websites before signing up for an Azure account, go to [Try Azure Websites](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure Websites. No credit cards required; no commitments.
 
 [AZURE.INCLUDE [app-service-web-whats-changed](../includes/app-service-web-whats-changed.md)]
+-->
  
  

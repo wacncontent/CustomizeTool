@@ -184,7 +184,7 @@ The following PHP page results in a TwiML response that says **Hello World** on 
 		<Say>Hello world.</Say>
 	</Response>
 
-As you can see from the example above, the TwiML response is simply an XML document. The Twilio library for PHP contains classes that will generate TwiML for you. The example below produces the equivalent response as shown above, but uses the **Services_Twilio_Twiml** class in the Twilio library for PHP:
+As you can see from the example above, the TwiML response is simply an XML document. The Twilio library for PHP contains classes that will generate TwiML for you. The example below produces the equivalent response as shown above, but uses the **Services\_Twilio\_Twiml** class in the Twilio library for PHP:
 
 	require_once('Services/Twilio.php');
 	

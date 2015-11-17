@@ -23,7 +23,7 @@ In order to complete this tutorial you will need the following:
 
 1. Log on to the [Azure Management Portal], and click **NEW** at the bottom of the screen.
 
-2. Click on **Azure Websites**, then **Service Bus**, then **Event Hub**, then **Quick Create**.
+2. Click on **App Services**, then **Service Bus**, then **Event Hub**, then **Quick Create**.
 
    	![][1]
 

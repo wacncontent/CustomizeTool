@@ -30,7 +30,7 @@ Basic databases have 7 days of retention, Standard databases have 14 days of ret
 > [AZURE.NOTE] Restoring a database creates a new database. It is important to make sure the server you are restoring to has enough DTU capacity for the new database. You can request an increase of this quota by [contacting support](http://azure.microsoft.com/blog/azure-limits-quotas-increase-requests/).
 
 ###Azure Management Portal
-1. Log in to the [Azure Management Portal](https://portal.Azure.com)
+1. Log in to the [Azure Management Portal](https://manage.windowsazure.cn)
 2. On the left side of the screen select **BROWSE** and then select **SQL Databases**.
 3. Navigate to your database and select it.
 4. At the top of your database's blade, select **Restore**.
@@ -70,7 +70,7 @@ The retention period of a deleted database is determined by the service tier of 
 > [AZURE.NOTE] Restoring a database creates a new database. It is important to make sure the server you are restoring to has enough DTU capacity for the new database. You can request an increase of this quota by [contacting support](http://azure.microsoft.com/blog/azure-limits-quotas-increase-requests/).
 
 ###Azure Management Portal
-1. Log in to the [Azure Management Portal](https://portal.Azure.com)
+1. Log in to the [Azure Management Portal](https://manage.windowsazure.cn)
 2. On the left side of the screen select **BROWSE** and then select **SQL Servers**.
 3. Navigate to your sever and select it.
 4. Under **Operations** on you server's blade, select **Deleted Databases**.

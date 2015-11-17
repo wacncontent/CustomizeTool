@@ -136,6 +136,11 @@ Finally, you must update the script registered to the insert operation on the To
 
 This tutorial demonstrated the basics of enabling a Windows Store app to use Mobile Services and Notification Hubs to send push notifications. Next, consider completing one of the following tutorials:
 
+<!-- keep by customization: begin -->
++ [Send push notifications to authenticated users](/documentation/articles/mobile-services-javascript-backend-windows-phone-push-notifications-app-users)
+	<br/>Learn how to use tags to send push notifications from your mobile service to only an authenticated user.
+
+<!-- keep by customization: end -->
 + [Send broadcast notifications to subscribers](/documentation/articles/notification-hubs-windows-phone-send-breaking-news)
 	<br/>Learn how users can register and receive push notifications for categories they're interested in.
 
@@ -171,8 +176,17 @@ Learn more about Mobile Services and Notification Hubs in the following topics:
 [Live SDK for Windows]: http://go.microsoft.com/fwlink/p/?LinkId=262253
 [Add Mobile Services to an existing app]: /documentation/articles/mobile-services-windows-phone-get-started-data
 [Get started with authentication]: /documentation/articles/mobile-services-windows-phone-get-started-users
+
 [Setting up an authenticated web service to send push notifications for Windows Phone]: http://msdn.microsoft.com/zh-cn/library/windowsphone/develop/ff941099(v=vs.105).aspx
 
+<!-- deleted by customization
 [Mobile Services server script reference]: http://go.microsoft.com/fwlink/?LinkId=262293
+-->
+<!-- keep by customization: begin -->
+[Mobile Services server script reference]: /documentation/articles/mobile-services-how-to-use-server-scripts
+<!-- keep by customization: end -->
 [Mobile Services .NET How-to Conceptual Reference]: /documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library
+
 [What are Notification Hubs?]: /documentation/articles/notification-hubs-overview
+
+ 

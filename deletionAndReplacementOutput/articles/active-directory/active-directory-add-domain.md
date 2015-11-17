@@ -1,0 +1,8 @@
+deletion:
+
+deleted:
+
+		Microsoft
+
+reason: ()
+

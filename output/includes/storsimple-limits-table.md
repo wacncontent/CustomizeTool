@@ -1,4 +1,20 @@
+<!-- deleted by customization
 <!--author=alkohli last changed: 9/17/15-->
+-->
+<!-- keep by customization: begin -->
+<properties 
+   pageTitle="StorSimple system limits table"
+   description="Describes system limits and recommended sizes for StorSimple components and connections."
+   services="storsimple"
+   documentationCenter="NA"
+   authors="alkohli"
+   manager="adinah"
+   editor="" />
+<tags
+	ms.service="storsimple"
+	ms.date="08/18/2015"
+	wacn.date=""/>
+<!-- keep by customization: end -->
 
 | Limit identifier | Limit | Comments |
 |----------------- | ------|--------- |

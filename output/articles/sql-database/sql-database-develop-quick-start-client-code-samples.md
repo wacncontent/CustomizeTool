@@ -88,5 +88,7 @@ This section provides links to code sample topics for client programs that run o
 - [Azure SQL Database Development: How-to Topics](http://msdn.microsoft.com/zh-cn/library/azure/ee621787.aspx)
 - [Connecting to SQL Database: Links, Best Practices and Design Guidelines](/documentation/articles/sql-database-connect-central-recommendations)
 - [Create your first Azure SQL Database](/documentation/articles/sql-database-get-started)
+<!-- deleted by customization
 - [Entity Framework 6 here, EF 7 on GitHub](http://entityframework.codeplex.com/)
 
+-->

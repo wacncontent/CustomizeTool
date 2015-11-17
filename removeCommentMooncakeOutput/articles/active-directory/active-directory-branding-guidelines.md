@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Branding Guidelines for Applications"
+   pageTitle="Branding Guidelines for Applications | Windows Azure"
    description="A comprehensive guide to developer-oriented resources for Azure Active Directory"
    services="active-directory"
    documentationCenter="dev-center-name"
@@ -8,9 +8,9 @@
    editor=""/>
 
 <tags
-   ms.service="active-directory"
-   ms.date="09/17/2015"
-   wacn.date=""/>
+	ms.service="active-directory"
+	ms.date="09/17/2015"
+	wacn.date=""/>
 
 
 # Branding Guidelines for Applications
@@ -36,9 +36,8 @@ Microsoft doesn’t expose end-users to the Azure or the Active Directory brand 
 
 - When users are not signed in, you should refer to their accounts as “Work or school accounts” and use the Microsoft logo to convey that these accounts are managed by Microsoft. Don’t use terms like “enterprise account”, “business account” or “corporate account” which create user confusion.
 
-## User account pictogram  
-
-In an earlier version of these guidelines, we recommended using a “blue badge” pictogram. Based on user and developer feedback, we now recommend the use of the Microsoft logo instead. This will help users understand that they can reuse the account they use with Office 365 or other Microsoft business services to sign in to your app. 
+## User account pictogram
+In an earlier version of these guidelines, we recommended using a “blue badge” pictogram. Based on user and developer feedback, we now recommend the use of the Microsoft logo instead. This will help users understand that they can reuse the account they use with Office 365 or other Microsoft business services to sign in to your app.
 
 ## Signing up and signing in with Azure AD
 
@@ -52,22 +51,20 @@ Your app may present separate paths for sign-up and sign-in and the following se
 
 Your “get the app” link must redirect the user to the Azure AD grant access (authorize) page, to allow an organization’s administrator to authorize your app to have access to their organization’s data that is hosted by Microsoft. Details on how to request access are discussed in the [Integrating Applications with Azure Active Directory](/documentation/articles/active-directory-integrating-applications) article.
 
-After admins consent to your app, they can choose to add it to their users’ Office 365 app launcher experience (accessible from the waffle and from [https://portal.partner.microsoftonline.cn/myapps](https://portal.partner.microsoftonline.cn/myapps)). If you want to advertise this capability, you can use terms like “Add this app to your organization” and show a button like this:
+After admins consent to your app, they can choose to add it to their users’ Office 365 app launcher experience (accessible from the waffle and from [https://portal.office.com/myapps](https://portal.office.com/myapps)). If you want to advertise this capability, you can use terms like “Add this app to your organization” and show a button like this:
 
 ![Application Types and scenarios](./media/active-directory-branding-guidelines/add-to-my-org.png)
-  
+
 However, we recommend that you write explanatory text instead of relying on buttons. For example:
 > *If you already use Office 365 or other business service from Microsoft, you can simply grant <your_app_name> access to your organization’s data. This will allow your users to access <your_app_name> with their existing work accounts.*
 
 
-## Visual guidance for sign-in  
-
+## Visual guidance for sign-in
 Your app should display a sign in button that redirects users to the sign-in endpoint that corresponds to the protocol you use to integrate with Azure AD. The following section provides details on what that button should look like.
 
-### Pictogram and “work or school account”   
-
+### Pictogram and “work or school account”
 It’s the association of the Microsoft logo and the generic “work or school” terms that uniquely represents Azure AD amongst other identity providers your app may support. If you don’t have enough space for “work or school account,” it’s ok to shorten it to “work account.”
- 
+
 ![Application Types and scenarios](./media/active-directory-branding-guidelines/work-or-school-account.png)
 
 ![Application Types and scenarios](./media/active-directory-branding-guidelines/work-account.png)
@@ -75,9 +72,8 @@ It’s the association of the Microsoft logo and the generic “work or school�
 You can also provide additional explanation to help end-users recognize whether they can use this button:
 
 ![Application Types and scenarios](./media/active-directory-branding-guidelines/work-account-with-explaination.png)
- 
-## Branding Do’s and Don’ts  
 
+## Branding Do’s and Don’ts
 **DO** use “work or school account” in combination with the Microsoft logo to represent sign-ins with Azure AD. If space is at a premium, it’s ok to say “work account”, but **DON’T** use other terms such as “enterprise account”, “business account” or “corporate account.”
 
 **DON’T** use “Office 365 ID” or “Azure ID”. Office 365 is also the name of a consumer offering from Microsoft which doesn’t use Azure AD for authentication.
@@ -93,4 +89,3 @@ You can also provide additional explanation to help end-users recognize whether 
 ## Supporting both Azure AD and Microsoft Accounts in Your App
 
 If your app supports both Azure AD and Microsoft accounts, you need to include two separate sign-in buttons in your app. We are actively working on an update that will allow you to integrate once and support both personal and work accounts from Microsoft. When this is available, you’ll be able to show a single “sign-in with Microsoft” button in your app.
-

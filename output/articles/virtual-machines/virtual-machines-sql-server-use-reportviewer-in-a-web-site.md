@@ -14,8 +14,13 @@
 
 # Use ReportViewer in a Web Site Hosted in Azure
 
+<!-- deleted by customization
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
 
+-->
+<!-- keep by customization: begin -->
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-include.md)] This article covers creating a resource with the classic deployment model. 
+<!-- keep by customization: end -->
 
 You can build a Windows Azure Web site with the Visual Studio ReportViewer control that displays a report stored on an Windows Azure Virtual Machine. The ReportViewer control is in a Web application that you build using the ASP.NET Web application template.
 

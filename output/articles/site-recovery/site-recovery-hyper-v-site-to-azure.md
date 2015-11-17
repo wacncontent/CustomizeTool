@@ -36,7 +36,7 @@ Make sure you have everything in place before you begin.
 
 ### Azure prerequisites
 
-- You'll need a [Windows Azure](http://azure.microsoft.com/) account. You can start with a [trial](/pricing/1rmb-trial/).
+- You'll need a [Windows <!-- deleted by customization Azure](http://azure.microsoft.com/) --><!-- keep by customization: begin --> Azure](http://www.windowsazure.cn/) <!-- keep by customization: end --> account. You can start with a [trial](/pricing/1rmb-trial/).
 - You'll need an Azure storage account to store replicated data. The account needs geo-replication enabled. It should be in the same region as the Azure Site Recovery vault and be associated with the same subscription. To learn more read [Introduction to Windows Azure Storage](/documentation/articles/storage-introduction).
 - You'll need an Azure virtual network so that replicated virtual machines are connected to a network after failover.
 
@@ -83,7 +83,7 @@ The picture below shows the different communication channels and ports used by A
 
 4. In **Name**, enter a friendly name to identify the vault.
 
-5. In **Region**, select the geographic region for the vault. To check supported regions see Geographic Availability in [Azure Site Recovery Pricing Details](/documentation/articles/site-recovery).
+5. In **Region**, select the geographic region for the vault. To check supported regions see Geographic Availability in [Azure Site Recovery Pricing Details](/home/features/site-recovery/#price).
 
 6. Click **Create vault**.
 

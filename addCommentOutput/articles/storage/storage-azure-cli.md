@@ -17,7 +17,7 @@
 
 The Azure CLI provides a set of open source, cross-platform commands for working with the Azure Platform. It provides much of the same functionality found in the Azure Management Portal as well as rich data access functionality.
 
-In this guide, we’ll explore how to use [Azure Command-Line Interface (Azure <!-- deleted by customization CLI)](/documentation/articles/xplat-cli-install) --><!-- keep by customization: begin --> CLI)](/documentation/articles/xplat-cli) <!-- keep by customization: end --> to perform a variety of development and administration tasks with Azure Storage. We recommend that you download and install or upgrade to the latest Azure CLI before using this guide.
+In this guide, we’ll explore how to use [Azure Command-Line Interface (Azure CLI)](/documentation/articles/xplat-cli-install) to perform a variety of development and administration tasks with Azure Storage. We recommend that you download and install or upgrade to the latest Azure CLI before using this guide.
 
 This guide assumes that you understand the basic concepts of Azure Storage. The guide provides a number of scripts to demonstrate the usage of the Azure CLI with Azure Storage. Be sure to update the script variables based on your configuration before running each script.
 
@@ -27,13 +27,13 @@ This guide assumes that you understand the basic concepts of Azure Storage. The 
 
 This guide uses Ubuntu for examples, but other OS platforms should perform similarly.
 
-**New to Azure:** Get a Windows Azure subscription and a Microsoft account associated with that subscription. For information on Azure purchase options, see <!-- deleted by customization [Trial](/pricing/1rmb-trial/) --><!-- keep by customization: begin --> [Trial](http://www.windowsazure.cn/pricing/1rmb-trial/) <!-- keep by customization: end -->, [Purchase Options](/pricing/overview/), and [Member Offers](http://azure.microsoft.com/pricing/member-offers/) (for members of MSDN, Microsoft Partner Network, and BizSpark, and other Microsoft programs).
+**New to Azure:** Get a Windows Azure subscription and a Microsoft account associated with that subscription. For information on Azure purchase options, see [Trial](/pricing/1rmb-trial/), [Purchase Options](/pricing/overview/), and [Member Offers](/pricing/member-offers/) (for members of MSDN, Microsoft Partner Network, and BizSpark, and other Microsoft programs).
 
 See [Manage Accounts, Subscriptions, and Administrative Roles](https://msdn.microsoft.com/zh-cn/library/azure/hh531793.aspx) for more information about Azure subscriptions.
 
 **After creating a Windows Azure subscription and account:**
 
-1. Download and install the Azure CLI following the instructions outlined in [Install the Azure <!-- deleted by customization CLI](/documentation/articles/xplat-cli-install) --><!-- keep by customization: begin --> CLI](/documentation/articles//xplat-cli-install) <!-- keep by customization: end -->.
+1. Download and install the Azure CLI following the instructions outlined in [Install the Azure CLI](/documentation/articles/xplat-cli-install).
 2. Once the Azure CLI has been installed, you will be able to use the azure command from your command-line interface (Bash, Terminal, Command prompt) to access the Azure CLI commands. Type `azure` command and you should see the following output.
 
     ![Azure Command Output][Image1]
@@ -165,11 +165,7 @@ To delete a blob, use the below command:
 
 ## Create and manage file shares
 
-Azure File storage offers shared storage for applications using the standard SMB protocol. Windows Azure virtual machines and cloud services, as well as on-premises applications, can share file data via mounted shares. You can manage file shares and file data via the Azure CLI. For more information on Azure File storage, see [How to use Azure File storage with <!-- deleted by customization Windows](/documentation/articles/storage-dotnet-how-to-use-files) or --><!-- keep by customization: begin --> Windows](/documentation/articles/storage-dotnet-how-to-use-files)or <!-- keep by customization: end --> [How to use Azure File storage with Linux](/documentation/articles/storage-how-to-use-files-linux).
-<!-- keep by customization: begin -->
-
-> [AZURE.NOTE] Azure File storage is currently in preview. To request access to the preview, navigate to the [Windows Azure Preview page](/home/features/preview/), and request access to **Azure Files**. Once your request is approved, you'll be notified that you can access the File storage preview. You can then create a storage account for accessing File storage.
-<!-- keep by customization: end -->
+Azure File storage offers shared storage for applications using the standard SMB protocol. Windows Azure virtual machines and cloud services, as well as on-premises applications, can share file data via mounted shares. You can manage file shares and file data via the Azure CLI. For more information on Azure File storage, see [How to use Azure File storage with Windows](/documentation/articles/storage-dotnet-how-to-use-files) or [How to use Azure File storage with Linux](/documentation/articles/storage-how-to-use-files-linux).
 
 ### Create a file share
 
@@ -215,12 +211,7 @@ To copy a blob to a file directory:
 
 Here are some related articles and resources for learning more about Azure Storage.
 
-<!-- deleted by customization
 - [Azure Storage Documentation](/documentation/services/storage/)
--->
-<!-- keep by customization: begin -->
-- [Azure Storage Documentation](/documentation/services/storage)
-<!-- keep by customization: end -->
 - [Azure Storage REST API Reference](https://msdn.microsoft.com/zh-cn/library/azure/dd179355.aspx)
 
 

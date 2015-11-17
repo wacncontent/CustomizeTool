@@ -15,7 +15,12 @@
 
 #Capture an image of a Windows virtual machine created with the classic deployment model.
 
+<!-- deleted by customization
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
+-->
+<!-- keep by customization: begin -->
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-include.md)] This article covers creating resources with the classic deployment model.
+<!-- keep by customization: end -->
 
 
 This article shows you how to capture an Azure virtual machine running Windows so you can use it as an image to create other virtual machines. This image includes the operating system disk and any data disks that are attached to the virtual machine. It doesn't include networking configurations, so you'll need to configure those when you create the other virtual machines that use the template.
@@ -29,7 +34,7 @@ These steps assume that you've already created an Azure virtual machine and conf
 - [Create a custom virtual machine running Windows] []
 - [How to attach a data disk to a virtual machine] []
 
-> [AZURE.WARNING] This process deletes the original virtual machine after it's captured, and is not intended as a way to back up a virtual machine. One possible way to do that is Azure Backup, which is available as a preview in certain regions. For details, see [Back up Azure virtual machines](/documentation/articles/backup-azure-vms). Other solutions are available from certified partners. To find out what’s currently available, search the Azure Marketplace.
+> [AZURE.WARNING] This process deletes the original virtual machine after it's captured, and is not intended as a way to back up a virtual machine. One possible way to do that is Azure Backup, which is available as a preview in certain regions. For details, see [Back up Azure virtual machines](/documentation/articles/backup-azure-vms). Other solutions are available from certified partners. To find out <!-- deleted by customization what’s --><!-- keep by customization: begin --> what�s <!-- keep by customization: end --> currently available, search the Azure Marketplace.
 
 ##Capture the virtual machine##
 

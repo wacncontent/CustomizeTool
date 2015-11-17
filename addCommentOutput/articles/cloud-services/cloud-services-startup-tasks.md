@@ -156,12 +156,7 @@ Learn how to perform some [common startup tasks](/documentation/articles/cloud-s
 [Package](/documentation/articles/cloud-services-model-and-package) your Cloud Service.  
 
 
-<!-- deleted by customization
 [ServiceDefinition.csdef]: /documentation/articles/cloud-services-model-and-package#csdef
--->
-<!-- keep by customization: begin -->
-[ServiceDefinition.csdef]: /documentation/articles/cloud-services-model-and-package/#csdef
-<!-- keep by customization: end -->
 [Task]: https://msdn.microsoft.com/zh-cn/library/azure/gg557552.aspx#Task
 [Startup]: https://msdn.microsoft.com/zh-cn/library/azure/gg557552.aspx#Startup
 [Runtime]: https://msdn.microsoft.com/zh-cn/library/azure/gg557552.aspx#Runtime

@@ -1,14 +1,14 @@
-<properties 
-	pageTitle="Azure AD Connect Health FAQ" 
-	description="This FAQ answers questions about Azure AD Connect Health. This FAQ covers questions about using the service, including the billing model, capabilities, limitations, and support." 
-	services="active-directory" 
-	documentationCenter="" 
-	authors="billmath" 
-	manager="stevenpo" 
+<properties
+	pageTitle="Azure AD Connect Health FAQ"
+	description="This FAQ answers questions about Azure AD Connect Health. This FAQ covers questions about using the service, including the billing model, capabilities, limitations, and support."
+	services="active-directory"
+	documentationCenter=""
+	authors="billmath"
+	manager="stevenpo"
 	editor="curtand"/>
 
-<tags 
-	ms.service="active-directory"  
+<tags
+	ms.service="active-directory"
 	ms.date="10/15/2015"
 	wacn.date=""/>
 
@@ -63,13 +63,9 @@ Select Use a Proxy Server for you LAN.<br>
 Select Advanced IF you have different proxy ports for HTTP and HTTPS/Secure.<br>
 
 
-
-
 **Q: Does Azure AD Connect Health Services support basic authentication when connecting to Http Proxies?**
 
 No. A mechanism for specifying arbitrary username/password for Basic Authentication is not currently supported.
-
-
 
 
 
@@ -85,7 +81,7 @@ No, auditing does not need to be enabled on AD FS Application Proxy Servers or W
 
 **Q: How do Azure AD Connect Health Alerts get resolved?**
 
-Azure AD Connect Health Alerts get resolved on a success condition. Azure AD Connect Health Agents detect and report the success conditions to the service on a periodic basis. For a few alerts, the suppression is time based. That is if the same error condition is not observed within 48 hours from alert generation, the alert is automatically resolved. 
+Azure AD Connect Health Alerts get resolved on a success condition. Azure AD Connect Health Agents detect and report the success conditions to the service on a periodic basis. For a few alerts, the suppression is time based. That is if the same error condition is not observed within 48 hours from alert generation, the alert is automatically resolved.
 
 
 

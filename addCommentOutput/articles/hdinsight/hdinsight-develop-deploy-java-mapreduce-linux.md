@@ -270,7 +270,7 @@ In this document, you have learned how to develop a Java MapReduce job. See the 
 For more information, see also the [Java Developer Center](/develop/java/).
 
 [azure-purchase-options]: /pricing/overview/
-[azure-member-offers]: http://azure.microsoft.com/pricing/member-offers/
+[azure-member-offers]: /pricing/member-offers/
 [azure-trial]: /pricing/1rmb-trial/
 -->
 <!-- keep by customization: begin -->

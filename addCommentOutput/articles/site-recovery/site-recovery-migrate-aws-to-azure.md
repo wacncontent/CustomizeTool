@@ -67,6 +67,6 @@ Here's what you need before you start:
 		
 ## Next steps
 
-Post any comments or questions in the [Site Recovery <!-- deleted by customization forum](https://social.msdn.microsoft.com/forums/azure/home?forum=hypervrecovmgr) --><!-- keep by customization: begin --> forum](https://social.msdn.microsoft.com/forums/zh-cn/home?forum=hypervrecovmgr) <!-- keep by customization: end -->
+Post any comments or questions in the [Site Recovery forum](https://social.msdn.microsoft.com/forums/azure/home?forum=hypervrecovmgr)
 
 

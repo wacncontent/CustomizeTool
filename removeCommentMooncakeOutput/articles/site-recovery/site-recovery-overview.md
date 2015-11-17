@@ -1,23 +1,23 @@
 <properties
-	pageTitle="Site Recovery overview"
-	description="Azure Site Recovery coordinates the replication, failover and recovery of virtual machines and physical servers located on on-premises to Azure or to a secondary on-premises site."
-	services="site-recovery"
-	documentationCenter=""
-	authors="rayne-wiselman"
-	manager="jwhit"
+	pageTitle="Site Recovery overview" 
+	description="Azure Site Recovery coordinates the replication, failover and recovery of virtual machines and physical servers located on on-premises to Azure or to a secondary on-premises site." 
+	services="site-recovery" 
+	documentationCenter="" 
+	authors="rayne-wiselman" 
+	manager="jwhit" 
 	editor=""/>
 
 <tags
 	ms.service="site-recovery"
-	ms.date="08/05/2015" 
+	ms.date="08/05/2015"
 	wacn.date=""/>
 
 #  Site Recovery Overview
 
-The Site Recovery service contributes to a robust business continuity and disaster recovery (BCDR) solution that protects your on-premises physical servers and virtual machines by orchestrating and automating replication and failover to Azure, or to a secondary on-premises datacenter.
+The Site Recovery service contributes to a robust business continuity and disaster recovery (BCDR) solution that protects your on-premises physical servers and virtual machines by orchestrating and automating replication and failover to Azure, or to a secondary on-premises datacenter. 
 
 - **Simplify**-Site Recovery helps simplify your BCDR strategy by making it easy to configure replication, and run failover and recovery for your on-premises workloads and applications.
-- **Replication**-You can replicate on-premises workloads to Azure storage, or to a secondary datacenter.
+- **Replication**-You can replicate on-premises workloads to Azure storage, or to a secondary datacenter. 
 - **Vault**-To manage replication you set up a Site Recovery vault in an Azure region you select. All metadata remains within that region.
 - **Metadata**-No application data is sent to Azure. Site Recovery only needs metadata such as virtual machine and VMM cloud names, in order to orchestrate replication and failover. 
 - **Connection to Azure**-Management servers communicate with Azure depending on your deployment scenario. For example if you're replicating virtual machines located in an on-premises VMM cloud, the VMM server communicates with Site Recovery over an encrypted outbound HTTPS connection. No connection is required from the virtual machines or Hyper-V hosts.
@@ -32,19 +32,19 @@ This table summarizes the replication scenarios supported by Site Recovery.
 **Replicate to** | **Replicate from (on-premises)** | **Details** | **Article**
 ---|---|---|---
 Azure | Hyper-V site | Replicate virtual machine on one or more on-premises Hyper-V host servers that are defined as a Hyper-V site to Azure. No VMM server required. | [Read more](/documentation/articles/site-recovery-hyper-v-site-to-azure)
-Azure| VMM server | Replicate virtual machines on one or more on-premises Hyper-V host servers located in a VMM cloud to Azure. | [Read more](/documentation/articles/site-recovery-vmm-to-azure)
+Azure| VMM server | Replicate virtual machines on one or more on-premises Hyper-V host servers located in a VMM cloud to Azure. | [Read more](/documentation/articles/site-recovery-vmm-to-azure) 
 Azure | Physical Windows server | Replicate a physical Windows or Linux server to Azure | [Read more](/documentation/articles/site-recovery-vmware-to-azure)
 Azure | VMware virtual machine | Replicate VMware virtual machines to Azure | [Read more](/documentation/articles/site-recovery-vmware-to-azure)
 Secondary datacenter | VMM server | Replicate virtual machines on on-premises Hyper-V host servers located in a VMM cloud to a secondary VMM server in another datacenter | [Read more](/documentation/articles/site-recovery-vmm-to-vmm)
 Secondary datacenter | VMM server with SAN | Replicate virtual machines on on-premises Hyper-V host servers located in a VMM cloud to a secondary VMM server in another datacenter using SAN replication| [Read more](/documentation/articles/site-recovery-vmm-san)
-Secondary datacenter | Single VMM server | Replicate virtual machines on on-premises Hyper-V host servers located in a VMM cloud to a secondary cloud on the same VMM server | [Read more](/documentation/articles/site-recovery-single-vmm)
+Secondary datacenter | Single VMM server | Replicate virtual machines on on-premises Hyper-V host servers located in a VMM cloud to a secondary cloud on the same VMM server | [Read more](/documentation/articles/site-recovery-single-vmm) 
 
 
 ## Workload Guidance
 
 Refer to [this document](/documentation/articles/site-recovery-workload) for guidance about using Azure Site Recovery for different workloads.
 
-## Features and requirements
+## Features and requirements 
 
 This table summarizes the main Site Recovery features and how they're handled during replication to Azure, replication to a secondary site using the default Hyper-V Replica replication, and using SAN.
 
@@ -65,7 +65,7 @@ Virtual machine recovery points|Set recovery points by time.</p> <p>Specifies ho
 Network mapping|Map VM networks to Azure networks.</p> <p>Network mapping ensures that all virtual machines that fail over in the same source VM network can connect after failover. In addition if there's a network gateway on the target Azure network then virtual machines can connect to on-premises virtual machines. </p><p>If mapping isn't enabled only virtual machines that fail over in the same recovery plan can connect to each other after failover to Azure.|Map source VM networks to target VM networks.</p> <p>Network mapping is used to place replicated virtual machines on optimal Hyper-V host servers, and ensures that virtual machines associated with the source VM network are associated with the mapped target network after failover. </p><p>If mapping isn't enabled replicated virtual machines won't be connected to a network.|Map source VM networks to target VM networks.</p> <p>Network mapping ensures that virtual machines associated with the source VM network are associated with the mapped target network after failover. </p><p>If mapping isn't enabled replicated virtual machines won't be connected to a network.
 Storage mapping|Not applicable|Maps storage classifications on source VMM servers to storage classifications on target VMM servers.</p> <p>With mapping enable virtual machine hard disks in the source storage classification will be located in the target storage classification after failover.</p><p>If storage mapping isn't enabled replicated virtual hard disks will be stored in the default location on the target Hyper-V host server.|Maps between storage arrays and pools in the primary and secondary sites.
 
-
 ## Next steps
 
-After you're finished this overview [read the best practices](/documentation/articles/site-recovery-best-practices) to help you get started with deployment planning.
+After you're finished this overview [read the best practices](/documentation/articles/site-recovery-best-practices) to help you get started with deployment planning. 
+ 

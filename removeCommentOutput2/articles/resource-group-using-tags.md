@@ -21,7 +21,7 @@ When you view resources with a particular tag, you see resources from all of you
 
 Each tag you add to a resource or resource group is automatically added to the subscription-wide taxonomy. You can also prepopulate the taxonomy for your subscription with tag names and values you'd like to use as resources are tagged in the future.
 
-> [AZURE.NOTE] You can only apply tags to resources that support Resource Manager operations. If you created a Virtual Machine, Virtual Network, or Storage through the classic deployment model (such as through the Azure Management Portal or [Service Management API](https://msdn.microsoft.com/zh-cn/library/azure/dn948465.aspx)), you cannot apply a tag to that resource. You must re-deploy these resources through Resource Manager to support tagging. All other resources support tagging.
+> [AZURE.NOTE] You can only apply tags to resources that support Resource Manager operations. If you created a Virtual Machine, Virtual Network, or Storage through the classic deployment model (such as through the Azure Management Portal or [Service Management API](/home/features/api-management/)), you cannot apply a tag to that resource. You must re-deploy these resources through Resource Manager to support tagging. All other resources support tagging.
 
 
 ## Tags in the preview portal
@@ -51,9 +51,9 @@ Tagging is only available for resources and resource groups available from [Reso
 
     Switch-AzureMode AzureResourceManager
 
-Tags exist directly on resources and resource groups, so to see what tags are already applied, we can simply get a resource or resource group with `Get-AzureResource` or `Get-AzureResourceGroup`, respectively. Let's start with a resource group.
+Tags exist directly on resources and resource groups, so to see what tags are already applied, we can simply get a resource or resource group with **Get-AzureRmResource** or **Get-AzureRmResourceGroup**. Let's start with a resource group.
 
-    PS C:\> Get-AzureResourceGroup tag-demo
+    PS C:\> Get-AzureRmResourceGroup tag-demo
 
     ResourceGroupName : tag-demo
     Location          : southcentralus
@@ -67,19 +67,19 @@ Tags exist directly on resources and resource groups, so to see what tags are al
     Resources         :
                     Name                             Type                                  Location
                     ===============================  ====================================  ==============
-CPUHigh ExamplePlan              microsoft.insights/alertrules         eastus
-                    ForbiddenRequests tag-demo-site  microsoft.insights/alertrules         eastus
-                    LongHttpQueue ExamplePlan        microsoft.insights/alertrules         eastus
-                    ServerErrors tag-demo-site       microsoft.insights/alertrules         eastus
-                    ExamplePlan-tag-demo             microsoft.insights/autoscalesettings  eastus
-                    tag-demo-site                    microsoft.insights/components         centralus
+                    CPUHigh ExamplePlan              microsoft.insights/alertrules         chinaeast
+                    ForbiddenRequests tag-demo-site  microsoft.insights/alertrules         chinaeast
+                    LongHttpQueue ExamplePlan        microsoft.insights/alertrules         chinaeast
+                    ServerErrors tag-demo-site       microsoft.insights/alertrules         chinaeast
+                    ExamplePlan-tag-demo             microsoft.insights/autoscalesettings  chinaeast
+tag-demo-site                    microsoft.insights/components         centralus
                     ExamplePlan                      Microsoft.Web/serverFarms             southcentralus
                     tag-demo-site                    Microsoft.Web/sites                   southcentralus
 
 
-This cmdlet returns several bits of metadata on the resource group including what tags have been applied, if any. To tag a resource group, simply use the `Set-AzureResourceGroup` command and specify a tag name and value.
+This cmdlet returns several bits of metadata on the resource group including what tags have been applied, if any. To tag a resource group, simply use the **Set-AzureRmResourceGroup** command and specify a tag name and value.
 
-    PS C:\> Set-AzureResourceGroup tag-demo -Tag @( @{ Name="project"; Value="tags" }, @{ Name="env"; Value="demo"} )
+    PS C:\> Set-AzureRmResourceGroup tag-demo -Tag @( @{ Name="project"; Value="tags" }, @{ Name="env"; Value="demo"} )
 
     ResourceGroupName : tag-demo
     Location          : southcentralus
@@ -92,9 +92,9 @@ This cmdlet returns several bits of metadata on the resource group including wha
 
 Tags are updated as a whole, so if you are adding one tag to a resource that's already been tagged, you'll need to use an array with all the tags you want to keep. To do this, you can first select the existing tags and add a new one.
 
-    PS C:\> $tags = (Get-AzureResourceGroup -Name tag-demo).Tags
+    PS C:\> $tags = (Get-AzureRmResourceGroup -Name tag-demo).Tags
     PS C:\> $tags += @{Name="status";Value="approved"}
-    PS C:\> Set-AzureResourceGroup tag-demo -Tag $tags
+    PS C:\> Set-AzureRmResourceGroup tag-demo -Tag $tags
 
     ResourceGroupName : tag-demo
     Location          : southcentralus
@@ -119,9 +119,9 @@ The process is the same for resources, except you'll use the `Get-AzureResource`
     rbacdemo-docdb
     ...    
 
-To get a list of all tags within a subscription using PowerShell, use the `Get-AzureTag` cmdlet.
+To get a list of all tags within a subscription using PowerShell, use the **Get-AzureRmTag** cmdlet.
 
-    PS C:/> Get-AzureTag
+    PS C:/> Get-AzureRmTag
     Name                      Count
     ----                      ------
     env                       8
@@ -129,7 +129,7 @@ To get a list of all tags within a subscription using PowerShell, use the `Get-A
 
 You may see tags that start with "hidden-" and "link:". These are internal tags, which you should ignore and avoid changing.
 
-Use the `New-AzureTag` cmdlet to add new tags to the taxonomy. These tags will be included in the autocomplete even though they haven't been applied to any resources or resource groups, yet. To remove a tag name/value, first remove the tag from any resources it may be used with and then use the `Remove-AzureTag` cmdlet to remove it from the taxonomy.
+Use the **New-AzureRmTag** cmdlet to add new tags to the taxonomy. These tags will be included in the autocomplete even though they haven't been applied to any resources or resource groups, yet. To remove a tag name/value, first remove the tag from any resources it may be used with and then use the **Remove-AzureRmTag** cmdlet to remove it from the taxonomy.
 
 ## Tagging with REST API
 
@@ -138,7 +138,7 @@ The portal and PowerShell both use the [Resource Manager REST API](http://msdn.m
 
 ## Tagging and billing
 
-For supported services, you can use tags to group your billing data. For example, [Virtual Machines integrated with Azure Resource Manager](/documentation/articles/virtual-machines-azurerm-versus-azuresm) enable
+For supported services, you can use tags to group your billing data. For example, [Virtual Machines integrated with Azure Resource Manager](/virtual-machines/virtual-machines-azurerm-versus-azuresm.md) enable
 you to define and apply tags to organize the billing usage for virtual machines. If you are running multiple VMs for different organizations, you can use the tags to group usage by cost center.  
 You can also use tags to categorize costs by runtime environment; such as, the billing usage for VMs running in production environment.
 
@@ -151,6 +151,6 @@ When you download the usage CSV for services that support tags with billing, the
 
 ## Next Steps
 
-- For an introduction to using Azure PowerShell when deploying resources, see [Using Azure PowerShell with Azure Resource Manager](./powershell-azure-resource-manager.md).
-- For an introduction to using Azure CLI when deploying resources, see [Using the Azure CLI for Mac, Linux, and Windows with Azure Resource Management](./xplat-cli-azure-resource-manager.md).
-- For an introduction to using the preview portal, see [Using the Azure preview portal to manage your Azure resources](./resource-group-portal.md)  
+- For an introduction to using Azure PowerShell when deploying resources, see [Using Azure PowerShell with Azure Resource Manager](/documentation/articles/powershell-azure-resource-manager).
+- For an introduction to using Azure CLI when deploying resources, see [Using the Azure CLI for Mac, Linux, and Windows with Azure Resource Management](/documentation/articles/xplat-cli-azure-resource-manager).
+- For an introduction to using the preview portal, see [Using the Azure preview portal to manage your Azure resources](/documentation/articles/resource-group-portal)  

@@ -48,6 +48,7 @@ First you must generate the Certificate Signing Request (CSR) file, which is use
 4. Type a name for the Certificate Signing Request (CSR) file in **Save As**, select the location in **Where**, then click **Save**.
 
     ![][7]
+
     Remember the location you chose.
 
 Next, you will register your app with Apple, enable push notifications, and upload this exported CSR to create a push certificate.
@@ -63,54 +64,38 @@ To be able to send push notifications to an iOS app from mobile services, you mu
 2. Type a name for your app in **Description**, enter and remember the unique **Bundle Identifier**, check the "Push Notifications" option in the "Azure Websites" section, and then click **Continue**. This example uses the ID **MobileServices.Quickstart** but you may not reuse this same ID, as app IDs must be unique across all users. As such, it is recommended that you append your full name or initials after the app name.
 
     ![][103]
+
     This generates your app ID and requests you to **Submit** the information. Click **Submit**.
-<!-- deleted by customization
+
     ![][104]
--->
-<!-- keep by customization: begin -->
-   
-    ![][104]
-   
-<!-- keep by customization: end -->
+
     Once you click **Submit**, you will see the **Registration complete** screen, as shown below. Click **Done**.
-<!-- deleted by customization
+
     ![][105]
--->
-<!-- keep by customization: begin -->
-   
-    ![][105]
-<!-- keep by customization: end -->
 
 3. Locate the app ID that you just created, and click on its row.
 
     ![][106]
+
     Clicking on the app ID will display details on the app and app ID. Click the **Settings** button.
-<!-- deleted by customization
+
     ![][107]
--->
-<!-- keep by customization: begin -->
-   
-    ![][107]
-   
-<!-- keep by customization: end -->
+
 4. Scroll to the bottom of the screen, and click the **Create Certificate...** button under the section **Development Push SSL Certificate**.
 
     ![][108]
 
     This displays the "Add iOS Certificate" assistant.
+
     Note: This tutorial uses a development certificate. The same process is used when registering a production certificate. Just make sure that you set the same certificate type when you upload the certificate to Mobile Services.
 
 5. Click **Choose File**, browse to the location where you saved the CSR file earlier, then click **Generate**.
 
     ![][110]
+
 6. After the certificate is created by the portal, click the **Download** button, and click **Done**.
-<!-- deleted by customization
+
     ![][111]  
--->
-<!-- keep by customization: begin -->
- 
-    ![][111]  
-<!-- keep by customization: end -->
 
     This downloads the signing certificate and saves it to your computer in your Downloads folder.
 
@@ -129,6 +114,7 @@ To be able to send push notifications to an iOS app from mobile services, you mu
 Later, you will use this certificate to generate a .p12 file and upload it to Mobile Services to enable authentication with APNS.
 
 ## <a name="profile"></a>Create a provisioning profile for the app
+
 1. Back in the <a href="https://idmsa.apple.com/IDMSWebAuth/login?&appIdKey=891bd3417a7776362562d2197f89480a8547b108fd934911bcbea0110d07f757&path=%2F%2Faccount%2Foverview.action" target="_blank">iOS Provisioning Portal</a>, select **Provisioning Profiles**, select **All**, and then click the **+** button to create a new profile. This launches the **Add iOS Provisiong Profile** Wizard.
 
     ![][112]
@@ -144,13 +130,8 @@ Later, you will use this certificate to generate a .p12 file and upload it to Mo
     ![][114]
 
 5. Next, select the **Devices** to use for testing, and click **Continue**.
-<!-- deleted by customization
+
     ![][115]
--->
-<!-- keep by customization: begin -->
-  
-    ![][115]
-<!-- keep by customization: end -->
 
 6. Finally, pick a name for the profile in **Profile Name**, click **Generate**, and click **Done**.
 
@@ -282,16 +263,9 @@ Your mobile service is now configured to work with APNS.
         string deviceToken = ((AppDelegate)UIApplication.SharedApplication.Delegate).DeviceToken;
 
         var newItem = new TodoItem()
-<!-- deleted by customization
         {
             Text = itemText.Text,
             Complete = false,
--->
-<!-- keep by customization: begin -->
-			{
-				Text = itemText.Text, 
-				Complete = false,
-<!-- keep by customization: end -->
             DeviceToken = deviceToken
         };
 
@@ -304,13 +278,8 @@ Your app is now updated to support push notifications.
     ![][21]
 
 2. In **todoitem**, click the **Script** tab and select **Insert**.
-<!-- deleted by customization
+
     ![][22]
--->
-<!-- keep by customization: begin -->
-   
-    ![][22]
-<!-- keep by customization: end -->
 
     This displays the function that is invoked when an insert occurs in the **TodoItem** table.
 
@@ -415,7 +384,9 @@ You have successfully completed this tutorial.
 [Mobile Services iOS SDK]: https://go.microsoft.com/fwLink/p/?LinkID=266533
 [Apple Push Notification Service]: https://developer.apple.com/library/ios/#documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/ApplePushService/ApplePushService.html
 [Get started with Mobile Services]: /documentation/articles/mobile-services-ios-get-started
+
 [Xamarin Device Provisioning]: http://developer.xamarin.com/guides/ios/getting_started/installation/device_provisioning/
+
 
 [Azure Management Portal]: https://manage.windowsazure.cn/
 [apns object]: http://go.microsoft.com/fwlink/p/?LinkId=272333

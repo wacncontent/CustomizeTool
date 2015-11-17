@@ -6,10 +6,10 @@
    authors="joaoma"
    manager="jdial"
    editor="tysonn"/>
-<tags 
-   ms.service="application-gateway"
-   ms.date="06/30/2015"
-   wacn.date=""/>
+<tags
+	ms.service="application-gateway"
+	ms.date="09/25/2015"
+	wacn.date=""/>
 
 # Configure an Application Gateway for SSL offload
 
@@ -223,7 +223,4 @@ This sample shows an application gateway that is up, running, and is ready to ta
 
 If you want more information about load balancing options in general, see:
 
-<!--- [Azure Load Balancer](/documentation/services/load-balancer/)-->
-- [Azure Traffic Manager](/documentation/services/traffic-manager)
-
-
+- [Azure Traffic Manager](/documentation/services/traffic-manager/)

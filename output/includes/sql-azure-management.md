@@ -60,7 +60,12 @@ provide examples of these statements. For more information about using
 Transact-SQL with SQL Database, including details about which commands are
 supported, see [Transact-SQL Reference (SQL Database)](http://msdn.microsoft.com/zh-cn/library/bb510741.aspx).
 
+<!-- deleted by customization
 ## Create and manage Azure SQL databases
+-->
+<!-- keep by customization: begin -->
+<h2><a id="Step3" name="Step3"> </a>Step 3: Create and Manage Databases</h2>
+<!-- keep by customization: end -->
 
 While connected to the **master** database, you can create new
 databases on the server and modify or drop existing databases. The steps
@@ -107,7 +112,12 @@ Click **Execute** to run the query.
 
 >[AZURE.NOTE] Many of the Transact-SQL statements that create or modify a database must be run within their own batch and cannot be grouped with other Transact-SQL statements. For more information, see the statement-specific information available from the links listed above.
 
+<!-- deleted by customization
 ## Create and manage logins
+-->
+<!-- keep by customization: begin -->
+<h2><a id="Step4" name="Step4"> </a>Step 4: Create and Manage Logins</h2>
+<!-- keep by customization: end -->
 
 The **master** database keeps track of logins and which logins have
 permission to create databases or other logins. Manage logins by
@@ -182,7 +192,12 @@ across the entire server. For more information, see [Managing Databases and Logi
 
         SELECT * FROM sys.sql_logins;
 
+<!-- deleted by customization
 ## Monitor SQL Database using Dynamic Management Views</h2>
+-->
+<!-- keep by customization: begin -->
+<h2><a id="Step5" name="Step5"> </a>Step 5: Monitor SQL Database using Dynamic Management Views</h2>
+<!-- keep by customization: end -->
 
 SQL Database supports several dynamic management views that you
 can use to monitor an individual database. Below are a few examples of

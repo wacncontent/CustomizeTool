@@ -1,26 +1,25 @@
-<properties 
-	pageTitle="Learn more about Azure AD" 
-	description="A learning map for the Azure AD content set." 
-	services="active-directory" 
-	documentationCenter="" 
-	authors="curtand" 
+<properties
+	pageTitle="Learn more about Azure AD"
+	description="A learning map for the Azure AD content set."
+	services="active-directory"
+	documentationCenter=""
+	authors="curtand"
 	manager="stevenpo"
 	editor=""/>
 
-<tags 
-	ms.service="active-directory" 
+<tags
+	ms.service="active-directory"
 	ms.date="09/21/2015"
 	wacn.date=""/>
 
 # Learn more about Azure AD
 
+### Other articles on this topic
 [What is Azure AD?](/documentation/articles/active-directory-whatis)<br>
-
 [How does it work?](/documentation/articles/active-directory-works)<br>
-
 [Get started](/documentation/articles/active-directory-get-started)<br>
 [Next steps](/documentation/articles/active-directory-next-steps)<br>
-[Learn more](/documentation/articles/active-directory-learn-map)<br>
+[Learn more](/documentation/articles/active-directory-learn-map)
 
 I already have an Azure subscription. How is Azure AD related to that? [How subscriptions are associated with a directory](/documentation/articles/active-directory-how-subscriptions-associated-directory)
 
@@ -37,5 +36,3 @@ To understand usage constraints and other service limits for the Azure Active Di
 
 * [Sign up for Azure as an organization](/documentation/articles/sign-up-organization)
 * [Azure Identity](/documentation/articles/fundamentals-identity)
-
-

@@ -206,8 +206,10 @@ Once you have saved the data as a Hive table, you can use Power BI to connect to
 [hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
 [hdinsight-storage]: /documentation/articles/hdinsight-use-blob-storage
 <!-- deleted by customization
+
+
 [azure-purchase-options]: /pricing/overview/
-[azure-member-offers]: http://azure.microsoft.com/pricing/member-offers/
+[azure-member-offers]: /pricing/member-offers/
 [azure-trial]: /pricing/1rmb-trial/
 -->
 <!-- keep by customization: begin -->

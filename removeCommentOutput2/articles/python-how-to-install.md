@@ -45,7 +45,7 @@ Unless you have a specific need, we recommend the first two options, as describe
 
 ## Installation on Windows, Linux and MacOS (client libraries only)
 
-If you already have Python installed, you can use pip to install a bundle of all the client libraries in your existing Python 2.7 or Python 3.3+ environment. This will download the packages from the [Python Package Index][](/documentation/articles/PyPI).
+If you already have Python installed, you can use pip to install a bundle of all the client libraries in your existing Python 2.7 or Python 3.3+ environment. This will download the packages from the [Python Package Index][] (PyPI).
 
 Note that you may need to use the `sudo` command on Linux and MacOS ie. `sudo pip install azure`.
 
@@ -120,12 +120,12 @@ and then rerun WebPI.
 
 ## Getting More Packages
 
-The [Python Package Index][](/documentation/articles/PyPI) has a rich selection of Python libraries.  If you chose to install a Distro, you'll already have most of the interesting bits for a variety of scenarios from web development to Technical Computing.
+The [Python Package Index][] (PyPI) has a rich selection of Python libraries.  If you chose to install a Distro, you'll already have most of the interesting bits for a variety of scenarios from web development to Technical Computing.
 
 
 ## Python Tools for Visual Studio
 
-[Python Tools for Visual Studio][](/documentation/articles/PTVS) is a free/OSS plugin from Microsoft which turns VS into a full-fledged Python IDE:
+[Python Tools for Visual Studio][] (PTVS) is a free/OSS plugin from Microsoft which turns VS into a full-fledged Python IDE:
 
 ![how-to-install-python-ptvs](./media/python-how-to-install/how-to-install-python-ptvs.png)
 
@@ -167,27 +167,28 @@ For more information on developing and publishing Azure Websites, see the tutori
 * [IPython - an advanced REPL/Notebook for Python][]
 * [IPython Notebook on Azure][]
 * [Python Tools for Visual Studio on GitHub][]
+* [Python Developer Center](/develop/python/)
 
-[Continuum Analytics Python Distribution]: http://continuum.io
-[Enthought Python Distribution]: http://www.enthought.com
-[ActiveState Python Distribution]: http://www.activestate.com
-[www.python.org]: http://www.python.org
-[www.continuum.io]: http://continuum.io
-[www.enthought.com]: http://www.enthought.com
-[www.activestate.com]: http://www.activestate.com
-[SciPy - A suite of Scientific Python libraries]: http://www.scipy.org
-[NumPy - A numerics library for Python]: http://www.numpy.org
-[Django Project - A mature web framework/CMS]: http://www.djangoproject.com
-[IPython - an advanced REPL/Notebook for Python]: http://ipython.org
-[IPython]: http://ipython.org
+[Continuum Analytics Python Distribution]: /documentation/articles/http://continuum.io
+[Enthought Python Distribution]: /documentation/articles/http://www.enthought.com
+[ActiveState Python Distribution]: /documentation/articles/http://www.activestate.com
+[www.python.org]: /documentation/articles/http://www.python.org
+[www.continuum.io]: /documentation/articles/http://continuum.io
+[www.enthought.com]: /documentation/articles/http://www.enthought.com
+[www.activestate.com]: /documentation/articles/http://www.activestate.com
+[SciPy - A suite of Scientific Python libraries]: /documentation/articles/http://www.scipy.org
+[NumPy - A numerics library for Python]: /documentation/articles/http://www.numpy.org
+[Django Project - A mature web framework/CMS]: /documentation/articles/http://www.djangoproject.com
+[IPython - an advanced REPL/Notebook for Python]: /documentation/articles/http://ipython.org
+[IPython]: /documentation/articles/http://ipython.org
 [IPython Notebook on Azure]: /documentation/articles/virtual-machines-python-ipython-notebook
 [Cloud Services]: /documentation/articles/cloud-services-python-ptvs
 [Websites]: /documentation/articles/web-sites-python-ptvs-django-mysql
-[Python Tools for Visual Studio]: http://aka.ms/ptvs
-[Python Tools for Visual Studio on CodePlex]: http://pytools.codeplex.com
-[Python Package Index]: http://pypi.python.org/pypi
-[Windows Azure SDK for Python 2.7]: http://go.microsoft.com/fwlink/?LinkId=254281
-[Windows Azure SDK for Python 3.4]: http://go.microsoft.com/fwlink/?LinkID=516990
+[Python Tools for Visual Studio]: /documentation/articles/http://aka.ms/ptvs
+[Python Tools for Visual Studio on GitHub]: /documentation/articles/https://github.com/microsoft/ptvs
+[Python Package Index]: /documentation/articles/http://pypi.python.org/pypi
+[Windows Azure SDK for Python 2.7]: /documentation/articles/http://go.microsoft.com/fwlink/?LinkId=254281
+[Windows Azure SDK for Python 3.4]: /documentation/articles/http://go.microsoft.com/fwlink/?LinkID=516990
 [Setting up a Linux VM via the Azure Management Portal]: /documentation/articles/create-and-configure-opensuse-vm-in-portal
 [How to use the Azure Command-Line Interface]: /documentation/articles/crossplat-cmd-tools
 [Create a Virtual Machine Running Linux]: /documentation/articles/virtual-machines-linux-tutorial

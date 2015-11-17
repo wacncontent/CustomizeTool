@@ -7,9 +7,9 @@
 	manager="adinah" 
 	editor=""/>
 
-<tags 
-	ms.service="storage" 
-	ms.date="10/08/2015" 
+<tags
+	ms.service="storage"
+	ms.date="10/08/2015"
 	wacn.date=""/>
 
 
@@ -59,7 +59,7 @@ Version 2015-04-05 of Azure Storage introduces a new type of shared access signa
 
 ## How a shared access signature works
 
-A shared access signature is a URI that points to one or more storage resource and includes a token that contains a special set of query parameters. The token indicates how the resources may be accessed by the client. One of the query parameters, the signature, is constructed from the SAS parameters and signed with the account key. This signature is used by Azure Storage to authenticate the SAS.
+A shared access signature is a URI that points to one or more storage resources and includes a token that contains a special set of query parameters. The token indicates how the resources may be accessed by the client. One of the query parameters, the signature, is constructed from the SAS parameters and signed with the account key. This signature is used by Azure Storage to authenticate the SAS.
 
 The account SAS and service SAS tokens include some common parameters, and also take a few parameters that that are different.
 
@@ -73,6 +73,7 @@ The account SAS and service SAS tokens include some common parameters, and also 
 - **IP.** An optional parameter that specifies an IP address or a range of IP addresses outside of Azure (see the section [Routing session configuration state](/documentation/articles/expressroute-workflows#routing-session-configuration-state) for Express Route) from which to accept requests. 
 - **Protocol.** An optional parameter that specifies the protocol permitted for a request. Possible values are both HTTPS and HTTP (https,http), which is the default value, or HTTPS only (https). Note that HTTP only is not a permitted value.
 - **Signature.** The signature is constructed from the other parameters specified as part token and then encrypted. It's used to authenticate the SAS.
+
 ### Parameters for an account SAS token
 
 - **Service or services.** An account SAS can delegate access to one or more of the storage services. For example, you can create an account SAS that delegates access to the Blob and File service. Or you can create a SAS that delegates access to all four services (Blob, Queue, Table, and File).
@@ -97,7 +98,7 @@ Here is an example of a service SAS URI that provides read and write permissions
 
 Name|SAS portion|Description
 ---|---|---
-Blob URI|https://myaccount.blob.core.chinacloudapi.cn/sascontainer/sasblob.txt | The address of the blob. Note that using HTTPS is highly recommended.
+Blob URI|https://myaccount.blob.core.chinacloudapi.cn/sascontainer/sasblob.txt |The address of the blob. Note that using HTTPS is highly recommended.
 Storage services version|sv=2015-04-05|For storage services version 2012-02-12 and later, this parameter indicates the version to use.
 Start time|st=2015-04-29T22%3A18%3A26Z|Specified in an ISO 8061 format. If you want the SAS to be valid immediately, omit the start time.
 Expiry time|se=2015-04-30T02%3A23%3A26Z|Specified in an ISO 8061 format.
@@ -125,6 +126,7 @@ Given that permissions are restricted to the service level, accessible operation
 A shared access signature can take one of two forms:
 
 - **Ad hoc SAS:** When you create an ad hoc SAS, the start time, expiry time, and permissions for the SAS are all specified on the SAS URI (or implied, in the case where start time is omitted). This type of SAS may be created as an account SAS or a service SAS. 
+
 - **SAS with stored access policy:** A stored access policy is defined on a resource container - a blob container, table, queue, or file share - and can be used to manage constraints for one or more shared access signatures. When you associate a SAS with a stored access policy, the SAS inherits the constraints - the start time, expiry time, and permissions - defined for the stored access policy.
 
 >[AZURE.NOTE] Currently, an account SAS must be an ad hoc SAS. Stored access policies are not yet supported for account SAS.
@@ -244,7 +246,7 @@ The following code example creates a stored access policy on a container and the
     // The new shared access policy provides read/write access to the container for 24 hours.
     blobPermissions.SharedAccessPolicies.Add("mypolicy", new SharedAccessBlobPolicy()
     {
-       // To ensure SAS is valid immediately, don't set the start time.
+       // To ensure SAS is valid immediately, don’t set the start time.
        // This way, you can avoid failures caused by small clock differences.
        SharedAccessExpiryTime = DateTime.UtcNow.AddHours(24),
        Permissions = SharedAccessBlobPermissions.Write |
@@ -310,7 +312,7 @@ Shared access signatures are useful for providing limited permissions to your st
 - [Shared Access Signatures, Part 2: Create and Use a SAS with the Blob Service](/documentation/articles/storage-dotnet-shared-access-signature-part-2)
 - [How to use Azure File storage with Windows](/documentation/articles/storage-dotnet-how-to-use-files)
 - [Manage Access to Azure Storage Resources](/documentation/articles/storage-manage-access-to-resources)
-- [Delegating Access with a Shared Access Signature (REST API)](http://msdn.microsoft.com/zh-cn/library/azure/ee395415.aspx)
+- [Delegating Access with a Shared Access Signature](http://msdn.microsoft.com/zh-cn/library/azure/ee395415.aspx)
 - [Introducing Table and Queue SAS](http://blogs.msdn.com/b/windowsazurestorage/archive/2012/06/12/introducing-table-sas-shared-access-signature-queue-sas-and-update-to-blob-sas.aspx)
 [sas-storage-fe-proxy-service]: ./media/storage-dotnet-shared-access-signature-part-1/sas-storage-fe-proxy-service.png
 [sas-storage-provider-service]: ./media/storage-dotnet-shared-access-signature-part-1/sas-storage-provider-service.png

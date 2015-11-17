@@ -34,7 +34,7 @@ The application uses the [queue-centric work pattern](http://www.asp.net/aspnet/
 
 ## Alternative architecture: Websites and WebJobs
 
-This tutorial shows how to run both front-end and back-end in an Azure cloud service. An alternative is to run the front-end in an [Azure website](/home/features/web-site/) and use the [WebJobs](/documentation/articles/websites-webjobs-resources/) feature (currently in preview) for the back-end. For a tutorial that uses WebJobs, see [Get Started with the Azure WebJobs SDK](/documentation/articles/websites-dotnet-webjobs-sdk-get-started). For information about how to choose the services that best fit your scenario, see [Azure Websites, Cloud Services, and virtual machines comparison](/documentation/articles/choose-web-site-cloud-service-vm).
+This tutorial shows how to run both front-end and back-end in an Azure cloud service. An alternative is to run the front-end in an [Azure <!-- deleted by customization website](/home/features/web-site/) --><!-- keep by customization: begin --> Website](/home/features/web-site/) <!-- keep by customization: end --> and use the [WebJobs](/documentation/articles/websites-webjobs-resources/) feature (currently in preview) for the back-end<!-- deleted by customization. For a tutorial that uses WebJobs, see [Get Started with the Azure WebJobs SDK](/documentation/articles/websites-dotnet-webjobs-sdk-get-started) -->. For information about how to choose the services that best fit your scenario, see [Azure Websites, Cloud Services, and <!-- deleted by customization virtual machines comparison](/documentation/articles/choose-web-site-cloud-service-vm) --><!-- keep by customization: begin --> Virtual Machines Comparison](/documentation/articles/choose-web-site-cloud-service-vm) <!-- keep by customization: end -->.
 
 ## What you'll learn
 
@@ -49,7 +49,7 @@ This tutorial shows how to run both front-end and back-end in an Azure cloud ser
 
 The tutorial assumes that you understand [basic concepts about Azure cloud services](/documentation/articles/fundamentals-application-models#CloudServices) such as *web role* and *worker role* terminology.  It also assumes that you know how to work with [ASP.NET MVC](http://www.asp.net/mvc/tutorials/mvc-5/introduction/getting-started) or [Web Forms](http://www.asp.net/web-forms/tutorials/aspnet-45/getting-started-with-aspnet-45-web-forms/introduction-and-overview) projects in Visual Studio. The sample application uses MVC, but most of the tutorial also applies to Web Forms.
 
-You can run the app locally without an Azure subscription, but you'll need one in order to deploy the application to the cloud. If you don't have an account, you can [activate your MSDN subscriber benefits](/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A55E3C668) or [sign up for a trial](/pricing/1rmb-trial/?WT.mc_id=A55E3C668).
+You can run the app locally without an Azure subscription, but you'll need one in order to deploy the application to the cloud. If you don't have an account, you can <!-- deleted by customization [activate your MSDN subscriber benefits](/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A55E3C668) or --> [sign up for a trial](/pricing/1rmb-trial/?WT.mc_id=A55E3C668).
 
 The tutorial instructions work with either of the following products:
 
@@ -405,8 +405,10 @@ After the solution is created, you'll review the code that is unique to cloud se
 14. In the left pane, select **Online**.
 
 16. Find the *EntityFramework* NuGet package, and install it in all three projects.
+<!-- deleted by customization
 
 17. Find the *Microsoft.WindowsAzure.ConfigurationManager* NuGet package, and install it in the worker role project.
+-->
 
 ### Set project references
 

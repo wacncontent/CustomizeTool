@@ -1,18 +1,17 @@
 <properties
-   pageTitle="How to Tag a Virtual Machine in Azure"
-   description="Learn about Tagging a Virtual Machine in Azure"
+   pageTitle="How to Tag a VM | Windows Azure"
+   description="Learn about Tagging an Azure Virtual Machine created using the Resource Manager deployment model."
    services="virtual-machines"
    documentationCenter=""
-   authors="dsk-2015"
+   authors="mmccrory"
    manager="timlt"
    editor="tysonn"
    tags="azure-resource-manager"/>
 
 <tags
-   ms.service="virtual-machines"
-   
-   ms.date="07/23/2015"
-   wacn.date=""/>
+	ms.service="virtual-machines"
+	ms.date="07/23/2015"
+	wacn.date=""/>
 
 # How to Tag a Virtual Machine in Azure
 

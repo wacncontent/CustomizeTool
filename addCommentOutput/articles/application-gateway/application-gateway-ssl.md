@@ -223,5 +223,7 @@ This sample shows an application gateway that is up, running, and is ready to ta
 
 If you want more information about load balancing options in general, see:
 
+<!-- deleted by customization
 - [Azure Load Balancer](/documentation/services/load-balancer/)
+-->
 - [Azure Traffic Manager](/documentation/services/traffic-manager/)

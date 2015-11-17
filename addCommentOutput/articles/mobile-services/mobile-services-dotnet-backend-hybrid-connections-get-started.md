@@ -65,7 +65,7 @@ In this step, you define a connection string for the on-premises database and mo
 
 4. Expand the **Models** folder and open the data model file, which ends in *Context.cs*.
 
-<!-- deleted by customization 6 --><!-- keep by customization: begin --> 5 <!-- keep by customization: end -->. Modify the **DbContext** instance constructor to pass the value `OnPremisesDBConnection` to the base **DbContext** constructor, similar to the following snippet:
+6. Modify the **DbContext** instance constructor to pass the value `OnPremisesDBConnection` to the base **DbContext** constructor, similar to the following snippet:
 
         public class hybridService1Context : DbContext
         {
@@ -76,6 +76,7 @@ In this step, you define a connection string for the on-premises database and mo
         }
 
 	The service will now use the new connection to the SQL Server database.
+ 
 ##Test the database connection locally
 
 Before publishing to Azure and using the hybrid connection, it's a good idea to make sure that the database connection works when running locally. That way you can more easily diagnose and correct any connection issues before you republish and start using the hybrid connection.
@@ -88,43 +89,37 @@ Now that you have verified the database connection, you need to add an app setti
 
 1. In the [Azure Management Portal], browse to your mobile service.
   
-<!-- deleted by customization 1 --><!-- keep by customization: begin --> 2 <!-- keep by customization: end -->. Click the **Configure** tab, and locate **Connection Strings** section.
+1. Click the **Configure** tab, and locate **Connection Strings** section. 
 
 	![Connection string for on-premises database](./media/mobile-services-dotnet-backend-hybrid-connections-get-started/11.png)
 
-<!-- deleted by customization 2 --><!-- keep by customization: begin --> 3 <!-- keep by customization: end -->. Add an new connection **SQL Server** string named `OnPremisesDBConnection` with a value like the following:
+2. Add an new connection **SQL Server** string named `OnPremisesDBConnection` with a value like the following:
 
 		Server=OnPremisesServer,1433;Database=OnPremisesDB;User ID=HybridConnectionsLogin;Password=<**secure_password**>
 
 
 	Replace `<**secure_password**>` with the secure password for *HybridConnectionLogin*.
 
-<!-- deleted by customization 2 --><!-- keep by customization: begin --> 4 <!-- keep by customization: end -->. Press **Save** to save the hybrid connection and connection string you just created.
+2. Press **Save** to save the hybrid connection and connection string you just created.
 
-<!-- deleted by customization 3 --><!-- keep by customization: begin --> 5 <!-- keep by customization: end -->. Using Visual Studio, publish your updated mobile service project to Azure.
+3. Using Visual Studio, publish your updated mobile service project to Azure.
 
 	The service start page is displayed.
 
-<!-- deleted by customization 4 --><!-- keep by customization: begin --> 6 <!-- keep by customization: end -->. Using either the **Try it now** button on the start page as before or using a client app connected to your mobile service, invoke some operations that generate database changes.
+4. Using either the **Try it now** button on the start page as before or using a client app connected to your mobile service, invoke some operations that generate database changes. 
 
 	>[AZURE.NOTE]When you use the **Try it now** button to launch the Help API pages, remember to supply your application key as the password (with a blank username).
 
-<!-- deleted by customization 4 --><!-- keep by customization: begin --> 7 <!-- keep by customization: end -->. In SQL Server Management Studio, connect to your SQL Server instance, open the Object Explorer, expand the **OnPremisesDB** database and expand **Tables**.
+4. In SQL Server Management Studio, connect to your SQL Server instance, open the Object Explorer, expand the **OnPremisesDB** database and expand **Tables**. 
 
-<!-- deleted by customization 5 --><!-- keep by customization: begin --> 8 <!-- keep by customization: end -->. Right-click the **hybridService1.TodoItems** table and choose **Select Top 1000 Rows** to view the results.
+5. Right-click the **hybridService1.TodoItems** table and choose **Select Top 1000 Rows** to view the results.
 
 	Note that changes generated in your app have been saved by your mobile service to your on-premises database using the hybrid connection.
 
 ##See Also##
  
-<!-- deleted by customization
 + [Hybrid Connections web site](/home/features/biztalk-services/)
 + [Hybrid Connections overview](/documentation/articles/integration-hybrid-connection-overview)
--->
-<!-- keep by customization: begin -->
-+ [Hybrid Connections web site](http://azure.microsoft.com/zh-cn/services/biztalk-services/)
-+ [Hybrid Connections overview](/documentation/articles/integration-hybrid-connection-overview
-<!-- keep by customization: end -->
 + [BizTalk Services: Dashboard, Monitor, Scale, Configure, and Hybrid Connection tabs](/documentation/articles/biztalk-dashboard-monitor-scale-tabs)
 + [How to make data model changes to a .NET backend mobile service](/documentation/articles/mobile-services-dotnet-backend-how-to-use-code-first-migrations)
 

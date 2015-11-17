@@ -225,3 +225,5 @@ Preparing an Oracle Linux 7 virtual machine for Azure is very similar to Oracle 
 
 15. Click **Action -> Shut Down** in Hyper-V Manager. Your Linux VHD is now ready to be uploaded to Azure.
 
+
+ 

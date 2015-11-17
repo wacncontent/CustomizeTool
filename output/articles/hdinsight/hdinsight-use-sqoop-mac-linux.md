@@ -36,13 +36,13 @@ Before you begin this tutorial, you must have the following:
 
 - **Workstation**: A computer with an SSH client.
 
-- **Azure CLI**: For more information, see [Install and Configure the Azure CLI](/documentation/articles/xplat-cli-install)
+- **Azure CLI**: For more information, see [Install and Configure the Azure <!-- deleted by customization CLI](/documentation/articles/xplat-cli-install) --><!-- keep by customization: begin --> CLI](/documentation/articles/xplat-cli.) <!-- keep by customization: end -->
 
 - **Linux-based HDInsight cluster**: For instructions about cluster provision, see [Get started using HDInsight](/documentation/articles/hdinsight-hadoop-linux-tutorial-get-started) or [Provision HDInsight clusters][hdinsight-provision].
 
 - **Azure SQL database**: This document provides instructions for creating an example SQL database. For more information on SQL Database, see [Get started using Azure SQL database][sqldatabase-get-started].
 
-* **SQL Server**: The steps in this document can also be used, with some modification, with SQL Server; however, both the HDInsight cluster and SQL Server must be on the same Azure Virtual Network. For more information on requirements specific to using this article with SQL Server, see the [Using SQL Server](#using-sql-server) section.
+* **SQL Server**: The steps in this document can also be used, with some modification, with SQL Server<!-- deleted by customization; however, both the HDInsight cluster and SQL Server must be on the same Azure Virtual Network -->. For more information on requirements specific to using this article with SQL Server, see the [Using SQL Server](#using-sql-server) section.
 
 ##Understand the scenario
 
@@ -155,7 +155,12 @@ You will first export **hivesampletable** to the Azure SQL database or to SQL Se
 
 2. Use the following command to create a link to the SQL Server JDBC driver from the Sqoop lib directory. This allows Sqoop to use this driver to talk to SQL Database:
 
+<!-- deleted by customization
         sudo ln /usr/share/java/sqljdbc_4.1/enu/sqljdbc41.jar /usr/hdp/current/sqoop-client/lib/sqljdbc41.jar
+-->
+<!-- keep by customization: begin -->
+        sudo ln /usr/share/java/sqljdbc_4.1/enu/sqljdbc4.jar /usr/hdp/current/sqoop-client/lib/sqljdbc4.jar
+<!-- keep by customization: end -->
 
 3. Use the following command to verify that Sqoop can see your SQL Database:
 
@@ -204,7 +209,7 @@ You can also use Sqoop to import and export data from SQL Server, either in your
 
     > [AZURE.NOTE] For **point-to-site** virtual networks, SQL Server must be running the VPN client configuration application, which is available from the **Dashboard** of your Azure virtual network configuration.
 
-    For more information on creating and configuring a virtual network, see [Virtual Network Configuration Tasks](/home/features/virtual-machines/).
+    For more information on creating and configuring a virtual network, see [Virtual Network Configuration <!-- deleted by customization Tasks](/home/features/virtual-machines/) --><!-- keep by customization: begin --> Tasks](http://msdn.microsoft.com/zh-cn/library/azure/jj156206.aspx) <!-- keep by customization: end -->.
 
 * SQL Server must be configured to allow SQL authentication. For more information, see [Choose an Authentication Mode](https://msdn.microsoft.com/ms144284.aspx)
 
@@ -249,8 +254,10 @@ Now you have learned how to use Sqoop. To learn more, see:
 [hdinsight-use-oozie]: /documentation/articles/hdinsight-use-oozie
 [hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
 [hdinsight-submit-jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically
+
 [sqldatabase-get-started]: /documentation/articles/sql-database-get-started
 [sqldatabase-create-configue]: /documentation/articles/sql-database-create-configure
+
 [powershell-start]: http://technet.microsoft.com/zh-cn/library/hh847889.aspx
 [powershell-install]: /documentation/articles/install-configure-powershell
 [powershell-script]: http://technet.microsoft.com/zh-cn/library/ee176949.aspx

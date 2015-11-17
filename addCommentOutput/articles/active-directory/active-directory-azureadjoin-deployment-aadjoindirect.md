@@ -80,5 +80,5 @@ You can set up your users and employees to user their personal Windows devices t
 
 
 ## Additional Information
-* [Extending cloud capabilities to Windows 10 devices through Azure Active Directory <!-- deleted by customization Join](/documentation/articles/active-directory-azureadjoin-overview) --><!-- keep by customization: begin --> Join](/documentation/articles/active-directory-azureadjoin-user-upgrade) <!-- keep by customization: end -->
+* [Extending cloud capabilities to Windows 10 devices through Azure Active Directory Join](/documentation/articles/active-directory-azureadjoin-overview)
 * [Set up Azure AD Join](/documentation/articles/active-directory-azureadjoin-setup)

@@ -28,6 +28,7 @@ This tutorial will show you how to connect your Salesforce environment to your A
 
 If you are using a Salesforce Sandbox environment, please see the [Salesforce Sandbox integration tutorial](/documentation/articles/active-directory-saas-salesforce-sandbox-tutorial/).
 
+<!-- deleted by customization
 ##Video tutorials
 
 You may follow this tutorial using the videos below.
@@ -39,6 +40,7 @@ You may follow this tutorial using the videos below.
 **Video Tutorial Part Two: How to Automate User Provisioning**
 
 > [AZURE.VIDEO integrating-salesforce-with-azure-ad-how-to-automate-user-provisioning]
+-->
 
 ##Step 1: Add Salesforce to your directory
 

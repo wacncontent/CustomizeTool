@@ -30,7 +30,7 @@ It's recommended that you use the latest version of SSMS whenever you work with 
 
 Connecting to SQL Database requires that you know the server name on Azure. You might need to sign in to the portal to get this information.
 
-1.  Sign in to the [Azure Management <!-- deleted by customization Portal](http://manage.windowsazure.cn) --><!-- keep by customization: begin --> Portal](https://manage.windowsazure.cn) <!-- keep by customization: end -->.
+1.  Sign in to the [Azure Management Portal](http://manage.windowsazure.cn).
 
 2.  In the left pane, click **SQL Databases**.
 
@@ -167,11 +167,11 @@ across the entire server. For more information, see [Managing Databases and Logi
 
             CREATE USER login1User FROM LOGIN login1;
 
--   Use the **sp_addrolemember** stored procedure to give the user
+-   Use the **sp\_addrolemember** stored procedure to give the user
     account the appropriate level of permissions on the database. For
     more information, see [sp_addrolemember (Transact-SQL)](http://msdn.microsoft.com/zh-cn/library/ms187750.aspx). The statement below gives **login1User**
     read-only permissions to the database by adding **login1User** to
-    the **db_datareader** role.
+    the **db\_datareader** role.
 
         exec sp_addrolemember 'db_datareader', 'login1User';    
 
@@ -196,7 +196,7 @@ across the entire server. For more information, see [Managing Databases and Logi
 
         DROP LOGIN login1;
 
--   The master database has the **sys.sql_logins** view that you can
+-   The master database has the **sys.sql\_logins** view that you can
     use to view logins. To view all existing logins, execute the
     following statement:
 
@@ -217,8 +217,8 @@ complete details and more usage examples, see [Monitoring SQL Database using Dyn
 
         GRANT VIEW DATABASE STATE TO login1User;
 
--   Calculate database size using the **sys.dm_db_partition_stats**
-    view. The **sys.dm_db_partition_stats** view returns page and
+-   Calculate database size using the **sys.dm\_db\_partition\_stats**
+    view. The **sys.dm\_db\_partition\_stats** view returns page and
     row-count information for every partition in the database, which you
     can use to calculate the database size. The following query returns
     the size of your database in megabytes:
@@ -226,7 +226,7 @@ complete details and more usage examples, see [Monitoring SQL Database using Dyn
         SELECT SUM(reserved_page_count)*8.0/1024
         FROM sys.dm_db_partition_stats;   
 
--   Use the **sys.dm_exec_connections** and **sys.dm_exec_sessions**
+-   Use the **sys.dm\_exec\_connections** and **sys.dm\_exec\_sessions**
     views to retrieve information about current user connections and
     internal tasks associated with the database. The following query
     returns information about the current connection:
@@ -242,7 +242,7 @@ complete details and more usage examples, see [Monitoring SQL Database using Dyn
             INNER JOIN sys.dm_exec_connections e
               ON s.session_id = e.session_id;
 
--   Use the **sys.dm_exec_query_stats** view to retrieve aggregate
+-   Use the **sys.dm\_exec\_query\_stats** view to retrieve aggregate
     performance statistics for cached query plans. The following query
     returns information about the top five queries ranked by average CPU
     time.

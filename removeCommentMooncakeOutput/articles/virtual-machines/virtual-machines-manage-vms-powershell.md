@@ -9,9 +9,9 @@
    tags="azure-service-management"/>
 
    <tags
-   ms.service="virtual-machines"
-   ms.date="06/24/2015"
-   wacn.date=""/>
+	ms.service="virtual-machines"
+	ms.date="06/24/2015"
+	wacn.date=""/>
 
 # Manage your virtual machines by using Azure PowerShell
 

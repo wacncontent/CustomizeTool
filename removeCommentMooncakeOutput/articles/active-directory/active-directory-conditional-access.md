@@ -1,16 +1,16 @@
-<properties 
-	pageTitle="Managing Risk With Conditional Access" 
+<properties
+	pageTitle="Managing Risk With Conditional Access"
 	description="Allow anywhere access to specific resources within the corporate network from known devices compliant with policies and disallow access from lost, stolen, non-compliant devices."
-	services="active-directory, virtual-network" 
-	documentationCenter="" 
+	services="active-directory, virtual-network"
+	documentationCenter=""
 	authors="femila"
 	manager="stevenpo"
 	editor=""/>
 
-<tags 
-	ms.service="active-directory" 
+<tags
+	ms.service="active-directory"
 	ms.date="08/19/2015"
-	wacn.date="" />
+	wacn.date=""/>
 
 
 # Managing Risk With Conditional Access

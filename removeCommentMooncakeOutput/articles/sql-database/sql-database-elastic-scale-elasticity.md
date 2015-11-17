@@ -7,9 +7,9 @@
 	authors="sidneyh" 
 	editor=""/>
 
-<tags 
-	ms.service="sql-database" 
-	ms.date="09/22/2015" 
+<tags
+	ms.service="sql-database"
+	ms.date="09/22/2015"
 	wacn.date=""/>
 
 # Shard elasticity 

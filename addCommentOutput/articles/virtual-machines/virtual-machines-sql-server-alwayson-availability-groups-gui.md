@@ -12,22 +12,22 @@
 	ms.date="08/12/2015"
 	wacn.date=""/>
 
-# Configure AlwaysOn Availability Groups in Azure <!-- deleted by customization VM --> (GUI)
-<!-- deleted by customization
+# Configure AlwaysOn Availability Groups in Azure VM (GUI)
 
 > [AZURE.SELECTOR]
 - [Portal](/documentation/articles/virtual-machines-sql-server-alwayson-availability-groups-gui)
 - [PowerShell](/documentation/articles/virtual-machines-sql-server-alwayson-availability-groups-powershell)
 
 <br/>
+<!-- deleted by customization
 
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
 
--->
 
+-->
 This end-to-end tutorial shows you how to implement Availability Groups using SQL Server AlwaysOn running on Azure virtual machines.
 
->[AZURE.NOTE] In the Azure Management Portal, there is a new gallery setup for AlwaysOn Availability Groups with a Listener. This configures everything you need for AlwaysOn Availability Groups automatically. For more information, see [SQL Server AlwaysOn Offering in Windows Azure Management Portal Gallery](http://blogs.technet.com/b/dataplatforminsider/archive/2014/08/25/sql-server-alwayson-offering-in-microsoft-azure-portal-gallery.aspx). To use PowerShell, see the tutorial of the same scenario at <!-- deleted by customization [Configure --><!-- keep by customization: begin --> [Tutorial: <!-- keep by customization: end --> AlwaysOn Availability Groups in Azure <!-- deleted by customization with PowerShell](/documentation/articles/virtual-machines-sql-server-alwayson-availability-groups-powershell) --><!-- keep by customization: begin --> (PowerShell)](https://msdn.microsoft.com/zh-cn/library/azure/jj870963.aspx) <!-- keep by customization: end -->.
+>[AZURE.NOTE] In the Azure Management Portal, there is a new gallery setup for AlwaysOn Availability Groups with a Listener. This configures everything you need for AlwaysOn Availability Groups automatically. For more information, see [SQL Server AlwaysOn Offering in Windows Azure Management Portal Gallery](http://blogs.technet.com/b/dataplatforminsider/archive/2014/08/25/sql-server-alwayson-offering-in-microsoft-azure-portal-gallery.aspx). To use PowerShell, see the tutorial of the same scenario at [Configure AlwaysOn Availability Groups in Azure with PowerShell](/documentation/articles/virtual-machines-sql-server-alwayson-availability-groups-powershell).
 
 At the end of the tutorial, your SQL Server AlwaysOn solution in Azure will consist of the following elements:
 
@@ -114,7 +114,7 @@ In the following steps, you configure the ContosoDC machine as a domain controll
 
 1. Select the **Active Directory Domain Services** and **DNS Server** roles. When prompted, add any additional features required by these roles.
 
-	>[AZURE.NOTE] You will get a validation warning that there is no static IP address. If you are testing the configuration, click continue. For production scenarios [use PowerShell to set the static IP address of the domain controller <!-- deleted by customization machine](./networking/virtual-networks-reserved-private-ip.md) --><!-- keep by customization: begin --> machine](/documentation/articles/virtual-networks-reserved-private-ip) <!-- keep by customization: end -->.
+	>[AZURE.NOTE] You will get a validation warning that there is no static IP address. If you are testing the configuration, click continue. For production scenarios [use PowerShell to set the static IP address of the domain controller machine](/documentation/articles/virtual-networks-reserved-private-ip).
 
 	![Add Roles Dialog](./media/virtual-machines-sql-server-alwayson-availability-groups-gui/IC784624.png)
 
@@ -380,8 +380,11 @@ These actions can be performed in any order. Nevertheless, the steps below will 
 1. Right-click the **NT AUTHORITY\System** login, and click **Properties**.
 
 1. In the **Securables** page, for the local server, select **Grant** for the following permissions and click **OK**.
+
 	- Alter any availability group
+
 	- Connect SQL
+
 	- View server state
 
 1. Next, add **CORP\Install** as a **sysadmin** role to the default SQL Server instance. In **Object Explorer**, right-click **Logins** and click **New Login**.

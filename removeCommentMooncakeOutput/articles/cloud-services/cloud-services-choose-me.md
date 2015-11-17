@@ -6,9 +6,9 @@
 	authors="Thraka" 
 	manager="timlt"/>
 
-<tags 
-	ms.service="multiple"  
-	ms.date="09/01/2015" 
+<tags
+	ms.service="multiple"
+	ms.date="09/01/2015"
 	wacn.date=""/>
 
 # Should I Choose Cloud Services?
@@ -31,6 +31,6 @@ Azure provides different hosting models for running applications. Each one provi
 [Create a cloud service app in PHP](/documentation/articles/cloud-services-php-create-web-role)<br/>
 [Create a cloud service app in Python](/documentation/articles/cloud-services-python-ptvs)<br/>
 
-[Azure Websites]: /documentation/articles/app-service-choose-me
+[Azure Websites]: /documentation/services/web-sites
 [Virtual Machines]: /documentation/articles/virtual-machines-about
 [Cloud Services]: #tellmecs 

@@ -16,17 +16,17 @@
 # Extend on-premises AlwaysOn Availability Groups to Azure
 
 AlwaysOn Availability Groups provide high availability for groups of database by adding secondary replicas. These replicas allow failing over databases in case of a failure. In addition they can be used to offload read workloads or backup tasks.
-
 <!-- deleted by customization
+
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
  
-
 -->
+
 You can extend on-premises Availability Groups to Windows Azure by provisioning one or more Azure VMs with SQL Server and then adding them as replicas to your on-premises Availability Groups.
 
 This tutorial assumes you have the following:
 
-- An active Azure subscription. You can [sign up for a <!-- deleted by customization trial](http://azure.microsoft.com/pricing/free-trial) --><!-- keep by customization: begin --> trial](/pricing/1rmb-trial) <!-- keep by customization: end -->.
+- An active Azure subscription. You can [sign up for a trial](/pricing/1rmb-trial).
 
 - An existing AlwaysOn Availability Group on-premises. For more information on Availability Groups, see [AlwaysOn Availability Groups](https://msdn.microsoft.com/zh-cn/library/hh510230.aspx).
 
@@ -64,7 +64,7 @@ This section shows you how to use the **Add Azure Replica Wizard** to extend you
 |**VM Username**|Specify a user name that will become the administrator account on the VM|
 |**VM Administrator Password**|Specify a password for the new account|
 |**Confirm Password**|Confirm the password of the new account|
-|**Virtual Network**|Specify the Azure virtual network that the new VM should use. For more information on virtual networks, see [Virtual Network <!-- deleted by customization Overview](..\virtual-network\virtual-networks-overview.md).| --><!-- keep by customization: begin --> Overview](/documentation/articles/virtual-networks-overview).| <!-- keep by customization: end -->
+|**Virtual Network**|Specify the Azure virtual network that the new VM should use. For more information on virtual networks, see [Virtual Network Overview](/documentation/articles/virtual-networks-overview).|
 |**Virtual Network Subnet**|Specify the virtual network subnet that the new VM should use|
 |**Domain**|Confirm the pre-populated value for the domain is correct|
 |**Domain User Name**|Specify an account that is in the local administrators group on the local cluster nodes|

@@ -7,10 +7,9 @@
 	manager="dwrede" 
 	editor=""/>
 
-<tags 
-	ms.service="notification-hubs" 
-
-	ms.date="07/14/2015" 
+<tags
+	ms.service="notification-hubs"
+	ms.date="07/14/2015"
 	wacn.date=""/>
 
 #Azure Notification Hubs - Diagnosis guidelines
@@ -238,3 +237,4 @@ More details here -
 [Programmatic Telemetry Access]: http://msdn.microsoft.com/zh-cn/library/azure/dn458823.aspx
 [Telemetry Access via APIs sample]: https://github.com/Azure/azure-notificationhubs-samples/tree/master/FetchNHTelemetryInExcel
 
+ 

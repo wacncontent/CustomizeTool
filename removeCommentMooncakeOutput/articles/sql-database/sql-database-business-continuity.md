@@ -8,9 +8,9 @@
    editor="monicar"/>
 
 <tags
-   ms.service="sql-database"
-   ms.date="07/14/2015"
-   wacn.date=""/>
+	ms.service="sql-database"
+	ms.date="07/14/2015"
+	wacn.date=""/>
 
 # Business Continuity Overview
 

@@ -77,7 +77,7 @@ Add-HPCIaaSNode.ps1 [-ServiceName] <String> [-ImageName] <String>
 
 * **DomainUserPassword*** Password of the domain user
 
-* **NodeNameSeries** (optional) 0 Naming pattern for the compute nodes. format must be &lt;*Root_Name*&gt;&lt;*Start_Number*&gt;%. For example, MyCN%10% means a series of the compute node names starting from MyCN11. If not specified, the script uses the configured node naming series in the HPC cluster.
+* **NodeNameSeries** (optional) 0 Naming pattern for the compute nodes. format must be &lt;*Root\_Name*&gt;&lt;*Start\_Number*&gt;%. For example, MyCN%10% means a series of the compute node names starting from MyCN11. If not specified, the script uses the configured node naming series in the HPC cluster.
 
 ### Example
 

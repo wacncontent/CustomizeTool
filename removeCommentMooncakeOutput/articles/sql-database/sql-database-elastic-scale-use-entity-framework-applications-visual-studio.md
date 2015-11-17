@@ -7,9 +7,9 @@
 	authors="sidneyh" 
 	editor=""/>
 
-<tags 
-	ms.service="sql-database" 
-	ms.date="07/24/2015" 
+<tags
+	ms.service="sql-database"
+	ms.date="07/24/2015"
 	wacn.date=""/>
 
 # Elastic Database client library with Entity Framework 

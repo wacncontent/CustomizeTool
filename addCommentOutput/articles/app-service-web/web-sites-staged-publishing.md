@@ -80,7 +80,6 @@ The web app must be running in the **Standard** <!-- deleted by customization or
 
 	![Deployment Slot Title][StagingTitle]
 5. Click the app URL in the slot's blade. Notice the the deployment slot has its own hostname and is also a live app. To limit public access to the deployment slot, see [Azure Websites Web App – block web access to non-production deployment slots](http://ruslany.net/2014/04/azure-web-sites-block-web-access-to-non-production-deployment-slots/).
-
 -->
 <!-- keep by customization: begin -->
 	

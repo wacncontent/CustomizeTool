@@ -75,3 +75,4 @@ A database named “sample_shard_2” and all necessary schema objects inside of
 
 
 [AZURE.INCLUDE [elastic-scale-include](../includes/elastic-scale-include.md)]
+ 

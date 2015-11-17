@@ -163,17 +163,12 @@ Before deploying the extension please check the latest extension version and rep
               "type": "MicrosoftMonitoringAgent",
               "typeHandlerVersion": "1.0",
               "settings": {
-                <!-- deleted by customization "workspaceId" --><!-- keep by customization: begin --> "workspace_name" <!-- keep by customization: end --> : <!-- deleted by customization "The --><!-- keep by customization: begin --> "Workspace Name : The <!-- keep by customization: end --> Workspace ID is available from within the Direct Agent Configuration section of the Azure Operational Insights portal"
+                "workspaceId" : "The Workspace ID is available from within the Direct Agent Configuration section of the Azure Operational Insights portal"
               }
               "protectedSettings": {
-                <!-- deleted by customization "workspaceKey" --><!-- keep by customization: begin --> "workspace_key" <!-- keep by customization: end -->  : "The Workspace Key is a string that is available from within the Direct Agent Configuration section of the Azure Operational Insights portal"
-<!-- keep by customization: begin -->
+                "workspaceKey"  : "The Workspace Key is a string that is available from within the Direct Agent Configuration section of the Azure Operational Insights portal"
               }
-<!-- keep by customization: end -->
               }
-<!-- deleted by customization
-              }
--->
             }
 
 ### McAfee EndpointSecurity

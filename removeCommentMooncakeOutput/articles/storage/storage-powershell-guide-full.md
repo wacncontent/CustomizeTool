@@ -8,7 +8,7 @@
 
 <tags
 	ms.service="storage"
-	ms.date="05/27/2015"
+	ms.date="09/27/2015"
 	wacn.date=""/>
 
 # Using Azure PowerShell with Azure Storage
@@ -107,14 +107,10 @@ See [Manage Accounts, Subscriptions, and Administrative Roles](https://msdn.micr
 
 		![Azure Management Portal][Image1]
 
-		<!--c. If you sign in to the [Azure Preview Portal](https://manage.windowsazure.cn/), in the Hub menu on the left, click **BROWSE**. Then, click **Everything**, click **Subscriptions**. Copy the name of subscription that you want to use while running the scripts in this guide. See the following screenshot as an example.
-
-		![Azure Preview Portal][Image2]-->
-
 
 	- **$StorageAccountName:** Use the given name in the script or enter a new name for your storage account. **Important:** The name of the storage account must be unique in Azure. It must be lowercase, too!
 
-	- **$Location:** Use the given "China North" in the script or choose other Azure locations, such as China East, and so on.
+	- **$Location:** Use the given "China North" in the script or choose other Azure locations, such as China East, China North, and so on.
 
 	- **$ContainerName:** Use the given name in the script or enter a new name for your container.
 
@@ -591,9 +587,9 @@ Your code de-queues a message from a queue in two steps. When you call the [Micr
     $Queue.CloudQueue.DeleteMessage($QueueMessage)
 
 ## How to manage Azure file shares and files
-Azure File storage offers shared storage for applications using the standard SMB 2.1 protocol. Windows Azure virtual machines and cloud services can share file data across application components via mounted shares, and on-premises applications can access file data in a share via the File storage API or Azure PowerShell.
+Azure File storage offers shared storage for applications using the standard SMB protocol. Windows Azure virtual machines and cloud services can share file data across application components via mounted shares, and on-premises applications can access file data in a share via the File storage API or Azure PowerShell.
 
-For more information on Azure File storage, see [How to use Azure File storage](/documentation/articles/storage-dotnet-how-to-use-files) and [File Service REST API](http://msdn.microsoft.com/zh-cn/library/azure/dn167006.aspx).
+For more information on Azure File storage, see [How to use Azure File storage with Windows](/documentation/articles/storage-dotnet-how-to-use-files) and [File Service REST API](http://msdn.microsoft.com/zh-cn/library/azure/dn167006.aspx).
 
 ## How to set and query storage analytics
 You can use [Azure Storage Analytics](/documentation/articles/storage-analytics) to collect metrics for your Azure storage accounts and log data about requests sent to your storage account. You can use storage metrics to monitor the health of a storage account, and storage logging to diagnose and troubleshoot issues with your storage account.
@@ -651,7 +647,7 @@ Use the Remove-AzureStorageTableStoredAccessPolicy cmdlet to delete a stored acc
 
 
 ## How to use Azure Storage for U.S. government and Azure China
-An Azure environment is an independent deployment of Windows Azure, such as [Azure Government for U.S. government](http://azure.microsoft.com/features/gov/), [AzureCloud for global Azure](https://manage.windowsazure.cn), and [AzureChinaCloud for Azure operated by 21Vianet in China](http://www.windowsazure.cn/). You can deploy new Azure environments for U.S government and Azure China.
+An Azure environment is an independent deployment of Windows Azure, such as [Azure Government for U.S. government](http://azure.microsoft.com/features/gov/), [AzureCloud for global Azure](https://manage.windowsazure.com), and [AzureChinaCloud for Azure operated by 21Vianet in China](http://www.windowsazure.cn/). You can deploy new Azure environments for U.S government and Azure China.
 
 To use Azure Storage with AzureChinaCloud, you need to create a storage context that is associated with AzureChinaCloud. Follow these steps to get you started:
 

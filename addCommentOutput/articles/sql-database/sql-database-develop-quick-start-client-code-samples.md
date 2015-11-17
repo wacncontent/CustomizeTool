@@ -82,10 +82,10 @@ This section provides links to code sample topics for client programs that run o
 ## See also
 
 
-- [Downloads for SDKs and tools, for numerous languages and <!-- deleted by customization platforms](/downloads/#cmd-line-tools) --><!-- keep by customization: begin --> platforms](http://azure.microsoft.com/ZH-CN/downloads/#cmd-line-tools) <!-- keep by customization: end -->
+- [Downloads for SDKs and tools, for numerous languages and platforms](/downloads/#cmd-line-tools)
 - [Connection Libraries for SQL Database and SQL Server](/documentation/articles/sql-database-libraries)
 - [List of numeric codes for transient errors](/documentation/articles/sql-database-develop-error-messages#bkmk_connection_errors)<br/>&nbsp;
-- [Azure SQL Database Development: How-to <!-- deleted by customization Topics](http://msdn.microsoft.com/zh-cn/library/azure/ee621787.aspx) --><!-- keep by customization: begin --> Topics](https://msdn.microsoft.com/zh-CN/library/azure/ee621787.aspx) <!-- keep by customization: end -->
+- [Azure SQL Database Development: How-to Topics](http://msdn.microsoft.com/zh-cn/library/azure/ee621787.aspx)
 - [Connecting to SQL Database: Links, Best Practices and Design Guidelines](/documentation/articles/sql-database-connect-central-recommendations)
 - [Create your first Azure SQL Database](/documentation/articles/sql-database-get-started)
 <!-- deleted by customization

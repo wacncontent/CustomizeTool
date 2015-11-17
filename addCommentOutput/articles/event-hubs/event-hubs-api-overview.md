@@ -13,11 +13,11 @@
 
 # Event Hubs API overview
 
-This article summarizes some of the key Event Hubs .NET client APIs. There are two categories: management and runtime APIs. Runtime APIs consist of all operations needed to send and receive a message. Management operations enable you to manage <!-- deleted by customization an --><!-- keep by customization: begin --> the <!-- keep by customization: end --> Event Hubs entity state by creating, updating, and deleting entities.
+This article summarizes some of the key Event Hubs .NET client APIs. There are two categories: management and runtime APIs. Runtime APIs consist of all operations needed to send and receive a message. Management operations enable you to manage an Event Hubs entity state by creating, updating, and deleting entities.
 
-Monitoring scenarios span both management and runtime. For detailed reference documentation on the .NET APIs, see the [.NET Class <!-- deleted by customization Library](https://msdn.microsoft.com/zh-cn/library/azure/mt419900.aspx) --><!-- keep by customization: begin --> Library](https://msdn.microsoft.com/zh-cn/library/jj933431.aspx) <!-- keep by customization: end --> and [EventProcessorHost <!-- deleted by customization API](https://msdn.microsoft.com/zh-cn/library/azure/mt445521.aspx) --><!-- keep by customization: begin --> API](https://msdn.microsoft.com/zh-cn/library/microsoft.servicebus.messaging.aspx) <!-- keep by customization: end --> references.
+Monitoring scenarios span both management and runtime. For detailed reference documentation on the .NET APIs, see the [.NET Class Library](https://msdn.microsoft.com/zh-cn/library/azure/mt419900.aspx) and [EventProcessorHost API](https://msdn.microsoft.com/zh-cn/library/azure/mt445521.aspx) references.
 
-## Management <!-- deleted by customization APIs --><!-- keep by customization: begin --> API <!-- keep by customization: end -->
+## Management APIs
 
 To perform the following management operations you must have **Manage** permissions on the Service Bus namespace:
 
@@ -46,12 +46,7 @@ namespaceManager.UpdateEventHubAsync(ehd).Wait();
 ### Delete
 
 ```
-<!-- deleted by customization
 namespaceManager.DeleteEventHubAsync("Event Hub name").Wait();
--->
-<!-- keep by customization: begin -->
-namespaceManager.DeleteEventHubAsync("event hub name").Wait();
-<!-- keep by customization: end -->
 ```
 
 ## Runtime APIs
@@ -60,12 +55,7 @@ namespaceManager.DeleteEventHubAsync("event hub name").Wait();
 
 ```
 // EventHubClient model (uses implicit factory instance, so all links on same connection)
-<!-- deleted by customization
 EventHubClient eventHubClient = EventHubClient.Create("Event Hub name");
--->
-<!-- keep by customization: begin -->
-EventHubClient eventHubClient = EventHubClient.Create("event hub name");
-<!-- keep by customization: end -->
 ```
 
 ### Publish message
@@ -121,7 +111,7 @@ msg = UnicodeEncoding.UTF8.GetString(info);
 
 ## Event processor host APIs
 
-These APIs provide resiliency to worker processes that may become unavailable, <!-- deleted by customization by --><!-- keep by customization: begin --> but <!-- keep by customization: end --> distributing shards across available workers.
+These APIs provide resiliency to worker processes that may become unavailable, by distributing shards across available workers.
 
 ```
 // Checkpointing is done within the SimpleEventProcessor and on a per-consumerGroup per-partition basis, workers resume from where they last left off.
@@ -137,7 +127,7 @@ EventProcessorHost host = new EventProcessorHost(WorkerName, EventHubName, defau
 host.UnregisterEventProcessorAsync().Wait();   
 ```
 
-The <!-- deleted by customization [IEventProcessor](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.ieventprocessor.aspx) --><!-- keep by customization: begin --> [IEventProcessor](https://msdn.microsoft.com/zh-cn/library/microsoft.servicebus.messaging.ieventprocessor.aspx) <!-- keep by customization: end --> interface is defined as follows:
+The [IEventProcessor](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.ieventprocessor.aspx) interface is defined as follows:
 
 ```
 public class SimpleEventProcessor : IEventProcessor
@@ -184,28 +174,12 @@ public class SimpleEventProcessor : IEventProcessor
 
 To learn more about Event Hubs scenarios, visit these links:
 
-<!-- deleted by customization
 - [What is Azure Event Hubs?](/documentation/articles/event-hubs-what-is-event-hubs)
--->
-<!-- keep by customization: begin -->
-- [Event Hubs programming guide](/documentation/articles/event-hubs-programming-guide)
-<!-- keep by customization: end -->
 - [Event Hubs overview](/documentation/articles/event-hubs-overview)
-<!-- deleted by customization
 - [Event Hubs programming guide](/documentation/articles/event-hubs-programming-guide)
 - [Event Hubs code samples](http://code.msdn.microsoft.com/site/search?query=event hub&f[0].Value=event hubs&f[0].Type=SearchText&ac=5)
--->
-<!-- keep by customization: begin -->
-- [Event Hubs Code Samples](http://code.msdn.microsoft.com/site/search?query=event hub&f[0].Value=event hub&f[0].Type=SearchText&ac=5)
-<!-- keep by customization: end -->
 
 The .NET API references are here:
 
-- [Service Bus and Event Hubs .NET API <!-- deleted by customization reference](https://msdn.microsoft.com/zh-cn/library/azure/mt419900.aspx) --><!-- keep by customization: begin --> reference](https://msdn.microsoft.com/zh-cn/library/jj933424.aspx) <!-- keep by customization: end -->
-<!-- deleted by customization
+- [Service Bus and Event Hubs .NET API reference](https://msdn.microsoft.com/zh-cn/library/azure/mt419900.aspx)
 - [Event processor host API reference](https://msdn.microsoft.com/zh-cn/library/azure/mt445521.aspx)
--->
-<!-- keep by customization: begin -->
-- [Event processor host API reference](https://msdn.microsoft.com/zh-cn/library/microsoft.servicebus.messaging.eventprocessorhost.aspx)
-- 
-<!-- keep by customization: end -->

@@ -8,9 +8,9 @@
    editor=""/>
 
 <tags
-   ms.service="billing"
-   ms.date="07/07/2015"
-   wacn.date=""/>
+	ms.service="billing"
+	ms.date="07/07/2015"
+	wacn.date=""/>
 
 # Gain insights into your Windows Azure resource consumption 
 

@@ -12,42 +12,35 @@
 	ms.date="10/05/2015"
 	wacn.date=""/>
 
-# SharePoint Server Farm configuration details
 
+# SharePoint Server Farm configuration details
 <!-- deleted by customization
+
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
  
+-->
 
 SharePoint Server Farm is a feature of the Azure preview portal that automatically creates a preconfigured SharePoint Server 2013 farm for you. There are two farm configurations:
--->
-<!-- keep by customization: begin -->
-SharePoint Server Farm is a feature of the Windows Azure Management Portal that automatically creates a pre-configured SharePoint Server 2013 farm for you. There are two farm configurations:
-<!-- keep by customization: end -->
 
 - Basic
 - High-availability
 
 The following sections provide configuration details for each farm.
 
-For additional information, see [SharePoint Server <!-- deleted by customization Farm](/documentation/articles/virtual-machines-sharepoint-farm-azure-preview) --><!-- keep by customization: begin --> Farm](/documentation/articles/virtual-machines-sharepoint-farm-azure-preview/) <!-- keep by customization: end -->.
+For additional information, see [SharePoint Server Farm](/documentation/articles/virtual-machines-sharepoint-farm-azure-preview).
 
 ## Basic SharePoint farm
 
-The basic SharePoint farm consists of three virtual machines in <!-- deleted by customization this --><!-- keep by customization: begin --> the following <!-- keep by customization: end --> configuration:
+The basic SharePoint farm consists of three virtual machines in this configuration:
 
 ![sharepointfarm](./media/virtual-machines-sharepoint-farm-config-azure-preview/SPFarm_Basic.png)
 
 Here are the configuration details:
 
--	Azure <!-- deleted by customization subscription --><!-- keep by customization: begin --> Subscription <!-- keep by customization: end -->: Specified during the initial configuration.
-<!-- deleted by customization
+-	Azure subscription: Specified during the initial configuration.
 -	Azure domain names (also known as cloud services): Separate domain names are automatically created for each virtual machine.
--->
-<!-- keep by customization: begin -->
--	Azure Domain Names (also known as cloud services): Separate Domain Names are automatically created for each virtual machine.
-<!-- keep by customization: end -->
 -	Storage account: Specified during the initial configuration.
--	Virtual network <!-- deleted by customization: -->
+-	Virtual network:
 	-   Type: Cloud-only
     -	Address space: 10.0.0.0/26
 
@@ -56,18 +49,18 @@ Here are the configuration details:
 	-	*HostNamePrefix*-SQL (SQL Server 2014 server)
 	-	*HostNamePrefix*-SP (SharePoint 2013 server)
 
-- Domain controller <!-- deleted by customization: -->
+- Domain controller:
 	-	Virtual machine image: Windows Server 2012 R2.
 	-	Host name prefix: Specified during the initial configuration.
-	-	Size: A1 (default) <!-- deleted by customization. -->
-	-	Domain name: contoso.com (default) <!-- deleted by customization. -->
+	-	Size: A1 (default).
+	-	Domain name: contoso.com (default).
 	-	Domain administrator account name: Specified during the initial configuration.
 	-	Domain administrator account password: Specified during the initial configuration.
 
 - Database server
 	-	Virtual machine image: SQL Server 2014 RTM Enterprise on Windows Server 2012 R2.
 	-	Host name prefix: Specified during the initial configuration.
-	-	Size: A5 (default) <!-- deleted by customization. -->
+	-	Size: A5 (default).
 	-	Database access account name: Specified during the initial configuration.
 	-	Database access account password: Specified during the initial configuration.
 	-	SQL Server service account name: sqlservice (default).
@@ -76,7 +69,7 @@ Here are the configuration details:
 - SharePoint server
 	-	Virtual machine image: SharePoint Server 2013 Trial.
 	-	Host name prefix: Specified during the initial configuration.
-	-	Size: A2 (default) <!-- deleted by customization. -->
+	-	Size: A2 (default).
 	-	SharePoint farm account name: sp_farm (default).
 	-	SharePoint farm account password: Specified during the initial configuration.
 	-	SharePoint farm passphrase: Specified during the initial configuration.
@@ -87,9 +80,10 @@ Here are the configuration details:
 The high-availability SharePoint farm consists of nine virtual machines in this configuration:
 
 ![sharepointfarm](./media/virtual-machines-sharepoint-farm-config-azure-preview/SPFarm_HighAvail.png)
+
 Here are the configuration details:
 
--	Azure <!-- deleted by customization subscription --><!-- keep by customization: begin --> Subscription <!-- keep by customization: end -->: Specified during the initial configuration.
+-	Azure subscription: Specified during the initial configuration.
 -	Azure domain names (also known as cloud services): Separate domain names are created according to the figure above.
 -	Storage account: Specified during the initial configuration.
 -	Virtual network:
@@ -118,7 +112,7 @@ Here are the configuration details:
 -	Database servers:
 	-	Virtual machine image: SQL Server 2014 RTM Enterprise on Windows Server 2012 R2.
 	-	Host name prefix: Specified during the initial configuration.
-	-	Size: A5 (default) for database servers, A0 (default) for the file share witness <!-- deleted by customization (SQL0) -->.
+	-	Size: A5 (default) for database servers, A0 (default) for the file share witness (SQL0).
 	-	Database access account name: Specified during the initial configuration.
 	-	Database access account password: Specified during the initial configuration.
 	-	SQL Server service account name: sqlservice (default).
@@ -142,11 +136,6 @@ The SharePoint Server Farm feature of the Azure preview portal creates virtual m
 
 [SharePoint Server Farm](/documentation/articles/virtual-machines-sharepoint-farm-azure-preview)
 
-<!-- deleted by customization
 [SharePoint farms hosted in Azure infrastructure services](/documentation/articles/virtual-machines-sharepoint-infrastructure-services)
--->
-<!-- keep by customization: begin -->
-[SharePoint on Azure Virtual Machines](http://msdn.microsoft.com/zh-cn/library/azure/dn275955.aspx)
-<!-- keep by customization: end -->
 
 [Set up a SharePoint intranet farm in a hybrid cloud for testing](/documentation/articles/virtual-networks-setup-sharepoint-hybrid-cloud-testing)

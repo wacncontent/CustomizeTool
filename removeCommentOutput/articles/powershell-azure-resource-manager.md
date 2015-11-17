@@ -128,16 +128,16 @@ To limit your output to the supported locations for a specific type of of resour
 The output will be similar to:
 
     Brazil South
-    East Asia
+    China East
     China East
     Japan East
-    Japan West
+    China East
     China North
     China North
     China East
     West Europe
     China North
-    Southeast Asia
+    China North
     China North
     China East 2
 
@@ -152,9 +152,9 @@ Let's run the same command for the database:
     China North
     China North
     China East
-    East Asia
-    Southeast Asia
-    Japan West
+    China East
+    China North
+    China East
     Japan East
     China North
     West Europe
@@ -175,7 +175,7 @@ the location.
     PS C:\> New-AzureRmResourceGroup -Name TestRG1 -Location "China North"
     
     ResourceGroupName : TestRG1
-    Location          : westus
+    Location          : chinanorth
     ProvisioningState : Succeeded
     Tags              :
     Permissions       :
@@ -395,7 +395,7 @@ After creating a resource group, you can use the cmdlets in the Resource Manager
 		PS C:>Get-AzureRmResourceGroup
 
 		ResourceGroupName : TestRG
-		Location          : westus
+		Location          : chinanorth
 		ProvisioningState : Succeeded
 		Tags              :
 		ResourceId        : /subscriptions/{guid}/resourceGroups/TestRG
@@ -412,7 +412,7 @@ After creating a resource group, you can use the cmdlets in the Resource Manager
                 ResourceType      : Microsoft.Sql/servers
                 Kind              : v12.0
                 ResourceGroupName : TestRG1
-                Location          : westus
+                Location          : chinanorth
                 SubscriptionId    : {guid}
                 
                 ...
@@ -446,8 +446,8 @@ You can move existing resources to a new resource group. For examples, see [Move
 
 ## Next Steps
 
-- To learn about creating Resource Manager templates, see [Authoring Azure Resource Manager Templates](./resource-group-authoring-templates.md).
-- To learn about deploying templates, see [Deploy an application with Azure Resource Manager Template](./resource-group-template-deploy.md).
+- To learn about creating Resource Manager templates, see [Authoring Azure Resource Manager Templates](/documentation/articles/resource-group-authoring-templates).
+- To learn about deploying templates, see [Deploy an application with Azure Resource Manager Template](/documentation/articles/resource-group-template-deploy).
 - For a detailed example of deploying a project, see [Deploy microservices predictably in Azure](/documentation/articles/app-service-deploy-complex-application-predictably).
-- To learn about troubleshooting a deployment that failed, see [Troubleshooting resource group deployments in Azure](./virtual-machines/resource-group-deploy-debug.md).
+- To learn about troubleshooting a deployment that failed, see [Troubleshooting resource group deployments in Azure](/documentation/articles/resource-group-deploy-debug).
 

@@ -60,23 +60,13 @@ For a list of valid Azure SQL Database server locations run the following cmdlet
 
 If you already have a resource group you can jump ahead to create a server, or you can edit and run the following command to create a new resource group:
 
-<!-- deleted by customization
-	New-AzureRMResourceGroup -Name "resourcegroupJapanWest" -Location "Japan West"
--->
-<!-- keep by customization: begin -->
 	New-AzureRMResourceGroup -Name "resourcegroupChinaEast" -Location "China East"
-<!-- keep by customization: end -->
 
 ## Create a server 
 
 To create a new V12 server use the [New-AzureRMSqlServer](https://msdn.microsoft.com/zh-cn/library/azure/mt603715.aspx) cmdlet. Replace server12 with the name for your server. It must be unique to Azure SQL Servers so you will get an error here if the server name is already taken. Also worth noting is that this command may take several minutes to complete. The server details and PowerShell prompt will appear after the server is successfully created. You can edit the  command to use any valid location.
 
-<!-- deleted by customization
-	New-AzureRMSqlServer -ResourceGroupName "resourcegroupJapanWest" -ServerName "server12" -Location "Japan West" -ServerVersion "12.0"
--->
-<!-- keep by customization: begin -->
 	New-AzureRMSqlServer -ResourceGroupName "resourcegroupChinaEast" -ServerName "server12" -Location "China East" -ServerVersion "12.0"
-<!-- keep by customization: end -->
 
 When you run this command a window opens asking for a **User name** and **Password**. This is  not your Azure credentials, enter the user name and password that will be the administrator credentials you want to create for the new server.
 
@@ -86,7 +76,7 @@ To create a firewall rule to access the server use the [New-AzureRMSqlServerFire
 
 If your server needs to allow access to other Azure services, add the **-AllowAllAzureIPs** switch that will add a special firewall rule and allow all azure traffic access to the server.
 
-	New-AzureRMSqlServerFirewallRule -ResourceGroupName <!-- deleted by customization "resourcegroupJapanWest" --><!-- keep by customization: begin --> "resourcegroupChinaEast" <!-- keep by customization: end --> -ServerName "server12" -FirewallRuleName "clientFirewallRule1" -StartIpAddress "192.168.0.198" -EndIpAddress "192.168.0.199"
+	New-AzureRMSqlServerFirewallRule -ResourceGroupName "resourcegroupChinaEast" -ServerName "server12" -FirewallRuleName "clientFirewallRule1" -StartIpAddress "192.168.0.198" -EndIpAddress "192.168.0.199"
 
 For more information, see [Azure SQL Database Firewall](https://msdn.microsoft.com/zh-cn/library/azure/ee621782.aspx).
 
@@ -94,37 +84,27 @@ For more information, see [Azure SQL Database Firewall](https://msdn.microsoft.c
 
 To create a database use the [New-AzureRMSqlDatabase](https://msdn.microsoft.com/zh-cn/library/azure/mt619339.aspx) command. You need a server to create a database. The following example creates a SQL database named TestDB12. The database is created as a Standard S1 database.
 
-	New-AzureRMSqlDatabase -ResourceGroupName <!-- deleted by customization "resourcegroupJapanWest" --><!-- keep by customization: begin --> "resourcegroupChinaEast" <!-- keep by customization: end --> -ServerName "server12" -DatabaseName "TestDB12" -Edition Standard -RequestedServiceObjectiveName "S1"
+	New-AzureRMSqlDatabase -ResourceGroupName "resourcegroupChinaEast" -ServerName "server12" -DatabaseName "TestDB12" -Edition Standard -RequestedServiceObjectiveName "S1"
 
 
 ## Change the performance level of a SQL database
 
 You can scale your database up or down with the [Set-AzureRMSqlDatabase](https://msdn.microsoft.com/zh-cn/library/azure/mt619433.aspx) command. The following example scales up a SQL database named TestDB12 from its current performance level to a Standard S3 level.
 
-	Set-AzureRMSqlDatabase -ResourceGroupName <!-- deleted by customization "resourcegroupJapanWest" --><!-- keep by customization: begin --> "resourcegroupChinaEast" <!-- keep by customization: end --> -ServerName "server12" -DatabaseName "TestDB12" -Edition Standard -RequestedServiceObjectiveName "S3"
+	Set-AzureRMSqlDatabase -ResourceGroupName "resourcegroupChinaEast" -ServerName "server12" -DatabaseName "TestDB12" -Edition Standard -RequestedServiceObjectiveName "S3"
 
 
 ## Delete a SQL database
 
 You can delete a SQL database with the [Remove-AzureRMSqlDatabase](https://msdn.microsoft.com/zh-cn/library/azure/mt619368.aspx) command. The following example deletes a SQL database named TestDB12.
 
-<!-- deleted by customization
-	Remove-AzureRMSqlDatabase -ResourceGroupName "resourcegroupJapanWest" -ServerName "server12" -DatabaseName "TestDB12"
--->
-<!-- keep by customization: begin -->
 	Remove-AzureRMSqlDatabase -ResourceGroupName "resourcegroupChinaEast" -ServerName "server12" -DatabaseName "TestDB12"
-<!-- keep by customization: end -->
 
 ## Delete a server
 
 You can also delete a server with the [Remove-AzureRMSqlServer](https://msdn.microsoft.com/zh-cn/library/azure/mt603488.aspx) command. The following example deletes a server named server12.
 
-<!-- deleted by customization
-	Remove-AzureRMSqlServer -ResourceGroupName "resourcegroupJapanWest" -ServerName "server12"
--->
-<!-- keep by customization: begin -->
 	Remove-AzureRMSqlServer -ResourceGroupName "resourcegroupChinaEast" -ServerName "server12"
-<!-- keep by customization: end -->
 
 
 

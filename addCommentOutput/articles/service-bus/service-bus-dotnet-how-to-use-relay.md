@@ -95,6 +95,7 @@ To install the NuGet package in your application, do the following:
 
 	![](./media/service-bus-dotnet-how-to-use-relay/getting-started-multi-tier-13.png)
 
+
 ## Use Service Bus to expose and consume a SOAP web service with TCP
 
 To expose an existing WCF SOAP web service for external consumption, you must make changes to the service bindings and addresses. This may require changes to your configuration file or it could require code changes, depending on how you have set up and configured your WCF services. Note that WCF allows you to have multiple network endpoints over the same service, so you can retain the existing internal endpoints while adding Service Bus endpoints for external access at the same time.

@@ -54,12 +54,7 @@ The name of the Azure subscription that you want to create the website in.
 
 ## WebDeployPackage
 
-<!-- deleted by customization
 The path to the web deployment package to publish to the website. You can create this package by using the Publish Web wizard in Visual Studio. For more information, see [Get started with Azure Cloud Services and ASP.NET](/documentation/articles/vs-azure-tools-publish-webapplicationwebsite-windows-powershell-script/).
--->
-<!-- keep by customization: begin -->
-The path to the web deployment package to publish to the website. You can create this package by using the Publish Web wizard in Visual Studio. See [How to: Create a Web Deployment Package in Visual Studio](/documentation/articles/vs-azure-tools-publish-webapplicationwebsite-windows-powershell-script/).
-<!-- keep by customization: end -->
 
 |Parameter|Default value|
 |---|---|
@@ -98,7 +93,7 @@ If true, print messages from the script to the output stream.
 
 ## Remarks
 
-For a complete explanation of how to use the script to create Dev and Test environments, see [Using Windows PowerShell Scripts to Publish to Dev and Test <!-- deleted by customization Environments](/documentation/articles/vs-azure-tools-publishing-using-powershell-scripts) --><!-- keep by customization: begin --> Environments](https://msdn.microsoft.com/zh-cn/library/azure/dn642480.aspx) <!-- keep by customization: end -->.
+For a complete explanation of how to use the script to create Dev and Test environments, see [Using Windows PowerShell Scripts to Publish to Dev and Test Environments](/documentation/articles/vs-azure-tools-publishing-using-powershell-scripts).
 
 The JSON configuration file specifies the details of what is to be deployed. It includes the information that you specified when you created the project, such as the name and username for the website. It also includes the database to provision, if any. The following code shows an example JSON configuration file:
 
@@ -128,9 +123,4 @@ You can edit the JSON configuration file to change what is deployed. A webSite s
 
 ## Next steps
 
-<!-- deleted by customization
 For more information, see [Publish-WebApplicationVM (Windows PowerShell script)](/documentation/articles/vs-azure-tools-publish-webapplicationvm)
--->
-<!-- keep by customization: begin -->
-[Publish-WebApplicationVM (Windows PowerShell script)](https://msdn.microsoft.com/zh-cn/library/azure/dn689112.aspx)
-<!-- keep by customization: end -->

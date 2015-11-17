@@ -8,17 +8,12 @@
 	editor=""/>
 
 <tags
-      ms.service="notification-hubs" 
-      ms.date="07/17/2015" 
-      wacn.date="" />
-
+	ms.service="notification-hubs"
+	ms.date="07/17/2015"
+	wacn.date=""/>
 
 # How to use Notification Hubs from Python
-> [AZURE.SELECTOR] 
-- [Java](/documentation/articles/notification-hubs-php-backend-how-to)
-- [PHP](/documentation/articles/notification-hubs-python-backend-how-to)
-- [Python](/documentation/articles/notification-hubs-nodejs-how-to-use-notification-hubs)
-- [Node.js](/documentation/articles/notification-hubs-nodejs-how-to-use-notification-hubs)
+[AZURE.INCLUDE [notification-hubs-backend-how-to-selector](../includes/notification-hubs-backend-how-to-selector.md)]
 		
 You can access all Notification Hubs features from a Java/PHP/Python/Ruby back-end using the Notification Hub REST interface as described in the MSDN topic [Notification Hubs REST APIs](http://msdn.microsoft.com/zh-cn/library/dn223264.aspx).
 
@@ -342,9 +337,9 @@ In this topic we showed how to create a simple Python REST client for Notificati
 
 <!-- URLs -->
 [Python REST wrapper sample]: https://github.com/Azure/azure-notificationhubs-samples/tree/master/notificationhubs-rest-python
-[Get started tutorial]: /documentation/articles/notification-hubs-windows-store-dotnet-get-started
-[Breaking News tutorial]: /documentation/articles/notification-hubs-windows-store-dotnet-send-breaking-news
-[Localizing News tutorial]:/documentation/articles/notification-hubs-windows-store-dotnet-send-localized-breaking-news
+[Get started tutorial]: /documentation/articles/notification-hubs-windows-store-dotnet-get-started/
+[Breaking News tutorial]: /documentation/articles/notification-hubs-windows-store-dotnet-send-breaking-news/
+[Localizing News tutorial]: /documentation/articles/notification-hubs-windows-store-dotnet-send-localized-breaking-news/
 
 <!-- Images. -->
 [1]: ./media/notification-hubs-python-backend-how-to/DetailedLoggingInfo.png
@@ -352,3 +347,4 @@ In this topic we showed how to create a simple Python REST client for Notificati
 [3]: ./media/notification-hubs-python-backend-how-to/SendWithOneTag.png
 [4]: ./media/notification-hubs-python-backend-how-to/SendWithMultipleTags.png
 [5]: ./media/notification-hubs-python-backend-how-to/TemplatedNotification.png
+ 

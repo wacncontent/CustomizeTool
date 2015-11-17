@@ -613,6 +613,7 @@ While the steps in this article describe using the Table Service to store inform
 
 [Node.js web app with MongoDB]: /documentation/articles/web-sites-nodejs-store-data-mongodb
 [Azure CLI]: /documentation/articles/xplat-cli-install
+
 [Continuous deployment using GIT in Azure Websites]: /documentation/articles/web-sites-publish-source-control
 [azure]: https://github.com/Azure/azure-sdk-for-node
 [node-uuid]: https://www.npmjs.com/package/node-uuid
@@ -636,3 +637,4 @@ While the steps in this article describe using the Table Service to store inform
 [app-settings]: ./media/storage-nodejs-use-table-storage-web-site/storage-tasks-appsettings.png
 
 [Create and deploy a Node.js application to an Azure Web Site]: /documentation/articles/web-sites-nodejs-develop-deploy-mac
+ 

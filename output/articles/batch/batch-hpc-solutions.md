@@ -48,7 +48,7 @@ You can readily migrate many applications that are designed to run in on-premise
 
 * **Data access** - Data access techniques commonly available within an enterprise network cluster, such as NFS, may require special configuration in the cloud, or you might need to adopt different data access practices and patterns for the cloud.
 
-* **Data movement** - For applications that process large amounts of data, strategies are needed to move the data into cloud storage and to compute resources, and you might need to consider high-speed cross-premises networking such as [Azure ExpressRoute](/home/features/expressroute/). Also consider legal, regulatory, or policy limitations for storing or accessing that data.
+* **Data movement** - For applications that process large amounts of data, strategies are needed to move the data into cloud storage and to compute resources, and you might need to consider high-speed cross-premises networking <!-- deleted by customization such as [Azure ExpressRoute](/home/features/expressroute/) -->. Also consider legal, regulatory, or policy limitations for storing or accessing that data.
 
 
 * **Licensing** - Check with the vendor of any commercial application for licensing or other restrictions for running in the cloud. Not all vendors offer pay-as-you-go licensing. You might need to plan for a licensing server in the cloud for your solution, or a connection to an on-premises license server.
@@ -101,7 +101,7 @@ Compute services in Azure are at the core of a Big Compute solution. The compute
 Service | Description
 ------------- | -----------
 **[Cloud services](/documentation/services/cloud-services)**<br/><br/> |• Can run Big Compute applications in worker role instances, which are virtual machines running a version of Windows Server and are managed entirely by Azure<br/><br/>• Enable scalable, reliable applications with low administrative overhead, running in a platform as a service (PaaS) model<br/><br/>• May require additional tools or development to integrate with on-premises HPC cluster solutions
-**[Virtual machines](/documentation/services/virtual-machines)**<br/><br/> |• Provide compute infrastructure as a service (IaaS) using Microsoft Hyper-V technology<br/><br/>• Enable you to flexibly provision and manage persistent cloud computers from standard Windows Server or Linux images, or images and data disks you supply or from the [Azure Marketplace](https://azure.microsoft.com/marketplace/)<br/><br/>• Run on-premises compute cluster tools and applications entirely in the cloud
+**[Virtual <!-- deleted by customization machines](/documentation/services/virtual-machines)**<br/><br/> --><!-- keep by customization: begin --> machines](http://www.windowsazure.cn/documentation/services/virtual-machines)**<br/><br/> <!-- keep by customization: end --> |• Provide compute infrastructure as a service (IaaS) using Microsoft Hyper-V technology<br/><br/>• Enable you to flexibly provision and manage persistent cloud computers from standard Windows Server or Linux images, or images and data disks you <!-- deleted by customization supply or from the [Azure Marketplace](https://azure.microsoft.com/marketplace/)<br/><br/>• --><!-- keep by customization: begin --> supply<br/><br/>• <!-- keep by customization: end --> Run on-premises compute cluster tools and applications entirely in the cloud
 **[Batch](/documentation/services/batch)**<br/><br/> |• Runs large-scale parallel and batch workloads such as image rendering and media encoding and transcoding in a fully managed service<br/><br/>• Provides job scheduling and autoscaling of a managed pool of virtual machines<br/><br/>• Allows developers to build and run applications as a service or cloud-enable existing applications<br/>
 
 ### Storage services
@@ -129,8 +129,10 @@ Some Big Compute scenarios involve large-scale data flows, or generate data that
 Your Big Compute solution might need to include other Azure infrastructure and platform services to connect to resources on-premises or in other environments. Examples include:
 
 * [Virtual Network](/documentation/services/virtual-network) - Creates a logically isolated section in Azure to connect Azure resources to your on-premises data center or a single client machine using IPSec; allows Big Compute applications to access on-premises data, Active Directory services, and license servers
+<!-- deleted by customization
 
 * [ExpressRoute](/documentation/services/expressroute) - Creates a private connection between Microsoft data centers and infrastructure that’s on-premises or in a co-location environment, with higher security, more reliability, faster speeds, and lower latencies than typical connections over the Internet.
+-->
 
 * [Service Bus](/documentation/services/service-bus) - Provides several mechanisms for applications to communicate or exchange data, whether they are located on Azure, on another cloud platform, or in a data center.
 

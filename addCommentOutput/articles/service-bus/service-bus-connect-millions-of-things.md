@@ -24,27 +24,18 @@ Smart and connected "things" increasingly proliferate in modern technology ecosy
 - [Introduction to Service Bus](/home/features/service-bus/)
  
 ## Build
+
 - [Partitioning messaging entities](/documentation/articles/service-bus-partitioning)
-<!-- deleted by customization
 - [Service Bus topics](/documentation/articles/service-bus-dotnet-how-to-use-topics-subscriptions)
-- [Using Apache Qpid Proton C with Azure Service Bus on Linux and Windows](http://msdn.microsoft.com/zh-cn/library/dn235560.aspx)
--->
-<!-- keep by customization: begin -->
-- [Service Bus Topics](/documentation/articles/service-bus-dotnet-how-to-use-topics-subscriptions)
-- [Using Apache Qpid Proton C with Azure Service Bus on Linux and Windows](http://msdn.microsoft.com/zh-cn/library/azure/dn235560.aspx)
-<!-- keep by customization: end -->
+- [Using Apache Qpid Proton C with Azure Service Bus on Linux and Windows](http://msdn.microsoft.com/zh-cn/library/dn235560.aspx) 
  
 ## Popular
 
 - [Service Assisted Communication for Connected Devices](http://blogs.msdn.com/b/clemensv/archive/2014/02/10/service-assisted-communication-for-connected-devices.aspx)
 
 ## Related services
+
 - [Internet of Things (Microsoft blog post announcement)](http://blogs.microsoft.com/iot/2015/03/16/microsoft-announces-azure-iot-suite)
 - [Azure Active Directory](/home/features/identity/)
-<!-- deleted by customization
 - [Cloud Services](/home/features/cloud-services/) 
--->
-<!-- keep by customization: begin -->
-- [Cloud Services](/home/features/identity/) 
-
-<!-- keep by customization: end -->
+ 

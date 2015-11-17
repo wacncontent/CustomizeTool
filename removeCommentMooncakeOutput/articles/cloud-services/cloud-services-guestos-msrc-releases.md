@@ -8,9 +8,9 @@
    editor=""/>
 
 <tags
-   ms.service="cloud-services"
-   ms.date="10/18/2015"
-   wacn.dater=""/>
+	ms.service="cloud-services"
+	ms.date="10/18/2015"
+	wacn.date=""/>
 
 # Azure Guest OS 
 
@@ -178,122 +178,125 @@ The following tables show the Microsoft Security Response Center (MSRC) updates 
 | N/A         | [2999802][2999802]  | Solid lines instead of dotted lines are printed in Windows | 4.15, 3.22, 2.34 | Jan 13 2015 |
 | N/A         | [2896881][2896881]  | Long logon time when you use the AddPrinterConnection VBScript command to map printers for users during logon process in Windows | 4.15, 3.22, 2.34 | Jan 13 2015 |
 
-[3096441]: http://support.microsoft.com/zh-cn/kb/3096441
-[3089659]: http://support.microsoft.com/zh-cn/kb/3089659
-[3096443]: http://support.microsoft.com/zh-cn/kb/3096443
-[3096447]: http://support.microsoft.com/zh-cn/kb/3096447
-[3092627]: http://support.microsoft.com/zh-cn/kb/3092627
-[3088903]: http://support.microsoft.com/zh-cn/kb/3088903
-[3089548]: http://support.microsoft.com/zh-cn/kb/3089548
-[3072595]: http://support.microsoft.com/zh-cn/kb/3072595
-[3089656]: http://support.microsoft.com/zh-cn/kb/3089656
-[3089669]: http://support.microsoft.com/zh-cn/kb/3089669
-[3089657]: http://support.microsoft.com/zh-cn/kb/3089657
-[3091287]: http://support.microsoft.com/zh-cn/kb/3091287
-[3089662]: http://support.microsoft.com/zh-cn/kb/3089662
-[3082442]: http://support.microsoft.com/zh-cn/kb/3082442
-[3078662]: http://support.microsoft.com/zh-cn/kb/3078662
-[3080348]: http://support.microsoft.com/zh-cn/kb/3080348
-[3080129]: http://support.microsoft.com/zh-cn/kb/3080129
-[3082487]: http://support.microsoft.com/zh-cn/kb/3082487
-[3082458]: http://support.microsoft.com/zh-cn/kb/3082458
-[3060716]: http://support.microsoft.com/zh-cn/kb/3060716
-[3076949]: http://support.microsoft.com/zh-cn/kb/3076949
-[3086251]: http://support.microsoft.com/zh-cn/kb/3086251
+
+[3096441]: http://support.microsoft.com/kb/3096441
+[3089659]: http://support.microsoft.com/kb/3089659
+[3096443]: http://support.microsoft.com/kb/3096443
+[3096447]: http://support.microsoft.com/kb/3096447
+[3092627]: http://support.microsoft.com/kb/3092627
+
+[3088903]: http://support.microsoft.com/kb/3088903
+[3089548]: http://support.microsoft.com/kb/3089548
+[3072595]: http://support.microsoft.com/kb/3072595
+[3089656]: http://support.microsoft.com/kb/3089656
+[3089669]: http://support.microsoft.com/kb/3089669
+[3089657]: http://support.microsoft.com/kb/3089657
+[3091287]: http://support.microsoft.com/kb/3091287
+[3089662]: http://support.microsoft.com/kb/3089662
+
+[3082442]: http://support.microsoft.com/kb/3082442
+[3078662]: http://support.microsoft.com/kb/3078662
+[3080348]: http://support.microsoft.com/kb/3080348
+[3080129]: http://support.microsoft.com/kb/3080129
+[3082487]: http://support.microsoft.com/kb/3082487
+[3082458]: http://support.microsoft.com/kb/3082458
+[3060716]: http://support.microsoft.com/kb/3060716
+[3076949]: http://support.microsoft.com/kb/3076949
+[3086251]: http://support.microsoft.com/kb/3086251
 
 
-[3076321]: http://support.microsoft.com/zh-cn/kb/3076321
-[3072604]: http://support.microsoft.com/zh-cn/kb/3072604
-[3073094]: http://support.microsoft.com/zh-cn/kb/3073094
-[3072000]: http://support.microsoft.com/zh-cn/kb/3072000
-[3072631]: http://support.microsoft.com/zh-cn/kb/3072631
-[3068457]: http://support.microsoft.com/zh-cn/kb/3068457
-[3069392]: http://support.microsoft.com/zh-cn/kb/3069392
-[3070102]: http://support.microsoft.com/zh-cn/kb/3070102
-[3072630]: http://support.microsoft.com/zh-cn/kb/3072630
-[3072633]: http://support.microsoft.com/zh-cn/kb/3072633
-[3067505]: http://support.microsoft.com/zh-cn/kb/3067505
-[3077657]: http://support.microsoft.com/zh-cn/kb/3077657
-[3057154]: http://support.microsoft.com/zh-cn/kb/3057154
+[3076321]: http://support.microsoft.com/kb/3076321
+[3072604]: http://support.microsoft.com/kb/3072604
+[3073094]: http://support.microsoft.com/kb/3073094
+[3072000]: http://support.microsoft.com/kb/3072000
+[3072631]: http://support.microsoft.com/kb/3072631
+[3068457]: http://support.microsoft.com/kb/3068457
+[3069392]: http://support.microsoft.com/kb/3069392
+[3070102]: http://support.microsoft.com/kb/3070102
+[3072630]: http://support.microsoft.com/kb/3072630
+[3072633]: http://support.microsoft.com/kb/3072633
+[3067505]: http://support.microsoft.com/kb/3067505
+[3077657]: http://support.microsoft.com/kb/3077657
+[3057154]: http://support.microsoft.com/kb/3057154
 
 [MS15-034]: https://technet.microsoft.com/zh-cn/library/security/MS15-034
 
-[3042553]: https://support.microsoft.com/zh-cn/kb/3042553/
+[3042553]: https://support.microsoft.com/kb/3042553/
 
-[3034682]: http://support.microsoft.com/zh-cn/kb/3034682
-[3036220]: http://support.microsoft.com/zh-cn/kb/3036220
-[3000483]: http://support.microsoft.com/zh-cn/kb/3000483
-[3004361]: http://support.microsoft.com/zh-cn/kb/3004361
-[3031432]: http://support.microsoft.com/zh-cn/kb/3031432
-[3029944]: http://support.microsoft.com/zh-cn/kb/3029944
-[3004375]: http://support.microsoft.com/zh-cn/kb/3004375
+[3034682]: http://support.microsoft.com/kb/3034682
+[3036220]: http://support.microsoft.com/kb/3036220
+[3000483]: http://support.microsoft.com/kb/3000483
+[3004361]: http://support.microsoft.com/kb/3004361
+[3031432]: http://support.microsoft.com/kb/3031432
+[3029944]: http://support.microsoft.com/kb/3029944
+[3004375]: http://support.microsoft.com/kb/3004375
 
-[3023266]: http://support.microsoft.com/zh-cn/kb/3023266
-[3020393]: http://support.microsoft.com/zh-cn/kb/3020393
-[3021674]: http://support.microsoft.com/zh-cn/kb/3021674
-[3019978]: http://support.microsoft.com/zh-cn/kb/3019978
-[3022777]: http://support.microsoft.com/zh-cn/kb/3022777
-[3004365]: http://support.microsoft.com/zh-cn/kb/3004365
-[3014029]: http://support.microsoft.com/zh-cn/kb/3014029
-[3019215]: http://support.microsoft.com/zh-cn/kb/3019215
-[3008923]: http://support.microsoft.com/zh-cn/kb/3008923
-[3020393]: http://support.microsoft.com/zh-cn/kb/3020393
+[3023266]: http://support.microsoft.com/kb/3023266
+[3020393]: http://support.microsoft.com/kb/3020393
+[3021674]: http://support.microsoft.com/kb/3021674
+[3019978]: http://support.microsoft.com/kb/3019978
+[3022777]: http://support.microsoft.com/kb/3022777
+[3004365]: http://support.microsoft.com/kb/3004365
+[3014029]: http://support.microsoft.com/kb/3014029
+[3019215]: http://support.microsoft.com/kb/3019215
+[3008923]: http://support.microsoft.com/kb/3008923
+[3020393]: http://support.microsoft.com/kb/3020393
 
-[3013776]: http://support.microsoft.com/zh-cn/kb/3013776
-[3013043]: http://support.microsoft.com/zh-cn/kb/3013043
-[3012712]: http://support.microsoft.com/zh-cn/kb/3012712
-[3004905]: http://support.microsoft.com/zh-cn/kb/3004905
-[3004394]: http://support.microsoft.com/zh-cn/kb/3004394
-[2999323]: http://support.microsoft.com/zh-cn/kb/2999323
-[3013488]: http://support.microsoft.com/zh-cn/kb/3013488
-[3012325]: http://support.microsoft.com/zh-cn/kb/3012325
-[3007054]: http://support.microsoft.com/zh-cn/kb/3007054
-[2999802]: http://support.microsoft.com/zh-cn/kb/2999802
-[2896881]: http://support.microsoft.com/zh-cn/kb/2896881
+[3013776]: http://support.microsoft.com/kb/3013776
+[3013043]: http://support.microsoft.com/kb/3013043
+[3012712]: http://support.microsoft.com/kb/3012712
+[3004905]: http://support.microsoft.com/kb/3004905
+[3004394]: http://support.microsoft.com/kb/3004394
+[2999323]: http://support.microsoft.com/kb/2999323
+[3013488]: http://support.microsoft.com/kb/3013488
+[3012325]: http://support.microsoft.com/kb/3012325
+[3007054]: http://support.microsoft.com/kb/3007054
+[2999802]: http://support.microsoft.com/kb/2999802
+[2896881]: http://support.microsoft.com/kb/2896881
 
-[3032359]: http://support.microsoft.com/zh-cn/kb/3032359
-[3040297]: http://support.microsoft.com/zh-cn/kb/3040297
-[3041836]: http://support.microsoft.com/zh-cn/kb/3041836
-[3032323]: http://support.microsoft.com/zh-cn/kb/3032323
-[3034344]: http://support.microsoft.com/zh-cn/kb/3034344
-[3035132]: http://support.microsoft.com/zh-cn/kb/3035132
-[3038680]: http://support.microsoft.com/zh-cn/kb/3038680
-[3002657]: http://support.microsoft.com/zh-cn/kb/3002657
-[3035126]: http://support.microsoft.com/zh-cn/kb/3035126
+[3032359]: http://support.microsoft.com/kb/3032359
+[3040297]: http://support.microsoft.com/kb/3040297
+[3041836]: http://support.microsoft.com/kb/3041836
+[3032323]: http://support.microsoft.com/kb/3032323
+[3034344]: http://support.microsoft.com/kb/3034344
+[3035132]: http://support.microsoft.com/kb/3035132
+[3038680]: http://support.microsoft.com/kb/3038680
+[3002657]: http://support.microsoft.com/kb/3002657
+[3035126]: http://support.microsoft.com/kb/3035126
 
-[3049563]:http://support.microsoft.com/zh-cn/kb/3049563
-[3057110]:http://support.microsoft.com/zh-cn/kb/3057110
-[3046002]:http://support.microsoft.com/zh-cn/kb/3046002
-[3057134]:http://support.microsoft.com/zh-cn/kb/3057134
-[3055642]:http://support.microsoft.com/zh-cn/kb/3055642
-[3057191]:http://support.microsoft.com/zh-cn/kb/3057191
-[3050514]:http://support.microsoft.com/zh-cn/kb/3050514
-[3057263]:http://support.microsoft.com/zh-cn/kb/3057263
-[3051768]:http://support.microsoft.com/zh-cn/kb/3051768
-[3061518]:http://support.microsoft.com/zh-cn/kb/3061518
+[3049563]:http://support.microsoft.com/kb/3049563
+[3057110]:http://support.microsoft.com/kb/3057110
+[3046002]:http://support.microsoft.com/kb/3046002
+[3057134]:http://support.microsoft.com/kb/3057134
+[3055642]:http://support.microsoft.com/kb/3055642
+[3057191]:http://support.microsoft.com/kb/3057191
+[3050514]:http://support.microsoft.com/kb/3050514
+[3057263]:http://support.microsoft.com/kb/3057263
+[3051768]:http://support.microsoft.com/kb/3051768
+[3061518]:http://support.microsoft.com/kb/3061518
 
-[3038314]:http://support.microsoft.com/zh-cn/kb/3038314
-[3042553]:http://support.microsoft.com/zh-cn/kb/3042553
-[3046306]:http://support.microsoft.com/zh-cn/kb/3046306
-[3046269]:http://support.microsoft.com/zh-cn/kb/3046269
-[3049576]:http://support.microsoft.com/zh-cn/kb/3049576
-[3046482]:http://support.microsoft.com/zh-cn/kb/3046482
-[3045711]:http://support.microsoft.com/zh-cn/kb/3045711
-[3048010]:http://support.microsoft.com/zh-cn/kb/3048010
-[3047234]:http://support.microsoft.com/zh-cn/kb/3047234
-[3045755]:http://support.microsoft.com/zh-cn/kb/3045755
-[3030377]:http://support.microsoft.com/zh-cn/kb/3030377
-[3039976]:http://support.microsoft.com/zh-cn/kb/3039976
+[3038314]:http://support.microsoft.com/kb/3038314
+[3042553]:http://support.microsoft.com/kb/3042553
+[3046306]:http://support.microsoft.com/kb/3046306
+[3046269]:http://support.microsoft.com/kb/3046269
+[3049576]:http://support.microsoft.com/kb/3049576
+[3046482]:http://support.microsoft.com/kb/3046482
+[3045711]:http://support.microsoft.com/kb/3045711
+[3048010]:http://support.microsoft.com/kb/3048010
+[3047234]:http://support.microsoft.com/kb/3047234
+[3045755]:http://support.microsoft.com/kb/3045755
+[3030377]:http://support.microsoft.com/kb/3030377
+[3039976]:http://support.microsoft.com/kb/3039976
 
-[3058515]:http://support.microsoft.com/zh-cn/kb/3058515
-[3033890]:http://support.microsoft.com/zh-cn/kb/3033890
-[3059317]:http://support.microsoft.com/zh-cn/kb/3059317
-[3057839]:http://support.microsoft.com/zh-cn/kb/3057839
-[3062577]:http://support.microsoft.com/zh-cn/kb/3062577
-[3063858]:http://support.microsoft.com/zh-cn/kb/3063858
+[3058515]:http://support.microsoft.com/kb/3058515
+[3033890]:http://support.microsoft.com/kb/3033890
+[3059317]:http://support.microsoft.com/kb/3059317
+[3057839]:http://support.microsoft.com/kb/3057839
+[3062577]:http://support.microsoft.com/kb/3062577
+[3063858]:http://support.microsoft.com/kb/3063858
 
 
 
 [archive]: https://msdn.microsoft.com/zh-cn/library/azure/dn391773.aspx
-[family-explain]: /documentation/articles/cloud-services-guestos-update-matrix/#guest-os-family-version-and-release-explanation
+[family-explain]: /documentation/articles/cloud-services-guestos-update-matrix#guest-os-family-version-and-release-explanation
  

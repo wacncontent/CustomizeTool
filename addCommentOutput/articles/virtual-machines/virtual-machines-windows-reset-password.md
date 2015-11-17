@@ -13,25 +13,23 @@
 	ms.date="10/14/2015"
 	wacn.date=""/>
 
-<!-- deleted by customization
 # How to reset a password or the Remote Desktop service for a Windows VM
 
+<!-- deleted by customization
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] classic deployment model.
 
--->
-<!-- keep by customization: begin -->
-# How to reset a password or the Remote Desktop service for Windows virtual machines
-<!-- keep by customization: end -->
 
 If you can't connect to a Windows virtual machine because of a forgotten password or a problem with the Remote Desktop service configuration, use the Azure preview portal or the VMAccess extension to reset the local administrator password or reset the Remote Desktop service configuration.
-
+-->
 <!-- keep by customization: begin -->
-> [AZURE.NOTE] This article does not apply to virtual machines created in Azure Resource Manager.
+If you can't connect to a Windows virtual machine because of a forgotten password or a problem with the Remote Desktop service configuration, use the Azure preview portal or the VMAccess extension to reset the local administrator password or reset the Remote Desktop service configuration.
 
+> [AZURE.NOTE] This article does not apply to virtual machines created in Azure Resource Manager.
 <!-- keep by customization: end -->
+
 ## Preview portal
 
-To reset the Remote Desktop service in the <!-- deleted by customization [preview portal](https://manage.windowsazure.cn) --><!-- keep by customization: begin --> [portal](https://manage.windows.cn) <!-- keep by customization: end -->, click **Browse all** > **Virtual machines (classic)** > *your Windows virtual machine* > **Reset Remote Access**. The following page appears.
+To reset the Remote Desktop service in the [preview portal](https://manage.windowsazure.cn), click **Browse all** > **Virtual machines (classic)** > *your Windows virtual machine* > **Reset Remote Access**. The following page appears.
 
 
 ![](./media/virtual-machines-windows-reset-password/Portal-RDP-Reset-Windows.png)
@@ -60,7 +58,7 @@ First, verify that the VM Agent is already installed. Add the cloud service name
 
 If you don't know the cloud service and virtual machine name, run **Get-AzureVM** to display that information for all the virtual machines in your current subscription.
 
-If the **write-host** command displays **True**, the VM Agent is installed. If it displays **False**, see the instructions and a link to the download in the [VM Agent and Extensions - Part <!-- deleted by customization 2](https://azure.microsoft.com/zh-cn/blog/vm-agent-and-extensions-part-2/) --><!-- keep by customization: begin --> 2](http://azure.microsoft.com/blog/2014/04/15/vm-agent-and-extensions-part-2/) <!-- keep by customization: end --> Azure blog post.
+If the **write-host** command displays **True**, the VM Agent is installed. If it displays **False**, see the instructions and a link to the download in the [VM Agent and Extensions - Part 2](https://azure.microsoft.com/zh-cn/blog/vm-agent-and-extensions-part-2/) Azure blog post.
 
 If you created the virtual machine with the Azure Management Portal, run the following additional command.
 
@@ -106,22 +104,15 @@ If this did not solve your Remote Desktop access problem, run the [Azure IaaS (W
 1.	In the diagnostics package, click **Windows Azure IaaS (Windows) diagnostics package** to create a new diagnostics session.
 2.	On the **Which of the following issues are you experiencing with your Azure VM?** page, select the **RDP connectivity to an Azure VM (Reboot Required)** issue.
 
-For more information, see the <!-- deleted by customization [Windows Azure --><!-- keep by customization: begin --> [Azure <!-- keep by customization: end --> IaaS (Windows) diagnostics package](http://support.microsoft.com/kb/2976864) Knowledge Base article.
+For more information, see the [Windows Azure IaaS (Windows) diagnostics package](http://support.microsoft.com/kb/2976864) Knowledge Base article.
 
-If you were unable to run the Azure IaaS (Windows) diagnostics package or running it did not solve your problem, see [Troubleshoot Remote Desktop connections to a Windows-based Azure <!-- deleted by customization virtual machine](/documentation/articles/virtual-machines-troubleshoot-remote-desktop-connections) --><!-- keep by customization: begin --> Virtual Machine](/documentation/articles/virtual-machines-troubleshoot-remote-desktop-connections) <!-- keep by customization: end -->.
+If you were unable to run the Azure IaaS (Windows) diagnostics package or running it did not solve your problem, see [Troubleshoot Remote Desktop connections to a Windows-based Azure virtual machine](/documentation/articles/virtual-machines-troubleshoot-remote-desktop-connections).
 
 
 ## Additional resources
 
-<!-- deleted by customization
 [Azure VM extensions and features](http://msdn.microsoft.com/zh-cn/library/azure/dn606311.aspx)
 
 [Connect to an Azure virtual machine with RDP or SSH](http://msdn.microsoft.com/zh-cn/library/azure/dn535788.aspx)
--->
-<!-- keep by customization: begin -->
-[Azure VM Extensions and Features](https://msdn.microsoft.com/zh-CN/library/azure/dn606311.aspx)
-
-[Connect to an Azure virtual machine with RDP or SSH](https://msdn.microsoft.com/zh-CN/library/azure/dn535788.aspx)
-<!-- keep by customization: end -->
 
 [Troubleshoot Remote Desktop connections to a Windows-based Azure virtual machine](/documentation/articles/virtual-machines-troubleshoot-remote-desktop-connections)

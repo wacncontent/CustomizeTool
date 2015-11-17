@@ -150,7 +150,7 @@ Below is an example of how the context variable looks.
 
         "VmMap":{"7a1069c6-c1d6-49c5-8c5d-33bfce8dd183":
 
-                {"CloudServiceName":"pod02hrweb-Chicago-test",
+                {"CloudServiceName":"pod02hrweb-Shanghai-test",
 
                 "RoleName":"Fabrikam-Hrweb-frontend-test"}
 

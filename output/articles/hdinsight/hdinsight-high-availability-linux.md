@@ -124,12 +124,20 @@ Each head node can have unique log entries, so you should check the logs on both
 
 ###Ambari
 
-> [AZURE.NOTE] Accessing log files through Ambari requires an SSH tunnel, as the web sites for the individual services are not exposed publicly on the Internet. For information on using an SSH tunnel, see [Use SSH Tunneling to access Ambari web UI, ResourceManager, JobHistory, NameNode, Oozie, and other web UI's](/documentation/articles/hdinsight-linux-ambari-ssh-tunnel).
+> [AZURE.NOTE] Accessing log files through Ambari requires an SSH tunnel, as the web sites for the individual services are not exposed publicly on the Internet. For information on using an SSH tunnel, see <!-- deleted by customization [Use SSH Tunneling to access Ambari web UI, ResourceManager, JobHistory, NameNode, Oozie, and other web UI's](/documentation/articles/hdinsight-linux-ambari-ssh-tunnel). --><!-- keep by customization: begin --> one of the following: <!-- keep by customization: end -->
+<!-- keep by customization: begin -->
+>
+> * [Use SSH with Linux-based Hadoop on HDInsight from Linux, Unix, or OS X](/documentation/articles/hdinsight-hadoop-linux-use-ssh-unix#tunnel)
+>
+> * [Use SSH with Linux-based Hadoop on HDInsight from Windows](/documentation/articles/hdinsight-hadoop-linux-use-ssh-windows#tunnel)
+<!-- keep by customization: end -->
 
 From the Ambari Web UI, select the service you wish to view logs for (for example, YARN,) and then use **Quick Links** to select which head node to view the logs for.
 
 ![Using quick links to view logs](./media/hdinsight-high-availability-linux/viewlogs.png)
-
+<!-- keep by customization: begin -->
+<!--
+<!-- keep by customization: end -->
 ## How to configure the size of the head node ##
 
 The size of the head node can only be selected during cluster creation. The default size for head nodes is **A3**, which provides 4 cores, 7GB memory, and 285GB of local storage. You can find a list of the different VM sizes available for HDInsight, including the core, memory, and local storage for each, on the [HDInsight pricing page](/home/features/hdinsight/#price).
@@ -150,7 +158,12 @@ In this document you have learned how Azure HDInsight provides high availability
 
 - [Ambari REST Reference](https://github.com/apache/ambari/blob/trunk/ambari-server/docs/api/v1/index.md)
 
+<!-- deleted by customization
 - [Install and configure the Azure CLI](/documentation/articles/xplat-cli-install)
+-->
+<!-- keep by customization: begin -->
+- [Install and configure the Azure CLI](/documentation/articles/xplat-cli)
+<!-- keep by customization: end -->
 
 - [Install and configure Azure PowerShell](/documentation/articles/powershell-install-configure)
 
@@ -160,4 +173,4 @@ In this document you have learned how Azure HDInsight provides high availability
 
 [preview-portal]: https://manage.windowsazure.cn/
 [azure-powershell]: /documentation/articles/powershell-install-configure
-[azure-cli]: /documentation/articles/xplat-cli-install
+[azure-cli]: <!-- deleted by customization /documentation/articles/xplat-cli-install --><!-- keep by customization: begin --> /documentation/articles/xplat-cli <!-- keep by customization: end -->

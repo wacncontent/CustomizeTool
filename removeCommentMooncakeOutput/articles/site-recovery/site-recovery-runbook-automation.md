@@ -8,9 +8,9 @@
    editor=""/>
 
 <tags
-   ms.service="site-recovery"
-   ms.date="08/05/2015"
-   wacn.date="05/15/2015"/>
+	ms.service="site-recovery"
+	ms.date="10/07/2015"
+	wacn.date=""/>
 
   
    
@@ -24,11 +24,13 @@ can orchestrate recovery of your virtual machines protected using Azure Site Rec
 recovery plans and gives you capability to execute runbooks, thus allowing powerful automation tasks.
 
 If you have not heard about Azure Automation yet, sign up
-[here](/home/features/automation/). Read
+[here](/home/features/automation/) and
+download their sample scripts
+[here](http://azure.microsoft.com/documentation/scripts/). Read
 more about [Azure Site
 Recovery](/home/features/site-recovery/) and
 how to orchestrate recovery to Azure using recovery plans
-[here](/zh-cn/blog/?p=166264).
+[here](http://azure.microsoft.com/blog/?p=166264).
 
 In this tutorial, we will look at how you can integrate Azure Automation
 runbooks into recovery plans. We will automate simple tasks that earlier
@@ -65,7 +67,7 @@ Create a Recovery Plan that looks like below.
 
 ![](./media/site-recovery-runbook-automation/12.png)
 
-To read more about recovery plans, read documentation [here](https://msdn.microsoft.com/zh-CN/library/azure/dn788799.aspx "here"). 
+To read more about recovery plans, read documentation [here](https://msdn.microsoft.com/zh-cn/library/azure/dn788799.aspx "here"). 
 
 Next, let's create the necessary artifacts in Azure Automation.
 
@@ -148,7 +150,7 @@ Below is an example of how the context variable looks.
 
         "VmMap":{"7a1069c6-c1d6-49c5-8c5d-33bfce8dd183":
 
-                {"CloudServiceName":"pod02hrweb-Chicago-test",
+                {"CloudServiceName":"pod02hrweb-Shanghai-test",
 
                 "RoleName":"Fabrikam-Hrweb-frontend-test"}
 
@@ -157,19 +159,19 @@ Below is an example of how the context variable looks.
         }
 
 
-Table below contains name and description for each variable in the context.
-  
-<table border="1">
-  <tr><th>Variable name</th><th>Variable description</th></tr>
-  <tr><td>RecoveryPlanName</td><td>Name of the recovery plan being executed. <p> This variable can help you take different actions based on the Recovery Plan name using the same script.</td></tr>
-  <tr><td>FailoverType</td><td>Specifies whether the execution is **Test**, **Planned** or **Unplanned**. <p> This variable helps you take different actions based on the type of failover. </td></tr>
-  <tr><td>FailoverDirection</td><td>Specifies whether the recovery is from primary side to recovery or vice versa. <p>The two values it takes is **PrimaryToSecondary** and **SecondaryToPrimary** </td></tr>
-  <tr><td>GroupId</td><td> Identifies the group number within the recovery plan where the runbook is executing. <p> For example, if the runbook is post group 2, the GroupId will be 2. </td></tr>
-  <tr><td>VmMap</td><td> This is an array of all the virtual machines in the group. </td></tr>
-  <tr><td>VmMap key</td><td>Each virtual machine has a unique key identified by a GUID. This GUID is same as the VMM ID of the virtual machine. <p> You can use this GUID to deterministically specify which virtual machine you want to operate on. </td></tr>
-  <tr><td>RoleName</td><td>This specifies the name of the Azure virtual machine being recovered.</td></tr>
-  <tr><td>CloudServiceName</td><td> This specifies the Azure Cloud Service name under which the virtual machine is being created. </td></tr>
-  </table><br />
+The table below contains name and description for each variable in the context.
+
+**Variable name** | **Description**
+---|---
+RecoveryPlanName | Name of plan being run. Helps you take action based on name using the same script
+FailoverType | Specifies whether the failover is test, planned, or unplanned. 
+FailoverDirection | Specify whether recovery is to primary or secondary
+GroupID | Identify the group number within the recovery plan when the plan is running
+VmMap | Array of all the virtual machines in the group
+VMMap key | Unique key (GUID) for each VM. It's the same as the VMM ID of the virtual machine where applicable. 
+RoleName | Name of the Azure VM that's being recovered
+CloudServiceName | Azure Cloud Service name under which the virtual machine is created.
+
 
 To identify the VmMap Key in the context you could also go to the VM properties page in ASR and look at the VM GUID property.
 
@@ -344,7 +346,8 @@ While we walked through automating one commonly used task of adding an endpoint 
 
 ## Additional Resources
 
-[Azure Automation Overview](https://msdn.microsoft.com/zh-CN/library/azure/dn643629.aspx "Azure Automation Overview")
+[Azure Automation Overview](http://msdn.microsoft.com/zh-cn/library/azure/dn643629.aspx "Azure Automation Overview")
 
 [Sample Azure Automation Scripts](http://gallery.technet.microsoft.com/scriptcenter/site/search?f[0].Type=User&f[0].Value=SC%20Automation%20Product%20Team&f[0].Text=SC%20Automation%20Product%20Team "Sample Azure Automation Scripts")
 
+ 

@@ -9,9 +9,9 @@
    tags="azure-service-management"/>
 
    <tags
-   ms.service="virtual-machines"
-   ms.date="02/20/2015"
-   wacn.date=""/>
+	ms.service="virtual-machines"
+	ms.date="02/20/2015"
+	wacn.date=""/>
 
 # Create a multi-VM deployment with the Azure CLI
 

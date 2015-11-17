@@ -24,15 +24,22 @@ The steps above download the Split-Merge files to the current directory. The fil
 
 ## Prerequisites
 
-1. Create an Azure SQL DB database that will be used as the Split-Merge status database. Go to the [Azure Management Portal](https://ms.portal.azure.com). Create a new **SQL Database**. Fill in the database name and create a new user and password. Be sure to record the name and password for later use.
+1. Create an Azure SQL DB database that will be used as the Split-Merge status database. Go to the [Azure Management Portal](https://manage.windowsazure.cn). Create a new **SQL Database**. Fill in the database name and create a new user and password. Be sure to record the name and password for later use.
 
 2. Ensure that your Azure SQL DB server allows Azure Services to connect to it. In the portal, in the **Firewall Settings**, ensure that the **Allow access to Azure Services** setting is set to **On**. Click the "save" icon.
 
     ![Allowed services][1]
 
+<!-- deleted by customization
 3. Create an Azure Storage account that will be used for diagnostics output. Go to the Azure preview portal. In the left bar, click **New**, click **DATA SERVICE**, then **Storage**.
 
 4. Create an Azure Cloud Service that will contain your Split-Merge service.  Go to the Azure preview portal. In the left bar, click **New**, then **Compute**, **Cloud Service**, and **Create**. 
+-->
+<!-- keep by customization: begin -->
+3. Create an Azure Storage account that will be used for diagnostics output. Go to the [Azure Management Portal](https://manage.windowsazure.cn). At the bottom left, click **New**, click **Data Services**, **Storage**, then **Quick Create**. 
+
+4. Create an Azure Cloud Service that will contain your Split-Merge service.  Go to the [Azure Management Portal](https://manage.windowsazure.cn). On the bottom left, click **New**, then **Compute**, **Cloud Service**, and **Quick Create**. 
+<!-- keep by customization: end -->
 
 
 ## Configuring your Split-Merge service
@@ -88,7 +95,12 @@ Execute the following command from the same window where makecert was executed; 
 
 ### Upload the PFX file to the cloud service
 
+<!-- deleted by customization
 Go to the [Azure preview portal](https://manage.windowsazure.cn).
+-->
+<!-- keep by customization: begin -->
+Go to the [Azure Management Portal](https://manage.windowsazure.cn).
+<!-- keep by customization: end -->
 
 1. Select **Cloud Services**.
 2. Select the cloud service you created above for the Split/Merge service.

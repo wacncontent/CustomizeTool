@@ -8,9 +8,9 @@
    editor=""/>
 
 <tags
-   ms.service="active-directory"
-   ms.date="07/15/2015"
-   wacn.date=""/>
+	ms.service="active-directory"
+	ms.date="07/15/2015"
+	wacn.date=""/>
 
 #Tutorial: How to integrate Google Apps with Azure Active Directory
 

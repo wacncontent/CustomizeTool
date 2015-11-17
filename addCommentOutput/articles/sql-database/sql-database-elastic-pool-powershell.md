@@ -91,7 +91,7 @@ Now you have a resource group, a server, and a firewall rule configured so you c
 
 The pool created in the previous step is empty, it has no elastic databases in it. The following sections show how to create new elastic databases inside of the pool, and also how to add existing databases into the pool.
 
-*After creating a pool you can also use Transact-SQL for creating new elastic databases in the pool, and moving existing databases in and out of a pool. For details see, [Elastic database pool reference - <!-- deleted by customization Transact-SQL](/documentation/articles/sql-database-elastic-pool-reference#Transact-SQL).* --><!-- keep by customization: begin --> Transact-SQL](/documentation/articles/sql-database-elastic-pool-reference/#Transact-SQL).* <!-- keep by customization: end -->
+*After creating a pool you can also use Transact-SQL for creating new elastic databases in the pool, and moving existing databases in and out of a pool. For details see, [Elastic database pool reference - Transact-SQL](/documentation/articles/sql-database-elastic-pool-reference#Transact-SQL).*
 
 ### Create a new elastic database inside an elastic database pool
 

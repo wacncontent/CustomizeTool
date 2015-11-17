@@ -8,9 +8,9 @@
    editor=""/>
 
 <tags
-   ms.service="azure-resource-manager"
-   ms.date="07/15/2015"
-   wa.date=""/>
+	ms.service="azure-resource-manager"
+	ms.date="07/15/2015"
+	wacn.date=""/>
 
 # Defining dependencies in Azure Resource Manager templates
 

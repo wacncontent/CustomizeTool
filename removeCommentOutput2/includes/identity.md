@@ -30,9 +30,9 @@ Running Windows Server AD in Azure VMs is much like running it on premises. [Fig
 
 <a name="Fig1"></a>Figure 1: Windows Server Active Directory can run in Azure VMs connected to an organization's on-premises datacenter using Azure Virtual Network.
 
-In the example shown here, Windows Server AD is running in VMs created using Azure Virtual Machines, the platform's IaaS technology. These VMs and a few others are grouped into a virtual network connected(VNET) to an on-premises datacenter using Azure Virtual Network. The VNET carves out a group of cloud VMs that interact with the on-premises network via a virtual private network (VPN) connection. Doing this lets these Azure VMs look like just another subnet to the on-premises datacenter. As the figure shows, two of those VMs are running Windows Server AD domain controllers. The other VMs in the VNET might be running applications, such as SharePoint, or being used in some other way, such as for development and testing. The on-premises datacenter is also running two Windows Server AD domain controllers.
+In the example shown here, Windows Server AD is running in VMs created using Azure Virtual Machines, the platform's IaaS technology. These VMs and a few others are grouped into a virtual network (VNET) connected to an on-premises datacenter using Azure Virtual Network. The VNET carves out a group of cloud VMs that interact with the on-premises network via a virtual private network (VPN) connection. Doing this lets these Azure VMs look like just another subnet to the on-premises datacenter. As the figure shows, two of those VMs are running Windows Server AD domain controllers. The other VMs in the VNET might be running applications, such as SharePoint, or being used in some other way, such as for development and testing. The on-premises datacenter is also running two Windows Server AD domain controllers.
 
-There are several options for connecting the domain controllers in the cloud with those running on premises:. They include these 
+There are several options for connecting the domain controllers in the cloud with those running on premises. They include these:
 
 - Make all of them part of a single Active Directory domain.
 
@@ -121,4 +121,4 @@ Working with identity is important in nearly every application. The goal of Acce
 
 ##About the Author
 
-David Chappell is Principal of Chappell & Associates [www.davidchappell.com](http://www.davidchappell.com) in San Francisco, California.Through his speaking, writing, and consulting, 
+David Chappell is Principal of Chappell & Associates [www.davidchappell.com](http://www.davidchappell.com) in San Francisco, California. Through his speaking, writing, and consulting, 

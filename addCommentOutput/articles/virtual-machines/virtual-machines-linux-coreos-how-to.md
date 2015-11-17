@@ -134,7 +134,7 @@ You can see from the shot below how the CoreOS cluster appears in the portal.
 
 To test your cluster, make sure you are in your working directory and then connect to **node-1** using **ssh**, passing the private key by typing:
 
-	<!-- deleted by customization ssh --><!-- keep by customization: begin --> `ssh <!-- keep by customization: end --> core@coreos-cluster.chinacloudapp.cn -p 22 -i <!-- deleted by customization ./myPrivateKey.key --><!-- keep by customization: begin --> ./myPrivateKey.key` <!-- keep by customization: end -->
+	ssh core@coreos-cluster.chinacloudapp.cn -p 22 -i ./myPrivateKey.key
 
 Once connected, type `sudo fleetctl list-machines` to see whether the cluster has already identified all VMs in the cluster. You should receive a response similar to the following:
 
@@ -201,12 +201,7 @@ You should now have a running three-node CoreOS cluster on Azure. From here, you
 
 
 <!--Link references-->
-<!-- deleted by customization
 [Azure Command-line Interface (Azure CLI)]: /documentation/articles/xplat-cli-install
--->
-<!-- keep by customization: begin -->
-[Azure Command-line Interface (Azure CLI)]: /documentation/articles/xplat-cli/
-<!-- keep by customization: end -->
 [CoreOS]: https://coreos.com/
 [CoreOS Overview]: https://coreos.com/using-coreos/
 [CoreOS with Azure]: https://coreos.com/docs/running-coreos/cloud-providers/azure/

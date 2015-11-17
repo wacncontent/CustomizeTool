@@ -18,9 +18,18 @@
 One of the challenges of developing a web app is how to provide a safe and secure service for your customers. In this article, you will learn about features of [Azure Websites](/documentation/services/web-sites/) that can secure your web app.
 
 > [AZURE.NOTE] A full discussion of security considerations for web-based applications is beyond the scope of this document. As a starting point for further guidance on securing web applications, see the [Open Web Application Security Project (OWASP)]( https://www.owasp.org/index.php/Main_Page), specifically the [top 10 project.](https://www.owasp.org/index.php/Category:OWASP_Top_Ten_Project), which lists the current top 10 critical web application security flaws, as determined by OWASP members.
+<!-- deleted by customization
 
 [AZURE.INCLUDE [app-service-web-to-api-and-mobile](../includes/app-service-web-to-api-and-mobile.md)]
 
+-->
+<!-- keep by customization: begin -->
+###Table of contents
+
+* [Secure communications](#https)
+* [Secure development](#develop)
+* [Next steps](#next)
+<!-- keep by customization: end -->
 ##<a name="https"></a> Secure communications
 
 If you use the ***.chinacloudsites.cn** domain name created for your web app, you can immediately use HTTPS, as an SSL certificate is provided for all ***.chinacloudsites.cn** domain names. If your site uses a [custom domain name](/documentation/articles/web-sites-custom-domain-name), you can upload an SSL certificate to [enable HTTPS](/documentation/articles/web-sites-configure-ssl-certificate) for the custom domain.
@@ -50,10 +59,11 @@ It's common practice to store connection strings, authentication credentials, an
 
 Azure Websites allows you to store configuration information as part of the Web Apps runtime environment as **app settings** and **connection strings**. The values are exposed to your application at runtime through *environment variables* for most programming languages. For .NET applications, these values are injected into your .NET configuration at runtime.
 
-**App settings** and **connection strings** are configurable using the [Azure preview portal](http://manage.windowsazure.cn) or utilities such as PowerShell or the Azure CLI.
+**App settings** and **connection strings** are configurable using the [Azure <!-- deleted by customization preview portal](http://manage.windowsazure.cn) --><!-- keep by customization: begin --> Management Portal](http://manage.windowsazure.cn) <!-- keep by customization: end --> or utilities such as PowerShell or the Azure CLI.
 
 For more information on app settings and connection strings, see [Configuring web apps](/documentation/articles/web-sites-configure).
 
+<!-- deleted by customization
 ### FTPS
 
 Azure provides secure FTP access access to the file system for your web app through **FTPS**. This allows you to securely access the application code on the web app as well as diagnostics logs. The FTPS link for your web app can be found with the following steps:
@@ -69,17 +79,20 @@ Azure provides secure FTP access access to the file system for your web app thro
 For more information on FTPS, see [File Transfer Protocol](http://en.wikipedia.org/wiki/File_Transfer_Protocol).
 
 >[AZURE.NOTE] If you want to get started with Azure Websites before signing up for an Azure account, go to [Try Azure Websites](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure Websites. No credit cards required; no commitments.
+-->
 
 ## Next steps
 
-For more information on the security of the Azure platform, information on reporting a **security incident or abuse**, or to inform Microsoft that you will be performing **penetration testing** of your site, see the security section of the [Windows Azure Trust Center](http://azure.microsoft.com/support/trust-center/security/).
+For more information on the security of the Azure platform, information on reporting a **security incident or abuse**, or to inform Microsoft that you will be performing **penetration testing** of your site, see the security section of the [Windows Azure Trust Center](/support/trust-center/security/).
 
 For more information on **web.config** or **applicationhost.config** files in web apps, see [Configuration options unlocked in Azure Websites web apps](http://azure.microsoft.com/blog/2014/01/28/more-to-explore-configuration-options-unlocked-in-windows-azure-web-sites/).
 
 For information on logging information for web apps, which may be useful in detecting attacks, see [Enable diagnostic logging](/documentation/articles/web-sites-enable-diagnostic-log).
+<!-- deleted by customization
 
 ## What's changed
 * For a guide to the change from Websites to Azure Websites see: [Azure Websites and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
 
 * For a guide to the change of the Management Portal to the new portal see: [Reference for navigating the preview portal](https://manage.windowsazure.cn/)
+-->
  

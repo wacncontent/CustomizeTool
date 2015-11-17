@@ -1,40 +1,34 @@
-<properties 
-	pageTitle="Get Started with Azure Mobile Services for Android apps" 
-	description="Follow this tutorial to get started using Azure Mobile Services for Android development." 
-	services="mobile-services" 
-	documentationCenter="android" 
-	authors="RickSaling" 
-	manager="dwrede" 
+<properties
+	pageTitle="Get Started with Azure Mobile Services for Android apps (JavaScript backend)"
+	description="Follow this tutorial to get started using Azure Mobile Services for Android development (JavaScript backend)."
+	services="mobile-services"
+	documentationCenter="android"
+	authors="RickSaling"
+	manager="dwrede"
 	editor=""/>
 
-<tags 
-	ms.service="mobile-services" 
-	ms.date="06/03/2015"
+<tags
+	ms.service="mobile-services"
+	ms.date="10/08/2015"
 	wacn.date=""/>
 
-# Get started with Mobile Services
+# Get started with Mobile Services for Android  (JavaScript backend)
 
 [AZURE.INCLUDE [mobile-services-selector-get-started](../includes/mobile-services-selector-get-started.md)]
 
-<div class="dev-onpage-video-clear clearfix">
-<div class="dev-onpage-left-content">
 
+This tutorial shows you how to add a cloud-based backend service to an Android app using Azure Mobile Services. In this tutorial, you will create both a new mobile service and a simple **To do list** app that stores app data in the new mobile service.
 
-<p>This tutorial shows you how to add a cloud-based backend service to an Android app using Azure Mobile Services. In this tutorial, you will create both a new mobile service and a simple <em>To do list</em> app that stores app data in the new mobile service.</p>
-<p>A screenshot from the completed app is below:</p>
-</div>
-<div class="dev-onpage-video-wrapper"><a href="http://channel9.msdn.com/Series/Windows-Azure-Mobile-Services/Android-Support-in-Windows-Azure-Mobile-Services" target="_blank" class="label">watch the tutorial</a> <a style="background-image: url('/media/devcenter/mobile/videos/mobile-get-started-android-180x120.png') !important;" href="http://channel9.msdn.com/Series/Windows-Azure-Mobile-Services/Android-Support-in-Windows-Azure-Mobile-Services" target="_blank" class="dev-onpage-video"><span class="icon">Play Video</span></a><span class="time">7:26</span></div>
-</div>
-
+A screenshot from the completed app is below:
 ![](./media/mobile-services-android-get-started/mobile-quickstart-completed-android.png)
 
 ## Prerequisites
 
-Completing this tutorial requires the [Android Developer Tools][Android Studio], which includes the Android Studio integrated development environment, and the latest Android platform. Android 4.2 or a later version is required. 
+Completing this tutorial requires the [Android Developer Tools](https://developer.android.com/sdk/index.html)), which includes the Android Studio integrated development environment, and the latest Android platform. Android 4.2 or a later version is required.
 
 The downloaded quickstart project contains the Azure Mobile Services SDK for Android.
 
-> [AZURE.IMPORTANT] To complete this tutorial, you need an Azure account. If you don't have an account, you can create a trial account in just a couple of minutes. For details, see [Azure Trial](/pricing/1rmb-trial/).
+> [AZURE.IMPORTANT] To complete this tutorial, you need an Azure account. If you don't have an account, you can create a trial account in just a couple of minutes. For details, see [Azure Trial](/pricing/1rmb-trial/?WT.mc_id=AE564AB28).
 
 
 ## Create a new mobile service
@@ -43,7 +37,7 @@ The downloaded quickstart project contains the Azure Mobile Services SDK for And
 
 ## Create a new Android app
 
-Once you have created your mobile service, you can follow an easy quickstart in the Management Portal to either create a new app or modify an existing app to connect to your mobile service. 
+Once you have created your mobile service, you can follow an easy quickstart in the Management Portal to either create a new app or modify an existing app to connect to your mobile service.
 
 In this section you will create a new Android app that is connected to your mobile service.
 
@@ -57,7 +51,7 @@ In this section you will create a new Android app that is connected to your mobi
 
   	![](./media/mobile-services-android-get-started/mobile-quickstart-steps-android-AS.png)
 
-3. If you haven't already done so, download and install the [Android Developer Tools][Android SDK] on your local computer or virtual machine.
+3. If you haven't already done so, download and install the [Android Developer Tools](http://developer.android.com/sdk/index.html) on your local computer or virtual machine.
 
 4. Click **Create TodoItem table** to create a table to store app data.
 
@@ -112,7 +106,7 @@ Now that you have completed the quickstart, learn how to perform additional impo
 [15]: ./media/mobile-services-android-get-started/mobile-services-import-android-project.png
 
 <!-- URLs. -->
-[Get started (Eclipse)]: /documentation/articles/mobile-services-android-get-started-EC
+[Get started (Eclipse)]: /documentation/articles/mobile-services-android-get-started-ec
 [Get started with data]: /documentation/articles/mobile-services-android-get-started-data
 [Get started with authentication]: /documentation/articles/mobile-services-android-get-started-users
 [Get started with push notifications]: /documentation/articles/mobile-services-javascript-backend-android-get-started-push

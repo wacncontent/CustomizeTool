@@ -132,6 +132,9 @@ Formerly called SQL Azure, Azure SQL Database provides all of the key features o
 
 But SQL Database isn't just a DBMS in the cloud-it's a PaaS service. You still control your data and who can access it, but SQL Database takes care of the administrative grunt work, such as managing the hardware infrastructure and automatically keeping the database and operating system software up to date. SQL Database also provides high availability, automatic backups, point-in-time restore capabilities, and can replicate copies across geographical regions.  
 
+<!-- keep by customization: begin -->
+There is also a Premium option that you can pay a little more for so you can have your own dedicated server underneath. With the Standard option, the database runs on shared hardware, which can throttle your database queries if you happen to be on a particularly busy server.  
+<!-- keep by customization: end -->
 
 **Scenarios for SQL Database**
 
@@ -262,13 +265,21 @@ It does include a hosted source control system called Team Foundation Service, w
 
 Visual Studio Online provides a load testing service. You can execute load tests created in Visual Studio on VMs in the cloud. You specify the total number of users you want to load test with, and Visual Studio Online will automatically determine how many agents are needed, spin up the required virtual machines and execute your load tests. If you're an MSDN subscriber, you get thousands of free user-minutes of load testing each month. 
 
+<!-- deleted by customization
 Visual Studio Online also offers support for agile development with features like continuous integration builds, Kanban boards and virtual team rooms. 
+-->
+<!-- keep by customization: begin -->
+Visual Studio Online also offers a service called Application Insights, which gives you an analysis of your entire application. It provides stats on performance and how your application is being used. If you are already using System Center Operations Manager, it can also hook to it and raise alerts when issues arise. 		+Visual Studio Online also offers support for agile development with features like continuous integration builds, Kanban boards and virtual team rooms. 
+	
+Additionally, there is support for agile development with features like continuous integration builds, Kanban boards and virtual team rooms.
+<!-- keep by customization: end -->
 
 **Visual Studio Online Scenarios**
 
 Visual Studio Online is a good option for companies that need to collaborate worldwide and don't already have the infrastructure in place to do so. You can get setup in minutes, choose a source control system and start writing code and building that day.  The team tools provide a place for coordination and collaboration and the additional tools provide the analysis needed to test and tune your application quickly.
 
 But organizations that already have an on-premises system can test new projects on Visual Studio Online to see if it's more efficient.   
+<!-- deleted by customization
 
 ### Application Insights
 
@@ -291,6 +302,7 @@ You are developing an app. It might be a web app or a device app, or a device ap
 * Tune the performance of your app after it is published, or while it is in load testing.  Application Insights aggregates telemetry from all the installed instances, and presents you with charts of response times, request and exception counts, dependency response times, and other performance indicators. These help you tune your app's performance. You can insert code to report more specific data if you need it.
 * Detect and diagnose problems in your live app. You can get alerts by email if performance indicators cross acceptable thresholds. You can investigate specific user sessions, for example to see the request that caused an exception. 
 * Track usage to assess the success of each new feature. When you design a new user story, plan to measure how much it is used, and whether users achieve their expected goals. Application Insights gives you basic usage data such as web page views, and you can insert code to track the user experience in more detail.
+-->
 
 ### Automation
 No one likes to waste time doing the same manual processes over and over. Azure Automation provides a way for you to create, monitor, manage, and deploy resources in your Azure environment.  

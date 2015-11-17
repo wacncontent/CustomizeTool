@@ -164,6 +164,7 @@ our "TestQueue":
 	{
 		ReceiveMessageOptions opts = ReceiveMessageOptions.DEFAULT;
 		opts.setReceiveMode(ReceiveMode.PEEK_LOCK);
+
 		while(true)  {
 	         ReceiveQueueMessageResult resultQM =
 	     			service.receiveQueueMessage("TestQueue", opts);
@@ -240,16 +241,13 @@ constant across delivery attempts.
 
 ## Next Steps
 
-Now that you've learned the basics of Service Bus queues, see [Queues, <!-- deleted by customization topics --><!-- keep by customization: begin --> Topics <!-- keep by customization: end -->, and <!-- deleted by customization subscriptions][] --><!-- keep by customization: begin --> Subscriptions][] <!-- keep by customization: end --> for more information.
+Now that you've learned the basics of Service Bus queues, see [Queues, topics, and subscriptions][] for more information.
 
 For more information, see the [Java Developer Center](/develop/java/).
+
+
   [Azure SDK for Java]: /develop/java/
   [Azure Toolkit for Eclipse]: https://msdn.microsoft.com/zh-cn/library/azure/hh694271.aspx
   [Azure Management Portal]: http://manage.windowsazure.cn/
-<!-- deleted by customization
   [Queues, topics, and subscriptions]: /documentation/articles/service-bus-queues-topics-subscriptions
--->
-<!-- keep by customization: begin -->
-  [Queues, Topics, and Subscriptions]: /documentation/articles/service-bus-queues-topics-subscriptions
-<!-- keep by customization: end -->
   [BrokeredMessage]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.brokeredmessage.aspx

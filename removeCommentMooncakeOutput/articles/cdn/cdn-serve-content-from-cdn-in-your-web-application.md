@@ -62,7 +62,7 @@ Let's get to it. Follow the steps below to start using the Azure CDN:
 
 	![](./media/cdn-serve-content-from-cdn-in-your-web-application/cdn-static-1.PNG)
 
-	>[AZURE.NOTE] Note that I'm using East Asia as the region as it is far enough away for me to test my CDN from North America later.
+	>[AZURE.NOTE] Note that I'm using China East as the region as it is far enough away for me to test my CDN from North America later.
 
 3. Once the new storage account's status is **Online**, create a new CDN endpoint that's tied to the storage account you created. Click **New > Azure Websites > CDN > Quick Create**. Select the storage account you created and click **Create**.
 
@@ -135,7 +135,7 @@ Let's get to it. Follow the steps below to start using the Azure CDN:
 
 	![](./media/cdn-serve-content-from-cdn-in-your-web-application/cdn-static-11-cdn.PNG)
 
- 	Pay attention to the numbers for the **Request** timing, which is the time to first byte, or the time taken to send the request and receive the first response from the server. When I access the blob, which is hosted in the East Asia region, it takes 266 ms for me - since the request must traverse the entire Pacific Ocean just to get to the server. However, when I access the Azure CDN, it takes only 16 ms, which is nearly a **20-fold gain in performance**!
+ 	Pay attention to the numbers for the **Request** timing, which is the time to first byte, or the time taken to send the request and receive the first response from the server. When I access the blob, which is hosted in the China East region, it takes 266 ms for me - since the request must traverse the entire Pacific Ocean just to get to the server. However, when I access the Azure CDN, it takes only 16 ms, which is nearly a **20-fold gain in performance**!
 	
 17.	Now, it's just a matter of using the new link in your Web page. For example, I can add the following image tag:
 

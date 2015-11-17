@@ -1,6 +1,6 @@
 ﻿import urllib2
 import re
-url_reg = r'("|\()\s*(?P<url>https*://[^"|^\s]+)\s*("|\))'
+url_reg = r'("|\()\s*(?P<url>https*://[^"|^\s|^\)]+)\s*("|\))'
 url_reg2 = '\[([^\[|^\]]*)\]:\s*(?P<url>https*://[^"|^\s]+)\s*("[^"]*")\s*(\n|$)'
 def checkLinks(text):
     links =  [a[1] for a in re.findall(url_reg, text)]
@@ -12,8 +12,8 @@ def findRedirect(urllist):
     errorOut = open("errorLinks.txt", "w")
     oldLinkFile = open("oldLinks.txt", "a")
     for url in urllist:
-        oldLinkFile.write(url+"\n")
         print("processing: "+url)
+        oldLinkFile.write(url+"\n")
         try:
             link = urllib2.urlopen(url)
             finalurl = link.geturl()

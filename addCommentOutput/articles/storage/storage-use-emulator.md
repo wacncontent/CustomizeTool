@@ -17,7 +17,7 @@
 
 The Windows Azure storage emulator provides a local environment that emulates the Azure Blob, Queue, and Table services for development purposes. Using the storage emulator, you can test your application against the storage services locally, without creating an Azure subscription or incurring any costs. When you're satisfied with how your application is working in the emulator, you can switch to using an Azure storage account in the cloud.
 
-> [AZURE.NOTE] The storage emulator is available as part of the [Windows Azure <!-- deleted by customization SDK](https://azure.microsoft.com/downloads/) --><!-- keep by customization: begin --> SDK](/downloads/) <!-- keep by customization: end -->. You can also install the storage emulator as a standalone package. To configure the storage emulator, you must have administrative privileges on the computer.
+> [AZURE.NOTE] The storage emulator is available as part of the [Windows Azure SDK](/downloads/). You can also install the storage emulator as a standalone package. To configure the storage emulator, you must have administrative privileges on the computer.
 >  
 > Note that data created in one version of the storage emulator is not guaranteed to be accessible when using a different version. If you need to persist your data for the long term, it's recommended that you store that data in an Azure storage account, rather than in the storage emulator.
 
@@ -199,12 +199,10 @@ There are no differences specific to Queue storage in the emulator.
 
 ## Storage emulator release notes
 
-<!-- deleted by customization
 ### Version 4.2
 
 - The storage emulator now supports version 2015-04-05 of the storage services on Blob, Queue, and Table service endpoints.
 
--->
 ### Version 4.1
 
 - The storage emulator now supports version 2015-02-21 of the storage services on Blob, Queue, and Table service endpoints, with the exception of the new Append Blob features. 

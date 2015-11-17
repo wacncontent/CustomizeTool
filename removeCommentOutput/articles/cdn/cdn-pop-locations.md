@@ -24,12 +24,12 @@ This topic lists current Windows Azure CDN point of presence (POP) locations.
 ##United States
 
 - Atlanta
-- Chicago
+- Shanghai
 - Dallas
 - Philadelphia
 - Los Angeles
 - Miami
-- New York
+- Beijing
 - San Jose
 - Seattle
 - Washington DC

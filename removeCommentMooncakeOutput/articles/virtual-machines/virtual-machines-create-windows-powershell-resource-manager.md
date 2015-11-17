@@ -80,11 +80,11 @@ Here is an example of you might see:
 	PS C:\> $locName="China North"
 	PS C:\> $rgName="TestRG"
 	PS C:\> New-AzureRmResourceGroup -Name $rgName -Location $locName
-	VERBOSE: 12:45:15 PM - Created resource group 'TestRG' in location 'westus'
+	VERBOSE: 12:45:15 PM - Created resource group 'TestRG' in location 'chinanorth'
 
 
 	ResourceGroupName : TestRG
-	Location          : westus
+	Location          : chinanorth
 	ProvisioningState : Succeeded
 	Tags              :
 	Permissions       :
@@ -129,6 +129,6 @@ Here is an example of you might see:
 
 [Create a Windows virtual machine with PowerShell and Azure Service Management](/documentation/articles/virtual-machines-create-windows-powershell-service-manager)
 
-[Virtual machines documentation](http://www.windowsazure.cn/documentation/services/virtual-machines/)
+[Virtual machines documentation](/documentation/services/virtual-machines/)
 
 [How to install and configure Azure PowerShell](/documentation/articles/install-configure-powershell)

@@ -34,7 +34,7 @@ During the process of upgrading to SQL Database V12 you must also [update all We
 
 ## Upgrade your Web and Business databases
 
-2. Upgrade all Web and Business databases. If your server has any Web or Business databases you must upgrade them. To assist you with upgrading, the SQL Database service recommends an appropriate service tier and performance level (pricing tier) for each database. By analyzing the historical usage for each database, the service recommends a tier that is best suited for running your existing database’s workload. 
+2. Upgrade all Web and Business databases. If your server has any Web or Business databases you must upgrade them. To assist you with upgrading, the SQL Database service recommends an appropriate service tier and performance level (pricing tier) for each database. By analyzing the historical usage for each database, the service recommends a tier that is best suited for running your existing <!-- deleted by customization database’s --><!-- keep by customization: begin --> database�s <!-- keep by customization: end --> workload.
     
     Select each database to review and select the recommended pricing tier to upgrade to. You can always browse the available pricing tiers and select the one that suits your environment best.
 

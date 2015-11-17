@@ -205,17 +205,18 @@ Follow these links to learn more about Python Tools for Visual Studio, Django an
   - [Remote Debugging on Windows Azure]
 - [Django Documentation]
 - [SQL Database]
-<!-- deleted by customization
 
+<!-- deleted by customization
 ## What's changed
 * For a guide to the change from Websites to Azure Websites see: [Azure Websites and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
 * For a guide to the change of the Management Portal to the new portal see: [Reference for navigating the preview portal](https://manage.windowsazure.cn/)
--->
 
+-->
 
 <!--Link references-->
 [Python Developer Center]: /develop/python/
 [Azure Cloud Services]: /documentation/articles/cloud-services-python-ptvs
+
 <!--External Link references-->
 [Azure Management Portal]: https://manage.windowsazure.cn
 [Python Tools for Visual Studio]: http://aka.ms/ptvs
@@ -229,4 +230,4 @@ Follow these links to learn more about Python Tools for Visual Studio, Django an
 [Web Projects]: http://go.microsoft.com/fwlink/?LinkId=624027
 [Cloud Service Projects]: http://go.microsoft.com/fwlink/?LinkId=624028
 [Django Documentation]: https://www.djangoproject.com/
-[SQL Database]: /documentation/services/sql-database/
+[SQL Database]: /documentation/services/sql-databases/

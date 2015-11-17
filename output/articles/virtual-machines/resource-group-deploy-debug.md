@@ -204,9 +204,15 @@ For versions of PowerShell prior to 1.0 Preview, you can see the full list of re
 
     Name                                    Locations                               LocationsString
     ----                                    ---------                               ---------------
-    ResourceGroup                           {East Asia, South East Asia, China East... East Asia, South East Asia, China East,...
+    ResourceGroup                           {China East, <!-- deleted by customization South --> China <!-- deleted by customization East, China East.. --><!-- keep by customization: begin --> North.. <!-- keep by customization: end -->. China East<!-- deleted by customization, South --> China <!-- deleted by customization East, China East,.. --><!-- keep by customization: begin --> North,.. <!-- keep by customization: end -->.
+<!-- deleted by customization
     Microsoft.ApiManagement/service         {China North, China East, China East 2, Nor... China North, China East, China East 2, Nort...
     Microsoft.AppService/apiapps            {China East, China North, China East,... China East, China North, China East, ...
+-->
+<!-- keep by customization: begin -->
+    Microsoft.ApiManagement/service         {China East, China North... China East China North,...
+    Microsoft.AppService/apiapps            {China East, China North... China East China North,...
+<!-- keep by customization: end -->
     ...
 
 You can specify a particular type of resource with:
@@ -215,9 +221,10 @@ You can specify a particular type of resource with:
 
     Name                                                        LocationsString
     ----                                                        ---------------
-    Microsoft.Compute/virtualMachines                           China East, China East 2, China North, China North, China East,
-                                                                China North, West Europe, East Asia, Southeast Asia,
-                                                                Japan East, Japan West
+    Microsoft.Compute/virtualMachines                           China East, China <!-- deleted by customization East 2, China --> North<!-- deleted by customization, China North, China East, -->
+<!-- deleted by customization
+                                                                China North, West Europe, China East, China North,
+                                                                Japan East, China East
 
 For PowerShell 1.0 Preview, use **Get-AzureRmResourceProvider** to get supported locations.
 
@@ -235,16 +242,17 @@ You can specify a particular type of resource with:
     PS C:\> ((Get-AzureRmResourceProvider -ProviderNamespace Microsoft.Web).ResourceTypes | Where-Object ResourceTypeName -eq sites).Locations
 
     Brazil South
-    East Asia
+    China East
     China East
     Japan East
-    Japan West
+    China East
     China North
     China North
     China East
     West Europe
     China North
-    Southeast Asia
+    China North
+-->
 
 ### Azure CLI
 
@@ -253,7 +261,12 @@ For Azure CLI, you can use **azure location list**. Because the list of location
     azure location list --json | jq '.[] | select(.name == "Microsoft.Compute/virtualMachines")'
     {
       "name": "Microsoft.Compute/virtualMachines",
-      "location": "China East,China East 2,China North,China North,China East,China North,West Europe,East Asia,Southeast Asia,Japan East,Japan West"
+<!-- deleted by customization
+      "location": "China East,China East 2,China North,China North,China East,China North,West Europe,China East,China North,Japan East,China East"
+-->
+<!-- keep by customization: begin -->
+      "location": "China East,China North"
+<!-- keep by customization: end -->
     }
 
 ### REST API
@@ -276,7 +289,7 @@ To examine your own subscription's quotas for cores, you should use the `azure v
 
     azure vm list-usage
     info:    Executing command vm list-usage
-    Location: westus
+    Location: chinanorth
     data:    Name   Unit   CurrentValue  Limit
     data:    -----  -----  ------------  -----
     data:    Cores  Count  0             4
@@ -302,11 +315,13 @@ To be specific about cores, for example, you can check the regions for which you
             "2014-12-01-preview"
           ],
           "locations": [
+<!-- deleted by customization
             "China East",
             "China North",
             "West Europe",
-            "East Asia",
-            "Southeast Asia"
+-->
+            "China East",
+            "China North"
           ]
         }
 
@@ -376,11 +391,13 @@ Again, if you want more information about providers, including their regional av
               ],
               "locations": [
                 "China North",
+<!-- deleted by customization
                 "China East",
                 "China North",
                 "China North",
                 "West Europe",
-                "East Asia"
+-->
+                "China East"
               ],
               "properties": {},
               "name": "service"

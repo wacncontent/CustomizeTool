@@ -7,9 +7,9 @@
 	manager="adinah" 
 	editor=""/>
 
-<tags 
-	ms.service="storage" 
-	ms.date="10/07/2015" 
+<tags
+	ms.service="storage"
+	ms.date="10/07/2015"
 	wacn.date=""/>
 
 # Introduction to Windows Azure Storage
@@ -74,7 +74,8 @@ To learn how to create a standard storage account, see [Create, manage, or delet
 
 ### Premium Storage Accounts
 
-Azure Premium Storage currently supports Azure Virtual Machine disks only. For an in-depth overview of Azure Premium Storage, see [Premium Storage: High-Performance Storage for Azure Virtual Machine Workloads](/documentation/articles/storage-premium-storage-preview-portal).
+Azure Premium Storage currently supports Azure Virtual Machine disks only. For an in-depth overview of Azure Premium Storage, see [Premium Storage: High-Performance Storage for Azure Virtual Machine Workloads](/documentation/articles/storage-premium-storage-preview-portal/).
+
 [AZURE.INCLUDE [storage-versions-include](../includes/storage-versions-include.md)]
 
 ## Blob Storage
@@ -130,7 +131,7 @@ By default, only the storage account owner can access resources in the storage a
 
 Your storage account is assigned two private access keys on creation that are used for authentication. Having two keys ensures that your application remains available when you regularly regenerate the keys as a common security key management practice.
 
-If you do need to allow users controlled access to your storage resources, then you can create a [shared access signature](/documentation/articles/storage-dotnet-shared-access-signature-part-1). A shared access signature (SAS) is a token that can be appended to a URL that enables delegated access to a storage resource. Anyone who possesses the token can access the resource it points to with the permissions it specifies, for the period of time that it is valid. Beginning with version 2015-04-05, Azure Storage supports two kinds of shared access signatures: service SAS and account SAS.
+If you do need to allow users controlled access to your storage resources, then you can create a [shared access signature](/documentation/articles/storage-dotnet-shared-access-signature-part-1). A shared access signature (SAS) is a token that can be appended to a URL that enables delegated access to a storage resource. Anyone who possesses the token can access the resource it points to with the permissions it specifies, for the period of time that it is valid. Beginning with version 2015-04-05, Azure Storage supports two kinds of shared access signatures: service SAS and account SAS. 
 
 The service SAS delegates access to a resource in just one of the storage services: the Blob, Queue, Table, or File service.
 
@@ -150,7 +151,7 @@ Customers are charged for Azure Storage based on four factors: the storage capac
 
 Storage capacity refers to how much of your storage account allotment you are using to store data. The cost of simply storing your data is determined by how much data you are storing, and how it is replicated. Every read and write operation against Azure Storage also makes a request against the service. Data egress refers to data transferred out of a Windows Azure region. When the data in your storage account is accessed by an application that is not running in the same region, whether that application is a cloud service or some other type of application, then you are charged for data egress. (For Windows Azure services, you can take steps to group your data and services in the same data centers to reduce or eliminate process and data egress charges.) 
 
-The [Storage Pricing Details](/home/features/storage) page provides detailed pricing information for storage capacity, replication, and transactions. The [Data Transfers Pricing Details](/#pricepricing/details/data-transfers/) provides detailed pricing information for data egress. You can use the [Azure Storage Pricing Calculator](/pricing/calculator/?scenario=data-management) to help estimate your costs.
+The [Storage Pricing Details](/home/features/storage/#price) page provides detailed pricing information for storage capacity, replication, and transactions. The [Data Transfers Pricing Details](/home/features/data-transfers/#price) provides detailed pricing information for data egress. You can use the [Azure Storage Pricing Calculator](/pricing/calculator/?scenario=data-management) to help estimate your costs.
 
 ## Developing Against Storage
 
@@ -201,7 +202,7 @@ To get started with Azure Storage, explore these resources:
 
 ### For Java/Android Developers
 
-- [Java Client Library Reference](http://dl.windowsazure.cn/storage/javadoc/)
+- [Java Client Library Reference](http://dl.windowsazure.com/storage/javadoc/)
 - [How to use Blob Storage from Java/Android](/documentation/articles/storage-java-how-to-use-blob-storage)
 - [How to use Table Storage from Java/Android](/documentation/articles/storage-java-how-to-use-table-storage)
 - [How to use Queue Storage from Java/Android](/documentation/articles/storage-java-how-to-use-queue-storage)

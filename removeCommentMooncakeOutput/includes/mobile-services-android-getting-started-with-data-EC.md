@@ -155,4 +155,4 @@ Now that your mobile service is ready, you can update the app to store items in 
 		
 
 <!-- URLs. -->
-[Mobile Services Android SDK]: https://zumo.blob.core.chinacloudapi.cn/sdk/azuresdk-android-2.0.2-beta2.zip
+[Mobile Services Android SDK]: https://zumo.blob.core.windows.net/sdk/azuresdk-android-2.0.2-beta2.zip

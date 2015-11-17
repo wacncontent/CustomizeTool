@@ -138,7 +138,7 @@ Currently, **Azure SQL Database** is available in several service tiers. For Bas
 
 With **Azure SQL Database**, the database software is automatically configured, patched, and upgraded by Windows Azure in data centers all over the world. Therefore, you gain reduced administration costs. In addition, its [built-in backup](http://msdn.microsoft.com/zh-cn/library/azure/jj650016.aspx) capabilities help you achieve significant cost savings, especially, when you have large number of databases. When using Azure SQL Database, you are not billed for individual queries running against Azure SQL Database or incoming internet traffic. You are billed for [outgoing internet traffic](/home/features/data-transfers/#price). If your database has high transactional volume and need to support many concurrent users, we recommend that you use Premium rather than Basic or Standard service tiers. 
 
-With **SQL Server in Azure VM**, you utilize traditional SQL Server licensing. You can either use the platform-provided SQL Server image or bring your SQL Server license to Azure. When using the SQL Server platform provided images, the cost depends on the VM size as well as the version of SQL Server you choose. Basically, you pay per minute licensing cost of SQL Server, the per-minute licensing of Windows Server, and the Azure storage cost. The per-minute billing option allows you to use SQL Server for as long as you need it without buying full SQL Server license. If you bring your own SQL Server license to Azure, you are charged for Azure compute and storage costs only. For more information, see [License Mobility through Software Assurance on Azure](http://azure.microsoft.com/pricing/license-mobility/).
+With **SQL Server in Azure VM**, you utilize traditional SQL Server licensing. You can either use the platform-provided SQL Server image or bring your SQL Server license to Azure. When using the SQL Server platform provided images, the cost depends on the VM size as well as the version of SQL Server you choose. Basically, you pay per minute licensing cost of SQL Server, the per-minute licensing of Windows Server, and the Azure storage cost. The per-minute billing option allows you to use SQL Server for as long as you need it without buying full SQL Server license. If you bring your own SQL Server license to Azure, you are charged for Azure compute and storage costs only. For more information, see [License Mobility through Software Assurance on Azure](/pricing/license-mobility/).
 
 ####<a name="appcost"></a>Calculating the total application cost
 
@@ -156,13 +156,16 @@ Here is the detailed cost calculation for your application running in Azure SQL 
 
 > [AZURE.IMPORTANT] Currently, Azure SQL Database does not support all the features of SQL Server. For a detailed comparison information, see [Azure SQL Database Guidelines and Limitations](http://msdn.microsoft.com/zh-cn/library/azure/ff394102.aspx). Be aware of this when you want to move an existing database to Azure SQL Database as you might need some additional budget on database redesign. Azure SQL Database is Microsoft’s platform as-a-service offering. When you migrate an existing on-premises SQL Server application to Azure SQL Database, we recommend that you update the application to take all advantages of the platform-as-a-service offering. For example, start using [Azure Web Sites](/documentation/services/websites/) or [Azure Cloud Services](/home/features/cloud-services/) on the application layer to increase cost benefits. In addition, validate your application against different Azure SQL Database service tiers and check which one fits best to your application’s needs. This process helps you achieve better performance results and minimized costs. For more information, see [Azure SQL Database Service Tiers and Performance Levels](/documentation/articles/sql-database-service-tiers).
 
-For a detailed cost estimate, use the [Azure Pricing Calculator](http://azure.microsoft.com/pricing/calculator/). 
+For a detailed cost estimate, use the [Azure Pricing Calculator](/pricing/calculator/). 
 
 For more information on pricing, see the following resources:
 
 - [Azure SQL Database Pricing Details](/home/features/sql-database/#price) 
 - [Virtual Machine Pricing Details](/home/features/virtual-machines/#price)
-- [SQL Server in Azure VMs - Pricing Details](/home/features/virtual-machines/#price//azure.microsoft.com/home/features/virtual-machines/#price/a>Administration
+- [SQL Server in Azure VMs - Pricing Details](/home/features/virtual-machines/#price)
+- [Windows Server in Azure VMs - Pricing Details](/home/features/virtual-machines/#price) 
+
+###<a name="admin"></a>Administration
 
 If your hands are already full of so many tasks, perhaps taking on server and database administration is not something you’re looking forward to. For many businesses, the decision to go with a cloud service is all about the ability to offload the complexity of administration. With **Azure SQL Database**, Microsoft administers the physical hardware such as hard drives, servers, and storage; automatically replicates all data to provide high availability; configures and upgrades the database software; manages load balancing; and does transparent failover if there is a server failure. You can continue to administer your Azure SQL Database instances but without controlling the physical resources of the underlying SQL Server instance and of the Azure platform.  For example, you can administer databases and logins, do index tuning, and optimize queries, but cannot administer system tables and filegroup management. For more information, see [Azure SQL Database Guidelines and Limitations](http://msdn.microsoft.com/zh-cn/library/ff394102.aspx). 
 
@@ -172,7 +175,7 @@ On the other hand, you might have in-house expertise and a desire to keep contro
 
 For some of us, meeting the up-time obligations of a Service Level Agreement (SLA) is the top priority. In this section, we look at what SLA means for each database hosting option.
 
-For **Azure SQL Database**, given the Basic, Standard, and Premium service tiers, Microsoft provides an availability SLA of 99.99%.  Notice that the availability SLA addresses the ability to connect to the database. In other words, it is a database-level SLA. For the latest information on SLAs, see [Service Level Agreement](http://azure.microsoft.com/support/legal/sla/). For the latest information on Azure SQL Database Service Tiers (Editions) and the supported business continuity plans, see [Azure SQL Database Service Tiers](/documentation/articles/sql-database-service-tiers).
+For **Azure SQL Database**, given the Basic, Standard, and Premium service tiers, Microsoft provides an availability SLA of 99.99%.  Notice that the availability SLA addresses the ability to connect to the database. In other words, it is a database-level SLA. For the latest information on SLAs, see [Service Level Agreement](/support/legal/sla/). For the latest information on Azure SQL Database Service Tiers (Editions) and the supported business continuity plans, see [Azure SQL Database Service Tiers](/documentation/articles/sql-database-service-tiers).
 
 For **Virtual Machines hosted in Azure**, Microsoft provides an availability SLA of 99.95% and this availability is for the VM, not for the processes running inside the VM (such as, SQL Server). The [VM SLA](http://www.microsoft.com/download/details.aspx?id=38427) requires that you host at least two VMs in an availability set. With such configuration, Azure guarantees that at least one of the VMs will be available 99.95% of the time.  For database high availability (HA) within VMs, you should configure one of the supported high availability options in SQL Server, such as AlwaysOn Availability Groups. Note that setting up AlwaysOn in Azure requires some manual configuration and management, and you pay extra for each secondary you operate.
 
@@ -234,7 +237,12 @@ Thank you all for bringing this article to life!
    <td valign="middle"><p><a href="http://msdn.microsoft.com/zh-cn/library/azure/ee336279.aspx">MSDN: Azure SQL Database</a></p>
 <p><a href="/documentation/articles/virtual-machines-sql-server-infrastructure-services/">Overview of SQL Server in Azure Virtual Machines</a></p>
 
+<!-- deleted by customization
+<p><a href="/documentation/services/sql-databases/">Azure.com: Azure SQL Database</a></p></td>
+-->
+<!-- keep by customization: begin -->
 <p><a href="/home/features/sql-database/">Azure.com: Azure SQL Database</a></p></td>
+<!-- keep by customization: end -->
    <td valign="middle">Links to the library documentation.</td>   
 </tr>
 <tr>

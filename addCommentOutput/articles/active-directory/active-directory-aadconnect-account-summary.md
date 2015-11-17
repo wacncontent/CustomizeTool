@@ -38,15 +38,9 @@ NA|Logon credentials of the user running the wizard| Administrator of the local 
 
 ## Credentials that are collected and what they are used for in a Custom Setup
 
-<!-- deleted by customization
 
 Wizard Page  | Credentials Collected | Permissions Required| Used For
-------------- | ------------- |------------- |------------- 
--->
-<!-- keep by customization: begin -->
-Wizard Page  | Credentials Collected | Permissions Required| Used For 
-------------- | ------------- |------------- |------------- |
-<!-- keep by customization: end -->
+------------- | ------------- |------------- |-------------
 NA|Logon credentials of the user running the wizard|Administrator of the local server| <li>By default, wizard creates the AD account that will be used as the sync service logon account on the local machine</li><li>We only create the sync service logon account if the admin does not specify a particular account</li> <li>The account is a local user unless on a DC in which case the account is a domain user</li>
 Install synchronization services page, Service account option | AD or local user account credentials | Local user|If the admin specifies an account, this account is used as the logon account for the sync service.
 Connect to Azure AD|Azure AD directory credentials| Global administrator role in Azure AD|The wizard creates the AD account that will be used as the sync service logon account on the local machine.

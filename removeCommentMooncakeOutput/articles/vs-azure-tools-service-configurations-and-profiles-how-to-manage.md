@@ -7,9 +7,9 @@
    manager="douge"
    editor="tglee" />
 <tags
-   ms.service="multiple"
-   ms.date="08/13/2015"
-   wacn.date="" />
+	ms.service="multiple"
+	ms.date="08/13/2015"
+	wacn.date=""/>
 
 # How to manage service configurations and profiles
 
@@ -125,4 +125,4 @@ When you run the wizard for the first time, a default profile is created. Visual
 
 ## Next steps
 
-To learn about configuring other parts of your Azure project from Visual Studio, see [Configuring an Azure Project](https://azure.microsoft.com/zh-cn/documentation/articles/vs-azure-tools-configuring-an-azure-project/)
+To learn about configuring other parts of your Azure project from Visual Studio, see [Configuring an Azure Project](/documentation/articles/vs-azure-tools-configuring-an-azure-project/)

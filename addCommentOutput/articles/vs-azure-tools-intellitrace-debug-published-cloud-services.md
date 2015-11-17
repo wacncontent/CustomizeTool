@@ -63,10 +63,5 @@ You can continue to work in Visual Studio while the IntelliTrace logs are downlo
 
 ## See Also
 
-<!-- deleted by customization
 [Debugging Cloud Services](https://msdn.microsoft.com/zh-cn/library/ee405479.aspx)
--->
-<!-- keep by customization: begin -->
-[Debugging Cloud Services](http://go.microsoft.com/fwlink/p/?LinkID=62304)
-<!-- keep by customization: end -->
 

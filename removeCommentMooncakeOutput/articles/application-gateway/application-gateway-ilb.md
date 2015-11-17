@@ -6,10 +6,10 @@
    authors="joaoma"
    manager="jdial"
    editor="tysonn"/>
-<tags 
-   ms.service="application-gateway"
-   ms.date="06/30/2015"
-   wacn.date=""/>
+<tags
+	ms.service="application-gateway"
+	ms.date="09/29/2015"
+	wacn.date=""/>
 
 # Create an Application Gateway with an Internal Load Balancer (ILB)
 
@@ -206,5 +206,5 @@ Use the `Get-AzureApplicationGateway` cmdlet to check the status of gateway. If 
 
 If you want more information about load balancing options in general, see:
 
-<!--- [Azure Load Balancer](/documentation/services/load-balancer/)-->
+- [Azure Load Balancer](/documentation/services/load-balancer/)
 - [Azure Traffic Manager](/documentation/services/traffic-manager/)

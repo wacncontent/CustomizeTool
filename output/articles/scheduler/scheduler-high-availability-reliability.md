@@ -17,10 +17,12 @@
 ## Azure Scheduler High-Availability
 
 As a core Azure platform service, Azure Scheduler is highly available and features both geo-redundant service deployment and geo-regional job replication.
+<!-- deleted by customization
 
 ### Geo-redundant service deployment
 
 Azure Scheduler is available via the UI in almost every geo region that's in Azure today. The list of regions that Azure Scheduler is available in is [listed here](http://azure.microsoft.com/regions/#services). If a data center in a hosted region is rendered unavailable, the failover capabilities of Azure Scheduler are such that the service is available from another data center.
+-->
 
 ### Geo-regional job replication
 
@@ -48,7 +50,7 @@ To learn how to configure a retry policy, refer to [retryPolicy](/documentation/
 
 If the target endpoint for your Azure Scheduler job remains unreachable, Azure Scheduler falls back to the alternate error-handling endpoint after following its retry policy. If an alternate error-handling endpoint is configured, Azure Scheduler invokes it. With an alternate endpoint, your own jobs are highly available in the face of failure.
 
-As an example, in the diagram below, Azure Scheduler follows its retry policy to hit a New York web service. After the retries fail, it checks if there's an alternate. It then goes ahead and starts making requests to the alternate with the same retry policy.
+As an example, in the diagram below, Azure Scheduler follows its retry policy to hit a Beijing web service. After the retries fail, it checks if there's an alternate. It then goes ahead and starts making requests to the alternate with the same retry policy.
 
 ![][2]
 

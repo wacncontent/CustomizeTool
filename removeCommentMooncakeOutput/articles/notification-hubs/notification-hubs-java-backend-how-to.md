@@ -7,17 +7,13 @@
 	manager="dwrede" 
 	editor=""/>
 
-<tags 
-    ms.service="notification-hubs" 
-    ms.date="07/17/2015" 
-    wacn.date="" />
+<tags
+	ms.service="notification-hubs"
+	ms.date="07/17/2015"
+	wacn.date=""/>
 
 # How to use Notification Hubs from Java
-> [AZURE.SELECTOR] 
-- [Java](/documentation/articles/notification-hubs-php-backend-how-to)
-- [PHP](/documentation/articles/notification-hubs-python-backend-how-to)
-- [Python](/documentation/articles/notification-hubs-nodejs-how-to-use-notification-hubs)
-- [Node.js](/documentation/articles/notification-hubs-nodejs-how-to-use-notification-hubs)
+[AZURE.INCLUDE [notification-hubs-backend-how-to-selector](../includes/notification-hubs-backend-how-to-selector.md)]
 		
 This topic describes the key features of the new fully supported official Azure Notification Hub Java SDK. 
 This is an open source project and you can view the entire SDK code at [Java SDK]. 
@@ -232,15 +228,15 @@ The Notification object is simply a body with headers, some utility methods help
 
 * **Windows Store and Windows Phone 8.1 (non-Silverlight)**
 
-	String toast = "<toast><visual><binding template=\"ToastText01\"><text id=\"1\">Hello from Java!</text></binding></visual></toast>";
-	Notification n = Notification.createWindowsNotification(toast);
-	hub.sendNotification(n);
+		String toast = "<toast><visual><binding template=\"ToastText01\"><text id=\"1\">Hello from Java!</text></binding></visual></toast>";
+		Notification n = Notification.createWindowsNotification(toast);
+		hub.sendNotification(n);
 
 * **iOS**
 
-	String alert = "{\"aps\":{\"alert\":\"Hello from Java!\"}}";
-	Notification n = Notification.createAppleNotification(alert);
-	hub.sendNotification(n);
+		String alert = "{\"aps\":{\"alert\":\"Hello from Java!\"}}";
+		Notification n = Notification.createAppleNotification(alert);
+		hub.sendNotification(n);
 
 * **Android**
 
@@ -250,14 +246,14 @@ The Notification object is simply a body with headers, some utility methods help
 
 * **Windows Phone 8.0 and 8.1 Silverlight**
 
-	String toast = "<?xml version=\"1.0\" encoding=\"utf-8\"?>" +
-		        "<wp:Notification xmlns:wp=\"WPNotification\">" +
-		           "<wp:Toast>" +
-		                "<wp:Text1>Hello from Java!</wp:Text1>" +
-		           "</wp:Toast> " +
-		        "</wp:Notification>";
-	Notification n = Notification.createMpnsNotification(toast);
-	hub.sendNotification(n);
+		String toast = "<?xml version=\"1.0\" encoding=\"utf-8\"?>" +
+			        "<wp:Notification xmlns:wp=\"WPNotification\">" +
+			           "<wp:Toast>" +
+			                "<wp:Text1>Hello from Java!</wp:Text1>" +
+			           "</wp:Toast> " +
+			        "</wp:Notification>";
+		Notification n = Notification.createMpnsNotification(toast);
+		hub.sendNotification(n);
 
 * **Kindle Fire**
 
@@ -286,7 +282,6 @@ The Notification object is simply a body with headers, some utility methods help
 
 Running your Java code should now produce a notification appearing on your target device.
 
-
 ##<a name="next-steps"></a>Next Steps
 In this topic we showed how to create a simple Java REST client for Notification Hubs. From here you can:
 
@@ -299,11 +294,11 @@ In this topic we showed how to create a simple Java REST client for Notification
 	- [Send cross-platform notifications to authenticated users]
 
 [Java SDK]: https://github.com/Azure/azure-notificationhubs-java-backend
-[Get started tutorial]:/documentation/articles/notification-hubs-ios-get-started
+[Get started tutorial]: /documentation/articles/notification-hubs-ios-get-started/
 [Get Started with Notification Hubs]: /documentation/articles/notification-hubs-windows-store-dotnet-get-started
 [Send breaking news]: /documentation/articles/notification-hubs-windows-store-dotnet-send-breaking-news
 [Send localized breaking news]: /documentation/articles/notification-hubs-windows-store-dotnet-send-localized-breaking-news
-[Send notifications to authenticated users]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-push-notifications-app-users
-[Send cross-platform notifications to authenticated users]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-push-notifications-app-users
+[Send notifications to authenticated users]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-push-notifications-app-users/
+[Send cross-platform notifications to authenticated users]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-push-notifications-app-users-xplat-mobile-services/
 [Maven]: http://maven.apache.org/
  

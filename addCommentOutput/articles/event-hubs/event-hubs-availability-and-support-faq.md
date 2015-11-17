@@ -15,21 +15,11 @@
 
 Event Hubs provides large-scale intake, persistence and processing of data events from high-throughput data sources and/or millions of devices. When paired with Service Bus queues and topics, Event Hubs enables persistent command and control deployments for Internet of Things scenarios.
 
-<!-- deleted by customization
 This article discusses availability information and answers some frequently-asked questions:
--->
-<!-- keep by customization: begin -->
-This section covers availability information and answers some frequently-asked questions.
-<!-- keep by customization: end -->
 
 ## Pricing information
 
-<!-- deleted by customization
 For complete information about Event Hubs pricing, see the [Event Hubs pricing details](/home/features/event-hubs/#price).
--->
-<!-- keep by customization: begin -->
-For information about Event Hubs pricing, see the [Event Hubs pricing details](/home/features/event-hubs).
-<!-- keep by customization: end -->
 
 ## How are Event Hubs ingress events calculated?
 
@@ -73,17 +63,17 @@ Event Hubs Standard tier currently supports a maximum retention period of 7 days
 
 The total size of all stored events, including any internal overhead for event headers or on disk storage structures in all Event Hubs, is measured throughout the day. At the end of the day, the peak storage size is calculated. The daily storage allowance is calculated based on the minimum number of throughput units that were selected during the day (each throughput unit provides an allowance of 84 GB). If the total size exceeds the calculated daily storage allowance, the excess storage is billed using Azure Blob storage rates (at the **Locally Redundant Storage** rate).
 
-## Can I use a single AMQP connection to send and receive from Event Hubs and Service Bus <!-- deleted by customization queues/topics --><!-- keep by customization: begin --> queues/#pricetopics <!-- keep by customization: end -->?
+## Can I use a single AMQP connection to send and receive from Event Hubs and Service Bus queues/topics?
 
 Yes, as long as all the Event Hubs, queues, and topics are in the same Service Bus namespace. As such, you can implement bi-directional, brokered connectivity to many devices, with sub-second latencies, in a cost-effective and highly scalable way.
 
 ## Do brokered connection charges apply to Event Hubs?
 
-For senders, connection charges apply only when the AMQP protocol is used. There are no connection charges for sending events using HTTP, regardless of the number of sending systems or devices. If you plan to use AMQP (for example, to achieve more efficient event streaming or to enable bi-directional communication on Internet of Things command and control scenarios), please refer to the [Service Bus pricing <!-- deleted by customization information](/home/features/service-bus/#price) --><!-- keep by customization: begin --> information](/home/features/service-bus) <!-- keep by customization: end --> page for information about what constitutes a brokered connection, and how they are metered.
+For senders, connection charges apply only when the AMQP protocol is used. There are no connection charges for sending events using HTTP, regardless of the number of sending systems or devices. If you plan to use AMQP (for example, to achieve more efficient event streaming or to enable bi-directional communication on Internet of Things command and control scenarios), please refer to the [Service Bus pricing information](/home/features/service-bus/#price) page for information about what constitutes a brokered connection, and how they are metered.
 
 ## What is the difference between Event Hubs Basic and Standard tiers?
 
-Event Hubs Standard tier provides features beyond what is available in Event Hubs Basic, as well as in some competitive systems. These features include retention periods of more than 24 hours, and the ability to use a single AMQP connection to send commands to large numbers of devices with sub-second latencies, as well as to send telemetry from those devices into Event Hubs. Refer to the [pricing details]([Event Hubs Pricing <!-- deleted by customization Details](/home/features/event-hubs/#price)) --><!-- keep by customization: begin --> Details](/#pricepricing/details/event-hubs)) <!-- keep by customization: end --> for the list of features.
+Event Hubs Standard tier provides features beyond what is available in Event Hubs Basic, as well as in some competitive systems. These features include retention periods of more than 24 hours, and the ability to use a single AMQP connection to send commands to large numbers of devices with sub-second latencies, as well as to send telemetry from those devices into Event Hubs. Refer to the [pricing details]([Event Hubs Pricing Details](/home/features/event-hubs/#price)) for the list of features.
 
 ## Geographic Availability
 
@@ -94,8 +84,8 @@ Event Hubs is available in the following regions:
 <!-- deleted by customization
 |United States|China North, China East, China East 2, China East, China North|
 |Europe|China North, West Europe|
-|Asia Pacific|East Asia, Southeast Asia|
-|Japan|Japan East, Japan West|
+|Asia Pacific|China East, China North|
+|Japan|Japan East, China East|
 |Brazil|Brazil South|
 |Australia|Australia East, Australia Southeast|
 -->
@@ -105,33 +95,18 @@ Event Hubs is available in the following regions:
 
 ## Support and SLA
 
-Technical support for Event Hubs is available through the [community <!-- deleted by customization forums](https://social.msdn.microsoft.com/forums/azure/home) --><!-- keep by customization: begin --> forums](http://www.windowsazure.cn/support/forums/) <!-- keep by customization: end -->. Billing and subscription management support is provided at no cost.
+Technical support for Event Hubs is available through the [community forums](https://social.msdn.microsoft.com/forums/azure/home). Billing and subscription management support is provided at no cost.
 
-To learn more about our SLA, please visit the [Service Level <!-- deleted by customization Agreements](http://azure.microsoft.com/support/legal/sla/) --><!-- keep by customization: begin --> Agreements](http://www.windowsazure.cn/support/legal/sla) <!-- keep by customization: end --> page.
+To learn more about our SLA, please visit the [Service Level Agreements](/support/legal/sla/) page.
 
 ## Next steps
 
-<!-- deleted by customization
 To learn more about Event Hubs, see the following articles:
 
 - [Event Hubs overview].
--->
-<!-- keep by customization: begin -->
-To learn more about Event Hubs, visit the following topics:
-
-- [Event Hubs Overview]
-<!-- keep by customization: end -->
 - A complete [sample application that uses Event Hubs].
 - A [queued messaging solution] using Service Bus queues.
 
-<!-- deleted by customization
 [Event Hubs overview]: /documentation/articles/event-hubs-overview
 [sample application that uses Event Hubs]: https://code.msdn.microsoft.com/Service-Bus-Event-Hub-286fd097
 [queued messaging solution]: /documentation/articles/service-bus-dotnet-multi-tier-app-using-service-bus-queues
--->
-<!-- keep by customization: begin -->
-[Event Hubs Overview]: /documentation/articles/event-hubs-overview
-[sample application that uses Event Hubs]: https://code.msdn.microsoft.com/windowsazure/Service-Bus-Event-Hub-286fd097
-[queued messaging solution]: /documentation/articles/cloud-services-dotnet-multi-tier-app-using-service-bus-queues
- 
-<!-- keep by customization: end -->

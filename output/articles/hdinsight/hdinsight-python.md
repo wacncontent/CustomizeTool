@@ -29,6 +29,7 @@ HDInsight also includes Jython, which is a Python implementation written in Java
 ###<a name="hivepython"></a>Hive and Python
 
 Python can be used as a UDF from Hive through the HiveQL **TRANSFORM** statement. For example, the following HiveQL invokes a Python script stored in the **streaming.py** file.
+<!-- deleted by customization
 
 **Linux-based HDInsight**
 
@@ -39,6 +40,7 @@ Python can be used as a UDF from Hive through the HiveQL **TRANSFORM** statement
 	  (clientid string, phoneLable string, phoneHash string)
 	FROM hivesampletable
 	ORDER BY clientid LIMIT 50;
+-->
 
 **Windows-based HDInsight**
 
@@ -149,6 +151,7 @@ When the data is returned to Pig, it will have a consistent schema as defined in
 
 ##<a name="running"></a>Running the examples
 
+<!-- deleted by customization
 If you are using a Linux-based HDInsight cluster, use the **SSH** steps below. If you are using a Windows-based HDInsight cluster and a Windows client, use the **PowerShell** steps.
 
 ###SSH
@@ -171,6 +174,10 @@ For more information on using SSH, see <a href="/documentation/articles/hdinsigh
 		hadoop fs -copyFromLocal jython.py /jython.py
 
 After uploading the files, use the following steps to run the Hive and Pig jobs.
+-->
+<!-- keep by customization: begin -->
+If you are using a Windows-based HDInsight cluster and a Windows client, use the **PowerShell** steps.
+<!-- keep by customization: end -->
 
 ####Hive
 

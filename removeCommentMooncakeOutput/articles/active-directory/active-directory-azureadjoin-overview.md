@@ -7,9 +7,9 @@
 	manager="stevenpo" 
 	editor=""/>
 
-<tags 
-	ms.service="active-directory" 
-	ms.date="07/30/2015" 
+<tags
+	ms.service="active-directory"
+	ms.date="07/30/2015"
 	wacn.date=""/>
 
 # Extending cloud capabilities to Windows 10 devices through Azure Active Directory Join

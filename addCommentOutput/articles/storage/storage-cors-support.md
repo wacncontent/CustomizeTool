@@ -46,12 +46,7 @@ Once the preflight request is accepted and the response is returned, the browser
 
 The actual request is treated as normal request against the storage service. The presence of the Origin header indicates that the request is a CORS request and the service will check the matching CORS rules. If a match is found, the Access-Control headers are added to the response and sent back to the client. If a match is not found, the CORS Access-Control headers are not returned.
 
-<!-- deleted by customization
 ## Enabling CORS for the Azure Storage services
--->
-<!-- keep by customization: begin -->
-##Enabling CORS for the Azure Storage services
-<!-- keep by customization: end -->
 
 CORS rules are set at the service level, so you need to enable or disable CORS for each service (Blob, Queue and Table) separately. By default, CORS is disabled for each service. To enable CORS, you need to set the appropriate service properties using version 2013-08-15 or later, and add CORS rules to the service properties. For details about how to enable or disable CORS for a service and how to set CORS rules, please refer to [Set Blob Service Properties](https://msdn.microsoft.com/zh-cn/library/hh452235.aspx), [Set Queue Service Properties](https://msdn.microsoft.com/zh-cn/library/hh452232.aspx), and [Set Table Service Properties](https://msdn.microsoft.com/zh-cn/library/hh452240.aspx).
 
@@ -186,12 +181,7 @@ Successful preflight requests are billed if you have enabled CORS for any of the
 
 Unsuccessful preflight requests will not be billed.
 
-<!-- deleted by customization
 ## Next steps
--->
-<!-- keep by customization: begin -->
-##Next steps
-<!-- keep by customization: end -->
 
 [Set Blob Service Properties](https://msdn.microsoft.com/zh-cn/library/hh452235.aspx)
 

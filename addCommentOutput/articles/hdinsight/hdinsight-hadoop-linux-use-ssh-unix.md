@@ -63,18 +63,16 @@ Use the following information if you plan on using SSH keys with your cluster. I
 
 	Look for the following files in the directory listing. These are common names for public SSH keys.
 
-	* id_dsa.pub
 <!-- deleted by customization
+	* id\_dsa.pub
 	* id\_ecdsa.pub
--->
-<!-- keep by customization: begin -->
-	* id_ecdsa.pub
-<!-- keep by customization: end -->
-	* id_ed25519.pub
-<!-- deleted by customization
+	* id\_ed25519.pub
 	* id\_rsa.pub
 -->
 <!-- keep by customization: begin -->
+	* id_dsa.pub
+	* id_ecdsa.pub
+	* id_ed25519.pub
 	* id_rsa.pub
 <!-- keep by customization: end -->
 
@@ -84,11 +82,11 @@ Use the following information if you plan on using SSH keys with your cluster. I
 
 	You will be prompted for the following information:
 
-	* The file location - The location defaults to ~/.ssh/id_rsa.
+	* The file location - The location defaults to <!-- deleted by customization ~/.ssh/id\_rsa --><!-- keep by customization: begin --> ~/.ssh/id_rsa <!-- keep by customization: end -->.
 	* A passphrase - You will be prompted to re-enter this.
 		> [AZURE.NOTE] We strongly recommend that you use a secure passphrase for the key. However, if you forget the passphrase, there is no way to recover it.
 
-	After the command finishes, you will have two new files, the private key (for example, **id_rsa**) and the public key (for example, **id_rsa.pub**).
+	After the command finishes, you will have two new files, the private key (for example, <!-- deleted by customization **id\_rsa**) --><!-- keep by customization: begin --> **id_rsa**) <!-- keep by customization: end --> and the public key (for example, <!-- deleted by customization **id\_rsa.pub**) --><!-- keep by customization: begin --> **id_rsa.pub**) <!-- keep by customization: end -->.
 
 ##Create a Linux-based HDInsight cluster
 

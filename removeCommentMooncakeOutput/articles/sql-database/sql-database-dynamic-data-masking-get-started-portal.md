@@ -8,9 +8,9 @@
    editor="v-romcal"/>
 
 <tags
-   ms.service="sql-database"
-   ms.date="07/30/2015"
-   wacn.date=""/>
+	ms.service="sql-database"
+	ms.date="07/30/2015"
+	wacn.date=""/>
 
 # Get started with SQL Database Dynamic Data Masking (Azure Management Portal)
 

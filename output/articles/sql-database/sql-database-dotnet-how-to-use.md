@@ -30,7 +30,7 @@ SQL Database provides a relational database management system for Azure and is b
 
 SQL Database provides relational data storage, access, and management services on Azure. To use it, you'll need an Azure subscription.
 
-1. Open a web browser, and browse to [http://azure.microsoft.com/](http://azure.microsoft.com). To get started with a free account, click trial in the upper right corner and follow the steps.
+1. Open a web browser, and browse to <!-- deleted by customization [http://azure.microsoft.com/](http://azure.microsoft.com) --><!-- keep by customization: begin --> [http://www.windowsazure.cn](http://www.windowsazure.cn) <!-- keep by customization: end -->. To get started with a free account, click trial in the upper right corner and follow the steps.
 
 2. Your account is now created. You are ready to get started.
 

@@ -19,7 +19,7 @@ The Azure Content Delivery Network (CDN) caches Azure blobs and static content u
 If you are an existing CDN customer, you can now manage your CDN endpoints through the [Windows Azure Management Portal](https://manage.windowsazure.cn). 
 
 
->[AZURE.NOTE] Azure CDN has a separate [billing plan](http://www.microsoft.com/windowsazure/pricing/) from Azure Storage or Azure Cloud Services.
+>[AZURE.NOTE] Azure CDN has a separate [billing <!-- deleted by customization plan](http://www.microsoft.com/windowsazure/pricing/) --><!-- keep by customization: begin --> plan](http://www.windowsazure.cn/pricing/) <!-- keep by customization: end --> from Azure Storage or Azure Cloud Services.
  
 
 The CDN offers developers a global solution for delivering high-bandwidth content by caching the content at physical nodes across the world. For a current list of CDN node locations, see [Azure Content Delivery Network (CDN) POP Locations](http://msdn.microsoft.com/zh-cn/library/azure/gg680302.aspx).
@@ -36,7 +36,7 @@ When a request for an object is first made to the CDN, the object is retrieved d
  
 ##Caching content from Azure storage
 
-Once the CDN is enabled on a Azure storage account, any blobs that are in public containers and are available for anonymous access will be cached via the CDN. Only blobs that are publicly available can be cached with the Azure CDN. To make a blob publicly available for anonymous access, you must denote its container as public. Once you do so, all blobs within that container will be available for anonymous read access. You have the option of making container data public as well, or restricting access only to the blobs within it. See [Restrict Access to Containers and Blobs](/documentation/articles/storage-manage-access-to-resources) for information on managing access control for containers and blobs.
+Once the CDN is enabled on a Azure storage account, any blobs that are in public containers and are available for anonymous access will be cached via the CDN. Only blobs that are publicly available can be cached with the Azure CDN. To make a blob publicly available for anonymous access, you must denote its container as public. Once you do so, all blobs within that container will be available for anonymous read access. You have the option of making container data public as well, or restricting access only to the blobs within it. See [Restrict Access to Containers and <!-- deleted by customization Blobs](/documentation/articles/storage-manage-access-to-resources) --><!-- keep by customization: begin --> Blobs](http://msdn.microsoft.com/zh-cn//library/azure/dd179354.aspx) <!-- keep by customization: end --> for information on managing access control for containers and blobs.
 
 For best performance, use CDN edge caching for delivering blobs less than 10 GB in size.
 

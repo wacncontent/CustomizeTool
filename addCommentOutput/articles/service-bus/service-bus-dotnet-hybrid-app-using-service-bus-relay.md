@@ -14,12 +14,7 @@
 
 # .NET on-premises/cloud hybrid application using Azure Service Bus relay
 
-<!-- deleted by customization
 ## Introduction
--->
-<!-- keep by customization: begin -->
-##Introduction
-<!-- keep by customization: end -->
 
 Developing hybrid cloud applications with Windows Azure is easy using
 Visual Studio 2013 and the free Azure SDK for .NET. This article
@@ -35,7 +30,7 @@ You will learn:
 
 [AZURE.INCLUDE [create-account-note](../includes/create-account-note.md)]
 
-<!-- deleted by customization ## How --><!-- keep by customization: begin --> ##How <!-- keep by customization: end --> the Service Bus relay helps with hybrid solutions
+## How the Service Bus relay helps with hybrid solutions
 
 Business solutions are typically composed of a combination of custom
 code written to tackle new and unique business requirements and existing
@@ -79,12 +74,7 @@ The following is a screen shot of the start page of the completed web applicatio
 
 ![][1]
 
-<!-- deleted by customization
 ## Set up the development environment
--->
-<!-- keep by customization: begin -->
-##Set up the development environment
-<!-- keep by customization: end -->
 
 Before you can begin developing your Azure application, get the tools and set up your development environment.
 
@@ -94,15 +84,15 @@ Before you can begin developing your Azure application, get the tools and set up
 
 	![][42]
 
-<!-- deleted by customization 4 --><!-- keep by customization: begin --> 3 <!-- keep by customization: end -->.  When prompted to run or save the installer, click **Run**.
+4.  When prompted to run or save the installer, click **Run**.
 
     ![][2]
 
-<!-- deleted by customization 5 --><!-- keep by customization: begin --> 4 <!-- keep by customization: end -->.  In the **Web Platform Installer**, click **Install** and proceed with the installation.
+5.  In the **Web Platform Installer**, click **Install** and proceed with the installation.
 
     ![][3]
 
-<!-- deleted by customization 6 --><!-- keep by customization: begin --> 5 <!-- keep by customization: end -->.  Once the installation is complete, you will have everything
+6.  Once the installation is complete, you will have everything
     necessary to start to develop the app. The SDK includes tools that let you
     easily develop Azure applications in Visual Studio. If you
     do not have Visual Studio installed, the SDK also installs the free
@@ -118,17 +108,12 @@ You can manage namespaces and Service Bus messaging entities using either the [A
 
 1.  Sign in to the [Azure Management Portal][].
 
-2.  In the left navigation pane of the <!-- deleted by customization Azure Management Portal --><!-- keep by customization: begin --> management portal <!-- keep by customization: end -->, click
+2.  In the left navigation pane of the Azure Management Portal, click
     **Service Bus**.
 
-3.  In the lower pane of the <!-- deleted by customization Azure Management Portal --><!-- keep by customization: begin --> management portal <!-- keep by customization: end -->, click **Create**.
-<!-- deleted by customization
+3.  In the lower pane of the Azure Management Portal, click **Create**.
 
     ![][5]
--->
-<!-- keep by customization: begin -->
-    ![][5]
-<!-- keep by customization: end -->
 
 4.  In the **Add a new namespace** dialog box, enter a namespace name.
     The system immediately checks to see if the name is available.
@@ -146,7 +131,7 @@ You can manage namespaces and Service Bus messaging entities using either the [A
 
 	![][38]
 
-The namespace you created will appear in the <!-- deleted by customization Azure Management Portal --><!-- keep by customization: begin --> management portal <!-- keep by customization: end -->, though it may take a moment to activate. Wait until the status is **Active** before moving on.
+The namespace you created will appear in the Azure Management Portal, though it may take a moment to activate. Wait until the status is **Active** before moving on.
 
 ## Obtain the default management credentials for the namespace
 
@@ -212,12 +197,12 @@ the Service Bus package, see [Using the NuGet Service Bus Package][].
 
 7.  If you have already installed the NuGet package manager for Visual Studio, skip to the next step. Otherwise, visit [NuGet][] and click [Install NuGet](http://visualstudiogallery.msdn.microsoft.com/27077b70-9dad-4c64-adcf-c7cf6bc9970c). Follow the prompts to install the NuGet package manager, then re-start Visual Studio.
 
-<!-- deleted by customization 7 --><!-- keep by customization: begin --> 8 <!-- keep by customization: end -->.  In Solution Explorer, right-click **References**, then click
+7.  In Solution Explorer, right-click **References**, then click
     **Manage NuGet Packages**.
 
-<!-- deleted by customization 8 --><!-- keep by customization: begin --> 9 <!-- keep by customization: end -->.  In the left column of the **NuGet** dialog box, click **Online**.
+8.  In the left column of the **NuGet** dialog box, click **Online**.
 
-<!-- deleted by customization 9 --><!-- keep by customization: begin --> 10 <!-- keep by customization: end -->. In the right-hand column, click the **Search** box, type "**Service Bus**" and then select the **Microsoft
+9. 	In the right-hand column, click the **Search** box, type "**Service Bus**" and then select the **Microsoft
     Azure Service Bus** item. Click **Install** to complete the
     installation, then close the dialog box.
 
@@ -225,16 +210,16 @@ the Service Bus package, see [Using the NuGet Service Bus Package][].
 
     Note that the required client assemblies are now referenced.
 
-<!-- deleted by customization 9 --><!-- keep by customization: begin --> 11 <!-- keep by customization: end -->.  Add a new class for your product contract. In Solution Explorer,
+9.  Add a new class for your product contract. In Solution Explorer,
     right-click the **ProductsServer** project and click **Add**, and then click
     **Class**.
 
     ![][14]
 
-<!-- deleted by customization 10 --><!-- keep by customization: begin --> 12 <!-- keep by customization: end -->. In the **Name** box, type the name **ProductsContract.cs**. Then
+10. In the **Name** box, type the name **ProductsContract.cs**. Then
     click **Add**.
 
-<!-- deleted by customization 11 --><!-- keep by customization: begin --> 13 <!-- keep by customization: end -->. In **ProductsContract.cs**, replace the namespace definition with
+11. In **ProductsContract.cs**, replace the namespace definition with
     the following code, which defines the contract for the service.
 
         namespace ProductsServer
@@ -270,7 +255,7 @@ the Service Bus package, see [Using the NuGet Service Bus Package][].
             }
         }
 
-<!-- deleted by customization 12 --><!-- keep by customization: begin --> 14 <!-- keep by customization: end -->. In Program.cs, replace the namespace definition with the following
+12. In Program.cs, replace the namespace definition with the following
     code, which adds the profile service and the host for it.
 
         namespace ProductsServer
@@ -324,17 +309,12 @@ the Service Bus package, see [Using the NuGet Service Bus Package][].
             }
         }
 
-<!-- deleted by customization 13 --><!-- keep by customization: begin --> 15 <!-- keep by customization: end -->. In Solution Explorer, double-click the **App.config** file to
+13. In Solution Explorer, double-click the **App.config** file to
     open it in the Visual Studio editor. Replace the contents of
     **&lt;system.ServiceModel&gt;** with the following XML code. Be sure to
     replace *yourServiceNamespace* with the name of your service
     namespace, and *yourKey* with the SAS key you retrieved earlier
-<!-- deleted by customization
     from the Azure Management Portal:
--->
-<!-- keep by customization: begin -->
-    from the Azure management portal:
-<!-- keep by customization: end -->
 
         <system.serviceModel>
           <extensions>
@@ -364,7 +344,7 @@ the Service Bus package, see [Using the NuGet Service Bus Package][].
           </behaviors>
         </system.serviceModel>
 
-<!-- deleted by customization 14 --><!-- keep by customization: begin --> 16 <!-- keep by customization: end -->. Press F6 or from the **Build** menu, click **Build Solution** to build the application to verify the accuracy of your work so far.
+14. Press F6 or from the **Build** menu, click **Build Solution** to build the application to verify the accuracy of your work so far.
 
 ## Create an ASP.NET MVC application
 
@@ -503,7 +483,7 @@ Run the application to verify that it works.
 
 ## Make your application ready to deploy to Azure
 
-You can deploy your application to an Azure cloud service or to an Azure <!-- deleted by customization website --><!-- keep by customization: begin --> Website <!-- keep by customization: end -->. To learn more about the difference between <!-- deleted by customization websites --><!-- keep by customization: begin --> Websites <!-- keep by customization: end --> and cloud services, see [Azure Execution Models][executionmodels]. To learn how to deploy the application to an Azure <!-- deleted by customization website --><!-- keep by customization: begin --> Website <!-- keep by customization: end -->, see [Deploying an ASP.NET Web Application to an Azure Website](/develop/net/tutorials/get-started/). This section contains detailed steps for deploying the application to an Azure cloud service.
+You can deploy your application to an Azure cloud service or to an Azure website. To learn more about the difference between websites and cloud services, see [Azure Execution Models][executionmodels]. To learn how to deploy the application to an Azure website, see [Deploying an ASP.NET Web Application to an Azure Website](/develop/net/tutorials/get-started/). This section contains detailed steps for deploying the application to an Azure cloud service.
 
 To deploy your application to a cloud service, you'll add a cloud service project deployment project to the solution. The deployment project contains configuration information that is needed to properly run your application in the cloud.
 
@@ -610,22 +590,22 @@ The next step is to hook up the on-premises products server with the ASP.NET MVC
 
 3.  Sign in using your Microsoft Account.
 
-<!-- deleted by customization 8 --><!-- keep by customization: begin --> 4 <!-- keep by customization: end -->.  Click **Next**. If your subscription doesn't already contain any hosted services, you will be asked to create one. The hosted service acts as a container for your application within your Azure subscription. Enter a name that identifies your application and choose the region for which the application should be optimized. (You can expect faster loading times for users accessing it from this region.)
+8.  Click **Next**. If your subscription doesn't already contain any hosted services, you will be asked to create one. The hosted service acts as a container for your application within your Azure subscription. Enter a name that identifies your application and choose the region for which the application should be optimized. (You can expect faster loading times for users accessing it from this region.)
 
-<!-- deleted by customization 9 --><!-- keep by customization: begin --> 5 <!-- keep by customization: end -->.  Select the hosted service to which you would like to publish your application. Keep the defaults as shown below for the remaining settings. Click **Next**.
+9.  Select the hosted service to which you would like to publish your application. Keep the defaults as shown below for the remaining settings. Click **Next**.
 
     ![][33]
 
-<!-- deleted by customization 10 --><!-- keep by customization: begin --> 6 <!-- keep by customization: end -->. On the last page, click **Publish** to start the deployment process.
+10. On the last page, click **Publish** to start the deployment process.
 
     ![][34]
 This will take approximately 5-7 minutes. Since this is the first time you are publishing, Azure provisions a virtual machine (VM), performs security hardening, creates a Web role on the VM to host your application, deploys your code to that Web role, and finally configures the load balancer and networking so your application is available to the public.
 
-<!-- deleted by customization 11 --><!-- keep by customization: begin --> 7 <!-- keep by customization: end -->. While publishing is in progress you will be able to monitor the activity in the **Azure Activity Log** window, which is typically docked to the bottom of Visual Studio or Visual Web Developer.
+11. While publishing is in progress you will be able to monitor the activity in the **Azure Activity Log** window, which is typically docked to the bottom of Visual Studio or Visual Web Developer.
 
     ![][35]
 
-<!-- deleted by customization 12 --><!-- keep by customization: begin --> 8 <!-- keep by customization: end -->. When deployment is complete, you can view your website by clicking the **Website URL** link in the monitoring window.
+12. When deployment is complete, you can view your website by clicking the **Website URL** link in the monitoring window.
 
     ![][36]
 
@@ -715,11 +695,6 @@ To learn more about Service Bus, see the following resources:
   [43]: ./media/service-bus-dotnet-hybrid-app-using-service-bus-relay/getting-started-hybrid-43.png
   [45]: ./media/service-bus-dotnet-hybrid-app-using-service-bus-relay/hy-web-45.png
 
-<!-- deleted by customization
   [sbwacom]: /documentation/services/service-bus/  
--->
-<!-- keep by customization: begin -->
-  [sbwacom]: /services/service-bus/  
-<!-- keep by customization: end -->
   [sbwacomqhowto]: /documentation/articles/service-bus-dotnet-how-to-use-queues
   [executionmodels]: /documentation/articles/fundamentals-application-models

@@ -34,7 +34,7 @@ Sample public IP address in JSON format:
 	    "id": "/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/nrprg/providers/Microsoft.Network/networkInterfaces/lb-nic1-be",
 	    "etag": "W/\"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx\"",
 	    "type": "Microsoft.Network/networkInterfaces",
-	    "location": "eastus",
+	    "location": "chinaeast",
 	    "properties": {
 	        "provisioningState": "Succeeded",
 	        "resourceGuid": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",

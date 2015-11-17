@@ -1,5 +1,8 @@
 <properties pageTitle="Tutorial: Azure Active Directory integration with ShiftPlanning | Windows Azure" description="Learn how to use ShiftPlanning with Azure Active Directory to enable single sign-on, automated provisioning, and more!." services="active-directory" authors="MarkusVi"  documentationCenter="na" manager="stevenpo"/>
-<tags ms.service="active-directory" ms.devlang="na" ms.topic="article" ms.tgt_pltfrm="na" ms.workload="identity" ms.date="08/01/2015" ms.author="markvi" />
+<tags
+	ms.service="active-directory"
+	ms.date="08/01/2015"
+	wacn.date=""/>
 #Tutorial: Azure Active Directory integration with ShiftPlanning
 >[AZURE.TIP]For feedback, click [here](https://social.msdn.microsoft.com/Forums/azure/zh-cn/be29fd9f-2e22-4f21-a961-79f36643e13b/tutorial-azure-active-directory-integration-with-shiftplanning?forum=WindowsAzureAD).
   
