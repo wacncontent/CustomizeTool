@@ -6,25 +6,3 @@ deleted:
 
 reason: ()
 
-replacement:
-
-deleted:
-
-		â€“ContinuousCopy
-
-replaced by:
-
-		–ContinuousCopy
-
-reason: ()
-
-deleted:
-
-		â€“ContinuousCopy
-
-replaced by:
-
-		–ContinuousCopy
-
-reason: ()
-

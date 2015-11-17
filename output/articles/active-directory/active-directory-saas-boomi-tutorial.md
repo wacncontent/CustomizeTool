@@ -4,12 +4,7 @@
 	ms.date="08/01/2015"
 	wacn.date=""/>
 #Tutorial: Azure Active Directory integration with Boomi
-<!-- deleted by customization
 >[AZURE.TIP]For feedback, click [here](https://social.msdn.microsoft.com/Forums/azure/zh-cn/4edc9634-6c56-4fc0-8336-2b549a29959a/tutorial-azure-active-directory-integration-with-boomi?forum=WindowsAzureAD).
--->
-<!-- keep by customization: begin -->
->[AZURE.TIP]For feedback, click [here](http://go.microsoft.com/fwlink/?LinkId=529589).
-<!-- keep by customization: end -->
 
 The objective of this tutorial is to show the integration of Azure and Boomi.  
 The scenario outlined in this tutorial assumes that you already have the following items:

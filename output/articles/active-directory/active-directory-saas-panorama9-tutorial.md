@@ -4,12 +4,7 @@
 	ms.date="08/01/2015"
 	wacn.date=""/>
 #Tutorial: Azure Active Directory integration with Panorama9
-<!-- deleted by customization
 >[AZURE.TIP]For feedback, click [here](https://social.msdn.microsoft.com/Forums/azure/zh-cn/d9e8d653-a6b6-4abd-88bf-a64567b1ab38/tutorial-azure-active-directory-integration-with-panorama9?forum=WindowsAzureAD).
--->
-<!-- keep by customization: begin -->
->[AZURE.TIP]For feedback, click [here](http://go.microsoft.com/fwlink/?LinkId=528724).
-<!-- keep by customization: end -->
   
 The objective of this tutorial is to show the integration of Azure and Panorama9.  
 The scenario outlined in this tutorial assumes that you already have the following items:

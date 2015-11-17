@@ -36,6 +36,16 @@ replacement:
 
 deleted:
 
+		runbooks](http://msdn.microsoft.com/zh-cn/library/azure/dn643637.aspx)
+
+replaced by:
+
+		runbooks](/documentation/articles/automation-creating-importing-runbook)
+
+reason: ()
+
+deleted:
+
 		three
 
 replaced by:

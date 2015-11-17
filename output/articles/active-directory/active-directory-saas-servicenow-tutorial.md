@@ -4,12 +4,7 @@
 	ms.date="08/01/2015"
 	wacn.date=""/>
 #Tutorial: Azure Active Directory integration with ServiceNow
-<!-- deleted by customization
 >[AZURE.TIP]For feedback, click [here](https://social.msdn.microsoft.com/Forums/azure/zh-cn/890959cb-11a3-426c-8efd-1f00d620c6ee/tutorial-azure-ad-integration-with-servicenow?forum=WindowsAzureAD).
--->
-<!-- keep by customization: begin -->
->[AZURE.TIP]For feedback, click [here](http://go.microsoft.com/fwlink/?LinkId=521880).
-<!-- keep by customization: end -->
   
 The objective of this tutorial is to show the integration of Azure and ServiceNow.  
 The scenario outlined in this tutorial assumes that you already have the following items:

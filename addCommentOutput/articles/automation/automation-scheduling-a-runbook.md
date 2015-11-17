@@ -89,5 +89,10 @@ The following sample commands show how to disable a schedule.
 
 ## Related articles
 
+<!-- deleted by customization
 - [Schedule Assets in Azure Automation](http://msdn.microsoft.com/zh-cn/library/azure/dn940016.aspx)
+-->
+<!-- keep by customization: begin -->
+- [Schedule Assets in Azure Automation](/documentation/articles/automation-schedules)
+<!-- keep by customization: end -->
 - [Starting a Runbook in Azure Automation](/documentation/articles/automation-starting-a-runbook) 

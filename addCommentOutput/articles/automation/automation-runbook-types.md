@@ -50,7 +50,7 @@ Azure Automation supports three types of runbooks that are  briefly described in
 
 ## PowerShell Workflow runbooks
 
-PowerShell Workflow runbooks are text runbooks based on [Windows PowerShell Workflow](/documentation/articles/automation-powershell-workflow).  You directly edit the code of the runbook using the text editor in the Azure Management Portal.  You can also use any offline text editor and [import the runbook](http://msdn.microsoft.com/zh-cn/library/azure/dn643637.aspx) into Azure Automation.
+PowerShell Workflow runbooks are text runbooks based on [Windows PowerShell Workflow](/documentation/articles/automation-powershell-workflow).  You directly edit the code of the runbook using the text editor in the Azure Management Portal.  You can also use any offline text editor and [import the <!-- deleted by customization runbook](http://msdn.microsoft.com/zh-cn/library/azure/dn643637.aspx) --><!-- keep by customization: begin --> runbook](/documentation/articles/automation-creating-importing-runbook) <!-- keep by customization: end --> into Azure Automation.
 
 ### Advantages
 
@@ -70,7 +70,7 @@ PowerShell Workflow runbooks are text runbooks based on [Windows PowerShell Work
 
 ## PowerShell runbooks
 
-PowerShell runbooks are based on Windows PowerShell.  You directly edit the code of the runbook using the text editor in the Azure Management Portal.  You can also use any offline text editor and [import the runbook](http://msdn.microsoft.com/zh-cn/library/azure/dn643637.aspx) into Azure Automation.
+PowerShell runbooks are based on Windows PowerShell.  You directly edit the code of the runbook using the text editor in the Azure Management Portal.  You can also use any offline text editor and [import the <!-- deleted by customization runbook](http://msdn.microsoft.com/zh-cn/library/azure/dn643637.aspx) --><!-- keep by customization: begin --> runbook](/documentation/articles/automation-creating-importing-runbook) <!-- keep by customization: end --> into Azure Automation.
 
 ### Advantages
 
@@ -114,6 +114,11 @@ You should take into account the following additional considerations when determ
 - [Graphical authoring in Azure Automation](/documentation/articles/automation-graphical-authoring-intro)
 -->
 - [Learning Windows PowerShell Workflow](/documentation/articles/automation-powershell-workflow)
+<!-- deleted by customization
 - [Creating or Importing a Runbook](http://msdn.microsoft.com/zh-cn/library/azure/dn643637.aspx)
+-->
+<!-- keep by customization: begin -->
+- [Creating or Importing a Runbook](/documentation/articles/automation-creating-importing-runbook)
+<!-- keep by customization: end -->
 
 

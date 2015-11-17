@@ -11,3 +11,15 @@ deleted:
 
 reason: ()
 
+replacement:
+
+deleted:
+
+		[Azure Libraries for Java documentation]: http://dl.windowsazure.com/javadoc/
+
+replaced by:
+
+		[Azure Libraries for Java documentation]: http://azure.github.io/azure-sdk-for-java/
+
+reason: ()
+

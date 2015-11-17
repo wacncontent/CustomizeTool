@@ -4,12 +4,7 @@
 	ms.date="08/01/2015"
 	wacn.date=""/>
 #Tutorial: Azure Active Directory integration with Egnyte
-<!-- deleted by customization
 >[AZURE.TIP]For feedback, click [here](https://social.msdn.microsoft.com/Forums/azure/zh-cn/50962aa5-0212-4c0f-9324-bbd2f973f998/tutorial-azure-active-directory-integration-with-egnyte?forum=WindowsAzureAD).
--->
-<!-- keep by customization: begin -->
->[AZURE.TIP]For feedback, click [here](http://go.microsoft.com/fwlink/?LinkId=528188).
-<!-- keep by customization: end -->
   
 The objective of this tutorial is to show the integration of Azure and Egnyte.  
 The scenario outlined in this tutorial assumes that you already have the following items:

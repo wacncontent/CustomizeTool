@@ -10,12 +10,7 @@
 #Tutorial: Azure Active Directory integration with Box
 
 
-<!-- deleted by customization
 >[AZURE.TIP]For feedback, click [here](https://social.msdn.microsoft.com/Forums/azure/zh-cn/4e2b8c84-56bc-4d51-9739-8497feccf325/tutorial-azure-ad-integration-with-box?forum=WindowsAzureAD).
--->
-<!-- keep by customization: begin -->
->[AZURE.TIP]For feedback, click [here](http://go.microsoft.com/fwlink/?LinkId=522410).
-<!-- keep by customization: end -->
   
 The objective of this tutorial is to show the integration of Azure and Box.  
 The scenario outlined in this tutorial assumes that you already have the following items:

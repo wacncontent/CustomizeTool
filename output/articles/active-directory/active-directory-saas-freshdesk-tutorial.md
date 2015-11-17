@@ -4,12 +4,7 @@
 	ms.date="08/01/2015"
 	wacn.date=""/>
 #Tutorial: Azure Active Directory Integration with Freshdesk
-<!-- deleted by customization
 >[AZURE.TIP]For feedback, click [here](https://social.msdn.microsoft.com/Forums/azure/zh-cn/1a007040-017b-42b0-9c98-1a69010aee9e/tutorial-azure-ad-integration-with-freshdesk?forum=WindowsAzureAD).
--->
-<!-- keep by customization: begin -->
->[AZURE.TIP]For feedback, click [here](http://go.microsoft.com/fwlink/?LinkId=524323).
-<!-- keep by customization: end -->
   
 The objective of this tutorial is to show the integration of Azure and Freshdesk.  
 The scenario outlined in this tutorial assumes that you already have the following items:

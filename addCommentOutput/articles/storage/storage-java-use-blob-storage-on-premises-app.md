@@ -435,6 +435,11 @@ Follow these links to learn more about more complex storage tasks.
 <!-- keep by customization: end -->
   [How to Use the Blob Storage Service from Java]: /documentation/articles/storage-java-how-to-use-blob-storage
   [Azure Storage SDK for Java]: https://github.com/azure/azure-storage-java
+<!-- deleted by customization
   [Azure Storage Client SDK Reference]: http://dl.windowsazure.com/storage/javadoc/
+-->
+<!-- keep by customization: begin -->
+  [Azure Storage Client SDK Reference]: http://dl.windowsazure.cn/storage/javadoc/
+<!-- keep by customization: end -->
   [Azure Storage REST API]: http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx
   [Azure Storage Team Blog]: http://blogs.msdn.com/b/windowsazurestorage/

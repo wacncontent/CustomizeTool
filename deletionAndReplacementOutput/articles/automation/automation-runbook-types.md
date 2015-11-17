@@ -44,12 +44,42 @@ replacement:
 
 deleted:
 
+		runbook](http://msdn.microsoft.com/zh-cn/library/azure/dn643637.aspx)
+
+replaced by:
+
+		runbook](/documentation/articles/automation-creating-importing-runbook)
+
+reason: ()
+
+deleted:
+
+		runbook](http://msdn.microsoft.com/zh-cn/library/azure/dn643637.aspx)
+
+replaced by:
+
+		runbook](/documentation/articles/automation-creating-importing-runbook)
+
+reason: ()
+
+deleted:
+
 		- Can't run runbooks on [Hybrid Runbook Worker](/documentation/articles/automation-hybrid-runbook-worker).
 		- PowerShell Workflow runbooks and Graphical runbooks can only be included as child runbooks by using the Start-AzureAutomationRunbook cmdlet which creates a new job.
 
 replaced by:
 
 		- PowerShell Workflow runbooks can only be included as child runbooks by using the Start-AzureAutomationRunbook cmdlet which creates a new job.
+
+reason: ()
+
+deleted:
+
+		- [Creating or Importing a Runbook](http://msdn.microsoft.com/zh-cn/library/azure/dn643637.aspx)
+
+replaced by:
+
+		- [Creating or Importing a Runbook](/documentation/articles/automation-creating-importing-runbook)
 
 reason: ()
 

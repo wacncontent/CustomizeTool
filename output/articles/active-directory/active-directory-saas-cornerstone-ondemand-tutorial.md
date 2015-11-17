@@ -4,12 +4,7 @@
 	ms.date="08/01/2015"
 	wacn.date=""/>
 #Tutorial: Azure Active Directory integration with Cornerstone OnDemand
-<!-- deleted by customization
 >[AZURE.TIP]For feedback, click [here](https://social.msdn.microsoft.com/Forums/azure/zh-cn/f07fbbd2-d770-44c8-9816-39e6890db33a/tutorial-azure-ad-integration-with-cornerstone-ondemand?forum=WindowsAzureAD).
--->
-<!-- keep by customization: begin -->
->[AZURE.TIP]For feedback, click [here](http://go.microsoft.com/fwlink/?LinkId=526246).
-<!-- keep by customization: end -->
 
 The objective of this tutorial is to show the integration of Azure and Cornerstone OnDemand.  
 The scenario outlined in this tutorial assumes that you already have the following items:

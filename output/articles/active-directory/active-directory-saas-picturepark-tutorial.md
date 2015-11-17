@@ -4,12 +4,7 @@
 	ms.date="08/01/2015"
 	wacn.date=""/>
 #Tutorial: Azure Active Directory Integration with Picturepark
-<!-- deleted by customization
 >[AZURE.TIP]For feedback, click [here](https://social.msdn.microsoft.com/Forums/azure/zh-cn/f2236e5d-a40b-45dd-b695-4bd2a67c4f44/tutorial-azure-active-directory-integration-with-picturepark?forum=WindowsAzureAD).
--->
-<!-- keep by customization: begin -->
->[AZURE.TIP]For feedback, click [here](http://go.microsoft.com/fwlink/?LinkId=524466).
-<!-- keep by customization: end -->
   
 The objective of this tutorial is to show the integration of Azure and Picturepark.  
 The scenario outlined in this tutorial assumes that you already have the following items:

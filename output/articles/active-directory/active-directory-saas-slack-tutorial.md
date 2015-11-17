@@ -4,12 +4,7 @@
 	ms.date="08/01/2015"
 	wacn.date=""/>
 #Tutorial: Azure Active Directory integration with Slack
-<!-- deleted by customization
 >[AZURE.TIP]For feedback, click [here](https://social.msdn.microsoft.com/Forums/azure/zh-cn/cb0a200f-68ea-41fc-ae88-8ebacd2f226e/tutorial-azure-active-directory-integration-with-slack?forum=WindowsAzureAD).
--->
-<!-- keep by customization: begin -->
->[AZURE.TIP]For feedback, click [here](http://go.microsoft.com/fwlink/?LinkId=536424).
-<!-- keep by customization: end -->
   
 The objective of this tutorial is to show the integration of Azure and Slack.  
 The scenario outlined in this tutorial assumes that you already have the following items:

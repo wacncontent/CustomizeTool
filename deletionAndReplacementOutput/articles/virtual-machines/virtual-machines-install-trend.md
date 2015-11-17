@@ -2,16 +2,6 @@ replacement:
 
 deleted:
 
-		â€“Version
-
-replaced by:
-
-		–Version
-
-reason: ()
-
-deleted:
-
 		script](https://dsahandler.blob.core.windows.net/dsaas/ds-config.ps1)
 
 replaced by:

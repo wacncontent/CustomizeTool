@@ -111,7 +111,13 @@ For information about other ways you can work with Hadoop on HDInsight:
 
 
 [1]: /documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started
+<!-- deleted by customization
+
 [hdinsight-sdk-documentation]: http://msdnstage.redmond.corp.microsoft.com/zh-cn/library/dn479185.aspx
+-->
+<!-- keep by customization: begin -->
+[hdinsight-sdk-documentation]: http://msdn.microsoft.com/zh-cn/library/dn479185.aspx
+<!-- keep by customization: end -->
 
 [azure-purchase-options]: /pricing/overview/
 [azure-member-offers]: /pricing/member-offers/

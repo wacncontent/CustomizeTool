@@ -4,12 +4,7 @@
 	ms.date="08/01/2015"
 	wacn.date=""/>
 #Tutorial: Azure Active Directory integration with Lucidchart
-<!-- deleted by customization
 >[AZURE.TIP]For feedback, click [here](https://social.msdn.microsoft.com/Forums/azure/zh-cn/f3e9d875-7623-4b04-80e4-8e4fe1bcca26/tutorial-azure-active-directory-integration-with-lucidchart?forum=WindowsAzureAD).
--->
-<!-- keep by customization: begin -->
->[AZURE.TIP]For feedback, click [here](http://go.microsoft.com/fwlink/?LinkId=532346).
-<!-- keep by customization: end -->
   
 The objective of this tutorial is to show the integration of Azure and Lucidchart.  
 The scenario outlined in this tutorial assumes that you already have the following items:

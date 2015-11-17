@@ -4,12 +4,7 @@
 	ms.date="08/01/2015"
 	wacn.date=""/>
 #Tutorial: Azure Active Directory integration with Mindflash
-<!-- deleted by customization
 >[AZURE.TIP]For feedback, click [here](https://social.msdn.microsoft.com/Forums/azure/zh-cn/966032f6-f59f-4d0b-9270-7e6eaf1e13f7/tutorial-azure-active-directory-integration-with-mindflash?forum=WindowsAzureAD).
--->
-<!-- keep by customization: begin -->
->[AZURE.TIP]For feedback, click [here](http://go.microsoft.com/fwlink/?LinkId=528416).
-<!-- keep by customization: end -->
   
 The objective of this tutorial is to show the integration of Azure and Mindflash.  
 The scenario outlined in this tutorial assumes that you already have the following items:

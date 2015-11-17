@@ -48,7 +48,7 @@ Completing this tutorial is a prerequisite for all other Notification Hubs tutor
 
 ##Configure your notification hub
 
-This section walks you through creating and configuring a new notification hub by using the push certificate that you created. If you want to use a notification hub that you have already created, you can skip steps <!-- deleted by customization 2–5 --><!-- keep by customization: begin --> 2�5 <!-- keep by customization: end -->.
+This section walks you through creating and configuring a new notification hub by using the push certificate that you created. If you want to use a notification hub that you have already created, you can skip steps 2鈥?.
 
 
 1. In Keychain Access, right-click the new push certificate that you created in the **Certificates** category. Click **Export**, name the file, select the **.p12** format, and then click **Save**.

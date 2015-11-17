@@ -121,7 +121,7 @@ With these settings, let's review what happens in a couple of possible scenarios
 
 **Scenario** | **Outcome**
 ---|---
-No change in the network properties of VM-2 after failover <!-- deleted by customization. --> | VM-1 remains connected to the source network.
+No change in the network properties of VM-2 after failover. | VM-1 remains connected to the source network.
 <!-- deleted by customization
 Network properties of VM-2 are changed after failover and is disconnected. | VM-1 is disconnected.
 Network properties of VM-2 are changed after failover and is connected to VMNetwork2-Shanghai <!-- deleted by customization. -->| If VMNetwork2-Shanghai isn’t mapped, VM-1 will be disconnected <!-- deleted by customization. -->

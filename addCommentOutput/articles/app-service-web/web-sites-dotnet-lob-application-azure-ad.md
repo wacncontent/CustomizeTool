@@ -380,11 +380,14 @@ Now that you have configured the authorizations and line-of-business functionali
 - [Azure's new Hybrid Connections not your father's #hybridCloud](/documentation/videos/new-hybrid-connections-not-your-fathers-hybridcloud/)
 - [Similarities between Active Directory and Azure Active Directory](http://technet.microsoft.com/zh-cn/library/dn518177.aspx)
 - [Directory Sync with Single Sign-On Scenario](http://technet.microsoft.com/zh-cn/library/dn441213.aspx)
-- [Azure Active Directory Supported Token and Claim Types](http://msdn.microsoft.com/zh-cn/library/azure/dn195587.aspx)
 <!-- deleted by customization
+- [Azure Active Directory Supported Token and Claim Types](http://msdn.microsoft.com/zh-cn/library/azure/dn195587.aspx)
 
 [AZURE.INCLUDE [app-service-web-whats-changed](../includes/app-service-web-whats-changed.md)]
 
 [AZURE.INCLUDE [app-service-web-try-app-service](../includes/app-service-web-try-app-service.md)]
 -->
+<!-- keep by customization: begin -->
+- [Azure Active Directory Supported Token and Claim Types](/documentation/articles/active-directory-token-and-claims/)
+<!-- keep by customization: end -->
  

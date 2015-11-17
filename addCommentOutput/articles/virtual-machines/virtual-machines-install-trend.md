@@ -62,7 +62,7 @@ If the VM Agent is installed, run these commands.
 
 	$Agent = Get-AzureVMAvailableExtension TrendMicro.DeepSecurity -ExtensionName TrendMicroDSA
 
-	Set-AzureVMExtension -Publisher TrendMicro.DeepSecurity <!-- deleted by customization –Version --><!-- keep by customization: begin --> �Version <!-- keep by customization: end --> $Agent.Version -ExtensionName TrendMicroDSA -VM $vm | Update-AzureVM
+	Set-AzureVMExtension -Publisher TrendMicro.DeepSecurity 鈥揤ersion $Agent.Version -ExtensionName TrendMicroDSA -VM $vm | Update-AzureVM
 
 ## Next steps
 

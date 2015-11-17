@@ -62,7 +62,7 @@ The parameters provided on this sample invocation can be modified for your desir
 
 <tr>
 	<td>ResourceGroupName</td>
-	<td>Provides the Azure resource group name created to contain the newly created Azure components. This parameter defaults to <!-- deleted by customization “__ElasticDatabaseJob” --><!-- keep by customization: begin --> �__ElasticDatabaseJob� <!-- keep by customization: end -->. It is not recommended to change this value.</td>
+	<td>Provides the Azure resource group name created to contain the newly created Azure components. This parameter defaults to 鈥淿_ElasticDatabaseJob鈥?. It is not recommended to change this value.</td>
 	</tr>
 
 </tr>
@@ -74,7 +74,7 @@ The parameters provided on this sample invocation can be modified for your desir
 
 <tr>
 	<td>ServiceWorkerCount</td>
-	<td>Provides the number of service workers to install. This parameter defaults to 1. A higher number of workers can be used to scale out the service and to provide high availability. It is recommended to use <!-- deleted by customization “2” --><!-- keep by customization: begin --> �2� <!-- keep by customization: end --> for deployments that require high availability of the service.</td>
+	<td>Provides the number of service workers to install. This parameter defaults to 1. A higher number of workers can be used to scale out the service and to provide high availability. It is recommended to use 鈥?鈥? for deployments that require high availability of the service.</td>
 	</tr>
 
 </tr>
@@ -124,7 +124,7 @@ To update the VM size of an installation, run the following script with paramete
 
   <tr>
 	<td>ResourceGroupName</td>
-	<td>Identifies the Azure resource group name used when the Elastic Database job components were initially installed. This parameter defaults to <!-- deleted by customization “__ElasticDatabaseJob” --><!-- keep by customization: begin --> �__ElasticDatabaseJob� <!-- keep by customization: end -->. Since it is not recommended to change this value, you shouldn't have to specify this parameter.</td>
+	<td>Identifies the Azure resource group name used when the Elastic Database job components were initially installed. This parameter defaults to 鈥淿_ElasticDatabaseJob鈥?. Since it is not recommended to change this value, you shouldn't have to specify this parameter.</td>
 	</tr>
 </tr>
 
@@ -132,7 +132,7 @@ To update the VM size of an installation, run the following script with paramete
 
   <tr>
 	<td>ServiceWorkerCount</td>
-	<td>Provides the number of service workers to install.  This parameter defaults to 1.  A higher number of workers can be used to scale out the service and to provide high availability.  It is recommended to use <!-- deleted by customization “2” --><!-- keep by customization: begin --> �2� <!-- keep by customization: end --> for deployments that require high availability of the service.</td>
+	<td>Provides the number of service workers to install.  This parameter defaults to 1.  A higher number of workers can be used to scale out the service and to provide high availability.  It is recommended to use 鈥?鈥? for deployments that require high availability of the service.</td>
 </tr>
 
 </tr>

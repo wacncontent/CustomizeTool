@@ -88,18 +88,28 @@ Maintain high availability of your web app using [Azure Traffic Manager]. Using 
 ## Monitor and analyze
 
 Stay up-to-date on your web app's performance with Azure or third-party tools. Receive alerts on critical web app events. Gain user insight easily with Application Insight or with web log analytics from HDInsight. 
+
 <!-- deleted by customization
-
 Get a [quick glance] of the web app's current performance metrics and resource quotas in the web app's blade in the [Azure preview portal](https://manage.windowsazure.cn/). For a 360Â° view of your application across availability, performance and usage, use [Azure Application Insights] to give you fast & powerful troubleshooting, diagnostics and usage insights. Or, use a third-party tool like [New Relic] to provide advanced monitoring data for your web apps.
--->
 
+-->
 In the **Standard** tier, monitor app responsiveness receive email notifications whenever your web app becomes unresponsive. For more information, see [How to: Receive Alert Notifications and Manage Alert Rules in Azure].
 
 ## More Resources
 
+<!-- deleted by customization
 - [Azure Websites Documentation](/home/features/app-service/web/)
+-->
+<!-- keep by customization: begin -->
+- [Azure Websites Documentation](/home/features/web-site/)
+<!-- keep by customization: end -->
 - [Learning Map for Azure Websites](/documentation/articles/websites-learning-map)
+<!-- deleted by customization
 - [Azure Web Blog](/blog/topics/web/)
+-->
+<!-- keep by customization: begin -->
+- [Azure Web Blog](/blog/tags/ÍøÕ¾/)
+<!-- keep by customization: end -->
 
 [AZURE.INCLUDE [app-service-web-whats-changed](../includes/app-service-web-whats-changed.md)]
 

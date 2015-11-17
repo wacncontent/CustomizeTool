@@ -148,7 +148,13 @@ Now that you've learned what Hive is and how to use it with Hadoop in HDInsight,
 [check]: ./media/hdinsight-use-hive/hdi.checkmark.png
 
 [1]: /documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started
+<!-- deleted by customization
+
 [hdinsight-sdk-documentation]: http://msdnstage.redmond.corp.microsoft.com/zh-cn/library/dn479185.aspx
+-->
+<!-- keep by customization: begin -->
+[hdinsight-sdk-documentation]: http://msdn.microsoft.com/zh-cn/library/dn479185.aspx
+<!-- keep by customization: end -->
 
 [azure-purchase-options]: /pricing/overview/
 [azure-member-offers]: /pricing/member-offers/

@@ -16,7 +16,7 @@
 
 The need to reduce costs and deliver IT solutions faster in a rapidly evolving environment creates new challenges for Developers, IT Professionals, and Managers. Users are increasingly looking for their Line of Business (LOB) web applications to be quick, responsive, and available from any device. At the same time, businesses are trying to capitalize on the increased productivity and efficiency that comes from integration with cloud and mobile services, this may be something as simple as single sign-on across devices using Active Directory to collaboration in Office365 using data pulled from an internal LOB application which in turn pulls in data from the company implementation of Salesforce. [Azure Websites](/documentation/services/web-sites/) is an enterprise-class cloud service for developing, testing, and running web and mobile applications, Web APIs, and generic websites. It can be used to run corporate websites, business apps, and digital marketing campaigns on a global network of datacenters optimized for scale and availability, along with support for continuous integration and modern DevOps practices. 
 
-This whitepaper highlights the capabilities of the [Web Apps](/home/features/app-service/web/) service specifically focused on running LOB Web Applications, covering migration of existing web applications and deployment of new LOB web applications on the platform. 
+This whitepaper highlights the capabilities of the [Web <!-- deleted by customization Apps](/home/features/app-service/web/) --><!-- keep by customization: begin --> Apps](/home/features/web-site/) <!-- keep by customization: end --> service specifically focused on running LOB Web Applications, covering migration of existing web applications and deployment of new LOB web applications on the platform.
 
 ## Audience ##
 
@@ -40,14 +40,14 @@ Development teams are looking to deliver immediate business benefit, delivering 
 Web platforms and frameworks are increasingly being used to develop, test and host line of business applications.  With a typical line of business application, such as an internal employee expense system, often consisting solely of a web app with a backing database to store the data connected with the application.
 
 Azure Websites is a good option for hosting such applications, offering scalable and reliable infrastructure which is managed and patched with near zero manual intervention and downtime. The Windows Azure platform provides many data storage options to support web applications hosted on Web Apps from Windows Azure SQL Database, a managed scalable relational database-as-a-service, to popular services from our partners such as ClearDB MySQL Database and MongoDB.
-
 <!-- deleted by customization
+
 An alternative approach is to make use of your existing investment on premise. In the example scenario, an employee expense system, you may wish to maintain your data store within your own internal infrastructure. This could be for integration with internal systems (reporting, payroll, billing etc.) or to satisfy an IT governance requirement.  Web Apps provides two methods of enabling you to connect to your on premises infrastructure:
 
 - [Hybrid Connections](/documentation/articles/integration-hybrid-connection-overview) – Hybrid Connections are a feature of Windows Azure BizTalk Services and enable Web Apps to connect to on premises resources securely, for example SQL Server, MySQL, Web APIs and custom web services. 
 - [Virtual Network Integration](http://azure.microsoft.com/blog/2014/09/15/azure-websites-virtual-network-integration/) – Web Apps integrtaion with Azure Virtual Network allows you to connect your web app to an Azure Virtual Network which in turn can be connected to your on premises infrastructure through a site-to-site VPN. 
-
 -->
+
 The following diagram is an example high-level solution with connectivity options for on premises resources.
 
 ![](./media/web-sites-enterprise-offerings/on-premise-connectivity-solutions.png)

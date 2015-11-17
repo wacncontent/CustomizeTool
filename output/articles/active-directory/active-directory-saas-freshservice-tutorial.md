@@ -4,12 +4,7 @@
 	ms.date="08/01/2015"
 	wacn.date=""/>
 #Tutorial: Azure Active Directory integration with FreshService
-<!-- deleted by customization
 >[AZURE.TIP]For feedback, click [here](https://social.msdn.microsoft.com/Forums/azure/zh-cn/0648ecd3-2f0c-4cb3-b945-20e0e6b50fab/tutorial-azure-active-directory-integration-with-freshservice?forum=WindowsAzureAD).
--->
-<!-- keep by customization: begin -->
->[AZURE.TIP]For feedback, click [here](http://go.microsoft.com/fwlink/?LinkId=529827).
-<!-- keep by customization: end -->
   
 The objective of this tutorial is to show the integration of Azure and FreshService.  
 The scenario outlined in this tutorial assumes that you already have the following items:

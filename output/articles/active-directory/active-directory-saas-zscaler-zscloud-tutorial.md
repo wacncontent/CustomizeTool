@@ -4,12 +4,7 @@
 	ms.date="08/01/2015"
 	wacn.date=""/>
 #Tutorial: Azure Active Directory Integration with Zscaler ZSCloud
-<!-- deleted by customization
 >[AZURE.TIP]For feedback, click [here](https://social.msdn.microsoft.com/Forums/azure/zh-cn/bf2c5760-7d5b-404d-ae8a-7b4703355421/tutorial-azure-active-directory-integration-with-zscaler-zscloud?forum=WindowsAzureAD).
--->
-<!-- keep by customization: begin -->
->[AZURE.TIP]For feedback, click [here](http://go.microsoft.com/fwlink/?LinkId=614878).
-<!-- keep by customization: end -->
   
 The objective of this tutorial is to show the integration of Azure and ZScaler ZSCloud.  
 The scenario outlined in this tutorial assumes that you already have the following items:

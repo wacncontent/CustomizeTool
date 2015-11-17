@@ -4,12 +4,7 @@
 	ms.date="08/01/2015"
 	wacn.date=""/>
 #Tutorial: Azure Active Directory Integration with ITRP
-<!-- deleted by customization
 >[AZURE.TIP]For feedback, click [here](https://social.msdn.microsoft.com/Forums/azure/zh-cn/5e9cfaee-0c24-4c35-bd52-b9e6c5763fd6/tutorial-azure-ad-integration-with-itrp?forum=WindowsAzureAD).
--->
-<!-- keep by customization: begin -->
->[AZURE.TIP]For feedback, click [here](http://go.microsoft.com/fwlink/?LinkId=524329).
-<!-- keep by customization: end -->
   
 The objective of this tutorial is to show the integration of Azure and ITRP.  
 The scenario outlined in this tutorial assumes that you already have the following items:

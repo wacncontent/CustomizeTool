@@ -4,12 +4,7 @@
 	ms.date="08/01/2015"
 	wacn.date=""/>
 #Tutorial: Azure Active Directory integration with IdeaScale
-<!-- deleted by customization
 >[AZURE.TIP]For feedback, click [here](https://social.msdn.microsoft.com/Forums/azure/zh-cn/f302b5e7-6548-4cdc-8c6e-f6588869c67d/tutorial-azure-active-directory-integration-with-ideascale?forum=WindowsAzureAD).
--->
-<!-- keep by customization: begin -->
->[AZURE.TIP]For feedback, click [here](http://go.microsoft.com/fwlink/?LinkId=529830).
-<!-- keep by customization: end -->
   
 The objective of this tutorial is to show the integration of Azure and IdeaScale.  
 The scenario outlined in this tutorial assumes that you already have the following items:

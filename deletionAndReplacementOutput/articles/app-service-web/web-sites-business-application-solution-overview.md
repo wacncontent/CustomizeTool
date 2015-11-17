@@ -20,14 +20,6 @@ reason: ()
 
 deleted:
 
-		>[AZURE.NOTE] If you want to get started with Azure Websites before signing up for an Azure account, go to [Try Azure Websites](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure Websites. No credit cards required; no commitments.
-		
-		[AZURE.INCLUDE [app-service-web-whats-changed](../includes/app-service-web-whats-changed.md)]
-
-reason: ()
-
-deleted:
-
 		[Visual Studio Online]: /documentation/articles/cloud-services-continuous-delivery-use-vso
 
 reason: ()
@@ -42,6 +34,32 @@ reason: ()
 deleted:
 
 		[New Relic]: /documentation/articles/store-new-relic-cloud-services-dotnet-application-performance-management
+
+reason: ()
+
+replacement:
+
+deleted:
+
+		- [Azure Websites Documentation](/home/features/app-service/web/)
+
+replaced by:
+
+		- [Azure Websites Documentation](/home/features/web-site/)
+
+reason: ()
+
+deleted:
+
+		- [Azure Web Blog](/blog/topics/web/)
+		
+		>[AZURE.NOTE] If you want to get started with Azure Websites before signing up for an Azure account, go to [Try Azure Websites](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure Websites. No credit cards required; no commitments.
+		
+		[AZURE.INCLUDE [app-service-web-whats-changed](../includes/app-service-web-whats-changed.md)]
+
+replaced by:
+
+		- [Azure Web Blog](/blog/tags/ÍøÕ¾/)
 
 reason: ()
 

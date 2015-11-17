@@ -221,12 +221,18 @@ To read more about the advantages on Hadoop in HDInsight, see the  [Azure featur
 
 Build on this introduction to Hadoop on HDInsight and big data analysis with the resources below.
 
-<!-- deleted by customization
 
+<!-- deleted by customization
 ### HDInsight on Linux
+-->
+<!-- keep by customization: begin -->
+
+### HDInsight on Windows
+<!-- keep by customization: end -->
 
 * [HDInsight documentation](/documentation/services/hdinsight/): The documentation page for Azure HDInsight with links to articles, videos, and more resources.
 
+<!-- deleted by customization
 * [Get started with HDInsight on Linux](/documentation/articles/hdinsight-hadoop-linux-tutorial-get-started): A quick-start tutorial for provisioning HDInsight Hadoop clusters on Linux and running sample Hive queries.
 
 * [Get started with Linux-based Storm on HDInsight](/documentation/articles/hdinsight-apache-storm-tutorial-get-started): A quick-start tutorial for provisioning a Storm on HDInsight cluster and running sample Storm topologies.
@@ -236,20 +242,20 @@ Build on this introduction to Hadoop on HDInsight and big data analysis with the
 * [Working with HDInsight on Linux](/documentation/articles/hdinsight-hadoop-linux-information): Get some quick tips on working with Hadoop Linux clusters provisioned on Azure.
 
 * [Manage HDInsight clusters using Ambari](/documentation/articles/hdinsight-hadoop-manage-ambari): Learn how to monitor and manage your Linux-based Hadoop on HDInsight cluster by using Ambari Web, or the Ambari REST API.
--->
 
 
 ### HDInsight on Windows
 
 * [HDInsight documentation](/documentation/services/hdinsight/): The documentation page for Azure HDInsight with links to articles, videos, and more resources.
 
+-->
 * [Learning map for HDInsight](/documentation/articles/hdinsight-learn-map): A guided tour of Hadoop documentation for HDInsight.
 
 * [Get started with Azure HDInsight](/documentation/articles/hdinsight-hadoop-tutorial-get-started-windows): A quick-start tutorial for using Hadoop in HDInsight.
 
 * [Run the HDInsight samples](/documentation/articles/hdinsight-run-samples): A tutorial on how to run the samples that ship with HDInsight.
 
-* [Azure HDInsight SDK](http://msdnstage.redmond.corp.microsoft.com/zh-cn/library/dn479185.aspx): Reference documentation for the HDInsight SDK.
+* [Azure HDInsight <!-- deleted by customization SDK](http://msdnstage.redmond.corp.microsoft.com/zh-cn/library/dn479185.aspx) --><!-- keep by customization: begin --> SDK](http://msdn.microsoft.com/zh-cn/library/dn479185.aspx) <!-- keep by customization: end -->: Reference documentation for the HDInsight SDK.
 
 
 ### Apache Hadoop

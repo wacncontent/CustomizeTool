@@ -50,7 +50,12 @@ The following table explains how existing Azure services map to Azure Websites a
 <p><li>You can access your existing websites via the <a href="https://manage.windowsazure.cn/">Azure Management Portal</a>, where you will find all your existing sites under <em>Web Apps</em>.</p>
 <p><li><em>Web Hosting Plan</em> is now <em>App Service Plan</em>. An <em>App Service Plan</em> can host any app type of Azure Websites, such as Web, Mobile, Logic, or API apps.</p>
 <p><li>Azure Websites is in General Availability.</p>
+<!-- deleted by customization
 <p><li><a href="/home/features/app-service/web/">Learn more about Web Apps</a>.</p></td>
+-->
+<!-- keep by customization: begin -->
+<p><li><a href="/home/features/web-site/">Learn more about Web Apps</a>.</p></td>
+<!-- keep by customization: end -->
 </tr>
 <tr class="even">
 <td align="left">Azure Mobile Services</td>

@@ -4,12 +4,7 @@
 	ms.date="08/01/2015"
 	wacn.date=""/>
 #Tutorial: Azure Active Directory integration integration with SugarCRM
-<!-- deleted by customization
 >[AZURE.TIP]For feedback, click [here](https://social.msdn.microsoft.com/Forums/azure/zh-cn/6a7c5331-7ac5-41d1-9f70-8e9abd650072/tutorial-azure-active-directory-integration-integration-with-sugar-crm?forum=WindowsAzureAD).
--->
-<!-- keep by customization: begin -->
->[AZURE.TIP]For feedback, click [here](http://go.microsoft.com/fwlink/?LinkId=534768).
-<!-- keep by customization: end -->
   
 The objective of this tutorial is to show the integration of Azure and Sugar CRM.  
 The scenario outlined in this tutorial assumes that you already have the following items:

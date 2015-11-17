@@ -4,12 +4,7 @@
 	ms.date="08/01/2015"
 	wacn.date=""/>
 #Tutorial: Azure Active Directory integration with New Relic
-<!-- deleted by customization
 >[AZURE.TIP]For feedback, click [here](https://social.msdn.microsoft.com/Forums/azure/zh-cn/bd2061e7-fd9b-4cef-a097-fe585b37ae0f/tutorial-azure-active-directory-integration-with-new-relic?forum=WindowsAzureAD).
--->
-<!-- keep by customization: begin -->
->[AZURE.TIP]For feedback, click [here](http://go.microsoft.com/fwlink/?LinkId=536553).
-<!-- keep by customization: end -->
   
 The objective of this tutorial is to show how to set up single sign-on between Azure Active Directory and New Relic.
   

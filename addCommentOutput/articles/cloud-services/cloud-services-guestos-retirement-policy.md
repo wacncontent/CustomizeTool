@@ -41,7 +41,7 @@ Once the retirement is announced, customers have a 12 month "transition" period 
 A gradual retirement process will begin 6 months into the transition period. During this time:
 
 1. Microsoft will notify customers of the retirement. 
-2. The newer version of the Azure SDK <!-- deleted by customization won’t --><!-- keep by customization: begin --> won�t <!-- keep by customization: end --> support the retired Guest OS family.
+2. The newer version of the Azure SDK won鈥檛 support the retired Guest OS family.
 3. New deployments and redeployments of Cloud Services will not be allowed on the retired family
 
 Microsoft will continue to introduce new Guest OS version incorporating the latest MSRC updates until the last day of the transition period, known as the "expiration date". At that time, the any Cloud Services still running will be unsupported under the Azure SLA. Microsoft has the discretion to force upgrade, delete or stop those services after that date.
@@ -81,7 +81,7 @@ You should use latest Guest OS family for designing your Cloud Services.
 
 **What if my web application requires deeper integration with the OS?**
 
-If your web application architecture requires deeper dependency on the underlying operating system, use platform supported capabilities such as "[Startup Tasks](https://msdn.microsoft.com/zh-cn/library/azure/gg456327.aspx)" or other extensibility mechanisms which may exist in the future. Alternatively, you can also use [Azure Virtual Machines](http://azure.microsoft.com/documentation/scenarios/virtual-machines/) (IaaS <!-- deleted by customization – --><!-- keep by customization: begin --> � <!-- keep by customization: end --> Infrastructure as a Service), where you are responsible for maintaining the underlying operating system.
+If your web application architecture requires deeper dependency on the underlying operating system, use platform supported capabilities such as "[Startup Tasks](https://msdn.microsoft.com/zh-cn/library/azure/gg456327.aspx)" or other extensibility mechanisms which may exist in the future. Alternatively, you can also use [Azure Virtual Machines](http://azure.microsoft.com/documentation/scenarios/virtual-machines/) (IaaS 鈥? Infrastructure as a Service), where you are responsible for maintaining the underlying operating system.
  
 ## Next steps
 Review the latest [Guest OS releases](/documentation/articles/cloud-services-guestos-update-matrix).

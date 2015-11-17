@@ -23,36 +23,6 @@ replacement:
 
 deleted:
 
-		canâ€™t
-
-replaced by:
-
-		can’t
-
-reason: ()
-
-deleted:
-
-		donâ€™t
-
-replaced by:
-
-		don’t
-
-reason: ()
-
-deleted:
-
-		donâ€™t
-
-replaced by:
-
-		don’t
-
-reason: ()
-
-deleted:
-
 		available](https://azure.microsoft.com/zh-cn/blog/)
 
 replaced by:

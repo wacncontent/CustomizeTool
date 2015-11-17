@@ -212,7 +212,12 @@ If you would like to learn more about other Azure storage APIs, follow these lin
 [Azure SDK for Java]: /develop/java/
 [Azure Storage SDK for Java]: https://github.com/azure/azure-storage-java
 [Azure Storage SDK for Android]: https://github.com/azure/azure-storage-android
+<!-- deleted by customization
 [Azure Storage Client SDK Reference]: http://dl.windowsazure.com/storage/javadoc/
+-->
+<!-- keep by customization: begin -->
+[Azure Storage Client SDK Reference]: http://dl.windowsazure.cn/storage/javadoc/
+<!-- keep by customization: end -->
 [Azure Storage REST API]: http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx
 [Azure Storage Team Blog]: http://blogs.msdn.com/b/windowsazurestorage/
  

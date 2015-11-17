@@ -70,3 +70,23 @@ replaced by:
 
 reason: ()
 
+deleted:
+
+		- [Azure Websites Documentation](/home/features/app-service/web/)
+
+replaced by:
+
+		- [Azure Websites Documentation](/home/features/web-site/)
+
+reason: ()
+
+deleted:
+
+		- [Azure Web Blog](/blog/topics/web/)
+
+replaced by:
+
+		- [Azure Web Blog](/blog/tags/ÍøÕ¾/)
+
+reason: ()
+

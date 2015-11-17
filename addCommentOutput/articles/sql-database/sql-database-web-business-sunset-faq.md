@@ -56,7 +56,12 @@ Basic, Standard, and Premium Azure SQL Databases are billed by the hour, and you
 
 ## See also
 
+<!-- deleted by customization
 [Azure SQL Database](/documentation/services/sql-database/)
+-->
+<!-- keep by customization: begin -->
+[Azure SQL Database](/documentation/services/sql-databases/)
+<!-- keep by customization: end -->
 
 [Service tiers](/documentation/articles/sql-database-service-tiers)
 

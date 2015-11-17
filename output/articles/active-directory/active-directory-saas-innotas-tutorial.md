@@ -4,12 +4,7 @@
 	ms.date="08/01/2015"
 	wacn.date=""/>
 #Tutorial: Azure Active Directory integration with Innotas
-<!-- deleted by customization
 >[AZURE.TIP]For feedback, click [here](https://social.msdn.microsoft.com/Forums/azure/zh-cn/28891580-c14b-46e9-b1f6-fd58a0c9482b/tutorial-azure-ad-integration-with-innotas?forum=WindowsAzureAD).
--->
-<!-- keep by customization: begin -->
->[AZURE.TIP]For feedback, click [here](http://go.microsoft.com/fwlink/?LinkId=524479).
-<!-- keep by customization: end -->
   
 The objective of this tutorial is to show the integration of Azure and Innotas.  
 The scenario outlined in this tutorial assumes that you already have the following items:

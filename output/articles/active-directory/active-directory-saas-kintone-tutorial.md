@@ -4,12 +4,7 @@
 	ms.date="08/01/2015"
 	wacn.date=""/>
 #Tutorial: Azure Active Directory Integration with Kintone
-<!-- deleted by customization
 >[AZURE.TIP]For feedback, click [here](https://social.msdn.microsoft.com/Forums/azure/zh-cn/3aadcefe-8c5a-42f2-b3b7-f59f267ef86d/tutorial-azure-ad-integration-with-kintone?forum=WindowsAzureAD).
--->
-<!-- keep by customization: begin -->
->[AZURE.TIP]For feedback, click [here](http://go.microsoft.com/fwlink/?LinkId=526796).
-<!-- keep by customization: end -->
   
 The objective of this tutorial is to show the integration of Azure and Kintone.  
 The scenario outlined in this tutorial assumes that you already have the following items:

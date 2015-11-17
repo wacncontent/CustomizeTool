@@ -4,12 +4,7 @@
 	ms.date="08/01/2015"
 	wacn.date=""/>
 #Tutorial: Azure Active Directory integration with Chromeriver
-<!-- deleted by customization
 >[AZURE.TIP]For feedback, click [here](https://social.msdn.microsoft.com/Forums/azure/zh-cn/7b245f64-798b-4ba8-b680-c0175e5677ad/tutorial-azure-active-directory-integration-with-chromeriver?forum=WindowsAzureAD).
--->
-<!-- keep by customization: begin -->
->[AZURE.TIP]For feedback, click [here](http://go.microsoft.com/fwlink/?LinkId=615279).
-<!-- keep by customization: end -->
 
 The objective of this tutorial is to show the integration of Azure and Chromeriver.  
 The scenario outlined in this tutorial assumes that you already have the following items:

@@ -10,3 +10,15 @@ deleted:
 
 reason: ()
 
+replacement:
+
+deleted:
+
+		Types](http://msdn.microsoft.com/zh-cn/library/azure/dn195587.aspx)
+
+replaced by:
+
+		Types](/documentation/articles/active-directory-token-and-claims/)
+
+reason: ()
+

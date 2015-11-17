@@ -294,6 +294,11 @@ The errors a user can encounter in Azure PowerShell or in the <!-- deleted by cu
 
 * [Azure HDInsight SDK documentation][hdinsight-sdk-documentation]
 
+<!-- deleted by customization
 [hdinsight-sdk-documentation]: http://msdnstage.redmond.corp.microsoft.com/zh-cn/library/dn479185.aspx
+-->
+<!-- keep by customization: begin -->
+[hdinsight-sdk-documentation]: http://msdn.microsoft.com/zh-cn/library/dn479185.aspx
+<!-- keep by customization: end -->
 
 [image-hdi-debugging-error-messages-portal]: ./media/hdinsight-debug-jobs/hdi-debug-errormessages-portal.png

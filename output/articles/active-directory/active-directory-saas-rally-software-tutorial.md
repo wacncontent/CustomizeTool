@@ -4,12 +4,7 @@
 	ms.date="08/01/2015"
 	wacn.date=""/>
 #Tutorial: Azure Active Directory Integration with Rally Software
-<!-- deleted by customization
 >[AZURE.TIP]For feedback, click [here](https://social.msdn.microsoft.com/Forums/azure/zh-cn/a1d0a1b5-7e7b-48b5-a9d2-b95c4686350a/tutorial-azure-ad-integration-with-rally-software?forum=WindowsAzureAD).
--->
-<!-- keep by customization: begin -->
->[AZURE.TIP]For feedback, click [here](http://go.microsoft.com/fwlink/?LinkId=521865).
-<!-- keep by customization: end -->
   
 The objective of this tutorial is to show the integration of Azure and Rally Software.  
 The scenario outlined in this tutorial assumes that you already have the following items:

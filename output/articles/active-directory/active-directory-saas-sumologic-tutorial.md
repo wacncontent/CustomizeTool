@@ -4,12 +4,7 @@
 	ms.date="08/01/2015"
 	wacn.date=""/>
 #Tutorial: Azure Active Directory Integration with SumoLogic
-<!-- deleted by customization
 >[AZURE.TIP]For feedback, click [here](https://social.msdn.microsoft.com/Forums/azure/zh-cn/a0cc7ccf-aa4e-425e-a4a6-fa7fb2093d29/tutorial-azure-ad-integration-with-sumologic?forum=WindowsAzureAD).
--->
-<!-- keep by customization: begin -->
->[AZURE.TIP]For feedback, click [here](http://go.microsoft.com/fwlink/?LinkId=525318).
-<!-- keep by customization: end -->
   
 The objective of this tutorial is to show the integration of Azure and SumoLogic.  
 The scenario outlined in this tutorial assumes that you already have the following items:

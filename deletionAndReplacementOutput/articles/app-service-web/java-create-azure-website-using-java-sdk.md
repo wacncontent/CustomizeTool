@@ -43,3 +43,25 @@ replaced by:
 
 reason: ()
 
+deleted:
+
+		http://msdn.microsoft.com/zh-cn/library/azure/gg551722.aspx
+
+replaced by:
+
+		/documentation/articles/cloud-services-certs-create/
+
+reason: ()
+
+deleted:
+
+		[WebSiteManagementClient]: http://dl.windowsazure.com/javadoc/com/microsoft/windowsazure/management/websites/WebSiteManagementClient.html
+		[WebSpaceNames]: http://dl.windowsazure.com/javadoc/com/microsoft/windowsazure/management/websites/models/WebSpaceNames.html
+
+replaced by:
+
+		[WebSiteManagementClient]: http://azure.github.io/azure-sdk-for-java/com/microsoft/windowsazure/management/websites/WebSiteManagementClient.html
+		[WebSpaceNames]: http://azure.github.io/azure-sdk-for-java/com/microsoft/windowsazure/management/websites/models/WebSpaceNames.html
+
+reason: ()
+

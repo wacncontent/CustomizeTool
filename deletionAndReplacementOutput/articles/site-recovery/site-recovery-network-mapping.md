@@ -1,11 +1,3 @@
-deletion:
-
-deleted:
-
-		.
-
-reason: ()
-
 replacement:
 
 deleted:

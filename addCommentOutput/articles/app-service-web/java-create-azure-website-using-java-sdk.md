@@ -623,8 +623,14 @@ This procedure creates an Azure Websites web app. You will be billed for the res
 [Azure Toolkit for Eclipse]: https://msdn.microsoft.com/zh-cn/library/azure/hh690946.aspx
 [Azure Management Portal]: https://manage.windowsazure.cn
 [What is an Azure AD directory]: http://technet.microsoft.com/zh-cn/library/jj573650.aspx
-[Create and Upload a Management Certificate for Azure]: http://msdn.microsoft.com/zh-cn/library/azure/gg551722.aspx
+[Create and Upload a Management Certificate for Azure]: <!-- deleted by customization http://msdn.microsoft.com/zh-cn/library/azure/gg551722.aspx --><!-- keep by customization: begin --> /documentation/articles/cloud-services-certs-create/ <!-- keep by customization: end -->
 [Key and Certificate Management Tool (keytool)]: http://docs.oracle.com/javase/6/docs/technotes/tools/windows/keytool.html
+<!-- deleted by customization
 [WebSiteManagementClient]: http://dl.windowsazure.com/javadoc/com/microsoft/windowsazure/management/websites/WebSiteManagementClient.html
 [WebSpaceNames]: http://dl.windowsazure.com/javadoc/com/microsoft/windowsazure/management/websites/models/WebSpaceNames.html
+-->
+<!-- keep by customization: begin -->
+[WebSiteManagementClient]: http://azure.github.io/azure-sdk-for-java/com/microsoft/windowsazure/management/websites/WebSiteManagementClient.html
+[WebSpaceNames]: http://azure.github.io/azure-sdk-for-java/com/microsoft/windowsazure/management/websites/models/WebSpaceNames.html
+<!-- keep by customization: end -->
 [Azure Management Portal]: https://manage.windowsazure.cn

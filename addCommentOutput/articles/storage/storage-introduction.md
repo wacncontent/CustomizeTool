@@ -202,7 +202,12 @@ To get started with Azure Storage, explore these resources:
 
 ### For Java/Android Developers
 
+<!-- deleted by customization
 - [Java Client Library Reference](http://dl.windowsazure.com/storage/javadoc/)
+-->
+<!-- keep by customization: begin -->
+- [Java Client Library Reference](http://dl.windowsazure.cn/storage/javadoc/)
+<!-- keep by customization: end -->
 - [How to use Blob Storage from Java/Android](/documentation/articles/storage-java-how-to-use-blob-storage)
 - [How to use Table Storage from Java/Android](/documentation/articles/storage-java-how-to-use-table-storage)
 - [How to use Queue Storage from Java/Android](/documentation/articles/storage-java-how-to-use-queue-storage)

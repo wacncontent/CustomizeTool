@@ -468,7 +468,7 @@ You can enable metrics for File storage from the Azure Management Portal. You ca
 
 	We currently do not support AD-based authentication or ACLs, but do have it in our list of feature requests. For now, the Azure Storage account keys are used to provide authentication to the file share. We do offer a workaround using shared access signatures (SAS) via the REST API or the client libraries. Using SAS, you can generate tokens with specific permissions that are valid over a specified time interval. For example, you can generate a token with read-only access to a given file. Anyone who possesses this token while it is valid has read-only access to that file. 
 
-	SAS is only supported via the REST API or client libraries. When you mount the file share via the SMB protocol,  you <!-- deleted by customization can’t --><!-- keep by customization: begin --> can�t <!-- keep by customization: end --> use a SAS to delegate access to its contents.
+	SAS is only supported via the REST API or client libraries. When you mount the file share via the SMB protocol,  you can鈥檛 use a SAS to delegate access to its contents.
 
 2. **Are Azure File shares visible publicly over the Internet, or are they only reachable from Azure?**
  
@@ -484,7 +484,7 @@ You can enable metrics for File storage from the Azure Management Portal. You ca
 
 5. **Does connecting from on-premises virtual machines to Azure File Storage depend on Azure ExpressRoute?** 
 
-	No. If you <!-- deleted by customization don’t --><!-- keep by customization: begin --> don�t <!-- keep by customization: end --> have ExpressRoute, you can still access the file share from on-premises as long as you have port 445 (TCP Outbound) open for Internet access. However, you can use ExpressRoute with File storage if you like.
+	No. If you don鈥檛 have ExpressRoute, you can still access the file share from on-premises as long as you have port 445 (TCP Outbound) open for Internet access. However, you can use ExpressRoute with File storage if you like.
 
 6. **Is a "File Share Witness" for a failover cluster one of the use cases for Azure File Storage?**
 
@@ -508,7 +508,7 @@ You can enable metrics for File storage from the Azure Management Portal. You ca
 
 11. **Is it possible to specify read-only or write-only permissions on folders within the share?**
 
-	You <!-- deleted by customization don’t --><!-- keep by customization: begin --> don�t <!-- keep by customization: end --> have this level of control over permissions if you mount the file share via SMB. However, you can achieve this by creating a shared access signature (SAS) via the REST API or client libraries.
+	You don鈥檛 have this level of control over permissions if you mount the file share via SMB. However, you can achieve this by creating a shared access signature (SAS) via the REST API or client libraries.
 
 12. **My performance was slow when trying to unzip files into in File storage. What should I do?**
 

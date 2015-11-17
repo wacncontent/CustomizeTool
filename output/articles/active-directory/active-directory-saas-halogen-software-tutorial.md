@@ -37,7 +37,7 @@ To configure Azure AD integration with Halogen Software, you need the following 
 To test the steps in this tutorial, you should follow these recommendations:
 
 - You should not use your production environment, unless this is necessary.
-- If you don't have an Azure AD trial environment, you can get a one-month trial <!-- deleted by customization [here](/pricing/1rmb-trial/) --><!-- keep by customization: begin --> [here](https://azure.microsoft.com/pricing/1rmb-trial/) <!-- keep by customization: end -->.
+- If you don't have an Azure AD trial environment, you can get a one-month trial [here](/pricing/1rmb-trial/). 
 
  
 ## Scenario Description

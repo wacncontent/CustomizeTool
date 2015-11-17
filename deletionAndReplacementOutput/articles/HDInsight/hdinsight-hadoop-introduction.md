@@ -50,10 +50,6 @@ reason: ()
 
 deleted:
 
-		### HDInsight on Linux
-		
-		* [HDInsight documentation](/documentation/services/hdinsight/): The documentation page for Azure HDInsight with links to articles, videos, and more resources.
-		
 		* [Get started with HDInsight on Linux](/documentation/articles/hdinsight-hadoop-linux-tutorial-get-started): A quick-start tutorial for provisioning HDInsight Hadoop clusters on Linux and running sample Hive queries.
 		
 		* [Get started with Linux-based Storm on HDInsight](/documentation/articles/hdinsight-apache-storm-tutorial-get-started): A quick-start tutorial for provisioning a Storm on HDInsight cluster and running sample Storm topologies.
@@ -63,6 +59,11 @@ deleted:
 		* [Working with HDInsight on Linux](/documentation/articles/hdinsight-hadoop-linux-information): Get some quick tips on working with Hadoop Linux clusters provisioned on Azure.
 		
 		* [Manage HDInsight clusters using Ambari](/documentation/articles/hdinsight-hadoop-manage-ambari): Learn how to monitor and manage your Linux-based Hadoop on HDInsight cluster by using Ambari Web, or the Ambari REST API.
+		
+		
+		### HDInsight on Windows
+		
+		* [HDInsight documentation](/documentation/services/hdinsight/): The documentation page for Azure HDInsight with links to articles, videos, and more resources.
 
 reason: ()
 
@@ -111,6 +112,26 @@ replaced by:
 		
 		
 		### Hadoop, HBase, Storm,  and customized clusters
+
+reason: ()
+
+deleted:
+
+		### HDInsight on Linux
+
+replaced by:
+
+		### HDInsight on Windows
+
+reason: ()
+
+deleted:
+
+		SDK](http://msdnstage.redmond.corp.microsoft.com/zh-cn/library/dn479185.aspx)
+
+replaced by:
+
+		SDK](http://msdn.microsoft.com/zh-cn/library/dn479185.aspx)
 
 reason: ()
 

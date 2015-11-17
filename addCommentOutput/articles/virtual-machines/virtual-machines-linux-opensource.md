@@ -184,7 +184,7 @@ CoreOS is a small, optimized distro for pure compute scale with a high degree of
 1. [Scala: Running Play Framework Applications in Azure Cloud Services](http://msopentech.com/blog/2014/09/25/tutorial-running-play-framework-applications-microsoft-azure-cloud-services-2/)
 
 ### SDK types, installations, upgrades
-4. [Azure Service Management SDK: Java](http://dl.windowsazure.com/javadoc/)
+4. [Azure Service Management SDK: <!-- deleted by customization Java](http://dl.windowsazure.com/javadoc/) --><!-- keep by customization: begin --> Java](http://azure.github.io/azure-sdk-for-java/) <!-- keep by customization: end -->
 5. [Azure Service Management SDK: Go](https://github.com/MSOpenTech/azure-sdk-for-go)
 5. [Azure Service Management SDK: Ruby](https://github.com/MSOpenTech/azure-sdk-for-ruby)
     - [How to: Install Ruby on Rails](/documentation/articles/virtual-machines-ruby-rails-web-app-linux)

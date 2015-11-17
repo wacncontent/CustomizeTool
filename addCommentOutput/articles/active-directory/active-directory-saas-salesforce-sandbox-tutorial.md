@@ -4,12 +4,7 @@
 	ms.date="10/07/2015"
 	wacn.date=""/>
 #Tutorial: Azure Active Directory integration with Salesforce Sandbox
-<!-- deleted by customization
 >[AZURE.TIP]For feedback, click [here](https://social.msdn.microsoft.com/Forums/azure/zh-cn/7eb2d595-9d13-4311-935e-83204599629b/tutorial-azure-ad-integration-with-salesforce-sandbox?forum=WindowsAzureAD).
--->
-<!-- keep by customization: begin -->
->[AZURE.TIP]For feedback, click [here](http://go.microsoft.com/fwlink/?LinkId=521878).
-<!-- keep by customization: end -->
   
 The objective of this tutorial is to show the integration of Azure and Salesforce Sandbox.  
 Sandboxes give you the ability to create multiple copies of your organization in separate environments for a variety of purposes, such as development, testing, and training, without compromising the data and applications in your Salesforce production organization.  

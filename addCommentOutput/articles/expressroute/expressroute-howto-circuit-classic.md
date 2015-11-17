@@ -34,7 +34,7 @@ This article walks you through the steps to create an ExpressRoute circuit using
 
 2. **Get the list of providers, locations, and bandwidths supported.**
 
-	Before creating an ExpressRoute circuit, you will need the list of connectivity providers, supported locations, and bandwidth options. The PowerShell cmdlet *Get-AzureDedicatedCircuitServiceProvider* returns this information, which <!-- deleted by customization you’ll --><!-- keep by customization: begin --> you�ll <!-- keep by customization: end --> use in later steps.
+	Before creating an ExpressRoute circuit, you will need the list of connectivity providers, supported locations, and bandwidth options. The PowerShell cmdlet *Get-AzureDedicatedCircuitServiceProvider* returns this information, which you鈥檒l use in later steps.
 
 		PS C:\> Get-AzureDedicatedCircuitServiceProvider
 
@@ -60,12 +60,7 @@ This article walks you through the steps to create an ExpressRoute circuit using
 		InterCloud           Washington                     200Mbps:200, 500Mbps:500, 1Gbps:1000, 10Gbps:10000                                                                                                                                                           
 		                     DC,London,Singapore,Amsterdam                                                                                                                                                                                                               
 		Internet Solutions   London,Amsterdam               10Mbps:10, 50Mbps:50, 100Mbps:100, 500Mbps:500, 1Gbps:1000                                                                                                                                                   
-<!-- deleted by customization
-		– Cloud Connect                                                                                                                                                                                                                                                  
--->
-<!-- keep by customization: begin -->
-		� Cloud Connect                                                                                                                                                                                                                                                  
-<!-- keep by customization: end -->
+		鈥?Cloud Connect                                                                                                                                                                                                                                                  
 		Interxion            Amsterdam                      200Mbps:200, 500Mbps:500, 1Gbps:1000, 10Gbps:10000                                                                                                                                                           
 		Level 3              London,Shanghai,Dallas,Seattle, 200Mbps:200, 500Mbps:500, 1Gbps:1000, 10Gbps:10000                                                                                                                                                           
 		Communications -     Silicon Valley,Washington DC                                                                                                                                                                                                                

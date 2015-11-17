@@ -4,12 +4,7 @@
 	ms.date="08/01/2015"
 	wacn.date=""/>
 #Tutorial: Azure Active Directory Integration with PolicyStat
-<!-- deleted by customization
 >[AZURE.TIP]For feedback, click [here](https://social.msdn.microsoft.com/Forums/azure/zh-cn/67a76118-9523-463b-80a0-8f3343455f52/tutorial-azure-active-directory-integration-with-policystat?forum=WindowsAzureAD).
--->
-<!-- keep by customization: begin -->
->[AZURE.TIP]For feedback, click [here](http://go.microsoft.com/fwlink/?LinkId=616313).
-<!-- keep by customization: end -->
   
 The objective of this tutorial is to show the integration of Azure and PolicyStat.  
 The scenario outlined in this tutorial assumes that you already have the following items:

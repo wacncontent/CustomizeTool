@@ -563,7 +563,12 @@ In this article, you have learned several ways to create an HDInsight cluster. T
 * [Use Pig with HDInsight][hdinsight-use-pig]
 
 
+<!-- deleted by customization
 [azure-certificate]: http://msdn.microsoft.com/zh-cn/library/azure/gg551722.aspx
+-->
+<!-- keep by customization: begin -->
+[azure-certificate]: /documentation/articles/cloud-services-certs-create/
+<!-- keep by customization: end -->
 [azure-management-portal]: https://manage.windowsazure.cn/
 
 [hdinsight-visual-studio-tools]: /documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started

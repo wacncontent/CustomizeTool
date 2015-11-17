@@ -44,7 +44,7 @@ The corresponding typed client side object is the following:
 When dynamic schema is enabled, Azure Mobile Services automatically generates new columns based on the object in the insert or update request. For more information, see [Dynamic schema](https://msdn.microsoft.com/zh-cn/library/azure/jj193175.aspx).
 
 ##<a name="create-client"></a>How to: Create the Mobile Services client
-The following code creates the [MobileServiceClient](http://dl.windowsazure.com/androiddocs/com/microsoft/windowsazure/mobileservices/MobileServiceClient.html) object that is used to access your mobile service. The code goes in the `onCreate` method of the Activity class specified in *AndroidManifest.xml* as a **MAIN** action and **LAUNCHER** category.
+The following code creates the <!-- deleted by customization [MobileServiceClient](http://dl.windowsazure.com/androiddocs/com/microsoft/windowsazure/mobileservices/MobileServiceClient.html) --><!-- keep by customization: begin --> [MobileServiceClient](http://dl.windowsazure.cn/androiddocs/com/microsoft/windowsazure/mobileservices/MobileServiceClient.html) <!-- keep by customization: end --> object that is used to access your mobile service. The code goes in the `onCreate` method of the Activity class specified in *AndroidManifest.xml* as a **MAIN** action and **LAUNCHER** category.
 
 		MobileServiceClient mClient = new MobileServiceClient(
 				"MobileServiceUrl", // Replace with the above Site URL
@@ -57,7 +57,7 @@ In the code above, replace `MobileServiceUrl` and `AppKey` with the mobile servi
 
 The easiest way to query or modify data in the mobile service is by using the *typed programming model*, since Java is a strongly typed language (later on we will discuss the *untyped* model). This model provides seamless serialization and deserialization to JSON using the [gson](http://google-gson.googlecode.com/svn/trunk/gson/docs/javadocs/index.html) library when sending data between the client and the mobile service: the developer doesn't have to do anything, the framework handles it all.
 
-The first thing you do to query or modify data is to create a [MobileServiceTable](http://go.microsoft.com/fwlink/p/?LinkId=296835) object by calling the **getTable** method on the [**MobileServiceClient**](http://dl.windowsazure.com/androiddocs/com/microsoft/windowsazure/mobileservices/MobileServiceClient.html).  We will look at two overloads of this method:
+The first thing you do to query or modify data is to create a [MobileServiceTable](http://go.microsoft.com/fwlink/p/?LinkId=296835) object by calling the **getTable** method on the <!-- deleted by customization [**MobileServiceClient**](http://dl.windowsazure.com/androiddocs/com/microsoft/windowsazure/mobileservices/MobileServiceClient.html) --><!-- keep by customization: begin --> [**MobileServiceClient**](http://dl.windowsazure.cn/androiddocs/com/microsoft/windowsazure/mobileservices/MobileServiceClient.html) <!-- keep by customization: end -->.  We will look at two overloads of this method:
 
 	public class MobileServiceClient {
 	    public <E> MobileServiceTable<E> getTable(Class<E> clazz);

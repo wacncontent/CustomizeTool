@@ -5,7 +5,7 @@
 	wacn.date=""/>
 #Tutorial: Azure Active Directory integration with Jive
 >[AZURE.TIP]For feedback, click [here](http://go.microsoft.com/fwlink/?LinkId=330042).  
-  For more information about this topic, see [Best Practices for Managing the Application access enhancements for Azure Active <!-- deleted by customization Directory](http://social.technet.microsoft.com/wiki/contents/articles/18409.application-access-release-notes.aspx) --><!-- keep by customization: begin --> Directory](http://go.microsoft.com/fwlink/?LinkId=329963) <!-- keep by customization: end -->.
+  For more information about this topic, see [Best Practices for Managing the Application access enhancements for Azure Active Directory](http://social.technet.microsoft.com/wiki/contents/articles/18409.application-access-release-notes.aspx).
   
 The objective of this tutorial is to show the integration of Azure and Jive.  
 The scenario outlined in this tutorial assumes that you already have the following items:

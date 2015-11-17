@@ -14,7 +14,7 @@
 
 # Add your own domain name to Azure AD
 
-When you sign up for a <!-- deleted by customization Microsoft --> cloud service, you are issued a domain name that has the following format: contoso.partner.onmschina.cn. You can continue to use that initial domain name, or you can add your own custom domain name to the cloud service. This topic explains how to add your own domain name and related information.
+When you sign up for a Microsoft cloud service, you are issued a domain name that has the following format: contoso.partner.onmschina.cn. You can continue to use that initial domain name, or you can add your own custom domain name to the cloud service. This topic explains how to add your own domain name and related information.
 
 Office 365 users may be interested in these related topics:
 

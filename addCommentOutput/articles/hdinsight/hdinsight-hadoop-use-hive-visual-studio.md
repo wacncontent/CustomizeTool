@@ -100,7 +100,12 @@ For more information about the HDInsight tools for Visual Studio:
 * [Getting started with HDInsight tools for Visual Studio](/documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started)
 
 
+<!-- deleted by customization
 [hdinsight-sdk-documentation]: http://msdnstage.redmond.corp.microsoft.com/zh-cn/library/dn479185.aspx
+-->
+<!-- keep by customization: begin -->
+[hdinsight-sdk-documentation]: http://msdn.microsoft.com/zh-cn/library/dn479185.aspx
+<!-- keep by customization: end -->
 
 [azure-purchase-options]: /pricing/overview/
 [azure-member-offers]: /pricing/member-offers/

@@ -4,12 +4,7 @@
 	ms.date="08/01/2015"
 	wacn.date=""/>
 #Tutorial: Azure Active Directory Integration with Mimecast Personal Portal
-<!-- deleted by customization
 >[AZURE.TIP]For feedback, click [here](https://social.msdn.microsoft.com/Forums/azure/zh-cn/1b634e8a-a379-4fa3-bf5c-3039e22a05e5/tutorial-azure-active-directory-integration-with-mimecast-personal-portal?forum=WindowsAzureAD).
--->
-<!-- keep by customization: begin -->
->[AZURE.TIP]For feedback, click [here](http://go.microsoft.com/fwlink/?LinkId=529832).
-<!-- keep by customization: end -->
   
 The objective of this tutorial is to show the integration of Azure and Mimecast Personal Portal.  
 The scenario outlined in this tutorial assumes that you already have the following items:

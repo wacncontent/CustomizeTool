@@ -186,7 +186,12 @@ For tutorials that run other samples and provide instructions for running Pig, H
 * [Use Hive with HDInsight][hdinsight-use-hive]
 * [Azure HDInsight SDK documentation][hdinsight-sdk-documentation]
 
+<!-- deleted by customization
 [hdinsight-sdk-documentation]: http://msdnstage.redmond.corp.microsoft.com/zh-cn/library/dn479185.aspx
+-->
+<!-- keep by customization: begin -->
+[hdinsight-sdk-documentation]: http://msdn.microsoft.com/zh-cn/library/dn479185.aspx
+<!-- keep by customization: end -->
 
 [hadoop-streaming]: http://wiki.apache.org/hadoop/HadoopStreaming
 [streamreader]: http://msdn.microsoft.com/zh-cn/library/system.io.streamreader.aspx

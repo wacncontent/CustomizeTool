@@ -10,13 +10,3 @@ replaced by:
 
 reason: ()
 
-deleted:
-
-		whatâ€™s
-
-replaced by:
-
-		what’s
-
-reason: ()
-

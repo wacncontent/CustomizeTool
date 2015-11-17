@@ -20,6 +20,16 @@ replacement:
 
 deleted:
 
+		Site](/develop/net/common-tasks/custom-dns-web-site/)
+
+replaced by:
+
+		Site](/documentation/articles/web-sites-custom-domain-name//)
+
+reason: ()
+
+deleted:
+
 		1.	In your browser, open the [Azure Management Portal](https://manage.windowsazure.cn/).
 		2.	Click the **Browse** option on the left side of the page.
 		3.	Click the **Web Apps** blade.

@@ -30,3 +30,13 @@ replaced by:
 
 reason: ()
 
+deleted:
+
+		method](http://dl.windowsazure.com/nodedocs/BlobService.html#generateSharedAccessSignature)</a>
+
+replaced by:
+
+		method](http://dl.windowsazure.cn/nodedocs/BlobService.html#generateSharedAccessSignature)</a>
+
+reason: ()
+

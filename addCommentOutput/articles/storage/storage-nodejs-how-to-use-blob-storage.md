@@ -372,4 +372,4 @@ For more information, see the following resources.
 [Node.js Cloud Service]: /documentation/articles/cloud-services-nodejs-develop-deploy-app
 [Storing and accessing data in Azure]: http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx
 [Azure Storage Team Blog]: http://blogs.msdn.com/b/windowsazurestorage/
-[Azure Storage SDK for Node API Reference]: http://dl.windowsazure.com/nodestoragedocs/index.html
+[Azure Storage SDK for Node API Reference]: <!-- deleted by customization http://dl.windowsazure.com/nodestoragedocs/index.html --><!-- keep by customization: begin --> http://dl.windowsazure.cn/nodestoragedocs/index.html <!-- keep by customization: end -->

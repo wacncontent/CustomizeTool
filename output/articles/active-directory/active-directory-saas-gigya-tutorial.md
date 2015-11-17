@@ -4,12 +4,7 @@
 	ms.date="08/01/2015"
 	wacn.date=""/>
 #Tutorial: Azure Active Directory integration with Gigya
-<!-- deleted by customization
 >[AZURE.TIP]For feedback, click [here](https://social.msdn.microsoft.com/Forums/azure/zh-cn/7887edf3-981c-4eb5-afaf-a442229bfb2a/tutorial-azure-active-directory-integration-with-gigya?forum=WindowsAzureAD).
--->
-<!-- keep by customization: begin -->
->[AZURE.TIP]For feedback, click [here](http://go.microsoft.com/fwlink/?LinkId=528575).
-<!-- keep by customization: end -->
   
 The objective of this tutorial is to show the integration of Azure and Gigya.  
 The scenario outlined in this tutorial assumes that you already have the following items:

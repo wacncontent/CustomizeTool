@@ -16,3 +16,15 @@ deleted:
 
 reason: ()
 
+replacement:
+
+deleted:
+
+		[azure-certificate]: http://msdn.microsoft.com/zh-cn/library/azure/gg551722.aspx
+
+replaced by:
+
+		[azure-certificate]: /documentation/articles/cloud-services-certs-create/
+
+reason: ()
+

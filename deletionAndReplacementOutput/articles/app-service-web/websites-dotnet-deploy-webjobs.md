@@ -20,3 +20,25 @@ deleted:
 
 reason: ()
 
+replacement:
+
+deleted:
+
+		SDK](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/getting-started-with-windows-azure-webjobs)
+
+replaced by:
+
+		SDK](/documentation/articles/websites-dotnet-webjobs-sdk-get-started)
+
+reason: ()
+
+deleted:
+
+		tutorial](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/getting-started-with-windows-azure-webjobs)
+
+replaced by:
+
+		tutorial](/documentation/articles/websites-dotnet-webjobs-sdk-get-started)
+
+reason: ()
+

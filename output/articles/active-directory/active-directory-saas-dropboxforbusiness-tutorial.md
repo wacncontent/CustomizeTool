@@ -4,12 +4,7 @@
 	ms.date="08/01/2015"
 	wacn.date=""/>
 #Tutorial: Azure Active Directory integration with Dropbox for Business
-<!-- deleted by customization
 >[AZURE.TIP]For feedback, click [here](https://social.msdn.microsoft.com/Forums/azure/zh-cn/f9eae0a4-e776-4b28-a36b-4083f8a8dbb7/tutorial-azure-ad-integration-with-dropbox-for-business?forum=WindowsAzureAD).
--->
-<!-- keep by customization: begin -->
->[AZURE.TIP]For feedback, click [here](http://go.microsoft.com/fwlink/?LinkId=522415).
-<!-- keep by customization: end -->
   
 The objective of this tutorial is to show the integration of Azure and Dropbox for Business.  
 The scenario outlined in this tutorial assumes that you already have the following items:

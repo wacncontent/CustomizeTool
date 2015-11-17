@@ -64,7 +64,7 @@ If the VM Agent is installed, run these commands to install the Symantec Endpoin
 
 	$Agent = Get-AzureVMAvailableExtension -Publisher Symantec -ExtensionName SymantecEndpointProtection
 
-	Set-AzureVMExtension -Publisher Symantec <!-- deleted by customization –Version --><!-- keep by customization: begin --> �Version <!-- keep by customization: end --> $Agent.Version -ExtensionName SymantecEndpointProtection -VM $vm | Update-AzureVM
+	Set-AzureVMExtension -Publisher Symantec 鈥揤ersion $Agent.Version -ExtensionName SymantecEndpointProtection -VM $vm | Update-AzureVM
 
 To verify that the Symantec security extension has been installed and is up-to-date:
 

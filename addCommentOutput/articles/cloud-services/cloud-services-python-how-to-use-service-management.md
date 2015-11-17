@@ -60,7 +60,7 @@ You can create a self-signed management certificate on your machine using `makec
 
     makecert -sky exchange -r -n "CN=AzureCertificate" -pe -a sha1 -len 2048 -ss My "AzureCertificate.cer"
 
-The command will create the `.cer` file, and install it in the **Personal** certificate store. For more details, see [Create and Upload a Management Certificate for Azure](http://msdn.microsoft.com/zh-cn/library/azure/gg551722.aspx).
+The command will create the `.cer` file, and install it in the **Personal** certificate store. For more details, see [Create and Upload a Management Certificate for <!-- deleted by customization Azure](http://msdn.microsoft.com/zh-cn/library/azure/gg551722.aspx) --><!-- keep by customization: begin --> Azure](/documentation/articles/cloud-services-certs-create/) <!-- keep by customization: end -->.
 
 After you have created the certificate, you will need to upload the `.cer` file to Azure via the "Upload" action of the "Settings" tab of the [management portal][management-portal].
 

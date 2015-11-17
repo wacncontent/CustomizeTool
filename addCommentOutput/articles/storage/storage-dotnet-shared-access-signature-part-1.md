@@ -246,7 +246,7 @@ The following code example creates a stored access policy on a container and the
     // The new shared access policy provides read/write access to the container for 24 hours.
     blobPermissions.SharedAccessPolicies.Add("mypolicy", new SharedAccessBlobPolicy()
     {
-       // To ensure SAS is valid immediately, <!-- deleted by customization don’t --><!-- keep by customization: begin --> don�t <!-- keep by customization: end --> set the start time.
+       // To ensure SAS is valid immediately, don鈥檛 set the start time.
        // This way, you can avoid failures caused by small clock differences.
        SharedAccessExpiryTime = DateTime.UtcNow.AddHours(24),
        Permissions = SharedAccessBlobPermissions.Write |

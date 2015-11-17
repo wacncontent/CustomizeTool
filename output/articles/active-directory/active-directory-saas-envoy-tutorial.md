@@ -4,12 +4,7 @@
 	ms.date="08/01/2015"
 	wacn.date=""/>
 #Tutorial: Azure Active Directory integration with Envoy
-<!-- deleted by customization
 >[AZURE.TIP]For feedback, click [here](https://social.msdn.microsoft.com/Forums/azure/zh-cn/4283c32a-2634-4df1-987d-db63a3de6548/tutorial-azure-ad-integration-with-envoy?forum=WindowsAzureAD).
--->
-<!-- keep by customization: begin -->
->[AZURE.TIP]For feedback, click [here](http://go.microsoft.com/fwlink/?LinkId=524324).
-<!-- keep by customization: end -->
   
 The objective of this tutorial is to show the integration of Azure and Envoy.  
 The scenario outlined in this tutorial assumes that you already have the following items:

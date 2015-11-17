@@ -4,12 +4,7 @@
 	ms.date="08/01/2015"
 	wacn.date=""/>
 #Tutorial: Azure Active Directory Integration with UserVoice
-<!-- deleted by customization
 >[AZURE.TIP]For feedback, click [here](https://social.msdn.microsoft.com/Forums/azure/zh-cn/a8d19dd8-f63e-4b72-849b-cc574beb1e8a/tutorial-azure-ad-integration-with-uservoice?forum=WindowsAzureAD).
--->
-<!-- keep by customization: begin -->
->[AZURE.TIP]For feedback, click [here](http://go.microsoft.com/fwlink/?LinkId=524477).
-<!-- keep by customization: end -->
   
 The objective of this tutorial is to show the integration of Azure and UserVoice.  
 The scenario outlined in this tutorial assumes that you already have the following items:

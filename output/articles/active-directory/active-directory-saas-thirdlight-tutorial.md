@@ -4,12 +4,7 @@
 	ms.date="08/01/2015"
 	wacn.date=""/>
 #Tutorial: Azure Active Directory Integration with Thirdlight
-<!-- deleted by customization
 >[AZURE.TIP]For feedback, click [here](https://social.msdn.microsoft.com/Forums/azure/zh-cn/49e28b1a-cf8e-4921-99cc-abc72f5507e8/tutorial-azure-active-directory-integration-with-thirdlight?forum=WindowsAzureAD).
--->
-<!-- keep by customization: begin -->
->[AZURE.TIP]For feedback, click [here](http://go.microsoft.com/fwlink/?LinkId=529835).
-<!-- keep by customization: end -->
   
 The objective of this tutorial is to show the integration of Azure and Thirdlight.  
 The scenario outlined in this tutorial assumes that you already have the following items:

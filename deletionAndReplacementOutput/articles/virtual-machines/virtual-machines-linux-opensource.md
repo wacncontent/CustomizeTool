@@ -86,3 +86,15 @@ deleted:
 
 reason: ()
 
+replacement:
+
+deleted:
+
+		Java](http://dl.windowsazure.com/javadoc/)
+
+replaced by:
+
+		Java](http://azure.github.io/azure-sdk-for-java/)
+
+reason: ()
+

@@ -10,25 +10,5 @@ deleted:
 
 reason: ()
 
-replacement:
 
-deleted:
-
-		XeonÂ®
-
-replaced by:
-
-		Xeon®
-
-reason: ()
-
-deleted:
-
-		â€¦
-
-replaced by:
-
-		…
-
-reason: ()
 
