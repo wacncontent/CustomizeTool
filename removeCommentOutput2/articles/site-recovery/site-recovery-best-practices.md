@@ -19,15 +19,15 @@
 
 ## About this article
 
-The article including best practices that you should read and implement before deploying Azure Site Recovery. If you're looking for an introduction to Site Recovery and related deployment scenarios read the [Site Recovery Overview](/documentation/articles/hyper-v-recovery-manager-overview).
+The article including best practices that you should read and implement before deploying Azure Site Recovery. If you're looking for an introduction to Site Recovery and related deployment scenarios read the [Site Recovery Overview](/documentation/articles/site-recovery-overview).
 
 If you have any questions after reading this article post them on the [Azure Recovery Services Forum](https://social.msdn.microsoft.com/forums/azure/home?forum=hypervrecovmgr).
 
 
 ## Preparing Azure
 
-- **Azure account**: You'll need an [Windows Azure](http://www.windowsazure.cn/) account. If you don't have one, start with a [trial](/pricing/1rmb-trial/).
-- Read about [pricing](/home/features/site-recovery/#price) for the Site Recovery service.
+- **Azure account**: You'll need an [Windows Azure](http://azure.microsoft.com/) account. If you don't have one, start with a [trial](/pricing/1rmb-trial/).
+- Read about [pricing](/documentation/articles/site-recovery) for the Site Recovery 
 - **Azure storage**: If you deploy Site Recovery with replication to Azure you'll need an Azure storage account. You can set one up during deployment or prepare one before you start. The account should have geo-replication enabled. It should be in the same region as the Azure Site Recovery vault and be associated with the same subscription. Read [Introduction to Windows Azure Storage](/documentation/articles/storage-introduction). 
 
 ## Virtual machines
@@ -128,7 +128,7 @@ Providers and agents are installed on on-premises servers so that they can conne
 ## Storage
 
 - **Azure storage account**: If you're replicating to Azure you'll need an Azure storage account. The account should have geo-replication enabled. It should be in the same region as the Azure Site Recovery vault and be associated with the same subscription. To learn more read [Introduction to Windows Azure Storage](/documentation/articles/storage-introduction).
-- **Storage mapping**: If you're replicating virtual machines on on-premises VMM servers you can set up storage mapping to make sure that virtual machines are optimally connected to storage after failover. When you replicate between two on-premises VMM sites, by default the replica virtual machine will be stored on the located indicated on the target Hyper-V host server. You can configure mapping between VMM storage classifications on source and target VMM servers. If you want to use this feature make sure you have storage classifications set up before you begin deployment. [Read more](/documenatation/articles/site-recovery-storage-mapping) about storage mapping.
+- **Storage mapping**: If you're replicating virtual machines on on-premises VMM servers you can set up storage mapping to make sure that virtual machines are optimally connected to storage after failover. When you replicate between two on-premises VMM sites, by default the replica virtual machine will be stored on the located indicated on the target Hyper-V host server. You can configure mapping between VMM storage classifications on source and target VMM servers. If you want to use this feature make sure you have storage classifications set up before you begin deployment. [Read more](/documentation/articles/site-recovery-storage-mapping) about storage mapping.
 - **SAN**: If you want to replicate between two on-premises sites with SAN replication note that:
 	- You can only replicate Hyper-V virtual machines to a secondary datacenter using SAN replication. You can't replicate to Azure.
 	- You can use your existing SAN environment. You don't need to make any changes on SAN arrays.
@@ -160,11 +160,11 @@ Providers and agents are installed on on-premises servers so that they can conne
 - **Data disk size**: If you're replicating to Azure you can have up to 32 data disks on a virtual machine, each with a maximum of 1 TB. You can effectively replicate and fail over a ~32 TB virtual machine.
 - **Recovery plan limits**: Site Recovery can scale to thousands of virtual machines. Recovery plans are designed as a model for applications that should fail over together so we limit the number of machines in a recovery plan to 50.
 - **Azure service limits**: Every Azure subscription comes with a set of default limits on cores, cloud services etc. We recommend that you run a test failover to validate the availability of resources in your subscription. You can modify these limits via Azure support.
-- **Capacity planning**: For guidance use the [Capacity Planner for Hyper-V Replica](http://www.microsoft.com/zh-cn/download/details.aspx?id=39057).
+- **Capacity planning**: For guidance use the [Capacity Planner for Hyper-V Replica](http://www.microsoft.com/en-in/download/details.aspx?id=39057).
 - **Replication bandwidth**: If you're short on replication bandwidth note that:
 	- **ExpressRoute**: Site Recovery works with Azure ExpressRoute and WAN optimizers such as Riverbed. [Read more](http://blogs.technet.com/b/virtualization/archive/2014/07/20/expressroute-and-azure-site-recovery.aspx) about ExpressRoute.
 	- **Replication traffic**: Site Recovery uses performs a smart initial replication using only data blocks and not the entire VHD. Only changes are replicated during ongoing replication.
-	- **Network traffic**: You can control network traffic used for replication by setting up [Windows QoS](https://technet.microsoft.com/zh-cn/library/hh967468.aspx) with a policy based on the destination IP address and port.  In addition if you're replicating to Azure Site Recovery using the Azure Backup agent. You can configure throttling for that agent. [Read more](https://msdn.microsoft.com/zh-cn/library/azure/dn168844.aspx).
+	- **Network traffic**: You can control network traffic used for replication by setting up [Windows QoS](https://technet.microsoft.com/zh-cn/library/hh967468.aspx) with a policy based on the destination IP address and port.  In addition if you're replicating to Azure Site Recovery using the Azure Backup agent. You can configure throttling for that agent. [Read more](https://support.microsoft.com/kb/3056159).
 - **RTO**: If you want to measure the recovery time objective (RTO) you can expect with Site Recovery we suggest you run a test failover and view the Site Recovery jobs to analyze how much time it takes to complete the operations. If you're failing over to Azure, for the best RTO we recommend that you automate all manual actions by integrating with Azure automation and recovery plans.
 - **RPO**: Site Recovery supports a near-synchronous recovery point objective (RPO) when you replicate to Azure. This assumes sufficient bandwith between your datacenter and Azure.
 
@@ -176,7 +176,7 @@ Providers and agents are installed on on-premises servers so that they can conne
 - **Retain non-RFC internal addresses in Azure**: You can retain non-RFC 1918 address spacees after failover to Azure.
 - **Partial failover to secondary datacenter**: If you fail over a partial site to your secondary datacenter and want to connect back to the primary site, you can use site-to-site VPN to connect a failed over application on the secondary site to infrastructure components running on the primary site. Note that if the entire subnet fails over you can retain the virtual machine IP address. If you fail over a partial subnet you can't retain the virtual machine IP address because subnets can't be split between sites.
 - **Partial failover to Azure**: If you fail over a partial site to Azure and want to connect back to the primary site, you can use a site-to-site VPN to connect a failed over application in Azure to infrastructure components running on the primary site. Note that if the entire subnet fails over you can retain the virtual machine IP address. If you fail over a partial subnet you can't retain the virtual machine IP address because subnets can't be split between sites.
-- **Retain drive letter**: If you want to retain drive letter on virtual machines after failover you can set the SAN policy for the virtual machine to **On**.  [Read more](https://technet.microsoft.com/zh-cn/library/gg252636.aspx).
+- **Retain drive letter**: If you want to retain drive letter on virtual machines after failover you can set the SAN policy for the virtual machine to **On**.  [Read more](https://support.microsoft.com/kb/3031135).
 - **Routing client requests after failover to Azure**: Site Recovery works with Azure Traffic Manager to route client requests to your application after failover. You can use scripts in recovery plans (with Azure Automation) to perform DNS updates.
 
 ## Integration

@@ -17,7 +17,7 @@
 
 This article shows you how to create and upload a virtual hard disk (VHD) so you can use it as your own image to create virtual machines in Azure. You'll learn how to prepare the operating system so you can use it to create multiple virtual machines based on that image. Note that this article refers to virtual machines created using the classic deployment model.
 
-[AZURE.INCLUDE [trial-note](../includes/free-trial-note.md)]
+[AZURE.INCLUDE [free-trial-note](../includes/free-trial-note.md)]
 
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-include.md)] This article covers uploading a VHD with the Service Manager.
 
@@ -25,7 +25,7 @@ A virtual machine in Azure runs the operating system that's based on the image y
 
 When you create the virtual machine, you can customize some of the operating system settings so they're appropriate for the application you want to run. For instructions, see [How to Create a Custom Virtual Machine](/documentation/articles/virtual-machines-create-custom).
 
-**Important**: The Azure platform SLA applies to virtual machines running the Linux OS only when one of the endorsed distributions is used with the configuration details as specified under 'Supported Versions' in [Linux on Azure-Endorsed Distributions](virtual-machines-../linux-endorsed-distributions.md). All Linux distributions in the Azure image gallery are endorsed distributions with the required configuration.
+**Important**: The Azure platform SLA applies to virtual machines running the Linux OS only when one of the endorsed distributions is used with the configuration details as specified under 'Supported Versions' in [Linux on Azure-Endorsed Distributions](/documentation/articles/virtual-machines-linux-endorsed-distributions). All Linux distributions in the Azure image gallery are endorsed distributions with the required configuration.
 
 
 ##Prerequisites##
@@ -45,7 +45,7 @@ This article assumes that you have the following items:
 
 ## <a id="prepimage"> </a>Step 1: Prepare the image to be uploaded ##
 
-AzureWindows supports a variety of Linux distributions (see [Endorsed Distributions](/documentation/articles/linux-endorsed-distributions)). The following articles will guide you through how to prepare the various Linux distributions that are supported on Azure:
+Azure supports a variety of Linux distributions (see [Endorsed Distributions](/documentation/articles/linux-endorsed-distributions)). The following articles will guide you through how to prepare the various Linux distributions that are supported on Azure:
 
 - **[CentOS-based Distributions](/documentation/articles/virtual-machines-linux-create-upload-vhd-centos)**
 - **[Oracle Linux](/documentation/articles/virtual-machines-linux-create-upload-vhd-oracle)**
@@ -148,7 +148,7 @@ From the Azure PowerShell window you used in the previous step, type:
 
 		Add-AzureVhd -Destination <BlobStorageURL>/<YourImagesFolder>/<VHDName> -LocalFilePath <PathToVHDFile>
 
-	For more information, see [Add-AzureVhd](http://msdn.microsoft.com/zh-cn/library/azure/dn205185.aspx).
+For more information, see [Add-AzureVhd]((https://msdn.microsoft.com/zh-cn/library/azure/dn495173.aspx).
 
 
 

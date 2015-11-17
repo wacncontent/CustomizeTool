@@ -74,7 +74,7 @@ Single region Cassandra cluster configuration:
 For systems deployed to Azure that doesn’t require high availability (e.g. around 99.9 which is equivalent to 8.76 hrs/year; see [High Availability](http://en.wikipedia.org/wiki/High_availability) for details) you may be able to run with RF=1 and Consistency Level=ONE.  For applications with high availability requirements, RF=3 and Consistency Level=QUORUM will tolerate the down time of one of the nodes one of the replicas. RF=1 in traditional deployments (e.g. on-premise) can’t be used due to the possible data loss resulting from problems like disk failures.   
 
 ## Multi-region Deployment
-Cassandra’s data center aware replication and consistency model described above helps with the multi-region deployment out of the box without the need for any external tooling. This is quite different from the traditional relational databases where the setup for database mirroring for multi-master writes can be quite complex. Cassandra in a multi-region set up can help with the usage scenarios including the following:
+Cassandra’s data-center-aware replication and consistency model described above helps with the multi-region deployment out of the box without the need for any external tooling. This is quite different from the traditional relational databases where the setup for database mirroring for multi-master writes can be quite complex. Cassandra in a multi-region set up can help with the usage scenarios including the following: 
 
 **Proximity based deployment:** Multi-tenant applications, with clear mapping of tenant users -to-region, can be benefited by the multi-region cluster’s low latencies. For example a learning management systems for educational institutions can deploy a distributed cluster in China East and China North regions to serve the respective campuses for transactional as well as analytics. The data can be locally consistent at the time reads and writes and can be eventually consistent across both the regions. There are other examples like media distribution, e-commerce and anything and everything that serves geo concentrated user base is a good use case for this deployment model. 
 
@@ -119,7 +119,7 @@ The following software versions are used during the deployment:
 
 Since downloading of JRE requires manual acceptance of Oracle license, to simplify the deployment, download all the required software to the desktop for later uploading into the Ubuntu template image we will be creating as a precursor to the cluster deployment. 
 
-Download the above software into a well-known downloads (e.g. %TEMP%/downloads on Windows or ~/downloads on Linux or Mac) directory on the local desktop. 
+Download the above software into a well-known download directory (e.g. %TEMP%/downloads on Windows or ~/Downloads on most Linux distributions or Mac) on the local computer. 
 
 ### CREATE UBUNTU VM
 In this step of the process we will create Ubuntu image with the pre-requisite software so that the image can be reused for provisioning several Cassandra nodes.  

@@ -33,6 +33,7 @@ By following this tutorial, you will build a simple registration web application
 ##Create an Azure web app and set up Git publishing
 
 Follow these steps to create an Azure web app and a SQL Database:
+
 1. Login to the [Azure Management Portal][management-portal].
 2. Click the **New** icon on the bottom left of the portal.
 ![Create New Azure  Website][new- Website]
@@ -62,9 +63,11 @@ Follow these steps to create an Azure web app and a SQL Database:
 9. You will see instructions for pushing your application files to the repository. Make note of these instructions - you will need them later.
 
 	![Git instructions][git-instructions]
+
 ##Get SQL Database connection information
 
 To connect to the SQL Database instance that is linked to your web app, your will need the connection information, which you specified when you created the database. To get the SQL Database connection information, follow these steps:
+
 1. From the Azure Management Portal, click **Linked Resources**, then click the database name.
 
 	![Linked Resources][linked-resources]
@@ -74,6 +77,7 @@ To connect to the SQL Database instance that is linked to your web app, your wil
 	![Connection string][connection-string]
 	
 3. From the **PHP** section of the resulting dialog, make note of the values for `SERVER`, `DATABASE`, and `USERNAME`.
+
 ##Build and test your application locally
 
 The Registration application is a simple PHP application that allows you to register for an event by providing your name and email address. Information about previous registrants is displayed in a table. Registration information is stored in a SQL Database instance. The application consists of two files (copy/paste code available below):

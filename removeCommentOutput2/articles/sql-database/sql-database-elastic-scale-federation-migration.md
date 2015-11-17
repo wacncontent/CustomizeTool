@@ -30,20 +30,20 @@ There are three major steps for migrating an existing Federations application to
 ### The migration sample tool
 To assist in this process, a [Federations Migration Utility](https://code.msdn.microsoft.com:443/vstudio/Federations-Migration-ce61e9c1) has been created. The utility accomplishes steps 1 and 3. 
 
-## <a name="create-shard-map-manager"></a>Create Shard Map Manager from a Federation Root
+## <a name="create-shard-map-manager"></a>Create a Shard Map Manager from a federation root
 The first step in migrating a Federations application is to clone the metadata of a federation root to the constructs of a shard map manager. 
 
 ![Clone the federation root to the shard map manager][1]
  
 Start with an existing Federations application in a test environment.
  
-Use the **Federations Migration Utility** to clone the federation root metadata into the constructs of the elastic database client library's [Shard Map Manager](/documentation/articles/sql-database-elastic-scale-shard-map-management). Analogous to a federation root, the Shard Map Manager database is a standalone database that contains the shard maps (i.e., federations), references to shards (i.e., federation members) and respective range mappings.
+Use the **Federations Migration Utility** to clone the federation root metadata into the constructs of the elastic database client library's [Shard Map Manager](/documentation/articles/sql-database-elastic-scale-shard-map-management/). Analogous to a federation root, the Shard Map Manager database is a standalone database that contains the shard maps (i.e., federations), references to shards (i.e., federation members) and respective range mappings. 
 
 The cloning of the federation root to the Shard Map Manager is a copy and translation of metadata. No metadata is altered on the federation root. Note that the cloning of the federation root with the Federations Migration Utility is a point-in-time operation, and any changes to either the federation root or the shard maps will not be reflected in the other respective data store. If changes are made to the federation root during the testing of the new APIs, the Federations Migration Utility can be used to refresh the shard maps to represent the current state. 
 
 ![Migrate the existing app to use the Elastic database tools APIs][2]
 
-## <a name="Modify-the-Existing-Application"></a>Modify the Existing Application 
+## <a name="Modify-the-Existing-Application"></a>Modify the existing application  
 
 With Shard Map Manager in place and the federation members and ranges registered with the Shard Map Manager (done via the migration utility), one can modify the existing Federations application to utilize the elastic database client library. As shown in the figure above, the application connections via these APIs will be routed through the Shard Map Manager to appropriate federation members (now also a shard). Mapping federation members to the Shard Map Manager enables two versions of an application – one that uses Federations and one that uses the elastic database client library — to be executed side-by-side to verify functionality.   
 

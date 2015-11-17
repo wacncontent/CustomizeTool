@@ -172,7 +172,7 @@ You are ready to go to the [Docker User Guide] and use your Docker VM. To create
 [Link 1 to another azure.microsoft.com documentation topic]: /documentation/articles/virtual-machines-windows-tutorial
 [Link 2 to another azure.microsoft.com documentation topic]: /documentation/articles/web-sites-custom-domain-name
 [Link 3 to another azure.microsoft.com documentation topic]: /documentation/articles/storage-whatis-account
-[How to use the Docker VM Extension with the Portal]: /documentation/articles/virtual-machines-docker-with-portal 
+[How to use the Docker VM Extension with the Portal]: /documentation/articles/virtual-machines-docker-with-portal/
 
 [Docker User Guide]: https://docs.docker.com/userguide/
  

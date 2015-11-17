@@ -14,9 +14,9 @@
 	wacn.date=""/>
 
 
-# How to update Azure Linux Agent to the latest version from Github
+# How to update the Azure Linux Agent on a VM to the latest version from GitHub
 
-To update your [Azure Linux agent](https://github.com/Azure/WALinuxAgent) , you must already have:
+To update your [Azure Linux agent](https://github.com/Azure/WALinuxAgent) on a Linux VM in Azure, you must already have:
 
 1. a running Linux vm in Azure
 2. You are connected to that Linux VM using SSH
@@ -49,7 +49,7 @@ Install wget (there are some distros that don't install it by default such as Re
 
 ## Download latest version
 
-Open [the release of Azure Linux Agent in Github](https://github.com/Azure/WALinuxAgent/releases) in a web page, and find out the latest version number. (You can locate your current version by typing `#waagent --version`.)
+Open [the release of Azure Linux Agent in GitHub](https://github.com/Azure/WALinuxAgent/releases) in a web page, and find out the latest version number. (You can locate your current version by typing `#waagent --version`.)
 
 ###For the version 2.0.x, type:
 

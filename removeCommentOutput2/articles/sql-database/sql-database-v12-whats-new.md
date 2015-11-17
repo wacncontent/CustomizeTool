@@ -24,7 +24,7 @@ We continue to add features to V12. So we encourage you to visit our Service Upd
 
 
 - Filtered to the [SQL Database service](http://azure.microsoft.com/updates/?service=sql-database).
-- Filtered to General Availability [(GA) announcements](http://azure.microsoft.com/updates/?service=sql-database&update-type=general-availability) for SQL Database features.-->
+- Filtered to General Availability [(GA) announcements](http://azure.microsoft.com/updates/?service=sql-database&update-type=general-availability) for SQL Database features.
 
 
 The latest information about resource limits for SQL Database is documented at:<br/>[Azure SQL Database Resource Limits](/documentation/articles/sql-database-resource-limits).
@@ -37,8 +37,8 @@ A key goal for SQL Database V12 was to improve the compatibility with Microsoft 
 
 
 - [Common Language Runtime (CLR) assemblies](http://msdn.microsoft.com/zh-cn/library/ms189524.aspx)
-- [Window functions](https://msdn.microsoft.com/zh-cn/library/bb934097.aspx), with [OVER](http://msdn.microsoft.com/zh-cn/library/ms189461.aspx) 
-- [XML indexes](https://msdn.microsoft.com/zh-cn/library/bb934097.aspx) and [selective XML indexes](http://msdn.microsoft.com/zh-cn/library/jj670104.aspx)
+- [Window functions](http://msdn.microsoft.com/zh-cn/library/bb934097.aspx), with [OVER](http://msdn.microsoft.com/zh-cn/library/ms189461.aspx) 
+- [XML indexes](http://msdn.microsoft.com/zh-cn/library/bb934097.aspx) and [selective XML indexes](http://msdn.microsoft.com/zh-cn/library/jj670104.aspx)
 - [Change tracking](http://msdn.microsoft.com/zh-cn/library/bb933875.aspx)
 - [SELECT...INTO](http://msdn.microsoft.com/zh-cn/library/ms188029.aspx)
 - [Full-text search](http://msdn.microsoft.com/zh-cn/library/ms142571.aspx)
@@ -107,7 +107,7 @@ V12 offers significantly improved recovery point objectives (RPOs) and estimated
 | Active geo-replication | • RPO < 5 minutes.<br/>• ERT < 1 hour. | • RPO < 5 seconds.<br/>• ERT < 30 seconds. |
 
 
-See [SQL Database business continuity](https://msdn.microsoft.com/zh-cn/library/azure/hh852669.aspx) for more information.
+See [SQL Database business continuity](http://msdn.microsoft.com/zh-cn/library/azure/hh852669.aspx) for more information.
 
 
 ## More reasons to upgrade now
@@ -127,7 +127,7 @@ There are many good reasons why customers should upgrade now to Azure SQL Databa
 One easy way to see if you have a database or logical server running on an earlier version of the SQL Database service is to do the following:
 
 
-1. Go to the [Azure Management Portal](https://manage.windowsazure.cn).
+1. Go to the [Azure Management Portal](http://manage.windowsazure.cn/).
 2. Click **Browse**.
 3. Click **SQL Servers**.
 4. The icon next to your server or database tells the story:
@@ -154,4 +154,4 @@ If you are not yet running on V12, you can upgrade your logical server by follow
 - By July 31, 2015, all regions had been promoted to General Availability (GA).
 - V12 was released in December 2014, but only at the status of Preview.
 
-<!--[Supplemental Terms of Use for Windows Azure Previews](http://azure.microsoft.com/support/legal/preview-supplemental-terms/).-->
+[Supplemental Terms of Use for Windows Azure Previews](http://azure.microsoft.com/support/legal/preview-supplemental-terms/).

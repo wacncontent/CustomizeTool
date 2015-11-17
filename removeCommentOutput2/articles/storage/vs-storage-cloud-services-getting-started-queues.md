@@ -21,7 +21,7 @@
 > - [Queues](/documentation/articles/vs-storage-cloud-services-getting-started-queues)
 > - [Tables](/documentation/articles/vs-storage-cloud-services-getting-started-tables)
 
-##Overview
+## Overview
 
 This article describes how to get started using Azure Queue storage in Visual Studio after you have created or referenced an Azure storage account in a cloud services project by using the  Visual Studio **Add Connected Services** dialog. 
 
@@ -30,7 +30,7 @@ We'll show you how to create a queue in code. We'll also show you how to perform
 The **Add Connected Services** operation installs the appropriate NuGet packages to access Azure storage in your project and adds the connection string for the storage account to your project configuration files.
 
  - See [How to use Queue Storage from .NET](/documentation/articles/storage-dotnet-how-to-use-queues) for more information on manipulating queues in code.
-- See [Storage documentation](/documentation/services/storage/) for general information about Azure Storage.
+ - See [Storage documentation](/documentation/services/storage/) for general information about Azure Storage.
  - See [Cloud Services documentation](/documentation/services/cloud-services/) for general information about Azure cloud services.
  - See [ASP.NET](http://www.asp.net) for more information about programming ASP.NET applications.
 
@@ -38,7 +38,7 @@ The **Add Connected Services** operation installs the appropriate NuGet packages
 Azure Queue storage is a service for storing large numbers of messages that can be accessed from anywhere in the world via authenticated calls using HTTP or HTTPS. A single queue message can be up to 64 KB in size, and a queue can contain millions of messages, up to the total capacity limit of a storage account.
 
 
-##Access queues in code
+## Access queues in code
 
 To access queues in Visual Studio Cloud Services projects, you need to include the following items to any C# source file that access Azure Queue storage.
 
@@ -66,7 +66,7 @@ To access queues in Visual Studio Cloud Services projects, you need to include t
 
 **NOTE:** Use all of the above code in front of the code in the following samples.
 
-##Create a queue in code
+## Create a queue in code
 
 To create the queue in code, just add a call to **CreateIfNotExists**.
 
@@ -76,7 +76,7 @@ To create the queue in code, just add a call to **CreateIfNotExists**.
 	// Create the CloudQueue if it does not exist
 	messageQueue.CreateIfNotExists();
 
-##Add a message to a queue
+## Add a message to a queue
 
 To insert a message into an existing queue, create a new **CloudQueueMessage** object, then call the **AddMessage** method.
 
@@ -91,7 +91,7 @@ Here is an example which inserts the message 'Hello, World'.
 	CloudQueueMessage message = new CloudQueueMessage("Hello, World");
 	messageQueue.AddMessage(message);
 
-##Read a message in a queue
+## Read a message in a queue
 
 You can peek at the message in the front of a queue without removing it from the queue by calling the **PeekMessage** method.
 
@@ -101,7 +101,7 @@ You can peek at the message in the front of a queue without removing it from the
 	// Peek at the next message
     CloudQueueMessage peekedMessage = messageQueue.PeekMessage();
 
-##Read and remove a message in a queue
+## Read and remove a message in a queue
 
 Your code can remove (de-queue) a message from a queue in two steps.
 
@@ -202,7 +202,7 @@ To delete a queue and all the messages contained in it, call the **Delete** meth
     // Delete the queue.
     messageQueue.Delete();
 
-##Next steps
+## Next steps
 
 [AZURE.INCLUDE [vs-storage-dotnet-queues-next-steps](../includes/vs-storage-dotnet-queues-next-steps.md)]
 			

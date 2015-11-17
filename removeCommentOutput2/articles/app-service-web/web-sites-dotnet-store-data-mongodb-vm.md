@@ -17,6 +17,7 @@
 # Create a web app in Azure that connects to MongoDB running on a virtual machine
 
 Using Git, you can deploy an ASP.NET application to Azure Websites. In this tutorial, you will build a simple front-end ASP.NET MVC task list application that connects to a MongoDB database running on a virtual machine in Azure.  [MongoDB][MongoDB] is a popular open source, high performance NoSQL database. After running and testing the ASP.NET application on your development computer, you will upload the application to Azure Websites using Git.
+
 In this tutorial you will:
 
 - [Create a virtual machine and install MongoDB](#virtualmachine)
@@ -323,7 +324,7 @@ Open the *Controllers\HomeController.cs* file in **Solution Explorer** and repla
 	}
 
 ## Set up the styles ##
-To change the title at the top of the page, open the *Views\Shared_Layout.cshtml* file in **Solution Explorer** and replace "Application name" in the navbar header with "My Task List Application" so that it looks like this:
+To change the title at the top of the page, open the *Views\Shared\\_Layout.cshtml* file in **Solution Explorer** and replace "Application name" in the navbar header with "My Task List Application" so that it looks like this:
 
  	@Html.ActionLink("My Task List Application", "Index", "Home", null, new { @class = "navbar-brand" })
 
@@ -433,6 +434,7 @@ For more information on MongoDB connection strings, see [Connections][MongoConne
 To run your application on your development computer, select **Start Debugging** from the **Debug** menu or hit **F5**. IIS Express starts and a browser opens and launches the application's home page.  You can add a new task, which will be added to the MongoDB database running on your virtual machine in Azure.
 
 ![My Task List Application][TaskListAppBlank]
+
 <h2>Deploy the ASP.NET application to an Azure website</h2>
 
 In this section you will create a website and deploy the My Task List ASP.NET application using Git.
@@ -475,6 +477,7 @@ In this section you will deploy the My Task List application using Git.
 	![Deployment Complete][Image11]
 
 9. Your Azure website is now available.  Check the **Dashboard** page for your site and the **Site URL** field to find the URL for your site. Following the procedures in this tutorial, your site would be available at this URL: http://mytasklistapp.chinacloudsites.cn.
+
 ## Summary ##
 
 You have now successfully deployed your ASP.NET application to Azure Websites. To view the web app:

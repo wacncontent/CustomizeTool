@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties
 	pageTitle="High availability features of Linux-based HDInsight (Hadoop) | Windows Azure"
 	description="Learn how Linux-based HDInsight clusters improve reliability and availability by using an additional head node. You will learn how this impacts Hadoop services such as Ambari and Hive, as well as how to individually connect to each head node using SSH."
@@ -133,7 +135,7 @@ Each head node can have unique log entries, so you should check the logs on both
 From the Ambari Web UI, select the service you wish to view logs for (for example, YARN,) and then use **Quick Links** to select which head node to view the logs for.
 
 ![Using quick links to view logs](./media/hdinsight-high-availability-linux/viewlogs.png)
-<!-- keep by customization: begin  
+<!--
 ## How to configure the size of the head node ##
 
 The size of the head node can only be selected during cluster creation. The default size for head nodes is **A3**, which provides 4 cores, 7GB memory, and 285GB of local storage. You can find a list of the different VM sizes available for HDInsight, including the core, memory, and local storage for each, on the [HDInsight pricing page](/home/features/hdinsight/#price).
@@ -164,4 +166,4 @@ In this document you have learned how Azure HDInsight provides high availability
 
 [preview-portal]: https://manage.windowsazure.cn/
 [azure-powershell]: /documentation/articles/powershell-install-configure
-[azure-cli]: /documentation/articles/xplat-cli-install
+[azure-cli]: /documentation/articles/xplat-cli 

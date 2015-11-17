@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties
    	pageTitle="Create Hadoop, HBase, or Storm clusters on Linux in HDInsight using the portal | Windows Azure"
    	description="Learn how to create Hadoop, HBase, or Storm clusters on Linux for HDInsight using a web browser and the Azure preview portal."

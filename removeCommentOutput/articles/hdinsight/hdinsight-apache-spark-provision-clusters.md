@@ -406,24 +406,30 @@ The HDInsight .NET SDK provides .NET client libraries that make it easier to wor
 
 [hdinsight-customize-cluster]: /documentation/articles/hdinsight-hadoop-customize-cluster
 [hdinsight-get-started]: /documentation/articles/hdinsight-get-started
+
 [hdinsight-admin-powershell]: /documentation/articles/hdinsight-administer-use-powershell
 [hdinsight-admin-portal]: /documentation/articles/hdinsight-administer-use-management-portal-v1
 [hadoop-hdinsight-intro]: /documentation/articles/hdinsight-hadoop-introduction
 [hdinsight-submit-jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically
 [hdinsight-powershell-reference]: https://msdn.microsoft.com/zh-cn/library/dn858087.aspx
 [hdinsight-storm-get-started]: /documentation/articles/hdinsight-storm-getting-started
+
 [azure-management-portal]: https://manage.windowsazure.cn/
 
 [azure-command-line-tools]: /documentation/articles/xplat-cli
+
 [azure-create-storageaccount]: /documentation/articles/storage-create-storage-account
+
 [apache-hadoop]: http://hadoop.apache.org/
 [azure-purchase-options]: /pricing/overview/
-[azure-member-offers]: http://azure.microsoft.com/pricing/member-offers/
+[azure-member-offers]: /pricing/member-offers/
 [azure-trial]: /pricing/1rmb-trial/
 [hdi-remote]: /documentation/articles/hdinsight-administer-use-management-portal-v1/#rdp
 
 
 [powershell-install-configure]: /documentation/articles/install-configure-powershell
+
+
 [azure-preview-portal]: https://manage.windowsazure.cn
 
 [89e2276a]: /documentation/articles/hdinsight-use-sqoop/ "Use Sqoop with HDInsight"

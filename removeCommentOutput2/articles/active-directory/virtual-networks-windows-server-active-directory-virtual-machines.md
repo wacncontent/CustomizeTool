@@ -21,7 +21,7 @@ This navigation topic contains links to other topics about how to deploy Windows
 
 ## Conceptual guidelines
 
-- [Guidelines for Deploying Windows Server Active Directory on Azure Virtual Machines](https://msdn.microsoft.com/zh-CN/library/azure/jj156090.aspx) 
+- [Guidelines for Deploying Windows Server Active Directory on Azure Virtual Machines](https://msdn.microsoft.com/zh-cn/library/azure/jj156090.aspx) 
 
 ## How to articles
 

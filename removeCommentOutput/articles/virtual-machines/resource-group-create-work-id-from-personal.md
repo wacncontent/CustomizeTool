@@ -128,14 +128,14 @@ You can now use your new Azure Active Directory identity to use [Azure resource 
     + Listing resource groups
     info:    No matched resource groups were found
     info:    group list command OK
-    ralph@local:~$ azure group create newgroup westus
+    ralph@local:~$ azure group create newgroup chinanorth
     info:    Executing command group create
     + Getting resource group newgroup
     + Creating resource group newgroup
     info:    Created resource group newgroup
     data:    Id:                  /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/newgroup
     data:    Name:                newgroup
-    data:    Location:            westus
+    data:    Location:            chinanorth
     data:    Provisioning State:  Succeeded
     data:    Tags:
     data:

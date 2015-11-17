@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties
 	pageTitle="Reference for navigating the Azure Management Portal"
 	description="Learn the different user experiences for Azure Websites Web between the management portal and the Azure Management Portal"

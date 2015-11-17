@@ -23,7 +23,7 @@ The following diagram shows the architecture of the deployed system. A system ad
 
 In order to run through the following steps, you'll need:
 
- * An active Azure subscription. If you don't have one, you can get a free trail on [azure.com](http://www.windowsazure.cn/).
+ * An active Azure subscription. If you don't have one, you can get a free trail on [azure.com](https://www.windowsazure.cn).
  * A work or school id to use Azure resource groups. If you have a personal account and log in with a Microsoft id, you need to [create a work id from your personal one](/documentation/articles/resource-group-create-work-id-from-personal).
  * Either -- depending on your client operating system -- the [Azure PowerShell](/documentation/articles/powershell-install-configure) or the [Azure CLI for Mac, Linux, and Windows](/documentation/articles/xplat-cli-install).
  * [OpenSSL](https://www.openssl.org/). OpenSSL is used to generate the necessary certificates.
@@ -72,7 +72,7 @@ Each CoreOS cluster needs to have a unique token from this free service. Please 
 
 8. Modify the **newStorageAccountName** parameter. This is the storage account for VM OS disks. This account name has to be globally unique.
 
-9. Modify the **publicDomainName** parameter. This will become part of the DNS name associated with the load balancer public IP. The final FQDN will have the format of _[value of this parameter]_._[region]_.cloudapp.azure.com. For example, if you specify the name as deishbai32, and the resource group is deployed to the China North region, then the final FQDN to your load balancer will be deishbai32.westus.cloudapp.azure.com.
+9. Modify the **publicDomainName** parameter. This will become part of the DNS name associated with the load balancer public IP. The final FQDN will have the format of _[value of this parameter]_._[region]_.chinacloudapp.cn. For example, if you specify the name as deishbai32, and the resource group is deployed to the China North region, then the final FQDN to your load balancer will be deishbai32.chinanorth.chinacloudapp.cn.
 
 10. Save the parameter file. And then you can provision the cluster using Azure PowerShell:
 
@@ -105,7 +105,8 @@ You need **deisctl** to control your Deis cluster. Although deisctl is automatic
 
 3. Configure deisctl:
 
-        export DEISCTL_TUNNEL=[public ip of the load balancer]: /documentation/articles/2223
+        export DEISCTL_TUNNEL=[public ip of the load balancer]: 2223
+
 The template defines inbound NAT rules that map 2223 to instance 1, 2224 to instance 2, and 2225 to instance 3. This provides redundancy for using the deisctl tool. You can examine these rules on Azure Management Portal:
 
 ![NAT rules on the load balancer](./media/virtual-machines-deis-cluster/nat-rules.png)
@@ -251,6 +252,6 @@ This article walked you through all the steps to provision a new Deis cluster on
 [How to use the Azure CLI] [azure-command-line-tools]  
 [Using Azure PowerShell with Azure Resource Manager] [powershell-azure-resource-manager]  
 
-[azure-command-line-tools]: /documentation/articles/xplat-cli 
+[azure-command-line-tools]: /documentation/articles/xplat-cli-install
 [resource-group-overview]: /documentation/articles/resource-group-overview
 [powershell-azure-resource-manager]: /documentation/articles/powershell-azure-resource-manager

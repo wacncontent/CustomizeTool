@@ -20,7 +20,7 @@ Automated Patching establishes a maintenance window for an Azure Virtual Machine
 
 ## Configure Automated Patching in the Portal
 
-You can use the [Azure Preview Portal](https://portal.azure.com/) to configure Automated Patching when you create a new SQL Server Virtual Machine. The following screenshot shows these options under **OPTIONAL CONFIGURATION** | **SQL AUTOMATED PATCHING**.
+You can use the [Azure Preview Portal](https://manage.windowsazure.cn/) to configure Automated Patching when you create a new SQL Server Virtual Machine. The following screenshot shows these options under **OPTIONAL CONFIGURATION** | **SQL AUTOMATED PATCHING**.
 
 ![SQL Automatic Patching in Azure Management Portal](./media/virtual-machines-sql-server-automated-patching/IC778484.jpg)
 

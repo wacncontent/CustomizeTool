@@ -111,7 +111,7 @@ The following heuristic can help estimate whether an elastic database pool is mo
     
     MAX(*Total number of DBs* * *average DTU utilization per DB*, *number of concurrently peaking DBs* * *Peak DTU utilization per DB*)
 
-2. Select the smallest available eDTU value for the pool that is greater than the estimate from Step 1. For available eDTU choices, see the valid values for eDTUs listed here: [eDTU and storage limits for elastic database pools and elastic databases](/documentation/articles/sql-database-elastic-pool-reference/#edtu-and-storage-limits-for-elastic-pools-and-elastic-databases).
+2. Select the smallest available eDTU value for the pool that is greater than the estimate from Step 1. For available eDTU choices, see the valid values for eDTUs listed here: [eDTU and storage limits for elastic database pools and elastic databases](/documentation/articles/sql-database-elastic-pool-reference#edtu-and-storage-limits-for-elastic-pools-and-elastic-databases).
 
 
 3. Calculate the price for the pool as follows:
@@ -132,7 +132,7 @@ The best size for an elastic database pool depends on the aggregate eDTUs and st
 * Maximum DTUs utilized by all databases in the pool.
 * Maximum storage bytes utilized by all databases in the pool. 
 
-For available sizes, see [eDTU and storage limits for elastic database pools and elastic databases](/documentation/articles/sql-database-elastic-pool-reference/#edtu-and-storage-limits-for-elastic-pools-and-elastic-databases).
+For available sizes, see [eDTU and storage limits for elastic database pools and elastic databases](/documentation/articles/sql-database-elastic-pool-reference#edtu-and-storage-limits-for-elastic-pools-and-elastic-databases).
 
 
 ### Use Service Tier Advisor (STA) and Dynamic Management Views (DMVs) for sizing recommendations   

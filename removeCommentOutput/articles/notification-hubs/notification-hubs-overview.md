@@ -109,7 +109,7 @@ Notification hubs provide a ready-to-use push notification infrastructure with t
 
 	- *Unicast/Multicast*: Push to tags representing individual users, including all of their devices; or wider group; for example, separate form factors (tablet vs. phone).
 
-	- *Segmentation*: Push to complex segment defined by tag expressions (for example, devices in New York following the Yankees).
+	- *Segmentation*: Push to complex segment defined by tag expressions (for example, devices in Beijing following the Guo An).
 
 	Each device, when sending its handle to a notification hub, can specify one or more _tags_. For more information about [tags](http://msdn.microsoft.com/zh-cn/library/azure/dn530749.aspx). Tags do not have to be pre-provisioned or disposed. Tags provide a simple way to send notifications to users or interest groups. Since tags can contain any app-specific identifier (such as user or group IDs), their use frees the app back-end from the burden of having to store and manage device handles.
 

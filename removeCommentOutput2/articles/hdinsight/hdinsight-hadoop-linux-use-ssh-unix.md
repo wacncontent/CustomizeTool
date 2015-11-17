@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties
    pageTitle="Use SSH keys with  Linux-based Hadoop from Linux, Unix, or OS X | Windows Azure"
    description=" You can access Linux-based HDInsight using Secure Shell (SSH). This document provides information on using SSH with HDInsight from Linux, Unix, or OS X clients."
@@ -13,7 +15,7 @@
 	ms.date="09/15/2015"
 	wacn.date=""/>
 
-#Use SSH with Linux-based Hadoop on HDInsight from Linux, Unix, or OS X(preview) 
+#Use SSH with Linux-based Hadoop on HDInsight from Linux, Unix, or OS X (preview) 
 
 > [AZURE.SELECTOR]
 - [Windows](/documentation/articles/hdinsight-hadoop-linux-use-ssh-windows)

@@ -20,7 +20,7 @@
 
 ## Overview
 
-This tutorial shows you how to restore a deleted Azure SQL database in the [Azure Management Portal](http://manage.windowsazure.cn/). You can restore a database that was deleted during its retention period to the point it was deleted. The retention period is determined by the service tier of the database.
+This tutorial shows you how to restore a deleted Azure SQL database in the [Azure Management Portal](http://manage.windowsazure.cn). You can restore a database that was deleted during its retention period to the point it was deleted. The retention period is determined by the service tier of the database.
 
 Restoring a deleted Azure SQL database creates a new database. The service automatically selects the service tier based on the backup used at the restore point. Make sure you have available quota on the logical server to create another database. If you'd like to request an increased quota, contact [Azure Support](/support/contact/).
 
@@ -40,8 +40,6 @@ Restoring a deleted Azure SQL database creates a new database. The service autom
 	* Web and Business Editions will be retired September 2015. For more information, see [Web and Business Edition Sunset FAQ](http://msdn.microsoft.com/zh-cn/library/azure/dn741330.aspx).
 
 ## How to: Restore a deleted Azure SQL database in the Azure Management Portal
-
-<!--<iframe src="http://channel9.msdn.com/Blogs/Windows-Azure/Restore-a-Deleted-SQL-Database/player" width="960" height="540" allowFullScreen frameBorder="0"></iframe>-->
 
 1. Sign in to the [Azure Management Portal](http://manage.windowsazure.cn) using your Microsoft account.
 

@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties
 	pageTitle="Agile software development with Azure Websites"
 	description="Learn how to create high-scale complex applications with Azure Websites in a way that supports agile software development."

@@ -12,9 +12,7 @@
 	ms.date="10/05/2015"
 	wacn.date=""/>
 
-# Add Mobile Services to an existing Android app 
-
-[AZURE.INCLUDE [mobile-services-selector-get-started-data](../includes/mobile-services-selector-get-started-data.md)]
+# Add Mobile Services to an existing Android app (JavaScript backend)
 
 ## Summary
 
@@ -31,17 +29,21 @@
 </div>
 
 
-<p>This tutorial helps you understand in more detail how Azure Mobile Services can store and retrieve data from an Android app. So it walks you through many of the steps that are already completed for you in the Mobile Services quickstart tutorial. If this is your first experience with Mobile Services, consider first completing the tutorial <a href="/develop/mobile/tutorials/get-started-android">Get started with Mobile Services</a>.</p>
+<p>This tutorial helps you understand in more detail how Azure Mobile Services can store and retrieve data from an Android app. So it walks you through many of the steps that are already completed for you in the Mobile Services quickstart tutorial. If this is your first experience with Mobile Services, consider first completing the tutorial <a href="/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-android">Get started with Mobile Services</a>.</p>
 
 ## Prerequisites
 
 To complete this tutorial, you need the following:
 
-- an Azure account. If you don't have an account, you can create a trial account in just a couple of minutes. For details, see <a href="/pricing/1rmb-trial/" target="_blank">Azure Trial</a>.
+- an Azure account. If you don't have an account, you can create a trial account in just a couple of minutes. For details, see <a href="/pricing/1rmb-trial/?WT.mc_id=AED8DE357" target="_blank">Azure Trial</a>.
 
 
 - the [Azure Mobile Services Android SDK];
 - the <a  href="https://developer.android.com/sdk/index.html" target="_blank">Android Studio integrated development environment</a>, which includes the Android SDK; and Android 4.2 or a later version. The downloaded GetStartedWithData project requires Android 4.2 or a later version. However, the Mobile Services SDK requires only Android 2.2 or a later version.
+
+## Sample Code
+
+To see the completed source code, go <a href="https://github.com/Azure/mobile-services-samples/tree/master/GettingStartedWithData/AndroidStudio">here</a>.
 
 ## Download the GetStartedWithData project
 
@@ -49,7 +51,7 @@ To complete this tutorial, you need the following:
 
 [AZURE.INCLUDE [download-android-sample-code](../includes/download-android-sample-code.md)]
 
-###Inspect and run the sample code
+### Inspect and run the sample code
 
 [AZURE.INCLUDE [mobile-services-android-run-sample-code](../includes/mobile-services-android-run-sample-code.md)]
 
@@ -74,7 +76,7 @@ Now that the app has been updated to use Mobile Services for back end storage, y
 
 	This executes your app, built with the Android SDK, that uses the client library to send a query that returns items from your mobile service.
 
-2. As before, type meaningful text, then click **Add**.
+5. As before, type meaningful text, then click **Add**.
 
    	This sends a new item as an insert to the mobile service.
 
@@ -90,7 +92,7 @@ This concludes the **Get started with data** tutorial for Android.
 
 ## Troubleshooting
 
-###Verify Android SDK Version
+### Verify Android SDK Version
 
 [AZURE.INCLUDE [Verify SDK](../includes/mobile-services-verify-android-sdk-version.md)]
 
@@ -111,18 +113,18 @@ This tutorial demonstrated the basics of enabling an Android app to work with da
 Next, consider completing one of the following tutorials that is based on the GetStartedWithData app that you created in this tutorial:
 
 * [Validate and modify data with scripts]
-  Learn more about using server scripts in Mobile Services to validate and change data sent from your app.
+  <br/>Learn more about using server scripts in Mobile Services to validate and change data sent from your app.
 
 * [Refine queries with paging]
-  Learn how to use paging in queries to control the amount of data handled in a single request.
+  <br/>Learn how to use paging in queries to control the amount of data handled in a single request.
 
 Once you have completed the data series, try these other Android tutorials:
 
 * [Get started with authentication]
-	Learn how to authenticate users of your app.
+	<br/>Learn how to authenticate users of your app.
 
 * [Get started with push notifications]
-  Learn how to send a very basic push notification to your app with Mobile Services.
+  <br/>Learn how to send a very basic push notification to your app with Mobile Services.
 
 <!-- Anchors. -->
 [Download the Android app project]: #download-app
@@ -142,13 +144,13 @@ Once you have completed the data series, try these other Android tutorials:
 
 
 <!-- URLs. -->
-[Validate and modify data with scripts]: /documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library
-[Refine queries with paging]: /documentation/articles/mobile-services-android-how-to-use-client-library
-[Get started with Mobile Services]: /documentation/articles/mobile-services-android-get-started/
-[Get started with data]: /documentation/articles/mobile-services-android-get-started-data
+[Validate and modify data with scripts]: /develop/mobile/tutorials/validate-modify-and-augment-data-dotnet
+[Refine queries with paging]: /develop/mobile/tutorials/add-paging-to-data-android
+[Get started with Mobile Services]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-android
+[Get started with data]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-data-android
 [Get started with data (Eclipse)]: /documentation/articles/mobile-services-android-get-started-data-EC/
-[Get started with authentication]: /documentation/articles/mobile-services-android-get-started-users
-[Get started with push notifications]: /documentation/articles/mobile-services-javascript-backend-android-get-started-push
+[Get started with authentication]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-users-android
+[Get started with push notifications]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-push-android
 
 [Azure Management Portal]: https://manage.windowsazure.cn/
 [Management Portal]: https://manage.windowsazure.cn/

@@ -101,7 +101,7 @@ To create a new application and register it in the correct active directory do t
 
 The domain name is required for your code. An easy way to identify the proper domain name is to:
 
-1. Go to the [Azure Management Portal](http://manage.windowsazure.cn).
+1. Go to the [Azure Management Portal](https://manage.windowsazure.cn).
 2. Hover over your name in the upper right corner and note the Domain that appears in the pop-up window.
 
     ![Identify domain name][3]
@@ -131,7 +131,7 @@ The client application must retrieve the application access token for the curren
                 + "domain.partner.onmschina.cn" /* Tenant ID or AAD domain */);
 
         AuthenticationResult token = authContext.AcquireToken
-            ("https://manage.windowsazure.cn/"/* the Azure Resource Management endpoint */,
+            ("https://manage.windowsazure.cn/"/* the Azure Resource Management endpoint */, 
                 "aa00a0a0-a0a0-0000-0a00-a0a00000a0aa" /* application client ID from AAD*/, 
         new Uri("urn:ietf:wg:oauth:2.0:oob") /* redirect URI */, 
         PromptBehavior.Auto /* with Auto user will not be prompted if an unexpired token is cached */);
@@ -332,7 +332,7 @@ To create a new pool on a server:
 
 ## Move an existing database into an elastic database pool
 
-*After creating a pool you can also use Transact-SQL for moving existing databases in and out of a pool. For details see, [Elastic database pool reference - Transact-SQL](/documentation/articles/sql-database-elastic-pool-reference/#Transact-SQL).* 
+*After creating a pool you can also use Transact-SQL for moving existing databases in and out of a pool. For details see, [Elastic database pool reference - Transact-SQL](/documentation/articles/sql-database-elastic-pool-reference#Transact-SQL).*
 
 To move an existing database into a pool:
 
@@ -364,7 +364,7 @@ To move an existing database into a pool:
 
 ## Create a new database in an elastic database pool
 
-*After creating a pool you can also use Transact-SQL for creating new elastic databases in the pool. For details see, [Elastic database pool reference - Transact-SQL](/documentation/articles/sql-database-elastic-pool-reference/#Transact-SQL).* 
+*After creating a pool you can also use Transact-SQL for creating new elastic databases in the pool. For details see, [Elastic database pool reference - Transact-SQL](/documentation/articles/sql-database-elastic-pool-reference#Transact-SQL).*
 
 To create a new database directly in a pool:
 
@@ -446,7 +446,7 @@ To delete a resource group:
                 + "domain.partner.onmschina.cn" /* Tenant ID or AAD domain */);
 
             AuthenticationResult token = authContext.AcquireToken
-                ("https://manage.windowsazure.cn/"/* the Azure Resource Management endpoint */,
+                ("https://manage.windowsazure.cn/"/* the Azure Resource Management endpoint */, 
                 "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX" /* application client ID from AAD*/, 
                 new Uri("urn:ietf:wg:oauth:2.0:oob") /* redirect URI */, 
                 PromptBehavior.Auto /* with Auto user will not be prompted if an unexpired token is cached */);

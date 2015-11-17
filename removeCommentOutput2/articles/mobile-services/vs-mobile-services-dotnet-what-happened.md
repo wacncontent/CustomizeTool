@@ -37,4 +37,4 @@ In your App.xaml.cs file, a **MobileServiceClient** object was created with the 
 If a .NET mobile service is created in the Connected Service Provider, then a mobile services project is created and added to the solution.
 
 
-[Learn more about mobile services](/home/features/mobile-services/) 
+[Learn more about mobile services](/documentation/services/mobile-services/) 

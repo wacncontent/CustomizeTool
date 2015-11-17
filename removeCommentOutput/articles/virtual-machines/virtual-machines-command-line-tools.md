@@ -609,8 +609,8 @@ This command creates a new cloud service
 	info:    Executing command service create
 	+ Getting locations
 	help:    Location:
-	  1) East Asia
-	  2) Southeast Asia
+	  1) China East
+	  2) China North
 	  3) China North
 	  4) West Europe
 	  5) China East
@@ -849,7 +849,7 @@ This command lists your web app locations.
 	data:    China North
 	data:    China North
 	data:    China North
-	data:    East Asia
+	data:    China East
 	data:    China East
 	info:    site location list command OK
 
@@ -1822,11 +1822,11 @@ Display a list of all available namespace locations.
 	+ Getting locations
 	data:    Name              Code
 	data:    ----------------  ----------------
-	data:    East Asia         East Asia
+	data:    China East         China East
 	data:    West Europe       West Europe
 	data:    China North      China North
 	data:    China East           China East
-	data:    Southeast Asia    Southeast Asia
+	data:    China North    China North
 	data:    China North  China North
 	data:    China North           China North
 	data:    China East  China East

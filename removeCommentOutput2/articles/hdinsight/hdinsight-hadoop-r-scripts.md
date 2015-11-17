@@ -36,6 +36,7 @@ R is compatible with Azure Blob Storage (WASB) so that data that is stored there
 A [sample script](https://hdiconfigactions.blob.core.windows.net/rconfigactionv02/r-installer-v02.ps1) to install R on an HDInsight cluster is available from a read-only blob in Azure Storage. This section provides instructions about how to use the sample script while creating the cluster using the Azure Management Portal.
 
 > [AZURE.NOTE] The sample script was introduced with HDInsight cluster version 3.1. For more information about  HDInsight cluster versions, see [HDInsight cluster versions](/documentation/articles/hdinsight-component-versioning).
+
 1. Start provisioning a cluster by using the **CUSTOM CREATE** option, as described at [Provisioning a cluster using custom options](/documentation/articles/hdinsight-provision-clusters#portal). 
 2. On the **Script Actions** page of the wizard, click **Add script action** to provide details about the script actions, as follows:
 
@@ -85,6 +86,7 @@ The first two lines call the RHadoop libraries that are installed with R. The fi
 
 
 ## Install R using Aure PowerShell
+
 In this section, we use the **<a href = "http://msdn.microsoft.com/zh-cn/library/dn858088.aspx" target="_blank">Add-AzureHDInsightScriptAction</a>** cmdlet to invoke scripts by using Script Action to customize a cluster. Before proceeding, make sure you have installed and configured Azure PowerShell. For information about configuring a workstation to run HDInsight Powershell cmdlets, see [Install and configure Azure PowerShell][powershell-install-configure].
 
 Perform the following steps:
@@ -148,6 +150,7 @@ Perform the following steps:
 When prompted, enter the credentials for the cluster. It can take several minutes before the cluster is created.
 
 ## Install R using .NET SDK
+
 The HDInsight .NET SDK provides .NET client libraries that makes it easier to work with HDInsight from a .NET application.
 
 Perform the following procedures to provision an HDInsight cluster using the SDK:
@@ -271,7 +274,9 @@ Open the Azure PowerShell console, navigate to the location where you saved the 
 	.\CreateRCluster <cluster-name>
 
 Provide a cluster name and press ENTER to provision a cluster with R installed.
+
 ## See also
+
 - [Create Hadoop clusters in HDInsight](/documentation/articles/hdinsight-provision-clusters): general information on creating HDInsight clusters
 - [Customize HDInsight cluster using Script Action][hdinsight-cluster-customize]: general information on customizing HDInsight clusters using Script Action
 - [Develop Script Action scripts for HDInsight](/documentation/articles/hdinsight-hadoop-script-actions)

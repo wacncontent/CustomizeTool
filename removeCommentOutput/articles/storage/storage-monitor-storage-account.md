@@ -20,7 +20,7 @@ You can monitor your storage account from the Azure Management Portal. When you 
 
 > [AZURE.NOTE] Additional costs are associated with examining monitoring data in the Azure Management Portal. For more information, see <a href="http://msdn.microsoft.com/zh-cn/library/azure/hh360997.aspx">Storage Analytics and Billing</a>. <br />
 
-> Azure File storage currently supports Storage Analytics metrics, but does not yet support logging. You can enable metrics for Azure File storage via the [Azure preview portal](https://ms.portal.azure.com).
+> Azure File storage currently supports Storage Analytics metrics, but does not yet support logging. You can enable metrics for Azure File storage via the [Azure preview portal](https://manage.windowsazure.cn).
 
 > For an in-depth guide on using Storage Analytics and other tools to identify, diagnose, and troubleshoot Azure Storage-related issues, see [Monitor, diagnose, and troubleshoot Windows Azure Storage](/documentation/articles/storage-monitoring-diagnosing-troubleshooting).
 

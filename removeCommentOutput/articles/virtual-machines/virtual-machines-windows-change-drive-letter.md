@@ -60,7 +60,13 @@ If you want to use an existing data disk on the D drive, make sure you've also u
 
 <!--Link references-->
 [Attach]: /documentation/articles/storage-windows-attach-disk
+
+
+
 [VHD]: /documentation/articles/virtual-machines-create-upload-vhd-windows-server
+
 [Logon]: /documentation/articles/virtual-machines-log-on-windows-server
+
 [Detach]: /documentation/articles/storage-windows-detach-disk
+
 [Storage]: /documentation/articles/storage-whatis-account

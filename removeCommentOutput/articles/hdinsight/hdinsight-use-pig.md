@@ -124,12 +124,15 @@ Now that you have learned how to use Pig with HDInsight, use the following links
 [hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
 [hdinsight-get-started]: /documentation/articles/hdinsight-get-started
 [hdinsight-admin-powershell]: /documentation/articles/hdinsight-administer-use-powershell
+
 [hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive
 [hdinsight-use-mapreduce]: /documentation/articles/hdinsight-use-mapreduce
+
 [hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters
 [hdinsight-submit-jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically#mapreduce-sdk
 
 [Powershell-install-configure]: /documentation/articles/install-configure-powershell
+
 [powershell-start]: http://technet.microsoft.com/zh-cn/library/hh847889.aspx
 
 [image-hdi-log4j-sample]: ./media/hdinsight-use-pig/HDI.wholesamplefile.png

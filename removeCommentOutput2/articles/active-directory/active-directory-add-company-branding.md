@@ -37,7 +37,7 @@ It can take up to an hour for users to see any new change you made to the sign i
 
 User will see a branded sign in page when they visit a service with a tenant-specific URL such as https://outlook.com/**contoso**.com, or https://mail.**contoso**.com (if you’ve created a CNAME).
 
-If they visit a service with non-tenant specific URLs (such as https://partner.outlook.cn) they will see a non-branded sign in page. The sign in page will refresh to show your branding once users have entered their user ID or selected a user tile.
+If they visit a service with non-tenant specific URLs (such as https://mail.office365.com) they will see a non-branded sign in page. The sign in page will refresh to show your branding once users have entered their user ID or selected a user tile.
 
 > [AZURE.NOTE]
 >

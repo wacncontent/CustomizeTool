@@ -7,13 +7,10 @@
             manager="adinah"
             editor="" />
 
-<tags ms.service="storage"
-      ms.workload="storage"
-      ms.tgt_pltfrm="na"
-      ms.devlang="dotnet"
-      ms.topic="hero-article"
-      ms.date="09/28/2015"
-      ms.author="tamram" />
+<tags
+	ms.service="storage"
+	ms.date="09/28/2015"
+	wacn.date=""/>
 
 # How to use Azure File storage with Windows
 
@@ -52,7 +49,7 @@ File storage is now supported for all storage accounts, so you can either use an
 
 ## Use the Azure preview portal to manage a file share
 
-The [Azure preview portal](https://ms.portal.azure.com/) provides a user interface for customers to manage File storage. From the preview portal, you can:
+The [Azure preview portal](https://manage.windowsazure.cn/) provides a user interface for customers to manage File storage. From the preview portal, you can:
 
 - Upload and download files to and from your file share
 - Monitor the actual usage of each file share

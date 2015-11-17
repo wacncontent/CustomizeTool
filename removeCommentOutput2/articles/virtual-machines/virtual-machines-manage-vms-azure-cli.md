@@ -13,11 +13,11 @@
 	ms.date="10/07/2015"
 	wacn.date=""/>
 
-# Manage your Virtual Machines using the Azure CLI for Mac, Linux, and Windows
+# Manage your Resource Manager virtual machines by using the Azure CLI for Mac, Linux, and Windows
 
-Many tasks you do each day to manage your VMs can by automated by using the Azure CLI. This article gives you example commands for simpler tasks, and links to articles that show the commands for more complex tasks.
+Many tasks you do each day to manage your VMs can by automated by using the Azure Command-Line Interface (CLI) for Mac, Linux, and Windows. This article gives you example commands for simpler tasks, and links to articles that show the commands for more complex tasks.
 
->[AZURE.NOTE] If you haven't installed and configured the Azure CLI yet, you can get instructions [here](/documentation/articles/xplat-cli-install). If you want a quickstart for the same tasks in PowerShell, see [Manage your VMs using Azure PowerShell](/documentation/articles/virtual-machines-manage-vms-powershell).
+>[AZURE.NOTE] If you haven't installed the Azure CLI yet, you can get instructions [here](/documentation/articles/xplat-cli-install) and learn how to connect to your subscription [here](/documentation/articles/xplat-cli-connect). You also need to configure the CLI in Azure Resource Manager (arm) mode.
 
 ## How to Use the Example Commands
 You'll need to replace some of the text in the commands with text that's appropriate for your environment. The < and > symbols indicate text you need to replace. When you replace the text, remove the symbols but leave the quote marks in place.
@@ -78,14 +78,5 @@ Of course, if you already have those values you can find the proper switches to 
 
 ## Next steps
 
-For far more examples of Azure CLI usage with the **arm** mode, see [Using the Windows Azure CLI for Mac, Linux, and Windows with Azure Resource Management](/documentation/articles/xplat-cli-resource-manager). To learn more about Azure resources and their concepts, see [Azure Resource Manager Overview](/documentation/articles/resource-group-overview).
-
-
-
-
-
-
-
-
-
+* For more examples of Azure CLI usage with the Azure Resource Manager mode, see [Using the Windows Azure CLI for Mac, Linux, and Windows with Azure Resource Management](/documentation/articles/xplat-cli-azure-resource-manager).
 

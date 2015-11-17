@@ -57,6 +57,7 @@ Before you begin this HBase tutorial, you must have the following:
 >[AZURE.NOTE] After an HBase cluster is deleted, you can create another HBase cluster by using the same default blob container. The new cluster will pick up the HBase tables you created in the original cluster.
 
 ## Use the HBase shell
+
 This section describes how to use the HBase shell to create HBase tables, add rows, and list rows. Here is the data you will use:
 
 ![hdinsight hbase table data][img-hbase-sample-data-tabular]
@@ -143,6 +144,7 @@ HBase in HDInsight ships with a Web UI for monitoring clusters. Using the Web UI
 To open the Web UI, you must RDP into the cluster, and then click the HMaster Info Web UI shortcut on your desktop, or use the following URL in a web browser:
 
 	http://zookeeper[0-2]: master-status
+
 In a high availability cluster, you'll find a link to the current active HBase master node that is hosting the Web UI.
 
 
@@ -152,6 +154,7 @@ In a high availability cluster, you'll find a link to the current active HBase m
 You can query data in HBase tables by using Hive. This section creates a Hive table that maps to the HBase table and uses it to query the data in your HBase table.
 
 **To open the cluster dashboard**
+
 1. Sign in to the [Azure Management Portal][azure-management-portal].
 2. Click **HDINSIGHT** in the left pane. You will see a list of clusters, including the one you created earlier in this tutorial.
 3. Click the cluster name where you want to run the Hive job.
@@ -302,7 +305,7 @@ With virtual network integration, HBase clusters can be deployed to the same vir
 [hdinsight-hbase-provision-vnet]: /documentation/articles/hdinsight-hbase-provision-vnet
 [hdinsight-versions]: /documentation/articles/hdinsight-component-versioning
 [azure-purchase-options]: /pricing/overview/
-[azure-member-offers]: http://azure.microsoft.com/pricing/member-offers/
+[azure-member-offers]: /pricing/member-offers/
 [azure-trial]: /pricing/1rmb-trial/
 [azure-management-portal]: https://manage.windowsazure.cn/
 [azure-create-storageaccount]: /documentation/articles/storage-create-storage-account/

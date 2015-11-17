@@ -205,7 +205,7 @@ Most use of the shard map manager will come from the applications that require d
 
 Note that these applications (using **ShardMapManager** opened with read-only credentials) will be unable to make changes to the maps or mappings.  For those needs, create administrative-specific applications or PowerShell scripts that supply higher-privileged credentials as discussed earlier.   
 
-For more details, see [Data Dependent Routing](/documentation/articles/sql-database-elastic-scale-data-dependent-routing). 
+For more details, see [Data dependent routing](/documentation/articles/sql-database-elastic-scale-data-dependent-routing). 
 
 ## Modifying a shard map 
 

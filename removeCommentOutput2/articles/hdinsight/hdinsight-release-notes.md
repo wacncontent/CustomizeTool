@@ -1014,6 +1014,7 @@ Learn how to work with HDInsight by walking through some basic scenarios (such a
 
 
 **Note**: To demonstrate the new capabilities made available by cluster customization, the procedures using Script Action to install R modules on a cluster have been documented. For further information, see:
+
 * [Install and use R on HDInsight Hadoop clusters](/documentation/articles/hdinsight-hadoop-r-scripts)
 
 
@@ -1377,3 +1378,4 @@ Release notes for the Hortonworks Data Platforms (HDPs) that are used by HDInsig
 [webpi-link]: http://go.microsoft.com/?linkid=9811175&clcid=0x409
 
 [hdinsight-r-scripts]: /documentation/articles/hdinsight-hadoop-r-scripts
+ 

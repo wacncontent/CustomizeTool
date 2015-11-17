@@ -74,7 +74,7 @@ Next, learn [how to use the user ID value to filter returned data](/documentatio
 [Single sign-on for Windows Store apps by using Live Connect]: /documentation/articles/mobile-services-windows-store-dotnet-single-sign-on
 [Mobile Services Quick Start tutorial]: /documentation/articles/mobile-services-ios-get-started
 [Get started with data]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-data-ios
-[Get started with authentication]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-users-ios
+[Get started with authentication]: /documentation/articles/mobile-services-ios-get-started-users
 [Get started with push notifications]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-push-ios
 [Authorize users with scripts]: /documentation/articles/mobile-services-ios-authorize-users-in-scripts
 

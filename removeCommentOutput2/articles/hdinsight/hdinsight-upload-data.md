@@ -247,18 +247,26 @@ Now that you understand how to get data into HDInsight, read the following artic
 [azure-create-storage-account]: /documentation/articles/storage-create-storage-account
 [azure-azcopy-download]: /documentation/articles/storage-use-azcopy
 [azure-azcopy]: /documentation/articles/storage-use-azcopy
+
 [hdinsight-use-sqoop]: /documentation/articles/hdinsight-use-sqoop
+
 [hdinsight-storage]: /documentation/articles/hdinsight-use-blob-storage
 [hdinsight-submit-jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically
 [hdinsight-get-started]: /documentation/articles/hdinsight-get-started
+
 [hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive
 [hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig
 [hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters
+
 [sqldatabase-create-configure]: /documentation/articles/sql-database-create-configure
+
 [apache-sqoop-guide]: http://sqoop.apache.org/docs/1.4.4/SqoopUserGuide.html
 
 [Powershell-install-configure]: /documentation/articles/powershell-install-configure
+
 [azurecli]: /documentation/articles/xplat-cli-install
+
+
 [image-azure-storage-explorer]: ./media/hdinsight-upload-data/HDI.AzureStorageExplorer.png
 [image-ase-addaccount]: ./media/hdinsight-upload-data/HDI.ASEAddAccount.png
 [image-ase-blob]: ./media/hdinsight-upload-data/HDI.ASEBlob.png

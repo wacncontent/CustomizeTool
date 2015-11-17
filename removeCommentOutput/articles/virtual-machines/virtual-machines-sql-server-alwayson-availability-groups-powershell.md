@@ -41,7 +41,7 @@ This tutorial is intended to show you the steps required to set up the described
 
 - You already have an Azure account with the virtual machine subscription.
 
-- You have installed the [Azure PowerShell cmdlets](..\powershell-install-configure.md).
+- You have installed the [Azure PowerShell cmdlets](/documentation/articles/powershell-install-configure).
 
 - You already know how to provision a SQL Server VM from the virtual machine gallery using the GUI. For more information, see [Provisioning a SQL Server Virtual Machine on Azure](/documentation/articles/virtual-machines-provision-sql-server)
 

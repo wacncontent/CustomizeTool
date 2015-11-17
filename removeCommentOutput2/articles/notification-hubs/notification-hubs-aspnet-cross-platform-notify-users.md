@@ -96,13 +96,13 @@ Now that you have completed this tutorial, find out more about Notification Hubs
 
 
 <!-- URLs. -->
-[Push to users ASP.NET]: /manage/services/notification-hubs/notify-users-aspnet
-[Push to users Mobile Services]: /manage/services/notification-hubs/notify-users/
+[Push to users ASP.NET]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-push-notifications-app-users-aspnet
+[Push to users Mobile Services]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-push-notifications-app-users/
 [Visual Studio 2012 Express for Windows 8]: https://www.visualstudio.com/downloads/download-visual-studio-vs
 
 [Management Portal]: https://manage.windowsazure.cn/
 [Use Notification Hubs to send breaking news]: /documentation/articles/notification-hubs-windows-store-dotnet-send-breaking-news
-[Azure Notification Hubs]: http://go.microsoft.com/fwlink/p/?LinkId=314257
+[Azure Notification Hubs]: /home/features/notification-hubs/#price
 [Notify users with Notification Hubs]: /documentation/articles/notification-hubs-aspnet-backend-windows-dotnet-notify-users
-[Templates]: http://go.microsoft.com/fwlink/p/?LinkId=317339
+[Templates]: https://msdn.microsoft.com/zh-cn/library/jj927170.aspx#BKMK_NH7
 [Notification Hub How to for Windows Store]: http://msdn.microsoft.com/zh-cn/library/azure/jj927172.aspx

@@ -52,7 +52,7 @@ To create the route table and route needed for the front end subnet based on the
 		info:    network route-table create command OK
 
 	Parameters:
-	- **-l (or --location)**. Azure region where the new NSG will be created. For our scenario, *westus*.
+	- **-l (or --location)**. Azure region where the new NSG will be created. For our scenario, *chinanorth*.
 	- **-n (or --name)**. Name for the new NSG. For our scenario, *NSG-FrontEnd*.
 
 4. Run the **`azure network route-table route set`** command to create a route in the route table created above to send all traffic destined to the back end subnet (192.168.2.0/24) to the **FW1** VM (192.168.0.4).

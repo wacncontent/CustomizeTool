@@ -30,6 +30,7 @@ If you don't want to use either of those techniques—for example, if you want t
 ## Create a Java web app by using the Azure configuration UI
 
 This information shows how to use the Azure configuration UI to select a Java application container, either Apache Tomcat or Jetty, for your web app.
+
 1. Log in to the Windows Azure Management Portal.
 2. Click **New**, click **Compute**, click **Website**, and then click **Quick Create**.
 3. Specify the URL name.
@@ -41,6 +42,7 @@ dashboard.
 8. In the **General** section, enable **Java** by clicking the available version.
 9. The options for the web container are displayed, for example, Tomcat and Jetty. Select the web container that you want to use. 
 10. Click **Save**. 
+
 Within a few moments, your web app will become Java-based. To confirm that it is Java-based, click its URL. Note that the page will provide text stating that the new web app is a Java-based web app.
 
 Now that you've created the web app with an app container, see the **Next steps** section for information about uploading your application to the web app.

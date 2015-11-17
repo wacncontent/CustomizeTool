@@ -14,6 +14,6 @@
 	wacn.date=""/>
 
 
-# How to connect virtual machines with a virtual network or cloud service
+# Connect virtual machines with a virtual network or cloud service
 
 [AZURE.INCLUDE [howto-connect-vm-cloud-service](../includes/howto-connect-vm-cloud-service.md)]

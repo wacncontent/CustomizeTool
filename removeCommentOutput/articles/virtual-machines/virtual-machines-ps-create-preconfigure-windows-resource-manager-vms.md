@@ -107,7 +107,7 @@ VMs created with the Resource Manager deployment model can use a public domain n
 To test whether a chosen domain name label is globally unique, use these commands.
 
 	$domName="<domain name label to test>"
-	$loc="<short name of an Azure location, for example, for China North, the short name is westus>"
+	$loc="<short name of an Azure location, for example, for China North, the short name is chinanorth>"
 	Test-AzureRmDnsAvailability -DomainQualifiedName $domName -Location $loc
 
 If DNSNameAvailability is "True", your proposed name is globally unique.

@@ -75,7 +75,7 @@ Azure SQL databases can be configured to asynchronously replicate committed tran
   [Management Portal]: https://manage.windowsazure.cn
   [Azure part monitoring]: /documentation/articles/documentdb-monitor-accounts
   [AzureDb management overview]: http://azure.microsoft.com/blog/2014/12/22/client-tooling-updates-for-azure-sql-database/
-  [Introducing SQL Database]: http://azure.microsoft.com/services/sql-database
+  [Introducing SQL Database]: /documentation/services/sql-databases
   [Database geo-replication]: http://azure.microsoft.com/blog/2014/07/12/spotlight-on-sql-database-active-geo-replication/
   [Managing Azure SQL Database using SQL Server Management Studio]: /documentation/articles/sql-database-manage-azure-ssms
   [Monitoring SQL Database using Dynamic Management Views]: http://msdn.microsoft.com/zh-cn/library/azure/ff394114.aspx

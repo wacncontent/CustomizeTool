@@ -27,7 +27,7 @@ This article provides steps for how to create a SQL Server virtual machine in Az
 
 ## Install and Configure PowerShell
 
-1. If you do not have an Azure account, visit [Azure trial](https://azure.microsoft.com/pricing/1rmb-trial/). 
+1. If you do not have an Azure account, visit [Azure trial](/pricing/1rmb-trial/). 
  
 2. [Install the latest Azure PowerShell cmdlets](/documentation/articles/powershell-install-configure#how-to-install-azure-powershell).
 

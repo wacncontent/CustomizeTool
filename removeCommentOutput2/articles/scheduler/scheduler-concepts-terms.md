@@ -13,7 +13,7 @@
 
 # Scheduler concepts, terminology, + entity hierarchy
 
-## Scheduler Entity Hierarchy
+## Scheduler entity hierarchy
 
 The following table describes the main resources exposed or used by the Scheduler API:
 
@@ -24,18 +24,18 @@ The following table describes the main resources exposed or used by the Schedule
 |**Job**|A job defines a single recurrent action, with simple or complex strategies for execution. Actions may include HTTP requests or storage queue requests.|
 |**Job history**|A job history represents details for an execution of a job. It contains success vs. failure, as well as any response details.|
 
-## Scheduler Entity Management
+## Scheduler entity management
 
 At a high level, the scheduler and the service management API expose the following operations on the resources:
 
-|Capability|Description and URI Address|
+|Capability|Description and URI address|
 |---|---|
 |**Cloud service management**|GET, PUT, and DELETE support for creating and modifying cloud services <p>`https://management.core.chinacloudapi.cn/{subscriptionId}/cloudservices/{cloudServiceName}`</p>|
-|**Job collection management**|GET, PUT, and DELETE support for creating and modifying job collections and the jobs contained therein. A job collection is a container for jobs and, maps to quotas and shared settings. Examples of quotas, described later, are maximum # of jobs and smallest recurrence interval <p>PUT & DELETE: `https://management.core.chinacloudapi.cn/{subscriptionId}/cloudservices/{cloudServiceName}/resources/scheduler/jobcollections/{jobCollectionName}`</p><p>GET: `https://management.core.chinacloudapi.cn/{subscriptionId}/cloudservices/{cloudServiceName}/resources/scheduler/~/jobcollections/{jobCollectionName}`</p>
-|**Job management**|GET, PUT, POST, PATCH, and DELETE support for creating and modifying jobs All jobs must belong to a job collection that already exists, so there is no implicit creation. <p>`https://management.core.chinacloudapi.cn/{subscriptionId}/cloudservices/{cloudServiceName}/resources/scheduler/~/jobcollections/{jobCollectionName}/jobs/{jobId}`</p>|
-|**Job history management**|GET support for fetching 60 days of job execution history, such as job elapsed time and job execution results Adds query string parameter support for filtering based on state and status. <P>`https://management.core.chinacloudapi.cn/{subscriptionId}/cloudservices/{cloudServiceName}/resources/scheduler/~/jobcollections/{jobCollectionName}/jobs/{jobId}/history`</p>|
+|**Job collection management**|GET, PUT, and DELETE support for creating and modifying job collections and the jobs contained therein. A job collection is a container for jobs and maps to quotas and shared settings. Examples of quotas, described later, are maximum number of jobs and smallest recurrence interval. <p>PUT and DELETE: `https://management.core.chinacloudapi.cn/{subscriptionId}/cloudservices/{cloudServiceName}/resources/scheduler/jobcollections/{jobCollectionName}`</p><p>GET: `https://management.core.chinacloudapi.cn/{subscriptionId}/cloudservices/{cloudServiceName}/resources/scheduler/~/jobcollections/{jobCollectionName}`</p>
+|**Job management**|GET, PUT, POST, PATCH, and DELETE support for creating and modifying jobs. All jobs must belong to a job collection that already exists, so there is no implicit creation. <p>`https://management.core.chinacloudapi.cn/{subscriptionId}/cloudservices/{cloudServiceName}/resources/scheduler/~/jobcollections/{jobCollectionName}/jobs/{jobId}`</p>|
+|**Job history management**|GET support for fetching 60 days of job execution history, such as job elapsed time and job execution results. Adds query string parameter support for filtering based on state and status. <P>`https://management.core.chinacloudapi.cn/{subscriptionId}/cloudservices/{cloudServiceName}/resources/scheduler/~/jobcollections/{jobCollectionName}/jobs/{jobId}/history`</p>|
 
-## Job Types
+## Job types
 
 There are two types of jobs: HTTP jobs (including HTTPS jobs that support SSL) and storage queue jobs. HTTP jobs are ideal if you have an endpoint of an existing workload or service. You can use storage queue jobs to post messages to storage queues, so those jobs are ideal for workloads that use storage queues.
 
@@ -123,13 +123,13 @@ Let’s examine each of these in detail:
 
 ## startTime
 
-The “startTime” is the start time and allows the caller to specify a time zone offset on the wire in [ISO-8601 format](http://en.wikipedia.org/wiki/ISO_8601).
+The "startTime” is the start time and allows the caller to specify a time zone offset on the wire in [ISO-8601 format](http://en.wikipedia.org/wiki/ISO_8601).
 
 ## action and errorAction
 
 The “action” is the action invoked on each occurrence and describes a type of service invocation. The action is what will be executed on the provided schedule. Scheduler supports HTTP and storage queue actions.
 
-The action in the example above is an http action. Below is an example of a storage queue action:
+The action in the example above is an HTTP action. Below is an example of a storage queue action:
 
 	{
 			"type": "storageQueue",
@@ -143,7 +143,7 @@ The action in the example above is an http action. Below is an example of a stor
 			},
 	}
 
-The “errorAction” is the error handler, the action invoked when the primary action fails. You can use this variable to call an error handling endpoint or send a user notification. This can be used for reaching a secondary endpoint in the case that the primary is not available (e.g. in the case of a disaster at the endpoint’s site) or can be used for notifying an error handling endpoint. Just like the primary action, the error action can be simple or composite logic based on other actions. To learn how to create a SAS token, refer to [Create and Use a Shared Access Signature](https://msdn.microsoft.com/zh-CN/library/azure/jj721951.aspx).
+The “errorAction” is the error handler, the action invoked when the primary action fails. You can use this variable to call an error-handling endpoint or send a user notification. This can be used for reaching a secondary endpoint in the case that the primary is not available (e.g., in the case of a disaster at the endpoint’s site) or can be used for notifying an error handling endpoint. Just like the primary action, the error action can be simple or composite logic based on other actions. To learn how to create a SAS token, refer to [Create and Use a Shared Access Signature](https://msdn.microsoft.com/zh-cn/library/azure/jj721951.aspx).
 
 ## recurrence
 
@@ -183,23 +183,22 @@ To set a retry policy, two additional settings may be specified: a retry interva
 
 The retry interval, specified with the **retryInterval** object, is the interval between retries. Its default value is 1 minute, its minimum value is 1 minute, and its maximum value is 18 months. It is defined in the ISO 8601 format. Similarly, the value of the number of retries is specified with the **retryCount** object; it is the number of times a retry is attempted. Its default value is 5, and its maximum value is 20\. Both **retryInterval** and **retryCount** are optional. They are given their default values if **retryType** is set to **fixed** and no values are specified explicitly.
 
-## See Also
+## See also
 
  [What is Scheduler?](/documentation/articles/scheduler-intro)
 
- [Get Started Using Scheduler in the Management Portal](/documentation/articles/scheduler-get-started-portal)
+ [Get started using Azure Scheduler in the Azure Management Portal](/documentation/articles/scheduler-get-started-portal)
 
- [Plans and Billing in Azure Scheduler](/documentation/articles/scheduler-plans-billing)
+ [Plans and billing in Azure Scheduler](/documentation/articles/scheduler-plans-billing)
 
- [How to Build Complex Schedules and Advanced Recurrence with Azure Scheduler](/documentation/articles/scheduler-advanced-complexity)
+ [How to build complex schedules and advanced recurrence with Azure Scheduler](/documentation/articles/scheduler-advanced-complexity)
 
- [Scheduler REST API Reference](https://msdn.microsoft.com/zh-CN/library/dn528946)   
+ [Azure Scheduler REST API reference](https://msdn.microsoft.com/zh-cn/library/dn528946)
 
- [Scheduler PowerShell Cmdlets Reference](/documentation/articles/scheduler-powershell-reference)
+ [Azure Scheduler PowerShell cmdlets reference](/documentation/articles/scheduler-powershell-reference)
 
- [Scheduler High-Availability and Reliability](/documentation/articles/scheduler-high-availability-reliability)
+ [Azure Scheduler high-availability and reliability](/documentation/articles/scheduler-high-availability-reliability)
 
- [Scheduler Limits, Defaults, and Error Codes](/documentation/articles/scheduler-limits-defaults-errors)
+ [Azure Scheduler limits, defaults, and error codes](/documentation/articles/scheduler-limits-defaults-errors)
 
- [Scheduler Outbound Authentication](/documentation/articles/scheduler-outbound-authentication)
- 
+ [Azure Scheduler outbound authentication](/documentation/articles/scheduler-outbound-authentication)

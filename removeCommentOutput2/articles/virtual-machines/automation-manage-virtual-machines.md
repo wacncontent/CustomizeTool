@@ -21,7 +21,7 @@ This guide introduces you to the Azure Automation service and how it can be used
 
 ## What is Azure Automation?
 
-[Azure Automation](/home/features/automation/) is an Azure service for simplifying cloud management through process automation. By using Azure Automation, long-running, manual, error-prone, and frequently repeated tasks can be automated to increase reliability, efficiency, and time to value for your organization.
+[Azure Automation](/home/features/automation/) is an Azure service for simplifying cloud management through process automation. By using Azure Automation, long-running, manual, error-prone, and frequently repeated tasks can be automated to increase reliability, efficiency, and time-to-value for your organization.
 
 Azure Automation provides a highly reliable and highly available workflow execution engine that scales to meet your needs as your organization grows. In Azure Automation, processes can be kicked off manually, by third-party systems, or at scheduled intervals so that tasks happen exactly when needed.
 
@@ -30,7 +30,7 @@ You can lower operational overhead and free up IT and DevOps staff to focus on w
 
 ## How can Azure Automation help manage Azure virtual machines?
 
-Virtual machines can be managed in Azure Automation by using [Azure PowerShell](https://msdn.microsoft.com/zn-ch/library/azure/jj156055.aspx). Azure Automation includes the Azure PowerShell cmdlets, so you can perform all of your virtual machine management tasks within the service. You can also pair the cmdlets in Azure Automation with the cmdlets for other Azure services, to automate complex tasks across Azure services and third-party systems.
+Virtual machines can be managed in Azure Automation by using [Azure PowerShell](https://msdn.microsoft.com/zh-cn/library/azure/jj156055.aspx). Azure Automation includes the Azure PowerShell cmdlets, so you can perform all of your virtual machine management tasks within the service. You can also pair the cmdlets in Azure Automation with the cmdlets for other Azure services, to automate complex tasks across Azure services and third-party systems.
 
 
 ## Next steps

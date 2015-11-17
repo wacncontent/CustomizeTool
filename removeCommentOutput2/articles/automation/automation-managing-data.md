@@ -65,7 +65,6 @@ The following table shows the available primary and secondary region pairings.
 |Primary            |Secondary
 | ---------------   |----------------
 |China East   |China North
-|China East 2          |China North
 
 In the unlikely event that a primary region data is lost, Microsoft attempts to recover it. If the primary data cannot be recovered, then geo-failover is performed and the affected customers will be notified about this through their subscription.
 

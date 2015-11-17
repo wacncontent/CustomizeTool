@@ -58,9 +58,9 @@ bus_service.create_queue('taskqueue', queue_options)
 
 ## Send messages to a queue
 
-To send a message to a Service Bus queue, your application calls the **send_queue_message** method on the **ServiceBusService** object.
+To send a message to a Service Bus queue, your application calls the **send\_queue\_message** method on the **ServiceBusService** object.
 
-The following example demonstrates how to send a test message to the queue named *taskqueue using* **send_queue_message**:
+The following example demonstrates how to send a test message to the queue named *taskqueue using* **send\_queue\_message**:
 
 ```
 msg = Message(b'Test Message')
@@ -71,18 +71,18 @@ Service Bus queues support a maximum message size of 256 KB (the header, which i
 
 ## Receive messages from a queue
 
-Messages are received from a queue using the **receive_queue_message** method on the **ServiceBusService** object:
+Messages are received from a queue using the **receive\_queue\_message** method on the **ServiceBusService** object:
 
 ```
 msg = bus_service.receive_queue_message('taskqueue', peek_lock=False)
 print(msg.body)
 ```
 
-Messages are deleted from the queue as they are read when the parameter **peek_lock** is set to **False**. You can read (peek) and lock the message without deleting it from the queue by setting the parameter **peek_lock** to **True**.
+Messages are deleted from the queue as they are read when the parameter **peek\_lock** is set to **False**. You can read (peek) and lock the message without deleting it from the queue by setting the parameter **peek\_lock** to **True**.
 
 The behavior of reading and deleting the message as part of the receive operation is the simplest model, and works best for scenarios in which an application can tolerate not processing a message in the event of a failure. To understand this, consider a scenario in which the consumer issues the receive request and then crashes before processing it. Because Service Bus will have marked the message as being consumed, then when the application restarts and begins consuming messages again, it will have missed the message that was consumed prior to the crash.
 
-If the **peek_lock** parameter is set to **True**, the receive becomes a two stage operation, which makes it possible to support applications that cannot tolerate missing messages. When Service Bus receives a request, it finds the next message to be consumed, locks it to prevent other consumers receiving it, and then returns it to the application. After the application finishes processing the message (or stores it reliably for future processing), it completes the second stage of the receive process by calling the **delete** method on the **Message** object. The **delete** method will mark the message as being consumed and remove it from the queue.
+If the **peek\_lock** parameter is set to **True**, the receive becomes a two stage operation, which makes it possible to support applications that cannot tolerate missing messages. When Service Bus receives a request, it finds the next message to be consumed, locks it to prevent other consumers receiving it, and then returns it to the application. After the application finishes processing the message (or stores it reliably for future processing), it completes the second stage of the receive process by calling the **delete** method on the **Message** object. The **delete** method will mark the message as being consumed and remove it from the queue.
 
 ```
 msg = bus_service.receive_queue_message('taskqueue', peek_lock=True)
@@ -107,6 +107,6 @@ Now that you have learned the basics of Service Bus queues, follow these links t
 
 [Azure Management Portal]: http://manage.windowsazure.cn
 [Python Azure package]: https://pypi.python.org/pypi/azure  
-[Queues, Topics, and Subscriptions]: /documentation/articles/service-bus-queues-topics-subscriptions
-[Azure Queues and Service Bus queues]: /documentation/articles/service-bus-azure-and-service-bus-queues-compared-contrasted/#capacity-and-quotas
+[Queues, topics, and subscriptions]: /documentation/articles/service-bus-queues-topics-subscriptions
+[Azure Queues and Service Bus queues]: /documentation/articles/service-bus-azure-and-service-bus-queues-compared-contrasted#capacity-and-quotas
  

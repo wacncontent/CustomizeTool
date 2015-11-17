@@ -241,7 +241,7 @@ constant across delivery attempts.
 
 ## Next Steps
 
-Now that you've learned the basics of Service Bus queues, see [Queues, Topics, and Subscriptions][] for more information.
+Now that you've learned the basics of Service Bus queues, see [Queues, topics, and subscriptions][] for more information.
 
 For more information, see the [Java Developer Center](/develop/java/).
 
@@ -249,5 +249,5 @@ For more information, see the [Java Developer Center](/develop/java/).
   [Azure SDK for Java]: /develop/java/
   [Azure Toolkit for Eclipse]: https://msdn.microsoft.com/zh-cn/library/azure/hh694271.aspx
   [Azure Management Portal]: http://manage.windowsazure.cn/
-  [Queues, Topics, and Subscriptions]: /documentation/articles/service-bus-queues-topics-subscriptions
+  [Queues, topics, and subscriptions]: /documentation/articles/service-bus-queues-topics-subscriptions
   [BrokeredMessage]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.brokeredmessage.aspx

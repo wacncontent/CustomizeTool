@@ -21,6 +21,7 @@ This tutorial describes how to get started running Python in [Azure Websites](/d
 You will create an application using the Flask web framework (see alternate versions of this tutorial for [Django](/documentation/articles/web-sites-python-create-deploy-django-app) and [Bottle](/documentation/articles/web-sites-python-create-deploy-bottle-app)).  You will create the website, set up Git deployment, and clone the repository locally.  Then you will run the application locally, make changes, commit and push them to Azure.  The tutorial shows how to do this from Windows or Mac/Linux.
 
 [AZURE.INCLUDE [create-account-and-websites-note](../includes/create-account-and-websites-note.md)]
+
 + [Prerequisites](#prerequisites)
 + [Website Creation on Portal](#website-creation-on-portal)
 + [Application Overview](#application-overview)
@@ -38,7 +39,7 @@ You will create an application using the Flask web framework (see alternate vers
 - Python 2.7 or 3.4
 - setuptools, pip, virtualenv (Python 2.7 only)
 - Git
-- [Python Tools for Visual Studio][] - Note: this is optional
+- [Python Tools for Visual Studio][] (PTVS) - Note: this is optional
 
 **Note**: TFS publishing is currently not supported for Python projects.
 
@@ -56,6 +57,7 @@ You should have Python and Git already installed, but make sure you have either 
 
 
 ## Web app create on the Azure Management Portal
+
 The first step in creating your app is to create the web app via the [Azure Management Portal](https://manage.windowsazure.cn). To do this, you will need to login to the portal and click the NEW button in the bottom left corner. A window will appear. Click **Quick Create**, enter a URL, and select **Create Web Site**.
 
 ![](./media/web-sites-python-create-deploy-django-app/django-ws-003.png)
@@ -395,6 +397,7 @@ For information on using Azure Table Storage and MongoDB:
 <!--Link references-->
 [Flask and MongoDB on Azure with Python Tools for Visual Studio]: https://github.com/microsoft/ptvs/wiki/Flask-and-MongoDB-on-Azure
 [Flask and Azure Table Storage on Azure with Python Tools for Visual Studio]: /documentation/articles/web-sites-python-ptvs-flask-table-storage
+
 <!--External Link references-->
 [Azure SDK for Python 2.7]: http://go.microsoft.com/fwlink/?linkid=254281
 [Azure SDK for Python 3.4]: http://go.microsoft.com/fwlink/?linkid=516990

@@ -115,7 +115,7 @@ Next, you need to add your cloud service deployment to the VNET you just created
       </NetworkConfiguration>
     </ServiceConfiguration>
 
-Next build your cloud services project and deploy it to Azure. To get help with deploying your cloud services package to Azure, see [How to Create and Deploy a Cloud Service](/documentation/articles/cloud-services-how-to-create-deploy/#deploy) 
+Next build your cloud services project and deploy it to Azure. To get help with deploying your cloud services package to Azure, see [How to Create and Deploy a Cloud Service](/documentation/articles/cloud-services-how-to-create-deploy#deploy)
 
 ## Connect your web/worker role(s) to the custom domain using the AD Domain Extension
 

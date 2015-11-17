@@ -111,8 +111,8 @@ Now that the client app has been updated, return to the [Notify users with Notif
 
 
 <!-- URLs. -->
-[Notify users with Notification Hubs]: /manage/services/notification-hubs/notify-users
-[Get started with authentication]: /develop/mobile/tutorials/get-started-with-users-ios/
+[Notify users with Notification Hubs]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-push-notifications-app-users
+[Get started with authentication]: /documentation/articles/mobile-services-ios-get-started-users/
 
 [Azure Management Portal]: https://manage.windowsazure.cn/
 [Get Started with Notification Hubs]: /manage/services/notification-hubs/get-started-notification-hubs-ios/

@@ -26,9 +26,11 @@ This tutorial supports both Windows Store and Windows Phone Store apps.
 
 Before you start this tutorial, you must have already completed these Mobile Services tutorials:
 
-+ [Get started with authentication]<br/>Adds a login requirement to the TodoList sample app.
++ [Get started with authentication]  
+Adds a login requirement to the TodoList sample app.
 
-+ [Get started with push notifications]<br/>Configures the TodoList sample app for push notifications by using Notification Hubs. 
++ [Get started with push notifications]  
+Configures the TodoList sample app for push notifications by using Notification Hubs. 
 
 After you have completed both tutorials, you can prevent unauthenticated users from registering for push notifications from your mobile service.
 
@@ -56,6 +58,7 @@ After you have completed both tutorials, you can prevent unauthenticated users f
 <!-- URLs. -->
 [Get started with authentication]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-users
 [Get started with push notifications]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-push
+
 [Azure Management Portal]: https://manage.windowsazure.cn/
 
  

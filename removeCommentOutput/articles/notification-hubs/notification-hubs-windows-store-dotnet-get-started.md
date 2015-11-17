@@ -90,7 +90,7 @@ To send push notifications to Windows Store apps, you must associate your app to
 
 1. Sign in to the [Azure Management Portal], and then click **NEW** at the bottom of the screen.
 
-2. Click **Azure Websites**, click **Service Bus**, click **Notification Hub**, and then click **Quick Create**.
+2. Click **App Services**, click **Service Bus**, click **Notification Hub**, and then click **Quick Create**.
 
    	![][7]
 
@@ -297,6 +297,7 @@ To learn more general information about Notification Hubs, see [Notification Hub
 
 [Use Notification Hubs to push notifications to users]: /documentation/articles/notification-hubs-aspnet-backend-windows-dotnet-notify-users
 [Use Notification Hubs to send breaking news]: /documentation/articles/notification-hubs-windows-store-dotnet-send-breaking-news
+
 [toast catalog]: http://msdn.microsoft.com/zh-cn/library/windows/apps/hh761494.aspx
 [tile catalog]: http://msdn.microsoft.com/zh-cn/library/windows/apps/hh761491.aspx
 [badge overview]: http://msdn.microsoft.com/zh-cn/library/windows/apps/hh779719.aspx

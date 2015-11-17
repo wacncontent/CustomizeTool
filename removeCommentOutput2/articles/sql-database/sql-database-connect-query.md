@@ -31,7 +31,7 @@ This topic describes every step for people who are new to Azure SQL Database and
 To run the C# code sample, you must have:
 
 
-- An Azure account and subscription. You can sign up for a [trial](http://wacn-ppe.chinacloudsites.cn/zh-cn/pricing/1rmb-trial/).
+- An Azure account and subscription. You can sign up for a [trial](/pricing/1rmb-trial/).
 
 
 - An **AdventureWorksLT** demonstration database on the Azure SQL Database service.

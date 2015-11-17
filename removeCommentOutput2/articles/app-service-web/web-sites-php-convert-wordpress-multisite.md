@@ -30,7 +30,7 @@ Lets get started.
 
 ## Allow Multisite
 
-You first need to enable Multisite through the `wp-config.php` file with the **WP_ALLOW_MULTISITE** constant. There are two methods to edit your web app files: the first is through FTP, and the second through Git. If you are unfamiliar with how to setup either of these methods, please refer to the following tutorials:
+You first need to enable Multisite through the `wp-config.php` file with the **WP\_ALLOW\_MULTISITE** constant. There are two methods to edit your web app files: the first is through FTP, and the second through Git. If you are unfamiliar with how to setup either of these methods, please refer to the following tutorials:
 
 * [PHP web site with MySQL and FTP][website-w-mysql-and-ftp-ftp-setup]
 
@@ -94,9 +94,11 @@ Before Azure Web Apps will allow you to map a domain to the site, you first need
 It may take some time for the DNS changes to go into full effect, so if the following steps do not work immediately, go make a cup of coffee, then come back and try again.
 
 ## Add the domain to the web app
+
 Return to your  Website through the Azure Management Portal, and this time click the **CONFIGURE** tab. The **MANAGE DOMAINS** button should be available. Click it.
 
 The *Manage custom domains* dialog show pop up. This is where you will input all the domains which you wish to assign to your  Website. If a domain is not listed here, it will not be available for mapping inside WordPress, regardless of how the domain DNS is setup.
+
 ![Manage custom domains dialog][wordpress-manage-domains]
 
 After typing your domain into the text box, Azure will verify the CNAME record you created previously. If the DNS has not fully propigated, a red indicator will show. If it was successful, you will see a green checkmark. 

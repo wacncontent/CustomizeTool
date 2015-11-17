@@ -121,6 +121,7 @@ In this article you learned how to use the Microsoft Hive ODBC driver to retriev
 [hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
 [hdinsight-power-query]: /documentation/articles/hdinsight-connect-excel-power-query
 [hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows
+
 [hive-odbc-driver-download]: http://go.microsoft.com/fwlink/?LinkID=286698
 
 [img-hdi-simbahiveodbc-datasource-admin]: ./media/hdinsight-connect-excel-hive-ODBC-driver/HDI.SimbaHiveOdbc.DataSourceAdmin1.png

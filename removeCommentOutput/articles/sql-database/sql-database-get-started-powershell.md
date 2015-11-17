@@ -103,7 +103,7 @@ The database details appear after the database is successfully created.
 
     $SubscriptionId = "4cac86b0-1e56-bbbb-aaaa-000000000000"
     $ResourceGroupName = "resourcegroupname"
-    $Location = "Japan West"
+    $Location = "China East"
     
     $ServerName = "uniqueservername"
     

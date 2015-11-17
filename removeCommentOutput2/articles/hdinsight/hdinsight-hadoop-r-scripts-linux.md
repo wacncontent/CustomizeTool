@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties
 	pageTitle="Install R on Linux-based HDInsight | Windows Azure"
 	description="Learn how to install and use R to customize Linux-based Hadoop clusters."

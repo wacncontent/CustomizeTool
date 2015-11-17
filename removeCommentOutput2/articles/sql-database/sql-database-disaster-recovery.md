@@ -37,7 +37,7 @@ In the event of an outage on the primary database, you can failover to a seconda
 
 
 ###Azure Management Portal
-1. Log in to the [Azure Management Portal](https://manage.windowsazure.cn) 
+1. Log in to the [Azure Management Portal](https://manage.windowsazure.cn)
 2. On the left side of the screen select **BROWSE** and then select **SQL Databases**
 3. Navigate to your database and select it. 
 4. At the bottom of your database blade select the **Geo Replication map**.
@@ -47,7 +47,7 @@ After the continuous copy relationship is terminated, you can configure your rec
 ###PowerShell
 Use PowerShell to programmatically perform database recovery.
 
-To terminate the relationship from the secondary database, use the [Stop-AzureSqlDatabaseCopy](https://msdn.microsoft.com/zh-CN/library/dn720223) cmdlet.
+To terminate the relationship from the secondary database, use the [Stop-AzureSqlDatabaseCopy](https://msdn.microsoft.com/zh-cn/library/dn720223) cmdlet.
 		
 		$myDbCopy = Get-AzureSqlDatabaseCopy -ServerName "SecondaryServerName" -DatabaseName "SecondaryDatabaseName"
 		$myDbCopy | Stop-AzureSqlDatabaseCopy -ServerName "SecondaryServerName" -ForcedTermination
@@ -66,7 +66,7 @@ Use the secondary server name and database name in the Stop Database Copy reques
 In the event of an outage of a database, you can recover your database from its latest geo redundant backup using Geo-Restore. 
 
 ###Azure Management Portal
-1. Log in to the [Azure Management Portal](https://manage.windowsazure.cn) 
+1. Log in to the [Azure Management Portal](https://manage.windowsazure.cn)
 2. On the left side of the screen select **NEW**, then select **Data and Storage**, and then select **SQL Database**
 2. Select **BACKUP** as the source  and then select the geo redundant backup you want to recover from.
 3. Specify the rest of the database properties and then click **Create**.
@@ -76,7 +76,7 @@ After the database is recovered you can configure it to be used by following the
 ###PowerShell 
 Use PowerShell to programmatically perform database recovery.
 
-To start a Geo-Restore request, use the [start-AzureSqlDatabaseRecovery](https://msdn.microsoft.com/zh-CN/library/azure/dn720224.aspx) cmdlet.
+To start a Geo-Restore request, use the [start-AzureSqlDatabaseRecovery](https://msdn.microsoft.com/zh-cn/library/azure/dn720224.aspx) cmdlet. 
 
 		$Database = Get-AzureSqlRecoverableDatabase -ServerName "ServerName" –DatabaseName “DatabaseToBeRecovered"
 		$RecoveryRequest = Start-AzureSqlDatabaseRecovery -SourceDatabase $Database –TargetDatabaseName “NewDatabaseName” –TargetServerName “TargetServerName”
@@ -87,13 +87,13 @@ After the database is recovered you can configure it to be used by following the
 
 Use REST to programmatically perform database recovery.
 
-1.	Get your list of recoverable databases using the [List Recoverable Databases](https://msdn.microsoft.com/zh-CN/library/azure/dn800984.aspx) operation.
+1.	Get your list of recoverable databases using the [List Recoverable Databases](http://msdn.microsoft.com/zh-cn/library/azure/dn800984.aspx) operation.
 	
-2.	Get the database you want to recover using the [Get Recoverable Database](https://msdn.microsoft.com/zh-CN/library/azure/dn800985.aspx) operation.
+2.	Get the database you want to recover using the [Get Recoverable Database](http://msdn.microsoft.com/zh-cn/library/azure/dn800985.aspx) operation.
 	
-3.	Create the recovery request using the [Create Database Recovery Request](https://msdn.microsoft.com/zh-CN/library/azure/dn800986.aspx) operation.
+3.	Create the recovery request using the [Create Database Recovery Request](http://msdn.microsoft.com/zh-cn/library/azure/dn800986.aspx) operation.
 	
-4.	Track the status of the recovery using the [Database Operation Status](https://msdn.microsoft.com/zh-CN/library/azure/dn720371.aspx) operation.
+4.	Track the status of the recovery using the [Database Operation Status](http://msdn.microsoft.com/zh-cn/library/azure/dn720371.aspx) operation.
 
 After the database is recovered you can configure it to be used by following the [Finalize a Recovered Database](/documentation/articles/sql-database-recovered-finalize) guide.
  

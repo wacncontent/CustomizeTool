@@ -302,5 +302,6 @@ In the event that an execution failure occurs, the output describing it will als
 [hdinsight-cluster-customize]: /documentation/articles/hdinsight-hadoop-customize-cluster
 [hdinsight-r-scripts]: /documentation/articles/hdinsight-hadoop-r-scripts
 [powershell-install-configure]: /documentation/articles/install-configure-powershell
+
 <!--Reference links in article-->
 [1]: https://msdn.microsoft.com/zh-cn/library/96xafkes(v=vs.110).aspx

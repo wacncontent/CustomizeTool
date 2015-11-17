@@ -15,7 +15,7 @@
 
 The Service Bus samples demonstrate key features in Service Bus (cloud service) and Service Bus for Windows Server. This article categorizes and describes the samples available, with links to each.
 
->[AZURE.NOTE] Service Bus samples are not installed with the SDK. To obtain the samples, visit the [Azure SDK samples page](https://code.msdn.microsoft.com/windowsazure).
+>[AZURE.NOTE] Service Bus samples are not installed with the SDK. To obtain the samples, visit the [Azure SDK samples page](https://code.msdn.microsoft.com).
 
 ## Service Bus brokered messaging
 
@@ -27,13 +27,13 @@ Note that the brokered messaging samples require a connection string to access y
 
 1. Log on to the [Azure Management Portal](http://manage.windowsazure.cn).
 
-2. In the left-hand column, click **Service Bus**.
+1. In the left-hand column, click **Service Bus**.
 
-3. Click the name of your service namespace in the list.
+1. Click the name of your service namespace in the list.
 
-4. Click **Connection Information**. In the **Access connection information** dialog, copy the connection string to your clipboard.
+1. Click **Connection Information**. In the **Access connection information** dialog, copy the connection string to your clipboard.
 
-5. Paste the connection string into the App.config file for the sample.
+1. Paste the connection string into the App.config file for the sample.
 
 ### To obtain a connection string for Service Bus for Windows Server
 
@@ -53,7 +53,7 @@ These samples describe basic messaging and relay functionality.
 |---|---|---|---|
 |[Getting Started: Messaging with Queues](http://code.msdn.microsoft.com/Getting-Started-Brokered-aa7a0ac3)|Demonstrates how to use Windows Azure Service Bus to send and receive messages from a queue.|1.8|Windows Azure Service Bus; Service Bus for Windows Server|
 |[Getting Started: Messaging With Topics](http://code.msdn.microsoft.com/Getting-Started-Brokered-614d42e5)|Demonstrates how to use Windows Azure Service Bus to send and receive messages from a topic with multiple subscriptions.|1.8|Windows Azure Service Bus; Service Bus for Windows Server|
-|[Getting Started with Event Hubs](http://code.msdn.microsoft.com/windowsazure/Service-Bus-Event-Hub-286fd097)|Demonstrates the basic capabilities of Event Hubs, such as creating an Event Hub, sending events to an Event Hub, consuming events using the Event Processor.|2.4|Windows Azure Service Bus|
+|[Getting Started with Event Hubs](http://code.msdn.microsoft.com/Service-Bus-Event-Hub-286fd097)|Demonstrates the basic capabilities of Event Hubs, such as creating an Event Hub, sending events to an Event Hub, consuming events using the Event Processor.|2.4|Windows Azure Service Bus|
 
 ### Exploring features
 

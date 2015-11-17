@@ -40,7 +40,7 @@ To create an NSG named named *NSG-FrontEnd* based on the scenario above, follow 
 
 3. Run the **azure network nsg create** command to create an NSG.
 
-		azure network nsg create -g TestRG -l westus -n NSG-FrontEnd
+		azure network nsg create -g TestRG -l chinanorth -n NSG-FrontEnd
 
 	Expected output:
 
@@ -51,7 +51,7 @@ To create an NSG named named *NSG-FrontEnd* based on the scenario above, follow 
 		data:    Id                              : /subscriptions/628dad04-b5d1-4f10-b3a4-dc61d88cf97c/resourceGroups/TestRG/providers/Microsoft.Network/networkSecurityGroups/NSG-FrontEnd
 		data:    Name                            : NSG-FrontEnd
 		data:    Type                            : Microsoft.Network/networkSecurityGroups
-		data:    Location                        : westus
+		data:    Location                        : chinanorth
 		data:    Provisioning state              : Succeeded
 		data:    Security group rules:
 		data:    Name                           Source IP          Source Port  Destination IP  Destination Port  Protocol  Direction  Access  Priority
@@ -66,7 +66,7 @@ To create an NSG named named *NSG-FrontEnd* based on the scenario above, follow 
 
 	Parameters:
 	- **-g (or --resource-group)**. Name of the resource group where the NSG will be created. For our scenario, *TestRG*.
-	- **-l (or --location)**. Azure region where the new NSG will be created. For our scenario, *westus*.
+	- **-l (or --location)**. Azure region where the new NSG will be created. For our scenario, *chinanorth*.
 	- **-n (or --name)**. Name for the new NSG. For our scenario, *NSG-FrontEnd*.
 
 4. Run the **azure network nsg rule create** command to create a rule that allows access to port 3389 (RDP) from the Internet.
@@ -164,7 +164,7 @@ To create an NSG named named *NSG-BackEnd* based on the scenario above, follow t
 
 3. Run the **azure network nsg create** command to create an NSG.
 
-		azure network nsg create -g TestRG -l westus -n NSG-BackEnd
+		azure network nsg create -g TestRG -l chinanorth -n NSG-BackEnd
 
 	Expected output:
 
@@ -176,7 +176,7 @@ To create an NSG named named *NSG-BackEnd* based on the scenario above, follow t
 		networkSecurityGroups/NSG-BackEnd
 		data:    Name                            : NSG-BackEnd
 		data:    Type                            : Microsoft.Network/networkSecurityGroups
-		data:    Location                        : westus
+		data:    Location                        : chinanorth
 		data:    Provisioning state              : Succeeded
 		data:    Security group rules:
 		data:    Name                           Source IP          Source Port  Destination IP  Destination Port  Protocol  Direction  Access  Priority

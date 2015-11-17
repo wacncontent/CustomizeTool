@@ -23,9 +23,9 @@ The first step is to create a service namespace, and to obtain a Shared Access S
 
 ### To create a service namespace and obtain a SAS key
 
-1. To create a namespace in the Azure management portal, follow the steps in [How To: Create or Modify a Service Bus Service Namespace](https://msdn.microsoft.com/zh-cn/library/hh690931.aspx).
+1. To create a namespace in the Azure Management Portal, follow the steps in [How To: Create or Modify a Service Bus Service Namespace](https://msdn.microsoft.com/zh-cn/library/hh690931.aspx).
 
-2. In the main window of the Azure management portal, click the name of the service namespace you created in the previous step.
+2. In the main window of the Azure Management Portal, click the name of the service namespace you created in the previous step.
 
 3. Click **Configure** to view the shared access policies for the namespace.
 
@@ -296,7 +296,7 @@ As with the previous steps, there is very little difference between implementing
 
 	This step configures a service that uses the previously defined default **webHttpRelayBinding**. It also uses the default **sbTokenProvider**, which is defined in the next step.
 
-6. After the `<services>` element, create a `<behaviors>` element with the following content, replacing "SAS_KEY" with the *Shared Access Signature* (SAS) key you obtained from the Azure management portal in Step 1.
+6. After the `<services>` element, create a `<behaviors>` element with the following content, replacing "SAS_KEY" with the *Shared Access Signature* (SAS) key you obtained from the Azure Management Portal in Step 1.
 
 	```
 	<behaviors>
@@ -574,6 +574,6 @@ After building the solution, do the following to run the application:
 
 Now that you've built an application that uses the Service Bus relay service, see the following articles to learn more about relayed messaging:
 
-- [Azure Service Bus Architectural Overview](/documentation/articles/fundamentals-service-bus-hybrid-solutions/#relays)
+- [Azure Service Bus architectural overview](/documentation/articles/service-bus-fundamentals-hybrid-solutions#relays)
 
 - [How to Use the Service Bus Relay Service](/documentation/articles/service-bus-dotnet-how-to-use-relay)

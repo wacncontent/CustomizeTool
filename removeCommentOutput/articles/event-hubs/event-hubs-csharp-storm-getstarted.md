@@ -36,7 +36,7 @@ In order to complete this tutorial you will need the following:
 
 1. Log on to the [Azure Management Portal], and click **NEW** at the bottom of the screen.
 
-2. Click on **Azure Websites**, then **Service Bus**, then **Event Hub**, then **Quick Create**.
+2. Click on **App Services**, then **Service Bus**, then **Event Hub**, then **Quick Create**.
 
 	![][1]
 
@@ -107,3 +107,4 @@ Now that you've built a working application that creates an Event Hub and sends 
 [sample application that uses Event Hubs]: https://code.msdn.microsoft.com/windowsazure/Service-Bus-Event-Hub-286fd097
 [Scale out Event Processing with Event Hubs]: https://code.msdn.microsoft.com/windowsazure/Service-Bus-Event-Hub-45f43fc3
 [queued messaging solution]: /documentation/articles/service-bus-dotnet-multi-tier-app-using-service-bus-queues
+ 

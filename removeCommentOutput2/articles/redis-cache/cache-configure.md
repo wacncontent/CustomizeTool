@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties 
    pageTitle="How to configure Azure Redis Cache"
    description="Understand the default Redis configuration for Azure Redis Cache and learn how to configure your Azure Redis Cache instances"
@@ -100,7 +102,7 @@ For more information, see [Redis Keyspace Notifications](http://redis.io/topics/
 
 ![Redis Cache Users and Tags](./media/cache-configure/IC808320.png)
 
-The **Users** section provides support for role-based access control (RBAC) in the portal to help organizations meet their access management requirements simply and precisely. For more information, see [Role-based access control in the AzureWindows preview portal](/documentation/articles/role-based-access-control-configure).
+The **Users** section provides support for role-based access control (RBAC) in the portal to help organizations meet their access management requirements simply and precisely. For more information, see [Role-based access control in the Windows Azure preview portal](/documentation/articles/role-based-access-control-configure).
 
 The **Tags** section helps you organize your resources. For more information, see [Using tags to organize your Azure resources](/documentation/articles/resource-group-using-tags).
 

@@ -114,7 +114,7 @@ To set the Azure CDN integration to true:
 It could take up to 90 min for the Azure CDN integration to get enabled.  It takes up to two hours for the changes to be active across all the CDN POPs.
 
 
-CDN integration is enabled in all the Azure data centers: US West, China East, China North, West Europe, Japan West, Japan East, South East Asia and East Asia.
+CDN integration is enabled in all the Azure data centers: US West, China East, China North, West Europe, China East, Japan East, South China East and China East.
 
 Once it is enabled, the following configurations get disabled: **Custom Host Names** and **Access Control**.
 

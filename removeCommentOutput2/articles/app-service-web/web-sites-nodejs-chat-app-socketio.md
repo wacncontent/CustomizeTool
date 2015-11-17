@@ -107,6 +107,7 @@ Follow these steps to create an Azure web app, enable Git publishing, and then e
 	>To enable WebSockets using the [Azure Management Portal](https://manage.windowsazure.cn), select the Configure page for your  Website, select 'ON' for the Web Sockets entry, and then click Save.
 	>	
 	>![websockets](./media/web-sites-nodejs-chat-app-socketio/websockets.png)
+	
 5. To view the web app on Azure, use the following command to launch your web browser and navigate to the hosted web app:
 
 		azure site browse

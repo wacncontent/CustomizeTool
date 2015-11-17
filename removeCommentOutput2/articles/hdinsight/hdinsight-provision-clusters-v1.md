@@ -445,6 +445,7 @@ Another option for provisioning an HDInsight cluster is the Azure CLI. Azure CLI
 For a general guide on how to use Azure CLI, see [Azure CLI ](/documentation/articles/xplat-cli-install).
 
 Instructions below guide you on how to install Azure CLI on Windows, and then how to use the command line to provision a cluster.
+
 - [Set up the Azure CLI for Windows](#cliwin)
 - [Provision HDInsight clusters by using the Azure CLI](#cliprovision)
 

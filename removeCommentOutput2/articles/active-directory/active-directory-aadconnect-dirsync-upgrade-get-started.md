@@ -144,7 +144,7 @@ See those options in the following UI:
 [AZURE.NOTE] Synchronization between Windows Server Active Directory and Azure Active Directory will begin, but no changes will be exported to Azure AD.  Only one synchronization tool can be actively exporting changes at a time.
 9. Click "Install".
 
-[AZURE.NOTE]> We uncheck the start synchronization checkbox in order to ensure that DirSync, which is still installed and running, and Azure AD Connect do not attempt to write to AAD at the same time.
+[AZURE.NOTE] We uncheck the start synchronization checkbox in order to ensure that DirSync, which is still installed and running, and Azure AD Connect do not attempt to write to AAD at the same time.
 
 ### Check that Azure AD Connect is ready to begin sychronization
 

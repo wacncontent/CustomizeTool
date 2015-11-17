@@ -16,6 +16,9 @@
 # <a name="getting-started"> </a>Get started with Mobile Services
 
 [AZURE.INCLUDE [mobile-services-selector-get-started](../includes/mobile-services-selector-get-started.md)]
+&nbsp;
+
+[AZURE.INCLUDE [mobile-services-hero-slug](../includes/mobile-services-hero-slug.md)]
 
 ##Overview 
 
@@ -113,17 +116,14 @@ The final stage of this tutorial is to host and run your new app on your local c
 ## <a name="next-steps"> </a>Next Steps
 Now that you have completed the quickstart, learn how to perform additional important tasks in Mobile Services:
 
-* **[Get started with data]**
-  <br/>Learn more about storing and querying data using Mobile Services.
-  
-* **[Call a custom API from an HTML application]**
-  <br/>Connect your HTML application with a custom API hosted on Mobile Services.
+* **[Add authentication to your app]**  
+  Learn how to authenticate users of your app with an identity provider.
 
-* **[Get started with authentication]**
-  <br/>Learn how to authenticate users of your app with an identity provider.
+* **[Mobile Services HTML/JavaScript How-to Conceptual Reference]**  
+  Learn more about how to use Mobile Services with HTML/JavaScript
 
-* **[Mobile Services HTML/JavaScript How-to Conceptual Reference]**
-  <br/>Learn more about how to use Mobile Services with HTML/JavaScript 
+
+[AZURE.INCLUDE [app-service-disqus-feedback-slug](../includes/app-service-disqus-feedback-slug.md)]
 
 <!-- Anchors. -->
 [Getting started with Mobile Services]:#getting-started
@@ -144,9 +144,7 @@ Now that you have completed the quickstart, learn how to perform additional impo
 
 
 <!-- URLs. -->
-[Get started with data]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-data-html
-[Get started with authentication]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-users-html
-[Call a custom API from an HTML application]: /documentation/articles/mobile-services-html-call-custom-api
+[Add authentication to your app]: /documentation/articles/mobile-services-html-get-started-users
 
 [Management Portal]: https://manage.windowsazure.cn/
 [Microsoft Web Platform Installer]:  http://go.microsoft.com/fwlink/p/?LinkId=286333

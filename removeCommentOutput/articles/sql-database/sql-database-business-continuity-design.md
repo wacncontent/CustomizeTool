@@ -57,7 +57,7 @@ You can enable Geo-Replicatiom using Azure Management Portal or by calling REST 
 
 [AZURE.VIDEO sql-database-enable-geo-replication-in-azure-portal]
 
-1. Log in to the [Azure Management Portal](https://portal.Azure.com)
+1. Log in to the [Azure Management Portal](https://manage.windowsazure.cn)
 2. On the left side of the screen select **BROWSE** and then select **SQL Databases**
 3. Navigate to your database blade, select the **Geo Replication map** and click **Configure Geo-Replication**.
 4. Navigate to Geo-Replication blade. Select the target region. 

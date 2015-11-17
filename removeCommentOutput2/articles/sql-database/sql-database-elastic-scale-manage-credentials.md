@@ -32,7 +32,7 @@ The [Elastic Database client library](http://www.nuget.org/packages/Microsoft.Az
 
      Do not use User ID values in the form of "username@server" -- instead just use "username".  This is because credentials must work against both the Shard Map Manager database and individual shards, which may be on different servers.
      
-* **User Credentials for Shard Map Manager Access**:  When instantiating the Shard Map Manager in an application that is not going to administer shard maps, use credentials that have read-only permissions on the global shard map. The information retrieved from the global shard map under these credentials are used for [data-dependent routing](/documentation/articles/sql-database-elastic-scale-data-dependent-routing) and to populate the shard map cache on the client. The credentials are provided through the same call pattern to **GetSqlShardMapManager** as shown above:
+* **User credentials for shard map manager access**:  When instantiating the shard map manager in an application that is not going to administer shard maps, use credentials that have read-only permissions on the global shard map. The information retrieved from the global shard map under these credentials are used for [data-dependent routing](/documentation/articles/sql-database-elastic-scale-data-dependent-routing) and to populate the shard map cache on the client. The credentials are provided through the same call pattern to **GetSqlShardMapManager** as shown above: 
  
         // Obtain shard map manager. 
         ShardMapManager shardMapManager = ShardMapManagerFactory.GetSqlShardMapManager( 

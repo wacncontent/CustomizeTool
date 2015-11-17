@@ -75,7 +75,7 @@ Each CoreOS cluster needs to have a unique token from this free service. Please 
 
 8. Modify the **newStorageAccountName** parameter. This is the storage account for VM OS disks. This account name has to be globally unique.
 
-9. Modify the **publicDomainName** parameter. This will become part of the DNS name associated with the load balancer public IP. The final FQDN will have the format of _[value of this parameter]_._[region]_.cloudapp.azure.com. For example, if you specify the name as deishbai32, and the resource group is deployed to the China North region, then the final FQDN to your load balancer will be deishbai32.westus.cloudapp.azure.com.
+9. Modify the **publicDomainName** parameter. This will become part of the DNS name associated with the load balancer public IP. The final FQDN will have the format of _[value of this parameter]_._[region]_.chinacloudapp.cn. For example, if you specify the name as deishbai32, and the resource group is deployed to the China North region, then the final FQDN to your load balancer will be deishbai32.chinanorth.chinacloudapp.cn.
 
 10. Save the parameter file. And then you can provision the cluster using Azure PowerShell:
 
@@ -108,7 +108,8 @@ You need **deisctl** to control your Deis cluster. Although deisctl is automatic
 
 3. Configure deisctl:
 
-        export DEISCTL_TUNNEL=[public ip of the load balancer]: /documentation/articles/2223
+        export DEISCTL_TUNNEL=[public ip of the load balancer]: 2223
+
 The template defines inbound NAT rules that map 2223 to instance 1, 2224 to instance 2, and 2225 to instance 3. This provides redundancy for using the deisctl tool. You can examine these rules on Azure Management Portal:
 
 ![NAT rules on the load balancer](./media/virtual-machines-deis-cluster/nat-rules.png)

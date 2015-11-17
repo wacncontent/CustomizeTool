@@ -22,7 +22,7 @@ Azure Active Directory (AD) is Microsoft's Identity as a Service (IDaaS) solutio
 > [AZURE.NOTE] Azure AD administration portal is a part of the Azure Management Portal. While using Azure AD does not require any Azure purchases, accessing this portal requires an active Azure subscription or an [Azure trial subscription](/pricing/1rmb-trial/).
 
 For a broad overview of Azure AD service capabilities, see [What is Azure AD](/documentation/articles/active-directory-whatis).
-[Learn more about Azure AD service levels](http://www.windowsazure.cn/support/legal/sla/)
+[Learn more about Azure AD service levels](/support/legal/sla/)
 
 > [AZURE.NOTE]  Azure pay as you go subscriptions are different: while also represented in your directory, these subscriptions enable creation of Azure resources and map them to your payment method. In this case there are NO license counts associated with the subscription. Users' association with the subscription, the users' access to managing subscription resources, is achieved by granting them permissions to operate on Azure resources mapped to the subscription.
 
@@ -33,7 +33,7 @@ License-based (Entitlement-based) Azure AD services work by activating a subscri
 
 When you purchase or activate Enterprise Mobility Suite, Azure AD Premium, or Azure AD Basic, your directory is updated with the subscription, including its validity period and prepaid licenses. Your subscription information, including status, next lifecycle event, and the number of assigned or available licenses is available through the Azure AD Management Portal under the Licenses tab for the specific directory. This is also to best place to manage your license assignments.
 
-Each subscription consists of one or more service plans, each representing the included functional level of the service type; for example, Azure AD, Azure MFA, Microsoft Intune, Exchange Online, or SharePoint Online. Azure AD license management does NOT require service plan level management. This is different from Office 365 which relies on this advanced configuration mode to manage access to included services. Azure AD relies on in service configuration, to enable features and manage individual permissions.
+Each subscription consists of one or more service plans, each mapping the included functional level of the service type; for example, Azure AD, Azure MFA, Microsoft Intune, Exchange Online, or SharePoint Online. Azure AD license management does NOT require service plan level management. This is different from Office 365 which relies on this advanced configuration mode to manage access to included services. Azure AD relies on in service configuration, to enable features and manage individual permissions.
 
 In general, Azure AD subscription information is managed through the Azure Management Portal, under the Licenses tab for the specific directory. Azure AD subscriptions, with the exception of Azure AD Premium, do NOT show up in the Office portal.
 
@@ -56,7 +56,7 @@ With group-based license assignment, any user missing a usage location will inhe
 
 ##Getting started with Azure AD licensing
 
-Getting started with Azure AD is easy; you can always create your directory as a part of signing up to a free Azure trial. [Learn more about signing up as an organization](/documentation/articles/sign-up-organization). The following can help you make sure that your directory is best aligned with other Microsoft services you may be consuming or are planning to consume, and your goals in obtaining the service.
+Getting started with Azure AD is easy; you can always create your directory as a part of signing up to an Azure trial. [Learn more about signing up as an organization](/documentation/articles/sign-up-organization). The following can help you make sure that your directory is best aligned with other Microsoft services you may be consuming or are planning to consume, and your goals in obtaining the service.
 
 Here are a couple of best practices:
 - If you are already using any of Microsoft's organizational services, you already have an Azure AD directory. In this case, you should continue to use the same directory for other services, so that core identity management, including provisioning and hybrid SSO, can be utilized across the services. Your users will have a single logon experience and will benefit from richer capabilities across the services. As a result, if you decide to buy an Azure AD paid service for your workforce, we recommend that you use the same directory to do this.
@@ -83,7 +83,7 @@ As indicated, Azure AD has different paid versions. These versions have some min
 ![Active trial license plans](./media/active-directory-licensing-what-is/active_license_trials.png)
 
 ###Assign licenses
-Once the trial is active, you should assign a license to yourself and refresh the browser to ensure you are seeing all your features. The next step is to assign licenses to the users that will need to access or be included in paid Azure AD features. As we mentioned above in "Assigning licenses," the best way to do this is to identify the group representing the desired audience and assign it to the license; in this way, users who are added or removed from the group over its lifecycle will be assigned to or removed from the license.
+Once the subscription is active, you should assign a license to yourself and refresh the browser to ensure you are seeing all your features. The next step is to assign licenses to the users that will need to access or be included in paid Azure AD features. As we mentioned above in "Assigning licenses," the best way to do this is to identify the group representing the desired audience and assign it to the license; in this way, users who are added or removed from the group over its lifecycle will be assigned to or removed from the license.
 
 To assign a license to a group or individual users, select the license plan you would like to assign and click **Assign** on the command bar.
 

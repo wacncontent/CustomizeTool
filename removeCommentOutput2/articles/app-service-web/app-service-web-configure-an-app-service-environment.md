@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties 
 	pageTitle="How to Configure an Azure Websites Environment" 
 	description="Configuration, management and monitoring of Azure Websites Environments" 

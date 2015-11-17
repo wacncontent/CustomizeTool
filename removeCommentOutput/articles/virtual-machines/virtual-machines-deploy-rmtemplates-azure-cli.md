@@ -51,7 +51,7 @@ You can also run Azure CLI as a Docker container by using the following [Docker 
 
 ### Set your Azure account and subscription
 
-If you don't already have an Azure subscription but you do have an MSDN subscription, you can activate your [MSDN subscriber benefits](http://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/). Or you can sign up for a [trial](/pricing/1rmb-trial/).
+If you don't already have an Azure subscription but you do have an MSDN subscription, you can activate your [MSDN subscriber benefits](/pricing/member-offers/msdn-benefits-details/). Or you can sign up for a [trial](/pricing/1rmb-trial/).
 
 You need to have a work or school account to use Azure resource management templates. If you have one, you can type `azure login` and enter your user name and password, and you should successfully log in.
 
@@ -105,14 +105,14 @@ Sometimes you know what image you need, and you need a VM from that image right 
 
 First, create your resource group.
 
-    azure group create coreos-quick westus
+    azure group create coreos-quick chinanorth
     info:    Executing command group create
     + Getting resource group coreos-quick
     + Creating resource group coreos-quick
     info:    Created resource group coreos-quick
     data:    Id:                  /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/coreos-quick
     data:    Name:                coreos-quick
-    data:    Location:            westus
+    data:    Location:            chinanorth
     data:    Provisioning State:  Succeeded
     data:    Tags:
     data:
@@ -149,8 +149,8 @@ Just create your VM by entering the `azure vm quick-create` command and being re
     info:    Executing command vm quick-create
     Resource group name: coreos-quick
     Virtual machine name: coreos
-    Location name: westus
-    Operating system Type [Windows, Linux]: /documentation/articles/linux
+    Location name: chinanorth
+    Operating system Type [Windows, Linux]: linux
     ImageURN (format: "publisherName:offer:skus:version"): coreos:coreos:stable:latest
     User name: ops
     Password: *********
@@ -159,8 +159,8 @@ Just create your VM by entering the `azure vm quick-create` command and being re
     info:    Using the VM Size "Standard_A1"
     info:    The [OS, Data] Disk or image configuration requires storage account
     + Retrieving storage accounts
-    info:    Could not find any storage accounts in the region "westus", trying to create new one
-    + Creating storage account "cli9fd3fce49e9a9b3d14302" in "westus"
+    info:    Could not find any storage accounts in the region "chinanorth", trying to create new one
+    + Creating storage account "cli9fd3fce49e9a9b3d14302" in "chinanorth"
     + Looking up the storage account cli9fd3fce49e9a9b3d14302
     + Looking up the NIC "coreo-westu-1430261891570-nic"
     info:    An nic with given name "coreo-westu-1430261891570-nic" not found, creating a new one
@@ -183,8 +183,8 @@ Just create your VM by entering the `azure vm quick-create` command and being re
     data:    Id                              :/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/coreos-quick/providers/Microsoft.Compute/virtualMachines/coreos
     data:    ProvisioningState               :Succeeded
     data:    Name                            :coreos
-    data:    Location                        :westus
-    data:    FQDN                            :coreo-westu-1430261891570-pip.westus.cloudapp.azure.com
+    data:    Location                        :chinanorth
+    data:    FQDN                            :coreo-westu-1430261891570-pip.chinanorth.chinacloudapp.cn
     data:    Type                            :Microsoft.Compute/virtualMachines
     data:
     data:    Hardware Profile:
@@ -219,11 +219,11 @@ Just create your VM by entering the `azure vm quick-create` command and being re
     data:          MAC Address               :00-0D-3A-30-72-E3
     data:          Provisioning State        :Succeeded
     data:          Name                      :coreo-westu-1430261891570-nic
-    data:          Location                  :westus
+    data:          Location                  :chinanorth
     data:            Private IP alloc-method :Dynamic
     data:            Private IP address      :10.0.1.4
     data:            Public IP address       :104.40.24.124
-    data:            FQDN                    :coreo-westu-1430261891570-pip.westus.cloudapp.azure.com
+    data:            FQDN                    :coreo-westu-1430261891570-pip.chinanorth.chinacloudapp.cn
     info:    vm quick-create command OK
 
 And away you go with your new VM.
@@ -432,14 +432,14 @@ Once you have your parameter values ready, you must create a resource group for 
 
 To create the resource group, type `azure group create <group name> <location>` with the name of the group you want and the datacenter location into which you want to deploy. This happens quickly:
 
-    azure group create myResourceGroup westus
+    azure group create myResourceGroup chinanorth
     info:    Executing command group create
     + Getting resource group myResourceGroup
     + Creating resource group myResourceGroup
     info:    Created resource group myResourceGroup
     data:    Id:                  /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/myResourceGroup
     data:    Name:                myResourceGroup
-    data:    Location:            westus
+    data:    Location:            chinanorth
     data:    Provisioning State:  Succeeded
     data:    Tags:
     data:
@@ -696,14 +696,14 @@ For a Linux-based virtual machine, see [Creating and uploading a virtual hard di
 
 Now you're ready to create a new virtual machine based on the .vhd. Create a group to deploy into, by using `azure group create <location>`:
 
-    azure group create myResourceGroupUser eastus
+    azure group create myResourceGroupUser chinaeast
     info:    Executing command group create
     + Getting resource group myResourceGroupUser
     + Creating resource group myResourceGroupUser
     info:    Created resource group myResourceGroupUser
     data:    Id:                  /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/myResourceGroupUser
     data:    Name:                myResourceGroupUser
-    data:    Location:            eastus
+    data:    Location:            chinaeast
     data:    Provisioning State:  Succeeded
     data:    Tags:
     data:
@@ -1107,14 +1107,14 @@ Here are the contents of the JSON file for the template. If you want the most re
 Create a resource group for the template by using `azure group create <location>`. Then, create a deployment into that resource group by using `azure group deployment create` and passing the resource group, passing a deployment name, and answering the prompts for parameters in the template that did not have default values.
 
 
-    azure group create lbgroup westus
+    azure group create lbgroup chinanorth
     info:    Executing command group create
     + Getting resource group lbgroup
     + Creating resource group lbgroup
     info:    Created resource group lbgroup
     data:    Id:                  /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/lbgroup
     data:    Name:                lbgroup
-    data:    Location:            westus
+    data:    Location:            chinanorth
     data:    Provisioning State:  Succeeded
     data:    Tags:
     data:
@@ -1129,7 +1129,7 @@ Now use the `azure group deployment create` command and the `--template-uri` opt
     > newdeployment
     info:    Executing command group deployment create
     info:    Supply values for the following parameters
-    location: westus
+    location: chinanorth
     newStorageAccountName: storagename
     adminUsername: ops
     adminPassword: password
@@ -1151,7 +1151,7 @@ Now use the `azure group deployment create` command and the `--template-uri` opt
     data:    ContentVersion     : 1.0.0.0
     data:    Name                   Type          Value
     data:    ---------------------  ------------  ----------------------
-    data:    location               String        westus
+    data:    location               String        chinanorth
     data:    newStorageAccountName  String        storagename
     data:    adminUsername          String        ops
     data:    adminPassword          SecureString  undefined
@@ -1205,8 +1205,8 @@ You can see information about specific VMs in your resource group by using the `
     + Getting virtual machines
     data:    Name   ProvisioningState  Location  Size
     data:    -----  -----------------  --------  -----------
-    data:    myVM0  Succeeded          westus    Standard_A1
-    data:    myVM1  Failed             westus    Standard_A1
+    data:    myVM0  Succeeded          chinanorth    Standard_A1
+    data:    myVM1  Failed             chinanorth    Standard_A1
 
 And then, looking up myVM1:
 
@@ -1217,7 +1217,7 @@ And then, looking up myVM1:
     data:    Id                              :/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/zoo/providers/Microsoft.Compute/virtualMachines/myVM1
     data:    ProvisioningState               :Failed
     data:    Name                            :myVM1
-    data:    Location                        :westus
+    data:    Location                        :chinanorth
     data:    Type                            :Microsoft.Compute/virtualMachines
     data:
     data:    Hardware Profile:
@@ -1252,7 +1252,7 @@ And then, looking up myVM1:
     data:          Primary                   :false
     data:          Provisioning State        :Succeeded
     data:          Name                      :nic1
-    data:          Location                  :westus
+    data:          Location                  :chinanorth
     data:            Private IP alloc-method :Dynamic
     data:            Private IP address      :10.0.0.5
     data:

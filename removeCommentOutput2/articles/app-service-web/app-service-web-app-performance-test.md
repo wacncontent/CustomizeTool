@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties
    pageTitle="Test your Azure web app's performance | Windows Azure"
    description="Run Azure web app performance tests to check how your app handles user load. Measure response time and find failures that might indicate problems."
@@ -140,5 +142,5 @@ features and services help your team collaborate more easily and deploy continuo
 <!--Reference links -->
 [AzurePortal]: https://manage.windowsazure.cn
 [AzureSubscription]: https://account.windowsazure.cn/subscriptions
-[AzureFreeTrial]: https://azure.microsoft.com/pricing/1rmb-trial/?WT.mc_id=A261C142F
+[AzureFreeTrial]: /pricing/1rmb-trial/?WT.mc_id=A261C142F
 [WhatIsVSO]: https://www.visualstudio.com/products/what-is-visual-studio-online-vs

@@ -282,6 +282,5 @@ If you want to configure an application gateway to use with ILB, see [Create an 
 
 If you want more information about load balancing options in general, see:
 
-- [Azure Load Balancer](/documentation/services/load-balancer/)
 - [Azure Traffic Manager](/documentation/services/traffic-manager/)
 

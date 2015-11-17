@@ -377,7 +377,7 @@ Now that you've learned the basics of Azure Queue storage, follow these links to
 
 For more information, see also the [PHP Developer Center](/develop/php/).
 
-[download]: http://go.microsoft.com/fwlink/?LinkID=252473
+[download]: /documentation/articles/php-download-sdk
 [require_once]: http://www.php.net/manual/en/function.require-once.php
 [Azure Management Portal]: http://manage.windowsazure.cn/
 [Storing and Accessing Data in Azure]: http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx

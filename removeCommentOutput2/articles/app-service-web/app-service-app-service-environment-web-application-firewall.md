@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties 
 	pageTitle="Configuring a Web Application Firewall (WAF) for Azure Websites Environment" 
 	description="Learn how to configure a web application firewall in front of your Azure Websites Environment." 

@@ -72,7 +72,7 @@ The following articles will help you get started using elastic databases and ela
 An elastic database pool is an Azure Resource Manager resource of type “ElasticPool” in the Windows Azure SQL Database.
 
 - **namespace**: Microsoft.Sql/ElasticPool
-- **management-endpoint** for REST API calls (Resource Manager): https://management.azure.com
+- **management-endpoint** for REST API calls (Resource Manager): https://manage.windowsazure.cn
 
 
 

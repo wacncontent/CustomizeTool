@@ -123,4 +123,5 @@ Now that you have completed the quickstart, learn how to perform additional impo
 [Android Studio]: https://developer.android.com/sdk/index.html
 [Mobile Services Android SDK]: https://go.microsoft.com/fwLink/p/?LinkID=266533
 [Troubleshoot a Mobile Services .NET backend]: /documentation/articles/mobile-services-dotnet-backend-how-to-troubleshoot
+
 [Management Portal]: https://manage.windowsazure.cn/

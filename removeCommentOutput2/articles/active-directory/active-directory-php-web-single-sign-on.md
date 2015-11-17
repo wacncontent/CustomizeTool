@@ -183,7 +183,7 @@ This step shows you how to add support for federated login using Windows Identit
 ## Summary
 This tutorial has shown you how to create and configure a single tenant PHP application that uses the single sign-on capabilities of Azure Active Directory.
 
-A sample that shows how to use Azure Active Directory and single sign-on for PHP Websites is available at <https://github.com/WindowsAzure/azure-sdk-for-php-samples/tree/master/WAAD.WebSSO.PHP>.
+A sample that shows how to use Azure Active Directory and single sign-on for PHP websites is available at <https://github.com/WindowsAzure/azure-sdk-for-php-samples/tree/master/WAAD.WebSSO.PHP>.
 
 
 [Step 1: Create a PHP Application]: #createapp
@@ -191,11 +191,11 @@ A sample that shows how to use Azure Active Directory and single sign-on for PHP
 [Step 3: Protect the Application Using WS-Federation for Employee Sign In]: #protectapp
 [Summary]: #summary
 [Introduction]: #introduction
-[Developing Multi-Tenant Cloud Applications with Azure Active Directory]: http://msdn.microsoft.com/zh-cn/library/azure/dn151789.aspx 
-[Windows Identity Foundation 3.5 SDK]: http://www.microsoft.com/zh-cn/download/details.aspx?id=4451
-[Windows Identity Foundation 1.0 Runtime]: http://www.microsoft.com/zh-cn/download/details.aspx?id=17331
+[Developing Multi-Tenant Cloud Applications with Azure Active Directory]: http://g.microsoftonline.com/0AX00en/121
+[Windows Identity Foundation 3.5 SDK]: http://www.microsoft.com/download/details.aspx?id=4451
+[Windows Identity Foundation 1.0 Runtime]: http://www.microsoft.com/download/details.aspx?id=17331
 [Office 365 Powershell Commandlets]: http://msdn.microsoft.com/zh-cn/library/azure/jj151815.aspx
-[ASP.NET MVC 3]: http://www.microsoft.com/zh-cn/download/details.aspx?id=4211
+[ASP.NET MVC 3]: http://www.microsoft.com/download/details.aspx?id=4211
 [Eclipse PDT 3.0.x All In Ones]: http://www.eclipse.org/pdt/downloads/
 [PHP Sample Code for Azure Active Directory]: https://github.com/WindowsAzure/azure-sdk-for-php-samples/tree/master/WAAD.WebSSO.PHP 
  

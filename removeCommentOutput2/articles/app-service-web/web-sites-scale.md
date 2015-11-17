@@ -21,6 +21,7 @@ Scaling up on Azure web apps involves two related actions: changing your App Ser
 Changing modes and configuring them is easily done in the Scale tab of the management portal. You can scale up or down as required. These changes take only seconds to apply and affect all web apps in your App Service plan. They do not require your code to be changed or your applications to be redeployed.
 
 For information about App Service plans, see [What is an App Service Plan?](/documentation/articles/web-sites-web-hosting-plan-overview) and [App Service Plans In-Depth Overview](/documentation/articles/azure-web-sites-web-hosting-plans-in-depth-overview). For information the pricing and features of individual App Service plans, see [Azure Websites Pricing Details](/home/features/web-site/#price).  
+
 In this article:
 
 - [Scaling to Shared or Basic Plan mode](#scalingsharedorbasic)
@@ -28,10 +29,12 @@ In this article:
 - [Scaling a SQL Server Database connected to your site](#ScalingSQLServer)
 - [Developer Features](#devfeatures)
 - [Other Features](#OtherFeatures)
+
 <a name="scalingsharedorbasic"></a>
 <!-- ===================================== -->
 ## Scaling to Shared or Basic mode
 <!-- ===================================== -->
+
 1. In your browser, open the [Management Portal][portal].
 	
 2. In the ** Websites** tab, select your  Website.
@@ -67,12 +70,14 @@ In this article:
 	In the example, the plan mode has been changed to **Basic**:
 	
 	![Plan change complete][BasicComplete]
+
 <a name="scalingstandard"></a>
 <!-- ================================= -->
 ## Scaling to Standard mode
 <!-- ================================= -->
 
 > [AZURE.NOTE] Before switching an App Service plan to **Standard** mode, you should remove spending caps in place for your Windows Azure Websites subscription. Otherwise, you risk your web app becoming unavailable if you reach your caps before the billing period ends. To view or change options for your Windows Azure Websites subscription, see [Windows Azure Subscriptions][azuresubscriptions].
+
 1. To scale to Standard, follow the same initial steps as when scaling to Shared or Basic, and then choose **Standard** for **App Service plan tier**. 
 	
 	![Choose Standard Plan][ChooseStandard]
@@ -130,9 +135,11 @@ In this article:
 	**Note**: When **Scale by Metric** is enabled, Windows Azure checks the CPU of your  Website once every five minutes and adds instances as needed at that point in time. If CPU usage is low, Windows Azure will remove instances once every two hours to ensure that your  Website remains performant. Generally, putting the minimum instance count at 1 is appropriate. However, if you have sudden usage spikes on your  Website, be sure that you have a sufficient minimum number of instances to handle the load. For example, if you have a sudden spike of traffic during the 5 minute interval before Windows Azure checks your CPU usage, your site might not be responsive during that time. If you expect sudden, large amounts of traffic, set the minimum instance count higher to anticipate these bursts. 
 	
 14. After you have finished making changes to the items in the **Edit Scale Settings for Schedule** list, click the **Save** icon in the command bar at the bottom of the page to save all schedule settings at once (you do not have to save each schedule individually).
+
 <a name="ScalingSQLServer"></a>
 ##Scaling a SQL Server Database connected to your web app
 If you have one or more SQL Server databases linked to your web app (regardless of App Service plan mode), you can quickly scale them based on your needs.
+
 1. To scale one of the databases, in the **Linked Resources** section, click the **Manage scale for this database** link next to the name of the database.
 	
 	![Linked database][LinkedResources]
@@ -144,6 +151,7 @@ If you have one or more SQL Server databases linked to your web app (regardless 
 	For **Edition**, choose **BASIC** or **STANDARD** depending on the storage capacity that you require. For the future of the **Web** and **BUSINESS** editions, see [Web and Business Edition Sunset FAQ](http://msdn.microsoft.com/zh-cn/library/azure/dn741330.aspx).
 	
 	The value you choose for **Max Size** specifies an upper limit for the database. Database charges are based on the amount of data that you actually store, so changing the **Max Size** property does not by itself affect your database charges. For more information, see [Accounts and Billing in Windows Azure SQL Database][SQLaccountsbilling].
+
 <a name="devfeatures"></a>
 ## Developer Features
 Depending on the web app's mode, the following developer-oriented features are available:

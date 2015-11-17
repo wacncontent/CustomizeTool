@@ -53,7 +53,7 @@ An Azure storage account is a secure account that gives you access to services i
 
 Before you can create a storage account, you must have an Azure subscription, which is a plan that gives you access to a variety of Azure services. [You can create up to 100 uniquely named storage accounts with a single subscription.](/documentation/articles/azure-subscription-service-limits) See [Storage Pricing Details](/home/features/storage/#price) for information on volume pricing.
 
-You can get started with Azure with a [trial](/pricing/1rmb-trial/). Once you decide to purchase a plan, you can choose from a variety of [purchase options](/pricing/overview/). If you’re an [MSDN subscriber](http://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/), you get free monthly credits that you can use with Azure services, including Azure Storage.
+You can get started with Azure with a [trial](/pricing/1rmb-trial/). Once you decide to purchase a plan, you can choose from a variety of [purchase options](/pricing/overview/). If you’re an [MSDN subscriber](/pricing/member-offers/msdn-benefits-details/), you get free monthly credits that you can use with Azure services, including Azure Storage.
 
 ### Standard Storage Accounts
 
@@ -151,7 +151,7 @@ Customers are charged for Azure Storage based on four factors: the storage capac
 
 Storage capacity refers to how much of your storage account allotment you are using to store data. The cost of simply storing your data is determined by how much data you are storing, and how it is replicated. Every read and write operation against Azure Storage also makes a request against the service. Data egress refers to data transferred out of a Windows Azure region. When the data in your storage account is accessed by an application that is not running in the same region, whether that application is a cloud service or some other type of application, then you are charged for data egress. (For Windows Azure services, you can take steps to group your data and services in the same data centers to reduce or eliminate process and data egress charges.) 
 
-The [Storage Pricing Details](/home/features/storage/#price) page provides detailed pricing information for storage capacity, replication, and transactions. The [Data Transfers Pricing Details](/home/features/data-transfers/#price) provides detailed pricing information for data egress. You can use the [Azure Storage Pricing Calculator](http://azure.microsoft.com/pricing/calculator/?scenario=data-management) to help estimate your costs.
+The [Storage Pricing Details](/home/features/storage/#price) page provides detailed pricing information for storage capacity, replication, and transactions. The [Data Transfers Pricing Details](/home/features/data-transfers/#price) provides detailed pricing information for data egress. You can use the [Azure Storage Pricing Calculator](/pricing/calculator/?scenario=data-management) to help estimate your costs.
 
 ## Developing Against Storage
 
@@ -202,7 +202,7 @@ To get started with Azure Storage, explore these resources:
 
 ### For Java/Android Developers
 
-- [Java Client Library Reference](http://dl.windowsazure.cn/storage/javadoc/)
+- [Java Client Library Reference](http://dl.windowsazure.com/storage/javadoc/)
 - [How to use Blob Storage from Java/Android](/documentation/articles/storage-java-how-to-use-blob-storage)
 - [How to use Table Storage from Java/Android](/documentation/articles/storage-java-how-to-use-table-storage)
 - [How to use Queue Storage from Java/Android](/documentation/articles/storage-java-how-to-use-queue-storage)

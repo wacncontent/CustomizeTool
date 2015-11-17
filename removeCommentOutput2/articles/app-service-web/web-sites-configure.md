@@ -109,7 +109,9 @@ To configure virtual applications and directories, specify each virtual director
 ### SSL 
 
 In Basic or Standard mode, you can upload SSL certificates for a custom domain. For more information, see [Enable HTTPS for a web app](/documentation/articles/web-sites-configure-ssl-certificate). 
+
 To view your uploaded certificates, click **Configure** > **SSL Bindings**.
+
 ### Domain names
 
 Add custom domain names for your web app. For more information, see [Configure a custom domain name for a web app in Azure Websites](/documentation/articles/web-sites-custom-domain-name).
@@ -118,6 +120,7 @@ To view your domain names, click **Configure** > **Domain Names**.
 
 - Set up continuous deployment. See [Using Git to deploy Web Apps in Azure Websites](/documentation/articles/web-sites-publish-source-control)
 - Deployment slots. See [Deploy to Staging Environments for Web Apps in Azure Websites](/documentation/articles/web-sites-staged-publishing)
+
 To view your deployment slots, click **Configure** > **Deployment**.
 
 ### Monitoring

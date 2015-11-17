@@ -16,7 +16,8 @@
 
 > [AZURE.SELECTOR]
 - [Azure PowerShell](/documentation/articles/powershell-azure-resource-manager)
-- [Azure CLI](/documentation/articles/xplat-cli-azure-resource-manager)
+
+<br>
 
 
 This article describes how to create, manage, and delete Azure resources and VMs using the Azure CLI for Mac, Linux, and Windows using the Azure Resource Manager mode.  
@@ -124,12 +125,12 @@ Finally, choose an OS image from the list that looks something like the followin
 
 	info:    Executing command **vm image list**
 	warn:    The parameters --offer and --sku if specified will be ignored
-	+ Getting virtual machine image offers (Publisher: "Canonical" Location: "chinanorth") 
+	+ Getting virtual machine image offers (Publisher: "Canonical" Location: "chinanorth")
 	data:    Publisher  Offer        Sku          Version          Location  Urn
 
 	data:    ---------  -----------  -----------  ---------------  --------- ----------------------------------------
-	data:    CoreOS     CoreOS       Alpha        475.1.0          chinanorth CoreOS:CoreOS:Alpha:475.1.0
-	data:    CoreOS     CoreOS       Alpha        490.0.0          westus    CoreOS:CoreOS:Alpha:490.0.0
+	data:    CoreOS     CoreOS       Alpha        475.1.0          chinanorth    CoreOS:CoreOS:Alpha:475.1.0
+	data:    CoreOS     CoreOS       Alpha        490.0.0          chinanorth    CoreOS:CoreOS:Alpha:490.0.0
 
 Save the URN name of the image you want to load on your virtual machine. You'll use it later in the article.
 
@@ -340,5 +341,5 @@ To view logged information on operations performed on a group, use the `azure gr
 [signuporg]: /documentation/articles/sign-up-organization/
 [adtenant]: http://technet.microsoft.com/zh-cn/library/jj573650#createAzureTenant
 [portal]: https://manage.windowsazure.cn/
-[clisetup]: /documentation/articles/xplat-cli 
+[clisetup]: /documentation/articles/xplat-cli-install
 [psrm]: http://go.microsoft.com/fwlink/?LinkId=394760

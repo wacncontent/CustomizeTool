@@ -100,7 +100,7 @@ Run the **Set-AzureRMSqlDatabase** cmdlet and set the **-RequestedServiceObjecti
     $SubscriptionId = "4cac86b0-1e56-bbbb-aaaa-000000000000"
     
     $ResourceGroupName = "resourceGroupName"
-    $Location = "Japan West"
+    $Location = "China East"
     
     $ServerName = "serverName"
     $DatabaseName = "databaseName"

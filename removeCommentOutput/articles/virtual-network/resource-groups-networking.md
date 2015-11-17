@@ -45,7 +45,7 @@ Every resource contains a common set of properties, and their individual propert
 |Property|Description|Sample values|
 |---|---|---|
 |**name**|Unique resource name. Each resource type has its own naming restrictions.|PIP01, VM01, NIC01|
-|**location**|Azure region in which the resource resides|westus, eastus|
+|**location**|Azure region in which the resource resides|chinanorth, chinaeast|
 |**id**|Unique URI based identification|/subscriptions/<subGUID>/resourceGroups/TestRG/providers/Microsoft.Network/publicIPAddresses/TestPIP|
 
 You can check the individual properties of resources in the sections below.
@@ -78,7 +78,7 @@ As mentioned earlier, network resources can be managed via a variety of interfac
 
 The Rest API’s conform to the HTTP 1.1 protocol specification. The general URI structure of the API is presented below: 
 
-	https://management.azure.com/subscriptions/{subscription-id}/providers/{resource-provider-namespace}/locations/{region-location}/register?api-version={api-version}
+	https://manage.windowsazure.cn/subscriptions/{subscription-id}/providers/{resource-provider-namespace}/locations/{region-location}/register?api-version={api-version}
 
 And the parameters in braces represent the following elements:
 
@@ -116,7 +116,7 @@ The template is primarily a JSON description of the resources and the instance v
 	    "parameters" : {
 	      "location": {
 	        "type": "String",
-	        "allowedValues": ["China East", "China North", "West Europe", "East Asia", "South East Asia"],
+	        "allowedValues": ["China East", "China North", "West Europe", "China East", "South China East"],
 	        "metadata" : {
 	          "Description" : "Deployment location"
 	        }

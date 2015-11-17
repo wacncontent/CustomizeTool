@@ -154,7 +154,10 @@ Now that you have created a periodic notification, consider finding out more abo
 [Get started with Mobile Services]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started
 [Add Mobile Services to an existing app]: /documentation/articles/mobile-services-windows-store-dotnet-get-started
 [Get started with push notifications]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-push
+
 [Azure Management Portal]: https://manage.windowsazure.cn/
 [Periodic notifications]: http://msdn.microsoft.com/zh-cn/library/windows/apps/jj150587.aspx
 
 [Mobile Services .NET How-to Conceptual Reference]: /documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library
+
+ 

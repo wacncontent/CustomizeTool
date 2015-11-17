@@ -54,7 +54,7 @@ The following is an example of the .NET application monitoring the compute-inten
 
 ## To remotely log in to your virtual machine
 
-1. Log on to the [Management Portal](https://manage.windowsazure.cn).
+1. Log in to the [Azure Management Portal](https://manage.windowsazure.cn).
 2. Click **Virtual machines**.
 3. Click the name of the virtual machine that you want to log in to.
 4. Click **Connect**.
@@ -109,7 +109,7 @@ namespace.
 3. Add the Microsoft ServiceBus library. In Visual Studio Solution Explorer, right-click **TSPSolver**, click **Add Reference**, click the **Browse** tab, browse to the Azure .NET SDK (for example, C:\Program Files\Microsoft SDKs\Azure\.NET SDK\v2.5\ToolsRef) and then select **Microsoft.ServiceBus.dll** as a reference.
 4. Add the System Runtime Serialization library. In Visual Studio Solution Explorer, right-click **TSPSolver**, click **Add Reference**, click the **.NET** tab, and then select **System.Runtime.Serialization** as a reference.
 5. Use the example code at the end of this section for the contents of the Program.cs file.
-6. Modify the **your_connection_string** placeholder to use your Service Bus **connection string**.
+6. Modify the **your\_connection\_string** placeholder to use your Service Bus **connection string**.
 7. Compile the application. This will create TSPSolver.exe in your project's bin folder (either bin\release or bin\debug, depending on whether you're targeting a release or debug build). You'll copy this executable and Microsoft.ServiceBus.dll to your virtual machine later.
 
 <p/>
@@ -334,7 +334,7 @@ namespace.
 2. Add in the Microsoft ServiceBus library. In Visual Studio Solution Explorer, right-click **TSPClient**, click **Add Reference**, click the **Browse** tab, browse to the Azure .NET SDK (for example, C:\Program Files\Microsoft SDKs\Azure\.NET SDK\v2.5\ToolsRef) and then select **Microsoft.ServiceBus.dll** as a reference.
 3. Add the System Runtime Serialization library. In Visual Studio Solution Explorer, right-click **TSPClient**, click **Add Reference**, click the **.NET** tab, and then select **System.Runtime.Serialization** as a reference.
 4. Use the example code at the end of this section for the contents of the Program.cs file.
-5. Modify the **your_connection_string** placeholder to use your Service Bus **connection string**.
+5. Modify the **your\_connection\_string** placeholder to use your Service Bus **connection string**.
 6. Compile the application. This will create TSPClient.exe in your project's bin folder (either bin\release or bin\debug, depending on whether you're targeting a release or debug build). You can run this code from your development machine, or copy this executable and Microsoft.ServiceBus.dll to a machine that will run the client application (it does not need to be on your virtual machine).
 
 <p/>

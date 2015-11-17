@@ -23,7 +23,7 @@ Azure Resource Manager templates were recently introduced as a way to create and
 
 ### GUI: The Azure Management Portal 
 
-The graphical user interface of the Azure Management Portal is an easy way to try out a VM, especially if you're just starting out with Azure. Use either the Azure Management Portal or the Azure preview portal to create the virtual machine:
+The graphical user interface of the Azure Management Portal is an easy way to try out a virtual machine, especially if you're just starting out with Azure. Use either the Azure Management Portal or the Azure preview portal to create the virtual machine:
 
 [Create a virtual machine running Windows][]
 
@@ -69,21 +69,28 @@ Use an image based on an existing Azure virtual machine by *capturing* that virt
 
 <!-- LINKS -->
 [overview]: /documentation/articles/resource-group-overview
+
 [Create a virtual machine running Windows]: /documentation/articles/virtual-machines-windows-tutorial
 
-[Equivalent Resource Manager and Service Management commands for virtual machine operations with the Azure CLI for Mac, Linux, and Windows]:/documentation/articles/xplat-cli-azure-manage-vm-asm-arm
+[Equivalent Resource Manager and Service Management commands for virtual machine operations with the Azure CLI for Mac, Linux, and Windows]: /documentation/articles/xplat-cli-azure-manage-vm-asm-arm
 [Deploy and manage virtual machines using Azure Resource Manager templates and the Azure CLI]: /documentation/articles/virtual-machines-deploy-rmtemplates-azure-cli
 [Create and preconfigure a Windows virtual machine with Resource Manager and Azure PowerShell]: /documentation/articles/virtual-machines-ps-create-preconfigure-windows-resource-manager-vms
 [Deploy and manage virtual machines using Azure Resource Manager templates and PowerShell]: /documentation/articles/virtual-machines-deploy-rmtemplates-powershell
 [Use Azure PowerShell to create and preconfigure Windows virtual machines]: /documentation/articles/virtual-machines-ps-create-preconfigure-windows-vms
 [How to create a custom virtual machine running Windows]: /documentation/articles/virtual-machines-windows-create-custom
 
-[How to capture a Windows virtual machine to use as an image]:/documentation/articles/virtual-machines-capture-image-windows-server
+[How to capture a Windows virtual machine to use as an image]: /documentation/articles/virtual-machines-capture-image-windows-server
 
 [Create and upload a Windows Server VHD to Azure]: /documentation/articles/virtual-machines-create-upload-vhd-windows-server
+
+
 [Create a virtual machine for a website with Visual Studio]: /documentation/articles/virtual-machines-dotnet-create-visual-studio-powershell
 [Deploy Azure resources using the Compute, Network, and Storage .NET libraries]: /documentation/articles/virtual-machines-arm-deployment
+
 [Sign in to the virtual machine]: /documentation/articles/virtual-machines-log-on-windows-server
+
 [Attach a data disk]: /documentation/articles/storage-windows-attach-disk
+
 [Base configuration test environment]: /documentation/articles/virtual-machines-base-configuration-test-environment
+
 [Azure hybrid cloud test environments]: /documentation/articles/virtual-machines-hybrid-cloud-test-environments

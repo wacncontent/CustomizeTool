@@ -42,7 +42,7 @@ The demo program is designed so that a transient error during an attempt to conn
 * ConnectAndQuery calls EstablishConnection.
 * EstablishConnection calls IssueQueryCommand.
 
-The [sqlsrv_query()](http://php.net/manual/zh/function.sqlsrv-query.php) function can be used to retrieve a result set from a query against SQL Database. This function essentially accepts any query and the connection object and returns a result set which can be iterated over with the use of [sqlsrv_fetch_array()](http://php.net/manual/zh/function.sqlsrv-fetch-array.php).
+The [sqlsrv_query()](http://php.net/manual/en/function.sqlsrv-query.php) function can be used to retrieve a result set from a query against SQL Database. This function essentially accepts any query and the connection object and returns a result set which can be iterated over with the use of [sqlsrv_fetch_array()](http://php.net/manual/en/function.sqlsrv-fetch-array.php).
 
 	<?php
 		// Variables to tune the retry logic.  
@@ -130,8 +130,7 @@ The [sqlsrv_query()](http://php.net/manual/zh/function.sqlsrv-query.php) functio
 		}
 	?>
 	
-## Further reading
-
+## Next steps
 
 For more information regarding PHP installation and usage, see [Accessing SQL Server Databases with PHP](http://technet.microsoft.com/zh-cn/library/cc793139.aspx).
 

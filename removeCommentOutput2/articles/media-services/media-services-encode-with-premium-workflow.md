@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties 
 	pageTitle="Advanced encoding with Media Encoder Premium Workflow" 
 	description="Learn how to encode with Media Encoder Premium Workflow. Code samples are written in C# and use the Media Services SDK for .NET." 
@@ -12,7 +14,7 @@
 	ms.date="10/15/2015"
 	wacn.date=""/>
 
-#Advanced encoding with Media Encoder Premium Workflow(public preview) 
+#Advanced encoding with Media Encoder Premium Workflow (public preview) 
 
 **Note** Media Encoder Premium Workflow media processor discussed in this topic is not available in China. 
 

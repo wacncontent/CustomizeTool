@@ -14,7 +14,7 @@
 
 # Integrating with Azure Active Directory
 
-[AZURE.INCLUDE [active-directory-devguide](../includes/active-directory-devguide)]
+[AZURE.INCLUDE [active-directory-devguide](../includes/active-directory-devguide.md)]
 
 Azure Active Directory provides organizations with enterprise-grade identity management for cloud applications.  Azure AD integration gives your users a streamlined sign-in experience, and helps your application conform to IT policy.
 
@@ -42,12 +42,6 @@ There are several ways for your application to integrate with Azure AD.  Take ad
 
 **Azure AD is the authorization server for Office 365 and other Microsoft business services.**  If you support Azure AD for sign in to your application or support linking your current user accounts to Azure AD user accounts using OAuth 2.0, you can request read and write access to a user's profile, calendar, email, contacts, files, and other information.  You can seamlessly write events to user's calendar, and read or write files to their OneDrive.  Learn more about [accessing the Office 365 APIs](https://msdn.microsoft.com/office/office365/howto/platform-development-overview).
 
-<!--
-### Promote Your Application in the Azure and Office 365 Marketplaces
-
-**Promote your application to the millions of organizations who are already using Azure AD.**  Users who search and browse these marketplaces are already using one or more cloud services, making them qualified cloud service customers.  Learn more about promoting your application in [the Azure Marketplace](http://azure.microsoft.com/marketplace/partner-program/).
-
-**When users sign up for your application, it will appear in their Azure AD access panel and Office 365 app launcher.**  Users will be able to quickly and easily return to your application later, improving user engagement.  Learn more about the [Azure AD access panel](/documentation/articles/active-directory-saas-access-panel-introduction).
 
 ### Secure Device-to-Service and Service-to-Service Communication
 
@@ -65,7 +59,7 @@ Integration with Azure AD comes with benefits that do not require you to write a
 
 ### Advanced Security Features
 
-**Multi-factor authentication.**  Azure AD provides native multi-factor authentication.  IT administrators can require multi-factor authentication to access your application, so that you do not have to code this support yourself.  <!--Learn more about [Multi-Factor Authentication](/documentation/services/multi-factor-authentication/).-->
+**Multi-factor authentication.**  Azure AD provides native multi-factor authentication.  IT administrators can require multi-factor authentication to access your application, so that you do not have to code this support yourself.  Learn more about [Multi-Factor Authentication](/documentation/services/multi-factor-authentication/).
 
 **Anomalous sign in detection.**  Azure AD processes more than a billion sign-ins a day, while using machine learning algorithms to detect suspicious activity and notify IT administrators of possible problems.  By supporting Azure AD sign-in, your application gets the benefit of this protection. Learn more about [viewing Azure Active Directory access report](/documentation/articles/active-directory-view-access-usage-reports).
 
@@ -75,7 +69,7 @@ Integration with Azure AD comes with benefits that do not require you to write a
 
 **Industry standard protocols.**  Microsoft is committed to supporting industry standards.  Azure AD supports the SAML 2.0, OpenID Connect 1.0, OAuth 2.0, and WS-Federation 1.2 authentication protocols.  The Graph API is OData 4.0 compliant.  If your application already supports the SAML 2.0 or OpenID Connect 1.0 protocols for federated sign in, adding support for Azure AD can be straightforward.  Learn more about [Azure AD supported authentication protocols](/documentation/articles/active-directory-authentication-protocols).
 
-**Open source libraries.**  Microsoft provides fully supported open source libraries for popular languages and platforms to speed development.  The source code is licensed under Apache 2.0, and you are free to fork and contribute back to the projects.  Learn more about [Azure AD open source libraries](https://msdn.microsoft.com/zh-cn/library/azure/dn151135.aspx).
+**Open source libraries.**  Microsoft provides fully supported open source libraries for popular languages and platforms to speed development.  The source code is licensed under Apache 2.0, and you are free to fork and contribute back to the projects.  Learn more about [Azure AD authentication libraries](/documentation/articles/active-directory-authentication-libraries).
 
 ### Worldwide Presence and High Availability
 

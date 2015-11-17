@@ -16,7 +16,7 @@
 
 [AZURE.INCLUDE [mobile-services-selector-client-library](../includes/mobile-services-selector-client-library.md)]
 
-This guide teaches you to perform common scenarios using the Azure Mobile Services [iOS SDK]. If you are new to Mobile Services, first complete [Mobile Services Quick Start] toor [Add Mobile Services to Existing App] configure your account, create a table, and create a mobile service.
+This guide teaches you to perform common scenarios using the Azure Mobile Services [iOS SDK]. If you are new to Mobile Services, first complete [Mobile Services Quick Start] to configure your account, create a table, and create a mobile service.
 
 > [AZURE.NOTE] This guide uses the latest [iOS Mobile Services SDK](https://github.com/Azure/azure-mobile-services/blob/master/CHANGELOG.ios.md#sdk-downloads). If your project uses an older version of the SDK, first upgrade the framework in Xcode.
 
@@ -24,7 +24,7 @@ This guide teaches you to perform common scenarios using the Azure Mobile Servic
 
 ##<a name="Setup"></a>Setup and Prerequisites
 
-This guide assumes that you have created a mobile service with a table. For more information see [Create a table], or reuse the `TodoItem` table created in [Mobile Services Quick Start]. Thisor [Add Mobile Services to Existing App] guide assumes that the table has the same schema as the tables in those tutorials. This guide also assumes that your Xcode references `WindowsAzureMobileServices.framework` and imports `WindowsAzureMobileServices/WindowsAzureMobileServices.h`.
+This guide assumes that you have created a mobile service with a table. For more information see [Create a table], or reuse the `TodoItem` table created in [Mobile Services Quick Start]. This guide assumes that the table has the same schema as the tables in those tutorials. This guide also assumes that your Xcode references `WindowsAzureMobileServices.framework` and imports `WindowsAzureMobileServices/WindowsAzureMobileServices.h`.
 
 ##<a name="create-client"></a>How to: Create Mobile Services Client
 
@@ -66,7 +66,7 @@ To filter using a predicate, use an `NSPredicate` and `readWithPredicate`. The f
 
 ```
 // Create a predicate that finds items where complete is false
-	NSPredicate *predicate = [NSPredicate predicateWithFormat:@"complete == NO"];
+NSPredicate * predicate = [NSPredicate predicateWithFormat:@"complete == NO"];
 // Query the TodoItem table and update the items property with the results from the service
 [table readWithPredicate:predicate completion:^(MSQueryResult *result, NSError *error) {
 		if(error) {
@@ -150,8 +150,8 @@ In the following example, a simple function requests 5 records from the server a
 
             // Set a flag to keep track if there are any additional records we need to load
             self.moreResults = (self.loadedItems.count <= result.totalCount);
-			}
-		}];
+        }
+    }];
 }
 
 ```
@@ -313,25 +313,19 @@ The file [`<WindowsAzureMobileServices/MSError.h>`](https://github.com/Azure/azu
 <!-- Images. -->
 
 <!-- URLs. -->
-[Add Mobile Services to Existing App]: /develop/mobile/tutorials/get-started-data
-[Mobile Services Quick Start]: /develop/mobile/tutorials/get-started-ios
-[Get started with Mobile Services]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-ios
-[Validate and modify data in Mobile Services by using server scripts]: /documentation/articles/mobile-services-ios-validate-modify-data-server-scripts
+[Mobile Services Quick Start]: /documentation/articles/mobile-services-ios-get-started
+[Get started with Mobile Services]: /documentation/articles/mobile-services-ios-get-started
 [Mobile Services SDK]: https://go.microsoft.com/fwLink/p/?LinkID=266533
-[Get started with authentication]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-users-ios
+[Authentication]: /documentation/articles/mobile-services-ios-get-started-users
 [iOS SDK]: https://developer.apple.com/xcode
 
 [Handling Expired Tokens]: http://go.microsoft.com/fwlink/p/?LinkId=301955
 [Live Connect SDK]: http://go.microsoft.com/fwlink/p/?LinkId=301960
 [Permissions]: http://msdn.microsoft.com/zh-cn/library/azure/jj193161.aspx
 [Service-side Authorization]: /documentation/articles/mobile-services-javascript-backend-service-side-authorization
-[Use scripts to authorize users]: /documentation/articles/mobile-services-ios-authorize-users-in-scripts
-[Dynamic schema]: https://msdn.microsoft.com/zh-cn/library/azure/jj193175.aspx
-[How to: access custom parameters]: /documentation/articles/mobile-services-how-to-use-server-scripts#access-headers
+[Dynamic Schema]: https://msdn.microsoft.com/zh-cn/library/azure/jj193175.aspx
 [Create a table]: http://msdn.microsoft.com/zh-cn/library/azure/jj193162.aspx
 [NSDictionary object]: http://go.microsoft.com/fwlink/p/?LinkId=301965
 [ASCII control codes C0 and C1]: http://en.wikipedia.org/wiki/Data_link_escape_character#C1_set
 [CLI to manage Mobile Services tables]: /documentation/articles/virtual-machines-command-line-tools#Mobile_Tables
 [Conflict-Handler]: /documentation/articles/mobile-services-ios-handling-conflicts-offline-data#add-conflict-handling
- 
-

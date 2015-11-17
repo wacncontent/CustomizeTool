@@ -32,6 +32,7 @@ The HDInsight Getting Started Gallery provides an easy and quick way learn Hadoo
 The Dashboard can be accessed by browsing to http://<YourHDInsightClusterName>.azurehdinsight.cn/ or from the Azure Management Portal.
 
 **To run a sample from the Getting Started Gallery**
+
 1.	Sign in to the [Azure Management Portal][azure.portal].
 2.	Click **HDInsight** in the left menu. You will see a list of existing HDInsight clusters, including Hadoop, Storm, and HBase clusters. 
 3.	Click the cluster where you want to run the sample.

@@ -83,11 +83,13 @@ In the **Standard** tier, monitor app responsiveness receive email notifications
 [FTP]: /documentation/articles/web-sites-deploy#ftp
 [Visual Studio]: /documentation/articles/web-sites-dotnet-get-started
 [Git]: /documentation/articles/web-sites-publish-source-control
+
 [HTTPS]: /documentation/articles/web-sites-configure-ssl-certificate
 [Azure Websites Pricing Details]: /home/features/web-site#price
 [Authenticate users]: /documentation/articles/web-sites-authentication-authorization
 [Easy Auth]:/blog/2014/11/13/azure-websites-authentication-authorization/
 [Authorize users]: /documentation/articles/web-sites-authentication-authorization
+
 [Azure Trust Center]:/support/trust-center/
 [MySQL]: /documentation/articles/web-sites-php-mysql-deploy-use-git
 [Azure SQL Database]: /documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database

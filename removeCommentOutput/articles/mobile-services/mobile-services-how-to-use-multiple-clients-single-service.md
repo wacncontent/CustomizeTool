@@ -143,16 +143,16 @@ Cross-platform tools are available that provide a richer native experience on a 
 <!-- URLs -->
 [Azure Management portal]: https://manage.windowsazure.cn
 [Azure Notification Hubs]: /develop/net/how-to-guides/service-bus-notification-hubs/
-[SSO Windows Store]: /develop/mobile/tutorials/single-sign-on-windows-8-dotnet/
+[SSO Windows Store]: /documentation/articles/mobile-services-windows-store-dotnet-single-sign-on/
 [SSO Windows Phone]: /develop/mobile/tutorials/single-sign-on-wp8/
 [Tutorials and resources]: /develop/mobile/resources/
 [Get started with Notification Hubs]: /manage/services/notification-hubs/getting-started-windows-dotnet/
-[Send cross-platform notifications to users]: /manage/services/notification-hubs/notify-users-xplat-mobile-services/
-[Get started with push Windows dotnet]: /develop/mobile/tutorials/get-started-with-push-dotnet-vs2012/
-[Get started with push Windows js]: /develop/mobile/tutorials/get-started-with-push-js-vs2012/
-[Get started with push Windows Phone]: /develop/mobile/tutorials/get-started-with-push-wp8/
-[Get started with push iOS]: /develop/mobile/tutorials/get-started-with-push-ios/
-[Get started with push Android]: /develop/mobile/tutorials/get-started-with-push-android/
+[Send cross-platform notifications to users]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-push-notifications-app-users-xplat-mobile-services/
+[Get started with push Windows dotnet]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-push-dotnet-vs2012/
+[Get started with push Windows js]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-push-js-vs2012/
+[Get started with push Windows Phone]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-push-wp8/
+[Get started with push iOS]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-push-ios/
+[Get started with push Android]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-push-android/
 [Dynamic schema]: http://msdn.microsoft.com/zh-cn/library/azure/jj193175.aspx
 [How to use a .NET client with Mobile Services]: /documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library
 [push object]: http://msdn.microsoft.com/zh-cn/library/azure/jj554217.aspx

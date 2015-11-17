@@ -247,6 +247,7 @@ For other related articles, see
 - [Run a Hadoop job using DocumentDB and HDInsight](/documentation/articles/documentdb-run-hadoop-with-hdinsight)
 
 [hdinsight-python]: /documentation/articles/hdinsight-python
+
 [image-hdi-hivejson-flatten]: ./media/hdinsight-using-json-in-hive/flatten.png
 [image-hdi-hivejson-getjsonobject]: ./media/hdinsight-using-json-in-hive/getjsonobject.png
 [image-hdi-hivejson-jsontuple]: ./media/hdinsight-using-json-in-hive/jsontuple.png

@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties
 	pageTitle="How to use Azure Redis Cache with Node.js | Windows Azure"
 	description="Get started with Azure Redis Cache using Node.js and node_redis."

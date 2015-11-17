@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties 
 	pageTitle="Analyze real-time Twitter sentiment with HBase | Windows Azure" 
 	description="Learn how to do real-time sentiment analysis of big data from Twitter using HBase in an HDInsight (Hadoop) cluster." 
@@ -1313,6 +1315,9 @@ In this tutorial, you learned how to get tweets, analyze the sentiment of tweets
 
 [hbase-get-started]: /documentation/articles/hdinsight-hbase-get-started
 [website-get-started]: /documentation/articles/web-sites-dotnet-get-started
+
+
+
 [img-app-arch]: ./media/hdinsight-hbase-analyze-twitter-sentiment/AppArchitecture.png
 [img-twitter-app]: ./media/hdinsight-hbase-analyze-twitter-sentiment/TwitterApp.png
 [img-streaming-service]: ./media/hdinsight-hbase-analyze-twitter-sentiment/StreamingService.png
@@ -1324,6 +1329,10 @@ In this tutorial, you learned how to get tweets, analyze the sentiment of tweets
 [hdinsight-develop-mapreduce]: /documentation/articles/hdinsight-develop-deploy-java-mapreduce
 [hdinsight-analyze-twitter-data]: /documentation/articles/hdinsight-analyze-twitter-data
 [hdinsight-hbase-get-started]: /documentation/articles/hdinsight-hbase-get-started
+
+
+
+
 [curl]: http://curl.haxx.se
 [curl-download]: http://curl.haxx.se/download.html
 
@@ -1344,3 +1353,4 @@ In this tutorial, you learned how to get tweets, analyze the sentiment of tweets
 [hdinsight-use-sqoop]: /documentation/articles/hdinsight-use-sqoop
 [hdinsight-power-query]: /documentation/articles/hdinsight-connect-excel-power-query
 [hdinsight-hive-odbc]: /documentation/articles/hdinsight-connect-excel-hive-ODBC-driver
+ 

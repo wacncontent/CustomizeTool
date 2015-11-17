@@ -263,7 +263,7 @@ For Media Services Javadoc documentation, see [Azure Libraries for Java document
 <!-- URLs. -->
 
   [Azure Java Developer Center]: /develop/java/
-  [Azure Libraries for Java documentation]: http://dl.windowsazure.cn/javadoc/
+  [Azure Libraries for Java documentation]: http://dl.windowsazure.com/javadoc/
   [Media Services Client Development]: http://msdn.microsoft.com/zh-cn/library/azure/dn223283.aspx
 
  

@@ -59,7 +59,7 @@ To instantiate an Azure Service Bus client you must first have a valid connectio
 Endpoint=[yourEndpoint];SharedSecretIssuer=[Default Issuer];SharedSecretValue=[Default Key]
 ```
 
-Where **Endpoint** is typically of the format `https://[yourNamespace].servicebus.chinacloudapi.cn`.
+Where `Endpoint` is typically of the format `https://[yourNamespace].servicebus.chinacloudapi.cn`.
 
 To create any Azure service client you must use the **ServicesBuilder** class. You can:
 
@@ -329,9 +329,9 @@ $serviceBusRestProxy->deleteSubscription("mytopic", "mysubscription");
 
 ## Next steps
 
-Now that you've learned the basics of Service Bus queues, see [Queues, Topics, and Subscriptions][] for more information.
+Now that you've learned the basics of Service Bus queues, see [Queues, topics, and subscriptions][] for more information.
 
 [Queues, topics, and subscriptions]: /documentation/articles/service-bus-queues-topics-subscriptions
 [sqlfilter]: http://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.sqlfilter.sqlexpression.aspx
 [require-once]: http://php.net/require_once
-[Azure Queues and Service Bus queues]: /documentation/articles/service-bus-azure-and-service-bus-queues-compared-contrasted/#capacity-and-quotas 
+[Azure Queues and Service Bus queues]: /documentation/articles/service-bus-azure-and-service-bus-queues-compared-contrasted#capacity-and-quotas

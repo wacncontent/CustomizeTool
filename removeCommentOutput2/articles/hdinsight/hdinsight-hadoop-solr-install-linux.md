@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties
 	pageTitle="Use Script Action to install Solr on Linux-based HDInsight | Windows Azure"
 	description="Learn how to install Solr on Linux-based HDInsight Hadoop clusters using Script Actions."

@@ -584,7 +584,9 @@ In this tutorial, you have learned how to develop a Java MapReduce job, how to t
 [hdinsight-use-sqoop]: /documentation/articles/hdinsight-use-sqoop
 [hdinsight-ODBC]: /documentation/articles/hdinsight-connect-excel-hive-ODBC-driver
 [hdinsight-power-query]: /documentation/articles/hdinsight-connect-excel-power-query
+
 [hdinsight-develop-streaming]: /documentation/articles/hdinsight-hadoop-develop-deploy-streaming-jobs
+
 [hdinsight-get-started]: /documentation/articles/hdinsight-get-started
 [hdinsight-emulator]: /documentation/articles/hdinsight-get-started-emulator
 [hdinsight-emulator-wasb]: /documentation/articles/hdinsight-get-started-emulator#blobstorage
@@ -594,7 +596,11 @@ In this tutorial, you have learned how to develop a Java MapReduce job, how to t
 [hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive
 [hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig
 [hdinsight-power-query]: /documentation/articles/hdinsight-connect-excel-power-query
+
 [powershell-PSCredential]: http://social.technet.microsoft.com/wiki/contents/articles/4546.working-with-passwords-secure-strings-and-credentials-in-windows-powershell.aspx
 [powershell-install-configure]: /documentation/articles/install-configure-powershell
+
+
+
 [image-emulator-wordcount-compile]: ./media/hdinsight-develop-deploy-java-mapreduce/HDI-Emulator-Compile-Java-MapReduce.png
 [image-emulator-wordcount-run]: ./media/hdinsight-develop-deploy-java-mapreduce/HDI-Emulator-Run-Java-MapReduce.png

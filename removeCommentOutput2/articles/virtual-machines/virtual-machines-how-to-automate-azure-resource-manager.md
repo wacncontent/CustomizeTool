@@ -28,7 +28,7 @@ Azure Resource Manager simplifies the deployment and management of complex appli
 
 [Application frameworks using templates](/documentation/articles/virtual-machines-app-frameworks)
 
-[Deploy and manage virtual machines using Azure Resource Manager templates and the Azure CLI](/documentation/articles/virtual-machines-deploy-rmtemplates-azure-cli) 
+[Deploy and manage virtual machines using Azure Resource Manager templates and the Azure CLI](/documentation/articles/virtual-machines-deploy-rmtemplates-azure-cli/)
 
 [Deploy and manage virtual machines using Azure Resource Manager templates and PowerShell](/documentation/articles/virtual-machines-deploy-rmtemplates-powershell)
 
@@ -36,19 +36,19 @@ Azure Resource Manager simplifies the deployment and management of complex appli
 
 [Azure Quickstart templates](http://azure.microsoft.com/documentation/templates/)
 
-[Azure Compute, Network and Storage Providers under Azure Resource Manager](/documentation/articles/virtual-machines-azurerm-versus-azuresm)
+[Azure compute, network, and storage providers under Azure Resource Manager](/documentation/articles/virtual-machines-azurerm-versus-azuresm)
 
 
 ## Networking
 
-[Network resource provider](/documentation/articles/resource-groups-networking)
+[Network resource provider](/documentation/articles/resource-groups-networking/)
 
 
 ## Automate with Azure CLI
 
 [Using the Azure CLI for Mac, Linux, and Windows with Azure Resource Manager](/documentation/articles/xplat-cli-azure-resource-manager)
 
-[Deploy and manage virtual machines using Azure Resource Manager templates and the Azure CLI](/documentation/articles/virtual-machines-deploy-rmtemplates-azure-cli) 
+[Deploy and manage virtual machines using Azure Resource Manager templates and the Azure CLI](/documentation/articles/virtual-machines-deploy-rmtemplates-azure-cli/)
 
 ## Automate with Azure PowerShell
 
@@ -68,4 +68,4 @@ Azure Resource Manager simplifies the deployment and management of complex appli
 
 ## Additional resources
 
-[Virtual Machines documentation](/documentation/services/virtual-machines)
+[Virtual Machines documentation](/documentation/services/virtual-machines/)

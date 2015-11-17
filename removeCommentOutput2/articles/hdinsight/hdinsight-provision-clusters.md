@@ -239,8 +239,10 @@ For more information on Virtual Network features, benefits, and capabilities, se
 HDInsight clusters use an Azure Blob storage container as the default file system. An Azure Storage account located on the same data center is required before you can create an HDInsight cluster. For more information, see [Use Azure Blob Storage with HDInsight](/documentation/articles/hdinsight-use-blob-storage). For details on creating an Azure Storage account, see [How to Create a Storage Account](/documentation/articles/storage-create-storage-account).
 
 
-> [AZURE.NOTE] Currently, only the **East Asia**, **Southeast Asia**, **China North**, **West Europe**, **China East**, **China North**, **China North**, and **China East** regions can host HDInsight clusters.
+> [AZURE.NOTE] Currently, only the **China North**, and **China East** regions can host HDInsight clusters.
+
 **To create an HDInsight cluster**
+
 1. Sign in to the [Azure Management Portal][azure-management-portal].
 2. Click **+ NEW** on the bottom of the page, click **DATA SERVICES**, click **HDINSIGHT**, and then click **CUSTOM CREATE**.
 3. On the **Cluster Details** page, type or choose the following values:

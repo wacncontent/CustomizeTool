@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties
 	pageTitle="Connect a web app in Azure Websites to Redis Cache via the Memcache protocol | Windows Azure"
 	description="Connect a web app in Azure App service to Redis Cache using the Memcache protocol"
@@ -48,7 +50,7 @@ Set the key of the app setting to **REDIS_HOST** and the value of the app settin
 
 ### Add REDIS_KEY app setting
 
-The second app setting you need to create is the **REDIS_KEY** app setting. This setting provides the authentication token required to securely access the Redis Cache instance. The value required for the REDIS_KEY app setting fromcan be retrieved the **Access keys** blade of the Redis Cache instance.
+The second app setting you need to create is the **REDIS_KEY** app setting. This setting provides the authentication token required to securely access the Redis Cache instance. The value required for the REDIS_KEY app setting can be retrieved from the **Access keys** blade of the Redis Cache instance.
 
 ![Azure Redis Cache Primary Key](./media/web-sites-connect-to-redis-using-memcache-protocol/4-azure-redis-cache-primarykey.png)
 
@@ -70,7 +72,7 @@ In order for the application to speak the Memcache protocol, it is necessary to 
 
 ### Download the php_memcache Extension
 
-Browse to [PECL][6], under the caching category, click [memcache][7].on Under the downloads column click theon DLL link.
+Browse to [PECL][6], under the caching category, click on [memcache][7]. Under the downloads column click on the DLL link.
 
 ![PHP PECL Website](./media/web-sites-connect-to-redis-using-memcache-protocol/7-php-pecl-website.png)
 
@@ -80,7 +82,7 @@ Download the Non-Thread Safe (NTS) x86 link for the version of PHP enabled in We
 
 ### Enable the php_memcache extension
 
-After downloading the file, unzip and upload the **php_memcache.dll** into the **d:\\home\\site\\wwwroot\\bin\\ext\\** directory. After the php_memcache.dll has been uploaded into the web app, the extension toneeds to be enabled the PHP Runtime. To enable the Memcache extension in the Azure Management Portal, open the **Application Settings** blade for the web app, then add a new app setting with the key of **PHP_EXTENSIONS** and the value **bin\\ext\\php_memcache.dll**.
+After downloading the file, unzip and upload the **php_memcache.dll** into the **d:\\home\\site\\wwwroot\\bin\\ext\\** directory. After the php_memcache.dll has been uploaded into the web app, the extension needs to be enabled to the PHP Runtime. To enable the Memcache extension in the Azure Management Portal, open the **Application Settings** blade for the web app, then add a new app setting with the key of **PHP_EXTENSIONS** and the value **bin\\ext\\php_memcache.dll**.
 
 
 > If the web app needs to load multiple PHP extensions, the value of PHP_EXTENSIONS should be a comma delimited list of relative paths to DLL files.
@@ -93,15 +95,15 @@ Once finished, click **Save**.
 
 > You can also download the [Memcached Object Cache Plugin](https://wordpress.org/plugins/memcached/) from WordPress.org.
 
-On the WordPress plugins page, click **Addthe New**.button 
+On the WordPress plugins page, click the **Add New** button.
 
 ![WordPress Plugin Page](./media/web-sites-connect-to-redis-using-memcache-protocol/10-wordpress-plugin.png)
 
-In the search box, type **memcached** and press **Enter**.the key 
+In the search box, type **memcached** and press the **Enter** key.
 
 ![WordPress Add New Plugin](./media/web-sites-connect-to-redis-using-memcache-protocol/11-wordpress-add-new-plugin.png)
 
-Find **Memcached Object Cache** in the list, then click **Installon the Now**.button 
+Find **Memcached Object Cache** in the list, then click on the **Install Now** button.
 
 ![WordPress Install Memcache Plugin](./media/web-sites-connect-to-redis-using-memcache-protocol/12-wordpress-install-memcache-plugin.png)
 
@@ -109,7 +111,7 @@ Find **Memcached Object Cache** in the list, then click **Installon the Now**.bu
 
 >[AZURE.NOTE] Follow the instructions in this blog on [How to enable a Site Extension in Web Apps][8] to install Visual Studio Online.
 
-In the `wp-config.php` file, add the following code abovesnippet the stop editing comment near the end of the file.
+In the `wp-config.php` file, add the following code snippet above the stop editing comment near the end of the file.
 
 ```php
 $memcached_servers = array(
@@ -117,7 +119,7 @@ $memcached_servers = array(
 );
 ```
 
-Once this code hassnippet been pasted, monaco will automatically save the document.
+Once this code snippet has been pasted, monaco will automatically save the document.
 
 The next step is to enable the object-cache plugin. This is done by dragging and dropping **object-cache.php** from **wp-content/memcached** folder to the **wp-content** folder to enable the Memcache Object Cache functionality.
 
@@ -135,7 +137,7 @@ All of the steps to enable the Web Apps Memcache shim are now complete. The only
 
 >[AZURE.NOTE] At the time of writing this document, the Redis CLI does not support SSL connectivity, thus the following steps are necessary.
 
-In the Azure Protal, browse to the Redis Cache instance that you created for this web app. Once the cache's blade is open, click theon **Settings** icon.
+In the Azure Protal , browse to the Redis Cache instance that you created for this web app. Once the cache's blade is open, click on the **Settings** icon.
 
 ![Azure Redis Cache Settings Button](./media/web-sites-connect-to-redis-using-memcache-protocol/15-azure-redis-cache-settings-button.png)
 

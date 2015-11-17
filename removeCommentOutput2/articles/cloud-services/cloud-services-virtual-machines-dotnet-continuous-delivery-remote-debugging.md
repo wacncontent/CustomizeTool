@@ -15,9 +15,6 @@
 
 You can enable remote debugging in Azure, for cloud services or virtual machines, when you use [continuous delivery](/documentation/articles/cloud-services-dotnet-continuous-delivery) to publish to Azure by following these steps.
 
-## Enabling remote debugging for cloud services
-
-
 ## <a name="cloudservice"></a>Enabling remote debugging for cloud services
 
 1. On the build agent, set up the initial environment for Azure as outlined in [Command-Line Build for Azure](http://msdn.microsoft.com/zh-cn/library/hh535755.aspx).

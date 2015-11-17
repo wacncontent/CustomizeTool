@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties
    	pageTitle="Create Hadoop, HBase, or Storm clusters on Linux in HDInsight | Windows Azure"
    	description="Learn how to create Hadoop, HBase, or Storm clusters on Linux for HDInsight using a browser, the Azure CLI, Azure PowerShell, REST, or through an SDK."
@@ -437,7 +439,7 @@ The following procedures are needed to provision an HDInsight cluster by using A
 
 You can use either the Windows PowerShell console or the Windows PowerShell Integrated Scripting Environment (ISE) to run the scripts.
  
-HDInsight uses an Azure Blob storage container as the default file system. An Azure Storage account and storage container are required before you can create an HDInsight cluster. The Storage account must be located in the same data center as the HDInsight cluster. Currently, only the **Southeast Asia**, **China North**, **China East**, and **China East** regions can host HDInsight Linux clusters.
+HDInsight uses an Azure Blob storage container as the default file system. An Azure Storage account and storage container are required before you can create an HDInsight cluster. The Storage account must be located in the same data center as the HDInsight cluster. Currently, only the **China North**, **China North**, **China East**, and **China East** regions can host HDInsight Linux clusters.
 
 **To connect to your Azure account**
 
@@ -723,6 +725,7 @@ In this article, you have learned several ways to provision an HDInsight Hadoop 
 [hdinsight-customize-cluster]: /documentation/articles/hdinsight-hadoop-customize-cluster
 [hdinsight-get-started]: /documentation/articles/hdinsight-get-started
 [hdinsight-admin-powershell]: /documentation/articles/hdinsight-administer-use-powershell
+
 [hdinsight-submit-jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically
 [hdinsight-powershell-reference]: http://msdn.microsoft.com/zh-cnlibrary/windowsazure/dn479228.aspx
 
@@ -730,12 +733,14 @@ In this article, you have learned several ways to provision an HDInsight Hadoop 
 
 [azure-command-line-tools]: /documentation/articles/xplat-cli
 [azure-create-storageaccount]: /documentation/articles/storage-create-storage-account
+
 [azure-purchase-options]: /pricing/overview/
 [azure-trial]: /pricing/1rmb-trial/
 [hdi-remote]: /documentation/articles/hdinsight-administer-use-management-portal-v1#rdp
 
 
 [Powershell-install-configure]: /documentation/articles/install-configure-powershell
+
 [image-hdi-customcreatecluster]: ./media/hdinsight-get-started/HDI.CustomCreateCluster.png
 [image-hdi-customcreatecluster-clusteruser]: ./media/hdinsight-get-started/HDI.CustomCreateCluster.ClusterUser.png
 [image-hdi-customcreatecluster-storageaccount]: ./media/hdinsight-get-started/HDI.CustomCreateCluster.StorageAccount.png

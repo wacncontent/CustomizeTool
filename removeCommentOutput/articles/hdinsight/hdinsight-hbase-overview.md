@@ -71,15 +71,21 @@ The canonical use case for which BigTable (and by extension, HBase) was created 
 
 
 [hbase-provision-vnet]: /documentation/articles/hdinsight-hbase-provision-vnet
+
 [hbase-twitter-sentiment]: /documentation/articles/hdinsight-hbase-analyze-twitter-sentiment
+
 [hbase-build-java-maven]: /documentation/articles/hdinsight-hbase-build-java-maven
+
 [hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive
+
 [hdinsight-storage]: /documentation/articles/hdinsight-use-blob-storage
+
 [hbase-get-started]: /documentation/articles/hdinsight-hbase-get-started/
 
 [azure-purchase-options]: /pricing/overview/
-[azure-member-offers]: http://azure.microsoft.com/pricing/member-offers/
+[azure-member-offers]: /pricing/member-offers/
 [azure-trial]: /pricing/1rmb-trial/
 [azure-management-portal]: https://manage.windowsazure.cn/
 [azure-create-storageaccount]: /documentation/articles/storage-create-storage-account
+
 [apache-hadoop]: http://hadoop.apache.org/

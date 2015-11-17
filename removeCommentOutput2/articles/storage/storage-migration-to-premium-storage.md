@@ -33,13 +33,13 @@ Follow the steps specified in the relevant section depending on your scenario.
 
 ### Prerequisites
 - You will need an Azure subscription. If you don’t have one, you can create a one month [trial](/pricing/1rmb-trial/) subscription or visit [Azure Pricing](/pricing/) for more options.
-- To execute PowerShell cmdlets you will need the Windows Azure PowerShell module. See [Azure Downloads](/downloads/) to download the module.
-- When you plan to use Azure VMs running on Premium Storage, you need to use the DS-series or GS-series VMs. You can use both Standard and Premium Storage disks with DS-series VMs. Premium storage disks will be available with more VM types in the future. For more information on all available Azure VM disk types and sizes, see [Virtual Machine and Cloud Service Sizes for Azure](https://msdn.microsoft.com/zh-CN/library/azure/dn197896.aspx).
+- To execute PowerShell cmdlets you will need the Windows Azure PowerShell module. See [Windows Azure Downloads](/downloads/) to download the module.
+- When you plan to use Azure VMs running on Premium Storage, you need to use the DS-series or GS-series VMs. You can use both Standard and Premium Storage disks with DS-series VMs. Premium storage disks will be available with more VM types in the future. For more information on all available Azure VM disk types and sizes, see [Virtual Machine and Cloud Service Sizes for Azure](http://msdn.microsoft.com/zh-cn/library/azure/dn197896.aspx).
 
 ### Considerations
 
 #### VM sizes
-The Azure VM size specifications are listed in [Sizes for virtual machines](/documentation/articles/virtual-machines-size-specs). Review the performance characteristics of virtual machines that work with Premium Storage and choose the most appropriate VM size that best suits your workload. Make sure that there is sufficient bandwidth available on your VM to drive the disk traffic.
+The Azure VM size specifications are listed in [Sizes for virtual machines](/documentation/articles/virtual-machines-size-specs/). Review the performance characteristics of virtual machines that work with Premium Storage and choose the most appropriate VM size that best suits your workload. Make sure that there is sufficient bandwidth available on your VM to drive the disk traffic.
 
 
 #### Disk sizes
@@ -62,13 +62,13 @@ Premium Storage accounts have following scalability targets in addition to the [
 For the more information on Premium Storage specifications, check out [Scalability and Performance Targets when using Premium Storage](/documentation/articles/storage-premium-storage-preview-portal#scalability-and-performance-targets-when-using-premium-storage).
 
 #### Additional Data Disks
-Depending on your workload, determine if additional data disks are necessary for your VM. You can attach several persistent data disks to your VM. If needed, you can stripe across the disks to increase the capacity and performance of the volume. If you stripe Premium Storage data disks using [Storage Spaces](https://technet.microsoft.com/zh-CN/library/hh831739.aspx), you should configure it with one column for each disk that is used. Otherwise, overall performance of the striped volume may be lower than expected due to uneven distribution of traffic across the disks. For Linux VMs you can use mdadm utility to achieve the same. See article [Configure Software RAID on Linux](/documentation/articles/virtual-machines-linux-configure-raid) for details.
+Depending on your workload, determine if additional data disks are necessary for your VM. You can attach several persistent data disks to your VM. If needed, you can stripe across the disks to increase the capacity and performance of the volume. If you stripe Premium Storage data disks using [Storage Spaces](http://technet.microsoft.com/zh-cn/library/hh831739.aspx), you should configure it with one column for each disk that is used. Otherwise, overall performance of the striped volume may be lower than expected due to uneven distribution of traffic across the disks. For Linux VMs you can use the *mdadm* utility to achieve the same. See article [Configure Software RAID on Linux](/documentation/articles/virtual-machines-linux-configure-raid) for details.
 
 #### Disk Caching Policy
 By default, disk caching policy is *Read-Only* for all the Premium data disks, and *Read-Write* for the Premium operating system disk attached to the VM. This configuration setting is recommended to achieve the optimal performance for your application’s IOs. For write-heavy or write-only data disks (such as SQL Server log files), disable disk caching so that you can achieve better application performance. The cache settings for existing data disks can be updated using Azure Management Portal or the *-HostCaching* parameter of the *Set-AzureDataDisk* cmdlet.
 
 #### Location
-Pick a location where Azure Premium Storage is available. See [Important Things to know about Premium Storage](/documentation/articles/storage-premium-storage-preview-portal#important-things-to-know-about-premium-storage) for up to date information on available locations. VMs located in the same region as the Storage account that stores the disks for VM, will give superior performance than if they are in separate regions.
+Pick a location where Azure Premium Storage is available. See [Azure Services by Region](http://azure.microsoft.com/regions/#services) for up to date information on available locations. VMs located in the same region as the Storage account that stores the disks for VM, will give superior performance than if they are in separate regions.
 
 #### Other Azure VM configuration settings
 
@@ -200,8 +200,8 @@ You can also copy the VHD file using the PowerShell cmdlet Start-AzureStorageBlo
 
 You can also upload a VHD to your storage account using one of the following means:
 
-- [Azure Storage Copy Blob API](https://msdn.microsoft.com/zh-CN/library/azure/dd894037.aspx)
-- [Azure Import/Export Service](https://msdn.microsoft.com/zh-CN/library/dn529096.aspx)
+- [Azure Storage Copy Blob API](https://msdn.microsoft.com/zh-cn/library/azure/dd894037.aspx)
+- [Azure Import/Export Service](https://msdn.microsoft.com/zh-cn/library/dn529096.aspx)
 
 >[AZURE.NOTE] Import/Export can be used to copy to only standard storage account. You will need to copy from standard storage to premium storage account using a tool like AzCopy.
 
@@ -248,7 +248,7 @@ Once the OS image or OS disk are registered, create a new DS-series Azure VM ins
 Follow the step by step PowerShell cmdlets below to create the new VM. First, set the common parameters:
 
 	$serviceName = "yourVM"
-	$location = "location-name" (e.g., China East) 
+	$location = "location-name" (e.g., China North)
 	$vmSize ="Standard_DS2"
 	$adminUser = "youradmin"
 	$adminPassword = "yourpassword"
@@ -334,8 +334,10 @@ Benefit of this is the ease of migration; and the downside is, the resulting con
 5. Next, create your DS series VM (or GS series) using the above OS disk and the data disks.
 
     Sample script to create a new cloud service and a new VM within that service:
-        New-AzureService -ServiceName “NewServiceName” -Location “China East"
-        New-AzureVMConfig -Name "NewDSVMName" -InstanceSize "Standard_DS2" -DiskName "NewOSDisk1" | Add-AzureProvisioningConfig -Windows | Add-AzureDataDisk -LUN 0 -DiskLabel "DataDisk1" -ImportFrom -MediaLocation "https://newpremiumstorageaccount.blob.core.chinacloudapi.cn/vhds/Disk1.vhd" | Add-AzureDataDisk -LUN 1 -DiskLabel "DataDisk2" -ImportFrom -MediaLocation https://newpremiumstorageaccount.blob.core.chinacloudapi.cn/vhds/Disk2.vhd | New-AzureVM -ServiceName "NewServiceName" –Location “China East”
+        New-AzureService -ServiceName “NewServiceName” -Location “China East 2"
+
+        New-AzureVMConfig -Name "NewDSVMName" -InstanceSize "Standard_DS2" -DiskName "NewOSDisk1" | Add-AzureProvisioningConfig -Windows | Add-AzureDataDisk -LUN 0 -DiskLabel "DataDisk1" -ImportFrom -MediaLocation "https://newpremiumstorageaccount.blob.core.chinacloudapi.cn/vhds/Disk1.vhd" | Add-AzureDataDisk -LUN 1 -DiskLabel "DataDisk2" -ImportFrom -MediaLocation https://newpremiumstorageaccount.blob.core.chinacloudapi.cn/vhds/Disk2.vhd | New-AzureVM -ServiceName "NewServiceName" –Location “China East 2”
+
 6.	Once the new VM is up and running, access it using the same login id and password is as the original VM, and verify that everything is working as expected. All the settings, including the striped volumes would be present in the new VM.
 
 7.	Last step is to plan backup and maintenance schedule for the new VM based on the application’s needs.
@@ -363,11 +365,11 @@ If you have multiple VMs to migrate, automation through PowerShell scripts will 
 
     .Example (Save this script as Migrate-AzureVM.ps1)
 
-    .\Migrate-AzureVM.ps1 -SourceServiceName CurrentServiceName -SourceVMName CurrentVMName –DestStorageAccount newpremiumstorageaccount -DestServiceName NewServiceName -DestVMName NewDSVMName -DestVMSize "Standard_DS2" –Location “China East” 
+    .\Migrate-AzureVM.ps1 -SourceServiceName CurrentServiceName -SourceVMName CurrentVMName –DestStorageAccount newpremiumstorageaccount -DestServiceName NewServiceName -DestVMName NewDSVMName -DestVMSize "Standard_DS2" –Location “China North”
 
     .Link
     To find more information about how to set up Azure PowerShell, refer to the following links.
-/documentation/articles/powershell-install-configure/
+    /documentation/articles/powershell-install-configure/
     /documentation/articles/storage-powershell-guide-full/
     http://azure.microsoft.com/blog/2014/10/22/migrate-azure-virtual-machines-between-storage-accounts/
 
@@ -458,7 +460,7 @@ If you have multiple VMs to migrate, automation through PowerShell scripts will 
     }
     else
     {
-        Write-Host "[ERROR] - There is no valid azure subscription found in PowerShell. Please refer to this article http://windowsazure.cn/documentation/articles/powershell-install-configure/ to connect an azure subscription. Exiting." -ForegroundColor Red
+        Write-Host "[ERROR] - There is no valid azure subscription found in PowerShell. Please refer to this article /documentation/articles/powershell-install-configure/ to connect an azure subscription. Exiting." -ForegroundColor Red
         Exit
     }
 
@@ -667,5 +669,5 @@ Also see the following resources to learn more about Azure Storage and Azure Vir
 - [Premium Storage: High-Performance Storage for Azure Virtual Machine Workloads](/documentation/articles/storage-premium-storage-preview-portal)
 
 [1]:./media/storage-migration-to-premium-storage/migration-to-premium-storage-1.png
-[2]:./media/storage-migration-to-premium-storage/migration-to-premium-storage-2.png
+[2]:./media/storage-migration-to-premium-storage/migration-to-premium-storage-1.png
 [3]:./media/storage-migration-to-premium-storage/migration-to-premium-storage-3.png

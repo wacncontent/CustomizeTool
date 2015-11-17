@@ -76,7 +76,7 @@ These aren't needed for the tutorial, so you can delete them from the project. A
 
 ## Add data models
 
-You will use [EF Code First](http://msdn.microsoft.com/zh-cn/data/ee712907#codefirst) to define the database tables. Under the DataObjects folder, add a class named `Player`.
+You will use [EF Code First](http://msdn.microsoft.com/data/ee712907#codefirst) to define the database tables. Under the DataObjects folder, add a class named `Player`.
 
 	using Microsoft.WindowsAzure.Mobile.Service;
 	
@@ -105,9 +105,9 @@ Add another class named `PlayerRank`.
 	    }
 	}
 
-Notice that both classes inherit from the **EntityData** class. Deriving from **EntityData** makes it easy for the app consume the data, using the cross-platform client library for Azure Mobile Services. **EntityData** also makes it easier for an app to [handle database write conflicts](/documentation/articles/mobile-services-windows-store-dotnet-handle-database-conflicts/).
+Notice that both classes inherit from the **EntityData** class. Deriving from **EntityData** makes it easy for the app consume the data, using the cross-platform client library for Azure Mobile Services. **EntityData** also makes it easier for an app to [handle database write conflicts](/documentation/articles/mobile-services-windows-store-dotnet-handle-database-conflicts).
 
-The `PlayerRank` class has a [navigation property](http://msdn.microsoft.com/zh-cn/data/jj713564.aspx) that points to the related `Player` entity. The **[ForeignKey]** attribute tells EF that the `Player` property represents a foreign key.
+The `PlayerRank` class has a [navigation property](http://msdn.microsoft.com/data/jj713564.aspx) that points to the related `Player` entity. The **[ForeignKey]** attribute tells EF that the `Player` property represents a foreign key.
 
 ## Add Web API controllers
 
@@ -751,10 +751,10 @@ Now when you run the app, it communicates with the real service.
 
 <!-- URLs. -->
 
-[Learn more about Azure Mobile Services]: /documentation/services/mobile-services/ 
+[Learn more about Azure Mobile Services]: /develop/mobile/resources/
 [Learn more about Web API]: http://asp.net/web-api
 [Handle database write conflicts]: /documentation/articles/mobile-services-windows-store-dotnet-handle-database-conflicts
 [Add push notifications]: /documentation/articles/notification-hubs-windows-store-dotnet-get-started
-[Get started with authentication]: /documentation/articles/mobile-services-windows-store-dotnet-get-started-users
+[Get started with authentication]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-users-dotnet
 
-
+ 

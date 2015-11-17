@@ -131,7 +131,7 @@ The circuit user can review authorizations using the following cmdlet.
 
 The circuit user can run the following cmdlet to redeem a link authorization.
 
-	PS C:\> New-AzureDedicatedCircuitLink -servicekey "&&&&&&&&&&&&&&&&&&&&&&&&&&" -VnetName 'SalesVNET1' 
+	PS C:\> New-AzureDedicatedCircuitLink –servicekey "&&&&&&&&&&&&&&&&&&&&&&&&&&" –VnetName 'SalesVNET1' 
 		
 	State VnetName 
 	----- -------- 

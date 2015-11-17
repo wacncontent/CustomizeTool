@@ -1,6 +1,6 @@
 {
-    "customize": false,
-    "path": "C:/Users/Administrator/Documents/GitHub/azure-content-pr/",
+    "customize": true,
+    "path": "removeCommentMooncakeOutput/",
     "language": "en-us",
     "folders": [
         "articles/app-service-web/",
@@ -31,7 +31,7 @@
     ],
     "output_folder": "output/",
     "compare": {
-        "compare": true,
+        "compare": false,
         "path": "addCommentOutput/"
     },
     "updateFileList": true,
@@ -67,7 +67,7 @@
     "815path": "C:/Users/Administrator/Documents/GitHub/815/",
     "removeComment": {
         "remove": true,
-        "path": "removeCommentOutput2/"
+        "path": "removeCommentMooncakeOutput2/"
     },
     "updateLinks": false,
     "addComment": {
@@ -78,7 +78,7 @@
     },
     "wordCount": false,
     "getDeletionAndReplacement": {
-        "get": true,
+        "get": false,
         "input": "addCommentOutput/",
         "path": "deletionAndReplacementOutput/"
     }

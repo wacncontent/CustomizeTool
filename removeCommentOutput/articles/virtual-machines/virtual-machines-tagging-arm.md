@@ -180,7 +180,7 @@ By analyzing these tags along with usage, organizations will be able to gain new
 
 [PowerShell environment with Azure Resource Manager]: /documentation/articles/powershell-azure-resource-manager
 [Azure Resource Cmdlets]: https://msdn.microsoft.com/zh-cn/library/azure/dn757692.aspx
-[Azure CLI environment]: ./xplat-cli-azure-resource-manager.md
+[Azure CLI environment]: /documentation/articles/xplat-cli-azure-resource-manager
 [Azure Resource Manager Overview]: /documentation/articles/resource-group-overview
 [Using Tags to organize your Azure Resources]: /documentation/articles/resource-group-using-tags
 [Understanding your Azure Bill]: /documentation/articles/billing-understand-your-bill

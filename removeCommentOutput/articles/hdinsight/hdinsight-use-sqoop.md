@@ -599,8 +599,10 @@ Now you have learned how to use Sqoop. To learn more, see:
 [hdinsight-use-oozie]: /documentation/articles/hdinsight-use-oozie
 [hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
 [hdinsight-submit-jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically
+
 [sqldatabase-get-started]: /documentation/articles/sql-database-get-started
 [sqldatabase-create-configue]: /documentation/articles/sql-database-create-configure
+
 [powershell-start]: http://technet.microsoft.com/zh-cn/library/hh847889.aspx
 [powershell-install]: /documentation/articles/install-configure-powershell
 [powershell-script]: http://technet.microsoft.com/zh-cn/library/ee176949.aspx

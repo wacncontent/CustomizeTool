@@ -39,8 +39,8 @@ The **"parameters"** section specifies parameters that are used to input data in
 			"China North",
 			"China East",
 			"West Europe",
-			"East Asia",
-			"Southeast Asia"
+			"China East",
+			"China North"
 		],
 		"metadata": {
 			"Description": "The region to deploy the resources into"

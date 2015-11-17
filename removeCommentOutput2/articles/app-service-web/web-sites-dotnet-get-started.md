@@ -96,6 +96,7 @@ The diagram illustrates what you're doing in the create and deploy steps.
 	When you're signed in, the **Configure Windows Azure Web App Settings** dialog box asks you what resources you want to create.
 
 	![Signed in to Azure](./media/web-sites-dotnet-get-started/configuresitesettings.png)
+
 6. In the **Sign in to Azure** dialog box, enter the ID and password of the account that you use to manage your Azure subscription.
 	
 	When you're signed in, the **Configure Azure Site Settings** dialog box asks you what resources you want to create.
@@ -105,6 +106,7 @@ The diagram illustrates what you're doing in the create and deploy steps.
 3. Visual Studio provides a default **Site name**, which Azure will use as the prefix for your application's URL. If you prefer, enter a different site name.
 
 	The complete URL will consist of what you enter here plus *chinacloudsites.cn* (as shown next to the **Site name** text box). For example, if the site name is `MyExample6442`, the URL will be `MyExample6442.chinacloudsites.cn`. The URL has to be unique. If someone else has already used the one you entered, you'll see a red exclamation mark to the right instead of a green check mark, and you'll need to enter a different site name.
+
 5. In the **Region** drop-down list, choose the location that is closest to you.
 
 	This setting specifies which Azure datacenter your web app will run in. For this tutorial, you can select any region and it won't make a noticeable difference. But for a production web app, you want your web server to be as close as possible to the browsers that are accessing your site in order to minimize [latency](http://www.bing.com/search?q=web%20latency%20introduction&qs=n&form=QBRE&pq=web%20latency%20introduction&sc=1-24&sp=-1&sk=&cvid=eefff99dfc864d25a75a83740f1e0090).
@@ -136,6 +138,7 @@ The diagram illustrates what you're doing in the create and deploy steps.
 In this section you deploy web project to the web app, as illustrated in step 2 of the diagram.
 
 ![Create and deploy](./media/web-sites-dotnet-get-started/Create_App.png)
+
 7. In the **Azure Websites Activity** window, click **Publish MyExample to this Web App now**.
 
 	![Web app created](./media/web-sites-dotnet-get-started/GS13sitecreated.png)
@@ -143,6 +146,7 @@ In this section you deploy web project to the web app, as illustrated in step 2 
 	In a few seconds, the **Publish Web** wizard appears.
 
 	Settings that Visual Studio needs to deploy your project to Azure have been saved in a *publish profile*. You can use the wizard to review and change those settings.
+
 8. On the **Connection** tab of the **Publish Web** wizard, click **Next**.
 
 	![Successfully validated connection](./media/web-sites-dotnet-get-started/GS13ValidateConnection.png)
@@ -182,6 +186,7 @@ In this section you deploy web project to the web app, as illustrated in step 2 
 The [Azure Management Portal](/home/features/management-portal/) is a web interface that you can use to manage and monitor your Azure services, such as the web app that you just created. In this section of the tutorial, you look at some of what you can do in the portal.
 
 1. In your browser, go to [https://manage.windowsazure.cn](https://manage.windowsazure.cn), and sign in with your Azure credentials.
+
 	The portal displays a list of your Azure services.
 
 2. Click the name of your website.
@@ -209,6 +214,7 @@ The [Azure Management Portal](/home/features/management-portal/) is a web interf
 	You can scale manually or configure criteria or schedules for automatic scaling.
 
 	![Portal website scale tab](./media/web-sites-dotnet-get-started-vs2013/portalscale.png)
+
 These are just a few of the portal's features. You can create new web apps, delete existing web apps, stop and restart web apps, and manage other kinds of Azure services, such as databases and virtual machines.  
 
 ## Next steps

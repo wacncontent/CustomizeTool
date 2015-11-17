@@ -15,8 +15,9 @@
 
 # Integrate Azure AD into a Xamarin App
 
-[AZURE.INCLUDE [active-directory-devquickstarts-switcher](../includes/active-directory-devquickstarts-switcher)]
-[AZURE.INCLUDE [active-directory-devguide](../includes/active-directory-devguide)]
+[AZURE.INCLUDE [active-directory-devquickstarts-switcher](../includes/active-directory-devquickstarts-switcher.md)]
+
+[AZURE.INCLUDE [active-directory-devguide](../includes/active-directory-devguide.md)]
 
 Xamarin allows you to write applications in C# that can run on several different platforms, including mobile devices and pc's alike.  If you're building an app using Xamarin, Azure AD makes it simple and straightforward for you to authenticate your users with their Active Directory accounts.  It also enables your application to securely consume any web API protected by Azure AD, such as the Office 365 APIs or the Azure API.
 
@@ -28,10 +29,10 @@ For Xamarin apps that need to access protected resources, Azure AD provides the 
 
 To build the complete working application, you’ll need to:
 
-1. Set up your Xamarin development environment
+2. Set up your Xamarin development environment
 2. Register your application with Azure AD.
 3. Install & Configure ADAL.
-4. Use ADAL to get tokens from Azure AD.
+5. Use ADAL to get tokens from Azure AD.
 
 To get started, [download a skeleton project](https://github.com/AzureADQuickStarts/NativeClient-MultiTarget-DotNet/archive/skeleton.zip) or [download the completed sample](https://github.com/AzureADQuickStarts/NativeClient-MultiTarget-DotNet/archive/complete.zip).  Each is a Visual Studio 2013 solution.  You'll also need an Azure AD tenant in which you can create users and register an application.  If you don't already have a tenant, [learn how to get one](/documentation/articles/active-directory-howto-tenant).
 
@@ -108,7 +109,7 @@ public static async Task<List<User>> SearchByAlias(string alias, IPlatformParame
 
 -	Next, initialize the `AuthenticationContext` - ADAL’s primary class.  This is where you pass ADAL the coordinates it needs to communicate with Azure AD.  Then call `AcquireTokenAsync(...)`, which accepts the `IPlatformParameters` object and will invoke the authentication flow necessary to return a token to the app.
 
-C# 
+```C#
 ...
 AuthenticationResult authResult = null;
 
@@ -116,9 +117,9 @@ try
 {
     AuthenticationContext authContext = new AuthenticationContext(authority);
     authResult = await authContext.AcquireTokenAsync(graphResourceUri, clientId, returnUri, parent);
-		}
-		...  
-
+}
+...
+```
 - `AcquireTokenAsync(...)` will first attempt to return a token for the requested resource (the Graph API in this case) without prompting the user to enter their credentials (via caching or refreshing old tokens).  Only if necessary, it will show the user the Azure AD sign in page before acquiring the requested token.
 
 
@@ -155,21 +156,20 @@ protected override void OnActivityResult(int requestCode, Result resultCode, Int
 
 ```C#
 List<User> results = await DirectorySearcher.SearchByAlias(
-		SearchTermText.Text, new PlatformParameters(PromptBehavior.Auto, this.Handle));
-
-
-####iOS:  
-
-- In `DirSearchClient_iOSViewController.cs`, the iOS `PlatformParameters` object simply takes a reference to the View Controller:
-
-```C#
-		List<User> results = await DirectorySearcher.SearchByAlias(  
   SearchTermText.Text,
   new PlatformParameters(PromptBehavior.Auto, this.Handle));
 ```
 
-####Windows Store  
+####iOS:
+- In `DirSearchClient_iOSViewController.cs`, the iOS `PlatformParameters` object simply takes a reference to the View Controller:
 
+```C#
+List<User> results = await DirectorySearcher.SearchByAlias(
+  SearchTermText.Text,
+  new PlatformParameters(PromptBehavior.Auto, this.Handle));
+```
+
+####Windows Store
 - In Windows Store, open `MainPage.xaml.cs` and implement the `Search` method, which uses a helper method in a shared project to update UI as necessary.
 
 ```C#
@@ -201,6 +201,6 @@ For reference, the completed sample (without your configuration values) is provi
 
 [Secure a .NET Web API with Azure AD >>](/documentation/articles/active-directory-devquickstarts-webapi-dotnet)
 
-[AZURE.INCLUDE [active-directory-devquickstarts-additional-resources](../includes/active-directory-devquickstarts-additional-resources)]
+[AZURE.INCLUDE [active-directory-devquickstarts-additional-resources](../includes/active-directory-devquickstarts-additional-resources.md)]
 
  

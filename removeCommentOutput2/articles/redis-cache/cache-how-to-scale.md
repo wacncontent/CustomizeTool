@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties 
 	pageTitle="How to Scale Azure Redis Cache" 
 	description="Learn how to scale your Azure Redis Cache instances" 

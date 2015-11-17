@@ -98,6 +98,7 @@ Make your .COM site attractive with rich media, such as:
 [FTP]: /documentation/articles/web-sites-deploy#ftp
 [Visual Studio]: /documentation/articles/web-sites-dotnet-get-started
 [Git]: /documentation/articles/web-sites-publish-source-control
+
 [deploying to a staging slot]: /documentation/articles/web-sites-staged-publishing
 [continuously publish]:http://rickrainey.com/2014/01/21/continuous-deployment-github-with-azure-web-sites-and-staged-publishing/
 [run A/B tests]:http://blogs.msdn.com/b/tomholl/archive/2014/11/10/a-b-testing-with-azure-websites.aspx
@@ -126,3 +127,5 @@ Make your .COM site attractive with rich media, such as:
 
 [Azure Media Services]:http://blogs.technet.com/b/cbernier/archive/2013/09/03/windows-azure-media-services-and-web-sites.aspx
 [SendGrid service in Azure Marketplace]: /documentation/articles/sendgrid-dotnet-how-to-send-email
+
+ 

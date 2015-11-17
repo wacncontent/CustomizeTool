@@ -21,7 +21,7 @@ This walkthrough will give you  a quick and easy way to set up a REST API Servic
 By the end of this walk-through, you should be able to build a running REST API server with the following features:
 
 * A node.js server running an REST API interface with JSON using MongoDB as persistant storage
-* REST APIs leveraging OAuth2 API protection with Bearner tokens using Azure Active Directory
+* REST APIs leveraging OAuth2 API protection with Bearer tokens using Azure Active Directory
 
 
 We've released all of the source code for this running example in GitHub under an Apache 2.0 license, so feel free to clone (or even better, fork!) and provide feedback and pull requests.
@@ -49,7 +49,7 @@ To enable your app to authenticate users, you'll first need to register a new ap
 - Click the **Applications** tab, and click add in the bottom drawer.
 - Follow the prompts and create a new **Web Application and/or WebAPI**.
     - The **name** of the application will describe your application to end-users
-    - The **Sign-On URL** is the base URL of your app.  The skeleton’s default is `https://localhost:8888`.
+    -	The **Sign-On URL** is the base URL of your app.  The skeleton’s default is `https://localhost:8888`.
     - The **App ID URI** is a unique identifier for your application.  The convention is to use `https://<tenant-domain>/<app-name>`, e.g. `https://contoso.partner.onmschina.cn/my-first-aad-app`
 - Once you’ve completed registration, AAD will assign your app a unique client identifier.  You’ll need this value in the next sections, so copy it from the Configure tab.
 
@@ -261,8 +261,8 @@ Create a `config.js` file in our favorite editor and add the following informati
 // Don't commit this file to your public repos
     exports.creds = {
     mongoose_auth_local: 'mongodb://localhost/tasklist', // Your mongo auth uri goes here
-    openid_configuration: 'https://login.microsoftonline.com/common/.well-known/openid-configuration', // For using Microsoft you should never need to change this.
-    openid_keys: 'https://login.microsoftonline.com/common/discovery/keys', // For using Microsoft you should never need to change this. If absent will attempt to get from openid_configuration
+    openid_configuration: 'https://login.chinacloudapi.cn/common/.well-known/openid-configuration', // For using Microsoft you should never need to change this.
+    openid_keys: 'https://login.chinacloudapi.cn/common/discovery/keys', // For using Microsoft you should never need to change this. If absent will attempt to get from openid_configuration
 }
 
 ```
@@ -280,15 +280,16 @@ We need to read these values from the Config file you just created across our ap
 
 From the command-line, change directories to the **azuread** folder if not already there:
 
-cd azuread 
+`cd azuread`
 
 Open your `server.js` file in our favorite editor and add the following information:
 
-Javascript 
+```Javascript
 var config = require('./config');
+```
 Then, add a new section to `server.js` with the following code:
 
-Javascript 
+```Javascript
 /**
 * Setup some configuration
 */
@@ -305,7 +306,7 @@ Since the goal is to keep only application logic in the server.js file, it makes
 
 From the command-line, change directories to the **azuread** folder if not already there:
 
-cd azuread 
+`cd azuread`
 
 Create a `metadata.js` file in our favorite editor and add the following information:
 
@@ -1172,6 +1173,6 @@ Simply clone down to your developer machine and configure as stated in the Walkt
 [ADAL for Android](https://github.com/MSOpenTech/azure-activedirectory-library-for-android)
 
 [ADAL for .Net](http://msdn.microsoft.com/zh-cn/library/azure/jj573266.aspx)
-[AZURE.INCLUDE [active-directory-devquickstarts-additional-resources](../includes/active-directory-devquickstarts-additional-resources)]
 
-
+[AZURE.INCLUDE [active-directory-devquickstarts-additional-resources](../includes/active-directory-devquickstarts-additional-resources.md)]
+ 

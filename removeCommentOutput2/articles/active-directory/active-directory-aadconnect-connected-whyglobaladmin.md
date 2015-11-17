@@ -28,4 +28,7 @@ For custom settings | We enable sync in your Azure AD directory and create the A
 
 * [More on Azure AD Connect accounts and permissions](/documentation/articles/active-directory-aadconnect-account-summary)
 * [Custom installation of Azure AD Connect](/documentation/articles/active-directory-aadconnect-get-started-custom)
-<!-- keep by customization: begin  
+* [Azure AD Connect on MSDN](https://msdn.microsoft.com/zh-cn/library/azure/dn832695.aspx) 
+
+
+

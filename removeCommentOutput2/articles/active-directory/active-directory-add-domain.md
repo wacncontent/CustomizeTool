@@ -37,13 +37,13 @@ If your organization already has a custom domain name, as an administrator, you 
 You can add up to 900 domain names to your Azure AD tenant by using, either:
 
 - The Azure Management Portal, the Office 365 portal, or the Microsoft Intune portal.
-- The Azure Active Directory Module for Windows PowerShell. For more information about which cmdlet you can use for this, see [Manage domains](https://msdn.microsoft.com/zh-cn/library/azure/dn919677.aspx).
+- The Azure Active Directory Module for Windows PowerShell. For more information about which cmdlet you can use for this, see [Manage domains in Azure AD](https://msdn.microsoft.com/zh-cn/library/azure/dn919677.aspx).
 
 You must have already registered a domain name and have the sign-in credentials needed for your domain name registrar (for example, Go Daddy or Register.com).
 
 You can add multiple domains to your directory. However, you can't add the same domain to different directories. So, for example, If you add your domain to your directory, you can't create another Azure AD directory and add the same domain name to it.
 
-If you plan to use single sign-on with the cloud service, we recommend that you help prepare your Active Directory environment by running the Microsoft Deployment Readiness Tool. This tool inspects your Active Directory environment and provides a report that includes information about whether you are ready to set up single sign-on. If not, it lists the changes you need to make to prepare for single sign-on. For example, it inspects whether your users have UPNs and if those UPNs are in the correct format. To download the tool, see [Microsoft Deployment Readiness Tool](http://community.office365.com/zh-cn/f/183/t/2285.aspx#8155).
+If you plan to use single sign-on with the cloud service, we recommend that you help prepare your Active Directory environment by running the Microsoft Deployment Readiness Tool. This tool inspects your Active Directory environment and provides a report that includes information about whether you are ready to set up single sign-on. If not, it lists the changes you need to make to prepare for single sign-on. For example, it inspects whether your users have UPNs and if those UPNs are in the correct format. To download the tool, see [Microsoft Deployment Readiness Tool](https://community.office365.com/zh-cn/f/183/p/2285/8155).
 
 > [AZURE.NOTE]
 > Using Office 365? Once you have set up your domain, you can start creating email addresses, Lync Online accounts, and distribution groups that use your custom domain name. You can also use your domain name for a public-facing website hosted on SharePoint Online.
@@ -59,11 +59,11 @@ If you plan to use single sign-on with the cloud service, we recommend that you 
     2. Click **Domains** and then click either **Add a customer domain** or the **Add** button.
 2. On the **Add domain** page, type the domain name that you want to add and the do one of the following:
     1. If you do not plan to integrate your on-premises Active Directory with Azure AD, do the following:
-        1. Leave the **I plan to configure this domain for single sign-on with my local Active Directory** checkbox unchecked and click the **Add** button.
+        1. Leave the **I plan to configure this domain for single sign-on with my local Active Directory** checkbox cleared, and then click the **Add** button.
         2. After you see the message that your domain has been successfully added to Azure AD, click the arrow to move to the next page so you can verify your domain.
         3. Follow the directions on the next page to verify that the domain name you added in the previous steps belongs to you. For step-by-step directions, see Verify a domain at any domain name registrar.
     2. If you want to integrate your on-premises Active Directory with Azure AD, do the following:
-        1. Make sure to check the **I plan to configure this domain for single sign-on with my local Active Directory** checkbox and then click the **Add** button.
+        1. Make sure to select the **I plan to configure this domain for single sign-on with my local Active Directory** checkbox and then click the **Add** button.
         2. After you see the message that your domain has been successfully added to Azure AD, click the arrow to move to the next page and then follow the directions on that page to configure the domain you added for single sign-on.
 
 > [AZURE.NOTE]
@@ -72,7 +72,7 @@ If you plan to use single sign-on with the cloud service, we recommend that you 
 ### Edit DNS records for your cloud services
 
 > [AZURE.NOTE]
-> Using Windows Intune? You do not need to edit DNS records for the Microsoft Intune cloud service.
+> Using Microsoft Intune? You do not need to edit DNS records for the Microsoft Intune cloud service.
 
 After you add and verify your custom domain name, the next step is to edit the DNS records at your domain registrar or DNS hosting provider that point traffic to your cloud service. Azure AD provides the DNS information that you need.
 
@@ -81,13 +81,13 @@ If you've just completed the **Add a domain** wizard, click **Configure DNS reco
 1. In the portal, in the left pane, click **Domains**.
 2. Depending on which portal you are using, click the domain name that you want to set up, and then click either **DNS settings** or **View DNS settings**. The **DNS settings** page lists the DNS records for the cloud service.
 
-    If you want to configure a service that you don't see on the DNS settings tab, check your domain services selections to make sure you've chosen that service for this domain name. To change the settings, for example, to add Lync Online, see Specify the services you'll use with your domain.
+    If you want to configure a service that you don't see on the DNS settings tab, verify your domain services selections to make sure you've chosen that service for this domain name. To change the settings, for example, to add Lync Online, see Specify the services you'll use with your domain.
 
 3. At your domain name registrar website, add the required records to your DNS file.
 
 Typically it takes about 15 minutes for your changes to take effect. But it can take up to 72 hours for the DNS record that you created to propagate through the DNS system. If you need to view these record settings again, on the **Domains** page, click the domain, and then, on the **Domain properties** page, click the **DNS settings** tab.
 
-To check the status of your domain, on the **Domains** page, click the domain, and then, on the **Domain properties** page, click **Troubleshoot domain**.
+To verify the status of your domain, on the **Domains** page, click the domain, and then, on the **Domain properties** page, click **Troubleshoot domain**.
 
 ### Verify a domain at any domain name registrar
 
@@ -165,7 +165,7 @@ After you add your domain name to Azure AD, you can change the domain name that 
 Before you remove a domain name, we recommend that you read the following information:
 
 - The original contoso.partner.onmschina.cn domain name that was provided for your directory when you signed up cannot be removed.
-- Any top-level domain that has subdomains associated with it cannot be removed until the subdomains have been removed. For example, you can't remove adatum.com if you have corp.adatum.com or another subdomain that uses the top-level domain name. For more information, see this [Support article](https://support.microsoft.com/zh-cn/kb/2787792/).
+- Any top-level domain that has subdomains associated with it cannot be removed until the subdomains have been removed. For example, you can't remove adatum.com if you have corp.adatum.com or another subdomain that uses the top-level domain name. For more information, see this [Support article](https://support.microsoft.com/kb/2787792/).
 - Have you activated directory synchronization? If so, a domain was automatically added to your account that looks similar to this: contoso.mail.partner.onmschina.cn. This domain name can't be removed.
 - Before you can remove a domain name, you must first remove the domain name from all user or email accounts associated with the domain. You can remove all of the accounts, or you can bulk edit user accounts to change their domain name information and email addresses. For more information, see [Create or edit users in Azure AD](/documentation/articles/active-directory-create-users).
 - If you are hosting a SharePoint Online site on a domain name that is being used for a SharePoint Online site collection, you must delete the site collection before you can remove the domain name.

@@ -54,7 +54,7 @@ communicate with the REST services.
 		|-- request@2.16.6 (forever-agent@0.2.0, aws-sign@0.2.0, tunnel-agent@0.2.0, oauth-sign@0.2.0, json-stringify-safe@3.0.0, cookie-jar@0.2.0, node-uuid@1.4.0, qs@0.5.5, hawk@0.10.2, form-data@0.0.7)
 
 3.  You can manually run the **ls** or **dir** command to verify that a
-    **node_modules** folder was created. Inside that folder find the
+    **node\_modules** folder was created. Inside that folder find the
     **azure** package, which contains the libraries you need to access
     Notification Hub.
 

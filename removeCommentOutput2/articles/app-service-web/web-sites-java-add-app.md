@@ -17,6 +17,7 @@
 Once you have initialized your Java web app in [Azure Websites][] as documented at [Create a Java web app in Azure Websites](/documentation/articles/web-sites-java-get-started), you can upload your application by placing your WAR in the **webapps** folder.
 
 The navigation path to the **webapps** folder differs based on how you set up your Web Apps instance.
+
 - If you set up your web app by using the Azure configuration UI, the path to the **webapps** folder is in the form **d:\home\site\wwwroot\webapps**. 
 
 Note that you can use source control to upload your application or web pages, including continuous integration scenarios. Instructions for using source control with your web app are available at [Continuous deployment using GIT in Azure Websites](/documentation/articles/web-sites-publish-source-control). FTP is also an option for uploading your application or web pages.

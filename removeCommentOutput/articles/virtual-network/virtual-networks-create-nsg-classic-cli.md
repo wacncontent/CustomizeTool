@@ -70,7 +70,7 @@ To create an NSG named named *NSG-FrontEnd* based on the scenario above, follow 
 
 	Parameters:
 
-	- **-l (or --location)**. Azure region where the new NSG will be created. For our scenario, *westus*.
+	- **-l (or --location)**. Azure region where the new NSG will be created. For our scenario, *chinanorth*.
 	- **-n (or --name)**. Name for the new NSG. For our scenario, *NSG-FrontEnd*.
 
 4. Run the **azure network nsg rule create** command to create a rule that allows access to port 3389 (RDP) from the Internet.
@@ -176,7 +176,7 @@ To create an NSG named named *NSG-BackEnd* based on the scenario above, follow t
 
 	Parameters:
 
-	- **-l (or --location)**. Azure region where the new NSG will be created. For our scenario, *westus*.
+	- **-l (or --location)**. Azure region where the new NSG will be created. For our scenario, *chinanorth*.
 	- **-n (or --name)**. Name for the new NSG. For our scenario, *NSG-FrontEnd*.
 
 4. Run the **azure network nsg rule create** command to create a rule that allows access to port 1433 (SQL) from the front end subnet.

@@ -27,6 +27,7 @@ In this article, you will learn how to create an ASP.NET MVC line-of-business ap
 - [Authorize users for specific controllers or actions](#bkmk_authorize)
 - [Connect to on-premises data](#bkmk_data)
 - [Further resources](#bkmk_resources)
+
 <a name="bkmk_build"></a>
 ## What you will build ##
 
@@ -258,7 +259,7 @@ So far, you've succeeded in the following ways:
 - AD FS has successfully authenticated an AD user and redirect you back to the application's homepage
 - AD FS as successfully sent the name claim (http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name) to your application, as indicated by the fact that the user name is displayed in the corner. 
 
-If the name claim is missing, you would have seen **Hello, !**. If you take a look at Views\Shared_LoginPartial.cshtml, you will find that it uses `User.Identity.Name` to display the user name. As mentioned previously, ASP.NET hydrates this property with the name claim of the authenticated user, if it is available in the SAML token. To see all the claims that are sent by AD FS, put a breakpoint in Controllers\HomeController.cs, in the Index action method. After the user is authenticated, inspect the `System.Security.Claims.Current.Claims` collection.
+If the name claim is missing, you would have seen **Hello, !**. If you take a look at Views\Shared\_LoginPartial.cshtml, you will find that it uses `User.Identity.Name` to display the user name. As mentioned previously, ASP.NET hydrates this property with the name claim of the authenticated user, if it is available in the SAML token. To see all the claims that are sent by AD FS, put a breakpoint in Controllers\HomeController.cs, in the Index action method. After the user is authenticated, inspect the `System.Security.Claims.Current.Claims` collection.
 
 ![](./media/web-sites-dotnet-lob-application-adfs/12-test-debugging-all-claims.png) 
 

@@ -171,8 +171,12 @@ Learn more about Mobile Services and Notification Hubs in the following topics:
 [Live SDK for Windows]: http://go.microsoft.com/fwlink/p/?LinkId=262253
 [Add Mobile Services to an existing app]: /documentation/articles/mobile-services-windows-phone-get-started-data
 [Get started with authentication]: /documentation/articles/mobile-services-windows-phone-get-started-users
+
 [Setting up an authenticated web service to send push notifications for Windows Phone]: http://msdn.microsoft.com/zh-cn/library/windowsphone/develop/ff941099(v=vs.105).aspx
 
 [Mobile Services server script reference]: http://go.microsoft.com/fwlink/?LinkId=262293
 [Mobile Services .NET How-to Conceptual Reference]: /documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library
+
 [What are Notification Hubs?]: /documentation/articles/notification-hubs-overview
+
+ 

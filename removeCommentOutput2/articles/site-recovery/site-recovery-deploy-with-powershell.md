@@ -32,7 +32,7 @@ Make sure you have these prerequisites in place:
 ### Azure prerequisites
 
 - You'll need a [Windows Azure](http://www.windowsazure.cn) account. If you don't have one, start with a [trial](/price/1rmb-trial). In addition, you can read about [Azure Site Recovery Manager pricing](/home/features/site-recovery/#price).
-- You'll need an Azure storage account to store data replicated to Azure. The account needs geo-replication enabled. It should be in the same region as the Azure Site Recovery service, and be associated with the same subscription. To learn more about setting up Azure storage, see [Introduction to Windows Azure Storage](/documentation/articles/storage-introduction).
+- You'll need an Azure storage account to store data replicated to Azure. The account needs geo-replication enabled. It should be in the same region as the Azure Site Recovery service, and be associated with the same subscription. To learn more about setting up Azure storage, see [Introduction to Windows Azure Storage](/documentation/articles/storage-introduction/).
 - You'll need to make sure that virtual machines you want to protect comply with Azure requirements. See [Virtual machine support](https://msdn.microsoft.com/zh-cn/library/azure/dn469078.aspx#BKMK_E2A) for details.
 
 ### VMM prerequisites
@@ -50,7 +50,7 @@ Make sure you have these prerequisites in place:
 ### Hyper-V prerequisites
 
 - The host Hyper-V servers must be running at least Windows Server 2012 with Hyper-V role and have the latest updates installed.
-- If you're running Hyper-V in a cluster note that cluster broker isn't created automatically if you have a static IP address-based cluster. You'll need to configure the cluster broker manually. For instructions see [Configure Hyper-V Replica Broker](https://technet.microsoft.com/zh-cn/library/jj134153.aspx#BKMK_1_4).
+- If you're running Hyper-V in a cluster note that cluster broker isn't created automatically if you have a static IP address-based cluster. You'll need to configure the cluster broker manually. For instructions see [Configure Hyper-V Replica Broker](https://technet.microsoft.com/zh-cn/library/jj134153.aspx).
 - Any Hyper-V host server or cluster for which you want to manage protection must be included in a VMM cloud.
 
 ### Network mapping prerequisites
@@ -67,7 +67,7 @@ If you want to deploy network mapping you'll need the following:
 - Learn more about network mapping:
 	- [Configuring logical networking in VMM](https://technet.microsoft.com/zh-cn/library/jj721568.aspx)
 	- [Configuring VM networks and gateways in VMM](https://technet.microsoft.com/zh-cn/library/jj721575.aspx)
-	- [Configure and monitor virtual networks in Azure](/documentation/services/networking) 
+	- [Configure and monitor virtual networks in Azure](/documentation/services/networking/)
 
 ###PowerShell prerequisites
 Make sure you have Azure PowerShell ready to go. If you are already using PowerShell, you'll need to upgrade to version 0.8.10 or later. For information about setting up PowerShell, see [How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure). Once you have set up and configured PowerShell, you can view all of the available cmdlets for the service [here](https://msdn.microsoft.com/zh-cn/library/dn850420.aspx). 
@@ -386,7 +386,7 @@ To check the completion of the operation, follow the steps in [Monitor Activity]
 	
 	```
 	
-5. Fill in the data in the template:
+4. Fill in the data in the template:
 	
 	```
 	
@@ -394,8 +394,8 @@ To check the completion of the operation, follow the steps in [Monitor Activity]
 	
 	```
 	
-6. Create the RecoveryPlan:
-		
+5. Create the RecoveryPlan:
+	
 	```
 	
 		$RPCreationJob = New-AzureSiteRecoveryRecoveryPlan -File $TemplatePath -WaitForCompletion;
@@ -455,5 +455,5 @@ if($isJobLeftForProcessing)
 
 <LI>To plan and deploy Azure Site Recovery in a full production environment, see <a href="https://msdn.microsoft.com/zh-cn/library/azure/dn469074.aspx">Planning Guide for Azure Site Recovery</a> and <a href="https://msdn.microsoft.com/zh-cn/library/azure/dn168841.aspx">Deployment Guide for Azure Site Recovery</a>.</LI>
 
-<LI>For questions, visit the <a href="https://social.msdn.microsoft.com/Forums/azure/zh-CN/home?forum=windowsazurezhchs">Azure Recovery Services Forum</a>.</LI>
+<LI>For questions, visit the <a href="https://social.msdn.microsoft.com:443/forums/azure/zh-cn/home?forum=hypervrecovmgr">Azure Recovery Services Forum</a>.</LI>
 </UL>

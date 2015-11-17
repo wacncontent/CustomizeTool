@@ -36,6 +36,7 @@ It describes additional features of Git deployment, such as virtual environment 
 + [Troubleshooting - Deployment](#troubleshooting-deployment)
 + [Troubleshooting - Package Installation](#troubleshooting-package-installation)
 + [Troubleshooting - Virtual Environment](#troubleshooting-virtual-environment)
+
 ## Bottle, Django or Flask?
 
 The Azure Marketplace contains templates for the Bottle, Django and Flask frameworks. If you are developing your first web app in Azure Websites, or you are not familiar with Git, we recommend that you follow one of these tutorials, which include step-by-step instructions for building a working application from the gallery using Git deployment from Windows or Mac:

@@ -81,7 +81,7 @@ Next, use the following command and specify the name of your new resource group 
 
 Here is an example.
 
-	azure group create sqlao eastus2
+	azure group create sqlao chinaeast2
 	azure group deployment create --template-uri https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/sql-server-2014-alwayson-dsc/azuredeploy.json sqlao sqldevtest
 
 When you run the **azure group deployment create** command, you will be prompted to supply the values for a series of parameters. When you have specified all the parameter values, Azure creates and configures the virtual machines.

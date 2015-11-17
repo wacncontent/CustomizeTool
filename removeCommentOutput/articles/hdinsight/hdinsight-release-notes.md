@@ -1167,7 +1167,7 @@ These compatibility issues are resolved in the latest versions of the HDInsight 
 ## Notes for 7/28/2014 release
 
 * **HDInsight available in new regions**:  We expanded HDInsight geographical presence to three regions. HDInsight customers can create clusters in these regions:
-	* East Asia
+	* China East
 	* China North
 	* China East
 * HDInsight version 1.6 (HDP 1.1 and Hadoop 1.0.3) and HDInsight version 2.1 (HDP1.3 and Hadoop 1.2) are being removed from the Azure Management Portal. You can continue to create Hadoop clusters for these versions by using the Azure PowerShell cmdlet, [New-AzureHDInsightCluster](http://msdn.microsoft.com/zh-cn/library/dn593744.aspx) or by using the [HDInsight SDK](http://msdn.microsoft.com/zh-cn/library/azure/dn469975.aspx). Please refer to the [HDInsight component versioning](/documentation/articles/hdinsight-component-versioning) page for more information.
@@ -1403,3 +1403,4 @@ Release notes for the Hortonworks Data Platforms (HDPs) that are used by HDInsig
 
 [hdinsight-install-spark]: /documentation/articles/hdinsight-hadoop-spark-install
 [hdinsight-r-scripts]: /documentation/articles/hdinsight-hadoop-r-scripts
+ 

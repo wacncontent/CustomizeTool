@@ -13,7 +13,7 @@
 	wacn.date=""/>
 
 
-# Azure AD Connect Sync: Attributes synchronized to Azure Active Directory
+# Azure AD Connect sync: Attributes synchronized to Azure Active Directory
 
 This topic lists the attributes that are synchronized by Azure AD Connect sync.<br>
 The attributes are grouped by the related Azure AD app.
@@ -68,7 +68,7 @@ The attributes are grouped by the related Azure AD app.
 | facsimiletelephonenumber| X| X|  |  |
 | givenName| X| X|  |  |
 | homePhone| X| X|  |  |
-| info| X| X| X|  |
+| info| X| X| X| This attribute is currently not consumed for groups.|
 | Initials| X| X|  |  |
 | l| X| X|  |  |
 | legacyExchangeDN| X| X| X|  |
@@ -94,11 +94,11 @@ The attributes are grouped by the related Azure AD app.
 | msExchELCExpirySuspensionStart| X|  |  |  |
 | msExchELCMailboxFlags| X|  |  |  |
 | msExchEnableModeration| X|  | X|  |
-| msExchExtensionCustomAttribute1| X| X| X|  |
-| msExchExtensionCustomAttribute2| X| X| X|  |
-| msExchExtensionCustomAttribute3| X| X| X|  |
-| msExchExtensionCustomAttribute4| X| X| X|  |
-| msExchExtensionCustomAttribute5| X| X| X|  |
+| msExchExtensionCustomAttribute1| X| X| X| This attribute is currently not consumed by Exchange Online. |
+| msExchExtensionCustomAttribute2| X| X| X| This attribute is currently not consumed by Exchange Online. |
+| msExchExtensionCustomAttribute3| X| X| X| This attribute is currently not consumed by Exchange Online. |
+| msExchExtensionCustomAttribute4| X| X| X| This attribute is currently not consumed by Exchange Online. |
+| msExchExtensionCustomAttribute5| X| X| X| This attribute is currently not consumed by Exchange Online. |
 | msExchHideFromAddressLists| X| X| X|  |
 | msExchImmutableID| X|  |  |  |
 | msExchLitigationHoldDate| X| X| X|  |
@@ -406,9 +406,7 @@ These attributes are written back from Azure AD to on-premises Active Directory 
 - When using an Alternate ID, the on-premises attribute userPrincipalName will be synchronized with the Azure AD attribute onPremisesUserPrincipalName. The Alternate ID attribute, e.g. mail, will be synchronized with the Azure AD attribute userPrincipalName.
 
 
-## Additional Resources
+## Next steps
+Learn more about the [Azure AD Connect sync](/documentation/articles/active-directory-aadconnectsync-whatis) configuration.
 
-* [Azure AD Connect Sync: Customizing Synchronization options](/documentation/articles/active-directory-aadconnectsync-whatis)
-* [Integrating your on-premises identities with Azure Active Directory](/documentation/articles/active-directory-aadconnect)
- 
-<!--Image references-->
+Learn more about [Integrating your on-premises identities with Azure Active Directory](/documentation/articles/active-directory-aadconnect).

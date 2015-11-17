@@ -27,6 +27,7 @@ The Azure Active Directory tenant that you use can be an Azure-only directory, o
 - [Deploy the sample application to Azure Websites](#bkmk_deploy)
 - [Add LOB functionality to the sample application](#bkmk_crud)
 - [Further resources](#bkmk_resources)
+
 <a name="bkmk_build"></a>
 ## What you will build ##
 

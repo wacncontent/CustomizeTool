@@ -421,6 +421,6 @@ The following steps show you how to stop and delete your application.
 
   [Node.js Web Application using Express]: /develop/nodejs/tutorials/web-app-with-express/
   [Storing and Accessing Data in Azure]: http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx
-  [Node.js Web Application]: /develop/nodejs/tutorials/getting-started/
+  [Node.js Web Application]: /documentation/articles/cloud-services-nodejs-develop-deploy-app
  
  

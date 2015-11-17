@@ -133,5 +133,5 @@ The Ubuntu Linux VM already comes with Python 2.7 pre-installed, but it doesn't 
 When you're done with this tutorial, shutdown and/or remove your newly created Azure virtual machine to free up resources for other tutorials and avoid incurring Azure usage charges.
 
 
-[portal-vm]: /manage/linux/tutorials/virtual-machine-from-gallery/
+[portal-vm]: /documentation/articles/virtual-machines-linux-tutorial/
  

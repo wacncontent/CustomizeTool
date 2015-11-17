@@ -16,9 +16,9 @@
 # <a id="nonendorsed"> </a>Information for Non-Endorsed Distributions #
 
 
-**Important**: The Azure platform SLA applies to virtual machines running the Linux OS only when one of the [endorsed distributions](virtual-machines-../linux-endorsed-distributions.md) is used. All Linux distributions that are provided in the Azure image gallery are endorsed distributions with the required configuration.
+**Important**: The Azure platform SLA applies to virtual machines running the Linux OS only when one of the [endorsed distributions](/documentation/articles/virtual-machines-linux-endorsed-distributions) is used. All Linux distributions that are provided in the Azure image gallery are endorsed distributions with the required configuration.
 
-- [Linux on Azure - Endorsed Distributions](virtual-machines-../linux-endorsed-distributions.md)
+- [Linux on Azure - Endorsed Distributions](/documentation/articles/virtual-machines-linux-endorsed-distributions)
 - [Support for Linux images in Windows Azure](http://support2.microsoft.com/kb/2941892)
 
 All distributions running on Azure will need to meet a number of prerequisites to have a chance to properly run on the platform.  This article is by no means comprehensive as every distribution is different; and it is quite possible that even if you meet all the criteria below you will still need to significantly tweak your Linux system to ensure that it properly runs on the platform.

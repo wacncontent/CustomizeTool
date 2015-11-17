@@ -365,14 +365,14 @@ This tutorial demonstrated how to enable a Windows Store app to handle write con
 
 <!-- URLs. -->
 [Optimistic Concurrency Control]: http://go.microsoft.com/fwlink/?LinkId=330935
-[Get started with Mobile Services]: /develop/mobile/tutorials/get-started/#create-new-service
+[Get started with Mobile Services]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started/#create-new-service
 [Azure Account]: /pricing/1rmb-trial/
 [Validate and modify data with scripts]: /develop/mobile/tutorials/validate-modify-and-augment-data-dotnet
 [Refine queries with paging]: /develop/mobile/tutorials/add-paging-to-data-dotnet
-[Get started with Mobile Services]: /develop/mobile/tutorials/get-started
-[Get started with data]: /develop/mobile/tutorials/get-started-with-data-dotnet
-[Add authentication to your app]: /develop/mobile/tutorials/get-started-with-users-dotnet
-[Add push notifications to your app]: /develop/mobile/tutorials/get-started-with-push-dotnet
+[Get started with Mobile Services]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started
+[Get started with data]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-data-dotnet
+[Add authentication to your app]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-users-dotnet
+[Add push notifications to your app]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-push-dotnet
 
 [Azure Management Portal]: https://manage.windowsazure.cn/
 [Management Portal]: https://manage.windowsazure.cn/

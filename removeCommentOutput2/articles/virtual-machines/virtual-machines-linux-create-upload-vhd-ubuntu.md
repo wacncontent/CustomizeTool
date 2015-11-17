@@ -32,7 +32,7 @@ This article assumes that you have already installed an Ubuntu Linux operating s
 - All of the VHDs must have sizes that are multiples of 1 MB.
 
 
-## <a id="ubuntu"> </a>Ubuntu 12.04+ ##
+## <a id="ubuntu"> </a>Ubuntu 12.04 ##
 
 1. In the center pane of Hyper-V Manager, select the virtual machine.
 
@@ -40,7 +40,7 @@ This article assumes that you have already installed an Ubuntu Linux operating s
 
 3.	Replace the current repositories in the image to use Ubuntu's Azure repos. The steps vary slightly depending on the Ubuntu version.
 
-	Before editing /etc/apt/sources.list, it is recommended to make a backup
+	Before editing /etc/apt/sources.list, it is recommended to make a backup:
 
 		# sudo cp /etc/apt/sources.list /etc/apt/sources.list.bak
 
@@ -50,38 +50,26 @@ This article assumes that you have already installed an Ubuntu Linux operating s
 		# sudo apt-add-repository 'http://archive.canonical.com/ubuntu precise-backports main'
 		# sudo apt-get update
 
-	Ubuntu 12.10:
-
-		# sudo sed -i "s/[a-z][a-z].archive.ubuntu.com/azure.archive.ubuntu.com/g" /etc/apt/sources.list
-		# sudo apt-add-repository 'http://archive.canonical.com/ubuntu quantal-backports main'
-		# sudo apt-get update
-
-	Ubuntu 14.04+:
+	Ubuntu 14.04:
 
 		# sudo sed -i "s/[a-z][a-z].archive.ubuntu.com/azure.archive.ubuntu.com/g" /etc/apt/sources.list
 		# sudo apt-get update
 
-4. Update the operating system to the latest kernel by running the following commands :
+4. The Ubuntu Azure images are now following the *HardWare Enablement* (HWE) kernel. Update the operating system to the latest kernel by running the following commands:
 
 	Ubuntu 12.04:
 
 		# sudo apt-get update
-		# sudo apt-get install hv-kvp-daemon-init linux-backports-modules-hv-precise-virtual
+		# sudo apt-get install linux-image-generic-lts-trusty linux-cloud-tools-generic-lts-trusty
+		# sudo apt-get install hv-kvp-daemon-init
 		(recommended) sudo apt-get dist-upgrade
 
 		# sudo reboot
 
-	Ubuntu 12.10:
+	Ubuntu 14.04:
 
 		# sudo apt-get update
-		# sudo apt-get install hv-kvp-daemon-init linux-backports-modules-hv-quantal-virtual
-		(recommended) sudo apt-get dist-upgrade
-
-		# sudo reboot
-
-	Ubuntu 14.04+:
-
-		# sudo apt-get update
+		# sudo apt-get install linux-image-virtual-lts-vivid linux-lts-vivid-tools-common
 		# sudo apt-get install hv-kvp-daemon-init
 		(recommended) sudo apt-get dist-upgrade
 
@@ -120,3 +108,9 @@ This article assumes that you have already installed an Ubuntu Linux operating s
 
 11. Click **Action -> Shut Down** in Hyper-V Manager. Your Linux VHD is now ready to be uploaded to Azure.
 
+## References ##
+
+Ubuntu HardWare Enablement (HWE) Kernel
+
+- [http://blog.utlemming.org/2015/01/ubuntu-1404-azure-images-now-tracking.html](http://blog.utlemming.org/2015/01/ubuntu-1404-azure-images-now-tracking.html)
+- [http://blog.utlemming.org/2015/02/1204-azure-cloud-images-now-using-hwe.html](http://blog.utlemming.org/2015/02/1204-azure-cloud-images-now-using-hwe.html)

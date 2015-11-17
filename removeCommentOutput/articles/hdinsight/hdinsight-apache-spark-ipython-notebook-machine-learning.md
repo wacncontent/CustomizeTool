@@ -228,12 +228,17 @@ Apache Spark clusters on HDInsight include Anaconda libraries. This also include
 
 
 [hdinsight-versions]: /documentation/articles/hdinsight-component-versioning
+
 [hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
+
 [hdinsight-storage]: /documentation/articles/hdinsight-use-blob-storage
+
+
 [hdinsight-weblogs-sample]: /documentation/articles/hdinsight-hive-analyze-website-log
 [hdinsight-sensor-data-sample]: /documentation/articles/hdinsight-hive-analyze-sensor-data
+
 [azure-purchase-options]: /pricing/overview/
-[azure-member-offers]: http://azure.microsoft.com/pricing/member-offers/
+[azure-member-offers]: /pricing/member-offers/
 [azure-trial]: /pricing/1rmb-trial/
 [azure-management-portal]: https://manage.windowsazure.cn/
 [azure-create-storageaccount]: /documentation/articles/storage-create-storage-account

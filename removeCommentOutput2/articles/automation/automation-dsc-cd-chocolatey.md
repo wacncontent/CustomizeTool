@@ -1,3 +1,4 @@
+<!-- not suitable for Mooncake -->
 <properties
    pageTitle="Azure Automation DSC Continuous Deployment with Chocolatey | Windows Azure"
    description="DevOps continuous deployment using Azure Automation DSC and Chocolatey package manager.  Example with full JSON ARM template and PowerShell source."
@@ -60,7 +61,7 @@ At an authenticated (Add-AzureAccount) PowerShell command line:  (can take a few
     New-AzureResourceGroup –Name MY-AUTOMATION-RG –Location MY-RG-LOCATION-IN-QUOTES
     New-AzureAutomationAccount –ResourceGroupName MY-AUTOMATION-RG –Location MY-RG-LOCATION-IN-QUOTES –Name MY-AUTOMATION-ACCOUNT 
 
-You can put your automation account into any of the following regions (aka location):  Japan East, China East 2, West Europe, Southeast Asia, China East.
+You can put your automation account into any of the following regions (aka location):  China North, China East.
 
 ## Step 2: VM extension tweaks to the ARM template
 

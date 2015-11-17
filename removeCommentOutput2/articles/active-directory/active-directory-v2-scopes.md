@@ -24,7 +24,7 @@ Apps that integrate with Azure AD follow a particular authorization model that a
 App model v2.0 implements the [OAuth 2.0](/documentation/articles/active-directory-v2-protocols) authorization protocol, which is a method for allowing a 3rd party app to access web-hosted resources on behalf of a user.  Any web-hosted resource that integrates with Azure AD will have a resource identifier, or **App ID URI**.  For example, some of Microsoft's web-hosted resources include:
 
 - The Office 365 Unified Mail API: `https://outlook.office.com`
-- The Azure Resource Manager API: `https://management.azure.com`
+- The Azure Resource Manager API: `https://management.azure.com` 
 - The Azure AD Graph API: `https://graph.chinacloudapi.cn`
 
 The same is true for any 3rd party resources that has integrated with Azure AD.  Any of these resources can also define a set of permissions that can be used to divide up the functionality of that resource into smaller chunks.  As an example, the Office 365 Unified Mail API has defined these basic permissions:

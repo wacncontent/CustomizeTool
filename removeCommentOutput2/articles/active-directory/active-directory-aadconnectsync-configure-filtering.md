@@ -17,7 +17,7 @@
 
 In Azure AD Connect sync, you can enable filtering at any time. If you have already run the default configurations of directory synchronization and then configured the filtering, the objects that are filtered out are no longer synchronized to Azure AD. As a result of this, any objects in Azure AD that were previously synchronized but were then filtered are deleted in Azure AD. If objects were inadvertently deleted because of a filtering error, you can re-create the objects in Azure AD by removing your filtering configurations, and then synchronize your directories again.
 
-> [AZURE.IMPORTANT]Microsoft does not support modification or operation of the Azure AD Connect Sync outside of those actions formally documented. Any of these actions may result in an inconsistent or unsupported state of Azure AD Connect Sync and as a result, Microsoft cannot provide technical support for such deployments.
+> [AZURE.IMPORTANT]Microsoft does not support modification or operation of the Azure AD Connect sync outside of those actions formally documented. Any of these actions may result in an inconsistent or unsupported state of Azure AD Connect sync and as a result, Microsoft cannot provide technical support for such deployments.
 
 With the exception of outbound attribute-based filtering, the configurations will be retained when you install or upgrade to a newer version of Azure AD Connect. It is always a best practice to verify that the configuration was not inadvertently changed after an upgrade to a newer version before running the first synchronization cycle.
 
@@ -50,9 +50,9 @@ If you have added or removed domains in your forest after you have installed Azu
 
 **To set the domain filter, perform the following steps:**
 
-1. Log on to the computer that is running Azure AD Connect Sync by using an account that is a member of the **ADSyncAdmins** security group.
+1. Log on to the computer that is running Azure AD Connect sync by using an account that is a member of the **ADSyncAdmins** security group.
 
-2. On **Start**, tap or click **Synchronization Service** to open the **Synchronization Service Manager**.<br> 
+2. On **Start**, tap or click **Synchronization Service** to open the **Synchronization Service Manager**.
 
 3. To open the connectors view, click **Connectors** in the **Tools** menu.
 
@@ -62,7 +62,7 @@ If you have added or removed domains in your forest after you have installed Azu
 
 6. Click **Configure Directory Partitions**.
 
-7. In the **Select directory partitions** list, verify that only the partitions you want to synchronize are selected. <br> To> [AZURE.Note] remove a domain from the synchronization process, clear the domain’s check box.
+7. In the **Select directory partitions** list, verify that only the partitions you want to synchronize are selected. <br> To remove a domain from the synchronization process, clear the domain’s check box.
 
 8. To close the **Properties** dialog, click **OK**.
 
@@ -76,7 +76,7 @@ If you have updated your domain filter, you also need to update the following ru
 - Export
 
 
-If you have removed a partition from the directory partitions list, you need to make sure that all run profile steps that are referencing this partition are also removed.
+If you have **removed** a partition from the directory partitions list, you need to make sure that all run profile steps that are referencing this partition are also removed.
 
 **To remove a step from a run profile, perform the following steps:**
 
@@ -94,7 +94,7 @@ If you have removed a partition from the directory partitions list, you need to 
 
 5. To close the **Configure Run Profiles for** dialog, click **OK**.
 
-If you have added a partition to the directory partitions list, you need to make sure that a run profile step for that partition is available on each of the run profiles in the list above.
+If you have **added** a partition to the directory partitions list, you need to make sure that a run profile step for that partition is available on each of the run profiles in the list above.
 
 **To add a step to a run profile, perform the following steps:**
 
@@ -185,7 +185,7 @@ Make sure the same Connector is still selected. The run profiles for the Connect
 
 **To configure organizational-unit–based filtering, perform the following steps:**
 
-1. Log on to the computer that is running Azure AD Connect Sync by using an account that is a member of the **ADSyncAdmins** security group.
+1. Log on to the computer that is running Azure AD Connect sync by using an account that is a member of the **ADSyncAdmins** security group.
 
 2. On **Start**, tap or click **Synchronization Service** to open the **Synchronization Service Manager**.<br>
 
@@ -272,12 +272,7 @@ In this example, we will change the filtering so only users where both mail and 
 7. Perform a full sync: on the Connectors tab, right-click SourceAD, click Run, click Full Synchronization, and then click OK.
 
 
+## Next steps
+Learn more about the [Azure AD Connect sync](/documentation/articles/active-directory-aadconnectsync-whatis) configuration.
 
-## Additional Resources
-
-* [Azure AD Connect Sync: Customizing Synchronization options](/documentation/articles/active-directory-aadconnectsync-whatis)
-* [Integrating your on-premises identities with Azure Active Directory](/documentation/articles/active-directory-aadconnect)
-
- 
-
-
+Learn more about [Integrating your on-premises identities with Azure Active Directory](/documentation/articles/active-directory-aadconnect).

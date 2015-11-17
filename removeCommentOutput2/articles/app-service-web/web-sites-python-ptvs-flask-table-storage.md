@@ -158,6 +158,7 @@ The Azure .NET SDK provides an easy way to deploy your web app to Azure Websites
 ## Configure the Web Apps instance
 
 In this section, we'll configure environment variables for the Web Apps instance.
+
 1.  In [Azure Management Portal], open the web app's blade by clicking **Web Apps** > your web app name.
 
 1.  In your web app's blade, click **Configure**.
@@ -197,6 +198,7 @@ Follow these links to learn more about Python Tools for Visual Studio, Flask and
 [Azure Cloud Services]: /documentation/articles/cloud-services-python-ptvs
 [documentation]: /documentation/articles/storage-python-how-to-use-table-storage
 [How to Use the Table Storage Service from Python]: /documentation/articles/storage-python-how-to-use-table-storage
+
 <!--External Link references-->
 [Azure Management Portal]: https://manage.windowsazure.cn
 [Azure SDK for .NET]: /downloads/

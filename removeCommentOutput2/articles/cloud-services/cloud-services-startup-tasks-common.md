@@ -485,13 +485,13 @@ Learn more about how [Tasks](/documentation/articles/cloud-services-startup-task
 [Create and deploy](/documentation/articles/cloud-services-how-to-create-deploy-portal) your cloud service package.
 
 
-[ServiceDefinition.csdef]: /documentation/articles/cloud-services-model-and-package/#csdef
+[ServiceDefinition.csdef]: /documentation/articles/cloud-services-model-and-package#csdef
 [Task]: https://msdn.microsoft.com/zh-cn/library/azure/gg557552.aspx#Task
 [Runtime]: https://msdn.microsoft.com/zh-cn/library/azure/gg557552.aspx#Runtime
 [Startup]: https://msdn.microsoft.com/zh-cn/library/azure/gg557552.aspx#Startup
 [Runtime]: https://msdn.microsoft.com/zh-cn/library/azure/gg557552.aspx#Runtime
 [Environment]: https://msdn.microsoft.com/zh-cn/library/azure/gg557552.aspx#Environment
-[Variable]: https://msdn.microsoft.com/zh-cn/library/zh-cn/azure/gg557552.aspx#Variable
+[Variable]: https://msdn.microsoft.com/zh-cn/library/azure/gg557552.aspx#Variable
 [RoleInstanceValue]: https://msdn.microsoft.com/zh-cn/library/azure/gg557552.aspx#RoleInstanceValue
 [RoleEnvironment]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.serviceruntime.roleenvironment.aspx
 [Endpoints]: https://msdn.microsoft.com/zh-cn/library/azure/gg557552.aspx#Endpoints

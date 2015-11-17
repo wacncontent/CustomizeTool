@@ -21,6 +21,7 @@ This tutorial describes how to get started running Python on [Azure Websites](/d
 You will create an application using the Django web framework (see alternate versions of this tutorial for [Flask](/documentation/articles/web-sites-python-create-deploy-flask-app) and [Bottle](/documentation/articles/web-sites-python-create-deploy-bottle-app)). You will create the web app, set up Git deployment, and clone the repository locally. Then you will run the application locally, make changes, commit and push them to Azure. The tutorial shows how to do this from Windows or Mac/Linux.
 
 [AZURE.INCLUDE [create-account-and-websites-note](../includes/create-account-and-websites-note.md)]
+
 + [Prerequisites](#prerequisites)
 + [Website Creation on Portal](#website-creation-on-portal)
 + [Application Overview](#application-overview)
@@ -44,7 +45,7 @@ You will create an application using the Django web framework (see alternate ver
 - Python 2.7 or 3.4
 - setuptools, pip, virtualenv (Python 2.7 only)
 - Git
-- [Python Tools for Visual Studio][] - Note: this is optional
+- [Python Tools for Visual Studio][] (PTVS) - Note: this is optional
 
 **Note**: TFS publishing is currently not supported for Python projects.
 
@@ -63,6 +64,7 @@ You should have Python and Git already installed, but make sure you have either 
 
 <a name="website-creation-on-portal"></a>
 ## Web App Creation on Portal
+
 The first step in creating your app is to create the web site via the Azure Management Portal.  To do this, you will need to login to the portal and click the NEW button in the bottom left corner. A window will appear. Click **Quick Create**, enter a URL, and select **Create Web Site**.
 
 ![](./media/web-sites-python-create-deploy-django-app/django-ws-003.png)
@@ -521,6 +523,7 @@ For information on using SQL Database and MySQL:
 [Django and SQL Database on Azure with Python Tools for Visual Studio]: /documentation/articles/web-sites-python-ptvs-django-sql
 [SQL Database]: /documentation/articles/web-sites-python-ptvs-django-sql
 [MySQL]: /documentation/articles/web-sites-python-ptvs-django-mysql
+
 <!--External Link references-->
 [Azure SDK for Python 2.7]: http://go.microsoft.com/fwlink/?linkid=254281
 [Azure SDK for Python 3.4]: http://go.microsoft.com/fwlink/?linkid=516990

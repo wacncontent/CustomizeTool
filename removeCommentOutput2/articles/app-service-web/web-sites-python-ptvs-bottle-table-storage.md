@@ -74,7 +74,9 @@ To use storage operations, you need an Azure storage account. You can create a s
 1.  Log into the [Azure Management Portal].
 
 2. Click the **New** icon on the bottom left of the portal, then click **DATA SERVICE** > **Storage**. Give the storage account a unique name and create a new [resource group](/documentation/articles/resource-group-overview) for it.
+
   	![Quick Create](./media/web-sites-python-ptvs-bottle-table-storage/PollsCommonAzureStorageCreate.png)
+
 	When the storage account has been created, the **Notifications** button will flash a green **SUCCESS** and the storage account's blade is open to show that it belongs to the new resource group you created.
 
   	<!-- ![Quick Create](./media/web-sites-python-ptvs-bottle-table-storage/PollsCommonAzureStorageCreate.png) -->
@@ -153,6 +155,7 @@ The Azure .NET SDK provides an easy way to deploy your web app to Azure Websites
 ## Configure the Web Apps instance
 
 In this section, we'll configure environment variables for the Web Apps instance.
+
 1.  In [Azure Management Portal], open the web app's blade by clicking **Web Apps** > your web app name.
 
 1.  In your web app's blade, click **Configure**.
@@ -192,6 +195,7 @@ Follow these links to learn more about Python Tools for Visual Studio, Bottle an
 [Azure Cloud Services]: /documentation/articles/cloud-services-python-ptvs
 [documentation]: /documentation/articles/storage-python-how-to-use-table-storage
 [How to Use the Table Storage Service from Python]: /documentation/articles/storage-python-how-to-use-table-storage
+
 <!--External Link references-->
 [Azure Management Portal]: https://manage.windowsazure.cn
 [Azure SDK for .NET]: /downloads/

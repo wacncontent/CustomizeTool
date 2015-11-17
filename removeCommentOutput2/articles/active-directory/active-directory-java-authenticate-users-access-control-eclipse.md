@@ -53,7 +53,7 @@ concepts:
 **Client** - In the context of this how-to guide, this is a browser that
 is attempting to gain access to your web application.
 
-**Relying party (RP) application** - An RP application is a Website or
+**Relying party (RP) application** - An RP application is a website or
 service that outsources authentication to one external authority. In
 identity jargon, we say that the RP trusts that authority. This guide
 explains how to configure your application to trust ACS.
@@ -131,7 +131,7 @@ addressing ACS resources from within your application.
 
 1. Log into the [Azure Management Portal][].
 2. Click **Active Directory**. 
-3. To create a new Access Control namespace, click **New**, click **Azure Websites**, click **Access Control**, and then click **Quick Create**. 
+3. To create a new Access Control namespace, click **New**, click **App Services**, click **Access Control**, and then click **Quick Create**. 
 4. Enter a name for the namespace. Azure verifies that the name is unique.
 5. Select the region in which the namespace is used. For the best performance, use the region in which you are deploying your application.
 6. If you have more than one subscription, select the subscription that you want to use for the ACS namespace.
@@ -199,7 +199,7 @@ In this task, you upload a .PFX certificate that will be used to sign token requ
 3.  On the **Add Token-Signing Certificate or Key** page:
     1. In the **Used for** section, click **Relying Party Application** and select **Azure Web App** (which you previously set as the name of your relying party application).
     2. In the **Type** section, select **X.509 Certificate**.
-    3. In the **Certificate** section, click the browse button and navigate to the X.509 certificate file that you want to use. This will be a .PFX file. Select the file, click **Open**,  and then enter the certificate password in the **Password** text box. Note that for testing purposes, you may use a self-signed-certificate. To create a self-signed certificate, use the **New** button in the **ACS Filter Library** dialog (described later), or use the **encutil.exe** utility from the [project Website][] of the Azure Starter Kit for Java.(by Microsoft Open Technologies) 
+    3. In the **Certificate** section, click the browse button and navigate to the X.509 certificate file that you want to use. This will be a .PFX file. Select the file, click **Open**,  and then enter the certificate password in the **Password** text box. Note that for testing purposes, you may use a self-signed-certificate. To create a self-signed certificate, use the **New** button in the **ACS Filter Library** dialog (described later), or use the **encutil.exe** utility from the [project website][] of the Azure Starter Kit for Java.
     4. Ensure that **Make Primary** is checked. Your **Add Token-Signing Certificate or Key** page should look similar to the following.
         ![Add token-signing certificate][add_token_signing_cert]
     5. Click **Save** to save your settings and close the **Add Token-Signing Certificate or Key** page.
@@ -351,11 +351,11 @@ At this point, your certificate would be included in your deployment. Note that 
 [Deploy to the compute emulator]: #deploy_compute_emulator
 [Deploy to Azure]: #deploy_azure
 [Next steps]: #next_steps
-[project  Website]: http://wastarterkit4java.codeplex.com/releases/view/61026
-[How to view SAML returned by the Azure Access Control Service]: /documentation/articles/active-directory-java-view-saml-returned-by-access-control
-[Access Control Service 2.0]: http://msdn.microsoft.com/zh-cn/library/hh147631.aspx
-[Windows Identity Foundation]: http://www.microsoft.com/zh-cn/download/details.aspx?id=17331
-[Windows Identity Foundation SDK]: http://www.microsoft.com/zh-cn/download/details.aspx?id=4451
+[project website]: http://wastarterkit4java.codeplex.com/releases/view/61026
+[How to view SAML returned by the Azure Access Control Service]: /develop/java/how-to-guides/view-saml-returned-by-acs/
+[Access Control Service 2.0]: http://go.microsoft.com/fwlink/?LinkID=212360
+[Windows Identity Foundation]: http://www.microsoft.com/download/en/details.aspx?id=17331
+[Windows Identity Foundation SDK]: http://www.microsoft.com/download/en/details.aspx?id=4451
 [Azure Management Portal]: https://manage.windowsazure.cn
 [acs_flow]: ./media/active-directory-java-authenticate-users-access-control-eclipse/ACSFlow.png
 

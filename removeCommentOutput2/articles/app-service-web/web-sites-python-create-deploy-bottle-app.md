@@ -21,6 +21,7 @@ This tutorial describes how to get started running Python in Azure Websites. Web
 You will create a web app using the Bottle web framework (see alternate versions of this tutorial for [Django](/documentation/articles/web-sites-python-create-deploy-django-app) and [Flask](/documentation/articles/web-sites-python-create-deploy-flask-app)). You will create the web app from the Azure Marketplace, set up Git deployment, and clone the repository locally. Then you will run the web app locally, make changes, commit and push them to [Azure Websites](/documentation/services/web-sites/). The tutorial shows how to do this from Windows or Mac/Linux.
 
 [AZURE.INCLUDE [create-account-and-websites-note](../includes/create-account-and-websites-note.md)]
+
 + [Prerequisites](#prerequisites)
 + [Website Creation on Portal](#website-creation-on-portal)
 + [Application Overview](#application-overview)
@@ -32,13 +33,14 @@ You will create a web app using the Bottle web framework (see alternate versions
 + [Troubleshooting - Package Installation](#troubleshooting-package-installation)
 + [Troubleshooting - Virtual Environment](#troubleshooting-virtual-environment)
 + [Next steps](#next-steps)
+
 ## Prerequisites
 
 - Windows, Mac or Linux
 - Python 2.7 or 3.4
 - setuptools, pip, virtualenv (Python 2.7 only)
 - Git
-- [Python Tools 2.2 for Visual Studio][](/documentation/articles/PTVS) - Note: this is optional
+- [Python Tools 2.2 for Visual Studio][](PTVS) - Note: this is optional
 
 **Note**: TFS publishing is currently not supported for Python projects.
 
@@ -58,10 +60,12 @@ You should have Python and Git already installed, but make sure you have either 
 ## Web app creation on the Azure Management Portal
 
 The first step in creating your app is to create the web app via the [Azure Management Portal](https://manage.windowsazure.cn).
+
 1. Login to the [Azure Management Portal].
 1. Click **New** at the bottom of the page, then click **Compute**, ** Website**, and **Quick Create**. Provide a **URL** for your  Website and select the **Region** for your  Website. Finally, click **Create  Website**.
 
     ![Select Quick Create  Website](./media/web-sites-php-create-web-sites/select-quickcreate-Website.png)
+
 6. Configure Git publishing for your newly created web app by following the instructions at [Continuous deployment using GIT in Azure Websites](/documentation/articles/web-sites-publish-source-control).
  
 ## Application Overview
@@ -381,6 +385,7 @@ For information on using Azure Table Storage and MongoDB:
 <!--Link references-->
 [Bottle and MongoDB on Azure with Python Tools for Visual Studio]: /documentation/articles/web-sites-python-ptvs-bottle-table-storage
 [Bottle and Azure Table Storage on Azure with Python Tools for Visual Studio]: /documentation/articles/web-sites-python-ptvs-bottle-table-storage
+
 <!--External Link references-->
 [Azure SDK for Python 2.7]: http://go.microsoft.com/fwlink/?linkid=254281
 [Azure SDK for Python 3.4]: http://go.microsoft.com/fwlink/?linkid=516990

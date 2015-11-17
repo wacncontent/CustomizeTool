@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties
 	pageTitle="Customize HDInsight Clusters using script actions | Windows Azure"
 	description="Learn how to add custom components to Linux-based HDInsight clusters using Script Actions. Script Actions are Bash scripts that run during cluster creation, and can be used to customize the cluster configuration or add additional services and utilities like Hue, Solr, or R."
@@ -255,7 +257,7 @@ In this section, we use Azure Resource Manager (ARM) templates to provision an H
 		New-AzureResourceGroup -Name myresourcegroup -Location "China North"
 
 		ResourceGroupName : myresourcegroup
-		Location          : westus
+		Location          : chinanorth
 		ProvisioningState : Succeeded
 		Tags              :
 		Permissions       :
@@ -452,7 +454,7 @@ There are two types of open-source components that are available in the HDInsigh
 
 - **Custom components** - You, as a user of the cluster, can install or use in your workload any component available in the community or created by you.
 
-Built-in components are fully supported and, Microsoft Support will help to isolate and resolve issues related to these components.
+Built-in components are fully supported, and Microsoft Support will help to isolate and resolve issues related to these components.
 
 Custom components receive commercially reasonable support to help you to further troubleshoot the issue. This might result in resolving the issue or asking you to engage available channels for the open-source technologies where deep expertise for that technology is found. For example, there are many community sites that can be used, like:
 

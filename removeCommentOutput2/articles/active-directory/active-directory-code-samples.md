@@ -49,9 +49,9 @@ This sample shows how to write a single page application secured with Azure AD.
 
 
 ## Native Application to Web API
- 
-These code samples show how to build native client applications that call web APIs that are secured by Azure AD. They use [Azure AD Authentication Library (ADAL)](https://msdn.microsoft.com/zh-CN/library/jj573266) and [OAuth 2.0 in Azure AD](https://msdn.microsoft.com/zh-CN/library/azure/dn645545.aspx).
- 
+
+These code samples show how to build native client applications that call web APIs that are secured by Azure AD. They use [Azure AD Authentication Library (ADAL)](https://msdn.microsoft.com/zh-cn/library/jj573266) and [OAuth 2.0 in Azure AD](https://msdn.microsoft.com/zh-cn/library/azure/dn645545.aspx).
+
 | Language/Platform | Sample | Description
 | ----------------- | ------ | -----------
 | Javascript | [NativeClient-MultiTarget-Cordova](https://github.com/AzureADSamples/NativeClient-MultiTarget-Cordova) | Use the ADAL plugin for Apache Cordova to build an Apache Cordova app that calls a web API and uses Azure AD for authentication.
@@ -71,19 +71,19 @@ These code samples show how to build native client applications that call web AP
 
 ## Web Application to Web API
 
-These code samples show how use [OAuth 2.0 in Azure AD](https://msdn.microsoft.com/zh-CN/library/azure/dn645545.aspx) to build web applications that call web APIs that are secured by Azure AD.
+These code samples show how use [OAuth 2.0 in Azure AD](https://msdn.microsoft.com/zh-cn/library/azure/dn645545.aspx) to build web applications that call web APIs that are secured by Azure AD.
 
 | Language/Platform | Sample | Description
 | ----------------- | ------ | -----------
 | C#/.NET | [WebApp-WebAPI-OpenIDConnect-DotNet](http://github.com/AzureADSamples/WebApp-WebAPI-OpenIDConnect-DotNet) | Call a web API with the signed-in user's permissions.
 |  C#/.NET | [WebApp-WebAPI-OAuth2-AppIdentity-DotNet](http://github.com/AzureADSamples/WebApp-WebAPI-OAuth2-AppIdentity-DotNet) | Call a web API with the application's permissions.
-| C#/.NET | [WebApp-WebAPI-OAuth2-UserIdentity-Dotnet](http://github.com/AzureADSamples/WebApp-WebAPI-OAuth2-UserIdentity-Dotnet) | Add authorization with [OAuth 2.0 in Azure AD](https://msdn.microsoft.com/zh-CN/library/azure/dn645545.aspx) to an existing web application so it can call a web API.
+| C#/.NET | [WebApp-WebAPI-OAuth2-UserIdentity-Dotnet](http://github.com/AzureADSamples/WebApp-WebAPI-OAuth2-UserIdentity-Dotnet) | Add authorization with [OAuth 2.0 in Azure AD](https://msdn.microsoft.com/zh-cn/library/azure/dn645545.aspx) to an existing web application so it can call a web API.
 | JavaScript | [WebAPI-Nodejs](http://github.com/AzureADSamples/WebAPI-Nodejs) | Set up a REST API service that's integrated with Azure AD for API protection. Includes a Node.js server with a Web API.
 | C#/.NET | [WebApp-WebAPI-MultiTenant-OpenIdConnect-DotNet](https://github.com/AzureADSamples/WebApp-WebAPI-MultiTenant-OpenIdConnect-DotNet) |  A multi-tenant MVC web application that uses OpenID Connect (ASP.Net OpenID Connect OWIN middleware) to authenticate users from an Azure AD tenant. Uses an authorization code to invoke the Graph API.
 
 ## Server or Daemon Application to Web API
 
-These code samples show how to build a daemon or server application that gets resources from a web API by using [Azure AD Authentication Library (ADAL)](https://msdn.microsoft.com/zh-CN/library/jj573266) and [OAuth 2.0 in Azure AD](https://msdn.microsoft.com/zh-CN/library/azure/dn645545.aspx).
+These code samples show how to build a daemon or server application that gets resources from a web API by using [Azure AD Authentication Library (ADAL)](https://msdn.microsoft.com/zh-cn/library/jj573266) and [OAuth 2.0 in Azure AD](https://msdn.microsoft.com/zh-cn/library/azure/dn645545.aspx).
 
 | Language/Platform | Sample | Description
 | ----------------- | ------ | -----------
@@ -122,7 +122,7 @@ These walkthroughs use slightly older technology, but still might be of interest
 
 | Language/Platform | Sample | Description
 | ----------------- | ------ | -----------
-| C#/.NET | [Role-Based and ACL-Based Authorization in a Windows Azure AD Application](http://code.msdn.microsoft.com/Role-Based-and-ACL-Based-86ad71a1) | Perform role-based authorization (RBAC) and ACL-based authorization in an application that is integrated with Azure AD.
+| C#/.NET | [Role-Based and ACL-Based Authorization in a Windows Azure AD Application](https://code.msdn.microsoft.com:443/Role-Based-and-ACL-Based-86ad71a1) | Perform role-based authorization (RBAC) and ACL-based authorization in an application that is integrated with Azure AD.
 | C#/.NET |  [AAL - Windows Store app to REST service - Authentication](https://code.msdn.microsoft.com:443/windowsapps/AAL-Windows-Store-app-to-2430e331) |  Use [Azure AD Authentication Library (ADAL)](https://msdn.microsoft.com/zh-cn/library/jj573266) (formerly AAL) for Windows Store Beta to add user authentication capabilities to a Windows Store app.
 | C#/.NET | [ADAL - Native App to REST service - Authentication with AAD via Browser Dialog](https://code.msdn.microsoft.com:443/AAL-Native-Application-to-fd648dcf) |  Use [Azure AD Authentication Library (ADAL)](https://msdn.microsoft.com/zh-cn/library/jj573266) to add user authentication capabilities to a WPF client.
 | C#/.NET | [ADAL - Native App to REST service - Authentication with ACS via Browser Dialog](http://code.msdn.microsoft.com/AAL-Native-App-to-REST-de57f2cc) |  Use [Azure AD Authentication Library (ADAL)](https://msdn.microsoft.com/zh-cn/library/jj573266) and [Access Control Service 2.0 (ACS)](http://msdn.microsoft.com/zh-cn/library/azure/hh147631.aspx) to add user authentication capabilities to a WPF client.
@@ -145,4 +145,4 @@ PHP | [PHP Sample App for Azure AD Graph API](http://code.msdn.microsoft.com/PHP
 
 [Azure AD Graph API Helper Library](http://code.msdn.microsoft.com/Windows-Azure-AD-Graph-API-a8c72e18)
 
-[Developing Modern Applications using OAuth and Active Directory Federation Services](https://msdn.microsoft.com/zh-CN/library/dn633593.aspx) 
+[Developing Modern Applications using OAuth and Active Directory Federation Services](http://msdn.microsoft.com/zh-cn/library/dn633593.aspx)

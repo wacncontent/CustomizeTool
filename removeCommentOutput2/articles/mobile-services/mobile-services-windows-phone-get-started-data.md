@@ -15,20 +15,20 @@
 
 # Add Mobile Services to an existing app
 
-[AZURE.INCLUDE [mobile-services-selector-get-started-data-legacy](../includes/mobile-services-selector-get-started-data-legacy.md)]
+[AZURE.INCLUDE [mobile-services-selector-get-started-data](../includes/mobile-services-selector-get-started-data.md)]
 
 ##Overview
 
-<p>This topic shows you how to use Azure Mobile Services to leverage data in a Windows Phone 8 app.</p> In this tutorial, you will download an app that stores data in memory, create a new mobile service, integrate the mobile service with the app, and then login to the Azure Management Portal to view changes to data made when running the app.
-</div>
-<div class="dev-onpage-video-wrapper"><a href="http://go.microsoft.com/fwlink/?LinkID=298628" target="_blank" class="label">watch the tutorial</a> <a style="background-image: url('/media/devcenter/mobile/videos/mobile-wp8-get-started-data-180x120.png') !important;" href="http://go.microsoft.com/fwlink/?LinkID=298628" target="_blank" class="dev-onpage-video"><span class="icon">Play Video</span></a> <span class="time">12:54</span></div>
-</div>
+This topic shows you how to use Azure Mobile Services to leverage data in a Windows Phone 8 app. In this tutorial, you will download an app that stores data in memory, create a new mobile service, integrate the mobile service with the app, and then login to the Azure Management Portal to view changes to data made when running the app.
+
+You can also see Nick Harris demonstrate this in the following video:
+>[AZURE.VIDEO mobile-get-started-with-data-windows-phone]
 
 ##Prerequisites 
 
 + Visual Studio 2012 Express for Windows Phone 8 and the [Windows Phone 8 SDK] running on Windows 8. To complete this tutorial to create a Windows Phone 8.1 app, you must use Visual Studio 2013 Update 2, or a later version. 
 
->[AZURE.NOTE]To complete this tutorial, you need an Azure account. If you don't have an account, you can create a trial account in just a couple of minutes. For details, see <a href="/pricing/1rmb-trial/ target="_blank">Azure Trial</a>.
++ An Azure account. If you don't have an account, you can create a trial account in just a couple of minutes. For details, see [Azure Trial](/pricing/1rmb-trial/?WT.mc_id=A756A2826&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Farticles%2Fdocumentation%2Fmobile-services-windows-phone-get-started-data%2F).
 
 ##<a name="download-app"></a>Download the GetStartedWithData project
 
@@ -91,12 +91,12 @@ Now that your mobile service is ready, you can update the app to store items in 
 
   	This creates a new instance of **MobileServiceClient** that is used to access your mobile service.
 
-7. In the file MainPage.xaml.cs, add or uncomment the following `using` statements:
+6. In the file MainPage.xaml.cs, add or uncomment the following `using` statements:
 
        	using Microsoft.WindowsAzure.MobileServices;
 		using Newtonsoft.Json;
 
-8. In this same file, replace the **TodoItem** class definition with the following code:
+7. In this same file, replace the **TodoItem** class definition with the following code:
 
         public class TodoItem
         {
@@ -109,7 +109,7 @@ Now that your mobile service is ready, you can update the app to store items in 
             public bool Complete { get; set; }
         }
 
-9. Comment the line that defines the existing **items** collection, then uncomment the following lines:
+7. Comment the line that defines the existing **items** collection, then uncomment the following lines:
 
         private MobileServiceCollection<TodoItem, TodoItem> items;
         private IMobileServiceTable<TodoItem> todoTable = 
@@ -117,19 +117,19 @@ Now that your mobile service is ready, you can update the app to store items in 
 
    	This code creates a mobile services-aware binding collection (**items**) and a proxy class for the SQL Database table **TodoItem** (**todoTable**). 
 
-10. In the **InsertTodoItem** method, remove the line of code that sets the **TodoItem**.**Id** property, add the **async** modifier to the method, and uncomment the following line of code:
+7. In the **InsertTodoItem** method, remove the line of code that sets the **TodoItem**.**Id** property, add the **async** modifier to the method, and uncomment the following line of code:
 
         await todoTable.InsertAsync(todoItem);
 
   	This code inserts a new item into the table.
 
-11. In the **RefreshTodoItems** method, add the **async** modifier to the method, then uncomment the following line of code:
+8. In the **RefreshTodoItems** method, add the **async** modifier to the method, then uncomment the following line of code:
 
         items = await todoTable.ToCollectionAsync();
 
    	This sets the binding to the collection of items in the todoTable, which contains all TodoItem objects returned from the mobile service. 
 
-12. In the **UpdateCheckedTodoItem** method, add the **async** modifier to the method, and uncomment the following line of code:
+9. In the **UpdateCheckedTodoItem** method, add the **async** modifier to the method, and uncomment the following line of code:
 
          await todoTable.UpdateAsync(item);
 

@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties 
 	pageTitle="Network Configuration Details for Working with Express Route" 
 	description="Network configuration details for running Azure Websites Environments in a Virtual Networks connected to an ExpressRoute Circuit." 

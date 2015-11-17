@@ -191,9 +191,9 @@ The Contains function finds a string inside a multi-valued attribute
 - Casetype: CaseInsensitive or CaseSensitive.<br>
 
 Returns index in the multi-valued attribute where the string was found. 0 is returned if the string is not found.
- 
 
-**Remarks:**<br> 
+
+**Remarks:**<br>
 For multi-valued string attributes the search will find substrings in the values.<br>
 For reference attributes, the searched string must exactly match the value to be considered a match.
 
@@ -885,9 +885,9 @@ The Mid function returns a specified number of characters from a specified posit
 - string: the string to return characters from <br>
 - start: a number identifying the starting position in string to return characters from
 - NumChars: a number identifying the number of characters to return from position in string
- 
 
-**Remarks:** <br> 
+
+**Remarks:** <br>
 Return numChars characters starting from position start in string.<br>
 A string containing numChars characters from position start in string:
 
@@ -930,9 +930,9 @@ The NumFromDate function returns a date in AD’s date format.
 
 **Syntax:** <br>
 `num NumFromDate(dt value)`
- 
 
-**Example:** <br> 
+
+**Example:** <br>
 `NumFromDate(CDate("2012-01-01 23:00:00"))` <br>
 Returns 129699324000000000
 
@@ -992,9 +992,9 @@ The PadRight function right-pads a string to a specified length using a provided
 - If string has a length greater than or equal to length, a string identical to string is returned.
 - If the length of string is less than length, then a new string of the desired length is returned containing string padded with a padCharacter.
 - If string is null, the function returns an empty string.
- 
 
-**Example:** <br> 
+
+**Example:** <br>
 `PadRight(“User”, 10, “0”)` <br>
 Returns “User000000”.
 
@@ -1064,18 +1064,18 @@ The Replace function replaces all occurrences of a string to another string.
 - string: A string to replace values in. <br>
 - OldValue: The string to search for and to replace. <br>
 - NewValue: The string to replace to.
- 
 
-**Remarks:** <br> 
+
+**Remarks:** <br>
 The function recognizes the following special monikers:
 
 - \n – New Line
 - \r – Carriage Return
 - \t – Tab
- 
 
-**Example:** <br> 
- 
+
+**Example:** <br>
+
 `Replace([address],”\r\n”,”, “)` <br>
 Replaces CRLF with a comma and space, and could lead to “One Microsoft Way, Redmond, WA, USA”
 
@@ -1095,10 +1095,10 @@ The ReplaceChars function replaces all occurrences of characters found in the Re
 - ReplacePattern: a string containing a dictionary with characters to replace.
 
 The format is {source1}:{target1},{source2}:{target2},{sourceN},{targetN} where source is the character to find and target the string to replace with.
- 
 
-**Remarks:** 
- 
+
+**Remarks:**
+
 - The function takes each occurrence of defined sources and replaces them with the targets.
 - The source must be exactly one (unicode) character.
 - The source cannot be empty or longer than one character (parsing error).
@@ -1107,9 +1107,9 @@ The format is {source1}:{target1},{source2}:{target2},{sourceN},{targetN} where 
 - The source is case sensitive and must be an exact match.
 - The , (comma) and : (colon) are reserved characters and cannot be replaced using this function.
 - Spaces and other white characters in the ReplacePattern string are ignored.
- 
 
-**Example:** <br> 
+
+**Example:** <br>
 '%ReplaceString% = ’:,Å:A,Ä:A,Ö:O,å:a,ä:a,ö,o'
 
 `ReplaceChars(”Räksmörgås”,%ReplaceString%)` <br>
@@ -1172,9 +1172,9 @@ Returns “ Test”.
 
 **Description:** <br>
 The Split function takes a string separated with a delimiter and makes it a multi-valued string.
- 
 
-**Syntax:** <br> 
+
+**Syntax:** <br>
 `mvstr Split(str value, str delimiter)` <br?
 `mvstr Split(str value, str delimiter, num limit)`
 
@@ -1302,9 +1302,9 @@ Each string of characters in string separated by the one of the characters in de
 - If string is null, returns empty string.
 
 If string contains less than number words, or string does not contain any words identified by delimeters, an empty string is returned.
- 
 
-**Example:** <br> 
+
+**Example:** <br>
 `Word(“The quick brown fox”,3,” “)` <br>
 Returns “brown”
 

@@ -44,7 +44,7 @@ This tutorial is based on the Mobile Services Quick Start and builds on the [Add
 
 	This code adds the user ID of the authenticated user to the item, before it is inserted into the TodoItem table.
 
-4. Locate the **GetAllTodoItems** method and replace the existing **return** statement with the following line of code:
+3. Locate the **GetAllTodoItems** method and replace the existing **return** statement with the following line of code:
 
 		// Get the logged in user
 		var currentUser = User as ServiceUser;
@@ -53,7 +53,7 @@ This tutorial is based on the Mobile Services Quick Start and builds on the [Add
 
 	This query filters the returned TodoItem objects so that each user only receives the items that they inserted.
 
-5. Republish the mobile service project to Azure.
+4. Republish the mobile service project to Azure.
 
 
 ## <a name="test-app"></a>Test the app

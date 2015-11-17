@@ -34,10 +34,11 @@ Hybrid cloud/on-premises applications are a reality of modern IT environments. W
 - [Service Bus Pricing Info](/home/features/service-bus/#price)
 - [Service Bus Pricing FAQ](/documentation/articles/service-bus-pricing-faq)
 - [Service Bus REST API Reference](http://msdn.microsoft.com/zh-cn/library/azure/hh780717.aspx)
-- [Sign up for a Azure trial](/pricing/1rmb-trial/)
+- [Sign up for an Azure trial](/pricing/1rmb-trial/?WT.mc_id=A85619ABF)
  
 ## Related services
-- [BizTalk Services](/hoeme/features/biztalk-services/)
+
+- [BizTalk Services](/home/features/biztalk-services/)
 - [Mobile Services](/home/features/mobile-services/)
 - [Cloud Services](/home/features/cloud-services/) 
  

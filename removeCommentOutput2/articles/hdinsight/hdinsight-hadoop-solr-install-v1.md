@@ -24,6 +24,7 @@ The sample script works only with HDInsight cluster version 3.1. For more inform
 The sample script used in this topic creates a Windows-based Solr cluster with a specific configuration. If you want to configure the Solr cluster with different collections, shards, schemas, replicas, etc., you must modify the script and Solr binaries accordingly.
 
 **Related articles**
+
 - [Create Hadoop clusters in HDInsight](/documentation/articles/hdinsight-provision-clusters): general information on creating HDInsight clusters
 - [Customize HDInsight cluster using Script Action][hdinsight-cluster-customize]: general information on customizing HDInsight clusters using Script Action
 - [Develop Script Action scripts for HDInsight](/documentation/articles/hdinsight-hadoop-script-actions)
@@ -32,10 +33,12 @@ The sample script used in this topic creates a Windows-based Solr cluster with a
 ## What is Solr?
 
 <a href="http://lucene.apache.org/solr/features.html" target="_blank">Apache Solr</a> is an enterprise search platform that enables powerful full-text search on data. While Hadoop enables storing and managing vast amounts of data, Apache Solr provides the search capabilities to quickly retrieve the data.    
+
 <a name="install"></a>
 ## How do I install Solr?
 
 A sample script to install Solr on an HDInsight cluster is available from a read-only Azure storage blob at [https://hdiconfigactions.blob.core.windows.net/solrconfigactionv01/solr-installer-v01.ps1](https://hdiconfigactions.blob.core.windows.net/solrconfigactionv01/solr-installer-v01.ps1). This section provides instructions on how to use the sample script while provisioning the cluster by using the Azure Management Portal. 
+
 * [Install Solr on HDInsight clusters](/documentation/articles/hdinsight-hadoop-solr-install)
 
 1. Start creating a cluster by using the **CUSTOM CREATE** option, as described at [Create Hadoop clusters in HDInsight](/documentation/articles/hdinsight-provision-clusters#portal). 
@@ -168,6 +171,7 @@ You must start with indexing Solr with some data files. You can then use Solr to
 
 <a name="usingPS"></a>
 ## Install Solr using Aure PowerShell
+
 In this section we use the **<a href = "http://msdn.microsoft.com/zh-cn/library/dn858088.aspx" target="_blank">Add-AzureHDInsightScriptAction</a>** cmdlet to invoke scripts by using Script Action to customize a cluster. Before proceeding, make sure you have installed and configured Azure PowerShell. For information on configuring a workstation to run HDInsight Windows PowerShell cmdlets, see [Install and configure Azure PowerShell][powershell-install-configure].
 
 Perform the following steps:
@@ -231,6 +235,7 @@ When prompted, enter the credentials for the cluster. It can take several minute
 
 <a name="usingSDK"></a>
 ## Install Sole using .NET SDK
+
 The HDInsight .NET SDK provides .NET client libraries that make it easier to work with HDInsight from a .NET Framework application. This section provides instructions on how to use Script Action from the SDK to provision a cluster that has Solr installed. The following procedures must be performed:
 
 - Install the HDInsight .NET SDK
@@ -354,6 +359,7 @@ Open a Windows PowerShell or Azure PowerShell console, navigate to the location 
 Provide a cluster name and press ENTER to provision a cluster with Solr installed.
 
 ## See also
+
 - [Create Hadoop clusters in HDInsight](/documentation/articles/hdinsight-provision-clusters): general information on creating HDInsight clusters
 - [Customize HDInsight cluster using Script Action][hdinsight-cluster-customize]: general information on customizing HDInsight clusters using Script Action
 - [Develop Script Action scripts for HDInsight](/documentation/articles/hdinsight-hadoop-script-actions)
@@ -364,3 +370,4 @@ Provide a cluster name and press ENTER to provision a cluster with Solr installe
 [hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters
 [hdinsight-install-r]: /documentation/articles/hdinsight-hadoop-r-scripts
 [hdinsight-cluster-customize]: /documentation/articles/hdinsight-hadoop-customize-cluster
+ 

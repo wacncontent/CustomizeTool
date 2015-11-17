@@ -24,9 +24,10 @@
 [Next steps](/documentation/articles/active-directory-next-steps)<br>
 [Learn more](/documentation/articles/active-directory-learn-map)
 
-Azure AD creates an identity landscape that is yours in the cloud. It can be connected to your on-premises identity system or used independently. 
 
-You can think of an account in Azure AD as your driver's license for the cloud: it's your unique ID for accessing services online. In that sense, Azure AD works like your own private registrar in the cloud for those driver's licenses.  It enables identities to be used anywhere in the cloud, and improves mobility for users who access resources on-premises. 
+Azure AD creates an identity landscape that is yours in the cloud. It can be connected to your on-premises identity system or used independently.
+
+You can think of an account in Azure AD as your driver's license for the cloud: it's your unique ID for accessing services online. In that sense, Azure AD works like your own private registrar in the cloud for those driver's licenses.  It enables identities to be used anywhere in the cloud, and improves mobility for users who access resources on-premises.
 
 > [AZURE.NOTE] To use Azure Active Directory, you need an Azure account. If you don't have an account, you can [sign up for a free Azure account](/pricing/1rmb-trial/).
 

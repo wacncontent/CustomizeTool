@@ -734,6 +734,7 @@ When you see that the item you enter is saved and appears on the contact manager
 ![Index page with contacts][addwebapi004]
 
 The application is now running in the cloud, using SQL Database to store its data. After you finish testing the application in Azure, delete it. The application is public and doesn't have a mechanism to limit access.
+
 <h2><a name="nextsteps"></a>Next Steps</h2>
 ## Next Steps
 

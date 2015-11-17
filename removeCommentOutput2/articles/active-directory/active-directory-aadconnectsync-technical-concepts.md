@@ -20,18 +20,18 @@ The following sections introduce the concepts for metadirectory synchronization.
 Building upon MIIS, ILM, and FIM, the Azure Active Directory Sync Services provides the next platform for connecting to data sources, synchronizing data between data sources, as well as the provisioning and deprovisioning of identities.
 
 ![Technical Concepts][1]
- 
 
 
-The following sections provide more details about the following aspects of the FIM Synchronization Service: 
 
-- Connector 
-- Attribute flow 
-- Connector space 
-- Metaverse 
-- Provisioning 
+The following sections provide more details about the following aspects of the FIM Synchronization Service:
 
- 
+- Connector
+- Attribute flow
+- Connector space
+- Metaverse
+- Provisioning
+
+
 
 
 

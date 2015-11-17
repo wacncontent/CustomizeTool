@@ -33,5 +33,4 @@ Under `services\mobileServices\settings`, a new JavaScript (.js) file with a **M
 	        "<insert your key>"
 	    );
 
-[Learn more about mobile services](/home/features/mobile-services) 
-
+[Learn more about mobile services](/documentation/services/mobile-services/) 

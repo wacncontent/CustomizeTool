@@ -30,6 +30,7 @@ The sample application is an advertising bulletin board. Users can upload images
 - [Create the application from scratch](#create)
 - [Review the application code](#code)
 - [Next Steps](#next-steps)
+
 ## <a id="prerequisites"></a>Prerequisites
 
 The tutorial assumes that you know how to work with [ASP.NET MVC 5](http://www.asp.net/mvc/tutorials/mvc-5/introduction/getting-started) projects in Visual Studio.

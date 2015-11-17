@@ -101,8 +101,8 @@ If you can access the application, ensure that your Internet edge device is allo
 
 If you have run through steps 1 through 3 in this article and need additional help to correct the problem, you can:
 
-- Get help from Azure experts across the world. Submit your issue to either the MSDN Azure or Stack Overflow forums. See [Windows Azure Forums](http://azure.microsoft.com/support/forums/) for more information.
-- File an Azure support incident. Go to the [Azure Support site](http://azure.microsoft.com/support/options/) and click **Get support** under **Technical and billing support**.
+- Get help from Azure experts across the world. Submit your issue to either the MSDN Azure or Stack Overflow forums. See [Windows Azure Forums](/support/forums/) for more information.
+- File an Azure support incident. Go to the [Azure Support site](/support/contact/) and click **Get support** under **Technical and billing support**.
 
 ## Additional resources
 

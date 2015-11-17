@@ -55,7 +55,7 @@ Perform the following tasks to create a new Azure Cloud Service project, along w
 
 1. Run **Azure PowerShell** as Administrator. (From the **Start Menu** or **Start Screen**, search for **Azure PowerShell**.)
 
-2.  [Connect PowerShell](/documentation/articles/powershell-install-configure/#how-to-connect-to-your-subscription) to your subscription.
+2.  [Connect PowerShell](/documentation/articles/powershell-install-configure#how-to-connect-to-your-subscription) to your subscription.
 3.  Enter the following PowerShell cmdlet to create to create the project:
 
         New-AzureServiceProject helloworld
@@ -201,6 +201,6 @@ For more information, see the [Node.js Developer Center](/develop/nodejs/).
 [Internet Explorer displaying the save as dialog for the publishSettings file.]: ./media/cloud-services-nodejs-develop-deploy-app/getting-started-14.png
 
 [The full status output of the Publish-AzureService command]: ./media/cloud-services-nodejs-develop-deploy-app/node20.png
-[How to Delete a Storage Account from an Azure Subscription]: /documentation/articles/storage-manage-storage-account 
+[How to Delete a Storage Account from an Azure Subscription]: /documentation/articles/storage-manage-storage-account/
 [powershell-menu]: ./media/cloud-services-nodejs-develop-deploy-app/azure-powershell-start.png
  

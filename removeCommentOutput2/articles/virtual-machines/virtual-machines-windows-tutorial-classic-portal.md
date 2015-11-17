@@ -25,6 +25,7 @@ This tutorial shows you how easy it is to create an Azure virtual machine (VM) i
 
 You can also create VMs using [your own images](/documentation/articles/virtual-machines-create-upload-vhd-windows-server). To learn about this and other methods, see [Different ways to create a Windows virtual machine](/documentation/articles/virtual-machines-windows-choices-create-vm).
 
+[AZURE.INCLUDE [free-trial-note](../includes/free-trial-note.md)]
 
 ## <a id="createvirtualmachine"> </a>How to create the virtual machine
 
@@ -39,6 +40,7 @@ This section shows you how to use the **From Gallery** option in the Azure Manag
 - Log on to the virtual machine. For instructions, see [How to log on to a virtual machine running Windows Server](/documentation/articles/virtual-machines-log-on-windows-server).
 
 - Attach a disk to store data. You can attach both empty disks and disks that contain data. For instructions, see the [Attach a data disk tutorial](/documentation/articles/storage-windows-attach-disk).
+
 ## Additional resources
 
 To learn more about what you can configure for a virtual machine and when you can do it, see [About Azure VM configuration settings](http://msdn.microsoft.com/zh-cn/library/azure/dn763935.aspx).

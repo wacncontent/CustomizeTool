@@ -232,3 +232,4 @@ In this section, you will create a Scala application that counts the number of l
 [hdinsight-install-r]: /documentation/articles/hdinsight-hadoop-r-scripts-linux
 [hdinsight-cluster-customize]: /documentation/articles/hdinsight-hadoop-customize-cluster
 [powershell-install-configure]: /documentation/articles/install-configure-powershell
+ 

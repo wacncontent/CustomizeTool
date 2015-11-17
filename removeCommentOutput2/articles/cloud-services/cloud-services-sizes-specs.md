@@ -27,12 +27,6 @@ The following considerations might help you decide on a size:
 
 *   Dv2-series, a follow-on to the original D-series, features a more powerful CPU. The Dv2-series CPU is about 35% faster than the D-series CPU. It is based on the latest generation 2.4 GHz Intel Xeon® E5-2673 v3 (Haswell) processor, and with the Intel Turbo Boost Technology 2.0, can go up to 3.2 GHz. The Dv2-series has the same memory and disk configurations as the D-series.
 
-    Dv2-series regional availability will be based on this schedule:
-        Oct'15: China East 2, US Central, US North Central, US West
-        Nov'15: China East, Europe North, Europe West
-        Jan'16: US South Central, APAC East, APAC Southeast, Japan East, Japan West,
-                Australia East, Australia Southeast, Brazil South
-
 * Web roles and worker roles require more temporary disk space than Azure Virtual Machines because of system requirements. The system files reserve 4 GB of space for the Windows page file, and 2 GB of space for the Windows dump file.  
 
 * The OS disk contains the Windows guest OS and includes the Program Files folder (including installations done via startup tasks unless you specify another disk), registry changes, the System32 folder, and the .NET framework.  

@@ -98,7 +98,7 @@ To learn more about the versions of Node.js that are provided with Azure and how
 If you encounter problems with your application after it has been deployed to Azure, see [How to debug a Node.js web app in Azure Websites](/documentation/articles/web-sites-nodejs-debug) for information on diagnosing the problem.
 [Azure Management Portal]: http://manage.windowsazure.cn
 [Publishing an Azure  Website using Git]: /documentation/articles/web-sites-publish-source-control
-[for free]: /zh-cn/pricing/free-trial
+[for free]: /zh-cn/pricing/1rmb-trial
 [WebMatrix WebSite]: http://www.microsoft.com/click/services/Redirect2.ashx?CR_CC=200106398
 [WebMatrix for Azure]: http://go.microsoft.com/fwlink/?LinkID=253622&clcid=0x409
 

@@ -36,12 +36,12 @@ Install [pymssql](http://www.lfd.uci.edu/~gohlke/pythonlibs/#pymssql).
 
 Make sure you choose the correct whl file.
 
-For example : If you are using Python 2.7 on a 64 bit machine choose : pymssql-2.1.1-cp27-none-win_amd64.whl.
+For example : If you are using Python 2.7 on a 64 bit machine choose : pymssql‑2.1.1‑cp27‑none‑win_amd64.whl.
 Once you download the .whl file place it in the the C:/Python27 folder.
 
 Now install the pymssql driver using pip from command line. cd into C:/Python27 and run the following
 	
-	pip install pymssql-2.1.1-cp27-none-win_amd64.whl
+	pip install pymssql‑2.1.1‑cp27‑none‑win_amd64.whl
 
 Instructions to enable the use pip can be found [here](http://stackoverflow.com/questions/4750806/how-to-install-pip-on-windows)
 
@@ -49,7 +49,7 @@ Instructions to enable the use pip can be found [here](http://stackoverflow.com/
 ## Create a database and retrieve your connection string
 
 
-See the [Getting Started topic](/documentation/articles/sql-database-get-started) to learn how to create a sample database and retrieve your connection string. It is important you follow the guide to create an **AdventureWorks database template**. The samples shown below only work with the **AdventureWorks schema**.
+See the [Getting Started Topic](/documentation/articles/sql-database-get-started) to learn how to create a sample database and retrieve your connection string. It is important you follow the guide to create an **AdventureWorks database template**. The samples shown below only work with the **AdventureWorks schema**. 
 
 
 ## Connect to your SQL Database

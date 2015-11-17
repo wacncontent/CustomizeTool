@@ -34,7 +34,9 @@ In this sample, you will use an HDInsight cluster to analyze website log files t
 
 
 ##To run the sample
+
 1. From the Azure Management Portal, click the cluster on which you want to run the sample, and then click **Query Console** at the bottom. Alternatively, you can directly open the Query Console by using the following URL:
+
 	 	https://<clustername>.azurehdinsight.cn
 	
 	When prompted, authenticate by using the administrator user name and password you used when provisioning the cluster.

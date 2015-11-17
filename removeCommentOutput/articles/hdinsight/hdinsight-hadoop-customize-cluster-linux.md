@@ -258,7 +258,7 @@ In this section, we use Azure Resource Manager (ARM) templates to create an HDIn
 		New-AzureResourceGroup -Name myresourcegroup -Location "China North"
 
 		ResourceGroupName : myresourcegroup
-		Location          : westus
+		Location          : chinanorth
 		ProvisioningState : Succeeded
 		Tags              :
 		Permissions       :

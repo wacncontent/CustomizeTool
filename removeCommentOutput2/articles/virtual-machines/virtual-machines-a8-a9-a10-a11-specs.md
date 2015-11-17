@@ -59,7 +59,7 @@ A10 and A11 instances have a single, 10-Gbps Ethernet network adapter that conne
 
 ## Considerations for the Azure subscription
 
-* **Azure account** – If you want to deploy more than a small number of compute-intensive instances, consider a pay-as-you-go subscription or other purchase options. You can also use your MSDN subscription. See [Azure benefit for MSDN subscribers](/pricing/member-offers/msdn-benefits-details/). If you're using an [Azure trial](http://www.windowsazure.cn/pricing/1rmb-trial/), you can use only a limited number of Azure compute cores.
+* **Azure account** – If you want to deploy more than a small number of compute-intensive instances, consider a pay-as-you-go subscription or other purchase options. You can also use your MSDN subscription. See [Azure benefit for MSDN subscribers](/pricing/member-offers/msdn-benefits-details/). If you're using an [Azure trial](/pricing/1rmb-trial/), you can use only a limited number of Azure compute cores.
 
 * **Cores quota** – You might need to increase the cores quota in your Azure subscription from the default of 20 cores, which is not enough for many scenarios with 8-core or 16-core instances. For initial tests, you might consider requesting a quota increase to 100 cores. To do this, open a free support ticket as shown in [Understanding Azure limits and increases](http://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/).
 
@@ -67,7 +67,7 @@ A10 and A11 instances have a single, 10-Gbps Ethernet network adapter that conne
 
 * **Affinity group** – Currently, an affinity group is not recommended for most new deployments. However, note that if you're using an affinity group that contains instances of sizes other than A8–A11, you won't be able to use it for the A8–A11 instances, and vice versa.
 
-* **Virtual network** – An Azure virtual network is not required to use the compute-intensive instances. However, you may need at least a cloud-based Azure virtual network for many IaaS scenarios, or a site-to-site connection if you need to access on-premises resources such as an application license server. You will need to create a new (regional) virtual network before deploying the instances. Adding an A8, A9, A10, or A11 VM to a virtual network in an affinity group is not supported. For more information, see [How to create a virtual network (VNet)](/documentation/articles/networking/virtual-networks-create-vnet) and [Configure a virtual network with a site-to-site VPN connection](/documentation/articles/vpn-gateway/vpn-gateway-site-to-site-create).
+* **Virtual network** – An Azure virtual network is not required to use the compute-intensive instances. However, you may need at least a cloud-based Azure virtual network for many IaaS scenarios, or a site-to-site connection if you need to access on-premises resources such as an application license server. You will need to create a new (regional) virtual network before deploying the instances. Adding an A8, A9, A10, or A11 VM to a virtual network in an affinity group is not supported. For more information, see [How to create a virtual network (VNet)](/documentation/articles/virtual-networks-create-vnet) and [Configure a virtual network with a site-to-site VPN connection](/documentation/articles/vpn-gateway-site-to-site-create).
 
 * **Cloud service or availability set** – To connect through the RDMA network, the A8 and A9 instances must be deployed in the same cloud service (for IaaS scenarios with Linux-based VMs or Windows-based VMs in Azure Service Management, or PaaS scenarios with Windows Server) or the same availability set (for Linux-based VMs or Windows-based VMs in Azure Resource Manager).
 
@@ -87,7 +87,7 @@ For more information and checklists to use the compute-intensive instances with 
 
 ### Access from Linux A8 and A9 VMs
 
-Within a single cloud service or an availability set, the A8 and A9 instances can access the RDMA network in Azure for running MPI applications that use the Linux RDMA drivers to communicate between instances. At this time, Azure Linux RDMA is supported only with [Intel MPI Library 5](https://software.intel.com/zh-cn/intel-mpi-library/).
+Within a single cloud service or an availability set, the A8 and A9 instances can access the RDMA network in Azure for running MPI applications that use the Linux RDMA drivers to communicate between instances. At this time, Azure Linux RDMA is supported only with [Intel MPI Library 5](https://software.intel.com/intel-mpi-library/).
 
 >[AZURE.NOTE] Currently, Azure Linux RDMA drivers are not available for installation via driver extensions. They are available only by using the RDMA-enabled SLES 12 image from the Azure Marketplace.
 

@@ -43,6 +43,7 @@ To join a device to Azure AD
 > [AZURE.NOTE] Joining an on-premises Active Directory domain in the Windows out-of-box experience is not supported. Therefore, if you plan to join a PC to a domain you should select the link “Set up Windows with a local account instead”. You can then join the domain from PC Settings as you’ve done before.
 
 ## Additional Information
+* [Extending cloud capabilities to Windows 10 devices through Azure Active Directory Join](/documentation/articles/active-directory-azureadjoin-overview)
 * [Learn about usage scenarios for Azure AD Join](/documentation/articles/active-directory-azureadjoin-deployment-aadjoindirect)
 * [Set up Azure AD Join](/documentation/articles/active-directory-azureadjoin-setup)
 

@@ -20,7 +20,7 @@ The following example shows you how you can create a virtual machine (VM) based 
 
 ##To create an Oracle Database VM in Azure
 
-1.	Log in to the [Azure Management Portal](https://ms.portal.azure.com/).
+1.	Log in to the [Azure Management Portal](https://manage.windowsazure.cn/).
 
 2.	Click **Marketplace**, click **Compute**, and then type **Oracle** into the search box.
 
@@ -53,7 +53,7 @@ The following example shows you how you can create a virtual machine (VM) based 
 
 ##To create your database using the Oracle Database VM in Azure
 
-1.	Log in to the [Azure Management Portal](https://ms.portal.azure.com/).
+1.	Log in to the [Azure Management Portal](https://manage.windowsazure.cn/).
 
 2.	Click **Virtual Machines**.
 
@@ -145,7 +145,7 @@ To allow your database to be reached remotely (for example, from a client comput
 
 ### Create a public endpoint for port 1521
 
-1.	Log in to the [Azure Management Portal](https://ms.portal.azure.com/).
+1.	Log in to the [Azure Management Portal](https://manage.windowsazure.cn/).
 
 2.	Click **Browse**.
 
@@ -174,7 +174,7 @@ To allow your database to be reached remotely (for example, from a client comput
 ##Enabling Oracle Database Enterprise Manager remote access
 If you want to enable remote access to Oracle Database Enterprise Manager, open port 5500 in your firewall, and create a virtual machine endpoint for 5500 in the Azure Management Portal (using the steps shown earlier for opening port 1521 and creating an endpoint for 1521). Then, to run the Oracle Enterprise Manager from the remote computer, open a browser to the URL in the form of `http://<<unique_domain_name>>:5500/em`.
 
-> [AZURE.NOTE] You can determine the value for *\<\<unique\_domain\_name\>\>* within the [Azure Management Portal](https://ms.portal.azure.com/) by clicking **Virtual Machines** and then selecting the virtual machine that you are using to run Oracle Database).
+> [AZURE.NOTE] You can determine the value for *\<\<unique\_domain\_name\>\>* within the [Azure Management Portal](https://manage.windowsazure.cn/) by clicking **Virtual Machines** and then selecting the virtual machine that you are using to run Oracle Database).
 
 ##Configuring Popular Options and Advanced Options Bundles
 If you chose the **Oracle Database with Popular Options** or the **Oracle Database with Advanced Options bundle**, the next step is to configure the add-on features in your Oracle installation. Refer to the Oracle documentation for instruction on setting these up on Windows, as configurations can vary widely based on your needs of each individual component.

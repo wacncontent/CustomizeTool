@@ -100,7 +100,7 @@ Now that the Azure Active Directory application is created and the authenticatio
         {
           ClientCredential cc = new ClientCredential("{application-id}", "{password}");
             var context = new AuthenticationContext("https://login.chinacloudapi.cn/{tenant-id}");
-            var result = context.AcquireToken("https://management.azure.com/", cc);
+            var result = context.AcquireToken("https://manage.windowsazure.cn/", cc);
 
           if (result == null)
           {

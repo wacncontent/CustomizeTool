@@ -279,13 +279,14 @@ Now you understand how to upload a file to Azure Blob storage, how to populate a
 
 
 [azure-purchase-options]: /pricing/overview/
-[azure-member-offers]: http://azure.microsoft.com/pricing/member-offers/
+[azure-member-offers]: /pricing/member-offers/
 [azure-trial]: /pricing/1rmb-trial/
 
 
 [rita-website]: http://www.transtats.bts.gov/DL_SelectFields.asp?Table_ID=236&DB_Short_Name=On-Time
 [cindygross-hive-tables]: http://blogs.msdn.com/b/cindygross/archive/2013/02/06/hdinsight-hive-internal-and-external-tables-intro.aspx
 [powershell-install-configure]: /documentation/articles/install-configure-powershell
+
 [hdinsight-use-oozie]: /documentation/articles/hdinsight-use-oozie-linux-mac
 [hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive
 [hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters
@@ -296,6 +297,7 @@ Now you understand how to upload a file to Azure Blob storage, how to populate a
 [hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig
 [hdinsight-develop-streaming]: /documentation/articles/hdinsight-hadoop-streaming-python
 [hdinsight-develop-mapreduce]: /documentation/articles/hdinsight-develop-deploy-java-mapreduce-linux
+
 [hadoop-hiveql]: https://cwiki.apache.org/confluence/display/Hive/LanguageManual+DDL
 
 [technetwiki-hive-error]: http://social.technet.microsoft.com/wiki/contents/articles/23047.hdinsight-hive-error-unable-to-rename.aspx

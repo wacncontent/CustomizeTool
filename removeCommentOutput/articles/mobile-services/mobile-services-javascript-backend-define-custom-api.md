@@ -16,8 +16,8 @@
 # How to: define a custom API endpoint in a JavaScript backend mobile service
 
 > [AZURE.SELECTOR]
-- [JavaScript backend](./mobile-services-javascript-backend-define-custom-api.md)
-- [.NET backend](./mobile-services-dotnet-backend-define-custom-api.md)
+- [JavaScript backend](/documentation/articles/mobile-services-javascript-backend-define-custom-api)
+- [.NET backend](/documentation/articles/mobile-services-dotnet-backend-define-custom-api)
 
 This topic shows you how to define a custom API endpoint in a JavaScript backend mobile service. A custom API lets you define custom endpoints with server functionality, but it does not map to a database insert, update, delete, or read operation. By using a custom API, you have more control over messaging, including HTTP headers and body format.
 

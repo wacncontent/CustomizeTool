@@ -14,10 +14,10 @@
 
 # Schedule recurring jobs in Mobile Services
 
-<div class="dev-center-tutorial-subselector">
-	<a href="/documentation/articles/mobile-services-dotnet-backend-schedule-recurring-tasks/" title=".NET backend">.NET backend</a> | <a href="/documentation/articles/mobile-services-schedule-recurring-tasks/"  title="JavaScript backend" class="current">JavaScript backend</a>
-</div>
- 
+> [AZURE.SELECTOR]
+- [.NET backend](/documentation/articles/mobile-services-dotnet-backend-schedule-recurring-tasks)
+- [Javascript backend](/documentation/articles/mobile-services-schedule-recurring-tasks)
+
 This topic shows you how to use the job scheduler functionality in the Management Portal to define server script code that is executed based on a schedule that you define. In this case, the script periodically check with a remote service, in this case Twitter, and stores the results in a new table. Some other periodic tasks that can be scheduled include:
 
 + Archiving old or duplicate data records.
@@ -34,23 +34,23 @@ This tutorial shows you how to use the job scheduler to create a scheduled job t
 
 Next, you need to create a new table in which to store tweets.
 
-1. In the Management Portal, click the **Data** tab for your mobile service, then click **+Create**.
+2. In the Management Portal, click the **Data** tab for your mobile service, then click **+Create**.
 
-2. In **Table name** type _Updates_, then click the check button.
+3. In **Table name** type _Updates_, then click the check button.
 
 ##<a name="add-job"></a>Create a new scheduled job  
 
 Now, you can create the scheduled job that accesses Twitter and stores tweet data in the new Updates table.
 
-1. Click the **Scheduler** tab, then click **+Create**.
+2. Click the **Scheduler** tab, then click **+Create**.
 
     >[AZURE.NOTE]When you run your mobile service in <em>Free</em> tier, you are only able to run one scheduled job at a time. In paid tiers, you can run up to ten scheduled jobs at a time.
 
-2. In the scheduler dialog, enter _getUpdates_ for the **Job Name**, set the schedule interval and units, then click the check button.
-   
-   	This creates a new job named **getUpdates**. 
+3. In the scheduler dialog, enter _getUpdates_ for the **Job Name**, set the schedule interval and units, then click the check button.
 
-3. Click the new job you just created, click the **Script** tab and replace the placeholder function **getUpdates** with the following code:
+   	This creates a new job named **getUpdates**.
+
+4. Click the new job you just created, click the **Script** tab and replace the placeholder function **getUpdates** with the following code:
 
 		var updatesTable = tables.getTable('Updates');
 		var request = require('request');
@@ -130,13 +130,13 @@ Now, you can create the scheduled job that accesses Twitter and stores tweet dat
 
     >[AZURE.NOTE]This sample assumes that only a few rows are inserted into the table during each scheduled run. In cases where many rows are inserted in a loop you may run out of connections when running on the Free tier. In this case, you should perform inserts in batches. For more information, see [How to: Perform bulk inserts](/documentation/articles/mobile-services-how-to-use-server-scripts#bulk-inserts).
 
-4. Click **Run Once** to test the script.
+6. Click **Run Once** to test the script.
 
    	This saves and executes the job while it remains disabled in the scheduler.
 
-5. Click the back button, click **Data**, click the **Updates** table, click **Browse**, and verify that Twitter data has been inserted into the table.
+7. Click the back button, click **Data**, click the **Updates** table, click **Browse**, and verify that Twitter data has been inserted into the table.
 
-6. Click the back button, click **Scheduler**, select **getUpdates**, then click **Enable**.
+8. Click the back button, click **Scheduler**, select **getUpdates**, then click **Enable**.
 
    	This enables the job to run on the specified schedule, in this case every hour.
 
@@ -157,8 +157,8 @@ Congratulations, you have successfully created a new scheduled job in your mobil
 
 <!-- URLs. -->
 [Mobile Services server script reference]: /documentation/articles/mobile-services-how-to-use-server-scripts/
-[windowsazure.cn]: http://www.windowsazure.cn/
+[WindowsAzure.com]: http://azure.microsoft.com/
 [Azure Management Portal]: https://manage.windowsazure.cn/
-[Register your apps for Twitter login with Mobile Services]: /documentation/articles/mobile-services-how-to-register-twitter-authentication 
+[Register your apps for Twitter login with Mobile Services]: /documentation/articles/mobile-services-how-to-register-twitter-authentication
 [Twitter Developers]: https://apps.twitter.com/
 [App settings]: http://msdn.microsoft.com/zh-cn/library/azure/b6bb7d2d-35ae-47eb-a03f-6ee393e170f7

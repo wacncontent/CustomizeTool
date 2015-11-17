@@ -21,6 +21,7 @@
 * [How to: Enable extensions in the built-in PHP runtime](#EnableExtDefaultPHP)
 * [How to: Use a custom PHP runtime](#UseCustomPHP)
 * [Next steps](#NextSteps)
+
 ## Introduction
 
 This guide will show you how to configure the built-in PHP runtime for Web Apps in [Azure Websites](/documentation/services/web-sites/), provide a custom PHP runtime, and enable extensions. To use Azure Websites, sign up for the [trial]. To get the most from this guide, you should first create a PHP web app in Azure Websites.
@@ -31,6 +32,7 @@ By default, PHP 5.4 is installed and immediately available for use when you crea
 PHP 5.5 and PHP 5.6 versions are also available, but not enabled by default. To update the PHP version, follow one of these methods:
 
 ### Azure Management Portal
+
 1. Browse to your  Website's dashboard in the Azure Management Portal, click on **Configure**.
 
 	![Configure tab on  Websites dashboard][configure]
@@ -47,7 +49,7 @@ PHP 5.5 and PHP 5.6 versions are also available, but not enabled by default. To 
 
 For any built-in PHP runtime, you can change any of the configuration options by following the steps below. (For information about php.ini directives, see [List of php.ini directives].)
 
-### Changing PHP_INI_USER, PHP_INI_PERDIR, PHP_INI_ALL configuration settings
+### Changing PHP\_INI\_USER, PHP\_INI\_PERDIR, PHP\_INI\_ALL configuration settings
 
 1. Add a [.user.ini] file to your root directory.
 2. Add configuration settings to the `.user.ini` file using the same syntax you would use in a `php.ini` file. For example, if you wanted to turn the `display_errors` setting on and set `upload_max_filesize` setting to 10M, your `.user.ini` file would contain this text:
@@ -61,7 +63,7 @@ For any built-in PHP runtime, you can change any of the configuration options by
 
 As an alternative to using a `.user.ini` file, you can use the [ini_set()] function in scripts to set configuration options that are not system-level directives.
 
-### Changing PHP_INI_SYSTEM configuration settings
+### Changing PHP\_INI\_SYSTEM configuration settings
 
 1. Add an App Setting to your Web App with the key `PHP_INI_SCAN_DIR` and value `d:\home\site\ini`
 2. Create an `settings.ini` file using Kudu Console (http://&lt;site-name&gt;.scm.azurewebsite.net) in the `d:\home\site\ini` directory.
@@ -93,6 +95,7 @@ As noted in the previous section, the best way to see the default PHP version, i
 1. Add a `bin` directory to the root directory.
 2. Put `.dll` extension files in the `bin` directory (for example, `php_mongo.dll`). Make sure that the extensions are compatible with default version of PHP (which is, as of this writing, PHP 5.4) and are VC9 and non-thread-safe (nts) compatible.
 3. Deploy your web app.
+
 1. Navigate to your site's dashboard in the Azure Management Portal, and click on **Configure**.
 
 	![Configure tab on  Websites dashboard][configure]
@@ -115,6 +118,7 @@ Instead of the default PHP runtime, Azure Websites can use a PHP runtime that yo
 3. Optionally, add extensions to your PHP runtime and enable them in the `php.ini` file.
 4. Add a `bin` directory to your root directory, and put the directory that contains your PHP runtime in it (for example, `bin\php`).
 5. Deploy your web app.
+
 1. Navigate to your site's dashboard in the Azure Management Portal, and click on **Configure**.
 
 	![Configure tab on  Websites dashboard][configure]
@@ -134,7 +138,7 @@ Instead of the default PHP runtime, Azure Websites can use a PHP runtime that yo
 [handler-mappings]: ./media/web-sites-php-configure/handler-mappings.png
 [Configure, monitor, and scale your  Websites in Azure]: /zh-cn/documentation/services/web-sites
 [Download the Azure SDK for PHP]: /zh-cn/downloads/?sdk=php
-[trial]: https://azure.microsoft.com/pricing/1rmb-trial/
+[trial]: /pricing/1rmb-trial/
 [phpinfo()]: http://php.net/manual/en/function.phpinfo.php
 [select-php-version]: ./media/web-sites-php-configure/select-php-version.png
 [List of php.ini directives]: http://www.php.net/manual/en/ini.list.php

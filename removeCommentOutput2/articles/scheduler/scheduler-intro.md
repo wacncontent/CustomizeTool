@@ -11,7 +11,7 @@
 	ms.date="08/04/2015"
 	wacn.date=""/>
 
-# What is Scheduler?
+# What is Azure Scheduler?
 
 Azure Scheduler allows you to declaratively describe actions to run in the cloud. It then schedules and runs those actions automatically.  Scheduler does this by using [the Azure Management Portal](/documentation/articles/scheduler-get-started-portal), code, [REST API](https://msdn.microsoft.com/zh-cn/library/dn528946), or Azure PowerShell.
 
@@ -24,27 +24,24 @@ There are several scenarios that lend themselves to the usage of Scheduler. For 
 + _Recurring application actions:_ Periodically gathering data from Twitter into a feed.
 + _Daily maintenance:_ Daily pruning of logs, performing backups, and other maintenance tasks. For example, an administrator may choose to back up the database at 1:00 A.M. every day for the next nine months.
 
-Scheduler allows you to create, update, delete, view, and manage jobs and [job collections ](/documentation/articles/scheduler-concepts-terms) programmatically, by using scripts, and in the portal.
+Scheduler allows you to create, update, delete, view, and manage jobs and [job collections](/documentation/articles/scheduler-concepts-terms) programmatically, by using scripts, and in the portal.
 
-## See Also
+## See also
 
- [Scheduler Concepts, Terminology, and Entity Hierarchy](/documentation/articles/scheduler-concepts-terms)
+ [Azure Scheduler concepts, terminology, and entity hierarchy](/documentation/articles/scheduler-concepts-terms)
 
- [Get Started Using Scheduler in the Management Portal](/documentation/articles/scheduler-get-started-portal)
+ [Get started using Azure Scheduler in the Azure Management Portal](/documentation/articles/scheduler-get-started-portal)
 
- [Plans and Billing in Azure Scheduler](/documentation/articles/scheduler-plans-billing)
+ [Plans and billing in Azure Scheduler](/documentation/articles/scheduler-plans-billing)
 
- [How to Build Complex Schedules and Advanced Recurrence with Azure Scheduler](/documentation/articles/scheduler-advanced-complexity)
+ [How to build complex schedules and advanced recurrence with Azure Scheduler](/documentation/articles/scheduler-advanced-complexity)
 
- [Scheduler REST API Reference](https://msdn.microsoft.com/zh-cn/library/dn528946)   
+ [Azure Scheduler REST API reference](https://msdn.microsoft.com/zh-cn/library/dn528946)
 
- [Scheduler PowerShell Cmdlets Reference](/documentation/articles/scheduler-powershell-reference)
+ [Azure Scheduler PowerShell cmdlets reference](/documentation/articles/scheduler-powershell-reference)
 
- [Scheduler High-Availability and Reliability](/documentation/articles/scheduler-high-availability-reliability)
+ [Azure Scheduler high-availability and reliability](/documentation/articles/scheduler-high-availability-reliability)
 
- [Scheduler Limits, Defaults, and Error Codes](/documentation/articles/scheduler-limits-defaults-errors)
+ [Azure Scheduler limits, defaults, and error codes](/documentation/articles/scheduler-limits-defaults-errors)
 
- [Scheduler Outbound Authentication](/documentation/articles/scheduler-outbound-authentication)
- 
- 
-
+ [Azure Scheduler outbound authentication](/documentation/articles/scheduler-outbound-authentication)

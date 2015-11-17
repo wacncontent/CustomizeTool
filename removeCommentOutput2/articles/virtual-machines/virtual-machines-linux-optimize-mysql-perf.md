@@ -17,10 +17,10 @@
 
 There are many factors that impact MySQL performance on Azure, both in virtual hardware selection and software configuration. This article focuses on optimizing performance through storage, system, and database configurations.
 
-##Utilizing RAID on an Azure virtual machine 
+##Utilizing RAID on an Azure virtual machine
 Storage is the key factor that impacts database performance in cloud environments.  Compared to a single disk, RAID can provide faster access via concurrency.  Refer to [Standard RAID Levels](http://en.wikipedia.org/wiki/Standard_RAID_levels) for more detail.   
 
-Disk I/O throughput and I/O response time in Azure can be significantly improved through RAID. Our lab tests show disk I/O throughput can be doubled and I/O response time can be reduced by half on average when the number of RAID disks is doubled (from 2 to 4, 4 to 8, etc.). See [Appendix A](/documentation/articles/AppendixA) for details.
+Disk I/O throughput and I/O response time in Azure can be significantly improved through RAID. Our lab tests show disk I/O throughput can be doubled and I/O response time can be reduced by half on average when the number of RAID disks is doubled (from 2 to 4, 4 to 8, etc.). See [Appendix A](#AppendixA) for details.  
 
 In addition to disk I/O, MySQL performance improves when you increase the RAID level.  See [Appendix B](#AppendixB) for details.  
 
@@ -31,7 +31,7 @@ Please note that there are limits on how many disks you can add for different vi
 This article assumes you have already created a Linux virtual machine and have MYSQL installed and configured. For more information on getting started please refer to How to install MySQL on Azure.  
 
 ###Setting up RAID on Azure
-The following steps show how to create RAID on Azure using the AzureWindows Management Portal. You can also set up RAID using Windows PowerShell scripts.
+The following steps show how to create RAID on Azure using the Azure Management Portal. You can also set up RAID using Windows PowerShell scripts.
 In this example we will configure RAID 0 with 4 disks.  
 
 ####Step 1: Add a Data Disk to your Virtual Machine  
@@ -46,7 +46,7 @@ On the page for the virtual machine, click **Dashboard**.
 
 
 In the task bar, click **Attach**.
- 
+
 ![][3]
 
 And then click **Attach empty disk**.  
@@ -64,7 +64,7 @@ You can see the added drives in the virtual machine by looking at the kernel mes
 ####Step 2: Create RAID with the additional disks
 Follow this article for detailed RAID setup steps:  
 
-[/documentation/articles/virtual-machines-linux-configure-RAID/](/documentation/articles/virtual-machines-linux-configure-RAID/)
+[Configure software RAID on Linux](/documentation/articles/virtual-machines-linux-configure-RAID)
 
 >[AZURE.NOTE] If you are using the XFS file system, follow the steps below after you have created RAID.
 
@@ -235,11 +235,11 @@ Please note that by default this is not enabled. Turning on the slow query log m
 	service  mysql  restart
 
 ###Step 3: Check whether the setting is taking effect using the “show” command
- 
+
 ![][7]   
-   
+
 ![][8]
- 
+
 In this example, you can see that the slow query feature has been turned on. You can then use the **mysqldumpslow** tool to determine performance bottlenecks and optimize performance, such as adding indexes.
 
 
@@ -266,7 +266,7 @@ The following are sample performance test data produced on targeted lab environm
 **MySQL Performance (Throughput) Comparison with Different RAID Levels**   
 (XFS file system)
 
- 
+
 ![][10]  
 ![][11]
 
@@ -285,7 +285,7 @@ The following are sample performance test data produced on targeted lab environm
 **Disk Performance (IOPS) Comparison for Different Chunk Sizes**  
 (XFS file system)
 
- 
+
 ![][13]
 
 **Test commands:**  
@@ -300,7 +300,7 @@ Note the file size used for this testing is 30GB and 1GB respectively, with RAID
 **MySQL Performance (Throughput) Comparison Before and After Optimization**  
 (XFS File System)
 
-  
+
 ![][14]
 
 **Test commands:**

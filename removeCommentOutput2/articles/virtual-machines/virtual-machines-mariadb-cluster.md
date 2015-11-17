@@ -15,7 +15,7 @@
 
 # MariaDB (MySQL) cluster - Azure tutorial
 
-<p>We're creating a multi-Master [Galera](http://galeracluster.com/products/) cluster of [MariaDBs](https://mariadb.org/en/about/), a robust, scalable, and reliable drop-in replacement for MySQL, to work in a highly available environment on Azure Virtual Machines.</p>
+We're creating a multi-Master [Galera](http://galeracluster.com/products/) cluster of [MariaDBs](https://mariadb.org/en/about/), a robust, scalable, and reliable drop-in replacement for MySQL, to work in a highly available environment on Azure Virtual Machines.
 
 ## Architecture overview
 
@@ -203,7 +203,7 @@ this will output something like `5112500ae3b842c8b9c604889f8753c3__OpenLogic-Cen
 
 	- Edit the **[mariadb]** section and append the below
 
-	> [AZURE.NOTE] It is recommended that **innodb_buffer_pool_size** be 70% of your VM's memory. It has been set at 2.45GB here for the Medium Azure VM with 3.5GB of RAM.
+	> [AZURE.NOTE] It is recommended that **innodb\_buffer\_pool_size** be 70% of your VM's memory. It has been set at 2.45GB here for the Medium Azure VM with 3.5GB of RAM.
 
 	        innodb_buffer_pool_size = 2508M # The buffer pool contains buffered data and the index. This is usually set to 70% of physical memory.
             innodb_log_file_size = 512M #  Redo logs ensure that write operations are fast, reliable, and recoverable after a crash
@@ -232,7 +232,7 @@ Create 3 VMs out of the template you just created and then configure and start t
 
 1. Create the first CentOS 7 VM from the **mariadb-galera-image** image you created, providing the virtual network name **mariadbvnet** and the subnet **mariadb**, machine size **Medium**, passing in the Cloud Service name to be **mariadbha** (or whatever name you want to be accessed through mariadbha.chinacloudapp.cn), setting the name of this machine to be **mariadb1**  and the username to be **azureuser**,  and enabling SSH access and passing the SSH certificate .pem file and replacing **/path/to/key.pem** with the path where you stored the generated .pem SSH key.
 
-	> [WACOM.NOTE] The commands below are split over multiple lines for clarity, but you should enter each as one line.
+	> [AZURE.NOTE] The commands below are split over multiple lines for clarity, but you should enter each as one line.
 
 		azure vm create
         --virtual-network-name mariadbvnet
@@ -363,7 +363,7 @@ You may want to take a look at [another way to cluster MySQL on Linux] and ways 
 [Galera]: http://galeracluster.com/products/
 [MariaDBs]: https://mariadb.org/en/about/
 [Azure CLI]: /documentation/articles/xplat-cli/
-[Azure CLI command reference]: /documentation/articles/command-line-tools/
+[Azure CLI command reference]: /documentation/articles/virtual-machines-command-line-tools/
 [create an SSH key for authentication]:http://www.jeff.wilcox.name/2013/06/secure-linux-vms-with-ssh-certificates/
 [performance tuning strategy]: /documentation/articles/virtual-machines-linux-optimize-mysql-perf/
 [optimize and test MySQL performance on Azure Linux VMs]:/documentation/articles/virtual-machines-linux-optimize-mysql-perf/

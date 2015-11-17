@@ -30,7 +30,7 @@ Windows Store apps must first be registered with the Windows Dev Center.
 
    	![](./media/mobile-services-how-to-register-microsoft-authentication/mobile-services-submit-win8-app.png)
 
-2. Select **Create a new app by reserving a unique name** and click **Continue**, then type a name for your app in **App name**, click **Reserve app name** and, then **Save**.
+2. Select **Create a new app by reserving a unique name** and click **Continue**, then type a name for your app in **App name**, click **Reserve app name** and then **Save**.
 
    	![](./media/mobile-services-how-to-register-microsoft-authentication/mobile-services-win8-app-name.png)
 
@@ -64,7 +64,7 @@ The first step in this section applies only to Windows Phone 8, Windows Phone 8.
 
    	This reserves you app name with Microsoft account and displays the Microsoft account page for your app.
 
-2. In the Microsoft account page for your app, click **API Settings**, select enable **Mobile or desktop client app**, set the mobile service URL as the **Target domain**, supply a value of `https://<mobile_service>.azure-mobile.cn/login/microsoftaccount/` in **Redirect URL**, then click **Save**.
+2. In the Microsoft account page for your app, click **API Settings**, select enable **Mobile or desktop client app**, set the mobile service URL as the **Target domain**, supply a value of `https://<mobile_service>.azure-mobile.cn/` in **Redirect URL**, then click **Save**.
 
 	 >[AZURE.NOTE]For a .NET backend mobile service published to Azure by using Visual Studio, the redirect URL is the URL of your mobile service appended with the path _signin-microsoft_ your mobile service as a .NET service, such as `https://todolist.azure-mobile.cn/signin-microsoft`. 
 
@@ -73,9 +73,10 @@ The first step in this section applies only to Windows Phone 8, Windows Phone 8.
 	The **Root domain** should be filled-in automatically.
 
 4. Click **App Settings** and make a note of the values of the **Client ID**, **Client secret** and **Package SID**. 
-
+	
    	![Microsoft account app settings](./media/mobile-services-how-to-register-microsoft-authentication/mobile-services-win8-app-push-auth.png)
-
+	
+	
     > [AZURE.NOTE] The client secret is an important security credential. Do not share the client secret with anyone or distribute it with your app. Only Windows Store app registrations will see a Package SID field.
 
 4. In the [Azure Management Portal], click the **Identity** tab for the mobile service, enter the client ID, client secret and package SID obtained from your identity provider, and click **Save**. 

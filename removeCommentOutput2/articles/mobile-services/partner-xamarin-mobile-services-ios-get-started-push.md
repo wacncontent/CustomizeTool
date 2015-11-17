@@ -66,11 +66,11 @@ To be able to send push notifications to an iOS app from mobile services, you mu
     ![][103]
 
     This generates your app ID and requests you to **Submit** the information. Click **Submit**.
-   
+
     ![][104]
-   
+
     Once you click **Submit**, you will see the **Registration complete** screen, as shown below. Click **Done**.
-   
+
     ![][105]
 
 3. Locate the app ID that you just created, and click on its row.
@@ -78,9 +78,9 @@ To be able to send push notifications to an iOS app from mobile services, you mu
     ![][106]
 
     Clicking on the app ID will display details on the app and app ID. Click the **Settings** button.
-   
+
     ![][107]
-   
+
 4. Scroll to the bottom of the screen, and click the **Create Certificate...** button under the section **Development Push SSL Certificate**.
 
     ![][108]
@@ -94,7 +94,7 @@ To be able to send push notifications to an iOS app from mobile services, you mu
     ![][110]
 
 6. After the certificate is created by the portal, click the **Download** button, and click **Done**.
- 
+
     ![][111]  
 
     This downloads the signing certificate and saves it to your computer in your Downloads folder.
@@ -130,7 +130,7 @@ Later, you will use this certificate to generate a .p12 file and upload it to Mo
     ![][114]
 
 5. Next, select the **Devices** to use for testing, and click **Continue**.
-  
+
     ![][115]
 
 6. Finally, pick a name for the profile in **Profile Name**, click **Generate**, and click **Done**.
@@ -263,9 +263,9 @@ Your mobile service is now configured to work with APNS.
         string deviceToken = ((AppDelegate)UIApplication.SharedApplication.Delegate).DeviceToken;
 
         var newItem = new TodoItem()
-			{
-				Text = itemText.Text, 
-				Complete = false,
+        {
+            Text = itemText.Text,
+            Complete = false,
             DeviceToken = deviceToken
         };
 
@@ -278,7 +278,7 @@ Your app is now updated to support push notifications.
     ![][21]
 
 2. In **todoitem**, click the **Script** tab and select **Insert**.
-   
+
     ![][22]
 
     This displays the function that is invoked when an insert occurs in the **TodoItem** table.
@@ -384,6 +384,7 @@ You have successfully completed this tutorial.
 [Mobile Services iOS SDK]: https://go.microsoft.com/fwLink/p/?LinkID=266533
 [Apple Push Notification Service]: https://developer.apple.com/library/ios/#documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/ApplePushService/ApplePushService.html
 [Get started with Mobile Services]: /documentation/articles/mobile-services-ios-get-started
+
 [Xamarin Device Provisioning]: http://developer.xamarin.com/guides/ios/getting_started/installation/device_provisioning/
 
 

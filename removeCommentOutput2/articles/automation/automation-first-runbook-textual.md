@@ -108,6 +108,7 @@ Now that our runbook is authenticating to our Azure subscription, we can manage 
 Our runbook currently starts the virtual machine that we hardcoded in the runbook, but it would be more useful if we could specify the virtual machine when the runbook is started.  We will now add input parameters to the runbook to provide that functionality.
 
 1. Add parameters for *VMName* and *VMServiceName* to the runbook and use these variables with the **Start-AzureVM** cmdlet as in the following image. <br>
+
 		workflow test
 		{
     		Param (
@@ -119,6 +120,7 @@ Our runbook currently starts the virtual machine that we hardcoded in the runboo
     		Add-AzureAccount –Credential $Credential –Environment AzureChinaCloud
     		Start-AzureVM -Name $VMName -ServiceName $VMServiceName
 		}
+
 9. Save the runbook and open the Test pane.  Note that you can now provide values for the two input variables that will be used in the test. 
 11.  Close the Test pane.
 12.  Click **Publish** to publish the new version of the runbook.

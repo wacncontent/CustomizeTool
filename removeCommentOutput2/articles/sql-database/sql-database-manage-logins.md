@@ -15,15 +15,15 @@
 
 # Managing databases and logins in Azure SQL Database
 
-In Windows Azure SQL Database, when you sign up for the service, the provisioning process creates an Azure SQL Database server, a database named **master**, and a login that is the server-level principal of your Azure SQL Database server. That login is similar to the server-level principal, **sa**, for an instance of SQL Server.on your premises 
+In Windows Azure SQL Database, when you sign up for the service, the provisioning process creates an Azure SQL Database server, a database named **master**, and a login that is the server-level principal of your Azure SQL Database server. That login is similar to the server-level principal (**sa**), for an on-premises instance of SQL Server.
 
 The Azure SQL Database server-level principal account always has permission to manage all server-level and database-level security. This topic describes how you can use the server-level principal and other accounts to manage logins and databases in SQL Database.
 
-> [AZURE.IMPORTANT] SQL Database V12 allows users to authenticate at the database by using contained database users. Contained database users do not require logins. This makes databases more portable but reduces the ability of the server-level principal to control access to the database. Enabling contained database users has important security impacts. For more information, see [Contained Database Users - Making Your Database Portable](https://msdn.microsoft.com/zh-cn/library/ff929188.aspx), [CREATE USER (Transact-SQL)](https://msdn.microsoft.com/zh-cn/library/ms173463.aspx), and [Contained Databases](https://msdn.microsoft.com/zh-cn/library/ff929071.aspx).
+> [AZURE.IMPORTANT] SQL Database V12 allows users to authenticate at the database by using contained database users. Contained database users do not require logins. This makes databases more portable but reduces the ability of the server-level principal to control access to the database. Enabling contained database users has important security impacts. For more information, see [Contained Database Users - Making Your Database Portable](https://msdn.microsoft.com/zh-cn/library/ff929188.aspx), [Contained Databases](https://technet.microsoft.com/zh-cn/library/ff929071.aspx), [CREATE USER (Transact-SQL)](https://technet.microsoft.com/zh-cn/library/ms173463.aspx), [Connecting to SQL Database By Using Azure Active Directory Authentication](/documentation/articles/sql-database-aad-authentication).
 
 ## Overview of SQL Database security administration
 
-Security administration in SQL Database is similar to security administration for an on-premise instance of SQL Server. Managing security at the database-level is almost identical, with differences only in the parameters available. Because SQL Databases can scale to one or more physical computers, Azure SQL Database uses a different strategy for server-level administration. The following table summarizes how security administration for an on-premises SQL Server is different than in Azure SQL Database.
+Security administration in SQL Database is similar to security administration for an on-premises instance of SQL Server. Managing security at the database-level is almost identical, with differences only in the parameters available. Because SQL Databases can scale to one or more physical computers, Azure SQL Database uses a different strategy for server-level administration. The following table summarizes how security administration for an on-premises SQL Server is different than in Azure SQL Database.
 
 | Point of Difference | On-premises SQL Server | Azure SQL Database |
 |------------------------------------------------|-----------------------------------------------------------------------------|--------------------------------------------------|
@@ -44,7 +44,7 @@ The **master** database keeps track of logins, and which logins have permission 
 
 > [AZURE.NOTE] The ``USE`` command is not supported for switching between databases. Establish a connection directly to the target database.
 
-You can manage database-level security for users and objects in AzureWindows SQL Database the same way you do for an on-premises instance of SQL Server. There are differences only in the parameters available to the corresponding commands. For more information, see [Azure SQL Database security guidelines and limitations](https://msdn.microsoft.com/zh-cn/library/azure/ff394108.aspx).
+You can manage database-level security for users and objects in Azure SQL Database the same way you do for an on-premises instance of SQL Server. There are differences only in the parameters available to the corresponding commands. For more information, see [Azure SQL Database Security Guidelines and Limitations](/documentation/articles/sql-database-security-guidelines).
 
 ## Managing contained database users
 
@@ -81,17 +81,17 @@ Because some tools implement tabular data stream (TDS) differently, you may need
 
 ## Granting server-level permissions to a login
 
-In order for logins other than the server-level principal to manage server-level security, AzureWindows SQL Database offers two security roles: **loginmanager** for, creating logins and **dbmanager** for creating databases. Only users in the **master** database can be added to these database roles.
+In order for logins other than the server-level principal to manage server-level security, Azure SQL Database offers two security roles: **loginmanager** for creating logins and **dbmanager** for creating databases. Only users in the **master** database can be added to these database roles.
 
 > [AZURE.NOTE] To create logins or databases, you must be connected to the **master** database (which is a logical representation of **master**).
 
 ### The loginmanager role
 
-Like the **securityadmin** fixed server role for an on-premises instance of SQL Server, the **loginmanager** database role in AzureWindows SQL Database is has permission to create logins. Only the server-level principal login (created by the provisioning process) or members of the **loginmanager** database role can create new logins.
+Like the **securityadmin** fixed server role for an on-premises instance of SQL Server, the **loginmanager** database role in Azure SQL Database is has permission to create logins. Only the server-level principal login (created by the provisioning process) or members of the **loginmanager** database role can create new logins. 
 
 ### The dbmanager role
 
-Windows The  Azure SQL Database **dbmanager** database role is similar to the **dbcreator** fixed server role for an on-premises instance of SQL Server. Only the server-level principal login (created by the provisioning process) or members of the **dbmanager** database role can create databases. Once a user is a member of the **dbmanager** database role, it can create a database with the Azure SQL Database ``CREATE DATABASE`` command, but that command must be executed in the master database. For more information, see [CREATE DATABASE (SQL Server Transact-SQL)](https://msdn.microsoft.com/zh-cn/library/ms176061.aspx).
+The  Azure SQL Database **dbmanager** database role is similar to the **dbcreator** fixed server role for an on-premises instance of SQL Server. Only the server-level principal login (created by the provisioning process) or members of the **dbmanager** database role can create databases. Once a user is a member of the **dbmanager** database role, it can create a database with the Azure SQL Database ``CREATE DATABASE`` command, but that command must be executed in the master database. For more information, see [CREATE DATABASE (Transact-SQL)](https://msdn.microsoft.com/zh-cn/library/dn268335.aspx).
 
 ### How to assign SQL Database server-level roles
 
@@ -116,13 +116,13 @@ EXEC sp_addrolemember 'loginmanager', 'login1User';
 
 ## Granting database access to a login
 
-All logins must be created in the master database. After a login has been created, you can create a user account in another database for that login. AzureWindows SQL Database also supports database roles in the same way that an on-premises instance of SQL Server does.
+All logins must be created in the **master** database. After a login has been created, you can create a user account in another database for that login. Azure SQL Database also supports database roles in the same way that an on-premises instance of SQL Server does.
 
 To create a user account in another database, assuming you have not created a login or a database, perform the following steps:
 
 1. Connect to the **master** database (with a login having the **loginmanager** and **dbmanager** roles).
 2. Create a new login using the ``CREATE LOGIN`` command. For more information, see [CREATE LOGIN (Transact-SQL)](https://msdn.microsoft.com/zh-cn/library/ms189751.aspx). Windows Authentication is not supported.
-3. Create a new database using the ``CREATE DATABASE`` command. For more information, see [CREATE DATABASE (SQL Server Transact-SQL)](https://msdn.microsoft.com/zh-cn/library/ms176061.aspx).
+3. Create a new database using the ``CREATE DATABASE`` command. For more information, see [CREATE DATABASE (Transact-SQL)](https://msdn.microsoft.com/zh-cn/library/dn268335.aspx).
 4. Establish a connection to the new database (with the login that created the database).
 5. Create a new user on the new database using the ``CREATE USER`` command. For more information, see [CREATE USER (Transact-SQL)](https://msdn.microsoft.com/zh-cn/library/ms173463.aspx).
 
@@ -136,7 +136,7 @@ CREATE DATABASE database1;
 
 > [AZURE.NOTE] You must use a strong password when creating a login. For more information, see [Strong Passwords](https://msdn.microsoft.com/zh-cn/library/ms161962.aspx).
 
-This next example shows how to create a database user named **login1User** in the database **database1** that corresponds to the login **login1**:
+This next example shows how to create a database user named **login1User** in the database **database1** that corresponds to the login **login1**. To execute the following example, you must first make a new connection to database1, using a login with the **ALTER ANY USER** permission in that database. Any user connecting as a member of the **db_owner** role will have that permission, such as the login which created the database.
 
 ```
 -- Establish a new connection to the database1 database

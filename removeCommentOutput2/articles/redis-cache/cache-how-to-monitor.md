@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties 
 	pageTitle="How to monitor Azure Redis Cache" 
 	description="Learn how to monitor the health and performance your Azure Redis Cache instances" 
@@ -56,7 +58,7 @@ Once the diagnostic settings are configured, click **Save** to save the configur
 
 To view the stored metrics, examine the tables in your storage account with names that start with `WADMetrics`. For more information about accessing the stored metrics outside of the Azure Management Portal, see the [Access Redis Cache Monitoring data](https://github.com/rustd/RedisSamples/tree/master/CustomMonitoring) sample.
 
->[AZURE.NOTE] Only metrics that are stored in the selected storage account are displayed in the portal. If you change storage accounts, the data in the previously configured storage account remains available for download, but it is not displayed in the portal.and is not purged when the retention period interval elapses 
+>[AZURE.NOTE] Only metrics that are stored in the selected storage account are displayed in the portal. If you change storage accounts, the data in the previously configured storage account remains available for download, but it is not displayed in the portal and is not purged when the retention period interval elapses.
 
 ## Available metrics and reporting intervals
 

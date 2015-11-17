@@ -41,16 +41,16 @@ Even better. Now [log in with your work or school id](/documentation/articles/xp
 
 ## Create your Azure VM
 
-Type `azure group create <my-group-name> westus` replacing _&lt;my-group-name&gt;_ with a group name that's unique to you (you can use a different region if you want). You should see something like the following:
+Type `azure group create <my-group-name> chinanorth` replacing _&lt;my-group-name&gt;_ with a group name that's unique to you (you can use a different region if you want). You should see something like the following:
 
-	azure group create myuniquegroupname westus
+	azure group create myuniquegroupname chinanorth
 	info:    Executing command group create
 	+ Getting resource group myuniquegroupname
 	+ Creating resource group myuniquegroupname
 	info:    Created resource group myuniquegroupname
 	data:    Id:                  /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/myuniquegroupname
 	data:    Name:                myuniquegroupname
-	data:    Location:            westus
+	data:    Location:            chinanorth
 	data:    Provisioning State:  Succeeded
 	data:    Tags:
 	data:
@@ -62,7 +62,7 @@ Now create your VM by typing `azure vm quick-create`, and you'll receive prompts
 	info:    Executing command vm quick-create
 	Resource group name: myuniquegroupname
 	Virtual machine name: myuniquevmname
-	Location name: westus
+	Location name: chinanorth
 	Operating system Type [Windows, Linux]: /documentation/articles/Linux
 	ImageURN (format: "publisherName:offer:skus:version"): canonical:ubuntuserver:14.04.2-LTS:latest
 	User name: ops
@@ -72,8 +72,8 @@ Now create your VM by typing `azure vm quick-create`, and you'll receive prompts
 	info:    Using the VM Size "Standard_D1"
 	info:    The [OS, Data] Disk or image configuration requires storage account
 	+ Retrieving storage accounts
-	info:    Could not find any storage accounts in the region "westus", trying to create new one
-	+ Creating storage account "cli3c0464f24f1bf4f014323" in "westus"
+	info:    Could not find any storage accounts in the region "chinanorth", trying to create new one
+	+ Creating storage account "cli3c0464f24f1bf4f014323" in "chinanorth"
 	+ Looking up the storage account cli3c0464f24f1bf4f014323
 	+ Looking up the NIC "myuni-westu-1432328437727-nic"
 	info:    An nic with given name "myuni-westu-1432328437727-nic" not found, creating a new one
@@ -96,8 +96,8 @@ Now create your VM by typing `azure vm quick-create`, and you'll receive prompts
 	data:    Id                              :/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/myuniquegroupname/providers/Microsoft.Compute/virtualMachines/myuniquevmname
 	data:    ProvisioningState               :Succeeded
 	data:    Name                            :myuniquevmname
-	data:    Location                        :westus
-	data:    FQDN                            :myuni-westu-1432328437727-pip.westus.cloudapp.azure.com
+	data:    Location                        :chinanorth
+	data:    FQDN                            :myuni-westu-1432328437727-pip.chinanorth.chinacloudapp.cn
 	data:    Type                            :Microsoft.Compute/virtualMachines
 	data:
 	data:    Hardware Profile:
@@ -132,11 +132,11 @@ Now create your VM by typing `azure vm quick-create`, and you'll receive prompts
 	data:          MAC Address               :00-0D-3A-31-55-31
 	data:          Provisioning State        :Succeeded
 	data:          Name                      :myuni-westu-1432328437727-nic
-	data:          Location                  :westus
+	data:          Location                  :chinanorth
 	data:            Private IP alloc-method :Dynamic
 	data:            Private IP address      :10.0.1.4
 	data:            Public IP address       :191.239.51.1
-	data:            FQDN                    :myuni-westu-1432328437727-pip.westus.cloudapp.azure.com
+	data:            FQDN                    :myuni-westu-1432328437727-pip.chinanorth.chinacloudapp.cn
 	info:    vm quick-create command OK
 
 Your VM is up and running and waiting for you to connect.
@@ -147,12 +147,12 @@ With Linux VMs, you typically connect using **ssh**. This topic connects to a VM
 
 If you're not familiar with connecting with **ssh**, the command takes the form `ssh <username>@<publicdnsaddress> -p <the ssh port>`. In this case, we use the username and password from the previous step and port 22, which is the default **ssh** port.
 
-	ssh ops@myuni-westu-1432328437727-pip.westus.cloudapp.azure.com -p 22
-	The authenticity of host 'myuni-westu-1432328437727-pip.westus.cloudapp.azure.com (191.239.51.1)' can't be established.
+	ssh ops@myuni-westu-1432328437727-pip.chinanorth.chinacloudapp.cn -p 22
+	The authenticity of host 'myuni-westu-1432328437727-pip.chinanorth.chinacloudapp.cn (191.239.51.1)' can't be established.
 	ECDSA key fingerprint is bx:xx:xx:xx:xx:xx:xx:xx:xx:x:x:x:x:x:x:xx.
 	Are you sure you want to continue connecting (yes/no)? yes
-	Warning: Permanently added 'myuni-westu-1432328437727-pip.westus.cloudapp.azure.com,191.239.51.1' (ECDSA) to the list of known hosts.
-	ops@myuni-westu-1432328437727-pip.westus.cloudapp.azure.com's password:
+	Warning: Permanently added 'myuni-westu-1432328437727-pip.chinanorth.chinacloudapp.cn,191.239.51.1' (ECDSA) to the list of known hosts.
+	ops@myuni-westu-1432328437727-pip.chinanorth.chinacloudapp.cn's password:
 	Welcome to Ubuntu 14.04.2 LTS (GNU/Linux 3.16.0-37-generic x86_64)
 
 	 * Documentation:  https://help.ubuntu.com/

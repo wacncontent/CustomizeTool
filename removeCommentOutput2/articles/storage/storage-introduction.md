@@ -74,7 +74,7 @@ To learn how to create a standard storage account, see [Create, manage, or delet
 
 ### Premium Storage Accounts
 
-Azure Premium Storage currently supports Azure Virtual Machine disks only. For an in-depth overview of Azure Premium Storage, see [Premium Storage: High-Performance Storage for Azure Virtual Machine Workloads](/documentation/articles/storage-premium-storage-preview-portal).
+Azure Premium Storage currently supports Azure Virtual Machine disks only. For an in-depth overview of Azure Premium Storage, see [Premium Storage: High-Performance Storage for Azure Virtual Machine Workloads](/documentation/articles/storage-premium-storage-preview-portal/).
 
 [AZURE.INCLUDE [storage-versions-include](../includes/storage-versions-include.md)]
 
@@ -151,7 +151,7 @@ Customers are charged for Azure Storage based on four factors: the storage capac
 
 Storage capacity refers to how much of your storage account allotment you are using to store data. The cost of simply storing your data is determined by how much data you are storing, and how it is replicated. Every read and write operation against Azure Storage also makes a request against the service. Data egress refers to data transferred out of a Windows Azure region. When the data in your storage account is accessed by an application that is not running in the same region, whether that application is a cloud service or some other type of application, then you are charged for data egress. (For Windows Azure services, you can take steps to group your data and services in the same data centers to reduce or eliminate process and data egress charges.) 
 
-The [Storage Pricing Details](/home/features/storage) page provides detailed pricing information for storage capacity, replication, and transactions. The [Data Transfers Pricing Details](/#pricepricing/details/data-transfers/) provides detailed pricing information for data egress. You can use the [Azure Storage Pricing Calculator](/pricing/calculator/?scenario=data-management) to help estimate your costs.
+The [Storage Pricing Details](/home/features/storage/#price) page provides detailed pricing information for storage capacity, replication, and transactions. The [Data Transfers Pricing Details](/home/features/data-transfers/#price) provides detailed pricing information for data egress. You can use the [Azure Storage Pricing Calculator](/pricing/calculator/?scenario=data-management) to help estimate your costs.
 
 ## Developing Against Storage
 
@@ -202,7 +202,7 @@ To get started with Azure Storage, explore these resources:
 
 ### For Java/Android Developers
 
-- [Java Client Library Reference](http://dl.windowsazure.cn/storage/javadoc/)
+- [Java Client Library Reference](http://dl.windowsazure.com/storage/javadoc/)
 - [How to use Blob Storage from Java/Android](/documentation/articles/storage-java-how-to-use-blob-storage)
 - [How to use Table Storage from Java/Android](/documentation/articles/storage-java-how-to-use-table-storage)
 - [How to use Queue Storage from Java/Android](/documentation/articles/storage-java-how-to-use-queue-storage)

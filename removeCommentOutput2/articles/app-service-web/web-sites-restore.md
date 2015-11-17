@@ -19,6 +19,7 @@ This article shows you how to restore a web app that you have previously backed 
 The Web Apps Restore feature lets you restore your web app on-demand to a previous state, or create a new web app based on one of your original web app's backups. Creating a new web app that runs in parallel to the latest version can be useful for A/B testing.
 
 The Web Apps Restore feature, available on the **Backups** blade in the [Azure Management Portal](http://manage.windowsazure.cn), is available only in Standard and Premium modes. For information about scaling your app using Standard or Premium mode, see [Scale a web app in Azure Websites](/documentation/articles/web-sites-scale).
+
 ##In this article
 - [To Restore an Azure  Website from a previously made backup](#PreviousBackup)
 - [To Restore an Azure  Website directly from a storage account](#StorageAccount)
@@ -27,6 +28,7 @@ The Web Apps Restore feature, available on the **Backups** blade in the [Azure M
 
 <a name="PreviousBackup"></a>
 ## To Restore a web app from a previously made backup
+
 1. On the **Backups** tab, click **Restore Now** in the command bar at the bottom of the portal page. The **Restore Now** dialog box appears.
 	
 	![Choose backup source][ChooseBackupSource]
@@ -36,6 +38,7 @@ The Web Apps Restore feature, available on the **Backups** blade in the [Azure M
 4. Follow the steps in the [Choose Your  Website Restore Settings](#RestoreSettings) section later in this article.
 <a name="StorageAccount"></a>
 ## Download or delete a backup from a storage account
+
 1. On the **Backups** tab, click **Restore Now** in the command bar at the bottom of the portal page. The **Restore Now** dialog box appears.
 	
 	![Choose backup source][ChooseBackupSource]
@@ -92,8 +95,10 @@ The Web Apps Restore feature, available on the **Backups** blade in the [Azure M
 5. Click the check mark to start the restore operation. When it completes, the new  Website instance (if that is the restore option you chose) will be visible in the list of  Websites in the portal.
 	
 	![Restored Contoso  Website][RestoredContoso Website]
+
 <a name="OperationLogs"></a>
 ## View the Audit Logs
+
 1. To see details about the success or failure of the  Website restore operation, go to the  Website's Dashboard tab. In the **Quick Glance** section, under **Management Services**, click **Operation Logs**.
 	
 	![Dashboard - Operation Logs Link][DashboardOperationLogsLink]

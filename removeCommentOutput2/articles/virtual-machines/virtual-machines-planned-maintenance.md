@@ -17,11 +17,12 @@
 # Planned maintenance for Azure virtual machines
 
 ## Why Azure performs planned maintenance
-<p> Windows Azure periodically performs updates across the globe to improve the reliability, performance, and security of the host infrastructure that underlies virtual machines. Many of these updates are performed without any impact to your virtual machines or Cloud Services, including memory-preserving updates.
+
+Windows Azure periodically performs updates across the globe to improve the reliability, performance, and security of the host infrastructure that underlies virtual machines. Many of these updates are performed without any impact to your virtual machines or Cloud Services, including memory-preserving updates.
 
 However, some updates do require a reboot to your virtual machines to apply the required updates to the infrastructure. The virtual machines are shut down while we patch the infrastructure, and then the virtual machines are restarted.
 
-Please note that there are two types of maintenance that can impact the availability of your virtual machines: planned and unplanned. This page describes how Windows Azure performs planned maintenance. For more information about unplanned maintenance, see [Understand planned versus unplanned maintenance].
+Please note that there are two types of maintenance that can impact the availability of your virtual machines: planned and unplanned. This page describes how Windows Azure performs planned maintenance. For more information about unplanned maintenance, see [Understand planned versus unplanned maintenance](/documentation/articles/virtual-machines-manage-availability).
 
 ## Memory-preserving updates
 
@@ -43,7 +44,7 @@ For more information about configuring your virtual machines for high availabili
 
 By contrast, a single-instance configuration is used for standalone virtual machines that are not placed in an availability set. These virtual machines do not qualify for the service level agreement (SLA), which requires that two or more virtual machines are deployed under the same availability set.
 
-For more information about SLAs, refer to the "Cloud Services, Virtual Machines and Virtual Network" section of [Service Level Agreements](/support/legal/sla).
+For more information about SLAs, refer to the "Cloud Services, Virtual Machines and Virtual Network" section of [Service Level Agreements](/support/legal/sla/).
 
 
 ## Multi-instance configuration updates
@@ -76,7 +77,8 @@ For virtual machines in a single-instance configuration, virtual machines are up
 This planned maintenance event will impact the availability of your application for this type of virtual machine configuration. Azure offers a 1-week advanced notification for planned maintenance of  virtual machines in the single-instance configuration.
 
 ### Email notification
-For single-instance and multi-instance virtual machine configurations only, Azure sends email communication in advance to alert you of the upcoming planned maintenance (1-week in advance for single-instance and 48-hours in advance for multi-instance). This email will be sent to the primary email account provided by the subscription. Here is an example of this type of email:
+
+For single-instance and multi-instance virtual machine configurations only, Azure sends email communication in advance to alert you of the upcoming planned maintenance (1-week in advance for single-instance and 48-hours in advance for multi-instance). This email will be sent to the account administrator and co-administrator email accounts provided in the subscription. Here is an example of this type of email:
 
 <!--Image reference-->
 ![][image1]
@@ -90,15 +92,6 @@ Please refer to the following table for information regarding current region pai
 Region 1 | Region 2
 :----- | ------:
 China North | China East
-China East | China North
-China East 2 | China North
-China North | West Europe
-South East Asia | East Asia
-East China | North China
-Japan East | Japan West
-Brazil South | China East
-Australia Southeast | Australia East
-US Gov Iowa | US Gov Virginia
 
 For example, during a planned maintenance, Azure will not roll out an update to China North if China East is under maintenance at the same time. However, other regions such as China North can be under maintenance at the same time as China East.
 

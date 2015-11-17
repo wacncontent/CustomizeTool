@@ -78,7 +78,7 @@ To recover your mobile service after an outage:
 	+ In the Azure Management Portal, on the **"Configure"** tab of your mobile service, choose "Change database" and then select the newly recovered database.
 
 7. Your mobile service is now hosted in a different physical location. You'll need to update your publishing and/or git credentials to allow for updating your running site.
-	+ If you are using a **.NET backend**, set up your publishing profile again, as described in [Publish your mobile service](/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started/#publish-your-mobile-service). This will update your publishing details to point to the new service location.
+	+ If you are using a **.NET backend**, set up your publishing profile again, as described in [Publish your mobile service](/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started#publish-your-mobile-service). This will update your publishing details to point to the new service location.
 	+ If you are using a **Javascript backend** and managing your service with the Portal, you don't need to take any extra action.
 	+ If you are using a **Javascript backend** and managing your service with node, update your git remote to point to the new repository. To do this, you remove the .git file path from your git remote:
 
@@ -100,10 +100,9 @@ Now you should be in a state where your mobile service has been recovered to a n
 [SQL Database business continuity guidance]: http://msdn.microsoft.com/zh-cn/library/azure/hh852669.aspx
 [Team Foundation Service]: http://tfs.visualstudio.com/
 
-[source control feature]: /documentation/articles/mobile-services-store-scripts-source-control
-[using the Azure CLI]: /documentation/articles/mobile-services-manage-command-line-interface
+[source control feature]: /develop/mobile/tutorials/store-scripts-in-source-control/
+[using the Azure CLI]: /develop/mobile/tutorials/command-line-administration/
 [Azure Management Portal]: http://manage.windowsazure.cn/
-[Azure Service Dashboard]: /zh-cn/support/service-dashboard/
-[Automate mobile services with the Azure CLI]: /documentation/articles/mobile-services-manage-command-line-interface
-
-
+[Azure Service Dashboard]: http://azure.microsoft.com/support/service-dashboard/
+[Automate mobile services with the Azure CLI]: /develop/mobile/tutorials/command-line-administration/
+ 

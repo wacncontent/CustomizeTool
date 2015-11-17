@@ -12,7 +12,7 @@
 	ms.date="09/23/2015"
 	wacn.date=""/>
 
-# What happens to my Visual Studio Azure Javascript project when I add Add Mobile Services using Connected Services?
+# What happens to my Javascript project when I add Azure Mobile Services using Connected Visual Studio Services?
 
 > [AZURE.SELECTOR]
 > - [Getting Started](/documentation/articles/vs-mobile-services-javascript-getting-started)

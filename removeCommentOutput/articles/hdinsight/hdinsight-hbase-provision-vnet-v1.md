@@ -394,10 +394,11 @@ In this tutorial you learned how to provision an HBase cluster. To learn more, s
 [hbase-twitter-sentiment]: /documentation/articles/hdinsight-hbase-twitter-sentiment
 [vnet-overview]: /documentation/articles/virtual-networks-overview
 [vm-create]: /documentation/articles/virtual-machines-windows-tutorial
+
 [azure-portal]: https://management.windowsazure.cn
 [azure-create-storageaccount]: /documentation/articles/storage-create-storage-account
 [azure-purchase-options]: /pricing/overview/
-[azure-member-offers]: http://azure.microsoft.com/pricing/member-offers/
+[azure-member-offers]: /pricing/member-offers/
 [azure-trial]: /pricing/1rmb-trial/
 
 [hdinsight-admin-powershell]: /documentation/articles/hdinsight-administer-use-powershell
@@ -411,6 +412,8 @@ In this tutorial you learned how to provision an HBase cluster. To learn more, s
 
 
 [powershell-install]: /documentation/articles/install-configure-powershell
+
+
 [hdinsight-customize-cluster]: /documentation/articles/hdinsight-hadoop-customize-cluster
 [hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters
 [hdinsight-get-started]: /documentation/articles/hdinsight-get-started
@@ -421,6 +424,7 @@ In this tutorial you learned how to provision an HBase cluster. To learn more, s
 [hdinsight-power-query]: /documentation/articles/hdinsight-connect-excel-power-query
 [hdinsight-hive-odbc]: /documentation/articles/hdinsight-connect-excel-hive-ODBC-driver
 [hdinsight-hbase-replication-dns]: /documentation/articles/hdinsight-hbase-geo-replication-configure-DNS
+
 [img-dns-surffix]: ./media/hdinsight-hbase-provision-vnet/DNSSuffix.png
 [img-primary-dns-suffix]: ./media/hdinsight-hbase-provision-vnet/PrimaryDNSSuffix.png
 [img-provision-cluster-page1]: ./media/hdinsight-hbase-provision-vnet/hbasewizard1.png "Provision details for the new HBase cluster"

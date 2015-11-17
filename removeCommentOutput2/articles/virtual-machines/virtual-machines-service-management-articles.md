@@ -34,15 +34,15 @@ This is a list of articles for working with virtual machines in Azure Service Ma
 
 [Create and manage a Windows-based virtual machine by using Azure PowerShell](/documentation/articles/virtual-machines-create-windows-powershell-service-manager)
 
-[Creating a VM by using the Azure Command-Line Interface (Azure CLI)](/documentation/articles/virtual-machines-xplat-getting-started)
+[Creating a custom VM running Linux by using the Azure Command-Line Interface (Azure CLI)](/documentation/articles/virtual-machines-linux-create-custom)
 
-[Create a multi-VM deployment by using the Azure CLI](/documentation/articles/virtual-machines-create-multi-vm-deployment-xplat-cli)
+[Create a multi-VM deployment by using the Azure CLI](/documentation/articles/virtual-machines-create-multi-vm-deployment-xplat-cli-install)
 
 ## Plan
 
 [Azure infrastructure services implementation guidelines](/documentation/articles/virtual-machines-infrastructure-services-implementation-guidelines)
 
-[Do I need a virtual network?](https://msdn.microsoft.com/zh-cn/library/azure/jj156007.aspx)
+[Do I need a virtual network?](/documentation/articles/virtual-networks-overview)
 
 ## Create
 
@@ -84,19 +84,21 @@ This is a list of articles for working with virtual machines in Azure Service Ma
 
 ## Create workloads
 
-[Active Directory](https://msdn.microsoft.com/zh-cn/library/azure/jj156090.aspx)
+[Active Directory](/documentation/articles/active-directory-new-forest-virtual-machine)
 
+<!-- [BizTalk Server](https://msdn.microsoft.com/zh-cn/library/azure/jj248689) -->
 
 [Cassandra](/documentation/articles/virtual-machines-linux-nodejs-running-cassandra)
 
-[Docker](/documentation/articles/virtual-machines-docker-with-xplat-cli)
+[Docker](/documentation/articles/virtual-machines-docker-with-xplat-cli-install)
 
 [Exchange Server](https://technet.microsoft.com/zh-cn/library/jj619301.aspx)
 
-[HPC Pack](https://msdn.microsoft.com/zh-cn/library/azure/dn518135.aspx)
+[HPC Pack](/documentation/articles/virtual-machines-hpcpack-cluster-options)
 
 [LAMP stack](/documentation/articles/virtual-machines-linux-install-lamp-stack)
 
+<!-- [Message Queuing (MSMQ)](https://msdn.microsoft.com/zh-cn/library/azure/dn529082.aspx) -->
 
 [Microsoft Dynamics AX](https://technet.microsoft.com/zh-cn/library/dn741581.aspx)
 
@@ -108,6 +110,7 @@ This is a list of articles for working with virtual machines in Azure Service Ma
 
 [Oracle](/documentation/articles/virtual-machines-oracle-azure-virtual-machines)
 
+<!-- [SAP](https://msdn.microsoft.com/zh-cn/library/azure/dn745892.aspx) -->
 
 [SharePoint Server](/documentation/articles/virtual-machines-workload-intranet-sharepoint-farm)
 
@@ -117,12 +120,15 @@ This is a list of articles for working with virtual machines in Azure Service Ma
 
 [System Center Operations Manager](https://technet.microsoft.com/zh-cn/library/dn249696.aspx#BKMK_Azure)
 
+<!-- [Team Foundation Server](https://msdn.microsoft.com/zh-cn/library/azure/dn769056.aspx) -->
 
+<!-- [Windows Server Essentials Experience](https://msdn.microsoft.com/zh-cn/library/azure/dn520827.aspx) -->
 
 ## Monitor
 
 [Enabling diagnostics in Azure cloud services and virtual machines](/documentation/articles/cloud-services-dotnet-diagnostics)
 
+<!-- [Debugging a cloud service or virtual machine in Visual Studio](https://msdn.microsoft.com/zh-cn/library/azure/ff683670.aspx) -->
 
 [Using Windows PowerShell scripts to publish to dev and test environments](https://msdn.microsoft.com/zh-cn/library/azure/dn642480.aspx)
 
@@ -136,7 +142,6 @@ This is a list of articles for working with virtual machines in Azure Service Ma
 
 [Azure Service Management cmdlets](https://msdn.microsoft.com/zh-cn/library/azure/dn708504.aspx)
 
-[Service Management REST API reference](https://msdn.microsoft.com/zh-cn/library/azure/ee460799.aspx)
-
 [Using the Azure CLI for Mac, Linux, and Windows with Azure Service Management](/documentation/articles/virtual-machines-command-line-tools)
 
+[Service Management REST API reference](https://msdn.microsoft.com/zh-cn/library/azure/ee460799.aspx)

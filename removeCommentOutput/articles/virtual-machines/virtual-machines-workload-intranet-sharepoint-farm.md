@@ -41,7 +41,7 @@ You have two choices for creating a dev/test environment for a SharePoint farm h
 - Cloud-only virtual network
 - Cross-premises virtual network
 
-You can create these dev/test environments for free with your [MSDN subscription](http://azure.microsoft.com/pricing/member-offers/msdn-benefits/) or an [Azure Trial Subscription](/pricing/1rmb-trial/).
+You can create these dev/test environments for free with your [MSDN subscription](/pricing/member-offers/msdn-benefits/) or an [Azure Trial Subscription](/pricing/1rmb-trial/).
 
 ### Cloud-only virtual network
 

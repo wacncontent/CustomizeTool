@@ -134,7 +134,7 @@ Note that if virtual machines use DHCP,  IP address management isn't handled by 
 If you're failing over to Azure there are a couple more constraints. Let's look at a fictional company (Woodgrove Bank) that has on-premises infrastructure hosting their line of business applications, and Azure hosting their mobile applications. 
 
 
-- Connectivity between Woodgrove Bank VMs in Azure and on-premises servers is over site-to-site VPN which shows the virtual network in Azure as an extension of Woodgrove Bank’s on-premises network.
+- Connectivity between Woodgrove Bank VMs in Azure and on-premises servers is over site-to-site VPN which shows the virtual network in Azure as an extension of Woodgrove Bank’s on-premises network. 
 - Woodgrove wants to use Site Recovery to replicate its on-premises workloads to Azure. 
 - Woodgrove has to deal with applications and configurations which depend on hard-coded IP addresses, so they need to retain IP addresses for their applications after failover to Azure.
 - Woodgrove’s on-premises infrastructure is managed by a VMM 2012 R2 server.

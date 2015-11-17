@@ -680,6 +680,8 @@ In this tutorial, you learned how to define an Oozie workflow and how to run an 
 [hdinsight-versions]: /documentation/articles/hdinsight-component-versioning
 [hdinsight-storage]: /documentation/articles/hdinsight-use-blob-storage
 [hdinsight-get-started]: /documentation/articles/hdinsight-get-started
+
+
 [hdinsight-use-sqoop]: /documentation/articles/hdinsight-use-sqoop
 [hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters
 [hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
@@ -688,11 +690,15 @@ In this tutorial, you learned how to define an Oozie workflow and how to run an 
 [hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig
 [hdinsight-storage]: /documentation/articles/hdinsight-use-blob-storage
 [hdinsight-get-started-emulator]: /documentation/articles/hdinsight-get-started-emulator
+
 [hdinsight-develop-streaming-jobs]: /documentation/articles/hdinsight-hadoop-develop-deploy-streaming-jobs
 [hdinsight-develop-mapreduce]: /documentation/articles/hdinsight-develop-deploy-java-mapreduce
+
 [sqldatabase-create-configue]: /documentation/articles/sql-database-create-configure
 [sqldatabase-get-started]: /documentation/articles/sql-database-get-started
+
 [azure-create-storageaccount]: /documentation/articles/storage-create-storage-account
+
 [apache-hadoop]: http://hadoop.apache.org/
 [apache-oozie-400]: http://oozie.apache.org/docs/4.0.0/
 [apache-oozie-332]: http://oozie.apache.org/docs/3.3.2/

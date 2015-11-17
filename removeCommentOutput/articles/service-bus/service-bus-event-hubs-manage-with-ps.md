@@ -263,7 +263,7 @@ Some ready-made script are also available for download:
 <!--Anchors-->
 
 [Purchase Options]: /pricing/overview/
-[Member Offers]: http://azure.microsoft.com/pricing/member-offers/
+[Member Offers]: /pricing/member-offers/
 [Trial]: /pricing/1rmb-trial/
 [Service Bus NuGet package]: http://www.nuget.org/packages/WindowsAzure.ServiceBus/
 [Get-AzureSBNamespace]: https://msdn.microsoft.com/zh-cn/library/azure/dn495122.aspx

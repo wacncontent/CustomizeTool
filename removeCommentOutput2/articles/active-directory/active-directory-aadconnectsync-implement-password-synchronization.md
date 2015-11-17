@@ -13,15 +13,15 @@
 	wacn.date=""/>
 
 
-# Azure AD Connect Sync: Implement password synchronization
+# Azure AD Connect sync: Implement password synchronization
 
-With password synchronization, you enable your users to use the same password they are uson g to sign on to your on-premises Active Directory to sign in to Azure Active Directory.
+With password synchronization, you enable your users to use the same password they are using to sign in to your on-premises Active Directory to sign in to Azure Active Directory.
 
 The objective of this topic is to provide you with the information you need to understand how password synchronization works and how to enable it in your environment.
 
 ## What is Password Synchronization
 
-Password synchronization is a feature of the Azure Active Directory Connect Synchronization Services (Azure AD Connect Sync) that synchronizes user passwords from your on-premises Active Directory to Azure Active Directory (Azure AD). This feature enables your users to log into their Azure Active Directory services (such as Office 365, Microsoft Intune, CRM Online, etc.) using the same password as they use to log into your on-premises network.It is important to note that this feature does not provide a Single Sign-On (SSO) solution because there is no token sharing / exchange in the password synchronization based process. 
+Password synchronization is a feature of the Azure Active Directory Connect synchronization services (Azure AD Connect sync) that synchronizes user passwords from your on-premises Active Directory to Azure Active Directory (Azure AD). This feature enables your users to log into their Azure Active Directory services (such as Office 365, Microsoft Intune, and CRM Online) using the same password as they use to log into your on-premises network.
 
 > [AZURE.NOTE] For more details about Active Directory Domain Services that are configured for FIPS and password synchronization, see Password Sync failing in FIPS-compliant systems.
 
@@ -31,9 +31,9 @@ Any customer of Azure Active Directory is eligible to run password synchronizati
 
 ## How Password Synchronization Works
 
-Password Sync hronization is an extension to the directory synchronization feature implemented by Azure AD Connect sync. As a consequence of this, this feature requires directory synchronization between your on-premise and your Azure Active Directory to be configured.
+Password synchronization is an extension to the directory synchronization feature implemented by Azure AD Connect sync. As a consequence of this, this feature requires directory synchronization between your on-premise and your Azure Active Directory to be configured.
 
-The Active Directory Domain Service stores Password s in form of a hash value representation of the actual user password. The password hash cannot be used to sign-on to your on-premises network. It is also designed so that it cannot be reversed in order to gain access to the user’s plain text password. To synchronize a password, Azure AD connect Sync extracts the user password hash from the on-premises Active Directory. Additional security processing is applied to the password hash before it is synchronized to the Azure Active Directory Authentication service. The actual data flow of the password synchronization process is similar to the synchronization of user data such as DisplayName or Email Addresses.
+The Active Directory Domain Service stores passwords in form of a hash value representation of the actual user password. The password hash cannot be used to sign-in to your on-premises network. It is also designed so that it cannot be reversed in order to gain access to the user’s plain text password. To synchronize a password, Azure AD Connect sync extracts the user's password hash from the on-premises Active Directory. Additional security processing is applied to the password hash before it is synchronized to the Azure Active Directory Authentication service. The actual data flow of the password synchronization process is similar to the synchronization of user data such as DisplayName or Email Addresses.
 
 Passwords are synchronized more frequently than the standard directory synchronization window for other attributes. Passwords are synchronized on a per-user basis and are generally synchronized in chronological order. When a user’s password is synchronized from the on-premises AD to the cloud, the existing cloud password will be overwritten.
 
@@ -45,7 +45,7 @@ The synchronization of a password has no impact on currently logged on users. If
 
 When synchronizing passwords, the plain text version of a user’s password is neither exposed to the password synchronization feature nor to Azure AD or any of the associated services.
 
-Additionally, there is no requirement on the on-premises Active Directory to store the password in a reversibly encrypted format. A digest of the ActiveWindows Directory password hash is used for the transmission between the on-premises AD and Azure Active Directory. The digest of the password hash cannot be used to access resources in the customer's on-premises environment.
+Additionally, there is no requirement on the on-premises Active Directory to store the password in a reversibly encrypted format. A digest of the Active Directory password hash is used for the transmission between the on-premises AD and Azure Active Directory. The digest of the password hash cannot be used to access resources in the customer's on-premises environment.
 
 ## Password Policy Considerations
 
@@ -87,7 +87,7 @@ Your Azure Active Directory tenant must be enabled for directory synchronization
 You enable password synchronization when running the Azure AD Connect Configuration Wizard.
 
 On the **Optional features** dialog page, select “**Password synchronization**”.
- 
+
 ![Optional features][1]
 
 

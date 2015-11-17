@@ -418,11 +418,14 @@ For tutorials that guide you through running other samples and that provide inst
 
 
 [powershell-install-configure]: /documentation/articles/install-configure-powershell
+
 [hdinsight-get-started]: /documentation/articles/hdinsight-get-started
+
 [hdinsight-samples]: /documentation/articles/hdinsight-run-samples
 [hdinsight-sample-10gb-graysort]: /documentation/articles/hdinsight-sample-10gb-graysort
 [hdinsight-sample-csharp-streaming]: /documentation/articles/hdinsight-sample-csharp-streaming
 [hdinsight-sample-pi-estimator]: /documentation/articles/hdinsight-sample-pi-estimator
 [hdinsight-sample-wordcount]: /documentation/articles/hdinsight-sample-wordcount
+
 [hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive
 [hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig

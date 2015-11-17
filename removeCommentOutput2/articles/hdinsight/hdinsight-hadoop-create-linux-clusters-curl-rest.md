@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties
    	pageTitle="Create Hadoop, HBase, or Storm clusters on Linux in HDInsight using cURL and the Azure REST API | Windows Azure"
    	description="Learn how to create Linux-based HDInsight clusters using cURL, Azure Resource Manager templates, and the Azure REST API. You can specify the cluster type (Hadoop, HBase, or Storm,) or use scripts to install custom components."
@@ -66,13 +68,13 @@ For example, the following is a merger of the template and parameters files from
                     "location": {
                         "type": "string",
                         "allowedValues": ["China North",
-                        "East Asia",
+                        "China East",
                         "China East",
                         "Japan East",
-                        "Japan West",
+                        "China East",
                         "China North",
                         "China East",
-                        "Southeast Asia",
+                        "China North",
                         "West Europe",
                         "China North"],
                         "metadata": {
@@ -272,13 +274,13 @@ Follow the steps in the _Authenticate service principal with a password - Azure 
 
 Use the following to get a new token from Azure. Replace __TENANTID__, __APPLICATIONID__, and __PASSWORD__ with the information save while creating a service principal:
 
-    curl -X "POST" "https://login.microsoftonline.com/TENANTID/oauth2/token" \
+    curl -X "POST" "https://login.chinacloudapi.cn/TENANTID/oauth2/token" \
     -H "Cookie: flight-uxoptin=true; stsservicecookie=ests; x-ms-gateway-slice=productionb; stsservicecookie=ests" \
     -H "Content-Type: application/x-www-form-urlencoded" \
     --data-urlencode "client_id=APPLICATIONID" \
     --data-urlencode "grant_type=client_credentials" \
     --data-urlencode "client_secret=PASSWORD" \
-    --data-urlencode "resource=https://management.azure.com/"
+    --data-urlencode "resource=https://manage.windowsazure.cn/"
 
 If this request is successful, you will receive a 200 series response and the response body will contain a JSON document.
 
@@ -293,7 +295,7 @@ Use the following to create a new resource group. You must create the group firs
 * Replace __DATACENTERLOCATION__ with the data center you wish to create the resource group, and resources, in. For example, 'China East'. 
 * Replace __GROUPNAME__ with the name you wish to use for this group:
 
-    curl -X "PUT" "https://management.azure.com/subscriptions/SUBSCRIPTIONID/resourcegroups/GROUPNAME?api-version=2015-01-01" \
+    curl -X "PUT" "https://manage.windowsazure.cn/subscriptions/SUBSCRIPTIONID/resourcegroups/GROUPNAME?api-version=2015-01-01" \
         -H "Authorization: Bearer ACCESSTOKEN" \
         -H "Content-Type: application/json" \
         -d $'{
@@ -310,7 +312,7 @@ Use the following to deploy the cluster configuration (template and parameter va
 * Replace __GROUPNAME__ with the resource group name you created in the previous section.
 * Replace __DEPLOYMENTNAME__ with the name you wish to use for this deployment.
 
-    curl -X "PUT" "https://management.azure.com/subscriptions/SUBSCRIPTIONID/resourcegroups/GROUPNAME/providers/microsoft.resources/deployments/DEPLOYMENTNAME?api-version=2015-01-01" \
+    curl -X "PUT" "https://manage.windowsazure.cn/subscriptions/SUBSCRIPTIONID/resourcegroups/GROUPNAME/providers/microsoft.resources/deployments/DEPLOYMENTNAME?api-version=2015-01-01" \
     -H "Authorization: Bearer ACCESSTOKEN" \
     -H "Content-Type: application/json" \
     -d "{set your body string to the template and parameters}"
@@ -330,7 +332,7 @@ To check the status of the deployment, use the following:
 * Replace __SUBSCRIPTIONID__ and __ACCESSTOKEN__ with the values used previously. 
 * Replace __GROUPNAME__ with the resource group name you created in the previous section.
 
-    curl -X "GET" "https://management.azure.com/subscriptions/SUBSCRIPTIONID/resourcegroups/GROUPNAME/providers/microsoft.resources/deployments/DEPLOYMENTNAME?api-version=2015-01-01" \
+    curl -X "GET" "https://manage.windowsazure.cn/subscriptions/SUBSCRIPTIONID/resourcegroups/GROUPNAME/providers/microsoft.resources/deployments/DEPLOYMENTNAME?api-version=2015-01-01" \
     -H "Authorization: Bearer ACCESSTOKEN" \
     -H "Content-Type: application/json"
 

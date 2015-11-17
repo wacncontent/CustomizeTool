@@ -17,6 +17,8 @@
 
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-include.md)]
 
+
+
 This article provides an overview of both the Service Management and Resource Manager architectures for creating infrastructure-based applications and workloads.
 
 ## Architecture for Service Management

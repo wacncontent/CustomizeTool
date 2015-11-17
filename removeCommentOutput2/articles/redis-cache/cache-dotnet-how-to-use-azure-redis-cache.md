@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties 
 	pageTitle="How to Use Azure Redis Cache" 
 	description="Learn how to improve the performance of your Azure applications with Azure Redis Cache" 
@@ -56,7 +58,7 @@ In the **New Redis Cache** blade, specify the desired configuration for the cach
 
 In **Dns name**, enter a subdomain name to use for the cache endpoint. The endpoint must be a string between six and twenty characters, contain only lowercase numbers and letters, and must start with a letter.
 
-Use **Pricing Tier** to select the desired cache size and features.**Basic** caches have a single node with multiple sizes up to 53 GB. **Standard** caches have a two node primary/replica configuration with a 99.9% SLA, and multiple sizes up to 53 GB. 
+Use **Pricing Tier** to select the desired cache size and features. **Basic** caches have a single node with multiple sizes up to 53 GB. **Standard** caches have a two node primary/replica configuration with a 99.9% SLA, and multiple sizes up to 53 GB. 
 
 In **Resource group**, select or create a resource group for your cache.
 
@@ -207,7 +209,7 @@ Type **RedisSessionStateProvider** into the **Search Online** text box, select i
 
 ![Redis Cache Session State NuGet Package][SessionStateNuGet]
 
-The NuGet package downloads and adds the required assembly references and addsadds the following the following section into your web.config file that contains the required configuration for your ASP.NET application to use the Redis Cache Session State Provider.
+The NuGet package downloads and adds the required assembly references and adds the following adds the following section into your web.config file that contains the required configuration for your ASP.NET application to use the Redis Cache Session State Provider.
 
     <sessionState mode="Custom" customProvider="MySessionStateStore">
       <providers>

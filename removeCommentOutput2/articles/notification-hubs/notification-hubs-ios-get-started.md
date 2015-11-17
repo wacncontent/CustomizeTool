@@ -48,7 +48,7 @@ Completing this tutorial is a prerequisite for all other Notification Hubs tutor
 
 ##Configure your notification hub
 
-This section walks you through creating and configuring a new notification hub by using the push certificate that you created. If you want to use a notification hub that you have already created, you can skip steps 2â€“5.
+This section walks you through creating and configuring a new notification hub by using the push certificate that you created. If you want to use a notification hub that you have already created, you can skip steps 2–5.
 
 
 1. In Keychain Access, right-click the new push certificate that you created in the **Certificates** category. Click **Export**, name the file, select the **.p12** format, and then click **Save**.
@@ -61,7 +61,7 @@ This section walks you through creating and configuring a new notification hub b
 
 2. Sign in to the [Azure Management Portal], and click **+NEW** at the bottom of the screen.
 
-3. Click **Azure Websites**, click **Service Bus**, click **Notification Hub**, and then click **Quick Create**.
+3. Click **App Services**, click **Service Bus**, click **Notification Hub**, and then click **Quick Create**.
 
    	![][2]
 
@@ -516,7 +516,7 @@ For more general information about Notification Hubs, see [Notification Hubs Gui
 [My Applications]: http://go.microsoft.com/fwlink/p/?LinkId=262039
 [Live SDK for Windows]: http://go.microsoft.com/fwlink/p/?LinkId=262253
 
-[Get started with Mobile Services]: /develop/mobile/tutorials/get-started-ios
+[Get started with Mobile Services]: /documentation/articles/mobile-services-ios-get-started
 [Azure Management Portal]: https://manage.windowsazure.cn/
 [Notification Hubs Guidance]: http://msdn.microsoft.com/zh-cn/library/jj927170.aspx
 [Install Xcode]: https://go.microsoft.com/fwLink/p/?LinkID=266532
@@ -525,4 +525,5 @@ For more general information about Notification Hubs, see [Notification Hubs Gui
 [Get started with push notifications in Mobile Services]: /documentation/articles/mobile-services-javascript-backend-ios-get-started-push
 [Use Notification Hubs to push notifications to users]: /documentation/articles/notification-hubs-aspnet-backend-ios-notify-users
 [Use Notification Hubs to send breaking news]: /documentation/articles/notification-hubs-ios-send-breaking-news
+
 [Local and Push Notification Programming Guide]: http://developer.apple.com/library/mac/#documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/ApplePushService.html#//apple_ref/doc/uid/TP40008194-CH100-SW1

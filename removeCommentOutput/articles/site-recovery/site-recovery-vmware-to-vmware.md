@@ -32,7 +32,7 @@ InMage Scout in Azure Site Recovery provides real-time replication between on-pr
 2. Click **Data Services** > **Recovery Services** > **Site Recovery Vault**.
 3. Click **Create New** > **Quick Create**.
 4. In **Name** enter a friendly name to identify the vault.
-5. In **Region** select the geographic region for the vault. To check supported regions see Geographic Availability in [Azure Site Recovery Pricing Details](/documentation/articles/site-recovery).
+5. In **Region** select the geographic region for the vault. To check supported regions see Geographic Availability in [Azure Site Recovery Pricing Details](/home/features/site-recovery/#price).
 
 Check the status bar to confirm that the vault was successfully created. The vault will be listed as **Active** on the main Recovery Services page.
 

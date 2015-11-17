@@ -27,7 +27,7 @@ Automatic scaling can be set when a pool is created, or enabled later on an exis
 
 The scaling formulas you define determine the number of available compute nodes in a pool for the next interval of processing. An automatic scaling formula is simply a string value assigned to a pool's [autoScaleFormula](https://msdn.microsoft.com/zh-cn/library/azure/dn820173.aspx) element in a request body (REST API) or [CloudPool.AutoScaleFormula](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.cloudpool.autoscaleformula.aspx) property (.NET API). This formula string cannot exceed 8KB in size, can include up to 100 statements separated by semicolons, and can include line breaks and comments.
 
-Statements in a formula are free-formed expressions: They can include any system-defined variables, user-defined variables, constant values, and supported operations on these variables or constants.
+Statements in a formula are free-formed expressions. They can include any system-defined variables, user-defined variables, constant values, and supported operations on these variables or constants.
 
 	VAR = Expression(system-defined variables, user-defined variables);
 
@@ -145,7 +145,7 @@ These **types** are supported in a formula.
 - double
 - doubleVec
 - string
-- timestamp. timestamp is a compound structure which contains the following members.
+- timestamp -- timestamp is a compound structure which contains the following members:
 	- year
 	- month (1-12)
 	- day (1-31)
@@ -254,78 +254,78 @@ These predefined **functions** are available for defining an automatic scaling f
     <th>Description</th>
   </tr>
   <tr>
-    <td>double avg(doubleVecList)</td>
+    <td>double <b>avg</b>(doubleVecList)</td>
     <td>The average value for all values in the doubleVecList.</td>
   </tr>
   <tr>
-    <td>double len(doubleVecList)</td>
+    <td>double <b>len</b>(doubleVecList)</td>
     <td>The length of the vector created from the doubleVecList.</td>
   <tr>
-    <td>double lg(double)</td>
+    <td>double <b>lg</b>(double)</td>
     <td>Log base 2.</td>
   </tr>
   <tr>
-    <td>doubleVec lg(doubleVecList)</td>
+    <td>doubleVec <b>lg</b>(doubleVecList)</td>
     <td>Componentwise log base 2. A vec(double) must be explicitly passed for single double parameter, otherwise the double lg(double) version is assumed.</td>
   </tr>
   <tr>
-    <td>double ln(double)</td>
+    <td>double <b>ln</b>(double)</td>
     <td>Natural log.</td>
   </tr>
   <tr>
-    <td>doubleVec ln(doubleVecList)</td>
+    <td>doubleVec <b>ln</b>(doubleVecList)</td>
     <td>Componentwise log base 2.  A vec(double) must be explicitly passed for single double parameter, otherwise the double lg(double) version is assumed.</td>
   </tr>
   <tr>
-    <td>double log(double)</td>
+    <td>double <b>log</b>(double)</td>
     <td>Log base 10.</td>
   </tr>
   <tr>
-    <td>doubleVec log(doubleVecList)</td>
+    <td>doubleVec <b>log</b>(doubleVecList)</td>
     <td>Componentwise log base 10. A vec(double) must be explicitly passed for single double parameter, otherwise the double log(double) version is assumed.</td>
   </tr>
   <tr>
-    <td>double max(doubleVecList)</td>
+    <td>double <b>max</b>(doubleVecList)</td>
     <td>The maximum value in the doubleVecList.</td>
   </tr>
   <tr>
-    <td>double min(doubleVecList)</td>
+    <td>double <b>min</b>(doubleVecList)</td>
     <td>The minimum value in the doubleVecList.</td>
   </tr>
   <tr>
-    <td>double norm(doubleVecList)</td>
+    <td>double <b>norm</b>(doubleVecList)</td>
     <td>The two-norm of the vector created from the doubleVecList.
   </tr>
   <tr>
-    <td>double percentile(doubleVec v, double p)</td>
+    <td>double <b>percentile</b>(doubleVec v, double p)</td>
     <td>The percentile element of the vector v.</td>
   </tr>
   <tr>
-    <td>double rand()</td>
+    <td>double <b>rand</b>()</td>
     <td>A random value between 0.0 and 1.0.</td>
   </tr>
   <tr>
-    <td>double range(doubleVecList)</td>
+    <td>double <b>range</b>(doubleVecList)</td>
     <td>The difference between the min and max values in doubleVecList.</td>
   </tr>
   <tr>
-    <td>double std(doubleVecList)</td>
+    <td>double <b>std</b>(doubleVecList)</td>
     <td>The sample standard deviation of the values in the doubleVecList.</td>
   </tr>
   <tr>
-    <td>stop()</td>
+    <td><b>stop</b>()</td>
     <td>Stop auto-scaling expression evaluation.</td>
   </tr>
   <tr>
-    <td>double sum(doubleVecList)</td>
+    <td>double <b>sum</b>(doubleVecList)</td>
     <td>The sum of all the components of doubleVecList.</td>
   </tr>
   <tr>
-    <td>timestamp time(string dateTime="")</td>
+    <td>timestamp <b>time</b>(string dateTime="")</td>
     <td>The timestamp of the current time if no parameters passed, or the timestamp of the dateTime string if passed. Supported dateTime formats are W3CDTF and RFC1123.</td>
   </tr>
   <tr>
-    <td>double val(doubleVec v, double i)</td>
+    <td>double <b>val</b>(doubleVec v, double i)</td>
     <td>The value of the element at location i in vector v with a starting index of zero.</td>
   </tr>
 </table>
@@ -360,7 +360,7 @@ These methods can be used to get sample data.
           <li><p><b>doubleVec GetSample(double count)</b> - Specifies the number of samples that are required from the most recent samples.</p>
 				  <p>A sample is 5 seconds worth of metrics data. GetSample(1) returns the last available sample, but for metrics like $CPUPercent you shouldn’t use this because it isn’t possible to know when the sample was collected. It might be recent, or because of system issues, it might be much older. It is better to use a time interval as shown below.</p></li>
           <li><p><b>doubleVec GetSample((timestamp | timeinterval) startTime [, double samplePercent])</b> – Specifies a time frame for gathering sample data and optionally specifies the percentage of samples that must be in the requested range.</p>
-          <p>$CPUPercent.GetSample(TimeInterval_Minute\*10), should return 200 samples if all samples for the last ten minutes are present in the CPUPercent history. If the last minute of history is still not present, only 180 samples are returned.</p>
+          <p>$CPUPercent.GetSample(TimeInterval\_Minute\*10), should return 200 samples if all samples for the last ten minutes are present in the CPUPercent history. If the last minute of history is still not present, only 180 samples are returned.</p>
 					<p>$CPUPercent.GetSample(TimeInterval\_Minute\*10, 80) succeeds, and $CPUPercent.GetSample(TimeInterval_Minute\*10,95) fails.</p></li>
           <li><p><b>doubleVec GetSample((timestamp | timeinterval) startTime, (timestamp | timeinterval) endTime [, double samplePercent])</b> – Specifies a time frame for gathering data with both a start time and an end time.</p></li></ul>
 		  <p>Note that there is a delay between when a sample is collected and when it is available to a formula; this must be considered when using the GetSample method; see GetSamplePercent below.</td>
@@ -561,7 +561,7 @@ Perhaps you want to adjust the pool size based on the day of the week and time o
 
 This formula first obtains the current time. If it's a weekday (1-5) and within working hours (8AM-6PM), the target pool size is set to 20 nodes. Otherwise, the pool size is targeted at 10 nodes.
 
-### Example 2. 
+### Example 2
 
 In this example, the pool size is adjusted based on the number of tasks in the queue. Note that both comments and line breaks are acceptable in formula strings.
 

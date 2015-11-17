@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties 
 	pageTitle="Introduction to Azure Websites Environment" 
 	description="Learn about the Azure Websites Environment feature that provides secure, VNet-joined, dedicated scale units for running all of your apps." 

@@ -417,6 +417,5 @@ In addition to claims, the token includes a version number in **ver** and **appi
     }.
 
 ##See Also
-### Concepts
 
-[Azure Active Directory Authentication Protocols](/documentation/articles/active-directory-authentication-protocols)
+[Azure Active Directory Authentication Protocols](https://msdn.microsoft.com/zh-cn/library/azure/dn151124.aspx)

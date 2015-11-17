@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties 
    pageTitle="Azure Automation DSC Overview | Windows Azure" 
    description="An Overview of Azure Automation Desired State Configuration (DSC), its terms, and known issues" 
@@ -130,6 +132,6 @@ Going from an empty automation account to a managed set of correctly configured 
 
 ##Related Articles##
 
-- [Azure Automation DSC cmdlets] (https://msdn.microsoft.com/zh-cn/library/mt244122.aspx)
-- [Azure Automation DSC pricing] (/home/features/automation/#price)
+- [Azure Automation DSC cmdlets](https://msdn.microsoft.com/zh-cn/library/mt244122.aspx)
+- [Azure Automation DSC pricing](/home/features/automation/#price)
 - [Continuous Deployment to IaaS VMs Using Azure Automation DSC and Chocolatey](/documentation/articles/automation-dsc-cd-chocolatey)

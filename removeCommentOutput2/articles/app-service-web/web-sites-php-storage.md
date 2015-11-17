@@ -318,6 +318,7 @@ Deleting an item is accomplished with a single call to `deleteItem`. The passed 
 
 To make your application store data into the cloud you need to first create a storage account in Azure and then pass the proper authentication information to the *Configuration* class.
 
+
 1. Login to the [Azure Management Portal][management-portal].
 
 2. Click the **+ New** icon on the bottom left of the portal.
@@ -429,6 +430,7 @@ To publish changes to application, follow these steps:
 	You will be prompted for the password you created earlier.
 
 3. Browse to **http://[your web app domain]/index.php** to see your changes. 
+
 [new- Website]: ./media/web-sites-php-storage/new_Website.jpg
 [website-quick-create]: ./media/web-sites-php-storage/createsite.png
 [website-quick-create-details]: ./media/web-sites-php-storage/sitedetails.png

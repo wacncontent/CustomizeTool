@@ -64,7 +64,7 @@ Be sure to follow along with the tutorials in the "Next steps" section to see ho
 
 1. Sign in to the [Azure Management Portal], and then click **+ NEW** at the bottom left of the screen.
 
-2. Click **Azure Websites** > **Service Bus** > **Notification Hub** > **Quick Create**. Type a name for your notification hub, select your desired region, and then click **Create a new Notification Hub**.
+2. Click **App Services** > **Service Bus** > **Notification Hub** > **Quick Create**. Type a name for your notification hub, select your desired region, and then click **Create a new Notification Hub**.
 
    	![][6]
 

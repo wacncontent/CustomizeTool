@@ -434,7 +434,7 @@ Before you start with the instructions below, you must have created a storage ac
 
 **To create a container**
 
-1. Sign in to the [Azure Preview Portal](https://ms.portal.azure.com/).
+1. Sign in to the [Azure Preview Portal](https://manage.windowsazure.cn/).
 2. Click **NEW** on the left, click **DATA SERVICE**, and then click **Storage**.
 3. In the Storage Account blade, configure the properties as shown in the screen capture below.
 	
@@ -517,15 +517,19 @@ In this MapReduce tutorial, you installed the HDInsight Emulator - a Hadoop sand
 [netstat-url]: http://technet.microsoft.com/zh-cn/library/ff961504.aspx
 
 [hdinsight-develop-mapreduce]: /documentation/articles/hdinsight-develop-deploy-java-mapreduce
+
 [hdinsight-emulator-install]: http://www.microsoft.com/web/gallery/install.aspx?appid=HDINSIGHT
 [hdinsight-emulator-release-notes]: /documentation/articles/hdinsight-emulator-release-notes
+
 [hdinsight-storage]: /documentation/articles/hdinsight-use-blob-storage
 [hdinsight-submit-jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically
 [hdinsight-powershell-reference]: https://msdn.microsoft.com/zh-cn/library/dn858087.aspx
 [hdinsight-get-started]: /documentation/articles/hdinsight-get-started
 [hdinsight-develop-deploy-streaming]: /documentation/articles/hdinsight-hadoop-develop-deploy-streaming-jobs
 [hdinsight-versions]: /documentation/articles/hdinsight-component-versioning
+
 [Powershell-install-configure]: /documentation/articles/install-configure-powershell
+
 [hadoop-commands-manual]: http://hadoop.apache.org/docs/r1.1.1/commands_manual.html
 
 [image-hdi-emulator-services]: ./media/hdinsight-hadoop-emulator-get-started/HDI.Emulator.Services.png

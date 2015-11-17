@@ -294,7 +294,7 @@ Now that you've learned the basics of the Azure blob service, follow these links
 For more information, see also the [PHP Developer Center](/develop/php/).
 
 
-[download]: http://go.microsoft.com/fwlink/?LinkID=252473
+[download]: /documentation/articles/php-download-sdk
 [Storing and accessing data in Azure]: http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx
 [container-acl]: http://msdn.microsoft.com/zh-cn/library/azure/dd179391.aspx
 [error-codes]: http://msdn.microsoft.com/zh-cn/library/azure/dd179439.aspx

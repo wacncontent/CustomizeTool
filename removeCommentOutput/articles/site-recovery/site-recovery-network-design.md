@@ -134,7 +134,7 @@ Note that if virtual machines use DHCP,  IP address management isn't handled by 
 If you're failing over to Azure there are a couple more constraints. Let's look at a fictional company (Woodgrove Bank) that has on-premises infrastructure hosting their line of business applications, and Azure hosting their mobile applications. 
 
 
-- Connectivity between Woodgrove Bank VMs in Azure and on-premises servers is over site-to-site VPN which shows the virtual network in Azure asn a extension of Woodgrove Bank’s on-premises network. 
+- Connectivity between Woodgrove Bank VMs in Azure and on-premises servers is over site-to-site VPN which shows the virtual network in Azure as an extension of Woodgrove Bank’s on-premises network. 
 - Woodgrove wants to use Site Recovery to replicate its on-premises workloads to Azure. 
 - Woodgrove has to deal with applications and configurations which depend on hard-coded IP addresses, so they need to retain IP addresses for their applications after failover to Azure.
 - Woodgrove’s on-premises infrastructure is managed by a VMM 2012 R2 server.
@@ -154,7 +154,7 @@ For Woodgrove to deploy replication and maintain IP addresses the following is r
 
 	![Azure networks](./media/site-recovery-network-design/ASR_NetworkDesign7.png)
 
-- To ensure that the IP address for the VM is retained, in the VM properties in Site Recovery we'll specify that the same IP address should be used. Then nafter failover Site Recover will assign the specified IP address to the VM.
+- To ensure that the IP address for the VM is retained, in the VM properties in Site Recovery we'll specify that the same IP address should be used. Then after failover Site Recover will assign the specified IP address to the VM.
 	![Azure networks](./media/site-recovery-network-design/ASR_NetworkDesign8.png)
 
 
@@ -182,7 +182,7 @@ Let's look at this scenario with an example that has a third site from which the
 - Virtual machines will update the DNS server that they are using after they start. DNS entries typically have to be changed or flushed throughout the network, and cached entries in network tables have to be updated or flushed, so it is not uncommon to be faced with downtime while these state changes take place. This can be mitigated by:
 
 	- Using low TTL values for intranet applications.
-	- Using [Azure Traffic Manger with Site Recovery](http://azure.microsoft.com/blog/2015/03/03/reduce-rto-by-using-azure-traffic-manager-with-azure-site-recovery/ for internet based applications).
+	- Using [Azure Traffic Manger with Site Recovery](http://azure.microsoft.com/blog/2015/03/03/reduce-rto-by-using-azure-traffic-manager-with-azure-site-recovery/) for internet based applications.
 	- Using the following script within your recovery plan to update the DNS Server to ensure a timely update (The script is not required if the Dynamic DNS registration is configured)
 
     [string]$Zone,

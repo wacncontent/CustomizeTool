@@ -147,14 +147,13 @@ Here is a sample walkthrough of capturing a virtual machine including terminal o
 Visit the [Azure CLI documentation page][] for more details and additional commands.
 
 
-[Azure CLI documentation page]: /documentation/articles/virtual-machines-command-line-tools/ 
+[Azure CLI documentation page]: /documentation/articles/virtual-machines-command-line-tools
 
-[How to Log on to a Virtual Machine Running Linux]: /documentation/articles/virtual-machines-linux-how-to-log-on/
+[How to Log on to a Virtual Machine Running Linux]: /documentation/articles/virtual-machines-linux-how-to-log-on
 
 [About Virtual Machine Images in Azure]: http://msdn.microsoft.com/zh-cn/library/azure/dn790290.aspx
 
-[How to Create a Custom Virtual Machine]: /documentation/articles/virtual-machines-create-custom/ 
+[How to Create a Custom Virtual Machine]: /documentation/articles/virtual-machines-create-custom
 
-[How to Attach a Data Disk to a Virtual Machine]: /documentation/articles/storage-windows-attach-disk/
-
-
+[How to Attach a Data Disk to a Virtual Machine]: /documentation/articles/storage-windows-attach-disk
+ 

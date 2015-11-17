@@ -13,7 +13,7 @@
 	wacn.date=""/>
 
 # Working with custom domains in Azure AD Application Proxy
-> [AZURE.NOTE] Application Proxy is a feature that is available only if you upgraded to the Premium or Basic edition of Azure Active Directory. For more information, see [Azure Active Directory editions](https://msdn.microsoft.com/zh-cn/library/azure/dn532272.aspx).
+> [AZURE.NOTE] Application Proxy is a feature that is available only if you upgraded to the Premium or Basic edition of Azure Active Directory. For more information, see [Azure Active Directory editions](/documentation/articles/active-directory-editions).
 
 Using a default domain enables you to set the same URL as the internal and external URL for accessing the application so that your users only have one URL to remember to access the app, no matter where they are accessing from, and it enables you to create a single shortcut in the Access Panel for the application. If you use the default domain provided by Azure AD Application Proxy, there’s no additional configuration you need to enable your domain. In the event that you use a custom domain, there are a few things you need to do to make sure that Application Proxy recognizes your domain and validates its certificates.
 
@@ -68,7 +68,20 @@ A: This is not supported in the current version.<br>
 
 
 
+## See also
+There's a lot more you can do with Application Proxy:
+
+- [Publish applications with Application Proxy](/documentation/articles/active-directory-application-proxy-publish)
+- [Enable single-sign on](/documentation/articles/active-directory-application-proxy-sso-using-kcd)
+- [Enable conditional access](/documentation/articles/active-directory-application-proxy-conditional-access)
+- [Working with claims aware applications](/documentation/articles/active-directory-application-proxy-claims-aware-apps)- [Troubleshoot issues you're having with Application Proxy](/documentation/articles/active-directory-application-proxy-troubleshoot)
+
+## Learn more about Application Proxy
+- [Take a look here at our online help](/documentation/articles/active-directory-application-proxy-enable)
+- [Check out the Application Proxy blog](http://blogs.technet.com/b/applicationproxyblog/)
+- [Watch our videos on Channel 9!](http://channel9.msdn.com/events/Ignite/2015/BRK3864)
+
 ## Additional Resources
 
-* [Sign up for Azure as an organization](/documentation/articles/sign-up-organization) 
+* [Sign up for Azure as an organization](/documentation/articles/sign-up-organization)
 * [Azure Identity](/documentation/articles/fundamentals-identity)

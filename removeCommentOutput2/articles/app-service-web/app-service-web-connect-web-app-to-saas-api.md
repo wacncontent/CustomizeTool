@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties 
 	pageTitle="Connect a web app to an API app in Azure Websites" 
 	description="This tutorial shows you how to consume an API app from an ASP.NET web app hosted in Azure Websites." 

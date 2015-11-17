@@ -63,13 +63,8 @@ When deleting a service instance, be aware of the following:
 - After performing this action, if you wish to start monitoring the service, please uninstall and re-install the health agent on all the servers that will be monitored. After performing this action, if you wish to start monitoring the same server again, you will need to uninstall and re-install the health agent on this server.
 
 
+#### To delete a service instance from Azure AD Connect Health Service
 
-
-
-
-
-	### To delete a service instance from Azure AD Connect Health Service
-<ol>
 1. Open the Service Blade from the Service List Blade by selecting the service identifier (farm name) that you wish to remove.
 2. On the Server Blade, click on the "Delete" button from the action bar.
 3. Confirm the service name by typing it in the confirmation box. (for example: sts.contoso.com)

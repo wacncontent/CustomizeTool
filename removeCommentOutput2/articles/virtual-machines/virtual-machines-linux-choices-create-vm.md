@@ -70,23 +70,29 @@ Use an image based on an existing Azure virtual machine by *capturing* that VM, 
 
 <!-- LINKS -->
 [overview]: /documentation/articles/resource-group-overview
+
 [Create a Virtual Machine Running Windows]: /documentation/articles/virtual-machines-windows-tutorial
 [Create a Virtual Machine Running Linux]: /documentation/articles/virtual-machines-linux-tutorial
 
-[Equivalent Resource Manager and Service Management Commands for VM Operations with the Azure CLI for Mac, Linux, and Windows]:/documentation/articles/xplat-cli-azure-manage-vm-asm-arm
+[Equivalent Resource Manager and Service Management Commands for VM Operations with the Azure CLI for Mac, Linux, and Windows]: /documentation/articles/xplat-cli-azure-manage-vm-asm-arm
 [Deploy and Manage Virtual Machines using Azure Resource Manager Templates and the Azure CLI]: /documentation/articles/virtual-machines-deploy-rmtemplates-azure-cli
 [Deploy and Manage Virtual Machines using Azure Resource Manager Templates and PowerShell]: /documentation/articles/virtual-machines-deploy-rmtemplates-powershell
 [Use Azure PowerShell to create and preconfigure Linux-based Virtual Machines]: /documentation/articles/virtual-machines-ps-create-preconfigure-linux-vms
+
 [How to Create a Custom Virtual Machine Running Linux in Azure]: /documentation/articles/virtual-machines-linux-create-custom
 [How to Capture a Linux Virtual Machine to Use as a Template with the CLI]: /documentation/articles/virtual-machines-linux-capture-image
+
 [Creating and Uploading a Virtual Hard Disk that Contains the Linux Operating System]: /documentation/articles/virtual-machines-linux-create-upload-vhd
+
 [Creating a virtual machine for a website with Visual Studio]: /documentation/articles/virtual-machines-dotnet-create-visual-studio-powershell
 [Deploy Azure Resources Using the Compute, Network, and Storage .NET Libraries]: /documentation/articles/virtual-machines-arm-deployment
+
 [Log On to the Virtual Machine]: /documentation/articles/virtual-machines-linux-how-to-log-on
+
 [Attach a Data Disk]: /documentation/articles/virtual-machines-linux-how-to-attach-disk
 
-[About Azure VM configuration settings]: https://msdn.microsoft.com/zh-CN/library/azure/dn763935.aspx
 [Base Configuration Test Environment]: /documentation/articles/virtual-machines-base-configuration-test-environment
 [Azure hybrid cloud test environments]: /documentation/articles/virtual-machines-hybrid-cloud-test-environments
+
 [Create a Virtual Machine Running Linux]: /documentation/articles/virtual-machines-linux-tutorial
 [Create a Custom Virtual Machine]: /documentation/articles/virtual-machines-create-custom

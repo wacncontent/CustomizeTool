@@ -243,7 +243,7 @@ If you suspect that a user account may be compromised or any kind of suspicious 
 
 - Contact the user to verify the activity
 - Reset the user's password
-- [Enable multi-factor authentication](https://msdn.microsoft.com/zh-cn/library/azure/7a9c56cf-72f1-4797-8e86-a9a2d9569ef6#enableuser) for additional security
+- [Enable multi-factor authentication](https://msdn.microsoft.com/zh-cn/library/azure/7a9c56cf-72f1-4797-8e86-a9a2d9569ef6) for additional security
 
 ## View or download a report
 
@@ -272,5 +272,5 @@ For more information about Azure AD's reporting notifications, check out [Azure 
 
 ## What's next
 
-<!--- [Getting started with Azure Active Directory Premium](/documentation/articles/active-directory-get-started-premium)-->
+- [Getting started with Azure Active Directory Premium](/documentation/articles/active-directory-get-started-premium)
 - [Add company branding to your Sign In and Access Panel pages](/documentation/articles/active-directory-add-company-branding)

@@ -83,8 +83,8 @@ Event Hubs is available in the following regions:
 |---|---|
 |United States|China North, China East, China East 2, China East, China North|
 |Europe|China North, West Europe|
-|Asia Pacific|East Asia, Southeast Asia|
-|Japan|Japan East, Japan West|
+|Asia Pacific|China East, China North|
+|Japan|Japan East, China East|
 |Brazil|Brazil South|
 |Australia|Australia East, Australia Southeast|
 
@@ -92,7 +92,7 @@ Event Hubs is available in the following regions:
 
 Technical support for Event Hubs is available through the [community forums](https://social.msdn.microsoft.com/forums/azure/home). Billing and subscription management support is provided at no cost.
 
-To learn more about our SLA, please visit the [Service Level Agreements](http://azure.microsoft.com/support/legal/sla/) page.
+To learn more about our SLA, please visit the [Service Level Agreements](/support/legal/sla/) page.
 
 ## Next steps
 

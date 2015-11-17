@@ -8,14 +8,10 @@
   manager="adinah" 
   editor=""/>
 
-<tags 
-  ms.service="storage" 
-  ms.workload="storage" 
-  ms.tgt_pltfrm="na" 
-  ms.devlang="na" 
-  ms.topic="article" 
-  ms.date="09/03/2015" 
-  ms.author="tamram"/>
+<tags
+	ms.service="storage"
+	ms.date="09/03/2015"
+	wacn.date=""/>
 
 
 # Set and Retrieve Properties and Metadata #

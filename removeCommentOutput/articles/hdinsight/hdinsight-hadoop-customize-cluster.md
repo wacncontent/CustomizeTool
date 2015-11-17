@@ -288,4 +288,6 @@ See [Develop Script Action scripts for HDInsight][hdinsight-write-script].
 [hdinsight-write-script]: /documentation/articles/hdinsight-hadoop-script-actions
 [hdinsight-provision-cluster]: /documentation/articles/hdinsight-provision-clusters
 [powershell-install-configure]: /documentation/articles/install-configure-powershell
+
+
 [img-hdi-cluster-states]: ./media/hdinsight-hadoop-customize-cluster/HDI-Cluster-state.png "Stages during cluster creation"

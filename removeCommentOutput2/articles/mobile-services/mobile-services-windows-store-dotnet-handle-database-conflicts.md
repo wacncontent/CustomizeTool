@@ -62,7 +62,7 @@ In this section you will update the TodoList user interface to allow updating th
 		</ListView>
 
 
-3. In the Visual Studio Solution Explorer, open MainPage.cs in the shared project. Add the event handler to the MainPage for the TextBox `LostFocus` event as shown below.
+4. In the Visual Studio Solution Explorer, open MainPage.cs in the shared project. Add the event handler to the MainPage for the TextBox `LostFocus` event as shown below.
 
 
         private async void ToDoText_LostFocus(object sender, RoutedEventArgs e)
@@ -215,7 +215,7 @@ In this section you will build a Windows Store app package to install the app on
 
 	![][12]
   
-6. Run instance 1 of the app in Visual Studio by clicking **Debug**->**Start Debugging**. On the Start screen of the second machine, click the down arrow to see "Apps by name". Then click the **todolist** app to run instance 2 of the app.
+5. Run instance 1 of the app in Visual Studio by clicking **Debug**->**Start Debugging**. On the Start screen of the second machine, click the down arrow to see "Apps by name". Then click the **todolist** app to run instance 2 of the app. 
 
 	App Instance 1	
 	![][2]
@@ -224,7 +224,7 @@ In this section you will build a Windows Store app package to install the app on
 	![][2]
 
 
-7. In instance 1 of the app, update the text of the last item to **Test Write 1**, then click another text box so that the `LostFocus` event handler updates the database. The screenshot below shows an example.
+6. In instance 1 of the app, update the text of the last item to **Test Write 1**, then click another text box so that the `LostFocus` event handler updates the database. The screenshot below shows an example.
 	
 	App Instance 1	
 	![][3]
@@ -232,7 +232,7 @@ In this section you will build a Windows Store app package to install the app on
 	App Instance 2	
 	![][2]
 
-8. At this point the corresponding item in instance 2 of the app has an old version of the item. In that instance of the app, enter **Test Write 2** for the `text` property. Then click another text box so the `LostFocus` event handler attempts to update the database with the old `_version` property.
+7. At this point the corresponding item in instance 2 of the app has an old version of the item. In that instance of the app, enter **Test Write 2** for the `text` property. Then click another text box so the `LostFocus` event handler attempts to update the database with the old `_version` property.
 
 	App Instance 1	
 	![][4]
@@ -240,7 +240,7 @@ In this section you will build a Windows Store app package to install the app on
 	App Instance 2	
 	![][5]
 
-9. Since the `__version` value used with the update attempt didn't match the server `__version` value, the Mobile Services SDK throws a `MobileServicePreconditionFailedException` allowing the app to resolve this conflict. To resolve the conflict, you can click **Commit Local Text** to commit the values from instance 2. Alternatively, click **Leave Server Text** to discard the values in instance 2, leaving the values from instance 1 of the app committed.
+8. Since the `__version` value used with the update attempt didn't match the server `__version` value, the Mobile Services SDK throws a `MobileServicePreconditionFailedException` allowing the app to resolve this conflict. To resolve the conflict, you can click **Commit Local Text** to commit the values from instance 2. Alternatively, click **Leave Server Text** to discard the values in instance 2, leaving the values from instance 1 of the app committed. 
 
 	App Instance 1	
 	![][4]
@@ -366,7 +366,7 @@ This tutorial demonstrated how to enable a Windows Store app to handle write con
 <!-- URLs. -->
 [Optimistic Concurrency Control]: http://go.microsoft.com/fwlink/?LinkId=330935
 [Get started with Mobile Services]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started/#create-new-service
-[Azure Account]: http://www.windowsazure.cn/pricing/1rmb-trial/
+[Azure Account]: /pricing/1rmb-trial/
 [Validate and modify data with scripts]: /documentation/articles/mobile-services-windows-store-dotnet-validate-modify-data-server-scripts
 [Refine queries with paging]: /documentation/articles/mobile-services-windows-store-dotnet-add-paging-data
 [Get started with Mobile Services]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started

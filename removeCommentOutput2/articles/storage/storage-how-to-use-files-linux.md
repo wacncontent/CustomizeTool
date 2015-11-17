@@ -7,13 +7,10 @@
         manager="jahogg"
         editor="" />
 
-<tags ms.service="storage"
-      ms.workload="storage"
-      ms.tgt_pltfrm="na"
-      ms.devlang="na"
-      ms.topic="article"
-      ms.date="10/06/2015"
-      ms.author="jutang;tamram" />
+<tags
+	ms.service="storage"
+	ms.date="10/06/2015"
+	wacn.date=""/>
 
 
 # How to use Azure File Storage with Linux 
@@ -125,7 +122,7 @@ See these links for more information about Azure File storage.
 
 ### Blog posts
 
-- [Azure File storage is now generally available](/zh-cn/blog/) 
-- [Deep dive with Azure File storage](/home/features/storage) 
+- [Azure File storage is now generally available](/blog/) 
+- [Deep dive with Azure File storage](/home/features/storage/) 
 - [Introducing Windows Azure File Service](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/12/introducing-microsoft-azure-file-service.aspx)
 - [Persisting connections to Windows Azure Files](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/27/persisting-connections-to-microsoft-azure-files.aspx)

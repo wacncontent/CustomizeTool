@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties
    pageTitle="Manage HDInsight clusters using Ambari | Windows Azure"
    description="Learn how to use Ambari to monitor and manage Linux-based HDInsight clusters."
@@ -135,7 +137,7 @@ Some services display a **Quick Links** link at the top of the page. This can be
 
 Selecting any of these links will open a new tab in your browser, which will display the selected page.
 
-> [AZURE.NOTE] Selecting a **Quick Links** link for any service will result in a "server not found" error unless you are using a Secure Sockets Layer (SSL) tunnel to proxy web traffic to the cluster. This is because theAmbari uses internal.domain name for these links 
+> [AZURE.NOTE] Selecting a **Quick Links** link for any service will result in a "server not found" error unless you are using a Secure Sockets Layer (SSL) tunnel to proxy web traffic to the cluster. This is because Ambari uses the internal domain name for these links.
 > 
 > For information on using an SSL tunnel with HDInsight, see one of the following:
 > 
@@ -187,7 +189,7 @@ The **Hosts** page lists all hosts in the cluster. To manage hosts, follow these
 
 ###<a id="service"></a>Services
 
-From the **Dashboard** or **Services** page, use the **Actions** button at the bottom of the list of services to stopadd new services, or to and start all services.
+From the **Dashboard** or **Services** page, use the **Actions** button at the bottom of the list of services to add new services, or to stop and start all services.
 
 ![service actions](./media/hdinsight-hadoop-manage-ambari/service-actions.png)
 

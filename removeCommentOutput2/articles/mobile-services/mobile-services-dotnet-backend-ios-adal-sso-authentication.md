@@ -32,7 +32,7 @@ To be able to authenticate users, you must register your application with the Az
 This tutorial requires the following:
 
 * XCode 4.5 and iOS 6.0 (or later versions)
-* Completion of the [Get started with Mobile Services] tutorial.or [Get Started with Data] 
+* Completion of the [Get started with Mobile Services] or [Get Started with Data] tutorial.
 * Windows Azure Mobile Services SDK
 * The [Active Directory Authentication Library for iOS]
 

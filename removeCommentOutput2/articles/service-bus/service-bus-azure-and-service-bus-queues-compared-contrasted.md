@@ -13,15 +13,15 @@
 
 # Azure Queues and Service Bus queues - compared and contrasted
 
-This article analyzes the differences and similarities between the two types of Queues offered by Windows Azure today: Azure Queues and Service Bus queues. By using this information, you can compare and contrast the respective technologies and be able to make a more informed decision about which solution best meets your needs.
+This article analyzes the differences and similarities between the two types of queues offered by Windows Azure today: Azure Queues and Service Bus queues. By using this information, you can compare and contrast the respective technologies and be able to make a more informed decision about which solution best meets your needs.
 
 ## Introduction
 
 Windows Azure supports two types of queue mechanisms: **Azure Queues** and **Service Bus Queues**.
 
-**Azure Queues**, which are part of the [Azure storage](http://www.windowsazure.cn/home/features/storage/) infrastructure, feature a simple REST-based Get/Put/Peek interface, providing reliable, persistent messaging within and between services.
+**Azure Queues**, which are part of the [Azure storage](/home/features/storage/) infrastructure, feature a simple REST-based Get/Put/Peek interface, providing reliable, persistent messaging within and between services.
 
-**Service Bus queues** are part of a broader [Azure messaging](http://www.windowsazure.cn/home/features/messaging/) infrastructure that supports queuing as well as publish/subscribe, Web service remoting, and integration patterns. For more information about Service Bus queues, topics/subscriptions, and relays, see [Overview of Service Bus Messaging Patterns](https://msdn.microsoft.com/zh-cn/library/hh410103.aspx).
+**Service Bus queues** are part of a broader [Azure messaging](/home/features/service-bus/) infrastructure that supports queuing as well as publish/subscribe, Web service remoting, and integration patterns. For more information about Service Bus queues, topics/subscriptions, and relays, see [Overview of Service Bus Messaging Patterns](https://msdn.microsoft.com/zh-cn/library/hh410103.aspx).
 
 While both queuing technologies exist concurrently, Azure Queues were introduced first, as a dedicated queue storage mechanism built on top of the Azure storage services. Service Bus queues are built on top of the broader "brokered messaging" infrastructure designed to integrate applications or application components that may span multiple communication protocols, data contracts, trust domains, and/or network environments.
 
@@ -285,7 +285,7 @@ This section compares Azure Queues and Service Bus queues from a cost perspectiv
 
 - Given the support for long polling, using Service Bus queues can be cost effective in situations where low-latency delivery is required.
 
->[AZURE.NOTE] All costs are subject to change. This table reflects current pricing as of the writing of this article and does not include any promotional offers that may currently be available. For up-to-date information about Azure pricing, see the [Azure pricing](http://www.windowsazure.cn/pricing/overview/) page. For more information about Service Bus pricing, see [Service Bus pricing](http://www.windowsazure.cn/home/features/messaging/#price).
+>[AZURE.NOTE] All costs are subject to change. This table reflects current pricing as of the writing of this article and does not include any promotional offers that may currently be available. For up-to-date information about Azure pricing, see the [Azure pricing](/pricing/) page. For more information about Service Bus pricing, see [Service Bus pricing](/home/features/service-bus/#price).
 
 ## Conclusion
 

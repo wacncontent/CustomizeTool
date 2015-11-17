@@ -15,7 +15,7 @@
 # Password Management Frequently Asked Questions
 The following are some frequently asked questions for all things related to password management.
 
-If you find yourself with a question that you don't know the answer to, or are looking fror help with a particular problem you are facing, you can read on below to see if we've covered it already.  If we haven't already, don't worry! Feel free to ask any question you have that's not covered here on the [Azure AD Forums](https://social.msdn.microsoft.com/Forums/zh-CN/home?forum=windowsazurezhchs) and we'll get back to you as soon as we can.
+If you find yourself with a question that you don't know the answer to, or are looking fror help with a particular problem you are facing, you can read on below to see if we've covered it already.  If we haven't already, don't worry! Feel free to ask any question you have that's not covered here on the [Azure AD Forums](https://social.msdn.microsoft.com/Forums/zh-cn/home) and we'll get back to you as soon as we can.
 
 This FAQ is split into the following sections:
 

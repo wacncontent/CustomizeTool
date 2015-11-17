@@ -63,26 +63,21 @@ Property | Description
 | App URL | The address of a web page where users can sign in and use your app. Required property in the **Add Application** wizard.<br><BR>**Note**: The value set for this property in the Add Application wizard is also set as the value of the Reply URL.
 | Reply URL | The physical address of your app. Azure AD sends a token with the single sign-on response to this address. During first registration in the **Add Application** wizard, the value set for the App URL is also set as the value of the Reply URL. When making a sign in request, use the Reply URL value to set the wreply property (for WS-Federation) or the **AssertionConsumerServiceURL** property (for SAML-P).<br><BR>**Note**: When enabling an app for external users, the Reply URL must be an **https://** address.
 | Federation Metadata URL | (Optional). Represents the physical URL of the federation metadata document for your app. It is required to support SAML-P sign out. Azure AD downloads the metadata document that is hosted at this endpoint and uses it to discover the public portion of the certificate that you use to verify the signature on your sign-out requests and your app’s sign-out URL. You cannot configure this property when you first add your app. It can only be configured later.<br><BR>**Note**: If you need to support SAML-P sign-out, but you do not have a federation metadata endpoint for your app, contact Customer Support for other options.
- 
+
 
 ### Calling the Graph API or Web APIs
- 
+
 Property | Description
-| ------------- | ----------- 
+| ------------- | -----------
 | Client ID | The unique identifier for your app. You need to use this identifier in calls to the Graph API or other web APIs registered with Azure AD. Azure AD automatically generates this value during app registration and it cannot be changed.<BR><BR>To enable your app to access the directory (for read or write access) through the Graph API, you need a Client ID and a key (known in OAuth 2.0 as a client secret). Your app uses the Client ID and key to request an access token from the Azure AD OAuth 2.0 token endpoint. (To view all Azure AD endpoints, in the command bar, click **View endpoints**.) When using the Graph API to get or set (change) directory data, your app uses this access token in the Authorize header of the request to the Graph API.
 | Keys | If your app reads or writes data in Azure AD, such as data that is made available through the Graph API, your app needs a key. When you request an access token to call the Graph API, your app supplies its **Client ID** and **Key**. The token endpoint uses the ID and key to authenticate your app before issuing the access token. You can create multiple keys to address key rollover scenarios. And, you can delete keys that are expired, compromised, or no longer in use.
-| Manage Access | Choose from one of three different access levels: single sign-on (SSO), SSO and read directory data, or SSO and read/write directory data. You can also remove access. For more information about directory access, see [Application Access Levels](https://msdn.microsoft.com/zh-cn/library/azure/b08d91fa-6a64-4deb-92f4-f5857add9ed8#BKMK_AccessLevels).<br><BR>**Note**: Changes to the directory access level of your app apply only to your directory. The changes do not apply to customers who have granted access to your app.
- 
- 
+| Manage Access | Choose from one of three different access levels: single sign-on (SSO), SSO and read directory data, or SSO and read/write directory data. You can also remove access. <br><BR>**Note**: Changes to the directory access level of your app apply only to your directory. The changes do not apply to customers who have granted access to your app.
+
+
 ### Native Clients
- 
+
 Property | Description
-| ------------- | ----------- 
+| ------------- | -----------
 | Redirect URI | The URI to which Azure AD will redirect the user-agent in response to an OAuth 2.0 authorization request. The value does not need to be a physical endpoint, but must be a valid URI.
 
- 
-
-
- 
- 
-
+##

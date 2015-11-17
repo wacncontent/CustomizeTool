@@ -336,7 +336,7 @@ Because of the partial rollout of the last two releases, people on auto update o
 [MS14-046]: https://technet.microsoft.com/zh-cn/library/security/ms14-046.aspx
 [retire policy sdk]: https://msdn.microsoft.com/zh-cn/library/dn479282.aspx
 [server and gos]: https://msdn.microsoft.com/zh-cn/library/dn775043.aspx
-[azuresupport]: http://azure.microsoft.com/support/options/
+[azuresupport]: /support/contact/
 [net install pkg]: http://www.microsoft.com/download/details.aspx?id=42643
 [msrc]: http://www.microsoft.com/security/msrc/default.aspx
 [update guest os portal]: https://msdn.microsoft.com/zh-cn/library/gg433101.aspx
@@ -345,3 +345,4 @@ Because of the partial rollout of the last two releases, people on auto update o
 [patches]: /documentation/articles/cloud-services-guestos-msrc-releases
 [retirepolicy]: /documentation/articles/cloud-services-guestos-retirement-policy
 [fam1retire]: /documentation/articles/cloud-services-guestos-family1-retirement
+ 

@@ -216,7 +216,7 @@ This section assumes that you have already configured a Relying Party Trust for 
 9. Select **Finish** and then select **Apply**.
 10. Remove any rules that are more permissive than the rule you just created. For example, remove the default **Permit Access to all Users** rule.
 
-Your application is now configured to allow access only when the user is coming from a device that they registered and joined to the workplace. For more advanced access polices, see [Manage Risk with Multi-Factor Access Control](https://technet.microsoft.com/library/dn280949.aspx).
+Your application is now configured to allow access only when the user is coming from a device that they registered and joined to the workplace. For more advanced access polices, see [Manage Risk with Multi-Factor Access Control](https://technet.microsoft.com/zh-cn/library/dn280949.aspx).
 
 Next, you will configure a custom error message for your application. The error message will let users know that they must join their device to the workplace before they are allowed access to the application. You can create a custom application access denied message using custom HTML and Windows PowerShell.
 

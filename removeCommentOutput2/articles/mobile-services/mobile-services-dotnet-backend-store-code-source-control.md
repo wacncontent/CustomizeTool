@@ -10,7 +10,7 @@
 <tags
 	ms.service="mobile-services"
 	ms.date="09/15/2015"
-	<!wacn.date=""/>
+	wacn.date=""/> 
 
 # Store your mobile service project code in source control
 
@@ -21,17 +21,6 @@
 This topic shows you how to use the source control provided by Azure Mobile Services to store your .NET backend service project. Your project can be published by simply uploading from your local Git repository to your production mobile service.
 
 To complete this tutorial, you must have already created a mobile service by completing either the [Get started with Mobile Services] tutorial.
-
-
-# Store project code in source control
-
-> [AZURE.SELECTOR-LIST (Platform | Backend)]
-- [(Any | .NET)](/documentation/articles/mobile-services-dotnet-backend-store-code-source-control)
-- [(Any | Javascript)](/documentation/articles/mobile-services-store-scripts-source-control)
-
-This topic shows you how to use the source control provided by Azure Mobile Services to store your .NET backend service project. Your project can be published by simply uploading from your local Git repository to your production mobile service. 
-
-To complete this tutorial, you must have already created a mobile service by completing either the [Get started with Mobile Services] or the [Add Mobile Services to an existing app] tutorial.
 
 ##<a name="enable-source-control"></a>Enable source control in your mobile service
 
@@ -104,7 +93,5 @@ Now, your mobile service project is maintained in source control, and you can pu
 [Source control]: http://msdn.microsoft.com/zh-cn/library/azure/c25aaede-c1f0-4004-8b78-113708761643
 [Installing Git]: http://git-scm.com/book/en/Getting-Started-Installing-Git
 [Get started with Mobile Services]: /documentation/articles/mobile-services-dotnet-backend-ios-get-started
-[Add Mobile Services to an existing app]: /documentation/articles/mobile-services-dotnet-backend-ios-get-started-data
 [Azure Management Portal]: https://manage.windowsazure.cn/
-[Call a custom API from the client]: /documentation/articles/mobile-services-dotnet-backend-ios-call-custom-api
 [How to make data model changes to a .NET backend mobile service]: /documentation/articles/mobile-services-dotnet-backend-how-to-use-code-first-migrations

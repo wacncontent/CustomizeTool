@@ -223,7 +223,7 @@ Allows to create a new virtual network. In the following example we create a vir
 	data:    Id:                   /subscriptions/###############################/resourceGroups/myresourcegroup/providers/Microsoft.Network/virtualNetworks/newvnet
 	data:    Name:                 newvnet
 	data:    Type:                 Microsoft.Network/virtualNetworks
-	data:    Location:             westus
+	data:    Location:             chinanorth
 	data:    Tags:
 	data:    Provisioning state:   Succeeded
 	data:    Address prefixes:
@@ -267,7 +267,7 @@ Updates a virtual network configuration within a resource group.
 	data:    Id:                   /subscriptions/###############################/resourceGroups/myresourcegroup/providers/Microsoft.Network/virtualNetworks/newvnet
 	data:    Name:                 newvnet
 	data:    Type:                 Microsoft.Network/virtualNetworks
-	data:    Location:             westus
+	data:    Location:             chinanorth
 	data:    Tags:
 	data:    Provisioning state:   Succeeded
 	data:    Address prefixes:
@@ -316,7 +316,7 @@ The command allows to list all virtual networks in a resource group.
 	data:    -------------------------------------------------------------------
 	------  --------  --------  ----------------  -----------
 	data:    /subscriptions/###############################/resourceGroups/
-	wvnet   newvnet   westus    10.0.0.0/8
+	wvnet   newvnet   chinanorth    10.0.0.0/8
 	info:    network vnet list command OK
 
 Parameter options:
@@ -340,7 +340,7 @@ The command shows the virtual network properties in a resource group.
 	data:    Id:                   /subscriptions/###############################/resourceGroups/myresourcegroup/providers/Microsoft.Network/virtualNetworks/newvnet
 	data:    Name:                 newvnet
 	data:    Type:                 Microsoft.Network/virtualNetworks
-	data:    Location:             westus
+	data:    Location:             chinanorth
 	data:    Tags:
 	data:    Provisioning state:   Succeeded
 	data:    Address prefixes:
@@ -497,7 +497,7 @@ Parameter options:
 	network lb create [options] <resource-group> <name> <location>
 Creates a load balancer set.
 
-	azure network lb create -g myresourcegroup -n mylb -l westus
+	azure network lb create -g myresourcegroup -n mylb -l chinanorth
 
 	info:    Executing command network lb create
 	+ Looking up the load balancer "mylb"
@@ -506,7 +506,7 @@ Creates a load balancer set.
 	data:    Id:                           /subscriptions/###############################/resourceGroups/myresourcegroup/providers/Microsoft.Network/loadBalancers/mylb
 	data:    Name:                         mylb
 	data:    Type:                         Microsoft.Network/loadBalancers
-	data:    Location:                     westus
+	data:    Location:                     chinanorth
 	data:    Provisioning state:           Succeeded
 	info:    network lb create command OK
 
@@ -533,7 +533,7 @@ Lists Load balancer resources within a resource group.
 	+ Getting the load balancers
 	data:    Name  Location
 	data:    ----  --------
-	data:    mylb  westus
+	data:    mylb  chinanorth
 	info:    network lb list command OK
 
 Parameter options:
@@ -556,7 +556,7 @@ Displays load balancer information of a specific load balancer within a resource
 	data:    Id:                           /subscriptions/###############################/resourceGroups/myresourcegroup/providers/Microsoft.Network/loadBalancers/mylb
 	data:    Name:                         mylb
 	data:    Type:                         Microsoft.Network/loadBalancers
-	data:    Location:                     westus
+	data:    Location:                     chinanorth
 	data:    Provisioning state:           Succeeded
 	info:    network lb show command OK
 
@@ -1231,7 +1231,7 @@ Parameter options:
 	network public-ip create [options] <resource-group> <name> <location>
 Creates a public ip resource. You will create the public ip resource and associate to a domain name.
 
-	azure network public-ip create -g myresourcegroup -n mytestpublicip1 -l eastus -d azureclitest -a "Dynamic"
+	azure network public-ip create -g myresourcegroup -n mytestpublicip1 -l chinaeast -d azureclitest -a "Dynamic"
 	info:    Executing command network public-ip create
 	+ Looking up the public ip "mytestpublicip1"
 	+ Creating public ip address "mytestpublicip1"
@@ -1239,12 +1239,12 @@ Creates a public ip resource. You will create the public ip resource and associa
 	data:    Id:                   /subscriptions/###############################/resourceGroups/myresourcegroup/providers/Microsoft.Network/publicIPAddresses/mytestpublicip1
 	data:    Name:                 mytestpublicip1
 	data:    Type:                 Microsoft.Network/publicIPAddresses
-	data:    Location:             eastus
+	data:    Location:             chinaeast
 	data:    Provisioning state:   Succeeded
 	data:    Allocation method:    Dynamic
 	data:    Idle timeout:         4
 	data:    Domain name label:    azureclitest
-	data:    FQDN:                 azureclitest.eastus.cloudapp.azure.com
+	data:    FQDN:                 azureclitest.chinaeast.chinacloudapp.cn
 	info:    network public-ip create command OK
 
 
@@ -1256,7 +1256,7 @@ Parameter options:
 	-n, --name <name>                            the name of the public ip
 	-l, --location <location>                    the location
 	-d, --domain-name-label <domain-name-label>  the domain name label.
-	This set DNS to <domain-name-label>.<location>.cloudapp.azure.com
+	This set DNS to <domain-name-label>.<location>.chinacloudapp.cn
 	-a, --allocation-method <allocation-method>  the allocation method [Static][Dynamic]
 	-i, --idletimeout <idletimeout>              the idle timeout in minutes
 	-f, --reverse-fqdn <reverse-fqdn>            the reverse fqdn
@@ -1278,13 +1278,13 @@ Updates the properties of an existing public ip resource. In the following examp
 	data:    Id:                   /subscriptions/###############################/resourceGroups/myresourcegroup/providers/Microsoft.Network/publicIPAddresses/mytestpublicip1
 	data:    Name:                 mytestpublicip1
 	data:    Type:                 Microsoft.Network/publicIPAddresses
-	data:    Location:             eastus
+	data:    Location:             chinaeast
 	data:    Provisioning state:   Succeeded
 	data:    Allocation method:    Static
 	data:    Idle timeout:         4
 	data:    IP Address:           (static IP address)
 	data:    Domain name label:    azureclitest
-	data:    FQDN:                 azureclitest.eastus.cloudapp.azure.com
+	data:    FQDN:                 azureclitest.chinaeast.chinacloudapp.cn
 	info:    network public-ip set command OK
 
 Parameter options:
@@ -1295,7 +1295,7 @@ Parameter options:
 	-g, --resource-group <resource-group>        the name of the resource group
 	-n, --name <name>                            the name of the public ip
 	-d, --domain-name-label [domain-name-label]  the domain name label.
-	This set DNS to <domain-name-label>.<location>.cloudapp.azure.com
+	This set DNS to <domain-name-label>.<location>.chinacloudapp.cn
 	-a, --allocation-method <allocation-method>  the allocation method [Static][Dynamic]
 	-i, --idletimeout <idletimeout>              the idle timeout in minutes
 	-f, --reverse-fqdn [reverse-fqdn]            the reverse fqdn
@@ -1316,10 +1316,10 @@ Lists all public IP resources within a resource group.
 	+ Getting the public ip addresses
 	data:    Name             Location  Allocation  IP Address    Idle timeout  DNS Name
 	data:    ---------------  --------  ----------  ------------  ------------  -------------------------------------------
-	data:    mypubip5         westus    Dynamic                   4             "domain name".westus.cloudapp.azure.com
-	data:    myPublicIP       eastus    Dynamic                   4             "domain name".eastus.cloudapp.azure.com
-	data:    mytestpublicip   eastus    Dynamic                   4             "domain name".eastus.cloudapp.azure.com
-	data:    mytestpublicip1  eastus   Static (Static IP address) 4             azureclitest.eastus.cloudapp.azure.com
+	data:    mypubip5         chinanorth    Dynamic                   4             "domain name".chinanorth.chinacloudapp.cn
+	data:    myPublicIP       chinaeast    Dynamic                   4             "domain name".chinaeast.chinacloudapp.cn
+	data:    mytestpublicip   chinaeast    Dynamic                   4             "domain name".chinaeast.chinacloudapp.cn
+	data:    mytestpublicip1  chinaeast   Static (Static IP address) 4             azureclitest.chinaeast.chinacloudapp.cn
 
 Parameter options:
 
@@ -1339,13 +1339,13 @@ Displays public ip properties for a public ip resource within a resource group.
 	data:    Id:                   /subscriptions/###############################/resourceGroups/myresourcegroup/providers/Microsoft.Network/publicIPAddresses/mytestpublicip
 	data:    Name:                 mytestpublicip
 	data:    Type:                 Microsoft.Network/publicIPAddresses
-	data:    Location:             eastus
+	data:    Location:             chinaeast
 	data:    Provisioning state:   Succeeded
 	data:    Allocation method:    Static
 	data:    Idle timeout:         4
 	data:    IP Address:           (static IP address)
 	data:    Domain name label:    azureclitest
-	data:    FQDN:                 azureclitest.eastus.cloudapp.azure.com
+	data:    FQDN:                 azureclitest.chinaeast.chinacloudapp.cn
 	info:    network public-ip show command OK
 
 Parameter options:
@@ -1385,7 +1385,7 @@ Parameter options:
 	network nic create [options] <resource-group> <name> <location>
 Creates a resource called network interface (NIC) which can be used for load balancers or associate to a Virtual Machine.
 
-	azure network nic create -g myresourcegroup -l eastus -n testnic1 --subnet-name subnet-1 --subnet-vnet-name myvnet
+	azure network nic create -g myresourcegroup -l chinaeast -n testnic1 --subnet-name subnet-1 --subnet-vnet-name myvnet
 
 	info:    Executing command network nic create
 	+ Looking up the network interface "testnic1"
@@ -1395,7 +1395,7 @@ Creates a resource called network interface (NIC) which can be used for load bal
 	data:    Id:                     /subscriptions/c4a17ddf-aa84-491c-b6f9-b90d882299f7/resourceGroups/group-1/providers/Microsoft.Network/networkInterfaces/testnic1
 	data:    Name:                   testnic1
 	data:    Type:                   Microsoft.Network/networkInterfaces
-	data:    Location:               eastus
+	data:    Location:               chinaeast
 	data:    Provisioning state:     Succeeded
 	data:    IP configurations:
 	data:       Name:                         NIC-config

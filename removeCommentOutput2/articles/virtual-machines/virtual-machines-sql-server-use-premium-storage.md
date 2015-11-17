@@ -18,7 +18,7 @@
 
 ## Overview
 
-[Azure Premium Storage](/documentation/articles/storage-premium-storage-preview-portal) is the next generation of storage that provides low latency and high throughput IO. It works best for key IO intensive workloads, such as SQL Server on IaaS [Virtual Machines](/home/features/virtual-machines/). This article provides planning and guidance for migrating a Virtual Machine running SQL Server to use Premium Storage. This includes Azure infrastructure (networking, storage) and guest Windows VM steps. The example in the [Appendix](#appendix-migrating-a-multisite-alwayson-cluster-to-premium-storage) shows a full comphrensive end to end migration of how to move larger VMs to take advantage of improved local SSD storage with PowerShell.
+This article provides planning and guidance for migrating a Virtual Machine running SQL Server to use Premium Storage. This includes Azure infrastructure (networking, storage) and guest Windows VM steps. The example in the [Appendix](#appendix-migrating-a-multisite-alwayson-cluster-to-premium-storage) shows a full comphrensive end to end migration of how to move larger VMs to take advantage of improved local SSD storage with PowerShell.
 
 It is important to understand the end-to-end process of utilizing Azure Premium Storage with SQL Server on IAAS VMs. This includes:
 
@@ -30,6 +30,7 @@ It is important to understand the end-to-end process of utilizing Azure Premium 
 
 For more background information on SQL Server in Azure Virtual Machines, see [SQL Server in Azure Virtual Machines](/documentation/articles/virtual-machines-sql-server-infrastructure-services).
 
+**Author:** Daniel Sol
 **Technical Reviewers:** Luis Carlos Vargas Herring, Sanjay Mishra, Pravin Mital, Juergen Thomas, Gonzalo Ruiz.
 
 ## Prerequisites for Premium Storage
@@ -38,7 +39,7 @@ There are several prerequisites for using Premium Storage.
 
 ### Machine Size
 
-For using Premium Storage you will need to use DS series Virtual Machines (VM). If you have not used DS Series machines in your cloud service before, you must delete the existing VM, keep the attached disks, and then create a new cloud service before recreating  the VM as DS* role size. For more information on Virtual Machine sizes, see [Virtual Machine and Cloud Service Sizes for Azure](https://msdn.microsoft.com/zh-CN/library/azure/dn197896.aspx).
+For using Premium Storage you will need to use DS series Virtual Machines (VM). If you have not used DS Series machines in your cloud service before, you must delete the existing VM, keep the attached disks, and then create a new cloud service before recreating  the VM as DS* role size. For more information on Virtual Machine sizes, see [Virtual Machine and Cloud Service Sizes for Azure](/documentation/articles/virtual-machines-size-specs).
 
 ### Cloud Services
 
@@ -93,7 +94,7 @@ Once the VHDs have been attached, the cache setting cannot be altered. You would
 
 ### Windows Storage Spaces
 
-You can use [Windows Storage Spaces](https://technet.microsoft.com/zh-CN/library/hh831739.aspx) as you did with previous Standard Storage, this will allow you to migrate a VM that is already utilizing Storage Spaces. The example in [Appendix](#appendix-migrating-a-multisite-alwayson-cluster-to-premium-storage) (step 9 and forward) demonstrates the Powershell code to extract and import a VM with multiple attached VHDs.
+You can use [Windows Storage Spaces](https://technet.microsoft.com/zh-cn/library/hh831739.aspx) as you did with previous Standard Storage, this will allow you to migrate a VM that is already utilizing Storage Spaces. The example in [Appendix](#appendix-migrating-a-multisite-alwayson-cluster-to-premium-storage) (step 9 and forward) demonstrates the Powershell code to extract and import a VM with multiple attached VHDs. 
 
 Storage Pools were used with Standard Azure storage account to enhance throughput and reduce latency. You might find value in testing Storage Pools with Premium Storage for new deployments, but they do add additional complexity with storage setup. 
 
@@ -138,7 +139,7 @@ Once you have mapped VHDs to Physical Disks in Storage Pools you can then detach
 
 ### VM Storage Bandwidth and VHD Storage Throughput 
 
-The amount of storage performance depends on the DS* VM size specified and the VHD sizes. The VMs have different allowances for the number of VHDs that can be attached and the maximum bandwidth they will support (MB/s). For the specific bandwidth numbers, see [Virtual Machine and Cloud Service Sizes for Azure](https://msdn.microsoft.com/zh-CN/library/azure/dn197896.aspx).
+The amount of storage performance depends on the DS* VM size specified and the VHD sizes. The VMs have different allowances for the number of VHDs that can be attached and the maximum bandwidth they will support (MB/s). For the specific bandwidth numbers, see [Virtual Machine and Cloud Service Sizes for Azure](/documentation/articles/virtual-machines-size-specs).
 
 Increased IOPS are achieved with larger disk sizes. You should consider this when you think about your migration path. For details, [see the table for IOPS and Disk Types](/documentation/articles/storage-premium-storage-preview-portal#scalability-and-performance-targets-when-using-premium-storage). 
 
@@ -369,7 +370,7 @@ In Windows Azure you can have only one IP address assigned to a NIC on the VM, s
 There are two strategies to migrate AlwaysOn deployments that allow for some downtime:
 
 1. **Add more secondary replicas to an existing AlwaysOn Cluster**
-2. **Migrate to a new AlwaysOn Cluster**
+1. **Migrate to a new AlwaysOn Cluster**
 
 #### 1. Add more Secondary Replicas to an Existing AlwaysOn Cluster
 
@@ -646,7 +647,7 @@ The code below will dump out the VNN settings and set it for you, please note, f
 
 In a later migration step you will need to update the AlwaysOn listener with an updated IP address that will reference a load balancer, this will involve an IP Address resource removal and addition. After the IP update, you need to ensure the new IP address has been updated in DNS Zone and that the clients are updating their local DNS cache. 
 
-If you clients reside in a different network segment and reference a different DNS server, you need to consider what happens about DNS Zone Transfer during the migration, as the application reconnect time will be constrained by at least the Zone Transfer Time of any new IP addresses for the listener. If you are under time constraint here, you should discuss and test forcing an incremental zone transfer with your Windows teams, and also put the DNS host record to a lower Time To Live (TTL), so the clients update. For more information, see [Incremental Zone Transfers](https://technet.microsoft.com/zh-CN/library/cc958973.aspx) and [Start-DnsServerZoneTransfer](https://technet.microsoft.com/zh-CN/library/jj649917.aspx).
+If you clients reside in a different network segment and reference a different DNS server, you need to consider what happens about DNS Zone Transfer during the migration, as the application reconnect time will be constrained by at least the Zone Transfer Time of any new IP addresses for the listener. If you are under time constraint here, you should discuss and test forcing an incremental zone transfer with your Windows teams, and also put the DNS host record to a lower Time To Live (TTL), so the clients update. For more information, see [Incremental Zone Transfers](https://technet.microsoft.com/zh-cn/library/cc958973.aspx) and [Start-DnsServerZoneTransfer](https://technet.microsoft.com/zh-cn/library/jj649917.aspx).
 
 By default the TTL for DNS Record that is associated with the Listener in AlwaysOn in Azure is 1200 seconds. You may wish to reduce this if you are under time constraint during your migration to ensure the clients update their DNS with the updated IP address for the listener. You can see and modify the configuration by dumping out the configuration of the VNN:
 
@@ -664,7 +665,7 @@ Please note, the lower the ‘HostRecordTTL’, a higher amount of DNS traffic w
 
 If your SQL client application supports the .Net 4.5 SQLClient, then you can use ‘MULTISUBNETFAILOVER=TRUE’ keyword, this is recommended to be applied as it allows for faster connection to SQL AlwaysOn Availability Group during failover. It enumerates through all IP addresses associated with the AlwaysOn listener in parallel, and performs a more aggressive TCP connection retry speed during a failover.
 
-For more information regarding the settings above, please see [MultiSubnetFailover Keyword and Associated Features](https://msdn.microsoft.com/zh-CN/library/hh213080.aspx#MultiSubnetFailover). Also see [SqlClient Support for High Availability, Disaster Recovery](https://msdn.microsoft.com/zh-CN/library/hh205662(v=vs.110).aspx).
+For more information regarding the settings above, please see [MultiSubnetFailover Keyword and Associated Features](https://msdn.microsoft.com/zh-cn/library/hh213080.aspx#MultiSubnetFailover). Also see [SqlClient Support for High Availability, Disaster Recovery](https://msdn.microsoft.com/zh-cn/library/hh205662(v=vs.110).aspx).
 
 #### Step 5: Cluster Quorum Settings
 
@@ -673,7 +674,7 @@ As you are going to be taking out at least one SQL Server down at a time, you sh
 
     Set-ClusterQuorum -NodeMajority  
 
-For more information on managing and configuring the cluster quorum, please see [Configure and Manage the Quorum in a Windows Server 2012 Failover Cluster](https://technet.microsoft.com/zh-CN/library/jj612870.aspx).
+For more information on managing and configuring the cluster quorum, please see [Configure and Manage the Quorum in a Windows Server 2012 Failover Cluster](https://technet.microsoft.com/zh-cn/library/jj612870.aspx).
 
 #### Step 6: Extract Existing Endpoints and ACLs
     #GET Endpoint info
@@ -867,7 +868,7 @@ The code below also uses the added option here you can import the machine and us
     
     #SET Azure ACLs or Network Security Groups & Windows FWs 
      
-    #https://msdn.microsoft.com/zh-CN/library/azure/dn495192.aspx
+    #http://msdn.microsoft.com/zh-cn/library/azure/dn495192.aspx
     
     ####WAIT FOR FULL AlwaysOn RESYNCRONISATION!!!!!!!!!#####
 
@@ -1089,7 +1090,7 @@ For information for individual blobs:
     
     #SET ACLs or Azure Network Security Groups & Windows FWs 
      
-    #https://msdn.microsoft.com/zh-CN/library/azure/dn495192.aspx
+    #http://msdn.microsoft.com/zh-cn/library/azure/dn495192.aspx
 
 #### Step 23: Test Failover
 

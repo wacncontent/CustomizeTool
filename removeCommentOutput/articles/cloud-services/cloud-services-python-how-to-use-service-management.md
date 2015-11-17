@@ -93,15 +93,15 @@ When you create a cloud service or storage service you will need to provide a va
 
 - West Europe
 - China North
-- Southeast Asia
-- East Asia
+- China North
+- China East
 - China North
 - China North
 - China East
 - China North
 - China East
 - Japan East
-- Japan West
+- China East
 - Brazil South
 - Australia East
 - Australia Southeast

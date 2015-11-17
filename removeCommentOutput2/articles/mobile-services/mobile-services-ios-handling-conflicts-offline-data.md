@@ -19,7 +19,7 @@
 
 This topic shows you how to synchronize data and handle conflicts when using the offline capabilities of Azure Mobile Services. This tutorial builds on the [Get Started with Offline Data] tutorial.
 
->[AZURE.NOTE] To complete this tutorial, you need a Azure account. If you don't have an account, you can create a trial account in just a couple of minutes. For details, see <a href="http://www.windowsazure.cn/pricing/1rmb-trial/?WT.mc_id=AE564AB28" target="_blank">Azure Trial</a>.
+>[AZURE.NOTE] To complete this tutorial, you need a Azure account. If you don't have an account, you can create a trial account in just a couple of minutes. For details, see <a href="/pricing/1rmb-trial/?WT.mc_id=AE564AB28" target="_blank">Azure Trial</a>.
 
 
 ## Download iOS Project
@@ -125,18 +125,16 @@ Perform the refresh gesture in the app instances by dragging from the top. Now y
 [conflict-ui]: ./media/mobile-services-ios-handling-conflicts-offline-data/conflict-ui.png
 
 
-[Segmented Controls]: https://developer.apple.com/zh-cn/library/ios/documentation/UserExperience/Conceptual/UIKitUICatalog/UISegmentedControl.html
-[Core Data Model Editor Help]: https://developer.apple.com/zh-cn/library/mac/recipes/xcode_help-core_data_modeling_tool/Articles/about_cd_modeling_tool.html
-[Creating an Outlet Connection]: https://developer.apple.com/zh-cn/library/mac/recipes/xcode_help-interface_builder/articles-connections_bindings/CreatingOutlet.html
-[Build a User Interface]: https://developer.apple.com/zh-cn/library/mac/documentation/ToolsLanguages/Conceptual/Xcode_Overview/Edit_User_Interfaces/edit_user_interface.html
-[Adding a Segue Between Scenes in a Storyboard]: https://developer.apple.com/zh-cn/library/ios/recipes/xcode_help-IB_storyboard/chapters/StoryboardSegue.html#//apple_ref/doc/uid/TP40014225-CH25-SW1
-[Adding a Scene to a Storyboard]: https://developer.apple.com/zh-cn/library/ios/recipes/xcode_help-IB_storyboard/chapters/StoryboardScene.html
-[Core Data]: https://developer.apple.com/zh-cn/library/ios/documentation/Cocoa/Conceptual/CoreData/cdProgrammingGuide.html
+[Segmented Controls]: https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/UIKitUICatalog/UISegmentedControl.html
+[Core Data Model Editor Help]: https://developer.apple.com/library/mac/recipes/xcode_help-core_data_modeling_tool/Articles/about_cd_modeling_tool.html
+[Creating an Outlet Connection]: https://developer.apple.com/library/mac/recipes/xcode_help-interface_builder/articles-connections_bindings/CreatingOutlet.html
+[Build a User Interface]: https://developer.apple.com/library/mac/documentation/ToolsLanguages/Conceptual/Xcode_Overview/Edit_User_Interfaces/edit_user_interface.html
+[Adding a Segue Between Scenes in a Storyboard]: https://developer.apple.com/library/ios/recipes/xcode_help-IB_storyboard/chapters/StoryboardSegue.html#//apple_ref/doc/uid/TP40014225-CH25-SW1
+[Adding a Scene to a Storyboard]: https://developer.apple.com/library/ios/recipes/xcode_help-IB_storyboard/chapters/StoryboardScene.html
+[Core Data]: https://developer.apple.com/library/ios/documentation/Cocoa/Conceptual/CoreData/cdProgrammingGuide.html
 [Download the preview SDK here]: http://aka.ms/Gc6fex
 [How to use the Mobile Services client library for iOS]: /documentation/articles/mobile-services-ios-how-to-use-client-library
 [Getting Started Offline iOS Sample]: https://github.com/Azure/mobile-services-samples/tree/master/TodoOffline/iOS/blog20140611
 [Get Started with Offline Data]: /documentation/articles/mobile-services-ios-get-started-offline-data
 [Get started with Mobile Services]: /documentation/articles/mobile-services-ios-get-started
 [Get started with data]: /documentation/articles/mobile-services-ios-get-started-data
- 
-

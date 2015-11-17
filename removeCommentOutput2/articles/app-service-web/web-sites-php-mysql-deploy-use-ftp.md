@@ -43,6 +43,7 @@ Follow these steps to create a web app and a MySQL database:
 2. Click the **+ New** icon on the bottom left of the portal.
 
 	![Create New Azure Web Site][new-website]
+
 3. Click ** Website**, then **CUSTOM CREATE**.
 
 	![Custom Create a new  Website][custom-create]
@@ -69,6 +70,7 @@ Follow these steps to create a web app and a MySQL database:
 7. To enable FTP publishing, you must provide a user name and password. Make a note of the user name and password you create.
 
 	![Create publishing credentials][portal-git-username-password]
+
 ##Build and test your app locally
 
 The Registration application is a simple PHP application that allows you to register for an event by providing your name and email address. Information about previous registrants is displayed in a table. Registration information is stored in a MySQL database. The app consists of two files:
@@ -264,6 +266,7 @@ Now you are ready to publish your app using FTP.
 After you have connected you will be able to upload and download files as needed. Be sure that you are uploading files to the root directory, which is `/site/wwwroot`.
 
 After uploading both `index.php` and `createtable.php`, browse to **http://[site name].chinacloudsites.cn/createtable.php** to create the MySQL table for the application, then browse to **http://[site name].chinacloudsites.cn/index.php** to begin using the application.
+
 [go-to-dashboard]: ./media/web-sites-php-web-site-mysql-deploy-use-ftp/go_to_dashboard.png
 [reset-deployment-credentials]: ./media/web-sites-php-web-site-mysql-deploy-use-ftp/reset-deployment-credentials.png
 [portal-git-username-password]: ./media/web-sites-php-web-site-mysql-deploy-use-ftp/git-deployment-credentials.png

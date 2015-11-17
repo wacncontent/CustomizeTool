@@ -43,7 +43,7 @@ Before you can enable and use self-service password reset, you must complete the
 - Create an AAD tenant. 
 - Obtain an Azure subscription. For more information, see [What is an Azure AD tenant?](/documentation/articles/active-directory-administer#what-is-an-azure-ad-tenant).
 - Associate your AAD tenant with your Azure subscription. For more information, see [How Azure subscriptions are associated with Azure AD](https://msdn.microsoft.com/zh-cn/library/azure/dn629581.aspx).
-- Upgrade to Azure AD Premium or Basic. For more information, see [Azure Active Directory Editions](http://www.windowsazure.cn/home/features/identity/#price).
+- Upgrade to Azure AD Premium or Basic. For more information, see [Azure Active Directory Editions](/home/features/identity/#price).
 
   >[AZURE.NOTE] To enable self-service password reset, you must upgrade to Azure AD Premium or Azure AD Basic. For more information, Azure Active Directory Editions. This information includes detailed instructions on how to sign up for Azure AD Premium or Basic, how to activate your license plan and activate your Azure AD access, and how to assign access to administrator and user accounts.
 

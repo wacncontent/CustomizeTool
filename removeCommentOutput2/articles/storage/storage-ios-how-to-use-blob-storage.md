@@ -72,7 +72,7 @@ When using Shared Key authentication, you will create a "connection string." The
 
 - The **DefaultEndpointsProtocol** - you can choose http or https. However, using https is highly recommended.
 - The **Account Name** - the name of your Storage account
-- The **Account Key** - If using the [Management Portal](manage.windowsazure.cn), you can find this by clicking *Manage Access Keys*. If<!-- you're using the [Preview Portal](portal.azure.com), you can click the Key icon to find this information.-->
+- The **Account Key** - If using the [Management Portal](manage.windowsazure.cn), you can find this by clicking *Manage Access Keys*. 
 
 Here is how it will look in your application:
 
@@ -350,7 +350,7 @@ Now that you've learned the basics of Blob storage, follow these links to learn 
 - [Azure Storage REST API]
 - [Azure Storage Team Blog]
 
-If you have questions regarding this library feel free to post to our [MSDN Azure forum](https://social.msdn.microsoft.com/forums/azure/zh-cn/home?forum=windowsazuredata) or [Stack Overflow](http://stackoverflow.com/questions/tagged/windows-azure-storage+or+windows-azure-storage+or+azure-storage-blobs+or+azure-storage-tables+or+azure-table-storage+or+windows-azure-queues+or+azure-storage-queues+or+azure-storage-emulator+or+azure-storage-files).
+If you have questions regarding this library feel free to post to our [MSDN Azure forum](http://social.msdn.microsoft.com/Forums/zh-cn/home?forum=windowsazurezhchsen-US/home?forum=windowsazuredata) or [Stack Overflow](http://stackoverflow.com/questions/tagged/windows-azure-storage+or+windows-azure-storage+or+azure-storage-blobs+or+azure-storage-tables+or+azure-table-storage+or+windows-azure-queues+or+azure-storage-queues+or+azure-storage-emulator+or+azure-storage-files).
 If you have feature suggestions for Azure Storage please post to [Azure Storage Feedback](/product-feedback).
 
 [Azure Storage iOS Library]: https://github.com/azure/azure-storage-ios

@@ -16,15 +16,18 @@
 
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-include.md)] This article covers using a resource with the classic deployment model. 
  
+ 
 The Windows Azure Virtual Machine gallery includes images that contain SQL Server installations. The SQL Server editions supported in the gallery images are the same installation files you can install to on-premises computers and virtual machines. This topic summarizes the SQL Server Business Intelligence (BI) Features installed on the images and configuration steps required after a virtual machine is provisioned. This topic also describes supported deployment topologies for BI features and best practices.
 
 ## License Considerations
 
 There are two ways to license SQL Server in Windows Azure Virtual Machines:
 
-1. License mobility benefits that are part of Software Assurance. For more information, see [License Mobility through Software Assurance on Azure](http://azure.microsoft.com/pricing/license-mobility/).
+1. License mobility benefits that are part of Software Assurance. For more information, see [License Mobility through Software Assurance on Azure](/pricing/license-mobility/).
 
-1. Pay per hour rate of Azure Virtual Machines with SQL Server installed. See the “SQL Server” section in [Virtual Machines Pricing](/home/features/virtual-machines/#price//azure.microsoft.com/pricing/licensing-faq/%20).
+1. Pay per hour rate of Azure Virtual Machines with SQL Server installed. See the “SQL Server” section in [Virtual Machines Pricing](/home/features/virtual-machines/#price).
+
+For more information on licensing and current rates, see [Virtual Machines Licensing FAQ](/pricing/licensing-faq/%20).
 
 ## SQL Server Images Available in Azure Virtual Machine Gallery
 
@@ -163,7 +166,7 @@ There are two common workflows for connecting to an Azure Virtual Machine:
 		
 		Myservice.chinacloudapp.cn:63133
 		
-		For more information, see [What is a cloud service?](http://www.windowsazure.cn/manage/services/cloud-services/what-is-a-cloud-service/).
+		For more information, see [What is a cloud service?](/documentation/articles/fundamentals-application-models/).
 
 **Start Reporting Services Configuration Manager.**
 
@@ -417,7 +420,7 @@ The following diagram illustrates the ports to open in the VM firewall to allow 
 
 - [Multidimensional Modeling (Adventure Works Tutorial)](https://technet.microsoft.com/zh-cn/library/ms170208.aspx)
 
-- [Azure Documentation Center](http://azure.microsoft.com/documentation/)
+- [Azure Documentation Center](http://www.windowsazure.cndocumentation/)
 
 - [Using Power BI in a Hybrid Environment](https://msdn.microsoft.com/zh-cn/library/dn798994.aspx)
 

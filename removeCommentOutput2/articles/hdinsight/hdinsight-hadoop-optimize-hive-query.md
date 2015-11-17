@@ -23,6 +23,7 @@ By default, Hadoop clusters are not optimized for performance. This article cove
 * [Optimize Hive queries for Hadoop in HDInsight](/documentation/articles/hdinsight-hadoop-optimize-hive-query-v1).
 
 ##Scale out worker nodes
+
 Scale out refers to increasing the number of nodes that you can have in your cluster. Increasing nodes helps because you can run more mappers and reducers because you have more tasks that can be run in parallel. There are two ways you can increase scale out in HDInsight:
 
 1. During cluster creation, you can pick how many nodes you want your query to run in. This is shown in the image below.

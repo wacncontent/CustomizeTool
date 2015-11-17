@@ -51,7 +51,7 @@ This scenario protects your workloads by backing up Hyper-V virtual machines fro
 
 ### Azure prerequisites
 
-- You'll need a [Windows Azure](http://azure.microsoft.com/) account. You can start with a [trial](http://aka.ms/try-azure). Get pricing information at [Azure Site Recovery Manager Pricing Details](/home/features/site-recovery/#price).
+- You'll need a [Windows Azure](http://azure.microsoft.com/) account. You can start with a [trial](/price/1rmb-trial). Get pricing information at [Azure Site Recovery Manager Pricing Details](/home/features/site-recovery/#price).
 
 ### VMM prerequisites
 

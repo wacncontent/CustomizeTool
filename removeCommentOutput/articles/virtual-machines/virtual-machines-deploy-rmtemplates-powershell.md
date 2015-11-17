@@ -210,7 +210,7 @@ It returns something like this:
 	Id                       : /subscriptions/{subscription-id}/resourceGroups/BuildRG/providers/Microso
 	                           ft.Compute/virtualMachines/MyWindowsVM
 	InstanceView             : null
-	Location                 : westus
+	Location                 : chinanorth
 	Name                     : MyWindowsVM
 	NetworkProfile           : {
 	                             "NetworkInterfaces": [

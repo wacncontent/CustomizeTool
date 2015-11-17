@@ -49,7 +49,7 @@ service configuration (.cscfg) files.
 
 	![enable-azureserviceprojectremotedesktop][enable-rdp]
 
-5.  Enter the following PowerShell cmdlet to publish the changes:
+3.  Enter the following PowerShell cmdlet to publish the changes:
 
     	Publish-AzureServiceProject
 
@@ -68,16 +68,16 @@ the role instance.
 
     ![The instances page][3]
 
-3.  When you click **Connect**, the web browser prompts you to save an
+2.  When you click **Connect**, the web browser prompts you to save an
     .rdp file. Open this file. (For example, if you're using Internet Explorer, click **Open**.)
 
     ![prompt to open or save the .rdp file][4]
 
-4.  When the file is opened, the following security prompt appears:
+3.  When the file is opened, the following security prompt appears:
 
     ![Windows security prompt][5]
 
-5.  Click **Connect**, and a security prompt will appear for entering
+4.  Click **Connect**, and a security prompt will appear for entering
     credentials to access the instance. Enter the password you created
     in [Step 1][Step 1: Configure the service for Remote Desktop access using Azure PowerShell], and then click **OK**.
 

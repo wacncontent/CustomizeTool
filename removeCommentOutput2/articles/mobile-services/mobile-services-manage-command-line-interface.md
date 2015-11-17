@@ -181,6 +181,6 @@ For more information about registering scripts, see [Mobile Services server scri
 [mac-installer]: http://go.microsoft.com/fwlink/p?LinkId=252249
 [windows-installer]: http://go.microsoft.com/fwlink/p?LinkID=275464
 [reference-docs]: /documentation/articles/virtual-machines-command-line-tools/#Commands_to_manage_mobile_services
-[How to install the Azure Command-Line Tools for Mac and Linux]: /documentation/articles/xplat-cli 
+[How to install the Azure Command-Line Tools for Mac and Linux]: /documentation/articles/xplat-cli/#Download
 
  

@@ -26,7 +26,7 @@ This topic is a good place to get started with client connectivity to Azure SQL 
 - [Guidelines for Connecting to Azure SQL Database Programmatically](http://msdn.microsoft.com/zh-cn/library/azure/ee336282.aspx) - discussions include the following:
  - [Ports and Firewalls](/documentation/articles/sql-database-configure-firewall-settings)
  - Connection strings
-- [Azure SQL Database Resource Management](https://msdn.microsoft.com/zh-CN/library/azure/dn338083.aspx) - discussions include the following:
+- [Azure SQL Database Resource Management](https://msdn.microsoft.com/zh-cn/library/azure/dn338083.aspx) - discussions include the following:
  - Resource governance
  - Enforcement of limits
  - Throttling
@@ -135,7 +135,7 @@ For code samples that illustrate retry logic, see:
 When any error occurs with SQL Database, an [SqlException](http://msdn.microsoft.com/zh-cn/library/system.data.sqlclient.sqlexception.aspx) is thrown. The **SqlException** contains a numeric error code in its **Number** property. If the error code identifies a transient error, your program should retry the call.
 
 
-- [Error messages for SQL Database client programs](/documentation/articles/sql-database-develop-error-messages/#bkmk_connection_errors) 
+- [Error messages for SQL Database client programs](/documentation/articles/sql-database-develop-error-messages#bkmk_connection_errors)
  - Its **Transient Errors, Connection-Loss Errors** section is a list of the transient errors that warrant an automatic retry.
  - For example, retry if the error number 40613 occurs, which says something similar to<br/>*Database 'mydatabase' on server 'theserver' is not currently available.*
 

@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties
 	pageTitle="Monitor Hadoop clusters in HDInsight using the Ambari API | Windows Azure"
 	description="Use the Apache Ambari APIs for provisioning, managing, and monitoring Hadoop clusters. Intuitive operator tools and APIs hide the complexity of Hadoop."
@@ -165,4 +167,5 @@ Now you have learned how to use Ambari monitoring API calls. To learn more, see:
 [hdinsight-documentation]: /documentation/services/hdinsight/
 [hdinsight-get-started]: /documentation/articles/hdinsight-get-started
 [hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters
+
 [img-jobtracker-output]: ./media/hdinsight-monitor-use-ambari-api/hdi.ambari.monitor.jobtracker.output.png

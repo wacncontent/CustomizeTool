@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties
    pageTitle="How to use Azure Redis Cache with Java | Windows Azure"
 	description="Get started with Azure Redis Cache using Java"

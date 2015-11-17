@@ -303,3 +303,4 @@ The following example calls UploadFile function and specifies storage encryption
 Now that you have uploaded an asset to Media Services, go to the [How to Get a Media Processor][] topic.
 
 [How to Get a Media Processor]: /documentation/articles/media-services-get-media-processor
+ 

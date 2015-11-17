@@ -17,6 +17,7 @@
 
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-include.md)] This article covers creating resources with the classic deployment model.
 
+
 An availability set helps keep your virtual machines available during downtime, such as during maintenance. Placing two or more similarly configured virtual machines in an availability set creates the redundancy needed to maintain availability of the applications or services that your virtual machine runs. For details about how this works, see [Manage the availability of virtual machines] [].
 
 It's a best practice to use both availability sets and load-balancing endpoints to help ensure that your application is always available and running efficiently. For details about load-balanced endpoints, see [Load balancing for Azure infrastructure services] [].
@@ -104,6 +105,6 @@ To use Azure PowerShell commands, open an administrator-level Azure PowerShell s
 
 [Load balancing for Azure infrastructure services]: /documentation/articles/virtual-machines-load-balance
 [Manage the availability of virtual machines]: /documentation/articles/virtual-machines-manage-availability
-[Create a virtual machine running Windows]:/documentation/articles/virtual-machines-windows-tutorial
+[Create a virtual machine running Windows]: /documentation/articles/virtual-machines-windows-tutorial
 [Virtual Network overview]: /documentation/articles/virtual-networks-overview
 [Articles for virtual machines in Service Management]: /documentation/articles/virtual-machines-service-management-articles

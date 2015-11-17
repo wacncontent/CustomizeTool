@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties
 	pageTitle="Use Hue with Hadoop on HDInsight Linux clusters | Windows Azure"
 	description="Learn how to install and use Hue with Hadoop clusters on HDInsight Linux."

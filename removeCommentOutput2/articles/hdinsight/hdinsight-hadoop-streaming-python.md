@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties
    pageTitle="Develop Python MapReduce jobs with HDInsight | Windows Azure"
    description="Learn how to create and run Python MapReduce jobs on Linux-based HDInsight clusters."

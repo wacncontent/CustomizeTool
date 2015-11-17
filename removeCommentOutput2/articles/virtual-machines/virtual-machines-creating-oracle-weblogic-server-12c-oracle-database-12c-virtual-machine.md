@@ -17,7 +17,7 @@ This article shows how to create a virtual machine based on a Microsoft-provided
 
 ##To create an Oracle WebLogic Server 12c and Oracle Database 12c virtual machine in Azure
 
-1. Sign in to the [Azure Management Portal](https://manage.windowsazure.cn).
+1. Sign in to the [Azure Management Portal](https://manage.windowsazure.cn/).
 
 2.	Click the **Marketplace**, click **Compute**, and then type **Oracle** into the search box.
 
@@ -31,7 +31,7 @@ This article shows how to create a virtual machine based on a Microsoft-provided
 
 7.	Choose a **Pricing Tier**.  Note that the recommended pricing tiers are displayed by default. To see all configuration options, click **View all** on the top right.
 
-8. Set the optional configurations as needed. Follow(see [About Azure virtual machine configuration settings](https://msdn.microsoft.com/zh-cn/library/azure/dn763935.aspx) these considerations:
+8. Set the optional configurations as needed (see [About Azure virtual machine configuration settings](https://msdn.microsoft.com/zh-cn/library/azure/dn763935.aspx). Follow these considerations:
 
 	a. Leave **Storage Account** as-is to create a new storage account with the virtual machine name.
 

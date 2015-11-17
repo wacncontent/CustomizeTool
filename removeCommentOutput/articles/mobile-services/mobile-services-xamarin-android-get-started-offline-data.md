@@ -160,6 +160,7 @@ In this section you will reconnect the app to the mobile service. This simulates
 [Get started with Mobile Services]: /documentation/articles/mobile-services-android-get-started
 [How to use the Xamarin Component client for Azure Mobile Services]: /documentation/articles/partner-xamarin-mobile-services-how-to-use-client-library
 [Soft Delete]: /documentation/articles/mobile-services-using-soft-delete
+
 [Mobile Services SDK Nuget]: http://www.nuget.org/packages/WindowsAzure.MobileServices/1.3.0
 [SQLite store nuget]: http://www.nuget.org/packages/WindowsAzure.MobileServices.SQLiteStore/1.0.0
 [Xamarin Studio]: http://xamarin.com/download

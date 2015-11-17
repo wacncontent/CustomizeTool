@@ -55,6 +55,7 @@ Azure Resource Manager enables you to work with the resources in your applicatio
 Before provisioning an HBase cluster, you need to have an Azure virtual network.
 
 **To create a virtual network by using the Azure Management Portal**
+
 1. Sign in to the [Azure Management Portal][azure-portal].
 2. Click **NEW** in the bottom-left corner, click **NETWORK SERVICES**, click **VIRTUAL NETWORK**, and then click **QUICK CREATE**.
 3. Type or select the following values:
@@ -72,6 +73,7 @@ Before provisioning an HBase cluster, you need to have an Azure virtual network.
 9. On the bottom of the page, the default subnet name is **Subnet-1**. You can optionally rename the subnet or add a new subnet for the HBase cluster. Make a note of the subnet name; you will need it when provisioning the cluster.
 10. Verify **CIDR(ADDRESS COUNT)** for the subnet that will be used for the cluster. The address count must be greater than the number of worker nodes plus seven (gateway: 2, head node: 2, Zookeeper: 3). For example, if you need a 10-node HBase cluster, the address count for the subnet must be greater than 17 (10+7). Otherwise the deployment will fail.
 11. Click **Save** on the bottom of the page, if you have updated the subnet values.
+
 **(Optinoal) To add a DNS server virtual machine to the virtual network**
 
 A DNS server is optional, but necessary in some cases.  The procedure has been documented in [Configure DNS between two Azure virtual networks][hdinsight-hbase-replication-dns]. Basically, you will need to perform these steps:
@@ -84,6 +86,7 @@ A DNS server is optional, but necessary in some cases.  The procedure has been d
 **To provision an HBase cluster by using the Azure Management Portal**
 
 > [AZURE.NOTE] For information on provisioning a new HBase cluster by using Azure PowerShell, see [Provision an HBase cluster using Azure PowerShell](#powershell).
+
 1. Sign in to the [Azure Management Portal][azure-portal].
 
 2. Click **NEW** in the lower-left corner, point to **DATA SERVICES**, point to **HDINSIGHT**, and then click **CUSTOM CREATE**.
@@ -369,10 +372,11 @@ In this tutorial you learned how to provision an HBase cluster. To learn more, s
 [hbase-get-started]: /documentation/articles/hdinsight-hbase-get-started
 [vnet-overview]: /documentation/articles/virtual-networks-overview
 [vm-create]: /documentation/articles/virtual-machines-windows-tutorial
+
 [azure-portal]: https://manage.windowsazure.cn
 [azure-create-storageaccount]: /documentation/articles/storage-create-storage-account
 [azure-purchase-options]: /pricing/overview/
-[azure-member-offers]: http://azure.microsoft.com/pricing/member-offers/
+[azure-member-offers]: /pricing/member-offers/
 [azure-trial]: /pricing/1rmb-trial/
 
 [hdinsight-admin-powershell]: /documentation/articles/hdinsight-administer-use-powershell
@@ -386,6 +390,8 @@ In this tutorial you learned how to provision an HBase cluster. To learn more, s
 
 
 [powershell-install]: /documentation/articles/install-configure-powershell
+
+
 [hdinsight-customize-cluster]: /documentation/articles/hdinsight-hadoop-customize-cluster
 [hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters
 [hdinsight-get-started]: /documentation/articles/hdinsight-get-started
@@ -396,6 +402,7 @@ In this tutorial you learned how to provision an HBase cluster. To learn more, s
 [hdinsight-power-query]: /documentation/articles/hdinsight-connect-excel-power-query
 [hdinsight-hive-odbc]: /documentation/articles/hdinsight-connect-excel-hive-ODBC-driver
 [hdinsight-hbase-replication-dns]: /documentation/articles/hdinsight-hbase-geo-replication-configure-DNS
+
 [img-dns-surffix]: ./media/hdinsight-hbase-provision-vnet/DNSSuffix.png
 [img-primary-dns-suffix]: ./media/hdinsight-hbase-provision-vnet/PrimaryDNSSuffix.png
 [img-provision-cluster-page1]: ./media/hdinsight-hbase-provision-vnet/hbasewizard1.png "Provision details for the new HBase cluster"

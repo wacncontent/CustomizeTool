@@ -154,11 +154,11 @@ Azure emulator:
 
 	> [AZURE.IMPORTANT] Be sure to use a unique name, otherwise the publish process will fail. After the deployment has completed, the browser will open and navigate to the deployed service.
 	> 
-	> If you receive an error stating that the provided subscription name doesn't exist in the imported publish profile, you must download and import the publishing profile for your subscription before deploying to Azure. See the **Deploying the Application to Azure** section of [Build and deploy a Node.js application to an Azure Cloud Service](/develop/nodejs/tutorials/getting-started/)
+	> If you receive an error stating that the provided subscription name doesn't exist in the imported publish profile, you must download and import the publishing profile for your subscription before deploying to Azure. See the **Deploying the Application to Azure** section of [Build and deploy a Node.js application to an Azure Cloud Service](/documentation/articles/cloud-services-nodejs-develop-deploy-app)
 
     ![A browser window displaying the service hosted on Azure][completed-app]
 
-	> [AZURE.NOTE] If you receive an error stating that the provided subscription name doesn't exist in the imported publish profile, you must download and import the publishing profile for your subscription before deploying to Azure. See the **Deploying the Application to Azure** section of [Build and deploy a Node.js application to an Azure Cloud Service](/develop/nodejs/tutorials/getting-started/)
+	> [AZURE.NOTE] If you receive an error stating that the provided subscription name doesn't exist in the imported publish profile, you must download and import the publishing profile for your subscription before deploying to Azure. See the **Deploying the Application to Azure** section of [Build and deploy a Node.js application to an Azure Cloud Service](/documentation/articles/cloud-services-nodejs-develop-deploy-app)
 
 Your application is now running on Azure, and can relay chat
 messages between different clients using Socket.IO.
@@ -171,13 +171,13 @@ In this tutorial you learned how to create a basic chat application hosted in an
 
 For more information, see also the [Node.js Developer Center](/develop/nodejs/).
 
-  [chat Website]: /documentation/articles/web-sites-nodejs-chat-app-socketio/
+  [chatwebsite]: /documentation/articles/web-sites-nodejs-chat-app-socketio/
 
-  [Azure SLA]: /support/legal/sla
+  [Azure SLA]: http://azure.microsoft.com/support/sla/
   [Azure SDK for Node.js GitHub repository]: https://github.com/WindowsAzure/azure-sdk-for-node
   [completed-app]: ./media/cloud-services-nodejs-chat-app-socketio/socketio-10.png
   [Azure SDK for Node.js]: /develop/nodejs/
-  [Node.js Web Application]: /develop/nodejs/tutorials/getting-started/
+  [Node.js Web Application]: /documentation/articles/cloud-services-nodejs-develop-deploy-app
   [Socket.IO GitHub repository]: https://github.com/LearnBoost/socket.io/tree/0.9.14
   [Azure Considerations]: #windowsazureconsiderations
   [Hosting the Chat Example in a Worker Role]: #hostingthechatexampleinawebrole

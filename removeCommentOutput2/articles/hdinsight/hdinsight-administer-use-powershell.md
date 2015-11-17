@@ -319,13 +319,14 @@ See the [Submit MapReduce jobs](#mapreduce) section in this article.
 [hdinsight-hive]: /documentation/articles/hdinsight-use-hive
 [hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
 [azure-purchase-options]: /pricing/overview/
-[azure-member-offers]: http://azure.microsoft.com/pricing/member-offers/
+[azure-member-offers]: /pricing/member-offers/
 [azure-trial]: /pricing/1rmb-trial/
 
 [hdinsight-get-started]: /documentation/articles/hdinsight-get-started
 [hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters
 [hdinsight-provision-custom-options]: /documentation/articles/hdinsight-provision-clusters#configuration
 [hdinsight-submit-jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically
+
 [hdinsight-admin-cli]: /documentation/articles/hdinsight-administer-use-command-line
 [hdinsight-admin-portal]: /documentation/articles/hdinsight-administer-use-management-portal-v1
 [hdinsight-storage]: /documentation/articles/hdinsight-use-blob-storage
@@ -333,7 +334,9 @@ See the [Submit MapReduce jobs](#mapreduce) section in this article.
 [hdinsight-use-mapreduce]: /documentation/articles/hdinsight-use-mapreduce
 [hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
 [hdinsight-flight]: /documentation/articles/hdinsight-analyze-flight-delay-data
+
 [hdinsight-powershell-reference]: https://msdn.microsoft.com/zh-cn/library/dn858087.aspx
 
 [powershell-install-configure]: /documentation/articles/install-configure-powershell
+
 [image-hdi-ps-provision]: ./media/hdinsight-administer-use-powershell/HDI.PS.Provision.png

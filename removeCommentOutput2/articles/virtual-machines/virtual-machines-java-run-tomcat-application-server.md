@@ -17,6 +17,7 @@
 
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-include.md)] This article covers creating a resource with the classic deployment model. 
 
+
 With Azure, you can use a virtual machine to provide server capabilities. As an example, a virtual machine running on Azure can be configured to host a Java application server, such as Apache Tomcat. After you complete this guide, you will have an understanding of how to create a virtual machine running on Azure and configure it to run a Java application server.
 
 You will learn:
@@ -116,7 +117,7 @@ To see Tomcat running from external machines, you need to create an endpoint and
 10. On the **Name** screen, specify a name for the rule, such as **HttpIn** (the rule name is not required to match the endpoint name, however), and then click **Finish**.  
  ![New inbound rule name][NewRuleName]
 
-At this point, your Tomcat website should be viewable from an external browser by using a URL of the form **http://*your_DNS_name*.chinacloudapp.cn**, where ***your_DNS_name*** is the DNS name you specified when you created the virtual machine.
+At this point, your Tomcat website should be viewable from an external browser by using a URL of the form **http://*your\_DNS\_name*.chinacloudapp.cn**, where ***your\_DNS\_name*** is the DNS name you specified when you created the virtual machine.
 
 ## Application lifecycle considerations
 * You could create your own web application archive (WAR) and add it to the **webapps** folder. For example, create a basic Java Service Page (JSP) dynamic web project and export it as a WAR file, copy the WAR to the Apache Tomcat **webapps** folder on the virtual machine, then run it in a browser.

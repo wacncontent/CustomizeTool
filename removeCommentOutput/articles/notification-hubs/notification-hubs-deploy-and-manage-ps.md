@@ -162,7 +162,7 @@ Some ready-made scripts are also available for download:
  
 
 [Purchase Options]: /pricing/overview/
-[Member Offers]: http://azure.microsoft.com/pricing/member-offers/
+[Member Offers]: /pricing/member-offers/
 [Trial]: /pricing/1rmb-trial/
 [Install and configure Azure PowerShell]: /documentation/articles/install-configure-powershell
 [.NET API for Service Bus]: https://msdn.microsoft.com/zh-cn/library/microsoft.servicebus.aspx

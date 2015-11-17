@@ -520,3 +520,4 @@ You can view AMS learning paths here:
 
  
 [How to Get a Media Processor]: /documentation/articles/media-services-get-media-processor
+ 

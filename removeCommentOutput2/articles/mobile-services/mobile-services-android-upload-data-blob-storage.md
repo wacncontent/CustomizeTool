@@ -43,7 +43,8 @@ So what is a SAS?
 
 It's not safe to store the credentials needed to upload data to the Azure Storage service inside your client app. Instead, you store these credentials in your mobile service and use them to generate a Shared Access Signature (SAS) that grants permission to upload a new image. The SAS, a credential with a 5 minute expiration, is returned securely by Mobile Services to the client app. The app then uses this temporary credential to upload the image. For more information, see [Shared Access Signatures, Part 1: Understanding the SAS Model](/documentation/articles/storage-dotnet-shared-access-signature-part-1)
 
->[AZURE.NOTE] [Here](https://github.com/Azure/mobile-services-samples/tree/master/UploadImages) is the completed client source code part of this app.
+## Code Sample
+[Here](https://github.com/Azure/mobile-services-samples/tree/master/UploadImages) is the completed client source code part of this app. To run it you must complete the Mobile Services backend parts of this tutorial.
 
 ## Update the registered insert script in the Management Portal
 
@@ -120,7 +121,7 @@ It's not safe to store the credentials needed to upload data to the Azure Storag
 	        return image;
 	    }
 
-2. Add this code to start the Android camera app. You can then take pictures, and when one looks OK, press **Save**, which will store it in the file you just created.
+5. Add this code to start the Android camera app. You can then take pictures, and when one looks OK, press **Save**, which will store it in the file you just created.
 
 		// Run an Intent to start up the Android camera
 	    static final int REQUEST_TAKE_PHOTO = 1;
@@ -349,9 +350,9 @@ It's not safe to store the credentials needed to upload data to the Azure Storag
 
 	        mTextNewToDo.setText("");
 	    }
-	
 
-This code sends a request to the mobile service to insert a new TodoItem. The response contains the SAS, which is then used to upload the image from local storage to a blob in Azure storage. 
+
+This code sends a request to the mobile service to insert a new TodoItem. The response contains the SAS, which is then used to upload the image from local storage to a blob in Azure storage.
 
 
 ## Test uploading the images
@@ -410,6 +411,7 @@ Now that you have been able to securely upload images by integrating your mobile
 [Send push notifications to Windows Store apps using Service Bus from a .NET back-end]: http://go.microsoft.com/fwlink/?LinkId=277073&clcid=0x409
 [Mobile Services server script reference]: /documentation/articles/mobile-services-how-to-use-server-scripts
 [Get started with Mobile Services]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started
+
 [Azure Management Portal]: https://manage.windowsazure.cn/
 [How To Create a Storage Account]: /documentation/articles/storage-create-storage-account
 [Azure Storage Client library for Store apps]: http://go.microsoft.com/fwlink/p/?LinkId=276866

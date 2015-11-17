@@ -14,13 +14,13 @@
 	wacn.date=""/>
 
 
-#Install a new Active Directory forest on an Azure virtual network
+# Install a new Active Directory forest on an Azure virtual network
 
 This topic shows how to create a new Windows Server Active Directory environment on an Azure virtual network on a virtual machine (VM) on an [Azure virtual network](/documentation/articles/virtual-networks-overview). In this case, the Azure virtual network is not connected to an on-premises network. 
 
 You might also be interested in these related topics:
 
-- You can optionally [configure a site-to-site VPN using the Management Portal Wizard](/documentation/articles/vpn-gateway-site-to-site-create) and then either install a new forest or extend an on-premises forest to an Azure virtual network. For those steps, see [Install a Replica Active Directory Domain Controller in an Azure Virtual Network](/documentation/articles/virtual-networks-install-replica-active-directory-domain-controller).
+- You can optionally [configure a site-to-site VPN](/documentation/articles/vpn-gateway-site-to-site-create) and then either install a new forest or extend an on-premises forest to an Azure virtual network. For those steps, see [Install a Replica Active Directory Domain Controller in an Azure Virtual Network](/documentation/articles/virtual-networks-install-replica-active-directory-domain-controller).
 -  For conceptual guidance about installing Active Directory Domain Services (AD DS) on an Azure virtual network, see [Guidelines for Deploying Windows Server Active Directory on Azure Virtual Machines](https://msdn.microsoft.com/zh-cn/library/azure/jj156090.aspx).
 
 ## Scenario Diagram
@@ -42,7 +42,7 @@ To configure...  | On-premises  | Azure virtual network
 
 ## Create an Azure virtual network
 
-1. Sign in to the [Azure Management Portal](https://manage.windowsazure.cn).
+1. Sign in to the Azure Management Portal.
 2. Create a virtual network. Click **Networks** > **Create a virtual network**. Use the values in the following table to complete the wizard. 
 
 	On this wizard page…  | Specify these values
@@ -59,7 +59,7 @@ Repeat the following steps to create VMs to host the DC role as needed. You shou
 
 To create the VMs by using Windows PowerShell instead of the UI, see [Use Azure PowerShell to create and preconfigure Windows-based Virtual Machines](/documentation/articles/virtual-machines-ps-create-preconfigure-windows-vms).
 
-1. In the ManagementAzure portal, click **New** > **Compute** > **Virtual Machine** > **From Gallery**. Use the following values to complete the wizard. Accept the default value for a setting unless another value is suggested or required.
+1. In the Management Portal, click **New** > **Compute** > **Virtual Machine** > **From Gallery**. Use the following values to complete the wizard. Accept the default value for a setting unless another value is suggested or required.
 
     On this wizard page…  | Specify these values
 	------------- | -------------
@@ -121,17 +121,14 @@ For more information about using Windows PowerShell, see [Get Started with Azure
 -  [Windows Azure IT Pro IaaS: (05) Creating Virtual Networks and Cross-Premises Connectivity](http://channel9.msdn.com/Series/Windows-Azure-IT-Pro-IaaS/05)
 -  [Virtual Network Overview](/documentation/articles/virtual-networks-overview)
 -  [How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure)
-
--  [Azure PowerShell](http://msdn.microsoft.com/zh-cn/library/azure/jj156055.aspx)
-
+-  [Azure PowerShell](https://msdn.microsoft.com/zh-cn/library/azure/jj156055.aspx)
 -  [Azure Cmdlet Reference](https://msdn.microsoft.com/zh-cn/library/azure/jj554330.aspx)
 -  [Set Azure VM Static IP Address](http://windowsitpro.com/windows-azure/set-azure-vm-static-ip-address)
 -  [How to assign Static IP to Azure VM](http://www.bhargavs.com/index.php/2014/03/13/how-to-assign-static-ip-to-azure-vm/)
-
--  [Install a New Active Directory Forest](http://technet.microsoft.com/zh-cn/library/jj574166.aspx)
-
--  [Introduction to Active Directory Domain Services (AD DS) Virtualization (Level 100)](http://technet.microsoft.com/zh-cn/library/hh831734.aspx)
+-  [Install a New Active Directory Forest](https://technet.microsoft.com/zh-cn/library/jj574166.aspx)
+-  [Introduction to Active Directory Domain Services (AD DS) Virtualization (Level 100)](https://technet.microsoft.com/zh-cn/library/hh831734.aspx)
 -  [Test Lab Guide: Windows Server 2012 R2 Base Configuration in Azure](http://www.microsoft.com/download/details.aspx?id=41684)
+
 <!--Image references-->
 [1]: ./media/active-directory-new-forest-virtual-machine/AD_Forest.png
 

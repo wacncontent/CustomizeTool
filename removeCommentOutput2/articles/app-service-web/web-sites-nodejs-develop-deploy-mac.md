@@ -41,6 +41,7 @@ For tutorials and sample code with more complex Node.js applications, or for oth
 ## Create a web app and enable Git publishing
 
 Follow these steps to create a web app in Azure Websites and enable Git publishing. 
+
 > If you want to get started with Azure Websites before signing up for an account, go to <a href="https://trywebsites.chinacloudsites.cn/?language=nodejs">https://trywebsites.chinacloudsites.cn</a>, where you can immediately create a short-lived ASP.NET starter site in Azure Websites for free. No credit card required, no commitments.
 
 1. Login to the [Azure Management Portal].
@@ -72,6 +73,7 @@ Follow these steps to create a web app in Azure Websites and enable Git publishi
 8. Once the Git repository is ready, you will be presented with instructions on the Git commands to use in order to setup a local repository and then push the files to Azure.
 
 	![Git deployment instructions returned after creating a repository for the website.][git-instructions]
+
 ## Build and test your application locally
 
 In this section, you'll create a **server.js** file that contains a slightly modified version of the 'Hello World' example from [nodejs.org]. The code adds process.env.PORT as the port to listen on when running in an Azure web app.

@@ -230,4 +230,5 @@ In this article, you learned how to connect to HDInsight clusters from Visual St
 [hdinsight.analyze.twitter.data]: /documentation/articles/hdinsight-analyze-twitter-data
 [hdinsight.storm.visual.studio.tools]: /documentation/articles/hdinsight-storm-develop-csharp-visual-studio-topology
 [hdinsight.access.application.logs]: /documentation/articles/hdinsight-hadoop-access-yarn-app-logs
+
 [apache.hive]: http://hive.apache.org

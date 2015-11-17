@@ -7,13 +7,10 @@
         manager="jahogg"
         editor="" />
 
-<tags ms.service="storage"
-      ms.workload="storage"
-      ms.tgt_pltfrm="na"
-      ms.devlang="na"
-      ms.topic="article"
-      ms.date="10/06/2015"
-      ms.author="jutang;tamram" />
+<tags
+	ms.service="storage"
+	ms.date="10/06/2015"
+	wacn.date=""/>
 
 
 # How to use Azure File Storage with Linux 

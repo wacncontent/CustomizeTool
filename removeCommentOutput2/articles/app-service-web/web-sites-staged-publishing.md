@@ -37,6 +37,7 @@ Each App Service plan mode supports a different number of deployment slots. To f
 ## Add a deployment slot to a web app ##
 
 The web app must be running in the **Standard** mode in order for you to enable multiple deployment slots.
+
 1. On the Quick Start page, or in the Quick Glance section of the Dashboard page for your website, click **Add a new deployment slot**. 
 	
 	![Add a new deployment slot][QGAddNewDeploymentSlot]

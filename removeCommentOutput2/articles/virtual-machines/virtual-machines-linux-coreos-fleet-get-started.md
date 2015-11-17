@@ -151,7 +151,7 @@ fleetctl --tunnel coreos-cluster.chinacloudapp.cn:22 unload apache@{1,2,3}.servi
 * See [Linux and Open-Source Computing on Azure] for more on using open-source environments on Linux VMs in Azure.
 
 <!--Link references-->
-[Azure Command-Line Interface (Azure)]: /documentation/articles/xplat-cli 
+[Azure Command-Line Interface (Azure)]: /documentation/articles/xplat-cli-install
 [CoreOS]: https://coreos.com/
 [CoreOS Overview]: https://coreos.com/using-coreos/
 [CoreOS with Azure]: https://coreos.com/docs/running-coreos/cloud-providers/azure/
@@ -160,7 +160,7 @@ fleetctl --tunnel coreos-cluster.chinacloudapp.cn:22 unload apache@{1,2,3}.servi
 [Docker]: http://docker.io
 [YAML]: http://yaml.org/
 [How to Use CoreOS on Azure]: /documentation/articles/virtual-machines-linux-coreos-how-to
-[Configure a load-balanced set]: https://msdn.microsoft.com/zh-CN/library/azure/dn655055.aspx
+[Configure a load-balanced set]: /documentation/articles/load-balancer-internet-getstarted
 [Launching containers with fleet]: https://coreos.com/docs/launching-containers/launching/launching-containers-fleet/
 [Unit Files]: https://coreos.com/docs/launching-containers/launching/fleet-unit-files/
 [busybox Docker Hub image]: https://registry.hub.docker.com/_/busybox/

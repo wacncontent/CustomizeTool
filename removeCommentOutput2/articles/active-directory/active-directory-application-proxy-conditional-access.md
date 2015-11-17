@@ -13,7 +13,7 @@
 	wacn.date=""/>
 
 # Working with conditional access
-> [AZURE.NOTE] Application Proxy is a feature that is available only if you upgraded to the Premium or Basic edition of Azure Active Directory. For more information, see [Azure Active Directory editions](https://msdn.microsoft.com/zh-cn/library/azure/dn532272.aspx).
+> [AZURE.NOTE] Application Proxy is a feature that is available only if you upgraded to the Premium or Basic edition of Azure Active Directory. For more information, see [Azure Active Directory editions](/documentation/articles/active-directory-editions).
 
 You can now enable access rules to grant conditional access to users and groups accessing applications published using Application Proxy. This enables you to:
 - Require mutli-factor authentication per application
@@ -30,7 +30,7 @@ Access rules are evaluated when a user accesses a federated application that use
 - A federated or managed Azure Active Directory tenant 
 - Federated tenants require that multi-factor authentication (MFA) be enabled 
 
-![](http://i.imgur.com/rv28onQ.png)
+![](./media/active-directory-application-proxy-conditional-access/application-proxy-conditional-access.png)
 
 ## Configure per-application multi-factor authentication
 1. Sign in as an administrator in the Azure Management Portal.
@@ -47,8 +47,22 @@ Access rules are evaluated when a user accesses a federated application that use
 ## Configuring MFA for federation services
 For federated tenants, multi-factor authentication (MFA) may performed by Azure Active Directory or by the on-premises AD FS server. By default, MFA will occur on any page hosted by Azure Active Directory. In order to configure MFA on-premises, run Windows PowerShell and use the –SupportsMFA property to set the Azure AD module.
 The following example shows how to enable on-premises MFA by using the [Set-MsolDomainFederationSettings cmdlet](https://msdn.microsoft.com/zh-cn/library/azure/dn194088.aspx) on the contoso.com tenant: `Set-MsolDomainFederationSettings -DomainName contoso.com -SupportsMFA $true `
-In addition to setting this flag, the federated tenant AD FS instance must be configured to perform multi-factor authentication. Follow the instructions for [Deploying Windows Azure Multi-Factor Authentication on-premises](http://technet.microsoft.com/zh-cn/library/dn280946.aspx).
+In addition to setting this flag, the federated tenant AD FS instance must be configured to perform multi-factor authentication. Follow the instructions for [Deploying Windows Azure Multi-Factor Authentication on-premises](..multi-factor-authentication-get-started-server.md). 
+## See also
+There's a lot more you can do with Application Proxy:
+
+- [Publish applications with Application Proxy](/documentation/articles/active-directory-application-proxy-publish)
+- [Publish applications using your own domain name](/documentation/articles/active-directory-application-proxy-custom-domains)
+- [Enable single-sign on](/documentation/articles/active-directory-application-proxy-sso-using-kcd)
+- [Working with claims aware applications](/documentation/articles/active-directory-application-proxy-claims-aware-apps)
+- [Troubleshoot issues you're having with Application Proxy](/documentation/articles/active-directory-application-proxy-troubleshoot)
+
+## Learn more about Application Proxy
+- [Take a look here at our online help](/documentation/articles/active-directory-application-proxy-enable)
+- [Check out the Application Proxy blog](http://blogs.technet.com/b/applicationproxyblog/)
+- [Watch our videos on Channel 9!](http://channel9.msdn.com/events/Ignite/2015/BRK3864)
+
 ## Additional Resources
 
-* [Sign up for Azure as an organization](/documentation/articles/sign-up-organization) 
-* [Azure Identity](/documentation/articles/fundamentals-identity)
+* [Sign up for Azure as an organization](..sign-up-organization.md)
+* [Azure Identity](..fundamentals-identity.md)
