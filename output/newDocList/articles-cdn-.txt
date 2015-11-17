@@ -1,20 +1,3 @@
-new docs: 15, word count: {word_count_TODO}
-articles/cdn/cdn-analyze-usage-patterns.md
-articles/cdn/cdn-caching-policy.md
-articles/cdn/cdn-cloud-service-with-cdn.md
-articles/cdn/cdn-country-codes.md
-articles/cdn/cdn-create-a-storage-account-with-cdn.md
-articles/cdn/cdn-create-new-endpoint.md
-articles/cdn/cdn-how-to-use-cdn.md
-articles/cdn/cdn-improve-performance.md
-articles/cdn/cdn-manage-expiration-of-blob-content.md
-articles/cdn/cdn-manage-expiration-of-cloud-service-content.md
-articles/cdn/cdn-map-content-to-custom-domain.md
-articles/cdn/cdn-overview.md
-articles/cdn/cdn-pop-locations.md
-articles/cdn/cdn-restrict-access-by-country.md
-articles/cdn/cdn-serve-content-from-cdn-in-your-web-application.md
+new docs: 0, word count: {word_count_TODO}
 
-new includes: 2
-includes/cdn-limits.md
-includes/cdn.md
+new includes: 0

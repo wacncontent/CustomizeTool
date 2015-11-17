@@ -8,7 +8,7 @@
    editor="tysonn" />
 <tags
 	ms.service="automation"
-	ms.date="07/22/2015"
+	ms.date="10/22/2015"
 	wacn.date=""/>
 
 # Runbook settings

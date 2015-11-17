@@ -1,8 +1,6 @@
-<!-- not suitable for Mooncake -->
-
 <properties
-	pageTitle="Use Script Action to install Solr on Hadoop cluster | Windows Azure"
-	description="Learn how to customize HDInsight cluster with Solr. You'll use a Script Action configuration option to use a script to install Solr."
+	pageTitle="Use Script Action to install Solr on Linux-based HDInsight | Windows Azure"
+	description="Learn how to install Solr on Linux-based HDInsight Hadoop clusters using Script Actions."
 	services="hdinsight"
 	documentationCenter=""
 	authors="Blackmist"
@@ -12,11 +10,10 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="08/20/2015"
+	ms.date="10/26/2015"
 	wacn.date=""/>
 
 # Install and use Solr on HDInsight Hadoop clusters
-
 
 In this topic, you will learn how to install Solr on Azure HDInsight by using Script Action. Solr is a powerful search platform and provides enterprise-level search capabilities on data managed by Hadoop. Once you have installed Solr on HDInsight cluster, you'll also learn how to search data by using Solr.
 
@@ -56,11 +53,16 @@ A sample script to install Solr on an HDInsight cluster is available from a read
 
 3. At the bottom of the **Script Actions**, use the **Select** button to save the configuration. Finally, use the **Select** button at the bottom of the **Optional Configuration** blade to save the optional configuration information.
 
-4. Continue provisining the cluster as described in [Provision Linux-based HDInsight clusters](/documentation/articles/hdinsight-provision-linux-clusters#portal).
+4. Continue <!-- deleted by customization provisioning --><!-- keep by customization: begin --> provisining <!-- keep by customization: end --> the cluster as described in [Provision Linux-based HDInsight clusters](/documentation/articles/hdinsight-provision-linux-clusters#portal).
 
 ## <a name="usesolr"></a>How do I use Solr in HDInsight?
 
+<!-- deleted by customization
+### Indexing data
+-->
+<!-- keep by customization: begin -->
 ###Indexing data
+<!-- keep by customization: end -->
 
 You must start with indexing Solr with some data files. You can then use Solr to run search queries on the indexed data. Use the following steps to add some example data to Solr, and then query it:
 
@@ -151,13 +153,30 @@ You must start with indexing Solr with some data files. You can then use Solr to
 			    ]
 			  }
 
+<!-- deleted by customization
+### Using the Solr dashboard
+
+The Solr dashboard is a web UI that allows you to work with Solr through your web browser. The Solr dashboard is not exposed directly on the Internet from your HDInsight cluster, but must be accessed using an SSH tunnel. For more information on using an SSH tunnel, see [Use SSH Tunneling to access Ambari web UI, ResourceManager, JobHistory, NameNode, Oozie, and other web UI's](/documentation/articles/hdinsight-linux-ambari-ssh-tunnel)
+-->
+<!-- keep by customization: begin -->
 ###Using the Solr dashboard
 
 The Solr dashbaord is a web UI that allows you to work with Solr through your web browser. The Solr dashboard is not exposed directly on the Internet from your HDInsight cluster, but must be accessed using an SSH tunnel. For more information on using an SSH tunnel, see [Use SSH Tunneling to access Ambari web UI, ResourceManager, JobHistory, NameNode, Oozie, and other web UI's](/documentation/articles/hdinsight-linux-ambari-ssh-tunnel)
+<!-- keep by customization: end -->
 
 Once you have established an SSH tunnel, use the following steps to use the Solr dashboard:
 
-1. In your browser, connect to __http://headnode0:8983/solr/#/__. This traffic should be routed through the SSH tunnel to headnode0 for your HDInsight cluster. You should see a page similar to the following:
+1. Determine the host name for the head node:
+
+    1. In a browser, go to https://CLUSTERNAME.azurehdinsight.cn. When prompted, use the Admin username and password to authenticate to the site.
+    
+    2. From the menu at the top of the page, select __Hosts__.
+    
+    3. Select the entry that begins with __hn0__. When the page opens, the host name will be displayed at the top. The format of the host name is __hn0-PARTOFCLUSTERNAME.randomcharacters.cx.internal.chinacloudapp.cn__. This is the host name you must use when connecting to the Solr dashboard.
+    
+1. In your browser, connect to __http://HOSTNAME:8983/solr/#/__, where __HOSTNAME__ is the name you determined in the previous steps. 
+
+    The request should be routed through the SSH tunnel to the head node for your HDInsight cluster. You should see a page similar to the following:
 
 	![Image of Solr dashboard](./media/hdinsight-hadoop-solr-install-linux/solrdashboard.png)
 
@@ -227,7 +246,12 @@ Once you have established an SSH tunnel, use the following steps to use the Solr
 			    ]
 			  }
 
+<!-- deleted by customization
+### Starting and stopping Solr
+-->
+<!-- keep by customization: begin -->
 ###Starting and stopping Solr
+<!-- keep by customization: end -->
 
 If you need to manually stop or start Solar, use the following commands:
 
@@ -235,14 +259,23 @@ If you need to manually stop or start Solar, use the following commands:
 
 	sudo start solr
 
+<!-- deleted by customization
+## Backup indexed data
+-->
+<!-- keep by customization: begin -->
 
 ##Backup indexed data
+<!-- keep by customization: end -->
 
 As a good practice, you should back up the indexed data from the Solr cluster nodes onto Azure Blob storage. Perform the following steps to do so:
 
-1. Connect to the cluster using SSH, then use the following command to create a snapshot of the indexed data:
+1. Connect to the cluster using SSH, then use the following command to get the host name for the head node:
 
-		curl http://headnode0:8983/solr/replication?command=backup
+        hostname -f
+        
+2. Use the following to create a snapshot of the indexed data. Replace __HOSTNAME__ with the name returned from the previous command:
+
+		curl http://HOSTNAME:8983/solr/replication?command=backup
 
 	You should see a response like this:
 
@@ -274,7 +307,7 @@ As a good practice, you should back up the indexed data from the Solr cluster no
 For more information on working with Solr backup and restores, see [Making and restoring backups of SolrCores](https://cwiki.apache.org/confluence/display/solr/Making+and+Restoring+Backups+of+SolrCores).
 
 
-## See also##
+## See <!-- deleted by customization also --><!-- keep by customization: begin --> also## <!-- keep by customization: end -->
 
 - [Install and use Hue on HDInsight clusters](/documentation/articles/hdinsight-hadoop-hue-linux). Hue is a web UI that makes it easy to create, run and save Pig and Hive jobs, as well as browse the default storage for your HDInsight cluster.
 
@@ -285,8 +318,6 @@ For more information on working with Solr backup and restores, see [Making and r
 - [Install Giraph on HDInsight clusters](/documentation/articles/hdinsight-hadoop-giraph-install-linux). Use cluster customization to install Giraph on HDInsight Hadoop clusters. Giraph allows you to perform graph processing by using Hadoop, and can be used with Azure HDInsight.
 
 - [Install Hue on HDInsight clusters](/documentation/articles/hdinsight-hadoop-hue-linux). Use cluster customization to install Hue on HDInsight Hadoop clusters. Hue is a set of Web applications used to interact with a Hadoop cluster.
-
-
 
 
 

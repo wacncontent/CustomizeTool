@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="09/07/2015"
+	ms.date="11/02/2015"
 	wacn.date=""/>
 
 
@@ -32,7 +32,7 @@ For more information:
 - [Azure Media Player Documentation](http://amp.azure.net/libs/amp/latest/docs/) 
 - [Azure Media Player Getting Started Blog](http://azure.microsoft.com/blog/2015/04/15/announcing-azure-media-player)
 - [Sign up to stay up to date with the latest from Azure Media Player](http://amp.azure.net/signup/)
-- [Add new feature requests, ideas, feedback](http://feedback.azure.com/forums/293565-azure-media-player/filters/my_feedback) 
+- [Add new feature requests, ideas, feedback](http://aka.ms/ampuservoice ) 
 
 
 ##Other Tools for Creating Player Applications
@@ -44,7 +44,7 @@ You can also use any of the following SDKs:
 - [Microsoft Media Platform: Player Framework](http://playerframework.codeplex.com/) 
 - [HTML5 Player Framework Documentation](http://playerframework.codeplex.com/wikipage?title=HTML5%20Player&referringTitle=Documentation) 
 - [Microsoft Smooth Streaming Plugin for OSMF](https://www.microsoft.com/download/details.aspx?id=36057) 
-- [Licensing Microsoft® Smooth Streaming Client Porting Kit](https://www.microsoft.com/mediaplatform/sspk.aspx) 
+- [Licensing Microsoft® Smooth Streaming Client Porting Kit](http://aka.ms/sspk) 
 - [XBOX Video Application Development](http://xbox.create.msdn.com/) 
  
 
@@ -63,6 +63,15 @@ Ads can be placed at any point in the main video’s time line. You must tell th
 For information about closed captioning and ads support in Live streaming videos, see [Supported Closed Captioning and Ad Insertion Standards](https://msdn.microsoft.com/zh-cn/library/c49e0b4d-357e-4cca-95e5-2288924d1ff3#caption_ad).
 
 
+<!-- deleted by customization
+##Media Services learning paths
+
+[AZURE.INCLUDE [media-services-learning-paths-include](../includes/media-services-learning-paths-include.md)]
+
+##Provide feedback
+
+-->
+[AZURE.INCLUDE [media-services-user-voice-include](../includes/media-services-user-voice-include.md)]
 
 ##See Also
 

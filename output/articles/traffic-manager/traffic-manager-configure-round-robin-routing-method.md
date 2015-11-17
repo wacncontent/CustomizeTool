@@ -4,11 +4,11 @@
    services="traffic-manager"
    documentationCenter=""
    authors="joaoma"
-   manager="adinah"
+   manager="carmonm"
    editor="tysonn" />
 <tags
 	ms.service="traffic-manager"
-	ms.date="08/19/2015"
+	ms.date="11/12/2015"
 	wacn.date=""/>
 
 # Configure Round Robin routing method
@@ -31,19 +31,19 @@ A common traffic routing method pattern is to provide a set of identical endpoin
 
 ## Next steps
 
-[About Traffic Manager traffic routing Methods](/documentation/articles/traffic-manager-load-balancing-methods)
+
+[Point a company Internet domain to a Traffic Manager domain](/documentation/articles/traffic-manager-point-internet-domain)
+
+[Traffic Manager routing methods](/documentation/articles/traffic-manager-routing-methods)
+
+[Configure failover routing method](/documentation/articles/traffic-manager-configure-failover-routing-method)
+
+[Configure performance routing method](/documentation/articles/traffic-manager-configure-performance-routing-method)
+
+[Troubleshooting Traffic Manager degraded state](/documentation/articles/traffic-manager-troubleshooting-degraded)
 
 [Traffic Manager - Disable, enable or delete a profile](/documentation/articles/disable-enable-or-delete-a-profile)
 
 [Traffic Manager - Disable or enable an endpoint](/documentation/articles/disable-or-enable-an-endpoint)
 
-[What is Traffic Manager?](/documentation/articles/traffic-manager-overview)
-
-[Cloud Services](https://msdn.microsoft.com/zh-cn/library/jj155995.aspx)
-
-[Websites](/home/features/web-site/)
-
-[Operations on Traffic Manager (REST API Reference)](https://msdn.microsoft.com/zh-cn/library/hh758255.aspx)
-
-[Azure Traffic Manager Cmdlets](https://msdn.microsoft.com/zh-cn/library/dn690250.aspx)
  

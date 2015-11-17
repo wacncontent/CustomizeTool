@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="sql-database"
-	ms.date="07/20/2015"
+	ms.date="11/09/2015"
 	wacn.date=""/>
 
 
@@ -34,7 +34,7 @@ Open your terminal and install the following:
 
 **3) TinyTDS:** Run the following command from your terminal. This will install TinyTDS on your machine. 
 
-    sudo ARCHFLAGS="-arch x86_64" gem install tiny_tds
+    <!-- keep by customization: begin --> sudo ARCHFLAGS="-arch x86_64" <!-- keep by customization: end -->  gem install tiny_tds
 
 ## Create a database, retrieve your connection string
 

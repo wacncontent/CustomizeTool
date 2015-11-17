@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="traffic-manager"
-	ms.date="08/19/2015"
+	ms.date="11/12/2015"
 	wacn.date=""/>
 
 
@@ -83,11 +83,7 @@ Given the above information we know that the only performance impact that Traffi
 
 [About Traffic Manager traffic routing methods](/documentation/articles/traffic-manager-load-balancing-methods)
 
-[What is Traffic Manager?](/documentation/articles/traffic-manmager-overview)
-
-[Cloud Services](https://msdn.microsoft.com/zh-cn/library/jj155995.aspx)
-
-[Websites](/home/features/web-site/)
+[Test your Traffic Manager settings](/documentation/articles/traffic-manager-testing-settings)
 
 [Operations on Traffic Manager (REST API Reference)](https://msdn.microsoft.com/zh-cn/library/hh758255.aspx)
 

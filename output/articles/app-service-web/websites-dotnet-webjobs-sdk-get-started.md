@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="app-service"
-	ms.date="10/09/2015"
+	ms.date="10/22/2015"
 	wacn.date=""/>
 
 # Create a .NET WebJob in Azure Websites
@@ -20,6 +20,7 @@ The sample application is an advertising bulletin board. Users can upload images
 
 ![Ad list](./media/websites-dotnet-webjobs-sdk-get-started/list.png)
 
+<!-- keep by customization: begin -->
 ## Table of Contents
 
 - [Prerequisites](#prerequisites)
@@ -30,6 +31,7 @@ The sample application is an advertising bulletin board. Users can upload images
 - [Create the application from scratch](#create)
 - [Review the application code](#code)
 - [Next Steps](#next-steps)
+<!-- keep by customization: end -->
 ## <a id="prerequisites"></a>Prerequisites
 
 The tutorial assumes that you know how to work with [ASP.NET MVC 5](http://www.asp.net/mvc/tutorials/mvc-5/introduction/getting-started) projects in Visual Studio.
@@ -789,7 +791,7 @@ For more information about how to write functions that use  WebJobs SDK attribut
 
 ## Next steps
 
-In this tutorial you've seen a simple multi-tier application that uses the WebJobs SDK for backend processing. This sections offers some suggestions for learning more about ASP.NET multi-tier applications and WebJobs.
+In this tutorial you've seen a simple multi-tier application that uses the WebJobs SDK for backend processing. This section offers some suggestions for learning more about ASP.NET multi-tier applications and WebJobs.
 
 ### Missing features
 

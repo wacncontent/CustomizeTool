@@ -1,15 +1,15 @@
 <properties
-	pageTitle="Writing Expressions for Attribute Mappings in Azure Active Directory"
+	pageTitle="Writing Expressions for Attribute Mappings in Azure Active Directory | Windows Azure"
 	description="Learn how to use expression mappings to transform attribute values into an acceptable format during automated provisioning of SaaS app objects in Azure Active Directory."
 	services="active-directory"
 	documentationCenter=""
 	authors="markusvi"
-	manager="swadhwa"
+	manager="stevenpo"
 	editor=""/>
 
 <tags
 	ms.service="active-directory"
-	ms.date="07/27/2015"
+	ms.date="10/20/2015"
 	wacn.date=""/>
 
 

@@ -1,13 +1,3 @@
-new docs: 9, word count: {word_count_TODO}
-articles/scheduler/scheduler-advanced-complexity.md
-articles/scheduler/scheduler-concepts-terms.md
-articles/scheduler/scheduler-get-started-portal.md
-articles/scheduler/scheduler-high-availability-reliability.md
-articles/scheduler/scheduler-intro.md
-articles/scheduler/scheduler-limits-defaults-errors.md
-articles/scheduler/scheduler-outbound-authentication.md
-articles/scheduler/scheduler-plans-billing.md
-articles/scheduler/scheduler-powershell-reference.md
+new docs: 0, word count: {word_count_TODO}
 
-new includes: 1
-includes/scheduler-limits-table.md
+new includes: 0

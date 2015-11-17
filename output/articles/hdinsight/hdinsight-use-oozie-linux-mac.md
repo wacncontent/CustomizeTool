@@ -1,17 +1,16 @@
-<!-- not suitable for Mooncake -->
-
 <properties
-	pageTitle="Use Hadoop Oozie in HDInsight | Windows Azure"
-	description="Use Hadoop Oozie in HDInsight, a big data service. Learn how to define an Oozie workflow, and submit an Oozie job."
+	pageTitle="Use Hadoop Oozie workflows in Linux-based HDInsight | Windows Azure"
+	description="Use Hadoop Oozie in Linux-based HDInsight. Learn how to define an Oozie workflow, and submit an Oozie job."
 	services="hdinsight"
 	documentationCenter=""
 	authors="Blackmist"
 	manager="paulettm"
-	editor="cgronlun"/>
+	editor="cgronlun"
+	tags="azure-portal"/>
 
 <tags
 	ms.service="hdinsight"
-	ms.date="07/24/2015"
+	ms.date="10/26/2015"
 	wacn.date=""/>
 
 
@@ -29,9 +28,9 @@ Apache Oozie is a workflow/coordination system that manages Hadoop jobs. It is i
 
 Before you begin this tutorial, you must have the following:
 
-- **An Azure subscription**
+- **An Azure subscription**<!-- deleted by customization: See [Get Azure trial](/documentation/articles/get-azure-free-trial-for-testing-hadoop-in-hdinsight). -->
 
-- **Azure CLI**: See [Install and Configure the Azure CLI](/documentation/articles/xplat-cli)
+- **Azure CLI**: See [Install and Configure the Azure <!-- deleted by customization CLI](/documentation/articles/xplat-cli-install) --><!-- keep by customization: begin --> CLI](/documentation/articles/xplat-cli) <!-- keep by customization: end -->
 
 - **An HDInsight cluster**: See [Get Started with HDInsight on Linux](/documentation/articles/hdinsight-hadoop-linux-tutorial-get-started)
 
@@ -198,7 +197,7 @@ Oozie workflows definitions are written in hPDL (a XML Process Definition Langua
 
 The following steps create the Azure SQL Database that data will be exported to.
 
-> [AZURE.IMPORTANT] Before performing these steps you must [install and configure the Azure CLI](/documentation/articles/xplat-cli). Installing the CLI and following the steps to create a database can be performed either from the HDInsight cluster or your local workstation.
+> [AZURE.IMPORTANT] Before performing these steps you must [install and configure the Azure <!-- deleted by customization CLI](/documentation/articles/xplat-cli-install) --><!-- keep by customization: begin --> CLI](/documentation/articles/xplat-cli) <!-- keep by customization: end -->. Installing the CLI and following the steps to create a database can be performed either from the HDInsight cluster or your local workstation.
 
 1. Use the following command to create a new Azure SQL Database server:
 
@@ -289,9 +288,9 @@ The job definition describes where to find the workflow.xml, as well as other fi
 
 	This will return information similar to the following:
 
-		headnode0.CLUSTERNAME-ssh.j7.internal.chinacloudapp.cn
+		hn0-CLUSTERNAME.randomcharacters.cx.internal.chinacloudapp.cn
 
-	The port used for the JobTracker is 8050, so the full address to use for the JobTracker will be **headnode0.CLUSTERNAME-ssh.j7.internal.chinacloudapp.cn:8050**.
+	The port used for the JobTracker is 8050, so the full address to use for the JobTracker will be **hn0-CLUSTERNAME.randomcharacters.cx.internal.chinacloudapp.cn:8050**.
 
 1. Use the following to create the Oozie job definition configuration:
 
@@ -387,13 +386,13 @@ The following steps use the Oozie command to submit and manage Oozie workflows o
 	This will return a value similar to the following:
 
 		<name>oozie.base.url</name>
-		<value>http://headnode0.CLUSTERNAME-ssh.j7.internal.chinacloudapp.cn:11000/oozie</value>
+		<value>http://hn0-CLUSTERNAME.randomcharacters.cx.internal.chinacloudapp.cn:11000/oozie</value>
 
-	The **http://headnode0.CLUSTERNAME-ssh.j7.internal.chinacloudapp.cn:11000/oozie** portion is the URL to use with the Oozie command.
+	The **http://hn0-CLUSTERNAME.randomcharacters.cx.internal.chinacloudapp.cn:11000/oozie** portion is the URL to use with the Oozie command.
 
 2. Use the following to create an environment variable for the URL, so you don't have to type it for every command:
 
-		export OOZIE_URL=http://headnode0.CLUSTERNAME-ssh.j7.internal.chinacloudapp.cn:11000/oozie
+		export OOZIE_URL=http://HOSTNAMEt:11000/oozie
 
 	Replace the URL with the one you received earlier.
 
@@ -474,11 +473,16 @@ The Oozie Web UI provides a web-based view into the status of Oozie jobs on the 
 
 To access the Oozie Web UI, use the following steps:
 
+<!-- deleted by customization
+1. Create an SSH tunnel to the HDInsight cluster. For information on how to do this, see [Use SSH Tunneling to access Ambari web UI, ResourceManager, JobHistory, NameNode, Oozie, and other web UI's](/documentation/articles/hdinsight-linux-ambari-ssh-tunnel).
+-->
+<!-- keep by customization: begin -->
 1. Create an SSH tunnel to the HDInsight cluster. For information on how to do this, see one of the following:
 
 	* [Use SSH with Linux-based Hadoop on HDInsight from Linux, Unix, or OS X](/documentation/articles/hdinsight-hadoop-linux-use-ssh-unix#tunnel)
 
 	* [Use SSH with Linux-based Hadoop on HDInsight from Windows](/documentation/articles/hdinsight-hadoop-linux-use-ssh-windows#tunnel)
+<!-- keep by customization: end -->
 
 2. Once a tunnel has been created, open the Ambari web UI in your web browser. The URI for the Ambari site is **https://CLUSTERNAME.azurehdinsight.cn**. Replace **CLUSTERNAME** with the name of your Linux-based HDInsight cluster.
 
@@ -685,6 +689,8 @@ In this tutorial, you learned how to define an Oozie workflow and how to run an 
 [hdinsight-versions]: /documentation/articles/hdinsight-component-versioning
 [hdinsight-storage]: /documentation/articles/hdinsight-use-blob-storage
 [hdinsight-get-started]: /documentation/articles/hdinsight-get-started
+
+
 [hdinsight-use-sqoop]: /documentation/articles/hdinsight-use-sqoop
 [hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters
 [hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
@@ -693,16 +699,25 @@ In this tutorial, you learned how to define an Oozie workflow and how to run an 
 [hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig
 [hdinsight-storage]: /documentation/articles/hdinsight-use-blob-storage
 [hdinsight-get-started-emulator]: /documentation/articles/hdinsight-get-started-emulator
+
 [hdinsight-develop-streaming-jobs]: /documentation/articles/hdinsight-hadoop-develop-deploy-streaming-jobs
 [hdinsight-develop-mapreduce]: /documentation/articles/hdinsight-develop-deploy-java-mapreduce
+
 [sqldatabase-create-configue]: /documentation/articles/sql-database-create-configure
 [sqldatabase-get-started]: /documentation/articles/sql-database-get-started
+
 [azure-create-storageaccount]: /documentation/articles/storage-create-storage-account
+
 [apache-hadoop]: http://hadoop.apache.org/
 [apache-oozie-400]: http://oozie.apache.org/docs/4.0.0/
 [apache-oozie-332]: http://oozie.apache.org/docs/3.3.2/
 
+<!-- deleted by customization
+[powershell-download]: /downloads/
+-->
+<!-- keep by customization: begin -->
 [powershell-download]: http://www.windowsazure.cn/downloads/
+<!-- keep by customization: end -->
 [powershell-about-profiles]: https://technet.microsoft.com/zh-cn/library/hh847857.aspx
 [powershell-install-configure]: /documentation/articles/powershell-install-configure
 [powershell-start]: http://technet.microsoft.com/zh-cn/library/hh847889.aspx

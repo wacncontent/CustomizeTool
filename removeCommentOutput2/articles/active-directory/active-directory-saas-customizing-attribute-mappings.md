@@ -1,15 +1,15 @@
 <properties
-	pageTitle="Customizing Attribute Mappings"
+	pageTitle="Customizing Attribute Mappings | Windows Azure"
 	description="Learn what attribute mappings for SaaS apps in Azure Active Directory are how you can modify them to address your business needs."
 	services="active-directory"
 	documentationCenter=""
 	authors="markusvi"
-	manager="swadhwa"
+	manager="stevenpo"
 	editor=""/>
 
 <tags
 	ms.service="active-directory"
-	ms.date="07/27/2015"
+	ms.date="10/20/2015"
 	wacn.date=""/>
 
 

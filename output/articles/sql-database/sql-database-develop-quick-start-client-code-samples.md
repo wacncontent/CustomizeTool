@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="sql-database"
-	ms.date="08/04/2015"
+	ms.date="10/29/2015"
 	wacn.date=""/>
 
 
@@ -73,7 +73,7 @@ This section provides links to code sample topics for client programs that run o
 | :-- | :-- | :-- | :-- |
 | C# | [ADO.NET](/documentation/articles/sql-database-develop-dotnet-simple) | [ADO.NET custom](/documentation/articles/sql-database-develop-csharp-retry-windows)<br/><br/>[Enterprise Library](/documentation/articles/sql-database-develop-entlib-csharp-retry-windows) | (Entity Framework) |
 | C++ | [ODBC driver](http://msdn.microsoft.com/zh-cn/library/azure/hh974312.aspx) | . | . |
-| Java | [Java. JDBC, JDK. Insert, Transaction, Select.](/documentation/articles/sql-database-develop-java-simple-windows)<br/><br/>[Java. Eclipse](/documentation/articles/sql-data-java-how-to-use-sql-database)<br/><br/>[Java. JDBC](http://msdn.microsoft.com/zh-cn/library/azure/gg715284.aspx) | . | . |
+| Java | [Java. JDBC, JDK. Insert, Transaction, Select.](/documentation/articles/sql-database-develop-java-simple-windows) | . | . |
 | Node.js | [msnodesql](/documentation/articles/sql-database-develop-nodejs-simple-windows) | . | . |
 | PHP | [ODBC](/documentation/articles/sql-database-develop-php-simple-windows) | [ODBC custom](/documentation/articles/sql-database-develop-php-retry-windows) | . |
 | Python | [pymssql](/documentation/articles/sql-database-develop-python-simple-windows) | . | . |
@@ -88,3 +88,7 @@ This section provides links to code sample topics for client programs that run o
 - [Azure SQL Database Development: How-to Topics](http://msdn.microsoft.com/zh-cn/library/azure/ee621787.aspx)
 - [Connecting to SQL Database: Links, Best Practices and Design Guidelines](/documentation/articles/sql-database-connect-central-recommendations)
 - [Create your first Azure SQL Database](/documentation/articles/sql-database-get-started)
+<!-- deleted by customization
+- [Entity Framework 6 here, EF 7 on GitHub](http://entityframework.codeplex.com/)
+
+-->

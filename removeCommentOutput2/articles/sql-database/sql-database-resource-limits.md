@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="sql-database"
-	ms.date="09/11/2015"
+	ms.date="11/03/2015"
 	wacn.date=""/>
 
 
@@ -49,7 +49,7 @@ For a single database, the limits of a database are defined by the database serv
 
 [AZURE.INCLUDE [SQL DB service tiers table for elastic databases](../includes/sql-database-service-tiers-table-elastic-db-pools.md)]
 
-For a detailed discussion of service tiers, see [Azure SQL Database Service Tiers and Performance Levels](/documentation/articles/sql-database-service-tiers).
+For an expanded definition of each resource listed in the previous tables, see the descriptions in [Service tier capabilities and limits](/documentation/articles/sql-database-performance-guidance#service-tier-capabilities-and-limits). For an overview of service tiers, see [Azure SQL Database Service Tiers and Performance Levels](/documentation/articles/sql-database-service-tiers).
 
 ## DTU quota per server
 

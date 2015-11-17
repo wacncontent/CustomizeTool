@@ -1,15 +1,15 @@
 <properties 
-	pageTitle="Data dependent routing" 
-	description="How to use the ShardMapManager for data-dependent routing, a feature of elastic databases for Azure SQL DB" 
+	pageTitle="Data dependent routing | Windows Azure" 
+	description="How to use the ShardMapManager for data-dependent routing, a feature of elastic databases for Azure SQL Database" 
 	services="sql-database" 
 	documentationCenter="" 
 	manager="jeffreyg" 
-	authors="sidneyh" 
+	authors="torsteng" 
 	editor=""/>
 
 <tags
 	ms.service="sql-database"
-	ms.date="07/24/2015"
+	ms.date="11/04/2015"
 	wacn.date=""/>
 
 #Data dependent routing
@@ -17,6 +17,10 @@
 The **ShardMapManager** class provides ADO.NET applications the ability to easily direct database queries and commands to the appropriate physical database in a sharded environment. This is called **data-dependent routing** and it is a fundamental pattern when working with sharded databases. Each specific query or transaction in an application using data-dependent routing is restricted to accessing a single database per request.  
 
 Using data-dependent routing, there is no need for the application to track the various connection strings or DB locations associated with different slices of data in the sharded environment. Rather, the [Shard Map Manager](/documentation/articles/sql-database-elastic-scale-shard-map-management) takes responsibility for handing out open connections to the correct database when needed, based on the data in the shard map and the value of the sharding key that is the target of the application’s request. (This key is typically the *customer_id*, *tenant_id*, *date_key*, or some other specific identifier that is a fundamental parameter of the database request). 
+
+## Download the client library
+
+To install the library, go to [Elastic Database Client Library](http://www.nuget.org/packages/Microsoft.Azure.SqlDatabase.ElasticScale.Client/). 
 
 ## Using a ShardMapManager in a data dependent routing application 
 

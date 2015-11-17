@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="07/17/2015"
+	ms.date="11/09/2015"
 	wacn.date=""/>
 
 
@@ -69,7 +69,7 @@ The steps below will walk you through obtaining your application's client ID and
 
 
 ## Modify the script
-Edit one of the scripts below to work with your directory by replacing $ClientID, $ClientSecret and $tenantdomain with the correct values from °∞Delegating Access in Azure AD°±.
+Edit one of the scripts below to work with your directory by replacing $ClientID, $ClientSecret and $tenantdomain with the correct values from ‚ÄúDelegating Access in Azure AD‚Äù.
 
 ### PowerShell Script
 

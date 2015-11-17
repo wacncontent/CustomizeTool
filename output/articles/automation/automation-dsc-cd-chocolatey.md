@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="automation"
-	ms.date="10/16/2015"
+	ms.date="11/11/2015"
 	wacn.date=""/>
 
 # Usage Example: Continuous deployment to Virtual Machines using Automation DSC and Chocolatey
@@ -56,11 +56,10 @@ If you’re not starting with an ARM template, that’s also OK.  There are Powe
 
 At an authenticated (Add-AzureAccount) PowerShell command line:  (can take a few minutes while the pull server is set up)
 
-    Switch-AzureMode -Name AzureResourceManager                     <-- assumes you are still running Azure PowerShell v0.9.x    
-    New-AzureResourceGroup –Name MY-AUTOMATION-RG –Location MY-RG-LOCATION-IN-QUOTES
+    New-AzureRmResourceGroup –Name MY-AUTOMATION-RG –Location MY-RG-LOCATION-IN-QUOTES
     New-AzureAutomationAccount –ResourceGroupName MY-AUTOMATION-RG –Location MY-RG-LOCATION-IN-QUOTES –Name MY-AUTOMATION-ACCOUNT 
 
-You can put your automation account into any of the following regions (aka location): China North, China East.
+You can put your automation account into any of the following regions (aka location):  <!-- deleted by customization  Japan East, China East 2, West Europe, --> China North, China East.
 
 ## Step 2: VM extension tweaks to the ARM template
 
@@ -88,7 +87,7 @@ Or, there’s the manual approach.  The folder structure of a PowerShell Integra
             -Name MODULE-NAME –ContentLink "https://STORAGE-URI/public/MODULE-NAME.zip"
         
 
-The included example performs these steps for cChoco and xNetworking. See the Notes for special handling for cChoco.
+The included example performs these steps for cChoco and xNetworking. See the [Notes](#notes) for special handling for cChoco.
 
 ## Step 4: Adding the node configuration to the pull server
 
@@ -141,18 +140,18 @@ ISVBoxConfig.ps1:
 
 New-ConfigurationScript.ps1:
 
-    Import-AzureAutomationDscConfiguration ` 
+    Import-AzureRmAutomationDscConfiguration ` 
         -ResourceGroupName MY-AUTOMATION-RG –AutomationAccountName MY-AUTOMATION-ACCOUNT ` 
         -SourcePath C:\temp\AzureAutomationDsc\ISVBoxConfig.ps1 ` 
         -Published –Force
     
-    $jobData = Start-AzureAutomationDscCompilationJob ` 
+    $jobData = Start-AzureRmAutomationDscCompilationJob ` 
         -ResourceGroupName MY-AUTOMATION-RG –AutomationAccountName MY-AUTOMATION-ACCOUNT ` 
         -ConfigurationName ISVBoxConfig 
     
     $compilationJobId = $jobData.Id
     
-    Get-AzureAutomationDscCompilationJob ` 
+    Get-AzureRmAutomationDscCompilationJob ` 
         -ResourceGroupName MY-AUTOMATION-RG –AutomationAccountName MY-AUTOMATION-ACCOUNT ` 
         -Id $compilationJobId
 
@@ -180,6 +179,11 @@ Full source for this usage example is in [this Visual Studio project](https://gi
 
 ##Related Articles##
 
-- [Azure Automation DSC Overview](/documentation/articles/automation-dsc-overview)
+- [Azure Automation DSC Overview] (automation-dsc-overview.md)
+<!-- deleted by customization
 - [Azure Automation DSC cmdlets] (https://msdn.microsoft.com/zh-cn/library/mt244122.aspx)
-- [Onboarding machines for management by Azure Automation DSC](/documentation/articles/automation-dsc-onboarding)
+-->
+<!-- keep by customization: begin -->
+- [Azure Automation DSC cmdlets] (https://msdn.microsoft.com/zh-cn/library/mt244122.aspx)
+<!-- keep by customization: end -->
+- [Onboarding machines for management by Azure Automation DSC] (automation-dsc-onboarding.md)

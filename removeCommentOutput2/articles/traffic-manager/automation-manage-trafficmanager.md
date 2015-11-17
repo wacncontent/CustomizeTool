@@ -4,16 +4,16 @@
  services="traffic-manager, automation" 
  documentationCenter="" 
  authors="eamonoreilly" 
- manager="adinah" 
+ manager="carmonm" 
  editor=""/>
 
 <tags
 	ms.service="traffic-manager"
-	ms.date="08/12/2015"
+	ms.date="11/12/2015"
 	wacn.date=""/>
 
 
-#Managing Azure Traffic Manager using Azure Automation
+# Managing Azure Traffic Manager using Azure Automation
 
 This guide will introduce you to the Azure Automation service, and how it can be used to simplify management of Azure Traffic Manager.
 

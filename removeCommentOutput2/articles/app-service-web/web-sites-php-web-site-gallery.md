@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties
 	pageTitle="Create a WordPress web app in Azure Websites | Windows Azure"
 	description="Learn how to create a new Azure web app for a WordPress blog using the Azure preview portal."
@@ -11,7 +9,7 @@
 
 <tags
 	ms.service="app-service-web"
-	ms.date="10/13/2015"
+	ms.date="10/15/2015"
 	wacn.date=""/>
 
 # Create a WordPress web app in Azure Websites

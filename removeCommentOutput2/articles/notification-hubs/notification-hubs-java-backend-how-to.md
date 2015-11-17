@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="notification-hubs"
-	ms.date="07/17/2015"
+	ms.date="11/01/2015"
 	wacn.date=""/>
 
 # How to use Notification Hubs from Java

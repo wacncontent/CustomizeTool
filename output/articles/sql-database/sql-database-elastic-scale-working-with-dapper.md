@@ -1,14 +1,14 @@
 <properties 
-	pageTitle="Using elastic database client library with Dapper" 
+	pageTitle="Using elastic database client library with Dapper | Windows Azure" 
 	description="Using elastic database client library with Dapper." 
 	services="sql-database" 
 	documentationCenter="" 
 	manager="jeffreyg" 
-	authors="sidneyh"/>
+	authors="torsteng"/>
 
 <tags
 	ms.service="sql-database"
-	ms.date="07/24/2015"
+	ms.date="11/04/2015"
 	wacn.date=""/>
 
 # Using elastic database client library with Dapper 

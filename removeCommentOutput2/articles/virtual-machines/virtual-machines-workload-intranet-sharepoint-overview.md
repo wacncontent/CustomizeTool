@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.date="07/22/2015"
+	ms.date="10/20/2015"
 	wacn.date=""/>
 
 # Deploying SharePoint with SQL Server AlwaysOn Availability Groups in Azure

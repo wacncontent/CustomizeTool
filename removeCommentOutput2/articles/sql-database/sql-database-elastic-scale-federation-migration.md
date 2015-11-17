@@ -1,15 +1,15 @@
 <properties 
-    pageTitle="Federations migration" 
+    pageTitle="Federations migration | Windows Azure" 
     description="Outlines the steps to migrate an existing app built with Federations feature to the elastic database model." 
     services="sql-database" 
     documentationCenter="" 
     manager="jeffreyg" 
-    authors="sidneyh" 
+    authors="ddove" 
     editor=""/>
 
 <tags
 	ms.service="sql-database"
-	ms.date="08/14/2015"
+	ms.date="11/04/2015"
 	wacn.date=""/>
 
 # Federations migration 
@@ -104,7 +104,7 @@ The Federations Migration Utility provides the abilities to:
 
 ## Feature comparison
 
-Although Elastic database tools offers many additional features (for example, [multi-shard querying](/documentation/articles/sql-database-elastic-scale-multishard-querying), [splitting and merging shards](/documentation/articles/sql-database-elastic-scale-overview-split-and-merge), [shard elasticity](/documentation/articles/sql-database-elastic-scale-elasticity), [client-side caching](/documentation/articles/sql-database-elastic-scale-shard-map-management), and more), there are a few noteworthy Federations features that are not supported in elastic database tools.
+Although Elastic database tools offers many additional features (for example, [multi-shard querying](/documentation/articles/sql-database-elastic-scale-multishard-querying), [splitting and merging shards](/documentation/articles/sql-database-elastic-scale-overview-split-and-merge), shard elasticity, [client-side caching](/documentation/articles/sql-database-elastic-scale-shard-map-management), and more), there are a few noteworthy Federations features that are not supported in elastic database tools.
   
 - The use of **FILTERING=ON**. Instead, it is recommended that you use row-level security (RLS) for row filtering. Like filtering in Federations, RLS automatically adds a predicate to all queries on a sharded table. For details, see [Multi-tenant applications with elastic database tools and row-level security](/documentation/articles/sql-database-elastic-tools-multi-tenant-row-level-security). 
  

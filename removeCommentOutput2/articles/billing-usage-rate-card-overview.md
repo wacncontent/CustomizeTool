@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Gain insights into your Windows Azure resource consumption"
+   pageTitle="Gain insights into your Windows Azure resource consumption | Windows Azure"
    description="Provides a conceptual overview of the Azure Billing Usage and RateCard APIs, which are used to provide insights into Azure resource consumption and trends."
    services="billing"
    documentationCenter=""
@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="billing"
-	ms.date="07/07/2015"
+	ms.date="11/02/2015"
 	wacn.date=""/>
 
 # Gain insights into your Windows Azure resource consumption 
@@ -68,7 +68,7 @@ Here are some of the scenarios that are made possible with the combination of th
 
 ## Next Steps
 + Check out the [Azure Billing REST API Reference](https://msdn.microsoft.com/zh-cn/library/azure/1ea5b323-54bb-423d-916f-190de96c6a3c) for more details on both APIs, which are part of the set of APIs provided by the Azure Resource Manager.
-+ If you would like to dive right into the sample code, check out our [Windows Azure Billing API Code Samples on Github](https://github.com/Azure/BillingCodeSamples).
++ If you would like to dive right into the sample code, check out our Windows Azure Billing API Code Samples on [Azure Code Samples](https://azure.microsoft.com/documentation/samples/?term=billing).
 
 ## Learn more
 + See the [Azure Resource Manager Overview](/documentation/articles/resource-group-overview) article to learn more about the Azure Resource Manager.

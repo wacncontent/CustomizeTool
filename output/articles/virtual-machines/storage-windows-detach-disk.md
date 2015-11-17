@@ -10,12 +10,17 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.date="07/14/2015"
+	ms.date="10/23/2015"
 	wacn.date=""/>
 
 
 
 # How to detach a disk from a Windows virtual machine
+<!-- deleted by customization
+
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
+
+-->
 
 [AZURE.INCLUDE [howto-detach-disk-windows-linux](../includes/howto-detach-disk-windows-linux.md)]
 

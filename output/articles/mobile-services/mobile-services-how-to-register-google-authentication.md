@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.date="08/27/2015"
+	ms.date="11/15/2015"
 	wacn.date=""/>
 
 # Register your apps for Google login with Mobile Services
@@ -31,11 +31,13 @@ To complete the procedure in this topic, you must have a Google account that has
 
 6. In the **Credentials** tab, click **Add credentials** > **OAuth 2.0 client ID**, then select **Web application**.
 
-7. Type your mobile service URL in **Authorized JavaScript Origins**, replace the generated URL in **Authorized Redirect URI** with the URL of your mobile service appended with the path `/login/google`, and then click **Create client ID**.
+7. Type your mobile service URL in **Authorized JavaScript Origins**, replace the generated URL in **Authorized Redirect URI** with one of the following URL formats, and then click **Create client ID**:
+ 
+	+ **.NET backend**: `https://<mobile_service>.azure-mobile.cn/signin-google`
+	+ **JavaScript backend**: `https://<mobile_service>.azure-mobile.cn/login/google` 
 
-	>[AZURE.NOTE] For a .NET backend mobile service published to Azure by using Visual Studio, the redirect URL is the URL of your mobile service appended with the path _signin-google_ your mobile service as a .NET service, such as `https://todolist.azure-mobile.cn/signin-google`. 
-	&nbsp;
-	
+	 >[AZURE.NOTE]Make sure that you use the correct redirect URL path format for your type of Mobile Services backend. When this is incorrect, authentication will not succeed. 
+
 8. On the next screen, make a note of the values of the client ID and client secret.
 
     > [AZURE.IMPORTANT] The client secret is an important security credential. Do not share this secret with anyone or distribute it within a client application.

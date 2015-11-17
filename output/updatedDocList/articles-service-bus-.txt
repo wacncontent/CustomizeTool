@@ -1,3 +1,11 @@
-updated docs: 0
+updated docs: 6
+articles/service-bus/service-bus-architecture.md
+articles/service-bus/service-bus-fundamentals-hybrid-solutions.md
+articles/service-bus/service-bus-java-amqp-overview.md
+articles/service-bus/service-bus-java-how-to-use-amqp.md
+articles/service-bus/service-bus-java-how-to-use-jms-api-amqp.md
+articles/service-bus/service-bus-partitioned-queues-and-topics-amqp-overview.md
 
-updated includes: 0
+updated includes: 2
+includes/service-bus-java-how-to-create-queue.md
+includes/service-bus-selector-amqp.md

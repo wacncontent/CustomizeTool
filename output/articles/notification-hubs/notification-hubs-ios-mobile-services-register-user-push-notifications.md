@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.date="07/28/2015"
+	ms.date="11/01/2015"
 	wacn.date=""/>
 
 # Register the current user for push notifications by using a mobile service

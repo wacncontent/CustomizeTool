@@ -7,9 +7,9 @@
 	manager="dwrede" 
 	editor=""/>
 
-<tags 
-	ms.service="cache" 
-	ms.date="08/11/2015" 
+<tags
+	ms.service="cache"
+	ms.date="11/03/2015"
 	wacn.date=""/>
 
 
@@ -420,22 +420,47 @@ follow these links to learn how to do more complex caching tasks.
 [RoleCache10]: ./media/cache-dotnet-how-to-use-in-role/cache17.png
   
 <!-- LINKS -->
-[How to Configure Virtual Machine Sizes]: https://msdn.microsoft.com/zh-cn/library/azure/ee814754.aspx
+[How to Configure Virtual Machine Sizes]: <!-- deleted by customization http://go.microsoft.com/fwlink/?LinkId=164387 --><!-- keep by customization: begin --> https://msdn.microsoft.com/zh-cn/library/azure/ee814754.aspx <!-- keep by customization: end -->
 [How to: Configure a Cache Client Programmatically]: http://msdn.microsoft.com/zh-cn/library/azure/gg618003.aspx
 [How to: Set a Page's Cacheability Programmatically]: http://msdn.microsoft.com/zh-cn/library/z852zf6b.aspx
 [How to: Set the Cacheability of an ASP.NET Page Declaratively]: http://msdn.microsoft.com/zh-cn/library/zd1ysf1y.aspx
+<!-- deleted by customization
+[In-Role Cache Capacity Planning Considerations]: http://go.microsoft.com/fwlink/?LinkId=252651
+-->
+<!-- keep by customization: begin -->
 [In-Role Cache Capacity Planning Considerations]: https://msdn.microsoft.com/zh-cn/library/azure/dn386139.aspx
+<!-- keep by customization: end -->
 [In-Role Cache Samples]: http://msdn.microsoft.com/zh-cn/library/jj189876.aspx
+<!-- deleted by customization
+[In-Role Cache]: http://go.microsoft.com/fwlink/?LinkId=252658
+[In-Role Cache]: http://www.microsoft.com/showcase/Search.aspx?phrase=azure+caching
+[Maximum Performance: Accelerate Your Cloud Services Applications with Azure Caching]: http://channel9.msdn.com/Events/TechEd/NorthAmerica/2013/WAD-B326#fbid=kmrzkRxQ6gU
+-->
+<!-- keep by customization: begin -->
 [In-Role Cache]: https://msdn.microsoft.com/zh-cn/library/azure/gg278356
+<!-- keep by customization: end -->
 [Migrate to In-Role Cache]: http://msdn.microsoft.com/zh-cn/library/hh914163.aspx
 [NuGet Package Manager Installation]: http://go.microsoft.com/fwlink/?LinkId=240311
 [Output Cache Provider for In-Role Cache]: http://msdn.microsoft.com/zh-cn/library/azure/gg185662.aspx
+<!-- deleted by customization
+[OutputCache Directive]: http://go.microsoft.com/fwlink/?LinkId=251979
+[Overview of In-Role Cache]: http://go.microsoft.com/fwlink/?LinkId=254172
+-->
+<!-- keep by customization: begin -->
 [OutputCache Directive]: https://msdn.microsoft.com/zh-cn/library/hdxfb6cy.aspx
 [Overview of In-Role Cache]: https://msdn.microsoft.com/zh-cn/library/hh914161
+<!-- keep by customization: end -->
 [Session State Provider for In-Role Cache]: http://msdn.microsoft.com/zh-cn/library/azure/gg185668.aspx
 [Team Blog]: http://blogs.msdn.com/b/windowsazure/
 [Troubleshooting and Diagnostics for In-Role Cache]: http://msdn.microsoft.com/zh-cn/library/azure/hh914135.aspx
+<!-- deleted by customization
+[Azure AppFabric Cache: Caching Session State]: http://www.microsoft.com/showcase/details.aspx?uuid=87c833e9-97a9-42b2-8bb1-7601f9b5ca20
+[Azure Management Portal]: http://windows.azure.com/
+-->
+<!-- keep by customization: begin -->
 [Azure Management Portal]: http://manage.windowsazure.cn/
+<!-- keep by customization: end -->
 [Azure Shared Caching]: http://msdn.microsoft.com/zh-cn/library/azure/gg278356.aspx
 
-[Which Azure Cache offering is right for me?]: http://msdn.microsoft.com/zh-cn/library/azure/dn766201.aspx
+[Which Azure Cache offering is right for me?]: /documentation/articles/cache-faq#which-azure-cache-offering-is-right-for-me
+ 

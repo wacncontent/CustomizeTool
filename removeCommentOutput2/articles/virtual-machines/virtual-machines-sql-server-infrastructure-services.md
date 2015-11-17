@@ -10,13 +10,10 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.date="09/01/2015"
+	ms.date="11/12/2015"
 	wacn.date=""/>
 
 # SQL Server on Azure Virtual Machines overview
-
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
-
 
 ## Getting started
 You can host [SQL Server on Azure Virtual Machines](/home/features/virtual-machines/sql-server/) in a variety of configurations, ranging from a single database server to a multi-machine configuration using AlwaysOn Availability Groups and an Azure Virtual Network.

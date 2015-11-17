@@ -1,3 +1,9 @@
-updated docs: 0
+updated docs: 6
+articles/cloud-services/automation-manage-cloud-services.md
+articles/cloud-services/cloud-services-dotnet-install-dotnet.md
+articles/cloud-services/cloud-services-guestos-msrc-releases.md
+articles/cloud-services/cloud-services-guestos-update-matrix.md
+articles/cloud-services/cloud-services-python-how-to-use-service-management.md
+articles/cloud-services/cloud-services-xml-certs.md
 
 updated includes: 0

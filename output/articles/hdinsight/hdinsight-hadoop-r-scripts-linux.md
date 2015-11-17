@@ -1,8 +1,6 @@
-<!-- not suitable for Mooncake -->
-
 <properties
-	pageTitle="Use R in HDInsight to customize clusters | Windows Azure"
-	description="Learn how to install and use R to customize Hadoop clusters."
+	pageTitle="Install R on Linux-based HDInsight | Windows Azure"
+	description="Learn how to install and use R to customize Linux-based Hadoop clusters."
 	services="hdinsight"
 	documentationCenter=""
 	authors="Blackmist"
@@ -11,7 +9,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="08/20/2015"
+	ms.date="10/26/2015"
 	wacn.date=""/>
 
 # Install and use R on HDInsight Hadoop clusters
@@ -60,7 +58,7 @@ The [https://hdiconfigactions.blob.core.windows.net/linuxrconfigactionv01/r-inst
 
 > [AZURE.NOTE] You can also use Azure PowerShell or the HDInsight .NET SDK to create a cluster using this script. For more information on using these methods, see [Customize HDInsight clusters with Script Actions](/documentation/articles/hdinsight-hadoop-customize-cluster).
 
-1. Start provisioning a cluster by using the steps in [Provision Linux-based HDInsight clusters](/documentation/articles/hdinsight-provision-linux-clusters#portal), but do not complete provisioning.
+1. Start provisioning a cluster by using the steps in [Provision Linux-based HDInsight clusters](/documentation/articles/hdinsight-provision-clusters#portal), but do not complete provisioning.
 
 2. On the **Optional Configuration** blade, select **Script Actions**, and provide the information below:
 
@@ -73,7 +71,7 @@ The [https://hdiconfigactions.blob.core.windows.net/linuxrconfigactionv01/r-inst
 
 3. At the bottom of the **Script Actions**, use the **Select** button to save the configuration. Finally, use the **Select** button at the bottom of the **Optional Configuration** blade to save the optional configuration information.
 
-4. Continue provisining the cluster as described in [Provision Linux-based HDInsight clusters](/documentation/articles/hdinsight-provision-linux-clusters#portal).
+4. Continue provisioning the cluster as described in [Provision Linux-based HDInsight clusters](/documentation/articles/hdinsight-provision-clusters#portal).
 
 ## Run R scripts
 
@@ -89,7 +87,7 @@ After the cluster has finished provisioning, use the following steps to use R to
 
 	* [Use SSH with Linux-based Hadoop on HDInsight from Windows](/documentation/articles/hdinsight-hadoop-linux-use-ssh-windows)
 
-2. From the `username@headnode1:~$` prompt, enter the following command to start an interactive R session:
+2. From the `username@hn0-CLUSTERNAME:~$` prompt, enter the following command to start an interactive R session:
 
 		R
 
@@ -98,7 +96,6 @@ After the cluster has finished provisioning, use the following steps to use R to
 		library(rmr2)
 		ints = to.dfs(1:100)
 		calc = mapreduce(input = ints, map = function(k, v) cbind(v, 2*v))
-
 
 	The first line calls the RHadoop library rmr2, which is used for MapReduce operations.
 

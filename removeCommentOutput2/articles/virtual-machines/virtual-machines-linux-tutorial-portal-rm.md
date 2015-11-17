@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Create an Azure virtual machine running Linux in the Azure Management Portal"
+	pageTitle="Create an Azure virtual machine running Linux in the Azure Management Portal | Windows Azure"
 	description="Use the Azure Management Portal to create an Azure virtual machine (VM) running Linux with the Azure resource groups."
 	services="virtual-machines"
 	documentationCenter=""
@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.date="07/13/2015"
+	ms.date="10/21/2015"
 	wacn.date=""/>
 
 # Create a Virtual Machine Running Linux using the Azure Preview Portal
@@ -18,6 +18,9 @@
 > [AZURE.SELECTOR]
 - [Azure CLI](/documentation/articles/virtual-machines-linux-tutorial)
 - [Azure Preview Portal](/documentation/articles/virtual-machines-linux-tutorial-portal-rm)
+
+<br>
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] classic deployment model.
 
 Creating an Azure virtual machine (VM) that runs Linux is easy to do. This tutorial shows you how to use the Azure Preview portal to create one quickly, and uses the `~/.ssh/id_rsa.pub` public key file to secure your **SSH** connection to the VM. You can also create Linux VMs using [your own images as templates](/documentation/articles/virtual-machines-linux-create-upload-vhd).
 

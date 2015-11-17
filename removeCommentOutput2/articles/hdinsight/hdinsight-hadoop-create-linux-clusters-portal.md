@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties
    	pageTitle="Create Hadoop, HBase, or Storm clusters on Linux in HDInsight using the portal | Windows Azure"
    	description="Learn how to create Hadoop, HBase, or Storm clusters on Linux for HDInsight using a web browser and the Azure preview portal."
@@ -12,7 +10,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="10/14/2015"
+	ms.date="11/16/2015"
 	wacn.date=""/>
 
 
@@ -79,6 +77,10 @@ The Azure Management Portal is a web-based management tool for services and reso
 8. Click **Node Pricing Tiers** to display information about the nodes that will be created for this cluster. Set the number of worker nodes that you need for the cluster. The estimated cost of the cluster will be shown within the blade.
 
 	![Node pricing tiers blade](./media/hdinsight-hadoop-create-linux-cluster-portal/HDI.CreateCluster.5.png "Specify number of cluster nodes")
+    
+    > [AZURE.IMPORTANT] If you plan on more than 32 worker nodes, either at cluster creation or by scaling the cluster after creation, then you must select a head node size with at least 8 cores and 14GB ram.
+    >
+    > For more information on node sizes and associated costs, see [HDInsight pricing](/home/features/hdinsight/#price).
 
 	Click **Select** to save the node pricing configuration.
 
@@ -93,6 +95,8 @@ The Azure Management Portal is a web-based management tool for services and reso
     	>[AZURE.NOTE] Windows based HDInsight cluster can only be placed into a classical virtual network.
 
 	* Click **External Metastores** to specify SQL database that you want to use to save Hive and Oozie metadata associated with the cluster.
+    
+        > [AZURE.NOTE] Metastore configuration is not available for HBase cluster types.
 
 		![Custom metastores blade](./media/hdinsight-hadoop-create-linux-cluster-portal/HDI.CreateCluster.7.png "Specify external metastores")
 

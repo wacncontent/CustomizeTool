@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="app-service-web"
-	ms.date="07/02/2015"
+	ms.date="10/30/2015"
 	wacn.date=""/>
 
 
@@ -104,9 +104,15 @@ Follow these steps to create an Azure web app, enable Git publishing, and then e
 	>[AZURE.NOTE]
 	>The 'azure site set -w' command will work only with version 0.7.4 or higher of the Azure Command-Line Interface. You can also enable WebSocket support using the [Azure Management Portal](https://manage.windowsazure.cn).
 	>
+<!-- deleted by customization
+	>To enable WebSockets using the Azure Management Portal, click the web app from the Web Apps blade, click **All settings** > **Application settings**. Under **Web Sockets**, click **On**. Then click **Save**.
+
+-->
+<!-- keep by customization: begin -->
 	>To enable WebSockets using the [Azure Management Portal](https://manage.windowsazure.cn), select the Configure page for your  Website, select 'ON' for the Web Sockets entry, and then click Save.
 	>	
 	>![websockets](./media/web-sites-nodejs-chat-app-socketio/websockets.png)
+<!-- keep by customization: end -->
 5. To view the web app on Azure, use the following command to launch your web browser and navigate to the hosted web app:
 
 		azure site browse
@@ -121,7 +127,7 @@ Socket.IO applications can be scaled out by using an __adapter__ to distribute m
 
 ###Create a Redis cache
 
-Perform the steps in [Create a cache in Azure Redis Cache](https://msdn.microsoft.com/zh-cn/library/dn690516.aspx) to create a new cache.
+Perform the steps in [Create a cache in Azure Redis Cache](/documentation/articles/cache-dotnet-how-to-use-azure-redis-cache/#create-a-cache) to create a new cache.
 
 > [AZURE.NOTE] Save the __Host name__ and __Primary key__ for your cache, as these will be needed in the next steps.
 
@@ -147,7 +153,7 @@ Perform the steps in [Create a cache in Azure Redis Cache](https://msdn.microsof
 
 	> [AZURE.NOTE] While the __socket.io-redis__ adapter can communicate directly to Redis, the current version does not support the authentication required by Azure Redis cache. So the initial connection is created using the __redis__ module, then the client is passed to the __socket.io-redis__ adapter.
 	>
-	> While Azure Redis Cache supports secure connections using port 6380, the modules used in this example do not support secure connections as of 7/14/2014. The above code uses the default, unsecure port of 6380.
+	> While Azure Redis Cache supports secure connections using port 6380, the modules used in this example do not support secure connections as of 7/14/2014. The above code uses the default, unsecure port of 6379.
 
 3. Save the modified __app.js__
 
@@ -264,9 +270,21 @@ If client browsers keep falling back to long polling instead of using WebSockets
 
 	If your application uses an entry point other than **app.js**, you must replace all occurrences of **app.js** with the correct entry point. For example, replacing **app.js** with **server.js**.
 
+<!-- deleted by customization
+>[AZURE.NOTE] If you want to get started with Azure Websites before signing up for an Azure account, go to [Try Azure Websites](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure Websites. No credit cards required; no commitments.
+
+-->
 ##Next steps
 
 In this tutorial you learned how to create a chat application hosted in an Azure web app. You can also host this application as an Azure Cloud Service. For steps on how to accomplish this, see [Build a Node.js Chat Application with Socket.IO on an Azure Cloud Service][cloudservice].
+<!-- deleted by customization
+
+For more information, see also the [Node.js Developer Center](/develop/nodejs/).
+
+## What's changed
+* For a guide to the change from Websites to Azure Websites see: [Azure Websites and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
+* For a guide to the change of the Management Portal to the new portal see: [Reference for navigating the preview portal](https://manage.windowsazure.cn/)
+-->
 
 [socketio]: http://socket.io/
 [completed-app]: ./media/web-sites-nodejs-chat-app-socketio/websitesocketcomplete.png

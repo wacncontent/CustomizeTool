@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="07/15/2015"
+	ms.date="10/20/2015"
 	wacn.date=""/>
 
 #Tutorial: How to integrate Salesforce with Azure Active Directory

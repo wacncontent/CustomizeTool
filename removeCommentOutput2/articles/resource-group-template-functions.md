@@ -1,6 +1,6 @@
 <properties
-   pageTitle="Azure Resource Manager Template Functions"
-   description="Describes the functions to use in an Azure Resource Manager template to retrieve values, format strings and retrieve deployment information."
+   pageTitle="Resource Manager Template Functions | Windows Azure"
+   description="Describes the functions to use in an Azure Resource Manager template to retrieve values, work with strings and numerics, and retrieve deployment information."
    services="azure-resource-manager"
    documentationCenter="na"
    authors="tfitzmac"
@@ -9,12 +9,14 @@
 
 <tags
 	ms.service="azure-resource-manager"
-	ms.date="10/13/2015"
+	ms.date="11/12/2015"
 	wacn.date=""/>
 
-# Azure Resource Manager Template Functions
+# Azure Resource Manager template functions
 
 This topic describes all of the functions you can use in an Azure Resource Manager template.
+
+Template functions and their parameters are case-insensitive. For example, Resource Manager resolves **variables('var1')** and **VARIABLES('VAR1')** as the same. When evaluated, unless the function expressly modifies case (such as toUpper or toLower), the function will preserve the case. Certain resource types may have case requirements irrespective of how expressions are evaluated.
 
 ## add
 
@@ -489,6 +491,21 @@ The following example converts the user-provided parameter value to upper case.
     "variables": { 
         "upperCaseAppName": "[toUpper(parameters('appName'))]"
     }
+
+## trim
+
+**uri (baseUri, relativeUri)**
+
+Creates an absolute URI by combining the baseUri and the relativeUri string.
+
+| Parameter                          | Required | Description
+| :--------------------------------: | :------: | :----------
+| baseUri                            |   Yes    | The base uri string.
+| relativeUri                        |   Yes    | The relative uri string to add to the base uri string.
+
+The following example shows how to create an absolute URI in template link. The result is **http://contoso.com/resources/nested/azuredeploy.json**. 
+
+    "templateLink": "[uri('http://contoso.com/resources/', 'nested/azuredeploy.json')]"
 
 
 ## variables

@@ -3,13 +3,13 @@
 	description="Learn Azure SQL Database and SQL Server in Azure Virtual Machines. Review common business motivators for determining which SQL technology works best for your application." 
 	services="sql-database, virtual-machines" 
 	documentationCenter="" 
-	authors="Selcin" 
+	authors="jeffgoll" 
 	manager="jeffreyg" 
 	editor="tysonn"/>
 
 <tags
 	ms.service="sql-database"
-	ms.date="10/19/2015"
+	ms.date="11/16/2015"
 	wacn.date=""/>
 
 # Understanding Azure SQL Database and SQL Server in Azure VMs
@@ -75,7 +75,7 @@ The following table summarizes the main characteristics of Azure SQL Database an
           <li type=round>Applications that need built-in automatic high-availability, disaster recovery solution, and upgrade mechanisms.
           <li type=round>If you have hundreds or thousands of databases but you do not want to manage the underlying operating system, hardware, and configuration settings. 
          <li type=round>Applications using scale-out patterns.
-         <li type=round>Databases of up to 500 GB in size.
+         <li type=round>Databases of up to 1 TB in size.
          <li type=round>Building Software-as-a-Service applications.
          
   </ul>

@@ -10,16 +10,22 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.date="08/03/2015"
+	ms.date="10/21/2015"
 	wacn.date=""/>
 
 # How to Use CoreOS on Azure
 
 This topic describes [CoreOS] and shows how to create a cluster of three CoreOS virtual machines on Azure as a quick start to understanding this operating system. It uses the very basic elements of CoreOS deployments and examples from [CoreOS with Azure], [Tim Park's CoreOS Tutorial], and [Patrick Chanezon's CoreOS Tutorial] to demonstrate the absolute minimum requirements to both understand the basic structure of a CoreOS deployment and get a cluster of three virtual machines running successfully.
 
->[AZURE.NOTE] This article shows you how to use the Azure command-line interface with Service Management commands to create the CoreOS VMs. To get started with CoreOS in Azure Resource Manager, try this [quickstart template](https://azure.microsoft.com/documentation/templates/coreos-with-fleet-multivm/).
+<!-- deleted by customization
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] [Resource Manager deployment model](https://azure.microsoft.com/documentation/templates/coreos-with-fleet-multivm/).
 
-## <a id='intro'>CoreOS, clusters, and Linux containers</a>
+-->
+<!-- keep by customization: begin -->
+>[AZURE.NOTE] This article shows you how to use the Azure command-line interface with Service Management commands to create the CoreOS VMs. To get started with CoreOS in Azure Resource Manager, try this [quickstart template](https://azure.microsoft.com/documentation/templates/coreos-with-fleet-multivm/).
+<!-- keep by customization: end -->
+
+## CoreOS, clusters, and Linux containers
 
 CoreOS is a lightweight version of Linux designed to support rapid creation of potentially very large clusters of VMs that use Linux containers as the only packaging mechanism, including [Docker] containers. CoreOS is intended to support:
 
@@ -35,10 +41,10 @@ At a high level, the CoreOS features that support these goals are:
 
 This is a very general description of CoreOS and its features. For more complete information about CoreOS, see the [CoreOS Overview].
 
-## <a id='security'>Security considerations</a>
+## Security considerations
 Currently, CoreOS assumes that those who can SSH into the cluster have permission to manage it. The result is that without modification, CoreOS clusters are outstanding for test and development environments, but you should apply further security measures in any production environment.
 
-## <a id='usingcoreos'>How to use CoreOS on Azure</a>
+## How to use CoreOS on Azure
 
 This section describes how to create an Azure cloud cervice with three CoreOS virtual machines in it using the [Azure Command-line Interface (Azure CLI)]. The basic steps are as follows:
 
@@ -106,7 +112,7 @@ coreos:
 3. Create a cloud service for your basic cluster by typing
 `azure service create <cloud-service-name>` where <*cloud-service-name*> is the name for your CoreOS cloud service. This sample uses the name **`coreos-cluster`**; you will need to reuse the name that you choose to create your CoreOS VM instances inside the cloud service.
 
-One note: If you observe your work so far in the [portal](https://manage.windowsazure.cn), you'll find your Cloud Service name is both a resource group and domain, as the following image shows:
+	One note: If you observe your work so far in the <!-- deleted by customization [preview portal](https://manage.windowsazure.cn) --><!-- keep by customization: begin --> [portal](https://manage.windowsazure.cn) <!-- keep by customization: end -->, you'll find your <!-- deleted by customization cloud service --><!-- keep by customization: begin --> Cloud Service <!-- keep by customization: end --> name is both a resource group and domain, as the following image shows:
 
 	![][CloudServiceInNewPortal]
 

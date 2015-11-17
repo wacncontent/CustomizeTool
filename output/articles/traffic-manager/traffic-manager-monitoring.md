@@ -4,11 +4,11 @@
    services="traffic-manager"
    documentationCenter=""
    authors="joaoma"
-   manager="adinah"
+   manager="carmonm"
    editor="tysonn" />
 <tags
 	ms.service="traffic-manager"
-	ms.date="08/19/2015"
+	ms.date="11/12/2015"
 	wacn.date=""/>
 
 # About Traffic Manager Monitoring
@@ -104,13 +104,9 @@ The following table describes the behavior of Traffic Manager monitoring for chi
 
 ## See Also
 
-[What is Traffic Manager?](/documentation/articles/traffic-manager-overview)
+[Create a profile](/documentation/articles/traffic-manager-manage-profiles)
 
-[About Traffic Manager traffic routing Methods](/documentation/articles/traffic-manager-load-balancing-methods)
-
-[Cloud Services](https://msdn.microsoft.com/zh-CN/library/jj155995.aspx)
-
-[Websites](/home/features/web-site/)
+[Add an endpoint](/documentation/articles/traffic-manager-endpoints)
 
 [Troubleshooting degraded status on Azure Traffic Manager](/documentation/articles/traffic-manager-troubleshooting-degraded)
  

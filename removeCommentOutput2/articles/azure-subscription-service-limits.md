@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="multiple"
-	ms.date="08/29/2015"
+	ms.date="11/10/2015"
 	wacn.date=""/>
 
 # Azure Subscription and Service Limits, Quotas, and Constraints
@@ -47,6 +47,7 @@ As a result, you may find it useful to consider deciding what your Azure Resourc
 - [Data Factory](#data-factory-limits)
 - [DNS](#dns-limits)
 - [DocumentDB](#documentdb-limits)
+- [IoT Hub](#iot-hub-limits)
 - [Key Vault](#key-vault-limits)
 - [Media Services](#media-services-limits)
 - [Mobile Engagement](#mobile-engagement-limits)
@@ -191,6 +192,10 @@ For additional details on Azure Search limits, see [Limits and Constraints](http
 ### Service Bus Limits
 
 [AZURE.INCLUDE [azure-servicebus-limits](../includes/service-bus-quotas-table.md)]
+
+### IoT Hub Limits
+
+[AZURE.INCLUDE [azure-iothub-limits](../includes/iot-hub-limits.md)]
 
 ### Data Factory Limits
 

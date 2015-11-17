@@ -1,3 +1,46 @@
-updated docs: 0
+updated docs: 32
+articles/mobile-services/mobile-services-android-get-started.md
+articles/mobile-services/mobile-services-dotnet-backend-android-get-started.md
+articles/mobile-services/mobile-services-dotnet-backend-ios-get-started.md
+articles/mobile-services/mobile-services-dotnet-backend-use-existing-sql-database.md
+articles/mobile-services/mobile-services-dotnet-backend-windows-store-dotnet-get-started.md
+articles/mobile-services/mobile-services-dotnet-backend-windows-universal-dotnet-get-started-data.md
+articles/mobile-services/mobile-services-dotnet-backend-windows-universal-dotnet-get-started-push.md
+articles/mobile-services/mobile-services-dotnet-backend-xamarin-ios-get-started.md
+articles/mobile-services/mobile-services-how-to-register-active-directory-authentication.md
+articles/mobile-services/mobile-services-how-to-register-facebook-authentication.md
+articles/mobile-services/mobile-services-how-to-register-google-authentication.md
+articles/mobile-services/mobile-services-how-to-register-microsoft-authentication.md
+articles/mobile-services/mobile-services-how-to-register-twitter-authentication.md
+articles/mobile-services/mobile-services-html-get-started.md
+articles/mobile-services/mobile-services-html-how-to-use-client-library.md
+articles/mobile-services/mobile-services-ios-get-started.md
+articles/mobile-services/mobile-services-javascript-backend-phonegap-get-started.md
+articles/mobile-services/mobile-services-javascript-backend-windows-store-dotnet-get-started.md
+articles/mobile-services/mobile-services-javascript-backend-windows-store-dotnet-push-notifications-app-users.md
+articles/mobile-services/mobile-services-javascript-backend-windows-store-javascript-get-started.md
+articles/mobile-services/mobile-services-javascript-backend-windows-universal-dotnet-get-started-push.md
+articles/mobile-services/mobile-services-javascript-backend-windows-universal-dotnet-get-started-users.md
+articles/mobile-services/mobile-services-javascript-backend-windows-universal-dotnet-upload-data-blob-storage.md
+articles/mobile-services/mobile-services-manage-command-line-interface.md
+articles/mobile-services/mobile-services-windows-phone-get-started-data.md
+articles/mobile-services/mobile-services-windows-phone-get-started-users.md
+articles/mobile-services/mobile-services-windows-store-dotnet-get-started-offline-data.md
+articles/mobile-services/mobile-services-windows-store-dotnet-handling-conflicts-offline-data.md
+articles/mobile-services/mobile-services-xamarin-ios-get-started-offline-data.md
+articles/mobile-services/partner-sencha-mobile-services-get-started.md
+articles/mobile-services/partner-xamarin-mobile-services-android-get-started.md
+articles/mobile-services/partner-xamarin-mobile-services-ios-get-started.md
 
-updated includes: 0
+updated includes: 11
+includes/mobile-services-android-get-started.md
+includes/mobile-services-concepts.md
+includes/mobile-services-dotnet-backend-configure-local-push-vs2013.md
+includes/mobile-services-dotnet-backend-test-local-service.md
+includes/mobile-services-enable-google-cloud-messaging.md
+includes/mobile-services-restrict-permissions-javascript-backend.md
+includes/mobile-services-selector-client-library.md
+includes/mobile-services-windows-dotnet-update-data-app.md
+includes/mobile-services-windows-phone-authenticate-app.md
+includes/mobile-services-windows-store-dotnet-authenticate-app-with-token.md
+includes/mobile-services-windows-universal-dotnet-authenticate-app.md

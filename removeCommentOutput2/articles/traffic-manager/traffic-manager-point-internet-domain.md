@@ -4,11 +4,11 @@
    services="traffic-manager"
    documentationCenter=""
    authors="joaoma"
-   manager="adinah"
+   manager="carmonm"
    editor="tysonn" />
 <tags
 	ms.service="traffic-manager"
-	ms.date="08/19/2015"
+	ms.date="11/12/2015"
 	wacn.date=""/>
 
 # Point a company Internet domain to a Azure Traffic Manager domain
@@ -25,10 +25,9 @@ All traffic requests to *www.contoso.com* will now be directed to *contoso.traff
 
 ## Next steps
 
-[About Traffic Manager traffic routing methods](/documentation/articles/traffic-manager-load-balancing-methods)
+[Traffic Manager routing methods](/documentation/articles/traffic-manager-routing-methods)
 
 [Traffic Manager - Disable, enable or delete a profile](/documentation/articles/disable-enable-or-delete-a-profile)
 
 [Traffic Manager - Disable or enable an endpoint](/documentation/articles/disable-or-enable-an-endpoint)
 
-[What is Traffic Manager?](/documentation/articles/traffic-manager-overview)

@@ -9,14 +9,14 @@
 
 <tags
 	ms.service="app-service-web"
-	ms.date="08/04/2015"
+	ms.date="09/03/2015"
 	wacn.date=""/>
 
 # Azure Websites Offerings for Enterprise Whitepaper #
 
 The need to reduce costs and deliver IT solutions faster in a rapidly evolving environment creates new challenges for Developers, IT Professionals, and Managers. Users are increasingly looking for their Line of Business (LOB) web applications to be quick, responsive, and available from any device. At the same time, businesses are trying to capitalize on the increased productivity and efficiency that comes from integration with cloud and mobile services, this may be something as simple as single sign-on across devices using Active Directory to collaboration in Office365 using data pulled from an internal LOB application which in turn pulls in data from the company implementation of Salesforce. [Azure Websites](/documentation/services/web-sites/) is an enterprise-class cloud service for developing, testing, and running web and mobile applications, Web APIs, and generic websites. It can be used to run corporate websites, business apps, and digital marketing campaigns on a global network of datacenters optimized for scale and availability, along with support for continuous integration and modern DevOps practices. 
 
-This whitepaper highlights the capabilities of the [Web Apps](/home/features/web-site/) service specifically focused on running LOB Web Applications, covering migration of existing web applications and deployment of new LOB web applications on the platform. 
+This whitepaper highlights the capabilities of the [Web Apps](/home/features/web-site/) service specifically focused on running LOB Web Applications, covering migration of existing web applications and deployment of new LOB web applications on the platform.
 
 ## Audience ##
 
@@ -40,6 +40,13 @@ Development teams are looking to deliver immediate business benefit, delivering 
 Web platforms and frameworks are increasingly being used to develop, test and host line of business applications.  With a typical line of business application, such as an internal employee expense system, often consisting solely of a web app with a backing database to store the data connected with the application.
 
 Azure Websites is a good option for hosting such applications, offering scalable and reliable infrastructure which is managed and patched with near zero manual intervention and downtime. The Windows Azure platform provides many data storage options to support web applications hosted on Web Apps from Windows Azure SQL Database, a managed scalable relational database-as-a-service, to popular services from our partners such as ClearDB MySQL Database and MongoDB.
+<!-- deleted by customization
+
+An alternative approach is to make use of your existing investment on premise. In the example scenario, an employee expense system, you may wish to maintain your data store within your own internal infrastructure. This could be for integration with internal systems (reporting, payroll, billing etc.) or to satisfy an IT governance requirement.  Web Apps provides two methods of enabling you to connect to your on premises infrastructure:
+
+- [Hybrid Connections](/documentation/articles/integration-hybrid-connection-overview) – Hybrid Connections are a feature of Windows Azure BizTalk Services and enable Web Apps to connect to on premises resources securely, for example SQL Server, MySQL, Web APIs and custom web services. 
+- [Virtual Network Integration](http://azure.microsoft.com/blog/2014/09/15/azure-websites-virtual-network-integration/) – Web Apps integrtaion with Azure Virtual Network allows you to connect your web app to an Azure Virtual Network which in turn can be connected to your on premises infrastructure through a site-to-site VPN. 
+-->
 
 The following diagram is an example high-level solution with connectivity options for on premises resources.
 
@@ -69,7 +76,21 @@ Hardware maintenance and rotation is a key issue for businesses as release cycle
 
 Azure Websites provides a stable, reliable platform which has been proven to be able to handle a wide variety of business needs from small internal development and test workloads, to highly scaled high traffic websites. By using Web Apps, you are making use of the same enterprise class hosting platform that Microsoft as a company uses for high value web workloads. Web Apps, along with all services on the Azure platform, are built with security and compliance with regulatory requirements, such as ISO (ISO/IEC 27001:2005); SOC1 and SOC2 SSAE 16/ISAE 3402 Attestations, HIPAA BAA, PCI and Fedramp, at the very heart of each element and feature, for more information please see [http://aka.ms/azurecompliance](/support/trust-center/compliance/). 
 
+<!-- deleted by customization
+Windows Azure platform allows Role Based Authorization Controls enabling enterprise levels of control to resources within Web Apps. RBAC gives enterprises the power to implement their own access management policies for all of their assets in the Azure Environment, by assigning users to groups and in turn assigning the required permissions to those groups against the asset such as a web app. For more information on RBAC in Azure, see [http://aka.ms/azurerbac](/documentation/articles/role-based-access-control-configure). By utilizing Web Apps, you can be sure your web applications are deployed in a safe and secure environment and you have full control into which territory your assets are deployed. 
+
+Additionally, Web Apps is also able to make full use of your on premises investments by offering the ability to connect back to your internal resources, such as your data warehouse or SharePoint environment. As discussed in [High Level solution] you can make use of Hybrid Connections and Virtual Network Connectivity to establish connections to on premises infrastructure and services.
+
+### Global Scale ###
+
+Azure Websites is a global and scalable platform, enabling your web applications to grow and adapt to the needs of a growing business quickly and with minimal long term planning and cost. In typical on premises infrastructure scenarios, expansion and increase in demand both locally and geographically would require a large amount of management, planning and expenditure to provision and manage additional infrastructure. Web Apps offers the ability to scale your web applications with the ebb and flow of your requirements. For example using the expenses application as an example, for the majority of the month your users are light users of the application but as the deadline each month for expense submissions to be entered and usage increases on your application, Web Apps has the capability to automatically provision more infrastructure for your application and then once the usage has subsided again it can scale back to the baseline infrastructure you define.
+
+Web Apps is available globally in 17 datacenters worldwide, and growing. For the most updated list of regions and location, see [https://azure.microsoft.com/regions/](https://azure.microsoft.com/regions/). With Web Apps, your business can easily achieve global reach and scale. As your company grows into new regions, the reporting application dashboards that you use and host on Web Apps can easily be deployed into additional datacenters and serve local users far more quickly through the combination of Web Apps and Azure Traffic Manager, all with the added benefit of the scalable infrastructure underneath being able to contract and expand as the needs of the regional offices change.
+ 
+-->
+<!-- keep by customization: begin -->
 Windows Azure platform allows Role Based Authorization Controls enabling enterprise levels of control to resources within Web Apps. RBAC gives enterprises the power to implement their own access management policies for all of their assets in the Azure Environment, by assigning users to groups and in turn assigning the required permissions to those groups against the asset such as a web app. By utilizing Web Apps, you can be sure your web applications are deployed in a safe and secure environment and you have full control into which territory your assets are deployed. 
+<!-- keep by customization: end -->
 ## Solution Details ##
 
 Let’s look at an example of an application migration scenario. This outlines the details of how Azure Websites features come to together to provide great solution and business value.
@@ -97,6 +118,10 @@ Once these topics have been considered, your web application should be ready for
 
 The next steps in the migration process are to create an Azure Websites web app and an Azure SQL Database. There are multiple sizes of Web Apps instances with varying number of CPU Cores and RAM amounts available for you to select based on your web applications requirement. For more information and pricing, see [http://aka.ms/azurewebsitesskus](/home/features/websites/#price). Likewise, Windows Azure SQL Database caters to all of a business’ needs with various service tiers and performance levels to fulfill requirements. Further information can be found at [http://aka.ms/azuresqldbskus](/home/features/sql-database/#price). Once created, the application is uploaded to Azure Websites, either via FTP or WebDeploy and then move onto the database.
 
+<!-- deleted by customization
+In this migration the solution uses Azure SQL Database but that is not the only database that is supported on Azure. Companies can also make use of MySQL, MongoDB, Azure DocumentDB and many more via add-ons which can be purchased at the [Azure Store](/marketplace/partner-program/). 
+
+-->
 When creating an Azure SQL Database a number of options are available to import an existing database from an on-premises server from generating a script of an existing database to using the [Data-tier Application Export and Import](https://msdn.microsoft.com/zh-cn/library/azure/ee730904.aspx). 
 
 The expenses application database was created by creating a new Azure SQL Database, connecting to the database using SQL Server Management Studio and then running a script to build the database schema and populate it with data from the on-premises database.
@@ -106,6 +131,14 @@ The final step in this first stage of the migration requires the updating of con
 ### Alternatives to using Azure SQL Database ###
 
 The Azure platform offers a number of alternatives to using Azure SQL Database as a web applications primary database, this is to enable different workloads i.e. use of a NoSQL Solution or to enable the platform to suit a business’ data needs. For example, a business may hold data that must not be stored off-site or in a public cloud environment, and therefore would look to maintain the use of their on-premises database.
+<!-- deleted by customization
+
+#### Connectivity to On Premises Resources ####
+Azure Websites offers two methods of connecting to on premises resources, such as databases, enabling reuse of existing high value infrastructure. The two methods are Web Apps Virtual Network Integration and Hybrid Connections:
+
+- Web Apps Virtual Network Integration supports integration between Web Apps and an Azure Virtual Network, allowing you access to resources running in your Virtual Network which, if connected to your on premises network with site-to-site VPN, allows connectivity direct to your on premises systems.
+- Hybrid Connections are a feature of Azure BizTalk Services and provide an easy way to connect to individual on-premises resources such as SQL Server, MySQL, HTTP Web APIs and most custom Web Services.
+-->
 
 #### Scale and Resiliency ####
 
@@ -120,5 +153,11 @@ Azure Websites offers a flexible, cost effective, responsive solution to the dyn
 
 ## Call to Action ##
 For more information on the Azure Websites service, visit [http://aka.ms/enterprisewebsites](/sservices/websites/enterprise/) where more information can be sourced, and sign up for a trial today at [http://aka.ms/azuretrial](/pricing/1rmb-trial/) to evaluate the service and discover the benefits for your business.
+<!-- deleted by customization
+
+[AZURE.INCLUDE [app-service-web-whats-changed](../includes/app-service-web-whats-changed.md)]
+
+[AZURE.INCLUDE [app-service-web-try-app-service](../includes/app-service-web-try-app-service.md)]
+-->
  
  

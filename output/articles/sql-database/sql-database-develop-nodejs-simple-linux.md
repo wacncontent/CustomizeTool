@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="sql-database"
-	ms.date="07/20/2015"
+	ms.date="10/20/2015"
 	wacn.date=""/>
 
 

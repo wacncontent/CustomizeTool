@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties
 	pageTitle="Use Hue with Hadoop on HDInsight Linux clusters | Windows Azure"
 	description="Learn how to install and use Hue with Hadoop clusters on HDInsight Linux."
@@ -11,7 +9,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="10/15/2015"
+	ms.date="11/05/2015"
 	wacn.date=""/>
 
 # Install and use Hue on HDInsight Hadoop clusters
@@ -40,7 +38,9 @@ The [https://hdiconfigactions.blob.core.windows.net/linuxhueconfigactionv01/inst
 
 	> [AZURE.NOTE] To install Hue on HDInsight clusters, the recommended headnode size is at least A4 (8 cores, 14 GB memory).
 
-2. On the **Optional Configuration** blade, select **Script Actions**, and provide the information below:
+2. On the **Optional Configuration** blade, select **Script Actions**, and provide the information as shown below:
+
+	![Provide script action parameters for Hue](./media/hdinsight-hadoop-hue-linux/hue_script_action.png "Provide script action parameters for Hue")
 
 	* __NAME__: Enter a friendly name for the script action.
 	* __SCRIPT URI__: https://hdiconfigactions.blob.core.windows.net/linuxhueconfigactionv01/install-hue-uber-v01.sh
@@ -96,7 +96,7 @@ SSH Tunneling is the only way to access Hue on the cluster once it is running. T
 
 ## Important considerations
 
-1. The script used to install Hue installs it only on HEADNODE0 of the cluster.
+1. The script used to install Hue installs it only on Head node 0 of the cluster.
 
 2. During installation, multiple Hadoop services (HDFS, YARN, MR2, Oozie) are restarted for updating the configuration. After the script finishes installing Hue, it might take some time for other Hadoop services to start up. This might affect Hue's performance initially. Once all services start up, Hue will be fully functional.
 
@@ -104,11 +104,11 @@ SSH Tunneling is the only way to access Hue on the cluster once it is running. T
 
 		set hive.execution.engine=mr;
 
-4.	With Linux clusters, you can have a scenario where your services are running on HEADNODE0 while the Resource Manager could be running on HEADNODE1. Such a scenario might result in errors (shown below) when using Hue to view details of RUNNING jobs on the cluster. However, you can view the job details when the job has completed.
+4.	With Linux clusters, you can have a scenario where your services are running on head node 0 while the Resource Manager could be running on head node 1. Such a scenario might result in errors (shown below) when using Hue to view details of RUNNING jobs on the cluster. However, you can view the job details when the job has completed.
 
 	![Hue portal error](./media/hdinsight-hadoop-hue-linux/HDI.Hue.Portal.Error.png "Hue portal error")
 
-	This is due to a known issue. As a workaround, modify Ambari so that the active Resource Manager also runs on HEADNODE0.
+	This is due to a known issue. As a workaround, modify Ambari so that the active Resource Manager also runs on head node 0.
 
 5.	Hue understands WebHDFS while HDInsight clusters use Azure Storage using `wasb://`. So, the custom script used with script action installs WebWasb, which is a WebHDFS-compatible service for talking to WASB. So, even though the Hue portal says HDFS in places (like when you move your mouse over the **File Browser**), it should be interpreted as WASB.
 

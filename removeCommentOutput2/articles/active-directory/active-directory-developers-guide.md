@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="10/16/2015"
+	ms.date="11/06/2015"
 	wacn.date=""/>
 
 
@@ -42,9 +42,9 @@ These tutorials are tailored for multiple platforms and can help you quickly sta
 
 ### Web application quick-start guides
 
-|[![.NET](./media/active-directory-developers-guide/net.png)](active-directory-devquickstarts-webapp-dotnet.md)|[![Javascript](./media/active-directory-developers-guide/javascript.png)](active-directory-devquickstarts-angular.md)|[![Node.js](./media/active-directory-developers-guide/nodejs.png)](active-directory-devquickstarts-openidconnect-nodejs.md)
-|:--:|:--:|:--:|
-|[.NET](/documentation/articles/active-directory-devquickstarts-webapp-dotnet)|[Javascript](/documentation/articles/active-directory-devquickstarts-angular)|[Node.js](/documentation/articles/active-directory-devquickstarts-openidconnect-nodejs)
+|[![.NET](./media/active-directory-developers-guide/net.png)](active-directory-devquickstarts-webapp-dotnet.md)|[![Java](./media/active-directory-developers-guide/java.png)](active-directory-devquickstarts-webapp-java.md)|[![Javascript](./media/active-directory-developers-guide/javascript.png)](active-directory-devquickstarts-angular.md)|[![Node.js](./media/active-directory-developers-guide/nodejs.png)](active-directory-devquickstarts-openidconnect-nodejs.md)
+|:--:|:--:|:--:|:--:|
+|[.NET](/documentation/articles/active-directory-devquickstarts-webapp-dotnet)|[Java](/documentation/articles/active-directory-devquickstarts-webapp-java)|[Javascript](/documentation/articles/active-directory-devquickstarts-angular)|[Node.js](/documentation/articles/active-directory-devquickstarts-openidconnect-nodejs)
 
 ### Web API quick-start guides
 
@@ -69,6 +69,7 @@ These articles describe how to perform specific tasks by using Azure Active Dire
 - [Submit web apps for Office 365 to the Seller Dashboard](https://msdn.microsoft.com/office/office365/howto/submit-web-apps-seller-dashboard)
 - [Preview: How to build apps that sign users in with both personal & work or school accounts](/documentation/articles/active-directory-appmodel-v2-overview)
 - [Preview: How to build apps that sign up & sign in consumers](/documentation/articles/active-directory-b2c-overview)
+
 
 ## Reference
 

@@ -10,10 +10,14 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.date="10/05/2015"
+	ms.date="10/20/2015"
 	wacn.date=""/>
 
 # Deploy SharePoint farms with Azure Resource Manager templates
+<!-- deleted by customization
+
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] classic deployment model. You can't create this resource with the classic deployment model.
+-->
 
 Use the instructions in this article to deploy a new three-server or nine-server SharePoint Server 2013 farm using Resource Manager templates.
 
@@ -25,6 +29,8 @@ For a basic SharePoint Server 2013 farm, a Resource Manager template creates thr
 
 You can run the template with the Azure preview portal, Azure PowerShell, or the Azure CLI.
 
+> [AZURE.NOTE] You can also create this configuration using the [SharePoint 2013 non-HA Farm](https://azure.microsoft.com/marketplace/partners/sharepoint2013/sharepoint2013farmsharepoint2013-nonha/) item in the Azure Marketplace of the Azure Preview portal.
+
 ### Azure preview portal
 
 To deploy this workload using a Resource Manager template and the Azure preview portal, click [here](https://manage.windowsazure.cn/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2Fsharepoint-three-vm%2Fazuredeploy.json).
@@ -35,14 +41,16 @@ To deploy this workload using a Resource Manager template and the Azure preview 
 2.	If needed, click **Subscription** and select the correct Azure subscription.
 3.	Click **Resource group** and select an existing resource group. Alternately, click **Or create new** to create a new one for this workload.
 4.	If needed, click **Resource group location** and select the correct Azure location.
-6.	Click **Legal terms** to review the terms and agreement for using the template.
+6.	Click **Legal terms** to review the terms and agreement for using the template, and then click **Buy**.
 7.	Click **Create**.
 
 Depending on the template, it can take some time for Azure to build the workload. When complete, you have a new three-server SharePoint farm in your existing or new resource group.
 
 ### Azure PowerShell
+<!-- deleted by customization
 
-Before you begin, make sure you have the right version of Azure PowerShell installed, you have logged in, and you have switched to the new Resource Manager mode. For the details, click [here](/documentation/articles/virtual-machines-deploy-rmtemplates-powershell#setting-up-powershell-for-resource-manager-templates).
+> [AZURE.NOTE] This article contains commands for Azure PowerShell Preview 1.0. To run these commands in Azure PowerShell 0.9.8 and prior versions, replace **New-AzureRMResourceGroup** with **New-AzureResourceGroup**, replace **New-AzureRMResourceGroupDeployment** with **New-AzureResourceGroupDeployment**, and add the **Switch-AzureMode AzureResourceManager** command before the **New-AzureResourceGroup** command. For more information, see [Azure PowerShell 1.0 Preview](https://azure.microsoft.com/blog/azps-1-0-pre/).
+-->
 
 Fill in an Azure deployment name, a new Resource Group name, and an Azure datacenter location in the following set of commands. Remove everything within the quotes, including the < and > characters.
 
@@ -50,8 +58,8 @@ Fill in an Azure deployment name, a new Resource Group name, and an Azure datace
 	$RGName="<resource group name>"
 	$locName="<Azure location, such as China North>"
 	$templateURI="https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/sharepoint-three-vm/azuredeploy.json"
-	New-AzureResourceGroup -Name $RGName -Location $locName
-	New-AzureResourceGroupDeployment -Name $deployName -ResourceGroupName $RGName -TemplateUri $templateURI
+	New-AzureRMResourceGroup -Name $RGName -Location $locName
+	New-AzureRMResourceGroupDeployment -Name $deployName -ResourceGroupName $RGName -TemplateUri $templateURI
 
 Here is an example.
 
@@ -59,12 +67,12 @@ Here is an example.
 	$RGName="TestRG"
 	$locname="China North"
 	$templateURI="https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/sharepoint-three-vm/azuredeploy.json"
-	New-AzureResourceGroup -Name $RGName -Location $locName
-	New-AzureResourceGroupDeployment -Name $deployName -ResourceGroupName $RGName -TemplateUri $templateURI
+	New-AzureRMResourceGroup -Name $RGName -Location $locName
+	New-AzureRMResourceGroupDeployment -Name $deployName -ResourceGroupName $RGName -TemplateUri $templateURI
 
 Next, run your command block in the Azure PowerShell prompt.
 
-When you run the **New-AzureResourceGroupDeployment** command, you will be prompted to supply the values for a series of parameters. When you have specified all the parameter values, **New-AzureResourceGroupDeployment** creates and configures the virtual machines.
+When you run the **New-AzureRMResourceGroupDeployment** command, you will be prompted to supply the values for a series of parameters. When you have specified all the parameter values, **New-AzureRMResourceGroupDeployment** creates and configures the virtual machines.
 
 When the template execution is complete, you have a new three-server SharePoint farm in your new resource group.
 
@@ -95,6 +103,8 @@ For a high-availability SharePoint Server 2013 farm, a Resource Manager template
 
 ![](./media/virtual-machines-workload-template-sharepoint/nine-server-sharepoint-farm.png)
 
+> [AZURE.NOTE] You can also create this configuration using the [SharePoint 2013 HA Farm](https://azure.microsoft.com/marketplace/partners/sharepoint2013/sharepoint2013farmsharepoint2013-ha/) item in the Azure Marketplace of the Azure Preview portal.
+
 ### Azure preview portal
 
 To deploy this workload using a Resource Manager template and the Azure preview portal, click [here](https://manage.windowsazure.cn/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2Fsharepoint-server-farm-ha%2Fazuredeploy.json).
@@ -105,14 +115,14 @@ To deploy this workload using a Resource Manager template and the Azure preview 
 2.	If needed, click **Subscription** and select the correct Azure subscription.
 3.	Click **Resource group** and select an existing resource group. Alternately, click **Or create new** to create a new one for this workload.
 4.	If needed, click **Resource group location** and select the correct Azure location.
-5.	Click **Legal terms** to review the terms and agreement for using the template.
+5.	Click **Legal terms** to review the terms and agreement for using the template, and then click **Buy**.
 6.	Click **Create**.
 
 Depending on the template, it can take some time for Azure to build the workload. When complete, you have a new nine-server SharePoint farm in your existing or new resource group.
 
 ### Azure PowerShell
 
-Before you begin, make sure you have the right version of Azure PowerShell installed, you have logged in, and you have switched to the new Resource Manager mode. For the details, click [here](/documentation/articles/virtual-machines-deploy-rmtemplates-powershell#setting-up-powershell-for-resource-manager-templates).
+> [AZURE.NOTE] This article contains commands for Azure PowerShell Preview 1.0. To run these commands in Azure PowerShell 0.9.8 and prior versions, replace **New-AzureRMResourceGroup** with **New-AzureResourceGroup**, replace **New-AzureRMResourceGroupDeployment** with **New-AzureResourceGroupDeployment**, and add the **Switch-AzureMode AzureResourceManager** command before the **New-AzureResourceGroup** command. For more information, see [Azure PowerShell 1.0 Preview](https://azure.microsoft.com/blog/azps-1-0-pre/).
 
 Fill in an Azure deployment name, a new Resource Group name, and an Azure datacenter location in the following set of commands. Remove everything within the quotes, including the < and > characters.
 
@@ -120,8 +130,8 @@ Fill in an Azure deployment name, a new Resource Group name, and an Azure datace
 	$RGName="<resource group name>"
 	$locName="<Azure location, such as China North>"
 	$templateURI="https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/sharepoint-server-farm-ha/azuredeploy.json"
-	New-AzureResourceGroup -Name $RGName -Location $locName
-	New-AzureResourceGroupDeployment -Name $deployName -ResourceGroupName $RGName -TemplateUri $templateURI
+	New-AzureRMResourceGroup -Name $RGName -Location $locName
+	New-AzureRMResourceGroupDeployment -Name $deployName -ResourceGroupName $RGName -TemplateUri $templateURI
 
 Here is an example.
 
@@ -129,12 +139,12 @@ Here is an example.
 	$RGName="TestRG"
 	$locname="China North"
 	$templateURI="https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/sharepoint-server-farm-ha/azuredeploy.json"
-	New-AzureResourceGroup -Name $RGName -Location $locName
-	New-AzureResourceGroupDeployment -Name $deployName -ResourceGroupName $RGName -TemplateUri $templateURI
+	New-AzureRMResourceGroup -Name $RGName -Location $locName
+	New-AzureRMResourceGroupDeployment -Name $deployName -ResourceGroupName $RGName -TemplateUri $templateURI
 
 Next, run your command block in the Azure PowerShell command prompt.
 
-When you run the **New-AzureResourceGroupDeployment** command, you will be prompted to supply the values for a series of parameters. When you have specified all the parameter values, **New-AzureResourceGroupDeployment** creates and configures the virtual machines.
+When you run the **New-AzureRMResourceGroupDeployment** command, you will be prompted to supply the values for a series of parameters. When you have specified all the parameter values, **New-AzureRMResourceGroupDeployment** creates and configures the virtual machines.
 
 When the template execution is complete, you have a new nine-server SharePoint farm in your new resource group.
 
@@ -162,6 +172,10 @@ When the template execution is complete, you now have a new nine-server SharePoi
 
 ## Additional resources
 
+<!-- deleted by customization
+[SharePoint farms hosted in Azure infrastructure services](/documentation/articles/virtual-machines-sharepoint-infrastructure-services)
+
+-->
 [Deploy and manage virtual machines using Azure Resource Manager templates and Azure PowerShell](/documentation/articles/virtual-machines-deploy-rmtemplates-powershell)
 
 [Azure Compute, Network and Storage providers under Azure Resource Manager](/documentation/articles/virtual-machines-azurerm-versus-azuresm)

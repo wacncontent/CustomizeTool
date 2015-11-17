@@ -10,18 +10,27 @@
 	
 <tags
 	ms.service="virtual-machines"
-	ms.date="09/01/2015"
+	ms.date="11/13/2015"
 	wacn.date=""/>
 
 # Performance best practices for SQL Server in Azure Virtual Machines
 
+<!-- deleted by customization
+-->
+<!-- keep by customization: begin -->
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-include.md)] This article covers creating a resource with the classic deployment model. 
-
+<!-- keep by customization: end -->
 ## Overview
 
 This topic provides best practices for optimizing SQL Server performance in Windows Azure Virtual Machine. While running SQL Server in Azure Virtual Machines, we recommend that you continue using the same database performance tuning options that are applicable to SQL Server in on-premises server environment. However, the performance of a relational database in a public cloud depends on many factors such as the size of a virtual machine, and the configuration of the data disks.
+<!-- deleted by customization
 
->[AZURE.NOTE] This paper is focused on getting the best performance for SQL Server on Azure VMs. If your workload is less demanding, you might not require every optimization listed below. Consider your performance needs and workload patterns as you evaluate these recommendations.
+When creating SQL Server images, consider using the [new Portal](https://manage.windowsazure.cn) to take advantage of features, such as the default use of Premium Storage, and other options, such as Automated Patching, Automated Backup, and AlwaysOn configurations.
+-->
+
+This paper is focused on getting the best performance for SQL Server on Azure VMs. If your workload is less demanding, you might not require every optimization listed below. Consider your performance needs and workload patterns as you evaluate these recommendations.
+
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-both-include.md)]
 
 ## Quick check list
 

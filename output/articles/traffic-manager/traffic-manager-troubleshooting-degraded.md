@@ -4,17 +4,17 @@
    services="traffic-manager"
    documentationCenter=""
    authors="kwill-MSFT"
-   manager="adinah"
+   manager="carmonm"
    editor="joaoma" />
 
 <tags
 	ms.service="traffic-manager"
-	ms.date="08/19/2015"
+	ms.date="11/12/2015"
 	wacn.date=""/>
 
-# Troubleshooting degraded status on Azure Traffic Manager
-This page will describe how to troubleshoot Azure Traffic Manager profile which is showing a degraded status, and provide some key points to understand about traffic manager probes.
+# Troubleshooting degraded state on Azure Traffic Manager
 
+This page will describe how to troubleshoot Azure Traffic Manager profile which is showing a degraded status, and provide some key points to understand about traffic manager probes.
 
 You have configured a Traffic Manager profile pointing to some of your .chinacloudapp.cn hosted services and after a few seconds you see the Status as Degraded.
 

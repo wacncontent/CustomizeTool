@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties
 	pageTitle="How to use Azure Redis Cache with Node.js | Windows Azure"
 	description="Get started with Azure Redis Cache using Node.js and node_redis."
@@ -11,10 +9,16 @@
 
 <tags
 	ms.service="cache"
-	ms.date="10/05/2015"
+	ms.date="10/23/2015"
 	wacn.date=""/>
 
 # How to use Azure Redis Cache with Node.js
+
+> [AZURE.SELECTOR]
+- [.Net](/documentation/articles/cache-dotnet-how-to-use-azure-redis-cache)
+- [Node.js](/documentation/articles/cache-nodejs-get-started)
+- [Java](/documentation/articles/cache-java-get-started)
+- [Python](/documentation/articles/cache-python-get-started)
 
 Azure Redis Cache gives you access to a secure, dedicated Redis cache, managed by Microsoft. Your cache is accessible from any application within Windows Azure.
 

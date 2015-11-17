@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="10/09/2015"
+	ms.date="11/06/2015"
 	wacn.date=""/>
 
 # Use Pig with Hadoop on HDInsight
@@ -39,7 +39,9 @@ For more information about Pig Latin, see [Pig Latin Reference Manual 1](http://
 
 For an example of using UDFs with Pig, see the following documents:
 
-* [Using Python with Pig and Hive in HDInsight](/documentation/articles/hdinsight-python)
+* [Use DataFu with Pig in HDInsight](/documentation/articles/hdinsight-hadoop-use-pig-datafu-udf) - DataFu is a collection of useful UDFs maintained by Apache
+
+* [Use Python with Pig and Hive in HDInsight](/documentation/articles/hdinsight-python)
 
 * [Use C# with Hive and Pig in HDInsight](/documentation/articles/hdinsight-hadoop-hive-pig-udf-dotnet-csharp)
 
@@ -84,9 +86,17 @@ HDInsight can run Pig Latin jobs by using a variety of methods. Use the followin
 
 | **Use this** if you want...                                   | ...an **interactive** shell | ...**batch** processing | ...with this **cluster operating system** | ...from this **client operating system** |
 |:--------------------------------------------------------------|:---------------------------:|:-----------------------:|:------------------------------------------|:-----------------------------------------|
+<!-- deleted by customization
+| [SSH](/documentation/articles/hdinsight-hadoop-use-pig-ssh)                        |              ✔              |            ✔            | Linux                                     | Linux, Unix, Mac OS X, or Windows        |
+| [Curl](/documentation/articles/hdinsight-hadoop-use-pig-curl)                      |           &nbsp;            |            ✔            | Linux or Windows                          | Linux, Unix, Mac OS X, or Windows        |
+| [.NET SDK for Hadoop](/documentation/articles/hdinsight-hadoop-use-pig-dotnet-sdk) |           &nbsp;            |            ✔            | Linux or Windows                          | Windows (for now)                        |
+| [Windows PowerShell](/documentation/articles/hdinsight-hadoop-use-pig-powershell)  |           &nbsp;            |            ✔            | Linux or Windows                          | Windows                                  |
+-->
+<!-- keep by customization: begin -->
 | [Curl](/documentation/articles/hdinsight-hadoop-use-pig-curl)                      |           &nbsp;            |            ✔            | Windows                          | Windows        |
-| [.NET SDK for Hadoop](/documentation/articles/hdinsight-hadoop-use-pig-dotnet-sdk) |           &nbsp;            |            ✔            | Windows                          | Windows (for now)                        |
-| [Windows PowerShell](/documentation/articles/hdinsight-hadoop-use-pig-powershell)  |           &nbsp;            |            ✔            | Windows                          | Windows                                  |
+| [.NET SDK for Hadoop](/documentation/articles/hdinsight-hadoop-use-pig-dotnet-sdk) |           &nbsp;            |            ✔            |  Windows                          | Windows (for now)                        |
+| [Windows PowerShell](/documentation/articles/hdinsight-hadoop-use-pig-powershell)  |           &nbsp;            |            ✔            |  Windows                          | Windows                                  |
+<!-- keep by customization: end -->
 | [Remote Desktop](/documentation/articles/hdinsight-hadoop-use-pig-remote-desktop)  |              ✔              |            ✔            | Windows                                   | Windows                                  |
 
 
@@ -123,12 +133,15 @@ Now that you have learned how to use Pig with HDInsight, use the following links
 [hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
 [hdinsight-get-started]: /documentation/articles/hdinsight-get-started
 [hdinsight-admin-powershell]: /documentation/articles/hdinsight-administer-use-powershell
+
 [hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive
 [hdinsight-use-mapreduce]: /documentation/articles/hdinsight-use-mapreduce
+
 [hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters
 [hdinsight-submit-jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically#mapreduce-sdk
 
 [Powershell-install-configure]: /documentation/articles/install-configure-powershell
+
 [powershell-start]: http://technet.microsoft.com/zh-cn/library/hh847889.aspx
 
 [image-hdi-log4j-sample]: ./media/hdinsight-use-pig/HDI.wholesamplefile.png

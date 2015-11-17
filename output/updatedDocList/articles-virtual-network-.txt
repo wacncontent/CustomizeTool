@@ -1,3 +1,21 @@
-updated docs: 0
+updated docs: 11
+articles/virtual-network/virtual-network-create-udr-arm-ps.md
+articles/virtual-network/virtual-networks-create-nsg-arm-ps.md
+articles/virtual-network/virtual-networks-create-nsg-classic-ps.md
+articles/virtual-network/virtual-networks-create-vnet-arm-ps.md
+articles/virtual-network/virtual-networks-instance-level-public-ip.md
+articles/virtual-network/virtual-networks-multiple-nics.md
+articles/virtual-network/virtual-networks-nsg.md
+articles/virtual-network/virtual-networks-overview.md
+articles/virtual-network/virtual-networks-reserved-public-ip.md
+articles/virtual-network/virtual-networks-setup-dirsync-hybrid-cloud-testing.md
+articles/virtual-network/virtual-networks-static-private-ip-arm-ps.md
 
-updated includes: 0
+updated includes: 7
+includes/virtual-networks-create-nsg-intro-include.md
+includes/virtual-networks-create-vnet-arm-ps-include.md
+includes/virtual-networks-nrp-appgw-include.md
+includes/virtual-networks-nrp-dns-include.md
+includes/virtual-networks-nrp-lb-include.md
+includes/virtual-networks-nrp-tm-include.md
+includes/virtual-networks-vnet-faq-include.md

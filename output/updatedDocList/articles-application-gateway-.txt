@@ -1,3 +1,8 @@
-updated docs: 0
+updated docs: 5
+articles/application-gateway/application-gateway-create-gateway-arm-template.md
+articles/application-gateway/application-gateway-create-gateway-arm.md
+articles/application-gateway/application-gateway-create-gateway.md
+articles/application-gateway/application-gateway-introduction.md
+articles/application-gateway/application-gateway-ssl.md
 
 updated includes: 0

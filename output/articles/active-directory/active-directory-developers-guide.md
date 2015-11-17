@@ -1,4 +1,4 @@
-<properties
+﻿<properties
    pageTitle="Azure Active Directory developer's guide | Windows Azure"
    description="This article provides a comprehensive guide to developer-oriented resources for Azure Active Directory."
    services="active-directory"
@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="10/16/2015"
+	ms.date="11/06/2015"
 	wacn.date=""/>
 
 
@@ -42,9 +42,9 @@ These tutorials are tailored for multiple platforms and can help you quickly sta
 
 ### Web application quick-start guides
 
-|[![.NET](./media/active-directory-developers-guide/net.png)](active-directory-devquickstarts-webapp-dotnet.md)|[![Javascript](./media/active-directory-developers-guide/javascript.png)](active-directory-devquickstarts-angular.md)|[![Node.js](./media/active-directory-developers-guide/nodejs.png)](active-directory-devquickstarts-openidconnect-nodejs.md)
-|:--:|:--:|:--:|
-|[.NET](/documentation/articles/active-directory-devquickstarts-webapp-dotnet)|[Javascript](/documentation/articles/active-directory-devquickstarts-angular)|[Node.js](/documentation/articles/active-directory-devquickstarts-openidconnect-nodejs)
+|[![.NET](./media/active-directory-developers-guide/net.png)](active-directory-devquickstarts-webapp-dotnet.md)|[![Java](./media/active-directory-developers-guide/java.png)](active-directory-devquickstarts-webapp-java.md)|[![Javascript](./media/active-directory-developers-guide/javascript.png)](active-directory-devquickstarts-angular.md)|[![Node.js](./media/active-directory-developers-guide/nodejs.png)](active-directory-devquickstarts-openidconnect-nodejs.md)
+|:--:|:--:|:--:|:--:|
+|[.NET](/documentation/articles/active-directory-devquickstarts-webapp-dotnet)|[Java](/documentation/articles/active-directory-devquickstarts-webapp-java)|[Javascript](/documentation/articles/active-directory-devquickstarts-angular)|[Node.js](/documentation/articles/active-directory-devquickstarts-openidconnect-nodejs)
 
 ### Web API quick-start guides
 
@@ -69,6 +69,7 @@ These articles describe how to perform specific tasks by using Azure Active Dire
 - [Submit web apps for Office 365 to the Seller Dashboard](https://msdn.microsoft.com/office/office365/howto/submit-web-apps-seller-dashboard)
 - [Preview: How to build apps that sign users in with both personal & work or school accounts](/documentation/articles/active-directory-appmodel-v2-overview)
 - [Preview: How to build apps that sign up & sign in consumers](/documentation/articles/active-directory-b2c-overview)
+
 
 ## Reference
 
@@ -106,6 +107,25 @@ These articles provide a foundation reference for REST and authentication librar
 
 - [Supported token and claim types](/documentation/articles/active-directory-token-and-claims): You can use this guide to understand and evaluate the claims in the SAML 2.0 and JSON Web Tokens (JWT) tokens.
 
+<!-- deleted by customization
+## Videos
+
+### Build 2015
+
+These overview presentations on developing apps by using Azure Active Directory feature speakers who work directly in the engineering team. The presentations cover fundamental topics, including IDMaaS, authentication, identity federation, and single sign-on.
+
+- [Azure Active Directory: Identity management as a service for modern applications](http://azure.microsoft.com/documentation/videos/build-2015-azure-active-directory-identity-management-as-a-service-for-modern-applications)
+- [Develop modern web applications with Azure Active Directory](http://azure.microsoft.com/documentation/videos/build-2015-develop-modern-web-applications-with-azure-active-directory)
+- [Develop modern native applications with Azure Active Directory](http://azure.microsoft.com/documentation/videos/build-2015-develop-modern-native-applications-with-azure-active-directory)
+
+### Azure Friday
+[Azure Friday](http://azure.microsoft.com/documentation/videos/azure-friday/) is a recurring Friday 1:1 video series that's dedicated to bringing you short (10–15 minutes) interviews with experts on a variety of Azure topics.  Use the Services Filter feature on the page to see all Azure Active Directory videos.
+
+- [Azure Identity 101](http://azure.microsoft.com/documentation/videos/azure-identity-basics/)
+- [Azure Identity 102](http://azure.microsoft.com/documentation/videos/azure-identity-creating-active-directory/)
+- [Azure Identity 103](http://azure.microsoft.com/documentation/videos/azure-identity-application-to-authenticate/)
+
+-->
 ## Social
 
 - [Active Directory Team blog](http://blogs.technet.com/b/ad/): The latest developments in the world of Azure Active Directory.

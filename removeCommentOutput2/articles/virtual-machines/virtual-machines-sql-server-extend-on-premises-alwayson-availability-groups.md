@@ -1,16 +1,16 @@
 <properties 
-   pageTitle="Extend on-premises AlwaysOn Availability Groups to Azure | Windows Azure"
-   description="This tutorial uses resources created with the classic deployment model, and describes how to use the Add Replica wizard in SQL Server Management Studio (SSMS) to add an AlwaysOn Availability Group replica in Azure."
-   services="virtual-machines"
-   documentationCenter="na"
-   authors="rothja"
-   manager="jeffreyg"
-   editor="monicar"
-   tags="azure-service-management"/>
+	pageTitle="Extend on-premises AlwaysOn Availability Groups to Azure | Windows Azure"
+	description="This tutorial uses resources created with the classic deployment model, and describes how to use the Add Replica wizard in SQL Server Management Studio (SSMS) to add an AlwaysOn Availability Group replica in Azure."
+	services="virtual-machines"
+	documentationCenter="na"
+	authors="rothja"
+	manager="jeffreyg"
+	editor="monicar"
+	tags="azure-service-management"/>
 
 <tags
 	ms.service="virtual-machines"
-	ms.date="08/17/2015"
+	ms.date="11/13/2015"
 	wacn.date=""/>
 
 # Extend on-premises AlwaysOn Availability Groups to Azure
@@ -26,6 +26,8 @@ This tutorial assumes you have the following:
 - An existing AlwaysOn Availability Group on-premises. For more information on Availability Groups, see [AlwaysOn Availability Groups](https://msdn.microsoft.com/zh-cn/library/hh510230.aspx).
 
 - Connectivity between the on-premises network and your Azure virtual network. For more information about creating this virtual network, see [Configure a Site-to-Site VPN in the Management Portal](/documentation/articles/vpn-gateway-site-to-site-create).
+
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
 
 ## Add Azure Replica Wizard
 

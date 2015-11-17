@@ -1,7 +1,5 @@
-<!-- not suitable for Mooncake -->
-
 <properties
-   pageTitle="Use SSH keys with  Linux-based Hadoop from Linux, Unix, or OS X | Azure"
+   pageTitle="Use SSH keys with  Linux-based Hadoop from Linux, Unix, or OS X | Windows Azure"
    description=" You can access Linux-based HDInsight using Secure Shell (SSH). This document provides information on using SSH with HDInsight from Linux, Unix, or OS X clients."
    services="hdinsight"
    documentationCenter=""
@@ -11,11 +9,11 @@
 	tags="azure-portal"/>
 
 <tags
-   ms.service="hdinsight" 
-   ms.date="09/15/2015"
-   wacn.date=""/>
+	ms.service="hdinsight"
+	ms.date="11/16/2015"
+	wacn.date=""/>
 
-#Use SSH with Linux-based Hadoop on HDInsight from Linux, Unix, or OS X (preview)
+#Use SSH with Linux-based Hadoop on HDInsight from Linux, Unix, or OS X <!-- keep by customization: begin --> (preview) <!-- keep by customization: end -->  
 
 > [AZURE.SELECTOR]
 - [Windows](/documentation/articles/hdinsight-hadoop-linux-use-ssh-windows)
@@ -33,7 +31,7 @@
 
 OR
 
-* [Azure CLI for Mac, Linux and Windows](/documentation/articles/xplat-cli).
+* [Azure CLI for Mac, Linux and <!-- deleted by customization Windows](/documentation/articles/xplat-cli-install) --><!-- keep by customization: begin --> Windows](/documentation/articles/xplat-cli) <!-- keep by customization: end -->.
 
 ##What is SSH?
 
@@ -45,7 +43,7 @@ An SSH user name is the name you use to authenticate to the HDInsight cluster. W
 
 > [AZURE.NOTE] An SSH user name must be unique. Since an SSH user name creates a user account on the HDInsight cluster, it cannot conflict with existing users that are created by HDInsight. The following are names that are reserved for use by services running on the HDInsight cluster, and cannot be used as the SSH user name:
 >
-> root, hdiuser, storm, hbase, ubuntu, zookeeper, hdfs, yarn, mapred, hbase, hive, oozie, falcon, sqoop, admin, tez, hcat, hdinsight-zookeeper.
+> root, storm, hbase, ubuntu, zookeeper, hdfs, yarn, mapred, hbase, hive, oozie, falcon, sqoop, admin, tez, hcat, hdinsight-zookeeper.
 
 ###SSH password or Public key
 
@@ -65,10 +63,18 @@ Use the following information if you plan on using SSH keys with your cluster. I
 
 	Look for the following files in the directory listing. These are common names for public SSH keys.
 
+<!-- deleted by customization
+	* id\_dsa.pub
+	* id\_ecdsa.pub
+	* id\_ed25519.pub
+	* id\_rsa.pub
+-->
+<!-- keep by customization: begin -->
 	* id_dsa.pub
 	* id_ecdsa.pub
 	* id_ed25519.pub
 	* id_rsa.pub
+<!-- keep by customization: end -->
 
 2. If you do not want to use an existing file, or you have no existing SSH keys, use the following to generate a new file:
 
@@ -76,28 +82,39 @@ Use the following information if you plan on using SSH keys with your cluster. I
 
 	You will be prompted for the following information:
 
-	* The file location - The location defaults to ~/.ssh/id_rsa.
+	* The file location - The location defaults to <!-- deleted by customization ~/.ssh/id\_rsa --><!-- keep by customization: begin --> ~/.ssh/id_rsa <!-- keep by customization: end -->.
 	* A passphrase - You will be prompted to re-enter this.
-	
+
 		> [AZURE.NOTE] We strongly recommend that you use a secure passphrase for the key. However, if you forget the passphrase, there is no way to recover it.
 
-	After the command finishes, you will have two new files, the private key (for example, **id_rsa**) and the public key (for example, **id_rsa.pub**).
+	After the command finishes, you will have two new files, the private key (for example, <!-- deleted by customization **id\_rsa**) --><!-- keep by customization: begin --> **id_rsa**) <!-- keep by customization: end --> and the public key (for example, <!-- deleted by customization **id\_rsa.pub**) --><!-- keep by customization: begin --> **id_rsa.pub**) <!-- keep by customization: end -->.
 
 ##Create a Linux-based HDInsight cluster
 
 When creating a Linux-based HDInsight cluster, you must provide the public key created previously. From Linux, Unix, or OS X clients, there are two ways to create an HDInsight cluster:
 
-* **Azure Management Portal** - Uses a web-based portal to create the cluster.
+* **Azure <!-- deleted by customization preview portal** --><!-- keep by customization: begin --> Management Portal** <!-- keep by customization: end --> - Uses a web-based portal to create the cluster.
 
 * **Azure CLI for Mac, Linux and Windows** - Uses command-line commands to create the cluster.
 
-Each of these methods will require either a password or a public key. For complete information on creating a Linux-based HDInsight cluster, see <a href="/documentation/articles/hdinsight-provision-clusters/" target="_blank">Provision Linux-based HDInsight clusters</a>.
+Each of these methods will require either a password or a public key. For complete information on creating a Linux-based HDInsight cluster, see <!-- deleted by customization [Provision --><!-- keep by customization: begin --> <a href="/documentation/articles/hdinsight-provision-clusters/" target="_blank">Provision <!-- keep by customization: end --> Linux-based HDInsight <!-- deleted by customization clusters](/documentation/articles/hdinsight-provision-clusters) --><!-- keep by customization: begin --> clusters</a> <!-- keep by customization: end -->.
 
+<!-- deleted by customization
+###Azure preview portal
+
+When using the [Azure preview portal][preview-portal] to create a Linux-based HDInsight cluster, you must enter an **SSH USER NAME**, and select to enter a **PASSWORD** or **SSH PUBLIC KEY**.
+
+If you select **SSH PUBLIC KEY**, you can either paste the public key (contained in the file with the **.pub** extension) into the __SSH PublicKey__ field, or select __Select a file__ to browse and select the public key file.
+
+![Image of form asking for public key](./media/hdinsight-hadoop-linux-use-ssh-unix/ssh-key.png)
+-->
+<!-- keep by customization: begin -->
 ###Azure Management Portal
 
 When using the portal to create a Linux-based HDInsight cluster, you must enter an **SSH USER NAME**, and select to enter a **PASSWORD** or **SSH PUBLIC KEY**. If you select **SSH PUBLIC KEY**, you must paste the public key (contained in the file with the **.pub** extension) into the following form:
 
 ![Image of form asking for public key](./media/hdinsight-hadoop-linux-use-ssh-unix/ssh-key.png)
+<!-- keep by customization: end -->
 
 > [AZURE.NOTE] The key file is simply a text file. The contents should appear similar to the following:
 > ```
@@ -129,10 +146,10 @@ If you used a password for the user account, you will be prompted to enter the p
 If you used an SSH key that is secured with a passphrase, you will be prompted to enter the passphrase. Otherwise, SSH will attempt to automatically authenticate by using one of the local private keys on your client.
 
 > [AZURE.NOTE] If SSH does not automatically authenticate with the correct private key, use the **-i** parameter and specify the path to the private key. The following example will load the private key from `~/.ssh/id_rsa`:
-> 
+>
 > `ssh -i ~/.ssh/id_rsa me@mycluster-ssh.azurehdinsight.cn`
 
-If no port is specified, SSH will default to port 22, which will connect to headnode0 on the HDInsight cluster. If you use port 23, you will connect to headnode1. For more information on the head nodes, see [Availability and reliability of Hadoop clusters in HDInsight](/documentation/articles/hdinsight-high-availability).
+If no port is specified, SSH will default to port 22, which will connect to head node 0 on the HDInsight cluster. If you use port 23, you will connect to head node 1. For more information on the head nodes, see [Availability and reliability of Hadoop clusters in HDInsight](/documentation/articles/hdinsight-high-availability).
 
 ###Connect to worker nodes
 
@@ -157,7 +174,7 @@ If you use an SSH key to authenticate your user account, you must complete the f
 
         /tmp/ssh-rfSUL1ldCldQ/agent.1792
 
-    If nothing is returned, this indicates that **ssh-agent** is not running. Consult your operating system documentation for specific steps on installing and configuring **ssh-agent**, or see <a href="http://mah.everybody.org/docs/ssh" target="_blank">Using ssh-agent with ssh</a>.
+    If nothing is returned, this indicates that **ssh-agent** is not running. Consult your operating system documentation for specific steps on installing and configuring **ssh-agent**, or see <!-- deleted by customization [Using --><!-- keep by customization: begin --> <a href="http://mah.everybody.org/docs/ssh" target="_blank">Using <!-- keep by customization: end --> ssh-agent with <!-- deleted by customization ssh](http://mah.everybody.org/docs/ssh) --><!-- keep by customization: begin --> ssh</a> <!-- keep by customization: end -->.
 
 4. Once you have verified that **ssh-agent** is running, use the following to add your SSH private key to the agent:
 
@@ -199,7 +216,7 @@ Use the following steps to connect to the worker nodes for your cluster.
 
 1. From an SSH session to the cluster, add the new user with the following command:
 
-		sudo adduser --disabled-password <username> 
+		sudo adduser --disabled-password <username>
 
 	This will create a new user account, but will disable password authentication.
 
@@ -236,4 +253,7 @@ Now that you understand how to authenticate by using an SSH key, learn how to us
 * [Use Pig with HDInsight](/documentation/articles/hdinsight-use-pig)
 
 * [Use MapReduce jobs with HDInsight](/documentation/articles/hdinsight-use-mapreduce)
- 
+<!-- deleted by customization
+
+[preview-portal]: https://manage.windowsazure.cn/
+-->

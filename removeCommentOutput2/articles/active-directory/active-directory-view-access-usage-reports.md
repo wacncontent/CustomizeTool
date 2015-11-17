@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="09/21/2015"
+	ms.date="11/10/2015"
 	wacn.date=""/>
 
 # View your access and usage reports
@@ -52,7 +52,7 @@ In the Azure Management Portal, reports are categorized in the following ways:
 |	Account provisioning activity						|	Provides a history of attempts to provision accounts to external applications.				|
 |	Password rollover status							|	Provides a detailed overview of automatic password rollover status of SaaS applications.	|
 |	Account provisioning errors							|	Indicates an impact to users’ access to external applications.								|
-|	**Rights managment**
+|	**Rights management**
 |	RMS usage											|	Provides a summary for Rights Management usage												|
 |	Most active RMS users								|	Lists top 1000 active users who accessed RMS-protected files								|
 |	RMS device usage									|	Lists devices used for accessing RMS-protected files										|
@@ -163,6 +163,10 @@ In the Azure Management Portal, reports are categorized in the following ways:
 | :-------------     | :-------        |
 | Use this report when you want to see usage for all the SaaS applications in your directory. This report is based on the number of times users have clicked on the application in the Access Panel. | Directory > Reports tab |
 
+This report includes sign ins to _all_ applications that your directory has access to, including pre-integrated Microsoft applications.
+
+Pre-integrated Microsoft applications include Office 365, Sharepoint, the Azure Management Portal, and others.
+
 ![Application usage summary](./media/active-directory-view-access-usage-reports/applicationUsage.PNG)
 
 
@@ -243,7 +247,7 @@ If you suspect that a user account may be compromised or any kind of suspicious 
 
 - Contact the user to verify the activity
 - Reset the user's password
-- [Enable multi-factor authentication](https://msdn.microsoft.com/zh-cn/library/azure/7a9c56cf-72f1-4797-8e86-a9a2d9569ef6) for additional security
+- [Enable multi-factor authentication](/documentation/articles/multi-factor-authentication-get-started) for additional security
 
 ## View or download a report
 

@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.date="10/06/2015"
+	ms.date="11/11/2015"
 	wacn.date=""/>
 
 # Add authentication to your universal Windows 8.1 app

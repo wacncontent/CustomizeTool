@@ -1,17 +1,17 @@
 <properties
-    pageTitle="Elastic database query for vertical partitioning | Windows Azure"
+    pageTitle="Elastic database query for cross-database queries (vertical partitioning) | Windows Azure"
     description="how to set up cross-database queries over vertical partitions"    
     services="sql-database"
     documentationCenter=""  
     manager="jeffreyg"
-    authors="sidneyh"/>
+    authors="torsteng"/>
 
 <tags
 	ms.service="sql-database"
-	ms.date="10/19/2015"
+	ms.date="11/09/2015"
 	wacn.date=""/>
 
-# Elastic database query for vertical partitioning
+# Elastic database query for cross-database queries (vertical partitioning)
 
 This document explains how to setup elastic query for cross-database querying scenarios (vertical partitioning) and how to perform your queries. For a definition of the vertical partitioning scenario, see [Azure SQL Database elastic database query overview (preview)](/documentation/articles/sql-database-elastic-query-overview).
 
@@ -40,7 +40,7 @@ A credential represents the user ID and password that elastic query will use to 
     SECRET = ‘<password>’
     [;]
     
-or to drop:
+To delete the credential:
     
     DROP DATABASE SCOPED CREDENTIAL <credential_name>;  
     DROP MASTER KEY;   

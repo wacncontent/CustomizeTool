@@ -4,11 +4,11 @@
    services="traffic-manager"
    documentationCenter=""
    authors="joaoma"
-   manager="adinah"
+   manager="carmonm"
    editor="tysonn" />
 <tags
 	ms.service="traffic-manager"
-	ms.date="08/19/2015"
+	ms.date="11/12/2015"
 	wacn.date=""/>
 
 # Add, disable, enable or delete endpoints
@@ -58,18 +58,16 @@ You can also disable individual endpoints that are part of a Traffic Manager pro
 
 >[AZURE.NOTE] You cannot delete external locations or Traffic Manager profiles as endpoints using the Azure Management Portal. You must use Windows PowerShell. For more information, see [Remove-AzureTrafficManagerEndpoint](https://msdn.microsoft.com/zh-cn/library/dn690251.aspx).
 
-## Additional resources
+## Next steps
 
-[Traffic Manager overview](/documentation/articles/traffic-manager-overview)
 
-[About Traffic Manager monitoring](/documentation/articles/traffic-manager-monitoring)
+[Configure failover routing method](/documentation/articles/traffic-manager-configure-failover-routing-method)
 
-[Traffic Manager - Disable, enable or delete a profile](/documentation/articles/disable-enable-or-delete-a-profile)
+[Configure round robin routing method](/documentation/articles/traffic-manager-configure-round-robin-routing-method)
 
-[Traffic Manager - Disable or enable an endpoint](/documentation/articles/disable-or-enable-an-endpoint)
+[Configure performance routing method](/documentation/articles/traffic-manager-configure-performance-routing-method)
+
+[Troubleshooting Traffic Manager degraded state](/documentation/articles/traffic-manager-troubleshooting-degraded)
 
 [Operations on Traffic Manager (REST API Reference)](https://msdn.microsoft.com/zh-CN/library/hh758255.aspx)
 
-[Cloud Services](https://msdn.microsoft.com/zh-cn/library/jj155995.aspx)
-
-[Websites](/home/features/web-site/)

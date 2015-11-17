@@ -8,10 +8,14 @@
   manager="adinah" 
   editor=""/>
 
-<tags
-	ms.service="storage"
-	ms.date="10/07/2015"
-	wacn.date=""/>
+<tags 
+  ms.service="storage" 
+  ms.workload="storage" 
+  ms.tgt_pltfrm="na" 
+  ms.devlang="na" 
+  ms.topic="article" 
+  ms.date="10/20/2015" 
+  ms.author="tamram"/>
 
 # Azure Storage replication
 
@@ -70,7 +74,26 @@ When you create a storage account, you select the primary region for the account
 | ---------------   |----------------
 |China North   |China East
 |China East   |China North
-
+<!-- deleted by customization
+|China East            |China North
+|China North            |China East
+|China East 2          |China North
+|China North         |China East 2
+|China North       |West Europe
+|West Europe        |China North
+|South China East    |China East
+|China East          |South China East
+|East China         |North China
+|North China        |East China
+|Japan East         |China East
+|China East         |Japan East
+|Brazil South       |China East
+|Australia East     |Australia Southeast
+|Australia Southeast|Australia East
+-->
+|India South        |India Central
+|India Central      |India South
+  
 
 ## Read-access geo-redundant storage
 

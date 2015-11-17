@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="10/13/2015"
+	ms.date="11/04/2015"
 	wacn.date=""/>
 
 # Integrating your on-premises identities with Azure Active Directory
@@ -101,9 +101,9 @@ The [prevent accidental deletes](/documentation/articles/active-directory-aadcon
 ## Customize Azure AD Connect sync
 Azure AD Connect sync comes with a default configuration which is intended to work for most customers and topologies. But there are always situations where the default configuration will not work and must be adjusted. It is supported to make changes as documented in this section and linked topics.
 
-If you have not worked with a synchronization topology before you want to start to understand the basics and the terms used as described in the [technical concepts](/documentation/articles/active-directory-aadconnect-technical-concepts). Azure AD Connect is the evolution of MIIS2003, ILM2007, and FIM2010. Even if some things are identical, a lot has changed as well.
+If you have not worked with a synchronization topology before you want to start to understand the basics and the terms used as described in the [technical concepts](/documentation/articles/active-directory-aadconnectsync-technical-concepts). Azure AD Connect is the evolution of MIIS2003, ILM2007, and FIM2010. Even if some things are identical, a lot has changed as well.
 
-The configuration assumes there might be more than one forest in the configuration. In those topologies a user object might be represented as a contact in another forest. The user might also have a linked mailbox in another resource forest. The behavior of the default configuration is described in [users and contacts](/documentation/articles/active-directory-aadconnectsync-understanding-users-and-contacts).
+The [default configuration](/documentation/articles/active-directory-aadconnectsync-understanding-default-configuration) assumes there might be more than one forest in the configuration. In those topologies a user object might be represented as a contact in another forest. The user might also have a linked mailbox in another resource forest. The behavior of the default configuration is described in [users and contacts](/documentation/articles/active-directory-aadconnectsync-understanding-users-and-contacts).
 
 The configuration model in sync is called [declarative provisioning](/documentation/articles/active-directory-aadconnectsync-understanding-declarative-provisioning-expressions). The advanced attribute flows are using [functions](/documentation/articles/active-directory-aadconnectsync-functions-reference) to express attribute transformations. You can see and examine the entire configuration using tools which comes with Azure AD Connect. If you need to make changes to the configuration, make sure you follow the [best practices](/documentation/articles/active-directory-aadconnectsync-best-practices-changing-default-configuration) so it will be easier to adopt new releases as these are made available.
 
@@ -111,7 +111,8 @@ The configuration model in sync is called [declarative provisioning](/documentat
 
 | Topic |  |
 | --------- | --------- |
-| Technical concepts | [Azure AD Connect sync: Technical Concepts](/documentation/articles/active-directory-aadconnect-technical-concepts) |
+| Technical concepts | [Azure AD Connect sync: Technical Concepts](/documentation/articles/active-directory-aadconnectsync-technical-concepts) |
+| Understanding the default configuration | [Azure AD Connect sync: Understanding the default configuration](/documentation/articles/active-directory-aadconnectsync-understanding-default-configuration) |
 | Understanding users and contacts | [Azure AD Connect sync: Understanding Users and Contacts](/documentation/articles/active-directory-aadconnectsync-understanding-users-and-contacts) |
 | Declarative provisioning | [Azure AD Connect Sync: Understanding Declarative Provisioning Expressions](/documentation/articles/active-directory-aadconnectsync-understanding-declarative-provisioning-expressions) |
 | Declarative provisioning functions reference | [Azure AD Connect sync: Functions Reference](/documentation/articles/active-directory-aadconnectsync-functions-reference) |

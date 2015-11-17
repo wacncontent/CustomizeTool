@@ -1,15 +1,14 @@
 <properties 
-    title="Elastic Scale Security Configurations" 
-    pageTitle="Elastic Scale Security Configurations" 
+    pageTitle="Elastic Scale Security Configurations | Windows Azure" 
     description="Set up x409 certificates for encryption" 
     metaKeywords="Elastic Database certificates security" 
     services="sql-database" documentationCenter="" 
     manager="jhubbard" 
-    authors="sidneyh"/>
+    authors="torsteng"/>
 
 <tags
 	ms.service="sql-database"
-	ms.date="07/07/2015"
+	ms.date="11/04/2015"
 	wacn.date=""/>
 
 # Split-Merge security configuration  
@@ -141,7 +140,12 @@ For example, to allow only IPs in the range 100.100.0.0 to 100.100.255.255 to ac
     <EndpointAcls>
     <EndpointAcl role="SplitMergeWeb" endPoint="HttpsIn" accessControl="Restricted" />
 
+<!-- deleted by customization
+## Denial of service prevention
+-->
+<!-- keep by customization: begin -->
 ## <a name = "denial-of-service-prevention"></a>Denial of service prevention
+<!-- keep by customization: end -->
 
 There are two different mechanisms supported to detect and prevent Denial of Service attacks:
 
@@ -199,7 +203,12 @@ To customize:
 *    -e with the certificate expiration date
 Create a strong password and specify it when prompted.
 
+<!-- deleted by customization
+## Create PFX file for self-signed SSL certificate
+-->
+<!-- keep by customization: begin -->
 ## <a name="create-pfx-for-self-signed-cert"></a>Create PFX file for self-signed SSL certificate
+<!-- keep by customization: end -->
 
 Execute:
 
@@ -466,7 +475,12 @@ In the Certificate Import Wizard:
 	* If the Trusted Root Certification Authority store was chosen, click **Yes**.
 9.     Click **OK** on all dialog windows.
 
+<!-- deleted by customization
+## Upload certificate
+-->
+<!-- keep by customization: begin -->
 ## <a name="upload-certificate"></a>Upload certificate
+<!-- keep by customization: end -->
 
 In the [Azure Management Portal](http://manage.windowsazure.cn/)
 

@@ -8,7 +8,7 @@
    editor="tysonn" />
 <tags
 	ms.service="automation"
-	ms.date="07/10/2015"
+	ms.date="11/10/2015"
 	wacn.date=""/>
 
 # Configuring Azure Automation
@@ -17,9 +17,15 @@ This article describes the actions you must perform to initially start using Azu
 
 ## Automation accounts
 
-When you start Azure Automation for the first time, you must create at least one Automation account. Automation accounts allow you to isolate your Automation resources (runbooks, assets) from the Automation resources contained in other Automation accounts. You can use Automation accounts to separate Automation resources into separate logical environments. For example, you might use one account for development and another for production.
+When you start Azure Automation for the first time, you must create at least one Automation account. Automation accounts allow you to isolate your Automation resources (runbooks, assets, configurations) from the Automation resources contained in other Automation accounts. You can use Automation accounts to separate Automation resources into separate logical environments. For example, you might use one account for development and another for production.
 
 The Automation resources for each Automation account are associated with a single Azure region, but Automation accounts can manage Azure services in any region. The main reason to create Automation accounts in different regions would be if you have policies that require data and resources to be isolated to a specific region.
+<!-- deleted by customization
+
+>[AZURE.NOTE] Automation accounts, and the resources they contain, that are created with the Azure preview portal cannot be accessed in the Azure Management Portal. If you want to manage these accounts or their resources with Windows PowerShell, you must use the Azure Resource Manager modules. 
+>
+>Automation accounts created with the Azure Management Portal can be managed by either portal and either set of cmdlets. Once the account is created, it makes no difference how you create and manage resources within the account. If you are planning to continue to use the Azure Management Portal, then you should use it instead of the Azure preview portal to create any Automation accounts.
+-->
 
 
 An Automation account may be suspended if there is an issue with your Azure account, such as an overdue payment. In this case, you can’t access the account, any running jobs will be suspended, and all schedules will be disabled. You will be able to view the account, but you won’t be able to see any resources in it. Once you correct the issue and the Automation account is enabled, you will have to enable your schedules and restart any runbooks that were suspended.
@@ -43,6 +49,33 @@ When you access Azure resources using the [Azure cmdlets](http://msdn.microsoft.
 9. Select the subscription that you want the user to manage.
 10. Log out of Azure and then log back in with the account you just created. You will be prompted to change the user’s password.
 11. Create a new [Azure Automation Credential asset](http://msdn.microsoft.com/zh-cn/library/dn940015.aspx) for the user account that you created. The **Credential Type** should be **Windows PowerShell Credential**.
+
+## Create an automation account
+
+An automation account is a container for your Azure Automation resources. It provides a way to separate your environments or further organize your workflows. If you've already created an automation account, you can skip this step.
+
+1. Log in to the [Azure preview portal](https://manage.windowsazure.cn/).
+
+2. In the Azure preview portal, click **New** > **Management** > **Automation Account**
+
+3. In the **Add Automation Account** blade, configure your Automation Account details. 
+
+>[AZURE.NOTE] When an Automation account is created using the Azure preview portal, the account and all the resources associated with it are not brought back to the classic management portal. 
+
+Below is the list of parameters to configure:
+
+|Parameter            |Description |
+|:---|:---|
+| Name | Name of your Automation Account; it must be a unique value. |
+| Resource Group | Resource groups make it simple to see and manage related Azure resources. In the Azure preview portal, you can choose an existing resource group or create a new one for your Automation Account, whereas in the Azure management portal, all the Automation Accounts would be placed in a default resource group. |
+| Subscription | Choose a subscription from the list of available subscriptions. |
+| Region | The region specifies where the Automation resources in the account will be stored. You can choose any region from the list, this will not affect the functionality of your account, but your runbooks may execute faster if your account region is near where your other Azure resources are stored. |
+| Account Options | This option allows you to choose what resources will be created in your new Automation Account; selecting **Yes** will create a tutorial runbook. |
+
+![Create Account](./media/automation-configuration/automation-01-create-automation-account.png)
+
+>[AZURE.NOTE] When an Automation Account created using the classic management portal is [moved to a different resource group](/documentation/articles/resource-group-move-resources) using the Azure preview portal, the Automation Account will no longer be available in Azure Management Portal, as Azure resource manager accounts are not supported in the classic management portal.
+
 
 
 ## Use the credential in a runbook

@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="07/15/2015"
+	ms.date="10/20/2015"
 	wacn.date=""/>
 
 #Tutorial: How to integrate Salesforce with Azure Active Directory
@@ -28,6 +28,19 @@ This tutorial will show you how to connect your Salesforce environment to your A
 
 If you are using a Salesforce Sandbox environment, please see the [Salesforce Sandbox integration tutorial](/documentation/articles/active-directory-saas-salesforce-sandbox-tutorial/).
 
+<!-- deleted by customization
+##Video tutorials
+
+You may follow this tutorial using the videos below.
+
+**Video Tutorial Part One: How to Enable Single Sign-On**
+
+> [AZURE.VIDEO integrating-salesforce-with-azure-ad-how-to-enable-single-sign-on]
+
+**Video Tutorial Part Two: How to Automate User Provisioning**
+
+> [AZURE.VIDEO integrating-salesforce-with-azure-ad-how-to-automate-user-provisioning]
+-->
 
 ##Step 1: Add Salesforce to your directory
 

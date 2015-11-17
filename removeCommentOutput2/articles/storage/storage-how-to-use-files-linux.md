@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="storage"
-	ms.date="10/06/2015"
+	ms.date="10/26/2015"
 	wacn.date=""/>
 
 
@@ -24,6 +24,12 @@ You can create Azure file shares using the Azure Management portal, the Azure St
 Applications running in Azure can easily mount file shares from Azure virtual machines. And with the latest release of File storage, you can also mount a file share from an on-premises application that supports SMB 3.0.
 
 Note that since the Linux SMB client doesn’t yet support encryption, mounting a file share from Linux still requires the client to be in the same Azure region as the file share. However, encryption support for Linux is on the roadmap of Linux developers responsible for SMB functionality. Linux distributions that support encryption in the future will be able to mount an Azure File share from anywhere as well.
+
+## Video: Using Azure File storage with Linux
+
+Here's a video that demonstrates how to create and use Azure File shares on Linux.
+
+> [AZURE.VIDEO azure-file-storage-with-linux]
 
 ## Choose a Linux distribution to use ##
 
@@ -107,8 +113,9 @@ The Azure File storage for Linux users' group provides a forum for you to share 
 
 See these links for more information about Azure File storage.
 
-### Conceptual articles
+### Conceptual articles and videos
 
+- [Azure Files Storage: a frictionless cloud SMB file system for Windows and Linux](https://azure.microsoft.com/documentation/videos/azurecon-2015-azure-files-storage-a-frictionless-cloud-smb-file-system-for-windows-and-linux/)
 - [How to use Azure File Storage with Windows](/documentation/articles/storage-dotnet-how-to-use-files)
 
 ### Tooling support for File storage

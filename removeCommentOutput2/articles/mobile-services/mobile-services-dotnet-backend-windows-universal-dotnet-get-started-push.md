@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.date="07/21/2015"
+	ms.date="11/11/2015"
 	wacn.date=""/>
 
 # Add push notifications to your Mobile Services app

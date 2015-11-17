@@ -1,3 +1,3 @@
 > [AZURE.SELECTOR]
-- [iOS](/documentation/articles/app-service-mobile-dotnet-backend-ios-aad-sso-preview)
+- [iOS](/documentation/articles/app-service-mobile-ios-aad-sso)
 <!--- [Windows](/documentation/articles/mobile-services-windows-store-dotnet-adal-sso-authentication)-->

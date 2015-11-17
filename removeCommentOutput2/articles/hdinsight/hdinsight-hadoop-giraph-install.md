@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="10/02/2015"
+	ms.date="11/03/2015"
 	wacn.date=""/>
 
 # Install and use Giraph in HDInsight
@@ -21,7 +21,6 @@ Learn how to customize Windows based HDInsight cluster with Giraph using Script 
 You can install Giraph on any type of cluster (Hadoop, Storm, HBase) on Azure HDInsight by using *Script Action*. A sample script to install Giraph on an HDInsight cluster is available from a read-only Azure storage blob at [https://hdiconfigactions.blob.core.windows.net/giraphconfigactionv01/giraph-installer-v01.ps1](https://hdiconfigactions.blob.core.windows.net/giraphconfigactionv01/giraph-installer-v01.ps1). The sample script works only with HDInsight cluster version 3.1. For more information on HDInsight cluster versions, see [HDInsight cluster versions](/documentation/articles/hdinsight-component-versioning).
 
 **Related articles**
-
 - [Create Hadoop clusters in HDInsight](/documentation/articles/hdinsight-provision-clusters): general information on creating HDInsight clusters.
 - [Customize HDInsight cluster using Script Action][hdinsight-cluster-customize]: general information on customizing HDInsight clusters using Script Action.
 - [Develop Script Action scripts for HDInsight](/documentation/articles/hdinsight-hadoop-script-actions).
@@ -151,7 +150,6 @@ We use the SimpleShortestPathsComputation example to demonstrate the basic <a hr
 	![Drawing of objects as circles with shortest paths drawn between](./media/hdinsight-hadoop-giraph-install/giraph-graph-out.png)
 
 ## Install Giraph using Aure PowerShell
-
 In this section, we use the **<a href = "http://msdn.microsoft.com/zh-cn/library/dn858088.aspx" target="_blank">Add-AzureHDInsightScriptAction</a>** cmdlet to invoke scripts by using Script Action to customize a cluster. Before proceeding, make sure you have installed and configured Azure PowerShell. For information on configuring a workstation to run Azure Powershell cmdlets for HDInsight, see [Install and configure Azure PowerShell][powershell-install-configure].
 
 Perform the following steps:
@@ -214,7 +212,6 @@ Perform the following steps:
 When prompted, enter the credentials for the cluster. It can take several minutes before the cluster is created.
 
 ## Install Giraph using .NET SDK
-
 The HDInsight .NET SDK provides .NET client libraries that make it easier to work with HDInsight from a .NET Framework application. This section provides instructions on how to use Script Action from the SDK to provision a cluster that has Giraph installed. The following procedures must be performed:
 
 - Install the HDInsight .NET SDK
@@ -338,7 +335,6 @@ Provide a cluster name and press ENTER to provision a cluster with Giraph instal
 
 
 ## See also
-
 - [Create Hadoop clusters in HDInsight](/documentation/articles/hdinsight-provision-clusters): general information on creating HDInsight clusters.
 - [Customize HDInsight cluster using Script Action][hdinsight-cluster-customize]: general information on customizing HDInsight clusters using Script Action.
 - [Develop Script Action scripts for HDInsight](/documentation/articles/hdinsight-hadoop-script-actions).

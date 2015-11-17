@@ -1,19 +1,20 @@
 <properties 
-	pageTitle="Shard map management" 
+	pageTitle="Shard map management | Windows Azure" 
 	description="How to use the ShardMapManager, elastic database client library" 
 	services="sql-database" 
 	documentationCenter="" 
 	manager="jeffreyg" 
-	authors="sidneyh" 
+	authors="ddove" 
 	editor=""/>
 
 <tags
 	ms.service="sql-database"
-	ms.date="07/24/2015"
+	ms.date="11/04/2015"
 	wacn.date=""/>
 
 # Shard map management
-In a sharded database environment, a **shard map** maintains information allowing an application to connect to the correct database based upon the value of the **sharding key**. Understanding how these maps are constructed is crucial to managing shards with the elastic database client library.
+
+Use the [Elastic Database client library](/documentation/articles/sql-database-elastic-database-client-library) to manage sharded applications. In a sharded database environment, a [**shard map**](/documentation/articles/sql-database-elastic-scale-glossary) maintains information allowing an application to connect to the correct database based upon the value of the **sharding key**. Understanding how these maps are constructed is essential to shard map management.
 
 ## Shard maps and shard mappings
  

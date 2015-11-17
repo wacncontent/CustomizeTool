@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="09/23/2015"
+	ms.date="11/06/2015"
 	wacn.date=""/>
 
 #Process vehicle sensor data from Azure Event Hubs using Apache Storm on HDInsight

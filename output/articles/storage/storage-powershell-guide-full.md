@@ -8,7 +8,7 @@
 
 <tags
 	ms.service="storage"
-	ms.date="09/27/2015"
+	ms.date="10/26/2015"
 	wacn.date=""/>
 
 # Using Azure PowerShell with Azure Storage
@@ -103,9 +103,15 @@ See [Manage Accounts, Subscriptions, and Administrative Roles](https://msdn.micr
        		Get-AzureSubscription | Format-Table SubscriptionName, IsDefault, IsCurrent, CurrentStorageAccountName
 
 
-		b. Currently, Azure supports one portal in China: the [Azure Management Portal](https://manage.windowsazure.cn/). If you sign in to the current [Azure Management Portal](https://manage.windowsazure.cn/), scroll down and click **Settings** on the left side of the portal. Click **Subscriptions**. Copy the name of subscription that you want to use while running the scripts given in this guide. See the following screenshot as an example.
+		b. Currently, Azure supports <!-- deleted by customization two portals --><!-- keep by customization: begin --> one portal in China <!-- keep by customization: end -->: the [Azure Management <!-- deleted by customization Portal](https://manage.windowsazure.cn/) and the [Azure Preview --> Portal](https://manage.windowsazure.cn/). If you sign in to the current [Azure Management Portal](https://manage.windowsazure.cn/), scroll down and click **Settings** on the left side of the portal. Click **Subscriptions**. Copy the name of subscription that you want to use while running the scripts given in this guide. See the following screenshot as an example.
 
 		![Azure Management Portal][Image1]
+<!-- deleted by customization
+
+		c. If you sign in to the [Azure Preview Portal](https://manage.windowsazure.cn/), in the Hub menu on the left, click **BROWSE**. Then, click **Everything**, click **Subscriptions**. Copy the name of subscription that you want to use while running the scripts in this guide. See the following screenshot as an example.
+
+		![Azure Preview Portal][Image2]
+-->
 
 
 	- **$StorageAccountName:** Use the given name in the script or enter a new name for your storage account. **Important:** The name of the storage account must be unique in Azure. It must be lowercase, too!
@@ -229,7 +235,7 @@ For more information on how to configure a storage connection string, see [Confi
 
 Now that you have set up your computer and learned how to manage subscriptions and storage accounts using Azure PowerShell. Go to the next section to learn how to manage Azure blobs and blob snapshots.
 
-## How to manage Azure blobs and blob snapshots
+## How to manage Azure blobs
 Azure Blob storage is a service for storing large amounts of unstructured data, such as text or binary data, that can be accessed from anywhere in the world via HTTP or HTTPS. This section assumes that you are already familiar with the Azure Blob Storage Service concepts. For detailed information, see [How to use Blob Storage from .NET](/documentation/articles/storage-dotnet-how-to-use-blobs) and [Blob Service Concepts](http://msdn.microsoft.com/zh-cn/library/azure/dd179376.aspx).
 
 ### How to create a container

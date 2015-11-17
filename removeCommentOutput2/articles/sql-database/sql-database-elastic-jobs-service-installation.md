@@ -1,19 +1,19 @@
 <properties 
-	pageTitle="Installing elastic database jobs" 
+	pageTitle="Installing elastic database jobs | Windows Azure" 
 	description="Walk through installation of the elastic job feature." 
 	services="sql-database" 
 	documentationCenter="" 
 	manager="jhubbard" 
-	authors="sidneyh" 
+	authors="ddove" 
 	editor=""/>
 
 <tags
 	ms.service="sql-database"
-	ms.date="08/03/2015"
+	ms.date="11/04/2015"
 	wacn.date=""/>
 
 # Installing Elastic Database jobs overview
-**Elastic Database jobs** can be installed via PowerShell or through the Azure Management Portal, although you will only gain access to create and manage jobs using the PowerShell API only if you install the PowerShell package. Additionally, the PowerShell APIs provide significantly more functionality over the portal at this point in time. For more information about **Elastic Database jobs**, see [Elastic Database jobs overview](/documentation/articles/sql-database-elastic-jobs-overview).
+[**Elastic Database jobs**](/documentation/articles/sql-database-elastic-jobs-overview) can be installed via PowerShell or through the Azure Management Portal.You can gain access to create and manage jobs using the PowerShell API only if you install the PowerShell package. Additionally, the PowerShell APIs provide significantly more functionality than the portal at this point in time. 
 
 If you have already installed **Elastic Database jobs** through the Portal from an existing **Elastic Database pool**, the latest Powershell preview includes scripts to upgrade your existing installation. It is highly recommended to upgrade your installation to the latest **Elastic Database jobs** components in order to take advantage of new functionality exposed via the PowerShell APIs.
 
@@ -62,7 +62,7 @@ The parameters provided on this sample invocation can be modified for your desir
 
 <tr>
 	<td>ResourceGroupName</td>
-	<td>Provides the Azure resource group name created to contain the newly created Azure components. This parameter defaults to ì__ElasticDatabaseJobî. It is not recommended to change this value.</td>
+	<td>Provides the Azure resource group name created to contain the newly created Azure components. This parameter defaults to ‚Äú__ElasticDatabaseJob‚Äù. It is not recommended to change this value.</td>
 	</tr>
 
 </tr>
@@ -74,7 +74,7 @@ The parameters provided on this sample invocation can be modified for your desir
 
 <tr>
 	<td>ServiceWorkerCount</td>
-	<td>Provides the number of service workers to install. This parameter defaults to 1. A higher number of workers can be used to scale out the service and to provide high availability. It is recommended to use ì2î for deployments that require high availability of the service.</td>
+	<td>Provides the number of service workers to install. This parameter defaults to 1. A higher number of workers can be used to scale out the service and to provide high availability. It is recommended to use ‚Äú2‚Äù for deployments that require high availability of the service.</td>
 	</tr>
 
 </tr>
@@ -124,7 +124,7 @@ To update the VM size of an installation, run the following script with paramete
 
   <tr>
 	<td>ResourceGroupName</td>
-	<td>Identifies the Azure resource group name used when the Elastic Database job components were initially installed. This parameter defaults to ì__ElasticDatabaseJobî. Since it is not recommended to change this value, you shouldn't have to specify this parameter.</td>
+	<td>Identifies the Azure resource group name used when the Elastic Database job components were initially installed. This parameter defaults to ‚Äú__ElasticDatabaseJob‚Äù. Since it is not recommended to change this value, you shouldn't have to specify this parameter.</td>
 	</tr>
 </tr>
 
@@ -132,7 +132,7 @@ To update the VM size of an installation, run the following script with paramete
 
   <tr>
 	<td>ServiceWorkerCount</td>
-	<td>Provides the number of service workers to install.  This parameter defaults to 1.  A higher number of workers can be used to scale out the service and to provide high availability.  It is recommended to use ì2î for deployments that require high availability of the service.</td>
+	<td>Provides the number of service workers to install.  This parameter defaults to 1.  A higher number of workers can be used to scale out the service and to provide high availability.  It is recommended to use ‚Äú2‚Äù for deployments that require high availability of the service.</td>
 </tr>
 
 </tr>

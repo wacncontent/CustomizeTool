@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.date="10/08/2015"
+	ms.date="11/05/2015"
 	wacn.date=""/>
 
 # Get started with Mobile Services for Android  (JavaScript backend)
@@ -20,6 +20,7 @@
 This tutorial shows you how to add a cloud-based backend service to an Android app using Azure Mobile Services. In this tutorial, you will create both a new mobile service and a simple **To do list** app that stores app data in the new mobile service.
 
 A screenshot from the completed app is below:
+
 ![](./media/mobile-services-android-get-started/mobile-quickstart-completed-android.png)
 
 ## Prerequisites

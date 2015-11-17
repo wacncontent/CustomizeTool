@@ -1,20 +1,5 @@
-new docs: 16, word count: {word_count_TODO}
-articles/expressroute/expressroute-circuit-peerings.md
-articles/expressroute/expressroute-config-samples-nat.md
-articles/expressroute/expressroute-config-samples-routing.md
-articles/expressroute/expressroute-faqs.md
-articles/expressroute/expressroute-howto-circuit-classic.md
-articles/expressroute/expressroute-howto-coexist-classic.md
-articles/expressroute/expressroute-howto-linkvnet-classic.md
-articles/expressroute/expressroute-howto-routing-classic.md
-articles/expressroute/expressroute-howto-vnet-portal-classic.md
-articles/expressroute/expressroute-introduction.md
-articles/expressroute/expressroute-locations.md
-articles/expressroute/expressroute-nat.md
-articles/expressroute/expressroute-prerequisites.md
-articles/expressroute/expressroute-qos.md
-articles/expressroute/expressroute-routing.md
-articles/expressroute/expressroute-workflows.md
+new docs: 2, word count: {word_count_TODO}
+articles/expressroute/expressroute-howto-circuit-arm.md
+articles/expressroute/expressroute-howto-routing-arm.md
 
-new includes: 1
-includes/expressroute-limits.md
+new includes: 0

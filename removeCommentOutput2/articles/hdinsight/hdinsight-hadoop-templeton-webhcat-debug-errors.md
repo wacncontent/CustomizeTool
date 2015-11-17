@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="09/02/2015"
+	ms.date="10/30/2015"
 	wacn.date=""/>
 
 #Understand and resolve errors received from WebHCat (Templeton,) on HDInsight

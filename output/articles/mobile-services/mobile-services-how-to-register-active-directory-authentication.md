@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.date="09/24/2015"
+	ms.date="11/15/2015"
 	wacn.date=""/>
 
 # Register your apps to use an Azure Active Directory Account login

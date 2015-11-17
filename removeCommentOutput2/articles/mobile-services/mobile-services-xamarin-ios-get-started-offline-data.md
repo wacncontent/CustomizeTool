@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.date="07/01/2015"
+	ms.date="11/02/2015"
 	wacn.date=""/>
 
 # Using offline data sync in Mobile Services

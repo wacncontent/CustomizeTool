@@ -3,14 +3,14 @@
 	description="Learn how to deploy the Jupyter/IPython Notebook on a Linux virtual machine created with the resource manager deployment model in Azure."
 	services="virtual-machines"
 	documentationCenter="python"
-	authors="huguesv"
+	authors="crwilcox"
 	manager="wpickett"
 	editor=""
 	tags=“azure-service-management,azure-resource-manager"/>
 
 <tags
 	ms.service="virtual-machines"
-	ms.date="05/20/2015"
+	ms.date="11/10/2015"
 	wacn.date=""/>
 
 # Jupyter Notebook on Azure

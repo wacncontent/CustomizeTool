@@ -3,14 +3,14 @@
 	description="Learn how to deploy the Jupyter/IPython Notebook on a Linux virtual machine created with the resource manager deployment model in Azure."
 	services="virtual-machines"
 	documentationCenter="python"
-	authors="huguesv"
+	authors="crwilcox"
 	manager="wpickett"
 	editor=""
-	tags=¡°azure-service-management,azure-resource-manager"/>
+	tags=â€œazure-service-management,azure-resource-manager"/>
 
 <tags
 	ms.service="virtual-machines"
-	ms.date="05/20/2015"
+	ms.date="11/10/2015"
 	wacn.date=""/>
 
 # Jupyter Notebook on Azure
@@ -238,7 +238,7 @@ can be shared with other Jupyter users.  The Jupyter Notebook can be used as a
 local application, but it is ideally suited for cloud deployments on Azure
 
 The core features of Jupyter are also available inside Visual Studio via the
-[Python Tools for Visual Studio][](PTVS). PTVS is a free and open-source plug-in
+[Python Tools for Visual <!-- deleted by customization Studio][] (PTVS) --><!-- keep by customization: begin --> Studio][](PTVS) <!-- keep by customization: end -->. PTVS is a free and open-source plug-in
 from Microsoft that turns Visual Studio into an advanced Python development
 environment that includes an advanced editor with IntelliSense, debugging,
 profiling and parallel computing integration.

@@ -4,14 +4,12 @@
    services="traffic-manager"
    documentationCenter="na"
    authors="joaoma"
-   manager="adinah"
+   manager="carmonm"
    editor="tysonn" />
 <tags
 	ms.service="traffic-manager"
-	ms.date="08/19/2015"
+	ms.date="11/12/2015"
 	wacn.date=""/>
-
-
 
 
 
@@ -202,9 +200,9 @@ This sequence can also be piped:
 	PS C:\> Get-AzureTrafficManagerProfile –Name MyProfile -ResourceGroupName MyAzureResourceGroup | Remove-AzureTrafficManagerProfile [-Force]
 
 
-## See Also
+## Next steps
 
-[What is Traffic Manager?](/documentation/articles/traffic-manager-overview)
+[Traffic Manager monitoring](/documentation/articles/traffic-manager-monitoring)
 
-[Getting started with Azure cmdlets](https://msdn.microsoft.com/zh-cn/library/jj554332.aspx)
+[Traffic Manager performance considerations](/documentation/articles/traffic-manager-performance-considerations)
  

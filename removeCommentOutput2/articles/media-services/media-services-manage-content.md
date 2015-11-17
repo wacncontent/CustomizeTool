@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="09/07/2015"
+	ms.date="11/09/2015"
 	wacn.date=""/>
 
 
@@ -202,7 +202,6 @@ Some considerations apply:
 
 - Make sure the video has been published.
 - The **MEDIA SERVICES CONTENT PLAYER** plays from the default streaming endpoint. If you want to play from a non-default streaming endpoint, use another player. For example, [Azure Media Services Player](http://amsplayer.azurewebsites.net/azuremediaplayer.html).
- 
 
 
 ![AMSPlayer][AMSPlayer]

@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="app-service-web"
-	ms.date="07/02/2015"
+	ms.date="10/30/2015"
 	wacn.date=""/>
 
 
@@ -107,7 +107,6 @@ Follow these steps to create an Azure web app, enable Git publishing, and then e
 	>To enable WebSockets using the [Azure Management Portal](https://manage.windowsazure.cn), select the Configure page for your  Website, select 'ON' for the Web Sockets entry, and then click Save.
 	>	
 	>![websockets](./media/web-sites-nodejs-chat-app-socketio/websockets.png)
-	
 5. To view the web app on Azure, use the following command to launch your web browser and navigate to the hosted web app:
 
 		azure site browse
@@ -122,7 +121,7 @@ Socket.IO applications can be scaled out by using an __adapter__ to distribute m
 
 ###Create a Redis cache
 
-Perform the steps in [Create a cache in Azure Redis Cache](https://msdn.microsoft.com/zh-cn/library/dn690516.aspx) to create a new cache.
+Perform the steps in [Create a cache in Azure Redis Cache](/documentation/articles/cache-dotnet-how-to-use-azure-redis-cache/#create-a-cache) to create a new cache.
 
 > [AZURE.NOTE] Save the __Host name__ and __Primary key__ for your cache, as these will be needed in the next steps.
 
@@ -148,7 +147,7 @@ Perform the steps in [Create a cache in Azure Redis Cache](https://msdn.microsof
 
 	> [AZURE.NOTE] While the __socket.io-redis__ adapter can communicate directly to Redis, the current version does not support the authentication required by Azure Redis cache. So the initial connection is created using the __redis__ module, then the client is passed to the __socket.io-redis__ adapter.
 	>
-	> While Azure Redis Cache supports secure connections using port 6380, the modules used in this example do not support secure connections as of 7/14/2014. The above code uses the default, unsecure port of 6380.
+	> While Azure Redis Cache supports secure connections using port 6380, the modules used in this example do not support secure connections as of 7/14/2014. The above code uses the default, unsecure port of 6379.
 
 3. Save the modified __app.js__
 

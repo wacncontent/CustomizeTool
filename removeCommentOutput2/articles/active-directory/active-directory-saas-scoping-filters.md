@@ -1,15 +1,15 @@
 <properties
-	pageTitle="Attribute-based app provisioning with scoping filters"
+	pageTitle="Attribute-based app provisioning with scoping filters | Windows Azure"
 	description="Learn how to use scoping filters to prevent objects in apps that support automated user provisioning from actually being provisioned if an object doesn’t satisfy your business requirements."
 	services="active-directory"
 	documentationCenter=""
 	authors="markusvi"
-	manager="swadhwa"
+	manager="stevenpo"
 	editor=""/>
 
 <tags
 	ms.service="active-directory"
-	ms.date="07/27/2015"
+	ms.date="10/20/2015"
 	wacn.date=""/>
 
 
@@ -31,7 +31,7 @@ The objective of this section is to explain how to use scoping filters to define
 
 Scoping filters are defined by one or more **scope groups**, each of which hold one or more **clauses**. To see the clauses for a particular scope group, expand it by clicking the arrow to the left of the group name.
 
-A **clause** determines which users are allowed to pass through the scoping filter by evaluating each user’s attributes. For example, you might have one clause that requires that a user’s ‘state’ attribute be equal to New York, which means that only your New York users will be provisioned into the application.
+A **clause** determines which users are allowed to pass through the scoping filter by evaluating each user’s attributes. For example, you might have one clause that requires that a user’s ‘state’ attribute be equal to Beijing, which means that only your Beijing users will be provisioned into the application.
 
 ![Scoping Group Name][2] 
 

@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="cloud-services"
-	ms.date="08/03/2015"
+	ms.date="10/28/2015"
 	wacn.date=""/>
 
 # Install .NET on a Cloud Service Role 

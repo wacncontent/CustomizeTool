@@ -9,10 +9,12 @@
 
 <tags
 	ms.service="storage"
-	ms.date="09/28/2015"
+	ms.date="10/26/2015"
 	wacn.date=""/>
 
 # How to use Azure File storage with Windows
+
+[AZURE.INCLUDE [storage-selector-file-include](../includes/storage-selector-file-include.md)]
 
 ## Overview
 
@@ -31,6 +33,12 @@ For information on scalability targets for File storage, see [Azure Storage Scal
 [AZURE.INCLUDE [storage-dotnet-client-library-version-include](../includes/storage-dotnet-client-library-version-include.md)]
 
 [AZURE.INCLUDE [storage-file-concepts-include](../includes/storage-file-concepts-include.md)]
+
+## Video: Using Azure File storage with Windows
+
+Here's a video that demonstrates how to create and use Azure File shares on Windows.
+
+> [AZURE.VIDEO azure-file-storage-with-windows]
 
 ## About this tutorial
 
@@ -127,6 +135,7 @@ When a client accesses File storage, the SMB version used depends on the SMB ver
 | Windows 8              | SMB 3.0              |
 | Windows Server 2012    | SMB 3.0              |
 | Windows Server 2012 R2 | SMB 3.0              |
+| Windows 10             | SMB 3.0              |
 
 ### Mount the file share from an Azure virtual machine running Windows
 
@@ -174,7 +183,7 @@ To mount the file share from an on-premises client, you must first take these st
 - Install a version of Windows which supports SMB 3.0. Windows will leverage SMB 3.0 encryption to securely transfer data between your on-premises client and the Azure file share in the cloud. 
 - Open Internet access for port 445 (TCP Outbound) in your local network, as is required by the SMB protocol. 
 
-[AZURE.NOTE] Some Internet service providers may block port 445, so you may need to check with your service provider.
+> [AZURE.NOTE] Some Internet service providers may block port 445, so you may need to check with your service provider.
 
 ## Develop with File storage
 
@@ -457,7 +466,7 @@ You can enable metrics for File storage from the Azure Management Portal. You ca
 
 	We currently do not support AD-based authentication or ACLs, but do have it in our list of feature requests. For now, the Azure Storage account keys are used to provide authentication to the file share. We do offer a workaround using shared access signatures (SAS) via the REST API or the client libraries. Using SAS, you can generate tokens with specific permissions that are valid over a specified time interval. For example, you can generate a token with read-only access to a given file. Anyone who possesses this token while it is valid has read-only access to that file. 
 
-	SAS is only supported via the REST API or client libraries. When you mount the file share via the SMB protocol,  you can’t use a SAS to delegate access to its contents.
+	SAS is only supported via the REST API or client libraries. When you mount the file share via the SMB protocol,  you canâ€™t use a SAS to delegate access to its contents.
 
 2. **Are Azure File shares visible publicly over the Internet, or are they only reachable from Azure?**
  
@@ -473,7 +482,7 @@ You can enable metrics for File storage from the Azure Management Portal. You ca
 
 5. **Does connecting from on-premises virtual machines to Azure File Storage depend on Azure ExpressRoute?** 
 
-	No. If you don’t have ExpressRoute, you can still access the file share from on-premises as long as you have port 445 (TCP Outbound) open for Internet access. However, you can use ExpressRoute with File storage if you like.
+	No. If you donâ€™t have ExpressRoute, you can still access the file share from on-premises as long as you have port 445 (TCP Outbound) open for Internet access. However, you can use ExpressRoute with File storage if you like.
 
 6. **Is a "File Share Witness" for a failover cluster one of the use cases for Azure File Storage?**
 
@@ -497,7 +506,7 @@ You can enable metrics for File storage from the Azure Management Portal. You ca
 
 11. **Is it possible to specify read-only or write-only permissions on folders within the share?**
 
-	You don’t have this level of control over permissions if you mount the file share via SMB. However, you can achieve this by creating a shared access signature (SAS) via the REST API or client libraries.
+	You donâ€™t have this level of control over permissions if you mount the file share via SMB. However, you can achieve this by creating a shared access signature (SAS) via the REST API or client libraries.  
 
 12. **My performance was slow when trying to unzip files into in File storage. What should I do?**
 
@@ -507,8 +516,9 @@ You can enable metrics for File storage from the Azure Management Portal. You ca
 
 See these links for more information about Azure File storage.
 
-### Conceptual articles
+### Conceptual articles and videos
 
+- [Azure Files Storage: a frictionless cloud SMB file system for Windows and Linux](https://azure.microsoft.com/documentation/videos/azurecon-2015-azure-files-storage-a-frictionless-cloud-smb-file-system-for-windows-and-linux/)
 - [How to use Azure File Storage with Linux](/documentation/articles/storage-how-to-use-files-linux)
 
 ### Tooling support for File storage

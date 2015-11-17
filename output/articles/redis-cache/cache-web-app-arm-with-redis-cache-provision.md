@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="app-service"
-	ms.date="07/08/2015"
+	ms.date="10/29/2015"
 	wacn.date=""/>
 
 # Create a Web App plus Redis Cache using a template
@@ -30,7 +30,7 @@ In this template, you will deploy:
 
 To run the deployment automatically, click the following button:
 
-![Deploy to Azure](http://azuredeploy.net/deploybutton.png)
+<!-- deleted by customization [![Deploy --><!-- keep by customization: begin --> ![Deploy <!-- keep by customization: end --> to <!-- deleted by customization Azure](http://azuredeploy.net/deploybutton.png)](https://manage.windowsazure.cn/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F201-web-app-with-redis-cache%2Fazuredeploy.json) --><!-- keep by customization: begin --> Azure](http://azuredeploy.net/deploybutton.png) <!-- keep by customization: end -->
 
 ## Parameters to specify
 
@@ -46,7 +46,7 @@ To run the deployment automatically, click the following button:
 
 ### Redis Cache
 
-Creates the Azure Redics Cache that is used with the web app. The name of the cache is specified in the **redisCacheName** parameter.
+Creates the Azure Redis Cache that is used with the web app. The name of the cache is specified in the **redisCacheName** parameter.
 
 The template creates the cache in the same location as the web app, which is recommended for best performance. 
 

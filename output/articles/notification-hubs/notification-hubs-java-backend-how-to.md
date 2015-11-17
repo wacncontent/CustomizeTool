@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="notification-hubs"
-	ms.date="07/17/2015"
+	ms.date="11/01/2015"
 	wacn.date=""/>
 
 # How to use Notification Hubs from Java
@@ -295,8 +295,14 @@ In this topic we showed how to create a simple Java REST client for Notification
 
 [Java SDK]: https://github.com/Azure/azure-notificationhubs-java-backend
 [Get started tutorial]: /documentation/articles/notification-hubs-ios-get-started/
+<!-- deleted by customization
+[Get Started with Notification Hubs]: http://azure.microsoft.com/manage/services/notification-hubs/getting-started-windows-dotnet/
+[Send breaking news]: http://azure.microsoft.com/manage/services/notification-hubs/breaking-news-dotnet/
+-->
+<!-- keep by customization: begin -->
 [Get Started with Notification Hubs]: /documentation/articles/notification-hubs-windows-store-dotnet-get-started
 [Send breaking news]: /documentation/articles/notification-hubs-windows-store-dotnet-send-breaking-news
+<!-- keep by customization: end -->
 [Send localized breaking news]: /documentation/articles/notification-hubs-windows-store-dotnet-send-localized-breaking-news
 [Send notifications to authenticated users]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-push-notifications-app-users/
 [Send cross-platform notifications to authenticated users]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-push-notifications-app-users-xplat-mobile-services/

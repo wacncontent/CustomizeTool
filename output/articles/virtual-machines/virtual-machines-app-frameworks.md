@@ -10,12 +10,17 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.date="07/02/2015"
+	ms.date="10/21/2015"
 	wacn.date=""/>
 
 # Create application frameworks by using templates
 
-Use this stuff to create great things, quickly.
+Use this stuff to create great things, quickly. In addition to these templates, you can search through templates](https://azure.microsoft.com/documentation/templates/).
+<!-- deleted by customization
+
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] classic deployment model.
+
+-->
 
 | Template | Description | View the template | Deploy it right now |
 |:---|:---|:---:|:---:|

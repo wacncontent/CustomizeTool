@@ -1,34 +1,3 @@
-new docs: 30, word count: {word_count_TODO}
-articles/site-recovery/site-recovery-active-directory.md
-articles/site-recovery/site-recovery-best-practices.md
-articles/site-recovery/site-recovery-capacity-planning-for-hyper-v-replication.md
-articles/site-recovery/site-recovery-components.md
-articles/site-recovery/site-recovery-create-recovery-plans.md
-articles/site-recovery/site-recovery-deploy-with-powershell.md
-articles/site-recovery/site-recovery-failback-azure-to-vmware.md
-articles/site-recovery/site-recovery-failover.md
-articles/site-recovery/site-recovery-faq.md
-articles/site-recovery/site-recovery-hyper-v-site-to-azure.md
-articles/site-recovery/site-recovery-manage-registration-and-protection.md
-articles/site-recovery/site-recovery-migrate-aws-to-azure.md
-articles/site-recovery/site-recovery-migrate-azure-to-azure.md
-articles/site-recovery/site-recovery-monitoring-and-troubleshooting.md
-articles/site-recovery/site-recovery-network-design.md
-articles/site-recovery/site-recovery-network-mapping.md
-articles/site-recovery/site-recovery-overview.md
-articles/site-recovery/site-recovery-performance-and-scaling-testing-on-premises-to-on-premises.md
-articles/site-recovery/site-recovery-runbook-automation.md
-articles/site-recovery/site-recovery-single-vmm.md
-articles/site-recovery/site-recovery-sql.md
-articles/site-recovery/site-recovery-storage-mapping.md
-articles/site-recovery/site-recovery-understanding-site-to-azure-protection.md
-articles/site-recovery/site-recovery-vmm-san.md
-articles/site-recovery/site-recovery-vmm-to-azure.md
-articles/site-recovery/site-recovery-vmm-to-vmm-with-powershell-resource-manager.md
-articles/site-recovery/site-recovery-vmm-to-vmm.md
-articles/site-recovery/site-recovery-vmware-to-azure.md
-articles/site-recovery/site-recovery-vmware-to-vmware.md
-articles/site-recovery/site-recovery-workload.md
+new docs: 0, word count: {word_count_TODO}
 
-new includes: 1
-includes/site-recovery-limits.md
+new includes: 0

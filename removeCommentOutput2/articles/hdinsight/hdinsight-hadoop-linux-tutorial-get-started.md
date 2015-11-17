@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties
    	pageTitle="Linux tutorial: Get started with Hadoop and Hive | Windows Azure"
    	description="Follow this Linux tutorial to get started using Hadoop in HDInsight. Learn how to provision Linux clusters, and query data with Hive."
@@ -12,7 +10,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="10/05/2015"
+	ms.date="11/16/2015"
 	wacn.date=""/>
 
 # Hadoop tutorial: Get started using Hadoop with Hive in HDInsight on Linux (preview) 
@@ -140,14 +138,13 @@ You can connect to an HDInsight cluster on Linux from a Linux computer or a Wind
 
 		ssh <username>@<clustername>-ssh.azurehdinsight.cn
 
-	Because you provisioned a cluster with the Quick Create option, the default SSH user name is **hdiuser**. So, the command must be:
-
-		ssh hdiuser@myhdinsightcluster-ssh.azurehdinsight.cn
+	Replace &lt;username> with the SSH user name you used when creating the cluster. Replace &lt;clustername> with the name of the cluster
 
 2. When prompted, enter the password that you provided while provisioning the cluster. After you are successfully connected, the prompt will change to the following:
 
-		hdiuser@headnode-0:~$
+		username@hn0-clustername:~$
 
+    > [AZURE.NOTE] The `@hn0-clustername` portion of the prompt may be different on your cluster.
 
 **To connect from a Windows-based computer**
 
@@ -159,9 +156,9 @@ You can connect to an HDInsight cluster on Linux from a Linux computer or a Wind
 
 3. To save the connection information for future use, enter a name for this connection under **Saved Sessions**, and then click **Save**. The connection will be added to the list of saved sessions.
 
-4. Click **Open** to connect to the cluster. When prompted for the user name, enter **hdiuser**. For the password, enter the password you specified while provisioning the cluster. After you are successfully connected, the prompt will change to the following:
+4. Click **Open** to connect to the cluster. When prompted for the user name, enter the SSH user name you used when creating the cluster. For the password, enter the password you specified when creating the cluster. After you are successfully connected, the prompt will change to the following:
 
-		hdiuser@headnode-0:~$
+		username@hn0-clustername:~$
 
 ### To run a Hive job
 
@@ -191,7 +188,7 @@ Once you are connected to the cluster via SSH, use the following commands to run
 
 	This returns the following output:
 
-		Query ID = hdiuser_20150116000202_cceb9c6b-4356-4931-b9a7-2c373ebba493
+		Query ID = username_20150116000202_cceb9c6b-4356-4931-b9a7-2c373ebba493
 		Total jobs = 1
 		Launching Job 1 out of 1
 		Number of reduce tasks not specified. Estimated from input data size: 1

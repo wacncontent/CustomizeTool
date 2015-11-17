@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Steps for configuring an ExpressRoute circuit | Windows Azure"
+   pageTitle="Steps for configuring an ExpressRoute circuit using PowerShell| Windows Azure"
    description="This article walks you through the steps for creating and provisioning an ExpressRoute circuit. This article also shows you how to check the status, update, or delete and deprovision your circuit."
    documentationCenter="na"
    services="expressroute"
@@ -9,21 +9,26 @@
    tags="azure-service-management"/>
 <tags
 	ms.service="expressroute"
-	ms.date="10/13/2015"
+	ms.date="11/05/2015"
 	wacn.date=""/>
 
-# Create and modify an ExpressRoute circuit
+# Create and modify an ExpressRoute circuit using PowerShell
 
-This article walks you through the steps to create an ExpressRoute circuit using PowerShell cmdlets and the classic deployment model. The steps below will also show you how to check the status, update, or delete and deprovision an ExpressRoute circuit. 
+> [AZURE.SELECTOR]
+[PowerShell - Classic](/documentation/articles/expressroute-howto-circuit-classic)
+[PowerShell - Resource Manager](/documentation/articles/expressroute-howto-circuit-arm)
 
->[AZURE.IMPORTANT] It's important to know that Azure currently works with two deployment models: Resource Manager, and classic. Before you begin your configuration, make sure that you understand the deployment models and tools. For information about the deployment models, see [Azure deployment models](/documentation/articles/azure-classic-rm).
+This article walks you through the steps to create an ExpressRoute circuit using PowerShell cmdlets and the Classic deployment model. The steps below will also show you how to check the status, update, or delete and deprovision an ExpressRoute circuit. 
+
+[AZURE.INCLUDE [vpn-gateway-sm-rm](../includes/vpn-gateway-sm-rm-include.md)] 
+
 
 ## Configuration prerequisites
 
-- You will need the latest version of the Azure PowerShell modules. You can download the latest PowerShell module from the PowerShell section of the [Azure Downloads page](/downloads). Follow the instructions on the [How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure) page for step-by-step guidance on how to configure your computer to use the Azure PowerShell modules.
+- You will need the latest version of the Azure PowerShell modules. You can download the latest PowerShell module from the PowerShell section of the [Azure Downloads <!-- deleted by customization page](http://azure.microsoft.com/downloads) --><!-- keep by customization: begin --> page](/downloads) <!-- keep by customization: end -->. Follow the instructions on the [How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure) page for step-by-step guidance on how to configure your computer to use the Azure PowerShell modules.
 - Make sure that you have reviewed the [Prerequisites](/documentation/articles/expressroute-prerequisites) page and the [Workflows](/documentation/articles/expressroute-workflows) page before you begin configuration.
 
-## Create and provision an ExpressRoute circuit
+## To create and provision an ExpressRoute circuit
 
 1. **Import the PowerShell module for ExpressRoute.**
 
@@ -34,7 +39,7 @@ This article walks you through the steps to create an ExpressRoute circuit using
 
 2. **Get the list of providers, locations, and bandwidths supported.**
 
-	Before creating an ExpressRoute circuit, you will need the list of connectivity providers, supported locations, and bandwidth options. The PowerShell cmdlet *Get-AzureDedicatedCircuitServiceProvider* returns this information, which you’ll use in later steps.
+	Before creating an ExpressRoute circuit, you will need the list of connectivity providers, supported locations, and bandwidth options. The PowerShell cmdlet *Get-AzureDedicatedCircuitServiceProvider* returns this information, which youâ€™ll use in later steps.
 
 		PS C:\> Get-AzureDedicatedCircuitServiceProvider
 
@@ -60,7 +65,7 @@ This article walks you through the steps to create an ExpressRoute circuit using
 		InterCloud           Washington                     200Mbps:200, 500Mbps:500, 1Gbps:1000, 10Gbps:10000                                                                                                                                                           
 		                     DC,London,Singapore,Amsterdam                                                                                                                                                                                                               
 		Internet Solutions   London,Amsterdam               10Mbps:10, 50Mbps:50, 100Mbps:100, 500Mbps:500, 1Gbps:1000                                                                                                                                                   
-		– Cloud Connect                                                                                                                                                                                                                                                  
+		â€“ Cloud Connect                                                                                                                                                                                                                                                  
 		Interxion            Amsterdam                      200Mbps:200, 500Mbps:500, 1Gbps:1000, 10Gbps:10000                                                                                                                                                           
 		Level 3              London,Shanghai,Dallas,Seattle, 200Mbps:200, 500Mbps:500, 1Gbps:1000, 10Gbps:10000                                                                                                                                                           
 		Communications -     Silicon Valley,Washington DC                                                                                                                                                                                                                
@@ -188,9 +193,9 @@ This article walks you through the steps to create an ExpressRoute circuit using
 
 7. **Link a VNet to an ExpressRoute circuit.** 
 
-	Next, link a VNet to your ExpressRoute circuit. Refer to [Linking ExpressRoute circuits to vnets](/documentation/articles/expressroute-howto-linkvnet-classic) for step by step instructions. If you need to create a virtual network for ExpressRoute, see [Creating a virtual network for ExpressRoute](/documentation/articles/expressroute-howto-createvnet-classic) for instructions.
+	Next, link a VNet to your ExpressRoute circuit. Refer to [Linking ExpressRoute circuits to VNets](/documentation/articles/expressroute-howto-linkvnet-classic) for step by step instructions. If you need to create a virtual network for ExpressRoute, see [Creating a virtual network for ExpressRoute](/documentation/articles/expressroute-howto-createvnet-classic) for instructions.
 
-##  How to get the status of an ExpressRoute circuit
+##  To get the status of an ExpressRoute circuit
 
 You can retrieve this information at any time using the *Get-AzureCircuit* cmdlet. Making the call without any parameters will list all circuits. 
 
@@ -232,7 +237,7 @@ You can get detailed descriptions of all the parameters by running the following
 
 		get-help get-azurededicatedcircuit -detailed 
 
-##  Modifying an ExpressRoute circuit
+##  To modify an ExpressRoute circuit
 
 You can modify certain properties of an ExpressRoute circuit without impacting connectivity. 
 
@@ -303,7 +308,7 @@ Your circuit will have been sized up on the Microsoft side. You must contact you
 
 >[AZURE.IMPORTANT] You cannot reduce the bandwidth of an ExpressRoute circuit without disruption. Downgrading bandwidth will require you to deprovision the ExpressRoute circuit, and then re-provision a new ExpressRoute circuit.
 
-##  Deleting and deprovisioning an ExpressRoute circuit
+##  To delete and deprovision an ExpressRoute circuit
 
 You can delete your ExpressRoute circuit by running the following command:
 

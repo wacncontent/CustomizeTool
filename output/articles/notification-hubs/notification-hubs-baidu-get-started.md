@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="notification-hubs"
-	ms.date="10/19/2015"
+	ms.date="11/03/2015"
 	wacn.date=""/>
 
 # Get started with Notification Hubs using Baidu

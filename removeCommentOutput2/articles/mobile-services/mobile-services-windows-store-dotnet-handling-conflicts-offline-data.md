@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.date="07/23/2015"
+	ms.date="11/12/2015"
 	wacn.date=""/>
 
 

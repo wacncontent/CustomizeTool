@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="09/28/2015"
+	ms.date="11/03/2015"
 	wacn.date=""/>
 
 
@@ -32,7 +32,14 @@ Accessing Media Services requires two associated accounts:
 -   **A Media Services account**. Your account gives you access to a set of cloud-based Media Services that are available in Azure. A Media Services account does not store actual media content. Instead it stores metadata about the media content and media processing jobs in your account. At the time you create the account, you select an available Media Services region. The region you select is a data center that stores the metadata records for your account.
 
     > [AZURE.NOTE]
-    > Available Media Services regions include the following: China North, China East. Media Services does not use affinity groups.
+    > Available Media Services (AMS) regions include the following: China North, <!-- deleted by customization West Europe, --> China <!-- deleted by customization North, China East, China North, China East, China East, Japan --> East. Media Services does not use affinity groups.
+    >
+	> AMS is now also available in the following data centers: Brazil South, India West, India South and India Central. You can now use the Azure Management Portal to [create Media Service accounts](/documentation/articles/media-services-create-account#create-a-media-services-account-using-quick-create) and perform various tasks described [here](/documentation/services/media-services/). However, Live Encoding is not enabled in these data centers. Further, not all types of Encoding Reserved Units are available in these data centers.
+	>
+	>- Brazil South:                                          Only Standard and Basic Encoding Reserved Units are available
+	>- India West, India South and India Central:             Only Basic Encoding Reserved Units are available
+
+
 -   **An associated storage account**. Your storage account is an Azure storage account that is associated with your Media Services account. The storage account provides blob storage for media files, and must be located in the same geographic region as the Media Services account. When you create a Media Services account, you can either choose an existing storage account in the same region, or you can create a new storage account in the same region. If you delete a Media Services account, the blobs in your related storage account are not deleted.
 
 <a id="quick"></a>
@@ -63,6 +70,19 @@ Accessing Media Services requires two associated accounts:
 	When you double-click the account name, the **Quick Start** page is displayed by default. This page enables you to do some management tasks that are also available on other pages of the portal. For example, you can upload a video file from this page, or do it from the **CONTENT** page.
 
 	In addition, you can view code that uses the Azure Media Services SDK to accomplish the following tasks: upload, encode, and publish videos. You can click one of the links under the **WRITE SOME CODE** section, copy the code  and use it in your application.
+
+<!-- deleted by customization
+
+
+##Media Services learning paths
+
+[AZURE.INCLUDE [media-services-learning-paths-include](../includes/media-services-learning-paths-include.md)]
+
+##Provide feedback
+
+-->
+[AZURE.INCLUDE [media-services-user-voice-include](../includes/media-services-user-voice-include.md)]
+
 
 ## Next steps
 

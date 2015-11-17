@@ -1,3 +1,11 @@
-updated docs: 0
+updated docs: 5
+articles/event-hubs/event-hubs-csharp-ephcs-getstarted.md
+articles/event-hubs/event-hubs-csharp-storm-getstarted.md
+articles/event-hubs/event-hubs-java-ephcs-getstarted.md
+articles/event-hubs/event-hubs-java-storm-getstarted.md
+articles/event-hubs/event-hubs-what-is-event-hubs.md
 
-updated includes: 0
+updated includes: 3
+includes/service-bus-event-hubs-get-started-receive-ephcs.md
+includes/service-bus-event-hubs-get-started-receive-storm.md
+includes/service-bus-event-hubs-get-started-send-java.md

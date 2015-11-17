@@ -1,3 +1,8 @@
-updated docs: 0
+updated docs: 4
+articles/expressroute/expressroute-faqs.md
+articles/expressroute/expressroute-howto-circuit-classic.md
+articles/expressroute/expressroute-howto-linkvnet-classic.md
+articles/expressroute/expressroute-howto-routing-classic.md
 
-updated includes: 0
+updated includes: 1
+includes/expressroute-limits.md

@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="azure-resource-manager"
-	ms.date="10/07/2015"
+	ms.date="10/26/2015"
 	wacn.date=""/>
 
 # Understanding Resource Manager deployment and classic deployment
@@ -155,6 +155,8 @@ There are some important considerations when working Virtual Machines.
 - Virtual machines deployed with the classic deployment model cannot be included in a virtual network deployed with Resource Manager.
 - Virtual machines deployed with the Resource Manager deployment model must be included in a virtual network.
 - Virtual machines deployed with the classic deployment model don't have to be included in a virtual network.
+
+If you can afford downtime for your Virtual Machines, you can transition them from classic deployment to Resource Manager with the [ASM2ARM PowerShell scripts](https://github.com/fullscale180/asm2arm). 
 
 For a list of equivalent Azure CLI commands when transitioning from classic deployment to Resource Manager, see [Equivalent Resource Manager and Service Management commands for VM operations](/documentation/articles/xplat-cli-azure-manage-vm-asm-arm).
 

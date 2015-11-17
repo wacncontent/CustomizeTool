@@ -1,3 +1,5 @@
-updated docs: 0
+updated docs: 2
+articles/cache/cache-dotnet-how-to-use-in-role.md
+articles/cache/cache-dotnet-how-to-use-service.md
 
 updated includes: 0

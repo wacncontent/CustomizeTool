@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties
 	pageTitle="HBase tutorial: Get started with HBase in Hadoop | Windows Azure"
 	description="Follow this HBase tutorial to get started using Apache HBase with Hadoop in HDInsight. Create tables from the HBase shell and query them using Hive."
@@ -12,7 +10,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="08/18/2015"
+	ms.date="11/16/2015"
 	wacn.date=""/>
 
 
@@ -45,8 +43,9 @@ Before you begin this HBase tutorial, you must have the following:
 	- **Cluster Name**: Enter a name to identify this cluster.
 	- **Cluster Type**: Select **HBase**.
 	- **Cluster Operating System**: Select **Ubuntu**.
-	- **Subscription**: select your Azure subscription used for provisioning this cluster.
-	- **Resource Group**: add or select an Azure resource group.  For more information, see [Azure Resource Manager Overview](/documentation/articles/resource-group-overview).
+	- **Version**: Select the version of the cluster that you want to use. For more information on what is included with different HDInsight versions, see [HDInsight cluster versions](/documentation/articles/hdinsight-component-versioning).
+    - **Subscription**: If you have multiple Azure subscriptions, select the one you want to use for this cluster.
+	- **Resource Group**: Add or select an Azure resource group.  For more information, see [Azure Resource Manager Overview](/documentation/articles/resource-group-overview).
 	- **Credentials**.  Enter a password for the HTTP web service user. The default username is **admin**. You must also enter an **SSH Username** and either a **PASSWORD** or **PUBLIC KEY**, which will be used to authenticate the SSH user. Using a public key is the recommended approach. For more information on using SSH with HDInsight, see one of the following articles:
 
 		- [Use SSH with Linux-based Hadoop on HDInsight from Linux, Unix, or OS X](/documentation/articles/hdinsight-hadoop-linux-use-ssh-unix)
@@ -54,11 +53,11 @@ Before you begin this HBase tutorial, you must have the following:
 	Click **Select** to save the changes.
 	- **Data Source**: select an existing or create a new Azure Storage account to be used as the default file system for the cluster. The storage account location determines the cluster location.  An HDInsight cluster and the dependent Azure storage account must be located in the same data center.
 	The default name for **Default Container** is the cluster name.  
-	- **Note Pricing Tiers:** select the number of region servers for the HBase cluster.
+	- **Node Pricing Tiers:** select the number of region servers for the HBase cluster.
 
 		> [AZURE.WARNING] For high availability of HBase services, you must provision a cluster that contains at least **three** nodes. This ensures that, if one node goes down, the HBase data regions are available on other nodes.
 
-	- **Optional Configuration**: select the cluster version, configure Azure virtual network, configure Hive/Oozie metastore, configure Script actions, and add additional storage accounts.
+	- **Optional Configuration**: select the cluster version, configure Azure virtual network, configure Script actions, and add additional storage accounts.
 
 4. Click **Create**.
 
@@ -89,7 +88,7 @@ It will make more sense after you finish the next procedure.
 4. From the Basic options for your PuTTY session screen, enter the following values:
 
 	- Host Name: the SSH address of your HDInsight server in the Host name (or IP address) field. The SSH address is your cluster name, then **-ssh.azurehdinsight.cn**. For example, *mycluster-ssh.azurehdinsight.cn*.
-	- Port: 22. The ssh port on the headnode0 is 22.  See [Information about using HDInsight on Linux (preview)](/documentation/articles/hdinsight-hadoop-linux-information#remote-access-to-services).
+	- Port: 22. The ssh port on the head node 0 is 22.  See [Information about using HDInsight on Linux (preview)](/documentation/articles/hdinsight-hadoop-linux-information#remote-access-to-services).
 4. Click **Open** to connect to the cluster.
 5. When prompted, enter the user that you entered when you created the cluster. If you provided a password for the user, you will be prompted to enter it also.
 6. Run the following command:
@@ -234,7 +233,7 @@ SSH can also be used to tunnel local requests, such as web requests, to the HDIn
 4. From the Basic options for your PuTTY session screen, enter the following values:
 
 	- **Host Name**: the SSH address of your HDInsight server in the Host name (or IP address) field. The SSH address is your cluster name, then **-ssh.azurehdinsight.cn**. For example, *mycluster-ssh.azurehdinsight.cn*.
-	- **Port**: 22. The ssh port on the headnode0 is 22.  
+	- **Port**: 22. The ssh port on the head node 0 is 22.  
 5. In the **Category** section to the left of the dialog, expand **Connection**, expand **SSH**, and then click **Tunnels**.
 6. Provide the following information on the Options controlling SSH port forwarding form:
 
@@ -250,7 +249,7 @@ SSH can also be used to tunnel local requests, such as web requests, to the HDIn
 2. Enter your cluster user account credentials twice.
 3. From the left menu, click **zookeeper**.
 4. Click one of the three **ZooKeeper Server** links from the Summary list.
-5. Copy **Hostname**. For example, zookeepernode0.zookeepernode-0-xxxxxxxxxxxxxxxxxxxx.c7.internal.chinacloudapp.cn.
+5. Copy **Hostname**. For example, zk0-CLUSTERNAME.xxxxxxxxxxxxxxxxxxxx.cx.internal.chinacloudapp.cn.
 
 **To configure a client program (Firefox) and check cluster status**
 

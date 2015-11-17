@@ -8,12 +8,14 @@
    editor="tysonn" />
 <tags
 	ms.service="automation"
-	ms.date="08/18/2015"
+	ms.date="10/26/2015"
 	wacn.date=""/>
 
 # Schedules in Azure Automation
 
 Automation Schedules are used to schedule runbooks to run automatically.  This could be either a single date and time for the runbook to run once.  Or it could be a recurring schedule to start the runbook multiple times.  Schedules are typically not accessed from runbooks.
+
+>[AZURE.NOTE]  Schedules do not currently support Azure Automation DSC configurations.
 
 ## Windows PowerShell Cmdlets
 
@@ -39,6 +41,15 @@ The cmdlets in the following table are used to create and manage variables with 
 1. Click **Add Schedule**.
 1. Complete the wizard and click the checkbox to save the new variable.
 
+<!-- deleted by customization
+### To create a new schedule with the Azure preview portal
+
+1. From your automation account, click the **Assets** part to open the **Assets** blade.
+1. Click the **Schedules** part to open the **Schedules** blade.
+1. Click **Add a Schedule** at the top of the blade.
+1. Complete the form and click **Create** to save the new schedule.
+
+-->
 ### To create a new schedule with Windows PowerShell
 
 The [New-AzureAutomationSchedule](http://msdn.microsoft.com/zh-cn/library/dn690271.aspx) cmdlet creates a new schedule and sets the value for an existing schedule.  The following sample Windows PowerShell commands create a new schedule called My Daily Schedule that starts on tomorrow at noon and fires every day one year:

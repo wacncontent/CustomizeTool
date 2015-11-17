@@ -8,7 +8,7 @@
    editor="tysonn"/>
 <tags
 	ms.service="application-gateway"
-	ms.date="09/21/2015"
+	ms.date="11/10/2015"
 	wacn.date=""/>
 
 # Create, start, or delete an Application Gateway
@@ -16,9 +16,9 @@
 Application Gateway is load balancer layer 7. It provides failover, performance routing HTTP requests between different servers, whether they are on the cloud or on premise. Application gateway has the following application delivery features: HTTP load balancing, Cookie based session affinity, SSL offload. 
 
 > [AZURE.SELECTOR]
-- [Azure Classic Powershell steps](/documentation/articles/application-gateway-create-gateway)
-- [Azure Resource Manager Powershell steps](/documentation/articles/application-gateway-create-gateway-arm)
-- [Azure Resource Manager template steps](/documentation/articles/application-gateway-create-gateway-arm-template)
+- [Azure Classic PowerShell](/documentation/articles/application-gateway-create-gateway)
+- [Azure Resource Manager PowerShell](/documentation/articles/application-gateway-create-gateway-arm)
+- [Azure Resource Manager template](/documentation/articles/application-gateway-create-gateway-arm-template)
 
 
 <BR>
@@ -413,4 +413,7 @@ If you want to configure an Application Gateway to use with ILB, see [Create an 
 
 If you want more information about load balancing options in general, see:
 
+<!-- deleted by customization
+- [Azure Load Balancer](/documentation/services/load-balancer/)
+-->
 - [Azure Traffic Manager](/documentation/services/traffic-manager/)

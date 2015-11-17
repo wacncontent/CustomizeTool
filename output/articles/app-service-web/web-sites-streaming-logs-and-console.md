@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties 
 	pageTitle="Streaming logs and console" 
 	description="Streaming logs and console overview" 
@@ -11,7 +9,7 @@
 
 <tags
 	ms.service="app-service-web"
-	ms.date="08/10/2015"
+	ms.date="11/12/2015"
 	wacn.date=""/>
 
 #Streaming Logs and the Console
@@ -62,7 +60,7 @@ Click on the name of the web app that you want to configure to navigate to it.
   
 ![][DiagnosticsLogs]
 Then click **Settings (1)** > **Diagnostic Logs (2)** and turn **On** 
-**Application Logging (Filesystem)(3)** The **Level** option letts you change the severity 
+**Application Logging (Filesystem)(3)** The **Level** option lets you change the severity 
 level of traces to capture.  You should set this to **Verbose** if you're just trying to 
 get familiar with the feature as this will ensure all of your trace statements get logged.
 

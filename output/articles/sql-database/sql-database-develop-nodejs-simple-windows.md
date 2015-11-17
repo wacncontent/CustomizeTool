@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="sql-database"
-	ms.date="07/30/2015"
+	ms.date="11/03/2015"
 	wacn.date=""/>
 
 
@@ -50,7 +50,7 @@ Next navigate to node_modules\msnodesql folder and run the **msnodesql-0.2.1-v0.
 See the [Get Started topic](/documentation/articles/sql-database-get-started) to learn how to create a sample database and retrieve your connection string. It is important you follow the guide to create an **AdventureWorks database template**. The samples shown below will only work with the **AdventureWorks schema**. 
 
 
-## Connect to your SQL Database
+## Connect to your SQL database
 
 
 - Copy the following code in a .js file located in your project directory.
@@ -217,3 +217,8 @@ For this code sample to work, you must first have or create a stored procedure t
 	});
 
  
+<!-- deleted by customization
+## Next steps
+
+For more information, see the [Node.js Developer Center](/develop/nodejs/).
+-->

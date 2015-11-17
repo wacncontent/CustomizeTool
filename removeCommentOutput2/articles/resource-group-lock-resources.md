@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="azure-resource-manager"
-	ms.date="10/14/2015"
+	ms.date="10/28/2015"
 	wacn.date=""/>
 
 # Lock resources with Azure Resource Manager
@@ -108,3 +108,4 @@ Azure PowerShell provides other commands for working locks, such as **Set-AzureR
 - For more information about working with resource locks, see [Lock Down Your Azure Resources](http://blogs.msdn.com/b/cloud_solution_architect/archive/2015/06/18/lock-down-your-azure-resources.aspx)
 - To learn about logically organizing your resources, see [Using tags to organize your resources](/documentation/articles/resource-group-using-tags)
 - To change which resource group a resource resides in, see [Move resources to new resource group](/documentation/articles/resource-group-move-resources)
+- You can apply restrictions and conventions across your subscription with customized policies. For more information, see [Use Policy to manage resources and control access](/documentation/articles/resource-manager-policy).

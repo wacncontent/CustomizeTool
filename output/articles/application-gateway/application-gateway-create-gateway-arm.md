@@ -8,7 +8,7 @@
    editor="tysonn"/>
 <tags
 	ms.service="application-gateway"
-	ms.date="09/21/2015"
+	ms.date="11/10/2015"
 	wacn.date=""/>
 
 
@@ -18,9 +18,9 @@ Application Gateway is load balancer layer 7. It provides failover, performance 
 
 
 > [AZURE.SELECTOR]
-- [Azure Classic Powershell steps](/documentation/articles/application-gateway-create-gateway)
-- [Azure Resource Manager Powershell steps](/documentation/articles/application-gateway-create-gateway-arm)
-- [Azure Resource Manager template steps](/documentation/articles/application-gateway-create-gateway-arm-template)
+- [Azure Classic PowerShell steps](/documentation/articles/application-gateway-create-gateway)
+- [Azure Resource Manager PowerShell](/documentation/articles/application-gateway-create-gateway-arm)
+- [Azure Resource Manager template ](/documentation/articles/application-gateway-create-gateway-arm-template)
 
 
 <BR>
@@ -116,7 +116,11 @@ Assigns the Address range 10.0.0.0/24 to subnet variable to be used to create a 
 	$vnet = New-AzurevirtualNetwork -Name appgwvnet -ResourceGroupName appgw-rg -Location "China North" -AddressPrefix 10.0.0.0/16 -Subnet $subnet
 
 Creates a virtual network named "appgwvnet" in resource group "appw-rg" for the China North region using the prefix 10.0.0.0/16 with subnet 10.0.0.0/24	
+
+### Step 3
 	
+	$subnet=$vnet.Subnets[0]
+
 ## Create public IP address for front end configuration
 
 	$publicip = New-AzurePublicIpAddress -ResourceGroupName appgw-rg -name publicIP01 -location "China North" -AllocationMethod Dynamic
@@ -407,5 +411,8 @@ If you want to configure an application gateway to use with ILB, see [Create an 
 
 If you want more information about load balancing options in general, see:
 
+<!-- deleted by customization
+- [Azure Load Balancer](/documentation/services/load-balancer/)
+-->
 - [Azure Traffic Manager](/documentation/services/traffic-manager/)
 

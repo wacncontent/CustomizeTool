@@ -1,16 +1,15 @@
 <properties 
-	pageTitle="Install an Active Directory forest on an Azure virtual network" 
+	pageTitle="Install an Active Directory forest on an Azure virtual network | Windows Azure" 
 	description="A tutorial that explains how to create a new Active Directory forest on a virtual machine (VM) on an Azure Virtual Network." 
 	services="active-directory, virtual-network" 
 	documentationCenter="" 
 	authors="markusvi" 
-	manager="TerryLan" 
-	editor="LisaToft"
-	tags="azure-classic-portal"/>
+	manager="stevenpo" 
+	tags=""/>
 
 <tags
 	ms.service="active-directory"
-	ms.date="07/23/2015"
+	ms.date="10/20/2015"
 	wacn.date=""/>
 
 
@@ -20,6 +19,9 @@ This topic shows how to create a new Windows Server Active Directory environment
 
 You might also be interested in these related topics:
 
+<!-- deleted by customization
+- For a video that shows these steps, see [How to install a new Active Directory forest on an Azure virtual network](http://channel9.msdn.com/Series/Microsoft-Azure-Tutorials/How-to-install-a-new-Active-Directory-forest-on-an-Azure-virtual-network)
+-->
 - You can optionally [configure a site-to-site VPN](/documentation/articles/vpn-gateway-site-to-site-create) and then either install a new forest or extend an on-premises forest to an Azure virtual network. For those steps, see [Install a Replica Active Directory Domain Controller in an Azure Virtual Network](/documentation/articles/virtual-networks-install-replica-active-directory-domain-controller).
 -  For conceptual guidance about installing Active Directory Domain Services (AD DS) on an Azure virtual network, see [Guidelines for Deploying Windows Server Active Directory on Azure Virtual Machines](https://msdn.microsoft.com/zh-cn/library/azure/jj156090.aspx).
 
@@ -28,6 +30,9 @@ You might also be interested in these related topics:
 In this scenario, external users need to access applications that run on domain-joined servers. The VMs that run the application servers and the VMs that run domain controllers are installed installed in their own cloud service in an Azure virtual network. They are also included within an availability set for improved fault tolerance.
 
 ![][1]
+<!-- deleted by customization
+7
+-->
 ## How does this differ from on-premises?
 
 There is not much difference between installing a domain controller on Azure versus on-premises. The main differences are listed in the following table. 
@@ -127,7 +132,9 @@ For more information about using Windows PowerShell, see [Get Started with Azure
 -  [How to assign Static IP to Azure VM](http://www.bhargavs.com/index.php/2014/03/13/how-to-assign-static-ip-to-azure-vm/)
 -  [Install a New Active Directory Forest](https://technet.microsoft.com/zh-cn/library/jj574166.aspx)
 -  [Introduction to Active Directory Domain Services (AD DS) Virtualization (Level 100)](https://technet.microsoft.com/zh-cn/library/hh831734.aspx)
+<!-- keep by customization: begin -->
 -  [Test Lab Guide: Windows Server 2012 R2 Base Configuration in Azure](http://www.microsoft.com/download/details.aspx?id=41684)
+<!-- keep by customization: end -->
 
 <!--Image references-->
 [1]: ./media/active-directory-new-forest-virtual-machine/AD_Forest.png

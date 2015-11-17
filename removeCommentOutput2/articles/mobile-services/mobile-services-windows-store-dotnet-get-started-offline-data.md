@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.date="07/23/2015"
+	ms.date="11/06/2015"
 	wacn.date=""/>
 
 # Using offline data sync in Mobile Services
@@ -30,7 +30,7 @@ This tutorial requires the following:
 * Completion of the [Get started with Mobile Services].
 * [Azure Mobile Services SDK version 1.3.0 (or later)][Mobile Services SDK Nuget]
 * [Azure Mobile Services SQLite Store version 1.0.0 (or later)][SQLite store nuget]
-* [SQLite for Windows 8.1](www.sqlite.org/downloads)
+* [SQLite for Windows 8.1](http://www.sqlite.org/download.html)
 * An Azure account. If you don't have an account, you can sign up for an Azure trial. For details, see [Azure Trial](/pricing/1rmb-trial/?WT.mc_id=AE564AB28).
 
 ## <a name="enable-offline-app"></a>Update the app to support offline features

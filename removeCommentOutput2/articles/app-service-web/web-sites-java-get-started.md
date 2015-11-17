@@ -8,7 +8,7 @@
 	editor="jimbe"/>
 <tags
 	ms.service="app-service-web"
-	ms.date="08/31/2015"
+	ms.date="10/20/2015"
 	wacn.date=""/>
 
 # Create a Java web app in Azure Websites
@@ -21,16 +21,17 @@
 - [PHP - FTP](/documentation/articles/web-sites-php-mysql-deploy-use-ftp)
 - [Python](/documentation/articles/web-sites-python-ptvs-django-mysql)
 
-This tutorial shows how to create a web app on Windows Azure by using Java, through either the Azure Marketplace or the configuration UI in the [Web Apps feature in Azure Websites][].
+This tutorial shows how to create a Java [web app in Azure Websites](/documentation/services/web-sites/) by using the [Azure preview portal](https://manage.windowsazure.cn/). The Azure preview portal is a web interface that you can use to manage Azure resources.
 
-If you don't want to use either of those techniques—for example, if you want to customize your application container—see [Upload a custom Java web app to Azure](/documentation/articles/web-sites-java-custom-upload).
+> [AZURE.NOTE] To complete this tutorial, you need a Windows Azure account. If you don't have an account, you can [activate your MSDN subscriber benefits][] or [sign up for a trial][].
+>
+> If you want to get started with Azure Websites before you sign up for an Azure account, go to [Try Azure Websites][]. There, you can immediately create a short-lived starter web app in Azure Websites—no credit card required, and no commitments.
 
-> [AZURE.NOTE] To complete this tutorial, you need a Windows Azure account. If you don't have an account, you can [sign up for a trial][].
+## Java application options
 
-## Create a Java web app by using the Azure configuration UI
+10. Click **Application settings**.
 
-This information shows how to use the Azure configuration UI to select a Java application container, either Apache Tomcat or Jetty, for your web app.
-
+11. Choose the desired **Java version**. 
 1. Log in to the Windows Azure Management Portal.
 2. Click **New**, click **Compute**, click **Website**, and then click **Quick Create**.
 3. Specify the URL name.
@@ -43,18 +44,24 @@ dashboard.
 9. The options for the web container are displayed, for example, Tomcat and Jetty. Select the web container that you want to use. 
 10. Click **Save**. 
 
-Within a few moments, your web app will become Java-based. To confirm that it is Java-based, click its URL. Note that the page will provide text stating that the new web app is a Java-based web app.
+	![](./media/web-sites-java-get-started/versions.png)
 
-Now that you've created the web app with an app container, see the **Next steps** section for information about uploading your application to the web app.
+13. Click **Save**.
+
+	Within a few moments, your web app will become Java-based and configured to use the web container you selected.
+
+14. Click **Web apps > {your new web app}**.
+
+15. Click the **URL** to browse to the new site.
+
+	The web page confirms that you have created a Java-based web app.
 
 ## Next steps
 
-At this point, you have a Java application server running as your Java web app on Azure. To add in your own application or webpage, see [Add an application or webpage to your Java web app](/documentation/articles/web-sites-java-add-app).
+At this point, you have a Java application server running in your web app in Azure Websites. To deploy your own code to the web app, see [Add an application or webpage to your Java web app](/documentation/articles/web-sites-java-add-app).
 
 <!-- External Links -->
 [activate your MSDN subscriber benefits]: /pricing/1rmb-trial/
 [sign up for a trial]: /pricing/1rmb-trial/
-[Web Apps feature in Azure Websites]: /documentation/services/web-sites/
+
 [Try Azure Websites]: https://tryappservice.azure.com/
-[Azure Websites and existing Azure services]: /documentation/services/web-sites/
-[Reference for navigating the Azure Management Portal]: https://manage.windowsazure.cn/

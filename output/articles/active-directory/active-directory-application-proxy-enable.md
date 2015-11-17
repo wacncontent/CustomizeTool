@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Enabling Azure AD Application Proxy"
+	pageTitle="Enabling Azure AD Application Proxy | Windows Azure"
 	description="Covers how to get up and running with Azure AD Application Proxy."
 	services="active-directory"
 	documentationCenter=""
@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="10/12/2015"
+	ms.date="10/19/2015"
 	wacn.date=""/>
 
 # Enabling Azure AD Application Proxy
@@ -54,7 +54,7 @@ If your firewall enforces traffic according to originating users, open these por
 3. During installation you will be prompted to register the Connector with your active Application Proxy account.
 <p>Provide your Azure AD global administrator credentials.
 - Make sure the admin who registers the Connector is in the same directory where you enabled the Application Proxy service, for example if the tenant domain is contoso.com, the admin should be admin@contoso.com or any other alias on that domain. And that you are a global administrator of the Azure AD tenant. Your global administrator tenant may be different from your Windows Azure credentials.
-- If IE Enhanced Security Configuration is set to On on the server where you are installing the Azure AD Connector, the registration screen might be blocked. If this happens, follow the instructions in the error message to allow access. Make sure that Internet Explorer Enhanced Security is off.
+- If IE Enhanced Security Configuration is set to **On** on the server where you are installing the Azure AD Connector, the registration screen might be blocked. If this happens, follow the instructions in the error message to allow access. Make sure that Internet Explorer Enhanced Security is off.
 - If Connector registration does not succeed, see Troubleshoot Application Proxy.
 
 4. When the installation completes, two new services are added to your server, as shown below. These are the Connector service, which enables connectivity, and an automated update service, which periodically checks for new versions of the Connector and updates the Connector as needed. Click Finish in the installation window to complete installation

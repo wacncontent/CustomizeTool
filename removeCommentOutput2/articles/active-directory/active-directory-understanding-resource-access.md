@@ -4,12 +4,12 @@
                 services="active-directory" 
                 documentationCenter="" 
                 authors="markusvi" 
-                manager="swadhwa" 
+                manager="stevenpo" 
                 editor=""/>
 
 <tags
 	ms.service="active-directory"
-	ms.date="08/10/2015"
+	ms.date="10/30/2015"
 	wacn.date=""/>
 
 

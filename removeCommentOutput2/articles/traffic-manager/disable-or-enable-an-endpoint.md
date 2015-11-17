@@ -4,11 +4,11 @@
    services="traffic-manager"
    documentationCenter="na"
    authors="joaoma"
-   manager="adinah"
+   manager="carmonm"
    editor="tysonn" />
 <tags
 	ms.service="traffic-manager"
-	ms.date="08/19/2015"
+	ms.date="11/12/2015"
 	wacn.date=""/>
 
 # Disable or Enable a Traffic Manager Endpoint
@@ -36,12 +36,6 @@ You can also disable individual endpoints that are part of a Traffic Manager pro
 
 [Traffic Manager - Disable, enable or delete a profile](/documentation/articles/disable-enable-or-delete-a-profile)
 
-[What is Traffic Manager?](/documentation/articles/traffic-manager)
+[Troubleshooting Traffic Manager degraded state](/documentation/articles/traffic-manager-troubleshooting-degraded)
 
-[Cloud Services](https://msdn.microsoft.com/zh-cn/library/jj155995.aspx)
-
-[Websites](/home/features/web-site/)
-
-
-[Operations on Traffic Manager (REST API Reference)](https://msdn.microsoft.com/zh-cn/library/hh758255.aspx)
- 
+[Traffic Manager performance considerations](/documentation/articles/traffic-manager-performance-considerations)

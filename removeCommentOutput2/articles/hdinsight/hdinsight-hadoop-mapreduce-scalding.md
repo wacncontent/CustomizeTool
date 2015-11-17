@@ -9,7 +9,7 @@
 	tags="azure-portal"/>
 <tags
 	ms.service="hdinsight"
-	ms.date="09/23/2015"
+	ms.date="10/15/2015"
 	wacn.date=""/>
 
 # Develop Scalding MapReduce jobs with Apache Hadoop on HDInsight
@@ -227,10 +227,6 @@ In this document, learn how to use Maven to create a basic word count MapReduce 
         wrote   34
         wrotefootnote   1
         wrought 7
-
-7. If the output is empty, or the file doesn't exist, you can use the following to view any errors that occurred when running the job:
-
-        Get-AzureHdinsightJobOutput -cluster $clusterName -jobId $job.JobId -standarderror
 
 ## Next steps
 

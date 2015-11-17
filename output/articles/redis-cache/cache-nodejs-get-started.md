@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties
 	pageTitle="How to use Azure Redis Cache with Node.js | Windows Azure"
 	description="Get started with Azure Redis Cache using Node.js and node_redis."
@@ -11,10 +9,16 @@
 
 <tags
 	ms.service="cache"
-	ms.date="08/25/2015"
+	ms.date="10/23/2015"
 	wacn.date=""/>
 
 # How to use Azure Redis Cache with Node.js
+
+> [AZURE.SELECTOR]
+- [.Net](/documentation/articles/cache-dotnet-how-to-use-azure-redis-cache)
+- [Node.js](/documentation/articles/cache-nodejs-get-started)
+- [Java](/documentation/articles/cache-java-get-started)
+- [Python](/documentation/articles/cache-python-get-started)
 
 Azure Redis Cache gives you access to a secure, dedicated Redis cache, managed by Microsoft. Your cache is accessible from any application within Windows Azure.
 
@@ -31,7 +35,7 @@ This tutorial uses [node_redis](https://github.com/mranney/node_redis), but you 
 
 ## Create a Redis cache on Azure
 
-In the [Azure Management Portal Preview](https://manage.windowsazure.cn/), click **New**, **DATA SERVICE**, and select **Redis Cache**.
+In the [Azure <!-- deleted by customization preview portal](https://manage.windowsazure.cn/) --><!-- keep by customization: begin --> Management Portal Preview](https://manage.windowsazure.cn/) <!-- keep by customization: end -->, click **New**, **DATA SERVICE**, and select **Redis Cache**.
 
   ![][1]
 
@@ -40,7 +44,7 @@ Enter a DNS hostname. It will have the form `<name>.redis.cache.chinacloudapi.cn
   ![][2]
 
 
-Once you create the cache, click on it in the Azure Management Portal to view the cache settings. Click the link under **Keys** and copy the primary key. You need this to authenticate requests.
+Once you create the cache, click on it in the <!-- deleted by customization preview portal --><!-- keep by customization: begin --> Azure Management Portal <!-- keep by customization: end --> to view the cache settings. Click the link under **Keys** and copy the primary key. You need this to authenticate requests.
 
   ![][4]
 

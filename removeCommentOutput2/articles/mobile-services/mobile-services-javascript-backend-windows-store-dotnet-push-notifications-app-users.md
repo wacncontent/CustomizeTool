@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.date="07/22/2015"
+	ms.date="11/11/2015"
 	wacn.date=""/>
 
 # Send push notifications to authenticated users

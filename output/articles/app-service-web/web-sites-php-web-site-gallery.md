@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties
 	pageTitle="Create a WordPress web app in Azure Websites | Windows Azure"
 	description="Learn how to create a new Azure web app for a WordPress blog using the Azure preview portal."
@@ -11,7 +9,7 @@
 
 <tags
 	ms.service="app-service-web"
-	ms.date="10/13/2015"
+	ms.date="10/15/2015"
 	wacn.date=""/>
 
 # Create a WordPress web app in Azure Websites
@@ -33,7 +31,7 @@ The Azure Marketplace makes available a wide range of popular web apps developed
 > [AZURE.NOTE]
 > To complete this tutorial, you need a Windows Azure account. If you don't have an account, you can [activate your MSDN subscriber benefits](/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F) or [sign up for a trial](/pricing/1rmb-trial/?WT.mc_id=A261C142F).
 >
-> If you want to get started with Azure Websites before you sign up for an Azure account, go to [Try Azure Websites](https://tryappservice.azure.com/). There, you can immediately create a short-lived starter web app in Azure Websites¡ªno credit card required, and no commitments.
+> If you want to get started with Azure Websites before you sign up for an Azure account, go to [Try Azure Websites](https://tryappservice.azure.com/). There, you can immediately create a short-lived starter web app in Azure <!-- deleted by customization Websitesâ€”no --><!-- keep by customization: begin --> Websites¡ªno <!-- keep by customization: end --> credit card required, and no commitments.
 
 ## Select WordPress and configure for Azure Websites
 

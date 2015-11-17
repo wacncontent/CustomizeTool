@@ -9,16 +9,16 @@
 
 <tags
 	ms.service="sql-database"
-	ms.date="10/01/2015"
+	ms.date="10/27/2015"
 	wacn.date=""/>
 
 
 #Getting Started with Azure SQL Data Sync (Preview)
 In this tutorial, you learn the fundamentals of Azure SQL Data Sync using the Azure (Preview) portal.
 
-
 This tutorial assumes minimal prior experience with SQL Server and Azure SQL Database. In this tutorial, you create a hybrid (SQL Server and SQL Database instances) sync group fully configured and synchronizing on the schedule you set.
 
+> [AZURE.NOTE] The complete technical documentation set for Azure SQL Data Sync, formerly located on MSDN, is now a single .pdf you download [here](http://download.microsoft.com/download/4/E/3/4E394315-A4CB-4C59-9696-B25215A19CEF/SQL_Data_Sync_Preview.pdf).
 
 ## Step 1: Connect to the Azure SQL Database
 
@@ -49,7 +49,7 @@ Be sure that you have the following installed on the computer you install the Cl
 
 - **Microsoft SQL Server 2008 R2 SP1 System CLR Types (x86)**
 
- You can install the Microsoft SQL Server 2008 R2 SP1 System CLR Types (x86) from [here](http://www.microsoft.com/download/en/details.aspx?id=26728)
+ You can install the Microsoft SQL Server 2008 R2 SP1 System CLR Types (x86) from  [here](http://www.microsoft.com/download/en/details.aspx?id=26728)
 
 - **Microsoft SQL Server 2008 R2 SP1 Shared Management Objects (x86)**
 
@@ -60,7 +60,7 @@ Be sure that you have the following installed on the computer you install the Cl
 <a id="InstallClient"></a>
 ### Step 2b: Install a new Client Agent
 
-Follow the instruction at [Install a Client Agent (SQL Data Sync)](http://msdn.microsoft.com/zh-cn/library/jj823137.aspx) to install the agent.
+Follow the instructions in [Install a Client Agent (SQL Data Sync)](http://download.microsoft.com/download/4/E/3/4E394315-A4CB-4C59-9696-B25215A19CEF/SQL_Data_Sync_Preview.pdf) to install the agent.
 
 
 
@@ -78,7 +78,7 @@ Follow the instruction at [Install a Client Agent (SQL Data Sync)](http://msdn.m
 ## Step 3: Register a SQL Server database with the Client Agent
 
 After the Client Agent is installed, register every on-premises SQL Server database that you intend to include in a sync group with the agent.
-To register a database with the agent, follow the instructions at [Register a SQL Server Database with a Client Agent](http://msdn.microsoft.com/zh-cn/library/jj823138.aspx).
+To register a database with the agent, follow the instructions at [Register a SQL Server Database with a Client Agent](http://download.microsoft.com/download/4/E/3/4E394315-A4CB-4C59-9696-B25215A19CEF/SQL_Data_Sync_Preview.pdf).
 
 
 
@@ -194,7 +194,7 @@ Congratulations. You have created a sync group that includes both a SQL Database
 ## Next Steps
 For additional information on SQL Database and SQL Data Sync see:
 
-* [Download SQL Data Sync technical documentation](http://download.microsoft.com/download/4/E/3/4E394315-A4CB-4C59-9696-B25215A19CEF/SQL_Data_Sync_Preview.pdf)
+* [Download the complete SQL Data Sync technical documentation](http://download.microsoft.com/download/4/E/3/4E394315-A4CB-4C59-9696-B25215A19CEF/SQL_Data_Sync_Preview.pdf)
 * [SQL Database Overview](/documentation/articles/sql-database-technical-overview)
 * [Database Lifecycle Management](https://msdn.microsoft.com/zh-cn/library/jj907294.aspx)
  

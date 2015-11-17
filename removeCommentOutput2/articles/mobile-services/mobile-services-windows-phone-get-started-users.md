@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.date="07/23/2015"
+	ms.date="11/02/2015"
 	wacn.date=""/>
 
 # Add authentication to your Mobile Services app

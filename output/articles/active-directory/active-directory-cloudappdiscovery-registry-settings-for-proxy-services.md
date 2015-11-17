@@ -1,15 +1,14 @@
 <properties 
-	pageTitle="Cloud App Discovery Registry Settings for Proxy Services" 
+	pageTitle="Cloud App Discovery Registry Settings for Proxy Services | Windows Azure" 
 	description="The objective of this topic is to provide you with the steps you need to perform to set the required port on the computers running the Cloud App Discovery agent." 
 	services="active-directory" 
 	documentationCenter="" 
 	authors="markusvi" 
-	manager="swadhwa" 
-	editor="lisatoft"/>
+	manager="stevenpo"/>
 
 <tags
 	ms.service="active-directory"
-	ms.date="07/23/2015"
+	ms.date="10/20/2015"
 	wacn.date=""/>
 
 # Cloud App Discovery Registry Settings for Proxy Services

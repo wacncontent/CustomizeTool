@@ -8,8 +8,8 @@
 	editor=""/>
 
 <tags
-	ms.service="app-service"
-	ms.date="10/02/2015"
+	ms.service="cache"
+	ms.date="10/28/2015"
 	wacn.date=""/>
 
 # Create a Redis Cache using a template
@@ -23,7 +23,13 @@ For more information about creating templates, see [Authoring Azure Resource Man
 
 For the complete template, see [Redis Cache template](https://github.com/Azure/azure-quickstart-templates/blob/master/101-redis-cache/azuredeploy.json).
 
->[AZURE.NOTE] ARM templates for the new [Premium tier](/documentation/articles/cache-premium-tier-intro) are coming soon. To check for the latest templates, see [Azure Quickstart Templates](https://azure.microsoft.com/documentation/templates/) and search for `Redis Cache`.
+>[AZURE.NOTE] ARM templates for the new [Premium tier](/documentation/articles/cache-premium-tier-intro) are available. 
+>
+>-    [Create a Premium Redis Cache with clustering](https://azure.microsoft.com/documentation/templates/201-redis-premium-cluster-diagnostics/)
+>-    [Create Premium Redis Cache with data persistence](https://azure.microsoft.com/documentation/templates/201-redis-premium-persistence/)
+>-    [Create Premium Redis Cache with VNet and optional clustering](https://azure.microsoft.com/documentation/templates/201-redis-premium-vnet-cluster-diagnostics/)
+>
+>To check for the latest templates, see [Azure Quickstart Templates](https://azure.microsoft.com/documentation/templates/) and search for `Redis Cache`.
 
 ## What you will deploy
 
@@ -31,7 +37,7 @@ In this template, you will deploy an Azure Redis Cache that uses an existing sto
 
 To run the deployment automatically, click the following button:
 
-![Deploy to Azure](./media/cache-redis-cache-arm-provision/deploybutton.png)
+<!-- deleted by customization [![Deploy --><!-- keep by customization: begin --> ![Deploy <!-- keep by customization: end --> to <!-- deleted by customization Azure](./media/cache-redis-cache-arm-provision/deploybutton.png)](https://manage.windowsazure.cn/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-redis-cache%2Fazuredeploy.json) --><!-- keep by customization: begin --> Azure](./media/cache-redis-cache-arm-provision/deploybutton.png) <!-- keep by customization: end -->
 
 ## Parameters
 

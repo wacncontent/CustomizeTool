@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties
 	pageTitle="Monitor Hadoop clusters in HDInsight using the Ambari API | Windows Azure"
 	description="Use the Apache Ambari APIs for provisioning, managing, and monitoring Hadoop clusters. Intuitive operator tools and APIs hide the complexity of Hadoop."
@@ -12,7 +10,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="09/25/2015"
+	ms.date="11/11/2015"
 	wacn.date=""/>
 
 # Monitor Hadoop clusters in HDInsight using the Ambari API
@@ -125,17 +123,17 @@ The following table lists some of the most common Ambari monitoring API calls. F
 Monitor API call|URI|Description
 ---|---|---
 Get clusters|`/api/v1/clusters`|
-Get cluster info.|`/api/v1/clusters/&lt;ClusterName&gt;.azurehdinsight.cn`|clusters, services, hosts
-Get services|`/api/v1/clusters/&lt;ClusterName&gt;.azurehdinsight.cn/services`|Services include: hdfs, mapreduce
-Get services info.|`/api/v1/clusters/&lt;ClusterName&gt;.azurehdinsight.cn/services/&lt;ServiceName&gt;`|
-Get service components|`/api/v1/clusters/&lt;ClusterName&gt;.azurehdinsight.cn/services/&lt;ServiceName&gt;/components`|HDFS: namenode, datanode<br/>MapReduce: jobtracker; tasktracker
-Get component info.|`/api/v1/clusters/&lt;ClusterName&gt;.azurehdinsight.cn/services/&lt;ServiceName&gt;/components/&lt;ComponentName&gt;`|ServiceComponentInfo, host-components, metrics
-Get hosts|`/api/v1/clusters/&lt;ClusterName&gt;.azurehdinsight.cn/hosts`|headnode0, workernode0
-Get host info.|`/api/v1/clusters/&lt;ClusterName&gt;.azurehdinsight.cn/hosts/&lt;HostName&gt;`|
-Get host components|`/api/v1/clusters/&lt;ClusterName&gt;.azurehdinsight.cn/hosts/&lt;HostName&gt;/host_components`|namenode, resourcemanager
-Get host component info.|`/api/v1/clusters/&lt;ClusterName&gt;.azurehdinsight.cn/hosts/&lt;HostName&gt;/host_components/&lt;ComponentName&gt;`|HostRoles, component, host, metrics
-Get configurations|`/api/v1/clusters/&lt;ClusterName&gt;.azurehdinsight.cn/configurations`|Config types: core-site, hdfs-site, mapred-site, hive-site
-Get configuration info.|`/api/v1/clusters/&lt;ClusterName&gt;.azurehdinsight.cn/configurations?type=&lt;ConfigType&gt;&tag=&lt;VersionName&gt;`|Config types: core-site, hdfs-site, mapred-site, hive-site
+Get cluster info.|`/api/v1/clusters/<ClusterName>.azurehdinsight.cn`|clusters, services, hosts
+Get services|`/api/v1/clusters/<ClusterName>.azurehdinsight.cn/services`|Services include: hdfs, mapreduce
+Get services info.|`/api/v1/clusters/<ClusterName>.azurehdinsight.cn/services/<ServiceName>`|
+Get service components|`/api/v1/clusters/<ClusterName>.azurehdinsight.cn/services/<ServiceName>/components`|HDFS: namenode, datanode<br/>MapReduce: jobtracker; tasktracker
+Get component info.|`/api/v1/clusters/<ClusterName>.azurehdinsight.cn/services/<ServiceName>/components/<ComponentName>`|ServiceComponentInfo, host-components, metrics
+Get hosts|`/api/v1/clusters/<ClusterName>.azurehdinsight.cn/hosts`|headnode0, workernode0
+Get host info.|`/api/v1/clusters/<ClusterName>.azurehdinsight.cn/hosts/<HostName>`|
+Get host components|`/api/v1/clusters/<ClusterName>.azurehdinsight.cn/hosts/<HostName>/host_components`|namenode, resourcemanager
+Get host component info.|`/api/v1/clusters/<ClusterName>.azurehdinsight.cn/hosts/<HostName>/host_components/<ComponentName>`|HostRoles, component, host, metrics
+Get configurations|`/api/v1/clusters/<ClusterName>.azurehdinsight.cn/configurations`|Config types: core-site, hdfs-site, mapred-site, hive-site
+Get configuration info.|`/api/v1/clusters/<ClusterName>.azurehdinsight.cn/configurations?type=<ConfigType>&tag=<VersionName>`|Config types: core-site, hdfs-site, mapred-site, hive-site
 
 
 ##<a id="nextsteps"></a>Next Steps 

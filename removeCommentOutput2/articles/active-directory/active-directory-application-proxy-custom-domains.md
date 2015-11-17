@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Working with Custom Domains in Azure AD Application Proxy"
+	pageTitle="Working with Custom Domains in Azure AD Application Proxy | Windows Azure"
 	description="Covers how work with custom domains in Azure AD Application Proxy."
 	services="active-directory"
 	documentationCenter=""
@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="10/07/2015"
+	ms.date="10/19/2015"
 	wacn.date=""/>
 
 # Working with custom domains in Azure AD Application Proxy

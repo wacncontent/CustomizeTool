@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="app-service-web"
-	ms.date="07/31/2015"
+	ms.date="10/28/2015"
 	wacn.date=""/>
 
 # Manage a web app in Azure Websites
@@ -61,7 +61,7 @@ While your web app is running, you want to make sure it is available, and that i
 ### Backups
 
 - Set [automatic backups](/documentation/articles/web-sites-backup) of your web app. Learn more about backups in [this video](http://azure.microsoft.com/documentation/videos/azure-websites-automatic-and-easy-backup/).
-- Learn about the options for [database recovery](http://msdn.microsoft.com/zh-cn/library/azure/hh852669.aspx) in Azure SQL Database.
+- Learn about the options for [database recovery](/documentation/articles/sql-database-business-continuity/) in Azure SQL Database.
 
 ### Troubleshooting
 

@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Publishing Apps with Azure AD Application Proxy"
+	pageTitle="Publishing Apps with Azure AD Application Proxy | Windows Azure"
 	description="Covers how to publish on-premises applications using Azure AD Application Proxy."
 	services="active-directory"
 	documentationCenter=""
@@ -9,13 +9,13 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="10/12/2015"
+	ms.date="10/19/2015"
 	wacn.date=""/>
 
 
 # Publish applications using Azure AD Application Proxy
 
-> [AZURE.NOTE] Application Proxy is a feature that is available only if you upgraded to the Premium or Basic edition of Azure Active Directory. For more information, see [Azure Active Directory editions](/documentation/articles/active-directory-edition).
+> [AZURE.NOTE] Application Proxy is a feature that is available only if you upgraded to the Premium or Basic edition of Azure Active Directory. For more information, see [Azure Active Directory editions](/documentation/articles/active-directory-editions).
 
 After you enable Windows Azure AD Application Proxy, you can publish applications to make them accessible for your users outside your private network.
 

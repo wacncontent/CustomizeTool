@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="sql-database"
-	ms.date="10/08/2015"
+	ms.date="11/10/2015"
 	wacn.date=""/>
 
 
@@ -42,21 +42,21 @@ A rich and powerful set of developer tools for implementing elastic database app
 
 ## Business continuity features for databases in a pool
 
-Currently in the preview, elastic databases support most [business continuity features](https://msdn.microsoft.com/zh-cn/library/azure/hh852669.aspx) that are available to single databases on V12 servers.
+Currently in the preview, elastic databases support most [business continuity features](/documentation/articles/sql-database-business-continuity) that are available to single databases on V12 servers.
 
-### Backing up and restoring databases ([Point in Time Restore](https://msdn.microsoft.com/zh-cn/library/azure/hh852669.aspx#BKMK_PITR))
+### Backing up and restoring databases (Point in Time Restore)
 
 Databases in an elastic database pool are backed up automatically by the system and the backup retention policy is the same as the corresponding service tier for single databases. More specifically, an elastic database in a Basic pool can be restored to any restore point within the last 7 days, an elastic database in a Standard pool can be restored to any restore point within the last 14 days, and an elastic database in a Premium pool can be restored to any restore point within the last 35 days. During preview, databases in a pool will be restored to a new database in the same pool. Dropped databases will always be restored as a standalone database outside the pool into the lowest performance level for that service tier. For example, an elastic database in a Standard pool that is dropped will be restored as an S0 database. You can perform database restore operations through the Azure Management Portal or programmatically using REST API. PowerShell cmdlet support is coming soon.
 
-### [Geo-Restore](https://msdn.microsoft.com/zh-cn/library/azure/hh852669.aspx#BKMK_GEO)
+### Geo-Restore
 
 Geo-Restore allows you to recover a database in a pool to a server in a different region. During the preview, to restore a database in a pool on a different server, the target server needs to have a pool with the same name as the source pool. If needed, create a new pool on the target server and give it the same name prior to restoring the database. If a pool with the same name on the target server doesn’t exist the Geo-Restore operation will fail.
 You can perform Geo-Restore operations using the Azure Management Portal or REST API. PowerShell cmdlet support is coming soon.
 
 
-### [Geo-Replication](https://msdn.microsoft.com/zh-cn/library/azure/dn783447.aspx)
+### Geo-Replication
 
-Databases that already have Geo-Replication enabled can be moved in and out of an elastic database pool and replication will continue to work as always. You can enable Geo-Replication on a database that is already in a pool if the target server you specify has a pool with the same name as the source pool. 
+Geo-replication is available for any database in a Standard or Premium elastic database pool.  One or all databases in a geo-replication partnership can be in an elastic database pool as long as the service tiers are the same. You can configure geo-replication for elastic database pools using the [Azure Management Portal](/documentation/articles/sql-database-geo-replication-portal), [PowerShell](/documentation/articles/sql-database-geo-replication-powershell), or [Transact-SQL](/documentation/articles/sql-database-geo-replication-transact-sql).
 
 ### Import and Export
 

@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="app-service-web"
-	ms.date="08/03/2015"
+	ms.date="11/06/2015"
 	wacn.date=""/>
 
 #Enterprise-class WordPress on Azure Websites
@@ -24,7 +24,7 @@ A basic WordPress installation has only two requirements.
 
     > [AZURE.NOTE] ClearDB provides several MySQL configurations, with different performance characteristics for each configuration. See the [Azure Store][cdbnstore] for information on offerings provided through the Azure store or [ClearDB pricing](http://www.cleardb.com/pricing.view) for offerings directly from ClearDB.
 
-* **PHP 5.2.4 or greater** - Azure Websites currently provide [PHP versions 5.3, 5.4, and 5.5][phpwebsite].
+* **PHP 5.2.4 or greater** - Azure Websites currently provide [PHP versions 5.4, 5.5, and 5.6][phpwebsite].
 
 	> [AZURE.NOTE] We recommend always running on the latest version of PHP to ensure you have the latest security fixes.
 
@@ -49,7 +49,7 @@ Replication and routing to multiple MySQL Databases can be done using ClearDB's 
 
 ###Multi-region deployment with media storage and caching
 
-If the site will accept uploads, or host media files, use Azure Blob storage. If you need caching, consider [Redis cache][rediscache], [Memcache Cloud](http://azure.microsoft.com/gallery/store/garantiadata/memcached/), [MemCachier](http://azure.microsoft.com/gallery/store/memcachier/memcachier/), or one of the other caching offerings in the [Azure Store](http://azure.microsoft.com/gallery/store/).
+If the site will accept uploads, or host media files, use Azure Blob storage. If you need caching, consider [Redis cache][rediscache], [Memcache Cloud](https://azure.microsoft.com/marketplace/partners/garantiadata/memcached/), [MemCachier](https://azure.microsoft.com/marketplace/partners/memcachier/memcachier/), or one of the other caching offerings in the [Azure Store](http://azure.microsoft.com/gallery/store/).
 
 ![an Azure web app, hosted in multiple regions, using CDBR High Availability router for MySQL, with Managed Cache, Blob storage, and CDN][performance-diagram]
 
@@ -83,7 +83,7 @@ Performance in the cloud is achieved primarily through caching and scale out; ho
 To do this... | Use this...
 ------------------------|-----------
 **Understand Azure Websites instance capabilities** |  [Pricing details, including capabilities of Azure Websites tiers][websitepricing]
-**Cache resources** | [Redis cache][rediscache], [Memcache Cloud](/gallery/store/garantiadata/memcached/), [MemCachier](/gallery/store/memcachier/memcachier/), or one of the other caching offerings in the [Azure Store](/gallery/store/)
+**Cache resources** | [Redis cache][rediscache], [Memcache Cloud](https://azure.microsoft.com/marketplace/partners/garantiadata/memcached/), [MemCachier](https://azure.microsoft.com/marketplace/partners/memcachier/memcachier/), or one of the other caching offerings in the [Azure Store](/gallery/store/)
 **Scale your application** | [Scale a web app in Azure Websites][websitescale] and [ClearDB High Availability Routing][cleardbscale]. If you choose to host and manage your own MySQL installation, you should consider [MySQL Cluster CGE][cge] for scale out
 
 ####Migration
@@ -98,6 +98,16 @@ There are two methods of migrating an existing WordPress site to Azure Websites.
 
 ## Step-by-step instructions
 
+<!-- deleted by customization
+### Create a new WordPress site
+
+1. Use the [Azure Marketplace][cdbnstore] to create a MySQL database of the size you identified in the [Architecture and planning](#planning) section, in the region(s) that you will host your site.
+
+2. Follow the steps in [Create a WordPress web app in Azure Websites][createwordpress] to create a new WordPress web app. When creating the web app, select **Use an existing MySQL Database** and select the database created in step 1.
+
+If you are migrating an existing WordPress site, see [Migrate an existing WordPress site to Azure](#Migrate-an-existing-WordPress-site-to-Azure) after creating a new web app.
+
+-->
 ### Migrate an existing WordPress site to Azure
 
 As mentioned in the [Architecture and planning](#planning) section, there are two ways to migrate a WordPress site.
@@ -122,7 +132,7 @@ Use one of the following sections to migrate your site.
 
 6. Click **Submit**. You will be prompted that the import was successful.
 
-8. Once you have completed all these steps, restart your site from its web app blade in the [Azure Management Portal][mgmtportal].
+8. Once you have completed all these steps, restart your site from its web app blade in the [Azure <!-- deleted by customization preview portal][mgmtportal] --><!-- keep by customization: begin --> Management Portal][mgmtportal] <!-- keep by customization: end -->.
 
 After importing the site, you may need to perform the following steps to enable settings not contained in the import file.
 
@@ -149,7 +159,7 @@ If you were using this... | Do this...
 
 4. Create a new web app in the Azure Management Portal and publish the WordPress backup.
 
-	1. Create a new web app in the [Azure Management Portal][mgmtportal] with a database using **New** -> **Web + Mobile** -> **Azure Marketplace** -> **Web Apps** -> **Web app + SQL** (or **Web app + MySQL**) -> **Create**. Configure all the required settings to create an empty web app.
+	1. Create a new web app in the [Azure <!-- deleted by customization preview portal][mgmtportal] --><!-- keep by customization: begin --> Management Portal][mgmtportal] <!-- keep by customization: end --> with a database using **New** -> **Web + Mobile** -> **Azure Marketplace** -> **Web Apps** -> **Web app + SQL** (or **Web app + MySQL**) -> **Create**. Configure all the required settings to create an empty web app.
 
 	2. In your WordPress backup, locate the **wp-config.php** file and open it in an editor. Replace the following entries with the information for your new MySQL database.
 
@@ -219,6 +229,14 @@ To do this... | Use this...
 * [Propping up WordPress on Azure](http://www.johnpapa.net/wordpress-on-azure/)
 
 * [Tips for WordPress on Azure](http://www.johnpapa.net/azurecleardbmysql/)
+<!-- deleted by customization
+
+>[AZURE.NOTE] If you want to get started with Azure Websites before signing up for an Azure account, go to [Try Azure Websites](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure Websites. No credit cards required; no commitments.
+
+## What's changed
+* For a guide to the change from Websites to Azure Websites see: [Azure Websites and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
+* For a guide to the change of the portal to the preview portal see: [Reference for navigating the preview portal](https://manage.windowsazure.cn/)
+-->
 
 [performance-diagram]: ./media/web-sites-php-enterprise-wordpress/performance-diagram.png
 [basic-diagram]: ./media/web-sites-php-enterprise-wordpress/basic-diagram.png
@@ -231,10 +249,10 @@ To do this... | Use this...
 [sendgridplugin]: http://wordpress.org/plugins/sendgrid-email-delivery-simplified/
 [phpwebsite]: /documentation/articles/web-sites-php-configure
 [customdomain]: /documentation/articles/web-sites-custom-domain-name
-[trafficmanager]: /blog/2014/03/27/azure-traffic-manager-can-now-integrate-with-azure-web-sites/
+[trafficmanager]: /documentation/articles/traffic-manager-overview
 [backup]: /documentation/articles/web-sites-backup
 [restore]: /documentation/articles/web-sites-restore
-[rediscache]: http://msdn.microsoft.com/zh-cn/library/azure/dn690470.aspx
+[rediscache]: /documentation/services/redis-cache/
 [managedcache]: http://msdn.microsoft.com/zh-cn/library/azure/dn386122.aspx
 [websitescale]: /documentation/articles/web-sites-scale
 [managedcachescale]: http://msdn.microsoft.com/zh-cn/library/azure/dn386113.aspx
@@ -251,6 +269,9 @@ To do this... | Use this...
 [import]: http://wordpress.org/plugins/wordpress-importer/
 [wordpressbackup]: http://wordpress.org/plugins/wordpress-importer/
 [wordpressdbbackup]: http://codex.wordpress.org/Backing_Up_Your_Database
+<!-- deleted by customization
+[createwordpress]: /documentation/articles/web-sites-php-web-site-gallery
+-->
 [velvet]: https://wordpress.org/plugins/velvet-blues-update-urls/
 [mgmtportal]: https://manage.windowsazure.cn/
 [wordpressbackup]: http://codex.wordpress.org/WordPress_Backups
@@ -260,6 +281,6 @@ To do this... | Use this...
 [deploy]: /documentation/articles/web-sites-deploy
 [posh]: /documentation/articles/install-configure-powershell
 [Azure CLI]: /documentation/articles/xplat-cli-install
-[storesendgrid]: /gallery/store/sendgrid/sendgrid-azure/
+[storesendgrid]: https://azure.microsoft.com/marketplace/partners/sendgrid/sendgrid-azure/
 [cdn]: /documentation/articles/cdn-how-to-use
  

@@ -1,3 +1,56 @@
-updated docs: 0
+updated docs: 24
+articles/azure-government-developer-guide.md
+articles/azure-government-overview.md
+articles/azure-subscription-service-limits.md
+articles/billing-understand-your-bill.md
+articles/billing-usage-rate-card-overview.md
+articles/billing-usage-rate-card-partner-solution-cloudcruiser.md
+articles/billing-usage-rate-card-partner-solution-cloudyn.md
+articles/resource-group-audit.md
+articles/resource-group-authenticate-service-principal.md
+articles/resource-group-authoring-templates.md
+articles/resource-group-create-multiple.md
+articles/resource-group-create-service-principal-portal.md
+articles/resource-group-define-dependencies.md
+articles/resource-group-link-resources.md
+articles/resource-group-lock-resources.md
+articles/resource-group-move-resources.md
+articles/resource-group-overview.md
+articles/resource-group-template-functions.md
+articles/resource-group-using-tags.md
+articles/resource-manager-deployment-model.md
+articles/resource-manager-policy.md
+articles/resource-manager-supported-services.md
+articles/vs-azure-tools-debug-cloud-services-virtual-machines.md
+articles/xplat-cli-connect.md
 
-updated includes: 0
+updated includes: 29
+includes/app-insights-selector-get-started.md
+includes/app-service-api-gateway-config-auth.md
+includes/app-service-mobile-adal-register-app.md
+includes/app-service-mobile-register-authentication.md
+includes/app-service-mobile-related-content-get-started-users.md
+includes/app-service-mobile-selector-aad-sso.md
+includes/app-service-mobile-selector-client-library.md
+includes/app-service-mobile-selector-get-started-users.md
+includes/arm-getting-setup-powershell.md
+includes/azure-resource-groups-limits.md
+includes/azure-subscription-limits-azure-resource-manager.md
+includes/cap-ingest-data-selector.md
+includes/dns-limits.md
+includes/howto-attach-disk-windows-linux.md
+includes/howto-detach-disk-windows-linux.md
+includes/iot-azure-and-iot.md
+includes/iot-hub-c2d-cloud-csharp.md
+includes/iot-hub-c2d-device-csharp.md
+includes/iot-hub-file-upload-cloud-csharp.md
+includes/iot-hub-file-upload-device-csharp.md
+includes/iot-hub-get-started-cloud-csharp.md
+includes/iot-hub-get-started-device-csharp.md
+includes/iot-hub-process-d2c-cloud-csharp.md
+includes/iot-hub-process-d2c-device-csharp.md
+includes/machine-learning-import-data-into-aml-studio.md
+includes/mobile-engagement-ios-send-push.md
+includes/powershell-preview-include.md
+includes/powershell-preview-inline-include.md
+includes/stream-analytics-limits-table.md

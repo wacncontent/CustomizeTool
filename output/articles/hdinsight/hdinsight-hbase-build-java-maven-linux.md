@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties
 	pageTitle="Build an HBase application using Maven and Java, then deploy to Linux-based HDInsight | Windows Azure"
 	description="Learn how to use Apache Maven to build a Java-based Apache HBase application, then deploy it to Linux-based HDInsight in the Azure cloud."
@@ -11,7 +9,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="10/09/2015"
+	ms.date="10/26/2015"
 	wacn.date=""/>
 
 #Use Maven to build Java applications that use HBase with HDInsight (Hadoop)
@@ -157,6 +155,9 @@ Learn how to create and build an [Apache HBase](http://hbase.apache.org/) applic
 		    //            "zookeepernode0,zookeepernode1,zookeepernode2");
 		    //config.set("hbase.zookeeper.property.clientPort", "2181");
 		    //config.set("hbase.cluster.distributed", "true");
+            //
+            //NOTE: Actual zookeeper host names can be found using Ambari:
+            //curl -u admin:PASSWORD -G "https://CLUSTERNAME.azurehdinsight.cn/api/v1/clusters/CLUSTERNAME/hosts"
 
 		    // create an admin object using the config
 		    HBaseAdmin admin = new HBaseAdmin(config);

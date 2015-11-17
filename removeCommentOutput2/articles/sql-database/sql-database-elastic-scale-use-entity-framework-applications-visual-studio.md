@@ -1,20 +1,20 @@
 <properties 
-	pageTitle="Using elastic database client library with Entity Framework" 
-	description="Elastic database client makes it easy to scale, and Entity Framework is easy to use for coding databases" 
+	pageTitle="Using elastic database client library with Entity Framework | Windows Azure" 
+	description="Use Elastic Database client library and Entity Framework for coding databases" 
 	services="sql-database" 
 	documentationCenter="" 
 	manager="jeffreyg" 
-	authors="sidneyh" 
+	authors="torsteng" 
 	editor=""/>
 
 <tags
 	ms.service="sql-database"
-	ms.date="07/24/2015"
+	ms.date="11/04/2015"
 	wacn.date=""/>
 
 # Elastic Database client library with Entity Framework 
  
-You can use the elastic database client library with Microsoft’s Entity Framework (EF) to build applications that take advantage of database sharding, facilitating scaling-out your application's data tier. This document shows the changes in an Entity Framework application that are needed to integrate with the elastic database tools' capabilities. The focus is on composing [shard map management](/documentation/articles/sql-database-elastic-scale-shard-map-management) and [data-dependent routing](/documentation/articles/sql-database-elastic-scale-data-dependent-routing) with the Entity Framework **Code First** approach. The [Code First – New Database](http://msdn.microsoft.com/data/jj193542.aspx) tutorial for EF serves as our running example throughout this document. The sample code accompanying this document is part of elastic database tools' set of samples in the Visual Studio Code Samples.
+This document shows the changes in an Entity Framework application that are needed to integrate with the [Elastic Database tools](/documentation/articles/sql-database-elastic-scale-introduction). The focus is on composing [shard map management](/documentation/articles/sql-database-elastic-scale-shard-map-management) and [data-dependent routing](/documentation/articles/sql-database-elastic-scale-data-dependent-routing) with the Entity Framework **Code First** approach. The [Code First – New Database](http://msdn.microsoft.com/data/jj193542.aspx) tutorial for EF serves as our running example throughout this document. The sample code accompanying this document is part of elastic database tools' set of samples in the Visual Studio Code Samples.
   
 ## Downloading and Running the Sample Code
 To download the code for this article:

@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties 
 	pageTitle="Use Resource Manager to allocate resources to the Apache Spark cluster in HDInsight| Windows Azure" 
 	description="Learn how to use the Resource Manager for Spark clusters on HDInsight for better performance." 
@@ -12,7 +10,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="07/31/2015"
+	ms.date="11/03/2015"
 	wacn.date=""/>
 
 

@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="09/27/2015"
+	ms.date="11/03/2015"
 	wacn.date=""/>
 
 
@@ -21,6 +21,7 @@ These release notes summarize changes from previous releases and known issues.
 
 - [Currently Known Issues](#issues)
 - [REST API Version History](#rest_version_history)
+- [October 2015 Release](#oct_changes_15)
 - [September 2015 Release](#september_changes_15)
 - [August 2015 Release](#august_changes_15)
 - [July 2015 Release](#july_changes_15)
@@ -69,6 +70,14 @@ Media Services objects in the SDK cannot be serialized and as a result do not wo
 ##<a id="rest_version_history"></a>REST API Version History
 
 For information about the Media Services REST API version history, see [Azure Media Services REST API Reference].
+
+##<a id="oct_changes_15"></a>October 2015 Release
+
+Azure Media Services (AMS) is now live in the following data centers: Brazil South,  India West, India South and India Central. You can now use the Azure Management Portal to [create Media Service accounts](/documentation/articles/media-services-create-account#create-a-media-services-account-using-quick-create) and perform various tasks described [here](/documentation/services/media-services/). However, Live Encoding is not enabled in these data centers. Further, not all types of Encoding Reserved Units are available in these data centers.
+
+- Brazil South:                                          Only Standard and Basic Encoding Reserved Units are available
+- India West, India South and India Central:             Only Basic Encoding Reserved Units are available
+
 
 ##<a id="september_changes_15"></a>September 2015 Release 
 
@@ -553,6 +562,17 @@ The following functionality was new in the November release of the SDK.
 	Asynchronous support has been added to all methods.
 
 
+<!-- deleted by customization
+##Media Services learning paths
+
+[AZURE.INCLUDE [media-services-learning-paths-include](../includes/media-services-learning-paths-include.md)]
+
+##Provide feedback
+
+-->
+[AZURE.INCLUDE [media-services-user-voice-include](../includes/media-services-user-voice-include.md)]
+
+
 <!-- Anchors. -->
 
 <!-- Images. -->
@@ -569,6 +589,9 @@ The following functionality was new in the November release of the SDK.
 [Working with Azure Media Services Live Streaming]: http://msdn.microsoft.com/zh-cn/library/azure/dn783466.aspx
 [Using AES-128 Dynamic Encryption and Key Delivery Service]: http://msdn.microsoft.com/zh-cn/library/azure/dn783457.aspx
 [Using PlayReady Dynamic Encryption and License Delivery Service]: http://msdn.microsoft.com/zh-cn/library/azure/dn783467.aspx
+<!-- deleted by customization
+[Preview features]: http://azure.microsoft.com/services/preview/
+-->
 [Media Services PlayReady License Template Overview]: http://msdn.microsoft.com/zh-cn/library/azure/dn783459.aspx
 [Streaming Storage Encrypted Content]: http://msdn.microsoft.com/zh-cn/library/azure/dn783451.aspx
 [Azure Management Portal]: https://manage.windowsazure.cn

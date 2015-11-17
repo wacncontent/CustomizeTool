@@ -1,6 +1,6 @@
 <properties 
-   pageTitle="SQL Database Disaster Recovery" 
-   description="Learn how  to recover a database from a regional datacenter outage or failure with the Azure SQL Database Geo-replication and Geo-restore capabilities." 
+   pageTitle="SQL Database disaster recovery" 
+   description="Learn how to recover a database from a regional datacenter outage or failure with the Azure SQL Database Active Geo-Replication, Standard Geo-Replication, and Geo-Restore capabilities." 
    services="sql-database" 
    documentationCenter="" 
    authors="elfisher" 
@@ -9,18 +9,19 @@
 
 <tags
 	ms.service="sql-database"
-	ms.date="07/14/2015"
+	ms.date="11/09/2015"
 	wacn.date=""/>
 
 # Recover an Azure SQL Database from an outage
 
-Azure SQL Database's offers a few outage recovery capabilities:
+Azure SQL Database's offers the following capabilities for recovering from an outage:
 
 - Active Geo-Replication [(blog)](http://azure.microsoft.com/blog/2014/07/12/spotlight-on-sql-database-active-geo-replication/)
 - Standard Geo-Replication [(blog)](http://azure.microsoft.com/blog/2014/09/03/azure-sql-database-standard-geo-replication/)
-- Geo-restore [(blog)](http://azure.microsoft.com/blog/2014/09/13/azure-sql-database-geo-restore/)
+- Geo-Restore [(blog)](http://azure.microsoft.com/blog/2014/09/13/azure-sql-database-geo-restore/)
+- New Geo-replication capabilities [(blog)](https://azure.microsoft.com/blog/azure-sql-database-geo-replication-october-2015-update/)
 
-To learn about preparing for disaster and when to recover your database, visit our [Design for Business Continuity](/documentation/articles/sql-database-business-continuity-design) page. 
+To learn about preparing for disaster and when to recover your database, visit our [Design for business continuity](/documentation/articles/sql-database-business-continuity-design) page. 
 
 ##When to initiate recovery 
 
@@ -29,60 +30,52 @@ The recovery operation impacts the application. It requires changing the SQL con
 1. Permanent connectivity failure from the application tier to the database.
 2. Your Azure Management Portal shows an alert about an incident in the region with broad impact.
 
-## Failover to the Geo-Replicated secondary database
-> [AZURE.NOTE] You must configure [Standard Geo-Replication](https://msdn.microsoft.com/zh-cn/library/azure/dn758204.aspx) or [Active Geo-Replication](https://msdn.microsoft.com/zh-cn/library/azure/dn741339.aspx) to have a secondary database to use for failover. Geo-Replication is only available for Standard and Premium databases. 
+> [AZURE.NOTE] After your database is recovered you can configure it to be used by following the [Configure your database after recovery](#postrecovery) guide.
 
-In the event of an outage on the primary database, you can failover to a secondary database to restore availability. To do this you will need to force terminate the continuous copy relationship. For a full description of terminating continuous copy relationships go [here](https://msdn.microsoft.com/zh-cn/library/azure/dn741323.aspx). 
-
-
+## Failover to geo-replicated secondary database
+> [AZURE.NOTE] You must configure to have a secondary database to use for failover. Geo-Replication is only available for Standard and Premium databases. Learn [how to configure Geo-Replication](/documentation/articles/sql-database-business-continuity-design)
 
 ###Azure Management Portal
+Use the Azure Management Portal to terminate the continuous copy relationship with the Geo-Replicated secondary database.
+
 1. Log in to the [Azure Management Portal](https://manage.windowsazure.cn)
 2. On the left side of the screen select **BROWSE** and then select **SQL Databases**
 3. Navigate to your database and select it. 
 4. At the bottom of your database blade select the **Geo Replication map**.
-4. Under **Secondaries** right click on the row with the name of the database you want to recover to and select **Stop**.
+4. Under **Secondaries** right click on the row with the name of the database you want to recover to and select **Failover**.
 
-After the continuous copy relationship is terminated, you can configure your recovered database to be used by following the [Finalize a Recovered Database](/documentation/articles/sql-database-recovered-finalize) guide.
 ###PowerShell
-Use PowerShell to programmatically perform database recovery.
-
-To terminate the relationship from the secondary database, use the [Stop-AzureSqlDatabaseCopy](https://msdn.microsoft.com/zh-cn/library/dn720223) cmdlet.
+Use PowerShell to initiate failover to Geo-Replicated secondary database by using the [Set-AzureRMSqlDatabaseSecondary](https://msdn.microsoft.com/zh-cn/library/mt619393.aspx) cmdlet.
 		
-		$myDbCopy = Get-AzureSqlDatabaseCopy -ServerName "SecondaryServerName" -DatabaseName "SecondaryDatabaseName"
-		$myDbCopy | Stop-AzureSqlDatabaseCopy -ServerName "SecondaryServerName" -ForcedTermination
-		 
-After the continuous copy relationship is terminated, you can configure your recovered database to be used by following the [Finalize a Recovered Database](/documentation/articles/sql-database-recovered-finalize) guide.
+		$database = Get-AzureRMSqlDatabase –DatabaseName "mydb” –ResourceGroupName "rg2” –ServerName "srv2”
+		$database | Set-AzureRMSqlDatabaseSecondary –Failover -AllowDataLoss
+
 ###REST API 
-Use REST to programmatically perform database recovery.
+Use REST to programmatically initiate failover to a secondary database.
 
-1. Get the database continuous copy using the [Get Database Copy](https://msdn.microsoft.com/zh-cn/library/azure/dn509570.aspx) operation.
-2. Stop the database continuous copy using the [Stop Database Copy](https://msdn.microsoft.com/zh-cn/library/azure/dn509573.aspx) operation.
-Use the secondary server name and database name in the Stop Database Copy request URI
+1. Get replication link to a specific secondary using the [Get Replication Link](https://msdn.microsoft.com/zh-cn/library/mt600778.aspx) operation.
+2. Failover to the secondary using the [Set Secondary Database As Primary](https://msdn.microsoft.com/zh-cn/library/mt582027.aspx) with data loss allowed. 
 
- After the continuous copy relationship is terminated, you can configure your recovered database to be used by following the [Finalize a Recovered Database](/documentation/articles/sql-database-recovered-finalize) guide.
-## Recovery using Geo-Restore
+## Recover using Geo-Restore
 
 In the event of an outage of a database, you can recover your database from its latest geo redundant backup using Geo-Restore. 
 
 ###Azure Management Portal
+To restore a SQL Database using Geo-Restore in the Azure Management Portal, use the following steps.
+
 1. Log in to the [Azure Management Portal](https://manage.windowsazure.cn)
 2. On the left side of the screen select **NEW**, then select **Data and Storage**, and then select **SQL Database**
 2. Select **BACKUP** as the source  and then select the geo redundant backup you want to recover from.
 3. Specify the rest of the database properties and then click **Create**.
 4. The database restore process will begin and can be monitored using **NOTIFICATIONS** on the left side of the screen.
 
-After the database is recovered you can configure it to be used by following the [Finalize a Recovered Database](/documentation/articles/sql-database-recovered-finalize) guide.
 ###PowerShell 
-Use PowerShell to programmatically perform database recovery.
-
-To start a Geo-Restore request, use the [start-AzureSqlDatabaseRecovery](https://msdn.microsoft.com/zh-cn/library/azure/dn720224.aspx) cmdlet. 
+To restore a SQL Database using Geo-Restore with PowerShell, start a Geo-Restore request with the [start-AzureSqlDatabaseRecovery](https://msdn.microsoft.com/zh-cn/library/azure/dn720224.aspx) cmdlet.
 
 		$Database = Get-AzureSqlRecoverableDatabase -ServerName "ServerName" –DatabaseName “DatabaseToBeRecovered"
 		$RecoveryRequest = Start-AzureSqlDatabaseRecovery -SourceDatabase $Database –TargetDatabaseName “NewDatabaseName” –TargetServerName “TargetServerName”
 		Get-AzureSqlDatabaseOperation –ServerName "TargetServerName" –OperationGuid $RecoveryRequest.RequestID
 
-After the database is recovered you can configure it to be used by following the [Finalize a Recovered Database](/documentation/articles/sql-database-recovered-finalize) guide.
 ###REST API 
 
 Use REST to programmatically perform database recovery.
@@ -94,6 +87,40 @@ Use REST to programmatically perform database recovery.
 3.	Create the recovery request using the [Create Database Recovery Request](http://msdn.microsoft.com/zh-cn/library/azure/dn800986.aspx) operation.
 	
 4.	Track the status of the recovery using the [Database Operation Status](http://msdn.microsoft.com/zh-cn/library/azure/dn720371.aspx) operation.
-
-After the database is recovered you can configure it to be used by following the [Finalize a Recovered Database](/documentation/articles/sql-database-recovered-finalize) guide.
  
+## Configure your database after recovery<a name="postrecovery"></a>
+
+This is a checklist of tasks which can be used to help get your recovered database production ready.
+
+### Update Connection Strings
+
+Verify connection strings of your application are pointing to the newly recovered database. Update your connection strings if one of the below situations applies:
+
+  + The recovered database uses a different name from the source database name
+  + The recovered database is on a different server from the source server
+
+For more information about changing connection strings, see [Connections to Azure SQL Database: Central Recommendations ](/documentation/articles/sql-database-connect-central-recommendations).
+ 
+### Modify Firewall Rules
+Verify the firewall rules at server-level and database-level, and make sure connections from your client computers or Azure to the server and the newly recovered database are enabled. For more information, see [How to: Configure Firewall Settings (Azure SQL Database)](/documentation/articles/sql-database-configure-firewall-settings).
+
+### Verify Server Logins and Database Users
+
+Verify if all the logins used by your application exist on the server which is hosting your recovered database. Re-create the missing logins and grant them appropriate permissions on the recovered database. For more information, see [Managing Databases and Logins in Azure SQL Database](/documentation/articles/sql-database-manage-logins).
+
+Verify if each database users in the recovered database is associated with a valid server login. Use ALTER USER statement to map user to valid server login. For more information, see [ALTER USER](https://technet.microsoft.com/zh-cn/library/ms176060(v=sql.120).aspx). 
+
+
+### Setup Telemetry Alerts
+
+Verify if your existing alert rule settings are map to your recovered database. Update the setting if one of below situations applies:
+
+  + The recovered database uses a different name from the source database name
+  + The recovered database is on a different server from the source server
+
+For more information about database alert rules, see [Receive Alert Notifications](/documentation/articles/insights-receive-alert-notifications) and [Track Service Health](/documentation/articles/insights-service-health).
+
+
+### Enable Auditing
+
+If auditing is required to access your database, you need to enable Auditing after the database recovery. A good indicator of auditing is required is that client applications use secure connection strings in a pattern of *.database.secure.chinacloudapi.cn. For more information, see [Get started with SQL database auditing](/documentation/articles/sql-database-auditing-get-started). 

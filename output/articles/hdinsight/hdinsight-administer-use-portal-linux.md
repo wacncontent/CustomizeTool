@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties
 	pageTitle="Manage Linux-based Hadoop clusters in HDInsight using Azure Management Portal | Windows Azure"
 	description="Learn how to create and manage Linux-based HDInsight clusters using the Azure Management Portal."
@@ -12,7 +10,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="10/09/2015"
+	ms.date="11/16/2015"
 	wacn.date=""/>
 
 # Manage Hadoop clusters in HDInsight by using the Azure preview portal
@@ -67,7 +65,7 @@ You can provision HDInsight clusters from the Azure Management Portal by using t
     
     > [AZURE.NOTE] SSH is used to remotely access the HDInsight cluster using a command-line. The user name and password or public key you use here will be used when connecting to the cluster through SSH. Also, the SSH user name must be unique, as it creates a user account on all the HDInsight cluster nodes. The following are some of the account names reserved for use by services on the cluster, and __should not__ be used as your SSH user name:
     >
-    > root, hdiuser, storm, hbase, ubuntu, zookeeper, hdfs, yarn, mapred, hbase, hive, oozie, falcon, sqoop, admin, tez, hcat, hdinsight-zookeeper.
+    > root, storm, hbase, ubuntu, zookeeper, hdfs, yarn, mapred, hbase, hive, oozie, falcon, sqoop, admin, tez, hcat, hdinsight-zookeeper.
 
     For more information on using SSH with HDInsight, see one of the following articles:
 

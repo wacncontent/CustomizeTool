@@ -1,3 +1,21 @@
-updated docs: 0
+updated docs: 15
+articles/notification-hubs/notification-hubs-android-get-started.md
+articles/notification-hubs/notification-hubs-aspnet-backend-windows-dotnet-notify-users.md
+articles/notification-hubs/notification-hubs-baidu-get-started.md
+articles/notification-hubs/notification-hubs-chrome-get-started.md
+articles/notification-hubs/notification-hubs-diagnosing.md
+articles/notification-hubs/notification-hubs-ios-get-started.md
+articles/notification-hubs/notification-hubs-ios-mobile-services-register-user-push-notifications.md
+articles/notification-hubs/notification-hubs-java-backend-how-to.md
+articles/notification-hubs/notification-hubs-kindle-get-started.md
+articles/notification-hubs/notification-hubs-php-backend-how-to.md
+articles/notification-hubs/notification-hubs-python-backend-how-to.md
+articles/notification-hubs/notification-hubs-windows-phone-get-started.md
+articles/notification-hubs/notification-hubs-windows-store-dotnet-get-started.md
+articles/notification-hubs/partner-xamarin-notification-hubs-android-get-started.md
+articles/notification-hubs/partner-xamarin-notification-hubs-ios-get-started.md
 
-updated includes: 0
+updated includes: 3
+includes/notification-hubs-android-studio-add-google-play-services.md
+includes/notification-hubs-aspnet-backend-notifyusers.md
+includes/notification-hubs-enable-apple-push-notifications.md

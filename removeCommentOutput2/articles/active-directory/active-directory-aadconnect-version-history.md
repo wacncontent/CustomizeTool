@@ -1,4 +1,4 @@
-<properties
+﻿<properties
    pageTitle="Azure AD Connect: Version Release History | Windows Azure"
    description="This topic lists all releases of Azure AD Connect and Azure AD Sync"
    services="active-directory"
@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="10/13/2015"
+	ms.date="11/03/2015"
 	wacn.date=""/>
 
 # Azure AD Connect: Version Release History
@@ -17,6 +17,44 @@
 The Azure Active Directory team regularly updates Azure AD Connect with new features and functionality. Not all additions are applicable to all audiences.
 
 This article is designed to help you keep track of the versions that have been released, and to understand whether you need to update to the newest version or not.
+
+Related links:
+
+- For permissions required to apply an update, see [accounts and permissions](/documentation/articles/active-directory-aadconnect-accounts-permissions#upgrade)
+- [Download Azure AD Connect](http://go.microsoft.com/fwlink/?LinkId=615771)
+
+## 1.0.9125.0
+Released: 2015 November
+
+**New features:**
+
+- Can reconfigure the ADFS to Azure AD trust.
+- Can refresh the Active Directory schema and regenerate Sync Rules.
+- Can disable a sync rule.
+- Can define "AuthoritativeNull" as a new literal in a Sync Rule.
+
+**New preview features:**
+
+- [Azure AD Connect Health for sync](/documentation/articles/active-directory-aadconnect-health-sync).
+- Support for [Azure AD Domain Services](/documentation/articles/active-directory-ds-getting-started) password synchronization.
+
+**New supported scenario:**
+
+- Supports multiple on-premises Exchange organizations. See [Hybrid deployments with multiple Active Directory forests](https://technet.microsoft.com/zh-cn/library/jj873754.aspx) for more information.
+
+**Fixed issues:**
+
+- Password synchronization issues:
+    - An object moved from out-of-scope to in-scope will not have its password synchronized. This incudes both OU and attribute filtering.
+    - Selecting a new OU to include in sync does not require a full password sync.
+    - When a disabled user is enabled the password does not sync.
+    - The password retry queue is infinite and the previous limit of 5,000 objects to be retired has been removed.
+    - [Improved troubleshooting](/documentation/articles/active-directory-aadconnectsync-implement-password-synchronization#troubleshoot-password-synchronization).
+- Not able to connect to Active Directory with Windows Server 2016 forest-functional level.
+- Not able to change the group used for group filtering after initial install.
+- Will no longer create a new user profile on the Azure AD Connect server for every user doing a password change with password writeback enabled.
+- Not able to use Long Integer values in Sync Rules scopes.
+- The checkbox "device writeback" remains disabled if there are unreachable domain controllers.
 
 ## 1.0.8667.0
 Released: 2015 August
@@ -37,6 +75,11 @@ Released: 2015 August
 - Cannot enable and disable “Staging mode” if extension attributes have been added.
 - Password writeback fails in some configuration because of a bad password on the Active Directory Connector.
 - DirSync cannot be upgraded if dn is used in attribute filtering.
+- Excessive CPU usage when using password reset.
+
+**Removed preview features:**
+
+- The preview feature [User writeback](/documentation/articles/active-directory-aadconnect-feature-preview#user-writeback) was temporarily removed based on feedback from our preview customers. It will be re-added later when we have addressed the provided feedback.
 
 ## 1.0.8641.0
 Released: 2015 June
@@ -44,6 +87,22 @@ Released: 2015 June
 **Initial release of Azure AD Connect.**
 
 Changed name from Azure AD Sync to Azure AD Connect.
+
+**New features:**
+
+- [Express settings](/documentation/articles/active-directory-aadconnect-get-started-express) installation
+- Can [configure ADFS](/documentation/articles/active-directory-aadconnect-get-started-custom#configuring-federation-with-ad-fs)
+- Can [upgrade from DirSync](/documentation/articles/active-directory-aadconnect-dirsync-upgrade-get-started)
+- [Prevent accidental deletes](/documentation/articles/active-directory-aadconnectsync-feature-prevent-accidental-deletes)
+- Introduced [staging mode](/documentation/articles/active-directory-aadconnectsync-operations#staging-mode)
+
+**New preview features:**
+
+- [User writeback](/documentation/articles/active-directory-aadconnect-feature-preview#user-writeback)
+- [Group writeback](/documentation/articles/active-directory-aadconnect-feature-preview#group-writeback)
+- [Device writeback](/documentation/articles/active-directory-aadconnect-get-started-custom-device-writeback)
+- [Directory extensions](/documentation/articles/active-directory-aadconnect-feature-preview#directory-extensions)
+
 
 ## 1.0.494.0501
 Released: 2015 May
@@ -92,7 +151,7 @@ Released: 2014 December
 
 **New features:**
 
-- It is now supported to do password synchronization with attribute based filtering. For more details, see Password synchronization with filtering.
+- It is now supported to do password synchronization with attribute based filtering. For more details, see [Password synchronization with filtering](/documentation/articles/active-directory-aadconnectsync-configure-filtering).
 - The attribute msDS-ExternalDirectoryObjectID is written back to AD. This adds support for Office 365 applications using OAuth2 to access both, Online and On-Premises mailboxes in a Hybrid Exchange Deployment.
 
 **Fixed upgrade issues:**

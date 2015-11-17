@@ -3,14 +3,13 @@
 	description="A topic that explains how to sign up for Azure Active Directory Premium edition."
 	services="active-directory"
 	documentationCenter=""
-	authors="MarkusVi"
-	writer="markvi"
+	authors="markusvi"
 	manager="stevenpo" 
-	editor="LisaToft"/>
+	editor=""/>
 
 <tags
 	ms.service="active-directory"
-	ms.date="08/14/2015"
+	ms.date="10/30/2015"
 	wacn.date=""/>
 
 # Getting started with Azure Active Directory Premium

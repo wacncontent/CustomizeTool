@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties
 	pageTitle="Web Apps overview"
 	description="Learn more about Azure Websites"
@@ -11,7 +9,7 @@
 
 <tags
 	ms.service="app-service-web"
-	ms.date="07/17/2015"
+	ms.date="10/27/2015"
 	wacn.date=""/>
 
 
@@ -25,7 +23,7 @@ Leverage the power of [Azure Websites](/documentation/services/web-sites/) to us
 
 ## More than just websites##
 
-Modern enterprises interact with their customers in ever more sophisticated ways. Companies of all types regard their corporate Web presence as a critical part of their business, a major component in their business plan. To accommodate this importance, enterprises are looking for a platform that will provide them with the agility, security and scalability.Furthermore, they require the capability to link to their existing business system, be able to quickly deploy new code and spin up instances across the globe. With Azure Websites and Web Apps, organizations can delight their customers quickly and cost-effectively.
+Modern enterprises interact with their customers in ever more sophisticated ways. Companies of all types regard their corporate Web presence as a critical part of their business, a major component in their business plan. To accommodate this importance, enterprises are looking for a platform that will provide them with the agility, security and scalability. Furthermore, they require the capability to link to their existing business system, be able to quickly deploy new code and spin up instances across the globe. With Azure Websites and Web Apps, organizations can delight their customers quickly and cost-effectively.
 
 ## Why Web Apps? ##
 
@@ -37,7 +35,7 @@ Azure Websites is a fully managed platform that enables you to build, deploy and
 
 ## Web Apps Concepts ##
 
-- **Web Apps Gallery** - Select from an ever-growing list of existing web application templates. Leverage the best of the OSS app community with one-click installation of packages such as Wordpress, Joomla and Drupal. Get your application development process start right by leveraging frameworks like .NET MVC, Django and CakePHP.
+- **Web Apps Gallery** - Select from an ever-growing list of existing web application templates. Leverage the best of the OSS app community with one-click installation of packages such as Wordpress, Joomla and Drupal. Get your application development process started right by leveraging frameworks like .NET MVC, Django and CakePHP.
 - **Auto Scaling** - Web Apps enables you to quickly scale-up or out to handle any incoming customer load. Manually select the number and size of VMs or set up auto-scaling to scale your servers based on load or schedule.
 - **Continuous Integration** - Set up continuous integration and deployment workflows with VSO, GitHub, TeamCity, Hudson or BitBucket – enabling you to automatically build, test and deploy your web app on each successful code check-in or integration tests.
 - **Deployment Slots** - Implement [Staged Deployment] [Slots] to verify your code in a pre-production environment which is identical to your production web app in Azure Websites. When satisfied, release a new version of your App with zero downtime by performing a swap operation. 
@@ -60,3 +58,5 @@ For more information on Azure Websites platform, see [Azure Websites][appservice
 [create]: /documentation/articles/web-sites-dotnet-get-started
 [Webjobs]: /documentation/articles/websites-dotnet-webjobs-sdk-get-started
 [Slots]: /documentation/articles/web-sites-staged-publishing
+
+ 

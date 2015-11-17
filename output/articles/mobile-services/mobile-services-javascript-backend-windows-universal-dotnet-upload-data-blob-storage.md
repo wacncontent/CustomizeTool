@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.date="07/13/2015"
+	ms.date="11/09/2015"
 	wacn.date=""/>
 
 # Upload images to Azure Blob storage by using Mobile Services

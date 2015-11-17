@@ -4,11 +4,11 @@
    services="virtual-network"
    documentationCenter="na"
    authors="telmosampaio"
-   manager="carolz"
+   manager="carmonm"
    editor="tysonn" />
 <tags
 	ms.service="virtual-network"
-	ms.date="09/14/2015"
+	ms.date="10/29/2015"
 	wacn.date=""/>
 
 # Virtual Network Overview
@@ -45,7 +45,7 @@ VNets provide the following services to IaaS VMs and role PaaS role instances de
 
 - **Connectivity**. VNets can be connected to each other, and even to your on-premises datacenter, by using a site-to-site VPN connection, or ExpressRoute connection. To learn more about VPN gateways, visit [About VPN gateways](/documentation/articles/vpn-gateway-about-vpngateways). To learn more about ExpressRoute, visit [ExpressRoute technical overview](/documentation/articles/expressroute-introduction).
 
-    >[AZURE.NOTE] Make sure you create a VNet before deploying any IaaS VMs or PaaS role instances to your Azure environment. ARM based VMs require a VNet, and if you do not specify an existing VNet, Azure creates a default VNet that might have a CIDR address block clash with your on-premises network. Making ti impossible for you to connect your VNet to your on-premises network.
+    >[AZURE.NOTE] Make sure you create a VNet before deploying any IaaS VMs or PaaS role instances to your Azure environment. ARM based VMs require a VNet, and if you do not specify an existing VNet, Azure creates a default VNet that might have a CIDR address block clash with your on-premises network. Making it impossible for you to connect your VNet to your on-premises network.
 
 ## Subnets
 

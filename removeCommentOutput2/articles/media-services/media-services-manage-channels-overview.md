@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="10/15/2015"
+	ms.date="11/03/2015"
 	wacn.date=""/>
 
 #Working with Channels that Receive Multi-bitrate Live Stream from On-premises Encoders
@@ -236,11 +236,14 @@ Other considerations related to working with channels and related components:
 
 ##How to create channels that receive multi-bitrate live stream from on-premises encoders
 
-For more information about on-premises live encoders, see [Using 3rd Party Live Encoders with Azure Media Services](https://msdn.microsoft.com/zh-cn/library/azure/dn783464.aspx).
+For more information about on-premises live encoders, see [Using 3rd Party Live Encoders with Azure Media Services](https://azure.microsoft.com/blog/azure-media-services-rtmp-support-and-live-encoders/).
 
 Choose **Portal**, **.NET**, **REST API** to see how to create and manage channels and programs.
 
 [AZURE.INCLUDE [media-services-selector-manage-channels](../includes/media-services-selector-manage-channels.md)]
+
+
+[AZURE.INCLUDE [media-services-user-voice-include](../includes/media-services-user-voice-include.md)]
 
 
 

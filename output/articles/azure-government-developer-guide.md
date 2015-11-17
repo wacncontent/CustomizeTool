@@ -4,12 +4,12 @@
 	services="" 
 	documentationCenter="" 
 	authors="Joharve2" 
-	manager="carolz" 
+	manager="Chrisnie" 
 	editor=""/>
 
 <tags
 	ms.service="multiple"
-	ms.date="01/21/2014"
+	ms.date="10/29/2015"
 	wacn.date=""/>
 
 
@@ -62,6 +62,16 @@ Azure Government currently has the following services available in both US GOV I
 - Scheduler
 - Virtual Networking
 - SQL Database
+- Azure Files
+- Media Services
+- Traffic Manager
+- Service Bus
+- StorSimple
+- Redis Cache
+- Azure Backup
+- Automation
+- ExpressRoute
+- etc.
 
 Other services are available, and more services will be added on a continuous basis.  For the most current list of services, please see the [regions page](http://azure.microsoft.com/regions/#services) which will highlight each available region and their services.  
 
@@ -74,7 +84,6 @@ Use the following table to guide you when mapping public Windows Azure and SQL D
 
 Service Type|Azure Public|Azure Government
 ---|---|---
-Azure Government Home|windowsazure.cn|microsoftazure.us
 Management Portal|manage.windowsazure.cn|manage.windowsazure.us
 General|*.chinacloudapi.cn|*.usgovcloudapi.net
 Core|*.core.chinacloudapi.cn|*.core.usgovcloudapi.net
@@ -84,9 +93,23 @@ Queue Storage|*.queue.core.chinacloudapi.cn|*.queue.core.usgovcloudapi.net
 Table Storage|*.table.core.chinacloudapi.cn|*.table.core.usgovcloudapi.net
 Service Management|management.core.chinacloudapi.cn|management.core.usgovcloudapi.net
 SQL Database|*.database.chinacloudapi.cn|*.database.usgovcloudapi.net
+ARM Load balanced Endpoint|https://management.chinacloudapi.cn|https://management.usgovcloudapi.net  
+
+* For ARM authentication via Azure AD, please reference [Authenticating Azure Resource Manager Requests](https://msdn.microsoft.com/zh-cn/library/azure/dn790557.aspx)
 
 ## <a name="next"></a>Next steps
-If you are interested in learning more and about Azure Government and how your organization can qualify to access, please go to <A href="http://azure.com/gov">http://www.windowsazure.cn/gov</a>
+
+If you are interested in learning more and about Azure Government please leverage some of the links below.
+
+- **[Sign up for a trial](https://azuregov.microsoft.com/trial/azuregovtrial)**
+
+- **[Acquiring and accessing Azure Government](http://azure.com/gov)**
+
+- **[Azure Government Overview](/azure-government-overview)**
+
+- **[Azure Government Blog](http://blogs.msdn.com/b/azuregov/)**
+
+- **[Azure Compliance](/support/trust-center/compliance/)**
 
 <!--Anchors-->
 

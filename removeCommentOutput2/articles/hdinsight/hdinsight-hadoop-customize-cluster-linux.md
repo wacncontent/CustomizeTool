@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties
 	pageTitle="Customize HDInsight Clusters using script actions | Windows Azure"
 	description="Learn how to add custom components to Linux-based HDInsight clusters using Script Actions. Script Actions are Bash scripts that run during cluster creation, and can be used to customize the cluster configuration or add additional services and utilities like Hue, Solr, or R."
@@ -12,7 +10,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="10/19/2015"
+	ms.date="11/16/2015"
 	wacn.date=""/>
 
 # Customize HDInsight clusters using Script Action 
@@ -103,7 +101,7 @@ In this section, we use Azure Resource Manager (ARM) templates to provision an H
 		        },
 		        "sshUserName": {
 		            "type": "string",
-		            "defaultValue": "hdiuser"
+		            "defaultValue": "username"
 		        },
 		        "sshPassword": {
 		            "type": "securestring"
@@ -238,7 +236,7 @@ In this section, we use Azure Resource Manager (ARM) templates to provision an H
 
 2. Start Azure PowerShell and Log in to your Azure account. After providing your credentials, the command returns information about your account.
 
-		Add-AzureAccount
+		Add-AzureRmAccount
 
 		Id                             Type       ...
 		--                             ----
@@ -246,15 +244,13 @@ In this section, we use Azure Resource Manager (ARM) templates to provision an H
 
 3. If you have multiple subscriptions, provide the subscription id you wish to use for deployment.
 
-		Select-AzureSubscription -SubscriptionID <YourSubscriptionId>
+		Select-AzureRmSubscription -SubscriptionID <YourSubscriptionId>
 
-4. Switch to the Azure Resource Manager module.
-
-		Switch-AzureMode AzureResourceManager
+    > [AZURE.NOTE] You can use `Get-AzureRmSubscription` to get a list of all subscriptions associated with your account, which includes the subscription Id for each one.
 
 5. If you do not have an existing resource group, create a new resource group. Provide the name of the resource group and location that you need for your solution. A summary of the new resource group is returned.
 
-		New-AzureResourceGroup -Name myresourcegroup -Location "China North"
+		New-AzureRmResourceGroup -Name myresourcegroup -Location "China North"
 
 		ResourceGroupName : myresourcegroup
 		Location          : chinanorth
@@ -267,10 +263,10 @@ In this section, we use Azure Resource Manager (ARM) templates to provision an H
 		ResourceId        : /subscriptions/######/resourceGroups/ExampleResourceGroup
 
 
-6. To create a new deployment for your resource group, run the **New-AzureResourceGroupDeployment** command and provide the necessary parameters. The parameters will include a name for your deployment, the name of your resource group, and the path or URL to the template you created. If your template requires any parameters, you must pass those parameters as well. In this case, the script action to install R on the cluster does not require any parameters.
+6. To create a new deployment for your resource group, run the **New-AzureRmResourceGroupDeployment** command and provide the necessary parameters. The parameters will include a name for your deployment, the name of your resource group, and the path or URL to the template you created. If your template requires any parameters, you must pass those parameters as well. In this case, the script action to install R on the cluster does not require any parameters.
 
 
-		New-AzureResourceGroupDeployment -Name mydeployment -ResourceGroupName myresourcegroup -TemplateFile <PathOrLinkToTemplate>
+		New-AzureRmResourceGroupDeployment -Name mydeployment -ResourceGroupName myresourcegroup -TemplateFile <PathOrLinkToTemplate>
 
 
 	You will be prompted to provide values for the parameters defined in the template.
@@ -286,11 +282,7 @@ In this section, we use Azure Resource Manager (ARM) templates to provision an H
 
 8. If your deployment fails, you can use the following cmdlets to get information about the failures.
 
-		Get-AzureResourceGroupLog -ResourceGroup myresourcegroup -Status Failed
-
-	For detailed information about the deployment failures, use the following cmdlet.
-
-		Get-AzureResourceGroupLog -ResourceGroup myresourcegroup -Status Failed -DetailedOutput
+		Get-AzureRmResourceGroupDeployment -ResourceGroupName myresourcegroup -ProvisioningState Failed
 
 ##Use a Script Action from Azure PowerShell
 
@@ -301,43 +293,42 @@ Perform the following steps:
 1. Open the Azure PowerShell console and declare the following variables:
 
 		# PROVIDE VALUES FOR THESE VARIABLES
-		$subscriptionName = "<SubscriptionName>"		# Name of the Azure subscription
+		$subscriptionId = "<SubscriptionId>"		# ID of the Azure subscription
 		$clusterName = "<HDInsightClusterName>"			# HDInsight cluster name
 		$storageAccountName = "<StorageAccountName>"	# Azure storage account that hosts the default container
 		$storageAccountKey = "<StorageAccountKey>"      # Key for the storage account
 		$containerName = $clusterName
 		$location = "<MicrosoftDataCenter>"				# Location of the HDInsight cluster. It must be in the same data center as the storage account.
 		$clusterNodes = <ClusterSizeInNumbers>			# The number of nodes in the HDInsight cluster.
-		$version = "<HDInsightClusterVersion>"          # HDInsight version, for example "3.1"
+        $resourceGroupName = "<ResourceGroupName>"      # The resource group that the HDInsight cluster will be created in
 
 2. Specify the configuration values (such as nodes in the cluster) and the default storage to be used.
 
 		# SPECIFY THE CONFIGURATION OPTIONS
-		Select-AzureSubscription $subscriptionName
-		$config = New-AzureHDInsightClusterConfig -ClusterSizeInNodes $clusterNodes
-		$config.DefaultStorageAccount.StorageAccountName="$storageAccountName.blob.core.chinacloudapi.cn"
-		$config.DefaultStorageAccount.StorageAccountKey=$storageAccountKey
-		$config.DefaultStorageAccount.StorageContainerName=$containerName
+		Select-AzureRmSubscription -SubscriptionId $subscriptionId
+		$config = New-AzureRmHDInsightClusterConfig
+		$config.DefaultStorageAccountName="$storageAccountName.blob.core.chinacloudapi.cn"
+		$config.DefaultStorageAccountKey=$storageAccountKey
 
-3. Use **Add-AzureHDInsightScriptAction** cmdlet to invoke the script. The following example uses the the script to install R on the cluster:
+3. Use **Add-AzureRmHDInsightScriptAction** cmdlet to invoke the script. The following example uses a script that installs R on the cluster:
 
-		# INVOKE THE SCRIPT USING THE SCRIPT ACTION
-		$config = Add-AzureHDInsightScriptAction -Config $config -Name "Install R"  -ClusterRoleCollection HeadNode,WorkerNode,ZookeeperNode -Uri https://hdiconfigactions.blob.core.windows.net/linuxrconfigactionv01/r-installer-v01.sh
+		# INVOKE THE SCRIPT USING THE SCRIPT ACTION FOR HEADNODE AND WORKERNODE
+		$config = Add-AzureRmHDInsightScriptAction -Config $config -Name "Install R"  -NodeType HeadNode -Uri https://hdiconfigactions.blob.core.windows.net/linuxrconfigactionv01/r-installer-v01.sh
+        $config = Add-AzureRmHDInsightScriptAction -Config $config -Name "Install R"  -NodeType WorkerNode -Uri https://hdiconfigactions.blob.core.windows.net/linuxrconfigactionv01/r-installer-v01.sh
 
-
-	The **Add-AzureHDInsightScriptAction** cmdlet takes the following parameters:
+	The **Add-AzureRmHDInsightScriptAction** cmdlet takes the following parameters:
 
 	| Parameter | Definition |
 	| --------- | ---------- |
 	| Config | Configuration object to which script action information is added. |
 	| Name | Name of the script action. |
-	| ClusterRoleCollection | Specifies the nodes on which the customization script is run. The valid values are **HeadNode** (to install on the head node), **WorkerNode** (to install on all the data nodes), or **ZookeeperNode** (to install on the zookeeper node). You can use either or all values. |
+	| NodeType | Specifies the node on which the customization script is run. The valid values are **HeadNode** (to install on the head node), **WorkerNode** (to install on all the data nodes), or **ZookeeperNode** (to install on the zookeeper node). |
 	| Parameters | Parameters required by the script. |
 	| Uri | Specifies the URI to the script that is executed. |
 
-4. Finally, provision the cluster:
-
-		New-AzureHDInsightCluster -Config $config -Name $clusterName -Location $location -Version $version
+4. Finally, create the cluster:
+        
+        New-AzureRmHDInsightCluster -config $config -clustername $clusterName -DefaultStorageContainer $containerName -Location $location -ResourceGroupName $resourceGroupName -ClusterSizeInNodes $clusterNodes
 
 When prompted, enter the credentials for the cluster. It can take several minutes before the cluster is created.
 
@@ -444,6 +435,54 @@ Open the Azure PowerShell console, navigate to the location where you saved the 
 
 Provide a cluster name and press ENTER to provision a cluster.
 
+## Troubleshooting
+
+You can use Ambari web UI to view information logged by scripts during cluster creation. However, if the cluster creation failed due to an error in the script, the logs are also available in the default storage account associated with the cluster. This section provides information on how to retrieve the logs using both these options.
+
+### Using the Ambari Web UI
+
+1. In your browser, navigate to https://CLUSTERNAME.azurehdinsight.cn. Replace CLUSTERNAME with the name of your HDInsight cluster.
+
+	When prompted, enter the admin account name (admin) and password for the cluster. You may have to re-enter the admin credentials in a web form.
+
+2. From the bar at the top of the page, select the __ops__ entry. This will show a list of current and previous operations performed on the cluster through Ambari.
+
+	![Ambari web UI bar with ops selected](./media/hdinsight-hadoop-customize-cluster/ambari-nav.png)
+
+3. Find the entries that have __run\_customscriptaction__ in the __Operations__ column. These are created when the Script Actions are ran.
+
+	![Screenshot of operations](./media/hdinsight-hadoop-customize-cluster/ambariscriptaction.png)
+
+	Select this entry, and drill down through the links to view the STDOUT and STDERR output generated when the script was ran on the cluster.
+
+### Access logs from the default storage account
+
+If the cluster creation failed due to an error in script action, the script action logs can still be accessed directly from the default storage account associated with the cluster.
+
+* The storage logs are available at `\STORAGE_ACOCUNT_NAME\DEFAULT_CONTAINER_NAME\custom-scriptaction-logs\CLUSTER_NAME\DATE`. 
+
+	![Screenshot of operations](./media/hdinsight-hadoop-customize-cluster/script_action_logs_in_storage.png)
+
+	Under this, the logs are organized separately for headnode, workdernode, and zookeeper nodes. Some examples are:
+	* **Headnode** - `<uniqueidentifier>AmbariDb-hn0-<generated_value>.chinacloudapp.cn`
+	* **Worker node** - `<uniqueidentifier>AmbariDb-wn0-<generated_value>.chinacloudapp.cn`
+	* **Zookeeper node** - `<uniqueidentifier>AmbariDb-zk0-<generated_value>.chinacloudapp.cn`
+
+* All stdout and stderr of the corresponding host is uploaded to the storage account. There is one **output-\*.txt** and **errors-\*.txt** for each script action. The output-*.txt file contains information about the URI of the script that got run on the host. For example
+
+		'Start downloading script locally: ', u'https://hdiconfigactions.blob.core.windows.net/linuxrconfigactionv01/r-installer-v01.sh'
+
+* It's possible that you repeatedly create a script action cluster with the same name. In such case, you can distinguish the relevant logs based on the DATE folder name. For example, the folder structure for a cluster (mycluster) created on different dates will be:
+	* `\STORAGE_ACOCUNT_NAME\DEFAULT_CONTAINER_NAME\custom-scriptaction-logs\mycluster\2015-10-04`
+	* `\STORAGE_ACOCUNT_NAME\DEFAULT_CONTAINER_NAME\custom-scriptaction-logs\mycluster\2015-10-05`
+
+* If you create a script action cluster with the same name on the same day, you can use the unique prefix to identify the relevant log files.
+
+* If you create a cluster at the end of the day, it's possible that the log files span across two days. In such cases, you will see two different date folders for the same cluster.
+
+* Uploading log files to the default container can take up to 5 mins, especially for large clusters. So, if you want to access the logs, you should not immediately delete the cluster if a script action fails.
+
+
 ## Support for open-source software used on HDInsight clusters
 
 The Windows Azure HDInsight service is a flexible platform that enables you to build big-data applications in the cloud by using an ecosystem of open-source technologies formed around Hadoop. Windows Azure provides a general level of support for open-source technologies, as discussed in the **Support Scope** section of the [Azure Support FAQ website](/support/faq/). The HDInsight service provides an additional level of support for some of the components, as described below.
@@ -471,24 +510,9 @@ The HDInsight service provides several ways to use custom components. Regardless
 2. Cluster customization - During cluster creation, you can specify additional settings and custom components that will be installed on the cluster nodes.
 
 3. Samples - For popular custom components, Microsoft and others may provide samples of how these components can be used on the HDInsight clusters. These samples are provided without support.
-
 ##Troubleshooting
 
 You can use Ambari web UI to view information logged by scripts during cluster provisioning.
-
-1. In your browser, navigate to https://CLUSTERNAME.azurehdinsight.cn. Replace CLUSTERNAME with the name of your HDInsight cluster.
-
-	When prompted, enter the admin account name (admin) and password for the cluster. You may have to re-enter the admin credentials in a web form.
-
-2. From the bar at the top of the page, select the __ops__ entry. This will show a list of current and previous operations performed on the cluster through Ambari.
-
-	![Ambari web UI bar with ops selected](./media/hdinsight-hadoop-customize-cluster/ambari-nav.png)
-
-3. Find the entries that have __run\_customscriptaction__ in the __Operations__ column. These are created when the Script Actions are ran.
-
-	![Screenshot of operations](./media/hdinsight-hadoop-customize-cluster/ambariscriptaction.png)
-
-	Select this entry, and drill down through the links to view the STDOUT and STDERR output generated when the script was ran on the cluster.
 
 ## Next steps
 

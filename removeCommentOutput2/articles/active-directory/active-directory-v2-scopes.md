@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="08/12/2015"
+	ms.date="11/10/2015"
 	wacn.date=""/>
 
 # App model v2.0 preview: Scopes, permissions, & consent
@@ -24,7 +24,7 @@ Apps that integrate with Azure AD follow a particular authorization model that a
 App model v2.0 implements the [OAuth 2.0](/documentation/articles/active-directory-v2-protocols) authorization protocol, which is a method for allowing a 3rd party app to access web-hosted resources on behalf of a user.  Any web-hosted resource that integrates with Azure AD will have a resource identifier, or **App ID URI**.  For example, some of Microsoft's web-hosted resources include:
 
 - The Office 365 Unified Mail API: `https://outlook.office.com`
-- The Azure Resource Manager API: `https://management.azure.com` 
+- The Azure Resource Manager API: `https://manage.windowsazure.cn`
 - The Azure AD Graph API: `https://graph.chinacloudapi.cn`
 
 The same is true for any 3rd party resources that has integrated with Azure AD.  Any of these resources can also define a set of permissions that can be used to divide up the functionality of that resource into smaller chunks.  As an example, the Office 365 Unified Mail API has defined these basic permissions:
@@ -48,7 +48,7 @@ An app can request these permissions by specifying the scopes in requests to the
 In an [OpenID Connect or OAuth 2.0](/documentation/articles/active-directory-v2-protocols) authorization request, an app can request the permissions it needs using the `scope` query parameter.  For example, when a user signs into an app, the app would send a request like the following (with line breaks for readability):
 
 ```
-GET https://login.microsoftonline.com/common/oauth2/v2.0/authorize?
+GET https://login.chinacloudapi.cn/common/oauth2/v2.0/authorize?
 client_id=2d4d11a2-f814-46a7-890a-274a72a7309e
 &response_type=code
 &redirect_uri=http%3A%2F%2Flocalhost%2Fmyapp%2F
@@ -81,7 +81,7 @@ After the user consents to permissions for your app, your app can acquire access
 
 ```
 POST common/v2.0/oauth2/token HTTP/1.1
-Host: https://login.microsoftonline.com
+Host: https://login.chinacloudapi.cn
 Content-Type: application/json
 
 {

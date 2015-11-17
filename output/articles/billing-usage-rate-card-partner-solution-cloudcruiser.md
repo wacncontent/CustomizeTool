@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Cloud Cruiser and Windows Azure Billing API Integration"
+   pageTitle="Cloud Cruiser and Windows Azure Billing API Integration | Windows Azure"
    description="Provides a unique perspective from Windows Azure Billing partner Cloud Cruiser, on their experiences integrating the Azure Billing APIs into their product.  This is especially useful for Azure and Cloud Cruiser customers that are interested in using/trying Cloud Cruiser for Windows Azure Pack."
    services="billing"
    documentationCenter=""
@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="billing"
-	ms.date="08/10/2015"
+	ms.date="11/02/2015"
 	wacn.date=""/>
 
 # Cloud Cruiser and Windows Azure Billing API Integration
@@ -236,7 +236,7 @@ insights from your cloud usage.
 + For detailed instructions on creating Cloud Cruiser workbooks and reports, please refer to Cloud Cruiser’s online [documentation](http://docs.cloudcruiser.com/) (valid login required).  For more information about Cloud Cruiser, please contact [info@cloudcruiser.com](mailto:info@cloudcruiser.com).
 + See [Gain insights into your Windows Azure resource consumption](/documentation/articles/billing-usage-rate-card-overview) for an overview of the Azure Resource Usage and RateCard APIs.
 + Check out the [Azure Billing REST API Reference](https://msdn.microsoft.com/zh-cn/library/azure/1ea5b323-54bb-423d-916f-190de96c6a3c) for more information on both APIs, which are part of the set of APIs provided by the Azure Resource Manager.
-+ If you would like to dive right into the sample code, check out our [Windows Azure Billing API Code Samples on Github](https://github.com/Azure/BillingCodeSamples).
++ If you would like to dive right into the sample code, check out our Windows Azure Billing API Code Samples on [Azure Code Samples](https://azure.microsoft.com/documentation/samples/?term=billing).
 
 ### Learn More
 + See the [Azure Resource Manager Overview](/documentation/articles/resource-group-overview) article to learn more about the Azure Resource Manager.

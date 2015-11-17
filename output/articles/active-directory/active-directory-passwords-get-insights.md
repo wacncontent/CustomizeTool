@@ -1,15 +1,15 @@
-<properties
-	pageTitle="Get Insights: Azure AD Password Management Reports | Windows Azure"
-	description="This article describes how to use reports to get insight into Password Management operations in your organization."
-	services="active-directory"
-	documentationCenter=""
-	authors="asteen"
-	manager="kbrint"
+<properties 
+	pageTitle="Get Insights: Azure AD Password Management Reports | Windows Azure" 
+	description="This article describes how to use reports to get insight into Password Management operations in your organization." 
+	services="active-directory" 
+	documentationCenter="" 
+	authors="asteen" 
+	manager="kbrint" 
 	editor="billmath"/>
 
 <tags
 	ms.service="active-directory"
-	ms.date="09/18/2015"
+	ms.date="10/08/2015"
 	wacn.date=""/>
 
 # How to get operational insights with Password Management reports
@@ -43,6 +43,16 @@ To find the Password Management reports, follow the steps below:
 5.	Select either the **Password reset activity** report or the **Password reset registration activity** report.
 
     ![][001]
+
+## How to access Password Management Reports from an API
+As of August 2015, the Azure AD Reports and Events now supports retrieving all of the information included in the Password Reset and Password Reset Registration reports.
+
+To access this data, you'll need to write a small app or script to retrieve it from our servers. [Learn how to get started with the Azure AD Reporting API](/documentation/articles/active-directory-reporting-api-getting-started).
+
+Once you have a working script, you'll next want to examine the password reset and registration events that you can retrieve to meet your scenarios.
+
+- [SsprActivityEvent](https://msdn.microsoft.com/zh-cn/library/azure/mt126081.aspx#BKMK_SsprActivityEvent): Lists the columns available for password reset events
+- [SsprRegistrationActivityEvent](https://msdn.microsoft.com/zh-cn/library/azure/mt126081.aspx#BKMK_SsprRegistrationActivityEvent): Lists the columns available for password reset registration events
 
 ## View password Reset registration activity
 
@@ -91,7 +101,6 @@ The following list explains each of the report columns in detail:
 
 ### Description of report values
 The following table describes the different values allowed for each column:
-
 
 Column|Allowed values and their meanings
 ---|---

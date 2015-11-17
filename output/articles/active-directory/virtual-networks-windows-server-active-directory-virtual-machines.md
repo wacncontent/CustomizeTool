@@ -1,16 +1,15 @@
 <properties 
-	pageTitle="Windows Server Active Directory on Azure VMs" 
+	pageTitle="Windows Server Active Directory on Azure VMs | Windows Azure" 
 	description="You can run Windows Server Active Directory Domain Services (AD DS) or Active Directory Federation Services (AD FS) on Azure virtual machines." 
 	services="active-directory" 
 	documentationCenter="" 
 	authors="markusvi" 
-	manager="terrylan" 
-	editor="LisaToft"
+	manager="stevenpo" 
 	tags="azure-classic-portal"/>
 
 <tags
 	ms.service="active-directory"
-	ms.date="07/23/2015"
+	ms.date="10/20/2015"
 	wacn.date=""/>
 
 
@@ -22,6 +21,12 @@ This navigation topic contains links to other topics about how to deploy Windows
 ## Conceptual guidelines
 
 - [Guidelines for Deploying Windows Server Active Directory on Azure Virtual Machines](https://msdn.microsoft.com/zh-cn/library/azure/jj156090.aspx) 
+<!-- deleted by customization
+
+## Video
+
+- [How to install a new Active Directory forest on an Azure virtual network](http://channel9.msdn.com/Series/Microsoft-Azure-Tutorials/How-to-install-a-new-Active-Directory-forest-on-an-Azure-virtual-network)
+-->
 
 ## How to articles
 

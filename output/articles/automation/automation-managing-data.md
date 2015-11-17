@@ -8,7 +8,7 @@
    editor="tysonn" />
 <tags
 	ms.service="automation"
-	ms.date="10/08/2015"
+	ms.date="11/02/2015"
 	wacn.date=""/>
 
 # Managing Azure Automation data
@@ -30,12 +30,15 @@ The following table summarizes the retention policy for different resources.
 |Modules|Permanently removed 90 days after the module is deleted by a user, or 90 days after the account that holds the module is deleted by a user.|
 |Runbooks|Permanently removed 90 days after the resource is deleted by a user, or 90 days after the account that holds the resource is deleted by a user.|
 |Jobs|Deleted and permanently removed 90 days after last being modified. This could be after the job completes, is stopped, or is suspended.|
+|Node Configurations/MOF Files| Old node configuration is permanently removed 90 days after a new node configuration is generated.|
+|DSC Nodes| Permanently removed 90 days after the node is unregistered from Automation Account using Azure Management Portal or the [Unregister-AzureRMAutomationDscNode](https://msdn.microsoft.com/zh-cn/library/mt603500.aspx) cmdlet in Windows PowerShell. Nodes are also permanently removed 90 days after the account that holds the node is deleted by a user. |
+|Node Reports| Permanently removed 90 days after a new report is generated for that node|
 
 The retention policy applies to all users and currently cannot be customized.
 
 ## Backing up Azure Automation
 
-When you delete an automation account in Windows Azure, all objects in the account are deleted including runbooks, modules, settings, jobs, and assets. The objects cannot be recovered after the account is deleted.  You can use the following information to backup the contents of your automation account before deleting it. 
+When you delete an automation account in Windows Azure, all objects in the account are deleted including runbooks, modules, configurations, settings, jobs, and assets. The objects cannot be recovered after the account is deleted.  You can use the following information to backup the contents of your automation account before deleting it. 
 
 ### Runbooks
 
@@ -56,6 +59,12 @@ You cannot retrieve the value for encrypted variables or the password field of c
 
 You cannot export certificates from Azure Automation.  You must ensure that any certificates are available outside of Azure.
 
+### DSC configurations
+
+You can export your configurations to script files using either the Azure Management Portal or the 
+[Export-AzureRmAutomationDscConfiguration](https://msdn.microsoft.com/zh-cn/library/mt603485.aspx) cmdlet in Windows PowerShell. These configurations can be imported and used in another automation account.
+
+
 ##Geo-replication in Azure Automation
 
 Geo-replication, standard in Azure Automation accounts, backs up account data to a different geographical region for redundancy. You can choose a primary region when setting up your account, and then a secondary region is assigned to it automatically. The secondary data, copied from the primary region, is continuously updated in case of data loss.  
@@ -65,6 +74,12 @@ The following table shows the available primary and secondary region pairings.
 |Primary            |Secondary
 | ---------------   |----------------
 |China East   |China North
+<!-- deleted by customization
+|China East 2          |China North
+|West Europe        |China North
+|South China East    |China East
+|Japan East         |China East
+-->
 
 In the unlikely event that a primary region data is lost, Microsoft attempts to recover it. If the primary data cannot be recovered, then geo-failover is performed and the affected customers will be notified about this through their subscription.
 

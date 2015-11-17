@@ -9,14 +9,14 @@
 
 <tags
 	ms.service="app-service-web"
-	ms.date="08/04/2015"
+	ms.date="09/03/2015"
 	wacn.date=""/>
 
 # Azure Websites Offerings for Enterprise Whitepaper #
 
 The need to reduce costs and deliver IT solutions faster in a rapidly evolving environment creates new challenges for Developers, IT Professionals, and Managers. Users are increasingly looking for their Line of Business (LOB) web applications to be quick, responsive, and available from any device. At the same time, businesses are trying to capitalize on the increased productivity and efficiency that comes from integration with cloud and mobile services, this may be something as simple as single sign-on across devices using Active Directory to collaboration in Office365 using data pulled from an internal LOB application which in turn pulls in data from the company implementation of Salesforce. [Azure Websites](/documentation/services/web-sites/) is an enterprise-class cloud service for developing, testing, and running web and mobile applications, Web APIs, and generic websites. It can be used to run corporate websites, business apps, and digital marketing campaigns on a global network of datacenters optimized for scale and availability, along with support for continuous integration and modern DevOps practices. 
 
-This whitepaper highlights the capabilities of the [Web Apps](/home/features/app-service/web/) service specifically focused on running LOB Web Applications, covering migration of existing web applications and deployment of new LOB web applications on the platform. 
+This whitepaper highlights the capabilities of the [Web Apps](/home/features/web-site/) service specifically focused on running LOB Web Applications, covering migration of existing web applications and deployment of new LOB web applications on the platform.
 
 ## Audience ##
 

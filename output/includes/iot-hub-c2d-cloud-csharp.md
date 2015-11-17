@@ -1,4 +1,4 @@
-## Send a cloud-to-device message from the app back-end
+## Send a cloud-to-device message from the app back end
 
 In this section, you'll write a Windows console app that sends cloud-to-device messages to the simulated device app.
 
@@ -50,7 +50,7 @@ In this section, you'll write a Windows console app that sends cloud-to-device m
     ![][21]
 
 ## Receiving delivery feedback
-It is possible to request delivery (or expiration) ackownledgments from IoT Hub for each cloud-to-device message. This enables the cloud back-end to easily inform retry or compensation logic. Refer to the [IoT Hub Developer Guide][IoT Hub Developer Guide - C2D] for more information on cloud-to-device feedback.
+It is possible to request delivery (or expiration) ackownledgments from IoT Hub for each cloud-to-device message. This enables the cloud back end to easily inform retry or compensation logic. Refer to the [IoT Hub Developer Guide][IoT Hub Developer Guide - C2D] for more information on cloud-to-device feedback.
 
 In this section, you will modify the **SendCloudToDevice** app to request feedback and receive them from IoT Hub.
 
@@ -96,6 +96,7 @@ In this section, you will modify the **SendCloudToDevice** app to request feedba
 [Azure IoT - Service SDK NuGet package]: https://www.nuget.org/packages/Microsoft.Azure.Devices/
 [Transient Fault Handling]: https://msdn.microsoft.com/zh-cn/library/hh680901(v=pandp.50).aspx
 [Get started with IoT Hub]: /documentation/articles/iot-hub-csharp-csharp-getstarted
+
 <!-- Images -->
 [20]: ./media/iot-hub-c2d-cloud-csharp/create-identity-csharp1.png
 [21]: ./media/iot-hub-c2d-cloud-csharp/sendc2d1.png

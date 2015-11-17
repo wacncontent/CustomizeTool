@@ -4,11 +4,11 @@
    services="traffic-manager"
    documentationCenter=""
    authors="joaoma"
-   manager="adinah"
+   manager="carmonm"
    editor="tysonn" />
 <tags
 	ms.service="traffic-manager"
-	ms.date="08/19/2015"
+	ms.date="11/12/2015"
 	wacn.date=""/>
 
 # What is Traffic Manager?
@@ -161,10 +161,10 @@ If you want the figures in this topic as PowerPoint sides for your own presentat
 
 ## Next Steps
 
-[Cloud Services](https://msdn.microsoft.com/zh-CN/library/jj155995.aspx)
+[Traffic Manager routing methods](/documentation/articles/traffic-manager-routing-methods)
 
-[Websites](/home/features/web-site/)
+[Traffic Manager monitoring](/documentation/articles/traffic-manager-monitoring)
 
-[Operations on Traffic Manager (REST API Reference)](https://msdn.microsoft.com/zh-cn/library/hh758255.aspx)
+[Create a profile](/documentation/articles/traffic-manager-manage-profiles)
 
 [Azure Traffic Manager Cmdlets](https://msdn.microsoft.com/zh-cn/library/dn690250.aspx) 
