@@ -88,7 +88,6 @@ Interim and Final SSPK licensees can submit technical questions to [smoothpk@mic
 - Amlogic, Co., Ltd.
 - AVC Multimedia Software Co., Ltd.
 - AwoX S.A.
-- Axinom GmbH
 - Cisco Systems, Inc.
 - EchoStar Purchasing Corporation
 - Enseo, Inc.
@@ -135,7 +134,6 @@ Interim and Final SSPK licensees can submit technical questions to [smoothpk@mic
 - Arcadyan Technology Corporation
 - Arcelik A.S
 - AwoX S.A.
-- Axinom GmbH
 - British Sky Broadcasting Limited
 - CastPal Technology Inc., Shenzhen
 - Cisco Systems, Inc.

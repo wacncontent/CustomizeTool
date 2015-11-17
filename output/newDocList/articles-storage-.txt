@@ -1,4 +1,4 @@
-new docs: 1, word count: {word_count_TODO}
+new docs: 1, word count: 8630
 articles/storage/storage-premium-storage-performance.md
 
 new includes: 0

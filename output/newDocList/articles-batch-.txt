@@ -1,4 +1,4 @@
-new docs: 3, word count: {word_count_TODO}
+new docs: 3, word count: 2384
 articles/batch/batch-account-create-portal.md
 articles/batch/batch-job-prep-release.md
 articles/batch/batch-quota-limit.md

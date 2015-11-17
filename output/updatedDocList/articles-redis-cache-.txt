@@ -1,9 +1,5 @@
-updated docs: 7
-articles/redis-cache/cache-dotnet-how-to-use-azure-redis-cache.md
+updated docs: 3
 articles/redis-cache/cache-faq.md
-articles/redis-cache/cache-java-get-started.md
-articles/redis-cache/cache-nodejs-get-started.md
-articles/redis-cache/cache-python-get-started.md
 articles/redis-cache/cache-redis-cache-arm-provision.md
 articles/redis-cache/cache-web-app-arm-with-redis-cache-provision.md
 

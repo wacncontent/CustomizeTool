@@ -1,4 +1,4 @@
-new docs: 2, word count: {word_count_TODO}
+new docs: 2, word count: 5720
 articles/mobile-services/mobile-services-concepts-links.md
 articles/mobile-services/mobile-services-dotnet-how-to-use-client-library.md
 

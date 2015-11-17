@@ -1,4 +1,4 @@
-new docs: 1, word count: {word_count_TODO}
+new docs: 1, word count: 1859
 articles/backup/backup-azure-vms-prepare.md
 
 new includes: 0

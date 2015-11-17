@@ -1,0 +1,400 @@
+url: http://go.microsoft.com/fwlink/?LinkID=403033&clcid=0x409
+error: HTTP Error 403: Forbidden
+url: https://graph.windows.net/$tenantdomain/reports/accountProvisioningEvents?api-version=beta
+error: HTTP Error 403: Forbidden
+url: http://go.microsoft.com/fwlink/p/?LinkId=390561
+error: [Errno 10054] An existing connection was forcibly closed by the remote host
+url: https://github/com/AzureADSamples/Daemon-DotNet
+error: <urlopen error [Errno 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond>
+url: https://sourceaccount.blob.core.windows.net/vhds/myvhd.vhd
+error: <urlopen error [Errno 11001] getaddrinfo failed>
+url: http://www.microsoft.com/download/details.aspx?id=41145
+error: HTTP Error 403: Forbidden
+url: http://msdn.microsoft.com/library/ff469518.aspx
+error: [Errno 10054] An existing connection was forcibly closed by the remote host
+url: http://www.microsoft.com/download/details.aspx?id=20098
+error: HTTP Error 403: Forbidden
+url: http://localhost:9000
+error: <urlopen error [Errno 10061] No connection could be made because the target machine actively refused it>
+url: https://{clusterDns}.azurehdinsight.net/ambari/api/v1/clusters/{clusterDns}.azurehdinsight.net/services/{servicename}/components/{componentname}
+error: <urlopen error [Errno 11001] getaddrinfo failed>
+url: https://mymobileapp-code.azurewebsites.net
+error: <urlopen error [Errno 11001] getaddrinfo failed>
+url: http://msdn.microsoft.com/library/azure/system.management.automation.pscustomobject(v=vs.85
+error: HTTP Error 404: Not Found
+url: https://<yourHBaseClusterName>.azurehdinsight.net
+error: <urlopen error [Errno 11001] getaddrinfo failed>
+url: http://www.microsoft.com/download/details.aspx?id=38427
+error: HTTP Error 403: Forbidden
+url: https://msdn.microsoft.comlibrary/mt346064.aspx
+error: <urlopen error [Errno 11001] getaddrinfo failed>
+url: http://schema.management.azure.com/schemas/2015-01-01-preview/deploymentTemplate.json
+error: HTTP Error 404: The specified blob does not exist.
+url: http://nsl.cs.unb.ca/NSL-KDD/KDDTrain+.arff
+error: <urlopen error [Errno 11001] getaddrinfo failed>
+url: https://your-mobile-service.azure-mobile.xxx/
+error: <urlopen error [Errno 11001] getaddrinfo failed>
+url: http://msdn.microsoft.com/library/System.Data.SqlClient(v=vs.110
+error: HTTP Error 404: Not Found
+url: http://stackoverflow.com/questions/tagged/azure-active-directory
+error: HTTP Error 403: Forbidden
+url: http://www.microsoft.com/download/details.aspx?id=34687
+error: HTTP Error 403: Forbidden
+url: http://stackoverflow.com/questions/4750806/how-to-install-pip-on-windows
+error: HTTP Error 403: Forbidden
+url: https://CLUSTERNAME.azurehdinsight.net/api/v1/clusters/CLUSTERNAME/configurations?type=oozie-site&tag=TOPOLOGY_RESOLVED
+error: <urlopen error [Errno 11001] getaddrinfo failed>
+url: http://www.microsoft.com/downloads
+error: HTTP Error 403: Forbidden
+url: http://www.microsoft.com/account/default.aspx
+error: HTTP Error 403: Forbidden
+url: http://localhost:4584
+error: <urlopen error [Errno 10061] No connection could be made because the target machine actively refused it>
+url: https://sts.windows.net/cbb1a5ac-f33b-45fa-9bf5-f37db0fed422/
+error: HTTP Error 404: Not Found
+url: http://mystorageaccount.blob.core.windows.net/templates/parameters.json
+error: HTTP Error 404: The specified resource does not exist.
+url: https://yourstorage.blob.core.windows.net/vhds/your-prefix-OsDisk.vhd
+error: HTTP Error 403: The specified account is disabled.
+url: http://www.microsoft.com/download/details.aspx?id=29065
+error: HTTP Error 403: Forbidden
+url: https://chocolatey.org/
+error: HTTP Error 403: Forbidden
+url: http://go.microsoft.com/fwlink/?LinkId=246619
+error: HTTP Error 403: Forbidden
+url: https://www.microsoft.com/security/pc-security/password-checker.aspx
+error: HTTP Error 403: Forbidden
+url: https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/IaaS-Story/11-MultiNIC/arm/multinic.sh
+error: HTTP Error 404: Not Found
+url: http://stackoverflow.com/questions/tagged/azure
+error: HTTP Error 403: Forbidden
+url: http://go.microsoft.com/fwlink/p/?LinkId=290933
+error: [Errno 10054] An existing connection was forcibly closed by the remote host
+url: http://schemas.microsoft.com/windowsazure
+error: HTTP Error 404: Not Found
+url: https://login.windows.net/{0}
+error: HTTP Error 404: Not Found
+url: http://www.microsoft.com/download/details.aspx?id=49921
+error: HTTP Error 403: Forbidden
+url: https://technet.microsoft.com/library/ms188611(v=sql.105
+error: HTTP Error 404: Not Found
+url: http://www.microsoft.com/en-us/download/details.aspx?id=49150
+error: HTTP Error 403: Forbidden
+url: http://www.microsoft.com/en-us/download/details.aspx?id=48729
+error: HTTP Error 403: Forbidden
+url: http://www.microsoft.com/en-us/download/details.aspx?id=48725
+error: HTTP Error 403: Forbidden
+url: https://microsoft.sharepoint.com/teams/SSPKDOWNLOAD/
+error: HTTP Error 403: FORBIDDEN
+url: http://www.microsoft.com/download/details.aspx?id=39379
+error: HTTP Error 403: Forbidden
+url: http://www.microsoft.com/download/details.aspx?id=34595
+error: HTTP Error 403: Forbidden
+url: http://aka.ms/sql2016vm
+error: HTTP Error 404: Not Found
+url: https://management.core.windows.net/
+error: HTTP Error 500: Internal Server Error
+url: https://portalvhds4blttsxgjj1rf.blob.core.windows.net/vhd-store/testpemasm-2747c9c432b043ff.vhd
+error: HTTP Error 404: The specified resource does not exist.
+url: https://msdn.microsoft.com/library/aa645516(v=vs.71
+error: HTTP Error 404: Not Found
+url: https://www.microsoft.com/playready/overview/
+error: HTTP Error 403: Forbidden
+url: https://graph.windows.net
+error: HTTP Error 403: Forbidden.
+url: https://$clusterName.azurehdinsight.net:443/ambari
+error: <urlopen error [Errno 11001] getaddrinfo failed>
+url: http://https://technet.microsoft.com/library/dn249922.aspx?f=255&MSPPError=-2147217396
+error: <urlopen error [Errno 11001] getaddrinfo failed>
+url: http://schemas.microsoft.com/netservices/2010/10/servicebus/connect\
+error: HTTP Error 404: Not Found
+url: http://ppe.blogs.msdn.com/b/windowsazure/archive/2013/11/18/disabling-arr-s-instance-affinity-in-windows-azure-web-sites.aspx
+error: HTTP Error 503: Service Unavailable
+url: http://www.microsoft.com/download/details.aspx?id=29100
+error: HTTP Error 403: Forbidden
+url: https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/IaaS-Story/11-MultiNIC/classic/multinic.ps1
+error: HTTP Error 404: Not Found
+url: http://go.microsoft.com/fwlink/p/?LinkId=397703
+error: HTTP Error 403: Forbidden
+url: http://stackoverflow.com/questions/tagged/adal
+error: HTTP Error 403: Forbidden
+url: http://www.microsoft.com/download/details.aspx?id=36434
+error: HTTP Error 403: Forbidden
+url: http://go.microsoft.com/fwlink/?linkid=205836
+error: HTTP Error 403: Forbidden
+url: http://go.microsoft.com/fwlink/p/?LinkId=262039
+error: HTTP Error 404: Not Found
+url: https://msdn.microsoft.com/library/azure/microsoft.windowsazure.mediaservices.client.istreamingendpoint(v=azure.10
+error: HTTP Error 404: Not Found
+url: https://<ClusterName>.azurehdinsight.net/hbaserest/Contacts1/schema
+error: <urlopen error [Errno 11001] getaddrinfo failed>
+url: https://www.microsoft.com/en-us/server-cloud/
+error: HTTP Error 403: Forbidden
+url: https://www.flatterfiles.com/site/login/sso/
+error: HTTP Error 403: Forbidden
+url: http://schemas.amazon.com/apk/res/android
+error: <urlopen error [Errno 11001] getaddrinfo failed>
+url: https://STORAGE-URI/public/MODULE-NAME.zip
+error: <urlopen error [Errno 11001] getaddrinfo failed>
+url: https://{HTTP_HOST}/{R:1}
+error: <urlopen error [Errno 11001] getaddrinfo failed>
+url: http://localhost:8983/solr/collection1/select?q=*%3A*&wt=json&indent=true
+error: <urlopen error [Errno 10061] No connection could be made because the target machine actively refused it>
+url: http://nsl.cs.unb.ca/NSL-KDD/
+error: <urlopen error [Errno 11001] getaddrinfo failed>
+url: http://www.microsoft.com/download/details.aspx?id=47594
+error: HTTP Error 403: Forbidden
+url: http://www.microsoft.com/download/details.aspx?id=17851
+error: HTTP Error 403: Forbidden
+url: http://www.microsoft.com/download/details.aspx?id=40855
+error: HTTP Error 403: Forbidden
+url: https://*.servicebus.windows.net/*
+error: <urlopen error [Errno 11001] getaddrinfo failed>
+url: http://go.microsoft.com/fwlink/p/?LinkID=290898
+error: HTTP Error 403: Forbidden
+url: https://storagesample.blob.core.windows.net
+error: HTTP Error 400: Value for one of the query parameters specified in the request URI is invalid.
+url: https://azure.microsoft.com/blog/azure-sql-database-geo-replication-october-2015-update/
+error: HTTP Error 404: Not Found
+url: http://www.whatismyip.com/
+error: HTTP Error 403: Forbidden
+url: https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/IaaS-Story/11-MultiNIC
+error: HTTP Error 404: Not Found
+url: http://hn0-CLUSTERNAME-randomcharacters.cx.internal.cloudapp.net:11000/oozie
+error: <urlopen error [Errno 11001] getaddrinfo failed>
+url: https://newpremiumstorageaccount.blob.core.windows.net/vhds/Disk1.vhd
+error: <urlopen error [Errno 11001] getaddrinfo failed>
+url: https://www.microsoft.com/download/details.aspx?id=49555
+error: HTTP Error 403: Forbidden
+url: https://msdn.microsoft.com/library/jj720558\(v=sql.120\
+error: HTTP Error 404: Not Found
+url: http://mystorageaccount.blob.core.windows.net/templates/template.json
+error: HTTP Error 404: The specified resource does not exist.
+url: http://www.microsoft.com/download/details.aspx?id=30653
+error: HTTP Error 403: Forbidden
+url: http://www.microsoft.com/web/downloads/platform.aspx
+error: HTTP Error 403: Forbidden
+url: https://graph.windows.net/$TENANT_DOMAIN/reports/auditEvents?api-version=beta
+error: HTTP Error 403: Forbidden
+url: https://management.azure.com/subscriptions/SUBSCRIPTIONID/resourcegroups/GROUPNAME?api-version=2015-01-01
+error: HTTP Error 404: Not Found
+url: https://hdi0211v2.azurehdinsight.net/ambari/api/v1/clusters/hdi0211v2.azurehdinsight.net/
+error: <urlopen error [Errno 11001] getaddrinfo failed>
+url: http://msdn.microsoft.com/library/azure/dn546726.aspx
+error: HTTP Error 404: Not Found
+url: http://www.microsoft.com/download/details.aspx?id=45344
+error: HTTP Error 403: Forbidden
+url: https://core.windows.net
+error: <urlopen error [Errno 11001] getaddrinfo failed>
+url: https://github.com/Azure-Samples/active-directory-java-webapp-openidconnect\/archive/complete.zip
+error: HTTP Error 404: Not Found
+url: https://resources.azure.com
+error: HTTP Error 401: Unauthorized
+url: http://.../scim/Users/2819c223-7f76-453a-919d-413861904646
+error: <urlopen error [Errno 11001] getaddrinfo failed>
+url: http://go.microsoft.com/?linkid=9811175&clcid=0x409
+error: HTTP Error 403: Forbidden
+url: https://www.microsoft.com/en-us/licensing/licensing-programs/open-license.aspx
+error: HTTP Error 403: Forbidden
+url: https://www.microsoft.com/download/details.aspx?id=40779
+error: HTTP Error 403: Forbidden
+url: https://proxy.cloudwebappproxy.net/registerapp
+error: HTTP Error 404: Not Found
+url: https://myresourcegroupgateway.azurewebsites.net/Microsoft.Azure.AppService.ApiApps.Gateway
+error: <urlopen error [Errno 11001] getaddrinfo failed>
+url: https://contosokeyvault.vault.azure.net/
+error: HTTP Error 403: Forbidden
+url: http://www.microsoft.com/download/details.aspx?id=17148
+error: HTTP Error 403: Forbidden
+url: https://storagesample.blob.core.windows.net/sample-container
+error: HTTP Error 404: The specified resource does not exist.
+url: https://graph.windows.net/$tenantdomain/reports?api-version=beta
+error: HTTP Error 403: Forbidden
+url: https://storageaccount.blob.core.windows.net/vhdcontainer/datadisk.vhd
+error: HTTP Error 404: The specified resource does not exist.
+url: http://www.windowsazure.com/media/encoding/Preset/2014/03
+error: HTTP Error 404: Not Found
+url: https://www.microsoft.com/en-us/Search/result.aspx?q=azure%20active%20directory%20connect&form=mssupport
+error: HTTP Error 403: Forbidden
+url: https://mycustomimage.blob.core.windows.net/system/Microsoft.Compute/Images/mytemplates/template-osDisk.vhd
+error: <urlopen error [Errno 11001] getaddrinfo failed>
+url: https://management.azure.com/
+error: HTTP Error 400: Bad Request
+url: http://msdn.microsoft.com/en-us/library/dn440719\(v=pandp.60\
+error: HTTP Error 404: Not Found
+url: http://wwww.sencha.com/products/touch/download
+error: hostname 'wwww.sencha.com' doesn't match either of 'www.sencha.com', 'sencha.com', 'manage.sencha.com'
+url: https://www.microsoft.com/download/details.aspx?id=40855
+error: HTTP Error 403: Forbidden
+url: http://www.igloosoftware.com/
+error: HTTP Error 400: Bad Request
+url: https://CLUSTERNAME.azurehdinsight.net/api/v1/clusters/CLUSTERNAME/services/ZOOKEEPER/components/ZOOKEEPER_SERVER
+error: <urlopen error [Errno 11001] getaddrinfo failed>
+url: http://go.microsoft.com/fwlink/p/?linkid=320376&clcid=0x409
+error: HTTP Error 403: Forbidden
+url: https://www.microsoft.com/download/details.aspx?id=11774
+error: HTTP Error 403: Forbidden
+url: http://www.stackoverflow.com
+error: HTTP Error 403: Forbidden
+url: https://technet.microsoft.com/library/dn659436.aspx.
+error: HTTP Error 500: Internal Server Error
+url: http://www.microsoft.com/download/details.aspx?id=47323&WT.mc_id=rss_alldownloads_all
+error: HTTP Error 403: Forbidden
+url: http://hn0-CLUSTERNAME.randomcharacters.cx.internal.cloudapp.net:8080/api/v1/clusters/mycluster/services/HDFS?fields=ServiceInfo/state
+error: <urlopen error [Errno 11001] getaddrinfo failed>
+url: https://CLUSTERNAME.azurehdinsight.net/api/v1/clusters/CLUSTERNAME
+error: <urlopen error [Errno 11001] getaddrinfo failed>
+url: http://localhost:8000/
+error: <urlopen error [Errno 10061] No connection could be made because the target machine actively refused it>
+url: http://<namespace>.servicebus.windows.net/<hubName>
+error: <urlopen error [Errno 11001] getaddrinfo failed>
+url: https://wtestvnetstorageprm.blob.core.windows.net/vhds/DB2-datadisk-2.vhd
+error: <urlopen error [Errno 11001] getaddrinfo failed>
+url: http://msdn.microsoft.com/library/dn511655&#x28;v=sql.120&#x29;.aspx
+error: HTTP Error 400: Bad Request
+url: https://www.microsoft.com/en-us/licensing/licensing-programs/enterprise.aspx
+error: HTTP Error 403: Forbidden
+url: http://www.w3.org/2005/Atom\
+error: HTTP Error 404: Not Found
+url: http://localhost:58454
+error: <urlopen error [Errno 10061] No connection could be made because the target machine actively refused it>
+url: http://msdn.microsoft.com/library/hh680934(v=PandP.50
+error: HTTP Error 404: Not Found
+url: https://www.microsoft.com/en-us/account/faq.aspx
+error: HTTP Error 403: Forbidden
+url: https://wtestvnetstorageprm.blob.core.windows.net/vhds/DB2-datadisk-1.vhd
+error: <urlopen error [Errno 11001] getaddrinfo failed>
+url: https://github.com/apache/storm/blob/master/STORM-UI-REST-API.md
+error: HTTP Error 404: Not Found
+url: https://msdn.microsoft.com/library/ff469518.aspx
+error: [Errno 10054] An existing connection was forcibly closed by the remote host
+url: http://10.0.0.10:8080/api/v1/clusters/CLUSTERNAME
+error: <urlopen error [Errno 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond>
+url: http://www.microsoft.com/download/details.aspx?id=40898
+error: HTTP Error 403: Forbidden
+url: http://<PROXYADDRESS>:<PROXYPORT>
+error: nonnumeric port: '<PROXYPORT>'
+url: https://www.microsoft.com/download/details.aspx?id=36057
+error: HTTP Error 403: Forbidden
+url: https://CLUSTERNAME.azurehdinsight.net/api/v1/clusters/CLUSTERNAME/services/HDFS/components/DATANODE
+error: <urlopen error [Errno 11001] getaddrinfo failed>
+url: https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/IaaS-Story/11-MultiNIC/arm/multinic.ps1
+error: HTTP Error 404: Not Found
+url: http://schemas.microsoft.com/netservices/2010/10/servicebus/connect
+error: HTTP Error 404: Not Found
+url: https://login.microsoftonline.com/<TenantId>
+error: HTTP Error 400: Bad Request
+url: https://www.microsoft.com/en-us/server-cloud/enterprise-mobility/overview.aspx
+error: HTTP Error 403: Forbidden
+url: https://msdn.microsoft.com/library/jj919148(v=sql.130
+error: HTTP Error 404: Not Found
+url: http://aka.ms/wmf5latest
+error: HTTP Error 403: Forbidden
+url: https://management.azure.com/subscriptions/SUBSCRIPTIONID/resourcegroups/GROUPNAME/providers/microsoft.resources/deployments/DEPLOYMENTNAME?api-version=2015-01-01
+error: HTTP Error 404: Not Found
+url: http://www.microsoft.com/download/en/details.aspx?id=26728
+error: HTTP Error 403: Forbidden
+url: https://www.microsoft.com/download/details.aspx?id=40740
+error: HTTP Error 403: Forbidden
+url: https://www.microsoft.com/en-us/download/details.aspx?id=2939
+error: HTTP Error 403: Forbidden
+url: http://www.w3.org/2001/XMLSchema-instance\
+error: HTTP Error 404: Not Found
+url: http://www.microsoft.com/download/details.aspx?id=49922
+error: HTTP Error 403: Forbidden
+url: https://CLUSTERNAME.azurehdinsight.net/api/v1/clusters/CLUSTERNAME/hosts
+error: <urlopen error [Errno 11001] getaddrinfo failed>
+url: http://technet.microsoft.com/library/cc766049(v=ws.10
+error: HTTP Error 404: Not Found
+url: https://build.opensuse.org/project/show/Cloud:Tools
+error: HTTP Error 404: Not Found
+url: https://CLUSTERNAME.azurehdinsight.net/api/v1/clusters/CLUSTERNAME/configurations/service_config_versions?service_name=HDFS&service_config_version=1
+error: <urlopen error [Errno 11001] getaddrinfo failed>
+url: http://azure.microsoft.com/blog/2014/08/04/microsoft-azure-storage-service-version-removal/
+error: <urlopen error [Errno 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond>
+url: http://go.microsoft.com/fwlink/?LinkId=615771
+error: HTTP Error 403: Forbidden
+url: https://graph.windows.net/%s/users?api-version=2013-04-05
+error: HTTP Error 400: Bad Request
+url: https://<ClusterName>.azurehdinsight.net/hbaserest/Contacts1/1000
+error: <urlopen error [Errno 11001] getaddrinfo failed>
+url: http://go.microsoft.com/fwlink/p/?linkid=320376
+error: HTTP Error 403: Forbidden
+url: http://nsl.cs.unb.ca/NSL-KDD/KDDTest+.arff
+error: <urlopen error [Errno 11001] getaddrinfo failed>
+url: http://www.microsoft.com/download/details.aspx?id=14632
+error: HTTP Error 403: Forbidden
+url: https://hdi0211v2.azurehdinsight.net/ambari/api/v1/clusters/hdi0211v2.azurehdinsight.net/hosts/headnode0
+error: <urlopen error [Errno 11001] getaddrinfo failed>
+url: http://contoso.my.salesforce.com/
+error: <urlopen error [Errno 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond>
+url: http://www.microsoft.com/server-cloud/products/storsimple/overview.aspx
+error: HTTP Error 403: Forbidden
+url: https://www.microsoft.com/en-us/download/details.aspx?id=46842
+error: HTTP Error 403: Forbidden
+url: https://hdi0211v2.azurehdinsight.net/ambari/api/v1/clusters/hdi0211v2.azurehdinsight.net/hosts/workernode0
+error: <urlopen error [Errno 11001] getaddrinfo failed>
+url: https://www.microsoft.com/download/details.aspx?id=41633
+error: HTTP Error 403: Forbidden
+url: http://www.microsoft.com/playready/licensing/device_technology.mspx#pddipdl
+error: HTTP Error 403: Forbidden
+url: http://getfoxyproxy.org/,
+error: HTTP Error 404: Not Found
+url: https://www.microsoft.com/download/details.aspx?id=49923
+error: HTTP Error 403: Forbidden
+url: http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceConfiguration
+error: HTTP Error 404: Not Found
+url: https://newpremiumstorageaccount.blob.core.windows.net/vhds/MyOSDisk.vhd
+error: <urlopen error [Errno 11001] getaddrinfo failed>
+url: https://www.microsoft.com/download/details.aspx?id=44949
+error: HTTP Error 403: Forbidden
+url: http://go.microsoft.com/fwlink/?LinkId=528259
+error: HTTP Error 403: Forbidden
+url: https://CLUSTERNAME.azurehdinsight.net/api/v1/clusters/CLUSTERNAME/services/HDFS/components/NAMENODE
+error: <urlopen error [Errno 11001] getaddrinfo failed>
+url: http://schemas.microsoft.com/ServiceHosting/2010/10/DiagnosticsConfiguration\
+error: HTTP Error 404: Not Found
+url: https://hdi0211v2.azurehdinsight.net/ambari/api/v1/clusters/hdi0211v2.azurehdinsight.net/services/hdfs
+error: <urlopen error [Errno 11001] getaddrinfo failed>
+url: https://hdiconfigactions.blob.core.windows.net/
+error: HTTP Error 400: Value for one of the query parameters specified in the request URI is invalid.
+url: http://testacs.com
+error: <urlopen error [Errno 11002] getaddrinfo failed>
+url: https://calebb.net
+error: hostname 'calebb.net' doesn't match either of '*.azurewebsites.net', '*.scm.azurewebsites.net', '*.azure-mobile.net', '*.scm.azure-mobile.net'
+url: https://<clustername>.azurehdinsight.net/ambari/api/v1/clusters/<clustername>.azurehdinsight.net/configurations?type=hbase-site&tag=default&fields=items/properties/hbase.zookeeper.quorum
+error: <urlopen error [Errno 11001] getaddrinfo failed>
+url: http://www.microsoft.com/en-us/licensing/how-to-buy/how-to-buy.aspx
+error: HTTP Error 403: Forbidden
+url: http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceDefinition
+error: HTTP Error 404: Not Found
+url: https://azurepricing.blob.core.windows.net/sampleinvoices/Microsoft_Azure_invoice_Sample.pdf
+error: HTTP Error 404: The specified blob does not exist.
+url: http://expressjs.com/guide/routing.html
+error: HTTP Error 403: Forbidden
+url: http://azure.microsoft.com/documentatgion/services/redis-cache/
+error: HTTP Error 404: Not Found
+url: http://msdn.microsoft.com/library/dn269988(v=sql.120
+error: HTTP Error 404: Not Found
+url: https://www.msdn.com/office/office365/howto/authenticate-Office-365-APIs-using-v2
+error: <urlopen error [Errno 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond>
+url: http://stackify.com/implementing-cache-tagging-redis/
+error: HTTP Error 403: Forbidden
+url: http://www.microsoft.com/en-us/download/details.aspx?id=41653
+error: HTTP Error 403: Forbidden
+url: https://storageaccount.blob.core.windows.net/vhdcontainer/osdisk.vhd
+error: HTTP Error 404: The specified resource does not exist.
+url: https://www.microsoft.com/download/details.aspx?id=41653
+error: HTTP Error 403: Forbidden
+url: https://storageaccount.blob.core.windows.net/vhdcontainer/osimage.vhd
+error: HTTP Error 404: The specified resource does not exist.
+url: https://www.microsoft.com/download/details.aspx?id=5555
+error: HTTP Error 403: Forbidden
+url: http://manage.azure.com/
+error: <urlopen error [Errno 11001] getaddrinfo failed>
+url: https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/IaaS-Story/11-MultiNIC/classic/multinic.sh
+error: HTTP Error 404: Not Found
+url: https://hdi0211v2.azurehdinsight.net/ambari/api/v1/clusters/hdi0211v2.azurehdinsight.net/services/mapreduce
+error: <urlopen error [Errno 11001] getaddrinfo failed>
+url: https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/201-vmss-scale-in-or-out/azuredeploy.json
+error: HTTP Error 404: Not Found

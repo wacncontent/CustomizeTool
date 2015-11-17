@@ -1,6 +1,4 @@
-new docs: 3, word count: {word_count_TODO}
-articles/app-service-web/app-service-web-troubleshoot-HTTP-502-503.md
-articles/app-service-web/app-service-web-troubleshoot-performance-degradation.md
+new docs: 1, word count: 1317
 articles/app-service-web/web-sites-dotnet-entity-framework-row-level-security.md
 
 new includes: 0

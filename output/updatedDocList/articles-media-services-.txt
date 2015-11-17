@@ -1,4 +1,4 @@
-updated docs: 17
+updated docs: 16
 articles/media-services/media-services-content-protection-overview.md
 articles/media-services/media-services-create-account.md
 articles/media-services/media-services-develop-video-players.md
@@ -15,7 +15,6 @@ articles/media-services/media-services-manage-live-encoder-enabled-channels.md
 articles/media-services/media-services-playback-content-with-existing-players.md
 articles/media-services/media-services-protect-with-drm.md
 articles/media-services/media-services-release-notes.md
-articles/media-services/media-services-workflow-designer.md
 
 updated includes: 1
 includes/azure-mediaservices-limits.md

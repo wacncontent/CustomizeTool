@@ -1,4 +1,4 @@
-new docs: 5, word count: {word_count_TODO}
+new docs: 5, word count: 7192
 articles/cloud-services/cloud-services-allocation-failures.md
 articles/cloud-services/cloud-services-dotnet-diagnostics-performance-counters.md
 articles/cloud-services/cloud-services-dotnet-diagnostics-storage.md

@@ -1,4 +1,4 @@
-new docs: 2, word count: {word_count_TODO}
+new docs: 2, word count: 4145
 articles/expressroute/expressroute-howto-circuit-arm.md
 articles/expressroute/expressroute-howto-routing-arm.md
 

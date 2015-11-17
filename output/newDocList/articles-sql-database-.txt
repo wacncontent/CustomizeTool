@@ -1,4 +1,4 @@
-new docs: 23, word count: {word_count_TODO}
+new docs: 23, word count: 32208
 articles/sql-database/sql-database-configure-firewall-settings-powershell.md
 articles/sql-database/sql-database-configure-firewall-settings-rest.md
 articles/sql-database/sql-database-configure-firewall-settings-tsql.md

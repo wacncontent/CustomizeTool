@@ -1,4 +1,4 @@
-new docs: 49, word count: {word_count_TODO}
+new docs: 49, word count: 66444
 articles/active-directory/active-directory-aadconnect-health-agent-install.md
 articles/active-directory/active-directory-aadconnect-health-sync.md
 articles/active-directory/active-directory-aadconnectsync-understanding-default-configuration.md

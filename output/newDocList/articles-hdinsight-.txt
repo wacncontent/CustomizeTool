@@ -1,6 +1,4 @@
-new docs: 2, word count: {word_count_TODO}
-articles/hdinsight/hdinsight-hadoop-manage-ambari-rest-api.md
+new docs: 1, word count: 537
 articles/hdinsight/hdinsight-hadoop-use-pig-datafu-udf.md
 
-new includes: 1
-includes/hdinsight-ambari-selector.md
+new includes: 0

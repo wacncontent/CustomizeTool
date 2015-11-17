@@ -1,4 +1,4 @@
-new docs: 1, word count: {word_count_TODO}
+new docs: 1, word count: 1841
 articles/application-gateway/application-gateway-ssl-arm.md
 
 new includes: 0

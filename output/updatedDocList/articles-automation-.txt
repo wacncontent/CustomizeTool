@@ -1,15 +1,10 @@
-updated docs: 17
+updated docs: 12
 articles/automation/automation-certificates.md
 articles/automation/automation-configuring.md
 articles/automation/automation-connections.md
 articles/automation/automation-credentials.md
-articles/automation/automation-dsc-cd-chocolatey.md
-articles/automation/automation-dsc-onboarding.md
-articles/automation/automation-graphical-authoring-intro.md
-articles/automation/automation-hybrid-runbook-worker.md
 articles/automation/automation-intro.md
 articles/automation/automation-managing-data.md
-articles/automation/automation-orchestrator-migration.md
 articles/automation/automation-runbook-execution.md
 articles/automation/automation-runbook-settings.md
 articles/automation/automation-runbook-types.md

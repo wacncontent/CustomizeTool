@@ -1,11 +1,4 @@
-updated docs: 22
-articles/app-service-web/app-service-app-service-environment-network-configuration-expressroute.md
-articles/app-service-web/app-service-move-resources.md
-articles/app-service-web/app-service-web-configure-an-app-service-environment.md
-articles/app-service-web/app-service-web-how-to-create-a-web-app-in-an-ase.md
-articles/app-service-web/app-service-web-how-to-create-an-app-service-environment.md
-articles/app-service-web/app-service-web-overview.md
-articles/app-service-web/app-service-web-scale-a-web-app-in-an-app-service-environment.md
+updated docs: 12
 articles/app-service-web/automation-manage-web-app.md
 articles/app-service-web/web-sites-configure-ssl-certificate.md
 articles/app-service-web/web-sites-custom-domain-name.md
@@ -13,13 +6,10 @@ articles/app-service-web/web-sites-deploy.md
 articles/app-service-web/web-sites-dotnet-get-started.md
 articles/app-service-web/web-sites-enable-diagnostic-log.md
 articles/app-service-web/web-sites-enterprise-offerings.md
-articles/app-service-web/web-sites-godaddy-custom-domain-name.md
 articles/app-service-web/web-sites-java-get-started.md
 articles/app-service-web/web-sites-manage-azure-website.md
 articles/app-service-web/web-sites-nodejs-chat-app-socketio.md
 articles/app-service-web/web-sites-php-enterprise-wordpress.md
-articles/app-service-web/web-sites-php-web-site-gallery.md
-articles/app-service-web/web-sites-streaming-logs-and-console.md
 articles/app-service-web/websites-dotnet-webjobs-sdk-get-started.md
 
 updated includes: 2

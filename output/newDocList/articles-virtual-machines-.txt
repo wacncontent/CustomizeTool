@@ -1,4 +1,4 @@
-new docs: 7, word count: {word_count_TODO}
+new docs: 7, word count: 17249
 articles/virtual-machines/virtual-machines-allocation-failure.md
 articles/virtual-machines/virtual-machines-extensions-diagnostics-windows-template.md
 articles/virtual-machines/virtual-machines-linux-capture-image-resource-manager.md

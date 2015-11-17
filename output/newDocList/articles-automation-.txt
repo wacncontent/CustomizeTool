@@ -1,5 +1,4 @@
-new docs: 2, word count: {word_count_TODO}
-articles/automation/automation-dsc-compile.md
+new docs: 1, word count: 1459
 articles/automation/automation-source-control-integration.md
 
 new includes: 0

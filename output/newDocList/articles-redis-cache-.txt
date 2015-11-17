@@ -1,4 +1,4 @@
-new docs: 3, word count: {word_count_TODO}
+new docs: 3, word count: 4253
 articles/redis-cache/cache-asp.net-output-cache-provider.md
 articles/redis-cache/cache-asp.net-session-state-provider.md
 articles/redis-cache/cache-migrate-to-redis.md
