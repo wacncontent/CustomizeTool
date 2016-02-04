@@ -18,7 +18,7 @@ Resources for building applications that use Windows Azure. This includes tools 
 
 
 ##Azure Architectural Design Patterns
-Microsoft publishes series of architectural design patterns to help you compose your own custom designs. The patterns are intended to be concise architectural guides which can be composed together in order provide guidance on how to best leverage the Windows Azure platform to solve your organization’s business needs.
+Microsoft publishes series of architectural design patterns to help you compose your own custom designs. The patterns are intended to be concise architectural guides which can be composed together in order provide guidance on how to best leverage the Windows Azure platform to solve your organizationâs business needs.
 
 
 [Overview](/documentation/articles/azure-architectures-cpif-overview) - 
@@ -80,7 +80,7 @@ The template is also available outside the course.
 
 - [View the training video](https://www.youtube.com/watch?v=Tag2HNAJh4Y&feature=youtu.be) first so you know what it can do   
 - Download the [Microsoft 3d Blueprint Visio Template](http://aka.ms/3DBlueprintTemplate)
-- Download the [Cloud and Enterprise Symbols](#symbol-and-icon-sets) to use with the 3D template
+- Download the [Cloud and Enterprise Symbols](#drawing-symbol-and-icon-sets) to use with the 3D template. 
 
 Email us at [CnESymbols@microsoft.com](mailto:CnESymbols@microsoft.com) for specific questions not answered by the training materials or to give feedback. Usability is one of the primary goals of the template so let us know what's good and what gets in the way.
 
@@ -98,7 +98,7 @@ The symbol set ships quarterly and is updated as new services are released.
 
 Additional symbols for Microsoft Office and related technologies are available in the [Microsoft Office Visio stencil](http://www.microsoft.com/download/details.aspx?id=35772), though they are not optimized for architectural diagrams like the CnE set is.   
 
-**Feedback:** If you've used the CnE symbols, fill out the short 5 question [survey](http://aka.ms/azuresymbolssurveyv2) or email us at [CnESymbols@microsoft.com](mailto:CnESymbols@microsoft.com) for specific questions and issues. We’d like to know what you think, including positive feedback so we know to continue to invest time in them. 
+**Feedback:** If you've used the CnE symbols, fill out the short 5 question [survey](http://aka.ms/azuresymbolssurveyv2) or email us at [CnESymbols@microsoft.com](mailto:CnESymbols@microsoft.com) for specific questions and issues. Weâd like to know what you think, including positive feedback so we know to continue to invest time in them. 
 
 ![Cloud and Enterprise Symbol/Icon set](./media/architecture-overview/CnESymbols.png)
 

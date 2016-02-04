@@ -1,4 +1,4 @@
-﻿<properties 
+<properties 
    pageTitle="Azure Government Image Gallery" 
    description="This article provides an overview of the Azure Government Image Gallery and the images included" 
    services="Azure-Government" 
@@ -24,14 +24,14 @@ The below provides a list of available images within the Azure Government image 
 
 Publisher|Image Name|Description|Disk Size
 ---|---|---|---
-Barracuda Networks, Inc.|Barracuda Web Application Firewall (WAF) 7.8 PatchLevel 4|Note: This appliance is administered via a web UI and TCP/8000 needs to be forwarded to do so. See the deployment README https://cloudvm.cudasvc.com/azure/deployment-readme-waf.html for detai...|Linux|50 GB
+Barracuda Networks, Inc.|Barracuda <!-- deleted by customization web site --><!-- keep by customization: begin --> Web Site <!-- keep by customization: end --> Firewall (WAF) 7.8 PatchLevel 4|Note: This appliance is administered via a web UI and TCP/8000 needs to be forwarded to do so. See the deployment README https://cloudvm.cudasvc.com/azure/deployment-readme-waf.html for detai...|Linux|50 GB
 Barracuda Networks, Inc.|Barracuda NG Firewall 5.4.3-182 PatchLevel 4|Note: This appliance is managed via a client application and TCP/807 needs to be forwarded to do so. See the deployment README https://cloudvm.cudasvc.com/azure/deployment-readme-ng.html for ...|Linux|80 GB
 Bitnami|Drupal 7|Drupal powered by Bitnami is a pre-configured, ready to run image for running Drupal on Windows Azure. Drupal is one of the most versatile open source content management systems on the market. Over ...|Linux|30 GB
 Bitnami|Drupal 6|Drupal powered by Bitnami is a pre-configured, ready to run image for running Drupal on Windows Azure. Drupal is one of the most versatile open source content management systems on the market. Over ...|Linux|30 GB
-Bitnami|Ruby Stack 2.0|Bitnami RubyStack greatly simplifies the development and deployment of Ruby on Rails applications. Ruby on Rails is a full-stack MVC framework for database-backed web applications that is optimized fo...|Linux|30 GB
+Bitnami|Ruby Stack 2.0|Bitnami RubyStack greatly simplifies the development and deployment of Ruby on Rails applications. Ruby on Rails is a full-stack MVC framework for database-backed web sites that is optimized fo...|Linux|30 GB
 Bitnami|Nginx Stack 1.6|Bitnami Nginx Stack provides a complete, fully-integrated and ready to run PHP, MySQL and Nginx development environment. In addition, it bundles phpMyAdmin, SQLite, ImageMagick, FastCGI, Memcache, GD,...|Linux|30 GB
 Bitnami|Drupal 8|Drupal powered by Bitnami is a pre-configured, ready to run image for running Drupal on Windows Azure. Drupal is one of the most versatile open source content management systems on the market. Over ...|Linux|30 GB
-Bitnami|Ruby Stack 2.1|Bitnami RubyStack greatly simplifies the development and deployment of Ruby on Rails applications. Ruby on Rails is a full-stack MVC framework for database-backed web applications that is optimized fo...|Linux|30 GB
+Bitnami|Ruby Stack 2.1|Bitnami RubyStack greatly simplifies the development and deployment of Ruby on Rails applications. Ruby on Rails is a full-stack MVC framework for database-backed web sites that is optimized fo...|Linux|30 GB
 Bitnami|LAMP Stack 5.6|Bitnami LAMPStack greatly simplifies the development and deployment of PHP applications. It includes ready-to-run versions of Apache, MySQL, PHP and phpMyAdmin and all of the other software required t...|Linux|30 GB
 Bitnami|LAMP Stack 5.4|Bitnami LAMPStack greatly simplifies the development and deployment of PHP applications. It includes ready-to-run versions of Apache, MySQL, PHP and phpMyAdmin and all of the other software required t...|Linux|30 GB
 CloudLink|CloudLink SecureVM|CloudLink® SecureVM provides VM volume encryption and pre-boot authorization with VM image integrity validation, allowing you to control when and where your VMs boot. SecureVM unlocks native Windows B...|Linux|30 GB
@@ -70,7 +70,7 @@ Microsoft Windows Server Group|Windows Server 2012 R2 Datacenter, September 2014
 Microsoft Windows Server Group|Windows Server 2012 R2 Datacenter, October 2014|At the heart of the Microsoft Cloud OS vision, Windows Server 2012 R2 brings Microsoft's experience delivering global-scale cloud services into your infrastructure. It offers enterprise-class performa...|Windows|128 GB
 Microsoft Windows Server Group|Windows Server 2012 R2 Datacenter, November 2014|At the heart of the Microsoft Cloud OS vision, Windows Server 2012 R2 brings Microsoft's experience delivering global-scale cloud services into your infrastructure. It offers enterprise-class performa...|Windows|128 GB
 Microsoft Windows Server Group|Windows Server 2012 R2 Datacenter, April 2015|At the heart of the Microsoft Cloud OS vision, Windows Server 2012 R2 brings Microsoft's experience delivering global-scale cloud services into your infrastructure. It offers enterprise-class performa...|Windows|128 GB
-Microsoft Windows Server Group|Windows Server Technical Preview|At the heart of the Microsoft Cloud Platform, Windows Server brings the breadth and depth of Microsoft’s experience delivering global-scale cloud services to your datacenter infrastructure.  Windows S...|Windows|128 GB
+Microsoft Windows Server Group|Windows Server Technical Preview|At the heart of the Microsoft Cloud Platform, Windows Server brings the breadth and depth of Microsoft's experience delivering global-scale cloud services to your datacenter infrastructure.  Windows S...|Windows|128 GB
 Microsoft Windows Server Group|Windows Server 2012 Datacenter, April 2015|Windows Server 2012 incorporates Microsoft's experience building and operating public clouds, resulting in a dynamic, highly available server platform. It offers a scalable, dynamic and multi-tenant-a...|Windows|128 GB
 Oracle|Oracle WebLogic Server 12.1.2 on Oracle Linux 6.4.0.0.0|Oracle WebLogic Server 12c Enterprise Edition is a leading Java EE application server, delivering next-generation applications on a mission-critical cloud platform, with native cloud management, and i...|Linux|30 GB
 Oracle|Oracle Linux 7.0.0.0.0|Oracle Linux 7.0.0.0 delivers extreme performance, advanced scalability, and reliability for enterprise applications and systems. Optimized for enterprise workloads, Oracle Linux is the only operating...|Linux|30 GB
@@ -89,15 +89,27 @@ The below resources should provide more information on deploying from the image 
 
 ###Other Resources: 
 
-- [Deploying a Windows Virtual Machine](/documentation/articles/virtual-machines-windows-tutorial)
+<!-- deleted by customization
+- [Deploying a Windows Virtual Machine](/documentation/articles/virtual-machines-windows-tutorial-classic-portal)
 
 - [Deploying a Linux Virtual Machine](/documentation/articles/virtual-machines-linux-tutorial)
+-->
+<!-- keep by customization: begin -->
+- [Deploying a Windows Virtual Machine](/documentation/articles/virtual-machines/virtual-machines-windows-tutorial)
+
+- [Deploying a Linux Virtual Machine](/documentation/articles/virtual-machines/virtual-machines-linux-tutorial)
+<!-- keep by customization: end -->
 
 - [Virtual Machine FAQ](http://msdn.microsoft.com/zh-cn/library/azure/dn683781.aspx)
 
 - [Create and upload your own VHD](/documentation/articles/virtual-machines-create-upload-vhd-windows-server)
 
+<!-- deleted by customization
 - [Capture Linux VM Image](/documentation/articles/virtual-machines-linux-capture-image)
+-->
+<!-- keep by customization: begin -->
+- [Capture Linux VM Image](/documentation/articles/virtual-machines/virtual-machines-linux-capture-image)
+<!-- keep by customization: end -->
 
 <!--- **<A href="/azure-government-service-description">Azure Government Service Descriptions</a>**-->
 
@@ -110,6 +122,13 @@ The below resources should provide more information on deploying from the image 
 [2]: ./media/azure-government-overview/azure-gov-overview.jpg
 
 <!--Link references-->
-[Link 1 to another azure.microsoft.com documentation topic]: /documentation/articles/virtual-machines-windows-tutorial
-[Link 2 to another azure.microsoft.com documentation topic]: /documentation/articles/web-sites-custom-domain-name
-[Link 3 to another azure.microsoft.com documentation topic]: /documentation/articles/storage-whatis-account
+<!-- deleted by customization
+[Link 1 to another azure.microsoft.com documentation topic]: virtual-machines/virtual-machines-windows-tutorial.md
+[Link 2 to another azure.microsoft.com documentation topic]: app-service-web/web-sites-custom-domain-name.md
+[Link 3 to another azure.microsoft.com documentation topic]: storage-whatis-account.md
+-->
+<!-- keep by customization: begin -->
+[Link 1 to another www.windowsazure.cn documentation topic]: /documentation/articles/virtual-machines-windows-tutorial-classic-portal
+[Link 2 to another www.windowsazure.cn documentation topic]: /documentation/articles/web-sites-custom-domain-name
+[Link 3 to another www.windowsazure.cn documentation topic]: /documentation/articles/storage-whatis-account
+<!-- keep by customization: end -->

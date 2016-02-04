@@ -5,6 +5,7 @@
 import sys
 from collections import OrderedDict
 from setting import setting
+from codecs import open
 
 __author__ = 'Steven'
 
@@ -33,7 +34,7 @@ class RuleReader:
         REGULAR_FLAG = '[REGEX]'
         CORRECTION_FLAG = '[CORRECTION]'
         try:
-            with open(RULE_FILE, 'r') as fRule:
+            with open(RULE_FILE, 'r', "utf8") as fRule:
                 for line in fRule:
                     # Increase our line count
                     self.lineNum += 1
@@ -54,6 +55,7 @@ class RuleReader:
                     # Check if the line is in good format
                     if trimedLine.find(RULE_SEP) == -1 or trimedLine.startswith(RULE_SEP) or trimedLine.endswith(RULE_SEP):
                         sys.stderr.write('\033[1;31m Warning: Line %d has bad rule format!\033[0m\n' %(self.lineNum))
+                        print(line)
                         # print('\033[31m Warning: Line %d has bad rule format!\033[0m\n' %(self.lineNum))
                         sys.exit()
                     # Check format OK, let's add it to our rules dictionary

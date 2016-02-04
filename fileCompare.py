@@ -2,10 +2,11 @@
 from difflib import Differ, ndiff
 import re
 from setting import setting
+from codecs import open
 
 def compareWithMooncake(relativePath, text):
     try:
-        mooncakefile = open(setting["compare"]["path"]+relativePath)
+        mooncakefile = open(setting["compare"]["path"]+relativePath, 'r', "utf8")
     except IOError:
         return text
     mooncakeLines = mooncakefile.readlines()

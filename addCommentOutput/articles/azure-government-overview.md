@@ -9,21 +9,21 @@
 
 <tags
 	ms.service="multiple"
-	ms.date="07/22/2015"
+	ms.date="10/28/2015"
 	wacn.date=""/>
 
-#  Windows Azure Government Overview 
+#Windows Azure Government Overview
 
 <p> Windows Azure Government is a physically and network isolated instance of Windows Azure.  This overview will provide an introduction to the environment and services as well as links to additional information.
 
 
 ## <a name="Overview"></a>Overview
 
-Azure Government is a government-community cloud (GCC) designed to support strategic government scenarios that require speed, scale, security, compliance and economics for U.S. government organizations.   It was developed based on Microsoft’s extensive experience delivering software, security, compliance, and controls in other Microsoft cloud offerings such as Azure public, Office 365, O365 GCC, Microsoft CRM Online etc. 
+Azure Government is a government-community cloud (GCC) designed to support strategic government scenarios that require speed, scale, security, compliance and economics for U.S. government organizations.   It was developed based on Microsoft's extensive experience delivering software, security, compliance, and controls in other Microsoft cloud offerings such as Azure public, Office 365, O365 GCC, Microsoft CRM Online etc. 
 
 In addition, Azure Government is designed to meet the higher level security and compliance needs for sensitive, dedicated, U.S. Public Sector workloads found in regulations such as United States Federal Risk and Authorization Management Program (FedRAMP), Department of Defense Enterprise Cloud Service Broker (ECSB), Criminal Justice Information Services (CJIS) Security Policy and Health Insurance Portability and Accountability Act (HIPAA).     
 
-Below is a summary view of the Azure Government Cloud infrastructure, fabric, services and frameworks that are available to help government organizations build hybrid cloud solutions to meet their goals.  As some services below are only available in preview, please see the [regions page](http://azure.microsoft.com/regions/#services) as the most up to date services that are generally available are listed.
+Below is a summary view of the Azure Government <!-- keep by customization: begin --> Cloud <!-- keep by customization: end --> infrastructure, fabric, services and frameworks that are available to help government organizations build hybrid cloud solutions to meet their goals.  <!-- deleted by customization Please --><!-- keep by customization: begin --> As some services below are only available in preview, please <!-- keep by customization: end --> see the [regions <!-- deleted by customization page](http://azure.microsoft.com/regions/#services) --><!-- keep by customization: begin --> page](http://www.windowsazure.cn/regions/#services) <!-- keep by customization: end --> as the most up to date services that are generally available are listed <!-- deleted by customization there -->.
 
 ![][2]
 
@@ -31,19 +31,19 @@ Azure Government includes the core components of Infrastructure-as-a-Service (Ia
 
 In addition to providing the robust services and features of public Azure, Azure Government provides a number of features to assure US government entities that their data is secure by providing:
 
-- **Physical and network-isolated instance** – The Azure Government environment is a completely separate instance from Windows Azure public and only used by qualified U.S. government organizations and solution providers.
+- **Physical and network-isolated instance** - The Azure Government environment is a completely separate instance from Windows Azure public and only used by qualified U.S. government organizations and solution providers.
 
 - **Security, Privacy & Compliance** - Microsoft has implemented its robust security, privacy, and compliance controls framework plus additional stringent controls to meet the higher level requirements found in ECSB Impact Levels and CJIS. 
 
-- **Data Storage** – The Azure Government environment maintains 2 datacenters over 500 miles apart. All customer managed data is stored within the Continental United States (CONUS) datacenters
+- **Data Storage** - The Azure Government environment maintains 2 datacenters over <!-- deleted by customization 800 --><!-- keep by customization: begin --> 500 <!-- keep by customization: end --> miles apart. All customer managed data is stored within the Continental United States (CONUS) datacenters
 
-- **U.S. Personnel** – All Azure Government operators and administrators are screened U.S. citizens.
+- **U.S. Personnel** - All Azure Government operators and administrators are screened U.S. citizens.
 
-- **Identity Management** – Identity Management within the Azure Government environment is a separate instance of Azure Active Directory.
+- **Identity Management** - Identity Management within the Azure Government environment is a separate instance of Azure Active Directory.
 
-- **Compliance** – Microsoft is continuously investing to meet and maintain rigorous and changing federal, state, and local compliance requirements such as FedRAMP, CJIS, ECSB, and HIPAA for U.S. government cloud solutions. 
+- **Compliance** - Microsoft is continuously investing to meet and maintain rigorous and changing federal, state, and local compliance requirements such as FedRAMP, CJIS, ECSB, <!-- keep by customization: begin --> and <!-- keep by customization: end --> HIPAA <!-- deleted by customization and IRS 1075 --> for U.S. government cloud solutions.
 
-- **Cloud Integration** – Azure Government provides an integrated environment with O365 Government allowing for a single sign-on across cloud services and enhanced services such as 1TB of OneDrive storage space.
+- **Cloud Integration** - Azure Government provides an integrated environment with O365 Government allowing for a single sign-on across cloud services and enhanced services such as 1TB of OneDrive storage space.
 
 Azure Government also enables organizations to maintain their existing technology investments and realize the benefits of cloud services.  Since Azure Government is an interoperable cloud platform, with products and technologies organizations can build applications that are more open from the ground up.  Agencies can choose the tools, services, operating system, architecture, and frameworks including Windows, Linux, Oracle, SharePoint, .NET, Java, PHP and Node.js, for their cloud solutions. The flexibility of the Azure Government platform allows for new forms of cross-agency collaboration, application development, and integration.  
 
@@ -56,7 +56,7 @@ U.S. government organizations interested in cloud services can be confident that
 
 
 ## <a name="Features"></a> Features currently available in Windows Azure Government
-Azure Government currently has the following services available in both US GOV IOWA and US GOV VIRGINIA regions:
+Azure Government <!-- keep by customization: begin --> currently has the following <!-- keep by customization: end --> services available in both US GOV IOWA and US GOV VIRGINIA regions:
 
 - Virtual Machines
 - Cloud Services
@@ -64,14 +64,30 @@ Azure Government currently has the following services available in both US GOV I
 - Active Directory
 - Scheduler
 - Virtual Networking
+<!-- deleted by customization
 - SQL Database
+-->
+<!-- keep by customization: begin -->
+- SQL 数据库
+<!-- keep by customization: end -->
 - Azure Files
 - Media Services
 - Traffic Manager
 - Service Bus
 - StorSimple
+<!-- deleted by customization
+- Redis Cache
+- Azure Backup
+- Automation
+- ExpressRoute
+- etc.
 
-Other services are available, and more services will be added on a continuous basis.  For the most current list of services, please see the [regions page](http://azure.microsoft.com/regions/#services) which will highlight each available region and their services.  
+Other services are available, and more services will be added on a continuous basis.  For the most current list of services, please see the [regions page](http://azure.microsoft.com/regions/#services) which will highlight each available region and their services.
+-->
+<!-- keep by customization: begin -->
+
+Other services are available, and more services will be added on a continuous basis.  For the most current list of services, please see the [regions page](http://www.windowsazure.cn/regions/#services) which will highlight each available region and their services.
+<!-- keep by customization: end -->
 
 Currently, US GOV Iowa and US GOV Virginia are the data centers supporting Azure Government.  Please refer to the regions page above for current data centers and services available.
 
@@ -81,9 +97,24 @@ Currently, US GOV Iowa and US GOV Virginia are the data centers supporting Azure
 
 If you are interested in learning more and about Azure Government please leverage some of the links below.
 
+<!-- deleted by customization
+- **[Sign up for a trial](https://azuregov.microsoft.com/trial/azuregovtrial)**
+
+- **[Acquiring and accessing Azure Government](http://azure.com/gov)**
+
+- **[Azure Government Developer Guide](/azureazure-government-developer-guide)**
+
+- **[Azure Government Blog](http://blogs.msdn.com/b/azuregov/)**
+
+- **[Azure Compliance](/support/trust-center/compliance/)**
+
+
+-->
+<!-- keep by customization: begin -->
 - **<A href="http://azure.com/gov">Acquiring and accessing Azure Government</a>**
 
 - **<A href="/azure-government-developer-guide">Azure Government Developer Guide</a>**
+<!-- keep by customization: end -->
 
 <!--- **<A href="/azure-government-service-description">Azure Government Service Descriptions</a>**-->
 
@@ -96,6 +127,13 @@ If you are interested in learning more and about Azure Government please leverag
 [2]: ./media/azure-government-overview/azure-gov-overview.jpg
 
 <!--Link references-->
-[Link 1 to another azure.microsoft.com documentation topic]: /documentation/articles/virtual-machines-windows-tutorial
-[Link 2 to another azure.microsoft.com documentation topic]: /documentation/articles/web-sites-custom-domain-name
-[Link 3 to another azure.microsoft.com documentation topic]: /documentation/articles/storage-whatis-account
+<!-- deleted by customization
+[Link 1 to another azure.microsoft.com documentation topic]: virtual-machines/virtual-machines-windows-tutorial.md
+[Link 2 to another azure.microsoft.com documentation topic]: app-service-web/web-sites-custom-domain-name.md
+[Link 3 to another azure.microsoft.com documentation topic]: storage-whatis-account.md
+-->
+<!-- keep by customization: begin -->
+[Link 1 to another www.windowsazure.cn documentation topic]: /documentation/articles/virtual-machines-windows-tutorial-classic-portal
+[Link 2 to another www.windowsazure.cn documentation topic]: /documentation/articles/web-sites-custom-domain-name
+[Link 3 to another www.windowsazure.cn documentation topic]: /documentation/articles/storage-whatis-account
+<!-- keep by customization: end -->

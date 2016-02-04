@@ -60,7 +60,6 @@
         "articles/sql-database/": [ "sql-database" ],
         "articles/storage/": [ "storage" ],
         "articles/virtual-machines/": [ "virtual-machines", "vm" ],
-        "articles/application-gateway/": [ "application-gateway" ],
         "articles/": [ "" ]
     },
     "check_dates": false,

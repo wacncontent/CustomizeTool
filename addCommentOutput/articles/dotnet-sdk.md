@@ -47,7 +47,7 @@ This enables you to work with Azure Websites:
 * [Publish web projects to Azure Websites](/documentation/articles/web-sites-dotnet-get-started).
 * [Publish console application projects to Azure WebJobs](/documentation/articles/websites-dotnet-deploy-webjobs).
 * [Create Azure Website and SQL Database resources while creating a new web project or while publishing a web project](/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database).
-* [Create PowerShell deployment scripts while creating new Websites](http://msdn.microsoft.com/zh-cn/library/dn642480.aspx).
+* [Create PowerShell deployment scripts while creating new <!-- deleted by customization Websites](/documentation/articles/vs-azure-tools-publishing-using-powershell-scripts) --><!-- keep by customization: begin --> Websites](http://msdn.microsoft.com/zh-cn/library/dn642480.aspx) <!-- keep by customization: end -->.
 * [Manage and troubleshoot Azure Websites in Server Explorer](/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio#sitemanagement).
 * [Run in debug mode remotely for Websites and WebJobs](/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio#remotedebug). 
 
@@ -60,7 +60,7 @@ This enables you to work with Azure resources, primarily Cloud Services and Virt
 * [Create, open, and publish cloud service projects](/documentation/articles/cloud-services-dotnet-get-started).
 * [Create deployment packages for cloud service projects](http://msdn.microsoft.com/zh-cn/library/ff683672.aspx).
 * [Create Azure Virtual Machines while creating new web projects](/documentation/articles/virtual-machines-dotnet-create-visual-studio-powershell).
-* [Create PowerShell scripts while creating new virtual machines](http://msdn.microsoft.com/zh-cn/library/dn642480.aspx).
+* [Create PowerShell scripts while creating new virtual <!-- deleted by customization machines](/documentation/articles/vs-azure-tools-publishing-using-powershell-scripts) --><!-- keep by customization: begin --> machines](http://msdn.microsoft.com/zh-cn/library/dn642480.aspx) <!-- keep by customization: end -->.
 * [View and manage cloud service project settings in Visual Studio Project Properties windows](http://msdn.microsoft.com/zh-cn/library/ee405486.aspx).
 * View and manage [cloud services](http://msdn.microsoft.com/zh-cn/library/ff683675.aspx), [virtual machines](http://msdn.microsoft.com/zh-cn/library/jj131259.aspx), and [Service Bus](http://msdn.microsoft.com/zh-cn/library/jj149828.aspx) in Server Explorer. 
 * [Run in debug mode remotely for cloud services and virtual machines](http://msdn.microsoft.com/zh-cn/library/ff683670.aspx).
